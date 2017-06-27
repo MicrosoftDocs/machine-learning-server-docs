@@ -6,7 +6,7 @@ description: "Neural networks for regression modeling and for Binary and"
 keywords: "models classification regression neural network dnn" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,12 @@ ms.custom: ""
 
 # rx_neural_network
 
-microsoftml.modules.neural_network.rx_neural_network(formula, data, method: [‘binary’, ’multiClass’, ’regression’] = ‘binary’, loss_function: {‘LossFunction’: [‘LogLoss’, ’SquaredError’]} = {‘settings’: {}, ’name’: ‘LogLoss’}, num_iterations=100, optimizer: {‘Optimizer’: [‘AdadeltaOptimizer’, ’SgdOptimizer’]} = {‘settings’: {}, ’name’: ‘SgdOptimizer’}, net_definition=None, init_wts_diameter=0.1, max_norm=0, acceleration: {‘MathPlatformKind’: [‘AvxMath’, ’ClrMath’, ’GpuMath’, ’MklMath’, ’SseMath’]} = {‘settings’: {}, ’name’: ‘AvxMath’}, mini_batch_size=1, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
+
+
+```
+microsoftml.modules.neural_network.rx_neural_network(formula, data, method: [‘binary’, ’multiClass’, ’regression’] = ‘binary’, loss_function: {‘LossFunction’: [‘LogLoss’, ’SquaredError’]} = {‘name’: ‘LogLoss’, ’settings’: {}}, num_iterations=100, optimizer: {‘Optimizer’: [‘AdadeltaOptimizer’, ’SgdOptimizer’]} = {‘name’: ‘SgdOptimizer’, ’settings’: {}}, net_definition=None, init_wts_diameter=0.1, max_norm=0, acceleration: {‘MathPlatformKind’: [‘AvxMath’, ’ClrMath’, ’GpuMath’, ’MklMath’, ’SseMath’]} = {‘name’: ‘AvxMath’, ’settings’: {}}, mini_batch_size=1, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
+```
+
 
 
 
@@ -115,7 +120,7 @@ optimization algorithm. This list can be created using ``sgd()`` or
 
 The Net# definition of the structure of the neural
 network. For more information about the Net# language, see
-[Reference Guide](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/)
+[Reference Guide](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/.md)
 
 
 ### init_wts_diameter
@@ -141,9 +146,9 @@ For GPU acceleration, it is recommended to use a miniBatchSize
 greater than one.  If you want to use the GPU acceleration, there are
 additional manual setup steps are required:
 
-* Download and install NVidia CUDA Toolkit 6.5 ([CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-65)). 
+* Download and install NVidia CUDA Toolkit 6.5 ([CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-65.md)). 
 
-* Download and install NVidia cuDNN v2 Library ([cudnn Library](https://developer.nvidia.com/rdp/cudnn-archive)). 
+* Download and install NVidia cuDNN v2 Library ([cudnn Library](https://developer.nvidia.com/rdp/cudnn-archive.md)). 
 
 * Find the libs directory of the MicrosoftRML package by calling ``system.file("mxLibs/x64", package = "MicrosoftML")``. 
 
@@ -316,25 +321,25 @@ memory.
 
 ## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
 ## See also
 
-[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees),
-``rx_fast_forest()``,
-``rx_fast_linear()``,
-[``rx_logistic_regression``](rx_logistic_regression#microsoftml.modules.logistic_regression.rx_logistic_regression),
-``rx_one_class_svm()``,
-``featurize_text()``,
-``categorical()``,
-``categorical_hash()``,
-``rx_predict.ml_model()``.
+[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees.md),
+[``rx_fast_forest``](rx_fast_forest#microsoftml.modules.fast_forest.rx_fast_forest.md),
+``rx_fast_linear``,
+[``rx_logistic_regression``](rx_logistic_regression#microsoftml.modules.logistic_regression.rx_logistic_regression.md),
+``rx_one_class_svm``,
+``featurize_text``,
+[``categorical``](categorical#microsoftml.modules.categorical.categorical.md),
+[``categorical_hash``](categorical_hash#microsoftml.modules.categorical.categorical_hash.md),
+[``rx_predict``](rx_predict#microsoftml.modules.predict.rx_predict.md)
 
 
 ## References
 
-[Wikipedia: Artificial neural network](http://en.wikipedia.org/wiki/Artificial_neural_network)
+[Wikipedia: Artificial neural network](http://en.wikipedia.org/wiki/Artificial_neural_network.md)
 
 
 ## Example

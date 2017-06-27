@@ -6,7 +6,11 @@ description: ""
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
+<<<<<<< HEAD
 ms.date: "06/26/2017" 
+=======
+ms.date: "06/27/2017" 
+>>>>>>> heidist-revoscalepy
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +28,14 @@ ms.custom: ""
  
 ---
 
+<<<<<<< HEAD
 # rx_get_job_status
+=======
+## rx_get_job_status
+
+
+### Usage
+>>>>>>> heidist-revoscalepy
 
 
 
@@ -35,6 +46,7 @@ revoscalepy.computecontext.RxJob.rx_get_job_status(job_info: revoscalepy.compute
 
 
 
+<<<<<<< HEAD
 # Parameters
 
 
@@ -42,3 +54,12 @@ revoscalepy.computecontext.RxJob.rx_get_job_status(job_info: revoscalepy.compute
 
 
 # Returns
+=======
+## Arguments
+
+
+#### job_info
+
+
+## Returns
+>>>>>>> heidist-revoscalepy

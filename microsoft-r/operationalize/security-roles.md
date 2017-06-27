@@ -213,4 +213,4 @@ Authentication: {
 
 + [Authentication options for R Server when operationalizing analytics](security-authentication.md)
 
-+ [Blog article: Role Based Access Control With MRS 9.1.0](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/04/10/role-based-access-control-with-mrs-9-1-0/)
++ [Blog article: Role Based Access Control With MRS 9.1.0](https://blogs.msdn.microsoft.com/rserver/2017/04/10/role-based-access-control-with-mrs-9-1-0/)

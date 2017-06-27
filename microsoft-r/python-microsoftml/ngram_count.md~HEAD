@@ -6,7 +6,7 @@ description: ""
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,9 +24,14 @@ ms.custom: ""
  
 ---
 
-# combine_transform_models
-
-microsoftml.modules.graph_composition.combine_transform_models(ml_transforms, transform_model, model)
+# ngram_count
 
 
-combine transform models
+
+```
+microsoftml.modules.text_analytics.ngram_count(ngram_length=1, skip_length=0, max_num_terms=10000000, weighting: [‘Tf’, ’Idf’, ’TfIdf’] = ‘Tf’, **kargs)
+```
+
+
+
+NGram Extractor Transform

@@ -6,7 +6,7 @@ description: "Transforms data from an input data set to an output data set."
 keywords: "manip" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,12 @@ ms.custom: ""
 
 # rx_predict
 
+
+
+```
 microsoftml.modules.predict.rx_predict(model, data, out_data=None, write_model_vars=False, extra_vars_to_write=None, suffix=None, overwrite=False, data_threads=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>, **kargs)
+```
+
 
 
 
@@ -192,12 +197,13 @@ representing the created output data.
 
 ## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
 ## See also
 
-``rx_data_step``, ``revo_scale_r``.
+``rx_data_step``,
+``rx_import_datasource``.
 
 
 ## Example

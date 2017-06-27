@@ -6,7 +6,7 @@ description: "Resizes an image to a specified dimension using a specified"
 keywords: "transform image" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# resize_image
+## resize_image
+
+
+### Usage
 
 
 
@@ -35,23 +38,23 @@ microsoftml.modules.image_analytics.resize_image(cols: [<class ‘str’>, <clas
 
 
 
-## Description
+### Description
 
 Resizes an image to a specified dimension using a specified
 resizing method.
 
 
-## Details
+### Details
 
 ``resize_image`` resizes an image to the specified height and width
 using a specified resizing method. The input variables to this transforms must
 be images, typically the result of the ``load_image`` transform.
 
 
-## Parameters
+### Arguments
 
 
-### cols
+##### cols
 
 A named list of character vectors of input variable names and
 the name of the output variable. Note that the input variables must
@@ -59,17 +62,17 @@ be of the same type. For one-to-one mappings between input and output
 variables, a named character vector can be used.
 
 
-### width
+##### width
 
 Specifies the width of the scaled image in pixels. The default value is 224.
 
 
-### height
+##### height
 
 Specifies the height of the scaled image in pixels. The default value is 224.
 
 
-### resizing_option
+##### resizing_option
 
 Specified the resizing method to use. Note that all methods
 are using bilinear interpolation. The options are:
@@ -83,17 +86,17 @@ are using bilinear interpolation. The options are:
 The default value is ``"IsoPad"``.
 
 
-## Returns
+### Returns
 
 A ``maml`` object defining the transform.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## Example
+### Example
 
 
 

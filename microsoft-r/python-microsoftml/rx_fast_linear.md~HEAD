@@ -6,7 +6,7 @@ description: "Creates a list containing the function name and arguments to train
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,12 @@ ms.custom: ""
 
 # rx_fast_linear
 
+
+
+```
 microsoftml.modules.fast_linear.rx_fast_linear(formula, data, method: [‘binary’, ’regression’] = ‘binary’, loss_function=None, l2_weight=None, l1_weight=None, train_threads=None, convergence_tolerance=0.1, max_iterations=None, shuffle=True, check_frequency=None, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
+```
+
 
 
 

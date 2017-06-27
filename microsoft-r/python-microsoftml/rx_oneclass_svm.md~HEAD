@@ -6,7 +6,7 @@ description: "Creates a list containing the function name and arguments to train
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,12 @@ ms.custom: ""
 
 # rx_oneclass_svm
 
-microsoftml.modules.oneclass_svm.rx_oneclass_svm(formula, data, cache_size=100, kernel: {‘AnomalyKernel’: [‘LinearKernel’, ’PolynomialKernel’, ’RbfKernel’, ’SigmoidKernel’]} = {‘settings’: {}, ’name’: ‘RbfKernel’}, epsilon=0.001, nu=0.1, shrink=True, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
+
+
+```
+microsoftml.modules.oneclass_svm.rx_oneclass_svm(formula, data, cache_size=100, kernel: {‘AnomalyKernel’: [‘LinearKernel’, ’PolynomialKernel’, ’RbfKernel’, ’SigmoidKernel’]} = {‘name’: ‘RbfKernel’, ’settings’: {}}, epsilon=0.001, nu=0.1, shrink=True, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
+```
+
 
 
 

@@ -6,7 +6,7 @@ description: "Categorical transform that can be performed on data before"
 keywords: "transform" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,12 @@ ms.custom: ""
 
 # categorical
 
+
+
+```
 microsoftml.modules.categorical.categorical(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], output_kind: [‘Bag’, ‘Ind’, ‘Key’, ‘Bin’] = ‘Ind’, max_num_terms=1000000, terms=None, sort: [‘Occurrence’, ‘Value’] = ‘Occurrence’, text_key_values=False, **kargs)
+```
+
 
 
 
@@ -53,7 +58,7 @@ dictionary for each column that it is applied to.
 ## Parameters
 
 
-### vars
+### cols
 
 A character vector or list of variable names to transform. If
 named, the names represent the names of new variables to be created.
@@ -95,16 +100,16 @@ A ``maml`` object defining the transform.
 
 ## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
 ## See also
 
-[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees),
-[``rx_fast_forest``](rx_fast_forest#microsoftml.modules.fast_forest.rx_fast_forest),
-[``rx_neural_net``](rx_neural_network#microsoftml.modules.neural_network.rx_neural_network),
-[``rx_oneclass_svm``](rx_oneclass_svm#microsoftml.modules.oneclass_svm.rx_oneclass_svm),
-[``rx_logistic_regression``](rx_logistic_regression#microsoftml.modules.logistic_regression.rx_logistic_regression).
+[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees.md),
+[``rx_fast_forest``](rx_fast_forest#microsoftml.modules.fast_forest.rx_fast_forest.md),
+[``rx_neural_net``](rx_neural_network#microsoftml.modules.neural_network.rx_neural_network.md),
+[``rx_oneclass_svm``](rx_oneclass_svm#microsoftml.modules.oneclass_svm.rx_oneclass_svm.md),
+[``rx_logistic_regression``](rx_logistic_regression#microsoftml.modules.logistic_regression.rx_logistic_regression.md)
 
 
 ## Example

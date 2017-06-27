@@ -6,7 +6,7 @@ description: "Machine Learning Fast Forest"
 keywords: "models, classification, regression" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,12 @@ ms.custom: ""
 
 # rx_fast_forest
 
+
+
+```
 microsoftml.modules.fast_forest.rx_fast_forest(formula, data, method: [‘binary’, ’regression’] = ‘binary’, num_trees=100, num_leaves=20, min_split=10, example_fraction=0.7, feature_fraction=1, split_fraction=1, num_bins=255, first_use_penalty=0, gain_conf_level=0, train_threads=8, random_seed=None, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
+```
+
 
 
 
@@ -57,7 +62,7 @@ Decision trees have several advantages:
 
 Fast forest regression is a random forest and quantile regression forest
 implementation using the regression tree learner in
-[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees).
+[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees.md).
 The model consists of an ensemble of decision trees. Each tree in a decision
 forest outputs a Gaussian distribution by way of prediction. An aggregation
 is performed over the ensemble of trees to find a Gaussian distribution
@@ -302,29 +307,29 @@ memory.
 
 ## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
 ## See also
 
-[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees),
-``rx_fast_linear()``,
-[``rx_logistic_regression``](rx_logistic_regression#microsoftml.modules.logistic_regression.rx_logistic_regression),
-``rx_neural_net()``,
-``rx_one_class_svm()``,
-``featurize_text()``,
-``categorical()``,
-``categorical_hash()``,
-``rx_predict.ml_model()``.
+[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees.md),
+[``rx_fast_forest``](microsoftml/modules/fast_forest/rx_fast_forest.md),
+``rx_fast_linear``,
+[``rx_logistic_regression``](rx_logistic_regression#microsoftml.modules.logistic_regression.rx_logistic_regression.md),
+``rx_one_class_svm``,
+``featurize_text``,
+[``categorical``](categorical#microsoftml.modules.categorical.categorical.md),
+[``categorical_hash``](categorical_hash#microsoftml.modules.categorical.categorical_hash.md),
+[``rx_predict``](rx_predict#microsoftml.modules.predict.rx_predict.md)
 
 
 ## References
 
-[Wikipedia: Random forest](http://en.wikipedia.org/wiki/Random_forest)
+[Wikipedia: Random forest](http://en.wikipedia.org/wiki/Random_forest.md)
 
-[Quantile regression forest](http://jmlr.org/papers/volume7/meinshausen06a/meinshausen06a.pdf)
+[Quantile regression forest](http://jmlr.org/papers/volume7/meinshausen06a/meinshausen06a.pdf.md)
 
-[From Stumps to Trees to Forests](https://blogs.technet.microsoft.com/machinelearning/2014/09/10/from-stumps-to-trees-to-forests/)
+[From Stumps to Trees to Forests](https://blogs.technet.microsoft.com/machinelearning/2014/09/10/from-stumps-to-trees-to-forests/.md)
 
 
 ## Example

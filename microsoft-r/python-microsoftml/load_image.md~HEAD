@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Image Featurization Transform" 
-description: "Featurizes an image using a pre-trained deep neural network model." 
-keywords: "transform image featurize dnn cnn resnet alexnet" 
+title: "Machine Learning Load Image Transform" 
+description: "Loads image data." 
+keywords: "transform image" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,53 +24,36 @@ ms.custom: ""
  
 ---
 
-# featurize_image
+# load_image
 
-microsoftml.modules.image_analytics.featurize_image(cols: [<class ‘dict’>, <class ‘str’>], dnn_model: [‘Resnet18’, ‘Resnet50’, ‘Resnet101’, ‘Alexnet’] = ‘Resnet18’, **kargs)
+
+
+```
+microsoftml.modules.image_analytics.load_image(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], **kargs)
+```
+
 
 
 
 ## Description
 
-Featurizes an image using a pre-trained deep neural network model.
+Loads image data.
 
 
 ## Details
 
-``featurize_image`` featurizes an image using the specified
-pre-trained deep neural network model. The input variables to this transforms must
-be extracted pixel values.
+``load_image`` loads images from paths.
 
 
 ## Parameters
 
 
-### var
+### cols
 
-Input variable containing extracted pixel values.
-
-
-### out_var
-
-The prefix of the output variables containing the image features.
-If null, the input variable name will be used. The default value is *None*.
-
-
-### dnn_model
-
-The pre-trained deep neural network. The possible options are:
-
-* ``"resnet18"`` 
-
-* ``"resnet50"`` 
-
-* ``"resnet101"`` 
-
-* ``"alexnet"`` 
-
-The default value is ``"resnet18"``.
-See [Deep Residual Learning for Image Recognition](http://www.cv-foundation.org/openaccess/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html)
-for details about ResNet.
+A named list of character vectors of input variable names and
+the name of the output variable. Note that the input variables must
+be of the same type. For one-to-one mappings between input and output
+variables, a named character vector can be used.
 
 
 ## Returns
@@ -80,7 +63,7 @@ A ``maml`` object defining the transform.
 
 ## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
 ## Example

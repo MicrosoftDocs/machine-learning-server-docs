@@ -6,7 +6,7 @@ description: "Machine Learning Logistic Regression"
 keywords: "models classification" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_logistic_regression
+## rx_logistic_regression
+
+
+### Usage
 
 
 
@@ -35,12 +38,12 @@ microsoftml.modules.logistic_regression.rx_logistic_regression(formula, data, me
 
 
 
-## Description
+### Description
 
 Machine Learning Logistic Regression
 
 
-## Details
+### Details
 
 Logistic Regression is a classification method used to predict
 the value of a categorical dependent variable from its relationship to one
@@ -88,42 +91,42 @@ optimal values for the regularization parameters is important for the
 performance of the logistic regression model.
 
 
-## Parameters
+### Arguments
 
 
-### formula
+##### formula
 
 The formula as described in ``revo_scale_r``.
 Interaction terms and ``F()`` are not currently supported in the
 .
 
 
-### data
+##### data
 
 A data source object or a character string specifying a
 *.xdf* file or a data frame object.
 
 
-### method
+##### method
 
 A character string that specifies the type of Logistic Regression:
 ``"binary"`` for the default binary classification logistic regression or
 ``"multi"`` for multinomial logistic regression.
 
 
-### l2_weight
+##### l2_weight
 
 The L2 regularization weight. Its value must be greater than
 or equal to ``0`` and the default value is set to ``1``.
 
 
-### l1_weight
+##### l1_weight
 
 The L1 regularization weight. Its value must be greater than
 or equal to ``0`` and the default value is set to ``1``.
 
 
-### opt_tol
+##### opt_tol
 
 Threshold value for optimizer convergence. If the improvement
 between iterations is less than the threshold, the algorithm stops and
@@ -131,7 +134,7 @@ returns the current model. Smaller values are slower, but more accurate.
 The default value is ``1e-07``.
 
 
-### memory_size
+##### memory_size
 
 Memory size for L-BFGS, specifying the number of past
 positions and gradients to store for the computation of the next step. This
@@ -141,14 +144,14 @@ training is faster but less accurate. Must be greater than or equal to
 ``1`` and the default value is ``20``.
 
 
-### max_iterations
+##### max_iterations
 
 Sets the maximum number of iterations. After this number
 of steps, the algorithm stops even if it has not satisfied convergence
 criteria.
 
 
-### show_training_stats
+##### show_training_stats
 
 Specify ``TRUE`` to show the statistics of
 training data and the trained model; otherwise, ``FALSE``. The
@@ -156,7 +159,7 @@ default value is ``FALSE``. For additional information about model
 statistics, see ``summary.ml_model()``.
 
 
-### sgd_init_tol
+##### sgd_init_tol
 
 Set to a number greater than 0 to use Stochastic
 Gradient Descent (SGD) to find the initial parameters. A non-zero value
@@ -164,7 +167,7 @@ set specifies the tolerance SGD uses to determine convergence.
 The default value is ``0`` specifying that SGD is not used.
 
 
-### init_wts_scale
+##### init_wts_scale
 
 Sets the initial weights diameter that specifies
 the range from which values are drawn for the initial weights. These
@@ -175,7 +178,7 @@ default value is ``0``, which specifies that allthe  weights are
 initialized to ``0``.
 
 
-### train_threads
+##### train_threads
 
 The number of threads to use in training the model.
 This should be set to the number of cores on the machine. Note that
@@ -185,7 +188,7 @@ multi-threading. If *None* the number of threads to use is
 determined internally. The default value is *None*.
 
 
-### dense_optimizer
+##### dense_optimizer
 
 If ``TRUE``, forces densification of the internal
 optimization vectors. If ``FALSE``, enables the logistic regression
@@ -195,7 +198,7 @@ optimizer to use a dense internal state, which may help alleviate load
 on the garbage collector for some varieties of larger problems.
 
 
-### normalize
+##### normalize
 
 Specifies the type of automatic normalization used:
 
@@ -216,24 +219,25 @@ and ``0 <= b <= 1`` and ``b - a = 1``. This normalizer preserves
 sparsity by mapping zero to zero.
 
 
-### ml_transforms
+##### ml_transforms
 
 Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
-to be performed. See ``featurize_text()``, ``categorical()``,
+to be performed. See [``featurize_text``](featurize_text.md),
+``categorical``,
 and ``categorical_hash()``, for transformations that aresupported.
 These transformations are performed after any specified R transformations.
 The default avlue is *None*.
 
 
-### ml_transform_vars
+##### ml_transform_vars
 
 Specifies a character vector of variable names
 to be used in ``mlTransforms`` or *None* if none are to be used.
 The default value is *None*.
 
 
-### row_selection
+##### row_selection
 
 Specifies the rows (observations) from the data set that
 are to be used by the model with the name of a logical variable from the
@@ -250,7 +254,7 @@ defined outside of the function call using the ``expression()``
 function.
 
 
-### transforms
+##### transforms
 
 An expression of the form that represents
 the first round of variable transformations. As with
@@ -258,25 +262,25 @@ all expressions, ``transforms`` (or ``row_selection``) can be defined
 outside of the function call using the ``expression()`` function.
 
 
-### transform_objects
+##### transform_objects
 
 A named list that contains objects that can be
 referenced by ``transforms``, ``transformsFunc``, and
 ``row_selection``.
 
 
-### transform_func
+##### transform_func
 
 The variable transformation function.
 
 
-### transform_vars
+##### transform_vars
 
 A character vector of input data set variables needed for
 the transformation function.
 
 
-### transform_packages
+##### transform_packages
 
 A character vector specifying additional R packages
 (outside of those specified in ``rxGetOption("transformPackages")``) to
@@ -288,7 +292,7 @@ implicitly via their ``formula`` or ``row_selection`` arguments.  The
 no packages outside ``rxGetOption("transformPackages")`` are preloaded.
 
 
-### transform_envir
+##### transform_envir
 
 A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
@@ -296,13 +300,13 @@ If ``transformEnvir = NULL``, a new “hash” environment with parent
 ``baseenv()`` is used instead.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 Specifies the number of blocks to read for each chunk
 of data read from the data source.
 
 
-### report_progress
+##### report_progress
 
 An integer value that specifies the level of reporting
 on the row processing progress:
@@ -316,14 +320,14 @@ on the row processing progress:
 * ``3``: rows processed and all timings are reported. 
 
 
-### verbose
+##### verbose
 
 An integer value that specifies the amount of output wanted.
 If ``0``, no verbose output is printed during calculations. Integer
 values from ``1`` to ``4`` provide increasing amounts of information.
 
 
-### compute_context
+##### compute_context
 
 Sets the context in which computations are executed,
 specified with a valid ``revo_scale_r``.
@@ -331,43 +335,43 @@ Currently local and ``revo_scale_r`` compute contexts
 are supported.
 
 
-### ensemble
+##### ensemble
 
 Control parameters for ensembling.
 
 
-## Returns
+### Returns
 
 * ``rxLogisticRegression``: A ``rxLogisticRegression`` object with the trained model. 
 
 * ``LogisticReg``: A learner specification object of class ``maml`` for the Logistic Reg trainer. 
 
 
-## Note
+### Note
 
 This algorithm will attempt to load the entire dataset into memory
 when ``trainThreads > 1`` (multi-threading).
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
-[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees.md),
-[``rx_fast_forest``](rx_fast_forest#microsoftml.modules.fast_forest.rx_fast_forest.md),
+[``rx_fast_trees``](rx_fast_trees.md),
+[``rx_fast_forest``](rx_fast_forest.md),
 ``rx_fast_linear``,
 ``rx_neural_net``,
 ``rx_one_class_svm``,
-``featurize_text``,
-[``categorical``](categorical#microsoftml.modules.categorical.categorical.md),
-[``categorical_hash``](categorical_hash#microsoftml.modules.categorical.categorical_hash.md),
-[``rx_predict``](rx_predict#microsoftml.modules.predict.rx_predict.md)
+[``featurize_text``](featurize_text.md),
+[``categorical``](categorical.md),
+[``categorical_hash``](categorical_hash.md),
+[``rx_predict``](rx_predict.md)
 
 
-## References
+### References
 
 ` Wikipedia: L-BFGS <[http://en.wikipedia.org/wiki/L-BFGS](http://en.wikipedia.org/wiki/L-BFGS.md)>`_
 
@@ -381,7 +385,7 @@ Training of L1-Regularized Log-Linear Models <[http://research.microsoft.com/app
 and L2 Regularization for Machine Learning <[https://msdn.microsoft.com/en-us/magazine/dn904675.aspx](https://msdn.microsoft.com/en-us/magazine/dn904675.aspx.md)>`_
 
 
-## Example
+### Example
 
 
 

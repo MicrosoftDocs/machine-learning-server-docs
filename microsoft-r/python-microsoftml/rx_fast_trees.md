@@ -6,7 +6,7 @@ description: "Machine Learning Fast Tree"
 keywords: "models, classification, regression" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_fast_trees
+## rx_fast_trees
+
+
+### Usage
 
 
 
@@ -35,12 +38,12 @@ microsoftml.modules.fast_trees.rx_fast_trees(formula, data, method: [‘binary�
 
 
 
-## Description
+### Description
 
 Machine Learning Fast Tree
 
 
-## Details
+### Details
 
 rxFastTrees is an implementation of FastRank. FastRank is an efficient
 implementation of the MART gradient boosting algorithm. Gradient boosting is
@@ -82,37 +85,37 @@ versions is in the calibration settings, which are needed only for
 classification.
 
 
-## Parameters
+### Arguments
 
 
-### formula
+##### formula
 
 The formula as described in ``revo_scale_r``.
 Interaction terms and ``F()`` are not currently supported in the
 .
 
 
-### data
+##### data
 
 A data source object or a character string specifying a
 *.xdf* file or a data frame object.
 
 
-### method
+##### method
 
 A character string that specifies the type of Fast Tree:
 ``"binary"`` for the default Fast Tree Binary Classification or
 ``"regression"`` for Fast Tree Regression.
 
 
-### num_trees
+##### num_trees
 
 Specifies the total number of decision trees to create in
 the ensemble.By creating more decision trees, you can potentially get
 better coverage, but the training time increases. The default value is 100.
 
 
-### num_leaves
+##### num_leaves
 
 The maximum number of leaves (terminal nodes) that can be created
 in any tree. Higher values potentially increase the size of the tree and get
@@ -120,7 +123,7 @@ better precision, but risk overfitting and requiring longer training times.
 The default value is 20.
 
 
-### learning_rate
+##### learning_rate
 
 Determines the size of the step taken in the direction
 of the gradient in each step of the learning process.  This determines how
@@ -129,7 +132,7 @@ size is too big, you might overshoot the optimal solution.  If the step size
 is too samll, training takes longer to converge to the best solution.
 
 
-### min_split
+##### min_split
 
 Minimum number of training instances required to form a
 leaf. That is, the minimal number of documents allowed in a leaf of a
@@ -138,25 +141,25 @@ in each level of the tree (node) are randomly divided. The default value is
 10. Only the number of instances is counted even if instances are weighted.
 
 
-### example_fraction
+##### example_fraction
 
 The fraction of randomly chosen instances to use
 for each tree. The default value is 0.7.
 
 
-### feature_fraction
+##### feature_fraction
 
 The fraction of randomly chosen features to use for
 each tree. The default value is 1.
 
 
-### split_fraction
+##### split_fraction
 
 The fraction of randomly chosen features to use on
 each split. The default value is 1.
 
 
-### num_bins
+##### num_bins
 
 Maximum number of distinct values (bins) per feature. If the
 feature has fewer values than the number indicated, each value is placed
@@ -164,7 +167,7 @@ in its own bin.  If there are more values, the algorithm creates
 ``numBins`` bins.
 
 
-### first_use_penalty
+##### first_use_penalty
 
 The feature first use penalty coefficient. This is a
 form of regularization that incurs a penalty for using a new feature when
@@ -172,48 +175,49 @@ creating the tree. Increase this value to create trees that don’t use many
 features. The default value is 0.
 
 
-### gain_conf_level
+##### gain_conf_level
 
 Tree fitting gain confidence requirement (should be in
 the range [0,1)). The default value is 0.
 
 
-### unbalanced_sets
+##### unbalanced_sets
 
 If ``TRUE``, derivatives optimized for unbalanced
 sets are used. Only applicable when ``type`` equal to ``"binary"``.
 The default value is ``FALSE``.
 
 
-### train_threads
+##### train_threads
 
 The number of threads to use in training. The default
 value is 8.
 
 
-### random_seed
+##### random_seed
 
 Specifies the random seed. The default value is *None*.
 
 
-### ml_transforms
+##### ml_transforms
 
 Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
-to be performed. See ``featurize_text()``, ``categorical()``,
+to be performed. See [``featurize_text``](featurize_text.md),
+``categorical``,
 and ``categorical_hash()``, for transformations that are supported.
 These transformations are performed after any specified R transformations.
 The default value is *None*.
 
 
-### ml_transform_vars
+##### ml_transform_vars
 
 Specifies a character vector of variable names
 to be used in ``mlTransforms`` or *None* if none are to be used.
 The default value is *None*.
 
 
-### row_selection
+##### row_selection
 
 Specifies the rows (observations) from the data set that
 are to be used by the model with the name of a logical variable from the
@@ -230,7 +234,7 @@ defined outside of the function call using the ``expression()``
 function.
 
 
-### transforms
+##### transforms
 
 An expression of the form  that represents the
 first round of variable transformations. As with
@@ -238,25 +242,25 @@ all expressions, ``transforms`` (or ``row_selection``) can be defined
 outside of the function call using the ``expression()`` function.
 
 
-### transform_objects
+##### transform_objects
 
 A named list that contains objects that can be
 referenced by ``transforms``, ``transform_func``, and
 ``row_selection``.
 
 
-### transform_func
+##### transform_func
 
 The variable transformation function.
 
 
-### transform_vars
+##### transform_vars
 
 A character vector of input data set variables needed for
 the transformation function.
 
 
-### transform_packages
+##### transform_packages
 
 A character vector specifying additional R packages
 (outside of those specified in ``rxGetOption("transformPackages")``) to
@@ -268,7 +272,7 @@ implicitly via their ``formula`` or ``row_selection`` arguments.  The
 no packages outside ``rxGetOption("transformPackages")`` are preloaded.
 
 
-### transform_envir
+##### transform_envir
 
 A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
@@ -276,13 +280,13 @@ If ``transformEnvir = NULL``, a new “hash” environment with parent
 ``baseenv()`` is used instead.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 Specifies the number of blocks to read for each chunk
 of data read from the data source.
 
 
-### report_progress
+##### report_progress
 
 An integer value that specifies the level of reporting
 on the row processing progress:
@@ -296,14 +300,14 @@ on the row processing progress:
 * ``3``: rows processed and all timings are reported. 
 
 
-### verbose
+##### verbose
 
 An integer value that specifies the amount of output wanted.
 If ``0``, no verbose output is printed during calculations. Integer
 values from ``1`` to ``4`` provide increasing amounts of information.
 
 
-### compute_context
+##### compute_context
 
 Sets the context in which computations are executed,
 specified with a valid ``revo_scale_r``.
@@ -311,50 +315,50 @@ Currently local and ``revo_scale_r`` compute contexts
 are supported.
 
 
-### ensemble
+##### ensemble
 
 Control parameters for ensembling.
 
 
-## Returns
+### Returns
 
 * ``rxFastTrees``: A ``rxFastTrees`` object with the trained model. 
 
 * ``FastTree``: A learner specification object of class ``maml`` for the Fast Tree trainer. 
 
 
-## Note
+### Note
 
 This algorithm is multi-threaded and will always attempt to load the entire dataset into
 memory.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 [``rx_fast_trees``](microsoftml/modules/fast_trees/rx_fast_trees.md),
-[``rx_fast_forest``](rx_fast_forest#microsoftml.modules.fast_forest.rx_fast_forest.md),
+[``rx_fast_forest``](rx_fast_forest.md),
 ``rx_fast_linear``,
-[``rx_logistic_regression``](rx_logistic_regression#microsoftml.modules.logistic_regression.rx_logistic_regression.md),
-``rx_one_class_svm``,
-``featurize_text``,
-[``categorical``](categorical#microsoftml.modules.categorical.categorical.md),
-[``categorical_hash``](categorical_hash#microsoftml.modules.categorical.categorical_hash.md),
-[``rx_predict``](rx_predict#microsoftml.modules.predict.rx_predict.md)
+[``rx_logistic_regression``](rx_logistic_regression.md),
+[``rx_oneclass_svm``](rx_oneclass_svm.md),
+[``categorical``](categorical.md),
+[``categorical_hash``](categorical_hash.md),
+[``featurize_text``](featurize_text.md),
+[``rx_predict``](rx_predict.md)
 
 
-## References
+### References
 
-[Wikipedia: Gradient boosting (Gradient tree boosting)](https://en.wikipedia.org/wiki/Gradient_boosting#Gradient_tree_boosting.md)
+[Wikipedia: Gradient boosting (Gradient tree boosting)](https://en.wikipedia.org/wiki/Gradient_boosting.md)
 
 [Greedy function approximation: A gradient boosting machine.](http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aos/1013203451.md)
 
 
-## Example
+### Example
 
 
 

@@ -6,7 +6,7 @@ description: "Resizes an image to a specified dimension using a specified"
 keywords: "transform image" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/21/2017" 
+ms.date: "06/26/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,12 @@ ms.custom: ""
 
 # resize_image
 
+
+
+```
 microsoftml.modules.image_analytics.resize_image(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], width=224, height=224, resizing_option: [‘IsoPad’, ‘IsoCrop’, ‘Aniso’] = ‘IsoCrop’, **kargs)
+```
+
 
 
 
@@ -46,7 +51,7 @@ be images, typically the result of the ``load_image`` transform.
 ## Parameters
 
 
-### vars
+### cols
 
 A named list of character vectors of input variable names and
 the name of the output variable. Note that the input variables must
@@ -85,7 +90,7 @@ A ``maml`` object defining the transform.
 
 ## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
 ## Example

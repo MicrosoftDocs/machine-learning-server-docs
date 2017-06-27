@@ -6,7 +6,11 @@ description: "Creates a compute context for running RevoScalePy analyses inside 
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
+<<<<<<< HEAD
 ms.date: "06/26/2017" 
+=======
+ms.date: "06/27/2017" 
+>>>>>>> heidist-revoscalepy
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +28,14 @@ ms.custom: ""
  
 ---
 
+<<<<<<< HEAD
 # RxInSqlServer
+=======
+## RxInSqlServer
+
+
+### Usage
+>>>>>>> heidist-revoscalepy
 
 
 
@@ -35,22 +46,37 @@ revoscalepy.computecontext.RxInSqlServer.RxInSqlServer(connection_string: str, n
 
 
 
+<<<<<<< HEAD
 ## Description
+=======
+### Description
+>>>>>>> heidist-revoscalepy
 
 Creates a compute context for running RevoScalePy analyses inside Microsoft SQL Server.
 Currently only supported in Windows.
 
 
+<<<<<<< HEAD
 ## Parameters
 
 
 ### connection_string
+=======
+### Arguments
+
+
+##### connection_string
+>>>>>>> heidist-revoscalepy
 
 An ODBC connection string used to connect to the
 Microsoft SQL Server database.
 
 
+<<<<<<< HEAD
 ### num_tasks
+=======
+##### num_tasks
+>>>>>>> heidist-revoscalepy
 
 Number of tasks (processes) to run for each computation.
 This is the maximum number of tasks that will be used; SQL Server may start
@@ -67,7 +93,11 @@ numCoresToUse and numTasks that depends upon the specific algorithm, the
 type of data, the hardware, and the other jobs that are running.
 
 
+<<<<<<< HEAD
 ### wait
+=======
+##### wait
+>>>>>>> heidist-revoscalepy
 
 logical value. If True, the job will be blocking and will not
 return until it has completed or has failed. If False, the job will be
@@ -77,7 +107,11 @@ The client connection with SQL Server must be maintained while the job is
 running, even in non-blocking mode.
 
 
+<<<<<<< HEAD
 ### console_output
+=======
+##### console_output
+>>>>>>> heidist-revoscalepy
 
 logical scalar.If True, causes the standard output
 of the Python process started by SQL Server to be printed to the user console.
@@ -85,7 +119,11 @@ This value may be overwritten by passing a non-None logical value to the
 consoleOutput argument provided in rxExec and rxGetJobResults.
 
 
+<<<<<<< HEAD
 ### auto_cleanup
+=======
+##### auto_cleanup
+>>>>>>> heidist-revoscalepy
 
 logical scalar. If True, the default behavior is to
 clean up the temporary computational artifacts and delete the result
@@ -97,27 +135,46 @@ accumulation of compute artifacts which you may eventually need to delete
 before they fill up your hard drive.
 
 
+<<<<<<< HEAD
 ### execution_timeout_seconds
+=======
+##### execution_timeout_seconds
+>>>>>>> heidist-revoscalepy
 
 numeric scalar. Defaults to 0 which means
 infinite wait.
 
 
+<<<<<<< HEAD
 ### packages_to_load
+=======
+##### packages_to_load
+>>>>>>> heidist-revoscalepy
 
 optional character vector specifying additional
 packages to be loaded on the nodes when jobs are run in this compute context.
 
 
+<<<<<<< HEAD
 ## Author
+=======
+### Author
+>>>>>>> heidist-revoscalepy
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
+<<<<<<< HEAD
 ## See also
 
 
 ## Example
+=======
+### See also
+
+
+### Example
+>>>>>>> heidist-revoscalepy
 
 
 

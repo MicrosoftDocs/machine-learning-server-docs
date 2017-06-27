@@ -6,7 +6,7 @@ description: "Scores natual language text and creates a column that"
 keywords: "transform text sentiment nlp" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# get_sentiment
+## get_sentiment
+
+
+### Usage
 
 
 
@@ -35,57 +38,57 @@ microsoftml.modules.text_analytics.get_sentiment(cols: [<class ‘str’>, <clas
 
 
 
-## Description
+### Description
 
 Scores natual language text and creates a column that
 contains probabilities that the sentiments in the text are positive.
 
 
-## Details
+### Details
 
 The ``get_sentiment`` transform returns the probability
 that the sentiment of a natural text is positive. Currently supports
 only the English language.
 
 
-## Parameters
+### Arguments
 
 
-### cols
+##### cols
 
 A character vector or list of variable names to transform. If
 named, the names represent the names of new variables to be created.
 
 
-### kargs
+##### kargs
 
 Additional arguments sent to compute engine.
 
 
-## Returns
+### Returns
 
 A ``maml`` object defining the transform.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
-[``rx_fast_trees``](rx_fast_trees#microsoftml.modules.fast_trees.rx_fast_trees.md),
-[``rx_fast_forest``](rx_fast_forest#microsoftml.modules.fast_forest.rx_fast_forest.md),
+[``rx_fast_trees``](rx_fast_trees.md),
+[``rx_fast_forest``](rx_fast_forest.md),
 ``rx_fast_linear``,
-[``rx_logistic_regression``](rx_logistic_regression#microsoftml.modules.logistic_regression.rx_logistic_regression.md),
+[``rx_logistic_regression``](rx_logistic_regression.md),
 ``rx_one_class_svm``,
-``featurize_text``,
-[``categorical``](categorical#microsoftml.modules.categorical.categorical.md),
-[``categorical_hash``](categorical_hash#microsoftml.modules.categorical.categorical_hash.md),
-[``rx_predict.ml_model``](rx_predict#microsoftml.modules.predict.rx_predict.md)
+[``featurize_text``](featurize_text.md),
+[``categorical``](categorical.md),
+[``categorical_hash``](categorical_hash.md),
+[``rx_predict.ml_model``](rx_predict.md)
 
 
-## Example
+### Example
 
 
 

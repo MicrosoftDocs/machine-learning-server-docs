@@ -6,7 +6,11 @@ description: ""
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "HeidiSteen" 
 manager: "" 
+<<<<<<< HEAD
 ms.date: "06/26/2017" 
+=======
+ms.date: "06/27/2017" 
+>>>>>>> heidist-revoscalepy
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +28,11 @@ ms.custom: ""
  
 ---
 
+<<<<<<< HEAD
 # revoscalepy
+=======
+## revoscalepy
+>>>>>>> heidist-revoscalepy
 
 * [computecontext](computecontext.md) 
 
@@ -35,7 +43,11 @@ ms.custom: ""
 * [utils](utils.md) 
 
 
+<<<<<<< HEAD
 ## computecontext
+=======
+### computecontext
+>>>>>>> heidist-revoscalepy
 
 * [RxComputeContext](computecontext/RxComputeContext.md) 
 
@@ -56,12 +68,20 @@ ms.custom: ""
 * [RxLocalSeq](computecontext/RxLocalSeq.md) 
 
 
+<<<<<<< HEAD
 ## etl
+=======
+### etl
+>>>>>>> heidist-revoscalepy
 
 * [rx_import_datasource](etl/RxImport.md) 
 
 
+<<<<<<< HEAD
 ## functions
+=======
+### functions
+>>>>>>> heidist-revoscalepy
 
 * [rx_data_step](functions/RxDataStep.md) 
 
@@ -79,7 +99,11 @@ ms.custom: ""
 
 * [rx_logit](functions/RxLogit.md) 
 
+<<<<<<< HEAD
 * [rx_predict](functions/RxPredict.md) 
+=======
+* [``rx_predict``: Score using a Microsoft ML Machine Learning model](functions/RxPredict.md) 
+>>>>>>> heidist-revoscalepy
 
 * [rx_predict_default](functions/RxPredict_default.md) 
 
@@ -94,6 +118,10 @@ ms.custom: ""
 * [rx_write_object](functions/RxWriteObject.md) 
 
 
+<<<<<<< HEAD
 ## utils
+=======
+### utils
+>>>>>>> heidist-revoscalepy
 
 * [RxOptions](utils/RxOptions.md) 

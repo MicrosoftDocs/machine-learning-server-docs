@@ -6,7 +6,11 @@ description: "Store/Retrieve objects to/from ODBC data sources. The APIs are mod
 keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
+<<<<<<< HEAD
 ms.date: "06/26/2017" 
+=======
+ms.date: "06/27/2017" 
+>>>>>>> heidist-revoscalepy
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +28,14 @@ ms.custom: ""
  
 ---
 
+<<<<<<< HEAD
 # rx_read_object
+=======
+## rx_read_object
+
+
+### Usage
+>>>>>>> heidist-revoscalepy
 
 
 
@@ -35,13 +46,21 @@ revoscalepy.functions.RxReadObject.rx_read_object(src: revoscalepy.datasource.Rx
 
 
 
+<<<<<<< HEAD
 ## Description
+=======
+### Description
+>>>>>>> heidist-revoscalepy
 
 Store/Retrieve objects to/from ODBC data sources. The APIs are modelled
 after a simple key value store.
 
 
+<<<<<<< HEAD
 ## Details
+=======
+### Details
+>>>>>>> heidist-revoscalepy
 
 rx_write_object stores an object into the ODBC data source. The object
 is identified by a key, and optionally, by a version (key+version). By
@@ -69,69 +88,116 @@ conversions to other types might work, however, they are dependant on
 the ODBC driver and on the underlying package functions.
 
 
+<<<<<<< HEAD
 ## Parameters
 
 
 ### key
+=======
+### Arguments
+
+
+##### key
+>>>>>>> heidist-revoscalepy
 
 a character string identifying the object. The intended use is
 for the key+version to be unique.
 
 
+<<<<<<< HEAD
 ### value
+=======
+##### value
+>>>>>>> heidist-revoscalepy
 
 the object being stored into the data source.
 
 
+<<<<<<< HEAD
 ### version
+=======
+##### version
+>>>>>>> heidist-revoscalepy
 
 None or a character string which carries the version of the
 object. Combined with key identifies the object.
 
 
+<<<<<<< HEAD
 ### key_name
+=======
+##### key_name
+>>>>>>> heidist-revoscalepy
 
 character string specifying the column name for the key in
 the underlying table.
 
 
+<<<<<<< HEAD
 ### value_name
+=======
+##### value_name
+>>>>>>> heidist-revoscalepy
 
 character string specifying the column name for the
 objects in the underlying table.
 
 
+<<<<<<< HEAD
 ### version_name
+=======
+##### version_name
+>>>>>>> heidist-revoscalepy
 
 character string specifying the column name for the
 version in the underlying table.
 
 
+<<<<<<< HEAD
 ### serialize
+=======
+##### serialize
+>>>>>>> heidist-revoscalepy
 
 logical value. Dictates whether the object is to be
 serialized. Only raw values are supported if serialization is off.
 
 
+<<<<<<< HEAD
 ### compress
+=======
+##### compress
+>>>>>>> heidist-revoscalepy
 
 character string defining the compression algorithm to use
 for memCompress.
 
 
+<<<<<<< HEAD
 ### deserialize
+=======
+##### deserialize
+>>>>>>> heidist-revoscalepy
 
 logical value. Defines whether the object is to be
 de-serialized.
 
 
+<<<<<<< HEAD
 ### decompress
+=======
+##### decompress
+>>>>>>> heidist-revoscalepy
 
 character string defining the compression algorithm to
 use for memDecompress.
 
 
+<<<<<<< HEAD
 ### overwrite
+=======
+##### overwrite
+>>>>>>> heidist-revoscalepy
 
 logical value. If True, rx_write_object first removes the
 key (or the key+version combination) before writing the new value. Even
@@ -139,28 +205,47 @@ when overwrite is False, rx_write_object may still succeed if there is no
 database constraint (or index) enforcing uniqueness.
 
 
+<<<<<<< HEAD
 ### all
+=======
+##### all
+>>>>>>> heidist-revoscalepy
 
 logical value. True to remove all objects from the data source.
 If True, the ‘key’ parameter is ignored.
 
 
+<<<<<<< HEAD
 ## Returns
+=======
+### Returns
+>>>>>>> heidist-revoscalepy
 
 rx_read_object returns an object. rx_write_object and rx_delete_object
 return logical, True on success. rx_list_keys returns a single column
 data frame containing strings.
 
 
+<<<<<<< HEAD
 ## Author
+=======
+### Author
+>>>>>>> heidist-revoscalepy
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
+<<<<<<< HEAD
 ## See also
 
 
 ## Example
+=======
+### See also
+
+
+### Example
+>>>>>>> heidist-revoscalepy
 
 
 

@@ -6,7 +6,7 @@ description: "Specified columns to drop from the dataset."
 keywords: "transform" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# drop_columns
+## drop_columns
+
+
+### Usage
 
 
 
@@ -35,24 +38,24 @@ microsoftml.modules.schema_manipulation.drop_columns(cols: (<class ‘list’>, 
 
 
 
-## Description
+### Description
 
 Specified columns to drop from the dataset.
 
 
-## Parameters
+### Arguments
 
 
-### cols
+##### cols
 
 A character vector or list of the names of the variables to drop.
 
 
-## Returns
+### Returns
 
 A ``maml`` object defining the transform.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)

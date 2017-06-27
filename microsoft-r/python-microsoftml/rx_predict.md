@@ -6,7 +6,7 @@ description: "Transforms data from an input data set to an output data set."
 keywords: "manip" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/26/2017" 
+ms.date: "06/27/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# rx_predict
+## ``rx_predict``: Score using a Microsoft ML Machine Learning model
+
+
+### Usage
 
 
 
@@ -35,69 +38,70 @@ microsoftml.modules.predict.rx_predict(model, data, out_data=None, write_model_v
 
 
 
-## Description
+### Description
 
 Transforms data from an input data set to an output data set.
 
 
-## Parameters
+### Arguments
 
 
-### data
+##### data
 
 A  data source object, a data frame, or the path
 to a ``.xdf`` file.
 
 
-### out_data
+##### out_data
 
 Output text or xdf file name or an ``RxDataSource`` with
 write capabilities in which to store transformed data. If *None*, a data
 frame is returned. The default value is *None*.
 
 
-### overwrite
+##### overwrite
 
 If ``TRUE``, an existing ``outData`` is overwritten;
 if ``FALSE`` an existing ``outData`` is not overwritten. The default
 value is /code{FALSE}.
 
 
-### data_threads
+##### data_threads
 
 An integer specifying the desired degree of parallelism in
 the data pipeline. If *None*, the number of threads used is determined
 internally. The default value is *None*.
 
 
-### random_seed
+##### random_seed
 
 Specifies the random seed. The default value is *None*.
 
 
-### max_slots
+##### max_slots
 
 Max slots to return for vector valued columns (<=0 to return all).
 
 
-### ml_transforms
+##### ml_transforms
 
 Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
-to be performed. See ``featurize_text()``, ``categorical()``,
+to be performed. See [``featurize_text``](featurize_text.md),
+``categorical``,
 and ``categorical_hash()``, for transformations that are supported.
 These transformations are performed after any specified R transformations.
 The default value is *None*.
 
 
-### ml_transform_vars
+##### ml_transform_vars
 
 Specifies a character vector of variable names
 to be used in ``mlTransforms`` or *None* if none are to be used.
 The default value is *None*.
 
 
-### row_selection
+##### row_selection
 
 Specifies the rows (observations) from the data set that
 are to be used by the model with the name of a logical variable from the
@@ -114,7 +118,7 @@ defined outside of the function call using the ``expression()``
 function.
 
 
-### transforms
+##### transforms
 
 An expression of the form that represents
 the first round of variable transformations. As with
@@ -123,27 +127,27 @@ outside of the function call using the ``expression()`` function.
 The default value is *None*.
 
 
-### transform_objects
+##### transform_objects
 
 A named list that contains objects that can be
 referenced by ``transforms``, ``transformsFunc``, and
 ``row_selection``. The default value is *None*.
 
 
-### transform_func
+##### transform_func
 
 The variable transformation function.
 The default value is *None*.
 
 
-### transform_vars
+##### transform_vars
 
 A character vector of input data set variables needed for
 the transformation function.
 The default value is *None*.
 
 
-### transform_envir
+##### transform_envir
 
 A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
@@ -151,13 +155,13 @@ If ``transformEnvir = NULL``, a new “hash” environment with parent
 ``baseenv()`` is used instead The default value is *None*.
 
 
-### blocks_per_read
+##### blocks_per_read
 
 Specifies the number of blocks to read for each chunk
 of data read from the data source.
 
 
-### report_progress
+##### report_progress
 
 An integer value that specifies the level of reporting
 on the row processing progress:
@@ -173,7 +177,7 @@ on the row processing progress:
 The default value is ``1``.
 
 
-### verbose
+##### verbose
 
 An integer value that specifies the amount of output wanted.
 If ``0``, no verbose output is printed during calculations. Integer
@@ -181,7 +185,7 @@ values from ``1`` to ``4`` provide increasing amounts of information.
 The default value is ``1``.
 
 
-### compute_context
+##### compute_context
 
 Sets the context in which computations are executed,
 specified with a valid ``revo_scale_r``.
@@ -189,24 +193,24 @@ Currently local and ``revo_scale_r`` compute contexts
 are supported.
 
 
-## Returns
+### Returns
 
 A data frame or an ``revo_scale_r`` object
 representing the created output data.
 
 
-## Author
+### Author
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-## See also
+### See also
 
 ``rx_data_step``,
 ``rx_import_datasource``.
 
 
-## Example
+### Example
 
 
 
