@@ -45,8 +45,8 @@ This is the main generator for RxNativeFileSystem S3 class.
  ##Value
  
 An RxNativeFileSystem file system object. This object may be used in
-[rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
-[RxXdfData](RxXdfData.md) to set the file system.
+[rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md), [rxOptions](../../scaler/packagehelp/rxoptions.md), [RxTextData](../../scaler/packagehelp/rxtextdata.md), or
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md) to set the file system.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -54,12 +54,12 @@ An RxNativeFileSystem file system object. This object may be used in
  
  ##See Also
  
-[RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md),
-[RxHdfsFileSystem](../../r-reference/revoscaler/rxhdfsfilesystem.md),
-[rxSetFileSystem](rxSetFileSystem.md),
-[rxOptions](rxOptions.md),
-[RxXdfData](RxXdfData.md),
-[RxTextData](RxTextData.md).
+[RxFileSystem](rxfilesystem.md),
+[RxHdfsFileSystem](rxhdfsfilesystem.md),
+[rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md),
+[rxOptions](../../scaler/packagehelp/rxoptions.md),
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
+[RxTextData](../../scaler/packagehelp/rxtextdata.md).
    
  ##Examples
 
