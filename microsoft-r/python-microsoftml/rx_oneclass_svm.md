@@ -3,10 +3,10 @@
 # required metadata 
 title: "oneClassSvm" 
 description: "Creates a list containing the function name and arguments to train a" 
-keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
+keywords: "" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/27/2017" 
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,6 +25,9 @@ ms.custom: ""
 ---
 
 ## rx_oneclass_svm
+
+
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
 
 ### Usage

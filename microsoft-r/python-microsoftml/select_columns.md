@@ -6,7 +6,7 @@ description: "Selects a set of columns to retrain, dropping all others."
 keywords: "transform" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/27/2017" 
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,6 +25,9 @@ ms.custom: ""
 ---
 
 ## select_columns
+
+
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
 
 ### Usage

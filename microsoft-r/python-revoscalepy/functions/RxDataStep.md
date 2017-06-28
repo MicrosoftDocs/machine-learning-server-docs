@@ -3,14 +3,10 @@
 # required metadata 
 title: "Import Data to .xdf or data frame" 
 description: "Import data into an ‘.xdf’ file or data.frame." 
-keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
+keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-<<<<<<< HEAD
-ms.date: "06/26/2017" 
-=======
-ms.date: "06/27/2017" 
->>>>>>> heidist-revoscalepy
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,14 +24,13 @@ ms.custom: ""
  
 ---
 
-<<<<<<< HEAD
-# rx_data_step
-=======
 ## rx_data_step
 
 
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+
+
 ### Usage
->>>>>>> heidist-revoscalepy
 
 
 
@@ -46,26 +41,15 @@ revoscalepy.functions.RxDataStep.rx_data_step(input_data: typing.Union[revoscale
 
 
 
-<<<<<<< HEAD
-## Description
-=======
 ### Description
->>>>>>> heidist-revoscalepy
 
 Import data into an ‘.xdf’ file or data.frame.
 
 
-<<<<<<< HEAD
-## Parameters
-
-
-### input_data
-=======
 ### Arguments
 
 
 ##### input_data
->>>>>>> heidist-revoscalepy
 
 a character string with the path for the data to import
 (delimited, fixed format, ODBC, or XDF). Alternatively, a data source
@@ -73,109 +57,65 @@ object representing the input data source can be specified. (See
 RxTextData, and RxOdbcData.)
 
 
-<<<<<<< HEAD
-### output_file
-=======
 ##### output_file
->>>>>>> heidist-revoscalepy
 
 a character string representing the output ‘.xdf’ file,
 or a RxXdfData object. If None, a data frame will be returned in memory.
 
 
-<<<<<<< HEAD
-### vars_to_keep
-=======
 ##### vars_to_keep
->>>>>>> heidist-revoscalepy
 
 character vector of variable names to include when
 reading from the input data file. If None, argument is ignored. Cannot be
 used with varsToDrop. Not supported for ODBC or fixed format text files.
 
 
-<<<<<<< HEAD
-### vars_to_drop
-=======
 ##### vars_to_drop
->>>>>>> heidist-revoscalepy
 
 character vector of variable names to exclude when
 reading from the input data file. If None, argument is ignored. Cannot be
 used with varsToKeep. Not supported for ODBC or fixed format text files.
 
 
-<<<<<<< HEAD
-### row_selection
-=======
 ##### row_selection
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### transforms
-=======
 ##### transforms
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### transform_objects
-=======
 ##### transform_objects
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for
 future use.
 
 
-<<<<<<< HEAD
-### transform_function
-=======
 ##### transform_function
->>>>>>> heidist-revoscalepy
 
 variable transformation function. See
 rxTransform for details.
 
 
-<<<<<<< HEAD
-### transform_variables
-=======
 ##### transform_variables
->>>>>>> heidist-revoscalepy
 
 character vector of input data set variables
 needed for the transformation function. See rxTransform for details.
 
 
-<<<<<<< HEAD
-### transform_packages
-=======
 ##### transform_packages
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### transform_environment
-=======
 ##### transform_environment
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### append
-=======
 ##### append
->>>>>>> heidist-revoscalepy
 
 either “none” to create a new ‘.xdf’ file or “rows” to
 append rows to an existing ‘.xdf’ file. If outFile exists and append is
@@ -183,31 +123,19 @@ append rows to an existing ‘.xdf’ file. If outFile exists and append is
 is returned.
 
 
-<<<<<<< HEAD
-### overwrite
-=======
 ##### overwrite
->>>>>>> heidist-revoscalepy
 
 logical value. If True, the existing outData will be
 overwritten. Ignored if a dataframe is returned.
 
 
-<<<<<<< HEAD
-### number_rows
-=======
 ##### number_rows
->>>>>>> heidist-revoscalepy
 
 integer value specifying the maximum number of rows to
 import. If set to -1, all rows will be imported.
 
 
-<<<<<<< HEAD
-### strings_as_factors
-=======
 ##### strings_as_factors
->>>>>>> heidist-revoscalepy
 
 logical indicating whether or not to
 automatically convert strings to factors on import. This can be overridden
@@ -217,11 +145,7 @@ ordering is row dependent, the preferred method for handling factor columns
 is to use colInfo with specified “levels”.
 
 
-<<<<<<< HEAD
-### column_classes
-=======
 ##### column_classes
->>>>>>> heidist-revoscalepy
 
 character vector specifying the column types to use
 when converting the data. The element names for the vector are used to
@@ -262,11 +186,7 @@ equivalent to “string” - for the moment, if you wish to import a column
 as factor data you must use the colInfo argument, documented below.
 
 
-<<<<<<< HEAD
-### column_info
-=======
 ##### column_info
->>>>>>> heidist-revoscalepy
 
 list of named variable information lists. Each variable
 information list contains one or more of the named elements given below.
@@ -319,20 +239,12 @@ Currently available properties for a column information list are:
     decimalPlaces: the number of decimal places.
 
 
-<<<<<<< HEAD
-### rows_per_read
-=======
 ##### rows_per_read
->>>>>>> heidist-revoscalepy
 
 number of rows to read at a time.
 
 
-<<<<<<< HEAD
-### type
-=======
 ##### type
->>>>>>> heidist-revoscalepy
 
 character string set specifying file type of inData. This is
 ignored if inData is a data source. Possible values are:
@@ -367,11 +279,7 @@ ignored if inData is a data source. Possible values are:
     RxOdbcData.)
 
 
-<<<<<<< HEAD
-### max_rows_by_columns
-=======
 ##### max_rows_by_columns
->>>>>>> heidist-revoscalepy
 
 the maximum size of a data frame that will be
 read in if outData is set to None, measured by the number of rows times the
@@ -382,11 +290,7 @@ large, you may experience problems from loading a huge data frame into
 memory.
 
 
-<<<<<<< HEAD
-### report_progress
-=======
 ##### report_progress
->>>>>>> heidist-revoscalepy
 
 integer value with options:
 0: no progress is reported.
@@ -395,21 +299,13 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-<<<<<<< HEAD
-### verbose
-=======
 ##### verbose
->>>>>>> heidist-revoscalepy
 
 integer value. If 0, no additional output is printed. If 1,
 information on the import type is printed if type is set to auto.
 
 
-<<<<<<< HEAD
-### xdf_compression_level
-=======
 ##### xdf_compression_level
->>>>>>> heidist-revoscalepy
 
 integer in the range of -1 to 9. The higher
 the value, the greater the amount of compression - resulting in smaller
@@ -419,11 +315,7 @@ release of Revolution R Enterprise. If set to -1, a default level of
 compression will be used.
 
 
-<<<<<<< HEAD
-### create_composite_set
-=======
 ##### create_composite_set
->>>>>>> heidist-revoscalepy
 
 logical value or None. If True, a composite
 set of files will be created instead of a single ‘.xdf’ file. A directory
@@ -437,11 +329,7 @@ meta data for all of the ‘.xdfd’ files in the ‘data’ subdirectory. When 
 compute context is RxHadoopMR a composite set of files is always created.
 
 
-<<<<<<< HEAD
-### blocks_per_composite_file
-=======
 ##### blocks_per_composite_file
->>>>>>> heidist-revoscalepy
 
 integer value. If
 createCompositeSet=True, and if the compute context is not RxHadoopMR, this
@@ -453,41 +341,25 @@ rowsPerRead. If the outFile is an RxXdfData object, set the value for
 blocksPerCompositeFile there instead.
 
 
-<<<<<<< HEAD
-### kwargs
-=======
 ##### kwargs
->>>>>>> heidist-revoscalepy
 
 additional arguments to be passed directly to the underlying
 data source objects to be imported.
 
 
-<<<<<<< HEAD
-## Returns
-=======
 ### Returns
->>>>>>> heidist-revoscalepy
 
 If an output_file is not specified, an output data frame is
 returned. If an output_file is specified, an RxXdfData data source is
 returned that can be used in subsequent RevoScalePy analysis.
 
 
-<<<<<<< HEAD
-## Author
-=======
 ### Author
->>>>>>> heidist-revoscalepy
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-<<<<<<< HEAD
-## Example
-=======
 ### Example
->>>>>>> heidist-revoscalepy
 
 
 

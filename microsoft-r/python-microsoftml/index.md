@@ -1,16 +1,12 @@
 --- 
  
 # required metadata 
-title: "MISSING TITLE" 
+title: "" 
 description: "" 
-keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
+keywords: "" 
 author: "HeidiSteen" 
 manager: "" 
-<<<<<<< HEAD
-ms.date: "06/26/2017" 
-=======
-ms.date: "06/27/2017" 
->>>>>>> heidist-revoscalepy
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,15 +24,14 @@ ms.custom: ""
  
 ---
 
-<<<<<<< HEAD
-# modules
-=======
 ## modules
->>>>>>> heidist-revoscalepy
+
+
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
 * [BaseLearner](base_learner.md) 
 
-* [categorical](categorical.md) 
+* [``categorical``: convert text column into categories](categorical.md) 
 
 * [categorical_hash](categorical_hash.md) 
 
@@ -54,11 +49,8 @@ ms.custom: ""
 
 * [featurize_image](featurize_image.md) 
 
-<<<<<<< HEAD
-=======
 * [featurize_text](featurize_text.md) 
 
->>>>>>> heidist-revoscalepy
 * [get_sentiment](get_sentiment.md) 
 
 * [load_image](load_image.md) 
@@ -85,11 +77,7 @@ ms.custom: ""
 
 * [rx_oneclass_svm](rx_oneclass_svm.md) 
 
-<<<<<<< HEAD
-* [rx_predict](rx_predict.md) 
-=======
 * [``rx_predict``: Score using a Microsoft ML Machine Learning model](rx_predict.md) 
->>>>>>> heidist-revoscalepy
 
 * [select_columns](select_columns.md) 
 

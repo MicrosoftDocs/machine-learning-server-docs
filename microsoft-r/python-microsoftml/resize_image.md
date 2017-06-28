@@ -6,7 +6,7 @@ description: "Resizes an image to a specified dimension using a specified"
 keywords: "transform image" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/27/2017" 
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,6 +25,9 @@ ms.custom: ""
 ---
 
 ## resize_image
+
+
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
 
 ### Usage

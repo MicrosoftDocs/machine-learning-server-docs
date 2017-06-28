@@ -6,7 +6,7 @@ description: "Transforms data from an input data set to an output data set."
 keywords: "manip" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/27/2017" 
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,6 +25,9 @@ ms.custom: ""
 ---
 
 ## ``rx_predict``: Score using a Microsoft ML Machine Learning model
+
+
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
 
 ### Usage

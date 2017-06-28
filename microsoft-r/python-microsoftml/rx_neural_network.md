@@ -6,7 +6,7 @@ description: "Neural networks for regression modeling and for Binary and"
 keywords: "models classification regression neural network dnn" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/27/2017" 
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,12 +27,15 @@ ms.custom: ""
 ## rx_neural_network
 
 
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+
+
 ### Usage
 
 
 
 ```
-microsoftml.modules.neural_network.rx_neural_network(formula, data, method: [‘binary’, ’multiClass’, ’regression’] = ‘binary’, loss_function: {‘LossFunction’: [‘LogLoss’, ’SquaredError’]} = {‘settings’: {}, ’name’: ‘LogLoss’}, num_iterations=100, optimizer: {‘Optimizer’: [‘AdadeltaOptimizer’, ’SgdOptimizer’]} = {‘settings’: {}, ’name’: ‘SgdOptimizer’}, net_definition=None, init_wts_diameter=0.1, max_norm=0, acceleration: {‘MathPlatformKind’: [‘AvxMath’, ’ClrMath’, ’GpuMath’, ’MklMath’, ’SseMath’]} = {‘settings’: {}, ’name’: ‘AvxMath’}, mini_batch_size=1, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
+microsoftml.modules.neural_network.rx_neural_network(formula, data, method: [‘binary’, ’multiClass’, ’regression’] = ‘binary’, num_hidden_nodes=100, loss_function: {‘LossFunction’: [‘LogLoss’, ’SquaredError’]} = {‘settings’: {}, ’name’: ‘LogLoss’}, num_iterations=100, optimizer: {‘Optimizer’: [‘AdadeltaOptimizer’, ’SgdOptimizer’]} = {‘settings’: {}, ’name’: ‘SgdOptimizer’}, net_definition=None, init_wts_diameter=0.1, max_norm=0, acceleration: {‘MathPlatformKind’: [‘AvxMath’, ’ClrMath’, ’GpuMath’, ’MklMath’, ’SseMath’]} = {‘settings’: {}, ’name’: ‘AvxMath’}, mini_batch_size=1, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
 ```
 
 

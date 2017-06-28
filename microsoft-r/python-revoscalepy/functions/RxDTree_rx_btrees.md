@@ -3,14 +3,10 @@
 # required metadata 
 title: "Parallel External Memory Algorithm for Stochastic Gradient Boosted Decision Trees" 
 description: "Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for" 
-keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
+keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-<<<<<<< HEAD
-ms.date: "06/26/2017" 
-=======
-ms.date: "06/27/2017" 
->>>>>>> heidist-revoscalepy
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,14 +24,13 @@ ms.custom: ""
  
 ---
 
-<<<<<<< HEAD
-# rx_btrees
-=======
 ## rx_btrees
 
 
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+
+
 ### Usage
->>>>>>> heidist-revoscalepy
 
 
 
@@ -46,47 +41,28 @@ revoscalepy.functions.RxDTree.rx_btrees(formula, data, output_file=None, write_m
 
 
 
-<<<<<<< HEAD
-## Description
-=======
 ### Description
->>>>>>> heidist-revoscalepy
 
 Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for
 small or large data using parallel external memory algorithm.
 
 
-<<<<<<< HEAD
-## Parameters
-
-
-### formula
-=======
 ### Arguments
 
 
 ##### formula
->>>>>>> heidist-revoscalepy
 
 formula as described in rxFormula. Currently, formula
 functions are not supported.
 
 
-<<<<<<< HEAD
-### data
-=======
 ##### data
->>>>>>> heidist-revoscalepy
 
 either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object.
 
 
-<<<<<<< HEAD
-### output_file
-=======
 ##### output_file
->>>>>>> heidist-revoscalepy
 
 either an RxXdfData data source object or a character
 string specifying the ‘.xdf’ file for storing the resulting node indices.
@@ -97,11 +73,7 @@ the resulting set of node indices will generally not have the same number
 of rows as the original data source.
 
 
-<<<<<<< HEAD
-### write_model_vars
-=======
 ##### write_model_vars
->>>>>>> heidist-revoscalepy
 
 logical value. If True, and the output file is
 different from the input file, variables in the model will be written to
@@ -110,52 +82,32 @@ input data set are transformed in the model, the transformed variables will
 also be written out.
 
 
-<<<<<<< HEAD
-### overwrite
-=======
 ##### overwrite
->>>>>>> heidist-revoscalepy
 
 logical value. If True, an existing outFile with an
 existing column named outColName will be overwritten.
 
 
-<<<<<<< HEAD
-### pweights
-=======
 ##### pweights
->>>>>>> heidist-revoscalepy
 
 character string specifying the variable of numeric values
 to use as probability weights for the observations.
 
 
-<<<<<<< HEAD
-### fweights
-=======
 ##### fweights
->>>>>>> heidist-revoscalepy
 
 character string specifying the variable of integer values
 to use as frequency weights for the observations.
 
 
-<<<<<<< HEAD
-### method
-=======
 ##### method
->>>>>>> heidist-revoscalepy
 
 character string specifying the splitting method. Currently,
 only “class” or “anova” are supported. The default is “class” if the
 response is a factor, otherwise “anova”.
 
 
-<<<<<<< HEAD
-### parms
-=======
 ##### parms
->>>>>>> heidist-revoscalepy
 
 optional list with components specifying additional
 parameters for the “class” splitting method, as follows:
@@ -172,11 +124,7 @@ If parms is specified, any of the components can be specified or
     omitted. The defaults will be used for missing components.
 
 
-<<<<<<< HEAD
-### cost
-=======
 ##### cost
->>>>>>> heidist-revoscalepy
 
 a vector of non-negative costs, containing one element for
 each variable in the model. Defaults to one for all variables. When
@@ -184,11 +132,7 @@ deciding which split: to choose, the improvement on splitting on a variable
 is divided by its cost.
 
 
-<<<<<<< HEAD
-### min_split
-=======
 ##### min_split
->>>>>>> heidist-revoscalepy
 
 the minimum number of observations that must exist in a
 node before a split is attempted. By default, this is sqrt(num of obs). For
@@ -196,42 +140,26 @@ non-XDF data sources, as (num of obs) is unknown in advance, it is wisest
 to specify this argument directly.
 
 
-<<<<<<< HEAD
-### min_bucket
-=======
 ##### min_bucket
->>>>>>> heidist-revoscalepy
 
 the minimum number of observations in a terminal node
 (or leaf). By default, this is minSplit/3.
 
 
-<<<<<<< HEAD
-### cp
-=======
 ##### cp
->>>>>>> heidist-revoscalepy
 
 numeric scalar specifying the complexity parameter. Any split
 that does not decrease overall lack-of-fit by at least cp is not attempted.
 
 
-<<<<<<< HEAD
-### max_compete
-=======
 ##### max_compete
->>>>>>> heidist-revoscalepy
 
 the maximum number of competitor splits retained in the
 output. These are useful model diagnostics, as they allow you to compare
 splits in the output with the alternatives.
 
 
-<<<<<<< HEAD
-### max_surrogate
-=======
 ##### max_surrogate
->>>>>>> heidist-revoscalepy
 
 the maximum number of surrogate splits retained in
 the output. See the Details for a description of how surrogate splits are
@@ -240,11 +168,7 @@ performance of the algorithm; in some cases almost half the computation
 time is spent in computing surrogate splits.
 
 
-<<<<<<< HEAD
-### use_surrogate
-=======
 ##### use_surrogate
->>>>>>> heidist-revoscalepy
 
 an integer specifying how surrogates are to be used
 in the splitting process:
@@ -264,11 +188,7 @@ The 0 value corresponds to the behavior of the tree function, and 2
     (the default) corresponds to the recommendations of Breiman et al.
 
 
-<<<<<<< HEAD
-### surrogate_style
-=======
 ##### surrogate_style
->>>>>>> heidist-revoscalepy
 
 an integer controlling selection of a best
 surrogate. The default, 0, instructs the program to use the total number of
@@ -278,62 +198,38 @@ non-missing values of the surrogate. Thus, 0 penalizes potential surrogates
 with a large number of missing values.
 
 
-<<<<<<< HEAD
-### n_tree
-=======
 ##### n_tree
->>>>>>> heidist-revoscalepy
 
 a positive integer specifying the number of trees to grow.
 
 
-<<<<<<< HEAD
-### m_try
-=======
 ##### m_try
->>>>>>> heidist-revoscalepy
 
 a positive integer specifying the number of variables to
 sample as split candidates at each tree node. The default values is
 sqrt(num of vars) for classification and (num of vars)/3 for regression.
 
 
-<<<<<<< HEAD
-### replace
-=======
 ##### replace
->>>>>>> heidist-revoscalepy
 
 a logical value specifying if the sampling of observations
 should be done with or without replacement.
 
 
-<<<<<<< HEAD
-### cutoff
-=======
 ##### cutoff
->>>>>>> heidist-revoscalepy
 
 (Classification only) a vector of length equal to the number
 of classes specifying the dividing factors for the class votes. The default
 is 1/(num of classes).
 
 
-<<<<<<< HEAD
-### strata
-=======
 ##### strata
->>>>>>> heidist-revoscalepy
 
 a character string specifying the (factor) variable to use
 for stratified sampling.
 
 
-<<<<<<< HEAD
-### sample_rate
-=======
 ##### sample_rate
->>>>>>> heidist-revoscalepy
 
 a scalar or a vector of positive values specifying the
 percentage(s) of observations to sample for each tree:
@@ -348,21 +244,13 @@ for stratified sampling: a vector of positive values of length equal to
     sample from the strata for each tree.
 
 
-<<<<<<< HEAD
-### importance
-=======
 ##### importance
->>>>>>> heidist-revoscalepy
 
 a logical value specifying if the importance of
 predictors should be assessed.
 
 
-<<<<<<< HEAD
-### seed
-=======
 ##### seed
->>>>>>> heidist-revoscalepy
 
 an integer that will be used to initialize the random number
 generator. The default is random. For reproducibility, you can specify the
@@ -370,11 +258,7 @@ random seed either using set.seed or by setting this seed argument as part
 of your call.
 
 
-<<<<<<< HEAD
-### compute_oob_error
-=======
 ##### compute_oob_error
->>>>>>> heidist-revoscalepy
 
 an integer specifying whether and how to compute
 the prediction error for out-of-bag samples:
@@ -383,11 +267,7 @@ the prediction error for out-of-bag samples:
 >0: once for each addition of a tree. This is the default.
 
 
-<<<<<<< HEAD
-### loss_function
-=======
 ##### loss_function
->>>>>>> heidist-revoscalepy
 
 character string specifying the name of the loss function
 to use. The following options are currently supported:
@@ -396,20 +276,12 @@ to use. The following options are currently supported:
 “multinomial”: classification: for categorical responses with two or more levels.
 
 
-<<<<<<< HEAD
-### learning_rate
-=======
 ##### learning_rate
->>>>>>> heidist-revoscalepy
 
 numeric scalar specifying the learning rate of the boosting procedure.
 
 
-<<<<<<< HEAD
-### max_num_bins
-=======
 ##### max_num_bins
->>>>>>> heidist-revoscalepy
 
 the maximum number of bins to use to cut numeric data.
 The default is min(1001, max(101, sqrt(num of obs))). For non-XDF data
@@ -418,127 +290,75 @@ this argument directly. If set to 0, unit binning will be used instead of
 cutting. See the ‘Details’ section for more information.
 
 
-<<<<<<< HEAD
-### max_unordered_levels
-=======
 ##### max_unordered_levels
->>>>>>> heidist-revoscalepy
 
 the maximum number of levels allowed for an
 unordered factor predictor for multiclass (>2) classification.
 
 
-<<<<<<< HEAD
-### remove_missings
-=======
 ##### remove_missings
->>>>>>> heidist-revoscalepy
 
 logical value. If True, rows with missing values
 are removed and will not be included in the output data.
 
 
-<<<<<<< HEAD
-### use_sparse_cube
-=======
 ##### use_sparse_cube
->>>>>>> heidist-revoscalepy
 
 logical value. If True, sparse cube is used.
 
 
-<<<<<<< HEAD
-### find_splits_in_parallel
-=======
 ##### find_splits_in_parallel
->>>>>>> heidist-revoscalepy
 
 logical value. If True, optimal splits for
 each node are determined using parallelization methods; this will typically
 speed up computation as the number of nodes on the same level is increased.
 
 
-<<<<<<< HEAD
-### row_selection
-=======
 ##### row_selection
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### transforms
-=======
 ##### transforms
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### transform_objects
-=======
 ##### transform_objects
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### transform_function
-=======
 ##### transform_function
->>>>>>> heidist-revoscalepy
 
 variable transformation function. The variables used
 in the transformation function must be specified in transformVars if they
 are not variables used in the model. See rxTransform for details.
 
 
-<<<<<<< HEAD
-### transform_variables
-=======
 ##### transform_variables
->>>>>>> heidist-revoscalepy
 
 character vector of input data set variables needed
 for the transformation function. See rx_transform for details.
 
 
-<<<<<<< HEAD
-### transform_packages
-=======
 ##### transform_packages
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### transform_environment
-=======
 ##### transform_environment
->>>>>>> heidist-revoscalepy
 
 None. Not currently supported, reserved for future use.
 
 
-<<<<<<< HEAD
-### blocks_per_read
-=======
 ##### blocks_per_read
->>>>>>> heidist-revoscalepy
 
 number of blocks to read for each chunk of data read from
 the data source.
 
 
-<<<<<<< HEAD
-### report_progress
-=======
 ##### report_progress
->>>>>>> heidist-revoscalepy
 
 integer value with options:
 0: no progress is reported.
@@ -547,63 +367,36 @@ integer value with options:
 3: rows processed and all timings are reported.
 
 
-<<<<<<< HEAD
-### verbose
-=======
 ##### verbose
->>>>>>> heidist-revoscalepy
 
 integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
-<<<<<<< HEAD
-### compute_context
-=======
 ##### compute_context
->>>>>>> heidist-revoscalepy
 
 a RxComputeContext object for prediction.
 
 
-<<<<<<< HEAD
-### kwargs
-=======
 ##### kwargs
->>>>>>> heidist-revoscalepy
 
 additional parameters
 
 
-<<<<<<< HEAD
-## Returns
-=======
 ### Returns
->>>>>>> heidist-revoscalepy
 
 a rx_dforest_results object of dtree model.
 
 
-<<<<<<< HEAD
-## Author
-=======
 ### Author
->>>>>>> heidist-revoscalepy
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-<<<<<<< HEAD
-## See also
-
-
-## Example
-=======
 ### See also
 
 
 ### Example
->>>>>>> heidist-revoscalepy
 
 
 

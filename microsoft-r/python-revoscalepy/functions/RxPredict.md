@@ -3,14 +3,10 @@
 # required metadata 
 title: "Predicted Values and Residuals for rx_lin_mod, rx_logit, rx_dtree," 
 description: "Generic function to compute predicted values and residuals using" 
-keywords: "M, I, S, S, I, N, G,  , K, E, Y, W, O, R, D, S" 
+keywords: "predict" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-<<<<<<< HEAD
-ms.date: "06/26/2017" 
-=======
-ms.date: "06/27/2017" 
->>>>>>> heidist-revoscalepy
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,14 +24,13 @@ ms.custom: ""
  
 ---
 
-<<<<<<< HEAD
-# rx_predict
-=======
 ## ``rx_predict``: Score using a Microsoft ML Machine Learning model
 
 
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+
+
 ### Usage
->>>>>>> heidist-revoscalepy
 
 
 
@@ -46,11 +41,7 @@ revoscalepy.functions.RxPredict.rx_predict(model_object=None, data=None, output_
 
 
 
-<<<<<<< HEAD
-## Description
-=======
 ### Description
->>>>>>> heidist-revoscalepy
 
 Generic function to compute predicted values and residuals using
 rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects.
@@ -61,79 +52,49 @@ For specific functions, see:
     rx_predict_rx_dforest for rx_dforest object.
 
 
-<<<<<<< HEAD
-## Parameters
-
-
-### model_object
-=======
 ### Arguments
 
 
 ##### model_object
->>>>>>> heidist-revoscalepy
 
 object returned from a call to rx_lin_mod, rx_logit, rx_dtree,
 rx_dforest and rx_btrees. Objects with multiple dependent variables are not
 supported.
 
 
-<<<<<<< HEAD
-### data
-=======
 ##### data
->>>>>>> heidist-revoscalepy
 
 a data frame or an RxXdfData data source object to be used for predictions.
 
 
-<<<<<<< HEAD
-### output_data
-=======
 ##### output_data
->>>>>>> heidist-revoscalepy
 
 an RxXdfData data source object or existing data frame to store predictions.
 
 
-<<<<<<< HEAD
-### kwargs
-=======
 ##### kwargs
->>>>>>> heidist-revoscalepy
 
 additional parameters
 
 
-<<<<<<< HEAD
-## Returns
-=======
 ### Returns
->>>>>>> heidist-revoscalepy
 
 a data frame or a data source object of prediction results.
 
 
-<<<<<<< HEAD
-## Author
-=======
 ### Author
->>>>>>> heidist-revoscalepy
 
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
 
 
-<<<<<<< HEAD
-## See also
-
-
-## Example
-=======
 ### See also
+
+[``rx_predict_default``](RxPredict_default.md),
+[``rx_predict_rx_dtree``](RxPredict_dtree.md),
+[``rx_predict_rx_dforest``](RxPredict_dforest.md).
 
 
 ### Example
->>>>>>> heidist-revoscalepy
 
 
 
@@ -147,9 +108,6 @@ mort_df = rx_data_step(mort_ds)
 
 lin_mod = rx_lin_mod("creditScore ~ yearsEmploy", mort_df)
 pred = rx_predict(lin_mod, data = mort_df)
-<<<<<<< HEAD
-pred.head()
-=======
 print(pred.head())
 ```
 
@@ -159,12 +117,16 @@ Output:
 
 
 ```
+Data will be read from C:\xadupre\microsoft\bigAnalytics\python\revoscalepy\revoscalepy\data\sample_data\mortDefaultSmall.xdf
+Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre624802.xdf File will be overwritten if it exists.
+
+Rows Processed: 100000 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds 
    creditScore_Pred
 0        700.089114
 1        699.834355
 2        699.783403
 3        699.681499
 4        699.783403
->>>>>>> heidist-revoscalepy
 ```
 

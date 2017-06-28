@@ -6,7 +6,7 @@ description: "Extracts the pixel values from an image."
 keywords: "transform image" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/27/2017" 
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,6 +25,9 @@ ms.custom: ""
 ---
 
 ## extract_pixels
+
+
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
 
 ### Usage

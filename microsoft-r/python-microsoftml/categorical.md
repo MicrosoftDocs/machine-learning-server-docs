@@ -6,7 +6,7 @@ description: "Categorical transform that can be performed on data before"
 keywords: "transform" 
 author: "HeidiSteen" 
 manager: "" 
-ms.date: "06/27/2017" 
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-## categorical
+## ``categorical``: convert text column into categories
+
+
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
 
 ### Usage

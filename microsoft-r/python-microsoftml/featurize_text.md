@@ -6,7 +6,7 @@ description: "Text transforms that can be performed on data before training"
 keywords: "transform" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "" 
-ms.date: "06/27/2017" 
+ms.date: "" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,12 +27,15 @@ ms.custom: ""
 ## featurize_text
 
 
+*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+
+
 ### Usage
 
 
 
 ```
-microsoftml.modules.text_analytics.featurize_text(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], language: [‘AutoDetect’, ‘English’, ‘French’, ‘German’, ‘Dutch’, ‘Italian’, ‘Spanish’, ‘Japanese’] = ‘English’, stopwords_remover=None, case: [‘Lower’, ‘Upper’, ‘None’] = ‘Lower’, keep_diacritics=False, keep_punctuations=True, keep_numbers=True, dictionary=None, word_feature_extractor={‘settings’: {‘allLengths’: True, ‘weighting’: ‘Tf’, ‘ngramLength’: 1, ‘skipLength’: 0, ‘maxNumTerms’: [10000000]}, ‘name’: ‘NGram’}, char_feature_extractor=None, vector_normalizer: [‘None’, ‘L1’, ‘L2’, ‘LInf’] = ‘L2’, **kargs)
+microsoftml.modules.text_analytics.featurize_text(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], language: [‘AutoDetect’, ‘English’, ‘French’, ‘German’, ‘Dutch’, ‘Italian’, ‘Spanish’, ‘Japanese’] = ‘English’, stopwords_remover=None, case: [‘Lower’, ‘Upper’, ‘None’] = ‘Lower’, keep_diacritics=False, keep_punctuations=True, keep_numbers=True, dictionary=None, word_feature_extractor={‘settings’: {‘maxNumTerms’: [10000000], ‘skipLength’: 0, ‘weighting’: ‘Tf’, ‘ngramLength’: 1, ‘allLengths’: True}, ‘name’: ‘NGram’}, char_feature_extractor=None, vector_normalizer: [‘None’, ‘L1’, ‘L2’, ‘LInf’] = ‘L2’, **kargs)
 ```
 
 
