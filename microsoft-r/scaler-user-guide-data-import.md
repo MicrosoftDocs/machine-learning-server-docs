@@ -343,7 +343,7 @@ Use **rxGetInfo** to view precomputed metadata. As you would expect, the block c
 
         rxGetInfo(myLargeXdf)
 
-Results from this command confirm that you have 10 blocks, one for each .csv file. On a distributed file system, you could place these blocks on separate nodes. You could also retrieve or overwrite individual blocks. For more information, see [Import and consumd data on HDFS](scaler-data-hdfs.md) and [XDF files](scaler-data-xdf.md).
+Results from this command confirm that you have 10 blocks, one for each .csv file. On a distributed file system, you could place these blocks on separate nodes. You could also retrieve or overwrite individual blocks. For more information, see [Import and consumd data on HDFS](scaler-data-hdfs.md) and [XDF files](r/concept-what-is-xdf.md).
 
         File name: C:\Users\TEMP\mortgagelarge.xdf 
         Number of observations: 1e+05 
@@ -501,7 +501,7 @@ The colInfo list can then be used as the *colInfo* argument in the **rxImport** 
 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
-+ [XDF files](scaler-data-xdf.md)	
++ [XDF files](r/concept-what-is-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
 + [Import relational data using ODBC](scaler-data-odbc.md)
 + [Import and consume data on HDFS](scaler-data-hdfs.md)

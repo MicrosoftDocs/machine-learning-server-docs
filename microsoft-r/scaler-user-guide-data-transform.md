@@ -793,7 +793,7 @@ If we had a large data set containing expenditure data in an .xdf file, we could
 Continue on to the following data-related articles to learn more about XDF, data source objects, and other data formats:
 
 + [Data transformations (introduction)](r/concept-what-is-data-transformations.md)	
-+ [XDF files](scaler-data-xdf.md)	
++ [XDF files](r/concept-what-is-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
 + [Import text data](scaler-user-guide-data-import.md)
 + [Import ODBC data](scaler-data-odbc.md)

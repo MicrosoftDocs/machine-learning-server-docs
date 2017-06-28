@@ -43,9 +43,9 @@ To create data sources directly, use the constructors listed in the following ta
 | Teradata Database                  | [RxTeradata](r-reference/revoscaler/rxteradata.md) |
 | SQL Server Database                | [RxSqlServerData](scaler-data-sql.md) |
 | Spark data: Hive, Parquet and ORC  | [RxSparkData](r-reference/revoscaler/rxsparkdata.md) or **RxHiveData**, **RxParquetData**, **RxOrcData** | 
-| .xdf data files                    | [RxXdfData](scaler-data-xdf.md) |
+| .xdf data files                    | [RxXdfData](r/concept-what-is-xdf.md) |
 
-[XDF files](scaler-data-xdf.md) are the out files for **rxImport** read operations, but you also use them as a data source input when loading all or part of an .xdf into a data frame. Using an XDF data source is recommended for repeated analysis of a single data set. It is almost always faster to import data into an .xdf file and run analyses on the .xdf data source than to load data from an original data source.
+[XDF files](r/concept-what-is-xdf.md) are the out files for **rxImport** read operations, but you also use them as a data source input when loading all or part of an .xdf into a data frame. Using an XDF data source is recommended for repeated analysis of a single data set. It is almost always faster to import data into an .xdf file and run analyses on the .xdf data source than to load data from an original data source.
 
 ## When to create a data source
 
@@ -316,7 +316,7 @@ It is, of course, much faster to compute a linear model using the **rxLinMod** f
 
 Continue on to the following data import articles to learn more about XDF and other data formats:
 
-+ [XDF files](scaler-data-xdf.md)	
++ [XDF files](r/concept-what-is-xdf.md)	
 + [Import SQL Server data](scaler-data-sql.md)	
 + [Import text data](scaler-user-guide-data-import.md)
 + [Import and consume data on HDFS](scaler-data-hdfs.md)

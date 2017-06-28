@@ -139,7 +139,7 @@ If you create a factor within a transformation function, you may get unexpected 
 Continue on to the following data-related articles to learn more about XDF, data source objects, and other data formats:
 
 + [How to transform and subset data](../scaler-user-guide-data-transform.md)	
-+ [XDF files](../scaler-data-xdf.md)	
++ [XDF files](concept-what-is-xdf.md)	
 + [Data Sources](../scaler-user-guide-data-source.md)	
 + [Import text data](../scaler-user-guide-data-import.md)
 + [Import ODBC data](../scaler-data-odbc.md)

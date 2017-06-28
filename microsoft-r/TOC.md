@@ -41,7 +41,7 @@
 #### [Compute context](r/concept-what-is-compute-context.md)
 #### [Data source objects](scaler-user-guide-data-source.md)
 #### [Data transformations](r/concept-what-is-data-transformations.md)
-#### [XDF files](scaler-data-xdf.md)
+#### [XDF files](r/concept-what-is-xdf.md)
 
 ## Summarize data
 ### [Statistical Summaries](scaler-user-guide-data-summaries.md)

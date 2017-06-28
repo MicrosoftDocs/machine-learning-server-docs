@@ -40,7 +40,7 @@ To create an XDF file, use the **rxImport** function in RevoScaleR to pipe exter
 
 You can create an XDF using any data that can be loaded by **rxImport**, and by specifying an *outFile* consisting of a file path to a writable directory.
 
-This example uses an R console and [sample data](scaler-user-guide-sample-data.md) to create an XDF using data from a single CSV file. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
+This example uses an R console and [sample data](../scaler-user-guide-sample-data.md) to create an XDF using data from a single CSV file. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
 
     # Set the source file location using inData argument
     > mysourcedata <- file.path(rxGetOption("sampleDataDir", "mortDefaultSmall2000.csv"))
@@ -241,13 +241,13 @@ The new file has blocks sizes of 60,000 for all but the last slightly smaller bl
 	
 ## Next steps
 
-XDF is optimized for distributed file storage and access in the Hadoop Distributed File System (HDFS). To learn more about using XDF in HDFS, see [Import and consume HDFS data files](scaler-data-hdfs.md).
+XDF is optimized for distributed file storage and access in the Hadoop Distributed File System (HDFS). To learn more about using XDF in HDFS, see [Import and consume HDFS data files](../scaler-data-hdfs.md).
 
-You can import multiple text files into a single XDF. For instructions, see [Import text data](scaler-user-guide-data-import.md).
+You can import multiple text files into a single XDF. For instructions, see [Import text data](../scaler-user-guide-data-import.md).
 
 ## See also
 
- [Introduction to R Server](rserver.md) 
- [Install R Server on Windows](install/r-server-install-windows.md)  
- [Install R Server on Linux](install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](install/r-server-install-hadoop.md)
+ [Introduction to R Server](../rserver.md) 
+ [Install R Server on Windows](../install/r-server-install-windows.md)  
+ [Install R Server on Linux](../install/r-server-install-linux-server.md)  
+ [Install R Server on Hadoop](../install/r-server-install-hadoop.md)

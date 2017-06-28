@@ -194,7 +194,7 @@ You can also call rxHdfsConnect interactively within a session, provided you hav
 
 Related articles include best practices for XDF file management, including managing split files, and compute context:
 
-+ [XDF files in Microsoft R](scaler-data-xdf.md)	
++ [XDF files in Microsoft R](r/concept-what-is-xdf.md)	
 + [Compute context in Microsoft R](r/concept-what-is-compute-context.md)	
 
 To further your understanding of RevoScaleR usage with HadoopMR or Spark, continue with the following articles:
