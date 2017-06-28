@@ -102,7 +102,7 @@
 #### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 #### [Install an older version](rserver-install-hadoop-901.md)
 ##### [Install R Server 9.0.1](rserver-install-hadoop-901.md)
-##### [Install R Server 9.0.1 on CDH](rserver-install-cloudera-901.md)
+##### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)
 ##### [Install R Server 8.0.5](rserver-install-hadoop-805.md)
 #### [Get started on Spark](scaler-spark-getting-started.md)
 #### [Get started on MapReduce](scaler-hadoop-getting-started.md)
