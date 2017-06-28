@@ -68,7 +68,7 @@ In addition to authentication, you can add other enterprise security around Micr
 
 + Secured connections using [SSL/TLS 1.2](security-https.md). For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.** 
 
-+ [Cross-Origin Resource Sharing](security-cors.md) to allow restricted resources on a web page to be requested from another domain outside the originating domain.
++ [Cross-Origin Resource Sharing](configure-cors.md) to allow restricted resources on a web page to be requested from another domain outside the originating domain.
 
 + [Role-based access control](security-roles.md) over web services in R Server.
 
