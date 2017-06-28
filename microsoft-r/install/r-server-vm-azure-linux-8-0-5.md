@@ -27,11 +27,11 @@ ms.custom: ""
 
 # Microsoft R Server 2016 (8.0.5) on a Linux Virtual Machine on Azure
 
-><big>[Microsoft R Server 2016 (9.0.1) is now available](vm-azure-rserver-linux-9.0.1.md)  on an Azure virtual machine.</big>
+><big>[Microsoft R Server 2016 (9.0.1) is now available](../vm-azure-rserver-linux-9.0.1.md)  on an Azure virtual machine.</big>
 
 Microsoft offers a Linux virtual machine (VM) on Azure that includes a preconfigured instance of [Microsoft R Server 8.0.5 for Linux](https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server-805). 
 
-This VM has Microsoft R Server 8.0.5 on CentOS version 6.8. As part of Microsoft R Server, this VM also includes a preinstalled instance of [DeployR Enterprise](deployr/deployr-about.md) for deploying R analytics inside applications and backend systems. 
+This VM has Microsoft R Server 8.0.5 on CentOS version 6.8. As part of Microsoft R Server, this VM also includes a preinstalled instance of [DeployR Enterprise](../deployr/deployr-about.md) for deploying R analytics inside applications and backend systems. 
 
 ## Provision the R Server Virtual Machine
 
@@ -123,11 +123,11 @@ To configure the DeployR instance:
    ./adminUtilities.sh
    ```
 
-1. [Set the DeployR administrator password](deployr/deployr-install-on-linux.md#postinstall).
+1. [Set the DeployR administrator password](../deployr/deployr-install-on-linux.md#postinstall).
 
-1. [Define the DeployR Web context](deployr/deployr-admin-install-in-cloud.md#enabling-deployr-on-azure).
+1. [Define the DeployR Web context](../deployr/deployr-admin-install-in-cloud.md#enabling-deployr-on-azure).
 
-1. In the [Azure Portal](https://ms.portal.azure.com/), [open the appropriate ports on the VM](deployr/deployr-admin-install-in-cloud.md#configuring-azure-endpoints).
+1. In the [Azure Portal](https://ms.portal.azure.com/), [open the appropriate ports on the VM](../deployr/deployr-admin-install-in-cloud.md#configuring-azure-endpoints).
 
 ## Access Data in an Azure Storage Account
 

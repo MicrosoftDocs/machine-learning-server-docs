@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Microsoft R Server for Linux 9.1:  Virtual Machine on Azure
 
->Looking for an older version? See here: [9.0.1](vm-azure-rserver-linux-9.0.1.md) or [8.0.5](vm-azure-rserver-linux-8.0.5.md). 
+>Looking for an older version? See here: [9.0.1](vm-azure-rserver-linux-9.0.1.md) or [8.0.5](install/r-server-vm-azure-linux-8-0-5.md). 
 
 Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server version 9.1) for Linux (CentOS version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
 
