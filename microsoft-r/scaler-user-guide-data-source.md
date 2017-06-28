@@ -42,7 +42,7 @@ To create data sources directly, use the constructors listed in the following ta
 | ODBC Database                      | [RxOdbcData](scaler-data-odbc.md) |
 | Teradata Database                  | [RxTeradata](scaler/packagehelp/RxTeradata.md) |
 | SQL Server Database                | [RxSqlServerData](scaler-data-sql.md) |
-| Spark data: Hive, Parquet and ORC  | [RxSparkData](scaler/packagehelp/RxSparkData.md) or **RxHiveData**, **RxParquetData**, **RxOrcData** | 
+| Spark data: Hive, Parquet and ORC  | [RxSparkData](r-reference/revoscaler/rxsparkdata.md) or **RxHiveData**, **RxParquetData**, **RxOrcData** | 
 | .xdf data files                    | [RxXdfData](scaler-data-xdf.md) |
 
 [XDF files](scaler-data-xdf.md) are the out files for **rxImport** read operations, but you also use them as a data source input when loading all or part of an .xdf into a data frame. Using an XDF data source is recommended for repeated analysis of a single data set. It is almost always faster to import data into an .xdf file and run analyses on the .xdf data source than to load data from an original data source.
@@ -185,7 +185,7 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 | ODBC data (RxOdbcData)         | x          |          |                 |               |              |
 | SQL Server database (RxSqlServerData) | x   |          |                 | x             |              |
 | Teradata database (RxTeradata) | x          |          |                 |               |  x           |
-| Spark data [RxSparkData](scaler/packagehelp/RxSparkData.md) | x | x   |  |               |              |
+| Spark data [RxSparkData](r-reference/revoscaler/rxsparkdata.md) | x | x   |  |               |              |
 
 
 ## Examples
