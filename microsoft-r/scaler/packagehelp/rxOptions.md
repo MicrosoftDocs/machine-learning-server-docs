@@ -201,7 +201,7 @@ computations.
 *   [RxForeachDoPar](RxForeachDoPar.md): use the currently registered parallel backend for 'foreach' for processing with [rxExec](rxExec.md) High Performance Computing.   
 *  [RxHadoopMR](RxHadoopMR.md): use a Hadoop cluster for both High Performance Analytics for [rxExec](rxExec.md) High Performance Computing. 
 *  [RxInTeradata](RxInTeradata.md): use a Teradata cluster for both High Performance Analytics and for [rxExec](rxExec.md) High Performance Computing. 
-*   [RxHpcServer](RevoScaleR-deprecated.md): use a Microsoft HPC Server cluster for both High Performance Analytics and for [rxExec](rxExec.md) High Performance Computing.                                        
+*   [RxHpcServer](../../r-reference/revoscaler/revoscaler-deprecated.md): use a Microsoft HPC Server cluster for both High Performance Analytics and for [rxExec](rxExec.md) High Performance Computing.                                        
  
    
    

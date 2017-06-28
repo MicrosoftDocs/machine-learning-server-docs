@@ -49,7 +49,7 @@ computation nodes.
    
   
  ### `computeContext`
- A distributed compute context. [RxHpcServer](RevoScaleR-deprecated.md), and  [RxInTeradata](RxInTeradata.md) contexts are supported.  See the details section for more information. 
+ A distributed compute context. [RxHpcServer](../../r-reference/revoscaler/revoscaler-deprecated.md), and  [RxInTeradata](RxInTeradata.md) contexts are supported.  See the details section for more information. 
   
   
   

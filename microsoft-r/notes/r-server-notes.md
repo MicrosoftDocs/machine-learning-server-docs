@@ -45,7 +45,7 @@ Other release-specific pages include [What's New in 9.1](../rserver-whats-new.md
 |`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
 |`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|
 
-For more information, see [discontinued RevoScaleR functions](../r-reference/revoscaler/revoscaler-defunct.md) and [deprecated RevoScaleR functions](../scaler/packagehelp/RevoScaleR-deprecated.md).
+For more information, see [discontinued RevoScaleR functions](../r-reference/revoscaler/revoscaler-defunct.md) and [deprecated RevoScaleR functions](../r-reference/revoscaler/revoscaler-deprecated.md).
 
 ### RevoMods Package
 

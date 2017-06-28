@@ -321,7 +321,7 @@
 ### [Overview: ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
 ### [Functions by category](r-reference/revoscaler/revoanalytics-package.md) 
 ### [RevoScaleR-defunct](r-reference/revoscaler/revoscaler-defunct.md) 
-### [RevoScaleR-deprecated](scaler/packagehelp/RevoScaleR-deprecated.md)
+### [RevoScaleR-deprecated](r-reference/revoscaler/revoscaler-deprecated.md)
 ### Data sets
 #### [AirlineData87to08](r-reference/revoscaler/airlinedata87to08.md) 
 #### [AirlineDemoSmall](r-reference/revoscaler/airlinedemosmall.md) 
