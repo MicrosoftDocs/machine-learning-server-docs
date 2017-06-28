@@ -27,11 +27,11 @@ ms.custom: ""
 
 Many of our enterprise customers don’t have a "big data, big model" problem. They have a "small data, many models" problem, where there is a need to train separate models such as ARIMA (for time-series forecasting) or boosted trees over a large number of small data sets. The trained models could be used for time-series predictions, or to score fresh data for each small data partition. Typical examples include time-series forecasting of smart meters for households, revenue forecasting for product lines, or loan approvals for bank branches.
 
-The new `rxExecBy` function in [RevoScaleR](r-reference/revoscaler/revoscaler.md) is designed for use cases calling for high-volume parallel processing over a large number of small data sets. Given this data profile, you can use `rxExecBy` to read in the data, partition the data, and then call a function to iterate over each partition in parallel.
+The new `rxExecBy` function in [RevoScaleR](../r-reference/revoscaler/revoscaler.md) is designed for use cases calling for high-volume parallel processing over a large number of small data sets. Given this data profile, you can use `rxExecBy` to read in the data, partition the data, and then call a function to iterate over each partition in parallel.
 
 ## How to use rxExecBy
 
-`rxExecBy` takes four inputs and produces an output for each partition, in whatever product the user-defined function computes. The function can be almost any user-defined or analytical or statistical function from the collection of Microsoft R packages, able to [execute jobs in parallel](r/how-to-revoscaler-distributed-computing-parallel-jobs.md). The data sets can be .csv files loaded via `RxTextData`. The parallel processing occurs when you run the `rxExecby` script on a platform offering distributed computing. In this case, either Spark or SQL Server Machine Learning Services.
+`rxExecBy` takes four inputs and produces an output for each partition, in whatever product the user-defined function computes. The function can be almost any user-defined or analytical or statistical function from the collection of Microsoft R packages, able to [execute jobs in parallel](how-to-revoscaler-distributed-computing-parallel-jobs.md). The data sets can be .csv files loaded via `RxTextData`. The parallel processing occurs when you run the `rxExecby` script on a platform offering distributed computing. In this case, either Spark or SQL Server Machine Learning Services.
 
 Input criteria | Method |
 ---------------|--------|
@@ -72,4 +72,4 @@ rxSparkDisconnect(cc)
 
 ## See Also
 
-[RevoScaleR](r-reference/revoscaler/revoscaler.md)
+[RevoScaleR](../r-reference/revoscaler/revoscaler.md)

@@ -20,7 +20,7 @@
 ### [Tips on big data computing](r/tutorial-large-data-tips.md)
 ## Samples
 ### [Sample data in RevoScaleR](r/sample-built-in-data.md)
-### [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
+### [RevoScaleR rxExecBy parallel processing example](r/tutorial-rxexecby.md)
 ### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 
 # [Get started with MicrosoftML](r/concept-what-is-the-microsoftml-package.md)

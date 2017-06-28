@@ -64,7 +64,7 @@ Demand is growing for the ability to efficiently handle a large number of small 
 
 In this release, you can leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed in parallel using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run a prediction model over data collected about each person. Supported compute context includes `RxSpark` and `RxInSQLServer`.  
 
-To learn more, see [Quickstart: Parallel processing on partitioned data with rxExecBy](quickstart-rxexecby.md).
+To learn more, see [Quickstart: Parallel processing on partitioned data with rxExecBy](r/tutorial-rxexecby.md).
 
 ## Operationalizing analytics 
  
