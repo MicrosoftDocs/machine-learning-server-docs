@@ -436,7 +436,7 @@
 #### [rxPingNodes](r-reference/revoscaler/rxpingnodes.md) 
 #### [rxPredict](r-reference/revoscaler/rxpredict.md) 
 #### [rxPredict.rxDForest](r-reference/revoscaler/rxpredict-rxdforest.md) 
-#### [rxPredict.rxDTree](scaler/packagehelp/rxPredict.rxDTree.md) 
+#### [rxPredict.rxDTree](r-reference/revoscaler/rxpredict-rxdtree.md) 
 #### [rxPredict.rxNaiveBayes](scaler/packagehelp/rxPredict.rxNaiveBayes.md) 
 #### [rxPrivacyControl](scaler/packagehelp/rxPrivacyControl.md) 
 #### [rxQuantile](scaler/packagehelp/rxQuantile.md) 
