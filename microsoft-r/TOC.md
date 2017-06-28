@@ -238,7 +238,7 @@
 ### [loadImage](r-reference/microsoftml/loadimage.md) 
 ### [logisticRegression](microsoftml/packagehelp/logisticRegression.md) 
 ### [loss](r-reference/microsoftml/loss.md)
-### [minCount](microsoftml/packagehelp/minCount.md)
+### [minCount](r-reference/microsoftml/mincount.md)
 ### [mlModel](microsoftml/packagehelp/mlModel.md)
 ### [mutualInformation](microsoftml/packagehelp/mutualInformation.md)
 ### [NeuralNet](microsoftml/packagehelp/NeuralNet.md)

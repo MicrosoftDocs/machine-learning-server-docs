@@ -102,7 +102,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[minCount](minCount.md) [selectFeatures](selectFeatures.md)
+[minCount](../../r-reference/microsoftml/mincount.md) [selectFeatures](selectFeatures.md)
    
  ##Examples
 
