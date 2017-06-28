@@ -90,7 +90,7 @@ print  (x, header = TRUE, ...)
    
     
  ### `formula`
- formula, as described in [rxFormula](rxFormula.md), with all the terms on the right-hand side of the `~` separated by `+` operators. Each term may be a single variable, a transformed variable, or the interaction of (transformed) variables separated by the `:` operator. e.g. `~ x1 + log(x2) + x3 : x4` 
+ formula, as described in [rxFormula](../../scaler/packagehelp/rxformula.md), with all the terms on the right-hand side of the `~` separated by `+` operators. Each term may be a single variable, a transformed variable, or the interaction of (transformed) variables separated by the `:` operator. e.g. `~ x1 + log(x2) + x3 : x4` 
   
   
     
@@ -125,12 +125,12 @@ print  (x, header = TRUE, ...)
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -184,7 +184,7 @@ print  (x, header = TRUE, ...)
   
      
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
     
@@ -276,7 +276,7 @@ the matched call.
 
 
 ###`formula`
-formula as described in [rxFormula](rxFormula.md).
+formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md).
 
 
 For `rxCov`, a covariance matrix.
@@ -294,8 +294,8 @@ For `rxSSCP`, a sum of squares/cross-product matrix.
  
 cov,
 cor,
-[rxCovData](rxCovRegression.md),
-[rxCorData](rxCovRegression.md).
+[rxCovData](../../scaler/packagehelp/rxcovregression.md),
+[rxCorData](../../scaler/packagehelp/rxcovregression.md).
    
  
  ##Examples

@@ -105,7 +105,7 @@ the model matrix.
  
 [rxLinMod](rxLinMod.md),
 [rxLogit](rxLogit.md),
-[rxCovCor](rxCovCor.md).
+[rxCovCor](../../r-reference/revoscaler/rxcovcor.md).
    
  ##Examples
 

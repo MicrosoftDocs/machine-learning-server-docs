@@ -351,7 +351,7 @@
 #### [rxCompressXdf](r-reference/revoscaler/rxcompressxdf.md) 
 #### [RxComputeContext-class](r-reference/revoscaler/rxcomputecontext-class.md) 
 #### [RxComputeContext](r-reference/revoscaler/rxcomputecontext.md) 
-#### [rxCovCor](scaler/packagehelp/rxCovCor.md) 
+#### [rxCovCor](r-reference/revoscaler/rxcovcor.md) 
 #### [rxCovRegression](scaler/packagehelp/rxCovRegression.md) 
 #### [rxCreateColInfo](scaler/packagehelp/rxCreateColInfo.md) 
 #### [rxCrossTabs](scaler/packagehelp/rxCrossTabs.md) 
