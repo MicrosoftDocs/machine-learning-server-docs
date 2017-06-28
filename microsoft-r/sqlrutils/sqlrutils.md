@@ -38,7 +38,7 @@ The **sqlrutils** package provides functions for executing stored procedures on 
 |[`InputParameter`](../r-reference/sqlrutils/inputparameter.md)| Input parameters for the stored procedure.| 
 |[`OutputData`](../r-reference/sqlrutils/outputdata.md)| Output from the stored procedure.| 
 |[`OutputParameter`](../r-reference/sqlrutils/outputparameter.md) | Output parameters from the stored procedure.|
-|[`registerStoredProcedure`](packagehelp/registerStoredProcedure.md) | Register the stored procedure with a database.|
+|[`registerStoredProcedure`](../r-reference/sqlrutils/registerstoredprocedure.md) | Register the stored procedure with a database.|
 |[`setInputDataQuery`](../r-reference/olapr/query.md)| Assign a query to an input data parameter of the stored procedure.| 
 |[`setInputParameterValue`](packagehelp/setInputParameterValue.md)| Assign a value to the an input parameter of the stored procedure.| 
 |[`StoredProcedure`](packagehelp/StoredProcedure.md)| A stored procedure object.|

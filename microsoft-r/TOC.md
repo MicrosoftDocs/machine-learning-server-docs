@@ -506,7 +506,7 @@
 ###[InputParameter](r-reference/sqlrutils/inputparameter.md) 
 ###[OutputData](r-reference/sqlrutils/outputdata.md) 
 ###[OutputParameter](r-reference/sqlrutils/outputparameter.md) 
-###[registerStoredProcedure](sqlrutils/packagehelp/registerStoredProcedure.md) 
+###[registerStoredProcedure](r-reference/sqlrutils/registerstoredprocedure.md) 
 ###[setInputDataQuery](sqlrutils/packagehelp/setInputDataQuery.md) 
 ###[setInputParameterValue](sqlrutils/packagehelp/setInputParameterValue.md) 
 ###[StoredProcedure](sqlrutils/packagehelp/StoredProcedure.md)
