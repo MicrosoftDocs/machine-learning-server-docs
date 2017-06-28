@@ -727,4 +727,4 @@ Continue on to these tutorials to work with larger data set using the RevoScaleR
 
 + [Flight delays data analysis](tutorial-revoscaler-large-data-airline.md)	
 + [Loan data analysis](../scaler-getting-started-1-example-loan-data.md)	
-+ [Census data analysis](../scaler-getting-started-2-example-census-data.md)	
++ [Census data analysis](tutorial-revoscaler-large-data-census.md)	
