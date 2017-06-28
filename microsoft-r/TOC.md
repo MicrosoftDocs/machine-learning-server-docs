@@ -347,7 +347,7 @@
 #### [rxCancelJob](r-reference/revoscaler/rxcanceljob.md) 
 #### [rxChiSquaredTest](r-reference/revoscaler/rxchisquaredtest.md) 
 #### [rxCleanup](r-reference/revoscaler/rxcleanup.md) 
-#### [rxCompareContexts](scaler/packagehelp/rxCompareContexts.md) 
+#### [rxCompareContexts](r-reference/revoscaler/rxcomparecontexts.md) 
 #### [rxCompressXdf](scaler/packagehelp/rxCompressXdf.md) 
 #### [RxComputeContext-class](scaler/packagehelp/RxComputeContext-class.md) 
 #### [RxComputeContext](scaler/packagehelp/RxComputeContext.md) 
