@@ -199,7 +199,7 @@ Related articles include best practices for XDF file management, including manag
 
 To further your understanding of RevoScaleR usage with HadoopMR or Spark, continue with the following articles:
 
-+ [Data import and exploration on Apache Spark](../scaler-spark-getting-started.md)	
++ [Data import and exploration on Apache Spark](how-to-revoscaler-spark.md)	
 + [Data import and exploration on Hadoop MapReduce](how-to-revoscaler-hadoop.md)	
 
 ## See Also

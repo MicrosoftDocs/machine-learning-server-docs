@@ -69,7 +69,7 @@ R Server should now be available to use.
 
 Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
 
-+ [Practice data import and exploration on Spark](../scaler-spark-getting-started.md)
++ [Practice data import and exploration on Spark](../r/how-to-revoscaler-spark.md)
 + [Practice data import and exploration on MapReduce](../r/how-to-revoscaler-hadoop.md)
 
 ## See Also

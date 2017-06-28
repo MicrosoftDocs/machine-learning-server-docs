@@ -46,7 +46,7 @@ To run the example code, your environment must provide the following:
 + An internet connection or the ability to download and manually install sparklyr
 
 > [!NOTE]
-> For more background in using Microsoft R Server with Spark, see [Get started with R Server and ScaleR on Spark](scaler-spark-getting-started.md).
+> For more background in using Microsoft R Server with Spark, see [Get started with R Server and ScaleR on Spark](r/how-to-revoscaler-spark.md).
 
 ## Load data into HDFS
 

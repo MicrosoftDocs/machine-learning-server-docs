@@ -50,4 +50,4 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 ### Start R workloads
 
 - [Practice data import and exploration and Hadoop](../r/how-to-revoscaler-hadoop.md)
-- [Practice data import and exploration and Spark](../scaler-spark-getting-started.md)
+- [Practice data import and exploration and Spark](../r/how-to-revoscaler-spark.md)

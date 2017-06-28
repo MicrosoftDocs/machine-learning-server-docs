@@ -38,7 +38,7 @@ The **RevoScaleR** package provides a set of custom data analysis functions. Man
 
 Analyzing data using ScaleR functions requires three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
 
-This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [ScaleR Functions for Hadoop](r-reference/revoscaler/revoscaler-hadoop-functions.md).
+This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [ScaleR Functions for Hadoop](../r-reference/revoscaler/revoscaler-hadoop-functions.md).
 
 **Compute Context**
 
@@ -96,7 +96,7 @@ This tutorial introduces several high performance analytics features of **RevoSc
 
 ### Check versions
 
-Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](install/r-server-install-supported-platforms.md). For setup instructions, see [Install R Server on Hadoop](install/r-server-install-hadoop-805.md).
+Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](../install/r-server-install-supported-platforms.md). For setup instructions, see [Install R Server on Hadoop](../install/r-server-install-hadoop-805.md).
 
 You can confirm the server version by typing `print(Revo.version)`.
 
@@ -492,7 +492,7 @@ As before, our first step is to copy the data into HDFS. We specify the location
 	rxHadoopMakeDir(airDataDir)
 	rxHadoopCopyFromLocal("/tmp/airOT2012*.csv", airDataDir)
 
-The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you will use the data sources created in this manual as you continue to explore distributed computing in the [RevoScaleR Distributed Computing Guide](r/how-to-revoscaler-distributed-computing.md):
+The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you will use the data sources created in this manual as you continue to explore distributed computing in the [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md):
 
 	airlineColInfo <- list(
 	     MONTH = list(newName = "Month", type = "integer"),
@@ -880,6 +880,6 @@ You can run the following commands to clean up data in this tutorial:
 
 ## Continuing with Distributed Computing
 
-With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the RevoScaleR Spark platform. You are now ready to continue with the [RevoScaleR Distributed Computing Guide](r/how-to-revoscaler-distributed-computing.md), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. 
+With the linear model and logistic regression performed in the previous sections, you have seen a taste of high-performance analytics on the RevoScaleR Spark platform. You are now ready to continue with the [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md), which continues the analysis of the 2012 airline on-time data with examples for all of RevoScaleR’s HPA functions. 
 
 The *Distributed Computing* section also provides more examples of using non-waiting compute contexts, including managing multiple jobs, and examples of using rxExec to perform traditional high-performance computing, including Monte Carlo simulations and other embarrassingly parallel problems.
