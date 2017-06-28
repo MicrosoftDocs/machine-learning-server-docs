@@ -197,7 +197,7 @@
 ##### [Client Library Tutorial](deployr/deployr-client-library.md)
 ##### [RBroker Framework Tutorial](deployr-rbroker-framework.md)
 ##### [API Explorer Tool](deployr/deployr-api-explorer-tool.md)
-#### [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md)
+#### [Writing Portable R Code](deployr/deployr-data-scientist-write-portable-r-code.md)
 #### [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md)
 ##### [About Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md)
 ##### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)

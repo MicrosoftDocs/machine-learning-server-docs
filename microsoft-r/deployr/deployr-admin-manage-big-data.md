@@ -192,6 +192,6 @@ Ultimately, the administrator is responsible for moving and managing files in th
 
 To reference one of these files in the code, a user must declare and, therefore, know if the given file is stored in the `/public` external subdirectory or the user's private subdirectory. This declaration is done using the `deployrExternal` function in the `deployrUtils` package. 
 
-This function provides read and write access to big data files in a portable way whether the R code is run locally or in the remote DeployR server environment. For more information, point your users to the [Writing Portable R Code](../deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guide and the package help for this function (`??deployrUtils::deployrExternal`).
+This function provides read and write access to big data files in a portable way whether the R code is run locally or in the remote DeployR server environment. For more information, point your users to the [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guide and the package help for this function (`??deployrUtils::deployrExternal`).
 
 >Currently there is no user interface to display the names of the files in this directory. Additionally, due to the potentially large size of the data, we do not expose any API or other facility for moving data into the external directories.

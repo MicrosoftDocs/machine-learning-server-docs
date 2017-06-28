@@ -44,20 +44,20 @@ In a nutshell, DeployR makes your R analytics (R scripts, models, and data files
 
 With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](deployr-application-developer-getting-started.md) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE).
 
-All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the `deployrUtils` R package to [make your R code portable](../deployr-data-scientist-write-portable-r-code.md):
+All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the `deployrUtils` R package to [make your R code portable](deployr-data-scientist-write-portable-r-code.md):
 
--   [The `deployrPackage` function](../../deployr-data-scientist-write-portable-r-code.md#package-portability) guarantees package portability from your local environment to the DeployR server environment when you use it to declare all of the package dependencies in your R script. Packages declared using this function are automatically loaded at runtime, either in your local environment or on the DeployR server. If the packages declared are not yet installed, then they're automatically installed before being loaded.
+-   [The `deployrPackage` function](../deployr-data-scientist-write-portable-r-code.md#package-portability) guarantees package portability from your local environment to the DeployR server environment when you use it to declare all of the package dependencies in your R script. Packages declared using this function are automatically loaded at runtime, either in your local environment or on the DeployR server. If the packages declared are not yet installed, then they're automatically installed before being loaded.
 
--   [The `deployrInput` function](../../deployr-data-scientist-write-portable-r-code.md#input-portability) guarantees script input portability when you use it to define the inputs required by your scripts along with their default values.
+-   [The `deployrInput` function](../deployr-data-scientist-write-portable-r-code.md#input-portability) guarantees script input portability when you use it to define the inputs required by your scripts along with their default values.
 
--   [The `deployrExternal` function](../../deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guarantees portability from your local environment to the DeployR server environment when you use it to reference the big data files from within your R scripts.
+-   [The `deployrExternal` function](../deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guarantees portability from your local environment to the DeployR server environment when you use it to reference the big data files from within your R scripts.
 
 You can install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following commands:
 
     library(devtools)
     install_github('Microsoft/deployrUtils')
 
-Learn more on how to [write portable R code using these functions](../deployr-data-scientist-write-portable-r-code.md).
+Learn more on how to [write portable R code using these functions](deployr-data-scientist-write-portable-r-code.md).
 
 ![Script in IDE](./media/deployr-data-scientist-getting-started/rstudio.png)
 
@@ -225,7 +225,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 
 **Key Documents**
 -   [About DeployR](deployr-about.md)
--   [How to Write Portable R Code with deployrUtils](../deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
+-   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
 -   [Repository Manager Help](../deployr-repository-manager/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
 -   [About Throughput](deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
 -   [Getting Started For Application Developers](deployr-application-developer-getting-started.md)
