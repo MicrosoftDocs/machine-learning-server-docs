@@ -60,7 +60,7 @@ Use `rxLogit` to fit logistic regression models for small or large data.
    
     
  ### `formula`
- formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). Dependent variable  must be binary. It can be a logical variable, a factor with only two categories, or a numeric variable with values in   the range (0,1). In the latter case it will be converted to a logical. 
+ formula as described in [rxFormula](rxformula.md). Dependent variable  must be binary. It can be a logical variable, a factor with only two categories, or a numeric variable with values in   the range (0,1). In the latter case it will be converted to a logical. 
   
   
     
@@ -90,7 +90,7 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
     
  ### `variableSelection`
-  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](rxStepControl.md) for details. 
+  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](../../scaler/packagehelp/rxstepcontrol.md) for details. 
   
   
     
@@ -110,12 +110,12 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -140,12 +140,12 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
     
  ### `covCoef`
- logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](../../r-reference/revoscaler/rxcovregression.md) function to obtain these data. 
+ logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](rxcovregression.md) function to obtain these data. 
   
   
     
  ### `covData`
- logical flag. If `TRUE` and if `cube` is `FALSE` and if  constant term is included in the formula, then the variance-covariance matrix of the data is returned. Use the [rxCovData](../../r-reference/revoscaler/rxcovregression.md) function to obtain these data. 
+ logical flag. If `TRUE` and if `cube` is `FALSE` and if  constant term is included in the formula, then the variance-covariance matrix of the data is returned. Use the [rxCovData](rxcovregression.md) function to obtain these data. 
   
   
     
@@ -205,7 +205,7 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
   
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
   
@@ -357,8 +357,8 @@ Lovell, M., 2008, A Simple Proof of the FWL (Frisch,Waugh,Lovell) Theorem,
  
  ##See Also
  
-[rxLinMod](../../r-reference/revoscaler/rxlinmod.md),
-[rxTransform](rxTransform.md).
+[rxLinMod](rxlinmod.md),
+[rxTransform](../../scaler/packagehelp/rxtransform.md).
    
  ##Examples
 

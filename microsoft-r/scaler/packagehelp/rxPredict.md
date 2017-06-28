@@ -93,7 +93,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `type`
- the type of prediction desired for [rxGlm](../../r-reference/revoscaler/rxglm.md) and [rxLogit](rxLogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
+ the type of prediction desired for [rxGlm](../../r-reference/revoscaler/rxglm.md) and [rxLogit](../../r-reference/revoscaler/rxlogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
   
   
     
@@ -246,7 +246,7 @@ In calculating the prediction standard errors, keep the following in mind:
 
 
 * 
- Prediction standard errors are available for both [rxLinMod](../../r-reference/revoscaler/rxlinmod.md) and [rxLogit](rxLogit.md) models.
+ Prediction standard errors are available for both [rxLinMod](../../r-reference/revoscaler/rxlinmod.md) and [rxLogit](../../r-reference/revoscaler/rxlogit.md) models.
 
 
 * 
@@ -254,7 +254,7 @@ In calculating the prediction standard errors, keep the following in mind:
 
 
 * 
- [rxLinMod](../../r-reference/revoscaler/rxlinmod.md) and [rxLogit](rxLogit.md) must be called with `covCoef = TRUE` because the variance-covariance
+ [rxLinMod](../../r-reference/revoscaler/rxlinmod.md) and [rxLogit](../../r-reference/revoscaler/rxlogit.md) must be called with `covCoef = TRUE` because the variance-covariance
 matrix of the coefficients must be available.
 
 
@@ -267,7 +267,7 @@ matrix of the coefficients must be available.
 
 
 * 
- For [rxLogit](rxLogit.md), `interval = "confidence"` is supported (unlike predict.glm, 
+ For [rxLogit](../../r-reference/revoscaler/rxlogit.md), `interval = "confidence"` is supported (unlike predict.glm, 
 which does not support confidence bounds), but `interval = "prediction"` is not supported.
 
 
@@ -288,7 +288,7 @@ in the data) have no effect.
  ##See Also
  
 [rxLinMod](../../r-reference/revoscaler/rxlinmod.md),
-[rxLogit](rxLogit.md),
+[rxLogit](../../r-reference/revoscaler/rxlogit.md),
 [rxGlm](../../r-reference/revoscaler/rxglm.md),
 [rxPredict.rxDTree](../../r-reference/revoscaler/rxdtree.md),
 [rxPredict.rxDForest](../../r-reference/revoscaler/rxdforest.md),

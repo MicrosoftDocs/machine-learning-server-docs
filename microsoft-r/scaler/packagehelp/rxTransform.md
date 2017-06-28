@@ -130,7 +130,7 @@ the interaction with `transformObjects` objects packed into transformation funct
 [rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md),
 [rxCube](../../r-reference/revoscaler/rxcube.md),
 [rxLinMod](../../r-reference/revoscaler/rxlinmod.md),
-[rxLogit](rxLogit.md),
+[rxLogit](../../r-reference/revoscaler/rxlogit.md),
 [rxSummary](rxSummary.md),
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxImport](../../r-reference/revoscaler/rximport.md),

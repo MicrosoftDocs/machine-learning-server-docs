@@ -417,7 +417,7 @@
 #### [RxLocalSeq-class](r-reference/revoscaler/rxlocalseq-class.md) 
 #### [RxLocalSeq](r-reference/revoscaler/rxlocalseq.md) 
 #### [rxLocateFile](r-reference/revoscaler/rxlocatefile.md) 
-#### [rxLogit](scaler/packagehelp/rxLogit.md) 
+#### [rxLogit](r-reference/revoscaler/rxlogit.md) 
 #### [rxLorenz](scaler/packagehelp/rxLorenz.md) 
 #### [rxMakeRNodeNames](scaler/packagehelp/rxMakeRNodeNames.md) 
 #### [rxMarginals](scaler/packagehelp/rxMarginals.md) 

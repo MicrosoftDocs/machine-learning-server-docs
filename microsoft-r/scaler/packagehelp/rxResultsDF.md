@@ -119,7 +119,7 @@ a data frame containing the computed counts, sums, or means.
 [rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md)
 [rxCube](../../r-reference/revoscaler/rxcube.md)
 [rxLinMod](../../r-reference/revoscaler/rxlinmod.md)
-[rxLogit](rxLogit.md)
+[rxLogit](../../r-reference/revoscaler/rxlogit.md)
 [rxSummary](rxSummary.md)
 [rxMarginals](rxMarginals.md)
    
