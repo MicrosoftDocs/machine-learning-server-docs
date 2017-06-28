@@ -47,7 +47,7 @@ R Server offers two types of configuration for operationalizing analytics and re
 
    ![One-box configuration](../media/o16n/setup-onebox.png)
 
-1. **Enterprise configuration**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled up or down by adding or removing nodes. Learn more about this setup in the [enterprise configuration](configure-enterprise.md) article.
+1. **Enterprise configuration**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled up or down by adding or removing nodes. Learn more about this setup in the [enterprise configuration](../install/operationalize-r-server-enterprise-config.md) article.
 
 For added security, you can [configure SSL](security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](security-authentication.md).
 
@@ -144,7 +144,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
     1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
        >[!IMPORTANT]
-       > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](configure-enterprise.md).
+       > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](../install/operationalize-r-server-enterprise-config.md).
 
     1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
 

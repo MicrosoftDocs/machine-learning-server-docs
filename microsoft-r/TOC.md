@@ -119,7 +119,7 @@
 ### [Configure to operationalize analytics](operationalize/admin-get-started.md)
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [One-box configuration](operationalize/configuration-initial.md)
-#### [Enterprise configuration](operationalize/configure-enterprise.md)
+#### [Enterprise configuration](install/operationalize-r-server-enterprise-config.md)
 #### [Troubleshoot](operationalize/admin-diagnostics.md)
 #### [Administration utility](operationalize/admin-utility.md)
 #### [Find advanced configuration file](operationalize/admin-configuration-file.md)

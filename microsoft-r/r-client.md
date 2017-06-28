@@ -76,7 +76,7 @@ While R is a command line driven program, you can also use your favorite R integ
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
 >[!IMPORTANT]
->You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](operationalize/configure-enterprise.md) for this functionality.
+>You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](install/operationalize-r-server-enterprise-config.md) for this functionality.
 
 <br><a name="try-r-client"></a>
 
