@@ -33,25 +33,25 @@ This topic provides an overview of the main ScaleR functions for use with SQL Se
 The following functions let you define a SQL Server data source. A data source object is a container that specifies a connection string together with the set of data that you want, defined either as a table, view, or query. Stored procedure calls are not supported.  
 
 In addition to defining a data source, you can execute DDL statements from R, if you have the necessary permissions on the instance and database.
-+ [RxSqlServerData](packagehelp/RxSqlServerData.md) - Define a SQL Server  data source object
-+ [rxSqlServerDropTable](packagehelp/rxSqlServerDropTable.md) - Drop a SQL Server  table
-+ [rxSqlServerTableExists](packagehelp/rxSqlServerDropTable.md) - Check for the existence of a database table or object
-+ [rxExecuteSQLDDL](packagehelp/rxExecuteSQLDDL.md) - Execute a command to define, manipulate, or control SQL data, but not return data  
++ [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md) - Define a SQL Server  data source object
++ [rxSqlServerDropTable](../../scaler/packagehelp/rxsqlserverdroptable.md) - Drop a SQL Server  table
++ [rxSqlServerTableExists](../../scaler/packagehelp/rxsqlserverdroptable.md) - Check for the existence of a database table or object
++ [rxExecuteSQLDDL](../../scaler/packagehelp/rxexecutesqlddl.md) - Execute a command to define, manipulate, or control SQL data, but not return data  
 
 ## Functions for Defining or Managing a Compute Context
 The following functions let you define a new compute context, switch compute contexts, or identify the current compute context.
-+ [RxComputeContext](packagehelp/rxComputeContext.md) - Create a compute context.
-+ [rxInSqlServer](packagehelp/rxInSqlServer.md) - Generate a SQL Server compute context that lets **ScaleR** functions run in SQL Server R Services.
-+ [rxGetComputeContext](packagehelp/rxSetComputeContext.md) - Get the current compute context.
-+ [rxSetComputeContext](packagehelp/rxSetComputeContext.md) - Specify which compute context to use. The local compute context is available by default, or you can specify the keyword **local**.
++ [RxComputeContext](../../scaler/packagehelp/rxcomputecontext.md) - Create a compute context.
++ [rxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md) - Generate a SQL Server compute context that lets **ScaleR** functions run in SQL Server R Services.
++ [rxGetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md) - Get the current compute context.
++ [rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md) - Specify which compute context to use. The local compute context is available by default, or you can specify the keyword **local**.
 
 ## Functions for Using a Data Source
 After you have created a data source object, you can open it to get data, or write new data to it. Depending on the size of the data in the source, you can also define the batch size as part of the data source and move data in chunks.
-+ [rxIsOpen](packagehelp/rxOpen-methods.md) - Check whether a data source is available
-+ [rxOpen](packagehelp/rxOpen-methods.md) - Open a data source for reading
-+ [rxReadNext](packagehelp/rxOpen-methods.md) - Read data from a source
-+ [rxWriteNext](packagehelp/rxOpen-methods.md) - Write data to the target
-+ [rxClose](packagehelp/rxOpen-methods.md) - Close a data source
++ [rxIsOpen](../../scaler/packagehelp/rxopen-methods.md) - Check whether a data source is available
++ [rxOpen](../../scaler/packagehelp/rxopen-methods.md) - Open a data source for reading
++ [rxReadNext](../../scaler/packagehelp/rxopen-methods.md) - Read data from a source
++ [rxWriteNext](../../scaler/packagehelp/rxopen-methods.md) - Write data to the target
++ [rxClose](../../scaler/packagehelp/rxopen-methods.md) - Close a data source
 
 
 ## Functions that work with XDF Files
@@ -66,4 +66,4 @@ If you regularly move large amounts of data from a database to a local workstati
 
 
 ## See Also
-[Comparison of ScaleR and CRAN R Functions](../r-reference/revoscaler/revoscaler-compared-to-base-r.md)
+[Comparison of ScaleR and CRAN R Functions](revoscaler-compared-to-base-r.md)
