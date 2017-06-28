@@ -36,7 +36,7 @@ This section contains the function reference documentation for proprietary *revo
 |[mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md)|Deployment functions for interactive remote execution at the command line, plus web service functions for bundling up R code blocks as discrete web services that can be deployed and managed on an R Server instance.|
 |[olapR](olapR/OlapR.md)|A collection of functions for constructing MDX queries against an OLAP cube.|
 |[RevoScaleR](scaler/scaler.md) | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](rserver.md) functionality. |
-|[RevoPemaR](pemar/pemar.md) | Developer functions for coding custom parallel external memory algorithms. |
+|[RevoPemaR](r-reference/revopemar/pemar.md) | Developer functions for coding custom parallel external memory algorithms. |
 |RevoIOQ and RUnit|Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (`*`). |
 |RevoMods|Microsoft modifications and extensions to standard R functions. Reference documentation is online only (`*`).  |
 |RevoTreeView|Decision tree functions, including the **rxDTree** function. Reference documentation is online only (`*`). |

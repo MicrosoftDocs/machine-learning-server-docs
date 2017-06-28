@@ -49,9 +49,9 @@ When used with the **RevoScaleR** package, analyses can be distributed automatic
 
 |Class | Description |
 |------|-------------|
-|[`PemaBaseClass`](../r-reference/revopemar/pemabaseclass-class.md) |A base reference class generator for parallel external memory algorithms.|
-|[`setPemaClass`](packagehelp/setPemaClass.md)|Returns a generator function for creating a parallel external memory algorithm reference class.|
-|[`pemaCompute`](../r-reference/revopemar/pemacompute.md) |Estimates a parallel external memory algorithm as described by a PEMA reference class object. |
+|[`PemaBaseClass`](pemabaseclass-class.md) |A base reference class generator for parallel external memory algorithms.|
+|[`setPemaClass`](../../pemar/packagehelp/setpemaclass.md)|Returns a generator function for creating a parallel external memory algorithm reference class.|
+|[`pemaCompute`](pemacompute.md) |Estimates a parallel external memory algorithm as described by a PEMA reference class object. |
 
 ## Get help on RevoPemaR functions from the R console
 
@@ -68,8 +68,8 @@ To see the **RevoPemaR** functions that can be called from the R console:
 
 ## See also
 
-[Package Reference](~/package-reference.md)
+[Package Reference](../../package-reference.md)
 
-[Install R Server](~/rserver.md)
+[Install R Server](../../rserver.md)
 
-[Install R Client](~/r-client.md)
+[Install R Client](../../r-client.md)

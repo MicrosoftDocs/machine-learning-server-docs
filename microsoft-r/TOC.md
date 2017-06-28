@@ -304,7 +304,7 @@
 ###[OlapConnection](r-reference/olapr/olapconnection.md) 
 ###[Query](r-reference/olapr/query.md)
 
-## [RevoPemaR](pemar/pemar.md)
+## [RevoPemaR](r-reference/revopemar/pemar.md)
 ###[PemaBaseClass-class](r-reference/revopemar/pemabaseclass-class.md) 
 ###[PemaBaseClass](r-reference/revopemar/pemabaseclass.md) 
 ###[PemaByGroup-class](r-reference/revopemar/pemabygroup-class.md) 
