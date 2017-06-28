@@ -28,7 +28,7 @@ ms.custom: ""
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Microsoft Windows.
 
-This article explains how to install Microsoft R Server 9.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](rserver-install-windows-offline.md). 
+This article explains how to install Microsoft R Server 9.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](install/r-server-install-windows-offline.md). 
 
 If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 

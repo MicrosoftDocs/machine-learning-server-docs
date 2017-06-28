@@ -86,7 +86,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
 
 1. Install Microsoft R Server:
-   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
@@ -120,7 +120,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 1. Install Microsoft R Server and any dependencies:
    <br>
    <br>
-   **On Windows**: Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   **On Windows**: Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
 
    <br>
    **On Linux**:  Follow these instructions: [R Server installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)

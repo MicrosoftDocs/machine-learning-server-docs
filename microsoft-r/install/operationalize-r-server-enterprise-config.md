@@ -75,7 +75,7 @@ To replace an older version, you can uninstall the older distribution before ins
    + On Linux: `/etc/deployr/current`
 
 1. Install Microsoft R Server:
-   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
      >1. Manually install .NET Core 1.1.
@@ -107,7 +107,7 @@ To replace an older version, you can uninstall the older distribution before ins
    + On Linux: `/etc/deployr/current`
 
 1. Install Microsoft R Server:
-   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
 
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
@@ -160,7 +160,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
    <br>
    **On Windows**
 
-   Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
    
    >[!IMPORTANT]
    >For SQL Server Machine Learning Services, you must manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
@@ -210,7 +210,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 
 1. On each machine, install the same R Server version you installed on the compute node.<br> 
 
-   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
+   + On Windows: follow these instructions [Installation steps](../rserver-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
      >1. Manually install .NET Core 1.1.

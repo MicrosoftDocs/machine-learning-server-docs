@@ -39,7 +39,7 @@ In this release, most components required for R Server installation are embedded
 
 ## System requirements
 
-+ Operating system must be a [supported version of Windows](install/r-server-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
++ Operating system must be a [supported version of Windows](r-server-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
@@ -89,7 +89,7 @@ Unzip the installation file en_microsoft_r_server_910_for_windows_x64_10324119.z
 1. Double-click **RServerSetup.exe** to start the wizard.
 2. In Configure installation, choose optional components. Required components are listed, but not configurable. Optional components include:
     + R Server (Standalone)
-    + [Pre-trained Models](install/microsoftml-install-pretrained-models.md) used for machine learning.
+    + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for machine learning.
 3. In an offline installation scenario, you are notified about missing requirements, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
 4. Accept the SQL Server license agreement for R Server <sup>1</sup>, as well as the license agreement for Microsoft R Open.
 5. Optionally, change the home directory for R Server.
@@ -113,11 +113,11 @@ As a verification step, you can connect to the server and execute a few ScaleR f
 4. Type `print(Revo.version)` to show the software version.
 5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
-Additionally, run the [Administrator Utility](operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
+Additionally, run the [Administrator Utility](../operationalize/admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
 ## Enable Remote Connections and Analytic Deployment
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize-r-server-one-box-config.md) or an [enterprise setup](operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## What's Installed with R Server
 
@@ -126,9 +126,9 @@ An installation of Microsoft R Server includes the following components.
 | Component | Description |
 |-----------|-------------|
 | Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are under `<install-directory>\bin`. Documentation is under `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
-| Microsoft R Server proprietary libraries and script engine | MRS packages provide libraries of functions. MRS libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [Package Reference](package-reference.md). <br/><br/>On Windows, the default R Server installation directory is `C:\Program Files\Microsoft\R Server\R_SERVER`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
-| [Admin tool](operationalize/admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
-| [Pretrained models](install/microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image featurization. | 
+| Microsoft R Server proprietary libraries and script engine | MRS packages provide libraries of functions. MRS libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [Package Reference](../package-reference.md). <br/><br/>On Windows, the default R Server installation directory is `C:\Program Files\Microsoft\R Server\R_SERVER`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
+| [Admin tool](../operationalize/admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
+| [Pretrained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image featurization. | 
 
 Consider adding a development tool on the server to build script or solutions using R Server features:
 
@@ -139,10 +139,10 @@ Consider adding a development tool on the server to build script or solutions us
 
 ## See Also
 
- [Introduction to R Server](rserver.md) 
- [What's New in R Server](rserver-whats-new.md)
- [Supported platforms](install/r-server-install-supported-platforms.md)  
- [Known Issues](rserver-known-issues.md)  
- [Command line installation](install/r-server-install-windows-command-line.md)  
- [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
- [Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)
+ [Introduction to R Server](../rserver.md) 
+ [What's New in R Server](../rserver-whats-new.md)
+ [Supported platforms](r-server-install-supported-platforms.md)  
+ [Known Issues](../rserver-known-issues.md)  
+ [Command line installation](r-server-install-windows-command-line.md)  
+ [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)    
+ [Configure R Server to operationalize analytics](operationalize-r-server-one-box-config.md)

@@ -31,7 +31,7 @@ This article provides syntax and examples for running RServerSetup.exe from the 
 Before you start, review the following articles for system requirements, prerequisites, download links, and steps:
 
 + [Install R Server 9.1. on Windows](../rserver-install-windows.md) for an internet-connected installation.
-+ [Offline installation](../rserver-install-windows-offline.md) for a machine with no internet access.
++ [Offline installation](r-server-install-windows-offline.md) for a machine with no internet access.
 
 ## Command line options
 
@@ -86,7 +86,7 @@ A default installation includes the MicrosoftML package, but not the pretrained 
 
   `rserversetup.exe /quiet /uninstall`  
 
-4. Offline install requires two .cab files that provide MRO and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](../rserver-install-windows-offline.md).
+4. Offline install requires two .cab files that provide MRO and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](r-server-install-windows-offline.md).
 
   `rserversetup.exe /offline /mediadir="D:/Public/CABS` 
 
