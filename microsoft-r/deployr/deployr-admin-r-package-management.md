@@ -26,9 +26,9 @@ ms.custom: ""
 
 # R Package Management Guide
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 ## Introduction
 
@@ -65,8 +65,8 @@ One such approach is to use a master R script that contains all required package
 
 ## Decentralized Management
 
-Another option is to [assign permissions](deployr/deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) for R package installation to select users. Then, these select users can install the packages they need directly within their code. When you've explicitly assigned the `PACKAGE_MANAGER` role to users, they are granted permissions to install R packages via `deployrUtils::deployrPackage()`.
+Another option is to [assign permissions](deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) for R package installation to select users. Then, these select users can install the packages they need directly within their code. When you've explicitly assigned the `PACKAGE_MANAGER` role to users, they are granted permissions to install R packages via `deployrUtils::deployrPackage()`.
 
 ![Login](./media/deployr-admin-r-package-management/packagemgr.png)
 
-Also note that the `ADMINISTRATOR` and `POWER_USER` roles have implicit `PACKAGE_MANAGER` rights, while `BASIC_USER` does not. [Read more on default roles...](deployr/deployr-admin-console-permissions-with-roles.md#predefined-system-roles)
+Also note that the `ADMINISTRATOR` and `POWER_USER` roles have implicit `PACKAGE_MANAGER` rights, while `BASIC_USER` does not. [Read more on default roles...](deployr-admin-console-permissions-with-roles.md#predefined-system-roles)

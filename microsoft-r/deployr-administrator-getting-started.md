@@ -60,7 +60,7 @@ The primary function of the DeployR server is to support the execution of R code
 
 The R code developed and deployed by [data scientists](deployr-data-scientist-getting-started.md) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](http://cran.r-project.org/), [MRAN](http://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
 
-Making sure that these R package dependencies are available to the code executing on the DeployR server requires active participation from you, the administrator. There are two R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](deployr-admin-r-package-management.md).
+Making sure that these R package dependencies are available to the code executing on the DeployR server requires active participation from you, the administrator. There are two R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](deployr/deployr-admin-r-package-management.md).
 
 ## Runtime Policies
 
@@ -128,7 +128,7 @@ This section provides a quick summary of useful links for administrators working
 -   [About DeployR](deployr/deployr-about.md)
 -   [Installation & Configuration](deployr-installation.md)
 -   [Security](deployr-admin-security/deployr-security.md)
--   [R Package Management](deployr-admin-r-package-management.md)
+-   [R Package Management](deployr/deployr-admin-r-package-management.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
 -   [Diagnostic Testing & Troubleshooting](deployr/deployr-admin-diagnostics-troubleshooting.md)
 

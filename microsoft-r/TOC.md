@@ -179,7 +179,7 @@
 ##### [Server & Grid High Availability](deployr/deployr-admin-configure-high-availability.md)
 ##### [Managing Big Data](deployr/deployr-admin-manage-big-data.md)
 ##### [Using Hadoop Impersonation & DeployR](deployr/deployr-admin-hadoop-impersonation.md)
-##### [R Package Management](deployr-admin-r-package-management.md)
+##### [R Package Management](deployr/deployr-admin-r-package-management.md)
 ##### [Updating DeployR after Java Update](deployr/deployr-admin-java-version.md)
 ##### [Reinstalling or Upgrading the R Dependency](deployr/deployr-admin-configure-reinstall-r.md)
 #### [Security on DeployR](deployr-admin-security/deployr-security.md)
