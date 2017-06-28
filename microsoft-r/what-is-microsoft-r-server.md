@@ -124,7 +124,7 @@ To review specific OS and database platform versions that can be used for an R S
 
 If you are new to Microsoft R, we recommend starting with R Client and an integrated development environment like R Tools for Visual Studio (RTVS). This configuration is free of charge. It gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes the Microsoft R proprietary packages that run locally on your development computer.
 
-Using just Microsoft R Open and RTVS, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
+Using just Microsoft R Open and RTVS, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](resources-more.md).
 
 However, because you have R Client, your script can also include functions from Microsoft R packages, including MicrosoftML, olapR, and RevoScaleR. All of these packages are available in both R Client and R Server, but at different levels of capacity.
 
@@ -139,5 +139,5 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 **See also**
 
 + [What's new in R Server](whats-new-in-r-server.md)
-+ [Learning Resources](microsoft-r-more-resources.md)
++ [Learning Resources](resources-more.md)
 + [Getting Started with ScaleR](r/tutorial-revoscaler-data-import-transform.md)

@@ -28,7 +28,7 @@ ms.custom: ""
 
 This section of the documentation is for data scientists, analysts, and statisticians. The focus of this content area is on data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies. It provides step-by-step guidance for common tasks leveraging the libraries and packages in Microsoft R.
 
-If you are new to R, be sure to also use the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](../microsoft-r-more-resources.md).
+If you are new to R, be sure to also use the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](../resources-more.md).
 
 ## How-to guidance
 
@@ -51,6 +51,6 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 
 ## See Also
 
-[Learning Resources](../microsoft-r-more-resources.md)
+[Learning Resources](../resources-more.md)
 
 [Introduction to Microsoft R](../microsoft-r-getting-started.md)

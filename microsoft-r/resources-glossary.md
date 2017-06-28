@@ -38,7 +38,7 @@ ms.custom: ""
 >
 >For general R language terminology, check out CRAN's [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
 >
->Also, check out our [More Resources](microsoft-r-more-resources.md) for other publications and resources.
+>Also, check out our [More Resources](resources-more.md) for other publications and resources.
 
 
 Use this glossary to find the definitions to common terms in the Microsoft R documentation.

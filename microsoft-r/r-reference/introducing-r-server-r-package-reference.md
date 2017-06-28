@@ -62,7 +62,7 @@ For a list of deprecated or discontinued functions within an existing package, s
 
 [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)
 
-[Additional learning resources and sample datasets](../microsoft-r-more-resources.md)
+[Additional learning resources and sample datasets](../resources-more.md)
 
 [Install R Server](../what-is-microsoft-r-server.md)
 

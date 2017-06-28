@@ -517,5 +517,5 @@
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)
 ## [Glossary](resources-glossary.md)
-## [Additional resources](microsoft-r-more-resources.md)
+## [Additional resources](resources-more.md)
 

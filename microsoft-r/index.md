@@ -72,7 +72,7 @@ If you are new to Microsoft R, we recommend starting with either [R Server for W
 
 You can install these configurations for free. Each one gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes Microsoft R proprietary packages that run locally on your development computer.
 
-Since the R engine lies underneath, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
+Since the R engine lies underneath, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](resources-more.md).
 
 However, because you have R Client or R Server, your script can also include functions shipped only with Microsoft R products, including the [MicrosoftML](r-reference/microsoftml/microsoftml-package.md), [olapR](r-reference/olapr/olapr.md), [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md), and [RevoScaleR](r-reference/revoscaler/revoscaler.md) packages. All of these packages are available in both R Client and R Server, but at different levels of capacity.
 
@@ -96,5 +96,5 @@ Learn more about Microsoft R in these articles:
 
 + [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx)
 
-+ [Additional Resources](microsoft-r-more-resources.md)
++ [Additional Resources](resources-more.md)
 
