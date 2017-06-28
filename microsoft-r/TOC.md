@@ -444,7 +444,7 @@
 #### [rxRealtimeScoring](r-reference/revoscaler/rxrealtimescoring.md) 
 #### [rxRemoteCall](r-reference/revoscaler/rxremotecall.md) 
 #### [rxRemoteFilePath](r-reference/revoscaler/rxremotefilepath.md) 
-#### [rxRemoteGetId](scaler/packagehelp/rxRemoteGetId.md) 
+#### [rxRemoteGetId](r-reference/revoscaler/rxremotegetid.md) 
 #### [rxRemoteHadoopMRCall](scaler/packagehelp/rxRemoteHadoopMRCall.md) 
 #### [rxRemovePackages](scaler/packagehelp/rxRemovePackages.md) 
 #### [rxResultsDF](scaler/packagehelp/rxResultsDF.md) 
