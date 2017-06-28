@@ -500,7 +500,7 @@
 ###[totalSystemMemory](r-reference/revoutils/totalsystemmemory.md)
 
 ## [sqlrutils](sqlrutils/sqlrutils.md)
-###[executeStoredProcedure](sqlrutils/packagehelp/executeStoredProcedure.md) 
+###[executeStoredProcedure](r-reference/sqlrutils/executestoredprocedure.md) 
 ###[getInputParameters](sqlrutils/packagehelp/getInputParameters.md) 
 ###[InputData](sqlrutils/packagehelp/InputData.md) 
 ###[InputParameter](sqlrutils/packagehelp/InputParameter.md) 
