@@ -30,7 +30,7 @@ Samples are described and linked here to help you get started quickly using Micr
 
 ## Breast cancer prediction using rxFastLinear
 
-This starter [breast cancer prediction sample](https://github.com/Microsoft/microsoft-r/tree/master/microsoft-ml/Samples/101/BinaryClassification/BreastCancerPrediction) builds a model to predict breast cancer. It uses the well-known Breast Cancer UCI dataset with [`rxFastLinear`](microsoftml/packagehelp/rxFastLinear.md)algorithm provided by the MicrosoftML package.
+This starter [breast cancer prediction sample](https://github.com/Microsoft/microsoft-r/tree/master/microsoft-ml/Samples/101/BinaryClassification/BreastCancerPrediction) builds a model to predict breast cancer. It uses the well-known Breast Cancer UCI dataset with [`rxFastLinear`](r-reference/microsoftml/rxfastlinear.md)algorithm provided by the MicrosoftML package.
 
 The type of machine learning task exhibited in this sample is a binary classification problem. Specifically, a given set of cell mass characteristics is used to predict whether the mass is benign or malignant.
 

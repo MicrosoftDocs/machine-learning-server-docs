@@ -106,12 +106,12 @@ reproducible results, it is recommended that one sets `shuffle` to
   
  ### `lossFunction`
  Specifies the empirical loss function to optimize. For binary classification, the following choices are available:  
-*   [logLoss](../../r-reference/microsoftml/loss.md): The log-loss. This is the default.  
-*   [hingeLoss](../../r-reference/microsoftml/loss.md): The SVM hinge loss. Its parameter represents the margin size.    
-*   [smoothHingeLoss](../../r-reference/microsoftml/loss.md): The smoothed hinge loss. Its parameter represents the smoothing constant.  
-For linear regression, squared loss [squaredLoss](../../r-reference/microsoftml/loss.md) is currently supported. When this parameter is set to `NULL`, its default value depends on the type of learning:  
-*   [logLoss](../../r-reference/microsoftml/loss.md) for binary classification. 
-*   [squaredLoss](../../r-reference/microsoftml/loss.md) for linear regression. 
+*   [logLoss](loss.md): The log-loss. This is the default.  
+*   [hingeLoss](loss.md): The SVM hinge loss. Its parameter represents the margin size.    
+*   [smoothHingeLoss](loss.md): The smoothed hinge loss. Its parameter represents the smoothing constant.  
+For linear regression, squared loss [squaredLoss](loss.md) is currently supported. When this parameter is set to `NULL`, its default value depends on the type of learning:  
+*   [logLoss](loss.md) for binary classification. 
+*   [squaredLoss](loss.md) for linear regression. 
  
   
   
@@ -162,7 +162,7 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](../../r-reference/microsoftml/featurizetext.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
@@ -277,13 +277,13 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[logLoss](../../r-reference/microsoftml/loss.md), [hingeLoss](../../r-reference/microsoftml/loss.md),
-[smoothHingeLoss](../../r-reference/microsoftml/loss.md), [squaredLoss](../../r-reference/microsoftml/loss.md),
-[rxFastTrees](rxFastTrees.md), [rxFastForest](../../r-reference/microsoftml/rxfastforest.md),
-[rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md), [rxNeuralNet](../../r-reference/microsoftml/neuralnet.md),
-[rxOneClassSvm](../../r-reference/microsoftml/oneclasssvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),
-[categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](../../r-reference/microsoftml/categoricalhash.md),
-[rxPredict.mlModel](rxPredict.md).
+[logLoss](loss.md), [hingeLoss](loss.md),
+[smoothHingeLoss](loss.md), [squaredLoss](loss.md),
+[rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md), [rxFastForest](rxfastforest.md),
+[rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md), [rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md),
+[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[categorical](categorical.md), [categoricalHash](categoricalhash.md),
+[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
    
  ##Examples
 
