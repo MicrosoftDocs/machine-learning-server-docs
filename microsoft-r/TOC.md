@@ -331,7 +331,7 @@
 #### [claims](r-reference/revoscaler/claims.md) 
 #### [DJIAdaily](r-reference/revoscaler/djiadaily.md) 
 #### [Kyphosis](r-reference/revoscaler/kyphosis.md) 
-#### [mortDefaultSmall](scaler/packagehelp/mortDefaultSmall.md) 
+#### [mortDefaultSmall](r-reference/revoscaler/mortdefaultsmall.md) 
 ### Functions
 #### [as.gbm](r-reference/revoscaler/as-gbm.md) 
 #### [as.glm](r-reference/revoscaler/as-glm.md) 
