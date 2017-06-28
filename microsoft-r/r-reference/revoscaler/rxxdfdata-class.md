@@ -49,8 +49,8 @@ Xdf data source connection class.
  ## Generators 
 
  
-The targeted generator [RxXdfData](RxXdfData.md) as well as the general generator
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
+The targeted generator [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) as well as the general generator
+[rxNewDataSource](rxnew.md).
  
  ## Extends 
 
@@ -113,9 +113,9 @@ Class RxDataSource, by class RxFileData.
  
  ##See Also
  
-[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
-[RxXdfData](RxXdfData.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md)
+[RxDataSource-class](rxdatasource-class.md),
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
+[rxNewDataSource](rxnew.md)
    
  
  ##Examples
