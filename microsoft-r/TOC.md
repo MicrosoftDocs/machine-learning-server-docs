@@ -382,7 +382,7 @@
 #### [rxGetAvailableNodes](r-reference/revoscaler/rxgetavailablenodes.md) 
 #### [rxGetEnableThreadPool](r-reference/revoscaler/rxgetenablethreadpool.md) 
 #### [rxGetFuzzyDist](r-reference/revoscaler/rxgetfuzzydist.md) 
-#### [rxGetFuzzyKeys](scaler/packagehelp/rxGetFuzzyKeys.md) 
+#### [rxGetFuzzyKeys](r-reference/revoscaler/rxgetfuzzykeys.md) 
 #### [rxGetInfoXdf](scaler/packagehelp/rxGetInfoXdf.md) 
 #### [rxGetJobInfo](scaler/packagehelp/rxGetJobInfo.md) 
 #### [rxGetJobOutput](scaler/packagehelp/rxGetJobOutput.md) 
