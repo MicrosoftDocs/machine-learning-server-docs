@@ -225,7 +225,7 @@
 
 # [Function Reference](package-reference.md)
 ## [MicrosoftML](microsoftml/microsoftml.md)
-### [categorical](microsoftml/packagehelp/categorical.md)
+### [categorical](r-reference/microsoftml/categorical.md)
 ### [categoricalHash](microsoftml/packagehelp/categoricalHash.md)
 ### [concat](microsoftml/packagehelp/concat.md)
 ### [extractPixels](microsoftml/packagehelp/extractPixels.md) 
