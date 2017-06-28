@@ -370,7 +370,7 @@
 #### [rxExecBy](r-reference/revoscaler/rxexecby.md) 
 #### [rxExecByPartition](r-reference/revoscaler/rxexecbypartition.md) 
 #### [rxExecuteSQLDDL](r-reference/revoscaler/rxexecutesqlddl.md) 
-#### [rxExpression](scaler/packagehelp/rxExpression.md) 
+#### [rxExpression](r-reference/revoscaler/rxexpression.md) 
 #### [rxFactors](scaler/packagehelp/rxFactors.md) 
 #### [RxFileData-class](scaler/packagehelp/RxFileData-class.md) 
 #### [RxFileSystem](scaler/packagehelp/RxFileSystem.md) 
