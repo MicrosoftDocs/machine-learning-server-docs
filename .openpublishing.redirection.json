@@ -1,0 +1,53 @@
+{
+ "redirections":
+ [
+  {
+      "source_path" : "microsoft-r/microsoftml-introduction.md",
+      "redirect_url" : "/r-server/r/concept-what-is-the-microsoftml-package"
+  },
+  {
+      "source_path" : "microsoft-r/scaler-odbc.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-odbc"
+  },
+  {
+      "source_path" : "microsoft-r/overview-microsoftml-functions.md",
+      "redirect_url" : "/r-server/microsoftml/microsoftml-package"
+  },
+    {
+      "source_path" : "microsoft-r/install-r-client-windows.md",
+      "redirect_url" : "/r-server/r-client/what-is-microsoft-r-client"
+  },
+    {
+      "source_path" : "microsoft-r/r-client-get-started.md",
+      "redirect_url" : "/r-server/r-client/what-is-microsoft-r-client"
+  },
+    {
+      "source_path" : "microsoft-r/r-client-install.md",
+      "redirect_url" : "/r-server/r-client/what-is-microsoft-r-client"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-get-started-node.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-data-import-transform"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-getting-started-tutorial.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-data-import-transform"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-getting-started-0-example-airline-data.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-data-import-transform"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-getting-started.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-data-import-transform"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/mrsdeploy-websrv-vignette.md",
+      "redirect_url" : "/r-server/operationalize/how-to-deploy-web-service-publish-manage-in-r"
+  },
+    {
+     "source_path" : "microsoft-r/microsoft-r-getting-started.md",
+     "redirect_url" : "/r-server/index"
+}
+ ]
+}
