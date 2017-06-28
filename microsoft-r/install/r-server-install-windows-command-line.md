@@ -30,8 +30,8 @@ This article provides syntax and examples for running RServerSetup.exe from the 
 
 Before you start, review the following articles for system requirements, prerequisites, download links, and steps:
 
-+ [Install R Server 9.1. on Windows](rserver-install-windows.md) for an internet-connected installation.
-+ [Offline installation](rserver-install-windows-offline.md) for a machine with no internet access.
++ [Install R Server 9.1. on Windows](../rserver-install-windows.md) for an internet-connected installation.
++ [Offline installation](../rserver-install-windows-offline.md) for a machine with no internet access.
 
 ## Command line options
 
@@ -50,7 +50,7 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 
 | Parameter | Description |
 |-----------|-------------|
-| `/install` | Runs RServerSetup.exe in install mode, used to add R Server or the [pretrained machine learning models](install/microsoftml-install-pretrained-models.md)|
+| `/install` | Runs RServerSetup.exe in install mode, used to add R Server or the [pretrained machine learning models](microsoftml-install-pretrained-models.md)|
 | `/uninstall` | Removes an existing installation of R Server. |
 | `/modify` | Runs RServerSetup.exe in modify mode. Setup looks for an existing installation of R Server 9.1 and gives you options for changing an installation (for example, you could add the pretrained models, or uninstall the server). Use this option if you want to rerun (or repair) an installation. |
 
@@ -63,7 +63,7 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 | `/installdir=""` | Specifies the installation directory. By default, this is C:\Program Files\Microsoft\R Server\R_SERVER. |
 | `/cachedir=""` | A download location for the .cab files. By default, setup uses `%temp%` for the local admin user. Assuming an online installation scenario, you can set this parameter to have setup download the .cabs to the folder you specify. |
 | `/mediadir=""` | The .cab file location setup uses to find .cab files in an offline installation. By default, setup uses `%temp%` for local admin. |
-| `/models` | Adds the [pretrained machine learning models](install/microsoftml-install-pretrained-models.md). Use with `/install`.|
+| `/models` | Adds the [pretrained machine learning models](microsoftml-install-pretrained-models.md). Use with `/install`.|
 
 
 ## Default installation
@@ -86,15 +86,15 @@ A default installation includes the MicrosoftML package, but not the pretrained 
 
   `rserversetup.exe /quiet /uninstall`  
 
-4. Offline install requires two .cab files that provide MRO and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](rserver-install-windows-offline.md).
+4. Offline install requires two .cab files that provide MRO and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](../rserver-install-windows-offline.md).
 
   `rserversetup.exe /offline /mediadir="D:/Public/CABS` 
 
 ## See Also
 
- [Introduction to R Server](rserver.md) 
- [What's New in R Server](rserver-whats-new.md)
- [Supported platforms](install/r-server-install-supported-platforms.md)  
- [Known Issues](rserver-known-issues.md)  
- [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
- [Configure R Server to operationalize your analytics](install/operationalize-r-server-one-box-config.md)
+ [Introduction to R Server](../rserver.md) 
+ [What's New in R Server](../rserver-whats-new.md)
+ [Supported platforms](r-server-install-supported-platforms.md)  
+ [Known Issues](../rserver-known-issues.md)  
+ [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)    
+ [Configure R Server to operationalize your analytics](operationalize-r-server-one-box-config.md)

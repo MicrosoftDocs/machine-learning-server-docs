@@ -74,7 +74,7 @@
 ### [R Server for Windows](rserver-install-windows.md)
 #### [Install on Windows](rserver-install-windows.md)
 #### [Offline install](rserver-install-windows-offline.md)
-#### [Command line install](rserver-install-windows-commandline.md)
+#### [Command line install](install/r-server-install-windows-command-line.md)
 
 ### [R Server for Linux](install/r-server-install-linux-server.md)
 #### [Install on Linux](install/r-server-install-linux-server.md)

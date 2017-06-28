@@ -143,6 +143,6 @@ Consider adding a development tool on the server to build script or solutions us
  [What's New in R Server](rserver-whats-new.md)
  [Supported platforms](install/r-server-install-supported-platforms.md)  
  [Known Issues](rserver-known-issues.md)  
- [Command line installation](rserver-install-windows-commandline.md)  
+ [Command line installation](install/r-server-install-windows-command-line.md)  
  [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
  [Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)
