@@ -44,7 +44,7 @@ R Server includes two packages, `MicrosoftML` and `mrsdeploy`, that either canno
 
 + `mrsdeploy` is excluded from a parcel installation. This package has a .NET Core dependency and cannot be added to a parcel.
 
-The workaround is to perform a manual installation of individual packages. For instructions, see [Manual package installation](../rserver-install-hadoop-manual-package.md).
+The workaround is to perform a manual installation of individual packages. For instructions, see [Manual package installation](r-server-install-hadoop-manual-package.md).
 
 ## See Also
 

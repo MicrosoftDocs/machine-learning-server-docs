@@ -40,7 +40,7 @@ Before you start, be aware of the following limitations:
 + MicrosoftML can only be included in the parcel if CDH is running on RHEL 7.x or later.
 + mrsdeploy features (remote execution, web service deployment), plus web node and compute node configurations, are not supported at all. 
 
-A workaround is to install the packages manually. For instructions, see [Manual package installation](../rserver-install-hadoop-manual-package.md).
+A workaround is to install the packages manually. For instructions, see [Manual package installation](r-server-install-hadoop-manual-package.md).
 
 ## Step 1: Download 
 

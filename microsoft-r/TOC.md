@@ -94,7 +94,7 @@
 ##### [Command line installation (CDH, HDP, MapR)](install/r-server-install-hadoop-command-line.md)
 ##### [Offline install](rserver-install-hadoop-offline.md)
 ##### [Package dependency list](rserver-install-linux-hadoop-packages.md)
-##### [Manual package installation](rserver-install-hadoop-manual-package.md)
+##### [Manual package installation](install/r-server-install-hadoop-manual-package.md)
 #### Post-install configuration
 ##### [Adjust Hadoop configuration](install/r-server-install-hadoop-configuration-r-workloads.md)
 ##### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)

@@ -37,7 +37,7 @@ With root privilege, you can use a package manager to install each package in th
 
 ## Prerequisites
 
-A manual package installation is similar to an offline installation. As a first step, review the instructions for [offline installation](rserver-install-hadoop-offline.md) for system prerequisites and for downloading and unpacking the distribution.
+A manual package installation is similar to an offline installation. As a first step, review the instructions for [offline installation](../rserver-install-hadoop-offline.md) for system prerequisites and for downloading and unpacking the distribution.
 
 After you unpack the distribution, you should see packages for RPM and DEB in the /tmp/MRS91Hadoop directory.
 
@@ -81,7 +81,7 @@ A manual or custom installation must create the appropriate folders and set perm
 
 ## Install additional packages on each node using rxExec
 
-Once you have R Server installed on a node, you can use the `rxExec` function in [RevoScaleR](r-reference/revoscaler/revoscaler.md) to install additional packages, including third-party packages from CRAN or another repository. 
+Once you have R Server installed on a node, you can use the `rxExec` function in [RevoScaleR](../revoscaler.md) to install additional packages, including third-party packages from CRAN or another repository. 
 
 For example, to install the `SuppDists` package on all the nodes of your cluster, call `rxExec` as follows:
 
@@ -89,11 +89,11 @@ For example, to install the `SuppDists` package on all the nodes of your cluster
 	
 ## Enable Remote Connections and Analytic Deployment
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize-r-server-one-box-config.md) or an [enterprise setup](operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Next Steps
 
 Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
 
-+ [Practice data import and exploration on Spark](scaler-spark-getting-started.md)
-+ [Practice data import and exploration on MapReduce](scaler-hadoop-getting-started.md)
++ [Practice data import and exploration on Spark](../scaler-spark-getting-started.md)
++ [Practice data import and exploration on MapReduce](../scaler-hadoop-getting-started.md)
