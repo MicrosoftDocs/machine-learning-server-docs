@@ -207,7 +207,7 @@ Read about the [differences between DeployR and R Server 9.x Operationalization]
 
 ##### R Server 9.0.1 for Linux
 
-This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server for Linux](rserver-install-linux-server.md).
+This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server for Linux](install/r-server-install-linux-server.md).
 
 <a name="bkmk_Spark"></a>
 #### R Server for Hadoop (MapReduce and Spark)
@@ -328,5 +328,5 @@ algorithms for cleaning and analyzing text data.
 
  [Introduction to R Server](rserver.md) 
  [Install R Server on Windows](rserver-install-windows.md)  
- [Install R Server on Linux](rserver-install-linux-server.md)  
+ [Install R Server on Linux](install/r-server-install-linux-server.md)  
  [Install R Server on Hadoop](install/r-server-install-hadoop.md)

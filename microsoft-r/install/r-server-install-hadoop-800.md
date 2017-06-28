@@ -352,7 +352,7 @@ To get started with Microsoft R Server on Hadoop, we recommend the [Practice dat
 
 [Install R Server 8.0.5 on Hadoop](r-server-install-hadoop-805.md)
 
-[Install Microsoft R Server on Linux](../rserver-install-linux-server.md)
+[Install Microsoft R Server on Linux](r-server-install-linux-server.md)
 
 [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
 

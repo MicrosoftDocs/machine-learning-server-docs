@@ -27,19 +27,19 @@ ms.custom: ""
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. 
 
-This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see the instructions for an [offline installation](install/r-server-install-linux-offline.md).
+This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see the instructions for an [offline installation](r-server-install-linux-offline.md).
 
 If you previously installed version 9.0.1, it will be replaced with the 9.1.0 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## System requirements
 
-+ Operating system must be a [supported version of Linux](rserver-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
++ Operating system must be a [supported version of Linux](../rserver-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
 + Disk space must be a minimum of 500 MB.
 
-+ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](install/r-server-install-linux-offline.md).
++ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](r-server-install-linux-offline.md).
 
 + A package manager (yum for RHEL systems, apt for Ubuntu, zypper for SLES systems)
 
@@ -53,10 +53,10 @@ The following additional components are included in Setup and required for R Ser
 <a name="howtoinstall"></a>
 ## How to install
 
-This section walks you through an R Server 9.1.0 deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md) and use the MicrosoftML package.
+This section walks you through an R Server 9.1.0 deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](../deployr-repository-manager/about.md) and use the MicrosoftML package.
 
 > [!Tip]
-> Review [recommendations and best practices](install/r-server-install-linux-manage-install.md) for deployments in locked down environments.
+> Review [recommendations and best practices](r-server-install-linux-manage-install.md) for deployments in locked down environments.
 >
 
 <a name="download"><a/>
@@ -89,7 +89,7 @@ The distribution is unpacked into an `MRS91Linux` folder at the download locatio
 | File | Description |
 |------|-------------|
 |`install.sh` | Script for installing R Server. |
-|`generate_mrs_parcel.sh` | Script for generating a parcel used for [installing R Server on CDH](install/r-server-install-cloudera.md). |
+|`generate_mrs_parcel.sh` | Script for generating a parcel used for [installing R Server on CDH](r-server-install-cloudera.md). |
 | `EULA.txt` | End user license agreements for each separately licensed component. |
 | DEB folder | Contains Microsoft R packages for deployment on Ubuntu. |
 | RPM folder | Contains Microsoft R packages for deployment on CentOS/RHEL and SUSE. |
@@ -116,7 +116,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   `[root@localhost tmp] $ cd /tmp/MRS91Linux`
 
-4. Run the script. To include the [pretrained machine learning models for MicrosoftML](install/microsoftml-install-pretrained-models.md), append the `-m` switch. 
+4. Run the script. To include the [pretrained machine learning models for MicrosoftML](microsoftml-install-pretrained-models.md), append the `-m` switch. 
 
    `[root@localhost MRS91Linux] $ bash install.sh -m`
 
@@ -191,7 +191,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
 ## Enable Remote Connections and Analytic Deployment
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize-r-server-one-box-config.md) or an [enterprise setup](operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 <a name="unattended"></a>
 
@@ -222,15 +222,15 @@ The Microsoft R Server setup installs the R base packages and a set of enhanced 
 
 ## Next Steps
 
-Review the best practices in [Manage your R Server for Linux installation](install/r-server-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
+Review the best practices in [Manage your R Server for Linux installation](r-server-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 
- [Introduction to R Server](rserver.md) 
- [What's New in R Server](rserver-whats-new.md)
- [Supported platforms](rserver-install-supported-platforms.md)  
- [Known Issues](rserver-known-issues.md)  
- [Install R on Hadoop overview](install/r-server-install-hadoop.md)  
- [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-linux-uninstall.md) 
- [Troubleshoot R Server installation problems on Hadoop](install/r-server-install-hadoop-troubleshoot.md)  
- [Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)
+ [Introduction to R Server](../rserver.md) 
+ [What's New in R Server](../rserver-whats-new.md)
+ [Supported platforms](../rserver-install-supported-platforms.md)  
+ [Known Issues](../rserver-known-issues.md)  
+ [Install R on Hadoop overview](r-server-install-hadoop.md)  
+ [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-linux-uninstall.md) 
+ [Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)  
+ [Configure R Server to operationalize analytics](operationalize-r-server-one-box-config.md)

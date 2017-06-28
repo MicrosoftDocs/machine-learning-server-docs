@@ -76,8 +76,8 @@
 #### [Offline install](rserver-install-windows-offline.md)
 #### [Command line install](rserver-install-windows-commandline.md)
 
-### [R Server for Linux](rserver-install-linux-server.md)
-#### [Install on Linux](rserver-install-linux-server.md)
+### [R Server for Linux](install/r-server-install-linux-server.md)
+#### [Install on Linux](install/r-server-install-linux-server.md)
 #### [Offline install](install/r-server-install-linux-offline.md)
 #### [Manage your installation](install/r-server-install-linux-manage-install.md)
 #### [Uninstall from Linux](rserver-install-linux-uninstall.md)

@@ -245,5 +245,5 @@ The new .xdf file has an additional variable, EducExp:
 
  [Introduction to R Server](rserver.md) 
  [Install R Server on Windows](rserver-install-windows.md)  
- [Install R Server on Linux](rserver-install-linux-server.md)  
+ [Install R Server on Linux](install/r-server-install-linux-server.md)  
  [Install R Server on Hadoop](install/r-server-install-hadoop.md)

@@ -205,5 +205,5 @@ To further your understanding of RevoScaleR usage with HadoopMR or Spark, contin
 ## See Also
 
  [Introduction to R Server](rserver.md) 
- [Install R Server on Linux](rserver-install-linux-server.md)  
+ [Install R Server on Linux](install/r-server-install-linux-server.md)  
  [Install R Server on Hadoop](install/r-server-install-hadoop.md)

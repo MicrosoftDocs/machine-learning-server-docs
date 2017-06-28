@@ -68,7 +68,7 @@ Additionally, you can use embedded Microsoft R packages, interpreters, and libra
 
 ## Start with a local installation
 
-If you are new to Microsoft R, we recommend starting with either [R Server for Windows](rserver-install-windows.md), [R Server for Linux](rserver-install-linux-server.md), or the free [R Client](r-client-install.md), and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation). 
+If you are new to Microsoft R, we recommend starting with either [R Server for Windows](rserver-install-windows.md), [R Server for Linux](install/r-server-install-linux-server.md), or the free [R Client](r-client-install.md), and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation). 
 
 You can install these configurations for free. Each one gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes Microsoft R proprietary packages that run locally on your development computer.
 

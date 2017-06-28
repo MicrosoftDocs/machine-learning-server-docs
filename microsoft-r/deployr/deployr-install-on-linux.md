@@ -66,7 +66,7 @@ Before you can install DeployR, you must manually install and configure the foll
 | Dependency                                                                                      | DeployR Server                                                                      | DeployR Grid Node                                                                   |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
 | Java™ Runtime Environment 8                                                                     | Yes                                                                                 | No                                                                                  |
-| [Microsoft R Server 2016](../rserver-install-linux-server.md) and its dependencies | Yes                                                                                 | Yes                                                                                 |
+| [Microsoft R Server 2016](../install/r-server-install-linux-server.md) and its dependencies | Yes                                                                                 | Yes                                                                                 |
 | DeployR Rserve 8.0.5                                                                            | Yes                                                                                 | Yes                                                                                 |
 | make, gcc, gcc-c++, gfortran, cairo-devel, libicu, libicu-devel                                          | Yes                                                                                 | Yes                                                                                 |
 | nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  |
@@ -85,7 +85,7 @@ Before you can install DeployR, you must manually install and configure the foll
 
             export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45/jre
 
-3.  Install [Microsoft R Server 2016](../rserver-install-linux-server.md), which includes ScaleR for multi-processor and big data support. Microsoft R Server can be downloaded from Volume License Service Center, MSDN and Visual Studio Dev Essentials. The file you download will also contain the DeployR installer.
+3.  Install [Microsoft R Server 2016](../install/r-server-install-linux-server.md), which includes ScaleR for multi-processor and big data support. Microsoft R Server can be downloaded from Volume License Service Center, MSDN and Visual Studio Dev Essentials. The file you download will also contain the DeployR installer.
 
 1.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them will ensure that the repositories contain the latest software. Run the following command:
     + For Redhat / CentOS:

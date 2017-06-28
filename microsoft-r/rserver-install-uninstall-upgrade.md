@@ -161,6 +161,6 @@ For versions prior to 8.0.5, do the following:
 
 [Install R on Hadoop overview](install/r-server-install-hadoop.md)
 
-[Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+[Install Microsoft R Server on Linux](install/r-server-install-linux-server.md)
 
 [Troubleshoot R Server installation problems on Hadoop](install/r-server-install-hadoop-troubleshoot.md)
