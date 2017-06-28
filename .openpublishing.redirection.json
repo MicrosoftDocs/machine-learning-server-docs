@@ -48,6 +48,1898 @@
     {
      "source_path" : "microsoft-r/microsoft-r-getting-started.md",
      "redirect_url" : "/r-server/index"
-}
+  },
+    {
+      "source_path" : "STARTMSDN--DO_NOT_ADD_NEW_ENTRIES_BEYOND_THIS_POINT",
+      "redirect_url" : "/r-server/index"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-about.md",
+      "redirect_url" : "/r-server/deployr/deployr-about"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-configure-ca-sso.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-configure-ca-sso"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-configure-high-availability.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-configure-high-availability"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-configure-reinstall-r.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-configure-reinstall-r"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-console-about.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-console-about"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-console-database.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-console-database"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-console-managing-r-scripts.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-console-managing-r-scripts"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-console-permissions-with-roles.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-console-permissions-with-roles"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-console-user-accounts.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-console-user-accounts"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-diagnostics-troubleshooting.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-diagnostics-troubleshooting"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-hadoop-impersonation.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-hadoop-impersonation"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-install-in-cloud.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-install-in-cloud"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-java-version.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-java-version"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-manage-big-data.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-manage-big-data"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-managing-access-with-ip-filters"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-managing-r-boundaries.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-managing-r-boundaries"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-managing-server-policies.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-managing-server-policies"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-managing-the-grid.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-managing-the-grid"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-console/deployr-admin-monitoring-events.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-monitoring-events"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-r-package-management.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-r-package-management"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-scale-and-throughput.md",
+      "redirect_url" : "/r-server/deployr/deployr-admin-scale-and-throughput"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-administrator-getting-started.md",
+      "redirect_url" : "/r-server/deployr/deployr-administrator-getting-started"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-api-explorer-tool.md",
+      "redirect_url" : "/r-server/deployr/deployr-api-explorer-tool"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-api-reference.md",
+      "redirect_url" : "/r-server/deployr/deployr-api-reference"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-application-developer-getting-started.md",
+      "redirect_url" : "/r-server/deployr/deployr-application-developer-getting-started"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-client-library.md",
+      "redirect_url" : "/r-server/deployr/deployr-client-library"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-common-administration-tasks.md",
+      "redirect_url" : "/r-server/deployr/deployr-common-administration-tasks"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-data-scientist-getting-started.md",
+      "redirect_url" : "/r-server/deployr/deployr-data-scientist-getting-started"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-data-scientist-write-portable-r-code.md",
+      "redirect_url" : "/r-server/deployr/deployr-data-scientist-write-portable-r-code"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-faq.md",
+      "redirect_url" : "/r-server/deployr/deployr-faq"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-install-on-linux.md",
+      "redirect_url" : "/r-server/deployr/deployr-install-on-linux"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-install-on-windows.md",
+      "redirect_url" : "/r-server/deployr/deployr-install-on-windows"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-installation.md",
+      "redirect_url" : "/r-server/deployr/deployr-installation"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-installing-configuring.md",
+      "redirect_url" : "/r-server/deployr/deployr-installing-configuring"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-rbroker-framework.md",
+      "redirect_url" : "/r-server/deployr/deployr-rbroker-framework"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-repository-manager/deployr-repository-manager-about.md",
+      "redirect_url" : "/r-server/deployr/deployr-repository-manager-about"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-repository-manager/deployr-repository-manager-directories.md",
+      "redirect_url" : "/r-server/deployr/deployr-repository-manager-directories"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-repository-manager/deployr-repository-manager-files.md",
+      "redirect_url" : "/r-server/deployr/deployr-repository-manager-files"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md",
+      "redirect_url" : "/r-server/deployr/deployr-repository-manager-testing-debugging-scripts"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-security/deployr-security-account-locking.md",
+      "redirect_url" : "/r-server/deployr/deployr-security-account-locking"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-security/deployr-security-authentication.md",
+      "redirect_url" : "/r-server/deployr/deployr-security-authentication"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-security/deployr-security-https.md",
+      "redirect_url" : "/r-server/deployr/deployr-security-https"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-security/deployr-security-passwords.md",
+      "redirect_url" : "/r-server/deployr/deployr-security-passwords"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-security/deployr-security-project-access.md",
+      "redirect_url" : "/r-server/deployr/deployr-security-project-access"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-security/deployr-security-rserve-execution-context.md",
+      "redirect_url" : "/r-server/deployr/deployr-security-rserve-execution-context"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-security/deployr-security-server-access.md",
+      "redirect_url" : "/r-server/deployr/deployr-security-server-access"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-admin-security/deployr-security.md",
+      "redirect_url" : "/r-server/deployr/deployr-security"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-tools-and-samples.md",
+      "redirect_url" : "/r-server/deployr/deployr-tools-and-samples"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-welcome.md",
+      "redirect_url" : "/r-server/deployr/deployr-welcome"
+  },
+    {
+      "source_path" : "microsoft-r/deployr-whats-new.md",
+      "redirect_url" : "/r-server/deployr/deployr-whats-new"
+  },
+    {
+      "source_path" : "microsoft-r/deploy-pretrained-microsoftml-models.md",
+      "redirect_url" : "/r-server/install/microsoftml-install-pretrained-models"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/configure-enterprise.md",
+      "redirect_url" : "/r-server/install/operationalize-r-server-enterprise-config"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/configuration-initial.md",
+      "redirect_url" : "/r-server/install/operationalize-r-server-one-box-config"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-cloudera-901.md",
+      "redirect_url" : "/r-server/install/r-server-install-cloudera-901"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-cloudera-deploy-activate.md",
+      "redirect_url" : "/r-server/install/r-server-install-cloudera-deploy-activate"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-cloudera-generate-parcel.md",
+      "redirect_url" : "/r-server/install/r-server-install-cloudera-generate-parcel"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-cloudera-rollback.md",
+      "redirect_url" : "/r-server/install/r-server-install-cloudera-rollback"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-cloudera.md",
+      "redirect_url" : "/r-server/install/r-server-install-cloudera"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-800.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-800"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-805.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-805"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-901.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-901"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-command-line.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-command-line"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-configuration-r-workloads.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-configuration-r-workloads"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-manual-package.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-manual-package"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-offline.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-offline"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-troubleshoot.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-troubleshoot"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop-yarnqueueusage.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop-yarnqueueusage"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-hadoop.md",
+      "redirect_url" : "/r-server/install/r-server-install-hadoop"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-linux-hadoop-packages.md",
+      "redirect_url" : "/r-server/install/r-server-install-linux-hadoop-packages"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-linux-manage-install.md",
+      "redirect_url" : "/r-server/install/r-server-install-linux-manage-install"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-linux-offline.md",
+      "redirect_url" : "/r-server/install/r-server-install-linux-offline"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-linux-server-800.md",
+      "redirect_url" : "/r-server/install/r-server-install-linux-server-800"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-linux-server-805.md",
+      "redirect_url" : "/r-server/install/r-server-install-linux-server-805"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-linux-server-901.md",
+      "redirect_url" : "/r-server/install/r-server-install-linux-server-901"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-linux-server.md",
+      "redirect_url" : "/r-server/install/r-server-install-linux-server"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-linux-uninstall.md",
+      "redirect_url" : "/r-server/install/r-server-install-linux-uninstall"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-supported-platforms.md",
+      "redirect_url" : "/r-server/install/r-server-install-supported-platforms"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-teradata-800.md",
+      "redirect_url" : "/r-server/install/r-server-install-teradata-800"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-teradata-805.md",
+      "redirect_url" : "/r-server/install/r-server-install-teradata-805"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-teradata-client.md",
+      "redirect_url" : "/r-server/install/r-server-install-teradata-client"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-teradata-server.md",
+      "redirect_url" : "/r-server/install/r-server-install-teradata-server"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-uninstall-upgrade.md",
+      "redirect_url" : "/r-server/install/r-server-install-uninstall-upgrade"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-windows-800.md",
+      "redirect_url" : "/r-server/install/r-server-install-windows-800"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-windows-commandline.md",
+      "redirect_url" : "/r-server/install/r-server-install-windows-command-line"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-windows-offline.md",
+      "redirect_url" : "/r-server/install/r-server-install-windows-offline"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-windows-vm803provisioning.md",
+      "redirect_url" : "/r-server/install/r-server-install-windows-vm-803-provisioning"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-install-windows.md",
+      "redirect_url" : "/r-server/install/r-server-install-windows"
+  },
+    {
+      "source_path" : "microsoft-r/vm-r-server-hdinsight.md",
+      "redirect_url" : "/r-server/install/r-server-vm-azure-hdinsight"
+  },
+    {
+      "source_path" : "microsoft-r/vm-azure-rserver-linux-8.0.5.md",
+      "redirect_url" : "/r-server/install/r-server-vm-azure-linux-8-0-5"
+  },
+    {
+      "source_path" : "microsoft-r/vm-azure-rserver-linux-9.0.1.md",
+      "redirect_url" : "/r-server/install/r-server-vm-azure-linux-9-0-1"
+  },
+    {
+      "source_path" : "microsoft-r/vm-azure-rserver-linux.md",
+      "redirect_url" : "/r-server/install/r-server-vm-azure-linux"
+  },
+    {
+      "source_path" : "microsoft-r/vm-cloud.md",
+      "redirect_url" : "/r-server/install/r-server-vm-cloud"
+  },
+    {
+      "source_path" : "microsoft-r/vm-data-science.md",
+      "redirect_url" : "/r-server/install/r-server-vm-data-science"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/api.md",
+      "redirect_url" : "/r-server/operationalize/concept-api"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/data-scientist-get-started.md",
+      "redirect_url" : "/r-server/operationalize/concept-operationalize-deploy-consume"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/security-authentication.md",
+      "redirect_url" : "/r-server/operationalize/configure-authentication"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/security-cors.md",
+      "redirect_url" : "/r-server/operationalize/configure-cors"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/admin-evaluate-capacity.md",
+      "redirect_url" : "/r-server/operationalize/configure-evaluate-capacity"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/admin-configuration-file.md",
+      "redirect_url" : "/r-server/operationalize/configure-find-admin-configuration-file"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/security-https.md",
+      "redirect_url" : "/r-server/operationalize/configure-https"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/package-management.md",
+      "redirect_url" : "/r-server/operationalize/configure-manage-r-packages"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/security-rserve.md",
+      "redirect_url" : "/r-server/operationalize/configure-r-execution-security"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/configure-remote-database.md",
+      "redirect_url" : "/r-server/operationalize/configure-remote-database-to-operationalize"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/security-roles.md",
+      "redirect_url" : "/r-server/operationalize/configure-roles"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/admin-diagnostics.md",
+      "redirect_url" : "/r-server/operationalize/configure-run-diagnostics"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/admin-get-started.md",
+      "redirect_url" : "/r-server/operationalize/configure-start-for-administrators"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/admin-utility.md",
+      "redirect_url" : "/r-server/operationalize/configure-use-admin-utility"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/app-developer-get-started.md",
+      "redirect_url" : "/r-server/operationalize/how-to-build-api-clients-from-swagger-for-app-integration"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/mrsdeploy-connection.md",
+      "redirect_url" : "/r-server/operationalize/how-to-connect-log-in-with-mrsdeploy"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/data-scientist-batch-mode.md",
+      "redirect_url" : "/r-server/operationalize/how-to-consume-web-service-asynchronously-batch"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/howto-consume-web-service-interact-in-r.md",
+      "redirect_url" : "/r-server/operationalize/how-to-consume-web-service-interact-in-r"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/data-scientist-manage-services.md",
+      "redirect_url" : "/r-server/operationalize/how-to-deploy-web-service-publish-manage-in-r"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/security-access-tokens.md",
+      "redirect_url" : "/r-server/operationalize/how-to-manage-access-tokens"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/quickstart-publish-web-service.md",
+      "redirect_url" : "/r-server/operationalize/quickstart-publish-r-web-service"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/data-scientist-python.md",
+      "redirect_url" : "/r-server/operationalize/python/how-to-publish-consume-python-web-service"
+  },
+    {
+      "source_path" : "microsoft-r/r-client-compatibility.md",
+      "redirect_url" : "/r-server/r-client/compatibility-with-server"
+  },
+    {
+      "source_path" : "microsoft-r/r-client-install-linux.md",
+      "redirect_url" : "/r-server/r-client/install-on-linux"
+  },
+    {
+      "source_path" : "microsoft-r/r-client-install-windows.md",
+      "redirect_url" : "/r-server/r-client/install-on-windows"
+  },
+    {
+      "source_path" : "microsoft-r/r-client-uninstall.md",
+      "redirect_url" : "/r-server/r-client/install-uninstall"
+  },
+    {
+      "source_path" : "microsoft-r/r-client.md",
+      "redirect_url" : "/r-server/r-client/what-is-microsoft-r-client"
+  },
+    {
+      "source_path" : "microsoft-r/notes/r-client-notes.md",
+      "redirect_url" : "/r-server/r-client/whats-new-in-r-client"
+  },
+    {
+      "source_path" : "microsoft-r/package-reference.md",
+      "redirect_url" : "/r-server/r-reference/introducing-r-server-r-package-reference"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/sqlrutils.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/sqlrutils"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/StoredProcedure.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/storedprocedure"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-data-compute-context.md",
+      "redirect_url" : "/r-server/r/concept-what-is-compute-context"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-transform-functions.md",
+      "redirect_url" : "/r-server/r/concept-what-is-data-transformations"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml-get-started.md",
+      "redirect_url" : "/r-server/r/concept-what-is-the-microsoftml-package"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-introduction.md",
+      "redirect_url" : "/r-server/r/concept-what-is-revoscaler"
+  },
+    {
+      "source_path" : "microsoft-r/sql-server-r-services.md",
+      "redirect_url" : "/r-server/r/concept-what-is-sql-server-r-services"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-data-xdf.md",
+      "redirect_url" : "/r-server/r/concept-what-is-xdf"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml-algorithm-cheat-sheet.md",
+      "redirect_url" : "/r-server/r/how-to-choose-microsoftml-algorithms-cheatsheet"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-manage-threads.md",
+      "redirect_url" : "/r-server/r/how-to-developer-manage-threads"
+  },
+    {
+      "source_path" : "microsoft-r/pemar-getting-started.md",
+      "redirect_url" : "/r-server/r/how-to-developer-pemar"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-pmml.md",
+      "redirect_url" : "/r-server/r/how-to-developer-pmml"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-getting-started-4-write-chunking-algorithms.md",
+      "redirect_url" : "/r-server/r/how-to-developer-write-chunking-algorithms"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-write-custom-analyses.md",
+      "redirect_url" : "/r-server/r/how-to-developer-write-custom-analysis"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/remote-execution.md",
+      "redirect_url" : "/r-server/r/how-to-execute-code-remotely"
+  },
+    {
+      "source_path" : "microsoft-r/data-analysis-in-microsoft-r.md",
+      "redirect_url" : "/r-server/r/how-to-introduction"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-boosting.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-boosting"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-cluster.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-cluster"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-covcor.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-covcor"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-crosstabs.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-crosstabs"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-data-hdfs.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-hdfs"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-data-import.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-import"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-data-odbc.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-odbc"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-data-sort.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-sort"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-data-source.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-source"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-data-sql.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-sql"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-data-summaries.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-summaries"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-data-transform.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-data-transform"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-decision-forest.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-decision-forest"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-decision-tree.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-decision-tree"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-distributed-computing-background-jobs.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-distributed-computing-background-jobs"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-distributed-computing-compute-context.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-distributed-computing-compute-context"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-distributed-computing-distributed-analysis.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-distributed-computing-distributed-analysis"
+  },
+    {
+      "source_path" : "microsoft-r/foreach.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-distributed-computing-foreach"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-distributed-computing-parallel-foreach.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-distributed-computing-parallel-foreach"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-distributed-computing-parallel-jobs.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-distributed-computing-parallel-jobs"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-distributed-computing.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-distributed-computing"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-generalized-linear-model.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-generalized-linear-model"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-hadoop-getting-started.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-hadoop"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-linear-model.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-linear-model"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-logistic-regression.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-logistic-regression"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-models.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-models"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-naive-bayes.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-naive-bayes"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-spark-getting-started.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-spark"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-teradata-getting-started.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-sql-server"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-sql-server-getting-started.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-teradata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-visualize-huge-data-sets.md",
+      "redirect_url" : "/r-server/r/how-to-revoscaler-visualize-huge-data-sets"
+  },
+    {
+      "source_path" : "microsoft-r/quickstart-r-code.md",
+      "redirect_url" : "/r-server/r/quickstart-run-r-code"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-user-guide-sample-data.md",
+      "redirect_url" : "/r-server/r/sample-built-in-data"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml-quickstarts.md",
+      "redirect_url" : "/r-server/r/sample-microsoftml"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-tutorials.md",
+      "redirect_url" : "/r-server/r/tutorial-introduction"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-getting-started-tips.md",
+      "redirect_url" : "/r-server/r/tutorial-large-data-tips"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-tutorial-R2RevoScaleR.md",
+      "redirect_url" : "/r-server/r/tutorial-r-to-revoscaler"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-getting-started-data-import-exploration.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-data-import-transform"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-getting-started-data-visualization-analysis.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-data-model-analysis"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-getting-started-3-analyze-large-data.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-large-data-airline"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-getting-started-2-example-census-data.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-large-data-census"
+  },
+    {
+      "source_path" : "microsoft-r/scaler-getting-started-1-example-loan-data.md",
+      "redirect_url" : "/r-server/r/tutorial-revoscaler-large-data-loan"
+  },
+    {
+      "source_path" : "microsoft-r/quickstart-rxexecby.md",
+      "redirect_url" : "/r-server/r/tutorial-rxexecby"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-get-started-spark-interop.md",
+      "redirect_url" : "/r-server/r/tutorial-sparklyr-revoscaler"
+  },
+    {
+      "source_path" : "microsoft-r/RevoRPE_Getting_Started.md",
+      "redirect_url" : "/r-server/r/rpe/revorpe-getting-started"
+  },
+    {
+      "source_path" : "microsoft-r/RevoRPE_Users_Guide.md",
+      "redirect_url" : "/r-server/r/rpe/revorpe-users-guide"
+  },
+    {
+      "source_path" : "microsoft-r/overview-client-server.md",
+      "redirect_url" : "/r-server/what-is-r-client-r-server"
+  },
+    {
+      "source_path" : "microsoft-r/overview-interoperability.md",
+      "redirect_url" : "/r-server/what-is-r-server-interoperability"
+  },
+    {
+      "source_path" : "microsoft-r/rserver.md",
+      "redirect_url" : "/r-server/what-is-microsoft-r-server"
+  },
+    {
+      "source_path" : "microsoft-r/operationalize/about.md",
+      "redirect_url" : "/r-server/what-is-operationalization"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-whats-new.md",
+      "redirect_url" : "/r-server/whats-new-in-r-server"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-old-versions.md",
+      "redirect_url" : "/r-server/resources-archives"
+  },
+    {
+      "source_path" : "microsoft-r/notes/r-server-notes.md",
+      "redirect_url" : "/r-server/resources-deprecated-features"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-glossary.md",
+      "redirect_url" : "/r-server/resources-glossary"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-known-issues.md",
+      "redirect_url" : "/r-server/resources-known-issues"
+  },
+    {
+      "source_path" : "microsoft-r/microsoft-r-more-resources.md",
+      "redirect_url" : "/r-server/resources-more"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-optout-telemetry.md",
+      "redirect_url" : "/r-server/resources-opting-out"
+  },
+    {
+      "source_path" : "microsoft-r/rserver-servicing-support.md",
+      "redirect_url" : "/r-server/resources-servicing-support"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/categorical.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/categorical"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/categoricalHash.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/categoricalhash"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/concat.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/concat"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/extractPixels.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/extractpixels"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/fastForest.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/fastforest"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/fastLinear.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/fastlinear"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/fastTrees.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/fasttrees"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/featurizeImage.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/featurizeimage"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/featurizeText.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/featurizetext"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/getSentiment.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/getsentiment"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/loadImage.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/loadimage"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/LogisticRegression.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/logisticregression"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/loss.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/loss"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/microsoftml.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/microsoftml-package"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/minCount.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/mincount"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/mlModel.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/mlmodel"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/mutualInformation.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/mutualinformation"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/NeuralNet.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/neuralnet"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/ngram.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/ngram"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/OneClassSvm.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/oneclasssvm"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/optimizer.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/optimizer"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/resizeImage.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/resizeimage"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxEnsemble.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxensemble"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxFastForest.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxfastforest"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxFastLinear.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxfastlinear"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxFastTrees.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxfasttrees"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxFeaturize.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxfeaturize"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxLogisticRegression.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxlogisticregression"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxNeuralNet.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxneuralnet"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxOneClassSvm.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxoneclasssvm"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/rxPredict.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/rxpredict"
+  },
+    {
+      "source_path" : "microsoft-r/microsoftml/packagehelp/selectFeatures.md",
+      "redirect_url" : "/r-server/r-reference/microsoftml/selectfeatures"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/createSnapshot.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/createsnapshot"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/deleteRemoteFile.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/deleteremotefile"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/deleteService.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/deleteservice"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/deleteSnapshot.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/deletesnapshot"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/diffLocalRemote.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/difflocalremote"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/downloadSnapshot.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/downloadsnapshot"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/encodings.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/encodings"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/getRemoteFile.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/getremotefile"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/getRemoteObject.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/getremoteobject"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/getRemoteWorkspace.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/getremoteworkspace"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/getService.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/getservice"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/getValidatedServiceType.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/getvalidatedservicetype"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/is.encoding.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/is-encoding"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/is.encodings.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/is-encodings"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/listRemoteFiles.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/listremotefiles"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/listServices.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/listservices"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/listSnapshots.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/listsnapshots"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/loadSnapshot.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/loadsnapshot"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/mrsdeploy.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/mrsdeploy-package"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/print.serviceDetails.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/print-servicedetails"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/print.snapshotDetails.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/print-snapshotdetails"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/publishService.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/publishservice"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/putLocalFile.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/putlocalfile"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/putLocalObject.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/putlocalobject"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/putLocalWorkspace.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/putlocalworkspace"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/remoteCommandLine.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/remotecommandline"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/remoteExecute.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/remoteexecute"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/remoteLogin.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/remotelogin"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/remoteLoginAAD.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/remoteloginaad"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/remoteLogout.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/remotelogout"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/remoteScript.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/remotescript"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/request.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/request"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/resource.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/resource"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/resume.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/resume"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/serviceOption.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/serviceoption"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/serviceTypes.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/servicetypes"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/summary.serviceDetails.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/summary-servicedetails"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/summary.snapshotDetails.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/summary-snapshotdetails"
+  },
+    {
+      "source_path" : "microsoft-r/mrsdeploy/packagehelp/updateService.md",
+      "redirect_url" : "/r-server/r-reference/mrsdeploy/updateservice"
+  },
+    {
+      "source_path" : "microsoft-r/olapR/packagehelp/Execute2D.md",
+      "redirect_url" : "/r-server/r-reference/olapr/execute2d"
+  },
+    {
+      "source_path" : "microsoft-r/olapR/packagehelp/ExecuteMD.md",
+      "redirect_url" : "/r-server/r-reference/olapr/executemd"
+  },
+    {
+      "source_path" : "microsoft-r/olapR/packagehelp/Explore.md",
+      "redirect_url" : "/r-server/r-reference/olapr/explore"
+  },
+    {
+      "source_path" : "microsoft-r/olapR/packagehelp/OlapConnection.md",
+      "redirect_url" : "/r-server/r-reference/olapr/olapconnection"
+  },
+    {
+      "source_path" : "microsoft-r/olapR/olapr.md",
+      "redirect_url" : "/r-server/r-reference/olapr/olapr"
+  },
+    {
+      "source_path" : "microsoft-r/olapR/packagehelp/Query.md",
+      "redirect_url" : "/r-server/r-reference/olapr/query"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/packagehelp/PemaBaseClass-class.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/pemabaseclass-class"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/packagehelp/PemaBaseClass.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/pemabaseclass"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/packagehelp/PemaByGroup-class.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/pemabygroup-class"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/packagehelp/PemaByGroup.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/pemabygroup"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/packagehelp/pemaCompute.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/pemacompute"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/packagehelp/PemaMean-class.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/pemamean-class"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/packagehelp/PemaMean.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/pemamean"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/pemar.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/pemar"
+  },
+    {
+      "source_path" : "microsoft-r/pemar/packagehelp/setPemaClass.md",
+      "redirect_url" : "/r-server/r-reference/revopemar/setpemaclass"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/AirlineData87to08.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/airlinedata87to08"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/AirlineDemoSmall.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/airlinedemosmall"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/AirOnTime87to12.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/airontime87to12"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/as.gbm.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/as-gbm"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/as.glm.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/as-glm"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/as.kmeans.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/as-kmeans"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/as.lm.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/as-lm"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/as.naiveBayes.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/as-naivebayes"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/as.randomForest.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/as-randomforest"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/as.rpart.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/as-rpart"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/as.xtabs.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/as-xtabs"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/CensusUS5Pct2000.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/censusus5pct2000"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/CensusWorkers.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/censusworkers"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/claims.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/claims"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/DJIAdaily.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/djiadaily"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/Kyphosis.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/kyphosis"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/mortDefaultSmall.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/mortdefaultsmall"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/prune.rxDTree.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/prune-rxdtree"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/revoAnalytics-package.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/revoanalytics-package"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/compare-base-r-scaler-functions.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/revoscaler-compared-to-base-r"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RevoScaleR-defunct.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/revoscaler-defunct"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RevoScaleR-deprecated.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/revoscaler-deprecated"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/scaler-hadoop-functions.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/revoscaler-hadoop-functions"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/functions-for-sql-server-data.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/revoscaler-sql-server-functions"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/scaler-teradata-functions.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/revoscaler-teradata-functions"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/scaler.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/revoscaler"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxAddInheritance.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxaddinheritance"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxBTrees.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxbtrees"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCancelJob.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcanceljob"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxChiSquaredTest.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxchisquaredtest"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCleanup.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcleanup"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCompareContexts.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcomparecontexts"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCompressXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcompressxdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxComputeContext-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcomputecontext-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxComputeContext.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcomputecontext"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCovCor.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcovcor"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCovRegression.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcovregression"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCreateColInfo.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcreatecolinfo"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCrossTabs.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcrosstabs"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxCube.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxcube"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxDataSource-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdatasource-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxDataSource.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdatasource"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxDataStep.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdatastep"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxDForest.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdforest"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxDForestUtils.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdforestutils"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxDistributedHpa-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdistributedhpa-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxDistributeJob.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdistributejob"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxDTree.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdtree"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxDTreeBestCp.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxdtreebestcp"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxElemArg.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxelemarg"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxExec.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxexec"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxExecBy.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxexecby"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxExecByPartition.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxexecbypartition"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxExecuteSQLDDL.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxexecutesqlddl"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxExpression.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxexpression"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxFactors.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxfactors"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxFileData-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxfiledata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxFileSystem.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxfilesystem"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxFindFileInPath.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxfindfileinpath"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxFindPackage.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxfindpackage"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxForeachDoPar-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxforeachdopar-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxForeachDoPar.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxforeachdopar"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxFormula.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxformula"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetAvailableNodes.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetavailablenodes"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetEnableThreadPool.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetenablethreadpool"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetFuzzyDist.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetfuzzydist"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetFuzzyKeys.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetfuzzykeys"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetInfoXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetinfoxdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetJobInfo.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetjobinfo"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetJobOutput.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetjoboutput"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetJobResults.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetjobresults"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetJobs.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetjobs"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetNodeInfo.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetnodeinfo"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetPartitions.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetpartitions"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetSparklyrConnection.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetsparklyrconnection"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetVarInfoXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetvarinfoxdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGetVarNames.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxgetvarnames"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxGLM.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxglm"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxHadoopCommand.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxhadoopcommand"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxHadoopMR-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxhadoopmr-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxHadoopMR.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxhadoopmr"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxHdfsConnect.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxhdfsconnect"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxHdfsFileSystem.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxhdfsfilesystem"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxHistogram.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxhistogram"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxHPCServer-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxhpcserver-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxImport.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rximport"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxInSqlServer-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxinsqlserver-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxInSqlServer.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxinsqlserver"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxInstalledPackages.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxinstalledpackages"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxInstallPackages.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxinstallpackages"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxInTeradata-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxinteradata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxInTeradata.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxinteradata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxKmeans.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxkmeans"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxLaunchClusterTaskManager.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlaunchclustertaskmanager"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxLinePlot.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlineplot"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxLinMod.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlinmod"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxLocalParallel-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlocalparallel-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxLocalParallel.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlocalparallel"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxLocalSeq-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlocalseq-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxLocalSeq.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlocalseq"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxLocateFile.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlocatefile"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxLogit.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlogit"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxLorenz.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxlorenz"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxMakeRNodeNames.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxmakernodenames"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxMarginals.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxmarginals"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxMergeXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxmergexdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxMultiTest.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxmultitest"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxNaiveBayes.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxnaivebayes"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxNativeFileSystem.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxnativefilesystem"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxNew.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxnew"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxOAuthParameters.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxoauthparameters"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxOdbcData-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxodbcdata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxOdbcData.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxodbcdata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxOpen-methods.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxopen-methods"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxOptions.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxoptions"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxPackage.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxpackage"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxPairwiseCrosstab.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxpairwisecrosstab"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxPingNodes.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxpingnodes"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxPredict.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxpredict"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxPredict.rxDForest.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxpredict-rxdforest"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxPredict.rxDTree.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxpredict-rxdtree"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxPredict.rxNaiveBayes.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxpredict-rxnaivebayes"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxPrivacyControl.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxprivacycontrol"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxQuantile.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxquantile"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxReadXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxreadxdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRealtimeScoring.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxrealtimescoring"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRemoteCall.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxremotecall"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRemoteFilePath.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxremotefilepath"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRemoteGetId.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxremotegetid"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRemoteHadoopMRCall.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxremotehadoopmrcall"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRemovePackages.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxremovepackages"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxResultsDF.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxresultsdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRiskRatio.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxriskratio"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRng.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxrng"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxRoc.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxroc"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSasData-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsasdata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSasData.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsasdata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSerializeModel.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxserializemodel"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSetComputeContext.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsetcomputecontext"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSetFileSystem.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsetfilesystem"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSetInfo.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsetinfo"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSetVarInfoXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsetvarinfoxdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSortXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsortxdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSpark-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxspark-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSpark.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxspark"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSparkCacheData.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsparkcachedata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSparkData.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsparkdata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSparkDataOps.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsparkdataops"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSplitXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsplitxdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSpssData-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxspssdata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSpssData.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxspssdata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSqlLibPaths.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsqllibpaths"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSqlServerData-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsqlserverdata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxSqlServerData.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsqlserverdata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSqlServerDropTable.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsqlserverdroptable"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxStepControl.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxstepcontrol"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxStepPlot.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxstepplot"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxStopEngine.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxstopengine"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSummary.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsummary"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxSyncPackages.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxsyncpackages"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxTeradata-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxteradata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxTeradata.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxteradata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxTeradataSql.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxteradatasql"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxTextData-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxtextdata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxTextData.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxtextdata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxTextToXdf.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxtexttoxdf"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxTlcBridge.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxtlcbridge"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxTransform.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxtransform"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxTweedie.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxtweedie"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxWaitForJob.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxwaitforjob"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxWriteObject.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxwriteobject"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxXdfData-class.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxxdfdata-class"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/RxXdfData.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxxdfdata"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxXdfFileName.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxxdffilename"
+  },
+    {
+      "source_path" : "microsoft-r/scaler/packagehelp/rxXdfToText.md",
+      "redirect_url" : "/r-server/r-reference/revoscaler/rxxdftotext"
+  },
+    {
+      "source_path" : "microsoft-r/RevoUtils/packagehelp/getRevoRepos.md",
+      "redirect_url" : "/r-server/r-reference/revoutils/getrevorepos"
+  },
+    {
+      "source_path" : "microsoft-r/RevoUtils/packagehelp/readNews.md",
+      "redirect_url" : "/r-server/r-reference/revoutils/readnews"
+  },
+    {
+      "source_path" : "microsoft-r/RevoUtils/packagehelp/Revo.home.md",
+      "redirect_url" : "/r-server/r-reference/revoutils/revo-home"
+  },
+    {
+      "source_path" : "microsoft-r/RevoUtils/packagehelp/RevoInfo.md",
+      "redirect_url" : "/r-server/r-reference/revoutils/revoinfo"
+  },
+    {
+      "source_path" : "microsoft-r/RevoUtils/RevoUtils.md",
+      "redirect_url" : "/r-server/r-reference/revoutils/revoutils"
+  },
+    {
+      "source_path" : "microsoft-r/RevoUtils/packagehelp/totalSystemMemory.md",
+      "redirect_url" : "/r-server/r-reference/revoutils/totalsystemmemory"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/executeStoredProcedure.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/executestoredprocedure"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/getInputParameters.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/getinputparameters"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/InputData.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/inputdata"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/InputParameter.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/inputparameter"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/OutputData.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/outputdata"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/OutputParameter.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/outputparameter"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/registerStoredProcedure.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/registerstoredprocedure"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/setInputDataQuery.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/setinputdataquery"
+  },
+    {
+      "source_path" : "microsoft-r/sqlrutils/packagehelp/setInputParameterValue.md",
+      "redirect_url" : "/r-server/r-reference/sqlrutils/setinputparametervalue"
+    }
  ]
 }
