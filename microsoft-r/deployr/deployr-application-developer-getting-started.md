@@ -127,7 +127,7 @@ The fact that repository-managed R scripts are automatically exposed as live, ex
 
 *"How can you enforce access controls on this type of Web service?"*
 
-The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](deployr-api-reference.md#users) to a set of [access controls enforced on a file-by-file basis](../deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
+The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](deployr-api-reference.md#users) to a set of [access controls enforced on a file-by-file basis](deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
 
 -   `Private`, allows access only to the file's owner.
 -   `Restricted`, allows access only to those users who were granted at least one of the associated roles

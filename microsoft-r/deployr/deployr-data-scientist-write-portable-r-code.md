@@ -149,7 +149,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
     ![Login](./media/deployr-data-scientist-write-portable-r-code/login1.png)
 
-2.  [Upload](../deployr-repository-manager/deployr-repository-manager-files.md#uploading-files) your script to the DeployR repository.
+2.  [Upload](deployr-repository-manager-files.md#uploading-files) your script to the DeployR repository.
 
     ![Upload](./media/deployr-data-scientist-write-portable-r-code/upload.png)
 

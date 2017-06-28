@@ -40,15 +40,15 @@ The following directory management tasks are possible for your user directories 
 
 - [Delete](deployr-repository-manager-directories.md#deleting-directories) a user directory
 
-- [Move](deployr-repository-manager-files.md#moving-files) files across user directories
+- [Move](../deployr/deployr-repository-manager-files.md#moving-files) files across user directories
 
-- [Copy](deployr-repository-manager-files.md#copying-files) files into another user directory
+- [Copy](../deployr/deployr-repository-manager-files.md#copying-files) files into another user directory
 
-- [Delete](deployr-repository-manager-files.md#deleting-files) files from user directories
+- [Delete](../deployr/deployr-repository-manager-files.md#deleting-files) files from user directories
 
 ## Directories for Other Files
 
-Under **Other Files** are several system-managed virtual directories containing those repository files you do not own but that have been made [accessible](deployr-repository-manager-files.md#about-file-properties) to you by their owners. Since the files under **Other Files** belong to other users, you cannot copy, move, modify, or delete these files.  However, you can:
+Under **Other Files** are several system-managed virtual directories containing those repository files you do not own but that have been made [accessible](../deployr/deployr-repository-manager-files.md#about-file-properties) to you by their owners. Since the files under **Other Files** belong to other users, you cannot copy, move, modify, or delete these files.  However, you can:
 
 - Integrate these files within your DeployR-enabled applications
 
@@ -63,7 +63,7 @@ The following virtual directories are available under **Other Files**:
 - **Public**: Files made accessible to anyone, including anonymous users, using the **Public** access right.
 
 
->[Access rights](deployr-repository-manager-files.md#about-file-properties) are one of the [file properties](deployr-repository-manager-files.md#about-file-properties) you can set for the files you own.
+>[Access rights](../deployr/deployr-repository-manager-files.md#about-file-properties) are one of the [file properties](../deployr/deployr-repository-manager-files.md#about-file-properties) you can set for the files you own.
 
 ## Creating Directories
 
@@ -95,7 +95,7 @@ When you no longer need one of your user directories and the files it contains, 
 
 3. Click on the **Actions** menu dropdown and choose **Delete Directory**. The **Delete Directory** dialog appears.
 
-4. In the **Delete Directory** dialog, confirm you want to delete the directory and all of its files by clicking **Delete**. The dialog closes and the directory no longer appears in the tree. Learn more about [deleting files](deployr-repository-manager-files.md#deleting-files).
+4. In the **Delete Directory** dialog, confirm you want to delete the directory and all of its files by clicking **Delete**. The dialog closes and the directory no longer appears in the tree. Learn more about [deleting files](../deployr/deployr-repository-manager-files.md#deleting-files).
 
 ## Renaming Directories
 

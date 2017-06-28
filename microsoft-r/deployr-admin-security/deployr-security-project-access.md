@@ -56,7 +56,7 @@ If the owner of a repository-managed file wants to grant read-only access to tha
 
 + `Public` - the file is visible to all authenticated and all anonymous users when the published property is true.
 
-You can change the access level on a repository-managed file using the `/r/repository/file/update` [API call](../deployr/deployr-api-reference.md#repository-on-the-api) or using the [Repository Manager](../deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties).
+You can change the access level on a repository-managed file using the `/r/repository/file/update` [API call](../deployr/deployr-api-reference.md#repository-on-the-api) or using the [Repository Manager](../deployr/deployr-repository-manager-files.md#about-file-properties).
 
 ## Repository File Download Controls
 

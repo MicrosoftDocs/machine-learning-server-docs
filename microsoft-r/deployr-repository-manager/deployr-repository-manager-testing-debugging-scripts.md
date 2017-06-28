@@ -33,7 +33,7 @@ Use the **Test** page to do the following to repository-managed scripts:
 - Test and verify the functioning of scripts you own
 - Debug and fix the functioning of scripts you own
 - Test and verify the functioning of scripts to which you have access rights
-- Debug the functioning of scripts to which you have [access rights](deployr-repository-manager-files.md#about-file-properties)
+- Debug the functioning of scripts to which you have [access rights](../deployr/deployr-repository-manager-files.md#about-file-properties)
 
 
 ##Test Page Panes
@@ -71,7 +71,7 @@ In this pane, you can view and scroll through the source code of the R script. C
 
 ###Editing R Code
 
-Only the owners of a file can edit the source code of the [*Latest*](deployr-repository-manager-files.md#working-with-historical-versions) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
+Only the owners of a file can edit the source code of the [*Latest*](../deployr/deployr-repository-manager-files.md#working-with-historical-versions) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
 
 **To edit the R code:**
 
@@ -95,7 +95,7 @@ You can run a script in the **Test** page using the script's source code as-is r
 
 **To run a script with the default values and inputs:**
 
-1. [Open](deployr-repository-manager-files.md#opening-files) the script and go to the [**Test** page](deployr-repository-manager-testing-debugging-scripts.md).
+1. [Open](../deployr/deployr-repository-manager-files.md#opening-files) the script and go to the [**Test** page](deployr-repository-manager-testing-debugging-scripts.md).
 
 1. Make no changes in the **Script Execution Parameters** pane.
 
@@ -118,7 +118,7 @@ For tips and guidance on how to develop portable R code using the deployrInput f
 
 **To run a script new and modified input values:**
 
-1. [Open](deployr-repository-manager-files.md#opening-files) the script.
+1. [Open](../deployr/deployr-repository-manager-files.md#opening-files) the script.
 
 1. Go to the [**Test** page](deployr-repository-manager-testing-debugging-scripts.md).
 
@@ -135,7 +135,7 @@ If you own the script and have [**POWER_USER**](deployr-repository-manager-about
 
 **To run code selections:**
 
-1. [Open](deployr-repository-manager-files.md#opening-files) the script
+1. [Open](../deployr/deployr-repository-manager-files.md#opening-files) the script
 
 1. Go to the [**Test** page](deployr-repository-manager-testing-debugging-scripts.md).
 
@@ -340,6 +340,6 @@ The changes you make to the source code of your own scripts in the Repository Ma
 
 1.  In the submenu, choose one of the following:
 	-  **Overwrite Latest version** to replace in the current working copy of the script.
-	-  **Save as new version** to save the changes as the [*Latest* version](deployr-repository-manager-files.md#working-with-historical-versions) with an optional comment, and to preserve what was previously the *Latest* version in the file's history.
+	-  **Save as new version** to save the changes as the [*Latest* version](../deployr/deployr-repository-manager-files.md#working-with-historical-versions) with an optional comment, and to preserve what was previously the *Latest* version in the file's history.
 
 	>`Ctrl-S` on Windows/Linux or `Command-S` on MAC will save and overwrite the *Latest* version.

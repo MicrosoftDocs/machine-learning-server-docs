@@ -91,11 +91,11 @@ Testing remotely involves executing your R scripts in the DeployR server environ
 
     ![New Directory](./media/deployr-data-scientist-getting-started/newdir1.png)
 
-4.  [Upload](../deployr-repository-manager/deployr-repository-manager-files.md#uploading-files) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](deployr-application-developer-getting-started.md#analytics-web-services) that, with the proper permissions, can be consumed by any application.
+4.  [Upload](deployr-repository-manager-files.md#uploading-files) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](deployr-application-developer-getting-started.md#analytics-web-services) that, with the proper permissions, can be consumed by any application.
 
     ![Upload](./media/deployr-data-scientist-getting-started/upload.png)
 
-5.  [Open the R script](../deployr-repository-manager/deployr-repository-manager-files.md#opening-files) you want to test.
+5.  [Open the R script](deployr-repository-manager-files.md#opening-files) you want to test.
 
     ![Open File](./media/deployr-data-scientist-getting-started/openfile.png)
 
@@ -168,7 +168,7 @@ When the application developers have access to the same DeployR server instance 
 
 4.  Create a copy of each file from your development directory to the newly created project directory:
 
-    1.  [Open each file](../deployr-repository-manager/deployr-repository-manager-files.md#opening-files). The **File Properties** page appears.
+    1.  [Open each file](deployr-repository-manager-files.md#opening-files). The **File Properties** page appears.
 
     	![Open File](./media/deployr-data-scientist-getting-started/openfile.png)
 
@@ -190,11 +190,11 @@ When the application developers have access to the same DeployR server instance 
 
     	![Contents of New Directory](./media/deployr-data-scientist-getting-started/newdir2contents.png)
 
-    2.  [Open each file](../deployr-repository-manager/deployr-repository-manager-files.md#opening-files) in the new directory. The **File Properties** page appears.
+    2.  [Open each file](deployr-repository-manager-files.md#opening-files) in the new directory. The **File Properties** page appears.
 
     3.  Optionally, add notes to the application developers in the **Description** field. For example, you could let them know which values should be retrieved.
 
-    4.  Click **Add/Remove** to [add application developers as owners](../deployr-repository-manager/deployr-repository-manager-files.md#adding-and-removing-owners) of the file.
+    4.  Click **Add/Remove** to [add application developers as owners](deployr-repository-manager-files.md#adding-and-removing-owners) of the file.
 
     	![Add Owners](./media/deployr-data-scientist-getting-started/addowner.png)
 

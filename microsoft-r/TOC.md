@@ -201,7 +201,7 @@
 #### [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md)
 ##### [About Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md)
 ##### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
-##### [Working with Files](deployr-repository-manager/deployr-repository-manager-files.md)
+##### [Working with Files](deployr/deployr-repository-manager-files.md)
 ##### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 
 ## [Execute code on remote R Server](operationalize/remote-execution.md)
