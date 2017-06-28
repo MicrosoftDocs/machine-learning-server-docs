@@ -94,7 +94,7 @@ A default installation includes the MicrosoftML package, but not the pretrained 
 
  [Introduction to R Server](rserver.md) 
  [What's New in R Server](rserver-whats-new.md)
- [Supported platforms](rserver-install-supported-platforms.md)  
+ [Supported platforms](install/r-server-install-supported-platforms.md)  
  [Known Issues](rserver-known-issues.md)  
  [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
  [Configure R Server to operationalize your analytics](install/operationalize-r-server-one-box-config.md)

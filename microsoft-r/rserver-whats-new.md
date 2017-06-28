@@ -155,7 +155,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 To learn more, see [Overview of MicrosoftML algorithms](r-reference/microsoftml/microsoftml-package.md).
 
-**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](rserver-install-supported-platforms.md). Functions provide remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service.
+**mrsdeploy package** is new in this release and available on all [platforms supporting operationalization](install/r-server-install-supported-platforms.md). Functions provide remote execution on a R Server 9.0.1 instance, and the ability to publish, and subsequently manage, an R code block as a web service.
 
 To learn more, see [mrsdeploy Function Reference](r-reference/mrsdeploy/mrsdeploy-package.md).
 
@@ -182,7 +182,7 @@ To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/
 <a name="operationalize"></a>
 ##### Operationalization features
 
-Formerly known as DeployR, the operationalization feature is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and [configure](install/operationalize-r-server-one-box-config.md) R Server to host R analytics web services and remote R sessions.  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
+Formerly known as DeployR, the operationalization feature is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and [configure](install/operationalize-r-server-one-box-config.md) R Server to host R analytics web services and remote R sessions.  For details on which platforms, see [Supported platforms](install/r-server-install-supported-platforms.md).
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization. The operationalization feature in Microsoft R Server provides the tools to deploy R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. R Server turns your R scripts into analytics web services, so R code can be easily executed by applications running on a secure server.
 
@@ -195,7 +195,7 @@ In a Windows environment, multi-server topologies are supported through Windows 
 For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](install/operationalize-r-server-one-box-config.md).
 
 > [!NOTE]
-> In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](rserver-install-supported-platforms.md) has the list.
+> In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](install/r-server-install-supported-platforms.md) has the list.
 
 <a name="8vs9"></a>
 The following table presents some of the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5 which was available in R Server 8.0.5.

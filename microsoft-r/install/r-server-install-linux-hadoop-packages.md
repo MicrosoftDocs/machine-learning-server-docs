@@ -38,7 +38,7 @@ yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
 
 Alternativley, for offline installations, you can download packages over an internet connection, upload to an internet-restricted Linux machine, and then use `rpm -i <package-name>` to install the package.
 
-For a list of supported operating systems and versions, see [Supported platforms](../rserver-install-supported-platforms.md).
+For a list of supported operating systems and versions, see [Supported platforms](r-server-install-supported-platforms.md).
 
 ## Package dependencies for Microsoft R Server 9.1.0
 

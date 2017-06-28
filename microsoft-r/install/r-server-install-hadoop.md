@@ -29,7 +29,7 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 
 ### Platforms and Dependencies
 
-- [Supported operating systems for Microsoft R Server](../rserver-install-supported-platforms.md)
+- [Supported operating systems for Microsoft R Server](r-server-install-supported-platforms.md)
 - [Package dependencies for Microsoft R Server installations on Linux and Hadoop](r-server-install-linux-hadoop-packages.md)
 
 ### Step-by-Step

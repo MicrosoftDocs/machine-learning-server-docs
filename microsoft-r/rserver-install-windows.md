@@ -34,7 +34,7 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 
 ## System requirements
 
-+ Operating system must be a [supported version of Windows](rserver-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended. 
++ Operating system must be a [supported version of Windows](install/r-server-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended. 
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
@@ -181,7 +181,7 @@ Earlier versions are supported, but with limited availability on Microsoft downl
 
  [Introduction to R Server](rserver.md) 
  [What's New in R Server](rserver-whats-new.md)
- [Supported platforms](rserver-install-supported-platforms.md)  
+ [Supported platforms](install/r-server-install-supported-platforms.md)  
  [Known Issues](rserver-known-issues.md)  
  [Command line installation](rserver-install-windows-commandline.md)  
  [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    

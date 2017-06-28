@@ -45,11 +45,11 @@ Hardware and software requirements for SQL Server Machine Learning Services and 
 
 <sup>1</sup> You can install **R Server for Hadoop** on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for R Server on CDH, HDP, or MapR.
 
-<sup>2</sup> Cloudera installation using the built-in parcel generator script for 9.1 requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1 on CDH](install/r-server-install-cloudera.md).
+<sup>2</sup> Cloudera installation using the built-in parcel generator script for 9.1 requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1 on CDH](r-server-install-cloudera.md).
 
 <sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
-<sup>4</sup>**.NET Core platform dependency**: Several features in R Server have a .NET Core dependency. These features include [Overview of MicrosoftML algorithms](r-reference/microsoftml/microsoftml-package.md) bundled in the MicrosoftML package as well as the ability to configure R Server to [operationalize your R analytics](operationalize/about.md). Due to the .Net Core dependency, these features are NOT available on these platforms. 
+<sup>4</sup>**.NET Core platform dependency**: Several features in R Server have a .NET Core dependency. These features include [Overview of MicrosoftML algorithms](../r-reference/microsoftml/microsoftml-package.md) bundled in the MicrosoftML package as well as the ability to configure R Server to [operationalize your R analytics](../deployr-repository-manager/about.md). Due to the .Net Core dependency, these features are NOT available on these platforms. 
 
 <sup>5</sup>To operationalize your analytics or use the MicrosoftML package on R Server for Hadoop, you must deploy on edge nodes in a Hadoop cluster, if the underlying operating system is CentOS/RHEL 7.x or Ubuntu 14.04. It is not supported on SUSE SLES11.
 
@@ -84,7 +84,7 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 
 **Operationalization and mrsdeploy**
 
-After installation, you can [configure](install/operationalize-r-server-one-box-config.md) R Server to [operationalize](operationalize/about.md) your R analytics. Due to an ASP .Net Core dependency, operationalization is currently supported only on:
+After installation, you can [configure](operationalize-r-server-one-box-config.md) R Server to [operationalize](../deployr-repository-manager/about.md) your R analytics. Due to an ASP .Net Core dependency, operationalization is currently supported only on:
 + Windows: Windows Server 2012 R2, Windows Server 2016
 + Linux: CentOS/RHEL 7.x, Ubuntu 14.04 and 16.04 _Note: Projected availability on SLES in 2017_
 + Hadoop: Linux-based edge nodes on CentOS/RHEL 7.x, Ubuntu 14.04
@@ -113,8 +113,8 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 - Spark version: 1.5.0-1.6.1 (if using Spark). Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
 **DeployR**
-- [Prerequisites for DeployR on Linux](deployr/deployr-install-on-linux.md#system-requirements)
-- [Prerequisites for DeployR on Windows](deployr/deployr-install-on-windows.md#system-requirements)
+- [Prerequisites for DeployR on Linux](../deployr/deployr-install-on-linux.md#system-requirements)
+- [Prerequisites for DeployR on Windows](../deployr/deployr-install-on-windows.md#system-requirements)
 
 ## Microsoft R Server 8.0.3
 

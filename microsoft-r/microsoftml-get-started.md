@@ -37,7 +37,7 @@ The MicrosoftML package provides fast and scalable **machine learning algorithms
 <a name="platform-availability"></a>
 ## Installation and platform availability
 
-MicrosoftML is installed as part of **Microsoft R Server 9.1.0 and 9.0.1**, **Microsoft R Client 9.1.0 and 9.0.1** and in the **SQL Server Machine Learning Services CTP2** on various platforms. For information on the supported platforms, see [Supported Platforms for Microsoft R Server](rserver-install-supported-platforms.md).
+MicrosoftML is installed as part of **Microsoft R Server 9.1.0 and 9.0.1**, **Microsoft R Client 9.1.0 and 9.0.1** and in the **SQL Server Machine Learning Services CTP2** on various platforms. For information on the supported platforms, see [Supported Platforms for Microsoft R Server](install/r-server-install-supported-platforms.md).
 
 To install pretrained machine learning models for sentiment analysis and image featurization, you must opt-in during setup. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](install/microsoftml-install-pretrained-models.md).
 

@@ -50,7 +50,7 @@ If these requirements cannot be met, you can install R Server manually. First, v
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-**Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like CentOS, or SUSE Linux Enterprise Server. Microsoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](../rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
+**Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like CentOS, or SUSE Linux Enterprise Server. Microsoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](r-server-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
 
 **Memory:** A minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 

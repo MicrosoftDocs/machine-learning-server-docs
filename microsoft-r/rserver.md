@@ -35,7 +35,7 @@ Although generic R scripts tend to run faster on Microsoft R Open via Intel MKL,
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics. Microsoft R Server provides the operationalizing tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use in any language to integrate the R analysis output with a third party package. [Learn more about operationalizing](operationalize/about.md)
 
-R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Azure, Windows, Linux, Hadoop, Teradata, SQL Server. See [Supported Platforms](rserver-install-supported-platforms.md) for details.
+R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Azure, Windows, Linux, Hadoop, Teradata, SQL Server. See [Supported Platforms](install/r-server-install-supported-platforms.md) for details.
 
 <a href="https://www.microsoft.com/en-us/cloud-platform/r-server" target="_blank"><b>Watch this 2-minute video introduction to Microsoft R Server.</b></a> 
 
@@ -93,7 +93,7 @@ Developers can use Swagger APIs to automate R analytics over single and multi-se
 
 ## Operationalize your analytics
 
-Being able to operationalize your analytics is another central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is now fully integrated into R Server. After installing R Server on select platforms (availability on all platforms is still pending), you'll have everything you need to [configure R Server to deploy, host, and consume R analytics web services and remote R sessions](install/operationalize-r-server-one-box-config.md).  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
+Being able to operationalize your analytics is another central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is now fully integrated into R Server. After installing R Server on select platforms (availability on all platforms is still pending), you'll have everything you need to [configure R Server to deploy, host, and consume R analytics web services and remote R sessions](install/operationalize-r-server-one-box-config.md).  For details on which platforms, see [Supported platforms](install/r-server-install-supported-platforms.md).
 
 [Learn more about operationalizing analytics with R Server.](operationalize/about.md)
 
@@ -117,7 +117,7 @@ You can also install **pre-trained cognitive models** for **sentiment analysis**
 |SQL Server Machine Learning Services  |Run advanced analytics in-database for seamless data analysis on SQL Server|[Doc](https://msdn.microsoft.com/library/mt696069.aspx)|[Doc](https://msdn.microsoft.com/library/mt604885.aspx)|
 
 <br />
-To review specific OS and database platform versions that can be used for an R Server deployment, see [Supported platforms](rserver-install-supported-platforms.md).
+To review specific OS and database platform versions that can be used for an R Server deployment, see [Supported platforms](install/r-server-install-supported-platforms.md).
 
 
 ## Next steps

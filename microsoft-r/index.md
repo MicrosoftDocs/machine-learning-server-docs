@@ -88,7 +88,7 @@ Learn more about Microsoft R in these articles:
 
 + [Microsoft R Product Web Page](https://www.microsoft.com/en-us/cloud-platform/r-server)
 
-+ [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md)
++ [Supported platforms in Microsoft R Server](install/r-server-install-supported-platforms.md)
 
 + [Microsoft R Client Get Started](r-client-get-started.md)
 

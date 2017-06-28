@@ -214,7 +214,7 @@ Review the best practices in [Manage your R Server for Linux installation](r-ser
 
 ## See Also
 
-[Supported platforms](../rserver-install-supported-platforms.md)
+[Supported platforms](r-server-install-supported-platforms.md)
 
 [What's new in R Server](../notes/r-server-notes.md)
 
