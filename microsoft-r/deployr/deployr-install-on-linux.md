@@ -218,7 +218,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
-1. **Review security documentation** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](../deployr-admin-security/deployr-security.md) and the [Enabling HTTPs](../deployr-admin-security/deployr-security-https.md) topic.
+1. **Review security documentation** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](../deployr-admin-security/deployr-security.md) and the [Enabling HTTPs](deployr-security-https.md) topic.
 
    >We strongly recommended that SSL/HTTPS be enabled in **_all production environments_**.
 
