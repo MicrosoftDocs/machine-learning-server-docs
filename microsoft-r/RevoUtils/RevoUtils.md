@@ -34,7 +34,7 @@ A package providing utility functions.
 |------|-------------|
 |[`getRevoRepos`](../r-reference/revoutils/getrevorepos.md) | Path to the package repositories. |
 |[`readNews`](../r-reference/revoutils/readnews.md)  | Read R or package NEWS files.|
-|[`Revo.home`](packagehelp/Revo.home.md)  | Path the Home directory. |
+|[`Revo.home`](../r-reference/revoutils/revo-home.md)  | Path the Home directory. |
 |[`RevoInfo`](packagehelp/RevoInfo.md)  | Functions giving information about Microsoft R.|
 |[`totalSystemMemory`](packagehelp/totalSystemMemory.md) |Uses operating system tools to return total system memory. |
 
