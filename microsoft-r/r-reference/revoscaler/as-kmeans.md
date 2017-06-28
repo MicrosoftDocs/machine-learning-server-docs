@@ -82,7 +82,7 @@ an object of class `"kmeans"`.
 [as.lm](as-lm.md),
 [as.glm](as-glm.md),
 [as.rpart](as-rpart.md),
-[as.xtabs](../../scaler/packagehelp/as.xtabs.md),
+[as.xtabs](as-xtabs.md),
 [rxKmeans](../../scaler/packagehelp/rxkmeans.md).
    
  

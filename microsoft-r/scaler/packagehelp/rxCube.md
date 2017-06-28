@@ -271,7 +271,7 @@ columns.
  
 xtabs,
 [rxCrossTabs](rxCrossTabs.md),
-[as.xtabs](as.xtabs.md),
+[as.xtabs](../../r-reference/revoscaler/as-xtabs.md),
 [rxTransform](rxTransform.md).
    
  ##Examples

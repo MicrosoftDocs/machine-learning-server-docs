@@ -88,7 +88,7 @@ glm,
 [as.lm](as-lm.md),
 [as.kmeans](as-kmeans.md),
 [as.rpart](as-rpart.md),
-[as.xtabs](../../scaler/packagehelp/as.xtabs.md).
+[as.xtabs](as-xtabs.md).
    
  
  ##Examples

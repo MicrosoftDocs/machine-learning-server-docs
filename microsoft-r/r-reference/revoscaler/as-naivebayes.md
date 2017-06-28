@@ -83,7 +83,7 @@ an object of class naiveBayes from **e1071**.
 [as.kmeans](as-kmeans.md),
 [as.glm](as-glm.md),
 [as.gbm](as-gbm.md),
-[as.xtabs](../../scaler/packagehelp/as.xtabs.md).
+[as.xtabs](as-xtabs.md).
    
  
  ##Examples

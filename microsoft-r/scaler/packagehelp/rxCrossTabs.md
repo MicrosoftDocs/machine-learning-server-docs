@@ -277,7 +277,7 @@ character vector of dependent variable names as extracted from the formula.
 xtabs,
 [rxMarginals](rxMarginals.md),
 [rxCube](rxCube.md),
-[as.xtabs](as.xtabs.md),
+[as.xtabs](../../r-reference/revoscaler/as-xtabs.md),
 [rxChiSquaredTest](rxChiSquaredTest.md),
 [rxFisherTest](rxChiSquaredTest.md),
 [rxKendallCor](rxChiSquaredTest.md),

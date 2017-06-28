@@ -421,7 +421,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
         <td> </td>
         <td>Converts cross tabulation results to an `xtabs` object.</td>
         <td>
-            <center><small>[**View**](packagehelp/as.xtabs.md)</small></center>
+            <center><small>[**View**](../r-reference/revoscaler/as-xtabs.md)</small></center>
         </td>
     </tr>
     <tr>

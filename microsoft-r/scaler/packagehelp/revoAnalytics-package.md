@@ -186,7 +186,7 @@ at the R prompt):
 * [rxMarginals](rxMarginals.md): Marginal summaries of cross-tabulations.
 
 
-* [as.xtabs](as.xtabs.md): Converts cross tabulation results to an `xtabs` object.
+* [as.xtabs](../../r-reference/revoscaler/as-xtabs.md): Converts cross tabulation results to an `xtabs` object.
 
 
 * [rxChiSquaredTest](rxChiSquaredTest.md): Performs Chi-squared Test on `xtabs` object.

@@ -340,7 +340,7 @@
 #### [as.naiveBayes](r-reference/revoscaler/as-naivebayes.md) 
 #### [as.randomForest](r-reference/revoscaler/as-randomforest.md) 
 #### [as.rpart](r-reference/revoscaler/as-rpart.md) 
-#### [as.xtabs](scaler/packagehelp/as.xtabs.md) 
+#### [as.xtabs](r-reference/revoscaler/as-xtabs.md) 
 #### [prune.rxDTree](scaler/packagehelp/prune.rxDTree.md) 
 #### [rxAddInheritance](scaler/packagehelp/rxAddInheritance.md) 
 #### [rxBTrees](scaler/packagehelp/rxBTrees.md) 

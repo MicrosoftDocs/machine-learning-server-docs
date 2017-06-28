@@ -83,13 +83,13 @@ an object of class xtabs.
  
  ##See Also
  
-[rxCrossTabs](rxCrossTabs.md),
-[rxCube](rxCube.md),
+[rxCrossTabs](../../scaler/packagehelp/rxcrosstabs.md),
+[rxCube](../../scaler/packagehelp/rxcube.md),
 xtabs,
-[as.lm](../../r-reference/revoscaler/as-lm.md),
-[as.kmeans](../../r-reference/revoscaler/as-kmeans.md),
-[as.rpart](../../r-reference/revoscaler/as-rpart.md),
-[as.glm](../../r-reference/revoscaler/as-glm.md).
+[as.lm](as-lm.md),
+[as.kmeans](as-kmeans.md),
+[as.rpart](as-rpart.md),
+[as.glm](as-glm.md).
    
  
  ##Examples
