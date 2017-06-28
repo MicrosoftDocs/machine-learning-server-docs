@@ -33,7 +33,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 ## How-to guidance
 
 * [Data acquisition](how-to-revoscaler-data-import.md)
-* [Data Summaries](../scaler-user-guide-data-summaries.md)
+* [Data Summaries](how-to-revoscaler-data-summaries.md)
 * [Models in ScaleR](../scaler-user-guide-models.md)
 * [crosstabs](how-to-revoscaler-crosstabs.md)
 * [Linear Models](../scaler-user-guide-linear-model.md)

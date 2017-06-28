@@ -44,7 +44,7 @@
 #### [XDF files](r/concept-what-is-xdf.md)
 
 ## Summarize data
-### [Statistical Summaries](scaler-user-guide-data-summaries.md)
+### [Statistical Summaries](r/how-to-revoscaler-data-summaries.md)
 ### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
 
 ## Models
