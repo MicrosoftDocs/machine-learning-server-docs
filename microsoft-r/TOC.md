@@ -390,7 +390,7 @@
 #### [rxGetJobs](r-reference/revoscaler/rxgetjobs.md) 
 #### [rxGetPartitions](scaler/packagehelp/rxGetPartitions.md) 
 #### [rxGetSparklyrConnection](scaler/packagehelp/rxGetSparklyrConnection.md) 
-#### [rxGetNodeInfo](scaler/packagehelp/rxGetNodeInfo.md) 
+#### [rxGetNodeInfo](r-reference/revoscaler/rxgetnodeinfo.md) 
 #### [rxGetVarInfoXdf](scaler/packagehelp/rxGetVarInfoXdf.md) 
 #### [rxGetVarNames](scaler/packagehelp/rxGetVarNames.md) 
 #### [rxGLM](scaler/packagehelp/rxGLM.md) 

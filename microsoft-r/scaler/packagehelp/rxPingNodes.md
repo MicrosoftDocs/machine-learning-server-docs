@@ -81,7 +81,7 @@ that is to be pinged.  Furthermore, the nodes to be pinged will be determined in
 cause the set of nodes to be checked to be the intersection between all the nodes in the `groups` or `queue` 
 specified, and the set of nodes specifically specified in the `nodes` parameter, and so forth.  Note that for 
 clusters and clouds that do have a head node, `computeOnHeadNode` is respected.  For more 
-information, see the compute context constructors or the [rxGetNodeInfo](rxGetNodeInfo.md) for more information.
+information, see the compute context constructors or the [rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md) for more information.
 
 Most other values in the compute context are respected when determing how a ping will be sent.  The following fields in particular are of note 
 when using this tool:
@@ -106,7 +106,7 @@ Should almost always be set to `TRUE`; however, may be of use to a system admini
  
  ##Value
   An object of type `rxPingResults`.  This is essentially a list in which component is named using an [rxMakeRNodeNames](rxMakeRNodeNames.md) translated 
-node name in the same manner and for the same reasons described for [rxGetNodeInfo](rxGetNodeInfo.md), with the `getWorkersOnly` parameter set to FALSE.  
+node name in the same manner and for the same reasons described for [rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md), with the `getWorkersOnly` parameter set to FALSE.  
 Each element of this list contains two
 elements: `nodeName` which holds the true, unmangled name of the node, and `status`, which contains a character scalar with one of 
 the following values:
@@ -155,7 +155,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md),
 [RxInTeradata](RxInTeradata.md),
 [rxMakeRNodeNames](rxMakeRNodeNames.md),
-[rxGetNodeInfo](rxGetNodeInfo.md),
+[rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md),
 [rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md).
    
  

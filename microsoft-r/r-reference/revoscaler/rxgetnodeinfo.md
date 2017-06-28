@@ -53,7 +53,7 @@ Provides information about the capabilities of the nodes on a cluster.
   
   
  ### ` ...`
- additional arguments for modifying the compute context before requesting the node information.  These arguments must be in the compute context constructor. For example, see [RxInTeradata](RxInTeradata.md). 
+ additional arguments for modifying the compute context before requesting the node information.  These arguments must be in the compute context constructor. For example, see [RxInTeradata](../../scaler/packagehelp/rxinteradata.md). 
   
   
   
@@ -63,7 +63,7 @@ Provides information about the capabilities of the nodes on a cluster.
   
   
  ### `makeRNodeNames`
- logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](rxMakeRNodeNames.md) for details on name mangling. 
+ logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) for details on name mangling. 
   
   
   
@@ -96,7 +96,7 @@ mangled to be proper R names.
 This operation is performed because names with a dash (-) are not permitted as variable names 
 (the R interpreter interprets this as a minus operation).  Thus, the mangling process replaces the 
 dashes with an underscore _ to form the variable names.
-See [rxMakeRNodeNames](rxMakeRNodeNames.md) for details on name mangeling.
+See [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) for details on name mangeling.
 
 Also, note that  
 node names are always forced to all capital letters (node names should be case agnostic, but in 
@@ -113,7 +113,7 @@ If `namesOnly` is `TRUE`, a character vector containing the names of the nodes.
 If `makeRNodeNames` is `TRUE`, these names will be normalized for use as R variables.
 
 If `namesOnly` is `FALSE`, a named list of lists, where each top level name is a node name 
-on the cluster, normalized for use as an R variable.  See [rxMakeRNodeNames](rxMakeRNodeNames.md) for
+on the cluster, normalized for use as an R variable.  See [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) for
 more details.
 
 Each named element in the list will contain some or all of the following:
@@ -152,15 +152,15 @@ list of character scalars.  The node groups (on MS HPC) or queues (under LSF) to
 
 
 ###`numPEs`
-integer. The number of Parsing Engines (PEs) - for [RxInTeradata](RxInTeradata.md).
+integer. The number of Parsing Engines (PEs) - for [RxInTeradata](../../scaler/packagehelp/rxinteradata.md).
 
 
 ###`numAmps`
-integer. The number of Access Module Processors (AMPs) - for [RxInTeradata](RxInTeradata.md).
+integer. The number of Access Module Processors (AMPs) - for [RxInTeradata](../../scaler/packagehelp/rxinteradata.md).
 
 
 ###`nodeId`
-integer. The ID of the node - for [RxInTeradata](RxInTeradata.md).
+integer. The ID of the node - for [RxInTeradata](../../scaler/packagehelp/rxinteradata.md).
 
 
  
@@ -172,9 +172,9 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md),
-[RxInTeradata](RxInTeradata.md),
-[rxMakeRNodeNames](rxMakeRNodeNames.md).
+[rxGetAvailableNodes](rxgetavailablenodes.md),
+[RxInTeradata](../../scaler/packagehelp/rxinteradata.md),
+[rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md).
    
  ##Examples
 
