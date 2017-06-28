@@ -295,7 +295,7 @@
 ###[serviceTypes](r-reference/mrsdeploy/servicetypes.md) 
 ###[summary.serviceDetails](r-reference/mrsdeploy/summary-servicedetails.md) 
 ###[summary.snapshotDetails](r-reference/mrsdeploy/summary-snapshotdetails.md) 
-###[updateService](mrsdeploy/packagehelp/updateService.md)
+###[updateService](r-reference/mrsdeploy/updateservice.md)
 
 ## [olapR](olapr/Olapr.md)
 ###[Execute2D](olapR/packagehelp/Execute2D.md) 

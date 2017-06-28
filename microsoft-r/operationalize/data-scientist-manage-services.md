@@ -162,11 +162,11 @@ To change a web service after you've published it, while retaining the same name
 
 After you've authenticated, use the `updateService` function in the `mrsdeploy` package to update a web service.
 
-See the [package reference help page for updateService()](../mrsdeploy/packagehelp/updateService.md) for the full description of all arguments. 
+See the [package reference help page for updateService()](../r-reference/mrsdeploy/updateservice.md) for the full description of all arguments. 
 
 |Function|Response|R Help|
 |----|----|:----:|
-|`updateService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/updateService.md)
+|`updateService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/updateservice.md)
 
 
 >[!NOTE]
