@@ -77,10 +77,10 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[featurizeText](featurizeText.md), [categorical](../../r-reference/microsoftml/categorical.md),
-[categoricalHash](../../r-reference/microsoftml/categoricalhash.md), [rxFastTrees](rxFastTrees.md),
-[rxFastForest](rxFastForest.md), [rxNeuralNet](rxNeuralNet.md),
-[rxOneClassSvm](rxOneClassSvm.md), [rxLogisticRegression](rxLogisticRegression.md).
+[featurizeText](../../microsoftml/packagehelp/featurizetext.md), [categorical](categorical.md),
+[categoricalHash](categoricalhash.md), [rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md),
+[rxFastForest](../../microsoftml/packagehelp/rxfastforest.md), [rxNeuralNet](../../microsoftml/packagehelp/rxneuralnet.md),
+[rxOneClassSvm](../../microsoftml/packagehelp/rxoneclasssvm.md), [rxLogisticRegression](../../microsoftml/packagehelp/rxlogisticregression.md).
    
  ##Examples
 

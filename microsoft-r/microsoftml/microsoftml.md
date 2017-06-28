@@ -58,7 +58,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 <a name="ml-transforms"></a>
 ### Machine learning transforms
 
-* [concat](packagehelp/concat.md): Transformation to create a single vector-valued column from multiple columns.  
+* [concat](../r-reference/microsoftml/concat.md): Transformation to create a single vector-valued column from multiple columns.  
 * [categorical](../r-reference/microsoftml/categorical.md): Create indicator vector using categorical transform with dictionary.  
 * [categoricalHash](../r-reference/microsoftml/categoricalhash.md): Converts the categorical value into an indicator array by hashing. 
 * [featurizeText](packagehelp/featurizeText.md): Produces a bag of counts of sequences of consecutive words, called n-grams, from a given corpus of text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  

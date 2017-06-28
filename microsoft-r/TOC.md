@@ -227,7 +227,7 @@
 ## [MicrosoftML](microsoftml/microsoftml.md)
 ### [categorical](r-reference/microsoftml/categorical.md)
 ### [categoricalHash](r-reference/microsoftml/categoricalhash.md)
-### [concat](microsoftml/packagehelp/concat.md)
+### [concat](r-reference/microsoftml/concat.md)
 ### [extractPixels](microsoftml/packagehelp/extractPixels.md) 
 ### [fastForest](microsoftml/packagehelp/fastForest.md) 
 ### [fastLinear](microsoftml/packagehelp/fastLinear.md) 
