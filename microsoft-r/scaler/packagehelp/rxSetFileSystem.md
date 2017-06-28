@@ -78,7 +78,7 @@ The file system object is returned invisibly.
 [RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md),
 [RxNativeFileSystem](../../r-reference/revoscaler/rxnativefilesystem.md),
 [RxHdfsFileSystem](../../r-reference/revoscaler/rxhdfsfilesystem.md),
-[rxOptions](rxOptions.md),
+[rxOptions](../../r-reference/revoscaler/rxoptions.md),
 [RxXdfData](RxXdfData.md),
 [RxTextData](RxTextData.md).
    

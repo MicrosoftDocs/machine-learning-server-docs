@@ -276,7 +276,7 @@ context.
   
     
  ### `outDataPath`
- NOT YET IMPLEMENTED. `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `outDataPath` in [rxOptions](rxOptions.md)  
+ NOT YET IMPLEMENTED. `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `outDataPath` in [rxOptions](../../r-reference/revoscaler/rxoptions.md)  
    
   
     

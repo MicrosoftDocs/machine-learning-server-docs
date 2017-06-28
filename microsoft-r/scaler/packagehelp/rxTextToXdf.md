@@ -243,7 +243,7 @@ use rxImport.
 Decimal data in text files can be imported into .xdf files and 
 stored as either 32-bit floats or 64-bit doubles. 
 The default for this is 32-bit floats, which can be changed using
-[rxOptions](rxOptions.md).
+[rxOptions](../../r-reference/revoscaler/rxoptions.md).
  
 If stored in 32-bit floats, they are converted into 64-bit
 doubles whenever they are brought into R. Because there may be no exact binary

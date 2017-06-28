@@ -195,13 +195,13 @@ computations.
    
     
  ### `computeContext`
- an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) object representing the computational environment.  
-*   [RxLocalSeq](../../r-reference/revoscaler/rxlocalseq.md): compute locally, using sequential processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
-*   [RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
-*   [RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md): use the currently registered parallel backend for 'foreach' for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing.   
-*  [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md): use a Hadoop cluster for both High Performance Analytics for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
-*  [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md): use a Teradata cluster for both High Performance Analytics and for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
-*   [RxHpcServer](../../r-reference/revoscaler/revoscaler-deprecated.md): use a Microsoft HPC Server cluster for both High Performance Analytics and for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing.                                        
+ an [RxComputeContext](rxcomputecontext.md) object representing the computational environment.  
+*   [RxLocalSeq](rxlocalseq.md): compute locally, using sequential processing with [rxExec](rxexec.md) High Performance Computing. 
+*   [RxLocalParallel](rxlocalparallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](rxexec.md) High Performance Computing. 
+*   [RxForeachDoPar](rxforeachdopar.md): use the currently registered parallel backend for 'foreach' for processing with [rxExec](rxexec.md) High Performance Computing.   
+*  [RxHadoopMR](rxhadoopmr.md): use a Hadoop cluster for both High Performance Analytics for [rxExec](rxexec.md) High Performance Computing. 
+*  [RxInTeradata](rxinteradata.md): use a Teradata cluster for both High Performance Analytics and for [rxExec](rxexec.md) High Performance Computing. 
+*   [RxHpcServer](revoscaler-deprecated.md): use a Microsoft HPC Server cluster for both High Performance Analytics and for [rxExec](rxexec.md) High Performance Computing.                                        
  
    
    
@@ -217,7 +217,7 @@ computations.
    
     
  ### `transformPackages`
- character vector defining default set of R packages to be made available and preloaded for use in variable transformation functions. If at the default setting, when using [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md) the default will be modified to a small package (`RevoMods`) in order to reduce memory requirements. 
+ character vector defining default set of R packages to be made available and preloaded for use in variable transformation functions. If at the default setting, when using [RxInTeradata](rxinteradata.md) the default will be modified to a small package (`RevoMods`) in order to reduce memory requirements. 
   
    
     
@@ -227,12 +227,12 @@ computations.
   
     
  ### `fileSystem`
- character string or [RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md) object indicating type of file system; `"native"` or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. 
+ character string or [RxFileSystem](rxfilesystem.md) object indicating type of file system; `"native"` or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. 
   
   
     
  ### `useDoSMP`
- `NULL`. Deprecated. Use a [RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md) compute context. 
+ `NULL`. Deprecated. Use a [RxLocalParallel](rxlocalparallel.md) compute context. 
   
    
     
@@ -262,7 +262,7 @@ computations.
   
     
  ### `numTasks`
- integer value. The default `numTasks` use in [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md). 
+ integer value. The default `numTasks` use in [RxInSqlServer](rxinsqlserver.md). 
   
   
     
@@ -344,13 +344,13 @@ value of the requested option is returned.
  
  ##See Also
  
-[RxLocalSeq](../../r-reference/revoscaler/rxlocalseq.md),
-[RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md),
-[RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md),
-[RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
-[RxSpark](RxSpark.md),
-[RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
-[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md).
+[RxLocalSeq](rxlocalseq.md),
+[RxLocalParallel](rxlocalparallel.md),
+[RxForeachDoPar](rxforeachdopar.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxSpark](../../scaler/packagehelp/rxspark.md),
+[RxInSqlServer](rxinsqlserver.md),
+[RxInTeradata](rxinteradata.md).
    
  
  ##Examples

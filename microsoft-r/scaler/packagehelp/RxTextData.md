@@ -336,7 +336,7 @@ Imported `POSIXct` will have the `tzone` attribute set to `"GMT"`.
 Decimal data in text files can be imported into .xdf files and 
 stored as either 32-bit floats or 64-bit doubles. 
 The default for this is 32-bit floats, which can be changed using
-[rxOptions](rxOptions.md). If the data type cannot be determined
+[rxOptions](../../r-reference/revoscaler/rxoptions.md). If the data type cannot be determined
 (i.e., only missing values are encountered), the column is imported
 as 64-bit doubles unless otherwise specified.
  

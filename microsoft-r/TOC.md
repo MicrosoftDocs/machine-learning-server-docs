@@ -430,7 +430,7 @@
 #### [RxOdbcData-class](r-reference/revoscaler/rxodbcdata-class.md) 
 #### [RxOdbcData](r-reference/revoscaler/rxodbcdata.md) 
 #### [rxOpen-methods](r-reference/revoscaler/rxopen-methods.md) 
-#### [rxOptions](scaler/packagehelp/rxOptions.md) 
+#### [rxOptions](r-reference/revoscaler/rxoptions.md) 
 #### [rxPackage](scaler/packagehelp/rxPackage.md) 
 #### [rxPairwiseCrosstab](scaler/packagehelp/rxPairwiseCrosstab.md) 
 #### [rxPingNodes](scaler/packagehelp/rxPingNodes.md) 
