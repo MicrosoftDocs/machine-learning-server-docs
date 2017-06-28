@@ -74,7 +74,7 @@ You can install these configurations for free. Each one gives you Microsoft R Op
 
 Since the R engine lies underneath, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
 
-However, because you have R Client or R Server, your script can also include functions shipped only with Microsoft R products, including the [MicrosoftML](microsoftml/microsoftml.md), [olapR](olapr/olapr.md), [mrsdeploy](mrsdeploy/mrsdeploy.md), and [RevoScaleR](scaler/scaler.md) packages. All of these packages are available in both R Client and R Server, but at different levels of capacity.
+However, because you have R Client or R Server, your script can also include functions shipped only with Microsoft R products, including the [MicrosoftML](r-reference/microsoftml/microsoftml-package.md), [olapR](olapr/olapr.md), [mrsdeploy](mrsdeploy/mrsdeploy.md), and [RevoScaleR](scaler/scaler.md) packages. All of these packages are available in both R Client and R Server, but at different levels of capacity.
 
 ## Next steps
 

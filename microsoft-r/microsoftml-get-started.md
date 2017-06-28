@@ -70,7 +70,7 @@ Algorithm | ML task supported | Scalability | Application Examples
 
 ### Data transforms
 
-**MicrosoftML** also provides transforms to help featurize your data for machine learning. They are used to clean, wrangle, train and score your data. For a description of the transforms, see [Machine learning transforms](microsoftml/microsoftml.md#ml-transforms) reference documentation.
+**MicrosoftML** also provides transforms to help featurize your data for machine learning. They are used to clean, wrangle, train and score your data. For a description of the transforms, see [Machine learning transforms](r-reference/microsoftml/microsoftml-package.md#ml-transforms) reference documentation.
 
 
 ## What's new?
@@ -79,7 +79,7 @@ For the new features included in latest release of MicrosoftML, see [What's New 
 
 ## What's next?
 
-For reference documentation on the individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](microsoftml/microsoftml.md).
+For reference documentation on the individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](r-reference/microsoftml/microsoftml-package.md).
 
 For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md).
 

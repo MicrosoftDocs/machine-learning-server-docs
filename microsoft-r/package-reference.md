@@ -32,7 +32,7 @@ This section contains the function reference documentation for proprietary *revo
 
 |Package | Description |
 |----|----|
-|[MicrosoftML](microsoftml/microsoftml.md)|A collection of functions in Microsoft R used for machine learning at scale.|
+|[MicrosoftML](r-reference/microsoftml/microsoftml-package.md)|A collection of functions in Microsoft R used for machine learning at scale.|
 |[mrsdeploy](mrsdeploy/mrsdeploy.md)|Deployment functions for interactive remote execution at the command line, plus web service functions for bundling up R code blocks as discrete web services that can be deployed and managed on an R Server instance.|
 |[olapR](olapR/OlapR.md)|A collection of functions for constructing MDX queries against an OLAP cube.|
 |[RevoScaleR](scaler/scaler.md) | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](rserver.md) functionality. |

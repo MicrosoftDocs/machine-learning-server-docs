@@ -224,7 +224,7 @@
 
 
 # [Function Reference](package-reference.md)
-## [MicrosoftML](microsoftml/microsoftml.md)
+## [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 ### [categorical](r-reference/microsoftml/categorical.md)
 ### [categoricalHash](r-reference/microsoftml/categoricalhash.md)
 ### [concat](r-reference/microsoftml/concat.md)
