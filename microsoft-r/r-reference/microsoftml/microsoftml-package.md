@@ -114,7 +114,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 [Cheat Sheet: How to choose a MicrosoftML algorithm](../../r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 
-[MicrosoftML samples](../../microsoftml-quickstarts.md).
+[MicrosoftML samples](../../r/sample-microsoftml.md).
 
 
 ##Microsoft Technical Support

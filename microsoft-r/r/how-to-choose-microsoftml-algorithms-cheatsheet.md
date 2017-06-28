@@ -97,7 +97,7 @@ For a list by category of all the machine learning algorithms available in the M
 
 ## What's next?
 
-[Quickstarts for MicrosoftML](../microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.
+[Quickstarts for MicrosoftML](sample-microsoftml.md) shows how to use pretrained models for sentiment analysis and image featurization.
 
 
 

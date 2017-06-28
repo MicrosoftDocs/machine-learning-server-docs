@@ -25,7 +25,7 @@
 
 # [Get started with MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
 ## [Cheat Sheet: Choosing a MicrosoftML algorithm](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
-## [Samples for MicrosoftML](microsoftml-quickstarts.md)
+## [Samples for MicrosoftML](r/sample-microsoftml.md)
 
 # [Diving into data analysis](r/how-to-introduction.md)
 ## Load and transform data
