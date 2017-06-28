@@ -475,7 +475,7 @@
 #### [rxStepPlot](r-reference/revoscaler/rxstepplot.md) 
 #### [rxStopEngine](r-reference/revoscaler/rxstopengine.md) 
 #### [rxSummary](r-reference/revoscaler/rxsummary.md) 
-#### [rxSyncPackages](scaler/packagehelp/rxSyncPackages.md) 
+#### [rxSyncPackages](r-reference/revoscaler/rxsyncpackages.md) 
 #### [RxTeradata-class](scaler/packagehelp/RxTeradata-class.md) 
 #### [RxTeradata](scaler/packagehelp/RxTeradata.md) 
 #### [rxTeradataSql](scaler/packagehelp/rxTeradataSql.md) 
