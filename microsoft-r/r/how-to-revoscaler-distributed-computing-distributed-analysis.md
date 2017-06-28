@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Running Distributed Analyses
 
-This article explains how to work with output in a [distributed compute context](scaler-distributed-computing.md) in R Server on Hadoop or Teradata.
+This article explains how to work with output in a [distributed compute context](../scaler-distributed-computing.md) in R Server on Hadoop or Teradata.
 
 Given a registered a distributed compute context, any of the following functions can be used to perform distributed computations:
 
@@ -45,7 +45,7 @@ Given a registered a distributed compute context, any of the following functions
 
 Except for `rxExec`, we refer to these functions as the RevoScaleR *high-performance analytics*, or HPA functions. 
 
-The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing in Microsoft R](scaler-distributed-computing-parallel-jobs.md).
+The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing in Microsoft R](../scaler-distributed-computing-parallel-jobs.md).
 
 **How to obtain node-level information**
 
@@ -160,7 +160,7 @@ Notice that in this case we have returned an `rxCube` object. We can use this ob
     names(plotData)[1] <- "DepTime"
     rxLinePlot(ArrDelay~DepTime|DayOfWeek, data=plotData)
 
-![Plotted Results](media/scaler-distributed-computing-distributed-analysis/plotted_results.png)
+![Plotted Results](./media/how-to-revoscaler-distributed-computing-distributed-analysis/plotted_results.png)
 
 ### Cross-Tabulating Arrival Delay
 
@@ -196,7 +196,7 @@ which yields:
 
 ### Computing a Covariance or Correlation Matrix
 
-The `rxCovCor` function is used to compute covariance and correlation matrices; the convenience functions `rxCov`, `rxCor`, and `rxSSCP` all depend upon it and are usually used in practical situations. For examples, see [Correlation and variance/covariance matrices](r/how-to-revoscaler-covcor.md).
+The `rxCovCor` function is used to compute covariance and correlation matrices; the convenience functions `rxCov`, `rxCor`, and `rxSSCP` all depend upon it and are usually used in practical situations. For examples, see [Correlation and variance/covariance matrices](how-to-revoscaler-covcor.md).
 
 The following example shows how the main function can be used directly:
 
