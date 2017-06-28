@@ -377,7 +377,7 @@ By default, the **CA Single Sign-On** (formerly known as SiteMinder) security pr
 
 **To enable CA Single Sign-On support:**
 
-1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](../deployr-admin-configure-ca-sso.md).
+1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](../deployr/deployr-admin-configure-ca-sso.md).
 
 2.  Update the relevant properties in your DeployR external configuration file.
     This step assumes that:
