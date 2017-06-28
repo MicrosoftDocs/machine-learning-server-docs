@@ -136,7 +136,7 @@
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
 #### [R Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
 #### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-#### [Microsoft Data Science VM](vm-data-science.md)
+#### [Microsoft Data Science VM](install/r-server-vm-data-science.md)
 
 ## Deploy and consume analytics
 ### Data scientists
