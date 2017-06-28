@@ -449,7 +449,7 @@
 #### [rxRemovePackages](r-reference/revoscaler/rxremovepackages.md) 
 #### [rxResultsDF](r-reference/revoscaler/rxresultsdf.md) 
 #### [rxRiskRatio](r-reference/revoscaler/rxriskratio.md) 
-#### [rxRng](scaler/packagehelp/rxRng.md) 
+#### [rxRng](r-reference/revoscaler/rxrng.md) 
 #### [rxRoc](scaler/packagehelp/rxRoc.md) 
 #### [RxSasData-class](scaler/packagehelp/RxSasData-class.md) 
 #### [RxSasData](scaler/packagehelp/RxSasData.md) 
