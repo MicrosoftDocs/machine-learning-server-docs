@@ -450,7 +450,7 @@
 #### [rxResultsDF](r-reference/revoscaler/rxresultsdf.md) 
 #### [rxRiskRatio](r-reference/revoscaler/rxriskratio.md) 
 #### [rxRng](r-reference/revoscaler/rxrng.md) 
-#### [rxRoc](scaler/packagehelp/rxRoc.md) 
+#### [rxRoc](r-reference/revoscaler/rxroc.md) 
 #### [RxSasData-class](scaler/packagehelp/RxSasData-class.md) 
 #### [RxSasData](scaler/packagehelp/RxSasData.md) 
 #### [rxSerializeModel](scaler/packagehelp/rxSerializeModel.md) 

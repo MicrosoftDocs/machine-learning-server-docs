@@ -77,7 +77,7 @@ plot  (x, computeAuc = TRUE, title = NULL, subtitle,
   
     
  ### `data`
-  data frame, character string containing an .xdf file name (with path), or  [RxXdfData](RxXdfData.md) object representing an .xdf file containing the actual and observed variables.  
+  data frame, character string containing an .xdf file name (with path), or  [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object representing an .xdf file containing the actual and observed variables.  
   
     
  ### `numBreaks`
@@ -187,10 +187,10 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxPredict](../../r-reference/microsoftml/rxpredict.md),
-[rxLogit](../../r-reference/revoscaler/rxlogit.md),
-[rxGlm](../../r-reference/revoscaler/rxglm.md), 
-[rxLinePlot](../../r-reference/revoscaler/rxlineplot.md).
+[rxPredict](../microsoftml/rxpredict.md),
+[rxLogit](rxlogit.md),
+[rxGlm](rxglm.md), 
+[rxLinePlot](rxlineplot.md).
    
  ##Examples
 
