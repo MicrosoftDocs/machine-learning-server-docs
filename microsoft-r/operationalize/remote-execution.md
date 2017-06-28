@@ -34,7 +34,7 @@ Remote execution is the ability to issue R commands from either R Server or R Cl
 Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
-+ [Log in to and out of an R Server remotely](../operationalize/mrsdeploy-connection.md)
++ [Log in to and out of an R Server remotely](how-to-connect-log-in-with-mrsdeploy.md)
 + [Generate diff reports of the local and remote environments](#diff) and reconcile any differences
 + [Execute R scripts and code remotely](#run)
 + [Work with R objects/files remotely](#objects)
@@ -52,13 +52,13 @@ Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-pa
 
 To create a remote session, you must first authenticate with R Server using one of the `mrsdeploy` login functions:  remoteLogin() and remoteLoginAAD(). With these functions, you can authenticate, set the arguments to create a remote R session on the R Server (`session = TRUE`) and even place yourself in the remote command line upon login `commandline = TRUE`. 
 
-Read the article ["Connecting to R Server with mrsdeploy"](../operationalize/mrsdeploy-connection.md) for more on authentication with `mrsdeploy` and syntax. 
+Read the article ["Connecting to R Server with mrsdeploy"](how-to-connect-log-in-with-mrsdeploy.md) for more on authentication with `mrsdeploy` and syntax. 
 
 <a name="switch"></a>
 
 ## How to switch between sessions or logout
 
-After you [log in to the remote R server](../operationalize/mrsdeploy-connection.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.x instance on another machine. 
+After you [log in to the remote R server](how-to-connect-log-in-with-mrsdeploy.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.x instance on another machine. 
 
 When the `REMOTE>` command line is displayed in the R console, any R commands entered are executed on the remote R session. 
 
@@ -338,6 +338,6 @@ REMOTE>api <- publishService(
 ## See also
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
-+ [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)
++ [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
 + [Get started guide for Data scientists](concept-operationalize-deploy-consume.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)

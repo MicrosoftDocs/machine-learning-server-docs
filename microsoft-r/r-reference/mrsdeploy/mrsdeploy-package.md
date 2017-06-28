@@ -63,7 +63,7 @@ For a list of all `mrsdeploy` functions, including those for remote execution, s
 
 To use the functions in the `mrsdeploy` package, you must log into R Server as an authenticated user.  And if using the remote execution functionality, you can also create a remote R session upon login. 
 
-Learn more about these functions and their arguments in the article "[Connecting to R Server to use mrsdeploy](../../operationalize/mrsdeploy-connection.md)".
+Learn more about these functions and their arguments in the article "[Connecting to R Server to use mrsdeploy](../../operationalize/how-to-connect-log-in-with-mrsdeploy.md)".
 
 |Function | Description |
 |---------|---------|

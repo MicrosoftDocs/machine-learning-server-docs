@@ -47,7 +47,7 @@ Before you begin this QuickStart, have the following ready:
 
 + An instance of [Microsoft R Server installed](../rserver.md) that has been [configured to operationalize analytics](../install/operationalize-r-server-one-box-config.md).
 
-+ The connection details and access to that instance of Microsoft R Server. Contact your administrator for any missing connection details. You can [connect to R Server from your local machine](../operationalize/mrsdeploy-connection.md) in R to deploy your analytics as web services so they can be consumed. 
++ The connection details and access to that instance of Microsoft R Server. Contact your administrator for any missing connection details. You can [connect to R Server from your local machine](how-to-connect-log-in-with-mrsdeploy.md) in R to deploy your analytics as web services so they can be consumed. 
 
 
 ## Example code
@@ -176,9 +176,9 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 ## B. Publish model as a web service
 
-1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md) (`remoteLogin` or `remoteLoginAAD`).  
+1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](how-to-connect-log-in-with-mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`).  
 
-   For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)."
+   For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
    >[!IMPORTANT]
    >Be sure to replace the remoteLogin() function with the [correct login details for your configuration](mrsdeploy-connection.md).
@@ -285,7 +285,7 @@ This section provides a quick summary of useful links for data scientists operat
 **Key Documents**
  + [About Operationalization](about.md)    
  + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)    
- + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)    
+ + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
  + [Working with web services in R](../operationalize/data-scientist-manage-services.md)    
  + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)    
  + [Execute on a remote Microsoft R Server](remote-execution.md)    

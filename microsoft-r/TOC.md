@@ -142,7 +142,7 @@
 ### Data scientists
 #### [Get started for data scientists](operationalize/concept-operationalize-deploy-consume.md)
 #### [Quickstart: Deploy an R model as a web service](operationalize/quickstart-publish-web-service.md)
-#### [Connect to R Server in R](operationalize/mrsdeploy-connection.md)
+#### [Connect to R Server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 #### [Publish and manage services in R](operationalize/data-scientist-manage-services.md)
 #### [Get and consume services in R](operationalize/howto-consume-web-service-interact-in-r.md)
 #### [Consume services asynchronously via batch](operationalize/data-scientist-batch-mode.md)

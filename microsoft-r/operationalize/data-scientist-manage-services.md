@@ -43,7 +43,7 @@ To publish or interact with a web service outside of R, use the [RESTful APIs](c
 Before you can use the web service management functions in the `mrsdeploy` R package, you must:
 + Have access to an R Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
-+ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the `mrsdeploy` package as described in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)."
++ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the `mrsdeploy` package as described in the article "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
 ## Web service types
 

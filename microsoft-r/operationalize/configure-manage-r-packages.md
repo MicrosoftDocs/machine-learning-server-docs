@@ -182,7 +182,7 @@ The packages you install using this method do not 'contaminate' the production e
    > library(mrsdeploy)
    ```
 
-1. Authenticate to create the remote session.  Learn more about the authentication functions and their arguments in the article: "[Connecting to R Server from mrsdeploy](mrsdeploy-connection.md). " 
+1. Authenticate to create the remote session.  Learn more about the authentication functions and their arguments in the article: "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md). " 
 
    + For example, for Azure Active Directory:
      ```

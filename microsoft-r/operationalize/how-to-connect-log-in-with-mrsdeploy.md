@@ -172,11 +172,11 @@ Take special note of the arguments `session` and `commandline` as these influenc
 For more details on remote execution, see [this article](remote-execution.md).
 
 >[!WARNING]
->In the case where you are working with a [remote R session](../operationalize/remote-execution.md#publish-remote-session), there are several approaches to session management when publishing.  
+>In the case where you are working with a [remote R session](remote-execution.md#publish-remote-session), there are several approaches to session management when publishing.  
 
 ### Access tokens
 
-After you authenticate with Active Directory or Azure Active Directory, an [access token](../operationalize/security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. 
+After you authenticate with Active Directory or Azure Active Directory, an [access token](security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. 
 
 Keep in mind that every API call and every `mrsdeploy` function requires authentication with R Server. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned. 
 
@@ -192,7 +192,7 @@ In this state, we'll authenticate using one of the two aforementioned login func
 
 |Command|State|
 |---|---|
-|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800"`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`REMOTE>`|![state 1](../media/o16n/mrsdeploy-connect-remote-session.png)<br>&nbsp;|
+|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800"`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`REMOTE>`|![state 1](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-remote-session.png)<br>&nbsp;|
 
 When you see the default prompt `REMOTE>` in the command pane, you'll know that you are now interacting with your remote R session and are no longer in your local R environment:
 
@@ -236,7 +236,7 @@ In this state, you can authenticate using `remoteLogin`, which is one of the two
 
 |Command|State|
 |---|---|
-|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = TRUE,`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`commandline = FALSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`>`|![state 2](../media/o16n/mrsdeploy-connect-local-session.png)<br>&nbsp;|
+|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = TRUE,`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`commandline = FALSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`>`|![state 2](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-local-session.png)<br>&nbsp;|
 
 In this example, we define an interactive authentication workflow that spans both our local and remote environments (just like state 1), but starts out in the local R session, and only then moves to the remote R session.
 
@@ -271,7 +271,7 @@ In this state, you can authenticate with remoteLogin() and its argument `session
 
 |Command|State|
 |---|---|
-|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = FALSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`>`|![state 3](../media/o16n/mrsdeploy-connect-local.png)<br>&nbsp;|
+|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = FALSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`>`|![state 3](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-local.png)<br>&nbsp;|
 
 
 In this example, we define an interactive authentication workflow without a remote R session (`session = FALSE`). This is useful when working only with the web service functionality of the `mrsdeploy` package. After authentication, we remain confined within the local R session in order to publish and consume a service.
@@ -304,11 +304,11 @@ In this example, we define an interactive authentication workflow without a remo
 
 ## Switch between remote and local sessions
 
-After you [log into the remote R server](../operationalize/mrsdeploy-connection.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.x instance on another machine. 
+After you [log into the remote R server](how-to-connect-log-in-with-mrsdeploy.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.x instance on another machine. 
 
 When the `REMOTE>` command line is displayed in the R console, any R commands entered will be executed on the remote R session. 
 
-![Switch](../media/o16n/mrsdeploy-connect-switch-context.png)
+![Switch](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-switch-context.png)
 
 Switching between the local command line and the remote command line is done using these functions: pause() and resume(). To switch back to the local R session, type 'pause()'. If you have switched to the local R session, you can go back to the remote R session by typing 'resume()'.
 
@@ -346,7 +346,7 @@ To terminate the remote session from the local R session, type 'remoteLogout()'.
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Data scientist get started guide](concept-operationalize-deploy-consume.md)
-+ [Working with web services in R](../operationalize/data-scientist-manage-services.md)
-+ [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
-+ [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
++ [Working with web services in R](data-scientist-manage-services.md)
++ [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)
++ [Execute on a remote Microsoft R Server](remote-execution.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

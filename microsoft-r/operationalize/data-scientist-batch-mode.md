@@ -51,7 +51,7 @@ Use this sample code to follow along with the workflow described in greater deta
 Here, we publish the same web service that was published [in this tutorial](concept-operationalize-deploy-consume.md) article. Then, we consume that web service asynchronously. 
 
 >[!IMPORTANT]
->Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+>Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 ```R
 ##          EXAMPLE: DEPLOY MODEL & BATCH CONSUME SERVICE               ##
@@ -515,7 +515,7 @@ for(i in seq(batchRes$totalItemCount)) {
 ## See also
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
-+ [Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)
++ [Connecting to R Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)
 + [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
