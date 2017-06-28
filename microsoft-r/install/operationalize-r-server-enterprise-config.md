@@ -81,7 +81,7 @@ To replace an older version, you can uninstall the older distribution before ins
      >1. Manually install .NET Core 1.1.
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
@@ -112,7 +112,7 @@ To replace an older version, you can uninstall the older distribution before ins
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
-   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
@@ -168,7 +168,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
    <br>
    **On Linux**
 
-   Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
       
    Additional dependencies for R Server on Linux 9.0.1. If you have installed R Server 9.0.1 on Linux, you must add a few symlinks:
 
@@ -216,7 +216,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
      >1. Manually install .NET Core 1.1.
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. Declare the IP addresses of every compute node with each web node.
    1. [Open the `appsettings.json` configuration file](../operationalize/admin-configuration-file.md).

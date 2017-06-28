@@ -92,7 +92,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
      >1. Manually install .NET Core 1.1.
 
-   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   + On Linux: follow these instructions [Installation steps](../rserver-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
 
@@ -123,7 +123,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
    **On Windows**: Follow these instructions: [R Server installation steps](../rserver-install-windows.md) | [Offline steps](../rserver-install-windows-offline.md)
 
    <br>
-   **On Linux**:  Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](../rserver-install-linux-offline.md)
+   **On Linux**:  Follow these instructions: [R Server installation steps](../rserver-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
       
    Additional dependencies for R Server on Linux 9.0.1. If you have installed R Server 9.0.1 on Linux, you must add a few symlinks:
 

@@ -32,13 +32,13 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 
 ## System requirements
 
-+ Operating system must be a [supported version of Linux](rserver-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
++ Operating system must be a [supported version of Linux](../rserver-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
 + Disk space must be a minimum of 500 MB.
 
-+ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](rserver-install-linux-offline.md).
++ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](r-server-install-linux-offline.md).
 
 + A package manager (yum for RHEL systems, zypper for SLES systems)
 
@@ -53,7 +53,7 @@ The following additional components are included in Setup and required for R Ser
 
 From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. 
 
-MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and won't use alternative distributions. MRO can co-exist with other distributions of R on your machine, but additional configuration could be required to make a particular version the default. For more information, see [Manage an R Server installation on Linux](install/r-server-install-linux-manage-install.md).
+MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and won't use alternative distributions. MRO can co-exist with other distributions of R on your machine, but additional configuration could be required to make a particular version the default. For more information, see [Manage an R Server installation on Linux](r-server-install-linux-manage-install.md).
 
 The .NET Core component is required for MicrosoftML (machine learning). It is also required for mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 
@@ -74,7 +74,7 @@ You can get the gzipped installation file from one of the following download sit
 
 ## Download package dependencies
 
-R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](install/r-server-install-linux-hadoop-packages.md).
+R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](r-server-install-linux-hadoop-packages.md).
 
 You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. To zero in on specific packages, you can do a partial string search with this command syntax:  `ls -l /usr/lib64/libpng*`
 
@@ -137,7 +137,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   `[root@localhost tmp] $ cd MRS91Linux`
 
-2. Run the script. To include the [pretrained machine learning models for MicrosoftML](install/microsoftml-install-pretrained-models.md), append the `-m` switch. 
+2. Run the script. To include the [pretrained machine learning models for MicrosoftML](microsoftml-install-pretrained-models.md), append the `-m` switch. 
 
    `[root@localhost MRS91Linux] $ bash install.sh -m`
 
@@ -232,7 +232,7 @@ flag | Option | Description
 
 ## Enable Remote Connections and Analytic Deployment
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize-r-server-one-box-config.md) or an [enterprise setup](operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
  ## What's Installed with R Server
 
@@ -243,13 +243,13 @@ The Microsoft R Server setup installs the R base packages and a set of enhanced 
 
 ## Next Steps
 
-Review the best practices in [Manage your R Server for Linux installation](install/r-server-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
+Review the best practices in [Manage your R Server for Linux installation](r-server-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 
- [Introduction to R Server](rserver.md) 
- [What's New in R Server](rserver-whats-new.md)
- [Supported platforms](rserver-install-supported-platforms.md)  
- [Known Issues](rserver-known-issues.md)  
- [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)  
- [Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)
+ [Introduction to R Server](../rserver.md) 
+ [What's New in R Server](../rserver-whats-new.md)
+ [Supported platforms](../rserver-install-supported-platforms.md)  
+ [Known Issues](../rserver-known-issues.md)  
+ [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)  
+ [Configure R Server to operationalize analytics](operationalize-r-server-one-box-config.md)
