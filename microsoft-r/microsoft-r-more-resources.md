@@ -169,7 +169,7 @@ Here is a list of the available archived documentation sets for RRE:
 
 **DeployR 8.x Docs**
 
-The documentation for these releases have been archived. [See here.](deployr-welcome.md)
+The documentation for these releases have been archived. [See here.](deployr/deployr-welcome.md)
 
 ### More Books on R
 
