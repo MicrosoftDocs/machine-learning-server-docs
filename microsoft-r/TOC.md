@@ -6,7 +6,7 @@
 ## [About Microsoft R Server](rserver.md)
 ## [About Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 ## [Operationalize analytics](operationalize/about.md)
-## [Interoperability](overview-interoperability.md)
+## [Interoperability](what-is-r-server-interoperability.md)
 
 # Get started with RevoScaleR
 ## [Tutorials](r/tutorial-introduction.md)
