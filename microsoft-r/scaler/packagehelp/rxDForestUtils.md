@@ -58,7 +58,7 @@ Utility Functions for rxDForest.
    
     
  ### `x`
-  an object of class [rxDForest](rxDForest.md) or [rxDTree](rxDTree.md). 
+  an object of class [rxDForest](../../r-reference/revoscaler/rxdforest.md) or [rxDTree](rxDTree.md). 
   
   
     
@@ -141,7 +141,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxDForest](rxDForest.md), [rxDTree](rxDTree.md), [rxBTrees](../../r-reference/revoscaler/rxbtrees.md).
+[rxDForest](../../r-reference/revoscaler/rxdforest.md), [rxDTree](rxDTree.md), [rxBTrees](../../r-reference/revoscaler/rxbtrees.md).
    
  ##Examples
 

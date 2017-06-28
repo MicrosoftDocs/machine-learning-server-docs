@@ -82,7 +82,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
    
     
  ### `formula`
-  formula as described in [rxFormula](rxFormula.md).   Currently, formula functions are not supported. 
+  formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md).   Currently, formula functions are not supported. 
   
     
  ### `data`
@@ -241,7 +241,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
   
     
  ### `scheduleOnce`
- EXPERIMENTAL. logical value. If `TRUE`, rxDForest will be run with [rxExec](rxExec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](RxHadoopMR.md) compute context. 
+ EXPERIMENTAL. logical value. If `TRUE`, rxDForest will be run with [rxExec](../../scaler/packagehelp/rxexec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) compute context. 
   
   
     
@@ -259,11 +259,11 @@ plot  (x, type = "l", main = deparse(substitute(x)),
   
     
  ### `transformFunc`
-  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxTransform.md) for details. 
+  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
     
  ### `transformVars`
-  character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxTransform.md) for details. 
+  character vector of input data set variables  needed for the transformation function.  See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
     
  ### `transformPackages`
@@ -292,7 +292,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
   
     
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
   
   
     
@@ -301,7 +301,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
   
     
  ### ` ...`
-  additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](rxExec.md) when `scheduleOnce` is set to `TRUE`. 
+  additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](../../scaler/packagehelp/rxexec.md) when `scheduleOnce` is set to `TRUE`. 
   
   
     
@@ -319,7 +319,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
 `rxDForest` is a parallel external memory decision forest algorithm 
 targeted for very large data sets.  It is modeled on the random forest ideas of 
 Leo Breiman and Adele Cutler and the randomForest package of Andy Liaw and
-Matthew Weiner, using the tree-fitting algorithm introduced in [rxDTree](rxDTree.md).
+Matthew Weiner, using the tree-fitting algorithm introduced in [rxDTree](rxdtree.md).
 
 In a decision forest, a number of decision trees are fit to bootstrap samples of the
 original data. Observations omitted from a given bootstrap sample are termed 
@@ -381,7 +381,7 @@ a data frame containing the out-of-bag error estimate. For classification forest
  
  ##Note
  
-Like [rxDTree](rxDTree.md), `rxDForest` requires multiple passes over the data set and 
+Like [rxDTree](rxdtree.md), `rxDForest` requires multiple passes over the data set and 
 the maximum number of passes can be computed as follows:
 
 
@@ -423,7 +423,7 @@ See section **Random Streams and RNGs in Parallel Computation**.
  
  ##See Also
  
-[rxDTree](rxDTree.md), [rxPredict.rxDForest](rxPredict.rxDForest.md), [rxDForestUtils](rxDForestUtils.md), [rxRngNewStream](rxRng.md).
+[rxDTree](rxdtree.md), [rxPredict.rxDForest](rxdforest.md), [rxDForestUtils](../../scaler/packagehelp/rxdforestutils.md), [rxRngNewStream](../../scaler/packagehelp/rxrng.md).
    
  ##Examples
 
