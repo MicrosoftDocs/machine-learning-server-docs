@@ -295,7 +295,7 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
         </td>
         <td>Calculates predictions for fitted models. Output must be an XDF data source.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxPredict.md)</small></center>
+            <center><small>[**View**](../r-reference/microsoftml/rxpredict.md)</small></center>
         </td>
     </tr>
     <tr>

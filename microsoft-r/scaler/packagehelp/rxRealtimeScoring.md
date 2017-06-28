@@ -247,7 +247,7 @@ Arguments other than `modelObject`/`data` available in `rxPredict` are not suppo
 [rxSerializeModel](rxSerializeModel.md),
 [rxWriteObject](rxWriteObject.md),
 publishService,
-[rxPredict](rxPredict.md)
+[rxPredict](../../r-reference/microsoftml/rxpredict.md)
    
  ##Examples
 

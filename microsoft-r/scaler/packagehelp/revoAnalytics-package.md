@@ -245,7 +245,7 @@ at the R prompt):
 * [rxBTrees](rxBTrees.md):  Fits a classification or regression decision forest via stochastic gradient boosting.
 
 
-* [rxPredict](rxPredict.md): Calculates predictions for fitted models.
+* [rxPredict](../../r-reference/microsoftml/rxpredict.md): Calculates predictions for fitted models.
 
 
 * [rxKmeans](rxKmeans.md): Performs k-means clustering.

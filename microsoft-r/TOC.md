@@ -254,7 +254,7 @@
 ### [rxLogisticRegression](r-reference/microsoftml/logisticregression.md) 
 ### [rxNeuralNet](r-reference/microsoftml/rxneuralnet.md) 
 ### [rxOneClassSvm](r-reference/microsoftml/rxoneclasssvm.md)  
-### [rxPredict](microsoftml/packagehelp/rxPredict.md)
+### [rxPredict](r-reference/microsoftml/rxpredict.md)
 ### [selectFeatures](microsoftml/packagehelp/selectFeatures.md)
 
 ## [mrsdeploy](mrsdeploy/mrsdeploy.md)

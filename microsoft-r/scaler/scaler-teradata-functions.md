@@ -281,7 +281,7 @@ The `RevoScaleR` package supports a single Teradata DB compute context, `RxTerad
         </td>
         <td>Calculates predictions for fitted models. Output must be an XDF data source.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxPredict.md)</small></center>
+            <center><small>[**View**](../r-reference/microsoftml/rxpredict.md)</small></center>
         </td>
     </tr>
     <tr>
