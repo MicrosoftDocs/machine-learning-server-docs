@@ -39,8 +39,8 @@ DEPRECATED: HPC Server compute context class.
  ## Generators 
 
  
-The targeted generator [RxHpcServer](../../r-reference/revoscaler/revoscaler-deprecated.md) as well as the general generator
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).
+The targeted generator [RxHpcServer](revoscaler-deprecated.md) as well as the general generator
+[RxComputeContext](rxcomputecontext.md).
  
  ## Extends 
 

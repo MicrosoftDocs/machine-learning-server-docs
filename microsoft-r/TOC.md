@@ -400,7 +400,7 @@
 #### [rxHdfsConnect](r-reference/revoscaler/rxhdfsconnect.md) 
 #### [RxHdfsFileSystem](r-reference/revoscaler/rxhdfsfilesystem.md) 
 #### [rxHistogram](r-reference/revoscaler/rxhistogram.md) 
-#### [RxHPCServer-class](scaler/packagehelp/RxHPCServer-class.md) 
+#### [RxHPCServer-class](r-reference/revoscaler/rxhpcserver-class.md) 
 #### [rxImport](scaler/packagehelp/rxImport.md) 
 #### [RxInSqlServer-class](scaler/packagehelp/RxInSqlServer-class.md) 
 #### [RxInSqlServer](scaler/packagehelp/RxInSqlServer.md) 
