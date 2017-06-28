@@ -219,7 +219,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. Declare the IP addresses of every compute node with each web node.
-   1. [Open the `appsettings.json` configuration file](../operationalize/admin-configuration-file.md).
+   1. [Open the `appsettings.json` configuration file](../operationalize/configure-find-admin-configuration-file.md).
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 

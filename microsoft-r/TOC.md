@@ -122,7 +122,7 @@
 #### [Enterprise configuration](install/operationalize-r-server-enterprise-config.md)
 #### [Troubleshoot](operationalize/admin-diagnostics.md)
 #### [Administration utility](operationalize/admin-utility.md)
-#### [Find advanced configuration file](operationalize/admin-configuration-file.md)
+#### [Find advanced configuration file](operationalize/configure-find-admin-configuration-file.md)
 #### [Evaluate capacity](operationalize/configure-evaluate-capacity.md)
 #### [Configure authentication](operationalize/configure-authentication.md)
 #### [Configure connection security (SSL/TLS)](operationalize/security-https.md)

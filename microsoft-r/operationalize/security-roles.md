@@ -107,7 +107,7 @@ If you configure R Server to [use Active Directory/LDAP or Azure Active Director
 
 On each R Server web node, edit the `appsettings.json` configuration file in order to declare the roles and the groups that belong them. 
 
-1. Open [the `appsetting.json` file](admin-configuration-file.md).
+1. Open [the `appsetting.json` file](configure-find-admin-configuration-file.md).
 
 1. Search for the following section: `"Authorization": {`
 
@@ -154,7 +154,7 @@ R Server must be given the ability to verify the groups you declare against thos
 
 #### Step 2. Validate the groups against AD/LDAP or AAD.
 
-Return to [the `appsetting.json` file](admin-configuration-file.md) and do the following:
+Return to [the `appsetting.json` file](configure-find-admin-configuration-file.md) and do the following:
 
 + **For Azure Active Directory:** In `appsettings.json`, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](configure-authentication.md#aad).
 

@@ -83,7 +83,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, `appsettings.json`:
 
-   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
+   1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
    1. Search for the section starting with `"LDAP": {`
    
@@ -270,7 +270,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
 **Step 4: Enable Azure AD on each web node**
 
-1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
+1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
 1. Search for the section starting with:
    ```

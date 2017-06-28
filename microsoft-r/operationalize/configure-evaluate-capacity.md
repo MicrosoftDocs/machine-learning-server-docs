@@ -140,7 +140,7 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
 **To update the thread pool:**
 
-   1. On each compute nodes, [open the `appsettings.json` configuration file](admin-configuration-file.md).
+   1. On each compute nodes, [open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
    1. Search for the section starting with `"Pool": {`
 

@@ -33,7 +33,7 @@ Cross-Origin Resource Sharing (CORS) enables your client application to freely c
 
 **To enable CORS support:**
 
-1. On each web node, [open the `appsettings.json` configuration file](admin-configuration-file.md).
+1. On each web node, [open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
 1. Enable CORS in the `"CORS": {` section of the  `appsettings.json` file:
    1.  Set CORS `"Enabled": true`

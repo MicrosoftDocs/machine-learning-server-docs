@@ -91,7 +91,7 @@ The operationalization feature supports a wide range of runtime policies that af
 
 ### General
 
-The external configuration file, `appsettings.json` defines a number of policies for the services. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node. The location of this file depends on the R Server version, operating system, and the node. Learn more in this article: ["Editing the `appsettings.json` configuration file for R Server"](admin-configuration-file.md).
+The external configuration file, `appsettings.json` defines a number of policies for the services. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node. The location of this file depends on the R Server version, operating system, and the node. Learn more in this article: ["Editing the `appsettings.json` configuration file for R Server"](configure-find-admin-configuration-file.md).
  
 ### Asynchronous batch sizes
 

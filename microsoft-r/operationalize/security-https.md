@@ -63,7 +63,7 @@ This section walks you through the steps for securing the connections between th
        
    1. Take note of the `Subject` name of the certificate as you'll need this info later.
 
-1. [Open the appsettings.json configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
+1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md) to configure the HTTPS port for the web node.
 
 1. In that file, search for the section starting with `"Kestrel": {` .
 
@@ -201,7 +201,7 @@ When encrypting, you have the choice of using one of the following **compute nod
    > Also, take note of the `Subject` name of the certificate as you'll need this info later.
 
 1. Update the external JSON configuration file, `appsettings.json` to configure the HTTPS port for the compute node:
-   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
+   1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
    1. In that file, search for the section starting with `"Kestrel": {` .
 
@@ -286,7 +286,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Log into each web node machine.
 
-   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
+   1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
    1. Update the `"Uris": {` properties so that declared compute node now points to `https://<compute-node-ip>` (without the port number):
       ```
@@ -320,7 +320,7 @@ This section walks you through the steps for authenticating the web node with th
    1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
        > Take note of the `Subject` name of the certificate as you'll need this info later.
 
-   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md) to configure the HTTPS port for the web node.
+   1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md) to configure the HTTPS port for the web node.
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
@@ -343,7 +343,7 @@ This section walks you through the steps for authenticating the web node with th
 1. **On each compute node:**
     > These steps assume the trusted, signed HTTPS authentication certificate is already installed on the machine hosting the web node with a _private_ key.
 
-   1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
+   1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 

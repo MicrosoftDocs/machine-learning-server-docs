@@ -137,7 +137,7 @@ The following logging levels are available:
 
 **To update the logging level:**
 
-   1. On each compute node AND each web node, [open the `appsettings.json` configuration file](admin-configuration-file.md).
+   1. On each compute node AND each web node, [open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
    1. Search for the section starting with `"Logging": {`
 
