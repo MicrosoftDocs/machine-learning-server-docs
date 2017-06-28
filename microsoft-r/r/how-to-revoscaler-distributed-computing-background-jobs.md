@@ -115,7 +115,7 @@ Calling rxGetJobStatus again a few seconds later shows us that the job has compl
 
 If we are using our R Productivity Environment, we can view the job status by clicking on the object’s name in the Object Browser:
 
-![Object Browser](media/scaler-distributed-computing-background-jobs/object_browser_1.png)
+![Object Browser](./media/how-to-revoscaler-distributed-computing-background-jobs/object_browser_1.png)
 
 > The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 8.0.5 or Microsoft R Client.
 

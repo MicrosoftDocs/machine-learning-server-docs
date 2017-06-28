@@ -92,7 +92,7 @@ Within a data source type, you might find differences depending on the file syst
 
 By default, all jobs are "waiting jobs" or "blocking jobs" (control of the R prompt is not returned until the job is complete). For RevoScaleR jobs that complete quickly, this is an appropriate choice. However, for larger jobs that take several minutes to several hours ro tun on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local R session. In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. 
 
-To set the compute context object to run "no wait" jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](scaler-distributed-computing-background-jobs.md#non-waiting-jobs).
+To set the compute context object to run "no wait" jobs, set the argument *wait* to *FALSE*. For more information on non-waiting jobs, see ["Non-Waiting Jobs"](r/how-to-revoscaler-distributed-computing-background-jobs.md#non-waiting-jobs).
 
 Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters. You can define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from all the jobs once they complete.
 

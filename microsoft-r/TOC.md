@@ -209,7 +209,7 @@
 ## [Distributed and parallel computing on R Server](scaler-distributed-computing.md)
 ### [Compute context](scaler-distributed-computing-compute-context.md)
 ### [Distributed analysis](scaler-distributed-computing-distributed-analysis.md)
-### [Background jobs](scaler-distributed-computing-background-jobs.md)
+### [Background jobs](r/how-to-revoscaler-distributed-computing-background-jobs.md)
 ### [Parallel jobs](scaler-distributed-computing-parallel-jobs.md)
 ### [Parallel loops using foreach](foreach.md)
 ### [Parallel execution using doRSR](scaler-distributed-computing-parallel-foreach.md)
