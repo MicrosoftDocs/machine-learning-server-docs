@@ -96,7 +96,7 @@
 ##### [Package dependency list](rserver-install-linux-hadoop-packages.md)
 ##### [Manual package installation](rserver-install-hadoop-manual-package.md)
 #### Post-install configuration
-##### [Adjust Hadoop configuration](rserver-install-hadoop-configuration-r-workloads.md)
+##### [Adjust Hadoop configuration](install/r-server-install-hadoop-configuration-r-workloads.md)
 ##### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)
 ##### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
 #### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
