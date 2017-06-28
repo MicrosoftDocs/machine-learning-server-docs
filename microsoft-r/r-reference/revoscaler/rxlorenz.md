@@ -73,7 +73,7 @@ plot  (x, title = NULL, subtitle = NULL,
   
     
  ### `data`
-  data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md) object representing a data set containing the actual and observed variables.  
+  data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](rxdatasource-class.md) object representing a data set containing the actual and observed variables.  
   
     
  ### `numBreaks`
@@ -208,12 +208,12 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxPredict](../../r-reference/microsoftml/rxpredict.md),
-[rxLogit](../../r-reference/revoscaler/rxlogit.md),
-[rxGlm](../../r-reference/revoscaler/rxglm.md), 
-[rxLinePlot](../../r-reference/revoscaler/rxlineplot.md),
-[rxQuantile](rxQuantile.md),
-[rxRoc](rxRoc.md).
+[rxPredict](../microsoftml/rxpredict.md),
+[rxLogit](rxlogit.md),
+[rxGlm](rxglm.md), 
+[rxLinePlot](rxlineplot.md),
+[rxQuantile](../../scaler/packagehelp/rxquantile.md),
+[rxRoc](../../scaler/packagehelp/rxroc.md).
    
  ##Examples
 
