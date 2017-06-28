@@ -87,7 +87,7 @@ Neural networks for regression modeling and for Binary and multi-class classific
   
   
  ### `optimizer`
- A list specifying either the `sgd` or `adaptive` optimization algorithm. This list can be created using [sgd](optimizer.md) or [adaDeltaSgd](optimizer.md). The default value is `sgd`. 
+ A list specifying either the `sgd` or `adaptive` optimization algorithm. This list can be created using [sgd](../../r-reference/microsoftml/optimizer.md) or [adaDeltaSgd](../../r-reference/microsoftml/optimizer.md). The default value is `sgd`. 
   
   
   

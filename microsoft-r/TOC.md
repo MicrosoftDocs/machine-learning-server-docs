@@ -244,7 +244,7 @@
 ### [NeuralNet](r-reference/microsoftml/neuralnet.md)
 ### [ngram](r-reference/microsoftml/ngram.md)
 ### [OneClassSvm](r-reference/microsoftml/oneclasssvm.md)
-### [optimizer](microsoftml/packagehelp/optimizer.md)
+### [optimizer](r-reference/microsoftml/optimizer.md)
 ### [resizeImage](microsoftml/packagehelp/resizeImage.md) 
 ### [rxEnsemble](microsoftml/packagehelp/rxEnsemble.md)
 ### [rxFastForest](microsoftml/packagehelp/rxFastForest.md)

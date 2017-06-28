@@ -103,7 +103,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 * [oneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md)Creates a list containing the function name and arguments to train a OneClassSvm model with [rxEnsemble](../../microsoftml/packagehelp/rxensemble.md).
  
 **Functions for neural networks.**
-* [optimizer](../../microsoftml/packagehelp/optimizer.md) Specifies optimization algorithms for the [rxNeuralNet](../../microsoftml/packagehelp/rxneuralnet.md) machine learning algorithm.
+* [optimizer](optimizer.md) Specifies optimization algorithms for the [rxNeuralNet](../../microsoftml/packagehelp/rxneuralnet.md) machine learning algorithm.
 
  
 ## What's next?
