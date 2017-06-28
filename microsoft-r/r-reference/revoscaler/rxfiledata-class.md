@@ -47,7 +47,7 @@ Class RxDataSource, directly.
  
  ##See Also
  
-[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
-[rxNewDataSource](rxNew.md)
+[RxDataSource-class](rxdatasource-class.md),
+[rxNewDataSource](../../scaler/packagehelp/rxnew.md)
    
  

@@ -372,7 +372,7 @@
 #### [rxExecuteSQLDDL](r-reference/revoscaler/rxexecutesqlddl.md) 
 #### [rxExpression](r-reference/revoscaler/rxexpression.md) 
 #### [rxFactors](r-reference/revoscaler/rxfactors.md) 
-#### [RxFileData-class](scaler/packagehelp/RxFileData-class.md) 
+#### [RxFileData-class](r-reference/revoscaler/rxfiledata-class.md) 
 #### [RxFileSystem](scaler/packagehelp/RxFileSystem.md) 
 #### [rxFindFileInPath](scaler/packagehelp/rxFindFileInPath.md) 
 #### [rxFindPackage](scaler/packagehelp/rxFindPackage.md) 
