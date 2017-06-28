@@ -56,7 +56,7 @@ The following additional components are included in Setup and required for R Ser
 This section walks you through an R Server 9.1.0 deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](operationalize/about.md) and use the MicrosoftML package.
 
 > [!Tip]
-> Review [recommendations and best practices](rserver-install-linux-manage-install.md) for deployments in locked down environments.
+> Review [recommendations and best practices](install/r-server-install-linux-manage-install.md) for deployments in locked down environments.
 >
 
 <a name="download"><a/>
@@ -222,7 +222,7 @@ The Microsoft R Server setup installs the R base packages and a set of enhanced 
 
 ## Next Steps
 
-Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
+Review the best practices in [Manage your R Server for Linux installation](install/r-server-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 

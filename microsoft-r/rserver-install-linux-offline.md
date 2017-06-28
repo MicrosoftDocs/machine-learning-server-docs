@@ -53,7 +53,7 @@ The following additional components are included in Setup and required for R Ser
 
 From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. 
 
-MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and won't use alternative distributions. MRO can co-exist with other distributions of R on your machine, but additional configuration could be required to make a particular version the default. For more information, see [Manage an R Server installation on Linux](rserver-install-linux-manage-install.md).
+MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and won't use alternative distributions. MRO can co-exist with other distributions of R on your machine, but additional configuration could be required to make a particular version the default. For more information, see [Manage an R Server installation on Linux](install/r-server-install-linux-manage-install.md).
 
 The .NET Core component is required for MicrosoftML (machine learning). It is also required for mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 
@@ -243,7 +243,7 @@ The Microsoft R Server setup installs the R base packages and a set of enhanced 
 
 ## Next Steps
 
-Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
+Review the best practices in [Manage your R Server for Linux installation](install/r-server-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 

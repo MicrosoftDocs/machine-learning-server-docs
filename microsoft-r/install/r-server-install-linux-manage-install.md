@@ -163,14 +163,14 @@ If you are in a locked-down environment without access to the standard Microsoft
 
 ## See Also
 
-[Install R Server 8.0.5 for Linux](rserver-install-linux-server-805.md)
+[Install R Server 8.0.5 for Linux](../rserver-install-linux-server-805.md)
 
-[Install R Server 9.0.1 for Linux](rserver-install-linux-server-901.md)
+[Install R Server 9.0.1 for Linux](../rserver-install-linux-server-901.md)
 
-[Install R on Hadoop overview](install/r-server-install-hadoop.md)
+[Install R on Hadoop overview](r-server-install-hadoop.md)
 
-[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-linux-uninstall.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-linux-uninstall.md)
 
-[Troubleshoot R Server installation problems on Hadoop](install/r-server-install-hadoop-troubleshoot.md)
+[Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)
 
-[Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)
+[Configure R Server to operationalize analytics](operationalize-r-server-one-box-config.md)
