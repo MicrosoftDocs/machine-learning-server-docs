@@ -115,7 +115,7 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 | [`rxImport`](r-reference/revoscaler/rximport.md)  | Enhanced | Multithreaded support. |
 | `rxMerge` | Enhanced | Merging data frames in Spark compute context. |
 | [`RxOrcData`](scaler/packagehelp/RxSparkData.md) | New | Create data sets based on data stored in Optimized Row Columnar (ORC) format.|
-| [`rxSerializeModel`](scaler/packagehelp/rxSerializeModel.md)  | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
+| [`rxSerializeModel`](r-reference/revoscaler/rxserializemodel.md)  | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
 | [`rxSparkCacheData`](scaler/packagehelp/rxSparkCacheData.md) | New | Set the Cache flag in a Spark compute context.|
 | [`rxSyncPackages`](scaler/packagehelp/rxSyncPackages.md)  | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
 

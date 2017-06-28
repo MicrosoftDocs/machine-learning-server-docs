@@ -453,7 +453,7 @@
 #### [rxRoc](r-reference/revoscaler/rxroc.md) 
 #### [RxSasData-class](r-reference/revoscaler/rxsasdata-class.md) 
 #### [RxSasData](r-reference/revoscaler/rxsasdata.md) 
-#### [rxSerializeModel](scaler/packagehelp/rxSerializeModel.md) 
+#### [rxSerializeModel](r-reference/revoscaler/rxserializemodel.md) 
 #### [rxSetComputeContext](scaler/packagehelp/rxSetComputeContext.md) 
 #### [rxSetFileSystem](scaler/packagehelp/rxSetFileSystem.md) 
 #### [rxSetInfo](scaler/packagehelp/rxSetInfo.md) 
