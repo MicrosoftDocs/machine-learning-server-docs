@@ -60,7 +60,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 * [concat](packagehelp/concat.md): Transformation to create a single vector-valued column from multiple columns.  
 * [categorical](../r-reference/microsoftml/categorical.md): Create indicator vector using categorical transform with dictionary.  
-* [categoricalHash](packagehelp/categoricalHash.md): Converts the categorical value into an indicator array by hashing. 
+* [categoricalHash](../r-reference/microsoftml/categoricalhash.md): Converts the categorical value into an indicator array by hashing. 
 * [featurizeText](packagehelp/featurizeText.md): Produces a bag of counts of sequences of consecutive words, called n-grams, from a given corpus of text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
 * [getSentiment](packagehelp/getSentiment.md): Scores natural language text and creates a column that contains probabilities that the sentiments in the text are positive.
 * [ngram](packagehelp/ngram.md): allows defining arguments for count-based and hash-based feature extraction.

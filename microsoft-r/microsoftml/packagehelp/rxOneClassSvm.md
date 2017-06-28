@@ -106,7 +106,7 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](categoricalHash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
@@ -245,7 +245,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md), [rxFastLinear](rxFastLinear.md),
 [rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
 [featurizeText](featurizeText.md), [categorical](../../r-reference/microsoftml/categorical.md),
-[categoricalHash](categoricalHash.md), [rxPredict.mlModel](rxPredict.md).
+[categoricalHash](../../r-reference/microsoftml/categoricalhash.md), [rxPredict.mlModel](rxPredict.md).
    
  ##Examples
 

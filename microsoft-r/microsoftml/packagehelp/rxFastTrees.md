@@ -139,7 +139,7 @@ Machine Learning Fast Tree
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](categoricalHash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
@@ -307,7 +307,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [rxFastForest](rxFastForest.md), [rxFastLinear](rxFastLinear.md),
 [rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
 [rxOneClassSvm](rxOneClassSvm.md), [featurizeText](featurizeText.md),
-[categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](categoricalHash.md),
+[categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](../../r-reference/microsoftml/categoricalhash.md),
 [rxPredict.mlModel](rxPredict.md).
    
  ##Examples
