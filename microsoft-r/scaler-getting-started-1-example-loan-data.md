@@ -401,7 +401,7 @@ The results should be printed to your console, with the highest default rate at 
 ## Next steps
 
 - If you missed the first tutorial, see [Practice data import and exploration](scaler-getting-started-data-import-exploration.md) for an overview.
-- For more advanced lessons, see [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md).
+- For more advanced lessons, see [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md).
 
 ## See Also
 

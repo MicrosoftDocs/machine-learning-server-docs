@@ -104,7 +104,7 @@ In addition to descriptive statistics and crosstabs, RevoScaleR provides functio
 
 ### Writing Your Own Analyses for Large Data Sets
 
-All of the main analysis functions in RevoScaleR use updating or external memory algorithms, that is, they analyze a chunk of data, update the results, then move on to the next chunk of data and repeat the process. When all the data has been processed (sometimes multiple times), final results can be calculated and the analysis is complete. You can write your own functions to process a chunk of data and update results, and use RevoScaleR functionality to provide you with access to your data file chunk by chunk. For more information, see [Write custom chunking algorithms in RevoScaleR](../scaler-getting-started-4-write-chunking-algorithms.md).
+All of the main analysis functions in RevoScaleR use updating or external memory algorithms, that is, they analyze a chunk of data, update the results, then move on to the next chunk of data and repeat the process. When all the data has been processed (sometimes multiple times), final results can be calculated and the analysis is complete. You can write your own functions to process a chunk of data and update results, and use RevoScaleR functionality to provide you with access to your data file chunk by chunk. For more information, see [Write custom chunking algorithms in RevoScaleR](how-to-developer-write-chunking-algorithms.md).
 
 ## See Also
 

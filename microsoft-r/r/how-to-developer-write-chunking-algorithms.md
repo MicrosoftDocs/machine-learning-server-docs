@@ -37,7 +37,7 @@ In this article, you'll step through an example that teaches a simple chunking a
 
 ## Prerequisites
 
-Sample data for this example is the *AirlineDemoSmall.xdf* file with a local compute context. For instructions on how to import this data set, see the tutorial in [Practice data import and exploration](scaler-getting-started-data-import-exploration.md).
+Sample data for this example is the *AirlineDemoSmall.xdf* file with a local compute context. For instructions on how to import this data set, see the tutorial in [Practice data import and exploration](../scaler-getting-started-data-import-exploration.md).
 
 Chunking is supported on Microsoft R Server, but not the free R Client. Because the dataset is small enough to reside in memory on most computers, most systems succeed in running this example locally. however, if the data does not fit in memory, you will need to use R Server instead.
 
@@ -92,9 +92,9 @@ To try this out, create a new script *chunkTable.R* with the following contents:
 		return(AggregateResults())
 	}
 
-Note that the `blocksPerRead` argument is ignored if this script runs locally using R Client. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported in R Client. When run locally with R Client, all data must be read into memory. You can work around this limitation when you push the compute context to a [Microsoft R Server instance](rserver.md).
+Note that the `blocksPerRead` argument is ignored if this script runs locally using R Client. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported in R Client. When run locally with R Client, all data must be read into memory. You can work around this limitation when you push the compute context to a [Microsoft R Server instance](../rserver.md).
 
-To test the function, use the sample data *AirlineDemoSmall.xdf* file with a local compute context. For more information, see the tutorial in [Practice data import and exploration](scaler-getting-started-data-import-exploration.md).
+To test the function, use the sample data *AirlineDemoSmall.xdf* file with a local compute context. For more information, see the tutorial in [Practice data import and exploration](../scaler-getting-started-data-import-exploration.md).
 
 We’ll call our new *chunkTable* function, processing 1 block at a time so we can take a look at the intermediate results:
 
@@ -126,14 +126,14 @@ And to delete the intermediate results file:
 ~~~~
 ## Next steps
 
-- [Analyze large data with ScaleR](scaler-getting-started-3-analyze-large-data.md)
-- [Census data example for analyzing large data](scaler-getting-started-2-example-census-data.md)
-- [Loan data example for analyzing large data](scaler-getting-started-1-example-loan-data.md)
+- [Analyze large data with ScaleR](../scaler-getting-started-3-analyze-large-data.md)
+- [Census data example for analyzing large data](../scaler-getting-started-2-example-census-data.md)
+- [Loan data example for analyzing large data](../scaler-getting-started-1-example-loan-data.md)
 
 ## See Also
 
-[Introduction to Microsoft R](microsoft-r-getting-started.md)
+[Introduction to Microsoft R](../microsoft-r-getting-started.md)
 
-[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+[Diving into data analysis in Microsoft R](../data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)
+[RevoScaleR Functions](../revoscaler.md)

@@ -456,7 +456,7 @@ This tutorial demonstrated how to use several important functions, but on a smal
  - [Analyze large data with RevoScaleR and airline flight delay data](scaler-getting-started-3-analyze-large-data.md)	
  - [Example: Analyzing loan data with RevoScaleR](scaler-getting-started-1-example-loan-data.md)	
  - [Example: Analyzing census data with RevoScaleR](scaler-getting-started-2-example-census-data.md) 
- - [Write custom chunking algorithms](scaler-getting-started-4-write-chunking-algorithms.md)
+ - [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md)
 
 ### Try demo scripts
 
