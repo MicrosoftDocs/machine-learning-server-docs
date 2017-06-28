@@ -96,7 +96,7 @@ This tutorial introduces several high performance analytics features of **RevoSc
 
 ### Check versions
 
-Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](rserver-install-supported-platforms.md). For setup instructions, see [Install R Server on Hadoop](rserver-install-hadoop-805.md).
+Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](rserver-install-supported-platforms.md). For setup instructions, see [Install R Server on Hadoop](install/r-server-install-hadoop-805.md).
 
 You can confirm the server version by typing `print(Revo.version)`.
 

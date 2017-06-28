@@ -130,6 +130,6 @@ Uninstall order is important. Due to package dependencies, be sure to remove the
 ## See Also
 
  [Install R on Hadoop overview](rserver-install-hadoop.md)      
- [Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)      
+ [Install R Server 8.0.5 on Hadoop](install/r-server-install-hadoop-805.md)      
  [Install Microsoft R Server on Linux](rserver-install-linux-server.md) 
  [Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)

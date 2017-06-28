@@ -324,7 +324,7 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
 
-[Install R Server 8.0.5 for Hadoop](rserver-install-hadoop-805.md)
+[Install R Server 8.0.5 for Hadoop](install/r-server-install-hadoop-805.md)
 
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
 
