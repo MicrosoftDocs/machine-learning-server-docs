@@ -105,7 +105,7 @@ Should almost always be set to `TRUE`; however, may be of use to a system admini
  
  
  ##Value
-  An object of type `rxPingResults`.  This is essentially a list in which component is named using an [rxMakeRNodeNames](rxMakeRNodeNames.md) translated 
+  An object of type `rxPingResults`.  This is essentially a list in which component is named using an [rxMakeRNodeNames](../../r-reference/revoscaler/rxmakernodenames.md) translated 
 node name in the same manner and for the same reasons described for [rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md), with the `getWorkersOnly` parameter set to FALSE.  
 Each element of this list contains two
 elements: `nodeName` which holds the true, unmangled name of the node, and `status`, which contains a character scalar with one of 
@@ -137,7 +137,7 @@ Not all of the AMPs were successful - for [RxInTeradata](../../r-reference/revos
 
 
 An `as.vector` method is provided for the `rxPingResults` object which returns a character vector of the non-mangled 
-([rxMakeRNodeNames](rxMakeRNodeNames.md) translated) node names for use in another compute context, filtered by the `filter` parameter originally 
+([rxMakeRNodeNames](../../r-reference/revoscaler/rxmakernodenames.md) translated) node names for use in another compute context, filtered by the `filter` parameter originally 
 provided.
 
 Finally, the `rxPingResults` object has a `logical` attribute associated with it: `allOk`.  This attribute is set to `TRUE` if all of 
@@ -154,7 +154,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 [rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md),
 [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
-[rxMakeRNodeNames](rxMakeRNodeNames.md),
+[rxMakeRNodeNames](../../r-reference/revoscaler/rxmakernodenames.md),
 [rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md),
 [rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md).
    

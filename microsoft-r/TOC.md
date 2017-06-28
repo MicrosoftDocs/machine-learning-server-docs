@@ -419,7 +419,7 @@
 #### [rxLocateFile](r-reference/revoscaler/rxlocatefile.md) 
 #### [rxLogit](r-reference/revoscaler/rxlogit.md) 
 #### [rxLorenz](r-reference/revoscaler/rxlorenz.md) 
-#### [rxMakeRNodeNames](scaler/packagehelp/rxMakeRNodeNames.md) 
+#### [rxMakeRNodeNames](r-reference/revoscaler/rxmakernodenames.md) 
 #### [rxMarginals](scaler/packagehelp/rxMarginals.md) 
 #### [rxMergeXdf](scaler/packagehelp/rxMergeXdf.md) 
 #### [rxMultiTest](scaler/packagehelp/rxMultiTest.md) 
