@@ -90,7 +90,7 @@ Read data from an .xdf file into a data frame.
   
     
  ### `maxRowsByCols`
- the maximum size of a data frame that will be read in, measured by the number of rows times the number of columns. If the numer of rows times the number of columns being extracted from the .xdf file exceeds this, a warning will be reported and a smaller number of rows will be read in than requested. If `maxRowsByCols` is set to be too large, you may experience problems  from loading a huge data frame into memory. To extract a subset of rows  and/or columns from an .xdf file, use [rxDataStep](../../r-reference/revoscaler/rxdatastep.md). 
+ the maximum size of a data frame that will be read in, measured by the number of rows times the number of columns. If the numer of rows times the number of columns being extracted from the .xdf file exceeds this, a warning will be reported and a smaller number of rows will be read in than requested. If `maxRowsByCols` is set to be too large, you may experience problems  from loading a huge data frame into memory. To extract a subset of rows  and/or columns from an .xdf file, use [rxDataStep](rxdatastep.md). 
   
   
     
@@ -125,8 +125,8 @@ a list is returned.
  
  ##See Also
  
-[rxImport](../../r-reference/revoscaler/rximport.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md).
+[rxImport](rximport.md),
+[rxDataStep](rxdatastep.md).
    
  ##Examples
 

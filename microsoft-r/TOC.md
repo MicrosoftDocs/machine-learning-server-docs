@@ -440,7 +440,7 @@
 #### [rxPredict.rxNaiveBayes](r-reference/revoscaler/rxpredict-rxnaivebayes.md) 
 #### [rxPrivacyControl](r-reference/revoscaler/rxprivacycontrol.md) 
 #### [rxQuantile](r-reference/revoscaler/rxquantile.md) 
-#### [rxReadXdf](scaler/packagehelp/rxReadXdf.md) 
+#### [rxReadXdf](r-reference/revoscaler/rxreadxdf.md) 
 #### [rxRealtimeScoring](scaler/packagehelp/rxRealtimeScoring.md) 
 #### [rxRemoteCall](scaler/packagehelp/rxRemoteCall.md) 
 #### [rxRemoteFilePath](scaler/packagehelp/rxRemoteFilePath.md) 
