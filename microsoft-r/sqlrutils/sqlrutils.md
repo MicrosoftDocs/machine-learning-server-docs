@@ -40,7 +40,7 @@ The **sqlrutils** package provides functions for executing stored procedures on 
 |[`OutputParameter`](../r-reference/sqlrutils/outputparameter.md) | Output parameters from the stored procedure.|
 |[`registerStoredProcedure`](../r-reference/sqlrutils/registerstoredprocedure.md) | Register the stored procedure with a database.|
 |[`setInputDataQuery`](../r-reference/olapr/query.md)| Assign a query to an input data parameter of the stored procedure.| 
-|[`setInputParameterValue`](packagehelp/setInputParameterValue.md)| Assign a value to the an input parameter of the stored procedure.| 
+|[`setInputParameterValue`](../r-reference/sqlrutils/setinputparametervalue.md)| Assign a value to the an input parameter of the stored procedure.| 
 |[`StoredProcedure`](packagehelp/StoredProcedure.md)| A stored procedure object.|
 
 ## Get help on sqlrutils functions from the R console
