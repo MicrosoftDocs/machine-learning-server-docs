@@ -34,7 +34,7 @@ With the DeployR Enterprise, you can dynamically scale the overall workload capa
 
 When configuring the grid, you should begin by gaining an understanding of the anticipated workload for the grid. With that workload in mind, you can then scale the grid to handle the load by adding or changing the resources of each grid node.
 
-A well-configured grid maximizes throughput while minimizing resource contention. The server and grid deployment model is described as `Server[1] -> Node[1..N]` where `N` is defined as the total number of nodes on the grid. For more on planning and provisioning, see the [Scale & Throughput Guide](../deployr-admin-scale-and-throughput.md).
+A well-configured grid maximizes throughput while minimizing resource contention. The server and grid deployment model is described as `Server[1] -> Node[1..N]` where `N` is defined as the total number of nodes on the grid. For more on planning and provisioning, see the [Scale & Throughput Guide](deployr-admin-scale-and-throughput.md).
 
 _Figure: Node List page_
 

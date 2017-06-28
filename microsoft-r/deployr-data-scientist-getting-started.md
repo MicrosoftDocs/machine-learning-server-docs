@@ -227,7 +227,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 -   [About DeployR](deployr/deployr-about.md)
 -   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
 -   [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
--   [About Throughput](deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
+-   [About Throughput](deployr/deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
 -   [Getting Started For Application Developers](deployr-application-developer-getting-started.md)
 -   [Getting Started For Administrators](deployr-administrator-getting-started.md)
 

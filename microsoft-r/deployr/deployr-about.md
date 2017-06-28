@@ -150,7 +150,7 @@ Behaving like an on-demand R analytics engine, DeployR exposes a wide range of r
 
 The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](../deployr-tools-and-samples.md).
 
-DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. For more on planning and provisioning your grid framework, see the [Scale & Throughput](../deployr-admin-scale-and-throughput.md) guide.
+DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
 
 ## Glossary Of Terms
 

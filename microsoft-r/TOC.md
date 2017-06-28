@@ -174,7 +174,7 @@
 ##### [Monitoring Events](deployr/deployr-admin-monitoring-events.md)
 ##### [Common Administrative Tasks](deployr-common-administration-tasks.md)
 ##### [Troubleshooting & Diagnostics](deployr/deployr-admin-diagnostics-troubleshooting.md)
-##### [Scale & Throughput](deployr-admin-scale-and-throughput.md)
+##### [Scale & Throughput](deployr/deployr-admin-scale-and-throughput.md)
 ##### [DeployR in the Cloud](deployr/deployr-admin-install-in-cloud.md)
 ##### [Server & Grid High Availability](deployr/deployr-admin-configure-high-availability.md)
 ##### [Managing Big Data](deployr/deployr-admin-manage-big-data.md)

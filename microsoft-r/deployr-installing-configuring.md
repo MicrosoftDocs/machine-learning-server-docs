@@ -244,7 +244,7 @@ When you install the DeployR server, one local grid node is installed automatica
 >Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-admin-security/deployr-security.md) and [a scalable grid framework](deployr/deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 >[!TIP]
->-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
+>-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr/deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
 >-   Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.
 >-   Install each grid node on a separate host machine.
 
@@ -500,7 +500,7 @@ After installing [these prerequisites](#lindependencies), install DeployR Open a
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on `localhost` with a [fixed slot limit](deployr/deployr-admin-managing-the-grid.md#node-properties). DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed DeployR using `Option 1` or `Option 3`. 
 
 >[!TIP]
->-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
+>-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr/deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
 >-   Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.
 >-   Install each grid node on a separate host machine.
 

@@ -123,7 +123,7 @@ In the context of a discussion on runtime policies, the topics of scalability an
 The answer to these questions will ultimately depend on the configuration and size of the configuration and node resources allocated to your deployment.
 
 To evaluate and simulate the capacity of a configuration, use the [Evaluate Capacity tool](admin-evaluate-capacity.md). You can also [adjust the pool size](admin-evaluate-capacity.md#pool) of available R shells for concurrent operations.
-<!--For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](deployr-admin-scale-and-throughput.md).-->
+<!--For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](../deployr/deployr-admin-scale-and-throughput.md).-->
 
 ## Troubleshooting
 

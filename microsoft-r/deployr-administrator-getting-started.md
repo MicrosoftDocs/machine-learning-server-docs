@@ -93,7 +93,7 @@ In the context of a discussion on DeployR server runtime policies, the topics of
 
 The answer to these questions will ultimately depend on the configuration and size of the server and grid resources allocated to your deployment.
 
-For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](deployr-admin-scale-and-throughput.md).
+For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](deployr/deployr-admin-scale-and-throughput.md).
 
 ## Big Data Policies
 
@@ -129,7 +129,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Installation & Configuration](deployr-installation.md)
 -   [Security](deployr-admin-security/deployr-security.md)
 -   [R Package Management](deployr/deployr-admin-r-package-management.md)
--   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
+-   [Scale & Throughput](deployr/deployr-admin-scale-and-throughput.md)
 -   [Diagnostic Testing & Troubleshooting](deployr/deployr-admin-diagnostics-troubleshooting.md)
 
 **Other Getting Started Guides**

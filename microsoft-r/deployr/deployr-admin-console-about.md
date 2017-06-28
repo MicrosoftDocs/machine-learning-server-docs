@@ -68,4 +68,4 @@ Only the `admin` user account, representing the administrator, has access to thi
 
 + Click **Log Out** in the upper right corner of the console.
  
->See the [Scale & Throughput Guide](../deployr-admin-scale-and-throughput.md) for help in planning the provisioning of server and grid capacity.
+>See the [Scale & Throughput Guide](deployr-admin-scale-and-throughput.md) for help in planning the provisioning of server and grid capacity.

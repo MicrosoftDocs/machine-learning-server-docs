@@ -243,7 +243,7 @@ To fix this issue, you must define the appropriate external server IP address an
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and configuring additional grid nodes.
 
 >[!TIP]
->-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
+>-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr/deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
 >-   Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.
 >-   Always install the main DeployR server first.
 >-   Install each grid node on a separate host machine.
