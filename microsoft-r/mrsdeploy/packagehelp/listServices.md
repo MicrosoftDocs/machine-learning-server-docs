@@ -88,7 +88,7 @@ A list of services and service information.
  
  ##See Also
  
-Other service methods: [deleteService](deleteService.md),
+Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
 [getService](getService.md),
 [print.serviceDetails](print.serviceDetails.md),
 [publishService](publishService.md),

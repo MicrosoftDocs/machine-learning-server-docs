@@ -214,11 +214,11 @@ When you no longer want to keep a web service, you can delete it. Only the user 
 
 After you've authenticated, use the `deleteService` function in the `mrsdeploy` package to delete a web service.
 
-Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for deleteService()](../mrsdeploy/packagehelp/deleteService.md) for the full description of all arguments. 
+Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for deleteService()](../r-reference/mrsdeploy/deleteservice.md) for the full description of all arguments. 
 
 |Function|Response|R Help|
 |----|----|:----:|
-|`deleteService(...)`|If it is successful, it returns a success status and message such as `"Service mtService version v1.0.0 deleted."`. If it fails for any reason, then it stops execution with error message.|[View](../mrsdeploy/packagehelp/deleteService.md)
+|`deleteService(...)`|If it is successful, it returns a success status and message such as `"Service mtService version v1.0.0 deleted."`. If it fails for any reason, then it stops execution with error message.|[View](../r-reference/mrsdeploy/deleteservice.md)
 
 Example: 
 
