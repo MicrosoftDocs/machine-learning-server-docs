@@ -287,7 +287,7 @@
 ###[remoteLogin](r-reference/mrsdeploy/remotelogin.md) 
 ###[remoteLoginAAD](r-reference/mrsdeploy/remoteloginaad.md) 
 ###[remoteLogout](r-reference/mrsdeploy/remotelogout.md) 
-###[remoteScript](mrsdeploy/packagehelp/remoteScript.md) 
+###[remoteScript](r-reference/mrsdeploy/remotescript.md) 
 ###[request](mrsdeploy/packagehelp/request.md) 
 ###[resource](mrsdeploy/packagehelp/resource.md) 
 ###[resume](mrsdeploy/packagehelp/resume.md) 

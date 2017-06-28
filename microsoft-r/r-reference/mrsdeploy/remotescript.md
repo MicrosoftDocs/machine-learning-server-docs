@@ -55,12 +55,12 @@ A simple wrapper function for executing a remote R script.
   
   
  ### `inputs`
- JSON encoded string of R objects that are loaded into the Remote R session's workspace prior to execution.  Only R objects of type: primitives, vectors and dataframes are supported via this parameter.  Alternatively the [putLocalObject](../../r-reference/mrsdeploy/putlocalobject.md) can be used, prior to a call to this function, to move any R object from the local workspace into the  remote R session. 
+ JSON encoded string of R objects that are loaded into the Remote R session's workspace prior to execution.  Only R objects of type: primitives, vectors and dataframes are supported via this parameter.  Alternatively the [putLocalObject](putlocalobject.md) can be used, prior to a call to this function, to move any R object from the local workspace into the  remote R session. 
   
   
   
  ### `outputs`
- Character vector of the names of the objects to retrieve.  Only primitives, vectors and dataframes can be retrieved using this function  Use [getRemoteObject](../../r-reference/mrsdeploy/getremoteobject.md)to get any type of R object from the remote session. 
+ Character vector of the names of the objects to retrieve.  Only primitives, vectors and dataframes can be retrieved using this function  Use [getRemoteObject](getremoteobject.md)to get any type of R object from the remote session. 
   
   
   
@@ -101,7 +101,7 @@ A list containing the results of the execution.
  
  ##See Also
  
-[remoteExecute](../../r-reference/mrsdeploy/remoteexecute.md)
+[remoteExecute](remoteexecute.md)
    
  ##Examples
 
