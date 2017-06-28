@@ -52,7 +52,7 @@ Get basic information about an RevoScaleR data source or data frame
    
     
  ### `data`
- a data frame, a character string specifying an .xdf, or an [RxDataSource](RxDataSource.md) object. If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information.  
+ a data frame, a character string specifying an .xdf, or an [RxDataSource](../../r-reference/revoscaler/rxdatasource.md) object. If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information.  
   
   
     

@@ -46,7 +46,7 @@ A generator for RxDataSource S4 classes.
    
     
  ### `class`
- an optional character string specifying class name of the data source to be created, such as [RxTextData](RxTextData.md), [RxSpssData](RxSpssData.md), [RxSasData](RxSasData.md), [RxOdbcData](RxOdbcData.md), or [RxTeradata](RxTeradata.md). If the class of the input dataSource differs from `class`, contents of overlapping slots will be copied from the input data source to the  newly constructed data source. 
+ an optional character string specifying class name of the data source to be created, such as [RxTextData](../../scaler/packagehelp/rxtextdata.md), [RxSpssData](../../scaler/packagehelp/rxspssdata.md), [RxSasData](../../scaler/packagehelp/rxsasdata.md), [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md), or [RxTeradata](../../scaler/packagehelp/rxteradata.md). If the class of the input dataSource differs from `class`, contents of overlapping slots will be copied from the input data source to the  newly constructed data source. 
   
     
  ### `dataSource`
@@ -77,14 +77,14 @@ A type of RxDataSource data source object.
  
  ##See Also
  
-[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
-[RxTextData](RxTextData.md),
-[RxSqlServerData](RxSqlServerData.md),
-[RxSpssData](RxSpssData.md),
-[RxSasData](RxSasData.md),
-[RxOdbcData](RxOdbcData.md),
-[RxTeradata](RxTeradata.md),
-[RxXdfData](RxXdfData.md).
+[RxDataSource-class](rxdatasource-class.md),
+[RxTextData](../../scaler/packagehelp/rxtextdata.md),
+[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md),
+[RxSpssData](../../scaler/packagehelp/rxspssdata.md),
+[RxSasData](../../scaler/packagehelp/rxsasdata.md),
+[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md),
+[RxTeradata](../../scaler/packagehelp/rxteradata.md),
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md).
    
  ##Examples
 

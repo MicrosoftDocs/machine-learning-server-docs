@@ -51,7 +51,7 @@ names, descriptions, and value labels
   
     
  ### `data`
- a data frame, a character string specifying the .xdf file, or an [RxDataSource](RxDataSource.md) object.  If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information. 
+ a data frame, a character string specifying the .xdf file, or an [RxDataSource](../../r-reference/revoscaler/rxdatasource.md) object.  If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information. 
   
   
     

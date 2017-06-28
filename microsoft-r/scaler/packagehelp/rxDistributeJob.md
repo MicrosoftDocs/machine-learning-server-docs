@@ -67,7 +67,7 @@ if the 'compute context' is appropriate.
   
   
  ### `data`
- `NULL` or an [RxDataSource](RxDataSource.md) object.  If specified, compatibility of the data source with the 'dataDistType' in the compute context will be checked. 
+ `NULL` or an [RxDataSource](../../r-reference/revoscaler/rxdatasource.md) object.  If specified, compatibility of the data source with the 'dataDistType' in the compute context will be checked. 
   
   
  
