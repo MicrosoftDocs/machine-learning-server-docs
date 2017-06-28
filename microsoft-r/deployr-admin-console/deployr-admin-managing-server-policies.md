@@ -69,7 +69,7 @@ These policies govern how [authenticated operations](deployr-admin-managing-the
 |Properties|Description|
 |----------|---|
 |`HTTPS encrypted`|<small>(Applies to DeployR 8.0.0 or older only)</small><br>By default this option is unchecked, which sets it to False, where incoming calls on the API can be made over a plain HTTP connection. If set to True, the server only accepts incoming API calls over an encrypted channel (HTTPS). Learn more about [DeployR Server Support for SSL/TLS (HTTPS)](../deployr-admin-security/deployr-security-https.md).<br /><br /> **Note:** If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.|
-|`IP filter`|The name of the filter to be applied to all authenticated operations. If defined, then only authenticated users who connect from a qualified IP address (as defined by the filter) can make calls on the API.<br /><br />The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
+|`IP filter`|The name of the filter to be applied to all authenticated operations. If defined, then only authenticated users who connect from a qualified IP address (as defined by the filter) can make calls on the API.<br /><br />The [IP filtering](../deployr/deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 |`API timeout`|The length of time in seconds that an authenticated user can remain idle while connected to the server before the HTTP session is automatically timed-out and disconnected. 
 
 <br/>
@@ -80,7 +80,7 @@ These policies govern how [asynchronous operations](deployr-admin-managing-the-
 |Properties|Description|
 |----------|---|
 |`HTTPS encrypted`|<small>(Applies to DeployR 8.0.0 or older only)</small><br>By default this option is unchecked, which sets it to False, where calls on the API can be made over a plain HTTP connection. If set to true, the server will only accept API calls over an encrypted channel (HTTPS). Learn more about [DeployR Server Support for SSL/TLS (HTTPS)](../deployr-admin-security/deployr-security-https.md).<br /><br /> **Note:** If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.|
-|`IP filter`|The filter to be applied to all authenticated operations. If defined, then only jobs from authenticated users who connect from a qualified IP address can make calls on the API. The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
+|`IP filter`|The filter to be applied to all authenticated operations. If defined, then only jobs from authenticated users who connect from a qualified IP address can make calls on the API. The [IP filtering](../deployr/deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 
 <br/>
 ### Anonymous Operation Policies
@@ -90,7 +90,7 @@ These policies govern how [anonymous operations](deployr-admin-managing-the-gri
 |Properties|Description|
 |----------|---|
 |`HTTPS encrypted`|<small>(Applies to DeployR 8.0.0 or older only)</small><br>By default this option is unchecked, which sets it to False, where scripts can be executed over a plain HTTP connection. If set to true, the server only accepts script execution requests over an encrypted channel (HTTPS). Learn more about [DeployR Server Support for SSL/TLS (HTTPS)](../deployr-admin-security/deployr-security-https.md).<br /><br />**Note:** If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.|
-|`IP filter`|The name of the filter to be applied to all anonymous operations. If selected, then only anonymous users who connect from a qualified IP address (as defined by the filter) can execute R scripts on the API.<br /><br />The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
+|`IP filter`|The name of the filter to be applied to all anonymous operations. If selected, then only anonymous users who connect from a qualified IP address (as defined by the filter) can execute R scripts on the API.<br /><br />The [IP filtering](../deployr/deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determines the full publicly accessible exposure of that server context.|
 |`API timeout`|The length of time in seconds an anonymous operation remains live on the grid before it is automatically terminated. The automatic termination will release all resources associated with that operation.|
 
 <br/>

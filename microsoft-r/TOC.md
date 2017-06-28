@@ -167,7 +167,7 @@
 ##### [Managing Permissions with Roles](deployr/deployr-admin-console-permissions-with-roles.md)
 ##### [Managing R Scripts](deployr/deployr-admin-console-managing-r-scripts.md)
 ##### [Managing R Boundaries](deployr-admin-console/deployr-admin-managing-r-boundaries.md)
-##### [Managing Access with IP Filters](deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
+##### [Managing Access with IP Filters](deployr/deployr-admin-managing-access-with-ip-filters.md)
 ##### [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md)
 ##### [Managing Server Policies](deployr-admin-console/deployr-admin-managing-server-policies.md)
 ##### [Restoring & Backing Up the Database](deployr/deployr-admin-console-database.md)
