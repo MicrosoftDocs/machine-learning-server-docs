@@ -102,7 +102,7 @@ returns a generator function suitable for creating objects from the class, invis
  
 [PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md),
 setRefClass,
-[PemaMean](PemaMean.md),
+[PemaMean](../../r-reference/revopemar/pemamean.md),
 [pemaCompute](../../r-reference/revopemar/pemacompute.md)
    
  

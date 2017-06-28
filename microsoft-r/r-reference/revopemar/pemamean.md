@@ -55,7 +55,7 @@ Generator for an PemaMean reference class object, inheriting from PemaBaseClass,
  ##Details
  
 This is a simple example of a parallel external memory algorithms for use with
-[pemaCompute](../../r-reference/revopemar/pemacompute.md). The `varName`argument for the constructor is a
+[pemaCompute](pemacompute.md). The `varName`argument for the constructor is a
 character string containing the name of the variable in the data set to use
 for computations.
  
@@ -74,8 +74,8 @@ An `PemaMean` reference class object.
  ##See Also
  
 setRefClass,
-[setPemaClass](setPemaClass.md),
-[PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md)
+[setPemaClass](../../pemar/packagehelp/setpemaclass.md),
+[PemaBaseClass](pemabaseclass.md)
    
  ##Examples
 

@@ -311,7 +311,7 @@
 ###[PemaByGroup](r-reference/revopemar/pemabygroup.md) 
 ###[pemaCompute](r-reference/revopemar/pemacompute.md) 
 ###[PemaMean-class](r-reference/revopemar/pemamean-class.md) 
-###[PemaMean](pemar/packagehelp/PemaMean.md) 
+###[PemaMean](r-reference/revopemar/pemamean.md) 
 ###[setPemaClass](pemar/packagehelp/setPemaClass.md)
 
 ## [RevoScaleR](scaler/scaler.md)
