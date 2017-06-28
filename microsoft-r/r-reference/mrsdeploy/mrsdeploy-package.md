@@ -158,4 +158,4 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 [Install R Server](../../rserver.md)
 
-[Install R Client](../../r-client.md)
+[Install R Client](../../r-client/what-is-microsoft-r-client.md)

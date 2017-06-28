@@ -106,7 +106,7 @@ HPC is a paradigm for sharing tasks among multiple computing resources. HPC mech
 
 <a name="mrc"></a>**Microsoft R Client**
 
-Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. [Learn more…](r-client.md)
+Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. [Learn more…](r-client/what-is-microsoft-r-client.md)
 
 <br>
 

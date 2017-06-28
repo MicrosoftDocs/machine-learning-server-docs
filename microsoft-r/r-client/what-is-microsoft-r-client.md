@@ -26,11 +26,11 @@ ms.custom: ""
 
 # About Microsoft R Client
 
-Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open/) so you can use any open source R package to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](scaler-getting-started-data-import-exploration.md) and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open/) so you can use any open source R package to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](../scaler-getting-started-data-import-exploration.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for RevoScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility](r-client/compatibility-with-server.md). 
+R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for RevoScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility](compatibility-with-server.md). 
 
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](operationalize/remote-execution.md) from the `mrsdeploy` package. 
+You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../operationalize/remote-execution.md) from the `mrsdeploy` package. 
 
 <div align=center><iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
  
@@ -57,11 +57,11 @@ Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get
 
 The first step is to download Microsoft R Client for your operating system and install it. To learn more about the supported platforms or installation steps, please see the following articles:
 
-+ [Install Microsoft R Client on Windows](r-client/install-on-windows.md)
++ [Install Microsoft R Client on Windows](../deployr/install-on-windows.md)
 
-+ [Install Microsoft R Client for Linux](r-client/install-on-linux.md)
++ [Install Microsoft R Client for Linux](../deployr/install-on-linux.md)
 
-+ [Compatibility with R Server](r-client/compatibility-with-server.md)
++ [Compatibility with R Server](compatibility-with-server.md)
 
 <br><a name="configure-ide"></a>
 
@@ -76,7 +76,7 @@ While R is a command line driven program, you can also use your favorite R integ
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
 >[!IMPORTANT]
->You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](install/operationalize-r-server-enterprise-config.md) for this functionality.
+>You can connect remotely from your local IDE to an R Server instance using [functions from the `mrsdeploy` package](../operationalize/remote-execution.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](../install/operationalize-r-server-enterprise-config.md) for this functionality.
 
 <br><a name="try-r-client"></a>
 
@@ -84,29 +84,29 @@ After you configure the IDE, a message appears in the console signaling that the
 
 Now that you've installed R Client, you can start building and running some R code. Launch R on the command line or in your IDE and:
 
-+ Run the sample R code as described in this [quickstart guide](quickstart-r-code.md). 
++ Run the sample R code as described in this [quickstart guide](../quickstart-r-code.md). 
 
-+ Or, develop your own solutions using [`RevoScaleR` R package functions](r-reference/revoscaler/revoscaler.md), [`MicrosoftML` R package functions](r-reference/microsoftml/microsoftml-package.md), and APIs. 
++ Or, develop your own solutions using [`RevoScaleR` R package functions](../revoscaler.md), [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md), and APIs. 
 
-When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
+When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](../operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
 
 
 ## Learn More
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](index.md) 
++ [Overview of Microsoft R](../index.md) 
 
-+ [Quickstart: Running R code in Microsoft R](quickstart-r-code.md) (example)
++ [Quickstart: Running R code in Microsoft R](../quickstart-r-code.md) (example)
 
-+ [Compatibility with R Server](r-client/compatibility-with-server.md)
++ [Compatibility with R Server](compatibility-with-server.md)
 
-+ [Diving into data analysis with Microsoft R](data-analysis-in-microsoft-r.md)
++ [Diving into data analysis with Microsoft R](../data-analysis-in-microsoft-r.md)
 
-+ [RevoScaleR R package reference](microsoft-r-tutorials.md)
++ [RevoScaleR R package reference](../microsoft-r-tutorials.md)
 
-+ [MicrosoftML R package reference](microsoftml-get-started.md)
++ [MicrosoftML R package reference](../microsoftml-get-started.md)
 
-+ [mrsdeploy R package reference](r-reference/mrsdeploy/mrsdeploy-package.md)
++ [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ [Execute code on remote R Server](operationalize/remote-execution.md)
++ [Execute code on remote R Server](../operationalize/remote-execution.md)

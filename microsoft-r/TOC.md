@@ -4,7 +4,7 @@
 ### [What's new in R Server](rserver-whats-new.md)
 ### [What's new in R Client](notes/r-client-notes.md)
 ## [About Microsoft R Server](rserver.md)
-## [About Microsoft R Client](r-client.md)
+## [About Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 ## [Operationalize analytics](operationalize/about.md)
 ## [Interoperability](overview-interoperability.md)
 
@@ -216,7 +216,7 @@
 ### [Parallel algorithms with PemaR](pemar-getting-started.md)
 
 
-# [Microsoft R Client](r-client.md)
+# [Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 ## [Quickstart: Run R code in Microsoft R](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client/install-on-windows.md)
 ## [Install R Client on Linux](r-client/install-on-linux.md)

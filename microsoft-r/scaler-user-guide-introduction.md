@@ -28,7 +28,7 @@ ms.custom: ""
 
 RevoScaleR is a collection of proprietary functions in Microsoft R used for practicing data science at scale. For data scientists, RevoScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
 
-RevoScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. RevoScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and will be coming soon to Azure Machine Learning.
+RevoScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](r-client/what-is-microsoft-r-client.md) or commercially in [Microsoft R Server](rserver.md) on supported platforms. RevoScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and will be coming soon to Azure Machine Learning.
 
 The RevoScaleR functions run on a computational engine include in the aforementioned products. As such, the package cannot be downloaded or used independently of the products and services that provide it.
 

@@ -30,7 +30,7 @@ In Microsoft R, the ScaleR functions in the RevoScaleR package are built to leve
 
 *Parallel processing*, which leverages the computing power of a single machine, is both a R Server and R Client capability. Examples of jobs that can run in parallel include data import and linear modeling .
 
-The degree of parallel processing you can achieve depends on whether the ScaleR runs on R Client or R Server, and if R Server, on the computational resources of the platform. On [R Client](r-client.md), the free workstation version that runs Windows or Linux, parallelization is restricted to a maximum of two processors, even if the machine has more capability. Thus, R Client offers parallelization, but to a much smaller degree given the constraints of two processors.
+The degree of parallel processing you can achieve depends on whether the ScaleR runs on R Client or R Server, and if R Server, on the computational resources of the platform. On [R Client](r-client/what-is-microsoft-r-client.md), the free workstation version that runs Windows or Linux, parallelization is restricted to a maximum of two processors, even if the machine has more capability. Thus, R Client offers parallelization, but to a much smaller degree given the constraints of two processors.
 
 *Distributed computing* across multiple nodes is an R Server-only capability. The platform must be Hadoop (MapReduce or Spark) or Teradata, both of which provide a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
 

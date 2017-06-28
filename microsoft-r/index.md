@@ -32,7 +32,7 @@ Microsoft R is a collection of packages, interpreters, and infrastructure for de
 
 + [Microsoft R Server](rserver.md) is the flagship product and supports very large workloads in the enterprise. 
 
-+ [Microsoft R Client](r-client.md) is a free workstation version. It includes the same R Server functionality, but for local workloads.
++ [Microsoft R Client](r-client/what-is-microsoft-r-client.md) is a free workstation version. It includes the same R Server functionality, but for local workloads.
 
 + [Microsoft R Open](https://mran.microsoft.com/open/) is Microsoft's distribution of open source R, without the proprietary packages and infrastructure of our other products. This R distribution is included in both Microsoft R Client and R Server. 
 

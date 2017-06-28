@@ -57,4 +57,4 @@ To see the **RevoUtils** functions that can be called from the R console:
 
 [Install R Server](../../rserver.md)
 
-[Install R Client](../../r-client.md)
+[Install R Client](../../r-client/what-is-microsoft-r-client.md)

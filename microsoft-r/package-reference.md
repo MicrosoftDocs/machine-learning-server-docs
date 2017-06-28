@@ -66,4 +66,4 @@ For a list of deprecated or discontinued functions within an existing package, s
 
 [Install R Server](rserver.md)
 
-[Install R Client](r-client.md)
+[Install R Client](r-client/what-is-microsoft-r-client.md)
