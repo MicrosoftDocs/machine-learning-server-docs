@@ -182,7 +182,7 @@ Earlier versions are supported, but with limited availability on Microsoft downl
  [Introduction to R Server](../what-is-microsoft-r-server.md) 
  [What's New in R Server](../whats-new-in-r-server.md)
  [Supported platforms](r-server-install-supported-platforms.md)  
- [Known Issues](../rserver-known-issues.md)  
+ [Known Issues](../resources-known-issues.md)  
  [Command line installation](r-server-install-windows-command-line.md)  
  [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)    
  [Configure R Server to operationalize your analytics](operationalize-r-server-one-box-config.md)

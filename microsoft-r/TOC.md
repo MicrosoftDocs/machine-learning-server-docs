@@ -512,7 +512,7 @@
 ###[StoredProcedure](r-reference/sqlrutils/storedprocedure.md)
 
 # Resources
-## [R Server known issues](rserver-known-issues.md)
+## [R Server known issues](resources-known-issues.md)
 ## [Deprecated and discontinued features](resources-deprecated-features.md)
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)

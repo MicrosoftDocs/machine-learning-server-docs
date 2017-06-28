@@ -47,5 +47,5 @@ For quickstarts that show how to use pretrained models for sentiment analysis an
 
 Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
 
-For more information on this error and the possible workarounds and other known issues, see [Known issues in Microsoft R Server 9.1](../rserver-known-issues.md#ml-ensembling).
+For more information on this error and the possible workarounds and other known issues, see [Known issues in Microsoft R Server 9.1](../resources-known-issues.md#ml-ensembling).
 
