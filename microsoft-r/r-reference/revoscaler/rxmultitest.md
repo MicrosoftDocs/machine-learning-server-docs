@@ -86,12 +86,12 @@ an object of class rxMultiTest.
  
  ##See Also
  
-[rxChiSquaredTest](../../r-reference/revoscaler/rxchisquaredtest.md),
-[rxFisherTest](../../r-reference/revoscaler/rxchisquaredtest.md),
-[rxKendallCor](../../r-reference/revoscaler/rxchisquaredtest.md),
-[rxPairwiseCrossTab](rxPairwiseCrosstab.md),
-[rxRiskRatio](rxRiskRatio.md),
-[rxOddsRatio](rxRiskRatio.md).
+[rxChiSquaredTest](rxchisquaredtest.md),
+[rxFisherTest](rxchisquaredtest.md),
+[rxKendallCor](rxchisquaredtest.md),
+[rxPairwiseCrossTab](../../scaler/packagehelp/rxpairwisecrosstab.md),
+[rxRiskRatio](../../scaler/packagehelp/rxriskratio.md),
+[rxOddsRatio](../../scaler/packagehelp/rxriskratio.md).
    
  
  ##Examples

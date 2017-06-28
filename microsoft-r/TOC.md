@@ -422,7 +422,7 @@
 #### [rxMakeRNodeNames](r-reference/revoscaler/rxmakernodenames.md) 
 #### [rxMarginals](r-reference/revoscaler/rxmarginals.md) 
 #### [rxMergeXdf](r-reference/revoscaler/rxmergexdf.md) 
-#### [rxMultiTest](scaler/packagehelp/rxMultiTest.md) 
+#### [rxMultiTest](r-reference/revoscaler/rxmultitest.md) 
 #### [rxNaiveBayes](scaler/packagehelp/rxNaiveBayes.md) 
 #### [RxNativeFileSystem](scaler/packagehelp/RxNativeFileSystem.md) 
 #### [rxNew](scaler/packagehelp/rxNew.md) 

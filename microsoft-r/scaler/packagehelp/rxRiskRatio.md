@@ -79,7 +79,7 @@ an object of class htest.
 [rxChiSquaredTest](../../r-reference/revoscaler/rxchisquaredtest.md),
 [rxFisherTest](../../r-reference/revoscaler/rxchisquaredtest.md),
 [rxKendallCor](../../r-reference/revoscaler/rxchisquaredtest.md),
-[rxMultiTest](rxMultiTest.md),
+[rxMultiTest](../../r-reference/revoscaler/rxmultitest.md),
 [rxPairwiseCrossTab](rxPairwiseCrosstab.md)
    
  
