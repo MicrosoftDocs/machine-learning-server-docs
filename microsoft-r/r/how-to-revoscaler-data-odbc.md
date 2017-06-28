@@ -46,7 +46,7 @@ Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sou
 
 For Teradata, you should avoid ODBC and create an **RxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
 
-For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbdData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](scaler-data-sql.md).
+For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbdData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](../scaler-data-sql.md).
 
 ## How to configure ODBC for relational data access
 
@@ -112,7 +112,7 @@ Recall that **RxOdbcData** provides local compute context only, which means that
 
 #### Using SQL Server
 
-This example uses a connection string to connect to a local SQL Server instance and the [RevoClaimsDB database](scaler-user-guide-sample-data.md). For simplicity, the connection is further scoped to a single table, but you could write T-SQL to select a more interesting data set. 
+This example uses a connection string to connect to a local SQL Server instance and the [RevoClaimsDB database](../scaler-user-guide-sample-data.md). For simplicity, the connection is further scoped to a single table, but you could write T-SQL to select a more interesting data set. 
 
 	sConnectStr <- "Driver={ODBC Driver 13 for SQL Server};Server=(local);Database=RevoClaimsDB;Trusted_Connection=Yes"
 	sQuery = "Select * from dbo.claims"
@@ -193,15 +193,15 @@ As a first step, specify the name of your DSN. On Linux, this is the same name s
 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
-+ [Import SQL data](scaler-data-sql.md)	
-+ [Import text data](r/how-to-revoscaler-data-import.md)
-+ [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)	
-+ [XDF files](r/concept-what-is-xdf.md)	
-+ [Data Sources](scaler-user-guide-data-source.md)	
++ [Import SQL data](../scaler-data-sql.md)	
++ [Import text data](how-to-revoscaler-data-import.md)
++ [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)	
++ [XDF files](concept-what-is-xdf.md)	
++ [Data Sources](../scaler-user-guide-data-source.md)	
 
 ## See Also
    
- [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)   
- [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [Tutorial: data manipulation and statistical analysis](scaler-getting-started-data-visualization-analysis.md) 
+ [RevoScaleR Functions](../revoscaler.md)   
+ [Tutorial: data import and exploration](../scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data manipulation and statistical analysis](../scaler-getting-started-data-visualization-analysis.md) 
  

@@ -503,7 +503,7 @@ Continue on to the following data import articles to learn more about XDF, data 
 
 + [XDF files](concept-what-is-xdf.md)	
 + [Data Sources](../scaler-user-guide-data-source.md)	
-+ [Import relational data using ODBC](../scaler-data-odbc.md)
++ [Import relational data using ODBC](how-to-revoscaler-data-odbc.md)
 + [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)
 
 ## See also

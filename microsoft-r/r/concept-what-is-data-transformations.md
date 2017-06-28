@@ -142,7 +142,7 @@ Continue on to the following data-related articles to learn more about XDF, data
 + [XDF files](concept-what-is-xdf.md)	
 + [Data Sources](../scaler-user-guide-data-source.md)	
 + [Import text data](how-to-revoscaler-data-import.md)
-+ [Import ODBC data](../scaler-data-odbc.md)
++ [Import ODBC data](how-to-revoscaler-data-odbc.md)
 + [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)
 
 ## See Also

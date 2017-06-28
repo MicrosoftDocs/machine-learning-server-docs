@@ -57,7 +57,7 @@ Create the connection object using information from the Azure portal and ODBC Da
 
 	> sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
 
-First, get the ODBC driver name. On Windows, search for and then use the **ODBC Data Source Administrator (64-bit)** app to view the drivers listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For second, see [How to import relational data using ODBC](scaler-data-odbc.md).
+First, get the ODBC driver name. On Windows, search for and then use the **ODBC Data Source Administrator (64-bit)** app to view the drivers listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For second, see [How to import relational data using ODBC](r/how-to-revoscaler-data-odbc.md).
 
 After `Driver`, all remaining connection properties from `Server` to `Connection Timeout` are obtained from the Azure portal:
 
@@ -166,7 +166,7 @@ Create the connection object using the SQL Server database driver a local server
 
 The driver used on the connection is an ODBC driver that is installed by SQL Server. You could use the default database driver provided with operating system, but SQL Server Setup also installs drivers. 
 
-On Windows, ODBC drivers can be listed in the **ODBC Data Source Administrator (64-bit)** app on the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](scaler-data-odbc.md).
+On Windows, ODBC drivers can be listed in the **ODBC Data Source Administrator (64-bit)** app on the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](r/how-to-revoscaler-data-odbc.md).
 
 The Server=(local) refers to a local default instance connected over TCP. A named instance is specified as computername$instancename. A remote server has the same syntax, but you should verify that that remote connections are enabled. The defaults for this setting vary depending on which edition is installed.
 
@@ -285,7 +285,7 @@ Continue on to the following data import articles to learn more about XDF, data 
 + [XDF files](r/concept-what-is-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
 + [Import text data](r/how-to-revoscaler-data-import.md)
-+ [Import ODBC data](scaler-data-odbc.md)
++ [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
 + [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)
 
 ## See Also
