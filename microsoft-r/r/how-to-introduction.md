@@ -38,7 +38,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 * [crosstabs](how-to-revoscaler-crosstabs.md)
 * [Linear Models](../scaler-user-guide-linear-model.md)
 * [Logistic Regression Models](../scaler-user-guide-logistic-regression.md)
-* [Generalized Linear Models](../scaler-user-guide-generalized-linear-model.md)
+* [Generalized Linear Models](how-to-revoscaler-generalized-linear-model.md)
 * [Decision Tree Models](how-to-revoscaler-decision-tree.md)
 * [Decision Forest Models](how-to-revoscaler-decision-forest.md)
 * [Stochastic Gradient Boosting](how-to-revoscaler-boosting.md)
