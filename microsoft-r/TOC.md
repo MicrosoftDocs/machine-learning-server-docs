@@ -235,7 +235,7 @@
 ### [featurizeImage](r-reference/microsoftml/featurizeimage.md) 
 ### [featurizeText](r-reference/microsoftml/featurizetext.md) 
 ### [getSentiment](r-reference/microsoftml/getsentiment.md)
-### [loadImage](microsoftml/packagehelp/loadImage.md) 
+### [loadImage](r-reference/microsoftml/loadimage.md) 
 ### [logisticRegression](microsoftml/packagehelp/logisticRegression.md) 
 ### [loss](microsoftml/packagehelp/loss.md)
 ### [minCount](microsoftml/packagehelp/minCount.md)

@@ -65,7 +65,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 * [getSentiment](../r-reference/microsoftml/getsentiment.md): Scores natural language text and creates a column that contains probabilities that the sentiments in the text are positive.
 * [ngram](packagehelp/ngram.md): allows defining arguments for count-based and hash-based feature extraction.
 * [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables using a specified mode.
-* [loadImage](packagehelp/loadImage.md): Loads image data.
+* [loadImage](../r-reference/microsoftml/loadimage.md): Loads image data.
 * [resizeImage](packagehelp/resizeImage.md): Resizes an image to a specified dimension using a specified resizing method.
 * [extractPixels](../r-reference/microsoftml/extractpixels.md): Extracts the pixel values from an image.
 * [featurizeImage](../r-reference/microsoftml/featurizeimage.md): Featurizes an image using a pre-trained deep neural network model.
