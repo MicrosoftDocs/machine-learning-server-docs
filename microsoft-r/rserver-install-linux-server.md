@@ -116,7 +116,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   `[root@localhost tmp] $ cd /tmp/MRS91Linux`
 
-4. Run the script. To include the [pretrained machine learning models for MicrosoftML](deploy-pretrained-microsoftml-models.md), append the `-m` switch. 
+4. Run the script. To include the [pretrained machine learning models for MicrosoftML](install/microsoftml-install-pretrained-models.md), append the `-m` switch. 
 
    `[root@localhost MRS91Linux] $ bash install.sh -m`
 

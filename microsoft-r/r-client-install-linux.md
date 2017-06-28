@@ -104,7 +104,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
 1. Run the script. 
 
-   To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md) when you install, then specify the switch `-m` for install.sh. 
+   To include the [**pretrained machine learning models for MicrosoftML**](install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
 
    ```
    [root@localhost MRC_Linux] $ bash install.sh
@@ -193,7 +193,7 @@ R Client for Linux is deployed by running the install script with no parameters.
 
 1. Run the script. 
 
-   To include the [**pretrained machine learning models for MicrosoftML**](deploy-pretrained-microsoftml-models.md) when you install, then specify the switch `-m` for install.sh. 
+   To include the [**pretrained machine learning models for MicrosoftML**](install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
 
    ```
    [root@localhost MRC_Linux] $ bash install.sh

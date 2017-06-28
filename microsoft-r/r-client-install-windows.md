@@ -69,7 +69,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Review the components that are installed as part of Microsoft R Client. 
     
-   While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
+   While most are required, you can choose to add additional components such as [**pretrained models**](install/microsoftml-install-pretrained-models.md). 
 
 1. Accept the Microsoft R Client license terms.
 
@@ -106,7 +106,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
    + Review the components that are installed as part of Microsoft R Client. 
     
-     While most are required, you can choose to add additional components such as [**pretrained models**](deploy-pretrained-microsoftml-models.md). 
+     While most are required, you can choose to add additional components such as [**pretrained models**](install/microsoftml-install-pretrained-models.md). 
 
    + Accept the Microsoft R Client license terms.
 

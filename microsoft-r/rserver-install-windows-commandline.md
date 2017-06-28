@@ -50,7 +50,7 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 
 | Parameter | Description |
 |-----------|-------------|
-| `/install` | Runs RServerSetup.exe in install mode, used to add R Server or the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md)|
+| `/install` | Runs RServerSetup.exe in install mode, used to add R Server or the [pretrained machine learning models](install/microsoftml-install-pretrained-models.md)|
 | `/uninstall` | Removes an existing installation of R Server. |
 | `/modify` | Runs RServerSetup.exe in modify mode. Setup looks for an existing installation of R Server 9.1 and gives you options for changing an installation (for example, you could add the pretrained models, or uninstall the server). Use this option if you want to rerun (or repair) an installation. |
 
@@ -63,7 +63,7 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 | `/installdir=""` | Specifies the installation directory. By default, this is C:\Program Files\Microsoft\R Server\R_SERVER. |
 | `/cachedir=""` | A download location for the .cab files. By default, setup uses `%temp%` for the local admin user. Assuming an online installation scenario, you can set this parameter to have setup download the .cabs to the folder you specify. |
 | `/mediadir=""` | The .cab file location setup uses to find .cab files in an offline installation. By default, setup uses `%temp%` for local admin. |
-| `/models` | Adds the [pretrained machine learning models](deploy-pretrained-microsoftml-models.md). Use with `/install`.|
+| `/models` | Adds the [pretrained machine learning models](install/microsoftml-install-pretrained-models.md). Use with `/install`.|
 
 
 ## Default installation

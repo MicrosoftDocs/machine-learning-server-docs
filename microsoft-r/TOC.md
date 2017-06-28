@@ -114,7 +114,7 @@
 ##### [Install R Server on a Teradata Client](rserver-install-teradata-client.md)
 #### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)
 
-### [Pretrained machine learning models](deploy-pretrained-microsoftml-models.md)
+### [Pretrained machine learning models](install/microsoftml-install-pretrained-models.md)
 
 ### [Configure to operationalize analytics](operationalize/admin-get-started.md)
 #### [Get started for administrators](operationalize/admin-get-started.md)

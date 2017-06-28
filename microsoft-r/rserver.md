@@ -101,7 +101,7 @@ Being able to operationalize your analytics is another central capability in R S
 
 In R Server, you can use the **MicrosoftML** package, which provides state of the art, fast, scalable machine learning algorithms and transforms. These functions enable you to tackle common machine learning and data science tasks such as text and image featurization, classification, anomaly detection, regression and ranking. The goal is to help developers, data scientists, and an increasing spectrum of information workers to the design and implement intelligent products, services and devices. This topic discusses these tasks and lists the key R functions provided by this package for transforming and modeling data that facilitate the completion of these data science tasks.
 
-You can also install **pre-trained cognitive models** for **sentiment analysis** and **image featurization**, when you select them in R Server Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md) and [How to install and deploy pre-trained machine learning models with MicrosoftML](deploy-pretrained-microsoftml-models.md).
+You can also install **pre-trained cognitive models** for **sentiment analysis** and **image featurization**, when you select them in R Server Setup. To learn more, see [Get started with MicrosoftML](microsoftml-get-started.md) and [How to install and deploy pre-trained machine learning models with MicrosoftML](install/microsoftml-install-pretrained-models.md).
 
 
 ## R Server platforms

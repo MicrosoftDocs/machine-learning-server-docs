@@ -29,14 +29,14 @@ Pre-trained deep neural network models for sentiment analysis and image featuriz
 
 ## Installation
 
-The **MicrosoftML** package is installed by default with **Microsoft R Client**, **Microsoft R Server** and with the **SQL Server Machine Learning Services** on the supported platforms. For a list of these platforms, see the [Platform availability](microsoftml-get-started.md#platform-availability) section in the getting started topic.
+The **MicrosoftML** package is installed by default with **Microsoft R Client**, **Microsoft R Server** and with the **SQL Server Machine Learning Services** on the supported platforms. For a list of these platforms, see the [Platform availability](../microsoftml-get-started.md#platform-availability) section in the getting started topic.
 
 But the pretrained ML models are not installed by default. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page. To see this box you must click the dropdown menu for **Microsoft R Client** or **Microsoft R Server** in **The following components will be included** section. If these models are not installed, you will get an error if you use the `getSentiment()` or `featurizeImage()` functions.
 
 
-![MicrosoftML-install-pretrained-models](./media/deploy-pretrained-microsoftml-models/msr-config-install-ml-model.png)
+![MicrosoftML-install-pretrained-models](./media/microsoftml-install-pretrained-models/msr-config-install-ml-model.png)
 
-For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](microsoftml-quickstarts.md).
+For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](../microsoftml-quickstarts.md).
 
 
 ## Error when Ensembling with pre-trained algorithms
@@ -47,5 +47,5 @@ For quickstarts that show how to use pretrained models for sentiment analysis an
 
 Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
 
-For more information on this error and the possible workarounds and other known issues, see [Known issues in Microsoft R Server 9.1](rserver-known-issues.md#ml-ensembling).
+For more information on this error and the possible workarounds and other known issues, see [Known issues in Microsoft R Server 9.1](../rserver-known-issues.md#ml-ensembling).
 

@@ -89,7 +89,7 @@ Unzip the installation file en_microsoft_r_server_910_for_windows_x64_10324119.z
 1. Double-click **RServerSetup.exe** to start the wizard.
 2. In Configure installation, choose optional components. Required components are listed, but not configurable. Optional components include:
     + R Server (Standalone)
-    + [Pre-trained Models](deploy-pretrained-microsoftml-models.md) used for machine learning.
+    + [Pre-trained Models](install/microsoftml-install-pretrained-models.md) used for machine learning.
 3. In an offline installation scenario, you are notified about missing requirements, given a URL for obtaining the CAB files using an internet-connected device, and a folder path for placing the files. 
 4. Accept the SQL Server license agreement for R Server <sup>1</sup>, as well as the license agreement for Microsoft R Open.
 5. Optionally, change the home directory for R Server.
@@ -128,7 +128,7 @@ An installation of Microsoft R Server includes the following components.
 | Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are under `<install-directory>\bin`. Documentation is under `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
 | Microsoft R Server proprietary libraries and script engine | MRS packages provide libraries of functions. MRS libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [Package Reference](package-reference.md). <br/><br/>On Windows, the default R Server installation directory is `C:\Program Files\Microsoft\R Server\R_SERVER`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
 | [Admin tool](operationalize/admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
-| [Pretrained models](deploy-pretrained-microsoftml-models.md) | Used for sentiment analysis and image featurization. | 
+| [Pretrained models](install/microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image featurization. | 
 
 Consider adding a development tool on the server to build script or solutions using R Server features:
 
