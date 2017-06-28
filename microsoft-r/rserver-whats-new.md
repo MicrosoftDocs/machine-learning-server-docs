@@ -123,7 +123,7 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 
 | Function | Status | Changes |
 |----------|--------|---------|
-|[`getValidatedServiceType`](mrsdeploy/packagehelp/getValidatedServiceType.md) | New | Test to see if supplied service type is supported.|
+|[`getValidatedServiceType`](r-reference/mrsdeploy/getvalidatedservicetype.md) | New | Test to see if supplied service type is supported.|
 |[`print.serviceDetails`](mrsdeploy/packagehelp/print.serviceDetails.md) | New| Defines the R print generic for `serviceDetails` during a  `listServices()`. |
 |[`print.snapshotDetails`](mrsdeploy/packagehelp/print.snapshotDetails.md) | New | Defines the R print generic for `snapshotDetails` during a  `listSnapshots()`. |
 |[`remoteScript`](mrsdeploy/packagehelp/remoteScript.md) | Enhanced | Includes a new `async` parameter to support asynchronous remote execution. |
