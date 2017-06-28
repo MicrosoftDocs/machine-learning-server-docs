@@ -234,7 +234,7 @@ Otherwise `NULL`.
  ##See Also
  
 xyplot,
-[rxHistogram](rxHistogram.md).
+[rxHistogram](../../r-reference/revoscaler/rxhistogram.md).
    
  ##Examples
 

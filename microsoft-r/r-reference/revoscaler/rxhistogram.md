@@ -119,12 +119,12 @@ Histogram plot for a variable in an .xdf file or data frame
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -256,7 +256,7 @@ Histogram plot for a variable in an .xdf file or data frame
  
  ##Details
  
-`rxHistogram` calls [rxCube](../../r-reference/revoscaler/rxcube.md) to perform computations and uses
+`rxHistogram` calls [rxCube](rxcube.md) to perform computations and uses
 the **lattice** graphics package (barchart or
 xyplot) to create the plot. The `rxHistogram` 
 function will attempt bin continuous data in reasonable intervals.  For
@@ -276,8 +276,8 @@ An object of class "trellis". It is automatically printed within the function.
  
  ##See Also
  
-[rxLinePlot](rxLinePlot.md),
-[rxCube](../../r-reference/revoscaler/rxcube.md),
+[rxLinePlot](../../scaler/packagehelp/rxlineplot.md),
+[rxCube](rxcube.md),
 histogram.
    
  ##Examples
