@@ -67,7 +67,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 * [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables using a specified mode.
 * [loadImage](packagehelp/loadImage.md): Loads image data.
 * [resizeImage](packagehelp/resizeImage.md): Resizes an image to a specified dimension using a specified resizing method.
-* [extractPixels](packagehelp/extractPixels.md): Extracts the pixel values from an image.
+* [extractPixels](../r-reference/microsoftml/extractpixels.md): Extracts the pixel values from an image.
 * [featurizeImage](packagehelp/featurizeImage.md): Featurizes an image using a pre-trained deep neural network model.
 
 
