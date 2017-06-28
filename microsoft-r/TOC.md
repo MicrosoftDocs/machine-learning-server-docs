@@ -9,7 +9,7 @@
 ## [Interoperability](overview-interoperability.md)
 
 # Get started with RevoScaleR
-## [Tutorials](microsoft-r-tutorials.md)
+## [Tutorials](r/tutorial-introduction.md)
 ### [Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md)
 ### [Import and transform data](scaler-getting-started-data-import-exploration.md)
 ### [Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md)

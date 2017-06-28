@@ -98,7 +98,7 @@ You can learn more with these guides:
 
 + [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
 
-+ [RevoScaleR R package reference](../microsoft-r-tutorials.md)
++ [RevoScaleR R package reference](../r/tutorial-introduction.md)
 
 + [MicrosoftML R package reference](../r/concept-what-is-the-microsoftml-package.md)
 
