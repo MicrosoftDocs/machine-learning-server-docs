@@ -52,7 +52,7 @@ Get basic information about an RevoScaleR data source or data frame
    
     
  ### `data`
- a data frame, a character string specifying an .xdf, or an [RxDataSource](../../r-reference/revoscaler/rxdatasource.md) object. If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information.  
+ a data frame, a character string specifying an .xdf, or an [RxDataSource](rxdatasource.md) object. If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information.  
   
   
     
@@ -97,7 +97,7 @@ Get basic information about an RevoScaleR data source or data frame
   
     
  ### `allNodes`
- logical value.  Ignored if the active [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) compute context is local or `RxForeachDoPar`.  Otherwise, if `TRUE`, a list containing the information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned. Note that the determination of the master node is not controlled by the end user. See the *RevoScaleR Distributed Computing Guide* for more information on master node computations.  
+ logical value.  Ignored if the active [RxComputeContext](rxcomputecontext.md) compute context is local or `RxForeachDoPar`.  Otherwise, if `TRUE`, a list containing the information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned. Note that the determination of the master node is not controlled by the end user. See the *RevoScaleR Distributed Computing Guide* for more information on master node computations.  
    
   
     
@@ -115,7 +115,7 @@ in which case a named list of results are returned. For `rxGetInfo`, a mix of su
 is allowed. Note that data
 frames should not be specified in quotes because, in that case, they will be interpreted as .xdf data paths.
 
-If the [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) is distributed, `rxGetInfo` will request information from the
+If the [RxComputeContext](rxcomputecontext.md) is distributed, `rxGetInfo` will request information from the
 compute context nodes.  
  
  
@@ -157,7 +157,7 @@ number of blocks in the data set.
 
 
 ###`varInfo`
-list of variable information where each element is a list describing a variable. (See return value of [rxGetVarInfo](rxGetVarInfoXdf.md) for more information.)
+list of variable information where each element is a list describing a variable. (See return value of [rxGetVarInfo](../../scaler/packagehelp/rxgetvarinfoxdf.md) for more information.)
 
 
 ###`rowsPerBlock`
@@ -178,9 +178,9 @@ data frame containing the data (if `numRows > 0`)
  
  ##See Also
  
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxGetVarInfo](rxGetVarInfoXdf.md),
-[rxSetVarInfo](rxSetVarInfoXdf.md).
+[rxDataStep](rxdatastep.md),
+[rxGetVarInfo](../../scaler/packagehelp/rxgetvarinfoxdf.md),
+[rxSetVarInfo](../../scaler/packagehelp/rxsetvarinfoxdf.md).
    
  ##Examples
 

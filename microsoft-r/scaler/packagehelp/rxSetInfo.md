@@ -74,7 +74,7 @@ specified `description`.
  
  ##See Also
  
-[rxGetInfo](rxGetInfoXdf.md),
+[rxGetInfo](../../r-reference/revoscaler/rxgetinfoxdf.md),
 [rxGetVarInfo](rxGetVarInfoXdf.md).
    
  

@@ -383,7 +383,7 @@
 #### [rxGetEnableThreadPool](r-reference/revoscaler/rxgetenablethreadpool.md) 
 #### [rxGetFuzzyDist](r-reference/revoscaler/rxgetfuzzydist.md) 
 #### [rxGetFuzzyKeys](r-reference/revoscaler/rxgetfuzzykeys.md) 
-#### [rxGetInfoXdf](scaler/packagehelp/rxGetInfoXdf.md) 
+#### [rxGetInfoXdf](r-reference/revoscaler/rxgetinfoxdf.md) 
 #### [rxGetJobInfo](scaler/packagehelp/rxGetJobInfo.md) 
 #### [rxGetJobOutput](scaler/packagehelp/rxGetJobOutput.md) 
 #### [rxGetJobResults](scaler/packagehelp/rxGetJobResults.md) 
