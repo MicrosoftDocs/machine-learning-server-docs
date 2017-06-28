@@ -38,9 +38,9 @@ Other release-specific pages include [What's New in 9.1](../rserver-whats-new.md
 |`rxGetNodes` | Deprecated | [`rxGetAvailableNodes`](../scaler/packagehelp/rxGetAvailableNodes.md)| 
 |`RxHpcServer` | Deprecated | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
 |`rxImportToXdf` | Deprecated | [`rxImport`](../scaler/packagehelp/rxImport.md) |
-|`rxDataStepXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
-|`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../scaler/packagehelp/rxDataStep.md) |
+|`rxDataStepXdf` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
+|`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
+|`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
 |`rxSortXdf` | Deprecated | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
 |`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](../scaler/packagehelp/rxGetVarInfoXdf.md))|
 |`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](../scaler/packagehelp/rxGetInfoXdf.md))|

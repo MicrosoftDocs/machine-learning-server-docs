@@ -300,7 +300,7 @@ types are not currently supported and are imported as character data.
  ##See Also
  
 [rxImport](rxImport.md),
-[rxDataStep](rxDataStep.md),
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxFactors](rxFactors.md),
 [rxTransform](rxTransform.md).
    

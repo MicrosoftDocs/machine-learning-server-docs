@@ -140,7 +140,7 @@ character vector of value labels that is the same length as `valueInfoCodes`, us
  ##See Also
  
 [rxSetVarInfo](rxSetVarInfoXdf.md),
-[rxDataStep](rxDataStep.md).
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md).
    
  ##Examples
 

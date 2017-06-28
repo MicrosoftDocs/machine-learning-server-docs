@@ -160,7 +160,7 @@ Write .xdf file content to a delimited text file. `rxDataStep` recommended.
  
  ##Details
  
-For most purposes, the more general [rxDataStep](rxDataStep.md) is preferred for writing to text files.
+For most purposes, the more general [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) is preferred for writing to text files.
  
  
  ##Value
@@ -174,7 +174,7 @@ An [RxTextData](RxTextData.md) object representing the output text file.
  
  ##See Also
  
-[rxDataStep](rxDataStep.md),
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxImport](rxImport.md),
 write.table,
 [rxSplit](rxSplitXdf.md).

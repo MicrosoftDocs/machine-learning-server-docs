@@ -178,7 +178,7 @@ data frame containing the data (if `numRows > 0`)
  
  ##See Also
  
-[rxDataStep](rxDataStep.md),
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxGetVarInfo](rxGetVarInfoXdf.md),
 [rxSetVarInfo](rxSetVarInfoXdf.md).
    

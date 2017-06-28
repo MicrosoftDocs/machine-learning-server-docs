@@ -90,7 +90,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL, type = c("class", "prob"),
   
     
  ### ` ...`
-  additional arguments to be passed directly to [rxDataStep](rxDataStep.md) such as `removeMissingsOnRead`, `overwrite`,  `blocksPerRead`, `reportProgress`, `xdfCompressionLevel`. 
+  additional arguments to be passed directly to [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) such as `removeMissingsOnRead`, `overwrite`,  `blocksPerRead`, `reportProgress`, `xdfCompressionLevel`. 
   
  
  

@@ -111,7 +111,7 @@ Can also be used to convert non-factor variable into a factor.
   
     
  ### `maxRowsByCols`
- this argument is used only when  `inData` is referring to an .xdf file  (character string defining a path to an existing .xdf file or an RxXdfData object) and we wish to return the output as a data frame (`outFile = NULL`).   In this case, and behind the scenes, the output is written to a temporary .xdf file and `rxDataStep` is subsequently called to convert the output into a data frame. The `maxRowsByCols` argument is passed directly in the `rxDataStep` call, giving the user some control over the conversion. See [rxDataStep](rxDataStep.md) for more details on the `maxRowsByCols` argument. 
+ this argument is used only when  `inData` is referring to an .xdf file  (character string defining a path to an existing .xdf file or an RxXdfData object) and we wish to return the output as a data frame (`outFile = NULL`).   In this case, and behind the scenes, the output is written to a temporary .xdf file and `rxDataStep` is subsequently called to convert the output into a data frame. The `maxRowsByCols` argument is passed directly in the `rxDataStep` call, giving the user some control over the conversion. See [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) for more details on the `maxRowsByCols` argument. 
   
   
     
@@ -202,7 +202,7 @@ are written to the specified `outFile` file and an RxXdfData object is returned
 [rxFormula](rxFormula.md),
 [rxSetVarInfoXdf](rxSetVarInfoXdf.md),
 [rxImport](rxImport.md),
-[rxDataStep](rxDataStep.md).
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md).
    
  
  ##Examples

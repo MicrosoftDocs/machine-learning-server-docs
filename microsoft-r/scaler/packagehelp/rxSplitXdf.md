@@ -180,7 +180,7 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
   
     
  ### `maxRowsByCols`
- argument sent directly to the [rxDataStep](rxDataStep.md) function behind the scenes when converting the output .xdf files (back) into a list of data frames. This parameter is provided primarily for the case where `rxSplit` is being used to split a .xdf file or `RxXdfData` data source into portions that are then read back into R as  a list of data frames. In this case, `maxRowsByCols` provides a mechanism for the user to control the maximum number of of elements read from the output .xdf file in an effort to limit the amount of memory needed for storing each partition  as a data frame object in R. 
+ argument sent directly to the [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) function behind the scenes when converting the output .xdf files (back) into a list of data frames. This parameter is provided primarily for the case where `rxSplit` is being used to split a .xdf file or `RxXdfData` data source into portions that are then read back into R as  a list of data frames. In this case, `maxRowsByCols` provides a mechanism for the user to control the maximum number of of elements read from the output .xdf file in an effort to limit the amount of memory needed for storing each partition  as a data frame object in R. 
   
   
     
@@ -271,7 +271,7 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
  
  ##See Also
  
-[rxDataStep](rxDataStep.md),
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxImport](rxImport.md),
 [rxTransform](rxTransform.md)
    

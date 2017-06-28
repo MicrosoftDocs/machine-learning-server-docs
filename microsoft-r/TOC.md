@@ -358,7 +358,7 @@
 #### [rxCube](r-reference/revoscaler/rxcube.md) 
 #### [RxDataSource-class](r-reference/revoscaler/rxdatasource-class.md) 
 #### [RxDataSource](r-reference/revoscaler/rxdatasource.md) 
-#### [rxDataStep](scaler/packagehelp/rxDataStep.md) 
+#### [rxDataStep](r-reference/revoscaler/rxdatastep.md) 
 #### [rxDForest](scaler/packagehelp/rxDForest.md) 
 #### [rxDForestUtils](scaler/packagehelp/rxDForestUtils.md) 
 #### [RxDistributedHpa-class](scaler/packagehelp/RxDistributedHpa-class.md) 

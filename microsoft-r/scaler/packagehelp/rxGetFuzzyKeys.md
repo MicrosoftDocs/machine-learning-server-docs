@@ -201,7 +201,7 @@ A character vector containing the fuzzy keys or a data source containing the fuz
  ##See Also
  
 [rxGetFuzzyDist](rxGetFuzzyDist.md),
-[rxDataStep](rxDataStep.md)
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md)
    
  ##Examples
 

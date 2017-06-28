@@ -149,7 +149,7 @@ A data frame or data source containing the distances and either string and dicti
  ##See Also
  
 [rxGetFuzzyKeys](rxGetFuzzyKeys.md),
-[rxDataStep](rxDataStep.md)
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md)
    
  ##Examples
 

@@ -59,22 +59,22 @@ Transform data from an input data set to an output data set
    
     
  ### `inData`
- An [RxXdfData](RxXdfData.md) or [RxTeradata](RxTeradata.md) data source object. If not using a distributed compute context such as [RxHadoopMR](RxHadoopMR.md), a data frame,  a character string specifying the input .xdf file, or `NULL` can also be used. Other data sources are supported as experimental. If `NULL`, a data set will be created automatically with a single variable, `.rxRowNums`, containing row numbers. It will have a total of `numRows` rows with `rowsPerRead` rows in each block. 
+ An [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) or [RxTeradata](../../scaler/packagehelp/rxteradata.md) data source object. If not using a distributed compute context such as [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md), a data frame,  a character string specifying the input .xdf file, or `NULL` can also be used. Other data sources are supported as experimental. If `NULL`, a data set will be created automatically with a single variable, `.rxRowNums`, containing row numbers. It will have a total of `numRows` rows with `rowsPerRead` rows in each block. 
   
   
     
  ### `outFile`
- a character string specifying the output .xdf file, a  [RxXdfData](RxXdfData.md) object, a [RxHiveData](RxSparkData.md) data source, a  [RxParquetData](RxSparkData.md) data source, a [RxOdbcData](RxOdbcData.md) data source,  or a [RxTeradata](RxTeradata.md) data source.  If `NULL`, a data frame will be returned from `rxDataStep` unless `returnTransformObjects` is set to `TRUE`. Setting `outFile` to `NULL` and `returnTransformObjects=TRUE` allows chunkwise computations on the data without modifying the existing data or creating a new data set. `outFile` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
+ a character string specifying the output .xdf file, a  [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object, a [RxHiveData](../../scaler/packagehelp/rxsparkdata.md) data source, a  [RxParquetData](../../scaler/packagehelp/rxsparkdata.md) data source, a [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md) data source,  or a [RxTeradata](../../scaler/packagehelp/rxteradata.md) data source.  If `NULL`, a data frame will be returned from `rxDataStep` unless `returnTransformObjects` is set to `TRUE`. Setting `outFile` to `NULL` and `returnTransformObjects=TRUE` allows chunkwise computations on the data without modifying the existing data or creating a new data set. `outFile` can also be a delimited [RxTextData](../../scaler/packagehelp/rxtextdata.md) data source if using a native file system and not appending. 
   
   
     
  ### `varsToKeep`
- character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if not specified in `varsToKeep`. If `newName` is used in `colInfo` in a non-xdf  data source, the `newName` should be used in `varsToKeep`. Not supported for [RxTeradata](RxTeradata.md), [RxOdbcData](RxOdbcData.md), or [RxSqlServerData](RxSqlServerData.md) data sources. 
+ character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if not specified in `varsToKeep`. If `newName` is used in `colInfo` in a non-xdf  data source, the `newName` should be used in `varsToKeep`. Not supported for [RxTeradata](../../scaler/packagehelp/rxteradata.md), [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md), or [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md) data sources. 
   
   
     
  ### `varsToDrop`
- character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if specified in `varsToDrop`. If `newName` is used in `colInfo` in a non-xdf  data source, the `newName` should be used in `varsToDrop`. Not supported for [RxTeradata](RxTeradata.md), [RxOdbcData](RxOdbcData.md), or  [RxSqlServerData](RxSqlServerData.md) data sources. 
+ character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if specified in `varsToDrop`. If `newName` is used in `colInfo` in a non-xdf  data source, the `newName` should be used in `varsToDrop`. Not supported for [RxTeradata](../../scaler/packagehelp/rxteradata.md), [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md), or  [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md) data sources. 
   
   
     
@@ -94,12 +94,12 @@ Transform data from an input data set to an output data set
   
     
  ### `transformFunc`
- variable transformation function. The recommended way to do variable transformation. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. The recommended way to do variable transformation. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -114,7 +114,7 @@ Transform data from an input data set to an output data set
   
     
  ### `append`
- either `"none"` to create a new files, `"rows"` to append rows to an existing file, or `"cols"` to append columns to an existing file. If `outFile` exists and `append` is `"none"`,  the `overwrite` argument must be set to `TRUE`. Ignored for data frames. You cannot append to [RxTextData](RxTextData.md) or append columns to [RxTeradata](RxTeradata.md) data sources,  and appending is not supported for composite .xdf files or when using the [RxHadoopMR](RxHadoopMR.md) compute context. 
+ either `"none"` to create a new files, `"rows"` to append rows to an existing file, or `"cols"` to append columns to an existing file. If `outFile` exists and `append` is `"none"`,  the `overwrite` argument must be set to `TRUE`. Ignored for data frames. You cannot append to [RxTextData](../../scaler/packagehelp/rxtextdata.md) or append columns to [RxTeradata](../../scaler/packagehelp/rxteradata.md) data sources,  and appending is not supported for composite .xdf files or when using the [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) compute context. 
   
   
     
@@ -164,7 +164,7 @@ Transform data from an input data set to an output data set
   
     
  ### `returnTransformObjects`
- logical value.  If `TRUE`,  the list of `transformObjects` will be returned instead of  a data frame or data source object.  If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned.  Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined  computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts  such as [RxHadoopMR](RxHadoopMR.md) or [RxInTeradata](RxInTeradata.md). 
+ logical value.  If `TRUE`,  the list of `transformObjects` will be returned instead of  a data frame or data source object.  If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned.  Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined  computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts  such as [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) or [RxInTeradata](../../scaler/packagehelp/rxinteradata.md). 
    
   
     
@@ -196,16 +196,16 @@ Transform data from an input data set to an output data set
  ##Value
  
 For `rxDataStep`, if `returnTransformObjects` is `FALSE`)and an `outFile` 
-is specified, an [RxXdfData](RxXdfData.md) data source is returned invisibly. If no
+is specified, an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) data source is returned invisibly. If no
 `outFile` is specified, a data frame is
 returned invisibly.  Either can be used in subsequent RevoScaleR analysis.  
 If `returnTransformObjects` 
 is `TRUE`, the `transformObjects` list as modified by the transformation
 function is returned invisibly.
-When working with an [RxInTeradata](RxInTeradata.md) compute context, both the input
-and output data sources must be [RxTeradata](RxTeradata.md).
-When working with an [RxInSqlServer](RxInSqlServer.md) compute context, both the input
-and output data sources must be [RxSqlServerData](RxSqlServerData.md).
+When working with an [RxInTeradata](../../scaler/packagehelp/rxinteradata.md) compute context, both the input
+and output data sources must be [RxTeradata](../../scaler/packagehelp/rxteradata.md).
+When working with an [RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md) compute context, both the input
+and output data sources must be [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md).
  
  
  ##Author(s)
@@ -214,14 +214,14 @@ and output data sources must be [RxSqlServerData](RxSqlServerData.md).
  
  ##See Also
  
-[rxImport](rxImport.md),
-[RxXdfData](RxXdfData.md),
-[RxTextData](RxTextData.md),
-[RxSqlServerData](RxSqlServerData.md),
-[RxTeradata](RxTeradata.md),
-[rxGetInfo](rxGetInfoXdf.md),
-[rxGetVarInfo](rxGetVarInfoXdf.md),
-[rxTransform](rxTransform.md)
+[rxImport](../../scaler/packagehelp/rximport.md),
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
+[RxTextData](../../scaler/packagehelp/rxtextdata.md),
+[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md),
+[RxTeradata](../../scaler/packagehelp/rxteradata.md),
+[rxGetInfo](../../scaler/packagehelp/rxgetinfoxdf.md),
+[rxGetVarInfo](../../scaler/packagehelp/rxgetvarinfoxdf.md),
+[rxTransform](../../scaler/packagehelp/rxtransform.md)
    
  ##Examples
 

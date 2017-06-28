@@ -64,7 +64,7 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](RxInSqlServer.md) an
   
     
  ### `func`
- the user function to be executed. The user function takes `keys` and `data` as two required input arguments where `keys` determines the partitioning values and `data` is a data source object of the corresponding partition. `data` can be a [RxXdfData](RxXdfData.md) object or a RxODBCData object, which can be transformed to a standard R data frame by using [rxDataStep](rxDataStep.md) method. The nodes or cores on which it is running are determined by the currently active compute context. 
+ the user function to be executed. The user function takes `keys` and `data` as two required input arguments where `keys` determines the partitioning values and `data` is a data source object of the corresponding partition. `data` can be a [RxXdfData](RxXdfData.md) object or a RxODBCData object, which can be transformed to a standard R data frame by using [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) method. The nodes or cores on which it is running are determined by the currently active compute context. 
   
   
     
@@ -125,7 +125,7 @@ non-default loaded packages unless they are redefined or reloaded within the sco
  
 [rxExecByPartition](rxExecByPartition.md),
 [rxImport](rxImport.md),
-[rxDataStep](rxDataStep.md),
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [RxTextData](RxTextData.md),
 [RxXdfData](RxXdfData.md),
 [RxHiveData](RxSparkData.md),

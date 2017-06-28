@@ -130,7 +130,7 @@ levels of a factor variable.  To recode factors, use [rxFactors](rxFactors.md).
  ##See Also
  
 [rxGetVarInfo](rxGetVarInfoXdf.md),
-[rxDataStep](rxDataStep.md),
+[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxFactors](rxFactors.md),
 [rxGetInfo](rxGetInfoXdf.md).
    
