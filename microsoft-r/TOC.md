@@ -241,7 +241,7 @@
 ### [minCount](r-reference/microsoftml/mincount.md)
 ### [mlModel](r-reference/microsoftml/mlmodel.md)
 ### [mutualInformation](r-reference/microsoftml/mutualinformation.md)
-### [NeuralNet](microsoftml/packagehelp/NeuralNet.md)
+### [NeuralNet](r-reference/microsoftml/neuralnet.md)
 ### [ngram](microsoftml/packagehelp/ngram.md)
 ### [OneClassSvm](microsoftml/packagehelp/OneClassSvm.md)
 ### [optimizer](microsoftml/packagehelp/optimizer.md)

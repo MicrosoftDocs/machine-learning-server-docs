@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "neuralNet" 
-description: " Creates a list containing the function name and arguments to train a  NeuralNet model with [rxEnsemble](rxEnsemble.md). " 
+description: " Creates a list containing the function name and arguments to train a  NeuralNet model with [rxEnsemble](../../microsoftml/packagehelp/rxensemble.md). " 
 keywords: "MicrosoftML, neuralNet" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -34,7 +34,7 @@ ms.custom: ""
  ##Description
  
 Creates a list containing the function name and arguments to train a
- NeuralNet model with [rxEnsemble](rxEnsemble.md).
+ NeuralNet model with [rxEnsemble](../../microsoftml/packagehelp/rxensemble.md).
  
  
  ##Usage
@@ -61,7 +61,7 @@ Creates a list containing the function name and arguments to train a
   
   
  ### `optimizer`
- A list specifying either the `sgd` or `adaptive` optimization algorithm. This list can be created using [sgd](optimizer.md) or [adaDeltaSgd](optimizer.md). The default value is `sgd`. 
+ A list specifying either the `sgd` or `adaptive` optimization algorithm. This list can be created using [sgd](../../microsoftml/packagehelp/optimizer.md) or [adaDeltaSgd](../../microsoftml/packagehelp/optimizer.md). The default value is `sgd`. 
   
   
   
