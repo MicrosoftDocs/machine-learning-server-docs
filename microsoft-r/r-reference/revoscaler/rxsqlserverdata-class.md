@@ -39,8 +39,8 @@ Microsoft SQL Server data source connection class.
  ## Generators 
 
  
-The targeted generator [RxSqlServerData](RxSqlServerData.md) as well as the general generator
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
+The targeted generator [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md) as well as the general generator
+[rxNewDataSource](rxnew.md).
  
  ## Extends 
 
@@ -64,8 +64,8 @@ Class RxDataSource, directly.
  
  ##See Also
  
-[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
-[RxSqlServerData](RxSqlServerData.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md)
+[RxDataSource-class](rxdatasource-class.md),
+[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md),
+[rxNewDataSource](rxnew.md)
    
  
