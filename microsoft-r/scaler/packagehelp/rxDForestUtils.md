@@ -141,7 +141,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxDForest](rxDForest.md), [rxDTree](rxDTree.md), [rxBTrees](rxBTrees.md).
+[rxDForest](rxDForest.md), [rxDTree](rxDTree.md), [rxBTrees](../../r-reference/revoscaler/rxbtrees.md).
    
  ##Examples
 

@@ -343,7 +343,7 @@
 #### [as.xtabs](r-reference/revoscaler/as-xtabs.md) 
 #### [prune.rxDTree](r-reference/revoscaler/prune-rxdtree.md) 
 #### [rxAddInheritance](r-reference/revoscaler/rxaddinheritance.md) 
-#### [rxBTrees](scaler/packagehelp/rxBTrees.md) 
+#### [rxBTrees](r-reference/revoscaler/rxbtrees.md) 
 #### [rxCancelJob](scaler/packagehelp/rxCancelJob.md) 
 #### [rxChiSquaredTest](scaler/packagehelp/rxChiSquaredTest.md) 
 #### [rxCleanup](scaler/packagehelp/rxCleanup.md) 

@@ -89,7 +89,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
    
     
  ### `formula`
-  formula as described in [rxFormula](rxFormula.md).   Currently, formula functions are not supported. 
+  formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md).   Currently, formula functions are not supported. 
   
     
  ### `data`
@@ -264,7 +264,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### `scheduleOnce`
- EXPERIMENTAL. logical value. If `TRUE`, rxBTrees will be run with [rxExec](rxExec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](RxHadoopMR.md) compute context. 
+ EXPERIMENTAL. logical value. If `TRUE`, rxBTrees will be run with [rxExec](../../scaler/packagehelp/rxexec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) compute context. 
   
   
     
@@ -282,11 +282,11 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### `transformFunc`
-  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxTransform.md) for details. 
+  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
     
  ### `transformVars`
-  character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxTransform.md) for details. 
+  character vector of input data set variables  needed for the transformation function.  See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
     
  ### `transformPackages`
@@ -315,7 +315,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### `computeContext`
- a valid [RxComputeContext](RxComputeContext.md).  The `RxHpcServer`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](../../scaler/packagehelp/rxcomputecontext.md).  The `RxHpcServer`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
   
   
     
@@ -324,7 +324,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### ` ...`
-  additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](rxExec.md) when `scheduleOnce` is set to `TRUE`. 
+  additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](../../scaler/packagehelp/rxexec.md) when `scheduleOnce` is set to `TRUE`. 
   
   
     
@@ -347,7 +347,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
 targeted for very large data sets.  It is based on the gradient boosting machine of 
 Jerome Friedman and Trevor Hastie and Robert Tibshirani and 
 modeled after the gbm package of Greg Ridgeway with contributions from others, 
-using the tree-fitting algorithm introduced in [rxDTree](rxDTree.md).
+using the tree-fitting algorithm introduced in [rxDTree](rxdtree.md).
 
 In a decision forest, a number of decision trees are fit to bootstrap samples of the
 original data. Observations omitted from a given bootstrap sample are termed 
@@ -411,7 +411,7 @@ a data frame containing the out-of-bag error estimate. For classification forest
  
  ##Note
  
-Like [rxDTree](rxDTree.md), `rxBTrees` requires multiple passes over the data set and 
+Like [rxDTree](rxdtree.md), `rxBTrees` requires multiple passes over the data set and 
 the maximum number of passes can be computed as follows for loss functions other than `multinomial`:
 
 
@@ -473,7 +473,7 @@ gbm: Generalized Boosted Regression Models (R package),
  
  ##See Also
  
-[rxDForest](rxDForest.md), [rxDForestUtils](rxDForestUtils.md), [rxPredict.rxDForest](rxPredict.rxDForest.md).
+[rxDForest](../../scaler/packagehelp/rxdforest.md), [rxDForestUtils](../../scaler/packagehelp/rxdforestutils.md), [rxPredict.rxDForest](rxPredict.../../scaler/packagehelp/rxdforest.md).
    
  ##Examples
 

@@ -210,7 +210,7 @@ A streaming parallel decision tree algorithm.
  
  ##See Also
  
-rpart, [rxDForest](rxDForest.md), [rxBTrees](rxBTrees.md).
+rpart, [rxDForest](rxDForest.md), [rxBTrees](../../r-reference/revoscaler/rxbtrees.md).
    
  ##Examples
 
