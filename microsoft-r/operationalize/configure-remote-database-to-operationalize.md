@@ -29,7 +29,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
-The operationalization feature for R Server installs and uses a local SQLite database by default to store R session information, web service definitions, [session snapshots](remote-execution.md#snapshot), and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
+The operationalization feature for R Server installs and uses a local SQLite database by default to store R session information, web service definitions, [session snapshots](../r/how-to-execute-code-remotely.md#snapshot), and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
 
 The database provides internal storage for the sessions, web services, snapshots and other entities created as a result of operationalization. When a request comes in to a web node (for example, to consume a service), the web node connects to the databases, retrieves parameters for the service, and then sends the information to a compute node for execution.
 

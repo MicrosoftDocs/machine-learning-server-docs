@@ -27,7 +27,7 @@
 ## [Cheat Sheet: Choosing a MicrosoftML algorithm](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 ## [Samples for MicrosoftML](microsoftml-quickstarts.md)
 
-# [Diving into data analysis](data-analysis-in-microsoft-r.md)
+# [Diving into data analysis](r/how-to-introduction.md)
 ## Load and transform data
 ### [Import text data](scaler-user-guide-data-import.md)
 ### [Import SQL Server data](scaler-data-sql.md)
@@ -204,7 +204,7 @@
 ##### [Working with Files](deployr/deployr-repository-manager-files.md)
 ##### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
 
-## [Execute code on remote R Server](operationalize/remote-execution.md)
+## [Execute code on remote R Server](r/how-to-execute-code-remotely.md)
 
 ## [Distributed and parallel computing on R Server](scaler-distributed-computing.md)
 ### [Compute context](scaler-distributed-computing-compute-context.md)
@@ -220,7 +220,7 @@
 ## [Quickstart: Run R code in Microsoft R](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client/install-on-windows.md)
 ## [Install R Client on Linux](r-client/install-on-linux.md)
-## [Remote execution with R Server](operationalize/remote-execution.md)
+## [Remote execution with R Server](r/how-to-execute-code-remotely.md)
 
 
 # [Function Reference](r-reference/introducing-r-server-r-package-reference.md)

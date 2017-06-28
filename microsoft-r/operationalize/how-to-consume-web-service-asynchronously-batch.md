@@ -518,5 +518,5 @@ for(i in seq(batchRes$totalItemCount)) {
 + [Connecting to R Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
-+ [Execute on a remote Microsoft R Server](remote-execution.md)
++ [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

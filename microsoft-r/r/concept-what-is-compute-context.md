@@ -36,7 +36,7 @@ R Client to R Server on a database| Write and run script locally in R Client, pu
 R Server to R Server | Push platform-specific computations to an R Server on a different platform. Supported platforms include SQL Server, Teradata, Hadoop (Spark or MapReduce). You can implement a distributed processing architecture: RxLocalSeq, RxSpark, RxInSqlServer. |
 
 > [!Tip]
-> If your objective is simply to use two or more R Server instances interchangeably, or to shift execution from R Client to a more powerful R Server, consider [remote execution](../operationalize/remote-execution.md) rather than switching the compute context. Remote execution gives you the ability to run R sessions on any standalone R Server installation on Windows or Linux. 
+> If your objective is simply to use two or more R Server instances interchangeably, or to shift execution from R Client to a more powerful R Server, consider [remote execution](how-to-execute-code-remotely.md) rather than switching the compute context. Remote execution gives you the ability to run R sessions on any standalone R Server installation on Windows or Linux. 
 
 ## Prerequisites
 

@@ -263,4 +263,4 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
-+ [Execute on a remote Microsoft R Server](remote-execution.md)
++ [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)

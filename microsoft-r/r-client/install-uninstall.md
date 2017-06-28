@@ -96,7 +96,7 @@ You can learn more with these guides:
 
 + [Quickstart: Running R code in Microsoft R](../quickstart-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](../data-analysis-in-microsoft-r.md)
++ [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
 
 + [RevoScaleR R package reference](../microsoft-r-tutorials.md)
 

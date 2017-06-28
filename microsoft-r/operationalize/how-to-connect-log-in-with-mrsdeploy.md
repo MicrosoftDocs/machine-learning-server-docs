@@ -169,10 +169,10 @@ Take special note of the arguments `session` and `commandline` as these influenc
 |`session`|If TRUE, create a remote session in R Server. <br>If omitted, it will still create a remote session.<br>If FALSE, do not create any remote R sessions.|
 |`commandline`|If TRUE, creates a REMOTE command line in the R console. REMOTE command line is used to interact with the remote R session. This means that after the authenticated connection is made, the user will be executing R commands remotely until they switch back to the local command line or logout. Parameter is only valid if session parameter is TRUE.|
 
-For more details on remote execution, see [this article](remote-execution.md).
+For more details on remote execution, see [this article](../r/how-to-execute-code-remotely.md).
 
 >[!WARNING]
->In the case where you are working with a [remote R session](remote-execution.md#publish-remote-session), there are several approaches to session management when publishing.  
+>In the case where you are working with a [remote R session](../r/how-to-execute-code-remotely.md#publish-remote-session), there are several approaches to session management when publishing.  
 
 ### Access tokens
 
@@ -348,5 +348,5 @@ To terminate the remote session from the local R session, type 'remoteLogout()'.
 + [Data scientist get started guide](concept-operationalize-deploy-consume.md)
 + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
-+ [Execute on a remote Microsoft R Server](remote-execution.md)
++ [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

@@ -110,7 +110,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 [Introduction to Microsoft R](../../microsoft-r-getting-started.md)
 
-[Diving into data analysis in Microsoft R](../../data-analysis-in-microsoft-r.md)
+[Diving into data analysis in Microsoft R](../../r/how-to-introduction.md)
 
 [Cheat Sheet: How to choose a MicrosoftML algorithm](../../r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 

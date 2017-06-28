@@ -203,7 +203,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    When publishing, you must specify a name, a version, R code, inputs, and outputs needed for application integration among other parameters,. 
 
    >[!NOTE]
-   >To publish a web service while in a remote R session, carefully [review these guidelines](remote-execution.md#publish-remote-session). 
+   >To publish a web service while in a remote R session, carefully [review these guidelines](../r/how-to-execute-code-remotely.md#publish-remote-session). 
 
    ```R
    api <- publishService(
@@ -237,7 +237,7 @@ print(result$output("answer")) # 0.6418125
 ``` 
 
 The results should match the results obtained when the model was run locally earlier.
-As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](remote-execution.md#diff) 
+As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](../r/how-to-execute-code-remotely.md#diff) 
 
 >[!WARNING]
 >If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](configure-run-diagnostics.md#logs). 
@@ -269,7 +269,7 @@ After it has been deployed, the web service can be:
 
 ## How to execute R code remotely
 
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
+You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](../r/how-to-execute-code-remotely.md).
 
 Requirements for remote execution include:
 
@@ -288,7 +288,7 @@ This section provides a quick summary of useful links for data scientists operat
  + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
  + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)    
  + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)    
- + [Execute on a remote Microsoft R Server](remote-execution.md)    
+ + [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)    
 
 **Other Getting Started Guides**
  + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    

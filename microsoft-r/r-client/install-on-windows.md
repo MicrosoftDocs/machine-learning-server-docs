@@ -32,7 +32,7 @@ R Client allows you to work with production data locally using the full set of S
 
 To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)
   
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../operationalize/remote-execution.md) from the `mrsdeploy` package. 
+You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the `mrsdeploy` package. 
 
 
 ## System Requirements
@@ -156,7 +156,7 @@ You can learn more with these guides:
 
 + [Quickstart: Running R code in Microsoft R](../quickstart-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](../data-analysis-in-microsoft-r.md)
++ [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
 
 + [RevoScaleR R package reference](../microsoft-r-tutorials.md)
 
@@ -164,4 +164,4 @@ You can learn more with these guides:
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ [Execute code on remote R Server](../operationalize/remote-execution.md)
++ [Execute code on remote R Server](../r/how-to-execute-code-remotely.md)

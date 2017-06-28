@@ -58,7 +58,7 @@ For a list of deprecated or discontinued functions within an existing package, s
 
 ## See also
 
-[Diving into data analysis in Microsoft R](../data-analysis-in-microsoft-r.md)
+[Diving into data analysis in Microsoft R](../r/how-to-introduction.md)
 
 [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)
 

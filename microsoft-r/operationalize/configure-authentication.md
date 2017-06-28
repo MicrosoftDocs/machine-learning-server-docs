@@ -107,7 +107,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |EmailAttributeName|(Version 9.1) The attribute name that stores the email address for each user.|
 
    >[!IMPORTANT]
-   >The entities created by the users, specifically web services and [session snapshots](remote-execution.md#snapshot), are tied to their usernames. For this reason, you must be careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them.
+   >The entities created by the users, specifically web services and [session snapshots](../r/how-to-execute-code-remotely.md#snapshot), are tied to their usernames. For this reason, you must be careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them.
    >
    >For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
    >

@@ -177,6 +177,6 @@ This should give the result:
 
 [Introduction to Microsoft R](microsoft-r-getting-started.md)
 
-[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+[Diving into data analysis in Microsoft R](r/how-to-introduction.md)
 
 [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)

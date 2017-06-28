@@ -61,4 +61,4 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 
  [What's new in R Server](rserver-whats-new.md) 
  [Tips on computing with big data](microsoft-r-getting-started-tips.md) 
- [How to guidance](data-analysis-in-microsoft-r.md)
+ [How to guidance](r/how-to-introduction.md)

@@ -33,7 +33,7 @@ Now that you've learned about [R Server's operationalization feature](../deployr
 
 Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the `mrsdeploy` package that ships with Microsoft R Client and R Server, the data scientist can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 
-An R Server web service is an R code execution on the [operationalization compute node](../install/operationalize-r-server-one-box-config.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  The `mrsdeploy` package provides functions for publishing and managing a web service that is backed by the R code block or script you provided. The package also provides functions for establishing a [remote execution](remote-execution.md) session in a console application.  [Learn more about this package](../r-reference/mrsdeploy/mrsdeploy-package.md). Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
+An R Server web service is an R code execution on the [operationalization compute node](../install/operationalize-r-server-one-box-config.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  The `mrsdeploy` package provides functions for publishing and managing a web service that is backed by the R code block or script you provided. The package also provides functions for establishing a [remote execution](../r/how-to-execute-code-remotely.md) session in a console application.  [Learn more about this package](../r-reference/mrsdeploy/mrsdeploy-package.md). Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
 
 After it has been deployed, the web service can be: 
 + [Consumed directly in R by another data scientist](how-to-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
@@ -74,7 +74,7 @@ Learn more about sharing the Swagger-based JSON file with others in the article 
 
 ## Execute R code remotely
 
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](remote-execution.md).
+You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](../r/how-to-execute-code-remotely.md).
 
 Requirements for remote execution include:
 
@@ -94,7 +94,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
 + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
-+ [Execute on a remote Microsoft R Server](remote-execution.md)
++ [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)
 + [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 
 **Other Getting Started Guides**

@@ -115,7 +115,7 @@ After you've authenticated, use the `publishService` function in the `mrsdeploy`
 |----|----|:----:|
 |`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/publishservice.md)
 
-You can publish web services to a local R Server from your command line. If you [create a remote session](remote-execution.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command line.  
+You can publish web services to a local R Server from your command line. If you [create a remote session](../r/how-to-execute-code-remotely.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command line.  
 
 
 Example of standard web service:
@@ -692,4 +692,4 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 + [How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
-+ [Execute on a remote Microsoft R Server](remote-execution.md)
++ [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)

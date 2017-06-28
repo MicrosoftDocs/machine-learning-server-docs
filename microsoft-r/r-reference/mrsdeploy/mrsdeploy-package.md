@@ -76,9 +76,9 @@ Learn more about these functions and their arguments in the article "[Connecting
 
 ## Remote execution functions
 
-The following functions are used to initialize and interact with a session on a [remote R Server](../../operationalize/remote-execution.md).  Remote sessions are created when you authenticate and closed when you log out.
+The following functions are used to initialize and interact with a session on a [remote R Server](../../r/how-to-execute-code-remotely.md).  Remote sessions are created when you authenticate and closed when you log out.
 
-Learn more about executing remotely from your local machine in this "[Remote Execution](../../operationalize/remote-execution.md)" article.
+Learn more about executing remotely from your local machine in this "[Remote Execution](../../r/how-to-execute-code-remotely.md)" article.
 
 #### Execution functions
 
@@ -144,7 +144,7 @@ The following functions are used to bundle R code or script as a web service. Th
 
 After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see these links:
 
-+ [Remote Execution](../../operationalize/remote-execution.md)
++ [Remote Execution](../../r/how-to-execute-code-remotely.md)
 
 + [How to publish and manage web services in R](../../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 

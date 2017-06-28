@@ -34,13 +34,13 @@ Remote execution is the ability to issue R commands from either R Server or R Cl
 Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
-+ [Log in to and out of an R Server remotely](how-to-connect-log-in-with-mrsdeploy.md)
++ [Log in to and out of an R Server remotely](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 + [Generate diff reports of the local and remote environments](#diff) and reconcile any differences
 + [Execute R scripts and code remotely](#run)
 + [Work with R objects/files remotely](#objects)
 + [Create and manage snapshots of the remote environment for reuse](#snapshot)
 
-![Remote Execution](../media/o16n/remote-execution.png) 
+![Remote Execution](./media/how-to-execute-code-remotely/remote-execution.png) 
 
 ## Supported configurations and mrsdeploy usage
 
@@ -52,17 +52,17 @@ Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-pa
 
 To create a remote session, you must first authenticate with R Server using one of the `mrsdeploy` login functions:  remoteLogin() and remoteLoginAAD(). With these functions, you can authenticate, set the arguments to create a remote R session on the R Server (`session = TRUE`) and even place yourself in the remote command line upon login `commandline = TRUE`. 
 
-Read the article ["Connecting to R Server with mrsdeploy"](how-to-connect-log-in-with-mrsdeploy.md) for more on authentication with `mrsdeploy` and syntax. 
+Read the article ["Connecting to R Server with mrsdeploy"](../operationalize/how-to-connect-log-in-with-mrsdeploy.md) for more on authentication with `mrsdeploy` and syntax. 
 
 <a name="switch"></a>
 
 ## How to switch between sessions or logout
 
-After you [log in to the remote R server](how-to-connect-log-in-with-mrsdeploy.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.x instance on another machine. 
+After you [log in to the remote R server](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)  with the argument `session = TRUE`, a remote R session is created. You can switch between the remote R session and the local R session directly from the command line.  The remote command line allows you to directly interact with an R Server 9.x instance on another machine. 
 
 When the `REMOTE>` command line is displayed in the R console, any R commands entered are executed on the remote R session. 
 
-![Switch](../media/o16n/mrsdeploy-connect-switch-context.png)
+![Switch](./media/how-to-execute-code-remotely/mrsdeploy-connect-switch-context.png)
 
 Switching between the local command line and the remote command line is done using these functions: pause() and resume(). To switch back to the local R session, type 'pause()'. If you have switched to the local R session, you can go back to the remote R session by typing 'resume()'.
 
@@ -282,7 +282,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 ## Publishing web services in a remote session
 
-After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md#publishService)  guide. 
+After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#publishservice)  guide. 
 
 To publish a web service after you create a remote session (argument `session = TRUE` with remoteLogin() or remoteLoginAAD()), you have two approaches:
 
@@ -338,6 +338,6 @@ REMOTE>api <- publishService(
 ## See also
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
-+ [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
++ [Connecting to R Server from mrsdeploy](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 + [Get started guide for Data scientists](concept-operationalize-deploy-consume.md)
 + [Working with web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)

@@ -166,7 +166,7 @@ This remote execution and snapshotting approach provides an excellent way to:
 
 The packages you install using this method do not 'contaminate' the production environment for other users since they are only available in the context of the given R session. Those packages remain installed for the lifecycle of the R session. You can prolong this lifecycle by saving the session workspace and working directory into a **snapshot**. Then you can recall the snapshot using its ID later whenever you want access to the workspace, the installed R packages, and the files in the working directory as they were. 
 
-[Learn more about snapshots and remote execution...](remote-execution.md)
+[Learn more about snapshots and remote execution...](../r/how-to-execute-code-remotely.md)
 
 >[!Important]
 >For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that keep only those workspace objects you need and purge the rest. 
@@ -223,7 +223,7 @@ The packages you install using this method do not 'contaminate' the production e
       > remoteScript("my-script.R")
       ```
 
-1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of an R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](remote-execution.md)
+1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of an R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](../r/how-to-execute-code-remotely.md)
 
    ```
    REMOTE>pause()
