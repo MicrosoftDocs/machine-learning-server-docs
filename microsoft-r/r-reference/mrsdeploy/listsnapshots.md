@@ -55,13 +55,13 @@ A character vector containing the snapshot ids.
  
  ##See Also
  
-[createSnapshot](../../r-reference/mrsdeploy/createsnapshot.md)
+[createSnapshot](createsnapshot.md)
 
-[deleteSnapshot](../../r-reference/mrsdeploy/deletesnapshot.md)
+[deleteSnapshot](deletesnapshot.md)
 
-[loadSnapshot](loadSnapshot.md)
+[loadSnapshot](../../mrsdeploy/packagehelp/loadsnapshot.md)
 
-[downloadSnapshot](../../r-reference/mrsdeploy/downloadsnapshot.md)
+[downloadSnapshot](downloadsnapshot.md)
    
  ##Examples
 

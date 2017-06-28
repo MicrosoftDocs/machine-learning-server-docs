@@ -274,7 +274,7 @@
 ###[is.encodings](r-reference/mrsdeploy/is-encodings.md) 
 ###[listRemoteFiles](r-reference/mrsdeploy/listremotefiles.md) 
 ###[listServices](r-reference/mrsdeploy/listservices.md) 
-###[listSnapshots](mrsdeploy/packagehelp/listSnapshots.md) 
+###[listSnapshots](r-reference/mrsdeploy/listsnapshots.md) 
 ###[loadSnapshot](mrsdeploy/packagehelp/loadSnapshot.md) 
 ###[print.serviceDetails](mrsdeploy/packagehelp/print.serviceDetails.md) 
 ###[print.snapshotDetails](mrsdeploy/packagehelp/print.snapshotDetails.md) 
