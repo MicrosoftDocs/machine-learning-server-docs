@@ -213,7 +213,7 @@
 ### [Parallel jobs](scaler-distributed-computing-parallel-jobs.md)
 ### [Parallel loops using foreach](foreach.md)
 ### [Parallel execution using doRSR](scaler-distributed-computing-parallel-foreach.md)
-### [Parallel algorithms with PemaR](pemar-getting-started.md)
+### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
 
 
 # [Microsoft R Client](r-client/what-is-microsoft-r-client.md)

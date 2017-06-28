@@ -48,7 +48,7 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 
 ## Custom code
 
-+ [Get Started with PemaR](pemar-getting-started.md)
++ [Get Started with PemaR](r/how-to-developer-pemar.md)
 
 ## Find sample data
 
