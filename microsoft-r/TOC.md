@@ -152,7 +152,7 @@
 #### [API access token management](operationalize/security-access-tokens.md)
 ### [Archive] DeployR 8.x docs
 #### [Install DeployR](deployr-installation.md)
-##### [Install DeployR for R Server for Windows](deployr-install-on-windows.md)
+##### [Install DeployR for R Server for Windows](deployr/deployr-install-on-windows.md)
 ##### [Install DeployR for Microsoft R Server 8.0.5 on Linux](deployr/deployr-install-on-linux.md)
 ##### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 #### Getting Started with DeployR
