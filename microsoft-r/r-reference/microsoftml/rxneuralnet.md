@@ -87,7 +87,7 @@ Neural networks for regression modeling and for Binary and multi-class classific
   
   
  ### `optimizer`
- A list specifying either the `sgd` or `adaptive` optimization algorithm. This list can be created using [sgd](../../r-reference/microsoftml/optimizer.md) or [adaDeltaSgd](../../r-reference/microsoftml/optimizer.md). The default value is `sgd`. 
+ A list specifying either the `sgd` or `adaptive` optimization algorithm. This list can be created using [sgd](optimizer.md) or [adaDeltaSgd](optimizer.md). The default value is `sgd`. 
   
   
   
@@ -133,7 +133,7 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](../../r-reference/microsoftml/featurizetext.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
@@ -272,11 +272,11 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastTrees](../../r-reference/microsoftml/rxfasttrees.md), [rxFastForest](../../r-reference/microsoftml/rxfastforest.md),
-[rxFastLinear](../../r-reference/microsoftml/rxfastlinear.md), [rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md),
-[rxOneClassSvm](../../r-reference/microsoftml/oneclasssvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),
-[categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](../../r-reference/microsoftml/categoricalhash.md),
-[rxPredict.mlModel](rxPredict.md).
+[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md),
+[rxFastLinear](rxfastlinear.md), [rxLogisticRegression](logisticregression.md),
+[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[categorical](categorical.md), [categoricalHash](categoricalhash.md),
+[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
    
  ##Examples
 
