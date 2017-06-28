@@ -40,7 +40,7 @@ The DeployR security model is sufficiently flexible that it can work with multip
 The following security topics detail how to work with these configuration properties to achieve your preferred security implementation.
 + [Authorization and Authentication](../deployr/deployr-security-authentication.md)
 + [HTTPS and SSL Support](../deployr/deployr-security-https.md)
-+ [Server Access Policies](deployr-security-server-access.md)
++ [Server Access Policies](../deployr/deployr-security-server-access.md)
 + [Project and Repository File Access Controls](../deployr/deployr-security-project-access.md)
 + [Password Policies](../deployr/deployr-security-passwords.md)
 + [Account Locking Policies](../deployr/deployr-security-account-locking.md)

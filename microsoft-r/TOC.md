@@ -186,7 +186,7 @@
 ##### [Introduction](deployr-admin-security/deployr-security.md)
 ##### [Authentication & Authorization](deployr/deployr-security-authentication.md)
 ##### [HTTPS & SSL/TLS Support](deployr/deployr-security-https.md)
-##### [Server Access Policies](deployr-admin-security/deployr-security-server-access.md)
+##### [Server Access Policies](deployr/deployr-security-server-access.md)
 ##### [Project and Repository File Access Controls](deployr/deployr-security-project-access.md)
 ##### [Password Policies](deployr/deployr-security-passwords.md)
 ##### [Account Locking Policies](deployr/deployr-security-account-locking.md)
