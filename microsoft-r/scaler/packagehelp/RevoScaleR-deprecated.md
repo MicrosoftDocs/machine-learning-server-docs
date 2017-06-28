@@ -477,7 +477,7 @@ is returned; otherwise `FALSE`is returned.
  
 [rxImport](rxImport.md),
 [rxDataStep](rxDataStep.md),
-["RevoScaleR-defunct"](RevoScaleR-defunct.md).
+["RevoScaleR-defunct"](../../r-reference/revoscaler/revoscaler-defunct.md).
    
  
  

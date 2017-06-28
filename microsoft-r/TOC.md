@@ -320,7 +320,7 @@
 ### [Overview: ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
 ### [Overview: ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
 ### [Functions by category](r-reference/revoscaler/revoanalytics-package.md) 
-### [RevoScaleR-defunct](scaler/packagehelp/RevoScaleR-defunct.md) 
+### [RevoScaleR-defunct](r-reference/revoscaler/revoscaler-defunct.md) 
 ### [RevoScaleR-deprecated](scaler/packagehelp/RevoScaleR-deprecated.md)
 ### Data sets
 #### [AirlineData87to08](r-reference/revoscaler/airlinedata87to08.md) 
