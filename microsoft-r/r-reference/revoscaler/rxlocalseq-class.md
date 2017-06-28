@@ -39,8 +39,8 @@ Class for the RevoScaleR Local Compute Context.
  ## Generators 
 
  
-The targeted generator [RxLocalSeq](RxLocalSeq.md) as well as the general generator
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).
+The targeted generator [RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md) as well as the general generator
+[RxComputeContext](rxcomputecontext.md).
  
  ## Extends 
 
@@ -64,14 +64,14 @@ Class RxComputeContext, directly.
  
  ##See Also
  
-[RxSpark](RxSpark.md),
-[RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
-[RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
-[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
-[RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md),
-[RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md),
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[rxSetComputeContext](rxSetComputeContext.md).
+[RxSpark](../../scaler/packagehelp/rxspark.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxInSqlServer](rxinsqlserver.md),
+[RxInTeradata](rxinteradata.md),
+[RxLocalParallel](rxlocalparallel.md),
+[RxForeachDoPar](rxforeachdopar.md),
+[RxComputeContext](rxcomputecontext.md),
+[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md).
    
  ##Examples
 

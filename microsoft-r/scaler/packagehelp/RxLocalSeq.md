@@ -90,7 +90,7 @@ object of class RxLocalSeq.
 [rxOptions](rxOptions.md),
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md),
-[RxLocalSeq-class](RxLocalSeq-class.md).
+[RxLocalSeq-class](../../r-reference/revoscaler/rxlocalseq-class.md).
    
  
  ##Examples
