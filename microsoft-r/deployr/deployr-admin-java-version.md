@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Updating DeployR Configuration after Java Version Update
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 This topic describes how to update the configuration of DeployR (Apache Tomcat, etc. ) after a Java JRE/JDK.
 
@@ -37,7 +37,7 @@ This topic describes how to update the configuration of DeployR (Apache Tomcat, 
 
 1. Open a command prompt/terminal window with administrator/root/sudo privileges:
 
-1. [Stop DeployR](deployr-common-administration-tasks.md#startstop).
+1. [Stop DeployR](../deployr-common-administration-tasks.md#startstop).
 
 1. Go to the Apache Tomcat directory. For example, on Windows the default location is `C:\Program Files\Microsoft\DeployR-8.0.5\Apache_Tomcat\bin`.
 
@@ -50,6 +50,6 @@ This topic describes how to update the configuration of DeployR (Apache Tomcat, 
  
 1. Click **OK** to save these settings.
 
-1. [Restart DeployR](deployr-common-administration-tasks.md#startstop).
+1. [Restart DeployR](../deployr-common-administration-tasks.md#startstop).
  
 
