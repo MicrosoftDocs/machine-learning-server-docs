@@ -79,7 +79,7 @@ ms.custom: ""
  
  ##See Also
  
-[Query](Query.md), [executeMD](../../r-reference/olapr/executemd.md), [execute2D](../../r-reference/olapr/execute2d.md)`, `[explore](../../r-reference/olapr/explore.md)
+[Query](../../olapr/packagehelp/query.md), [executeMD](executemd.md), [execute2D](execute2d.md)`, `[explore](explore.md)
    
  
  ##Examples

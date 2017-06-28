@@ -301,7 +301,7 @@
 ###[Execute2D](r-reference/olapr/execute2d.md) 
 ###[ExecuteMD](r-reference/olapr/executemd.md) 
 ###[Explore](r-reference/olapr/explore.md) 
-###[OlapConnection](olapR/packagehelp/OlapConnection.md) 
+###[OlapConnection](r-reference/olapr/olapconnection.md) 
 ###[Query](olapR/packagehelp/Query.md)
 
 ## [RevoPemaR](pemar/pemar.md)
