@@ -72,7 +72,7 @@ A list of the current service options.
 Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
 [getService](../../r-reference/mrsdeploy/getservice.md), [listServices](../../r-reference/mrsdeploy/listservices.md),
 [print.serviceDetails](../../r-reference/mrsdeploy/print-servicedetails.md),
-[publishService](publishService.md),
+[publishService](../../r-reference/mrsdeploy/publishservice.md),
 [summary.serviceDetails](summary.serviceDetails.md),
 [updateService](updateService.md)
    

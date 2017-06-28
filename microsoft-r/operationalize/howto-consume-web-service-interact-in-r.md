@@ -137,7 +137,7 @@ You can use the following supported public functions to interact with the API cl
 | `print`       |	Print method that lists all members of the object      |
 | `capabilities` | Report on the service features such as I/O schema, `name`, `version`	   |
 | `consume`     |	Consume the service based on I/O schema                |
-| consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the [`publishService` function](../mrsdeploy/packagehelp/publishService.md)). |
+| consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the [`publishService` function](../r-reference/mrsdeploy/publishservice.md)). |
 | `swagger`     |	Displays the service's `swagger` specification         |
 | `batch` |Define the data records to be batched. There are additional publish functions used to [consume a service asynchronously via batch execution](data-scientist-batch-mode.md#public-fx-batch).|
 

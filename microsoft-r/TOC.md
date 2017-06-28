@@ -278,7 +278,7 @@
 ###[loadSnapshot](r-reference/mrsdeploy/loadsnapshot.md) 
 ###[print.serviceDetails](r-reference/mrsdeploy/print-servicedetails.md) 
 ###[print.snapshotDetails](r-reference/mrsdeploy/print-snapshotdetails.md) 
-###[publishService](mrsdeploy/packagehelp/publishService.md) 
+###[publishService](r-reference/mrsdeploy/publishservice.md) 
 ###[putLocalFile](mrsdeploy/packagehelp/putLocalFile.md) 
 ###[putLocalObject](mrsdeploy/packagehelp/putLocalObject.md) 
 ###[putLocalWorkspace](mrsdeploy/packagehelp/putLocalWorkspace.md) 

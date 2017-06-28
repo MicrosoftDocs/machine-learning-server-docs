@@ -109,11 +109,11 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 ### Publish service
 
-After you've authenticated, use the `publishService` function in the `mrsdeploy` package to publish a web service.  See the [package reference for publishService()](../mrsdeploy/packagehelp/publishService.md) for the full description of all arguments.  
+After you've authenticated, use the `publishService` function in the `mrsdeploy` package to publish a web service.  See the [package reference for publishService()](../r-reference/mrsdeploy/publishservice.md) for the full description of all arguments.  
 
 |Function|Response|R Help|
 |----|----|:----:|
-|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../mrsdeploy/packagehelp/publishService.md)
+|`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/publishservice.md)
 
 You can publish web services to a local R Server from your command line. If you [create a remote session](../operationalize/remote-execution.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command line.  
 
