@@ -33,7 +33,7 @@ The external configuration file, `appsettings.json`, defines a number of policie
 
 + On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, compute node declarations, and more.
 
-+ On the compute node, this configuration file governs SSL, logging, [R shell pool size](admin-evaluate-capacity.md#r-shell-pool), R execution ports, and more.
++ On the compute node, this configuration file governs SSL, logging, [R shell pool size](configure-evaluate-capacity.md#r-shell-pool), R execution ports, and more.
 
 The location of this file depends on the R Server version and operating system you have. 
 

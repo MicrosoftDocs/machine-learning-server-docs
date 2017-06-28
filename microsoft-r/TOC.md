@@ -123,7 +123,7 @@
 #### [Troubleshoot](operationalize/admin-diagnostics.md)
 #### [Administration utility](operationalize/admin-utility.md)
 #### [Find advanced configuration file](operationalize/admin-configuration-file.md)
-#### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
+#### [Evaluate capacity](operationalize/configure-evaluate-capacity.md)
 #### [Configure authentication](operationalize/configure-authentication.md)
 #### [Configure connection security (SSL/TLS)](operationalize/security-https.md)
 #### [Manage permissions with roles](operationalize/security-roles.md)

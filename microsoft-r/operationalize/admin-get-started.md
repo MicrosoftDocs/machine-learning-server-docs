@@ -49,7 +49,7 @@ All configurations have at least a single web node and single compute node:
 
 + A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node accesses data in the database, and send jobs to the compute node.
 
-+ A **compute node** is used to execute R code as a session or service. Each compute node has its [own pool of R shells](admin-evaluate-capacity.md#r-shell-pool).
++ A **compute node** is used to execute R code as a session or service. Each compute node has its [own pool of R shells](configure-evaluate-capacity.md#r-shell-pool).
 
 There are two types of configuration:
 1. **One-box**: the simplest configuration is a single web node and compute node on a single machine as described in this [One-box configuration](../install/operationalize-r-server-one-box-config.md) article.
@@ -122,7 +122,7 @@ In the context of a discussion on runtime policies, the topics of scalability an
 
 The answer to these questions will ultimately depend on the configuration and size of the configuration and node resources allocated to your deployment.
 
-To evaluate and simulate the capacity of a configuration, use the [Evaluate Capacity tool](admin-evaluate-capacity.md). You can also [adjust the pool size](admin-evaluate-capacity.md#pool) of available R shells for concurrent operations.
+To evaluate and simulate the capacity of a configuration, use the [Evaluate Capacity tool](configure-evaluate-capacity.md). You can also [adjust the pool size](configure-evaluate-capacity.md#pool) of available R shells for concurrent operations.
 <!--For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](../deployr/deployr-admin-scale-and-throughput.md).-->
 
 ## Troubleshooting
@@ -144,7 +144,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Configuration](../install/operationalize-r-server-one-box-config.md)
 -   [R Package Management](package-management.md)
 -   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
--   [Capacity Evaluatation](admin-evaluate-capacity.md)
+-   [Capacity Evaluatation](configure-evaluate-capacity.md)
 -   [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 
 **Other Getting Started Guides**

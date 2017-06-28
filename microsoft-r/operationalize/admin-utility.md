@@ -38,7 +38,7 @@ Use the utility to:
 + [Update the service ports](#ports)
 + [Run diagnostic tests](admin-diagnostics.md)
 + [Encrypt credentials](#encrypt)
-+ [Evaluate the configuration's capacity](admin-evaluate-capacity.md)
++ [Evaluate the configuration's capacity](configure-evaluate-capacity.md)
 + [Learn about command line switches to this utility script](#switch)
 
 <br>
@@ -188,7 +188,7 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 + **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test increases the number of parallel requests by the specified increment until the maximum number of threads is reached. 
 
-[Learn how to configure the test parameters, run the test, and interpret the results.](admin-evaluate-capacity.md)
+[Learn how to configure the test parameters, run the test, and interpret the results.](configure-evaluate-capacity.md)
 
 <br><a name="switch"></a>
 

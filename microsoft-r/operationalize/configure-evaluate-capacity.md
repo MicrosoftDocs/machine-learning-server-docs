@@ -47,7 +47,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
 
-   ![Test Parameters](../media/o16n/admin-capacity-parameters.png)
+   ![Test Parameters](./media/configure-evaluate-capacity/admin-capacity-parameters.png)
 
 1. To choose a different web service:
 
@@ -82,7 +82,7 @@ You can define the parameters for the traffic simulation for a given configurati
 1. From the sub menu, choose the option to **Run capacity simulation** to start the simulation.
 1. Review the results onscreen.
 
-   ![Onscreen results](../media/o16n/admin-capacity-results-cl.png)
+   ![Onscreen results](./media/configure-evaluate-capacity/admin-capacity-results-cl.png)
 1. Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).
 
 <br>
@@ -95,7 +95,7 @@ It is important to understand the results of these simulations to determine whet
 
 After the tool is run, the results are printed to the console. 
 
-![Onscreen results](../media/o16n/admin-capacity-results-cl.png)
+![Onscreen results](./media/configure-evaluate-capacity/admin-capacity-results-cl.png)
 
 ### Chart Report
 
@@ -114,7 +114,7 @@ The test results are divided into request processing stages to enable you to see
 <br>
 You can also explore the results visually in a break-down graph using the URL that is returned to the console. 
 
-![URL results](../media/o16n/admin-capacity-results-url.png)
+![URL results](./media/configure-evaluate-capacity/admin-capacity-results-url.png)
 
 <a name="pool"></a>
 
