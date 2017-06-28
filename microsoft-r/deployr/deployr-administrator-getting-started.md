@@ -50,7 +50,7 @@ User access to the DeployR server and the services offered on its [API](deployr-
 
 The creation of user accounts establishes a trust relationship between your user community and the DeployR server. Your users can then supply simple `username` and `password` credentials in order to verify their identity to the server. You can grant additional [permissions](deployr-admin-console-permissions-with-roles.md) on a user-by-user basis to expose further functionality and data on the server.
 
-However, basic user authentication and authorization are only one small part of the full set of [DeployR security](deployr-security-authentication.md) features, which includes full HTTPS/SSL encryption support, IP filters, and `password` format and auto-locking policies. DeployR Enterprise also offers seamless integration with popular enterprise security solutions.
+However, basic user authentication and authorization are only one small part of the full set of [DeployR security](../operationalize/configure-authentication.md) features, which includes full HTTPS/SSL encryption support, IP filters, and `password` format and auto-locking policies. DeployR Enterprise also offers seamless integration with popular enterprise security solutions.
 
 The full set of DeployR security features available to you as a system administrator are detailed in this [Security guide](deployr-security.md).
 

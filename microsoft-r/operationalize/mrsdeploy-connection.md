@@ -47,13 +47,13 @@ In R Server, every API call between the Web server and client must be authentica
 By default, all `mrsdeploy` operations are available to authenticated users. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](security-roles.md) to further control the permissions around web services. 
 
 `mrsdeploy` provides two functions for authentication against R Server: remoteLogin() and remoteLoginAAD(). These functions support not just authentication, but creation of a remote R session on the R Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the R Server instance, and open a remote command prompt.
- The function you use depends on the [type of authentication and deployment in your organization](../operationalize/security-authentication.md). 
+ The function you use depends on the [type of authentication and deployment in your organization](configure-authentication.md). 
 
 ### On premises authentication
 
 Use the remoteLogin function in these scenarios:
 + you are authenticating using Active Directory server on your network
-+ you are using the [default administrator account](../operationalize/security-authentication.md#local) for an on-premises instance of R Server
++ you are using the [default administrator account](configure-authentication.md#local) for an on-premises instance of R Server
 
 This function calls `/user/login` API, which requires a username and password. For example:
 
@@ -96,11 +96,11 @@ Or this example where we authenticate with the local 'admin' account and passwor
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE. **If omitted, it is the same as `= TRUE`.**|
 |prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.|
-|username|If NULL, user is prompted to enter your AD or [local R Server](../operationalize/security-authentication.md#local) username|
+|username|If NULL, user is prompted to enter your AD or [local R Server](configure-authentication.md#local) username|
 |password|If NULL, user is prompted to enter password|
 
 
-If you do not specify a username and password as arguments to the login function, you'll be prompted for your AD or [local R Server](../operationalize/security-authentication.md#local) username and password. 
+If you do not specify a username and password as arguments to the login function, you'll be prompted for your AD or [local R Server](configure-authentication.md#local) username and password. 
 
 
 ### Cloud authentication
@@ -136,7 +136,7 @@ For example, here is an AAD authentication that will not create a remote R sessi
 >[!NOTE]
 >Unless you specify otherwise using the arguments below, this function will not only log you in, but also create a remote R session on the R Server instance and put you on the remote command line. If you don't want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
 
-If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../operationalize/security-authentication.md#azure-active-directory). For example:
+If you do not know your `tenantid`, `clientid`, or other details, please contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](configure-authentication.md#azure-active-directory). For example:
 
 <a name="aad-arguments"></a>
 

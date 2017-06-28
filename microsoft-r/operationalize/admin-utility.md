@@ -77,7 +77,7 @@ Launch the administration utility script with `root` or `sudo` privileges with t
 
 ## Set/Update Local Administrator Password
 
-When no other form of [authentication](security-authentication.md) is used, you must define a password for the local administrator account called 'admin'.  If you do enable another form of authentication, the local administrator account is automatically disabled.
+When no other form of [authentication](configure-authentication.md) is used, you must define a password for the local administrator account called 'admin'.  If you do enable another form of authentication, the local administrator account is automatically disabled.
 
 This local 'admin' password must be 8-16 characters long and contain at least 1 uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
 
@@ -164,7 +164,7 @@ The encryption function available in the administration utility relies on the RS
 
 1. [Open the `appsettings.json` configuration file](admin-configuration-file.md).
 
-1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](security-authentication.md#encrypt) strings. 
+1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](configure-authentication.md#encrypt) strings. 
 
 >[!NOTE]
 >You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](#switch).

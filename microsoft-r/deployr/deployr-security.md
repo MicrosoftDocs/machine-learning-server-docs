@@ -35,10 +35,10 @@ While basic authentication provides a simple and reliable authentication solutio
 >**Get More DeployR Power:** Basic Authentication is available for all DeployR configurations and editions.  
 >Get DeployR Enterprise today to take advantage of great DeployR features like enterprise security and [a scalable grid framework](deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
-The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](deployr-security-authentication.md). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
+The DeployR security model is sufficiently flexible that it can work with multiple enterprise security solutions at the same time. As such, DeployR Enterprise ships with a number of security providers that together represent a provider-chain upon which user credentials are evaluated. For more information, see [Authentication and Authorization](../operationalize/configure-authentication.md). Every aspect of the DeployR security model is controlled by the configuration properties found in the DeployR external configuration file. This file can be found at `$DEPLOYR_HOME/deployr/deployr.groovy`.
 
 The following security topics detail how to work with these configuration properties to achieve your preferred security implementation.
-+ [Authorization and Authentication](deployr-security-authentication.md)
++ [Authorization and Authentication](../operationalize/configure-authentication.md)
 + [HTTPS and SSL Support](deployr-security-https.md)
 + [Server Access Policies](deployr-security-server-access.md)
 + [Project and Repository File Access Controls](deployr-security-project-access.md)

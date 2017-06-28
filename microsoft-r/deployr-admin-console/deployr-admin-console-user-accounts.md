@@ -33,7 +33,7 @@ Each user has an account with [properties](deployr-admin-console-user-accounts.m
 When you click **Users** in the main menu, you can review the list of DeployR user accounts. The user list includes the username, display name, account status (enabled or disabled), and the date the account was last modified. If there are more than 20 accounts, click **Next** to proceed to the remaining accounts.
 
 >[!IMPORTANT]
->As an alternative, you can choose another form of [authentication for DeployR](../deployr/deployr-security-authentication.md), such as Active Directory, LDAP, or PAM.
+>As an alternative, you can choose another form of [authentication for DeployR](../operationalize/configure-authentication.md), such as Active Directory, LDAP, or PAM.
 
 _Figure: User List page_
 

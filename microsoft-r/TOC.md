@@ -124,7 +124,7 @@
 #### [Administration utility](operationalize/admin-utility.md)
 #### [Find advanced configuration file](operationalize/admin-configuration-file.md)
 #### [Evaluate capacity](operationalize/admin-evaluate-capacity.md)
-#### [Configure authentication](operationalize/security-authentication.md)
+#### [Configure authentication](operationalize/configure-authentication.md)
 #### [Configure connection security (SSL/TLS)](operationalize/security-https.md)
 #### [Manage permissions with roles](operationalize/security-roles.md)
 #### [Configure CORS](operationalize/security-cors.md)

@@ -208,7 +208,7 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using operat
 
 ### Unauthorized / HTTP status 401
 
-If you've tried to set up R Server for LDAP/AD as described in the article "[Authentication Options for Operationalization](security-authentication.md)", and you've run into connection issues or the `401` error, then we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in `appsettings.json`. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+If you've tried to set up R Server for LDAP/AD as described in the article "[Authentication Options for Operationalization](configure-authentication.md)", and you've run into connection issues or the `401` error, then we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in `appsettings.json`. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 ### Configuration didn't restore after upgrade
 

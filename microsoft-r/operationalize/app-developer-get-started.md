@@ -79,7 +79,7 @@ Keep in mind that all APIs require authentication; therefore, all users must aut
 
 To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every single call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
 
-Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](security-authentication.md) your administrator configured for operationalization, and then include it in each header for each subsequent request:
+Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](configure-authentication.md) your administrator configured for operationalization, and then include it in each header for each subsequent request:
 
 + **Azure Active Directory (AAD)**
 

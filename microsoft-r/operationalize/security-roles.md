@@ -31,7 +31,7 @@ ms.custom: ""
 
 By default, authenticated R Server  users can publish, list, and get any web services. Additionally, users can also update and delete the web services they've published.
 
-You can use roles to further control who can publish, update and delete web services in R Server. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method has been configured for R Server. For more on configuring authentication for R Server, read the article, ["Authentication options"](security-authentication.md).
+You can use roles to further control who can publish, update and delete web services in R Server. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method has been configured for R Server. For more on configuring authentication for R Server, read the article, ["Authentication options"](configure-authentication.md).
 
 >[!IMPORTANT]
 >**This is not the same as RBAC in Azure Active Directory.** While the default roles described here-in bear the same names as the roles you can define in Azure, it is not possible to inherit the Azure roles. If you want role-based access control over web services, you must set up roles again.
@@ -42,7 +42,7 @@ To assign groups of users in your Active Directory to R Server roles for web ser
 
 + An instance of Microsoft R Server that is [configured to operationalize analytics](../install/operationalize-r-server-enterprise-config.md)
 
-+ Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](../operationalize/security-authentication.md)
++ Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](../operationalize/configure-authentication.md)
 
 + The names of the groups that contain the users to whom you want to give special permissions
 
@@ -101,7 +101,7 @@ If you only have the default local administrator account, 'admin', defined for R
 
 ## Declaring roles for AD/LDAP and Azure AD users
 
-If you configure R Server to [use Active Directory/LDAP or Azure Active Directory authentication](security-authentication.md), then you can configure it to assign roles using Active Directory groups as follows:
+If you configure R Server to [use Active Directory/LDAP or Azure Active Directory authentication](configure-authentication.md), then you can configure it to assign roles using Active Directory groups as follows:
 
 #### Step 1. Add the roles to R Server on each web node
 
@@ -123,7 +123,7 @@ On each R Server web node, edit the `appsettings.json` configuration file in ord
    
 <!--#### Step 2. Allow R Server to check groups in Azure Active Directory
 
-R Server must be given the ability to verify the groups you declare against those in AAD or and AD/LDAP.  For AAD, you have an extra step to make that possible. For AD/LDAP, the default settings when you [set up R Server for AD/LDAP](security-authentication.md#ldap) as sufficient.
+R Server must be given the ability to verify the groups you declare against those in AAD or and AD/LDAP.  For AAD, you have an extra step to make that possible. For AD/LDAP, the default settings when you [set up R Server for AD/LDAP](configure-authentication.md#ldap) as sufficient.
 
 1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and update the configuration to allow R Server to match a user with his or her groups and authenticate with AAD as follows:
 
@@ -133,7 +133,7 @@ R Server must be given the ability to verify the groups you declare against thos
 
 1. After open, click the **Applications** tab at the top.
 
-1. Open the web application you created when you [configured R Server for AAD authentication](security-authentication.md#aad).
+1. Open the web application you created when you [configured R Server for AAD authentication](configure-authentication.md#aad).
 
 1. With the application open, go to the bottom of the page and click the **Manage Manifest > Download Manifest**. A popup menu appears.
    ![Manifest](../media/o16n/security-auth-2.png)
@@ -156,7 +156,7 @@ R Server must be given the ability to verify the groups you declare against thos
 
 Return to [the `appsetting.json` file](admin-configuration-file.md) and do the following:
 
-+ **For Azure Active Directory:** In `appsettings.json`, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](security-authentication.md#aad).
++ **For Azure Active Directory:** In `appsettings.json`, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](configure-authentication.md#aad).
 
   >[!IMPORTANT]
   > For more security, we recommend you [encrypt the key](admin-utility.md#encrypt) before adding the information to `appsettings.json`.
@@ -164,12 +164,12 @@ Return to [the `appsetting.json` file](admin-configuration-file.md) and do the f
   >[!NOTE]
   > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD will provide an overage claim in the token it returns. This claim along with the key you provide here allows R Server to retrieve the group memberships for the user.
 
-+ **For Active Directory/LDAP:** In `appsettings.json`, find the `"LDAP"` section.  In order for R Server to verify that the groups you've declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP"` section. See the example below. This allows R Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring R Server user to authenticate with Active Directory/LDAP](security-authentication.md#ldap).
++ **For Active Directory/LDAP:** In `appsettings.json`, find the `"LDAP"` section.  In order for R Server to verify that the groups you've declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP"` section. See the example below. This allows R Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring R Server user to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
 
 
 #### Step 3. Apply the changes to R Server
 
-1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local 'admin' account](../operationalize/security-authentication.md#local) in the administration utility.
+1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local 'admin' account](../operationalize/configure-authentication.md#local) in the administration utility.
 
 1. Repeat these changes in every web node you've configured.  The configuration must be the same across all web nodes.
 
@@ -211,6 +211,6 @@ Authentication: {
 
 + [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
 
-+ [Authentication options for R Server when operationalizing analytics](security-authentication.md)
++ [Authentication options for R Server when operationalizing analytics](configure-authentication.md)
 
 + [Blog article: Role Based Access Control With MRS 9.1.0](https://blogs.msdn.microsoft.com/rserver/2017/04/10/role-based-access-control-with-mrs-9-1-0/)

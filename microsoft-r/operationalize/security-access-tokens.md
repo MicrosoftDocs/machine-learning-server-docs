@@ -54,7 +54,7 @@ Tokens can be generated in one of two ways:
 
 + If Azure Active Directory (AAD) is enabled, then [the token will come from AAD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios). 
 
-[Learn more about these authentication methods.](security-authentication.md)
+[Learn more about these authentication methods.](configure-authentication.md)
 
 #### Example: Token creation request 
 

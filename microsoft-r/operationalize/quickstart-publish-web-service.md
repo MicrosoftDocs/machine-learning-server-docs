@@ -274,7 +274,7 @@ You can use Microsoft R Client to run your R code locally and from R Client you 
 Requirements for remote execution include:
 
 + Configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
-+ Obtain [authenticated access](security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
++ Obtain [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
 
 ## More resources
 

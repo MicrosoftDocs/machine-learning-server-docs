@@ -81,7 +81,7 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 
 The following list highlights the major changes and improvements to DeployR 7.4.0.
 
--   New [R Session Process Controls](deployr-security-authentication.md) introduce fine-grain file system access controls for R sessions on Linux platforms.
+-   New [R Session Process Controls](../operationalize/configure-authentication.md) introduce fine-grain file system access controls for R sessions on Linux platforms.
 -   New [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployrUtils/releases) with initial support for running DeployR-enabled example applications.
 -   New and updated Web service API support.
 -   Updated [Java, JavaScript and .NET RBroker Framework](https://github.com/deployr?query=rbroker) with additional features, patches and updated change history.

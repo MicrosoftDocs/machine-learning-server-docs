@@ -44,7 +44,7 @@ For remote execution, participating nodes can be either of the following configu
 The requirements for remote execution include:
 
 + An R Integrated Development Environment (IDE) [configured to work with Microsoft R Client](../../r-client-get-started.md). 
-+ [Authenticated access](../../deployr-admin-security/security-authentication.md) to an instance of Microsoft R Server [configured to operationalize analytics](../../install/operationalize-r-server-one-box-config.md).
++ [Authenticated access](../../operationalize/configure-authentication.md) to an instance of Microsoft R Server [configured to operationalize analytics](../../install/operationalize-r-server-one-box-config.md).
 
 <a name="use-mrsdeploy"></a>
 

@@ -45,7 +45,7 @@ This configuration includes one or more web nodes, one or more compute nodes, an
 
 In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database.md) to share data and web services across web node services.   
 
-For added security, you can [configure SSL](../deployr/security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../deployr/security-authentication.md).
+For added security, you can [configure SSL](../deployr/security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).
 
 Another configuration, referred to as "one-box", consists of a single web node and a single compute node installed on the same machine. Learn more about this configuration, [here](operationalize-r-server-one-box-config.md). 
 
@@ -267,7 +267,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges:
 
     >[!NOTE]
-    >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local 'admin' account](../deployr/../deployr/security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command line switches for this script, [here](../operationalize/admin-utility.md#switch).
 
    1. From the main menu, choose the option to **Configure R Server for Operationalization**.
@@ -275,7 +275,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
    1. From the submenu, choose the option to **Configure a web node**.     
 
    1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
-        Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../deployr/security-authentication.md#local).
+        Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).
 
    1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](../operationalize/admin-diagnostics.md) on each web node.
 
@@ -296,7 +296,7 @@ In production environments, we strongly recommend the following approaches:
 
 1. [Configure SSL/TLS](../deployr/security-https.md) and install the necessary certificates.
 
-1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](../deployr/security-authentication.md).  
+1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).  
 
 1. For added security, restrict the list of IPs that can access the machine hosting the compute node.
 

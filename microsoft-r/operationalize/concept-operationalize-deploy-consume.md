@@ -60,7 +60,7 @@ We recommend that you follow [this publish quickstart](quickstart-publish-web-se
 ## Share services with others for consumption 
 
 >[!IMPORTANT]
-> Anyone who wishes to consume the service must have [authenticated access](../deployr/security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
+> Anyone who wishes to consume the service must have [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
 
 When the web service is published, a Swagger-based JSON file is generated automatically to define the service. You can now hand off this file to share the predictive web service with **other authenticated users of R Server**, such as:
 
@@ -79,7 +79,7 @@ You can use Microsoft R Client to run your R code locally and from R Client you 
 Requirements for remote execution include:
 
 + You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
-+ You must also have [authenticated access](../deployr/security-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
++ You must also have [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
 
 ## More resources
 

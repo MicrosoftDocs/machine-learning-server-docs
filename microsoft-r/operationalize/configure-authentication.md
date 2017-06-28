@@ -31,7 +31,7 @@ ms.custom: ""
 
 R Server's offers seamless integration with authentication solutions when configured to operationalize analytics.
 
-![Security](../media/o16n/security.png)
+![Security](./media/configure-authentication/security.png)
 
 To secure connections and communications, you have several options:
 
@@ -52,7 +52,7 @@ While this account might be sufficient when trying to operationalize with a [one
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 
-To log in to Microsoft R Server with this user for remote execution or web service functionalities, use remoteLogin() as described in the article "[Connecting to R Server with mrsdeploy](../operationalize/mrsdeploy-connection.md)."
+To log in to Microsoft R Server with this user for remote execution or web service functionalities, use remoteLogin() as described in the article "[Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)."
 
 
 >[!WARNING]
@@ -69,7 +69,7 @@ LDAP is the standard protocol for reading data from and writing data to Active D
 
 By default, the LDAP security provider is not configured. To enable LDAP authentication support, update the relevant properties in your configuration file. The values you assign to these properties must match the configuration of your LDAP Directory Information Tree (DIT).
 
-You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a domain controller. [Learn more about enabling SSL/TLS.](security-https.md) Reasons for enabling LDAP-S include:
+You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a domain controller. [Learn more about enabling SSL/TLS.](../deployr/security-https.md) Reasons for enabling LDAP-S include:
 
 + Organizational security policies typically require that all client/server communication is encrypted.
 + Applications use simple BIND to transport credentials and authenticate against a Domain Controller. As simple BIND exposes the users’ credentials in clear text, using SSL/TLS to encrypt the authentication session is recommended.
@@ -178,7 +178,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Repeat these steps on each machine hosting the web node.
 
-1. Share the connection details with any users who authenticate with R Server either to make [API calls](concept-api.md) directly or indirectly in R [using remoteLogin() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
+1. Share the connection details with any users who authenticate with R Server either to make [API calls](concept-api.md) directly or indirectly in R [using remoteLogin() function in the `mrsdeploy` package](mrsdeploy-connection.md).
 
 
 <br>
@@ -216,7 +216,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
    1. Click the checkmark to continue and add the application.
 
    1. After the application has been added, click the **Configure** tab. 
-      ![Configure web application](../media/o16n/webapp1.png)
+      ![Configure web application](./media/configure-authentication/webapp1.png)
 
    1. Copy the **Client ID** for the web app. Later, you configure your Native application and Microsoft R Server with this ID.
 
@@ -225,7 +225,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
       >[!IMPORTANT] 
       > Take note of this key as it is needed to configure [roles to give web services permissions to certain users](security-roles.md). See following example.
 
-      ![Configure web application](../media/o16n/webapp2.png)
+      ![Configure web application](./media/configure-authentication/webapp2.png)
 
    1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
 
@@ -264,7 +264,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
    1. Click the checkmark in the bottom right to give the native app permissions to the web application.
 
    1. Add **Delegated Permissions** to the web app.
-     ![Delegated Permissions](../media/o16n/aad-delegated-permissions.png)
+     ![Delegated Permissions](./media/configure-authentication/aad-delegated-permissions.png)
 
    1. Click **Save**. 
 
@@ -317,12 +317,12 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
 **Step 5: Share the required AAD connection details with your users**
 
-Share the connection details, such as the Authority and Audience, with any users who need to authenticate with R Server to make [API calls](concept-api.md) directly or indirectly in R [using remoteLoginAAD() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md#aad-arguments). 
+Share the connection details, such as the Authority and Audience, with any users who need to authenticate with R Server to make [API calls](concept-api.md) directly or indirectly in R [using remoteLoginAAD() function in the `mrsdeploy` package](mrsdeploy-connection.md#aad-arguments). 
 
 If you do not specify a username and password as arguments to the login call or R functions, you are prompted for your AAD username (<username>@<AAD-account-domain>) and password. 
 
 >[!IMPORTANT]
->Learn how to authenticate with AAD using the remoteLoginAAD() function in the mrsdeploy R package as described in this article: "[Connecting to R Server with mrsdeploy](../operationalize/mrsdeploy-connection.md)."
+>Learn how to authenticate with AAD using the remoteLoginAAD() function in the mrsdeploy R package as described in this article: "[Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)."
 
 ## See also
 

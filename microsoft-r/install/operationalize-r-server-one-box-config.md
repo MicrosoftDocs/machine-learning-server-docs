@@ -49,7 +49,7 @@ R Server offers two types of configuration for operationalizing analytics and re
 
 1. **Enterprise configuration**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled up or down by adding or removing nodes. Learn more about this setup in the [enterprise configuration](operationalize-r-server-enterprise-config.md) article.
 
-For added security, you can [configure SSL](../deployr/security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../deployr/security-authentication.md).
+For added security, you can [configure SSL](../deployr/security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).
 
 
 ## Supported platforms 
@@ -136,7 +136,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) so you can begin to configure a one-box setup.
 
     >[!NOTE]
-    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../deployr/security-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
+    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command line switches for this script, [here](../operationalize/admin-utility.md#switch).
 
     1. Choose the option to **Configure R Server for Operationalization**.
