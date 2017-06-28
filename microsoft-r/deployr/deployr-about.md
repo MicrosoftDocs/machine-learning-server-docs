@@ -44,7 +44,7 @@ This diagram captures the basic workflow used by data scientists and application
 
 ## Workflow In Action
 
-The workflow is simple. A data scientist develops an R script (using standard R tools) and publishes that script to the DeployR server, where it becomes available for execution as an analytics web service. Once published, R scripts can be executed by any authorized application using the DeployR [(API)](../deployr-api-reference.md).
+The workflow is simple. A data scientist develops an R script (using standard R tools) and publishes that script to the DeployR server, where it becomes available for execution as an analytics web service. Once published, R scripts can be executed by any authorized application using the DeployR [(API)](deployr-api-reference.md).
 
 The following real-world scenario demonstrates the key concepts introduced in preceding workflow diagram.
 
@@ -104,7 +104,7 @@ Learn more in the [Getting Started Guide Data Scientists](../deployr-data-scient
 
 Unlike the data scientist who focuses solely on developing the R scripts, models and data files, the application developer does not need to know any R. Instead, this role is focused solely on integrating the output of the data scientists' work, [analytics Web services](#analytics-web-service) into their applications. The hand-off occurs in the [Repository Manager](#deployr-repository-manager). The separation of responsibilities between the data scientists and application developers is key to working effectively in the DeployR environment.
 
-There are several client application integration tools available to application developers in DeployR. The [RBroker framework and the client libraries](../deployr-tools-and-samples.md), which are provided in Java, JavaScript or .NET, greatly simplify the integration for those working in those languages. However, to integrate analytics Web services using other programming languages, the [API Reference](../deployr-api-reference.md) guide details everything you'd need to know.
+There are several client application integration tools available to application developers in DeployR. The [RBroker framework and the client libraries](../deployr-tools-and-samples.md), which are provided in Java, JavaScript or .NET, greatly simplify the integration for those working in those languages. However, to integrate analytics Web services using other programming languages, the [API Reference](deployr-api-reference.md) guide details everything you'd need to know.
 
 #### Responsibilities
 
@@ -114,7 +114,7 @@ Regardless of the integration tool you choose, or whether you are building a new
 
 2.  Verify these dependencies in the Repository Manager by [testing](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#analytics-web-service).
 
-3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](../deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](../deployr-api-reference.md) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
+3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](../deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](deployr-api-reference.md) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
 
 4.  Build or extend your application to take full advantage of DeployR-powered analytics Web services.
 
@@ -144,7 +144,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 
 DeployR is a standalone server product, potentially sitting alongside but never directly connected with other systems, that can be deployed on-site as well as in private, public, or hybrid cloud environments.
 
-Behaving like an on-demand R analytics engine, DeployR exposes a wide range of related analytics services via a [Web services API](../deployr-api-reference.md).
+Behaving like an on-demand R analytics engine, DeployR exposes a wide range of related analytics services via a [Web services API](deployr-api-reference.md).
 
 ![](media/deployr-about/deployr-architecture.png)
 

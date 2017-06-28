@@ -30,7 +30,7 @@ ms.custom: ""
 
 >Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
-The DeployR API is extensive, providing a wide range of services related to [users](../../deployr-api-reference.md#users-on-the-api), [projects](../../deployr-api-reference.md#projects-on-the-api), [jobs](../../deployr-api-reference.md#jobs-on-the-api) and the [repository](../deployr-api-reference.md#repository-on-the-api). To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
+The DeployR API is extensive, providing a wide range of services related to [users](deployr-api-reference.md#users-on-the-api), [projects](deployr-api-reference.md#projects-on-the-api), [jobs](deployr-api-reference.md#jobs-on-the-api) and the [repository](../deployr-api-reference.md#repository-on-the-api). To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
 
 >You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser. 
 

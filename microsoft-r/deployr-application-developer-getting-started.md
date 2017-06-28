@@ -60,7 +60,7 @@ The sections that follow explain [Analytics Web Services](#analytics-web-service
 
 The DeployR R Integration server exposes a rich set of services to application developers through a public Web services API. These services are collectively known as DeployR Analytics Web services.
 
-While the complete technical specification for all available services can be found [here](deployr-api-reference.md), this *Getting Started* guide for application developers focuses on introducing the core services.
+While the complete technical specification for all available services can be found [here](deployr/deployr-api-reference.md), this *Getting Started* guide for application developers focuses on introducing the core services.
 
 ### R Session Services
 
@@ -82,7 +82,7 @@ For example:
     // on which your application can immediately start executing R tasks.
     rBroker.submit(task);
 
-DeployR typically refers to R sessions as `projects`. You can read more about projects in the [API Reference Guide](deployr-api-reference.md).
+DeployR typically refers to R sessions as `projects`. You can read more about projects in the [API Reference Guide](deployr/deployr-api-reference.md).
 
 Depending on the specific needs of your application, the R sessions created by your application can be:
 
@@ -96,7 +96,7 @@ A key takeaway here is that DeployR is very flexible in the services that it off
 
 ### Repository Services
 
-Having access to on-demand R sessions within your application is only useful if you have access to the R scripts, models, and data you want to manipulate within those sessions. For this reason, DeployR exposes a comprehensive set of file and directory management services known as DeployR repository services. Read more about these [repository services in the API Reference Guide](deployr-api-reference.md).
+Having access to on-demand R sessions within your application is only useful if you have access to the R scripts, models, and data you want to manipulate within those sessions. For this reason, DeployR exposes a comprehensive set of file and directory management services known as DeployR repository services. Read more about these [repository services in the API Reference Guide](deployr/deployr-api-reference.md).
 
 You can think of the DeployR repository as a file system that is owned and managed by the DeployR server. As an application developer, you can:
 
@@ -108,7 +108,7 @@ For example:
     RRepositoryDirectory dir = rUser.createDirectory("demo");
     List<RRepositoryFile> files = rUser.listFiles(RSCRIPT, dir);
 
-These services are available on the [API](deployr-api-reference.md#repository) and also through the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), which ships with DeployR.
+These services are available on the [API](deployr/deployr-api-reference.md#repository) and also through the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), which ships with DeployR.
 
 It is also simple for your application to request files be moved from the repository to your R sessions and from your R sessions back into the repository. Perhaps most importantly, any R script stored in the repository is automatically exposed as a live, executable Analytics Web service. This means your R scripts can be executed on request by your application just by referencing that script by name.
 
@@ -127,14 +127,14 @@ The fact that repository-managed R scripts are automatically exposed as live, ex
 
 *"How can you enforce access controls on this type of Web service?"*
 
-The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](deployr-api-reference.md#users) to a set of [access controls enforced on a file-by-file basis](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
+The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](deployr/deployr-api-reference.md#users) to a set of [access controls enforced on a file-by-file basis](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
 
 -   `Private`, allows access only to the file's owner.
 -   `Restricted`, allows access only to those users who were granted at least one of the associated roles
 -   `Shared`, allows access only to authenticated users
 -   `Public`, allows access to any authenticated or anonymous user
 
-These repository access controls can be manipulated directly by the file owner on the [API](deployr-api-reference.md) or by using the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR.
+These repository access controls can be manipulated directly by the file owner on the [API](deployr/deployr-api-reference.md) or by using the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR.
 
 ## Developer Tools
 
@@ -188,7 +188,7 @@ They may be times when you need direct access to some of the lower-level service
 
 Then, the answer is the [underlying technical specification](https://microsoft.github.io/deployr-api-docs/8.0.5/) for DeployR. That specification details every API call, associated call parameters, encodings, error handling, and more on the DeployR API.
 
-As long as your development environment can establish HTTP(S) connections and consumes JSON, then you can integrate directly with DeployR services using the public [API](deployr-api-reference.md).
+As long as your development environment can establish HTTP(S) connections and consumes JSON, then you can integrate directly with DeployR services using the public [API](deployr/deployr-api-reference.md).
 
 ## Tutorials
 
@@ -254,7 +254,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 
 **API Docs, Tools, and Samples**
 -   [RBroker Framework and Client Library](deployr-tools-and-samples.md)
--   [API Reference Guide](deployr-api-reference.md)
+-   [API Reference Guide](deployr/deployr-api-reference.md)
 
 **Other Getting Started Guides**
 -   [Administrators](deployr/deployr-administrator-getting-started.md)

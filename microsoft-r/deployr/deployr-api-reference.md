@@ -25,9 +25,9 @@ ms.custom: ""
 ---
 # DeployR API Overview
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 The DeployR API exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications. This API is exposed by the DeployR server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments.
 
@@ -39,11 +39,11 @@ With the advent of DeployR, the full statistics, analytics and visualization cap
 
 While data scientists can work with R directly in a console window or IDE, application developers need a different set of tools to leverage R inside applications. The DeployR API exposes **R analytics Web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
 
-As an application developer integrating with **DeployR-managed analytics Web services**, typically your interest is in executing R code, not writing it. Data scientists with R programming skills write R code. With one-click in the [DeployR Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), this R code can be turned into a DeployR-managed analytics Web service. Once R code is exposed by DeployR as a service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
+As an application developer integrating with **DeployR-managed analytics Web services**, typically your interest is in executing R code, not writing it. Data scientists with R programming skills write R code. With one-click in the [DeployR Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md), this R code can be turned into a DeployR-managed analytics Web service. Once R code is exposed by DeployR as a service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
 
 Each time a service is executed on the API, the service makes use of an R session that is managed by DeployR as a **project** on behalf of the application. Depending on the nature and requirements of your application you can choose to execute services on [*anonymous* or *authenticated* projects](#projects).
 
-To simplify integration of R analytics Web services using the DeployR API, we provide [several client libraries](deployr-tools-and-samples.md), which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
+To simplify integration of R analytics Web services using the DeployR API, we provide [several client libraries](../deployr-tools-and-samples.md), which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
 
 <a name="users"></a>
 ##Users on the API
@@ -555,7 +555,7 @@ Repository-managed scripts are a special type of repository-managed file. Any fi
 
 These scripts are essentially blocks of R code with well-defined inputs and outputs. While scripts are technically also repository-managed files, they are designed to be exposed as an executable on the API.
 
-Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) for further details.
+Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](../deployr-repository-manager/deployr-repository-manager-about.md) for further details.
 
 *Authenticated* users can execute scripts within the context of any project using the [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script) call. Both *authenticated* and *anonymous* users can execute scripts within the context of [anonymous projects](#anonymous-projects) using the [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute) and [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render) calls.
 
@@ -651,11 +651,11 @@ This document describes the DeployR Public API and the complete set of API servi
 
 **DeployR Administration Console**
 
-The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API. Refer to the [Administration Console documentation](deployr/deployr-admin-console-about.md) for further details.
+The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API. Refer to the [Administration Console documentation](deployr-admin-console-about.md) for further details.
 
 **DeployR Grid Management Framework**
 
-The grid management framework provides load balancing capabilities for intensive R-compute environments. This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory and disk). Each node can be leveraged by the server to execute R analyses on behalf of client applications.  For further details, refer to section [Managing the Grid](deployr/deployr-admin-managing-the-grid.md).
+The grid management framework provides load balancing capabilities for intensive R-compute environments. This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory and disk). Each node can be leveraged by the server to execute R analyses on behalf of client applications.  For further details, refer to section [Managing the Grid](deployr-admin-managing-the-grid.md).
 
 **Spring 3 Framework & J2EE Container**
 
@@ -753,7 +753,7 @@ The ***error*** property provides a plain text message describing the underlying
 
 -  **945** Authentication Error: user account password has expired, requires reset
 
-To understand how grid resource errors occur, refer to the sections [Managing the Grid](deployr/deployr-admin-managing-the-grid.md) and [Managing Server Policies](deployr/deployr-admin-managing-server-policies.md).
+To understand how grid resource errors occur, refer to the sections [Managing the Grid](deployr-admin-managing-the-grid.md) and [Managing Server Policies](deployr-admin-managing-server-policies.md).
 
 *Sample API (JSON) response markup indicating error on call:*
 
@@ -773,7 +773,7 @@ To understand how grid resource errors occur, refer to the sections [Managing th
 
 To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
 
-Refer to the documentation on the [API Explorer Tool](deployr/deployr-api-explorer-tool.md) for more details.
+Refer to the documentation on the [API Explorer Tool](deployr-api-explorer-tool.md) for more details.
 
 ### API Call Overview
 
@@ -1491,7 +1491,7 @@ This change applies across all execution APIs:
 
 #### Grid Cluster Targeted Executions
 
-Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the [Administration Console](deployr/deployr-admin-console-about.md), to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu". This feature is **DeployR Enterprise** only.
+Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the [Administration Console](deployr-admin-console-about.md), to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu". This feature is **DeployR Enterprise** only.
 
 By identifying a value on a new *cluster* parameter client applications can request tasks be executed on nodes within a specific cluster on the grid on the following calls:
 
@@ -1577,7 +1577,7 @@ Each user can maintain private, shared and public files in the external reposito
 	$DEPLOYR_HOME/deployr/external/repository/testuser/demo/score.R
 	$DEPLOYR_HOME/deployr/external/repository/testuser/demo/model.rData
 
-A small number of sample files are deployed to the external repository following each new DeployR 7.4 installation and you may try out the external repository using new support found in the latest [API Explorer](deployr/deployr-api-explorer-tool.md).
+A small number of sample files are deployed to the external repository following each new DeployR 7.4 installation and you may try out the external repository using new support found in the latest [API Explorer](deployr-api-explorer-tool.md).
 
 For more information about working with the new DeployR External Repository please post your questions to the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 

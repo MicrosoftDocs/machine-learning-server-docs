@@ -62,6 +62,6 @@ The DeployR API exposes a wide range of R analytics services to client applicati
 
 ## API Reference and Tools
 
-Need to integrate DeployR-powered R Analytics using a different programming language? The [API Reference guide](deployr-api-reference.md) details everything you need to know to get up and running. 
+Need to integrate DeployR-powered R Analytics using a different programming language? The [API Reference guide](deployr/deployr-api-reference.md) details everything you need to know to get up and running. 
 
 Also described is the [API Explorer tool](deployr/deployr-api-explorer-tool.md) used to interactively learn the DeployR API. 

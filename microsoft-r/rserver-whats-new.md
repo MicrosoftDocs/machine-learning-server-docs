@@ -288,7 +288,7 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
     + The XML format for data exchange is deprecated, and will be removed from future versions of DeployR.
 
-    + The API has been updated. [See the change history.](deployr-api-reference.md#805)
+    + The API has been updated. [See the change history.](deployr/deployr-api-reference.md#805)
 
     + This release is of DeployR Enterprise only.
 
