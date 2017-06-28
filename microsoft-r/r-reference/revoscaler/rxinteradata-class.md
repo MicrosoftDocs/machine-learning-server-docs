@@ -163,8 +163,8 @@ Class RxComputeContext, by class "RxDistributedHpa", distance 2.
  
  ##See Also
  
-[RxInTeradata](RxInTeradata.md),
-[RxTeradata](RxTeradata.md)
+[RxInTeradata](../../scaler/packagehelp/rxinteradata.md),
+[RxTeradata](../../scaler/packagehelp/rxteradata.md)
    
  ##Examples
 

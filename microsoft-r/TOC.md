@@ -406,7 +406,7 @@
 #### [RxInSqlServer](r-reference/revoscaler/rxinsqlserver.md) 
 #### [rxInstalledPackages](r-reference/revoscaler/rxinstalledpackages.md) 
 #### [rxInstallPackages](r-reference/revoscaler/rxinstallpackages.md) 
-#### [RxInTeradata-class](scaler/packagehelp/RxInTeradata-class.md) 
+#### [RxInTeradata-class](r-reference/revoscaler/rxinteradata-class.md) 
 #### [RxInTeradata](scaler/packagehelp/RxInTeradata.md) 
 #### [rxKmeans](scaler/packagehelp/rxKmeans.md) 
 #### [rxLaunchClusterTaskManager](scaler/packagehelp/rxLaunchClusterTaskManager.md) 
