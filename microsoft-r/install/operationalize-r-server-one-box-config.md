@@ -40,7 +40,7 @@ All configurations have at least a single web node, single compute node, and a d
 
 + Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
-+ The database. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database.md) database instead.
++ The database. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
 R Server offers two types of configuration for operationalizing analytics and remote execution:
 1. **One-box configuration**: as the name suggests, one web node and one compute node run on a single machine. Set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R analytics using R Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage. This configuration is covered in this article.

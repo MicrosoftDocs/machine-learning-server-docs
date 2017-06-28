@@ -164,7 +164,7 @@ The encryption function available in the administration utility relies on the RS
 
 1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
 
-1. In that file, update the appropriate section for a [remote database connection](configure-remote-database.md#encrypt) or the [authentication password](configure-authentication.md#encrypt) strings. 
+1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.md#encrypt) or the [authentication password](configure-authentication.md#encrypt) strings. 
 
 >[!NOTE]
 >You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](#switch).

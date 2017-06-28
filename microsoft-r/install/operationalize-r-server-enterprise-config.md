@@ -41,9 +41,9 @@ This configuration includes one or more web nodes, one or more compute nodes, an
 
 + Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
 
-+ The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database.md) database instead.
++ The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
-In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database.md) to share data and web services across web node services.   
+In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services.   
 
 For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).
 
@@ -137,9 +137,9 @@ To replace an older version, you can uninstall the older distribution before ins
 
 By default, the web node configuration sets up a local SQLite database. We strongly recommend that you use a SQL Server or PostgreSQL database for this configuration to achieve higher availability. In fact, you cannot use SQLite database at all if you have multiple web nodes or need a remote database. 
 
-To configure that database, [follow these instructions](../operationalize/configure-remote-database.md).
+To configure that database, [follow these instructions](../operationalize/configure-remote-database-to-operationalize.md).
 
-If you intend to configure multiple web nodes, then you **must** set up a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database.md) so that data can be shared across web node services.
+If you intend to configure multiple web nodes, then you **must** set up a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) so that data can be shared across web node services.
 
 >[!WARNING] 
 >Choose and configure your database now. If you configure a different database later, all data in your current database is lost.
