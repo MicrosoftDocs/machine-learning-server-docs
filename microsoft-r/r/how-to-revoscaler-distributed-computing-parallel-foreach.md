@@ -70,7 +70,7 @@ This returns the multiplied matrix:
 
 ### A Simple Simulation: Playing Dice
 
-In [Running jobs in parallel](../scaler-distributed-computing-parallel-jobs.md), we introduced the simulation function `playDice` in the previous section. It simulates a single game of dice rolling. We then used `rxExec` to play 10000 games. Now we will use foreach to play 10000 games:
+In [Running jobs in parallel](how-to-revoscaler-distributed-computing-parallel-jobs.md), we introduced the simulation function `playDice` in the previous section. It simulates a single game of dice rolling. We then used `rxExec` to play 10000 games. Now we will use foreach to play 10000 games:
 
 	z1 <- foreach(i=1:10000, .options.rsr=list(chunkSize=2000)) %dopar% playDice()
 	table(unlist(z1))		

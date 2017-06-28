@@ -31,7 +31,7 @@ The new `rxExecBy` function in [RevoScaleR](r-reference/revoscaler/revoscaler.md
 
 ## How to use rxExecBy
 
-`rxExecBy` takes four inputs and produces an output for each partition, in whatever product the user-defined function computes. The function can be almost any user-defined or analytical or statistical function from the collection of Microsoft R packages, able to [execute jobs in parallel](scaler-distributed-computing-parallel-jobs.md). The data sets can be .csv files loaded via `RxTextData`. The parallel processing occurs when you run the `rxExecby` script on a platform offering distributed computing. In this case, either Spark or SQL Server Machine Learning Services.
+`rxExecBy` takes four inputs and produces an output for each partition, in whatever product the user-defined function computes. The function can be almost any user-defined or analytical or statistical function from the collection of Microsoft R packages, able to [execute jobs in parallel](r/how-to-revoscaler-distributed-computing-parallel-jobs.md). The data sets can be .csv files loaded via `RxTextData`. The parallel processing occurs when you run the `rxExecby` script on a platform offering distributed computing. In this case, either Spark or SQL Server Machine Learning Services.
 
 Input criteria | Method |
 ---------------|--------|

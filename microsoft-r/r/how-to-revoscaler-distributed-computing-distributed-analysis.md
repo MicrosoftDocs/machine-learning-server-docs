@@ -45,7 +45,7 @@ Given a registered a distributed compute context, any of the following functions
 
 Except for `rxExec`, we refer to these functions as the RevoScaleR *high-performance analytics*, or HPA functions. 
 
-The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing in Microsoft R](../scaler-distributed-computing-parallel-jobs.md).
+The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing in Microsoft R](how-to-revoscaler-distributed-computing-parallel-jobs.md).
 
 **How to obtain node-level information**
 

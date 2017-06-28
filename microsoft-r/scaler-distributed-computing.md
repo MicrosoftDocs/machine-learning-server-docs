@@ -183,7 +183,7 @@ The output data is also split, in this case holding fitted values, residuals, an
 
 ### Creating Split Training and Test Data Sets
 
-One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see [Parallel Random Number Generation](scaler-distributed-computing-parallel-jobs.md#parallel-random-number-generation)), the split becomes reproducible:
+One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see [Parallel Random Number Generation](r/how-to-revoscaler-distributed-computing-parallel-jobs.md#parallel-random-number-generation)), the split becomes reproducible:
 
 	rxExec(rxSplit, inData="C:/data/distributed/DistAirlineData.xdf",
 		outFilesBase="airlineData",

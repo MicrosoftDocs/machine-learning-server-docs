@@ -56,7 +56,7 @@ The principal compute contexts are the following:
 
 The `RxInSqlServer` compute context is a special case—it is similar to `RxInTeradata` in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using `RxInSqlServer` compute contexts, see the [RevoScaleR SQL Server Introduction](concept-what-is-sql-server-r-services.md).
 
-Two other specialized compute contexts, both of which are relevant only in HPC computations via `rxExec`, are discussed in ["Parallel Computing with rxExec"](../scaler-distributed-computing-parallel-jobs.md).
+Two other specialized compute contexts, both of which are relevant only in HPC computations via `rxExec`, are discussed in ["Parallel Computing with rxExec"](how-to-revoscaler-distributed-computing-parallel-jobs.md).
 
 ## Set a Compute Context
 

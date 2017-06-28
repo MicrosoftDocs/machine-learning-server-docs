@@ -142,7 +142,7 @@ We can make a colorful plot of the results by constructing variables for the par
 
 The resulting plot is shown below:
 
-![Birthday Problem Plot](media/scaler-distributed-computing-parallel-jobs/birthday_plot.png)
+![Birthday Problem Plot](./media/how-to-revoscaler-distributed-computing-parallel-jobs/birthday_plot.png)
 
 ### Plotting the Mandelbrot Set
 
@@ -181,7 +181,7 @@ We can then distribute this computation by computing several rows at a time on e
 
 The resulting plot is shown below (not all graphics devices support the useRaster argument; if your plot is empty, try omitting that argument):
 
-![Mandelbrot Plot](media/scaler-distributed-computing-parallel-jobs/mandelbrot_plot.png)
+![Mandelbrot Plot](./media/how-to-revoscaler-distributed-computing-parallel-jobs/mandelbrot_plot.png)
 
 ### Naïve Parallel k-Means Clustering
 
