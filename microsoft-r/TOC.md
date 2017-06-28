@@ -494,7 +494,7 @@
 
 ## [RevoUtils](RevoUtils/RevoUtils.md)
 ###[getRevoRepos](r-reference/revoutils/getrevorepos.md) 
-###[readNews](RevoUtils/packagehelp/readNews.md) 
+###[readNews](r-reference/revoutils/readnews.md) 
 ###[Revo.home](RevoUtils/packagehelp/Revo.home.md) 
 ###[RevoInfo](RevoUtils/packagehelp/RevoInfo.md) 
 ###[totalSystemMemory](RevoUtils/packagehelp/totalSystemMemory.md)
