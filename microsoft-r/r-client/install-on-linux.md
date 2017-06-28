@@ -26,13 +26,13 @@ ms.custom: ""
 
 # Install Microsoft R Client on Linux
 
-Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](scaler-getting-started-data-import-exploration.md) and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](../scaler-getting-started-data-import-exploration.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and R Server for Hadoop. [Learn more about its compatibility.](r-client/compatibility-with-server.md)  
+To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and R Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)  
 
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](operationalize/remote-execution.md) from the `mrsdeploy` package.  
+You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../operationalize/remote-execution.md) from the `mrsdeploy` package.  
 
 
 ## System Requirements
@@ -104,7 +104,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
 1. Run the script. 
 
-   To include the [**pretrained machine learning models for MicrosoftML**](install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
+   To include the [**pretrained machine learning models for MicrosoftML**](../install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
 
    ```
    [root@localhost MRC_Linux] $ bash install.sh
@@ -116,7 +116,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
    Installation begins immediately. Installer output shows the packages and location of the log file. 
    
-   You can now [set up your IDE and try out some sample code](r-client-get-started.md).
+   You can now [set up your IDE and try out some sample code](../r-client-get-started.md).
 
 <br>
 
@@ -134,7 +134,7 @@ From an internet-connected computer, download the following:
 
 1. Download the Microsoft R Open for this version of R Client. Microsoft R Open provides the R distribution used by R Server. [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297). Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. 
 
-1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Microsoft R Server 9.1.0](install/r-server-install-linux-hadoop-packages.md). If the **target system** is missing any, download the ones you will need.
+1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Microsoft R Server 9.1.0](../install/r-server-install-linux-hadoop-packages.md). If the **target system** is missing any, download the ones you will need.
 
    If you will be building and installing packages, including miniCRAN, we recommend that you also install the following binary packages: `gcc-c++` and `gcc-gfortran`.
    
@@ -193,7 +193,7 @@ R Client for Linux is deployed by running the install script with no parameters.
 
 1. Run the script. 
 
-   To include the [**pretrained machine learning models for MicrosoftML**](install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
+   To include the [**pretrained machine learning models for MicrosoftML**](../install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
 
    ```
    [root@localhost MRC_Linux] $ bash install.sh
@@ -205,11 +205,11 @@ R Client for Linux is deployed by running the install script with no parameters.
 
    Installer output shows the packages and location of the log file. 
    
-   You can now [set up your IDE and try out some sample code](r-client-get-started.md). Also, consider package management as described in the next section.
+   You can now [set up your IDE and try out some sample code](../r-client-get-started.md). Also, consider package management as described in the next section.
 
 ### Offline Package Management
 
-Review the recommendations in [Package Management](operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN. As we mentioned earlier, you must install the `gcc-c++` and `gcc-gfortran` binary packages to be able to build and install packages, including miniCRAN.
+Review the recommendations in [Package Management](../operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN. As we mentioned earlier, you must install the `gcc-c++` and `gcc-gfortran` binary packages to be able to build and install packages, including miniCRAN.
 
 ## Unattended installs
 
@@ -281,18 +281,18 @@ flag | Option | Description
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](index.md) 
++ [Overview of Microsoft R](../index.md) 
 
-+ [Overview of Microsoft R Client](r-client-get-started.md) 
++ [Overview of Microsoft R Client](../r-client-get-started.md) 
 
-+ [Quickstart: Running R code in Microsoft R](quickstart-r-code.md) (example)
++ [Quickstart: Running R code in Microsoft R](../quickstart-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](data-analysis-in-microsoft-r.md)
++ [Diving into data analysis with Microsoft R](../data-analysis-in-microsoft-r.md)
 
-+ [RevoScaleR R package reference](microsoft-r-tutorials.md)
++ [RevoScaleR R package reference](../microsoft-r-tutorials.md)
 
-+ [MicrosoftML R package reference](microsoftml-get-started.md)
++ [MicrosoftML R package reference](../microsoftml-get-started.md)
 
-+ [mrsdeploy R package reference](r-reference/mrsdeploy/mrsdeploy-package.md)
++ [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ [Execute code on remote R Server](operationalize/remote-execution.md)
++ [Execute code on remote R Server](../operationalize/remote-execution.md)

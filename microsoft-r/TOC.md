@@ -219,7 +219,7 @@
 # [Microsoft R Client](r-client.md)
 ## [Quickstart: Run R code in Microsoft R](quickstart-r-code.md)
 ## [Install R Client on Windows](r-client-install-windows.md)
-## [Install R Client on Linux](r-client-install-linux.md)
+## [Install R Client on Linux](r-client/install-on-linux.md)
 ## [Remote execution with R Server](operationalize/remote-execution.md)
 
 

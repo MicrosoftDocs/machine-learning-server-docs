@@ -355,7 +355,7 @@ To download and install Microsoft R Server, you will need an MSDN subscription o
 
 Optionally, you can use Microsoft R Client. It also runs on Linux and Windows:
 
-+ [Install R Client on Linux](../r-client-install-linux.md)	
++ [Install R Client on Linux](../r-client/install-on-linux.md)	
 + [Install R Client on Windows](../r-client-install-windows.md)
 
 ## Testing the Client Installation

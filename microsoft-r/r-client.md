@@ -59,7 +59,7 @@ The first step is to download Microsoft R Client for your operating system and i
 
 + [Install Microsoft R Client on Windows](r-client-install-windows.md)
 
-+ [Install Microsoft R Client for Linux](r-client-install-linux.md)
++ [Install Microsoft R Client for Linux](r-client/install-on-linux.md)
 
 + [Compatibility with R Server](r-client/compatibility-with-server.md)
 
