@@ -110,7 +110,7 @@ For data storage high availability, you can leverage the high availability capab
 ![High Availability](../media/o16n/admin-HA.png)
 
 
-<!--For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr-admin-configure-high-availability.md).-->
+<!--For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](../deployr/deployr-admin-configure-high-availability.md).-->
 
 ### Scalability & throughput
 

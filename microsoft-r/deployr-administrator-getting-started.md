@@ -81,7 +81,7 @@ The full set of general policy options available with the **Server Policies** ta
 
 The DeployR product consists of a number of software components that combine to deliver the full capabilities of the R Integration Server: the server, the grid and the database. Each component can be configured for High Availability (HA) in order to deliver a robust, reliable runtime environment.
 
-For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr-admin-configure-high-availability.md).
+For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](deployr/deployr-admin-configure-high-availability.md).
 
 ### Scalability & Throughput
 
