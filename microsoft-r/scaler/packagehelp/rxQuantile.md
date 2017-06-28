@@ -144,7 +144,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 quantile,
-[rxCube](rxCube.md).
+[rxCube](../../r-reference/revoscaler/rxcube.md).
    
  ##Examples
 

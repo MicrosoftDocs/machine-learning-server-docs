@@ -355,7 +355,7 @@
 #### [rxCovRegression](r-reference/revoscaler/rxcovregression.md) 
 #### [rxCreateColInfo](r-reference/revoscaler/rxcreatecolinfo.md) 
 #### [rxCrossTabs](r-reference/revoscaler/rxcrosstabs.md) 
-#### [rxCube](scaler/packagehelp/rxCube.md) 
+#### [rxCube](r-reference/revoscaler/rxcube.md) 
 #### [RxDataSource-class](scaler/packagehelp/RxDataSource-class.md) 
 #### [RxDataSource](scaler/packagehelp/RxDataSource.md) 
 #### [rxDataStep](scaler/packagehelp/rxDataStep.md) 

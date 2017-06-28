@@ -256,7 +256,7 @@ Histogram plot for a variable in an .xdf file or data frame
  
  ##Details
  
-`rxHistogram` calls [rxCube](rxCube.md) to perform computations and uses
+`rxHistogram` calls [rxCube](../../r-reference/revoscaler/rxcube.md) to perform computations and uses
 the **lattice** graphics package (barchart or
 xyplot) to create the plot. The `rxHistogram` 
 function will attempt bin continuous data in reasonable intervals.  For
@@ -277,7 +277,7 @@ An object of class "trellis". It is automatically printed within the function.
  ##See Also
  
 [rxLinePlot](rxLinePlot.md),
-[rxCube](rxCube.md),
+[rxCube](../../r-reference/revoscaler/rxcube.md),
 histogram.
    
  ##Examples

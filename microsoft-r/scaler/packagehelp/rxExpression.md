@@ -73,7 +73,7 @@ native to R.
 [rxFormula](rxFormula.md),
 [rxTransform](rxTransform.md),
 [rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md),
-[rxCube](rxCube.md),
+[rxCube](../../r-reference/revoscaler/rxcube.md),
 [rxLinMod](rxLinMod.md),
 [rxLogit](rxLogit.md),
 [rxSummary](rxSummary.md).

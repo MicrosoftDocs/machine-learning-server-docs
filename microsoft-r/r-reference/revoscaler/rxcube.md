@@ -80,7 +80,7 @@ subset  (x, ...)
    
     
  ### `formula`
- formula as described in [rxFormula](rxFormula.md) with the cross-classifying variables (separated by `:`) on the right hand side. Independent variables must be factors. If present, the dependent variable must be numeric. 
+ formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md) with the cross-classifying variables (separated by `:`) on the right hand side. Independent variables must be factors. If present, the dependent variable must be numeric. 
   
   
     
@@ -90,7 +90,7 @@ subset  (x, ...)
   
     
  ### `outFile`
- `NULL`, a character string specifying a .xdf file, or an [RxXdfData](RxXdfData.md) object.  If not NULL, the cube results will be written out to an .xdf file and an `RxXdfData` object will be returned. `outFile` is not supported when using distributed compute contexts such as [RxInTeradata](RxInTeradata.md). 
+ `NULL`, a character string specifying a .xdf file, or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.  If not NULL, the cube results will be written out to an .xdf file and an `RxXdfData` object will be returned. `outFile` is not supported when using distributed compute contexts such as [RxInTeradata](../../scaler/packagehelp/rxinteradata.md). 
   
   
     
@@ -130,12 +130,12 @@ subset  (x, ...)
   
     
  ### `transformFunc`
- variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -195,7 +195,7 @@ subset  (x, ...)
   
     
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
     
@@ -228,7 +228,7 @@ subset  (x, ...)
  ##Details
  
 The output of the `rxCube` function is essentially the same as that
-produced by [rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md) except that it is presented in a
+produced by [rxCrossTabs](rxcrosstabs.md) except that it is presented in a
 different format. While the `rxCrossTabs` function produces lists of
 contingency tables (where each table is a matrix), the `rxCube` function
 outputs a single list (or data frame, or .xdf file) containing one column for each variable
@@ -270,9 +270,9 @@ columns.
  ##See Also
  
 xtabs,
-[rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md),
-[as.xtabs](../../r-reference/revoscaler/as-xtabs.md),
-[rxTransform](rxTransform.md).
+[rxCrossTabs](rxcrosstabs.md),
+[as.xtabs](as-xtabs.md),
+[rxTransform](../../scaler/packagehelp/rxtransform.md).
    
  ##Examples
 
