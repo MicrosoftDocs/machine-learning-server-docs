@@ -91,7 +91,7 @@ Or this example where we authenticate with the local 'admin' account and passwor
 
 |`remoteLogin` Argument|Description|
 |--- | --- |
-|endpoint|The Microsoft R Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](../operationalize/admin-utility.md#launch).|
+|endpoint|The Microsoft R Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](configure-use-admin-utility.md#launch).|
 |session|If TRUE, create a remote session. **If omitted, creates a remote session.**|
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE. **If omitted, it is the same as `= TRUE`.**|

@@ -46,11 +46,11 @@ To secure connections and communications, you have several options:
 
 ## Local Administrator Account Authentication
 
-During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
+During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](configure-use-admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
 
 While this account might be sufficient when trying to operationalize with a [one-box configuration](../install/operationalize-r-server-one-box-config.md#onebox) since everything is running within the trust boundary, it is insufficient for [enterprise configurations](../install/operationalize-r-server-enterprise-config.md).
 
-To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
+To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](configure-use-admin-utility.md#admin-password).
 
 To log in to Microsoft R Server with this user for remote execution or web service functionalities, use remoteLogin() as described in the article "[Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)."
 
@@ -89,7 +89,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    
    1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  
 
-      > For better security, we recommend you [encrypt the password](admin-utility.md#encrypt) before adding the information to `appsettings.json`.
+      > For better security, we recommend you [encrypt the password](configure-use-admin-utility.md#encrypt) before adding the information to `appsettings.json`.
 
    |LDAP Properties|Definition|
    |---------------|-------------------------------|
@@ -98,7 +98,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |UseLDAPS|Set 'true' for LDAP-S or 'false' for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
    |BindFilter|(version 9.0.1 only) The template used to do the Bind operation. For example, "CN={0},CN=DeployR,DC=TEST,DC=COM". {0} is the user's DN.|
    |QueryUserDn|Distinguished name of user with read-only query capabilities with which to authenticate|
-   |QueryUserPassword|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](admin-utility.md#encrypt) before adding the information to this file.|
+   |QueryUserPassword|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](configure-use-admin-utility.md#encrypt) before adding the information to this file.|
    |QueryUserPasswordEncrypted|True/False. If 'True', it means the value of QueryUserPassword is an encrypted string.|
    |SearchBase|Context name to search in, relative to the base of the configured ContextSource, for example, 'ou=users,dc=example,dc=com'.| 
    |SearchFilter|The pattern to be used for the user search. "SearchFilter": "cn={0}" is for each user's DN. In legacy systems, some use "SearchFilter": "sAMAccountName={0}"|
@@ -169,7 +169,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       ```
 1. Save changes to `appsettings.json`.
 
-1. [Restart the web node](admin-utility.md#startstop) using the administration utility so that the changes can take effect.
+1. [Restart the web node](configure-use-admin-utility.md#startstop) using the administration utility so that the changes can take effect.
  
 1. Run the [diagnostic tests](configure-run-diagnostics.md) to ensure all tests are passing in the configuration.
 
@@ -292,7 +292,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
    |Audience|Use the CLIENT ID value for the WEB app you created in the Azure portal.|
    |ClientId|Use the CLIENT ID value for the NATIVE app you created in the Azure portal.|
    |Key|This is the key for the WEB application you took note of before.  |
-   |KeyEncrypted|We highly recommend that you [encrypt login credentials](admin-utility.md#encrypt) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
+   |KeyEncrypted|We highly recommend that you [encrypt login credentials](configure-use-admin-utility.md#encrypt) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
 
    For example:
    ```
@@ -309,7 +309,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 1. To set different levels of permissions for users interacting with web services, [assign them roles](configure-roles.md).
 
 1. Launch the administrator's utility and:
-   1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
+   1. [Restart the web node](configure-use-admin-utility.md#startstop) for the changes to take effect.
  
    1. Test the configuration by running the [diagnostic tests](configure-run-diagnostics.md).
 

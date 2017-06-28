@@ -159,7 +159,7 @@ Return to [the `appsetting.json` file](configure-find-admin-configuration-file.m
 + **For Azure Active Directory:** In `appsettings.json`, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](configure-authentication.md#aad).
 
   >[!IMPORTANT]
-  > For more security, we recommend you [encrypt the key](admin-utility.md#encrypt) before adding the information to `appsettings.json`.
+  > For more security, we recommend you [encrypt the key](configure-use-admin-utility.md#encrypt) before adding the information to `appsettings.json`.
 
   >[!NOTE]
   > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD will provide an overage claim in the token it returns. This claim along with the key you provide here allows R Server to retrieve the group memberships for the user.
@@ -169,7 +169,7 @@ Return to [the `appsetting.json` file](configure-find-admin-configuration-file.m
 
 #### Step 3. Apply the changes to R Server
 
-1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local 'admin' account](configure-authentication.md#local) in the administration utility.
+1. [Restart the web node](configure-use-admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local 'admin' account](configure-authentication.md#local) in the administration utility.
 
 1. Repeat these changes in every web node you've configured.  The configuration must be the same across all web nodes.
 

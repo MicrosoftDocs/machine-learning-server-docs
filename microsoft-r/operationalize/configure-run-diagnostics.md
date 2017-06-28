@@ -44,7 +44,7 @@ The set of diagnostic tests include:
 
 **To run diagnostic tests:**
 
-1. [Launch the administration utility](admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -54,7 +54,7 @@ The set of diagnostic tests include:
 
    1. Review the test results. If any issues arise, investigate the [log files](#logs) and attempt to resolve the issues.
 
-   1. After making your corrections, [restart the component](admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
+   1. After making your corrections, [restart the component](configure-use-admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
 
    1. Rerun the diagnostic test to make sure all is running smoothly now.
 
@@ -147,7 +147,7 @@ The following logging levels are available:
 
    1. Save the file.
 
-   1. [Restart](admin-utility.md#startstop) the node services. 
+   1. [Restart](configure-use-admin-utility.md#startstop) the node services. 
 
    1. Repeat these changes on every compute node and every web node.
       >Each node should have the same `appsettings.json` properties.
@@ -178,9 +178,9 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 ### “Cannot establish connection with the web node” Error
 
 If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Verify the following:
-+ That the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Administration](admin-utility.md#launch)
++ That the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Administration](configure-use-admin-utility.md#launch)
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
-+ Restart the web node if you've recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](admin-utility.md#startstop)
++ Restart the web node if you've recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](configure-use-admin-utility.md#startstop)
 
 If the issue persists, check if you can post to the `login` API using curl, fiddler, or something similar and share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
@@ -202,7 +202,7 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using operat
 
    1. Add a few symlinks using the commands in the [configuration](../install/operationalize-r-server-one-box-config.md) article.
 
-   1. [Restart](admin-utility.md#startstop) the compute node services.
+   1. [Restart](configure-use-admin-utility.md#startstop) the compute node services.
 
    1. Run the [diagnostic test](#test) or try the APIs again.
 

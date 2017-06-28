@@ -85,7 +85,7 @@ This section walks you through the steps for securing the connections between th
 
 1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
 
-1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
+1. Launch the administrator's utility and [restart the web node](configure-use-admin-utility.md#startstop).
 
 1. In the same utility, run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
@@ -169,7 +169,7 @@ On each Linux machine hosting a web node:
 
 1. If using IPTABLES firewall, add the HTTPS port, which is 443 by default, to the firewall settings to allow communications between the client application and R Server. 
 
-1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
+1. Launch the administrator's utility and [restart the web node](configure-use-admin-utility.md#startstop).
 
 1. Repeat on each web node.
 
@@ -221,7 +221,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Close and save the file.
 
-1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+1. Launch the administrator's utility and [restart the compute node](configure-use-admin-utility.md#startstop).
 
 1. In the same utility, run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
@@ -278,7 +278,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Restart NGINX service.
 
-   1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+   1. Launch the administrator's utility and [restart the compute node](configure-use-admin-utility.md#startstop).
 
    1. Repeat on each compute node.
 
@@ -301,7 +301,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Close and save the file.
 
-   1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
+   1. Launch the administrator's utility and [restart the web node](configure-use-admin-utility.md#startstop).
 
    1. Verify the configuration by running [diagnostic test](configure-run-diagnostics.md) on the web node.
 
@@ -336,7 +336,7 @@ This section walks you through the steps for authenticating the web node with th
 
    1. Close and save the file.
 
-   1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
+   1. Launch the administrator's utility and [restart the web node](configure-use-admin-utility.md#startstop).
     
    1. Repeat on each web node.
 
@@ -358,6 +358,6 @@ This section walks you through the steps for authenticating the web node with th
 
    1. Close and save the file.
 
-   1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
+   1. Launch the administrator's utility and [restart the compute node](configure-use-admin-utility.md#startstop).
 
    1. Repeat on each compute node.

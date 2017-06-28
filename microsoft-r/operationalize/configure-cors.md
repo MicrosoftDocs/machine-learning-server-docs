@@ -46,4 +46,4 @@ Cross-Origin Resource Sharing (CORS) enables your client application to freely c
    }
    ```
 
-3. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
+3. Launch the administrator's utility and [restart the web node](configure-use-admin-utility.md#startstop).

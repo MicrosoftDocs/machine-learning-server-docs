@@ -51,7 +51,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 >
 > Create this database and register it in the configuration file below BEFORE the service for the control node is started.
 
-1.  On each web node, [stop the service](admin-utility.md#startstop).
+1.  On each web node, [stop the service](configure-use-admin-utility.md#startstop).
 
 1.  Update the database properties to point to the new database as follows:
 
@@ -96,7 +96,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
     
     1. <a name="encrypt"></a>For better security, we recommend you encrypt the connection string for this database before adding the information to `appsettings.json`.
     
-       1. Use the administration utility to [encrypt the connection string](admin-utility.md#encrypt).
+       1. Use the administration utility to [encrypt the connection string](configure-use-admin-utility.md#encrypt).
 
        1. Copy the encrypted string returned by the administration utility into `"ConnectionStrings": {` property block and set `"Encrypted":` to `true`. For example:
             
@@ -117,6 +117,6 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
          
 1. Launch the administrator's utility and:
 
-   1. [Restart the web node](admin-utility.md#startstop) and the database is created upon restart.
+   1. [Restart the web node](configure-use-admin-utility.md#startstop) and the database is created upon restart.
 
    1. [Run the diagnostic tests](configure-run-diagnostics.md) to ensure the connection can be made to your new database.

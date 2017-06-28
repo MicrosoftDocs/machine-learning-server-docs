@@ -150,7 +150,7 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
    1. Save the file.
 
-   1. [Restart](admin-utility.md#startstop) the compute node services. 
+   1. [Restart](configure-use-admin-utility.md#startstop) the compute node services. 
 
    1. Repeat these changes on every compute node.
 

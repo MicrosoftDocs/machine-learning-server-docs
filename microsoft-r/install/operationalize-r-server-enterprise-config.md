@@ -83,7 +83,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -114,7 +114,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -178,11 +178,11 @@ In an enterprise configuration, you can set up one or more compute nodes.
 
    >**Note:** If there are issues with starting the compute node, see [here](../operationalize/configure-run-diagnostics.md).
 
-1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges. 
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. 
 
     >[!NOTE]
     >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next two steps. For R Server 9.1 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command line switches for this script, [here](../operationalize/admin-utility.md#switch).
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
     
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -264,11 +264,11 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 
    1. Repeat these steps on each web node to declare each compute node.
 
-1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges:
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges:
 
     >[!NOTE]
     >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command line switches for this script, [here](../operationalize/admin-utility.md#switch).
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
 
    1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -308,7 +308,7 @@ If you are provisioning on a cloud service, then you must also [create inbound s
 
 ### 6. Post configuration steps
 
-1. [Update service ports](../operationalize/admin-utility.md#ports), if needed.
+1. [Update service ports](../operationalize/configure-use-admin-utility.md#ports), if needed.
 
 1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
 
