@@ -415,7 +415,7 @@
 #### [RxLocalParallel-class](r-reference/revoscaler/rxlocalparallel-class.md) 
 #### [RxLocalParallel](r-reference/revoscaler/rxlocalparallel.md) 
 #### [RxLocalSeq-class](r-reference/revoscaler/rxlocalseq-class.md) 
-#### [RxLocalSeq](scaler/packagehelp/RxLocalSeq.md) 
+#### [RxLocalSeq](r-reference/revoscaler/rxlocalseq.md) 
 #### [rxLocateFile](scaler/packagehelp/rxLocateFile.md) 
 #### [rxLogit](scaler/packagehelp/rxLogit.md) 
 #### [rxLorenz](scaler/packagehelp/rxLorenz.md) 

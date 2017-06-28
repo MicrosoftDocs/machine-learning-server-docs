@@ -196,7 +196,7 @@ computations.
     
  ### `computeContext`
  an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) object representing the computational environment.  
-*   [RxLocalSeq](RxLocalSeq.md): compute locally, using sequential processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
+*   [RxLocalSeq](../../r-reference/revoscaler/rxlocalseq.md): compute locally, using sequential processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
 *   [RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
 *   [RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md): use the currently registered parallel backend for 'foreach' for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing.   
 *  [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md): use a Hadoop cluster for both High Performance Analytics for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
@@ -344,7 +344,7 @@ value of the requested option is returned.
  
  ##See Also
  
-[RxLocalSeq](RxLocalSeq.md),
+[RxLocalSeq](../../r-reference/revoscaler/rxlocalseq.md),
 [RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md),
 [RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md),
 [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),

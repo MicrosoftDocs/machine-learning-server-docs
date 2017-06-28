@@ -63,7 +63,7 @@ in the specified set of paths.
   
   
  ### `isOutFile`
- logical value. If `TRUE`, search using `outDataPath` instead of `dataPath` in [rxOptions](rxOptions.md) or in the local compute context (e.g.,[RxLocalSeq](RxLocalSeq.md)). 
+ logical value. If `TRUE`, search using `outDataPath` instead of `dataPath` in [rxOptions](rxOptions.md) or in the local compute context (e.g.,[RxLocalSeq](../../r-reference/revoscaler/rxlocalseq.md)). 
   
   
   

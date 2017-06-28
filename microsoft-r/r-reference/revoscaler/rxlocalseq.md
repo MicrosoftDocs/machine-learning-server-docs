@@ -53,11 +53,11 @@ will be processed sequentially. This is the default compute context.
   
     
  ### `dataPath`
- `NULL` or character vector defining the search path(s) for the input data source(s). If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxOptions.md) 
+ `NULL` or character vector defining the search path(s) for the input data source(s). If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md) 
    
     
  ### `outDataPath`
- `NULL` or character vector defining the search path(s) for  new output data file(s).  If not `NULL`, this overrides any specification for `dataPath`in [rxOptions](rxOptions.md)  
+ `NULL` or character vector defining the search path(s) for  new output data file(s).  If not `NULL`, this overrides any specification for `dataPath`in [rxOptions](../../scaler/packagehelp/rxoptions.md)  
    
  
  
@@ -85,12 +85,12 @@ object of class RxLocalSeq.
  
  ##See Also
  
-[rxSetComputeContext](rxSetComputeContext.md),
-[rxExec](../../r-reference/revoscaler/rxexec.md),
-[rxOptions](rxOptions.md),
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md),
-[RxLocalSeq-class](../../r-reference/revoscaler/rxlocalseq-class.md).
+[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
+[rxExec](rxexec.md),
+[rxOptions](../../scaler/packagehelp/rxoptions.md),
+[RxComputeContext](rxcomputecontext.md),
+[RxLocalParallel](rxlocalparallel.md),
+[RxLocalSeq-class](rxlocalseq-class.md).
    
  
  ##Examples
