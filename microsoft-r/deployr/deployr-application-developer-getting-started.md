@@ -140,7 +140,7 @@ These repository access controls can be manipulated directly by the file owner o
 
 It's time to move from theory into practice. And for an application developer, that means writing code.
 
-The best place to begin is with the [RBroker Framework](../deployr-rbroker-framework.md). This framework exposes a simple yet powerful integration model that requires only a little code in order to deliver significant analytics capabilities within your application.
+The best place to begin is with the [RBroker Framework](deployr-rbroker-framework.md). This framework exposes a simple yet powerful integration model that requires only a little code in order to deliver significant analytics capabilities within your application.
 
 ### RBroker Framework
 
@@ -174,7 +174,7 @@ The framework handles all of the low-level details, including:
 -   Server-side task execution
 -   Asynchronous callbacks to your application on task completion
 
-If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](../deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api-specification).
+If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api-specification).
 
 ### Client Library
 
@@ -200,7 +200,7 @@ To run these tutorials, you will need access to a live instance of the DeployR s
 
 The following tutorials are available:
 
--   The [RBroker Framework Basics](https://github.com/Microsoft/java-example-rbroker-basics) code tutorial demonstrates the basic programming model and capabilities of the RBroker Framework. Each code example brings to life the ideas introduced by the basic [RBroker Tutorial](../deployr-rbroker-framework.md).
+-   The [RBroker Framework Basics](https://github.com/Microsoft/java-example-rbroker-basics) code tutorial demonstrates the basic programming model and capabilities of the RBroker Framework. Each code example brings to life the ideas introduced by the basic [RBroker Tutorial](deployr-rbroker-framework.md).
 
 -   The [RBroker Framework Data I/O](https://github.com/Microsoft/java-example-rbroker-data-io) code tutorial demonstrates how different types of data inputs and outputs can be sent to and retrieved from DeployR-managed R sessions when you execute tasks using the framework.
 
@@ -242,7 +242,7 @@ The sample application is a classic application in the analytics space, a realti
 
 ![Fraud Score Example Application](./media/deployr-application-developer-getting-started/fraud-score-example.png)
 
-Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](../../deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
+Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](../deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
 In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 

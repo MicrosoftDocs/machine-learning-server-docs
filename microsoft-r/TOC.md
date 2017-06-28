@@ -195,7 +195,7 @@
 ##### [Developer Docs & Downloads](deployr-tools-and-samples.md)
 ##### [API Overview](deployr/deployr-api-reference.md)
 ##### [Client Library Tutorial](deployr/deployr-client-library.md)
-##### [RBroker Framework Tutorial](deployr-rbroker-framework.md)
+##### [RBroker Framework Tutorial](deployr/deployr-rbroker-framework.md)
 ##### [API Explorer Tool](deployr/deployr-api-explorer-tool.md)
 #### [Writing Portable R Code](deployr/deployr-data-scientist-write-portable-r-code.md)
 #### [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md)

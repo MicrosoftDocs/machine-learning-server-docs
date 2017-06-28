@@ -38,7 +38,7 @@ On this page, you can download the framework/library in one of the available lan
 
 The RBroker Framework is the simplest way to integrate R Analytics into any Java, JavaScript or .NET application. Submit as many R tasks as your application needs. No need to manage client-side request queues or block for results. Let this framework handle all of the complexity while you enjoy effortless scale. Simply define an RTask, submit your task to an instance of RBroker and then retrieve your RTaskResult. It really is that simple.
 
-1.   Read the [ **RBroker Framework Tutorial**](deployr-rbroker-framework.md)
+1.   Read the [ **RBroker Framework Tutorial**](deployr/deployr-rbroker-framework.md)
 
 1.   Get the documentation and download the library for your preferred programming language:
 	- **Java**: &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;[API Doc](http://microsoft.github.io/java-rbroker-framework/) &nbsp;|&nbsp; [Download](https://github.com/microsoft/java-rbroker-framework/releases)  
