@@ -59,7 +59,7 @@ Produce univariate summaries of objects in **RevoScaleR**.
    
     
  ### `formula`
- formula, as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). The formula typically does not contain a response variable, i.e. it should be of the form `~ terms`. If `~.` is used as the formula, summary statistics will be computed for all  non-character variables. If a numeric variable is interacted with a factor variable, summary statistics will be computed for each category of the factor. 
+ formula, as described in [rxFormula](rxformula.md). The formula typically does not contain a response variable, i.e. it should be of the form `~ terms`. If `~.` is used as the formula, summary statistics will be computed for all  non-character variables. If a numeric variable is interacted with a factor variable, summary statistics will be computed for each category of the factor. 
   
   
     
@@ -69,7 +69,7 @@ Produce univariate summaries of objects in **RevoScaleR**.
   
     
  ### `byGroupOutFile`
- NULL, a character string or vector of character strings  specifying .xdf file names(s), or an RxXdfData object or list of RxXdfData objects.  If not NULL, and the formula includes computations by factor, the by-group summary results will be  written out to one or more .xdf files.  If more than one `.xdf` file is created and a single character string is specified, an integer will be appended to the base byGroupOutFile name  for additional file names. The resulting RxXdfData objects will be listed in  the `categorical` component of the output object.  `byGroupOutFile` is not supported when using distributed compute contexts such as [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md) and [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md). 
+ NULL, a character string or vector of character strings  specifying .xdf file names(s), or an RxXdfData object or list of RxXdfData objects.  If not NULL, and the formula includes computations by factor, the by-group summary results will be  written out to one or more .xdf files.  If more than one `.xdf` file is created and a single character string is specified, an integer will be appended to the base byGroupOutFile name  for additional file names. The resulting RxXdfData objects will be listed in  the `categorical` component of the output object.  `byGroupOutFile` is not supported when using distributed compute contexts such as [RxHadoopMR](rxhadoopmr.md) and [RxInTeradata](rxinteradata.md). 
   
   
     
@@ -109,12 +109,12 @@ Produce univariate summaries of objects in **RevoScaleR**.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -169,7 +169,7 @@ Produce univariate summaries of objects in **RevoScaleR**.
   
   
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxHpcServer`,  `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxHpcServer`,  `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
   
@@ -231,7 +231,7 @@ formula used to obtain the summary.
  
  ##See Also
  
-[rxTransform](rxTransform.md)
+[rxTransform](../../scaler/packagehelp/rxtransform.md)
    
  ##Examples
 
