@@ -69,7 +69,7 @@ LDAP is the standard protocol for reading data from and writing data to Active D
 
 By default, the LDAP security provider is not configured. To enable LDAP authentication support, update the relevant properties in your configuration file. The values you assign to these properties must match the configuration of your LDAP Directory Information Tree (DIT).
 
-You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a domain controller. [Learn more about enabling SSL/TLS.](../deployr/security-https.md) Reasons for enabling LDAP-S include:
+You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a domain controller. [Learn more about enabling SSL/TLS.](configure-https.md) Reasons for enabling LDAP-S include:
 
 + Organizational security policies typically require that all client/server communication is encrypted.
 + Applications use simple BIND to transport credentials and authenticate against a Domain Controller. As simple BIND exposes the users’ credentials in clear text, using SSL/TLS to encrypt the authentication session is recommended.

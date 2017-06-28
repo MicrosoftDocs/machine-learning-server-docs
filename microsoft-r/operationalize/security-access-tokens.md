@@ -37,7 +37,7 @@ This bearer token is a lightweight security token that grants the “bearer” a
 
 ## Security Concerns 
 
-Though a party must authenticate first to receive the token, if the required steps are not taken to secure the token in transmission and storage, it can be intercepted and used by an unintended party. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, tokens do not have this mechanism and must be [transported in a secure channel such as transport layer security (HTTPS)](security-https.md). 
+Though a party must authenticate first to receive the token, if the required steps are not taken to secure the token in transmission and storage, it can be intercepted and used by an unintended party. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, tokens do not have this mechanism and must be [transported in a secure channel such as transport layer security (HTTPS)](configure-https.md). 
 
 If a token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it for an unauthorized access to a protected resource. The same security principles apply when storing or caching tokens for later use. Always ensure that your application transmits and stores tokens in a secure manner. 
 

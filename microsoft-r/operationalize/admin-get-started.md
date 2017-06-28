@@ -66,7 +66,7 @@ User access to the R Server and the operationalization services offered on its [
 
 In addition to authentication, you can add other enterprise security around Microsoft R Server such as:
 
-+ Secured connections using [SSL/TLS 1.2](security-https.md). For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.** 
++ Secured connections using [SSL/TLS 1.2](configure-https.md). For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.** 
 
 + [Cross-Origin Resource Sharing](configure-cors.md) to allow restricted resources on a web page to be requested from another domain outside the originating domain.
 

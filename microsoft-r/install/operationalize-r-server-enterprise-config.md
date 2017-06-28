@@ -45,7 +45,7 @@ This configuration includes one or more web nodes, one or more compute nodes, an
 
 In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database.md) to share data and web services across web node services.   
 
-For added security, you can [configure SSL](../deployr/security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).
+For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).
 
 Another configuration, referred to as "one-box", consists of a single web node and a single compute node installed on the same machine. Learn more about this configuration, [here](operationalize-r-server-one-box-config.md). 
 
@@ -294,7 +294,7 @@ Your web node is now configured. Repeat these steps for each web node you want t
 
 In production environments, we strongly recommend the following approaches:
 
-1. [Configure SSL/TLS](../deployr/security-https.md) and install the necessary certificates.
+1. [Configure SSL/TLS](../operationalize/configure-https.md) and install the necessary certificates.
 
 1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).  
 
