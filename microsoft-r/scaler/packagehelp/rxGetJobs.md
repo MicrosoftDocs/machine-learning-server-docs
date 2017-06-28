@@ -77,7 +77,7 @@ and matching the specified parameters.
   
   
  ### `verbose`
- If `TRUE` (the default), a brief summary of each job is printed as it is found. This includes the current job status as returned by [rxGetJobStatus](rxGetJobResults.md), the modification time of the job, and the current job ID (this is used as the component name in the returned list of job information objects). If no job status is returned, the job status shows `none`. 
+ If `TRUE` (the default), a brief summary of each job is printed as it is found. This includes the current job status as returned by [rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md), the modification time of the job, and the current job ID (this is used as the component name in the returned list of job information objects). If no job status is returned, the job status shows `none`. 
   
  
  
@@ -118,8 +118,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
 [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md),
-[rxGetJobResults](rxGetJobResults.md),
-[rxGetJobStatus](rxGetJobResults.md),
+[rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md),
+[rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md),
 [rxExec](../../r-reference/revoscaler/rxexec.md), 
 [RxSpark](RxSpark.md),
 [RxHadoopMR](RxHadoopMR.md),

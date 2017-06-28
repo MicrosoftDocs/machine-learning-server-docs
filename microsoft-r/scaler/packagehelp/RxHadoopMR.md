@@ -160,7 +160,7 @@ Creates a compute context for use with a Hadoop cluster.
   
     
  ### `wait`
- logical value.  If `TRUE`, the job will be blocking   and will not return until it has completed or has failed. If `FALSE`,   the job will be non-blocking return immediately,  allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the   [rxGetJobStatus](rxGetJobResults.md) function to check on the processing status of the job.  [rxWaitForJob](rxWaitForJob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the HPC scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
+ logical value.  If `TRUE`, the job will be blocking   and will not return until it has completed or has failed. If `FALSE`,   the job will be non-blocking return immediately,  allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the   [rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](rxWaitForJob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the HPC scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
   
   
     
@@ -175,7 +175,7 @@ Creates a compute context for use with a Hadoop cluster.
   
     
  ### `autoCleanup`
- logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxGetJobResults.md), and the output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
+ logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), and the output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
   
   
     
@@ -233,9 +233,9 @@ object of class RxHadoopMR.
  
  ##See Also
  
-[rxGetJobStatus](rxGetJobResults.md),
+[rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md),
 [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md),
-[rxGetJobResults](rxGetJobResults.md), 
+[rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), 
 [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
 [RxSpark](RxSpark.md),
 [RxInSqlServer](RxInSqlServer.md),  

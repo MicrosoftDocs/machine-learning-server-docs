@@ -67,11 +67,11 @@ Currently only supported in Windows.
   
     
  ### `consoleOutput`
-  logical scalar.If `TRUE`, causes the standard output  of the R process started by SQL Server to be printed to the user console. This value may be  overwritten by passing a non-`NULL` logical value to the `consoleOutput` argument  provided in [rxExec](../../r-reference/revoscaler/rxexec.md) and [rxGetJobResults](rxGetJobResults.md).  
+  logical scalar.If `TRUE`, causes the standard output  of the R process started by SQL Server to be printed to the user console. This value may be  overwritten by passing a non-`NULL` logical value to the `consoleOutput` argument  provided in [rxExec](../../r-reference/revoscaler/rxexec.md) and [rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md).  
   
     
  ### `autoCleanup`
-  logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxGetJobResults.md), and the output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.  
+  logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), and the output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.  
   
   
     
