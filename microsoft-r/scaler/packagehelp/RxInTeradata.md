@@ -103,7 +103,7 @@ ms.custom: ""
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxInTeradata-class](RxInTeradata-class.md),
 [RxTeradata](RxTeradata.md),
-[RxInSqlServer](RxInSqlServer.md),
+[RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
 [rxOptions](rxOptions.md).
    
  

@@ -53,7 +53,7 @@ Context name | Alternative name | Allowed data sources |
 [RxLocalSeq](scaler/packagehelp/rxlocalseq.md)      | local     | (all) |
 [RxSpark](scaler/packagehelp/RxSpark.md)         | spark     | RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md), [RxSparkData](scaler/packagehelp/RxSparkData.md) including RxHiveData, RxParquetData, RxOrcData  |
 [RxHadoopMR](r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md) |
-[RxInSqlServer](scaler/packagehelp/RxInSqlServer.md)   | sqlserver | [RxSqlServerData](scaler/packagehelp/RxSqlServerData.md) |
+[RxInSqlServer](r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](scaler/packagehelp/RxSqlServerData.md) |
 [RxInTeradata](scaler/packagehelp/RxInTeradata.md)    | teradata  | [RxTeradataData](scaler/packagehelp/RxTeradata.md)  |
 
 Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. The following compute contexts are used for manual distributed computing:

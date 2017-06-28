@@ -262,7 +262,7 @@ computations.
   
     
  ### `numTasks`
- integer value. The default `numTasks` use in [RxInSqlServer](RxInSqlServer.md). 
+ integer value. The default `numTasks` use in [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md). 
   
   
     
@@ -349,7 +349,7 @@ value of the requested option is returned.
 [RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md),
 [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
 [RxSpark](RxSpark.md),
-[RxInSqlServer](RxInSqlServer.md),
+[RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
 [RxInTeradata](RxInTeradata.md).
    
  

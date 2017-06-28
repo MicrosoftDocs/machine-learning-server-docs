@@ -53,7 +53,7 @@ Synchronizes all packages listed in for database to the files system for a compu
    
     
  ### `computeContext`
- an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](RxInSqlServer.md). 
+ an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md). 
   
   
     
@@ -74,7 +74,7 @@ Synchronizes all packages listed in for database to the files system for a compu
  
  ##Details
  
-For [RxInSqlServer](RxInSqlServer.md) compute context the user specified as part of connection string is used for installing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can install packages to `"shared"` location and `"private"` location. Users in `'rpkgs-private'` role can only install packages `"private"` location for their own use. To use the packages installed on the SQL server a user needs to be member atleast `'rpkgs-users'` role.
+For [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context the user specified as part of connection string is used for installing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can install packages to `"shared"` location and `"private"` location. Users in `'rpkgs-private'` role can only install packages `"private"` location for their own use. To use the packages installed on the SQL server a user needs to be member atleast `'rpkgs-users'` role.
 
 See the help file for additional details.
  

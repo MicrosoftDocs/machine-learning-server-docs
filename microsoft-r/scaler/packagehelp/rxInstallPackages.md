@@ -58,7 +58,7 @@ Install Packages from Repositories or Local Files for a compute context.
    
     
  ### `skipMissing`
- logical. Applicable only for [RxInSqlServer](RxInSqlServer.md) compute context. If `TRUE`, skips missing dependent packages for which otherwise an error is generated.  
+ logical. Applicable only for [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context. If `TRUE`, skips missing dependent packages for which otherwise an error is generated.  
   
   
     
@@ -73,17 +73,17 @@ Install Packages from Repositories or Local Files for a compute context.
   
     
  ### `scope`
- character. Applicable only for [RxInSqlServer](RxInSqlServer.md) compute context. Should be either `"shared"` or `"private"`.  `"shared"` installs the packages on per database shared location on SQL server which in turn can be used (referred) by multiple different users. `"private"` installs the packages on per database, per user private location on SQL server which is only accessible to the single user. 
+ character. Applicable only for [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context. Should be either `"shared"` or `"private"`.  `"shared"` installs the packages on per database shared location on SQL server which in turn can be used (referred) by multiple different users. `"private"` installs the packages on per database, per user private location on SQL server which is only accessible to the single user. 
   
   
     
  ### `owner`
- character. Applicable only for [RxInSqlServer](RxInSqlServer.md) compute context. This is generally empty `''` value.  Should be either empty `''` or a valid SQL database user account name. Only users in `'db_owner'` role for a database can specify this value to install packages on  behalf of other users.  
+ character. Applicable only for [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context. This is generally empty `''` value.  Should be either empty `''` or a valid SQL database user account name. Only users in `'db_owner'` role for a database can specify this value to install packages on  behalf of other users.  
   
   
     
  ### `computeContext`
- an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](RxInSqlServer.md), [RxLocalSeq](RxLocalSeq.md). 
+ an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md), [RxLocalSeq](RxLocalSeq.md). 
   
   
  
@@ -91,7 +91,7 @@ Install Packages from Repositories or Local Files for a compute context.
  ##Details
  
 This is a simple wrapper for install.packages. 
-For [RxInSqlServer](RxInSqlServer.md) compute context the user specified as part of connection string is used for installing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can install packages to `"shared"` location and `"private"` location. Users in `'rpkgs-private'` role can only install packages `"private"` location for their own use. To use the packages installed on the SQL server a user needs to be member atleast `'rpkgs-users'` role.
+For [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context the user specified as part of connection string is used for installing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can install packages to `"shared"` location and `"private"` location. Users in `'rpkgs-private'` role can only install packages `"private"` location for their own use. To use the packages installed on the SQL server a user needs to be member atleast `'rpkgs-users'` role.
 
 See the help file for additional details.
  

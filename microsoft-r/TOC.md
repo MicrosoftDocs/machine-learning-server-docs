@@ -403,7 +403,7 @@
 #### [RxHPCServer-class](r-reference/revoscaler/rxhpcserver-class.md) 
 #### [rxImport](r-reference/revoscaler/rximport.md) 
 #### [RxInSqlServer-class](r-reference/revoscaler/rxinsqlserver-class.md) 
-#### [RxInSqlServer](scaler/packagehelp/RxInSqlServer.md) 
+#### [RxInSqlServer](r-reference/revoscaler/rxinsqlserver.md) 
 #### [rxInstalledPackages](scaler/packagehelp/rxInstalledPackages.md) 
 #### [rxInstallPackages](scaler/packagehelp/rxInstallPackages.md) 
 #### [RxInTeradata-class](scaler/packagehelp/RxInTeradata-class.md) 

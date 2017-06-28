@@ -86,7 +86,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxInSqlServer](RxInSqlServer.md),
+[RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
 [RxSqlServerData](RxSqlServerData.md).
    
  ##Examples
