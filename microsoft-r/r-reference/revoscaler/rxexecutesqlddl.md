@@ -74,7 +74,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxOdbcData](RxOdbcData.md)
+[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md)
    
  ##Examples
 
