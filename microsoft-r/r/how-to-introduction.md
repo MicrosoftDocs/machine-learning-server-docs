@@ -35,7 +35,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 * [Data acquisition](../scaler-user-guide-data-import.md)
 * [Data Summaries](../scaler-user-guide-data-summaries.md)
 * [Models in ScaleR](../scaler-user-guide-models.md)
-* [crosstabs](../scaler-user-guide-crosstabs.md)
+* [crosstabs](how-to-revoscaler-crosstabs.md)
 * [Linear Models](../scaler-user-guide-linear-model.md)
 * [Logistic Regression Models](../scaler-user-guide-logistic-regression.md)
 * [Generalized Linear Models](../scaler-user-guide-generalized-linear-model.md)

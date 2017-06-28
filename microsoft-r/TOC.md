@@ -45,7 +45,7 @@
 
 ## Summarize data
 ### [Statistical Summaries](scaler-user-guide-data-summaries.md)
-### [Crosstabs](scaler-user-guide-crosstabs.md)
+### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
 
 ## Models
 ### [Models in RevoScaleR](scaler-user-guide-models.md)

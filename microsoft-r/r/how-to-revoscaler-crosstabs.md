@@ -452,7 +452,7 @@ You can see, for example, that in Department A, 62 percent of male applicants ar
 
 The power of *rxCrossTabs* is most evident when you need to tabulate a data set that won’t fit into memory. For example, in the large airline data set AirOnTime87to12.xdf, you can obtain the mean arrival delay by carrier and day of week as follows (if you have downloaded the data set, modify the first line below to reflect your local path):
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
 
 #  A Large Data Example
   
@@ -579,7 +579,7 @@ One common use of contingency tables is to test whether the tabulated variables 
 	arrDelayXTab <- rxCrossTabs(ArrDel15~ UniqueCarrier:DayOfWeek, 
 	    data = bigAirData, blocksPerRead = 30, returnXtabs=TRUE)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
 
 You can then use this as input to any of the following functions:
 
