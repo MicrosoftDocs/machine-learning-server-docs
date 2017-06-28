@@ -44,7 +44,7 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 ### Configuration
 
 - [Adjust your Hadoop cluster configuration for R Server workloads](install/r-server-install-hadoop-configuration-r-workloads.md)
-- [Enforcing YARN queue usage on R Server for Hadoop](rserver-install-hadoop-yarnqueueusage.md)
+- [Enforcing YARN queue usage on R Server for Hadoop](install/r-server-install-hadoop-yarnqueueusage.md)
 - [Manage your R installation on Linux](rserver-install-linux-manage-install.md)
 
 ### Start R workloads
