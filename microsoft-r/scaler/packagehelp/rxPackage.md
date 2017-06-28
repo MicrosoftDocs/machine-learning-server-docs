@@ -222,7 +222,7 @@ The SQL R services package management is still in active development and not ful
 [rxInstalledPackages](rxInstalledPackages.md),
 [rxInstallPackages](rxInstallPackages.md),   
 [rxRemovePackages](rxRemovePackages.md),
-[rxFindPackage](rxFindPackage.md),
+[rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 library
 require
    

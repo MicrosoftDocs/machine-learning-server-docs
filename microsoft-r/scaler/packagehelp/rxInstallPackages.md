@@ -110,7 +110,7 @@ Invisible `NULL`
  
 [rxPackage](rxPackage.md),
 install.packages,
-[rxFindPackage](rxFindPackage.md),
+[rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 [rxInstalledPackages](rxInstalledPackages.md),
 [rxRemovePackages](rxRemovePackages.md),
 [rxSyncPackages](rxSyncPackages.md),

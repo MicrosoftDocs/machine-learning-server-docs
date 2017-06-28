@@ -113,7 +113,7 @@ Invisible `NULL`
  
 [rxPackage](rxPackage.md),
 remove.packages,
-[rxFindPackage](rxFindPackage.md),
+[rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 [rxInstalledPackages](rxInstalledPackages.md),
 [rxInstallPackages](rxInstallPackages.md),  
 [rxSyncPackages](rxSyncPackages.md),

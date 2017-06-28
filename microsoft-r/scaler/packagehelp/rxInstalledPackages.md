@@ -118,7 +118,7 @@ same package is installed in different `"system"`, `"shared"` and `"private"` sc
  
 [rxPackage](rxPackage.md),
 installed.packages,
-[rxFindPackage](rxFindPackage.md),
+[rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 [rxInstallPackages](rxInstallPackages.md),   
 [rxRemovePackages](rxRemovePackages.md),
 [rxSyncPackages](rxSyncPackages.md),

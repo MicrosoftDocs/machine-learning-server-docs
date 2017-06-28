@@ -55,17 +55,17 @@ Find the path for one or more packages for a compute context.
   
     
  ### `computeContext`
- an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](RxInTeradata.md), [RxInSqlServer](RxInSqlServer.md), [RxLocalSeq](RxLocalSeq.md). 
+ an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](../../scaler/packagehelp/rxinteradata.md), [RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md), [RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md). 
   
   
     
  ### `allNodes`
- logical. If `TRUE` and an [RxInTeradata](RxInTeradata.md) compute context is used, a list of results from each node is returned. 
+ logical. If `TRUE` and an [RxInTeradata](../../scaler/packagehelp/rxinteradata.md) compute context is used, a list of results from each node is returned. 
    
    
     
  ### `lib.loc`
- a character vector describing the location of R library trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace, then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](RxInSqlServer.md) only `NULL` is supported. 
+ a character vector describing the location of R library trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace, then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md) only `NULL` is supported. 
   
    
     
@@ -99,13 +99,13 @@ a list of lists with a character vector of paths from each node will be returned
  
  ##See Also
  
-[rxPackage](rxPackage.md),
+[rxPackage](../../scaler/packagehelp/rxpackage.md),
 find.package,
-[rxInstalledPackages](rxInstalledPackages.md),
-[rxInstallPackages](rxInstallPackages.md),   
-[rxRemovePackages](rxRemovePackages.md),
-[rxSyncPackages](rxSyncPackages.md),
-[rxSqlLibPaths](rxSqlLibPaths.md),   
+[rxInstalledPackages](../../scaler/packagehelp/rxinstalledpackages.md),
+[rxInstallPackages](../../scaler/packagehelp/rxinstallpackages.md),   
+[rxRemovePackages](../../scaler/packagehelp/rxremovepackages.md),
+[rxSyncPackages](../../scaler/packagehelp/rxsyncpackages.md),
+[rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md),   
 require
    
  ##Examples
