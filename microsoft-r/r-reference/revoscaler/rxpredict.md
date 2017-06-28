@@ -63,12 +63,12 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `data`
- An [RxXdfData](RxXdfData.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
+ An [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](rxhadoopmr.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
   
   
     
  ### `outData`
- file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, must be an .xdf file if `data` is an .xdf file or a data frame if `data` is a data frame. `outData` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
+ file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, must be an .xdf file if `data` is an .xdf file or a data frame if `data` is a data frame. `outData` can also be a delimited [RxTextData](../../scaler/packagehelp/rxtextdata.md) data source if using a native file system and not appending. 
   
   
     
@@ -93,7 +93,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `type`
- the type of prediction desired for [rxGlm](../../r-reference/revoscaler/rxglm.md) and [rxLogit](../../r-reference/revoscaler/rxlogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
+ the type of prediction desired for [rxGlm](rxglm.md) and [rxLogit](rxlogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
   
   
     
@@ -113,7 +113,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `append`
-  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](RxTeradata.md) data source. Ignored for data frames.    
+  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](../../scaler/packagehelp/rxteradata.md) data source. Ignored for data frames.    
   
   
     
@@ -207,7 +207,7 @@ is `NULL`, a vector or list of the computed values will be returned.
 If a transformation function is being used for the model estimation,
 the information variable `.rxIsPrediction` can be used to
 exclude computations for the dependent variable when running
-`rxPredict`.  See [rxTransform](rxTransform.md) for an example.
+`rxPredict`.  See [rxTransform](../../scaler/packagehelp/rxtransform.md) for an example.
  
  
  
@@ -219,12 +219,12 @@ results are added to the data frame and it is returned.
 If `outData` is `NULL`, a data frame containing
 the predicted values (and residuals and standard errors, if requested) is returned.
 
-If an .xdf file is specified as the input `data`, an [RxXdfData](RxXdfData.md)
+If an .xdf file is specified as the input `data`, an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md)
 data source object is returned that can be used in subsequent RevoScaleR analyses.
-If `outData` is an .xdf file, the [RxXdfData](RxXdfData.md) 
+If `outData` is an .xdf file, the [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) 
 data source represents the `outData` file.  If `outData` is `NULL`,
 the predicted values (and, if requested, residuals) are appended to the original
-`data` file. The returned [RxXdfData](RxXdfData.md) object represents this file.
+`data` file. The returned [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object represents this file.
  
  
  ## Computing Standard Errors of Predicted Values 
@@ -246,7 +246,7 @@ In calculating the prediction standard errors, keep the following in mind:
 
 
 * 
- Prediction standard errors are available for both [rxLinMod](../../r-reference/revoscaler/rxlinmod.md) and [rxLogit](../../r-reference/revoscaler/rxlogit.md) models.
+ Prediction standard errors are available for both [rxLinMod](rxlinmod.md) and [rxLogit](rxlogit.md) models.
 
 
 * 
@@ -254,7 +254,7 @@ In calculating the prediction standard errors, keep the following in mind:
 
 
 * 
- [rxLinMod](../../r-reference/revoscaler/rxlinmod.md) and [rxLogit](../../r-reference/revoscaler/rxlogit.md) must be called with `covCoef = TRUE` because the variance-covariance
+ [rxLinMod](rxlinmod.md) and [rxLogit](rxlogit.md) must be called with `covCoef = TRUE` because the variance-covariance
 matrix of the coefficients must be available.
 
 
@@ -267,7 +267,7 @@ matrix of the coefficients must be available.
 
 
 * 
- For [rxLogit](../../r-reference/revoscaler/rxlogit.md), `interval = "confidence"` is supported (unlike predict.glm, 
+ For [rxLogit](rxlogit.md), `interval = "confidence"` is supported (unlike predict.glm, 
 which does not support confidence bounds), but `interval = "prediction"` is not supported.
 
 
@@ -287,12 +287,12 @@ in the data) have no effect.
  
  ##See Also
  
-[rxLinMod](../../r-reference/revoscaler/rxlinmod.md),
-[rxLogit](../../r-reference/revoscaler/rxlogit.md),
-[rxGlm](../../r-reference/revoscaler/rxglm.md),
-[rxPredict.rxDTree](../../r-reference/revoscaler/rxdtree.md),
-[rxPredict.rxDForest](../../r-reference/revoscaler/rxdforest.md),
-[rxPredict.rxNaiveBayes](../../r-reference/revoscaler/rxnaivebayes.md).
+[rxLinMod](rxlinmod.md),
+[rxLogit](rxlogit.md),
+[rxGlm](rxglm.md),
+[rxPredict.rxDTree](rxdtree.md),
+[rxPredict.rxDForest](rxdforest.md),
+[rxPredict.rxNaiveBayes](rxnaivebayes.md).
    
  ##Examples
 
