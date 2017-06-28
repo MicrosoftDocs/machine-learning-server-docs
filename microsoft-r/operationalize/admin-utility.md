@@ -32,7 +32,7 @@ ms.custom: ""
 This article describes how to use the administration utility to configure R Server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials.
 
 Use the utility to:
-+ [Configure R Server for operationalization](configuration-initial.md) front-ends and back-ends
++ [Configure R Server for operationalization](../install/operationalize-r-server-one-box-config.md) front-ends and back-ends
 + [Set a local admin password](#admin-password)
 + [Stop and restart](#startstop) web and compute node services
 + [Update the service ports](#ports)
@@ -198,7 +198,7 @@ The following command line switches are available for the administration utility
 
 |Switch|Description|Version|
 |----|-----|:---:|
-|-silentoneboxinstall <password> <br><br>-silentinstall <password>|Sets up a [one-box configuration](configuration-initial.md) silently<br>  and sets an admin  password. For example: <br>`-silentinstall mypass123`|9.1|
+|-silentoneboxinstall <password> <br><br>-silentinstall <password>|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently<br>  and sets an admin  password. For example: <br>`-silentinstall mypass123`|9.1|
 |-silentwebnodeinstall <password>|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently<br> and sets an admin password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
 |-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently. For example: <br>`-silentcomputenodeinstall`|9.1|
 |-setpassword <password>|Sets the password. Cannot be used <br> if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|

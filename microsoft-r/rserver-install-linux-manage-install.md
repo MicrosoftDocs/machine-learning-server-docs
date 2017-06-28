@@ -173,4 +173,4 @@ If you are in a locked-down environment without access to the standard Microsoft
 
 [Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
 
-[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+[Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)

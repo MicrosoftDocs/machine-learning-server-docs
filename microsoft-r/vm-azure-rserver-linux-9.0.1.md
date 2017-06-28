@@ -117,7 +117,7 @@ Some related articles are:
 
 ## Operationalize R Analytics with R Server on the VM
 
-In order to operationalize your analytics with Microsoft R Server, you can [configure R Server](operationalize/configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
+In order to operationalize your analytics with Microsoft R Server, you can [configure R Server](install/operationalize-r-server-one-box-config.md) after installation to act as a deployment server and host analytic web services. 
 
 
 ## Access Data in an Azure Storage Account

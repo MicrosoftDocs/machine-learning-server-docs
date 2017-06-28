@@ -157,7 +157,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
 ## Configure R Server to operationalize your analytics
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 <a name="manage-installation"></a>
 ## Manage your installation
@@ -330,4 +330,4 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 [Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
 
-[Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+[Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)

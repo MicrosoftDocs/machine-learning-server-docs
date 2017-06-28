@@ -37,7 +37,7 @@ To secure connections and communications, you have several options:
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
-|[Local 'admin' account](#local)|For [one-box](configuration-initial.md) configurations|
+|[Local 'admin' account](#local)|For [one-box](../install/operationalize-r-server-one-box-config.md) configurations|
 |[Active Directory / LDAP](#ldap)|For [enterprise](../install/operationalize-r-server-enterprise-config.md) on-premises configurations|
 |[Active Directory / LDAP-S](#ldap)|For [enterprise](../install/operationalize-r-server-enterprise-config.md) on-premises configurations with SSL/TLS enabled|
 |[Azure Active Directory](#aad)|For [enterprise](../install/operationalize-r-server-enterprise-config.md) cloud configurations|
@@ -48,7 +48,7 @@ To secure connections and communications, you have several options:
 
 During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
 
-While this account might be sufficient when trying to operationalize with a [one-box configuration](configuration-initial.md#onebox) since everything is running within the trust boundary, it is insufficient for [enterprise configurations](../install/operationalize-r-server-enterprise-config.md).
+While this account might be sufficient when trying to operationalize with a [one-box configuration](../install/operationalize-r-server-one-box-config.md#onebox) since everything is running within the trust boundary, it is insufficient for [enterprise configurations](../install/operationalize-r-server-enterprise-config.md).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](admin-utility.md#admin-password).
 

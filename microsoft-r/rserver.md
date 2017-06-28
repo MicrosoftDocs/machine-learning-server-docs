@@ -93,7 +93,7 @@ Developers can use Swagger APIs to automate R analytics over single and multi-se
 
 ## Operationalize your analytics
 
-Being able to operationalize your analytics is another central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is now fully integrated into R Server. After installing R Server on select platforms (availability on all platforms is still pending), you'll have everything you need to [configure R Server to deploy, host, and consume R analytics web services and remote R sessions](operationalize/configuration-initial.md).  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
+Being able to operationalize your analytics is another central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is now fully integrated into R Server. After installing R Server on select platforms (availability on all platforms is still pending), you'll have everything you need to [configure R Server to deploy, host, and consume R analytics web services and remote R sessions](install/operationalize-r-server-one-box-config.md).  For details on which platforms, see [Supported platforms](rserver-install-supported-platforms.md).
 
 [Learn more about operationalizing analytics with R Server.](operationalize/about.md)
 

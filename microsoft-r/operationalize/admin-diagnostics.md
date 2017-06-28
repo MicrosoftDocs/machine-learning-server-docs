@@ -198,9 +198,9 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using operat
 
    1. At the command prompt, type `tail -f /opt/deployr/9.0.1/rserve/R/log`. The symlinks are revealed. 
 
-   1. Compare these to those listed in the [configuration](configuration-initial.md) article.
+   1. Compare these to those listed in the [configuration](../install/operationalize-r-server-one-box-config.md) article.
 
-   1. Add a few symlinks using the commands in the [configuration](configuration-initial.md) article.
+   1. Add a few symlinks using the commands in the [configuration](../install/operationalize-r-server-one-box-config.md) article.
 
    1. [Restart](admin-utility.md#startstop) the compute node services.
 

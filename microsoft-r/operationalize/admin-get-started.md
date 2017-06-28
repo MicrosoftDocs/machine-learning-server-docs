@@ -43,7 +43,7 @@ Whenever your policies fail to deliver the expected runtime behavior or performa
 
 ## Configure web & compute nodes for analytic deployment and remote execution
 
-To benefit from Microsoft R Server’s web service deployment and remote execution features, you must first [configure R Server](configuration-initial.md) after installation to act as a deployment server and host analytic web services. 
+To benefit from Microsoft R Server’s web service deployment and remote execution features, you must first [configure R Server](../install/operationalize-r-server-one-box-config.md) after installation to act as a deployment server and host analytic web services. 
 
 All configurations have at least a single web node and single compute node:
 
@@ -52,7 +52,7 @@ All configurations have at least a single web node and single compute node:
 + A **compute node** is used to execute R code as a session or service. Each compute node has its [own pool of R shells](admin-evaluate-capacity.md#r-shell-pool).
 
 There are two types of configuration:
-1. **One-box**: the simplest configuration is a single web node and compute node on a single machine as described in this [One-box configuration](configuration-initial.md) article.
+1. **One-box**: the simplest configuration is a single web node and compute node on a single machine as described in this [One-box configuration](../install/operationalize-r-server-one-box-config.md) article.
 
 1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in this [Enterprise configuration](../install/operationalize-r-server-enterprise-config.md) article.
 
@@ -141,7 +141,7 @@ This section provides a quick summary of useful links for administrators working
 
 **Key Documents**
 -   [About Operationalization](about.md)
--   [Configuration](configuration-initial.md)
+-   [Configuration](../install/operationalize-r-server-one-box-config.md)
 -   [R Package Management](package-management.md)
 -   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
 -   [Capacity Evaluatation](admin-evaluate-capacity.md)

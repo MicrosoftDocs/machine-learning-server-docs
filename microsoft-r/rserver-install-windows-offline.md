@@ -117,7 +117,7 @@ Additionally, run the [Administrator Utility](operationalize/admin-utility.md) t
 
 ## Enable Remote Connections and Analytic Deployment
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize/configuration-initial.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## What's Installed with R Server
 
@@ -145,4 +145,4 @@ Consider adding a development tool on the server to build script or solutions us
  [Known Issues](rserver-known-issues.md)  
  [Command line installation](rserver-install-windows-commandline.md)  
  [Microsoft R Getting Started Guide](microsoft-r-getting-started.md)    
- [Configure R Server to operationalize analytics](operationalize/configuration-initial.md)
+ [Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)

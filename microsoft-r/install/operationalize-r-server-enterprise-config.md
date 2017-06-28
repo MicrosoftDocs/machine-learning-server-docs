@@ -47,7 +47,7 @@ In an enterprise configuration, these nodes can be scaled independently. Scaling
 
 For added security, you can [configure SSL](../deployr/security-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../deployr/security-authentication.md).
 
-Another configuration, referred to as "one-box", consists of a single web node and a single compute node installed on the same machine. Learn more about this configuration, [here](../operationalize/configuration-initial.md). 
+Another configuration, referred to as "one-box", consists of a single web node and a single compute node installed on the same machine. Learn more about this configuration, [here](operationalize-r-server-one-box-config.md). 
 
 ![Enterprise Configuration](./media/operationalize-r-server-enterprise-config/configure-enterprise.png)
 

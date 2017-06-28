@@ -283,7 +283,7 @@ Once you have R Server installed on a node, you can the `rxExec` function in Rev
 
 ## Configure R Server to operationalize your analytics
 
-Developers might want to configure R Server after its installation to benefit from the deployment and consumption of web services on your Hadoop cluster. This optional feature provides a server-based framework for running R code in real time.  We recommend that you set up the ["one-box configuration"](operationalize/configuration-initial.md#onebox), where the compute node and web node are on the same machine. If you need to scale the configuration, then you can add web nodes and compute nodes on the other edge nodes. Do not configure a web node or compute node on any data nodes since they are not YARN resources.
+Developers might want to configure R Server after its installation to benefit from the deployment and consumption of web services on your Hadoop cluster. This optional feature provides a server-based framework for running R code in real time.  We recommend that you set up the ["one-box configuration"](install/operationalize-r-server-one-box-config.md#onebox), where the compute node and web node are on the same machine. If you need to scale the configuration, then you can add web nodes and compute nodes on the other edge nodes. Do not configure a web node or compute node on any data nodes since they are not YARN resources.
 
 
 ## See Also

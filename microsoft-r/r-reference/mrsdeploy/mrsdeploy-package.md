@@ -44,13 +44,13 @@ For remote execution, participating nodes can be either of the following configu
 The requirements for remote execution include:
 
 + An R Integrated Development Environment (IDE) [configured to work with Microsoft R Client](../../r-client-get-started.md). 
-+ [Authenticated access](../../deployr-admin-security/security-authentication.md) to an instance of Microsoft R Server [configured to operationalize analytics](../../operationalize/configuration-initial.md).
++ [Authenticated access](../../deployr-admin-security/security-authentication.md) to an instance of Microsoft R Server [configured to operationalize analytics](../../install/operationalize-r-server-one-box-config.md).
 
 <a name="use-mrsdeploy"></a>
 
 ## How to use mrsdeploy
 
-**The `mrsdeploy` package can only be used once Microsoft R Server has been configured to operationalize analytics**.  For more information, see [Configuring R Server to operationalize analytics](../../operationalize/configuration-initial.md).
+**The `mrsdeploy` package can only be used once Microsoft R Server has been configured to operationalize analytics**.  For more information, see [Configuring R Server to operationalize analytics](../../install/operationalize-r-server-one-box-config.md).
 
 + On R Client, the `mrsdeploy` package is installed **and loaded** automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
 
