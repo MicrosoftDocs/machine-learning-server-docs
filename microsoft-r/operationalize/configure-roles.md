@@ -42,7 +42,7 @@ To assign groups of users in your Active Directory to R Server roles for web ser
 
 + An instance of Microsoft R Server that is [configured to operationalize analytics](../install/operationalize-r-server-enterprise-config.md)
 
-+ Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](../operationalize/configure-authentication.md)
++ Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](configure-authentication.md)
 
 + The names of the groups that contain the users to whom you want to give special permissions
 
@@ -136,7 +136,7 @@ R Server must be given the ability to verify the groups you declare against thos
 1. Open the web application you created when you [configured R Server for AAD authentication](configure-authentication.md#aad).
 
 1. With the application open, go to the bottom of the page and click the **Manage Manifest > Download Manifest**. A popup menu appears.
-   ![Manifest](../media/o16n/security-auth-2.png)
+   ![Manifest](./media/configure-roles/security-auth-2.png)
 
 1. Open the manifest file in a text editor and ensure that the property `"groupMembershipClaims"` looks like this:
 
@@ -150,7 +150,7 @@ R Server must be given the ability to verify the groups you declare against thos
 
 1. In the same tab, scroll to the **Permissions to other applications** section and click the **Delegated Permissions** listbox. and make sure that the **Read directory data** checkbox is enabled.
 
-   ![Checkbox](../media/o16n/security-auth-1.png) -->
+   ![Checkbox](./media/configure-roles/security-auth-1.png) -->
 
 #### Step 2. Validate the groups against AD/LDAP or AAD.
 
@@ -169,7 +169,7 @@ Return to [the `appsetting.json` file](configure-find-admin-configuration-file.m
 
 #### Step 3. Apply the changes to R Server
 
-1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local 'admin' account](../operationalize/configure-authentication.md#local) in the administration utility.
+1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect. You'll need to log in  using [the local 'admin' account](configure-authentication.md#local) in the administration utility.
 
 1. Repeat these changes in every web node you've configured.  The configuration must be the same across all web nodes.
 

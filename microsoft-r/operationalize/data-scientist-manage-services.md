@@ -89,7 +89,7 @@ Any authenticated user can:
 + Retrieve any web service object for consumption
 + Retrieve a list of any or all web services
 
-While any authenticated user can also publish a web service by default, roles can be used to further control permissions. Beginning in version 9.1, your administrator can also **[assign role-based authorization](security-roles.md)** to further restrict the permissions around web services to give some users more control over web services than others. Ask your administrator for details on your role.
+While any authenticated user can also publish a web service by default, roles can be used to further control permissions. Beginning in version 9.1, your administrator can also **[assign role-based authorization](configure-roles.md)** to further restrict the permissions around web services to give some users more control over web services than others. Ask your administrator for details on your role.
 
 ## Publish and update web services
 

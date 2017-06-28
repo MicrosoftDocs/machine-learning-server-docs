@@ -111,7 +111,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >
    >For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
    >
-   >Similarly, if your organization changes its usernames, those users can no longer access the web services and snapshots they created unless they are [assigned to the `Owner` role](security-roles.md).  
+   >Similarly, if your organization changes its usernames, those users can no longer access the web services and snapshots they created unless they are [assigned to the `Owner` role](configure-roles.md).  
 
    <br>
 
@@ -141,7 +141,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >[!NOTE]
    >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
-1. To set different levels of permissions for users interacting with web services, [assign them roles](security-roles.md).
+1. To set different levels of permissions for users interacting with web services, [assign them roles](configure-roles.md).
 
 1. If using a certificate for access token signing, you must: 
 
@@ -223,7 +223,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
    1. Add a client key to the web app's **Keys** section by selecting a key duration and take note of the key. 
    
       >[!IMPORTANT] 
-      > Take note of this key as it is needed to configure [roles to give web services permissions to certain users](security-roles.md). See following example.
+      > Take note of this key as it is needed to configure [roles to give web services permissions to certain users](configure-roles.md). See following example.
 
       ![Configure web application](./media/configure-authentication/webapp2.png)
 
@@ -306,7 +306,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
     }
    ```
 
-1. To set different levels of permissions for users interacting with web services, [assign them roles](security-roles.md).
+1. To set different levels of permissions for users interacting with web services, [assign them roles](configure-roles.md).
 
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.

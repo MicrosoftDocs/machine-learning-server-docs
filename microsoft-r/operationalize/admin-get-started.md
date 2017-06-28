@@ -70,7 +70,7 @@ In addition to authentication, you can add other enterprise security around Micr
 
 + [Cross-Origin Resource Sharing](configure-cors.md) to allow restricted resources on a web page to be requested from another domain outside the originating domain.
 
-+ [Role-based access control](security-roles.md) over web services in R Server.
++ [Role-based access control](configure-roles.md) over web services in R Server.
 
 Additionally, we recommend that you review the following [Security Considerations](configure-r-execution-security.md).
 

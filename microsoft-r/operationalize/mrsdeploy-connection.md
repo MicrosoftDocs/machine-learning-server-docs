@@ -44,7 +44,7 @@ This section describes how to authenticate to R Server on-premises or in the clo
 
 In R Server, every API call between the Web server and client must be authenticated. The mrsdeploy functions, which place API calls on your behalf, are no different. Authentication of user identity is handled via Active Directory. R Server will never store or manage usernames and passwords.
 
-By default, all `mrsdeploy` operations are available to authenticated users. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](security-roles.md) to further control the permissions around web services. 
+By default, all `mrsdeploy` operations are available to authenticated users. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. 
 
 `mrsdeploy` provides two functions for authentication against R Server: remoteLogin() and remoteLoginAAD(). These functions support not just authentication, but creation of a remote R session on the R Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the R Server instance, and open a remote command prompt.
  The function you use depends on the [type of authentication and deployment in your organization](configure-authentication.md). 

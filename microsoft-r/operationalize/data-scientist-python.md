@@ -651,7 +651,7 @@ for service in client.get_all_web_services(headers):
 
 #### Delete services
 
-You can delete services you've created. You can also delete the services of others if you are [assigned to a role](security-roles.md) with those permissions.
+You can delete services you've created. You can also delete the services of others if you are [assigned to a role](configure-roles.md) with those permissions.
 
 In this example, we delete the second web service version we just published.
 
