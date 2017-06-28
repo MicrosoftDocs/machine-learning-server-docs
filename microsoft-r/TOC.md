@@ -324,7 +324,7 @@
 ### [RevoScaleR-deprecated](scaler/packagehelp/RevoScaleR-deprecated.md)
 ### Data sets
 #### [AirlineData87to08](r-reference/revoscaler/airlinedata87to08.md) 
-#### [AirlineDemoSmall](scaler/packagehelp/AirlineDemoSmall.md) 
+#### [AirlineDemoSmall](r-reference/revoscaler/airlinedemosmall.md) 
 #### [AirOnTime87to12](scaler/packagehelp/AirOnTime87to12.md)
 #### [CensusUS5Pct2000](scaler/packagehelp/CensusUS5Pct2000.md) 
 #### [CensusWorkers](scaler/packagehelp/CensusWorkers.md)
