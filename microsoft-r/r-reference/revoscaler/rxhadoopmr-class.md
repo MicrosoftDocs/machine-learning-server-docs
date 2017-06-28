@@ -39,8 +39,8 @@ Hadoop Map Reduce Local (File) compute context class.
  ## Generators 
 
  
-The targeted generator [RxHadoopMR](RxHadoopMR.md) as well as the general generator
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).
+The targeted generator [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) as well as the general generator
+[RxComputeContext](rxcomputecontext.md).
  
  ## Extends 
 
@@ -64,6 +64,6 @@ Class RxComputeContext, directly.
  
  ##See Also
  
-[RxHadoopMR](RxHadoopMR.md)
+[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md)
    
  

@@ -242,7 +242,7 @@ object of class RxHadoopMR.
 [RxInTeradata](RxInTeradata.md), 
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [rxSetComputeContext](rxSetComputeContext.md),
-[RxHadoopMR-class](RxHadoopMR-class.md).
+[RxHadoopMR-class](../../r-reference/revoscaler/rxhadoopmr-class.md).
    
  
  ##Examples
