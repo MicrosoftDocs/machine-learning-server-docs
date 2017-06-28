@@ -86,7 +86,7 @@ print  ( x, ... )
  
 Writing to the HDFS file system can only be done using a [RxHadoopMR](RxHadoopMR.md)
 compute context with an [RxXdfData](RxXdfData.md) data source. The 'rxHadoop' commands,
-such as [rxHadoopCopy](rxHadoopCommand.md), can also be used to manipulate data sets in HDFS.
+such as [rxHadoopCopy](../../r-reference/revoscaler/rxhadoopcommand.md), can also be used to manipulate data sets in HDFS.
  
  
  
