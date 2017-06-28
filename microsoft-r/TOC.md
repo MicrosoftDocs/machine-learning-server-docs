@@ -362,7 +362,7 @@
 #### [rxDForest](r-reference/revoscaler/rxdforest.md) 
 #### [rxDForestUtils](r-reference/revoscaler/rxdforestutils.md) 
 #### [RxDistributedHpa-class](r-reference/revoscaler/rxdistributedhpa-class.md) 
-#### [rxDistributeJob](scaler/packagehelp/rxDistributeJob.md) 
+#### [rxDistributeJob](r-reference/revoscaler/rxdistributejob.md) 
 #### [rxDTree](scaler/packagehelp/rxDTree.md) 
 #### [rxDTreeBestCp](scaler/packagehelp/rxDTreeBestCp.md) 
 #### [rxElemArg](scaler/packagehelp/rxElemArg.md) 

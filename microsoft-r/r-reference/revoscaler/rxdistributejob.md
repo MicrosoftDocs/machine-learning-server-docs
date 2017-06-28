@@ -62,12 +62,12 @@ if the 'compute context' is appropriate.
   
   
  ### `computeContext`
- `NULL` or an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) object. 
+ `NULL` or an [RxComputeContext](rxcomputecontext.md) object. 
   
   
   
  ### `data`
- `NULL` or an [RxDataSource](../../r-reference/revoscaler/rxdatasource.md) object.  If specified, compatibility of the data source with the 'dataDistType' in the compute context will be checked. 
+ `NULL` or an [RxDataSource](rxdatasource.md) object.  If specified, compatibility of the data source with the 'dataDistType' in the compute context will be checked. 
   
   
  
@@ -88,10 +88,10 @@ The result of the distributed computation.
  
  ##See Also
  
-[rxExec](rxExec.md),
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[rxSetComputeContext](rxSetComputeContext.md),
-[rxGetComputeContext](rxSetComputeContext.md)
+[rxExec](../../scaler/packagehelp/rxexec.md),
+[RxComputeContext](rxcomputecontext.md),
+[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
+[rxGetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md)
    
  ##Examples
 
