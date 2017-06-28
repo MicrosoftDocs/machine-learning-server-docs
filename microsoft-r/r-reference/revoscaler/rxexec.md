@@ -52,17 +52,17 @@ of a "compute context" such as a cluster.
    
   
  ### `FUN`
- the function to be executed; the nodes or cores on which it is run are determined by the currently-active compute context and by the other arguments of [rxExec](rxExec.md). 
+ the function to be executed; the nodes or cores on which it is run are determined by the currently-active compute context and by the other arguments of [rxExec](rxexec.md). 
   
   
   
  ### ` ...`
- arguments passed to the function `FUN` each time it is executed.  Separate argument values can be sent for each computation by wrapping a vector or list of argument values in [rxElemArg](../../r-reference/revoscaler/rxelemarg.md). 
+ arguments passed to the function `FUN` each time it is executed.  Separate argument values can be sent for each computation by wrapping a vector or list of argument values in [rxElemArg](rxelemarg.md). 
   
   
   
  ### `elemArgs`
- a vector or list specifying arguments to `FUN`. This allows a different set of arguments to be passed to `FUN` each time it is executed.  The length of the vector or list must match the number of times the function will  be executed. Each of these elements will be passed in turn  to `FUN`. Using a list of lists allows multiple named or unnamed parameters to be passed. If `elemArgs` has length 1, that argument is passed to all compute  elements (and thus is an alternative to  ...). The elements of `elemArgs` may be named; if they are node names those elements will be passed to those nodes. Alternatively, they can be "rxElem1", "rxElem2" and so on. In this case, the list of returned values will have those corresponding names. See the Details section for more information. This is an alternative to using [rxElemArg](../../r-reference/revoscaler/rxelemarg.md) one or more times.  
+ a vector or list specifying arguments to `FUN`. This allows a different set of arguments to be passed to `FUN` each time it is executed.  The length of the vector or list must match the number of times the function will  be executed. Each of these elements will be passed in turn  to `FUN`. Using a list of lists allows multiple named or unnamed parameters to be passed. If `elemArgs` has length 1, that argument is passed to all compute  elements (and thus is an alternative to  ...). The elements of `elemArgs` may be named; if they are node names those elements will be passed to those nodes. Alternatively, they can be "rxElem1", "rxElem2" and so on. In this case, the list of returned values will have those corresponding names. See the Details section for more information. This is an alternative to using [rxElemArg](rxelemarg.md) one or more times.  
   
   
   
@@ -105,12 +105,12 @@ of a "compute context" such as a cluster.
    
   
  ### `consoleOutput`
- `NULL` or logical value. If `TRUE`, the console output from the  all of the processes is printed to the user console. Note that the output from different nodes or cores may be interleaved in an unpredictable way. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](rxGetJobOutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used.  This parameter is ignored  if the active compute context is local. 
+ `NULL` or logical value. If `TRUE`, the console output from the  all of the processes is printed to the user console. Note that the output from different nodes or cores may be interleaved in an unpredictable way. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](../../scaler/packagehelp/rxgetjoboutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used.  This parameter is ignored  if the active compute context is local. 
   
   
   
  ### `autoCleanup`
- `NULL` or logical value. If `TRUE`, artifacts created by the distributed  computing job are deleted when the results are returned or retrieved using [rxGetJobResults](rxGetJobResults.md). If `FALSE`, the artifacts are not deleted,  and the results may be obtained repeatedly using [rxGetJobResults](rxGetJobResults.md),  and the console output via [rxGetJobOutput](rxGetJobOutput.md) until  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the artifacts. If not `NULL`, this flag overrides  the value set in the compute context when the job was submitted. If you routinely  set `autoCleanup=FALSE`, you may eventually fill your hard disk with  compute artifacts. If you set `autoCleanup=TRUE` and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`.  This  parameter is ignored if the active compute context is local. 
+ `NULL` or logical value. If `TRUE`, artifacts created by the distributed  computing job are deleted when the results are returned or retrieved using [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md). If `FALSE`, the artifacts are not deleted,  and the results may be obtained repeatedly using [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md),  and the console output via [rxGetJobOutput](../../scaler/packagehelp/rxgetjoboutput.md) until  [rxCleanupJobs](rxcleanup.md) is used to delete the artifacts. If not `NULL`, this flag overrides  the value set in the compute context when the job was submitted. If you routinely  set `autoCleanup=FALSE`, you may eventually fill your hard disk with  compute artifacts. If you set `autoCleanup=TRUE` and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`.  This  parameter is ignored if the active compute context is local. 
   
   
   
@@ -125,7 +125,7 @@ of a "compute context" such as a cluster.
   
   
  ### `RNGkind`
- `NULL` or a character string specifying the type of random number generator to be used. Allowable strings are the strings accepted by [rxRngNewStream](rxRng.md), `"auto"`, and, if the active compute context is local parallel, `"L'Ecuyer-CMRG"` (for compatibility with the parallel package). See the Details section for a description of how the `"auto"` string is used. 
+ `NULL` or a character string specifying the type of random number generator to be used. Allowable strings are the strings accepted by [rxRngNewStream](../../scaler/packagehelp/rxrng.md), `"auto"`, and, if the active compute context is local parallel, `"L'Ecuyer-CMRG"` (for compatibility with the parallel package). See the Details section for a description of how the `"auto"` string is used. 
   
   
   
@@ -142,7 +142,7 @@ are performed sequentially.
 There are two primary sets of use cases:  In the first set, each computing element 
 (node or core) gets the same argument values; in this case, do not use `elemArgs` or 
 `rxElemArg`.  In the second, each element gets a different set of 
-arguments; use [rxElemArg](../../r-reference/revoscaler/rxelemarg.md) for each argument that has different values, or 
+arguments; use [rxElemArg](rxelemarg.md) for each argument that has different values, or 
 an `elemArgs` whose length is equal to the number of times `FUN` will
 be executed.
 
@@ -155,7 +155,7 @@ be executed.
 
 
 **Set 2: Every computing element gets a different set of arguments.**
-If [rxElemArg](../../r-reference/revoscaler/rxelemarg.md) is used, the length of the vector or list for the enclosed argument
+If [rxElemArg](rxelemarg.md) is used, the length of the vector or list for the enclosed argument
 must equal the number of compute elements. For example,
 
 `rxExec(FUN, arg1 = 1, arg2 = rxElemArg(c(1:5)))` 
@@ -174,9 +174,9 @@ the processing, so arguments intended for a particular node may not be used; the
 however.
 
 The component names must be valid R syntactic names. If you have nodes on your cluster with names that
-are not valid R syntactic names, use the function [rxMakeRNodeNames](rxMakeRNodeNames.md) on the node name to 
+are not valid R syntactic names, use the function [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) on the node name to 
 determine the appropriate name to give the list component. When the return value is a list with elements
-named by compute node, the node names are as returned by the [rxMakeRNodeNames](rxMakeRNodeNames.md) function.
+named by compute node, the node names are as returned by the [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) function.
 
 
 
@@ -207,7 +207,7 @@ of seeds, one for each worker. In the special case of a local parallel compute c
  
 If a waiting compute context is active, a list with an element for each job, where each element contains the value(s) 
 returned by that job's function call(s). 
-If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResults](rxGetJobResults.md).
+If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md).
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -216,20 +216,20 @@ If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResul
  
  ##See Also
  
-[rxElemArg](../../r-reference/revoscaler/rxelemarg.md),
-[rxGetJobResults](rxGetJobResults.md),
-[rxGetJobStatus](rxGetJobResults.md),
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[rxSetComputeContext](rxSetComputeContext.md),
-[RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
-[RxInTeradata](RxInTeradata.md), 
-[RxForeachDoPar](RxForeachDoPar.md),
-[RxLocalParallel](RxLocalParallel.md),
-[RxLocalSeq](RxLocalSeq.md),
-[rxGetNodeInfo](rxGetNodeInfo.md),
-[rxMakeRNodeNames](rxMakeRNodeNames.md)
-[rxRngNewStream](rxRng.md)
+[rxElemArg](rxelemarg.md),
+[rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md),
+[rxGetJobStatus](../../scaler/packagehelp/rxgetjobresults.md),
+[RxComputeContext](rxcomputecontext.md),
+[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
+[RxSpark](../../scaler/packagehelp/rxspark.md),
+[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
+[RxInTeradata](../../scaler/packagehelp/rxinteradata.md), 
+[RxForeachDoPar](../../scaler/packagehelp/rxforeachdopar.md),
+[RxLocalParallel](../../scaler/packagehelp/rxlocalparallel.md),
+[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
+[rxGetNodeInfo](../../scaler/packagehelp/rxgetnodeinfo.md),
+[rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md)
+[rxRngNewStream](../../scaler/packagehelp/rxrng.md)
    
  ##Examples
 

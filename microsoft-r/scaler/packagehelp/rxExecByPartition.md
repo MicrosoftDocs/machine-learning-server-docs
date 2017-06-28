@@ -111,7 +111,7 @@ As shown in the table, when running analytics on local compute context, PXdf is 
 rxPartition,
 [rxGetPartitions](rxGetPartitions.md),
 [rxSplit](rxSplitXdf.md),
-[rxExec](rxExec.md),
+[rxExec](../../r-reference/revoscaler/rxexec.md),
 [rxImport](rxImport.md)
    
  ##Examples

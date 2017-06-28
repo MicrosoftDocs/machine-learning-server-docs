@@ -80,7 +80,7 @@ useful return value.
 [rxGetJobs](rxGetJobs.md),
 [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md), 
 [rxGetJobResults](rxGetJobResults.md),
-[rxExec](rxExec.md).
+[rxExec](../../r-reference/revoscaler/rxexec.md).
    
  ##Examples
 

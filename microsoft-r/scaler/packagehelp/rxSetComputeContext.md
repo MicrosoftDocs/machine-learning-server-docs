@@ -76,7 +76,7 @@ Get or set the active compute context for RevoScaleR computations
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [rxOptions](rxOptions.md),
 [rxGetOption](rxOptions.md)
-[rxExec](rxExec.md).
+[rxExec](../../r-reference/revoscaler/rxexec.md).
    
  ##Examples
 

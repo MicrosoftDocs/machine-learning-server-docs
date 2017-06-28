@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Generate Local Parallel Compute Context" 
-description: " Creates a local compute context object that uses the doParallel back-end for HPC computations  performed using rxExec.  This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel. " 
+description: " Creates a local compute context object that uses the doParallel back-end for HPC computations  performed using rxExec.  This compute context can be used only to distribute computations via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel. " 
 keywords: "RevoScaleR, RxLocalParallel, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -33,7 +33,7 @@ ms.custom: ""
  
 Creates a local compute context object that uses the doParallel back-end for HPC computations 
 performed using rxExec.  This compute context can be used only to distribute computations
-via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel.
+via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel.
  
  
  ##Usage
@@ -88,7 +88,7 @@ object of class RxLocalParallel.
  ##See Also
  
 [rxSetComputeContext](rxSetComputeContext.md),
-[rxExec](rxExec.md),
+[rxExec](../../r-reference/revoscaler/rxexec.md),
 [rxOptions](rxOptions.md),
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxLocalSeq](RxLocalSeq.md),

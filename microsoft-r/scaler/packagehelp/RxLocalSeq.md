@@ -86,7 +86,7 @@ object of class RxLocalSeq.
  ##See Also
  
 [rxSetComputeContext](rxSetComputeContext.md),
-[rxExec](rxExec.md),
+[rxExec](../../r-reference/revoscaler/rxexec.md),
 [rxOptions](rxOptions.md),
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxLocalParallel](RxLocalParallel.md),

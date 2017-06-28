@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Generate RxForeachDoPar Compute Context" 
-description: " Creates a compute context object using the registered `foreach` parallel back end. This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxForeachDoPar. " 
+description: " Creates a compute context object using the registered `foreach` parallel back end. This compute context can be used only to distribute computations via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxForeachDoPar. " 
 keywords: "RevoScaleR, RxForeachDoPar, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -33,7 +33,7 @@ ms.custom: ""
  
 Creates a compute context object using the registered `foreach`
 parallel back end. This compute context can be used only to distribute computations
-via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions.
+via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored by Revolution HPA functions.
 This is the main generator for S4 class RxForeachDoPar.
  
  
@@ -100,7 +100,7 @@ doRSR-package,
 registerDoRSR,
 [rxSetComputeContext](rxSetComputeContext.md),
 [rxOptions](rxOptions.md),
-[rxExec](rxExec.md),
+[rxExec](../../r-reference/revoscaler/rxexec.md),
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),

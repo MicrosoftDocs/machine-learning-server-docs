@@ -81,10 +81,10 @@ Using `multicore` and/or `doMC` to launch R processes with RevoScaleR
 
 
 
-Note that when using [rxExec](rxExec.md), the default behavior for any worker node process on a Linux host will be to have 
-the thread pool off (set to create threads in an ad hoc manner).  If the function passed to [rxExec](rxExec.md) is going to make 
+Note that when using [rxExec](../../r-reference/revoscaler/rxexec.md), the default behavior for any worker node process on a Linux host will be to have 
+the thread pool off (set to create threads in an ad hoc manner).  If the function passed to [rxExec](../../r-reference/revoscaler/rxexec.md) is going to make 
 multiple calls into RevoScaleR functions, you will probably want to include a call to `rxSetEnableThreadPool(TRUE)` as
-the first line of the function that you pass to [rxExec](rxExec.md).
+the first line of the function that you pass to [rxExec](../../r-reference/revoscaler/rxexec.md).
 
 For distributed HPA functions run on worker nodes, threading is always automatically handled for the user.
 

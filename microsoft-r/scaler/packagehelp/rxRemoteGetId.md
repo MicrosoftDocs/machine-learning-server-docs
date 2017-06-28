@@ -44,7 +44,7 @@ Provides a unique identifier for the process in the range [1:N] where N is the n
  
  ##Details
  
-This function is intended for use in calls to [rxExec](rxExec.md) to identify the process performing a given computation.  
+This function is intended for use in calls to [rxExec](../../r-reference/revoscaler/rxexec.md) to identify the process performing a given computation.  
 
 You can also use `rxRemoteGetId` to obtain separate random number seeds.
 See the examples.

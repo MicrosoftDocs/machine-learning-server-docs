@@ -120,7 +120,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [rxGetJobOutput](rxGetJobOutput.md),
 [rxGetJobResults](rxGetJobResults.md),
 [rxGetJobStatus](rxGetJobResults.md),
-[rxExec](rxExec.md), 
+[rxExec](../../r-reference/revoscaler/rxexec.md), 
 [RxSpark](RxSpark.md),
 [RxHadoopMR](RxHadoopMR.md),
 [RxInSqlServer](RxInSqlServer.md),

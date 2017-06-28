@@ -366,7 +366,7 @@
 #### [rxDTree](r-reference/revoscaler/rxdtree.md) 
 #### [rxDTreeBestCp](r-reference/revoscaler/rxdtreebestcp.md) 
 #### [rxElemArg](r-reference/revoscaler/rxelemarg.md) 
-#### [rxExec](scaler/packagehelp/rxExec.md)
+#### [rxExec](r-reference/revoscaler/rxexec.md)
 #### [rxExecBy](scaler/packagehelp/rxExecBy.md) 
 #### [rxExecByPartition](scaler/packagehelp/rxExecByPartition.md) 
 #### [rxExecuteSQLDDL](scaler/packagehelp/rxExecuteSQLDDL.md) 

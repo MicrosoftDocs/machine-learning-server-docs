@@ -50,7 +50,7 @@ Obtain distributed computing results and processing status.
    
     
  ### `jobInfo`
- a `jobInfo` object as returned by [rxExec](rxExec.md) or a **RevoScaleR**analysis function, for example, the `rxgLastPendingJob` object, if available. 
+ a `jobInfo` object as returned by [rxExec](../../r-reference/revoscaler/rxexec.md) or a **RevoScaleR**analysis function, for example, the `rxgLastPendingJob` object, if available. 
   
   
   
@@ -126,7 +126,7 @@ not available because the job has not finished, has failed, or was deleted.
 [rxGetJobs](rxGetJobs.md), 
 [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
 [rxGetJobStatus](rxGetJobResults.md),
-[rxExec](rxExec.md).
+[rxExec](../../r-reference/revoscaler/rxexec.md).
    
  ##Examples
 
