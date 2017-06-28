@@ -58,7 +58,7 @@ according to file path rules of the remote compute context platform.
  ##See Also
  
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[RxHadoopMR](RxHadoopMR.md),
+[RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
 [RxSpark](RxSpark.md).
    
  ##Examples

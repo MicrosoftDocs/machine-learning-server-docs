@@ -63,7 +63,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `data`
- An [RxXdfData](RxXdfData.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](RxHadoopMR.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
+ An [RxXdfData](RxXdfData.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
   
   
     

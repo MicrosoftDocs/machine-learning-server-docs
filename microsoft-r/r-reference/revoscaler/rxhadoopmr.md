@@ -145,7 +145,7 @@ Creates a compute context for use with a Hadoop cluster.
   
     
  ### `jobTrackerURL`
- character scalar specifying the full URL for the jobtracker web interface. This is used only for the purpose of loading the job tracker web page from the `rxLaunchClusterJobManager` convenience function.  It is never used for job control, and its specification in the compute context is completely optional.  See the [rxLaunchClusterJobManager](rxLaunchClusterTaskManager.md) page for more information. 
+ character scalar specifying the full URL for the jobtracker web interface. This is used only for the purpose of loading the job tracker web page from the `rxLaunchClusterJobManager` convenience function.  It is never used for job control, and its specification in the compute context is completely optional.  See the [rxLaunchClusterJobManager](../../scaler/packagehelp/rxlaunchclustertaskmanager.md) page for more information. 
   
   
     
@@ -160,7 +160,7 @@ Creates a compute context for use with a Hadoop cluster.
   
     
  ### `wait`
- logical value.  If `TRUE`, the job will be blocking   and will not return until it has completed or has failed. If `FALSE`,   the job will be non-blocking return immediately,  allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the   [rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](rxWaitForJob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the HPC scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
+ logical value.  If `TRUE`, the job will be blocking   and will not return until it has completed or has failed. If `FALSE`,   the job will be non-blocking return immediately,  allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the   [rxGetJobStatus](rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](../../scaler/packagehelp/rxwaitforjob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the HPC scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
   
   
     
@@ -175,7 +175,7 @@ Creates a compute context for use with a Hadoop cluster.
   
     
  ### `autoCleanup`
- logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), and the output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
+ logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxgetjobresults.md), and the output via [rxGetJobOutput](rxgetjoboutput.md) until the  [rxCleanupJobs](rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
   
   
     
@@ -190,12 +190,12 @@ Creates a compute context for use with a Hadoop cluster.
   
     
  ### `outDataPath`
- NOT YET IMPLEMENTED. `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `outDataPath` in [rxOptions](rxOptions.md)  
+ NOT YET IMPLEMENTED. `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `outDataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md)  
    
   
     
  ### `fileSystem`
- `NULL` or an [RxHdfsFileSystem](RxHdfsFileSystem.md) to use as the default file system for data sources when created when this compute context is active. 
+ `NULL` or an [RxHdfsFileSystem](../../scaler/packagehelp/rxhdfsfilesystem.md) to use as the default file system for data sources when created when this compute context is active. 
   
   
     
@@ -233,16 +233,16 @@ object of class RxHadoopMR.
  
  ##See Also
  
-[rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md),
-[rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md),
-[rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), 
-[rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
-[RxSpark](RxSpark.md),
-[RxInSqlServer](RxInSqlServer.md),  
-[RxInTeradata](RxInTeradata.md), 
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[rxSetComputeContext](rxSetComputeContext.md),
-[RxHadoopMR-class](../../r-reference/revoscaler/rxhadoopmr-class.md).
+[rxGetJobStatus](rxgetjobresults.md),
+[rxGetJobOutput](rxgetjoboutput.md),
+[rxGetJobResults](rxgetjobresults.md), 
+[rxCleanupJobs](rxcleanup.md),
+[RxSpark](../../scaler/packagehelp/rxspark.md),
+[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),  
+[RxInTeradata](../../scaler/packagehelp/rxinteradata.md), 
+[RxComputeContext](rxcomputecontext.md),
+[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
+[RxHadoopMR-class](rxhadoopmr-class.md).
    
  
  ##Examples

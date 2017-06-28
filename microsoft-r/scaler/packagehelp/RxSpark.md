@@ -340,7 +340,7 @@ object of class RxSpark.
 [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md),
 [rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), 
 [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
-[RxHadoopMR](RxHadoopMR.md), 
+[RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md), 
 [RxInSqlServer](RxInSqlServer.md),   
 [RxInTeradata](RxInTeradata.md), 
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),

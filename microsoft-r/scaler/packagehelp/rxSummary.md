@@ -69,7 +69,7 @@ Produce univariate summaries of objects in **RevoScaleR**.
   
     
  ### `byGroupOutFile`
- NULL, a character string or vector of character strings  specifying .xdf file names(s), or an RxXdfData object or list of RxXdfData objects.  If not NULL, and the formula includes computations by factor, the by-group summary results will be  written out to one or more .xdf files.  If more than one `.xdf` file is created and a single character string is specified, an integer will be appended to the base byGroupOutFile name  for additional file names. The resulting RxXdfData objects will be listed in  the `categorical` component of the output object.  `byGroupOutFile` is not supported when using distributed compute contexts such as [RxHadoopMR](RxHadoopMR.md) and [RxInTeradata](RxInTeradata.md). 
+ NULL, a character string or vector of character strings  specifying .xdf file names(s), or an RxXdfData object or list of RxXdfData objects.  If not NULL, and the formula includes computations by factor, the by-group summary results will be  written out to one or more .xdf files.  If more than one `.xdf` file is created and a single character string is specified, an integer will be appended to the base byGroupOutFile name  for additional file names. The resulting RxXdfData objects will be listed in  the `categorical` component of the output object.  `byGroupOutFile` is not supported when using distributed compute contexts such as [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md) and [RxInTeradata](RxInTeradata.md). 
   
   
     

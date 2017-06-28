@@ -52,7 +52,7 @@ Context name | Alternative name | Allowed data sources |
 -----------|--------------------|-----------------------|
 [RxLocalSeq](scaler/packagehelp/rxlocalseq.md)      | local     | (all) |
 [RxSpark](scaler/packagehelp/RxSpark.md)         | spark     | RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md), [RxSparkData](scaler/packagehelp/RxSparkData.md) including RxHiveData, RxParquetData, RxOrcData  |
-[RxHadoopMR](scaler/packagehelp/RxHadoopMR.md)      | hadoopmr  | [RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md) |
+[RxHadoopMR](r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md) |
 [RxInSqlServer](scaler/packagehelp/RxInSqlServer.md)   | sqlserver | [RxSqlServerData](scaler/packagehelp/RxSqlServerData.md) |
 [RxInTeradata](scaler/packagehelp/RxInTeradata.md)    | teradata  | [RxTeradataData](scaler/packagehelp/RxTeradata.md)  |
 
