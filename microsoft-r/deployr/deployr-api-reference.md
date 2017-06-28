@@ -43,7 +43,7 @@ As an application developer integrating with **DeployR-managed analytics Web ser
 
 Each time a service is executed on the API, the service makes use of an R session that is managed by DeployR as a **project** on behalf of the application. Depending on the nature and requirements of your application you can choose to execute services on [*anonymous* or *authenticated* projects](#projects).
 
-To simplify integration of R analytics Web services using the DeployR API, we provide [several client libraries](../deployr-tools-and-samples.md), which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
+To simplify integration of R analytics Web services using the DeployR API, we provide [several client libraries](deployr-tools-and-samples.md), which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
 
 <a name="users"></a>
 ##Users on the API

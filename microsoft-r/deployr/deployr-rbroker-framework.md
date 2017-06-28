@@ -35,7 +35,7 @@ ms.custom: ""
 
 The RBroker Framework is the simplest way to integrate DeployR-enabled analytics Web services inside any Java, JavaScript or .NET application. This document introduces the basic building blocks exposed by the framework, explains the programming model encouraged by the framework, and demonstrates the framework in action using language-specific code samples.
 
->The RBroker Framework is designed to support transactional, on-demand analytics, where each invocation on an analytics Web service is a standalone operation that executes on a stateless R session environment. If your application requires a long-lived stateful R session environment, then please see the [DeployR Client Libraries](../deployr-tools-and-samples.md), which offer support for stateful operations on DeployR-managed Projects.
+>The RBroker Framework is designed to support transactional, on-demand analytics, where each invocation on an analytics Web service is a standalone operation that executes on a stateless R session environment. If your application requires a long-lived stateful R session environment, then please see the [DeployR Client Libraries](deployr-tools-and-samples.md), which offer support for stateful operations on DeployR-managed Projects.
 
 **Try Out Our Examples!** Explore the RBroker Framework examples for [Java,](https://github.com/deployr/java-example-rbroker-basics) [Javascript,](https://github.com/deployr/js-rbroker-framework) and [.NET.](https://github.com/deployr/dotnet-rbroker-framework) Find them under the `examples` directory of each Github repository. Additional sample applications are also [available on GitHub.](http://github.com/deployr?query=example)
 
@@ -457,7 +457,7 @@ RBroker authentication is optional for this type of runtime, therefore RTask can
 
 ### Discrete Task Runtime Persistence
 
-When RTask are executed on behalf of an authenticated user, optional persistence to the DeployR-repository post-execution is supported. See storageOptions on DiscreteTaskOptions as documented on the [RBroker Framework API](../deployr-tools-and-samples.md). When RTasks are executed anonymously, persistence to the DeployR-repository post-execution is unsupported.
+When RTask are executed on behalf of an authenticated user, optional persistence to the DeployR-repository post-execution is supported. See storageOptions on DiscreteTaskOptions as documented on the [RBroker Framework API](deployr-tools-and-samples.md). When RTasks are executed anonymously, persistence to the DeployR-repository post-execution is unsupported.
 
 ### Pooled Task Runtime
 
@@ -640,7 +640,7 @@ RBroker authentication is required for this type of runtime, therefore RTask wil
 
 ### Pooled Task Runtime Persistence
 
-Since RTasks executed on this type of runtime are executing on behalf of an authenticated user, optional persistence to the DeployR-repository following an execution is supported. See storageOptions on PooledTaskOptions as documented on the [RBroker Framework API](../deployr-tools-and-samples.md).
+Since RTasks executed on this type of runtime are executing on behalf of an authenticated user, optional persistence to the DeployR-repository following an execution is supported. See storageOptions on PooledTaskOptions as documented on the [RBroker Framework API](deployr-tools-and-samples.md).
 
 ### Pooled Task Runtime Resource Management
 
@@ -842,9 +842,9 @@ RBroker authentication is required for this type of runtime, therefore RTask wil
 
 ### Background Task Runtime Persistence
 
-Since RTasks executed on this type of runtime are executing on behalf of an authenticated user, optional persistence to the DeployR-repository following an execution is supported. See storageOptions on BackgroundTaskOptions as documented on the [RBroker Framework API](../deployr-tools-and-samples.md).
+Since RTasks executed on this type of runtime are executing on behalf of an authenticated user, optional persistence to the DeployR-repository following an execution is supported. See storageOptions on BackgroundTaskOptions as documented on the [RBroker Framework API](deployr-tools-and-samples.md).
 
->Result data are not directly available on RTaskResult. Instead a DeployR Job identifier is returned. An application developer must use an appropriate [DeployR Client Library](../deployr-tools-and-samples.md) that supports APIs for the retrieval of results persisted by the BackgroundTask on DeployR Job.
+>Result data are not directly available on RTaskResult. Instead a DeployR Job identifier is returned. An application developer must use an appropriate [DeployR Client Library](deployr-tools-and-samples.md) that supports APIs for the retrieval of results persisted by the BackgroundTask on DeployR Job.
 
 ## RBroker Resource Management
 

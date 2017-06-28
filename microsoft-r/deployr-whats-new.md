@@ -96,7 +96,7 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 The following list highlights the major changes and improvements to DeployR 7.3.
 -   Support for DeployR Enterprise and DeployR Open.
 -   Support for this new DeployR website providing documentation and downloads.
--   New [RBroker Framework](deployr-tools-and-samples.md) providing a simple yet powerful API that supports the rapid integration of on-demand R analytics inside any JavaScript, Java, or .NET application.
+-   New [RBroker Framework](deployr/deployr-tools-and-samples.md) providing a simple yet powerful API that supports the rapid integration of on-demand R analytics inside any JavaScript, Java, or .NET application.
 -   New and updated API support.
 -   New user account password and user account locking policies as detailed in the [Security Guide](deployr/deployr-security.md).
 -   New Administrator Diagnostic Tools that the 'admin' can use to diagnose the DeployR environment to help identify unresponsive components, including the server itself, grid nodes and the database.

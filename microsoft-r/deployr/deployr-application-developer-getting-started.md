@@ -253,7 +253,7 @@ The application design overview, source code in both Java and JavaScript, and th
 Use the table of contents to find all of the guides and documentation needed by Application Developers.
 
 **API Docs, Tools, and Samples**
--   [RBroker Framework and Client Library](../deployr-tools-and-samples.md)
+-   [RBroker Framework and Client Library](deployr-tools-and-samples.md)
 -   [API Reference Guide](deployr-api-reference.md)
 
 **Other Getting Started Guides**

@@ -232,7 +232,7 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 >1.  Verify your install by running a [diagnostic check of the server](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 >2.  [Add any additional grid nodes](#grid-node-install) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
->4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
+>4.  [Download DeployR client-side developer tools](deployr/deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
 
@@ -490,7 +490,7 @@ After installing [these prerequisites](#lindependencies), install DeployR Open a
 >1.  Verify your install by running a [diagnostic check of the server](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 >2.  [Add any additional grid nodes](#grid-node-install-for-Linux) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
->4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
+>4.  [Download DeployR client-side developer tools](deployr/deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
 
@@ -617,7 +617,7 @@ Install DeployR as follows:
 >1. Verify your install by running a [diagnostic check of the server](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help.
 >2.  [Add any additional grid nodes](#grid-node-install-for-Linux) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
->4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
+>4.  [Download DeployR client-side developer tools](deployr/deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
 
@@ -712,7 +712,7 @@ After installing [these prerequisites](#preparing-osx), install DeployR Open as 
 >
 >1.  Verify your install by running a [diagnostic check of the server](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 >2.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
->3.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
+>3.  [Download DeployR client-side developer tools](deployr/deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >4.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
 >5.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
 
@@ -794,7 +794,7 @@ The following instructions will walk you through a migration of DeployR 7.4.1 or
 
     6.  Click **Import**.
 
-9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR 8.0.0, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
+9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR 8.0.0, update the client files so that they use the current version of `jsDeployR` [client library](deployr/deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
 
 ## Configuring DeployR
 

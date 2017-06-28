@@ -38,7 +38,7 @@ To further simplify the integration of DeployR services within client applicatio
 
 >**Try Out Our Examples!** Explore the client library examples for [Java, ](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
 
->Check out the [*RBroker Framework*](../deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
+>Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
 
 ### API Overview
 
