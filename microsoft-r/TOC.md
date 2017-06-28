@@ -376,7 +376,7 @@
 #### [RxFileSystem](r-reference/revoscaler/rxfilesystem.md) 
 #### [rxFindFileInPath](r-reference/revoscaler/rxfindfileinpath.md) 
 #### [rxFindPackage](r-reference/revoscaler/rxfindpackage.md) 
-#### [RxForeachDoPar-class](scaler/packagehelp/RxForeachDoPar-class.md) 
+#### [RxForeachDoPar-class](r-reference/revoscaler/rxforeachdopar-class.md) 
 #### [RxForeachDoPar](scaler/packagehelp/RxForeachDoPar.md) 
 #### [rxFormula](scaler/packagehelp/rxFormula.md) 
 #### [rxGetAvailableNodes](scaler/packagehelp/rxGetAvailableNodes.md) 

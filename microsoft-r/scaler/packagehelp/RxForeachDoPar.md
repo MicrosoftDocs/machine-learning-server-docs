@@ -104,7 +104,7 @@ registerDoRSR,
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),
-[RxForeachDoPar-class](RxForeachDoPar-class.md).
+[RxForeachDoPar-class](../../r-reference/revoscaler/rxforeachdopar-class.md).
    
  
  ##Examples
