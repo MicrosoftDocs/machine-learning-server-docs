@@ -90,12 +90,12 @@ Arguements must be specified in order. Eg: In order to explore hierarchies, a di
  
  
  ##References
-  See [execute2D](../../r-reference/olapr/execute2d.md) or [executeMD](ExecuteMD.md) for references.  
+  See [execute2D](../../r-reference/olapr/execute2d.md) or [executeMD](../../r-reference/olapr/executemd.md) for references.  
  
  
  ##See Also
  
-query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[execute2D](../../r-reference/olapr/execute2d.md)
+query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](../../r-reference/olapr/executemd.md)`, `[execute2D](../../r-reference/olapr/execute2d.md)
    
  
  ##Examples

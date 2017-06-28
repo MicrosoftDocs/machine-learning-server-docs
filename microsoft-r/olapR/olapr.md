@@ -67,7 +67,7 @@ OLAP (Online Analytical Processing) cubes are essentially multi-dimensional spre
 |---------|-------------|
 |[`OlapConnection`](packagehelp/OlapConnection.md) |Create the connection string to access the Analysis Services Database. |
 |[`Query`](packagehelp/Query.md) |Construct a Query object to use on the Analysis Services Database. Use cube, axis, columns, rows, pages, chapters, slicers to add details to the query.|
-|[`executeMD`](packagehelp/ExecuteMD.md) |Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. |
+|[`executeMD`](../r-reference/olapr/executemd.md) |Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. |
 |[`execute2D`](../r-reference/olapr/execute2d.md)|Takes a Query object or an MDX string, and returns the result as a 2D data frame. |
 |[`explore`](packagehelp/Explore.md)|Allows for exploration of cube metadata. |
 
