@@ -49,7 +49,7 @@
 
 ## Models
 ### [Models in RevoScaleR](scaler-user-guide-models.md)
-### [Linear Models](scaler-user-guide-linear-model.md)
+### [Linear Models](r/how-to-revoscaler-linear-model.md)
 ### [Logistic Regression Models](scaler-user-guide-logistic-regression.md)
 ### [Generalized Linear Models](r/how-to-revoscaler-generalized-linear-model.md)
 ### [Decision Tree Models](r/how-to-revoscaler-decision-tree.md)

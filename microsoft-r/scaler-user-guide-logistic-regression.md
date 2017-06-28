@@ -111,7 +111,7 @@ We can specify a stepwise model using rxLogit and rxStepControl as follows:
 	  Start       -0.20651005
 	  Number       0.41060119
 
-The methods for variable selection (forward, backward, and stepwise), the definition of model scope, and the available selection criteria are all the same as for stepwise linear regression; see ["Stepwise Variable Selection"](scaler-user-guide-linear-model.md#stepwise-variable-selection) and the rxStepControl help file for more details.
+The methods for variable selection (forward, backward, and stepwise), the definition of model scope, and the available selection criteria are all the same as for stepwise linear regression; see ["Stepwise Variable Selection"](r/how-to-revoscaler-linear-model.md#stepwise-variable-selection) and the rxStepControl help file for more details.
 
 #### Plotting Model Coefficients
 
