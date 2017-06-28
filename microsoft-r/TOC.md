@@ -509,7 +509,7 @@
 ###[registerStoredProcedure](r-reference/sqlrutils/registerstoredprocedure.md) 
 ###[setInputDataQuery](r-reference/sqlrutils/setinputdataquery.md) 
 ###[setInputParameterValue](r-reference/sqlrutils/setinputparametervalue.md) 
-###[StoredProcedure](sqlrutils/packagehelp/StoredProcedure.md)
+###[StoredProcedure](r-reference/sqlrutils/storedprocedure.md)
 
 # Resources
 ## [R Server known issues](rserver-known-issues.md)
