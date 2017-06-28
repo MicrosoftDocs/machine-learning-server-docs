@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Tutorial: Analyzing loan data with RevoScaleR (Microsoft R)
 
-This example builds on what you learned in an [earlier tutorial](r/tutorial-revoscaler-data-import-transform.md) by showing you how to import .csv files to create an .xdf file, and use statistical RevoScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
+This example builds on what you learned in an [earlier tutorial](tutorial-revoscaler-data-import-transform.md) by showing you how to import .csv files to create an .xdf file, and use statistical RevoScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
 
 ## Get the mortgage default data set
 
@@ -191,7 +191,7 @@ Using the binary *default* variable as the dependent variable, estimate a logist
 
 Alternatively, we can treat year as a categorical or factor variable by using the F function. The benefit is that we get a separate coefficient estimated for each year (except the last), telling us which years have higher default rates, while controlling for the other variables in the regression. The logistic regression is specified as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](r/tutorial-revoscaler-data-import-transform.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
 	logitObj <- rxLogit(default~F(year) + creditScore +
 	       yearsEmploy + ccDebt,
@@ -335,7 +335,7 @@ We can extract the coefficients from logitObj for the houseAge variables and plo
 ~~~~
 The resulting plot shows that the age of the house is associated with a higher default rate in the middle of the range than for younger and older houses.
 
-![HouseAge Plot](media/scaler-getting-started-1-example-loan-data/houseage_plot.png)
+![HouseAge Plot](./media/tutorial-revoscaler-large-data-loan/houseage_plot.png)
 
 ## Compute the Probability of Default
 
@@ -400,13 +400,13 @@ The results should be printed to your console, with the highest default rate at 
 ~~~~
 ## Next steps
 
-- If you missed the first tutorial, see [Practice data import and exploration](r/tutorial-revoscaler-data-import-transform.md) for an overview.
-- For more advanced lessons, see [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md).
+- If you missed the first tutorial, see [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md) for an overview.
+- For more advanced lessons, see [Write custom chunking algorithms](how-to-developer-write-chunking-algorithms.md).
 
 ## See Also
 
-[Introduction to Microsoft R](microsoft-r-getting-started.md)
+[Introduction to Microsoft R](../microsoft-r-getting-started.md)
 
-[Diving into data analysis in Microsoft R](r/how-to-introduction.md)
+[Diving into data analysis in Microsoft R](how-to-introduction.md)
 
-[RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)
+[RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

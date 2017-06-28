@@ -37,7 +37,7 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 ## Move forward with larger data sets
 
 + [Load and analyze large data](tutorial-revoscaler-large-data-airline.md)
-+ [Loan data analysis](../scaler-getting-started-1-example-loan-data.md)
++ [Loan data analysis](tutorial-revoscaler-large-data-loan.md)
 + [Census data analysis](tutorial-revoscaler-large-data-census.md)
 
 ## Platform ramp-up

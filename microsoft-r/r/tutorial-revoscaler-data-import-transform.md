@@ -432,7 +432,7 @@ This tutorial demonstrated data import and exploration, but there are several mo
 
   - [Tutorial: Visualize and analyze data](tutorial-revoscaler-data-model-analysis.md)
   - [Analyze large data with RevoScaleR and airline flight delay data](tutorial-revoscaler-large-data-airline.md)
-  - [Example: Analyzing loan data with RevoScaleR](../scaler-getting-started-1-example-loan-data.md)
+  - [Example: Analyzing loan data with RevoScaleR](tutorial-revoscaler-large-data-loan.md)
   - [Example: Analyzing census data with RevoScaleR](tutorial-revoscaler-large-data-census.md)
 
 ### Try demo scripts

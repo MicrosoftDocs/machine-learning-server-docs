@@ -15,7 +15,7 @@
 ### [Visualize and analyze data](r/tutorial-revoscaler-data-model-analysis.md)
 ## Work with larger datasets
 ### [Flight delays data analysis](r/tutorial-revoscaler-large-data-airline.md)
-### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
+### [Loan data analysis](r/tutorial-revoscaler-large-data-loan.md)
 ### [Census data analysis](r/tutorial-revoscaler-large-data-census.md)
 ### [Tips on big data computing](r/tutorial-large-data-tips.md)
 ## Samples

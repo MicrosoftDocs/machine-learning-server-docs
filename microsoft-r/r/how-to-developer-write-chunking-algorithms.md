@@ -128,7 +128,7 @@ And to delete the intermediate results file:
 
 - [Analyze large data with ScaleR](tutorial-revoscaler-large-data-airline.md)
 - [Census data example for analyzing large data](tutorial-revoscaler-large-data-census.md)
-- [Loan data example for analyzing large data](../scaler-getting-started-1-example-loan-data.md)
+- [Loan data example for analyzing large data](tutorial-revoscaler-large-data-loan.md)
 
 ## See Also
 
