@@ -195,7 +195,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    Now, you are successfully connected to the remote R Server.
 
-1. Publish the model as a web service to R Server using [the publishService() function](../operationalize/data-scientist-manage-services.md) from the `mrsdeploy` package. 
+1. Publish the model as a web service to R Server using [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the `mrsdeploy` package. 
 
    In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
@@ -244,7 +244,7 @@ As long as the package versions are the same on R Server as they are locally, yo
 
 ## D. Get the Swagger-based JSON file
 
-You, or others, can test and consume the service using the Swagger-based JSON file that was generated automatically when the service was published. This Swagger-based JSON file is specific to this service. You can easily get this file during the same authenticated session in which you published the service. It can be downloaded to the local file system. This file can also be obtained later as described in the article "[How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)." 
+You, or others, can test and consume the service using the Swagger-based JSON file that was generated automatically when the service was published. This Swagger-based JSON file is specific to this service. You can easily get this file during the same authenticated session in which you published the service. It can be downloaded to the local file system. This file can also be obtained later as described in the article "[How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)." 
 
 In this example, we executed these commands to download the Swagger-based JSON file:
 
@@ -261,7 +261,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 ## Next steps
 
 After it has been deployed, the web service can be: 
-+ [Consumed directly in R by another data scientist](howto-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
++ [Consumed directly in R by another data scientist](how-to-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
 
 + [Integrated into an application by an application developer](how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
@@ -286,7 +286,7 @@ This section provides a quick summary of useful links for data scientists operat
  + [About Operationalization](about.md)    
  + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)    
  + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
- + [Working with web services in R](../operationalize/data-scientist-manage-services.md)    
+ + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)    
  + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)    
  + [Execute on a remote Microsoft R Server](remote-execution.md)    
 

@@ -83,13 +83,13 @@ mtService <- listServices("mtService", "v1")
 print(mtService)
 ```
 
-For a detailed example with listServices, check out these ["Workflow" examples](data-scientist-manage-services.md#workflow).
+For a detailed example with listServices, check out these ["Workflow" examples](how-to-deploy-web-service-publish-manage-in-r.md#workflow).
 
 Example output:
 
 |R Server 9.1+|R Server 9.0|
 |--------|--------|
-|![9.1 output](../media/o16n/returns91.png)|![9.0 output](../media/o16n/returns90.png)|
+|![9.1 output](./media/how-to-consume-web-service-interact-in-r/returns91.png)|![9.0 output](./media/how-to-consume-web-service-interact-in-r/returns90.png)|
 
 <a name="getService"></a>
 
@@ -121,7 +121,7 @@ print(api$capabilities())
 result <- api$manualTransmission(120, 2.8)
 ```
 
-For a detailed example with getService, check out these ["Workflow" examples](data-scientist-manage-services.md#workflow).
+For a detailed example with getService, check out these ["Workflow" examples](how-to-deploy-web-service-publish-manage-in-r.md#workflow).
 
 
 <a name="api-client"></a>
@@ -174,7 +174,7 @@ swagger <- api$swagger(json = FALSE)
 cat(swagger)
 ```
 
-For a detailed example, check out these ["Workflow" examples](data-scientist-manage-services.md#workflow).
+For a detailed example, check out these ["Workflow" examples](how-to-deploy-web-service-publish-manage-in-r.md#workflow).
 
 <a name="consume-service"></a>
 
@@ -257,7 +257,7 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 ## See also
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
-+ [How to publish and manage web services in R](data-scientist-manage-services.md)
++ [How to publish and manage web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)

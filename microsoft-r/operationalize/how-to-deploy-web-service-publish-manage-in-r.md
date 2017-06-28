@@ -30,9 +30,9 @@ ms.custom: ""
 
 This article details how you can publish and manage your analytic web services directly in R. You can deploy your R models, scripts, and code as **analytic web services** in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  The `mrsdeploy` R package containing these functions is installed with both Microsoft R Server and Microsoft R Client.
 
-These web services are then discoverable by other authenticated users who can then [consume them in R](howto-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
+These web services are then discoverable by other authenticated users who can then [consume them in R](how-to-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
-Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](howto-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](howto-consume-web-service-interact-in-r.md#consume-service) with others.
+Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](how-to-consume-web-service-interact-in-r.md#listservices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getservice) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others.
 
 To publish or interact with a web service outside of R, use the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
@@ -80,7 +80,7 @@ A longer [realtime example](#realtime-example) is also available.
 
 |R Source|Can come from|
 |------|---------|
-|R model|A model object created with supported functions, such as:<ul><li>These [`RevoScaleR` package](../r-reference/revoscaler/revoscaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` <br><br><li>These [`MicrosoftML` package](../r-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`<br><br>While `mlTransform` featurization is supported in realtime scoring, R transforms are not supported. Instead, use `sp_execute_external_script `.</ul>|
+|R model|A model object created with supported functions, such as:<ul><li>These [`RevoScaleR` package](../revoscaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` <br><br><li>These [`MicrosoftML` package](../r-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`<br><br>While `mlTransform` featurization is supported in realtime scoring, R transforms are not supported. Instead, use `sp_execute_external_script `.</ul>|
 
 ## Permissions for managing web services
 
@@ -115,7 +115,7 @@ After you've authenticated, use the `publishService` function in the `mrsdeploy`
 |----|----|:----:|
 |`publishService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/publishservice.md)
 
-You can publish web services to a local R Server from your command line. If you [create a remote session](../operationalize/remote-execution.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command line.  
+You can publish web services to a local R Server from your command line. If you [create a remote session](remote-execution.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command line.  
 
 
 Example of standard web service:
@@ -150,9 +150,9 @@ realtimeApi <- publishService(
 
 For a detailed example, see the ["Workflow" examples](#workflow) at the end of this article.
 
-You can also follow the quickstart article "[Deploying an R model as a web service](../operationalize/quickstart-publish-web-service.md)."
+You can also follow the quickstart article "[Deploying an R model as a web service](quickstart-publish-web-service.md)."
 
-Learn how to get a [list of all services](howto-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](howto-consume-web-service-interact-in-r.md#consume-service) with others.
+Learn how to get a [list of all services](how-to-consume-web-service-interact-in-r.md#listservices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getservice) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others.
 
 <a name="updateService"></a>
 
@@ -689,7 +689,7 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
-+ [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
++ [How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)

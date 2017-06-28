@@ -324,7 +324,7 @@ Before you can start authenticating with R Server and publishing your Python cod
 ### 1. Add authentication / header logic
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
-To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every single call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
+To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every single call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](how-to-manage-access-tokens.md) 
 
 Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](configure-authentication.md) configured by your administrator, and then include it in each header for each subsequent request:
 
@@ -341,7 +341,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
    **AD/LDAP or 'admin' account authentication**
 
-   You must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
+   You must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
    ```python
    #Using client library generated from Autorest
    #Create client instance and point it at an R Server. 
@@ -358,7 +358,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
    **Azure Active Directory (AAD) authentication**
 
-   You must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
+   You must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
    ```python
    #Import the AAD authentication library
    import adal

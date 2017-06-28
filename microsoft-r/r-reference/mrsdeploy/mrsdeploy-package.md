@@ -129,7 +129,7 @@ Use these functions to indicate whether the payload is a code block or script.
 
 ## Web service functions
 
-The following functions are used to bundle R code or script as a web service. The [web service deployment](../../operationalize/data-scientist-manage-services.md) can be published to the local server or remotely if you set up a remote session.
+The following functions are used to bundle R code or script as a web service. The [web service deployment](../../operationalize/how-to-deploy-web-service-publish-manage-in-r.md) can be published to the local server or remotely if you set up a remote session.
 
 |Function | Description |
 |---------|-------------|
@@ -146,9 +146,9 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 + [Remote Execution](../../operationalize/remote-execution.md)
 
-+ [How to publish and manage web services in R](../../operationalize/data-scientist-manage-services.md)
++ [How to publish and manage web services in R](../../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 
-+ [How to interact with and consume web services in R](../../operationalize/howto-consume-web-service-interact-in-r.md)
++ [How to interact with and consume web services in R](../../operationalize/how-to-consume-web-service-interact-in-r.md)
 
 + [Asynchronous batch execution of web services in R](../../operationalize/how-to-consume-web-service-asynchronously-batch.md)
 

@@ -176,7 +176,7 @@ For more details on remote execution, see [this article](remote-execution.md).
 
 ### Access tokens
 
-After you authenticate with Active Directory or Azure Active Directory, an [access token](security-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. 
+After you authenticate with Active Directory or Azure Active Directory, an [access token](how-to-manage-access-tokens.md) is returned. This access token is then passed in the request header of every subsequent `mrsdeploy` request. 
 
 Keep in mind that every API call and every `mrsdeploy` function requires authentication with R Server. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned. 
 
@@ -346,7 +346,7 @@ To terminate the remote session from the local R session, type 'remoteLogout()'.
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Data scientist get started guide](concept-operationalize-deploy-consume.md)
-+ [Working with web services in R](data-scientist-manage-services.md)
++ [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

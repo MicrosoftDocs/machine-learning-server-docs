@@ -150,7 +150,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >
    >In production environments, we recommend that you use a certificate with a private key to sign the user access tokens between the web node and the LDAP server.
    >
-   >Tokens are useful to the application developers who use them to identify and authenticate users who are sending API calls within their application. [Learn more...](security-access-tokens.md)
+   >Tokens are useful to the application developers who use them to identify and authenticate users who are sending API calls within their application. [Learn more...](how-to-manage-access-tokens.md)
     
    1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you need this information later.
 

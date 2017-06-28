@@ -58,7 +58,7 @@ To simplify the integration, R Server provides several Swagger templates each de
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
 Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number.
-Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](howto-consume-web-service-interact-in-r.md#swagger-app-dev)
+Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` in order to consume that specific service from the user that published the service or using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](how-to-consume-web-service-interact-in-r.md#swagger-app-dev)
 
 
 ### Build the Core Client Library
@@ -77,7 +77,7 @@ You can now provide some custom headers and make other changes before using the 
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Azure Active Directory (AAD). 
 
-To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every single call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](security-access-tokens.md) 
+To simplify this process, bearer access tokens are issued so that users need not provide their credentials for every single call.  This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's operationalization APIs. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties. [Learn more about managing these tokens.](how-to-manage-access-tokens.md) 
 
 Before you interact with the core APIs, first authenticate, get the bearer access token using [the authentication method](configure-authentication.md) your administrator configured for operationalization, and then include it in each header for each subsequent request:
 
@@ -118,7 +118,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
 + **Active Directory LDAP or Local Admin** 
 
-  For these authentication methods, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](security-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid.
+  For these authentication methods, you must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid.
 
   Here's an example of Active Directory/LDAP authentication in CSharp:
 

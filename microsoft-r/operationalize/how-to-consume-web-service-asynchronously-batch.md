@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.1**
 
-In this article, you can learn how to consume  a web service asynchronously, which is especially useful with large input data sets and long-running computations. The typical approach to consuming web services, ["Request Response" consumption](howto-consume-web-service-interact-in-r.md#consume-service), involves a single API call to execute the code in that web service once.  The "Asynchronous Batch" approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server immediately executes those operations once for every row of data provided. 
+In this article, you can learn how to consume  a web service asynchronously, which is especially useful with large input data sets and long-running computations. The typical approach to consuming web services, ["Request Response" consumption](how-to-consume-web-service-interact-in-r.md#consume-service), involves a single API call to execute the code in that web service once.  The "Asynchronous Batch" approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server immediately executes those operations once for every row of data provided. 
 
 ## Asynchronous batch workflow
 
@@ -233,7 +233,7 @@ Once you have the batch object, use these public functions to interact with it.
 Once you have authenticated, retrieve the web service from R Server, assign it to a variable, and define the inputs to it as record data in a data frame, CSV, or TSV. 
 
 Batching begins by retrieving the web service containing the code against which you score the data records you define next. You can get a service using its name and version with the getService() function from `mrsdeploy`. The result is a service object, which in our example is called `txService`.  
-The `getService` function is covered in detail in the article "[How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)."
+The `getService` function is covered in detail in the article "[How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)."
 
 **Syntax:** `getService("<serviceName>", "<version>")`
 
@@ -517,6 +517,6 @@ for(i in seq(batchRes$totalItemCount)) {
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
-+ [Working with web services in R](data-scientist-manage-services.md)
++ [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

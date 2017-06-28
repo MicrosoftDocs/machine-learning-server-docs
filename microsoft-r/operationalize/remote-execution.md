@@ -282,7 +282,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 ## Publishing web services in a remote session
 
-After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](data-scientist-manage-services.md#publishService)  guide. 
+After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md#publishService)  guide. 
 
 To publish a web service after you create a remote session (argument `session = TRUE` with remoteLogin() or remoteLoginAAD()), you have two approaches:
 
@@ -340,4 +340,4 @@ REMOTE>api <- publishService(
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
 + [Get started guide for Data scientists](concept-operationalize-deploy-consume.md)
-+ [Working with web services in R](../operationalize/data-scientist-manage-services.md)
++ [Working with web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)

@@ -143,13 +143,13 @@
 #### [Get started for data scientists](operationalize/concept-operationalize-deploy-consume.md)
 #### [Quickstart: Deploy an R model as a web service](operationalize/quickstart-publish-web-service.md)
 #### [Connect to R Server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-#### [Publish and manage services in R](operationalize/data-scientist-manage-services.md)
-#### [Get and consume services in R](operationalize/howto-consume-web-service-interact-in-r.md)
+#### [Publish and manage services in R](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
+#### [Get and consume services in R](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume services asynchronously via batch](operationalize/how-to-consume-web-service-asynchronously-batch.md)
 ### Application developers
 #### [Integrate web services and authentication into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
 #### [API overview](operationalize/concept-api.md)
-#### [API access token management](operationalize/security-access-tokens.md)
+#### [API access token management](operationalize/how-to-manage-access-tokens.md)
 ### [Archive] DeployR 8.x docs
 #### [Install DeployR](deployr/deployr-installation.md)
 ##### [Install DeployR for R Server for Windows](deployr/deployr-install-on-windows.md)

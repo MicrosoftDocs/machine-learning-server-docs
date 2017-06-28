@@ -207,9 +207,9 @@ Authentication: {
 
 ## See Also
 
-+ [How to publish and manage web services in R](data-scientist-manage-services.md)
++ [How to publish and manage web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 
-+ [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
++ [How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)
 
 + [Authentication options for R Server when operationalizing analytics](configure-authentication.md)
 
