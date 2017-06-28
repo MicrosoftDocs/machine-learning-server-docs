@@ -57,7 +57,7 @@ A character vector containing the file names in the working directory of the rem
  
 [getRemoteFile](getRemoteFile.md)
 
-[deleteRemoteFile](deleteRemoteFile.md)
+[deleteRemoteFile](../../r-reference/mrsdeploy/deleteremotefile.md)
 
 [putLocalFile](putLocalFile.md)
    

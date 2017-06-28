@@ -68,7 +68,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
 [getRemoteFile](getRemoteFile.md)
 
-[deleteRemoteFile](deleteRemoteFile.md)
+[deleteRemoteFile](../../r-reference/mrsdeploy/deleteremotefile.md)
 
 [listRemoteFiles](listRemoteFiles.md)
    
