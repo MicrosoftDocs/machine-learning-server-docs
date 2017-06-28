@@ -60,7 +60,7 @@ Bridge code for additional packages
    
     
  ### `formula`
- formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). 
+ formula as described in [rxFormula](rxformula.md). 
   
   
     
@@ -164,12 +164,12 @@ Bridge code for additional packages
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -209,7 +209,7 @@ Bridge code for additional packages
   
   
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxHpcServer`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxHpcServer`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
    
     

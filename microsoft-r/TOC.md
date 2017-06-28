@@ -482,7 +482,7 @@
 #### [RxTextData-class](r-reference/revoscaler/rxtextdata-class.md) 
 #### [RxTextData](r-reference/revoscaler/rxtextdata.md) 
 #### [rxTextToXdf](r-reference/revoscaler/rxtexttoxdf.md) 
-#### [rxTlcBridge](scaler/packagehelp/rxTlcBridge.md) 
+#### [rxTlcBridge](r-reference/revoscaler/rxtlcbridge.md) 
 #### [rxTransform](scaler/packagehelp/rxTransform.md) 
 #### [rxTweedie](scaler/packagehelp/rxTweedie.md) 
 #### [rxWaitForJob](scaler/packagehelp/rxWaitForJob.md) 
