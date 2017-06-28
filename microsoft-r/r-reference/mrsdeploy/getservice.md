@@ -70,13 +70,13 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
-[listServices](listServices.md),
-[print.serviceDetails](print.serviceDetails.md),
-[publishService](publishService.md),
-[serviceOption](serviceOption.md),
-[summary.serviceDetails](summary.serviceDetails.md),
-[updateService](updateService.md)
+Other service methods: [deleteService](deleteservice.md),
+[listServices](../../mrsdeploy/packagehelp/listservices.md),
+[print.serviceDetails](../../mrsdeploy/packagehelp/print.servicedetails.md),
+[publishService](../../mrsdeploy/packagehelp/publishservice.md),
+[serviceOption](../../mrsdeploy/packagehelp/serviceoption.md),
+[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
+[updateService](../../mrsdeploy/packagehelp/updateservice.md)
    
  ##Examples
 
