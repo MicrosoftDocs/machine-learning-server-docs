@@ -432,7 +432,7 @@
 #### [rxOpen-methods](r-reference/revoscaler/rxopen-methods.md) 
 #### [rxOptions](r-reference/revoscaler/rxoptions.md) 
 #### [rxPackage](r-reference/revoscaler/rxpackage.md) 
-#### [rxPairwiseCrosstab](scaler/packagehelp/rxPairwiseCrosstab.md) 
+#### [rxPairwiseCrosstab](r-reference/revoscaler/rxpairwisecrosstab.md) 
 #### [rxPingNodes](scaler/packagehelp/rxPingNodes.md) 
 #### [rxPredict](scaler/packagehelp/rxPredict.md) 
 #### [rxPredict.rxDForest](scaler/packagehelp/rxPredict.rxDForest.md) 

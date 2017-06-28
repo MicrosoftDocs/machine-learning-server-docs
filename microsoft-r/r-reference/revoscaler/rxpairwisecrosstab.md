@@ -103,12 +103,12 @@ print  (x, digits = 3, scientific = FALSE, p.value.digits = 3, ...)
  
  ##See Also
  
-[rxChiSquaredTest](../../r-reference/revoscaler/rxchisquaredtest.md),
-[rxFisherTest](../../r-reference/revoscaler/rxchisquaredtest.md),
-[rxKendallCor](../../r-reference/revoscaler/rxchisquaredtest.md),
-[rxMultiTest](../../r-reference/revoscaler/rxmultitest.md),
-[rxRiskRatio](rxRiskRatio.md),
-[rxOddsRatio](rxRiskRatio.md).
+[rxChiSquaredTest](rxchisquaredtest.md),
+[rxFisherTest](rxchisquaredtest.md),
+[rxKendallCor](rxchisquaredtest.md),
+[rxMultiTest](rxmultitest.md),
+[rxRiskRatio](../../scaler/packagehelp/rxriskratio.md),
+[rxOddsRatio](../../scaler/packagehelp/rxriskratio.md).
    
  
  ##Examples
