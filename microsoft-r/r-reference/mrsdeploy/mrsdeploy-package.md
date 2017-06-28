@@ -150,7 +150,7 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 + [How to interact with and consume web services in R](../../operationalize/howto-consume-web-service-interact-in-r.md)
 
-+ [Asynchronous batch execution of web services in R](../../operationalize/data-scientist-batch-mode.md)
++ [Asynchronous batch execution of web services in R](../../operationalize/how-to-consume-web-service-asynchronously-batch.md)
 
 ## See also
 

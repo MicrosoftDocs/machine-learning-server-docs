@@ -69,7 +69,7 @@ Services can be consumed in multiple ways:
 
 2. Application developers can integrate web services into their applications using the APIs defined in a service specific Swagger-based JSON file. 
 
-Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](howto-consume-web-service-interact-in-r.md) and the article [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md).
+Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](howto-consume-web-service-interact-in-r.md) and the article [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md).
 
 
 ## Execute R code remotely
@@ -93,7 +93,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
 + [Working with web services in R](data-scientist-manage-services.md)
-+ [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)
++ [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
 + [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 

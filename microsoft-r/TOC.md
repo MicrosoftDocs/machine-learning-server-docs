@@ -145,7 +145,7 @@
 #### [Connect to R Server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 #### [Publish and manage services in R](operationalize/data-scientist-manage-services.md)
 #### [Get and consume services in R](operationalize/howto-consume-web-service-interact-in-r.md)
-#### [Consume services asynchronously via batch](operationalize/data-scientist-batch-mode.md)
+#### [Consume services asynchronously via batch](operationalize/how-to-consume-web-service-asynchronously-batch.md)
 ### Application developers
 #### [Integrate web services and authentication into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
 #### [API overview](operationalize/concept-api.md)
