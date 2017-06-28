@@ -33,7 +33,7 @@ R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, H
 - Verify the installation
 - Repeat on the next data node.
 
-The install script uses an internet connection to download and install missing dependencies, Microsoft R Open (MRO), and the .NET Core for Linux. If internet connections are restricted, use the alternate [offline instructions](rserver-install-hadoop-offline.md) instead.
+The install script uses an internet connection to download and install missing dependencies, Microsoft R Open (MRO), and the .NET Core for Linux. If internet connections are restricted, use the alternate [offline instructions](../rserver-install-hadoop-offline.md) instead.
 
 If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
@@ -53,7 +53,7 @@ Installation requires administrator permissions and must be performed as a `root
 
 R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server within the cluster.
 
-Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server works with the Hadoop distributions listed here: [Supported platforms](rserver-install-supported-platforms.md)
+Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server works with the Hadoop distributions listed here: [Supported platforms](../rserver-install-supported-platforms.md)
 
 Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.x.
 
@@ -270,7 +270,7 @@ If you have multiple nodes, you can automate the installation across nodes using
 
 Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. If possible, use a distributed shell that provides a top-level copy command, such as the pdcp command that is part of pdsh.
 
-Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](install/r-server-install-hadoop-800.md#StandardCommandLineInstall).
+Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](r-server-install-hadoop-800.md#standardcommandlineinstall).
 
 The following commands use pdsh and pdcp to distribute and install Microsoft R Server:
 
@@ -290,11 +290,11 @@ Each command must run on a single logical line, even if it spans two lines below
 
 ## Enable Remote Connections and Analytic Deployment
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize-r-server-one-box-config.md) or an [enterprise setup](operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Next Steps
 
 Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
 
-+ [Practice data import and exploration on Spark](scaler-spark-getting-started.md)
-+ [Practice data import and exploration on MapReduce](scaler-hadoop-getting-started.md)
++ [Practice data import and exploration on Spark](../scaler-spark-getting-started.md)
++ [Practice data import and exploration on MapReduce](../scaler-hadoop-getting-started.md)
