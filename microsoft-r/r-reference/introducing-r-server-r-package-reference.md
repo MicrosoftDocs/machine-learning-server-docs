@@ -32,17 +32,17 @@ This section contains the function reference documentation for proprietary *revo
 
 |Package | Description |
 |----|----|
-|[MicrosoftML](r-reference/microsoftml/microsoftml-package.md)|A collection of functions in Microsoft R used for machine learning at scale.|
-|[mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md)|Deployment functions for interactive remote execution at the command line, plus web service functions for bundling up R code blocks as discrete web services that can be deployed and managed on an R Server instance.|
-|[olapR](olapR/OlapR.md)|A collection of functions for constructing MDX queries against an OLAP cube.|
-|[RevoScaleR](r-reference/revoscaler/revoscaler.md) | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](rserver.md) functionality. |
-|[RevoPemaR](r-reference/revopemar/pemar.md) | Developer functions for coding custom parallel external memory algorithms. |
+|[MicrosoftML](microsoftml/microsoftml-package.md)|A collection of functions in Microsoft R used for machine learning at scale.|
+|[mrsdeploy](mrsdeploy/mrsdeploy-package.md)|Deployment functions for interactive remote execution at the command line, plus web service functions for bundling up R code blocks as discrete web services that can be deployed and managed on an R Server instance.|
+|[olapR](olapr/olapr.md)|A collection of functions for constructing MDX queries against an OLAP cube.|
+|[RevoScaleR](../revoscaler.md) | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](../rserver.md) functionality. |
+|[RevoPemaR](revopemar/pemar.md) | Developer functions for coding custom parallel external memory algorithms. |
 |RevoIOQ and RUnit|Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (`*`). |
 |RevoMods|Microsoft modifications and extensions to standard R functions. Reference documentation is online only (`*`).  |
 |RevoTreeView|Decision tree functions, including the **rxDTree** function. Reference documentation is online only (`*`). |
 |[RevoUtils](revoutils/revoutils.md)|Utility functions useful when programming and developing R packages.|
 |RevoUtilsMath|Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (`*`). |
-|[sqlrutils](sqlrutils/sqlrutils.md)|A collection of functions for executing stored procedures against SQL Server.|
+|[sqlrutils](../sqlrutils/sqlrutils.md)|A collection of functions for executing stored procedures against SQL Server.|
 
 `*` Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in your preferred R IDE, such as **R Tools for Visual Studio**.
 
@@ -54,16 +54,16 @@ The following packages exist for backward compatibility but are no longer under 
 * RevoRsrConnector
 * revolpe
 
-For a list of deprecated or discontinued functions within an existing package, see [Release notes for R Server](notes/r-server-notes.md).
+For a list of deprecated or discontinued functions within an existing package, see [Release notes for R Server](../notes/r-server-notes.md).
 
 ## See also
 
-[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+[Diving into data analysis in Microsoft R](../data-analysis-in-microsoft-r.md)
 
-[Microsoft R Getting Started Guide](microsoft-r-getting-started.md)
+[Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)
 
-[Additional learning resources and sample datasets](microsoft-r-more-resources.md)
+[Additional learning resources and sample datasets](../microsoft-r-more-resources.md)
 
-[Install R Server](rserver.md)
+[Install R Server](../rserver.md)
 
-[Install R Client](r-client/what-is-microsoft-r-client.md)
+[Install R Client](../r-client/what-is-microsoft-r-client.md)

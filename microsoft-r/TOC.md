@@ -223,7 +223,7 @@
 ## [Remote execution with R Server](operationalize/remote-execution.md)
 
 
-# [Function Reference](package-reference.md)
+# [Function Reference](r-reference/introducing-r-server-r-package-reference.md)
 ## [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 ### [categorical](r-reference/microsoftml/categorical.md)
 ### [categoricalHash](r-reference/microsoftml/categoricalhash.md)

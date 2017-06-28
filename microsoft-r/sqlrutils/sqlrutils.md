@@ -60,7 +60,7 @@ To see the **sqlrutils** functions that can be called from the R console:
 
 ## See also
 
-[Package Reference](~/package-reference.md)
+[Package Reference](../r-reference/introducing-r-server-r-package-reference.md)
 
 [Install R Server](~/rserver.md)
 

@@ -144,7 +144,7 @@ To see the **olapR** functions that can be called from the R console:
 
 ## See also
 
-[Package Reference](../../package-reference.md)
+[Package Reference](../introducing-r-server-r-package-reference.md)
 
 [Install R Server](../../rserver.md)
 
