@@ -280,7 +280,7 @@ subsequent RevoScaleR analysis.
  
  ##See Also
  
-[RxDataSource-class](RxDataSource-class.md),
+[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
 [rxDataStep](rxDataStep.md),
 [RxTextData](RxTextData.md),
 [RxSasData](RxSasData.md),

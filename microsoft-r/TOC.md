@@ -356,7 +356,7 @@
 #### [rxCreateColInfo](r-reference/revoscaler/rxcreatecolinfo.md) 
 #### [rxCrossTabs](r-reference/revoscaler/rxcrosstabs.md) 
 #### [rxCube](r-reference/revoscaler/rxcube.md) 
-#### [RxDataSource-class](scaler/packagehelp/RxDataSource-class.md) 
+#### [RxDataSource-class](r-reference/revoscaler/rxdatasource-class.md) 
 #### [RxDataSource](scaler/packagehelp/RxDataSource.md) 
 #### [rxDataStep](scaler/packagehelp/rxDataStep.md) 
 #### [rxDForest](scaler/packagehelp/rxDForest.md) 

@@ -56,7 +56,7 @@ Quickly computes approximate quantiles (without sorting)
   
     
  ### `data`
-  data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](RxDataSource-class.md) object representing the data set.  
+  data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md) object representing the data set.  
   
   
     

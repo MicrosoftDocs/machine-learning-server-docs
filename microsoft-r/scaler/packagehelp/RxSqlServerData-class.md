@@ -64,7 +64,7 @@ Class RxDataSource, directly.
  
  ##See Also
  
-[RxDataSource-class](RxDataSource-class.md),
+[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
 [RxSqlServerData](RxSqlServerData.md),
 [rxNewDataSource](rxNew.md)
    

@@ -77,7 +77,7 @@ A type of RxDataSource data source object.
  
  ##See Also
  
-[RxDataSource-class](RxDataSource-class.md),
+[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
 [RxTextData](RxTextData.md),
 [RxSqlServerData](RxSqlServerData.md),
 [RxSpssData](RxSpssData.md),

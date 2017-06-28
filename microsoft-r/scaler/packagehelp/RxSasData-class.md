@@ -65,7 +65,7 @@ Class RxDataSource, by class RxFileData.
  
  ##See Also
  
-[RxDataSource-class](RxDataSource-class.md),
+[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
 [RxSasData](RxSasData.md),
 [rxNewDataSource](rxNew.md)
    

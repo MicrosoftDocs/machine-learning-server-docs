@@ -113,7 +113,7 @@ Class RxDataSource, by class RxFileData.
  
  ##See Also
  
-[RxDataSource-class](RxDataSource-class.md),
+[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
 [RxXdfData](RxXdfData.md),
 [rxNewDataSource](rxNew.md)
    

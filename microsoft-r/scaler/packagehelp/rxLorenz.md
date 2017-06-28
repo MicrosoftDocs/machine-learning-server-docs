@@ -73,7 +73,7 @@ plot  (x, title = NULL, subtitle = NULL,
   
     
  ### `data`
-  data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](RxDataSource-class.md) object representing a data set containing the actual and observed variables.  
+  data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md) object representing a data set containing the actual and observed variables.  
   
     
  ### `numBreaks`
