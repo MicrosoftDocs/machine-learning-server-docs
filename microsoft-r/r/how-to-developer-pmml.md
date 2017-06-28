@@ -44,7 +44,7 @@ For example, let’s create an rxLinMod object by estimating a linear regression
 	rxLinModObj <- rxLinMod(ArrDelay~Year + DayOfWeek, data = bigAirData, 
 	    blocksPerRead = 10)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
 
 Next, the R *pmml* package should be downloaded and installed from CRAN. After you have done so, generate the RevoScaleR *rxLinMod* object, and use the *as.lm* method when generating the PMML output:
 

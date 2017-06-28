@@ -45,7 +45,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 * [Naïve Bayes Classifier](scaler-user-guide-naive-bayes.md)
 * [Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)
 * [Clustering](scaler-user-guide-cluster.md)
-* [Converting RevoScaleR Model Objects for Use in PMML](scaler-user-guide-pmml.md)
+* [Converting RevoScaleR Model Objects for Use in PMML](r/how-to-developer-pmml.md)
 * [Transform Functions](r/concept-what-is-data-transformations.md)
 * [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
