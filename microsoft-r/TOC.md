@@ -263,7 +263,7 @@
 ###[deleteService](r-reference/mrsdeploy/deleteservice.md) 
 ###[deleteSnapshot](r-reference/mrsdeploy/deletesnapshot.md) 
 ###[diffLocalRemote](r-reference/mrsdeploy/difflocalremote.md) 
-###[downloadSnapshot](mrsdeploy/packagehelp/downloadSnapshot.md) 
+###[downloadSnapshot](r-reference/mrsdeploy/downloadsnapshot.md) 
 ###[encodings](mrsdeploy/packagehelp/encodings.md) 
 ###[getRemoteFile](mrsdeploy/packagehelp/getRemoteFile.md) 
 ###[getRemoteObject](mrsdeploy/packagehelp/getRemoteObject.md) 

@@ -71,7 +71,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 
 [listSnapshots](listSnapshots.md)
 
-[downloadSnapshot](downloadSnapshot.md)
+[downloadSnapshot](../../r-reference/mrsdeploy/downloadsnapshot.md)
    
  ##Examples
 

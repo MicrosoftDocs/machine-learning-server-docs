@@ -70,13 +70,13 @@ then `TRUE` will be returned.
  
  ##See Also
  
-[createSnapshot](../../r-reference/mrsdeploy/createsnapshot.md)
+[createSnapshot](createsnapshot.md)
 
-[deleteSnapshot](../../r-reference/mrsdeploy/deletesnapshot.md)
+[deleteSnapshot](deletesnapshot.md)
 
-[listSnapshots](listSnapshots.md)
+[listSnapshots](../../mrsdeploy/packagehelp/listsnapshots.md)
 
-[loadSnapshot](loadSnapshot.md)
+[loadSnapshot](../../mrsdeploy/packagehelp/loadsnapshot.md)
    
  ##Examples
 

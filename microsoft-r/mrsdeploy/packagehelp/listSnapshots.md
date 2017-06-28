@@ -61,7 +61,7 @@ A character vector containing the snapshot ids.
 
 [loadSnapshot](loadSnapshot.md)
 
-[downloadSnapshot](downloadSnapshot.md)
+[downloadSnapshot](../../r-reference/mrsdeploy/downloadsnapshot.md)
    
  ##Examples
 
