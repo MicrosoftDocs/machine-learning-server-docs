@@ -51,7 +51,7 @@ You can switch from local to any of the compute contexts in the following list.
 Context name | Alternative name | Allowed data sources |
 -----------|--------------------|-----------------------|
 [RxLocalSeq](scaler/packagehelp/rxlocalseq.md)      | local     | (all) |
-[RxSpark](scaler/packagehelp/RxSpark.md)         | spark     | RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md), [RxSparkData](scaler/packagehelp/RxSparkData.md) including RxHiveData, RxParquetData, RxOrcData  |
+[RxSpark](r-reference/revoscaler/rxspark.md)         | spark     | RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md), [RxSparkData](scaler/packagehelp/RxSparkData.md) including RxHiveData, RxParquetData, RxOrcData  |
 [RxHadoopMR](r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](scaler/packagehelp/RxTextData.md), [RxXdfData](scaler/packagehelp/RxXdfData.md) |
 [RxInSqlServer](r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](scaler/packagehelp/RxSqlServerData.md) |
 [RxInTeradata](r-reference/revoscaler/rxinteradata.md)    | teradata  | [RxTeradataData](scaler/packagehelp/RxTeradata.md)  |

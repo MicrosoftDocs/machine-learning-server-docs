@@ -460,7 +460,7 @@
 #### [rxSetVarInfoXdf](r-reference/revoscaler/rxsetvarinfoxdf.md) 
 #### [rxSortXdf](r-reference/revoscaler/rxsortxdf.md) 
 #### [RxSpark-class](r-reference/revoscaler/rxspark-class.md) 
-#### [RxSpark](scaler/packagehelp/RxSpark.md) 
+#### [RxSpark](r-reference/revoscaler/rxspark.md) 
 #### [rxSparkCacheData](scaler/packagehelp/rxSparkCacheData.md) 
 #### [RxSparkData](scaler/packagehelp/RxSparkData.md) 
 #### [rxSparkDataOps](scaler/packagehelp/rxSparkDataOps.md) 

@@ -181,7 +181,7 @@ context.
   
     
  ### `jobTrackerURL`
- character scalar specifying the full URL for the jobtracker web interface. This is used only for the purpose of loading the job tracker web page from the `rxLaunchClusterJobManager` convenience function.  It is never used for job control, and its specification in the compute context is completely optional.  See the [rxLaunchClusterJobManager](../../r-reference/revoscaler/rxlaunchclustertaskmanager.md) page for more information. 
+ character scalar specifying the full URL for the jobtracker web interface. This is used only for the purpose of loading the job tracker web page from the `rxLaunchClusterJobManager` convenience function.  It is never used for job control, and its specification in the compute context is completely optional.  See the [rxLaunchClusterJobManager](rxlaunchclustertaskmanager.md) page for more information. 
   
   
     
@@ -196,7 +196,7 @@ context.
   
     
  ### `wait`
- logical scalar.  If `TRUE` or if `persistentRun` is `TRUE`, the job will be blocking and the invoking function will not return until the job has completed or has failed. Otherwise, the job will be non-blocking and the invoking function will return, allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the  [rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](rxWaitForJob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
+ logical scalar.  If `TRUE` or if `persistentRun` is `TRUE`, the job will be blocking and the invoking function will not return until the job has completed or has failed. Otherwise, the job will be non-blocking and the invoking function will return, allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the  [rxGetJobStatus](rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](../../scaler/packagehelp/rxwaitforjob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
   
   
     
@@ -231,7 +231,7 @@ context.
   
     
  ### `persistentRun`
- EXPERIMENTAL. logical scalar. If `TRUE`, the Spark application (and associated processes) will persist across jobs until the idleTimeout is reached or the [rxStopEngine](rxStopEngine.md) function is called explicitly.  This avoids the overhead of  launching a new Spark application for each job. If `FALSE`, a new Spark application will be launched  when a job starts and will be terminated when the job completes. 
+ EXPERIMENTAL. logical scalar. If `TRUE`, the Spark application (and associated processes) will persist across jobs until the idleTimeout is reached or the [rxStopEngine](../../scaler/packagehelp/rxstopengine.md) function is called explicitly.  This avoids the overhead of  launching a new Spark application for each job. If `FALSE`, a new Spark application will be launched  when a job starts and will be terminated when the job completes. 
   
   
     
@@ -261,7 +261,7 @@ context.
   
     
  ### `autoCleanup`
- logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), and the output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
+ logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxgetjobresults.md), and the output via [rxGetJobOutput](rxgetjoboutput.md) until the  [rxCleanupJobs](rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
   
   
     
@@ -276,12 +276,12 @@ context.
   
     
  ### `outDataPath`
- NOT YET IMPLEMENTED. `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `outDataPath` in [rxOptions](../../r-reference/revoscaler/rxoptions.md)  
+ NOT YET IMPLEMENTED. `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `outDataPath` in [rxOptions](rxoptions.md)  
    
   
     
  ### `fileSystem`
- `NULL` or an [RxHdfsFileSystem](../../r-reference/revoscaler/rxhdfsfilesystem.md) to use as the default file system for data sources when created when this compute context is active. 
+ `NULL` or an [RxHdfsFileSystem](rxhdfsfilesystem.md) to use as the default file system for data sources when created when this compute context is active. 
   
   
     
@@ -336,16 +336,16 @@ object of class RxSpark.
  
  ##See Also
  
-[rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md),
-[rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md),
-[rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), 
-[rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
-[RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md), 
-[RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),   
-[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md), 
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[rxSetComputeContext](../../r-reference/revoscaler/rxsetcomputecontext.md),
-[RxSpark-class](../../r-reference/revoscaler/rxspark-class.md).
+[rxGetJobStatus](rxgetjobresults.md),
+[rxGetJobOutput](rxgetjoboutput.md),
+[rxGetJobResults](rxgetjobresults.md), 
+[rxCleanupJobs](rxcleanup.md),
+[RxHadoopMR](rxhadoopmr.md), 
+[RxInSqlServer](rxinsqlserver.md),   
+[RxInTeradata](rxinteradata.md), 
+[RxComputeContext](rxcomputecontext.md),
+[rxSetComputeContext](rxsetcomputecontext.md),
+[RxSpark-class](rxspark-class.md).
    
  
  ##Examples
