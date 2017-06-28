@@ -84,7 +84,7 @@ and matching the specified parameters.
  
  ##Details
  
-One common use of `rxGetJobs` is as input to the [rxCleanupJobs](rxCleanup.md) function, which
+One common use of `rxGetJobs` is as input to the [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) function, which
 is used to clean up completed non-waiting jobs when `autoCleanup` is not specified.
 
 If `exactMatch=FALSE`, only the shared directory `shareDir` and the cluster 
@@ -116,7 +116,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxCleanupJobs](rxCleanup.md),
+[rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
 [rxGetJobOutput](rxGetJobOutput.md),
 [rxGetJobResults](rxGetJobResults.md),
 [rxGetJobStatus](rxGetJobResults.md),

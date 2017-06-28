@@ -61,7 +61,7 @@ Obtain distributed computing results and processing status.
   
     
  ### `autoCleanup`
- `NULL` or logical value. If `TRUE`, the default behavior is to clean up  any artifacts created by the distributed computing job. If `FALSE`, then the  artifacts are not deleted, and the results may be acquired using [rxGetJobResults](rxGetJobResults.md),  and the console output via [rxGetJobOutput](rxGetJobOutput.md) until the [rxCleanupJobs](rxCleanup.md) is used to delete the artifacts.  If not `NULL`, this flag overwrites the value set in the compute context when the job was submitted. If you routinely set `autoCleanup=FALSE`, you will eventually fill your hard disk with compute artifacts.If you set `autoCleanup=TRUE`and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`. 
+ `NULL` or logical value. If `TRUE`, the default behavior is to clean up  any artifacts created by the distributed computing job. If `FALSE`, then the  artifacts are not deleted, and the results may be acquired using [rxGetJobResults](rxGetJobResults.md),  and the console output via [rxGetJobOutput](rxGetJobOutput.md) until the [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the artifacts.  If not `NULL`, this flag overwrites the value set in the compute context when the job was submitted. If you routinely set `autoCleanup=FALSE`, you will eventually fill your hard disk with compute artifacts.If you set `autoCleanup=TRUE`and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`. 
   
  
  
@@ -124,7 +124,7 @@ not available because the job has not finished, has failed, or was deleted.
 [RxInTeradata](RxInTeradata.md), 
 [RxInSqlServer](RxInSqlServer.md),
 [rxGetJobs](rxGetJobs.md), 
-[rxCleanupJobs](rxCleanup.md),
+[rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
 [rxGetJobStatus](rxGetJobResults.md),
 [rxExec](rxExec.md).
    

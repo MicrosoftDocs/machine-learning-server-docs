@@ -175,7 +175,7 @@ Creates a compute context for use with a Hadoop cluster.
   
     
  ### `autoCleanup`
- logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxGetJobResults.md), and the output via [rxGetJobOutput](rxGetJobOutput.md) until the  [rxCleanupJobs](rxCleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
+ logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxGetJobResults.md), and the output via [rxGetJobOutput](rxGetJobOutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
   
   
     
@@ -236,7 +236,7 @@ object of class RxHadoopMR.
 [rxGetJobStatus](rxGetJobResults.md),
 [rxGetJobOutput](rxGetJobOutput.md),
 [rxGetJobResults](rxGetJobResults.md), 
-[rxCleanupJobs](rxCleanup.md),
+[rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
 [RxSpark](RxSpark.md),
 [RxInSqlServer](RxInSqlServer.md),  
 [RxInTeradata](RxInTeradata.md), 

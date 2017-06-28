@@ -78,7 +78,7 @@ useful return value.
 [RxInSqlServer](RxInSqlServer.md),
 [RxInTeradata](RxInTeradata.md), 
 [rxGetJobs](rxGetJobs.md),
-[rxCleanupJobs](rxCleanup.md), 
+[rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md), 
 [rxGetJobResults](rxGetJobResults.md),
 [rxExec](rxExec.md).
    
