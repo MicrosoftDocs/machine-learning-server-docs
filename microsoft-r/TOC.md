@@ -329,7 +329,7 @@
 #### [CensusUS5Pct2000](r-reference/revoscaler/censusus5pct2000.md) 
 #### [CensusWorkers](r-reference/revoscaler/censusworkers.md)
 #### [claims](r-reference/revoscaler/claims.md) 
-#### [DJIAdaily](scaler/packagehelp/DJIAdaily.md) 
+#### [DJIAdaily](r-reference/revoscaler/djiadaily.md) 
 #### [Kyphosis](scaler/packagehelp/Kyphosis.md) 
 #### [mortDefaultSmall](scaler/packagehelp/mortDefaultSmall.md) 
 ### Functions
