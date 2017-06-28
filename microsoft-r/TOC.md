@@ -461,7 +461,7 @@
 #### [rxSortXdf](r-reference/revoscaler/rxsortxdf.md) 
 #### [RxSpark-class](r-reference/revoscaler/rxspark-class.md) 
 #### [RxSpark](r-reference/revoscaler/rxspark.md) 
-#### [rxSparkCacheData](scaler/packagehelp/rxSparkCacheData.md) 
+#### [rxSparkCacheData](r-reference/revoscaler/rxsparkcachedata.md) 
 #### [RxSparkData](scaler/packagehelp/RxSparkData.md) 
 #### [rxSparkDataOps](scaler/packagehelp/rxSparkDataOps.md) 
 #### [rxSplitXdf](scaler/packagehelp/rxSplitXdf.md) 
