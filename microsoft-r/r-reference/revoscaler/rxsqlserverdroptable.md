@@ -49,7 +49,7 @@ Execute a SQL statement that drops a table or checks for existence.
    
     
  ### `table`
-  character string specifying a table name or an [RxSqlServerData](../../r-reference/revoscaler/rxsqlserverdata.md)data source that has the `table` specified.  
+  character string specifying a table name or an [RxSqlServerData](rxsqlserverdata.md)data source that has the `table` specified.  
   
   
     
@@ -86,8 +86,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
-[RxSqlServerData](../../r-reference/revoscaler/rxsqlserverdata.md).
+[RxInSqlServer](rxinsqlserver.md),
+[RxSqlServerData](rxsqlserverdata.md).
    
  ##Examples
 
