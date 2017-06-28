@@ -493,7 +493,7 @@
 #### [rxXdfToText](r-reference/revoscaler/rxxdftotext.md)
 
 ## [RevoUtils](RevoUtils/RevoUtils.md)
-###[getRevoRepos](RevoUtils/packagehelp/getRevoRepos.md) 
+###[getRevoRepos](r-reference/revoutils/getrevorepos.md) 
 ###[readNews](RevoUtils/packagehelp/readNews.md) 
 ###[Revo.home](RevoUtils/packagehelp/Revo.home.md) 
 ###[RevoInfo](RevoUtils/packagehelp/RevoInfo.md) 
