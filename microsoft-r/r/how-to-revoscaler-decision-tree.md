@@ -40,7 +40,7 @@ In the case of integer predictors for which the number of bins equals or exceeds
 
 ### A Simple Classification Tree
 
-In a [previous article](scaler-user-guide-logistic-regression.md), we fit a simple logistic regression model to rpart’s kyphosis data. That model is easily recast as a classification tree using *rxDTree* as follows:
+In a [previous article](../scaler-user-guide-logistic-regression.md), we fit a simple logistic regression model to rpart’s kyphosis data. That model is easily recast as a classification tree using *rxDTree* as follows:
 		  
 	data("kyphosis", package="rpart")
 	kyphTree <- rxDTree(Kyphosis ~ Age + Start + Number, data = kyphosis, 
@@ -172,7 +172,7 @@ As an example of a large data classification tree, consider the following simple
 	airlineTree <- rxDTree(ArrDel15 ~ CRSDepTime + DayOfWeek, data = sampleAirData,
 	    blocksPerRead = 30, maxDepth = 5, cp = 1e-5)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
 
 The default cp of 0 produces a very large number of splits; specifying *cp* = 1e-5 produces a more manageable set of splits in this model:
 
