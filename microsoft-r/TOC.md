@@ -425,7 +425,7 @@
 #### [rxMultiTest](r-reference/revoscaler/rxmultitest.md) 
 #### [rxNaiveBayes](r-reference/revoscaler/rxnaivebayes.md) 
 #### [RxNativeFileSystem](r-reference/revoscaler/rxnativefilesystem.md) 
-#### [rxNew](scaler/packagehelp/rxNew.md) 
+#### [rxNew](r-reference/revoscaler/rxnew.md) 
 #### [rxOAuthParameters](scaler/packagehelp/rxOAuthParameters.md) 
 #### [RxOdbcData-class](scaler/packagehelp/RxOdbcData-class.md) 
 #### [RxOdbcData](scaler/packagehelp/RxOdbcData.md) 

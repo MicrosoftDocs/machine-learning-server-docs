@@ -40,7 +40,7 @@ Text data source connection class.
 
  
 The targeted generator [RxTextData](RxTextData.md) as well as the general generator
-[rxNewDataSource](rxNew.md).
+[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
  
  ## Extends 
 
@@ -67,6 +67,6 @@ Class RxDataSource, by class RxFileData.
  
 [RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
 [RxTextData](RxTextData.md),
-[rxNewDataSource](rxNew.md)
+[rxNewDataSource](../../r-reference/revoscaler/rxnew.md)
    
  

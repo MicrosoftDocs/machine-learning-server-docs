@@ -60,7 +60,7 @@ rxNewDataSource  (name, ...)
  
 This is a wrapper to specific class generator functions for the
 RCE data source classes. For example, the RxXdfData class uses function
-[RxXdfData](RxXdfData.md) as a generator. Therefore either `RxXdfData(...)`
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md) as a generator. Therefore either `RxXdfData(...)`
 or `rxNewDataSource("RxXdfData", ...)` will create an RxXdfData instance.
  
  
@@ -73,8 +73,8 @@ actual RevoScaleR data sources.
 
  
 This function creates the data source instance in the Microsoft R Services Compute Engine, but does not
-actually open the data. The methods [rxOpen](rxOpen-methods.md) and
-[rxClose](rxOpen-methods.md) will open and close the data.
+actually open the data. The methods [rxOpen](../../scaler/packagehelp/rxopen-methods.md) and
+[rxClose](../../scaler/packagehelp/rxopen-methods.md) will open and close the data.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -82,14 +82,14 @@ actually open the data. The methods [rxOpen](rxOpen-methods.md) and
  
  ##See Also
  
-[RxXdfData](RxXdfData.md),
-[RxTextData](RxTextData.md),
-[RxSasData](RxSasData.md),
-[RxSpssData](RxSpssData.md),
-[RxOdbcData](RxOdbcData.md),
-[RxTeradata](RxTeradata.md),
-[rxOpen](rxOpen-methods.md),
-[rxReadNext](rxOpen-methods.md).
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
+[RxTextData](../../scaler/packagehelp/rxtextdata.md),
+[RxSasData](../../scaler/packagehelp/rxsasdata.md),
+[RxSpssData](../../scaler/packagehelp/rxspssdata.md),
+[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md),
+[RxTeradata](../../scaler/packagehelp/rxteradata.md),
+[rxOpen](../../scaler/packagehelp/rxopen-methods.md),
+[rxReadNext](../../scaler/packagehelp/rxopen-methods.md).
    
  ##Examples
 

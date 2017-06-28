@@ -101,7 +101,7 @@ the `returnDataFrame` property within `src`.
  
  ##See Also
  
-[rxNewDataSource](rxNew.md),
+[rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
 [RxXdfData](RxXdfData.md).
    
  ##Examples

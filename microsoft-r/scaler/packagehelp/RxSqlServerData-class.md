@@ -40,7 +40,7 @@ Microsoft SQL Server data source connection class.
 
  
 The targeted generator [RxSqlServerData](RxSqlServerData.md) as well as the general generator
-[rxNewDataSource](rxNew.md).
+[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
  
  ## Extends 
 
@@ -66,6 +66,6 @@ Class RxDataSource, directly.
  
 [RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
 [RxSqlServerData](RxSqlServerData.md),
-[rxNewDataSource](rxNew.md)
+[rxNewDataSource](../../r-reference/revoscaler/rxnew.md)
    
  

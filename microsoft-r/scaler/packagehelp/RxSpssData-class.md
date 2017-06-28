@@ -40,7 +40,7 @@ SPSS data source connection class.
 
  
 The targeted generator [RxSpssData](RxSpssData.md) as well as the general generator
-[rxNewDataSource](rxNew.md).
+[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
  
  ## Extends 
 
@@ -67,6 +67,6 @@ Class RxDataSource, by class RxFileData.
  
 [RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
 [RxSpssData](RxSpssData.md),
-[rxNewDataSource](rxNew.md)
+[rxNewDataSource](../../r-reference/revoscaler/rxnew.md)
    
  

@@ -160,7 +160,7 @@ object of class RxXdfData.
  ##See Also
  
 [RxXdfData-class](RxXdfData-class.md),
-[rxNewDataSource](rxNew.md),
+[rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
 [rxOpen](rxOpen-methods.md),
 [rxReadNext](rxOpen-methods.md).
    
