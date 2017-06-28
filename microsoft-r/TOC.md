@@ -251,7 +251,7 @@
 ### [rxFastLinear](microsoftml/packagehelp/rxFastLinear.md) 
 ### [rxFastTrees](microsoftml/packagehelp/rxFastTrees.md)
 ### [rxFeaturize](microsoftml/packagehelp/rxFeaturize.md) 
-### [rxLogisticRegression](microsoftml/packagehelp/rxLogisticRegression.md) 
+### [rxLogisticRegression](r-reference/microsoftml/logisticregression.md) 
 ### [rxNeuralNet](microsoftml/packagehelp/rxNeuralNet.md) 
 ### [rxOneClassSvm](microsoftml/packagehelp/rxOneClassSvm.md)  
 ### [rxPredict](microsoftml/packagehelp/rxPredict.md)

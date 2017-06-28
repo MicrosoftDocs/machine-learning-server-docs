@@ -48,7 +48,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 * [rxFastTrees](packagehelp/rxFastTrees.md): An implementation of FastRank, an efficient implementation  of the MART gradient boosting algorithm.  
 * [rxFastForest](packagehelp/rxFastForest.md): A random forest and Quantile regression forest  implementation using [rxFastTrees](packagehelp/rxFastTrees.md).  
-* [rxLogisticRegression](packagehelp/rxLogisticRegression.md): Logistic regression using L-BFGS.  
+* [rxLogisticRegression](../r-reference/microsoftml/logisticregression.md): Logistic regression using L-BFGS.  
 * [rxOneClassSvm](packagehelp/rxOneClassSvm.md): One class support vector machines.  
 * [rxNeuralNet](packagehelp/rxNeuralNet.md): Binary, multi-class, and regression neural net.  
 * [rxFastLinear](packagehelp/rxFastLinear.md): Stochastic dual coordinate ascent optimization for linear binary classification and regression. 

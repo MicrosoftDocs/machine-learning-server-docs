@@ -56,7 +56,7 @@ rxPredict  (modelObject, data, outData = NULL,
    
   
  ### `modelObject`
- A model information object returned from a MicrosoftML model. For example, an object returned from [rxFastTrees](rxFastTrees.md) or [rxLogisticRegression](rxLogisticRegression.md). 
+ A model information object returned from a MicrosoftML model. For example, an object returned from [rxFastTrees](rxFastTrees.md) or [rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md). 
   
   
   
@@ -154,7 +154,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
-[rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
+[rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md), [rxNeuralNet](rxNeuralNet.md),
 [rxOneClassSvm](rxOneClassSvm.md).
    
  ##Examples
