@@ -469,7 +469,7 @@
 #### [RxSpssData](r-reference/revoscaler/rxspssdata.md) 
 #### [rxSqlLibPaths](r-reference/revoscaler/rxsqllibpaths.md) 
 #### [RxSqlServerData-class](r-reference/revoscaler/rxsqlserverdata-class.md) 
-#### [RxSqlServerData](scaler/packagehelp/RxSqlServerData.md) 
+#### [RxSqlServerData](r-reference/revoscaler/rxsqlserverdata.md) 
 #### [rxSqlServerDropTable](scaler/packagehelp/rxSqlServerDropTable.md) 
 #### [rxStepControl](scaler/packagehelp/rxStepControl.md) 
 #### [rxStepPlot](scaler/packagehelp/rxStepPlot.md) 

@@ -218,9 +218,9 @@ TODO: Update references.
  
  ##See Also
  
-[RxSqlServerData-class](../../r-reference/revoscaler/rxsqlserverdata-class.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
-[rxImport](../../r-reference/revoscaler/rximport.md).
+[RxSqlServerData-class](rxsqlserverdata-class.md),
+[rxNewDataSource](rxnew.md),
+[rxImport](rximport.md).
    
  ##Examples
 
