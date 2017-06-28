@@ -182,7 +182,7 @@ To back up and restore your Deployr data:
 
 1. From the landing page, open the **Administration Console**.
 
-1. [Follow these instructions](deployr-admin-console/deployr-admin-console-database.md).
+1. [Follow these instructions](deployr/deployr-admin-console-database.md).
 
 <br />
 ### For DeployR 8.0.0

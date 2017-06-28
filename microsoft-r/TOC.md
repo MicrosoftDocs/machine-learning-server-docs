@@ -170,7 +170,7 @@
 ##### [Managing Access with IP Filters](deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
 ##### [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md)
 ##### [Managing Server Policies](deployr-admin-console/deployr-admin-managing-server-policies.md)
-##### [Restoring & Backing Up the Database](deployr-admin-console/deployr-admin-console-database.md)
+##### [Restoring & Backing Up the Database](deployr/deployr-admin-console-database.md)
 ##### [Monitoring Events](deployr-admin-console/deployr-admin-monitoring-events.md)
 ##### [Common Administrative Tasks](deployr-common-administration-tasks.md)
 ##### [Troubleshooting & Diagnostics](deployr-admin-diagnostics-troubleshooting.md)
