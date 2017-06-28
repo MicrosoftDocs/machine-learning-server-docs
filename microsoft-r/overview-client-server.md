@@ -42,4 +42,4 @@ Functions in ScaleR are prefixed with ‘rx’ for analysis and data manipulatio
 ## See Also
 
 [What's new in R Server](rserver-whats-new.md)
-[What's new in R Client](/notes/r-client-notes.md)
+[What's new in R Client](r-client/whats-new-in-r-client.md)
