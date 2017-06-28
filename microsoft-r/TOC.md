@@ -128,7 +128,7 @@
 #### [Configure connection security (SSL/TLS)](operationalize/configure-https.md)
 #### [Manage permissions with roles](operationalize/security-roles.md)
 #### [Configure CORS](operationalize/configure-cors.md)
-#### [R execution security](operationalize/security-rserve.md)
+#### [R execution security](operationalize/configure-r-execution-security.md)
 #### [Configure database](operationalize/configure-remote-database.md)
 #### [Manage R packages](operationalize/configure-manage-r-packages.md)
 

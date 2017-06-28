@@ -72,7 +72,7 @@ In addition to authentication, you can add other enterprise security around Micr
 
 + [Role-based access control](security-roles.md) over web services in R Server.
 
-Additionally, we recommend that you review the following [Security Considerations](security-rserve.md).
+Additionally, we recommend that you review the following [Security Considerations](configure-r-execution-security.md).
 
 ![Security](../media/o16n/security.png)
 
