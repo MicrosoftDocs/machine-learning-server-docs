@@ -126,7 +126,7 @@ Machine Learning Fast Forest
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](../../r-reference/microsoftml/featurizetext.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
@@ -223,7 +223,7 @@ Decision trees have several advantages:
 
 
 
-Fast forest regression is a random forest and quantile regression forest implementation using the regression tree learner in [rxFastTrees](rxFastTrees.md). The model consists of an ensemble of decision trees. Each tree in a decision forest outputs a Gaussian distribution by way of prediction. An aggregation is performed over the ensemble of trees to find a Gaussian distribution closest to the combined distribution for all trees in the model.
+Fast forest regression is a random forest and quantile regression forest implementation using the regression tree learner in [rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md). The model consists of an ensemble of decision trees. Each tree in a decision forest outputs a Gaussian distribution by way of prediction. An aggregation is performed over the ensemble of trees to find a Gaussian distribution closest to the combined distribution for all trees in the model.
 
 This decision forest classifier consists of an ensemble of decision trees.
 Generally, ensemble models provide better coverage and accuracy than single
@@ -268,11 +268,11 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastTrees](rxFastTrees.md), [rxFastLinear](rxFastLinear.md),
-[rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md), [rxNeuralNet](../../r-reference/microsoftml/neuralnet.md),
-[rxOneClassSvm](../../r-reference/microsoftml/oneclasssvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),
-[categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](../../r-reference/microsoftml/categoricalhash.md),
-[rxPredict.mlModel](rxPredict.md).
+[rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md), [rxFastLinear](../../microsoftml/packagehelp/rxfastlinear.md),
+[rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md), [rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md),
+[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[categorical](categorical.md), [categoricalHash](categoricalhash.md),
+[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
    
 ##Examples
 

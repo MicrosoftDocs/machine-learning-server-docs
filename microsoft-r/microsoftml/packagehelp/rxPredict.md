@@ -153,7 +153,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
+[rxFastTrees](rxFastTrees.md), [rxFastForest](../../r-reference/microsoftml/rxfastforest.md),
 [rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md), [rxNeuralNet](../../r-reference/microsoftml/neuralnet.md),
 [rxOneClassSvm](../../r-reference/microsoftml/oneclasssvm.md).
    

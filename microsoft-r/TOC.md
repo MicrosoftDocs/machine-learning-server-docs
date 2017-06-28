@@ -247,7 +247,7 @@
 ### [optimizer](r-reference/microsoftml/optimizer.md)
 ### [resizeImage](r-reference/microsoftml/resizeimage.md) 
 ### [rxEnsemble](r-reference/microsoftml/rxensemble.md)
-### [rxFastForest](microsoftml/packagehelp/rxFastForest.md)
+### [rxFastForest](r-reference/microsoftml/rxfastforest.md)
 ### [rxFastLinear](microsoftml/packagehelp/rxFastLinear.md) 
 ### [rxFastTrees](microsoftml/packagehelp/rxFastTrees.md)
 ### [rxFeaturize](microsoftml/packagehelp/rxFeaturize.md) 
