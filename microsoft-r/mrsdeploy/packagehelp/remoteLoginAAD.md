@@ -115,7 +115,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
 [remoteLogout](remoteLogout.md)
 
-[remoteCommandLine](remoteCommandLine.md)
+[remoteCommandLine](../../r-reference/mrsdeploy/remotecommandline.md)
    
  ##Examples
 
