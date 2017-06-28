@@ -37,7 +37,7 @@ Review workaround steps for the following known issues in this release.
 5. [Cloudera: "install_mrs_parcel.py" does not exist](#cdh-parcel-message) 
 6. [Cloudera: Connection error due to libjvm and libhdfs package dependencies](#cdh-rstudio-loc-cc) 
 
-Other release-specific pages include [What's New in 9.1](rserver-whats-new.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md). For known issues in the 9.0.1 or 8.0.5 releases, see [Previous Releases](#Prev).
+Other release-specific pages include [What's New in 9.1](whats-new-in-r-server.md) and [Deprecated and Discontinued Features](notes/r-server-notes.md). For known issues in the 9.0.1 or 8.0.5 releases, see [Previous Releases](#Prev).
 
 <a name="revoscaler-rxmerge"></a>
 

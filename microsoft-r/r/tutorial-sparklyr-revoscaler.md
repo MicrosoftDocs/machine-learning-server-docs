@@ -521,7 +521,7 @@ The ability to use both Microsoft R Server and sparklyr from within one Spark se
 
 ## See Also
 
-[What's new in R Server](../rserver-whats-new.md)
+[What's new in R Server](../whats-new-in-r-server.md)
 
 [Tips on computing with big data](tutorial-large-data-tips.md)
 

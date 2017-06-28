@@ -29,7 +29,7 @@ This article notifies you about pending status changes to features and function 
 
 ## Microsoft R Server 9.1.0
 
-Other release-specific pages include [What's New in 9.1](../rserver-whats-new.md) and [Known issues](../rserver-known-issues.md).
+Other release-specific pages include [What's New in 9.1](../whats-new-in-r-server.md) and [Known issues](../rserver-known-issues.md).
 
 ### RevoScaleR Package
 

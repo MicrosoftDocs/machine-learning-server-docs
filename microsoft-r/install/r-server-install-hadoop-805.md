@@ -28,7 +28,7 @@ Older versions of R Server for Hadoop are no longer available on the Microsoft d
 
 ## About the R Server 2016 installer
 
-Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](../rserver-whats-new.md). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md) for instructions.
+Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](../whats-new-in-r-server.md). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md) for instructions.
 
 A summary of setup tasks for R Server 2016 is as follows:
 

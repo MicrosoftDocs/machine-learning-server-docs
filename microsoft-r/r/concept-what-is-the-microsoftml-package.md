@@ -74,7 +74,7 @@ Algorithm | ML task supported | Scalability | Application Examples
 
 
 ## What's new?
-For the new features included in latest release of MicrosoftML, see [What's New in R Server](../rserver-whats-new.md#machinelearning).
+For the new features included in latest release of MicrosoftML, see [What's New in R Server](../whats-new-in-r-server.md#machinelearning).
 
 
 ## What's next?

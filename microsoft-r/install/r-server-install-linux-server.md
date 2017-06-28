@@ -227,7 +227,7 @@ Review the best practices in [Manage your R Server for Linux installation](r-ser
 ## See Also
 
  [Introduction to R Server](../what-is-microsoft-r-server.md) 
- [What's New in R Server](../rserver-whats-new.md)
+ [What's New in R Server](../whats-new-in-r-server.md)
  [Supported platforms](r-server-install-supported-platforms.md)  
  [Known Issues](../rserver-known-issues.md)  
  [Install R on Hadoop overview](r-server-install-hadoop.md)  

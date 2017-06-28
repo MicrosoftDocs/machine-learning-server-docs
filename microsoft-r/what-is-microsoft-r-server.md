@@ -138,6 +138,6 @@ Tutorials in Microsoft R product documentation will help you learn how to use th
 
 **See also**
 
-+ [What's new in R Server](rserver-whats-new.md)
++ [What's new in R Server](whats-new-in-r-server.md)
 + [Learning Resources](microsoft-r-more-resources.md)
 + [Getting Started with ScaleR](r/tutorial-revoscaler-data-import-transform.md)

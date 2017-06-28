@@ -145,7 +145,7 @@ This section provides a quick summary of useful links for administrators working
 -   [R Package Management](configure-manage-r-packages.md)
 -   [Diagnostic Testing & Troubleshooting](configure-run-diagnostics.md)
 -   [Capacity Evaluatation](configure-evaluate-capacity.md)
--   [Comparison between 8.x and 9.x](../rserver-whats-new.md)
+-   [Comparison between 8.x and 9.x](../whats-new-in-r-server.md)
 
 **Other Getting Started Guides**
 -   [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

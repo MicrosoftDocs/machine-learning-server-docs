@@ -82,9 +82,9 @@ Learn more about Microsoft R in these articles:
 
 + [Operationalizing R code with R Server](what-is-operationalization.md)
 
-+ [What's new in R Server](rserver-whats-new.md)
++ [What's new in R Server](whats-new-in-r-server.md)
 
-+ [What's new in R Client](rserver-whats-new.md)
++ [What's new in R Client](whats-new-in-r-server.md)
 
 + [Microsoft R Product Web Page](https://www.microsoft.com/en-us/cloud-platform/r-server)
 

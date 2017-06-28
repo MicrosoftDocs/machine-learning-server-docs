@@ -26,7 +26,7 @@ ms.custom: ""
 
 # DeployR Installation / Set Up Guides
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
 >Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
 

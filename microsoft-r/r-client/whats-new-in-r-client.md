@@ -39,7 +39,7 @@ This release of R Client, built on open source R 3.3.3. Key features in this rel
 
 + Installations on Linux are now possible for R Client
 
-+ Several packages installed with this release have been updated. Learn more about [the new and updated packages in this release](../rserver-whats-new.md#rclient333-package-updates).
++ Several packages installed with this release have been updated. Learn more about [the new and updated packages in this release](../whats-new-in-r-server.md#rclient333-package-updates).
 
 ## Microsoft R Client 3.3.2
 
@@ -54,7 +54,7 @@ The following release notes apply to Microsoft R Client, which can be downloaded
   + `olapR`- adds MDX query support through connections to OLAP cubes on a SQL Server 2016 Analysis Services instance
   + and the packages bundled with [Microsoft R Open 3.3.2](https://mran.microsoft.com/rro/installed/#enhance)
   
-  Learn more about [the new and updated packages in this release](../rserver-whats-new.md#new-and-updated-packages).
+  Learn more about [the new and updated packages in this release](../whats-new-in-r-server.md#new-and-updated-packages).
 + Updated end-user license agreement
 + Telemetry collection is now enabled. [Learn more](../rserver-optout-telemetry.md) about this feature and how to turn it off.
 

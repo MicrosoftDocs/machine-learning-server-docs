@@ -95,7 +95,7 @@ This section provides a quick summary of useful links for data scientists operat
 + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
 + [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)
-+ [Comparison between 8.x and 9.x](../rserver-whats-new.md)
++ [Comparison between 8.x and 9.x](../whats-new-in-r-server.md)
 
 **Other Getting Started Guides**
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

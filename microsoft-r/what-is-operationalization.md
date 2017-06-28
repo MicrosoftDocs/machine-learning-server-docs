@@ -39,7 +39,7 @@ Being able to operationalize your analytics is a central capability in R Server.
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics. Microsoft R Server provides the operationalizing tools to deploy R analytics inside web, desktop, mobile, and dashboard applications and backend systems. R Server turns your R scripts into analytics web services, so R code can be easily executed by applications running on a secure server.
 
 >[!Important]
->R Server 9.x is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are new and the data stored in the database is structured differently. Check out [this table](rserver-whats-new.md#8vs9) to see  the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5, which was available in R Server 8.0.5.
+>R Server 9.x is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are new and the data stored in the database is structured differently. Check out [this table](whats-new-in-r-server.md#8vs9) to see  the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5, which was available in R Server 8.0.5.
 
 ## Solving long development lifecycles
 
@@ -90,7 +90,7 @@ The ability to use R Server to operationalize analytics is available in many, bu
 
 Now that you know about R Server's capability to operationalize your analytics, explore these articles to learn more.
 
-+ [What's new in R Server](rserver-whats-new.md)
++ [What's new in R Server](whats-new-in-r-server.md)
 + [Administrator Get Started](operationalize/configure-start-for-administrators.md)
 + [Data Scientist Get Started](operationalize/concept-operationalize-deploy-consume.md)
 + [How to integrate web services and authentication into your application](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
