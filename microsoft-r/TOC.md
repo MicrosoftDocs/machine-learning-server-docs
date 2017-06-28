@@ -496,7 +496,7 @@
 ###[getRevoRepos](r-reference/revoutils/getrevorepos.md) 
 ###[readNews](r-reference/revoutils/readnews.md) 
 ###[Revo.home](r-reference/revoutils/revo-home.md) 
-###[RevoInfo](RevoUtils/packagehelp/RevoInfo.md) 
+###[RevoInfo](r-reference/revoutils/revoinfo.md) 
 ###[totalSystemMemory](RevoUtils/packagehelp/totalSystemMemory.md)
 
 ## [sqlrutils](sqlrutils/sqlrutils.md)
