@@ -411,7 +411,7 @@
 #### [rxKmeans](r-reference/revoscaler/rxkmeans.md) 
 #### [rxLaunchClusterTaskManager](r-reference/revoscaler/rxlaunchclustertaskmanager.md) 
 #### [rxLinePlot](r-reference/revoscaler/rxlineplot.md) 
-#### [rxLinMod](scaler/packagehelp/rxLinMod.md) 
+#### [rxLinMod](r-reference/revoscaler/rxlinmod.md) 
 #### [RxLocalParallel-class](scaler/packagehelp/RxLocalParallel-class.md) 
 #### [RxLocalParallel](scaler/packagehelp/RxLocalParallel.md) 
 #### [RxLocalSeq-class](scaler/packagehelp/RxLocalSeq-class.md) 

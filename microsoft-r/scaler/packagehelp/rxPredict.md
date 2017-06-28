@@ -246,7 +246,7 @@ In calculating the prediction standard errors, keep the following in mind:
 
 
 * 
- Prediction standard errors are available for both [rxLinMod](rxLinMod.md) and [rxLogit](rxLogit.md) models.
+ Prediction standard errors are available for both [rxLinMod](../../r-reference/revoscaler/rxlinmod.md) and [rxLogit](rxLogit.md) models.
 
 
 * 
@@ -254,7 +254,7 @@ In calculating the prediction standard errors, keep the following in mind:
 
 
 * 
- [rxLinMod](rxLinMod.md) and [rxLogit](rxLogit.md) must be called with `covCoef = TRUE` because the variance-covariance
+ [rxLinMod](../../r-reference/revoscaler/rxlinmod.md) and [rxLogit](rxLogit.md) must be called with `covCoef = TRUE` because the variance-covariance
 matrix of the coefficients must be available.
 
 
@@ -287,7 +287,7 @@ in the data) have no effect.
  
  ##See Also
  
-[rxLinMod](rxLinMod.md),
+[rxLinMod](../../r-reference/revoscaler/rxlinmod.md),
 [rxLogit](rxLogit.md),
 [rxGlm](../../r-reference/revoscaler/rxglm.md),
 [rxPredict.rxDTree](../../r-reference/revoscaler/rxdtree.md),

@@ -357,7 +357,7 @@ Lovell, M., 2008, A Simple Proof of the FWL (Frisch,Waugh,Lovell) Theorem,
  
  ##See Also
  
-[rxLinMod](rxLinMod.md),
+[rxLinMod](../../r-reference/revoscaler/rxlinmod.md),
 [rxTransform](rxTransform.md).
    
  ##Examples

@@ -57,7 +57,7 @@ Fit linear models on small or large data.
    
     
  ### `formula`
- formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). 
+ formula as described in [rxFormula](rxformula.md). 
   
   
     
@@ -87,7 +87,7 @@ Fit linear models on small or large data.
   
     
  ### `variableSelection`
-  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](rxStepControl.md) for details. 
+  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](../../scaler/packagehelp/rxstepcontrol.md) for details. 
   
   
     
@@ -107,12 +107,12 @@ Fit linear models on small or large data.
   
     
  ### `transformFunc`
- variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -137,12 +137,12 @@ Fit linear models on small or large data.
   
     
  ### `covCoef`
- logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](../../r-reference/revoscaler/rxcovregression.md) function to obtain these data. 
+ logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](rxcovregression.md) function to obtain these data. 
   
   
     
  ### `covData`
- logical flag. If `TRUE` and if `cube` is `FALSE` and if  constant term is included in the formula, then the variance-covariance matrix of the data is returned. Use the [rxCovData](../../r-reference/revoscaler/rxcovregression.md) function to obtain these data. 
+ logical flag. If `TRUE` and if `cube` is `FALSE` and if  constant term is included in the formula, then the variance-covariance matrix of the data is returned. Use the [rxCovData](rxcovregression.md) function to obtain these data. 
   
   
     
@@ -172,7 +172,7 @@ Fit linear models on small or large data.
   
   
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxHpcServer`,  `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxHpcServer`,  `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
   
@@ -375,8 +375,8 @@ Lovell, M., 2008, A Simple Proof of the FWL (Frisch,Waugh,Lovell) Theorem,
  ##See Also
  
 lm,
-[rxLogit](rxLogit.md),
-[rxTransform](rxTransform.md).
+[rxLogit](../../scaler/packagehelp/rxlogit.md),
+[rxTransform](../../scaler/packagehelp/rxtransform.md).
    
  ##Examples
 
