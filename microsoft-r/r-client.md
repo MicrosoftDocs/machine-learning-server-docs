@@ -28,7 +28,7 @@ ms.custom: ""
 
 Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open/) so you can use any open source R package to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](scaler-getting-started-data-import-exploration.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for RevoScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility](r-client-compatibility.md). 
+R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for RevoScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility](r-client/compatibility-with-server.md). 
 
 You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](operationalize/remote-execution.md) from the `mrsdeploy` package. 
 
@@ -61,7 +61,7 @@ The first step is to download Microsoft R Client for your operating system and i
 
 + [Install Microsoft R Client for Linux](r-client-install-linux.md)
 
-+ [Compatibility with R Server](r-client-compatibility.md)
++ [Compatibility with R Server](r-client/compatibility-with-server.md)
 
 <br><a name="configure-ide"></a>
 
@@ -99,7 +99,7 @@ You can learn more with these guides:
 
 + [Quickstart: Running R code in Microsoft R](quickstart-r-code.md) (example)
 
-+ [Compatibility with R Server](r-client-compatibility.md)
++ [Compatibility with R Server](r-client/compatibility-with-server.md)
 
 + [Diving into data analysis with Microsoft R](data-analysis-in-microsoft-r.md)
 
