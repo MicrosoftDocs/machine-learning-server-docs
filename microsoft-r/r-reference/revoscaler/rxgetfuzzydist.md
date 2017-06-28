@@ -133,7 +133,7 @@ The Bag of Words measure looks at the number of matching words in a phrase, inde
 In the implementation used in `rxGetFuzzyDist`, all measures are 
 normalized to the same scale, where 0 is no match and 1 is a perfect match.  
 
-For information on phonetic conversions, see [rxGetFuzzyKeys](rxGetFuzzyKeys.md).
+For information on phonetic conversions, see [rxGetFuzzyKeys](../../scaler/packagehelp/rxgetfuzzykeys.md).
  
  
  
@@ -148,8 +148,8 @@ A data frame or data source containing the distances and either string and dicti
  
  ##See Also
  
-[rxGetFuzzyKeys](rxGetFuzzyKeys.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md)
+[rxGetFuzzyKeys](../../scaler/packagehelp/rxgetfuzzykeys.md),
+[rxDataStep](rxdatastep.md)
    
  ##Examples
 

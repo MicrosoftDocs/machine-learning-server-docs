@@ -184,7 +184,7 @@ Phonetic matching also typically treats the entire string as a single word. Sett
 the `ignoreSpaces` argument to `TRUE` results in each word being processed separately,
 with the result concatenated into a single (longer) code.
 
-For information on similarity distance measures, see [rxGetFuzzyDist](rxGetFuzzyDist.md).
+For information on similarity distance measures, see [rxGetFuzzyDist](../../r-reference/revoscaler/rxgetfuzzydist.md).
  
  
  
@@ -200,7 +200,7 @@ A character vector containing the fuzzy keys or a data source containing the fuz
  
  ##See Also
  
-[rxGetFuzzyDist](rxGetFuzzyDist.md),
+[rxGetFuzzyDist](../../r-reference/revoscaler/rxgetfuzzydist.md),
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md)
    
  ##Examples

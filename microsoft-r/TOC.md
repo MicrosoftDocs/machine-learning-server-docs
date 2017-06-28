@@ -381,7 +381,7 @@
 #### [rxFormula](r-reference/revoscaler/rxformula.md) 
 #### [rxGetAvailableNodes](r-reference/revoscaler/rxgetavailablenodes.md) 
 #### [rxGetEnableThreadPool](r-reference/revoscaler/rxgetenablethreadpool.md) 
-#### [rxGetFuzzyDist](scaler/packagehelp/rxGetFuzzyDist.md) 
+#### [rxGetFuzzyDist](r-reference/revoscaler/rxgetfuzzydist.md) 
 #### [rxGetFuzzyKeys](scaler/packagehelp/rxGetFuzzyKeys.md) 
 #### [rxGetInfoXdf](scaler/packagehelp/rxGetInfoXdf.md) 
 #### [rxGetJobInfo](scaler/packagehelp/rxGetJobInfo.md) 
