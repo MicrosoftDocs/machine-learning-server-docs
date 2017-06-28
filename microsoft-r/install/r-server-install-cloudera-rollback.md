@@ -38,8 +38,8 @@ If you deployed and activated Microsoft R Server using a parcel and Custom Servi
 
 The parcel still exists, but R Server is not operational in the cluster.
 
-The above steps only work for 9.1.0 and later. If you have an older version of R Server, see [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md) for information about how it was installed.
+The above steps only work for 9.1.0 and later. If you have an older version of R Server, see [Install R Server 9.0.1 on CDH](r-server-install-cloudera-901.md) for information about how it was installed.
 
 ## See Also
 
-[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md)
+[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](../rserver-install-cloudera.md)
