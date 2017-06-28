@@ -73,7 +73,7 @@ SQL R services provides the following core client functions for managing librari
  [rxInstalledPackages](../../r-reference/revoscaler/rxinstalledpackages.md)() - to enumerate installed packages in a database on SQL server
 
 * 
- [rxInstallPackages](rxInstallPackages.md)() - to install packages, including dependency resolution, from a repository to onto a library in a database and further install the same packages on a secured per database, per user location on file system on SQL server
+ [rxInstallPackages](../../r-reference/revoscaler/rxinstallpackages.md)() - to install packages, including dependency resolution, from a repository to onto a library in a database and further install the same packages on a secured per database, per user location on file system on SQL server
 
 * 
  [rxRemovePackages](rxRemovePackages.md)() - to remove installed packages from a library in a database and further uninstall the packages from secured per database, per user location on SQL server
@@ -220,7 +220,7 @@ The SQL R services package management is still in active development and not ful
  
 [rxSqlLibPaths](rxSqlLibPaths.md),
 [rxInstalledPackages](../../r-reference/revoscaler/rxinstalledpackages.md),
-[rxInstallPackages](rxInstallPackages.md),   
+[rxInstallPackages](../../r-reference/revoscaler/rxinstallpackages.md),   
 [rxRemovePackages](rxRemovePackages.md),
 [rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 library
