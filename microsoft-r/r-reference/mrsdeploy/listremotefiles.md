@@ -55,11 +55,11 @@ A character vector containing the file names in the working directory of the rem
  
  ##See Also
  
-[getRemoteFile](../../r-reference/mrsdeploy/getremotefile.md)
+[getRemoteFile](getremotefile.md)
 
-[deleteRemoteFile](../../r-reference/mrsdeploy/deleteremotefile.md)
+[deleteRemoteFile](deleteremotefile.md)
 
-[putLocalFile](putLocalFile.md)
+[putLocalFile](../../mrsdeploy/packagehelp/putlocalfile.md)
    
  ##Examples
 

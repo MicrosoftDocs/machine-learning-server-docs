@@ -272,7 +272,7 @@
 ###[getValidatedServiceType](r-reference/mrsdeploy/getvalidatedservicetype.md) 
 ###[is.encoding](r-reference/mrsdeploy/is-encoding.md) 
 ###[is.encodings](r-reference/mrsdeploy/is-encodings.md) 
-###[listRemoteFiles](mrsdeploy/packagehelp/listRemoteFiles.md) 
+###[listRemoteFiles](r-reference/mrsdeploy/listremotefiles.md) 
 ###[listServices](mrsdeploy/packagehelp/listServices.md) 
 ###[listSnapshots](mrsdeploy/packagehelp/listSnapshots.md) 
 ###[loadSnapshot](mrsdeploy/packagehelp/loadSnapshot.md) 

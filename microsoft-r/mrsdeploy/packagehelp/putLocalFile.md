@@ -70,7 +70,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 
 [deleteRemoteFile](../../r-reference/mrsdeploy/deleteremotefile.md)
 
-[listRemoteFiles](listRemoteFiles.md)
+[listRemoteFiles](../../r-reference/mrsdeploy/listremotefiles.md)
    
  ##Examples
 
