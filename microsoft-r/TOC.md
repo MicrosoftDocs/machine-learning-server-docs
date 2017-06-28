@@ -467,7 +467,7 @@
 #### [rxSplitXdf](r-reference/revoscaler/rxsplitxdf.md) 
 #### [RxSpssData-class](r-reference/revoscaler/rxspssdata-class.md) 
 #### [RxSpssData](r-reference/revoscaler/rxspssdata.md) 
-#### [rxSqlLibPaths](scaler/packagehelp/rxSqlLibPaths.md) 
+#### [rxSqlLibPaths](r-reference/revoscaler/rxsqllibpaths.md) 
 #### [RxSqlServerData-class](scaler/packagehelp/RxSqlServerData-class.md) 
 #### [RxSqlServerData](scaler/packagehelp/RxSqlServerData.md) 
 #### [rxSqlServerDropTable](scaler/packagehelp/rxSqlServerDropTable.md) 

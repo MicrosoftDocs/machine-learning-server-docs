@@ -97,7 +97,7 @@ install.packages,
 [rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 [rxInstalledPackages](../../r-reference/revoscaler/rxinstalledpackages.md),
 [rxRemovePackages](../../r-reference/revoscaler/rxremovepackages.md),
-[rxSqlLibPaths](rxSqlLibPaths.md),   
+[rxSqlLibPaths](../../r-reference/revoscaler/rxsqllibpaths.md),   
 require
    
  ##Examples
