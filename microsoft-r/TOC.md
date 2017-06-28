@@ -379,7 +379,7 @@
 #### [RxForeachDoPar-class](r-reference/revoscaler/rxforeachdopar-class.md) 
 #### [RxForeachDoPar](r-reference/revoscaler/rxforeachdopar.md) 
 #### [rxFormula](r-reference/revoscaler/rxformula.md) 
-#### [rxGetAvailableNodes](scaler/packagehelp/rxGetAvailableNodes.md) 
+#### [rxGetAvailableNodes](r-reference/revoscaler/rxgetavailablenodes.md) 
 #### [rxGetEnableThreadPool](scaler/packagehelp/rxGetEnableThreadPool.md) 
 #### [rxGetFuzzyDist](scaler/packagehelp/rxGetFuzzyDist.md) 
 #### [rxGetFuzzyKeys](scaler/packagehelp/rxGetFuzzyKeys.md) 

@@ -172,7 +172,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetAvailableNodes](rxGetAvailableNodes.md),
+[rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md),
 [RxInTeradata](RxInTeradata.md),
 [rxMakeRNodeNames](rxMakeRNodeNames.md).
    

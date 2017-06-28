@@ -49,12 +49,12 @@ Note that this function will attempt to connect to the cluster when executed.
    
   
  ### `computeContext`
- A distributed compute context (preferred, see [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md))  or a `jobInfo` object 
+ A distributed compute context (preferred, see [RxComputeContext](rxcomputecontext.md))  or a `jobInfo` object 
   
   
   
  ### `makeRNodeNames`
- logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](rxMakeRNodeNames.md) for details on name mangling. 
+ logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) for details on name mangling. 
   
   
  
@@ -71,10 +71,10 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetNodeInfo](rxGetNodeInfo.md)
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md)
-[rxGetJobs](rxGetJobs.md)
-[rxMakeRNodeNames](rxMakeRNodeNames.md)
+[rxGetNodeInfo](../../scaler/packagehelp/rxgetnodeinfo.md)
+[RxComputeContext](rxcomputecontext.md)
+[rxGetJobs](../../scaler/packagehelp/rxgetjobs.md)
+[rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md)
    
  ##Examples
 
