@@ -333,7 +333,7 @@
 #### [Kyphosis](scaler/packagehelp/Kyphosis.md) 
 #### [mortDefaultSmall](scaler/packagehelp/mortDefaultSmall.md) 
 ### Functions
-#### [as.gbm](scaler/packagehelp/as.gbm.md) 
+#### [as.gbm](r-reference/revoscaler/as-gbm.md) 
 #### [as.glm](scaler/packagehelp/as.glm.md) 
 #### [as.kmeans](scaler/packagehelp/as.kmeans.md) 
 #### [as.lm](scaler/packagehelp/as.lm.md) 

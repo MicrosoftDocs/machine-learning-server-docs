@@ -269,7 +269,7 @@ at the R prompt):
 * [as.randomForest](as.randomForest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
 
 
-* [as.gbm](as.gbm.md): Coerce an `rxBTrees` object to a `gbm` object for use with the **pmml** package.
+* [as.gbm](../../r-reference/revoscaler/as-gbm.md): Coerce an `rxBTrees` object to a `gbm` object for use with the **pmml** package.
 
 
 

@@ -82,7 +82,7 @@ an object of class naiveBayes from **e1071**.
 [as.lm](as.lm.md),
 [as.kmeans](as.kmeans.md),
 [as.glm](as.glm.md),
-[as.gbm](as.gbm.md),
+[as.gbm](../../r-reference/revoscaler/as-gbm.md),
 [as.xtabs](as.xtabs.md).
    
  

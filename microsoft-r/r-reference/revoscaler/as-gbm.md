@@ -97,11 +97,11 @@ an object of class gbm.
  
  ##See Also
  
-[rxBTrees](rxBTrees.md),
-[rxDTree](rxDTree.md),
+[rxBTrees](../../scaler/packagehelp/rxbtrees.md),
+[rxDTree](../../scaler/packagehelp/rxdtree.md),
 rpart,
 gbm,
-[as.rpart](as.rpart.md).
+[as.rpart](../../scaler/packagehelp/as.rpart.md).
    
  
  ##Examples
