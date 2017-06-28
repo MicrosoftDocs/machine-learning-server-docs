@@ -210,7 +210,7 @@ The following plot is generated, showing the lowest average arrival delay on Thu
 
 We can run a more complex model examining the dependency of arrival delay on both day of week and the departure time. We’ll estimate the model using the *F* expression to have the *CRSDepTime* variable interpreted as a categorical or factor variable.
 
-*F()* is not an R function, although it looks like one when used inside RevoScaleR formulas. An *F* expression tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. You can look up the [**rxFormula**](scaler/packagehelp/rxFormula.md) for more information.
+*F()* is not an R function, although it looks like one when used inside RevoScaleR formulas. An *F* expression tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. You can look up the [**rxFormula**](r-reference/revoscaler/rxformula.md) for more information.
 
 By interacting *DayOfWeek* with *F(CRSDepTime)* we are creating a dummy variable for every combination of departure hour and day of the week.
 

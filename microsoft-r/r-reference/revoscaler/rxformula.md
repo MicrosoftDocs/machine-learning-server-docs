@@ -43,7 +43,7 @@ are:
 
 
 * 
- With the exception of [rxSummary](rxSummary.md), dot (`.`)
+ With the exception of [rxSummary](../../scaler/packagehelp/rxsummary.md), dot (`.`)
 explanatory variable expansion is not supported.
 
 * 
@@ -62,7 +62,7 @@ A formula typically consists of a *response*, which in most
 **RevoScaleR** functions can be a single variable or multiple variables 
 combined using cbind, the `"~"` operator, and one or 
 more *predictors*,typically separated by the `"+"` operator.
-The [rxSummary](rxSummary.md) function typically requires a formula with no 
+The [rxSummary](../../scaler/packagehelp/rxsummary.md) function typically requires a formula with no 
 response.
 
 Interactions are indicated using the `":"` operator. The interaction of
@@ -96,12 +96,12 @@ categorical variables:
  
  ##See Also
  
-[rxTransform](rxTransform.md),
-[rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md),
-[rxCube](../../r-reference/revoscaler/rxcube.md),
-[rxLinMod](rxLinMod.md),
-[rxLogit](rxLogit.md),
-[rxSummary](rxSummary.md).
+[rxTransform](../../scaler/packagehelp/rxtransform.md),
+[rxCrossTabs](rxcrosstabs.md),
+[rxCube](rxcube.md),
+[rxLinMod](../../scaler/packagehelp/rxlinmod.md),
+[rxLogit](../../scaler/packagehelp/rxlogit.md),
+[rxSummary](../../scaler/packagehelp/rxsummary.md).
    
  ##Examples
 

@@ -57,7 +57,7 @@ Fit linear models on small or large data.
    
     
  ### `formula`
- formula as described in [rxFormula](rxFormula.md). 
+ formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). 
   
   
     

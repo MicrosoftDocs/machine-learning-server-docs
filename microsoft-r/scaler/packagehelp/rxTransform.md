@@ -125,7 +125,7 @@ the interaction with `transformObjects` objects packed into transformation funct
  
  ##See Also
  
-[rxFormula](rxFormula.md),
+[rxFormula](../../r-reference/revoscaler/rxformula.md),
 [rxTransform](rxTransform.md),
 [rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md),
 [rxCube](../../r-reference/revoscaler/rxcube.md),

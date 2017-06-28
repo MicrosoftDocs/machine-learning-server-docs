@@ -59,7 +59,7 @@ Produce univariate summaries of objects in **RevoScaleR**.
    
     
  ### `formula`
- formula, as described in [rxFormula](rxFormula.md). The formula typically does not contain a response variable, i.e. it should be of the form `~ terms`. If `~.` is used as the formula, summary statistics will be computed for all  non-character variables. If a numeric variable is interacted with a factor variable, summary statistics will be computed for each category of the factor. 
+ formula, as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). The formula typically does not contain a response variable, i.e. it should be of the form `~ terms`. If `~.` is used as the formula, summary statistics will be computed for all  non-character variables. If a numeric variable is interacted with a factor variable, summary statistics will be computed for each category of the factor. 
   
   
     

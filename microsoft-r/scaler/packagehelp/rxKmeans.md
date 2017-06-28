@@ -62,7 +62,7 @@ print  (x, header = TRUE, ...)
    
     
  ### `formula`
- formula as described in [rxFormula](rxFormula.md). 
+ formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). 
   
   
     
@@ -270,7 +270,7 @@ parameters sent to Microsoft R Services Compute Engine.
 
 
 ###`formula`
-formula as described in [rxFormula](rxFormula.md).
+formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md).
 
 
 ###`call`

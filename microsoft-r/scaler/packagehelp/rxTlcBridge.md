@@ -60,7 +60,7 @@ Bridge code for additional packages
    
     
  ### `formula`
- formula as described in [rxFormula](rxFormula.md). 
+ formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). 
   
   
     

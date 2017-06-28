@@ -60,7 +60,7 @@ Use `rxLogit` to fit logistic regression models for small or large data.
    
     
  ### `formula`
- formula as described in [rxFormula](rxFormula.md). Dependent variable  must be binary. It can be a logical variable, a factor with only two categories, or a numeric variable with values in   the range (0,1). In the latter case it will be converted to a logical. 
+ formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). Dependent variable  must be binary. It can be a logical variable, a factor with only two categories, or a numeric variable with values in   the range (0,1). In the latter case it will be converted to a logical. 
   
   
     

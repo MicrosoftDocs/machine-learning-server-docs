@@ -60,7 +60,7 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
    
     
  ### `formula`
- formula as described in [rxFormula](rxFormula.md). 
+ formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). 
   
   
     

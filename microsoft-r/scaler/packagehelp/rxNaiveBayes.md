@@ -48,7 +48,7 @@ for small or large data using parallel external memory algorithm.
    
     
  ### `formula`
-  formula as described in [rxFormula](rxFormula.md).     
+  formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md).     
   
     
  ### `data`
