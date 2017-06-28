@@ -80,7 +80,7 @@ will provide an adequate amount of compression at the fastest speed.
  
  ##Value
  
-A vector of [RxXdfData](RxXdfData.md) data sources
+A vector of [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) data sources
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -89,9 +89,9 @@ A vector of [RxXdfData](RxXdfData.md) data sources
  
  ##See Also
  
-[rxImport](rxImport.md),
-[rxDataStep](rxDataStep.md),
-[RxXdfData](RxXdfData.md),
+[rxImport](../../scaler/packagehelp/rximport.md),
+[rxDataStep](../../scaler/packagehelp/rxdatastep.md),
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
    
  ##Examples
 
