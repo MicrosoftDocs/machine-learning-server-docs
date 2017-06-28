@@ -133,7 +133,7 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that aresupported. These transformations are performed after any specified R transformations. The default avlue is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](../../r-reference/microsoftml/featurizetext.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that aresupported. These transformations are performed after any specified R transformations. The default avlue is `NULL`. 
   
   
   
@@ -312,7 +312,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
 [rxFastLinear](rxFastLinear.md), [rxNeuralNet](rxNeuralNet.md),
-[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](featurizeText.md),
+[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),
 [categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](../../r-reference/microsoftml/categoricalhash.md),
 [rxPredict.mlModel](rxPredict.md).
    

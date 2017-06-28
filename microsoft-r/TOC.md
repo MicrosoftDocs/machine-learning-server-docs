@@ -233,7 +233,7 @@
 ### [fastLinear](r-reference/microsoftml/fastlinear.md) 
 ### [fastTrees](r-reference/microsoftml/fasttrees.md)  
 ### [featurizeImage](r-reference/microsoftml/featurizeimage.md) 
-### [featurizeText](microsoftml/packagehelp/featurizeText.md) 
+### [featurizeText](r-reference/microsoftml/featurizetext.md) 
 ### [getSentiment](microsoftml/packagehelp/getSentiment.md)
 ### [loadImage](microsoftml/packagehelp/loadImage.md) 
 ### [logisticRegression](microsoftml/packagehelp/logisticRegression.md) 

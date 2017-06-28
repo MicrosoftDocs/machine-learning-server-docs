@@ -111,7 +111,7 @@ Trains an ensemble of models.
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. Transforms that require an additional pass over the data  (such as [featurizeText](featurizeText.md), [categorical](../../r-reference/microsoftml/categorical.md)) are not allowed. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. Transforms that require an additional pass over the data  (such as [featurizeText](../../r-reference/microsoftml/featurizetext.md), [categorical](../../r-reference/microsoftml/categorical.md)) are not allowed. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
