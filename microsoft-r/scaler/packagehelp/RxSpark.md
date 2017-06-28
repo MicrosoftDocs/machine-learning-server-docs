@@ -344,7 +344,7 @@ object of class RxSpark.
 [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),   
 [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md), 
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[rxSetComputeContext](rxSetComputeContext.md),
+[rxSetComputeContext](../../r-reference/revoscaler/rxsetcomputecontext.md),
 [RxSpark-class](RxSpark-class.md).
    
  
