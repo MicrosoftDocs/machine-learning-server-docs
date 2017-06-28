@@ -280,7 +280,7 @@
 ###[print.snapshotDetails](r-reference/mrsdeploy/print-snapshotdetails.md) 
 ###[publishService](r-reference/mrsdeploy/publishservice.md) 
 ###[putLocalFile](r-reference/mrsdeploy/putlocalfile.md) 
-###[putLocalObject](mrsdeploy/packagehelp/putLocalObject.md) 
+###[putLocalObject](r-reference/mrsdeploy/putlocalobject.md) 
 ###[putLocalWorkspace](mrsdeploy/packagehelp/putLocalWorkspace.md) 
 ###[remoteCommandLine](mrsdeploy/packagehelp/remoteCommandLine.md) 
 ###[remoteExecute](mrsdeploy/packagehelp/remoteExecute.md) 
