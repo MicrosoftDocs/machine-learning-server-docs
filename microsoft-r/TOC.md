@@ -12,7 +12,7 @@
 ## [Tutorials](r/tutorial-introduction.md)
 ### [Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md)
 ### [Import and transform data](r/tutorial-revoscaler-data-import-transform.md)
-### [Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md)
+### [Visualize and analyze data](r/tutorial-revoscaler-data-model-analysis.md)
 ## Work with larger datasets
 ### [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)

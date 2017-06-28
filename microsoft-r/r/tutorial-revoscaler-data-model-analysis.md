@@ -28,12 +28,12 @@ ms.custom: ""
 
 **Applies to: Microsoft R Client, Microsoft R Server** 
 
-This tutorial builds on what you learned in the previous [data import and exploration tutorial](r/tutorial-revoscaler-data-import-transform.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
+This tutorial builds on what you learned in the previous [data import and exploration tutorial](tutorial-revoscaler-data-import-transform.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
 This tutorial focuses on analysis and predictions.
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](r/tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](r/concept-what-is-compute-context.md) to R Server.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to R Server.
 
 ## What you will learn
 
@@ -49,7 +49,7 @@ To complete this tutorial as written, use an R console application.
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
-You must also have data to work with. The previous tutorial, [Data import and exploration](r/tutorial-revoscaler-data-import-transform.md), explains functions and usage scenarios. 
+You must also have data to work with. The previous tutorial, [Data import and exploration](tutorial-revoscaler-data-import-transform.md), explains functions and usage scenarios. 
 
 Run the following script to reload data from the previous tutorial:
 
@@ -204,13 +204,13 @@ Now plot the average arrival delay for each day of the week:
 
 The following plot is generated, showing the lowest average arrival delay on Thursdays:
 
-![DayOfWeek Plot](media/scaler-getting-started-data-visualization-analysis/dayofweek_plot.png)
+![DayOfWeek Plot](./media/tutorial-revoscaler-data-model-analysis/dayofweek_plot.png)
 
 ### Linear model with multiple independent variables
 
 We can run a more complex model examining the dependency of arrival delay on both day of week and the departure time. We’ll estimate the model using the *F* expression to have the *CRSDepTime* variable interpreted as a categorical or factor variable.
 
-*F()* is not an R function, although it looks like one when used inside RevoScaleR formulas. An *F* expression tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. You can look up the [**rxFormula**](r-reference/revoscaler/rxformula.md) for more information.
+*F()* is not an R function, although it looks like one when used inside RevoScaleR formulas. An *F* expression tells RevoScaleR to create a factor by creating one level for each integer in the range *(floor(min(x)), floor(max(x)))* and binning all the observations into the resulting set of levels. You can look up the [**rxFormula**](../r-reference/revoscaler/rxformula.md) for more information.
 
 By interacting *DayOfWeek* with *F(CRSDepTime)* we are creating a dummy variable for every combination of departure hour and day of the week.
 
@@ -251,7 +251,7 @@ Now plot the results:
 
 You should see the following plot:
 
-![CRSDepTime Plot](media/scaler-getting-started-data-visualization-analysis/crsdeptime_plot.png)
+![CRSDepTime Plot](./media/tutorial-revoscaler-data-model-analysis/crsdeptime_plot.png)
 
 ## Subset the data and compute a crosstab
 
@@ -453,10 +453,10 @@ You should see the following information:
 
 This tutorial demonstrated how to use several important functions, but on a small data set. Next up are additional tutorials that explore RevoScaleR with bigger data sets, and customization approaches if built-in functions are not quite enough.
 
- - [Analyze large data with RevoScaleR and airline flight delay data](scaler-getting-started-3-analyze-large-data.md)	
- - [Example: Analyzing loan data with RevoScaleR](scaler-getting-started-1-example-loan-data.md)	
- - [Example: Analyzing census data with RevoScaleR](scaler-getting-started-2-example-census-data.md) 
- - [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md)
+ - [Analyze large data with RevoScaleR and airline flight delay data](../scaler-getting-started-3-analyze-large-data.md)	
+ - [Example: Analyzing loan data with RevoScaleR](../scaler-getting-started-1-example-loan-data.md)	
+ - [Example: Analyzing census data with RevoScaleR](../scaler-getting-started-2-example-census-data.md) 
+ - [Write custom chunking algorithms](how-to-developer-write-chunking-algorithms.md)
 
 ### Try demo scripts
 
@@ -468,9 +468,9 @@ This tutorial demonstrated how to use several important functions, but on a smal
 
 ## See Also
 
- [ScaleR Getting Started with Hadoop](r/how-to-revoscaler-hadoop.md)	
- [ScaleR Getting Started with Teradata](r/how-to-revoscaler-sql-server.md)	
- [What is RevoScaleR](r/concept-what-is-revoscaler.md)	
- [Introduction to Microsoft R](microsoft-r-getting-started.md)	
- [Diving into data analysis in Microsoft R](r/how-to-introduction.md)	
- [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)
+ [ScaleR Getting Started with Hadoop](how-to-revoscaler-hadoop.md)	
+ [ScaleR Getting Started with Teradata](how-to-revoscaler-sql-server.md)	
+ [What is RevoScaleR](concept-what-is-revoscaler.md)	
+ [Introduction to Microsoft R](../microsoft-r-getting-started.md)	
+ [Diving into data analysis in Microsoft R](how-to-introduction.md)	
+ [RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

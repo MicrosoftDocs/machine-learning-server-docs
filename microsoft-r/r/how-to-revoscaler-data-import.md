@@ -509,5 +509,5 @@ Continue on to the following data import articles to learn more about XDF, data 
 ## See also
 
  [Tutorial: data import](tutorial-revoscaler-data-import-transform.md)	
- [Tutorial: data manipulation](../scaler-getting-started-data-visualization-analysis.md)
+ [Tutorial: data manipulation](tutorial-revoscaler-data-model-analysis.md)
 
