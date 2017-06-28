@@ -300,7 +300,7 @@
 ## [olapR](olapr/Olapr.md)
 ###[Execute2D](r-reference/olapr/execute2d.md) 
 ###[ExecuteMD](r-reference/olapr/executemd.md) 
-###[Explore](olapR/packagehelp/Explore.md) 
+###[Explore](r-reference/olapr/explore.md) 
 ###[OlapConnection](olapR/packagehelp/OlapConnection.md) 
 ###[Query](olapR/packagehelp/Query.md)
 

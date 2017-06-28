@@ -127,7 +127,7 @@ ms.custom: ""
  
  ##See Also
  
-[execute2D](../../r-reference/olapr/execute2d.md), [executeMD](../../r-reference/olapr/executemd.md), [OlapConnection](OlapConnection.md)`, `[explore](Explore.md)
+[execute2D](../../r-reference/olapr/execute2d.md), [executeMD](../../r-reference/olapr/executemd.md), [OlapConnection](OlapConnection.md)`, `[explore](../../r-reference/olapr/explore.md)
    
  
  ##Examples
