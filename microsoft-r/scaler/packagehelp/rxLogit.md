@@ -140,12 +140,12 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
     
  ### `covCoef`
- logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](rxCovRegression.md) function to obtain these data. 
+ logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](../../r-reference/revoscaler/rxcovregression.md) function to obtain these data. 
   
   
     
  ### `covData`
- logical flag. If `TRUE` and if `cube` is `FALSE` and if  constant term is included in the formula, then the variance-covariance matrix of the data is returned. Use the [rxCovData](rxCovRegression.md) function to obtain these data. 
+ logical flag. If `TRUE` and if `cube` is `FALSE` and if  constant term is included in the formula, then the variance-covariance matrix of the data is returned. Use the [rxCovData](../../r-reference/revoscaler/rxcovregression.md) function to obtain these data. 
   
   
     

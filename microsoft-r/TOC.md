@@ -352,7 +352,7 @@
 #### [RxComputeContext-class](r-reference/revoscaler/rxcomputecontext-class.md) 
 #### [RxComputeContext](r-reference/revoscaler/rxcomputecontext.md) 
 #### [rxCovCor](r-reference/revoscaler/rxcovcor.md) 
-#### [rxCovRegression](scaler/packagehelp/rxCovRegression.md) 
+#### [rxCovRegression](r-reference/revoscaler/rxcovregression.md) 
 #### [rxCreateColInfo](scaler/packagehelp/rxCreateColInfo.md) 
 #### [rxCrossTabs](scaler/packagehelp/rxCrossTabs.md) 
 #### [rxCube](scaler/packagehelp/rxCube.md) 

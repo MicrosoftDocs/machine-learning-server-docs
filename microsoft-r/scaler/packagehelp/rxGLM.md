@@ -145,7 +145,7 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
   
     
  ### `covCoef`
- logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](rxCovRegression.md) function to obtain these data. 
+ logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](../../r-reference/revoscaler/rxcovregression.md) function to obtain these data. 
   
   
     
