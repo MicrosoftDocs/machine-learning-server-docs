@@ -53,7 +53,7 @@
 ### [Logistic Regression Models](scaler-user-guide-logistic-regression.md)
 ### [Generalized Linear Models](scaler-user-guide-generalized-linear-model.md)
 ### [Decision Tree Models](scaler-user-guide-decision-tree.md)
-### [Decision Forest Models](scaler-user-guide-decision-forest.md)
+### [Decision Forest Models](r/how-to-revoscaler-decision-forest.md)
 ## [Stochastic Gradient Boosting](r/how-to-revoscaler-boosting.md)
 ## [Naive Bayes Classifier](scaler-user-guide-naive-bayes.md)
 ## [Correlation and Variance/Covariance Matrices](r/how-to-revoscaler-covcor.md)
