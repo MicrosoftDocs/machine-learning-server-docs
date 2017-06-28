@@ -429,7 +429,7 @@
 #### [rxOAuthParameters](r-reference/revoscaler/rxoauthparameters.md) 
 #### [RxOdbcData-class](r-reference/revoscaler/rxodbcdata-class.md) 
 #### [RxOdbcData](r-reference/revoscaler/rxodbcdata.md) 
-#### [rxOpen-methods](scaler/packagehelp/rxOpen-methods.md) 
+#### [rxOpen-methods](r-reference/revoscaler/rxopen-methods.md) 
 #### [rxOptions](scaler/packagehelp/rxOptions.md) 
 #### [rxPackage](scaler/packagehelp/rxPackage.md) 
 #### [rxPairwiseCrosstab](scaler/packagehelp/rxPairwiseCrosstab.md) 

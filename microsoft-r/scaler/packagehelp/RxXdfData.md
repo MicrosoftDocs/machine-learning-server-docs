@@ -161,8 +161,8 @@ object of class RxXdfData.
  
 [RxXdfData-class](RxXdfData-class.md),
 [rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
-[rxOpen](rxOpen-methods.md),
-[rxReadNext](rxOpen-methods.md).
+[rxOpen](../../r-reference/revoscaler/rxopen-methods.md),
+[rxReadNext](../../r-reference/revoscaler/rxopen-methods.md).
    
  ##Examples
 
