@@ -404,7 +404,7 @@
 #### [rxImport](r-reference/revoscaler/rximport.md) 
 #### [RxInSqlServer-class](r-reference/revoscaler/rxinsqlserver-class.md) 
 #### [RxInSqlServer](r-reference/revoscaler/rxinsqlserver.md) 
-#### [rxInstalledPackages](scaler/packagehelp/rxInstalledPackages.md) 
+#### [rxInstalledPackages](r-reference/revoscaler/rxinstalledpackages.md) 
 #### [rxInstallPackages](scaler/packagehelp/rxInstallPackages.md) 
 #### [RxInTeradata-class](scaler/packagehelp/RxInTeradata-class.md) 
 #### [RxInTeradata](scaler/packagehelp/RxInTeradata.md) 

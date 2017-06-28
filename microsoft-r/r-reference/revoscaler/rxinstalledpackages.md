@@ -50,17 +50,17 @@ Find (or retrieve) details of installed packages for a compute context.
   
     
  ### `computeContext`
- an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](RxInTeradata.md), [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md), [RxLocalSeq](RxLocalSeq.md). 
+ an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](../../scaler/packagehelp/rxinteradata.md), [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md). 
   
   
     
  ### `allNodes`
- logical. If `TRUE` and an [RxInTeradata](RxInTeradata.md) compute context is used, a list of results from each node is returned. 
+ logical. If `TRUE` and an [RxInTeradata](../../scaler/packagehelp/rxinteradata.md) compute context is used, a list of results from each node is returned. 
    
    
     
  ### `lib.loc`
- a character vector describing the location of R library  trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace,  then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) only `NULL` is supported. 
+ a character vector describing the location of R library  trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace,  then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](rxinsqlserver.md) only `NULL` is supported. 
   
    
     
@@ -106,7 +106,7 @@ and `"Built"` (the R version the package was built under).
 Additional columns can be specified using the fields argument. 
 If using a distributed compute context with the `allNodes` set to `TRUE`,
 a list of matrices from each node will be returned.
-In [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context multiple rows for a package will be returned if different versions of the
+In [RxInSqlServer](rxinsqlserver.md) compute context multiple rows for a package will be returned if different versions of the
 same package is installed in different `"system"`, `"shared"` and `"private"` scopes.
  
  
@@ -116,13 +116,13 @@ same package is installed in different `"system"`, `"shared"` and `"private"` sc
  
  ##See Also
  
-[rxPackage](rxPackage.md),
+[rxPackage](../../scaler/packagehelp/rxpackage.md),
 installed.packages,
-[rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
-[rxInstallPackages](rxInstallPackages.md),   
-[rxRemovePackages](rxRemovePackages.md),
-[rxSyncPackages](rxSyncPackages.md),
-[rxSqlLibPaths](rxSqlLibPaths.md),   
+[rxFindPackage](rxfindpackage.md),
+[rxInstallPackages](../../scaler/packagehelp/rxinstallpackages.md),   
+[rxRemovePackages](../../scaler/packagehelp/rxremovepackages.md),
+[rxSyncPackages](../../scaler/packagehelp/rxsyncpackages.md),
+[rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md),   
 require
    
  ##Examples
