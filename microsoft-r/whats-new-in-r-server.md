@@ -145,7 +145,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 
 **Related Documents**
 
-+ [Release notes for R Server](notes/r-server-notes.md) contains information about known issues, bug fixes, and behavior changes in existing features.
++ [Release notes for R Server](resources-deprecated-features.md) contains information about known issues, bug fixes, and behavior changes in existing features.
 + [What's new in R Client](r-client/whats-new-in-r-client.md) contains information about new features for R Client.
 + [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) contains information about new features for SQL Server R Services (version 9.0).
 

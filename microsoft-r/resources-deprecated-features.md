@@ -29,23 +29,23 @@ This article notifies you about pending status changes to features and function 
 
 ## Microsoft R Server 9.1.0
 
-Other release-specific pages include [What's New in 9.1](../whats-new-in-r-server.md) and [Known issues](../rserver-known-issues.md).
+Other release-specific pages include [What's New in 9.1](whats-new-in-r-server.md) and [Known issues](rserver-known-issues.md).
 
 ### RevoScaleR Package
 
 |Function| Status | Replacement |
 |-----------|----|--------|
-|`rxGetNodes` | Deprecated | [`rxGetAvailableNodes`](../r-reference/revoscaler/rxgetavailablenodes.md)| 
-|`RxHpcServer` | Deprecated | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
-|`rxImportToXdf` | Deprecated | [`rxImport`](../r-reference/revoscaler/rximport.md) |
-|`rxDataStepXdf` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
-|`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
-|`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
-|`rxSortXdf` | Deprecated | [`rxSort`](../r-reference/revoscaler/rxsortxdf.md) |
-|`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](../r-reference/revoscaler/rxgetvarinfoxdf.md))|
-|`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](../r-reference/revoscaler/rxgetinfoxdf.md))|
+|`rxGetNodes` | Deprecated | [`rxGetAvailableNodes`](r-reference/revoscaler/rxgetavailablenodes.md)| 
+|`RxHpcServer` | Deprecated | [`RxSpark`](r-reference/revoscaler/rxspark.md) or [`RxHadoopMR`](r-reference/revoscaler/rxhadoopmr.md)| 
+|`rxImportToXdf` | Deprecated | [`rxImport`](r-reference/revoscaler/rximport.md) |
+|`rxDataStepXdf` | Deprecated | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) |
+|`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) |
+|`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) |
+|`rxSortXdf` | Deprecated | [`rxSort`](r-reference/revoscaler/rxsortxdf.md) |
+|`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](r-reference/revoscaler/rxgetvarinfoxdf.md))|
+|`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](r-reference/revoscaler/rxgetinfoxdf.md))|
 
-For more information, see [discontinued RevoScaleR functions](../r-reference/revoscaler/revoscaler-defunct.md) and [deprecated RevoScaleR functions](../r-reference/revoscaler/revoscaler-deprecated.md).
+For more information, see [discontinued RevoScaleR functions](r-reference/revoscaler/revoscaler-defunct.md) and [deprecated RevoScaleR functions](r-reference/revoscaler/revoscaler-deprecated.md).
 
 ### RevoMods Package
 

@@ -54,7 +54,7 @@ The following packages exist for backward compatibility but are no longer under 
 * RevoRsrConnector
 * revolpe
 
-For a list of deprecated or discontinued functions within an existing package, see [Release notes for R Server](../notes/r-server-notes.md).
+For a list of deprecated or discontinued functions within an existing package, see [Release notes for R Server](../resources-deprecated-features.md).
 
 ## See also
 
