@@ -516,6 +516,6 @@
 ## [Deprecated and discontinued features](resources-deprecated-features.md)
 ## [Servicing support policy](rserver-servicing-support.md)
 ## [Opting out of usage data collection](rserver-optout-telemetry.md)
-## [Glossary](microsoft-r-glossary.md)
+## [Glossary](resources-glossary.md)
 ## [Additional resources](microsoft-r-more-resources.md)
 
