@@ -53,7 +53,7 @@ For information on other distributed computing compute contexts, see:
 ## Installation
 
 Installation instructions are provided in these links:
-* [Install Microsoft R Server 8.0.5 on Teradata Servers](rserver-install-teradata-805.md)
+* [Install Microsoft R Server 8.0.5 on Teradata Servers](install/r-server-install-teradata-805.md)
 * [Install Microsoft R Server 8.0 on Teradata Servers](rserver-install-teradata-server.md)
 * [Install Microsoft R Server 8.0 on Teradata clients](rserver-install-teradata-client.md)
 
