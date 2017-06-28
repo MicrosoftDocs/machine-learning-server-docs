@@ -78,12 +78,12 @@ an object of class naiveBayes from **e1071**.
  
  ##See Also
  
-[rxNaiveBayes](rxNaiveBayes.md),
-[as.lm](../../r-reference/revoscaler/as-lm.md),
-[as.kmeans](../../r-reference/revoscaler/as-kmeans.md),
-[as.glm](../../r-reference/revoscaler/as-glm.md),
-[as.gbm](../../r-reference/revoscaler/as-gbm.md),
-[as.xtabs](as.xtabs.md).
+[rxNaiveBayes](../../scaler/packagehelp/rxnaivebayes.md),
+[as.lm](as-lm.md),
+[as.kmeans](as-kmeans.md),
+[as.glm](as-glm.md),
+[as.gbm](as-gbm.md),
+[as.xtabs](../../scaler/packagehelp/as.xtabs.md).
    
  
  ##Examples
