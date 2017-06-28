@@ -230,7 +230,7 @@
 ### [concat](r-reference/microsoftml/concat.md)
 ### [extractPixels](r-reference/microsoftml/extractpixels.md) 
 ### [fastForest](r-reference/microsoftml/fastforest.md) 
-### [fastLinear](microsoftml/packagehelp/fastLinear.md) 
+### [fastLinear](r-reference/microsoftml/fastlinear.md) 
 ### [fastTrees](microsoftml/packagehelp/fastTrees.md)  
 ### [featurizeImage](microsoftml/packagehelp/featurizeImage.md) 
 ### [featurizeText](microsoftml/packagehelp/featurizeText.md) 
