@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Install Revolution R Enterprise 2016 (version 8.0) for Windows
 
->  Support for this version of R Server is defined in the [Microsoft Modern Lifecycle Policy](https://support.microsoft.com/help/30881/modern-lifecycle-policy). For more information about how this applies to Microsoft R Server, see [Support for R Server versions](https://msdn.microsoft.com/microsoft-r/rserver-servicing-support). For installation instructions for newer versions, see [Install Microsoft R Server for Windows](rserver-install-windows.md).
+>  Support for this version of R Server is defined in the [Microsoft Modern Lifecycle Policy](https://support.microsoft.com/help/30881/modern-lifecycle-policy). For more information about how this applies to Microsoft R Server, see [Support for R Server versions](https://msdn.microsoft.com/microsoft-r/rserver-servicing-support). For installation instructions for newer versions, see [Install Microsoft R Server for Windows](../rserver-install-windows.md).
 
 Revolution R Enterprise 2016 (version 8.0) for Windows includes RevoScaleR, RevoTreeView, RevoPemaR, DeployR, and the R Productivity Environment.
 
@@ -34,7 +34,7 @@ We recommend that you get the [**modified GPL/LGPL source code**](http://go.micr
 
 Approximately 600MB free disk space is required for a full install of Revolution R Enterprise, after installation of all prerequisites. We recommend at least 4GB of RAM to use Revolution R Enterprise, and at least 4GB to use DeployR.
 
-DeployR is an optional component and is supported on Windows Server 2008 R2 (Service Pack 1) and Windows Server 2012 only. For the full list of system requirements for DeployR, check the [DeployR 8.0.0 Installation Guide](deployr-installing-configuring.md).
+DeployR is an optional component and is supported on Windows Server 2008 R2 (Service Pack 1) and Windows Server 2012 only. For the full list of system requirements for DeployR, check the [DeployR 8.0.0 Installation Guide](../deployr-installing-configuring.md).
 
 ## Installation Instructions
 
