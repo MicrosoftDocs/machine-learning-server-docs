@@ -40,7 +40,7 @@
 #### [RevoScaleR](scaler-user-guide-introduction.md)
 #### [Compute context](r/concept-what-is-compute-context.md)
 #### [Data source objects](scaler-user-guide-data-source.md)
-#### [Data transformations](scaler-user-guide-transform-functions.md)
+#### [Data transformations](r/concept-what-is-data-transformations.md)
 #### [XDF files](scaler-data-xdf.md)
 
 ## Summarize data

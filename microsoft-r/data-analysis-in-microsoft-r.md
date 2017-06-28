@@ -46,7 +46,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 * [Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)
 * [Clustering](scaler-user-guide-cluster.md)
 * [Converting RevoScaleR Model Objects for Use in PMML](scaler-user-guide-pmml.md)
-* [Transform Functions](scaler-user-guide-transform-functions.md)
+* [Transform Functions](r/concept-what-is-data-transformations.md)
 * [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 
 ## See Also

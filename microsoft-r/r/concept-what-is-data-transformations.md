@@ -66,7 +66,7 @@ Externally defined functions provide data manipulation instructions in an outer 
 	# Return variable metadata; it is identical to that of option 1
 	> rxGetVarInfo(NewDS)
 
-For more examples of both approaches, see [How to transform and subset data](scaler-user-guide-transform-functions.md).
+For more examples of both approaches, see [How to transform and subset data](concept-what-is-data-transformations.md).
 
 ## Arguments used in transformations
 
@@ -138,15 +138,15 @@ If you create a factor within a transformation function, you may get unexpected 
 
 Continue on to the following data-related articles to learn more about XDF, data source objects, and other data formats:
 
-+ [How to transform and subset data](scaler-user-guide-data-transform.md)	
-+ [XDF files](scaler-data-xdf.md)	
-+ [Data Sources](scaler-user-guide-data-source.md)	
-+ [Import text data](scaler-user-guide-data-import.md)
-+ [Import ODBC data](scaler-data-odbc.md)
-+ [Import and consume data on HDFS](scaler-data-hdfs.md)
++ [How to transform and subset data](../scaler-user-guide-data-transform.md)	
++ [XDF files](../scaler-data-xdf.md)	
++ [Data Sources](../scaler-user-guide-data-source.md)	
++ [Import text data](../scaler-user-guide-data-import.md)
++ [Import ODBC data](../scaler-data-odbc.md)
++ [Import and consume data on HDFS](../scaler-data-hdfs.md)
 
 ## See Also
    
- [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)   
- [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [Tutorial: data visualization and analysis](scaler-getting-started-data-visualization-analysis.md) 
+ [RevoScaleR Functions](../revoscaler.md)   
+ [Tutorial: data import and exploration](../scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data visualization and analysis](../scaler-getting-started-data-visualization-analysis.md) 

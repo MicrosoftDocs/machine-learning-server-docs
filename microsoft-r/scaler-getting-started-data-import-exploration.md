@@ -381,7 +381,7 @@ You can now compute summary statistics on the reduced dataset
 
 ## Create a new dataset with variable transformations
 
-In this task, use the **rxDataStep** function to create a new dataset containing the variables in airXdfData plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](scaler-user-guide-transform-functions.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
+In this task, use the **rxDataStep** function to create a new dataset containing the variables in airXdfData plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](r/concept-what-is-data-transformations.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 
 In the example below, three new variables are created. 
 
