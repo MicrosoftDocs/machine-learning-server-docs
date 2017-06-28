@@ -57,12 +57,12 @@ of a "compute context" such as a cluster.
   
   
  ### ` ...`
- arguments passed to the function `FUN` each time it is executed.  Separate argument values can be sent for each computation by wrapping a vector or list of argument values in [rxElemArg](rxElemArg.md). 
+ arguments passed to the function `FUN` each time it is executed.  Separate argument values can be sent for each computation by wrapping a vector or list of argument values in [rxElemArg](../../r-reference/revoscaler/rxelemarg.md). 
   
   
   
  ### `elemArgs`
- a vector or list specifying arguments to `FUN`. This allows a different set of arguments to be passed to `FUN` each time it is executed.  The length of the vector or list must match the number of times the function will  be executed. Each of these elements will be passed in turn  to `FUN`. Using a list of lists allows multiple named or unnamed parameters to be passed. If `elemArgs` has length 1, that argument is passed to all compute  elements (and thus is an alternative to  ...). The elements of `elemArgs` may be named; if they are node names those elements will be passed to those nodes. Alternatively, they can be "rxElem1", "rxElem2" and so on. In this case, the list of returned values will have those corresponding names. See the Details section for more information. This is an alternative to using [rxElemArg](rxElemArg.md) one or more times.  
+ a vector or list specifying arguments to `FUN`. This allows a different set of arguments to be passed to `FUN` each time it is executed.  The length of the vector or list must match the number of times the function will  be executed. Each of these elements will be passed in turn  to `FUN`. Using a list of lists allows multiple named or unnamed parameters to be passed. If `elemArgs` has length 1, that argument is passed to all compute  elements (and thus is an alternative to  ...). The elements of `elemArgs` may be named; if they are node names those elements will be passed to those nodes. Alternatively, they can be "rxElem1", "rxElem2" and so on. In this case, the list of returned values will have those corresponding names. See the Details section for more information. This is an alternative to using [rxElemArg](../../r-reference/revoscaler/rxelemarg.md) one or more times.  
   
   
   
@@ -142,7 +142,7 @@ are performed sequentially.
 There are two primary sets of use cases:  In the first set, each computing element 
 (node or core) gets the same argument values; in this case, do not use `elemArgs` or 
 `rxElemArg`.  In the second, each element gets a different set of 
-arguments; use [rxElemArg](rxElemArg.md) for each argument that has different values, or 
+arguments; use [rxElemArg](../../r-reference/revoscaler/rxelemarg.md) for each argument that has different values, or 
 an `elemArgs` whose length is equal to the number of times `FUN` will
 be executed.
 
@@ -155,7 +155,7 @@ be executed.
 
 
 **Set 2: Every computing element gets a different set of arguments.**
-If [rxElemArg](rxElemArg.md) is used, the length of the vector or list for the enclosed argument
+If [rxElemArg](../../r-reference/revoscaler/rxelemarg.md) is used, the length of the vector or list for the enclosed argument
 must equal the number of compute elements. For example,
 
 `rxExec(FUN, arg1 = 1, arg2 = rxElemArg(c(1:5)))` 
@@ -216,7 +216,7 @@ If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResul
  
  ##See Also
  
-[rxElemArg](rxElemArg.md),
+[rxElemArg](../../r-reference/revoscaler/rxelemarg.md),
 [rxGetJobResults](rxGetJobResults.md),
 [rxGetJobStatus](rxGetJobResults.md),
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),

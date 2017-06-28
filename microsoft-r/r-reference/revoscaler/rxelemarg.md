@@ -56,14 +56,14 @@ the elipsis argument for rxExec. A vector or list of the argument values is used
  
  ##Details
  
-This function is designed for use only within a call to [rxExec](rxExec.md).  [rxExec](rxExec.md)
+This function is designed for use only within a call to [rxExec](../../scaler/packagehelp/rxexec.md).  [rxExec](../../scaler/packagehelp/rxexec.md)
 allows for the processing of a user function on multiple nodes or cores.  Arguments
-for the user function can be passed directly through the call to [rxExec](rxExec.md).  By default,
+for the user function can be passed directly through the call to [rxExec](../../scaler/packagehelp/rxexec.md).  By default,
 the same argument value will be passed to each of the nodes or cores.  If instead, 
 a vector or list of argument values is wrapped in a call to `rxElemArg`, 
 a distinct argument value will be passed to each node or core.  
 
-If `timesToRun` is specified for [rxExec](rxExec.md), the length of the vector or 
+If `timesToRun` is specified for [rxExec](../../scaler/packagehelp/rxexec.md), the length of the vector or 
 list within `rxElemsArg` must have a length equalto `timesToRun`. If `timesToRun` 
 is not specified and the `elemType` is set to `"cores"`, the length of the vector 
 or list will determine the `timesToRun`. 
@@ -82,7 +82,7 @@ x is returned with attributes modified for use by rxExec.
  
  ##See Also
  
-[rxExec](rxExec.md)
+[rxExec](../../scaler/packagehelp/rxexec.md)
    
  
  ##Examples
