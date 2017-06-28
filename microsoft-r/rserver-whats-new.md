@@ -38,7 +38,7 @@ Also, check out our [blog announcement post](https://blogs.technet.microsoft.com
 In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). Here are highlights of what you can do with this release:
 
 -  Use **pre-trained deep neural network models** for **sentiment analysis** and **image featurization**. For instructions on how to install these models, see [How to install and deploy pre-trained machine learning models with MicrosoftML](install/microsoftml-install-pretrained-models.md). For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Samples for MicrosoftML](microsoftml-quickstarts.md).
--  Run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
+-  Run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](install/r-server-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](scaler-spark-getting-started.md).
 -  Deploy **Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context.
 -  Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way reduces the overhead of multiple process interactions and provides much faster prediction performance in enterprise production scenarios. 
 -	Create **text classification** models for problems such as sentiment analysis and support ticket classification. 
@@ -84,7 +84,7 @@ Asynchronous remote execution is now supported using the `mrsdeploy` R package. 
 
 ## R Server deployment and administration in Cloudera Manager
 
-R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](rserver-install-cloudera.md).
+R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](install/r-server-install-cloudera.md).
 
 ## SQL Server R Services and Machine Learning Services
 

@@ -42,4 +42,4 @@ The above steps only work for 9.1.0 and later. If you have an older version of R
 
 ## See Also
 
-[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](../rserver-install-cloudera.md)
+[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](r-server-install-cloudera.md)

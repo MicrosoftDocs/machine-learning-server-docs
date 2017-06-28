@@ -104,7 +104,7 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 ## 5. Cloudera: "install_mrs_parcel.py" does not exist 
 
-If you are performing a [parcel installation of R Server in Cloudera](rserver-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Please ignore the message.
+If you are performing a [parcel installation of R Server in Cloudera](install/r-server-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Please ignore the message.
 
 <a name="cdh-rstudio-loc-cc"></a>
 

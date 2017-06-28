@@ -25,7 +25,7 @@ ms.custom: ""
 
 # Install R Server 9.0.1 on Cloudera Distribution Including Apache Hadoop (CDH)
 
-We recommend the latest version of [R Server for Hadoop](../rserver-install-cloudera.md) for the most features and for simplicity of installation, but if you have an older download of R Server for Hadoop 9.0.1, you can use the following instructions to create a parcel in Cloudera Manager. Multi-node installation is also covered in this article.
+We recommend the latest version of [R Server for Hadoop](r-server-install-cloudera.md) for the most features and for simplicity of installation, but if you have an older download of R Server for Hadoop 9.0.1, you can use the following instructions to create a parcel in Cloudera Manager. Multi-node installation is also covered in this article.
 
 ## Create an R Package Parcel for Cloudera Manager
 

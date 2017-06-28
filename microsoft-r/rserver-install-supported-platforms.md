@@ -45,7 +45,7 @@ Hardware and software requirements for SQL Server Machine Learning Services and 
 
 <sup>1</sup> You can install **R Server for Hadoop** on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for R Server on CDH, HDP, or MapR.
 
-<sup>2</sup> Cloudera installation using the built-in parcel generator script for 9.1 requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1 on CDH](rserver-install-cloudera.md).
+<sup>2</sup> Cloudera installation using the built-in parcel generator script for 9.1 requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1 on CDH](install/r-server-install-cloudera.md).
 
 <sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 

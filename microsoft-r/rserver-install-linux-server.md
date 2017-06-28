@@ -89,7 +89,7 @@ The distribution is unpacked into an `MRS91Linux` folder at the download locatio
 | File | Description |
 |------|-------------|
 |`install.sh` | Script for installing R Server. |
-|`generate_mrs_parcel.sh` | Script for generating a parcel used for [installing R Server on CDH](rserver-install-cloudera.md). |
+|`generate_mrs_parcel.sh` | Script for generating a parcel used for [installing R Server on CDH](install/r-server-install-cloudera.md). |
 | `EULA.txt` | End user license agreements for each separately licensed component. |
 | DEB folder | Contains Microsoft R packages for deployment on Ubuntu. |
 | RPM folder | Contains Microsoft R packages for deployment on CentOS/RHEL and SUSE. |

@@ -149,4 +149,4 @@ After you generate a parcel and CSD and copy the files to the appropriate reposi
 
 ## See Also
 
-[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](../rserver-install-cloudera.md)
+[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](r-server-install-cloudera.md)
