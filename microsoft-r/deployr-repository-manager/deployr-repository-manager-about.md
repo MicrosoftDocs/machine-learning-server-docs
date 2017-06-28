@@ -51,7 +51,7 @@ Learn more about the main tasks you can perform in the Repository Manager, inclu
 -  [Upload files](../deployr/deployr-repository-manager-files.md#uploading-files), including R scripts, to the repository
 -  [Manage](../deployr/deployr-repository-manager-files.md) and [organize](../deployr/deployr-repository-manager-directories.md) your files
 -  [Share and collaborate on files](../deployr/deployr-repository-manager-files.md#about-file-properties)
--  [Test scripts in a live debugging environment](deployr-repository-manager-testing-debugging-scripts.md)
+-  [Test scripts in a live debugging environment](../deployr/deployr-repository-manager-testing-debugging-scripts.md)
 
 In order to [log into](deployr-repository-manager-about.md#logging-in-and-out) the Repository Manager, you must have a DeployR user account.
 

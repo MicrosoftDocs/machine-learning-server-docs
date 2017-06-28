@@ -189,7 +189,7 @@
 ##### [Server Access Policies](deployr-admin-security/deployr-security-server-access.md)
 ##### [Project and Repository File Access Controls](deployr-admin-security/deployr-security-project-access.md)
 ##### [Password Policies](deployr-admin-security/deployr-security-passwords.md)
-##### [Account Locking Policies](deployr-admin-security/deployr-security-account-locking.md)
+##### [Account Locking Policies](deployr/deployr-security-account-locking.md)
 ##### [RServe Execution Context](deployr-admin-security/deployr-security-rserve-execution-context.md)
 #### [APIs and Client Libraries](deployr-tools-and-samples.md)
 ##### [Developer Docs & Downloads](deployr-tools-and-samples.md)

@@ -43,5 +43,5 @@ The following security topics detail how to work with these configuration proper
 + [Server Access Policies](deployr-security-server-access.md)
 + [Project and Repository File Access Controls](deployr-security-project-access.md)
 + [Password Policies](deployr-security-passwords.md)
-+ [Account Locking Policies](deployr-security-account-locking.md)
++ [Account Locking Policies](../deployr/deployr-security-account-locking.md)
 + [RServe Execution Context](deployr-security-rserve-execution-context.md)
