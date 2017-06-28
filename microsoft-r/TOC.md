@@ -267,7 +267,7 @@
 ###[encodings](r-reference/mrsdeploy/encodings.md) 
 ###[getRemoteFile](r-reference/mrsdeploy/getremotefile.md) 
 ###[getRemoteObject](r-reference/mrsdeploy/getremoteobject.md) 
-###[getRemoteWorkspace](mrsdeploy/packagehelp/getRemoteWorkspace.md) 
+###[getRemoteWorkspace](r-reference/mrsdeploy/getremoteworkspace.md) 
 ###[getService](mrsdeploy/packagehelp/getService.md) 
 ###[getValidatedServiceType](mrsdeploy/packagehelp/getValidatedServiceType.md) 
 ###[is.encoding](mrsdeploy/packagehelp/is.encoding.md) 

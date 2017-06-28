@@ -51,7 +51,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[getRemoteWorkspace](getRemoteWorkspace.md)
+[getRemoteWorkspace](../../r-reference/mrsdeploy/getremoteworkspace.md)
 
 [getRemoteObject](../../r-reference/mrsdeploy/getremoteobject.md)
 
