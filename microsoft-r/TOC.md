@@ -330,7 +330,7 @@
 #### [CensusWorkers](r-reference/revoscaler/censusworkers.md)
 #### [claims](r-reference/revoscaler/claims.md) 
 #### [DJIAdaily](r-reference/revoscaler/djiadaily.md) 
-#### [Kyphosis](scaler/packagehelp/Kyphosis.md) 
+#### [Kyphosis](r-reference/revoscaler/kyphosis.md) 
 #### [mortDefaultSmall](scaler/packagehelp/mortDefaultSmall.md) 
 ### Functions
 #### [as.gbm](r-reference/revoscaler/as-gbm.md) 
