@@ -68,7 +68,7 @@ Setup checks the operating system and detects the Hadoop cluster, but it doesn't
 
 Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.0.1.
 
-In this version, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](../rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
+In this version, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](r-server-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 

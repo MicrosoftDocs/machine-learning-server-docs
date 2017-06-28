@@ -43,7 +43,7 @@ Installer requirements include the following:
 -   A package manager (yum for RHEL systems, zypper for SLES systems)
 -   Root or as super user permissions
 
-If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](rserver-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
+If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](install/r-server-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
 
 ## System Requirements
 

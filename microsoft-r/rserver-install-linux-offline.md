@@ -74,7 +74,7 @@ You can get the gzipped installation file from one of the following download sit
 
 ## Download package dependencies
 
-R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md).
+R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](install/r-server-install-linux-hadoop-packages.md).
 
 You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. To zero in on specific packages, you can do a partial string search with this command syntax:  `ls -l /usr/lib64/libpng*`
 

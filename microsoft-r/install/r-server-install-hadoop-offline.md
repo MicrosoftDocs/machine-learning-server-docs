@@ -59,7 +59,7 @@ You can get Microsoft R Server (MRS) 9.1.0 for Hadoop from one of the following 
 
 ## Download package dependencies
 
-R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](../rserver-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
+R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](r-server-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
 
 You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.):  `ls -l /usr/lib64/lib*`
 

@@ -52,7 +52,7 @@ Microsoft R Server requires Hadoop MapReduce and the Hadoop Distributed File Sys
 
 Your cluster installation must include the C APIs contained in the libhdfs package; these are required for Microsoft R Server. See your Hadoop documentation for information on installing this package.
 
-If Setup reports an error about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](../rserver-install-linux-hadoop-packages.md) for a complete list.
+If Setup reports an error about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](r-server-install-linux-hadoop-packages.md) for a complete list.
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 

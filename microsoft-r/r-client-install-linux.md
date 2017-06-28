@@ -134,7 +134,7 @@ From an internet-connected computer, download the following:
 
 1. Download the Microsoft R Open for this version of R Client. Microsoft R Open provides the R distribution used by R Server. [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297). Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. 
 
-1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Microsoft R Server 9.1.0](rserver-install-linux-hadoop-packages.md). If the **target system** is missing any, download the ones you will need.
+1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Microsoft R Server 9.1.0](install/r-server-install-linux-hadoop-packages.md). If the **target system** is missing any, download the ones you will need.
 
    If you will be building and installing packages, including miniCRAN, we recommend that you also install the following binary packages: `gcc-c++` and `gcc-gfortran`.
    
