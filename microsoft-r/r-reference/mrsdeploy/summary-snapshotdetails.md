@@ -56,7 +56,7 @@ summary  (o)
  
  ##See Also
  
-Other snapshot methods: [print.snapshotDetails](../../r-reference/mrsdeploy/print-snapshotdetails.md)
+Other snapshot methods: [print.snapshotDetails](print-snapshotdetails.md)
    
  ##Examples
 

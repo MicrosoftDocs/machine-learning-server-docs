@@ -129,7 +129,7 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 |[`remoteScript`](r-reference/mrsdeploy/remotescript.md) | Enhanced | Includes a new `async` parameter to support asynchronous remote execution. |
 |[`serviceTypes`](r-reference/mrsdeploy/servicetypes.md)  | New | Defines the enumerated list of the supported service types.|
 |[`summary.serviceDetails`](r-reference/mrsdeploy/summary-servicedetails.md)  | New | Defines the R summary generic for `serviceDetails` during a  `listServices()`. |
-|[`summary.snapshotDetails`](mrsdeploy/packagehelp/summary.snapshotDetails.md)  | New | Defines the R summary generic for `snapshotDetails` during a  `listSnapshots()`. |
+|[`summary.snapshotDetails`](r-reference/mrsdeploy/summary-snapshotdetails.md)  | New | Defines the R summary generic for `snapshotDetails` during a  `listSnapshots()`. |
 
 ## Previous releases
 
