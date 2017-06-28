@@ -448,7 +448,7 @@
 #### [rxRemoteHadoopMRCall](r-reference/revoscaler/rxremotehadoopmrcall.md) 
 #### [rxRemovePackages](r-reference/revoscaler/rxremovepackages.md) 
 #### [rxResultsDF](r-reference/revoscaler/rxresultsdf.md) 
-#### [rxRiskRatio](scaler/packagehelp/rxRiskRatio.md) 
+#### [rxRiskRatio](r-reference/revoscaler/rxriskratio.md) 
 #### [rxRng](scaler/packagehelp/rxRng.md) 
 #### [rxRoc](scaler/packagehelp/rxRoc.md) 
 #### [RxSasData-class](scaler/packagehelp/RxSasData-class.md) 
