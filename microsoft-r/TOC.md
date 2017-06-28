@@ -261,7 +261,7 @@
 ###[createSnapshot](r-reference/mrsdeploy/createsnapshot.md) 
 ###[deleteRemoteFile](r-reference/mrsdeploy/deleteremotefile.md) 
 ###[deleteService](r-reference/mrsdeploy/deleteservice.md) 
-###[deleteSnapshot](mrsdeploy/packagehelp/deleteSnapshot.md) 
+###[deleteSnapshot](r-reference/mrsdeploy/deletesnapshot.md) 
 ###[diffLocalRemote](mrsdeploy/packagehelp/diffLocalRemote.md) 
 ###[downloadSnapshot](mrsdeploy/packagehelp/downloadSnapshot.md) 
 ###[encodings](mrsdeploy/packagehelp/encodings.md) 

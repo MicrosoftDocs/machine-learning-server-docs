@@ -72,7 +72,7 @@ then `TRUE` will be returned.
  
 [createSnapshot](../../r-reference/mrsdeploy/createsnapshot.md)
 
-[deleteSnapshot](deleteSnapshot.md)
+[deleteSnapshot](../../r-reference/mrsdeploy/deletesnapshot.md)
 
 [listSnapshots](listSnapshots.md)
 

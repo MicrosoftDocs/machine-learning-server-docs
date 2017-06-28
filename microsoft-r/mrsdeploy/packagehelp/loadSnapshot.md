@@ -67,7 +67,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
 [createSnapshot](../../r-reference/mrsdeploy/createsnapshot.md)
 
-[deleteSnapshot](deleteSnapshot.md)
+[deleteSnapshot](../../r-reference/mrsdeploy/deletesnapshot.md)
 
 [listSnapshots](listSnapshots.md)
 
