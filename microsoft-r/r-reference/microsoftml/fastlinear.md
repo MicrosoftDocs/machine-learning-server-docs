@@ -50,12 +50,12 @@ Creates a list containing the function name and arguments to train a Fast Linear
   
  ### `lossFunction`
  Specifies the empirical loss function to optimize. For binary classification, the following choices are available:  
-*   [logLoss](../../microsoftml/packagehelp/loss.md): The log-loss. This is the default.  
-*   [hingeLoss](../../microsoftml/packagehelp/loss.md): The SVM hinge loss. Its parameter represents the margin size.    
-*   [smoothHingeLoss](../../microsoftml/packagehelp/loss.md): The smoothed hinge loss. Its parameter represents the smoothing constant.  
-For linear regression, squared loss [squaredLoss](../../microsoftml/packagehelp/loss.md) is currently supported. When this parameter is set to `NULL`, its default value depends on the type of learning:  
-*   [logLoss](../../microsoftml/packagehelp/loss.md) for binary classification. 
-*   [squaredLoss](../../microsoftml/packagehelp/loss.md) for linear regression. 
+*   [logLoss](loss.md): The log-loss. This is the default.  
+*   [hingeLoss](loss.md): The SVM hinge loss. Its parameter represents the margin size.    
+*   [smoothHingeLoss](loss.md): The smoothed hinge loss. Its parameter represents the smoothing constant.  
+For linear regression, squared loss [squaredLoss](loss.md) is currently supported. When this parameter is set to `NULL`, its default value depends on the type of learning:  
+*   [logLoss](loss.md) for binary classification. 
+*   [squaredLoss](loss.md) for linear regression. 
  
   
  ### `l2Weight`

@@ -237,7 +237,7 @@
 ### [getSentiment](r-reference/microsoftml/getsentiment.md)
 ### [loadImage](r-reference/microsoftml/loadimage.md) 
 ### [logisticRegression](microsoftml/packagehelp/logisticRegression.md) 
-### [loss](microsoftml/packagehelp/loss.md)
+### [loss](r-reference/microsoftml/loss.md)
 ### [minCount](microsoftml/packagehelp/minCount.md)
 ### [mlModel](microsoftml/packagehelp/mlModel.md)
 ### [mutualInformation](microsoftml/packagehelp/mutualInformation.md)

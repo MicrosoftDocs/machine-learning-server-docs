@@ -123,7 +123,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastLinear](rxFastLinear.md), [rxNeuralNet](rxNeuralNet.md)
+[rxFastLinear](../../microsoftml/packagehelp/rxfastlinear.md), [rxNeuralNet](../../microsoftml/packagehelp/rxneuralnet.md)
    
  ##Examples
 

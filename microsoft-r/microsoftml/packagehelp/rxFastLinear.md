@@ -106,12 +106,12 @@ reproducible results, it is recommended that one sets `shuffle` to
   
  ### `lossFunction`
  Specifies the empirical loss function to optimize. For binary classification, the following choices are available:  
-*   [logLoss](loss.md): The log-loss. This is the default.  
-*   [hingeLoss](loss.md): The SVM hinge loss. Its parameter represents the margin size.    
-*   [smoothHingeLoss](loss.md): The smoothed hinge loss. Its parameter represents the smoothing constant.  
-For linear regression, squared loss [squaredLoss](loss.md) is currently supported. When this parameter is set to `NULL`, its default value depends on the type of learning:  
-*   [logLoss](loss.md) for binary classification. 
-*   [squaredLoss](loss.md) for linear regression. 
+*   [logLoss](../../r-reference/microsoftml/loss.md): The log-loss. This is the default.  
+*   [hingeLoss](../../r-reference/microsoftml/loss.md): The SVM hinge loss. Its parameter represents the margin size.    
+*   [smoothHingeLoss](../../r-reference/microsoftml/loss.md): The smoothed hinge loss. Its parameter represents the smoothing constant.  
+For linear regression, squared loss [squaredLoss](../../r-reference/microsoftml/loss.md) is currently supported. When this parameter is set to `NULL`, its default value depends on the type of learning:  
+*   [logLoss](../../r-reference/microsoftml/loss.md) for binary classification. 
+*   [squaredLoss](../../r-reference/microsoftml/loss.md) for linear regression. 
  
   
   
@@ -277,8 +277,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[logLoss](loss.md), [hingeLoss](loss.md),
-[smoothHingeLoss](loss.md), [squaredLoss](loss.md),
+[logLoss](../../r-reference/microsoftml/loss.md), [hingeLoss](../../r-reference/microsoftml/loss.md),
+[smoothHingeLoss](../../r-reference/microsoftml/loss.md), [squaredLoss](../../r-reference/microsoftml/loss.md),
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
 [rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md), [rxNeuralNet](rxNeuralNet.md),
 [rxOneClassSvm](rxOneClassSvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),

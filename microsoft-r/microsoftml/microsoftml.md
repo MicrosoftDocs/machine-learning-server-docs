@@ -82,12 +82,12 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 **Loss functions for classification and regression.**
 
-* [expLoss](packagehelp/loss.md): Specifications for exponential classification loss function.  
-* [logLoss](packagehelp/loss.md): Specifications for log classification loss function.  
-* [hingeLoss](packagehelp/loss.md): Specifications for hinge classification loss function.  
-* [smoothHingeLoss](packagehelp/loss.md): Specifications for smooth hinge classification loss function.  
-* [poissonLoss](packagehelp/loss.md): Specifications for poisson regression loss function.  
-* [squaredLoss](packagehelp/loss.md): Specifications for squared regression loss function.      
+* [expLoss](../r-reference/microsoftml/loss.md): Specifications for exponential classification loss function.  
+* [logLoss](../r-reference/microsoftml/loss.md): Specifications for log classification loss function.  
+* [hingeLoss](../r-reference/microsoftml/loss.md): Specifications for hinge classification loss function.  
+* [smoothHingeLoss](../r-reference/microsoftml/loss.md): Specifications for smooth hinge classification loss function.  
+* [poissonLoss](../r-reference/microsoftml/loss.md): Specifications for poisson regression loss function.  
+* [squaredLoss](../r-reference/microsoftml/loss.md): Specifications for squared regression loss function.      
 
 **Functions for feature selection.**
 
