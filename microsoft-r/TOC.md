@@ -486,7 +486,7 @@
 #### [rxTransform](r-reference/revoscaler/rxtransform.md) 
 #### [rxTweedie](r-reference/revoscaler/rxtweedie.md) 
 #### [rxWaitForJob](r-reference/revoscaler/rxwaitforjob.md) 
-#### [rxWriteObject](scaler/packagehelp/rxWriteObject.md) 
+#### [rxWriteObject](r-reference/revoscaler/rxwriteobject.md) 
 #### [RxXdfData-class](scaler/packagehelp/RxXdfData-class.md) 
 #### [RxXdfData](scaler/packagehelp/RxXdfData.md) 
 #### [rxXdfFileName](scaler/packagehelp/rxXdfFileName.md) 
