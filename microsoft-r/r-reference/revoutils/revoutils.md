@@ -32,11 +32,11 @@ A package providing utility functions.
 
 |Class | Description |
 |------|-------------|
-|[`getRevoRepos`](../r-reference/revoutils/getrevorepos.md) | Path to the package repositories. |
-|[`readNews`](../r-reference/revoutils/readnews.md)  | Read R or package NEWS files.|
-|[`Revo.home`](../r-reference/revoutils/revo-home.md)  | Path the Home directory. |
-|[`RevoInfo`](../r-reference/revoutils/revoinfo.md)  | Functions giving information about Microsoft R.|
-|[`totalSystemMemory`](packagehelp/totalSystemMemory.md) |Uses operating system tools to return total system memory. |
+|[`getRevoRepos`](getrevorepos.md) | Path to the package repositories. |
+|[`readNews`](readnews.md)  | Read R or package NEWS files.|
+|[`Revo.home`](revo-home.md)  | Path the Home directory. |
+|[`RevoInfo`](revoinfo.md)  | Functions giving information about Microsoft R.|
+|[`totalSystemMemory`](../../revoutils/packagehelp/totalsystemmemory.md) |Uses operating system tools to return total system memory. |
 
 ## Get help on RevoUtils functions from the R console
 
@@ -53,8 +53,8 @@ To see the **RevoUtils** functions that can be called from the R console:
 
 ## See also
 
-[Package Reference](~/package-reference.md)
+[Package Reference](../../package-reference.md)
 
-[Install R Server](~/rserver.md)
+[Install R Server](../../rserver.md)
 
-[Install R Client](~/r-client.md)
+[Install R Client](../../r-client.md)

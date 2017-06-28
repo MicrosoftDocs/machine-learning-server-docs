@@ -492,7 +492,7 @@
 #### [rxXdfFileName](r-reference/revoscaler/rxxdffilename.md) 
 #### [rxXdfToText](r-reference/revoscaler/rxxdftotext.md)
 
-## [RevoUtils](RevoUtils/RevoUtils.md)
+## [RevoUtils](r-reference/revoutils/revoutils.md)
 ###[getRevoRepos](r-reference/revoutils/getrevorepos.md) 
 ###[readNews](r-reference/revoutils/readnews.md) 
 ###[Revo.home](r-reference/revoutils/revo-home.md) 
