@@ -347,7 +347,7 @@ To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](../sc
 
 ## See Also
 
-[Install R on Hadoop overview](../rserver-install-hadoop.md)
+[Install R on Hadoop overview](r-server-install-hadoop.md)
 
 [Install R Server 8.0.0 on Hadoop](r-server-install-hadoop-800.md)
 

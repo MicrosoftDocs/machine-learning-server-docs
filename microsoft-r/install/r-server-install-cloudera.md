@@ -48,4 +48,4 @@ The workaround is to perform a manual installation of individual packages. For i
 
 ## See Also
 
-[R Server Installation on Hadoop Overview](../rserver-install-hadoop.md)
+[R Server Installation on Hadoop Overview](r-server-install-hadoop.md)

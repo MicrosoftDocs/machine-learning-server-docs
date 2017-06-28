@@ -117,7 +117,7 @@ Install the Cloudera Manager parcels as follows:
 
 ## See Also
 
-[Install R on Hadoop overview](../rserver-install-hadoop.md)
+[Install R on Hadoop overview](r-server-install-hadoop.md)
 
 [Install R Server 8.0.5 on Hadoop](r-server-install-hadoop-805.md)
 

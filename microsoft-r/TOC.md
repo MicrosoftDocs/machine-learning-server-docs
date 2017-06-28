@@ -85,8 +85,8 @@
 ##### [Install R Server 9.0.1](rserver-install-linux-server-901.md)
 ##### [Install R Server 8.0.5](rserver-install-linux-server-805.md)
 
-### [R Server for Hadoop](rserver-install-hadoop.md)
-#### [Install on Hadoop](rserver-install-hadoop.md)
+### [R Server for Hadoop](install/r-server-install-hadoop.md)
+#### [Install on Hadoop](install/r-server-install-hadoop.md)
 ##### [Cloudera Manager parcel installation](install/r-server-install-cloudera.md)
 ###### [Generate a parcel](install/r-server-install-cloudera-generate-parcel.md)
 ###### [Deploy and activate](install/r-server-install-cloudera-deploy-activate.md)

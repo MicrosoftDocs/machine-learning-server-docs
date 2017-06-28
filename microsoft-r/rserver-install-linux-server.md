@@ -230,7 +230,7 @@ Review the best practices in [Manage your R Server for Linux installation](rserv
  [What's New in R Server](rserver-whats-new.md)
  [Supported platforms](rserver-install-supported-platforms.md)  
  [Known Issues](rserver-known-issues.md)  
- [Install R on Hadoop overview](rserver-install-hadoop.md)  
+ [Install R on Hadoop overview](install/r-server-install-hadoop.md)  
  [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-linux-uninstall.md) 
  [Troubleshoot R Server installation problems on Hadoop](install/r-server-install-hadoop-troubleshoot.md)  
  [Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)

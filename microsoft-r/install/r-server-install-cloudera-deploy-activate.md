@@ -74,4 +74,4 @@ Review the following walkthroughs to move forward with using R Server and the Re
 
 ## See Also
 
-[R Server installation on Hadoop overview](../rserver-install-hadoop.md)
+[R Server installation on Hadoop overview](r-server-install-hadoop.md)

@@ -310,7 +310,7 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 [Install newest release of R Server for Linux](rserver-install-linux-server.md)
 
-[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R on Hadoop overview](install/r-server-install-hadoop.md)
 
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
 

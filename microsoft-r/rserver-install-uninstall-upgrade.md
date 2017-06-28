@@ -24,7 +24,7 @@ ms.custom: ""
 ---
 # Uninstall R Server on Hadoop to upgrade to a newer version
 
-This article explains how to uninstall Microsoft R Server on Hadoop. Unless you are upgrading from 9.0.1 to the [the latest version 9.1](rserver-install-hadoop.md), upgrade requires that you first uninstall the existing deployment before installing a new distribution.
+This article explains how to uninstall Microsoft R Server on Hadoop. Unless you are upgrading from 9.0.1 to the [the latest version 9.1](install/r-server-install-hadoop.md), upgrade requires that you first uninstall the existing deployment before installing a new distribution.
 
 For 9.0.1-to-9.1, the install script automatically removes previous versions of R Server or Microsoft R Open 3.3.2 if they are detected so that setup can install newer versions.
 
@@ -159,7 +159,7 @@ For versions prior to 8.0.5, do the following:
 
 ## See Also
 
-[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R on Hadoop overview](install/r-server-install-hadoop.md)
 
 [Install Microsoft R Server on Linux](rserver-install-linux-server.md)
 

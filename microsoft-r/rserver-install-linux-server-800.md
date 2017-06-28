@@ -76,7 +76,7 @@ d. Agreement to the Microsoft R Server software license.
 
 8.  Once you have agreed to the license, the installation completes. Type the following to return to your original directory: `popd`
 
-On Linux systems with Hadoop installed, the install.sh script also tries to configure Microsoft R Server for use with Hadoop. On such systems, the install.sh script runs a Python script that queries the Hadoop environment for certain environment variables and searches the Hadoop installation for certain files, writing a set of Hadoop environment variables required by Microsoft R Server to a file in the R Server installation directories. For complete details on Hadoop configuration, including troubleshooting when the automated configuration is incomplete or inaccurate, see the [Microsoft R Server Hadoop Configuration Guide](rserver-install-hadoop.md).
+On Linux systems with Hadoop installed, the install.sh script also tries to configure Microsoft R Server for use with Hadoop. On such systems, the install.sh script runs a Python script that queries the Hadoop environment for certain environment variables and searches the Hadoop installation for certain files, writing a set of Hadoop environment variables required by Microsoft R Server to a file in the R Server installation directories. For complete details on Hadoop configuration, including troubleshooting when the automated configuration is incomplete or inaccurate, see the [Microsoft R Server Hadoop Configuration Guide](install/r-server-install-hadoop.md).
 
 If you receive messages about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md).
 
@@ -120,7 +120,7 @@ In general, non-root installs require you to specify the complete path to the Re
 
 ## See Also
 
-[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R on Hadoop overview](install/r-server-install-hadoop.md)
 
 [Install R Server 2016 on Hadoop](install/r-server-install-hadoop-805.md)
 

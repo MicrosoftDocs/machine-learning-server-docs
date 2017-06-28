@@ -80,7 +80,7 @@ The **rm** command removes the folder. Parameter "f" is for force and "r" for re
 
 ## See Also
 
- [Install R on Hadoop overview](rserver-install-hadoop.md)      
+ [Install R on Hadoop overview](install/r-server-install-hadoop.md)      
  [Install R Server 8.0.5 on Hadoop](install/r-server-install-hadoop-805.md)      
  [Install Microsoft R Server on Linux](rserver-install-linux-server.md) 
  [Troubleshoot R Server installation problems on Hadoop](install/r-server-install-hadoop-troubleshoot.md)

@@ -175,7 +175,7 @@ To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/
 |`rxSparkRemoveData`|Remove cached `RxParquetData` or `RxHiveData` data source objects.|
 
 > [!NOTE]
-> Although ScaleR jobs only execute on Spark 2.0 if you have [R Server 9.0.1 for Hadoop](rserver-install-hadoop.md), you can create solutions containing Hive, Parquet, and Spark-related functions in R Client.
+> Although ScaleR jobs only execute on Spark 2.0 if you have [R Server 9.0.1 for Hadoop](install/r-server-install-hadoop.md), you can create solutions containing Hive, Parquet, and Spark-related functions in R Client.
 
 #### General updates in 9.0.1
 
@@ -225,7 +225,7 @@ Additional new ScaleR functions for Spark 2.0:
 + Manage Spark persistent sessions: `rxSparkConnect`, `rxSparkDisconnect`
 + Manage data in Spark DataFrames : `rxSparkListData`, `rxSparkRemoveData`
 
-For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](r-reference/revoscaler/revoscaler.md).
+For installation instructions, see [Install R Server for Hadoop](install/r-server-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](r-reference/revoscaler/revoscaler.md).
 
 ##### R Server 9.0.1 for Windows
 
@@ -329,4 +329,4 @@ algorithms for cleaning and analyzing text data.
  [Introduction to R Server](rserver.md) 
  [Install R Server on Windows](rserver-install-windows.md)  
  [Install R Server on Linux](rserver-install-linux-server.md)  
- [Install R Server on Hadoop](rserver-install-hadoop.md)
+ [Install R Server on Hadoop](install/r-server-install-hadoop.md)
