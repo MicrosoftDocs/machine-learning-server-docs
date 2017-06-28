@@ -86,7 +86,7 @@ the nonzero stepwise coefficients are returned invisibly.
 [rxStepControl](rxStepControl.md),
 [rxLinMod](rxLinMod.md),
 [rxLogit](rxLogit.md),
-[rxGlm](rxGLM.md).
+[rxGlm](../../r-reference/revoscaler/rxglm.md).
    
  ##Examples
 

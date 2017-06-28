@@ -210,7 +210,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 [rxPredict](../../r-reference/microsoftml/rxpredict.md),
 [rxLogit](rxLogit.md),
-[rxGlm](rxGLM.md), 
+[rxGlm](../../r-reference/revoscaler/rxglm.md), 
 [rxLinePlot](rxLinePlot.md),
 [rxQuantile](rxQuantile.md),
 [rxRoc](rxRoc.md).

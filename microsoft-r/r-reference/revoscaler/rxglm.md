@@ -60,7 +60,7 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
    
     
  ### `formula`
- formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md). 
+ formula as described in [rxFormula](rxformula.md). 
   
   
     
@@ -95,7 +95,7 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
   
     
  ### `variableSelection`
-  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](rxStepControl.md) for details. 
+  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](../../scaler/packagehelp/rxstepcontrol.md) for details. 
   
   
     
@@ -115,12 +115,12 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -145,7 +145,7 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
   
     
  ### `covCoef`
- logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](../../r-reference/revoscaler/rxcovregression.md) function to obtain these data. 
+ logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](rxcovregression.md) function to obtain these data. 
   
   
     
@@ -204,7 +204,7 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
   
   
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxSpark`,  `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`,  `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
   
@@ -320,10 +320,10 @@ The generalized linear models are computed using the Iteratively Reweighted Leas
  
 glm,
 family,
-[rxLinMod](rxLinMod.md),
-[rxLogit](rxLogit.md),
-[rxTweedie](rxTweedie.md),
-[rxTransform](rxTransform.md).
+[rxLinMod](../../scaler/packagehelp/rxlinmod.md),
+[rxLogit](../../scaler/packagehelp/rxlogit.md),
+[rxTweedie](../../scaler/packagehelp/rxtweedie.md),
+[rxTransform](../../scaler/packagehelp/rxtransform.md).
    
  ##Examples
 

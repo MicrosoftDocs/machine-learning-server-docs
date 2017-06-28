@@ -393,7 +393,7 @@
 #### [rxGetNodeInfo](r-reference/revoscaler/rxgetnodeinfo.md) 
 #### [rxGetVarInfoXdf](r-reference/revoscaler/rxgetvarinfoxdf.md) 
 #### [rxGetVarNames](r-reference/revoscaler/rxgetvarnames.md) 
-#### [rxGLM](scaler/packagehelp/rxGLM.md) 
+#### [rxGLM](r-reference/revoscaler/rxglm.md) 
 #### [rxHadoopCommand](scaler/packagehelp/rxHadoopCommand.md) 
 #### [RxHadoopMR-class](scaler/packagehelp/RxHadoopMR-class.md) 
 #### [RxHadoopMR](scaler/packagehelp/RxHadoopMR.md) 

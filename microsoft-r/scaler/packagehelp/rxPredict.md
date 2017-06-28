@@ -93,7 +93,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `type`
- the type of prediction desired for [rxGlm](rxGLM.md) and [rxLogit](rxLogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
+ the type of prediction desired for [rxGlm](../../r-reference/revoscaler/rxglm.md) and [rxLogit](rxLogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
   
   
     
@@ -289,7 +289,7 @@ in the data) have no effect.
  
 [rxLinMod](rxLinMod.md),
 [rxLogit](rxLogit.md),
-[rxGlm](rxGLM.md),
+[rxGlm](../../r-reference/revoscaler/rxglm.md),
 [rxPredict.rxDTree](../../r-reference/revoscaler/rxdtree.md),
 [rxPredict.rxDForest](../../r-reference/revoscaler/rxdforest.md),
 [rxPredict.rxNaiveBayes](rxPredict.rxNaiveBayes.md).

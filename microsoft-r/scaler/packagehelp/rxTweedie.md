@@ -78,7 +78,7 @@ Peter K Dunn (2011). tweedie: Tweedie exponential family models. R package versi
  
  ##See Also
  
-[rxGlm](rxGLM.md)
+[rxGlm](../../r-reference/revoscaler/rxglm.md)
    
  
  ##Examples
