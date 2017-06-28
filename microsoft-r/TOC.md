@@ -132,7 +132,7 @@
 #### [Configure database](operationalize/configure-remote-database.md)
 #### [Manage R packages](operationalize/package-management.md)
 
-### [Provision in the Cloud](vm-cloud.md)
+### [Provision in the Cloud](install/r-server-vm-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
 #### [R Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
 #### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
