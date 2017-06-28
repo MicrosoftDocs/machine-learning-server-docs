@@ -81,8 +81,8 @@
 #### [Offline install](install/r-server-install-linux-offline.md)
 #### [Manage your installation](install/r-server-install-linux-manage-install.md)
 #### [Uninstall from Linux](rserver-install-linux-uninstall.md)
-#### [Install an older version](rserver-install-linux-server-901.md)
-##### [Install R Server 9.0.1](rserver-install-linux-server-901.md)
+#### [Install an older version](install/r-server-install-linux-server-901.md)
+##### [Install R Server 9.0.1](install/r-server-install-linux-server-901.md)
 ##### [Install R Server 8.0.5](install/r-server-install-linux-server-805.md)
 
 ### [R Server for Hadoop](install/r-server-install-hadoop.md)

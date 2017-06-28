@@ -25,7 +25,7 @@ ms.custom: ""
 
 # R Server 9.0.1 Installation for Linux Systems
 
-Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Linux](rserver-install-linux-server.md).
+Older versions of R Server for Linux are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Linux](../rserver-install-linux-server.md).
 
 **Side-by-side Installation**
 
@@ -33,7 +33,7 @@ You can install major versions of R Server (such as an 8.x and 9.x) side-by-side
 
 **Upgrade Versions**
 
-If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md) for instructions.
 
 **Requirements**
 
@@ -43,14 +43,14 @@ Installer requirements include the following:
 -   A package manager (yum for RHEL systems, zypper for SLES systems)
 -   Root or as super user permissions
 
-If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](install/r-server-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
+If these requirements cannot be met, you can install R Server manually. First, verify that your system meets system requirements and satisfies the [package prerequisites](r-server-install-linux-hadoop-packages.md). You can then follow the more detailed installation instructions described in [Managing Your Microsoft R Server Installation](#manage-installation).
 
 
 ## System Requirements
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-**Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like CentOS, or SUSE Linux Enterprise Server. Microsoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
+**Operating System:** Microsoft R for Linux can be installed on Red Hat Enterprise Linux (RHEL) or a fully compatible operating system like CentOS, or SUSE Linux Enterprise Server. Microsoft R Server has different operating system requirements depending on the version you install. See [Supported platforms](../rserver-install-supported-platforms.md) for specifics. Only 64-bit operating systems are supported.
 
 **Memory:** A minimum of 2 GB of RAM is required; 8 GB or more are recommended.
 
@@ -157,7 +157,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
 ## Configure R Server to operationalize your analytics
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize-r-server-one-box-config.md) or an [enterprise setup](operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 <a name="manage-installation"></a>
 ## Manage your installation
@@ -296,7 +296,7 @@ If you are in a locked-down environment without access to the standard Microsoft
 ## Remove Microsoft R Server
 
 For instructions on rolling back your installation, see
-[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md).
+[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md).
 
 ## Manage multiple R installations
 
@@ -318,16 +318,16 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 ## See Also
 
-[Install R Server 8.0.5 for Linux](install/r-server-install-linux-server-805.md)
+[Install R Server 8.0.5 for Linux](r-server-install-linux-server-805.md)
 
-[Install R Server 8.0 for Linux](install/r-server-install-linux-server-800.md)
+[Install R Server 8.0 for Linux](r-server-install-linux-server-800.md)
 
-[Install R on Hadoop overview](install/r-server-install-hadoop.md)
+[Install R on Hadoop overview](r-server-install-hadoop.md)
 
-[Install R Server 8.0.5 for Hadoop](install/r-server-install-hadoop-805.md)
+[Install R Server 8.0.5 for Hadoop](r-server-install-hadoop-805.md)
 
-[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
 
-[Troubleshoot R Server installation problems on Hadoop](install/r-server-install-hadoop-troubleshoot.md)
+[Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)
 
-[Configure R Server to operationalize analytics](install/operationalize-r-server-one-box-config.md)
+[Configure R Server to operationalize analytics](operationalize-r-server-one-box-config.md)
