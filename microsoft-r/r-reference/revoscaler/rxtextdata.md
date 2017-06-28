@@ -311,7 +311,7 @@ This is the main generator for S4 class RxTextData, which extends RxDataSource.
   
      
  ### `fileSystem`
- character string or [RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. 
+ character string or [RxFileSystem](rxfilesystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. 
   
   
      
@@ -336,7 +336,7 @@ Imported `POSIXct` will have the `tzone` attribute set to `"GMT"`.
 Decimal data in text files can be imported into .xdf files and 
 stored as either 32-bit floats or 64-bit doubles. 
 The default for this is 32-bit floats, which can be changed using
-[rxOptions](../../r-reference/revoscaler/rxoptions.md). If the data type cannot be determined
+[rxOptions](rxoptions.md). If the data type cannot be determined
 (i.e., only missing values are encountered), the column is imported
 as 64-bit doubles unless otherwise specified.
  
@@ -412,9 +412,9 @@ object of class RxTextData.
  
  ##See Also
  
-[RxTextData-class](../../r-reference/revoscaler/rxtextdata-class.md),
-[rxImport](../../r-reference/revoscaler/rximport.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
+[RxTextData-class](rxtextdata-class.md),
+[rxImport](rximport.md),
+[rxNewDataSource](rxnew.md).
    
  ##Examples
 

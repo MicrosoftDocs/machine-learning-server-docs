@@ -165,7 +165,7 @@ For most purposes, the more general [rxDataStep](../../r-reference/revoscaler/rx
  
  ##Value
  
-An [RxTextData](RxTextData.md) object representing the output text file.
+An [RxTextData](../../r-reference/revoscaler/rxtextdata.md) object representing the output text file.
  
  
  ##Author(s)
