@@ -319,7 +319,7 @@
 ### [Overview: Base R & ScaleR Function Comparisons](scaler/compare-base-r-scaler-functions.md)
 ### [Overview: ScaleR functions for Teradata](scaler/scaler-teradata-functions.md)
 ### [Overview: ScaleR functions for Hadoop](scaler/scaler-hadoop-functions.md)
-### [Functions by category](scaler/packagehelp/revoAnalytics-package.md) 
+### [Functions by category](r-reference/revoscaler/revoanalytics-package.md) 
 ### [RevoScaleR-defunct](scaler/packagehelp/RevoScaleR-defunct.md) 
 ### [RevoScaleR-deprecated](scaler/packagehelp/RevoScaleR-deprecated.md)
 ### Data sets

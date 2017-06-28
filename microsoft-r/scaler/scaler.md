@@ -30,7 +30,7 @@ ms.custom: ""
 
 The `RevoScaleR` package provides a set of over one hundred portable, scalable, and distributable data analysis functions.
 
-This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  For a list of the entire set of `RevoScaleR` functions, see [ScaleR functions by category](packagehelp/revoAnalytics-package.md)
+This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  For a list of the entire set of `RevoScaleR` functions, see [ScaleR functions by category](../r-reference/revoscaler/revoanalytics-package.md)
 
 While most of these functions are of general application, some are specific to particular compute contexts and some may not be fully supported in all compute contexts. If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
 + [Computing on a Hadoop Cluster](scaler-hadoop-functions.md)
