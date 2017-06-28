@@ -499,7 +499,7 @@
 ###[RevoInfo](r-reference/revoutils/revoinfo.md) 
 ###[totalSystemMemory](r-reference/revoutils/totalsystemmemory.md)
 
-## [sqlrutils](sqlrutils/sqlrutils.md)
+## [sqlrutils](r-reference/sqlrutils/sqlrutils.md)
 ###[executeStoredProcedure](r-reference/sqlrutils/executestoredprocedure.md) 
 ###[getInputParameters](r-reference/sqlrutils/getinputparameters.md) 
 ###[InputData](r-reference/sqlrutils/inputdata.md) 

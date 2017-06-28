@@ -32,16 +32,16 @@ The **sqlrutils** package provides functions for executing stored procedures on 
 
 |Class | Description |
 |------|-------------|
-|[`executeStoredProcedure`](../r-reference/sqlrutils/executestoredprocedure.md)| Execute a SQL stored procedure.|
-|[`getInputParameters`](../r-reference/sqlrutils/getinputparameters.md)| Get a list of input parameters to the stored procedure.| 
-|[`InputData`](../r-reference/sqlrutils/inputdata.md)| Input data for the stored procedure. | 
-|[`InputParameter`](../r-reference/sqlrutils/inputparameter.md)| Input parameters for the stored procedure.| 
-|[`OutputData`](../r-reference/sqlrutils/outputdata.md)| Output from the stored procedure.| 
-|[`OutputParameter`](../r-reference/sqlrutils/outputparameter.md) | Output parameters from the stored procedure.|
-|[`registerStoredProcedure`](../r-reference/sqlrutils/registerstoredprocedure.md) | Register the stored procedure with a database.|
-|[`setInputDataQuery`](../r-reference/olapr/query.md)| Assign a query to an input data parameter of the stored procedure.| 
-|[`setInputParameterValue`](../r-reference/sqlrutils/setinputparametervalue.md)| Assign a value to the an input parameter of the stored procedure.| 
-|[`StoredProcedure`](packagehelp/StoredProcedure.md)| A stored procedure object.|
+|[`executeStoredProcedure`](executestoredprocedure.md)| Execute a SQL stored procedure.|
+|[`getInputParameters`](getinputparameters.md)| Get a list of input parameters to the stored procedure.| 
+|[`InputData`](inputdata.md)| Input data for the stored procedure. | 
+|[`InputParameter`](inputparameter.md)| Input parameters for the stored procedure.| 
+|[`OutputData`](outputdata.md)| Output from the stored procedure.| 
+|[`OutputParameter`](outputparameter.md) | Output parameters from the stored procedure.|
+|[`registerStoredProcedure`](registerstoredprocedure.md) | Register the stored procedure with a database.|
+|[`setInputDataQuery`](../olapr/query.md)| Assign a query to an input data parameter of the stored procedure.| 
+|[`setInputParameterValue`](setinputparametervalue.md)| Assign a value to the an input parameter of the stored procedure.| 
+|[`StoredProcedure`](storedprocedure.md)| A stored procedure object.|
 
 ## Get help on sqlrutils functions from the R console
 
@@ -60,8 +60,8 @@ To see the **sqlrutils** functions that can be called from the R console:
 
 ## See also
 
-[Package Reference](../r-reference/introducing-r-server-r-package-reference.md)
+[Package Reference](../introducing-r-server-r-package-reference.md)
 
-[Install R Server](~/rserver.md)
+[Install R Server](../../rserver.md)
 
-[Install R Client](../r-client/what-is-microsoft-r-client.md)
+[Install R Client](../../r-client/what-is-microsoft-r-client.md)

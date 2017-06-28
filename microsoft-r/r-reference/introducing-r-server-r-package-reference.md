@@ -42,7 +42,7 @@ This section contains the function reference documentation for proprietary *revo
 |RevoTreeView|Decision tree functions, including the **rxDTree** function. Reference documentation is online only (`*`). |
 |[RevoUtils](revoutils/revoutils.md)|Utility functions useful when programming and developing R packages.|
 |RevoUtilsMath|Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (`*`). |
-|[sqlrutils](../sqlrutils/sqlrutils.md)|A collection of functions for executing stored procedures against SQL Server.|
+|[sqlrutils](sqlrutils/sqlrutils.md)|A collection of functions for executing stored procedures against SQL Server.|
 
 `*` Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in your preferred R IDE, such as **R Tools for Visual Studio**.
 
