@@ -56,7 +56,7 @@ The following release notes apply to Microsoft R Client, which can be downloaded
   
   Learn more about [the new and updated packages in this release](../whats-new-in-r-server.md#new-and-updated-packages).
 + Updated end-user license agreement
-+ Telemetry collection is now enabled. [Learn more](../rserver-optout-telemetry.md) about this feature and how to turn it off.
++ Telemetry collection is now enabled. [Learn more](../resources-opting-out.md) about this feature and how to turn it off.
 
 ## Microsoft R Client 1.0.0
 
