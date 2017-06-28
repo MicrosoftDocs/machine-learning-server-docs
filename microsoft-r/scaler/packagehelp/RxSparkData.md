@@ -65,7 +65,7 @@ can be used only in `RxSpark` compute context.
   
     
  ### `colInfo`
- list of named variable information lists. Each variable information list contains one or more of the named elements given below (see [rxCreateColInfo](rxCreateColInfo.md) for more details):  
+ list of named variable information lists. Each variable information list contains one or more of the named elements given below (see [rxCreateColInfo](../../r-reference/revoscaler/rxcreatecolinfo.md) for more details):  
 *   Currently available properties for a column information list are:  
    *  `type` character string specifying the data type for the column. Supported types are:  
       *   `"logical"` (stored as `uchar`) 
