@@ -229,7 +229,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 -   [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
 -   [About Throughput](deployr/deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
 -   [Getting Started For Application Developers](deployr-application-developer-getting-started.md)
--   [Getting Started For Administrators](deployr-administrator-getting-started.md)
+-   [Getting Started For Administrators](deployr/deployr-administrator-getting-started.md)
 
 **Support Channel**
 -   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

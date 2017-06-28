@@ -131,7 +131,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 5.  Customizing DeployR [security policies](../deployr-admin-security/deployr-security.md).
 6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
-[Consult the administration documentation](../deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
+[Consult the administration documentation](deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
 >**DeployR Security**  
 >DeployR supports a highly flexible, enterprise-grade security framework that verifies identity, enforces permissions, and ensures privacy.

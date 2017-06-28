@@ -158,9 +158,9 @@
 #### Getting Started with DeployR
 ##### [About DeployR 8.x](deployr/deployr-about.md)
 ##### [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
-##### [Getting Started for Administrators](deployr-administrator-getting-started.md)
+##### [Getting Started for Administrators](deployr/deployr-administrator-getting-started.md)
 ##### [Getting Started for Data Scientists](deployr-data-scientist-getting-started.md)
-#### [Administration & Configuration](deployr-administrator-getting-started.md)
+#### [Administration & Configuration](deployr/deployr-administrator-getting-started.md)
 ##### [Administration Console Help](deployr/deployr-admin-console-about.md)
 ##### [About DeployR Administration Console](deployr/deployr-admin-console-about.md)
 ##### [Creating & Managing User Accounts](deployr-admin-console/deployr-admin-console-user-accounts.md)

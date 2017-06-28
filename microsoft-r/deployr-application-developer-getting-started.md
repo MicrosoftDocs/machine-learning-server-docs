@@ -257,7 +257,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 -   [API Reference Guide](deployr-api-reference.md)
 
 **Other Getting Started Guides**
--   [Administrators](deployr-administrator-getting-started.md)
+-   [Administrators](deployr/deployr-administrator-getting-started.md)
 -   [Data Scientists](deployr-data-scientist-getting-started.md)
 
 **Helper Tools**
