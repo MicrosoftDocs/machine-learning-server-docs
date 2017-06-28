@@ -80,7 +80,7 @@ A longer [realtime example](#realtime-example) is also available.
 
 |R Source|Can come from|
 |------|---------|
-|R model|A model object created with supported functions, such as:<ul><li>These [`RevoScaleR` package](../scaler/scaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` <br><br><li>These [`MicrosoftML` package](../r-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`<br><br>While `mlTransform` featurization is supported in realtime scoring, R transforms are not supported. Instead, use `sp_execute_external_script `.</ul>|
+|R model|A model object created with supported functions, such as:<ul><li>These [`RevoScaleR` package](../r-reference/revoscaler/revoscaler.md) functions: `rxLogit`, `rxLinMod`, `rxBTrees`, `rxDTree`, and `rxDForest` <br><br><li>These [`MicrosoftML` package](../r-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: `rxFastTrees`, `rxFastForest`, `rxLogisticRegression`, `rxOneClassSvm`, `rxNeuralNet`, `rxFastLinear`, `featurizeText`, `concat`, `categorical`, `categoricalHash`, `selectFeatures`, `featurizeImage`, `getSentiment`, `loadimage`, `resizeImage`, `extractPixels`, `selectColumns`, and `dropColumns`<br><br>While `mlTransform` featurization is supported in realtime scoring, R transforms are not supported. Instead, use `sp_execute_external_script `.</ul>|
 
 ## Permissions for managing web services
 

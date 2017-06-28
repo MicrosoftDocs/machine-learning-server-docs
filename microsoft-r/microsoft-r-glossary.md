@@ -52,7 +52,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Compute Context**
 
-A feature in [RevoScaleR](scaler/scaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). [Learn more…](scaler-distributed-computing.md)
+A feature in [RevoScaleR](r-reference/revoscaler/revoscaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). [Learn more…](scaler-distributed-computing.md)
 
 
 
@@ -175,7 +175,7 @@ See <a href="#mrs"><i>Microsoft R Server</i></a>
 
 **RevoScaleR**
 
-A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server Machine Learning Services, and Microsoft R Client. [Learn more…](scaler/scaler.md)
+A proprietary R package by Microsoft that provides scalable, fast (multicore), and extensible data analysis  for large datasets with R.  It offers parallel external memory algorithms that help R break through memory and performance limitations. This package is available with Microsoft R Server, SQL Server Machine Learning Services, and Microsoft R Client. [Learn more…](r-reference/revoscaler/revoscaler.md)
 
 <br>
 

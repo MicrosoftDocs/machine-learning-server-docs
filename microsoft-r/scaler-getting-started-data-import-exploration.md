@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: Microsoft R Client, Microsoft R Server**
 
-In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](scaler/scaler.md) to ascertain the shape of the data. 
+In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](r-reference/revoscaler/revoscaler.md) to ascertain the shape of the data. 
 
 To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object that wraps a dataset with useful metadata. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
@@ -468,4 +468,4 @@ You can work around this limitation by writing script on R Client, but then [pus
  [Parallel and distributed computing in Microsoft R Server](scaler-distributed-computing.md)   
  [Importing data](scaler-user-guide-data-import.md)     
  [ODBC data import](scaler-data-odbc.md)     
- [RevoScaleR Functions](scaler/scaler.md)     
+ [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)     

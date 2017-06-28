@@ -108,4 +108,4 @@ You can easily upload any CSV file into SQL Server if you want to step through d
 
  [Introduction to Microsoft R](microsoft-r-getting-started.md)	
  [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)	
- [RevoScaleR Functions](/scaler/scaler.md)	
+ [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)	

@@ -469,7 +469,7 @@ This article walks through some R code you can use to predict whether a flight w
 
 ## Next steps
 
-Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](r-reference/microsoftml/microsoftml-package.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution. 
+Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](r-reference/revoscaler/revoscaler.md), [`MicrosoftML` R package functions](r-reference/microsoftml/microsoftml-package.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution. 
 
 ## Learn More
 

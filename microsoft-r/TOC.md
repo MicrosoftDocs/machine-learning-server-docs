@@ -314,8 +314,8 @@
 ###[PemaMean](r-reference/revopemar/pemamean.md) 
 ###[setPemaClass](r-reference/revopemar/setpemaclass.md)
 
-## [RevoScaleR](scaler/scaler.md)
-### [Overview: Common ScaleR Functions](scaler/scaler.md)
+## [RevoScaleR](r-reference/revoscaler/revoscaler.md)
+### [Overview: Common ScaleR Functions](r-reference/revoscaler/revoscaler.md)
 ### [Overview: Base R & ScaleR Function Comparisons](r-reference/revoscaler/revoscaler-compared-to-base-r.md)
 ### [Overview: ScaleR functions for Teradata](r-reference/revoscaler/revoscaler-teradata-functions.md)
 ### [Overview: ScaleR functions for Hadoop](r-reference/revoscaler/revoscaler-hadoop-functions.md)

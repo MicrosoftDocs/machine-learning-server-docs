@@ -473,4 +473,4 @@ This tutorial demonstrated how to use several important functions, but on a smal
  [What is RevoScaleR](scaler-user-guide-introduction.md)	
  [Introduction to Microsoft R](microsoft-r-getting-started.md)	
  [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)	
- [RevoScaleR Functions](/scaler/scaler.md)
+ [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)

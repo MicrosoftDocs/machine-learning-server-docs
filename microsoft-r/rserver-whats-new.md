@@ -163,7 +163,7 @@ To learn more, see [mrsdeploy Function Reference](r-reference/mrsdeploy/mrsdeplo
 
 To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/library/mt790485.aspx).
 
-**RevoScaleR Package** is updated to include [support for **Spark 2.0**](#bkmk_Spark). For a list of all functions, see [RevoScaleR Function Reference](scaler/scaler.md).
+**RevoScaleR Package** is updated to include [support for **Spark 2.0**](#bkmk_Spark). For a list of all functions, see [RevoScaleR Function Reference](r-reference/revoscaler/revoscaler.md).
 
 |Function | Description |
 |--|--|
@@ -225,7 +225,7 @@ Additional new ScaleR functions for Spark 2.0:
 + Manage Spark persistent sessions: `rxSparkConnect`, `rxSparkDisconnect`
 + Manage data in Spark DataFrames : `rxSparkListData`, `rxSparkRemoveData`
 
-For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](scaler/scaler.md).
+For installation instructions, see [Install R Server for Hadoop](rserver-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](r-reference/revoscaler/revoscaler.md).
 
 ##### R Server 9.0.1 for Windows
 

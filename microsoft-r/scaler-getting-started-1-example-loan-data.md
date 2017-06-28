@@ -409,4 +409,4 @@ The results should be printed to your console, with the highest default rate at 
 
 [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](/scaler/scaler.md)
+[RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)

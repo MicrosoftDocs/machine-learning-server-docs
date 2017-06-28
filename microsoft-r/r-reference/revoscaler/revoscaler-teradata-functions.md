@@ -32,7 +32,7 @@ This page presents a curated list of functions that might be particularly intere
 
 The `RevoScaleR` package supports a single Teradata DB compute context, `RxTeradata`. For details on `RxTeradata` compute context, see the [*RevoScaleR Teradata DB Getting Started Guide*](../../scaler-teradata-getting-started.md#using-a-teradata-data-source-and-computecontext).
 
->If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](../../scaler.md).
+>If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](revoscaler.md).
 
 <br />
 ## Data Analysis Functions

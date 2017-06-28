@@ -81,7 +81,7 @@ A manual or custom installation must create the appropriate folders and set perm
 
 ## Install additional packages on each node using rxExec
 
-Once you have R Server installed on a node, you can use the `rxExec` function in [RevoScaleR](scaler/scaler.md) to install additional packages, including third-party packages from CRAN or another repository. 
+Once you have R Server installed on a node, you can use the `rxExec` function in [RevoScaleR](r-reference/revoscaler/revoscaler.md) to install additional packages, including third-party packages from CRAN or another repository. 
 
 For example, to install the `SuppDists` package on all the nodes of your cluster, call `rxExec` as follows:
 

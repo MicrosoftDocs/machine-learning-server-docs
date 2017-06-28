@@ -37,7 +37,7 @@ The `RevoScaleR` package supports two Hadoop compute contexts:
 + `RxSpark`, a distributed compute context in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
 
 
->If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](../../scaler.md).
+>If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](revoscaler.md).
 
 As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../../../scaler-hadoop-getting-started.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
 

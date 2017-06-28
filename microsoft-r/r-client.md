@@ -86,7 +86,7 @@ Now that you've installed R Client, you can start building and running some R co
 
 + Run the sample R code as described in this [quickstart guide](quickstart-r-code.md). 
 
-+ Or, develop your own solutions using [`RevoScaleR` R package functions](scaler/scaler.md), [`MicrosoftML` R package functions](r-reference/microsoftml/microsoftml-package.md), and APIs. 
++ Or, develop your own solutions using [`RevoScaleR` R package functions](r-reference/revoscaler/revoscaler.md), [`MicrosoftML` R package functions](r-reference/microsoftml/microsoftml-package.md), and APIs. 
 
 When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](operationalize/remote-execution.md) for execution if Microsoft R Server is also installed in your organization. 
 

@@ -290,7 +290,7 @@ Continue on to the following data import articles to learn more about XDF, data 
 
 ## See Also
    
- [RevoScaleR Functions](scaler/scaler.md)   
+ [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)   
  [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
  [Tutorial: data visualization and analysis](scaler-getting-started-data-visualization-analysis.md) 
  
