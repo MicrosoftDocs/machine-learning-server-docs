@@ -31,15 +31,15 @@ The **data transforms** provided by MicrosoftML allow you to compose a custom se
 
 The MicrosoftML package provides fast and scalable **machine learning algorithms** that enable you to tackle common machine learning tasks such as classification, regression and anomaly detection. These are high-performance algorithms that are multi-threaded, some of which execute off disk, so that they can scale up to to 100s of GBs on a single-node. They are especially suitable for handling a large corpus of text data or high-dimensional categorical data. It enables you to run these functions locally on Windows or Linux machines or on Azure HDInsight (Hadoop/Spark) clusters.
 
-**Pretrained models** for sentiment analysis and image featurization can also be installed and deployed with the  MicrosoftML package. For more information on the pretrained models and samples, see [Samples for MicrosoftML](microsoftml-quickstarts.md).
+**Pretrained models** for sentiment analysis and image featurization can also be installed and deployed with the  MicrosoftML package. For more information on the pretrained models and samples, see [Samples for MicrosoftML](../microsoftml-quickstarts.md).
 
 
 <a name="platform-availability"></a>
 ## Installation and platform availability
 
-MicrosoftML is installed as part of **Microsoft R Server 9.1.0 and 9.0.1**, **Microsoft R Client 9.1.0 and 9.0.1** and in the **SQL Server Machine Learning Services CTP2** on various platforms. For information on the supported platforms, see [Supported Platforms for Microsoft R Server](install/r-server-install-supported-platforms.md).
+MicrosoftML is installed as part of **Microsoft R Server 9.1.0 and 9.0.1**, **Microsoft R Client 9.1.0 and 9.0.1** and in the **SQL Server Machine Learning Services CTP2** on various platforms. For information on the supported platforms, see [Supported Platforms for Microsoft R Server](../install/r-server-install-supported-platforms.md).
 
-To install pretrained machine learning models for sentiment analysis and image featurization, you must opt-in during setup. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](install/microsoftml-install-pretrained-models.md).
+To install pretrained machine learning models for sentiment analysis and image featurization, you must opt-in during setup. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](../install/microsoftml-install-pretrained-models.md).
 
 
 ## Match algorithms to machine learning tasks
@@ -70,23 +70,23 @@ Algorithm | ML task supported | Scalability | Application Examples
 
 ### Data transforms
 
-**MicrosoftML** also provides transforms to help featurize your data for machine learning. They are used to clean, wrangle, train and score your data. For a description of the transforms, see [Machine learning transforms](r-reference/microsoftml/microsoftml-package.md#ml-transforms) reference documentation.
+**MicrosoftML** also provides transforms to help featurize your data for machine learning. They are used to clean, wrangle, train and score your data. For a description of the transforms, see [Machine learning transforms](../../r-reference/microsoftml/microsoftml-package.md#ml-transforms) reference documentation.
 
 
 ## What's new?
-For the new features included in latest release of MicrosoftML, see [What's New in R Server](rserver-whats-new.md#machinelearning).
+For the new features included in latest release of MicrosoftML, see [What's New in R Server](../rserver-whats-new.md#machinelearning).
 
 
 ## What's next?
 
-For reference documentation on the individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](r-reference/microsoftml/microsoftml-package.md).
+For reference documentation on the individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](../r-reference/microsoftml/microsoftml-package.md).
 
-For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md).
+For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [Cheat Sheet: How to choose a MicrosoftML algorithm](../microsoftml-algorithm-cheat-sheet.md).
 
 ## See also
 
-[About Microsoft R Server](rserver.md) for general information about R Server.   
+[About Microsoft R Server](../rserver.md) for general information about R Server.   
 
-[Cheat Sheet: How to choose a MicrosoftML algorithm](microsoftml-algorithm-cheat-sheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
+[Cheat Sheet: How to choose a MicrosoftML algorithm](../microsoftml-algorithm-cheat-sheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
 
-[Quickstarts for MicrosoftML](microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.
+[Quickstarts for MicrosoftML](../microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.

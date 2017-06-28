@@ -29,7 +29,7 @@ Pre-trained deep neural network models for sentiment analysis and image featuriz
 
 ## Installation
 
-The **MicrosoftML** package is installed by default with **Microsoft R Client**, **Microsoft R Server** and with the **SQL Server Machine Learning Services** on the supported platforms. For a list of these platforms, see the [Platform availability](../microsoftml-get-started.md#platform-availability) section in the getting started topic.
+The **MicrosoftML** package is installed by default with **Microsoft R Client**, **Microsoft R Server** and with the **SQL Server Machine Learning Services** on the supported platforms. For a list of these platforms, see the [Platform availability](../r/concept-what-is-the-microsoftml-package.md#platform-availability) section in the getting started topic.
 
 But the pretrained ML models are not installed by default. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page. To see this box you must click the dropdown menu for **Microsoft R Client** or **Microsoft R Server** in **The following components will be included** section. If these models are not installed, you will get an error if you use the `getSentiment()` or `featurizeImage()` functions.
 

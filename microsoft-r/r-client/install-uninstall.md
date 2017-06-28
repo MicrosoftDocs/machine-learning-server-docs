@@ -100,6 +100,6 @@ You can learn more with these guides:
 
 + [RevoScaleR R package reference](../microsoft-r-tutorials.md)
 
-+ [MicrosoftML R package reference](../microsoftml-get-started.md)
++ [MicrosoftML R package reference](../r/concept-what-is-the-microsoftml-package.md)
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
