@@ -283,7 +283,7 @@ This section provides a quick summary of useful links for data scientists operat
 >Use the table of contents to find all the guides and documentation needed by the administrator.
 
 **Key Documents**
- + [About Operationalization](about.md)    
+ + [About Operationalization](../what-is-operationalization.md)    
  + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)    
  + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
  + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)    

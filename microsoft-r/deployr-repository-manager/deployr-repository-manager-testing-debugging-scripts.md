@@ -60,14 +60,14 @@ The **Test** page is divided into four panes:
 
 ## Inspecting the Source Code
 
-The **Source** pane presents the script’s R code. The extent to which you can interact with the source code depends entirely on [permissions and policies](deployr-repository-manager-about.md#permissions-policies).
+The **Source** pane presents the script’s R code. The extent to which you can interact with the source code depends entirely on [permissions and policies](../what-is-operationalization.md#permissions-policies).
 Viewing R Code
 
 ###Viewing R Code
 
 In this pane, you can view and scroll through the source code of the R script. Code elements are color-coded for your convenience.
 
->If you do not own this file and cannot see the code in the **Source** pane, then a [server policy](deployr-repository-manager-about.md#policies) was changed by your administrator. An onscreen alert will also appear.
+>If you do not own this file and cannot see the code in the **Source** pane, then a [server policy](../what-is-operationalization.md#policies) was changed by your administrator. An onscreen alert will also appear.
 
 ###Editing R Code
 
@@ -81,7 +81,7 @@ Only the owners of a file can edit the source code of the [*Latest*](../deployr/
 
 1. [Save](deployr-repository-manager-testing-debugging-scripts.md#saving-script-changes) your script and [run it](deployr-repository-manager-testing-debugging-scripts.md#running-scripts-in-test-page) to test the changes.
 
->Only file owners who were assigned the [**POWER_USER**](deployr-repository-manager-about.md#permissions-policies) role by the administrator have the permissions to run snippets of code in the **Source** pane. If you are a file owner assigned the **POWER_USER** role, you can select and run snippets from the **Source** pane and inspect the workspace in the **Debug Console Output** pane to see the R objects within and their values.
+>Only file owners who were assigned the [**POWER_USER**](../what-is-operationalization.md#permissions-policies) role by the administrator have the permissions to run snippets of code in the **Source** pane. If you are a file owner assigned the **POWER_USER** role, you can select and run snippets from the **Source** pane and inspect the workspace in the **Debug Console Output** pane to see the R objects within and their values.
 
 ## Running Scripts in Test Page
 
@@ -129,7 +129,7 @@ For tips and guidance on how to develop portable R code using the deployrInput f
 <br/>
 ### Running Snippets of Code
 
-If you own the script and have [**POWER_USER**](deployr-repository-manager-about.md#permissions-policies) permissions, you can run a snippet of code directly from the **Source** pane. In this way, you can make small changes to your R code and run only the lines you want to test. You can even select a variable name, for example, and run that to see its contents.
+If you own the script and have [**POWER_USER**](../what-is-operationalization.md#permissions-policies) permissions, you can run a snippet of code directly from the **Source** pane. In this way, you can make small changes to your R code and run only the lines you want to test. You can even select a variable name, for example, and run that to see its contents.
 
 >Running code from the Source pane will run the selected code as-is without taking into account any modified values or **Quick Inputs** defined in the **Script Execution Parameters** pane.
 
@@ -182,7 +182,7 @@ To help you test and debug your scripts, you can manipulate this underlying R se
 
 You can load data into the underlying R session from the **Test** page of any open script. Any type of data file can be loaded into the working directory of the underlying R session. For example, you could load a .CSV file that will be read by your script. However, only files containing binary R objects, typically with a .rData file extension, can be loaded directly into the workspace from this page.
 
-You choose to load data files and binary R objects from the repository or from your local machine. You can always load your files; however, your ability to load data files that you do not own from the repository is determined by [server policies](deployr-repository-manager-about.md#policies).
+You choose to load data files and binary R objects from the repository or from your local machine. You can always load your files; however, your ability to load data files that you do not own from the repository is determined by [server policies](../what-is-operationalization.md#policies).
 
 **To load data into the underlying R session:**
 
@@ -243,9 +243,9 @@ Any inputs defined in the R code using the deployrInput() function, and their de
 For tips and guidance on how to develop portable R code using this function from the deployrUtils package, see the [Writing Portable R Code](../deployr/deployr-data-scientist-write-portable-r-code.md) guide on the DeployR website.
 Refer to the deployrUtils package help for more details and examples.
 
->If you do not own this file and cannot see the R code in the **Source** pane, then the deployrInput() functions [cannot be rendered](deployr-repository-manager-about.md#permissions-policies) either.
+>If you do not own this file and cannot see the R code in the **Source** pane, then the deployrInput() functions [cannot be rendered](../what-is-operationalization.md#permissions-policies) either.
 
-By default, if you can access this file in the Repository Manager, then you are permitted to see any `deployrInput` widgets in this pane regardless of whether you own the file or not. However, if you do not own this file but know there are `deployrInput` declarations in the code and cannot see them here, it may be due a change in the server configuration [policies](deployr-repository-manager-about.md#permissions-policies) by the DeployR administrator that prohibits the loading and downloading of files that may contain code into an R session.
+By default, if you can access this file in the Repository Manager, then you are permitted to see any `deployrInput` widgets in this pane regardless of whether you own the file or not. However, if you do not own this file but know there are `deployrInput` declarations in the code and cannot see them here, it may be due a change in the server configuration [policies](../what-is-operationalization.md#permissions-policies) by the DeployR administrator that prohibits the loading and downloading of files that may contain code into an R session.
 
 ### Quick 'on-the-fly' Inputs
 

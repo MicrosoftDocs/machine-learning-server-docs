@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
->To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services as well as to execute code remotely. For a general introduction to R Server for operationalization, read the [About](../deployr-repository-manager/about.md) topic.
+>To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services as well as to execute code remotely. For a general introduction to R Server for operationalization, read the [About](../what-is-operationalization.md) topic.
 
 This guide is for system administrators of the operationalization feature in R Server. If you are responsible for creating or maintaining an evaluation or a production deployment of the R Server with the operationalization feature, then this guide is for you.
 
@@ -140,7 +140,7 @@ This section provides a quick summary of useful links for administrators working
 >Use the table of contents to find all of the guides and documentation needed by the administrator.
 
 **Key Documents**
--   [About Operationalization](../deployr-repository-manager/about.md)
+-   [About Operationalization](../what-is-operationalization.md)
 -   [Configuration](../install/operationalize-r-server-one-box-config.md)
 -   [R Package Management](configure-manage-r-packages.md)
 -   [Diagnostic Testing & Troubleshooting](configure-run-diagnostics.md)

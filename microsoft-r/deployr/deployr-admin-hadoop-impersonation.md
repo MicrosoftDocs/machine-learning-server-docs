@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
 
 Typically when invoking system commands from R, those commands will run as the user that started R. In the case of Hadoop, if user `abc` logs into a node on a Hadoop cluster and starts R, any *system* commands, such as `system("hadoop fs -ls /")`, will run as user `abc`. File permissions in HDFS will be honored accordingly, for example user `abc` will not be able to access files in HDFS if that user does not have proper permissions.
 

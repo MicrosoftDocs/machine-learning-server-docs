@@ -44,7 +44,7 @@ When DeployR processes a user login, there are two key steps involved:
 
 DeployR access privileges are determined by the roles assigned to a user. In the case of basic authentication, an administrator simply assigns roles to a user within the DeployR Administration Console.
 
->**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](deployr-admin-console-about.md).
+>**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](../what-is-operationalization.md).
 
 When you integrate with an external enterprise security solution, you want access privileges to be inherited from the external system. This is achieved with simple mappings in the DeployR configuration properties, which link external groups to internal roles.
 

@@ -31,7 +31,7 @@ ms.custom: ""
 
 Microsoft offers a Linux virtual machine (VM) on Azure that includes a preconfigured instance of [Microsoft R Server 8.0.5 for Linux](https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server-805). 
 
-This VM has Microsoft R Server 8.0.5 on CentOS version 6.8. As part of Microsoft R Server, this VM also includes a preinstalled instance of [DeployR Enterprise](../deployr/deployr-about.md) for deploying R analytics inside applications and backend systems. 
+This VM has Microsoft R Server 8.0.5 on CentOS version 6.8. As part of Microsoft R Server, this VM also includes a preinstalled instance of [DeployR Enterprise](../what-is-operationalization.md) for deploying R analytics inside applications and backend systems. 
 
 ## Provision the R Server Virtual Machine
 

@@ -55,7 +55,7 @@ The following additional components are included in Setup and required for an R 
 
 ## How to install
 
-This section walks you through an R Server 9.1 deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](../deployr-repository-manager/about.md).
+This section walks you through an R Server 9.1 deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](../what-is-operationalization.md).
 
 <a name="download"><a/>
 
@@ -166,7 +166,7 @@ The Windows installer and SQL Server installer create different library folder p
 
 As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install [SQL Server R Services](../r/concept-what-is-sql-server-r-services.md) as part of a multi-instance relational database engine service and then use each one independently.
 
-Another scalable topology is to install multiple R Servers, each configured as either a dedicated web node or compute node. Nodes can be clustered using NLB or Windows failover clustering. For more information, see [Operationalize your analytics](../deployr-repository-manager/about.md).
+Another scalable topology is to install multiple R Servers, each configured as either a dedicated web node or compute node. Nodes can be clustered using NLB or Windows failover clustering. For more information, see [Operationalize your analytics](../what-is-operationalization.md).
 
 ## Install earlier versions
 

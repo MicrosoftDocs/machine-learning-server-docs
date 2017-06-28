@@ -53,7 +53,7 @@ The following additional components are included in Setup and required for R Ser
 <a name="howtoinstall"></a>
 ## How to install
 
-This section walks you through an R Server 9.1.0 deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](../deployr-repository-manager/about.md) and use the MicrosoftML package.
+This section walks you through an R Server 9.1.0 deployment using the `install.sh` script. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](../what-is-operationalization.md) and use the MicrosoftML package.
 
 > [!Tip]
 > Review [recommendations and best practices](r-server-install-linux-manage-install.md) for deployments in locked down environments.

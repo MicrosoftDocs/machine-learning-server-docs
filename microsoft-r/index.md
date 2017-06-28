@@ -80,7 +80,7 @@ However, because you have R Client or R Server, your script can also include fun
 
 Learn more about Microsoft R in these articles:
 
-+ [Operationalizing R code with R Server](operationalize/about.md)
++ [Operationalizing R code with R Server](what-is-operationalization.md)
 
 + [What's new in R Server](rserver-whats-new.md)
 

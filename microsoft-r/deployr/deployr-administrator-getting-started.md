@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
 
 This guide is for system administrators of DeployR, the *R Integration Server*. If you are responsible for creating or maintaining an evaluation or a production deployment of the DeployR server, then this guide is for you.
 

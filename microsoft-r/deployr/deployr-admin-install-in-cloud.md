@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
 
 You can set up DeployR on **Microsoft Azure** or **AWS**. For each instance, be sure to:
 1. Set the server Web context to an external, public IP address and disable IP autodetection.

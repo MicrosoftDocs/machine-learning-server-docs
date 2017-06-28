@@ -28,7 +28,7 @@ ms.custom: ""
 
 The Files tab is the main tab in the Repository Manager and where all work begins. This tab gives you access to all of the repository-managed files you own as well as any other users' repository-managed files to which you have [access rights](deployr-repository-manager-files.md#about-file-properties).
 
-The set of file management tasks and interactions available to you depend not only on whether you [own](deployr-repository-manager-files.md#adding-and-removing-owners) the file or whether you have [access rights](deployr-repository-manager-files.md#about-file-properties), but also on the [policies](../deployr-repository-manager/deployr-repository-manager-about.md#permissions-policies) governing the server.
+The set of file management tasks and interactions available to you depend not only on whether you [own](deployr-repository-manager-files.md#adding-and-removing-owners) the file or whether you have [access rights](deployr-repository-manager-files.md#about-file-properties), but also on the [policies](../what-is-operationalization.md#permissions-policies) governing the server.
 
 ## About File Properties
 
@@ -92,7 +92,7 @@ If you have [access rights](deployr-repository-manager-files.md#about-file-prope
 - [Test R scripts](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md), including the review of [source code*](../deployr-repository-manager/../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code), [loading*](../deployr-repository-manager/../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#loading-data-into-the-r-session) of files into the R session, and testing of [modified input values*](../deployr-repository-manager/../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#supplying-input-values) in a debug environment (R scripts only)*
 - [Close](deployr-repository-manager-files.md#closing-files) files
 
-*Certain [server policies ](../deployr-repository-manager/deployr-repository-manager-about.md#permissions-policies)can affect your ability to see, download, and load files that aren't yours.
+*Certain [server policies ](../what-is-operationalization.md#permissions-policies)can affect your ability to see, download, and load files that aren't yours.
 
 ## Uploading Files
 
@@ -187,7 +187,7 @@ If you move a file into a directory in which a file by the same name already exi
 
 ## Opening Files
 
-If you see a file in the Files tab, you can open it. Your right to access, edit, and interact with files is determined in part by [ownership and access rights](deployr-repository-manager-files.md#about-file-properties) and also by [server policies](../deployr-repository-manager/deployr-repository-manager-about.md#permissions-policies).
+If you see a file in the Files tab, you can open it. Your right to access, edit, and interact with files is determined in part by [ownership and access rights](deployr-repository-manager-files.md#about-file-properties) and also by [server policies](../what-is-operationalization.md#permissions-policies).
 
 >If two owners are editing a file at the same time, you will be writing over each other's work. It is essential to coordinate with the [other owners](deployr-repository-manager-files.md#adding-and-removing-owners).
 

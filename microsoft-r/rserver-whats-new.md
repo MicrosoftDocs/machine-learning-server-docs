@@ -192,7 +192,7 @@ The operationalization feature can be configured [on a single machine](install/o
 
 In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Operationalization with R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/configure-start-for-administrators.md#security).
 
-For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](install/operationalize-r-server-one-box-config.md).
+For feature information and next steps, see [Operationalization with R Server](what-is-operationalization.md) and [Configure operationalization on R Server](install/operationalize-r-server-one-box-config.md).
 
 > [!NOTE]
 > In the context of operationalization, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure. Feature support is limited to a subset of the [supported R Server platforms](install/r-server-install-supported-platforms.md) has the list.

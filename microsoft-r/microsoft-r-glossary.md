@@ -134,7 +134,7 @@ The Intel® Math Kernel Library (Intel® MKL) is a library of optimized math rou
 
 <a name="o16n"></a>**Operationalizing Analytics**
 
-Configure R Server to act as a deployment engine to publish your analytics and enable them to be easily consumed in a production environment. [Learn more…](operationalize/about.md)
+Configure R Server to act as a deployment engine to publish your analytics and enable them to be easily consumed in a production environment. [Learn more…](what-is-operationalization.md)
 
 
 <a name="P"></a>
