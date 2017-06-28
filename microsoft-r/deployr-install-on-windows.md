@@ -413,7 +413,7 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 
 Please carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
 
->If you want to upgrade or reinstall your version or R or Microsoft R Server 2016, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
+>If you want to upgrade or reinstall your version or R or Microsoft R Server 2016, please [follow these instructions](deployr/deployr-admin-configure-reinstall-r.md).
 
 ### From Previous DeployR Version to DeployR for Microsoft R Server 2016 
 

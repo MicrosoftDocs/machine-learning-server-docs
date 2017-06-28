@@ -375,7 +375,7 @@ You cannot log into DeployR from two different accounts within the same brand of
 <br />
 ### Issues After Reinstalling Microsoft R or R
 
-If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open or need help troubleshooting, then follow [these instructions precisely](deployr-admin-configure-reinstall-r.md).
+If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open or need help troubleshooting, then follow [these instructions precisely](deployr/deployr-admin-configure-reinstall-r.md).
 
 <br />
 ### Upping R Session Memory Limits (Windows only)

@@ -181,7 +181,7 @@
 ##### [Using Hadoop Impersonation & DeployR](deployr-admin-hadoop-impersonation.md)
 ##### [R Package Management](deployr-admin-r-package-management.md)
 ##### [Updating DeployR after Java Update](deployr-admin-java-version.md)
-##### [Reinstalling or Upgrading the R Dependency](deployr-admin-configure-reinstall-r.md)
+##### [Reinstalling or Upgrading the R Dependency](deployr/deployr-admin-configure-reinstall-r.md)
 #### [Security on DeployR](deployr-admin-security/deployr-security.md)
 ##### [Introduction](deployr-admin-security/deployr-security.md)
 ##### [Authentication & Authorization](deployr-admin-security/deployr-security-authentication.md)

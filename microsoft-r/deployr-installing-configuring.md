@@ -722,7 +722,7 @@ Please carefully follow these migration instructions before you install a more r
 
 These migration steps apply to RevoDeployR 7.0 and DeployR 7.1 - 7.4.1:
 
->If you want to upgrade or reinstall your version or R or Microsoft R Server, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
+>If you want to upgrade or reinstall your version or R or Microsoft R Server, please [follow these instructions](deployr/deployr-admin-configure-reinstall-r.md).
 
 >**DeployR Enterprise Only:** To extend the DeployR server's grid beyond the **Default Grid Node**, install all of the grid nodes you want to use, and then configure them in **The Grid** tab in the **Administration Console**.
 >
