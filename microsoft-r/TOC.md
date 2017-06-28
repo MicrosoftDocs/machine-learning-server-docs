@@ -108,8 +108,8 @@
 #### [Get started on MapReduce](scaler-hadoop-getting-started.md)
 
 ### [R Server for Teradata DB](scaler-teradata-getting-started.md)
-#### [Install on Teradata](rserver-install-teradata-server.md)
-##### [Install R Server 9.0.1 on a Teradata Server](rserver-install-teradata-server.md)
+#### [Install on Teradata](install/r-server-install-teradata-server.md)
+##### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
 ##### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)
 ##### [Install R Server on a Teradata Client](install/r-server-install-teradata-client.md)
 #### [Get started: ScaleR on Teradata](scaler-teradata-getting-started.md)

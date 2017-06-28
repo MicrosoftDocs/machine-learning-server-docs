@@ -158,7 +158,7 @@ Prior to Microsoft R Server, the product was called Revolution R Enterprise (RRE
 
 Here is a list of the available archived documentation sets for RRE:
 * [RRE 8.0.0 Windows Install Guide](rserver-install-windows-800.md)
-* [RRE 8.0.0 Teradata Install Guide](rserver-install-teradata-server.md)
+* [RRE 8.0.0 Teradata Install Guide](install/r-server-install-teradata-server.md)
 * [RRE 8.0.0 Hadoop Install Guide](install/r-server-install-hadoop-800.md)
 * [RRE 8.0.0 Linux Install Guide](install/r-server-install-linux-server-800.md)
 * [RRE 7.5.0 Docs](http://packages.revolutionanalytics.com/doc/7.5.0/)

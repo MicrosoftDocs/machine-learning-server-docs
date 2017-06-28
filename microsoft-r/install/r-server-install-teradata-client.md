@@ -366,7 +366,7 @@ After installing your Teradata client software, you should test that you can com
 
 The connection string is typically quite long, but should remain contained on a single input line.
 
-The following commands can be used to verify that your Windows client can communicate with your Teradata data warehouse using the Revolution test database (instructions for creating that database are contained in the [*Microsoft R Server Server Installation Manual for Teradata*](../rserver-install-teradata-server.md):
+The following commands can be used to verify that your Windows client can communicate with your Teradata data warehouse using the Revolution test database (instructions for creating that database are contained in the [*Microsoft R Server Server Installation Manual for Teradata*](r-server-install-teradata-server.md):
 
 	query <- "SELECT tablename FROM dbc.tables WHERE databasename = 'RevoTestDB' order by tablename"
 	connectionString <- "Driver=Teradata;DBCNAME=157.54.160.204;Database=RevoTestDB;Uid=RevoTester;pwd=RevoTester;"

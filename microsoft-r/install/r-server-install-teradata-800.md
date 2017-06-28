@@ -26,7 +26,7 @@ ms.custom: ""
 
 # R Server 8.0 Installation Guide for Teradata Servers
 
-Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Teradata](../rserver-install-teradata-server.md).
+Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Teradata](r-server-install-teradata-server.md).
 
 Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for installing Microsoft R Server 8.0 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
 

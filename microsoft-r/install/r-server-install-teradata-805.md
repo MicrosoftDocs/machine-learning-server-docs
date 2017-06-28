@@ -25,7 +25,7 @@ ms.custom: ""
 
 # Install Microsoft R Server 2016 on Teradata Servers
 
-Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Teradata](../rserver-install-teradata-server.md).
+Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Teradata](r-server-install-teradata-server.md).
 
 ## About the R Server 2016 installer
 
