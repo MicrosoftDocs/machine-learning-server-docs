@@ -341,7 +341,7 @@ If you want to start over, see [Uninstall Microsoft R Server](rserver-install-un
 
 ## Next steps
 
-Developers might want to install DeployR, an optional component that provides a server-based framework for running R code in real time. See [DeployR Installation](deployr-installation.md) for setup instructions.
+Developers might want to install DeployR, an optional component that provides a server-based framework for running R code in real time. See [DeployR Installation](deployr/deployr-installation.md) for setup instructions.
 
 To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](scaler-hadoop-getting-started.md).
 

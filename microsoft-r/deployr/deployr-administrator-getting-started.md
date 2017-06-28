@@ -40,7 +40,7 @@ As an administrator, your key responsibilities are to ensure the DeployR server 
 
 Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to [troubleshoot](#troubleshooting) your deployment. For that we provide diagnostic tools and numerous recommendations.
 
-But first, you must install the server. Comprehensive installation guides are available [here](../deployr-installation.md).
+But first, you must install the server. Comprehensive installation guides are available [here](deployr-installation.md).
 
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
@@ -126,7 +126,7 @@ This section provides a quick summary of useful links for administrators working
 
 **Key Documents**
 -   [About DeployR](deployr-about.md)
--   [Installation & Configuration](../deployr-installation.md)
+-   [Installation & Configuration](deployr-installation.md)
 -   [Security](../deployr-admin-security/deployr-security.md)
 -   [R Package Management](deployr-admin-r-package-management.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)

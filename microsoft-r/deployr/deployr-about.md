@@ -124,8 +124,8 @@ Learn more in the [Getting Started Guide for Application Developers](deployr-app
 
 Not unlike the responsibilities typically associated with managing and maintaining other server software, DeployR system administrators are responsible for:
 
-1.  [Provisioning suitable hardware](../deployr-installation.md) in preparation for a DeployR install.
-2.  Installing DeployR using [these instructions](../deployr-installation.md).
+1.  [Provisioning suitable hardware](deployr-installation.md) in preparation for a DeployR install.
+2.  Installing DeployR using [these instructions](deployr-installation.md).
 3.  Customizing DeployR [server policies](deployr-admin-managing-server-policies.md).
 4.  Creating and managing DeployR [user accounts](../deployr-admin-console/deployr-admin-console-user-accounts.md).
 5.  Customizing DeployR [security policies](../deployr-admin-security/deployr-security.md).
