@@ -69,12 +69,12 @@ A list of the current service options.
  
  ##See Also
  
-Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
-[getService](../../r-reference/mrsdeploy/getservice.md), [listServices](../../r-reference/mrsdeploy/listservices.md),
-[print.serviceDetails](../../r-reference/mrsdeploy/print-servicedetails.md),
-[publishService](../../r-reference/mrsdeploy/publishservice.md),
-[summary.serviceDetails](summary.serviceDetails.md),
-[updateService](updateService.md)
+Other service methods: [deleteService](deleteservice.md),
+[getService](getservice.md), [listServices](listservices.md),
+[print.serviceDetails](print-servicedetails.md),
+[publishService](publishservice.md),
+[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
+[updateService](../../mrsdeploy/packagehelp/updateservice.md)
    
  ##Examples
 
