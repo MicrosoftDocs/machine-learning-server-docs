@@ -402,7 +402,7 @@
 #### [rxHistogram](r-reference/revoscaler/rxhistogram.md) 
 #### [RxHPCServer-class](r-reference/revoscaler/rxhpcserver-class.md) 
 #### [rxImport](r-reference/revoscaler/rximport.md) 
-#### [RxInSqlServer-class](scaler/packagehelp/RxInSqlServer-class.md) 
+#### [RxInSqlServer-class](r-reference/revoscaler/rxinsqlserver-class.md) 
 #### [RxInSqlServer](scaler/packagehelp/RxInSqlServer.md) 
 #### [rxInstalledPackages](scaler/packagehelp/rxInstalledPackages.md) 
 #### [rxInstallPackages](scaler/packagehelp/rxInstallPackages.md) 

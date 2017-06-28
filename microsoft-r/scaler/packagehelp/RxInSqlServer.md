@@ -123,7 +123,7 @@ Currently only supported in Windows.
  ##See Also
  
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[RxInSqlServer-class](RxInSqlServer-class.md),
+[RxInSqlServer-class](../../r-reference/revoscaler/rxinsqlserver-class.md),
 [RxSqlServerData](RxSqlServerData.md),
 [RxInTeradata](RxInTeradata.md),
 [rxOptions](rxOptions.md).

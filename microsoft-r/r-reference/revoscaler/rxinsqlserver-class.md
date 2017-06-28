@@ -127,8 +127,8 @@ Class RxComputeContext, by class "RxLocalSeq", distance 1.
  
  ##See Also
  
-[RxInSqlServer](RxInSqlServer.md),
-[RxSqlServerData](RxSqlServerData.md)
+[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),
+[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md)
    
  ##Examples
 
