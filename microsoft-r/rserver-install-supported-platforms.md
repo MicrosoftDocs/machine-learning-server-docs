@@ -113,7 +113,7 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 - Spark version: 1.5.0-1.6.1 (if using Spark). Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
 **DeployR**
-- [Prerequisites for DeployR on Linux](deployr-install-on-linux.md#system-requirements)
+- [Prerequisites for DeployR on Linux](deployr/deployr-install-on-linux.md#system-requirements)
 - [Prerequisites for DeployR on Windows](deployr-install-on-windows.md#system-requirements)
 
 ## Microsoft R Server 8.0.3

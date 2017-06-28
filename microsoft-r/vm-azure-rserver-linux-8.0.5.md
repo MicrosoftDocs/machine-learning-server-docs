@@ -123,7 +123,7 @@ To configure the DeployR instance:
    ./adminUtilities.sh
    ```
 
-1. [Set the DeployR administrator password](deployr-install-on-linux.md#postinstall).
+1. [Set the DeployR administrator password](deployr/deployr-install-on-linux.md#postinstall).
 
 1. [Define the DeployR Web context](deployr/deployr-admin-install-in-cloud.md#enabling-deployr-on-azure).
 

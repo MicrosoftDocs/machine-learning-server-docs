@@ -25,9 +25,9 @@ ms.custom: ""
 ---
 # Installing DeployR for Microsoft R Server 2016 (8.0.5) on Linux
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 ##Before You Begin
 
@@ -66,10 +66,10 @@ Before you can install DeployR, you must manually install and configure the foll
 | Dependency                                                                                      | DeployR Server                                                                      | DeployR Grid Node                                                                   |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
 | Java™ Runtime Environment 8                                                                     | Yes                                                                                 | No                                                                                  |
-| [Microsoft R Server 2016](rserver-install-linux-server.md) and its dependencies | Yes                                                                                 | Yes                                                                                 |
+| [Microsoft R Server 2016](../rserver-install-linux-server.md) and its dependencies | Yes                                                                                 | Yes                                                                                 |
 | DeployR Rserve 8.0.5                                                                            | Yes                                                                                 | Yes                                                                                 |
 | make, gcc, gcc-c++, gfortran, cairo-devel, libicu, libicu-devel                                          | Yes                                                                                 | Yes                                                                                 |
-| nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.  | Yes, for <br />[external directories](deployr/deployr-admin-manage-big-data.md)  | Yes, for <br />[external directories](deployr/deployr-admin-manage-big-data.md)  |
+| nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  |
 .
 
 **To install the required dependencies:**
@@ -85,7 +85,7 @@ Before you can install DeployR, you must manually install and configure the foll
 
             export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45/jre
 
-3.  Install [Microsoft R Server 2016](rserver-install-linux-server.md), which includes ScaleR for multi-processor and big data support. Microsoft R Server can be downloaded from Volume License Service Center, MSDN and Visual Studio Dev Essentials. The file you download will also contain the DeployR installer.
+3.  Install [Microsoft R Server 2016](../rserver-install-linux-server.md), which includes ScaleR for multi-processor and big data support. Microsoft R Server can be downloaded from Volume License Service Center, MSDN and Visual Studio Dev Essentials. The file you download will also contain the DeployR installer.
 
 1.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them will ensure that the repositories contain the latest software. Run the following command:
     + For Redhat / CentOS:
@@ -208,27 +208,27 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. If desired, **set up grid nodes**. You can install and configure any [additional grid nodes](#gridnodes).
 
-1. If you want to [use non-default port numbers for DeployR](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
+1. If you want to [use non-default port numbers for DeployR](deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
 
-   >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport). 
+   >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](deployr-admin-diagnostics-troubleshooting.md#changeport). 
 
 1. If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
 
-1. If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr/deployr-admin-install-in-cloud.md).
+1. If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
-1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
-1. **Review security documentation** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](deployr-admin-security/deployr-security.md) and the [Enabling HTTPs](deployr-admin-security/deployr-security-https.md) topic.
+1. **Review security documentation** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](../deployr-admin-security/deployr-security.md) and the [Enabling HTTPs](../deployr-admin-security/deployr-security-https.md) topic.
 
    >We strongly recommended that SSL/HTTPS be enabled in **_all production environments_**.
 
 1. **Check the web context**. If the wrong IP was detected during installation, [update that Web context](#configure-public-access) now.
 
-1. **Get DeployR client-side developer tools**, including the [RBroker framework and client libraries](deployr-tools-and-samples.md).
+1. **Get DeployR client-side developer tools**, including the [RBroker framework and client libraries](../deployr-tools-and-samples.md).
 
-1. **Create accounts for your users** in the [Administration Console](./deployr-admin-console/deployr-admin-console-user-accounts.md). Then, provide each user with their username and password as well as the address of the DeployR landing page.
+1. **Create accounts for your users** in the [Administration Console](../deployr-admin-console/deployr-admin-console-user-accounts.md). Then, provide each user with their username and password as well as the address of the DeployR landing page.
 
-1. **Learn more**. Read the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) guide. You can also read and share the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guides.
+1. **Learn more**. Read the [Administrator Getting Started](deployr-administrator-getting-started.md) guide. You can also read and share the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guides.
 
 ## Configuring DeployR
 
@@ -252,10 +252,10 @@ If any of the following cases exist, update your firewall manually:
 
 -   If connecting to a **remote PostgreSQL database**, be sure to open port 5432 to the public IP of the DeployR server.
 
--   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr/deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
+-   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
-> If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr/deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
->[You can change any DeployR ports](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
+> If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
+>[You can change any DeployR ports](deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
 <a name="configuring-public-access"></a>
 ### Configure Public Access
 
@@ -274,7 +274,7 @@ To fix this issue, you must define the appropriate external server IP address an
 
 3.  From the sub-menu, enter `A` to specify a different IP or fully qualified domain name (FQDN).
 
-4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr/deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
+4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
 
 5.  Confirm the new value. Note that the IP autodetection will be turned off when you update the IP/FQDN.
 
@@ -288,7 +288,7 @@ To fix this issue, you must define the appropriate external server IP address an
 When you install the DeployR server, one local grid node is installed automatically for you. You can also point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. This option also assumes that you have already installed the main [DeployR server](#installserver).
 
 >[!TIP]
->-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr/deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
+>-   For help in determining the right number of grid nodes for you, refer to the [Scale & Throughput](deployr-admin-scale-and-throughput.md#tuning-grid-capacity) document.
 >-   Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.
 >-   Always install the main DeployR server first.
 >-   Install each grid node on a separate host machine.
@@ -340,15 +340,15 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
     1.  Click **New Grid Node**.
 
-    2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** &nbsp; [using these instructions](deployr/deployr-admin-managing-the-grid.md#creating-new-nodes). 
+    2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** &nbsp; [using these instructions](deployr-admin-managing-the-grid.md#creating-new-nodes). 
     
-    3.  When you try to add that new grid node configuration, DeployR will attempt to validate your settings. [Learn more...](deployr/deployr-admin-managing-the-grid.md#node-validation-and-errors)
+    3.  When you try to add that new grid node configuration, DeployR will attempt to validate your settings. [Learn more...](deployr-admin-managing-the-grid.md#node-validation-and-errors)
 
     4.  Run a diagnostic test of each grid node individually as follows:
 
         1.  Enable **only** that node in the main **The Grid** tab.
 
-        2.  Return to the landing page to run the [diagnostic check](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for help.
+        2.  Return to the landing page to run the [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
 
     5.  Repeat these steps for each grid node.
 
@@ -373,7 +373,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
 
     -   `$DEPLOYR_HOME/deployr/tools/lib`
 
-5.  [Stop the DeployR server](deployr/deployr-common-administration-tasks.md#startstop).
+5.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
 
 6.  Update the database properties to point to the new database as follows:
 
@@ -415,7 +415,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
 
     4.  Once the DeployR server has been successfully restarted, return the main menu.
 
-    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
     6.  Exit the utility.
 
@@ -441,7 +441,7 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 
 2.  Go to the **Administration Console**.
 
-3.  Go to the **Users** tab and [use these instructions](./deployr-admin-console/deployr-admin-console-user-accounts.md) to:
+3.  Go to the **Users** tab and [use these instructions](../deployr-admin-console/deployr-admin-console-user-accounts.md) to:
 
     -   Enable the `testuser` account.
 
@@ -452,7 +452,7 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 
 Please carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
 
->If you want to upgrade or reinstall your version or R or Microsoft R Server 2016, please [follow these instructions](deployr/deployr-admin-configure-reinstall-r.md).
+>If you want to upgrade or reinstall your version or R or Microsoft R Server 2016, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
 
 ### From Previous DeployR Version to DeployR for Microsoft R Server 2016:
 
@@ -497,7 +497,7 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
         >[!WARNING]
         >Grid node configurations will not work after migration due to their dependence on a specific version of DeployR. After migrating, you will notice that the old grid configuration has been carried over to the newly installed DeployR version. However, since those grid nodes are not compatible with the DeployR server, they appear highlighted in the Administration Console when you first start the server. This highlighting indicates that a node is unresponsive. We recommend deleting these old grid nodes in the Administration Console the first time you log into the console.
 
-9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR for Microsoft R Server 2016, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
+9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR for Microsoft R Server 2016, update the client files so that they use the current version of `jsDeployR` [client library](../deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
 
 <br>
 ### From DeployR for Microsoft R Server 2016 to Another Instance of This Version

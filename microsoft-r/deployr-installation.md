@@ -41,7 +41,7 @@ The following guides are available to help you install and configure DeployR.
 | |Supported Platforms |Installation Guide|Post-Installation Steps|
 |------------------------|:----------------:|:----------------:|:----------------:|
 |**_DeployR on Windows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_**                 |[View](deployr-install-on-windows.md#system-requirements)|[View](deployr-install-on-windows.md)|[View](deployr-install-on-windows.md#post-installation-steps)|
-|**_DeployR on Linux_**                   |[View](deployr-install-on-linux.md#system-requirements)|[View](deployr-install-on-linux.md)|[View](deployr-install-on-linux.md#post-installation-steps)|
+|**_DeployR on Linux_**                   |[View](deployr/deployr-install-on-linux.md#post-installation-steps)|
 
 
 <br />

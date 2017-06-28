@@ -95,7 +95,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
 <br />
 ####Securing connections between DeployR Web server and the database
 
-If your corporate policies require that you secure the communications between the Web server and the DeployR database, then you should configure DeployR to use either a [SQL Server database](../deployr-install-on-windows.md#sqlserver) or a [PostgreSQL database](../deployr-install-on-linux.md#postgresql) rather than the default H2 database.
+If your corporate policies require that you secure the communications between the Web server and the DeployR database, then you should configure DeployR to use either a [SQL Server database](../deployr-install-on-windows.md#sqlserver) or a [PostgreSQL database](../deployr/deployr-install-on-linux.md#postgresql) rather than the default H2 database.
 
 After configuring DeployR to use one of those databases, you must also configure properly secure the database connections and force encryption.
 

@@ -97,7 +97,7 @@ On the main DeployR server machine:
 
 On each DeployR grid node machine:
 
-1. Uninstall the DeployR grid node on [DeployR for Microsoft R Server](../deployr-install-on-linux.md#uninstalling-deployr) | [DeployR 8.0.0](../../deployr-installing-configuring.md#uninstalling-deployr).
+1. Uninstall the DeployR grid node on [DeployR for Microsoft R Server](deployr-install-on-linux.md#uninstalling-deployr) | [DeployR 8.0.0](../../deployr-installing-configuring.md#uninstalling-deployr).
 2.  Uninstall Microsoft R Server using the instructions provided with that product.
 3.  Install Microsoft R Server and all its prerequisites as described in that product's instructions.
 4.  [Install the DeployR grid node](). on [DeployR for Microsoft R Server](deployr-install-on-linux.md#install-deployr-grid-nodes) | [DeployR 8.0.0](../../deployr-installing-configuring.md#grid-node-install).
