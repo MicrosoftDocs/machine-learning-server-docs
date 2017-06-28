@@ -298,7 +298,7 @@
 ###[updateService](r-reference/mrsdeploy/updateservice.md)
 
 ## [olapR](olapr/Olapr.md)
-###[Execute2D](olapR/packagehelp/Execute2D.md) 
+###[Execute2D](r-reference/olapr/execute2d.md) 
 ###[ExecuteMD](olapR/packagehelp/ExecuteMD.md) 
 ###[Explore](olapR/packagehelp/Explore.md) 
 ###[OlapConnection](olapR/packagehelp/OlapConnection.md) 
