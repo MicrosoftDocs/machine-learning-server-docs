@@ -145,7 +145,7 @@ The Custom Service Descriptor (CSD) enables MRS monitoring and administration fr
 
 ## Next steps
 
-After you generate a parcel and CSD and copy the files to the appropriate repositories, the next steps are performed in Cloudera Manager. Start at the Home page to [deploy the parcel and activate Microsoft R Server in CDH](rserver-install-cloudera-deploy-activate.md).
+After you generate a parcel and CSD and copy the files to the appropriate repositories, the next steps are performed in Cloudera Manager. Start at the Home page to [deploy the parcel and activate Microsoft R Server in CDH](install/r-server-install-cloudera-deploy-activate.md).
 
 ## See Also
 
