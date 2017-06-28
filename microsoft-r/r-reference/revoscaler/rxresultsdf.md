@@ -116,12 +116,12 @@ a data frame containing the computed counts, sums, or means.
  
  ##See Also
  
-[rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md)
-[rxCube](../../r-reference/revoscaler/rxcube.md)
-[rxLinMod](../../r-reference/revoscaler/rxlinmod.md)
-[rxLogit](../../r-reference/revoscaler/rxlogit.md)
-[rxSummary](rxSummary.md)
-[rxMarginals](../../r-reference/revoscaler/rxmarginals.md)
+[rxCrossTabs](rxcrosstabs.md)
+[rxCube](rxcube.md)
+[rxLinMod](rxlinmod.md)
+[rxLogit](rxlogit.md)
+[rxSummary](../../scaler/packagehelp/rxsummary.md)
+[rxMarginals](rxmarginals.md)
    
  ##Examples
 
