@@ -28,7 +28,7 @@ ms.custom: ""
 
 ## Quick Overview
 
-Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for configuring local workstations to submit jobs to run within your Teradata data warehouse. For installing Microsoft R Server for Teradata in the Teradata data warehouse, see the companion manual [*Microsoft R Server Server Installation Manual for Teradata*](rserver-install-teradata-client.md).
+Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This manual provides detailed instructions for configuring local workstations to submit jobs to run within your Teradata data warehouse. For installing Microsoft R Server for Teradata in the Teradata data warehouse, see the companion manual [*Microsoft R Server Server Installation Manual for Teradata*](r-server-install-teradata-client.md).
 
 > [!NOTE]
 > Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in this manual.
@@ -350,13 +350,13 @@ The RODBC package is not required to use RxTeradata, but it can be useful for ti
 
 To download and install Microsoft R Server, you will need an MSDN subscription or a Microsoft Volume License Center sign-in. For development purposes, you can install the free Developer edition of R Server on Linux or Windows:
 
-+ [Install R Server for Linux](install/r-server-install-linux-server.md)	
-+ [Install R Server for Windows](rserver-install-windows.md)
++ [Install R Server for Linux](r-server-install-linux-server.md)	
++ [Install R Server for Windows](../rserver-install-windows.md)
 
 Optionally, you can use Microsoft R Client. It also runs on Linux and Windows:
 
-+ [Install R Client on Linux](r-client-install-linux.md)	
-+ [Install R Client on Windows](r-client-install-windows.md)
++ [Install R Client on Linux](../r-client-install-linux.md)	
++ [Install R Client on Windows](../r-client-install-windows.md)
 
 ## Testing the Client Installation
 
@@ -366,7 +366,7 @@ After installing your Teradata client software, you should test that you can com
 
 The connection string is typically quite long, but should remain contained on a single input line.
 
-The following commands can be used to verify that your Windows client can communicate with your Teradata data warehouse using the Revolution test database (instructions for creating that database are contained in the [*Microsoft R Server Server Installation Manual for Teradata*](rserver-install-teradata-server.md):
+The following commands can be used to verify that your Windows client can communicate with your Teradata data warehouse using the Revolution test database (instructions for creating that database are contained in the [*Microsoft R Server Server Installation Manual for Teradata*](../rserver-install-teradata-server.md):
 
 	query <- "SELECT tablename FROM dbc.tables WHERE databasename = 'RevoTestDB' order by tablename"
 	connectionString <- "Driver=Teradata;DBCNAME=157.54.160.204;Database=RevoTestDB;Uid=RevoTester;pwd=RevoTester;"

@@ -40,10 +40,10 @@ You can download Microsoft R Server 2016 (version 8.0.5) for Teradata from [here
 
 ## Quick Overview
 
-Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation for Teradata](../rserver-install-teradata-client.md).
+Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation for Teradata](r-server-install-teradata-client.md).
 
 >[!NOTE]
->Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, skip installing R Server in your Teradata data warehouse, but do configure your local workstations per [Microsoft R Server Client Installation for Teradata](../rserver-install-teradata-client.md).
+>Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, skip installing R Server in your Teradata data warehouse, but do configure your local workstations per [Microsoft R Server Client Installation for Teradata](r-server-install-teradata-client.md).
 
 ## System Requirements
 
