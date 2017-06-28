@@ -55,7 +55,7 @@ summary  (object, top = 20, ...)
   
   
  ### `top`
- Specifies the count of top coefficients to show in the summary for linear models such as [rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md) and  [rxFastLinear](rxFastLinear.md). The bias appears first, followed by other weights, sorted by their absolute values in descending order. If set to `NULL`,  all non-zero coefficients are shown. Otherwise, only the first `top`coefficients are shown. 
+ Specifies the count of top coefficients to show in the summary for linear models such as [rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md) and  [rxFastLinear](../../microsoftml/packagehelp/rxfastlinear.md). The bias appears first, followed by other weights, sorted by their absolute values in descending order. If set to `NULL`,  all non-zero coefficients are shown. Otherwise, only the first `top`coefficients are shown. 
   
   
   
@@ -76,7 +76,7 @@ returns a list that includes the original function call and the underlying
 parameters used. The `coef` method returns a named vector of weights,
 processing information from the model object.
 
-For [rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md), the following statistics may also
+For [rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md), the following statistics may also
 present in the summary when `showTrainingStats` is set to `TRUE`.
 
 
@@ -117,9 +117,9 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
-[rxFastLinear](rxFastLinear.md), [rxOneClassSvm](rxOneClassSvm.md),
-[rxNeuralNet](rxNeuralNet.md), [rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md).
+[rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md), [rxFastForest](../../microsoftml/packagehelp/rxfastforest.md),
+[rxFastLinear](../../microsoftml/packagehelp/rxfastlinear.md), [rxOneClassSvm](../../microsoftml/packagehelp/rxoneclasssvm.md),
+[rxNeuralNet](../../microsoftml/packagehelp/rxneuralnet.md), [rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md).
    
  ##Examples
 

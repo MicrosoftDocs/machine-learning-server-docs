@@ -239,7 +239,7 @@
 ### [logisticRegression](microsoftml/packagehelp/logisticRegression.md) 
 ### [loss](r-reference/microsoftml/loss.md)
 ### [minCount](r-reference/microsoftml/mincount.md)
-### [mlModel](microsoftml/packagehelp/mlModel.md)
+### [mlModel](r-reference/microsoftml/mlmodel.md)
 ### [mutualInformation](microsoftml/packagehelp/mutualInformation.md)
 ### [NeuralNet](microsoftml/packagehelp/NeuralNet.md)
 ### [ngram](microsoftml/packagehelp/ngram.md)

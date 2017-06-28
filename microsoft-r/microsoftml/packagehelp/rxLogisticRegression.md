@@ -103,7 +103,7 @@ Machine Learning Logistic Regression
   
   
  ### `showTrainingStats`
- Specify `TRUE` to show the statistics of  training data and the trained model; otherwise, `FALSE`. The  default value is `FALSE`. For additional information about model  statistics, see [summary.mlModel](mlModel.md). 
+ Specify `TRUE` to show the statistics of  training data and the trained model; otherwise, `FALSE`. The  default value is `FALSE`. For additional information about model  statistics, see [summary.mlModel](../../r-reference/microsoftml/mlmodel.md). 
   
   
   
