@@ -35,7 +35,7 @@ If you are new to both R and Microsoft R, this tutorial introduces you to 25 (or
 This tutorial starts with base R commands before transitioning to RevoScaleR functions in Microsoft R. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](r/concept-what-is-compute-context.md) to R Server.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](../scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to R Server.
 
 ## Prerequisites
 
@@ -461,9 +461,9 @@ The **RevoScaleR** package, included in Microsoft R Server and R Client, provide
 
 ### Load Data with *rxImport*
 
-The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a [locally installed ODBC driver](r/how-to-revoscaler-data-odbc.md) for your database to access data on a local or remote computer. 
+The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a [locally installed ODBC driver](how-to-revoscaler-data-odbc.md) for your database to access data on a local or remote computer. 
 
-Let’s start simply by using a delimited text file available in the [built-in sample data directory](r/sample-built-in-data.md) of the **RevoScaleR** package. We’ll store the location of the file in a character string (*inDataFile*), then import the data into an in-memory data set (data frame) called *mortData*:
+Let’s start simply by using a delimited text file available in the [built-in sample data directory](sample-built-in-data.md) of the **RevoScaleR** package. We’ll store the location of the file in a character string (*inDataFile*), then import the data into an in-memory data set (data frame) called *mortData*:
 
 	inDataFile <- file.path(rxGetOption("sampleDataDir"), "mortDefaultSmall2000.csv")
 
@@ -725,6 +725,6 @@ Note that because we have specified an output file when importing the data, the 
 
 Continue on to these tutorials to work with larger data set using the RevoScaleR functions:
 
-+ [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)	
-+ [Loan data analysis](scaler-getting-started-1-example-loan-data.md)	
-+ [Census data analysis](scaler-getting-started-2-example-census-data.md)	
++ [Flight delays data analysis](../scaler-getting-started-3-analyze-large-data.md)	
++ [Loan data analysis](../scaler-getting-started-1-example-loan-data.md)	
++ [Census data analysis](../scaler-getting-started-2-example-census-data.md)	

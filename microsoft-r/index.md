@@ -44,7 +44,7 @@ In minutes, you can step through a classic what-if problem using sample data and
 
 * [Quickstart: Deploy R code as a web service](operationalize/quickstart-publish-r-web-service.md) 
 
-* [Tutorial: Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md) 
+* [Tutorial: Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md) 
 
 * [Tutorial: Import and transform data](scaler-getting-started-data-import-exploration.md)  
 

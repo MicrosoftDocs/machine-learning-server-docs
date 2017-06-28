@@ -10,7 +10,7 @@
 
 # Get started with RevoScaleR
 ## [Tutorials](r/tutorial-introduction.md)
-### [Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md)
+### [Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md)
 ### [Import and transform data](scaler-getting-started-data-import-exploration.md)
 ### [Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md)
 ## Work with larger datasets
