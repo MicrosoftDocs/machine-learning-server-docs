@@ -364,7 +364,7 @@
 #### [RxDistributedHpa-class](r-reference/revoscaler/rxdistributedhpa-class.md) 
 #### [rxDistributeJob](r-reference/revoscaler/rxdistributejob.md) 
 #### [rxDTree](r-reference/revoscaler/rxdtree.md) 
-#### [rxDTreeBestCp](scaler/packagehelp/rxDTreeBestCp.md) 
+#### [rxDTreeBestCp](r-reference/revoscaler/rxdtreebestcp.md) 
 #### [rxElemArg](scaler/packagehelp/rxElemArg.md) 
 #### [rxExec](scaler/packagehelp/rxExec.md)
 #### [rxExecBy](scaler/packagehelp/rxExecBy.md) 
