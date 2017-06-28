@@ -128,7 +128,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 2.  Installing DeployR using [these instructions](deployr-installation.md).
 3.  Customizing DeployR [server policies](deployr-admin-managing-server-policies.md).
 4.  Creating and managing DeployR [user accounts](../deployr-admin-console/deployr-admin-console-user-accounts.md).
-5.  Customizing DeployR [security policies](../deployr-admin-security/deployr-security.md).
+5.  Customizing DeployR [security policies](deployr-security.md).
 6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
 [Consult the administration documentation](deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
@@ -138,7 +138,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 >
 >Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
 >
->Learn more about authentication, access controls, and privacy with DeployR in our [Security](../deployr-admin-security/deployr-security.md) guide.
+>Learn more about authentication, access controls, and privacy with DeployR in our [Security](deployr-security.md) guide.
 
 ## Architecture
 
