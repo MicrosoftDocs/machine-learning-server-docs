@@ -180,7 +180,7 @@ If you are a Java, JavaScript or .NET developer, start with the official [RBroke
 
 *What if the [RBroker Framework](#rbroker-framework) doesn't give me everything I need?*
 
-They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](../deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api-specification).
+They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api-specification).
 
 ### API Specification
 
@@ -208,7 +208,7 @@ The following tutorials are available:
 
 The following tutorials are available:
 
--   The [Client Library Basics](https://github.com/Microsoft/java-example-client-basics) code tutorial demonstrates a wide range of basic functionalities available on the DeployR client library. Each code example brings to life the ideas introduced by the basic [Client Library Tutorial](../deployr-client-library.md).
+-   The [Client Library Basics](https://github.com/Microsoft/java-example-client-basics) code tutorial demonstrates a wide range of basic functionalities available on the DeployR client library. Each code example brings to life the ideas introduced by the basic [Client Library Tutorial](deployr-client-library.md).
 
 -   The [Client Library Data I/O](https://github.com/Microsoft/java-example-client-data-io) code tutorial demonstrates how different types of data inputs and outputs can be sent to and retrieved from DeployR-managed R sessions when you execute R scripts or code using the client library.
 

@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Client Library Tutorial
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 ## Introduction
 
@@ -38,7 +38,7 @@ To further simplify the integration of DeployR services within client applicatio
 
 >**Try Out Our Examples!** Explore the client library examples for [Java, ](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
 
->Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
+>Check out the [*RBroker Framework*](../deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
 
 ### API Overview
 
@@ -60,7 +60,7 @@ This section briefly introduces the top-level R analytics services exposed on th
 
     Providing [*authenticated services*](#authenticated-services) related to R script, model and data file persistence plus *authenticated* and [*anonymous services*](#anonymous-services) related to analytics Web service execution.
 
-All services on the DeployR API are documented in detail in the [API Reference Guide](deployr/deployr-api-reference.md).
+All services on the DeployR API are documented in detail in the [API Reference Guide](deployr-api-reference.md).
 
 ### Hello World Example
 
@@ -270,7 +270,7 @@ The following sections introduce the services themselves and demonstrate how the
 <a name="authenticated-projects"></a>
 ### Project Services
 
-A project is simply a DeployR-managed R session. Any project created by an authenticated user is referred to as an [Authenticated Project](deployr/deployr-api-reference.md#authenticated-projects). There are three types of *authenticated project*:
+A project is simply a DeployR-managed R session. Any project created by an authenticated user is referred to as an [Authenticated Project](deployr-api-reference.md#authenticated-projects). There are three types of *authenticated project*:
 
 1.  Temporary Project - a stateful, transient R session offering unrestricted API access that lives only for the duration of the current user HTTP session or until explicitly closed.
 
@@ -926,7 +926,7 @@ The following code snippets demonstrate some of the ways the client libraries ma
 
 ### Repository Services
 
-The [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md) is a tool, delivered as an easy-to-use Web interface, that serves as a bridge between the R scripts, models, and data created in existing analytics tools and the deployment of that work into the DeployR repository to support the development of client applications and integrations.
+The [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md) is a tool, delivered as an easy-to-use Web interface, that serves as a bridge between the R scripts, models, and data created in existing analytics tools and the deployment of that work into the DeployR repository to support the development of client applications and integrations.
 
 That tool uses the full range of *repository services* on the DeployR API to deliver it's many *file* and *directory* related functionalities. Your own applications can also leverage these sames services as needed. The following code snippets demonstrate some of the ways the client libraries make these services available.
 
@@ -1110,7 +1110,7 @@ That tool uses the full range of *repository services* on the DeployR API to del
     options.descr = "Quarterly report.";
     RRepositoryFile repoFile = rUser.uploadFile(fileName, options);
 
->See the [Working with the Repository APIs](deployr/deployr-api-reference.md#repository) chapter for detailed information regarding working with repository-managed files and directories.
+>See the [Working with the Repository APIs](deployr-api-reference.md#repository) chapter for detailed information regarding working with repository-managed files and directories.
 
 ## Anonymous Services
 
@@ -1226,7 +1226,7 @@ The following code snippets demonstrate how the client libraries make these serv
     //
     exec = rClient.executeExternal(regressionURL, options);
 
->See the [Anonymous Projects](deployr/deployr-api-reference.md#r-for-application-developers) section for further details.
+>See the [Anonymous Projects](deployr-api-reference.md#r-for-application-developers) section for further details.
 
 ## Standard Execution Model
 
@@ -2453,7 +2453,7 @@ The following code snippets demonstrate the mechanism for creating these types o
     factorVector.Add("e");
     RFactor rFactor = RDataFactory.createFactor("myfactor", factorVector);
 
->See the [Web Service API Data Encodings](deployr/deployr-api-reference.md#encoding) section for further details.
+>See the [Web Service API Data Encodings](deployr-api-reference.md#encoding) section for further details.
 
 ## R Object Data Decoding
 

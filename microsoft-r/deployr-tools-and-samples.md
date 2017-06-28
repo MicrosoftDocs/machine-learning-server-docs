@@ -51,7 +51,7 @@ The RBroker Framework is the simplest way to integrate R Analytics into any Java
 
 The DeployR API exposes a wide range of R analytics services to client application developers. If the RBroker Framework doesn't give you exactly what you need then you can get access to the full DeployR API using our client libraries. We currently provide native client library support for Java, JavaScript or .NET developers.
 
-1.  Read the [**Client Library Tutorial**](deployr-client-library.md)
+1.  Read the [**Client Library Tutorial**](deployr/deployr-client-library.md)
 
 1.  Get the documentation and download the library for your preferred programming language:
 	- **Java**: &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;[API Doc](http://microsoft.github.io/java-client-library/) &nbsp;|&nbsp; [Download](https://github.com/Microsoft/java-client-library/releases)
