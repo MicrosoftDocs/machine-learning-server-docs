@@ -86,10 +86,10 @@ an object of class rxMultiTest.
  
  ##See Also
  
-[rxMultiTest](rxMultiTest.md),
-[rxPairwiseCrossTab](rxPairwiseCrosstab.md),
-[rxRiskRatio](rxRiskRatio.md),
-[rxOddsRatio](rxRiskRatio.md).
+[rxMultiTest](../../scaler/packagehelp/rxmultitest.md),
+[rxPairwiseCrossTab](../../scaler/packagehelp/rxpairwisecrosstab.md),
+[rxRiskRatio](../../scaler/packagehelp/rxriskratio.md),
+[rxOddsRatio](../../scaler/packagehelp/rxriskratio.md).
    
  
  ##Examples
