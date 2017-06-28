@@ -77,14 +77,14 @@ and matching the specified parameters.
   
   
  ### `verbose`
- If `TRUE` (the default), a brief summary of each job is printed as it is found. This includes the current job status as returned by [rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md), the modification time of the job, and the current job ID (this is used as the component name in the returned list of job information objects). If no job status is returned, the job status shows `none`. 
+ If `TRUE` (the default), a brief summary of each job is printed as it is found. This includes the current job status as returned by [rxGetJobStatus](rxgetjobresults.md), the modification time of the job, and the current job ID (this is used as the component name in the returned list of job information objects). If no job status is returned, the job status shows `none`. 
   
  
  
  
  ##Details
  
-One common use of `rxGetJobs` is as input to the [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) function, which
+One common use of `rxGetJobs` is as input to the [rxCleanupJobs](rxcleanup.md) function, which
 is used to clean up completed non-waiting jobs when `autoCleanup` is not specified.
 
 If `exactMatch=FALSE`, only the shared directory `shareDir` and the cluster 
@@ -116,16 +116,16 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
-[rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md),
-[rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md),
-[rxGetJobStatus](../../r-reference/revoscaler/rxgetjobresults.md),
-[rxExec](../../r-reference/revoscaler/rxexec.md), 
-[RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
-[RxInSqlServer](RxInSqlServer.md),
-[RxInTeradata](RxInTeradata.md),
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md)
+[rxCleanupJobs](rxcleanup.md),
+[rxGetJobOutput](rxgetjoboutput.md),
+[rxGetJobResults](rxgetjobresults.md),
+[rxGetJobStatus](rxgetjobresults.md),
+[rxExec](rxexec.md), 
+[RxSpark](../../scaler/packagehelp/rxspark.md),
+[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
+[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),
+[RxInTeradata](../../scaler/packagehelp/rxinteradata.md),
+[RxComputeContext](rxcomputecontext.md)
    
  ##Examples
 
