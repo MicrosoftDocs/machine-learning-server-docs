@@ -266,7 +266,7 @@ at the R prompt):
 * [as.kmeans](../../r-reference/revoscaler/as-kmeans.md): Coerce an `rxKmeans` object to an `kmeans` object for use with the **pmml** package.
 
 
-* [as.randomForest](as.randomForest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
+* [as.randomForest](../../r-reference/revoscaler/as-randomforest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
 
 
 * [as.gbm](../../r-reference/revoscaler/as-gbm.md): Coerce an `rxBTrees` object to a `gbm` object for use with the **pmml** package.

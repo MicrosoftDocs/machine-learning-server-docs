@@ -338,7 +338,7 @@
 #### [as.kmeans](r-reference/revoscaler/as-kmeans.md) 
 #### [as.lm](r-reference/revoscaler/as-lm.md) 
 #### [as.naiveBayes](r-reference/revoscaler/as-naivebayes.md) 
-#### [as.randomForest](scaler/packagehelp/as.randomForest.md) 
+#### [as.randomForest](r-reference/revoscaler/as-randomforest.md) 
 #### [as.rpart](scaler/packagehelp/as.rpart.md) 
 #### [as.xtabs](scaler/packagehelp/as.xtabs.md) 
 #### [prune.rxDTree](scaler/packagehelp/prune.rxDTree.md) 
