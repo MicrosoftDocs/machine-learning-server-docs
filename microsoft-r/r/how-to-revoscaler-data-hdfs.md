@@ -160,7 +160,7 @@ Run **rxGetInfo** to return metadata, including the number of composite data fil
 
 ## Control generated file output
 
-Number of generated .xdfd files depends on characteristics of source data, but it is generally one file per HDFS block. However, if the original source data is distributed among multiple smaller files, each file counts as a block even if the file size is well below HDFS block size, thus the files The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB. For more in depth information about the composite XDF format and its use within a Hadoop compute context, see [Get started with HadoopMR and RevoScaleR](scaler-hadoop-getting-started.md).
+Number of generated .xdfd files depends on characteristics of source data, but it is generally one file per HDFS block. However, if the original source data is distributed among multiple smaller files, each file counts as a block even if the file size is well below HDFS block size, thus the files The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB. For more in depth information about the composite XDF format and its use within a Hadoop compute context, see [Get started with HadoopMR and RevoScaleR](../scaler-hadoop-getting-started.md).
 
 Filenames are based on the parent directory name.
 
@@ -194,16 +194,16 @@ You can also call rxHdfsConnect interactively within a session, provided you hav
 
 Related articles include best practices for XDF file management, including managing split files, and compute context:
 
-+ [XDF files in Microsoft R](r/concept-what-is-xdf.md)	
-+ [Compute context in Microsoft R](r/concept-what-is-compute-context.md)	
++ [XDF files in Microsoft R](concept-what-is-xdf.md)	
++ [Compute context in Microsoft R](concept-what-is-compute-context.md)	
 
 To further your understanding of RevoScaleR usage with HadoopMR or Spark, continue with the following articles:
 
-+ [Data import and exploration on Apache Spark](scaler-spark-getting-started.md)	
-+ [Data import and exploration on Hadoop MapReduce](scaler-hadoop-getting-started.md)	
++ [Data import and exploration on Apache Spark](../scaler-spark-getting-started.md)	
++ [Data import and exploration on Hadoop MapReduce](../scaler-hadoop-getting-started.md)	
 
 ## See Also
 
- [Introduction to R Server](rserver.md) 
- [Install R Server on Linux](install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](install/r-server-install-hadoop.md)
+ [Introduction to R Server](../rserver.md) 
+ [Install R Server on Linux](../install/r-server-install-linux-server.md)  
+ [Install R Server on Hadoop](../install/r-server-install-hadoop.md)

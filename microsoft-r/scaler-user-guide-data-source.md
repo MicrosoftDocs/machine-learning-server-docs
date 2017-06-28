@@ -319,7 +319,7 @@ Continue on to the following data import articles to learn more about XDF and ot
 + [XDF files](r/concept-what-is-xdf.md)	
 + [Import SQL Server data](scaler-data-sql.md)	
 + [Import text data](scaler-user-guide-data-import.md)
-+ [Import and consume data on HDFS](scaler-data-hdfs.md)
++ [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)
 
 ## See Also
    

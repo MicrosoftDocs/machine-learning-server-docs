@@ -31,7 +31,7 @@
 ## Load and transform data
 ### [Import text data](scaler-user-guide-data-import.md)
 ### [Import SQL Server data](scaler-data-sql.md)
-### [Import HDFS data](scaler-data-hdfs.md)
+### [Import HDFS data](r/how-to-revoscaler-data-hdfs.md)
 ### [Import ODBC data](scaler-data-odbc.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)
 ### [Sort data](scaler-data-sort.md)

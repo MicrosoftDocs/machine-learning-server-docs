@@ -241,7 +241,7 @@ The new file has blocks sizes of 60,000 for all but the last slightly smaller bl
 	
 ## Next steps
 
-XDF is optimized for distributed file storage and access in the Hadoop Distributed File System (HDFS). To learn more about using XDF in HDFS, see [Import and consume HDFS data files](../scaler-data-hdfs.md).
+XDF is optimized for distributed file storage and access in the Hadoop Distributed File System (HDFS). To learn more about using XDF in HDFS, see [Import and consume HDFS data files](how-to-revoscaler-data-hdfs.md).
 
 You can import multiple text files into a single XDF. For instructions, see [Import text data](../scaler-user-guide-data-import.md).
 
