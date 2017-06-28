@@ -265,7 +265,7 @@
 ###[diffLocalRemote](r-reference/mrsdeploy/difflocalremote.md) 
 ###[downloadSnapshot](r-reference/mrsdeploy/downloadsnapshot.md) 
 ###[encodings](r-reference/mrsdeploy/encodings.md) 
-###[getRemoteFile](mrsdeploy/packagehelp/getRemoteFile.md) 
+###[getRemoteFile](r-reference/mrsdeploy/getremotefile.md) 
 ###[getRemoteObject](mrsdeploy/packagehelp/getRemoteObject.md) 
 ###[getRemoteWorkspace](mrsdeploy/packagehelp/getRemoteWorkspace.md) 
 ###[getService](mrsdeploy/packagehelp/getService.md) 
