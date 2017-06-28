@@ -44,7 +44,7 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 
 + [Get started with RevoScaleR on Hadoop MapReduce](r/how-to-revoscaler-hadoop.md)
 + [Get started with RevoScaleR on Hadoop Spark](r/how-to-revoscaler-spark.md)
-+ [Get started with RevoScaleRon Teradata](scaler-teradata-getting-started.md)
++ [Get started with RevoScaleRon Teradata](r/how-to-revoscaler-sql-server.md)
 
 ## Custom code
 

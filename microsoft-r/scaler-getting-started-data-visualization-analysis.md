@@ -469,7 +469,7 @@ This tutorial demonstrated how to use several important functions, but on a smal
 ## See Also
 
  [ScaleR Getting Started with Hadoop](r/how-to-revoscaler-hadoop.md)	
- [ScaleR Getting Started with Teradata](scaler-teradata-getting-started.md)	
+ [ScaleR Getting Started with Teradata](r/how-to-revoscaler-sql-server.md)	
  [What is RevoScaleR](r/concept-what-is-revoscaler.md)	
  [Introduction to Microsoft R](microsoft-r-getting-started.md)	
  [Diving into data analysis in Microsoft R](r/how-to-introduction.md)	

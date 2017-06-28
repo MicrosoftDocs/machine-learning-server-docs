@@ -40,22 +40,22 @@ There are three key components to running **RevoScaleR** high performance analyt
 
 More detailed examples of using **RevoScaleR** can be found in the following articles in this documentation set:
 
--   [*RevoScaleR Getting Started Guide*](scaler-getting-started-data-import-exploration.md)
--   [*RevoScaleR User’s Guide*](r/concept-what-is-revoscaler.md)
--   [*RevoScaleR Distributed Computing Guide*](r/how-to-revoscaler-distributed-computing.md)
--   [*RevoScaleR ODBC Data Import Guide*](r/how-to-revoscaler-data-odbc.md)
+-   [*RevoScaleR Getting Started Guide*](../scaler-getting-started-data-import-exploration.md)
+-   [*RevoScaleR User’s Guide*](concept-what-is-revoscaler.md)
+-   [*RevoScaleR Distributed Computing Guide*](how-to-revoscaler-distributed-computing.md)
+-   [*RevoScaleR ODBC Data Import Guide*](how-to-revoscaler-data-odbc.md)
 
 For information on other distributed computing compute contexts, see:
 
--   [*RevoScaleR MapReduce Getting Started Guide*](r/how-to-revoscaler-hadoop.md)
--   [*RevoScaleR Spark Getting Started Guide*](r/how-to-revoscaler-spark.md)
+-   [*RevoScaleR MapReduce Getting Started Guide*](how-to-revoscaler-hadoop.md)
+-   [*RevoScaleR Spark Getting Started Guide*](how-to-revoscaler-spark.md)
 
 ## Installation
 
 Installation instructions are provided in these links:
-* [Install Microsoft R Server 8.0.5 on Teradata Servers](install/r-server-install-teradata-805.md)
-* [Install Microsoft R Server 8.0 on Teradata Servers](install/r-server-install-teradata-server.md)
-* [Install Microsoft R Server 8.0 on Teradata clients](install/r-server-install-teradata-client.md)
+* [Install Microsoft R Server 8.0.5 on Teradata Servers](../install/r-server-install-teradata-805.md)
+* [Install Microsoft R Server 8.0 on Teradata Servers](../install/r-server-install-teradata-server.md)
+* [Install Microsoft R Server 8.0 on Teradata clients](../install/r-server-install-teradata-client.md)
 
 ## Setting Up the Sample Data
 

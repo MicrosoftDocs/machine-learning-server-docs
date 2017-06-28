@@ -52,7 +52,7 @@ The principal compute contexts are the following:
 
 - `RxHadoopMR`: the compute context used to distribute computations on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks ` cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [Practice data import and exploration on Hadoop](how-to-revoscaler-hadoop.md).
 
-- `RxInTeradata`: the compute context used to distribute computations in a Teradata appliance. For details on creating and using `RxInTeradata` compute contexts, see the [Practice data import and exploration on Teradata](../scaler-teradata-getting-started.md).
+- `RxInTeradata`: the compute context used to distribute computations in a Teradata appliance. For details on creating and using `RxInTeradata` compute contexts, see the [Practice data import and exploration on Teradata](how-to-revoscaler-sql-server.md).
 
 The `RxInSqlServer` compute context is a special case—it is similar to `RxInTeradata` in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using `RxInSqlServer` compute contexts, see the [RevoScaleR SQL Server Introduction](concept-what-is-sql-server-r-services.md).
 
