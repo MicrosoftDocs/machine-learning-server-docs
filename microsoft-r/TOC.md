@@ -92,7 +92,7 @@
 ###### [Deploy and activate](install/r-server-install-cloudera-deploy-activate.md)
 ###### [Rollback to previous version](install/r-server-install-cloudera-rollback.md)
 ##### [Command line installation (CDH, HDP, MapR)](install/r-server-install-hadoop-command-line.md)
-##### [Offline install](rserver-install-hadoop-offline.md)
+##### [Offline install](install/r-server-install-hadoop-offline.md)
 ##### [Package dependency list](rserver-install-linux-hadoop-packages.md)
 ##### [Manual package installation](install/r-server-install-hadoop-manual-package.md)
 #### Post-install configuration

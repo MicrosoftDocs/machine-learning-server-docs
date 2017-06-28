@@ -36,7 +36,7 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1.0 ve
 
 From an internet-connected computer, download Microsoft R Open (MRO) and .NET Core for Linux. 
 
-MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and won't use alternative distributions. MRO can co-exist with other distributions of R on your machine, but additional configuration could be required to make a particular version the default. For more information, see [Manage an R Server installation on Linux](rserver-install-linux-manage-install.md).
+MRO provides the R distribution (base R language and script support) used by R Server. R Server setup checks for this specific distribution and won't use alternative distributions. MRO can co-exist with other distributions of R on your machine, but additional configuration could be required to make a particular version the default. For more information, see [Manage an R Server installation on Linux](../rserver-install-linux-manage-install.md).
 
 The .NET Core component is required for MicrosoftML (machine learning). It is also required for mrsdeploy, used for remote execution, web service deployment, and configuration of R Server as web node and compute node instances.
 
@@ -59,7 +59,7 @@ You can get Microsoft R Server (MRS) 9.1.0 for Hadoop from one of the following 
 
 ## Download package dependencies
 
-R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](rserver-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
+R Server has package dependencies for various platforms. The list of required packages can be found at [Package dependencies for Microsoft R Server](../rserver-install-linux-hadoop-packages.md). If the target system is missing any, download the ones you will need.
 
 You can list existing packages in /usr/lib64 to see what is currently installed. It's common to have a very large number of packages. You can do a partial string search to filter on specific filenames (such as lib* for files starting with lib.):  `ls -l /usr/lib64/lib*`
 
@@ -201,21 +201,21 @@ To quit the program, type `q()` at the command line with no arguments.
 
 ## Enable Remote Connections and Analytic Deployment
 
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](install/operationalize-r-server-one-box-config.md) or an [enterprise setup](install/operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize-r-server-one-box-config.md) or an [enterprise setup](operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
 
 ## Next Steps
 
 Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
 
-+ [Practice data import and exploration on Spark](scaler-spark-getting-started.md)
-+ [Practice data import and exploration on MapReduce](scaler-hadoop-getting-started.md)
++ [Practice data import and exploration on Spark](../scaler-spark-getting-started.md)
++ [Practice data import and exploration on MapReduce](../scaler-hadoop-getting-started.md)
 
-Review the best practices in [Manage your R Server for Linux installation](rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
+Review the best practices in [Manage your R Server for Linux installation](../rserver-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 
 ## See Also
 
-[Supported platforms](rserver-install-supported-platforms.md)
+[Supported platforms](../rserver-install-supported-platforms.md)
 
-[What's new in R Server](notes/r-server-notes.md)
+[What's new in R Server](../notes/r-server-notes.md)
 
 

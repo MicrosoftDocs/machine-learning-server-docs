@@ -37,7 +37,7 @@ With root privilege, you can use a package manager to install each package in th
 
 ## Prerequisites
 
-A manual package installation is similar to an offline installation. As a first step, review the instructions for [offline installation](../rserver-install-hadoop-offline.md) for system prerequisites and for downloading and unpacking the distribution.
+A manual package installation is similar to an offline installation. As a first step, review the instructions for [offline installation](r-server-install-hadoop-offline.md) for system prerequisites and for downloading and unpacking the distribution.
 
 After you unpack the distribution, you should see packages for RPM and DEB in the /tmp/MRS91Hadoop directory.
 
