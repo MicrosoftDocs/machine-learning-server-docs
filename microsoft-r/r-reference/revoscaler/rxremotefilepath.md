@@ -47,7 +47,7 @@ according to file path rules of the remote compute context platform.
   
     
  ### `computeContext`
- An [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) context object specifying the platform information. 
+ An [RxComputeContext](rxcomputecontext.md) context object specifying the platform information. 
   
  
  
@@ -57,9 +57,9 @@ according to file path rules of the remote compute context platform.
  
  ##See Also
  
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
-[RxSpark](RxSpark.md).
+[RxComputeContext](rxcomputecontext.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxSpark](../../scaler/packagehelp/rxspark.md).
    
  ##Examples
 
