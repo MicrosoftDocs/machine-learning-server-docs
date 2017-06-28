@@ -80,26 +80,26 @@ The **rm** command removes the folder. Parameter "f" is for force and "r" for re
 
 ## See Also
 
- [Install R on Hadoop overview](install/r-server-install-hadoop.md)      
- [Install R Server 8.0.5 on Hadoop](install/r-server-install-hadoop-805.md)      
- [Install Microsoft R Server on Linux](install/r-server-install-linux-server.md) 
- [Troubleshoot R Server installation problems on Hadoop](install/r-server-install-hadoop-troubleshoot.md)
+ [Install R on Hadoop overview](../install/r-server-install-hadoop.md)      
+ [Install R Server 8.0.5 on Hadoop](../install/r-server-install-hadoop-805.md)      
+ [Install Microsoft R Server on Linux](../install/r-server-install-linux-server.md) 
+ [Troubleshoot R Server installation problems on Hadoop](../install/r-server-install-hadoop-troubleshoot.md)
 
 
 ## Learn More
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](index.md) 
++ [Overview of Microsoft R](../index.md) 
 
-+ [Overview of Microsoft R Client](r-client-get-started.md) 
++ [Overview of Microsoft R Client](../r-client-get-started.md) 
 
-+ [Quickstart: Running R code in Microsoft R](quickstart-r-code.md) (example)
++ [Quickstart: Running R code in Microsoft R](../quickstart-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](data-analysis-in-microsoft-r.md)
++ [Diving into data analysis with Microsoft R](../data-analysis-in-microsoft-r.md)
 
-+ [RevoScaleR R package reference](microsoft-r-tutorials.md)
++ [RevoScaleR R package reference](../microsoft-r-tutorials.md)
 
-+ [MicrosoftML R package reference](microsoftml-get-started.md)
++ [MicrosoftML R package reference](../microsoftml-get-started.md)
 
-+ [mrsdeploy R package reference](r-reference/mrsdeploy/mrsdeploy-package.md)
++ [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
