@@ -121,7 +121,7 @@ a data frame containing the computed counts, sums, or means.
 [rxLinMod](../../r-reference/revoscaler/rxlinmod.md)
 [rxLogit](../../r-reference/revoscaler/rxlogit.md)
 [rxSummary](rxSummary.md)
-[rxMarginals](rxMarginals.md)
+[rxMarginals](../../r-reference/revoscaler/rxmarginals.md)
    
  ##Examples
 

@@ -420,7 +420,7 @@
 #### [rxLogit](r-reference/revoscaler/rxlogit.md) 
 #### [rxLorenz](r-reference/revoscaler/rxlorenz.md) 
 #### [rxMakeRNodeNames](r-reference/revoscaler/rxmakernodenames.md) 
-#### [rxMarginals](scaler/packagehelp/rxMarginals.md) 
+#### [rxMarginals](r-reference/revoscaler/rxmarginals.md) 
 #### [rxMergeXdf](scaler/packagehelp/rxMergeXdf.md) 
 #### [rxMultiTest](scaler/packagehelp/rxMultiTest.md) 
 #### [rxNaiveBayes](scaler/packagehelp/rxNaiveBayes.md) 
