@@ -181,7 +181,7 @@ A streaming parallel decision tree algorithm.
  ##See Also
  
 rpart, rpart.control, rpart.object,
-[rxDTree](rxDTree.md).
+[rxDTree](../../r-reference/revoscaler/rxdtree.md).
    
  ##Examples
 

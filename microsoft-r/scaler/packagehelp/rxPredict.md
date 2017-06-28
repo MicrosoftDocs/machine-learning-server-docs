@@ -290,7 +290,7 @@ in the data) have no effect.
 [rxLinMod](rxLinMod.md),
 [rxLogit](rxLogit.md),
 [rxGlm](rxGLM.md),
-[rxPredict.rxDTree](rxPredict.rxDTree.md),
+[rxPredict.rxDTree](../../r-reference/revoscaler/rxdtree.md),
 [rxPredict.rxDForest](../../r-reference/revoscaler/rxdforest.md),
 [rxPredict.rxNaiveBayes](rxPredict.rxNaiveBayes.md).
    

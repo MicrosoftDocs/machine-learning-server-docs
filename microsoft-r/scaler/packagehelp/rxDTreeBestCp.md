@@ -88,7 +88,7 @@ Wadsworth.
  
  ##See Also
  
-[rxDTree](rxDTree.md), [prune.rxDTree](../../r-reference/revoscaler/prune-rxdtree.md).
+[rxDTree](../../r-reference/revoscaler/rxdtree.md), [prune.rxDTree](../../r-reference/revoscaler/prune-rxdtree.md).
    
  ##Examples
 

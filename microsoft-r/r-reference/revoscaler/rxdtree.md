@@ -65,7 +65,7 @@ for small or large data using parallel external memory algorithm.
    
     
  ### `formula`
-  formula as described in [rxFormula](rxFormula.md).   Currently, formula functions are not supported. 
+  formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md).   Currently, formula functions are not supported. 
   
     
  ### `data`
@@ -199,11 +199,11 @@ for small or large data using parallel external memory algorithm.
   
     
  ### `transformFunc`
-  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxTransform.md) for details. 
+  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
     
  ### `transformVars`
-  character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxTransform.md) for details. 
+  character vector of input data set variables  needed for the transformation function.  See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
     
  ### `transformPackages`
@@ -232,7 +232,7 @@ for small or large data using parallel external memory algorithm.
   
     
  ### `computeContext`
- a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
   
   
     
@@ -339,7 +339,7 @@ A streaming parallel decision tree algorithm.
  ##See Also
  
 rpart, rpart.control, rpart.object,
-[rxPredict.rxDTree](rxPredict.rxDTree.md), [rxAddInheritance](../../r-reference/revoscaler/rxaddinheritance.md), [rxDForestUtils](../../r-reference/revoscaler/rxdforestutils.md).
+[rxPredict.rxDTree](rxdtree.md), [rxAddInheritance](rxaddinheritance.md), [rxDForestUtils](rxdforestutils.md).
    
  ##Examples
 
