@@ -305,7 +305,7 @@
 ###[Query](r-reference/olapr/query.md)
 
 ## [RevoPemaR](pemar/pemar.md)
-###[PemaBaseClass-class](pemar/packagehelp/PemaBaseClass-class.md) 
+###[PemaBaseClass-class](r-reference/revopemar/pemabaseclass-class.md) 
 ###[PemaBaseClass](pemar/packagehelp/PemaBaseClass.md) 
 ###[PemaByGroup-class](pemar/packagehelp/PemaByGroup-class.md) 
 ###[PemaByGroup](pemar/packagehelp/PemaByGroup.md) 
