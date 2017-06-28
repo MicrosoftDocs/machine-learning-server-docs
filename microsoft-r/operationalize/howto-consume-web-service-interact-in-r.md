@@ -50,7 +50,7 @@ Before you can use the web service management functions in the `mrsdeploy` R pac
 
 Any authenticated user can retrieve a list of web services using the `listServices` function in the `mrsdeploy` package.  
 
-Use function arguments to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../mrsdeploy/packagehelp/listServices.md) for the full description of all arguments.
+Use function arguments to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../r-reference/mrsdeploy/listservices.md) for the full description of all arguments.
 
 Your ability to see the code inside the web service depends on your permissions. Did you publish the web service or do you have the "Owner" role?
 + If yes, then the code in the service is returned along with other metadata.
@@ -60,7 +60,7 @@ To learn more about the roles in your organization, contact your Microsoft R Ser
 
 |Function|Response|R Function Help|
 |----|----|:----:|
-|`listServices(...)`| R `list` containing service metadata.|[View](../mrsdeploy/packagehelp/listServices.md)|
+|`listServices(...)`| R `list` containing service metadata.|[View](../r-reference/mrsdeploy/listservices.md)|
 
 Once you find the service you want, use [the `getService` function](#getService) to retrieve the service object for consumption.
 

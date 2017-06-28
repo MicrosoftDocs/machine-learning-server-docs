@@ -144,7 +144,7 @@ Updates an existing service by `name` and version `v`.
  ##See Also
  
 Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
-[getService](../../r-reference/mrsdeploy/getservice.md), [listServices](listServices.md),
+[getService](../../r-reference/mrsdeploy/getservice.md), [listServices](../../r-reference/mrsdeploy/listservices.md),
 [print.serviceDetails](print.serviceDetails.md),
 [publishService](publishService.md),
 [serviceOption](serviceOption.md),

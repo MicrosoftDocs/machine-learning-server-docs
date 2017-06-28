@@ -88,13 +88,13 @@ A list of services and service information.
  
  ##See Also
  
-Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
-[getService](../../r-reference/mrsdeploy/getservice.md),
-[print.serviceDetails](print.serviceDetails.md),
-[publishService](publishService.md),
-[serviceOption](serviceOption.md),
-[summary.serviceDetails](summary.serviceDetails.md),
-[updateService](updateService.md)
+Other service methods: [deleteService](deleteservice.md),
+[getService](getservice.md),
+[print.serviceDetails](../../mrsdeploy/packagehelp/print.servicedetails.md),
+[publishService](../../mrsdeploy/packagehelp/publishservice.md),
+[serviceOption](../../mrsdeploy/packagehelp/serviceoption.md),
+[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
+[updateService](../../mrsdeploy/packagehelp/updateservice.md)
    
  ##Examples
 

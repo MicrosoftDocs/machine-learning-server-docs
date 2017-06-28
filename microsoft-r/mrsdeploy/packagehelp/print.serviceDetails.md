@@ -67,7 +67,7 @@ print  (o, description = TRUE, code = TRUE)
  ##See Also
  
 Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
-[getService](../../r-reference/mrsdeploy/getservice.md), [listServices](listServices.md),
+[getService](../../r-reference/mrsdeploy/getservice.md), [listServices](../../r-reference/mrsdeploy/listservices.md),
 [publishService](publishService.md),
 [serviceOption](serviceOption.md),
 [summary.serviceDetails](summary.serviceDetails.md),
