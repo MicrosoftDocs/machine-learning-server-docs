@@ -124,7 +124,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
     
  ### `labelsAsInfo`
- logical.  If `TRUE`, variables containing value labels in the SAS format file that are not converted to factors will retain the information as valueInfoCodes and valueInfoLabels in the .xdf file.   This information can be obtained using [rxGetVarInfo](../../r-reference/revoscaler/rxgetvarinfoxdf.md).  This information will also be returned as attributes for the columns in a  dataframe when using [rxDataStep](../../r-reference/revoscaler/rxdatastep.md). 
+ logical.  If `TRUE`, variables containing value labels in the SAS format file that are not converted to factors will retain the information as valueInfoCodes and valueInfoLabels in the .xdf file.   This information can be obtained using [rxGetVarInfo](rxgetvarinfoxdf.md).  This information will also be returned as attributes for the columns in a  dataframe when using [rxDataStep](rxdatastep.md). 
   
   
     
@@ -213,9 +213,9 @@ object of class RxSasData.
  
  ##See Also
  
-[RxSasData-class](../../r-reference/revoscaler/rxsasdata-class.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
-[rxImport](../../r-reference/revoscaler/rximport.md).
+[RxSasData-class](rxsasdata-class.md),
+[rxNewDataSource](rxnew.md),
+[rxImport](rximport.md).
    
  
  ##Examples
