@@ -169,7 +169,7 @@ If you are in a locked-down environment without access to the standard Microsoft
 
 [Install R on Hadoop overview](r-server-install-hadoop.md)
 
-[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-linux-uninstall.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-linux-uninstall.md)
 
 [Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)
 
