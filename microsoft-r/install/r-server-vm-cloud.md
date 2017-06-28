@@ -27,7 +27,7 @@ ms.custom: ""
 
 # Microsoft R Server in the Cloud
 
-[Microsoft R Server](../rserver.md), the most broadly deployable enterprise-class analytics platform for R, is available in the cloud as follows:
+[Microsoft R Server](../what-is-microsoft-r-server.md), the most broadly deployable enterprise-class analytics platform for R, is available in the cloud as follows:
 
 + [R Server on Azure HDInsight](r-server-vm-azure-hdinsight.md)
 

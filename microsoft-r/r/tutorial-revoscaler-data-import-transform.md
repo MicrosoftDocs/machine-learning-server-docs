@@ -459,7 +459,7 @@ A primary benefit of RevoScaleR is the ability to redistribute data into compone
 
 In Microsoft R, chunking functionality is available only when RevoScaleR functions are executed on an R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have just Microsoft R Client. R Client requires that data fits into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is deliberately, which results in all data being read into memory. 
 
-You can work around this limitation by writing script on R Client, but then [pushing the compute context](concept-what-is-compute-context.md) from R Client to a remote Microsoft R Server instance. Optionally, you could use R Server. Developers can install the developer edition of R Server, which is a full-featured R Server, but licensed for development workstations instead of production servers. For more information, see [Microsoft R Server](../rserver.md).
+You can work around this limitation by writing script on R Client, but then [pushing the compute context](concept-what-is-compute-context.md) from R Client to a remote Microsoft R Server instance. Optionally, you could use R Server. Developers can install the developer edition of R Server, which is a full-featured R Server, but licensed for development workstations instead of production servers. For more information, see [Microsoft R Server](../what-is-microsoft-r-server.md).
 
 ## See Also
 

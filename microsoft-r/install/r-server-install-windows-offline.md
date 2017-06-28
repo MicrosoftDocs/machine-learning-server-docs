@@ -139,7 +139,7 @@ Consider adding a development tool on the server to build script or solutions us
 
 ## See Also
 
- [Introduction to R Server](../rserver.md) 
+ [Introduction to R Server](../what-is-microsoft-r-server.md) 
  [What's New in R Server](../rserver-whats-new.md)
  [Supported platforms](r-server-install-supported-platforms.md)  
  [Known Issues](../rserver-known-issues.md)  

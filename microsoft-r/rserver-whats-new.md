@@ -326,7 +326,7 @@ algorithms for cleaning and analyzing text data.
 
 ## See Also
 
- [Introduction to R Server](rserver.md) 
+ [Introduction to R Server](what-is-microsoft-r-server.md) 
  [Install R Server on Windows](install/r-server-install-windows.md)  
  [Install R Server on Linux](install/r-server-install-linux-server.md)  
  [Install R Server on Hadoop](install/r-server-install-hadoop.md)

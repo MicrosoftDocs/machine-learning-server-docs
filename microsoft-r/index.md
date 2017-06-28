@@ -30,7 +30,7 @@ ms.custom: ""
 
 Microsoft R is a collection of packages, interpreters, and infrastructure for developing and deploying R-based machine learning and data science solutions on a range of platforms, from local standalone installations on Linux and Windows, to large distributed deployments on node clusters. We make these capabilities available in several products and services to meet the needs of individual or teams of data scientists and developers.
 
-+ [Microsoft R Server](rserver.md) is the flagship product and supports very large workloads in the enterprise. 
++ [Microsoft R Server](what-is-microsoft-r-server.md) is the flagship product and supports very large workloads in the enterprise. 
 
 + [Microsoft R Client](r-client/what-is-microsoft-r-client.md) is a free workstation version. It includes the same R Server functionality, but for local workloads.
 

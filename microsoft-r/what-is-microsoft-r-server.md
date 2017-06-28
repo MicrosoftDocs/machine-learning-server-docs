@@ -33,7 +33,7 @@ You can install R Server on a supported server or cluster, and use an R IDE like
 
 Although generic R scripts tend to run faster on Microsoft R Open via Intel MKL, the major benefit in terms of scale and performance comes from using RevoScaleR functions, which are available in both R Client and R Server. However, only R Server adds support for operationalizing R analytics, remote execution, remote compute contexts, data chunking, additional threads for multithreaded processing, parallel processing, and streaming.
 
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics. Microsoft R Server provides the operationalizing tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use in any language to integrate the R analysis output with a third party package. [Learn more about operationalizing](operationalize/about.md)
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics. Microsoft R Server provides the operationalizing tools for doing just that; it is a full-featured web services software development kit for R that allows programmers to use in any language to integrate the R analysis output with a third party package. [Learn more about operationalizing](deployr-repository-manager/about.md)
 
 R Server is the next generation of the former Revolution R Enterprise server, acquired by Microsoft and distributed commercially for these platforms: Azure, Windows, Linux, Hadoop, Teradata, SQL Server. See [Supported Platforms](install/r-server-install-supported-platforms.md) for details.
 
@@ -53,7 +53,7 @@ R Server is the next generation of the former Revolution R Enterprise server, ac
 
  R Server provides the infrastructure for distributing a workload across multiple nodes (referred to as *data chunking*), running jobs in parallel, and then reassembling the results for further analysis and visualization.
 
-In addition to capacity and scale, R Server offers machine learning features and allows you to [operationalize your analytics](operationalize/about.md). R is a great modeling tool, but often **the challenge lies in how to effectively operationalize R**. Traditionally, this has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. You can use Microsoft R Server as the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
+In addition to capacity and scale, R Server offers machine learning features and allows you to [operationalize your analytics](deployr-repository-manager/about.md). R is a great modeling tool, but often **the challenge lies in how to effectively operationalize R**. Traditionally, this has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. You can use Microsoft R Server as the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
 Reasons for choosing R Server include:
 
@@ -71,7 +71,7 @@ Reasons for choosing R Server include:
 |Components | Description |
 |----|---|
 |[Microsoft R Open](https://mran.microsoft.com/open/) | Microsoft's distribution of open source R. This distribution ships standalone and as a component of Microsoft R Client and Microsoft R Server. |
-|[Operationalized analytics](operationalize/about.md) |An engine only in R Server used to deploy R script or code as a web service with support for remote runtime execution and to consume such services. Console users can exercise the functions in [mrsdeploy package](r-reference/mrsdeploy/mrsdeploy-package.md). Developers can use the Swagger-APIs to create programmatic solutions. |
+|[Operationalized analytics](deployr-repository-manager/about.md) |An engine only in R Server used to deploy R script or code as a web service with support for remote runtime execution and to consume such services. Console users can exercise the functions in [mrsdeploy package](r-reference/mrsdeploy/mrsdeploy-package.md). Developers can use the Swagger-APIs to create programmatic solutions. |
 |[ScaleR](r/tutorial-revoscaler-data-import-transform.md) | ScaleR is a high performance computing and analytical engine used to partition massively large datasets into smaller chunks, distributed and analyzed in parallel, often on multiple nodes or on database platforms like SQL Server and Teradata. ScaleR is an R Server feature, but it also ships in R Client with limits on data size and processor utilization. ScaleR functions are provided by the [RevoScaleR package](r-reference/revoscaler/revoscaler.md). |
 |[Overview of MicrosoftML algorithms](r-reference/microsoftml/microsoftml-package.md) |State-of-the-art machine learning algorithms are now available in Microsoft R. You can use these functions in R code or script for performing machine learning on a standalone R Server. Machine learning algorithms are also available in R Client, subject to data size limits (in-memory only) and processor limits (2). Functions are provided by the [MicrosoftML package](r-reference/microsoftml/microsoftml-package.md).|
 |Other packages | Additional packages are distributed with R Client and R Server, such as [RevoPemaR](r-reference/revopemar/pemar.md). For the complete list, see [Package reference on MSDN](r-reference/introducing-r-server-r-package-reference.md). |
@@ -89,13 +89,13 @@ Data scientists who use R Server typically connect over Remote Desktop, and then
 
 This release also includes the interaction model to include remote execution via the `mrsdeploy` package on an R Server that was configured to operationalize your analytics. Assuming you have two or more installations of R Client 3.3.2/3.3.3 or R Server 9, you can interact with a remote node from the command line in a local console application or script. Working in this modality introduces requirements for encrypted connections and authentication. Supported authentication methodologies include Active Directory, Azure Active Directory, or LDAP in Active Directory (if you're using Linux or another non-Windows platform).
 
-Developers can use Swagger APIs to automate R analytics over single and multi-server deployments. For more information, see the following articles on [operationalizing your analytics](operationalize/about.md) and [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md).
+Developers can use Swagger APIs to automate R analytics over single and multi-server deployments. For more information, see the following articles on [operationalizing your analytics](deployr-repository-manager/about.md) and [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md).
 
 ## Operationalize your analytics
 
 Being able to operationalize your analytics is another central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is now fully integrated into R Server. After installing R Server on select platforms (availability on all platforms is still pending), you'll have everything you need to [configure R Server to deploy, host, and consume R analytics web services and remote R sessions](install/operationalize-r-server-one-box-config.md).  For details on which platforms, see [Supported platforms](install/r-server-install-supported-platforms.md).
 
-[Learn more about operationalizing analytics with R Server.](operationalize/about.md)
+[Learn more about operationalizing analytics with R Server.](deployr-repository-manager/about.md)
 
 ## Machine learning
 

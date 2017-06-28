@@ -3,7 +3,7 @@
 ## What's new in Microsoft R
 ### [What's new in R Server](rserver-whats-new.md)
 ### [What's new in R Client](r-client/whats-new-in-r-client.md)
-## [About Microsoft R Server](rserver.md)
+## [About Microsoft R Server](what-is-microsoft-r-server.md)
 ## [About Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 ## [Operationalize analytics](operationalize/about.md)
 ## [Interoperability](what-is-r-server-interoperability.md)

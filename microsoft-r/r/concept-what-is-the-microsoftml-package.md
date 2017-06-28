@@ -85,7 +85,7 @@ For guidance when choosing the appropriate machine learning algorithm from the M
 
 ## See also
 
-[About Microsoft R Server](../rserver.md) for general information about R Server.   
+[About Microsoft R Server](../what-is-microsoft-r-server.md) for general information about R Server.   
 
 [Cheat Sheet: How to choose a MicrosoftML algorithm](how-to-choose-microsoftml-algorithms-cheatsheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
 

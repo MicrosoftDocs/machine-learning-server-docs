@@ -92,7 +92,7 @@ To try this out, create a new script *chunkTable.R* with the following contents:
 		return(AggregateResults())
 	}
 
-Note that the `blocksPerRead` argument is ignored if this script runs locally using R Client. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported in R Client. When run locally with R Client, all data must be read into memory. You can work around this limitation when you push the compute context to a [Microsoft R Server instance](../rserver.md).
+Note that the `blocksPerRead` argument is ignored if this script runs locally using R Client. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported in R Client. When run locally with R Client, all data must be read into memory. You can work around this limitation when you push the compute context to a [Microsoft R Server instance](../what-is-microsoft-r-server.md).
 
 To test the function, use the sample data *AirlineDemoSmall.xdf* file with a local compute context. For more information, see the tutorial in [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md).
 

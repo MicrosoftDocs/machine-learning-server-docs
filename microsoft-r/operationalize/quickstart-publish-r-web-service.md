@@ -45,7 +45,7 @@ Before you begin this QuickStart, have the following ready:
 
 + An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
 
-+ An instance of [Microsoft R Server installed](../rserver.md) that has been [configured to operationalize analytics](../install/operationalize-r-server-one-box-config.md).
++ An instance of [Microsoft R Server installed](../what-is-microsoft-r-server.md) that has been [configured to operationalize analytics](../install/operationalize-r-server-one-box-config.md).
 
 + The connection details and access to that instance of Microsoft R Server. Contact your administrator for any missing connection details. You can [connect to R Server from your local machine](how-to-connect-log-in-with-mrsdeploy.md) in R to deploy your analytics as web services so they can be consumed. 
 

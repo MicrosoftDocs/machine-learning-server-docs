@@ -118,7 +118,7 @@ Microsoft R Open is the enhanced distribution of open source R from Microsoft th
 
 <a name="mrs"></a>**Microsoft R Server**
 
-Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). [Learn more…](rserver.md)
+Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). [Learn more…](what-is-microsoft-r-server.md)
 
 <br>
 

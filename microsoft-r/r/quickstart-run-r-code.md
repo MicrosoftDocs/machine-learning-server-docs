@@ -477,7 +477,7 @@ You can learn more with these guides:
 
 + [Overview of Microsoft R](../index.md) 
 
-+ [Overview of Microsoft R Server](../rserver.md) 
++ [Overview of Microsoft R Server](../what-is-microsoft-r-server.md) 
 
 + [Overview of Microsoft R Client](../r-client-get-started.md) 
 
