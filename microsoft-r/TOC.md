@@ -245,7 +245,7 @@
 ### [ngram](r-reference/microsoftml/ngram.md)
 ### [OneClassSvm](r-reference/microsoftml/oneclasssvm.md)
 ### [optimizer](r-reference/microsoftml/optimizer.md)
-### [resizeImage](microsoftml/packagehelp/resizeImage.md) 
+### [resizeImage](r-reference/microsoftml/resizeimage.md) 
 ### [rxEnsemble](microsoftml/packagehelp/rxEnsemble.md)
 ### [rxFastForest](microsoftml/packagehelp/rxFastForest.md)
 ### [rxFastLinear](microsoftml/packagehelp/rxFastLinear.md) 
