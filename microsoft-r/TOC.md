@@ -48,7 +48,7 @@
 ### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
 
 ## Models
-### [Models in RevoScaleR](scaler-user-guide-models.md)
+### [Models in RevoScaleR](r/how-to-revoscaler-models.md)
 ### [Linear Models](r/how-to-revoscaler-linear-model.md)
 ### [Logistic Regression Models](r/how-to-revoscaler-logistic-regression.md)
 ### [Generalized Linear Models](r/how-to-revoscaler-generalized-linear-model.md)

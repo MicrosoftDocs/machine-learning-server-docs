@@ -34,7 +34,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 
 * [Data acquisition](how-to-revoscaler-data-import.md)
 * [Data Summaries](how-to-revoscaler-data-summaries.md)
-* [Models in ScaleR](../scaler-user-guide-models.md)
+* [Models in ScaleR](how-to-revoscaler-models.md)
 * [crosstabs](how-to-revoscaler-crosstabs.md)
 * [Linear Models](how-to-revoscaler-linear-model.md)
 * [Logistic Regression Models](how-to-revoscaler-logistic-regression.md)

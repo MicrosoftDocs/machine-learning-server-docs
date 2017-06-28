@@ -40,7 +40,7 @@ The first thing to know about RevoScaleR’s statistical algorithms is that they
 
 An important consideration in using external memory algorithms is deciding how big a *chunk* of data is. You want to use a chunk size that’s as large as possible while still allowing the process data step to complete without swapping. All of the RevoScaleR modeling functions allow you to specify a *blocksPerRead* argument. To make effective use of this, you need to know how many blocks your data file contains and how large the data file is. The number of blocks can be obtained using the *rxGetInfo* function.
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
 
 ### Formulas in RevoScaleR
 
