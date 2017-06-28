@@ -32,6 +32,6 @@ ms.custom: ""
 + [R Server on Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
 
 + R Server as preconfigured virtual machines on Azure:
-  + [On Linux](vm-azure-rserver-linux.md)
+  + [On Linux](install/r-server-vm-azure-linux.md)
   + [On Windows](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure)
   + [On the Microsoft Data Science VM](vm-data-science.md)
