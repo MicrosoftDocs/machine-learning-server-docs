@@ -39,8 +39,8 @@ SAS data source connection class.
  ## Generators 
 
  
-The targeted generator [RxSasData](RxSasData.md) as well as the general generator
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
+The targeted generator [RxSasData](../../scaler/packagehelp/rxsasdata.md) as well as the general generator
+[rxNewDataSource](rxnew.md).
  
  ## Extends 
 
@@ -65,8 +65,8 @@ Class RxDataSource, by class RxFileData.
  
  ##See Also
  
-[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
-[RxSasData](RxSasData.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md)
+[RxDataSource-class](rxdatasource-class.md),
+[RxSasData](../../scaler/packagehelp/rxsasdata.md),
+[rxNewDataSource](rxnew.md)
    
  

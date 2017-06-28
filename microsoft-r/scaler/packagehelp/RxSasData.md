@@ -213,7 +213,7 @@ object of class RxSasData.
  
  ##See Also
  
-[RxSasData-class](RxSasData-class.md),
+[RxSasData-class](../../r-reference/revoscaler/rxsasdata-class.md),
 [rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
 [rxImport](../../r-reference/revoscaler/rximport.md).
    
