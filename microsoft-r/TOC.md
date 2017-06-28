@@ -497,7 +497,7 @@
 ###[readNews](r-reference/revoutils/readnews.md) 
 ###[Revo.home](r-reference/revoutils/revo-home.md) 
 ###[RevoInfo](r-reference/revoutils/revoinfo.md) 
-###[totalSystemMemory](RevoUtils/packagehelp/totalSystemMemory.md)
+###[totalSystemMemory](r-reference/revoutils/totalsystemmemory.md)
 
 ## [sqlrutils](sqlrutils/sqlrutils.md)
 ###[executeStoredProcedure](sqlrutils/packagehelp/executeStoredProcedure.md) 
