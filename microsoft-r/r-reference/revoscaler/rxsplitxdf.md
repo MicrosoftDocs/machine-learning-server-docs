@@ -67,17 +67,17 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
    
     
  ### `inData`
- a data frame, a character string defining the path to the input .xdf file,  or an [RxXdfData](RxXdfData.md) object  
+ a data frame, a character string defining the path to the input .xdf file,  or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object  
   
   
     
  ### `inFile`
-  a character string defining the path to the input .xdf file,  or an [RxXdfData](RxXdfData.md) object 
+  a character string defining the path to the input .xdf file,  or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object 
   
   
     
  ### `outFilesBase`
- a character string or vector defining the file names/paths to use in forming the the output .xdf files. These names/paths will be embellished with any specified `outFileSuffixes`. For `rxSplit`, `outFilesBase = NULL` means that the default value for .xdf and [RxXdfData](RxXdfData.md)`inData` objects will be `basename(rxXdfFileName(inData))` while it will be a blank string for `inData` a data frame.   
+ a character string or vector defining the file names/paths to use in forming the the output .xdf files. These names/paths will be embellished with any specified `outFileSuffixes`. For `rxSplit`, `outFilesBase = NULL` means that the default value for .xdf and [RxXdfData](../../scaler/packagehelp/rxxdfdata.md)`inData` objects will be `basename(rxXdfFileName(inData))` while it will be a blank string for `inData` a data frame.   
   
   
     
@@ -135,12 +135,12 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -180,7 +180,7 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
   
     
  ### `maxRowsByCols`
- argument sent directly to the [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) function behind the scenes when converting the output .xdf files (back) into a list of data frames. This parameter is provided primarily for the case where `rxSplit` is being used to split a .xdf file or `RxXdfData` data source into portions that are then read back into R as  a list of data frames. In this case, `maxRowsByCols` provides a mechanism for the user to control the maximum number of of elements read from the output .xdf file in an effort to limit the amount of memory needed for storing each partition  as a data frame object in R. 
+ argument sent directly to the [rxDataStep](rxdatastep.md) function behind the scenes when converting the output .xdf files (back) into a list of data frames. This parameter is provided primarily for the case where `rxSplit` is being used to split a .xdf file or `RxXdfData` data source into portions that are then read back into R as  a list of data frames. In this case, `maxRowsByCols` provides a mechanism for the user to control the maximum number of of elements read from the output .xdf file in an effort to limit the amount of memory needed for storing each partition  as a data frame object in R. 
   
   
     
@@ -222,7 +222,7 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
 Behind the scenes, the `rxSplitXdf` function is called by `rxSplit` after converting the `inData` data source into
 a (temporary) .xdf file. If both `outFilesBase` and `outFileSuffixes` are `NULL` (the default),
 then the type of output is determined by the type of inData: if the `inData` is an .xdf file name 
-or an [RxXdfData](RxXdfData.md) object, and list of `RxXdfData` data sources representing the new 
+or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object, and list of `RxXdfData` data sources representing the new 
 split .xdf files is returned.  If the `inData` is a data frame, then the output is returned 
 as a list of data frames. 
 If `outFilesBase` is an empty character string and `outFileSuffixes` is `NULL`, a list of 
@@ -271,9 +271,9 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
  
  ##See Also
  
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxImport](../../r-reference/revoscaler/rximport.md),
-[rxTransform](rxTransform.md)
+[rxDataStep](rxdatastep.md),
+[rxImport](rximport.md),
+[rxTransform](../../scaler/packagehelp/rxtransform.md)
    
  ##Examples
 

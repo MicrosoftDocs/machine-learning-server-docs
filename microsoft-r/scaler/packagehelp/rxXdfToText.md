@@ -177,7 +177,7 @@ An [RxTextData](RxTextData.md) object representing the output text file.
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxImport](../../r-reference/revoscaler/rximport.md),
 write.table,
-[rxSplit](rxSplitXdf.md).
+[rxSplit](../../r-reference/revoscaler/rxsplitxdf.md).
    
  ##Examples
 
