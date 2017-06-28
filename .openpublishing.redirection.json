@@ -790,10 +790,6 @@
       "redirect_url" : "/r-server/r/rpe/revorpe-users-guide"
   },
     {
-      "source_path" : "microsoft-r/index.md",
-      "redirect_url" : "/r-server/index"
-  },
-    {
       "source_path" : "microsoft-r/overview-client-server.md",
       "redirect_url" : "/r-server/what-is-r-client-r-server"
   },
