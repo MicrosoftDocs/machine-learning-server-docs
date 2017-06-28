@@ -88,7 +88,7 @@
 ### [R Server for Hadoop](rserver-install-hadoop.md)
 #### [Install on Hadoop](rserver-install-hadoop.md)
 ##### [Cloudera Manager parcel installation](rserver-install-cloudera.md)
-###### [Generate a parcel](rserver-install-cloudera-generate-parcel.md)
+###### [Generate a parcel](install/r-server-install-cloudera-generate-parcel.md)
 ###### [Deploy and activate](install/r-server-install-cloudera-deploy-activate.md)
 ###### [Rollback to previous version](rserver-install-cloudera-rollback.md)
 ##### [Command line installation (CDH, HDP, MapR)](rserver-install-hadoop-command-line.md)

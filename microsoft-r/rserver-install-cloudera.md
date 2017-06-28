@@ -31,7 +31,7 @@ If you've used parcel installation in previous releases of Microsoft R Server, t
 
 The new revised workflow for parcel installation is a two-part exercise:
 
-+ [Part 1: At the console, run script to output parcel and CSD files](rserver-install-cloudera-generate-parcel.md)
++ [Part 1: At the console, run script to output parcel and CSD files](install/r-server-install-cloudera-generate-parcel.md)
 + [Part 2: In Cloudera Manager, deploy parcels and add MRS as a managed service](install/r-server-install-cloudera-deploy-activate.md)
 
 Download and unpacking the distribution remains the same. Instructions are included in Part 1.

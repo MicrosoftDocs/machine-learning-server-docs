@@ -40,7 +40,7 @@ Before you start, be aware of the following limitations:
 + MicrosoftML can only be included in the parcel if CDH is running on RHEL 7.x or later.
 + mrsdeploy features (remote execution, web service deployment), plus web node and compute node configurations, are not supported at all. 
 
-A workaround is to install the packages manually. For instructions, see [Manual package installation](rserver-install-hadoop-manual-package.md).
+A workaround is to install the packages manually. For instructions, see [Manual package installation](../rserver-install-hadoop-manual-package.md).
 
 ## Step 1: Download 
 
@@ -90,7 +90,7 @@ You are also asked to specify the underlying operating system. If the platform s
 
 When the script is finished, the location of the parcel, checksum, and CSD is printed to the console. Remember the files do not yet exist. This is just a dry run. Running the script without -n generates the files.
 
-  ![console output messages](./media/rserver-install-cloudera-generate-parcel/parcelgeneratoroutput.png)
+  ![console output messages](./media/r-server-install-cloudera-generate-parcel/parcelgeneratoroutput.png)
 
 ## Step 4: Review flags
 
@@ -145,8 +145,8 @@ The Custom Service Descriptor (CSD) enables MRS monitoring and administration fr
 
 ## Next steps
 
-After you generate a parcel and CSD and copy the files to the appropriate repositories, the next steps are performed in Cloudera Manager. Start at the Home page to [deploy the parcel and activate Microsoft R Server in CDH](install/r-server-install-cloudera-deploy-activate.md).
+After you generate a parcel and CSD and copy the files to the appropriate repositories, the next steps are performed in Cloudera Manager. Start at the Home page to [deploy the parcel and activate Microsoft R Server in CDH](r-server-install-cloudera-deploy-activate.md).
 
 ## See Also
 
-[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](rserver-install-cloudera.md)
+[Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](../rserver-install-cloudera.md)
