@@ -36,7 +36,7 @@ To create data sources directly, use the constructors listed in the following ta
 
 | **Source Data**                    | **Data Source Constructor** |
 |------------------------------------|-----------------------------|
-| Text (fixed-format or delimited)   | [RxTextData](scaler-user-guide-data-import.md) |
+| Text (fixed-format or delimited)   | [RxTextData](r/how-to-revoscaler-data-import.md) |
 | SAS                                | [RxSasData](r-reference/revoscaler/rxsasdata.md) |
 | SPSS                               | [RxSpssData](r-reference/revoscaler/rxspssdata.md) |
 | ODBC Database                      | [RxOdbcData](scaler-data-odbc.md) |
@@ -318,7 +318,7 @@ Continue on to the following data import articles to learn more about XDF and ot
 
 + [XDF files](r/concept-what-is-xdf.md)	
 + [Import SQL Server data](scaler-data-sql.md)	
-+ [Import text data](scaler-user-guide-data-import.md)
++ [Import text data](r/how-to-revoscaler-data-import.md)
 + [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)
 
 ## See Also

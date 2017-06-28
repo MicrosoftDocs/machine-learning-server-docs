@@ -466,6 +466,6 @@ You can work around this limitation by writing script on R Client, but then [pus
  [Introduction to Microsoft R](microsoft-r-getting-started.md)  
  [Getting Started with Hadoop and RevoScaleR](scaler-hadoop-getting-started.md)    
  [Parallel and distributed computing in Microsoft R Server](scaler-distributed-computing.md)   
- [Importing data](scaler-user-guide-data-import.md)     
+ [Importing data](r/how-to-revoscaler-data-import.md)     
  [ODBC data import](scaler-data-odbc.md)     
  [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)     

@@ -194,7 +194,7 @@ As a first step, specify the name of your DSN. On Linux, this is the same name s
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
 + [Import SQL data](scaler-data-sql.md)	
-+ [Import text data](scaler-user-guide-data-import.md)
++ [Import text data](r/how-to-revoscaler-data-import.md)
 + [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)	
 + [XDF files](r/concept-what-is-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	

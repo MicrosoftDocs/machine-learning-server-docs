@@ -795,7 +795,7 @@ Continue on to the following data-related articles to learn more about XDF, data
 + [Data transformations (introduction)](r/concept-what-is-data-transformations.md)	
 + [XDF files](r/concept-what-is-xdf.md)	
 + [Data Sources](scaler-user-guide-data-source.md)	
-+ [Import text data](scaler-user-guide-data-import.md)
++ [Import text data](r/how-to-revoscaler-data-import.md)
 + [Import ODBC data](scaler-data-odbc.md)
 + [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)
 

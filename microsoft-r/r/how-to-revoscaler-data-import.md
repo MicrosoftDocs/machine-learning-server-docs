@@ -47,7 +47,7 @@ Depending on arguments, **rxImport** either loads data as a data frame, or outpu
 
 		> mySourceFile <- file.path("C:/Users/Temp/my-data-file.txt")
 
-  To try this out using [built-in samples](scaler-user-guide-sample-data.md), run the first command to verify the files are available, and the second command to set the location and source file.
+  To try this out using [built-in samples](../scaler-user-guide-sample-data.md), run the first command to verify the files are available, and the second command to set the location and source file.
 
 		# Verify the sample files exist and then set mySourceFile to the sample directory
 		> list.files(rxGetOption("sampleDataDir"))
@@ -98,7 +98,7 @@ During import, you can fix problems in the underlying data by specifying argumen
 
 ### Set a replacement string
 
-If your text data file uses a string other than NA to identify missing values, you can use the *missingValueString* argument to define the replacement string. Only one missing value string is allowed per file. The following example is from the [Airline demo tutorial](scaler-getting-started-data-import-exploration.md):
+If your text data file uses a string other than NA to identify missing values, you can use the *missingValueString* argument to define the replacement string. Only one missing value string is allowed per file. The following example is from the [Airline demo tutorial](../scaler-getting-started-data-import-exploration.md):
 
 	inFile <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
 	airData <- rxImport(inData = inFile, outFile="airExample.xdf", 
@@ -279,7 +279,7 @@ The *format* argument is a character string that may contain conversion specific
 
 ### Change a delimiter
 
-You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about creating a data source object, see [Data Sources in Microsoft R](scaler-user-guide-data-source.md).
+You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about creating a data source object, see [Data Sources in Microsoft R](../scaler-user-guide-data-source.md).
 
 As a simple example, RevoScaleR includes a sample text data file hyphens.txt that is not separated by commas or tabs, but by hyphens, with the following contents:
 
@@ -311,7 +311,7 @@ This section provides example script demonstrating additional import tasks.
 
 ### Import multiple files
 
-This example demonstrates an approach for importing multiple text files at once. You can use [sample data](scaler-user-guide-sample-data.md) for this exercise. It includes mortgage default data for consecutive years, with each year's data in a separate file. In this exercise, you will import all of them to a single XDF by appending one after another, using a combination of base R commands and RevoScaleR functions.
+This example demonstrates an approach for importing multiple text files at once. You can use [sample data](../scaler-user-guide-sample-data.md) for this exercise. It includes mortgage default data for consecutive years, with each year's data in a separate file. In this exercise, you will import all of them to a single XDF by appending one after another, using a combination of base R commands and RevoScaleR functions.
 
 Create a source object for a list of files, obtained using the R `list.files` function with a pattern for selecting specific file names:
 
@@ -343,7 +343,7 @@ Use **rxGetInfo** to view precomputed metadata. As you would expect, the block c
 
         rxGetInfo(myLargeXdf)
 
-Results from this command confirm that you have 10 blocks, one for each .csv file. On a distributed file system, you could place these blocks on separate nodes. You could also retrieve or overwrite individual blocks. For more information, see [Import and consumd data on HDFS](r/how-to-revoscaler-data-hdfs.md) and [XDF files](r/concept-what-is-xdf.md).
+Results from this command confirm that you have 10 blocks, one for each .csv file. On a distributed file system, you could place these blocks on separate nodes. You could also retrieve or overwrite individual blocks. For more information, see [Import and consumd data on HDFS](how-to-revoscaler-data-hdfs.md) and [XDF files](concept-what-is-xdf.md).
 
         File name: C:\Users\TEMP\mortgagelarge.xdf 
         Number of observations: 1e+05 
@@ -357,7 +357,7 @@ Results from this command confirm that you have 10 blocks, one for each .csv fil
 
 Optionally, fixed-format data might be associated with a *schema file* having an .sts extension. The schema describes the width and type of each column. For complete details on creating a schema file, see page 93 of the Stat/Transfer PDF Manual (<http://www.stattransfer.com/stman10.pdf>). If you have a schema file, you can create the input data source very simply by specifying the schema file name as the input data file. 
 
-The [built-in samples](scaler-user-guide-sample-data.md) include a fixed-format version of the claims data as the file claims.dat and a schema file named claims.sts. To import the data using this schema file, we use *RxImport* as follows:
+The [built-in samples](../scaler-user-guide-sample-data.md) include a fixed-format version of the claims data as the file claims.dat and a schema file named claims.sts. To import the data using this schema file, we use *RxImport* as follows:
 
 	# Verify the sample files exist
 	> list.files(rxGetOption("sampleDataDir"))
@@ -478,7 +478,7 @@ To avoid data loss when converting to factors, use the flag *labelsAsLevels=FALS
 
 Big data mainly comes in two forms, long or wide, each presenting unique challenges. The common case is long data, having many observations relative to the number of variables in the data set. With wide data, or data sets with a large number of variables, there are specific considerations to take into account during import.
 
-First, we recommend importing wide data into the .xdf format using the **rxImport** function whenever you plan to do repeated analyses on your dat aset. Doing so allows you to read subsets of columns into a data frame in memory for specific analyses. For more information, see [Transform and subset data](scaler-user-guide-data-transform.md).
+First, we recommend importing wide data into the .xdf format using the **rxImport** function whenever you plan to do repeated analyses on your dat aset. Doing so allows you to read subsets of columns into a data frame in memory for specific analyses. For more information, see [Transform and subset data](../scaler-user-guide-data-transform.md).
 
 Second, review the data set for categorical variables that can be marked as factors. If possible use the *colInfo* argument to define the levels rather than *stringsAsFactors*. Explicitly setting the levels results in faster processing speeds because you avoid recomputations of variable metadata whenever a new level is encountered. For wide data sets having a very large number of variables, the extra processing due to recomputation can be significant so its worth considering the *colInfo* argument as a way to speed up the import.
 
@@ -501,13 +501,13 @@ The colInfo list can then be used as the *colInfo* argument in the **rxImport** 
 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
-+ [XDF files](r/concept-what-is-xdf.md)	
-+ [Data Sources](scaler-user-guide-data-source.md)	
-+ [Import relational data using ODBC](scaler-data-odbc.md)
-+ [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)
++ [XDF files](concept-what-is-xdf.md)	
++ [Data Sources](../scaler-user-guide-data-source.md)	
++ [Import relational data using ODBC](../scaler-data-odbc.md)
++ [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)
 
 ## See also
 
- [Tutorial: data import](scaler-getting-started-data-import-exploration.md)	
- [Tutorial: data manipulation](scaler-getting-started-data-visualization-analysis.md)
+ [Tutorial: data import](../scaler-getting-started-data-import-exploration.md)	
+ [Tutorial: data manipulation](../scaler-getting-started-data-visualization-analysis.md)
 
