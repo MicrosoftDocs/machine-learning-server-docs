@@ -283,7 +283,7 @@ After completing installation, do the following to verify that Microsoft R Serve
 
 2. Start Microsoft R Server on a cluster node by typing Revo64 at a shell prompt.
 
-3. At the R prompt ">", enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](../scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
+3. At the R prompt ">", enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](../r/how-to-revoscaler-hadoop.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
 
 		bigDataDirRoot <- "/share"
 		myHadoopCluster <- RxHadoopMR(consoleOutput=TRUE)
@@ -344,7 +344,7 @@ That should return a list of files in the native file system. If either the call
 
 ## Next Steps
 
-To get started with Microsoft R Server on Hadoop, we recommend the [Practice data import and exploration on Hadoop ](../scaler-hadoop-getting-started.md).
+To get started with Microsoft R Server on Hadoop, we recommend the [Practice data import and exploration on Hadoop ](../r/how-to-revoscaler-hadoop.md).
 
 ## See Also
 

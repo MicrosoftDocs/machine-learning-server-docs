@@ -208,7 +208,7 @@ The server can be used as-is if you install and use an R IDE on the same box, bu
 Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
 
 + [Practice data import and exploration on Spark](../scaler-spark-getting-started.md)
-+ [Practice data import and exploration on MapReduce](../scaler-hadoop-getting-started.md)
++ [Practice data import and exploration on MapReduce](../r/how-to-revoscaler-hadoop.md)
 
 Review the best practices in [Manage your R Server for Linux installation](r-server-install-linux-manage-install.md) for instructions on how to set up a local package repository using MRAN or miniCRAN, change file ownership or permissions, set Revo64 as the de facto R script engine on your server.
 

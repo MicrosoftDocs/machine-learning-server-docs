@@ -297,4 +297,4 @@ The server can be used as-is if you install and use an R IDE on the same box, bu
 Review the following walkthroughs to move forward with using R Server and the RevoScaleR package in Spark and MapReduce processing models.
 
 + [Practice data import and exploration on Spark](../scaler-spark-getting-started.md)
-+ [Practice data import and exploration on MapReduce](../scaler-hadoop-getting-started.md)
++ [Practice data import and exploration on MapReduce](../r/how-to-revoscaler-hadoop.md)

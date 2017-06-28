@@ -97,7 +97,7 @@ For more information, see SQL Server 2016 Books Online:
 
 For information on other distributed computing compute contexts, see:
 
-- [*RevoScaleR MapReduce Getting Started Guide*](scaler-hadoop-getting-started.md)
+- [*RevoScaleR MapReduce Getting Started Guide*](r/how-to-revoscaler-hadoop.md)
 - [*RevoScaleR Spark Getting Started Guide*](scaler-spark-getting-started.md)
 
 Other guides to **RevoScaleR** can be found here:

@@ -32,14 +32,14 @@ This page presents a curated list of functions that might be particularly intere
 
 The `RevoScaleR` package supports two Hadoop compute contexts:
 
-+ `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](../../scaler-hadoop-getting-started.md).
++ `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](../../r/how-to-revoscaler-hadoop.md).
 
 + `RxSpark`, a distributed compute context in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
 
 
 >If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](revoscaler.md).
 
-As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../../../scaler-hadoop-getting-started.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
+As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../../../r/how-to-revoscaler-hadoop.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
 
 <br />
 ## Data Analysis Functions

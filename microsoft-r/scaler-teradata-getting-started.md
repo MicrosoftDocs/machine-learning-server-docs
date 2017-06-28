@@ -47,7 +47,7 @@ More detailed examples of using **RevoScaleR** can be found in the following art
 
 For information on other distributed computing compute contexts, see:
 
--   [*RevoScaleR MapReduce Getting Started Guide*](scaler-hadoop-getting-started.md)
+-   [*RevoScaleR MapReduce Getting Started Guide*](r/how-to-revoscaler-hadoop.md)
 -   [*RevoScaleR Spark Getting Started Guide*](scaler-spark-getting-started.md)
 
 ## Installation
