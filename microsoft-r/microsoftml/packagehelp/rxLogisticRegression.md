@@ -312,7 +312,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 [rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
 [rxFastLinear](rxFastLinear.md), [rxNeuralNet](../../r-reference/microsoftml/neuralnet.md),
-[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),
+[rxOneClassSvm](../../r-reference/microsoftml/oneclasssvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),
 [categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](../../r-reference/microsoftml/categoricalhash.md),
 [rxPredict.mlModel](rxPredict.md).
    
