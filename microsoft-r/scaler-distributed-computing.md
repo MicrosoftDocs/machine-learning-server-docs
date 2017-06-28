@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Distributed and parallel computing with ScaleR in Microsoft R
 
-In Microsoft R, the ScaleR functions in the RevoScaleR package are built to leverage the processing power inherent in the computing platform. On a distributed platform like Hadoop, ScaleR automatically uses the available nodes in a cluster. On multi-processor machines, ScaleR automatically runs jobs in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the ScaleR engine of platform capabilities, your script should include an object called a [compute context](scaler-distributed-computing-compute-context.md) that identifies the platform.
+In Microsoft R, the ScaleR functions in the RevoScaleR package are built to leverage the processing power inherent in the computing platform. On a distributed platform like Hadoop, ScaleR automatically uses the available nodes in a cluster. On multi-processor machines, ScaleR automatically runs jobs in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the ScaleR engine of platform capabilities, your script should include an object called a [compute context](r/how-to-revoscaler-distributed-computing-compute-context.md) that identifies the platform.
 
 *Parallel processing*, which leverages the computing power of a single machine, is both a R Server and R Client capability. Examples of jobs that can run in parallel include data import and linear modeling .
 
