@@ -61,7 +61,7 @@ Compute context is often used to enable controlled, distributed computations rel
 Context name | Alternative name | 
 -----------|--------------------|
 [RxLocalParallel](scaler/packagehelp/RxLocalParallel.md) | localpar  |  
-[RxForeachDoPar](scaler/packagehelp/RxForeachDoPar.md)  | dopar     |  
+[RxForeachDoPar](r-reference/revoscaler/rxforeachdopar.md)  | dopar     |  
 
 ## Get compute context
 

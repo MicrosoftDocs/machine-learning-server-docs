@@ -92,7 +92,7 @@ object of class RxLocalParallel.
 [rxOptions](rxOptions.md),
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxLocalSeq](RxLocalSeq.md),
-[RxForeachDoPar](RxForeachDoPar.md),
+[RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md),
 [RxLocalParallel-class](RxLocalParallel-class.md).
    
  

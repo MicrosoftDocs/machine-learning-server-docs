@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Generate RxForeachDoPar Compute Context" 
-description: " Creates a compute context object using the registered `foreach` parallel back end. This compute context can be used only to distribute computations via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxForeachDoPar. " 
+description: " Creates a compute context object using the registered `foreach` parallel back end. This compute context can be used only to distribute computations via the [rxExec](rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxForeachDoPar. " 
 keywords: "RevoScaleR, RxForeachDoPar, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -33,7 +33,7 @@ ms.custom: ""
  
 Creates a compute context object using the registered `foreach`
 parallel back end. This compute context can be used only to distribute computations
-via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored by Revolution HPA functions.
+via the [rxExec](rxexec.md) function; it is ignored by Revolution HPA functions.
 This is the main generator for S4 class RxForeachDoPar.
  
  
@@ -56,12 +56,12 @@ This is the main generator for S4 class RxForeachDoPar.
    
     
  ### `dataPath`
- `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxOptions.md) 
+ `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md) 
    
   
     
  ### `outDataPath`
- `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](rxOptions.md)  
+ `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md)  
    
  
  
@@ -98,13 +98,13 @@ doParallel-package,
 registerDoParallel,
 doRSR-package,
 registerDoRSR,
-[rxSetComputeContext](rxSetComputeContext.md),
-[rxOptions](rxOptions.md),
-[rxExec](../../r-reference/revoscaler/rxexec.md),
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[RxLocalSeq](RxLocalSeq.md),
-[RxLocalParallel](RxLocalParallel.md),
-[RxForeachDoPar-class](../../r-reference/revoscaler/rxforeachdopar-class.md).
+[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
+[rxOptions](../../scaler/packagehelp/rxoptions.md),
+[rxExec](rxexec.md),
+[RxComputeContext](rxcomputecontext.md),
+[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
+[RxLocalParallel](../../scaler/packagehelp/rxlocalparallel.md),
+[RxForeachDoPar-class](rxforeachdopar-class.md).
    
  
  ##Examples
