@@ -368,7 +368,7 @@
 #### [rxElemArg](r-reference/revoscaler/rxelemarg.md) 
 #### [rxExec](r-reference/revoscaler/rxexec.md)
 #### [rxExecBy](r-reference/revoscaler/rxexecby.md) 
-#### [rxExecByPartition](scaler/packagehelp/rxExecByPartition.md) 
+#### [rxExecByPartition](r-reference/revoscaler/rxexecbypartition.md) 
 #### [rxExecuteSQLDDL](scaler/packagehelp/rxExecuteSQLDDL.md) 
 #### [rxExpression](scaler/packagehelp/rxExpression.md) 
 #### [rxFactors](scaler/packagehelp/rxFactors.md) 
