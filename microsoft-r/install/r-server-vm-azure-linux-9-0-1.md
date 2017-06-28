@@ -27,15 +27,15 @@ ms.custom: ""
 
 # Microsoft R Server 2016 (9.0.1) on a Linux Virtual Machine on Azure
 
->Find the article for the Microsoft R Server 2016 (8.0.5) virtual machine [here](install/r-server-vm-azure-linux-8-0-5.md). 
+>Find the article for the Microsoft R Server 2016 (8.0.5) virtual machine [here](r-server-vm-azure-linux-8-0-5.md). 
 
 Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server 2016 (version 9.0.1) for Linux (CentOS version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
 
 This VM also includes:
 
-+ `mrsdeploy`: a new R package for deploying R analytics inside applications and backend systems. [Learn more...](r-reference/mrsdeploy/mrsdeploy-package.md)
++ `mrsdeploy`: a new R package for deploying R analytics inside applications and backend systems. [Learn more...](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ `MicrosoftML`:  a new 'Microsoft Machine Learning algorithm' R package that includes functions for incorporating machine learning into R code or a script that executes on R Server for Windows, R Client for Windows, and SQL Server R Services. Availability for Linux, Hadoop, and Azure HDInsight is projected for the first quarter of 2017. [Learn more...](r-reference/microsoftml/microsoftml-package.md)
++ `MicrosoftML`:  a new 'Microsoft Machine Learning algorithm' R package that includes functions for incorporating machine learning into R code or a script that executes on R Server for Windows, R Client for Windows, and SQL Server R Services. Availability for Linux, Hadoop, and Azure HDInsight is projected for the first quarter of 2017. [Learn more...](../r-reference/microsoftml/microsoftml-package.md)
 
 ## Provision the R Server Virtual Machine
 
@@ -117,7 +117,7 @@ Some related articles are:
 
 ## Operationalize R Analytics with R Server on the VM
 
-In order to operationalize your analytics with Microsoft R Server, you can [configure R Server](install/operationalize-r-server-one-box-config.md) after installation to act as a deployment server and host analytic web services. 
+In order to operationalize your analytics with Microsoft R Server, you can [configure R Server](operationalize-r-server-one-box-config.md) after installation to act as a deployment server and host analytic web services. 
 
 
 ## Access Data in an Azure Storage Account
