@@ -32,14 +32,14 @@ This page presents a curated list of functions that might be particularly intere
 
 The `RevoScaleR` package supports two Hadoop compute contexts:
 
-+ `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](../scaler-hadoop-getting-started.md).
++ `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see the [*RevoScaleR Hadoop Getting Started Guide*](../../scaler-hadoop-getting-started.md).
 
 + `RxSpark`, a distributed compute context in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
 
 
->If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](scaler.md).
+>If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](../../scaler.md).
 
-As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-hadoop-getting-started.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
+As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../../../scaler-hadoop-getting-started.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
 
 <br />
 ## Data Analysis Functions
@@ -58,59 +58,59 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     <tr>
         <td>`rxDataStep`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxDataStep.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxdatastep.md)<center></small></td>
     </tr>
     <tr>
         <td width="160px">`RxXdfData`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Creates an efficient XDF data source object.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxXdfData.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxxdfdata.md)<center></small></td>
     </tr>    
     <tr>
         <td>`RxTextData`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Creates a comma delimited text data source object.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxTextData.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxtextdata.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetInfo`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Retrieves summary information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetInfoXdf.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxgetinfoxdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarInfo`</td>
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetVarInfoXdf.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxgetvarinfoxdf.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarNames`</td>
         <td> </td>
         <td>Retrieves variable names from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetVarNames.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxgetvarnames.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxHdfsFileSystem`</td>
         <td> </td>
         <td>Creates an HDFS file system object.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxHdfsFileSystem.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxhdfsfilesystem.md)<center></small></td>
     </tr>
 </table>
 
@@ -129,21 +129,21 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     <tr>
         <td width="130px">`rxDataStep`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from an .xdf file or a data frame.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxDataStep.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxdatastep.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxFactors`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxFactors.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxfactors.md)</small></center>
         </td>
     </tr>
 </table>
@@ -164,41 +164,41 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     <tr>
         <td width="140px">`rxQuantile`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Computes approximate quantiles for .xdf files and data frames without sorting.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxQuantile.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxquantile.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxSummary`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxSummary.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxsummary.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxCrossTabs`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Formula-based cross-tabulation of data.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxCrossTabs.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxcrosstabs.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxCube`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Alternative formula-based cross-tabulation designed for efficient representation returning ‘cube’ results. Writing output to .xdf file not supported.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxCube.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxcube.md)</small></center>
         </td>
     </tr>
 </table>
@@ -221,101 +221,101 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     <tr>
         <td width="150px">`rxLinMod`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Fits a linear model to data.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxLinMod.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxlinmod.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxLogit`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Fits a logistic regression model to data.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxLogit.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxlogit.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxGlm`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Fits a generalized linear model to data.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGlm.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxglm.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxCovCor`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxCovCor.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxcovcor.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxDTree`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Fits a classification or regression tree to data.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxDTree.md)</small></center>
+            <center><small>[**View**](rxdtree.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxBTrees`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxBTrees.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxbtrees.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxDForest`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Fits a classification or regression decision forest to data.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxDForest.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxdforest.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxPredict`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Calculates predictions for fitted models. Output must be an XDF data source.</td>
         <td>
-            <center><small>[**View**](../r-reference/microsoftml/rxpredict.md)</small></center>
+            <center><small>[**View**](../microsoftml/rxpredict.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxKmeans`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Performs k-means clustering.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxKmeans.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxkmeans.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxNaiveBayes`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Fit Naive Bayes Classifiers on an .xdf file or data frame for small or large data using parallel external memory algorithm. </td>
         <td>
-            <center><small>[**View**](packagehelp/rxNaiveBayes.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxnaivebayes.md)</small></center>
         </td>
     </tr>
 </table>
@@ -337,21 +337,21 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     <tr>
         <td width="180px">`RxHadoopMR`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Creates an in-data, file-based Hadoop compute context.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxHadoopMR.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxhadoopmr.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`RxSpark`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxSpark.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxspark.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -359,27 +359,27 @@ As noted in the [RevoScaleR Hadoop MapReduce Getting Started Guide](../scaler-ha
     <td> </td>
     <td>Creates a persistent Spark compute context. </td>
     <td>
-        <center><small>[**View**](packagehelp/RxSpark.md)<center></small></td>
+        <center><small>[**View**](../../scaler/packagehelp/rxspark.md)<center></small></td>
     </tr>
     <tr>
     <td>`rxSparkDisconnect`</td>
     <td> </td>
     <td> Disconnects a Spark session and return to a local compute context.</td>
     <td>
-        <center><small>[**View**](packagehelp/RxSpark.md)<center></small></td>
+        <center><small>[**View**](../../scaler/packagehelp/rxspark.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxInstalledPackages`</td>
         <td> </td>
         <td>Returns the list of installed packages for a compute context.</td>
-        <td><center><small>[**View**](packagehelp/rxInstalledPackages.md)</small></center>
+        <td><center><small>[**View**](../../scaler/packagehelp/rxinstalledpackages.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`rxFindPackage`</td>
         <td> </td>
         <td>Returns the path to one or more packages for a compute context.</td>
-        <td><center><small>[**View**](packagehelp/rxFindPackage.md)</small></center>
+        <td><center><small>[**View**](../../scaler/packagehelp/rxfindpackage.md)</small></center>
         </td>
     </tr>
 </table>
@@ -404,50 +404,50 @@ Of course, not all data source types are available on all compute contexts. For 
     <tr>
         <td width="150px">`RxXdfData`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
 
         <td>Creates an efficient XDF data source object.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxXdfData.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxxdfdata.md)</small></center>
         </td>
     </tr>
     <tr>
         <td>`RxTextData`</td>
         <td>
-            <center>![-](../media/award.png)</center>
+            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
         </td>
         <td>Creates a comma delimited text data source object.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxTextData.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxtextdata.md)</small></center>
         </td>
     </tr>    <tr>
         <td>`RxHiveData`</td>
         <td> </td>
         <td>Generates a Hive Data Source object.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxSparkData.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxsparkdata.md)<center></small></td>
         </tr>
         <tr>
         <td>`RxParquetData`</td>
         <td> </td>
         <td>Generates a Parquet Data Source object.</td>
         <td>
-            <center><small>[**View**](packagehelp/RxSparkData.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxsparkdata.md)<center></small></td>
         </tr>
         <tr>
         <td>`rxSparkDataOps` </td>
         <td> </td>
         <td>Lists cached `RxParquetData` or `RxHiveData` data source objects. </td>
         <td>
-            <center><small>[**View**](packagehelp/rxSparkDataOps.md)<center></small></td>   
+            <center><small>[**View**](../../scaler/packagehelp/rxsparkdataops.md)<center></small></td>   
         </tr>
         <tr>
         <td>`rxSparkRemoveData`</td>
         <td> </td>
         <td>Removes cached `RxParquetData` or `RxHiveData` data source objects.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxSparkDataOps.md)<center></small></td>
+            <center><small>[**View**](../../scaler/packagehelp/rxsparkdataops.md)<center></small></td>
         </tr>
 </table>
 
@@ -455,7 +455,7 @@ Of course, not all data source types are available on all compute contexts. For 
 <br />
 ##High Performance Computing and Distributed Computing Functions
 
-The Hadoop compute context has a number of helpful functions used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../scaler-distributed-computing.md).
+The Hadoop compute context has a number of helpful functions used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../scaler-distributed-computing.md).
 
 
 <table>
@@ -472,7 +472,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         <td> </td>
         <td>Run an arbitrary R function on nodes or cores of a cluster.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxExec.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxexec.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -480,7 +480,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         <td> </td>
         <td>Get the status of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetJobResults.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxgetjobresults.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -488,7 +488,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         <td> </td>
         <td>Get the return object(s) of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetJobResults.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxgetjobresults.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -496,7 +496,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         <td> </td>
         <td>Get the console output from a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxGetJobOutput.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxgetjoboutput.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -504,7 +504,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         <td> </td>
         <td>Get the available distributed computing job information objects.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxGetJobs.md)</small></center>
+                <center><small>[**View**](../../scaler/packagehelp/rxgetjobs.md)</small></center>
         </td>
     </tr>
 </table>
@@ -534,7 +534,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td width="15px"> </td>
         <td>Execute an arbitrary Hadoop command. Allows you to run basic Hadoop commands.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -542,7 +542,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Return the current Hadoop version.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -550,7 +550,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -558,7 +558,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Copy a file from the native file system to HDFS. Wraps the Hadoop `fs -copyFromLocal` command.</td>
         <td>
-            <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+            <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -566,7 +566,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Copy a file in the Hadoop Distributed File System (HDFS). Wraps the Hadoop `fs -cp` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+                <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -574,7 +574,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Remove a file in HDFS. Wraps the Hadoop `fs -rm` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+                <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -582,7 +582,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>List files in an HDFS directory. Wraps the Hadoop `fs -ls` or `fs -lsr` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+                <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -590,7 +590,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Make a directory in HDFS. Wraps the Hadoop `fs -mkdir` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+                <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -598,7 +598,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Move a file in HDFS. Wraps the Hadoop `fs -mv` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+                <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
     <tr>
@@ -606,7 +606,7 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         <td> </td>
         <td>Remove a directory in HDFS. Wraps the Hadoop `fs -rmr` command.</td>
         <td>
-                <center><small>[**View**](packagehelp/rxHadoopCommand.md)</small></center>
+                <center><small>[**View**](../../scaler/packagehelp/rxhadoopcommand.md)</small></center>
         </td>
     </tr>
 </table>

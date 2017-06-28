@@ -38,7 +38,7 @@ The **RevoScaleR** package provides a set of custom data analysis functions. Man
 
 Analyzing data using ScaleR functions requires three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
 
-This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [ScaleR Functions for Hadoop](scaler/scaler-hadoop-functions.md).
+This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [ScaleR Functions for Hadoop](r-reference/revoscaler/revoscaler-hadoop-functions.md).
 
 **Compute Context**
 
