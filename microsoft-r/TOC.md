@@ -471,7 +471,7 @@
 #### [RxSqlServerData-class](r-reference/revoscaler/rxsqlserverdata-class.md) 
 #### [RxSqlServerData](r-reference/revoscaler/rxsqlserverdata.md) 
 #### [rxSqlServerDropTable](r-reference/revoscaler/rxsqlserverdroptable.md) 
-#### [rxStepControl](scaler/packagehelp/rxStepControl.md) 
+#### [rxStepControl](r-reference/revoscaler/rxstepcontrol.md) 
 #### [rxStepPlot](scaler/packagehelp/rxStepPlot.md) 
 #### [rxStopEngine](scaler/packagehelp/rxStopEngine.md) 
 #### [rxSummary](scaler/packagehelp/rxSummary.md) 
