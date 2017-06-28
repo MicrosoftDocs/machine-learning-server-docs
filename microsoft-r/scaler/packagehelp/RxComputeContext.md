@@ -73,7 +73,7 @@ A type of RxComputeContext compute context object. This object may be used to in
  
  ##See Also
  
-[RxComputeContext-class](RxComputeContext-class.md),
+[RxComputeContext-class](../../r-reference/revoscaler/rxcomputecontext-class.md),
 [RxHadoopMR](RxHadoopMR.md),
 [RxSpark](RxSpark.md),
 [RxInSqlServer](RxInSqlServer.md),

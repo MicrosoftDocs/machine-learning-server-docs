@@ -349,7 +349,7 @@
 #### [rxCleanup](r-reference/revoscaler/rxcleanup.md) 
 #### [rxCompareContexts](r-reference/revoscaler/rxcomparecontexts.md) 
 #### [rxCompressXdf](r-reference/revoscaler/rxcompressxdf.md) 
-#### [RxComputeContext-class](scaler/packagehelp/RxComputeContext-class.md) 
+#### [RxComputeContext-class](r-reference/revoscaler/rxcomputecontext-class.md) 
 #### [RxComputeContext](scaler/packagehelp/RxComputeContext.md) 
 #### [rxCovCor](scaler/packagehelp/rxCovCor.md) 
 #### [rxCovRegression](scaler/packagehelp/rxCovRegression.md) 
