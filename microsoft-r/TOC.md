@@ -17,7 +17,7 @@
 ### [Flight delays data analysis](scaler-getting-started-3-analyze-large-data.md)
 ### [Loan data analysis](scaler-getting-started-1-example-loan-data.md)
 ### [Census data analysis](scaler-getting-started-2-example-census-data.md)
-### [Tips on big data computing](microsoft-r-getting-started-tips.md)
+### [Tips on big data computing](r/tutorial-large-data-tips.md)
 ## Samples
 ### [Sample data in RevoScaleR](r/sample-built-in-data.md)
 ### [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
