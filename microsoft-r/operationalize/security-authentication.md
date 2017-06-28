@@ -178,7 +178,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Repeat these steps on each machine hosting the web node.
 
-1. Share the connection details with any users who authenticate with R Server either to make [API calls](api.md) directly or indirectly in R [using remoteLogin() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
+1. Share the connection details with any users who authenticate with R Server either to make [API calls](concept-api.md) directly or indirectly in R [using remoteLogin() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md).
 
 
 <br>
@@ -317,7 +317,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
 **Step 5: Share the required AAD connection details with your users**
 
-Share the connection details, such as the Authority and Audience, with any users who need to authenticate with R Server to make [API calls](api.md) directly or indirectly in R [using remoteLoginAAD() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md#aad-arguments). 
+Share the connection details, such as the Authority and Audience, with any users who need to authenticate with R Server to make [API calls](concept-api.md) directly or indirectly in R [using remoteLoginAAD() function in the `mrsdeploy` package](../operationalize/mrsdeploy-connection.md#aad-arguments). 
 
 If you do not specify a username and password as arguments to the login call or R functions, you are prompted for your AAD username (<username>@<AAD-account-domain>) and password. 
 

@@ -30,9 +30,9 @@ ms.custom: ""
 
 After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). The `mrsdeploy` R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](app-developer-get-started.md).
 
-If you do not want to list, examine, or consume the web service in R, a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
+If you do not want to list, examine, or consume the web service in R, a set of [RESTful APIs](concept-api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
-To list, examine, or consume the web service outside of R, use the [RESTful APIs](api.md), which provide direct programmatic access to a service's lifecycle.
+To list, examine, or consume the web service outside of R, use the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
 <a name="auth"></a>
 

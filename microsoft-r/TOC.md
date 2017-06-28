@@ -148,7 +148,7 @@
 #### [Consume services asynchronously via batch](operationalize/data-scientist-batch-mode.md)
 ### Application developers
 #### [Integrate web services and authentication into apps](operationalize/app-developer-get-started.md)
-#### [API overview](operationalize/api.md)
+#### [API overview](operationalize/concept-api.md)
 #### [API access token management](operationalize/security-access-tokens.md)
 ### [Archive] DeployR 8.x docs
 #### [Install DeployR](deployr/deployr-installation.md)

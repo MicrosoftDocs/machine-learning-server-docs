@@ -33,7 +33,7 @@ Learn how to build and use API Client libraries from Swagger to integrate into y
 
 While data scientists can work with R directly in an R console window or R IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Microsoft R Server-hosted analytics Web service. 
 
-To simplify the integration of your R analytics web services, R Server provides [Swagger templates](http://swagger.io/) for operationalization. These Swagger-based JSON files define the list of calls and resources available in the REST [APIs](api.md).    
+To simplify the integration of your R analytics web services, R Server provides [Swagger templates](http://swagger.io/) for operationalization. These Swagger-based JSON files define the list of calls and resources available in the REST [APIs](concept-api.md).    
 
 To access these RESTful APIs outside of R, use a Swagger code tool to generate an API client library that can be used in any programming language, such as .NET, C#, Java, Javascript, Python, or node.js. The API client simplifies the making of calls, encoding of data, and markup response handling on the API.    
 

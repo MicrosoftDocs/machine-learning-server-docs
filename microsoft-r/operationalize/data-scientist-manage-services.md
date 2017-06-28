@@ -34,7 +34,7 @@ These web services are then discoverable by other authenticated users who can th
 
 Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](howto-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](howto-consume-web-service-interact-in-r.md#consume-service) with others.
 
-To publish or interact with a web service outside of R, use the [RESTful APIs](api.md), which provide direct programmatic access to a service's lifecycle.
+To publish or interact with a web service outside of R, use the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
 <a name="auth"></a>
 
