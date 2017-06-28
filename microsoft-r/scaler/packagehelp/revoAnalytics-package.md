@@ -260,7 +260,7 @@ at the R prompt):
 * [as.glm](../../r-reference/revoscaler/as-glm.md): Coerce an `rxLogit` or `rxGlm` object to a `glm` object for use with the **pmml** package.
 
 
-* [as.rpart](as.rpart.md): Coerce an `rxDTree` object to an `rpart` object for use with the **pmml** package.
+* [as.rpart](../../r-reference/revoscaler/as-rpart.md): Coerce an `rxDTree` object to an `rpart` object for use with the **pmml** package.
 
 
 * [as.kmeans](../../r-reference/revoscaler/as-kmeans.md): Coerce an `rxKmeans` object to an `kmeans` object for use with the **pmml** package.

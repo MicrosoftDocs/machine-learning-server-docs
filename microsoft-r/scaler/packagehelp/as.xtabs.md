@@ -88,7 +88,7 @@ an object of class xtabs.
 xtabs,
 [as.lm](../../r-reference/revoscaler/as-lm.md),
 [as.kmeans](../../r-reference/revoscaler/as-kmeans.md),
-[as.rpart](as.rpart.md),
+[as.rpart](../../r-reference/revoscaler/as-rpart.md),
 [as.glm](../../r-reference/revoscaler/as-glm.md).
    
  

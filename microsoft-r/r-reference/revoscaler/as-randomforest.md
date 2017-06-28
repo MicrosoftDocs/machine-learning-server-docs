@@ -97,7 +97,7 @@ an object of class randomForest.
 [rxDTree](../../scaler/packagehelp/rxdtree.md),
 rpart,
 randomForest,
-[as.rpart](../../scaler/packagehelp/as.rpart.md).
+[as.rpart](as-rpart.md).
    
  
  ##Examples

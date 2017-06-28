@@ -101,7 +101,7 @@ an object of class gbm.
 [rxDTree](../../scaler/packagehelp/rxdtree.md),
 rpart,
 gbm,
-[as.rpart](../../scaler/packagehelp/as.rpart.md).
+[as.rpart](as-rpart.md).
    
  
  ##Examples

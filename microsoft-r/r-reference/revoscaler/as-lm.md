@@ -83,7 +83,7 @@ an object of class lm.
 lm,
 [as.glm](as-glm.md),
 [as.kmeans](as-kmeans.md),
-[as.rpart](../../scaler/packagehelp/as.rpart.md),
+[as.rpart](as-rpart.md),
 [as.xtabs](../../scaler/packagehelp/as.xtabs.md).
    
  
