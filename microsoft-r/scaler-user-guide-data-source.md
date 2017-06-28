@@ -40,7 +40,7 @@ To create data sources directly, use the constructors listed in the following ta
 | SAS                                | [RxSasData](r-reference/revoscaler/rxsasdata.md) |
 | SPSS                               | [RxSpssData](r-reference/revoscaler/rxspssdata.md) |
 | ODBC Database                      | [RxOdbcData](scaler-data-odbc.md) |
-| Teradata Database                  | [RxTeradata](scaler/packagehelp/RxTeradata.md) |
+| Teradata Database                  | [RxTeradata](r-reference/revoscaler/rxteradata.md) |
 | SQL Server Database                | [RxSqlServerData](scaler-data-sql.md) |
 | Spark data: Hive, Parquet and ORC  | [RxSparkData](r-reference/revoscaler/rxsparkdata.md) or **RxHiveData**, **RxParquetData**, **RxOrcData** | 
 | .xdf data files                    | [RxXdfData](scaler-data-xdf.md) |

@@ -199,7 +199,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L,   ...  )
   
      
  ### `tableOpClause`
- `NULL` or character string specifying optional  table operator clause(s) to use when running [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) in  [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md) compute context. 
+ `NULL` or character string specifying optional  table operator clause(s) to use when running [rxDataStep](rxdatastep.md) in  [RxInTeradata](rxinteradata.md) compute context. 
   
  
  
@@ -244,10 +244,10 @@ Interface Programmer Guide*
  
  ##See Also
  
-[RxTeradata-class](../../r-reference/revoscaler/rxteradata-class.md),
-[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
-[rxImport](../../r-reference/revoscaler/rximport.md).
+[RxTeradata-class](rxteradata-class.md),
+[RxInTeradata](rxinteradata.md),
+[rxNewDataSource](rxnew.md),
+[rxImport](rximport.md).
    
  ##Examples
 

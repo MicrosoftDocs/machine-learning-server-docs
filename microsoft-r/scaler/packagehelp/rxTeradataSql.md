@@ -57,7 +57,7 @@ Execute an arbitrary SQL statement that does not return data in a Teradata data 
  ### `table`
   One of the following:  
 *   a character string specifying a table name, in the form `"tablename"` or`"database.tablename"`. (In Teradata, each user is a database; the user database can be specified as `"username.tablename"`.) 
-*   an [RxTeradata](RxTeradata.md) data source that has the `table` specified 
+*   an [RxTeradata](../../r-reference/revoscaler/rxteradata.md) data source that has the `table` specified 
 *   an [RxOdbcData](../../r-reference/revoscaler/rxodbcdata.md) data source that has the `table` specified. 
   
   
@@ -95,7 +95,7 @@ invisibly.
 `"tablename"`,the database specified in the `connectionString` is searched. If `connectionString` is missing, the connection string in the current compute context object is used. 
 
 * 
- If the `table` argument is an [RxTeradata](RxTeradata.md) or [RxOdbcData](../../r-reference/revoscaler/rxodbcdata.md) data source, the table name specified in the data source is searched for in the database specified in the data source.
+ If the `table` argument is an [RxTeradata](../../r-reference/revoscaler/rxteradata.md) or [RxOdbcData](../../r-reference/revoscaler/rxodbcdata.md) data source, the table name specified in the data source is searched for in the database specified in the data source.
 
 
 
@@ -114,7 +114,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
-[RxTeradata](RxTeradata.md).
+[RxTeradata](../../r-reference/revoscaler/rxteradata.md).
    
  ##Examples
 

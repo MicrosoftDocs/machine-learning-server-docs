@@ -477,7 +477,7 @@
 #### [rxSummary](r-reference/revoscaler/rxsummary.md) 
 #### [rxSyncPackages](r-reference/revoscaler/rxsyncpackages.md) 
 #### [RxTeradata-class](r-reference/revoscaler/rxteradata-class.md) 
-#### [RxTeradata](scaler/packagehelp/RxTeradata.md) 
+#### [RxTeradata](r-reference/revoscaler/rxteradata.md) 
 #### [rxTeradataSql](scaler/packagehelp/rxTeradataSql.md) 
 #### [RxTextData-class](scaler/packagehelp/RxTextData-class.md) 
 #### [RxTextData](scaler/packagehelp/RxTextData.md) 
