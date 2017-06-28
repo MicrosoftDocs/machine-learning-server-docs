@@ -391,7 +391,7 @@
 #### [rxGetPartitions](r-reference/revoscaler/rxgetpartitions.md) 
 #### [rxGetSparklyrConnection](r-reference/revoscaler/rxgetsparklyrconnection.md) 
 #### [rxGetNodeInfo](r-reference/revoscaler/rxgetnodeinfo.md) 
-#### [rxGetVarInfoXdf](scaler/packagehelp/rxGetVarInfoXdf.md) 
+#### [rxGetVarInfoXdf](r-reference/revoscaler/rxgetvarinfoxdf.md) 
 #### [rxGetVarNames](scaler/packagehelp/rxGetVarNames.md) 
 #### [rxGLM](scaler/packagehelp/rxGLM.md) 
 #### [rxHadoopCommand](scaler/packagehelp/rxHadoopCommand.md) 

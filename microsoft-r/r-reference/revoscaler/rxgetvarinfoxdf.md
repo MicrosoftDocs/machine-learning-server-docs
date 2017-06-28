@@ -51,7 +51,7 @@ names, descriptions, and value labels
   
     
  ### `data`
- a data frame, a character string specifying the .xdf file, or an [RxDataSource](../../r-reference/revoscaler/rxdatasource.md) object.  If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information. 
+ a data frame, a character string specifying the .xdf file, or an [RxDataSource](rxdatasource.md) object.  If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information. 
   
   
     
@@ -76,7 +76,7 @@ names, descriptions, and value labels
   
     
  ### `allNodes`
- logical value.  Ignored if the active [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md)compute context is local.  Otherwise, if `TRUE`, a list containing the variable information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned.  
+ logical value.  Ignored if the active [RxComputeContext](rxcomputecontext.md)compute context is local.  Otherwise, if `TRUE`, a list containing the variable information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned.  
   
   
  
@@ -90,7 +90,7 @@ If a local compute context is being used, the `data` and `file` arguments may be
 in which case a named list of results are returned. For `rxGetVarInfo`, a mix of supported data sources
 is allowed. 
 
-If the [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) is distributed, `rxGetVarInfo` will request information from the
+If the [RxComputeContext](rxcomputecontext.md) is distributed, `rxGetVarInfo` will request information from the
 compute context nodes.  
  
  
@@ -139,8 +139,8 @@ character vector of value labels that is the same length as `valueInfoCodes`, us
  
  ##See Also
  
-[rxSetVarInfo](rxSetVarInfoXdf.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md).
+[rxSetVarInfo](../../scaler/packagehelp/rxsetvarinfoxdf.md),
+[rxDataStep](rxdatastep.md).
    
  ##Examples
 
