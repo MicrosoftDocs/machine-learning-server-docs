@@ -54,11 +54,11 @@ in a data frame
   
     
  ### `data`
- a data frame, a character string specifying the .xdf file, or an [RxXdfData](RxXdfData.md) object.  
+ a data frame, a character string specifying the .xdf file, or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.  
   
     
  ### `file`
- character string specifying the .xdf file or   an [RxXdfData](RxXdfData.md) object.  
+ character string specifying the .xdf file or   an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.  
   
  
  
@@ -112,14 +112,14 @@ POSIXct variable.
  
 If the input data is a data frame, a data frame is returned containing variables
 with the new attributes.  If the input data represents an .xdf file or
-composite file, an [RxXdfData](RxXdfData.md) object representing the modified 
+composite file, an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object representing the modified 
 file is returned.
  
  ##Note
  
 `rxSetVarInfoXdf` and `rxSetVarInfo` do not change the underlying data 
 so the user cannot set the variable type and storage type using this function, or recode the
-levels of a factor variable.  To recode factors, use [rxFactors](../../r-reference/revoscaler/rxfactors.md).
+levels of a factor variable.  To recode factors, use [rxFactors](rxfactors.md).
 `rxSetVarInfo` is not supported for single .xdf files in HDFS.
  
  
@@ -129,10 +129,10 @@ levels of a factor variable.  To recode factors, use [rxFactors](../../r-referen
  
  ##See Also
  
-[rxGetVarInfo](../../r-reference/revoscaler/rxgetvarinfoxdf.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxFactors](../../r-reference/revoscaler/rxfactors.md),
-[rxGetInfo](../../r-reference/revoscaler/rxgetinfoxdf.md).
+[rxGetVarInfo](rxgetvarinfoxdf.md),
+[rxDataStep](rxdatastep.md),
+[rxFactors](rxfactors.md),
+[rxGetInfo](rxgetinfoxdf.md).
    
  ##Examples
 

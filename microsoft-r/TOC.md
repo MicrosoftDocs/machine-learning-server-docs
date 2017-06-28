@@ -457,7 +457,7 @@
 #### [rxSetComputeContext](r-reference/revoscaler/rxsetcomputecontext.md) 
 #### [rxSetFileSystem](r-reference/revoscaler/rxsetfilesystem.md) 
 #### [rxSetInfo](r-reference/revoscaler/rxsetinfo.md) 
-#### [rxSetVarInfoXdf](scaler/packagehelp/rxSetVarInfoXdf.md) 
+#### [rxSetVarInfoXdf](r-reference/revoscaler/rxsetvarinfoxdf.md) 
 #### [rxSortXdf](scaler/packagehelp/rxSortXdf.md) 
 #### [RxSpark-class](scaler/packagehelp/RxSpark-class.md) 
 #### [RxSpark](scaler/packagehelp/RxSpark.md) 
