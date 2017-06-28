@@ -97,12 +97,12 @@ For more information, see SQL Server 2016 Books Online:
 
 For information on other distributed computing compute contexts, see:
 
-- [*RevoScaleR MapReduce Getting Started Guide*](r/how-to-revoscaler-hadoop.md)
-- [*RevoScaleR Spark Getting Started Guide*](r/how-to-revoscaler-spark.md)
+- [*RevoScaleR MapReduce Getting Started Guide*](how-to-revoscaler-hadoop.md)
+- [*RevoScaleR Spark Getting Started Guide*](how-to-revoscaler-spark.md)
 
 Other guides to **RevoScaleR** can be found here:
 
-- [*RevoScaleR Getting Started Guide*](scaler-getting-started-data-import-exploration.md)
-- [*RevoScaleR User’s Guide*](r/concept-what-is-revoscaler.md)
-- [*RevoScaleR Distributed Computing Guide*](r/how-to-revoscaler-distributed-computing.md)
-- [*RevoScaleR ODBC Data Import Guide*](r/how-to-revoscaler-data-odbc.md)
+- [*RevoScaleR Getting Started Guide*](../scaler-getting-started-data-import-exploration.md)
+- [*RevoScaleR User’s Guide*](concept-what-is-revoscaler.md)
+- [*RevoScaleR Distributed Computing Guide*](how-to-revoscaler-distributed-computing.md)
+- [*RevoScaleR ODBC Data Import Guide*](how-to-revoscaler-data-odbc.md)
