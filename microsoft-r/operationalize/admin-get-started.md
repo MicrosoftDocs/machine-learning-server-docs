@@ -38,7 +38,7 @@ As an administrator, your key responsibilities are to ensure configuration for t
 -   Server [R package management policies](#r-package-policies)
 -   Server [runtime policies](#runtime-policies), which affect availability, scalability, and throughput
 
-Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](admin-diagnostics.md) and numerous recommendations.
+Whenever your policies fail to deliver the expected runtime behavior or performance, you'll need to troubleshoot your deployment. For that we provide [diagnostic tools](configure-run-diagnostics.md) and numerous recommendations.
 
 
 ## Configure web & compute nodes for analytic deployment and remote execution
@@ -129,9 +129,9 @@ To evaluate and simulate the capacity of a configuration, use the [Evaluate Capa
 
 There is no doubt that, as an administrator, you've experienced failures with servers, networks, and systems—most probably at the very inopportune times. Likewise, your chosen runtime policies may sometime fail to deliver the runtime behavior or performance needed by your community of users.
 
-When those failures occur in the operationalization environment, we recommend you first turn to the [diagnostic testing tool](admin-diagnostics.md) to attempt to identify the underlying cause of the problem.
+When those failures occur in the operationalization environment, we recommend you first turn to the [diagnostic testing tool](configure-run-diagnostics.md) to attempt to identify the underlying cause of the problem.
 
-Beyond the diagnostics tool, the [Troubleshooting](admin-diagnostics.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
+Beyond the diagnostics tool, the [Troubleshooting](configure-run-diagnostics.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
 
 ## More resources
 
@@ -143,7 +143,7 @@ This section provides a quick summary of useful links for administrators working
 -   [About Operationalization](about.md)
 -   [Configuration](../install/operationalize-r-server-one-box-config.md)
 -   [R Package Management](configure-manage-r-packages.md)
--   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
+-   [Diagnostic Testing & Troubleshooting](configure-run-diagnostics.md)
 -   [Capacity Evaluatation](configure-evaluate-capacity.md)
 -   [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 

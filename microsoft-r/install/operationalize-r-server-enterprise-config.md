@@ -123,7 +123,7 @@ To replace an older version, you can uninstall the older distribution before ins
 1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0. 
    Note: You can safely ignore the Python warning during upgrade.
 
-1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/admin-diagnostics.md).
+1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
 
 1. Exit the utility. Your web node is now configured. 
 
@@ -176,7 +176,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
    |--|----------------------|------------|------------|
    |Symlinks|<small>cd /usr/lib64<br>sudo ln -s libpcre.so.1   libpcre.so.0<br>sudo ln -s libicui18n.so.50   libicui18n.so.36<br>sudo ln -s libicuuc.so.50 libicuuc.so.36<br>sudo ln -s libicudata.so.50 libicudata.so.36<br><br><br></small>|<small>sudo apt-get install libicu-dev<br>cd /lib/x86_64-linux-gnu<br>ln -s libpcre.so.3 libpcre.so.0<br>ln -s liblzma.so.5 liblzma.so.0<br><br>cd /usr/lib/x86_64-linux-gnu<br>ln -s libicui18n.so.52 libicui18n.so.36<br>ln -s libicuuc.so.52 libicuuc.so.36<br>ln -s libicudata.so.52 libicudata.so.36</small>|<small>cd /lib/x86_64-linux-gnu<br>ln -s libpcre.so.3 libpcre.so.0<br>ln -s liblzma.so.5 liblzma.so.0<br><br>cd /usr/lib/x86_64-linux-gnu<br>ln -s libicui18n.so.55 libicui18n.so.36<br>ln -s libicuuc.so.55 libicuuc.so.36<br>ln -s libicudata.so.55 libicudata.so.36</small>|
 
-   >**Note:** If there are issues with starting the compute node, see [here](../operationalize/admin-diagnostics.md).
+   >**Note:** If there are issues with starting the compute node, see [here](../operationalize/configure-run-diagnostics.md).
 
 1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges. 
 
@@ -277,7 +277,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
    1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
         Later, you can configure R Server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).
 
-   1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](../operationalize/admin-diagnostics.md) on each web node.
+   1. From the main menu, choose the option to **Run Diagnostic Tests**. Verify the configuration by running [diagnostic test](../operationalize/configure-run-diagnostics.md) on each web node.
 
    1. From the main utility menu, choose the option **Stop and start services** and restart the web node to define it as a service.
 
@@ -310,7 +310,7 @@ If you are provisioning on a cloud service, then you must also [create inbound s
 
 1. [Update service ports](../operationalize/admin-utility.md#ports), if needed.
 
-1. [Run diagnostic tests](../operationalize/admin-diagnostics.md).
+1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
 
 1. [Evaluate](../operationalize/admin-evaluate-capacity.md) the configuration's capacity.
 

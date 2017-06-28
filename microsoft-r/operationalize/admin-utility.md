@@ -36,7 +36,7 @@ Use the utility to:
 + [Set a local admin password](#admin-password)
 + [Stop and restart](#startstop) web and compute node services
 + [Update the service ports](#ports)
-+ [Run diagnostic tests](admin-diagnostics.md)
++ [Run diagnostic tests](configure-run-diagnostics.md)
 + [Encrypt credentials](#encrypt)
 + [Evaluate the configuration's capacity](configure-evaluate-capacity.md)
 + [Learn about command line switches to this utility script](#switch)
@@ -177,7 +177,7 @@ The encryption function available in the administration utility relies on the RS
 You can assess the state and health of your environment with the set of diagnostic tests found in this Administration Utility. 
 Armed with this information, you can identify unresponsive components, execution problems, and access the log files. The set of diagnostic tests include a general health check of the configuration and  the trace of R code executions or web service executions.
 
-[Learn how to run the diagnostics and troubleshoot.](admin-diagnostics.md)
+[Learn how to run the diagnostics and troubleshoot.](configure-run-diagnostics.md)
 
 <br><a name="capacity"></a>
 

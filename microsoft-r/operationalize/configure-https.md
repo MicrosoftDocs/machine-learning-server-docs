@@ -87,7 +87,7 @@ This section walks you through the steps for securing the connections between th
 
 1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
 
-1. In the same utility, run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
+1. In the same utility, run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
 #### Windows: Using IIS to Encrypt
 
@@ -118,7 +118,7 @@ On each machine hosting a web node:
 
 1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
 
-1. Run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
+1. Run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
 1. Repeat on every web node.
 
@@ -173,7 +173,7 @@ On each Linux machine hosting a web node:
 
 1. Repeat on each web node.
 
-1. Run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
+1. Run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
 Now, you can access R Server to operationalize analytics securely on https://<webnode-server-name> from your client applications.
  
@@ -223,7 +223,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
 1. Launch the administrator's utility and [restart the compute node](admin-utility.md#startstop).
 
-1. In the same utility, run the [diagnostic tool](admin-diagnostics.md) to send a test HTTPs request.
+1. In the same utility, run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
 
 <br>
@@ -303,7 +303,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Launch the administrator's utility and [restart the web node](admin-utility.md#startstop).
 
-   1. Verify the configuration by running [diagnostic test](admin-diagnostics.md) on the web node.
+   1. Verify the configuration by running [diagnostic test](configure-run-diagnostics.md) on the web node.
 
    1. Repeat on each web node.  
 <br>

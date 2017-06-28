@@ -100,7 +100,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically setup using the configuration you had for R Server 9.0. Note: You can safely ignore the Python warning during upgrade.
 
-1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/admin-diagnostics.md).
+1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
 
 1. Exit the utility. Your web and compute nodes are now upgraded and configured as they were in version 9.0.
 
@@ -131,7 +131,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
    |--|----------------------|------------|------------|
    |Symlinks|<small>cd /usr/lib64<br>sudo ln -s libpcre.so.1   libpcre.so.0<br>sudo ln -s libicui18n.so.50   libicui18n.so.36<br>sudo ln -s libicuuc.so.50 libicuuc.so.36<br>sudo ln -s libicudata.so.50 libicudata.so.36<br><br><br></small>|<small>sudo apt-get install libicu-dev<br>cd /lib/x86_64-linux-gnu<br>ln -s libpcre.so.3 libpcre.so.0<br>ln -s liblzma.so.5 liblzma.so.0<br><br>cd /usr/lib/x86_64-linux-gnu<br>ln -s libicui18n.so.52 libicui18n.so.36<br>ln -s libicuuc.so.52 libicuuc.so.36<br>ln -s libicudata.so.52 libicudata.so.36</small>|<small>cd /lib/x86_64-linux-gnu<br>ln -s libpcre.so.3 libpcre.so.0<br>ln -s liblzma.so.5 liblzma.so.0<br><br>cd /usr/lib/x86_64-linux-gnu<br>ln -s libicui18n.so.55 libicui18n.so.36<br>ln -s libicuuc.so.55 libicuuc.so.36<br>ln -s libicudata.so.55 libicudata.so.36</small>|
 
-   >**Note:** If there are issues with starting the compute node, see [here](../operationalize/admin-diagnostics.md).
+   >**Note:** If there are issues with starting the compute node, see [here](../operationalize/configure-run-diagnostics.md).
 
 1. [Launch the administration utility](../operationalize/admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) so you can begin to configure a one-box setup.
 
@@ -150,7 +150,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
     1. Return to the main menu of the utility when the configuration ends.
 
-    1. [Run a diagnostic test of the configuration](../operationalize/admin-diagnostics.md).
+    1. [Run a diagnostic test of the configuration](../operationalize/configure-run-diagnostics.md).
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 

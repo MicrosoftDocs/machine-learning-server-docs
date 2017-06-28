@@ -119,4 +119,4 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
    1. [Restart the web node](admin-utility.md#startstop) and the database is created upon restart.
 
-   1. [Run the diagnostic tests](admin-diagnostics.md) to ensure the connection can be made to your new database.
+   1. [Run the diagnostic tests](configure-run-diagnostics.md) to ensure the connection can be made to your new database.

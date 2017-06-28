@@ -120,7 +120,7 @@
 #### [Get started for administrators](operationalize/admin-get-started.md)
 #### [One-box configuration](install/operationalize-r-server-one-box-config.md)
 #### [Enterprise configuration](install/operationalize-r-server-enterprise-config.md)
-#### [Troubleshoot](operationalize/admin-diagnostics.md)
+#### [Troubleshoot](operationalize/configure-run-diagnostics.md)
 #### [Administration utility](operationalize/admin-utility.md)
 #### [Find advanced configuration file](operationalize/configure-find-admin-configuration-file.md)
 #### [Evaluate capacity](operationalize/configure-evaluate-capacity.md)

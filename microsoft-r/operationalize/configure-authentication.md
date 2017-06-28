@@ -171,7 +171,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. [Restart the web node](admin-utility.md#startstop) using the administration utility so that the changes can take effect.
  
-1. Run the [diagnostic tests](admin-diagnostics.md) to ensure all tests are passing in the configuration.
+1. Run the [diagnostic tests](configure-run-diagnostics.md) to ensure all tests are passing in the configuration.
 
    >[!IMPORTANT]
    >If you run into connection issues when configuring for Active Directory/LDAP, try the ldp.exe tool to search the LDAP settings and compare them to what you declared in appsettings.json.  To identify the correct parameters, consult with any Active Directory experts in your organization.
@@ -311,7 +311,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 1. Launch the administrator's utility and:
    1. [Restart the web node](admin-utility.md#startstop) for the changes to take effect.
  
-   1. Test the configuration by running the [diagnostic tests](admin-diagnostics.md).
+   1. Test the configuration by running the [diagnostic tests](configure-run-diagnostics.md).
 
 1. Repeat these steps on each machine hosting a web node.
 

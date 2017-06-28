@@ -240,7 +240,7 @@ The results should match the results obtained when the model was run locally ear
 As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](remote-execution.md#diff) 
 
 >[!WARNING]
->If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](admin-diagnostics.md#logs). 
+>If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](configure-run-diagnostics.md#logs). 
 
 ## D. Get the Swagger-based JSON file
 
