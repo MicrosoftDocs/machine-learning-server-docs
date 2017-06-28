@@ -259,7 +259,7 @@ Assuming that the packages for Microsoft R Open and Microsoft R Server are alrea
 
 If you have multiple nodes, you can automate the installation across nodes using any distributed shell. (You can, of course, automate installation with a non-distributed shell such as bash using a for-loop over a list of hosts, but distributed shells usually provide the ability to run commands over multiple hosts simultaneously.) Examples include [dsh ("Dancer’s shell")](http://www.netfort.gr.jp/~dancer/software/dsh.html.en), [pdsh (Parallel Distributed Shell)](http://sourceforge.net/projects/pdsh/), [PyDSH (the Python Distributed Shell)](http://pydsh.sourceforge.net/), and [fabric](http://www.fabfile.org/). Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. (It is convenient if there is a top-level copy command, such as the pdcp command that is part of pdsh, but not necessary—the “cp” command can always be run from the shell.)
 
-Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](rserver-install-hadoop-800.md#StandardCommandLineInstall) steps 3 through 8.
+Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](install/r-server-install-hadoop-800.md#StandardCommandLineInstall) steps 3 through 8.
 
 The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
@@ -290,7 +290,7 @@ Developers might want to configure R Server after its installation to benefit fr
 
 [Install R on Hadoop overview](rserver-install-hadoop.md)
 
-[Install R Server 8.0.0 on Hadoop](rserver-install-hadoop-800.md)
+[Install R Server 8.0.0 on Hadoop](install/r-server-install-hadoop-800.md)
 
 [Install Microsoft R Server on Linux](rserver-install-linux-server.md)
 

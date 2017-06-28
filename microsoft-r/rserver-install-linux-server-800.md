@@ -124,7 +124,7 @@ In general, non-root installs require you to specify the complete path to the Re
 
 [Install R Server 2016 on Hadoop](rserver-install-hadoop-805.md)
 
-[Install R Server 8.0 on Hadoop](rserver-install-hadoop-800.md)
+[Install R Server 8.0 on Hadoop](install/r-server-install-hadoop-800.md)
 
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
 

@@ -24,7 +24,7 @@ ms.custom: ""
 ---
 # Install Microsoft R Server 8.0 on Hadoop
 
-Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Hadoop](rserver-install-hadoop-901.md).
+Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Hadoop](../rserver-install-hadoop-901.md).
 
 ## Recommendations for installation
 
@@ -52,13 +52,13 @@ Microsoft R Server requires Hadoop MapReduce and the Hadoop Distributed File Sys
 
 Your cluster installation must include the C APIs contained in the libhdfs package; these are required for Microsoft R Server. See your Hadoop documentation for information on installing this package.
 
-If Setup reports an error about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list.
+If Setup reports an error about uninstalled dependencies, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](../rserver-install-linux-hadoop-packages.md) for a complete list.
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Processor:** 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs). Itanium-architecture CPUs (also known as IA-64) are not supported. Multiple-core CPUs are recommended.
 
-**Operating System:** The Hadoop distribution must be installed on Red Hat Enterprise Linux 6.x (or a fully compatible operating system like CentOS). For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported.See [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md) for more information.
+**Operating System:** The Hadoop distribution must be installed on Red Hat Enterprise Linux 6.x (or a fully compatible operating system like CentOS). For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported.See [Supported platforms in Microsoft R Server](../rserver-install-supported-platforms.md) for more information.
 
 **Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
@@ -283,7 +283,7 @@ After completing installation, do the following to verify that Microsoft R Serve
 
 2. Start Microsoft R Server on a cluster node by typing Revo64 at a shell prompt.
 
-3. At the R prompt ">", enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
+3. At the R prompt ">", enter the following commands (these commands are drawn from the [*RevoScaleR Hadoop Getting Started Guide*](../scaler-hadoop-getting-started.md)*,* which explains what all of them are doing. For now, we are just trying to see if everything works):
 
 		bigDataDirRoot <- "/share"
 		myHadoopCluster <- RxHadoopMR(consoleOutput=TRUE)
@@ -340,20 +340,20 @@ Next try to run a simple rxExec job:
 
 	rxExec(list.files)
 
-That should return a list of files in the native file system. If either the call to rxSummary or the call to rxExec results in an error, see [Troubleshoot Microsoft R installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md) for help with common errors and solutions.
+That should return a list of files in the native file system. If either the call to rxSummary or the call to rxExec results in an error, see [Troubleshoot Microsoft R installation problems on Hadoop](../rserver-install-hadoop-troubleshoot.md) for help with common errors and solutions.
 
 ## Next Steps
 
-To get started with Microsoft R Server on Hadoop, we recommend the [Practice data import and exploration on Hadoop ](scaler-hadoop-getting-started.md).
+To get started with Microsoft R Server on Hadoop, we recommend the [Practice data import and exploration on Hadoop ](../scaler-hadoop-getting-started.md).
 
 ## See Also
 
-[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R on Hadoop overview](../rserver-install-hadoop.md)
 
-[Install R Server 8.0.5 on Hadoop](rserver-install-hadoop-805.md)
+[Install R Server 8.0.5 on Hadoop](../rserver-install-hadoop-805.md)
 
-[Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+[Install Microsoft R Server on Linux](../rserver-install-linux-server.md)
 
-[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
 
-[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
+[Troubleshoot R Server installation problems on Hadoop](../rserver-install-hadoop-troubleshoot.md)
