@@ -514,7 +514,7 @@
 # Resources
 ## [R Server known issues](resources-known-issues.md)
 ## [Deprecated and discontinued features](resources-deprecated-features.md)
-## [Servicing support policy](rserver-servicing-support.md)
+## [Servicing support policy](resources-servicing-support.md)
 ## [Opting out of usage data collection](resources-opting-out.md)
 ## [Glossary](resources-glossary.md)
 ## [Additional resources](resources-more.md)
