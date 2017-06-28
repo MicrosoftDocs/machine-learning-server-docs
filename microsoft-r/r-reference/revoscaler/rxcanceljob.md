@@ -55,7 +55,7 @@ Causes R to cancel an existing distributed computing job.
    
   
  ### `jobInfo`
- a jobInfo object, such as that returned by [rxExec](rxExec.md) or one of the  RevoScaleR analysis functions in a non-waiting compute context, or the current contents of the `rxgLastPendingJob` object. 
+ a jobInfo object, such as that returned by [rxExec](../../scaler/packagehelp/rxexec.md) or one of the  RevoScaleR analysis functions in a non-waiting compute context, or the current contents of the `rxgLastPendingJob` object. 
   
   
  ### `consoleOutput`
@@ -86,9 +86,9 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetJobs](rxGetJobs.md),
-[RxHadoopMR](RxHadoopMR.md),
-[RxInTeradata](RxInTeradata.md).
+[rxGetJobs](../../scaler/packagehelp/rxgetjobs.md),
+[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
+[RxInTeradata](../../scaler/packagehelp/rxinteradata.md).
    
  ##Examples
 
