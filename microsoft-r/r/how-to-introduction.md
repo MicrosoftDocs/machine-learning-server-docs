@@ -47,7 +47,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 * [Clustering](how-to-revoscaler-cluster.md)
 * [Converting RevoScaleR Model Objects for Use in PMML](how-to-developer-pmml.md)
 * [Transform Functions](concept-what-is-data-transformations.md)
-* [Visualizing Huge Data Sets](../scaler-user-guide-visualize-huge-data-sets.md)
+* [Visualizing Huge Data Sets](how-to-revoscaler-visualize-huge-data-sets.md)
 
 ## See Also
 

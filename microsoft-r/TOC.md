@@ -58,7 +58,7 @@
 ## [Naive Bayes Classifier](r/how-to-revoscaler-naive-bayes.md)
 ## [Correlation and Variance/Covariance Matrices](r/how-to-revoscaler-covcor.md)
 ## [Clustering](r/how-to-revoscaler-cluster.md)
-## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
+## [Visualizing Huge Data Sets](r/how-to-revoscaler-visualize-huge-data-sets.md)
 
 ## RevoScaleR Development
 ### [Write custom chunking algorithms in RevoScaleR](r/how-to-developer-write-chunking-algorithms.md)
