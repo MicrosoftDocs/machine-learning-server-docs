@@ -181,7 +181,7 @@ context.
   
     
  ### `jobTrackerURL`
- character scalar specifying the full URL for the jobtracker web interface. This is used only for the purpose of loading the job tracker web page from the `rxLaunchClusterJobManager` convenience function.  It is never used for job control, and its specification in the compute context is completely optional.  See the [rxLaunchClusterJobManager](rxLaunchClusterTaskManager.md) page for more information. 
+ character scalar specifying the full URL for the jobtracker web interface. This is used only for the purpose of loading the job tracker web page from the `rxLaunchClusterJobManager` convenience function.  It is never used for job control, and its specification in the compute context is completely optional.  See the [rxLaunchClusterJobManager](../../r-reference/revoscaler/rxlaunchclustertaskmanager.md) page for more information. 
   
   
     

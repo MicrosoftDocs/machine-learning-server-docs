@@ -409,7 +409,7 @@
 #### [RxInTeradata-class](r-reference/revoscaler/rxinteradata-class.md) 
 #### [RxInTeradata](r-reference/revoscaler/rxinteradata.md) 
 #### [rxKmeans](r-reference/revoscaler/rxkmeans.md) 
-#### [rxLaunchClusterTaskManager](scaler/packagehelp/rxLaunchClusterTaskManager.md) 
+#### [rxLaunchClusterTaskManager](r-reference/revoscaler/rxlaunchclustertaskmanager.md) 
 #### [rxLinePlot](scaler/packagehelp/rxLinePlot.md) 
 #### [rxLinMod](scaler/packagehelp/rxLinMod.md) 
 #### [RxLocalParallel-class](scaler/packagehelp/RxLocalParallel-class.md) 
