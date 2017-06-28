@@ -380,7 +380,7 @@
 #### [RxForeachDoPar](r-reference/revoscaler/rxforeachdopar.md) 
 #### [rxFormula](r-reference/revoscaler/rxformula.md) 
 #### [rxGetAvailableNodes](r-reference/revoscaler/rxgetavailablenodes.md) 
-#### [rxGetEnableThreadPool](scaler/packagehelp/rxGetEnableThreadPool.md) 
+#### [rxGetEnableThreadPool](r-reference/revoscaler/rxgetenablethreadpool.md) 
 #### [rxGetFuzzyDist](scaler/packagehelp/rxGetFuzzyDist.md) 
 #### [rxGetFuzzyKeys](scaler/packagehelp/rxGetFuzzyKeys.md) 
 #### [rxGetInfoXdf](scaler/packagehelp/rxGetInfoXdf.md) 
