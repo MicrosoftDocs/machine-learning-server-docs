@@ -38,7 +38,7 @@ Different model types are supported by specifying different loss functions, as f
 
 ### A Simple Binary Classification Forest
 
-In [Logistic Regression](../scaler-user-guide-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxBTrees* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit this):
+In [Logistic Regression](how-to-revoscaler-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxBTrees* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit this):
 
 	#  A Simple Classification Forest
 	  

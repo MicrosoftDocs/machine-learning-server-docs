@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Fitting Logistic Regression Models
 
-Logistic regression is a standard tool for modeling data with a binary response variable. In R, you fit a logistic regression using the *glm* function, specifying a binomial family and the logit link function. In RevoScaleR, you can use *rxGlm* in the same way (see [Fitting Generalized Linear Models](r/how-to-revoscaler-generalized-linear-model.md)) or you can fit a logistic regression using the optimized *rxLogit* function; because this function is specific to logistic regression, you need not specify a family or link function.
+Logistic regression is a standard tool for modeling data with a binary response variable. In R, you fit a logistic regression using the *glm* function, specifying a binomial family and the logit link function. In RevoScaleR, you can use *rxGlm* in the same way (see [Fitting Generalized Linear Models](how-to-revoscaler-generalized-linear-model.md)) or you can fit a logistic regression using the optimized *rxLogit* function; because this function is specific to logistic regression, you need not specify a family or link function.
 
 ### A Simple Logistic Regression Example
 
@@ -111,7 +111,7 @@ We can specify a stepwise model using rxLogit and rxStepControl as follows:
 	  Start       -0.20651005
 	  Number       0.41060119
 
-The methods for variable selection (forward, backward, and stepwise), the definition of model scope, and the available selection criteria are all the same as for stepwise linear regression; see ["Stepwise Variable Selection"](r/how-to-revoscaler-linear-model.md#stepwise-variable-selection) and the rxStepControl help file for more details.
+The methods for variable selection (forward, backward, and stepwise), the definition of model scope, and the available selection criteria are all the same as for stepwise linear regression; see ["Stepwise Variable Selection"](how-to-revoscaler-linear-model.md#stepwise-variable-selection) and the rxStepControl help file for more details.
 
 #### Plotting Model Coefficients
 
@@ -156,7 +156,7 @@ We can then fit a logistic regression model to the training data and predict wit
 	rxPredict(logitObj, data = targetDataFileName,
 		outData = targetDataFileName, computeResiduals = TRUE)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
 
 To view the first 30 rows of the output data file, use rxGetInfo as follows:
 
@@ -173,7 +173,7 @@ You can use rxPredict to obtain prediction standard errors and confidence interv
 		data = trainingDataFileName, blocksPerRead = 2, verbose = 1,
 		reportProgress=2, covCoef=TRUE)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
 
 You then specify `computeStdErr=TRUE` to obtain prediction standard errors; if this is TRUE, you can also specify `interval="confidence"` to obtain a confidence interval:
 
@@ -250,7 +250,7 @@ With perfect predictions, we see the the True Positive Rate is 1 for all thresho
 
 Now let’s use actual model predictions in an ROC curve. We’ll use the small mortgage default sample data to estimate a logistic model and them compute predicted values:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
 
 	# Using mortDefaultSmall for predictions and an ROC curve
 
