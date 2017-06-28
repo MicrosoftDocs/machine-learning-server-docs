@@ -75,9 +75,9 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 ##See Also
  
-[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
-[rxNeuralNet](rxNeuralNet.md), [rxOneClassSvm](rxOneClassSvm.md),
-[rxLogisticRegression](rxLogisticRegression.md), [rxFastLinear](rxFastLinear.md).
+[rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md), [rxFastForest](../../microsoftml/packagehelp/rxfastforest.md),
+[rxNeuralNet](../../microsoftml/packagehelp/rxneuralnet.md), [rxOneClassSvm](../../microsoftml/packagehelp/rxoneclasssvm.md),
+[rxLogisticRegression](../../microsoftml/packagehelp/rxlogisticregression.md), [rxFastLinear](../../microsoftml/packagehelp/rxfastlinear.md).
    
 ##Examples
 

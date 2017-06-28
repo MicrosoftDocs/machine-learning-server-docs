@@ -62,7 +62,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 * [categorical](../r-reference/microsoftml/categorical.md): Create indicator vector using categorical transform with dictionary.  
 * [categoricalHash](../r-reference/microsoftml/categoricalhash.md): Converts the categorical value into an indicator array by hashing. 
 * [featurizeText](../r-reference/microsoftml/featurizetext.md): Produces a bag of counts of sequences of consecutive words, called n-grams, from a given corpus of text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  
-* [getSentiment](packagehelp/getSentiment.md): Scores natural language text and creates a column that contains probabilities that the sentiments in the text are positive.
+* [getSentiment](../r-reference/microsoftml/getsentiment.md): Scores natural language text and creates a column that contains probabilities that the sentiments in the text are positive.
 * [ngram](packagehelp/ngram.md): allows defining arguments for count-based and hash-based feature extraction.
 * [selectFeatures](packagehelp/selectFeatures.md): Selects features from the specified variables using a specified mode.
 * [loadImage](packagehelp/loadImage.md): Loads image data.

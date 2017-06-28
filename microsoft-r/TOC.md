@@ -234,7 +234,7 @@
 ### [fastTrees](r-reference/microsoftml/fasttrees.md)  
 ### [featurizeImage](r-reference/microsoftml/featurizeimage.md) 
 ### [featurizeText](r-reference/microsoftml/featurizetext.md) 
-### [getSentiment](microsoftml/packagehelp/getSentiment.md)
+### [getSentiment](r-reference/microsoftml/getsentiment.md)
 ### [loadImage](microsoftml/packagehelp/loadImage.md) 
 ### [logisticRegression](microsoftml/packagehelp/logisticRegression.md) 
 ### [loss](microsoftml/packagehelp/loss.md)
