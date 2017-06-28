@@ -258,7 +258,7 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [How to publish and manage web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
-+ [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
++ [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

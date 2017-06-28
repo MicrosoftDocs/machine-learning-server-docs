@@ -53,7 +53,7 @@ You'll develop your R analytics locally with R Client, deploy them to Microsoft 
 
 You can publish your R code and models as standard or realtime web services. Once you publish, they are deployed and hosted in R Server. You can use the APIs directly or [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the `mrsdeploy` R package. 
 
-We recommend that you follow [this publish quickstart](quickstart-publish-web-service.md) to publish an R model as a service yourself. 
+We recommend that you follow [this publish quickstart](quickstart-publish-r-web-service.md) to publish an R model as a service yourself. 
 
 <a name="share"></a>
 
@@ -89,7 +89,7 @@ This section provides a quick summary of useful links for data scientists operat
 
 **Key Documents**
 + [About Operationalization](../deployr-repository-manager/about.md)
-+ [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
++ [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
 + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
 + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)

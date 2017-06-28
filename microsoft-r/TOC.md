@@ -141,7 +141,7 @@
 ## Deploy and consume analytics
 ### Data scientists
 #### [Get started for data scientists](operationalize/concept-operationalize-deploy-consume.md)
-#### [Quickstart: Deploy an R model as a web service](operationalize/quickstart-publish-web-service.md)
+#### [Quickstart: Deploy an R model as a web service](operationalize/quickstart-publish-r-web-service.md)
 #### [Connect to R Server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 #### [Publish and manage services in R](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Get and consume services in R](operationalize/how-to-consume-web-service-interact-in-r.md)

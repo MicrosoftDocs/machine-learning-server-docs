@@ -42,7 +42,7 @@ In minutes, you can step through a classic what-if problem using sample data and
 
 * [Quickstart: Run R code in Microsoft R](quickstart-r-code.md) 
 
-* [Quickstart: Deploy R code as a web service](operationalize/quickstart-publish-web-service.md) 
+* [Quickstart: Deploy R code as a web service](operationalize/quickstart-publish-r-web-service.md) 
 
 * [Tutorial: Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md) 
 

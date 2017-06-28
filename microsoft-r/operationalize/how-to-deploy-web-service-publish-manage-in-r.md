@@ -150,7 +150,7 @@ realtimeApi <- publishService(
 
 For a detailed example, see the ["Workflow" examples](#workflow) at the end of this article.
 
-You can also follow the quickstart article "[Deploying an R model as a web service](quickstart-publish-web-service.md)."
+You can also follow the quickstart article "[Deploying an R model as a web service](quickstart-publish-r-web-service.md)."
 
 Learn how to get a [list of all services](how-to-consume-web-service-interact-in-r.md#listservices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getservice) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others.
 
@@ -686,7 +686,7 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 ## See also
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
-+ [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
++ [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)
