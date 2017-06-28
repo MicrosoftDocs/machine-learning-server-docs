@@ -35,7 +35,7 @@ If you are new to both R and Microsoft R, this tutorial introduces you to 25 (or
 This tutorial starts with base R commands before transitioning to RevoScaleR functions in Microsoft R. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](r/concept-what-is-compute-context.md) to R Server.
 
 ## Prerequisites
 

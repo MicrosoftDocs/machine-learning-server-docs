@@ -36,7 +36,7 @@ R Client to R Server on a database| Write and run script locally in R Client, pu
 R Server to R Server | Push platform-specific computations to an R Server on a different platform. Supported platforms include SQL Server, Teradata, Hadoop (Spark or MapReduce). You can implement a distributed processing architecture: RxLocalSeq, RxSpark, RxInSqlServer. |
 
 > [!Tip]
-> If your objective is simply to use two or more R Server instances interchangeably, or to shift execution from R Client to a more powerful R Server, consider [remote execution](operationalize/remote-execution.md) rather than switching the compute context. Remote execution gives you the ability to run R sessions on any standalone R Server installation on Windows or Linux. 
+> If your objective is simply to use two or more R Server instances interchangeably, or to shift execution from R Client to a more powerful R Server, consider [remote execution](../operationalize/remote-execution.md) rather than switching the compute context. Remote execution gives you the ability to run R sessions on any standalone R Server installation on Windows or Linux. 
 
 ## Prerequisites
 
@@ -50,18 +50,18 @@ You can switch from local to any of the compute contexts in the following list.
 
 Context name | Alternative name | Allowed data sources |
 -----------|--------------------|-----------------------|
-[RxLocalSeq](scaler/packagehelp/rxlocalseq.md)      | local     | (all) |
-[RxSpark](r-reference/revoscaler/rxspark.md)         | spark     | RxTextData](r-reference/revoscaler/rxtextdata.md), [RxXdfData](r-reference/revoscaler/rxxdfdata.md), [RxSparkData](r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
-[RxHadoopMR](r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](r-reference/revoscaler/rxtextdata.md), [RxXdfData](r-reference/revoscaler/rxxdfdata.md) |
-[RxInSqlServer](r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](r-reference/revoscaler/rxsqlserverdata.md) |
-[RxInTeradata](r-reference/revoscaler/rxinteradata.md)    | teradata  | [RxTeradataData](r-reference/revoscaler/rxteradata.md)  |
+[RxLocalSeq](../r-reference/revoscaler/rxlocalseq.md)      | local     | (all) |
+[RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md), [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
+[RxHadoopMR](../r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md) |
+[RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](../r-reference/revoscaler/rxsqlserverdata.md) |
+[RxInTeradata](../r-reference/revoscaler/rxinteradata.md)    | teradata  | [RxTeradataData](../r-reference/revoscaler/rxteradata.md)  |
 
 Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. The following compute contexts are used for manual distributed computing:
 
 Context name | Alternative name | 
 -----------|--------------------|
-[RxLocalParallel](r-reference/revoscaler/rxlocalparallel.md) | localpar  |  
-[RxForeachDoPar](r-reference/revoscaler/rxforeachdopar.md)  | dopar     |  
+[RxLocalParallel](../r-reference/revoscaler/rxlocalparallel.md) | localpar  |  
+[RxForeachDoPar](../r-reference/revoscaler/rxforeachdopar.md)  | dopar     |  
 
 ## Get compute context
 
@@ -93,7 +93,7 @@ rxSetComputeContext(computeContext = myServer)
 
 ## See Also
 
- [Introduction to R Server](rserver.md) 
- [Install R Server on Windows](install/r-server-install-windows.md)  
- [Install R Server on Linux](install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](install/r-server-install-hadoop.md)
+ [Introduction to R Server](../rserver.md) 
+ [Install R Server on Windows](../install/r-server-install-windows.md)  
+ [Install R Server on Linux](../install/r-server-install-linux-server.md)  
+ [Install R Server on Hadoop](../install/r-server-install-hadoop.md)

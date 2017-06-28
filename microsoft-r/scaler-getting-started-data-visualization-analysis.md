@@ -33,7 +33,7 @@ This tutorial builds on what you learned in the previous [data import and explor
 This tutorial focuses on analysis and predictions.
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](scaler-data-compute-context.md) to R Server.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](r/concept-what-is-compute-context.md) to R Server.
 
 ## What you will learn
 

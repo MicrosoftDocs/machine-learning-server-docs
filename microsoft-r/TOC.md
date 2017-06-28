@@ -38,7 +38,7 @@
 ### [Merge data](scaler-data-merge.md)
 ### Concepts
 #### [RevoScaleR](scaler-user-guide-introduction.md)
-#### [Compute context](scaler-data-compute-context.md)
+#### [Compute context](r/concept-what-is-compute-context.md)
 #### [Data source objects](scaler-user-guide-data-source.md)
 #### [Data transformations](scaler-user-guide-transform-functions.md)
 #### [XDF files](scaler-data-xdf.md)
