@@ -177,7 +177,7 @@ defined by `varsToKeep` or `varsToDrop`.
  
 If an `outFile` is not specified, a data frame with the sorted data
 is returned. If an `outFile` is specified, an 
-[RxXdfData](RxXdfData.md) data source is returned that can be used in
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md) data source is returned that can be used in
 subsequent RevoScaleR analysis. If sorting is unsuccessful, `FALSE`
 is returned.
 

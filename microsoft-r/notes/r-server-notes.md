@@ -41,7 +41,7 @@ Other release-specific pages include [What's New in 9.1](../rserver-whats-new.md
 |`rxDataStepXdf` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
 |`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
 |`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
-|`rxSortXdf` | Deprecated | [`rxSort`](../scaler/packagehelp/rxSortXdf.md) |
+|`rxSortXdf` | Deprecated | [`rxSort`](../r-reference/revoscaler/rxsortxdf.md) |
 |`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](../r-reference/revoscaler/rxgetvarinfoxdf.md))|
 |`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](../r-reference/revoscaler/rxgetinfoxdf.md))|
 
