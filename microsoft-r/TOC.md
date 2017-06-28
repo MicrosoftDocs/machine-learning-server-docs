@@ -334,7 +334,7 @@
 #### [mortDefaultSmall](scaler/packagehelp/mortDefaultSmall.md) 
 ### Functions
 #### [as.gbm](r-reference/revoscaler/as-gbm.md) 
-#### [as.glm](scaler/packagehelp/as.glm.md) 
+#### [as.glm](r-reference/revoscaler/as-glm.md) 
 #### [as.kmeans](scaler/packagehelp/as.kmeans.md) 
 #### [as.lm](scaler/packagehelp/as.lm.md) 
 #### [as.naiveBayes](scaler/packagehelp/as.naiveBayes.md) 

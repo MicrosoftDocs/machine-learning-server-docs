@@ -81,7 +81,7 @@ an object of class lm.
  
 [rxLinMod](rxLinMod.md),
 lm,
-[as.glm](as.glm.md),
+[as.glm](../../r-reference/revoscaler/as-glm.md),
 [as.kmeans](as.kmeans.md),
 [as.rpart](as.rpart.md),
 [as.xtabs](as.xtabs.md).

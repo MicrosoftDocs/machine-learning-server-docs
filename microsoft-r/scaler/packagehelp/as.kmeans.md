@@ -80,7 +80,7 @@ an object of class `"kmeans"`.
  ##See Also
  
 [as.lm](as.lm.md),
-[as.glm](as.glm.md),
+[as.glm](../../r-reference/revoscaler/as-glm.md),
 [as.rpart](as.rpart.md),
 [as.xtabs](as.xtabs.md),
 [rxKmeans](rxKmeans.md).

@@ -257,7 +257,7 @@ at the R prompt):
 * [as.lm](as.lm.md): Coerce an `rxLinMod` object to an `lm` object for use with the **pmml** package.
 
 
-* [as.glm](as.glm.md): Coerce an `rxLogit` or `rxGlm` object to a `glm` object for use with the **pmml** package.
+* [as.glm](../../r-reference/revoscaler/as-glm.md): Coerce an `rxLogit` or `rxGlm` object to a `glm` object for use with the **pmml** package.
 
 
 * [as.rpart](as.rpart.md): Coerce an `rxDTree` object to an `rpart` object for use with the **pmml** package.

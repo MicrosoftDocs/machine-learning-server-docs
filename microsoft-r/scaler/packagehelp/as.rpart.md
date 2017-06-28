@@ -82,7 +82,7 @@ an object of class rpart.
 [rxDTree](rxDTree.md),
 [as.lm](as.lm.md),
 [as.kmeans](as.kmeans.md),
-[as.glm](as.glm.md),
+[as.glm](../../r-reference/revoscaler/as-glm.md),
 [as.xtabs](as.xtabs.md).
    
  

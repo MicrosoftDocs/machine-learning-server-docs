@@ -62,8 +62,8 @@ as.glm  (x, ...)
  
  ##Details
  
-This function converts an existing object of class [rxLogit](rxLogit.md) or 
-[rxGlm](rxGLM.md) to an object of class glm.
+This function converts an existing object of class [rxLogit](../../scaler/packagehelp/rxlogit.md) or 
+[rxGlm](../../scaler/packagehelp/rxglm.md) to an object of class glm.
 The underlying structure of the output object will be a subset of that produced by an equivalent call to
 glm. In many cases, this method can be used to coerce an object
 for use with the **pmml** package. **RevoScaleR** model objects that contain
@@ -82,13 +82,13 @@ an object of class lm.
  
  ##See Also
  
-[rxLogit](rxLogit.md),
-[rxGlm](rxGLM.md),
+[rxLogit](../../scaler/packagehelp/rxlogit.md),
+[rxGlm](../../scaler/packagehelp/rxglm.md),
 glm,
-[as.lm](as.lm.md),
-[as.kmeans](as.kmeans.md),
-[as.rpart](as.rpart.md),
-[as.xtabs](as.xtabs.md).
+[as.lm](../../scaler/packagehelp/as.lm.md),
+[as.kmeans](../../scaler/packagehelp/as.kmeans.md),
+[as.rpart](../../scaler/packagehelp/as.rpart.md),
+[as.xtabs](../../scaler/packagehelp/as.xtabs.md).
    
  
  ##Examples
