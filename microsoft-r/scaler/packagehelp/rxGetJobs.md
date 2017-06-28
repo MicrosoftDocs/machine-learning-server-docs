@@ -117,7 +117,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
-[rxGetJobOutput](rxGetJobOutput.md),
+[rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md),
 [rxGetJobResults](rxGetJobResults.md),
 [rxGetJobStatus](rxGetJobResults.md),
 [rxExec](../../r-reference/revoscaler/rxexec.md), 

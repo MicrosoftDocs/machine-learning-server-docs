@@ -62,7 +62,7 @@ actual completion state of a job).
 If `autoCleanup` has been set to `TRUE`, the console output will not persist after the 
 job completes.
  
-Unlike [rxGetJobResults](rxGetJobResults.md), this function does not remove any job information upon
+Unlike [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md), this function does not remove any job information upon
 retrieval.
  
  
@@ -73,14 +73,14 @@ useful return value.
  
  ##See Also
  
-[RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
-[RxInSqlServer](RxInSqlServer.md),
-[RxInTeradata](RxInTeradata.md), 
-[rxGetJobs](rxGetJobs.md),
-[rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md), 
-[rxGetJobResults](rxGetJobResults.md),
-[rxExec](../../r-reference/revoscaler/rxexec.md).
+[RxSpark](../../scaler/packagehelp/rxspark.md),
+[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
+[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),
+[RxInTeradata](../../scaler/packagehelp/rxinteradata.md), 
+[rxGetJobs](../../scaler/packagehelp/rxgetjobs.md),
+[rxCleanupJobs](rxcleanup.md), 
+[rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md),
+[rxExec](rxexec.md).
    
  ##Examples
 

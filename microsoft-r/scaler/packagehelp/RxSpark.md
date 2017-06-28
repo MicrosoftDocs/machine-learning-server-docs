@@ -261,7 +261,7 @@ context.
   
     
  ### `autoCleanup`
- logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxGetJobResults.md), and the output via [rxGetJobOutput](rxGetJobOutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
+ logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxGetJobResults.md), and the output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive. 
   
   
     
@@ -337,7 +337,7 @@ object of class RxSpark.
  ##See Also
  
 [rxGetJobStatus](rxGetJobResults.md),
-[rxGetJobOutput](rxGetJobOutput.md),
+[rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md),
 [rxGetJobResults](rxGetJobResults.md), 
 [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md),
 [RxHadoopMR](RxHadoopMR.md), 

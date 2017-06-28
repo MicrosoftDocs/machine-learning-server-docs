@@ -385,7 +385,7 @@
 #### [rxGetFuzzyKeys](r-reference/revoscaler/rxgetfuzzykeys.md) 
 #### [rxGetInfoXdf](r-reference/revoscaler/rxgetinfoxdf.md) 
 #### [rxGetJobInfo](r-reference/revoscaler/rxgetjobinfo.md) 
-#### [rxGetJobOutput](scaler/packagehelp/rxGetJobOutput.md) 
+#### [rxGetJobOutput](r-reference/revoscaler/rxgetjoboutput.md) 
 #### [rxGetJobResults](scaler/packagehelp/rxGetJobResults.md) 
 #### [rxGetJobs](scaler/packagehelp/rxGetJobs.md) 
 #### [rxGetPartitions](scaler/packagehelp/rxGetPartitions.md) 

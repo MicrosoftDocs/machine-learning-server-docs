@@ -55,13 +55,13 @@ Obtain distributed computing results and processing status.
   
   
  ### `consoleOutput`
- `NULL` or logical value. If `TRUE`, the console output from  all of the processes is printed to the user console. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](rxGetJobOutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used. 
+ `NULL` or logical value. If `TRUE`, the console output from  all of the processes is printed to the user console. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used. 
   
   
   
     
  ### `autoCleanup`
- `NULL` or logical value. If `TRUE`, the default behavior is to clean up  any artifacts created by the distributed computing job. If `FALSE`, then the  artifacts are not deleted, and the results may be acquired using [rxGetJobResults](rxGetJobResults.md),  and the console output via [rxGetJobOutput](rxGetJobOutput.md) until the [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the artifacts.  If not `NULL`, this flag overwrites the value set in the compute context when the job was submitted. If you routinely set `autoCleanup=FALSE`, you will eventually fill your hard disk with compute artifacts.If you set `autoCleanup=TRUE`and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`. 
+ `NULL` or logical value. If `TRUE`, the default behavior is to clean up  any artifacts created by the distributed computing job. If `FALSE`, then the  artifacts are not deleted, and the results may be acquired using [rxGetJobResults](rxGetJobResults.md),  and the console output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the artifacts.  If not `NULL`, this flag overwrites the value set in the compute context when the job was submitted. If you routinely set `autoCleanup=FALSE`, you will eventually fill your hard disk with compute artifacts.If you set `autoCleanup=TRUE`and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`. 
   
  
  
