@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Generate Local Parallel Compute Context" 
-description: " Creates a local compute context object that uses the doParallel back-end for HPC computations  performed using rxExec.  This compute context can be used only to distribute computations via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel. " 
+description: " Creates a local compute context object that uses the doParallel back-end for HPC computations  performed using rxExec.  This compute context can be used only to distribute computations via the [rxExec](rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel. " 
 keywords: "RevoScaleR, RxLocalParallel, IO" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -33,7 +33,7 @@ ms.custom: ""
  
 Creates a local compute context object that uses the doParallel back-end for HPC computations 
 performed using rxExec.  This compute context can be used only to distribute computations
-via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel.
+via the [rxExec](rxexec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel.
  
  
  ##Usage
@@ -54,12 +54,12 @@ via the [rxExec](../../r-reference/revoscaler/rxexec.md) function; it is ignored
    
     
  ### `dataPath`
- `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxOptions.md) 
+ `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md) 
    
   
     
  ### `outDataPath`
- `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](rxOptions.md)  
+ `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md)  
    
  
  
@@ -87,13 +87,13 @@ object of class RxLocalParallel.
  
  ##See Also
  
-[rxSetComputeContext](rxSetComputeContext.md),
-[rxExec](../../r-reference/revoscaler/rxexec.md),
-[rxOptions](rxOptions.md),
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[RxLocalSeq](RxLocalSeq.md),
-[RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md),
-[RxLocalParallel-class](../../r-reference/revoscaler/rxlocalparallel-class.md).
+[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
+[rxExec](rxexec.md),
+[rxOptions](../../scaler/packagehelp/rxoptions.md),
+[RxComputeContext](rxcomputecontext.md),
+[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
+[RxForeachDoPar](rxforeachdopar.md),
+[RxLocalParallel-class](rxlocalparallel-class.md).
    
  
  ##Examples

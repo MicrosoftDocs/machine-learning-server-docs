@@ -68,7 +68,7 @@ Class RxComputeContext, directly.
 [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
 [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
 [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
-[RxLocalParallel](RxLocalParallel.md),
+[RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md),
 [RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md),
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [rxSetComputeContext](rxSetComputeContext.md).

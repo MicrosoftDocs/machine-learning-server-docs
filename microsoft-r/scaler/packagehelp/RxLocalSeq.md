@@ -89,7 +89,7 @@ object of class RxLocalSeq.
 [rxExec](../../r-reference/revoscaler/rxexec.md),
 [rxOptions](rxOptions.md),
 [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[RxLocalParallel](RxLocalParallel.md),
+[RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md),
 [RxLocalSeq-class](RxLocalSeq-class.md).
    
  

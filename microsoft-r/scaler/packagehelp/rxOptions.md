@@ -197,7 +197,7 @@ computations.
  ### `computeContext`
  an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) object representing the computational environment.  
 *   [RxLocalSeq](RxLocalSeq.md): compute locally, using sequential processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
-*   [RxLocalParallel](RxLocalParallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
+*   [RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
 *   [RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md): use the currently registered parallel backend for 'foreach' for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing.   
 *  [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md): use a Hadoop cluster for both High Performance Analytics for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
 *  [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md): use a Teradata cluster for both High Performance Analytics and for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
@@ -232,7 +232,7 @@ computations.
   
     
  ### `useDoSMP`
- `NULL`. Deprecated. Use a [RxLocalParallel](RxLocalParallel.md) compute context. 
+ `NULL`. Deprecated. Use a [RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md) compute context. 
   
    
     
@@ -345,7 +345,7 @@ value of the requested option is returned.
  ##See Also
  
 [RxLocalSeq](RxLocalSeq.md),
-[RxLocalParallel](RxLocalParallel.md),
+[RxLocalParallel](../../r-reference/revoscaler/rxlocalparallel.md),
 [RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md),
 [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
 [RxSpark](RxSpark.md),
