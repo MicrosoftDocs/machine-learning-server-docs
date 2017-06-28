@@ -80,7 +80,7 @@ Use Microdata Series*. [`http://www.ipums.org`](http://www.ipums.org)
  
  ##See Also
  
-[CensusWorkers](CensusWorkers.md)
+[CensusWorkers](../../scaler/packagehelp/censusworkers.md)
    
  ##Examples
 

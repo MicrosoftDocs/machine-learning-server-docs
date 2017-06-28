@@ -326,7 +326,7 @@
 #### [AirlineData87to08](r-reference/revoscaler/airlinedata87to08.md) 
 #### [AirlineDemoSmall](r-reference/revoscaler/airlinedemosmall.md) 
 #### [AirOnTime87to12](r-reference/revoscaler/airontime87to12.md)
-#### [CensusUS5Pct2000](scaler/packagehelp/CensusUS5Pct2000.md) 
+#### [CensusUS5Pct2000](r-reference/revoscaler/censusus5pct2000.md) 
 #### [CensusWorkers](scaler/packagehelp/CensusWorkers.md)
 #### [claims](scaler/packagehelp/claims.md) 
 #### [DJIAdaily](scaler/packagehelp/DJIAdaily.md) 
