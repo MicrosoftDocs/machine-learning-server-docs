@@ -97,7 +97,7 @@ categorical variables:
  ##See Also
  
 [rxTransform](rxTransform.md),
-[rxCrossTabs](rxCrossTabs.md),
+[rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md),
 [rxCube](rxCube.md),
 [rxLinMod](rxLinMod.md),
 [rxLogit](rxLogit.md),

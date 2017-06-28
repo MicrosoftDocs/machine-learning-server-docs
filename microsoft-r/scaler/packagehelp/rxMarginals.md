@@ -65,7 +65,7 @@ rxMarginals  (x, output = "sums", ...)
  ##Details
  
 Developed primarily as a method to access marginal statistics from
-[rxCrossTabs](rxCrossTabs.md) generated cross-tabulations.
+[rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md) generated cross-tabulations.
  
  
  ##Value
@@ -80,7 +80,7 @@ of the list contains a list of the marginal means (row, column, and grand) if
  
  ##See Also
  
-[rxCrossTabs](rxCrossTabs.md)
+[rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md)
    
  ##Examples
 

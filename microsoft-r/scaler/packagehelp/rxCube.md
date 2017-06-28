@@ -228,7 +228,7 @@ subset  (x, ...)
  ##Details
  
 The output of the `rxCube` function is essentially the same as that
-produced by [rxCrossTabs](rxCrossTabs.md) except that it is presented in a
+produced by [rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md) except that it is presented in a
 different format. While the `rxCrossTabs` function produces lists of
 contingency tables (where each table is a matrix), the `rxCube` function
 outputs a single list (or data frame, or .xdf file) containing one column for each variable
@@ -270,7 +270,7 @@ columns.
  ##See Also
  
 xtabs,
-[rxCrossTabs](rxCrossTabs.md),
+[rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md),
 [as.xtabs](../../r-reference/revoscaler/as-xtabs.md),
 [rxTransform](rxTransform.md).
    
