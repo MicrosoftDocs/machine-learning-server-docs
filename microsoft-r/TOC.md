@@ -266,7 +266,7 @@
 ###[downloadSnapshot](r-reference/mrsdeploy/downloadsnapshot.md) 
 ###[encodings](r-reference/mrsdeploy/encodings.md) 
 ###[getRemoteFile](r-reference/mrsdeploy/getremotefile.md) 
-###[getRemoteObject](mrsdeploy/packagehelp/getRemoteObject.md) 
+###[getRemoteObject](r-reference/mrsdeploy/getremoteobject.md) 
 ###[getRemoteWorkspace](mrsdeploy/packagehelp/getRemoteWorkspace.md) 
 ###[getService](mrsdeploy/packagehelp/getService.md) 
 ###[getValidatedServiceType](mrsdeploy/packagehelp/getValidatedServiceType.md) 

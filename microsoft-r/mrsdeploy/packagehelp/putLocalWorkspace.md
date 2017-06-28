@@ -53,7 +53,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
 [getRemoteWorkspace](getRemoteWorkspace.md)
 
-[getRemoteObject](getRemoteObject.md)
+[getRemoteObject](../../r-reference/mrsdeploy/getremoteobject.md)
 
 [putLocalObject](putLocalObject.md)
    

@@ -55,7 +55,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 
 [putLocalObject](putLocalObject.md)
 
-[getRemoteObject](getRemoteObject.md)
+[getRemoteObject](../../r-reference/mrsdeploy/getremoteobject.md)
    
  ##Examples
 

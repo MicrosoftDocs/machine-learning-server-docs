@@ -72,7 +72,7 @@ list of R objects or `NULL`
  
 [getRemoteWorkspace](getRemoteWorkspace.md)
 
-[getRemoteObject](getRemoteObject.md)
+[getRemoteObject](../../r-reference/mrsdeploy/getremoteobject.md)
 
 [putLocalWorkspace](putLocalWorkspace.md)
    

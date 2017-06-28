@@ -70,11 +70,11 @@ list of R objects or `NULL`
  
  ##See Also
  
-[getRemoteWorkspace](getRemoteWorkspace.md)
+[getRemoteWorkspace](../../mrsdeploy/packagehelp/getremoteworkspace.md)
 
-[putLocalObject](putLocalObject.md)
+[putLocalObject](../../mrsdeploy/packagehelp/putlocalobject.md)
 
-[putLocalWorkspace](putLocalWorkspace.md)
+[putLocalWorkspace](../../mrsdeploy/packagehelp/putlocalworkspace.md)
    
  ##Examples
 

@@ -64,7 +64,7 @@ Base function for executing a block of R code or an R script in the remote R ses
   
   
  ### `outputs`
- Character vector of the names of the objects to retrieve.  Only primitives, vectors and dataframes can be retrieved using this function  Use [getRemoteObject](getRemoteObject.md)to get any type of R object from the remote session 
+ Character vector of the names of the objects to retrieve.  Only primitives, vectors and dataframes can be retrieved using this function  Use [getRemoteObject](../../r-reference/mrsdeploy/getremoteobject.md)to get any type of R object from the remote session 
   
   
   
