@@ -47,7 +47,7 @@ Use a PemaBaseClass reference class object to perform a Parallel External Memory
    
     
  ### `pemaObj`
-  A [PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md) reference class object containing the methods for the analysis.  
+  A [PemaBaseClass](pemabaseclass.md) reference class object containing the methods for the analysis.  
   
     
  ### `data`
@@ -55,7 +55,7 @@ Use a PemaBaseClass reference class object to perform a Parallel External Memory
   
     
  ### `outData`
-  An **RevoScaleR** data source object that has write capabilities, such as an .xdf file. Not used by all [PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md) reference class objects.  
+  An **RevoScaleR** data source object that has write capabilities, such as an .xdf file. Not used by all [PemaBaseClass](pemabaseclass.md) reference class objects.  
   
   
     
@@ -105,9 +105,9 @@ of the analysis unless `initPema` is set to `TRUE`, and will contain updated val
  
  ##See Also
  
-[PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md),
-[PemaMean](PemaMean.md),
-[setPemaClass](setPemaClass.md)
+[PemaBaseClass](pemabaseclass.md),
+[PemaMean](../../pemar/packagehelp/pemamean.md),
+[setPemaClass](../../pemar/packagehelp/setpemaclass.md)
    
  ##Examples
 
