@@ -37,7 +37,7 @@
 ### [Sort data](scaler-data-sort.md)
 ### [Merge data](scaler-data-merge.md)
 ### Concepts
-#### [RevoScaleR](scaler-user-guide-introduction.md)
+#### [RevoScaleR](r/concept-what-is-revoscaler.md)
 #### [Compute context](r/concept-what-is-compute-context.md)
 #### [Data source objects](scaler-user-guide-data-source.md)
 #### [Data transformations](r/concept-what-is-data-transformations.md)

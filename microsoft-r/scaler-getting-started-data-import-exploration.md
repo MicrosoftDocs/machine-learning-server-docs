@@ -54,7 +54,7 @@ The command prompt for a R is `>`. You can hand-type case-sensitive R commands, 
 
 ### How to locate built-in data
 
-[RevoScaleR](scaler-user-guide-introduction.md) provides both functions and built-in datasets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
+[RevoScaleR](r/concept-what-is-revoscaler.md) provides both functions and built-in datasets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
 
 1. Open the R console or start a Revo64 session. The RevoScaleR library is loaded automatically.
 

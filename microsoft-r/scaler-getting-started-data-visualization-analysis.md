@@ -470,7 +470,7 @@ This tutorial demonstrated how to use several important functions, but on a smal
 
  [ScaleR Getting Started with Hadoop](scaler-hadoop-getting-started.md)	
  [ScaleR Getting Started with Teradata](scaler-teradata-getting-started.md)	
- [What is RevoScaleR](scaler-user-guide-introduction.md)	
+ [What is RevoScaleR](r/concept-what-is-revoscaler.md)	
  [Introduction to Microsoft R](microsoft-r-getting-started.md)	
  [Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)	
  [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)
