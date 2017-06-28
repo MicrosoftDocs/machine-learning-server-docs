@@ -163,7 +163,7 @@ In DeployR, we refer to any web service that exposes R analytics capabilities ov
 
 #### DeployR Administration Console
 
-The Administration Console is a tool, delivered as an easy-to-use Web interface, that facilitates the management of users, roles, IP filters, the grid and runtime policies on the DeployR server. Learn more [here](../deployr-admin-console/deployr-admin-console-about.md).
+The Administration Console is a tool, delivered as an easy-to-use Web interface, that facilitates the management of users, roles, IP filters, the grid and runtime policies on the DeployR server. Learn more [here](deployr-admin-console-about.md).
 
 <a name="deployr-repository-manager"></a>
 #### DeployR Repository Manager

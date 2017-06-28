@@ -651,7 +651,7 @@ This document describes the DeployR Public API and the complete set of API servi
 
 **DeployR Administration Console**
 
-The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API. Refer to the [Administration Console documentation](deployr-admin-console/deployr-admin-console-about.md) for further details.
+The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API. Refer to the [Administration Console documentation](deployr/deployr-admin-console-about.md) for further details.
 
 **DeployR Grid Management Framework**
 
@@ -1491,7 +1491,7 @@ This change applies across all execution APIs:
 
 #### Grid Cluster Targeted Executions
 
-Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the [Administration Console](deployr-admin-console/deployr-admin-console-about.md), to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu". This feature is **DeployR Enterprise** only.
+Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the [Administration Console](deployr/deployr-admin-console-about.md), to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu". This feature is **DeployR Enterprise** only.
 
 By identifying a value on a new *cluster* parameter client applications can request tasks be executed on nodes within a specific cluster on the grid on the following calls:
 
