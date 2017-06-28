@@ -255,7 +255,7 @@
 ### [rxNeuralNet](r-reference/microsoftml/rxneuralnet.md) 
 ### [rxOneClassSvm](r-reference/microsoftml/rxoneclasssvm.md)  
 ### [rxPredict](r-reference/microsoftml/rxpredict.md)
-### [selectFeatures](microsoftml/packagehelp/selectFeatures.md)
+### [selectFeatures](r-reference/microsoftml/selectfeatures.md)
 
 ## [mrsdeploy](mrsdeploy/mrsdeploy.md)
 ###[createSnapshot](mrsdeploy/packagehelp/createSnapshot.md) 

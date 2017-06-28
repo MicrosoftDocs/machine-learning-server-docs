@@ -54,7 +54,7 @@ variables using the specified mode.
   
   
  ### `mode`
- Specifies the mode of feature selection. This can be either  [minCount](../../r-reference/microsoftml/mincount.md) or [mutualInformation](../../r-reference/microsoftml/mutualinformation.md). 
+ Specifies the mode of feature selection. This can be either  [minCount](mincount.md) or [mutualInformation](mutualinformation.md). 
   
   
   
@@ -67,7 +67,7 @@ variables using the specified mode.
  
 The feature selection transform selects features from the specified
 variables using one of the two modes: count or mutual information. For more
-information, see [minCount](../../r-reference/microsoftml/mincount.md) and [mutualInformation](../../r-reference/microsoftml/mutualinformation.md).
+information, see [minCount](mincount.md) and [mutualInformation](mutualinformation.md).
  
  
  ##Value
@@ -76,7 +76,7 @@ A `maml` object defining the transform.
  
  ##See Also
  
-[minCount](../../r-reference/microsoftml/mincount.md) [mutualInformation](../../r-reference/microsoftml/mutualinformation.md)
+[minCount](mincount.md) [mutualInformation](mutualinformation.md)
    
  ##Examples
 
