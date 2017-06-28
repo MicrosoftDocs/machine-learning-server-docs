@@ -94,7 +94,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
      
  ### `fileSystem`
- character string or [RxFileSystem](RxFileSystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. If `NULL`, the file system will be set to that in the current compute context, if available, otherwise the `fileSystem` option. 
+ character string or [RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. If `NULL`, the file system will be set to that in the current compute context, if available, otherwise the `fileSystem` option. 
   
   
      

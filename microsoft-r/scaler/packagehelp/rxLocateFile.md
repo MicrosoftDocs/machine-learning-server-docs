@@ -58,7 +58,7 @@ in the specified set of paths.
   
      
  ### `fileSystem`
- `NULL`, character string or [RxFileSystem](RxFileSystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. If `NULL`, the active compute context will be checked for a valid file system.  If not available, `rxGetOption("fileSystem")` will be used to obtain the file system. If `file` is a data source containing a file system, that file system will take precedent.  
+ `NULL`, character string or [RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. If `NULL`, the active compute context will be checked for a valid file system.  If not available, `rxGetOption("fileSystem")` will be used to obtain the file system. If `file` is a data source containing a file system, that file system will take precedent.  
   
   
   

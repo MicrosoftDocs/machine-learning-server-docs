@@ -102,7 +102,7 @@ An RxHdfsFileSystem file system object. This object may be used to in
  
  ##See Also
  
-[RxFileSystem](RxFileSystem.md),
+[RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md),
 [RxNativeFileSystem](RxNativeFileSystem.md),
 [rxSetFileSystem](rxSetFileSystem.md),
 [rxOptions](rxOptions.md),
