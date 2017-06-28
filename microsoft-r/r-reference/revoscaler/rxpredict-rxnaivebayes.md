@@ -49,7 +49,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL, type = c("class", "prob"),
    
     
  ### `modelObject`
-  object returned from a call to [rxNaiveBayes](../../r-reference/revoscaler/rxnaivebayes.md). 
+  object returned from a call to [rxNaiveBayes](rxnaivebayes.md). 
   
     
  ### `data`
@@ -90,7 +90,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL, type = c("class", "prob"),
   
     
  ### ` ...`
-  additional arguments to be passed directly to [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) such as `removeMissingsOnRead`, `overwrite`,  `blocksPerRead`, `reportProgress`, `xdfCompressionLevel`. 
+  additional arguments to be passed directly to [rxDataStep](rxdatastep.md) such as `removeMissingsOnRead`, `overwrite`,  `blocksPerRead`, `reportProgress`, `xdfCompressionLevel`. 
   
  
  
@@ -122,7 +122,7 @@ Naive Bayes classifier
  
  ##See Also
  
-[rxNaiveBayes](../../r-reference/revoscaler/rxnaivebayes.md).
+[rxNaiveBayes](rxnaivebayes.md).
    
  ##Examples
 
