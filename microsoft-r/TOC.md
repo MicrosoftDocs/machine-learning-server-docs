@@ -360,7 +360,7 @@
 #### [RxDataSource](r-reference/revoscaler/rxdatasource.md) 
 #### [rxDataStep](r-reference/revoscaler/rxdatastep.md) 
 #### [rxDForest](r-reference/revoscaler/rxdforest.md) 
-#### [rxDForestUtils](scaler/packagehelp/rxDForestUtils.md) 
+#### [rxDForestUtils](r-reference/revoscaler/rxdforestutils.md) 
 #### [RxDistributedHpa-class](scaler/packagehelp/RxDistributedHpa-class.md) 
 #### [rxDistributeJob](scaler/packagehelp/rxDistributeJob.md) 
 #### [rxDTree](scaler/packagehelp/rxDTree.md) 

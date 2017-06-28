@@ -339,7 +339,7 @@ A streaming parallel decision tree algorithm.
  ##See Also
  
 rpart, rpart.control, rpart.object,
-[rxPredict.rxDTree](rxPredict.rxDTree.md), [rxAddInheritance](../../r-reference/revoscaler/rxaddinheritance.md), [rxDForestUtils](rxDForestUtils.md).
+[rxPredict.rxDTree](rxPredict.rxDTree.md), [rxAddInheritance](../../r-reference/revoscaler/rxaddinheritance.md), [rxDForestUtils](../../r-reference/revoscaler/rxdforestutils.md).
    
  ##Examples
 
