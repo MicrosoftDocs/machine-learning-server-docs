@@ -773,7 +773,7 @@ To understand how grid resource errors occur, refer to the sections [Managing th
 
 To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
 
-Refer to the documentation on the [API Explorer Tool](deployr-api-explorer-tool.md) for more details.
+Refer to the documentation on the [API Explorer Tool](deployr/deployr-api-explorer-tool.md) for more details.
 
 ### API Call Overview
 
@@ -1577,7 +1577,7 @@ Each user can maintain private, shared and public files in the external reposito
 	$DEPLOYR_HOME/deployr/external/repository/testuser/demo/score.R
 	$DEPLOYR_HOME/deployr/external/repository/testuser/demo/model.rData
 
-A small number of sample files are deployed to the external repository following each new DeployR 7.4 installation and you may try out the external repository using new support found in the latest [API Explorer](deployr-api-explorer-tool.md).
+A small number of sample files are deployed to the external repository following each new DeployR 7.4 installation and you may try out the external repository using new support found in the latest [API Explorer](deployr/deployr-api-explorer-tool.md).
 
 For more information about working with the new DeployR External Repository please post your questions to the [forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 

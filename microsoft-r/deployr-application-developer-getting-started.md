@@ -263,7 +263,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 **Helper Tools**
 -   [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployr-cli)
 -   [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
--   [API Interactive Explorer](deployr-api-explorer-tool.md), available on the DeployR landing page following an install.
+-   [API Interactive Explorer](deployr/deployr-api-explorer-tool.md), available on the DeployR landing page following an install.
 
 **Support Channels**
 -   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
