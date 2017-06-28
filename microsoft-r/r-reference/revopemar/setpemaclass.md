@@ -100,10 +100,10 @@ returns a generator function suitable for creating objects from the class, invis
  
  ##See Also
  
-[PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md),
+[PemaBaseClass](pemabaseclass.md),
 setRefClass,
-[PemaMean](../../r-reference/revopemar/pemamean.md),
-[pemaCompute](../../r-reference/revopemar/pemacompute.md)
+[PemaMean](pemamean.md),
+[pemaCompute](pemacompute.md)
    
  
  ##Examples

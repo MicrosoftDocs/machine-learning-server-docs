@@ -312,7 +312,7 @@
 ###[pemaCompute](r-reference/revopemar/pemacompute.md) 
 ###[PemaMean-class](r-reference/revopemar/pemamean-class.md) 
 ###[PemaMean](r-reference/revopemar/pemamean.md) 
-###[setPemaClass](pemar/packagehelp/setPemaClass.md)
+###[setPemaClass](r-reference/revopemar/setpemaclass.md)
 
 ## [RevoScaleR](scaler/scaler.md)
 ### [Overview: Common ScaleR Functions](scaler/scaler.md)
