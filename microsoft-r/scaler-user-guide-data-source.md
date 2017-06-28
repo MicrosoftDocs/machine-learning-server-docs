@@ -38,7 +38,7 @@ To create data sources directly, use the constructors listed in the following ta
 |------------------------------------|-----------------------------|
 | Text (fixed-format or delimited)   | [RxTextData](scaler-user-guide-data-import.md) |
 | SAS                                | [RxSasData](r-reference/revoscaler/rxsasdata.md) |
-| SPSS                               | [RxSpssData](scaler/packagehelp/RxSpssData.md) |
+| SPSS                               | [RxSpssData](r-reference/revoscaler/rxspssdata.md) |
 | ODBC Database                      | [RxOdbcData](scaler-data-odbc.md) |
 | Teradata Database                  | [RxTeradata](scaler/packagehelp/RxTeradata.md) |
 | SQL Server Database                | [RxSqlServerData](scaler-data-sql.md) |
