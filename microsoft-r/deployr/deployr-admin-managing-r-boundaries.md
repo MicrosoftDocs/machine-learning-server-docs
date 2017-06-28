@@ -40,7 +40,7 @@ Once you create an R boundary, you can assign it to any grid node or user accoun
 
 You can also designate a particular R boundary as the [default system-wide R boundary](deployr-admin-managing-server-policies.md#server-policy-properties) to be used whenever no other boundary is indicated.
 
-If you plan to associate R boundaries with grid nodes, we recommend that you create a custom R boundary for each [node operation type](../deployr-admin-console/deployr-admin-managing-the-grid.md#node-operation-types) (authenticated, asynchronous, and anonymous operations) supported on the grid.
+If you plan to associate R boundaries with grid nodes, we recommend that you create a custom R boundary for each [node operation type](deployr-admin-managing-the-grid.md#node-operation-types) (authenticated, asynchronous, and anonymous operations) supported on the grid.
 
 _Figure: Boundary List page_
 

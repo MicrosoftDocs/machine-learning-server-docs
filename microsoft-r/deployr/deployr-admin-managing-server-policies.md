@@ -64,7 +64,7 @@ There are a number of settings that can be defined for each server. They are gro
 <br/>
 ### Authenticated Operation Policies
 
-These policies govern how [authenticated operations](../deployr-admin-console/deployr-admin-managing-the-grid.md#node-operation-types) are handled. Authenticated operations refer to operations on projects requested by authenticated users. These operations are executed on grid nodes designated for either authenticated or mixed operation modes.
+These policies govern how [authenticated operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Authenticated operations refer to operations on projects requested by authenticated users. These operations are executed on grid nodes designated for either authenticated or mixed operation modes.
 
 |Properties|Description|
 |----------|---|
@@ -75,7 +75,7 @@ These policies govern how [authenticated operations](../deployr-admin-console/d
 <br/>
 ### Asynchronous Operation Policies
 
-These policies govern how [asynchronous operations](../deployr-admin-console/deployr-admin-managing-the-grid.md#node-operation-types) are handled. Asynchronous operations are scheduled jobs executing in the background on behalf of authenticated users. These jobs are executed on grid nodes designated for either asynchronous or mixedoperation modes.
+These policies govern how [asynchronous operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Asynchronous operations are scheduled jobs executing in the background on behalf of authenticated users. These jobs are executed on grid nodes designated for either asynchronous or mixedoperation modes.
 
 |Properties|Description|
 |----------|---|
@@ -85,7 +85,7 @@ These policies govern how [asynchronous operations](../deployr-admin-console/de
 <br/>
 ### Anonymous Operation Policies
 
-These policies govern how [anonymous operations](../deployr-admin-console/deployr-admin-managing-the-grid.md#node-operation-types) are handled. Anonymous operations are executed on grid nodes designated for either anonymous or mixed operation modes. Anonymous operations refer to operations from users executing scripts anonymously.
+These policies govern how [anonymous operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Anonymous operations are executed on grid nodes designated for either anonymous or mixed operation modes. Anonymous operations refer to operations from users executing scripts anonymously.
 
 |Properties|Description|
 |----------|---|

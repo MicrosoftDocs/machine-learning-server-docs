@@ -340,9 +340,9 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
     1.  Click **New Grid Node**.
 
-    2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** &nbsp; [using these instructions](./deployr-admin-console/deployr-admin-managing-the-grid.md#creating-new-nodes). 
+    2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** &nbsp; [using these instructions](deployr/deployr-admin-managing-the-grid.md#creating-new-nodes). 
     
-    3.  When you try to add that new grid node configuration, DeployR will attempt to validate your settings. [Learn more...](./deployr-admin-console/deployr-admin-managing-the-grid.md#node-validation-and-errors)
+    3.  When you try to add that new grid node configuration, DeployR will attempt to validate your settings. [Learn more...](deployr/deployr-admin-managing-the-grid.md#node-validation-and-errors)
 
     4.  Run a diagnostic test of each grid node individually as follows:
 

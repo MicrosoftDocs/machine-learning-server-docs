@@ -655,7 +655,7 @@ The DeployR Administration Console is a browser-based administrators tool used t
 
 **DeployR Grid Management Framework**
 
-The grid management framework provides load balancing capabilities for intensive R-compute environments. This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory and disk). Each node can be leveraged by the server to execute R analyses on behalf of client applications.  For further details, refer to section [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md).
+The grid management framework provides load balancing capabilities for intensive R-compute environments. This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory and disk). Each node can be leveraged by the server to execute R analyses on behalf of client applications.  For further details, refer to section [Managing the Grid](deployr/deployr-admin-managing-the-grid.md).
 
 **Spring 3 Framework & J2EE Container**
 
@@ -753,7 +753,7 @@ The ***error*** property provides a plain text message describing the underlying
 
 -  **945** Authentication Error: user account password has expired, requires reset
 
-To understand how grid resource errors occur, refer to the sections [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md) and [Managing Server Policies](deployr/deployr-admin-managing-server-policies.md).
+To understand how grid resource errors occur, refer to the sections [Managing the Grid](deployr/deployr-admin-managing-the-grid.md) and [Managing Server Policies](deployr/deployr-admin-managing-server-policies.md).
 
 *Sample API (JSON) response markup indicating error on call:*
 

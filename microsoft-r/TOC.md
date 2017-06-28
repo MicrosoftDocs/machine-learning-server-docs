@@ -168,7 +168,7 @@
 ##### [Managing R Scripts](deployr/deployr-admin-console-managing-r-scripts.md)
 ##### [Managing R Boundaries](deployr/deployr-admin-managing-r-boundaries.md)
 ##### [Managing Access with IP Filters](deployr/deployr-admin-managing-access-with-ip-filters.md)
-##### [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md)
+##### [Managing the Grid](deployr/deployr-admin-managing-the-grid.md)
 ##### [Managing Server Policies](deployr/deployr-admin-managing-server-policies.md)
 ##### [Restoring & Backing Up the Database](deployr/deployr-admin-console-database.md)
 ##### [Monitoring Events](deployr-admin-console/deployr-admin-monitoring-events.md)
