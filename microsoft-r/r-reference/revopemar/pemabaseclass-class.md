@@ -38,7 +38,7 @@ PEMA base reference class
  ## Generators 
 
  
-The targeted generator [PemaBaseClass](../../pemar/packagehelp/pemabaseclass.md)
+The targeted generator [PemaBaseClass](pemabaseclass.md)
  
  
  ##Author(s)
@@ -47,6 +47,6 @@ The targeted generator [PemaBaseClass](../../pemar/packagehelp/pemabaseclass.md)
  
  ##See Also
  
-[PemaBaseClass](../../pemar/packagehelp/pemabaseclass.md)
+[PemaBaseClass](pemabaseclass.md)
    
  

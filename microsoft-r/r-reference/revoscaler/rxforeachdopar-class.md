@@ -39,7 +39,7 @@ Class for the RevoScaleR Compute Context using one of the foreach dopar back end
  ## Generators 
 
  
-The targeted generator [RxForeachDoPar](../../scaler/packagehelp/rxforeachdopar.md) as well as the general generator
+The targeted generator [RxForeachDoPar](rxforeachdopar.md) as well as the general generator
 [RxComputeContext](rxcomputecontext.md).
  
  ## Extends 
@@ -65,11 +65,11 @@ Class RxComputeContext, directly.
  ##See Also
  
 [RxComputeContext](rxcomputecontext.md),
-[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
-[RxLocalParallel](../../scaler/packagehelp/rxlocalparallel.md),
-[RxSpark](../../scaler/packagehelp/rxspark.md),
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md).
+[RxLocalSeq](rxlocalseq.md),
+[RxLocalParallel](rxlocalparallel.md),
+[RxSpark](rxspark.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxInTeradata](rxinteradata.md).
 
    
  ##Examples

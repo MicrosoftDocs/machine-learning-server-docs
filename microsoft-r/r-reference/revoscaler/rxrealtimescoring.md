@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Real-time scoring in SQL Server R Services" 
-description: " Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to  Microsoft R Server and SQL Server platforms with near real-time performance.  You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)  documentation. " 
+description: " Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to  Microsoft R Server and SQL Server platforms with near real-time performance.  You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishService)  documentation. " 
 keywords: "RevoScaleR, rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -37,7 +37,7 @@ Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR
 You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
 .
 
-**NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
+**NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishService)
  documentation.
  
  
@@ -126,10 +126,10 @@ To enable this functionality in SQL Server, we are adding support for serializin
 
 
 * 
- [rxSerializeModel](../../scaler/packagehelp/rxserializemodel.md)() - Serialize a **RevoScaleR**/**MicrosoftML** model in `raw` format to enable saving the model to a database. This enables the model to be loaded into SQL Server for real-time scoring.
+ [rxSerializeModel](rxserializemodel.md)() - Serialize a **RevoScaleR**/**MicrosoftML** model in `raw` format to enable saving the model to a database. This enables the model to be loaded into SQL Server for real-time scoring.
 
 * 
- [rxUnserializeModel](../../scaler/packagehelp/rxserializemodel.md)() - Retrieve the original R model object from the serialized raw model.
+ [rxUnserializeModel](rxserializemodel.md)() - Retrieve the original R model object from the serialized raw model.
 
 
 
@@ -140,7 +140,7 @@ The serialized models can be published to the target SQL Server Database table i
 
 
 * 
- [rxWriteObject](../../scaler/packagehelp/rxwriteobject.md)() - Store/retrieve R objects to/from ODBC data sources like SQL Server. The API is modeled after a simple key value store.
+ [rxWriteObject](rxwriteobject.md)() - Store/retrieve R objects to/from ODBC data sources like SQL Server. The API is modeled after a simple key value store.
 
 
 
@@ -244,8 +244,8 @@ Arguments other than `modelObject`/`data` available in `rxPredict` are not suppo
  
  ##See Also
  
-[rxSerializeModel](../../scaler/packagehelp/rxserializemodel.md),
-[rxWriteObject](../../scaler/packagehelp/rxwriteobject.md),
+[rxSerializeModel](rxserializemodel.md),
+[rxWriteObject](rxwriteobject.md),
 publishService,
 [rxPredict](../microsoftml/rxpredict.md)
    

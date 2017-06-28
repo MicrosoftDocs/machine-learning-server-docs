@@ -54,7 +54,7 @@ Note that this function will attempt to connect to the cluster when executed.
   
   
  ### `makeRNodeNames`
- logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) for details on name mangling. 
+ logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](rxmakernodenames.md) for details on name mangling. 
   
   
  
@@ -71,10 +71,10 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetNodeInfo](../../scaler/packagehelp/rxgetnodeinfo.md)
+[rxGetNodeInfo](rxgetnodeinfo.md)
 [RxComputeContext](rxcomputecontext.md)
-[rxGetJobs](../../scaler/packagehelp/rxgetjobs.md)
-[rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md)
+[rxGetJobs](rxgetjobs.md)
+[rxMakeRNodeNames](rxmakernodenames.md)
    
  ##Examples
 

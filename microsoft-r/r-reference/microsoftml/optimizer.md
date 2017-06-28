@@ -35,7 +35,7 @@ ms.custom: ""
  
  ##Description
  
-Specifies optimization algorithms for the [rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md) machine learning algorithm.
+Specifies optimization algorithms for the [rxNeuralNet](neuralnet.md) machine learning algorithm.
  
  
  ##Usage
@@ -106,7 +106,7 @@ Specifies optimization algorithms for the [rxNeuralNet](../../microsoftml/packag
  ##Details
  
 These functions can be used for the `optimizer` argument in 
-[rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md). 
+[rxNeuralNet](neuralnet.md). 
 
 
 * 
@@ -139,7 +139,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md),
+[rxNeuralNet](neuralnet.md),
    
  ##Examples
 

@@ -78,7 +78,7 @@ an object of class naiveBayes from **e1071**.
  
  ##See Also
  
-[rxNaiveBayes](../../scaler/packagehelp/rxnaivebayes.md),
+[rxNaiveBayes](rxnaivebayes.md),
 [as.lm](as-lm.md),
 [as.kmeans](as-kmeans.md),
 [as.glm](as-glm.md),

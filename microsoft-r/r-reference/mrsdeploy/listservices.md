@@ -90,11 +90,11 @@ A list of services and service information.
  
 Other service methods: [deleteService](deleteservice.md),
 [getService](getservice.md),
-[print.serviceDetails](../../mrsdeploy/packagehelp/print.servicedetails.md),
-[publishService](../../mrsdeploy/packagehelp/publishservice.md),
-[serviceOption](../../mrsdeploy/packagehelp/serviceoption.md),
-[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
-[updateService](../../mrsdeploy/packagehelp/updateservice.md)
+[print.serviceDetails](print-servicedetails.md),
+[publishService](publishservice.md),
+[serviceOption](serviceoption.md),
+[summary.serviceDetails](summary-servicedetails.md),
+[updateService](updateservice.md)
    
  ##Examples
 

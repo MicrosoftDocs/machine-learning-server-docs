@@ -109,12 +109,12 @@ Produce univariate summaries of objects in **RevoScaleR**.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -231,7 +231,7 @@ formula used to obtain the summary.
  
  ##See Also
  
-[rxTransform](../../scaler/packagehelp/rxtransform.md)
+[rxTransform](rxtransform.md)
    
  ##Examples
 

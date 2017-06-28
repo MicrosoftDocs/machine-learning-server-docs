@@ -124,9 +124,9 @@ Currently only supported in Windows.
  
 [RxComputeContext](rxcomputecontext.md),
 [RxInSqlServer-class](rxinsqlserver-class.md),
-[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md),
-[rxOptions](../../scaler/packagehelp/rxoptions.md).
+[RxSqlServerData](rxsqlserverdata.md),
+[RxInTeradata](rxinteradata.md),
+[rxOptions](rxoptions.md).
    
  
  ##Examples

@@ -45,7 +45,7 @@ A virtual class: No objects may be created from it.
 
  
 The generator for classes that extend RxComputeContext is
-[RxComputeContext](../../scaler/packagehelp/rxcomputecontext.md).  
+[RxComputeContext](rxcomputecontext.md).  
  
  
  ##Author(s)
@@ -54,13 +54,13 @@ The generator for classes that extend RxComputeContext is
  
  ##See Also
  
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
-[RxSpark](../../scaler/packagehelp/rxspark.md),
-[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md),
-[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
-[RxLocalParallel](../../scaler/packagehelp/rxlocalparallel.md),
-[RxForeachDoPar](../../scaler/packagehelp/rxforeachdopar.md).
+[RxHadoopMR](rxhadoopmr.md),
+[RxSpark](rxspark.md),
+[RxInSqlServer](rxinsqlserver.md),
+[RxInTeradata](rxinteradata.md),
+[RxLocalSeq](rxlocalseq.md),
+[RxLocalParallel](rxlocalparallel.md),
+[RxForeachDoPar](rxforeachdopar.md).
    
  ##Examples
 

@@ -201,7 +201,7 @@ Continue on to the following data import articles to learn more about XDF, data 
 
 ## See Also
    
- [RevoScaleR Functions](../revoscaler.md)   
+ [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)   
  [Tutorial: data import and exploration](tutorial-revoscaler-data-import-transform.md)
  [Tutorial: data manipulation and statistical analysis](tutorial-revoscaler-data-model-analysis.md) 
  

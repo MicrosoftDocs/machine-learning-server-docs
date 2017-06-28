@@ -56,12 +56,12 @@ This is the main generator for S4 class RxForeachDoPar.
    
     
  ### `dataPath`
- `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md) 
+ `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxoptions.md) 
    
   
     
  ### `outDataPath`
- `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md)  
+ `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](rxoptions.md)  
    
  
  
@@ -98,12 +98,12 @@ doParallel-package,
 registerDoParallel,
 doRSR-package,
 registerDoRSR,
-[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
-[rxOptions](../../scaler/packagehelp/rxoptions.md),
+[rxSetComputeContext](rxsetcomputecontext.md),
+[rxOptions](rxoptions.md),
 [rxExec](rxexec.md),
 [RxComputeContext](rxcomputecontext.md),
-[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
-[RxLocalParallel](../../scaler/packagehelp/rxlocalparallel.md),
+[RxLocalSeq](rxlocalseq.md),
+[RxLocalParallel](rxlocalparallel.md),
 [RxForeachDoPar-class](rxforeachdopar-class.md).
    
  

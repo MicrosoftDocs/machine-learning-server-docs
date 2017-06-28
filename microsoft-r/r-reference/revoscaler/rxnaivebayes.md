@@ -60,7 +60,7 @@ for small or large data using parallel external memory algorithm.
   
     
  ### ` ...`
-  additional arguments to be passed directly to [rxSummary](../../scaler/packagehelp/rxsummary.md) such as `byTerm`, `rowSelection`, `pweights`, `fweights`, `transforms`, `transformObjects`, `transformFunc`,  `transformVars`, `transformPackages`, `transformEnvir`,  `useSparseCube`, `removeZeroCounts`, `blocksPerRead`,  `reportProgress`, `verbose`, `xdfCompressionLevel`.   
+  additional arguments to be passed directly to [rxSummary](rxsummary.md) such as `byTerm`, `rowSelection`, `pweights`, `fweights`, `transforms`, `transformObjects`, `transformFunc`,  `transformVars`, `transformPackages`, `transformEnvir`,  `useSparseCube`, `removeZeroCounts`, `blocksPerRead`,  `reportProgress`, `verbose`, `xdfCompressionLevel`.   
   
  
  

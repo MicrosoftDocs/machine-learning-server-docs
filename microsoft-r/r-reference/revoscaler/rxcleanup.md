@@ -48,7 +48,7 @@ Removes artifacts created while executing a distributed computing job.
    
   
  ### `jobInfoList`
- `rxJobInfo` object or a list of job objects that can be obtained  from [rxGetJobs](../../scaler/packagehelp/rxgetjobs.md). 
+ `rxJobInfo` object or a list of job objects that can be obtained  from [rxGetJobs](rxgetjobs.md). 
   
   
   
@@ -68,7 +68,7 @@ Removes artifacts created while executing a distributed computing job.
 If `jobInfoList` is a `jobInfo` object, `rxCleanupJobs` attempts to remove the artifacts.
 However, if the job has successfully completed and `force=FALSE`,
 `rxCleanupJobs` issues a warning saying to either set `force=TRUE` or use 
-[rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md) to get the results and delete the artifacts.  
+[rxGetJobResults](rxgetjobresults.md) to get the results and delete the artifacts.  
 
 If `jobInfoList` is a list of jobs, `rxCleanupJobs` attempts to apply the cleanup rules 
 for a single job to each element in the list.
@@ -87,12 +87,12 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetJobs](../../scaler/packagehelp/rxgetjobs.md), 
-[rxGetJobOutput](../../scaler/packagehelp/rxgetjoboutput.md),
-[RxSpark](../../scaler/packagehelp/rxspark.md),
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md),  
-[rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md)
+[rxGetJobs](rxgetjobs.md), 
+[rxGetJobOutput](rxgetjoboutput.md),
+[RxSpark](rxspark.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxInTeradata](rxinteradata.md),  
+[rxGetJobResults](rxgetjobresults.md)
    
  ##Examples
 

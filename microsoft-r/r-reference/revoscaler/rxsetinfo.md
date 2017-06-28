@@ -49,11 +49,11 @@ Set .xdf file or data frame information, such as a description
    
     
  ### `data`
-  An .xdf file name, an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object, or a data frame.  
+  An .xdf file name, an [RxXdfData](rxxdfdata.md) object, or a data frame.  
   
     
  ### `file`
-  An .xdf file name or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object  
+  An .xdf file name or an [RxXdfData](rxxdfdata.md) object  
   
   
   
@@ -64,7 +64,7 @@ Set .xdf file or data frame information, such as a description
  
  ##Value
  
-An [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object representing the .xdf file, or a new
+An [RxXdfData](rxxdfdata.md) object representing the .xdf file, or a new
 data frame with the `.rxDescription` attribute set to the
 specified `description`.
  

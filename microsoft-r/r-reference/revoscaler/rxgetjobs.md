@@ -121,10 +121,10 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [rxGetJobResults](rxgetjobresults.md),
 [rxGetJobStatus](rxgetjobresults.md),
 [rxExec](rxexec.md), 
-[RxSpark](../../scaler/packagehelp/rxspark.md),
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
-[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md),
+[RxSpark](rxspark.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxInSqlServer](rxinsqlserver.md),
+[RxInTeradata](rxinteradata.md),
 [RxComputeContext](rxcomputecontext.md)
    
  ##Examples

@@ -54,11 +54,11 @@ in a data frame
   
     
  ### `data`
- a data frame, a character string specifying the .xdf file, or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.  
+ a data frame, a character string specifying the .xdf file, or an [RxXdfData](rxxdfdata.md) object.  
   
     
  ### `file`
- character string specifying the .xdf file or   an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.  
+ character string specifying the .xdf file or   an [RxXdfData](rxxdfdata.md) object.  
   
  
  
@@ -112,7 +112,7 @@ POSIXct variable.
  
 If the input data is a data frame, a data frame is returned containing variables
 with the new attributes.  If the input data represents an .xdf file or
-composite file, an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object representing the modified 
+composite file, an [RxXdfData](rxxdfdata.md) object representing the modified 
 file is returned.
  
  ##Note

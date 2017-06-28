@@ -82,7 +82,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
    
     
  ### `formula`
-  formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md).   Currently, formula functions are not supported. 
+  formula as described in [rxFormula](rxformula.md).   Currently, formula functions are not supported. 
   
     
  ### `data`
@@ -241,7 +241,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
   
     
  ### `scheduleOnce`
- EXPERIMENTAL. logical value. If `TRUE`, rxDForest will be run with [rxExec](../../scaler/packagehelp/rxexec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) compute context. 
+ EXPERIMENTAL. logical value. If `TRUE`, rxDForest will be run with [rxExec](rxexec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](rxhadoopmr.md) compute context. 
   
   
     
@@ -259,11 +259,11 @@ plot  (x, type = "l", main = deparse(substitute(x)),
   
     
  ### `transformFunc`
-  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxtransform.md) for details. 
   
     
  ### `transformVars`
-  character vector of input data set variables  needed for the transformation function.  See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+  character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxtransform.md) for details. 
   
     
  ### `transformPackages`
@@ -301,7 +301,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
   
     
  ### ` ...`
-  additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](../../scaler/packagehelp/rxexec.md) when `scheduleOnce` is set to `TRUE`. 
+  additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](rxexec.md) when `scheduleOnce` is set to `TRUE`. 
   
   
     
@@ -423,7 +423,7 @@ See section **Random Streams and RNGs in Parallel Computation**.
  
  ##See Also
  
-[rxDTree](rxdtree.md), [rxPredict.rxDForest](rxdforest.md), [rxDForestUtils](../../scaler/packagehelp/rxdforestutils.md), [rxRngNewStream](../../scaler/packagehelp/rxrng.md).
+[rxDTree](rxdtree.md), [rxPredict.rxDForest](rxdforest.md), [rxDForestUtils](rxdforestutils.md), [rxRngNewStream](rxrng.md).
    
  ##Examples
 

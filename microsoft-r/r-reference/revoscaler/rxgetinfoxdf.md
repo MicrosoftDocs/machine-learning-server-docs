@@ -157,7 +157,7 @@ number of blocks in the data set.
 
 
 ###`varInfo`
-list of variable information where each element is a list describing a variable. (See return value of [rxGetVarInfo](../../scaler/packagehelp/rxgetvarinfoxdf.md) for more information.)
+list of variable information where each element is a list describing a variable. (See return value of [rxGetVarInfo](rxgetvarinfoxdf.md) for more information.)
 
 
 ###`rowsPerBlock`
@@ -179,8 +179,8 @@ data frame containing the data (if `numRows > 0`)
  ##See Also
  
 [rxDataStep](rxdatastep.md),
-[rxGetVarInfo](../../scaler/packagehelp/rxgetvarinfoxdf.md),
-[rxSetVarInfo](../../scaler/packagehelp/rxsetvarinfoxdf.md).
+[rxGetVarInfo](rxgetvarinfoxdf.md),
+[rxSetVarInfo](rxsetvarinfoxdf.md).
    
  ##Examples
 

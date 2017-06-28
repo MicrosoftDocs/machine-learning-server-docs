@@ -140,8 +140,8 @@ If you haven't upgraded recently, you can review the feature announcments from t
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
 + [Overview of MicrosoftML algorithms](r-reference/microsoftml/microsoftml-package.md)
-+ [Remote execution](operationalize/remote-execution.md)
-+ [Web service deployment](operationalize/data-scientist-manage-services.md)
++ [Remote execution](r/how-to-execute-code-remotely.md)
++ [Web service deployment](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 
 **Related Documents**
 

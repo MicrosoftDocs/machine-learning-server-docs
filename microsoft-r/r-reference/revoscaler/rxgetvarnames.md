@@ -67,7 +67,7 @@ character vector containing the names of the variables in the data source or dat
  ##See Also
  
 [rxGetVarInfo](rxgetvarinfoxdf.md),
-[rxSetVarInfo](../../scaler/packagehelp/rxsetvarinfoxdf.md),
+[rxSetVarInfo](rxsetvarinfoxdf.md),
 [rxDataStep](rxdatastep.md),
 [rxGetInfo](rxgetinfoxdf.md).
    

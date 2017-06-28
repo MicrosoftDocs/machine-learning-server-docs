@@ -108,7 +108,7 @@ For example:
     RRepositoryDirectory dir = rUser.createDirectory("demo");
     List<RRepositoryFile> files = rUser.listFiles(RSCRIPT, dir);
 
-These services are available on the [API](deployr-api-reference.md#repository) and also through the Web-based [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md), which ships with DeployR.
+These services are available on the [API](deployr-api-reference.md#repository) and also through the Web-based [Repository Manager](deployr-repository-manager-about.md), which ships with DeployR.
 
 It is also simple for your application to request files be moved from the repository to your R sessions and from your R sessions back into the repository. Perhaps most importantly, any R script stored in the repository is automatically exposed as a live, executable Analytics Web service. This means your R scripts can be executed on request by your application just by referencing that script by name.
 
@@ -134,7 +134,7 @@ The answer is simple. DeployR supports a broad set of access controls ranging fr
 -   `Shared`, allows access only to authenticated users
 -   `Public`, allows access to any authenticated or anonymous user
 
-These repository access controls can be manipulated directly by the file owner on the [API](deployr-api-reference.md) or by using the Web-based [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR.
+These repository access controls can be manipulated directly by the file owner on the [API](deployr-api-reference.md) or by using the Web-based [Repository Manager](deployr-repository-manager-about.md) that ships with DeployR.
 
 ## Developer Tools
 
@@ -242,7 +242,7 @@ The sample application is a classic application in the analytics space, a realti
 
 ![Fraud Score Example Application](./media/deployr-application-developer-getting-started/fraud-score-example.png)
 
-Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](../deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
+Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
 In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 
@@ -262,7 +262,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 
 **Helper Tools**
 -   [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployr-cli)
--   [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
+-   [Repository Manager](deployr-repository-manager-about.md), available on the DeployR landing page following an install.
 -   [API Interactive Explorer](deployr-api-explorer-tool.md), available on the DeployR landing page following an install.
 
 **Support Channels**

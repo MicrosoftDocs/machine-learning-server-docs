@@ -106,8 +106,8 @@ of the analysis unless `initPema` is set to `TRUE`, and will contain updated val
  ##See Also
  
 [PemaBaseClass](pemabaseclass.md),
-[PemaMean](../../pemar/packagehelp/pemamean.md),
-[setPemaClass](../../pemar/packagehelp/setpemaclass.md)
+[PemaMean](pemamean.md),
+[setPemaClass](setpemaclass.md)
    
  ##Examples
 

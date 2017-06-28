@@ -54,12 +54,12 @@ via the [rxExec](rxexec.md) function; it is ignored by Revolution HPA functions.
    
     
  ### `dataPath`
- `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md) 
+ `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxoptions.md) 
    
   
     
  ### `outDataPath`
- `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md)  
+ `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](rxoptions.md)  
    
  
  
@@ -87,11 +87,11 @@ object of class RxLocalParallel.
  
  ##See Also
  
-[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
+[rxSetComputeContext](rxsetcomputecontext.md),
 [rxExec](rxexec.md),
-[rxOptions](../../scaler/packagehelp/rxoptions.md),
+[rxOptions](rxoptions.md),
 [RxComputeContext](rxcomputecontext.md),
-[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
+[RxLocalSeq](rxlocalseq.md),
 [RxForeachDoPar](rxforeachdopar.md),
 [RxLocalParallel-class](rxlocalparallel-class.md).
    

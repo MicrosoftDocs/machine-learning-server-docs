@@ -59,7 +59,7 @@ A character vector containing the snapshot ids.
 
 [deleteSnapshot](deletesnapshot.md)
 
-[loadSnapshot](../../mrsdeploy/packagehelp/loadsnapshot.md)
+[loadSnapshot](loadsnapshot.md)
 
 [downloadSnapshot](downloadsnapshot.md)
    

@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Cross Tabulation" 
-description: " Use `rxCrossTabs` to create contingency tables from cross- classifying factors using a formula interface. It performs equivalent computations to the [rxCube](../../scaler/packagehelp/rxcube.md) function, but returns its results in a different way. " 
+description: " Use `rxCrossTabs` to create contingency tables from cross- classifying factors using a formula interface. It performs equivalent computations to the [rxCube](rxcube.md) function, but returns its results in a different way. " 
 keywords: "RevoScaleR, rxCrossTabs, print.rxCrossTabs, summary.rxCrossTabs, mean.rxCrossTabs, as.list.rxCrossTabs, category, models" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -38,7 +38,7 @@ ms.custom: ""
 Use `rxCrossTabs` to create contingency tables from cross-
 classifying
 factors using a formula interface. It performs equivalent computations to the
-[rxCube](../../scaler/packagehelp/rxcube.md) function, but returns its results in a different way.
+[rxCube](rxcube.md) function, but returns its results in a different way.
  
  
  ##Usage
@@ -77,7 +77,7 @@ mean  (x, marginals = TRUE, na.rm = FALSE, ...)
   
     
  ### `formula`
- formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md) with the categorical cross-classifying variables (separated by `:`) on the right hand side. 
+ formula as described in [rxFormula](rxformula.md) with the categorical cross-classifying variables (separated by `:`) on the right hand side. 
   
   
     
@@ -102,7 +102,7 @@ mean  (x, marginals = TRUE, na.rm = FALSE, ...)
   
     
  ### `marginals`
- logical value. If `TRUE`, a list of marginal table values is stored as an attribute named `"marginals"` for each of the contingency tables. Each marginals list contains entries for the row, column and grand totals or means, depending on the type of data table. To access them directly, use the [rxMarginals](../../scaler/packagehelp/rxmarginals.md) function. 
+ logical value. If `TRUE`, a list of marginal table values is stored as an attribute named `"marginals"` for each of the contingency tables. Each marginals list contains entries for the row, column and grand totals or means, depending on the type of data table. To access them directly, use the [rxMarginals](rxmarginals.md) function. 
   
   
     
@@ -127,12 +127,12 @@ mean  (x, marginals = TRUE, na.rm = FALSE, ...)
   
     
  ### `transformFunc`
- variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -275,16 +275,16 @@ character vector of dependent variable names as extracted from the formula.
  ##See Also
  
 xtabs,
-[rxMarginals](../../scaler/packagehelp/rxmarginals.md),
-[rxCube](../../scaler/packagehelp/rxcube.md),
+[rxMarginals](rxmarginals.md),
+[rxCube](rxcube.md),
 [as.xtabs](as-xtabs.md),
 [rxChiSquaredTest](rxchisquaredtest.md),
 [rxFisherTest](rxchisquaredtest.md),
 [rxKendallCor](rxchisquaredtest.md),
-[rxPairwiseCrossTab](../../scaler/packagehelp/rxpairwisecrosstab.md),
-[rxRiskRatio](../../scaler/packagehelp/rxriskratio.md),
-[rxOddsRatio](../../scaler/packagehelp/rxriskratio.md),
-[rxTransform](../../scaler/packagehelp/rxtransform.md).
+[rxPairwiseCrossTab](rxpairwisecrosstab.md),
+[rxRiskRatio](rxriskratio.md),
+[rxOddsRatio](rxriskratio.md),
+[rxTransform](rxtransform.md).
    
  ##Examples
 

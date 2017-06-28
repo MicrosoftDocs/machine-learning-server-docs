@@ -145,7 +145,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
 >The `deployrUtils` package is preinstalled in the DeployR server environment.
 
-1.  [Log into](../deployr-repository-manager/deployr-repository-manager-about.md#logging-in-and-out) the Repository Manager.
+1.  [Log into](deployr-repository-manager-about.md#logging-in-and-out) the Repository Manager.
 
     ![Login](./media/deployr-data-scientist-write-portable-r-code/login1.png)
 
@@ -153,7 +153,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 
     ![Upload](./media/deployr-data-scientist-write-portable-r-code/upload.png)
 
-3.  [Verify](deployr-data-scientist-getting-started.md#test-analytics) that the script's behavior remains consistent across environments by running that script using its default values in the [Test page](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) before handing it off to the application developer(s).
+3.  [Verify](deployr-data-scientist-getting-started.md#test-analytics) that the script's behavior remains consistent across environments by running that script using its default values in the [Test page](deployr-repository-manager-testing-debugging-scripts.md) before handing it off to the application developer(s).
 
     >[!NOTE]
 	>1. If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](../operationalize/configure-manage-r-packages.md).

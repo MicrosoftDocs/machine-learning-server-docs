@@ -234,7 +234,8 @@ We can now call the *rxRocCurve* function to compute the sensitivity and specifi
 rxRocCurve(actualVarName = "actual", predVarNames = "badPred",
 	data = sampleDF, numBreaks = 10, title = "ROC for Bad Predictions")
 
-![](media/scaler-user-guide-logistic-regression/image14.png)
+![](media/how-to-revoscaler-
+howlogistic-regression/image14.png)
 
 Since all of our predictions are wrong at every threshold, the ROC curve is a flat line at 0. The *Area Under the Curve* (AUC) summary statistic is 0.
 
@@ -244,7 +245,8 @@ At the other extreme, let’s draw an ROC curve for our great model:
 		data = sampleDF, numBreaks = 10, title = "ROC for Great Predictions")
 
 
-![](media/scaler-user-guide-logistic-regression/image15.png)
+![](media/how-to-revoscaler-
+howlogistic-regression/image15.png)
 
 With perfect predictions, we see the the True Positive Rate is 1 for all thresholds, and the AUC is 1. We’d expect a random guess ROC curve to lie along with white diagonal line.
 
@@ -363,4 +365,5 @@ With the *removeDups* argument set to its default of *TRUE*, rows containing dup
 
 The resulting plot shows that the second model is much closer to the “random” diagonal line than the first model.
 
-![](media/scaler-user-guide-logistic-regression/image16.png)
+![](media/how-to-revoscaler-
+howlogistic-regression/image16.png)

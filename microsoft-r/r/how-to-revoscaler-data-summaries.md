@@ -381,7 +381,8 @@ We can plot directly from the .xdf file to visualize our results:
 
 	rxLinePlot(incwage_Mean~F_age, groups = sex, data = "ByAge.xdf")
 
-![](media/scaler-user-guide-data-summaries/image3.png)
+![](media/how-to-revoscaler-
+howdata-summaries/image3.png)
 
 ### Transforming Data in rxSummary
 
@@ -476,7 +477,8 @@ The returned object contains the cumulative values and the percentages. Using th
 
 	plot(lorenzOut)
 
-![](media/scaler-user-guide-data-summaries/image4.png)
+![](media/how-to-revoscaler-
+howdata-summaries/image4.png)
 
 The Gini coefficient is often used as a summary statistic for Lorenz curves. It is computed by estimating the ratio of the area between the line of equality and the Lorenz curve to the total area under the line of equality (using trapezoidal integration). The Gini coefficient can range from 0 to 1, with 0 representing perfect equality. We can compute it from using the output from rxLorenz:
 

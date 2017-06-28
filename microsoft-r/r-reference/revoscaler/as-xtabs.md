@@ -83,8 +83,8 @@ an object of class xtabs.
  
  ##See Also
  
-[rxCrossTabs](../../scaler/packagehelp/rxcrosstabs.md),
-[rxCube](../../scaler/packagehelp/rxcube.md),
+[rxCrossTabs](rxcrosstabs.md),
+[rxCube](rxcube.md),
 xtabs,
 [as.lm](as-lm.md),
 [as.kmeans](as-kmeans.md),

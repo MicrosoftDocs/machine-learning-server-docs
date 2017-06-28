@@ -51,9 +51,9 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[putLocalWorkspace](../../mrsdeploy/packagehelp/putlocalworkspace.md)
+[putLocalWorkspace](putlocalworkspace.md)
 
-[putLocalObject](../../mrsdeploy/packagehelp/putlocalobject.md)
+[putLocalObject](putlocalobject.md)
 
 [getRemoteObject](getremoteobject.md)
    

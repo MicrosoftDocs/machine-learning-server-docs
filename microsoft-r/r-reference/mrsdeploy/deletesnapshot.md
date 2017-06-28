@@ -66,11 +66,11 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
 [createSnapshot](createsnapshot.md)
 
-[listSnapshots](../../mrsdeploy/packagehelp/listsnapshots.md)
+[listSnapshots](listsnapshots.md)
 
-[loadSnapshot](../../mrsdeploy/packagehelp/loadsnapshot.md)
+[loadSnapshot](loadsnapshot.md)
 
-[downloadSnapshot](down../../mrsdeploy/packagehelp/loadsnapshot.md)
+[downloadSnapshot](downloadsnapshot.md)
    
  ##Examples
 

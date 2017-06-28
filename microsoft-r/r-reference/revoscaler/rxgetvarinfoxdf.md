@@ -139,7 +139,7 @@ character vector of value labels that is the same length as `valueInfoCodes`, us
  
  ##See Also
  
-[rxSetVarInfo](../../scaler/packagehelp/rxsetvarinfoxdf.md),
+[rxSetVarInfo](rxsetvarinfoxdf.md),
 [rxDataStep](rxdatastep.md).
    
  ##Examples

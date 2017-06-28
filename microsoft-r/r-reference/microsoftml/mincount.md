@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Feature Selection Count Mode" 
-description: " Count mode of feature selection used in the feature selection transform [selectFeatures](../../microsoftml/packagehelp/selectfeatures.md). " 
+description: " Count mode of feature selection used in the feature selection transform [selectFeatures](selectfeatures.md). " 
 keywords: "MicrosoftML, minCount, count, feature, selection" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -34,7 +34,7 @@ ms.custom: ""
  ##Description
  
 Count mode of feature selection used in the feature selection transform
-[selectFeatures](../../microsoftml/packagehelp/selectfeatures.md).
+[selectFeatures](selectfeatures.md).
  
  
  ##Usage
@@ -81,7 +81,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[mutualInformation](../../microsoftml/packagehelp/mutualinformation.md) [selectFeatures](../../microsoftml/packagehelp/selectfeatures.md)
+[mutualInformation](mutualinformation.md) [selectFeatures](selectfeatures.md)
    
  ##Examples
 

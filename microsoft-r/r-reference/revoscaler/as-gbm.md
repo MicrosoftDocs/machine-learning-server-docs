@@ -97,8 +97,8 @@ an object of class gbm.
  
  ##See Also
  
-[rxBTrees](../../scaler/packagehelp/rxbtrees.md),
-[rxDTree](../../scaler/packagehelp/rxdtree.md),
+[rxBTrees](rxbtrees.md),
+[rxDTree](rxdtree.md),
 rpart,
 gbm,
 [as.rpart](as-rpart.md).

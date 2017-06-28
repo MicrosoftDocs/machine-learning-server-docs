@@ -108,7 +108,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxOptions](../../scaler/packagehelp/rxoptions.md)
+[rxOptions](rxoptions.md)
    
  
  ##Examples

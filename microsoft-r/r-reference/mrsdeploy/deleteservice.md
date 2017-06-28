@@ -65,13 +65,13 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-Other service methods: [getService](../../mrsdeploy/packagehelp/getservice.md),
-[listServices](../../mrsdeploy/packagehelp/listservices.md),
-[print.serviceDetails](../../mrsdeploy/packagehelp/print.servicedetails.md),
-[publishService](../../mrsdeploy/packagehelp/publishservice.md),
-[serviceOption](../../mrsdeploy/packagehelp/serviceoption.md),
-[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
-[updateService](../../mrsdeploy/packagehelp/updateservice.md)
+Other service methods: [getService](getservice.md),
+[listServices](listservices.md),
+[print.serviceDetails](print-servicedetails.md),
+[publishService](publishservice.md),
+[serviceOption](serviceoption.md),
+[summary.serviceDetails](summary-servicedetails.md),
+[updateService](updateservice.md)
    
  ##Examples
 

@@ -55,7 +55,7 @@ Before you begin this QuickStart, have the following ready:
 This article walks through the deployment of a simple R model as a web service hosted in R Server.  Here is the entire R code for the example that we walk through in the sections that follow.
 
 >[!IMPORTANT]
->Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
+>Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 ```r
 ##########################################################
@@ -181,7 +181,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
    >[!IMPORTANT]
-   >Be sure to replace the remoteLogin() function with the [correct login details for your configuration](mrsdeploy-connection.md).
+   >Be sure to replace the remoteLogin() function with the [correct login details for your configuration](how-to-connect-log-in-with-mrsdeploy.md).
 
    ```R  
    # Use `remoteLogin` to authenticate with R Server using 

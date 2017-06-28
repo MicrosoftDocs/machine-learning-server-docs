@@ -88,10 +88,10 @@ The result of the distributed computation.
  
  ##See Also
  
-[rxExec](../../scaler/packagehelp/rxexec.md),
+[rxExec](rxexec.md),
 [RxComputeContext](rxcomputecontext.md),
-[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
-[rxGetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md)
+[rxSetComputeContext](rxsetcomputecontext.md),
+[rxGetComputeContext](rxsetcomputecontext.md)
    
  ##Examples
 

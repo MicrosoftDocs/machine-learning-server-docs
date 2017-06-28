@@ -57,7 +57,7 @@ Set and get the default file system for RevoScaleR operations.
   
     
  ### `x`
- optional [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) or [RxTextData](../../scaler/packagehelp/rxtextdata.md) object from which to retrieve the file system object.  
+ optional [RxXdfData](rxxdfdata.md) or [RxTextData](rxtextdata.md) object from which to retrieve the file system object.  
   
  
  
@@ -79,8 +79,8 @@ The file system object is returned invisibly.
 [RxNativeFileSystem](rxnativefilesystem.md),
 [RxHdfsFileSystem](rxhdfsfilesystem.md),
 [rxOptions](rxoptions.md),
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
-[RxTextData](../../scaler/packagehelp/rxtextdata.md).
+[RxXdfData](rxxdfdata.md),
+[RxTextData](rxtextdata.md).
    
  ##Examples
 

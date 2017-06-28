@@ -90,7 +90,7 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
     
  ### `variableSelection`
-  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](../../scaler/packagehelp/rxstepcontrol.md) for details. 
+  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](rxstepcontrol.md) for details. 
   
   
     
@@ -110,12 +110,12 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -358,7 +358,7 @@ Lovell, M., 2008, A Simple Proof of the FWL (Frisch,Waugh,Lovell) Theorem,
  ##See Also
  
 [rxLinMod](rxlinmod.md),
-[rxTransform](../../scaler/packagehelp/rxtransform.md).
+[rxTransform](rxtransform.md).
    
  ##Examples
 

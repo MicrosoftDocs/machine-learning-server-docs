@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "neuralNet" 
-description: " Creates a list containing the function name and arguments to train a  NeuralNet model with [rxEnsemble](../../microsoftml/packagehelp/rxensemble.md). " 
+description: " Creates a list containing the function name and arguments to train a  NeuralNet model with [rxEnsemble](rxensemble.md). " 
 keywords: "MicrosoftML, neuralNet" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -34,7 +34,7 @@ ms.custom: ""
  ##Description
  
 Creates a list containing the function name and arguments to train a
- NeuralNet model with [rxEnsemble](../../microsoftml/packagehelp/rxensemble.md).
+ NeuralNet model with [rxEnsemble](rxensemble.md).
  
  
  ##Usage

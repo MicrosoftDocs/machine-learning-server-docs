@@ -105,12 +105,12 @@ of a "compute context" such as a cluster.
    
   
  ### `consoleOutput`
- `NULL` or logical value. If `TRUE`, the console output from the  all of the processes is printed to the user console. Note that the output from different nodes or cores may be interleaved in an unpredictable way. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](../../scaler/packagehelp/rxgetjoboutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used.  This parameter is ignored  if the active compute context is local. 
+ `NULL` or logical value. If `TRUE`, the console output from the  all of the processes is printed to the user console. Note that the output from different nodes or cores may be interleaved in an unpredictable way. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](rxgetjoboutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used.  This parameter is ignored  if the active compute context is local. 
   
   
   
  ### `autoCleanup`
- `NULL` or logical value. If `TRUE`, artifacts created by the distributed  computing job are deleted when the results are returned or retrieved using [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md). If `FALSE`, the artifacts are not deleted,  and the results may be obtained repeatedly using [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md),  and the console output via [rxGetJobOutput](../../scaler/packagehelp/rxgetjoboutput.md) until  [rxCleanupJobs](rxcleanup.md) is used to delete the artifacts. If not `NULL`, this flag overrides  the value set in the compute context when the job was submitted. If you routinely  set `autoCleanup=FALSE`, you may eventually fill your hard disk with  compute artifacts. If you set `autoCleanup=TRUE` and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`.  This  parameter is ignored if the active compute context is local. 
+ `NULL` or logical value. If `TRUE`, artifacts created by the distributed  computing job are deleted when the results are returned or retrieved using [rxGetJobResults](rxgetjobresults.md). If `FALSE`, the artifacts are not deleted,  and the results may be obtained repeatedly using [rxGetJobResults](rxgetjobresults.md),  and the console output via [rxGetJobOutput](rxgetjoboutput.md) until  [rxCleanupJobs](rxcleanup.md) is used to delete the artifacts. If not `NULL`, this flag overrides  the value set in the compute context when the job was submitted. If you routinely  set `autoCleanup=FALSE`, you may eventually fill your hard disk with  compute artifacts. If you set `autoCleanup=TRUE` and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`.  This  parameter is ignored if the active compute context is local. 
   
   
   
@@ -125,7 +125,7 @@ of a "compute context" such as a cluster.
   
   
  ### `RNGkind`
- `NULL` or a character string specifying the type of random number generator to be used. Allowable strings are the strings accepted by [rxRngNewStream](../../scaler/packagehelp/rxrng.md), `"auto"`, and, if the active compute context is local parallel, `"L'Ecuyer-CMRG"` (for compatibility with the parallel package). See the Details section for a description of how the `"auto"` string is used. 
+ `NULL` or a character string specifying the type of random number generator to be used. Allowable strings are the strings accepted by [rxRngNewStream](rxrng.md), `"auto"`, and, if the active compute context is local parallel, `"L'Ecuyer-CMRG"` (for compatibility with the parallel package). See the Details section for a description of how the `"auto"` string is used. 
   
   
   
@@ -174,9 +174,9 @@ the processing, so arguments intended for a particular node may not be used; the
 however.
 
 The component names must be valid R syntactic names. If you have nodes on your cluster with names that
-are not valid R syntactic names, use the function [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) on the node name to 
+are not valid R syntactic names, use the function [rxMakeRNodeNames](rxmakernodenames.md) on the node name to 
 determine the appropriate name to give the list component. When the return value is a list with elements
-named by compute node, the node names are as returned by the [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) function.
+named by compute node, the node names are as returned by the [rxMakeRNodeNames](rxmakernodenames.md) function.
 
 
 
@@ -207,7 +207,7 @@ of seeds, one for each worker. In the special case of a local parallel compute c
  
 If a waiting compute context is active, a list with an element for each job, where each element contains the value(s) 
 returned by that job's function call(s). 
-If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md).
+If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResults](rxgetjobresults.md).
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -217,19 +217,19 @@ If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResul
  ##See Also
  
 [rxElemArg](rxelemarg.md),
-[rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md),
-[rxGetJobStatus](../../scaler/packagehelp/rxgetjobresults.md),
+[rxGetJobResults](rxgetjobresults.md),
+[rxGetJobStatus](rxgetjobresults.md),
 [RxComputeContext](rxcomputecontext.md),
-[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
-[RxSpark](../../scaler/packagehelp/rxspark.md),
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md), 
-[RxForeachDoPar](../../scaler/packagehelp/rxforeachdopar.md),
-[RxLocalParallel](../../scaler/packagehelp/rxlocalparallel.md),
-[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
-[rxGetNodeInfo](../../scaler/packagehelp/rxgetnodeinfo.md),
-[rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md)
-[rxRngNewStream](../../scaler/packagehelp/rxrng.md)
+[rxSetComputeContext](rxsetcomputecontext.md),
+[RxSpark](rxspark.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxInTeradata](rxinteradata.md), 
+[RxForeachDoPar](rxforeachdopar.md),
+[RxLocalParallel](rxlocalparallel.md),
+[RxLocalSeq](rxlocalseq.md),
+[rxGetNodeInfo](rxgetnodeinfo.md),
+[rxMakeRNodeNames](rxmakernodenames.md)
+[rxRngNewStream](rxrng.md)
    
  ##Examples
 

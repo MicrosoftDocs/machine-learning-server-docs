@@ -305,10 +305,10 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxFastForest](rxfastforest.md), [rxFastLinear](rxfastlinear.md),
-[rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md), [rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md),
-[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[rxLogisticRegression](logisticregression.md), [rxNeuralNet](neuralnet.md),
+[rxOneClassSvm](oneclasssvm.md), [featurizeText](featurizetext.md),
 [categorical](categorical.md), [categoricalHash](categoricalhash.md),
-[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
+[rxPredict.mlModel](rxpredict.md).
    
  ##Examples
 

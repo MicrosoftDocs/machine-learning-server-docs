@@ -70,7 +70,7 @@ data object with new cache flag.
  
  ##See Also
  
-[rxSparkListData](../../scaler/packagehelp/rxsparkdataops.md), [rxSparkRemoveData](../../scaler/packagehelp/rxsparkdataops.md), [RxXdfData](../../scaler/packagehelp/rxxdfdata.md), [RxHiveData](../../scaler/packagehelp/rxsparkdata.md), [RxParquetData](../../scaler/packagehelp/rxsparkdata.md), [RxOrcData](../../scaler/packagehelp/rxsparkdata.md).
+[rxSparkListData](rxsparkdataops.md), [rxSparkRemoveData](rxsparkdataops.md), [RxXdfData](rxxdfdata.md), [RxHiveData](rxsparkdata.md), [RxParquetData](rxsparkdata.md), [RxOrcData](rxsparkdata.md).
    
  ##Examples
 

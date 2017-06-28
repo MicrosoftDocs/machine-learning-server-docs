@@ -188,7 +188,7 @@ Research and Innovative Technology Administration. Airline On-Time Statistics.
  
  ##See Also
  
-[AirlineDemoSmall](../../scaler/packagehelp/airlinedemosmall.md)
+[AirlineDemoSmall](airlinedemosmall.md)
    
  ##Examples
 

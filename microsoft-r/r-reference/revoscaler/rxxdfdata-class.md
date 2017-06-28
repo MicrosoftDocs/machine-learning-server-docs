@@ -49,7 +49,7 @@ Xdf data source connection class.
  ## Generators 
 
  
-The targeted generator [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) as well as the general generator
+The targeted generator [RxXdfData](rxxdfdata.md) as well as the general generator
 [rxNewDataSource](rxnew.md).
  
  ## Extends 
@@ -114,7 +114,7 @@ Class RxDataSource, by class RxFileData.
  ##See Also
  
 [RxDataSource-class](rxdatasource-class.md),
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
+[RxXdfData](rxxdfdata.md),
 [rxNewDataSource](rxnew.md)
    
  

@@ -68,76 +68,76 @@ at the R prompt):
 **Input/Output**
 
 
-* [rxImport](../../scaler/packagehelp/rximport.md): Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC or Teradata connection, or data frame).
+* [rxImport](rximport.md): Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC or Teradata connection, or data frame).
 
 
-* [rxDataStep](../../scaler/packagehelp/rxdatastep.md): Allows variable creation and transformations for an input data source, creating an output data source.
+* [rxDataStep](rxdatastep.md): Allows variable creation and transformations for an input data source, creating an output data source.
 
 
-* [rxGetInfo](../../scaler/packagehelp/rxgetinfoxdf.md): Retrieves summary information from a data source.
+* [rxGetInfo](rxgetinfoxdf.md): Retrieves summary information from a data source.
 
 
-* [rxSetInfo](../../scaler/packagehelp/rxsetinfo.md): Sets a file description in an .xdf file or a description attribute in a data frame.
+* [rxSetInfo](rxsetinfo.md): Sets a file description in an .xdf file or a description attribute in a data frame.
 
 
-* [rxGetVarInfo](../../scaler/packagehelp/rxgetvarinfoxdf.md): Retrieves variable information from a data source.
+* [rxGetVarInfo](rxgetvarinfoxdf.md): Retrieves variable information from a data source.
 
 
-* [rxSetVarInfo](../../scaler/packagehelp/rxsetvarinfoxdf.md): Modifies variable information in an .xdf file or data frame.
+* [rxSetVarInfo](rxsetvarinfoxdf.md): Modifies variable information in an .xdf file or data frame.
 
 
-* [rxGetVarNames](../../scaler/packagehelp/rxgetvarnames.md): Retrieves variable names from a data source
+* [rxGetVarNames](rxgetvarnames.md): Retrieves variable names from a data source
 
 
-* [rxCreateColInfo](../../scaler/packagehelp/rxcreatecolinfo.md): Generates a 'colInfo' list from a data source.
+* [rxCreateColInfo](rxcreatecolinfo.md): Generates a 'colInfo' list from a data source.
 
 
-* [rxCompressXdf](../../scaler/packagehelp/rxcompressxdf.md): Compresses an existing .xdf file, or a directory of .xdf files.
+* [rxCompressXdf](rxcompressxdf.md): Compresses an existing .xdf file, or a directory of .xdf files.
 
 
-* [RxXdfData](../../scaler/packagehelp/rxxdfdata.md): Creates an .xdf data source object.
+* [RxXdfData](rxxdfdata.md): Creates an .xdf data source object.
 
 
-* [RxTextData](../../scaler/packagehelp/rxtextdata.md): Creates a text data source object.
+* [RxTextData](rxtextdata.md): Creates a text data source object.
 
 
 * 
-[RxSasData](../../scaler/packagehelp/rxsasdata.md): Creates a SAS data source object.
+[RxSasData](rxsasdata.md): Creates a SAS data source object.
 
 * 
-[RxSpssData](../../scaler/packagehelp/rxspssdata.md): Creates an SPSS data source object.
+[RxSpssData](rxspssdata.md): Creates an SPSS data source object.
 
 * 
-[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md): Creates an ODBC data source object.
+[RxOdbcData](rxodbcdata.md): Creates an ODBC data source object.
 
 * 
-[RxTeradata](../../scaler/packagehelp/rxteradata.md): Creates a Teradata data source object.
+[RxTeradata](rxteradata.md): Creates a Teradata data source object.
 
 * 
-[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md): Creates a SQL Server data source object.
+[RxSqlServerData](rxsqlserverdata.md): Creates a SQL Server data source object.
 
-* [rxOpen](../../scaler/packagehelp/rxopen-methods.md): Open a data source for reading.
-
-
-* [rxReadNext](../../scaler/packagehelp/rxopen-methods.md): Read data from a data source.
+* [rxOpen](rxopen-methods.md): Open a data source for reading.
 
 
-* [rxWriteNext](../../scaler/packagehelp/rxopen-methods.md): Write data to a data source. EXPERIMENTAL: for text and .xdf only.
+* [rxReadNext](rxopen-methods.md): Read data from a data source.
 
 
-* [rxClose](../../scaler/packagehelp/rxopen-methods.md): Close a data source.
+* [rxWriteNext](rxopen-methods.md): Write data to a data source. EXPERIMENTAL: for text and .xdf only.
 
 
-* [rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md): Specify a file system type for data for import.
+* [rxClose](rxopen-methods.md): Close a data source.
+
+
+* [rxSetFileSystem](rxsetfilesystem.md): Specify a file system type for data for import.
  
 
-* [rxGetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md): Retrieve the current file system type.
+* [rxGetFileSystem](rxsetfilesystem.md): Retrieve the current file system type.
 
 
-* [RxHdfsFileSystem](../../scaler/packagehelp/rxhdfsfilesystem.md): Creates an HDFS file system object.
+* [RxHdfsFileSystem](rxhdfsfilesystem.md): Creates an HDFS file system object.
 
 
-* [RxNativeFileSystem](../../scaler/packagehelp/rxnativefilesystem.md): Creates a native file system object.
+* [RxNativeFileSystem](rxnativefilesystem.md): Creates a native file system object.
 
 
 
@@ -145,25 +145,25 @@ at the R prompt):
 **Data Manipulations/Data Step**
 
 
-* [rxDataStep](../../scaler/packagehelp/rxdatastep.md): Transform and subset data.
+* [rxDataStep](rxdatastep.md): Transform and subset data.
 
 
-* [rxGetFuzzyDist](../../scaler/packagehelp/rxgetfuzzydist.md): Get fuzzy distances for a character vector.
+* [rxGetFuzzyDist](rxgetfuzzydist.md): Get fuzzy distances for a character vector.
 
 
-* [rxGetFuzzyKeys](../../scaler/packagehelp/rxgetfuzzykeys.md): Get fuzzy keys for a character vector.
+* [rxGetFuzzyKeys](rxgetfuzzykeys.md): Get fuzzy keys for a character vector.
 
 
-* [rxFactors](../../scaler/packagehelp/rxfactors.md): Recode a factor variable or convert non-factor variable into a factor in an  .xdf file or data frame.
+* [rxFactors](rxfactors.md): Recode a factor variable or convert non-factor variable into a factor in an  .xdf file or data frame.
 
 
-* [rxSort](../../scaler/packagehelp/rxsortxdf.md): Multi-key sorting of the variables an .xdf file or data frame.
+* [rxSort](rxsortxdf.md): Multi-key sorting of the variables an .xdf file or data frame.
 
 
-* [rxMerge](../../scaler/packagehelp/rxmergexdf.md): Merges two .xdf files or data frames using a variety of merge types.
+* [rxMerge](rxmergexdf.md): Merges two .xdf files or data frames using a variety of merge types.
 
 
-* [rxSplit](../../scaler/packagehelp/rxsplitxdf.md): Splits an .xdf file or data frame into multiple .xdf files or data frames.
+* [rxSplit](rxsplitxdf.md): Splits an .xdf file or data frame into multiple .xdf files or data frames.
 
 
 
@@ -171,40 +171,40 @@ at the R prompt):
 **Descriptive Statistics and Cross Tabs**
 
 
-* [rxSummary](../../scaler/packagehelp/rxsummary.md): Basic summary statistics of data, including computations by group.
+* [rxSummary](rxsummary.md): Basic summary statistics of data, including computations by group.
 
 
-* [rxQuantile](../../scaler/packagehelp/rxquantile.md): Computes approximate quantiles for .xdf files and data frames without sorting.
+* [rxQuantile](rxquantile.md): Computes approximate quantiles for .xdf files and data frames without sorting.
 
 
-* [rxCrossTabs](../../scaler/packagehelp/rxcrosstabs.md): Formula-based cross-tabulation of data.
+* [rxCrossTabs](rxcrosstabs.md): Formula-based cross-tabulation of data.
 
 
-* [rxCube](../../scaler/packagehelp/rxcube.md): Alternative formula-based cross-tabulation designed for efficient representation.
+* [rxCube](rxcube.md): Alternative formula-based cross-tabulation designed for efficient representation.
 
 
-* [rxMarginals](../../scaler/packagehelp/rxmarginals.md): Marginal summaries of cross-tabulations.
+* [rxMarginals](rxmarginals.md): Marginal summaries of cross-tabulations.
 
 
 * [as.xtabs](as-xtabs.md): Converts cross tabulation results to an `xtabs` object.
 
 
-* [rxChiSquaredTest](../../scaler/packagehelp/rxchisquaredtest.md): Performs Chi-squared Test on `xtabs` object.
+* [rxChiSquaredTest](rxchisquaredtest.md): Performs Chi-squared Test on `xtabs` object.
 
 
-* [rxFisherTest](../../scaler/packagehelp/rxchisquaredtest.md): Performs Fisher's Exact Test on `xtabs` object.
+* [rxFisherTest](rxchisquaredtest.md): Performs Fisher's Exact Test on `xtabs` object.
 
 
-* [rxKendallCor](../../scaler/packagehelp/rxchisquaredtest.md): Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.
+* [rxKendallCor](rxchisquaredtest.md): Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.
 
 
-* [rxPairwiseCrossTab](../../scaler/packagehelp/rxpairwisecrosstab.md): Apply a function to pairwise combinations of rows and columns of an `xtabs` object.
+* [rxPairwiseCrossTab](rxpairwisecrosstab.md): Apply a function to pairwise combinations of rows and columns of an `xtabs` object.
 
 
-* [rxRiskRatio](../../scaler/packagehelp/rxriskratio.md): Calculate the relative risk on a two-by-two `xtabs` object.
+* [rxRiskRatio](rxriskratio.md): Calculate the relative risk on a two-by-two `xtabs` object.
  
 
-* [rxOddsRatio](../../scaler/packagehelp/rxriskratio.md): Calculate the odds ratio on a two-by-two `xtabs` object.
+* [rxOddsRatio](rxriskratio.md): Calculate the odds ratio on a two-by-two `xtabs` object.
  
 
 
@@ -212,46 +212,46 @@ at the R prompt):
 **Statistical Modeling**
 
 
-* [rxLinMod](../../scaler/packagehelp/rxlinmod.md): Fits a linear model to data.
+* [rxLinMod](rxlinmod.md): Fits a linear model to data.
 
 
-* [rxCovCor](../../scaler/packagehelp/rxcovcor.md): Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.
+* [rxCovCor](rxcovcor.md): Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.
 
 
-* [rxCov](../../scaler/packagehelp/rxcovcor.md): Calculate the covariance matrix for a set of variables.
+* [rxCov](rxcovcor.md): Calculate the covariance matrix for a set of variables.
 
 
-* [rxCor](../../scaler/packagehelp/rxcovcor.md): Calculate the correlation matrix for a set of variables
+* [rxCor](rxcovcor.md): Calculate the correlation matrix for a set of variables
 
 
-* [rxSSCP](../../scaler/packagehelp/rxcovcor.md): Calculate the sum of squares / cross-product matrix for a set of variables.
+* [rxSSCP](rxcovcor.md): Calculate the sum of squares / cross-product matrix for a set of variables.
  
 
-* [rxLogit](../../scaler/packagehelp/rxlogit.md): Fits a logistic regression model to data.
+* [rxLogit](rxlogit.md): Fits a logistic regression model to data.
 
 
-* [rxRoc](../../scaler/packagehelp/rxroc.md): Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.
+* [rxRoc](rxroc.md): Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.
 
 
-* [rxGlm](../../scaler/packagehelp/rxglm.md): Fits a generalized linear model to data.
+* [rxGlm](rxglm.md): Fits a generalized linear model to data.
 
 
 * [rxDTree](rxdtree.md):  Fits a classification or regression tree to data.
 
 
-* [rxDForest](../../scaler/packagehelp/rxdforest.md):  Fits a classification or regression decision forest to data.
+* [rxDForest](rxdforest.md):  Fits a classification or regression decision forest to data.
 
 
-* [rxBTrees](../../scaler/packagehelp/rxbtrees.md):  Fits a classification or regression decision forest via stochastic gradient boosting.
+* [rxBTrees](rxbtrees.md):  Fits a classification or regression decision forest via stochastic gradient boosting.
 
 
 * [rxPredict](../microsoftml/rxpredict.md): Calculates predictions for fitted models.
 
 
-* [rxKmeans](../../scaler/packagehelp/rxkmeans.md): Performs k-means clustering.
+* [rxKmeans](rxkmeans.md): Performs k-means clustering.
 
 
-* [rxNaiveBayes](../../scaler/packagehelp/rxnaivebayes.md): Performs Naive Bayes classification.
+* [rxNaiveBayes](rxnaivebayes.md): Performs Naive Bayes classification.
 
 
 * [as.lm](as-lm.md): Coerce an `rxLinMod` object to an `lm` object for use with the **pmml** package.
@@ -277,22 +277,22 @@ at the R prompt):
 **Utility Functions**
 
 
-* [rxOptions](../../scaler/packagehelp/rxoptions.md): Gets or sets **RevoScaleR**-specific options.
+* [rxOptions](rxoptions.md): Gets or sets **RevoScaleR**-specific options.
 
 
-* [rxGetOption](../../scaler/packagehelp/rxoptions.md): Retrieves a specific **RevoScaleR** option.
+* [rxGetOption](rxoptions.md): Retrieves a specific **RevoScaleR** option.
 
 
-* [rxRngNewStream](../../scaler/packagehelp/rxrng.md) and related functions: Support for Parallel Random Number Generation.
+* [rxRngNewStream](rxrng.md) and related functions: Support for Parallel Random Number Generation.
 
 
-* [rxGetEnableThreadPool](../../scaler/packagehelp/rxgetenablethreadpool.md): Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.
+* [rxGetEnableThreadPool](rxgetenablethreadpool.md): Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.
 
 
-* [rxSetEnableThreadPool](../../scaler/packagehelp/rxgetenablethreadpool.md): Sets the thread pool state.
+* [rxSetEnableThreadPool](rxgetenablethreadpool.md): Sets the thread pool state.
 
 
-* [rxStepControl](../../scaler/packagehelp/rxstepcontrol.md): Construct `variable.selection` argument for `rxLinMod`.
+* [rxStepControl](rxstepcontrol.md): Construct `variable.selection` argument for `rxLinMod`.
 
 
 
@@ -300,16 +300,16 @@ at the R prompt):
 **Basic Graphing Functions**
 
 
-* [rxHistogram](../../scaler/packagehelp/rxhistogram.md): Creates a histogram from data.
+* [rxHistogram](rxhistogram.md): Creates a histogram from data.
 
 
-* [rxLinePlot](../../scaler/packagehelp/rxlineplot.md): Creates a line plot from data.
+* [rxLinePlot](rxlineplot.md): Creates a line plot from data.
  
 
-* [rxLorenz](../../scaler/packagehelp/rxlorenz.md): Computes a Lorenz curve which can be plotted.
+* [rxLorenz](rxlorenz.md): Computes a Lorenz curve which can be plotted.
 
 
-* [rxRocCurve](../../scaler/packagehelp/rxroc.md): Computes and plots ROC curves from actual and predicted data.
+* [rxRocCurve](rxroc.md): Computes and plots ROC curves from actual and predicted data.
 
 
 
@@ -317,61 +317,61 @@ at the R prompt):
 **HPC and Distributed Computing**
 
 
-* [RxComputeContext](../../scaler/packagehelp/rxcomputecontext.md): Creates a compute context.
+* [RxComputeContext](rxcomputecontext.md): Creates a compute context.
 
 
-* [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md): Creates an in-data, file-based Hadoop compute context.
+* [RxHadoopMR](rxhadoopmr.md): Creates an in-data, file-based Hadoop compute context.
 
 
-* [RxSpark](../../scaler/packagehelp/rxspark.md): Creates an in-data, file-based Spark compute context.
+* [RxSpark](rxspark.md): Creates an in-data, file-based Spark compute context.
 
 
-* [RxInTeradata](../../scaler/packagehelp/rxinteradata.md): Creates an in-database compute context for Teradata.
+* [RxInTeradata](rxinteradata.md): Creates an in-database compute context for Teradata.
 
 
-* [RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md): Creates an in-database compute context for SQL Server 2016.
+* [RxInSqlServer](rxinsqlserver.md): Creates an in-database compute context for SQL Server 2016.
 
 
-* [RxForeachDoPar](../../scaler/packagehelp/rxforeachdopar.md): Creates a compute context for [rxExec](../../scaler/packagehelp/rxexec.md) using the current `foreach` parallel back end.
+* [RxForeachDoPar](rxforeachdopar.md): Creates a compute context for [rxExec](rxexec.md) using the current `foreach` parallel back end.
 
 
-* [RxLocalParallel](../../scaler/packagehelp/rxlocalparallel.md): Creates a local compute context for [rxExec](../../scaler/packagehelp/rxexec.md) using the **parallel** package as back end.
+* [RxLocalParallel](rxlocalparallel.md): Creates a local compute context for [rxExec](rxexec.md) using the **parallel** package as back end.
 
 
-* [RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md): Creates a local compute context for [rxExec](../../scaler/packagehelp/rxexec.md) using sequential computations.
+* [RxLocalSeq](rxlocalseq.md): Creates a local compute context for [rxExec](rxexec.md) using sequential computations.
 
 
-* [rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md): Sets a compute context.
+* [rxSetComputeContext](rxsetcomputecontext.md): Sets a compute context.
 
 
-* [rxGetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md): Gets the current compute context.
+* [rxGetComputeContext](rxsetcomputecontext.md): Gets the current compute context.
 
 
-* [rxGetAvailableNodes](../../scaler/packagehelp/rxgetavailablenodes.md): Get all the available nodes on a distributed compute context.
+* [rxGetAvailableNodes](rxgetavailablenodes.md): Get all the available nodes on a distributed compute context.
 
 
-* [rxGetNodeInfo](../../scaler/packagehelp/rxgetnodeinfo.md): Get information on nodes specified for a distributed compute context.
+* [rxGetNodeInfo](rxgetnodeinfo.md): Get information on nodes specified for a distributed compute context.
 
 
-* [rxPingNodes](../../scaler/packagehelp/rxpingnodes.md): Test round trip from end user through computation node(s) in a cluster or cloud.
+* [rxPingNodes](rxpingnodes.md): Test round trip from end user through computation node(s) in a cluster or cloud.
 
 
-* [rxExec](../../scaler/packagehelp/rxexec.md): Run an arbitrary R function on nodes or cores of a cluster.
+* [rxExec](rxexec.md): Run an arbitrary R function on nodes or cores of a cluster.
 
 
-* [rxGetJobStatus](../../scaler/packagehelp/rxgetjobresults.md): Get the status of a non-waiting distributed computing job.
+* [rxGetJobStatus](rxgetjobresults.md): Get the status of a non-waiting distributed computing job.
 
 
-* [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md): Get the return object(s) of a non-waiting distributed computing job.
+* [rxGetJobResults](rxgetjobresults.md): Get the return object(s) of a non-waiting distributed computing job.
 
 
-* [rxGetJobOutput](../../scaler/packagehelp/rxgetjoboutput.md): Get the console output from a non-waiting distributed computing job.
+* [rxGetJobOutput](rxgetjoboutput.md): Get the console output from a non-waiting distributed computing job.
 
 
-* [rxGetJobs](../../scaler/packagehelp/rxgetjobs.md): Get the available distributed computing job information objects.
+* [rxGetJobs](rxgetjobs.md): Get the available distributed computing job information objects.
 
 
-* [rxLocateFile](../../scaler/packagehelp/rxlocatefile.md): Get the first occurrence of a specified input file in a set of specified paths.
+* [rxLocateFile](rxlocatefile.md): Get the first occurrence of a specified input file in a set of specified paths.
 
 
 
@@ -379,19 +379,19 @@ at the R prompt):
 **Package Management Functions**
 
 
-* [rxInstalledPackages](../../scaler/packagehelp/rxinstalledpackages.md): Find (or retrieve) details of installed packages for a compute context.
+* [rxInstalledPackages](rxinstalledpackages.md): Find (or retrieve) details of installed packages for a compute context.
 ,
 
-* [rxInstallPackages](../../scaler/packagehelp/rxinstallpackages.md): Install Packages from Repositories or Local Files for a compute context.
+* [rxInstallPackages](rxinstallpackages.md): Install Packages from Repositories or Local Files for a compute context.
 ,   
 
-* [rxRemovePackages](../../scaler/packagehelp/rxremovepackages.md): Removes installed packages from a compute context.
+* [rxRemovePackages](rxremovepackages.md): Removes installed packages from a compute context.
 ,
 
-* [rxFindPackage](../../scaler/packagehelp/rxfindpackage.md): Find the path for one or more packages for a compute context.
+* [rxFindPackage](rxfindpackage.md): Find the path for one or more packages for a compute context.
 ,    
 
-* [rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md): Gets the search path for the library trees for packages while executing inside the SQL server.
+* [rxSqlLibPaths](rxsqllibpaths.md): Gets the search path for the library trees for packages while executing inside the SQL server.
 ,
 
 
@@ -399,37 +399,37 @@ at the R prompt):
 **Hadoop Convenience Functions**
 
 
-* [rxHadoopCommand](../../scaler/packagehelp/rxhadoopcommand.md): Execute an arbitrary Hadoop command.
+* [rxHadoopCommand](rxhadoopcommand.md): Execute an arbitrary Hadoop command.
 
 
-* [rxHadoopCopy](../../scaler/packagehelp/rxhadoopcommand.md): Copy a file in the Hadoop Distributed File System (HDFS).
+* [rxHadoopCopy](rxhadoopcommand.md): Copy a file in the Hadoop Distributed File System (HDFS).
 
 
-* [rxHadoopCopyFromLocal](../../scaler/packagehelp/rxhadoopcommand.md): Copy a file from the native file system to HDFS.
+* [rxHadoopCopyFromLocal](rxhadoopcommand.md): Copy a file from the native file system to HDFS.
 
 
-* [rxHadoopCopyFromClient](../../scaler/packagehelp/rxhadoopcommand.md): Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.
+* [rxHadoopCopyFromClient](rxhadoopcommand.md): Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.
 
 
-* [rxHadoopCopyToLocal](../../scaler/packagehelp/rxhadoopcommand.md): Copy a file from HDFS to the local file system.
+* [rxHadoopCopyToLocal](rxhadoopcommand.md): Copy a file from HDFS to the local file system.
 
 
-* [rxHadoopListFiles](../../scaler/packagehelp/rxhadoopcommand.md): List files in an HDFS directory.
+* [rxHadoopListFiles](rxhadoopcommand.md): List files in an HDFS directory.
 
 
-* [rxHadoopMakeDir](../../scaler/packagehelp/rxhadoopcommand.md): Make a directory in HDFS.
+* [rxHadoopMakeDir](rxhadoopcommand.md): Make a directory in HDFS.
 
 
-* [rxHadoopMove](../../scaler/packagehelp/rxhadoopcommand.md): Move a file in HDFS.
+* [rxHadoopMove](rxhadoopcommand.md): Move a file in HDFS.
 
 
-* [rxHadoopRemove](../../scaler/packagehelp/rxhadoopcommand.md): Remove a file in HDFS.
+* [rxHadoopRemove](rxhadoopcommand.md): Remove a file in HDFS.
 
 
-* [rxHadoopRemoveDir](../../scaler/packagehelp/rxhadoopcommand.md): Remove a directory in HDFS.
+* [rxHadoopRemoveDir](rxhadoopcommand.md): Remove a directory in HDFS.
 
 
-* [rxHadoopVersion](../../scaler/packagehelp/rxhadoopcommand.md): Return the current Hadoop version.
+* [rxHadoopVersion](rxhadoopcommand.md): Return the current Hadoop version.
 
 
 
@@ -437,7 +437,7 @@ at the R prompt):
  
  
  ##See Also
- [rxFormula](../../scaler/packagehelp/rxformula.md), [rxTransform](../../scaler/packagehelp/rxtransform.md), [rxPackage](../../scaler/packagehelp/rxpackage.md)   
+ [rxFormula](rxformula.md), [rxTransform](rxtransform.md), [rxPackage](rxpackage.md)   
  ##Author(s)
  Microsoft Corporation 
  

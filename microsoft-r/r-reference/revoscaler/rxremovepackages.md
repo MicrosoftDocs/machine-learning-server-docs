@@ -116,8 +116,8 @@ remove.packages,
 [rxFindPackage](rxfindpackage.md),
 [rxInstalledPackages](rxinstalledpackages.md),
 [rxInstallPackages](rxinstallpackages.md),  
-[rxSyncPackages](../../scaler/packagehelp/rxsyncpackages.md),
-[rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md),   
+[rxSyncPackages](rxsyncpackages.md),
+[rxSqlLibPaths](rxsqllibpaths.md),   
 require
    
  ##Examples

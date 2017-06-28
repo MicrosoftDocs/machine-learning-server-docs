@@ -92,12 +92,12 @@ use rxImport.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -172,7 +172,7 @@ use rxImport.
   
     
  ### `rowsPerRead`
- number of rows to read for each chunk of data; if `NULL`, all rows are read. This is the number of rows written per block to the .xdf file unless the number of rows in the read chunk is modified through code in a [transformFunc](../../scaler/packagehelp/rxtransform.md). 
+ number of rows to read for each chunk of data; if `NULL`, all rows are read. This is the number of rows written per block to the .xdf file unless the number of rows in the read chunk is modified through code in a [transformFunc](rxtransform.md). 
   
   
     
@@ -302,7 +302,7 @@ types are not currently supported and are imported as character data.
 [rxImport](rximport.md),
 [rxDataStep](rxdatastep.md),
 [rxFactors](rxfactors.md),
-[rxTransform](../../scaler/packagehelp/rxtransform.md).
+[rxTransform](rxtransform.md).
    
  ##Examples
 

@@ -52,7 +52,7 @@ No other configuration changes are needed. Once you put your files there, your e
 
 ## Why can't I reach DeployR landing page anymore?
 
-If you were able to reach the landing page after install, but cannot reach that page anymore, or if your login attempt stalls on a blank page in your browser, then the Server Web Context might not be set to the right IP address. [Find out how to correct this issue here](../deployr-installing-configuring.md).
+If you were able to reach the landing page after install, but cannot reach that page anymore, or if your login attempt stalls on a blank page in your browser, then the Server Web Context might not be set to the right IP address. [Find out how to correct this issue here](deployr-installing-configuring.md).
 
 ## How does DeployR compare to Shiny?
 

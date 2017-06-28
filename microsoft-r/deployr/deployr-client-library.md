@@ -926,7 +926,7 @@ The following code snippets demonstrate some of the ways the client libraries ma
 
 ### Repository Services
 
-The [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md) is a tool, delivered as an easy-to-use Web interface, that serves as a bridge between the R scripts, models, and data created in existing analytics tools and the deployment of that work into the DeployR repository to support the development of client applications and integrations.
+The [Repository Manager](deployr-repository-manager-about.md) is a tool, delivered as an easy-to-use Web interface, that serves as a bridge between the R scripts, models, and data created in existing analytics tools and the deployment of that work into the DeployR repository to support the development of client applications and integrations.
 
 That tool uses the full range of *repository services* on the DeployR API to deliver it's many *file* and *directory* related functionalities. Your own applications can also leverage these sames services as needed. The following code snippets demonstrate some of the ways the client libraries make these services available.
 

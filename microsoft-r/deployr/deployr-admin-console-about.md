@@ -30,7 +30,7 @@ ms.custom: ""
 
 The DeployR Administration Console, which is delivered with DeployR, is an easy-to-use web interface that facilitates the proper management and administration of your DeployR deployment. Accordingly, the following functions are supported in the console:
 
--   The creation and management of [user accounts](../deployr-admin-console/deployr-admin-console-user-accounts.md)
+-   The creation and management of [user accounts](deployr-admin-console-user-accounts.md)
 -   The creation and management of [roles](deployr-admin-console-permissions-with-roles.md), which are used to grant users permissions and to restrict access to R scripts
 -   The import and export of [R scripts](deployr-admin-console-managing-r-scripts.md)
 -   The creation and management of [R boundaries](deployr-admin-managing-r-boundaries.md), which are used to constrain runtime resource usage
@@ -59,7 +59,7 @@ Only the `admin` user account, representing the administrator, has access to thi
 		http://<DEPLOYR-IP-ADDRESS>:<PORT>/deployr/administration
 	where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR machine and where `<PORT>` is the port number used during installation. 
 
-2.  Click **Administration Console Log In** in the upper right to log in.  If this is your first time using the Administration Console, try one of the [preconfigured users](../deployr-admin-console/../deployr-admin-console/deployr-admin-console-user-accounts.md#preconfigured-user-accounts).
+2.  Click **Administration Console Log In** in the upper right to log in.  If this is your first time using the Administration Console, try one of the [preconfigured users](deployr-admin-console-user-accounts.md#preconfigured-user-accounts).
 
 3. Click **Log In**.
 

@@ -80,4 +80,4 @@ We will often refer to help topic pages as a function’s help file, as in “se
 
 [Diving into data analysis in Microsoft R](how-to-introduction.md)
 
-[RevoScaleR Functions](../revoscaler.md)
+[RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)

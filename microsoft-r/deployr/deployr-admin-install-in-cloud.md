@@ -146,7 +146,7 @@ You must update the server Web context or else you will not be able to access to
 <br>
 ### Configuring Azure Endpoints
 
-When provisioning your DeployR server on Azure, you must open Azure endpoints for several [DeployR ports](../deployr-installing-configuring.md#updating-your-firewall). 
+When provisioning your DeployR server on Azure, you must open Azure endpoints for several [DeployR ports](deployr-installing-configuring.md#updating-your-firewall). 
 
 If custom ports were defined during installation, enable those instead.
 

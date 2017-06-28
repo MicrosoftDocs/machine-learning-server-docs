@@ -67,7 +67,7 @@ Trains an ensemble of models.
   
   
  ### `trainers`
- A list of trainers with their arguments. The trainers are created by using [fastTrees](../../microsoftml/packagehelp/fasttrees.md), [fastForest](../../microsoftml/packagehelp/fastforest.md), [fastLinear](../../microsoftml/packagehelp/fastlinear.md), [logisticRegression](../../microsoftml/packagehelp/logisticregression.md) or [neuralNet](../../microsoftml/packagehelp/neuralnet.md). 
+ A list of trainers with their arguments. The trainers are created by using [fastTrees](fasttrees.md), [fastForest](fastforest.md), [fastLinear](fastlinear.md), [logisticRegression](logisticregression.md) or [neuralNet](neuralnet.md). 
   
   
   

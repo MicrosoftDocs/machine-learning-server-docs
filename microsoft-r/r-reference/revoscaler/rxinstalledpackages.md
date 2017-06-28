@@ -50,12 +50,12 @@ Find (or retrieve) details of installed packages for a compute context.
   
     
  ### `computeContext`
- an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](../../scaler/packagehelp/rxinteradata.md), [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md). 
+ an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](rxinteradata.md), [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
   
   
     
  ### `allNodes`
- logical. If `TRUE` and an [RxInTeradata](../../scaler/packagehelp/rxinteradata.md) compute context is used, a list of results from each node is returned. 
+ logical. If `TRUE` and an [RxInTeradata](rxinteradata.md) compute context is used, a list of results from each node is returned. 
    
    
     
@@ -116,13 +116,13 @@ same package is installed in different `"system"`, `"shared"` and `"private"` sc
  
  ##See Also
  
-[rxPackage](../../scaler/packagehelp/rxpackage.md),
+[rxPackage](rxpackage.md),
 installed.packages,
 [rxFindPackage](rxfindpackage.md),
-[rxInstallPackages](../../scaler/packagehelp/rxinstallpackages.md),   
-[rxRemovePackages](../../scaler/packagehelp/rxremovepackages.md),
-[rxSyncPackages](../../scaler/packagehelp/rxsyncpackages.md),
-[rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md),   
+[rxInstallPackages](rxinstallpackages.md),   
+[rxRemovePackages](rxremovepackages.md),
+[rxSyncPackages](rxsyncpackages.md),
+[rxSqlLibPaths](rxsqllibpaths.md),   
 require
    
  ##Examples

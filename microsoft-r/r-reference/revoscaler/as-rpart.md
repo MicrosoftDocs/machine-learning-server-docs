@@ -79,7 +79,7 @@ an object of class rpart.
  
  ##See Also
  
-[rxDTree](../../scaler/packagehelp/rxdtree.md),
+[rxDTree](rxdtree.md),
 [as.lm](as-lm.md),
 [as.kmeans](as-kmeans.md),
 [as.glm](as-glm.md),

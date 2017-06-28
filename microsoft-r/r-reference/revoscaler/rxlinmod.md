@@ -87,7 +87,7 @@ Fit linear models on small or large data.
   
     
  ### `variableSelection`
-  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](../../scaler/packagehelp/rxstepcontrol.md) for details. 
+  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](rxstepcontrol.md) for details. 
   
   
     
@@ -107,12 +107,12 @@ Fit linear models on small or large data.
   
     
  ### `transformFunc`
- variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -375,8 +375,8 @@ Lovell, M., 2008, A Simple Proof of the FWL (Frisch,Waugh,Lovell) Theorem,
  ##See Also
  
 lm,
-[rxLogit](../../scaler/packagehelp/rxlogit.md),
-[rxTransform](../../scaler/packagehelp/rxtransform.md).
+[rxLogit](rxlogit.md),
+[rxTransform](rxtransform.md).
    
  ##Examples
 

@@ -102,7 +102,7 @@ the `returnDataFrame` property within `src`.
  ##See Also
  
 [rxNewDataSource](rxnew.md),
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md).
+[RxXdfData](rxxdfdata.md).
    
  ##Examples
 

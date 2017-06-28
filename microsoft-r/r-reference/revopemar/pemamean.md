@@ -74,7 +74,7 @@ An `PemaMean` reference class object.
  ##See Also
  
 setRefClass,
-[setPemaClass](../../pemar/packagehelp/setpemaclass.md),
+[setPemaClass](setpemaclass.md),
 [PemaBaseClass](pemabaseclass.md)
    
  ##Examples

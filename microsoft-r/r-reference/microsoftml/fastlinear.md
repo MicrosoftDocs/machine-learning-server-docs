@@ -33,7 +33,7 @@ ms.custom: ""
  
  ##Description
  
-Creates a list containing the function name and arguments to train a Fast Linear model with [rxEnsemble](../../microsoftml/packagehelp/rxensemble.md).
+Creates a list containing the function name and arguments to train a Fast Linear model with [rxEnsemble](rxensemble.md).
  
  
  ##Usage

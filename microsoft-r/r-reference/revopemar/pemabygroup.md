@@ -55,7 +55,7 @@ will compute arbitrary statistics by a grouping variable in a data set.
  ##Details
  
 This is an example of a parallel external memory algorithms for use with
-[pemaCompute](../../pemar/packagehelp/pemacompute.md). 
+[pemaCompute](pemacompute.md). 
  User-specified arguments for the `initalize` method are:
 
 groupByVar = "character", 

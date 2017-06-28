@@ -177,10 +177,10 @@ the values 7.123456 and 7.12346 would be placed in the same category.
 
 To recode a categorical or factor variable into a continuous variable within a 
 formula use `N()`. To recode continuous variable to a categorical or factor 
-variable within a formula use `F()`. See [rxFormula](../../scaler/packagehelp/rxformula.md). 
+variable within a formula use `F()`. See [rxFormula](rxformula.md). 
 
 To rename the levels of a factor variable in an .xdf file (without change the levels
-themselves), use [rxSetVarInfoXdf](../../scaler/packagehelp/rxsetvarinfoxdf.md).
+themselves), use [rxSetVarInfoXdf](rxsetvarinfoxdf.md).
 
  
  
@@ -199,9 +199,9 @@ are written to the specified `outFile` file and an RxXdfData object is returned
  
  ##See Also
  
-[rxFormula](../../scaler/packagehelp/rxformula.md),
-[rxSetVarInfoXdf](../../scaler/packagehelp/rxsetvarinfoxdf.md),
-[rxImport](../../scaler/packagehelp/rximport.md),
+[rxFormula](rxformula.md),
+[rxSetVarInfoXdf](rxsetvarinfoxdf.md),
+[rxImport](rximport.md),
 [rxDataStep](rxdatastep.md).
    
  

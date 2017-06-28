@@ -60,7 +60,7 @@ Other service methods: [deleteService](deleteservice.md),
 [getService](getservice.md), [listServices](listservices.md),
 [print.serviceDetails](print-servicedetails.md),
 [publishService](publishservice.md),
-[serviceOption](serviceoption.md), [updateService](../../mrsdeploy/packagehelp/updateservice.md)
+[serviceOption](serviceoption.md), [updateService](updateservice.md)
    
  ##Examples
 

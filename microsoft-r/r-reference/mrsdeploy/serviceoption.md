@@ -73,8 +73,8 @@ Other service methods: [deleteService](deleteservice.md),
 [getService](getservice.md), [listServices](listservices.md),
 [print.serviceDetails](print-servicedetails.md),
 [publishService](publishservice.md),
-[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
-[updateService](../../mrsdeploy/packagehelp/updateservice.md)
+[summary.serviceDetails](summary-servicedetails.md),
+[updateService](updateservice.md)
    
  ##Examples
 

@@ -91,7 +91,7 @@ Execute arbitrary Hadoop commands and perform standard file operations in Hadoop
   
     
  ### `computeContext`
- Run against this compute context. Default to the current compute context as returned by [rxGetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md) 
+ Run against this compute context. Default to the current compute context as returned by [rxGetComputeContext](rxsetcomputecontext.md) 
   .
   
     
@@ -216,7 +216,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md).
+[RxHadoopMR](rxhadoopmr.md).
    
  ##Examples
 

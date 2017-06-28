@@ -59,7 +59,7 @@ A character vector containing the file names in the working directory of the rem
 
 [deleteRemoteFile](deleteremotefile.md)
 
-[putLocalFile](../../mrsdeploy/packagehelp/putlocalfile.md)
+[putLocalFile](putlocalfile.md)
    
  ##Examples
 

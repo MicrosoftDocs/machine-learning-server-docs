@@ -348,7 +348,7 @@ value of the requested option is returned.
 [RxLocalParallel](rxlocalparallel.md),
 [RxForeachDoPar](rxforeachdopar.md),
 [RxHadoopMR](rxhadoopmr.md),
-[RxSpark](../../scaler/packagehelp/rxspark.md),
+[RxSpark](rxspark.md),
 [RxInSqlServer](rxinsqlserver.md),
 [RxInTeradata](rxinteradata.md).
    

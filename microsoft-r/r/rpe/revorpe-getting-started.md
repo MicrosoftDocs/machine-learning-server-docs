@@ -109,7 +109,7 @@ As an example, let's use snippets to create an R data frame.
 1.  Right-click on the first empty line of your script, click **Insert Snippet...**, and then double-click on the folder **data sets**.
 2.  Click **import data**. A tooltip appears describing what the snippet does.
 3.  Double-click **import data**. A snippet for the read.table() R function is inserted, with placeholders for you to insert information. You can move the mouse over the placeholders to view ToolTip descriptions of the fields.
-    ![](media/RevoRPE_Getting_Started/image3.png)
+    ![](media/revorpe-getting-started/image3.png)
 4.  The first field is the name of the data frame to create. Type SAT to replace the default myDataFrame.
 5.  Move to the next placeholder name by pressing TAB. (You can use Shift+TAB to move to the previous placeholder.) The placeholder for the file to import is now highlighted in blue.
 6.  Replace the default file name myfile with sat.csv. Since you have copied the file into your current solution directory, you do not need to specify any path information.
@@ -119,7 +119,7 @@ As an example, let's use snippets to create an R data frame.
 
 #### Run the script
 
-To run the script, click the **Run** button ![](media/RevoRPE_Getting_Started/image4.png) on the standard toolbar. The commands and output are printed in the Console window. If you have the Output window open, you can also see your results there.
+To run the script, click the **Run** button ![](media/revorpe-getting-started/image4.png) on the standard toolbar. The commands and output are printed in the Console window. If you have the Output window open, you can also see your results there.
 
 Note that when a script is run, it is first automatically saved to disk. The yellow line in the left margin of your edited code turns green when the script has been saved.
 
@@ -159,13 +159,13 @@ In the script window, select the new lines at the end of your script beginning w
 To run the selected text, do one of the following:
 
 - Right-click and click **Run Line or Selection**
-- Press the **Run Line or Selection** button ![](media/RevoRPE_Getting_Started/image5.png) on the main toolbar
+- Press the **Run Line or Selection** button ![](media/revorpe-getting-started/image5.png) on the main toolbar
 - On the **Edit** menu, click **Run Line or Selection**.
 - Press **Alt-E-E** to access the menu shortcut keys.
 
 You should see a graphics window displaying your plot. The regression line suggests that as expenditure per pupil increases, SAT scores drop.
 
-![](media/RevoRPE_Getting_Started/image6.png)
+![](media/revorpe-getting-started/image6.png)
 
 Close the graphics window.
 
@@ -267,7 +267,7 @@ To run an existing script:
 1.  On the **File** menu, point to **Open** and then click **File...**.
 2.  In the **Open File** dialog, navigate to the file containing the script you want to run, and click **Open**.
 3.  A dialog appears asking if you want to add the file to the current project. Click **Yes** to add the file to the project, click **No** to open the file without adding it to the current project. If you click **Yes**, the script will be copied into the current project directory before being opened in the Script window; any changes you make will be made to that copy.
-4.  The script opens in the Script window. Click ![](media/RevoRPE_Getting_Started/image4.png) to run the script.
+4.  The script opens in the Script window. Click ![](media/revorpe-getting-started/image4.png) to run the script.
 
 ## Using the Debugger
 
@@ -292,17 +292,17 @@ Set a breakpoint on the line of your script that calls makeConditionPlot by doin
 
 The breakpoint appears as a circle in the grey strip, and the associated line is highlighted, as shown below:
 
-![](media/RevoRPE_Getting_Started/image7.png)
+![](media/revorpe-getting-started/image7.png)
 
-Now click ![](media/RevoRPE_Getting_Started/image4.png) to begin running the script. A yellow arrow appears on the breakpoint in your script window, and the script stops running before the function is run.
+Now click ![](media/revorpe-getting-started/image4.png) to begin running the script. A yellow arrow appears on the breakpoint in your script window, and the script stops running before the function is run.
 
 ### Step In the Debugger
 
 When stopped at a breakpoint, you may choose to step through your code.  Three stepping commands are available for this and can be accessed from the **Debug** menu, the **Debug** toolbar, or using accelerator key combinations.
 
 - **Step Into** ![](./media/revorpe-getting-started/image8.png) **(F11):** Stops at the next breakable point.  If your point of execution (the yellow arrow) is on a call to a function defined in the current folder, then Step Into will stop in front of the first executable line inside that function.  Note that if you are not stopped before a function defined within the current project, 'Step Into' will function identically to 'Step Over'
-- **Step Over** ![](media/RevoRPE_Getting_Started/image9.png) **(F10)** Stops at the next breakable point within the currently executing function (or top-level script).  If you are at the last statement of a currently executing function, then 'Step Over' works just like 'Step Out'.
-- **Step Out **![](media/RevoRPE_Getting_Started/image10.png) **(Shift-F11)** Stops at the next breakable point after the currently executing function has completed. 
+- **Step Over** ![](media/revorpe-getting-started/image9.png) **(F10)** Stops at the next breakable point within the currently executing function (or top-level script).  If you are at the last statement of a currently executing function, then 'Step Over' works just like 'Step Out'.
+- **Step Out **![](media/revorpe-getting-started/image10.png) **(Shift-F11)** Stops at the next breakable point after the currently executing function has completed. 
 
 You should still hit any breakpoints encountered while stepping, and at any point, you should be able to choose Continue (F5) to end stepping and continue execution normally.
 
@@ -316,11 +316,11 @@ You should still hit any breakpoints encountered while stepping, and at any poin
 
 ### Examine Local Values
 
-Step into makeConditionPlot by choosing **Step Into** from the Debug menu, pressing **F11**, or clicking the **Step Into** button ![](./media/revorpe-getting-started/image8.png) on the debug toolbar. Then execute the first and second lines of the function by clicking the **Step Over** button ![](media/RevoRPE_Getting_Started/image9.png) twice.
+Step into makeConditionPlot by choosing **Step Into** from the Debug menu, pressing **F11**, or clicking the **Step Into** button ![](./media/revorpe-getting-started/image8.png) on the debug toolbar. Then execute the first and second lines of the function by clicking the **Step Over** button ![](media/revorpe-getting-started/image9.png) twice.
 
 When inside the function, you can see the values of variables by hovering over them in your script. For example, if you hover over breaks, you see a balloon pop up with the current value of the variable, as shown:
 
-![](media/RevoRPE_Getting_Started/image11.png)
+![](media/revorpe-getting-started/image11.png)
 
 You can also see local variables in the Object Browser by clicking **_Browser_Call**.
 
@@ -371,11 +371,11 @@ As you type in the Script window, whenever you type a function name followed by 
 
 1.  On a blank line of your script, type rnorm(. A tooltip appears with the function arguments, as shown.
 
-	> ![](media/RevoRPE_Getting_Started/image12.png)
+	> ![](media/revorpe-getting-started/image12.png)
 
 2.  Type 20 followed by a comma. The highlighting within the tooltip changes to show you that you are now specifying the mean argument:
 
-	> ![](media/RevoRPE_Getting_Started/image13.png)
+	> ![](media/revorpe-getting-started/image13.png)
 
 3.  Type 2 to specify a mean of 2, and then type a closing parenthesis and press Enter.
 
@@ -456,7 +456,7 @@ R includes a simple cell-based data editor for editing tabular data such as data
 
 To edit the matrix, choose **Edit Object....** from the **Data** menu, and type **myMat** in the dialog box that appears. The data editor appears as shown:
 
-![](media/RevoRPE_Getting_Started/image14.png)
+![](media/revorpe-getting-started/image14.png)
 
 Click in any cell to edit the value in the cell. Click on a column heading to bring up the **Variable Editor** dialog box, which allows you to specify the name of the variable and the type (character or numeric) of the variable.
 
@@ -592,7 +592,7 @@ You can close the graphics window.
 
 ## Finding More Information
 
-This *Getting Started Guide* has introduced the main features of the Revolution R Enterprise R Productivity Environment. More information on the RPE can be found in the [R Productivity Environment User’s Guide](../../revorpe_users_guide.md). A basic introduction to the R language can be found [here](../../microsoft-r-getting-started.md).
+This *Getting Started Guide* has introduced the main features of the Revolution R Enterprise R Productivity Environment. More information on the RPE can be found in the [R Productivity Environment User’s Guide](revorpe-users-guide.md). A basic introduction to the R language can be found [here](../../microsoft-r-getting-started.md).
 
 ## Keyboard Navigation Among Windows
 

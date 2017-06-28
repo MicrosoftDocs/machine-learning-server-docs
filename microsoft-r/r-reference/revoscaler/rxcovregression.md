@@ -103,8 +103,8 @@ the model matrix.
  
  ##See Also
  
-[rxLinMod](../../scaler/packagehelp/rxlinmod.md),
-[rxLogit](../../scaler/packagehelp/rxlogit.md),
+[rxLinMod](rxlinmod.md),
+[rxLogit](rxlogit.md),
 [rxCovCor](rxcovcor.md).
    
  ##Examples

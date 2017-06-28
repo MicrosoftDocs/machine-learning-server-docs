@@ -95,7 +95,7 @@ Arguements must be specified in order. Eg: In order to explore hierarchies, a di
  
  ##See Also
  
-query`, `[OlapConnection](../../olapr/packagehelp/olapconnection.md)`, `[executeMD](executemd.md)`, `[execute2D](execute2d.md)
+query`, `[OlapConnection](olapconnection.md)`, `[executeMD](executemd.md)`, `[execute2D](execute2d.md)
    
  
  ##Examples

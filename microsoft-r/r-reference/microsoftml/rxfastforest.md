@@ -223,7 +223,7 @@ Decision trees have several advantages:
 
 
 
-Fast forest regression is a random forest and quantile regression forest implementation using the regression tree learner in [rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md). The model consists of an ensemble of decision trees. Each tree in a decision forest outputs a Gaussian distribution by way of prediction. An aggregation is performed over the ensemble of trees to find a Gaussian distribution closest to the combined distribution for all trees in the model.
+Fast forest regression is a random forest and quantile regression forest implementation using the regression tree learner in [rxFastTrees](rxfasttrees.md). The model consists of an ensemble of decision trees. Each tree in a decision forest outputs a Gaussian distribution by way of prediction. An aggregation is performed over the ensemble of trees to find a Gaussian distribution closest to the combined distribution for all trees in the model.
 
 This decision forest classifier consists of an ensemble of decision trees.
 Generally, ensemble models provide better coverage and accuracy than single
@@ -268,11 +268,11 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md), [rxFastLinear](../../microsoftml/packagehelp/rxfastlinear.md),
-[rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md), [rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md),
-[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[rxFastTrees](rxfasttrees.md), [rxFastLinear](rxfastlinear.md),
+[rxLogisticRegression](logisticregression.md), [rxNeuralNet](neuralnet.md),
+[rxOneClassSvm](oneclasssvm.md), [featurizeText](featurizetext.md),
 [categorical](categorical.md), [categoricalHash](categoricalhash.md),
-[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
+[rxPredict.mlModel](rxpredict.md).
    
 ##Examples
 

@@ -176,7 +176,7 @@ After you have some data, you will want to explore it graphically. For most smal
 
 For numeric vectors such as ours, the default view is a scatter plot of the observations against their index, resulting in the following plots:
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image5.jpeg)
+![](media/tutorial-r-to-revoscaler/image5.jpeg)
 
 For an exploration of the shape of the data, the usual tools are `stem` (to create a stemplot) and `hist` (to create a histogram):
 
@@ -197,7 +197,7 @@ The resulting histogram is shown as the left plot below. We can make the histogr
 
 The resulting histogram is shown as the right plot in the figure below.
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image6.jpeg)
+![](media/tutorial-r-to-revoscaler/image6.jpeg)
 
 From the histogram and stemplot, it appears that the Michelson-Morley observations are not obviously normal. A normal Q-Q plot gives a graphical test of whether a data set is normal:
 
@@ -205,13 +205,13 @@ From the histogram and stemplot, it appears that the Michelson-Morley observatio
 
 The decided bend in the resulting plot confirms the suspicion that the data are not normal.
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image7.jpeg)
+![](media/tutorial-r-to-revoscaler/image7.jpeg)
 
 Another useful exploratory plot, especially for comparing two distributions, is the boxplot:
 
 	boxplot(normalDat, uniformDat)
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image8.jpeg)
+![](media/tutorial-r-to-revoscaler/image8.jpeg)
 
 > [!Tip]
 > These plots are great if you have a small data set in memory. However, when working with big data, some plot types may not be very informative when working directly with the data (for example, scatter plots can produce a big blob of ink) and others may be computational intensive (if sorting is required). A better alternative is the *rxHistogram* function in RevoScaleR that efficiently computes and renders histograms for large data sets. Additionally, RevoScaleR functions such as *rxCube* can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.
@@ -301,7 +301,7 @@ We mentioned that the `plot` function could be used with virtually any data set 
 
 The resulting plot is a pairwise scatter plot of the numeric variables in the data set.
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image9.jpeg)
+![](media/tutorial-r-to-revoscaler/image9.jpeg)
 
 The first two variables (*rating* and *complaints*) show a strong linear relationship. To model that relationship, we use the `lm` function:
 
@@ -337,7 +337,7 @@ The default plot for a fitted linear model is a set of four plots; by default th
 	par(mfrow=c(2,2))
 	plot(attitudeLM1)
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image10.jpeg)
+![](media/tutorial-r-to-revoscaler/image10.jpeg)
 
 > [!Tip]
 > The rxLinMod function is a full-featured alternative to lm that can efficiently handle large data sets.  Also look at rxLogit and rxGlm as alternatives to `glm`, rxKmeans as an alternative to `kmeans`, and rxDTree as an alternative to `rpart`.
@@ -570,7 +570,7 @@ The rxHistogram function will show us the distribution of any of the variables i
 
 	rxHistogram(~creditScore, data = mortDataNew )
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image14.png)
+![](media/tutorial-r-to-revoscaler/image14.png)
 
 The rxCube function will compute category counts, and can operate on the interaction of categorical variables. Using the *F()* notation to convert a variable into an on-the-fly categorical factor variable (with a level for each integer value), we can compute the counts for each credit score for the two groups who have low and high credit card debt:
 
@@ -580,7 +580,7 @@ The *rxLinePlot* function is a convenient way to plot output from *rxCube*. We u
 
 	rxLinePlot(Counts~creditScore|catDebt, data=rxResultsDF(mortCube))
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image15.png)
+![](media/tutorial-r-to-revoscaler/image15.png)
 
 ### Analyze with *rxLogit*
 
@@ -685,12 +685,12 @@ Note that because we have specified an output file when importing the data, the 
 		Rows Read: 499293, Total Rows Processed: 998587, Total Chunk Time: 0.335 seconds
 		Computation time: 0.678 seconds.
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image16.png)
+![](media/tutorial-r-to-revoscaler/image16.png)
 
 	myCube = rxCube(~F(creditScore):catDebt, data = mortDataNew)
 	rxLinePlot(Counts~creditScore|catDebt, data=rxResultsDF(myCube))
 
-![](media/microsoft-r-tutorial-R2RevoScaleR/image17.png)
+![](media/tutorial-r-to-revoscaler/image17.png)
 
 	# Compute a logistic regression
 	myLogit <- rxLogit(default~ccDebt+yearsEmploy , data=mortDataNew)

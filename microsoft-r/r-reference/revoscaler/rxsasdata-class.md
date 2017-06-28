@@ -39,7 +39,7 @@ SAS data source connection class.
  ## Generators 
 
  
-The targeted generator [RxSasData](../../scaler/packagehelp/rxsasdata.md) as well as the general generator
+The targeted generator [RxSasData](rxsasdata.md) as well as the general generator
 [rxNewDataSource](rxnew.md).
  
  ## Extends 
@@ -66,7 +66,7 @@ Class RxDataSource, by class RxFileData.
  ##See Also
  
 [RxDataSource-class](rxdatasource-class.md),
-[RxSasData](../../scaler/packagehelp/rxsasdata.md),
+[RxSasData](rxsasdata.md),
 [rxNewDataSource](rxnew.md)
    
  

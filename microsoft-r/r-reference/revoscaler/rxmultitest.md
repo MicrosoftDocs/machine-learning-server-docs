@@ -89,9 +89,9 @@ an object of class rxMultiTest.
 [rxChiSquaredTest](rxchisquaredtest.md),
 [rxFisherTest](rxchisquaredtest.md),
 [rxKendallCor](rxchisquaredtest.md),
-[rxPairwiseCrossTab](../../scaler/packagehelp/rxpairwisecrosstab.md),
-[rxRiskRatio](../../scaler/packagehelp/rxriskratio.md),
-[rxOddsRatio](../../scaler/packagehelp/rxriskratio.md).
+[rxPairwiseCrossTab](rxpairwisecrosstab.md),
+[rxRiskRatio](rxriskratio.md),
+[rxOddsRatio](rxriskratio.md).
    
  
  ##Examples

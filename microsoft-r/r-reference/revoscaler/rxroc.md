@@ -77,7 +77,7 @@ plot  (x, computeAuc = TRUE, title = NULL, subtitle,
   
     
  ### `data`
-  data frame, character string containing an .xdf file name (with path), or  [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object representing an .xdf file containing the actual and observed variables.  
+  data frame, character string containing an .xdf file name (with path), or  [RxXdfData](rxxdfdata.md) object representing an .xdf file containing the actual and observed variables.  
   
     
  ### `numBreaks`

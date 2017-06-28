@@ -46,11 +46,11 @@ With DeployR, you can remain focused on creating the R code, models, and data fi
 
 All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the `deployrUtils` R package to [make your R code portable](deployr-data-scientist-write-portable-r-code.md):
 
--   [The `deployrPackage` function](../deployr-data-scientist-write-portable-r-code.md#package-portability) guarantees package portability from your local environment to the DeployR server environment when you use it to declare all of the package dependencies in your R script. Packages declared using this function are automatically loaded at runtime, either in your local environment or on the DeployR server. If the packages declared are not yet installed, then they're automatically installed before being loaded.
+-   [The `deployrPackage` function](deployr-data-scientist-write-portable-r-code.md#package-portability) guarantees package portability from your local environment to the DeployR server environment when you use it to declare all of the package dependencies in your R script. Packages declared using this function are automatically loaded at runtime, either in your local environment or on the DeployR server. If the packages declared are not yet installed, then they're automatically installed before being loaded.
 
--   [The `deployrInput` function](../deployr-data-scientist-write-portable-r-code.md#input-portability) guarantees script input portability when you use it to define the inputs required by your scripts along with their default values.
+-   [The `deployrInput` function](deployr-data-scientist-write-portable-r-code.md#input-portability) guarantees script input portability when you use it to define the inputs required by your scripts along with their default values.
 
--   [The `deployrExternal` function](../deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guarantees portability from your local environment to the DeployR server environment when you use it to reference the big data files from within your R scripts.
+-   [The `deployrExternal` function](deployr-data-scientist-write-portable-r-code.md#portable-access-to-data-files) guarantees portability from your local environment to the DeployR server environment when you use it to reference the big data files from within your R scripts.
 
 You can install `deployrUtils` locally [from GitHub](https://github.com/Microsoft/deployrUtils/releases) using your IDE, R console, or terminal window with the following commands:
 
@@ -79,15 +79,15 @@ Testing locally involves running your R code within your local R integrated deve
 
 ### Testing Remotely
 
-Testing remotely involves executing your R scripts in the DeployR server environment. Doing so is easy when you use the web-based [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR. In just a few clicks, you can upload and test your R scripts, models, and data files via the Repository Manager. Here's how:
+Testing remotely involves executing your R scripts in the DeployR server environment. Doing so is easy when you use the web-based [Repository Manager](deployr-repository-manager-about.md) that ships with DeployR. In just a few clicks, you can upload and test your R scripts, models, and data files via the Repository Manager. Here's how:
 
-1.  [Log into](../../deployr-repository-manager/deployr-repository-manager-about.md#logging-in-and-out) the web-based DeployR landing page.
+1.  [Log into](deployr-repository-manager-about.md#logging-in-and-out) the web-based DeployR landing page.
 
     ![Login](./media/deployr-data-scientist-getting-started/login1.png)
 
 2.  Open the Repository Manager tool.
 
-3.  [Create a directory](../deployr-repository-manager/deployr-repository-manager-directories.md#creating-directories) that you can use to store your development copies of your R analytics. In our example, we'll call this directory you'll use for development and testing in DeployR, `fraud-score-dev`. These copies of your R analytics won't be shared with the application developers. We'll do that in a later step in the [Collaboration](#collaborate) section.
+3.  [Create a directory](deployr-repository-manager-directories.md#creating-directories) that you can use to store your development copies of your R analytics. In our example, we'll call this directory you'll use for development and testing in DeployR, `fraud-score-dev`. These copies of your R analytics won't be shared with the application developers. We'll do that in a later step in the [Collaboration](#collaborate) section.
 
     ![New Directory](./media/deployr-data-scientist-getting-started/newdir1.png)
 
@@ -99,9 +99,9 @@ Testing remotely involves executing your R scripts in the DeployR server environ
 
     ![Open File](./media/deployr-data-scientist-getting-started/openfile.png)
 
-6.  [Click **Test**](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) on the right of the **File Properties** page to open the **Test** page. The **Test** page acts as a live debugging environment.
+6.  [Click **Test**](deployr-repository-manager-testing-debugging-scripts.md) on the right of the **File Properties** page to open the **Test** page. The **Test** page acts as a live debugging environment.
 
-7.  [Click **Run**](../../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#running-scripts-in-test-page) in the upper-right hand pane to execute the R script. As the script executes, you'll see the [console output](../../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#reviewing-debug-console-output) in the bottom left pane. After execution, you can review the [response markup](../../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) in the bottom right pane.
+7.  [Click **Run**](deployr-repository-manager-testing-debugging-scripts.md#running-scripts-in-test-page) in the upper-right hand pane to execute the R script. As the script executes, you'll see the [console output](deployr-repository-manager-testing-debugging-scripts.md#reviewing-debug-console-output) in the bottom left pane. After execution, you can review the [response markup](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) in the bottom right pane.
 
     ![Test Page](./media/deployr-data-scientist-getting-started/testpage.png)
 
@@ -153,13 +153,13 @@ Once you share a snapshot with application developers, you must let them know th
 
 When the application developers have access to the same DeployR server instance as you, you can share stable, tested R analytics snapshots there.
 
-1.  [Log into](../../deployr-repository-manager/deployr-repository-manager-about.md#logging-in-and-out) the web-based [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md).
+1.  [Log into](deployr-repository-manager-about.md#logging-in-and-out) the web-based [Repository Manager](deployr-repository-manager-about.md).
 
     ![Login](./media/deployr-data-scientist-getting-started/login1.png)
 
 2.  Open the Repository Manager tool.
 
-3.  [Create a snapshot directory](../deployr-repository-manager/deployr-repository-manager-directories.md#creating-directories) for collaboration in which you'll share the snapshots of your R analytics with application developers. Keep in mind that each snapshot should be a stable and tested version of your R analytics.
+3.  [Create a snapshot directory](deployr-repository-manager-directories.md#creating-directories) for collaboration in which you'll share the snapshots of your R analytics with application developers. Keep in mind that each snapshot should be a stable and tested version of your R analytics.
 
     >[!TIP]
     >We recommend that you follow a convention when naming your project directories that enables those directories to be easily associated. In our example, the directory we used to upload and test these R analytics in DeployR before sharing them is called `fraud-score-dev`. And here, we'll name the snapshot directory `fraud-score`.
@@ -217,7 +217,7 @@ Keep in mind that:
 -   It is critical that you provide the application developers with any details that can help them integrate those analytics.
 -   The files you share should be stable and tested snapshots of your R analytics.
 
-Once you've shared those files, the application developers can upload the files into their DeployR server any way they want including through the [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md), using client libraries, or via the [raw API](deployr-api-reference.md).
+Once you've shared those files, the application developers can upload the files into their DeployR server any way they want including through the [Repository Manager](deployr-repository-manager-about.md), using client libraries, or via the [raw API](deployr-api-reference.md).
 
 ## More Resources
 
@@ -226,7 +226,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 **Key Documents**
 -   [About DeployR](deployr-about.md)
 -   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
--   [Repository Manager Help](../deployr-repository-manager/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
+-   [Repository Manager Help](deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
 -   [About Throughput](deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
 -   [Getting Started For Application Developers](deployr-application-developer-getting-started.md)
 -   [Getting Started For Administrators](deployr-administrator-getting-started.md)

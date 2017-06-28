@@ -38,7 +38,7 @@ Example PEMA reference class to compute arbitrary by-group statistics
  ## Generators 
 
  
-The targeted generator [PemaByGroup](../../pemar/packagehelp/pemabygroup.md)
+The targeted generator [PemaByGroup](pemabygroup.md)
 
  
  ## Extends 
@@ -53,7 +53,7 @@ Class PemaBaseClass, directly.
  
  ##See Also
  
-[PemaByGroup](../../pemar/packagehelp/pemabygroup.md)
+[PemaByGroup](pemabygroup.md)
 [PemaBaseClass](pemabaseclass.md)
    
  

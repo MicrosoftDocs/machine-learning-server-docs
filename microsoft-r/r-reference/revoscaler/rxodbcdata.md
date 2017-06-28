@@ -209,7 +209,7 @@ object of class RxOdbcData.
 [RxOdbcData-class](rxodbcdata-class.md),
 [rxNewDataSource](rxnew.md),
 [rxImport](rximport.md),
-[RxTeradata](../../scaler/packagehelp/rxteradata.md).
+[RxTeradata](rxteradata.md).
    
  ##Examples
 

@@ -59,7 +59,7 @@ according to file path rules of the remote compute context platform.
  
 [RxComputeContext](rxcomputecontext.md),
 [RxHadoopMR](rxhadoopmr.md),
-[RxSpark](../../scaler/packagehelp/rxspark.md).
+[RxSpark](rxspark.md).
    
  ##Examples
 

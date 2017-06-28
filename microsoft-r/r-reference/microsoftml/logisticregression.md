@@ -33,7 +33,7 @@ ms.custom: ""
  
  ##Description
  
-Creates a list containing the function name and arguments to train a logistic regression model with [rxEnsemble](../../microsoftml/packagehelp/rxensemble.md).
+Creates a list containing the function name and arguments to train a logistic regression model with [rxEnsemble](rxensemble.md).
  
  
  ##Usage
@@ -81,7 +81,7 @@ Creates a list containing the function name and arguments to train a logistic re
   
   
  ### `showTrainingStats`
- Specify `TRUE` to show the statistics of  training data and the trained model; otherwise, `FALSE`. The  default value is `FALSE`. For additional information about model  statistics, see [summary.mlModel](../../microsoftml/packagehelp/mlmodel.md). 
+ Specify `TRUE` to show the statistics of  training data and the trained model; otherwise, `FALSE`. The  default value is `FALSE`. For additional information about model  statistics, see [summary.mlModel](mlmodel.md). 
   
   
   

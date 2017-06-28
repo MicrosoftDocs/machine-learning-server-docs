@@ -78,7 +78,7 @@ A character vector of the library paths containing both `"shared"` or `"private"
 [rxInstalledPackages](rxinstalledpackages.md),
 [rxInstallPackages](rxinstallpackages.md),   
 [rxRemovePackages](rxremovepackages.md),
-[rxSyncPackages](../../scaler/packagehelp/rxsyncpackages.md),
+[rxSyncPackages](rxsyncpackages.md),
 require
    
  ##Examples

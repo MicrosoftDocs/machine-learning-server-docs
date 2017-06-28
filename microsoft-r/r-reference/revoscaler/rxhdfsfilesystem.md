@@ -85,7 +85,7 @@ print  ( x, ... )
  ##Details
  
 Writing to the HDFS file system can only be done using a [RxHadoopMR](rxhadoopmr.md)
-compute context with an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) data source. The 'rxHadoop' commands,
+compute context with an [RxXdfData](rxxdfdata.md) data source. The 'rxHadoop' commands,
 such as [rxHadoopCopy](rxhadoopcommand.md), can also be used to manipulate data sets in HDFS.
  
  
@@ -93,8 +93,8 @@ such as [rxHadoopCopy](rxhadoopcommand.md), can also be used to manipulate data 
  ##Value
  
 An RxHdfsFileSystem file system object. This object may be used to in
-[rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md), [rxOptions](../../scaler/packagehelp/rxoptions.md), [RxTextData](../../scaler/packagehelp/rxtextdata.md), or
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md) to set the file system.
+[rxSetFileSystem](rxsetfilesystem.md), [rxOptions](rxoptions.md), [RxTextData](rxtextdata.md), or
+[RxXdfData](rxxdfdata.md) to set the file system.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -103,12 +103,12 @@ An RxHdfsFileSystem file system object. This object may be used to in
  ##See Also
  
 [RxFileSystem](rxfilesystem.md),
-[RxNativeFileSystem](../../scaler/packagehelp/rxnativefilesystem.md),
-[rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md),
-[rxOptions](../../scaler/packagehelp/rxoptions.md),
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
-[RxTextData](../../scaler/packagehelp/rxtextdata.md),
-[rxOAuthParameters](../../scaler/packagehelp/rxoauthparameters.md).
+[RxNativeFileSystem](rxnativefilesystem.md),
+[rxSetFileSystem](rxsetfilesystem.md),
+[rxOptions](rxoptions.md),
+[RxXdfData](rxxdfdata.md),
+[RxTextData](rxtextdata.md),
+[rxOAuthParameters](rxoauthparameters.md).
    
  ##Examples
 

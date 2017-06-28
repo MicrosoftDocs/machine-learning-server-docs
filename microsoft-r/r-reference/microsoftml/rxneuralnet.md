@@ -274,9 +274,9 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 [rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md),
 [rxFastLinear](rxfastlinear.md), [rxLogisticRegression](logisticregression.md),
-[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[rxOneClassSvm](oneclasssvm.md), [featurizeText](featurizetext.md),
 [categorical](categorical.md), [categoricalHash](categoricalhash.md),
-[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
+[rxPredict.mlModel](rxpredict.md).
    
  ##Examples
 

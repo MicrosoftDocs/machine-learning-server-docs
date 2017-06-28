@@ -279,11 +279,11 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 [logLoss](loss.md), [hingeLoss](loss.md),
 [smoothHingeLoss](loss.md), [squaredLoss](loss.md),
-[rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md), [rxFastForest](rxfastforest.md),
-[rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md), [rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md),
-[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md),
+[rxLogisticRegression](logisticregression.md), [rxNeuralNet](neuralnet.md),
+[rxOneClassSvm](oneclasssvm.md), [featurizeText](featurizetext.md),
 [categorical](categorical.md), [categoricalHash](categoricalhash.md),
-[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
+[rxPredict.mlModel](rxpredict.md).
    
  ##Examples
 

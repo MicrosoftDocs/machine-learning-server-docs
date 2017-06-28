@@ -39,7 +39,7 @@ Microsoft SQL Server data source connection class.
  ## Generators 
 
  
-The targeted generator [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md) as well as the general generator
+The targeted generator [RxSqlServerData](rxsqlserverdata.md) as well as the general generator
 [rxNewDataSource](rxnew.md).
  
  ## Extends 
@@ -65,7 +65,7 @@ Class RxDataSource, directly.
  ##See Also
  
 [RxDataSource-class](rxdatasource-class.md),
-[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md),
+[RxSqlServerData](rxsqlserverdata.md),
 [rxNewDataSource](rxnew.md)
    
  

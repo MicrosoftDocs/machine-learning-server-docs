@@ -39,7 +39,7 @@ Text data source connection class.
  ## Generators 
 
  
-The targeted generator [RxTextData](../../scaler/packagehelp/rxtextdata.md) as well as the general generator
+The targeted generator [RxTextData](rxtextdata.md) as well as the general generator
 [rxNewDataSource](rxnew.md).
  
  ## Extends 
@@ -66,7 +66,7 @@ Class RxDataSource, by class RxFileData.
  ##See Also
  
 [RxDataSource-class](rxdatasource-class.md),
-[RxTextData](../../scaler/packagehelp/rxtextdata.md),
+[RxTextData](rxtextdata.md),
 [rxNewDataSource](rxnew.md)
    
  

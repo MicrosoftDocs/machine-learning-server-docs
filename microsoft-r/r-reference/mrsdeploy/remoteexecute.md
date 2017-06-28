@@ -100,7 +100,7 @@ A list containing the results of the execution
  
  ##See Also
  
-[remoteScript](../../mrsdeploy/packagehelp/remotescript.md)
+[remoteScript](remotescript.md)
    
  ##Examples
 

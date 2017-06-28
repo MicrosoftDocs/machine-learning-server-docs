@@ -95,7 +95,7 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
   
     
  ### `variableSelection`
-  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](../../scaler/packagehelp/rxstepcontrol.md) for details. 
+  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](rxstepcontrol.md) for details. 
   
   
     
@@ -115,12 +115,12 @@ Use `rxGlm` to fit generalized linear regression models for small or large data.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -320,10 +320,10 @@ The generalized linear models are computed using the Iteratively Reweighted Leas
  
 glm,
 family,
-[rxLinMod](../../scaler/packagehelp/rxlinmod.md),
-[rxLogit](../../scaler/packagehelp/rxlogit.md),
-[rxTweedie](../../scaler/packagehelp/rxtweedie.md),
-[rxTransform](../../scaler/packagehelp/rxtransform.md).
+[rxLinMod](rxlinmod.md),
+[rxLogit](rxlogit.md),
+[rxTweedie](rxtweedie.md),
+[rxTransform](rxtransform.md).
    
  ##Examples
 

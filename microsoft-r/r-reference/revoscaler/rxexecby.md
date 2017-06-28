@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Partition Data by Key Values and Execute User Function on Each Partition" 
-description: " Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in `local`, `localpar`, [RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md) and [RxSpark](../../scaler/packagehelp/rxspark.md) compute contexts. " 
+description: " Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in `local`, `localpar`, [RxInSqlServer](rxinsqlserver.md) and [RxSpark](rxspark.md) compute contexts. " 
 keywords: "RevoScaleR, rxExecBy, ExecBy" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -35,8 +35,8 @@ ms.custom: ""
  
 Partition input data source by keys and apply user defined function on individual partitions.
 If input data source is already partitioned, apply user defined function on partitions directly.
-Currently supported in `local`, `localpar`, [RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md) and
-[RxSpark](../../scaler/packagehelp/rxspark.md) compute contexts.
+Currently supported in `local`, `localpar`, [RxInSqlServer](rxinsqlserver.md) and
+[RxSpark](rxspark.md) compute contexts.
  
  
  
@@ -54,7 +54,7 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](../../scaler/package
    
     
  ### `inData`
- a data source object suppported in currently active compute context, e.g., [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md) for [RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md) and [RxHiveData](../../scaler/packagehelp/rxsparkdata.md) for [RxSpark](../../scaler/packagehelp/rxspark.md). In `local` and `localpar` compute contexts, a character string specifying a .xdf file or a data frame object can be also used. 
+ a data source object suppported in currently active compute context, e.g., [RxSqlServerData](rxsqlserverdata.md) for [RxInSqlServer](rxinsqlserver.md) and [RxHiveData](rxsparkdata.md) for [RxSpark](rxspark.md). In `local` and `localpar` compute contexts, a character string specifying a .xdf file or a data frame object can be also used. 
   
   
     
@@ -64,7 +64,7 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](../../scaler/package
   
     
  ### `func`
- the user function to be executed. The user function takes `keys` and `data` as two required input arguments where `keys` determines the partitioning values and `data` is a data source object of the corresponding partition. `data` can be a [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object or a RxODBCData object, which can be transformed to a standard R data frame by using [rxDataStep](rxdatastep.md) method. The nodes or cores on which it is running are determined by the currently active compute context. 
+ the user function to be executed. The user function takes `keys` and `data` as two required input arguments where `keys` determines the partitioning values and `data` is a data source object of the corresponding partition. `data` can be a [RxXdfData](rxxdfdata.md) object or a RxODBCData object, which can be transformed to a standard R data frame by using [rxDataStep](rxdatastep.md) method. The nodes or cores on which it is running are determined by the currently active compute context. 
   
   
     
@@ -74,7 +74,7 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](../../scaler/package
   
     
  ### `filterFunc`
- the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by rxPartition which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) and [RxSpark](../../scaler/packagehelp/rxspark.md) compute contexts. 
+ the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by rxPartition which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in [RxHadoopMR](rxhadoopmr.md) and [RxSpark](rxspark.md) compute contexts. 
   
   
     
@@ -103,7 +103,7 @@ the object returned from the invocation of the user function with `keys` values.
 
 
 ###`status`
-a string which takes the value of either `"OK"` or `"Error"`. In [RxSpark](../../scaler/packagehelp/rxspark.md) compute context, it may include additional warning and error messages.
+a string which takes the value of either `"OK"` or `"Error"`. In [RxSpark](rxspark.md) compute context, it may include additional warning and error messages.
 
  
  
@@ -123,13 +123,13 @@ non-default loaded packages unless they are redefined or reloaded within the sco
  
  ##See Also
  
-[rxExecByPartition](../../scaler/packagehelp/rxexecbypartition.md),
-[rxImport](../../scaler/packagehelp/rximport.md),
+[rxExecByPartition](rxexecbypartition.md),
+[rxImport](rximport.md),
 [rxDataStep](rxdatastep.md),
-[RxTextData](../../scaler/packagehelp/rxtextdata.md),
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
-[RxHiveData](../../scaler/packagehelp/rxsparkdata.md),
-[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md)
+[RxTextData](rxtextdata.md),
+[RxXdfData](rxxdfdata.md),
+[RxHiveData](rxsparkdata.md),
+[RxSqlServerData](rxsqlserverdata.md)
    
  ##Examples
 

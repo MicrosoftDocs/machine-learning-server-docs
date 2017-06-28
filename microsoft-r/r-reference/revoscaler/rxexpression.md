@@ -70,13 +70,13 @@ native to R.
  
  ##See Also
  
-[rxFormula](../../scaler/packagehelp/rxformula.md),
-[rxTransform](../../scaler/packagehelp/rxtransform.md),
+[rxFormula](rxformula.md),
+[rxTransform](rxtransform.md),
 [rxCrossTabs](rxcrosstabs.md),
 [rxCube](rxcube.md),
-[rxLinMod](../../scaler/packagehelp/rxlinmod.md),
-[rxLogit](../../scaler/packagehelp/rxlogit.md),
-[rxSummary](../../scaler/packagehelp/rxsummary.md).
+[rxLinMod](rxlinmod.md),
+[rxLogit](rxlogit.md),
+[rxSummary](rxsummary.md).
    
  ##Examples
 

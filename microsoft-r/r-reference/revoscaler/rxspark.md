@@ -196,7 +196,7 @@ context.
   
     
  ### `wait`
- logical scalar.  If `TRUE` or if `persistentRun` is `TRUE`, the job will be blocking and the invoking function will not return until the job has completed or has failed. Otherwise, the job will be non-blocking and the invoking function will return, allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the  [rxGetJobStatus](rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](../../scaler/packagehelp/rxwaitforjob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
+ logical scalar.  If `TRUE` or if `persistentRun` is `TRUE`, the job will be blocking and the invoking function will not return until the job has completed or has failed. Otherwise, the job will be non-blocking and the invoking function will return, allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the  [rxGetJobStatus](rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](rxwaitforjob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
   
   
     
@@ -231,7 +231,7 @@ context.
   
     
  ### `persistentRun`
- EXPERIMENTAL. logical scalar. If `TRUE`, the Spark application (and associated processes) will persist across jobs until the idleTimeout is reached or the [rxStopEngine](../../scaler/packagehelp/rxstopengine.md) function is called explicitly.  This avoids the overhead of  launching a new Spark application for each job. If `FALSE`, a new Spark application will be launched  when a job starts and will be terminated when the job completes. 
+ EXPERIMENTAL. logical scalar. If `TRUE`, the Spark application (and associated processes) will persist across jobs until the idleTimeout is reached or the [rxStopEngine](rxstopengine.md) function is called explicitly.  This avoids the overhead of  launching a new Spark application for each job. If `FALSE`, a new Spark application will be launched  when a job starts and will be terminated when the job completes. 
   
   
     

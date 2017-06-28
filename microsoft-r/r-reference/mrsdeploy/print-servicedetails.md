@@ -68,10 +68,10 @@ print  (o, description = TRUE, code = TRUE)
  
 Other service methods: [deleteService](deleteservice.md),
 [getService](getservice.md), [listServices](listservices.md),
-[publishService](../../mrsdeploy/packagehelp/publishservice.md),
-[serviceOption](../../mrsdeploy/packagehelp/serviceoption.md),
-[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
-[updateService](../../mrsdeploy/packagehelp/updateservice.md)
+[publishService](publishservice.md),
+[serviceOption](serviceoption.md),
+[summary.serviceDetails](summary-servicedetails.md),
+[updateService](updateservice.md)
    
  ##Examples
 

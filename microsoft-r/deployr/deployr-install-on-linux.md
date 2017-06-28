@@ -226,7 +226,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. **Get DeployR client-side developer tools**, including the [RBroker framework and client libraries](deployr-tools-and-samples.md).
 
-1. **Create accounts for your users** in the [Administration Console](../deployr-admin-console/deployr-admin-console-user-accounts.md). Then, provide each user with their username and password as well as the address of the DeployR landing page.
+1. **Create accounts for your users** in the [Administration Console](deployr-admin-console-user-accounts.md). Then, provide each user with their username and password as well as the address of the DeployR landing page.
 
 1. **Learn more**. Read the [Administrator Getting Started](deployr-administrator-getting-started.md) guide. You can also read and share the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) and the [Application Developer Getting Started](deployr-application-developer-getting-started.md) guides.
 
@@ -441,7 +441,7 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 
 2.  Go to the **Administration Console**.
 
-3.  Go to the **Users** tab and [use these instructions](../deployr-admin-console/deployr-admin-console-user-accounts.md) to:
+3.  Go to the **Users** tab and [use these instructions](deployr-admin-console-user-accounts.md) to:
 
     -   Enable the `testuser` account.
 

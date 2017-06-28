@@ -136,4 +136,4 @@ And to delete the intermediate results file:
 
 [Diving into data analysis in Microsoft R](how-to-introduction.md)
 
-[RevoScaleR Functions](../revoscaler.md)
+[RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)

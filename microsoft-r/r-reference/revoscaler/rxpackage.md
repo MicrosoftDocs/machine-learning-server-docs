@@ -76,16 +76,16 @@ SQL R services provides the following core client functions for managing librari
  [rxInstallPackages](rxinstallpackages.md)() - to install packages, including dependency resolution, from a repository to onto a library in a database and further install the same packages on a secured per database, per user location on file system on SQL server
 
 * 
- [rxRemovePackages](../../scaler/packagehelp/rxremovepackages.md)() - to remove installed packages from a library in a database and further uninstall the packages from secured per database, per user location on SQL server
+ [rxRemovePackages](rxremovepackages.md)() - to remove installed packages from a library in a database and further uninstall the packages from secured per database, per user location on SQL server
 
 * 
- [rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md)() - to get secured library paths for the given user to refer to the installed packages for SQL server to then use it in .libPaths() to refer to the packages
+ [rxSqlLibPaths](rxsqllibpaths.md)() - to get secured library paths for the given user to refer to the installed packages for SQL server to then use it in .libPaths() to refer to the packages
 
 * 
  library() - same as R functionality to load the installed package and user the functionality provided by the package
 
 * 
- [rxSyncPackages](../../scaler/packagehelp/rxsyncpackages.md)() - to synchronize packages from database on SQL server to the file system used by R
+ [rxSyncPackages](rxsyncpackages.md)() - to synchronize packages from database on SQL server to the file system used by R
 
 
 
@@ -218,10 +218,10 @@ The SQL R services package management is still in active development and not ful
  
  ##See Also
  
-[rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md),
+[rxSqlLibPaths](rxsqllibpaths.md),
 [rxInstalledPackages](rxinstalledpackages.md),
 [rxInstallPackages](rxinstallpackages.md),   
-[rxRemovePackages](../../scaler/packagehelp/rxremovepackages.md),
+[rxRemovePackages](rxremovepackages.md),
 [rxFindPackage](rxfindpackage.md),
 library
 require

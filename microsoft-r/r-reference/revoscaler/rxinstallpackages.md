@@ -83,7 +83,7 @@ Install Packages from Repositories or Local Files for a compute context.
   
     
  ### `computeContext`
- an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md). 
+ an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
   
   
  
@@ -108,13 +108,13 @@ Invisible `NULL`
  
  ##See Also
  
-[rxPackage](../../scaler/packagehelp/rxpackage.md),
+[rxPackage](rxpackage.md),
 install.packages,
 [rxFindPackage](rxfindpackage.md),
 [rxInstalledPackages](rxinstalledpackages.md),
-[rxRemovePackages](../../scaler/packagehelp/rxremovepackages.md),
-[rxSyncPackages](../../scaler/packagehelp/rxsyncpackages.md),
-[rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md),   
+[rxRemovePackages](rxremovepackages.md),
+[rxSyncPackages](rxsyncpackages.md),
+[rxSqlLibPaths](rxsqllibpaths.md),   
 require
    
  ##Examples

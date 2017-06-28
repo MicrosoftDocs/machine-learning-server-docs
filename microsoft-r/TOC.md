@@ -154,7 +154,7 @@
 #### [Install DeployR](deployr/deployr-installation.md)
 ##### [Install DeployR for R Server for Windows](deployr/deployr-install-on-windows.md)
 ##### [Install DeployR for Microsoft R Server 8.0.5 on Linux](deployr/deployr-install-on-linux.md)
-##### [Install DeployR 8.0.0](deployr-installing-configuring.md)
+##### [Install DeployR 8.0.0](deployr/deployr-installing-configuring.md)
 #### Getting Started with DeployR
 ##### [About DeployR 8.x](deployr/deployr-about.md)
 ##### [Getting Started for Application Developers](deployr/deployr-application-developer-getting-started.md)
@@ -163,7 +163,7 @@
 #### [Administration & Configuration](deployr/deployr-administrator-getting-started.md)
 ##### [Administration Console Help](deployr/deployr-admin-console-about.md)
 ##### [About DeployR Administration Console](deployr/deployr-admin-console-about.md)
-##### [Creating & Managing User Accounts](deployr-admin-console/deployr-admin-console-user-accounts.md)
+##### [Creating & Managing User Accounts](deployr/deployr-admin-console-user-accounts.md)
 ##### [Managing Permissions with Roles](deployr/deployr-admin-console-permissions-with-roles.md)
 ##### [Managing R Scripts](deployr/deployr-admin-console-managing-r-scripts.md)
 ##### [Managing R Boundaries](deployr/deployr-admin-managing-r-boundaries.md)
@@ -198,11 +198,11 @@
 ##### [RBroker Framework Tutorial](deployr/deployr-rbroker-framework.md)
 ##### [API Explorer Tool](deployr/deployr-api-explorer-tool.md)
 #### [Writing Portable R Code](deployr/deployr-data-scientist-write-portable-r-code.md)
-#### [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md)
-##### [About Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md)
-##### [Working with Directories](deployr-repository-manager/deployr-repository-manager-directories.md)
+#### [Repository Manager Help](deployr/deployr-repository-manager-about.md)
+##### [About Repository Manager](deployr/deployr-repository-manager-about.md)
+##### [Working with Directories](deployr/deployr-repository-manager-directories.md)
 ##### [Working with Files](deployr/deployr-repository-manager-files.md)
-##### [Testing and Debugging Scripts](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md)
+##### [Testing and Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
 
 ## [Execute code on remote R Server](r/how-to-execute-code-remotely.md)
 
@@ -212,7 +212,7 @@
 ### [Background jobs](r/how-to-revoscaler-distributed-computing-background-jobs.md)
 ### [Parallel jobs](r/how-to-revoscaler-distributed-computing-parallel-jobs.md)
 ### [Parallel loops using foreach](r/how-to-revoscaler-distributed-computing-foreach.md)
-### [Parallel execution using doRSR](scaler-distributed-computing-parallel-r/how-to-revoscaler-distributed-computing-foreach.md)
+### [Parallel execution using doRSR](r/how-to-revoscaler-distributed-computing-foreach.md)
 ### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
 
 
@@ -236,7 +236,7 @@
 ### [featurizeText](r-reference/microsoftml/featurizetext.md) 
 ### [getSentiment](r-reference/microsoftml/getsentiment.md)
 ### [loadImage](r-reference/microsoftml/loadimage.md) 
-### [logisticRegression](microsoftml/packagehelp/logisticRegression.md) 
+### [logisticRegression](r-reference/microsoftml/logisticregression.md) 
 ### [loss](r-reference/microsoftml/loss.md)
 ### [minCount](r-reference/microsoftml/mincount.md)
 ### [mlModel](r-reference/microsoftml/mlmodel.md)
@@ -297,7 +297,7 @@
 ###[summary.snapshotDetails](r-reference/mrsdeploy/summary-snapshotdetails.md) 
 ###[updateService](r-reference/mrsdeploy/updateservice.md)
 
-## [olapR](olapr/Olapr.md)
+## [olapR](r-reference/olapr/olapr.md)
 ###[Execute2D](r-reference/olapr/execute2d.md) 
 ###[ExecuteMD](r-reference/olapr/executemd.md) 
 ###[Explore](r-reference/olapr/explore.md) 

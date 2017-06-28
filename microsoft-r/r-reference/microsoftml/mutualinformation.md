@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Feature Selection Mutual Information Mode" 
-description: " Mutual information mode of feature selection used in the feature selection transform [selectFeatures](../../microsoftml/packagehelp/selectfeatures.md). " 
+description: " Mutual information mode of feature selection used in the feature selection transform [selectFeatures](selectfeatures.md). " 
 keywords: "MicrosoftML, mutualInformation, feature, information, mutual, selection" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -34,7 +34,7 @@ ms.custom: ""
  ##Description
  
 Mutual information mode of feature selection used in the feature selection
-transform [selectFeatures](../../microsoftml/packagehelp/selectfeatures.md).
+transform [selectFeatures](selectfeatures.md).
  
  
  ##Usage
@@ -102,7 +102,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[minCount](mincount.md) [selectFeatures](../../microsoftml/packagehelp/selectfeatures.md)
+[minCount](mincount.md) [selectFeatures](selectfeatures.md)
    
  ##Examples
 

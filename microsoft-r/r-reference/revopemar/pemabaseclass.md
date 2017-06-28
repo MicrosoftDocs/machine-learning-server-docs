@@ -55,7 +55,7 @@ Generator for a PemaBaseClass reference class object to be used with pemaCompute
  
 This is a base reference class for the construction of reference classes
 to be used for parallel external memory algorithms for use in
-[pemaCompute](../../pemar/packagehelp/pemacompute.md). See [PemaMean](../../pemar/packagehelp/pemamean.md) for a simple
+[pemaCompute](pemacompute.md). See [PemaMean](pemamean.md) for a simple
 example.
  
  
@@ -73,9 +73,9 @@ A `PemaBaseClass` reference class object.
  ##See Also
  
 setRefClass,
-[setPemaClass](../../pemar/packagehelp/setpemaclass.md),
-[pemaCompute](../../pemar/packagehelp/pemacompute.md),
-[PemaMean](../../pemar/packagehelp/pemamean.md)
+[setPemaClass](setpemaclass.md),
+[pemaCompute](pemacompute.md),
+[PemaMean](pemamean.md)
    
  
  ##Examples

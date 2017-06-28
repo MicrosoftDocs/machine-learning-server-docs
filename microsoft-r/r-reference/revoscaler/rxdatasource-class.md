@@ -46,7 +46,7 @@ A virtual class: No objects may be created from it.
 
  
 The generator for classes that extend RxDataSource is
-[rxNewDataSource](../../scaler/packagehelp/rxnew.md).  
+[rxNewDataSource](rxnew.md).  
  
  ## Methods 
 
@@ -60,19 +60,19 @@ RxDataSource:
 `signature(x = "RxDataSource")`: ... 
 
 
-###`[rxOpen](../../scaler/packagehelp/rxopen-methods.md)`
+###`[rxOpen](rxopen-methods.md)`
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxClose](../../scaler/packagehelp/rxopen-methods.md)`
+###`[rxClose](rxopen-methods.md)`
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxReadNext](../../scaler/packagehelp/rxopen-methods.md)`
+###`[rxReadNext](rxopen-methods.md)`
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxWriteNext](../../scaler/packagehelp/rxopen-methods.md)`
+###`[rxWriteNext](rxopen-methods.md)`
 `signature(from = "data.frame", to = "RxDataSource", verbose = 0)`: ... 
 
 
@@ -84,17 +84,17 @@ RxDataSource:
  
  ##See Also
  
-[RxXdfData-class](../../scaler/packagehelp/rxxdfdata-class.md),
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
-[RxTextData](../../scaler/packagehelp/rxtextdata.md),
-[RxSasData](../../scaler/packagehelp/rxsasdata.md),
-[RxSpssData](../../scaler/packagehelp/rxspssdata.md),
-[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md),
-[RxTeradata](../../scaler/packagehelp/rxteradata.md),
-[rxNewDataSource](../../scaler/packagehelp/rxnew.md),
-[rxOpen](../../scaler/packagehelp/rxopen-methods.md),
-[rxReadNext](../../scaler/packagehelp/rxopen-methods.md),
-[rxWriteNext](../../scaler/packagehelp/rxopen-methods.md).
+[RxXdfData-class](rxxdfdata-class.md),
+[RxXdfData](rxxdfdata.md),
+[RxTextData](rxtextdata.md),
+[RxSasData](rxsasdata.md),
+[RxSpssData](rxspssdata.md),
+[RxOdbcData](rxodbcdata.md),
+[RxTeradata](rxteradata.md),
+[rxNewDataSource](rxnew.md),
+[rxOpen](rxopen-methods.md),
+[rxReadNext](rxopen-methods.md),
+[rxWriteNext](rxopen-methods.md).
    
  ##Examples
 

@@ -36,7 +36,7 @@ A package providing utility functions.
 |[`readNews`](readnews.md)  | Read R or package NEWS files.|
 |[`Revo.home`](revo-home.md)  | Path the Home directory. |
 |[`RevoInfo`](revoinfo.md)  | Functions giving information about Microsoft R.|
-|[`totalSystemMemory`](../../revoutils/packagehelp/totalsystemmemory.md) |Uses operating system tools to return total system memory. |
+|[`totalSystemMemory`](totalsystemmemory.md) |Uses operating system tools to return total system memory. |
 
 ## Get help on RevoUtils functions from the R console
 

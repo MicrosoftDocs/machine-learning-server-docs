@@ -117,7 +117,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `outFile`
- a character string specifying the output .xdf file, an  [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object, a [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md) data source, or a [RxTeradata](../../scaler/packagehelp/rxteradata.md) data source.  If `NULL`, a data frame will be returned from `rxDataStep` unless `returnTransformObjects` is set to `TRUE`. Setting `outFile` to `NULL` and `returnTransformObjects=TRUE` allows chunkwise computations on the data without modifying the existing data or creating a new data set. `outFile` can also be a delimited [RxTextData](../../scaler/packagehelp/rxtextdata.md) data source if using a native file system and not appending. 
+ a character string specifying the output .xdf file, an  [RxXdfData](rxxdfdata.md) object, a [RxOdbcData](rxodbcdata.md) data source, or a [RxTeradata](rxteradata.md) data source.  If `NULL`, a data frame will be returned from `rxDataStep` unless `returnTransformObjects` is set to `TRUE`. Setting `outFile` to `NULL` and `returnTransformObjects=TRUE` allows chunkwise computations on the data without modifying the existing data or creating a new data set. `outFile` can also be a delimited [RxTextData](rxtextdata.md) data source if using a native file system and not appending. 
   
   
     
@@ -136,12 +136,12 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -201,7 +201,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `blocksPerCompositeFile`
- integer value. If `createCompositeSet=TRUE`, and if the compute context is not `RxHadoopMR`, this will be the number of blocks put into each .xdfd file in the composite set. When importing is being done on Hadoop using MapReduce, the number of rows per .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by `rowsPerRead`. If the `outSource` is an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object, set the value for `blocksPerCompositeFile` there instead. 
+ integer value. If `createCompositeSet=TRUE`, and if the compute context is not `RxHadoopMR`, this will be the number of blocks put into each .xdfd file in the composite set. When importing is being done on Hadoop using MapReduce, the number of rows per .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by `rowsPerRead`. If the `outSource` is an [RxXdfData](rxxdfdata.md) object, set the value for `blocksPerCompositeFile` there instead. 
    
   
   
@@ -212,12 +212,12 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `varsToKeep`
- character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if not specified in `varsToKeep`. If `newName` is used in `colInfo` in a non-xdf  data source, the `newName` should be used in `varsToKeep`. Not supported for [RxTeradata](../../scaler/packagehelp/rxteradata.md), [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md), or [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md) data sources. 
+ character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if not specified in `varsToKeep`. If `newName` is used in `colInfo` in a non-xdf  data source, the `newName` should be used in `varsToKeep`. Not supported for [RxTeradata](rxteradata.md), [RxOdbcData](rxodbcdata.md), or [RxSqlServerData](rxsqlserverdata.md) data sources. 
   
   
     
  ### `varsToDrop`
- character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if specified in `varsToDrop`. If `newName` is used in `colInfo` in a non-xdf  data source, the `newName` should be used in `varsToDrop`. Not supported for [RxTeradata](../../scaler/packagehelp/rxteradata.md), [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md), or  [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md) data sources. 
+ character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep` or when `outFile` is the same as the input data file. Variables used in transformations or row selection will be retained even if specified in `varsToDrop`. If `newName` is used in `colInfo` in a non-xdf  data source, the `newName` should be used in `varsToDrop`. Not supported for [RxTeradata](rxteradata.md), [RxOdbcData](rxodbcdata.md), or  [RxSqlServerData](rxsqlserverdata.md) data sources. 
   
   
     
@@ -247,7 +247,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `returnTransformObjects`
- logical value.  If `TRUE`,  the list of `transformObjects` will be returned instead of  a data frame or data source object.  If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned.  Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined  computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts  such as [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) or [RxInTeradata](../../scaler/packagehelp/rxinteradata.md). 
+ logical value.  If `TRUE`,  the list of `transformObjects` will be returned instead of  a data frame or data source object.  If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned.  Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined  computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts  such as [RxHadoopMR](rxhadoopmr.md) or [RxInTeradata](rxinteradata.md). 
    
   
     
@@ -286,7 +286,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
   
  ### `makeRNodeNames`
- Determines if the names of the nodes should be normalized for use as R variables.   See also [rxMakeRNodeNames](../../scaler/packagehelp/rxmakernodenames.md) for details on name mangeling. 
+ Determines if the names of the nodes should be normalized for use as R variables.   See also [rxMakeRNodeNames](rxmakernodenames.md) for details on name mangeling. 
   
   
   
@@ -321,12 +321,12 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `outDataPath`
- `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md)  
+ `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](rxoptions.md)  
    
   
     
  ### `wait`
- logical value. If `TRUE`, the job will be blocking and will not return until   it has completed or has failed. If `FALSE`, the job will be non-blocking return immediately,  allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the   [rxGetJobStatus](../../scaler/packagehelp/rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](../../scaler/packagehelp/rxwaitforjob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the HPC scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
+ logical value. If `TRUE`, the job will be blocking and will not return until   it has completed or has failed. If `FALSE`, the job will be non-blocking return immediately,  allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. You can pass this object to the   [rxGetJobStatus](rxgetjobresults.md) function to check on the processing status of the job.  [rxWaitForJob](rxwaitforjob.md) will change a non-waiting job  to a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, provided that the HPC scheduler has accepted the job. If you press ESC before the job has been accepted, the job is canceled. 
   
   
     
@@ -370,7 +370,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `autoCleanup`
- logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md), and the output via [rxGetJobOutput](../../scaler/packagehelp/rxgetjoboutput.md) until the  [rxCleanupJobs](../../scaler/packagehelp/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.If you set `autoCleanup=TRUE`and experience performance degradation on a Windows XP client, consider  setting `autoCleanup=FALSE`. 
+ logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxgetjobresults.md), and the output via [rxGetJobOutput](rxgetjoboutput.md) until the  [rxCleanupJobs](rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.If you set `autoCleanup=TRUE`and experience performance degradation on a Windows XP client, consider  setting `autoCleanup=FALSE`. 
   
   
     
@@ -395,7 +395,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `groups`
- Optional character vector specifying the groups from which nodes should be selected.  If `groups`is specified and `nodes` is `NULL`, all the nodes in the groups specified will be candidates for computations.   If both `nodes` and `groups` are specified, the candidate nodes will be the intersection of the set of nodes  explicitly specified in `nodes` and the set of all the nodes in the `groups` specified.    Note that the default value of `"ComputeNodes"` is the name of the Microsoft defined group that includes all physically present nodes.  Another Microsoft default group name used is `"HeadNodes"` which includes all nodes set up to act as head nodes.  While these  default names can be changed, this is not recommended.  Note also that [rxGetNodeInfo](../../scaler/packagehelp/rxgetnodeinfo.md) will honor group filtering.   See the help for `rxGetNodeInfo` for more information. 
+ Optional character vector specifying the groups from which nodes should be selected.  If `groups`is specified and `nodes` is `NULL`, all the nodes in the groups specified will be candidates for computations.   If both `nodes` and `groups` are specified, the candidate nodes will be the intersection of the set of nodes  explicitly specified in `nodes` and the set of all the nodes in the `groups` specified.    Note that the default value of `"ComputeNodes"` is the name of the Microsoft defined group that includes all physically present nodes.  Another Microsoft default group name used is `"HeadNodes"` which includes all nodes set up to act as head nodes.  While these  default names can be changed, this is not recommended.  Note also that [rxGetNodeInfo](rxgetnodeinfo.md) will honor group filtering.   See the help for `rxGetNodeInfo` for more information. 
   
   
     
@@ -456,12 +456,12 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
  
  ##Details
  
-Use [rxImport](../../scaler/packagehelp/rximport.md) instead of `rxImportToXdf`.
-Use [rxDataStep](../../scaler/packagehelp/rxdatastep.md) instead of  `rxDataStepXdf`.
-Use [rxDataStep](../../scaler/packagehelp/rxdatastep.md) instead of  `rxDataFrameToXdf`.
-Use [rxDataStep](../../scaler/packagehelp/rxdatastep.md) instead of  `rxXdfToDataFrame`.
-Use [rxSort](../../scaler/packagehelp/rxsortxdf.md) instead of  `rxSortXdf`.
-Use [rxGetAvailableNodes](../../scaler/packagehelp/rxgetavailablenodes.md) instead of  `rxGetNodes`.
+Use [rxImport](rximport.md) instead of `rxImportToXdf`.
+Use [rxDataStep](rxdatastep.md) instead of  `rxDataStepXdf`.
+Use [rxDataStep](rxdatastep.md) instead of  `rxDataFrameToXdf`.
+Use [rxDataStep](rxdatastep.md) instead of  `rxXdfToDataFrame`.
+Use [rxSort](rxsortxdf.md) instead of  `rxSortXdf`.
+Use [rxGetAvailableNodes](rxgetavailablenodes.md) instead of  `rxGetNodes`.
  
  
  ##Value
@@ -475,8 +475,8 @@ is returned; otherwise `FALSE`is returned.
  
  ##See Also
  
-[rxImport](../../scaler/packagehelp/rximport.md),
-[rxDataStep](../../scaler/packagehelp/rxdatastep.md),
+[rxImport](rximport.md),
+[rxDataStep](rxdatastep.md),
 ["RevoScaleR-defunct"](revoscaler-defunct.md).
    
  

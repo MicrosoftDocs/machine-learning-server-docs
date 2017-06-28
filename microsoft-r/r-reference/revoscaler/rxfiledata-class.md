@@ -48,6 +48,6 @@ Class RxDataSource, directly.
  ##See Also
  
 [RxDataSource-class](rxdatasource-class.md),
-[rxNewDataSource](../../scaler/packagehelp/rxnew.md)
+[rxNewDataSource](rxnew.md)
    
  

@@ -84,7 +84,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `append`
-  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](../../scaler/packagehelp/rxteradata.md) data source. Ignored for data frames.    
+  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](rxteradata.md) data source. Ignored for data frames.    
   
   
     

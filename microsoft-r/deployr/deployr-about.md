@@ -112,7 +112,7 @@ Regardless of the integration tool you choose, or whether you are building a new
 
 1.  Consult with the data scientists responsible for developing the R analytics outputs in order to determine your application's analytics dependencies (inputs and outputs).
 
-2.  Verify these dependencies in the Repository Manager by [testing](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#analytics-web-service).
+2.  Verify these dependencies in the Repository Manager by [testing](deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#analytics-web-service).
 
 3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](deployr-api-reference.md) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
 
@@ -127,7 +127,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 1.  [Provisioning suitable hardware](deployr-installation.md) in preparation for a DeployR install.
 2.  Installing DeployR using [these instructions](deployr-installation.md).
 3.  Customizing DeployR [server policies](deployr-admin-managing-server-policies.md).
-4.  Creating and managing DeployR [user accounts](../deployr-admin-console/deployr-admin-console-user-accounts.md).
+4.  Creating and managing DeployR [user accounts](deployr-admin-console-user-accounts.md).
 5.  Customizing DeployR [security policies](deployr-security.md).
 6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
@@ -168,4 +168,4 @@ The Administration Console is a tool, delivered as an easy-to-use Web interface,
 <a name="deployr-repository-manager"></a>
 #### DeployR Repository Manager
 
-The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](../deployr-repository-manager/deployr-repository-manager-about.md).
+The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](deployr-repository-manager-about.md).

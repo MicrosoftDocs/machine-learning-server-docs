@@ -102,9 +102,9 @@ ms.custom: ""
  
 [RxComputeContext](rxcomputecontext.md),
 [RxInTeradata-class](rxinteradata-class.md),
-[RxTeradata](../../scaler/packagehelp/rxteradata.md),
+[RxTeradata](rxteradata.md),
 [RxInSqlServer](rxinsqlserver.md),
-[rxOptions](../../scaler/packagehelp/rxoptions.md).
+[rxOptions](rxoptions.md).
    
  
  ##Examples

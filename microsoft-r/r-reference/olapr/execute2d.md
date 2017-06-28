@@ -98,7 +98,7 @@ Creating a Demo OLAP Cube (the same as the one used in the examples):
  
  ##See Also
  
-[Query](../../olapr/packagehelp/query.md)`, `[OlapConnection](../../olapr/packagehelp/olapconnection.md)`, `[executeMD](../../olapr/packagehelp/executemd.md)`, `[explore](../../olapr/packagehelp/explore.md)`, `data.frame
+[Query](query.md)`, `[OlapConnection](olapconnection.md)`, `[executeMD](executemd.md)`, `[explore](explore.md)`, `data.frame
    
  
  ##Examples

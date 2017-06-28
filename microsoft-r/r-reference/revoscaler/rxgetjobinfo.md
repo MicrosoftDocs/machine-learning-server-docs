@@ -79,13 +79,13 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxSpark](../../scaler/packagehelp/rxspark.md),
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
-[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md), 
-[rxGetJobStatus](../../scaler/packagehelp/rxgetjobresults.md), 
-[rxGetJobOutput](../../scaler/packagehelp/rxgetjoboutput.md), 
-[rxGetJobResults](../../scaler/packagehelp/rxgetjobresults.md)
+[RxSpark](rxspark.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxInSqlServer](rxinsqlserver.md),
+[RxInTeradata](rxinteradata.md), 
+[rxGetJobStatus](rxgetjobresults.md), 
+[rxGetJobOutput](rxgetjoboutput.md), 
+[rxGetJobResults](rxgetjobresults.md)
    
  ##Examples
 

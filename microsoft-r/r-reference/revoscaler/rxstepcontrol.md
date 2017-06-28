@@ -87,7 +87,7 @@ Various parameters that control aspects of stepwise regression.
   
     
  ### `keepStepCoefs`
-  a logical flag specifying whether or not to keep the model coefficients at each step.  If `TRUE`, a data.frame `stepCoefs` will be returned with the fitted model with rows corresponding to the coefficients and columns corresponding to the iterations. Additional computation may be required to generate the coefficients at each step. Those stepwise coefficients can be visualized by plotting the fitted model with [rxStepPlot](../../scaler/packagehelp/rxstepplot.md). 
+  a logical flag specifying whether or not to keep the model coefficients at each step.  If `TRUE`, a data.frame `stepCoefs` will be returned with the fitted model with rows corresponding to the coefficients and columns corresponding to the iterations. Additional computation may be required to generate the coefficients at each step. Those stepwise coefficients can be visualized by plotting the fitted model with [rxStepPlot](rxstepplot.md). 
   
     
  ### `scale`
@@ -149,7 +149,7 @@ Vol. **33** No. **3**, 149--158.
  
  ##See Also
  
-step, [rxStepPlot](../../scaler/packagehelp/rxstepplot.md).
+step, [rxStepPlot](rxstepplot.md).
    
  ##Examples
 

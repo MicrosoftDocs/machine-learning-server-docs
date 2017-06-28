@@ -34,7 +34,7 @@ We recommend that you get the [**modified GPL/LGPL source code**](http://go.micr
 
 Approximately 600MB free disk space is required for a full install of Revolution R Enterprise, after installation of all prerequisites. We recommend at least 4GB of RAM to use Revolution R Enterprise, and at least 4GB to use DeployR.
 
-DeployR is an optional component and is supported on Windows Server 2008 R2 (Service Pack 1) and Windows Server 2012 only. For the full list of system requirements for DeployR, check the [DeployR 8.0.0 Installation Guide](../deployr-installing-configuring.md).
+DeployR is an optional component and is supported on Windows Server 2008 R2 (Service Pack 1) and Windows Server 2012 only. For the full list of system requirements for DeployR, check the [DeployR 8.0.0 Installation Guide](~/deployr/deployr-installing-configuring.md).
 
 ## Installation Instructions
 

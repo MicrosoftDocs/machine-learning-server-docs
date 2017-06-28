@@ -198,7 +198,7 @@ To get a sense of data shape, use the **rxHistogram** function to show the distr
 ~~~~
 	rxHistogram(~ArrDelay|DayOfWeek,  data = airXdfData)
 ~~~~
-![](media/scaler-getting-started-data-import-exploration/image2.png)
+![](media/tutorial-revoscaler-data-import-transform/image2.png)
 
 You can also compute descriptive statistics for the variable:
 ~~~~

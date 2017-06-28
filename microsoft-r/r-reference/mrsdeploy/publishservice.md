@@ -144,9 +144,9 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 Other service methods: [deleteService](deleteservice.md),
 [getService](getservice.md), [listServices](listservices.md),
 [print.serviceDetails](print-servicedetails.md),
-[serviceOption](../../mrsdeploy/packagehelp/serviceoption.md),
-[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
-[updateService](../../mrsdeploy/packagehelp/updateservice.md)
+[serviceOption](serviceoption.md),
+[summary.serviceDetails](summary-servicedetails.md),
+[updateService](updateservice.md)
    
  ##Examples
 

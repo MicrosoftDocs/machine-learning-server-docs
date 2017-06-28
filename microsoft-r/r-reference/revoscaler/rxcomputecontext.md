@@ -58,14 +58,14 @@ This is the main generator for RxComputeContext S4 classes.
  
 This is a wrapper to specific class generator functions for the
 RevoScaleR compute context classes. For example, the RxInSqlServer class uses function
-[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md) as a generator. Therefore either `RxInSqlServer(...)`
+[RxInSqlServer](rxinsqlserver.md) as a generator. Therefore either `RxInSqlServer(...)`
 or `RxComputeContext("RxInSqlServer", ...)` will create an RxInSqlServer instance.
  
  
  ##Value
  
 A type of RxComputeContext compute context object. This object may be used to in
-[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md) or [rxOptions](../../scaler/packagehelp/rxoptions.md) to set the compute context.
+[rxSetComputeContext](rxsetcomputecontext.md) or [rxOptions](rxoptions.md) to set the compute context.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -74,16 +74,16 @@ A type of RxComputeContext compute context object. This object may be used to in
  ##See Also
  
 [RxComputeContext-class](rxcomputecontext-class.md),
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
-[RxSpark](../../scaler/packagehelp/rxspark.md),
-[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md),
-[RxLocalSeq](../../scaler/packagehelp/rxlocalseq.md),
-[RxLocalParallel](../../scaler/packagehelp/rxlocalparallel.md),
-[RxForeachDoPar](../../scaler/packagehelp/rxforeachdopar.md),
-[rxSetComputeContext](../../scaler/packagehelp/rxsetcomputecontext.md),
-[rxOptions](../../scaler/packagehelp/rxoptions.md),
-[rxExec](../../scaler/packagehelp/rxexec.md).
+[RxHadoopMR](rxhadoopmr.md),
+[RxSpark](rxspark.md),
+[RxInSqlServer](rxinsqlserver.md),
+[RxInTeradata](rxinteradata.md),
+[RxLocalSeq](rxlocalseq.md),
+[RxLocalParallel](rxlocalparallel.md),
+[RxForeachDoPar](rxforeachdopar.md),
+[rxSetComputeContext](rxsetcomputecontext.md),
+[rxOptions](rxoptions.md),
+[rxExec](rxexec.md).
    
  ##Examples
 

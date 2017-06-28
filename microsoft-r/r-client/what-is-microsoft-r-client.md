@@ -57,7 +57,7 @@ Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get
 
 The first step is to download Microsoft R Client for your operating system and install it. To learn more about the supported platforms or installation steps, please see the following articles:
 
-+ [Install Microsoft R Client on Windows](../deployr/install-on-windows.md)
++ [Install Microsoft R Client on Windows](install-on-windows.md)
 
 + [Install Microsoft R Client for Linux](../deployr/install-on-linux.md)
 
@@ -86,7 +86,7 @@ Now that you've installed R Client, you can start building and running some R co
 
 + Run the sample R code as described in this [quickstart guide](../r/quickstart-run-r-code.md). 
 
-+ Or, develop your own solutions using [`RevoScaleR` R package functions](../revoscaler.md), [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md), and APIs. 
++ Or, develop your own solutions using [`RevoScaleR` R package functions](~/r-reference/revoscaler/revoscaler.md), [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md), and APIs. 
 
 When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](../r/how-to-execute-code-remotely.md) for execution if Microsoft R Server is also installed in your organization. 
 

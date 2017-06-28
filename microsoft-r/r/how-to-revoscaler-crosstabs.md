@@ -184,7 +184,8 @@ As we wanted, the table contains average values of *incwage* for each level of *
 
 The resulting plot shows clearly the relationship of income on age:
 
-![](media/scaler-user-guide-crosstabs/image5.png)
+![](media/how-to-revoscaler-
+howcrosstabs/image5.png)
 
 ## Transforming Data
 

@@ -39,7 +39,7 @@ With the advent of DeployR, the full statistics, analytics and visualization cap
 
 While data scientists can work with R directly in a console window or IDE, application developers need a different set of tools to leverage R inside applications. The DeployR API exposes **R analytics Web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
 
-As an application developer integrating with **DeployR-managed analytics Web services**, typically your interest is in executing R code, not writing it. Data scientists with R programming skills write R code. With one-click in the [DeployR Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md), this R code can be turned into a DeployR-managed analytics Web service. Once R code is exposed by DeployR as a service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
+As an application developer integrating with **DeployR-managed analytics Web services**, typically your interest is in executing R code, not writing it. Data scientists with R programming skills write R code. With one-click in the [DeployR Repository Manager](deployr-repository-manager-about.md), this R code can be turned into a DeployR-managed analytics Web service. Once R code is exposed by DeployR as a service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.
 
 Each time a service is executed on the API, the service makes use of an R session that is managed by DeployR as a **project** on behalf of the application. Depending on the nature and requirements of your application you can choose to execute services on [*anonymous* or *authenticated* projects](#projects).
 
@@ -555,7 +555,7 @@ Repository-managed scripts are a special type of repository-managed file. Any fi
 
 These scripts are essentially blocks of R code with well-defined inputs and outputs. While scripts are technically also repository-managed files, they are designed to be exposed as an executable on the API.
 
-Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](../deployr-repository-manager/deployr-repository-manager-about.md) for further details.
+Scripts can be created, managed and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*. Refer to the [Repository Manager Help](deployr-repository-manager-about.md) for further details.
 
 *Authenticated* users can execute scripts within the context of any project using the [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script) call. Both *authenticated* and *anonymous* users can execute scripts within the context of [anonymous projects](#anonymous-projects) using the [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute) and [/r/repository/script/render](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render) calls.
 

@@ -39,7 +39,7 @@ ODBC data source connection class.
  ## Generators 
 
  
-The targeted generator [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md) as well as the general generator
+The targeted generator [RxOdbcData](rxodbcdata.md) as well as the general generator
 [rxNewDataSource](rxnew.md).
  
  ## Extends 
@@ -65,7 +65,7 @@ Class RxDataSource, directly.
  ##See Also
  
 [RxDataSource-class](rxdatasource-class.md),
-[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md),
+[RxOdbcData](rxodbcdata.md),
 [rxNewDataSource](rxnew.md)
    
  

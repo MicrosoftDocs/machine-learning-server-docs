@@ -72,9 +72,9 @@ or `NULL` if the file content cannot be retrieved.
  
 [deleteRemoteFile](deleteremotefile.md)
 
-[listRemoteFiles](../../mrsdeploy/packagehelp/listremotefiles.md)
+[listRemoteFiles](listremotefiles.md)
 
-[putLocalFile](../../mrsdeploy/packagehelp/putlocalfile.md)
+[putLocalFile](putlocalfile.md)
    
  ##Examples
 

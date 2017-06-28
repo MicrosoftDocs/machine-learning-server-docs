@@ -53,7 +53,7 @@ Learn more about the main tasks you can perform in the Repository Manager, inclu
 -  [Share and collaborate on files](../deployr/deployr-repository-manager-files.md#about-file-properties)
 -  [Test scripts in a live debugging environment](../deployr/deployr-repository-manager-testing-debugging-scripts.md)
 
-In order to [log into](../what-is-operationalization.md#logging-in-and-out) the Repository Manager, you must have a DeployR user account.
+In order to [log into](#logging-in-and-out) the Repository Manager, you must have a DeployR user account.
 
 ## Logging In and Out
 

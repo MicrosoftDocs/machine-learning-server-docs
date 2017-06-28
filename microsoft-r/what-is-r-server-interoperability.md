@@ -95,7 +95,7 @@ Features provided by [Microsoft R Server](what-is-microsoft-r-server.md), [Micro
             <td>Open source R packages plus proprietary packages with support for parallelization and distributed workloads.</td>
         </tr>
         <tr>
-            <td><b><a href="operationalize/about.md">Operationalizing</a> R Analytics</b></td>
+            <td><b><a href="what-is-operationalization.md">Operationalizing</a> R Analytics</b></td>
             <td>Not available</td>
             <td>Not available</td>
             <td>Includes the instant deployment and easy consumption of R analytics, interactive remote code execution, speedy realtime scoring, scalability, and enterprise-grade security.</td>

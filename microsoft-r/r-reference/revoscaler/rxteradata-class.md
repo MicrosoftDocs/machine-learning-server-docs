@@ -39,7 +39,7 @@ Teradata data source connection class.
  ## Generators 
 
  
-The targeted generator [RxTeradata](../../scaler/packagehelp/rxteradata.md) as well as the general generator
+The targeted generator [RxTeradata](rxteradata.md) as well as the general generator
 [rxNewDataSource](rxnew.md).
  
  ## Extends 
@@ -65,7 +65,7 @@ Class RxDataSource, directly.
  ##See Also
  
 [RxDataSource-class](rxdatasource-class.md),
-[RxTeradata](../../scaler/packagehelp/rxteradata.md),
+[RxTeradata](rxteradata.md),
 [rxNewDataSource](rxnew.md)
    
  

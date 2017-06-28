@@ -110,4 +110,4 @@ All of the main analysis functions in RevoScaleR use updating or external memory
 
  [Introduction to Microsoft R](../microsoft-r-getting-started.md)   
  [Diving into data analysis in Microsoft R](how-to-introduction.md) 
- [RevoScaleR Functions](../revoscaler.md)   
+ [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)   

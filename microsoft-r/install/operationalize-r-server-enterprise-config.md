@@ -312,7 +312,7 @@ If you are provisioning on a cloud service, then you must also [create inbound s
 
 1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
 
-1. [Evaluate](../operationalize/admin-evaluate-capacity.md) the configuration's capacity.
+1. [Evaluate](../operationalize/configure-evaluate-capacity.md) the configuration's capacity.
 
 1. Set up the load balance of your choosing. Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required.
 

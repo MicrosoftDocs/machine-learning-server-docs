@@ -66,15 +66,15 @@ print  ( x, ... )
  
 This is a wrapper to specific generator functions for the
 RevoScaleR file system classes. For example, the RxHdfsFileSystem class uses function
-[RxHdfsFileSystem](../../scaler/packagehelp/rxhdfsfilesystem.md) as a generator. Therefore either `RxHdfsFileSystem()`
+[RxHdfsFileSystem](rxhdfsfilesystem.md) as a generator. Therefore either `RxHdfsFileSystem()`
 or `RxFileSystem("hdfs")` will create an RxHdfsFileSystem object.
  
  
  ##Value
  
 A type of RxFileSystem file system object. This object may be used in
-[rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md), [rxOptions](../../scaler/packagehelp/rxoptions.md), [RxTextData](../../scaler/packagehelp/rxtextdata.md), or
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md) to set the file system.
+[rxSetFileSystem](rxsetfilesystem.md), [rxOptions](rxoptions.md), [RxTextData](rxtextdata.md), or
+[RxXdfData](rxxdfdata.md) to set the file system.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -82,12 +82,12 @@ A type of RxFileSystem file system object. This object may be used in
  
  ##See Also
  
-[RxNativeFileSystem](../../scaler/packagehelp/rxnativefilesystem.md),
-[RxHdfsFileSystem](../../scaler/packagehelp/rxhdfsfilesystem.md),
-[rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md),
-[rxOptions](../../scaler/packagehelp/rxoptions.md),
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
-[RxTextData](../../scaler/packagehelp/rxtextdata.md).
+[RxNativeFileSystem](rxnativefilesystem.md),
+[RxHdfsFileSystem](rxhdfsfilesystem.md),
+[rxSetFileSystem](rxsetfilesystem.md),
+[rxOptions](rxoptions.md),
+[RxXdfData](rxxdfdata.md),
+[RxTextData](rxtextdata.md).
    
  ##Examples
 

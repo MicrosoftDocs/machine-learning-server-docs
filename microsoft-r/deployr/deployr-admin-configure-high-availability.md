@@ -166,9 +166,9 @@ For each standalone MongoDB instance, do the following:
 
 1.  Log on to the machine that will host the secondary MongoDB instance.
 
-2.  [Install MongoDB database](../deployr-installing-configuring.md#deployr-install-with-remote-database).
+2.  [Install MongoDB database](deployr-installing-configuring.md#deployr-install-with-remote-database).
 
-    >Follow the installation instructions provided with DeployR since this ensures the database is properly initialized for use with DeployR. (This is `option 2` in the automated [Linux installation](../deployr-installing-configuring.md#installing-on-linux).)
+    >Follow the installation instructions provided with DeployR since this ensures the database is properly initialized for use with DeployR. (This is `option 2` in the automated [Linux installation](deployr-installing-configuring.md#installing-on-linux).)
 
 3.  Change the default password for this secondary MongoDB instance to the password defined in `DeployR MongoDB Configuration Override` section of the `<INSTALL_DIR>/deployr/deployr.groovy` file on the primary host machine.
 

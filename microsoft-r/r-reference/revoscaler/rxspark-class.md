@@ -39,7 +39,7 @@ Spark compute context class.
  ## Generators 
 
  
-The targeted generator [RxSpark](../../scaler/packagehelp/rxspark.md) as well as the general generator
+The targeted generator [RxSpark](rxspark.md) as well as the general generator
 [RxComputeContext](rxcomputecontext.md).
  
  ## Extends 
@@ -64,6 +64,6 @@ Class RxComputeContext, directly.
  
  ##See Also
  
-[RxSpark](../../scaler/packagehelp/rxspark.md)
+[RxSpark](rxspark.md)
    
  

@@ -28,7 +28,7 @@ ms.custom: ""
 
 The Files tab is the main tab in the Repository Manager and where all work begins. This tab gives you access to all of the repository-managed files you own as well as any other users' repository-managed files to which you have [access rights](deployr-repository-manager-files.md#about-file-properties).
 
-The set of file management tasks and interactions available to you depend not only on whether you [own](deployr-repository-manager-files.md#adding-and-removing-owners) the file or whether you have [access rights](deployr-repository-manager-files.md#about-file-properties), but also on the [policies](../what-is-operationalization.md#permissions-policies) governing the server.
+The set of file management tasks and interactions available to you depend not only on whether you [own](deployr-repository-manager-files.md#adding-and-removing-owners) the file or whether you have [access rights](deployr-repository-manager-files.md#about-file-properties), but also on the [policies](../what-is-operationalization.md) governing the server.
 
 ## About File Properties
 
@@ -78,7 +78,7 @@ When you own a file you are permitted to do almost anything to that file, includ
 - [Open](deployr-repository-manager-files.md#opening-files) files for viewing or [editing](deployr-repository-manager-files.md#editing-file-properties)
 - [Share files and collaborate](deployr-repository-manager-files.md#sharing-files-with-others) with others
 - [View](deployr-repository-manager-files.md#working-with-historical-versions), [compare](deployr-repository-manager-files.md#comparing-version-differences), and [revert](deployr-repository-manager-files.md#reverting-a-past-version-to-the-latest-version) versions in the file's history
-- [Test scripts](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) in a live debugging environment (R scripts only)
+- [Test scripts](deployr-repository-manager-testing-debugging-scripts.md) in a live debugging environment (R scripts only)
 - [Close](deployr-repository-manager-files.md#closing-files) files
 - [Delete](deployr-repository-manager-files.md#deleting-files) files from directories
 
@@ -89,10 +89,10 @@ If you do not own a file and do not have [access rights](deployr-repository-mana
 If you have [access rights](deployr-repository-manager-files.md#about-file-properties) to a particular file you don't own, then you will see that file in one of directories under Other Files in the Files tab. Despite the fact that you do not own the file, you can still access the file in read-only mode. Possible operations include:
 
 - [Open](deployr-repository-manager-files.md#opening-files) files and [review the file properties](deployr-repository-manager-files.md#about-file-properties) of the Latest version
-- [Test R scripts](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md), including the review of [source code*](../deployr-repository-manager/../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code), [loading*](../deployr-repository-manager/../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#loading-data-into-the-r-session) of files into the R session, and testing of [modified input values*](../deployr-repository-manager/../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#supplying-input-values) in a debug environment (R scripts only)*
+- [Test R scripts](deployr-repository-manager-testing-debugging-scripts.md), including the review of [source code*](deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code), [loading*](deployr-repository-manager-testing-debugging-scripts.md#loading-data-into-the-r-session) of files into the R session, and testing of [modified input values*](deployr-repository-manager-testing-debugging-scripts.md#supplying-input-values) in a debug environment (R scripts only)*
 - [Close](deployr-repository-manager-files.md#closing-files) files
 
-*Certain [server policies ](../what-is-operationalization.md#permissions-policies)can affect your ability to see, download, and load files that aren't yours.
+*Certain [server policies ](../what-is-operationalization.md)can affect your ability to see, download, and load files that aren't yours.
 
 ## Uploading Files
 
@@ -116,7 +116,7 @@ If you attempt to upload a file into a directory containing a file by the same n
 
 4. Select the file you want to upload from your local machine using the **Browse** button. Choose an individual file or a zip of several files.
 
-5. Select the directory under **My Files** in which you want to store your file. If that directory doesn't exist yet, then [create the directory](../deployr-repository-manager/deployr-repository-manager-directories.md#creating-directories) before coming back here to upload the file.
+5. Select the directory under **My Files** in which you want to store your file. If that directory doesn't exist yet, then [create the directory](deployr-repository-manager-directories.md#creating-directories) before coming back here to upload the file.
 
 6. If you are uploading a zip file, choose whether to extract files upon upload. Choices are:
 	-  **Extract files into directory**. All files, regardless of the directory structure in the zip file, will be extracted into a single directory.
@@ -187,7 +187,7 @@ If you move a file into a directory in which a file by the same name already exi
 
 ## Opening Files
 
-If you see a file in the Files tab, you can open it. Your right to access, edit, and interact with files is determined in part by [ownership and access rights](deployr-repository-manager-files.md#about-file-properties) and also by [server policies](../what-is-operationalization.md#permissions-policies).
+If you see a file in the Files tab, you can open it. Your right to access, edit, and interact with files is determined in part by [ownership and access rights](deployr-repository-manager-files.md#about-file-properties) and also by [server policies](../what-is-operationalization.md).
 
 >If two owners are editing a file at the same time, you will be writing over each other's work. It is essential to coordinate with the [other owners](deployr-repository-manager-files.md#adding-and-removing-owners).
 
@@ -357,7 +357,7 @@ You can close one file at any time.
 
 1. Go to the tab of the file you would like to close.
 
-1. From the **Manage** menu on the right, choose **Close**. If there are any unsaved code changes, you will be prompted to [save](../deployr-repository-manager/../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md#saving-script-changes) or discard those changes. The tab disappears and the **Files** tab appears onscreen.
+1. From the **Manage** menu on the right, choose **Close**. If there are any unsaved code changes, you will be prompted to [save](deployr-repository-manager-testing-debugging-scripts.md#saving-script-changes) or discard those changes. The tab disappears and the **Files** tab appears onscreen.
 
 >Alternately, hover over the filename in the tab at the top of the screen and click the **x**.
  

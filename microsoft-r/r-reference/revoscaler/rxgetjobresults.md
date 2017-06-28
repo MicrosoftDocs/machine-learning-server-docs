@@ -119,11 +119,11 @@ not available because the job has not finished, has failed, or was deleted.
  
  ##See Also
  
-[RxSpark](../../scaler/packagehelp/rxspark.md),
-[RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md),
-[RxInTeradata](../../scaler/packagehelp/rxinteradata.md), 
-[RxInSqlServer](../../scaler/packagehelp/rxinsqlserver.md),
-[rxGetJobs](../../scaler/packagehelp/rxgetjobs.md), 
+[RxSpark](rxspark.md),
+[RxHadoopMR](rxhadoopmr.md),
+[RxInTeradata](rxinteradata.md), 
+[RxInSqlServer](rxinsqlserver.md),
+[rxGetJobs](rxgetjobs.md), 
 [rxCleanupJobs](rxcleanup.md),
 [rxGetJobStatus](rxgetjobresults.md),
 [rxExec](rxexec.md).

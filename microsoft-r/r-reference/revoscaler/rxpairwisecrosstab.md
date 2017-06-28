@@ -107,8 +107,8 @@ print  (x, digits = 3, scientific = FALSE, p.value.digits = 3, ...)
 [rxFisherTest](rxchisquaredtest.md),
 [rxKendallCor](rxchisquaredtest.md),
 [rxMultiTest](rxmultitest.md),
-[rxRiskRatio](../../scaler/packagehelp/rxriskratio.md),
-[rxOddsRatio](../../scaler/packagehelp/rxriskratio.md).
+[rxRiskRatio](rxriskratio.md),
+[rxOddsRatio](rxriskratio.md).
    
  
  ##Examples

@@ -212,8 +212,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [rxLogit](rxlogit.md),
 [rxGlm](rxglm.md), 
 [rxLinePlot](rxlineplot.md),
-[rxQuantile](../../scaler/packagehelp/rxquantile.md),
-[rxRoc](../../scaler/packagehelp/rxroc.md).
+[rxQuantile](rxquantile.md),
+[rxRoc](rxroc.md).
    
  ##Examples
 

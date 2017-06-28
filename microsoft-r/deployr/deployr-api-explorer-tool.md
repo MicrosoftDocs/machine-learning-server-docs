@@ -30,7 +30,7 @@ ms.custom: ""
 
 >Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
 
-The DeployR API is extensive, providing a wide range of services related to [users](deployr-api-reference.md#users-on-the-api), [projects](deployr-api-reference.md#projects-on-the-api), [jobs](deployr-api-reference.md#jobs-on-the-api) and the [repository](../deployr-api-reference.md#repository-on-the-api). To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
+The DeployR API is extensive, providing a wide range of services related to [users](deployr-api-reference.md#users-on-the-api), [projects](deployr-api-reference.md#projects-on-the-api), [jobs](deployr-api-reference.md#jobs-on-the-api) and the [repository](deployr-api-reference.md#repository-on-the-api). To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
 
 >You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser. 
 
@@ -75,7 +75,7 @@ Use the functionality found under each tab in API Explorer to interact with and 
 
 **DeployR Tab**
 
-The DeployR tab is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](../deployr-api-reference.md#users).
+The DeployR tab is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](deployr-api-reference.md#users).
 
 When a user first launches the API Explorer the DeployR tab and the Repo Scripts tab are the only tabs enabled in the API Tabs Panel. In order to gain access to additional tabs you must first sign-in to DeployR.
 
@@ -92,7 +92,7 @@ Once you successfully authenticates with DeployR the following tabs are activate
 
 **Projects Tab**
 
-The Projects tab provides access to the full set of [Project Management APIs](../deployr-api-reference.md#projects).
+The Projects tab provides access to the full set of [Project Management APIs](deployr-api-reference.md#projects).
 
 Once you select a specific project from the list of projects displayed under this tab, the following set of additional project-specific tabs are enabled in addition to those enabled earlier:
 
@@ -110,19 +110,19 @@ The functionality found under these tabs allows you to interact with APIs on the
 
 **Console Tab**
 
-The Console tab offers access to the full set of [Project Execution APIs](../deployr-api-reference.md#projexec).
+The Console tab offers access to the full set of [Project Execution APIs](deployr-api-reference.md#projexec).
 
 ** Workspace Tab**
 
-The Workspace tab offers access to the full set of [Project Workspace APIs](../deployr-api-reference.md#project-workspace).
+The Workspace tab offers access to the full set of [Project Workspace APIs](deployr-api-reference.md#project-workspace).
 
 **Directory Tab**
 
-The Directory tab offers access to the full set of [Project Directory APIs](../deployr-api-reference.md#projdir).
+The Directory tab offers access to the full set of [Project Directory APIs](deployr-api-reference.md#projdir).
 
 **Packages Tab**
 
-The Packages tab offers access to the full set of [Project Package APIs](../deployr-api-reference.md#projpkg).
+The Packages tab offers access to the full set of [Project Package APIs](deployr-api-reference.md#projpkg).
 
 **About Tab**
 
@@ -130,15 +130,15 @@ The About tab offers access to the [/r/project/about](https://microsoft.github.i
 
 **Repo Files Tab**
 
-The Repo Files tab offers access to the full set of [Repository File APIs](../deployr-api-reference.md#repofiles).
+The Repo Files tab offers access to the full set of [Repository File APIs](deployr-api-reference.md#repofiles).
 
 **Jobs Tab**
 
-The Jobs tab offers access to the full set of [Job APIs](../deployr-api-reference.md#jobs).
+The Jobs tab offers access to the full set of [Job APIs](deployr-api-reference.md#jobs).
 
 **Repo Scripts Tab**
 
-The Repo Scripts tab offers access to the full set of [Repository Script APIs](../deployr-api-reference.md#reposcripts).
+The Repo Scripts tab offers access to the full set of [Repository Script APIs](deployr-api-reference.md#reposcripts).
 
 ###Panel 3: API Request
 

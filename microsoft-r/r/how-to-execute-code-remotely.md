@@ -282,7 +282,7 @@ REMOTE>install.packages(c("arules","bitops","caTools"))
 
 ## Publishing web services in a remote session
 
-After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#publishservice)  guide. 
+After you understand the mechanics of remote execution, consider incorporating web service capabilities. You can publish an R web service composed of arbitrary R code block that runs on the remote R Server. For more information on publishing services, begin with the [Working with web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#publishService)  guide. 
 
 To publish a web service after you create a remote session (argument `session = TRUE` with remoteLogin() or remoteLoginAAD()), you have two approaches:
 
@@ -293,7 +293,7 @@ To publish a web service after you create a remote session (argument `session = 
 >[!WARNING]
 >If you try to publish a web service from the remote R session without authenticating from that session, you get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`.  
 
-Learn more about authenticating with remoteLogin() or remoteLoginAAD() in this article "[Logging in to R Server with mrsdeploy](mrsdeploy-connection.md)."
+Learn more about authenticating with remoteLogin() or remoteLoginAAD() in this article "[Logging in to R Server with mrsdeploy](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)."
 
 ```R
 > ## AAD AUTHENTICATION TO PUBLISH FROM REMOTE SESSION ##
@@ -339,5 +339,5 @@ REMOTE>api <- publishService(
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-+ [Get started guide for Data scientists](concept-operationalize-deploy-consume.md)
++ [Get started guide for Data scientists](../operationalize/concept-operationalize-deploy-consume.md)
 + [Working with web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)

@@ -232,8 +232,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [ngramCount](ngram.md), [ngramHash](ngram.md),
-[rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md), [rxFastForest](../../microsoftml/packagehelp/rxfastforest.md), [rxNeuralNet](../../microsoftml/packagehelp/rxneuralnet.md),
-[rxOneClassSvm](../../microsoftml/packagehelp/rxoneclasssvm.md), [rxLogisticRegression](../../microsoftml/packagehelp/rxlogisticregression.md).
+[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md), [rxNeuralNet](rxneuralnet.md),
+[rxOneClassSvm](rxoneclasssvm.md), [rxLogisticRegression](rxlogisticregression.md).
    
  ##Examples
 

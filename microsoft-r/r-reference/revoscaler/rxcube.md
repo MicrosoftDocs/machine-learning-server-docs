@@ -80,7 +80,7 @@ subset  (x, ...)
    
     
  ### `formula`
- formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md) with the cross-classifying variables (separated by `:`) on the right hand side. Independent variables must be factors. If present, the dependent variable must be numeric. 
+ formula as described in [rxFormula](rxformula.md) with the cross-classifying variables (separated by `:`) on the right hand side. Independent variables must be factors. If present, the dependent variable must be numeric. 
   
   
     
@@ -90,7 +90,7 @@ subset  (x, ...)
   
     
  ### `outFile`
- `NULL`, a character string specifying a .xdf file, or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.  If not NULL, the cube results will be written out to an .xdf file and an `RxXdfData` object will be returned. `outFile` is not supported when using distributed compute contexts such as [RxInTeradata](../../scaler/packagehelp/rxinteradata.md). 
+ `NULL`, a character string specifying a .xdf file, or an [RxXdfData](rxxdfdata.md) object.  If not NULL, the cube results will be written out to an .xdf file and an `RxXdfData` object will be returned. `outFile` is not supported when using distributed compute contexts such as [RxInTeradata](rxinteradata.md). 
   
   
     
@@ -130,12 +130,12 @@ subset  (x, ...)
   
     
  ### `transformFunc`
- variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -272,7 +272,7 @@ columns.
 xtabs,
 [rxCrossTabs](rxcrosstabs.md),
 [as.xtabs](as-xtabs.md),
-[rxTransform](../../scaler/packagehelp/rxtransform.md).
+[rxTransform](rxtransform.md).
    
  ##Examples
 

@@ -39,7 +39,7 @@ SPSS data source connection class.
  ## Generators 
 
  
-The targeted generator [RxSpssData](../../scaler/packagehelp/rxspssdata.md) as well as the general generator
+The targeted generator [RxSpssData](rxspssdata.md) as well as the general generator
 [rxNewDataSource](rxnew.md).
  
  ## Extends 
@@ -66,7 +66,7 @@ Class RxDataSource, by class RxFileData.
  ##See Also
  
 [RxDataSource-class](rxdatasource-class.md),
-[RxSpssData](../../scaler/packagehelp/rxspssdata.md),
+[RxSpssData](rxspssdata.md),
 [rxNewDataSource](rxnew.md)
    
  

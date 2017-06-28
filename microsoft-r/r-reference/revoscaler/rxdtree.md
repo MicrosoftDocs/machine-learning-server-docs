@@ -65,7 +65,7 @@ for small or large data using parallel external memory algorithm.
    
     
  ### `formula`
-  formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md).   Currently, formula functions are not supported. 
+  formula as described in [rxFormula](rxformula.md).   Currently, formula functions are not supported. 
   
     
  ### `data`
@@ -199,11 +199,11 @@ for small or large data using parallel external memory algorithm.
   
     
  ### `transformFunc`
-  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxtransform.md) for details. 
   
     
  ### `transformVars`
-  character vector of input data set variables  needed for the transformation function.  See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+  character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxtransform.md) for details. 
   
     
  ### `transformPackages`

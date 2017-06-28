@@ -49,7 +49,7 @@ an `RxDataSource` constructor.
    
     
  ### `data`
-  An [RxDataSource](../../scaler/packagehelp/rxdatasource.md) object, a character string containing an .xdf file name, or a data frame.  An object returned from [rxGetVarInfo](../../scaler/packagehelp/rxgetvarinfoxdf.md) is also supported.  
+  An [RxDataSource](rxdatasource.md) object, a character string containing an .xdf file name, or a data frame.  An object returned from [rxGetVarInfo](rxgetvarinfoxdf.md) is also supported.  
   
     
  ### `includeLowHigh`
@@ -87,8 +87,8 @@ It is also useful for repeated analysis on non-xdf data sources.
  
  ##Value
  
-A `colInfo` list that can be used as input for [rxImport](../../scaler/packagehelp/rximport.md) and in data sources such as
-[RxTextData](../../scaler/packagehelp/rxtextdata.md) and [RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md).
+A `colInfo` list that can be used as input for [rxImport](rximport.md) and in data sources such as
+[RxTextData](rxtextdata.md) and [RxSqlServerData](rxsqlserverdata.md).
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](http://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -96,15 +96,15 @@ A `colInfo` list that can be used as input for [rxImport](../../scaler/packagehe
  
  ##See Also
  
-[RxDataSource-class](../../scaler/packagehelp/rxdatasource-class.md),
-[RxTextData](../../scaler/packagehelp/rxtextdata.md),
-[RxSqlServerData](../../scaler/packagehelp/rxsqlserverdata.md),
-[RxSpssData](../../scaler/packagehelp/rxspssdata.md),
-[RxSasData](../../scaler/packagehelp/rxsasdata.md),
-[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md),
-[RxTeradata](../../scaler/packagehelp/rxteradata.md),
-[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
-[rxImport](../../scaler/packagehelp/rximport.md).
+[RxDataSource-class](rxdatasource-class.md),
+[RxTextData](rxtextdata.md),
+[RxSqlServerData](rxsqlserverdata.md),
+[RxSpssData](rxspssdata.md),
+[RxSasData](rxsasdata.md),
+[RxOdbcData](rxodbcdata.md),
+[RxTeradata](rxteradata.md),
+[RxXdfData](rxxdfdata.md),
+[rxImport](rximport.md).
    
  ##Examples
 

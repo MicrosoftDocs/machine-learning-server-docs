@@ -74,9 +74,9 @@ then `TRUE` will be returned.
 
 [deleteSnapshot](deletesnapshot.md)
 
-[listSnapshots](../../mrsdeploy/packagehelp/listsnapshots.md)
+[listSnapshots](listsnapshots.md)
 
-[loadSnapshot](../../mrsdeploy/packagehelp/loadsnapshot.md)
+[loadSnapshot](loadsnapshot.md)
    
  ##Examples
 

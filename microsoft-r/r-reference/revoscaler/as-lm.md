@@ -79,7 +79,7 @@ an object of class lm.
  
  ##See Also
  
-[rxLinMod](../../scaler/packagehelp/rxlinmod.md),
+[rxLinMod](rxlinmod.md),
 lm,
 [as.glm](as-glm.md),
 [as.kmeans](as-kmeans.md),

@@ -63,7 +63,7 @@ in the specified set of paths.
   
   
  ### `isOutFile`
- logical value. If `TRUE`, search using `outDataPath` instead of `dataPath` in [rxOptions](../../scaler/packagehelp/rxoptions.md) or in the local compute context (e.g.,[RxLocalSeq](rxlocalseq.md)). 
+ logical value. If `TRUE`, search using `outDataPath` instead of `dataPath` in [rxOptions](rxoptions.md) or in the local compute context (e.g.,[RxLocalSeq](rxlocalseq.md)). 
   
   
   

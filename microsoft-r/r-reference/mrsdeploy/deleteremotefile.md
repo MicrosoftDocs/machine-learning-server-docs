@@ -64,11 +64,11 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[getRemoteFile](../../mrsdeploy/packagehelp/getremotefile.md)
+[getRemoteFile](getremotefile.md)
 
-[listRemoteFiles](../../mrsdeploy/packagehelp/listremotefiles.md)
+[listRemoteFiles](listremotefiles.md)
 
-[putLocalFile](../../mrsdeploy/packagehelp/putlocalfile.md)
+[putLocalFile](putlocalfile.md)
    
  ##Examples
 

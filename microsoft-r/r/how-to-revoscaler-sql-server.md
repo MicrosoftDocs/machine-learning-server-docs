@@ -303,7 +303,7 @@ Next we’ll call *rxHistogram*. Internally, *rxHistogram* will call the **RevoS
 	rxHistogram(~creditLine|gender, data = teradataDS,
 		histType = "Percent")
 
-![](media/scaler-teradata-getting-started/image1.png)
+![](media/how-to-revoscaler-sql-server/image1.png)
 
 We can also call the *rxCube* function directly and use the results with one of many of R’s plotting functions. For example, *rxCube* can compute group means, so we can compute the mean of *fraudRisk* for every combination of *numTrans* and *numIntlTrans*. We’ll use the *F()* notation to have integer variables treated as categorical variables (with a level for each integer value). The low and high levels specified in *colInfo* will automatically be used.
 
@@ -317,7 +317,7 @@ The *rxResultsDF* function will convert the results of the *rxCube* function int
 
 We can see that the risk of fraud increases with both the number of transactions and the number of international transactions:
 
-![](media/scaler-teradata-getting-started/image2.png)
+![](media/how-to-revoscaler-sql-server/image2.png)
 
 ### Analyzing Your Data with *rxLinMod*
 
@@ -516,7 +516,7 @@ Then we compute and display the histogram:
 	rxSetComputeContext(tdCompute)
 	rxHistogram(~ccFraudLogitScore, data = teradataScoreDS)
 
-![](media/scaler-teradata-getting-started/image3.png)
+![](media/how-to-revoscaler-sql-server/image3.png)
 
 ## Using rxDataStep and rxImport
 

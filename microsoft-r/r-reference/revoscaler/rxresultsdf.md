@@ -120,7 +120,7 @@ a data frame containing the computed counts, sums, or means.
 [rxCube](rxcube.md)
 [rxLinMod](rxlinmod.md)
 [rxLogit](rxlogit.md)
-[rxSummary](../../scaler/packagehelp/rxsummary.md)
+[rxSummary](rxsummary.md)
 [rxMarginals](rxmarginals.md)
    
  ##Examples

@@ -89,7 +89,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
    
     
  ### `formula`
-  formula as described in [rxFormula](../../scaler/packagehelp/rxformula.md).   Currently, formula functions are not supported. 
+  formula as described in [rxFormula](rxformula.md).   Currently, formula functions are not supported. 
   
     
  ### `data`
@@ -264,7 +264,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### `scheduleOnce`
- EXPERIMENTAL. logical value. If `TRUE`, rxBTrees will be run with [rxExec](../../scaler/packagehelp/rxexec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](../../scaler/packagehelp/rxhadoopmr.md) compute context. 
+ EXPERIMENTAL. logical value. If `TRUE`, rxBTrees will be run with [rxExec](rxexec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](rxhadoopmr.md) compute context. 
   
   
     
@@ -282,11 +282,11 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### `transformFunc`
-  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxtransform.md) for details. 
   
     
  ### `transformVars`
-  character vector of input data set variables  needed for the transformation function.  See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
+  character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxtransform.md) for details. 
   
     
  ### `transformPackages`
@@ -315,7 +315,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### `computeContext`
- a valid [RxComputeContext](../../scaler/packagehelp/rxcomputecontext.md).  The `RxHpcServer`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](rxcomputecontext.md).  The `RxHpcServer`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
   
   
     
@@ -324,7 +324,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### ` ...`
-  additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](../../scaler/packagehelp/rxexec.md) when `scheduleOnce` is set to `TRUE`. 
+  additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](rxexec.md) when `scheduleOnce` is set to `TRUE`. 
   
   
     
@@ -473,7 +473,7 @@ gbm: Generalized Boosted Regression Models (R package),
  
  ##See Also
  
-[rxDForest](../../scaler/packagehelp/rxdforest.md), [rxDForestUtils](../../scaler/packagehelp/rxdforestutils.md), [rxPredict.rxDForest](rxPredict.../../scaler/packagehelp/rxdforest.md).
+[rxDForest](rxdforest.md), [rxDForestUtils](rxdforestutils.md), [rxPredict.rxDForest](rxpredict-rxdforest.md).
    
  ##Examples
 
