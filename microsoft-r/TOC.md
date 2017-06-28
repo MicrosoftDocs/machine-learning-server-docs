@@ -64,7 +64,7 @@
 ### [Write custom chunking algorithms in RevoScaleR](scaler-getting-started-4-write-chunking-algorithms.md)
 ### [Write custom analyses for large data sets in RevoScaleR](scaler-user-guide-write-custom-analyses.md)
 ### [Converting RevoScaleR Model Objects for Use with PMML](scaler-user-guide-pmml.md)
-### [Manage threads in RevoScaleR](scaler-user-guide-manage-threads.md)
+### [Manage threads in RevoScaleR](r/how-to-developer-manage-threads.md)
 
 # Microsoft R Server
 

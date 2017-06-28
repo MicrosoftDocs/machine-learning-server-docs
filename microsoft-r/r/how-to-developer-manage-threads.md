@@ -59,7 +59,7 @@ The *.First.sys* function is normally run after all other initialization is comp
 
 R has extensive facilities for managing random number generation, and these are all fully supported in RevoScaleR. In addition, RevoScaleR provides an interface to random number generators supplied by the Vector Statistical Library that is part of Intel’s Math Kernel Library. To use one of these generators, call the RevoScaleR function *rxRngNewStream*, specifying the desired generator (the default is a version of the Mersenne-Twister, MT-2203), the desired substream (if applicable), and a seed (if desired). See the help file for a complete list of the available generators and examples of their use.
 
-The VSL random number generators are most useful in a distributed setting, where they allow parallel processes to generate uncorrelated random number streams. See the [RevoScaleR Distributed Computing Guide](scaler-distributed-computing.md)
+The VSL random number generators are most useful in a distributed setting, where they allow parallel processes to generate uncorrelated random number streams. See the [RevoScaleR Distributed Computing Guide](../scaler-distributed-computing.md)
 for complete details.
 
 RevoScaleR depends on a number of packages that are specified as “default packages” in Microsoft R Server and R Client. To ensure these packages are loaded when using Rscript, you must include the flag *–-default-packages=* (with nothing on the right-hand side), and not use the flag *–-vanilla* when invoking Rscript. In particular, the methods package is required for correct operation of RevoScaleR.
@@ -76,8 +76,8 @@ We will often refer to help topic pages as a function’s help file, as in “se
 
 ## See Also
 
-[Introduction to Microsoft R](microsoft-r-getting-started.md)
+[Introduction to Microsoft R](../microsoft-r-getting-started.md)
 
-[Diving into data analysis in Microsoft R](data-analysis-in-microsoft-r.md)
+[Diving into data analysis in Microsoft R](../data-analysis-in-microsoft-r.md)
 
-[RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)
+[RevoScaleR Functions](../revoscaler.md)
