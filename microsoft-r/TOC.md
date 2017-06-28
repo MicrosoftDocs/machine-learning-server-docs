@@ -54,7 +54,7 @@
 ### [Generalized Linear Models](scaler-user-guide-generalized-linear-model.md)
 ### [Decision Tree Models](scaler-user-guide-decision-tree.md)
 ### [Decision Forest Models](scaler-user-guide-decision-forest.md)
-## [Stochastic Gradient Boosting](scaler-user-guide-boosting.md)
+## [Stochastic Gradient Boosting](r/how-to-revoscaler-boosting.md)
 ## [Naive Bayes Classifier](scaler-user-guide-naive-bayes.md)
 ## [Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)
 ## [Clustering](scaler-user-guide-cluster.md)

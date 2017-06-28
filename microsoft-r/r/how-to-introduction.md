@@ -41,7 +41,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 * [Generalized Linear Models](../scaler-user-guide-generalized-linear-model.md)
 * [Decision Tree Models](../scaler-user-guide-decision-tree.md)
 * [Decision Forest Models](../scaler-user-guide-decision-forest.md)
-* [Stochastic Gradient Boosting](../scaler-user-guide-boosting.md)
+* [Stochastic Gradient Boosting](how-to-revoscaler-boosting.md)
 * [Naïve Bayes Classifier](../scaler-user-guide-naive-bayes.md)
 * [Correlation and Variance/Covariance Matrices](../scaler-user-guide-covcor.md)
 * [Clustering](../scaler-user-guide-cluster.md)
