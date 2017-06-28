@@ -42,7 +42,7 @@ Whenever your policies fail to deliver the expected runtime behavior or performa
 
 But first, you must install the server. Comprehensive installation guides are available [here](deployr-installation.md).
 
->For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
+>For a general introduction to DeployR, read the [About DeployR](deployr/deployr-about.md) document.
 
 ## Security Policies
 
@@ -125,7 +125,7 @@ This section provides a quick summary of useful links for administrators working
 >Use the table of contents to find all of the guides and documentation needed by the administrator.
 
 **Key Documents**
--   [About DeployR](deployr-about.md)
+-   [About DeployR](deployr/deployr-about.md)
 -   [Installation & Configuration](deployr-installation.md)
 -   [Security](deployr-admin-security/deployr-security.md)
 -   [R Package Management](deployr-admin-r-package-management.md)

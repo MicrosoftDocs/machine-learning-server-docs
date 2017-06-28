@@ -156,7 +156,7 @@
 ##### [Install DeployR for Microsoft R Server 8.0.5 on Linux](deployr-install-on-linux.md)
 ##### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 #### Getting Started with DeployR
-##### [About DeployR 8.x](deployr-about.md)
+##### [About DeployR 8.x](deployr/deployr-about.md)
 ##### [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
 ##### [Getting Started for Administrators](deployr-administrator-getting-started.md)
 ##### [Getting Started for Data Scientists](deployr-data-scientist-getting-started.md)

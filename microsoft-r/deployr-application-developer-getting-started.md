@@ -54,7 +54,7 @@ As an application developer, you typically leave R coding and model building to 
 
 The sections that follow explain [Analytics Web Services](#analytics-web-services) in greater detail and also introduce the set of [developer tools](#developer-tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#real-world-example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
 
->For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
+>For a general introduction to DeployR, read the [About DeployR](deployr/deployr-about.md) document.
 
 ## Analytics Web Services
 

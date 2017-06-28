@@ -28,7 +28,7 @@ ms.custom: ""
 
 # Operationalize your analytics with R Server
 
-**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x" docs [here](../deployr-about.md).)
+**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x" docs [here](../deployr/deployr-about.md).)
 
 Operationalization refers to the process of publishing R models and code to Microsoft R Server in the form of web services and the consumption of these services within client applications to affect business results.
 

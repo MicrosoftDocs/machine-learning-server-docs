@@ -38,7 +38,7 @@ In a nutshell, DeployR makes your R analytics (R scripts, models, and data files
 2.  [Test](#test-analytics) those analytics inside and outside of DeployR
 3.  [Collaborate](#collaborate) with application developers to deliver powerful R analytic solutions
 
->For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
+>For a general introduction to DeployR, read the [About DeployR](deployr/deployr-about.md) document.
 
 ## Develop Analytics
 
@@ -224,7 +224,7 @@ Once you've shared those files, the application developers can upload the files 
 Use the table of contents to find all of the guides and documentation needed by the data scientist, administrator, or application developer.
 
 **Key Documents**
--   [About DeployR](deployr-about.md)
+-   [About DeployR](deployr/deployr-about.md)
 -   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
 -   [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
 -   [About Throughput](deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput

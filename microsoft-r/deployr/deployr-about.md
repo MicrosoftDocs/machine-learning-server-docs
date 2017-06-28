@@ -25,26 +25,26 @@ ms.custom: ""
 
 # About DeployR
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-admin-console/about.md).
 
 
 DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into [analytics web services](#analytics-web-service), so R code can be easily executed by applications running on a secure server.
 
 Using analytics web services, DeployR also solves key integration problems faced by those adopting R-based analytics alongside existing IT infrastructure. These services make it easy for application developers to collaborate with data scientists to integrate R analytics into their applications without any R programming knowledge.
 
-DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](deployr-admin-security/deployr-security-authentication.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
+DeployR Enterprise scales for business-critical applications and offers support for production-grade workloads, as well as seamless integration with popular [enterprise security solutions](../deployr-admin-security/deployr-security-authentication.md) such as single sign-on (SSO), Lightweight Directory Access Protocol (LDAP), Active Directory, or Pluggable Authentication Modules (PAM).
 
 ## Basic Workflow
 
 This diagram captures the basic workflow used by data scientists and application developers when collaborating on the delivery of solutions powered by analytics Web services.
 
-![DeployR Workflow](media/deployr-about/DeployRWorkflow.png)
+![DeployR Workflow](./media/deployr-about/DeployRWorkflow.png)
 
 ## Workflow In Action
 
-The workflow is simple. A data scientist develops an R script (using standard R tools) and publishes that script to the DeployR server, where it becomes available for execution as an analytics web service. Once published, R scripts can be executed by any authorized application using the DeployR [(API)](deployr-api-reference.md).
+The workflow is simple. A data scientist develops an R script (using standard R tools) and publishes that script to the DeployR server, where it becomes available for execution as an analytics web service. Once published, R scripts can be executed by any authorized application using the DeployR [(API)](../deployr-api-reference.md).
 
 The following real-world scenario demonstrates the key concepts introduced in preceding workflow diagram.
 
@@ -78,7 +78,7 @@ In this section, you will find a description of the roles and responsibilities o
 
 This diagram depicts how data scientists and application developers collaborate when working with DeployR.
 
-![story](media/deployr-about/DeployRWorkflowStory.png)
+![story](./media/deployr-about/DeployRWorkflowStory.png)
 
 ### Data Scientists
 
@@ -96,7 +96,7 @@ With DeployR, the recommended steps for a data scientist are both simple and fam
 1. Test those analytics inside and outside of DeployR
 1. Collaborate with application developers to deliver powerful R analytic solutions
 
-Learn more in the [Getting Started Guide Data Scientists](deployr-data-scientist-getting-started.md).
+Learn more in the [Getting Started Guide Data Scientists](../deployr-data-scientist-getting-started.md).
 
 ### Application Developers
 
@@ -104,7 +104,7 @@ Learn more in the [Getting Started Guide Data Scientists](deployr-data-scientist
 
 Unlike the data scientist who focuses solely on developing the R scripts, models and data files, the application developer does not need to know any R. Instead, this role is focused solely on integrating the output of the data scientists' work, [analytics Web services](#analytics-web-service) into their applications. The hand-off occurs in the [Repository Manager](#deployr-repository-manager). The separation of responsibilities between the data scientists and application developers is key to working effectively in the DeployR environment.
 
-There are several client application integration tools available to application developers in DeployR. The [RBroker framework and the client libraries](deployr-tools-and-samples.md), which are provided in Java, JavaScript or .NET, greatly simplify the integration for those working in those languages. However, to integrate analytics Web services using other programming languages, the [API Reference](deployr-api-reference.md) guide details everything you'd need to know.
+There are several client application integration tools available to application developers in DeployR. The [RBroker framework and the client libraries](../deployr-tools-and-samples.md), which are provided in Java, JavaScript or .NET, greatly simplify the integration for those working in those languages. However, to integrate analytics Web services using other programming languages, the [API Reference](../deployr-api-reference.md) guide details everything you'd need to know.
 
 #### Responsibilities
 
@@ -112,45 +112,45 @@ Regardless of the integration tool you choose, or whether you are building a new
 
 1.  Consult with the data scientists responsible for developing the R analytics outputs in order to determine your application's analytics dependencies (inputs and outputs).
 
-2.  Verify these dependencies in the Repository Manager by [testing](deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#analytics-web-service).
+2.  Verify these dependencies in the Repository Manager by [testing](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) the R scripts live on DeployR. For each script, you can inspect the API request and API response in the Artifacts pane to learn how your application needs to interact with that script. Note: Once the dependencies are in the DeployR repository, they become [analytics Web services](#analytics-web-service).
 
-3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](deployr-api-reference.md) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
+3.  Begin your integration by choosing a client application integration tool. [Download the RBroker framework or a client library](../deployr-tools-and-samples.md) in either Java, JavaScript, or .NET. Or, if working in another language, read the [API Reference](../deployr-api-reference.md) guide. To help you familiarize yourself with these tools, check out the tutorials and documentation provided on this site.
 
 4.  Build or extend your application to take full advantage of DeployR-powered analytics Web services.
 
-Learn more in the [Getting Started Guide for Application Developers](deployr-application-developer-getting-started.md).
+Learn more in the [Getting Started Guide for Application Developers](../deployr-application-developer-getting-started.md).
 
 ### System Administrators
 
 Not unlike the responsibilities typically associated with managing and maintaining other server software, DeployR system administrators are responsible for:
 
-1.  [Provisioning suitable hardware](deployr-installation.md) in preparation for a DeployR install.
-2.  Installing DeployR using [these instructions](deployr-installation.md).
-3.  Customizing DeployR [server policies](deployr-admin-console/deployr-admin-managing-server-policies.md).
-4.  Creating and managing DeployR [user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md).
-5.  Customizing DeployR [security policies](deployr-admin-security/deployr-security.md).
-6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
+1.  [Provisioning suitable hardware](../deployr-installation.md) in preparation for a DeployR install.
+2.  Installing DeployR using [these instructions](../deployr-installation.md).
+3.  Customizing DeployR [server policies](../deployr-admin-console/deployr-admin-managing-server-policies.md).
+4.  Creating and managing DeployR [user accounts](../deployr-admin-console/deployr-admin-console-user-accounts.md).
+5.  Customizing DeployR [security policies](../deployr-admin-security/deployr-security.md).
+6.  Monitoring and [maintaining](../deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
-[Consult the administration documentation](deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
+[Consult the administration documentation](../deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
 >**DeployR Security**  
 >DeployR supports a highly flexible, enterprise-grade security framework that verifies identity, enforces permissions, and ensures privacy.
 >
 >Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
 >
->Learn more about authentication, access controls, and privacy with DeployR in our [Security](deployr-admin-security/deployr-security.md) guide.
+>Learn more about authentication, access controls, and privacy with DeployR in our [Security](../deployr-admin-security/deployr-security.md) guide.
 
 ## Architecture
 
 DeployR is a standalone server product, potentially sitting alongside but never directly connected with other systems, that can be deployed on-site as well as in private, public, or hybrid cloud environments.
 
-Behaving like an on-demand R analytics engine, DeployR exposes a wide range of related analytics services via a [Web services API](deployr-api-reference.md).
+Behaving like an on-demand R analytics engine, DeployR exposes a wide range of related analytics services via a [Web services API](../deployr-api-reference.md).
 
 ![](media/deployr-about/deployr-architecture.png)
 
-The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](deployr-tools-and-samples.md).
+The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](../deployr-tools-and-samples.md).
 
-DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
+DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. For more on planning and provisioning your grid framework, see the [Scale & Throughput](../deployr-admin-scale-and-throughput.md) guide.
 
 ## Glossary Of Terms
 
@@ -163,9 +163,9 @@ In DeployR, we refer to any web service that exposes R analytics capabilities ov
 
 #### DeployR Administration Console
 
-The Administration Console is a tool, delivered as an easy-to-use Web interface, that facilitates the management of users, roles, IP filters, the grid and runtime policies on the DeployR server. Learn more [here](deployr-admin-console/deployr-admin-console-about.md).
+The Administration Console is a tool, delivered as an easy-to-use Web interface, that facilitates the management of users, roles, IP filters, the grid and runtime policies on the DeployR server. Learn more [here](../deployr-admin-console/deployr-admin-console-about.md).
 
 <a name="deployr-repository-manager"></a>
 #### DeployR Repository Manager
 
-The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](deployr-repository-manager/deployr-repository-manager-about.md).
+The Repository Manager is a Web-based tool that serves as a bridge between the data scientist's scripts, models, & data and the deployment of that work into the DeployR repository to enable application developers to create DeployR-powered client applications and integrations. Learn more [here](../deployr-repository-manager/deployr-repository-manager-about.md).
