@@ -125,16 +125,16 @@ the interaction with `transformObjects` objects packed into transformation funct
  
  ##See Also
  
-[rxFormula](../../r-reference/revoscaler/rxformula.md),
-[rxTransform](rxTransform.md),
-[rxCrossTabs](../../r-reference/revoscaler/rxcrosstabs.md),
-[rxCube](../../r-reference/revoscaler/rxcube.md),
-[rxLinMod](../../r-reference/revoscaler/rxlinmod.md),
-[rxLogit](../../r-reference/revoscaler/rxlogit.md),
-[rxSummary](../../r-reference/revoscaler/rxsummary.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxImport](../../r-reference/revoscaler/rximport.md),
-[rxTextToXdf](../../r-reference/revoscaler/rxtexttoxdf.md).
+[rxFormula](rxformula.md),
+[rxTransform](rxtransform.md),
+[rxCrossTabs](rxcrosstabs.md),
+[rxCube](rxcube.md),
+[rxLinMod](rxlinmod.md),
+[rxLogit](rxlogit.md),
+[rxSummary](rxsummary.md),
+[rxDataStep](rxdatastep.md),
+[rxImport](rximport.md),
+[rxTextToXdf](rxtexttoxdf.md).
    
  ##Examples
 

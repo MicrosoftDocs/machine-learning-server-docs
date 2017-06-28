@@ -89,12 +89,12 @@ Write .xdf file content to a delimited text file. `rxDataStep` recommended.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../r-reference/revoscaler/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../r-reference/revoscaler/rxtransform.md) for details. 
   
   
     
