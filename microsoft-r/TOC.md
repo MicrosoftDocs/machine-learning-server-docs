@@ -442,7 +442,7 @@
 #### [rxQuantile](r-reference/revoscaler/rxquantile.md) 
 #### [rxReadXdf](r-reference/revoscaler/rxreadxdf.md) 
 #### [rxRealtimeScoring](r-reference/revoscaler/rxrealtimescoring.md) 
-#### [rxRemoteCall](scaler/packagehelp/rxRemoteCall.md) 
+#### [rxRemoteCall](r-reference/revoscaler/rxremotecall.md) 
 #### [rxRemoteFilePath](scaler/packagehelp/rxRemoteFilePath.md) 
 #### [rxRemoteGetId](scaler/packagehelp/rxRemoteGetId.md) 
 #### [rxRemoteHadoopMRCall](scaler/packagehelp/rxRemoteHadoopMRCall.md) 
