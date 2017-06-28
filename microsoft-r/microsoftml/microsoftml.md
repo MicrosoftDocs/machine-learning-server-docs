@@ -96,7 +96,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 **Functions for ensemble modeling.**
 
-* [fastTrees](packagehelp/fastTrees.md): Creates a list containing the function name and arguments to train a Fast Tree model with [rxEnsemble](packagehelp/rxEnsemble.md).
+* [fastTrees](../r-reference/microsoftml/fasttrees.md): Creates a list containing the function name and arguments to train a Fast Tree model with [rxEnsemble](packagehelp/rxEnsemble.md).
 * [fastForest](packagehelp/rxFastForest.md): Creates a list containing the function name and arguments to train a Fast Forest model with [rxEnsemble](packagehelp/rxEnsemble.md).
 * [fastLinear](../r-reference/microsoftml/fastlinear.md): Creates a list containing the function name and arguments to train a Fast Linear model with [rxEnsemble](packagehelp/rxEnsemble.md).
 * [logisticRegression](packagehelp/logisticRegression.md): Creates a list containing the function name and arguments to train a  Logistic Regression model with [rxEnsemble](packagehelp/rxEnsemble.md).

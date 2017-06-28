@@ -231,7 +231,7 @@
 ### [extractPixels](r-reference/microsoftml/extractpixels.md) 
 ### [fastForest](r-reference/microsoftml/fastforest.md) 
 ### [fastLinear](r-reference/microsoftml/fastlinear.md) 
-### [fastTrees](microsoftml/packagehelp/fastTrees.md)  
+### [fastTrees](r-reference/microsoftml/fasttrees.md)  
 ### [featurizeImage](microsoftml/packagehelp/featurizeImage.md) 
 ### [featurizeText](microsoftml/packagehelp/featurizeText.md) 
 ### [getSentiment](microsoftml/packagehelp/getSentiment.md)
