@@ -103,7 +103,7 @@ Machine Learning Logistic Regression
   
   
  ### `showTrainingStats`
- Specify `TRUE` to show the statistics of  training data and the trained model; otherwise, `FALSE`. The  default value is `FALSE`. For additional information about model  statistics, see [summary.mlModel](../../r-reference/microsoftml/mlmodel.md). 
+ Specify `TRUE` to show the statistics of  training data and the trained model; otherwise, `FALSE`. The  default value is `FALSE`. For additional information about model  statistics, see [summary.mlModel](mlmodel.md). 
   
   
   
@@ -133,7 +133,7 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](../../r-reference/microsoftml/featurizetext.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that aresupported. These transformations are performed after any specified R transformations. The default avlue is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that aresupported. These transformations are performed after any specified R transformations. The default avlue is `NULL`. 
   
   
   
@@ -310,11 +310,11 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastTrees](../../r-reference/microsoftml/rxfasttrees.md), [rxFastForest](../../r-reference/microsoftml/rxfastforest.md),
-[rxFastLinear](../../r-reference/microsoftml/rxfastlinear.md), [rxNeuralNet](../../r-reference/microsoftml/neuralnet.md),
-[rxOneClassSvm](../../r-reference/microsoftml/oneclasssvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),
-[categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](../../r-reference/microsoftml/categoricalhash.md),
-[rxPredict.mlModel](rxPredict.md).
+[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md),
+[rxFastLinear](rxfastlinear.md), [rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md),
+[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[categorical](categorical.md), [categoricalHash](categoricalhash.md),
+[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
    
  ##Examples
 
