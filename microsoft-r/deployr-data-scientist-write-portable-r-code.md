@@ -77,7 +77,7 @@ Let's begin with some sample R code demonstrating how to declare your required s
     ## Creates an integer variable named 'age' if it does not already exist
     deployrInput('{ "name": "age", "label": "Age", "render": "integer", "default": 6 } ')
 
-The R scripts you develop and deploy to the DeployR server environment are ultimately executed as [Analytics Web Services](deployr-application-developer-getting-started.md#analytics-web-services) by client applications. Most commonly, these R scripts expect input data to be provided by this application upon execution. In order for these inputs to be provided, the application developer who is integrating the R scripts must first know which inputs are required.
+The R scripts you develop and deploy to the DeployR server environment are ultimately executed as [Analytics Web Services](deployr/deployr-application-developer-getting-started.md#analytics-web-services) by client applications. Most commonly, these R scripts expect input data to be provided by this application upon execution. In order for these inputs to be provided, the application developer who is integrating the R scripts must first know which inputs are required.
 
 As a data scientist creating analytics for use in DeployR, you are responsible for providing the application developers not only with the necessary analytics, but also helping them understand the inputs required by those analytics.
 

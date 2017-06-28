@@ -157,7 +157,7 @@
 ##### [Install DeployR 8.0.0](deployr-installing-configuring.md)
 #### Getting Started with DeployR
 ##### [About DeployR 8.x](deployr/deployr-about.md)
-##### [Getting Started for Application Developers](deployr-application-developer-getting-started.md)
+##### [Getting Started for Application Developers](deployr/deployr-application-developer-getting-started.md)
 ##### [Getting Started for Administrators](deployr/deployr-administrator-getting-started.md)
 ##### [Getting Started for Data Scientists](deployr-data-scientist-getting-started.md)
 #### [Administration & Configuration](deployr/deployr-administrator-getting-started.md)

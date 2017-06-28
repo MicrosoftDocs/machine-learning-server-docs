@@ -118,7 +118,7 @@ Regardless of the integration tool you choose, or whether you are building a new
 
 4.  Build or extend your application to take full advantage of DeployR-powered analytics Web services.
 
-Learn more in the [Getting Started Guide for Application Developers](../deployr-application-developer-getting-started.md).
+Learn more in the [Getting Started Guide for Application Developers](deployr-application-developer-getting-started.md).
 
 ### System Administrators
 

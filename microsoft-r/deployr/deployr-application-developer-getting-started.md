@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Getting Started - Application Developers
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 This guide for application developers introduces DeployR, the *R Integration Server*. If you are an application developer or a systems integrator, then this guide explains what DeployR can do for you.
 
@@ -50,17 +50,17 @@ In fact, DeployR makes it simple for **any application** developed in **any lang
 
 DeployR offers these features and many more through a set of [Analytics Web Services](#analytics-web-services). These Web service interfaces isolate the application developer and the application itself from R code, from the underlying R sessions, and in fact from all the complexities typically associated with R integration.
 
-As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://mran.microsoft.com/documents/getting-started/) directly within your applications.
+As an application developer, you typically leave R coding and model building to the [data scientists](../deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://mran.microsoft.com/documents/getting-started/) directly within your applications.
 
 The sections that follow explain [Analytics Web Services](#analytics-web-services) in greater detail and also introduce the set of [developer tools](#developer-tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#real-world-example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
 
->For a general introduction to DeployR, read the [About DeployR](deployr/deployr-about.md) document.
+>For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
 ## Analytics Web Services
 
 The DeployR R Integration server exposes a rich set of services to application developers through a public Web services API. These services are collectively known as DeployR Analytics Web services.
 
-While the complete technical specification for all available services can be found [here](deployr/deployr-api-reference.md), this *Getting Started* guide for application developers focuses on introducing the core services.
+While the complete technical specification for all available services can be found [here](deployr-api-reference.md), this *Getting Started* guide for application developers focuses on introducing the core services.
 
 ### R Session Services
 
@@ -82,7 +82,7 @@ For example:
     // on which your application can immediately start executing R tasks.
     rBroker.submit(task);
 
-DeployR typically refers to R sessions as `projects`. You can read more about projects in the [API Reference Guide](deployr/deployr-api-reference.md).
+DeployR typically refers to R sessions as `projects`. You can read more about projects in the [API Reference Guide](deployr-api-reference.md).
 
 Depending on the specific needs of your application, the R sessions created by your application can be:
 
@@ -96,7 +96,7 @@ A key takeaway here is that DeployR is very flexible in the services that it off
 
 ### Repository Services
 
-Having access to on-demand R sessions within your application is only useful if you have access to the R scripts, models, and data you want to manipulate within those sessions. For this reason, DeployR exposes a comprehensive set of file and directory management services known as DeployR repository services. Read more about these [repository services in the API Reference Guide](deployr/deployr-api-reference.md).
+Having access to on-demand R sessions within your application is only useful if you have access to the R scripts, models, and data you want to manipulate within those sessions. For this reason, DeployR exposes a comprehensive set of file and directory management services known as DeployR repository services. Read more about these [repository services in the API Reference Guide](deployr-api-reference.md).
 
 You can think of the DeployR repository as a file system that is owned and managed by the DeployR server. As an application developer, you can:
 
@@ -108,7 +108,7 @@ For example:
     RRepositoryDirectory dir = rUser.createDirectory("demo");
     List<RRepositoryFile> files = rUser.listFiles(RSCRIPT, dir);
 
-These services are available on the [API](deployr/deployr-api-reference.md#repository) and also through the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), which ships with DeployR.
+These services are available on the [API](deployr-api-reference.md#repository) and also through the Web-based [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md), which ships with DeployR.
 
 It is also simple for your application to request files be moved from the repository to your R sessions and from your R sessions back into the repository. Perhaps most importantly, any R script stored in the repository is automatically exposed as a live, executable Analytics Web service. This means your R scripts can be executed on request by your application just by referencing that script by name.
 
@@ -127,20 +127,20 @@ The fact that repository-managed R scripts are automatically exposed as live, ex
 
 *"How can you enforce access controls on this type of Web service?"*
 
-The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](deployr/deployr-api-reference.md#users) to a set of [access controls enforced on a file-by-file basis](deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
+The answer is simple. DeployR supports a broad set of access controls ranging from [user authentication and authorization](deployr-api-reference.md#users) to a set of [access controls enforced on a file-by-file basis](../deployr-repository-manager/deployr-repository-manager-files.md#about-file-properties) in the repository. The access control options available on repository files are:
 
 -   `Private`, allows access only to the file's owner.
 -   `Restricted`, allows access only to those users who were granted at least one of the associated roles
 -   `Shared`, allows access only to authenticated users
 -   `Public`, allows access to any authenticated or anonymous user
 
-These repository access controls can be manipulated directly by the file owner on the [API](deployr/deployr-api-reference.md) or by using the Web-based [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR.
+These repository access controls can be manipulated directly by the file owner on the [API](deployr-api-reference.md) or by using the Web-based [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md) that ships with DeployR.
 
 ## Developer Tools
 
 It's time to move from theory into practice. And for an application developer, that means writing code.
 
-The best place to begin is with the [RBroker Framework](deployr-rbroker-framework.md). This framework exposes a simple yet powerful integration model that requires only a little code in order to deliver significant analytics capabilities within your application.
+The best place to begin is with the [RBroker Framework](../deployr-rbroker-framework.md). This framework exposes a simple yet powerful integration model that requires only a little code in order to deliver significant analytics capabilities within your application.
 
 ### RBroker Framework
 
@@ -174,13 +174,13 @@ The framework handles all of the low-level details, including:
 -   Server-side task execution
 -   Asynchronous callbacks to your application on task completion
 
-If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api-specification).
+If you are a Java, JavaScript or .NET developer, start with the official [RBroker Framework tutorial](../deployr-rbroker-framework.md). It introduces everything you need to know to get up and running, including framework download links. If developing in another language, go directly [here](#api-specification).
 
 ### Client Library
 
 *What if the [RBroker Framework](#rbroker-framework) doesn't give me everything I need?*
 
-They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api-specification).
+They may be times when you need direct access to some of the lower-level services on DeployR, which are not exposed by the RBroker Framework. In such cases, if you are a Java, JavaScript or .NET developer, then you can work directly with the DeployR client libraries. Learn more in the official [Client Library tutorial](../deployr-client-library.md), which introduces everything you need to know to get up and running, including library download links. If developing in another language, go directly [here](#api-specification).
 
 ### API Specification
 
@@ -188,7 +188,7 @@ They may be times when you need direct access to some of the lower-level service
 
 Then, the answer is the [underlying technical specification](https://microsoft.github.io/deployr-api-docs/8.0.5/) for DeployR. That specification details every API call, associated call parameters, encodings, error handling, and more on the DeployR API.
 
-As long as your development environment can establish HTTP(S) connections and consumes JSON, then you can integrate directly with DeployR services using the public [API](deployr/deployr-api-reference.md).
+As long as your development environment can establish HTTP(S) connections and consumes JSON, then you can integrate directly with DeployR services using the public [API](deployr-api-reference.md).
 
 ## Tutorials
 
@@ -200,7 +200,7 @@ To run these tutorials, you will need access to a live instance of the DeployR s
 
 The following tutorials are available:
 
--   The [RBroker Framework Basics](https://github.com/Microsoft/java-example-rbroker-basics) code tutorial demonstrates the basic programming model and capabilities of the RBroker Framework. Each code example brings to life the ideas introduced by the basic [RBroker Tutorial](deployr-rbroker-framework.md).
+-   The [RBroker Framework Basics](https://github.com/Microsoft/java-example-rbroker-basics) code tutorial demonstrates the basic programming model and capabilities of the RBroker Framework. Each code example brings to life the ideas introduced by the basic [RBroker Tutorial](../deployr-rbroker-framework.md).
 
 -   The [RBroker Framework Data I/O](https://github.com/Microsoft/java-example-rbroker-data-io) code tutorial demonstrates how different types of data inputs and outputs can be sent to and retrieved from DeployR-managed R sessions when you execute tasks using the framework.
 
@@ -208,7 +208,7 @@ The following tutorials are available:
 
 The following tutorials are available:
 
--   The [Client Library Basics](https://github.com/Microsoft/java-example-client-basics) code tutorial demonstrates a wide range of basic functionalities available on the DeployR client library. Each code example brings to life the ideas introduced by the basic [Client Library Tutorial](deployr-client-library.md).
+-   The [Client Library Basics](https://github.com/Microsoft/java-example-client-basics) code tutorial demonstrates a wide range of basic functionalities available on the DeployR client library. Each code example brings to life the ideas introduced by the basic [Client Library Tutorial](../deployr-client-library.md).
 
 -   The [Client Library Data I/O](https://github.com/Microsoft/java-example-client-data-io) code tutorial demonstrates how different types of data inputs and outputs can be sent to and retrieved from DeployR-managed R sessions when you execute R scripts or code using the client library.
 
@@ -242,9 +242,9 @@ The sample application is a classic application in the analytics space, a realti
 
 ![Fraud Score Example Application](./media/deployr-application-developer-getting-started/fraud-score-example.png)
 
-Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
+Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](../../deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
-In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
+In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](../deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 
 The application design overview, source code in both Java and JavaScript, and the associated instructions needed to run the fraud score application can be found [on github](https://github.com/Microsoft/java-example-fraud-score). Check it out, and post any questions you have directly to the [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
@@ -253,17 +253,17 @@ The application design overview, source code in both Java and JavaScript, and th
 Use the table of contents to find all of the guides and documentation needed by Application Developers.
 
 **API Docs, Tools, and Samples**
--   [RBroker Framework and Client Library](deployr-tools-and-samples.md)
--   [API Reference Guide](deployr/deployr-api-reference.md)
+-   [RBroker Framework and Client Library](../deployr-tools-and-samples.md)
+-   [API Reference Guide](deployr-api-reference.md)
 
 **Other Getting Started Guides**
--   [Administrators](deployr/deployr-administrator-getting-started.md)
--   [Data Scientists](deployr-data-scientist-getting-started.md)
+-   [Administrators](deployr-administrator-getting-started.md)
+-   [Data Scientists](../deployr-data-scientist-getting-started.md)
 
 **Helper Tools**
 -   [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployr-cli)
--   [Repository Manager](deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
--   [API Interactive Explorer](deployr/deployr-api-explorer-tool.md), available on the DeployR landing page following an install.
+-   [Repository Manager](../deployr-repository-manager/deployr-repository-manager-about.md), available on the DeployR landing page following an install.
+-   [API Interactive Explorer](deployr-api-explorer-tool.md), available on the DeployR landing page following an install.
 
 **Support Channels**
 -   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

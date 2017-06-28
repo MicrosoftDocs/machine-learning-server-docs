@@ -133,7 +133,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Diagnostic Testing & Troubleshooting](deployr-admin-diagnostics-troubleshooting.md)
 
 **Other Getting Started Guides**
--   [Application Developers](../deployr-application-developer-getting-started.md)
+-   [Application Developers](deployr-application-developer-getting-started.md)
 -   [Data Scientists](../deployr-data-scientist-getting-started.md)
 
 **Support Channel**

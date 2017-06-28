@@ -30,7 +30,7 @@ ms.custom: ""
 
 >Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
 
-This guide for data scientists offers a high-level introduction to DeployR. It helps you understand, as a data scientist, how best to work with the product tools to deliver compelling R analytics solutions in collaboration with [application developers](deployr-application-developer-getting-started.md).
+This guide for data scientists offers a high-level introduction to DeployR. It helps you understand, as a data scientist, how best to work with the product tools to deliver compelling R analytics solutions in collaboration with [application developers](deployr/deployr-application-developer-getting-started.md).
 
 In a nutshell, DeployR makes your R analytics (R scripts, models, and data files) easily consumable by any application. The sections that follow explain the steps you'll take to prepare those analytics and make them available to those who need them. They are:
 
@@ -42,7 +42,7 @@ In a nutshell, DeployR makes your R analytics (R scripts, models, and data files
 
 ## Develop Analytics
 
-With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](deployr-application-developer-getting-started.md) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE).
+With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually [used by application developers](deployr/deployr-application-developer-getting-started.md) in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE).
 
 All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the `deployrUtils` R package to [make your R code portable](deployr-data-scientist-write-portable-r-code.md):
 
@@ -91,7 +91,7 @@ Testing remotely involves executing your R scripts in the DeployR server environ
 
     ![New Directory](./media/deployr-data-scientist-getting-started/newdir1.png)
 
-4.  [Upload](deployr-repository-manager/deployr-repository-manager-files.md#uploading-files) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](deployr-application-developer-getting-started.md#analytics-web-services) that, with the proper permissions, can be consumed by any application.
+4.  [Upload](deployr-repository-manager/deployr-repository-manager-files.md#uploading-files) your R scripts, models, and data files into that development directory. Those files are now [Analytics Web Services](deployr/deployr-application-developer-getting-started.md#analytics-web-services) that, with the proper permissions, can be consumed by any application.
 
     ![Upload](./media/deployr-data-scientist-getting-started/upload.png)
 
@@ -119,7 +119,7 @@ How you share and collaborate on these R analytics depends on whether you plan t
 
 ![Collaborate](./media/deployr-data-scientist-getting-started/collaborate.png)
 
-This document focuses on the roles and responsibilities of the data scientist. To learn more about the role of the application developer, read the [Getting Started](deployr-application-developer-getting-started.md) guide for application developers.
+This document focuses on the roles and responsibilities of the data scientist. To learn more about the role of the application developer, read the [Getting Started](deployr/deployr-application-developer-getting-started.md) guide for application developers.
 
 ### Guidance
 
@@ -207,7 +207,7 @@ Now the application developer(s) can review the files in the Repository Manager.
 <a name="Off-Server-Collaboration"></a>
 ### Off-Server Collaboration
 
-If [application developers](deployr-application-developer-getting-started.md) on your project do not have access to the same instance of DeployR as you, then you can share stable snapshots of your R analytics by:
+If [application developers](deployr/deployr-application-developer-getting-started.md) on your project do not have access to the same instance of DeployR as you, then you can share stable snapshots of your R analytics by:
 
 -   Sending the files directly to application developers via email, or
 -   Putting them on a secure shared resource such as shared NFS drive, OneDrive, or Dropbox.
@@ -228,7 +228,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 -   [How to Write Portable R Code with deployrUtils](deployr-data-scientist-write-portable-r-code.md) ~ `deployrUtils` package documentation
 -   [Repository Manager Help](deployr-repository-manager/deployr-repository-manager-about.md) ~ Online help for the DeployR Repository Manager.
 -   [About Throughput](deployr/deployr-admin-scale-and-throughput.md#about-throughput) ~ Learn how to optimize your throughput
--   [Getting Started For Application Developers](deployr-application-developer-getting-started.md)
+-   [Getting Started For Application Developers](deployr/deployr-application-developer-getting-started.md)
 -   [Getting Started For Administrators](deployr/deployr-administrator-getting-started.md)
 
 **Support Channel**
