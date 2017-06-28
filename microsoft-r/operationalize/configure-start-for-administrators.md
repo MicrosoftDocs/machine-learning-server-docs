@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
->To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services as well as to execute code remotely. For a general introduction to R Server for operationalization, read the [About](about.md) topic.
+>To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services as well as to execute code remotely. For a general introduction to R Server for operationalization, read the [About](../deployr-repository-manager/about.md) topic.
 
 This guide is for system administrators of the operationalization feature in R Server. If you are responsible for creating or maintaining an evaluation or a production deployment of the R Server with the operationalization feature, then this guide is for you.
 
@@ -74,7 +74,7 @@ In addition to authentication, you can add other enterprise security around Micr
 
 Additionally, we recommend that you review the following [Security Considerations](configure-r-execution-security.md).
 
-![Security](../media/o16n/security.png)
+![Security](./media/configure-start-for-administrators/security.png)
 
 
 ## R package policies
@@ -107,7 +107,7 @@ You can configure R Server to use multiple Web Nodes for Active-Active backup / 
 
 For data storage high availability, you can leverage the high availability capabilities found in enterprise grade databases (SQL Server or PostgreSQL). Learn how to use one of those databases, [here](configure-remote-database-to-operationalize.md).
 
-![High Availability](../media/o16n/admin-HA.png)
+![High Availability](./media/configure-start-for-administrators/admin-HA.png)
 
 
 <!--For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](../deployr/deployr-admin-configure-high-availability.md).-->
@@ -140,7 +140,7 @@ This section provides a quick summary of useful links for administrators working
 >Use the table of contents to find all of the guides and documentation needed by the administrator.
 
 **Key Documents**
--   [About Operationalization](about.md)
+-   [About Operationalization](../deployr-repository-manager/about.md)
 -   [Configuration](../install/operationalize-r-server-one-box-config.md)
 -   [R Package Management](configure-manage-r-packages.md)
 -   [Diagnostic Testing & Troubleshooting](configure-run-diagnostics.md)

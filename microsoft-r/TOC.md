@@ -116,8 +116,8 @@
 
 ### [Pretrained machine learning models](install/microsoftml-install-pretrained-models.md)
 
-### [Configure to operationalize analytics](operationalize/admin-get-started.md)
-#### [Get started for administrators](operationalize/admin-get-started.md)
+### [Configure to operationalize analytics](operationalize/configure-start-for-administrators.md)
+#### [Get started for administrators](operationalize/configure-start-for-administrators.md)
 #### [One-box configuration](install/operationalize-r-server-one-box-config.md)
 #### [Enterprise configuration](install/operationalize-r-server-enterprise-config.md)
 #### [Troubleshoot](operationalize/configure-run-diagnostics.md)

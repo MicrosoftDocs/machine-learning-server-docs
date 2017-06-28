@@ -34,7 +34,7 @@ Operationalization refers to the process of publishing R models and code to Micr
 
 Today, more businesses are adopting advanced analytics for mission critical decision making in areas such as fraud detection, healthcare, and manufacturing. Typically, data scientists first build the predictive models, and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
 
-Being able to operationalize your analytics is a central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is fully integrated into R Server. After installing R Server on select platforms, you'll have everything you need to [configure R Server to host R analytics web services and remote R sessions](admin-get-started.md).  For details on which platforms, see [Supported platforms](../install/r-server-install-supported-platforms.md).
+Being able to operationalize your analytics is a central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is fully integrated into R Server. After installing R Server on select platforms, you'll have everything you need to [configure R Server to host R analytics web services and remote R sessions](configure-start-for-administrators.md).  For details on which platforms, see [Supported platforms](../install/r-server-install-supported-platforms.md).
 
 In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics. Microsoft R Server provides the operationalizing tools to deploy R analytics inside web, desktop, mobile, and dashboard applications and backend systems. R Server turns your R scripts into analytics web services, so R code can be easily executed by applications running on a secure server.
 
@@ -51,12 +51,12 @@ Introducing Microsoft R Server, the deployment engine for your advanced R analyt
 
 ## What you get
 
-After you [configure R Server to operationalize](admin-get-started.md), you can: 
+After you [configure R Server to operationalize](configure-start-for-administrators.md), you can: 
 
 ||Key Features|
 |-|-|
 |![1](../media/o16n/about-1.png)|● Data scientists turn R analytics into Web services with one line of code<br>● Developers use Swagger-based [REST APIs](concept-api.md) that are [easy to consume](app-developer-get-started.md) <br>&nbsp; &nbsp; with any programming languages including R|
-|![2](../media/o16n/about-2.png)|● Model in one platform, then deploy and score web services in another platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](admin-get-started.md) <br>● Model on-premises, then score your data in the cloud, or vice versa <br>● With Microsoft R Server, it is easier/faster to use the power of R in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
+|![2](../media/o16n/about-2.png)|● Model in one platform, then deploy and score web services in another platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](configure-start-for-administrators.md) <br>● Model on-premises, then score your data in the cloud, or vice versa <br>● With Microsoft R Server, it is easier/faster to use the power of R in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
 |![3](../media/o16n/about-3.png)|● Perform fast scoring: realtime & batch <br>● Scale to a grid for powerful computing with load balancing<br>● Use [diagnostic](configure-run-diagnostics.md) and [capacity evaluation](configure-evaluate-capacity.md) tools|
 |![4](../media/o16n/about-4.png)|● Integrate with [enterprise authentication (AD/LDAP or Azure AD)](configure-authentication.md)<br>● Connect securely: [HTTPS with SSL/TLS 1.2](configure-https.md)<br>● Enterprise grade high availability|
 
@@ -68,7 +68,7 @@ Microsoft R Server offers the **best-in-class deployment** experience for the ad
 
 ![Personas](../media/o16n/about-personas.png)
 
-+ **Administrators** The [easy configuration](admin-get-started.md) of Microsoft R Server for operationalizing analytics includes enterprise grade security and reliability on many platforms. It scales for business-critical applications and offers support for production-grade workloads and high availability. [Diagnostic](configure-run-diagnostics.md) and [capacity evaluation](configure-evaluate-capacity.md) tools are provided to help you tune and manage. R Server's engine seamlessly integrates with popular enterprise security solutions such as [LDAP/Active Directory and Azure Active Directory](configure-authentication.md). Connections can also be secured [SSL/TLS 1.2](configure-https.md). 
++ **Administrators** The [easy configuration](configure-start-for-administrators.md) of Microsoft R Server for operationalizing analytics includes enterprise grade security and reliability on many platforms. It scales for business-critical applications and offers support for production-grade workloads and high availability. [Diagnostic](configure-run-diagnostics.md) and [capacity evaluation](configure-evaluate-capacity.md) tools are provided to help you tune and manage. R Server's engine seamlessly integrates with popular enterprise security solutions such as [LDAP/Active Directory and Azure Active Directory](configure-authentication.md). Connections can also be secured [SSL/TLS 1.2](configure-https.md). 
 
 + **Data Scientists** In a single line of code, data scientists can deploy  models or any arbitrary R code as analytic web services. 
 
@@ -82,7 +82,7 @@ Microsoft R Server offers the **best-in-class deployment** experience for the ad
 
 You can configure R Server to operationalize analytics [on a single machine](../install/operationalize-r-server-one-box-config.md#onebox) or [scale across multiple machines](../install/operationalize-r-server-enterprise-config.md) for business-critical applications with multiple nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are then transformed, analyzed, and visualized into an R analytics web service.
 
-In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing (session persistence not required). R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](admin-get-started.md#security). In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure.
+In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing (session persistence not required). R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](configure-start-for-administrators.md#security). In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure.
 
 The ability to use R Server to operationalize analytics is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported R Server platforms](../install/r-server-install-supported-platforms.md).
 
@@ -91,7 +91,7 @@ The ability to use R Server to operationalize analytics is available in many, bu
 Now that you know about R Server's capability to operationalize your analytics, explore these articles to learn more.
 
 + [What's new in R Server](../rserver-whats-new.md)
-+ [Administrator Get Started](admin-get-started.md)
++ [Administrator Get Started](configure-start-for-administrators.md)
 + [Data Scientist Get Started](concept-operationalize-deploy-consume.md)
 + [How to integrate web services and authentication into your application](app-developer-get-started.md)
 + [The differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).

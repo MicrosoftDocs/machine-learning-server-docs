@@ -190,7 +190,7 @@ An operationalized R server offers the ability to host and bundle R analytics in
 
 The operationalization feature can be configured [on a single machine](install/operationalize-r-server-one-box-config.md#onebox). It can also be [scaled](install/operationalize-r-server-enterprise-config.md) for business-critical applications with multiple web and compute nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are subsequently transformed, analyzed, and visualized into an R analytics web service.
 
-In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Operationalization with R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/admin-get-started.md#security).
+In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing. Operationalization with R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/configure-start-for-administrators.md#security).
 
 For feature information and next steps, see [Operationalization with R Server](operationalize/about.md) and [Configure operationalization on R Server](install/operationalize-r-server-one-box-config.md).
 

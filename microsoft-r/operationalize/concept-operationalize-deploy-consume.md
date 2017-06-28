@@ -99,7 +99,7 @@ This section provides a quick summary of useful links for data scientists operat
 
 **Other Getting Started Guides**
 + [How to integrate web services and authentication into your application](app-developer-get-started.md)
-+ [Administrators](admin-get-started.md)
++ [Administrators](configure-start-for-administrators.md)
 
 **Support Channel**
 + [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
