@@ -32,7 +32,7 @@ The DeployR Administration Console, which is delivered with DeployR, is an easy-
 
 -   The creation and management of [user accounts](../deployr-admin-console/deployr-admin-console-user-accounts.md)
 -   The creation and management of [roles](../deployr-admin-console/deployr-admin-console-permissions-with-roles.md), which are used to grant users permissions and to restrict access to R scripts
--   The import and export of [R scripts](../deployr-admin-console/deployr-admin-console-managing-r-scripts.md)
+-   The import and export of [R scripts](deployr-admin-console-managing-r-scripts.md)
 -   The creation and management of [R boundaries](../deployr-admin-console/deployr-admin-managing-r-boundaries.md), which are used to constrain runtime resource usage
 -   The creation and management of [IP filters](../deployr-admin-console/deployr-admin-managing-access-with-ip-filters.md)
 -   The backup and restore of [database contents](deployr-admin-console-database.md)
