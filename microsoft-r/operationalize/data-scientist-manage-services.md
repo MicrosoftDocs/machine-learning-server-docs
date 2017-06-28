@@ -688,7 +688,7 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
-+ [Get started guide for data scientists](data-scientist-get-started.md)
++ [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
 + [How to integrate web services and authentication into your application](app-developer-get-started.md)
 + [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)

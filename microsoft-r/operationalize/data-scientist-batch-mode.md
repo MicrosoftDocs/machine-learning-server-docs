@@ -48,7 +48,7 @@ Use these following [public API functions](#public-fx-batch)  to define, start, 
 
 Use this sample code to follow along with the workflow described in greater detail in the following sections. 
 
-Here, we publish the same web service that was published [in this tutorial](data-scientist-get-started.md) article. Then, we consume that web service asynchronously. 
+Here, we publish the same web service that was published [in this tutorial](concept-operationalize-deploy-consume.md) article. Then, we consume that web service asynchronously. 
 
 >[!IMPORTANT]
 >Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](mrsdeploy-connection.md).
@@ -516,7 +516,7 @@ for(i in seq(batchRes$totalItemCount)) {
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)
-+ [Get started guide for data scientists](data-scientist-get-started.md)
++ [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)
 + [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
 + [How to integrate web services and authentication into your application](../operationalize/app-developer-get-started.md)
