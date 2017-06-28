@@ -39,8 +39,8 @@ Teradata data source connection class.
  ## Generators 
 
  
-The targeted generator [RxTeradata](RxTeradata.md) as well as the general generator
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
+The targeted generator [RxTeradata](../../scaler/packagehelp/rxteradata.md) as well as the general generator
+[rxNewDataSource](rxnew.md).
  
  ## Extends 
 
@@ -64,8 +64,8 @@ Class RxDataSource, directly.
  
  ##See Also
  
-[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
-[RxTeradata](RxTeradata.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md)
+[RxDataSource-class](rxdatasource-class.md),
+[RxTeradata](../../scaler/packagehelp/rxteradata.md),
+[rxNewDataSource](rxnew.md)
    
  
