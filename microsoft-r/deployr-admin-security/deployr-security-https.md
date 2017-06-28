@@ -51,7 +51,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
 1. In your firewall, be sure to open the Tomcat HTTPS port (8051) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to open the port.
 
-1. If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](../deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8051.
+1. If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](../deployr/deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8051.
 
 1. Enable HTTPS in the DeployR administrator utility:
 
@@ -208,7 +208,7 @@ After configuring DeployR to use one of those databases, you must also configure
         
       1. Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 	 
-      1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
+      1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr/deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
 
    + For Windows:
 
@@ -249,7 +249,7 @@ After configuring DeployR to use one of those databases, you must also configure
 
      1. Be sure to open the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the iptables command (or equivalent command/tool) to open the port.
 
-     1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
+     1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr/deployr-admin-install-in-cloud.md), then you must also add endpoints for port 8001.
 
 3. **Then, enable SSL support for DeployR.**
 
@@ -359,7 +359,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
 1. In the firewall, be sure to close the Tomcat HTTPS port (8051) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
-1. If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](../deployr-admin-install-in-cloud.md), then you must also remove endpoints for port 8051.
+1. If you are provisioning your server on a cloud service such as [Azure or an AWS EC2 instance](../deployr/deployr-admin-install-in-cloud.md), then you must also remove endpoints for port 8051.
 
 1. Launch the DeployR administrator utility script with administrator privileges to disable HTTPS:
 
@@ -402,7 +402,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
      1. Be sure to close the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
-     1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), then you must also remove endpoints for port 8001.
+     1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr/deployr-admin-install-in-cloud.md), then you must also remove endpoints for port 8001.
 
      1. Disable the upgrade of all HTTP connections to HTTPS connections by **commenting out** the following code in the file `$DEPLOYR_HOME/tomcat/tomcat7/conf/web.xml`.
 
@@ -441,7 +441,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
 
     	1. Be sure to close the Tomcat HTTPS port (8001) to the outside on the DeployR server machine. If you are using the IPTABLES firewall or equivalent service for your server, use the `iptables` command (or equivalent command/tool) to close the port.
 
-        1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr-admin-install-in-cloud.md), then you must also remove endpoints for port 8001.
+        1. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](../deployr/deployr-admin-install-in-cloud.md), then you must also remove endpoints for port 8001.
 
     	1. Disable the upgrade of all HTTP connections to HTTPS connections by **commenting out** the following code in the file `C:\Program Files\Microsoft\DeployR-8.0\Apache_Tomcat\conf\web.xml`.
 

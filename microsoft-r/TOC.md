@@ -175,7 +175,7 @@
 ##### [Common Administrative Tasks](deployr-common-administration-tasks.md)
 ##### [Troubleshooting & Diagnostics](deployr/deployr-admin-diagnostics-troubleshooting.md)
 ##### [Scale & Throughput](deployr-admin-scale-and-throughput.md)
-##### [DeployR in the Cloud](deployr-admin-install-in-cloud.md)
+##### [DeployR in the Cloud](deployr/deployr-admin-install-in-cloud.md)
 ##### [Server & Grid High Availability](deployr/deployr-admin-configure-high-availability.md)
 ##### [Managing Big Data](deployr-admin-manage-big-data.md)
 ##### [Using Hadoop Impersonation & DeployR](deployr/deployr-admin-hadoop-impersonation.md)

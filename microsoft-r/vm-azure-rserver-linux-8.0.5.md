@@ -125,9 +125,9 @@ To configure the DeployR instance:
 
 1. [Set the DeployR administrator password](deployr-install-on-linux.md#postinstall).
 
-1. [Define the DeployR Web context](deployr-admin-install-in-cloud.md#enabling-deployr-on-azure).
+1. [Define the DeployR Web context](deployr/deployr-admin-install-in-cloud.md#enabling-deployr-on-azure).
 
-1. In the [Azure Portal](https://ms.portal.azure.com/), [open the appropriate ports on the VM](deployr-admin-install-in-cloud.md#configuring-azure-endpoints).
+1. In the [Azure Portal](https://ms.portal.azure.com/), [open the appropriate ports on the VM](deployr/deployr-admin-install-in-cloud.md#configuring-azure-endpoints).
 
 ## Access Data in an Azure Storage Account
 

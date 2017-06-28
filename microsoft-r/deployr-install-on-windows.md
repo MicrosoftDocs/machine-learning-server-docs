@@ -155,7 +155,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. [Optional] If you want to **use a SQL Server database** locally or remotely instead of the default local H2 database, configure that as [described here](#sqlserver).
 
-1. [Optional] If you need to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
+1. [Optional] If you need to **provision DeployR on Azure or AWS** as described in [these steps](deployr/deployr-admin-install-in-cloud.md).
 
 1. To **make DeployR accessible to remote users**, [update the inbound firewall rules](#updating-your-firewall). 
 
@@ -209,7 +209,7 @@ If any of the following cases exist, update your firewall manually:
 
 -   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
->If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
+>If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr/deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
 >[You can change any DeployR ports](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport).                               
 
 ### Configuring Public Access
@@ -229,7 +229,7 @@ To fix this issue, you must define the appropriate external server IP address an
 
 3.  From the sub-menu, enter `A` to specify a different IP or fully qualified domain name (FQDN).
 
-4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
+4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr/deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
 
 5.  Confirm the new value. Note that the IP autodetection will be turned off when you update the IP/FQDN.
 

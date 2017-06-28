@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Enabling DeployR on the Cloud
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 You can set up DeployR on **Microsoft Azure** or **AWS**. For each instance, be sure to:
 1. Set the server Web context to an external, public IP address and disable IP autodetection.
@@ -39,7 +39,7 @@ You can set up DeployR on **Microsoft Azure** or **AWS**. For each instance, be 
 
 1. Have the minimum required disk space (or more) for the installation of DeployR. Refer to the installation guide for your DeployR version and operating system. 
 
->We highly recommended that you also [enable HTTPS support](deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
+>We highly recommended that you also [enable HTTPS support](../deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
 
 ## Enabling DeployR on Azure
 
@@ -61,7 +61,7 @@ You must update the server Web context or else you will not be able to access to
 
 1. Log into the Azure portal and take note of the **Public IP address**.
 
-   ![Public IP Address in Azure Portal](./media/deployr-admin-configure-for-azure/azure-public-ip.png)
+   ![Public IP Address in Azure Portal](./media/deployr-admin-install-in-cloud/azure-public-ip.png)
    
 1. If DeployR was installed on a virtual machine, remote desktop or SSH into that machine.
 
@@ -111,7 +111,7 @@ You must update the server Web context or else you will not be able to access to
     
      1. Open a Command Window with **“Run as Administrator”**.
     
-     1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+     1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
         ```
         cd $DEPLOYR_HOME\deployr\tools\
         setWebContext -ip <ip_address>  -disableauto
@@ -126,7 +126,7 @@ You must update the server Web context or else you will not be able to access to
     
    + On Linux:
     
-     1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+     1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
         ```
         cd $DEPLOYR_HOME/deployr/tools/
         ./setWebContext.sh -ip <ip_address>
@@ -139,14 +139,14 @@ You must update the server Web context or else you will not be able to access to
         ./setWebContext.sh -disableauto
         ```
 
-   >For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+   >For this change to take effect [restart the DeployR 8.0.0 service](../deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
->We highly recommended that you also [enable HTTPS support](deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
+>We highly recommended that you also [enable HTTPS support](../deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
 
 <br>
 ### Configuring Azure Endpoints
 
-When provisioning your DeployR server on Azure, you must open Azure endpoints for several [DeployR ports](deployr-installing-configuring.md#updating-your-firewall). 
+When provisioning your DeployR server on Azure, you must open Azure endpoints for several [DeployR ports](../deployr-installing-configuring.md#updating-your-firewall). 
 
 If custom ports were defined during installation, enable those instead.
 
@@ -165,7 +165,7 @@ _Table: Default Ports by Version_
 
 2.  Click the **Resource Group** name.
 
-    ![Rules](./media/deployr-admin-configure-for-azure/azure-resource-group.png)
+    ![Rules](./media/deployr-admin-install-in-cloud/azure-resource-group.png)
 
 3.  In the table in the **Resource Group** page, click the **Network Security Group**.
 
@@ -181,7 +181,7 @@ _Table: Default Ports by Version_
 
 3.  Set the **Source Port Range** to the `*` character.
 
-    ![Rules](./media/deployr-admin-configure-for-azure/azure-source-port-range.png)
+    ![Rules](./media/deployr-admin-install-in-cloud/azure-source-port-range.png)
 
 4.  Enter the port number to the **Destination port range** for the DeployR HTTP port, HTTPS port, and event console port.
     > See the bullets at the beginning of this section for these default ports for your version of DeployR.
@@ -189,7 +189,7 @@ _Table: Default Ports by Version_
 5.  Click **OK** to save your changes.
 
 6.  Repeat step 6 to add inbound rules for the other DeployR ports.
-    ![Rules](./media/deployr-admin-configure-for-azure/azure-inbound-rules.png)
+    ![Rules](./media/deployr-admin-install-in-cloud/azure-inbound-rules.png)
 
 >Don't forget to update the firewall as [described below](#updating-the-firewall).
 
@@ -262,7 +262,7 @@ You must update the server Web context or else you will not be able to access to
                 setWebContext -aws
                 ```
                 
-            1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+            1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
                 ```
                 setWebContext -ip <ip_address> 
                 ```
@@ -282,7 +282,7 @@ You must update the server Web context or else you will not be able to access to
                 setWebContext -aws
                 ```
                 
-            1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+            1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
                 ```
                ./setWebContext.sh -ip <ip_address>
                 ```
@@ -294,7 +294,7 @@ You must update the server Web context or else you will not be able to access to
                 ./setWebContext.sh -disableauto
                 ```
                 
-         >For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+         >For this change to take effect [restart the DeployR 8.0.0 service](../deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 ### Configuring Ports for AWS
 
@@ -317,7 +317,7 @@ _Table: Default Ports by Version_
 
 Updating your firewall is the last step. 
 
->We highly recommended that you also [enable HTTPS support](deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
+>We highly recommended that you also [enable HTTPS support](../deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
 
 **To update your firewall on Linux:**
 

@@ -214,7 +214,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
 
-1. If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
+1. If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr/deployr-admin-install-in-cloud.md).
 
 1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
@@ -254,7 +254,7 @@ If any of the following cases exist, update your firewall manually:
 
 -   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
-> If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
+> If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr/deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
 >[You can change any DeployR ports](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
 <a name="configuring-public-access"></a>
 ### Configure Public Access
@@ -274,7 +274,7 @@ To fix this issue, you must define the appropriate external server IP address an
 
 3.  From the sub-menu, enter `A` to specify a different IP or fully qualified domain name (FQDN).
 
-4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
+4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr/deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
 
 5.  Confirm the new value. Note that the IP autodetection will be turned off when you update the IP/FQDN.
 
