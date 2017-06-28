@@ -159,7 +159,7 @@
 ##### [About DeployR 8.x](deployr/deployr-about.md)
 ##### [Getting Started for Application Developers](deployr/deployr-application-developer-getting-started.md)
 ##### [Getting Started for Administrators](deployr/deployr-administrator-getting-started.md)
-##### [Getting Started for Data Scientists](deployr-data-scientist-getting-started.md)
+##### [Getting Started for Data Scientists](deployr/deployr-data-scientist-getting-started.md)
 #### [Administration & Configuration](deployr/deployr-administrator-getting-started.md)
 ##### [Administration Console Help](deployr/deployr-admin-console-about.md)
 ##### [About DeployR Administration Console](deployr/deployr-admin-console-about.md)

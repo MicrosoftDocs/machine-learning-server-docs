@@ -234,7 +234,7 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
->6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
+>6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
 
 <a name="grid-node-install"></a>
 ### Grid Node Install for Windows
@@ -492,7 +492,7 @@ After installing [these prerequisites](#lindependencies), install DeployR Open a
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
->6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
+>6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
 
 <a name="grid-node-install-for-Linux"></a>
 ### Grid Node Install for Linux
@@ -619,7 +619,7 @@ Install DeployR as follows:
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >5.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
->6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
+>6.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
 
 ## Installing on Mac OS X
 
@@ -714,7 +714,7 @@ After installing [these prerequisites](#preparing-osx), install DeployR Open as 
 >2.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >3.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >4.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
->5.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
+>5.  Review the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) to get up and running quickly. Also available are the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide.
 
 ## Upgrading DeployR
 

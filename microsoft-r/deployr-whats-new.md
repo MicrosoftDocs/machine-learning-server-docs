@@ -68,7 +68,7 @@ The following list highlights the major changes and improvements to DeployR 7.4.
 -   DeployR Open now supports R 3.2.x and RRO 3.2.x.
 -   DeployR is now Java 8 compatible.
 -   Windows 10 is now an experimental platform for DeployR Open.
--   New [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) guide walks data scientists through their role and resources
+-   New [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) guide walks data scientists through their role and resources
 -   New [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guide walks application developers through their role and resources
 -   New [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) guide walks DeployR admins through their role and resources
 -   New [Writing Portable R Code](deployr-data-scientist-write-portable-r-code.md) guide was added for data scientists.

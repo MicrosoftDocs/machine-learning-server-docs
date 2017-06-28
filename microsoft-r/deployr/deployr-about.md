@@ -96,7 +96,7 @@ With DeployR, the recommended steps for a data scientist are both simple and fam
 1. Test those analytics inside and outside of DeployR
 1. Collaborate with application developers to deliver powerful R analytic solutions
 
-Learn more in the [Getting Started Guide Data Scientists](../deployr-data-scientist-getting-started.md).
+Learn more in the [Getting Started Guide Data Scientists](deployr-data-scientist-getting-started.md).
 
 ### Application Developers
 

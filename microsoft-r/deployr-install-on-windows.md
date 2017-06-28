@@ -171,7 +171,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. **Create accounts for your users** in the [Administration Console](./deployr-admin-console/deployr-admin-console-user-accounts.md). Then, provide each user with their username and password as well as the address of the DeployR landing page.
 
-1. **Learn more**. Read the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) guide. You can also read and share the [Data Scientist Getting Started](deployr-data-scientist-getting-started.md) and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guides.    
+1. **Learn more**. Read the [Administrator Getting Started](deployr/deployr-administrator-getting-started.md) guide. You can also read and share the [Data Scientist Getting Started](deployr/deployr-data-scientist-getting-started.md) and the [Application Developer Getting Started](deployr/deployr-application-developer-getting-started.md) guides.    
 
 <br>
 

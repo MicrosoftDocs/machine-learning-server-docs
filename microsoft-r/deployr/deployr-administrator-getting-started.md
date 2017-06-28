@@ -58,7 +58,7 @@ The full set of DeployR security features available to you as a system administr
 
 The primary function of the DeployR server is to support the execution of R code on behalf of client applications. One of your key objectives as a DeployR administrator is to ensure a reliable, consistent execution environment for that code.
 
-The R code developed and deployed by [data scientists](../deployr-data-scientist-getting-started.md) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](http://cran.r-project.org/), [MRAN](http://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
+The R code developed and deployed by [data scientists](deployr-data-scientist-getting-started.md) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](http://cran.r-project.org/), [MRAN](http://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
 
 Making sure that these R package dependencies are available to the code executing on the DeployR server requires active participation from you, the administrator. There are two R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](deployr-admin-r-package-management.md).
 
@@ -134,7 +134,7 @@ This section provides a quick summary of useful links for administrators working
 
 **Other Getting Started Guides**
 -   [Application Developers](deployr-application-developer-getting-started.md)
--   [Data Scientists](../deployr-data-scientist-getting-started.md)
+-   [Data Scientists](deployr-data-scientist-getting-started.md)
 
 **Support Channel**
 -   [Microsoft R Server (and DeployR) Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

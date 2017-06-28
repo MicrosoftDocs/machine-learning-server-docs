@@ -50,7 +50,7 @@ In fact, DeployR makes it simple for **any application** developed in **any lang
 
 DeployR offers these features and many more through a set of [Analytics Web Services](#analytics-web-services). These Web service interfaces isolate the application developer and the application itself from R code, from the underlying R sessions, and in fact from all the complexities typically associated with R integration.
 
-As an application developer, you typically leave R coding and model building to the [data scientists](../deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://mran.microsoft.com/documents/getting-started/) directly within your applications.
+As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://mran.microsoft.com/documents/getting-started/) directly within your applications.
 
 The sections that follow explain [Analytics Web Services](#analytics-web-services) in greater detail and also introduce the set of [developer tools](#developer-tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#real-world-example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
 
@@ -244,7 +244,7 @@ The sample application is a classic application in the analytics space, a realti
 
 Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](../../deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
-In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](../deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
+In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 
 The application design overview, source code in both Java and JavaScript, and the associated instructions needed to run the fraud score application can be found [on github](https://github.com/Microsoft/java-example-fraud-score). Check it out, and post any questions you have directly to the [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
@@ -258,7 +258,7 @@ Use the table of contents to find all of the guides and documentation needed by 
 
 **Other Getting Started Guides**
 -   [Administrators](deployr-administrator-getting-started.md)
--   [Data Scientists](../deployr-data-scientist-getting-started.md)
+-   [Data Scientists](deployr-data-scientist-getting-started.md)
 
 **Helper Tools**
 -   [DeployR Command Line Tool (CLI)](https://github.com/Microsoft/deployr-cli)
