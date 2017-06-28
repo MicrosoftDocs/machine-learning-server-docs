@@ -33,7 +33,7 @@ ms.custom: ""
  
  ##Description
  
-Creates a list containing the function name and arguments to train a FastForest model with [rxEnsemble](rxEnsemble.md).
+Creates a list containing the function name and arguments to train a FastForest model with [rxEnsemble](../../microsoftml/packagehelp/rxensemble.md).
  
  
  ##Usage
