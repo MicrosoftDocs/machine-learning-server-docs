@@ -38,7 +38,7 @@ DeployR introduced a type of secure, temporary project called a *blackbox projec
 
 If the owner of a project wants to grant read-only access to that project to other authenticated users, then the owner can set the access level for the project to `Shared`. You can change the access level on a project using the `/r/project/about/update` API call.
 
->Anonymous users are not permitted access to projects. For more information, refer to the [API Reference Help](../deployr/deployr-api-reference.md).
+>Anonymous users are not permitted access to projects. For more information, refer to the [API Reference Help](deployr-api-reference.md).
 
 ## Repository File Access Controls
 
@@ -56,7 +56,7 @@ If the owner of a repository-managed file wants to grant read-only access to tha
 
 + `Public` - the file is visible to all authenticated and all anonymous users when the published property is true.
 
-You can change the access level on a repository-managed file using the `/r/repository/file/update` [API call](../deployr/deployr-api-reference.md#repository-on-the-api) or using the [Repository Manager](../deployr/deployr-repository-manager-files.md#about-file-properties).
+You can change the access level on a repository-managed file using the `/r/repository/file/update` [API call](deployr-api-reference.md#repository-on-the-api) or using the [Repository Manager](deployr-repository-manager-files.md#about-file-properties).
 
 ## Repository File Download Controls
 
@@ -107,7 +107,7 @@ Repository-managed R scripts can be exposed as an executable on the API. Since r
 
 However, repository-managed R scripts deserve special mention since scripts can be managed through the Administration Console interface. Additionally, when you work with the R scripts in the Administration Console, you will likely also use and work with roles so as to impose restricted access to your R scripts.
 
->For information on how to use roles as a means to restrict access to individual R scripts, refer to the [Administration Console Help](../deployr/deployr-admin-managing-server-policies.md#server-policy-properties).
+>For information on how to use roles as a means to restrict access to individual R scripts, refer to the [Administration Console Help](deployr-admin-managing-server-policies.md#server-policy-properties).
 
 ## Repository Script Download Controls
 

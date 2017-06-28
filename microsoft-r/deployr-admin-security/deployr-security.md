@@ -41,7 +41,7 @@ The following security topics detail how to work with these configuration proper
 + [Authorization and Authentication](../deployr/deployr-security-authentication.md)
 + [HTTPS and SSL Support](../deployr/deployr-security-https.md)
 + [Server Access Policies](deployr-security-server-access.md)
-+ [Project and Repository File Access Controls](deployr-security-project-access.md)
++ [Project and Repository File Access Controls](../deployr/deployr-security-project-access.md)
 + [Password Policies](../deployr/deployr-security-passwords.md)
 + [Account Locking Policies](../deployr/deployr-security-account-locking.md)
 + [RServe Execution Context](deployr-security-rserve-execution-context.md)
