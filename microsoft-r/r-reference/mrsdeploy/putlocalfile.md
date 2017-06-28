@@ -66,11 +66,11 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[getRemoteFile](../../r-reference/mrsdeploy/getremotefile.md)
+[getRemoteFile](getremotefile.md)
 
-[deleteRemoteFile](../../r-reference/mrsdeploy/deleteremotefile.md)
+[deleteRemoteFile](deleteremotefile.md)
 
-[listRemoteFiles](../../r-reference/mrsdeploy/listremotefiles.md)
+[listRemoteFiles](listremotefiles.md)
    
  ##Examples
 
