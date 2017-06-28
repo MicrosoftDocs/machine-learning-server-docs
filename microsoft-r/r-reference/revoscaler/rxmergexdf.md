@@ -2,7 +2,7 @@
  
 # required metadata 
 title: " Merge two data sources " 
-description: " Merge (join) two data sources on one or more match variables. In local compute context, the data sources may be sorted .xdf files or data frames. In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md). " 
+description: " Merge (join) two data sources on one or more match variables. In local compute context, the data sources may be sorted .xdf files or data frames. In [RxSpark](../../scaler/packagehelp/rxspark.md) compute context, the data sources may be [RxParquetData](../../scaler/packagehelp/rxsparkdata.md), [RxHiveData](../../scaler/packagehelp/rxsparkdata.md), [RxOrcData](../../scaler/packagehelp/rxsparkdata.md), [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) or [RxTextData](../../scaler/packagehelp/rxtextdata.md). " 
 keywords: "RevoScaleR, rxMerge, rxMergeXdf, file" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -34,7 +34,7 @@ ms.custom: ""
  
 Merge (join) two data sources on one or more match variables.
 In local compute context, the data sources may be sorted .xdf files or data frames.
-In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md).
+In [RxSpark](../../scaler/packagehelp/rxspark.md) compute context, the data sources may be [RxParquetData](../../scaler/packagehelp/rxsparkdata.md), [RxHiveData](../../scaler/packagehelp/rxsparkdata.md), [RxOrcData](../../scaler/packagehelp/rxsparkdata.md), [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) or [RxTextData](../../scaler/packagehelp/rxtextdata.md).
  
  
  ##Usage
@@ -66,54 +66,54 @@ In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData
    
     
  ### `inData1`
-  the first data set to merge.  In local compute context, a data frame, a character string denoting the path to an  existing .xdf file, or an [RxXdfData](RxXdfData.md) object. If a list of [RxXdfData](RxXdfData.md) objects is provided, they will be merged sequentially. In [RxSpark](RxSpark.md) compute context, an [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md) data source. If a list of data source objects is provided, they will be merged sequentially.  
+  the first data set to merge.  In local compute context, a data frame, a character string denoting the path to an  existing .xdf file, or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object. If a list of [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) objects is provided, they will be merged sequentially. In [RxSpark](../../scaler/packagehelp/rxspark.md) compute context, an [RxParquetData](../../scaler/packagehelp/rxsparkdata.md), [RxHiveData](../../scaler/packagehelp/rxsparkdata.md), [RxOrcData](../../scaler/packagehelp/rxsparkdata.md), [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) or [RxTextData](../../scaler/packagehelp/rxtextdata.md) data source. If a list of data source objects is provided, they will be merged sequentially.  
   
   
     
  ### `inFile1`
-  the first data set to merge; either a character string denoting the path to an  existing .xdf file or an [RxXdfData](RxXdfData.md) object.   
+  the first data set to merge; either a character string denoting the path to an  existing .xdf file or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.   
   
   
      
  ### `inData2`
-  the second data set to merge. In local compute context, a data frame, a character string denoting the path  to an existing .xdf file, or an [RxXdfData](RxXdfData.md) object. Can be `NULL` if a list of [RxXdfData](RxXdfData.md) objects is provided for `inData1`. In [RxSpark](RxSpark.md) compute context, an [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md) data source. Can be `NULL` if a list of data source objects is provided for `inData1`.  
+  the second data set to merge. In local compute context, a data frame, a character string denoting the path  to an existing .xdf file, or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object. Can be `NULL` if a list of [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) objects is provided for `inData1`. In [RxSpark](../../scaler/packagehelp/rxspark.md) compute context, an [RxParquetData](../../scaler/packagehelp/rxsparkdata.md), [RxHiveData](../../scaler/packagehelp/rxsparkdata.md), [RxOrcData](../../scaler/packagehelp/rxsparkdata.md), [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) or [RxTextData](../../scaler/packagehelp/rxtextdata.md) data source. Can be `NULL` if a list of data source objects is provided for `inData1`.  
   
   
      
  ### `inFile2`
-  the second data set to merge; either a character string denoting the path  to an existing .xdf file or an [RxXdfData](RxXdfData.md) object.  
+  the second data set to merge; either a character string denoting the path  to an existing .xdf file or an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.  
   
   
     
  ### `outFile`
-  in local compute context, an .xdf path to store the merged output. If the `outFile` already exists, `overwrite` must be set to `TRUE` to overwrite the file. If `NULL`, a data frame containing the merged data will be returned. In [RxSpark](RxSpark.md) compute context, an [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md) or [RxXdfData](RxXdfData.md) data source.  
+  in local compute context, an .xdf path to store the merged output. If the `outFile` already exists, `overwrite` must be set to `TRUE` to overwrite the file. If `NULL`, a data frame containing the merged data will be returned. In [RxSpark](../../scaler/packagehelp/rxspark.md) compute context, an [RxParquetData](../../scaler/packagehelp/rxsparkdata.md), [RxHiveData](../../scaler/packagehelp/rxsparkdata.md), [RxOrcData](../../scaler/packagehelp/rxsparkdata.md) or [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) data source.  
   
   
     
  ### `matchVars`
-  character vector containing the names of the variables to match for merging. In local compute context, the data sets MUST BE presorted in the same order by these variables, unless `autoSort` is set to `TRUE`. See [rxSort](rxSortXdf.md).  Not required for `type` equal to `"union"` or `"oneToOne"`.  
+  character vector containing the names of the variables to match for merging. In local compute context, the data sets MUST BE presorted in the same order by these variables, unless `autoSort` is set to `TRUE`. See [rxSort](../../scaler/packagehelp/rxsortxdf.md).  Not required for `type` equal to `"union"` or `"oneToOne"`.  
   
   
     
  ### `type`
   a character string defining the merge method to use:   
 *   `"inner"` compares each row of `inData1` with each row of `inData2` to  find all pairs of rows in which the values of the `matchVars` are the same. 
-*   `"oneToOne"` appends columns from `inData1` to `inData2`. Not supported in [RxSpark](RxSpark.md) compute context. 
+*   `"oneToOne"` appends columns from `inData1` to `inData2`. Not supported in [RxSpark](../../scaler/packagehelp/rxspark.md) compute context. 
 *   `"left"` includes all rows that match (as in `"inner"`) plus rows from `inData1` that no not have matches.  `NA`'s will be used for the values for variables from `inData2` that are not matched. 
 *   `"right"` includes all rows that match (as in `"inner"`) plus rows from `inData2` that no not have matches.  `NA`'s will be used for the values for variables from `inData1` that are not matched. 
 *   `"full"` is a combination of both `"left"` and `"right"` merge. 
-*   `"union"` append rows from `inData2` to `inData1`. Not supported in [RxSpark](RxSpark.md) compute context. The two input files must have the same number of columns with the same data types. 
+*   `"union"` append rows from `inData2` to `inData1`. Not supported in [RxSpark](../../scaler/packagehelp/rxspark.md) compute context. The two input files must have the same number of columns with the same data types. 
   
   
   
     
  ### `missingsLow`
-  a logical scalar for controlling the treatment of missing values. If `TRUE`, missing values  in the data are treated as the lowest value; if `FALSE`, they are treated as the highest value. Not supported in [RxSpark](RxSpark.md) compute context.  
+  a logical scalar for controlling the treatment of missing values. If `TRUE`, missing values  in the data are treated as the lowest value; if `FALSE`, they are treated as the highest value. Not supported in [RxSpark](../../scaler/packagehelp/rxspark.md) compute context.  
   
   
     
  ### `autoSort`
-  a logical scalar for controlling whether or not to sort the input data sets by the `matchVars` before merging.  If `TRUE`, the data sets are sorted before merging; if `FALSE`,  it is assumed that the data sets are already sorted by the `matchVars`. Not supported in [RxSpark](RxSpark.md) compute context.  
+  a logical scalar for controlling whether or not to sort the input data sets by the `matchVars` before merging.  If `TRUE`, the data sets are sorted before merging; if `FALSE`,  it is assumed that the data sets are already sorted by the `matchVars`. Not supported in [RxSpark](../../scaler/packagehelp/rxspark.md) compute context.  
   
   
     
@@ -154,7 +154,7 @@ In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData
   
     
  ### `rowsPerOutputBlock`
-  an integer specifying how many rows should be written out to each block in the output .xdf file.  If set to -1, the smaller of the two average block sizes of the input data sets will be used. Ignored if `outData` is `NULL`. Not supported in [RxSpark](RxSpark.md) compute context.  
+  an integer specifying how many rows should be written out to each block in the output .xdf file.  If set to -1, the smaller of the two average block sizes of the input data sets will be used. Ignored if `outData` is `NULL`. Not supported in [RxSpark](../../scaler/packagehelp/rxspark.md) compute context.  
   
   
     
@@ -169,12 +169,12 @@ In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData
   
   
  ### `maxRowsByCols`
- the maximum size of a data frame that will be returned if `outFile` is set to `NULL` and `inData` is an .xdf file , measured by the number of rows times the number of columns. If the number of rows times the number of columns being created from the .xdf file exceeds this, a warning will be reported and the number of rows in the returned data frame will be truncated. If `maxRowsByCols` is set to be too large, you may experience problems  from loading a huge data frame into memory. Not supported in [RxSpark](RxSpark.md) compute context. 
+ the maximum size of a data frame that will be returned if `outFile` is set to `NULL` and `inData` is an .xdf file , measured by the number of rows times the number of columns. If the number of rows times the number of columns being created from the .xdf file exceeds this, a warning will be reported and the number of rows in the returned data frame will be truncated. If `maxRowsByCols` is set to be too large, you may experience problems  from loading a huge data frame into memory. Not supported in [RxSpark](../../scaler/packagehelp/rxspark.md) compute context. 
   
   
     
  ### `bufferLimit`
- integer specifiying the maximum size of the memory buffer (in Mb)  to use in merging. The default value of `bufferLimit = -1` will attempt to  determine an appropriate buffer limit based on system memory. Not supported in [RxSpark](RxSpark.md) compute context. 
+ integer specifiying the maximum size of the memory buffer (in Mb)  to use in merging. The default value of `bufferLimit = -1` will attempt to  determine an appropriate buffer limit based on system memory. Not supported in [RxSpark](../../scaler/packagehelp/rxspark.md) compute context. 
   
   
     
@@ -184,7 +184,7 @@ In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData
 *   `1`: the number of processed rows is printed and updated. 
 *   `2`: rows processed and timings are reported. 
 *   `3`: rows processed and all timings are reported. 
- Not supported in [RxSpark](RxSpark.md) compute context.  
+ Not supported in [RxSpark](../../scaler/packagehelp/rxspark.md) compute context.  
    
   
     
