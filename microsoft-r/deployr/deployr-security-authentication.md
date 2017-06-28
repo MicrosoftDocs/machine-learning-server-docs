@@ -44,7 +44,7 @@ When DeployR processes a user login, there are two key steps involved:
 
 DeployR access privileges are determined by the roles assigned to a user. In the case of basic authentication, an administrator simply assigns roles to a user within the DeployR Administration Console.
 
->**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](../deployr/deployr-admin-console-about.md).
+>**Learn More!** For information on how to manage user accounts as well as how to use roles as a means to assign access privileges to a user or to restrict access to individual R scripts, refer to the [Administration Console Help](deployr-admin-console-about.md).
 
 When you integrate with an external enterprise security solution, you want access privileges to be inherited from the external system. This is achieved with simple mappings in the DeployR configuration properties, which link external groups to internal roles.
 
@@ -63,7 +63,7 @@ If you enable [Active Directory Services](#active-directory-authentication) or [
 
 By default, the **LDAP** security provider is disabled. To enable LDAP authentication support, you must update the relevant properties in your DeployR external configuration file. The values you assign to these properties should match the configuration of your LDAP Directory Information Tree (DIT).
 
-The standard protocol for reading data from and writing data to Active Directory (AD) domain controllers (DCs) is LDAP. AD LDAP traffic is unsecured by default, which makes it possible to use network-monitoring software to view the LDAP traffic between clients and DCs. You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a DC. [Learn more about enabling SSL/TLS for DeployR.](deployr-security-https.md)
+The standard protocol for reading data from and writing data to Active Directory (AD) domain controllers (DCs) is LDAP. AD LDAP traffic is unsecured by default, which makes it possible to use network-monitoring software to view the LDAP traffic between clients and DCs. You can make LDAP traffic confidential and secure using Secure Sockets Layer (SSL) / Transport Layer Security (TLS) technology. This combination is referred to as LDAP over SSL (or LDAP-S). To ensure that no one else can read the traffic, SSL/TLS establishes an encrypted tunnel between an LDAP client and a DC. [Learn more about enabling SSL/TLS for DeployR.](../deployr-admin-security/deployr-security-https.md)
 
 Reasons for enabling LDAP-S include:
 + Organizational security policies typically require that all client/server communication is encrypted.
@@ -330,7 +330,7 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 
 **Step 2: Apply Configuration Changes to DeployR Server System Files**
 
-1.  Before making any configuration changes to the server system files, [stop the DeployR server](../deployr/deployr-common-administration-tasks.md#startstop).
+1.  Before making any configuration changes to the server system files, [stop the DeployR server](deployr-common-administration-tasks.md#startstop).
 
 1. Grant `root` permissions to launch the Tomcat server. This is required so the DeployR server can avail of PAM authentication services.
 
@@ -364,7 +364,7 @@ deployr.security.pam.default.role = 'ROLE_BASIC_USER'
 
     1. Save this change and close the file in your editor.
 
-1. [Restart the server](../deployr/deployr-common-administration-tasks.md#startstop).
+1. [Restart the server](deployr-common-administration-tasks.md#startstop).
 
 
 >If you have enabled PAM authentication as part of the required steps for enabling R Session Process Controls, then please continue with your configuration using [these steps](#r-session-process-controls).
@@ -377,7 +377,7 @@ By default, the **CA Single Sign-On** (formerly known as SiteMinder) security pr
 
 **To enable CA Single Sign-On support:**
 
-1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](../deployr/deployr-admin-configure-ca-sso.md).
+1.  Define or update your CA Single Sign-On Policy Server configuration. For details on how to do this, [read here](deployr-admin-configure-ca-sso.md).
 
 2.  Update the relevant properties in your DeployR external configuration file.
     This step assumes that:
