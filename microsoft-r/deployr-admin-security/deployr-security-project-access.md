@@ -107,7 +107,7 @@ Repository-managed R scripts can be exposed as an executable on the API. Since r
 
 However, repository-managed R scripts deserve special mention since scripts can be managed through the Administration Console interface. Additionally, when you work with the R scripts in the Administration Console, you will likely also use and work with roles so as to impose restricted access to your R scripts.
 
->For information on how to use roles as a means to restrict access to individual R scripts, refer to the [Administration Console Help](../deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties).
+>For information on how to use roles as a means to restrict access to individual R scripts, refer to the [Administration Console Help](../deployr/deployr-admin-managing-server-policies.md#server-policy-properties).
 
 ## Repository Script Download Controls
 

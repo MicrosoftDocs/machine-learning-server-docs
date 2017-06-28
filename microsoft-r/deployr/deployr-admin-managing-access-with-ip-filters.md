@@ -28,7 +28,7 @@ ms.custom: ""
 
 Access to most DeployR services requires that the user be authenticated and have the proper permissions, which are determined by the system role(s) granted to that user. Access can be further restricted with an IP filter, which are managed in the **IP Filters** tab in this console.
 
-Once you create an IP filter, you can specify and assign the filter to authenticated, asynchronous, and anonymous grid operation modes in the [Server Policies](../deployr-admin-console/deployr-admin-managing-server-policies.md) page.
+Once you create an IP filter, you can specify and assign the filter to authenticated, asynchronous, and anonymous grid operation modes in the [Server Policies](deployr-admin-managing-server-policies.md) page.
 
 _Figure: IP Filter list_
 
@@ -76,7 +76,7 @@ _Figure: IP Filter list_
 
 ## Applying Filters
 
-You can apply a filter to a specific [node operating type](../deployr-admin-console/deployr-admin-managing-the-grid.md#node-operation-types) in the [**Server Policies**](../deployr-admin-console/deployr-admin-managing-server-policies.md) tab in this console so that all nodes designated for that type of operation inherit this IP filter automatically.
+You can apply a filter to a specific [node operating type](../deployr-admin-console/deployr-admin-managing-the-grid.md#node-operation-types) in the [**Server Policies**](deployr-admin-managing-server-policies.md) tab in this console so that all nodes designated for that type of operation inherit this IP filter automatically.
 
 ## Exporting Filters
 

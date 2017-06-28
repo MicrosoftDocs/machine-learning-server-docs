@@ -38,7 +38,7 @@ In this Administration Console, you can access and work with R boundaries by cli
 
 Once you create an R boundary, you can assign it to any grid node or user account in the console. Grid node boundaries take precedence over boundaries associated with individual users.
 
-You can also designate a particular R boundary as the [default system-wide R boundary](../deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) to be used whenever no other boundary is indicated.
+You can also designate a particular R boundary as the [default system-wide R boundary](deployr-admin-managing-server-policies.md#server-policy-properties) to be used whenever no other boundary is indicated.
 
 If you plan to associate R boundaries with grid nodes, we recommend that you create a custom R boundary for each [node operation type](../deployr-admin-console/deployr-admin-managing-the-grid.md#node-operation-types) (authenticated, asynchronous, and anonymous operations) supported on the grid.
 

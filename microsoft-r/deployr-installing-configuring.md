@@ -869,7 +869,7 @@ To fix this issue, ensure that:
 
 **To make changes to the IP address:**
 
--   Either, edit the **Server web context** and **Disable IP auto-detection** settings the [Administration Console's **Server Policies**](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) tab. Log into the **Administration Console** as described in the [preceding section](#changing-default-passwords).
+-   Either, edit the **Server web context** and **Disable IP auto-detection** settings the [Administration Console's **Server Policies**](deployr/deployr-admin-managing-server-policies.md#server-policy-properties) tab. Log into the **Administration Console** as described in the [preceding section](#changing-default-passwords).
 
 -   Or, you can run the [server Web context script](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
 

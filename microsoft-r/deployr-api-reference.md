@@ -753,7 +753,7 @@ The ***error*** property provides a plain text message describing the underlying
 
 -  **945** Authentication Error: user account password has expired, requires reset
 
-To understand how grid resource errors occur, refer to the sections [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md) and [Managing Server Policies](deployr-admin-console/deployr-admin-managing-server-policies.md).
+To understand how grid resource errors occur, refer to the sections [Managing the Grid](deployr-admin-console/deployr-admin-managing-the-grid.md) and [Managing Server Policies](deployr/deployr-admin-managing-server-policies.md).
 
 *Sample API (JSON) response markup indicating error on call:*
 

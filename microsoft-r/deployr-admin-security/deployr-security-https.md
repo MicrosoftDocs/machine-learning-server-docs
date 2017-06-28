@@ -277,7 +277,7 @@ After configuring DeployR to use one of those databases, you must also configure
         C:\Program Files\Microsoft\DeployR-8.0\deployr\tools\setWebContext.bat -https true
         ```
         
-     Upon completion of this script with `-https true`, the following changes will have been made to the [server policies](../deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) in the Administration Console:
+     Upon completion of this script with `-https true`, the following changes will have been made to the [server policies](../deployr/deployr-admin-managing-server-policies.md#server-policy-properties) in the Administration Console:
      + The server web context now ressembles `https://xx.xx.xx.xx:8001/deployr` instead of `http://xx.xx.xx.xx:8000/deployr`.
      + The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are all checked.
 
@@ -496,7 +496,7 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
         C:\Program Files\Microsoft\DeployR-8.0\deployr\tools\setWebContext.bat -https false
         ```
         
-Upon completion of the `setWebContext` script with `-https false`, the following changes will have been made to the [server policies](../deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) in the Administration Console:
+Upon completion of the `setWebContext` script with `-https false`, the following changes will have been made to the [server policies](../deployr/deployr-admin-managing-server-policies.md#server-policy-properties) in the Administration Console:
 
 + The server web context now ressembles `http://xx.xx.xx.xx:8000/deployr`.
 

@@ -68,14 +68,14 @@ The DeployR server supports a wide range of runtime policies that affect many as
 
 ### General
 
-The [Administration Console](deployr/deployr-admin-console-about.md) offers a [Server Policies](deployr-admin-console/deployr-admin-managing-server-policies.md) tab within which can be found a wide range of policy configuration options, including:
+The [Administration Console](deployr/deployr-admin-console-about.md) offers a [Server Policies](deployr/deployr-admin-managing-server-policies.md) tab within which can be found a wide range of policy configuration options, including:
 
 -   Global settings such as server name, default server boundary, and so on
 -   Project persistence policies governing resource usage (sizes and autosave)
 -   Runtime policies governing authenticated, asynchronous, and anonymous operations
 -   Runtime policies governing concurrent operation limits, file upload limits, and event stream access
 
-The full set of general policy options available with the **Server Policies** tab are detailed in this [online help topic](deployr-admin-console/deployr-admin-managing-server-policies.md).
+The full set of general policy options available with the **Server Policies** tab are detailed in this [online help topic](deployr/deployr-admin-managing-server-policies.md).
 
 ### Availability
 

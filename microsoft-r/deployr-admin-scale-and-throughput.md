@@ -205,7 +205,7 @@ For most DeployR deployments, the default configuration delivers adequate server
 
 The default runtime behavior of the DeployR server is determined by the settings in:
 
-+ The [**Server Policies** tab](deployr-admin-console/deployr-admin-managing-server-policies.md) in the Administration Console
++ The [**Server Policies** tab](deployr/deployr-admin-managing-server-policies.md) in the Administration Console
 
 + The DeployR external configuration file, `$DEPLOYR_HOME/deployr/deployr.groovy`
 
