@@ -133,7 +133,7 @@
 #### [Manage R packages](operationalize/package-management.md)
 
 ### [Provision in the Cloud](vm-cloud.md)
-#### [Azure HDInsight](vm-r-server-hdinsight.md)
+#### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
 #### [R Server for Linux (Azure VM)](vm-azure-rserver-linux-9.0.1.md)
 #### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 #### [Microsoft Data Science VM](vm-data-science.md)

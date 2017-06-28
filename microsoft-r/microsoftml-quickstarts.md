@@ -64,4 +64,4 @@ To create an HDInsight (Hadoop) cluster and connect it to R, see [Get started us
 
 Microsoft R Server 9.1.0 supports the [sparklyr package from RStudio](https://cran.r-project.org/web/packages/sparklyr/index.html). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. For a walkthrough on how to use this package, see [Learn how to use R Server with sparklyr](microsoft-r-get-started-spark-interop.md).
 
-For other cloud-based offerings, see [Introducing R Server on HDInsight](vm-r-server-hdinsight.md).
+For other cloud-based offerings, see [Introducing R Server on HDInsight](install/r-server-vm-azure-hdinsight.md).
