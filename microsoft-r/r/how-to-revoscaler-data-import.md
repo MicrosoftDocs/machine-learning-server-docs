@@ -47,7 +47,7 @@ Depending on arguments, **rxImport** either loads data as a data frame, or outpu
 
 		> mySourceFile <- file.path("C:/Users/Temp/my-data-file.txt")
 
-  To try this out using [built-in samples](../scaler-user-guide-sample-data.md), run the first command to verify the files are available, and the second command to set the location and source file.
+  To try this out using [built-in samples](sample-built-in-data.md), run the first command to verify the files are available, and the second command to set the location and source file.
 
 		# Verify the sample files exist and then set mySourceFile to the sample directory
 		> list.files(rxGetOption("sampleDataDir"))
@@ -311,7 +311,7 @@ This section provides example script demonstrating additional import tasks.
 
 ### Import multiple files
 
-This example demonstrates an approach for importing multiple text files at once. You can use [sample data](../scaler-user-guide-sample-data.md) for this exercise. It includes mortgage default data for consecutive years, with each year's data in a separate file. In this exercise, you will import all of them to a single XDF by appending one after another, using a combination of base R commands and RevoScaleR functions.
+This example demonstrates an approach for importing multiple text files at once. You can use [sample data](sample-built-in-data.md) for this exercise. It includes mortgage default data for consecutive years, with each year's data in a separate file. In this exercise, you will import all of them to a single XDF by appending one after another, using a combination of base R commands and RevoScaleR functions.
 
 Create a source object for a list of files, obtained using the R `list.files` function with a pattern for selecting specific file names:
 
@@ -357,7 +357,7 @@ Results from this command confirm that you have 10 blocks, one for each .csv fil
 
 Optionally, fixed-format data might be associated with a *schema file* having an .sts extension. The schema describes the width and type of each column. For complete details on creating a schema file, see page 93 of the Stat/Transfer PDF Manual (<http://www.stattransfer.com/stman10.pdf>). If you have a schema file, you can create the input data source very simply by specifying the schema file name as the input data file. 
 
-The [built-in samples](../scaler-user-guide-sample-data.md) include a fixed-format version of the claims data as the file claims.dat and a schema file named claims.sts. To import the data using this schema file, we use *RxImport* as follows:
+The [built-in samples](sample-built-in-data.md) include a fixed-format version of the claims data as the file claims.dat and a schema file named claims.sts. To import the data using this schema file, we use *RxImport* as follows:
 
 	# Verify the sample files exist
 	> list.files(rxGetOption("sampleDataDir"))

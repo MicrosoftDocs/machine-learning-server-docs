@@ -19,7 +19,7 @@
 ### [Census data analysis](scaler-getting-started-2-example-census-data.md)
 ### [Tips on big data computing](microsoft-r-getting-started-tips.md)
 ## Samples
-### [Sample data in RevoScaleR](scaler-user-guide-sample-data.md)
+### [Sample data in RevoScaleR](r/sample-built-in-data.md)
 ### [RevoScaleR rxExecBy parallel processing example](quickstart-rxexecby.md)
 ### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
 

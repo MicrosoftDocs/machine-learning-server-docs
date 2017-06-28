@@ -52,7 +52,7 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 
 ## Find sample data
 
-+ [Sample data available in the RevoScaleR package](scaler-user-guide-sample-data.md)
++ [Sample data available in the RevoScaleR package](r/sample-built-in-data.md)
 * [Sample Dataset Directory](http://packages.revolutionanalytics.com/datasets/)
 * [More Data Sources on MRAN site](https://mran.microsoft.com/documents/data/)
 * [Blog Post: Finding data on the internet](http://www.inside-r.org/howto/finding-data-internet)

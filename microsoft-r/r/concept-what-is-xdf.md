@@ -40,7 +40,7 @@ To create an XDF file, use the **rxImport** function in RevoScaleR to pipe exter
 
 You can create an XDF using any data that can be loaded by **rxImport**, and by specifying an *outFile* consisting of a file path to a writable directory.
 
-This example uses an R console and [sample data](../scaler-user-guide-sample-data.md) to create an XDF using data from a single CSV file. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
+This example uses an R console and [sample data](sample-built-in-data.md) to create an XDF using data from a single CSV file. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
 
     # Set the source file location using inData argument
     > mysourcedata <- file.path(rxGetOption("sampleDataDir", "mortDefaultSmall2000.csv"))

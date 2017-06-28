@@ -112,7 +112,7 @@ Recall that **RxOdbcData** provides local compute context only, which means that
 
 #### Using SQL Server
 
-This example uses a connection string to connect to a local SQL Server instance and the [RevoClaimsDB database](../scaler-user-guide-sample-data.md). For simplicity, the connection is further scoped to a single table, but you could write T-SQL to select a more interesting data set. 
+This example uses a connection string to connect to a local SQL Server instance and the [RevoClaimsDB database](sample-built-in-data.md). For simplicity, the connection is further scoped to a single table, but you could write T-SQL to select a more interesting data set. 
 
 	sConnectStr <- "Driver={ODBC Driver 13 for SQL Server};Server=(local);Database=RevoClaimsDB;Trusted_Connection=Yes"
 	sQuery = "Select * from dbo.claims"

@@ -58,7 +58,7 @@ The command prompt for a R is `>`. You can hand-type case-sensitive R commands, 
 
 1. Open the R console or start a Revo64 session. The RevoScaleR library is loaded automatically.
 
-2. Retrieve the list of [sample data files](scaler-user-guide-sample-data.md) provided in RevoScaleR by entering the following command at the `>` command prompt:
+2. Retrieve the list of [sample data files](r/sample-built-in-data.md) provided in RevoScaleR by entering the following command at the `>` command prompt:
 
         list.files(rxGetOption("sampleDataDir"))
 
