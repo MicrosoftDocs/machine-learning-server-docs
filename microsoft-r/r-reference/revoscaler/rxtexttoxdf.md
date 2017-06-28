@@ -92,12 +92,12 @@ use rxImport.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -172,7 +172,7 @@ use rxImport.
   
     
  ### `rowsPerRead`
- number of rows to read for each chunk of data; if `NULL`, all rows are read. This is the number of rows written per block to the .xdf file unless the number of rows in the read chunk is modified through code in a [transformFunc](rxTransform.md). 
+ number of rows to read for each chunk of data; if `NULL`, all rows are read. This is the number of rows written per block to the .xdf file unless the number of rows in the read chunk is modified through code in a [transformFunc](../../scaler/packagehelp/rxtransform.md). 
   
   
     
@@ -243,7 +243,7 @@ use rxImport.
 Decimal data in text files can be imported into .xdf files and 
 stored as either 32-bit floats or 64-bit doubles. 
 The default for this is 32-bit floats, which can be changed using
-[rxOptions](../../r-reference/revoscaler/rxoptions.md).
+[rxOptions](rxoptions.md).
  
 If stored in 32-bit floats, they are converted into 64-bit
 doubles whenever they are brought into R. Because there may be no exact binary
@@ -286,7 +286,7 @@ under 'Encoding Details'
 For reasons of performance, `rxTextToXdf` does not properly handle text
 files that contain the delimiter character inside a quoted string (for
 example, the entry `"Wade, John"` inside a comma delimited file. See
-[rxImport](../../r-reference/revoscaler/rximport.md) with `type = "text"` for importing this type of data.
+[rxImport](rximport.md) with `type = "text"` for importing this type of data.
 
 In addition `rxTextToXdf` currently requires that all rows of data in the
 text file contain the same number of entries. Date, time, and currency data 
@@ -299,10 +299,10 @@ types are not currently supported and are imported as character data.
  
  ##See Also
  
-[rxImport](../../r-reference/revoscaler/rximport.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxFactors](../../r-reference/revoscaler/rxfactors.md),
-[rxTransform](rxTransform.md).
+[rxImport](rximport.md),
+[rxDataStep](rxdatastep.md),
+[rxFactors](rxfactors.md),
+[rxTransform](../../scaler/packagehelp/rxtransform.md).
    
  ##Examples
 

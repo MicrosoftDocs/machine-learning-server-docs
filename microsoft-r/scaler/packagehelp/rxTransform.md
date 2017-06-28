@@ -134,7 +134,7 @@ the interaction with `transformObjects` objects packed into transformation funct
 [rxSummary](../../r-reference/revoscaler/rxsummary.md),
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxImport](../../r-reference/revoscaler/rximport.md),
-[rxTextToXdf](rxTextToXdf.md).
+[rxTextToXdf](../../r-reference/revoscaler/rxtexttoxdf.md).
    
  ##Examples
 
