@@ -70,7 +70,7 @@ then `TRUE` will be returned.
  
  ##See Also
  
-[createSnapshot](createSnapshot.md)
+[createSnapshot](../../r-reference/mrsdeploy/createsnapshot.md)
 
 [deleteSnapshot](deleteSnapshot.md)
 

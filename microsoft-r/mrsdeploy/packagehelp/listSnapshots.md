@@ -55,7 +55,7 @@ A character vector containing the snapshot ids.
  
  ##See Also
  
-[createSnapshot](createSnapshot.md)
+[createSnapshot](../../r-reference/mrsdeploy/createsnapshot.md)
 
 [deleteSnapshot](deleteSnapshot.md)
 

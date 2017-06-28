@@ -65,13 +65,13 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[deleteSnapshot](deleteSnapshot.md)
+[deleteSnapshot](../../mrsdeploy/packagehelp/deletesnapshot.md)
 
-[listSnapshots](listSnapshots.md)
+[listSnapshots](../../mrsdeploy/packagehelp/listsnapshots.md)
 
-[loadSnapshot](loadSnapshot.md)
+[loadSnapshot](../../mrsdeploy/packagehelp/loadsnapshot.md)
 
-[downloadSnapshot](downloadSnapshot.md)
+[downloadSnapshot](down../../mrsdeploy/packagehelp/loadsnapshot.md)
    
  ##Examples
 

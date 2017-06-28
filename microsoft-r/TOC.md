@@ -258,7 +258,7 @@
 ### [selectFeatures](r-reference/microsoftml/selectfeatures.md)
 
 ## [mrsdeploy](mrsdeploy/mrsdeploy.md)
-###[createSnapshot](mrsdeploy/packagehelp/createSnapshot.md) 
+###[createSnapshot](r-reference/mrsdeploy/createsnapshot.md) 
 ###[deleteRemoteFile](mrsdeploy/packagehelp/deleteRemoteFile.md) 
 ###[deleteService](mrsdeploy/packagehelp/deleteService.md) 
 ###[deleteSnapshot](mrsdeploy/packagehelp/deleteSnapshot.md) 
