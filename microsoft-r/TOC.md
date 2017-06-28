@@ -307,7 +307,7 @@
 ## [RevoPemaR](pemar/pemar.md)
 ###[PemaBaseClass-class](r-reference/revopemar/pemabaseclass-class.md) 
 ###[PemaBaseClass](r-reference/revopemar/pemabaseclass.md) 
-###[PemaByGroup-class](pemar/packagehelp/PemaByGroup-class.md) 
+###[PemaByGroup-class](r-reference/revopemar/pemabygroup-class.md) 
 ###[PemaByGroup](pemar/packagehelp/PemaByGroup.md) 
 ###[pemaCompute](pemar/packagehelp/pemaCompute.md) 
 ###[PemaMean-class](pemar/packagehelp/PemaMean-class.md) 
