@@ -388,7 +388,7 @@
 #### [rxGetJobOutput](r-reference/revoscaler/rxgetjoboutput.md) 
 #### [rxGetJobResults](r-reference/revoscaler/rxgetjobresults.md) 
 #### [rxGetJobs](r-reference/revoscaler/rxgetjobs.md) 
-#### [rxGetPartitions](scaler/packagehelp/rxGetPartitions.md) 
+#### [rxGetPartitions](r-reference/revoscaler/rxgetpartitions.md) 
 #### [rxGetSparklyrConnection](scaler/packagehelp/rxGetSparklyrConnection.md) 
 #### [rxGetNodeInfo](r-reference/revoscaler/rxgetnodeinfo.md) 
 #### [rxGetVarInfoXdf](scaler/packagehelp/rxGetVarInfoXdf.md) 

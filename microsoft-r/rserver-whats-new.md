@@ -110,7 +110,7 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 | [`rxExecBy`](r-reference/revoscaler/rxexecby.md) | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
 | [`rxExecByPartition`](r-reference/revoscaler/rxexecbypartition.md) | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
 | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) | Enhanced | Multithreaded support. |
-| [`rxGetPartitions`](scaler/packagehelp/rxGetPartitions.md)  | New | Gets the partitions of a previously partitioned Xdf data source. |
+| [`rxGetPartitions`](r-reference/revoscaler/rxgetpartitions.md)  | New | Gets the partitions of a previously partitioned Xdf data source. |
 | [`rxGetSparklyrConnection`](scaler/packagehelp/rxGetSparklyrConnection.md)  | New | Get a Spark compute context with sparklyr interop.  |
 | [`rxImport`](scaler/packagehelp/rxImport.md)  | Enhanced | Multithreaded support. |
 | `rxMerge` | Enhanced | Merging data frames in Spark compute context. |

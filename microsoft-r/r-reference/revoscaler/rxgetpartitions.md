@@ -50,7 +50,7 @@ Get partitions enumeration of a partitioned Xdf data source.
    
     
  ### `data`
- an existing partitioned data source object which was created by [RxXdfData](RxXdfData.md) with `createPartitionSet = TRUE` and constructed by rxPartition. 
+ an existing partitioned data source object which was created by [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) with `createPartitionSet = TRUE` and constructed by rxPartition. 
   
  
  
@@ -74,7 +74,7 @@ Data frame with `(n+1)` columns, the first `n` columns are partitioning columns 
  
 RXdfData,
 rxPartition,
-[rxExecBy](../../r-reference/revoscaler/rxexecby.md)
+[rxExecBy](../../rxexecby.md)
    
  
  ##Examples
