@@ -207,7 +207,7 @@ If any of the following cases exist, update your firewall manually:
 
 -   If connecting to a **remote database**, be sure to open the database port to the public IP of the DeployR server.
 
--   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
+-   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr/deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
 >If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr/deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
 >[You can change any DeployR ports](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport).                               

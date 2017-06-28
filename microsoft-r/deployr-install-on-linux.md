@@ -69,7 +69,7 @@ Before you can install DeployR, you must manually install and configure the foll
 | [Microsoft R Server 2016](rserver-install-linux-server.md) and its dependencies | Yes                                                                                 | Yes                                                                                 |
 | DeployR Rserve 8.0.5                                                                            | Yes                                                                                 | Yes                                                                                 |
 | make, gcc, gcc-c++, gfortran, cairo-devel, libicu, libicu-devel                                          | Yes                                                                                 | Yes                                                                                 |
-| nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  |
+| nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.  | Yes, for <br />[external directories](deployr/deployr-admin-manage-big-data.md)  | Yes, for <br />[external directories](deployr/deployr-admin-manage-big-data.md)  |
 .
 
 **To install the required dependencies:**
@@ -252,7 +252,7 @@ If any of the following cases exist, update your firewall manually:
 
 -   If connecting to a **remote PostgreSQL database**, be sure to open port 5432 to the public IP of the DeployR server.
 
--   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
+-   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr/deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
 > If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr/deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
 >[You can change any DeployR ports](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     

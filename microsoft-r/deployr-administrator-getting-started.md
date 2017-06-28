@@ -103,11 +103,11 @@ When such files are stored in the DeployR Repository or at any network-accessibl
 
 To alleviate this overhead, the DeployR server supports a set of NFS-mounted directories dedicated to managing large data files. We refer to these directories as 'big data' external directories. As an administrator, you can enable this service by:
 
-1.  [Configuring](deployr-admin-manage-big-data.md#setting-up-nfs-setup) the big data directories within your deployment.
+1.  [Configuring](deployr/deployr-admin-manage-big-data.md#setting-up-nfs-setup) the big data directories within your deployment.
 
-2.  Informing your DeployR users that they must [use the R function, `deployrExternal`](deployr-admin-manage-big-data.md#adding-files-to-external-directories) in their R code to reference big data files within these directories.
+2.  Informing your DeployR users that they must [use the R function, `deployrExternal`](deployr/deployr-admin-manage-big-data.md#adding-files-to-external-directories) in their R code to reference big data files within these directories.
 
-For the complete configuration and usage documentation, read the guide "[Managing External Directories for Big Data](deployr-admin-manage-big-data.md)".
+For the complete configuration and usage documentation, read the guide "[Managing External Directories for Big Data](deployr/deployr-admin-manage-big-data.md)".
 
 ## Troubleshooting
 

@@ -295,7 +295,7 @@ DeployR depends on the manual installation and configuration of these dependenci
 | DeployR Rserve 7.4.2                                                                                                                                                                                               | Yes                                                                                     | Yes                                                                                     |
 | MongoDB 2.6.7 for DeployR Enterprise<Br />MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).  | Yes                                                                                     | No                                                                                      |
 | make, gcc, gfortran                                                                                                                                                                                                | Yes                                                                                     | Yes                                                                                     |
-| nfs-utils and nfs-utils-lib<br />Note: On Ubuntu, install nfs-common to get nfs-utils.                                                                                                                                                               | Yes, for [external directories](deployr-admin-manage-big-data.md)  | Yes, for [external directories](deployr-admin-manage-big-data.md)  |
+| nfs-utils and nfs-utils-lib<br />Note: On Ubuntu, install nfs-common to get nfs-utils.                                                                                                                                                               | Yes, for [external directories](deployr/deployr-admin-manage-big-data.md)  | Yes, for [external directories](deployr/deployr-admin-manage-big-data.md)  |
 
 **To install the required dependencies:**
 
@@ -638,7 +638,7 @@ Before you can install DeployR on the main server machine, you must manually ins
 | Java™ Development Kit 8 or 7u13 (or later)                              | Yes                                                                                     |
 | Revolution R Open v8.0.x, 3.2.0 - 3.2.2 or else R v3.1.x, 3.2.0 - 3.2.2 | Yes                                                                                     |
 | DeployR Rserve 7.4.2                                                    | Yes                                                                                     |
-| nfs-utils and nfs-utils-lib                                             | Yes, for [external directories](deployr-admin-manage-big-data.md)  |
+| nfs-utils and nfs-utils-lib                                             | Yes, for [external directories](deployr/deployr-admin-manage-big-data.md)  |
 
 **To install the required dependencies:**
 
@@ -838,7 +838,7 @@ During installation, the Windows firewall was updated to allow inbound communica
 
 >[!NOTE]
 >-   If you have made any changes to the port numbers designated for communications between DeployR and any of its dependencies, add those port numbers instead.
->-   **For NFS ports** for external directory support, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) document.
+>-   **For NFS ports** for external directory support, see the Configuration section of the [Managing External Directories for Big Data](deployr/deployr-admin-manage-big-data.md#setting-up-nfs-setup) document.
 
 ### Changing Default Passwords
 
