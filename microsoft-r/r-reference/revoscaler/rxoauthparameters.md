@@ -91,7 +91,7 @@ allows the specification of parameters that can be set to retreive a token.
  ##Value
  
 An rxOAuthParameters list object. This object may be used in
-[RxHdfsFileSystem](../../r-reference/revoscaler/rxhdfsfilesystem.md) to set the OAuth request method for WebHdfs usage.
+[RxHdfsFileSystem](rxhdfsfilesystem.md) to set the OAuth request method for WebHdfs usage.
  
  ##Author(s)
  
@@ -101,7 +101,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxHdfsFileSystem](../../r-reference/revoscaler/rxhdfsfilesystem.md)
+[RxHdfsFileSystem](rxhdfsfilesystem.md)
    
  ##Examples
 
