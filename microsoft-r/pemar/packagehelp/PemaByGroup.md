@@ -98,7 +98,7 @@ An `PemaByGroup` reference class object.
  ##See Also
  
 setRefClass,
-[PemaBaseClass](PemaBaseClass.md)
+[PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md)
    
  ##Examples
 

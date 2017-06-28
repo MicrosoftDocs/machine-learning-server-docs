@@ -100,7 +100,7 @@ returns a generator function suitable for creating objects from the class, invis
  
  ##See Also
  
-[PemaBaseClass](PemaBaseClass.md),
+[PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md),
 setRefClass,
 [PemaMean](PemaMean.md),
 [pemaCompute](pemaCompute.md)

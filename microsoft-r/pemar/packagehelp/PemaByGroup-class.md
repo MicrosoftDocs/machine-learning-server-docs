@@ -54,6 +54,6 @@ Class PemaBaseClass, directly.
  ##See Also
  
 [PemaByGroup](PemaByGroup.md)
-[PemaBaseClass](PemaBaseClass.md)
+[PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md)
    
  
