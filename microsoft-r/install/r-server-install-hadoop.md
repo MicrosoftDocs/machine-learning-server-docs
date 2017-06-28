@@ -39,7 +39,7 @@ Microsoft R Server is a scalable data analytics server that can be deployed as a
 - [Offline installation](r-server-install-hadoop-offline.md)
 - [Manual package installation](r-server-install-hadoop-manual-package.md)
 - [Configure R Server to operationalize R code and host analytic web services](operationalize-r-server-one-box-config.md)
-- [Uninstall Microsoft R to upgrade to newer versions](../rserver-install-uninstall-upgrade.md)
+- [Uninstall Microsoft R to upgrade to newer versions](r-server-install-uninstall-upgrade.md)
 
 ### Configuration
 

@@ -28,7 +28,7 @@ Older versions of R Server for Hadoop are no longer available on the Microsoft d
 
 ## About the R Server 2016 installer
 
-Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](../rserver-whats-new.md). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md) for instructions.
+Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package. In addition to the installers, several new features and enhancements are [new in this release](../rserver-whats-new.md). If you have an older version of R and would like to upgrade, see [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md) for instructions.
 
 A summary of setup tasks for R Server 2016 is as follows:
 
@@ -337,7 +337,7 @@ Install the Cloudera Manager parcels as follows:
 
 See [Troubleshoot Microsoft R installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md) for tips.
 
-If you want to start over, see [Uninstall Microsoft R Server](../rserver-install-uninstall-upgrade.md) for instructions.
+If you want to start over, see [Uninstall Microsoft R Server](r-server-install-uninstall-upgrade.md) for instructions.
 
 ## Next steps
 
@@ -353,6 +353,6 @@ To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](../sc
 
 [Install Microsoft R Server on Linux](r-server-install-linux-server.md)
 
-[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md)
 
 [Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)

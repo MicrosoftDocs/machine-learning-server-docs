@@ -99,7 +99,7 @@
 ##### [Adjust Hadoop configuration](install/r-server-install-hadoop-configuration-r-workloads.md)
 ##### [Enforce a YARN queue assignment](install/r-server-install-hadoop-yarnqueueusage.md)
 ##### [Troubleshoot installation problems](install/r-server-install-hadoop-troubleshoot.md)
-#### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
+#### [Uninstall from Hadoop](install/r-server-install-uninstall-upgrade.md)
 #### [Install an older version](install/r-server-install-hadoop-901.md)
 ##### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
 ##### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)

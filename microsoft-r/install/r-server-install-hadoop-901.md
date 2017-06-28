@@ -32,7 +32,7 @@ You can install major versions of R Server (such as an 8.x and 9.x) side-by-side
 
 **Upgrade Versions**
 
-If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md) for instructions.
+If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md) for instructions.
 
 **Installation Steps**
 
@@ -294,6 +294,6 @@ Developers might want to configure R Server after its installation to benefit fr
 
 [Install Microsoft R Server on Linux](r-server-install-linux-server.md)
 
-[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md)
 
 [Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)

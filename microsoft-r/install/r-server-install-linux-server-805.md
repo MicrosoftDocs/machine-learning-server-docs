@@ -33,7 +33,7 @@ You can install major versions of R Server (such as an 8.x and 9.x) side-by-side
 
 **Upgrade Versions**
 
-If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md) for instructions.
+If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md) for instructions.
 
 **Requirements**
 
@@ -286,7 +286,7 @@ If you are in a locked-down environment without access to the standard Microsoft
 ## Remove Microsoft R Server
 
 For instructions on rolling back your installation, see
-[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md).
+[Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md).
 
 ## Manage multiple R installations
 
@@ -312,6 +312,6 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 [Install R on Hadoop overview](r-server-install-hadoop.md)
 
-[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md)
 
 [Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)
