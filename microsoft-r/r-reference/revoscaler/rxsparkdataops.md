@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Manage Cached Data in Spark" 
-description: " Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](../../r-reference/revoscaler/rxspark.md) compute context. " 
+description: " Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](rxspark.md) compute context. " 
 keywords: "RevoScaleR, rxSparkListData, rxSparkRemoveData {RevoScaleR}, rxSparkListData, rxSparkRemoveData" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -32,7 +32,7 @@ ms.custom: ""
  
  ##Description
  
-Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](../../r-reference/revoscaler/rxspark.md) compute context.
+Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](rxspark.md) compute context.
  
  
  ##Usage
