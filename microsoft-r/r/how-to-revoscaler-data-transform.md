@@ -32,7 +32,7 @@ In RevoScaleR, you can perform data transformations in virtually all of its func
 
 In all cases, the basic approach for data transforms are the same. The heart of the RevoScaleR data step is a list of *transforms*, each of which specifies an R expression to be evaluated. The data step is typically is an assignment that either creates a new variable or modifies an existing variable from the original data set.
 
-This article uses examples to illustrate common data manipulation tasks. For more background, see [Data Transformations](r/concept-what-is-data-transformations.md).
+This article uses examples to illustrate common data manipulation tasks. For more background, see [Data Transformations](concept-what-is-data-transformations.md).
 
 ## Subset data by row or variable
 
@@ -792,15 +792,15 @@ If we had a large data set containing expenditure data in an .xdf file, we could
 
 Continue on to the following data-related articles to learn more about XDF, data source objects, and other data formats:
 
-+ [Data transformations (introduction)](r/concept-what-is-data-transformations.md)	
-+ [XDF files](r/concept-what-is-xdf.md)	
-+ [Data Sources](r/how-to-revoscaler-data-source.md)	
-+ [Import text data](r/how-to-revoscaler-data-import.md)
-+ [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
-+ [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)
++ [Data transformations (introduction)](concept-what-is-data-transformations.md)	
++ [XDF files](concept-what-is-xdf.md)	
++ [Data Sources](how-to-revoscaler-data-source.md)	
++ [Import text data](how-to-revoscaler-data-import.md)
++ [Import ODBC data](how-to-revoscaler-data-odbc.md)
++ [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)
 
 ## See Also
    
- [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)   
- [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [Tutorial: data visualization and analysis](scaler-getting-started-data-visualization-analysis.md) 
+ [RevoScaleR Functions](../revoscaler.md)   
+ [Tutorial: data import and exploration](../scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data visualization and analysis](../scaler-getting-started-data-visualization-analysis.md) 

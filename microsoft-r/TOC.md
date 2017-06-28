@@ -33,7 +33,7 @@
 ### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
 ### [Import HDFS data](r/how-to-revoscaler-data-hdfs.md)
 ### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
-### [Transform and subset data](scaler-user-guide-data-transform.md)
+### [Transform and subset data](r/how-to-revoscaler-data-transform.md)
 ### [Sort data](r/how-to-revoscaler-data-sort.md)
 ### [Merge data](scaler-data-merge.md)
 ### Concepts

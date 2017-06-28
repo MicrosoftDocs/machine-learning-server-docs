@@ -478,7 +478,7 @@ To avoid data loss when converting to factors, use the flag *labelsAsLevels=FALS
 
 Big data mainly comes in two forms, long or wide, each presenting unique challenges. The common case is long data, having many observations relative to the number of variables in the data set. With wide data, or data sets with a large number of variables, there are specific considerations to take into account during import.
 
-First, we recommend importing wide data into the .xdf format using the **rxImport** function whenever you plan to do repeated analyses on your dat aset. Doing so allows you to read subsets of columns into a data frame in memory for specific analyses. For more information, see [Transform and subset data](../scaler-user-guide-data-transform.md).
+First, we recommend importing wide data into the .xdf format using the **rxImport** function whenever you plan to do repeated analyses on your dat aset. Doing so allows you to read subsets of columns into a data frame in memory for specific analyses. For more information, see [Transform and subset data](how-to-revoscaler-data-transform.md).
 
 Second, review the data set for categorical variables that can be marked as factors. If possible use the *colInfo* argument to define the levels rather than *stringsAsFactors*. Explicitly setting the levels results in faster processing speeds because you avoid recomputations of variable metadata whenever a new level is encountered. For wide data sets having a very large number of variables, the extra processing due to recomputation can be significant so its worth considering the *colInfo* argument as a way to speed up the import.
 
