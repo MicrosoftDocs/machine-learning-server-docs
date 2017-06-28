@@ -173,7 +173,7 @@
 ##### [Restoring & Backing Up the Database](deployr/deployr-admin-console-database.md)
 ##### [Monitoring Events](deployr-admin-console/deployr-admin-monitoring-events.md)
 ##### [Common Administrative Tasks](deployr-common-administration-tasks.md)
-##### [Troubleshooting & Diagnostics](deployr-admin-diagnostics-troubleshooting.md)
+##### [Troubleshooting & Diagnostics](deployr/deployr-admin-diagnostics-troubleshooting.md)
 ##### [Scale & Throughput](deployr-admin-scale-and-throughput.md)
 ##### [DeployR in the Cloud](deployr-admin-install-in-cloud.md)
 ##### [Server & Grid High Availability](deployr/deployr-admin-configure-high-availability.md)

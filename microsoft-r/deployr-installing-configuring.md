@@ -219,7 +219,7 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 
 8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
+    -   Set the DeployR [server Web context](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
     -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
@@ -229,7 +229,7 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 
 >**What's Next After Installing?**
 >
->1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+>1.  Verify your install by running a [diagnostic check of the server](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 >2.  [Add any additional grid nodes](#grid-node-install) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
@@ -267,7 +267,7 @@ After installing the [main server for DeployR Enterprise](#basic-deployr-install
 8.  When the installer completes, log into the DeployR landing page as 'admin' at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing` where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
 	1.  Go to the Adminstrative Console and [configure each grid node](#configuring-the-deployr-grid).
-	2.  Return to the landing page and run a [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
+	2.  Return to the landing page and run a [diagnostic check](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for help.
 
 **-- The grid node installation is now complete --**
 
@@ -444,7 +444,7 @@ After installing [these prerequisites](#lindependencies), install DeployR Enterp
 
 8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
+    -   Set the DeployR [server Web context](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
     -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
@@ -479,7 +479,7 @@ After installing [these prerequisites](#lindependencies), install DeployR Open a
 
 8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
+    -   Set the DeployR [server Web context](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
 
     -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`.
 
@@ -487,7 +487,7 @@ After installing [these prerequisites](#lindependencies), install DeployR Open a
 
 >**What's Next After Installing?**
 >
->1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+>1.  Verify your install by running a [diagnostic check of the server](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 >2.  [Add any additional grid nodes](#grid-node-install-for-Linux) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
@@ -534,7 +534,7 @@ After installing the main [DeployR server](#basic-deployr-install-for-linux), in
 9.  When the installer completes, log into the DeployR landing page as 'admin' at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing` where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
     1.  Go to the Adminstrative Console and [configure each grid node](#configuring-the-deployr-grid).
-    2.  Return to the landing page and run a [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+    2.  Return to the landing page and run a [diagnostic check](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
 **-- The grid node installation is now complete --**
 
@@ -606,7 +606,7 @@ Install DeployR as follows:
 
 11. If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
+    -   Set the DeployR [server Web context](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address.
 
     -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`.
 
@@ -614,7 +614,7 @@ Install DeployR as follows:
 
 >**What's Next After Installing?**
 >
->1. Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help.
+>1. Verify your install by running a [diagnostic check of the server](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help.
 >2.  [Add any additional grid nodes](#grid-node-install-for-Linux) (DeployR Enterprise only).
 >3.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >4.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
@@ -710,7 +710,7 @@ After installing [these prerequisites](#preparing-osx), install DeployR Open as 
 
 >**What's Next After Installing?**
 >
->1.  Verify your install by running a [diagnostic check of the server](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+>1.  Verify your install by running a [diagnostic check of the server](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check) from the DeployR landing page. Log in as 'admin' with the password `changeme` at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. You'll be [prompted for a new password](#changing-default-passwords) the first time. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 >2.  [Finish configuring DeployR](#configuring-deployr). Follow the topics in that section in the order in which they are presented.
 >3.  [Download DeployR client-side developer tools](deployr-tools-and-samples.md), including the RBroker framework and client libraries.
 >4.  [Create new user accounts](deployr-admin-console/deployr-admin-console-user-accounts.md) in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR landing page.
@@ -871,7 +871,7 @@ To fix this issue, ensure that:
 
 -   Either, edit the **Server web context** and **Disable IP auto-detection** settings the [Administration Console's **Server Policies**](deployr-admin-console/deployr-admin-managing-server-policies.md#server-policy-properties) tab. Log into the **Administration Console** as described in the [preceding section](#changing-default-passwords).
 
--   Or, you can run the [server Web context script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+-   Or, you can run the [server Web context script](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
 
 ### Configuring the DeployR Grid
 

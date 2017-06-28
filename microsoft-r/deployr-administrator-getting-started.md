@@ -113,9 +113,9 @@ For the complete configuration and usage documentation, read the guide "[Managin
 
 There is no doubt that, as an administrator, you've experienced failures with servers, networks, and systems—most probably at the very inopportune times. Likewise, your chosen runtime policies may sometime fail to deliver the runtime behavior or performance needed by your community of users.
 
-When those failures occur in the DeployR environment, we recommend you first turn to the [DeployR diagnostic testing tool](deployr-admin-diagnostics-troubleshooting.md) to attempt to identify the underlying cause of the problem.
+When those failures occur in the DeployR environment, we recommend you first turn to the [DeployR diagnostic testing tool](deployr/deployr-admin-diagnostics-troubleshooting.md) to attempt to identify the underlying cause of the problem.
 
-Beyond the diagnostics tool, the [Troubleshooting](deployr-admin-diagnostics-troubleshooting.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
+Beyond the diagnostics tool, the [Troubleshooting](deployr/deployr-admin-diagnostics-troubleshooting.md#troubleshooting) documentation offers suggestions and recommendations for common problems with known solutions.
 
 
 ## More Resources
@@ -130,7 +130,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Security](deployr-admin-security/deployr-security.md)
 -   [R Package Management](deployr-admin-r-package-management.md)
 -   [Scale & Throughput](deployr-admin-scale-and-throughput.md)
--   [Diagnostic Testing & Troubleshooting](deployr-admin-diagnostics-troubleshooting.md)
+-   [Diagnostic Testing & Troubleshooting](deployr/deployr-admin-diagnostics-troubleshooting.md)
 
 **Other Getting Started Guides**
 -   [Application Developers](deployr-application-developer-getting-started.md)

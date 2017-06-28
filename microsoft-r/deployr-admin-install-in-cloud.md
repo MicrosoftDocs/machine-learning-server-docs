@@ -111,7 +111,7 @@ You must update the server Web context or else you will not be able to access to
     
      1. Open a Command Window with **“Run as Administrator”**.
     
-     1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+     1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
         ```
         cd $DEPLOYR_HOME\deployr\tools\
         setWebContext -ip <ip_address>  -disableauto
@@ -126,7 +126,7 @@ You must update the server Web context or else you will not be able to access to
     
    + On Linux:
     
-     1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+     1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
         ```
         cd $DEPLOYR_HOME/deployr/tools/
         ./setWebContext.sh -ip <ip_address>
@@ -262,7 +262,7 @@ You must update the server Web context or else you will not be able to access to
                 setWebContext -aws
                 ```
                 
-            1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+            1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
                 ```
                 setWebContext -ip <ip_address> 
                 ```
@@ -282,7 +282,7 @@ You must update the server Web context or else you will not be able to access to
                 setWebContext -aws
                 ```
                 
-            1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
+            1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr/deployr-admin-diagnostics-troubleshooting.md#set-context-800).
                 ```
                ./setWebContext.sh -ip <ip_address>
                 ```

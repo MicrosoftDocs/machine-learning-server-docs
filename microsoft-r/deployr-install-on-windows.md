@@ -82,7 +82,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1. _If you have internet access_ while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. 
 
-   _If you are installing while offline_, you will have to [download and install DeployR Rserve 8.0.5](https://github.com/Microsoft/deployr-rserve/releases) manually as [described here](deployr-admin-diagnostics-troubleshooting.md#manual-package-install).
+   _If you are installing while offline_, you will have to [download and install DeployR Rserve 8.0.5](https://github.com/Microsoft/deployr-rserve/releases) manually as [described here](deployr/deployr-admin-diagnostics-troubleshooting.md#manual-package-install).
 
 <a name="installserver"></a> 
 ## Installing DeployR Server
@@ -121,7 +121,7 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 
 1. Launch the `DeployR-Enterprise-8.0.5.exe` installer and follow the onscreen prompts to complete the installation. 
 
-   >**Troubleshooting:** During installation, certain details (and/or errors) are written to the following log files under the `%temp%` directory: `DeployR-configuration.log`, `DeployR-dependencies.log`, and `DeployR-Enterprise-8.0.5.log`. You can also learn about other diagnostic and troubleshooting topics [here](deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
+   >**Troubleshooting:** During installation, certain details (and/or errors) are written to the following log files under the `%temp%` directory: `DeployR-configuration.log`, `DeployR-dependencies.log`, and `DeployR-Enterprise-8.0.5.log`. You can also learn about other diagnostic and troubleshooting topics [here](deployr/deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
 
 1. Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
 
@@ -151,7 +151,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. [Optional] **Set up any grid nodes.** If desired, install and configure any [additional grid nodes](#gridnodes).
 
-1. [Optional] If you want to [use non-default port numbers for DeployR](deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
+1. [Optional] If you want to [use non-default port numbers for DeployR](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
 
 1. [Optional] If you want to **use a SQL Server database** locally or remotely instead of the default local H2 database, configure that as [described here](#sqlserver).
 
@@ -159,7 +159,7 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. To **make DeployR accessible to remote users**, [update the inbound firewall rules](#updating-your-firewall). 
 
-1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
 1. **Review security documentation** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](deployr-admin-security/deployr-security.md) and the [Enabling HTTPs](deployr-admin-security/deployr-security-https.md) topic.
 
@@ -210,7 +210,7 @@ If any of the following cases exist, update your firewall manually:
 -   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
 >If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
->[You can change any DeployR ports](deployr-admin-diagnostics-troubleshooting.md#changeport).                               
+>[You can change any DeployR ports](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport).                               
 
 ### Configuring Public Access
 
@@ -292,7 +292,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
         1. Enable **only** that node in the main **The Grid** tab.
 
-        2. Return to the landing page to run the [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
+        2. Return to the landing page to run the [diagnostic check](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for help.
 
     5. Repeat these steps for each grid node.
 
@@ -386,7 +386,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
 
     4.  Once the DeployR server has been successfully restarted, return the main menu.
 
-    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
     6.  Exit the utility.
 

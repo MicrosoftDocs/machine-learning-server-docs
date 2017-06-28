@@ -74,9 +74,9 @@ If Microsoft R Server or Microsoft R Open is not reinstalled as described at the
 
 Try the following:
 
-1.  [Run the diagnostics](../deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to determine whether the issue is on the main server or a grid node.
+1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to determine whether the issue is on the main server or a grid node.
 2.  If RServe is not running and you cannot find it in the `\bin\x64` subdirectory of the Microsoft R Server install directory, then you must reinstall as described above.
-3.  If there are other issues reported in the [diagnostics log](../deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files), attempt to fix them now.
+3.  If there are other issues reported in the [diagnostics log](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files), attempt to fix them now.
 4.  Run the diagnostics again.
 
 In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.
@@ -122,10 +122,10 @@ If the issue is that Rserve is not running on a machine, then you'll need to res
 
 Try the following:
 
-1.  [Run the diagnostics](../deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to determine whether the issue is on the main server or a grid node.
+1.  [Run the diagnostics](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) to determine whether the issue is on the main server or a grid node.
 2.  Make sure there is [no activity on the DeployR grid.](../deployr-admin-console/deployr-admin-managing-the-grid.md#viewing-or-stopping-slot-activity)
 3.  [Stop DeployR on the machine in question.](../../deployr-common-administration-tasks.md#startstop)
-4.  Attempt to correct all issues reported in the [diagnostics log.](../deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files)
+4.  Attempt to correct all issues reported in the [diagnostics log.](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files)
 5.  [Start DeployR on the machine in question.](../../deployr-common-administration-tasks.md#startstop)
 6.  Run the diagnostics again.
 

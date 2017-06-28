@@ -208,15 +208,15 @@ The following steps outline what you need to do after running the DeployR instal
 
 1. If desired, **set up grid nodes**. You can install and configure any [additional grid nodes](#gridnodes).
 
-1. If you want to [use non-default port numbers for DeployR](deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
+1. If you want to [use non-default port numbers for DeployR](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport), manually update them now.
 
-   >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](deployr-admin-diagnostics-troubleshooting.md#changeport). 
+   >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport). 
 
 1. If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
 
 1. If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
-1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+1. **Run diagnostic tests**. Test the install by running the full [DeployR diagnostic tests](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
 1. **Review security documentation** and consider **enabling HTTPs**. Learn more by reading the [Security Introduction](deployr-admin-security/deployr-security.md) and the [Enabling HTTPs](deployr-admin-security/deployr-security-https.md) topic.
 
@@ -255,7 +255,7 @@ If any of the following cases exist, update your firewall manually:
 -   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
 > If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
->[You can change any DeployR ports](deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
+>[You can change any DeployR ports](deployr/deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
 <a name="configuring-public-access"></a>
 ### Configure Public Access
 
@@ -348,7 +348,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
         1.  Enable **only** that node in the main **The Grid** tab.
 
-        2.  Return to the landing page to run the [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
+        2.  Return to the landing page to run the [diagnostic check](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for help.
 
     5.  Repeat these steps for each grid node.
 
@@ -415,7 +415,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
 
     4.  Once the DeployR server has been successfully restarted, return the main menu.
 
-    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr/deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr/deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
 
     6.  Exit the utility.
 

@@ -83,7 +83,7 @@ The `catalina.out` server log file is found at the following location:
 |Linux|<code>/home/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out</code>|
 |Mac OS X|<code>/Users/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out</code>|
 
->[Look here](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files) for more information on other log files associated with DeployR.
+>[Look here](deployr/deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files) for more information on other log files associated with DeployR.
 
 By default, the DeployR server logs at the `INFO` level, which is appropriate for production environments. The server emits `[DEPLOYR-EVENT]` log statements that provide a permanent record of the following:
 

@@ -46,8 +46,8 @@ No other configuration changes are needed. Once you put your files there, your e
 
 ## I'm having issues after installing DeployR. Where do I go for answers?
 
-1.  Check out our [troubleshooting topics](deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
-2.  Run the [diagnostics tests](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check).
+1.  Check out our [troubleshooting topics](deployr/deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
+2.  Run the [diagnostics tests](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check).
 3.  Join the [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr) where you can post questions and find answers.
 
 ## Why can't I reach DeployR landing page anymore?

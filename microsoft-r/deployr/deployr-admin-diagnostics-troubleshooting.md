@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Diagnostics & Troubleshooting
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 ## Introduction
 
@@ -111,7 +111,7 @@ The following log files can be found in the resulting `diagnostics.zip` file as 
 | Component| Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description|
 |----------|---------------------------------------------------|------------------------------------------------------------------------|
 | Diagnostic Results |- `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
-| DeployR            | - `deployr.groovy`<br />- `Stacktrace.log`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
+| DeployR            | - `deployr.groovy`<br />- `Stacktrace.log`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](../deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](../deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
 | Tomcat             |-  `catalina.out`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`                       | The log and configuration files for Tomcat.|
 | MongoDB  <br><small>(DeployR 8.0.0 only)</small>          | - `mongo.cfg`<br />- `mongod.log`                       | The log and configuration files for the database used by DeployR. The IP address is added to the filename for your convenience. |
 | DeployR RServe             | - `Rserv.cfg`                       | The configuration file for the DeployR RServe component. The IP address is added to the filename for your convenience.<br /><br />**DeployR Enterprise Only**: The RServe files for remote grid nodes are not bundled. If you suspect an issue on a node, please log onto that machine to retrieve its RServe log file.                                                                                                             |
@@ -123,7 +123,7 @@ The following log files can be found under `$DEPLOYR_HOME/deployr/tmp/logs` dire
 | Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
 | Diagnostic Results | - `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
-| DeployR            | - `deployr.groovy`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
+| DeployR            | - `deployr.groovy`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](../deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](../deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
 | Tomcat             | - `catalina.out`<br />- `catalina.sh`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`| The log and configuration files for Tomcat.|
 | MongoDB<br><small>(DeployR 8.0.0 only)</small> |-  `mongod.conf`<br />- `mongod-<IP_ADDRESS>.log`| The log and configuration files for the database used by DeployR. The IP address of the host of the MongoDB database is added to the filename for your convenience.                                                                                                                              |
 | DeployR RServe             | - `Rserv.conf`<br />- `Rserv-localhost.log`              | The log and configuration files for RServe.<br /><br />**DeployR Enterprise Only**: The RServe files for remote grid nodes are not bundled. If you suspect an issue on a node, please log onto that machine to retrieve its RServe log file.                                                                                                             |
@@ -140,7 +140,7 @@ Use the following instructions if you have [run the diagnostic test](#running-th
 
 1.  If Server Web Context points to the wrong IP, [update it now](#set-context).
 
-1.  After making your corrections, [restart the component](deployr-common-administration-tasks.md#startstop) in question. It may take a few minutes for a component to restart.
+1.  After making your corrections, [restart the component](../deployr-common-administration-tasks.md#startstop) in question. It may take a few minutes for a component to restart.
 
 1.  [Re-run the diagnostic test](#running-the-diagnostic-check) again to make sure all is running smoothly now.
      If problem persists:
@@ -242,7 +242,7 @@ If you should encounter any other errors while running the DeployR Windows insta
 <br>
 ### Landing Page Cannot Be Reached
 
-If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#running-the-diagnostic-check). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings).
+If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#running-the-diagnostic-check). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](../deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings).
 
 ![Landing Page Inaccessible](./media/deployr-admin-diagnostics-troubleshooting/noaccess.png)
 
@@ -298,9 +298,9 @@ Usage tips for the `setWebContext` script arguments:
 |---------|---------------------------------|
 |`query`| To see which IP is currently defined as the Server Web Context.|
 |`ip <ip_address>`|To  specify a new IP address or DNS name for the DeployR Server Web Context.|
-|`disableauto`|To turn off the automatic IP detection. You can [turn this back on](deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.|
+|`disableauto`|To turn off the automatic IP detection. You can [turn this back on](../deployr-admin-console/deployr-admin-managing-server-policies.md#basic-settings) in the Administration Console.|
 |`aws`|To detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.|
-|`https true` or<br /> `html false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](deployr-admin-security/deployr-security-https.md).|
+|`https true` or<br /> `html false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](../deployr-admin-security/deployr-security-https.md).|
 
  
 **On Windows:**
@@ -337,7 +337,7 @@ Usage tips for the `setWebContext` script arguments:
    ./setWebContext.sh -disableauto
    ```
 
->For this change to take effect, [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+>For this change to take effect, [restart the DeployR 8.0.0 service](../deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, [try this](#landing-page-blocked-in-i-e-11).
 
@@ -375,7 +375,7 @@ You cannot log into DeployR from two different accounts within the same brand of
 <br />
 ### Issues After Reinstalling Microsoft R or R
 
-If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open or need help troubleshooting, then follow [these instructions precisely](deployr/deployr-admin-configure-reinstall-r.md).
+If you want to upgrade or reinstall R, Microsoft R Server, or Revolution R Open or need help troubleshooting, then follow [these instructions precisely](deployr-admin-configure-reinstall-r.md).
 
 <br />
 ### Upping R Session Memory Limits (Windows only)

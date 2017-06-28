@@ -129,7 +129,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 3.  Customizing DeployR [server policies](../deployr-admin-console/deployr-admin-managing-server-policies.md).
 4.  Creating and managing DeployR [user accounts](../deployr-admin-console/deployr-admin-console-user-accounts.md).
 5.  Customizing DeployR [security policies](../deployr-admin-security/deployr-security.md).
-6.  Monitoring and [maintaining](../deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
+6.  Monitoring and [maintaining](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing) your DeployR deployment.
 
 [Consult the administration documentation](../deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
