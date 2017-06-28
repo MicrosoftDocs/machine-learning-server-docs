@@ -36,16 +36,16 @@ To create data sources directly, use the constructors listed in the following ta
 
 | **Source Data**                    | **Data Source Constructor** |
 |------------------------------------|-----------------------------|
-| Text (fixed-format or delimited)   | [RxTextData](r/how-to-revoscaler-data-import.md) |
-| SAS                                | [RxSasData](r-reference/revoscaler/rxsasdata.md) |
-| SPSS                               | [RxSpssData](r-reference/revoscaler/rxspssdata.md) |
-| ODBC Database                      | [RxOdbcData](r/how-to-revoscaler-data-odbc.md) |
-| Teradata Database                  | [RxTeradata](r-reference/revoscaler/rxteradata.md) |
-| SQL Server Database                | [RxSqlServerData](scaler-data-sql.md) |
-| Spark data: Hive, Parquet and ORC  | [RxSparkData](r-reference/revoscaler/rxsparkdata.md) or **RxHiveData**, **RxParquetData**, **RxOrcData** | 
-| .xdf data files                    | [RxXdfData](r/concept-what-is-xdf.md) |
+| Text (fixed-format or delimited)   | [RxTextData](how-to-revoscaler-data-import.md) |
+| SAS                                | [RxSasData](../r-reference/revoscaler/rxsasdata.md) |
+| SPSS                               | [RxSpssData](../r-reference/revoscaler/rxspssdata.md) |
+| ODBC Database                      | [RxOdbcData](how-to-revoscaler-data-odbc.md) |
+| Teradata Database                  | [RxTeradata](../r-reference/revoscaler/rxteradata.md) |
+| SQL Server Database                | [RxSqlServerData](../scaler-data-sql.md) |
+| Spark data: Hive, Parquet and ORC  | [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) or **RxHiveData**, **RxParquetData**, **RxOrcData** | 
+| .xdf data files                    | [RxXdfData](concept-what-is-xdf.md) |
 
-[XDF files](r/concept-what-is-xdf.md) are the out files for **rxImport** read operations, but you also use them as a data source input when loading all or part of an .xdf into a data frame. Using an XDF data source is recommended for repeated analysis of a single data set. It is almost always faster to import data into an .xdf file and run analyses on the .xdf data source than to load data from an original data source.
+[XDF files](concept-what-is-xdf.md) are the out files for **rxImport** read operations, but you also use them as a data source input when loading all or part of an .xdf into a data frame. Using an XDF data source is recommended for repeated analysis of a single data set. It is almost always faster to import data into an .xdf file and run analyses on the .xdf data source than to load data from an original data source.
 
 ## When to create a data source
 
@@ -172,7 +172,7 @@ For .xdf file data sources, **dimnames** returns only column names. Row names ar
 
 ## Data source by compute context
 
-In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed context, the data source object aligns to the compute context. Thus, **RxInSqlServer** only supports **RxSqlServerData** objects. Likewise for **RxInTeradata**, which supports only the **RxTeradata** data sources. For more information, see [Compute context](r/concept-what-is-compute-context.md).
+In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed context, the data source object aligns to the compute context. Thus, **RxInSqlServer** only supports **RxSqlServerData** objects. Likewise for **RxInTeradata**, which supports only the **RxTeradata** data sources. For more information, see [Compute context](concept-what-is-compute-context.md).
 
 |                                |            |          | Compute Context |               |              |
 |--------------------------------|------------|----------|-----------------|---------------|--------------|
@@ -185,7 +185,7 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 | ODBC data (RxOdbcData)         | x          |          |                 |               |              |
 | SQL Server database (RxSqlServerData) | x   |          |                 | x             |              |
 | Teradata database (RxTeradata) | x          |          |                 |               |  x           |
-| Spark data [RxSparkData](r-reference/revoscaler/rxsparkdata.md) | x | x   |  |               |              |
+| Spark data [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) | x | x   |  |               |              |
 
 
 ## Examples
@@ -316,13 +316,13 @@ It is, of course, much faster to compute a linear model using the **rxLinMod** f
 
 Continue on to the following data import articles to learn more about XDF and other data formats:
 
-+ [XDF files](r/concept-what-is-xdf.md)	
-+ [Import SQL Server data](scaler-data-sql.md)	
-+ [Import text data](r/how-to-revoscaler-data-import.md)
-+ [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)
++ [XDF files](concept-what-is-xdf.md)	
++ [Import SQL Server data](../scaler-data-sql.md)	
++ [Import text data](how-to-revoscaler-data-import.md)
++ [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)
 
 ## See Also
    
- [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)   
- [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [Tutorial: data manipulation and statistical analysis](scaler-getting-started-data-visualization-analysis.md) 
+ [RevoScaleR Functions](../revoscaler.md)   
+ [Tutorial: data import and exploration](../scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data manipulation and statistical analysis](../scaler-getting-started-data-visualization-analysis.md) 

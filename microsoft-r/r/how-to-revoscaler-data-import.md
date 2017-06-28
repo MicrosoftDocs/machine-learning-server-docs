@@ -279,7 +279,7 @@ The *format* argument is a character string that may contain conversion specific
 
 ### Change a delimiter
 
-You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about creating a data source object, see [Data Sources in Microsoft R](../scaler-user-guide-data-source.md).
+You cannot create or modify delimiters through **rxImport**, but for text data, you can create an **RxTextData** data source and specify the delimiter using the *delimiter* argument. For more information about creating a data source object, see [Data Sources in Microsoft R](how-to-revoscaler-data-source.md).
 
 As a simple example, RevoScaleR includes a sample text data file hyphens.txt that is not separated by commas or tabs, but by hyphens, with the following contents:
 
@@ -502,7 +502,7 @@ The colInfo list can then be used as the *colInfo* argument in the **rxImport** 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
 + [XDF files](concept-what-is-xdf.md)	
-+ [Data Sources](../scaler-user-guide-data-source.md)	
++ [Data Sources](how-to-revoscaler-data-source.md)	
 + [Import relational data using ODBC](how-to-revoscaler-data-odbc.md)
 + [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)
 

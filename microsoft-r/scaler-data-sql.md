@@ -107,7 +107,7 @@ Queries should be data extraction queries (SELECT and SHOW statements) for readi
 
 ### 4 - Set the data source
 
-Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in Microsoft R](scaler-user-guide-data-source.md).
+Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in Microsoft R](r/how-to-revoscaler-data-source.md).
 
 		> sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
 
@@ -283,7 +283,7 @@ Continue on to the following data import articles to learn more about XDF, data 
 
 + [SQL Server tutorial for R](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)	
 + [XDF files](r/concept-what-is-xdf.md)	
-+ [Data Sources](scaler-user-guide-data-source.md)	
++ [Data Sources](r/how-to-revoscaler-data-source.md)	
 + [Import text data](r/how-to-revoscaler-data-import.md)
 + [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
 + [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)

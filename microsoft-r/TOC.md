@@ -39,7 +39,7 @@
 ### Concepts
 #### [RevoScaleR](r/concept-what-is-revoscaler.md)
 #### [Compute context](r/concept-what-is-compute-context.md)
-#### [Data source objects](scaler-user-guide-data-source.md)
+#### [Data source objects](r/how-to-revoscaler-data-source.md)
 #### [Data transformations](r/concept-what-is-data-transformations.md)
 #### [XDF files](r/concept-what-is-xdf.md)
 
