@@ -38,7 +38,7 @@ The DeployR Administration Console, which is delivered with DeployR, is an easy-
 -   The backup and restore of [database contents](deployr-admin-console-database.md)
 -   The management of node resources on the DeployR [grid](deployr-admin-managing-the-grid.md)
 -   The management of DeployR [server policies](deployr-admin-managing-server-policies.md)
--   The [monitoring of events on the grid](../deployr-admin-console/deployr-admin-monitoring-events.md)
+-   The [monitoring of events on the grid](deployr-admin-monitoring-events.md)
 
 ## Who Can Access the Administration Console
 

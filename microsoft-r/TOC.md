@@ -171,7 +171,7 @@
 ##### [Managing the Grid](deployr/deployr-admin-managing-the-grid.md)
 ##### [Managing Server Policies](deployr/deployr-admin-managing-server-policies.md)
 ##### [Restoring & Backing Up the Database](deployr/deployr-admin-console-database.md)
-##### [Monitoring Events](deployr-admin-console/deployr-admin-monitoring-events.md)
+##### [Monitoring Events](deployr/deployr-admin-monitoring-events.md)
 ##### [Common Administrative Tasks](deployr-common-administration-tasks.md)
 ##### [Troubleshooting & Diagnostics](deployr/deployr-admin-diagnostics-troubleshooting.md)
 ##### [Scale & Throughput](deployr-admin-scale-and-throughput.md)
