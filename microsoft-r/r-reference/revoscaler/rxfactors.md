@@ -111,7 +111,7 @@ Can also be used to convert non-factor variable into a factor.
   
     
  ### `maxRowsByCols`
- this argument is used only when  `inData` is referring to an .xdf file  (character string defining a path to an existing .xdf file or an RxXdfData object) and we wish to return the output as a data frame (`outFile = NULL`).   In this case, and behind the scenes, the output is written to a temporary .xdf file and `rxDataStep` is subsequently called to convert the output into a data frame. The `maxRowsByCols` argument is passed directly in the `rxDataStep` call, giving the user some control over the conversion. See [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) for more details on the `maxRowsByCols` argument. 
+ this argument is used only when  `inData` is referring to an .xdf file  (character string defining a path to an existing .xdf file or an RxXdfData object) and we wish to return the output as a data frame (`outFile = NULL`).   In this case, and behind the scenes, the output is written to a temporary .xdf file and `rxDataStep` is subsequently called to convert the output into a data frame. The `maxRowsByCols` argument is passed directly in the `rxDataStep` call, giving the user some control over the conversion. See [rxDataStep](rxdatastep.md) for more details on the `maxRowsByCols` argument. 
   
   
     
@@ -177,10 +177,10 @@ the values 7.123456 and 7.12346 would be placed in the same category.
 
 To recode a categorical or factor variable into a continuous variable within a 
 formula use `N()`. To recode continuous variable to a categorical or factor 
-variable within a formula use `F()`. See [rxFormula](rxFormula.md). 
+variable within a formula use `F()`. See [rxFormula](../../scaler/packagehelp/rxformula.md). 
 
 To rename the levels of a factor variable in an .xdf file (without change the levels
-themselves), use [rxSetVarInfoXdf](rxSetVarInfoXdf.md).
+themselves), use [rxSetVarInfoXdf](../../scaler/packagehelp/rxsetvarinfoxdf.md).
 
  
  
@@ -199,10 +199,10 @@ are written to the specified `outFile` file and an RxXdfData object is returned
  
  ##See Also
  
-[rxFormula](rxFormula.md),
-[rxSetVarInfoXdf](rxSetVarInfoXdf.md),
-[rxImport](rxImport.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md).
+[rxFormula](../../scaler/packagehelp/rxformula.md),
+[rxSetVarInfoXdf](../../scaler/packagehelp/rxsetvarinfoxdf.md),
+[rxImport](../../scaler/packagehelp/rximport.md),
+[rxDataStep](rxdatastep.md).
    
  
  ##Examples

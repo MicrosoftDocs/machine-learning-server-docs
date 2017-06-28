@@ -119,7 +119,7 @@ file is returned.
  
 `rxSetVarInfoXdf` and `rxSetVarInfo` do not change the underlying data 
 so the user cannot set the variable type and storage type using this function, or recode the
-levels of a factor variable.  To recode factors, use [rxFactors](rxFactors.md).
+levels of a factor variable.  To recode factors, use [rxFactors](../../r-reference/revoscaler/rxfactors.md).
 `rxSetVarInfo` is not supported for single .xdf files in HDFS.
  
  
@@ -131,7 +131,7 @@ levels of a factor variable.  To recode factors, use [rxFactors](rxFactors.md).
  
 [rxGetVarInfo](rxGetVarInfoXdf.md),
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxFactors](rxFactors.md),
+[rxFactors](../../r-reference/revoscaler/rxfactors.md),
 [rxGetInfo](rxGetInfoXdf.md).
    
  ##Examples

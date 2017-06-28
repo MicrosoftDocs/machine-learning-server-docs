@@ -301,7 +301,7 @@ types are not currently supported and are imported as character data.
  
 [rxImport](rxImport.md),
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxFactors](rxFactors.md),
+[rxFactors](../../r-reference/revoscaler/rxfactors.md),
 [rxTransform](rxTransform.md).
    
  ##Examples
