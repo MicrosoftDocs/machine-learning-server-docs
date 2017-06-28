@@ -328,7 +328,7 @@
 #### [AirOnTime87to12](r-reference/revoscaler/airontime87to12.md)
 #### [CensusUS5Pct2000](r-reference/revoscaler/censusus5pct2000.md) 
 #### [CensusWorkers](r-reference/revoscaler/censusworkers.md)
-#### [claims](scaler/packagehelp/claims.md) 
+#### [claims](r-reference/revoscaler/claims.md) 
 #### [DJIAdaily](scaler/packagehelp/DJIAdaily.md) 
 #### [Kyphosis](scaler/packagehelp/Kyphosis.md) 
 #### [mortDefaultSmall](scaler/packagehelp/mortDefaultSmall.md) 
