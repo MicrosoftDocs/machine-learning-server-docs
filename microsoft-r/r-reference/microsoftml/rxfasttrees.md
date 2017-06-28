@@ -139,7 +139,7 @@ Machine Learning Fast Tree
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](../../r-reference/microsoftml/featurizetext.md), [categorical](../../r-reference/microsoftml/categorical.md), and [categoricalHash](../../r-reference/microsoftml/categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
@@ -304,11 +304,11 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxFastForest](../../r-reference/microsoftml/rxfastforest.md), [rxFastLinear](../../r-reference/microsoftml/rxfastlinear.md),
-[rxLogisticRegression](../../r-reference/microsoftml/logisticregression.md), [rxNeuralNet](../../r-reference/microsoftml/neuralnet.md),
-[rxOneClassSvm](../../r-reference/microsoftml/oneclasssvm.md), [featurizeText](../../r-reference/microsoftml/featurizetext.md),
-[categorical](../../r-reference/microsoftml/categorical.md), [categoricalHash](../../r-reference/microsoftml/categoricalhash.md),
-[rxPredict.mlModel](rxPredict.md).
+[rxFastForest](rxfastforest.md), [rxFastLinear](rxfastlinear.md),
+[rxLogisticRegression](../../microsoftml/packagehelp/logisticregression.md), [rxNeuralNet](../../microsoftml/packagehelp/neuralnet.md),
+[rxOneClassSvm](../../microsoftml/packagehelp/oneclasssvm.md), [featurizeText](featurizetext.md),
+[categorical](categorical.md), [categoricalHash](categoricalhash.md),
+[rxPredict.mlModel](../../microsoftml/packagehelp/rxpredict.md).
    
  ##Examples
 

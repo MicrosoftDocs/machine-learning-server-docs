@@ -249,7 +249,7 @@
 ### [rxEnsemble](r-reference/microsoftml/rxensemble.md)
 ### [rxFastForest](r-reference/microsoftml/rxfastforest.md)
 ### [rxFastLinear](r-reference/microsoftml/rxfastlinear.md) 
-### [rxFastTrees](microsoftml/packagehelp/rxFastTrees.md)
+### [rxFastTrees](r-reference/microsoftml/rxfasttrees.md)
 ### [rxFeaturize](microsoftml/packagehelp/rxFeaturize.md) 
 ### [rxLogisticRegression](r-reference/microsoftml/logisticregression.md) 
 ### [rxNeuralNet](microsoftml/packagehelp/rxNeuralNet.md) 
