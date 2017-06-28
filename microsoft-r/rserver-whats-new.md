@@ -107,7 +107,7 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 
 | Function | Status | Changes |
 |----------|--------|---------|
-| [`rxExecBy`](scaler/packagehelp/rxExecBy.md) | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
+| [`rxExecBy`](r-reference/revoscaler/rxexecby.md) | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
 | [`rxExecByPartition`](scaler/packagehelp/rxExecByPartition.md) | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
 | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) | Enhanced | Multithreaded support. |
 | [`rxGetPartitions`](scaler/packagehelp/rxGetPartitions.md)  | New | Gets the partitions of a previously partitioned Xdf data source. |

@@ -60,19 +60,19 @@ In **RevoScaleR** version 9.1.0, we introduce three new rx functions for partiti
 
 
 * 
- [rxExecBy](rxExecBy.md)() - to partition an input data source and execute user function on each partition in parallel. If the input data source is already partitioned, the function will skip the partitioning step and directly trigger computation for user function on partitions.
+ [rxExecBy](../../r-reference/revoscaler/rxexecby.md)() - to partition an input data source and execute user function on each partition in parallel. If the input data source is already partitioned, the function will skip the partitioning step and directly trigger computation for user function on partitions.
 
 * 
- rxPartition() - to partition an input data source and store data partitions on disk. For this functionality, a new xdf file format, called Partitioned Xdf (PXdf) is introduced for storing data partitions as well as partition metadata information on disk. Partitioned Xdf file can then be loaded into an in-memory Partitioned Xdf object using `RxXdfData` to be used for performing computation on data partitions repeatedly by [rxExecBy](rxExecBy.md).
+ rxPartition() - to partition an input data source and store data partitions on disk. For this functionality, a new xdf file format, called Partitioned Xdf (PXdf) is introduced for storing data partitions as well as partition metadata information on disk. Partitioned Xdf file can then be loaded into an in-memory Partitioned Xdf object using `RxXdfData` to be used for performing computation on data partitions repeatedly by [rxExecBy](../../r-reference/revoscaler/rxexecby.md).
 
 * 
  [rxGetPartitions](rxGetPartitions.md)() - to enumerate unique partitioning values in an existing partitioned Xdf and return it as a data frame
 
 
 
-**Running analytics computation in parallel on partitioned data set with [rxExecBy](rxExecBy.md)()**
+**Running analytics computation in parallel on partitioned data set with [rxExecBy](../../r-reference/revoscaler/rxexecby.md)()**
 
-Input data set provided as a data source object can be data sources of different types, such as data frame, text data, Xdf files, ODBC data source, SQL Server data source, etc. In version 9.1.0, [rxExecBy](rxExecBy.md)() is supported in local compute context, SQL Server compute context and Spark compute context. Depending on input data sources and compute context, [rxExecBy](rxExecBy.md)() will execute in different modes which are summarized in the following table:
+Input data set provided as a data source object can be data sources of different types, such as data frame, text data, Xdf files, ODBC data source, SQL Server data source, etc. In version 9.1.0, [rxExecBy](../../r-reference/revoscaler/rxexecby.md)() is supported in local compute context, SQL Server compute context and Spark compute context. Depending on input data sources and compute context, [rxExecBy](../../r-reference/revoscaler/rxexecby.md)() will execute in different modes which are summarized in the following table:
 
 | Col  1 | Col  2 | Col  3 |
 | :---| :---:| :---: |
@@ -82,7 +82,7 @@ Input data set provided as a data source object can be data sources of different
 |      SQL Server data source or ODBC data source with *table* specified  |  Do streaming with SQL rewrite partition queries and execute computation on streaming partitions  |  Do streaming with SQL rewrite partition queries and execute computation on streaming  |
    
 
-As shown in the table, when running analytics on local compute context, PXdf is first temporarily generated and saved on disk; then computation are applied on the generated PXdf. The example for running this scenario can be found in the [rxExecBy](rxExecBy.md)() documentation. It's worth to note that the temporary PXdf generated will be removed once the computation is completed. If user plans to run the analytics multiple times with the same data set and different user functions, it would be more efficient to go with the following recommended flow:
+As shown in the table, when running analytics on local compute context, PXdf is first temporarily generated and saved on disk; then computation are applied on the generated PXdf. The example for running this scenario can be found in the [rxExecBy](../../r-reference/revoscaler/rxexecby.md)() documentation. It's worth to note that the temporary PXdf generated will be removed once the computation is completed. If user plans to run the analytics multiple times with the same data set and different user functions, it would be more efficient to go with the following recommended flow:
 
 
 
@@ -93,7 +93,7 @@ As shown in the table, when running analytics on local compute context, PXdf is 
  Construct data partitions for the newly created PXdf object from an input data set and save it to disk with rxPartition().
 
 1 
- Run analysis with user defined function on the data partitions of the PXdf object with [rxExecBy](rxExecBy.md)(). This step can be repeated multiple times with different user defined functions and different subsets of data partitions using a `filterFunc` specified as an argument of [rxExecBy](rxExecBy.md)().
+ Run analysis with user defined function on the data partitions of the PXdf object with [rxExecBy](../../r-reference/revoscaler/rxexecby.md)(). This step can be repeated multiple times with different user defined functions and different subsets of data partitions using a `filterFunc` specified as an argument of [rxExecBy](../../r-reference/revoscaler/rxexecby.md)().
 
 
 
@@ -107,7 +107,7 @@ As shown in the table, when running analytics on local compute context, PXdf is 
  ##See Also
  
 [RxXdfData](RxXdfData.md),
-[rxExecBy](rxExecBy.md),
+[rxExecBy](../../r-reference/revoscaler/rxexecby.md),
 rxPartition,
 [rxGetPartitions](rxGetPartitions.md),
 [rxSplit](rxSplitXdf.md),

@@ -74,7 +74,7 @@ Data frame with `(n+1)` columns, the first `n` columns are partitioning columns 
  
 RXdfData,
 rxPartition,
-[rxExecBy](rxExecBy.md)
+[rxExecBy](../../r-reference/revoscaler/rxexecby.md)
    
  
  ##Examples
