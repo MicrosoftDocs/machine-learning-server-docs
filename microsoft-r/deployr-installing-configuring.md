@@ -952,7 +952,7 @@ Repeat these steps on each grid node machine.
 
 ### Uninstalling on Windows
 
-1.  Stop the Tomcat, RServe and MongoDB services as [described here](deployr-common-administration-tasks.md#startstop).
+1.  Stop the Tomcat, RServe and MongoDB services as [described here](deployr/deployr-common-administration-tasks.md#startstop).
 
 2.  Remove DeployR using the Windows instructions for uninstalling a program specific to your version of Windows. For example, on Windows 8, choose **Control Panel &gt; Programs & Features &gt; Uninstall**.
 

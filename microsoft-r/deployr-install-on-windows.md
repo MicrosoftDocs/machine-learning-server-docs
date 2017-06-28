@@ -333,7 +333,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
     
     8.  Click **OK** to create the new login.
 
-5.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
+5.  [Stop the DeployR server](deployr/deployr-common-administration-tasks.md#startstop).
 
 6.  Update the database properties to point to the new database as follows:
 
@@ -484,7 +484,7 @@ The following instructions describe how to uninstall DeployR on Windows.
 
 >Remember to uninstall DeployR on both the main server and any other grid node machines.
 
-1.  Stop the Tomcat and RServe services as [described here](deployr-common-administration-tasks.md#startstop).
+1.  Stop the Tomcat and RServe services as [described here](deployr/deployr-common-administration-tasks.md#startstop).
 
 2.  If you are using a SQL Server database for DeployR, then stop the process as described in the documentation for that database.
 

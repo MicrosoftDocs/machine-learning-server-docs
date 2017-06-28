@@ -281,7 +281,7 @@ After configuring DeployR to use one of those databases, you must also configure
      + The server web context now ressembles `https://xx.xx.xx.xx:8001/deployr` instead of `http://xx.xx.xx.xx:8000/deployr`.
      + The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are all checked.
 
-4.  **Restart DeployR** by [stopping and starting all its services](../deployr-common-administration-tasks.md#startstop) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
+4.  **Restart DeployR** by [stopping and starting all its services](../deployr/deployr-common-administration-tasks.md#startstop) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
 
 5.  **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8001/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see the [Alert](#alertusers) at the end of step 1.
 

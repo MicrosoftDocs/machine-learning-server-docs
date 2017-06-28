@@ -26,9 +26,9 @@ ms.custom: ""
 
 # Common DeployR Administration Tasks
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 <a name="startstop"></a>
 ## Starting and Stopping DeployR for Microsoft R Server 8.0.5
@@ -83,7 +83,7 @@ The `catalina.out` server log file is found at the following location:
 |Linux|<code>/home/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out</code>|
 |Mac OS X|<code>/Users/deployr-user/deployr/<version>/tomcat/tomcat7/logs/catalina.out</code>|
 
->[Look here](deployr/deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files) for more information on other log files associated with DeployR.
+>[Look here](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files) for more information on other log files associated with DeployR.
 
 By default, the DeployR server logs at the `INFO` level, which is appropriate for production environments. The server emits `[DEPLOYR-EVENT]` log statements that provide a permanent record of the following:
 
@@ -182,7 +182,7 @@ To back up and restore your Deployr data:
 
 1. From the landing page, open the **Administration Console**.
 
-1. [Follow these instructions](deployr/deployr-admin-console-database.md).
+1. [Follow these instructions](deployr-admin-console-database.md).
 
 <br />
 ### For DeployR 8.0.0
@@ -215,4 +215,4 @@ Follow these steps to back up the data in the database used by DeployR.
 
 ## Opening DeployR Ports
 
-To learn more about the ports you need to open, refer to the [DeployR Installation Guide](deployr-installation.md) for your operating system and DeployR version.
+To learn more about the ports you need to open, refer to the [DeployR Installation Guide](../deployr-installation.md) for your operating system and DeployR version.

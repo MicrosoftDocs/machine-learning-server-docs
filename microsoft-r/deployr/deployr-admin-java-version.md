@@ -37,7 +37,7 @@ This topic describes how to update the configuration of DeployR (Apache Tomcat, 
 
 1. Open a command prompt/terminal window with administrator/root/sudo privileges:
 
-1. [Stop DeployR](../deployr-common-administration-tasks.md#startstop).
+1. [Stop DeployR](deployr-common-administration-tasks.md#startstop).
 
 1. Go to the Apache Tomcat directory. For example, on Windows the default location is `C:\Program Files\Microsoft\DeployR-8.0.5\Apache_Tomcat\bin`.
 
@@ -50,6 +50,6 @@ This topic describes how to update the configuration of DeployR (Apache Tomcat, 
  
 1. Click **OK** to save these settings.
 
-1. [Restart DeployR](../deployr-common-administration-tasks.md#startstop).
+1. [Restart DeployR](deployr-common-administration-tasks.md#startstop).
  
 

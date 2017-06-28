@@ -56,4 +56,4 @@ Cross-Origin Resource Sharing (CORS) enables your client application to freely c
 
 1. Optionally, to restrict cross-site HTTP requests to only those requests coming from a specific domain, specify a value for `Access-Control-Allow-Origin` on the `cors.headers` property.
 
-1. [Stop and restart the DeployR server](../deployr-common-administration-tasks.md#startstop).
+1. [Stop and restart the DeployR server](../deployr/deployr-common-administration-tasks.md#startstop).

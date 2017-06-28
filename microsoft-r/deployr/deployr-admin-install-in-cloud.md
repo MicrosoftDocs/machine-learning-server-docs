@@ -139,7 +139,7 @@ You must update the server Web context or else you will not be able to access to
         ./setWebContext.sh -disableauto
         ```
 
-   >For this change to take effect [restart the DeployR 8.0.0 service](../deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+   >For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 >We highly recommended that you also [enable HTTPS support](../deployr-admin-security/deployr-security-https.md) for DeployR to secure the communications to the server.
 
@@ -294,7 +294,7 @@ You must update the server Web context or else you will not be able to access to
                 ./setWebContext.sh -disableauto
                 ```
                 
-         >For this change to take effect [restart the DeployR 8.0.0 service](../deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
+         >For this change to take effect [restart the DeployR 8.0.0 service](deployr-common-administration-tasks.md#startstop). Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.
 
 ### Configuring Ports for AWS
 

@@ -373,7 +373,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
 
     -   `$DEPLOYR_HOME/deployr/tools/lib`
 
-5.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
+5.  [Stop the DeployR server](deployr/deployr-common-administration-tasks.md#startstop).
 
 6.  Update the database properties to point to the new database as follows:
 

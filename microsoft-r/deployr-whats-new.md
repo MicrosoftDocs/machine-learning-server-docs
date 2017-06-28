@@ -100,4 +100,4 @@ The following list highlights the major changes and improvements to DeployR 7.3.
 -   New and updated API support.
 -   New user account password and user account locking policies as detailed in the [Security Guide](deployr-admin-security/deployr-security.md).
 -   New Administrator Diagnostic Tools that the 'admin' can use to diagnose the DeployR environment to help identify unresponsive components, including the server itself, grid nodes and the database.
--   New [Server Log Events](deployr-common-administration-tasks.md#inspecting-server-logs) are now captured in the DeployR server log files. These log events provide a permanent record of API call/response events, authentication events, HTTP session events, and grid R session events.
+-   New [Server Log Events](deployr/deployr-common-administration-tasks.md#inspecting-server-logs) are now captured in the DeployR server log files. These log events provide a permanent record of API call/response events, authentication events, HTTP session events, and grid R session events.
