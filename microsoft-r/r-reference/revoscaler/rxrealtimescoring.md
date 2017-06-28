@@ -126,10 +126,10 @@ To enable this functionality in SQL Server, we are adding support for serializin
 
 
 * 
- [rxSerializeModel](rxSerializeModel.md)() - Serialize a **RevoScaleR**/**MicrosoftML** model in `raw` format to enable saving the model to a database. This enables the model to be loaded into SQL Server for real-time scoring.
+ [rxSerializeModel](../../scaler/packagehelp/rxserializemodel.md)() - Serialize a **RevoScaleR**/**MicrosoftML** model in `raw` format to enable saving the model to a database. This enables the model to be loaded into SQL Server for real-time scoring.
 
 * 
- [rxUnserializeModel](rxSerializeModel.md)() - Retrieve the original R model object from the serialized raw model.
+ [rxUnserializeModel](../../scaler/packagehelp/rxserializemodel.md)() - Retrieve the original R model object from the serialized raw model.
 
 
 
@@ -140,7 +140,7 @@ The serialized models can be published to the target SQL Server Database table i
 
 
 * 
- [rxWriteObject](rxWriteObject.md)() - Store/retrieve R objects to/from ODBC data sources like SQL Server. The API is modeled after a simple key value store.
+ [rxWriteObject](../../scaler/packagehelp/rxwriteobject.md)() - Store/retrieve R objects to/from ODBC data sources like SQL Server. The API is modeled after a simple key value store.
 
 
 
@@ -244,10 +244,10 @@ Arguments other than `modelObject`/`data` available in `rxPredict` are not suppo
  
  ##See Also
  
-[rxSerializeModel](rxSerializeModel.md),
-[rxWriteObject](rxWriteObject.md),
+[rxSerializeModel](../../scaler/packagehelp/rxserializemodel.md),
+[rxWriteObject](../../scaler/packagehelp/rxwriteobject.md),
 publishService,
-[rxPredict](../../r-reference/microsoftml/rxpredict.md)
+[rxPredict](../microsoftml/rxpredict.md)
    
  ##Examples
 

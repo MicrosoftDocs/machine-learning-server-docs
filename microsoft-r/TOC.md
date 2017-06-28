@@ -441,7 +441,7 @@
 #### [rxPrivacyControl](r-reference/revoscaler/rxprivacycontrol.md) 
 #### [rxQuantile](r-reference/revoscaler/rxquantile.md) 
 #### [rxReadXdf](r-reference/revoscaler/rxreadxdf.md) 
-#### [rxRealtimeScoring](scaler/packagehelp/rxRealtimeScoring.md) 
+#### [rxRealtimeScoring](r-reference/revoscaler/rxrealtimescoring.md) 
 #### [rxRemoteCall](scaler/packagehelp/rxRemoteCall.md) 
 #### [rxRemoteFilePath](scaler/packagehelp/rxRemoteFilePath.md) 
 #### [rxRemoteGetId](scaler/packagehelp/rxRemoteGetId.md) 
