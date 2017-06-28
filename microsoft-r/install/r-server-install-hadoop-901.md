@@ -24,7 +24,7 @@ ms.custom: ""
 ---
 # Install Microsoft R Server 9.0.1 on Hadoop
 
-Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 9.0.1. For the current release, see [Install R Server for Hadoop](rserver-install-hadoop.md).
+Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 9.0.1. For the current release, see [Install R Server for Hadoop](../rserver-install-hadoop.md).
 
 **Side-by-side Installation**
 
@@ -32,7 +32,7 @@ You can install major versions of R Server (such as an 8.x and 9.x) side-by-side
 
 **Upgrade Versions**
 
-If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md) for instructions.
+If you want to replace an older version rather than run side-by-side, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). See [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md) for instructions.
 
 **Installation Steps**
 
@@ -64,11 +64,11 @@ Microsoft Azure offers virtual machines with Hadoop templates. If you don't have
 
 R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources. Nodes must have the same version of R Server within the cluster.
 
-Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server works with the Hadoop distributions listed here: [Supported platforms](rserver-install-supported-platforms.md)
+Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server works with the Hadoop distributions listed here: [Supported platforms](../rserver-install-supported-platforms.md)
 
 Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN. Optionally, Spark version 1.6-2.0 is supported for Microsoft R Server 9.0.1.
 
-In this version, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
+In this version, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](../rserver-install-linux-hadoop-packages.md) for a complete list of the dependencies required for installation.
 
 Minimum system configuration requirements for Microsoft R Server are as follows:
 
@@ -259,7 +259,7 @@ Assuming that the packages for Microsoft R Open and Microsoft R Server are alrea
 
 If you have multiple nodes, you can automate the installation across nodes using any distributed shell. (You can, of course, automate installation with a non-distributed shell such as bash using a for-loop over a list of hosts, but distributed shells usually provide the ability to run commands over multiple hosts simultaneously.) Examples include [dsh ("Dancer’s shell")](http://www.netfort.gr.jp/~dancer/software/dsh.html.en), [pdsh (Parallel Distributed Shell)](http://sourceforge.net/projects/pdsh/), [PyDSH (the Python Distributed Shell)](http://pydsh.sourceforge.net/), and [fabric](http://www.fabfile.org/). Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. (It is convenient if there is a top-level copy command, such as the pdcp command that is part of pdsh, but not necessary—the “cp” command can always be run from the shell.)
 
-Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](install/r-server-install-hadoop-800.md#StandardCommandLineInstall) steps 3 through 8.
+Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](r-server-install-hadoop-800.md#standardcommandlineinstall) steps 3 through 8.
 
 The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
@@ -283,17 +283,17 @@ Once you have R Server installed on a node, you can the `rxExec` function in Rev
 
 ## Configure R Server to operationalize your analytics
 
-Developers might want to configure R Server after its installation to benefit from the deployment and consumption of web services on your Hadoop cluster. This optional feature provides a server-based framework for running R code in real time.  We recommend that you set up the ["one-box configuration"](install/operationalize-r-server-one-box-config.md#onebox), where the compute node and web node are on the same machine. If you need to scale the configuration, then you can add web nodes and compute nodes on the other edge nodes. Do not configure a web node or compute node on any data nodes since they are not YARN resources.
+Developers might want to configure R Server after its installation to benefit from the deployment and consumption of web services on your Hadoop cluster. This optional feature provides a server-based framework for running R code in real time.  We recommend that you set up the ["one-box configuration"](operationalize-r-server-one-box-config.md#onebox), where the compute node and web node are on the same machine. If you need to scale the configuration, then you can add web nodes and compute nodes on the other edge nodes. Do not configure a web node or compute node on any data nodes since they are not YARN resources.
 
 
 ## See Also
 
-[Install R on Hadoop overview](rserver-install-hadoop.md)
+[Install R on Hadoop overview](../rserver-install-hadoop.md)
 
-[Install R Server 8.0.0 on Hadoop](install/r-server-install-hadoop-800.md)
+[Install R Server 8.0.0 on Hadoop](r-server-install-hadoop-800.md)
 
-[Install Microsoft R Server on Linux](rserver-install-linux-server.md)
+[Install Microsoft R Server on Linux](../rserver-install-linux-server.md)
 
-[Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
+[Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
 
-[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
+[Troubleshoot R Server installation problems on Hadoop](../rserver-install-hadoop-troubleshoot.md)

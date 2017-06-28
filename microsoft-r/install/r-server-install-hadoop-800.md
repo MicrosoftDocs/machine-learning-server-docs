@@ -24,7 +24,7 @@ ms.custom: ""
 ---
 # Install Microsoft R Server 8.0 on Hadoop
 
-Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Hadoop](../rserver-install-hadoop-901.md).
+Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0. For the current release, see [Install R Server for Hadoop](r-server-install-hadoop-901.md).
 
 ## Recommendations for installation
 
