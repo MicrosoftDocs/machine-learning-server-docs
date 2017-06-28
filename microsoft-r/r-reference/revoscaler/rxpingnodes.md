@@ -49,7 +49,7 @@ computation nodes.
    
   
  ### `computeContext`
- A distributed compute context. [RxHpcServer](../../r-reference/revoscaler/revoscaler-deprecated.md), and  [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md) contexts are supported.  See the details section for more information. 
+ A distributed compute context. [RxHpcServer](revoscaler-deprecated.md), and  [RxInTeradata](rxinteradata.md) contexts are supported.  See the details section for more information. 
   
   
   
@@ -81,7 +81,7 @@ that is to be pinged.  Furthermore, the nodes to be pinged will be determined in
 cause the set of nodes to be checked to be the intersection between all the nodes in the `groups` or `queue` 
 specified, and the set of nodes specifically specified in the `nodes` parameter, and so forth.  Note that for 
 clusters and clouds that do have a head node, `computeOnHeadNode` is respected.  For more 
-information, see the compute context constructors or the [rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md) for more information.
+information, see the compute context constructors or the [rxGetNodeInfo](rxgetnodeinfo.md) for more information.
 
 Most other values in the compute context are respected when determing how a ping will be sent.  The following fields in particular are of note 
 when using this tool:
@@ -105,8 +105,8 @@ Should almost always be set to `TRUE`; however, may be of use to a system admini
  
  
  ##Value
-  An object of type `rxPingResults`.  This is essentially a list in which component is named using an [rxMakeRNodeNames](../../r-reference/revoscaler/rxmakernodenames.md) translated 
-node name in the same manner and for the same reasons described for [rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md), with the `getWorkersOnly` parameter set to FALSE.  
+  An object of type `rxPingResults`.  This is essentially a list in which component is named using an [rxMakeRNodeNames](rxmakernodenames.md) translated 
+node name in the same manner and for the same reasons described for [rxGetNodeInfo](rxgetnodeinfo.md), with the `getWorkersOnly` parameter set to FALSE.  
 Each element of this list contains two
 elements: `nodeName` which holds the true, unmangled name of the node, and `status`, which contains a character scalar with one of 
 the following values:
@@ -133,11 +133,11 @@ The ping was sent, but a response was never received.  This could be due to a pr
 
 
 ###`failedAmps`
-Not all of the AMPs were successful - for [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md).
+Not all of the AMPs were successful - for [RxInTeradata](rxinteradata.md).
 
 
 An `as.vector` method is provided for the `rxPingResults` object which returns a character vector of the non-mangled 
-([rxMakeRNodeNames](../../r-reference/revoscaler/rxmakernodenames.md) translated) node names for use in another compute context, filtered by the `filter` parameter originally 
+([rxMakeRNodeNames](rxmakernodenames.md) translated) node names for use in another compute context, filtered by the `filter` parameter originally 
 provided.
 
 Finally, the `rxPingResults` object has a `logical` attribute associated with it: `allOk`.  This attribute is set to `TRUE` if all of 
@@ -152,11 +152,11 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md),
-[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
-[rxMakeRNodeNames](../../r-reference/revoscaler/rxmakernodenames.md),
-[rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md),
-[rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md).
+[rxGetAvailableNodes](rxgetavailablenodes.md),
+[RxInTeradata](rxinteradata.md),
+[rxMakeRNodeNames](rxmakernodenames.md),
+[rxGetNodeInfo](rxgetnodeinfo.md),
+[rxGetAvailableNodes](rxgetavailablenodes.md).
    
  
  

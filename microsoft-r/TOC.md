@@ -433,7 +433,7 @@
 #### [rxOptions](r-reference/revoscaler/rxoptions.md) 
 #### [rxPackage](r-reference/revoscaler/rxpackage.md) 
 #### [rxPairwiseCrosstab](r-reference/revoscaler/rxpairwisecrosstab.md) 
-#### [rxPingNodes](scaler/packagehelp/rxPingNodes.md) 
+#### [rxPingNodes](r-reference/revoscaler/rxpingnodes.md) 
 #### [rxPredict](scaler/packagehelp/rxPredict.md) 
 #### [rxPredict.rxDForest](scaler/packagehelp/rxPredict.rxDForest.md) 
 #### [rxPredict.rxDTree](scaler/packagehelp/rxPredict.rxDTree.md) 
