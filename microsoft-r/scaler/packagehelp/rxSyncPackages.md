@@ -92,7 +92,7 @@ Invisible `NULL`
  ##See Also
  
 [rxInstallPackages](../../r-reference/revoscaler/rxinstallpackages.md),
-[rxPackage](rxPackage.md),
+[rxPackage](../../r-reference/revoscaler/rxpackage.md),
 install.packages,
 [rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 [rxInstalledPackages](../../r-reference/revoscaler/rxinstalledpackages.md),

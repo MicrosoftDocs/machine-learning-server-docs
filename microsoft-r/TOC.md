@@ -431,7 +431,7 @@
 #### [RxOdbcData](r-reference/revoscaler/rxodbcdata.md) 
 #### [rxOpen-methods](r-reference/revoscaler/rxopen-methods.md) 
 #### [rxOptions](r-reference/revoscaler/rxoptions.md) 
-#### [rxPackage](scaler/packagehelp/rxPackage.md) 
+#### [rxPackage](r-reference/revoscaler/rxpackage.md) 
 #### [rxPairwiseCrosstab](scaler/packagehelp/rxPairwiseCrosstab.md) 
 #### [rxPingNodes](scaler/packagehelp/rxPingNodes.md) 
 #### [rxPredict](scaler/packagehelp/rxPredict.md) 
