@@ -479,7 +479,7 @@
 #### [RxTeradata-class](r-reference/revoscaler/rxteradata-class.md) 
 #### [RxTeradata](r-reference/revoscaler/rxteradata.md) 
 #### [rxTeradataSql](r-reference/revoscaler/rxteradatasql.md) 
-#### [RxTextData-class](scaler/packagehelp/RxTextData-class.md) 
+#### [RxTextData-class](r-reference/revoscaler/rxtextdata-class.md) 
 #### [RxTextData](scaler/packagehelp/RxTextData.md) 
 #### [rxTextToXdf](scaler/packagehelp/rxTextToXdf.md) 
 #### [rxTlcBridge](scaler/packagehelp/rxTlcBridge.md) 
