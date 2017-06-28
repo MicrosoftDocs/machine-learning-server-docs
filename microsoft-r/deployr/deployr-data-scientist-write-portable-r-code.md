@@ -156,7 +156,7 @@ The following steps describe how to use the functions in the `deployrUtils` pack
 3.  [Verify](deployr-data-scientist-getting-started.md#test-analytics) that the script's behavior remains consistent across environments by running that script using its default values in the [Test page](../deployr-repository-manager/deployr-repository-manager-testing-debugging-scripts.md) before handing it off to the application developer(s).
 
     >[!NOTE]
-	>1. If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](deployr-admin-r-package-management.md).
+	>1. If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the [Administrator Guidelines](../operationalize/configure-manage-r-packages.md).
 	>
     >2. If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.
 

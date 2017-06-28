@@ -130,7 +130,7 @@
 #### [Configure CORS](operationalize/configure-cors.md)
 #### [R execution security](operationalize/security-rserve.md)
 #### [Configure database](operationalize/configure-remote-database.md)
-#### [Manage R packages](operationalize/package-management.md)
+#### [Manage R packages](operationalize/configure-manage-r-packages.md)
 
 ### [Provision in the Cloud](install/r-server-vm-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)

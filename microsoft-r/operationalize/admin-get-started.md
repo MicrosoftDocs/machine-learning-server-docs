@@ -83,7 +83,7 @@ The primary function of the operationalization feature is to support the executi
 
 The R code developed and deployed by data scientists within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](http://cran.r-project.org/), [MRAN](http://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
 
-Making sure that these R package dependencies are available to the code executing on R Server's operationalization feature requires active participation from you, the administrator. There are several R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](package-management.md).
+Making sure that these R package dependencies are available to the code executing on R Server's operationalization feature requires active participation from you, the administrator. There are several R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](configure-manage-r-packages.md).
 
 ## Runtime policies
 
@@ -142,7 +142,7 @@ This section provides a quick summary of useful links for administrators working
 **Key Documents**
 -   [About Operationalization](about.md)
 -   [Configuration](../install/operationalize-r-server-one-box-config.md)
--   [R Package Management](package-management.md)
+-   [R Package Management](configure-manage-r-packages.md)
 -   [Diagnostic Testing & Troubleshooting](admin-diagnostics.md)
 -   [Capacity Evaluatation](configure-evaluate-capacity.md)
 -   [Comparison between 8.x and 9.x](../rserver-whats-new.md)
