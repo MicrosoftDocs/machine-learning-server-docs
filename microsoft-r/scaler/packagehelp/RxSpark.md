@@ -281,7 +281,7 @@ context.
   
     
  ### `fileSystem`
- `NULL` or an [RxHdfsFileSystem](RxHdfsFileSystem.md) to use as the default file system for data sources when created when this compute context is active. 
+ `NULL` or an [RxHdfsFileSystem](../../r-reference/revoscaler/rxhdfsfilesystem.md) to use as the default file system for data sources when created when this compute context is active. 
   
   
     

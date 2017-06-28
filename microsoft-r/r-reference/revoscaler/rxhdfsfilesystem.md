@@ -84,17 +84,17 @@ print  ( x, ... )
  
  ##Details
  
-Writing to the HDFS file system can only be done using a [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md)
-compute context with an [RxXdfData](RxXdfData.md) data source. The 'rxHadoop' commands,
-such as [rxHadoopCopy](../../r-reference/revoscaler/rxhadoopcommand.md), can also be used to manipulate data sets in HDFS.
+Writing to the HDFS file system can only be done using a [RxHadoopMR](rxhadoopmr.md)
+compute context with an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) data source. The 'rxHadoop' commands,
+such as [rxHadoopCopy](rxhadoopcommand.md), can also be used to manipulate data sets in HDFS.
  
  
  
  ##Value
  
 An RxHdfsFileSystem file system object. This object may be used to in
-[rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
-[RxXdfData](RxXdfData.md) to set the file system.
+[rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md), [rxOptions](../../scaler/packagehelp/rxoptions.md), [RxTextData](../../scaler/packagehelp/rxtextdata.md), or
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md) to set the file system.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -102,13 +102,13 @@ An RxHdfsFileSystem file system object. This object may be used to in
  
  ##See Also
  
-[RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md),
-[RxNativeFileSystem](RxNativeFileSystem.md),
-[rxSetFileSystem](rxSetFileSystem.md),
-[rxOptions](rxOptions.md),
-[RxXdfData](RxXdfData.md),
-[RxTextData](RxTextData.md),
-[rxOAuthParameters](rxOAuthParameters.md).
+[RxFileSystem](rxfilesystem.md),
+[RxNativeFileSystem](../../scaler/packagehelp/rxnativefilesystem.md),
+[rxSetFileSystem](../../scaler/packagehelp/rxsetfilesystem.md),
+[rxOptions](../../scaler/packagehelp/rxoptions.md),
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
+[RxTextData](../../scaler/packagehelp/rxtextdata.md),
+[rxOAuthParameters](../../scaler/packagehelp/rxoauthparameters.md).
    
  ##Examples
 

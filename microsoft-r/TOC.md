@@ -398,7 +398,7 @@
 #### [RxHadoopMR-class](r-reference/revoscaler/rxhadoopmr-class.md) 
 #### [RxHadoopMR](r-reference/revoscaler/rxhadoopmr.md) 
 #### [rxHdfsConnect](r-reference/revoscaler/rxhdfsconnect.md) 
-#### [RxHdfsFileSystem](scaler/packagehelp/RxHdfsFileSystem.md) 
+#### [RxHdfsFileSystem](r-reference/revoscaler/rxhdfsfilesystem.md) 
 #### [rxHistogram](scaler/packagehelp/rxHistogram.md) 
 #### [RxHPCServer-class](scaler/packagehelp/RxHPCServer-class.md) 
 #### [rxImport](scaler/packagehelp/rxImport.md) 

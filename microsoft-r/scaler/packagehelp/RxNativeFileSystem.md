@@ -55,7 +55,7 @@ An RxNativeFileSystem file system object. This object may be used in
  ##See Also
  
 [RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md),
-[RxHdfsFileSystem](RxHdfsFileSystem.md),
+[RxHdfsFileSystem](../../r-reference/revoscaler/rxhdfsfilesystem.md),
 [rxSetFileSystem](rxSetFileSystem.md),
 [rxOptions](rxOptions.md),
 [RxXdfData](RxXdfData.md),
