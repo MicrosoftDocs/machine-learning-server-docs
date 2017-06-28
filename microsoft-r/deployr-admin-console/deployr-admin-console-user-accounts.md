@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Creating & Managing User Accounts
 
-User accounts, which are [created](deployr-admin-console-permissions-with-roles.md#creating-custom-roles) and [managed](deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) in this Administration Console, provide authenticated access to the DeployR Web Services API, the API Explorer tool, and the Administration Console.  Aside from the `admin` account, user accounts represent script authors, client application developers, or client application end-users.
+User accounts, which are [created](../deployr/deployr-admin-console-permissions-with-roles.md#creating-custom-roles) and [managed](../deployr/deployr-admin-console-permissions-with-roles.md#viewing-editing-and-assigning-roles) in this Administration Console, provide authenticated access to the DeployR Web Services API, the API Explorer tool, and the Administration Console.  Aside from the `admin` account, user accounts represent script authors, client application developers, or client application end-users.
 
 Each user has an account with [properties](deployr-admin-console-user-accounts.md#user-account-properties) such as their username, password, permissions, and so on. A user can represent an individual or an entity such as a dedicated DeployR client application. The role(s) assigned to users determine their rights to access the console, their rights to access all or some of the API, and in some cases, their rights to access certain scripts. 
 
@@ -117,7 +117,7 @@ For each user, there are a number of properties that can be defined. The propert
 
 You can export user accounts into a CSV file. Exporting can be used to copy the accounts to another machine or to preserve them as a backup.
 
->When an account is exported, the assigned boundaries or roles are **not included** in the export. If you import the account later, the `BASIC_USER` role is automatically assigned unless you choose to assign the `POWER_USER` role to all accounts being imported. Keep in mind that you can manually [assign roles](deployr-admin-console-permissions-with-roles.md) individually later. 
+>When an account is exported, the assigned boundaries or roles are **not included** in the export. If you import the account later, the `BASIC_USER` role is automatically assigned unless you choose to assign the `POWER_USER` role to all accounts being imported. Keep in mind that you can manually [assign roles](../deployr/deployr-admin-console-permissions-with-roles.md) individually later. 
  
 _Figure: Export User Accounts page_
 ![](media/deployr-admin-console-user-accounts/userexport.png)  
