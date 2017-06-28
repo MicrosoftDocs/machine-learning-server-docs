@@ -59,12 +59,12 @@ Import data into an .xdf file or `data.frame`.
    
     
  ### `inData`
- a character string with the path for the data  to import (delimited, fixed format, SPSS, SAS, ODBC, or XDF). Alternatively, a  data source object representing the input data source can be  specified. (See [RxTextData](RxTextData.md), [RxSasData](RxSasData.md), [RxSpssData](RxSpssData.md), and [RxOdbcData](RxOdbcData.md).) If a character  string is supplied and `type` is set to `"auto"`, the type of file is  inferred from its extension, with the default being a text file. A  `data.frame` can also be used for `inData`. 
+ a character string with the path for the data  to import (delimited, fixed format, SPSS, SAS, ODBC, or XDF). Alternatively, a  data source object representing the input data source can be  specified. (See [RxTextData](../../scaler/packagehelp/rxtextdata.md), [RxSasData](../../scaler/packagehelp/rxsasdata.md), [RxSpssData](../../scaler/packagehelp/rxspssdata.md), and [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md).) If a character  string is supplied and `type` is set to `"auto"`, the type of file is  inferred from its extension, with the default being a text file. A  `data.frame` can also be used for `inData`. 
   
   
     
  ### `outFile`
- a character string representing the output .xdf file, a  [RxHiveData](RxSparkData.md) data source, a[RxParquetData](RxSparkData.md) data source or   a [RxXdfData](RxXdfData.md) object.   If `NULL`, a data frame will be returned in memory. 
+ a character string representing the output .xdf file, a  [RxHiveData](../../scaler/packagehelp/rxsparkdata.md) data source, a[RxParquetData](../../scaler/packagehelp/rxsparkdata.md) data source or   a [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object.   If `NULL`, a data frame will be returned in memory. 
   
    
     
@@ -94,12 +94,12 @@ Import data into an .xdf file or `data.frame`.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](rxTransform.md) for details. 
+ variable transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](../../scaler/packagehelp/rxtransform.md) for details. 
   
   
     
@@ -182,13 +182,13 @@ Import data into an .xdf file or `data.frame`.
  character string set specifying file type of `inData`. This is ignored if `inData` is a data source. Possible values are:   
    *   `"auto"`: file type is automatically detected by looking at file extensions and argument values. 
    *   `"textFast"`: delimited text import using faster, more limited import mode. By default variables containing the values `TRUE` and `FALSE` or `T` and `F` will be created as logical variables. 
-   *   `"text"`: delimited text import using enhanced, slower import mode (not supported with HDFS). This allows for importing Date and POSIXct data types, handling the delimiter character inside a quoted string, and specifying decimal character and thousands separator. (See [RxTextData](RxTextData.md).) 
+   *   `"text"`: delimited text import using enhanced, slower import mode (not supported with HDFS). This allows for importing Date and POSIXct data types, handling the delimiter character inside a quoted string, and specifying decimal character and thousands separator. (See [RxTextData](../../scaler/packagehelp/rxtextdata.md).) 
    *   `"fixedFast"`: fixed format text import using faster, more limited import mode. You must specify a .sts format file or colInfo specifications with `start` and `width`for each variable.    
    *   `"fixed"`: fixed format text import using enhanced, slower import mode (not supported with HDFS). This allows for importing Date and POSIXct data types and specifying decimal character and thousands separator.  You must specify a .sts format file or colInfo specifications with `start` and `width`for each variable.      
-   *   `"sas"`: SAS data files. (See [RxSasData](RxSasData.md).)	   
-   *   `"spss"`: SPSS data files. (See [RxSpssData](RxSpssData.md).) 
+   *   `"sas"`: SAS data files. (See [RxSasData](../../scaler/packagehelp/rxsasdata.md).)	   
+   *   `"spss"`: SPSS data files. (See [RxSpssData](../../scaler/packagehelp/rxspssdata.md).) 
    *   `"odbcFast"`: ODBC import using faster, more limited import mode. 
-   *   `"odbc"`: ODBC import using slower, enhanced import on Windows.  (See [RxOdbcData](RxOdbcData.md).)	   
+   *   `"odbc"`: ODBC import using slower, enhanced import on Windows.  (See [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md).)	   
  
   
   
@@ -224,12 +224,12 @@ Import data into an .xdf file or `data.frame`.
   
     
  ### `blocksPerCompositeFile`
- integer value. If `createCompositeSet=TRUE`, and if the compute context is not `RxHadoopMR`, this will be the number of blocks put into each .xdfd file in the composite set. When importing is being done on Hadoop using MapReduce, the number of rows per .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by `rowsPerRead`. If the `outFile` is an [RxXdfData](RxXdfData.md) object, set the value for `blocksPerCompositeFile` there instead. 
+ integer value. If `createCompositeSet=TRUE`, and if the compute context is not `RxHadoopMR`, this will be the number of blocks put into each .xdfd file in the composite set. When importing is being done on Hadoop using MapReduce, the number of rows per .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by `rowsPerRead`. If the `outFile` is an [RxXdfData](../../scaler/packagehelp/rxxdfdata.md) object, set the value for `blocksPerCompositeFile` there instead. 
    
    
     
  ### ` ...`
- additional arguments to be passed directly to the underlying data source objects to be imported. These argument values will override the existing values in an existing data source, if it is passed in as the `inData`. See [RxTextData](RxTextData.md), [RxSasData](RxSasData.md), [RxSpssData](RxSpssData.md), and [RxOdbcData](RxOdbcData.md). 
+ additional arguments to be passed directly to the underlying data source objects to be imported. These argument values will override the existing values in an existing data source, if it is passed in as the `inData`. See [RxTextData](../../scaler/packagehelp/rxtextdata.md), [RxSasData](../../scaler/packagehelp/rxsasdata.md), [RxSpssData](../../scaler/packagehelp/rxspssdata.md), and [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md). 
   
  
  
@@ -239,7 +239,7 @@ Import data into an .xdf file or `data.frame`.
 If a data source is passed in as `inData`, argument values specified in the call
 to `rxImport` will override any existing specifications in the data source. Setting
 `type` to `"text"`, `"fixed"`, or `"odbc"` is equivalent to setting 
-`useFastRead` to `FALSE` in an [RxTextData](RxTextData.md) or [RxOdbcData](RxOdbcData.md)
+`useFastRead` to `FALSE` in an [RxTextData](../../scaler/packagehelp/rxtextdata.md) or [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md)
 input data source.  Similarly, setting `type` to `"textFast"`, `"fixedFast"`, 
 or `"odbcFast"` is equivalent to setting `useFastRead` to `TRUE`.
 
@@ -252,7 +252,7 @@ files that contain the delimiter character inside a quoted string
 `text` 'type' if your data set contains character data with this characteristic.
 
 For information on using a .sts schema file for fixed format text import,
-see the [RxTextData](RxTextData.md) help file.
+see the [RxTextData](../../scaler/packagehelp/rxtextdata.md) help file.
 
 **Encoding Details**
 
@@ -271,7 +271,7 @@ the 'fast' versions of these values may not handle extended UTF-8 characters cor
  
 If an `outFile` is not specified, an output
 data frame is returned.  If an `outFile` is specified, an 
-[RxXdfData](RxXdfData.md) data source is returned that can be used in
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md) data source is returned that can be used in
 subsequent RevoScaleR analysis.
  
  ##Author(s)
@@ -280,15 +280,15 @@ subsequent RevoScaleR analysis.
  
  ##See Also
  
-[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[RxTextData](RxTextData.md),
-[RxSasData](RxSasData.md),
-[RxSpssData](RxSpssData.md),
-[RxOdbcData](RxOdbcData.md),
-[RxXdfData](RxXdfData.md),
-[rxSplit](rxSplitXdf.md),
-[rxTransform](rxTransform.md).
+[RxDataSource-class](rxdatasource-class.md),
+[rxDataStep](rxdatastep.md),
+[RxTextData](../../scaler/packagehelp/rxtextdata.md),
+[RxSasData](../../scaler/packagehelp/rxsasdata.md),
+[RxSpssData](../../scaler/packagehelp/rxspssdata.md),
+[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md),
+[RxXdfData](../../scaler/packagehelp/rxxdfdata.md),
+[rxSplit](../../scaler/packagehelp/rxsplitxdf.md),
+[rxTransform](../../scaler/packagehelp/rxtransform.md).
    
  ##Examples
 

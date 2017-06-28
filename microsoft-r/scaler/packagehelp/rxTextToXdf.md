@@ -286,7 +286,7 @@ under 'Encoding Details'
 For reasons of performance, `rxTextToXdf` does not properly handle text
 files that contain the delimiter character inside a quoted string (for
 example, the entry `"Wade, John"` inside a comma delimited file. See
-[rxImport](rxImport.md) with `type = "text"` for importing this type of data.
+[rxImport](../../r-reference/revoscaler/rximport.md) with `type = "text"` for importing this type of data.
 
 In addition `rxTextToXdf` currently requires that all rows of data in the
 text file contain the same number of entries. Date, time, and currency data 
@@ -299,7 +299,7 @@ types are not currently supported and are imported as character data.
  
  ##See Also
  
-[rxImport](rxImport.md),
+[rxImport](../../r-reference/revoscaler/rximport.md),
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
 [rxFactors](../../r-reference/revoscaler/rxfactors.md),
 [rxTransform](rxTransform.md).

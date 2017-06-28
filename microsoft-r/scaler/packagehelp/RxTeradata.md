@@ -247,7 +247,7 @@ Interface Programmer Guide*
 [RxTeradata-class](RxTeradata-class.md),
 [RxInTeradata](RxInTeradata.md),
 [rxNewDataSource](rxNew.md),
-[rxImport](rxImport.md).
+[rxImport](../../r-reference/revoscaler/rximport.md).
    
  ##Examples
 

@@ -185,7 +185,7 @@ object of class RxSpssData.
  
 [RxSpssData-class](RxSpssData-class.md),
 [rxNewDataSource](rxNew.md),
-[rxImport](rxImport.md).
+[rxImport](../../r-reference/revoscaler/rximport.md).
    
  
  ##Examples

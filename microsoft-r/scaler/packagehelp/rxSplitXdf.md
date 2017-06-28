@@ -272,7 +272,7 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
  ##See Also
  
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxImport](rxImport.md),
+[rxImport](../../r-reference/revoscaler/rximport.md),
 [rxTransform](rxTransform.md)
    
  ##Examples

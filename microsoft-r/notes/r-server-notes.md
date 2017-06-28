@@ -37,7 +37,7 @@ Other release-specific pages include [What's New in 9.1](../rserver-whats-new.md
 |-----------|----|--------|
 |`rxGetNodes` | Deprecated | [`rxGetAvailableNodes`](../r-reference/revoscaler/rxgetavailablenodes.md)| 
 |`RxHpcServer` | Deprecated | [`RxSpark`](../scaler/packagehelp/rxSpark.md) or [`RxHadoopMR`](../scaler/packagehelp/rxHadoopMR.md)| 
-|`rxImportToXdf` | Deprecated | [`rxImport`](../scaler/packagehelp/rxImport.md) |
+|`rxImportToXdf` | Deprecated | [`rxImport`](../r-reference/revoscaler/rximport.md) |
 |`rxDataStepXdf` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
 |`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |
 |`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](../r-reference/revoscaler/rxdatastep.md) |

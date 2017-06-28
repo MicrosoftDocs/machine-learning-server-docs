@@ -413,7 +413,7 @@ object of class RxTextData.
  ##See Also
  
 [RxTextData-class](RxTextData-class.md),
-[rxImport](rxImport.md),
+[rxImport](../../r-reference/revoscaler/rximport.md),
 [rxNewDataSource](rxNew.md).
    
  ##Examples

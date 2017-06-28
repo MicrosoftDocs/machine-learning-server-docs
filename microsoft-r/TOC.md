@@ -401,7 +401,7 @@
 #### [RxHdfsFileSystem](r-reference/revoscaler/rxhdfsfilesystem.md) 
 #### [rxHistogram](r-reference/revoscaler/rxhistogram.md) 
 #### [RxHPCServer-class](r-reference/revoscaler/rxhpcserver-class.md) 
-#### [rxImport](scaler/packagehelp/rxImport.md) 
+#### [rxImport](r-reference/revoscaler/rximport.md) 
 #### [RxInSqlServer-class](scaler/packagehelp/RxInSqlServer-class.md) 
 #### [RxInSqlServer](scaler/packagehelp/RxInSqlServer.md) 
 #### [rxInstalledPackages](scaler/packagehelp/rxInstalledPackages.md) 

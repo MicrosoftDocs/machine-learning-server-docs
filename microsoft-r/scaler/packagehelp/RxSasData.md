@@ -215,7 +215,7 @@ object of class RxSasData.
  
 [RxSasData-class](RxSasData-class.md),
 [rxNewDataSource](rxNew.md),
-[rxImport](rxImport.md).
+[rxImport](../../r-reference/revoscaler/rximport.md).
    
  
  ##Examples

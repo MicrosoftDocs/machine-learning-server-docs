@@ -125,7 +125,7 @@ a list is returned.
  
  ##See Also
  
-[rxImport](rxImport.md),
+[rxImport](../../r-reference/revoscaler/rximport.md),
 [rxDataStep](../../r-reference/revoscaler/rxdatastep.md).
    
  ##Examples

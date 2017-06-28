@@ -112,7 +112,7 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) | Enhanced | Multithreaded support. |
 | [`rxGetPartitions`](r-reference/revoscaler/rxgetpartitions.md)  | New | Gets the partitions of a previously partitioned Xdf data source. |
 | [`rxGetSparklyrConnection`](r-reference/revoscaler/rxgetsparklyrconnection.md)  | New | Get a Spark compute context with sparklyr interop.  |
-| [`rxImport`](scaler/packagehelp/rxImport.md)  | Enhanced | Multithreaded support. |
+| [`rxImport`](r-reference/revoscaler/rximport.md)  | Enhanced | Multithreaded support. |
 | `rxMerge` | Enhanced | Merging data frames in Spark compute context. |
 | [`RxOrcData`](scaler/packagehelp/RxSparkData.md) | New | Create data sets based on data stored in Optimized Row Columnar (ORC) format.|
 | [`rxSerializeModel`](scaler/packagehelp/rxSerializeModel.md)  | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
