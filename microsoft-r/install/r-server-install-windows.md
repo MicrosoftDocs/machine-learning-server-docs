@@ -164,7 +164,7 @@ The Windows installer and SQL Server installer create different library folder p
 
 ## Deploy at scale
 
-As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install [SQL Server R Services](../sql-server-r-services.md) as part of a multi-instance relational database engine service and then use each one independently.
+As a standalone server, R Server for Windows is not multi-instance. If you require multiple copies of R Server at the same functional level on a single server, you can install [SQL Server R Services](../r/concept-what-is-sql-server-r-services.md) as part of a multi-instance relational database engine service and then use each one independently.
 
 Another scalable topology is to install multiple R Servers, each configured as either a dedicated web node or compute node. Nodes can be clustered using NLB or Windows failover clustering. For more information, see [Operationalize your analytics](../deployr-repository-manager/about.md).
 

@@ -111,4 +111,4 @@ Learn more about SQL Server Machine Learning Services here:
 + [In-Database Advanced Analytics for SQL Developers (Tutorial)](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/sqldev-in-database-advanced-analytics-for-sql-developers)
 
 
-Learn more about the [RevoScaleR package and its function here](r-reference/revoscaler/revoscaler.md).
+Learn more about the [RevoScaleR package and its function here](../revoscaler.md).
