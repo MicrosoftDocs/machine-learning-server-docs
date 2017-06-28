@@ -183,7 +183,7 @@ object of class RxSpssData.
  
  ##See Also
  
-[RxSpssData-class](RxSpssData-class.md),
+[RxSpssData-class](../../r-reference/revoscaler/rxspssdata-class.md),
 [rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
 [rxImport](../../r-reference/revoscaler/rximport.md).
    
