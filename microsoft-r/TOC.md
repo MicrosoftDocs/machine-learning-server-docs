@@ -240,7 +240,7 @@
 ### [loss](r-reference/microsoftml/loss.md)
 ### [minCount](r-reference/microsoftml/mincount.md)
 ### [mlModel](r-reference/microsoftml/mlmodel.md)
-### [mutualInformation](microsoftml/packagehelp/mutualInformation.md)
+### [mutualInformation](r-reference/microsoftml/mutualinformation.md)
 ### [NeuralNet](microsoftml/packagehelp/NeuralNet.md)
 ### [ngram](microsoftml/packagehelp/ngram.md)
 ### [OneClassSvm](microsoftml/packagehelp/OneClassSvm.md)
