@@ -26,13 +26,13 @@ ms.custom: ""
 
 # Install Microsoft R Client on Windows
 
-Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](scaler-getting-started-data-import-exploration.md) and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](../scaler-getting-started-data-import-exploration.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](r-client/compatibility-with-server.md)
+To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)
   
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](operationalize/remote-execution.md) from the `mrsdeploy` package. 
+You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../operationalize/remote-execution.md) from the `mrsdeploy` package. 
 
 
 ## System Requirements
@@ -69,7 +69,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Review the components that are installed as part of Microsoft R Client. 
     
-   While most are required, you can choose to add additional components such as [**pretrained models**](install/microsoftml-install-pretrained-models.md). 
+   While most are required, you can choose to add additional components such as [**pretrained models**](../install/microsoftml-install-pretrained-models.md). 
 
 1. Accept the Microsoft R Client license terms.
 
@@ -106,7 +106,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
    + Review the components that are installed as part of Microsoft R Client. 
     
-     While most are required, you can choose to add additional components such as [**pretrained models**](install/microsoftml-install-pretrained-models.md). 
+     While most are required, you can choose to add additional components such as [**pretrained models**](../install/microsoftml-install-pretrained-models.md). 
 
    + Accept the Microsoft R Client license terms.
 
@@ -115,7 +115,7 @@ On the machine onto which you are installing, follow this guidance before you be
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: mrupdate::mrCheckForUpdates()
 
 >[!IMPORTANT]
->Review the recommendations in [Package Management](operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.
+>Review the recommendations in [Package Management](../operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.
 
 <a name=silent></a> 
 
@@ -150,18 +150,18 @@ All tools for the standard base R (RTerm, Rgui.exe, and RScript) are also includ
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](index.md) 
++ [Overview of Microsoft R](../index.md) 
 
-+ [Overview of Microsoft R Client](r-client-get-started.md) 
++ [Overview of Microsoft R Client](../r-client-get-started.md) 
 
-+ [Quickstart: Running R code in Microsoft R](quickstart-r-code.md) (example)
++ [Quickstart: Running R code in Microsoft R](../quickstart-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](data-analysis-in-microsoft-r.md)
++ [Diving into data analysis with Microsoft R](../data-analysis-in-microsoft-r.md)
 
-+ [RevoScaleR R package reference](microsoft-r-tutorials.md)
++ [RevoScaleR R package reference](../microsoft-r-tutorials.md)
 
-+ [MicrosoftML R package reference](microsoftml-get-started.md)
++ [MicrosoftML R package reference](../microsoftml-get-started.md)
 
-+ [mrsdeploy R package reference](r-reference/mrsdeploy/mrsdeploy-package.md)
++ [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ [Execute code on remote R Server](operationalize/remote-execution.md)
++ [Execute code on remote R Server](../operationalize/remote-execution.md)

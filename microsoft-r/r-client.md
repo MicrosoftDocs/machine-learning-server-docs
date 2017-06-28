@@ -57,7 +57,7 @@ Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get
 
 The first step is to download Microsoft R Client for your operating system and install it. To learn more about the supported platforms or installation steps, please see the following articles:
 
-+ [Install Microsoft R Client on Windows](r-client-install-windows.md)
++ [Install Microsoft R Client on Windows](r-client/install-on-windows.md)
 
 + [Install Microsoft R Client for Linux](r-client/install-on-linux.md)
 
