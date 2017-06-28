@@ -96,7 +96,7 @@ Minnesota Population Center, University of Minnesota.
  
  ##See Also
  
-[CensusUS5Pct2000](../../r-reference/revoscaler/censusus5pct2000.md)
+[CensusUS5Pct2000](censusus5pct2000.md)
    
  ##Examples
 

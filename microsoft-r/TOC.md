@@ -327,7 +327,7 @@
 #### [AirlineDemoSmall](r-reference/revoscaler/airlinedemosmall.md) 
 #### [AirOnTime87to12](r-reference/revoscaler/airontime87to12.md)
 #### [CensusUS5Pct2000](r-reference/revoscaler/censusus5pct2000.md) 
-#### [CensusWorkers](scaler/packagehelp/CensusWorkers.md)
+#### [CensusWorkers](r-reference/revoscaler/censusworkers.md)
 #### [claims](scaler/packagehelp/claims.md) 
 #### [DJIAdaily](scaler/packagehelp/DJIAdaily.md) 
 #### [Kyphosis](scaler/packagehelp/Kyphosis.md) 
