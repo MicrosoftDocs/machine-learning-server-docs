@@ -62,7 +62,7 @@
 
 ## RevoScaleR Development
 ### [Write custom chunking algorithms in RevoScaleR](r/how-to-developer-write-chunking-algorithms.md)
-### [Write custom analyses for large data sets in RevoScaleR](scaler-user-guide-write-custom-analyses.md)
+### [Write custom analyses for large data sets in RevoScaleR](r/how-to-developer-write-custom-analysis.md)
 ### [Converting RevoScaleR Model Objects for Use with PMML](r/how-to-developer-pmml.md)
 ### [Manage threads in RevoScaleR](r/how-to-developer-manage-threads.md)
 
