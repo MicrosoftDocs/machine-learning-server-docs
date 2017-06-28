@@ -300,7 +300,7 @@ Now click ![](media/RevoRPE_Getting_Started/image4.png) to begin running the scr
 
 When stopped at a breakpoint, you may choose to step through your code.  Three stepping commands are available for this and can be accessed from the **Debug** menu, the **Debug** toolbar, or using accelerator key combinations.
 
-- **Step Into** ![](media/RevoRPE_Getting_Started/image8.png) **(F11):** Stops at the next breakable point.  If your point of execution (the yellow arrow) is on a call to a function defined in the current folder, then Step Into will stop in front of the first executable line inside that function.  Note that if you are not stopped before a function defined within the current project, 'Step Into' will function identically to 'Step Over'
+- **Step Into** ![](./media/revorpe-getting-started/image8.png) **(F11):** Stops at the next breakable point.  If your point of execution (the yellow arrow) is on a call to a function defined in the current folder, then Step Into will stop in front of the first executable line inside that function.  Note that if you are not stopped before a function defined within the current project, 'Step Into' will function identically to 'Step Over'
 - **Step Over** ![](media/RevoRPE_Getting_Started/image9.png) **(F10)** Stops at the next breakable point within the currently executing function (or top-level script).  If you are at the last statement of a currently executing function, then 'Step Over' works just like 'Step Out'.
 - **Step Out **![](media/RevoRPE_Getting_Started/image10.png) **(Shift-F11)** Stops at the next breakable point after the currently executing function has completed. 
 
@@ -316,7 +316,7 @@ You should still hit any breakpoints encountered while stepping, and at any poin
 
 ### Examine Local Values
 
-Step into makeConditionPlot by choosing **Step Into** from the Debug menu, pressing **F11**, or clicking the **Step Into** button ![](media/RevoRPE_Getting_Started/image8.png) on the debug toolbar. Then execute the first and second lines of the function by clicking the **Step Over** button ![](media/RevoRPE_Getting_Started/image9.png) twice.
+Step into makeConditionPlot by choosing **Step Into** from the Debug menu, pressing **F11**, or clicking the **Step Into** button ![](./media/revorpe-getting-started/image8.png) on the debug toolbar. Then execute the first and second lines of the function by clicking the **Step Over** button ![](media/RevoRPE_Getting_Started/image9.png) twice.
 
 When inside the function, you can see the values of variables by hovering over them in your script. For example, if you hover over breaks, you see a balloon pop up with the current value of the variable, as shown:
 
@@ -592,7 +592,7 @@ You can close the graphics window.
 
 ## Finding More Information
 
-This *Getting Started Guide* has introduced the main features of the Revolution R Enterprise R Productivity Environment. More information on the RPE can be found in the [R Productivity Environment User’s Guide](RevoRPE_Users_Guide.md). A basic introduction to the R language can be found [here](microsoft-r-getting-started.md).
+This *Getting Started Guide* has introduced the main features of the Revolution R Enterprise R Productivity Environment. More information on the RPE can be found in the [R Productivity Environment User’s Guide](../../revorpe_users_guide.md). A basic introduction to the R language can be found [here](../../microsoft-r-getting-started.md).
 
 ## Keyboard Navigation Among Windows
 

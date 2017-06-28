@@ -150,7 +150,7 @@ While the *RevoScaleR Distributed Computing Guide* focuses on running computatio
 
 **R Productivity Environment (RPE)**
 The RPE is an older development tool that is now superseded by [R Tools for Visual Studio]((https://docs.microsoft.com/visualstudio/rtvs/installation). RPE documentation can be found at the following links:
-* [RPE Getting Started](RevoRPE_Getting_Started.md)
+* [RPE Getting Started](r/rpe/revorpe-getting-started.md)
 * [RPE User's Guide](RevoRPE_Users_Guide.md)
 
 **Revolution R Enterprise Docs**
