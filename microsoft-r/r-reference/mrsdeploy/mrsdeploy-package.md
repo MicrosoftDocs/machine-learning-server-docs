@@ -43,27 +43,27 @@ For remote execution, participating nodes can be either of the following configu
 
 The requirements for remote execution include:
 
-+ An R Integrated Development Environment (IDE) [configured to work with Microsoft R Client](../r-client-get-started.md). 
-+ [Authenticated access](../operationalize/security-authentication.md) to an instance of Microsoft R Server [configured to operationalize analytics](../operationalize/configuration-initial.md).
++ An R Integrated Development Environment (IDE) [configured to work with Microsoft R Client](../../r-client-get-started.md). 
++ [Authenticated access](../../deployr-admin-security/security-authentication.md) to an instance of Microsoft R Server [configured to operationalize analytics](../../operationalize/configuration-initial.md).
 
 <a name="use-mrsdeploy"></a>
 
 ## How to use mrsdeploy
 
-**The `mrsdeploy` package can only be used once Microsoft R Server has been configured to operationalize analytics**.  For more information, see [Configuring R Server to operationalize analytics](../operationalize/configuration-initial.md).
+**The `mrsdeploy` package can only be used once Microsoft R Server has been configured to operationalize analytics**.  For more information, see [Configuring R Server to operationalize analytics](../../operationalize/configuration-initial.md).
 
 + On R Client, the `mrsdeploy` package is installed **and loaded** automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
 
 + On R Server, the `mrsdeploy` package is installed, **but not loaded**. Therefore, you'll have to load it before using any  `mrsdeploy` functions. At the R prompt in the R Server session, type `library(mrsdeploy)` to load the package.
 
-For a list of all `mrsdeploy` functions, including those for remote execution, see [mrsdeploy Functions](../mrsdeploy/mrsdeploy.md).
+For a list of all `mrsdeploy` functions, including those for remote execution, see [mrsdeploy Functions](mrsdeploy-package.md).
 
 
 ## Authentication functions and creating remote sessions
 
 To use the functions in the `mrsdeploy` package, you must log into R Server as an authenticated user.  And if using the remote execution functionality, you can also create a remote R session upon login. 
 
-Learn more about these functions and their arguments in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)".
+Learn more about these functions and their arguments in the article "[Connecting to R Server to use mrsdeploy](../../operationalize/mrsdeploy-connection.md)".
 
 |Function | Description |
 |---------|---------|
@@ -76,9 +76,9 @@ Learn more about these functions and their arguments in the article "[Connecting
 
 ## Remote execution functions
 
-The following functions are used to initialize and interact with a session on a [remote R Server](../operationalize/remote-execution.md).  Remote sessions are created when you authenticate and closed when you log out.
+The following functions are used to initialize and interact with a session on a [remote R Server](../../operationalize/remote-execution.md).  Remote sessions are created when you authenticate and closed when you log out.
 
-Learn more about executing remotely from your local machine in this "[Remote Execution](../operationalize/remote-execution.md)" article.
+Learn more about executing remotely from your local machine in this "[Remote Execution](../../operationalize/remote-execution.md)" article.
 
 #### Execution functions
 
@@ -129,7 +129,7 @@ Use these functions to indicate whether the payload is a code block or script.
 
 ## Web service functions
 
-The following functions are used to bundle R code or script as a web service. The [web service deployment](../operationalize/data-scientist-manage-services.md) can be published to the local server or remotely if you set up a remote session.
+The following functions are used to bundle R code or script as a web service. The [web service deployment](../../operationalize/data-scientist-manage-services.md) can be published to the local server or remotely if you set up a remote session.
 
 |Function | Description |
 |---------|-------------|
@@ -144,18 +144,18 @@ The following functions are used to bundle R code or script as a web service. Th
 
 After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see these links:
 
-+ [Remote Execution](../operationalize/remote-execution.md)
++ [Remote Execution](../../operationalize/remote-execution.md)
 
-+ [How to publish and manage web services in R](../operationalize/data-scientist-manage-services.md)
++ [How to publish and manage web services in R](../../operationalize/data-scientist-manage-services.md)
 
-+ [How to interact with and consume web services in R](../operationalize/howto-consume-web-service-interact-in-r.md)
++ [How to interact with and consume web services in R](../../operationalize/howto-consume-web-service-interact-in-r.md)
 
-+ [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)
++ [Asynchronous batch execution of web services in R](../../operationalize/data-scientist-batch-mode.md)
 
 ## See also
 
-[Package Reference](~/package-reference.md)
+[Package Reference](../../package-reference.md)
 
-[Install R Server](~/rserver.md)
+[Install R Server](../../rserver.md)
 
-[Install R Client](~/r-client.md)
+[Install R Client](../../r-client.md)

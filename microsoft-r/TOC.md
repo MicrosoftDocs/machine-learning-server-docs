@@ -257,7 +257,7 @@
 ### [rxPredict](r-reference/microsoftml/rxpredict.md)
 ### [selectFeatures](r-reference/microsoftml/selectfeatures.md)
 
-## [mrsdeploy](mrsdeploy/mrsdeploy.md)
+## [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md)
 ###[createSnapshot](r-reference/mrsdeploy/createsnapshot.md) 
 ###[deleteRemoteFile](r-reference/mrsdeploy/deleteremotefile.md) 
 ###[deleteService](r-reference/mrsdeploy/deleteservice.md) 

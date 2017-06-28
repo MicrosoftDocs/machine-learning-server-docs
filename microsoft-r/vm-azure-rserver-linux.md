@@ -33,7 +33,7 @@ Microsoft R Server is the most broadly deployable enterprise-class analytics pla
 
 This VM also includes:
 
-+ `mrsdeploy`: a new R package for deploying R analytics inside applications and backend systems. [Learn more...](mrsdeploy/mrsdeploy.md)
++ `mrsdeploy`: a new R package for deploying R analytics inside applications and backend systems. [Learn more...](r-reference/mrsdeploy/mrsdeploy-package.md)
 
 + `MicrosoftML`:  a new 'Microsoft Machine Learning algorithm' R package that includes functions for incorporating machine learning into R code or a script that executes on R Server for Windows, R Client for Windows, and SQL Server R Services. Availability for Linux, Hadoop, and Azure HDInsight is projected for the first quarter of 2017. [Learn more...](r-reference/microsoftml/microsoftml-package.md)
 

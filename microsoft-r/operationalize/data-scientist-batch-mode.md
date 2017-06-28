@@ -514,7 +514,7 @@ for(i in seq(batchRes$totalItemCount)) {
 
 ## See also
 
-+ [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
++ [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server with mrsdeploy](mrsdeploy-connection.md)
 + [Get started guide for data scientists](data-scientist-get-started.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)

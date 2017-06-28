@@ -33,7 +33,7 @@ ms.custom: ""
 
 Learn how to publish an R model as a web service with Microsoft R Server. Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the `mrsdeploy` package that ships with Microsoft R Client and R Server, you can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 
-An R Server web service is an R code execution on the [operationalization compute node](configuration-initial.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../mrsdeploy/mrsdeploy.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
+An R Server web service is an R code execution on the [operationalization compute node](configuration-initial.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
 
 ## Time estimate
 
@@ -284,7 +284,7 @@ This section provides a quick summary of useful links for data scientists operat
 
 **Key Documents**
  + [About Operationalization](about.md)    
- + [Functions in mrsdeploy package](../mrsdeploy/mrsdeploy.md)    
+ + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)    
  + [Connecting to R Server from mrsdeploy](../operationalize/mrsdeploy-connection.md)    
  + [Working with web services in R](../operationalize/data-scientist-manage-services.md)    
  + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)    

@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
-After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../mrsdeploy/mrsdeploy.md). The `mrsdeploy` R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](app-developer-get-started.md).
+After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). The `mrsdeploy` R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](app-developer-get-started.md).
 
 If you do not want to list, examine, or consume the web service in R, a set of [RESTful APIs](api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
@@ -39,7 +39,7 @@ To list, examine, or consume the web service outside of R, use the [RESTful APIs
 ## Requirements
 
 Before you can use the web service management functions in the `mrsdeploy` R package, you must:
-+ Have access to an R Server instance that was  [properly configured](../mrsdeploy/mrsdeploy.md#configure) to host web services. 
++ Have access to an R Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
 + Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the `mrsdeploy` package as described in the article "[Connecting to R Server to use mrsdeploy](../operationalize/mrsdeploy-connection.md)."
 
@@ -256,7 +256,7 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 
 ## See also
 
-+ [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
++ [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [How to publish and manage web services in R](data-scientist-manage-services.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).

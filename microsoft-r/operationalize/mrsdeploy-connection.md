@@ -344,7 +344,7 @@ To terminate the remote session from the local R session, type 'remoteLogout()'.
 
 ## See also
 
-+ [mrsdeploy function overview](../mrsdeploy/mrsdeploy.md)
++ [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Data scientist get started guide](data-scientist-get-started.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)
 + [Asynchronous batch execution of web services in R](../operationalize/data-scientist-batch-mode.md)

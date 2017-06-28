@@ -42,7 +42,7 @@ R Server is the flagship product of the [Microsoft R product family](microsoft-r
 
 Existing solutions developed with R Client can be deployed to R Server with minimal or no changes, but most developers make use of the additional functions, such as parallel and distributed computing that become available when you upgrade to R Server.
 
-The [mrsdeploy package](mrsdeploy/mrsdeploy.md) gives you the ability to toggle between remote and local sessions in an R console application. As you change the compute context and make other adjustments to increase data size, you can set up a remote session and issue commands to validate your changes incrementally.
+The [mrsdeploy package](r-reference/mrsdeploy/mrsdeploy-package.md) gives you the ability to toggle between remote and local sessions in an R console application. As you change the compute context and make other adjustments to increase data size, you can set up a remote session and issue commands to validate your changes incrementally.
 
 <a name="compare-prods"></a>
 
