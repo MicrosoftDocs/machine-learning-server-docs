@@ -51,11 +51,11 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[getRemoteWorkspace](../../r-reference/mrsdeploy/getremoteworkspace.md)
+[getRemoteWorkspace](getremoteworkspace.md)
 
-[getRemoteObject](../../r-reference/mrsdeploy/getremoteobject.md)
+[getRemoteObject](getremoteobject.md)
 
-[putLocalObject](../../r-reference/mrsdeploy/putlocalobject.md)
+[putLocalObject](putlocalobject.md)
    
  ##Examples
 

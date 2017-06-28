@@ -281,7 +281,7 @@
 ###[publishService](r-reference/mrsdeploy/publishservice.md) 
 ###[putLocalFile](r-reference/mrsdeploy/putlocalfile.md) 
 ###[putLocalObject](r-reference/mrsdeploy/putlocalobject.md) 
-###[putLocalWorkspace](mrsdeploy/packagehelp/putLocalWorkspace.md) 
+###[putLocalWorkspace](r-reference/mrsdeploy/putlocalworkspace.md) 
 ###[remoteCommandLine](mrsdeploy/packagehelp/remoteCommandLine.md) 
 ###[remoteExecute](mrsdeploy/packagehelp/remoteExecute.md) 
 ###[remoteLogin](mrsdeploy/packagehelp/remoteLogin.md) 
