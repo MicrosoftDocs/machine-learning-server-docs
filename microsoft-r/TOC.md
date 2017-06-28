@@ -56,7 +56,7 @@
 ### [Decision Forest Models](scaler-user-guide-decision-forest.md)
 ## [Stochastic Gradient Boosting](r/how-to-revoscaler-boosting.md)
 ## [Naive Bayes Classifier](scaler-user-guide-naive-bayes.md)
-## [Correlation and Variance/Covariance Matrices](scaler-user-guide-covcor.md)
+## [Correlation and Variance/Covariance Matrices](r/how-to-revoscaler-covcor.md)
 ## [Clustering](r/how-to-revoscaler-cluster.md)
 ## [Visualizing Huge Data Sets](scaler-user-guide-visualize-huge-data-sets.md)
 

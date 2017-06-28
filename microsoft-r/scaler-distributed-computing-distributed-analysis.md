@@ -196,7 +196,7 @@ which yields:
 
 ### Computing a Covariance or Correlation Matrix
 
-The `rxCovCor` function is used to compute covariance and correlation matrices; the convenience functions `rxCov`, `rxCor`, and `rxSSCP` all depend upon it and are usually used in practical situations. For examples, see [Correlation and variance/covariance matrices](scaler-user-guide-covcor.md).
+The `rxCovCor` function is used to compute covariance and correlation matrices; the convenience functions `rxCov`, `rxCor`, and `rxSSCP` all depend upon it and are usually used in practical situations. For examples, see [Correlation and variance/covariance matrices](r/how-to-revoscaler-covcor.md).
 
 The following example shows how the main function can be used directly:
 

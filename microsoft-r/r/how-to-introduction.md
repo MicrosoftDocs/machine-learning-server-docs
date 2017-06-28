@@ -43,7 +43,7 @@ If you are new to R, be sure to also use the R Core Team manuals that are part o
 * [Decision Forest Models](../scaler-user-guide-decision-forest.md)
 * [Stochastic Gradient Boosting](how-to-revoscaler-boosting.md)
 * [Naïve Bayes Classifier](../scaler-user-guide-naive-bayes.md)
-* [Correlation and Variance/Covariance Matrices](../scaler-user-guide-covcor.md)
+* [Correlation and Variance/Covariance Matrices](how-to-revoscaler-covcor.md)
 * [Clustering](how-to-revoscaler-cluster.md)
 * [Converting RevoScaleR Model Objects for Use in PMML](how-to-developer-pmml.md)
 * [Transform Functions](concept-what-is-data-transformations.md)
