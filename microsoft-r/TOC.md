@@ -246,7 +246,7 @@
 ### [OneClassSvm](r-reference/microsoftml/oneclasssvm.md)
 ### [optimizer](r-reference/microsoftml/optimizer.md)
 ### [resizeImage](r-reference/microsoftml/resizeimage.md) 
-### [rxEnsemble](microsoftml/packagehelp/rxEnsemble.md)
+### [rxEnsemble](r-reference/microsoftml/rxensemble.md)
 ### [rxFastForest](microsoftml/packagehelp/rxFastForest.md)
 ### [rxFastLinear](microsoftml/packagehelp/rxFastLinear.md) 
 ### [rxFastTrees](microsoftml/packagehelp/rxFastTrees.md)

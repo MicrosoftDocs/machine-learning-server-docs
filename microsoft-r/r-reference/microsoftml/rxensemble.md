@@ -67,7 +67,7 @@ Trains an ensemble of models.
   
   
  ### `trainers`
- A list of trainers with their arguments. The trainers are created by using [fastTrees](../../r-reference/microsoftml/fasttrees.md), [fastForest](../../r-reference/microsoftml/fastforest.md), [fastLinear](../../r-reference/microsoftml/fastlinear.md), [logisticRegression](logisticRegression.md) or [neuralNet](neuralNet.md). 
+ A list of trainers with their arguments. The trainers are created by using [fastTrees](../../microsoftml/packagehelp/fasttrees.md), [fastForest](../../microsoftml/packagehelp/fastforest.md), [fastLinear](../../microsoftml/packagehelp/fastlinear.md), [logisticRegression](../../microsoftml/packagehelp/logisticregression.md) or [neuralNet](../../microsoftml/packagehelp/neuralnet.md). 
   
   
   
@@ -111,7 +111,7 @@ Trains an ensemble of models.
   
   
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. Transforms that require an additional pass over the data  (such as [featurizeText](../../r-reference/microsoftml/featurizetext.md), [categorical](../../r-reference/microsoftml/categorical.md)) are not allowed. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. Transforms that require an additional pass over the data  (such as [featurizeText](featurizetext.md), [categorical](categorical.md)) are not allowed. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
