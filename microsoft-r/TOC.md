@@ -502,7 +502,7 @@
 ## [sqlrutils](sqlrutils/sqlrutils.md)
 ###[executeStoredProcedure](r-reference/sqlrutils/executestoredprocedure.md) 
 ###[getInputParameters](r-reference/sqlrutils/getinputparameters.md) 
-###[InputData](sqlrutils/packagehelp/InputData.md) 
+###[InputData](r-reference/sqlrutils/inputdata.md) 
 ###[InputParameter](sqlrutils/packagehelp/InputParameter.md) 
 ###[OutputData](sqlrutils/packagehelp/OutputData.md) 
 ###[OutputParameter](sqlrutils/packagehelp/OutputParameter.md) 

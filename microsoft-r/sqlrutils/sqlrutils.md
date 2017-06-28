@@ -34,7 +34,7 @@ The **sqlrutils** package provides functions for executing stored procedures on 
 |------|-------------|
 |[`executeStoredProcedure`](../r-reference/sqlrutils/executestoredprocedure.md)| Execute a SQL stored procedure.|
 |[`getInputParameters`](../r-reference/sqlrutils/getinputparameters.md)| Get a list of input parameters to the stored procedure.| 
-|[`InputData`](packagehelp/InputData.md)| Input data for the stored procedure. | 
+|[`InputData`](../r-reference/sqlrutils/inputdata.md)| Input data for the stored procedure. | 
 |[`InputParameter`](packagehelp/InputParameter.md)| Input parameters for the stored procedure.| 
 |[`OutputData`](packagehelp/OutputData.md)| Output from the stored procedure.| 
 |[`OutputParameter`](packagehelp/OutputParameter.md) | Output parameters from the stored procedure.|
