@@ -473,7 +473,7 @@
 #### [rxSqlServerDropTable](r-reference/revoscaler/rxsqlserverdroptable.md) 
 #### [rxStepControl](r-reference/revoscaler/rxstepcontrol.md) 
 #### [rxStepPlot](r-reference/revoscaler/rxstepplot.md) 
-#### [rxStopEngine](scaler/packagehelp/rxStopEngine.md) 
+#### [rxStopEngine](r-reference/revoscaler/rxstopengine.md) 
 #### [rxSummary](scaler/packagehelp/rxSummary.md) 
 #### [rxSyncPackages](scaler/packagehelp/rxSyncPackages.md) 
 #### [RxTeradata-class](scaler/packagehelp/RxTeradata-class.md) 

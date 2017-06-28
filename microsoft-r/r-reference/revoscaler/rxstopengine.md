@@ -54,7 +54,7 @@ ms.custom: ""
    
     
  ### `computeContext`
- a valid [RxDistributedHpa-class](../../r-reference/revoscaler/rxdistributedhpa-class.md). Currently only [RxSpark](../../r-reference/revoscaler/rxspark.md) is supported.  
+ a valid [RxDistributedHpa-class](rxdistributedhpa-class.md). Currently only [RxSpark](rxspark.md) is supported.  
   
   
     
@@ -71,7 +71,7 @@ ms.custom: ""
  
 This function stops distributed computing engine applications with
 scope set to either "session" or "user". Specifically, for the
-[RxSpark](../../r-reference/revoscaler/rxspark.md) compute context it stops the remote Spark
+[RxSpark](rxspark.md) compute context it stops the remote Spark
 application(s).
  
  
@@ -87,7 +87,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxSpark](../../r-reference/revoscaler/rxspark.md)
+[RxSpark](rxspark.md)
    
  ##Examples
 
