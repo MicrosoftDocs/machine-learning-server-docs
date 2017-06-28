@@ -310,7 +310,7 @@
 ###[PemaByGroup-class](r-reference/revopemar/pemabygroup-class.md) 
 ###[PemaByGroup](r-reference/revopemar/pemabygroup.md) 
 ###[pemaCompute](r-reference/revopemar/pemacompute.md) 
-###[PemaMean-class](pemar/packagehelp/PemaMean-class.md) 
+###[PemaMean-class](r-reference/revopemar/pemamean-class.md) 
 ###[PemaMean](pemar/packagehelp/PemaMean.md) 
 ###[setPemaClass](pemar/packagehelp/setPemaClass.md)
 

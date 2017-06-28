@@ -38,7 +38,7 @@ Example PEMA reference class to compute mean
  ## Generators 
 
  
-The targeted generator [PemaMean](PemaMean.md)
+The targeted generator [PemaMean](../../pemar/packagehelp/pemamean.md)
 
  
  ## Extends 
@@ -53,7 +53,7 @@ Class PemaBaseClass, directly.
  
  ##See Also
  
-[PemaMean](PemaMean.md)
-[PemaBaseClass](../../r-reference/revopemar/pemabaseclass.md)
+[PemaMean](../../pemar/packagehelp/pemamean.md)
+[PemaBaseClass](pemabaseclass.md)
    
  
