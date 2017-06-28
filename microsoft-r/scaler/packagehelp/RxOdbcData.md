@@ -206,7 +206,7 @@ object of class RxOdbcData.
  
  ##See Also
  
-[RxOdbcData-class](RxOdbcData-class.md),
+[RxOdbcData-class](../../r-reference/revoscaler/rxodbcdata-class.md),
 [rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
 [rxImport](../../r-reference/revoscaler/rximport.md),
 [RxTeradata](RxTeradata.md).

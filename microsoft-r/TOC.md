@@ -427,7 +427,7 @@
 #### [RxNativeFileSystem](r-reference/revoscaler/rxnativefilesystem.md) 
 #### [rxNew](r-reference/revoscaler/rxnew.md) 
 #### [rxOAuthParameters](r-reference/revoscaler/rxoauthparameters.md) 
-#### [RxOdbcData-class](scaler/packagehelp/RxOdbcData-class.md) 
+#### [RxOdbcData-class](r-reference/revoscaler/rxodbcdata-class.md) 
 #### [RxOdbcData](scaler/packagehelp/RxOdbcData.md) 
 #### [rxOpen-methods](scaler/packagehelp/rxOpen-methods.md) 
 #### [rxOptions](scaler/packagehelp/rxOptions.md) 

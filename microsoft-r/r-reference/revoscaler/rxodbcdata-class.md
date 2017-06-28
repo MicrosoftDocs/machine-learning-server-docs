@@ -39,8 +39,8 @@ ODBC data source connection class.
  ## Generators 
 
  
-The targeted generator [RxOdbcData](RxOdbcData.md) as well as the general generator
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md).
+The targeted generator [RxOdbcData](../../scaler/packagehelp/rxodbcdata.md) as well as the general generator
+[rxNewDataSource](rxnew.md).
  
  ## Extends 
 
@@ -64,8 +64,8 @@ Class RxDataSource, directly.
  
  ##See Also
  
-[RxDataSource-class](../../r-reference/revoscaler/rxdatasource-class.md),
-[RxOdbcData](RxOdbcData.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md)
+[RxDataSource-class](rxdatasource-class.md),
+[RxOdbcData](../../scaler/packagehelp/rxodbcdata.md),
+[rxNewDataSource](rxnew.md)
    
  
