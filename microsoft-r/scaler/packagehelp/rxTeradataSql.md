@@ -113,7 +113,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxInTeradata](RxInTeradata.md),
+[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
 [RxTeradata](RxTeradata.md).
    
  ##Examples

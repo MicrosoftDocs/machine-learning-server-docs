@@ -49,7 +49,7 @@ computation nodes.
    
   
  ### `computeContext`
- A distributed compute context. [RxHpcServer](../../r-reference/revoscaler/revoscaler-deprecated.md), and  [RxInTeradata](RxInTeradata.md) contexts are supported.  See the details section for more information. 
+ A distributed compute context. [RxHpcServer](../../r-reference/revoscaler/revoscaler-deprecated.md), and  [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md) contexts are supported.  See the details section for more information. 
   
   
   
@@ -133,7 +133,7 @@ The ping was sent, but a response was never received.  This could be due to a pr
 
 
 ###`failedAmps`
-Not all of the AMPs were successful - for [RxInTeradata](RxInTeradata.md).
+Not all of the AMPs were successful - for [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md).
 
 
 An `as.vector` method is provided for the `rxPingResults` object which returns a character vector of the non-mangled 
@@ -153,7 +153,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md),
-[RxInTeradata](RxInTeradata.md),
+[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
 [rxMakeRNodeNames](rxMakeRNodeNames.md),
 [rxGetNodeInfo](../../r-reference/revoscaler/rxgetnodeinfo.md),
 [rxGetAvailableNodes](../../r-reference/revoscaler/rxgetavailablenodes.md).

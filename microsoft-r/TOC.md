@@ -407,7 +407,7 @@
 #### [rxInstalledPackages](r-reference/revoscaler/rxinstalledpackages.md) 
 #### [rxInstallPackages](r-reference/revoscaler/rxinstallpackages.md) 
 #### [RxInTeradata-class](r-reference/revoscaler/rxinteradata-class.md) 
-#### [RxInTeradata](scaler/packagehelp/RxInTeradata.md) 
+#### [RxInTeradata](r-reference/revoscaler/rxinteradata.md) 
 #### [rxKmeans](scaler/packagehelp/rxKmeans.md) 
 #### [rxLaunchClusterTaskManager](scaler/packagehelp/rxLaunchClusterTaskManager.md) 
 #### [rxLinePlot](scaler/packagehelp/rxLinePlot.md) 

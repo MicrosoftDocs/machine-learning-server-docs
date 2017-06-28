@@ -75,11 +75,11 @@ ms.custom: ""
   
     
  ### `consoleOutput`
-  logical scalar.If `TRUE`, causes the standard output  of the R processes on the AMPS to be printed to the user console. This value may be  overwritten by passing a non-`NULL` logical value to the `consoleOutput` argument  provided in [rxExec](../../r-reference/revoscaler/rxexec.md) and [rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md).  
+  logical scalar.If `TRUE`, causes the standard output  of the R processes on the AMPS to be printed to the user console. This value may be  overwritten by passing a non-`NULL` logical value to the `consoleOutput` argument  provided in [rxExec](rxexec.md) and [rxGetJobResults](rxgetjobresults.md).  
   
     
  ### `autoCleanup`
-  logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](../../r-reference/revoscaler/rxgetjobresults.md), and the output via [rxGetJobOutput](../../r-reference/revoscaler/rxgetjoboutput.md) until the  [rxCleanupJobs](../../r-reference/revoscaler/rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.  
+  logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxgetjobresults.md), and the output via [rxGetJobOutput](rxgetjoboutput.md) until the  [rxCleanupJobs](rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.  
   
   
     
@@ -100,11 +100,11 @@ ms.custom: ""
  
  ##See Also
  
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
-[RxInTeradata-class](../../r-reference/revoscaler/rxinteradata-class.md),
-[RxTeradata](RxTeradata.md),
-[RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
-[rxOptions](rxOptions.md).
+[RxComputeContext](rxcomputecontext.md),
+[RxInTeradata-class](rxinteradata-class.md),
+[RxTeradata](../../scaler/packagehelp/rxteradata.md),
+[RxInSqlServer](rxinsqlserver.md),
+[rxOptions](../../scaler/packagehelp/rxoptions.md).
    
  
  ##Examples

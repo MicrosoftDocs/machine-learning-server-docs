@@ -200,7 +200,7 @@ computations.
 *   [RxLocalParallel](RxLocalParallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
 *   [RxForeachDoPar](../../r-reference/revoscaler/rxforeachdopar.md): use the currently registered parallel backend for 'foreach' for processing with [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing.   
 *  [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md): use a Hadoop cluster for both High Performance Analytics for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
-*  [RxInTeradata](RxInTeradata.md): use a Teradata cluster for both High Performance Analytics and for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
+*  [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md): use a Teradata cluster for both High Performance Analytics and for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing. 
 *   [RxHpcServer](../../r-reference/revoscaler/revoscaler-deprecated.md): use a Microsoft HPC Server cluster for both High Performance Analytics and for [rxExec](../../r-reference/revoscaler/rxexec.md) High Performance Computing.                                        
  
    
@@ -217,7 +217,7 @@ computations.
    
     
  ### `transformPackages`
- character vector defining default set of R packages to be made available and preloaded for use in variable transformation functions. If at the default setting, when using [RxInTeradata](RxInTeradata.md) the default will be modified to a small package (`RevoMods`) in order to reduce memory requirements. 
+ character vector defining default set of R packages to be made available and preloaded for use in variable transformation functions. If at the default setting, when using [RxInTeradata](../../r-reference/revoscaler/rxinteradata.md) the default will be modified to a small package (`RevoMods`) in order to reduce memory requirements. 
   
    
     
@@ -350,7 +350,7 @@ value of the requested option is returned.
 [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
 [RxSpark](RxSpark.md),
 [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
-[RxInTeradata](RxInTeradata.md).
+[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md).
    
  
  ##Examples

@@ -67,7 +67,7 @@ Class RxComputeContext, directly.
 [RxHadoopMR](../../r-reference/revoscaler/rxhadoopmr.md),
 [RxSpark](RxSpark.md),
 [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md),
-[RxInTeradata](RxInTeradata.md),
+[RxInTeradata](../../r-reference/revoscaler/rxinteradata.md),
 [RxLocalSeq](RxLocalSeq.md).
    
  ##Examples
