@@ -302,7 +302,7 @@
 ###[ExecuteMD](r-reference/olapr/executemd.md) 
 ###[Explore](r-reference/olapr/explore.md) 
 ###[OlapConnection](r-reference/olapr/olapconnection.md) 
-###[Query](olapR/packagehelp/Query.md)
+###[Query](r-reference/olapr/query.md)
 
 ## [RevoPemaR](pemar/pemar.md)
 ###[PemaBaseClass-class](pemar/packagehelp/PemaBaseClass-class.md) 

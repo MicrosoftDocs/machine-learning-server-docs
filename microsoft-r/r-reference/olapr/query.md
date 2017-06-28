@@ -122,12 +122,12 @@ ms.custom: ""
  
  
  ##References
-  See [execute2D](../../r-reference/olapr/execute2d.md) or [executeMD](../../r-reference/olapr/executemd.md) for references.  
+  See [execute2D](execute2d.md) or [executeMD](executemd.md) for references.  
  
  
  ##See Also
  
-[execute2D](../../r-reference/olapr/execute2d.md), [executeMD](../../r-reference/olapr/executemd.md), [OlapConnection](../../r-reference/olapr/olapconnection.md)`, `[explore](../../r-reference/olapr/explore.md)
+[execute2D](execute2d.md), [executeMD](executemd.md), [OlapConnection](olapconnection.md)`, `[explore](explore.md)
    
  
  ##Examples
