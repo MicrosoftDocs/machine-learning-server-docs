@@ -235,7 +235,7 @@ Additionally, this release adds a simplified setup program for an  Server instal
 
 Features in the 9.0.1 release are currently only available through simplified setup. In contrast, SQL Server 2016 Setup installs the 8.0.3 version of R Server for Windows, and SQL Server 2017 installs the 9.0.0 version. The 9.0.0 version offers the new MicrosoftML and olapR packages, but not operationalization. For a description of the features in 9.0.0, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
-For installation and upgrade instructions, see [Install R Server for Windows](rserver-install-windows.md).
+For installation and upgrade instructions, see [Install R Server for Windows](install/r-server-install-windows.md).
 
 > [!NOTE]
 > Although the installation experience is changing, licensing is not. R Server for Windows remains a SQL Server enterprise feature, even when installed outside of SQL Server Setup. A SQL Server enterprise license is required for the enterprise edition of R Server for Windows.
@@ -327,6 +327,6 @@ algorithms for cleaning and analyzing text data.
 ## See Also
 
  [Introduction to R Server](rserver.md) 
- [Install R Server on Windows](rserver-install-windows.md)  
+ [Install R Server on Windows](install/r-server-install-windows.md)  
  [Install R Server on Linux](install/r-server-install-linux-server.md)  
  [Install R Server on Hadoop](install/r-server-install-hadoop.md)

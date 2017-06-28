@@ -95,7 +95,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
 
-2.  Install **[Revolution R Enterprise for Windows](rserver-install-windows.md)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with RRE to install it as well as any of its dependencies**. [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Revolution R Enterprise for Windows.
+2.  Install **[Revolution R Enterprise for Windows](install/r-server-install-windows.md)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with RRE to install it as well as any of its dependencies**. [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Revolution R Enterprise for Windows.
 
 3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
 

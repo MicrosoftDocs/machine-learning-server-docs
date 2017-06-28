@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Install Revolution R Enterprise 2016 (version 8.0) for Windows
 
->  Support for this version of R Server is defined in the [Microsoft Modern Lifecycle Policy](https://support.microsoft.com/help/30881/modern-lifecycle-policy). For more information about how this applies to Microsoft R Server, see [Support for R Server versions](https://msdn.microsoft.com/microsoft-r/rserver-servicing-support). For installation instructions for newer versions, see [Install Microsoft R Server for Windows](../rserver-install-windows.md).
+>  Support for this version of R Server is defined in the [Microsoft Modern Lifecycle Policy](https://support.microsoft.com/help/30881/modern-lifecycle-policy). For more information about how this applies to Microsoft R Server, see [Support for R Server versions](https://msdn.microsoft.com/microsoft-r/rserver-servicing-support). For installation instructions for newer versions, see [Install Microsoft R Server for Windows](r-server-install-windows.md).
 
 Revolution R Enterprise 2016 (version 8.0) for Windows includes RevoScaleR, RevoTreeView, RevoPemaR, DeployR, and the R Productivity Environment.
 

@@ -30,7 +30,7 @@ This article provides syntax and examples for running RServerSetup.exe from the 
 
 Before you start, review the following articles for system requirements, prerequisites, download links, and steps:
 
-+ [Install R Server 9.1. on Windows](../rserver-install-windows.md) for an internet-connected installation.
++ [Install R Server 9.1. on Windows](r-server-install-windows.md) for an internet-connected installation.
 + [Offline installation](r-server-install-windows-offline.md) for a machine with no internet access.
 
 ## Command line options

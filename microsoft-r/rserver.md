@@ -113,7 +113,7 @@ You can also install **pre-trained cognitive models** for **sentiment analysis**
 |R Server for Hadoop        |Scale your analysis transparently by distributing work across nodes without complex programming|[Doc](install/r-server-install-hadoop.md)|[Doc](scaler-hadoop-getting-started.md)|
 |R Server for Teradata DB   |Run advanced analytics in-database for seamless data analysis on Teradata|[Doc](install/r-server-install-teradata-server.md)|[Doc](/scaler-teradata-getting-started.md)|
 |R Server for Linux         |Bring predictive and prescriptive analytics power to your Linux environments|[Doc](install/r-server-install-linux-server.md)|[Doc](scaler-getting-started-data-import-exploration.md)|
-|R Server for Windows|Bring predictive and prescriptive analytics power to your Windows environments|[Doc](rserver-install-windows.md)|[Doc](scaler-getting-started-data-import-exploration.md)|
+|R Server for Windows|Bring predictive and prescriptive analytics power to your Windows environments|[Doc](install/r-server-install-windows.md)|[Doc](scaler-getting-started-data-import-exploration.md)|
 |SQL Server Machine Learning Services  |Run advanced analytics in-database for seamless data analysis on SQL Server|[Doc](https://msdn.microsoft.com/library/mt696069.aspx)|[Doc](https://msdn.microsoft.com/library/mt604885.aspx)|
 
 <br />

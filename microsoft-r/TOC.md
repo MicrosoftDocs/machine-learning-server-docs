@@ -71,8 +71,8 @@
 ## Install and configure
 ### [R Server supported platforms](install/r-server-install-supported-platforms.md)
 
-### [R Server for Windows](rserver-install-windows.md)
-#### [Install on Windows](rserver-install-windows.md)
+### [R Server for Windows](install/r-server-install-windows.md)
+#### [Install on Windows](install/r-server-install-windows.md)
 #### [Offline install](install/r-server-install-windows-offline.md)
 #### [Command line install](install/r-server-install-windows-command-line.md)
 

@@ -351,7 +351,7 @@ The RODBC package is not required to use RxTeradata, but it can be useful for ti
 To download and install Microsoft R Server, you will need an MSDN subscription or a Microsoft Volume License Center sign-in. For development purposes, you can install the free Developer edition of R Server on Linux or Windows:
 
 + [Install R Server for Linux](r-server-install-linux-server.md)	
-+ [Install R Server for Windows](../rserver-install-windows.md)
++ [Install R Server for Windows](r-server-install-windows.md)
 
 Optionally, you can use Microsoft R Client. It also runs on Linux and Windows:
 
