@@ -435,7 +435,7 @@
 #### [rxPairwiseCrosstab](r-reference/revoscaler/rxpairwisecrosstab.md) 
 #### [rxPingNodes](r-reference/revoscaler/rxpingnodes.md) 
 #### [rxPredict](r-reference/revoscaler/rxpredict.md) 
-#### [rxPredict.rxDForest](scaler/packagehelp/rxPredict.rxDForest.md) 
+#### [rxPredict.rxDForest](r-reference/revoscaler/rxpredict-rxdforest.md) 
 #### [rxPredict.rxDTree](scaler/packagehelp/rxPredict.rxDTree.md) 
 #### [rxPredict.rxNaiveBayes](scaler/packagehelp/rxPredict.rxNaiveBayes.md) 
 #### [rxPrivacyControl](scaler/packagehelp/rxPrivacyControl.md) 
