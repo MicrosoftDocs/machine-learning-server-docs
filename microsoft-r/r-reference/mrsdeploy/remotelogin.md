@@ -92,9 +92,9 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[remoteLogout](remoteLogout.md)
+[remoteLogout](../../mrsdeploy/packagehelp/remotelogout.md)
 
-[remoteCommandLine](../../r-reference/mrsdeploy/remotecommandline.md)
+[remoteCommandLine](remotecommandline.md)
    
  ##Examples
 

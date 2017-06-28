@@ -51,7 +51,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[remoteLogin](remoteLogin.md)
+[remoteLogin](../../r-reference/mrsdeploy/remotelogin.md)
 
 [remoteLoginAAD](remoteLoginAAD.md)
    

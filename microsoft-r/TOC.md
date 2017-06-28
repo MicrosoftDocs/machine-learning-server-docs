@@ -284,7 +284,7 @@
 ###[putLocalWorkspace](r-reference/mrsdeploy/putlocalworkspace.md) 
 ###[remoteCommandLine](r-reference/mrsdeploy/remotecommandline.md) 
 ###[remoteExecute](r-reference/mrsdeploy/remoteexecute.md) 
-###[remoteLogin](mrsdeploy/packagehelp/remoteLogin.md) 
+###[remoteLogin](r-reference/mrsdeploy/remotelogin.md) 
 ###[remoteLoginAAD](mrsdeploy/packagehelp/remoteLoginAAD.md) 
 ###[remoteLogout](mrsdeploy/packagehelp/remoteLogout.md) 
 ###[remoteScript](mrsdeploy/packagehelp/remoteScript.md) 
