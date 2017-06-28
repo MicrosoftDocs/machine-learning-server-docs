@@ -127,7 +127,7 @@ The following packages have been updated in Microsoft R Server and Microsoft R C
 |[`print.serviceDetails`](r-reference/mrsdeploy/print-servicedetails.md) | New| Defines the R print generic for `serviceDetails` during a  `listServices()`. |
 |[`print.snapshotDetails`](r-reference/mrsdeploy/print-snapshotdetails.md) | New | Defines the R print generic for `snapshotDetails` during a  `listSnapshots()`. |
 |[`remoteScript`](r-reference/mrsdeploy/remotescript.md) | Enhanced | Includes a new `async` parameter to support asynchronous remote execution. |
-|[`serviceTypes`](mrsdeploy/packagehelp/serviceTypes.md)  | New | Defines the enumerated list of the supported service types.|
+|[`serviceTypes`](r-reference/mrsdeploy/servicetypes.md)  | New | Defines the enumerated list of the supported service types.|
 |[`summary.serviceDetails`](mrsdeploy/packagehelp/summary.serviceDetails.md)  | New | Defines the R summary generic for `serviceDetails` during a  `listServices()`. |
 |[`summary.snapshotDetails`](mrsdeploy/packagehelp/summary.snapshotDetails.md)  | New | Defines the R summary generic for `snapshotDetails` during a  `listSnapshots()`. |
 

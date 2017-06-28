@@ -292,7 +292,7 @@
 ###[resource](r-reference/mrsdeploy/resource.md) 
 ###[resume](r-reference/mrsdeploy/resume.md) 
 ###[serviceOption](r-reference/mrsdeploy/serviceoption.md) 
-###[serviceTypes](mrsdeploy/packagehelp/serviceTypes.md) 
+###[serviceTypes](r-reference/mrsdeploy/servicetypes.md) 
 ###[summary.serviceDetails](mrsdeploy/packagehelp/summary.serviceDetails.md) 
 ###[summary.snapshotDetails](mrsdeploy/packagehelp/summary.snapshotDetails.md) 
 ###[updateService](mrsdeploy/packagehelp/updateService.md)
