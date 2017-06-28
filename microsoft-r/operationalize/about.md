@@ -55,7 +55,7 @@ After you [configure R Server to operationalize](configure-start-for-administrat
 
 ||Key Features|
 |-|-|
-|![1](../media/o16n/about-1.png)|● Data scientists turn R analytics into Web services with one line of code<br>● Developers use Swagger-based [REST APIs](concept-api.md) that are [easy to consume](app-developer-get-started.md) <br>&nbsp; &nbsp; with any programming languages including R|
+|![1](../media/o16n/about-1.png)|● Data scientists turn R analytics into Web services with one line of code<br>● Developers use Swagger-based [REST APIs](concept-api.md) that are [easy to consume](how-to-build-api-clients-from-swagger-for-app-integration.md) <br>&nbsp; &nbsp; with any programming languages including R|
 |![2](../media/o16n/about-2.png)|● Model in one platform, then deploy and score web services in another platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](configure-start-for-administrators.md) <br>● Model on-premises, then score your data in the cloud, or vice versa <br>● With Microsoft R Server, it is easier/faster to use the power of R in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
 |![3](../media/o16n/about-3.png)|● Perform fast scoring: realtime & batch <br>● Scale to a grid for powerful computing with load balancing<br>● Use [diagnostic](configure-run-diagnostics.md) and [capacity evaluation](configure-evaluate-capacity.md) tools|
 |![4](../media/o16n/about-4.png)|● Integrate with [enterprise authentication (AD/LDAP or Azure AD)](configure-authentication.md)<br>● Connect securely: [HTTPS with SSL/TLS 1.2](configure-https.md)<br>● Enterprise grade high availability|
@@ -93,5 +93,5 @@ Now that you know about R Server's capability to operationalize your analytics, 
 + [What's new in R Server](../rserver-whats-new.md)
 + [Administrator Get Started](configure-start-for-administrators.md)
 + [Data Scientist Get Started](concept-operationalize-deploy-consume.md)
-+ [How to integrate web services and authentication into your application](app-developer-get-started.md)
++ [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [The differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).

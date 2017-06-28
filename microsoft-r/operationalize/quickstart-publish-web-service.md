@@ -263,7 +263,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 After it has been deployed, the web service can be: 
 + [Consumed directly in R by another data scientist](howto-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
 
-+ [Integrated into an application by an application developer](app-developer-get-started.md)  using the  Swagger-based .JSON file produced when the web service was published. 
++ [Integrated into an application by an application developer](how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
 
 
@@ -291,7 +291,7 @@ This section provides a quick summary of useful links for data scientists operat
  + [Execute on a remote Microsoft R Server](remote-execution.md)    
 
 **Other Getting Started Guides**
- + [How to integrate web services and authentication into your application](app-developer-get-started.md)    
+ + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    
  + [Administrators](configure-start-for-administrators.md)    
 
 **Support Channel**

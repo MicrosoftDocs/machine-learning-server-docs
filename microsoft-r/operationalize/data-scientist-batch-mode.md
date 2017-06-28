@@ -519,4 +519,4 @@ for(i in seq(batchRes$totalItemCount)) {
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [Working with web services in R](../operationalize/data-scientist-manage-services.md)
 + [Execute on a remote Microsoft R Server](../operationalize/remote-execution.md)
-+ [How to integrate web services and authentication into your application](../operationalize/app-developer-get-started.md)
++ [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

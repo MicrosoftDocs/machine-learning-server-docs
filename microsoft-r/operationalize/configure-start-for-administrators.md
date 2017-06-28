@@ -148,7 +148,7 @@ This section provides a quick summary of useful links for administrators working
 -   [Comparison between 8.x and 9.x](../rserver-whats-new.md)
 
 **Other Getting Started Guides**
--   [How to integrate web services and authentication into your application](app-developer-get-started.md)
+-   [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 -   [Data Scientists](concept-operationalize-deploy-consume.md)
 
 **Support Channel**

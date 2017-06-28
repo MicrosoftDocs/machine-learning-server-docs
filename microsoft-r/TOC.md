@@ -147,7 +147,7 @@
 #### [Get and consume services in R](operationalize/howto-consume-web-service-interact-in-r.md)
 #### [Consume services asynchronously via batch](operationalize/data-scientist-batch-mode.md)
 ### Application developers
-#### [Integrate web services and authentication into apps](operationalize/app-developer-get-started.md)
+#### [Integrate web services and authentication into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
 #### [API overview](operationalize/concept-api.md)
 #### [API access token management](operationalize/security-access-tokens.md)
 ### [Archive] DeployR 8.x docs

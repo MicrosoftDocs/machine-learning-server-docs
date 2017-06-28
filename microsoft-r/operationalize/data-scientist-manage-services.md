@@ -30,7 +30,7 @@ ms.custom: ""
 
 This article details how you can publish and manage your analytic web services directly in R. You can deploy your R models, scripts, and code as **analytic web services** in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  The `mrsdeploy` R package containing these functions is installed with both Microsoft R Server and Microsoft R Client.
 
-These web services are then discoverable by other authenticated users who can then [consume them in R](howto-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](app-developer-get-started.md).
+These web services are then discoverable by other authenticated users who can then [consume them in R](howto-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](howto-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](howto-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](howto-consume-web-service-interact-in-r.md#consume-service) with others.
 
@@ -690,6 +690,6 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to interact with and consume web services in R](howto-consume-web-service-interact-in-r.md)
-+ [How to integrate web services and authentication into your application](app-developer-get-started.md)
++ [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)

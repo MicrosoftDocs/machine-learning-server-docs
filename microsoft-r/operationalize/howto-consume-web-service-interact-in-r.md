@@ -28,7 +28,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
-After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). The `mrsdeploy` R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](app-developer-get-started.md).
+After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). The `mrsdeploy` R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 If you do not want to list, examine, or consume the web service in R, a set of [RESTful APIs](concept-api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
@@ -237,7 +237,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
 
-Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](app-developer-get-started.md)" for more details.  
+Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
    
 Application developers can get the Swagger-based JSON file in one of these ways:
 
@@ -248,7 +248,7 @@ Application developers can get the Swagger-based JSON file in one of these ways:
    cat(swagger, file = "swagger.json", append = FALSE) 
    ```
 
-+ Or, the application developer can request the file  **as an authenticated user with an [active bearer token](app-developer-get-started.md#authentication) in the request header** (since all API calls must be authenticated). The URL is formed as follows:
++ Or, the application developer can request the file  **as an authenticated user with an [active bearer token](how-to-build-api-clients-from-swagger-for-app-integration.md#authentication) in the request header** (since all API calls must be authenticated). The URL is formed as follows:
   ```
   GET /api/<service-name>/<service-version>/swagger.json
   ```
@@ -261,6 +261,6 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-web-service.md)
 + [Connecting to R Server from mrsdeploy](mrsdeploy-connection.md).
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
-+ [How to integrate web services and authentication into your application](app-developer-get-started.md)
++ [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](data-scientist-batch-mode.md)
 + [Execute on a remote Microsoft R Server](remote-execution.md)
