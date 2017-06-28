@@ -30,7 +30,7 @@
 # [Diving into data analysis](r/how-to-introduction.md)
 ## Load and transform data
 ### [Import text data](r/how-to-revoscaler-data-import.md)
-### [Import SQL Server data](scaler-data-sql.md)
+### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
 ### [Import HDFS data](r/how-to-revoscaler-data-hdfs.md)
 ### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
 ### [Transform and subset data](scaler-user-guide-data-transform.md)

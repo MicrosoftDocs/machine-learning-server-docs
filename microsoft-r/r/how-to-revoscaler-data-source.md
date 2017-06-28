@@ -41,7 +41,7 @@ To create data sources directly, use the constructors listed in the following ta
 | SPSS                               | [RxSpssData](../r-reference/revoscaler/rxspssdata.md) |
 | ODBC Database                      | [RxOdbcData](how-to-revoscaler-data-odbc.md) |
 | Teradata Database                  | [RxTeradata](../r-reference/revoscaler/rxteradata.md) |
-| SQL Server Database                | [RxSqlServerData](../scaler-data-sql.md) |
+| SQL Server Database                | [RxSqlServerData](how-to-revoscaler-data-sql.md) |
 | Spark data: Hive, Parquet and ORC  | [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) or **RxHiveData**, **RxParquetData**, **RxOrcData** | 
 | .xdf data files                    | [RxXdfData](concept-what-is-xdf.md) |
 
@@ -317,7 +317,7 @@ It is, of course, much faster to compute a linear model using the **rxLinMod** f
 Continue on to the following data import articles to learn more about XDF and other data formats:
 
 + [XDF files](concept-what-is-xdf.md)	
-+ [Import SQL Server data](../scaler-data-sql.md)	
++ [Import SQL Server data](how-to-revoscaler-data-sql.md)	
 + [Import text data](how-to-revoscaler-data-import.md)
 + [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)
 

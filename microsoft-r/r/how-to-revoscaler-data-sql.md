@@ -57,7 +57,7 @@ Create the connection object using information from the Azure portal and ODBC Da
 
 	> sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
 
-First, get the ODBC driver name. On Windows, search for and then use the **ODBC Data Source Administrator (64-bit)** app to view the drivers listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For second, see [How to import relational data using ODBC](r/how-to-revoscaler-data-odbc.md).
+First, get the ODBC driver name. On Windows, search for and then use the **ODBC Data Source Administrator (64-bit)** app to view the drivers listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For second, see [How to import relational data using ODBC](how-to-revoscaler-data-odbc.md).
 
 After `Driver`, all remaining connection properties from `Server` to `Connection Timeout` are obtained from the Azure portal:
 
@@ -107,7 +107,7 @@ Queries should be data extraction queries (SELECT and SHOW statements) for readi
 
 ### 4 - Set the data source
 
-Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in Microsoft R](r/how-to-revoscaler-data-source.md).
+Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in Microsoft R](how-to-revoscaler-data-source.md).
 
 		> sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
 
@@ -166,7 +166,7 @@ Create the connection object using the SQL Server database driver a local server
 
 The driver used on the connection is an ODBC driver that is installed by SQL Server. You could use the default database driver provided with operating system, but SQL Server Setup also installs drivers. 
 
-On Windows, ODBC drivers can be listed in the **ODBC Data Source Administrator (64-bit)** app on the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](r/how-to-revoscaler-data-odbc.md).
+On Windows, ODBC drivers can be listed in the **ODBC Data Source Administrator (64-bit)** app on the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For pointers, see [How to import relational data using ODBC](how-to-revoscaler-data-odbc.md).
 
 The Server=(local) refers to a local default instance connected over TCP. A named instance is specified as computername$instancename. A remote server has the same syntax, but you should verify that that remote connections are enabled. The defaults for this setting vary depending on which edition is installed.
 
@@ -282,15 +282,15 @@ The following example uses the SalelOrderHeader table because it provides more c
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
 + [SQL Server tutorial for R](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)	
-+ [XDF files](r/concept-what-is-xdf.md)	
-+ [Data Sources](r/how-to-revoscaler-data-source.md)	
-+ [Import text data](r/how-to-revoscaler-data-import.md)
-+ [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
-+ [Import and consume data on HDFS](r/how-to-revoscaler-data-hdfs.md)
++ [XDF files](concept-what-is-xdf.md)	
++ [Data Sources](how-to-revoscaler-data-source.md)	
++ [Import text data](how-to-revoscaler-data-import.md)
++ [Import ODBC data](how-to-revoscaler-data-odbc.md)
++ [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)
 
 ## See Also
    
- [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)   
- [Tutorial: data import and exploration](scaler-getting-started-data-import-exploration.md)
- [Tutorial: data visualization and analysis](scaler-getting-started-data-visualization-analysis.md) 
+ [RevoScaleR Functions](../revoscaler.md)   
+ [Tutorial: data import and exploration](../scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data visualization and analysis](../scaler-getting-started-data-visualization-analysis.md) 
  

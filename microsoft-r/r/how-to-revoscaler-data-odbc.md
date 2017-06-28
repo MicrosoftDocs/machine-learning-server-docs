@@ -46,7 +46,7 @@ Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sou
 
 For Teradata, you should avoid ODBC and create an **RxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
 
-For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbdData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](../scaler-data-sql.md).
+For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbdData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](how-to-revoscaler-data-sql.md).
 
 ## How to configure ODBC for relational data access
 
@@ -193,7 +193,7 @@ As a first step, specify the name of your DSN. On Linux, this is the same name s
 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
-+ [Import SQL data](../scaler-data-sql.md)	
++ [Import SQL data](how-to-revoscaler-data-sql.md)	
 + [Import text data](how-to-revoscaler-data-import.md)
 + [Import and consume data on HDFS](how-to-revoscaler-data-hdfs.md)	
 + [XDF files](concept-what-is-xdf.md)	
