@@ -289,7 +289,7 @@
 ###[remoteLogout](r-reference/mrsdeploy/remotelogout.md) 
 ###[remoteScript](r-reference/mrsdeploy/remotescript.md) 
 ###[request](r-reference/mrsdeploy/request.md) 
-###[resource](mrsdeploy/packagehelp/resource.md) 
+###[resource](r-reference/mrsdeploy/resource.md) 
 ###[resume](mrsdeploy/packagehelp/resume.md) 
 ###[serviceOption](mrsdeploy/packagehelp/serviceOption.md) 
 ###[serviceTypes](mrsdeploy/packagehelp/serviceTypes.md) 
