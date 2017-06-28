@@ -290,7 +290,7 @@
 ###[remoteScript](r-reference/mrsdeploy/remotescript.md) 
 ###[request](r-reference/mrsdeploy/request.md) 
 ###[resource](r-reference/mrsdeploy/resource.md) 
-###[resume](mrsdeploy/packagehelp/resume.md) 
+###[resume](r-reference/mrsdeploy/resume.md) 
 ###[serviceOption](mrsdeploy/packagehelp/serviceOption.md) 
 ###[serviceTypes](mrsdeploy/packagehelp/serviceTypes.md) 
 ###[summary.serviceDetails](mrsdeploy/packagehelp/summary.serviceDetails.md) 

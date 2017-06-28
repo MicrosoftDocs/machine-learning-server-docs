@@ -52,7 +52,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[remoteCommandLine](../../r-reference/mrsdeploy/remotecommandline.md)
+[remoteCommandLine](remotecommandline.md)
    
  ##Examples
 

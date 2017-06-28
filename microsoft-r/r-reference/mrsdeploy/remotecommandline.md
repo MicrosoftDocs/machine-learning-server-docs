@@ -81,7 +81,7 @@ Once the 'REMOTE>' command prompt is shown, these commands become available:
  
  ##See Also
  
-[resume](../../mrsdeploy/packagehelp/resume.md)
+[resume](resume.md)
    
  ##Examples
 
