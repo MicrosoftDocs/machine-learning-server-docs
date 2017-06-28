@@ -94,7 +94,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
      
  ### `fileSystem`
- character string or [RxFileSystem](../../r-reference/revoscaler/rxfilesystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. If `NULL`, the file system will be set to that in the current compute context, if available, otherwise the `fileSystem` option. 
+ character string or [RxFileSystem](rxfilesystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. If `NULL`, the file system will be set to that in the current compute context, if available, otherwise the `fileSystem` option. 
   
   
      
@@ -104,7 +104,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
      
  ### `createPartitionSet`
- logical value or `NULL`. Used only when writing.  If `TRUE`, a set of files for partitioned Xdf will be created when assigning this RxXdfData object for `outData` of rxPartition. Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdf files (each file stores data of a single data partition, see rxPartition for details). In the metadata subdirectory there is a single .xdfp file, which contains the meta data for all of the  .xdf files in the  data subdirectory. The partitioned Xdf object is currently supported only in rxPartition and [rxGetPartitions](../../r-reference/revoscaler/rxgetpartitions.md) 
+ logical value or `NULL`. Used only when writing.  If `TRUE`, a set of files for partitioned Xdf will be created when assigning this RxXdfData object for `outData` of rxPartition. Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdf files (each file stores data of a single data partition, see rxPartition for details). In the metadata subdirectory there is a single .xdfp file, which contains the meta data for all of the  .xdf files in the  data subdirectory. The partitioned Xdf object is currently supported only in rxPartition and [rxGetPartitions](rxgetpartitions.md) 
   
    
      
@@ -159,10 +159,10 @@ object of class RxXdfData.
  
  ##See Also
  
-[RxXdfData-class](../../r-reference/revoscaler/rxxdfdata-class.md),
-[rxNewDataSource](../../r-reference/revoscaler/rxnew.md),
-[rxOpen](../../r-reference/revoscaler/rxopen-methods.md),
-[rxReadNext](../../r-reference/revoscaler/rxopen-methods.md).
+[RxXdfData-class](rxxdfdata-class.md),
+[rxNewDataSource](rxnew.md),
+[rxOpen](rxopen-methods.md),
+[rxReadNext](rxopen-methods.md).
    
  ##Examples
 

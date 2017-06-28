@@ -51,8 +51,8 @@ You can switch from local to any of the compute contexts in the following list.
 Context name | Alternative name | Allowed data sources |
 -----------|--------------------|-----------------------|
 [RxLocalSeq](scaler/packagehelp/rxlocalseq.md)      | local     | (all) |
-[RxSpark](r-reference/revoscaler/rxspark.md)         | spark     | RxTextData](r-reference/revoscaler/rxtextdata.md), [RxXdfData](scaler/packagehelp/RxXdfData.md), [RxSparkData](r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
-[RxHadoopMR](r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](r-reference/revoscaler/rxtextdata.md), [RxXdfData](scaler/packagehelp/RxXdfData.md) |
+[RxSpark](r-reference/revoscaler/rxspark.md)         | spark     | RxTextData](r-reference/revoscaler/rxtextdata.md), [RxXdfData](r-reference/revoscaler/rxxdfdata.md), [RxSparkData](r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
+[RxHadoopMR](r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](r-reference/revoscaler/rxtextdata.md), [RxXdfData](r-reference/revoscaler/rxxdfdata.md) |
 [RxInSqlServer](r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](r-reference/revoscaler/rxsqlserverdata.md) |
 [RxInTeradata](r-reference/revoscaler/rxinteradata.md)    | teradata  | [RxTeradataData](r-reference/revoscaler/rxteradata.md)  |
 

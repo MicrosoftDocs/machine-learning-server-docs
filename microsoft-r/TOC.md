@@ -488,7 +488,7 @@
 #### [rxWaitForJob](r-reference/revoscaler/rxwaitforjob.md) 
 #### [rxWriteObject](r-reference/revoscaler/rxwriteobject.md) 
 #### [RxXdfData-class](r-reference/revoscaler/rxxdfdata-class.md) 
-#### [RxXdfData](scaler/packagehelp/RxXdfData.md) 
+#### [RxXdfData](r-reference/revoscaler/rxxdfdata.md) 
 #### [rxXdfFileName](scaler/packagehelp/rxXdfFileName.md) 
 #### [rxXdfToText](scaler/packagehelp/rxXdfToText.md)
 
