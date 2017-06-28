@@ -842,10 +842,6 @@
       "redirect_url" : "/r-server/resources-servicing-support"
   },
     {
-      "source_path" : "microsoft-r/TOC.md",
-      "redirect_url" : "/r-server/toc"
-  },
-    {
       "source_path" : "microsoft-r/microsoftml/packagehelp/categorical.md",
       "redirect_url" : "/r-server/r-reference/microsoftml/categorical"
   },
