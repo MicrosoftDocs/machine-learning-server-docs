@@ -65,11 +65,11 @@ OLAP (Online Analytical Processing) cubes are essentially multi-dimensional spre
 
 |Function | Description |
 |---------|-------------|
-|[`OlapConnection`](../r-reference/olapr/olapconnection.md) |Create the connection string to access the Analysis Services Database. |
-|[`Query`](packagehelp/Query.md) |Construct a Query object to use on the Analysis Services Database. Use cube, axis, columns, rows, pages, chapters, slicers to add details to the query.|
-|[`executeMD`](../r-reference/olapr/executemd.md) |Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. |
-|[`execute2D`](../r-reference/olapr/execute2d.md)|Takes a Query object or an MDX string, and returns the result as a 2D data frame. |
-|[`explore`](../r-reference/olapr/explore.md)|Allows for exploration of cube metadata. |
+|[`OlapConnection`](olapconnection.md) |Create the connection string to access the Analysis Services Database. |
+|[`Query`](../../olapr/packagehelp/query.md) |Construct a Query object to use on the Analysis Services Database. Use cube, axis, columns, rows, pages, chapters, slicers to add details to the query.|
+|[`executeMD`](executemd.md) |Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. |
+|[`execute2D`](execute2d.md)|Takes a Query object or an MDX string, and returns the result as a 2D data frame. |
+|[`explore`](explore.md)|Allows for exploration of cube metadata. |
 
 ##MDX concepts
 
@@ -144,8 +144,8 @@ To see the **olapR** functions that can be called from the R console:
 
 ## See also
 
-[Package Reference](~/package-reference.md)
+[Package Reference](../../package-reference.md)
 
-[Install R Server](~/rserver.md)
+[Install R Server](../../rserver.md)
 
-[Install R Client](~/r-client.md)
+[Install R Client](../../r-client.md)
