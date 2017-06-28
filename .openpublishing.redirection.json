@@ -48,11 +48,11 @@
     {
      "source_path" : "microsoft-r/microsoft-r-getting-started.md",
      "redirect_url" : "/r-server/index"
- },
+  },
     {
-      "source_path" : "**STARTMSDN--DO_NOT_ADD_NEW_ENTRIES_BEYOND_THIS_POINT**",
+      "source_path" : "STARTMSDN--DO_NOT_ADD_NEW_ENTRIES_BEYOND_THIS_POINT",
       "redirect_url" : "/r-server/TOC"
-},
+  },
     {
       "source_path" : "microsoft-r/deployr-about.md",
       "redirect_url" : "/r-server/deployr/deployr-about"
