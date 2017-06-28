@@ -28,7 +28,7 @@ No two Hadoop installations are exactly alike, but most are quite similar. This 
 
 ## Missing dependencies
 
-Linux and Hadoop servers that are locked down will prevent the installation script from downloading any required dependencies that are missing on your system. For a list of all dependencies required by Microsoft R, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](rserver-install-linux-hadoop-packages.md).
+Linux and Hadoop servers that are locked down will prevent the installation script from downloading any required dependencies that are missing on your system. For a list of all dependencies required by Microsoft R, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](../rserver-install-linux-hadoop-packages.md).
 
 ## No Valid Credentials
 

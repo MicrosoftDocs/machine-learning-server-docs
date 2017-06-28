@@ -340,7 +340,7 @@ Next try to run a simple rxExec job:
 
 	rxExec(list.files)
 
-That should return a list of files in the native file system. If either the call to rxSummary or the call to rxExec results in an error, see [Troubleshoot Microsoft R installation problems on Hadoop](../rserver-install-hadoop-troubleshoot.md) for help with common errors and solutions.
+That should return a list of files in the native file system. If either the call to rxSummary or the call to rxExec results in an error, see [Troubleshoot Microsoft R installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md) for help with common errors and solutions.
 
 ## Next Steps
 
@@ -356,4 +356,4 @@ To get started with Microsoft R Server on Hadoop, we recommend the [Practice dat
 
 [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
 
-[Troubleshoot R Server installation problems on Hadoop](../rserver-install-hadoop-troubleshoot.md)
+[Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)

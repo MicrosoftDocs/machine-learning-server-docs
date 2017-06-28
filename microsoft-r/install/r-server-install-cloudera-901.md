@@ -127,4 +127,4 @@ Install the Cloudera Manager parcels as follows:
 
 [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
 
-[Troubleshoot R Server installation problems on Hadoop](../rserver-install-hadoop-troubleshoot.md)
+[Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)

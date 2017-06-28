@@ -335,7 +335,7 @@ Install the Cloudera Manager parcels as follows:
 
 ## Troubleshoot installation problems
 
-See [Troubleshoot Microsoft R installation problems on Hadoop](../rserver-install-hadoop-troubleshoot.md) for tips.
+See [Troubleshoot Microsoft R installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md) for tips.
 
 If you want to start over, see [Uninstall Microsoft R Server](../rserver-install-uninstall-upgrade.md) for instructions.
 
@@ -355,4 +355,4 @@ To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](../sc
 
 [Uninstall Microsoft R Server to upgrade to a newer version](../rserver-install-uninstall-upgrade.md)
 
-[Troubleshoot R Server installation problems on Hadoop](../rserver-install-hadoop-troubleshoot.md)
+[Troubleshoot R Server installation problems on Hadoop](r-server-install-hadoop-troubleshoot.md)

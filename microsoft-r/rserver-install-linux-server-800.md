@@ -128,4 +128,4 @@ In general, non-root installs require you to specify the complete path to the Re
 
 [Uninstall Microsoft R Server to upgrade to a newer version](rserver-install-uninstall-upgrade.md)
 
-[Troubleshoot R Server installation problems on Hadoop](rserver-install-hadoop-troubleshoot.md)
+[Troubleshoot R Server installation problems on Hadoop](install/r-server-install-hadoop-troubleshoot.md)

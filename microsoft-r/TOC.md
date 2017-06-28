@@ -98,7 +98,7 @@
 #### Post-install configuration
 ##### [Adjust Hadoop configuration](install/r-server-install-hadoop-configuration-r-workloads.md)
 ##### [Enforce a YARN queue assignment](rserver-install-hadoop-yarnqueueusage.md)
-##### [Troubleshoot installation problems](rserver-install-hadoop-troubleshoot.md)
+##### [Troubleshoot installation problems](install/r-server-install-hadoop-troubleshoot.md)
 #### [Uninstall from Hadoop](rserver-install-uninstall-upgrade.md)
 #### [Install an older version](install/r-server-install-hadoop-901.md)
 ##### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
