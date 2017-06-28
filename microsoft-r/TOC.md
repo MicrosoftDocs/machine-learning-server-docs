@@ -275,7 +275,7 @@
 ###[listRemoteFiles](r-reference/mrsdeploy/listremotefiles.md) 
 ###[listServices](r-reference/mrsdeploy/listservices.md) 
 ###[listSnapshots](r-reference/mrsdeploy/listsnapshots.md) 
-###[loadSnapshot](mrsdeploy/packagehelp/loadSnapshot.md) 
+###[loadSnapshot](r-reference/mrsdeploy/loadsnapshot.md) 
 ###[print.serviceDetails](mrsdeploy/packagehelp/print.serviceDetails.md) 
 ###[print.snapshotDetails](mrsdeploy/packagehelp/print.snapshotDetails.md) 
 ###[publishService](mrsdeploy/packagehelp/publishService.md) 
