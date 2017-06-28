@@ -142,7 +142,7 @@ The location of the sample data directory is stored as an option in RevoScaleR, 
 	rxGetOption("sampleDataDir")
 
 Larger data sets containing the full airline, census, and mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We make extensive use of the sample data sets both in this *User’s Guide* and the companion guides:
-- [RevoScaleR Getting Started Guide](../scaler-getting-started-data-import-exploration.md)
+- [RevoScaleR Getting Started Guide](tutorial-revoscaler-data-import-transform.md)
 - [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md); see this guide for HPC examples
 
 ## See Also

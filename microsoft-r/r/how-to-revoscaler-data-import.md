@@ -98,7 +98,7 @@ During import, you can fix problems in the underlying data by specifying argumen
 
 ### Set a replacement string
 
-If your text data file uses a string other than NA to identify missing values, you can use the *missingValueString* argument to define the replacement string. Only one missing value string is allowed per file. The following example is from the [Airline demo tutorial](../scaler-getting-started-data-import-exploration.md):
+If your text data file uses a string other than NA to identify missing values, you can use the *missingValueString* argument to define the replacement string. Only one missing value string is allowed per file. The following example is from the [Airline demo tutorial](tutorial-revoscaler-data-import-transform.md):
 
 	inFile <- file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.csv")
 	airData <- rxImport(inData = inFile, outFile="airExample.xdf", 
@@ -508,6 +508,6 @@ Continue on to the following data import articles to learn more about XDF, data 
 
 ## See also
 
- [Tutorial: data import](../scaler-getting-started-data-import-exploration.md)	
+ [Tutorial: data import](tutorial-revoscaler-data-import-transform.md)	
  [Tutorial: data manipulation](../scaler-getting-started-data-visualization-analysis.md)
 

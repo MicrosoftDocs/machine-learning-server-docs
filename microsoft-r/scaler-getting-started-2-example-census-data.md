@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Tutorial: Analyzing US census data with RevoScaleR (Microsoft R)
 
-This example builds on what you learned in an [earlier tutorial](scaler-getting-started-data-import-exploration.md) by exploring the import and statistical RevoScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
+This example builds on what you learned in an [earlier tutorial](r/tutorial-revoscaler-data-import-transform.md) by exploring the import and statistical RevoScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
 
 ## Download the census dataset
 
@@ -170,7 +170,7 @@ This should give the result:
 
 ## Next steps
 
-- If you missed the first tutorial, see [Practice data import and exploration](scaler-getting-started-data-import-exploration.md) for an overview.
+- If you missed the first tutorial, see [Practice data import and exploration](r/tutorial-revoscaler-data-import-transform.md) for an overview.
 - For more advanced lessons, see [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md).
 
 ## See Also

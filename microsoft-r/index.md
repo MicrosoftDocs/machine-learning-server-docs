@@ -46,7 +46,7 @@ In minutes, you can step through a classic what-if problem using sample data and
 
 * [Tutorial: Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md) 
 
-* [Tutorial: Import and transform data](scaler-getting-started-data-import-exploration.md)  
+* [Tutorial: Import and transform data](r/tutorial-revoscaler-data-import-transform.md)  
 
 * [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md) 
 

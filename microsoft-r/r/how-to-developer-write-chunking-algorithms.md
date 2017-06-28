@@ -37,7 +37,7 @@ In this article, you'll step through an example that teaches a simple chunking a
 
 ## Prerequisites
 
-Sample data for this example is the *AirlineDemoSmall.xdf* file with a local compute context. For instructions on how to import this data set, see the tutorial in [Practice data import and exploration](../scaler-getting-started-data-import-exploration.md).
+Sample data for this example is the *AirlineDemoSmall.xdf* file with a local compute context. For instructions on how to import this data set, see the tutorial in [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md).
 
 Chunking is supported on Microsoft R Server, but not the free R Client. Because the dataset is small enough to reside in memory on most computers, most systems succeed in running this example locally. however, if the data does not fit in memory, you will need to use R Server instead.
 
@@ -94,7 +94,7 @@ To try this out, create a new script *chunkTable.R* with the following contents:
 
 Note that the `blocksPerRead` argument is ignored if this script runs locally using R Client. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported in R Client. When run locally with R Client, all data must be read into memory. You can work around this limitation when you push the compute context to a [Microsoft R Server instance](../rserver.md).
 
-To test the function, use the sample data *AirlineDemoSmall.xdf* file with a local compute context. For more information, see the tutorial in [Practice data import and exploration](../scaler-getting-started-data-import-exploration.md).
+To test the function, use the sample data *AirlineDemoSmall.xdf* file with a local compute context. For more information, see the tutorial in [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md).
 
 We’ll call our new *chunkTable* function, processing 1 block at a time so we can take a look at the intermediate results:
 

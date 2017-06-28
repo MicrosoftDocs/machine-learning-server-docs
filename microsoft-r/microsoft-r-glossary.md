@@ -66,7 +66,7 @@ A feature in [RevoScaleR](r-reference/revoscaler/revoscaler.md) that lets you de
 
 **Data chunking**
 
-Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. [Learn more…](scaler-getting-started-data-import-exploration.md#chunking)
+Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. [Learn more…](r/tutorial-revoscaler-data-import-transform.md#chunking)
 
 <br>
 

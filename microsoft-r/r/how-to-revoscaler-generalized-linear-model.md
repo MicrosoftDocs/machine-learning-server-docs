@@ -259,7 +259,7 @@ In this example, we’ll use a subsample from the 5% sample of the U.S. 2000 cen
 	  Number of blocks: 10
 	  Compression type: zlib
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](../scaler-getting-started-data-import-exploration.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
 An Xdf data source representing the new data file is returned. The new data file has over 5 million observations.
 

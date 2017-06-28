@@ -28,12 +28,12 @@ ms.custom: ""
 
 **Applies to: Microsoft R Client, Microsoft R Server** 
 
-This tutorial builds on what you learned in the previous [data import and exploration tutorial](scaler-getting-started-data-import-exploration.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
+This tutorial builds on what you learned in the previous [data import and exploration tutorial](r/tutorial-revoscaler-data-import-transform.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
 This tutorial focuses on analysis and predictions.
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](scaler-getting-started-data-import-exploration.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](r/concept-what-is-compute-context.md) to R Server.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](r/tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](r/concept-what-is-compute-context.md) to R Server.
 
 ## What you will learn
 
@@ -49,7 +49,7 @@ To complete this tutorial as written, use an R console application.
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
-You must also have data to work with. The previous tutorial, [Data import and exploration](scaler-getting-started-data-import-exploration.md), explains functions and usage scenarios. 
+You must also have data to work with. The previous tutorial, [Data import and exploration](r/tutorial-revoscaler-data-import-transform.md), explains functions and usage scenarios. 
 
 Run the following script to reload data from the previous tutorial:
 

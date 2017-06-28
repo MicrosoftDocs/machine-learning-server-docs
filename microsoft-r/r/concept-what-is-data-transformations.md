@@ -148,5 +148,5 @@ Continue on to the following data-related articles to learn more about XDF, data
 ## See Also
    
  [RevoScaleR Functions](../revoscaler.md)   
- [Tutorial: data import and exploration](../scaler-getting-started-data-import-exploration.md)
+ [Tutorial: data import and exploration](tutorial-revoscaler-data-import-transform.md)
  [Tutorial: data visualization and analysis](../scaler-getting-started-data-visualization-analysis.md) 

@@ -40,7 +40,7 @@ There are three key components to running **RevoScaleR** high performance analyt
 
 More detailed examples of using **RevoScaleR** can be found in the following articles in this documentation set:
 
--   [*RevoScaleR Getting Started Guide*](../scaler-getting-started-data-import-exploration.md)
+-   [*RevoScaleR Getting Started Guide*](tutorial-revoscaler-data-import-transform.md)
 -   [*RevoScaleR User’s Guide*](concept-what-is-revoscaler.md)
 -   [*RevoScaleR Distributed Computing Guide*](how-to-revoscaler-distributed-computing.md)
 -   [*RevoScaleR ODBC Data Import Guide*](how-to-revoscaler-data-odbc.md)

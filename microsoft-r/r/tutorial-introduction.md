@@ -31,7 +31,7 @@ ms.custom: ""
 New to the R language or Microsoft R products and libraries? These tutorials will help you get started.
 
 + [Expore R and ScaleR in 25 functions or less](../microsoft-r-tutorial-r2revoscaler.md)
-+ [Practice data import and exploration](../scaler-getting-started-data-import-exploration.md)
++ [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md)
 + [Practice data manipulation and statistical analysis](../scaler-getting-started-data-visualization-analysis.md)
 
 ## Move forward with larger data sets

@@ -28,12 +28,12 @@ ms.custom: ""
 
 **Applies to: Microsoft R Client, Microsoft R Server**
 
-In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](r-reference/revoscaler/revoscaler.md) to ascertain the shape of the data. 
+In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](../r-reference/revoscaler/revoscaler.md) to ascertain the shape of the data. 
 
 To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object that wraps a dataset with useful metadata. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](#chunking). If datasets exceed memory, we recommend pushing the [compute context](r/concept-what-is-compute-context.md) to R Server.
+> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to R Server.
 
 ## What you will learn
 
@@ -54,11 +54,11 @@ The command prompt for a R is `>`. You can hand-type case-sensitive R commands, 
 
 ### How to locate built-in data
 
-[RevoScaleR](r/concept-what-is-revoscaler.md) provides both functions and built-in datasets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
+[RevoScaleR](concept-what-is-revoscaler.md) provides both functions and built-in datasets, including the *AirlineDemoSmall.csv* file used in this tutorial. The sample data directory is registered with RevoScaleR. Its location can be returned through a "sampleDataDir" parameter on the **rxGetOption** function.
 
 1. Open the R console or start a Revo64 session. The RevoScaleR library is loaded automatically.
 
-2. Retrieve the list of [sample data files](r/sample-built-in-data.md) provided in RevoScaleR by entering the following command at the `>` command prompt:
+2. Retrieve the list of [sample data files](sample-built-in-data.md) provided in RevoScaleR by entering the following command at the `>` command prompt:
 
         list.files(rxGetOption("sampleDataDir"))
 
@@ -321,11 +321,11 @@ To get a better feel for the data, you can draw histograms for each variable. Ru
 	rxHistogram(~CRSDepTime, data=airXdfData)
 	rxHistogram(~DayOfWeek, data=airXdfData)
 
-![ArrDelay Histogram](media/scaler-getting-started-data-import-exploration/arrdelay_histogram_1.png)
+![ArrDelay Histogram](./media/tutorial-revoscaler-data-import-transform/arrdelay_histogram_1.png)
 
-![CRSDepTime Histogram](media/scaler-getting-started-data-import-exploration/crsdeptime_histogram.png)
+![CRSDepTime Histogram](./media/tutorial-revoscaler-data-import-transform/crsdeptime_histogram.png)
 
-![DayOfWeek Histogram](media/scaler-getting-started-data-import-exploration/dayofweek_histogram.png)
+![DayOfWeek Histogram](./media/tutorial-revoscaler-data-import-transform/dayofweek_histogram.png)
 
 We can also easily extract a subsample of the data file into a data frame in memory. For example, we can look at just the flights that were between 4 and 5 hours late:
 
@@ -334,7 +334,7 @@ We can also easily extract a subsample of the data file into a data frame in mem
 		varsToKeep = c("ArrDelay", "DayOfWeek"))
 	rxHistogram(~ArrDelay, data = myData)
 
-![ArrDelay Histogram](media/scaler-getting-started-data-import-exploration/arrdelay_histogram_2.png)
+![ArrDelay Histogram](./media/tutorial-revoscaler-data-import-transform/arrdelay_histogram_2.png)
 
 ## Load a data subset
 
@@ -381,7 +381,7 @@ You can now compute summary statistics on the reduced dataset
 
 ## Create a new dataset with variable transformations
 
-In this task, use the **rxDataStep** function to create a new dataset containing the variables in airXdfData plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](r/concept-what-is-data-transformations.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
+In this task, use the **rxDataStep** function to create a new dataset containing the variables in airXdfData plus additional variables created through transformations. Typically additional variables are created using the *transforms* argument. You can refer to [Transform functions](concept-what-is-data-transformations.md) for information. Remember that all expressions used in *transforms* must be able to be processed on a chunk of data at a time.
 
 In the example below, three new variables are created. 
 
@@ -430,10 +430,10 @@ You should see the following information in your output:
 
 This tutorial demonstrated data import and exploration, but there are several more tutorials covering more scenarios, including instructions for working with bigger datasets.
 
-  - [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md)
-  - [Analyze large data with RevoScaleR and airline flight delay data](scaler-getting-started-3-analyze-large-data.md)
-  - [Example: Analyzing loan data with RevoScaleR](scaler-getting-started-1-example-loan-data.md)
-  - [Example: Analyzing census data with RevoScaleR](scaler-getting-started-2-example-census-data.md)
+  - [Tutorial: Visualize and analyze data](../scaler-getting-started-data-visualization-analysis.md)
+  - [Analyze large data with RevoScaleR and airline flight delay data](../scaler-getting-started-3-analyze-large-data.md)
+  - [Example: Analyzing loan data with RevoScaleR](../scaler-getting-started-1-example-loan-data.md)
+  - [Example: Analyzing census data with RevoScaleR](../scaler-getting-started-2-example-census-data.md)
 
 ### Try demo scripts
 
@@ -459,13 +459,13 @@ A primary benefit of RevoScaleR is the ability to redistribute data into compone
 
 In Microsoft R, chunking functionality is available only when RevoScaleR functions are executed on an R Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have just Microsoft R Client. R Client requires that data fits into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is deliberately, which results in all data being read into memory. 
 
-You can work around this limitation by writing script on R Client, but then [pushing the compute context](r/concept-what-is-compute-context.md) from R Client to a remote Microsoft R Server instance. Optionally, you could use R Server. Developers can install the developer edition of R Server, which is a full-featured R Server, but licensed for development workstations instead of production servers. For more information, see [Microsoft R Server](rserver.md).
+You can work around this limitation by writing script on R Client, but then [pushing the compute context](concept-what-is-compute-context.md) from R Client to a remote Microsoft R Server instance. Optionally, you could use R Server. Developers can install the developer edition of R Server, which is a full-featured R Server, but licensed for development workstations instead of production servers. For more information, see [Microsoft R Server](../rserver.md).
 
 ## See Also
 
- [Introduction to Microsoft R](microsoft-r-getting-started.md)  
- [Getting Started with Hadoop and RevoScaleR](r/how-to-revoscaler-hadoop.md)    
- [Parallel and distributed computing in Microsoft R Server](r/how-to-revoscaler-distributed-computing.md)   
- [Importing data](r/how-to-revoscaler-data-import.md)     
- [ODBC data import](r/how-to-revoscaler-data-odbc.md)     
- [RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)     
+ [Introduction to Microsoft R](../microsoft-r-getting-started.md)  
+ [Getting Started with Hadoop and RevoScaleR](how-to-revoscaler-hadoop.md)    
+ [Parallel and distributed computing in Microsoft R Server](how-to-revoscaler-distributed-computing.md)   
+ [Importing data](how-to-revoscaler-data-import.md)     
+ [ODBC data import](how-to-revoscaler-data-odbc.md)     
+ [RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)     
