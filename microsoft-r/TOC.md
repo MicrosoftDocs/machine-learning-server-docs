@@ -188,7 +188,7 @@
 ##### [HTTPS & SSL/TLS Support](deployr/deployr-security-https.md)
 ##### [Server Access Policies](deployr-admin-security/deployr-security-server-access.md)
 ##### [Project and Repository File Access Controls](deployr-admin-security/deployr-security-project-access.md)
-##### [Password Policies](deployr-admin-security/deployr-security-passwords.md)
+##### [Password Policies](deployr/deployr-security-passwords.md)
 ##### [Account Locking Policies](deployr/deployr-security-account-locking.md)
 ##### [RServe Execution Context](deployr-admin-security/deployr-security-rserve-execution-context.md)
 #### [APIs and Client Libraries](deployr-tools-and-samples.md)
