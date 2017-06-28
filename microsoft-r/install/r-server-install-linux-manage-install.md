@@ -163,7 +163,7 @@ If you are in a locked-down environment without access to the standard Microsoft
 
 ## See Also
 
-[Install R Server 8.0.5 for Linux](../rserver-install-linux-server-805.md)
+[Install R Server 8.0.5 for Linux](r-server-install-linux-server-805.md)
 
 [Install R Server 9.0.1 for Linux](../rserver-install-linux-server-901.md)
 
