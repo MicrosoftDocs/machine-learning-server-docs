@@ -490,7 +490,7 @@
 #### [RxXdfData-class](r-reference/revoscaler/rxxdfdata-class.md) 
 #### [RxXdfData](r-reference/revoscaler/rxxdfdata.md) 
 #### [rxXdfFileName](r-reference/revoscaler/rxxdffilename.md) 
-#### [rxXdfToText](scaler/packagehelp/rxXdfToText.md)
+#### [rxXdfToText](r-reference/revoscaler/rxxdftotext.md)
 
 ## [RevoUtils](RevoUtils/RevoUtils.md)
 ###[getRevoRepos](RevoUtils/packagehelp/getRevoRepos.md) 

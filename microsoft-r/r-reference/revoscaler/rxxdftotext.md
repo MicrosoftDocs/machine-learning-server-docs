@@ -89,12 +89,12 @@ Write .xdf file content to a delimited text file. `rxDataStep` recommended.
   
     
  ### `transformFunc`
- variable transformation function. See [rxTransform](../../r-reference/revoscaler/rxtransform.md) for details. 
+ variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
  ### `transformVars`
- character vector of input data set variables needed for the transformation function. See [rxTransform](../../r-reference/revoscaler/rxtransform.md) for details. 
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
@@ -160,12 +160,12 @@ Write .xdf file content to a delimited text file. `rxDataStep` recommended.
  
  ##Details
  
-For most purposes, the more general [rxDataStep](../../r-reference/revoscaler/rxdatastep.md) is preferred for writing to text files.
+For most purposes, the more general [rxDataStep](rxdatastep.md) is preferred for writing to text files.
  
  
  ##Value
  
-An [RxTextData](../../r-reference/revoscaler/rxtextdata.md) object representing the output text file.
+An [RxTextData](rxtextdata.md) object representing the output text file.
  
  
  ##Author(s)
@@ -174,10 +174,10 @@ An [RxTextData](../../r-reference/revoscaler/rxtextdata.md) object representing 
  
  ##See Also
  
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxImport](../../r-reference/revoscaler/rximport.md),
+[rxDataStep](rxdatastep.md),
+[rxImport](rximport.md),
 write.table,
-[rxSplit](../../r-reference/revoscaler/rxsplitxdf.md).
+[rxSplit](rxsplitxdf.md).
    
  ##Examples
 
