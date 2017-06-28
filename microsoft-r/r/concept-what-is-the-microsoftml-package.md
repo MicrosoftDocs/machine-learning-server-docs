@@ -81,12 +81,12 @@ For the new features included in latest release of MicrosoftML, see [What's New 
 
 For reference documentation on the individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](../r-reference/microsoftml/microsoftml-package.md).
 
-For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [Cheat Sheet: How to choose a MicrosoftML algorithm](../microsoftml-algorithm-cheat-sheet.md).
+For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [Cheat Sheet: How to choose a MicrosoftML algorithm](how-to-choose-microsoftml-algorithms-cheatsheet.md).
 
 ## See also
 
 [About Microsoft R Server](../rserver.md) for general information about R Server.   
 
-[Cheat Sheet: How to choose a MicrosoftML algorithm](../microsoftml-algorithm-cheat-sheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
+[Cheat Sheet: How to choose a MicrosoftML algorithm](how-to-choose-microsoftml-algorithms-cheatsheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
 
 [Quickstarts for MicrosoftML](../microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.

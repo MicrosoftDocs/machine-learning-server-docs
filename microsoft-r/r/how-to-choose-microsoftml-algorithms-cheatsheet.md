@@ -33,7 +33,7 @@ MicrosoftML provides a library of algorithms from the  ***regression***, ***clas
 ## Download the MicrosoftML Algorithm Cheat Sheet
 **Download the cheat sheet here: [MicrosoftML: Algorithm Cheat Sheet (11x17 in.)](http://download.microsoft.com/download/B/3/1/B31FE451-E69B-4569-9B32-CFA9FB40027E/microsoftml-algorithm-cheat-sheet-v1.pdf)**
 
-![MicrosoftML: Algorithm Cheat Sheet: Learn how to choose a Machine Learning algorithm.](./media/microsoftml-algorithm-cheat-sheet/microsoftml-algorithm-cheat-sheet.png)
+![MicrosoftML: Algorithm Cheat Sheet: Learn how to choose a Machine Learning algorithm.](./media/how-to-choose-microsoftml-algorithms-cheatsheet/microsoftml-algorithm-cheat-sheet.png)
 
 Download and print the **MicrosoftML: Algorithm Cheat Sheet** in tabloid size to keep it handy for guidance when choosing a machine learning algorithm.
 
@@ -80,7 +80,7 @@ The **`rxEnsemble()`** algorithm uses a combination of learning algorithms to pr
 
 ### More help with algorithms
 
-For a list by category of all the machine learning algorithms available in the MicrosoftML package, see [MicrosoftML functions](r-reference/microsoftml/microsoftml-package.md).
+For a list by category of all the machine learning algorithms available in the MicrosoftML package, see [MicrosoftML functions](../r-reference/microsoftml/microsoftml-package.md).
 
 ## Notes and terminology definitions for the machine learning algorithm cheat sheet
 
@@ -97,7 +97,7 @@ For a list by category of all the machine learning algorithms available in the M
 
 ## What's next?
 
-[Quickstarts for MicrosoftML](microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.
+[Quickstarts for MicrosoftML](../microsoftml-quickstarts.md) shows how to use pretrained models for sentiment analysis and image featurization.
 
 
 

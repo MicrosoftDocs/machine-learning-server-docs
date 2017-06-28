@@ -112,7 +112,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 
 [Diving into data analysis in Microsoft R](../../data-analysis-in-microsoft-r.md)
 
-[Cheat Sheet: How to choose a MicrosoftML algorithm](../../microsoftml-algorithm-cheat-sheet.md)
+[Cheat Sheet: How to choose a MicrosoftML algorithm](../../r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 
 [MicrosoftML samples](../../microsoftml-quickstarts.md).
 
