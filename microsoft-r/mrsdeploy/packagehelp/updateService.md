@@ -148,7 +148,7 @@ Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice
 [print.serviceDetails](../../r-reference/mrsdeploy/print-servicedetails.md),
 [publishService](../../r-reference/mrsdeploy/publishservice.md),
 [serviceOption](../../r-reference/mrsdeploy/serviceoption.md),
-[summary.serviceDetails](summary.serviceDetails.md)
+[summary.serviceDetails](../../r-reference/mrsdeploy/summary-servicedetails.md)
    
  ##Examples
 
