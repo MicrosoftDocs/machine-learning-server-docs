@@ -39,8 +39,8 @@ Spark compute context class.
  ## Generators 
 
  
-The targeted generator [RxSpark](RxSpark.md) as well as the general generator
-[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).
+The targeted generator [RxSpark](../../scaler/packagehelp/rxspark.md) as well as the general generator
+[RxComputeContext](rxcomputecontext.md).
  
  ## Extends 
 
@@ -64,6 +64,6 @@ Class RxComputeContext, directly.
  
  ##See Also
  
-[RxSpark](RxSpark.md)
+[RxSpark](../../scaler/packagehelp/rxspark.md)
    
  
