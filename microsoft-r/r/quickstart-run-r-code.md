@@ -43,7 +43,7 @@ If you have completed the prerequisites, this task takes approximately 10 minute
 
 This quickstart assumes that you have:
 + An installed instance of Microsoft R Client or Microsoft R Server 
-+ R running on the command line or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](r-client-get-started.md) for more information.
++ R running on the command line or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](../r-client-get-started.md) for more information.
 + An internet connection to get [sample data in the RTVS Github repository](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets).
 
 ## Example code
@@ -250,7 +250,7 @@ This article walks through some R code you can use to predict whether a flight w
    inputFileWeatherURL <- paste0(github, "Weather_Sample.csv")
    ```
 
-1. Create a temporary directory to store the intermediate XDF files. The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  [Learn more](r/concept-what-is-revoscaler.md)
+1. Create a temporary directory to store the intermediate XDF files. The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  [Learn more](concept-what-is-revoscaler.md)
    ```r
    td <- tempdir()
    outFileFlight <- paste0(td, "/flight.xdf")
@@ -469,16 +469,16 @@ This article walks through some R code you can use to predict whether a flight w
 
 ## Next steps
 
-Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](r-reference/revoscaler/revoscaler.md), [`MicrosoftML` R package functions](r-reference/microsoftml/microsoftml-package.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](r/how-to-execute-code-remotely.md) for execution. 
+Now that you've tried this example, you can start developing your own solutions using the [`RevoScaleR` R package functions](../revoscaler.md), [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md), and APIs. When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](how-to-execute-code-remotely.md) for execution. 
 
 ## Learn More
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](index.md) 
++ [Overview of Microsoft R](../index.md) 
 
-+ [Overview of Microsoft R Server](rserver.md) 
++ [Overview of Microsoft R Server](../rserver.md) 
 
-+ [Overview of Microsoft R Client](r-client-get-started.md) 
++ [Overview of Microsoft R Client](../r-client-get-started.md) 
 
-+ [Diving into data analysis with Microsoft R](r/how-to-introduction.md)
++ [Diving into data analysis with Microsoft R](how-to-introduction.md)

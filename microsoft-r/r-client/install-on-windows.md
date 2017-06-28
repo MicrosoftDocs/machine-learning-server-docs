@@ -154,7 +154,7 @@ You can learn more with these guides:
 
 + [Overview of Microsoft R Client](../r-client-get-started.md) 
 
-+ [Quickstart: Running R code in Microsoft R](../quickstart-r-code.md) (example)
++ [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)
 
 + [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
 

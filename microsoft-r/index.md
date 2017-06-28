@@ -40,7 +40,7 @@ Microsoft R is a collection of packages, interpreters, and infrastructure for de
 
 In minutes, you can step through a classic what-if problem using sample data and R script in the first quickstart. Additional step-by-step tutorials offer a hands-on experience performing practical data science tasks.
 
-* [Quickstart: Run R code in Microsoft R](quickstart-r-code.md) 
+* [Quickstart: Run R code in Microsoft R](r/quickstart-run-r-code.md) 
 
 * [Quickstart: Deploy R code as a web service](operationalize/quickstart-publish-r-web-service.md) 
 

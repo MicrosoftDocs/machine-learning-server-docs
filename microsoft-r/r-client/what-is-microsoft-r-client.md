@@ -84,7 +84,7 @@ After you configure the IDE, a message appears in the console signaling that the
 
 Now that you've installed R Client, you can start building and running some R code. Launch R on the command line or in your IDE and:
 
-+ Run the sample R code as described in this [quickstart guide](../quickstart-r-code.md). 
++ Run the sample R code as described in this [quickstart guide](../r/quickstart-run-r-code.md). 
 
 + Or, develop your own solutions using [`RevoScaleR` R package functions](../revoscaler.md), [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md), and APIs. 
 
@@ -97,7 +97,7 @@ You can learn more with these guides:
 
 + [Overview of Microsoft R](../index.md) 
 
-+ [Quickstart: Running R code in Microsoft R](../quickstart-r-code.md) (example)
++ [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)
 
 + [Compatibility with R Server](compatibility-with-server.md)
 
