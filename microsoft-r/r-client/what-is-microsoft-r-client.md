@@ -46,9 +46,9 @@ You can work with R Client standalone. You can also use it with R Server, where 
 Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get started:
 <br>
 <div align=center>
-<a href="#installrclient" title="Click Step 1"><img src="./media/r-client/Step1.png" width=200 /></a>&nbsp;&nbsp;
-<a href="#configure-ide" title="Click Step 2"><img src="./media/r-client/Step2.png" width=200  /></a>&nbsp;&nbsp;
-<a href="#try-r-client" title="Click Step 3"><img src="./media/r-client/Step3.png" width=200  /></a>&nbsp;&nbsp;
+<a href="#installrclient" title="Click Step 1"><img src="./media/what-is-microsoft-r-client/Step1.png" width=200 /></a>&nbsp;&nbsp;
+<a href="#configure-ide" title="Click Step 2"><img src="./media/what-is-microsoft-r-client/Step2.png" width=200  /></a>&nbsp;&nbsp;
+<a href="#try-r-client" title="Click Step 3"><img src="./media/what-is-microsoft-r-client/Step3.png" width=200  /></a>&nbsp;&nbsp;
 </div>
 
 <br><a name="installrclient"></a>
@@ -59,7 +59,7 @@ The first step is to download Microsoft R Client for your operating system and i
 
 + [Install Microsoft R Client on Windows](install-on-windows.md)
 
-+ [Install Microsoft R Client for Linux](../deployr/install-on-linux.md)
++ [Install Microsoft R Client for Linux](install-on-linux.md)
 
 + [Compatibility with R Server](compatibility-with-server.md)
 
