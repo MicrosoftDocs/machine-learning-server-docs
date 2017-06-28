@@ -66,10 +66,10 @@ character vector containing the names of the variables in the data source or dat
  
  ##See Also
  
-[rxGetVarInfo](../../r-reference/revoscaler/rxgetvarinfoxdf.md),
-[rxSetVarInfo](rxSetVarInfoXdf.md),
-[rxDataStep](../../r-reference/revoscaler/rxdatastep.md),
-[rxGetInfo](../../r-reference/revoscaler/rxgetinfoxdf.md).
+[rxGetVarInfo](rxgetvarinfoxdf.md),
+[rxSetVarInfo](../../scaler/packagehelp/rxsetvarinfoxdf.md),
+[rxDataStep](rxdatastep.md),
+[rxGetInfo](rxgetinfoxdf.md).
    
  ##Examples
 
