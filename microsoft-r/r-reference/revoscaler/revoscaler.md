@@ -825,7 +825,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 ##HPC and Distributed Computing Functions
 
-These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../scaler-distributed-computing.md).
+These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../r/how-to-revoscaler-distributed-computing.md).
 
 <table>
     <tr>

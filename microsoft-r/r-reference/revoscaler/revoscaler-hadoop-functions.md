@@ -455,7 +455,7 @@ Of course, not all data source types are available on all compute contexts. For 
 <br />
 ##High Performance Computing and Distributed Computing Functions
 
-The Hadoop compute context has a number of helpful functions used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../scaler-distributed-computing.md).
+The Hadoop compute context has a number of helpful functions used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../r/how-to-revoscaler-distributed-computing.md).
 
 
 <table>

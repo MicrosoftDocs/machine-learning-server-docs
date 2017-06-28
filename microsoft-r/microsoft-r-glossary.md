@@ -52,7 +52,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 **Compute Context**
 
-A feature in [RevoScaleR](r-reference/revoscaler/revoscaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). [Learn more…](scaler-distributed-computing.md)
+A feature in [RevoScaleR](r-reference/revoscaler/revoscaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). [Learn more…](r/how-to-revoscaler-distributed-computing.md)
 
 
 
@@ -78,7 +78,7 @@ See [<i>Operationalizing Analytics</i>](#o16n)
 
 **Distributed computing**
 
-The breakdown of a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be put together to create the final result. Distributed comput is similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple physical servers. [Learn more…](scaler-distributed-computing.md)
+The breakdown of a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be put together to create the final result. Distributed comput is similar to parallel computing, but in Microsoft R, it specifically refers to workload distribution across multiple physical servers. [Learn more…](r/how-to-revoscaler-distributed-computing.md)
 
 
 <a name="H"></a>
@@ -145,7 +145,7 @@ Configure R Server to act as a deployment engine to publish your analytics and e
 
 <a name="parallel"></a>**Parallel computing**
 
-A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. ScaleR performs parallel computing on any computer with multiple computing cores. [Learn more…](scaler-distributed-computing.md)
+A process that breaks a computing task into segments that can be executed independently on separate threads, cores, or computers. Multiple architectures support parallel computing: SMP means parallel processing on a single computer with multiple processors, each running a different set of commands; MPP means processing a task across multiple computers. In both SMP and MPP, the results from all processes are combined at the end to give a single result. ScaleR performs parallel computing on any computer with multiple computing cores. [Learn more…](r/how-to-revoscaler-distributed-computing.md)
  
 
 

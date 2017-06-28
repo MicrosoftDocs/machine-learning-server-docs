@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Running Distributed Analyses
 
-This article explains how to work with output in a [distributed compute context](../scaler-distributed-computing.md) in R Server on Hadoop or Teradata.
+This article explains how to work with output in a [distributed compute context](how-to-revoscaler-distributed-computing.md) in R Server on Hadoop or Teradata.
 
 Given a registered a distributed compute context, any of the following functions can be used to perform distributed computations:
 

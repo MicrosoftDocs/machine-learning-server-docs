@@ -86,7 +86,7 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 | Teradata database (`RxTeradata`) | X |   | X |   |
 | SQL Server database (`RxSqlServerData`) |   |   |   | X |
 
-Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Practice data import and exploration on Hadoop](../scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](../scaler-distributed-computing.md#managing-distributed-data) for details.
+Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [Practice data import and exploration on Hadoop](../scaler-hadoop-getting-started.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](how-to-revoscaler-distributed-computing.md#managing-distributed-data) for details.
 
 ## Waiting and Non-waiting Compute Contexts
 

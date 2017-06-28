@@ -26,11 +26,11 @@ ms.custom: ""
 
 # Distributed and parallel computing with ScaleR in Microsoft R
 
-In Microsoft R, the ScaleR functions in the RevoScaleR package are built to leverage the processing power inherent in the computing platform. On a distributed platform like Hadoop, ScaleR automatically uses the available nodes in a cluster. On multi-processor machines, ScaleR automatically runs jobs in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the ScaleR engine of platform capabilities, your script should include an object called a [compute context](r/how-to-revoscaler-distributed-computing-compute-context.md) that identifies the platform.
+In Microsoft R, the ScaleR functions in the RevoScaleR package are built to leverage the processing power inherent in the computing platform. On a distributed platform like Hadoop, ScaleR automatically uses the available nodes in a cluster. On multi-processor machines, ScaleR automatically runs jobs in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the ScaleR engine of platform capabilities, your script should include an object called a [compute context](how-to-revoscaler-distributed-computing-compute-context.md) that identifies the platform.
 
 *Parallel processing*, which leverages the computing power of a single machine, is both a R Server and R Client capability. Examples of jobs that can run in parallel include data import and linear modeling .
 
-The degree of parallel processing you can achieve depends on whether the ScaleR runs on R Client or R Server, and if R Server, on the computational resources of the platform. On [R Client](r-client/what-is-microsoft-r-client.md), the free workstation version that runs Windows or Linux, parallelization is restricted to a maximum of two processors, even if the machine has more capability. Thus, R Client offers parallelization, but to a much smaller degree given the constraints of two processors.
+The degree of parallel processing you can achieve depends on whether the ScaleR runs on R Client or R Server, and if R Server, on the computational resources of the platform. On [R Client](../r-client/what-is-microsoft-r-client.md), the free workstation version that runs Windows or Linux, parallelization is restricted to a maximum of two processors, even if the machine has more capability. Thus, R Client offers parallelization, but to a much smaller degree given the constraints of two processors.
 
 *Distributed computing* across multiple nodes is an R Server-only capability. The platform must be Hadoop (MapReduce or Spark) or Teradata, both of which provide a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
 
@@ -183,7 +183,7 @@ The output data is also split, in this case holding fitted values, residuals, an
 
 ### Creating Split Training and Test Data Sets
 
-One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see [Parallel Random Number Generation](r/how-to-revoscaler-distributed-computing-parallel-jobs.md#parallel-random-number-generation)), the split becomes reproducible:
+One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see [Parallel Random Number Generation](how-to-revoscaler-distributed-computing-parallel-jobs.md#parallel-random-number-generation)), the split becomes reproducible:
 
 	rxExec(rxSplit, inData="C:/data/distributed/DistAirlineData.xdf",
 		outFilesBase="airlineData",

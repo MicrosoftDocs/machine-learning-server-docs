@@ -206,7 +206,7 @@
 
 ## [Execute code on remote R Server](r/how-to-execute-code-remotely.md)
 
-## [Distributed and parallel computing on R Server](scaler-distributed-computing.md)
+## [Distributed and parallel computing on R Server](r/how-to-revoscaler-distributed-computing.md)
 ### [Compute context](r/how-to-revoscaler-distributed-computing-compute-context.md)
 ### [Distributed analysis](r/how-to-revoscaler-distributed-computing-distributed-analysis.md)
 ### [Background jobs](r/how-to-revoscaler-distributed-computing-background-jobs.md)
