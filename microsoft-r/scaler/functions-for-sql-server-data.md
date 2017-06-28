@@ -66,4 +66,4 @@ If you regularly move large amounts of data from a database to a local workstati
 
 
 ## See Also
-[Comparison of ScaleR and CRAN R Functions](compare-base-r-scaler-functions.md)
+[Comparison of ScaleR and CRAN R Functions](../r-reference/revoscaler/revoscaler-compared-to-base-r.md)

@@ -34,7 +34,7 @@ The RevoScaleR functions run on a computational engine include in the aforementi
 
 RevoScaleR is engineered to adapt to the computational power of the platform it runs on. On R Server for Hadoop, script using RevoScaleR functions that run in parallel will automatically use nodes in the cluster. Whereas on the free R Client, scale is provided at much lower levels (2 processors, data resides in-memory).
 
-RevoScaleR provides enhanced capabilities to many elements of the open source R programming language. In fact, there are [RevoScaleR equivalents for many common base R functions](scaler/compare-base-r-scaler-functions.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and RevoScaleR functions. RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable in your R script that uses the RevoScaleR package.
+RevoScaleR provides enhanced capabilities to many elements of the open source R programming language. In fact, there are [RevoScaleR equivalents for many common base R functions](r-reference/revoscaler/revoscaler-compared-to-base-r.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and RevoScaleR functions. RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable in your R script that uses the RevoScaleR package.
 
 ## What can you do with RevoScaleR?
 
