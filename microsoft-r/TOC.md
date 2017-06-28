@@ -489,7 +489,7 @@
 #### [rxWriteObject](r-reference/revoscaler/rxwriteobject.md) 
 #### [RxXdfData-class](r-reference/revoscaler/rxxdfdata-class.md) 
 #### [RxXdfData](r-reference/revoscaler/rxxdfdata.md) 
-#### [rxXdfFileName](scaler/packagehelp/rxXdfFileName.md) 
+#### [rxXdfFileName](r-reference/revoscaler/rxxdffilename.md) 
 #### [rxXdfToText](scaler/packagehelp/rxXdfToText.md)
 
 ## [RevoUtils](RevoUtils/RevoUtils.md)

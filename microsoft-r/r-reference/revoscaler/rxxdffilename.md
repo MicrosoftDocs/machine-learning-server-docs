@@ -65,7 +65,7 @@ a character string containing the path and name of the .xdf file
  
  ##See Also
  
-[RxXdfData](../../r-reference/revoscaler/rxxdfdata.md)
+[RxXdfData](rxxdfdata.md)
    
  ##Examples
 
