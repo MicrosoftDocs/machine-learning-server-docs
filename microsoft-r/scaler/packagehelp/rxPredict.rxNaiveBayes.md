@@ -49,7 +49,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL, type = c("class", "prob"),
    
     
  ### `modelObject`
-  object returned from a call to [rxNaiveBayes](rxNaiveBayes.md). 
+  object returned from a call to [rxNaiveBayes](../../r-reference/revoscaler/rxnaivebayes.md). 
   
     
  ### `data`
@@ -122,7 +122,7 @@ Naive Bayes classifier
  
  ##See Also
  
-[rxNaiveBayes](rxNaiveBayes.md).
+[rxNaiveBayes](../../r-reference/revoscaler/rxnaivebayes.md).
    
  ##Examples
 

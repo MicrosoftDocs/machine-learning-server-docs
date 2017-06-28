@@ -423,7 +423,7 @@
 #### [rxMarginals](r-reference/revoscaler/rxmarginals.md) 
 #### [rxMergeXdf](r-reference/revoscaler/rxmergexdf.md) 
 #### [rxMultiTest](r-reference/revoscaler/rxmultitest.md) 
-#### [rxNaiveBayes](scaler/packagehelp/rxNaiveBayes.md) 
+#### [rxNaiveBayes](r-reference/revoscaler/rxnaivebayes.md) 
 #### [RxNativeFileSystem](scaler/packagehelp/RxNativeFileSystem.md) 
 #### [rxNew](scaler/packagehelp/rxNew.md) 
 #### [rxOAuthParameters](scaler/packagehelp/rxOAuthParameters.md) 

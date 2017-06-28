@@ -292,7 +292,7 @@ in the data) have no effect.
 [rxGlm](../../r-reference/revoscaler/rxglm.md),
 [rxPredict.rxDTree](../../r-reference/revoscaler/rxdtree.md),
 [rxPredict.rxDForest](../../r-reference/revoscaler/rxdforest.md),
-[rxPredict.rxNaiveBayes](rxPredict.rxNaiveBayes.md).
+[rxPredict.rxNaiveBayes](../../r-reference/revoscaler/rxnaivebayes.md).
    
  ##Examples
 

@@ -48,7 +48,7 @@ for small or large data using parallel external memory algorithm.
    
     
  ### `formula`
-  formula as described in [rxFormula](../../r-reference/revoscaler/rxformula.md).     
+  formula as described in [rxFormula](rxformula.md).     
   
     
  ### `data`
@@ -60,7 +60,7 @@ for small or large data using parallel external memory algorithm.
   
     
  ### ` ...`
-  additional arguments to be passed directly to [rxSummary](rxSummary.md) such as `byTerm`, `rowSelection`, `pweights`, `fweights`, `transforms`, `transformObjects`, `transformFunc`,  `transformVars`, `transformPackages`, `transformEnvir`,  `useSparseCube`, `removeZeroCounts`, `blocksPerRead`,  `reportProgress`, `verbose`, `xdfCompressionLevel`.   
+  additional arguments to be passed directly to [rxSummary](../../scaler/packagehelp/rxsummary.md) such as `byTerm`, `rowSelection`, `pweights`, `fweights`, `transforms`, `transformObjects`, `transformFunc`,  `transformVars`, `transformPackages`, `transformEnvir`,  `useSparseCube`, `removeZeroCounts`, `blocksPerRead`,  `reportProgress`, `verbose`, `xdfCompressionLevel`.   
   
  
  
@@ -101,7 +101,7 @@ Naive Bayes classifier
  
  ##See Also
  
-[rxPredict.rxNaiveBayes](rxPredict.rxNaiveBayes.md).
+[rxPredict.rxNaiveBayes](rxnaivebayes.md).
    
  ##Examples
 
