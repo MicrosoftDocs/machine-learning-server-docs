@@ -725,6 +725,6 @@ Note that because we have specified an output file when importing the data, the 
 
 Continue on to these tutorials to work with larger data set using the RevoScaleR functions:
 
-+ [Flight delays data analysis](../scaler-getting-started-3-analyze-large-data.md)	
++ [Flight delays data analysis](tutorial-revoscaler-large-data-airline.md)	
 + [Loan data analysis](../scaler-getting-started-1-example-loan-data.md)	
 + [Census data analysis](../scaler-getting-started-2-example-census-data.md)	

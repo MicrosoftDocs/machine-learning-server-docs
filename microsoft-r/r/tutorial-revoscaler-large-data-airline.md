@@ -26,7 +26,7 @@ ms.custom: ""
 
 # Tutorial: Load and analyze a large airline data set with RevoScaleR (Microsoft R)
 
-This tutorial builds on what you learned in the [first RevoScaleR tutorial](r/tutorial-revoscaler-data-import-transform.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps, except this time you will use a much larger data set.
+This tutorial builds on what you learned in the [first RevoScaleR tutorial](tutorial-revoscaler-data-import-transform.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps, except this time you will use a much larger data set.
 
 ## Download the airline dataset
 
@@ -205,7 +205,7 @@ In the next section you will see how you can analyze a data set that is too big 
 
 The RevoScaleR compute engine is designed to work very efficiently with .xdf files, particularly with factor data. When working with larger data sets, the *blocksPerRead* argument is important in controlling how much data is processed in memory at one time.  If too many blocks are read in at one time, you may run out of memory.  If too few blocks are read in at one time, you may experience slower total processing time. You can experiment with *blocksPerRead* on your system and  time the estimation of a linear model as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](r/tutorial-revoscaler-data-import-transform.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
 	system.time(
 		delayArr <- rxLinMod(ArrDelay ~ DayOfWeek, data = bigAirDS,
@@ -266,13 +266,13 @@ Then use the following code to plot the results, comparing the Arrival and Depar
 
 You should see the following plot for the full data set:
 
-![DayOfWeek Plot](media/scaler-getting-started-3-analyze-large-data/dayofweek_plot_2.png)
+![DayOfWeek Plot](./media/tutorial-revoscaler-large-data-airline/dayofweek_plot_2.png)
 
 ## Turning Off Progress Reports
 
 By default, **RevoScaleR** reports on the progress of the model fitting so that you can see that the computation is proceeding normally. You can specify an integer value from 0 through 3 to specify the level of reporting done; the default is 2. (See help on rxOptions to change the default.) For large model fits, this is usually reassuring. However, if you would like to turn off the progress reports, just use the argument *reportProgress=0*, which turns off reporting. For example, to suppress the progress reports in the estimation of the delayDep rxLinMod object, repeat the call as follows:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](r/tutorial-revoscaler-data-import-transform.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
 	delayDep <- rxLinMod(DepDelay ~ DayOfWeek, data = bigAirDS,
 		cube = TRUE, blocksPerRead = 30, reportProgress = 0)
@@ -281,7 +281,7 @@ By default, **RevoScaleR** reports on the progress of the model fitting so that 
 
 The data set contains a variable *UniqueCarrier* which contains airline codes for 29 carriers. Because the RevoScaleR Compute Engine handles factor variables so efficiently, we can do a linear regression looking at the Arrival Delay by Carrier. This will take a little longer, of course, than the previous analysis, because we are estimating 29 instead of 7 factor levels.
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](r/tutorial-revoscaler-data-import-transform.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
 	delayCarrier <- rxLinMod(ArrDelay ~ UniqueCarrier,
 		data = bigAirDS, cube = TRUE, blocksPerRead = 30)
@@ -331,7 +331,7 @@ which results in:
 
 One ambitious question we could ask is to what extent the difference in delays is due to the differences in origins and destinations of the flights. To control for Origin and Destination we would need to add over 700 dummy variables in the full data set to represent the factor levels of *Origin* and *Dest*. The RevoScaleR Compute Engine is particularly efficient at handling this type of problem, so we can in fact run the regression:
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](r/tutorial-revoscaler-data-import-transform.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
 
 	delayCarrierLoc <- rxLinMod(ArrDelay ~ UniqueCarrier + Origin+Dest,
@@ -408,7 +408,7 @@ The three expected delays are calculated (using the full data set) as:
 
 ### Computing a Large Scale Regression Using a Compute Cluster
 
-Up to now, all of our examples have assumed you are running your computations on a single computer, which might have multiple computational cores. Many users with large data to analyze, however, have access to compute clusters that work together to provide greater computing power. With RevoScaleR, you can easily connect to an HPC Server or Hadoop cluster and distribute your computation among the various nodes of the cluster.  Here we will show a quick example of using an HPC Server cluster consisting of a head node and one or more compute nodes. For more examples, see the [RevoScaleR Distributed Computing Guide](r/how-to-revoscaler-distributed-computing.md).
+Up to now, all of our examples have assumed you are running your computations on a single computer, which might have multiple computational cores. Many users with large data to analyze, however, have access to compute clusters that work together to provide greater computing power. With RevoScaleR, you can easily connect to an HPC Server or Hadoop cluster and distribute your computation among the various nodes of the cluster.  Here we will show a quick example of using an HPC Server cluster consisting of a head node and one or more compute nodes. For more examples, see the [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md).
 
 To make the connection to an HPC Server cluster, you need to know the following pieces of information about your cluster (all of which can be obtained from your system administrator):
 
@@ -438,7 +438,7 @@ Now you can re-run the large scale regression from Section 6.6, this time just s
 	delayCarrierLocDist <- rxLinMod(ArrDelay ~ UniqueCarrier+Origin+Dest,
 	    data = dataFile, cube = TRUE, blocksPerRead = 30)
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](r/tutorial-revoscaler-data-import-transform.md#chunking)
+>The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
 The computations are automatically distributed over all the nodes of the cluster.
 
@@ -448,13 +448,13 @@ To reset the compute context to your local machine, use:
 
 ## Next steps
 
-- If you missed the first tutorial, see [Practice data import and exploration](r/tutorial-revoscaler-data-import-transform.md) for an overview.
-- For more advanced lessons, see [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md).
+- If you missed the first tutorial, see [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md) for an overview.
+- For more advanced lessons, see [Write custom chunking algorithms](how-to-developer-write-chunking-algorithms.md).
 
 ## See Also
 
-[Introduction to Microsoft R](microsoft-r-getting-started.md)
+[Introduction to Microsoft R](../microsoft-r-getting-started.md)
 
-[Diving into data analysis in Microsoft R](r/how-to-introduction.md)
+[Diving into data analysis in Microsoft R](how-to-introduction.md)
 
-[RevoScaleR Functions](r-reference/revoscaler/revoscaler.md)
+[RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

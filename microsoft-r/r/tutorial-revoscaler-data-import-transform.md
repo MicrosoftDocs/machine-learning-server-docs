@@ -431,7 +431,7 @@ You should see the following information in your output:
 This tutorial demonstrated data import and exploration, but there are several more tutorials covering more scenarios, including instructions for working with bigger datasets.
 
   - [Tutorial: Visualize and analyze data](tutorial-revoscaler-data-model-analysis.md)
-  - [Analyze large data with RevoScaleR and airline flight delay data](../scaler-getting-started-3-analyze-large-data.md)
+  - [Analyze large data with RevoScaleR and airline flight delay data](tutorial-revoscaler-large-data-airline.md)
   - [Example: Analyzing loan data with RevoScaleR](../scaler-getting-started-1-example-loan-data.md)
   - [Example: Analyzing census data with RevoScaleR](../scaler-getting-started-2-example-census-data.md)
 
