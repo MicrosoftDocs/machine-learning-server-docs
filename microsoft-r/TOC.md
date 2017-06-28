@@ -21,7 +21,7 @@
 ## Samples
 ### [Sample data in RevoScaleR](r/sample-built-in-data.md)
 ### [RevoScaleR rxExecBy parallel processing example](r/tutorial-rxexecby.md)
-### [R Server with Sparklyr example](microsoft-r-get-started-spark-interop.md)
+### [R Server with Sparklyr example](r/tutorial-sparklyr-revoscaler.md)
 
 # [Get started with MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
 ## [Cheat Sheet: Choosing a MicrosoftML algorithm](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)

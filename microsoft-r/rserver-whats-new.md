@@ -54,7 +54,7 @@ In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux,
 
 ## Interoperability with sparklyr 
 
-Within the same R script, you can mix and match functions from RevoScaleR and Microsoft ML packages with popular open source packages like sparklyr and through it, H2O. To learn more, see [Use R Server with sparklyr (step-by-step examples)](microsoft-r-get-started-spark-interop.md).
+Within the same R script, you can mix and match functions from RevoScaleR and Microsoft ML packages with popular open source packages like sparklyr and through it, H2O. To learn more, see [Use R Server with sparklyr (step-by-step examples)](r/tutorial-sparklyr-revoscaler.md).
 
 <a name="rxexecby"></a>
 
