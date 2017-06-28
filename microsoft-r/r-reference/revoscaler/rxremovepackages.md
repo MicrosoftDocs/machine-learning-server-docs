@@ -56,17 +56,17 @@ Removes installed packages from a compute context.
   
     
  ### `lib`
- a `character` vector  identifying library path from where the package needs to be removed. This argument is not supported in [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context. Only valid for local compute context. 
+ a `character` vector  identifying library path from where the package needs to be removed. This argument is not supported in [RxInSqlServer](rxinsqlserver.md) compute context. Only valid for local compute context. 
    
    
     
  ### `dependencies`
- logical. Applicable only for [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context. If `TRUE`, does dependency resolution of the packages being removed and removes the dependent packages also if the dependent packages aren't referenced by other packages outside the dependency closure.  
+ logical. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. If `TRUE`, does dependency resolution of the packages being removed and removes the dependent packages also if the dependent packages aren't referenced by other packages outside the dependency closure.  
   
   
     
  ### `checkReferences`
- logical. Applicable only for [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context. If `TRUE`, verifies there are no references to the dependent packages by other packages outside the dependency closure.  
+ logical. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. If `TRUE`, verifies there are no references to the dependent packages by other packages outside the dependency closure.  
   
   
     
@@ -76,17 +76,17 @@ Removes installed packages from a compute context.
   
     
  ### `scope`
- character. Applicable only for [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context. Should be either `"shared"` or `"private"`.  `"shared"` removes the packages from per database shared location on SQL server which in turn could have been used (referred) by multiple different users. `"private"` removes the packages from per database, per user private location on SQL server which is only accessible to the single user. 
+ character. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. Should be either `"shared"` or `"private"`.  `"shared"` removes the packages from per database shared location on SQL server which in turn could have been used (referred) by multiple different users. `"private"` removes the packages from per database, per user private location on SQL server which is only accessible to the single user. 
   
   
     
  ### `owner`
- character. Applicable only for [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context. This is generally empty `''` value.  Should be either empty `''` or a valid SQL database user account name. Only users in `'db_owner'` role for a database can specify this value to remove packages on  behalf of other users.  
+ character. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. This is generally empty `''` value.  Should be either empty `''` or a valid SQL database user account name. Only users in `'db_owner'` role for a database can specify this value to remove packages on  behalf of other users.  
   
   
     
  ### `computeContext`
- an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md), [RxLocalSeq](../../r-reference/revoscaler/rxlocalseq.md). 
+ an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
   
   
  
@@ -94,7 +94,7 @@ Removes installed packages from a compute context.
  ##Details
  
 This is a simple wrapper for remove.packages. 
-For [RxInSqlServer](../../r-reference/revoscaler/rxinsqlserver.md) compute context the user specified as part of connection string is used for removing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can remove packages from `"shared"` location and their own `"private"` location. Users in `'rpkgs-private'` role can only remove packages from their own `"private"` location.
+For [RxInSqlServer](rxinsqlserver.md) compute context the user specified as part of connection string is used for removing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can remove packages from `"shared"` location and their own `"private"` location. Users in `'rpkgs-private'` role can only remove packages from their own `"private"` location.
 
 See the help file for additional details.
  
@@ -111,13 +111,13 @@ Invisible `NULL`
  
  ##See Also
  
-[rxPackage](../../r-reference/revoscaler/rxpackage.md),
+[rxPackage](rxpackage.md),
 remove.packages,
-[rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
-[rxInstalledPackages](../../r-reference/revoscaler/rxinstalledpackages.md),
-[rxInstallPackages](../../r-reference/revoscaler/rxinstallpackages.md),  
-[rxSyncPackages](rxSyncPackages.md),
-[rxSqlLibPaths](rxSqlLibPaths.md),   
+[rxFindPackage](rxfindpackage.md),
+[rxInstalledPackages](rxinstalledpackages.md),
+[rxInstallPackages](rxinstallpackages.md),  
+[rxSyncPackages](../../scaler/packagehelp/rxsyncpackages.md),
+[rxSqlLibPaths](../../scaler/packagehelp/rxsqllibpaths.md),   
 require
    
  ##Examples

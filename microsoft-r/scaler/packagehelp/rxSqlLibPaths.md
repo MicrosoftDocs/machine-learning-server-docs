@@ -77,7 +77,7 @@ A character vector of the library paths containing both `"shared"` or `"private"
 [rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 [rxInstalledPackages](../../r-reference/revoscaler/rxinstalledpackages.md),
 [rxInstallPackages](../../r-reference/revoscaler/rxinstallpackages.md),   
-[rxRemovePackages](rxRemovePackages.md),
+[rxRemovePackages](../../r-reference/revoscaler/rxremovepackages.md),
 [rxSyncPackages](rxSyncPackages.md),
 require
    

@@ -96,7 +96,7 @@ Invisible `NULL`
 install.packages,
 [rxFindPackage](../../r-reference/revoscaler/rxfindpackage.md),
 [rxInstalledPackages](../../r-reference/revoscaler/rxinstalledpackages.md),
-[rxRemovePackages](rxRemovePackages.md),
+[rxRemovePackages](../../r-reference/revoscaler/rxremovepackages.md),
 [rxSqlLibPaths](rxSqlLibPaths.md),   
 require
    

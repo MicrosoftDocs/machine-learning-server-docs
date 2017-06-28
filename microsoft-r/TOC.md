@@ -446,7 +446,7 @@
 #### [rxRemoteFilePath](r-reference/revoscaler/rxremotefilepath.md) 
 #### [rxRemoteGetId](r-reference/revoscaler/rxremotegetid.md) 
 #### [rxRemoteHadoopMRCall](r-reference/revoscaler/rxremotehadoopmrcall.md) 
-#### [rxRemovePackages](scaler/packagehelp/rxRemovePackages.md) 
+#### [rxRemovePackages](r-reference/revoscaler/rxremovepackages.md) 
 #### [rxResultsDF](scaler/packagehelp/rxResultsDF.md) 
 #### [rxRiskRatio](scaler/packagehelp/rxRiskRatio.md) 
 #### [rxRng](scaler/packagehelp/rxRng.md) 
