@@ -40,7 +40,7 @@ Class for the RevoScaleR Local Compute Context.
 
  
 The targeted generator [RxLocalSeq](RxLocalSeq.md) as well as the general generator
-[RxComputeContext](RxComputeContext.md).
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).
  
  ## Extends 
 
@@ -70,7 +70,7 @@ Class RxComputeContext, directly.
 [RxInTeradata](RxInTeradata.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxForeachDoPar](RxForeachDoPar.md),
-[RxComputeContext](RxComputeContext.md),
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [rxSetComputeContext](rxSetComputeContext.md).
    
  ##Examples

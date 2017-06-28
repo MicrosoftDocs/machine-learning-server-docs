@@ -40,7 +40,7 @@ Class for the RevoScaleR Compute Context using one of the foreach dopar back end
 
  
 The targeted generator [RxForeachDoPar](RxForeachDoPar.md) as well as the general generator
-[RxComputeContext](RxComputeContext.md).
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).
  
  ## Extends 
 
@@ -64,7 +64,7 @@ Class RxComputeContext, directly.
  
  ##See Also
  
-[RxComputeContext](RxComputeContext.md),
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxSpark](RxSpark.md),

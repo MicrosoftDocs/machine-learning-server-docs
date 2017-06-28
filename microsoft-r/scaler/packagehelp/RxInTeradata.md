@@ -100,7 +100,7 @@ ms.custom: ""
  
  ##See Also
  
-[RxComputeContext](RxComputeContext.md),
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [RxInTeradata-class](RxInTeradata-class.md),
 [RxTeradata](RxTeradata.md),
 [RxInSqlServer](RxInSqlServer.md),

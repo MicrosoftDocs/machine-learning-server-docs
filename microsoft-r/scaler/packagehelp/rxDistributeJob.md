@@ -62,7 +62,7 @@ if the 'compute context' is appropriate.
   
   
  ### `computeContext`
- `NULL` or an [RxComputeContext](RxComputeContext.md) object. 
+ `NULL` or an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) object. 
   
   
   
@@ -89,7 +89,7 @@ The result of the distributed computation.
  ##See Also
  
 [rxExec](rxExec.md),
-[RxComputeContext](RxComputeContext.md),
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [rxSetComputeContext](rxSetComputeContext.md),
 [rxGetComputeContext](rxSetComputeContext.md)
    

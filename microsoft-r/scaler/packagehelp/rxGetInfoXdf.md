@@ -97,7 +97,7 @@ Get basic information about an RevoScaleR data source or data frame
   
     
  ### `allNodes`
- logical value.  Ignored if the active [RxComputeContext](RxComputeContext.md) compute context is local or `RxForeachDoPar`.  Otherwise, if `TRUE`, a list containing the information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned. Note that the determination of the master node is not controlled by the end user. See the *RevoScaleR Distributed Computing Guide* for more information on master node computations.  
+ logical value.  Ignored if the active [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) compute context is local or `RxForeachDoPar`.  Otherwise, if `TRUE`, a list containing the information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned. Note that the determination of the master node is not controlled by the end user. See the *RevoScaleR Distributed Computing Guide* for more information on master node computations.  
    
   
     
@@ -115,7 +115,7 @@ in which case a named list of results are returned. For `rxGetInfo`, a mix of su
 is allowed. Note that data
 frames should not be specified in quotes because, in that case, they will be interpreted as .xdf data paths.
 
-If the [RxComputeContext](RxComputeContext.md) is distributed, `rxGetInfo` will request information from the
+If the [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) is distributed, `rxGetInfo` will request information from the
 compute context nodes.  
  
  

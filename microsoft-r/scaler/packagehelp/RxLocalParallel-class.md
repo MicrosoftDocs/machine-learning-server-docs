@@ -40,7 +40,7 @@ Class for the RevoScaleR Local Parallel Compute Context.
 
  
 The targeted generator [RxLocalParallel](RxLocalParallel.md) as well as the general generator
-[RxComputeContext](RxComputeContext.md).
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).
  
  ## Extends 
 

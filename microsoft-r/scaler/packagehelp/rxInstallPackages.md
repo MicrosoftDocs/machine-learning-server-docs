@@ -53,7 +53,7 @@ Install Packages from Repositories or Local Files for a compute context.
   
     
  ### `pkgs`
- `character` vector of the names of packages whose current versions should be downloaded from the repositories. If repos = NULL, a character vector of file paths of .zip files containing binary builds of packages. (http:// and file:// URLs are also accepted and the files will be downloaded and installed from local copies. If you specify .zip files with repos = `NULL` with [RxComputeContext](RxComputeContext.md) compute context the .zip file paths should already be present on a folder. 
+ `character` vector of the names of packages whose current versions should be downloaded from the repositories. If repos = NULL, a character vector of file paths of .zip files containing binary builds of packages. (http:// and file:// URLs are also accepted and the files will be downloaded and installed from local copies. If you specify .zip files with repos = `NULL` with [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) compute context the .zip file paths should already be present on a folder. 
    
    
     
@@ -83,7 +83,7 @@ Install Packages from Repositories or Local Files for a compute context.
   
     
  ### `computeContext`
- an [RxComputeContext](RxComputeContext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](RxInSqlServer.md), [RxLocalSeq](RxLocalSeq.md). 
+ an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](RxInSqlServer.md), [RxLocalSeq](RxLocalSeq.md). 
   
   
  

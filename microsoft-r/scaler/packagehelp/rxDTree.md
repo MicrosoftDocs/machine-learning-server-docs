@@ -232,7 +232,7 @@ for small or large data using parallel external memory algorithm.
   
     
  ### `computeContext`
- a valid [RxComputeContext](RxComputeContext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
+ a valid [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
   
   
     

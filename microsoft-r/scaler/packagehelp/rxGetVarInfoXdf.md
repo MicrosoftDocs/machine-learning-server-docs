@@ -76,7 +76,7 @@ names, descriptions, and value labels
   
     
  ### `allNodes`
- logical value.  Ignored if the active [RxComputeContext](RxComputeContext.md)compute context is local.  Otherwise, if `TRUE`, a list containing the variable information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned.  
+ logical value.  Ignored if the active [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md)compute context is local.  Otherwise, if `TRUE`, a list containing the variable information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned.  
   
   
  
@@ -90,7 +90,7 @@ If a local compute context is being used, the `data` and `file` arguments may be
 in which case a named list of results are returned. For `rxGetVarInfo`, a mix of supported data sources
 is allowed. 
 
-If the [RxComputeContext](RxComputeContext.md) is distributed, `rxGetVarInfo` will request information from the
+If the [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) is distributed, `rxGetVarInfo` will request information from the
 compute context nodes.  
  
  

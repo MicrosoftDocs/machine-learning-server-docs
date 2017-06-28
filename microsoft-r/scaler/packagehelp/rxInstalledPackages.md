@@ -50,7 +50,7 @@ Find (or retrieve) details of installed packages for a compute context.
   
     
  ### `computeContext`
- an [RxComputeContext](RxComputeContext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](RxInTeradata.md), [RxInSqlServer](RxInSqlServer.md), [RxLocalSeq](RxLocalSeq.md). 
+ an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](RxInTeradata.md), [RxInSqlServer](RxInSqlServer.md), [RxLocalSeq](RxLocalSeq.md). 
   
   
     

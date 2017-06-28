@@ -49,7 +49,7 @@ Note that this function will attempt to connect to the cluster when executed.
    
   
  ### `computeContext`
- A distributed compute context (preferred, see [RxComputeContext](RxComputeContext.md))  or a `jobInfo` object 
+ A distributed compute context (preferred, see [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md))  or a `jobInfo` object 
   
   
   
@@ -72,7 +72,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  ##See Also
  
 [rxGetNodeInfo](rxGetNodeInfo.md)
-[RxComputeContext](RxComputeContext.md)
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md)
 [rxGetJobs](rxGetJobs.md)
 [rxMakeRNodeNames](rxMakeRNodeNames.md)
    

@@ -219,7 +219,7 @@ If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResul
 [rxElemArg](rxElemArg.md),
 [rxGetJobResults](rxGetJobResults.md),
 [rxGetJobStatus](rxGetJobResults.md),
-[RxComputeContext](RxComputeContext.md),
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md),
 [rxSetComputeContext](rxSetComputeContext.md),
 [RxSpark](RxSpark.md),
 [RxHadoopMR](RxHadoopMR.md),

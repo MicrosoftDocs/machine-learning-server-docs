@@ -125,7 +125,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [RxHadoopMR](RxHadoopMR.md),
 [RxInSqlServer](RxInSqlServer.md),
 [RxInTeradata](RxInTeradata.md),
-[RxComputeContext](RxComputeContext.md)
+[RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md)
    
  ##Examples
 

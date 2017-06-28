@@ -195,7 +195,7 @@ computations.
    
     
  ### `computeContext`
- an [RxComputeContext](RxComputeContext.md) object representing the computational environment.  
+ an [RxComputeContext](../../r-reference/revoscaler/rxcomputecontext.md) object representing the computational environment.  
 *   [RxLocalSeq](RxLocalSeq.md): compute locally, using sequential processing with [rxExec](rxExec.md) High Performance Computing. 
 *   [RxLocalParallel](RxLocalParallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](rxExec.md) High Performance Computing. 
 *   [RxForeachDoPar](RxForeachDoPar.md): use the currently registered parallel backend for 'foreach' for processing with [rxExec](rxExec.md) High Performance Computing.   
