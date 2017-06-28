@@ -361,7 +361,7 @@
 #### [rxDataStep](r-reference/revoscaler/rxdatastep.md) 
 #### [rxDForest](r-reference/revoscaler/rxdforest.md) 
 #### [rxDForestUtils](r-reference/revoscaler/rxdforestutils.md) 
-#### [RxDistributedHpa-class](scaler/packagehelp/RxDistributedHpa-class.md) 
+#### [RxDistributedHpa-class](r-reference/revoscaler/rxdistributedhpa-class.md) 
 #### [rxDistributeJob](scaler/packagehelp/rxDistributeJob.md) 
 #### [rxDTree](scaler/packagehelp/rxDTree.md) 
 #### [rxDTreeBestCp](scaler/packagehelp/rxDTreeBestCp.md) 

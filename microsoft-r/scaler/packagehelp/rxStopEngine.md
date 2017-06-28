@@ -54,7 +54,7 @@ ms.custom: ""
    
     
  ### `computeContext`
- a valid [RxDistributedHpa-class](RxDistributedHpa-class.md). Currently only [RxSpark](RxSpark.md) is supported.  
+ a valid [RxDistributedHpa-class](../../r-reference/revoscaler/rxdistributedhpa-class.md). Currently only [RxSpark](RxSpark.md) is supported.  
   
   
     
