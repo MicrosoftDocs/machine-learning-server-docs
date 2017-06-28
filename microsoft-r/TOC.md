@@ -242,7 +242,7 @@
 ### [mlModel](r-reference/microsoftml/mlmodel.md)
 ### [mutualInformation](r-reference/microsoftml/mutualinformation.md)
 ### [NeuralNet](r-reference/microsoftml/neuralnet.md)
-### [ngram](microsoftml/packagehelp/ngram.md)
+### [ngram](r-reference/microsoftml/ngram.md)
 ### [OneClassSvm](microsoftml/packagehelp/OneClassSvm.md)
 ### [optimizer](microsoftml/packagehelp/optimizer.md)
 ### [resizeImage](microsoftml/packagehelp/resizeImage.md) 

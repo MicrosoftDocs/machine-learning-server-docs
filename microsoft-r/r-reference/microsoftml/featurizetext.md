@@ -145,16 +145,16 @@ The default value is `NULL`.  Note that the stopwords list takes precedence over
   
  ### `wordFeatureExtractor`
  Specifies the word feature extraction arguments. There  are two different feature extraction mechanisms:   
-*   [ngramCount](../../microsoftml/packagehelp/ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
-*   [ngramHash](../../microsoftml/packagehelp/ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
+*   [ngramCount](ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
+*   [ngramHash](ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
  The default value is `ngramCount`. 
   
   
   
  ### `charFeatureExtractor`
  Specifies the char feature extraction arguments. There  are two different feature extraction mechanisms:   
-*   [ngramCount](../../microsoftml/packagehelp/ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
-*   [ngramHash](../../microsoftml/packagehelp/ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
+*   [ngramCount](ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
+*   [ngramHash](ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
  The default value is `NULL`. 
   
   
@@ -231,7 +231,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[ngramCount](../../microsoftml/packagehelp/ngram.md), [ngramHash](../../microsoftml/packagehelp/ngram.md),
+[ngramCount](ngram.md), [ngramHash](ngram.md),
 [rxFastTrees](../../microsoftml/packagehelp/rxfasttrees.md), [rxFastForest](../../microsoftml/packagehelp/rxfastforest.md), [rxNeuralNet](../../microsoftml/packagehelp/rxneuralnet.md),
 [rxOneClassSvm](../../microsoftml/packagehelp/rxoneclasssvm.md), [rxLogisticRegression](../../microsoftml/packagehelp/rxlogisticregression.md).
    

@@ -119,7 +119,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
 ##See Also
  
-[featurizeText](../../r-reference/microsoftml/featurizetext.md).
+[featurizeText](featurizetext.md).
    
 ##Examples
    
