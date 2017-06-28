@@ -86,7 +86,7 @@ an object of class xtabs.
 [rxCrossTabs](rxCrossTabs.md),
 [rxCube](rxCube.md),
 xtabs,
-[as.lm](as.lm.md),
+[as.lm](../../r-reference/revoscaler/as-lm.md),
 [as.kmeans](../../r-reference/revoscaler/as-kmeans.md),
 [as.rpart](as.rpart.md),
 [as.glm](../../r-reference/revoscaler/as-glm.md).

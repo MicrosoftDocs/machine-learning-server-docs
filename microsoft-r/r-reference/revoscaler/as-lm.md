@@ -79,12 +79,12 @@ an object of class lm.
  
  ##See Also
  
-[rxLinMod](rxLinMod.md),
+[rxLinMod](../../scaler/packagehelp/rxlinmod.md),
 lm,
-[as.glm](../../r-reference/revoscaler/as-glm.md),
-[as.kmeans](../../r-reference/revoscaler/as-kmeans.md),
-[as.rpart](as.rpart.md),
-[as.xtabs](as.xtabs.md).
+[as.glm](as-glm.md),
+[as.kmeans](as-kmeans.md),
+[as.rpart](../../scaler/packagehelp/as.rpart.md),
+[as.xtabs](../../scaler/packagehelp/as.xtabs.md).
    
  
  ##Examples

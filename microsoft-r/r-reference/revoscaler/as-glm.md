@@ -85,7 +85,7 @@ an object of class lm.
 [rxLogit](../../scaler/packagehelp/rxlogit.md),
 [rxGlm](../../scaler/packagehelp/rxglm.md),
 glm,
-[as.lm](../../scaler/packagehelp/as.lm.md),
+[as.lm](as-lm.md),
 [as.kmeans](as-kmeans.md),
 [as.rpart](../../scaler/packagehelp/as.rpart.md),
 [as.xtabs](../../scaler/packagehelp/as.xtabs.md).

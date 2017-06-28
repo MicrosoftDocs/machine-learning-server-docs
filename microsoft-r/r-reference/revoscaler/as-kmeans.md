@@ -79,7 +79,7 @@ an object of class `"kmeans"`.
  
  ##See Also
  
-[as.lm](../../scaler/packagehelp/as.lm.md),
+[as.lm](as-lm.md),
 [as.glm](as-glm.md),
 [as.rpart](../../scaler/packagehelp/as.rpart.md),
 [as.xtabs](../../scaler/packagehelp/as.xtabs.md),

@@ -254,7 +254,7 @@ at the R prompt):
 * [rxNaiveBayes](rxNaiveBayes.md): Performs Naive Bayes classification.
 
 
-* [as.lm](as.lm.md): Coerce an `rxLinMod` object to an `lm` object for use with the **pmml** package.
+* [as.lm](../../r-reference/revoscaler/as-lm.md): Coerce an `rxLinMod` object to an `lm` object for use with the **pmml** package.
 
 
 * [as.glm](../../r-reference/revoscaler/as-glm.md): Coerce an `rxLogit` or `rxGlm` object to a `glm` object for use with the **pmml** package.

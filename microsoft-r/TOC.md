@@ -336,7 +336,7 @@
 #### [as.gbm](r-reference/revoscaler/as-gbm.md) 
 #### [as.glm](r-reference/revoscaler/as-glm.md) 
 #### [as.kmeans](r-reference/revoscaler/as-kmeans.md) 
-#### [as.lm](scaler/packagehelp/as.lm.md) 
+#### [as.lm](r-reference/revoscaler/as-lm.md) 
 #### [as.naiveBayes](scaler/packagehelp/as.naiveBayes.md) 
 #### [as.randomForest](scaler/packagehelp/as.randomForest.md) 
 #### [as.rpart](scaler/packagehelp/as.rpart.md) 
