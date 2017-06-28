@@ -27,9 +27,9 @@ ms.custom: ""
 
 # Frequently Asked Questions
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](rserver-whats-new.md#8vs9))
+**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../rserver-whats-new.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](operationalize/about.md).
+>Looking for docs for Microsoft R Server 9? [Start here](../deployr-repository-manager/about.md).
 
 ## If I want to use the DeployR Web server for my Web application, where should I put my application files?
 
@@ -46,13 +46,13 @@ No other configuration changes are needed. Once you put your files there, your e
 
 ## I'm having issues after installing DeployR. Where do I go for answers?
 
-1.  Check out our [troubleshooting topics](deployr/deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
-2.  Run the [diagnostics tests](deployr/deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check).
+1.  Check out our [troubleshooting topics](deployr-admin-diagnostics-troubleshooting.md#troubleshooting).
+2.  Run the [diagnostics tests](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check).
 3.  Join the [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr) where you can post questions and find answers.
 
 ## Why can't I reach DeployR landing page anymore?
 
-If you were able to reach the landing page after install, but cannot reach that page anymore, or if your login attempt stalls on a blank page in your browser, then the Server Web Context might not be set to the right IP address. [Find out how to correct this issue here](deployr-installing-configuring.md).
+If you were able to reach the landing page after install, but cannot reach that page anymore, or if your login attempt stalls on a blank page in your browser, then the Server Web Context might not be set to the right IP address. [Find out how to correct this issue here](../deployr-installing-configuring.md).
 
 ## How does DeployR compare to Shiny?
 
@@ -65,5 +65,5 @@ The following table contrasts the two solutions:
 | Supports            | R analysis integration inside any application                                                                                                                                                                                              | The building of interactive Web applications |
 | Primary Audience    | Application developers                                                                                                                                                                                                                     | Data scientists                              |
 | Required Skills     | Application programming skills                                                                                                                                                                                                             | R programming skills                         |
-| Developer Interface | [API](deployr/deployr-api-reference.md), [Client Libraries](deployr-tools-and-samples.md), [RBroker Framework](deployr-tools-and-samples.md) | R package                                    |
+| Developer Interface | [API](deployr-api-reference.md), [Client Libraries](../deployr-tools-and-samples.md), [RBroker Framework](../deployr-tools-and-samples.md) | R package                                    |
 | Optional Skills     | R programming skills                                                                                                                                                                                                                       | Web programming skills                       |
