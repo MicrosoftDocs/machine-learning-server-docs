@@ -94,7 +94,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxDTree](rxDTree.md).
+[rxDTree](rxdtree.md).
    
  ##Examples
 

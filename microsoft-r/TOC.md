@@ -342,7 +342,7 @@
 #### [as.rpart](r-reference/revoscaler/as-rpart.md) 
 #### [as.xtabs](r-reference/revoscaler/as-xtabs.md) 
 #### [prune.rxDTree](r-reference/revoscaler/prune-rxdtree.md) 
-#### [rxAddInheritance](scaler/packagehelp/rxAddInheritance.md) 
+#### [rxAddInheritance](r-reference/revoscaler/rxaddinheritance.md) 
 #### [rxBTrees](scaler/packagehelp/rxBTrees.md) 
 #### [rxCancelJob](scaler/packagehelp/rxCancelJob.md) 
 #### [rxChiSquaredTest](scaler/packagehelp/rxChiSquaredTest.md) 
