@@ -143,7 +143,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
 Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
 [getService](../../r-reference/mrsdeploy/getservice.md), [listServices](../../r-reference/mrsdeploy/listservices.md),
-[print.serviceDetails](print.serviceDetails.md),
+[print.serviceDetails](../../r-reference/mrsdeploy/print-servicedetails.md),
 [serviceOption](serviceOption.md),
 [summary.serviceDetails](summary.serviceDetails.md),
 [updateService](updateService.md)

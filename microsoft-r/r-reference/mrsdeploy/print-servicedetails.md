@@ -66,12 +66,12 @@ print  (o, description = TRUE, code = TRUE)
  
  ##See Also
  
-Other service methods: [deleteService](../../r-reference/mrsdeploy/deleteservice.md),
-[getService](../../r-reference/mrsdeploy/getservice.md), [listServices](../../r-reference/mrsdeploy/listservices.md),
-[publishService](publishService.md),
-[serviceOption](serviceOption.md),
-[summary.serviceDetails](summary.serviceDetails.md),
-[updateService](updateService.md)
+Other service methods: [deleteService](deleteservice.md),
+[getService](getservice.md), [listServices](listservices.md),
+[publishService](../../mrsdeploy/packagehelp/publishservice.md),
+[serviceOption](../../mrsdeploy/packagehelp/serviceoption.md),
+[summary.serviceDetails](../../mrsdeploy/packagehelp/summary.servicedetails.md),
+[updateService](../../mrsdeploy/packagehelp/updateservice.md)
    
  ##Examples
 
