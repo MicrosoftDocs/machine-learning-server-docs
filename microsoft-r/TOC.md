@@ -428,7 +428,7 @@
 #### [rxNew](r-reference/revoscaler/rxnew.md) 
 #### [rxOAuthParameters](r-reference/revoscaler/rxoauthparameters.md) 
 #### [RxOdbcData-class](r-reference/revoscaler/rxodbcdata-class.md) 
-#### [RxOdbcData](scaler/packagehelp/RxOdbcData.md) 
+#### [RxOdbcData](r-reference/revoscaler/rxodbcdata.md) 
 #### [rxOpen-methods](scaler/packagehelp/rxOpen-methods.md) 
 #### [rxOptions](scaler/packagehelp/rxOptions.md) 
 #### [rxPackage](scaler/packagehelp/rxPackage.md) 
