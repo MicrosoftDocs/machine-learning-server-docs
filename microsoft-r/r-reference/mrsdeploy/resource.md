@@ -4,7 +4,8 @@
 title: "A factory which creates a resource object that lets you interact with RESTful server-side data sources." 
 description: " The intention is to provide high-level behaviors without the need to interact with the low level HTTP. This allows you to easily perform CRUD operations (create, read, update, delete) on server-side data. " 
 keywords: "mrsdeploy, resource" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

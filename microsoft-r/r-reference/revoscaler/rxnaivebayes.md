@@ -4,7 +4,8 @@
 title: "Parallel External Memory Algorithm for Naive Bayes Classifiers" 
 description: "     Fit Naive Bayes Classifiers on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "RevoScaleR, rxNaiveBayes, print.rxNaiveBayes, models, tree, classif, classification" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

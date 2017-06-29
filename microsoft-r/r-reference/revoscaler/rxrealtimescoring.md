@@ -4,7 +4,8 @@
 title: "Real-time scoring in SQL Server R Services" 
 description: " Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to  Microsoft R Server and SQL Server platforms with near real-time performance.  You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishService)  documentation. " 
 keywords: "RevoScaleR, rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

@@ -4,7 +4,8 @@
 title: "Merge path using the remote platform's separator." 
 description: "This is a utility function to automatically build a path according to file path rules of the remote compute context platform." 
 keywords: "RevoScaleR, rxRemoteFilePath, IO" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

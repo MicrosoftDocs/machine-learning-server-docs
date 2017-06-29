@@ -4,7 +4,8 @@
 title: "Fast Forest" 
 description: "Machine Learning Fast Forest" 
 keywords: "MicrosoftML, rxFastForest, classification, models, regression" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

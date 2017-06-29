@@ -4,7 +4,8 @@
 title: "Generate Hive, Parquet or ORC Data Source Object" 
 description: " These are constructors for Hive, Parquet and ORC data sources which extend `RxDataSource`. These three data sources can be used only in `RxSpark` compute context. " 
 keywords: "RevoScaleR, RxHiveData, RxParquetData, RxOrcData {RevoScaleR}, RxHiveData, RxParquetData, RxOrcData" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

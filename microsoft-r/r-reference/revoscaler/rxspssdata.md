@@ -4,7 +4,8 @@
 title: "Generate SPSS Data Source Object" 
 description: " Generate an RxSpssData object that contains information about an SPSS data set to be imported or analyzed. RxSpssData is an S4 class, which extends  RxDataSource." 
 keywords: "RevoScaleR, RxSpssData, head.RxSpssData, tail.RxSpssData, file, connection" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

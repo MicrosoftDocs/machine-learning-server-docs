@@ -4,7 +4,8 @@
 title: "RevoScaleR By Group Parallelism" 
 description: " This feature allows users to run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables. In **RevoScaleR** version 9.1.0, we provide the necessary rx functions to be executed for funtionalities of By-group parallelism. This document will describe different scenarios of By-group parallelism, running in a number of supported compute contexts. " 
 keywords: "RevoScaleR, rxExecByPartition, partition, exec, group, execby, groupby" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

@@ -4,7 +4,8 @@
 title: " Merge two data sources " 
 description: " Merge (join) two data sources on one or more match variables. In local compute context, the data sources may be sorted .xdf files or data frames. In [RxSpark](rxspark.md) compute context, the data sources may be [RxParquetData](rxsparkdata.md), [RxHiveData](rxsparkdata.md), [RxOrcData](rxsparkdata.md), [RxXdfData](rxxdfdata.md) or [RxTextData](rxtextdata.md). " 
 keywords: "RevoScaleR, rxMerge, rxMergeXdf, file" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

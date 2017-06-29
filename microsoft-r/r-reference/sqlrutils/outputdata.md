@@ -4,7 +4,8 @@
 title: "Output Data for SQL Stored Procedure: Class Generator" 
 description: " `OutputData`: generates an OutputData Object, that captures the information about the data frame that needs to be returned after the execution of the R function embedded into the stored procedure. This object must be created if the R function is returning a named list, where one of the items in the list is a data frame. The return list can contain at most one data frame. " 
 keywords: "sqlrutils, OutputData" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

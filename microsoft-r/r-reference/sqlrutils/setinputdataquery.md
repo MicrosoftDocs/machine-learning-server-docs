@@ -4,7 +4,8 @@
 title: "Assign a Query to the Input Data Parameter of the SQL Stored Procedure" 
 description: " `setInputDataQuery`: assigns a query to the InputData parameter of the                  stored procedure that is going to populate the input                  data frame of the embedded R function in the next                  run of the stored procedure. " 
 keywords: "sqlrutils, setInputDataQuery" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

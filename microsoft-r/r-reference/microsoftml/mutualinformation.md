@@ -4,7 +4,8 @@
 title: "Feature Selection Mutual Information Mode" 
 description: " Mutual information mode of feature selection used in the feature selection transform [selectFeatures](selectfeatures.md). " 
 keywords: "MicrosoftML, mutualInformation, feature, information, mutual, selection" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

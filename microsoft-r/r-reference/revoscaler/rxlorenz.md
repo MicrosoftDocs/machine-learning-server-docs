@@ -4,7 +4,8 @@
 title: " Lorenz Curve and Gini Coefficient " 
 description: " Compute and plot an empirical Lorenz curve from a variable in a data set, optionally specifiying a separate variable from which to compute the y-values for the curve. Compute the Gini Coefficient from the Lorenz curve data. Appropriate for big data sets since data is binned with computations performed in one pass, rather than sorting the data as part of the computation process. " 
 keywords: "RevoScaleR, rxLorenz, rxGini, rxGini.rxLorenz, plot.rxLorenz,  univar " 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

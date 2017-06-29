@@ -4,7 +4,8 @@
 title: "SQL R Services Package Management" 
 description: " **NOTE: This feature and the rx APIs listed below are in pre-release mode and subject to change before final release.**  This section describes how to enable & disable SQL R Services package management on SQL server, install R packages on SQL server database, use installed packages on SQL server database and remove R packages on SQL server. **RevoScaleR** provides the necessary rx functions to install and uninstall packages. " 
 keywords: "RevoScaleR, rxPackage, packages, sql, install, uninstall, remove, use" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

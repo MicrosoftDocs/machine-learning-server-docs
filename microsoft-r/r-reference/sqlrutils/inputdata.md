@@ -4,7 +4,8 @@
 title: "Input Data for SQL Stored Procedure: Class Generator" 
 description: " `InputData`: generates an InputData Object that captures the information about the input parameter that is a data frame. The data frame needs to be populated upon the execution a given query. This object is necessary  for creation of stored procedures in which the embedded R functoin takes in a data frame input parameter. " 
 keywords: "sqlrutils, InputData" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

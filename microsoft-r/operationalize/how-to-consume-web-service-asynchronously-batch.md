@@ -5,22 +5,21 @@ title: "Consume web services asynchronously with batch scoring - Microsoft R Ser
 description: "Asynchronous web service consumption via batch processing in R Server"
 keywords: "batch processing of web services"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-server"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 

@@ -4,7 +4,8 @@
 title: "Output Parameter for SQL Stored Procedure: Class Generator" 
 description: " `OutputParameter`: generates an OutputParameter Object that captures the information about the output parameters of the function that is to be embedded into a SQL Server Stored Procesure. Those will become the output parameters of the stored procedure. Supported R types of the output parameters are POSIXct, numeric, character, integer, logical, and raw. This object must be created if the R function is returning a named list for non-data frame memebers of the list " 
 keywords: "sqlrutils, OutputParameter" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

@@ -4,7 +4,8 @@
 title: "Managing RevoScaleR Data Source Objects" 
 description: " These functions manage **RevoScaleR** data source objects. " 
 keywords: "RevoScaleR, rxOpen-methods, rxOpen, rxClose, rxIsOpen, rxReadNext, rxWriteNext, rxClose-methods, rxIsOpen-methods, rxReadNext-methods, rxWriteNext-methods, rxOpen,RxDataSource-method, rxClose,RxDataSource-method, rxIsOpen,RxDataSource-method, rxReadNext,RxDataSource-method, rxWriteNext,data.frame,RxDataSource-method, methods, file, connection" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

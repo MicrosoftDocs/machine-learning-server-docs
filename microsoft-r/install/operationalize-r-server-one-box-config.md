@@ -5,24 +5,23 @@ title: "Configure R Server to operationalize analytics (one-box) - Microsoft R S
 description: "Configuration Operationalization for Microsoft R Server"
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # Configuring R Server to operationalize analytics with a one-box configuration
