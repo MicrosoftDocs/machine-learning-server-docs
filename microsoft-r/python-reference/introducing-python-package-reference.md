@@ -7,6 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
 ms.date: "06/29/2017"
+ms.author: heidist
 ms.topic: "article"
 ms.prod: "microsoft-r"
 ms.service: ""
@@ -24,7 +25,7 @@ ms.custom: ""
 
 ---
 
-# Python funtion library help
+# Python function library help
 
 **Applies to:** SQL Server 2017 RC1 only
 
