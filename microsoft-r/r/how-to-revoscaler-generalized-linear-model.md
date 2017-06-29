@@ -86,8 +86,7 @@ The data set has 59 observations, and 12 variables. The variables of interest ar
 	Var 11: Age10, Type: numeric, Low/High: (1.8000, 4.2000)
 	Var 12: Base4, Type: numeric, Low/High: (1.5000, 37.7500)
 
-![](media/how-to-revoscaler-
-howgeneralized-linear-model/image17.png)
+![](media/how-to-revoscaler-generalized-linear-model/image17.png)
 
 To estimate a model with *sumY* as the response variable and the *Base* number of seizures, *Age*, and the treatment as explanatory variables, we can use *rxGlm*. A benefit to using *rxGlm* is that the code will scale for use with a much bigger data set.
 
@@ -321,8 +320,7 @@ As a first step to analysis, let’s look at a histogram of the property insuran
 
 	rxHistogram(~propinsr, data = propinDS, pweights = "perwt")
 
-![](media/how-to-revoscaler-
-howgeneralized-linear-model/image18.png)
+![](media/how-to-revoscaler-generalized-linear-model/image18.png)
 
 This appears to be a good match for the Tweedie family with a variance power parameter between 1 and 2, since it has a “clump” of exact zeros in addition to a distribution of positive values.
 
@@ -472,8 +470,7 @@ Next we’ll combine the two data sets, and compute the predicted values for ann
 	  xTitle = "Age of Head of Household",
 	  yTitle = "Predicted Costs")
 
-![](media/how-to-revoscaler-
-howgeneralized-linear-model/image19.png)
+![](media/how-to-revoscaler-generalized-linear-model/image19.png)
 
 ### Stepwise Generalized Linear Models
 

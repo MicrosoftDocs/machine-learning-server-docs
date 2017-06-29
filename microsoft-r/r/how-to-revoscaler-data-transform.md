@@ -718,8 +718,7 @@ We could use this function with **rxDataStep** to add a variable to our data set
 	    transformFunc=makeMoveAveTransFunc(numDays=360),
 	    transformVars=c("Adj.Close"))
 
-![](media/how-to-revoscaler-
-howtransform-functions/image25.png)
+![](media/how-to-revoscaler-transform-functions/image25.png)
 
 
 ## Extended example showing a series of transformations
