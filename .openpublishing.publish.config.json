@@ -8,14 +8,15 @@
       "build_source_folder": "microsoft-r",
       "build_output_subfolder": "microsoft-r",
       "locale": "en-us",
-      "version": 0,
+      "monikers": [],
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
-      "build_entry_point": "op"
+      "build_entry_point": "op",
+      "version": 0
     }
   ],
   "notification_subscribers": [
@@ -26,5 +27,6 @@
   ],
   "git_repository_url_open_to_public_contributors": "",
   "skip_source_output_uploading": false,
-  "dependent_repositories": []
+  "dependent_repositories": [],
+  "need_generate_pdf_url_template": false
 }
