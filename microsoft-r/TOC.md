@@ -35,7 +35,7 @@
 ### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
 ### [Transform and subset data](r/how-to-revoscaler-data-transform.md)
 ### [Sort data](r/how-to-revoscaler-data-sort.md)
-### [Merge data](scaler-data-merge.md)
+### [Merge data](r/scaler-data-merge.md)
 ### Concepts
 #### [RevoScaleR](r/concept-what-is-revoscaler.md)
 #### [Compute context](r/concept-what-is-compute-context.md)
