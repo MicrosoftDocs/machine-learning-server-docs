@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 **Applies to:  Microsoft R Server 9.x**
 
-After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). The `mrsdeploy` R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
+After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). the mrsdeploy R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 If you do not want to list, examine, or consume the web service in R, a set of [RESTful APIs](concept-api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
@@ -37,17 +37,17 @@ To list, examine, or consume the web service outside of R, use the [RESTful APIs
 
 ## Requirements
 
-Before you can use the web service management functions in the `mrsdeploy` R package, you must:
+Before you can use the web service management functions in the mrsdeploy R package, you must:
 + Have access to an R Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
-+ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the `mrsdeploy` package as described in the article "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
++ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the mrsdeploy package as described in the article "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
 
 <a name="listServices"></a>
 
 ## Find and list web services
 
-Any authenticated user can retrieve a list of web services using the `listServices` function in the `mrsdeploy` package.  
+Any authenticated user can retrieve a list of web services using the `listServices` function in the mrsdeploy package.  
 
 Use function arguments to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../r-reference/mrsdeploy/listservices.md) for the full description of all arguments.
 
@@ -96,7 +96,7 @@ Example output:
 
 Any authenticated user can retrieve a web service object for consumption. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
 
-After you've authenticated, use the `getService` function in the `mrsdeploy` package to retrieve a service object. See the [package reference help page for getService()](../r-reference/mrsdeploy/getservice.md) for the full description of all arguments. 
+After you've authenticated, use the `getService` function in the mrsdeploy package to retrieve a service object. See the [package reference help page for getService()](../r-reference/mrsdeploy/getservice.md) for the full description of all arguments. 
 
 
 |Function|Response|R Function Help|
@@ -189,15 +189,15 @@ Users can consume the service directly using a single consumption call. This app
 
 #### Collaborate with data scientists
 
-Other data scientists may want to explore, test, and consume Web services directly in R using the functions in the `mrsdeploy` package. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
+Other data scientists may want to explore, test, and consume Web services directly in R using the functions in the mrsdeploy package. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
 
-You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the `mrsdeploy` package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
+You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the mrsdeploy package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
 
 >[!NOTE]
 > It is also possible to perform batch consumption as [described here](how-to-consume-web-service-asynchronously-batch.md).
 
 
-In this example, replace the following remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+In this example, replace the following remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 ```R
 ##########################################################################

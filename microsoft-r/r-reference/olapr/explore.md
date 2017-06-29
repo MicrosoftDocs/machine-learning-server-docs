@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`explore`: olapR explore Method
+ #explore: olapR explore Method
 
  Applies to version 1.0.0 of package olapR.
  
@@ -50,23 +50,23 @@ Allows for exploration of cube metadata
 
    
     
- ### `olapCnn`
+ ### olapCnn
  Object of class "OlapConnection" returned by `OlapConnection()` 
   
     
- ### `cube`
+ ### cube
  A string specifying a cube name 
   
     
- ### `dimension`
+ ### dimension
  A string specifying a dimension name 
   
     
- ### `hierarchy`
+ ### hierarchy
  A string specifying a hierarchy name 
   
     
- ### `level`
+ ### level
  A string specifying a level name 
   
  

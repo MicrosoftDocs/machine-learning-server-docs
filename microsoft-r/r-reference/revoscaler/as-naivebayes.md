@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`as.naiveBayes`: Conversion of a RevoScaleR rxNaiveBayes object to a e1071 naiveBayes object
+ #as.naiveBayes: Conversion of a RevoScaleR rxNaiveBayes object to a e1071 naiveBayes object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,11 +48,11 @@ as.naiveBayes  (x, ...)
 
    
     
- ### `x`
+ ### x
  object of class rxNaiveBayes. 
   
     
- ### ` ...`
+ ###  ...
  additional arguments (currently not used). 
   
  

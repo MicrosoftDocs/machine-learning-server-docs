@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`rxFastLinear`: Fast Linear Model -- Stochastic Dual Coordinate Ascent
+ #rxFastLinear: Fast Linear Model -- Stochastic Dual Coordinate Ascent
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -90,22 +90,22 @@ reproducible results, it is recommended that one sets `shuffle` to
 
    
   
- ### `formula`
+ ### formula
  The formula described in rxFormula. Interaction terms and `F()` are currently not supported in **MicrosoftML**. 
   
   
   
- ### `data`
+ ### data
  A data source object or a character string specifying a .xdf file or a data frame object. 
   
   
   
- ### `type`
+ ### type
  Specifies the model type with a character string: `"binary"` for the default binary classification or `"regression"` for linear  regression. 
   
   
   
- ### `lossFunction`
+ ### lossFunction
  Specifies the empirical loss function to optimize. For binary classification, the following choices are available:  
 *   [logLoss](loss.md): The log-loss. This is the default.  
 *   [hingeLoss](loss.md): The SVM hinge loss. Its parameter represents the margin size.    
@@ -117,42 +117,42 @@ For linear regression, squared loss [squaredLoss](loss.md) is currently supporte
   
   
   
- ### `l2Weight`
+ ### l2Weight
  Specifies the L2 regularization weight. The value must be either non-negative or `NULL`. If `NULL` is specified, the  actual value is automatically computed based on data set. `NULL` is the default value. 
   
   
   
- ### `l1Weight`
+ ### l1Weight
  Specifies the L1 regularization weight. The value must be either non-negative or `NULL`. If `NULL` is specified, the  actual value is automatically computed based on data set. `NULL` is the default value. 
   
   
   
- ### `trainThreads`
+ ### trainThreads
  Specifies how many concurrent threads can be used to run the algorithm. When this parameter is set to `NULL`, the number of threads used is determined based on the number of logical processors available to the process as well as the sparsity of data. Set it to `1` to run the algorithm in a single thread. 
   
   
   
- ### `convergenceTolerance`
+ ### convergenceTolerance
  Specifies the tolerance threshold used as a  convergence criterion. It must be between 0 and 1. The default value is `0.1`. The algorithm is considered to have converged if the relative  duality gap, which is the ratio between the duality gap and the primal loss,  falls below the specified convergence tolerance. 
   
   
   
- ### `maxIterations`
+ ### maxIterations
  Specifies an upper bound on the number of training iterations. This parameter must be positive or `NULL`. If `NULL` is specified, the actual value is automatically computed based on data set.  Each iteration requires a complete pass over the training data. Training  terminates after the total number of iterations reaches the specified   upper bound or when the loss function converges, whichever happens earlier. 
   
   
   
- ### `shuffle`
+ ### shuffle
  Specifies whether to shuffle the training data. Set `TRUE` to shuffle the data; `FALSE` not to shuffle. The default value is `TRUE`. SDCA is a stochastic optimization algorithm.  If shuffling is turned on, the training data is shuffled on each iteration. 
   
   
   
- ### `checkFrequency`
+ ### checkFrequency
  The number of iterations after which the loss function is computed and checked to determine whether it has converged. The value  specified must be a positive integer or `NULL`. If `NULL`, the actual value is automatically computed based on data set. Otherwise,  for example, if `checkFrequency = 5` is specified, then the loss function is computed and convergence is checked every 5 iterations. The computation of the loss function requires a separate complete pass over the training data. 
   
   
   
- ### `normalize`
+ ### normalize
  Specifies the type of automatic normalization used:  
 *   `"auto"`: if normalization is needed, it is automatically  performed. This is the default value.    
 *   `"no"`: no normalization is performed.   
@@ -162,57 +162,57 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
- ### `mlTransforms`
+ ### mlTransforms
  Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
- ### `mlTransformVars`
+ ### mlTransformVars
  Specifies a character vector of variable names to be used in `mlTransforms` or `NULL` if none are to be used. The default value is `NULL`. 
   
   
   
- ### `rowSelection`
+ ### rowSelection
  Specifies the rows (observations) from the data set that are to be used by the model with the name of a logical variable from the  data set (in quotes) or with a logical expression using variables in the    data set. For example, `rowSelection = "old"` will only use observations in which the value of the variable `old` is `TRUE`. `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function call using the expression function. 
   
   
   
- ### `transforms`
+ ### transforms
  An expression of the form `list(name = expression, ``...)` that represents the first round of variable transformations. As with  all expressions, `transforms` (or `rowSelection`) can be defined outside of the function call using the expression function. 
   
   
   
- ### `transformObjects`
+ ### transformObjects
  A named list that contains objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
   
- ### `transformFunc`
+ ### transformFunc
  The variable transformation function. See rxTransform for details. 
   
   
   
- ### `transformVars`
+ ### transformVars
  A character vector of input data set variables needed for the transformation function. See rxTransform for details. 
   
   
   
- ### `transformPackages`
+ ### transformPackages
  A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
   
   
   
- ### `transformEnvir`
+ ### transformEnvir
  A user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
   
- ### `blocksPerRead`
+ ### blocksPerRead
  Specifies the number of blocks to read for each chunk  of data read from the data source. 
   
   
   
- ### `reportProgress`
+ ### reportProgress
  An integer value that specifies the level of reporting on the row processing progress:   
 *   `0`: no progress is reported.      
 *   `1`: the number of processed rows is printed and updated.    
@@ -222,22 +222,22 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
- ### `verbose`
+ ### verbose
  An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information. 
   
   
   
- ### `computeContext`
+ ### computeContext
  Sets the context in which computations are executed, specified with a valid RxComputeContext. Currently local and RxInSqlServer compute contexts are supported. 
   
   
   
- ### `ensemble`
+ ### ensemble
  Control parameters for ensembling. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

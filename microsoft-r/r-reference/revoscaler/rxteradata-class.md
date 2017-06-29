@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxTeradata-class`: Class RxTeradata
+ #RxTeradata-class: Class RxTeradata
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,7 +53,7 @@ Class RxDataSource, directly.
  
 
 
-###`show`
+###show
 `signature(object = "RxTeradata")`: ...
 
 

@@ -41,7 +41,7 @@ ms.technology: "r-server"
  
  
  
- #`rxOpen-methods`: Managing RevoScaleR Data Source Objects
+ #rxOpen-methods: Managing RevoScaleR Data Source Objects
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -65,23 +65,23 @@ These functions manage **RevoScaleR** data source objects.
 
    
     
- ### `from`
+ ### from
  data frame object. 
   
     
- ### `src`
+ ### src
  RxDataSource object. 
   
     
- ### `to`
+ ### to
  RxDataSource object. 
   
     
- ### `mode`
+ ### mode
  character string specifying the mode to open the file. Currently only `"r"` (read-only) is supported. 
   
     
- ### ` ...`
+ ###  ...
  any other arguments to be passed on. 
   
    

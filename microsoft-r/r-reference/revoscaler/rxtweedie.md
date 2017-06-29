@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxTweedie`: Tweedie Generalized Linear Models
+ #rxTweedie: Tweedie Generalized Linear Models
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,11 +50,11 @@ used with `rxGlm`.
 
    
     
- ### `var.power`
+ ### var.power
  index of power variance function. 
   
     
- ### `link.power`
+ ### link.power
  index of power link function. Setting `link.power` to `0`  produces a `log` link function. Setting it to `1` is the identity link.  The default is a canonical link  equal to `1 - var.power` 
   
    

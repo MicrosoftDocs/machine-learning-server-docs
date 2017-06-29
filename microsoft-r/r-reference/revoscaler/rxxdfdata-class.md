@@ -38,7 +38,7 @@ ms.technology: "r-server"
  
  
  
- #`RxXdfData-class`: Class RxXdfData
+ #RxXdfData-class: Class RxXdfData
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -65,43 +65,43 @@ Class RxDataSource, by class RxFileData.
  
 
 
-###`colnames`
+###colnames
 `signature(x = "RxXdfData")`: ... 
 
 
-###`dim`
+###dim
 `signature(x = "RxXdfData")`: ... 
 
 
-###`dimnames`
+###dimnames
 `signature(x = "RxXdfData")`: ... 
 
 
-###`formula`
+###formula
 `signature(x = "RxXdfData")`: ... 
 
 
-###`length`
+###length
 `signature(x = "RxXdfData")`: ... 
 
 
-###`names`
+###names
 `signature(x = "RxXdfData")`: ... 
 
 
-###`names<-`
+###names<-
 `signature(x = "RxXdfData")`: ... 
 
 
-###`row.names`
+###row.names
 `signature(x = "RxXdfData")`: ... 
 
 
-###`show`
+###show
 `signature(object = "RxXdfData")`: ... 
 
 
-###`str`
+###str
 `signature(object = "RxXdfData")`: ... 
 
 

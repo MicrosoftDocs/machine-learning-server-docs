@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`fastForest`: fastForest
+ #fastForest: fastForest
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -51,62 +51,62 @@ Creates a list containing the function name and arguments to train a FastForest 
 
    
   
- ### `numTrees`
+ ### numTrees
  Specifies the total number of decision trees to create in  the ensemble.By creating more decision trees, you can potentially get  better coverage, but the training time increases. The default value is 100. 
   
   
   
- ### `numLeaves`
+ ### numLeaves
  The maximum number of leaves (terminal nodes) that can be created in any tree. Higher values potentially increase the size of the tree and get better precision, but risk overfitting and requiring longer training times. The default value is 20. 
   
   
   
- ### `minSplit`
+ ### minSplit
  Minimum number of training instances required to form a leaf. That is, the minimal number of documents allowed in a leaf of a regression tree, out of the sub-sampled data. A 'split' means that features in each level of the tree (node) are randomly divided. The default value is 10. 
   
   
   
- ### `exampleFraction`
+ ### exampleFraction
  The fraction of randomly chosen instances to use for each tree. The default value is 0.7. 
   
   
   
- ### `featureFraction`
+ ### featureFraction
  The fraction of randomly chosen features to use for each tree. The default value is 0.7. 
   
   
   
- ### `splitFraction`
+ ### splitFraction
  The fraction of randomly chosen features to use on each split. The default value is 0.7. 
   
   
   
- ### `numBins`
+ ### numBins
  Maximum number of distinct values (bins) per feature. The default value is 255. 
   
   
   
- ### `firstUsePenalty`
+ ### firstUsePenalty
  The feature first use penalty coefficient. The default  value is 0. 
   
   
   
- ### `gainConfLevel`
+ ### gainConfLevel
  Tree fitting gain confidence requirement (should be in the range [0,1) ). The default value is 0. 
   
   
   
- ### `trainThreads`
+ ### trainThreads
  The number of threads to use in training. If `NULL`is specified, the number of threads to use is determined internally.  The default value is `NULL`. 
   
   
   
- ### `randomSeed`
+ ### randomSeed
  Specifies the random seed. The default value is `NULL`. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments. 
   
  

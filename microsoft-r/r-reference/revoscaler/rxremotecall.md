@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxRemoteCall`:  Remote calling mechanism for distributed computing.
+ #rxRemoteCall:  Remote calling mechanism for distributed computing.
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -46,7 +46,7 @@ a distributed computing environment.
 
    
     
- ### `rxCommArgsList`
+ ### rxCommArgsList
  list of arguments 
   
  

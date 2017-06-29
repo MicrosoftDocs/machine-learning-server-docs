@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`is.encodings`: Test to see if all items in the supplied character vector are supported encoding types.
+ #is.encodings: Test to see if all items in the supplied character vector are supported encoding types.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -49,7 +49,7 @@ encoding types.
 
    
   
- ### `type`
+ ### type
  The encoding type to check for validity. 
   
  

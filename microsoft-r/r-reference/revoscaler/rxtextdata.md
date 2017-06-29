@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`RxTextData`: Generate Text Data Source Object
+ #RxTextData: Generate Text Data Source Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -65,22 +65,22 @@ This is the main generator for S4 class RxTextData, which extends RxDataSource.
    
   
     
- ### `file`
+ ### file
  character string specifying a text file. If it has an .stsextension, it is interpreted as a fixed format schema file. If the `colInfo` argument contains `start` and `width` information, it is interpreted as a fixed format data file. Otherwise, it is treated as a delimited text data file. See the Details section for more information on using .sts files. 
   
   
     
- ### `returnDataFrame`
+ ### returnDataFrame
  logical indicating whether or not to convert the result from a list to a data frame (for use in `rxReadNext` only). If `FALSE`,  a list is returned. 
   
   
     
- ### `stringsAsFactors`
+ ### stringsAsFactors
  logical indicating whether or not to automatically convert strings to factors on import. This can be overridden by specifying `"character"` in `colClasses` and `colInfo`. If `TRUE`, the factor levels will be coded in the order encountered. Since this factor level ordering is row dependent, the preferred method for handling factor columns is to use `colInfo` with specified `"levels"`. 
   
   
     
- ### `colClasses`
+ ### colClasses
  character vector specifying the column types to use when converting the data. The element names for the vector are used to identify which column should be converted to which type.  
 *   Allowable column types are:  
    *   `"logical"` (stored as `uchar`), 
@@ -100,7 +100,7 @@ This is the main generator for S4 class RxTextData, which extends RxDataSource.
   
   
     
- ### `colInfo`
+ ### colInfo
  list of named variable information lists. Each variable information list contains one or more of the named elements given below. When importing fixed format data, either `colInfo` or an an .sts schema file should be supplied. For such fixed format data, only the variables specified will be imported. For all text types, the information supplied for `colInfo`overrides that supplied for `colClasses`.   
 *   Currently available properties for a column information list are: 
 * `type` - character string specifying the data type for the column. See `colClasses` argument description for the available types. If the `type` is not specified for fixed format data, it will be read as character data.  
@@ -119,54 +119,54 @@ This is the main generator for S4 class RxTextData, which extends RxDataSource.
   
   
     
- ### `varsToKeep`
+ ### varsToKeep
  character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop`. 
   
   
     
- ### `varsToDrop`
+ ### varsToDrop
  character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep`. 
   
   
     
- ### `missingValueString`
+ ### missingValueString
  character string containing the missing value code. It can be an empty string: `""`. 
   
   
     
- ### `rowsPerRead`
+ ### rowsPerRead
  number of rows to read at a time. 
   
   
     
- ### `delimiter`
+ ### delimiter
  character string containing the character to use as the separator between variables. If `NULL` and the `colInfo` argument does not contain `"start"` and `"width"` information (which implies a fixed-formatted file), the delimiter is auto-sensed from the list `","`, `"\t"`, `";"`, and `" "`. 
   
   
     
- ### `combineDelimiters`
+ ### combineDelimiters
  logical indicating whether or not to treat consecutive non-space (`" "`) delimiters as a single delimiter. Space `" "` delimiters are always combined.   
   
   
     
- ### `quoteMark`
+ ### quoteMark
  character string containing the quotation mark. It can be an empty string: `""`.  
   
   
     
- ### `decimalPoint`
+ ### decimalPoint
  character string containing the decimal point.  Not supported when `useFastRead` is set to `TRUE`. 
   
   
     
- ### `thousandsSeparator`
+ ### thousandsSeparator
  character string containing the thousands separator. Not supported when `useFastRead` is set to `TRUE`. 
   
   
    
   
     
- ### `readDateFormat`
+ ### readDateFormat
  character string containing the time date format to use during read operations. Not supported when `useFastRead` is set to `TRUE`. Valid formats are:  
    *   `%c` Skip a single character (see also `%w`). 
    *   `%Nc` Skip `N` characters. 
@@ -182,7 +182,7 @@ This is the main generator for S4 class RxTextData, which extends RxDataSource.
   
   
     
- ### `readPOSIXctFormat`
+ ### readPOSIXctFormat
  character string containing the time date format to use during read operations. Not supported when `useFastRead` is set to `TRUE`. Valid formats are:  
    *   `%c` Skip a single character (see also `%w`). 
    *   `%Nc` Skip `N` characters. 
@@ -228,100 +228,100 @@ This is the main generator for S4 class RxTextData, which extends RxDataSource.
    
   
     
- ### `centuryCutoff`
+ ### centuryCutoff
  integer specifying the changeover year between the twentieth  and twenty-first century if two-digit years are read. Values less than `centuryCutoff`are prefixed by 20 and those greater than or equal to `centuryCutoff` are prefixed by 19. If you specify 0, all two digit dates are interpreted as years in the twentieth century. Not supported when `useFastRead` is set to `TRUE`. 
   
   
     
- ### `firstRowIsColNames`
+ ### firstRowIsColNames
  logical indicating if the first row represents column names for reading text. If `firstRowIsColNames` is `NULL`, then column names are auto- detected. The logic for auto-detection is: if the first row contains all values that are interpreted as character and the second row contains at least one value that is interpreted as numeric, then the first row is considered to be column names; otherwise the first row is considered to be the first data row. Not relevant for fixed format data. As for writing, it specifies to write column names as the first row.  If `firstRowIsColNames` is `NULL`, the default is to  write the column names as the first row. 
   
   
     
- ### `rowsToSniff`
+ ### rowsToSniff
  number of rows to use in determining column type. 
   
   
     
- ### `rowsToSkip`
+ ### rowsToSkip
  integer indicating number of leading rows to ignore. Only supported for `useFastRead = TRUE`. 
   
   
   
     
- ### `defaultReadBufferSize`
+ ### defaultReadBufferSize
  number of rows to read into a temporary buffer. This value could affect the speed of import. 
   
   
     
- ### `defaultDecimalColType`
+ ### defaultDecimalColType
  Used to specify a column's data type when  only decimal values (possibly mixed with missing (`NA`) values) are encountered upon first read of the data and the column's type information is not specified via `colInfo` or `colClasses`. Supported types are "float32" and "numeric", for 32-bit floating point and 64-bit  floating point values, respectively. 
   
   
     
- ### `defaultMissingColType`
+ ### defaultMissingColType
  Used to specify a given column's data type when  only missings (`NA`s) or blanks are encountered upon first read of the data  and the column's type information is not specified via `colInfo` or `colClasses`. Supported types are "float32", "numeric", and "character" for 32-bit floating point, 64-bit floating point and string values, respectively. Only supported for `useFastRead = TRUE`. 
   
   
     
- ### `writePrecision`
+ ### writePrecision
  integer specifying the precision to use when  writing numeric data to a file. 
   
    
     
- ### `stripZeros`
+ ### stripZeros
  logical scalar.  If `TRUE`, if there are only  zeros after the decimal point for a numeric, it will be written as  an integer to a file. 
   
    
     
- ### `quotedDelimiters`
+ ### quotedDelimiters
  logical scalar.  If `TRUE`, delimiters  within quoted strings will be ignored. This requires a slower parsing  process. Only applicable to `useFastRead` is set to `TRUE`;  delimiters within quotes are always supported when `useFastRead`  is set to `FALSE` 
   .
    
     
- ### `isFixedFormat`
+ ### isFixedFormat
  logical scalar.  If `TRUE`, the input data file is treated as a fixed format file. Fixed format files must have a .sts file or a `colInfo` argument specifying the `start` and `width` of each variable.  If `FALSE`, the input data file is treated as a delimited text file.   If `NULL`, the text file type (fixed or delimited text) is auto-determined. 
   
   
     
- ### `useFastRead`
+ ### useFastRead
  `NULL` or logical scalar.  If `TRUE`, the data file is accessed directly by the Microsoft R Services Compute Engine.  If `FALSE`,  StatTransfer is used to access the data file.  If `NULL`, the type of text import is auto-determined. `useFastRead` should be set to `FALSE` if importing `Date` or `POSIXct` data types, if the data set contains the delimiter character inside a quoted string, if the `decimalPoint` is not `"."`, if the `thousandsSeparator` is not `","`, if the `quoteMark` is not `"\""`, or if `combineDelimiters` is set to `TRUE`. `useFastRead` should be set to `TRUE` if `rowsToSkip` or `defaultMissingColType` are set. If `useFastRead` is `TRUE`, by default variables containing the values `TRUE` and `FALSE` or `T` and `F` will be created as logical variables.  `useFastRead` cannot be set to `FALSE` if an HDFS file system is being used. If an incompatible setting of `useFastRead` is detected, a warning will be issued and the value will be changed. 
   
   
   
      
- ### `createFileSet`
+ ### createFileSet
  logical value or `NULL`. Used only when writing.  If `TRUE`, a file folder of text files will be created instead of a single text file. A directory will be created whose name is the same as the text file that would otherwise be created, but with no extension. In the directory, the data will be split across a set of text files (see `rowsPerOutFile` below for determining how many rows of data will be in each file). If `FALSE`, a single text file will be created.  If `NULL`, a folder of files will be created if the input data set is a composite XDF file or a folder of text files.  This argument is ignored if the text file is fixed format. 
   
   
    
      
- ### `rowsPerOutFile`
+ ### rowsPerOutFile
  numeric value or `NULL`. If a directory of text files is being created, and if the compute context is not `RxHadoopMR`, this will be the number of rows of data put into each file in the directory. When importing is being done on Hadoop using MapReduce, the number of rows per file is determined by the rows assigned to each MapReduce task. If `NULL`, the rows of data will match the input data. 
   
   
     
- ### `verbose`
+ ### verbose
  integer value. If `0`, no additional output is printed.  If `1`, information on the text type (`text` or `textFast`) is printed. 
    
   
     
- ### `checkVarsToKeep`
+ ### checkVarsToKeep
  logical value.  If `TRUE` variable names specified in `varsToKeep` will be checked against variables in the data set to make sure they exist.  An error will be reported if not found. If there are more than 500 variables in the data set, this flag is ignored and no checking is performed. 
   
   
      
- ### `fileSystem`
+ ### fileSystem
  character string or [RxFileSystem](rxfilesystem.md) object indicating type of file system;  `"native"`or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. 
   
   
      
- ### `inputEncoding`
+ ### inputEncoding
  character string indicating the encoding used by input text.   May be set to either `"utf-8"` (the default), or `"gb18030"`, a standard Chinese encoding.   Not supported when `useFastRead` is set to  `TRUE`. 
   
    
     
- ### `writeFactorsAsIndexes`
+ ### writeFactorsAsIndexes
  logical. If `TRUE`, when writing to an `RxTextData` data source, underlying factor indexes will be written instead of the string representations.  Not supported when  `useFastRead` is set to `FALSE`. 
   
   

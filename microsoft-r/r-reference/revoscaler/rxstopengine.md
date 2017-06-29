@@ -33,7 +33,7 @@ ms.technology: "r-server"
  
  
  
- #`rxStopEngine`: Stop Distributed Computing Engine
+ #rxStopEngine: Stop Distributed Computing Engine
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -54,12 +54,12 @@ ms.technology: "r-server"
 
    
     
- ### `computeContext`
+ ### computeContext
  a valid [RxDistributedHpa-class](rxdistributedhpa-class.md). Currently only [RxSpark](rxspark.md) is supported.  
   
   
     
- ### `scope`
+ ### scope
  only used in `rxStopEngine` for `RxSpark`; a single `character` that takes the value of either:  
 *   `"session"`: stop engine applications running in the current R session. 
 *   `"user"`: stop engine applications running by the current user. 

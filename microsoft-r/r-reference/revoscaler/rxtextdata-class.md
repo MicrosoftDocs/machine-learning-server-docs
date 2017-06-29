@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxTextData-class`: Class RxTextData
+ #RxTextData-class: Class RxTextData
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -54,7 +54,7 @@ Class RxDataSource, by class RxFileData.
  
 
 
-###`show`
+###show
 `signature(object = "RxTextData")`: ...
 
 

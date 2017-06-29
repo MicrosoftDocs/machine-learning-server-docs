@@ -30,7 +30,7 @@ ms.technology: "r-server"
  
  
  
- #`rxLaunchClusterJobManager`:  Launches the job management UI for a compute context. 
+ #rxLaunchClusterJobManager:  Launches the job management UI for a compute context. 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,7 +53,7 @@ available for RxHadoopMR and RxHpcServer compute contexts.
 
    
   
- ### `context`
+ ### context
  The compute context used to determine which UI to launch, or a  character string with the name of the head node, or the character string "none" to launch a defult session. Note that use of a character string is deprecated, and only used for MS HPC clusters. 
   
  

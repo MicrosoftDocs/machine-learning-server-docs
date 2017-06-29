@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`serviceTypes`: Defines the enumerated list of the supported service types.
+ #serviceTypes: Defines the enumerated list of the supported service types.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

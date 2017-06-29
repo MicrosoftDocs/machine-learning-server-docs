@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`RxComputeContext`: RevoScaleR Compute Contexts: Class Generator
+ #RxComputeContext: RevoScaleR Compute Contexts: Class Generator
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -46,11 +46,11 @@ This is the main generator for RxComputeContext S4 classes.
 
    
     
- ### `computeContext`
+ ### computeContext
  character string specifying class name or description of the specific  class to instantiate, or an existing `RxComputeContext` object.  Choices include: "RxLocalSeq" or "local", "RxLocalParallel" or "localpar", "RxSpark" or "spark",  "RxHadoopMR" or "hadoopmr", "RxInSqlServer" or "sqlserver", "RxInTeradata" or "teradata",  and "RxForeachDoPar" or "dopar". 
   
     
- ### ` ...`
+ ###  ...
  any other arguments are passed to the class generator determined from `context`. 
   
  

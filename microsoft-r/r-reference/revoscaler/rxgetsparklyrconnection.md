@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxGetSparklyrConnection`: Get sparklyr connection from Spark compute context
+ #rxGetSparklyrConnection: Get sparklyr connection from Spark compute context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,7 +48,7 @@ ms.technology: "r-server"
 
    
     
- ### `computeContext`
+ ### computeContext
  Compute context get created by `rxSparkConnect`. 
   
  

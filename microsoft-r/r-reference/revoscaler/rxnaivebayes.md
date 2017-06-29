@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxNaiveBayes`: Parallel External Memory Algorithm for Naive Bayes Classifiers
+ #rxNaiveBayes: Parallel External Memory Algorithm for Naive Bayes Classifiers
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,19 +48,19 @@ for small or large data using parallel external memory algorithm.
 
    
     
- ### `formula`
+ ### formula
   formula as described in [rxFormula](rxformula.md).     
   
     
- ### `data`
+ ### data
   either a data source object, a character string  specifying a .xdf file, or a data frame object. 
   
     
- ### `smoothingFactor`
+ ### smoothingFactor
   a positive smoothing factor to account for cases not present in the training data.  It avoids modeling issues by preventing zero conditional probability estimates. 
   
     
- ### ` ...`
+ ###  ...
   additional arguments to be passed directly to [rxSummary](rxsummary.md) such as `byTerm`, `rowSelection`, `pweights`, `fweights`, `transforms`, `transformObjects`, `transformFunc`,  `transformVars`, `transformPackages`, `transformEnvir`,  `useSparseCube`, `removeZeroCounts`, `blocksPerRead`,  `reportProgress`, `verbose`, `xdfCompressionLevel`.   
   
  

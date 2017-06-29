@@ -90,7 +90,7 @@ You can choose from the following states:
 
 ## Web service permissions after role change
 
-A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to an R Server role in the `appsettings.json` file anymore. 
+A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to an R Server role in the appsettings.json file anymore. 
 
 Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publis a web service while assigned to the "Owner" role, then you can continue to update, delete and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you still be allowed to interact with that web service version as you did before, but you won't be allowed to update or delete the services published by others. Now, if roles are defined for users, but you are no longer assigned to one of those roles, you become part of the "Reader" role implicitly and can no longer manage any services, including those that you published previously when you had another role. 
 
@@ -104,7 +104,7 @@ If you configure R Server to [use Active Directory/LDAP or Azure Active Director
 
 #### Step 1. Add the roles to R Server on each web node
 
-On each R Server web node, edit the `appsettings.json` configuration file in order to declare the roles and the groups that belong them. 
+On each R Server web node, edit the appsettings.json configuration file in order to declare the roles and the groups that belong them. 
 
 1. Open [the `appsetting.json` file](configure-find-admin-configuration-file.md).
 
@@ -145,7 +145,7 @@ R Server must be given the ability to verify the groups you declare against thos
 
 1. Back in the portal, click the **Manage Manifest > Upload Manifest** on the toolbar at the bottom of the window. Upload the edited file back into the portal.
 
-1. In the **Configure** tab, scroll to the **Keys** section. Take note of the key as you must add this to the `"AzureActiveDirectory"` section of the `appsettings.json` configuration file. This will enable R Server to validate the group names at authentication time.  
+1. In the **Configure** tab, scroll to the **Keys** section. Take note of the key as you must add this to the `"AzureActiveDirectory"` section of the appsettings.json configuration file. This will enable R Server to validate the group names at authentication time.  
 
 1. In the same tab, scroll to the **Permissions to other applications** section and click the **Delegated Permissions** listbox. and make sure that the **Read directory data** checkbox is enabled.
 
@@ -155,15 +155,15 @@ R Server must be given the ability to verify the groups you declare against thos
 
 Return to [the `appsetting.json` file](configure-find-admin-configuration-file.md) and do the following:
 
-+ **For Azure Active Directory:** In `appsettings.json`, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](configure-authentication.md#aad).
++ **For Azure Active Directory:** In appsettings.json, find the `"AzureActiveDirectory"` section. Make sure the alphanumberic client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows R Server to verify that the groups you've declared are valid in AAD. See example below. Learn more about [configuring R Server user to authenticate with Azure Active Directory](configure-authentication.md#aad).
 
   >[!IMPORTANT]
-  > For more security, we recommend you [encrypt the key](configure-use-admin-utility.md#encrypt) before adding the information to `appsettings.json`.
+  > For more security, we recommend you [encrypt the key](configure-use-admin-utility.md#encrypt) before adding the information to appsettings.json.
 
   >[!NOTE]
   > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD will provide an overage claim in the token it returns. This claim along with the key you provide here allows R Server to retrieve the group memberships for the user.
 
-+ **For Active Directory/LDAP:** In `appsettings.json`, find the `"LDAP"` section.  In order for R Server to verify that the groups you've declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP"` section. See the example below. This allows R Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring R Server user to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
++ **For Active Directory/LDAP:** In appsettings.json, find the `"LDAP"` section.  In order for R Server to verify that the groups you've declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP"` section. See the example below. This allows R Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring R Server user to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
 
 
 #### Step 3. Apply the changes to R Server
@@ -174,7 +174,7 @@ Return to [the `appsetting.json` file](configure-find-admin-configuration-file.m
 
 ### Example
 
-Here is an example of roles declared for AD/LDAP in `appsettings.json` on the web node:
+Here is an example of roles declared for AD/LDAP in appsettings.json on the web node:
 
 ```
 Authentication: {

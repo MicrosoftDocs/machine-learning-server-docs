@@ -36,9 +36,9 @@ With an enterprise configuration, you can work with your production-grade data w
 
 This configuration includes one or more web nodes, one or more compute nodes, and a database.   
 
-+ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. 
++ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
 
-+ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
++ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 + The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
@@ -58,15 +58,14 @@ The web nodes and compute nodes are supported on:
 - Ubuntu 14.04, Ubuntu 16.04,
 - CentOS/RHEL 7.x
 
-## How to upgrade an enterprise configuration from 9.0 to 9.1 
+## How to upgrade 
 
 To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps:** 
-
 
 ### Upgrade a compute node
 
 >[!IMPORTANT]
->Before you begin, back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
+>Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -98,7 +97,7 @@ To replace an older version, you can uninstall the older distribution before ins
 ### Upgrade a web node
 
 >[!IMPORTANT]
->Before you begin, back up the `appsettings.json` file on each node in case of an issue during the upgrade process.
+>Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -130,7 +129,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
 
 
-## How to perform an enterprise configuration
+## How to configure for the enterprise
 
 ### 1. Configure a database
 
@@ -218,7 +217,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. Declare the IP addresses of every compute node with each web node.
-   1. [Open the `appsettings.json` configuration file](../operationalize/configure-find-admin-configuration-file.md).
+   1. [Open the appsettings.json configuration file](../operationalize/configure-find-admin-configuration-file.md).
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 
@@ -304,8 +303,15 @@ In production environments, we strongly recommend the following approaches:
 
 If you are provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console. This endpoint allows clients to communicate with the R Server's operationalization server.
 
+### 6. Set up a load balancer
 
-### 6. Post configuration steps
+You can set up the load balancer of your choosing. 
+
+Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required. 
+
+For proper access token signing and verification across your configuration, ensure that the JWT settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
+
+### 7. Post configuration steps
 
 1. [Update service ports](../operationalize/configure-use-admin-utility.md#ports), if needed.
 
@@ -313,7 +319,7 @@ If you are provisioning on a cloud service, then you must also [create inbound s
 
 1. [Evaluate](../operationalize/configure-evaluate-capacity.md) the configuration's capacity.
 
-1. Set up the load balance of your choosing. Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required.
+
 
 
 ## See also

@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxNewDataSource`: RevoScaleR Data Sources: Class Generator
+ #rxNewDataSource: RevoScaleR Data Sources: Class Generator
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,11 +48,11 @@ rxNewDataSource  (name, ...)
 
    
     
- ### `name`
+ ### name
  character name of the specific class to instantiate. 
   
     
- ### ` ...`
+ ###  ...
  any other arguments are passed to the class generator `name`. 
   
  

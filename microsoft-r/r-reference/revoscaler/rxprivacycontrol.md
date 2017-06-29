@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxPrivacyControl`: Changes the opt in state for anonymous data usage collection.
+ #rxPrivacyControl: Changes the opt in state for anonymous data usage collection.
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -46,7 +46,7 @@ Sets the state to be opted-in or out for anonymous usage collection.
 
    
     
- ### `optIn`
+ ### optIn
  A logical value that specifies to opt in `TRUE` or to opt out `FALSE` with anonymous data usage collection. If not specified, the value is returned. 
   
  

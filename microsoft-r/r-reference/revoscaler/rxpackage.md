@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxPackage`: SQL R Services Package Management
+ #rxPackage: SQL R Services Package Management
 
  Applies to version 9.1.0 of package RevoScaleR.
  

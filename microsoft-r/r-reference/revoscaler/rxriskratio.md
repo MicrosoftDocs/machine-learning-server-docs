@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxRiskRatio`:  Relative Risk Ratio and Odds Ratio 
+ #rxRiskRatio:  Relative Risk Ratio and Odds Ratio 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -51,15 +51,15 @@ Calculate the relative risk and odds ratio on a two-by-two table.
 
    
     
- ### `tbl`
+ ### tbl
  two-by-two table. 
   
     
- ### `conf.level`
+ ### conf.level
  level of the confidence interval. 
   
     
- ### `alternative`
+ ### alternative
  character string defining alternative hypothesis. Supported values are `"two.sided"`, `"less"`, or `"greater"`. 
   
  

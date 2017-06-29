@@ -29,7 +29,7 @@ ms.technology: "r-server"
  
  
  
- #`RxDataSource-class`: Class RxDataSource
+ #RxDataSource-class: Class RxDataSource
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -57,23 +57,23 @@ RxDataSource:
 
 
 
-###`names`
+###names
 `signature(x = "RxDataSource")`: ... 
 
 
-###`[rxOpen](rxopen-methods.md)`
+###[rxOpen](rxopen-methods.md)
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxClose](rxopen-methods.md)`
+###[rxClose](rxopen-methods.md)
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxReadNext](rxopen-methods.md)`
+###[rxReadNext](rxopen-methods.md)
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxWriteNext](rxopen-methods.md)`
+###[rxWriteNext](rxopen-methods.md)
 `signature(from = "data.frame", to = "RxDataSource", verbose = 0)`: ... 
 
 

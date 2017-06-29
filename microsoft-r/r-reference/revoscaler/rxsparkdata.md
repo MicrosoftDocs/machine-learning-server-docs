@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxHiveData, RxParquetData, RxOrcData {RevoScaleR}`: Generate Hive, Parquet or ORC Data Source Object
+ #RxHiveData, RxParquetData, RxOrcData {RevoScaleR}: Generate Hive, Parquet or ORC Data Source Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -55,17 +55,17 @@ can be used only in `RxSpark` compute context.
 
    
     
- ### `query`
+ ### query
  character string specifying a Hive query, e.g. `"select * from sample_table"`. Cannot be used with 'table'. 
   
   
     
- ### `table`
+ ### table
  character string specifying the name of a Hive table, e.g. `"sample_table"`. Cannot be used with 'query'. 
   
   
     
- ### `colInfo`
+ ### colInfo
  list of named variable information lists. Each variable information list contains one or more of the named elements given below (see [rxCreateColInfo](rxcreatecolinfo.md) for more details):  
 *   Currently available properties for a column information list are:  
    *  `type` character string specifying the data type for the column. Supported types are:  
@@ -85,27 +85,27 @@ can be used only in `RxSpark` compute context.
   
   
     
- ### `saveAsTempTable`
+ ### saveAsTempTable
  logical. Only applicable when using as output with `table` parameter. If `TRUE` register a temporary Hive table in   Spark memory system otherwise generate a persistent Hive table. The temporary Hive table is always cached in Spark memory system. 
   
   
     
- ### `file`
+ ### file
  character string specifying a file path, e.g. `"/tmp/AirlineDemoSmall.parquet"` or `"/tmp/AirlineDemoSmall.orc"`. 
   
   
     
- ### `fileSystem`
+ ### fileSystem
  character string `"hdfs"` or `RxFileSystem` object indicating type of file system. It supports native HDFS and other HDFS compatible systems, e.g., Azure Blob and Azure Data Lake. Local file system is not supported. 
   
   
     
- ### `cache`
+ ### cache
  [Deprecated] logical. If `TRUE` data will be cached in the Spark application's memory system after the first use. 
   
   
     
- ### `writeFactorsAsIndexes`
+ ### writeFactorsAsIndexes
  logical. If `TRUE`, when writing to an output data source, underlying factor indexes will be written instead of the string representations. 
   
  

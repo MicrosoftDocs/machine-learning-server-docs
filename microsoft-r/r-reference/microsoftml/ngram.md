@@ -31,7 +31,7 @@ ms.technology: "r-server"
  
  
  
-#`ngram`: Machine Learning Feature Extractors
+#ngram: Machine Learning Feature Extractors
 
 Applies to version 1.3.0 of package MicrosoftML.
  
@@ -55,22 +55,22 @@ Feature Extractors that can be used with mtText.
 
    
   
-### `ngramLength`
+### ngramLength
 An integer that specifies the maximum number of tokens to take when constructing an n-gram. The default value is 1. 
   
   
   
-### `skipLength`
+### skipLength
 An integer that specifies the maximum number of tokens to skip when constructing an n-gram. If the value specified as skip length is `k`, then n-grams can contain up to k skips (not necessarily consecutive). For example, if `k=2`, then the 3-grams extracted from the text "the sky is blue today" are: "the sky is", "the sky blue", "the sky today", "the is blue", "the is today" and "the blue today". The default  value is 0. 
   
   
   
-### `maxNumTerms`
+### maxNumTerms
 An integer that specifies the maximum number of categories  to include in the dictionary. The default value is 10000000. 
   
   
   
-### `weighting`
+### weighting
  A character string that specifies the weighting criteria:  
 *   `"tf"`: to use term frequency.    
 *   `"idf"`: to use inverse document frequency.   
@@ -79,22 +79,22 @@ An integer that specifies the maximum number of categories  to include in the di
   
   
   
-### `hashBits`
+### hashBits
 An integer value. Number of bits to hash into. Must be between 1 and 30, inclusive. 
   
   
   
-### `seed`
+### seed
 An integer value. Hashing seed. 
   
   
   
-### `ordered`
+### ordered
  `TRUE` to include the position of each term in the  hash. Otherwise, `FALSE`. The default value is `TRUE`. 
   
   
   
-### `invertHash`
+### invertHash
 An integer specifying the limit on the number of keys  that can be used to generate the slot name. `0` means no invert  hashing; `-1` means no limit. While a zero value gives better  performance, a non-zero value is needed to get meaningful coefficent names. 
   
  

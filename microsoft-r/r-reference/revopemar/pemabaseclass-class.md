@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`PemaBaseClass-class`: Class PemaBaseClass
+ #PemaBaseClass-class: Class PemaBaseClass
 
  Applies to version 8.0.3 of package RevoPemaR.
  

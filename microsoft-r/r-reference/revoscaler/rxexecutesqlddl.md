@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxExecuteSQLDDL`:  Execute SQL Command for Data Manipulation, Definition, or Control 
+ #rxExecuteSQLDDL:  Execute SQL Command for Data Manipulation, Definition, or Control 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,11 +49,11 @@ return data).
 
    
     
- ### `src`
+ ### src
   An RxOdbcData data source.  
   
     
- ### ` ...`
+ ###  ...
   Additional arguments, typically `sSQLString=` supplied with a character string specifying the SQL command to be executed. The typical SQL commands are `CREATE TABLE` and `DROP TABLE`.  
   
  

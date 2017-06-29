@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`putLocalWorkspace`: Copy the workspace of the local R session.
+ #putLocalWorkspace: Copy the workspace of the local R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

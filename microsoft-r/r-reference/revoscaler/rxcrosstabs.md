@@ -30,7 +30,7 @@ ms.technology: "r-server"
  
  
  
- #`rxCrossTabs`: Cross Tabulation
+ #rxCrossTabs: Cross Tabulation
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -77,102 +77,102 @@ mean  (x, marginals = TRUE, na.rm = FALSE, ...)
    
   
     
- ### `formula`
+ ### formula
  formula as described in [rxFormula](rxformula.md) with the categorical cross-classifying variables (separated by `:`) on the right hand side. 
   
   
     
- ### `data`
+ ### data
  either a data source object, a character string specifying a .xdf file, or a data frame object containing the cross-classifying variables. 
   
   
     
- ### `pweights`
+ ### pweights
  character string specifying the variable to use as probability weights for the observations. 
   
   
     
- ### `fweights`
+ ### fweights
  character string specifying the variable to use as frequency weights for the observations. 
   
   
     
- ### `means`
+ ### means
  logical value. If `TRUE`, the mean values of the contingency table are also stored in the output object along with the sums and counts. By default, if the mean values are stored, the `print` and `summary` methods display them. However, the `output` argument in those methods can be used to override this behavior by setting `output` equal to `"sums"` or `"counts"`. 
   
   
     
- ### `marginals`
+ ### marginals
  logical value. If `TRUE`, a list of marginal table values is stored as an attribute named `"marginals"` for each of the contingency tables. Each marginals list contains entries for the row, column and grand totals or means, depending on the type of data table. To access them directly, use the [rxMarginals](rxmarginals.md) function. 
   
   
     
- ### `cube`
+ ### cube
  logical value. If `TRUE`, the C++ cube functionality is called. 
   
   
     
- ### `rowSelection`
+ ### rowSelection
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### `transforms`
+ ### transforms
  an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### `transformObjects`
+ ### transformObjects
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
     
- ### `transformFunc`
+ ### transformFunc
  variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformVars`
+ ### transformVars
  character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformPackages`
+ ### transformPackages
  character vector defining additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### `transformEnvir`
+ ### transformEnvir
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
     
- ### `useSparseCube`
+ ### useSparseCube
  logical value. If `TRUE`, sparse cube is used. For large crosstab computation, R may run out of memory due to the resulting expanded contingency tables  even if the internal C++  computation succeeds. In which cases, try to use `rxCube` instead. 
   
   
     
- ### `removeZeroCounts`
+ ### removeZeroCounts
  logical flag. If `TRUE`, rows with no observations will be removed from the contingency tables. By default, it has the same value as `useSparseCube`.   Please note this affects only those zeroed counts in the final contingency table for which there are no observations in the input data. However, if the input data contains a row with *frequency* zero it will be reported in the final contingency table.  This should be set to `TRUE` if the total number of combinations of factor values on the right-hand side of the `formula` is significant and as a result R might run out of memory when handling the resulting large contingency table. 
   
   
     
- ### `returnXtabs`
+ ### returnXtabs
  logical flag. If `TRUE`, an object of class xtabs is returned. Note that the only difference between the structures of an equivalent `xtabs` call output and the output of `rxCrossTabs(..., returnXtabs = TRUE)` is that they will contain different `"call"` attributes.  Note also that `xtabs` expects the cross-classifying variables in the `formula` to be separated by plus (+) symbols whereas `rxCrossTabs` expects them to be separated by a colon (:) symbols.  
   
   
     
- ### `na.rm`
+ ### na.rm
  logical value. If `TRUE`, `NA` values are removed when calculating the marginal means of the contingency tables. 
   
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
  number of blocks to read for each chunk of data read from the data source. 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  integer value:  Options are:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -182,37 +182,37 @@ mean  (x, marginals = TRUE, na.rm = FALSE, ...)
   
   
     
- ### `verbose`
+ ### verbose
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
      
- ### `computeContext`
+ ### computeContext
  a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`,  `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
     
- ### ` ...`
+ ###  ...
  for `rxCrossTabs`, additional arguments to be passed directly to the base computational function. 
   
   
     
- ### `x, object`
+ ### x, object
  objects of class rxCrossTabs. 
   
   
     
- ### `output`
+ ### output
  character string used to specify the type of output to display. Choices are `"sums"`, `"counts"` and `"means"`. 
   
   
     
- ### `header`
+ ### header
  logical value. If `TRUE`, header information is printed. 
   
   
     
- ### `type`
+ ### type
  character string used to specify the summary to create. Choices are `"%"` or `"percentages"` and `"chisquare"` to summarize the cross-tabulation results with percentages or performs a chi-squared test for independence of factors, respectively. 
   
  
@@ -235,37 +235,37 @@ an object of class rxCrossTabs that contains a list of elements described as
 follows:
 
 
-###`sums`
+###sums
 list of contingency tables whose values are cross-tabulation sums. *This object is NULL if there are no dependent variables specified in the formula*. The names of the list objects are built using the dependent variables specified in the formula (if they exist) along with the independent variable factor levels corresponding to each contingency table. For example, `z <- rxCrossTabs(ncontrols ~ agegp + alcgp + tobgp, esoph); names(z$sums)` will return the character vector with elements `"ncontrols, tobgp = 0-9g/day"`, `"ncontrols, tobgp = 10-19"`, `"ncontrols, tobgp = 20-29"`, `"ncontrols, tobgp = 30+"`.  Typically, the user should rely on the `print` or `summary` methods to display the cross tabulation results but you can also directly access an individual contingency table using its name in R's standard list data access methods. For example, to access the "ncontrols, tobgp = 10-19" table containing cross tabulation summations you would use `z$sums[["ncontrols, tobgp = 10-19"]]` or equivalently `z$sums[[2]]`. To print the entire list of cross-tabulation summations one would issue `print(z, output="sums")`. 
 
 
 
-###`counts`
+###counts
 list of contingency tables whose values are cross-tabulation counts. The names of the list objects are equivalent to those of the 'sums' output list.
 
 
 
-###`means`
+###means
 list of contingency tables containing cross tabulation mean values. *This object is NULL if there are no dependent variables specified in the formula*. The 'means' list is returned only if the user has specified `means=TRUE` in the call to rxCrossTabs. If `means=FALSE` in the call, mean values still may be calculated and returned using the `print` and `summary` methods with an `output="means"` argument. In this case, the mean values are calculated dynamically. If you wish to have quick access to the means, use `means=TRUE` in the call to rxCrossTabs. The names of the list objects are equivalent to those of the 'sums' output list. 
 
 
 
-###`call`
+###call
 original call to the underlying `rxCrossTabs.formula` method.
 
 
 
-###`chisquare`
+###chisquare
 list of chi-square tests, one for each cross-tabulation table. Each entry contains the results of a chi-squared test for independence of factors as used in the summary method for the xtabs function. The names of the list objects are equivalent to those of the 'sums' output list. 
 
 
 
-###`formula`
+###formula
 formula used in the `rxCrossTabs` call.
 
 
 
-###`depvars`
+###depvars
 character vector of dependent variable names as extracted from the formula.
 
  

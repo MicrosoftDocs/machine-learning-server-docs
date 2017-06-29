@@ -29,7 +29,7 @@ ms.technology: "r-server"
  
  
  
- #`rxPairwiseCrossTab`:  Apply Function to Pairwise Combinations of an xtabs Object
+ #rxPairwiseCrossTab:  Apply Function to Pairwise Combinations of an xtabs Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -58,37 +58,37 @@ print  (x, digits = 3, scientific = FALSE, p.value.digits = 3, ...)
    
   
     
- ### `x`
+ ### x
  an object of class xtabs, rxCrossTabs, or rxCube for `rxPairwiseCrossTab`. An object of class rxPairwiseCrossTabList or rxPairwiseCrossTabTable for the print methods of rxPairwiseCrossTabList and rxPairwiseCrossTabTable objects. 
   
   
     
- ### `pooled`
+ ### pooled
  logical value. If `TRUE`, the comparison groups are pooled.  Otherwise all pairwise comparisons are included. 
   
   
     
- ### `FUN`
+ ### FUN
  function that takes a two by two table and returns an object of class htest. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments. 
   
   
     
- ### `digits`
+ ### digits
  number of digits to use in printing numeric values. 
   
   
     
- ### `scientific`
+ ### scientific
  logical value. If `TRUE`, scientific notation is used to prin tnumeric values. 
   
   
     
- ### `p.value.digits`
+ ### p.value.digits
  number of digits to use in printing p-values. 
   
  

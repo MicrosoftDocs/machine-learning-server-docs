@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`totalSystemMemory`:  Obtain Total System Memory  
+ #totalSystemMemory:  Obtain Total System Memory  
  ##Description
  
 Uses operating system tools to return total system memory.

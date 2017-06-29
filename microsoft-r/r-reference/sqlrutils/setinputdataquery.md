@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`setInputDataQuery`: Assign a Query to the Input Data Parameter of the SQL Stored Procedure
+ #setInputDataQuery: Assign a Query to the Input Data Parameter of the SQL Stored Procedure
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -51,12 +51,12 @@ run of the stored procedure.
 
    
   
- ### `inputData`
+ ### inputData
  A character string, the name of the data frame input parameter into the R function. 
   
   
   
- ### `query`
+ ### query
  A character string representing a query. 
   
  

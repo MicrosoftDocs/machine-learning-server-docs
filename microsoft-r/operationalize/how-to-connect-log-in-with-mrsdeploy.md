@@ -29,7 +29,7 @@ ms.technology:
 
 **Applies to:  Microsoft R Server 9.x**
 
-The `mrsdeploy` package, delivered with Microsoft R Client and R Server, provides functions for:
+the mrsdeploy package, delivered with Microsoft R Client and R Server, provides functions for:
 + Establishing a remote session in a R console application for the purposes of executing code on that server
 + Publishing and managing an R web service that is backed by the R code block or script you provided.  
 
@@ -273,7 +273,7 @@ In this state, you can authenticate with remoteLogin() and its argument `session
 |`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = FALSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`>`|![state 3](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-local.png)<br>&nbsp;|
 
 
-In this example, we define an interactive authentication workflow without a remote R session (`session = FALSE`). This is useful when working only with the web service functionality of the `mrsdeploy` package. After authentication, we remain confined within the local R session in order to publish and consume a service.
+In this example, we define an interactive authentication workflow without a remote R session (`session = FALSE`). This is useful when working only with the web service functionality of the mrsdeploy package. After authentication, we remain confined within the local R session in order to publish and consume a service.
 
 ```R
 > # EXAMPLE OF LOGIN WITHOUT REMOTE R SESSION

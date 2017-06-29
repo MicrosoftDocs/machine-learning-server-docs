@@ -30,7 +30,7 @@ ms.technology: "r-server"
  
  
  
- #`RevoInfo`: Microsoft R Information Functions 
+ #RevoInfo: Microsoft R Information Functions 
  ##Description
  Functions giving information about Microsoft R.
  

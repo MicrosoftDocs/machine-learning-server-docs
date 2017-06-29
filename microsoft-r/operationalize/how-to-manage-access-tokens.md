@@ -32,7 +32,8 @@ Microsoft R Server uses tokens to identify and authenticate the user who is send
 
 This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties.
 
-<br>
+>[!NOTE]
+>For proper access token signing and verification across your configuration, ensure that the JWT settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. Check with your administrator. [Learn more...](configure-authentication.md#ldap-jwt)
 
 ## Security Concerns 
 

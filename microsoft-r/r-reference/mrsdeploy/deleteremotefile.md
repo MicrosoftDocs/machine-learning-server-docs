@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`deleteRemoteFile`: Delete a file from the remote R session.
+ #deleteRemoteFile: Delete a file from the remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,7 +48,7 @@ Delete a file from the working directory of the remote R session.
 
    
   
- ### `filename`
+ ### filename
  Name of the file to delete. 
   
  

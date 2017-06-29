@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxSparkCacheData {RevoScaleR}`:  Set the Cache Flag in Spark Compute Context 
+ #rxSparkCacheData {RevoScaleR}:  Set the Cache Flag in Spark Compute Context 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,11 +49,11 @@ Use this function to set the cache flag to control whether data objects should b
 
    
     
- ### `data`
+ ### data
  a data source that can be RxXdfData, RxHiveData, RxParquetData, or RxOrcData. RxTextData is currently not supported. 
   
     
- ### `cache`
+ ### cache
  logical value controlling whether the data should be cached or not. If `TRUE`the data will be cached in the Spark memory system after the first use for performance enhancement. 
   
  

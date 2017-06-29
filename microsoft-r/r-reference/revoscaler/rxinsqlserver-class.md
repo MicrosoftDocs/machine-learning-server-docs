@@ -30,7 +30,7 @@ ms.technology: "r-server"
  
  
  
- #`RxInSqlServer-class`: Class RxInSqlServer
+ #RxInSqlServer-class: Class RxInSqlServer
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -52,44 +52,44 @@ Objects can be created by calls of the form .
  
 
 
-###`connectionString`:
+###connectionString:
 Object of class `"character"` ~~ 
 
 
 
-###`wait`:
+###wait:
 Object of class `"logical"` ~~ 
 
 
-###`consoleOutput`:
+###consoleOutput:
 Object of class `"logical"` ~~ 
 
 
-###`autoCleanup`:
+###autoCleanup:
 Object of class `"logical"` ~~ 
 
 
 
 
-###`dataPath`:
+###dataPath:
 Object of class `"characterORNULL"` ~~ 
 
 
 
-###`packagesToLoad`:
+###packagesToLoad:
 Object of class `"characterORNULL"` ~~ 
 
 
 
-###`executionTimeout`:
+###executionTimeout:
 Object of class `"numeric"` ~~ 
 
 
-###`description`:
+###description:
 Object of class `"character"` ~~ 
 
 
-###`version`:
+###version:
 Object of class `"character"` ~~ 
 
 
@@ -107,15 +107,15 @@ Class RxComputeContext, by class "RxLocalSeq", distance 1.
  
 
 
-###`doPreJobValidation`
+###doPreJobValidation
 `signature(object = "RxInSqlServer")`: ... 
 
 
-###`initialize`
+###initialize
 `signature(.Object = "RxInSqlServer")`: ... 
 
 
-###`show`
+###show
 `signature(object = "RxInSqlServer")`: ... 
 
 

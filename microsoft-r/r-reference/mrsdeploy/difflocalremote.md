@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`diffLocalRemote`: Generate a 'diff' report between local and remote R sessions
+ #diffLocalRemote: Generate a 'diff' report between local and remote R sessions
 
  Applies to version 1.1.0 of package mrsdeploy.
  

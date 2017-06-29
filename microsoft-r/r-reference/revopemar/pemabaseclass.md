@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`PemaBaseClass`:  Generator for a PemaBaseClass reference class object 
+ #PemaBaseClass:  Generator for a PemaBaseClass reference class object 
 
  Applies to version 8.0.3 of package RevoPemaR.
  
@@ -47,7 +47,7 @@ Generator for a PemaBaseClass reference class object to be used with pemaCompute
 
    
     
- ### ` ...`
+ ###  ...
   Arguments used in the constructor. Not used by the `PemaBaseClass` base class.  
   
  
