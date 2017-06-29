@@ -27,11 +27,11 @@ ms.technology: "r-server"
 
 **Applies to:  Microsoft R Server 9.x** 
 
-This article details how you can publish and manage your analytic web services directly in R. You can deploy your R models, scripts, and code as **analytic web services** in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  The `mrsdeploy` R package containing these functions is installed with both Microsoft R Server and Microsoft R Client.
+This article details how you can publish and manage your analytic web services directly in R. You can deploy your R models, scripts, and code as **analytic web services** in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  the mrsdeploy R package containing these functions is installed with both Microsoft R Server and Microsoft R Client.
 
 These web services are then discoverable by other authenticated users who can then [consume them in R](how-to-consume-web-service-interact-in-r.md) or in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
-Using the `mrsdeploy` R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](how-to-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others.
+Using the mrsdeploy R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](how-to-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others.
 
 To publish or interact with a web service outside of R, use the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
@@ -39,10 +39,10 @@ To publish or interact with a web service outside of R, use the [RESTful APIs](c
 
 ## Requirements
 
-Before you can use the web service management functions in the `mrsdeploy` R package, you must:
+Before you can use the web service management functions in the mrsdeploy R package, you must:
 + Have access to an R Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
-+ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the `mrsdeploy` package as described in the article "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
++ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the mrsdeploy package as described in the article "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
 ## Web service types
 
@@ -108,7 +108,7 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 ### Publish service
 
-After you've authenticated, use the `publishService` function in the `mrsdeploy` package to publish a web service.  See the [package reference for publishService()](../r-reference/mrsdeploy/publishservice.md) for the full description of all arguments.  
+After you've authenticated, use the `publishService` function in the mrsdeploy package to publish a web service.  See the [package reference for publishService()](../r-reference/mrsdeploy/publishservice.md) for the full description of all arguments.  
 
 |Function|Response|R Help|
 |----|----|:----:|
@@ -159,7 +159,7 @@ Learn how to get a [list of all services](how-to-consume-web-service-interact-in
 
 To change a web service after you've published it, while retaining the same name and version, use the `updateService` function. For arguments, specify what needs to change, such as the R code, model, and inputs. When you update a service, it overwrites that named version.
 
-After you've authenticated, use the `updateService` function in the `mrsdeploy` package to update a web service.
+After you've authenticated, use the `updateService` function in the mrsdeploy package to update a web service.
 
 See the [package reference help page for updateService()](../r-reference/mrsdeploy/updateservice.md) for the full description of all arguments. 
 
@@ -211,7 +211,7 @@ The following table lists the supported data types for the [publishService](#pub
 
 When you no longer want to keep a web service, you can delete it. Only the user who initially created the web service can use this function.
 
-After you've authenticated, use the `deleteService` function in the `mrsdeploy` package to delete a web service.
+After you've authenticated, use the `deleteService` function in the mrsdeploy package to delete a web service.
 
 Each web service is uniquely defined by a `name` and `version`. See the [package reference help page for deleteService()](../r-reference/mrsdeploy/deleteservice.md) for the full description of all arguments. 
 
@@ -235,7 +235,7 @@ The following workflow examples demonstrate how to publish a web service, intera
 ### Before you begin
 
 >[!IMPORTANT]
->Be sure to replace the remoteLogin() function in each of the following examples with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+>Be sure to replace the remoteLogin() function in each of the following examples with the correct login details for your configuration. Connecting to R Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 The base path for files is set to your working directory, but you can change that using ServiceOption as follows:
 

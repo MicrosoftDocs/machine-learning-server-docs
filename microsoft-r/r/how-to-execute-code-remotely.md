@@ -30,7 +30,7 @@ ms.technology:
 
 Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server and test your work.  It is especially useful while developing and testing your analytics.
 
-Remote execution is supported via the command line in console applications, in R scripts that call [functions from the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
+Remote execution is supported via the command line in console applications, in R scripts that call [functions from the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
 + [Log in to and out of an R Server remotely](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
@@ -43,13 +43,13 @@ With remote execution, you can:
 
 ## Supported configurations and mrsdeploy usage
 
-The R functions used for remote execution are provided in the `mrsdeploy` package. However, the `mrsdeploy` package can only be used **after Microsoft R Server has been [configured to operationalize analytics](../install/operationalize-r-server-enterprise-config.md)** by your administrator. 
+The R functions used for remote execution are provided in the mrsdeploy package. However, the mrsdeploy package can only be used **after Microsoft R Server has been [configured to operationalize analytics](../install/operationalize-r-server-enterprise-config.md)** by your administrator. 
 
 Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-package.md) for the supported configurations for this package and remote execution as well as for a list of the [remote execution functions](../r-reference/mrsdeploy/mrsdeploy-package.md#remote-functions) contained in that package. 
 
 ## How to create a remote session
 
-To create a remote session, you must first authenticate with R Server using one of the `mrsdeploy` login functions:  remoteLogin() and remoteLoginAAD(). With these functions, you can authenticate, set the arguments to create a remote R session on the R Server (`session = TRUE`) and even place yourself in the remote command line upon login `commandline = TRUE`. 
+To create a remote session, you must first authenticate with R Server using one of the mrsdeploy login functions:  remoteLogin() and remoteLoginAAD(). With these functions, you can authenticate, set the arguments to create a remote R session on the R Server (`session = TRUE`) and even place yourself in the remote command line upon login `commandline = TRUE`. 
 
 Read the article ["Connecting to R Server with mrsdeploy"](../operationalize/how-to-connect-log-in-with-mrsdeploy.md) for more on authentication with `mrsdeploy` and syntax. 
 

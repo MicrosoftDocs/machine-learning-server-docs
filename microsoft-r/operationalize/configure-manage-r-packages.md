@@ -38,7 +38,7 @@ However, in many enterprise environments, access to the Internet is limited or n
 
 You can also manually install the packages using a master script using [Option 2](#master).
 
-Data scientists can also test out new packages without risk to the production environment using [Option 3 with the `mrsdeploy` package](#mrsdeploy). 
+Data scientists can also test out new packages without risk to the production environment using [Option 3 with the mrsdeploy package](#mrsdeploy). 
 
 <br>
 
@@ -176,7 +176,7 @@ The packages you install using this method do not 'contaminate' the production e
 
 1. Develop and test your code locally.
 
-1. Load the `mrsdeploy` package.
+1. Load the mrsdeploy package.
    ```
    > library(mrsdeploy)
    ```

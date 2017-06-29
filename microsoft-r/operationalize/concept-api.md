@@ -55,7 +55,7 @@ The core APIs are accessible from and described in  `rserver-swagger-<version>.j
 
 You can access all of these core APIs using a client library built from `rserver-swagger-<version>.json` using [these instructions and example](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
-Note: For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md) directly to list, discover, and consume services. [Learn more in this article](how-to-consume-web-service-interact-in-r.md).
+Note: For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) directly to list, discover, and consume services. [Learn more in this article](how-to-consume-web-service-interact-in-r.md).
 
 ## Service Consumption APIs
 
