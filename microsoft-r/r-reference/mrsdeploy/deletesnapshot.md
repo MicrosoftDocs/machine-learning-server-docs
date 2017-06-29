@@ -4,7 +4,8 @@
 title: "Delete a snapshot from the R server." 
 description: " Deletes the specified snapshot from the repository on the R Server. " 
 keywords: "mrsdeploy, deleteSnapshot" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`deleteSnapshot`: Delete a snapshot from the R server.
+ #deleteSnapshot: Delete a snapshot from the R server.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -47,7 +48,7 @@ Deletes the specified snapshot from the repository on the R Server.
 
    
   
- ### `snapshot_id`
+ ### snapshot_id
  Identifier of the snapshot to delete. 
   
  

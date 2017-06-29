@@ -4,7 +4,8 @@
 title: "Generate Teradata In-Database Compute Context" 
 description: "Creates a compute context for running RevoScaleR analyses inside a Teradata database." 
 keywords: "RevoScaleR, RxInTeradata, IO" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`RxInTeradata`: Generate Teradata In-Database Compute Context
+ #RxInTeradata: Generate Teradata In-Database Compute Context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -46,49 +47,49 @@ ms.custom: ""
 
    
     
- ### `object`
+ ### object
   An optional RxInTeradata object.    
   
     
- ### `remoteShareDir`
+ ### remoteShareDir
   The share directory in Teradata.  
   
     
- ### `connectionString`
+ ### connectionString
   An ODBC connection string used to connect to the Teradata database.  
   
     
- ### `shareDir`
+ ### shareDir
   The share directory. This directory must exist on the client with write permission.  
   
     
- ### `revoPath`
+ ### revoPath
   The path where Microsoft R Server is installed on Teradata.  
   
     
- ### `controlDB`
+ ### controlDB
   The control database name a user can specify for supporting user isolation to enhance security. This requires that stored procedures, stored functions and tables are properly created and initialized in the control database, and access permissions are granted to users.  
   
     
- ### `wait`
+ ### wait
   logical value. If `TRUE`, the job will be blocking and will not return until   it has completed or has failed. If `FALSE`, the job will be non-blocking and return immediately,  allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. The client connection with Teradata must be maintained while the job is running, even in non-blocking mode.  
   
     
- ### `consoleOutput`
+ ### consoleOutput
   logical scalar.If `TRUE`, causes the standard output  of the R processes on the AMPS to be printed to the user console. This value may be  overwritten by passing a non-`NULL` logical value to the `consoleOutput` argument  provided in [rxExec](rxexec.md) and [rxGetJobResults](rxgetjobresults.md).  
   
     
- ### `autoCleanup`
+ ### autoCleanup
   logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxgetjobresults.md), and the output via [rxGetJobOutput](rxgetjoboutput.md) until the  [rxCleanupJobs](rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.  
   
   
     
- ### `packagesToLoad`
+ ### packagesToLoad
  NOT YET IMPLEMENTED. Optional character vector specifying additional packages to be  loaded on the nodes when jobs are run in this compute context.  
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed to the underlying function. Two useful additional arguments are `traceEnabled=TRUE` and `traceLevel=7`, which taken together enable run-time tracing of your in-Teradata computations. `traceEnabled` and `traceLevel` are deprecated as of MRS 9.0.2 and will be removed from this Compute Context in the next major release. Please use `rxOptions(traceLevel=7)` to enable run-time tracing in-Teradata 
   
    

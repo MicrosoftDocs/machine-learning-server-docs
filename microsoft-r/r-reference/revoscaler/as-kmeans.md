@@ -4,7 +4,8 @@
 title: "Conversion of a RevoScaleR rxKmeans object to a kmeans Object" 
 description: " Converts objects containing RevoScaleR-computed k-means clusters to an R kmeans object. " 
 keywords: "RevoScaleR, as.kmeans, as.kmeans.rxKmeans, category, models" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`as.kmeans`: Conversion of a RevoScaleR rxKmeans object to a kmeans Object
+ #as.kmeans: Conversion of a RevoScaleR rxKmeans object to a kmeans Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -47,11 +48,11 @@ as.kmeans  (x, ...)
 
    
     
- ### `x`
+ ### x
  object of class `"rxKmeans"`. 
   
     
- ### ` ...`
+ ###  ...
  additional arguments (currently not used). 
   
  

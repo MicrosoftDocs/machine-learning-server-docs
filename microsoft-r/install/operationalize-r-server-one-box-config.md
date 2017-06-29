@@ -5,24 +5,23 @@ title: "Configure R Server to operationalize analytics (one-box) - Microsoft R S
 description: "Configuration Operationalization for Microsoft R Server"
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # Configuring R Server to operationalize analytics with a one-box configuration
@@ -65,7 +64,7 @@ The web nodes and compute nodes are supported on:
 To replace an older version of a one-box configuration, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps.** 
 
 >[!IMPORTANT]
->Before you begin, back up the `appsettings.json` file on each node you can restore in the event of an upgrade issue.
+>Before you begin, back up the appsettings.json file on each node you can restore in the event of an upgrade issue.
 
 1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 

@@ -4,7 +4,8 @@
 title: "Download a snapshot from the R server." 
 description: " Downloads the specified snapshot from the R server in zip format. " 
 keywords: "mrsdeploy, downloadSnapshot" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`downloadSnapshot`: Download a snapshot from the R server.
+ #downloadSnapshot: Download a snapshot from the R server.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -47,12 +48,12 @@ Downloads the specified snapshot from the R server in zip format.
 
    
   
- ### `snapshot_id`
+ ### snapshot_id
  Identifier of the snapshot to load. 
   
   
   
- ### `file`
+ ### file
  Name of a file to write the contents of the snapshot.  If `NULL`, (the default), then the raw vector of bytes will be returned. 
   
  

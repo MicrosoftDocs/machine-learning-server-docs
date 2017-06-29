@@ -4,7 +4,8 @@
 title: "Machine Learning Concat Transform" 
 description: " Combines several columns into a single vector-valued column. " 
 keywords: "MicrosoftML, concat, transform" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`concat`: Machine Learning Concat Transform
+ #concat: Machine Learning Concat Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -47,12 +48,12 @@ Combines several columns into a single vector-valued column.
 
    
   
- ### `vars`
+ ### vars
  A named list of character vectors of input variable names and the name of the output variable. Note that all the input variables must be of the same type. It is possible to produce mulitple output columns  with the concatenation transform. In this case, you need to use a list of  vectors to define a one-to-one mappings between input and output variables. For example, to concatenate columns InNameA and InNameB into column OutName1 and also columns InNameC and InNameD into column OutName2, use the list:  (list(OutName1 = c(InNameA, InNameB), outName2 = c(InNameC, InNameD))) 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments sent to the compute engine 
   
  

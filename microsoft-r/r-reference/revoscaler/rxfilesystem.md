@@ -4,7 +4,8 @@
 title: "RevoScaleR File System object generator" 
 description: " This is the main generator for RxFileSystem S3 classes. " 
 keywords: "RevoScaleR, RxFileSystem, print.RxFileSystem, file, connection" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`RxFileSystem`: RevoScaleR File System object generator
+ #RxFileSystem: RevoScaleR File System object generator
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,15 +50,15 @@ print  ( x, ... )
 
    
     
- ### `fileSystem`
+ ### fileSystem
  character string specifying class name or file system type  existing `RxFileSystem` object.  Choices include: "RxNativeFileSystem" or "native", or "RxHdfsFileSystem" or "hdfs". Optional arguments `hostName` and `port` may be specified for HDFS file systems.  
   
     
- ### `x`
+ ### x
  an RxFileSystem object.  
   
     
- ### ` ...`
+ ###  ...
  other arguments are passed to the underlying function.  
   
  

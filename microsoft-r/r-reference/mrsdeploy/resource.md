@@ -4,7 +4,8 @@
 title: "A factory which creates a resource object that lets you interact with RESTful server-side data sources." 
 description: " The intention is to provide high-level behaviors without the need to interact with the low level HTTP. This allows you to easily perform CRUD operations (create, read, update, delete) on server-side data. " 
 keywords: "mrsdeploy, resource" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`resource`: A factory which creates a resource object that lets you interact with RESTful  server-side data sources.
+ #resource: A factory which creates a resource object that lets you interact with RESTful  server-side data sources.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -49,17 +50,17 @@ with the low level HTTP. This allows you to easily perform CRUD operations
 
    
   
- ### `url`
+ ### url
  A parameterized URL template with parameters prefixed by `:`  for example `/services/:name/:version` 
   
   
   
- ### `param_defaults`
+ ### param_defaults
  Default values for url parameters. 
   
   
   
- ### `actions`
+ ### actions
  A list with declaration of custom actions that will be  available in addition to the default set of resource actions (`get`,  `query`, `save`, `update`, `delete`). If a custom action has the same  key as a default action (e.g. `save`), then the default action will  be overwritten, and not extended. 
   
  

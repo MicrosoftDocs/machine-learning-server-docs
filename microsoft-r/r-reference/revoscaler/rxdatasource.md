@@ -4,7 +4,8 @@
 title: "RevoScaleR Data Source: Class Generator" 
 description: " A generator for RxDataSource S4 classes. " 
 keywords: "RevoScaleR, RxDataSource, file, connection" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`RxDataSource`: RevoScaleR Data Source: Class Generator
+ #RxDataSource: RevoScaleR Data Source: Class Generator
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -45,15 +46,15 @@ A generator for RxDataSource S4 classes.
 
    
     
- ### `class`
+ ### class
  an optional character string specifying class name of the data source to be created, such as [RxTextData](rxtextdata.md), [RxSpssData](rxspssdata.md), [RxSasData](rxsasdata.md), [RxOdbcData](rxodbcdata.md), or [RxTeradata](rxteradata.md). If the class of the input dataSource differs from `class`, contents of overlapping slots will be copied from the input data source to the  newly constructed data source. 
   
     
- ### `dataSource`
+ ### dataSource
  an optional data source object to be cloned. 
   
     
- ### ` ...`
+ ###  ...
  any other arguments to be applied to the newly constructed data source. 
   
  

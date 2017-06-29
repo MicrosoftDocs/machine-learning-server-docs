@@ -4,7 +4,8 @@
 title: "Class RxDataSource" 
 description: "   Base class for all Microsoft R Services Compute Engine data sources.   " 
 keywords: "RevoScaleR, RxDataSource-class, names,RxDataSource-method, show,RxDataSource-method, classes" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -28,7 +29,7 @@ ms.custom: ""
  
  
  
- #`RxDataSource-class`: Class RxDataSource
+ #RxDataSource-class: Class RxDataSource
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -56,23 +57,23 @@ RxDataSource:
 
 
 
-###`names`
+###names
 `signature(x = "RxDataSource")`: ... 
 
 
-###`[rxOpen](rxopen-methods.md)`
+###[rxOpen](rxopen-methods.md)
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxClose](rxopen-methods.md)`
+###[rxClose](rxopen-methods.md)
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxReadNext](rxopen-methods.md)`
+###[rxReadNext](rxopen-methods.md)
 `signature(src = "RxDataSource")`: ... 
 
 
-###`[rxWriteNext](rxopen-methods.md)`
+###[rxWriteNext](rxopen-methods.md)
 `signature(from = "data.frame", to = "RxDataSource", verbose = 0)`: ... 
 
 

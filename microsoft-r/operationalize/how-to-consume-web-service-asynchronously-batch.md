@@ -5,22 +5,21 @@ title: "Consume web services asynchronously with batch scoring - Microsoft R Ser
 description: "Asynchronous web service consumption via batch processing in R Server"
 keywords: "batch processing of web services"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-server"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 
@@ -51,7 +50,7 @@ Use this sample code to follow along with the workflow described in greater deta
 Here, we publish the same web service that was published [in this tutorial](concept-operationalize-deploy-consume.md) article. Then, we consume that web service asynchronously. 
 
 >[!IMPORTANT]
->Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+>Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 ```R
 ##          EXAMPLE: DEPLOY MODEL & BATCH CONSUME SERVICE               ##

@@ -4,7 +4,8 @@
 title: " Manage R objects in ODBC Data Sources " 
 description: " Store/Retrieve R objects to/from ODBC data sources. The APIs are modelled after a simple key value store.   " 
 keywords: "RevoScaleR, rxWriteObject, rxReadObject, rxDeleteObject, rxListKeys" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -28,7 +29,7 @@ ms.custom: ""
  
  
  
- #`rxWriteObject`:  Manage R objects in ODBC Data Sources 
+ #rxWriteObject:  Manage R objects in ODBC Data Sources 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -59,57 +60,57 @@ rxListKeys  (key = NULL, version = NULL, keyName = "id", versionName = "version"
 
    
     
- ### `key`
+ ### key
  a character string identifying the object. The intended use is  for the key+version to be unique.  
   
     
- ### `value`
+ ### value
  the R object being stored into the data source.  
   
     
- ### `version`
+ ### version
  `NULL` or a character string which carries the version of the object.  Combined with key identifies the object.  
   
     
- ### `keyName`
+ ### keyName
  character string specifying the column name for the key in the underlying table.   
   
     
- ### `valueName`
+ ### valueName
  character string specifying the column name for the objects in the underlying table.  
   
     
- ### `versionName`
+ ### versionName
  character string specifying the column name for the version in the underlying table.  
   
   
     
- ### `serialize`
+ ### serialize
  logical value. Dictates whether the object is to be serialized. Only raw values are supported if serialization is off.  
   
   
     
- ### `compress`
+ ### compress
  character string defining the compression algorithm to use for memCompress.  
   
   
     
- ### `deserialize`
+ ### deserialize
  logical value. Defines whether the object is to be de-serialized.  
   
   
     
- ### `decompress`
+ ### decompress
  character string defining the compression algorithm to use for memDecompress.  
   
   
     
- ### `overwrite`
+ ### overwrite
  logical value. If `TRUE`, `rxWriteObject` first removes the key (or the key+version combination) before writing the new value. Even when `overwrite` is `FALSE`, `rxWriteObject` may still succeed if there is no database constraint (or index) enforcing uniqueness.  
   
   
     
- ### `all`
+ ### all
  logical value. `TRUE` to remove all objects from the data source. If `TRUE`, the 'key' parameter is ignored.  
   
  

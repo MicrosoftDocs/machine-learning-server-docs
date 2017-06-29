@@ -4,7 +4,8 @@
 title: " Multiple Variable Independence Tests " 
 description: " Collects a list of tests for variable independence into a table. " 
 keywords: "RevoScaleR, rxMultiTest, print.rxMultiTest, htest" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`rxMultiTest`:  Multiple Variable Independence Tests 
+ #rxMultiTest:  Multiple Variable Independence Tests 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,22 +54,22 @@ print  (x, ...)
 
    
     
- ### `tests`
+ ### tests
  a list of objects of class htest. 
   
   
     
- ### `title`
+ ### title
  a title for the multiTest table. If `NULL`, the title is determined from  the method slot of the htest. 
   
   
     
- ### `x`
+ ### x
  object of class rxMultiTest. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to the print method. 
   
  

@@ -4,7 +4,8 @@
 title: "Variable names for a data source or data frame" 
 description: " Read the variable names for data source or data frame " 
 keywords: "RevoScaleR, rxGetVarNames, attribute" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxGetVarNames`: Variable names for a data source or data frame
+ #rxGetVarNames: Variable names for a data source or data frame
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -45,7 +46,7 @@ Read the variable names for data source or data frame
 
    
     
- ### `data`
+ ### data
  an `RxDataSource` object, a character string specifying the .xdf file, or a data frame. 
   
  

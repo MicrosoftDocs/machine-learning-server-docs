@@ -4,7 +4,8 @@
 title: "The print generic for serviceDetails." 
 description: " Defines the R print generic for serviceDetails during a listServices(). " 
 keywords: "mrsdeploy, print.serviceDetails" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`print.serviceDetails`: The print generic for `serviceDetails`.
+ #print.serviceDetails: The print generic for `serviceDetails`.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -49,17 +50,17 @@ print  (o, description = TRUE, code = TRUE)
 
    
   
- ### `o`
+ ### o
  The `serviceDetails` list of S3 object. 
   
   
   
- ### `description`
+ ### description
  (optional) whether to print the description field. 
   
   
   
- ### `code`
+ ### code
  (optional) whether to print the code field. 
   
  

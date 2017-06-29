@@ -4,7 +4,8 @@
 title: "Manage Cached Data in Spark" 
 description: " Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](rxspark.md) compute context. " 
 keywords: "RevoScaleR, rxSparkListData, rxSparkRemoveData {RevoScaleR}, rxSparkListData, rxSparkRemoveData" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`rxSparkListData, rxSparkRemoveData {RevoScaleR}`: Manage Cached Data in Spark
+ #rxSparkListData, rxSparkRemoveData {RevoScaleR}: Manage Cached Data in Spark
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -51,15 +52,15 @@ Use these functions to manage the objects cached in the Spark memory system. The
 
    
     
- ### `list`
+ ### list
  list of cached objects need to be deleted. 
   
     
- ### `showDescription`
+ ### showDescription
  logical indicating whether or not to print out the detail to console. 
   
     
- ### `computeContext`
+ ### computeContext
  `RxSpark` compute context object. 
   
  

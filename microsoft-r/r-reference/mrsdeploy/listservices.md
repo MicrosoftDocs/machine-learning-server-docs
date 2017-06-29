@@ -4,7 +4,8 @@
 title: "List the different published web services." 
 description: " List the different published web services on the R Server instance. " 
 keywords: "mrsdeploy, listServices" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`listServices`: List the different published web services.
+ #listServices: List the different published web services.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -47,12 +48,12 @@ List the different published web services on the R Server instance.
 
    
   
- ### `name`
+ ### name
  The optional web service name. 
   
   
   
- ### `v`
+ ### v
  The optional web service version. 
   
  

@@ -4,7 +4,8 @@
 title: "Object Summaries" 
 description: " Produce univariate summaries of objects in **RevoScaleR**. " 
 keywords: "RevoScaleR, rxSummary, univar" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxSummary`: Object Summaries
+ #rxSummary: Object Summaries
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -58,102 +59,102 @@ Produce univariate summaries of objects in **RevoScaleR**.
 
    
     
- ### `formula`
+ ### formula
  formula, as described in [rxFormula](rxformula.md). The formula typically does not contain a response variable, i.e. it should be of the form `~ terms`. If `~.` is used as the formula, summary statistics will be computed for all  non-character variables. If a numeric variable is interacted with a factor variable, summary statistics will be computed for each category of the factor. 
   
   
     
- ### `data`
+ ### data
  either a data source object, a character string specifying a .xdf file, or a data frame object to summarize. 
   
   
     
- ### `byGroupOutFile`
+ ### byGroupOutFile
  NULL, a character string or vector of character strings  specifying .xdf file names(s), or an RxXdfData object or list of RxXdfData objects.  If not NULL, and the formula includes computations by factor, the by-group summary results will be  written out to one or more .xdf files.  If more than one `.xdf` file is created and a single character string is specified, an integer will be appended to the base byGroupOutFile name  for additional file names. The resulting RxXdfData objects will be listed in  the `categorical` component of the output object.  `byGroupOutFile` is not supported when using distributed compute contexts such as [RxHadoopMR](rxhadoopmr.md) and [RxInTeradata](rxinteradata.md). 
   
   
     
- ### `summaryStats`
+ ### summaryStats
  a character vector containing one or more of the following  values:  "Mean", "StdDev", "Min", "Max", "ValidObs", "MissingObs", "Sum". 
    
   
     
- ### `byTerm`
+ ### byTerm
  logical variable. If `TRUE`, missings will be removed  by term (by variable or by interaction expression) before computing  summary statistics.  If `FALSE`, observations with missings in any  term will be removed before computations. 
   
   
     
- ### `pweights`
+ ### pweights
  character string specifying the variable to use as probability weights for the observations. 
   
   
     
- ### `fweights`
+ ### fweights
  character string specifying the variable to use as frequency weights for the observations. 
   
   
     
- ### `rowSelection`
+ ### rowSelection
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### `transforms`
+ ### transforms
  an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### `transformObjects`
+ ### transformObjects
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
     
- ### `transformFunc`
+ ### transformFunc
  variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformVars`
+ ### transformVars
  character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformPackages`
+ ### transformPackages
  character vector defining additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### `transformEnvir`
+ ### transformEnvir
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
     
- ### `overwrite`
+ ### overwrite
  logical value. If `TRUE`, an existing `byGroupOutFile` will be overwritten. `overwrite` is ignored `byGroupOutFile` is `NULL`. 
   
   
     
- ### `useSparseCube`
+ ### useSparseCube
  logical value. If `TRUE`, sparse cube is used. 
   
   
     
- ### `removeZeroCounts`
+ ### removeZeroCounts
  logical flag. If `TRUE`, rows with no observations will be removed from the output for counts of categorical data. By default, it has the same value as `useSparseCube`. For large summary computation, this should be set to `TRUE`, otherwise R may run out of memory even if the internal C++ computation succeeds. 
   
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
  number of blocks to read for each chunk of data read from the data source. 
   
   
     
- ### `rowsPerBlock`
+ ### rowsPerBlock
  maximum number of rows to write to each block in the  `byGroupOutFile` (if it is not `NULL`). 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -163,18 +164,18 @@ Produce univariate summaries of objects in **RevoScaleR**.
   
   
     
- ### `verbose`
+ ### verbose
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
   
- ### `computeContext`
+ ### computeContext
  a valid [RxComputeContext](rxcomputecontext.md).  The `RxHpcServer`,  `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to the Revolution Compute Engine. 
   
  
@@ -199,27 +200,27 @@ same formula in `rxSummary` as in, for example, `rxCube` or `rxLinMod`.
  
 an rxSummary object containing the following elements:
 
-###`nobs.valid`
+###nobs.valid
 number of valid observations.
 
 
-###`nobs.missing`
+###nobs.missing
 number of missing observations.
 
 
-###`sDataFrame`
+###sDataFrame
 data frame containing summaries for continuous variables.
 
 
-###`categorical`
+###categorical
 list of summaries for categorical variables.
 
 
-###`categorical.type`
+###categorical.type
 types of categorical summaries: can be "counts", or "cube" (for crosstab counts) or "none" (if there is no categorical summaries).
 
 
-###`formula`
+###formula
 formula used to obtain the summary.
 
  

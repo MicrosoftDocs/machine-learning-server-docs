@@ -4,7 +4,8 @@
 title: "olapR OlapConnection Creation" 
 description: "OlapConnection constructs an OlapConnection object. " 
 keywords: "olapR, OlapConnection" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,18 +14,18 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
- #`OlapConnection`: olapR OlapConnection Creation
+ #OlapConnection: olapR OlapConnection Creation
 
  Applies to version 1.0.0 of package olapR.
  
@@ -51,11 +52,11 @@ ms.custom: ""
 
    
     
- ### `connectionString`
+ ### connectionString
  A valid connection string for connecting to Analysis Services 
   
     
- ### `ocs`
+ ### ocs
  An object of class "OlapConnection" 
   
  

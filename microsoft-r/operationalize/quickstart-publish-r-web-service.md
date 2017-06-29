@@ -5,24 +5,23 @@ title: "Quickstart for deploying models as web services - Microsoft R Server | M
 description: "How to deploy an R model as a service"
 keywords: "quickstart, Microsoft R Server, deploy r models"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "5/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 
 ---
 # Deploy an R Model as a web service
@@ -31,9 +30,9 @@ ms.custom: ""
 
 ## Objective
 
-Learn how to publish an R model as a web service with Microsoft R Server. Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the `mrsdeploy` package that ships with Microsoft R Client and R Server, you can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
+Learn how to publish an R model as a web service with Microsoft R Server. Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the mrsdeploy package that ships with Microsoft R Client and R Server, you can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 
-An R Server web service is an R code execution on the [operationalization compute node](../install/operationalize-r-server-one-box-config.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
+An R Server web service is an R code execution on the [operationalization compute node](../install/operationalize-r-server-one-box-config.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
 
 ## Time estimate
 
@@ -55,7 +54,7 @@ Before you begin this QuickStart, have the following ready:
 This article walks through the deployment of a simple R model as a web service hosted in R Server.  Here is the entire R code for the example that we walk through in the sections that follow.
 
 >[!IMPORTANT]
->Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the `mrsdeploy` package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+>Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 ```r
 ##########################################################
@@ -103,7 +102,7 @@ remoteLogin("http://localhost:12800",
 serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
 
 # Publish as service using publishService() function from 
-# `mrsdeploy` package. Name service "mtService" and provide
+# mrsdeploy package. Name service "mtService" and provide
 # unique version number. Assign service to the variable `api`
 api <- publishService(
      serviceName,
@@ -148,7 +147,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. Launch your R IDE or Rgui so you can start entering R code. 
 
-1. If you have R Server 9.0.1, load the `mrsdeploy` package. In R Server 9.1, this package is preloaded for you.
+1. If you have R Server 9.0.1, load the mrsdeploy package. In R Server 9.1, this package is preloaded for you.
 
    ```R
    library(mrsdeploy)
@@ -176,7 +175,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 ## B. Publish model as a web service
 
-1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the `mrsdeploy` package](how-to-connect-log-in-with-mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`).  
+1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`).  
 
    For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
@@ -195,7 +194,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
    Now, you are successfully connected to the remote R Server.
 
-1. Publish the model as a web service to R Server using [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the `mrsdeploy` package. 
+1. Publish the model as a web service to R Server using [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the mrsdeploy package. 
 
    In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 

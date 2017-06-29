@@ -4,7 +4,8 @@
 title: "Data Transformation for RevoScaleR data sources" 
 description: " Transforms data from an input data set to an output data set. " 
 keywords: "MicrosoftML, rxFeaturize, manip" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`rxFeaturize`: Data Transformation for RevoScaleR data sources
+ #rxFeaturize: Data Transformation for RevoScaleR data sources
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -54,87 +55,87 @@ Transforms data from an input data set to an output data set.
 
    
   
- ### `data`
+ ### data
  A **RevoScaleR** data source object, a data frame, or the path to a `.xdf` file. 
   
   
   
- ### `outData`
+ ### outData
  Output text or xdf file name or an `RxDataSource` with write capabilities in which to store transformed data. If `NULL`, a data frame is returned. The default value is `NULL`. 
   
   
   
- ### `overwrite`
+ ### overwrite
  If `TRUE`, an existing `outData` is overwritten; if `FALSE` an existing `outData` is not overwritten. The default  value is /codeFALSE. 
   
   
   
- ### `dataThreads`
+ ### dataThreads
  An integer specifying the desired degree of parallelism in the data pipeline. If `NULL`, the number of threads used is determined internally. The default value is `NULL`. 
   
   
   
- ### `randomSeed`
+ ### randomSeed
  Specifies the random seed. The default value is `NULL`. 
   
   
   
- ### `maxSlots`
+ ### maxSlots
  Max slots to return for vector valued columns (<=0 to return all). 
   
   
   
- ### `mlTransforms`
+ ### mlTransforms
  Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
- ### `mlTransformVars`
+ ### mlTransformVars
  Specifies a character vector of variable names to be used in `mlTransforms` or `NULL` if none are to be used. The default value is `NULL`. 
   
   
   
- ### `rowSelection`
+ ### rowSelection
  Specifies the rows (observations) from the data set that are to be used by the model with the name of a logical variable from the  data set (in quotes) or with a logical expression using variables in the    data set. For example, `rowSelection = "old"` will only use observations in which the value of the variable `old` is `TRUE`. `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function call using the expression function. 
   
   
   
- ### `transforms`
+ ### transforms
  An expression of the form `list(name = expression, ``...)` that represents the first round of variable transformations. As with  all expressions, `transforms` (or `rowSelection`) can be defined outside of the function call using the expression function. The default value is `NULL`. 
   
   
   
- ### `transformObjects`
+ ### transformObjects
  A named list that contains objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. The default value is `NULL`. 
   
   
   
- ### `transformFunc`
+ ### transformFunc
  The variable transformation function. See rxTransform for details. The default value is `NULL`. 
   
   
   
- ### `transformVars`
+ ### transformVars
  A character vector of input data set variables needed for the transformation function. See rxTransform for details. The default value is `NULL`. 
   
   
   
- ### `transformPackages`
+ ### transformPackages
  A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. The default value is `NULL`. 
   
   
   
- ### `transformEnvir`
+ ### transformEnvir
  A user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead The default value is `NULL`. 
   
   
   
- ### `blocksPerRead`
+ ### blocksPerRead
  Specifies the number of blocks to read for each chunk  of data read from the data source. 
   
   
   
- ### `reportProgress`
+ ### reportProgress
  An integer value that specifies the level of reporting  on the row processing progress:   
 *   `0`: no progress is reported.     
 *   `1`: the number of processed rows is printed and updated.   
@@ -144,17 +145,17 @@ Transforms data from an input data set to an output data set.
   
   
   
- ### `verbose`
+ ### verbose
  An integer value that specifies the amount of output wanted.  If `0`, no verbose output is printed during calculations. Integer   values from `1` to `4` provide increasing amounts of information.  The default value is `1`. 
   
   
   
- ### `computeContext`
+ ### computeContext
  Sets the context in which computations are executed, specified with a valid RxComputeContext. Currently local and RxInSqlServer compute contexts are supported. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

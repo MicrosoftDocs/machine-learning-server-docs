@@ -5,22 +5,21 @@ title: "Install Microsoft R Client on Windows"
 description: "Microsoft R Client Install Guide Windows"
 keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Microsoft R Client"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "4/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-client"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 
@@ -32,7 +31,7 @@ R Client allows you to work with production data locally using the full set of S
 
 To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)
   
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the `mrsdeploy` package. 
+You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
 
 
 ## System Requirements

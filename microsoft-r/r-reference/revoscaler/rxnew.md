@@ -4,7 +4,8 @@
 title: "RevoScaleR Data Sources: Class Generator" 
 description: " This is the main generator for RxDataSource S4 classes. " 
 keywords: "RevoScaleR, rxNewDataSource, rxNewDataSource,character-method, file, connection" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`rxNewDataSource`: RevoScaleR Data Sources: Class Generator
+ #rxNewDataSource: RevoScaleR Data Sources: Class Generator
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -47,11 +48,11 @@ rxNewDataSource  (name, ...)
 
    
     
- ### `name`
+ ### name
  character name of the specific class to instantiate. 
   
     
- ### ` ...`
+ ###  ...
  any other arguments are passed to the class generator `name`. 
   
  

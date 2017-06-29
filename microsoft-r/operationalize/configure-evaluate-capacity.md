@@ -5,24 +5,23 @@ title: "Evaluate the load balancing capacity of your R Server configuration to o
 description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # Evaluate the load balancing capacity of your R Server configuration to operationalize
@@ -126,7 +125,7 @@ There is a cost to creating an R shell both in time and memory. So having a pool
 
 New R shells can be added to the pool until the maximum pool size (`MaxSize`) is reached. Whenever the last R shell in the pool is called, a new R shell is automatically created for the next, future execution request until the maximum is reached. After the maximum is reached, the compute node will return a `503 - server busy` response. However, during simulation test, the test will continue until the test threshold is met (maximum threads or latency). If the number of R shells needed to run the test exceeds the number of shells in the pool, a new R shell will be created on-demand when the request is made and the time it takes to execute the code will be longer since time will be spent creating the shell itself. 
 
-The size of this pool can be adjusted in the external configuration file, `appsettings.json`, found on each compute node.
+The size of this pool can be adjusted in the external configuration file, appsettings.json, found on each compute node.
 
 ```
 "Pool": {
@@ -140,7 +139,7 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
 **To update the thread pool:**
 
-   1. On each compute nodes, [open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
+   1. On each compute nodes, [open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
 
    1. Search for the section starting with `"Pool": {`
 
@@ -156,5 +155,5 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
 
 >[!Note]
->Each compute node should have the same `appsettings.json` properties.
+>Each compute node should have the same appsettings.json properties.
 

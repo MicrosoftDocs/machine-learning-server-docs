@@ -4,7 +4,8 @@
 title: "Cross Tabulation" 
 description: " Use `rxCube` to create efficiently represented contingency tables from cross-classifying factors using a formula interface. It performs equivalent calculations to the `rxCrossTabs` function, but returns its results in a different way. " 
 keywords: "RevoScaleR, rxCube, print.rxCube, summary.rxCube, as.data.frame.rxCube, subset.rxCube, [.rxCube, category, models" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -30,7 +31,7 @@ ms.custom: ""
  
  
  
- #`rxCube`: Cross Tabulation
+ #rxCube: Cross Tabulation
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -79,107 +80,107 @@ subset  (x, ...)
 
    
     
- ### `formula`
+ ### formula
  formula as described in [rxFormula](rxformula.md) with the cross-classifying variables (separated by `:`) on the right hand side. Independent variables must be factors. If present, the dependent variable must be numeric. 
   
   
     
- ### `data`
+ ### data
  either a data source object, a character string specifying a .xdf file, or a data frame object containing the cross-classifying variables. 
   
   
     
- ### `outFile`
+ ### outFile
  `NULL`, a character string specifying a .xdf file, or an [RxXdfData](rxxdfdata.md) object.  If not NULL, the cube results will be written out to an .xdf file and an `RxXdfData` object will be returned. `outFile` is not supported when using distributed compute contexts such as [RxInTeradata](rxinteradata.md). 
   
   
     
- ### `pweights`
+ ### pweights
  character string specifying the variable to use as probability weights for the observations. 
   
   
     
- ### `fweights`
+ ### fweights
  character string specifying the variable to use as frequency weights for the observations. 
   
   
     
- ### `means`
+ ### means
  logical flag. If `TRUE` (default), the mean values of the dependent variable are returned. Otherwise, the variable summations are returned. 
   
   
     
- ### `cube`
+ ### cube
  logical flag. If `TRUE`, the C++ cube functionality is called. 
   
   
     
- ### `rowSelection`
+ ### rowSelection
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### `transforms`
+ ### transforms
  an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### `transformObjects`
+ ### transformObjects
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
     
- ### `transformFunc`
+ ### transformFunc
  variable transformation function. The variables used in the  transformation function must be specified in `transformVars` if they are not variables used in the model. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformVars`
+ ### transformVars
  character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformPackages`
+ ### transformPackages
  character vector defining additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### `transformEnvir`
+ ### transformEnvir
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
     
- ### `overwrite`
+ ### overwrite
  logical value. If `TRUE`, an existing `outFile` will be overwritten. `overwrite` is ignored `outFile` is `NULL`. 
   
   
     
- ### `useSparseCube`
+ ### useSparseCube
  logical value. If `TRUE`, sparse cube is used. 
   
   
     
- ### `removeZeroCounts`
+ ### removeZeroCounts
  logical flag. If `TRUE`, rows with no observations will be removed from the output. By default, it has the same value as `useSparseCube`. For large cube computation, this should be set to `TRUE`, otherwise R may run out of memory even if the internal C++ computation succeeds. 
   
   
     
- ### `returnDataFrame`
+ ### returnDataFrame
  logical flag. If `TRUE`, a data frame is returned, otherwise a list is returned. Ignored if `outFile` is specified and is not `NULL`. See the Details section for more information. 
   
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
  number of blocks to read for each chunk of data read from the data source. 
   
   
     
- ### `rowsPerBlock`
+ ### rowsPerBlock
  maximum number of rows to write to each block in the  `outFile` (if it is not `NULL`). 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -189,37 +190,37 @@ subset  (x, ...)
   
   
     
- ### `verbose`
+ ### verbose
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
     
- ### `computeContext`
+ ### computeContext
  a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to the Revolution Compute Engine. 
   
   
     
- ### `x, object`
+ ### x, object
  output objects from rxCube function. 
   
   
     
- ### `header`
+ ### header
  logical value. If `TRUE`, header information is printed. 
   
   
     
- ### `row.names`
+ ### row.names
  the `row.names` argument passed unaltered to the underlying `as.data.frame.list` function. 
   
   
     
- ### `optional`
+ ### optional
  the `optional` argument passed unaltered to the underlying `as.data.frame.list` function. 
   
  

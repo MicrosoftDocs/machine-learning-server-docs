@@ -4,7 +4,8 @@
 title: " rxTeradataSql " 
 description: " Execute an arbitrary SQL statement that does not return data in a Teradata data base. " 
 keywords: "RevoScaleR, rxTeradataSql, rxTeradataTableExists, rxTeradataDropTable, file" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`rxTeradataSql`:  rxTeradataSql 
+ #rxTeradataSql:  rxTeradataSql 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,11 +51,11 @@ Execute an arbitrary SQL statement that does not return data in a Teradata data 
 
    
     
- ### `sqlStatement`
+ ### sqlStatement
   character string specifying valid SQL statement that does not return data  
   
     
- ### `table`
+ ### table
   One of the following:  
 *   a character string specifying a table name, in the form `"tablename"` or`"database.tablename"`. (In Teradata, each user is a database; the user database can be specified as `"username.tablename"`.) 
 *   an [RxTeradata](rxteradata.md) data source that has the `table` specified 
@@ -63,12 +64,12 @@ Execute an arbitrary SQL statement that does not return data in a Teradata data 
   
   
     
- ### `connectionString`
+ ### connectionString
  `NULL` or character string specifying the connection string.  If `NULL`, the connection string from the currently  active compute context will be used if available.  
   
   
     
- ### ` ...`
+ ###  ...
   Additional arguments to be passed through.   
   
   

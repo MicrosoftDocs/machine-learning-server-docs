@@ -4,7 +4,8 @@
 title: " Provides information about all nodes on a cluster. " 
 description: " Provides information about the capabilities of the nodes on a cluster. " 
 keywords: "RevoScaleR, rxGetNodeInfo, IO" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxGetNodeInfo`:  Provides information about all nodes on a cluster. 
+ #rxGetNodeInfo:  Provides information about all nodes on a cluster. 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -47,27 +48,27 @@ Provides information about the capabilities of the nodes on a cluster.
 
    
   
- ### `computeContext`
+ ### computeContext
  A distributed compute context (preferred), a jobInfo object, or (deprecated) a character scalar containing the name of the Microsoft HPC cluster head node being queried.  If you are interested in information about a particular node, be sure that node is included in the group specified in the compute context, or that the compute context has `groups=NULL` (HPC compute contexts).    Setting `nodes=NULL` and `groups=NULL` or `queue="all"` in the compute context is the best way to ensure getting information on all nodes. 
   
   
   
- ### ` ...`
+ ###  ...
  additional arguments for modifying the compute context before requesting the node information.  These arguments must be in the compute context constructor. For example, see [RxInTeradata](rxinteradata.md). 
   
   
   
- ### `namesOnly`
+ ### namesOnly
  logical. If `TRUE`, only a vector containing the names of the nodes will be returned. 
   
   
   
- ### `makeRNodeNames`
+ ### makeRNodeNames
  logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](rxmakernodenames.md) for details on name mangling. 
   
   
   
- ### `getWorkersOnly`
+ ### getWorkersOnly
  logical.  If `TRUE`, returns only those nodes within the cluster that are configured to actually execute jobs (where applicable; currently LSF only.). 
   
  
@@ -119,47 +120,47 @@ more details.
 Each named element in the list will contain some or all of the following:
 
 
-###`nodeName`
+###nodeName
 character scalar.  The true name of the node (as opposd to the list item name).
 
 
-###`cpuSpeed`
+###cpuSpeed
 float.  The processor speed in MHz for Microsoft HPC, or the CPU factor for LSF.
 
 
-###`memSize`
+###memSize
 integer.  The amount of RAM in MB.
 
 
-###`numCores`
+###numCores
 integer.  The number of cores.
 
 
-###`numSockets`
+###numSockets
 integer.  The number of CPU sockets.
 
 
-###`nodeState`
+###nodeState
 character scalar.  May be either "online", "offline", "draining" (shutting down, but still with jobs in queue), or "unknown".
 
 
-###`isReachable`
+###isReachable
 logical.  Determines if there is an operational network path between the head node and the given compute node.
 
 
-###`groupsOrQueues`
+###groupsOrQueues
 list of character scalars.  The node groups (on MS HPC) or queues (under LSF) to which the node belongs.
 
 
-###`numPEs`
+###numPEs
 integer. The number of Parsing Engines (PEs) - for [RxInTeradata](rxinteradata.md).
 
 
-###`numAmps`
+###numAmps
 integer. The number of Access Module Processors (AMPs) - for [RxInTeradata](rxinteradata.md).
 
 
-###`nodeId`
+###nodeId
 integer. The ID of the node - for [RxInTeradata](rxinteradata.md).
 
 

@@ -4,7 +4,8 @@
 title: "Airline On-Time Performance Data" 
 description: " Airline on-time performance data from 1987 to 2008. " 
 keywords: "RevoScaleR, AirlineData87to08, AirlineData87to08.xdf, datasets" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`AirlineData87to08`: Airline On-Time Performance Data
+ #AirlineData87to08: Airline On-Time Performance Data
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -41,119 +42,119 @@ Airline on-time performance data from 1987 to 2008.
 An .xdf file with 123534969 observations on the following 29 variables.
 
 
-###`Year`
+###Year
 year of the flight (stored as factor).
 
 
-###`Month`
+###Month
 month of the flight (stored as factor).
 
 
-###`DayOfMonth`
+###DayOfMonth
 day of the month (1 to 31) (stored as integer).
 
 
-###`DayOfWeek`
+###DayOfWeek
 day of the week (stored as factor).
 
 
-###`DepTime`
+###DepTime
 actual departure time (stored as float).
 
 
-###`CRSDepTime`
+###CRSDepTime
 scheduled departure time (stored as float).
 
 
-###`ArrTime`
+###ArrTime
 actual arrival time (stored as float).
 
 
-###`CRSArrTime`
+###CRSArrTime
 scheduled arrival time (stored as float).
 
 
-###`UniqueCarrier`
+###UniqueCarrier
 carrier ID (stored as factor).
 
 
-###`FlightNum`
+###FlightNum
 flight number (stored as factor).
 
 
-###`TailNum`
+###TailNum
 plane's tail number (stored as factor).
 
 
-###`ActualElapsedTime`
+###ActualElapsedTime
 actual elapsed time of the flight, in minutes  (stored as integer).
 
 
-###`CRSElapsedTime`
+###CRSElapsedTime
 scheduled elapsed time of the flight, in minutes (stored as integer).
 
 
-###`AirTime`
+###AirTime
 airborne time for the flight, in minutes (stored as integer).
 
 
-###`ArrDelay`
+###ArrDelay
 arrival delay, in minutes (stored as integer).
 
 
-###`DepDelay`
+###DepDelay
 departure delay, in minutes (stored as integer).
 
 
-###`Origin`
+###Origin
 originating airport (stored as factor).
 
 
-###`Dest`
+###Dest
 destination airport (stored as factor).
 
 
-###`Distance`
+###Distance
 flight distance (stored as integer).
 
 
-###`TaxiIn`
+###TaxiIn
  taxi time from wheels down to arrival at the gate, in minutes (stored as integer).
 
 
-###`TaxiOut`
+###TaxiOut
 taxi time from departure from the gate to wheels up, in minutes (stored as integer).
 
 
-###`Cancelled`
+###Cancelled
 cancellation status (stored as logical).
 
 
-###`CancellationCode`
+###CancellationCode
 cancellation code, if applicable (stored as factor).
 
 
-###`Diverted`
+###Diverted
 diversion status (stored as logical).
 
 
-###`CarrierDelay`
+###CarrierDelay
 delay, in minutes, attributable to the carrier (stored integer).
 
 
-###`WeatherDelay`
+###WeatherDelay
 delay, in minutes, attributable to weather factors (stored as integer).
 
 
-###`NASDelay`
+###NASDelay
 delay, in minutes, attributable to the National Aviation System (stored as integer).
 
 
-###`SecurityDelay`
+###SecurityDelay
 delay, in minutes, attributable to security factors (stored as integer).
 
 
-###`LateAircraftDelay`
+###LateAircraftDelay
 delay, in minutes, attributable to late-arriving aircraft (stored as integer).
 
 

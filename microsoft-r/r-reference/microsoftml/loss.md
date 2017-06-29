@@ -4,7 +4,8 @@
 title: "Classification and Regression Loss functions" 
 description: " The loss functions for classification and regression. " 
 keywords: "MicrosoftML, loss functions, expLoss, hingeLoss, logLoss, smoothHingeLoss, poissonLoss, squaredLoss, loss" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
-#`loss functions`: Classification and Regression Loss functions
+#loss functions: Classification and Regression Loss functions
 
 Applies to version 1.3.0 of package MicrosoftML.
  
@@ -57,22 +58,22 @@ The loss functions for classification and regression.
 
    
   
- ### `beta`
+ ### beta
  Specifies the numeric value of beta (dilation). The default value  is 1. 
   
   
   
- ### ` ...`
+ ###  ...
  hidden argument. 
   
   
   
- ### `margin`
+ ### margin
  Specifies the numeric margin value. The default value is 1. 
   
   
   
- ### `smoothingConst`
+ ### smoothingConst
  Specifies the numeric value of the smoothing constant. The default value is 1. 
   
  

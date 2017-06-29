@@ -4,7 +4,8 @@
 title: " Obtain Total System Memory " 
 description: " Uses operating system tools to return total system memory. " 
 keywords: ", totalSystemMemory,  sysdata " 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/27/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`totalSystemMemory`:  Obtain Total System Memory  
+ #totalSystemMemory:  Obtain Total System Memory  
  ##Description
  
 Uses operating system tools to return total system memory.

@@ -4,7 +4,8 @@
 title: " Obtain Distributed Computing Job Status and Results " 
 description: " Obtain distributed computing results and processing status. " 
 keywords: "RevoScaleR, rxGetJobResults, rxGetJobStatus, IO" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`rxGetJobResults`:  Obtain Distributed Computing Job Status and Results 
+ #rxGetJobResults:  Obtain Distributed Computing Job Status and Results 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,18 +50,18 @@ Obtain distributed computing results and processing status.
 
    
     
- ### `jobInfo`
+ ### jobInfo
  a `jobInfo` object as returned by [rxExec](rxexec.md) or a **RevoScaleR**analysis function, for example, the `rxgLastPendingJob` object, if available. 
   
   
   
- ### `consoleOutput`
+ ### consoleOutput
  `NULL` or logical value. If `TRUE`, the console output from  all of the processes is printed to the user console. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](rxgetjoboutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used. 
   
   
   
     
- ### `autoCleanup`
+ ### autoCleanup
  `NULL` or logical value. If `TRUE`, the default behavior is to clean up  any artifacts created by the distributed computing job. If `FALSE`, then the  artifacts are not deleted, and the results may be acquired using [rxGetJobResults](rxgetjobresults.md),  and the console output via [rxGetJobOutput](rxgetjoboutput.md) until the [rxCleanupJobs](rxcleanup.md) is used to delete the artifacts.  If not `NULL`, this flag overwrites the value set in the compute context when the job was submitted. If you routinely set `autoCleanup=FALSE`, you will eventually fill your hard disk with compute artifacts.If you set `autoCleanup=TRUE`and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`. 
   
  
@@ -73,31 +74,31 @@ Obtain distributed computing results and processing status.
 The possible job status strings returned by `rxGetJobStatus` are:
 
 
-###`"undetermined"`
+###"undetermined"
 information no longer retained by job scheduler.  May still retrieve results  and output when available.
 
 
-###`"finished"`
+###"finished"
 job has successfully completed.
 
 
-###`"failed"`
+###"failed"
 job has failed.
 
 
-###`"canceled"`
+###"canceled"
 job has been canceled and the cancel process is completed.
 
 
-###`"missing"`
+###"missing"
 job is no longer available on the cluster.
 
 
-###`"running"`
+###"running"
 job is either running or completing it's run (finishing, flushing buffers, etc.), or it is in the process of being canceled.
 
 
-###`"queued"`
+###"queued"
 job is in one of the following states:   it is being configured, has been submitted but has not started, is being validated, or is in the job queue.
 
 

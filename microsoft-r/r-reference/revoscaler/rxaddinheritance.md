@@ -4,7 +4,8 @@
 title: "Add Inheritance to Compatible Objects" 
 description: "Add a specific S3 class to the class of a compatible object. " 
 keywords: "RevoScaleR, rxAddInheritance, rxAddInheritance.default, rxAddInheritance.rxDTree, models, tree, classif, regression" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`rxAddInheritance`: Add Inheritance to Compatible Objects
+ #rxAddInheritance: Add Inheritance to Compatible Objects
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -52,15 +53,15 @@ rxAddInheritance  (x, inheritanceClass = "rpart",    ...  )
 
    
     
- ### `x`
+ ### x
   the object to which inheritance is to be added. Specifically, for `rxAddInheritance.rxDTree`, an object of class `rxDTree`. 
   
     
- ### `inheritanceClass`
+ ### inheritanceClass
   the class to be inherited from. Specifically, for `rxAddInheritance.rxDTree`, the class `"rpart"`. 
   
     
- ### ` ...`
+ ###  ...
   additional arguments to be passed directly to other methods. 
   
  

@@ -4,7 +4,8 @@
 title: "Generate SPSS Data Source Object" 
 description: " Generate an RxSpssData object that contains information about an SPSS data set to be imported or analyzed. RxSpssData is an S4 class, which extends  RxDataSource." 
 keywords: "RevoScaleR, RxSpssData, head.RxSpssData, tail.RxSpssData, file, connection" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`RxSpssData`: Generate SPSS Data Source Object
+ #RxSpssData: Generate SPSS Data Source Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -59,17 +60,17 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
 
    
     
- ### `file`
+ ### file
  character string specifying an SPSS data file of type .sav. 
   
   
     
- ### `stringsAsFactors`
+ ### stringsAsFactors
  logical indicating whether or not to automatically convert strings to factors on import. This can be overridden by specifying `"character"` in `colClasses` and `colInfo`. If `TRUE`, the factor levels will be coded in the order encountered. Since this factor level ordering is row dependent, the preferred method for handling factor columns is to use `colInfo` with specified `"levels"`. 
   
   
     
- ### `colClasses`
+ ### colClasses
  character vector specifying the column types to use when converting the data. The element names for the vector are used to identify which column should be converted to which type.  
 *   Allowable column types are:  
    *   `"logical"` (stored as `uchar`), 
@@ -89,7 +90,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
   
     
- ### `colInfo`
+ ### colInfo
  list of named variable information lists. Each variable information list contains one or more of the named elements given below. The information supplied for `colInfo` overrides that supplied for `colClasses`.   
 *   Currently available properties for a column information list are:  
 * `type` - character string specifying the data type for the column. See `colClasses` argument description for the available types.  
@@ -104,56 +105,56 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
   
     
- ### `rowsPerRead`
+ ### rowsPerRead
  number of rows to read at a time. This will determine the size of a block in the .xdf file if using `rxImport`. 
   
   
- ### `labelsAsLevels`
+ ### labelsAsLevels
  logical.  If `TRUE`, variables containing value labels in the SPSS file will be converted to factors, using the value labels as factor levels. 
   
   
     
- ### `labelsAsInfo`
+ ### labelsAsInfo
  logical.  If `TRUE`, variables containing value labels in the SPSS file that are not converted to factors will retain the information as valueInfoCodes and valueInfoLabels in the .xdf file.   This information can be obtained using [rxGetVarInfo](rxgetvarinfoxdf.md).  This information will also be returned as attributes for the columns in a  dataframe when using [rxDataStep](rxdatastep.md). 
   
   
     
- ### `mapMissingCodes`
+ ### mapMissingCodes
  character string specifying how to handle SPSS variables with multiple missing value codes.  If `"all"`, all of the values set as missing in SPSS will be treated as `NA`.  If `"none"`, the missing value specification in SAS will be ignored and the original values will be imported.  If `"first"`, the values equal to the first missing value code will be imported as `NA`, while any other missing value codes will be treated as the original values.  
   
   
     
- ### `varsToKeep`
+ ### varsToKeep
  character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop`. 
   
   
     
- ### `varsToDrop`
+ ### varsToDrop
  character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep`. 
   
   
     
- ### `checkVarsToKeep`
+ ### checkVarsToKeep
  logical value.  If `TRUE` variable names specified in `varsToKeep` will be checked against variables in the data set to make sure they exist.  An error will be reported if not found. Ignored if more than 500 variables in the data set. 
   
   
      
- ### `x`
+ ### x
  an `RxSpssData` object 
   
    
      
- ### `n`
+ ### n
  positive integer. Number of rows of the data set to extract. 
   
    
      
- ### `addrownums`
+ ### addrownums
  logical. If `TRUE`, row numbers will be created to match the original data set. 
   
    
      
- ### `reportProgress`
+ ### reportProgress
  integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -163,7 +164,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
    
   
      
- ### ` ...`
+ ###  ...
  arguments to be passed to underlying functions 
   
  

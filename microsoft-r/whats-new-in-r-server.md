@@ -5,22 +5,21 @@ title: "What's New in Microsoft R Server 9.1"
 description: "Updates, improvements, and changes in this release of Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "05/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-server"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 
@@ -80,7 +79,7 @@ To learn more, see [Quickstart: Parallel processing on partitioned data with rxE
 Read about the [differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
 
 ## Executing remotely 
-Asynchronous remote execution is now supported using the `mrsdeploy` R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](r/how-to-execute-code-remotely.md#async).
+Asynchronous remote execution is now supported using the mrsdeploy R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](r/how-to-execute-code-remotely.md#async).
 
 ## R Server deployment and administration in Cloudera Manager
 

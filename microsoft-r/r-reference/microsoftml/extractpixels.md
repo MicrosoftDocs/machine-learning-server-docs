@@ -4,7 +4,8 @@
 title: "Machine Learning Extract Pixel Data Transform" 
 description: " Extracts the pixel values from an image. " 
 keywords: "MicrosoftML, extractPixels, image, transform" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`extractPixels`: Machine Learning Extract Pixel Data Transform
+ #extractPixels: Machine Learning Extract Pixel Data Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -49,47 +50,47 @@ Extracts the pixel values from an image.
 
    
   
- ### `vars`
+ ### vars
  A named list of character vectors of input variable names and the name of the output variable. Note that the input variables must be of the same type. For one-to-one mappings between input and output variables, a named character vector can be used. 
   
   
   
- ### `useAlpha`
+ ### useAlpha
  Specifies whether to use alpha channel. The default value is `FALSE`. 
   
   
   
- ### `useRed`
+ ### useRed
  Specifies whether to use red channel. The default value is `TRUE`. 
   
   
   
- ### `useGreen`
+ ### useGreen
  Specifies whether to use green channel. The default value is `TRUE`. 
   
   
   
- ### `useBlue`
+ ### useBlue
  Specifies whether to use blue channel. The default value is `TRUE`. 
   
   
   
- ### `interleaveARGB`
+ ### interleaveARGB
  Whether to separate each channel or interleave in ARGB order. This might be important, for example, if you are training a convolutional neural network, since this would affect the shape of the kernel, stride etc. 
   
   
   
- ### `convert`
+ ### convert
  Whether to convert to floating point. The default value is `FALSE`. 
   
   
   
- ### `offset`
+ ### offset
  Specifies the offset (pre-scale). This requires `convert = TRUE`.  The default value is `NULL`. 
   
   
   
- ### `scale`
+ ### scale
  Specifies the scale factor. This requires `convert = TRUE`.  The default value is `NULL`. 
   
  

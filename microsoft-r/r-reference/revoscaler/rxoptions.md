@@ -4,7 +4,8 @@
 title: "Global Options for RevoScaleR" 
 description: " Functions to specify and retrieve options needed for **RevoScaleR** computations. These need to be set only once to carry out multiple computations. " 
 keywords: "RevoScaleR, rxOptions, rxGetOption, rxIsExpressEdition, environment, error, print" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`rxOptions`: Global Options for RevoScaleR
+ #rxOptions: Global Options for RevoScaleR
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -93,57 +94,57 @@ computations.
 
    
     
- ### `initialize`
+ ### initialize
  logical value. If `TRUE`, `rxOptions` resets all **RevoScaleR** options to their default value. 
   
   
     
- ### `libDir`
+ ### libDir
  character string specifying path to **RevoScaleR**'s lib directory. For 32-bit versions, this defaults to the `libs` directory; for 64-bit versions, this defaults to the `libs/x64` directory. 
   
   
     
- ### `linkDllName`
+ ### linkDllName
  character string specifying name of the **RevoScaleR**'s DLL (Windows) or shared object (Linux). 
   
   
     
- ### `cintSysDir`
+ ### cintSysDir
  character string specifying path to **RevoScaleR**'s C/C++ interpreter (CINT) directory. 
   
   
     
- ### `includeDir`
+ ### includeDir
  character string specifying path to **RevoScaleR**'s include directory. 
   
   
     
- ### `unitTestDir`
+ ### unitTestDir
  character string specifying path to **RevoScaleR**'s **RUnit**-based test directory. 
    
   
     
- ### `unitTestDataDir`
+ ### unitTestDataDir
  character string specifying path to **RevoScaleR**'s **RUnit**-based test data directory. 
   
   
     
- ### `sampleDataDir`
+ ### sampleDataDir
  character string specifying path to **RevoScaleR**'s sample data directory. 
   
   
     
- ### `demoScriptsDir`
+ ### demoScriptsDir
  character string specifying path to **RevoScaleR**'s demo script directory. 
   
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
  default value to use for `blocksPerRead` argument for many **RevoScaleR** functions. Represents the number of blocks to read within each read chunk. 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  default value to use for `reportProgress` argument for many **RevoScaleR** functions. Options are:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -153,48 +154,48 @@ computations.
   
   
     
- ### `rowDisplayMax`
+ ### rowDisplayMax
  scalar integer specifying the maximum number of rows to display when using the `verbose` argument in **RevoScaleR** functions. The  default of `-1` displays all available rows. 
   
   
     
- ### `memStatsReset`
+ ### memStatsReset
  boolean integer. If `1`, reset memory status 
   
   
     
- ### `memStatsDiff`
+ ### memStatsDiff
  boolean integer. If `1`, the change of memory status is shown. 
   
   
     
- ### `numCoresToUse`
+ ### numCoresToUse
  scalar integer specifying the number of cores to use. If set to a value higher than the number of available cores, the number of available cores will be used.  If set to `-1`, the number of available cores will be used. Increasing the number of cores to use will also increase the amount of memory required for **RevoScaleR** analysis functions. 
   
    
     
- ### `numDigits`
+ ### numDigits
  controls the number of digits to to use when  converting numeric data to or from strings, such as when printing  numeric values or importing numeric data as strings. The default is  the current value of `options()$digits`, which defaults to 7. Beyond fifteen digits, however, results are likely to be unreliable. 
   
   
     
- ### `showTransformFn`
+ ### showTransformFn
  logical value. If `TRUE`, the transform function is shown. 
   
   
     
- ### `defaultDecimalColType`
+ ### defaultDecimalColType
  Used to specify a column's data type when  only decimal values (possibly mixed with missing (`NA`) values) are encountered upon first read of the data and the column's type information is not specified via `colInfo` or `colClasses`. Supported types are "float32" and "numeric", for 32-bit floating point and 64-bit floating point values, respectively. 
   
   
     
- ### `defaultMissingColType`
+ ### defaultMissingColType
  Used to specify a given column's data type when  only missings (`NA`s) or blanks are encountered upon first read of the data  and the column's type information is not specified via `colInfo` or `colClasses`. Supported types are "float32", "numeric", and "character" for 32-bit floating point, 64-bit floating point and string values, respectively.  
   
   
    
     
- ### `computeContext`
+ ### computeContext
  an [RxComputeContext](rxcomputecontext.md) object representing the computational environment.  
 *   [RxLocalSeq](rxlocalseq.md): compute locally, using sequential processing with [rxExec](rxexec.md) High Performance Computing. 
 *   [RxLocalParallel](rxlocalparallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](rxexec.md) High Performance Computing. 
@@ -206,87 +207,87 @@ computations.
    
    
     
- ### `dataPath`
+ ### dataPath
  character vector containing paths to search for local data sources. The default is to search just the current working directory. This will be ignored if `dataPath` is specified in the active compute context. See the Details section for more information regarding the path format. 
   
   
     
- ### `outDataPath`
+ ### outDataPath
  character vector containing paths for writing new output data files. New data files will be written to the first path that exists. The default is to write to the current working directory. This will be ignored if `outDataPath` is specified in the active compute context. 
   
    
     
- ### `transformPackages`
+ ### transformPackages
  character vector defining default set of R packages to be made available and preloaded for use in variable transformation functions. If at the default setting, when using [RxInTeradata](rxinteradata.md) the default will be modified to a small package (`RevoMods`) in order to reduce memory requirements. 
   
    
     
- ### `xdfCompressionLevel`
+ ### xdfCompressionLevel
  integer in the range of -1 to 9. The higher the value, the greater the amount of compression - resulting in smaller files but a longer time to create them. If `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression will be used. 
    
   
     
- ### `fileSystem`
+ ### fileSystem
  character string or [RxFileSystem](rxfilesystem.md) object indicating type of file system; `"native"` or `RxNativeFileSystem` object can be used for the local operating system, or an `RxHdfsFileSystem` object for the Hadoop file system. 
   
   
     
- ### `useDoSMP`
+ ### useDoSMP
  `NULL`. Deprecated. Use a [RxLocalParallel](rxlocalparallel.md) compute context. 
   
    
     
- ### `opt`
+ ### opt
  character string specifying the **RevoScaleR** option to obtain. A `NULL` is returned if the option does not exist. 
   
   
     
- ### `useSparseCube`
+ ### useSparseCube
  logical value. If `TRUE`, sparse cube is used. 
   
   
     
- ### `rngBufferSize`
+ ### rngBufferSize
  a positive integer scalar specifying the buffer size for the Parallel Random Number Generators (RNGs) in MKL. 
   
   
     
- ### `dropMain`
+ ### dropMain
  logical value. If `TRUE`, main-effect terms are dropped before their interactions. 
   
   
     
- ### `coefLabelStyle`
+ ### coefLabelStyle
  character string specifying the coefficient label style. The default is "Revo". If "R", R-compatible labels are created. 
   
   
     
- ### `numTasks`
+ ### numTasks
  integer value. The default `numTasks` use in [RxInSqlServer](rxinsqlserver.md). 
   
   
     
- ### `hdfsHost`
+ ### hdfsHost
  character string specifying the host name of your Hadoop nameNode. Defaults to Sys.getenv("REVOHADOOPHOST"), or `"default"` if no REVOHADOOPHOST environment variable is set. 
   
   
     
- ### `hdfsPort`
+ ### hdfsPort
  integer scalar specifying the port number of your Hadoop nameNode, or a character string that can be coerced to numeric. Defaults to `as.integer(Sys.getenv("REVOHADOOPPORT"))`, or `0` if no REVOHADOOPPORT environment variable is set. 
   
   
     
- ### `unixRPath`
+ ### unixRPath
  The path to R executable on a Unix/Linux node. By default it points to a path corresponding to this client's version. 
   
   
     
- ### `mrsHadoopPath`
+ ### mrsHadoopPath
  Points to entry point to Hadoop MR which is deployed on every cluster node when MRS for Hadoop is installed. This script implements logic that determines which hadoop command should be called. 
   
   
     
- ### `traceLevel`
+ ### traceLevel
  Specifies the traceLevel that MRS will run with. This parameter controls MRS Logging features as well as Runtime Tracing of ScaleR functions. Levels are inclusive, (i.e. level `3:INFO` includes levels `2:WARN` and `1:ERROR` log messages). The options are:   
 *   `0`: `DISABLED` - Tracing/Logging disabled. 
 *   `1`: `ERROR`- `ERROR` coded trace points are logged to MRS log files 
@@ -300,12 +301,12 @@ computations.
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed through. 
   
   
     
- ### `default`
+ ### default
  default value for an option that is returned if option is not found 
   
   

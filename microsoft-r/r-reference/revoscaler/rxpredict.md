@@ -4,7 +4,8 @@
 title: "Predicted Values and Residuals for rxLinMod, rxLogit, and rxGlm" 
 description: " Compute predicted values and residuals using `rxLinMod`, `rxLogit` and `rxGlm` objects. " 
 keywords: "RevoScaleR, rxPredict, rxPredict.default, methods, models, regression" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`rxPredict`: Predicted Values and Residuals for rxLinMod, rxLogit, and rxGlm
+ #rxPredict: Predicted Values and Residuals for rxLinMod, rxLogit, and rxGlm
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -57,107 +58,107 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
 
    
     
- ### `modelObject`
+ ### modelObject
  object returned from a call to `rxLinMod`, `rxLogit`, or `rxGlm`. Objects with multiple dependent variables are not supported in rxPredict. 
   
   
     
- ### `data`
+ ### data
  An [RxXdfData](rxxdfdata.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](rxhadoopmr.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
   
   
     
- ### `outData`
+ ### outData
  file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, must be an .xdf file if `data` is an .xdf file or a data frame if `data` is a data frame. `outData` can also be a delimited [RxTextData](rxtextdata.md) data source if using a native file system and not appending. 
   
   
     
- ### `computeStdErrors`
+ ### computeStdErrors
  logical value. If `TRUE`, the standard errors  for each dependent variable are calculated. 
   
   
     
- ### `interval`
+ ### interval
  character string defining the type of interval calculation to perform. Supported values are `"none"`, `"confidence"`, and `"prediction"`. 
   
   
     
- ### `confLevel`
+ ### confLevel
  numeric value representing the confidence level on the interval [0, 1]. 
   
   
     
- ### `computeResiduals`
+ ### computeResiduals
  logical value. If `TRUE`, residuals are computed. 
   
   
     
- ### `type`
+ ### type
  the type of prediction desired for [rxGlm](rxglm.md) and [rxLogit](rxlogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
   
   
     
- ### `writeModelVars`
+ ### writeModelVars
  logical value. If `TRUE`, and the output data set is different from the input data set, variables in the model will be written to the output data set in addition to the predictions (and residuals, standard errors, and confidence bounds, if requested). If variables from the input data set are transformed in the model, the transformed variables will also be included. 
   
   
     
- ### `extraVarsToWrite`
+ ### extraVarsToWrite
  `NULL` or character vector of additional variables names from the input data to include in the `outData`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
   
   
     
- ### `removeMissings`
+ ### removeMissings
  logical value. If `TRUE`, rows with missing values are removed. 
   
   
     
- ### `append`
+ ### append
   either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](rxteradata.md) data source. Ignored for data frames.    
   
   
     
- ### `overwrite`
+ ### overwrite
   logical value. If `TRUE`, an existing `outData` will be overwritten.  `overwrite` is ignored if appending rows. Ignored for data frames.  
   
   
     
- ### `checkFactorLevels`
+ ### checkFactorLevels
  logical value. If `TRUE`, up to 1000 factor levels  for the data will be verified against factor levels in the model. Setting to `FALSE` can speed up computations if using lots of factors.  
   
   
     
- ### `predVarNames`
+ ### predVarNames
  character vector specifying name(s) to give to the prediction results 
   
   
     
- ### `residVarNames`
+ ### residVarNames
  character vector specifying name(s) to give to the residual results. 
   
   
     
- ### `intervalVarNames`
+ ### intervalVarNames
  `NULL` or a character vector defining low and high confidence interval variable names, respectively. If `NULL`, the strings `"_Lower"` and `"_Upper"` are appended to the dependent variable names to form the  confidence interval variable names. 
   
   
     
- ### `stdErrorsVarNames`
+ ### stdErrorsVarNames
  `NULL` or a character vector defining variable names corresponding to the standard errors, if calculated. If `NULL`, the string `"_StdErr"` is appended to the dependent variable names to form the  standard errors variable names. 
   
   
     
- ### `predNames`
+ ### predNames
  character vector specifying name(s) to give to the prediction and residual results; if length is 2, the second name is used for residuals. This argument is deprecated and `predVarNames` and `residVarNames` should be used instead. 
   
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
  number of blocks to read for each chunk of data read from the data source. If the `data` and `outData` are the same file, blocksPerRead must be 1. 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -167,17 +168,17 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
   
      
- ### `verbose`
+ ### verbose
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
      
- ### `xdfCompressionLevel`
+ ### xdfCompressionLevel
  integer in the range of -1 to 9 indicating the compression  level for the output data if written to an `.xdf` file.  The higher the value, the greater the  amount of compression - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used. 
    
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to the Revolution Compute Engine. 
   
  

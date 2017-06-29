@@ -4,7 +4,8 @@
 title: "Read R or Package NEWS Files" 
 description: "Read the R NEWS file or a package's NEWS or NEWS.Rd file." 
 keywords: ", readNews, utilities, documentation" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/27/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`readNews`: Read R or Package NEWS Files 
+ #readNews: Read R or Package NEWS Files 
  ##Description
  Read the R NEWS file or a package's NEWS or NEWS.Rd file. 
  
@@ -40,7 +41,7 @@ ms.custom: ""
 
    
     
- ### `package`
+ ### package
  a character string specifying the package for which you'd like to read the  news. If missing, the R NEWS is displayed. 
   
  

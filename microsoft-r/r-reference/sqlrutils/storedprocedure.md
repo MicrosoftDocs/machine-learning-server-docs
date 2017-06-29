@@ -4,7 +4,8 @@
 title: "SQL Server Stored Procedure: Class Generator" 
 description: " `StoredProcedure`: generates a SQLServer Stored Procedure Object   and optionally a .sql file containing a query to create a stored   procedure. StoredProcedure$registrationVec contains strings   representing the queries needed for creation of the stored procedure " 
 keywords: "sqlrutils, StoredProcedure" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`StoredProcedure`: SQL Server Stored Procedure: Class Generator
+ #StoredProcedure: SQL Server Stored Procedure: Class Generator
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -51,37 +52,37 @@ representing the queries needed for creation of the stored procedure
 
    
   
- ### `func`
+ ### func
  A valid R function or a string name of a valid R function: 1) All of the variables that the function relies on should be defined either inside the function or come in as input parameters. Among the input parameters there can be at most 1 data frame 2) The function should return either a data frame, a named list, or NULL. There can be at most one data frame inside the list. 
   
   
   
- ### `spName`
+ ### spName
  A character string specifying name for the stored procedure. 
   
   
   
- ### ` ...`
+ ###  ...
  Optional input and output parameters for the stored procedure; must be objects of classes InputData, InputParameter, or outputParameter. 
   
   
   
- ### `filePath`
+ ### filePath
  A character string specifying a path to the directory in which to create the .sql. If NULL the .sql file is not generated. 
   
   
   
- ### `dbName`
+ ### dbName
  A character string specifying name of the database to use. 
   
   
   
- ### `connectionString`
+ ### connectionString
  A character string specifying the connection string. 
   
   
   
- ### `batchSeparator`
+ ### batchSeparator
  Desired SQL batch separator (only relevant if filePath is defined) 
   
  

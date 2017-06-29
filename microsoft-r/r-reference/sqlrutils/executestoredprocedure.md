@@ -4,7 +4,8 @@
 title: "Execute a SQL Stored Procedure" 
 description: " `executeStoredProcedure`: Executes a stored procedure registered with the database " 
 keywords: "sqlrutils, executeStoredProcedure" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`executeStoredProcedure`: Execute a SQL Stored Procedure
+ #executeStoredProcedure: Execute a SQL Stored Procedure
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -47,22 +48,22 @@ ms.custom: ""
 
    
   
- ### `sqlSP`
+ ### sqlSP
  a valid StoredProcedure Object 
   
   
   
- ### ` ...`
+ ###  ...
  Optional input and output parameters for the stored procedure. All of the parameters that do not have default queries or values assigned to them must be provided 
   
   
   
- ### `connectionString`
+ ### connectionString
  A character string (must be provided if the StoredProcedure object was created without a connection string). This function requires using an ODBC driver which supports ODBC 3.8 functionality. 
   
   
   
- ### `verbose`
+ ### verbose
  Boolean. Whether to print out the command used to execute the stored procedure 
   
  

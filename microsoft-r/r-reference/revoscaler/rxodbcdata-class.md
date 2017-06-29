@@ -4,7 +4,8 @@
 title: "Class RxOdbcData" 
 description: " ODBC data source connection class. " 
 keywords: "RevoScaleR, RxOdbcData-class, show,RxOdbcData-method, classes" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`RxOdbcData-class`: Class RxOdbcData
+ #RxOdbcData-class: Class RxOdbcData
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -52,7 +53,7 @@ Class RxDataSource, directly.
  
 
 
-###`show`
+###show
 `signature(object = "RxOdbcData")`: ...
 
 

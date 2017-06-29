@@ -4,7 +4,8 @@
 title: "Export .xdf File to Delimited Text File" 
 description: " Write .xdf file content to a delimited text file. `rxDataStep` recommended. " 
 keywords: "RevoScaleR, rxXdfToText, file, connection" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxXdfToText`: Export .xdf File to Delimited Text File
+ #rxXdfToText: Export .xdf File to Delimited Text File
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,97 +54,97 @@ Write .xdf file content to a delimited text file. `rxDataStep` recommended.
 
    
     
- ### `inFile`
+ ### inFile
  either an RxXdfData object or a character string specifying the input .xdf file. 
   
   
     
- ### `outFile`
+ ### outFile
  character string specifying the output delimited text file. 
   
   
     
- ### `varsToKeep`
+ ### varsToKeep
  character vector of variable names to include when reading from `inFile`. If `NULL`, argument is ignored. Cannot be used with `varsToDrop`. 
   
   
     
- ### `varsToDrop`
+ ### varsToDrop
  character vector of variable names to exclude when reading from `inFile`. If `NULL`, argument is ignored. Cannot be used with `varsToKeep`. 
   
   
     
- ### `rowSelection`
+ ### rowSelection
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### `transforms`
+ ### transforms
  an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### `transformObjects`
+ ### transformObjects
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
     
- ### `transformFunc`
+ ### transformFunc
  variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformVars`
+ ### transformVars
  character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformPackages`
+ ### transformPackages
  character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, both those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments and those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### `transformEnvir`
+ ### transformEnvir
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
     
- ### `overwrite`
+ ### overwrite
  logical value. If `TRUE`, the existing `outFile` will be overwritten. 
   
   
     
- ### `sep`
+ ### sep
  character(s) specifying the separator between columns. 
   
   
     
- ### `quote`
+ ### quote
  logical value or numeric vector. If `TRUE`, any character or factor columns will be surrounded by double quotes. If a numeric vector, its elements are taken as the indices of columns to quote. In both cases, row and column names are quoted if they are written. If `FALSE`, nothing is quoted. 
   
   
     
- ### `na`
+ ### na
  character string to use for missing values in the data. 
   
   
     
- ### `eol`
+ ### eol
  character(s) to print at the end of each line (row). For example, `eol = "\r\n"` will produce Windows' line endings on a Unix-alike OS, and `eol = "\r"` will produce files as expected by Mac OS Excel 2004. 
   
   
     
- ### `col.names`
+ ### col.names
  a logical value indicating whether the column names in the `inFile` should be written as the first row in the output text file. 
   
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
  number of blocks to read for each chunk of data read from the data source. 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -153,7 +154,7 @@ Write .xdf file content to a delimited text file. `rxDataStep` recommended.
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments passed to the write.table function. 
   
  

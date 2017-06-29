@@ -4,7 +4,8 @@
 title: "Machine Learning Categorical Data Transform" 
 description: " Categorical transform that can be performed on data before  training a model. " 
 keywords: "MicrosoftML, categorical, transform" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`categorical`: Machine Learning Categorical Data Transform
+ #categorical: Machine Learning Categorical Data Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -49,12 +50,12 @@ training a model.
 
    
   
- ### `vars`
+ ### vars
  A character vector or list of variable names to transform. If named, the names represent the names of new variables to be created. 
   
   
   
- ### `outputKind`
+ ### outputKind
  A character string that specifies the kind of output kind.   
 *   `"ind"`: Outputs an indicator vector. The input column is a vector   of categories, and the output contains one indicator vector per slot in   the input column.    
 *   `"bag"`: Outputs a multi-set vector. If the input column is a  vector of categories, the output contains one vector, where the value in   each slot is the number of occurrences of the category in the input  vector. If the input column contains a single category, the indicator  vector and the bag vector are equivalent   
@@ -63,17 +64,17 @@ training a model.
   
   
   
- ### `maxNumTerms`
+ ### maxNumTerms
  An integer that specifies the maximum number of  categories to include in the dictionary. The default value is 1000000. 
   
   
   
- ### `terms`
+ ### terms
  Optional character vector of terms or categories. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments sent to compute engine. 
   
  

@@ -4,7 +4,8 @@
 title: " Generator for an PemaByGroup reference class object " 
 description: " Generator for an PemaByGroup reference class object to be used with pemaCompute. This will compute arbitrary statistics by a grouping variable in a data set. " 
 keywords: "RevoPemaR, PemaByGroup,  models " 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`PemaByGroup`:  Generator for an PemaByGroup reference class object 
+ #PemaByGroup:  Generator for an PemaByGroup reference class object 
 
  Applies to version 8.0.3 of package RevoPemaR.
  
@@ -47,7 +48,7 @@ will compute arbitrary statistics by a grouping variable in a data set.
 
    
     
- ### ` ...`
+ ###  ...
   Arguments used in the constructor. See Details section. 
   
  

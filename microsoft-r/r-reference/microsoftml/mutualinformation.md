@@ -4,7 +4,8 @@
 title: "Feature Selection Mutual Information Mode" 
 description: " Mutual information mode of feature selection used in the feature selection transform [selectFeatures](selectfeatures.md). " 
 keywords: "MicrosoftML, mutualInformation, feature, information, mutual, selection" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`mutualInformation`: Feature Selection Mutual Information Mode
+ #mutualInformation: Feature Selection Mutual Information Mode
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -48,17 +49,17 @@ transform [selectFeatures](selectfeatures.md).
 
    
   
- ### `numFeaturesToKeep`
+ ### numFeaturesToKeep
  If the number of features to keep is specified to be `n`, the transform picks the `n` features that have the highest mutual information with the dependent variable. The default value is 1000. 
   
   
   
- ### `numBins`
+ ### numBins
  Maximum number of bins for numerical values. Powers of 2 are recommended. The default value is 256. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

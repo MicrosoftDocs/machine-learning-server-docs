@@ -5,24 +5,23 @@ title: "Managing access tokens, bearer tokens, access_token, refresh_token - Mic
 description: "Token Management for API Requests with Microsoft R Server"
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # Managing Access Tokens for R Server API Requests
@@ -33,7 +32,8 @@ Microsoft R Server uses tokens to identify and authenticate the user who is send
 
 This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties.
 
-<br>
+>[!NOTE]
+>For proper access token signing and verification across your configuration, ensure that the JWT settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. Check with your administrator. [Learn more...](configure-authentication.md#ldap-jwt)
 
 ## Security Concerns 
 

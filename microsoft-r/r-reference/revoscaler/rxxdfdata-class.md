@@ -4,7 +4,8 @@
 title: "Class RxXdfData" 
 description: " Xdf data source connection class. " 
 keywords: "RevoScaleR, RxXdfData-class, colnames,RxXdfData-method, dim,RxXdfData-method, dimnames,RxXdfData-method, formula,RxXdfData-method, length,RxXdfData-method, names,RxXdfData-method, names<-,RxXdfData-method, row.names,RxXdfData-method, show,RxXdfData-method, str,RxXdfData-method, classes" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -37,7 +38,7 @@ ms.custom: ""
  
  
  
- #`RxXdfData-class`: Class RxXdfData
+ #RxXdfData-class: Class RxXdfData
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -64,43 +65,43 @@ Class RxDataSource, by class RxFileData.
  
 
 
-###`colnames`
+###colnames
 `signature(x = "RxXdfData")`: ... 
 
 
-###`dim`
+###dim
 `signature(x = "RxXdfData")`: ... 
 
 
-###`dimnames`
+###dimnames
 `signature(x = "RxXdfData")`: ... 
 
 
-###`formula`
+###formula
 `signature(x = "RxXdfData")`: ... 
 
 
-###`length`
+###length
 `signature(x = "RxXdfData")`: ... 
 
 
-###`names`
+###names
 `signature(x = "RxXdfData")`: ... 
 
 
-###`names<-`
+###names<-
 `signature(x = "RxXdfData")`: ... 
 
 
-###`row.names`
+###row.names
 `signature(x = "RxXdfData")`: ... 
 
 
-###`show`
+###show
 `signature(object = "RxXdfData")`: ... 
 
 
-###`str`
+###str
 `signature(object = "RxXdfData")`: ... 
 
 
