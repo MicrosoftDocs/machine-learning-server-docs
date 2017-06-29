@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`rxAddInheritance`: Add Inheritance to Compatible Objects
+ #rxAddInheritance: Add Inheritance to Compatible Objects
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,15 +53,15 @@ rxAddInheritance  (x, inheritanceClass = "rpart",    ...  )
 
    
     
- ### `x`
+ ### x
   the object to which inheritance is to be added. Specifically, for `rxAddInheritance.rxDTree`, an object of class `rxDTree`. 
   
     
- ### `inheritanceClass`
+ ### inheritanceClass
   the class to be inherited from. Specifically, for `rxAddInheritance.rxDTree`, the class `"rpart"`. 
   
     
- ### ` ...`
+ ###  ...
   additional arguments to be passed directly to other methods. 
   
  

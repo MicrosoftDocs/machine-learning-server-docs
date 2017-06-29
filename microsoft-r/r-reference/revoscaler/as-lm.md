@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`as.lm`: Conversion of a RevoScaleR rxLinMod object to an lm Object
+ #as.lm: Conversion of a RevoScaleR rxLinMod object to an lm Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,11 +48,11 @@ as.lm  (x, ...)
 
    
     
- ### `x`
+ ### x
  object of class rxLinMod. 
   
     
- ### ` ...`
+ ###  ...
  additional arguments (currently not used). 
   
  

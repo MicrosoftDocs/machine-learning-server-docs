@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`PemaMean`:  Generator for an PemaMean reference class object 
+ #PemaMean:  Generator for an PemaMean reference class object 
 
  Applies to version 8.0.3 of package RevoPemaR.
  
@@ -48,7 +48,7 @@ Generator for an PemaMean reference class object, inheriting from PemaBaseClass,
    
   
     
- ### ` ...`
+ ###  ...
   Arguments used in the constructor. See Details section.  
   
  

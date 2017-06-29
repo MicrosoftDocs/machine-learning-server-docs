@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`executeStoredProcedure`: Execute a SQL Stored Procedure
+ #executeStoredProcedure: Execute a SQL Stored Procedure
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -48,22 +48,22 @@ ms.technology: "r-server"
 
    
   
- ### `sqlSP`
+ ### sqlSP
  a valid StoredProcedure Object 
   
   
   
- ### ` ...`
+ ###  ...
  Optional input and output parameters for the stored procedure. All of the parameters that do not have default queries or values assigned to them must be provided 
   
   
   
- ### `connectionString`
+ ### connectionString
  A character string (must be provided if the StoredProcedure object was created without a connection string). This function requires using an ODBC driver which supports ODBC 3.8 functionality. 
   
   
   
- ### `verbose`
+ ### verbose
  Boolean. Whether to print out the command used to execute the stored procedure 
   
  

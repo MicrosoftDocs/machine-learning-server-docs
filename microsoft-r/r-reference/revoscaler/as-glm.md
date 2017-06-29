@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`as.glm`: Conversion of a RevoScaleR rxLogit or rxGlm object to a glm Object
+ #as.glm: Conversion of a RevoScaleR rxLogit or rxGlm object to a glm Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -51,11 +51,11 @@ as.glm  (x, ...)
 
    
     
- ### `x`
+ ### x
  object of class rxLogit or rxGlm. 
   
     
- ### ` ...`
+ ###  ...
  additional arguments (currently not used). 
   
  

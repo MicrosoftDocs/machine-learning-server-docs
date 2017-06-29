@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`CensusWorkers`: Subset of IPUMS 2000 U.S. Census Data
+ #CensusWorkers: Subset of IPUMS 2000 U.S. Census Data
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -44,27 +44,27 @@ Washington.
 An .xdf file with 351121 observations on the following 6 variables.
 
 
-###`age`
+###age
 integer variable containing ages.
 
 
-###`incwage`
+###incwage
 integer variable containing wage and salary income. The value 999999 from the original data has been converted to missing.
 
 
-###`perwt`
+###perwt
 integer variable containing person weights, that is, a frequency weight for each person record. This is treated as integer data in R.
 
 
-###`sex`
+###sex
 factor variable sex with levels `Male` and `Female`.
 
 
-###`wkswork1`
+###wkswork1
 integer variable containing the weeks worked the previous year.
 
 
-###`state`
+###state
 factor variable containing the state with levels `Connecticut`, `Indiana`, and `Washington`.
 
 

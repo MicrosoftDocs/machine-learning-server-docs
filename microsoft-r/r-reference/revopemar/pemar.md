@@ -25,7 +25,7 @@ ms.technology: "r-server"
  
 --- 
  
- #`RevoPemaR-package`:  RevoPemaR: Parallel External Memory Algorithms in R 
+ #RevoPemaR-package:  RevoPemaR: Parallel External Memory Algorithms in R 
 
  Applies to version 8.0.3 of package RevoPemaR.
  

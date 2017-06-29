@@ -31,7 +31,7 @@ ms.technology: "r-server"
  
  
  
- #`rxXdfFileName-methods`: Retrieve .xdf file name
+ #rxXdfFileName-methods: Retrieve .xdf file name
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -51,7 +51,7 @@ Get the .xdf file path from a character string or RxXdfData object.
 
    
     
- ### `x`
+ ### x
  character string containing the file name or an RxXdfData object. 
   
  

@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`request`: HTTP requests made easy and more fluent around `curl`.
+ #request: HTTP requests made easy and more fluent around `curl`.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

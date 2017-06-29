@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`getRevoRepos`:  Get Path to Revolution Analytics Package Repositories  
+ #getRevoRepos:  Get Path to Revolution Analytics Package Repositories  
  ##Description
  
 `getRevoRepos` returns the path to either the Revolution Analytics CRAN mirror or the
@@ -45,11 +45,11 @@ versioned package source repository maintained by Revolution Analytics.
 
    
     
- ### `version`
+ ### version
   A string or floating-point literal representing an R version from 2.9 or later. (2.10 is a valid version, but the versioned package source repository does not exist for this version of R.) This argument is ignored if `CRANmirror=TRUE`.  
   
     
- ### `CRANmirror`
+ ### CRANmirror
   A logical flag. If `TRUE`, the path to the Revolution Analytics CRAN mirror is returned.  
   
  

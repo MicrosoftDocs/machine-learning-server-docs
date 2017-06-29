@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxSqlServerDropTable`:  rxSqlServerDropTable 
+ #rxSqlServerDropTable:  rxSqlServerDropTable 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,17 +49,17 @@ Execute a SQL statement that drops a table or checks for existence.
 
    
     
- ### `table`
+ ### table
   character string specifying a table name or an [RxSqlServerData](rxsqlserverdata.md)data source that has the `table` specified.  
   
   
     
- ### `connectionString`
+ ### connectionString
  `NULL` or character string specifying the connection string.  If `NULL`, the connection string from the currently  active compute context will be used if available.  
   
   
     
- ### ` ...`
+ ###  ...
   Additional arguments to be passed through.  
   
   

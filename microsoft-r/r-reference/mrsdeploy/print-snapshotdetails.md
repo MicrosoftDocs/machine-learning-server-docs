@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`print.snapshotDetails`: The print generic for `snapshotDetails`.
+ #print.snapshotDetails: The print generic for `snapshotDetails`.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -50,7 +50,7 @@ print  (o)
 
    
   
- ### `o`
+ ### o
  The `snapshotDetails` list of S3 object. 
   
  

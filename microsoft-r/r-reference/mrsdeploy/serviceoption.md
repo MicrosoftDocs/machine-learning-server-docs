@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`serviceOption`: Retrieve, set, and list the different service options.
+ #serviceOption: Retrieve, set, and list the different service options.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,12 +48,12 @@ Retrieve, set, and list the different service options.
 
    
   
- ### `name`
+ ### name
  The option name. 
   
   
   
- ### `value`
+ ### value
  The option value to be set. 
   
  

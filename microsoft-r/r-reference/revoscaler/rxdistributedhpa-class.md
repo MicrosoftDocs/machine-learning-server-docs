@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxDistributedHpa-class`: Class RxDistributedHpa
+ #RxDistributedHpa-class: Class RxDistributedHpa
 
  Applies to version 9.1.0 of package RevoScaleR.
  

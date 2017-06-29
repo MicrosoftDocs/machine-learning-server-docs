@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxGetJobOutput`:  Get Console Output from Distributed Computing Job 
+ #rxGetJobOutput:  Get Console Output from Distributed Computing Job 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,7 +48,7 @@ Gets the console output from the various nodes in a non-waiting distributed comp
 
    
   
- ### `jobInfo`
+ ### jobInfo
  a job information object, such as that returned from a non-waiting,  distributed computation, for example, the `rxgLastPendingJob` object, if available. 
   
  

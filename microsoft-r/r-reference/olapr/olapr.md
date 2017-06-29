@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
 
  
- #`olapR`: OlapR: OLAP Cube access in R
+ #olapR: OlapR: OLAP Cube access in R
 
  Applies to version 1.0.0 of package olapR. This package is in prerelease.
  

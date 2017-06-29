@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxInstallPackages`: Install Packages for Compute Context
+ #rxInstallPackages: Install Packages for Compute Context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,37 +53,37 @@ Install Packages from Repositories or Local Files for a compute context.
    
   
     
- ### `pkgs`
+ ### pkgs
  `character` vector of the names of packages whose current versions should be downloaded from the repositories. If repos = NULL, a character vector of file paths of .zip files containing binary builds of packages. (http:// and file:// URLs are also accepted and the files will be downloaded and installed from local copies. If you specify .zip files with repos = `NULL` with [RxComputeContext](rxcomputecontext.md) compute context the .zip file paths should already be present on a folder. 
    
    
     
- ### `skipMissing`
+ ### skipMissing
  logical. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. If `TRUE`, skips missing dependent packages for which otherwise an error is generated.  
   
   
     
- ### `repos`
+ ### repos
  character vector, the base URL(s) of the repositories to use.Can be NULL to install from local files, directories. 
   
   
     
- ### `verbose`
+ ### verbose
  logical. If `TRUE`, "progress report" is given during installation of given packages. 
   
   
     
- ### `scope`
+ ### scope
  character. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. Should be either `"shared"` or `"private"`.  `"shared"` installs the packages on per database shared location on SQL server which in turn can be used (referred) by multiple different users. `"private"` installs the packages on per database, per user private location on SQL server which is only accessible to the single user. 
   
   
     
- ### `owner`
+ ### owner
  character. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. This is generally empty `''` value.  Should be either empty `''` or a valid SQL database user account name. Only users in `'db_owner'` role for a database can specify this value to install packages on  behalf of other users.  
   
   
     
- ### `computeContext`
+ ### computeContext
  an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
   
   

@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`RxHdfsFileSystem`: RevoScaleR HDFS File System object generator
+ #RxHdfsFileSystem: RevoScaleR HDFS File System object generator
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,35 +50,35 @@ print  ( x, ... )
 
    
     
- ### `object`
+ ### object
  object of class RxHdfsFileSystem. This argument is optional. If supplied, the values of  the other arguments are used to replace those of `object` and the modified object is returned. If these arguments are not supplied, they will take their default values.  
   
     
- ### `hostName`
+ ### hostName
  character string specifying name of host for HDFS file system.  
   
     
- ### `port`
+ ### port
  integer specifying port number.  
   
     
- ### `useWebHdfs`
+ ### useWebHdfs
  NOT YET IMPLEMENTED Optional Flag indicating whether this is a HDFS or a WebHdfs interface - default FALSE  
   
     
- ### `oAuthParameters`
+ ### oAuthParameters
  NOT YET IMPLEMENTED Optional list of OAuth2 parameters created using rxOAuthParameters function  (valid only if useWebHdfs is TRUE) - default NULL  
   
     
- ### `verbose`
+ ### verbose
  Optional Flag indicating "verbose" mode for WebHdfs HTTP calls (valid only if useWebHdfs is TRUE) - default FALSE  
   
     
- ### `x`
+ ### x
  an RxHdfsFileSystem object.  
   
     
- ### ` ...`
+ ###  ...
  other arguments are passed to the underlying function.  
   
  

@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`featurizeImage`: Machine Learning Image Featurization Transform
+ #featurizeImage: Machine Learning Image Featurization Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -48,17 +48,17 @@ Featurizes an image using a pre-trained deep neural network model.
 
    
   
- ### `var`
+ ### var
  Input variable containing extracted pixel values. 
   
   
   
- ### `outVar`
+ ### outVar
  The prefix of the output variables containing the image features. If null, the input variable name will be used. The default value is `NULL`. 
   
   
   
- ### `dnnModel`
+ ### dnnModel
  The pre-trained deep neural network. The possible options are:  
 *   `"resnet18"` 
 *   `"resnet50"` 

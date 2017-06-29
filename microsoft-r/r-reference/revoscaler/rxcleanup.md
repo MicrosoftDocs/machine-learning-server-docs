@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxCleanupJobs`:  Cleanup of a Distributed Computing Job or Jobs. 
+ #rxCleanupJobs:  Cleanup of a Distributed Computing Job or Jobs. 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,17 +48,17 @@ Removes artifacts created while executing a distributed computing job.
 
    
   
- ### `jobInfoList`
+ ### jobInfoList
  `rxJobInfo` object or a list of job objects that can be obtained  from [rxGetJobs](rxgetjobs.md). 
   
   
   
- ### `force`
+ ### force
  logical scalar. If `TRUE`, forces removal of job directories even if  there are retrievable results or if the current job state is undetermined. 
   
   
   
- ### `verbose`
+ ### verbose
  logical scalar.  If `TRUE`, will print the directories/records being deleted. 
   
  

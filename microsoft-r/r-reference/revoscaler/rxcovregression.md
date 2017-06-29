@@ -39,7 +39,7 @@ ms.technology: "r-server"
  
  
  
- #`rxCovCoef`: Covariance and Correlation Matrices for Linear Model Coefficients and Explanatory Variables
+ #rxCovCoef: Covariance and Correlation Matrices for Linear Model Coefficients and Explanatory Variables
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -64,7 +64,7 @@ explanatory variables within `rxLinMod` and `rxLogit` objects.
 
    
     
- ### `x`
+ ### x
  object of class `rxLinMod`, `rxLogit`, or `rxGlm` that  satisfies conditions in the Details section. 
   
  

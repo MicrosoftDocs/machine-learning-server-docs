@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`setPemaClass`:  PEMA classes 
+ #setPemaClass:  PEMA classes 
 
  Applies to version 8.0.3 of package RevoPemaR.
  
@@ -48,35 +48,35 @@ Returns a generator function for creating analysis reference class objects to us
 
    
     
- ### `Class`
+ ### Class
   character string name for the class.  
   
     
- ### `fields`
+ ### fields
   either a character vector of field names or a named list of the fields.   
   
     
- ### `contains`
+ ### contains
   optional vector of super reference classes for this class. The fields  and class-based methods will be inherited.  
   
   
     
- ### `methods`
+ ### methods
   a named list of function definitions that can be invoked on objects from this class.  
   
   
     
- ### `where`
+ ### where
   the environment in which to store the class definition.  
   
   
     
- ### `includeMethods`
+ ### includeMethods
   logical.  If `TRUE`, methods (including those of parent classes) will be included when serializing.  
   
   
     
- ### ` ...`
+ ###  ...
   other arguments to be passed to setRefClass.    
   
  

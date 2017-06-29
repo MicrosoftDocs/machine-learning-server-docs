@@ -33,7 +33,7 @@ ms.technology: "r-server"
  
  
  
- #`rxCancelJob`:  Cancel Distributed Computing Job 
+ #rxCancelJob:  Cancel Distributed Computing Job 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -55,11 +55,11 @@ Causes R to cancel an existing distributed computing job.
 
    
   
- ### `jobInfo`
+ ### jobInfo
  a jobInfo object, such as that returned by [rxExec](rxexec.md) or one of the  RevoScaleR analysis functions in a non-waiting compute context, or the current contents of the `rxgLastPendingJob` object. 
   
   
- ### `consoleOutput`
+ ### consoleOutput
  If `NULL`, the `consoleOutput` value assigned to  the job by the compute context at launch is used.  If `TRUE`, any console output present at the time the job is canceled is displayed.  If `FALSE`, no console output  is displayed. 
   
  

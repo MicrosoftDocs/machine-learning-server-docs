@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxRemoteHadoopMRCall`:  Remote calling mechanism for distributed computing on Hadoop MapReduce clusters.
+ #rxRemoteHadoopMRCall:  Remote calling mechanism for distributed computing on Hadoop MapReduce clusters.
 
  Applies to version 9.1.0 of package RevoScaleR.
  

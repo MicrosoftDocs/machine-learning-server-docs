@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`setInputParameterValue`: Assign a Value to the Input Data Parameter of the SQL Stored Procedure
+ #setInputParameterValue: Assign a Value to the Input Data Parameter of the SQL Stored Procedure
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -50,12 +50,12 @@ used in the next run of the stored procedure.
 
    
   
- ### `inParam`
+ ### inParam
  A character string, the name of input parameter into the R function. 
   
   
   
- ### `value`
+ ### value
  A value that is to be bound to the input parameter. Note: binding for input parameters of type "raw" is not supported. 
   
  

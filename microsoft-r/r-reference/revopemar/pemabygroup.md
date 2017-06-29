@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`PemaByGroup`:  Generator for an PemaByGroup reference class object 
+ #PemaByGroup:  Generator for an PemaByGroup reference class object 
 
  Applies to version 8.0.3 of package RevoPemaR.
  
@@ -48,7 +48,7 @@ will compute arbitrary statistics by a grouping variable in a data set.
 
    
     
- ### ` ...`
+ ###  ...
   Arguments used in the constructor. See Details section. 
   
  

@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxComputeContext-class`: Class RxComputeContext
+ #RxComputeContext-class: Class RxComputeContext
 
  Applies to version 9.1.0 of package RevoScaleR.
  

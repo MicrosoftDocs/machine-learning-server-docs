@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxElemArg`:  Helper function for rxExec arguments 
+ #rxElemArg:  Helper function for rxExec arguments 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,7 +49,7 @@ the elipsis argument for rxExec. A vector or list of the argument values is used
 
    
   
- ### `x`
+ ### x
  The list or vector to be applied across the set of computations. 
   
  

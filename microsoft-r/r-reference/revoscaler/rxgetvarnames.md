@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxGetVarNames`: Variable names for a data source or data frame
+ #rxGetVarNames: Variable names for a data source or data frame
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -46,7 +46,7 @@ Read the variable names for data source or data frame
 
    
     
- ### `data`
+ ### data
  an `RxDataSource` object, a character string specifying the .xdf file, or a data frame. 
   
  

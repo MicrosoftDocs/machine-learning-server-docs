@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxGetJobInfo`:  Get Job Information from Distributed Computing Job 
+ #rxGetJobInfo:  Get Job Information from Distributed Computing Job 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,7 +48,7 @@ Gets job information for a given distributed computing job.
 
    
   
- ### `object`
+ ### object
  an object containing `jobInfo` information, such as that returned from a non-waiting, distributed computation. 
   
  

@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxLocalParallel-class`: Class RxLocalParallel
+ #RxLocalParallel-class: Class RxLocalParallel
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,7 +53,7 @@ Class RxComputeContext, directly.
  
 
 
-###`show`
+###show
 `signature(object = "RxLocalParallel")`: ...
 
 

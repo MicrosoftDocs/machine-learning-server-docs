@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`executeMD`: olapR executeMD Methods
+ #executeMD: olapR executeMD Methods
 
  Applies to version 1.0.0 of package olapR.
  
@@ -52,15 +52,15 @@ Takes a Query object or an MDX string, and returns the result as a multi-dimensi
 
    
     
- ### `olapCnn`
+ ### olapCnn
  Object of class "OlapConnection" returned by `OlapConnection()` 
   
     
- ### `query`
+ ### query
  Object of class "Query" returned by `Query()` 
   
     
- ### `mdx`
+ ### mdx
  String specifying a valid MDX query 
   
  

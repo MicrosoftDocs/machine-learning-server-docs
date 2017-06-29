@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`execute2D`: olapR execute2D Methods
+ #execute2D: olapR execute2D Methods
 
  Applies to version 1.0.0 of package olapR.
  
@@ -52,15 +52,15 @@ Takes a Query object or an MDX string, and returns the result as a data frame.
 
    
     
- ### `olapCnn`
+ ### olapCnn
  Object of class "OlapConnection" returned by `OlapConnection()` 
   
     
- ### `query`
+ ### query
  Object of class "Query" returned by `Query()` 
   
     
- ### `mdx`
+ ### mdx
  String specifying a valid MDX query 
   
  

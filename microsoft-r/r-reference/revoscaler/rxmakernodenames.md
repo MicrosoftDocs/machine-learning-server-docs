@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxMakeRNodeNames`:  Converts valid computer names into valid R variable names. 
+ #rxMakeRNodeNames:  Converts valid computer names into valid R variable names. 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,7 +49,7 @@ names are usable as variable names.
 
    
   
- ### `nodeNames`
+ ### nodeNames
  character vector of node names to be converted. 
   
  

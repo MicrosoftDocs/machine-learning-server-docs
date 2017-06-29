@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`updateService`: Updates an existing web service.
+ #updateService: Updates an existing web service.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -50,17 +50,17 @@ Updates an existing web service on an R Server instance.
 
    
   
- ### `name`
+ ### name
  The web service name. 
   
   
   
- ### `v`
+ ### v
  The web service version. 
   
   
   
- ### `code`
+ ### code
  (optional) R code to publish. `code` can take the form of:  
 *   A function handle. 
 *   A block of R code. 
@@ -69,7 +69,7 @@ Updates an existing web service on an R Server instance.
   
   
   
- ### `model`
+ ### model
  (optional) An object or a file-path to an external  representation of R objects to be loaded and used with `code`.  The specified file can be: 
 *   File-path to an `.RData` file holding R objects to be loaded. 
 *   File-path to an `.R` file which will be evaluated into an environment and loaded. 
@@ -77,12 +77,12 @@ Updates an existing web service on an R Server instance.
   
   
   
- ### `snapshot`
+ ### snapshot
  (optional) Identifier of the snapshot to load. If serviceType is 'Realtime', snapshot has to be NULL. 
   
   
   
- ### `inputs`
+ ### inputs
  (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list  `list(x = "logical")` which describe the input parameter  names and their corresponding **Data Types**:  
 *   `numeric` 
 *   `integer` 
@@ -95,7 +95,7 @@ Updates an existing web service on an R Server instance.
   
   
   
- ### `outputs`
+ ### outputs
  (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a  named list `list(x = "logical")` which describe the output parameter  names and their corresponding **Data Types**:  
 *   `numeric` 
 *   `integer` 
@@ -108,27 +108,27 @@ Updates an existing web service on an R Server instance.
   
   
   
- ### `artifacts`
+ ### artifacts
  (optional) A character vector of filenames defining which file artifacts should be returned during service consumption. File content is encoded as a `Base64 String`. 
   
   
   
- ### `alias`
+ ### alias
  (optional) Defines predication RPC function used to consume the service. 
   
   
   
- ### `destination`
+ ### destination
  (optional) The codegen output directory location. 
   
   
   
- ### `descr`
+ ### descr
  (optional) The description of the web service. 
   
   
   
- ### `serviceType`
+ ### serviceType
  (optional) The type of the web service. Valid values are  'Script' and 'Realtime'. Defaults to 'Script'. 
   
  

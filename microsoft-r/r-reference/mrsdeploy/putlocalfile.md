@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`putLocalFile`: Upload a file from the local machine to the remote R session.
+ #putLocalFile: Upload a file from the local machine to the remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -50,7 +50,7 @@ by a script running on the remote R session.
 
    
   
- ### `filename`
+ ### filename
  Name of the file to copy. 
   
  

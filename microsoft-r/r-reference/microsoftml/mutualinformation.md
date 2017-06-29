@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`mutualInformation`: Feature Selection Mutual Information Mode
+ #mutualInformation: Feature Selection Mutual Information Mode
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -49,17 +49,17 @@ transform [selectFeatures](selectfeatures.md).
 
    
   
- ### `numFeaturesToKeep`
+ ### numFeaturesToKeep
  If the number of features to keep is specified to be `n`, the transform picks the `n` features that have the highest mutual information with the dependent variable. The default value is 1000. 
   
   
   
- ### `numBins`
+ ### numBins
  Maximum number of bins for numerical values. Powers of 2 are recommended. The default value is 256. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

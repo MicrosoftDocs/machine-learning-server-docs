@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`resume`: Return the user to the 'REMOTE>' command prompt.
+ #resume: Return the user to the 'REMOTE>' command prompt.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

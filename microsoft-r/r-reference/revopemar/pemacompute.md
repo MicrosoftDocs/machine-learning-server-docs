@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`pemaCompute`:  Comute PEMA 
+ #pemaCompute:  Comute PEMA 
 
  Applies to version 8.0.3 of package RevoPemaR.
  
@@ -47,40 +47,40 @@ Use a PemaBaseClass reference class object to perform a Parallel External Memory
 
    
     
- ### `pemaObj`
+ ### pemaObj
   A [PemaBaseClass](pemabaseclass.md) reference class object containing the methods for the analysis.  
   
     
- ### `data`
+ ### data
   A data frame or **RevoScaleR** data source object.  
   
     
- ### `outData`
+ ### outData
   An **RevoScaleR** data source object that has write capabilities, such as an .xdf file. Not used by all [PemaBaseClass](pemabaseclass.md) reference class objects.  
   
   
     
- ### `overwrite`
+ ### overwrite
  logical value. If `TRUE`, an existing `outFile` will be overwritten. 
   
   
     
- ### `append`
+ ### append
  either `"none"` to create a new files, `"rows"` to append rows to an existing file, or `"cols"` to append columns to an existing file. If `outFile` exists and `append` is `"none"`,  the `overwrite` argument must be set to `TRUE`. Ignored when `outData` is not specified or not relevant. You cannot append to `RxTextData` or `RxTeradata` data sources,  and appending is not supported for composite .xdf files or when using the `RxHadoopMR` compute context. 
   
   
     
- ### `computeContext`
+ ### computeContext
   `NULL` or a **RevoScaleR** compute context object.  
   
   
     
- ### `initPema`
+ ### initPema
   logical.  If `TRUE` the `initialize` method for the `pemaObj` object will be called before performing computations.  
   
   
     
- ### ` ...`
+ ###  ...
   Other fields in the `PemaBaseClass` class to be utilized in the analysis.  
   
  

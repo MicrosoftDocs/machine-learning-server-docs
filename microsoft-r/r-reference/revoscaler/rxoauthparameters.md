@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxOAuthParameters`: OAuth2 Token request
+ #rxOAuthParameters: OAuth2 Token request
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,35 +48,35 @@ Method to create parameter list to be used for getting an OAuth2 token.
    
   
     
- ### `authUri`
+ ### authUri
  Optional string containing OAuth Authentication URI - default NULL  
    
     
- ### `tenantId`
+ ### tenantId
  Optional string containing OAuth Tenant ID - default NULL  
   
     
- ### `clientId`
+ ### clientId
  Optional string containing OAuth ClientID - default NULL  
   
     
- ### `resource`
+ ### resource
  Optional string containing OAuth Resource  - default NULL  
   
     
- ### `username`
+ ### username
  Optional string containing OAuth Username - default NULL  
   
     
- ### `password`
+ ### password
  Optional string containing OAuth Password - default NULL  
   
     
- ### `authToken`
+ ### authToken
  Optional string containing a valid OAuth token to be used for WebHdfs requests - default NULL  
   
     
- ### `useWindowsAuth`
+ ### useWindowsAuth
  Optional Flag indicating if Windows Authentication should be used for obtaining the OAuth token (applicable only on Windows) - default NULL  
   
   

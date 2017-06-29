@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxSpark-class`: Class RxSpark
+ #RxSpark-class: Class RxSpark
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,7 +53,7 @@ Class RxComputeContext, directly.
  
 
 
-###`show`
+###show
 `signature(object = "RxSpark")`: ...
 
 

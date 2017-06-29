@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`RxLocalSeq`: Generate Local Compute Context
+ #RxLocalSeq: Generate Local Compute Context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,15 +49,15 @@ will be processed sequentially. This is the default compute context.
 
    
     
- ### `object`
+ ### object
  a compute context object. If `object` has slots for   `dataPath` and/or `outDataPath`, they will be copied to the  equivalent slots for the new `RxLocalSeq` object. Explicit specifications  of the `dataPath` and/or outDataPath arguments will override this.  
   
     
- ### `dataPath`
+ ### dataPath
  `NULL` or character vector defining the search path(s) for the input data source(s). If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxoptions.md) 
    
     
- ### `outDataPath`
+ ### outDataPath
  `NULL` or character vector defining the search path(s) for  new output data file(s).  If not `NULL`, this overrides any specification for `dataPath`in [rxOptions](rxoptions.md)  
    
  
