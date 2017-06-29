@@ -1,6 +1,6 @@
 {
-  "build_entry_point": "",
-  "need_generate_pdf": true,
+  "build_entry_point": "docs",
+  "need_generate_pdf": false,
   "need_generate_intellisense": false,
  "branch_target_mapping": {
         "live": [
@@ -60,5 +60,5 @@
 
     }
   ],
-  "need_generate_pdf_url_template": false
+  "need_generate_pdf_url_template": true
 }
