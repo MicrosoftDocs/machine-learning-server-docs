@@ -30,9 +30,9 @@ ms.custom: ""
 
 Microsoft R is a collection of packages, interpreters, and infrastructure for developing and deploying R-based machine learning and data science solutions on a range of platforms, from local standalone installations on Linux and Windows, to large distributed deployments on node clusters. We make these capabilities available in several products and services to meet the needs of individual or teams of data scientists and developers.
 
-+ [Microsoft R Server](rserver.md) is the flagship product and supports very large workloads in the enterprise. 
++ [Microsoft R Server](what-is-microsoft-r-server.md) is the flagship product and supports very large workloads in the enterprise. 
 
-+ [Microsoft R Client](r-client.md) is a free workstation version. It includes the same R Server functionality, but for local workloads.
++ [Microsoft R Client](r-client/what-is-microsoft-r-client.md) is a free workstation version. It includes the same R Server functionality, but for local workloads.
 
 + [Microsoft R Open](https://mran.microsoft.com/open/) is Microsoft's distribution of open source R, without the proprietary packages and infrastructure of our other products. This R distribution is included in both Microsoft R Client and R Server. 
 
@@ -40,15 +40,15 @@ Microsoft R is a collection of packages, interpreters, and infrastructure for de
 
 In minutes, you can step through a classic what-if problem using sample data and R script in the first quickstart. Additional step-by-step tutorials offer a hands-on experience performing practical data science tasks.
 
-* [Quickstart: Run R code in Microsoft R](quickstart-r-code.md) 
+* [Quickstart: Run R code in Microsoft R](r/quickstart-run-r-code.md) 
 
-* [Quickstart: Deploy R code as a web service](operationalize/quickstart-publish-web-service.md) 
+* [Quickstart: Deploy R code as a web service](operationalize/quickstart-publish-r-web-service.md) 
 
-* [Tutorial: Explore R-to-RevoScaleR](microsoft-r-tutorial-R2RevoScaleR.md) 
+* [Tutorial: Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md) 
 
-* [Tutorial: Import and transform data](scaler-getting-started-data-import-exploration.md)  
+* [Tutorial: Import and transform data](r/tutorial-revoscaler-data-import-transform.md)  
 
-* [Tutorial: Visualize and analyze data](scaler-getting-started-data-visualization-analysis.md) 
+* [Tutorial: Visualize and analyze data](r/tutorial-revoscaler-data-model-analysis.md) 
 
 ## Pre-built solutions
 
@@ -68,27 +68,27 @@ Additionally, you can use embedded Microsoft R packages, interpreters, and libra
 
 ## Start with a local installation
 
-If you are new to Microsoft R, we recommend starting with either [R Server for Windows](rserver-install-windows.md), [R Server for Linux](rserver-install-linux-server.md), or the free [R Client](r-client-install.md), and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation). 
+If you are new to Microsoft R, we recommend starting with either [R Server for Windows](install/r-server-install-windows.md), [R Server for Linux](install/r-server-install-linux-server.md), or the free [R Client](r-client-install.md), and an integrated development environment like [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation). 
 
 You can install these configurations for free. Each one gives you Microsoft R Open with full support of all base R functions so that you can write R-only solutions, but also includes Microsoft R proprietary packages that run locally on your development computer.
 
-Since the R engine lies underneath, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](microsoft-r-more-resources.md).
+Since the R engine lies underneath, you can use the R Core Team manuals that are part of every R distribution to learn how to code in R. Built-in manuals include *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and more. Beyond the standard R manuals, there are many other resources. [Learn about them here](resources-more.md).
 
-However, because you have R Client or R Server, your script can also include functions shipped only with Microsoft R products, including the [MicrosoftML](microsoftml/microsoftml.md), [olapR](olapr/olapr.md), [mrsdeploy](mrsdeploy/mrsdeploy.md), and [RevoScaleR](scaler/scaler.md) packages. All of these packages are available in both R Client and R Server, but at different levels of capacity.
+However, because you have R Client or R Server, your script can also include functions shipped only with Microsoft R products, including the [MicrosoftML](r-reference/microsoftml/microsoftml-package.md), [olapR](r-reference/olapr/olapr.md), [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md), and [RevoScaleR](r-reference/revoscaler/revoscaler.md) packages. All of these packages are available in both R Client and R Server, but at different levels of capacity.
 
 ## Next steps
 
 Learn more about Microsoft R in these articles:
 
-+ [Operationalizing R code with R Server](operationalize/about.md)
++ [Operationalizing R code with R Server](what-is-operationalization.md)
 
-+ [What's new in R Server](rserver-whats-new.md)
++ [What's new in R Server](whats-new-in-r-server.md)
 
-+ [What's new in R Client](rserver-whats-new.md)
++ [What's new in R Client](whats-new-in-r-server.md)
 
 + [Microsoft R Product Web Page](https://www.microsoft.com/en-us/cloud-platform/r-server)
 
-+ [Supported platforms in Microsoft R Server](rserver-install-supported-platforms.md)
++ [Supported platforms in Microsoft R Server](install/r-server-install-supported-platforms.md)
 
 + [Microsoft R Client Get Started](r-client-get-started.md)
 
@@ -96,5 +96,5 @@ Learn more about Microsoft R in these articles:
 
 + [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx)
 
-+ [Additional Resources](microsoft-r-more-resources.md)
++ [Additional Resources](resources-more.md)
 
