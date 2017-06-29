@@ -90,13 +90,13 @@ The operationalization feature supports a wide range of runtime policies that af
 
 ### General
 
-The external configuration file, `appsettings.json` defines a number of policies for the services. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node. The location of this file depends on the R Server version, operating system, and the node. Learn more in this article: ["Editing the `appsettings.json` configuration file for R Server"](configure-find-admin-configuration-file.md).
+The external configuration file, appsettings.json defines a number of policies for the services. There is one appsettings.json file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node. The location of this file depends on the R Server version, operating system, and the node. Learn more in this article: ["Editing the appsettings.json configuration file for R Server"](configure-find-admin-configuration-file.md).
  
 ### Asynchronous batch sizes
 
 Your users can perform speedy real-time and batch scoring. To reduce the risk of resource exhaustion by a single user, you can set the maximum number of operations that a single caller can execute in parallel during a specific asynchronous batch job. 
 
-This value is defined in `"MaxNumberOfThreadsPerBatchExecution"`  property in the `appsettings.json` on the web node. If you have multiple web nodes, we recommend you set the same values on every machine. 
+This value is defined in `"MaxNumberOfThreadsPerBatchExecution"`  property in the appsettings.json on the web node. If you have multiple web nodes, we recommend you set the same values on every machine. 
 
 ### Availability
 

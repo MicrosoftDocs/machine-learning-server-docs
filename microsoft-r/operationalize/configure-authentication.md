@@ -80,15 +80,15 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **On each web node:**
 
-1. Enable LDAP/LDAP-S in the external JSON configuration file, `appsettings.json`:
+1. Enable LDAP/LDAP-S in the external JSON configuration file, appsettings.json:
 
-   1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
+   1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
 
    1. Search for the section starting with `"LDAP": {`
    
    1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  
 
-      > For better security, we recommend you [encrypt the password](configure-use-admin-utility.md#encrypt) before adding the information to `appsettings.json`.
+      > For better security, we recommend you [encrypt the password](configure-use-admin-utility.md#encrypt) before adding the information to appsettings.json.
 
    |LDAP Properties|Definition|
    |---------------|-------------------------------|
@@ -138,9 +138,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    <br>
       
    >[!NOTE]
-   >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in `appsettings.json`.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+   >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in appsettings.json.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
-1. To set different levels of permissions for users interacting with web services, [assign them roles](configure-roles.md).
+1. To set different levels of permissions for users interacting with web services, [assign them roles](configure-roles.md). <a name="ldap-jwt"></a>
 
 1. If using a certificate for access token signing, you must: 
 
@@ -155,7 +155,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
       > Read [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) to learn how to use a **self-signed certificate in Linux** for access token signing.
 
-   1. In the `appsettings.json` file, search for the section starting with `"JWTSigningCertificate": {`
+   1. In the appsettings.json file, search for the section starting with `"JWTSigningCertificate": {`
 
    1. Enable this section and update the properties so that they match the values for your token signing certificate:
       ```
@@ -166,9 +166,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
           "SubjectName": "CN=<subject name>"
       }
       ```
-1. Save changes to `appsettings.json`.
+1. Save changes to appsettings.json. **ALL WEB NODES MUST HAVE THE SAME JWT VALUES** for proper load balancing.
 
-1. [Restart the web node](configure-use-admin-utility.md#startstop) using the administration utility so that the changes can take effect.
+1. [Restart the web node](configure-use-admin-utility.md#startstop) using the administration utility so that the changes can take effect. 
  
 1. Run the [diagnostic tests](configure-run-diagnostics.md) to ensure all tests are passing in the configuration.
 
@@ -210,7 +210,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
 
    1. Click the arrow to continue.
 
-   1. Enter the App properties. In the **SIGN-ON URL** box, paste the application URL you copied earlier; or if you expect the R client to be on the same machine as the server, use `http://localhost:12800`. Then, enter that same URL in the **App ID URI** box. 
+   1. Enter the App properties. In the **SIGN-ON URL** box, paste the application URL you copied earlier; or if you expect the R client to be on the same machine as the server, use http://localhost:12800. Then, enter that same URL in the **App ID URI** box. 
 
    1. Click the checkmark to continue and add the application.
 
@@ -269,7 +269,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
 **Step 4: Enable Azure AD on each web node**
 
-1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
+1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
 
 1. Search for the section starting with:
    ```

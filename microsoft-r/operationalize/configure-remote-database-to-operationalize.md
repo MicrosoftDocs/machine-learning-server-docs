@@ -54,7 +54,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
 1.  Update the database properties to point to the new database as follows:
 
-    1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md). 
+    1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md). 
 
     1. Locate the `ConnectionStrings` property block.
 
@@ -93,7 +93,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
        "Connection":  "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
        ```       
     
-    1. <a name="encrypt"></a>For better security, we recommend you encrypt the connection string for this database before adding the information to `appsettings.json`.
+    1. <a name="encrypt"></a>For better security, we recommend you encrypt the connection string for this database before adding the information to appsettings.json.
     
        1. Use the administration utility to [encrypt the connection string](configure-use-admin-utility.md#encrypt).
 
@@ -110,7 +110,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
        },
        ```       
 
-    1. Save the changes you've made to `appsettings.json`.
+    1. Save the changes you've made to appsettings.json.
 
 1. Open the database port on the remote machine to the public IP of each web node as described in these articles: [SQL Server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx) | [PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
          

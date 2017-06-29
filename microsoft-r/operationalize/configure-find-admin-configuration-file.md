@@ -28,7 +28,7 @@ ms.technology:
 
 **Applies to:  Microsoft R Server 9.x**
 
-The external configuration file, `appsettings.json`, defines a number of policies used when deploying and operationalizing web services with R Server. There is one `appsettings.json` file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node.
+The external configuration file, appsettings.json, defines a number of policies used when deploying and operationalizing web services with R Server. There is one appsettings.json file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node.
 
 + On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, compute node declarations, and more.
 

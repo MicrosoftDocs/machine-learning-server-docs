@@ -161,7 +161,7 @@ The encryption function available in the administration utility relies on the RS
 
       1. Enter information you want to encrypt.  The tool returns an encrypted string.
 
-1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
+1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
 
 1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.md#encrypt) or the [authentication password](configure-authentication.md#encrypt) strings. 
 
@@ -201,5 +201,5 @@ The following command line switches are available for the administration utility
 |-silentwebnodeinstall <password>|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently<br> and sets an admin password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
 |-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently. For example: <br>`-silentcomputenodeinstall`|9.1|
 |-setpassword <password>|Sets the password. Cannot be used <br> if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|
-|-preparedbmigration <appSettingsPath>|Migrates the data from current database to a <br>different database schema. Takes the path to<br>the web node’s appsetting.json file as an<br> argument. This is uncommonly needed as a<br>step [when upgrading](../install/operationalize-r-server-enterprise-config.md#upgradewebnode). For example:<br>`-preparedbmigration C:/Program Files/`<br>`Microsoft/mrs/o16n/Microsoft.RServer.WebNode/`<br>`appsettings.json`|9.1|
+|-preparedbmigration <appSettingsPath>|Migrates the data from current database to a <br>different database schema. Takes the path to<br>the web node’s appsetting.json file as an<br> argument. This is uncommonly needed as a<br>step [when upgrading](../install/operationalize-r-server-enterprise-config.md#upgradewebnode). For example:<br>`-preparedbmigration C:/Program Files/`<br>`Microsoft/mrs/o16n/Microsoft.RServer.WebNode/`<br>appsettings.json|9.1|
 |-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName|Silently [encrypts secrets](#encrypt). For example: <br>-encryptsecret thesecret storeName storeLocationsubjectName|9.1|

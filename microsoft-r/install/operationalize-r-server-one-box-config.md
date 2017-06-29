@@ -64,7 +64,7 @@ The web nodes and compute nodes are supported on:
 To replace an older version of a one-box configuration, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps.** 
 
 >[!IMPORTANT]
->Before you begin, back up the `appsettings.json` file on each node you can restore in the event of an upgrade issue.
+>Before you begin, back up the appsettings.json file on each node you can restore in the event of an upgrade issue.
 
 1. If you used the default SQLite database, `deployrdb_9.0.0.db` in R Server 9.0 and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
