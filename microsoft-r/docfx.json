@@ -1,24 +1,45 @@
 {
   "build": {
-    "content":
-      [
-        {
-          "files": ["**/**.md"],
-          "exclude": ["**/obj/**"]
-        }
-      ],
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ]
+      }
+    ],
     "resource": [
-        {
-          "files": ["**/media/**", "**/*.json", "**/*.pdf"],
-          "exclude": ["**/obj/**"]
-        }
+      {
+        "files": [
+          "**/*.svg",
+          "**/*.png",
+          "**/*.jpg",
+          "**/*.jpeg",
+          "**/*.gif"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      }
     ],
+    "overwrite": [],
+    "externalReference": [],
     "globalMetadata": {
-        "ROBOTS": "INDEX, FOLLOW"
-    },
-    "externalReference": [
-    ],
-    "template": "op.html",
+  "breadcrumb_path": "breadcrumb/toc.yml",
+  "contributors_to_exclude": ["openpublishingbuild","v-thepet","sudeepku" ,"PRmerger"],
+  "searchScope": ["r-server"]
+},
+    "fileMetadata": {},
+    "template": [],
     "dest": "microsoft-r"
   }
 }
