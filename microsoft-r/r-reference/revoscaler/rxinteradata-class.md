@@ -4,7 +4,8 @@
 title: "Class RxInTeradata" 
 description: " Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster. " 
 keywords: "RevoScaleR, RxInTeradata-class, doPreJobValidation,RxInTeradata-method, initialize,RxInTeradata-method, show,RxInTeradata-method, classes" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

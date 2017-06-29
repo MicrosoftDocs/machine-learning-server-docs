@@ -5,24 +5,23 @@ title: "Configure R Server to operationalize analytics (enterprise) - Microsoft 
 description: "Configure Operationalization for Microsoft R Server, load balancer, "
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # Configuring R Server to operationalize analytics (Enterprise Configuration)

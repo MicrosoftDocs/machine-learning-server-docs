@@ -5,22 +5,21 @@ title: "RevoScaleR User's Guide--Converting RevoScaleR Model Objects for Use in 
 description: "Using PMML with RevoScaleR model objects."
 keywords: ""
 author: "richcalaway"
+ms.author: "richcala"
 manager: "jhubbard"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-server"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 

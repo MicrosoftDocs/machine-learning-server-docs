@@ -5,22 +5,21 @@ title: "Package Dependencies for Microsoft R Server installations on Linux and H
 description: "Required Linux packages for a Microsoft R Server installation on Linux and Hadoop systems."
 keywords: ""
 author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "04/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-server"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 # Package Dependencies for Microsoft R Server installations on Linux and Hadoop

@@ -5,22 +5,21 @@ title: "Quickstart for Administrators configuring for operationalization - Micro
 description: "Getting started for Administrators"
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "deployr"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 

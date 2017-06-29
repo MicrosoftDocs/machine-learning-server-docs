@@ -4,7 +4,8 @@
 title: "SQL Server Stored Procedure: Class Generator" 
 description: " `StoredProcedure`: generates a SQLServer Stored Procedure Object   and optionally a .sql file containing a query to create a stored   procedure. StoredProcedure$registrationVec contains strings   representing the queries needed for creation of the stored procedure " 
 keywords: "sqlrutils, StoredProcedure" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

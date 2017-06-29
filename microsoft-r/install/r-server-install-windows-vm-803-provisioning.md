@@ -5,24 +5,23 @@ title: "Provision version 8.0.3 R Server (standalone) SQL Server 2016 Enterprise
 description: "Provision the R Server 8.0.3 Only SQL Server 2016 Enterprise VM on Azure"
 keywords: ""
 author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "12/20/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - r-client
   - r-server
-ms.custom: ""
+#ms.custom: ""
 
 ---
 

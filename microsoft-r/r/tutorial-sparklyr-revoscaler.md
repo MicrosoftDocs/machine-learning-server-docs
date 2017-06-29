@@ -5,24 +5,23 @@ title: "RevoScaleR with Sparklyr example (Microsoft R)"
 description: "Spark interoperability with Microsoft R Server 9.1"
 keywords: ""
 author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "04/17/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - r-client
   - r-server
-ms.custom: ""
+#ms.custom: ""
 
 ---
 

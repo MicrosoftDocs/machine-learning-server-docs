@@ -4,7 +4,8 @@
 title: " Execute Hadoop Commands " 
 description: " Execute arbitrary Hadoop commands and perform standard file operations in Hadoop. " 
 keywords: "RevoScaleR, rxHadoopCommand, rxHadoopCopy, rxHadoopCopyFromLocal, rxHadoopCopyFromClient, rxHadoopCopyToLocal, rxHadoopFileExists, rxHadoopListFiles, rxHadoopMakeDir, rxHadoopMove, rxHadoopRemove, rxHadoopRemoveDir, rxHadoopVersion, file" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  

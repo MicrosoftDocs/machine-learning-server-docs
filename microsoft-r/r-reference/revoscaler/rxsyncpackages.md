@@ -4,7 +4,8 @@
 title: "Syncs Packages for Compute Context" 
 description: "  **NOTE: This new API is in pre-release mode and subject to change before final release.**  Synchronizes all packages listed in for database to the files system for a compute context. The packages contained in the database are installed on the file system so they can be loaded by R. rxSyncPackages should be called after SQL Server is restored to a new machine or if a R package on the file system is believed to be corrupted.  " 
 keywords: "RevoScaleR, rxSyncPackages, sync, synchronize, use, packages, sql" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
