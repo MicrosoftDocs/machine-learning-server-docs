@@ -58,7 +58,7 @@ The web nodes and compute nodes are supported on:
 - Ubuntu 14.04, Ubuntu 16.04,
 - CentOS/RHEL 7.x
 
-## How to upgrade from 9.0 to 9.1 
+## How to upgrade 
 
 To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps:** 
 
@@ -129,7 +129,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
 
 
-## How to perform an enterprise configuration
+## How to configure for the enterprise
 
 ### 1. Configure a database
 
@@ -309,7 +309,7 @@ You can set up the load balancer of your choosing.
 
 Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required. 
 
-For proper access token signing and verification across your configuration, ensure that the JWT settings _are exactly the same for every web node_.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](./operationalize/configure-authentication.md#ldap-jwt)
+For proper access token signing and verification across your configuration, ensure that the JWT settings _are exactly the same for every web node_.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
 
 ### 7. Post configuration steps
 
