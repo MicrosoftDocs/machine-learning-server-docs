@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`RxFileSystem`: RevoScaleR File System object generator
+ #RxFileSystem: RevoScaleR File System object generator
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,15 +50,15 @@ print  ( x, ... )
 
    
     
- ### `fileSystem`
+ ### fileSystem
  character string specifying class name or file system type  existing `RxFileSystem` object.  Choices include: "RxNativeFileSystem" or "native", or "RxHdfsFileSystem" or "hdfs". Optional arguments `hostName` and `port` may be specified for HDFS file systems.  
   
     
- ### `x`
+ ### x
  an RxFileSystem object.  
   
     
- ### ` ...`
+ ###  ...
  other arguments are passed to the underlying function.  
   
  

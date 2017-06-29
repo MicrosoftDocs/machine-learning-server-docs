@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`getInputParameters`: Get a List of Input Parameters of a SQL Stored Procedure
+ #getInputParameters: Get a List of Input Parameters of a SQL Stored Procedure
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -50,7 +50,7 @@ with a stored procedure
 
    
   
- ### `sqlSP`
+ ### sqlSP
  A valid StoredProcedure Object 
   
  

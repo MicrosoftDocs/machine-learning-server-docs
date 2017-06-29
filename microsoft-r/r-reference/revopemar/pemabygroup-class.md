@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`PemaByGroup-class`: Class PemaByGroup
+ #PemaByGroup-class: Class PemaByGroup
 
  Applies to version 8.0.3 of package RevoPemaR.
  

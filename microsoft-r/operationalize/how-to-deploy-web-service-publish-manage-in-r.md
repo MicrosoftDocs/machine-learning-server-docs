@@ -316,7 +316,7 @@ remoteLogin("http://localhost:12800",
 serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
 
 # Publish as service using publishService() function from 
-# `mrsdeploy` package. Use the service name variable and provide
+# mrsdeploy package. Use the service name variable and provide
 # unique version number. Assign service to the variable `api`
 api <- publishService(
      serviceName,

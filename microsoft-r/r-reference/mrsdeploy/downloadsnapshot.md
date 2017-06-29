@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`downloadSnapshot`: Download a snapshot from the R server.
+ #downloadSnapshot: Download a snapshot from the R server.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,12 +48,12 @@ Downloads the specified snapshot from the R server in zip format.
 
    
   
- ### `snapshot_id`
+ ### snapshot_id
  Identifier of the snapshot to load. 
   
   
   
- ### `file`
+ ### file
  Name of a file to write the contents of the snapshot.  If `NULL`, (the default), then the raw vector of bytes will be returned. 
   
  

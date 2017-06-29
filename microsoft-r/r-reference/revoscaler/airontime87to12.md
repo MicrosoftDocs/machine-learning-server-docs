@@ -30,7 +30,7 @@ ms.technology: "r-server"
  
  
  
- #`AirOnTime87to12`: Airline On-Time Performance Data
+ #AirOnTime87to12: Airline On-Time Performance Data
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -46,187 +46,187 @@ AirOnTime7Pct is a 7 percent subsample with a subset of 9 variables: ArrDelay, A
 CRSDepTime, DayOfWeek, DepDelay, Dest,Origin, UniqueCarrier, Year.
 
 
-###`Year`
+###Year
 year of flight (stored as integer).
 
 
-###`Month`
+###Month
 month of the flight(stored as integer).
 
 
-###`DayofMonth`
+###DayofMonth
 day of the month (1 to 31) (stored as integer).
 
 
-###`DayOfWeek`
+###DayOfWeek
 day of the week (stored as factor).
 
 
-###`FlightDate`
+###FlightDate
 flight date (stored as Date).
 
 
-###`UniqueCarrier`
+###UniqueCarrier
 unique carrier code (stored as factor).  When the same code has been used by multiple carriers, a numeric suffix is used for earlier users, for example, PA, PA(1), PA(2).
 
 
-###`TailNum`
+###TailNum
 plane's tail number (stored as factor).
 
 
-###`FlightNum`
+###FlightNum
 flight number (stored as factor).
 
 
-###`OriginAirportID`
+###OriginAirportID
 originating airport, airport ID (stored as factor).  An identification number assigned by US DOT to identify a unique airport.  Use  this field for airport analysis across a range of years because an airport can  change its airport code and airport codes can be reused.
 
 
-###`Origin`
+###Origin
 originating airport (stored as factor).
  
 
-###`OriginState`
+###OriginState
 originating airport, state code (stored as factor).
  
 
-###`DestAirportID`
+###DestAirportID
 destination airport, airport ID (stored as factor).  An identification number assigned by US DOT to identify a unique airport.  Use  this field for airport analysis across a range of years because an airport can  change its airport code and airport codes can be reused.
 
 
-###`Dest`
+###Dest
 destination airport (stored as factor).
 
 
-###`DestState`
+###DestState
 destination airport, state code (stored as factor).
 
 
-###`CRSDepTime`
+###CRSDepTime
 scheduled local departure time (stored as decimal float, e.g., 12:45 is stored as 12.75).
 
 
-###`DepTime`
+###DepTime
 actual local departure time (stored as decimal float, e.g., 12:45 is stored as 12.75).
 
 
-###`DepDelay`
+###DepDelay
 difference in minutes between scheduled and actual departure time (stored as integer). Early departures show negative numbers.
 
 
-###`DepDelayMinutes`
+###DepDelayMinutes
 difference in minutes between scheduled and actual departure time (stored as integer). Early departures set to 0.
 
 
-###`DepDel15`
+###DepDel15
 departure delay indicator, 15 minutes or more (stored as logical).
  
 
-###`DepDelayGroups`
+###DepDelayGroups
 departure delay intervals, every 15 minutes from < -15 to > 180 (stored as a factor).
  
 
-###`TaxiOut`
+###TaxiOut
 taxi time from departure from the gate to wheels off, in minutes (stored as integer).
  
 
-###`WheelsOff`
+###WheelsOff
 wheels off time in local time (stored as decimal float, e.g., 12:45 is stored as 12.75).
  
 
-###`WheelsOn`
+###WheelsOn
 wheels on time in local time (stored as decimal float, e.g., 12:45 is stored as 12.75).
  
 
-###`TaxiIn`
+###TaxiIn
 taxi in time in minutes (stored as integer).
  
 
-###`CRSArrTime`
+###CRSArrTime
 scheduled arrival in local time (stored as decimal float, e.g., 12:45 is stored as 12.75).
 
 
-###`ArrTime`
+###ArrTime
 actual arrival time in local time (stored as decimal float, e.g., 12:45 is stored as 12.75).
 
 
-###`ArrDelay`
+###ArrDelay
 difference in minutes between scheduled and   actual arrival time (stored as integer). Early arrivals show negative numbers.
 
 
-###`ArrDelayMinutes`
+###ArrDelayMinutes
 difference in minutes between scheduled and   actual arrival time (stored as integer). Early arrivals set to 0.
  
 
-###`ArrDel15`
+###ArrDel15
 arrival delay indicator, 15 minutes or more  (stored as logical).
 
 
-###`ArrDelayGroups`
+###ArrDelayGroups
 arrival delay intervals, every 15 minutes from < -15 to > 180 (stored as a factor).
  
 
-###`Cancelled`
+###Cancelled
 cancelled flight indicator (stored as logical).
  
 
-###`CancellationCode`
+###CancellationCode
 cancellation code, if applicable (stored as factor).
 
 
-###`Diverted`
+###Diverted
 diverted flight indicator(stored as logical).
  
 
-###`CRSElapsedTime`
+###CRSElapsedTime
 scheduled elapsed time of flight, in minutes (stored as integer).
 
 
-###`ActualElapsedTime`
+###ActualElapsedTime
 actual elapsed time of flight, in minutes (stored as integer).
 
 
-###`AirTime`
+###AirTime
 flight time, in minutes (stored as integer).
 
 
-###`Flights`
+###Flights
 number of flights (stored as integer).
 
 
-###`Distance`
+###Distance
 distance between airports in miles (stored as integer).
 
 
-###`DistanceGroup`
+###DistanceGroup
 distance intervals, every 250 miles, for flight segment (stored as a factor).
 
 
-###`CarrierDelay`
+###CarrierDelay
 delay, in minutes, attributable to the carrier (stored as integer).
 
 
-###`WeatherDelay`
+###WeatherDelay
 delay, in minutes, attributable to weather factors (stored as integer).
 
 
-###`NASDelay`
+###NASDelay
 delay, in minutes, attributable to the National Aviation System (stored as integer).
 
 
-###`SecurityDelay`
+###SecurityDelay
 delay, in minutes, attributable to security factors (stored as integer).
 
 
-###`LateAircraftDelay`
+###LateAircraftDelay
 delay, in minutes, attributable to late-arriving aircraft (stored as integer).
 
 
-###`MonthsSince198710`
+###MonthsSince198710
 number of months since October 1987 (store as integer).
 
 
-###`DaysSince19871001`
+###DaysSince19871001
 number of days since 1 October 1987 (store as integer).
 
 

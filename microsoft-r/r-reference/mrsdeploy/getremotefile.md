@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`getRemoteFile`: Get the content of a file from remote R session.
+ #getRemoteFile: Get the content of a file from remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,12 +48,12 @@ Get the content of a file from the working directory of the remote R session.
 
    
   
- ### `filename`
+ ### filename
  Name of the file in the remote working directory. 
   
   
   
- ### `as`
+ ### as
  The content type of the file ("text" or "raw").  For binary files use 'raw'. 
   
  

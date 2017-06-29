@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`putLocalObject`: Copy an object from the local R session to the remote R session.
+ #putLocalObject: Copy an object from the local R session to the remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -49,12 +49,12 @@ of the remote R session.
 
    
   
- ### `obj`
+ ### obj
  A character vector containing the names of the R Objects in the local R session to load in the remote R session 
   
   
   
- ### `name`
+ ### name
  The name of an R list object (created if necessary) in the remote R session that will contain the R objects from the local R session.  If `name` is `NULL`, then R objects from the local R session will be loaded in the GlobalEnv of the remote R session. 
   
  

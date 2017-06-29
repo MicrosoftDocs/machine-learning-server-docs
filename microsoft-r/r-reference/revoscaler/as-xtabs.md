@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`as.xtabs`: Conversion of a RevoScaleR Cross Tabulation Object to an xtabs Object
+ #as.xtabs: Conversion of a RevoScaleR Cross Tabulation Object to an xtabs Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -51,11 +51,11 @@ as.xtabs  (x, ...)
 
    
     
- ### `x`
+ ### x
  object of class rxCrossTabs or rxCube. 
   
     
- ### ` ...`
+ ###  ...
  additional arguments (currently not used). 
   
  

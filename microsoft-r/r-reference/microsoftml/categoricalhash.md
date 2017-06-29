@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`categoricalHash`: Machine Learning Categorical HashData Transform
+ #categoricalHash: Machine Learning Categorical HashData Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -50,37 +50,37 @@ training a model.
 
    
   
- ### `vars`
+ ### vars
  A character vector or list of variable names to transform. If named, the names represent the names of new variables to be created. 
   
   
   
- ### `hashBits`
+ ### hashBits
  An integer specifying the number of bits to hash into.  Must be between 1 and 30, inclusive. The default value is 16. 
   
   
   
- ### `seed`
+ ### seed
  An integer specifying the hashing seed. The default value is 314489979. 
   
   
   
- ### `ordered`
+ ### ordered
  `TRUE` to include the position of each term in the  hash. Otherwise, `FALSE`. The default value is `TRUE`. 
   
   
   
- ### `invertHash`
+ ### invertHash
  An integer specifying the limit on the number of keys  that can be used to generate the slot name. `0` means no invert  hashing; `-1` means no limit. While a zero value gives better  performance, a non-zero value is needed to get meaningful coefficent names. The default value is `0`. 
   
   
   
- ### `bag`
+ ### bag
  `TRUE` to combine multiple indicator vectors into a single  bag vector instead of concatenating them. This is only relevant when the  input is a vector. The default value is `TRUE`. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments sent to the compute engine. 
   
  

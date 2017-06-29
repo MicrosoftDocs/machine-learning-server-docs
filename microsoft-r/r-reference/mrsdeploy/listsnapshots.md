@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`listSnapshots`: Get a list of snapshots for the current user.
+ #listSnapshots: Get a list of snapshots for the current user.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

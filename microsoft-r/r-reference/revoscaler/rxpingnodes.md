@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxPingNodes`:  Simple Test of Compute Cluster Nodes 
+ #rxPingNodes:  Simple Test of Compute Cluster Nodes 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,17 +49,17 @@ computation nodes.
 
    
   
- ### `computeContext`
+ ### computeContext
  A distributed compute context. [RxHpcServer](revoscaler-deprecated.md), and  [RxInTeradata](rxinteradata.md) contexts are supported.  See the details section for more information. 
   
   
   
- ### `timeout`
+ ### timeout
  A non-negative integer value.  Real valued numbers will be cast to integers.  This parameter sets a total (real clock) time to attempt to perform a ping.  The timer is not started until  the system has first determined which nodes are unavailable (meaning down, unreachable or not usable for jobs,  such as scheduler only nodes on LSF).   At least one attempt to complete a ping is performed regardless of the setting of `timeout`.  If the default value of `0` is used, there is no timeout. 
   
   
   
- ### `filter`
+ ### filter
  `NULL`, or a character vector containing one or more of the ping states.  If `NULL`, no filtering is  performed.  If a character vector of one or more of the ping states is provided, then only those nodes determined to be in the  states enumerated will be returned. 
   
   
@@ -89,15 +89,15 @@ when using this tool:
 
 
 
-###`priority` 
+###priority 
 May be used to allow the ping jobs to run sooner than other longer running jobs.
 
 
-###`exclusive` 
+###exclusive 
 Should usually be avoided
 
 
-###`autoCleanup` 
+###autoCleanup 
 Should almost always be set to `TRUE`; however, may be of use to a system administrator diagnosing a problem.
 
 
@@ -113,27 +113,27 @@ elements: `nodeName` which holds the true, unmangled name of the node, and `stat
 the following values:
 
 
-###`unavail`
+###unavail
 The node failed its scheduler level check prior to an attempt to actually ping the node.  This does not necessarily mean that the node is not not functional;  rather, it only means that it cannot support having a job run on it.
 
 
-###`success`
+###success
 The round trip job was a success.
 
 
-###`failedJob`
+###failedJob
 The scheduler failed the job.  This could be due to permissions, corrupt libraries, or a problem relating to the GUID directory.
 
 
-###`failedSession`
+###failedSession
 The R process on the worker host was started, but failed.
 
 
-###`timeout`
+###timeout
 The ping was sent, but a response was never received.  This could be due to a problem with the installation, or other long running jobs being queued ahead of the ping job, or a system failure.
 
 
-###`failedAmps`
+###failedAmps
 Not all of the AMPs were successful - for [RxInTeradata](rxinteradata.md).
 
 

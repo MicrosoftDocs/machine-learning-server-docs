@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`deleteService`: Delete a web service..
+ #deleteService: Delete a web service..
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,12 +48,12 @@ Delete a web service on an R Server instance.
 
    
   
- ### `name`
+ ### name
  The web service name. 
   
   
   
- ### `v`
+ ### v
  The web service version. 
   
  

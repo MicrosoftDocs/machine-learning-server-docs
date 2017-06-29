@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`resource`: A factory which creates a resource object that lets you interact with RESTful  server-side data sources.
+ #resource: A factory which creates a resource object that lets you interact with RESTful  server-side data sources.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -50,17 +50,17 @@ with the low level HTTP. This allows you to easily perform CRUD operations
 
    
   
- ### `url`
+ ### url
  A parameterized URL template with parameters prefixed by `:`  for example `/services/:name/:version` 
   
   
   
- ### `param_defaults`
+ ### param_defaults
  Default values for url parameters. 
   
   
   
- ### `actions`
+ ### actions
  A list with declaration of custom actions that will be  available in addition to the default set of resource actions (`get`,  `query`, `save`, `update`, `delete`). If a custom action has the same  key as a default action (e.g. `save`), then the default action will  be overwritten, and not extended. 
   
  

@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxRemoteFilePath`: Merge path using the remote platform's separator.
+ #rxRemoteFilePath: Merge path using the remote platform's separator.
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -43,11 +43,11 @@ according to file path rules of the remote compute context platform.
 
    
     
- ### ` ...`
+ ###  ...
  character strings containing parts of the path to be merged. 
   
     
- ### `computeContext`
+ ### computeContext
  An [RxComputeContext](rxcomputecontext.md) context object specifying the platform information. 
   
  

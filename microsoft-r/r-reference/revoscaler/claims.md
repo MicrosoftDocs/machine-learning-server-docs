@@ -30,7 +30,7 @@ ms.technology: "r-server"
  
  
  
- #`claims`: Auto Insurance Claims Data
+ #claims: Auto Insurance Claims Data
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -44,27 +44,27 @@ Observations on automobile insurance claims.
 An .xdf file with 127 observations on the following 6 variables.
 
 
-###`RowNum`
+###RowNum
 integer containing the row numbers.
 
 
-###`age`
+###age
 driver's age (stored as a factor).
 
 
-###`car.age`
+###car.age
 car's age (stored as a factor).
 
 
-###`type`
+###type
 type of claim (stored as a factor).
 
 
-###`cost`
+###cost
 cost of each claim (stored as a float32).
 
 
-###`number`
+###number
 number of claims per driver (stored as a float32).
 
 

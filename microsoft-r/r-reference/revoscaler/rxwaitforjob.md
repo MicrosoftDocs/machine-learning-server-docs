@@ -31,7 +31,7 @@ ms.technology: "r-server"
  
  
  
- #`rxWaitForJob`:  Wait for Distributed Job to Complete 
+ #rxWaitForJob:  Wait for Distributed Job to Complete 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,7 +53,7 @@ Causes R to block on an existing distributed job until completion.
 
    
   
- ### `jobInfo`
+ ### jobInfo
  A `jobInfo` object. 
   
  

@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxExecByPartition`: RevoScaleR By Group Parallelism
+ #rxExecByPartition: RevoScaleR By Group Parallelism
 
  Applies to version 9.1.0 of package RevoScaleR.
  

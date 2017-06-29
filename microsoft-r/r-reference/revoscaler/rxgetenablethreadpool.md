@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxGetEnableThreadPool`:  Get or Set Thread Pool State 
+ #rxGetEnableThreadPool:  Get or Set Thread Pool State 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,7 +49,7 @@ Gets or sets the current state of the thread pool (in a ready state or created a
 
    
   
- ### `enable`
+ ### enable
   Logical scalar. If `TRUE`, the thread pool is instantiated and maintained in a ready state. If `FALSE`, threads are created in an ad hoc fashion; that is, they are created as needed.  
   
  

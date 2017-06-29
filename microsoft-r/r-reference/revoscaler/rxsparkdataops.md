@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxSparkListData, rxSparkRemoveData {RevoScaleR}`: Manage Cached Data in Spark
+ #rxSparkListData, rxSparkRemoveData {RevoScaleR}: Manage Cached Data in Spark
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -52,15 +52,15 @@ Use these functions to manage the objects cached in the Spark memory system. The
 
    
     
- ### `list`
+ ### list
  list of cached objects need to be deleted. 
   
     
- ### `showDescription`
+ ### showDescription
  logical indicating whether or not to print out the detail to console. 
   
     
- ### `computeContext`
+ ### computeContext
  `RxSpark` compute context object. 
   
  

@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`listRemoteFiles`: Get a list of files from the remote R session.
+ #listRemoteFiles: Get a list of files from the remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxDTreeBestCp`:  Find the Best Value of cp for Pruning rxDTree Object 
+ #rxDTreeBestCp:  Find the Best Value of cp for Pruning rxDTree Object 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,11 +49,11 @@ of the 1 Standard Error criterion of Breiman, et al.
 
    
     
- ### `x`
+ ### x
   an object of class `rxDTree`.  
   
     
- ### `nstd`
+ ### nstd
   number of standard errors of cross-validation error to define optimality.  The default, 1, causes `rxDTreeBestCp` to find the simplest model within one standard error of the minimum cross-validation error.  
   
  

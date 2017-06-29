@@ -25,7 +25,7 @@ ms.technology: "r-server"
  
 --- 
  
- #`RevoScaleR-package`:  RevoScaleR: Scalable Data Management and Analysis and High Performance Computing from Microsoft Corporation 
+ #RevoScaleR-package:  RevoScaleR: Scalable Data Management and Analysis and High Performance Computing from Microsoft Corporation 
 
  Applies to version 9.1.0 of package RevoScaleR.
  

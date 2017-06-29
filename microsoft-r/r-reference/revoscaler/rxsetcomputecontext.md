@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxSetComputeContext`: Get and Set the compute context
+ #rxSetComputeContext: Get and Set the compute context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,12 +50,12 @@ Get or set the active compute context for RevoScaleR computations
 
    
     
- ### `computeContext`
+ ### computeContext
  character string specifying class name or description of the specific  class to instantiate, or an existing `RxComputeContext` object.  Choices include: `"RxLocalSeq"` or `"local"`, `"RxLocalParallel"` or `"localpar"`,  `"RxSpark"` or `"spark"`,  `"RxHadoopMR"` or `"hadoopmr"`,   `"RxInTeradata"` or `"teradata"`,  and `"RxForeachDoPar"` or `"dopar"`. 
   
   
     
- ### ` ...`
+ ###  ...
  any other arguments are passed to the class generator determined from `computeContext`. 
   
  

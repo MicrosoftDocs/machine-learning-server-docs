@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`as.kmeans`: Conversion of a RevoScaleR rxKmeans object to a kmeans Object
+ #as.kmeans: Conversion of a RevoScaleR rxKmeans object to a kmeans Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,11 +48,11 @@ as.kmeans  (x, ...)
 
    
     
- ### `x`
+ ### x
  object of class `"rxKmeans"`. 
   
     
- ### ` ...`
+ ###  ...
  additional arguments (currently not used). 
   
  

@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`RxNativeFileSystem`: RevoScaleR Native File System Object Generator
+ #RxNativeFileSystem: RevoScaleR Native File System Object Generator
 
  Applies to version 9.1.0 of package RevoScaleR.
  

@@ -38,7 +38,7 @@ ms.technology: "r-server"
  
  
  
- #`mortDefaultSmall`: Smaller Mortgage Default Demonstration Data
+ #mortDefaultSmall: Smaller Mortgage Default Demonstration Data
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -52,27 +52,27 @@ Simulated data on mortgage defaults.
 An .xdf file with 50000 observations on the following 6 variables.
 
 
-###`creditScore`
+###creditScore
 FICO credit scores (stored as an integer).
 
 
-###`houseAge`
+###houseAge
 house age, by range (stored as integer).
 
 
-###`yearsEmploy`
+###yearsEmploy
 years employed at current employer (stored as integer).
 
 
-###`ccDebt`
+###ccDebt
 the amount of debt (stored as integer).
 
 
-###`year`
+###year
 year of the observation (stored as integer).
 
 
-###`default`
+###default
 1 if the homeowner was in default on the loan, 0 otherwise (stored as an integer).
 
 

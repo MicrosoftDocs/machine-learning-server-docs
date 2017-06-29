@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxRealTimeScoring`: Real-time scoring in SQL Server R Services
+ #rxRealTimeScoring: Real-time scoring in SQL Server R Services
 
  Applies to version 9.1.0 of package RevoScaleR.
  

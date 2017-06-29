@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`listServices`: List the different published web services.
+ #listServices: List the different published web services.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,12 +48,12 @@ List the different published web services on the R Server instance.
 
    
   
- ### `name`
+ ### name
  The optional web service name. 
   
   
   
- ### `v`
+ ### v
  The optional web service version. 
   
  

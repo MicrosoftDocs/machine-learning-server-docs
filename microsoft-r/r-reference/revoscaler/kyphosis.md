@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`Kyphosis`: Data on a Post-Operative Spinal Defect
+ #Kyphosis: Data on a Post-Operative Spinal Defect
 
  Applies to version 9.1.0 of package RevoScaleR.
  

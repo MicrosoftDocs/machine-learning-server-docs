@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`print.serviceDetails`: The print generic for `serviceDetails`.
+ #print.serviceDetails: The print generic for `serviceDetails`.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -50,17 +50,17 @@ print  (o, description = TRUE, code = TRUE)
 
    
   
- ### `o`
+ ### o
  The `serviceDetails` list of S3 object. 
   
   
   
- ### `description`
+ ### description
  (optional) whether to print the description field. 
   
   
   
- ### `code`
+ ### code
  (optional) whether to print the code field. 
   
  

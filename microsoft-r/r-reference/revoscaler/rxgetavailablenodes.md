@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxGetAvailableNodes`:  Gets a list of operational nodes on a cluster. 
+ #rxGetAvailableNodes:  Gets a list of operational nodes on a cluster. 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,12 +49,12 @@ Note that this function will attempt to connect to the cluster when executed.
 
    
   
- ### `computeContext`
+ ### computeContext
  A distributed compute context (preferred, see [RxComputeContext](rxcomputecontext.md))  or a `jobInfo` object 
   
   
   
- ### `makeRNodeNames`
+ ### makeRNodeNames
  logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](rxmakernodenames.md) for details on name mangling. 
   
   

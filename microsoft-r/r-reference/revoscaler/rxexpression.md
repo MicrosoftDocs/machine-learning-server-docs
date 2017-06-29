@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`pow`: Formula Expression Functions for RevoScaleR
+ #pow: Formula Expression Functions for RevoScaleR
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -46,11 +46,11 @@ Formula expression functions for **RevoScaleR**.
 
    
     
- ### `x`
+ ### x
  variable name 
   
     
- ### `exponent`
+ ### exponent
  number to use as an exponent 
   
  

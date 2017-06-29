@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
-#`oneClassSvm`: oneClassSvm
+#oneClassSvm: oneClassSvm
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -49,12 +49,12 @@ Creates a list containing the function name and arguments to train a OneClassSvm
 
    
   
- ### `cacheSize`
+ ### cacheSize
  The maximal size in MB of the cache that stores the training data. Increase this for large training sets. The default value is 100 MB. 
   
   
   
- ### `kernel`
+ ### kernel
  A character string representing the kernel used for computing inner products. The following choices are available:   
 *   `rbfKernel()`: Radial basis function kernel. It's parameter  represents`gamma` in the term `exp(-gamma|x-y|^2`. If not  specified, it defaults to `1` divided by the number of features used. For example, `rbfKernel(gamma = .1)`. This is the default value. 
 *   `linearKernel()`: Linear kernel.   
@@ -64,22 +64,22 @@ Creates a list containing the function name and arguments to train a OneClassSvm
   
   
   
- ### `epsilon`
+ ### epsilon
  The threshold for optimizer convergence. If the  improvement between iterations is less than the threshold, the algorithm  stops and returns the current model. The value must be greater than or equal to `.Machine$double.eps`. The default value is 0.001. 
   
   
   
- ### `nu`
+ ### nu
  The trade-off between the fraction of outliers and the number of support vectors (represented by the Greek letter nu). Must be between 0 and 1, typically between 0.1 and 0.5. The default value is 0.1. 
   
   
   
- ### `shrink`
+ ### shrink
  Uses the shrinking heuristic if `TRUE`. In this case, some samples will be "shrunk" during the training procedure, which may speed up training. The default value is `TRUE`. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

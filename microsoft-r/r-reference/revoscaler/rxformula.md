@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxFormula`: Formula Syntax for RevoScaleR Analysis Functions
+ #rxFormula: Formula Syntax for RevoScaleR Analysis Functions
 
  Applies to version 9.1.0 of package RevoScaleR.
  

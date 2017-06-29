@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`is.encoding`: Test to see if supplied encoding type is supported.
+ #is.encoding: Test to see if supplied encoding type is supported.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,7 +48,7 @@ Test to see if supplied encoding type is supported.
 
    
   
- ### `type`
+ ### type
  The encoding type to check for validity. 
   
  

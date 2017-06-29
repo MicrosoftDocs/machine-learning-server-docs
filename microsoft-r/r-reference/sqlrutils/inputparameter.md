@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`InputParameter`: Input Parameter for SQL Stored Procedure: Class Generator
+ #InputParameter: Input Parameter for SQL Stored Procedure: Class Generator
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -53,32 +53,32 @@ parameters are POSIXct, numeric, character, integer, logical, and raw.
 
    
   
- ### `name`
+ ### name
  A character string, the name of the input parameter object. 
   
   
   
- ### `type`
+ ### type
  A character string representing the R type of the input parameter object. 
   
   
   
- ### `defaultValue`
+ ### defaultValue
  Default value of the parameter. Not supported for "raw". 
   
   
   
- ### `defaultQuery`
+ ### defaultQuery
  A character string specifying the default query that will retrieve the data if a different query is not provided at the time of the execution of the stored procedure. 
   
   
   
- ### `value`
+ ### value
  A value that will be used for the parameter. in the next run of the stored procedure. 
   
   
   
- ### `enableOutput`
+ ### enableOutput
  Make this an Input/Output Parameter 
   
  

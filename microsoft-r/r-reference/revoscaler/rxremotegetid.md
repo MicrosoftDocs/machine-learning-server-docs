@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxRemoteGetId`:  Provides a unique identifier for the process. 
+ #rxRemoteGetId:  Provides a unique identifier for the process. 
 
  Applies to version 9.1.0 of package RevoScaleR.
  

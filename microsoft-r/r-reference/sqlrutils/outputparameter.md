@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`OutputParameter`: Output Parameter for SQL Stored Procedure: Class Generator
+ #OutputParameter: Output Parameter for SQL Stored Procedure: Class Generator
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -54,12 +54,12 @@ list for non-data frame memebers of the list
 
    
   
- ### `name`
+ ### name
  A character string, the name of the output parameter object. 
   
   
   
- ### `type`
+ ### type
  R type of the output parameter object. 
   
  

@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`minCount`: Feature Selection Count Mode
+ #minCount: Feature Selection Count Mode
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -49,12 +49,12 @@ Count mode of feature selection used in the feature selection transform
 
    
   
- ### `count`
+ ### count
  The threshold for count based feature selection. A feature is selected if and only if at least `count` examples have non-default value in the feature. The default value is 1. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

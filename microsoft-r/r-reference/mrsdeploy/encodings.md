@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`encodings`: Defines the enumerated list of the supported encoding types.
+ #encodings: Defines the enumerated list of the supported encoding types.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

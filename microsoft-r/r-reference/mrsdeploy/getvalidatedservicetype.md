@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`getValidatedServiceType`: Test to see if supplied service type is supported.
+ #getValidatedServiceType: Test to see if supplied service type is supported.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,7 +48,7 @@ Test to see if supplied service type is supported.
 
    
   
- ### `type`
+ ### type
  The service type to check for validity. 
   
  
