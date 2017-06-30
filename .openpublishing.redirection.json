@@ -1938,6 +1938,10 @@
       "redirect_url" : "/r-server/r-reference/sqlrutils/setinputdataquery"
   },
     {
+      "source_path" : "microsoft-r/scaler-data-merge.md",
+      "redirect_url" : "/r-server/r/scaler-data-merge"
+  },
+    {
       "source_path" : "microsoft-r/sqlrutils/packagehelp/setInputParameterValue.md",
       "redirect_url" : "/r-server/r-reference/sqlrutils/setinputparametervalue"
     }
