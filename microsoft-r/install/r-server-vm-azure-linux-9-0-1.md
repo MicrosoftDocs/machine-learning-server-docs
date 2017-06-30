@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "How to use R Server on Linux VM in Azure | Microsoft Azure"
+title: "How to use R Server on Linux VM in Azure - Virtual Machine | Microsoft Docs"
 description: "Learn how to work with R Server on Linux by using a virtual machine in Azure."
 keywords: "R Server, linux, virtual machine"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "12/30/2016"
+ms.date: "6/30/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Introducing Microsoft R Client"
+title: "What is Microsoft R Client | Microsoft Docs"
 description: "Microsoft R Client"
 keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"

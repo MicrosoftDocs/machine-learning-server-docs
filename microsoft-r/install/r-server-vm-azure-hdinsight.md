@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Microsoft R Server on HDInsight"
+title: "Microsoft R Server on HDInsight - Virtual Machine | Microsoft Docs"
 description: "Microsoft R Server on HDInsight introduction"
 keywords: "Microsoft R Server, HDInsight"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "4/26/2017"
+ms.date: "6/30/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 

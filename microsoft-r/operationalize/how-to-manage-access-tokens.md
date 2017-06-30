@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Managing Access Tokens for R Server API Requests
+# Manage access tokens for R Server API requests
 
 **Applies to:  Microsoft R Server 9.x**
 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Evaluate the load balancing capacity of your R Server configuration to operationalize - Microsoft R Server | Microsoft Docs"
+title: "Evaluate the load balancing of your R Server configuration- Microsoft R Server | Microsoft Docs"
 description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
 author: "j-martens"
@@ -42,7 +42,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Configure Test Parameters
 
-1. On the web node, [launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
 
@@ -76,7 +76,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Run Simulation Tests
 
-1. On the web node, [launch the administration utility](#launch).
+1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch).
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
 1. From the sub menu, choose the option to **Run capacity simulation** to start the simulation.
 1. Review the results onscreen.

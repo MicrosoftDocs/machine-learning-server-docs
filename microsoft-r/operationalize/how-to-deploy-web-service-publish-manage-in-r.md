@@ -112,7 +112,7 @@ After you've authenticated, use the publishService() function in the mrsdeploy p
 
 |Function|Response|R Help|
 |----|----|:----:|
-|publishService(...)|Returns an [API instance](#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/publishservice.md)
+|publishService(...)|Returns an [API instance](how-to-consume-web-service-interact-in-r.md#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/publishservice.md)
 
 You can publish web services to a local R Server from your command line. If you [create a remote session](../r/how-to-execute-code-remotely.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command line.  
 
@@ -165,7 +165,7 @@ See the [package reference help page for updateService()](../r-reference/mrsdepl
 
 |Function|Response|R Help|
 |----|----|:----:|
-|updateService(...)|Returns an [API instance](#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/updateservice.md)
+|updateService(...)|Returns an [API instance](how-to-consume-web-service-interact-in-r.md#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/updateservice.md)
 
 
 >[!NOTE]

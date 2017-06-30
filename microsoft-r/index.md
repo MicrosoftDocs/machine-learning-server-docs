@@ -60,7 +60,7 @@ We offer solutions tailored to specific industries and problem sets, such as:
 
 + Loan Credit Risk with SQL Server
 
-Explore these at https://aka.ms/rsolutiontemplates.
+Explore machine learning how-to solutions at https://aka.ms/rsolutiontemplates.
 
 ## Embedded R Server
 
