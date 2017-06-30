@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Support for Microsoft R Server versions"
+title: "Support for Microsoft R Server versions | Microsoft Docs"
 description: "A list of the operating systems supported by editions and versions of Microsoft R Server and Revolution R Enterprise."
 keywords: ""
 author: "j-martens"

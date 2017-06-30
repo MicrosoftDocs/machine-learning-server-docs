@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Finding the appsettings.json configuration file for R Server
+# Find the R Server configuration file (appsettings.json)
 
 **Applies to:  Microsoft R Server 9.x**
 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Microsoft R Server - Known Issues"
+title: "Microsoft R Server - Known Issues | Microsoft Docs"
 description: "Known Issues with Microsoft R Server"
 keywords: ""
 author: "j-martens"

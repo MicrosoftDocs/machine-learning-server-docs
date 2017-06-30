@@ -253,7 +253,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 ``` 
 
 >[!NOTE]
->See [the next section](#share) for the code to get this Swagger-based JSON file after the session ends.
+>[Learn how to get and share](how-to-consume-web-service-interact-in-r.md#data-scientists-share) this Swagger-based JSON file after the session ends.
 
 
 

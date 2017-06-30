@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Configuring R Server to operationalize analytics (Enterprise Configuration)
+# Configure R Server to operationalize analytics (Enterprise)
 
 **Applies to:  Microsoft R Server 9.x**
 
