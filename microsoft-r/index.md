@@ -51,9 +51,16 @@ In minutes, you can step through a classic what-if problem using sample data and
 
 ## Pre-built solutions
 
-We offer solutions tailored to specific industries and problem sets. Find more solutions on the [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com/browse?s=R%20Server&skip=0&categories=%5B%2210%22%5D&tags=%5B%22Microsoft%20R%20Server%22%5D).
+We offer solutions tailored to specific industries and problem sets, such as:
++ Predicting Length of Stay in Hospitals
 
-* [Solution: Predicting length of stay in hospitals](https://gallery.cortanaintelligence.com/Solution/Predicting-Length-of-Stay-in-Hospitals-1) 
++ Campaign Optimization with SQL Server
+
++ Campaign Optimization with Azure HDInsight Spark Clusters
+
++ Loan Credit Risk with SQL Server
+
+Explore these at https://aka.ms/rsolutiontemplates.
 
 ## Embedded R Server
 
