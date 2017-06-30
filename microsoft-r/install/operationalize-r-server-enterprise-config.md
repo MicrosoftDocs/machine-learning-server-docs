@@ -309,7 +309,7 @@ You can set up the load balancer of your choosing.
 
 Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required. 
 
-For proper access token signing and verification across your configuration, ensure that the JWT settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
+For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
 
 ### 7. Post configuration steps
 
