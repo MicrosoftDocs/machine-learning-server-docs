@@ -22,7 +22,7 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Opting out of usage data collection (Micorosft R)
+# Opting out of usage data collection (Microsoft R)
 
 **Applies to:** version 9.0.1 and later
 

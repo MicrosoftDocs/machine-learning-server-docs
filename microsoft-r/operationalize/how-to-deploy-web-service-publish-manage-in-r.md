@@ -59,7 +59,7 @@ A code sample for publishing web services can be [found later in this article](#
 |R source|Can come from|
 |----|----|
 |R code|- A filepath to a local R script, such as:<br>&nbsp;&nbsp;&nbsp;  `code = "/path/to/R/script.R"`<br>- A block of R code as a character string, such as:<br>&nbsp;&nbsp;&nbsp;  `code = "result <- x + y"`<br>- A function handle, such as:<br>&nbsp;&nbsp;&nbsp;  `code = function(hp, wt) {`<br>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `newdata <- data.frame(hp = hp, wt = wt)`<br>&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; `predict(model, newdata, type = "response")`<br>&nbsp;&nbsp;  `}`|
-|R model|The R model can come from an object or a file-path to an external representation of R objects to be loaded and used with the code, including: <br>- A filepath to an `.RData` file holding the external R objects to be loaded and used with the code, such as:<br>&nbsp;&nbsp;&nbsp;  `model = "/path/to/glm-model.RData"`<br>- A filepath to an `.R` file that is evaluated into an environment and loaded, such as:<br>&nbsp;&nbsp;&nbsp;  `model = "/path/to/glm-model.R"`<br>- A model object, such as:<br>&nbsp;&nbsp;&nbsp;  `model = am.glm`|
+|R model|The R model can come from an object or a file-path to an external representation of R objects to be loaded and used with the code, including: <br>- A filepath to an RData file holding the external R objects to be loaded and used with the code, such as:<br>&nbsp;&nbsp;&nbsp;  `model = "/path/to/glm-model.RData"`<br>- A filepath to an R file that is evaluated into an environment and loaded, such as:<br>&nbsp;&nbsp;&nbsp;  `model = "/path/to/glm-model.R"`<br>- A model object, such as:<br>&nbsp;&nbsp;&nbsp;  `model = am.glm`|
 
 
 <a name="realtime"></a>
@@ -372,9 +372,9 @@ remoteLogout()
 
 
 
-### 2. R code as object and .RData as file 
+### 2. R code as object and RData as file 
 
-In this example, the code is still an object (`code = manualTransmission`), but the model now comes from a .Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
+In this example, the code is still an object (`code = manualTransmission`), but the model now comes from a Rdata file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
 ```R
 # For R Server 9.0, load mrsdeploy package on R Server     
@@ -523,9 +523,9 @@ status
 remoteLogout()
 ```
 
-### 4. Code as script and model as a .RData file
+### 4. Code as script and model as a RData file
 
-In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an .RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
+In this example, the code (`code = transmission-code.R,`) comes from an R script, and the model from an RData file (`model = "transmission.RData"`). The result is still the same as in the first example.
 
 ```R
 # For R Server 9.0, load mrsdeploy package on R Server     
