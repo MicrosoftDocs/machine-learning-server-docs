@@ -57,7 +57,7 @@ If your configuration requires additional compute capacity, [additional compute 
 
 In the R language, users can change files in the file system, download content from the web, download packages, and so on.
 
-In order to mitigate some of the risks associated with RServe, the service is setup to run using **a single account with write permissions** to the R working directory <MRS_home>\deployr\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces
+In order to mitigate some of the risks associated with RServe, the service is setup to run using **a single account with write permissions** to the R working directory <MRS_home>\deployr\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces.
 
 >[!Important]
 >While the custom Rserve service can only write to the working directory, **there is no user isolation between the session folders**. Any user familiar with the directory structure could in theory access another user’s session folder from their R script.
