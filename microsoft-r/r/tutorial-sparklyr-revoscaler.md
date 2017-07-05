@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "RevoScaleR with Sparklyr example (Microsoft R)"
-description: "Spark interoperability with Microsoft R Server 9.1"
+title: "RevoScaleR with Sparklyr example (Microsoft R Server)"
+description: "Sparklyr interoperability with Microsoft R Server 9.1"
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "04/17/2017"
+ms.date: "07/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -27,7 +27,7 @@ ms.technology:
 
 # RevoScaleR with sparklyr step-by-step examples
 
-Micorosft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
+Microsoft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
 
 + [Example 1: sparklyr data and MRS analytics](#example1)
 + [Example 2: MRS data and sparklyr analytics](#example2)
@@ -44,32 +44,27 @@ To run the example code, your environment must provide the following:
 + Read/Write permissions to HDFS directory /user/RevoShare
 + An internet connection or the ability to download and manually install sparklyr
 
-
-> [!NOTE]
-> For more background in using Microsoft R Server with Spark, see [Get started with R Server and ScaleR on Spark](how-to-revoscaler-spark.md).
-
 ## Install the sparklyr package
 
 How you install the sparklyr R package depends on whether or not you are on HDI. 
 
-**HDI users**
+**Windows, Linux, or Hadoop users**
 
-If on HDI, you'll need to specify the MRAN snapshot date that contains the required package version. For R Server 9.1, use 2017-05-01. 
+Since the default MRAN package snapshot for your version of R Server is used automatically, you can install sparklyr like you would any other package.
+
+```R
+install.packages("sparklyr")
+```
+
+**Azure HDInsight (HDI) users**
+
+If on HDI, you need to specify the MRAN snapshot date that contains the required package version. For R Server 9.1, use 2017-05-01. 
 
 ```R
 options(repos = "https://mran.microsoft.com/snapshot/2017-05-01")
 
 install.packages("sparklyr")
 ```
-
-**Non-HDI users**
-
-If not on HDI, then there is no need to specify the snapshot date. Instead, the default snapshot for your version of R Server is used automatically.
-
-```R
-install.packages("sparklyr")
-```
-
 
 ## Load data into HDFS
 
@@ -541,11 +536,13 @@ This example uses the airline data set. It includes multiple Microsoft R Server 
 
 The ability to use both Microsoft R Server and sparklyr from within one Spark session will allow Microsoft R Server users to quickly and seamlessly utilize features provided by sparklyr within their solutions.
 
+## Next step
 
-## See Also
+For more background in using Microsoft R Server with Spark, see [Get started with R Server and ScaleR on Spark](how-to-revoscaler-spark.md).
 
-[What's new in R Server](../whats-new-in-r-server.md)
 
-[Tips on computing with big data](tutorial-large-data-tips.md)
+## See also
 
-[Diving into Data Analysis](how-to-introduction.md)
+ [What's new in R Server]   (../whats-new-in-r-server.md)    
+ [Tips on computing with big data](tutorial-large-data-tips.md)    
+ [Diving into Data Analysis](how-to-introduction.md)    
