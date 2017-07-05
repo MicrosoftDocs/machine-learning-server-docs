@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxHpcServer-class`: Class RxHpcServer
+ #RxHpcServer-class: Class RxHpcServer
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,7 +53,7 @@ Class RxComputeContext, directly.
  
 
 
-###`show`
+###show
 `signature(object = "RxHpcServer")`: ...
 
 

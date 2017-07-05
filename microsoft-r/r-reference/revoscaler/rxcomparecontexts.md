@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxCompareContexts`:  Compare Two Compute Context Objects 
+ #rxCompareContexts:  Compare Two Compute Context Objects 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,15 +48,15 @@ Determines if two compute contexts are equivalent.
 
    
   
- ### `context1`
+ ### context1
  The first compute context to be compared. 
   
   
- ### `context2`
+ ### context2
  The second compute context to be compared. 
   
   
- ### `exactMatch`
+ ### exactMatch
  Determines if compute contexts are matched simply by the location specified for the compute context, or by all fields in the full compute context. The location is specified by the `headNode` (if available) and `shareDir` parameters. See Details for more information. 
   
  

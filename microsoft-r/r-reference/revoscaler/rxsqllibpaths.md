@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxSqlLibPaths`: Search Paths for Packages in SQL compute context
+ #rxSqlLibPaths: Search Paths for Packages in SQL compute context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,7 +49,7 @@ Gets the search path for the library trees for packages while executing inside t
    
   
     
- ### `connectionString`
+ ### connectionString
  a `character` connection string for the SQL server. This should be local connection string as external connection strings are not supported while executing on a SQL server. You can also specify [RxInSqlServer](rxinsqlserver.md) compute context object for input from which the connection string will be extracted and used.  
    
  

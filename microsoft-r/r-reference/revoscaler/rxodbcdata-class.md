@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxOdbcData-class`: Class RxOdbcData
+ #RxOdbcData-class: Class RxOdbcData
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,7 +53,7 @@ Class RxDataSource, directly.
  
 
 
-###`show`
+###show
 `signature(object = "RxOdbcData")`: ...
 
 

@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`remoteLogout`: Logout of the remote R session.
+ #remoteLogout: Logout of the remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

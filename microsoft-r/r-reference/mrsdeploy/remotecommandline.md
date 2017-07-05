@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`remoteCommandLine`: Display the 'REMOTE>' command prompt.
+ #remoteCommandLine: Display the 'REMOTE>' command prompt.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -50,22 +50,22 @@ entered at the R console will be executed in the remote R session.
 
    
   
- ### `prompt`
+ ### prompt
  The command prompt to be shown when in 'REMOTE' mode. 
   
   
   
- ### `displayPlots`
+ ### displayPlots
  If `TRUE`, plots generated during execution are displayed in the local plot window. **NOTE** This capability requires that the '`png`' package is installed on the local machine. 
   
   
   
- ### `writePlots`
+ ### writePlots
  If `TRUE`, plots generated during execution are copied to the working directory of the local session. 
   
   
   
- ### `recPlots`
+ ### recPlots
  If `TRUE`, plots will be created using the '`recordPlot`' function in R. 
   
  

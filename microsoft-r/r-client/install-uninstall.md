@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Uninstall R client to upgrade to a newer version"
+title: "Uninstall Microsoft R client to upgrade to a newer version | Microsoft Docs"
 description: ""
 keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
 author: "j-martens"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "More Resources"
+title: "More Resources | Microsoft Docs"
 description: "Additional Resources"
 keywords: ""
 author: "j-martens"

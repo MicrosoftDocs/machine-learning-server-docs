@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`createSnapshot`: Create a snapshot of the remote R session.
+ #createSnapshot: Create a snapshot of the remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -49,7 +49,7 @@ and the files in the working directory are saved.
 
    
   
- ### `name`
+ ### name
  Name describing the snapshot to be saved. 
   
  

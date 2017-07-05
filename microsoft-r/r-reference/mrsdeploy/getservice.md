@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`getService`: Get a web service for consumption.
+ #getService: Get a web service for consumption.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,17 +48,17 @@ Get a web service for consumption on running on R Server.
 
    
   
- ### `name`
+ ### name
  The web service name. 
   
   
   
- ### `v`
+ ### v
  The web service version. 
   
   
   
- ### `destination`
+ ### destination
  (optional) The codegen output directory location. 
   
  

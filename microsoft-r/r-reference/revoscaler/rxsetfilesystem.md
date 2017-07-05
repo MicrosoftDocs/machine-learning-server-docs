@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxSetFileSystem`: Set and Get RevoScaleR File System
+ #rxSetFileSystem: Set and Get RevoScaleR File System
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,16 +48,16 @@ Set and get the default file system for RevoScaleR operations.
 
    
     
- ### `fileSystem`
+ ### fileSystem
  character string specifying class name, file system type, or  existing `RxFileSystem` object.  Choices include: "RxNativeFileSystem" or "native", or "RxHdfsFileSystem" or "hdfs". Optional arguments `hostName` and `port` may be specified for HDFS file systems.  
   
     
- ### ` ...`
+ ###  ...
  other arguments are passed to the underlying class generator.  
   
   
     
- ### `x`
+ ### x
  optional [RxXdfData](rxxdfdata.md) or [RxTextData](rxtextdata.md) object from which to retrieve the file system object.  
   
  

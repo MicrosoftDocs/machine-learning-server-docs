@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxGetVarInfo`: Get Variable Information for a Data Source
+ #rxGetVarInfo: Get Variable Information for a Data Source
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -51,32 +51,32 @@ names, descriptions, and value labels
    
   
     
- ### `data`
+ ### data
  a data frame, a character string specifying the .xdf file, or an [RxDataSource](rxdatasource.md) object.  If a local compute context is being used,  this argument may also be a list of data sources,  in which case the output will be returned in a named list. See the details section for more information. 
   
   
     
- ### `getValueLabels`
+ ### getValueLabels
  logical value. If `TRUE`, value labels (including factor  levels) are included in the output if present. 
   
   
     
- ### `varsToKeep`
+ ### varsToKeep
  character vector of variable names for which information is returned. If `NULL`, argument is ignored. Cannot be used with `varsToDrop`. 
   
   
     
- ### `varsToDrop`
+ ### varsToDrop
  character vector of variable names for which information is not returned. If `NULL`, argument is ignored. Cannot be used with `varsToKeep`. 
   
   
     
- ### `computeInfo`
+ ### computeInfo
  logical value. If `TRUE`,  variable information  (e.g., high/low values) for non-xdf data sources will be computed  by reading through the data set. 
   
   
     
- ### `allNodes`
+ ### allNodes
  logical value.  Ignored if the active [RxComputeContext](rxcomputecontext.md)compute context is local.  Otherwise, if `TRUE`, a list containing the variable information for the data set on each node in the active compute context will be returned.  If `FALSE`, only information on the data set on the master node will be returned.  
   
   
@@ -100,35 +100,35 @@ compute context nodes.
 list with named elements corresponding to the variables in the data set. 
 Each list element is also a list with with following possible elements:
 
-###`description`
+###description
 character string specifying the variable description
 
 
-###`varType`
+###varType
 character string specifying the variable type
 
 
-###`storage`
+###storage
 character string specifying the storage type
 
 
-###`low`
+###low
 numeric giving the low values, possibly generated through a temporary factor transformation `F()`
 
 
-###`high`
+###high
 numeric giving the high values, possibly generated through a temporary factor transformation `F()`
 
 
-###`levels`
+###levels
 (factor only) a character vector containing the factor levels
 
 
-###`valueInfoCodes`
+###valueInfoCodes
 character vector of value codes, for informational  purposes only
 
 
-###`valueInfoLabels`
+###valueInfoLabels
 character vector of value labels that is the same length as `valueInfoCodes`, used for informational purposes only
 
 

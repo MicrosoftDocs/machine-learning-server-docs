@@ -34,7 +34,7 @@ ms.technology: "r-server"
  
  
  
- #`stopwordsDefault`: Machine Learning Text Transform
+ #stopwordsDefault: Machine Learning Text Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -65,17 +65,17 @@ a model.
 
    
   
- ### `dataFile`
+ ### dataFile
  character: <string>. Data file containing the terms (short form data). 
   
   
   
- ### `terms`
+ ### terms
  An optional character vector of terms or categories. 
   
   
   
- ### `sort`
+ ### sort
  Specifies how to order items when vectorized. Two orderings are supported:   
 *   `"occurrence"`: items appear in the order encountered.    
 *   `"value"`: items are sorted according to their default comparison.  For example, text sorting will be case sensitive (e.g., 'A' then 'Z'   then 'a').   
@@ -83,12 +83,12 @@ a model.
   
   
   
- ### `vars`
+ ### vars
  A named list of character vectors of input variable names and the name of the output variable. Note that the input variables must be of the same type. For one-to-one mappings between input and output variables, a named character vector can be used. 
   
   
   
- ### `language`
+ ### language
  Secifies the language used in the data set. The following  values are supported:   
 *   `"AutoDetect"`: for automatic language detection.    
 *   `"English"`.    
@@ -102,7 +102,7 @@ a model.
   
   
   
- ### `stopwordsRemover`
+ ### stopwordsRemover
  Specifies the stopwords remover to use. There are three options supported:   
 *   `NULL` No stopwords remover is used.   
 *   `stopwordsDefault`: A precompiled language-specific lists of stop words is used that includes the most common words from Microsoft Office.    
@@ -111,7 +111,7 @@ a model.
   
   
   
- ### `case`
+ ### case
  Text casing using the rules of the invariant culture. Takes the following values:   
 *   `"lower"`.   
 *   `"upper"`. 
@@ -120,22 +120,22 @@ a model.
   
   
   
- ### `keepDiacritics`
+ ### keepDiacritics
  `FALSE` to remove diacritical marks; `TRUE` to  retain diacritical marks. The default value is `FALSE`. 
   
   
   
- ### `keepPunctuations`
+ ### keepPunctuations
  `FALSE` to remove punctuation; `TRUE` to  retain punctuation. The default value is `TRUE`. 
   
   
   
- ### `keepNumbers`
+ ### keepNumbers
  `FALSE` to remove numbers; `TRUE` to retain numbers. The default value is `TRUE`. 
   
   
   
- ### `dictionary`
+ ### dictionary
  A `termDictionary` of whitelisted terms which accepts the following options:  
 *   `terms`,   
 *   `dataFile`, and  
@@ -144,7 +144,7 @@ The default value is `NULL`.  Note that the stopwords list takes precedence over
   
   
   
- ### `wordFeatureExtractor`
+ ### wordFeatureExtractor
  Specifies the word feature extraction arguments. There  are two different feature extraction mechanisms:   
 *   [ngramCount](ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
 *   [ngramHash](ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
@@ -152,7 +152,7 @@ The default value is `NULL`.  Note that the stopwords list takes precedence over
   
   
   
- ### `charFeatureExtractor`
+ ### charFeatureExtractor
  Specifies the char feature extraction arguments. There  are two different feature extraction mechanisms:   
 *   [ngramCount](ngram.md): Count-based feature extraction (equivalent   to WordBag). It accepts the following options: `maxNumTerms` and `weighting`.    
 *   [ngramHash](ngram.md): Hashing-based feature extraction (equivalent  to WordHashBag). It accepts the following options: `hashBits`,  `seed`, `ordered` and `invertHash`.   
@@ -160,7 +160,7 @@ The default value is `NULL`.  Note that the stopwords list takes precedence over
   
   
   
- ### `vectorNormalizer`
+ ### vectorNormalizer
  Normalize vectors (rows) individually by rescaling them to unit norm. Takes one of the following values:   
 *   `"none"`.    
 *   `"l2"`.    
@@ -170,7 +170,7 @@ The default value is `NULL`.  Note that the stopwords list takes precedence over
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments sent to the compute engine. 
   
  

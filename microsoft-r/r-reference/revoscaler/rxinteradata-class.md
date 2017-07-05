@@ -30,7 +30,7 @@ ms.technology: "r-server"
  
  
  
- #`RxInTeradata-class`: Class RxInTeradata
+ #RxInTeradata-class: Class RxInTeradata
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,83 +50,83 @@ Objects can be created by calls of the form .
  
 
 
-###`remoteShareDir`:
+###remoteShareDir:
 Object of class `"character"` ~~ 
 
 
-###`connectionString`:
+###connectionString:
 Object of class `"character"` ~~ 
 
 
-###`shareDir`:
+###shareDir:
 Object of class `"character"` ~~ 
 
 
-###`revoPath`:
+###revoPath:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`wait`:
+###wait:
 Object of class `"logical"` ~~ 
 
 
-###`consoleOutput`:
+###consoleOutput:
 Object of class `"logical"` ~~ 
 
 
-###`autoCleanup`:
+###autoCleanup:
 Object of class `"logical"` ~~ 
 
 
-###`configFile`:
+###configFile:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`workingDir`:
+###workingDir:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`dataPath`:
+###dataPath:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`minElems`:
+###minElems:
 Object of class `"numeric"` ~~ 
 
 
-###`maxElems`:
+###maxElems:
 Object of class `"numeric"` ~~ 
 
 
-###`exclusive`:
+###exclusive:
 Object of class `"logical"` ~~ 
 
 
-###`nodes`:
+###nodes:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`dataDistType`:
+###dataDistType:
 Object of class `"character"` ~~ 
 
 
-###`packagesToLoad`:
+###packagesToLoad:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`email`:
+###email:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`resultsTimeout`:
+###resultsTimeout:
 Object of class `"numeric"` ~~ 
 
 
-###`description`:
+###description:
 Object of class `"character"` ~~ 
 
 
-###`version`:
+###version:
 Object of class `"character"` ~~ 
 
 
@@ -143,15 +143,15 @@ Class RxComputeContext, by class "RxDistributedHpa", distance 2.
  
 
 
-###`doPreJobValidation`
+###doPreJobValidation
 `signature(object = "RxInTeradata")`: ... 
 
 
-###`initialize`
+###initialize
 `signature(.Object = "RxInTeradata")`: ... 
 
 
-###`show`
+###show
 `signature(object = "RxInTeradata")`: ... 
 
 

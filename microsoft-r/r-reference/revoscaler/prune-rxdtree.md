@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`prune.rxDTree`: Pruning an rxDTree Decision Tree
+ #prune.rxDTree: Pruning an rxDTree Decision Tree
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,15 +49,15 @@ Prune a decision tree created by `rxDTree` and return the smaller tree.
 
    
     
- ### `tree`
+ ### tree
   object returned from a call to `rxDTree`. 
   
     
- ### `cp`
+ ### cp
   a complexity parameter specifying the complexity at which to prune the tree. Generally, you should examine the `cptable` component of the `tree` object to determine a suitable value for `cp`. 
   
     
- ### ` ...`
+ ###  ...
   additional arguments to be passed to other methods. (There are, in fact, no other methods called by `prune.rxDTree`.) 
   
  

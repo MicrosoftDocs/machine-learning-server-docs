@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`rxTransform`: Dynamic Variable Transformation Functions
+ #rxTransform: Dynamic Variable Transformation Functions
 
  Applies to version 9.1.0 of package RevoScaleR.
  

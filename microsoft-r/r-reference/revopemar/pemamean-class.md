@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`PemaMean-class`: Class PemaMean
+ #PemaMean-class: Class PemaMean
 
  Applies to version 8.0.3 of package RevoPemaR.
  

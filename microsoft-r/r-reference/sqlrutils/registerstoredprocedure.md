@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`registerStoredProcedure`: Register a SQL Stored Procedure with a Database
+ #registerStoredProcedure: Register a SQL Stored Procedure with a Database
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -49,12 +49,12 @@ the stored procedure with the specified database
 
    
   
- ### `sqlSP`
+ ### sqlSP
  a valid StoredProcedure object 
   
   
   
- ### `connectionString`
+ ### connectionString
  A character string (must be provided if the StoredProcedure object was created without a connection string) 
   
  

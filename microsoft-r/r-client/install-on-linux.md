@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Linux"
+title: "Install Microsoft R Client on Linux | Microsoft Docs"
 description: "Microsoft R Client Install Guide Linux"
 keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "j-martens"
@@ -118,6 +118,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
    You can now [set up your IDE and try out some sample code](../r-client-get-started.md).
 
 <br>
+<a name="offline"></a>
 
 ## How to install offline (without internet access) 
 

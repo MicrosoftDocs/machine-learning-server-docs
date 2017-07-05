@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`getRemoteWorkspace`: Copy the workspace if the remote R session.
+ #getRemoteWorkspace: Copy the workspace if the remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`as.rpart`: Conversion of a RevoScaleR rxDTree object to an rpart Object
+ #as.rpart: Conversion of a RevoScaleR rxDTree object to an rpart Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,11 +48,11 @@ as.rpart  (x, ...)
 
    
     
- ### `x`
+ ### x
  object of class rxDTree. 
   
     
- ### ` ...`
+ ###  ...
  additional arguments (currently not used). 
   
  

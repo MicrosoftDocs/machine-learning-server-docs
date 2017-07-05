@@ -25,7 +25,7 @@ ms.technology: "r-server"
  
 --- 
  
- #`Query`: olapR Query Construction
+ #Query: olapR Query Construction
 
  Applies to version 1.0.0 of package olapR.
  
@@ -73,23 +73,23 @@ ms.technology: "r-server"
 
    
     
- ### `validate`
+ ### validate
  A boolian to specify if the Query should be validated or not during execution 
   
     
- ### `qry`
+ ### qry
  An object of class "Query" returned by `Query` 
   
     
- ### `cubeName`
+ ### cubeName
  A string specifying the name of the cube to query 
   
     
- ### `axis`
+ ### axis
  A vector of strings specifying an axis. See example below. 
   
     
- ### `n`
+ ### n
  An integer representing the axis number to be set. axis(qry, 1) == columns(qry), axis(qry, 2) == pages(qry), etc. 
   
  

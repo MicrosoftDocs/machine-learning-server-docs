@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`loadSnapshot`: Load a snapshot from the R server into the remote session.
+ #loadSnapshot: Load a snapshot from the R server into the remote session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -49,7 +49,7 @@ is updated with the objects saved in the snapshot, and saved files are restored 
 
    
   
- ### `snapshot_id`
+ ### snapshot_id
  Identifier of the snapshot to load. 
   
  

@@ -102,7 +102,7 @@ remoteLogin("http://localhost:12800",
 serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
 
 # Publish as service using publishService() function from 
-# `mrsdeploy` package. Name service "mtService" and provide
+# mrsdeploy package. Name service "mtService" and provide
 # unique version number. Assign service to the variable `api`
 api <- publishService(
      serviceName,
@@ -253,7 +253,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 ``` 
 
 >[!NOTE]
->See [the next section](#share) for the code to get this Swagger-based JSON file after the session ends.
+>[Learn how to get and share](how-to-consume-web-service-interact-in-r.md#data-scientists-share) this Swagger-based JSON file after the session ends.
 
 
 

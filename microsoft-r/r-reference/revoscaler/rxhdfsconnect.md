@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxHdfsConnect`:  Establish a Connection to the Hadoop Distributed File System 
+ #rxHdfsConnect:  Establish a Connection to the Hadoop Distributed File System 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -47,11 +47,11 @@ File System (HDFS).
 
    
     
- ### `hostName`
+ ### hostName
   character string specifying the host name of your Hadoop name node.  
   
     
- ### `portNumber`
+ ### portNumber
   integer scalar specifying the port number of your Hadoop name node.  
   
  

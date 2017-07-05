@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`remoteLoginAAD`: Remote login to Microsoft R Server using Azure Active directory.
+ #remoteLoginAAD: Remote login to Microsoft R Server using Azure Active directory.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -51,57 +51,57 @@ Authenticates the user and creates a remote R session.
 
    
   
- ### `deployr_endpoint`
+ ### deployr_endpoint
  The Microsoft R Server HTTP/HTTPS endpoint, including the port number. 
   
   
   
- ### `authuri`
+ ### authuri
  The URI of the authentication service for Azure Active Directory. 
   
   
   
- ### `tenantid`
+ ### tenantid
  The tenant ID of the Azure Active Directory account being used to authenticate. 
   
   
   
- ### `clientid`
+ ### clientid
  the client ID of the Application for the Azure Active Directory account. 
   
   
   
- ### `resource`
+ ### resource
  The resource ID of the Application for the Azure Active Directory account. 
   
   
   
- ### `session`
+ ### session
  If `TRUE`,  create a remote session. 
   
   
   
- ### `diff`
+ ### diff
  If `TRUE`, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if `session` parameter is `TRUE`. 
   
   
   
- ### `commandline`
+ ### commandline
  If `TRUE`,  creates a "REMOTE' command line in the R console. Parameter is only  valid if `session` parameter is `TRUE`. 
   
   
   
- ### `prompt`
+ ### prompt
  The command prompt to be used for the remote session 
   
   
   
- ### `username`
+ ### username
  if `NULL`. the user will be prompted to enter username and password 
   
   
   
- ### `password`
+ ### password
  if `NULL`, the user will be prompted to enter username and password 
   
  

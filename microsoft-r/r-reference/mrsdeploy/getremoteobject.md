@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`getRemoteObject`: Get an object from the remote R session.
+ #getRemoteObject: Get an object from the remote R session.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -49,12 +49,12 @@ of the local R session.
 
    
   
- ### `obj`
+ ### obj
  A character vector containing the names of the R objects in the remote R session  to load in the local R session. 
   
   
   
- ### `name`
+ ### name
  The name of an R list object (created if necessary) in the local R session that  will contain the R objects from the remote R session.  If `name` is `NULL`,  then R objects from the remote R session will be loaded in the GlobalEnv of the local R session. 
   
  

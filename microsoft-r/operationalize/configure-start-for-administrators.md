@@ -23,7 +23,7 @@ ms.technology: "deployr"
 
 ---
 
-# Quickstart for administrating R Server's operationalization configuration
+# How to administer the operationalization configuration
 
 **Applies to:  Microsoft R Server 9.x**
 

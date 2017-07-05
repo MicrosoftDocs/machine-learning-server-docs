@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxPredict.rxNaiveBayes`: Prediction for Large Data Naive Bayes Classifiers
+ #rxPredict.rxNaiveBayes: Prediction for Large Data Naive Bayes Classifiers
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,48 +49,48 @@ rxPredict  (modelObject, data = NULL, outData = NULL, type = c("class", "prob"),
 
    
     
- ### `modelObject`
+ ### modelObject
   object returned from a call to [rxNaiveBayes](rxnaivebayes.md). 
   
     
- ### `data`
+ ### data
   either a data source object, a character string  specifying a .xdf file, or a data frame object. 
   
     
- ### `outData`
+ ### outData
   file or existing data frame to store predictions;  can be same as the input file or `NULL`.  If not `NULL`, must be an .xdf file if `data` is an .xdf file  or a data frame if `data` is a data frame. 
   
     
- ### `type`
+ ### type
   character string specifying the type of predicted values to be returned. Supported choices are  
 * `"class"` -  a vector of predicted classes.   
 * `"prob"` -  a matrix of predicted class probabilities whose columns are the probability of the first, second, etc. class.   
   
   
     
- ### `prior`
+ ### prior
   a vector of prior probabilities.  If unspecified, the class proportions of the data counts in the training set are used. If present, they should be specified in the order of the factor levels of the response and they must be all non-negative and sum to 1.  
   
   
     
- ### `predVarNames`
+ ### predVarNames
   character vector specifying name(s) to give to the prediction results. 
   
     
- ### `writeModelVars`
+ ### writeModelVars
   logical value. If `TRUE`, and the output file is different from the input file,  variables in the model will be written to the output file in addition to the predictions.  If variables from the input data set are transformed in the model,  the transformed variables will also be written out. 
   
     
- ### `extraVarsToWrite`
+ ### extraVarsToWrite
   `NULL` or character vector of additional variables names from the input data to include in the `outData`.   If `writeModelVars` is `TRUE`,  model variables will be included as well. 
   
     
- ### `checkFactorLevels`
+ ### checkFactorLevels
   logical value. If `TRUE`, the factor levels for the data  will be verified against factor levels in the model.  Setting to `FALSE` can speed up computations if using lots of factors. 
   
   
     
- ### ` ...`
+ ###  ...
   additional arguments to be passed directly to [rxDataStep](rxdatastep.md) such as `removeMissingsOnRead`, `overwrite`,  `blocksPerRead`, `reportProgress`, `xdfCompressionLevel`. 
   
  

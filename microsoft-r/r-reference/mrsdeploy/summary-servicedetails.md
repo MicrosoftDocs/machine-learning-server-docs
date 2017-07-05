@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`summary.serviceDetails`: The summary generic for `serviceDetails`.
+ #summary.serviceDetails: The summary generic for `serviceDetails`.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -50,7 +50,7 @@ summary  (o)
 
    
   
- ### `o`
+ ### o
  The `serviceDetails` list of S3 objects. 
   
  

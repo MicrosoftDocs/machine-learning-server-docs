@@ -25,7 +25,7 @@ ms.technology: "r-server"
  
 --- 
  
- #`OlapConnection`: olapR OlapConnection Creation
+ #OlapConnection: olapR OlapConnection Creation
 
  Applies to version 1.0.0 of package olapR.
  
@@ -52,11 +52,11 @@ ms.technology: "r-server"
 
    
     
- ### `connectionString`
+ ### connectionString
  A valid connection string for connecting to Analysis Services 
   
     
- ### `ocs`
+ ### ocs
  An object of class "OlapConnection" 
   
  

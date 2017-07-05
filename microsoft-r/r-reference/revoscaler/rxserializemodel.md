@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxSerializeModel`:  RevoScaleR Model Serialization and Unserialization 
+ #rxSerializeModel:  RevoScaleR Model Serialization and Unserialization 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,19 +50,19 @@ Serialize a **RevoScaleR**/**MicrosoftML** model in raw format to enable saving 
 
    
     
- ### `model`
+ ### model
  `RevoScaleR`/`MicrosoftML` model to be serialized 
   
     
- ### `metadata`
+ ### metadata
  Arbitrary metadata of `raw` type to be stored with the serialized model. Metadata will be returned when unserialized.  
   
     
- ### `realtimeScoringOnly`
+ ### realtimeScoringOnly
  Drops fields not required for real-time scoring.  NOTE: Setting this flag could reduce the model size but `rxUnserializeModel` can no longer retrieve the RevoScaleR model 
   
     
- ### `serializedModel`
+ ### serializedModel
  Serialized model to be unserialized 
   
  

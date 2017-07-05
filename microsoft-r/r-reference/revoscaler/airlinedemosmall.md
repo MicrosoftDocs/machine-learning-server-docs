@@ -31,7 +31,7 @@ ms.technology: "r-server"
  
  
  
- #`AirlineDemoSmall`: Small Airline Demonstration File
+ #AirlineDemoSmall: Small Airline Demonstration File
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -45,15 +45,15 @@ A small sample of airline on-time performance data.
 An .xdf file with 600000 observations on the following 3 variables.
 
 
-###`ArrDelay`
+###ArrDelay
 arrival delay, in minutes (stored as integer).
 
 
-###`CRSDepTime`
+###CRSDepTime
 schedule departure time (stored as float32).
 
 
-###`DayOfWeek`
+###DayOfWeek
 day of the week (stored as a factor).
 
 

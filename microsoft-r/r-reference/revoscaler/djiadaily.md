@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`DJIAdaily`: Dow Jones Industrial Average Data
+ #DJIAdaily: Dow Jones Industrial Average Data
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -42,55 +42,55 @@ Daily data for the Dow Jones Industrial Average.
 An .xdf file with 20,636 observations on the following 13 variables.
 
 
-###`Date`
+###Date
 character string containing the date.
 
 
-###`Open`
+###Open
 opening value (stored as float).
 
 
-###`High`
+###High
 high value of day (stored as float).
 
 
-###`Low`
+###Low
 low value of day (stored as float).
 
 
-###`Close`
+###Close
 closing value (stored as float).
 
 
-###`Volume`
+###Volume
 daily volume (stored as float).
 
 
-###`Adj.Close`
+###Adj.Close
 closing value adjusted for stock splits and dividends (stored as float).
 
 
-###`Year`
+###Year
 integer value for year (1928 - 2010).
 
 
-###`Month`
+###Month
 integer value for month (1 - 12).
 
 
-###`DayOfMonth`
+###DayOfMonth
 integer value for day of month (1 - 31).
 
 
-###`DayOfWeek`
+###DayOfWeek
 character string containing day of week.
 
 
-###`DaysSince1928`
+###DaysSince1928
 integer for number of days since Jan. 1, 1928.
 
 
-###`YearFrac`
+###YearFrac
 fractional year (1928 + DaysSince1928/365.25) (stored as float).
 
 

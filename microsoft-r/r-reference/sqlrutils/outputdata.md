@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`OutputData`: Output Data for SQL Stored Procedure: Class Generator
+ #OutputData: Output Data for SQL Stored Procedure: Class Generator
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -53,7 +53,7 @@ list can contain at most one data frame.
 
    
   
- ### `name`
+ ### name
  A character string, the name of the data frame variable. 
   
  

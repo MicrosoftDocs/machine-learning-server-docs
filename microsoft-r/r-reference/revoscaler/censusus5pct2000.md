@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`CensusUS5Pct2000`: IPUMS 2000 U.S. Census Data
+ #CensusUS5Pct2000: IPUMS 2000 U.S. Census Data
 
  Applies to version 9.1.0 of package RevoScaleR.
  

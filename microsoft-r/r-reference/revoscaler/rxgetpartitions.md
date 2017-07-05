@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`rxGetPartitions`:  Get Partitions of a Partitioned Xdf Data Source 
+ #rxGetPartitions:  Get Partitions of a Partitioned Xdf Data Source 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,7 +50,7 @@ Get partitions enumeration of a partitioned Xdf data source.
 
    
     
- ### `data`
+ ### data
  an existing partitioned data source object which was created by [RxXdfData](rxxdfdata.md) with `createPartitionSet = TRUE` and constructed by rxPartition. 
   
  

@@ -31,7 +31,7 @@ ms.technology: "r-server"
  
  
  
- #`rxResultsDF`: Crosstab Counts or Sums Data Frame
+ #rxResultsDF: Crosstab Counts or Sums Data Frame
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -65,37 +65,37 @@ rxResultsDF  (object, output = "stats", element = 1,
 
    
     
- ### `object`
+ ### object
  object of class rxCrossTabs, rxCube, rxLinMod, rxLogit, or rxSummary. 
   
   
     
- ### `output`
+ ### output
  character string specifying the type of output to display.  Typically this is `"counts"`, or for `rxSummary` `"stats"`. If there is a  dependent variable in the `rxCrossTabs` formula, `"sums"` and `"means"`can be used.  
   
   
     
- ### `element`
+ ### element
  integer specifying the element number from the object list to extract. Currently only `1` is supported. 
   
   
     
- ### `integerLevels`
+ ### integerLevels
  logical scalar or `NULL`. If `TRUE`, the  first column of the returned data frame will be converted to integers.  If `FALSE`, it will be a factor column. If `NULL`, it will be returned as an integer column if it was wrapped in an `F()` in the formula. 
   
   
     
- ### `integerCounts`
+ ### integerCounts
  logical scalar. If `TRUE`, the  counts or sums in the returned data frame will be converted to integers.  If `FALSE`, they will be numeric doubles. 
   
   
     
- ### `useRowNames`
+ ### useRowNames
  logical scalar. If `TRUE`, the names of the variables for  which there are results will be put into the row names for the data frame   rather than in a separate `Names` variable. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to the underlying print method for the output list object. 
   
   

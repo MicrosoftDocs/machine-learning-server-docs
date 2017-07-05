@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxMarginals`: Marginal Table Statistics
+ #rxMarginals: Marginal Table Statistics
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,17 +48,17 @@ rxMarginals  (x, output = "sums", ...)
 
    
     
- ### `x`
+ ### x
  object of class rxCrossTabs. 
   
   
     
- ### `output`
+ ### output
  character string specifying the type of output to display.  Choices are `"sums"`, `"counts"` and `"means"`. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to the underlying print method for the output list object. 
   
  

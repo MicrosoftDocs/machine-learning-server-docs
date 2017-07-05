@@ -33,7 +33,7 @@ ms.technology: "r-server"
  
  
  
- #`rxGetJobs`:  Get Distributed Computing Jobs 
+ #rxGetJobs:  Get Distributed Computing Jobs 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -57,27 +57,27 @@ and matching the specified parameters.
 
    
   
- ### `computeContext`
+ ### computeContext
  A compute context object. 
   
   
- ### `exactMatch`
+ ### exactMatch
  Determines if jobs are matched using the full compute  context, or a simpler subset.  If `TRUE`, only jobs which use the same  context object are returned. If `FALSE`, all jobs which have the same `headNode` (if available) and `ShareDir` are returned. 
   
   
- ### `startTime`
+ ### startTime
  A time, specified as a `POSIXct` object. If specified, only jobs created at  or after `startTime` are returned.  For non-RxHadoopMR contexts, this time should be specified in the user's local time; for RxHadoopMR contexts, the time should specified in GMT. See below for more details. 
   
   
- ### `endTime`
+ ### endTime
  A time, specified as a `POSIXct` object. If specified, only jobs created at  or before `endTime` are returned.  For non-RxHadoopMR contexts, this time should be specified in the user's local time; for RxHadoopMR contexts, the time should specified in GMT. See below for more details. 
   
   
- ### `states`
+ ### states
  If specified (as a character vector of states that can include `"none"`,  `"finished"`, `"failed"`, `"canceled"`, `"undetermined"` `"queued"`or  `"running"`), only jobs in those states are returned.   Otherwise, no filtering is performed on job state. 
   
   
- ### `verbose`
+ ### verbose
  If `TRUE` (the default), a brief summary of each job is printed as it is found. This includes the current job status as returned by [rxGetJobStatus](rxgetjobresults.md), the modification time of the job, and the current job ID (this is used as the component name in the returned list of job information objects). If no job status is returned, the job status shows `none`. 
   
  

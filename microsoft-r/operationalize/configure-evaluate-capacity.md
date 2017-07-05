@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Evaluate the load balancing capacity of your R Server configuration to operationalize - Microsoft R Server | Microsoft Docs"
+title: "Evaluate the load balancing of your R Server configuration- Microsoft R Server | Microsoft Docs"
 description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
 author: "j-martens"
@@ -36,13 +36,13 @@ You can define the parameters for the traffic simulation for a given configurati
 
 + **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached.
 
-> [!NOTE]
+> [!Important]
 > Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
 <br>
 
 ## Configure Test Parameters
 
-1. On the web node, [launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
 
@@ -76,7 +76,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Run Simulation Tests
 
-1. On the web node, [launch the administration utility](#launch).
+1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch).
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
 1. From the sub menu, choose the option to **Run capacity simulation** to start the simulation.
 1. Review the results onscreen.

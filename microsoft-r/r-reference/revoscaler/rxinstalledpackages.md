@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxInstalledPackages`: Installed Packages for Compute Context
+ #rxInstalledPackages: Installed Packages for Compute Context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,37 +50,37 @@ Find (or retrieve) details of installed packages for a compute context.
    
   
     
- ### `computeContext`
+ ### computeContext
  an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](rxinteradata.md), [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
   
   
     
- ### `allNodes`
+ ### allNodes
  logical. If `TRUE` and an [RxInTeradata](rxinteradata.md) compute context is used, a list of results from each node is returned. 
    
    
     
- ### `lib.loc`
+ ### lib.loc
  a character vector describing the location of R library  trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace,  then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](rxinsqlserver.md) only `NULL` is supported. 
   
    
     
- ### `priority`
+ ### priority
  character vector or `NULL` (default). If non-null, used to select packages;  `"high"` is equivalent to `c("base", "recommended")`.  To select all packages without an assigned priority use priority = `"NA"`. 
   
    
     
- ### `noCache`
+ ### noCache
  logical.  If `TRUE`, do not use cached information, nor cache it. 
   
    
     
- ### `fields`
+ ### fields
  a character vector giving the fields to extract from each package's DESCRIPTION file,  or `NULL`. If `NULL`, the following fields are used: `"Package"`, `"LibPath"`, `"Version"`, `"Priority"`, `"Depends"`,  `"Imports"`, `"LinkingTo"`, `"Suggests"`, `"Enhances"`,  `"License"`, `"License_is_FOSS"`, `"License_restricts_use"`,  `"OS_type"`, `"MD5sum"`, `"NeedsCompilation"`, and `"Built"`. Unavailable fields result in `NA` values. 
   
    
     
- ### `subarch`
+ ### subarch
  character string or `NULL`. If non-null and non-empty, used to select packages  which are installed for that sub-architecture.  
   
   

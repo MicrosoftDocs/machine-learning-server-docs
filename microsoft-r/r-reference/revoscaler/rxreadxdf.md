@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxReadXdf`: Read .xdf File
+ #rxReadXdf: Read .xdf File
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,52 +50,52 @@ Read data from an .xdf file into a data frame.
 
    
     
- ### `file`
+ ### file
  either an RxXdfData object or a character string specifying the .xdf file. 
   
   
     
- ### `varsToKeep`
+ ### varsToKeep
  character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop`. 
   
   
     
- ### `varsToDrop`
+ ### varsToDrop
  character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep`. 
   
   
     
- ### `rowVarName`
+ ### rowVarName
  optional character string specifying the variable in the data file to use as row names for the output data frame. 
   
   
     
- ### `startRow`
+ ### startRow
  starting row for retrieval. 
   
   
     
- ### `numRows`
+ ### numRows
  number of rows of data to retrieve. If -1, all are read. 
   
   
     
- ### `returnDataFrame`
+ ### returnDataFrame
  logical indicating whether or not to create a data frame. If `FALSE`, a list is returned. 
   
   
     
- ### `stringsAsFactors`
+ ### stringsAsFactors
  logical indicating whether or not to convert strings into factors in R. 
   
   
     
- ### `maxRowsByCols`
+ ### maxRowsByCols
  the maximum size of a data frame that will be read in, measured by the number of rows times the number of columns. If the numer of rows times the number of columns being extracted from the .xdf file exceeds this, a warning will be reported and a smaller number of rows will be read in than requested. If `maxRowsByCols` is set to be too large, you may experience problems  from loading a huge data frame into memory. To extract a subset of rows  and/or columns from an .xdf file, use [rxDataStep](rxdatastep.md). 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -105,12 +105,12 @@ Read data from an .xdf file into a data frame.
   
   
     
- ### `readByBlock`
+ ### readByBlock
  read data by blocks. This argument is deprecated. 
   
   
     
- ### `cppInterp`
+ ### cppInterp
  list of information sent to C++ interpreter. 
   
  

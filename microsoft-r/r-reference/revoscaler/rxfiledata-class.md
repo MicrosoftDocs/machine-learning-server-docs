@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxFileData-class`: Class RxFileData
+ #RxFileData-class: Class RxFileData
 
  Applies to version 9.1.0 of package RevoScaleR.
  

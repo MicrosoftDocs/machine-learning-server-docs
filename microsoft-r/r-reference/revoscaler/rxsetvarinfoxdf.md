@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxSetVarInfo`: Set Variable Information for .xdf File or Data Frame
+ #rxSetVarInfo: Set Variable Information for .xdf File or Data Frame
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,15 +50,15 @@ in a data frame
 
    
     
- ### `varInfo`
+ ### varInfo
  list containing lists of variable information for variables in the XDF data source or data frame.  
   
     
- ### `data`
+ ### data
  a data frame, a character string specifying the .xdf file, or an [RxXdfData](rxxdfdata.md) object.  
   
     
- ### `file`
+ ### file
  character string specifying the .xdf file or   an [RxXdfData](rxxdfdata.md) object.  
   
  

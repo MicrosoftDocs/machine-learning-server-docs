@@ -29,7 +29,7 @@ ms.technology: "r-server"
  
  
  
- #`rxChiSquaredTest`:  Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient 
+ #rxChiSquaredTest:  Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -54,22 +54,22 @@ Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coeff
 
    
     
- ### `x`
+ ### x
  an object of class xtabs, rxCrossTabs, or rxCube. 
   
   
     
- ### `type`
+ ### type
  character string specifying the version of Kendall's correlation. Supported types are `"a"`, `"b"` or `"c"`. 
   
   
     
- ### `seed`
+ ### seed
  seed for random number generator. If `NULL`, the seed is not set. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to the underlying function. 
   
  

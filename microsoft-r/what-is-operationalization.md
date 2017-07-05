@@ -25,7 +25,7 @@ ms.technology:
 
 ---
 
-# Operationalize your analytics with R Server
+# Operationalize analytics with R Server
 
 **Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x" docs [here](what-is-operationalization.md).)
 

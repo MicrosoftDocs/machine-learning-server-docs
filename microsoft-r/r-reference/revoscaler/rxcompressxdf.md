@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`rxCompressXdf`:  Compress .xdf files 
+ #rxCompressXdf:  Compress .xdf files 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -46,23 +46,23 @@ Compress one or more .xdf files
 
    
     
- ### `inFile`
+ ### inFile
   An .xdf file name, an RxXdfData data source, a directory containing .xdf files, or a vector of .xdf file names or RxXdfData data sources to compress  
   
     
- ### `outFile`
+ ### outFile
   An .xdf file name, an RxXdfData data source, a directory, or a vector of .xdf file names or RxXdfData data sources to contain the compressed files.  
   
     
- ### `xdfCompressionLevel`
+ ### xdfCompressionLevel
  integer in the range of -1 to 9.  The higher the value, the greater the  amount of compression - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used.   
   
     
- ### `overwrite`
+ ### overwrite
   If `outFile` is specified and is different from `inFile`, `overwrite` must be set to `TRUE` in order to have `outFile` overwritten.  
   
     
- ### `reportProgress`
+ ### reportProgress
   integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 

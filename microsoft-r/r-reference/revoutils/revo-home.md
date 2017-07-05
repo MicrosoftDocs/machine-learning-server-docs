@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`Revo.home`: Return the MicrosoftR Home Directory 
+ #Revo.home: Return the MicrosoftR Home Directory 
  ##Description
  Return the MicrosoftR installation directory.
  
@@ -44,7 +44,7 @@ ms.technology: "r-server"
 
    
     
- ### `component`
+ ### component
  One of the strings `"home"` or `"licenses"`.  
   
  

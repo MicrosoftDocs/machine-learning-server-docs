@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --- 
  
  
- #`readNews`: Read R or Package NEWS Files 
+ #readNews: Read R or Package NEWS Files 
  ##Description
  Read the R NEWS file or a package's NEWS or NEWS.Rd file. 
  
@@ -41,7 +41,7 @@ ms.technology: "r-server"
 
    
     
- ### `package`
+ ### package
  a character string specifying the package for which you'd like to read the  news. If missing, the R NEWS is displayed. 
   
  

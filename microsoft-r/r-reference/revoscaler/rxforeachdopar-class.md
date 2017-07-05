@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`RxForeachDoPar-class`: Class RxForeachDoPar
+ #RxForeachDoPar-class: Class RxForeachDoPar
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,7 +53,7 @@ Class RxComputeContext, directly.
  
 
 
-###`show`
+###show
 `signature(object = "RxForeachDoPar")`: ...
 
 

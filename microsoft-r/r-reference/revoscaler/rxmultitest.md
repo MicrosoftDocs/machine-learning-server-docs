@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`rxMultiTest`:  Multiple Variable Independence Tests 
+ #rxMultiTest:  Multiple Variable Independence Tests 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -54,22 +54,22 @@ print  (x, ...)
 
    
     
- ### `tests`
+ ### tests
  a list of objects of class htest. 
   
   
     
- ### `title`
+ ### title
  a title for the multiTest table. If `NULL`, the title is determined from  the method slot of the htest. 
   
   
     
- ### `x`
+ ### x
  object of class rxMultiTest. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to the print method. 
   
  

@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
- #`deleteSnapshot`: Delete a snapshot from the R server.
+ #deleteSnapshot: Delete a snapshot from the R server.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -48,7 +48,7 @@ Deletes the specified snapshot from the repository on the R Server.
 
    
   
- ### `snapshot_id`
+ ### snapshot_id
  Identifier of the snapshot to delete. 
   
  

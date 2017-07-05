@@ -28,7 +28,7 @@ ms.technology: "r-server"
  
  
  
-#`loss functions`: Classification and Regression Loss functions
+#loss functions: Classification and Regression Loss functions
 
 Applies to version 1.3.0 of package MicrosoftML.
  
@@ -58,22 +58,22 @@ The loss functions for classification and regression.
 
    
   
- ### `beta`
+ ### beta
  Specifies the numeric value of beta (dilation). The default value  is 1. 
   
   
   
- ### ` ...`
+ ###  ...
  hidden argument. 
   
   
   
- ### `margin`
+ ### margin
  Specifies the numeric margin value. The default value is 1. 
   
   
   
- ### `smoothingConst`
+ ### smoothingConst
  Specifies the numeric value of the smoothing constant. The default value is 1. 
   
  

@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  
  
- #`rxSetInfo`:  Set info such as a description 
+ #rxSetInfo:  Set info such as a description 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,16 +49,16 @@ Set .xdf file or data frame information, such as a description
 
    
     
- ### `data`
+ ### data
   An .xdf file name, an [RxXdfData](rxxdfdata.md) object, or a data frame.  
   
     
- ### `file`
+ ### file
   An .xdf file name or an [RxXdfData](rxxdfdata.md) object  
   
   
   
- ### `description`
+ ### description
   character string containing the file or data frame description  
   
  
