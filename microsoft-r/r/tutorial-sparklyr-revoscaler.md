@@ -50,19 +50,24 @@ To run the example code, your environment must provide the following:
 
 ## Install the sparklyr package
 
-How you install the sparklyr R package depends on whether or not you are on HDI.
+How you install the sparklyr R package depends on whether or not you are on HDI. 
 
-If on HDI, use:
+**HDI users**
+
+If on HDI, you'll need to specify the MRAN snapshot date that contains the required package version. For R Server 9.1, use 2017-05-01. 
+
 ```R
-options(repos = “https://mran.microsoft.com/snapshot/2017-05-01“)
+options(repos = "https://mran.microsoft.com/snapshot/2017-05-01")
 
-install.packages(“sparklyr”)
+install.packages("sparklyr")
 ```
 
-If not, use:
+**Non-HDI users**
+
+If not on HDI, then there is no need to specify the snapshot date. Instead, the default snapshot for your version of R Server is used automatically.
 
 ```R
-install.packages(“sparklyr”)
+install.packages("sparklyr")
 ```
 
 
