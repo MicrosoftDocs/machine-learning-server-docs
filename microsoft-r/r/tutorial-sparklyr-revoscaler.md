@@ -50,7 +50,7 @@ How you install the sparklyr R package depends on whether or not you are on HDI.
 
 **Windows, Linux, or Hadoop users**
 
-If not on HDI, then there is no need to specify the snapshot date. Instead, the default snapshot for your version of R Server is used automatically.
+Since the default MRAN package snapshot for your version of R Server is used automatically, you can install sparklyr like you would any other package.
 
 ```R
 install.packages("sparklyr")
@@ -58,7 +58,7 @@ install.packages("sparklyr")
 
 **Azure HDInsight (HDI) users**
 
-If on HDI, you'll need to specify the MRAN snapshot date that contains the required package version. For R Server 9.1, use 2017-05-01. 
+If on HDI, you need to specify the MRAN snapshot date that contains the required package version. For R Server 9.1, use 2017-05-01. 
 
 ```R
 options(repos = "https://mran.microsoft.com/snapshot/2017-05-01")
