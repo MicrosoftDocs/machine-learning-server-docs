@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Running diagnostics & troubleshooting the R Server configuration for operationalization 
+# Troubleshooting & diagnostics for R Server
 
 **Applies to:  Microsoft R Server 9.x**
 
