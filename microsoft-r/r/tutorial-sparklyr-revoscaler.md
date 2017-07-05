@@ -27,7 +27,7 @@ ms.technology:
 
 # RevoScaleR with sparklyr step-by-step examples
 
-Micorosft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
+Microsoft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
 
 + [Example 1: sparklyr data and MRS analytics](#example1)
 + [Example 2: MRS data and sparklyr analytics](#example2)
@@ -56,7 +56,7 @@ If not on HDI, then there is no need to specify the snapshot date. Instead, the 
 install.packages("sparklyr")
 ```
 
-**Azure HDInsight (HDI)**
+**Azure HDInsight (HDI) users**
 
 If on HDI, you'll need to specify the MRAN snapshot date that contains the required package version. For R Server 9.1, use 2017-05-01. 
 
@@ -543,8 +543,6 @@ For more background in using Microsoft R Server with Spark, see [Get started wit
 
 ## See also
 
-[What's new in R Server](../whats-new-in-r-server.md)
-
-[Tips on computing with big data](tutorial-large-data-tips.md)
-
-[Diving into Data Analysis](how-to-introduction.md)
+ [What's new in R Server]   (../whats-new-in-r-server.md)    
+ [Tips on computing with big data](tutorial-large-data-tips.md)    
+ [Diving into Data Analysis](how-to-introduction.md)    
