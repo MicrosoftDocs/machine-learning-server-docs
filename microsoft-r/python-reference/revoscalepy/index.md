@@ -24,79 +24,129 @@ ms.custom: ""
  
 ---
 
-## revoscalepy
+## Context
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
-* [computecontext](computecontext.md) 
+* [``RxComputeContext``](RxComputeContext.md) 
 
-* [etl](etl.md) 
+* [``rx_get_compute_context``](rx_get_compute_context.md) 
 
-* [functions](functions.md) 
+* [``rx_set_compute_context``](rx_set_compute_context.md) 
 
-* [utils](utils.md) 
+* [``RxInSqlServer``](RxInSqlServer.md) 
 
+* [``rx_exec``](rx_exec.md) 
 
-### computecontext
+* [``RxLocalSeq``](RxLocalSeq.md) 
 
-* [RxComputeContext](computecontext/RxComputeContext.md) 
+* [``RxRemoteComputeContext``](RxRemoteComputeContext.md) 
 
-* [rx_get_compute_context](computecontext/RxComputeContext_get.md) 
+* [``RxRemoteJob``](RxRemoteJob.md) 
 
-* [rx_set_compute_context](computecontext/RxComputeContext_set.md) 
+* [``RxSpark``](RxSpark.md) 
 
-* [RxInSqlServer](computecontext/RxInSqlServer.md) 
+* [``rx_remote_spark_exec_call``](rx_remote_spark_exec_call.md) 
 
-* [rx_exec](computecontext/RxInSqlServer_exec.md) 
+* [``rx_remote_spark_hpa_call``](rx_remote_spark_hpa_call.md) 
 
-* [rx_cancel_job](computecontext/RxJob_cancel.md) 
+* [``rx_spark_connect``](rx_spark_connect.md) 
 
-* [rx_get_job_status](computecontext/RxJob_status.md) 
+* [``rx_spark_disconnect``](rx_spark_disconnect.md) 
 
-* [rx_get_jobs](computecontext/RxJob_get.md) 
+* [``rx_get_job_status``](rx_get_job_status.md) 
 
-* [RxLocalSeq](computecontext/RxLocalSeq.md) 
+* [``rx_cancel_job``](rx_cancel_job.md) 
 
+* [``rx_get_job_output``](rx_get_job_output.md) 
 
-### etl
+* [``rx_cleanup_jobs``](rx_cleanup_jobs.md) 
 
-* [rx_import_datasource](etl/RxImport.md) 
+* [``rx_get_job_info``](rx_get_job_info.md) 
 
+* [``rx_get_job_results``](rx_get_job_results.md) 
 
-### functions
+* [``rx_get_jobs``](rx_get_jobs.md) 
 
-* [rx_data_step](functions/RxDataStep.md) 
+* [``rx_wait_for_job``](rx_wait_for_job.md) 
 
-* [rx_delete_object](functions/RxDeleteObject.md) 
-
-* [rx_btrees](functions/RxDTree_rx_btrees.md) 
-
-* [rx_dforest](functions/RxDTree_rx_dforest.md) 
-
-* [rx_dtree](functions/RxDTree_rx_dtree.md) 
-
-* [rx_lin_mod](functions/RxLinMod.md) 
-
-* [rx_list_keys](functions/RxListKeys.md) 
-
-* [rx_logit](functions/RxLogit.md) 
-
-* [``rx_predict``: Score using a Microsoft ML Machine Learning model](functions/RxPredict.md) 
-
-* [rx_predict_default](functions/RxPredict_default.md) 
-
-* [rx_predict_rx_dforest](functions/RxPredict_dforest.md) 
-
-* [rx_predict_rx_dtree](functions/RxPredict_dtree.md) 
-
-* [rx_read_object](functions/RxReadObject.md) 
-
-* [rx_summary](functions/RxSummary.md) 
-
-* [rx_write_object](functions/RxWriteObject.md) 
+* [``RxRemoteJobStatus``](RxRemoteJobStatus.md) 
 
 
-### utils
+## Datasource
 
-* [RxOptions](utils/RxOptions.md) 
+* [``RxDataSource``](RxDataSource.md) 
+
+* [``RxFileSystem``](RxFileSystem.md) 
+
+* [``RxNativeFileSystem``](RxNativeFileSystem.md) 
+
+* [``RxHdfsFileSystem``](RxHdfsFileSystem.md) 
+
+* [``RxOdbcData``](RxOdbcData.md) 
+
+* [``RxSparkData``](RxSparkData.md) 
+
+* [``RxSqlServerData``](RxSqlServerData.md) 
+
+* [``RxTextData``](RxTextData.md) 
+
+* [``RxXdfData``](RxXdfData.md) 
+
+
+## etl
+
+* [``rx_data_step``](rx_data_step.md) 
+
+* [``rx_import``](rx_import.md) 
+
+
+## functions
+
+* [``rx_delete_object``](rx_delete_object.md) 
+
+* [``rx_btrees``](rx_btrees.md) 
+
+* [``rx_dtree``](rx_dtree.md) 
+
+* [``rx_dforest``](rx_dforest.md) 
+
+* [``rx_get_info``](rx_get_info.md) 
+
+* [``rx_get_var_info``](rx_get_var_info.md) 
+
+* [``rx_get_var_names``](rx_get_var_names.md) 
+
+* [``rx_lin_mod``](rx_lin_mod.md) 
+
+* [``rx_list_keys``](rx_list_keys.md) 
+
+* [``rx_logit``](rx_logit.md) 
+
+* [``rx_predict``](rx_predict.md) 
+
+* [``rx_predict_default``](rx_predict_default.md) 
+
+* [``rx_predict_rx_dtree``](rx_predict_rx_dtree.md) 
+
+* [``rx_predict_rx_dforest``](rx_predict_rx_dforest.md) 
+
+* [``rx_read_object``](rx_read_object.md) 
+
+* [``rx_serialize_model``](rx_serialize_model.md) 
+
+* [``rx_summary``](rx_summary.md) 
+
+* [``rx_write_object``](rx_write_object.md) 
+
+* [``rx_get_info``](rx_get_info.md) 
+
+* [``rx_get_var_info``](rx_get_var_info.md) 
+
+* [``rx_get_var_names``](rx_get_var_names.md) 
+
+
+## utils
+
+* [``RxOptions``](RxOptions.md) 

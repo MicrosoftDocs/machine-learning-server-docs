@@ -3,8 +3,8 @@
 # required metadata 
 title: "Machine Learning Categorical HashData TransformDescriptionCategorical hash transform that can be performed on data before" 
 description: "Categorical hash transform that can be performed on data before" 
-keywords: "transform" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+keywords: "transform, catagory, hash" 
+author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
 ms.topic: "reference" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## categorical_hash
+## ``categorical_hash``: Hash and convert text column into categories
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.modules.categorical.categorical_hash(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], hash_bits=16, seed=314489979, ordered=True, invert_hash=0, output_kind: [‘Bag’, ‘Ind’, ‘Key’, ‘Bin’] = ‘Bag’, **kargs)
+microsoftml.categorical_hash(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], hash_bits: int = 16, seed: int = 314489979, ordered: bool = True, invert_hash: int = 0, output_kind: [‘Bag’, ‘Ind’, ‘Key’, ‘Bin’] = ‘Bag’, **kargs)
 ```
 
 

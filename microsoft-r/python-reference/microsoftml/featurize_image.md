@@ -3,8 +3,8 @@
 # required metadata 
 title: "Machine Learning Image Featurization Transform" 
 description: "Featurizes an image using a pre-trained deep neural network model." 
-keywords: "transform image featurize dnn cnn resnet alexnet" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+keywords: "transform, image, featurize, dnn, cnn, resnet, alexnet" 
+author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
 ms.topic: "reference" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## featurize_image
+## ``featurize_image``: Convert an image into features
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.modules.image_analytics.featurize_image(cols: [<class ‘dict’>, <class ‘str’>], dnn_model: [‘Resnet18’, ‘Resnet50’, ‘Resnet101’, ‘Alexnet’] = ‘Resnet18’, **kargs)
+microsoftml.featurize_image(cols: [<class ‘dict’>, <class ‘str’>], dnn_model: [‘Resnet18’, ‘Resnet50’, ‘Resnet101’, ‘Alexnet’] = ‘Resnet18’, **kargs)
 ```
 
 
@@ -56,42 +56,44 @@ be extracted pixel values.
 ### Arguments
 
 
-##### var
+##### cols
 
-Input variable containing extracted pixel values.
-
-
-##### out_var
-
-The prefix of the output variables containing the image features.
-If null, the input variable name will be used. The default value is *None*.
+Input variable containing extracted pixel values. If
+``dict``, the keys represent the names of new variables to be created.
 
 
 ##### dnn_model
 
 The pre-trained deep neural network. The possible options are:
 
-* ``"resnet18"`` 
+* ``"Resnet18"`` 
 
-* ``"resnet50"`` 
+* ``"Resnet50"`` 
 
-* ``"resnet101"`` 
+* ``"Resnet101"`` 
 
-* ``"alexnet"`` 
+* ``"Alexnet"`` 
 
-The default value is ``"resnet18"``.
+The default value is ``"Resnet18"``.
 See [Deep Residual Learning for Image Recognition](http://www.cv-foundation.org/openaccess/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html.md)
 for details about ResNet.
 
 
+##### kargs
+
+Additional arguments sent to compute engine.
+
+
 ### Returns
 
-A ``maml`` object defining the transform.
+An object defining the transform.
 
 
-### Author
+### See also
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
+[``load_image``](load_image.md),
+[``resize_image``](resize_image.md),
+[``extract_pixels``](extract_pixels.md).
 
 
 ### Example
@@ -99,31 +101,43 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ```
-train <- data.frame(Path = c(system.file("help/figures/RevolutionAnalyticslogo.png", package = "MicrosoftML")), Label = c(TRUE), stringsAsFactors = FALSE)
+'''
+Example with images.
+'''
+import numpy
+import pandas
+from microsoftml import rx_neural_network, rx_predict, rx_fast_linear
+from microsoftml import load_image, resize_image, extract_pixels
+from microsoftml.datasets.image import get_RevolutionAnalyticslogo
 
-# Loads the images from variable Path, resizes the images to 1x1 pixels and trains a neural net.
-model <- rxNeuralNet(
-    Label ~ Features,
-    data = train,
-    mlTransforms = list(
-        loadImage(vars = list(Features = "Path")),
-        resizeImage(vars = "Features", width = 1, height = 1, resizing = "Aniso"),
-        extractPixels(vars = "Features")
-        ),
-    mlTransformVars = "Path",
-    numHiddenNodes = 1,
-    numIterations = 1)
+train = pandas.DataFrame(data=dict(Path=[get_RevolutionAnalyticslogo()], Label=[True]))
+
+# Loads the images from variable Path, resizes the images to 1x1 pixels
+# and trains a neural net.
+model1 = rx_neural_network("Label ~ Features", data=train, 
+            ml_transforms=[            
+                    load_image(cols=dict(Features="Path")), 
+                    resize_image(cols="Features", width=1, height=1, resizing="Aniso"), 
+                    extract_pixels(cols="Features")], 
+            ml_transform_vars=["Path"], 
+            num_hidden_nodes=1, num_iterations=1)
 
 # Featurizes the images from variable Path using the default model, and trains a linear model on the result.
-model <- rxFastLinear(
-    Label ~ Features,
-    data = train,
-    mlTransforms = list(
-        loadImage(vars = list(Features = "Path")),
-        resizeImage(vars = "Features", width = 224, height = 224), # If dnnModel == "AlexNet", the image has to be resized to 227x227.
-        extractPixels(vars = "Features"),
-        featurizeImage(var = "Features")
-        ),
-    mlTransformVars = "Path")
+# If dnnModel == "AlexNet", the image has to be resized to 227x227.
+model2 = rx_fast_linear("Label ~ Features ", data=train, 
+            ml_transforms=[            
+                    load_image(cols=dict(Features="Path")), 
+                    resize_image(cols="Features", width=224, height=224), 
+                    extract_pixels(cols="Features")], 
+            ml_transform_vars=["Path"], max_iterations=1)
+
+# We predict even if it does not make too much sense on this single image.
+print("\nrx_neural_network")
+prediction1 = rx_predict(model1, data=train)
+print(prediction1)
+
+print("\nrx_fast_linear")
+prediction2 = rx_predict(model2, data=train)
+print(prediction2)
 ```
 

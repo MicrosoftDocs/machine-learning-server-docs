@@ -1,10 +1,10 @@
 --- 
  
 # required metadata 
-title: "Data Transformation for RevoScaleR data sources" 
-description: "Transforms data from an input data set to an output data set." 
-keywords: "manip" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+title: "Score using a Microsoft ML Machine Learning model" 
+description: "Reports per-instance scoring results in a data frame or revoscalepy data source" 
+keywords: "models, prediction" 
+author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
 ms.topic: "reference" 
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.modules.predict.rx_predict(model, data, out_data=None, write_model_vars=False, extra_vars_to_write=None, suffix=None, overwrite=False, data_threads=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>, **kargs)
+microsoftml.rx_predict(model, data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame], output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, write_model_vars: bool = False, extra_vars_to_write: list = None, suffix: str = None, overwrite: bool = False, data_threads: int = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None, **kargs)
 ```
 
 
@@ -43,10 +43,27 @@ microsoftml.modules.predict.rx_predict(model, data, out_data=None, write_model_v
 
 ### Description
 
-Transforms data from an input data set to an output data set.
+Reports per-instance scoring results in a data frame or revoscalepy data source
+using a trained Microsoft ML Machine Learning model with arevoscalepydata
+source.
+
+
+### Details
+
+The following items are reported in the output by default: scoring on three
+variables for the binary classifiers: PredictedLabel, Score, and Probability;
+the Score for oneClassSvm and regression classifiers; PredictedLabel for
+Multi-class classifiers, plus a variable for each category prepended by the
+Score.
 
 
 ### Arguments
+
+
+##### model
+
+A model information object returned from a microsoftml model.
+For example, an object returned from ``rx_fast_trees`` or ``rx_logistic_regression``.
 
 
 ##### data
@@ -55,18 +72,41 @@ A  data source object, a data frame, or the path
 to a ``.xdf`` file.
 
 
-##### out_data
+##### output_data
 
 Output text or xdf file name or an ``RxDataSource`` with
 write capabilities in which to store transformed data. If *None*, a data
 frame is returned. The default value is *None*.
 
 
+##### write_model_vars
+
+If ``True``, variables in the model are written
+to the output data set in addition to the scoring variables.
+If variables from the input data set are transformed in the model, the
+transformed variables are also included. The default value is ``False``.
+
+
+##### extra_vars_to_write
+
+``None`` or character vector of additional
+variables names from the input data to include in the ``output_data``. If
+``write_model_vars`` is ``True``, model variables are included as
+well. The default value is ``None``.
+
+
+##### suffix
+
+A character string specifying suffix to append to the created
+scoring variable(s) or ``None`` in there is no suffix. The default
+value is ``None``.
+
+
 ##### overwrite
 
-If ``TRUE``, an existing ``outData`` is overwritten;
-if ``FALSE`` an existing ``outData`` is not overwritten. The default
-value is /code{FALSE}.
+If ``True``, an existing ``output_data`` is overwritten;
+if ``False`` an existing ``output_data`` is not overwritten. The default
+value is ``False``.
 
 
 ##### data_threads
@@ -74,88 +114,6 @@ value is /code{FALSE}.
 An integer specifying the desired degree of parallelism in
 the data pipeline. If *None*, the number of threads used is determined
 internally. The default value is *None*.
-
-
-##### random_seed
-
-Specifies the random seed. The default value is *None*.
-
-
-##### max_slots
-
-Max slots to return for vector valued columns (<=0 to return all).
-
-
-##### ml_transforms
-
-Specifies a list of MicrosoftML transforms to be
-performed on the data before training or *None* if no transforms are
-to be performed. See [``featurize_text``](featurize_text.md),
-``categorical``,
-and ``categorical_hash()``, for transformations that are supported.
-These transformations are performed after any specified R transformations.
-The default value is *None*.
-
-
-##### ml_transform_vars
-
-Specifies a character vector of variable names
-to be used in ``mlTransforms`` or *None* if none are to be used.
-The default value is *None*.
-
-
-##### row_selection
-
-Specifies the rows (observations) from the data set that
-are to be used by the model with the name of a logical variable from the
-data set (in quotes) or with a logical expression using variables in the
-data set. For example, ``row_selection = "old"`` will only use
-observations in which the value of the variable ``old`` is ``TRUE``.
-``row_selection = (age > 20) & (age < 65) & (log(income) > 10)`` only uses
-observations in which the value of the ``age`` variable is between
-20 and 65 and the value of the ``log`` of the ``income`` variable is
-greater than 10. The row selection is performed after processing any data
-transformations (see the arguments ``transforms`` or
-``transform_func``). As with all expressions, ``row_selection`` can be
-defined outside of the function call using the ``expression()``
-function.
-
-
-##### transforms
-
-An expression of the form that represents
-the first round of variable transformations. As with
-all expressions, ``transforms`` (or ``row_selection``) can be defined
-outside of the function call using the ``expression()`` function.
-The default value is *None*.
-
-
-##### transform_objects
-
-A named list that contains objects that can be
-referenced by ``transforms``, ``transformsFunc``, and
-``row_selection``. The default value is *None*.
-
-
-##### transform_func
-
-The variable transformation function.
-The default value is *None*.
-
-
-##### transform_vars
-
-A character vector of input data set variables needed for
-the transformation function.
-The default value is *None*.
-
-
-##### transform_envir
-
-A user-defined environment to serve as a parent to all
-environments developed internally and used for variable data transformation.
-If ``transformEnvir = NULL``, a new “hash” environment with parent
-``baseenv()`` is used instead The default value is *None*.
 
 
 ##### blocks_per_read
@@ -191,26 +149,33 @@ The default value is ``1``.
 ##### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid ``revo_scale_r``.
-Currently local and ``revo_scale_r`` compute contexts
+specified with a valid ``RxComputeContext``.
+Currently local and ``RxInSqlServer`` compute contexts
 are supported.
+
+
+##### kargs
+
+Additional arguments sent to compute engine.
 
 
 ### Returns
 
-A data frame or an ``revo_scale_r`` object
-representing the created output data.
-
-
-### Author
-
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
+A data frame or an ``revoscalepy`` object
+representing the created output data. By default, output from scoring binary
+classifiers include three variables: ``PredictedLabel``,
+``Score``, and ``Probability``; ``rx_oneclass_svm`` and regression
+include one variable: ``Score``; and multi-class classifiers include
+``PredictedLabel`` plus a variable for each category prepended by
+``Score``. If a ``suffix`` is provided, it is added to the end
+of these output variable names.
 
 
 ### See also
 
+``rx_featurize``,
 ``rx_data_step``,
-``rx_import_datasource``.
+``rx_import``.
 
 
 ### Example
@@ -218,28 +183,3473 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ```
-# rxFeaturize basically allows you to access data from the MicrosoftML transforms
-# In this example we'll look at getting the output of the categorical transform
+'''
+Binary Classification.
+'''
+import numpy
+import pandas
+from microsoftml import rx_fast_linear, rx_predict
+from revoscalepy.etl.RxDataStep import rx_data_step
+from microsoftml.datasets.datasets import infert
+import sklearn
+if sklearn.__version__ < "0.18":
+    from sklearn.cross_validation import train_test_split
+else:
+    from sklearn.model_selection import train_test_split
 
-# Create the data
-categoricalData <- data.frame(
-  placesVisited = c(
-    "London",
-    "Brunei",
-    "London",
-    "Paris",
-    "Seria"
-  ),
-  stringsAsFactors = FALSE
-)
+infertdf = infert.as_df()
+infertdf["isCase"] = infertdf.case == 1
+data_train, data_test, y_train, y_test = train_test_split(infertdf, infertdf.isCase)
 
-# Invoke the categorical transform
-categorized <- rxFeaturize(
-  data = categoricalData,
-  mlTransforms = list(categorical(vars = c(xDataCat = "placesVisited")))
-)
+forest_model = rx_fast_linear(
+    formula=" isCase ~ age + parity + education + spontaneous + induced ",
+    data=data_train)
+    
+# RuntimeError: The type (RxTextData) for file is not supported.
+score_ds = rx_predict(forest_model, data=data_test,
+                     extra_vars_to_write=["isCase", "Score"])
+                     
+# Print the first five rows
+print(rx_data_step(score_ds, number_rows_read=5))
+```
 
-# Now let's look at the data
-categorized
+
+Output:
+
+
+
+```
+Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Using 2 threads to train.
+Automatically choosing a check frequency of 2.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Auto-tuning parameters: maxIterations = 8064.
+Auto-tuning parameters: L2 = 2.666837E-05.
+Auto-tuning parameters: L1Threshold (L1/L2) = 0.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: Rows Read: 1860.001, Read Time: , Transform Time: 0
+Rows Read: 186, Read Time: Rows Read: 1860.001, Read Time: , Transform Time: 0
+0
+0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: Beginning processing data.
+0
+Rows Read: 186Beginning processing data., Read Time: 
+0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: Beginning processing data.0
+
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: Beginning processing data.
+0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 186, Read Time: 0, Transform Time: 0
+0
+0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0Rows Read: , Transform Time: 0
+Rows Read: 186, Read Time: 0Rows Read: , Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186Rows Read: , Read Time: 1860, Read Time: , Transform Time: 0
+Beginning processing data.
+Rows Read: 186Rows Read: , Read Time: 1860, Read Time: , Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0Rows Read: 
+Rows Read: 186, Read Time: 0.001, Transform Time: 0Rows Read: 
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: Beginning processing data.
+0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: Rows Read: 0
+Rows Read: 186, Read Time: 0, Transform Time: Rows Read: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0Beginning processing data.R
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: Rows Read: 18686, Read Time: , Read Time: 00, Transform Time: , Transform Time: 0
+Rows Read: Rows Read: 18686, Read Time: , Read Time: 00, Transform Time: , Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.Beginning processing data.
+
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: Rows Read: 1166, Read Time: , Read Time: 0.00001, Transform Time: , Transform Time: 00
+Rows Read: Rows Read: 1166, Read Time: , Read Time: 0.00001, Transform Time: , Transform Time: 00
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: Rows Read:  86, Read Time: 186, Read Time: 0, Transform Time: 0
+Rows Read: Rows Read:  86, Read Time: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: Rows Read: 186, Read Time: 186, Read Time: 0, Transform Time: 0, Transform Time: 0
+Rows Read: Rows Read: 186, Read Time: 186, Read Time: 0, Transform Time: 0, Transform Time: 0
+0
+0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: Rows Read: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: Rows Read: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: Rows Read: 0.001, Transform Time: 0
+Beginning processing data.
+186
+Rows Read: 186, Read Time: Rows Read: 0.001, Transform Time: 0
+186
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: m Time: 0
+Beginning processing data.
+Rows Read: m Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001Rows Read: , Transform Time: 0
+Rows Read: 186, Read Time: 0.001Rows Read: , Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+, Read Time: , Read Time: Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: Rows Read: 1860.001, Transform Time: 0
+Rows Read: 186, Read Time: Rows Read: 1860.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+0
+0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: Rows Read: 186, Read Time: 0.001, Transform Time: 0, Transform Time: 00
+Rows Read: 186, Read Time: Rows Read: 186, Read Time: 0.001, Transform Time: 0, Transform Time: 00
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: Rows Read: 186, Read Time: 186, Read Time: 0, Transform Time: 00
+, Transform Time: :000
+Beginning processing data.
+Rows Read: Rows Read: 186, Read Time: 186, Read Time: 0, Transform Time: 00
+, Transform Time: :0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: Rows Read: Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+00Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0.0010.001Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+, Transform Time: , Transform Time: Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: m Time: 0
+Beginning processing data.
+Rows Read: m Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0
+0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+186186Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: Beginning processing data.
+0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: Rows Read: 18686, Read Time: , Read Time: 00, Transform Time: 00
+Rows Read: Rows Read: 18686, Read Time: , Read Time: 00, Transform Time: 00
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: Rows Read: 1186, Read Time: , Read Time: 00, Transform Time: 00
+Beginning processing data.
+Beginning processing data.
+Rows Read: Rows Read: 1186, Read Time: , Read Time: 00, Transform Time: 00
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186Rows Read: : 0.001, Tran186, Read Time: 0, Transform Time: 00, Transform Time: 
+Rows Read: 186Rows Read: : 0.001, Tran186, Read Time: 0, Transform Time: 00, Transform Time: 
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0
+0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: m Time: 0
+Rows Read: m Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Using best model from iteration 548.
+Not training a calibrator because it is not needed.
+Elapsed time: 00:00:02.0959826
+Elapsed time: 00:00:00.0244589
+Beginning processing data.
+Rows Read: 62, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Elapsed time: 00:00:00.1008218
+Finished writing 62 rows.
+Writing completed.
+Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre14776911.xdf File will be overwritten if it exists.
+
+Rows Processed: 5 
+  isCase PredictedLabel     Score  Probability
+0   True          False -3.067101     0.044485
+1  False          False -1.434176     0.192449
+2  False          False -3.291870     0.035851
+3   True          False -1.434176     0.192449
+4  False          False -0.601909     0.353907
+```
+
+
+
+### Example
+
+
+
+```
+'''
+Regression.
+'''
+import numpy
+import pandas
+from microsoftml import rx_fast_trees, rx_predict
+from revoscalepy.etl.RxDataStep import rx_data_step
+from microsoftml.datasets.datasets import airquality
+import sklearn
+if sklearn.__version__ < "0.18":
+    from sklearn.cross_validation import train_test_split
+else:
+    from sklearn.model_selection import train_test_split
+
+airquality = airquality.as_df()
+
+
+######################################################################
+# Estimate a regression fast forest
+# Use the built-in data set 'airquality' to create test and train data
+
+df = airquality[airquality.Ozone.notnull()]
+df["Ozone"] = df.Ozone.astype(float)
+
+data_train, data_test, y_train, y_test = train_test_split(df, df.Ozone)
+
+airFormula = " Ozone ~ Solar_R + Wind + Temp "
+
+# Regression Fast Forest for train data
+ff_reg = rx_fast_trees(airFormula, method="regression", data=data_train)
+
+# Put score and model variables in data frame
+score_df = rx_predict(ff_reg, data=data_test, write_model_vars=True)
+print(score_df.head())
+
+# Plot actual versus predicted values with smoothed line
+# Supported in the next version.
+# rx_line_plot(" Score ~ Ozone ", type=["p", "smooth"], data=score_df)
+```
+
+
+Output:
+
+
+
+```
+'unbalanced_sets' ignored for method 'regression'
+Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
+Not adding a normalizer.
+Making per-feature arrays
+Changing data from row-wise to column-wise
+Beginning processing data.
+Rows Read: 87, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Warning: Skipped 4 instances with missing features during training
+Processed 83 instances
+Binning and forming Feature objects
+Reserved memory for tree learner: 21684 bytes
+Starting to train ...
+Not training a calibrator because it is not needed.
+Elapsed time: 00:00:00.0826997
+Elapsed time: 00:00:00.0247518
+Beginning processing data.
+Rows Read: 29, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Elapsed time: 00:00:00.0642352
+Finished writing 29 rows.
+Writing completed.
+   Solar_R  Wind  Temp      Score
+0    254.0   9.2    81  37.661430
+1    267.0   6.3    92  84.561188
+2    139.0  10.3    81  25.400801
+3     19.0  20.1    61  10.323582
+4    274.0  10.9    68  22.545536
 ```
 

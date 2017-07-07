@@ -4,7 +4,7 @@
 title: "Fast Forest" 
 description: "Machine Learning Fast Forest" 
 keywords: "models, classification, regression" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
 ms.topic: "reference" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## rx_fast_forest
+## ``rx_fast_forest``: Random Forest
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.modules.fast_forest.rx_fast_forest(formula, data, method: [‘binary’, ’regression’] = ‘binary’, num_trees=100, num_leaves=20, min_split=10, example_fraction=0.7, feature_fraction=1, split_fraction=1, num_bins=255, first_use_penalty=0, gain_conf_level=0, train_threads=8, random_seed=None, ml_transforms=None, ml_transform_vars=None, row_selection=None, transforms=None, transform_objects=None, transform_func=None, transform_vars=None, transform_packages=None, transform_envir=None, blocks_per_read=1, report_progress=2, verbose=1, compute_context=<revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object>)
+microsoftml.rx_fast_forest(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], method: [‘binary’, ‘regression’] = ‘binary’, num_trees: int = 100, num_leaves: int = 20, min_split: int = 10, example_fraction: float = 0.7, feature_fraction: float = 1, split_fraction: float = 1, num_bins: int = 255, first_use_penalty: float = 0, gain_conf_level: float = 0, train_threads: int = 8, random_seed: int = None, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
 ```
 
 
@@ -87,7 +87,7 @@ for all trees in the model.
 
 ##### formula
 
-The formula as described in ``revo_scale_r``.
+The formula as described in ``rx_formula``.
 Interaction terms and ``F()`` are not currently supported in the
 .
 
@@ -180,60 +180,61 @@ Specifies the random seed. The default value is *None*.
 
 ##### ml_transforms
 
-Specifies a list of MicrosoftML transforms to be
+Specifies a list of microsoftml transforms to be
 performed on the data before training or *None* if no transforms are
 to be performed. See [``featurize_text``](featurize_text.md),
-``categorical``,
-and ``categorical_hash()``, for transformations that are supported.
-These transformations are performed after any specified R transformations.
+[``categorical``](categorical.md),
+and [``categorical_hash``](categorical_hash.md),
+for transformations that are supported.
+These transformations are performed after any specified Python transformations.
 The default value is *None*.
 
 
 ##### ml_transform_vars
 
 Specifies a character vector of variable names
-to be used in ``mlTransforms`` or *None* if none are to be used.
+to be used in ``ml_transforms`` or *None* if none are to be used.
 The default value is *None*.
 
 
 ##### row_selection
 
-Specifies the rows (observations) from the data set that
+NOT SUPPORTED. Specifies the rows (observations) from the data set that
 are to be used by the model with the name of a logical variable from the
 data set (in quotes) or with a logical expression using variables in the
 data set. For example, ``row_selection = "old"`` will only use
-observations in which the value of the variable ``old`` is ``TRUE``.
+observations in which the value of the variable ``old`` is ``True``.
 ``row_selection = (age > 20) & (age < 65) & (log(income) > 10)`` only uses
 observations in which the value of the ``age`` variable is between
 20 and 65 and the value of the ``log`` of the ``income`` variable is
 greater than 10. The row selection is performed after processing any data
 transformations (see the arguments ``transforms`` or
-``transform_func``). As with all expressions, ``row_selection`` can be
-defined outside of the function call using the ``expression()``
+``transform_function``). As with all expressions, ``row_selection`` can be
+defined outside of the function call using the ``expression``
 function.
 
 
 ##### transforms
 
-An expression of the form  that represents the first round
+NOT SUPPORTED. An expression of the form  that represents the first round
 of variable transformations. As with
 all expressions, ``transforms`` (or ``row_selection``) can be defined
-outside of the function call using the ``expression()`` function.
+outside of the function call using the ``expression`` function.
 
 
 ##### transform_objects
 
-A named list that contains objects that can be
-referenced by ``transforms``, ``transformsFunc``, and
+NOT SUPPORTED. A named list that contains objects that can be
+referenced by ``transforms``, ``transform_function``, and
 ``row_selection``.
 
 
-##### transform_func
+##### transform_function
 
 The variable transformation function.
 
 
-##### transform_vars
+##### transform_variables
 
 A character vector of input data set variables needed for
 the transformation function.
@@ -241,22 +242,22 @@ the transformation function.
 
 ##### transform_packages
 
-A character vector specifying additional R packages
-(outside of those specified in ``rxGetOption("transformPackages")``) to
+NOT SUPPORTED. A character vector specifying additional Python packages
+(outside of those specified in ``RxOptions.get_option("transform_packages")``) to
 be made available and preloaded for use in variable transformation functions.
 For exmple, those explicitly defined in  functions via
-their ``transforms`` and ``transform_func`` arguments or those defined
+their ``transforms`` and ``transform_function`` arguments or those defined
 implicitly via their ``formula`` or ``row_selection`` arguments.  The
 ``transform_packages`` argument may also be *None*, indicating that
-no packages outside ``rxGetOption("transformPackages")`` are preloaded.
+no packages outside ``RxOptions.get_option("transform_packages")`` are preloaded.
 
 
-##### transform_envir
+##### transform_environment
 
-A user-defined environment to serve as a parent to all
+NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
-If ``transformEnvir = NULL``, a new “hash” environment with parent
-``baseenv()`` is used instead.
+If ``transform_environment = None``, a new “hash” environment with parent
+``baseenv`` is used instead.
 
 
 ##### blocks_per_read
@@ -289,21 +290,19 @@ values from ``1`` to ``4`` provide increasing amounts of information.
 ##### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid ``revo_scale_r``.
-Currently local and ``revo_scale_r`` compute contexts
+specified with a valid ``RxComputeContext``.
+Currently local and ``RxInSqlServer`` compute contexts
 are supported.
 
 
 ##### ensemble
 
-Control parameters for ensembling.
+NOT SUPPORTED. Control parameters for ensembling.
 
 
 ### Returns
 
-* ``rxFastForest``: A ``rxFastForest`` object with the trained model. 
-
-* ``FastForest``: A learner specification object of class ``maml`` for the Fast Forest trainer. 
+A [``FastForest``](learners_object.md) object with the trained model.
 
 
 ### Note
@@ -312,21 +311,9 @@ This algorithm is multi-threaded and will always attempt to load the entire data
 memory.
 
 
-### Author
-
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
-
-
 ### See also
 
 [``rx_fast_trees``](rx_fast_trees.md),
-[``rx_fast_forest``](microsoftml/modules/fast_forest/rx_fast_forest.md),
-``rx_fast_linear``,
-[``rx_logistic_regression``](rx_logistic_regression.md),
-[``rx_oneclass_svm``](rx_oneclass_svm.md),
-[``categorical``](categorical.md),
-[``categorical_hash``](categorical_hash.md),
-[``featurize_text``](featurize_text.md),
 [``rx_predict``](rx_predict.md)
 
 
@@ -344,44 +331,152 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ```
-# Estimate a binary classification forest
-infert1 <- infert
-infert1$isCase = (infert1$case == 1)
-forestModel <- rxFastForest(formula = isCase ~ age + parity + education + spontaneous + induced,
-        data = infert1)
+'''
+Binary Classification.
+'''
+import numpy
+import pandas
+from microsoftml import rx_fast_forest, rx_predict
+from revoscalepy.etl.RxDataStep import rx_data_step
+from microsoftml.datasets.datasets import infert
+import sklearn
+if sklearn.__version__ < "0.18":
+    from sklearn.cross_validation import train_test_split
+else:
+    from sklearn.model_selection import train_test_split
 
-# Create text file with per-instance results using rxPredict
-txtOutFile <- tempfile(pattern = "scoreOut", fileext = ".txt")
-txtOutDS <- RxTextData(file = txtOutFile)
-scoreDS <- rxPredict(forestModel, data = infert1,
-   extraVarsToWrite = c("isCase", "Score"), outData = txtOutDS)
-   
-# Print the fist ten rows   
-rxDataStep(scoreDS, numRows = 10)
-   
-# Clean-up
-file.remove(txtOutFile)
+infertdf = infert.as_df()
+infertdf["isCase"] = infertdf.case == 1
+data_train, data_test, y_train, y_test = train_test_split(infertdf, infertdf.isCase)
+
+forest_model = rx_fast_forest(
+    formula=" isCase ~ age + parity + education + spontaneous + induced ",
+    data=data_train)
+    
+# RuntimeError: The type (RxTextData) for file is not supported.
+score_ds = rx_predict(forest_model, data=data_test,
+                     extra_vars_to_write=["isCase", "Score"])
+                     
+# Print the first five rows
+print(rx_data_step(score_ds, number_rows_read=5))
+```
+
+
+Output:
+
+
+
+```
+Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
+Not adding a normalizer.
+Making per-feature arrays
+Changing data from row-wise to column-wise
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Processed 186 instances
+Binning and forming Feature objects
+Reserved memory for tree learner: 7176 bytes
+Starting to train ...
+Not training a calibrator because it is not needed.
+Elapsed time: 00:00:00.2957124
+Elapsed time: 00:00:00.0586474
+Beginning processing data.
+Rows Read: 62, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Elapsed time: 00:00:00.1114673
+Finished writing 62 rows.
+Writing completed.
+Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre1477602.xdf File will be overwritten if it exists.
+
+Rows Processed: 5 
+  isCase PredictedLabel     Score  Probability
+0  False          False -5.007770     0.118877
+1  False          False -7.616487     0.045365
+2  False          False -5.510193     0.099385
+3   True          False -5.326499     0.106158
+4   True          False -4.900945     0.123426
+```
+
+
+
+### Example
+
+
+
+```
+'''
+Regression.
+'''
+import numpy
+import pandas
+from microsoftml import rx_fast_forest, rx_predict
+from revoscalepy.etl.RxDataStep import rx_data_step
+from microsoftml.datasets.datasets import airquality
+import sklearn
+if sklearn.__version__ < "0.18":
+    from sklearn.cross_validation import train_test_split
+else:
+    from sklearn.model_selection import train_test_split
+
+airquality = airquality.as_df()
+
 
 ######################################################################
 # Estimate a regression fast forest
-
 # Use the built-in data set 'airquality' to create test and train data
-DF <- airquality[!is.na(airquality$Ozone), ]	
-DF$Ozone <- as.numeric(DF$Ozone)
-randomSplit <- rnorm(nrow(DF))
-trainAir <- DF[randomSplit >= 0,]
-testAir <- DF[randomSplit < 0,]
-airFormula <- Ozone ~ Solar.R + Wind + Temp
+
+df = airquality[airquality.Ozone.notnull()]
+df["Ozone"] = df.Ozone.astype(float)
+
+data_train, data_test, y_train, y_test = train_test_split(df, df.Ozone)
+
+airFormula = " Ozone ~ Solar_R + Wind + Temp "
 
 # Regression Fast Forest for train data
-rxFastForestReg <- rxFastForest(airFormula, type = "regression", 
-    data = trainAir)  
-    
+ff_reg = rx_fast_forest(airFormula, method="regression", data=data_train)
+
 # Put score and model variables in data frame
-rxFastForestScoreDF <- rxPredict(rxFastForestReg, data = testAir, 
-    writeModelVars = TRUE)
-    
+score_df = rx_predict(ff_reg, data=data_test, write_model_vars=True)
+print(score_df.head())
+
 # Plot actual versus predicted values with smoothed line
-rxLinePlot(Score ~ Ozone, type = c("p", "smooth"), data = rxFastForestScoreDF)
+# Supported in the next version.
+# rx_line_plot(" Score ~ Ozone ", type=["p", "smooth"], data=score_df)
+```
+
+
+Output:
+
+
+
+```
+Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
+Not adding a normalizer.
+Making per-feature arrays
+Changing data from row-wise to column-wise
+Beginning processing data.
+Rows Read: 87, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Warning: Skipped 5 instances with missing features during training
+Processed 82 instances
+Binning and forming Feature objects
+Reserved memory for tree learner: 21684 bytes
+Starting to train ...
+Not training a calibrator because it is not needed.
+Elapsed time: 00:00:00.1394465
+Elapsed time: 00:00:00.0327990
+Beginning processing data.
+Rows Read: 29, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Elapsed time: 00:00:00.0862910
+Finished writing 29 rows.
+Writing completed.
+   Solar_R  Wind  Temp      Score
+0    193.0   6.9    70  28.145973
+1     44.0   9.7    62  16.289228
+2    149.0  12.6    74  18.734032
+3     13.0  12.0    67  16.196667
+4     48.0  14.3    80  34.342342
 ```
 

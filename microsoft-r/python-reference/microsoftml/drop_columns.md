@@ -3,8 +3,8 @@
 # required metadata 
 title: "Drops columns from the dataset" 
 description: "Specified columns to drop from the dataset." 
-keywords: "transform" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+keywords: "transform, schema" 
+author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
 ms.topic: "reference" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## drop_columns
+## ``drop_columns``: Select and drop a subset of columns
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.modules.schema_manipulation.drop_columns(cols: (<class ‘list’>, <class ‘str’>), **kargs)
+microsoftml.drop_columns(cols: [<class ‘list’>, <class ‘str’>], **kargs)
 ```
 
 
@@ -51,14 +51,20 @@ Specified columns to drop from the dataset.
 
 ##### cols
 
-A character vector or list of the names of the variables to drop.
+A character string or list of the names of the variables to drop.
+
+
+##### kargs
+
+Additional arguments sent to compute engine.
 
 
 ### Returns
 
-A ``maml`` object defining the transform.
+An object defining the transform.
 
 
-### Author
+### See also
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
+[``concat``](concat.md),
+[``select_columns``](select_columns.md).

@@ -3,7 +3,7 @@
 # required metadata 
 title: "" 
 description: "" 
-keywords: "" 
+keywords: "microsoftml API, API" 
 author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
@@ -24,65 +24,124 @@ ms.custom: ""
  
 ---
 
-## modules
+## learners
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
 
-* [BaseLearner](base_learner.md) 
 
-* [``categorical``: convert text column into categories](categorical.md) 
+### training function
 
-* [categorical_hash](categorical_hash.md) 
+* [``rx_fast_forest``: Random Forest](rx_fast_forest.md) 
 
-* [combine_models](combine_models.md) 
+* [``rx_fast_linear``: Fast Linear Model – Stochastic Dual Coordinate Ascent](rx_fast_linear.md) 
 
-* [combine_transform_models](combine_transform_models.md) 
+* [``rx_fast_trees``: Fast Tree](rx_fast_trees.md) 
 
-* [concat](concat.md) 
+* [``rx_logistic_regression``: Logistic Regression](rx_logistic_regression.md) 
 
-* [count_select](count_select.md) 
+* [``rx_neural_network``: Neural Network](rx_neural_network.md) 
 
-* [drop_columns](drop_columns.md) 
+* [``rx_oneclass_svm``: Detect Anomalies](rx_oneclass_svm.md) 
 
-* [extract_pixels](extract_pixels.md) 
 
-* [featurize_image](featurize_image.md) 
+### models
 
-* [featurize_text](featurize_text.md) 
+* [Learners Objects](learners_object.md) 
 
-* [get_sentiment](get_sentiment.md) 
+  * [Base Learner](learners_object.md) 
 
-* [load_image](load_image.md) 
+  * [Specific Learners](learners_object.md) 
 
-* [mutualinformation_select](mutualinformation_select.md) 
 
-* [ngram_count](ngram_count.md) 
+## transforms
 
-* [ngram_hash](ngram_hash.md) 
 
-* [resize_image](resize_image.md) 
+### categorical variable handling
 
-* [rx_fast_forest](rx_fast_forest.md) 
+* [``categorical``: Convert text column into categories](categorical.md) 
 
-* [rx_fast_linear](rx_fast_linear.md) 
+* [``categorical_hash``: Hash and convert text column into categories](categorical_hash.md) 
 
-* [rx_fast_trees](rx_fast_trees.md) 
 
-* [rx_featurize](rx_featurize.md) 
+### schema manipulation
 
-* [rx_logistic_regression](rx_logistic_regression.md) 
+* [``concat``: Concatenate multiple columns into a single vector](concat.md) 
 
-* [rx_neural_network](rx_neural_network.md) 
+* [``drop_columns``: Select and drop a subset of columns](drop_columns.md) 
 
-* [rx_oneclass_svm](rx_oneclass_svm.md) 
+* [``select_columns``: Select and keep a subset of columns](select_columns.md) 
+
+
+### variable selection
+
+* [``count_select``: Count and filter out features](count_select.md) 
+
+* [``mutualinformation_select``: Feature Selection Mutual Information](mutualinformation_select.md) 
+
+
+### text analytics
+
+* [``featurize_text``: Convert text columns into numerical features](featurize_text.md) 
+
+* [``n_gram``: Convert text into features using N-Grams](n_gram.md) 
+
+* [``n_gram_hash``: Convert text into features using hashed N-Grams](n_gram_hash.md) 
+
+* [``custom``: Remove Custom Stop Words](custom.md) 
+
+* [``predefined``: Remove Stop Words](predefined.md) 
+
+* [``get_sentiment``: Sentiment Analyzer](get_sentiment.md) 
+
+
+### image analytics
+
+* [``featurize_image``: Convert an image into features](featurize_image.md) 
+
+* [``load_image``: Load an image](load_image.md) 
+
+* [``resize_image``: Resize an Image](resize_image.md) 
+
+* [``extract_pixels``: Extract pixels form an image](extract_pixels.md) 
+
+
+## scorers
 
 * [``rx_predict``: Score using a Microsoft ML Machine Learning model](rx_predict.md) 
 
-* [select_columns](select_columns.md) 
+featurizers
+========== =
 
-* [stopwords_custom](stopwords_custom.md) 
+* [``rx_featurize``: Data Transformation for Data Sources](rx_featurize.md) 
 
-* [stopwords_predefined](stopwords_predefined.md) 
 
-* [transform_data](transform_data.md) 
+## optimizers
+
+* [``adadelta_optimizer``: Adaptive learing rate method](adadelta_optimizer.md) 
+
+* [``sgd_optimizer``: Stochastic Gradient Descent](sgd_optimizer.md) 
+
+
+## loss functions
+
+* [``hinge_loss``: Hinge Loss Function](hinge_loss.md) 
+
+* [``log_loss``: Log Loss Function](log_loss.md) 
+
+* [``smoothed_hinge_loss``: Smoothed Hinge Loss Function](smoothed_hinge_loss.md) 
+
+* [``squared_loss``: Square Loss Function](squared_loss.md) 
+
+
+## math
+
+* [``avx_math``](avx_math.md) 
+
+* [``clr_math``](clr_math.md) 
+
+* [``gpu_math``](gpu_math.md) 
+
+* [``mkl_math``](mkl_math.md) 
+
+* [``sse_math``](sse_math.md) 

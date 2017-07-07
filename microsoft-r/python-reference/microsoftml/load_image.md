@@ -3,8 +3,8 @@
 # required metadata 
 title: "Machine Learning Load Image Transform" 
 description: "Loads image data." 
-keywords: "transform image" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+keywords: "transform, image" 
+author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
 ms.topic: "reference" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## load_image
+## ``load_image``: Load an image
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.modules.image_analytics.load_image(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], **kargs)
+microsoftml.load_image(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], **kargs)
 ```
 
 
@@ -56,20 +56,25 @@ Loads image data.
 
 ##### cols
 
-A named list of character vectors of input variable names and
-the name of the output variable. Note that the input variables must
-be of the same type. For one-to-one mappings between input and output
-variables, a named character vector can be used.
+A character string or list of variable names to transform. If
+``dict``, the keys represent the names of new variables to be created.
+
+
+##### kargs
+
+Additional arguments sent to compute engine.
 
 
 ### Returns
 
-A ``maml`` object defining the transform.
+An object defining the transform.
 
 
-### Author
+### See also
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
+[``resize_image``](resize_image.md),
+[``extract_pixels``](extract_pixels.md),
+[``featurize_image``](featurize_image.md).
 
 
 ### Example
@@ -77,31 +82,137 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ```
-train <- data.frame(Path = c(system.file("help/figures/RevolutionAnalyticslogo.png", package = "MicrosoftML")), Label = c(TRUE), stringsAsFactors = FALSE)
+'''
+Example with images.
+'''
+import numpy
+import pandas
+from microsoftml import rx_neural_network, rx_predict, rx_fast_linear
+from microsoftml import load_image, resize_image, extract_pixels
+from microsoftml.datasets.image import get_RevolutionAnalyticslogo
 
-# Loads the images from variable Path, resizes the images to 1x1 pixels and trains a neural net.
-model <- rxNeuralNet(
-    Label ~ Features,
-    data = train,
-    mlTransforms = list(
-        loadImage(vars = list(Features = "Path")),
-        resizeImage(vars = "Features", width = 1, height = 1, resizing = "Aniso"),
-        extractPixels(vars = "Features")
-        ),
-    mlTransformVars = "Path",
-    numHiddenNodes = 1,
-    numIterations = 1)
+train = pandas.DataFrame(data=dict(Path=[get_RevolutionAnalyticslogo()], Label=[True]))
+
+# Loads the images from variable Path, resizes the images to 1x1 pixels
+# and trains a neural net.
+model1 = rx_neural_network("Label ~ Features", data=train, 
+            ml_transforms=[            
+                    load_image(cols=dict(Features="Path")), 
+                    resize_image(cols="Features", width=1, height=1, resizing="Aniso"), 
+                    extract_pixels(cols="Features")], 
+            ml_transform_vars=["Path"], 
+            num_hidden_nodes=1, num_iterations=1)
 
 # Featurizes the images from variable Path using the default model, and trains a linear model on the result.
-model <- rxFastLinear(
-    Label ~ Features,
-    data = train,
-    mlTransforms = list(
-        loadImage(vars = list(Features = "Path")),
-        resizeImage(vars = "Features", width = 224, height = 224), # If dnnModel == "AlexNet", the image has to be resized to 227x227.
-        extractPixels(vars = "Features"),
-        featurizeImage(var = "Features")
-        ),
-    mlTransformVars = "Path")
+# If dnnModel == "AlexNet", the image has to be resized to 227x227.
+model2 = rx_fast_linear("Label ~ Features ", data=train, 
+            ml_transforms=[            
+                    load_image(cols=dict(Features="Path")), 
+                    resize_image(cols="Features", width=224, height=224), 
+                    extract_pixels(cols="Features")], 
+            ml_transform_vars=["Path"], max_iterations=1)
+
+# We predict even if it does not make too much sense on this single image.
+print("\nrx_neural_network")
+prediction1 = rx_predict(model1, data=train)
+print(prediction1)
+
+print("\nrx_fast_linear")
+prediction2 = rx_predict(model2, data=train)
+print(prediction2)
+```
+
+
+Output:
+
+
+
+```
+Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Warning: Training data does not support shuffling, so ignoring request to shuffle
+Using: AVX Math
+
+***** Net definition *****
+  input Data [3];
+  hidden H [1] sigmoid { // Depth 1
+    from Data all;
+  }
+  output Result [1] sigmoid { // Depth 0
+    from H all;
+  }
+***** End net definition *****
+Input count: 3
+Output count: 1
+Output Function: Sigmoid
+Loss Function: LogLoss
+PreTrainer: NoPreTrainer
+___________________________________________________________________
+Starting training...
+Learning rate: 0.001000
+Momentum: 0.000000
+InitWtsDiameter: 0.100000
+___________________________________________________________________
+Initializing 1 Hidden Layers, 6 Weights...
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Estimated Pre-training MeanError = 0.707823
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Iter:1/1, MeanErr=0.707823(0.00%), 0.00M WeightUpdates/sec
+Done!
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Estimated Post-training MeanError = 0.707499
+___________________________________________________________________
+Not training a calibrator because it is not needed.
+Elapsed time: 00:00:00.2643137
+Elapsed time: 00:00:00.0341931
+Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Using 2 threads to train.
+Automatically choosing a check frequency of 2.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Auto-tuning parameters: L2 = 5.
+Auto-tuning parameters: L1Threshold (L1/L2) = 1.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Using model from last iteration.
+Not training a calibrator because it is not needed.
+Elapsed time: 00:00:01.5352117
+Elapsed time: 00:00:00.0456213
+
+rx_neural_network
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Elapsed time: 00:00:00.1296827
+Finished writing 1 rows.
+Writing completed.
+  PredictedLabel     Score  Probability
+0          False -0.028504     0.492875
+
+rx_fast_linear
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Elapsed time: 00:00:00.4803189
+Finished writing 1 rows.
+Writing completed.
+  PredictedLabel  Score  Probability
+0          False    0.0          0.5
 ```
 

@@ -3,8 +3,8 @@
 # required metadata 
 title: "Selects a set of columns, dropping all others" 
 description: "Selects a set of columns to retrain, dropping all others." 
-keywords: "transform" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+keywords: "transform, schema" 
+author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
 ms.topic: "reference" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## select_columns
+## ``select_columns``: Select and keep a subset of columns
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.modules.schema_manipulation.select_columns(cols: (<class ‘list’>, <class ‘str’>), **kargs)
+microsoftml.select_columns(cols: [<class ‘list’>, <class ‘str’>], **kargs)
 ```
 
 
@@ -51,14 +51,20 @@ Selects a set of columns to retrain, dropping all others.
 
 ##### cols
 
-Specifiies character vector or list of the names of the variables to keep.
+A character string or list of the names of the variables to keep.
+
+
+##### kargs
+
+Additional arguments sent to compute engine.
 
 
 ### Returns
 
-A ``maml`` object defining the transform.
+An object defining the transform.
 
 
-### Author
+### See also
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
+[``concat``](concat.md),
+[``drop_columns``](drop_columns.md).

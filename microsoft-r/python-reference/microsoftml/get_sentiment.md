@@ -3,8 +3,8 @@
 # required metadata 
 title: "Machine Learning Sentiment Analyzer Transform" 
 description: "Scores natual language text and creates a column that" 
-keywords: "transform text sentiment nlp" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+keywords: "transform, text, sentiment, nlp" 
+author: "HeidiSteen" 
 manager: "" 
 ms.date: "" 
 ms.topic: "reference" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## get_sentiment
+## ``get_sentiment``: Sentiment Analyzer
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.modules.text_analytics.get_sentiment(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], **kargs)
+microsoftml.get_sentiment(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], **kargs)
 ```
 
 
@@ -59,8 +59,8 @@ only the English language.
 
 ##### cols
 
-A character vector or list of variable names to transform. If
-named, the names represent the names of new variables to be created.
+A character string or list of variable names to transform. If
+``dict``, the names represent the names of new variables to be created.
 
 
 ##### kargs
@@ -70,25 +70,12 @@ Additional arguments sent to compute engine.
 
 ### Returns
 
-A ``maml`` object defining the transform.
-
-
-### Author
-
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409.md)
+An object defining the transform.
 
 
 ### See also
 
-[``rx_fast_trees``](rx_fast_trees.md),
-[``rx_fast_forest``](rx_fast_forest.md),
-``rx_fast_linear``,
-[``rx_logistic_regression``](rx_logistic_regression.md),
-``rx_one_class_svm``,
-[``featurize_text``](featurize_text.md),
-[``categorical``](categorical.md),
-[``categorical_hash``](categorical_hash.md),
-[``rx_predict.ml_model``](rx_predict.md)
+[``featurize_text``](featurize_text.md).
 
 
 ### Example
@@ -96,22 +83,46 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ```
+'''
+Example with get_sentiment and rx_logistic_regression.
+'''
+import numpy
+import pandas
+from microsoftml import rx_logistic_regression, rx_featurize, rx_predict, get_sentiment
+from microsoftml.datasets.datasets import movie_reviews
+
 # Create the data
-CustomerReviews <- data.frame(Review = c(
-  "I really did not like the taste of it",
-  "It was surprisingly quite good!",
-  "I will never ever ever go to that place again!!"),
-  stringsAsFactors = FALSE)
-
+customer_reviews = pandas.DataFrame(data=dict(review=[
+            "I really did not like the taste of it",
+            "It was surprisingly quite good!",
+            "I will never ever ever go to that place again!!"]))
+            
 # Get the sentiment scores
-sentimentScores <- rxFeaturize(data = CustomerReviews, 
-                               mlTransforms = getSentiment(vars = list(SentimentScore = "Review")))
-
+sentiment_scores = rx_featurize(
+    data=customer_reviews,
+    ml_transforms=[get_sentiment(cols=dict(scores="review"))])
+    
 # Let's translate the score to something more meaningful
-sentimentScores$PredictedRating <- ifelse(sentimentScores$SentimentScore > 0.6, 
-                                          "AWESOMENESS", "BLAH")
+sentiment_scores["eval"] = sentiment_scores.scores.apply(
+            lambda score: "AWESOMENESS" if score > 0.6 else "BLAH")
+print(sentiment_scores)
+```
 
-# Let's look at the results
-sentimentScores
+
+Output:
+
+
+
+```
+Beginning processing data.
+Rows Read: 3, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Elapsed time: 00:00:02.6589112
+Finished writing 3 rows.
+Writing completed.
+                                            review    scores         eval
+0            I really did not like the taste of it  0.461790         BLAH
+1                  It was surprisingly quite good!  0.960192  AWESOMENESS
+2  I will never ever ever go to that place again!!  0.310344         BLAH
 ```
 
