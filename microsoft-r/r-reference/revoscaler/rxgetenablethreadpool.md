@@ -4,7 +4,8 @@
 title: " Get or Set Thread Pool State " 
 description: " Gets or sets the current state of the thread pool (in a ready state or created ad hoc). " 
 keywords: "RevoScaleR, rxGetEnableThreadPool, rxSetEnableThreadPool, iteration" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`rxGetEnableThreadPool`:  Get or Set Thread Pool State 
+ #rxGetEnableThreadPool:  Get or Set Thread Pool State 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,7 +49,7 @@ Gets or sets the current state of the thread pool (in a ready state or created a
 
    
   
- ### `enable`
+ ### enable
   Logical scalar. If `TRUE`, the thread pool is instantiated and maintained in a ready state. If `FALSE`, threads are created in an ad hoc fashion; that is, they are created as needed.  
   
  

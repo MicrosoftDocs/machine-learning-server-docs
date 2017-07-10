@@ -5,27 +5,26 @@ title: "Integrate analytic web services and authentication into your application
 description: "Use Swagger to help integrate your R and Python analytics into your applications."
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
-# How to integrate web services and authentication into your application 
+# How to add web services and authentication to applications
 
 **Applies to:  Microsoft R Server 9.x**
 

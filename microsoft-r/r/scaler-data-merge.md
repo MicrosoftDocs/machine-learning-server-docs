@@ -5,22 +5,21 @@ title: "Merge data in RevoScaleR using rxSort (Microsoft R)"
 description: "How to merge data in a data frame or XDF file with the RevoScaleR rxMerge function."
 keywords: ""
 author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "06/06/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-server"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 
@@ -243,7 +242,7 @@ The new .xdf file has an additional variable, EducExp:
 
 ## See Also
 
- [Introduction to R Server](what-is-microsoft-r-server.md) 
- [Install R Server on Windows](install/r-server-install-windows.md)  
- [Install R Server on Linux](install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](install/r-server-install-hadoop.md)
+ [Introduction to R Server](~/what-is-microsoft-r-server.md) 
+ [Install R Server on Windows](~/install/r-server-install-windows.md)  
+ [Install R Server on Linux](~/install/r-server-install-linux-server.md)  
+ [Install R Server on Hadoop](~/install/r-server-install-hadoop.md)

@@ -1,26 +1,25 @@
 ---
 
 # required metadata
-title: "Deprecated, discontinued, or changed features in R Server"
+title: "Deprecated, discontinued, or changed features in R Server | Microsoft Docs"
 description: "Notifications about deprecated and discontinued features, packages, and functions in Microsoft R packages."
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "4/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-server"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 # Deprecated, discontinued, or changed features in Microsoft R Server

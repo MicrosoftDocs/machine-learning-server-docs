@@ -5,24 +5,23 @@ title: "Package reference (Microsoft R)"
 description: "Function reference for R packages in Microsoft R, including MicrosoftML, mrsdeploy, RevoScaleR, RevoPemaR, and others."
 keywords: ""
 author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "04/03/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - r-client
   - r-server
-ms.custom: ""
+#ms.custom: ""
 
 ---
 

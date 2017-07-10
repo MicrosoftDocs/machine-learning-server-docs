@@ -4,7 +4,8 @@
 title: "Summary of a Microsoft R Machine Learning model." 
 description: "Summary of a Microsoft R Machine Learning model." 
 keywords: "MicrosoftML, summary.mlModel, coef.mlModel, file, manip" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -28,7 +29,7 @@ ms.custom: ""
  
  
  
-#`summary.mlModel`: Summary of a Microsoft R Machine Learning model.
+#summary.mlModel: Summary of a Microsoft R Machine Learning model.
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -49,17 +50,17 @@ summary  (object, top = 20, ...)
 
    
   
- ### `object`
+ ### object
  A model object returned from a **MicrosoftML** analysis. 
   
   
   
- ### `top`
+ ### top
  Specifies the count of top coefficients to show in the summary for linear models such as [rxLogisticRegression](logisticregression.md) and  [rxFastLinear](rxfastlinear.md). The bias appears first, followed by other weights, sorted by their absolute values in descending order. If set to `NULL`,  all non-zero coefficients are shown. Otherwise, only the first `top`coefficients are shown. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed to the summary method. 
   
  
@@ -80,27 +81,27 @@ For [rxLogisticRegression](logisticregression.md), the following statistics may 
 present in the summary when `showTrainingStats` is set to `TRUE`.
 
 
-###`training.size `
+###training.size 
 The size, in terms of row count, of the data set used to train the model.
 
 
 
-###`deviance `
+###deviance 
 The model deviance is given by `-2 * ln(L)` where `L` is the likelihood of obtaining the observations with all features incorporated in the model.
 
 
 
-###`null.deviance `
+###null.deviance 
 The null deviance is given by `-2 * ln(L0)` where `L0` is the likelihood of obtaining the observations with no effect from the features. The null model includes the bias if there is one in the model.
 
 
 
-###`aic`
+###aic
 The AIC (Akaike Information Criterion) is defined as `2 * k ``+ deviance`, where `k` is the number of coefficients of the model. The bias counts as one of the coefficients. The AIC is a measure of the relative quality of the model. It deals with the trade-off between the goodness of fit of the model (measured by deviance) and the complexity of the model (measured by number of coefficients).
 
 
 
-###`coefficients.stats`
+###coefficients.stats
 This is a data frame containing the statistics for each coefficient in the model. For each coefficient, the following statistics are shown. The bias appears in the first row, and the remaining coefficients in the ascending order of p-value.   
 *   EstimateThe estimated coefficient value of the model.  
 *   Std ErrorThis is the square root of the large-sample variance of the estimate of the coefficient. 

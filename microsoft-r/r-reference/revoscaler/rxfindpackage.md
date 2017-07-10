@@ -4,7 +4,8 @@
 title: "Find Packages for Compute Context" 
 description: " Find the path for one or more packages for a compute context. " 
 keywords: "RevoScaleR, rxFindPackage, packages, sql, install, uninstall, remove, use" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxFindPackage`: Find Packages for Compute Context
+ #rxFindPackage: Find Packages for Compute Context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -49,32 +50,32 @@ Find the path for one or more packages for a compute context.
    
   
     
- ### `package`
+ ### package
  character vector of name(s) of packag(es). 
   
   
     
- ### `computeContext`
+ ### computeContext
  an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](rxinteradata.md), [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
   
   
     
- ### `allNodes`
+ ### allNodes
  logical. If `TRUE` and an [RxInTeradata](rxinteradata.md) compute context is used, a list of results from each node is returned. 
    
    
     
- ### `lib.loc`
+ ### lib.loc
  a character vector describing the location of R library trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace, then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](rxinsqlserver.md) only `NULL` is supported. 
   
    
     
- ### `quiet`
+ ### quiet
  logical. If `FALSE`, warnings or an error is given if the package is not found. 
   
    
     
- ### `verbose`
+ ### verbose
  logical. If `TRUE`, additional diagnostics are printed if available. 
   
  

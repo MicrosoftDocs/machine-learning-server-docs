@@ -1,29 +1,28 @@
 ---
 
 # required metadata
-title: "Microsoft R Glossary"
+title: "Microsoft R Glossary | Microsoft Docs"
 description: "DeployR and R Server Glossary Terms FAQ"
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "06/16/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - r-client
   - r-server  
   - deployr
-ms.custom: ""
+#ms.custom: ""
 
 ---
 
@@ -90,12 +89,6 @@ The breakdown of a complicated computation into pieces that can be performed ind
 <a name="hpa"></a>**High-performance analytics (HPA)**
 
 HPA is paradigm describing the distribution of data across multiple cores by means of efficient disk I/O, threading, and data management in memory. Instead of passing large amounts of data from node to node, the computations are distributed to the data. <p/> ScaleR, which is designed to process large data one chunk at a time, is also designed to process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. <p/> In ScaleR, HPA is evident in functions such as rxLinMod and other RevoScaleR analytics functions that focus on efficiently feeding data to available cores by means of efficient disk I/O, threading, and data management in memory. [Learn more…](r/how-to-developer-manage-threads.md)
-
-<br>
-
-<a name="hpc"></a>**High-performance computing (HPC)**
-
-HPC is a paradigm for sharing tasks among multiple computing resources. HPC mechanisms are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. Common tasks tackled with HPC mechanisms include the family of [embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) problems, a term used to describe workloads that are naturally modular, self-contained, and independent. Examples include element-by-element computations on arrays, or computation of membership in the Mandelbrot set. This family of problems also includes many types of simulation, where each individual run is independent. <p/> In ScaleR, HPC refers to functions such as rxExec, foreach, and rmpi that are CPU-centric, involving tremendous amounts of processing on relatively small amounts of data. HPC functions are optimized to share tasks across available computing resources, but can be slowed if large amounts of data need to be transferred.
 
 
 <a name="M"></a>

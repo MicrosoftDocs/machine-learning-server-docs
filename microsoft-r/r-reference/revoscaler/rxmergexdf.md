@@ -4,7 +4,8 @@
 title: " Merge two data sources " 
 description: " Merge (join) two data sources on one or more match variables. In local compute context, the data sources may be sorted .xdf files or data frames. In [RxSpark](rxspark.md) compute context, the data sources may be [RxParquetData](rxsparkdata.md), [RxHiveData](rxsparkdata.md), [RxOrcData](rxsparkdata.md), [RxXdfData](rxxdfdata.md) or [RxTextData](rxtextdata.md). " 
 keywords: "RevoScaleR, rxMerge, rxMergeXdf, file" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`rxMerge`:  Merge two data sources 
+ #rxMerge:  Merge two data sources 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -65,37 +66,37 @@ In [RxSpark](rxspark.md) compute context, the data sources may be [RxParquetData
 
    
     
- ### `inData1`
+ ### inData1
   the first data set to merge.  In local compute context, a data frame, a character string denoting the path to an  existing .xdf file, or an [RxXdfData](rxxdfdata.md) object. If a list of [RxXdfData](rxxdfdata.md) objects is provided, they will be merged sequentially. In [RxSpark](rxspark.md) compute context, an [RxParquetData](rxsparkdata.md), [RxHiveData](rxsparkdata.md), [RxOrcData](rxsparkdata.md), [RxXdfData](rxxdfdata.md) or [RxTextData](rxtextdata.md) data source. If a list of data source objects is provided, they will be merged sequentially.  
   
   
     
- ### `inFile1`
+ ### inFile1
   the first data set to merge; either a character string denoting the path to an  existing .xdf file or an [RxXdfData](rxxdfdata.md) object.   
   
   
      
- ### `inData2`
+ ### inData2
   the second data set to merge. In local compute context, a data frame, a character string denoting the path  to an existing .xdf file, or an [RxXdfData](rxxdfdata.md) object. Can be `NULL` if a list of [RxXdfData](rxxdfdata.md) objects is provided for `inData1`. In [RxSpark](rxspark.md) compute context, an [RxParquetData](rxsparkdata.md), [RxHiveData](rxsparkdata.md), [RxOrcData](rxsparkdata.md), [RxXdfData](rxxdfdata.md) or [RxTextData](rxtextdata.md) data source. Can be `NULL` if a list of data source objects is provided for `inData1`.  
   
   
      
- ### `inFile2`
+ ### inFile2
   the second data set to merge; either a character string denoting the path  to an existing .xdf file or an [RxXdfData](rxxdfdata.md) object.  
   
   
     
- ### `outFile`
+ ### outFile
   in local compute context, an .xdf path to store the merged output. If the `outFile` already exists, `overwrite` must be set to `TRUE` to overwrite the file. If `NULL`, a data frame containing the merged data will be returned. In [RxSpark](rxspark.md) compute context, an [RxParquetData](rxsparkdata.md), [RxHiveData](rxsparkdata.md), [RxOrcData](rxsparkdata.md) or [RxXdfData](rxxdfdata.md) data source.  
   
   
     
- ### `matchVars`
+ ### matchVars
   character vector containing the names of the variables to match for merging. In local compute context, the data sets MUST BE presorted in the same order by these variables, unless `autoSort` is set to `TRUE`. See [rxSort](rxsortxdf.md).  Not required for `type` equal to `"union"` or `"oneToOne"`.  
   
   
     
- ### `type`
+ ### type
   a character string defining the merge method to use:   
 *   `"inner"` compares each row of `inData1` with each row of `inData2` to  find all pairs of rows in which the values of the `matchVars` are the same. 
 *   `"oneToOne"` appends columns from `inData1` to `inData2`. Not supported in [RxSpark](rxspark.md) compute context. 
@@ -107,78 +108,78 @@ In [RxSpark](rxspark.md) compute context, the data sources may be [RxParquetData
   
   
     
- ### `missingsLow`
+ ### missingsLow
   a logical scalar for controlling the treatment of missing values. If `TRUE`, missing values  in the data are treated as the lowest value; if `FALSE`, they are treated as the highest value. Not supported in [RxSpark](rxspark.md) compute context.  
   
   
     
- ### `autoSort`
+ ### autoSort
   a logical scalar for controlling whether or not to sort the input data sets by the `matchVars` before merging.  If `TRUE`, the data sets are sorted before merging; if `FALSE`,  it is assumed that the data sets are already sorted by the `matchVars`. Not supported in [RxSpark](rxspark.md) compute context.  
   
   
     
- ### `duplicateVarExt`
+ ### duplicateVarExt
   a character vector of length two containing the extensions to be used for handling duplicate variable names in the two input data sets. These extensions are not applied to matching variables.  If `NULL`, file or data frame names will be used as the extension.  If the names are the same,  the extensions `1` and `2` will be used (unless there are other variables with those names.)  For example, if `duplicateVarExt = c("One", "Two")` and `inData1` and `inData2` both have the variable `y`, the output data set will contain the variables `y.One` and `y.Two`.  
   
   
     
- ### `varsToKeep1`
+ ### varsToKeep1
   character vector of variable names to include from the `inData1`. If `NULL`, argument is ignored. Cannot be used with `varsToDrop1`.  
   
   
     
- ### `varsToDrop1`
+ ### varsToDrop1
   character vector of variable names to exclude  from `inData1`. If `NULL`, argument is ignored. Cannot be used with `varsToKeep1`.  
   
   
     
- ### `newVarNames1`
+ ### newVarNames1
  a named character vector of new names for variables from `inData1` when writing them to `outData`.  For example, specifying `c(x = "newx", y = "newy"` would give the input variables `x` and `y` the names `newx` and `newy` in the output data.  
   
    
   
     
- ### `varsToKeep2`
+ ### varsToKeep2
   character vector of variable names to include from the `inData2`. If `NULL`, argument is ignored. Cannot be used with `varsToDrop2`.  
   
   
     
- ### `varsToDrop2`
+ ### varsToDrop2
   character vector of variable names to exclude  from `inData2`. If `NULL`, argument is ignored. Cannot be used with `varsToKeep2`.  
   
   
     
- ### `newVarNames2`
+ ### newVarNames2
   a named character vector of new names for variables from `inData2` when writing them to `outData`.  For example, specifying `c(x = "newx", y = "newy"` would give the input variables `x` and `y` the names `newx` and `newy` in the output data.  
   
   
     
- ### `rowsPerOutputBlock`
+ ### rowsPerOutputBlock
   an integer specifying how many rows should be written out to each block in the output .xdf file.  If set to -1, the smaller of the two average block sizes of the input data sets will be used. Ignored if `outData` is `NULL`. Not supported in [RxSpark](rxspark.md) compute context.  
   
   
     
- ### `decreasing`
+ ### decreasing
   a logical scalar specifying whether or not the `matchVars` variables were  sorted in decreasing or increasing order. The input data must be sorted in the  same order.  
   
   
     
- ### `overwrite`
+ ### overwrite
  logical value. If `TRUE`, an existing `outFile` will be overwritten. Ignored if `outData` is `NULL` 
   
   
   
- ### `maxRowsByCols`
+ ### maxRowsByCols
  the maximum size of a data frame that will be returned if `outFile` is set to `NULL` and `inData` is an .xdf file , measured by the number of rows times the number of columns. If the number of rows times the number of columns being created from the .xdf file exceeds this, a warning will be reported and the number of rows in the returned data frame will be truncated. If `maxRowsByCols` is set to be too large, you may experience problems  from loading a huge data frame into memory. Not supported in [RxSpark](rxspark.md) compute context. 
   
   
     
- ### `bufferLimit`
+ ### bufferLimit
  integer specifiying the maximum size of the memory buffer (in Mb)  to use in merging. The default value of `bufferLimit = -1` will attempt to  determine an appropriate buffer limit based on system memory. Not supported in [RxSpark](rxspark.md) compute context. 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -188,17 +189,17 @@ In [RxSpark](rxspark.md) compute context, the data sources may be [RxParquetData
    
   
     
- ### `verbose`
+ ### verbose
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
      
- ### `xdfCompressionLevel`
+ ### xdfCompressionLevel
  integer in the range of -1 to 9.  The higher the value, the greater the  amount of compression for the output file - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and the output file will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used. 
    
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to the Microsoft R Server Compute Engine. 
   
  

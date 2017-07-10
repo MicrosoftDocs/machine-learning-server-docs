@@ -5,24 +5,23 @@ title: "Configure a database for operationalization - Microsoft R Server | Micro
 description: "Configure a SQL Server or PostgreSQL Database database for Microsoft R Server"
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # Configuring an SQL Server or PostgreSQL database for R Server
@@ -55,7 +54,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
 1.  Update the database properties to point to the new database as follows:
 
-    1. [Open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md). 
+    1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md). 
 
     1. Locate the `ConnectionStrings` property block.
 
@@ -94,7 +93,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
        "Connection":  "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
        ```       
     
-    1. <a name="encrypt"></a>For better security, we recommend you encrypt the connection string for this database before adding the information to `appsettings.json`.
+    1. <a name="encrypt"></a>For better security, we recommend you encrypt the connection string for this database before adding the information to appsettings.json.
     
        1. Use the administration utility to [encrypt the connection string](configure-use-admin-utility.md#encrypt).
 
@@ -111,7 +110,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
        },
        ```       
 
-    1. Save the changes you've made to `appsettings.json`.
+    1. Save the changes you've made to appsettings.json.
 
 1. Open the database port on the remote machine to the public IP of each web node as described in these articles: [SQL Server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx) | [PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
          

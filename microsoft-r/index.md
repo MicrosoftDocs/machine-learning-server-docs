@@ -5,24 +5,23 @@ title: "What is Microsoft R Server and R Client"
 description: "Learn about Microsoft R features and components in R Server, R Client, R Open."
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "06/22/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - r-client
   - r-server
-ms.custom: ""
+#ms.custom: ""
 
 ---
 
@@ -52,9 +51,16 @@ In minutes, you can step through a classic what-if problem using sample data and
 
 ## Pre-built solutions
 
-We offer solutions tailored to specific industries and problem sets. Find more solutions on the [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com/browse?s=R%20Server&skip=0&categories=%5B%2210%22%5D&tags=%5B%22Microsoft%20R%20Server%22%5D).
+We offer solutions tailored to specific industries and problem sets, such as:
++ Predicting Length of Stay in Hospitals
 
-* [Solution: Predicting length of stay in hospitals](https://gallery.cortanaintelligence.com/Solution/Predicting-Length-of-Stay-in-Hospitals-1) 
++ Campaign Optimization with SQL Server
+
++ Campaign Optimization with Azure HDInsight Spark Clusters
+
++ Loan Credit Risk with SQL Server
+
+Explore machine learning how-to solutions at https://aka.ms/rsolutiontemplates.
 
 ## Embedded R Server
 

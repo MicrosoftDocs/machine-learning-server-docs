@@ -1,28 +1,27 @@
 ---
 
 # required metadata
-title: "Microsoft R Server on HDInsight"
+title: "Microsoft R Server on HDInsight - Virtual Machine | Microsoft Docs"
 description: "Microsoft R Server on HDInsight introduction"
 keywords: "Microsoft R Server, HDInsight"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "4/26/2017"
+ms.date: "6/30/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
   - r-client
   - r-server
-ms.custom: ""
+#ms.custom: ""
 
 ---
 

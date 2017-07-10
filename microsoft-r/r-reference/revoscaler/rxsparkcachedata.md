@@ -4,7 +4,8 @@
 title: " Set the Cache Flag in Spark Compute Context " 
 description: " Use this function to set the cache flag to control whether data objects should be cached in Spark memory system, applicable for `RxXdfData`, `RxHiveData`, `RxParquetData`, and `RxOrcData`.  " 
 keywords: "RevoScaleR, rxSparkCacheData {RevoScaleR}, rxSparkCacheData" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxSparkCacheData {RevoScaleR}`:  Set the Cache Flag in Spark Compute Context 
+ #rxSparkCacheData {RevoScaleR}:  Set the Cache Flag in Spark Compute Context 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,11 +49,11 @@ Use this function to set the cache flag to control whether data objects should b
 
    
     
- ### `data`
+ ### data
  a data source that can be RxXdfData, RxHiveData, RxParquetData, or RxOrcData. RxTextData is currently not supported. 
   
     
- ### `cache`
+ ### cache
  logical value controlling whether the data should be cached or not. If `TRUE`the data will be cached in the Spark memory system after the first use for performance enhancement. 
   
  

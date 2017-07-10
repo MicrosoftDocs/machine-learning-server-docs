@@ -4,7 +4,8 @@
 title: "Input Data for SQL Stored Procedure: Class Generator" 
 description: " `InputData`: generates an InputData Object that captures the information about the input parameter that is a data frame. The data frame needs to be populated upon the execution a given query. This object is necessary  for creation of stored procedures in which the embedded R functoin takes in a data frame input parameter. " 
 keywords: "sqlrutils, InputData" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`InputData`: Input Data for SQL Stored Procedure: Class Generator
+ #InputData: Input Data for SQL Stored Procedure: Class Generator
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -51,17 +52,17 @@ the embedded R functoin takes in a data frame input parameter.
 
    
   
- ### `name`
+ ### name
  A character string, the name of the data input parameter into the R function supplied to StoredProcedure. 
   
   
   
- ### `defaultQuery`
+ ### defaultQuery
  A character string specifying the default query that will retrieve the data if a different query is not provided at the time of the execution of the stored procedure. Must be a simple SELECT query. 
   
   
   
- ### `query`
+ ### query
  A character string specifing the query that will be used to retrive the data in the next run of the stored procedure. 
   
  

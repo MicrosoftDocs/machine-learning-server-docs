@@ -4,7 +4,8 @@
 title: "olapR explore Method" 
 description: "Allows for exploration of cube metadata " 
 keywords: "olapR, explore" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`explore`: olapR explore Method
+ #explore: olapR explore Method
 
  Applies to version 1.0.0 of package olapR.
  
@@ -49,23 +50,23 @@ Allows for exploration of cube metadata
 
    
     
- ### `olapCnn`
+ ### olapCnn
  Object of class "OlapConnection" returned by `OlapConnection()` 
   
     
- ### `cube`
+ ### cube
  A string specifying a cube name 
   
     
- ### `dimension`
+ ### dimension
  A string specifying a dimension name 
   
     
- ### `hierarchy`
+ ### hierarchy
  A string specifying a hierarchy name 
   
     
- ### `level`
+ ### level
  A string specifying a level name 
   
  

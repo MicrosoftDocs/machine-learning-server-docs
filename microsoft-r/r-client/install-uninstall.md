@@ -1,26 +1,25 @@
 ---
 
 # required metadata
-title: "Uninstall R client to upgrade to a newer version"
+title: "Uninstall Microsoft R client to upgrade to a newer version | Microsoft Docs"
 description: ""
 keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "4/30/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-client"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 

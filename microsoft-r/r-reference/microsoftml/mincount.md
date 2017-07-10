@@ -4,7 +4,8 @@
 title: "Feature Selection Count Mode" 
 description: " Count mode of feature selection used in the feature selection transform [selectFeatures](selectfeatures.md). " 
 keywords: "MicrosoftML, minCount, count, feature, selection" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`minCount`: Feature Selection Count Mode
+ #minCount: Feature Selection Count Mode
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -48,12 +49,12 @@ Count mode of feature selection used in the feature selection transform
 
    
   
- ### `count`
+ ### count
  The threshold for count based feature selection. A feature is selected if and only if at least `count` examples have non-default value in the feature. The default value is 1. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

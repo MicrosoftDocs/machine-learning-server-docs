@@ -4,7 +4,8 @@
 title: " Apply Function to Pairwise Combinations of an xtabs Object" 
 description: " Apply a function 'FUN' to all pairwise combinations of the rows and columns of an xtabs object,  stratifying by higher dimensions. " 
 keywords: "RevoScaleR, rxPairwiseCrossTab, print.rxPairwiseCrossTabList, print.rxPairwiseCrossTabTable, htest" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -28,7 +29,7 @@ ms.custom: ""
  
  
  
- #`rxPairwiseCrossTab`:  Apply Function to Pairwise Combinations of an xtabs Object
+ #rxPairwiseCrossTab:  Apply Function to Pairwise Combinations of an xtabs Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -57,37 +58,37 @@ print  (x, digits = 3, scientific = FALSE, p.value.digits = 3, ...)
    
   
     
- ### `x`
+ ### x
  an object of class xtabs, rxCrossTabs, or rxCube for `rxPairwiseCrossTab`. An object of class rxPairwiseCrossTabList or rxPairwiseCrossTabTable for the print methods of rxPairwiseCrossTabList and rxPairwiseCrossTabTable objects. 
   
   
     
- ### `pooled`
+ ### pooled
  logical value. If `TRUE`, the comparison groups are pooled.  Otherwise all pairwise comparisons are included. 
   
   
     
- ### `FUN`
+ ### FUN
  function that takes a two by two table and returns an object of class htest. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments. 
   
   
     
- ### `digits`
+ ### digits
  number of digits to use in printing numeric values. 
   
   
     
- ### `scientific`
+ ### scientific
  logical value. If `TRUE`, scientific notation is used to prin tnumeric values. 
   
   
     
- ### `p.value.digits`
+ ### p.value.digits
  number of digits to use in printing p-values. 
   
  

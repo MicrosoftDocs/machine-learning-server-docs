@@ -4,7 +4,8 @@
 title: "Conversion of a RevoScaleR rxLogit or rxGlm object to a glm Object" 
 description: " Converts objects containing generalized linear model results to a glm object. " 
 keywords: "RevoScaleR, as.glm, as.glm.rxLogit, as.glm.rxGlm" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`as.glm`: Conversion of a RevoScaleR rxLogit or rxGlm object to a glm Object
+ #as.glm: Conversion of a RevoScaleR rxLogit or rxGlm object to a glm Object
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -50,11 +51,11 @@ as.glm  (x, ...)
 
    
     
- ### `x`
+ ### x
  object of class rxLogit or rxGlm. 
   
     
- ### ` ...`
+ ###  ...
  additional arguments (currently not used). 
   
  

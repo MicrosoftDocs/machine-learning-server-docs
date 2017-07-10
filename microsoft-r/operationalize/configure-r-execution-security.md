@@ -5,24 +5,23 @@ title: "R Execution Security Considerations and user isolation - Microsoft R Ser
 description: "R Execution Security Considerations when operationalizing analytics with Microsoft R Server"
 keywords: "RServe; deployr-rserve; user isolation"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # R Execution Security Considerations for R Server
@@ -58,12 +57,7 @@ If your configuration requires additional compute capacity, [additional compute 
 
 In the R language, users can change files in the file system, download content from the web, download packages, and so on.
 
-In order to mitigate some of the risks associated with RServe, the service is setup to run using **a single account with restricted privileges**:
-
-+ Read-only permissions to the R library to prevent users from installing packages from their R scripts
-
-+ Write permissions to the R working directory <MRS_home>\deployr\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces
-<br>
+In order to mitigate some of the risks associated with RServe, the service is setup to run using **a single account with write permissions** to the R working directory <MRS_home>\deployr\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces.
 
 >[!Important]
 >While the custom Rserve service can only write to the working directory, **there is no user isolation between the session folders**. Any user familiar with the directory structure could in theory access another user’s session folder from their R script.

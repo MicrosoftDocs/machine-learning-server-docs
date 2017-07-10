@@ -5,24 +5,23 @@ title: "APIs for operationalizing your models and analytics - Microsoft R Server
 description: "Operationalization APIs for authenticating, publishing, managing, and consuming web services with Microsoft R Server."
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # APIs for operationalizing your models and analytics with Microsoft R Server 
@@ -56,7 +55,7 @@ The core APIs are accessible from and described in  `rserver-swagger-<version>.j
 
 You can access all of these core APIs using a client library built from `rserver-swagger-<version>.json` using [these instructions and example](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
-Note: For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the `mrsdeploy` package](../r-reference/mrsdeploy/mrsdeploy-package.md) directly to list, discover, and consume services. [Learn more in this article](how-to-consume-web-service-interact-in-r.md).
+Note: For client applications written in **R**, you can side-step the Swagger approach altogether and exploit [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) directly to list, discover, and consume services. [Learn more in this article](how-to-consume-web-service-interact-in-r.md).
 
 ## Service Consumption APIs
 

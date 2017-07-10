@@ -4,7 +4,8 @@
 title: "Syncs Packages for Compute Context" 
 description: "  **NOTE: This new API is in pre-release mode and subject to change before final release.**  Synchronizes all packages listed in for database to the files system for a compute context. The packages contained in the database are installed on the file system so they can be loaded by R. rxSyncPackages should be called after SQL Server is restored to a new machine or if a R package on the file system is believed to be corrupted.  " 
 keywords: "RevoScaleR, rxSyncPackages, sync, synchronize, use, packages, sql" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxSyncPackages`: Syncs Packages for Compute Context
+ #rxSyncPackages: Syncs Packages for Compute Context
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -52,22 +53,22 @@ Synchronizes all packages listed in for database to the files system for a compu
 
    
     
- ### `computeContext`
+ ### computeContext
  an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](rxinsqlserver.md). 
   
   
     
- ### `scope`
+ ### scope
  character vector containing either `"shared"` or `"private"` or both. `"shared"` synchronizes the packages on per database shared location on SQL server which in turn can be used (referred) by multiple different users. `"private"` synchronizes the packages on per database, per user private location on SQL server which is only accessible to the single user. By default both `"shared"` and `"private"` are set which will synchronize  the entire table of packages for all scopes and users. 
   
   
     
- ### `owner`
+ ### owner
  character vector. Should be either empty `''` or a vector of valid SQL database user account names. Only users in `'db_owner'` role for a database can specify this value to install packages on  behalf of other users.  
   
   
     
- ### `verbose`
+ ### verbose
  logical. If `TRUE`, "progress report" is given during installation of given packages. 
   
  

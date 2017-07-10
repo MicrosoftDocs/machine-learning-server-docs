@@ -4,7 +4,8 @@
 title: " Set info such as a description " 
 description: " Set .xdf file or data frame information, such as a description " 
 keywords: "RevoScaleR, rxSetInfo, rxSetInfoXdf,  attribute " 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`rxSetInfo`:  Set info such as a description 
+ #rxSetInfo:  Set info such as a description 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,16 +49,16 @@ Set .xdf file or data frame information, such as a description
 
    
     
- ### `data`
+ ### data
   An .xdf file name, an [RxXdfData](rxxdfdata.md) object, or a data frame.  
   
     
- ### `file`
+ ### file
   An .xdf file name or an [RxXdfData](rxxdfdata.md) object  
   
   
   
- ### `description`
+ ### description
   character string containing the file or data frame description  
   
  

@@ -4,7 +4,8 @@
 title: "Fuzzy keys for a character vector" 
 description: " EXPERIMENTAL: Get fuzzy keys for a character vector " 
 keywords: "RevoScaleR, rxGetFuzzyKeys, manip" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxGetFuzzyKeys`: Fuzzy keys for a character vector
+ #rxGetFuzzyKeys: Fuzzy keys for a character vector
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -54,79 +55,79 @@ EXPERIMENTAL: Get fuzzy keys for a character vector
 
    
     
- ### `stringsIn`
+ ### stringsIn
  Character vector of strings to process or name of character variable. 
   
     
- ### `data`
+ ### data
  `NULL` or data frame or RevoScaleR data source containing the variable to process. 
   
     
- ### `outFile`
+ ### outFile
  `NULL` or RevoScaleR data source in which to put output. 
   
     
- ### `varsToKeep`
+ ### varsToKeep
  `NULL` or character vector of variables from the input 'data' to keep in the output data set. If `NULL`, all variables are kept. Ignored if data is `NULL`. 
   
     
- ### `matchMethod`
+ ### matchMethod
  Method for matching to dictionary: 'none' for no matching, 'lv' for Levenshtein; 'j' for Jaro, 'jw' for JaroWinkler,  'bag' for bag of words, 'exact' for exact matching. The default matchMethod is 'lv'. 
   
     
- ### `keyType`
+ ### keyType
  Transformation type in creating keys: 'all' to retain all characters, 'alphanum' for alphanumeric characters only,  'alpha' for letters only", 'mphone3' for Metaphone3 phonetic transformation, 'soundex' for Soundex phonetic transformation,  'mphone3Vowels' for Metaphone3 encoding more than initial vowels, 'mphone3Exact' for Metaphone3 with more exact consonants, 'soundexNum' for Soundex with numbers only, 'soundexAll' for Soundex not truncated at 4 characters, and 'soundexAm' for the American variant of Soundex. 
   
     
- ### `ignoreCase`
+ ### ignoreCase
  A logical specifying whether or not to ignore case when comparing strings to the dictionary 
   
     
- ### `ignoreSpaces`
+ ### ignoreSpaces
  A logical specifying whether or not to ignore spaces.  If `FALSE`, for phonetic conversions each word in the string is processed separately and then concatenated together. 
   
     
- ### `ignoreNumbers`
+ ### ignoreNumbers
  A logical. If `FALSE`, numbers are converted to words before phonetic processing. If `TRUE`, numbers are ignored or removed. 
   
     
- ### `ignoreWords`
+ ### ignoreWords
  An optional character vector containing words to ignore when matching. 
   
     
- ### `noMatchNA`
+ ### noMatchNA
  A logical. If `TRUE`, if a match is not found an empty string is returned.  Only applies when dictionary is provided. 
   
     
- ### `minDistance`
+ ### minDistance
  Minimum distance required for a match; applies only to distance metric algorithms (Levenshtein, Jaro, JaroWinkler).   One is a perfect match. Zero is no similarity. 
   
     
- ### `dictionary`
+ ### dictionary
  Character vector containing the dictionary for string comparisons.  Used for distance metric algorithms. from strings before processing. 
   
     
- ### `keyVarName`
+ ### keyVarName
  `NULL` or a character string specifying the name to use for the newly created key variable. If `NULL`, the new variable name will be constructed using the `stringsIn` variable name and `.key`. Ignored if `data` is `NULL`. 
   
     
- ### `costs`
+ ### costs
  A named numeric vector with names `insert`, `delete`, and  `subst` giving the respective costs for computing the Levenshtein distance. The default uses unit cost for all three. Ignored if Levenshtein distance not being used. 
   
     
- ### `hasMatchVarName`
+ ### hasMatchVarName
  `NULL` or a character string specifying the name to use for a logical variable indicating whether word was matched to dictionary or not. If `NULL`, no variable will be created. 
   
     
- ### `matchDistVarName`
+ ### matchDistVarName
  `NULL` or a character string specifying the name to use for a numeric variable containing the distance of the match. If `NULL`, no variable will be created. 
   
     
- ### `numMatchVarName`
+ ### numMatchVarName
  `NULL` or a character string specifying the name to use for an integer variable containing the number of alternative matches were found that satisfied  `minDistance` criterion . If `NULL`, no variable will be created. 
   
     
- ### `overwrite`
+ ### overwrite
  A logical. If `TRUE` and the specified `outFile` exists, it will be overwritten. 
   
  

@@ -4,7 +4,8 @@
 title: "Utility Functions for rxDForest" 
 description: "     Utility Functions for rxDForest. " 
 keywords: "RevoScaleR, rxDForestUtils, rxVarImpPlot, rxLeafSize, rxTreeDepth, rxTreeSize, rxVarUsed, rxGetTree, models, tree, classif, regression, classification" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -31,7 +32,7 @@ ms.custom: ""
  
  
  
- #`rxDForestUtils`: Utility Functions for rxDForest
+ #rxDForestUtils: Utility Functions for rxDForest
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -57,48 +58,48 @@ Utility Functions for rxDForest.
 
    
     
- ### `x`
+ ### x
   an object of class [rxDForest](rxdforest.md) or [rxDTree](rxdtree.md). 
   
   
     
- ### `sort`
+ ### sort
   logical value. If `TRUE`, the variables will be sorted in decreasing importance. 
   
     
- ### `n.var`
+ ### n.var
   an integer specifying the number of variables to show when `sort=FALSE`. 
   
     
- ### `main`
+ ### main
   a character string specifying the main title for the plot. 
   
     
- ### ` ...`
+ ###  ...
   other arguments to be passed on to dotchart. 
   
   
     
- ### `use.weight`
+ ### use.weight
   logical value. If `TRUE`, the leaf size is measured by the total weight of its observations  instead of the total number of its observations. 
   
   
     
- ### `terminal`
+ ### terminal
   logical value. If `TRUE`, only the terminal nodes will be counted. 
   
   
     
- ### `by.tree`
+ ### by.tree
   logical value. If `TRUE`, the list of variables used will be broken down by trees. 
   
     
- ### `count`
+ ### count
   logical value. If `TRUE`, the frequencies that variables appear in trees will be returned. 
   
   
     
- ### `k`
+ ### k
   an integer specifying the index of the tree to be extracted. 
   
  

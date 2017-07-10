@@ -4,7 +4,8 @@
 title: "Ensembles" 
 description: " Trains an ensemble of models " 
 keywords: "MicrosoftML, rxEnsemble" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`rxEnsemble`: Ensembles
+ #rxEnsemble: Ensembles
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -56,52 +57,52 @@ Trains an ensemble of models.
 
    
   
- ### `formula`
+ ### formula
  The formula as described in rxFormula. Interaction terms and `F()` are not currently supported in the **MicrosoftML**. 
   
   
   
- ### `data`
+ ### data
  A data source object or a character string specifying a .xdffile or a data frame object. Alternatively, it can be a list of data sources indicating each model should be trained using one of the data sources in the list.  In this case, the length of the data list must be equal to `modelCount`. 
   
   
   
- ### `trainers`
+ ### trainers
  A list of trainers with their arguments. The trainers are created by using [fastTrees](fasttrees.md), [fastForest](fastforest.md), [fastLinear](fastlinear.md), [logisticRegression](logisticregression.md) or [neuralNet](neuralnet.md). 
   
   
   
- ### `type`
+ ### type
  A character string that specifies the type of ensemble: `"binary"` for Binary Classification or `"regression"` for Regression. 
   
   
   
- ### `randomSeed`
+ ### randomSeed
  Specifies the random seed. The default value is `NULL`. 
   
   
   
- ### `modelCount`
+ ### modelCount
  Specifies the number of models to train. If this number is greater  than the length of the trainers list, the trainers list is duplicated to match `modelCount`. 
   
   
   
- ### `replace`
+ ### replace
  A logical value specifying if the sampling of observations should be done  with or without replacement.  The default value is /codeFALSE. 
   
   
   
- ### `sampRate`
+ ### sampRate
  a scalar of positive value specifying the percentage of observations to sample for  each trainer. The default is 1.0 for sampling with replacement (i.e., replace=TRUE) and 0.632  for sampling without replacement (i.e., replace=FALSE). 
   
   
   
- ### `splitData`
+ ### splitData
  A logical value specifying whether or not to train the base models on non-overlapping partitions.  The default is `FALSE`. It is available only for `RxSpark` compute context and ignored for others. 
   
   
   
- ### `combineMethod`
+ ### combineMethod
  Specifies the method used to combine the models:   
 *   `median` to compute the median of the individual model outputs,   
 *   `average` to compute the average of the individual model outputs and   
@@ -110,57 +111,57 @@ Trains an ensemble of models.
   
   
   
- ### `mlTransforms`
+ ### mlTransforms
  Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. Transforms that require an additional pass over the data  (such as [featurizeText](featurizetext.md), [categorical](categorical.md)) are not allowed. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
- ### `mlTransformVars`
+ ### mlTransformVars
  Specifies a character vector of variable names to be used in `mlTransforms` or `NULL` if none are to be used. The default value is `NULL`. 
   
   
   
- ### `rowSelection`
+ ### rowSelection
  Specifies the rows (observations) from the data set that are to be used by the model with the name of a logical variable from the  data set (in quotes) or with a logical expression using variables in the    data set. For example, `rowSelection = "old"` will only use observations in which the value of the variable `old` is `TRUE`. `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function call using the expression function. 
   
   
   
- ### `transforms`
+ ### transforms
  An expression of the form `list(name = expression, ``...)` that represents the first round of variable transformations. As with  all expressions, `transforms` (or `rowSelection`) can be defined outside of the function call using the expression function. The default value is `NULL`. 
   
   
   
- ### `transformObjects`
+ ### transformObjects
  A named list that contains objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. The default value is `NULL`. 
   
   
   
- ### `transformFunc`
+ ### transformFunc
  The variable transformation function. See rxTransform for details. The default value is `NULL`. 
   
   
   
- ### `transformVars`
+ ### transformVars
  A character vector of input data set variables needed for the transformation function. See rxTransform for details. The default value is `NULL`. 
   
   
   
- ### `transformPackages`
+ ### transformPackages
  A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. The default value is `NULL`. 
   
   
   
- ### `transformEnvir`
+ ### transformEnvir
  A user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. The default value is `NULL`. 
   
   
   
- ### `blocksPerRead`
+ ### blocksPerRead
  Specifies the number of blocks to read for each chunk  of data read from the data source. 
   
   
   
- ### `reportProgress`
+ ### reportProgress
  An integer value that specifies the level of reporting on the row processing progress:   
 *   `0`: no progress is reported.      
 *   `1`: the number of processed rows is printed and updated.    
@@ -170,17 +171,17 @@ Trains an ensemble of models.
   
   
   
- ### `verbose`
+ ### verbose
  An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information.   The default value is `1`. 
   
   
   
- ### `computeContext`
+ ### computeContext
  Sets the context in which computations are executed, specified with a valid RxComputeContext. Currently local and RxSpark compute contexts are supported. When RxSpark is specified, the training of the models is done in a distributed way, and the ensembling is done locally. Note that the compute context cannot be non-waiting. 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

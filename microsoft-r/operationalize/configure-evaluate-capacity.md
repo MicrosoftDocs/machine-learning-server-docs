@@ -1,28 +1,27 @@
 ---
 
 # required metadata
-title: "Evaluate the load balancing capacity of your R Server configuration to operationalize - Microsoft R Server | Microsoft Docs"
+title: "Evaluate the load balancing of your R Server configuration- Microsoft R Server | Microsoft Docs"
 description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology:
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
 # Evaluate the load balancing capacity of your R Server configuration to operationalize
@@ -37,13 +36,13 @@ You can define the parameters for the traffic simulation for a given configurati
 
 + **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached.
 
-> [!NOTE]
-> Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
+> [!Important]
+> Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
 <br>
 
 ## Configure Test Parameters
 
-1. On the web node, [launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
 
@@ -77,7 +76,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Run Simulation Tests
 
-1. On the web node, [launch the administration utility](#launch).
+1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch).
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
 1. From the sub menu, choose the option to **Run capacity simulation** to start the simulation.
 1. Review the results onscreen.
@@ -126,7 +125,7 @@ There is a cost to creating an R shell both in time and memory. So having a pool
 
 New R shells can be added to the pool until the maximum pool size (`MaxSize`) is reached. Whenever the last R shell in the pool is called, a new R shell is automatically created for the next, future execution request until the maximum is reached. After the maximum is reached, the compute node will return a `503 - server busy` response. However, during simulation test, the test will continue until the test threshold is met (maximum threads or latency). If the number of R shells needed to run the test exceeds the number of shells in the pool, a new R shell will be created on-demand when the request is made and the time it takes to execute the code will be longer since time will be spent creating the shell itself. 
 
-The size of this pool can be adjusted in the external configuration file, `appsettings.json`, found on each compute node.
+The size of this pool can be adjusted in the external configuration file, appsettings.json, found on each compute node.
 
 ```
 "Pool": {
@@ -140,7 +139,7 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
 **To update the thread pool:**
 
-   1. On each compute nodes, [open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
+   1. On each compute nodes, [open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
 
    1. Search for the section starting with `"Pool": {`
 
@@ -156,5 +155,5 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
 
 >[!Note]
->Each compute node should have the same `appsettings.json` properties.
+>Each compute node should have the same appsettings.json properties.
 

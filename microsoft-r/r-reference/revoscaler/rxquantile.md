@@ -4,7 +4,8 @@
 title: " Approximate Quantiles for .xdf Files and Data Frames " 
 description: " Quickly computes approximate quantiles (without sorting) " 
 keywords: "RevoScaleR, rxQuantile, univar" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxQuantile`:  Approximate Quantiles for .xdf Files and Data Frames 
+ #rxQuantile:  Approximate Quantiles for .xdf Files and Data Frames 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -51,58 +52,58 @@ Quickly computes approximate quantiles (without sorting)
 
    
     
- ### `varName`
+ ### varName
   A character string containing the name of the numeric variable for which to compute the quantiles.  
   
     
- ### `data`
+ ### data
   data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](rxdatasource-class.md) object representing the data set.  
   
   
     
- ### `pweights`
+ ### pweights
   character string specifying the variable to use as probability weights for the observations.  
   
   
     
- ### `fweights`
+ ### fweights
   character string specifying the variable to use as frequency weights for the observations.  
   
   
     
- ### `probs`
+ ### probs
   numeric vector of probabilities with values in the [0,1] range.  
   
     
- ### `names`
+ ### names
   logical; if `TRUE`, the result has a `names` attribute.   
   
   
     
- ### `maxIntegerBins`
+ ### maxIntegerBins
   integer. The maximum number of integer bins to use for integer data.  For exact results, this should be larger than the range of data.   However, larger values may increase memory requirements and computational time.  
   
     
- ### `multiple`
+ ### multiple
   numeric value to multiply data values by before computing integer bins.  
   
     
- ### `numericBins`
+ ### numericBins
   logical. If `TRUE`, do not use integer approximations for bins.  
   
   
     
- ### `numNumericBreaks`
+ ### numNumericBreaks
   integer.  The number of breaks to use in computing numeric bins. Ignored if `numericBins` is `FALSE`.  
   
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
   number of blocks to read for each chunk of data read from an `.xdf` data source.  
   
   
     
- ### `reportProgress`
+ ### reportProgress
   integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -112,7 +113,7 @@ Quickly computes approximate quantiles (without sorting)
   
   
     
- ### `verbose`
+ ### verbose
  integer value. If `0`, no additional output is printed.  If `1`, additional computational information may be printed.            
   
   

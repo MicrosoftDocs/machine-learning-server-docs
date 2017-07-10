@@ -4,7 +4,8 @@
 title: " Finds where in a given path a file is. " 
 description: " Sequentially checks the entries in a delimited path string for a provided file name. " 
 keywords: "RevoScaleR, rxFindFileInPath, IO" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxFindFileInPath`:  Finds where in a given path a file is. 
+ #rxFindFileInPath:  Finds where in a given path a file is. 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -48,12 +49,12 @@ Sequentially checks the entries in a delimited path string for a provided file n
    
   
   
- ### `path`
+ ### path
  character vector, compute context or job object.  This is a required parameter.   If a compute context is provided, the `dataPath` from that context (assuming it has one ) will be used;  if a job object is provided, that job object's compute context's `dataPath` will be used. If a character vector is provided, each element of the vector should contain one directory path.   If a character scalar is supplied, multiple directory paths can be contained by using the standard system  delimiters (":" for Linux and ";") to separate the entries within the path.  This allows system PATH's to  be parsed using this function. 
   
   
   
- ### `fileName`
+ ### fileName
  logical scalar.  This is a required parameter.  The name of the file being sought along the `path`. 
   
   

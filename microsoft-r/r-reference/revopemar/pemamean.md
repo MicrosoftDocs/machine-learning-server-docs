@@ -4,7 +4,8 @@
 title: " Generator for an PemaMean reference class object " 
 description: " Generator for an PemaMean reference class object, inheriting from PemaBaseClass, to be used with pemaCompute. " 
 keywords: "RevoPemaR, PemaMean,  models " 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`PemaMean`:  Generator for an PemaMean reference class object 
+ #PemaMean:  Generator for an PemaMean reference class object 
 
  Applies to version 8.0.3 of package RevoPemaR.
  
@@ -47,7 +48,7 @@ Generator for an PemaMean reference class object, inheriting from PemaBaseClass,
    
   
     
- ### ` ...`
+ ###  ...
   Arguments used in the constructor. See Details section.  
   
  

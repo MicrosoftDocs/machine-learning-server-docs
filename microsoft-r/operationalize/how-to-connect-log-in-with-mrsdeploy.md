@@ -5,24 +5,23 @@ title: "Connect to R Server remotely using mrsdeploy - Microsoft R Server | Micr
 description: "Logging into R Server and connecting with mrsdeploy"
 keywords: "remote login to r server, connect to r server, mrsdeploy connection, log into r server"
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 
 ---
 
@@ -30,7 +29,7 @@ ms.custom: ""
 
 **Applies to:  Microsoft R Server 9.x**
 
-The `mrsdeploy` package, delivered with Microsoft R Client and R Server, provides functions for:
+the mrsdeploy package, delivered with Microsoft R Client and R Server, provides functions for:
 + Establishing a remote session in a R console application for the purposes of executing code on that server
 + Publishing and managing an R web service that is backed by the R code block or script you provided.  
 
@@ -274,7 +273,7 @@ In this state, you can authenticate with remoteLogin() and its argument `session
 |`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = FALSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`>`|![state 3](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-local.png)<br>&nbsp;|
 
 
-In this example, we define an interactive authentication workflow without a remote R session (`session = FALSE`). This is useful when working only with the web service functionality of the `mrsdeploy` package. After authentication, we remain confined within the local R session in order to publish and consume a service.
+In this example, we define an interactive authentication workflow without a remote R session (`session = FALSE`). This is useful when working only with the web service functionality of the mrsdeploy package. After authentication, we remain confined within the local R session in order to publish and consume a service.
 
 ```R
 > # EXAMPLE OF LOGIN WITHOUT REMOTE R SESSION

@@ -4,7 +4,8 @@
 title: "Parallel External Memory Algorithm for Classification and Regression Decision Forests" 
 description: "     Fit classification and regression decision forests on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "RevoScaleR, rxDForest, plot.rxDForest, print.rxDForest, models, tree, classif, regression, classification" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`rxDForest`: Parallel External Memory Algorithm for Classification and Regression Decision Forests
+ #rxDForest: Parallel External Memory Algorithm for Classification and Regression Decision Forests
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -81,15 +82,15 @@ plot  (x, type = "l", main = deparse(substitute(x)),
 
    
     
- ### `formula`
+ ### formula
   formula as described in [rxFormula](rxformula.md).   Currently, formula functions are not supported. 
   
     
- ### `data`
+ ### data
   either a data source object, a character string  specifying a .xdf file, or a data frame object. 
   
     
- ### `outFile`
+ ### outFile
   either an RxXdfData data source object or a character string  specifying the .xdf file for storing the resulting OOB predictions.  If `NULL` or the input data is a data frame, then no OOB predictions are stored to disk.    If `rowSelection` is specified and not `NULL`,  then `outFile` cannot be the same as the `data`since the resulting set of OOB predictions will generally not  have the same number of rows as the original data source. 
   
    
@@ -98,27 +99,27 @@ plot  (x, type = "l", main = deparse(substitute(x)),
    
    
     
- ### `writeModelVars`
+ ### writeModelVars
   logical value. If `TRUE`, and the output file is different from the input file,  variables in the model will be written to the output file in addition to the OOB predictions.  If variables from the input data set are transformed in the model,  the transformed variables will also be written out. 
   
     
- ### `overwrite`
+ ### overwrite
   logical value. If `TRUE`, an existing `outFile`with an existing column named `outColName` will be overwritten. 
   
     
- ### `pweights`
+ ### pweights
   character string specifying the variable  to use as probability weights for the observations. 
   
     
- ### `fweights`
+ ### fweights
   character string specifying the variable  to use as frequency weights for the observations. 
   
     
- ### `method`
+ ### method
   character string specifying the splitting method. Currently, only `"class"` or `"anova"` are supported. The default is `"class"` if the response is a factor, otherwise `"anova"`. 
   
     
- ### `parms`
+ ### parms
   optional list with components specifying additional parameters for the `"class"` splitting method, as follows:  
 * `prior` - a vector of prior probabilities. The priors must be positive and sum to 1. The default  priors are proportional to the data counts.  
 * `loss` - a loss matrix, which must have zeros on the diagonal and positive off-diagonal elements. By default, the off-diagonal elements are set to 1.  
@@ -126,35 +127,35 @@ plot  (x, type = "l", main = deparse(substitute(x)),
  If `parms` is specified, any of the components can be specified or omitted. The defaults will be used for missing components. 
   
     
- ### `cost`
+ ### cost
   a vector of non-negative costs, containing one element for each variable in the model. Defaults to one for all variables. When deciding which split	to choose, the improvement on splitting on a variable is divided by its cost. 
   
     
- ### `minSplit`
+ ### minSplit
   the minimum number of observations that must exist in a node before a split is attempted. By default, this is `sqrt(num of obs)`. For non-XDF data sources, as `(num of obs)` is unknown in advance, it is wisest to specify this argument directly. 
   
     
- ### `minBucket`
+ ### minBucket
   the minimum number of observations in a terminal node (or leaf). By default, this is `minSplit`/3. 
   
     
- ### `maxDepth`
+ ### maxDepth
   the maximum depth of any tree node. The computations take much longer at greater depth, so lowering `maxDepth` can greatly speed up computation time. 
   
     
- ### `cp`
+ ### cp
   numeric scalar specifying the complexity parameter. Any split that does not decrease overall lack-of-fit by at  least `cp` is not attempted. 
   
     
- ### `maxCompete`
+ ### maxCompete
   the maximum number of competitor splits retained in the output. These are useful model diagnostics, as they allow you to compare splits in the output with the alternatives. 
       
     
- ### `maxSurrogate`
+ ### maxSurrogate
   the maximum number of surrogate splits retained in the output. See the Details for a description of how surrogate splits are used in the model fitting. Setting this to 0 can greatly improve the performance of the algorithm; in some cases almost half the computation time is spent in computing surrogate splits. 
   
     
- ### `useSurrogate`
+ ### useSurrogate
   an integer specifying how surrogates are to be used in the splitting process:  
 * `0` - display-only; observations with a missing value for the primary split variable are not sent further down the tree.  
 * `1` - use surrogates,in order, to split observations missing the primary split variable. If all surrogates are missing, the  observation is not split.  
@@ -162,7 +163,7 @@ plot  (x, type = "l", main = deparse(substitute(x)),
  The `0` value corresponds to the behavior of the `tree` function, and `2` (the default) corresponds to the recommendations of Breiman et al. 
   
     
- ### `surrogateStyle`
+ ### surrogateStyle
   an integer controlling selection of a best surrogate. The default, `0`, instructs the program to use the total number of correct classifications for a potential surrogate, while `1` instructs the program to use the percentage of correct classification over  the non-missing values of the surrogate. Thus, `0` penalizes potential surrogates with a large number of missing values. 
   
    
@@ -170,42 +171,42 @@ plot  (x, type = "l", main = deparse(substitute(x)),
    
   
     
- ### `nTree`
+ ### nTree
   a positive integer specifying the number of trees to grow.  
   
     
- ### `mTry`
+ ### mTry
   a positive integer specifying the number of variables to sample as split candidates at each tree node. The default values is `sqrt(num of vars)` for classification and `(num of vars)/3` for regression.     
   
     
- ### `replace`
+ ### replace
   a logical value specifying if the sampling of observations should be done with or without replacement.  
   
     
- ### `cutoff`
+ ### cutoff
   (Classification only) a vector of length equal to the number of classes specifying the dividing factors for the class votes. The default is `1/(num of classes)`.  
   
     
- ### `strata`
+ ### strata
   a character string specifying the (factor) variable to use for stratified sampling.  
   
     
- ### `sampRate`
+ ### sampRate
   a scalar or a vector of positive values specifying the percentage(s) of observations to sample for each tree:  
    * for unstratified sampling:  a scalar of positive value specifying the percentage of observations to sample for each tree. The default is 1.0 for sampling with replacement (i.e., `replace=TRUE`) and  0.632 for sampling without replacement (i.e., `replace=FALSE`).    
    * for stratified sampling:  a vector of positive values of length equal to the number of strata specifying  the percentages of observations to sample from the strata for each tree.   
   
   
     
- ### `importance`
+ ### importance
   a logical value specifying if the importance of predictors should be assessed.  
   
     
- ### `seed`
+ ### seed
   an integer that will be used to initialize the random number generator. The default is random. For reproducibility, you can specify the random seed either using set.seed or by setting this `seed` argument as part of your call.  
   
     
- ### `computeOobError`
+ ### computeOobError
   an integer specifying whether and how to compute the prediction error for out-of-bag samples:  
 * `<0` - never. This option may reduce the computation time.  
 * `=0` - only once for the entire forest.  
@@ -214,23 +215,23 @@ plot  (x, type = "l", main = deparse(substitute(x)),
   
   
     
- ### `maxNumBins`
+ ### maxNumBins
   the maximum number of bins to use to cut numeric data.  The default is `min(1001, max(101, sqrt(num of obs)))`. For non-XDF data sources, as `(num of obs)` is unknown in advance, it is wisest to specify this argument directly. If set to `0`, unit binning will be used instead of cutting. See the 'Details' section for more information. 
   
     
- ### `maxUnorderedLevels`
+ ### maxUnorderedLevels
   the maximum number of levels allowed for an unordered factor predictor for multiclass (>2) classification. 
   
     
- ### `removeMissings`
+ ### removeMissings
   logical value.  If `TRUE`, rows with missing values are removed and  will not be included in the output data. 
   
     
- ### `useSparseCube`
+ ### useSparseCube
  logical value. If `TRUE`, sparse cube is used. 
   
     
- ### `findSplitsInParallel`
+ ### findSplitsInParallel
   logical value.  If `TRUE`, optimal splits for each node are determined using parallelization methods;  this will typically speed up computation as the number of nodes on the same level is increased. 
   
    
@@ -240,45 +241,45 @@ plot  (x, type = "l", main = deparse(substitute(x)),
    
   
     
- ### `scheduleOnce`
+ ### scheduleOnce
  EXPERIMENTAL. logical value. If `TRUE`, rxDForest will be run with [rxExec](rxexec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](rxhadoopmr.md) compute context. 
   
   
     
- ### `rowSelection`
+ ### rowSelection
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### `transforms`
+ ### transforms
   an expression of the form `list(name = expression, ...)`representing the first round of variable transformations.  As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call  using the expression function. 
   
     
- ### `transformObjects`
+ ### transformObjects
   a named list containing objects that can be referenced by  `transforms`, `transformsFunc`, and `rowSelection`. 
   
     
- ### `transformFunc`
+ ### transformFunc
   variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxtransform.md) for details. 
   
     
- ### `transformVars`
+ ### transformVars
   character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxtransform.md) for details. 
   
     
- ### `transformPackages`
+ ### transformPackages
   character vector defining additional R packages  (outside of those specified in `rxGetOption("transformPackages")`)  to be made available and preloaded for use in variable transformation functions,  e.g., those explicitly defined in **RevoScaleR** functions  via their `transforms` and `transformFunc` arguments  or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
     
- ### `transformEnvir`
+ ### transformEnvir
   user-defined environment to serve as a parent to all environments  developed internally and used for variable data transformation. If `transformEnvir = NULL`,  a new "hash" environment with parent `baseenv()` is used instead. 
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
   number of blocks to read for each chunk of data  read from the data source. 
   
     
- ### `reportProgress`
+ ### reportProgress
   integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -287,29 +288,29 @@ plot  (x, type = "l", main = deparse(substitute(x)),
  
   
     
- ### `verbose`
+ ### verbose
   integer value.  If `0`, no verbose output is printed during calculations.  Integer values from `1` to `2` provide increasing amounts of information are provided. 
   
     
- ### `computeContext`
+ ### computeContext
  a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
   
   
     
- ### `xdfCompressionLevel`
+ ### xdfCompressionLevel
   integer in the range of -1 to 9 indicating the compression level for the output data  if written to an `.xdf` file.   The higher the value, the greater the amount of compression -  resulting in smaller files but a longer time to create them.  If `xdfCompressionLevel` is set to 0, there will be no compression and  files will be compatible with the 6.0 release of Revolution R Enterprise.   If set to -1, a default level of compression will be used. 
   
     
- ### ` ...`
+ ###  ...
   additional arguments to be passed directly to the Microsoft R Services Compute Engine and to [rxExec](rxexec.md) when `scheduleOnce` is set to `TRUE`. 
   
   
     
- ### `x`
+ ### x
   an object of class `rxDForest`. 
   
     
- ### `type, main`
+ ### type, main
   see plot.default for details. 
   
  
@@ -339,43 +340,43 @@ out-of-bag error estimate for all trees through the *i*th).
 an object of class `"rxDForest"`. 
 It is a list with the following components, similar to those of class `"randomForest"`:
 
-###`ntree`
+###ntree
  The number of trees.
 
 
-###`mtry`
+###mtry
  The number of variables tried at each split.
 
 
-###`type`
+###type
  One of `"class"` (for classification) or `"anova"` (for regression).
 
 
-###`forest`
+###forest
 a list containing the entire forest.
 
 
-###`oob.err`
+###oob.err
 a data frame containing the out-of-bag error estimate. For classification forests, this includes the OOB error estimate, which represents the proportion of times the predicted class is  not equal to the true class, and the cumulative number of out-of-bag observations for the forest. For   regression forests, this includes the OOB error estimate, which here represents the sum of squared  residuals of the out-of-bag observations divided by the number of out-of-bag observations, the number  of out-of-bag observations, the out-of-bag variance, and the "pseudo-R-Squared", which is 1 minus the quotient of the `oob.err` and `oob.var`.
 
 
-###`confusion`
+###confusion
 (classification only) the confusion matrix of the prediction (based  on out-of-bag data).
 
 
-###`cutoff`
+###cutoff
 (classification only) The cutoff vector.
 
 
-###`params`
+###params
  The input parameters passed to the underlying code.
 
 
-###`formula`
+###formula
  The input formula.
 
 
-###`call`
+###call
  The original call to `rxDForest`.
 
  

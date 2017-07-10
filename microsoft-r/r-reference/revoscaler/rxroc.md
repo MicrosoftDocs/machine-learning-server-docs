@@ -4,7 +4,8 @@
 title: " Receiver Operating Characteristic (ROC) computations and plot " 
 description: " Compute and plot an ROC curve using actual and predicted values from binary classifier system " 
 keywords: "RevoScaleR, rxRoc, rxRocCurve, rxAuc, as.data.frame.rxRoc, plot.rxRoc, rxAuc.rxRoc, hplot" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -30,7 +31,7 @@ ms.custom: ""
  
  
  
- #`rxRoc`:  Receiver Operating Characteristic (ROC) computations and plot 
+ #rxRoc:  Receiver Operating Characteristic (ROC) computations and plot 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -68,31 +69,31 @@ plot  (x, computeAuc = TRUE, title = NULL, subtitle,
 
    
     
- ### `actualVarName`
+ ### actualVarName
   A character string with the name of the variable containing actual (observed) binary values.  
   
     
- ### `predVarNames`
+ ### predVarNames
   A character string or vector of character strings with the name(s) of the variable  containing predicted values in the [0,1] interval.  
   
     
- ### `data`
+ ### data
   data frame, character string containing an .xdf file name (with path), or  [RxXdfData](rxxdfdata.md) object representing an .xdf file containing the actual and observed variables.  
   
     
- ### `numBreaks`
+ ### numBreaks
   integer specifying the number of breaks to use to determine thresholds for computing the true and false positive rates.   
   
     
- ### `removeDups`
+ ### removeDups
   logical; if `TRUE`, rows containing duplicate entries for sensitivity and specificity will be removed from the returned data frame. If performing computations for more than one prediction variable, this implies that there may be a different number of rows for each prediction variable.  
   
     
- ### `blocksPerRead`
+ ### blocksPerRead
   number of blocks to read for each chunk of data read from the data source.  
   
     
- ### `reportProgress`
+ ### reportProgress
   integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -102,49 +103,49 @@ plot  (x, computeAuc = TRUE, title = NULL, subtitle,
   
   
     
- ### `computeAuc`
+ ### computeAuc
  logical value. If `TRUE`, the AUC is computed for each prediction variable and printed  in the subtitle or legend text.  
   
     
- ### `title`
+ ### title
  main title for the plot.  Alternatively `main` can be used. If `NULL` a default title will be created.  
   
   
     
- ### `subtitle`
+ ### subtitle
  subtitle (at the bottom) for the plot.   If `NULL` and `computeAuc` is `TRUE`, the AUC for a single prediction variable will be computed and printed in the subtitle.    
   
   
     
- ### `xTitle`
+ ### xTitle
  title for the X axis. Alternatively `xlab` can be used. If `NULL`, a default X axis title will be used.  
   
   
     
- ### `yTitle`
+ ### yTitle
  title for the Y axis. Alternatively `ylab` can be used. If `NULL`, a default Y axis title will be used.  
   
     
- ### `legend`
+ ### legend
  logical value. If `TRUE` and more than one prediction variable is specified, a legend is is created. If `computeAuc` is `TRUE`, the AUC is computed for each prediction variable and printed in the legend text.  
   
   
     
- ### `chanceGridLine`
+ ### chanceGridLine
  logical value. If `TRUE`, a grid line from (0,0) to (1,1) is added to represent a pure chance model.  
   
   
     
- ### `x`
+ ### x
  an rxRoc object.  
   
    
      
- ### `var`
+ ### var
  an integer or character string specifying the prediction variable for which to extract data frame containing the ROC computations. If an integer is specified, it will use that as an index to an alphabetized list of `predictionVarNames`. If `NULL`, all of the computed data will be returned in a data frame.  
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to an underlying function. For plotting functions, these are passed to the  xyplot function.  
   
   

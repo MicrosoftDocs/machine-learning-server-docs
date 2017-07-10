@@ -4,7 +4,8 @@
 title: "Machine Learning Resize Image Transform" 
 description: " Resizes an image to a specified dimension using a specified resizing method. " 
 keywords: "MicrosoftML, resizeImage, image, transform" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`resizeImage`: Machine Learning Resize Image Transform
+ #resizeImage: Machine Learning Resize Image Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -48,22 +49,22 @@ resizing method.
 
    
   
- ### `vars`
+ ### vars
  A named list of character vectors of input variable names and the name of the output variable. Note that the input variables must be of the same type. For one-to-one mappings between input and output variables, a named character vector can be used. 
   
   
   
- ### `width`
+ ### width
  Specifies the width of the scaled image in pixels. The default value is 224. 
   
   
   
- ### `height`
+ ### height
  Specifies the height of the scaled image in pixels. The default value is 224. 
   
   
   
- ### `resizingOption`
+ ### resizingOption
  Specified the resizing method to use. Note that all methods are using bilinear interpolation. The options are:  
 *   `"IsoPad"`: The image is resized such that the aspect ratio is preserved.  If needed, the image is padded with black to fit the new width or height.  
 *   `"IsoCrop"`: The image is resized such that the aspect ratio is preserved.  If needed, the image is cropped to fit the new width or height.  

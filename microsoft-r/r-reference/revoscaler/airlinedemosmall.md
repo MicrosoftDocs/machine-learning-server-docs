@@ -4,7 +4,8 @@
 title: "Small Airline Demonstration File" 
 description: " A small sample of airline on-time performance data. " 
 keywords: "RevoScaleR, AirlineDemoSmall, AirlineDemoSmall.xdf, AirlineDemoSmallUC.xdf, AirlineDemoSmall.csv, AirlineDemo1kNoMissing.csv, datasets" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -30,7 +31,7 @@ ms.custom: ""
  
  
  
- #`AirlineDemoSmall`: Small Airline Demonstration File
+ #AirlineDemoSmall: Small Airline Demonstration File
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -44,15 +45,15 @@ A small sample of airline on-time performance data.
 An .xdf file with 600000 observations on the following 3 variables.
 
 
-###`ArrDelay`
+###ArrDelay
 arrival delay, in minutes (stored as integer).
 
 
-###`CRSDepTime`
+###CRSDepTime
 schedule departure time (stored as float32).
 
 
-###`DayOfWeek`
+###DayOfWeek
 day of the week (stored as a factor).
 
 

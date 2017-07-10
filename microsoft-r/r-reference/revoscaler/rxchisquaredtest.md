@@ -4,7 +4,8 @@
 title: " Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient " 
 description: " Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient " 
 keywords: "RevoScaleR, rxChiSquaredTest, rxFisherTest, rxKendallCor, htest" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -28,7 +29,7 @@ ms.custom: ""
  
  
  
- #`rxChiSquaredTest`:  Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient 
+ #rxChiSquaredTest:  Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -53,22 +54,22 @@ Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coeff
 
    
     
- ### `x`
+ ### x
  an object of class xtabs, rxCrossTabs, or rxCube. 
   
   
     
- ### `type`
+ ### type
  character string specifying the version of Kendall's correlation. Supported types are `"a"`, `"b"` or `"c"`. 
   
   
     
- ### `seed`
+ ### seed
  seed for random number generator. If `NULL`, the seed is not set. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to the underlying function. 
   
  

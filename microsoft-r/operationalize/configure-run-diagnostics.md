@@ -5,27 +5,26 @@ title: "Running diagnostics & troubleshooting the configuration for operationali
 description: "Troubleshooting and Diagnostics when configuring Microsoft R Server to operationalize"
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "6/21/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
   - deployr
   - r-server
-ms.custom: ""
+#ms.custom: ""
 ---
 
-# Running diagnostics & troubleshooting the R Server configuration for operationalization 
+# Troubleshooting & diagnostics for R Server
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -137,7 +136,7 @@ The following logging levels are available:
 
 **To update the logging level:**
 
-   1. On each compute node AND each web node, [open the `appsettings.json` configuration file](configure-find-admin-configuration-file.md).
+   1. On each compute node AND each web node, [open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
 
    1. Search for the section starting with `"Logging": {`
 
@@ -150,7 +149,7 @@ The following logging levels are available:
    1. [Restart](configure-use-admin-utility.md#startstop) the node services. 
 
    1. Repeat these changes on every compute node and every web node.
-      >Each node should have the same `appsettings.json` properties.
+      >Each node should have the same appsettings.json properties.
 
    1. Repeat the same operation(s) that where running when the error(s) occurred. 
    
@@ -208,7 +207,7 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using operat
 
 ### Unauthorized / HTTP status 401
 
-If you've tried to set up R Server for LDAP/AD as described in the article "[Authentication Options for Operationalization](configure-authentication.md)", and you've run into connection issues or the `401` error, then we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in `appsettings.json`. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+If you've tried to set up R Server for LDAP/AD as described in the article "[Authentication Options for Operationalization](configure-authentication.md)", and you've run into connection issues or the `401` error, then we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in appsettings.json. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 ### Configuration didn't restore after upgrade
 

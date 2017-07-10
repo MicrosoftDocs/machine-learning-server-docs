@@ -4,7 +4,8 @@
 title: "The summary generic for snapshotDetails." 
 description: " Defines the R summary generic for snapshotDetails during a  listSnapshots(). " 
 keywords: "mrsdeploy, summary.snapshotDetails" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`summary.snapshotDetails`: The summary generic for `snapshotDetails`.
+ #summary.snapshotDetails: The summary generic for `snapshotDetails`.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -49,7 +50,7 @@ summary  (o)
 
    
   
- ### `o`
+ ### o
  The `snapshotDetails` list of S3 object. 
   
  

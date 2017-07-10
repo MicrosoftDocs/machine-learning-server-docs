@@ -4,7 +4,8 @@
 title: "Import Data to .xdf or data frame" 
 description: " Import data into an .xdf file or `data.frame`. " 
 keywords: "RevoScaleR, rxImport, file, connection" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxImport`: Import Data to .xdf or data frame
+ #rxImport: Import Data to .xdf or data frame
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -58,82 +59,82 @@ Import data into an .xdf file or `data.frame`.
 
    
     
- ### `inData`
+ ### inData
  a character string with the path for the data  to import (delimited, fixed format, SPSS, SAS, ODBC, or XDF). Alternatively, a  data source object representing the input data source can be  specified. (See [RxTextData](rxtextdata.md), [RxSasData](rxsasdata.md), [RxSpssData](rxspssdata.md), and [RxOdbcData](rxodbcdata.md).) If a character  string is supplied and `type` is set to `"auto"`, the type of file is  inferred from its extension, with the default being a text file. A  `data.frame` can also be used for `inData`. 
   
   
     
- ### `outFile`
+ ### outFile
  a character string representing the output .xdf file, a  [RxHiveData](rxsparkdata.md) data source, a[RxParquetData](rxsparkdata.md) data source or   a [RxXdfData](rxxdfdata.md) object.   If `NULL`, a data frame will be returned in memory. 
   
    
     
- ### `varsToKeep`
+ ### varsToKeep
  character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop`. Not supported for ODBC or fixed format text files. 
   
   
     
- ### `varsToDrop`
+ ### varsToDrop
  character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep`. Not supported for ODBC or fixed format text files. 
    
   
     
- ### `rowSelection`
+ ### rowSelection
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### `transforms`
+ ### transforms
  an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### `transformObjects`
+ ### transformObjects
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
     
- ### `transformFunc`
+ ### transformFunc
  variable transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformVars`
+ ### transformVars
  character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
   
   
     
- ### `transformPackages`
+ ### transformPackages
  character vector defining additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### `transformEnvir`
+ ### transformEnvir
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
     
- ### `append`
+ ### append
  either `"none"` to create a new .xdf file or `"rows"` to append rows to an existing .xdf file. If `outFile` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`. Ignored if a data frame is returned. 
   
   
     
- ### `overwrite`
+ ### overwrite
  logical value. If `TRUE`, the existing `outData` will be overwritten. Ignored if a dataframe is returned. 
   
   
     
- ### `numRows`
+ ### numRows
  integer value specifying the maximum number of rows to import. If set to -1, all rows will be imported. 
   
   
      
- ### `stringsAsFactors`
+ ### stringsAsFactors
  logical indicating whether or not to automatically convert strings to factors on import. This can be overridden by specifying `"character"` in `colClasses` and `colInfo`. If `TRUE`, the factor levels will be coded in the order encountered. Since this factor level ordering is row dependent, the preferred method for handling factor columns is to use `colInfo` with specified `"levels"`. 
   
   
     
- ### `colClasses`
+ ### colClasses
  character vector specifying the column types to use when converting the data. The element names for the vector are used to identify which column should be converted to which type.   
 *   Allowable column types are:  
    *   `"logical"` (stored as `uchar`), 
@@ -155,7 +156,7 @@ Import data into an .xdf file or `data.frame`.
   
   
     
- ### `colInfo`
+ ### colInfo
  list of named variable information lists. Each variable information list contains one or more of the named elements given below. When importing fixed format data, either `colInfo` or an an .sts schema file should be supplied. For fixed format text files, only the variables specified will be imported. For all text types, the information supplied for `colInfo`overrides that supplied for `colClasses`.   
 *   Currently available properties for a column information list are:  
 * `type` - character string specifying the data type for the column. See `colClasses` argument description for the available types. If the `type` is not specified for fixed format data, it will be read as character data.  
@@ -173,12 +174,12 @@ Import data into an .xdf file or `data.frame`.
   
   
     
- ### `rowsPerRead`
+ ### rowsPerRead
  number of rows to read at a time. 
   
   
     
- ### `type`
+ ### type
  character string set specifying file type of `inData`. This is ignored if `inData` is a data source. Possible values are:   
    *   `"auto"`: file type is automatically detected by looking at file extensions and argument values. 
    *   `"textFast"`: delimited text import using faster, more limited import mode. By default variables containing the values `TRUE` and `FALSE` or `T` and `F` will be created as logical variables. 
@@ -193,12 +194,12 @@ Import data into an .xdf file or `data.frame`.
   
   
     
- ### `maxRowsByCols`
+ ### maxRowsByCols
  the maximum size of a data frame that will be read in if `outData` is set to `NULL`, measured by the number of rows times the number of columns. If the number of rows times the number of columns being imported exceeds this,  a warning will be reported and a smaller number of rows will be read in than requested. If `maxRowsByCols` is set to be too large, you may experience problems  from loading a huge data frame into memory. 
   
   
     
- ### `reportProgress`
+ ### reportProgress
  integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -208,27 +209,27 @@ Import data into an .xdf file or `data.frame`.
   
   
     
- ### `verbose`
+ ### verbose
  integer value. If `0`, no additional output is printed.  If `1`, information on the import type is printed if `type` is set  to `auto`. 
    
   
      
- ### `xdfCompressionLevel`
+ ### xdfCompressionLevel
  integer in the range of -1 to 9.  The higher the value, the greater the  amount of compression - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used. 
   
    
      
- ### `createCompositeSet`
+ ### createCompositeSet
  logical value or `NULL`. If `TRUE`, a composite set of files will be created instead of a single .xdf file. A directory will be created whose name is the same as the .xdf file that would otherwise be created, but with no extension. Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdfd files (see `blocksPerCompositeFile` below for determining how many blocks of data will be in each file). In the metadata subdirectory  there is a single .xdfm file, which contains the meta data for all of the  .xdfd files in the  data subdirectory. When the compute context is `RxHadoopMR` a composite set of files is always created. 
   
   
     
- ### `blocksPerCompositeFile`
+ ### blocksPerCompositeFile
  integer value. If `createCompositeSet=TRUE`, and if the compute context is not `RxHadoopMR`, this will be the number of blocks put into each .xdfd file in the composite set. When importing is being done on Hadoop using MapReduce, the number of rows per .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by `rowsPerRead`. If the `outFile` is an [RxXdfData](rxxdfdata.md) object, set the value for `blocksPerCompositeFile` there instead. 
    
    
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to the underlying data source objects to be imported. These argument values will override the existing values in an existing data source, if it is passed in as the `inData`. See [RxTextData](rxtextdata.md), [RxSasData](rxsasdata.md), [RxSpssData](rxspssdata.md), and [RxOdbcData](rxodbcdata.md). 
   
  

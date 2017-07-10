@@ -4,7 +4,8 @@
 title: "Class RxComputeContext" 
 description: "   Base class for all RevoScaleR Compute Contexts.   " 
 keywords: "RevoScaleR, RxComputeContext-class, show,RxComputeContext-method, classes" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`RxComputeContext-class`: Class RxComputeContext
+ #RxComputeContext-class: Class RxComputeContext
 
  Applies to version 9.1.0 of package RevoScaleR.
  

@@ -4,7 +4,8 @@
 title: "Machine Learning Sentiment Analyzer Transform" 
 description: " Scores natual language text and creates a column that  contains probabilities that the sentiments in the text are positive. " 
 keywords: "MicrosoftML, getSentiment, nlp, sentiment, text, transform" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
-#`getSentiment`: Machine Learning Sentiment Analyzer Transform
+#getSentiment: Machine Learning Sentiment Analyzer Transform
 
 Applies to version 1.3.0 of package MicrosoftML.
  
@@ -47,12 +48,12 @@ Scores natual language text and creates a column that contains probabilities tha
 
    
   
-### `vars`
+### vars
  A character vector or list of variable names to transform. If named, the names represent the names of new variables to be created. 
   
   
   
-### ` ...`
+###  ...
  Additional arguments sent to compute engine. 
   
  

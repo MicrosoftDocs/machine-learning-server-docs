@@ -4,7 +4,8 @@
 title: "Class RxForeachDoPar" 
 description: "   Class for the RevoScaleR Compute Context using one of the foreach dopar back ends.   " 
 keywords: "RevoScaleR, RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`RxForeachDoPar-class`: Class RxForeachDoPar
+ #RxForeachDoPar-class: Class RxForeachDoPar
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -52,7 +53,7 @@ Class RxComputeContext, directly.
  
 
 
-###`show`
+###show
 `signature(object = "RxForeachDoPar")`: ...
 
 

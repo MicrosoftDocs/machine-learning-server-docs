@@ -4,7 +4,8 @@
 title: "Machine Learning Load Image Transform" 
 description: " Loads image data. " 
 keywords: "MicrosoftML, loadImage, image, transform" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`loadImage`: Machine Learning Load Image Transform
+ #loadImage: Machine Learning Load Image Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -47,7 +48,7 @@ Loads image data.
 
    
   
- ### `vars`
+ ### vars
  A named list of character vectors of input variable names and the name of the output variable. Note that the input variables must be of the same type. For one-to-one mappings between input and output variables, a named character vector can be used. 
   
  

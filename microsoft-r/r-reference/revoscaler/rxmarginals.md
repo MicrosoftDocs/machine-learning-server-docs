@@ -4,7 +4,8 @@
 title: "Marginal Table Statistics" 
 description: " Obtain marginal statistics on `rxCrossTabs` contingency tables. " 
 keywords: "RevoScaleR, rxMarginals, rxMarginals.rxCrossTabs, category, models" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`rxMarginals`: Marginal Table Statistics
+ #rxMarginals: Marginal Table Statistics
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -47,17 +48,17 @@ rxMarginals  (x, output = "sums", ...)
 
    
     
- ### `x`
+ ### x
  object of class rxCrossTabs. 
   
   
     
- ### `output`
+ ### output
  character string specifying the type of output to display.  Choices are `"sums"`, `"counts"` and `"means"`. 
   
   
     
- ### ` ...`
+ ###  ...
  additional arguments to be passed directly to the underlying print method for the output list object. 
   
  

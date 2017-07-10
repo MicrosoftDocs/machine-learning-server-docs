@@ -4,7 +4,8 @@
 title: "Return the Microsoft R Home Directory" 
 description: "Return the Microsoft R home directory. " 
 keywords: ", Revo.home, utilities, documentation" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/27/2017" 
 ms.topic: "reference" 
@@ -13,20 +14,20 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
- #`Revo.home`: Return the MicrosoftR Home Directory 
+ #Revo.home: Return the MicrosoftR Home Directory 
  ##Description
  Return the MicrosoftR installation directory.
  
@@ -43,7 +44,7 @@ ms.custom: ""
 
    
     
- ### `component`
+ ### component
  One of the strings `"home"` or `"licenses"`.  
   
  

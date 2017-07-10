@@ -4,7 +4,8 @@
 title: "Input Parameter for SQL Stored Procedure: Class Generator" 
 description: " `InputParameter`: generates an InputParameter Object, that captures the information about the input parameters of the R function that is to be embedded into a SQL Server Stored Procesure. Those will become the input parameters of the stored procedure. Supported R types of the input parameters are POSIXct, numeric, character, integer, logical, and raw. " 
 keywords: "sqlrutils, InputParameter" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`InputParameter`: Input Parameter for SQL Stored Procedure: Class Generator
+ #InputParameter: Input Parameter for SQL Stored Procedure: Class Generator
 
  Applies to version 1.0.0 of package sqlrutils.
  
@@ -52,32 +53,32 @@ parameters are POSIXct, numeric, character, integer, logical, and raw.
 
    
   
- ### `name`
+ ### name
  A character string, the name of the input parameter object. 
   
   
   
- ### `type`
+ ### type
  A character string representing the R type of the input parameter object. 
   
   
   
- ### `defaultValue`
+ ### defaultValue
  Default value of the parameter. Not supported for "raw". 
   
   
   
- ### `defaultQuery`
+ ### defaultQuery
  A character string specifying the default query that will retrieve the data if a different query is not provided at the time of the execution of the stored procedure. 
   
   
   
- ### `value`
+ ### value
  A value that will be used for the parameter. in the next run of the stored procedure. 
   
   
   
- ### `enableOutput`
+ ### enableOutput
  Make this an Input/Output Parameter 
   
  

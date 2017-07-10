@@ -1,26 +1,25 @@
 ---
 
 # required metadata
-title: "Support for Microsoft R Server versions"
+title: "Support for Microsoft R Server versions | Microsoft Docs"
 description: "A list of the operating systems supported by editions and versions of Microsoft R Server and Revolution R Enterprise."
 keywords: ""
 author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
 ms.date: "12/09/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
-ms.service: ""
-ms.assetid: ""
 
 # optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: "r-server"
-ms.custom: ""
+#ms.custom: ""
 
 ---
 # Support Timeline for Microsoft R Server

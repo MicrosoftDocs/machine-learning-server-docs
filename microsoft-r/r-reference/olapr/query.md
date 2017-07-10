@@ -4,7 +4,8 @@
 title: "olapR Query Construction" 
 description: "Constructs a Query object. Set functions are used to build and modify the axes and cube name. " 
 keywords: "olapR, Query" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
@@ -13,18 +14,18 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
- #`Query`: olapR Query Construction
+ #Query: olapR Query Construction
 
  Applies to version 1.0.0 of package olapR.
  
@@ -72,23 +73,23 @@ ms.custom: ""
 
    
     
- ### `validate`
+ ### validate
  A boolian to specify if the Query should be validated or not during execution 
   
     
- ### `qry`
+ ### qry
  An object of class "Query" returned by `Query` 
   
     
- ### `cubeName`
+ ### cubeName
  A string specifying the name of the cube to query 
   
     
- ### `axis`
+ ### axis
  A vector of strings specifying an axis. See example below. 
   
     
- ### `n`
+ ### n
  An integer representing the axis number to be set. axis(qry, 1) == columns(qry), axis(qry, 2) == pages(qry), etc. 
   
  

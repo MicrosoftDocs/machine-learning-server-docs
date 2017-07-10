@@ -4,7 +4,8 @@
 title: " RevoPemaR: Parallel External Memory Algorithms in R" 
 description: "A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes." 
 keywords: "RevoPemaR, RevoPemaR-package, package" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
 ms.date: "04/03/2017" 
 ms.topic: "reference" 
@@ -13,18 +14,18 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
- #`RevoPemaR-package`:  RevoPemaR: Parallel External Memory Algorithms in R 
+ #RevoPemaR-package:  RevoPemaR: Parallel External Memory Algorithms in R 
 
  Applies to version 8.0.3 of package RevoPemaR.
  

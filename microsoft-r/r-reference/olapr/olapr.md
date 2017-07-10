@@ -4,32 +4,36 @@
 title: "OlapR: OLAP Cube access in R" 
 description: "A package that allows for data to be imported from OLAP cubes stored in SQL Server Analysis Services into R." 
 keywords: "olapR" 
-author: "richcalaway" 
+author: "richcalaway"
+ms.author: "richcala" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "07/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
 
  
- #`olapR`: OlapR: OLAP Cube access in R
+#olapR: OlapR: OLAP Cube access in R
 
- Applies to version 1.0.0 of package olapR. This package is in prerelease.
+
+Applies to version 1.0.0 of package **olapR**. This package is in prerelease.
+
+**olapR** is only available in R Server for Windows.
  
- ##Description
+##Description
 
 **olapR** provides a simple R style API for generating and validating MDX queries against a SQL Server Analysis Services cube. olapR does not provide APIs for all MDX scenarios, but it does cover the most use cases, including slice, dice, drilldown, rollup, and pivot scenarios in N dimensions. You can also input a direct MDX query to Analysis Services for queries that cannot be constructed using the olapR APIs.  
 

@@ -4,7 +4,8 @@
 title: " Get Job Information from Distributed Computing Job " 
 description: " Gets job information for a given distributed computing job. " 
 keywords: "RevoScaleR, rxGetJobInfo, IO" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,19 +14,19 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
- #`rxGetJobInfo`:  Get Job Information from Distributed Computing Job 
+ #rxGetJobInfo:  Get Job Information from Distributed Computing Job 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -47,7 +48,7 @@ Gets job information for a given distributed computing job.
 
    
   
- ### `object`
+ ### object
  an object containing `jobInfo` information, such as that returned from a non-waiting, distributed computation. 
   
  

@@ -4,7 +4,8 @@
 title: "Get a web service for consumption." 
 description: " Get a web service for consumption on running on R Server. " 
 keywords: "mrsdeploy, getService" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`getService`: Get a web service for consumption.
+ #getService: Get a web service for consumption.
 
  Applies to version 1.1.0 of package mrsdeploy.
  
@@ -47,17 +48,17 @@ Get a web service for consumption on running on R Server.
 
    
   
- ### `name`
+ ### name
  The web service name. 
   
   
   
- ### `v`
+ ### v
  The web service version. 
   
   
   
- ### `destination`
+ ### destination
  (optional) The codegen output directory location. 
   
  

@@ -4,7 +4,8 @@
 title: "Machine Learning Feature Selection Transform" 
 description: " The feature selection transform selects features from the specified variables using the specified mode. " 
 keywords: "MicrosoftML, selectFeatures, feature, selection, transform" 
-author: "bradsev" 
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`selectFeatures`: Machine Learning Feature Selection Transform
+ #selectFeatures: Machine Learning Feature Selection Transform
 
  Applies to version 1.3.0 of package MicrosoftML.
  
@@ -48,17 +49,17 @@ variables using the specified mode.
 
    
   
- ### `vars`
+ ### vars
  A formula or a vector/list of strings specifying the name of variables upon which the feature selection is performed, if the mode is  minCount(). For example, `~ var1 + var2 + var3`. If mode is mutualInformation(), a formula or a named list of strings describing the dependent variable and the independent variables. For example, `label ~ ``var1 + var2 + var3`. 
   
   
   
- ### `mode`
+ ### mode
  Specifies the mode of feature selection. This can be either  [minCount](mincount.md) or [mutualInformation](mutualinformation.md). 
   
   
   
- ### ` ...`
+ ###  ...
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  

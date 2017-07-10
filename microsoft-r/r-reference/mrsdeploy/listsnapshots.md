@@ -4,7 +4,8 @@
 title: "Get a list of snapshots for the current user." 
 description: " Get a list of all the snapshots on the R server that are available to the current user. " 
 keywords: "mrsdeploy, listSnapshots" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/17/2017" 
 ms.topic: "reference" 
@@ -13,21 +14,21 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
  
  
  
- #`listSnapshots`: Get a list of snapshots for the current user.
+ #listSnapshots: Get a list of snapshots for the current user.
 
  Applies to version 1.1.0 of package mrsdeploy.
  

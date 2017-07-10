@@ -4,7 +4,8 @@
 title: " Launches the job management UI for a compute context. " 
 description: " Launches the job management UI (if available) for a compute context. Currently this is only available for RxHadoopMR and RxHpcServer compute contexts. " 
 keywords: "RevoScaleR, rxLaunchClusterJobManager, rxLaunchClusterJobManager,character-method, rxLaunchClusterJobManager,RxHadoopMR-method, rxLaunchClusterJobManager,RxHpcServer-method, IO" 
-author: "heidisteen" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
 ms.date: "04/18/2017" 
 ms.topic: "reference" 
@@ -13,14 +14,14 @@ ms.service: ""
 ms.assetid: "" 
  
 # optional metadata 
-ROBOTS: "" 
-audience: "" 
-ms.devlang: "" 
-ms.reviewer: "" 
-ms.suite: "" 
-ms.tgt_pltfrm: "" 
+#ROBOTS: "" 
+#audience: "" 
+#ms.devlang: "" 
+#ms.reviewer: "" 
+#ms.suite: "" 
+#ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-ms.custom: "" 
+#ms.custom: "" 
  
 --- 
  
@@ -29,7 +30,7 @@ ms.custom: ""
  
  
  
- #`rxLaunchClusterJobManager`:  Launches the job management UI for a compute context. 
+ #rxLaunchClusterJobManager:  Launches the job management UI for a compute context. 
 
  Applies to version 9.1.0 of package RevoScaleR.
  
@@ -52,7 +53,7 @@ available for RxHadoopMR and RxHpcServer compute contexts.
 
    
   
- ### `context`
+ ### context
  The compute context used to determine which UI to launch, or a  character string with the name of the head node, or the character string "none" to launch a defult session. Note that use of a character string is deprecated, and only used for MS HPC clusters. 
   
  
