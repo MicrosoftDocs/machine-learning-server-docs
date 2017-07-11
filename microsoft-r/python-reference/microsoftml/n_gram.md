@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "n_gram" 
-description: "Extracts NGrams from text and convert them to vector using dictionary." 
+description: "Extracts NGrams from text and converts them to a vector using dictionary." 
 keywords: "N-Grams" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``n_gram``: Convert text into features using N-Grams
+## *n_gram*: Converts text into features using N-Grams
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -43,7 +43,7 @@ microsoftml.n_gram(ngram_length: numbers.Real = 1, skip_length: numbers.Real = 0
 
 ### Description
 
-Extracts NGrams from text and convert them to vector using dictionary.
+Extracts NGrams from text and converts them to a vector using dictionary.
 
 
 ### Arguments
@@ -61,7 +61,7 @@ Maximum number of tokens to skip when constructing an ngram (settings).
 
 ##### all_lengths
 
-Whether to include all ngram lengths up to ngramLength, or only ngramLength (settings).
+Whether to include all ngram lengths up to ngramLength or only ngramLength (settings).
 
 
 ##### max_num_terms

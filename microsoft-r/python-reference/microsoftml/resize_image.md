@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Machine Learning Resize Image Transform" 
-description: "Resizes an image to a specified dimension using a specified" 
+description: "Resizes an image to a specified dimension using a specified resizing method." 
 keywords: "transform, image" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``resize_image``: Resize an Image
+## *resize_image*: Resizes an Image
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -49,9 +49,9 @@ resizing method.
 
 ### Details
 
-``resize_image`` resizes an image to the specified height and width
+`resize_image` resizes an image to the specified height and width
 using a specified resizing method. The input variables to this transforms must
-be images, typically the result of the ``load_image`` transform.
+be images, typically the result of the `load_image` transform.
 
 
 ### Arguments
@@ -60,7 +60,7 @@ be images, typically the result of the ``load_image`` transform.
 ##### cols
 
 A character string or list of variable names to transform. If
-``dict``, the keys represent the names of new variables to be created.
+`dict`, the keys represent the names of new variables to be created.
 
 
 ##### width
@@ -78,13 +78,13 @@ Specifies the height of the scaled image in pixels. The default value is 224.
 Specified the resizing method to use. Note that all methods
 are using bilinear interpolation. The options are:
 
-* ``"IsoPad"``: The image is resized such that the aspect ratio is preserved. If needed, the image is padded with black to fit the new width or height. 
+* `"IsoPad"`: The image is resized such that the aspect ratio is preserved. If needed, the image is padded with black to fit the new width or height. 
 
-* ``"IsoCrop"``: The image is resized such that the aspect ratio is preserved. If needed, the image is cropped to fit the new width or height. 
+* `"IsoCrop"`: The image is resized such that the aspect ratio is preserved. If needed, the image is cropped to fit the new width or height. 
 
-* ``"Aniso"``: The image is stretched to the new width and height, without preserving the aspect ratio. 
+* `"Aniso"`: The image is stretched to the new width and height, without preserving the aspect ratio. 
 
-The default value is ``"IsoPad"``.
+The default value is `"IsoPad"`.
 
 
 ##### kargs
@@ -99,9 +99,9 @@ An object defining the transform.
 
 ### See also
 
-[``load_image``](load_image.md),
-[``extract_pixels``](extract_pixels.md),
-[``featurize_image``](featurize_image.md).
+[`load_image`](load_image.md),
+[`extract_pixels`](extract_pixels.md),
+[`featurize_image`](featurize_image.md).
 
 
 ### Example
@@ -159,7 +159,12 @@ Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: Training data does not support shuffling, so ignoring request to shuffle
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
 Using: AVX Math
 
 ***** Net definition *****
@@ -183,50 +188,38 @@ Momentum: 0.000000
 InitWtsDiameter: 0.100000
 ___________________________________________________________________
 Initializing 1 Hidden Layers, 6 Weights...
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Estimated Pre-training MeanError = 0.707823
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:1/1, MeanErr=0.707823(0.00%), 0.00M WeightUpdates/sec
+Iter:1/1, MeanErr=0.707823(0.00%), 0.01M WeightUpdates/sec
 Done!
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Estimated Post-training MeanError = 0.707499
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.2918775
-Elapsed time: 00:00:00.0332020
+Elapsed time: 00:00:00.2297267
+Elapsed time: 00:00:00.0209422
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Using 2 threads to train.
 Automatically choosing a check frequency of 2.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Auto-tuning parameters: L2 = 5.
 Auto-tuning parameters: L1Threshold (L1/L2) = 1.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Using model from last iteration.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.5155656
-Elapsed time: 00:00:00.0401789
+Elapsed time: 00:00:01.5579719
+Elapsed time: 00:00:00.0304564
 
 rx_neural_network
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1638000
+Elapsed time: 00:00:00.1075069
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel     Score  Probability
@@ -234,9 +227,9 @@ Writing completed.
 
 rx_fast_linear
 Beginning processing data.
-Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.7151066
+Elapsed time: 00:00:00.7601458
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel  Score  Probability

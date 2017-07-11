@@ -4,9 +4,9 @@
 title: "Fast Tree" 
 description: "Machine Learning Fast Tree" 
 keywords: "models, classification, regression" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_fast_trees``: Fast Tree
+## *rx_fast_trees*: Fast Tree
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -63,8 +63,8 @@ scalar values in its leaves. A decision (or regression) tree is a
 binary tree-like flow chart, where at each interior node one decides which
 of the two child nodes to continue to based on one of the feature values
 from the input. At each leaf node, a value is returned. In the
-interior nodes, the decision is based on the test ``"x <= v"``, where
-``x`` is the value of the feature in the input sample and ``v`` is one
+interior nodes, the decision is based on the test `"x <= v"`, where
+`x` is the value of the feature in the input sample and `v` is one
 of the possible values of this feature. The functions that can be produced
 by a regression tree are all the piece-wise constant functions.
 
@@ -80,8 +80,8 @@ of the tree outputs.
 
 * In case of a ranking problem, the instances are ordered by the output value of the ensemble. 
 
-If ``method`` is set to ``"regression"``, a regression version of
-FastTree is used. If set to ``"ranking"``, a ranking version of FastTree
+If `method` is set to `"regression"`, a regression version of
+FastTree is used. If set to `"ranking"`, a ranking version of FastTree
 is used. In the ranking case, the instances should be ordered by the output
 of the tree ensemble. The only difference in the settings of these
 versions is in the calibration settings, which are needed only for
@@ -93,9 +93,9 @@ classification.
 
 ##### formula
 
-The formula as described in ``rx_formula``.
-Interaction terms and ``F()`` are not currently supported in the
-.
+The formula as described in [revoscalepy.rx_formula](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/rx_formula).
+Interaction terms and `F()` are not currently supported in the
+[microsoftml](https://docs.microsoft.com/en-us/r-server/r/concept-what-is-the-microsoftml-package).
 
 
 ##### data
@@ -107,8 +107,8 @@ A data source object or a character string specifying a
 ##### method
 
 A character string that specifies the type of Fast Tree:
-``"binary"`` for the default Fast Tree Binary Classification or
-``"regression"`` for Fast Tree Regression.
+`"binary"` for the default Fast Tree Binary Classification or
+`"regression"` for Fast Tree Regression.
 
 
 ##### num_trees
@@ -167,7 +167,7 @@ each split. The default value is 1.
 Maximum number of distinct values (bins) per feature. If the
 feature has fewer values than the number indicated, each value is placed
 in its own bin.  If there are more values, the algorithm creates
-``numBins`` bins.
+`numBins` bins.
 
 
 ##### first_use_penalty
@@ -186,9 +186,9 @@ the range [0,1)). The default value is 0.
 
 ##### unbalanced_sets
 
-If ``True``, derivatives optimized for unbalanced
-sets are used. Only applicable when ``type`` equal to ``"binary"``.
-The default value is ``False``.
+If `True`, derivatives optimized for unbalanced
+sets are used. Only applicable when `type` equal to `"binary"`.
+The default value is `False`.
 
 
 ##### train_threads
@@ -204,11 +204,11 @@ Specifies the random seed. The default value is *None*.
 
 ##### ml_transforms
 
-Specifies a list of microsoftml transforms to be
+Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
-to be performed. See [``featurize_text``](featurize_text.md),
-[``categorical``](categorical.md),
-and [``categorical_hash``](categorical_hash.md), for transformations that are supported.
+to be performed. See [`featurize_text`](featurize_text.md),
+[`categorical`](categorical.md),
+and [`categorical_hash`](categorical_hash.md), for transformations that are supported.
 These transformations are performed after any specified Python transformations.
 The default value is *None*.
 
@@ -216,7 +216,7 @@ The default value is *None*.
 ##### ml_transform_vars
 
 Specifies a character vector of variable names
-to be used in ``ml_transforms`` or *None* if none are to be used.
+to be used in `ml_transforms` or *None* if none are to be used.
 The default value is *None*.
 
 
@@ -225,15 +225,16 @@ The default value is *None*.
 NOT SUPPORTED. Specifies the rows (observations) from the data set that
 are to be used by the model with the name of a logical variable from the
 data set (in quotes) or with a logical expression using variables in the
-data set. For example, ``row_selection = "old"`` will only use
-observations in which the value of the variable ``old`` is ``True``.
-``row_selection = (age > 20) & (age < 65) & (log(income) > 10)`` only uses
-observations in which the value of the ``age`` variable is between
-20 and 65 and the value of the ``log`` of the ``income`` variable is
-greater than 10. The row selection is performed after processing any data
-transformations (see the arguments ``transforms`` or
-``transform_function``). As with all expressions, ``row_selection`` can be
-defined outside of the function call using the ``expression``
+data set. For example:
+
+* `row_selection = "old"` will only use observations in which the value of the variable `old` is `True`. 
+
+* `row_selection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. 
+
+The row selection is performed after processing any data
+transformations (see the arguments `transforms` or
+`transform_function`). As with all expressions, `row_selection` can be
+defined outside of the function call using the `expression`
 function.
 
 
@@ -241,15 +242,15 @@ function.
 
 NOT SUPPORTED. An expression of the form  that represents the
 first round of variable transformations. As with
-all expressions, ``transforms`` (or ``row_selection``) can be defined
-outside of the function call using the ``expression`` function.
+all expressions, `transforms` (or `row_selection`) can be defined
+outside of the function call using the `expression` function.
 
 
 ##### transform_objects
 
 NOT SUPPORTED. A named list that contains objects that can be
-referenced by ``transforms``, ``transform_function``, and
-``row_selection``.
+referenced by `transforms`, `transform_function`, and
+`row_selection`.
 
 
 ##### transform_function
@@ -266,21 +267,21 @@ the transformation function.
 ##### transform_packages
 
 NOT SUPPORTED. A character vector specifying additional Python packages
-(outside of those specified in ``RxOptions.get_option("transform_packages")``) to
+(outside of those specified in `RxOptions.get_option("transform_packages")`) to
 be made available and preloaded for use in variable transformation functions.
-For exmple, those explicitly defined in  functions via
-their ``transforms`` and ``transform_function`` arguments or those defined
-implicitly via their ``formula`` or ``row_selection`` arguments.  The
-``transform_packages`` argument may also be *None*, indicating that
-no packages outside ``RxOptions.get_option("transform_packages")`` are preloaded.
+For example, those explicitly defined in [revoscalepy](https://docs.microsoft.com/en-us/sql/advanced-analytics/python/what-is-revoscalepy) functions via
+their `transforms` and `transform_function` arguments or those defined
+implicitly via their `formula` or `row_selection` arguments.  The
+`transform_packages` argument may also be *None*, indicating that
+no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 
 
 ##### transform_environment
 
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
-If ``transform_environment = None``, a new “hash” environment with parent
-``baseenv`` is used instead.
+If `transform_environment = None`, a new “hash” environment with parent
+[revoscalepy.baseenv](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/baseenv) is used instead.
 
 
 ##### blocks_per_read
@@ -294,27 +295,27 @@ of data read from the data source.
 An integer value that specifies the level of reporting
 on the row processing progress:
 
-* ``0``: no progress is reported. 
+* `0`: no progress is reported. 
 
-* ``1``: the number of processed rows is printed and updated. 
+* `1`: the number of processed rows is printed and updated. 
 
-* ``2``: rows processed and timings are reported. 
+* `2`: rows processed and timings are reported. 
 
-* ``3``: rows processed and all timings are reported. 
+* `3`: rows processed and all timings are reported. 
 
 
 ##### verbose
 
 An integer value that specifies the amount of output wanted.
-If ``0``, no verbose output is printed during calculations. Integer
-values from ``1`` to ``4`` provide increasing amounts of information.
+If `0`, no verbose output is printed during calculations. Integer
+values from `1` to `4` provide increasing amounts of information.
 
 
 ##### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid ``RxComputeContext``.
-Currently local and ``RxInSqlServer`` compute contexts
+specified with a valid [revoscalepy.RxComputeContext](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/RxComputeContext).
+Currently local and [revoscalepy.RxInSqlServer](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/RxInSqlServer) compute contexts
 are supported.
 
 
@@ -325,7 +326,7 @@ NOT SUPPORTED. Control parameters for ensembling.
 
 ### Returns
 
-A [``FastTrees``](learners_object.md) object with the trained model.
+A [`FastTrees`](learners_object.md) object with the trained model.
 
 
 ### Note
@@ -336,15 +337,15 @@ memory.
 
 ### See also
 
-[``rx_fast_forest``](rx_fast_forest.md),
-[``rx_predict``](rx_predict.md)
+[`rx_fast_forest`](rx_fast_forest.md),
+[`rx_predict`](rx_predict.md)
 
 
 ### References
 
-[Wikipedia: Gradient boosting (Gradient tree boosting)](https://en.wikipedia.org/wiki/Gradient_boosting.md)
+[Wikipedia: Gradient boosting (Gradient tree boosting)](https://en.wikipedia.org/wiki/Gradient_boosting)
 
-[Greedy function approximation: A gradient boosting machine.](http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aos/1013203451.md)
+[Greedy function approximation: A gradient boosting machine.](http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aos/1013203451)
 
 
 ### Example
@@ -393,30 +394,30 @@ Not adding a normalizer.
 Making per-feature arrays
 Changing data from row-wise to column-wise
 Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Processed 186 instances
 Binning and forming Feature objects
 Reserved memory for tree learner: 7176 bytes
 Starting to train ...
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1035951
-Elapsed time: 00:00:00.0286519
+Elapsed time: 00:00:00.0877431
+Elapsed time: 00:00:00.0202990
 Beginning processing data.
 Rows Read: 62, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0754920
+Elapsed time: 00:00:00.0523910
 Finished writing 62 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre1477635.xdf File will be overwritten if it exists.
+Data will be written to C:\Users\xavie\AppData\Local\Temp\rre677635.xdf File will be overwritten if it exists.
 
 Rows Processed: 5 
-  isCase PredictedLabel     Score  Probability
-0  False           True  0.139257     0.513922
-1   True          False -7.583200     0.045945
-2  False          False -4.328070     0.150431
-3   True          False -8.828511     0.028432
-4  False           True  9.239482     0.975774
+  isCase PredictedLabel      Score  Probability
+0  False          False  -6.649153     0.065396
+1  False          False  -1.114630     0.390347
+2  False           True   0.946965     0.593580
+3  False          False  -1.087391     0.392943
+4   True          False -19.873634     0.000353
 ```
 
 
@@ -483,22 +484,22 @@ Beginning processing data.
 Warning: Skipped 4 instances with missing features during training
 Processed 83 instances
 Binning and forming Feature objects
-Reserved memory for tree learner: 22308 bytes
+Reserved memory for tree learner: 21840 bytes
 Starting to train ...
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.0909694
-Elapsed time: 00:00:00.0270667
+Elapsed time: 00:00:00.0772384
+Elapsed time: 00:00:00.0181021
 Beginning processing data.
 Rows Read: 29, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0699581
+Elapsed time: 00:00:00.0478636
 Finished writing 29 rows.
 Writing completed.
    Solar_R  Wind  Temp      Score
-0    248.0   9.2    85  91.211525
-1     95.0   7.4    87  56.858070
-2    322.0  11.5    68  21.372341
-3    238.0  10.3    68  17.732122
-4     20.0  16.6    63   7.600980
+0     24.0  10.9    71  12.461828
+1     92.0  12.0    61  19.592432
+2    190.0   7.4    67  26.363356
+3     37.0   9.2    65  13.309571
+4      NaN   4.6    87  74.612831
 ```
 

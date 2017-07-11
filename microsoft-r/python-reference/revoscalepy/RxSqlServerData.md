@@ -4,9 +4,9 @@
 title: "Generate SqlServer Data Source Object" 
 description: "Main generator for class RxSqlServerData, which extends RxDataSource." 
 keywords: "datasource, sql" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``RxSqlServerData``
+## `RxSqlServerData`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -51,43 +51,43 @@ Main generator for class RxSqlServerData, which extends RxDataSource.
 
 ##### connection_string
 
-NULL or character string specifying the
+None or character string specifying the
 connection string.
 
 
 ##### table
 
-NULL or character string specifying the table name. Cannot be
+None or character string specifying the table name. Cannot be
 used with sql_query.
 
 
 ##### sql_query
 
-NULL or character string specifying a valid SQL select
+None or character string specifying a valid SQL select
 query. Cannot contain hidden characters such as tabs or newlines. Cannot be
 used with table. If you want to use TABLESAMPLE clause in sqlQuery, set
-row_buffering argument to FALSE.
+row_buffering argument to False.
 
 
 ##### row_buffering
 
-logical specifying whether or not to buffer rows on
+bool specifying whether or not to buffer rows on
 read from the database. If you are having problems with your ODBC driver,
-try setting this to FALSE.
+try setting this to False.
 
 
 ##### return_data_frame
 
-logical indicating whether or not to convert the
-result from a list to a data frame (for use in rxReadNext only). If FALSE,
+bool indicating whether or not to convert the
+result from a list to a data frame (for use in rxReadNext only). If False,
 a list is returned.
 
 
 ##### string_as_factors
 
-logical indicating whether or not to
+bool indicating whether or not to
 automatically convert strings to factors on import. This can be overridden
-by specifying “character” in column_classes and column_info. If TRUE, the
+by specifying “character” in column_classes and column_info. If True, the
 factor levels will be coded in the order encountered. Since this factor
 level ordering is row dependent, the preferred method for handling factor
 columns is to use column_info with specified “levels”.
@@ -95,11 +95,11 @@ columns is to use column_info with specified “levels”.
 
 ##### column_classes
 
-character vector specifying the column types to use
+list of strings specifying the column types to use
 when converting the data. The element names for the vector are used to
 identify which column should be converted to which type.
 Allowable column types are:
-“logical” (stored as uchar),
+“bool” (stored as uchar),
 “integer” (stored as int32),
 “float32” (the default for floating point data for ‘.xdf’ files),
 “numeric” (stored as float64 as in R),
@@ -136,7 +136,7 @@ type: character string specifying the data type for the column. See
 
 newName: character string specifying a new name for the variable.
 description: character string specifying a description for the variable.
-levels: character vector containing the levels when type = “factor”. If
+levels: list of strings containing the levels when type = “factor”. If
 
     the levels property is not provided, factor levels will be determined
     by the values in the source column. If levels are provided, any value
@@ -168,7 +168,7 @@ information on the odbc data source type (odbc or odbcFast) is printed.
 
 ##### use_fast_read
 
-logical specifying whether or not to use a direct
+bool specifying whether or not to use a direct
 ODBC connection. On Linux systems, this is the only ODBC connection
 available.
 
@@ -199,7 +199,7 @@ specified in the connection string with the pwd keyword.
 
 ##### write_factors_as_indexes
 
-logical. If TRUE, when writing to an
+bool. If True, when writing to an
 RxOdbcData data source, underlying factor indexes will be written instead
 of the string representations.
 
@@ -212,7 +212,7 @@ functions.
 
 ### Returns
 
-object of class ``RxSqlServerData``.
+object of class `RxSqlServerData`.
 
 
 ### Example
@@ -220,9 +220,9 @@ object of class ``RxSqlServerData``.
 
 
 ```
-from revoscalepy import RxSqlServerData, RxInSqlServer, rx_lin_mod, rx_data_step
-formula = "ArrDelay ~ CRSDepTime + DayOfWeek"
-connection_string="Driver=SQL Server;Server=.;Database=RevoTestDB;Trusted_Connection=TRUE"
+from revoscalepy import RxSqlServerData, rx_data_step
+
+connection_string="Driver=SQL Server;Server=.;Database=RevoTestDB;Trusted_Connection=True"
 query="select top 100 [ArrDelay],[CRSDepTime],[DayOfWeek] FROM airlinedemosmall"
 
 ds = RxSqlServerData(sql_query = query, connection_string = connection_string)

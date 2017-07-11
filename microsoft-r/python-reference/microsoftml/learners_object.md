@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Learners Objects" 
-description: "An instance of the following objects is returned by every training function." 
+description: "An instance of the following objects is returned by every training function. They all inherit from the class BaseLearner and implement common methods.get_algo_args returns the training parameters,  coef_ retrieves the coefficients,  summary_ returns training information.The content changes based on the trained learner." 
 keywords: "models, learners" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -32,15 +32,16 @@ ms.custom: ""
 
 ### Description
 
-An instance of the following objects is returned by every training function.
-They all inherit from the class *BaseLearner* and implement common methods.
-[``get_algo_args``](microsoftml/modules/base_learner/BaseLearner/get_algo_args.md)
-returns the training parameters,
-[``coef_``](microsoftml/modules/base_learner/BaseLearner/coef_.md)
-retrieves the coefficients,
-[``summary_``](microsoftml/modules/base_learner/BaseLearner/summary_.md)
-returns training information. The content changes based on the trained
-learner.
+An instance of the following objects is returned by every
+training function. They all inherit from the class *BaseLearner* and implement common methods.
+
+* [`get_algo_args`](microsoftml/modules/base_learner/BaseLearner/get_algo_args.md) returns the training parameters, 
+
+* [`coef_`](microsoftml/modules/base_learner/BaseLearner/coef_.md) retrieves the coefficients, 
+
+* [`summary_`](microsoftml/modules/base_learner/BaseLearner/summary_.md) returns training information. 
+
+The content changes based on the trained learner.
 
 
 ### Base Learner
@@ -156,7 +157,7 @@ get train node
 
 
 ```
-class microsoftml.OneClassSvm(cache_size: float = 100, kernel: [<function linear_kernel at 0x000001F5FD74FD90>, <function polynomial_kernel at 0x000001F5FD74FE18>, <function rbf_kernel at 0x000001F5FD74FBF8>, <function sigmoid_kernel at 0x000001F5FD74FF28>] = {‘name’: ‘RbfKernel’, ’settings’: {}}, epsilon: float = 0.001, nu: float = 0.1, shrink: bool = True, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, **kargs)
+class microsoftml.OneClassSvm(cache_size: float = 100, kernel: [<function linear_kernel at 0x00000177684137B8>, <function polynomial_kernel at 0x0000017768413840>, <function rbf_kernel at 0x0000017768413620>, <function sigmoid_kernel at 0x0000017768413950>] = {‘settings’: {}, ’name’: ‘RbfKernel’}, epsilon: float = 0.001, nu: float = 0.1, shrink: bool = True, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, **kargs)
 ```
 
 
@@ -312,7 +313,7 @@ get train node
 
 
 ```
-class microsoftml.NeuralNetwork(method: [‘binary’, ’multiClass’, ’regression’] = ‘binary’, num_hidden_nodes: int = 100, num_iterations: int = 100, optimizer: [‘adadelta_optimizer’, ’sgd_optimizer’] = {‘name’: ‘SgdOptimizer’, ’settings’: {}}, net_definition: str = None, init_wts_diameter: float = 0.1, max_norm: float = 0, acceleration: [‘avx_math’, ’clr_math’, ’gpu_math’, ’mkl_math’, ’sse_math’] = {‘name’: ‘AvxMath’, ’settings’: {}}, mini_batch_size: int = 1, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, **kargs)
+class microsoftml.NeuralNetwork(method: [‘binary’, ’multiClass’, ’regression’] = ‘binary’, num_hidden_nodes: int = 100, num_iterations: int = 100, optimizer: [‘adadelta_optimizer’, ’sgd_optimizer’] = {‘settings’: {}, ’name’: ‘SgdOptimizer’}, net_definition: str = None, init_wts_diameter: float = 0.1, max_norm: float = 0, acceleration: [‘avx_math’, ’clr_math’, ’gpu_math’, ’mkl_math’, ’sse_math’] = {‘settings’: {}, ’name’: ‘AvxMath’}, mini_batch_size: int = 1, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, **kargs)
 ```
 
 
@@ -338,7 +339,7 @@ get train node
 
 
 ```
-class microsoftml.OneClassSvm(cache_size: float = 100, kernel: [<function linear_kernel at 0x000001F5FD74FD90>, <function polynomial_kernel at 0x000001F5FD74FE18>, <function rbf_kernel at 0x000001F5FD74FBF8>, <function sigmoid_kernel at 0x000001F5FD74FF28>] = {‘name’: ‘RbfKernel’, ’settings’: {}}, epsilon: float = 0.001, nu: float = 0.1, shrink: bool = True, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, **kargs)
+class microsoftml.OneClassSvm(cache_size: float = 100, kernel: [<function linear_kernel at 0x00000177684137B8>, <function polynomial_kernel at 0x0000017768413840>, <function rbf_kernel at 0x0000017768413620>, <function sigmoid_kernel at 0x0000017768413950>] = {‘settings’: {}, ’name’: ‘RbfKernel’}, epsilon: float = 0.001, nu: float = 0.1, shrink: bool = True, normalize: [‘No’, ’Warn’, ’Auto’, ’Yes’] = ‘Auto’, **kargs)
 ```
 
 
@@ -361,10 +362,10 @@ get train node
 
 #### See also
 
-[``rx_fast_forest``](rx_fast_forest.md),
-[``rx_fast_trees``](rx_fast_trees.md),
-[``rx_fast_linear``](rx_fast_linear.md),
-[``rx_logistic_regression``](rx_logistic_regression.md),
-[``rx_neural_network``](rx_neural_network.md),
-[``rx_oneclass_svm``](rx_oneclass_svm.md),
-[``rx_predict``](rx_predict.md)
+[`rx_fast_forest`](rx_fast_forest.md),
+[`rx_fast_trees`](rx_fast_trees.md),
+[`rx_fast_linear`](rx_fast_linear.md),
+[`rx_logistic_regression`](rx_logistic_regression.md),
+[`rx_neural_network`](rx_neural_network.md),
+[`rx_oneclass_svm`](rx_oneclass_svm.md),
+[`rx_predict`](rx_predict.md)

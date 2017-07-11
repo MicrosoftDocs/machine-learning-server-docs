@@ -4,9 +4,9 @@
 title: "Parallel External Memory Algorithm for Classification and Regression Trees" 
 description: "Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_dtree``
+## `rx_dtree`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -43,7 +43,8 @@ revoscalepy.rx_dtree(formula, data, output_file=None, output_column_name=’.rxN
 
 ### Description
 
-Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm.
+Fit classification and regression trees on an ‘.xdf’ file or data frame for
+small or large data using parallel external memory algorithm.
 
 
 ### Arguments
@@ -51,8 +52,7 @@ Fit classification and regression trees on an ‘.xdf’ file or data frame for 
 
 ##### formula
 
-formula as described in rxFormula. Currently, formula
-functions are not supported.
+statistical model using symbolic formulas.
 
 
 ##### data
@@ -66,24 +66,21 @@ either a data source object, a character string specifying a
 either an RxXdfData data source object or a character
 string specifying the ‘.xdf’ file for storing the resulting node indices.
 If None, then no node indices are stored to disk. If the input data is a
-data frame, the node indices are returned automatically. If rowSelection is
-specified and not None, then outFile cannot be the same as the data since
-the resulting set of node indices will generally not have the same number
-of rows as the original data source.
+data frame, the node indices are returned automatically.
 
 
 ##### output_column_name
 
 character string to be used as a column name for
-the resulting node indices if outFile is not None. Note that make.names is
-used on outColName to ensure that the column name is valid. If the outFile
+the resulting node indices if output_file is not None. Note that make.names is
+used on outColName to ensure that the column name is valid. If the output_file
 is an RxOdbcData source, dots are first converted to underscores. Thus, the
 default outColName becomes “X_rxNode”.
 
 
 ##### write_model_vars
 
-logical value. If True, and the output file is
+bool value. If True, and the output file is
 different from the input file, variables in the model will be written to
 the output file in addition to the node numbers. If variables from the
 input data set are transformed in the model, the transformed variables will
@@ -92,14 +89,14 @@ also be written out.
 
 ##### extra_vars_to_write
 
-None or character vector of additional
+None or list of strings of additional
 variables names from the input data or transforms to include in the
-outFile. If writeModelVars is True, model variables will be included as well.
+output_file. If writeModelVars is True, model variables will be included as well.
 
 
 ##### overwrite
 
-logical value. If True, an existing outFile with an
+bool value. If True, an existing output_file with an
 existing column named outColName will be overwritten.
 
 
@@ -143,7 +140,7 @@ If parms is specified, any of the components can be specified or
 
 a vector of non-negative costs, containing one element for
 each variable in the model. Defaults to one for all variables. When
-deciding which split: to choose, the improvement on splitting on a variable
+deciding which split to choose, the improvement on splitting on a variable
 is divided by its cost.
 
 
@@ -158,7 +155,7 @@ to specify this argument directly.
 ##### min_bucket
 
 the minimum number of observations in a terminal node
-(or leaf). By default, this is minSplit/3.
+(or leaf). By default, this is min_split/3.
 
 
 ##### cp
@@ -177,10 +174,9 @@ splits in the output with the alternatives.
 ##### max_surrogate
 
 the maximum number of surrogate splits retained in
-the output. See the Details for a description of how surrogate splits are
-used in the model fitting. Setting this to 0 can greatly improve the
-performance of the algorithm; in some cases almost half the computation
-time is spent in computing surrogate splits.
+the output. Setting this to 0 can greatly improve the performance of the
+algorithm; in some cases almost half the computation time is spent in
+computing surrogate splits.
 
 
 ##### use_surrogate
@@ -196,7 +192,7 @@ in the splitting process:
     split.
 
 2: use surrogates, in order, to split observations missing the primary
-    split variable. If all surrogates are missing or maxSurrogate=0, send
+    split variable. If all surrogates are missing or max_surrogate=0, send
     the observation in the majority direction.
 
 The 0 value corresponds to the behavior of the tree function, and 2
@@ -206,7 +202,7 @@ The 0 value corresponds to the behavior of the tree function, and 2
 ##### x_val
 
 the number of cross-validations to be performed along with
-the model building. Currently, 1:xVal is repeated and used to identify the
+the model building. Currently, 1:x_val is repeated and used to identify the
 folds. If not zero, the cptable component of the resulting model will
 contain both the mean (xerror) and standard deviation (xstd) of the
 cross-validation errors, which can be used to select the optimal
@@ -238,7 +234,7 @@ the maximum number of bins to use to cut numeric data.
 The default is min(1001, max(101, sqrt(num of obs))). For non-XDF data
 sources, as (num of obs) is unknown in advance, it is wisest to specify
 this argument directly. If set to 0, unit binning will be used instead of
-cutting. See the ‘Details’ section for more information.
+cutting.
 
 
 ##### max_unordered_levels
@@ -249,13 +245,13 @@ unordered factor predictor for multiclass (>2) classification.
 
 ##### remove_missings
 
-logical value. If True, rows with missing values
+bool value. If True, rows with missing values
 are removed and will not be included in the output data.
 
 
 ##### compute_obs_node_id
 
-logical value or None. If True, the tree node
+bool value or None. If True, the tree node
 IDs for all the observations are computed and returned. If None, the IDs
 are computed for data.frame with less than 1000 observations and are
 returned as the where component in the fitted rxDTree object.
@@ -263,12 +259,12 @@ returned as the where component in the fitted rxDTree object.
 
 ##### use_sparse_cube
 
-logical value. If True, sparse cube is used.
+bool value. If True, sparse cube is used.
 
 
 ##### find_splits_in_parallel
 
-logical value. If True, optimal splits for
+bool value. If True, optimal splits for
 each node are determined using parallelization methods; this will typically
 speed up computation as the number of nodes on the same level is increased.
 
@@ -286,8 +282,7 @@ value for prune.rxDTree.
 
 ##### row_selection
 
-None. Not currently supported, reserved for future
-use.
+None. Not currently supported, reserved for future use.
 
 
 ##### transforms
@@ -303,14 +298,14 @@ None. Not currently supported, reserved for future use.
 ##### transform_function
 
 variable transformation function. The variables used
-in the transformation function must be specified in transformVars if they
-are not variables used in the model. See rxTransform for details.
+in the transformation function must be specified in transform_variables if they
+are not variables used in the model.
 
 
 ##### transform_variables
 
-character vector of input data set variables needed
-for the transformation function. See rx_transform for details.
+list of strings of input data set variables needed
+for the transformation function.
 
 
 ##### transform_packages
@@ -357,6 +352,12 @@ additional parameters
 ### Returns
 
 a rx_dtree_results object of dtree model.
+
+
+### See also
+
+[`rx_predict`](rx_predict.md),
+[`rx_predict_rx_dtree`](rx_predict_rx_dtree.md).
 
 
 ### Example

@@ -4,9 +4,9 @@
 title: "OneClass SVM" 
 description: "Machine Learning One Class Support Vector Machines" 
 keywords: "models, anomaly, detection" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_oneclass_svm``: Detect Anomalies
+## *rx_oneclass_svm*: Detects Anomalies
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.rx_oneclass_svm(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], cache_size: float = 100, kernel: [<function linear_kernel at 0x000001F5FD74FD90>, <function polynomial_kernel at 0x000001F5FD74FE18>, <function rbf_kernel at 0x000001F5FD74FBF8>, <function sigmoid_kernel at 0x000001F5FD74FF28>] = {‘name’: ‘RbfKernel’, ‘settings’: {}}, epsilon: float = 0.001, nu: float = 0.1, shrink: bool = True, normalize: [‘No’, ‘Warn’, ‘Auto’, ‘Yes’] = ‘Auto’, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
+microsoftml.rx_oneclass_svm(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], cache_size: float = 100, kernel: [<function linear_kernel at 0x00000177684137B8>, <function polynomial_kernel at 0x0000017768413840>, <function rbf_kernel at 0x0000017768413620>, <function sigmoid_kernel at 0x0000017768413950>] = {‘settings’: {}, ‘name’: ‘RbfKernel’}, epsilon: float = 0.001, nu: float = 0.1, shrink: bool = True, normalize: [‘No’, ‘Warn’, ‘Auto’, ‘Yes’] = ‘Auto’, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
 ```
 
 
@@ -64,9 +64,9 @@ intrusion, fraud, or other types of anomalous behavior.
 
 ##### formula
 
-The formula as described in ``rx_formula``.
-Interaction terms and ``F()`` are not currently supported in the
-.
+The formula as described in [revoscalepy.rx_formula](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/rx_formula).
+Interaction terms and `F()` are not currently supported in the
+[microsoftml](https://docs.microsoft.com/en-us/r-server/r/concept-what-is-the-microsoftml-package).
 
 
 ##### data
@@ -84,16 +84,16 @@ data. Increase this for large training sets. The default value is 100 MB.
 ##### kernel
 
 A character string representing the kernel used for computing
-inner products. For more information, see ``ma_kernel()``. The
+inner products. For more information, see `ma_kernel()`. The
 following choices are available:
 
-* ``rbf_kernel``: Radial basis function kernel. It’s parameter represents“gamma“ in the term ``exp(-gamma|x-y|^2``. If not specified, it defaults to ``1`` divided by the number of features used. For example, ``rbf_kernel(gamma = .1)``. This is the default value. 
+* `rbf_kernel`: Radial basis function kernel. It’s parameter represents“gamma“ in the term `exp(-gamma|x-y|^2`. If not specified, it defaults to `1` divided by the number of features used. For example, `rbf_kernel(gamma = .1)`. This is the default value. 
 
-* ``linear_kernel``: Linear kernel. 
+* `linear_kernel`: Linear kernel. 
 
-* ``polynomial_kernel``: Polynomial kernel with parameter names ``a``, ``bias``, and ``deg`` in the term ``(a*<x,y> + bias)^deg``. The ``bias``, defaults to ``0``. The degree, ``deg``, defaults to ``3``. If ``a`` is not specified, it is set to ``1`` divided by the number of features. 
+* `polynomial_kernel`: Polynomial kernel with parameter names `a`, `bias`, and `deg` in the term `(a*<x,y> + bias)^deg`. The `bias`, defaults to `0`. The degree, `deg`, defaults to `3`. If `a` is not specified, it is set to `1` divided by the number of features. 
 
-* ``sigmoid_kernel``: Sigmoid kernel with parameter names ``gamma`` and ``coef0`` in the term ``tanh(gamma*<x,y> + coef0)``. ``gamma``, defaults to to ``1`` divided by the number of features. The parameter ``coef0`` defaults to ``0``.  For example, ``sigmoid_kernel(gamma = .1, coef0 = 0)``. 
+* `sigmoid_kernel`: Sigmoid kernel with parameter names `gamma` and `coef0` in the term `tanh(gamma*<x,y> + coef0)`. `gamma`, defaults to to `1` divided by the number of features. The parameter `coef0` defaults to `0`.  For example, `sigmoid_kernel(gamma = .1, coef0 = 0)`. 
 
 
 ##### epsilon
@@ -101,7 +101,7 @@ following choices are available:
 The threshold for optimizer convergence. If the
 improvement between iterations is less than the threshold, the algorithm
 stops and returns the current model. The value must be greater than or equal
-to ``numpy.finfo(double).eps``. The default value is 0.001.
+to `numpy.finfo(double).eps`. The default value is 0.001.
 
 
 ##### nu
@@ -113,39 +113,39 @@ support vectors (represented by the Greek letter nu). Must be between 0 and
 
 ##### shrink
 
-Uses the shrinking heuristic if ``True``. In this case,
+Uses the shrinking heuristic if `True`. In this case,
 some samples will be “shrunk” during the training procedure, which may speed
-up training. The default value is ``True``.
+up training. The default value is `True`.
 
 
 ##### normalize
 
 Specifies the type of automatic normalization used:
 
-* ``"Auto"``: if normalization is needed, it is performed automatically. This is the default choice. 
+* `"Auto"`: if normalization is needed, it is performed automatically. This is the default choice. 
 
-* ``"No"``: no normalization is performed. 
+* `"No"`: no normalization is performed. 
 
-* ``"Yes"``: normalization is performed. 
+* `"Yes"`: normalization is performed. 
 
-* ``"Warn"``: if normalization is needed, a warning message is displayed, but normalization is not performed. 
+* `"Warn"`: if normalization is needed, a warning message is displayed, but normalization is not performed. 
 
 Normalization rescales disparate data ranges to a standard scale. Feature
 scaling insures the distances between data points are proportional and
 enables various optimization methods such as gradient descent to converge
-much faster. If normalization is performed, a ``MaxMin`` normalizer is
-used. It normalizes values in an interval [a, b] where ``-1 <= a <= 0``
-and ``0 <= b <= 1`` and ``b - a = 1``. This normalizer preserves
+much faster. If normalization is performed, a `MaxMin` normalizer is
+used. It normalizes values in an interval [a, b] where `-1 <= a <= 0`
+and `0 <= b <= 1` and `b - a = 1`. This normalizer preserves
 sparsity by mapping zero to zero.
 
 
 ##### ml_transforms
 
-Specifies a list of microsoftml transforms to be
+Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
-to be performed. See [``featurize_text``](featurize_text.md),
-[``categorical``](categorical.md),
-and [``categorical_hash``](categorical_hash.md), for transformations that aresupported.
+to be performed. See [`featurize_text`](featurize_text.md),
+[`categorical`](categorical.md),
+and [`categorical_hash`](categorical_hash.md), for transformations that aresupported.
 These transformations are performed after any specified Python transformations.
 The default avlue is *None*.
 
@@ -153,7 +153,7 @@ The default avlue is *None*.
 ##### ml_transform_vars
 
 Specifies a character vector of variable names
-to be used in ``ml_transforms`` or *None* if none are to be used.
+to be used in `ml_transforms` or *None* if none are to be used.
 The default value is *None*.
 
 
@@ -162,15 +162,16 @@ The default value is *None*.
 NOT SUPPORTED. Specifies the rows (observations) from the data set that
 are to be used by the model with the name of a logical variable from the
 data set (in quotes) or with a logical expression using variables in the
-data set. For example, ``row_selection = "old"`` will only use
-observations in which the value of the variable ``old`` is ``True``.
-``row_selection = (age > 20) & (age < 65) & (log(income) > 10)`` only uses
-observations in which the value of the ``age`` variable is between
-20 and 65 and the value of the ``log`` of the ``income`` variable is
-greater than 10. The row selection is performed after processing any data
-transformations (see the arguments ``transforms`` or
-``transform_function``). As with all expressions, ``row_selection`` can be
-defined outside of the function call using the ``expression``
+data set. For example:
+
+* `row_selection = "old"` will only use observations in which the value of the variable `old` is `True`. 
+
+* `row_selection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. 
+
+The row selection is performed after processing any data
+transformations (see the arguments `transforms` or
+`transform_function`). As with all expressions, `row_selection` can be
+defined outside of the function call using the `expression`
 function.
 
 
@@ -178,15 +179,15 @@ function.
 
 NOT SUPPORTED. An expression of the form that represents
 the first round of variable transformations. As with
-all expressions, ``transforms`` (or ``row_selection``) can be defined
-outside of the function call using the ``expression`` function.
+all expressions, `transforms` (or `row_selection`) can be defined
+outside of the function call using the `expression` function.
 
 
 ##### transform_objects
 
 NOT SUPPORTED. A named list that contains objects that can be
-referenced by ``transforms``, ``transform_function``, and
-``row_selection``.
+referenced by `transforms`, `transform_function`, and
+`row_selection`.
 
 
 ##### transform_function
@@ -203,21 +204,21 @@ the transformation function.
 ##### transform_packages
 
 NOT SUPPORTED. A character vector specifying additional Python packages
-(outside of those specified in ``RxOptions.get_option("transform_packages")``) to
+(outside of those specified in `RxOptions.get_option("transform_packages")`) to
 be made available and preloaded for use in variable transformation functions.
-For exmple, those explicitly defined in  functions via
-their ``transforms`` and ``transform_function`` arguments or those defined
-implicitly via their ``formula`` or ``row_selection`` arguments.  The
-``transform_packages`` argument may also be *None*, indicating that
-no packages outside ``RxOptions.get_option("transform_packages")`` are preloaded.
+For example, those explicitly defined in [revoscalepy](https://docs.microsoft.com/en-us/sql/advanced-analytics/python/what-is-revoscalepy) functions via
+their `transforms` and `transform_function` arguments or those defined
+implicitly via their `formula` or `row_selection` arguments.  The
+`transform_packages` argument may also be *None*, indicating that
+no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 
 
 ##### transform_environment
 
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
-If ``transform_environment = None``, a new “hash” environment with parent
-``baseenv`` is used instead.
+If `transform_environment = None`, a new “hash” environment with parent
+[revoscalepy.baseenv](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/baseenv) is used instead.
 
 
 ##### blocks_per_read
@@ -231,27 +232,27 @@ of data read from the data source.
 An integer value that specifies the level of reporting
 on the row processing progress:
 
-* ``0``: no progress is reported. 
+* `0`: no progress is reported. 
 
-* ``1``: the number of processed rows is printed and updated. 
+* `1`: the number of processed rows is printed and updated. 
 
-* ``2``: rows processed and timings are reported. 
+* `2`: rows processed and timings are reported. 
 
-* ``3``: rows processed and all timings are reported. 
+* `3`: rows processed and all timings are reported. 
 
 
 ##### verbose
 
 An integer value that specifies the amount of output wanted.
-If ``0``, no verbose output is printed during calculations. Integer
-values from ``1`` to ``4`` provide increasing amounts of information.
+If `0`, no verbose output is printed during calculations. Integer
+values from `1` to `4` provide increasing amounts of information.
 
 
 ##### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid ``RxComputeContext``.
-Currently local and ``RxInSqlServer`` compute contexts
+specified with a valid [revoscalepy.RxComputeContext](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/RxComputeContext).
+Currently local and [revoscalepy.RxInSqlServer](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/RxInSqlServer) compute contexts
 are supported.
 
 
@@ -262,7 +263,7 @@ NOT SUPPORTED. Control parameters for ensembling.
 
 ### Returns
 
-A [``OneClassSvm``](learners_object.md) object with the trained model.
+A [`OneClassSvm`](learners_object.md) object with the trained model.
 
 
 ### Note
@@ -272,24 +273,24 @@ This algorithm is single-threaded and will always attempt to load the entire dat
 
 ### See also
 
-``linear_kernel``,
-``polynomial_kernel``,
-``rbf_kernel``,
-``sigmoid_kernel``,
-[``rx_predict``](rx_predict.md).
+`linear_kernel`,
+`polynomial_kernel`,
+`rbf_kernel`,
+`sigmoid_kernel`,
+[`rx_predict`](rx_predict.md).
 
 
 ### References
 
-[Wikipedia: Anomaly detection](https://en.wikipedia.org/wiki/Anomaly_detection.md)
+[Wikipedia: Anomaly detection](https://en.wikipedia.org/wiki/Anomaly_detection)
 
-[Microsoft Azure Machine Learning Studio: One-Class Support Vector Machine](https://msdn.microsoft.com/en-us/library/azure/dn913103.aspx.md)
+[Microsoft Azure Machine Learning Studio: One-Class Support Vector Machine](https://msdn.microsoft.com/en-us/library/azure/dn913103.aspx)
 
-[Estimating the Support of a High-Dimensional Distribution](http://research.microsoft.com/pubs/69731/tr-99-87.pdf.md)
+[Estimating the Support of a High-Dimensional Distribution](http://research.microsoft.com/pubs/69731/tr-99-87.pdf)
 
-[New Support Vector Algorithms](http://www.stat.purdue.edu/~yuzhu/stat598m3/Papers/NewSVM.pdf.md)
+[New Support Vector Algorithms](http://www.stat.purdue.edu/~yuzhu/stat598m3/Papers/NewSVM.pdf)
 
-[LIBSVM: A Library for Support Vector Machines](https://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf.md)
+[LIBSVM: A Library for Support Vector Machines](https://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf)
 
 
 ### Example
@@ -350,23 +351,23 @@ Rows Read: 112, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Using these libsvm parameters: svm_type=2, nu=0.1, cache_size=100, eps=0.001, shrinking=1, kernel_type=2, gamma=0.25, degree=0, coef0=0
 Reconstructed gradient.
-optimization finished, #iter = 20
-obj = 52.848776, rho = 9.505873
-nSV = 12, nBSV = 9
+optimization finished, #iter = 19
+obj = 52.857108, rho = 9.488421
+nSV = 13, nBSV = 10
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1456426
-Elapsed time: 00:00:00.0387278
+Elapsed time: 00:00:00.1214300
+Elapsed time: 00:00:00.0354816
 Beginning processing data.
-Rows Read: 40, Read Time: 0.001, Transform Time: 0
+Rows Read: 40, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1016102
+Elapsed time: 00:00:00.0755424
 Finished writing 40 rows.
 Writing completed.
     isIris     Score
-35     1.0 -0.054165
-36     1.0  0.010520
-37     1.0 -0.422428
-38     0.0  0.663310
-39     0.0  0.582055
+35     1.0 -0.641437
+36     1.0 -0.357117
+37     1.0 -0.232091
+38     0.0  0.656406
+39     0.0  0.573994
 ```
 

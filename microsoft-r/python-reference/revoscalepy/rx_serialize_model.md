@@ -4,9 +4,9 @@
 title: "Serialize the python model." 
 description: "Serialize the given python model." 
 keywords: "" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_serialize_model``
+## `rx_serialize_model`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -76,6 +76,6 @@ from revoscalepy import RxOptions, RxXdfData, rx_serialize_model, rx_lin_mod
 sample_data_path = RxOptions.get_option("sampleDataDir")
 ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
 linmod = rx_lin_mod("ArrDelay~DayOfWeek", ds)
-s_linmod = rx_serialize_model(linmod)
+s_linmod = rx_serialize_model(linmod, realtime_scoring_only = True)
 ```
 

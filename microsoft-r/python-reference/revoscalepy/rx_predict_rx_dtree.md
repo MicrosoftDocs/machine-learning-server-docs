@@ -4,9 +4,9 @@
 title: "Prediction for Large Data Classification and Regression Trees" 
 description: "Calculate predicted or fitted values for a data set from an rx_dtree object." 
 keywords: "predict" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_predict_rx_dtree``
+## `rx_predict_rx_dtree`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -67,12 +67,12 @@ to store predictions.
 
 ##### predict_var_names
 
-character vector specifying name(s) to give to the prediction results
+list of strings specifying name(s) to give to the prediction results
 
 
 ##### write_model_vars
 
-logical value. If True, and the output data set is
+bool value. If True, and the output data set is
 different from the input data set, variables in the model will be written
 to the output data set in addition to the predictions (and residuals,
 standard errors, and confidence bounds, if requested). If variables from
@@ -82,22 +82,21 @@ will also be included.
 
 ##### extra_vars_to_write
 
-None or character vector of additional variables
-names from the input data or transforms to include in the outData. If
-writeModelVars is True, model variables will be included as well.
+None or list of strings of additional variables
+names from the input data or transforms to include in the output_data. If
+write_model_vars is True, model variables will be included as well.
 
 
 ##### append
 
 either “none” to create a new files or “rows” to append rows
-to an existing file. If outData exists and append is “none”, the overwrite
-argument must be set to True. You can append only to RxTeradata data source.
-Ignored for data frames.
+to an existing file. If output_data exists and append is “none”, the overwrite
+argument must be set to True. Ignored for data frames.
 
 
 ##### overwrite
 
-logical value. If True, an existing outData will be overwritten.
+bool value. If True, an existing output_data will be overwritten.
 overwrite is ignored if appending rows. Ignored for data frames.
 
 
@@ -109,12 +108,12 @@ the type of prediction desired. Supported choices are: “vector”,
 
 ##### remove_missings
 
-logical value. If True, rows with missing values are removed.
+bool value. If True, rows with missing values are removed.
 
 
 ##### compute_residuals
 
-logical value. If True, residuals are computed.
+bool value. If True, residuals are computed.
 
 
 ##### residual_type
@@ -124,14 +123,14 @@ Indicates the type of residual desired.
 
 ##### residual_var_names
 
-character vector specifying name(s) to give to the residual results.
+list of strings specifying name(s) to give to the residual results.
 
 
 ##### blocks_per_read
 
 number of blocks to read for each chunk of data read
-from the data source. If the data and outData are the same file,
-blocksPerRead must be 1.
+from the data source. If the data and output_data are the same file,
+blocks_per_read must be 1.
 
 
 ##### report_progress
@@ -170,13 +169,18 @@ additional parameters
 a data frame or a data source object of prediction results.
 
 
+### See also
+
+[`rx_predict`](rx_predict.md).
+
+
 ### Example
 
 
 
 ```
 import os
-from revoscalepy import rx_dtree, rx_predict, rx_import, RxOptions, RxXdfData
+from revoscalepy import rx_dtree, rx_predict_rx_dtree, rx_import, RxOptions, RxXdfData
 sample_data_path = RxOptions.get_option("sampleDataDir")
 ds = RxXdfData(os.path.join(sample_data_path, "kyphosis.xdf"))
 kyphosis = rx_import(input_data = ds)
@@ -187,7 +191,8 @@ method = "class"
 parms = {'prior': [0.8, 0.2], 'loss': [0, 2, 3, 0], 'split': "gini"}
 cost = [2,3]
 dtree = rx_dtree(formula, data = kyphosis, pweights = "Age", method = method, parms = parms, cost = cost, max_num_bins = 100)
-rx_pred = rx_predict(dtree, data = kyphosis)
+rx_pred = rx_predict_rx_dtree(dtree, data = kyphosis)
+rx_pred.head()
 
 # regression
 formula = "Age ~ Number + Start"
@@ -195,6 +200,7 @@ method = "anova"
 parms = {'prior': [0.8, 0.2], 'loss': [0, 2, 3, 0], 'split': "gini"}
 cost = [2,3]
 dtree = rx_dtree(formula, data = kyphosis, pweights = "Kyphosis", method = method, parms = parms, cost = cost, max_num_bins = 100)
-rx_pred = rx_predict(dtree, data = kyphosis)
+rx_pred = rx_predict_rx_dtree(dtree, data = kyphosis)
+rx_pred.head()
 ```
 

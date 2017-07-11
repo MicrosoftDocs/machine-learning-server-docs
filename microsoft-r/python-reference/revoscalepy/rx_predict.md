@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Predicted Values and Residuals for rx_lin_mod, rx_logit, rx_dtree," 
-description: "Generic function to compute predicted values and residuals using" 
+description: "Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects.For specific functions, see:  rx_predict_default for rx_lin_mod and rx_logit objects. rx_predict_rx_dtree for rx_dtree object. rx_predict_rx_dforest for rx_dforest and rx_btrees objects." 
 keywords: "predict" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_predict``
+## `rx_predict`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -49,7 +49,7 @@ rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects.
 For specific functions, see:
     rx_predict_default for rx_lin_mod and rx_logit objects.
     rx_predict_rx_dtree for rx_dtree object.
-    rx_predict_rx_dforest for rx_dforest object.
+    rx_predict_rx_dforest for rx_dforest and rx_btrees objects.
 
 
 ### Arguments
@@ -84,9 +84,9 @@ a data frame or a data source object of prediction results.
 
 ### See also
 
-[``rx_predict_default``](rx_predict_default.md),
-[``rx_predict_rx_dtree``](rx_predict_rx_dtree.md),
-[``rx_predict_rx_dforest``](rx_predict_rx_dforest.md).
+[`rx_predict_default`](rx_predict_default.md),
+[`rx_predict_rx_dtree`](rx_predict_rx_dtree.md),
+[`rx_predict_rx_dforest`](rx_predict_rx_dforest.md).
 
 
 ### Example
@@ -113,7 +113,7 @@ Output:
 
 ```
 Data will be read from C:\xadupre\microsoft\bigAnalytics\python\revoscalepy\revoscalepy\data\sample_data\mortDefaultSmall.xdf
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre414002.xdf File will be overwritten if it exists.
+Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre61202.xdf File will be overwritten if it exists.
 
 Rows Processed: 100000 
 Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds 

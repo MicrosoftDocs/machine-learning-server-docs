@@ -4,9 +4,9 @@
 title: "adadelta_optimizer" 
 description: "Adaptive learing rate method." 
 keywords: "optimizer, adadelta" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``adadelta_optimizer``: Adaptive learing rate method
+## *adadelta_optimizer*: Adaptive learing rate method
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -61,4 +61,4 @@ Condition constant (settings).
 
 ### See also
 
-[``sgd_optimizer``](sgd_optimizer.md)
+[`sgd_optimizer`](sgd_optimizer.md)

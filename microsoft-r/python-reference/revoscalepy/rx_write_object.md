@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Manage objects in ODBC Data Sources" 
-description: "Store/Retrieve objects to/from ODBC data sources. The APIs are modelled" 
+description: "Store/Retrieve objects to/from ODBC data sources. The APIs are modelled after a simple key value store.rx_write_object(dest: RxOdbcData, key: str=None, value: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, serialize: bool=True, overwrite: bool=False, compress: str=’zip’)rx_read_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, deserialize: bool=True, decompress: str=’zip’)rx_delete_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’, all: bool=False)rx_list_keys(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’)" 
 keywords: "odbc" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_write_object``
+## `rx_write_object`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -45,6 +45,14 @@ revoscalepy.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData, 
 
 Store/Retrieve objects to/from ODBC data sources. The APIs are modelled
 after a simple key value store.
+
+rx_write_object(dest: RxOdbcData, key: str=None, value: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, serialize: bool=True, overwrite: bool=False, compress: str=’zip’)
+
+rx_read_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, deserialize: bool=True, decompress: str=’zip’)
+
+rx_delete_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’, all: bool=False)
+
+rx_list_keys(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’)
 
 
 ### Details
@@ -115,7 +123,7 @@ version in the underlying table.
 
 ##### serialize
 
-logical value. Dictates whether the object is to be
+bool value. Dictates whether the object is to be
 serialized. Only raw values are supported if serialization is off.
 
 
@@ -127,7 +135,7 @@ for memCompress.
 
 ##### deserialize
 
-logical value. Defines whether the object is to be
+bool value. Defines whether the object is to be
 de-serialized.
 
 
@@ -142,7 +150,7 @@ database constraint (or index) enforcing uniqueness.
 ### Returns
 
 rx_read_object returns an object. rx_write_object and rx_delete_object
-return logical, True on success. rx_list_keys returns a single column
+return bool, True on success. rx_list_keys returns a single column
 data frame containing strings.
 
 
@@ -154,6 +162,7 @@ data frame containing strings.
 from pandas import DataFrame
 from numpy import random
 from revoscalepy import RxOdbcData, rx_write_object, rx_read_object, rx_list_keys, rx_delete_object
+
 connection_string = 'Driver=SQL Server;Server=.;Database=RevoTestDb;Trusted_Connection=True;'
 dest = RxOdbcData(connection_string, table = "dataframe")
 

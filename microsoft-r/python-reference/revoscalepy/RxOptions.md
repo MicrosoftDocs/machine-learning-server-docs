@@ -4,9 +4,9 @@
 title: "Global Options for RevoScalePy" 
 description: "Functions to specify and retrieve options needed for RevoScalePy computations. These need to be set only once to carry out multiple computations." 
 keywords: "options" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``RxOptions``
+## `RxOptions`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -117,13 +117,13 @@ results are likely to be unreliable.
 
 ##### show_transform_fn
 
-logical value. If True, the transform function is
+bool value. If True, the transform function is
 shown.
 
 
 ##### data_path
 
-character vector containing paths to search for local data
+list of strings containing paths to search for local data
 sources. The default is to search just the current working directory. This
 will be ignored if dataPath is specified in the active compute context. See
 the Details section for more information regarding the path format.
@@ -131,7 +131,7 @@ the Details section for more information regarding the path format.
 
 ##### out_data_path
 
-character vector containing paths for writing new
+list of strings containing paths for writing new
 output data files. New data files will be written to the first path that
 exists. The default is to write to the current working directory. This will
 be ignored if outDataPath is specified in the active compute context.
@@ -154,7 +154,7 @@ system.
 
 ##### use_sparse_cube
 
-logical value. If True, sparse cube is used.
+bool value. If True, sparse cube is used.
 
 
 ##### rng_bffer_size
@@ -165,7 +165,7 @@ for the Parallel Random Number Generators (RNGs) in MKL.
 
 ##### drop_main
 
-logical value. If True, main-effect terms are dropped
+bool value. If True, main-effect terms are dropped
 before their interactions.
 
 
@@ -178,21 +178,6 @@ style. The default is “Revo”.
 ##### num_tasks
 
 integer value. The default numTasks use in RxInSqlServer.
-
-
-##### hdfs_host
-
-character string specifying the host name of your Hadoop
-nameNode. Defaults to Sys.getenv(“REVOHADOOPHOST”), or “default” if no
-REVOHADOOPHOST environment variable is set.
-
-
-##### hdfs_port
-
-integer scalar specifying the port number of your Hadoop
-nameNode, or a character string that can be coerced to numeric. Defaults to
-as.integer(Sys.getenv(“REVOHADOOPPORT”)), or 0 if no REVOHADOOPPORT
-environment variable is set.
 
 
 ##### unix_python_path
@@ -225,7 +210,11 @@ ScaleR functions. Levels are inclusive, (i.e. level 3:INFO includes levels
 
 ### Returns
 
-For RxOptions, a list containing the original RxOptions is returned. If there is no argument specified, the list is returned explicitly, otherwise the list is returned as an invisible object. For RxGetOption, the current value of the requested option is returned.
+For RxOptions, a list containing the original RxOptions is returned.
+
+If there is no argument specified, the list is returned explicitly, otherwise
+the list is returned as an invisible object. For RxGetOption, the current value
+of the requested option is returned.
 
 
 ### Example

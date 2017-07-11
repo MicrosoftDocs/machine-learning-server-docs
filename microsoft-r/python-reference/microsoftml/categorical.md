@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Machine Learning Categorical Data Transform" 
-description: "Categorical transform that can be performed on data before" 
+description: "Categorical transform that can be performed on data before training a model." 
 keywords: "transform, category" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``categorical``: Convert text column into categories
+## *categorical*: Converts a text column into categories
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -49,7 +49,7 @@ training a model.
 
 ### Details
 
-The ``categorical`` transform passes through a data set, operating
+The `categorical` transform passes through a data set, operating
 on text columns, to build a dictionary of categories. For each row,
 the entire text string appearing in the input column is defined as a
 category. The output of the categorical transform is an indicator vector.
@@ -58,7 +58,7 @@ its length is the size of the built dictionary. The categorical transform
 can be applied to one or more columns, in which case it builds a separate
 dictionary for each column that it is applied to.
 
-``categorical`` is not currently supported to handle factor data.
+`categorical` is not currently supported to handle factor data.
 
 
 ### Arguments
@@ -67,22 +67,22 @@ dictionary for each column that it is applied to.
 ##### cols
 
 A character string or list of variable names to transform. If
-``dict``, the keys represent the names of new variables to be created.
+`dict`, the keys represent the names of new variables to be created.
 
 
 ##### output_kind
 
 A character string that specifies the kind of output kind.
 
-* ``"Bag"``: Outputs a multi-set vector. If the input column is a vector of categories, the output contains one vector, where the value in each slot is the number of occurrences of the category in the input vector. If the input column contains a single category, the indicator vector and the bag vector are equivalent 
+* `"Bag"`: Outputs a multi-set vector. If the input column is a vector of categories, the output contains one vector, where the value in each slot is the number of occurrences of the category in the input vector. If the input column contains a single category, the indicator vector and the bag vector are equivalent 
 
-* ``"Ind"``: Outputs an indicator vector. The input column is a vector of categories, and the output contains one indicator vector per slot in the input column. 
+* `"Ind"`: Outputs an indicator vector. The input column is a vector of categories, and the output contains one indicator vector per slot in the input column. 
 
-* ``"Key"``: Outputs an index. The output is an integer id (between 1 and the number of categories in the dictionary) of the category. 
+* `"Key"`: Outputs an index. The output is an integer id (between 1 and the number of categories in the dictionary) of the category. 
 
-* ``"Bin"``: Outputs a vector which is the binary representation of the category. 
+* `"Bin"`: Outputs a vector which is the binary representation of the category. 
 
-The default value is ``"Ind"``.
+The default value is `"Ind"`.
 
 
 ##### max_num_terms
@@ -100,9 +100,9 @@ Optional character vector of terms or categories.
 
 A character string that specifies the sorting criteria.
 
-* ``"Occurrence"``: Sort categories by occurences. Most frequent is first. 
+* `"Occurrence"`: Sort categories by occurences. Most frequent is first. 
 
-* ``"Value"``: Sort categories by values. 
+* `"Value"`: Sort categories by values. 
 
 
 ##### text_key_values
@@ -122,7 +122,7 @@ An object defining the transform.
 
 ### See also
 
-[``categorical_hash``](categorical_hash.md)
+[`categorical_hash`](categorical_hash.md)
 
 
 ### Example
@@ -175,27 +175,30 @@ Output:
 
 ```
 Beginning processing data.
-Rows Read: 25, Read Time: 0, Transform Time: 0
+Rows Read: 25, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Not adding a normalizer.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
-LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
 Beginning processing data.
 Rows Read: 25, Read Time: 0, Transform Time: 0
 Beginning processing data.
+Beginning processing data.
+Rows Read: 25, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
+LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
 Beginning optimization
 num vars: 20
 improvement criterion: Mean Improvement
 Warning: Premature convergence occurred. The OptimizationTolerance may be set too small. ro equals zero. Is your function linear?
 L1 regularization selected 3 of 20 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.9857015
-Elapsed time: 00:00:00.2370012
+Elapsed time: 00:00:01.0412306
+Elapsed time: 00:00:00.1701984
 OrderedDict([('(Bias)', 0.2132386565208435), ('I hate it', -0.7938994765281677), ('I love it', 0.19674676656723022)])
 Beginning processing data.
 Rows Read: 10, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1974495
+Elapsed time: 00:00:00.1450484
 Finished writing 10 rows.
 Writing completed.
            review PredictedLabel     Score  Probability

@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "n_gram_hash" 
-description: "Extracts NGrams from text and convert them to vector using hashing trick." 
+description: "Extracts NGrams from text and converts them to a vector using hashing trick." 
 keywords: "N-Grams, hash" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``n_gram_hash``: Convert text into features using hashed N-Grams
+## *n_gram_hash*: Converts text into features using hashed N-Grams
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -43,7 +43,7 @@ microsoftml.n_gram_hash(hash_bits: numbers.Real = 16, ngram_length: numbers.Real
 
 ### Description
 
-Extracts NGrams from text and convert them to vector using hashing trick.
+Extracts NGrams from text and converts them to a vector using hashing trick.
 
 
 ### Arguments
@@ -66,7 +66,7 @@ Maximum number of tokens to skip when constructing an ngram (settings).
 
 ##### all_lengths
 
-Whether to include all ngram lengths up to ngramLength, or only ngramLength (settings).
+Whether to include all ngram lengths up to ngramLength or only ngramLength (settings).
 
 
 ##### seed

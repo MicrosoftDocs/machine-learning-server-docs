@@ -29,14 +29,14 @@ ms.custom: ""
 
 **Applies to:** SQL Server 2017 RC1 only
 
-This section contains the function reference documentation for proprietary Python packages installed with SQL Server Machine Learning Services and Machine Learning Servier (Standalone).
+This section contains the function reference documentation for proprietary Python packages installed with SQL Server Machine Learning Services and SQL Server Machine Learning Server (Standalone).
 
 |Package | Description |
 |----|----|
-|[microsoftml](microsoftml/index.md)|A collection of Python functions used for machine learning use cases.|
-|[revoscalepy](revoscalepy/index.md) | Data access, manipulation and transformations, visualization, and analysis. The revoscalepy functions support the full range of statistical and analytical tasks.|
+|[microsoftml](microsoftml/index.md)|A collection of Python functions used for machine learning use cases, |
+|[revoscalepy](revoscalepy/index.md) | Data access, manipulation and transformations, visualization, and analysis. The revoscalepy functions support a full range of statistical and analytical tasks. Developers who are familiar with Microsoft R Server and the RevoScaleR package will notice similarities in the functions provided in revoscalepy. Conceptually, revoscalepy is the Python equivalent of the Microsoft R RevoScaleR package.|
 
 ## See also
 
-  [Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
-  [Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+  [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
+  [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)

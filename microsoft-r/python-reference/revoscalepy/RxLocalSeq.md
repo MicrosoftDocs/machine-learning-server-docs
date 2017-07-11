@@ -4,9 +4,9 @@
 title: "Generate Local Compute Context" 
 description: "Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context." 
 keywords: "context, local" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``RxLocalSeq``
+## `RxLocalSeq`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -51,7 +51,15 @@ Creates a local compute context object. Computations using rx_exec will be proce
 
 ### Returns
 
-object of class ``RxLocalSeq``.
+object of class `RxLocalSeq`.
+
+
+### See also
+
+[`RxComputeContext`](RxComputeContext.md),
+[`RxInSqlServer`](RxInSqlServer.md),
+`rx_get_compute_context`,
+[`rx_set_compute_context`](rx_set_compute_context.md).
 
 
 ### Example

@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Predicted Values and Residuals for rx_lin_mod and rx_logit" 
-description: "Compute predicted values and residuals using rx_lin_mod and" 
+description: "Compute predicted values and residuals using rx_lin_mod and rx_logit objects." 
 keywords: "predict" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_predict_default``
+## `rx_predict_default`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -69,7 +69,7 @@ to store predictions.
 
 ##### compute_standard_errors
 
-logical value. If True, the standard errors
+bool value. If True, the standard errors
 for each dependent variable are calculated.
 
 
@@ -87,7 +87,7 @@ the interval [0, 1].
 
 ##### compute_residuals
 
-logical value. If True, residuals are computed.
+bool value. If True, residuals are computed.
 
 
 ##### type
@@ -102,7 +102,7 @@ of log-odds.
 
 ##### write_model_vars
 
-logical value. If True, and the output data set is
+bool value. If True, and the output data set is
 different from the input data set, variables in the model will be written
 to the output data set in addition to the predictions (and residuals,
 standard errors, and confidence bounds, if requested). If variables from
@@ -112,48 +112,47 @@ will also be included.
 
 ##### extra_vars_to_write
 
-None or character vector of additional variables
-names from the input data or transforms to include in the outData. If
-writeModelVars is True, model variables will be included as well.
+None or list of strings of additional variables
+names from the input data or transforms to include in the output_data. If
+write_model_vars is True, model variables will be included as well.
 
 
 ##### remove_missings
 
-logical value. If True, rows with missing values are removed.
+bool value. If True, rows with missing values are removed.
 
 
 ##### append
 
 either “none” to create a new files or “rows” to append rows
-to an existing file. If outData exists and append is “none”, the overwrite
-argument must be set to True. You can append only to RxTeradata data source.
-Ignored for data frames.
+to an existing file. If output_data exists and append is “none”, the overwrite
+argument must be set to True. Ignored for data frames.
 
 
 ##### overwrite
 
-logical value. If True, an existing output_data will be overwritten.
+bool value. If True, an existing output_data will be overwritten.
 overwrite is ignored if appending rows. Ignored for data frames.
 
 
 ##### check_factor_levels
 
-logical value.
+bool value.
 
 
 ##### predict_var_names
 
-character vector specifying name(s) to give to the prediction results
+list of strings specifying name(s) to give to the prediction results.
 
 
 ##### residual_var_names
 
-character vector specifying name(s) to give to the residual results.
+list of strings specifying name(s) to give to the residual results.
 
 
 ##### interval_var_names
 
-None or a character vector defining low and high
+None or a list of strings defining low and high
 confidence interval variable names, respectively. If None, the strings
 “_Lower” and “_Upper” are appended to the dependent variable names to
 form the confidence interval variable names.
@@ -161,7 +160,7 @@ form the confidence interval variable names.
 
 ##### std_errors_var_names
 
-None or a character vector defining variable
+None or a list of strings defining variable
 names corresponding to the standard errors, if calculated. If None, the
 string “_StdErr” is appended to the dependent variable names to form the
 standard errors variable names.
@@ -170,8 +169,8 @@ standard errors variable names.
 ##### blocks_per_read
 
 number of blocks to read for each chunk of data read
-from the data source. If the data and outData are the same file,
-blocksPerRead must be 1.
+from the data source. If the data and output_data are the same file,
+blocks_per_read must be 1.
 
 
 ##### report_progress
@@ -210,13 +209,18 @@ additional parameters
 a data frame or a data source object of prediction results.
 
 
+### See also
+
+[`rx_predict`](rx_predict.md).
+
+
 ### Example
 
 
 
 ```
 import os
-from revoscalepy import RxOptions, RxXdfData, rx_lin_mod, rx_predict, rx_data_step
+from revoscalepy import RxOptions, RxXdfData, rx_lin_mod, rx_predict_default, rx_data_step
 
 sample_data_path = RxOptions.get_option("sampleDataDir")
 mort_ds = RxXdfData(os.path.join(sample_data_path, "mortDefaultSmall.xdf"))

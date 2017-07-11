@@ -4,9 +4,9 @@
 title: "Machine Learning Mutual Information Mode Feature Selection Transform" 
 description: "Selects the top k features across all specified columns ordered by their mutual information with the label column." 
 keywords: "feature, selection, mutual, information" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``mutualinformation_select``: Feature Selection Mutual Information
+## *mutualinformation_select*: Feature Selection based on Mutual Information
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -48,22 +48,22 @@ Selects the top k features across all specified columns ordered by their mutual 
 
 ### Details
 
-The mutual information of two random variables ``X`` and ``Y`` is a
+The mutual information of two random variables `X` and `Y` is a
 measure of the mutual dependence between the variables. Formally, the
 mutual information can be written as:
 
-``I(X;Y) = E[log(p(x,y)) - log(p(x)) - log(p(y))]``
+`I(X;Y) = E[log(p(x,y)) - log(p(x)) - log(p(y))]`
 
-where the expectation is taken over the joint distribution of ``X`` and
-``Y``. Here ``p(x,y)`` is the joint probability density function of
-``X`` and ``Y``, ``p(x)`` and ``p(y)`` are the marginal
-probability density functions of ``X`` and ``Y`` respectively. In
+where the expectation is taken over the joint distribution of `X` and
+`Y`. Here `p(x,y)` is the joint probability density function of
+`X` and `Y`, `p(x)` and `p(y)` are the marginal
+probability density functions of `X` and `Y` respectively. In
 general, a higher mutual information between the dependent variable (or
-label) and an independent varialbe (or feature) means that the label has
+label) and an independent variable (or feature) means that the label has
 higher mutual dependence over that feature.
 
 The mutual information feature selection mode selects the features based on
-the mutual information. It keeps the top ``num_features_to_keep`` features
+the mutual information. It keeps the top `num_features_to_keep` features
 with the largest mutual information with the label.
 
 
@@ -83,7 +83,7 @@ Specifies the name of the label.
 ##### num_features_to_keep
 
 If the number of features to keep is specified to
-be ``n``, the transform picks the ``n`` features that have the highest
+be `n`, the transform picks the `n` features that have the highest
 mutual information with the dependent variable. The default value is 1000.
 
 
@@ -105,9 +105,9 @@ An object defining the transform.
 
 ### See also
 
-[``count_select``](count_select.md)
+[`count_select`](count_select.md)
 
 
 ### References
 
-[Wikipedia: Mutual Information](https://en.wikipedia.org/wiki/Mutual_information.md)
+[Wikipedia: Mutual Information](https://en.wikipedia.org/wiki/Mutual_information)

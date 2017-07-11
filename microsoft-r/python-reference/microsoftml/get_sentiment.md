@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Machine Learning Sentiment Analyzer Transform" 
-description: "Scores natual language text and creates a column that" 
+description: "Scores natural language text and assesses the probability the sentiments are positive." 
 keywords: "transform, text, sentiment, nlp" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``get_sentiment``: Sentiment Analyzer
+## *get_sentiment*: Sentiment Analyzer
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -43,13 +43,13 @@ microsoftml.get_sentiment(cols: [<class ‘str’>, <class ‘dict’>, <class �
 
 ### Description
 
-Scores natual language text and creates a column that
-contains probabilities that the sentiments in the text are positive.
+Scores natural language text and assesses
+the probability the sentiments are positive.
 
 
 ### Details
 
-The ``get_sentiment`` transform returns the probability
+The `get_sentiment` transform returns the probability
 that the sentiment of a natural text is positive. Currently supports
 only the English language.
 
@@ -60,7 +60,7 @@ only the English language.
 ##### cols
 
 A character string or list of variable names to transform. If
-``dict``, the names represent the names of new variables to be created.
+`dict`, the names represent the names of new variables to be created.
 
 
 ##### kargs
@@ -75,7 +75,7 @@ An object defining the transform.
 
 ### See also
 
-[``featurize_text``](featurize_text.md).
+[`featurize_text`](featurize_text.md).
 
 
 ### Example
@@ -117,7 +117,7 @@ Output:
 Beginning processing data.
 Rows Read: 3, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:02.6589112
+Elapsed time: 00:00:03.3049428
 Finished writing 3 rows.
 Writing completed.
                                             review    scores         eval

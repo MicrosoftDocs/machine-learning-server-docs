@@ -4,9 +4,9 @@
 title: "sgd_optimizer" 
 description: "Stochastic gradient descent optimizer." 
 keywords: "optimizer, sgd" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``sgd_optimizer``: Stochastic Gradient Descent
+## *sgd_optimizer*: Stochastic Gradient Descent
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -86,4 +86,4 @@ Relative error reduction criterion for learning rate reduction (settings).
 
 ### See also
 
-[``adadelta_optimizer``](adadelta_optimizer.md)
+[`adadelta_optimizer`](adadelta_optimizer.md)

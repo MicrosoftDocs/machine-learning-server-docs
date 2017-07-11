@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Generate SQL Server In-Database Compute Context" 
-description: "Creates a compute context for running RevoScalePy analyses inside Microsoft SQL Server." 
+description: "Creates a compute context for running RevoScalePy analyses inside Microsoft SQL Server. Currently only supported in Windows." 
 keywords: "sql" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``RxInSqlServer``
+## `RxInSqlServer`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -61,43 +61,42 @@ Microsoft SQL Server database.
 Number of tasks (processes) to run for each computation.
 This is the maximum number of tasks that will be used; SQL Server may start
 fewer processes if there is not enough data, if too many resources are
-already being used by other jobs, or if numTasks exceeds the MAXDOP
+already being used by other jobs, or if num_tasks exceeds the MAXDOP
 (maximum degree of parallelism) configuration option in SQL Server. Each of
 the tasks is given data in parallel, and does computations in parallel, and
-so computation time may decrease as numTasks increases. However, that may
+so computation time may decrease as num_tasks increases. However, that may
 not always be the case, and computation time may even increase if too many
 tasks are competing for machine resources. Note that
-rxOptions(numCoresToUse=n) controls how many cores (actually, threads) are
+RxOptions.set_option(“NumCoresToUse”, n) controls how many cores (actually, threads) are
 used in parallel within each process, and there is a trade-off between
-numCoresToUse and numTasks that depends upon the specific algorithm, the
+NumCoresToUse and num_tasks that depends upon the specific algorithm, the
 type of data, the hardware, and the other jobs that are running.
 
 
 ##### wait
 
-logical value. If True, the job will be blocking and will not
+bool value. If True, the job will be blocking and will not
 return until it has completed or has failed. If False, the job will be
 non-blocking and return immediately, allowing you to continue running other
-Python code. The object rxgLastPendingJob is created with the job information.
-The client connection with SQL Server must be maintained while the job is
-running, even in non-blocking mode.
+Python code. The client connection with SQL Server must be maintained while
+the job is running, even in non-blocking mode.
 
 
 ##### console_output
 
-logical scalar.If True, causes the standard output
+bool scalar.If True, causes the standard output
 of the Python process started by SQL Server to be printed to the user console.
-This value may be overwritten by passing a non-None logical value to the
-consoleOutput argument provided in rxExec and rxGetJobResults.
+This value may be overwritten by passing a non-None bool value to the
+consoleOutput argument provided in rx_exec and rx_get_job_results.
 
 
 ##### auto_cleanup
 
-logical scalar. If True, the default behavior is to
+bool scalar. If True, the default behavior is to
 clean up the temporary computational artifacts and delete the result
 objects upon retrieval. If False, then the computational results are not
-deleted, and the results may be acquired using rxGetJobResults, and the
-output via rxGetJobOutput until the rxCleanupJobs is used to delete the
+deleted, and the results may be acquired using rx_get_job_results, and the
+output via rx_get_job_output until the rx_cleanup_jobs is used to delete the
 results and other artifacts. Leaving this flag set to False can result in
 accumulation of compute artifacts which you may eventually need to delete
 before they fill up your hard drive.
@@ -111,8 +110,16 @@ infinite wait.
 
 ##### packages_to_load
 
-optional character vector specifying additional
+optional list of strings specifying additional
 packages to be loaded on the nodes when jobs are run in this compute context.
+
+
+### See also
+
+[`RxComputeContext`](RxComputeContext.md),
+[`RxLocalSeq`](RxLocalSeq.md),
+`rx_get_compute_context`,
+[`rx_set_compute_context`](rx_set_compute_context.md).
 
 
 ### Example
@@ -120,12 +127,10 @@ packages to be loaded on the nodes when jobs are run in this compute context.
 
 
 ```
+## Not run:
 from revoscalepy import RxSqlServerData, RxInSqlServer, rx_lin_mod
-formula = "ArrDelay ~ CRSDepTime + DayOfWeek"
-connection_string="Driver=SQL Server;Server=.;Database=RevoTestDB;Trusted_Connection=True"
-query="select top 100 [ArrDelay],[CRSDepTime],[DayOfWeek] FROM airlinedemosmall"
 
-ds = RxSqlServerData(sql_query = query, connection_string = connection_string)
+connection_string="Driver=SQL Server;Server=.;Database=RevoTestDB;Trusted_Connection=True"
 
 cc = RxInSqlServer(
     connection_string = connection_string,
@@ -136,6 +141,21 @@ cc = RxInSqlServer(
     wait = True
     )
 
-linmod = rx_lin_mod(formula, data = ds, compute_context = cc)
+query="select top 100 [ArrDelay],[CRSDepTime],[DayOfWeek] FROM airlinedemosmall"
+data_source = RxSqlServerData(
+    sql_query = "select top 100 * from airlinedemosmall",
+    connection_string = connection_string,
+    column_info = {
+        "ArrDelay" : { "type" : "integer" },
+        "DayOfWeek" : {
+            "type" : "factor",
+            "levels" : [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ]
+        }
+    })
+
+formula = "ArrDelay ~ CRSDepTime + DayOfWeek"
+lin_mod = rx_lin_mod(formula, data = data_source, compute_context = cc)
+print(lin_mod)
+## End(Not run)
 ```
 

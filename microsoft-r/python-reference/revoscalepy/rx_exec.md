@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Global Options for RevoScalePy" 
-description: "Allows distributed execution of a function in parallel across nodes" 
+description: "Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster." 
 keywords: "sql" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_exec``
+## `rx_exec`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -59,9 +59,9 @@ other arguments of rx_exec.
 
 ##### args
 
-arguments passed to the function FUN each time it is executed.
+arguments passed to the function ‘function’ each time it is executed.
 Separate argument values can be sent for each computation by wrapping a
-vector or list of argument values in rxElemArg.
+vector or list of argument values in a dict.
 
 
 ##### compute_context
@@ -74,7 +74,16 @@ a RxComputeContext object
 If a waiting compute context is active, a list with an element for
 each job, where each element contains the value(s) returned by that job’s
 function call(s). If a non-waiting compute context is active, a jobInfo
-object. See rxGetJobResults.
+object.
+
+
+### See also
+
+[`RxComputeContext`](RxComputeContext.md),
+[`RxLocalSeq`](RxLocalSeq.md),
+[`RxInSqlServer`](RxInSqlServer.md),
+`rx_get_compute_context`,
+[`rx_set_compute_context`](rx_set_compute_context.md).
 
 
 ### Example
@@ -82,6 +91,7 @@ object. See rxGetJobResults.
 
 
 ```
+## Not run:
 from revoscalepy import RxSqlServerData, RxInSqlServer, rx_exec
 formula = "ArrDelay ~ CRSDepTime + DayOfWeek"
 connection_string="Driver=SQL Server;Server=.;Database=RevoTestDB;Trusted_Connection=TRUE"
@@ -90,7 +100,7 @@ query="select top 100 [ArrDelay],[CRSDepTime],[DayOfWeek] FROM airlinedemosmall"
 ds = RxSqlServerData(sql_query = query, connection_string = connection_string)
 
 cc = RxInSqlServer(
-    connect_string = connection_string,
+    connection_string = connection_string,
     num_tasks = 1,
     auto_cleanup = False,
     console_output = True,
@@ -103,6 +113,8 @@ def remote_call(dataset):
     df = rx_data_step(dataset)
     return len(df)
 
-result = rx_exec(function = remote_call, args={'dataset': ds}, compute_context = cc)
+results = rx_exec(function = remote_call, args={'dataset': ds}, compute_context = cc)
+print(results)
+## End(Not run)
 ```
 

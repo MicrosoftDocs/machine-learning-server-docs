@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Parallel External Memory Algorithm for Stochastic Gradient Boosted Decision Trees" 
-description: "Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for" 
+description: "Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_btrees``
+## `rx_btrees`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -52,8 +52,7 @@ small or large data using parallel external memory algorithm.
 
 ##### formula
 
-formula as described in rxFormula. Currently, formula
-functions are not supported.
+statistical model using symbolic formulas.
 
 
 ##### data
@@ -67,15 +66,12 @@ either a data source object, a character string specifying a
 either an RxXdfData data source object or a character
 string specifying the ‘.xdf’ file for storing the resulting node indices.
 If None, then no node indices are stored to disk. If the input data is a
-data frame, the node indices are returned automatically. If rowSelection is
-specified and not None, then outFile cannot be the same as the data since
-the resulting set of node indices will generally not have the same number
-of rows as the original data source.
+data frame, the node indices are returned automatically.
 
 
 ##### write_model_vars
 
-logical value. If True, and the output file is
+bool value. If True, and the output file is
 different from the input file, variables in the model will be written to
 the output file in addition to the node numbers. If variables from the
 input data set are transformed in the model, the transformed variables will
@@ -84,7 +80,7 @@ also be written out.
 
 ##### overwrite
 
-logical value. If True, an existing outFile with an
+bool value. If True, an existing output_file with an
 existing column named outColName will be overwritten.
 
 
@@ -143,7 +139,7 @@ to specify this argument directly.
 ##### min_bucket
 
 the minimum number of observations in a terminal node
-(or leaf). By default, this is minSplit/3.
+(or leaf). By default, this is min_split/3.
 
 
 ##### cp
@@ -181,7 +177,7 @@ in the splitting process:
     split.
 
 2: use surrogates, in order, to split observations missing the primary
-    split variable. If all surrogates are missing or maxSurrogate=0, send
+    split variable. If all surrogates are missing or max_surrogate=0, send
     the observation in the majority direction.
 
 The 0 value corresponds to the behavior of the tree function, and 2
@@ -212,7 +208,7 @@ sqrt(num of vars) for classification and (num of vars)/3 for regression.
 
 ##### replace
 
-a logical value specifying if the sampling of observations
+a bool value specifying if the sampling of observations
 should be done with or without replacement.
 
 
@@ -246,7 +242,7 @@ for stratified sampling: a vector of positive values of length equal to
 
 ##### importance
 
-a logical value specifying if the importance of
+a bool value specifying if the importance of
 predictors should be assessed.
 
 
@@ -298,18 +294,18 @@ unordered factor predictor for multiclass (>2) classification.
 
 ##### remove_missings
 
-logical value. If True, rows with missing values
+bool value. If True, rows with missing values
 are removed and will not be included in the output data.
 
 
 ##### use_sparse_cube
 
-logical value. If True, sparse cube is used.
+bool value. If True, sparse cube is used.
 
 
 ##### find_splits_in_parallel
 
-logical value. If True, optimal splits for
+bool value. If True, optimal splits for
 each node are determined using parallelization methods; this will typically
 speed up computation as the number of nodes on the same level is increased.
 
@@ -332,14 +328,14 @@ None. Not currently supported, reserved for future use.
 ##### transform_function
 
 variable transformation function. The variables used
-in the transformation function must be specified in transformVars if they
-are not variables used in the model. See rxTransform for details.
+in the transformation function must be specified in transform_variables if they
+are not variables used in the model.
 
 
 ##### transform_variables
 
-character vector of input data set variables needed
-for the transformation function. See rx_transform for details.
+list of strings of input data set variables needed
+for the transformation function.
 
 
 ##### transform_packages
@@ -388,6 +384,12 @@ additional parameters
 a rx_dforest_results object of dtree model.
 
 
+### See also
+
+[`rx_predict`](rx_predict.md),
+[`rx_predict_rx_dforest`](rx_predict_rx_dforest.md).
+
+
 ### Example
 
 
@@ -415,7 +417,7 @@ btree = rx_btrees(form, kyphosis, loss_function=distribution, n_tree=n_trees, le
 
 # regression
 ds = RxXdfData(os.path.join(sample_data_path, "airquality.xdf"))
-df = ds.xdf_df
+df = rx_import(input_data = ds)
 df = df[df['Ozone'] != -2147483648]
 
 form = "Ozone ~ Solar.R + Wind + Temp + Month + Day"

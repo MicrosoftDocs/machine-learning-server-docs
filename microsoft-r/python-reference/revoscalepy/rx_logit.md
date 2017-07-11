@@ -4,9 +4,9 @@
 title: "Logistic Regression" 
 description: "Use rx_logit to fit logistic regression models for small or large data." 
 keywords: "logic" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_logit``
+## `rx_logit`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -51,10 +51,10 @@ Use rx_logit to fit logistic regression models for small or large data.
 
 ##### formula
 
-formula as described in rxFormula. Dependent variable must
-be binary. It can be a logical variable, a factor with only two categories,
+statistical model using symbolic formulas. Dependent variable must
+be binary. It can be a bool variable, a factor with only two categories,
 or a numeric variable with values in the range (0,1). In the latter case
-it will be converted to a logical.
+it will be converted to a bool.
 
 
 ##### data
@@ -77,19 +77,19 @@ weights for the observations.
 
 ##### cube
 
-logical flag. If True and the first term of the predictor variables
+bool flag. If True and the first term of the predictor variables
 is categorical (a factor or an interaction of factors), the regression is
 performed by applying the Frisch-Waugh-Lovell Theorem, which uses a partitioned
-inverse to save on computation time and memory. See Details section below.
+inverse to save on computation time and memory.
 
 
 ##### cube_predictions
 
-logical flag. If True and cube is True the estimated
+bool flag. If True and cube is True the estimated
 model is evaluated (predicted) for each cell in the cube, fixing the non-cube
 variables in the model at their mean values, and these predictions are included
 in the countDF component of the returned value. This may be time and memory
-intensive for large models. See Details section below.
+intensive for large models.
 
 
 ##### variable_selection
@@ -97,7 +97,7 @@ intensive for large models. See Details section below.
 a list specifying various parameters that control
 aspects of stepwise regression. If it is an empty list (default), no stepwise
 model selection will be performed. If not, stepwise regression will be
-performed and cube must be False. See rxStepControl for details.
+performed and cube must be False.
 
 
 ##### row_selection
@@ -122,8 +122,8 @@ variable transformation function.
 
 ##### transform_variables
 
-character vector of input data set variables needed
-for the transformation function. See rxTransform for details.
+list of strings of input data set variables needed
+for the transformation function.
 
 
 ##### transform_packages
@@ -138,7 +138,7 @@ None. Not currently supported, reserved for future use.
 
 ##### drop_first
 
-logical flag. If False, the last level is dropped in all sets
+bool flag. If False, the last level is dropped in all sets
 of factor levels in a model. If that level has no observations (in any of the
 sets), or if the model as formed is otherwise determined to be singular, then
 an attempt is made to estimate the model by dropping the first level in all
@@ -149,22 +149,21 @@ from these rules and the intercept is dropped.
 
 ##### drop_main
 
-logical value. If True, main-effect terms are dropped before
+bool value. If True, main-effect terms are dropped before
 their interactions.
 
 
 ##### cov_coef
 
-logical flag. If True and if cube is False, the variance-covariance
-matrix of the regression coefficients is returned. Use the rxCovCoef function
-to obtain these data.
+bool flag. If True and if cube is False, the variance-covariance
+matrix of the regression coefficients is returned.
 
 
 ##### cov_data
 
-logical flag. If True and if cube is False and if constant term
+bool flag. If True and if cube is False and if constant term
 is included in the formula, then the variance-covariance matrix of the data
-is returned. Use the rxCovData function to obtain these data.
+is returned.
 
 
 ##### initial_values
@@ -236,6 +235,11 @@ additional parameters
 ### Returns
 
 a rx_logit_results object of linear model.
+
+
+### See also
+
+[`rx_lin_mod`](rx_lin_mod.md).
 
 
 ### Example

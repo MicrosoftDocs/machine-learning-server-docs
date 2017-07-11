@@ -4,9 +4,9 @@
 title: "Machine Learning Load Image Transform" 
 description: "Loads image data." 
 keywords: "transform, image" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``load_image``: Load an image
+## *load_image*: Loads an image
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -48,7 +48,7 @@ Loads image data.
 
 ### Details
 
-``load_image`` loads images from paths.
+`load_image` loads images from paths.
 
 
 ### Arguments
@@ -57,7 +57,7 @@ Loads image data.
 ##### cols
 
 A character string or list of variable names to transform. If
-``dict``, the keys represent the names of new variables to be created.
+`dict`, the keys represent the names of new variables to be created.
 
 
 ##### kargs
@@ -72,9 +72,9 @@ An object defining the transform.
 
 ### See also
 
-[``resize_image``](resize_image.md),
-[``extract_pixels``](extract_pixels.md),
-[``featurize_image``](featurize_image.md).
+[`resize_image`](resize_image.md),
+[`extract_pixels`](extract_pixels.md),
+[`featurize_image`](featurize_image.md).
 
 
 ### Example
@@ -130,9 +130,14 @@ Output:
 ```
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
+Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: Training data does not support shuffling, so ignoring request to shuffle
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
 Using: AVX Math
 
 ***** Net definition *****
@@ -156,50 +161,38 @@ Momentum: 0.000000
 InitWtsDiameter: 0.100000
 ___________________________________________________________________
 Initializing 1 Hidden Layers, 6 Weights...
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Estimated Pre-training MeanError = 0.707823
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:1/1, MeanErr=0.707823(0.00%), 0.00M WeightUpdates/sec
+Iter:1/1, MeanErr=0.707823(0.00%), 0.01M WeightUpdates/sec
 Done!
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Estimated Post-training MeanError = 0.707499
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.2643137
-Elapsed time: 00:00:00.0341931
+Elapsed time: 00:00:00.2408046
+Elapsed time: 00:00:00.0897208
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+Beginning processing data.
+Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Using 2 threads to train.
 Automatically choosing a check frequency of 2.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Auto-tuning parameters: L2 = 5.
 Auto-tuning parameters: L1Threshold (L1/L2) = 1.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Using model from last iteration.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.5352117
-Elapsed time: 00:00:00.0456213
+Elapsed time: 00:00:02.1242606
+Elapsed time: 00:00:00.0771681
 
 rx_neural_network
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1296827
+Elapsed time: 00:00:00.1043420
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel     Score  Probability
@@ -209,7 +202,7 @@ rx_fast_linear
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.4803189
+Elapsed time: 00:00:00.4615670
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel  Score  Probability

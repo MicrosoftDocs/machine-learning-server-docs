@@ -4,9 +4,9 @@
 title: "Data Step for RevoScaleR data sources" 
 description: "Transform data from an input data set to an output data set" 
 keywords: "datasource" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_data_step``
+## `rx_data_step`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_data_step(input_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame, str] = None, output_file: typing.Union[str, revoscalepy.datasource.RxXdfData.RxXdfData] = None, vars_to_keep: list = None, vars_to_drop: list = None, row_selection: str = None, transforms: dict = None, transform_objects: list = None, transform_function=None, transform_variables: list = None, transform_packages: list = None, transform_environment=None, append: list = None, overwrite: bool = False, row_variable_name: str = None, remove_missings_on_read: bool = False, remove_missings: bool = False, compute_low_high: bool = True, max_rows_by_cols: int = 3000000, rows_per_read: int = -1, start_row: int = 1, number_rows_read: int = -1, return_transform_objects: bool = False, blocks_per_read: int = None, report_progress: bool = True, xdf_compression_level: int = 0, strings_as_factors: bool = None, **kwargs) -> typing.Union[revoscalepy.datasource.RxXdfData.RxXdfData, pandas.core.frame.DataFrame]
+revoscalepy.rx_data_step(input_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame, str] = None, output_file: typing.Union[str, revoscalepy.datasource.RxXdfData.RxXdfData, revoscalepy.datasource.RxTextData.RxTextData] = None, vars_to_keep: list = None, vars_to_drop: list = None, row_selection: str = None, transforms: dict = None, transform_objects: list = None, transform_function=None, transform_variables: list = None, transform_packages: list = None, transform_environment=None, append: list = None, overwrite: bool = False, row_variable_name: str = None, remove_missings_on_read: bool = False, remove_missings: bool = False, compute_low_high: bool = True, max_rows_by_cols: int = 3000000, rows_per_read: int = -1, start_row: int = 1, number_rows_read: int = -1, return_transform_objects: bool = False, blocks_per_read: int = None, report_progress: bool = True, xdf_compression_level: int = 0, strings_as_factors: bool = None, **kwargs) -> typing.Union[revoscalepy.datasource.RxXdfData.RxXdfData, pandas.core.frame.DataFrame]
 ```
 
 
@@ -65,16 +65,16 @@ or a RxXdfData object. If None, a data frame will be returned in memory.
 
 ##### vars_to_keep
 
-character vector of variable names to include when
+list of strings of variable names to include when
 reading from the input data file. If None, argument is ignored. Cannot be
-used with varsToDrop. Not supported for ODBC or fixed format text files.
+used with vars_to_drop. Not supported for ODBC or fixed format text files.
 
 
 ##### vars_to_drop
 
-character vector of variable names to exclude when
+list of strings of variable names to exclude when
 reading from the input data file. If None, argument is ignored. Cannot be
-used with varsToKeep. Not supported for ODBC or fixed format text files.
+used with vars_to_keep. Not supported for ODBC or fixed format text files.
 
 
 ##### row_selection
@@ -101,7 +101,7 @@ rxTransform for details.
 
 ##### transform_variables
 
-character vector of input data set variables
+list of strings of input data set variables
 needed for the transformation function. See rxTransform for details.
 
 
@@ -118,14 +118,14 @@ None. Not currently supported, reserved for future use.
 ##### append
 
 either “none” to create a new ‘.xdf’ file or “rows” to
-append rows to an existing ‘.xdf’ file. If outFile exists and append is
+append rows to an existing ‘.xdf’ file. If output_file exists and append is
 “none”, the overwrite argument must be set to True. Ignored if a data frame
 is returned.
 
 
 ##### overwrite
 
-logical value. If True, the existing outData will be
+bool value. If True, the existing outData will be
 overwritten. Ignored if a dataframe is returned.
 
 
@@ -135,25 +135,25 @@ character string or None. If inData is a data.frame:
 If None, the data frame’s row names will be dropped. If a character string, an
 additional variable of that name will be added to the data set containing the
 data frame’s row names. If a data.frame is being returned, a variable with the
-name rowVarName will be removed as a column from the data frame and will be
+name row_variable_name will be removed as a column from the data frame and will be
 used as the row names.
 
 
 ##### remove_missings_on_read
 
-logical value. If True, rows with missing
+bool value. If True, rows with missing
 values will be removed on read.
 
 
 ##### remove_missings
 
-logical value. If True, rows with missing values will
+bool value. If True, rows with missing values will
 not be included in the output data.
 
 
 ##### compute_low_high
 
-logical value. If False, low and high values will not
+bool value. If False, low and high values will not
 automatically be computed. This should only be set to False in special
 circumstances, such as when append is being used repeatedly. Ignored for data
 frames.
@@ -162,11 +162,11 @@ frames.
 ##### max_rows_by_cols
 
 the maximum size of a data frame that will be returned
-if outFile is set to None and inData is an ‘.xdf’ file , measured by the number
+if output_file is set to None and inData is an ‘.xdf’ file , measured by the number
 of rows times the number of columns. If the number of rows times the number of
 columns being created from the ‘.xdf’ file exceeds this, a warning will be
 reported and the number of rows in the returned data frame will be truncated.
-If maxRowsByCols is set to be too large, you may experience problems from
+If max_rows_by_cols is set to be too large, you may experience problems from
 loading a huge data frame into memory.
 
 
@@ -175,7 +175,7 @@ loading a huge data frame into memory.
 number of rows to read for each chunk of data read from
 the input data source. Use this argument for finer control of the number of
 rows per block in the output data source. If greater than 0, blocks_per_read is
-ignored. Cannot be used if inFile is the same as outFile. The default value of
+ignored. Cannot be used if input_data is the same as output_file. The default value of
 -1 specifies that data should be read by blocks according to the
 blocks_per_read argument.
 
@@ -183,27 +183,26 @@ blocks_per_read argument.
 ##### start_row
 
 the starting row to read from the input data source. Cannot
-be used if inFile is the same as outFile.
+be used if input_data is the same as output_file.
 
 
 ##### number_rows_read
 
 number of rows to read from the input data source. If
-rowSelection or remove_missings are used, the output data set may have fewer
-rows than specified by number_rows_read. Cannot be used if inFile is the same
-as outFile.
+remove_missings are used, the output data set may have fewer
+rows than specified by number_rows_read. Cannot be used if input_data is the same
+as output_file.
 
 
 ##### return_transform_objects
 
-logical value. If True, the list of
+bool value. If True, the list of
 transformObjects will be returned instead of a data frame or data source
 object. If the input transformObjects have been modified, by using .rxSet or
 .rxModify in the transformFunc, the updated values will be returned. Any data
 returned from the transformFunc is ignored. If no transformObjects are used,
 None is returned. This argument allows for user-defined computations within a
-transformFunc without creating new data. returnTransformObjects is not
-supported in distributed compute contexts such as RxHadoopMR or RxInTeradata.
+transform_function without creating new data.
 
 
 ##### blocks_per_read
@@ -225,19 +224,19 @@ integer value with options:
 
 integer in the range of -1 to 9. The higher the
 value, the greater the amount of compression - resulting in smaller files but a
-longer time to create them. If xdfCompressionLevel is set to 0, there will be
+longer time to create them. If xdf_compression_level is set to 0, there will be
 no compression and files will be compatible with the 6.0 release of Revolution
 R Enterprise. If set to -1, a default level of compression will be used.
 
 
 ##### strings_as_factors
 
-logical indicating whether or not to
+bool indicating whether or not to
 automatically convert strings to factors on import. This can be overridden
-by specifying “character” in colClasses and colInfo. If True, the factor
+by specifying “character” in column_classes and column_info. If True, the factor
 levels will be coded in the order encountered. Since this factor level
 ordering is row dependent, the preferred method for handling factor columns
-is to use colInfo with specified “levels”.
+is to use column_info with specified “levels”.
 
 
 ##### kwargs

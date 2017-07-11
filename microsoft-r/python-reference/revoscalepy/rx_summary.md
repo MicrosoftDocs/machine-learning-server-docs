@@ -4,9 +4,9 @@
 title: "Object Summaries" 
 description: "Produce univariate summaries of objects in RevoScalePy." 
 keywords: "summary" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_summary``
+## `rx_summary`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -51,7 +51,7 @@ Produce univariate summaries of objects in RevoScalePy.
 
 ##### formula
 
-formula, as described in rxFormula. The formula typically
+statistical model using symbolic formulas. The formula typically
 does not contain a response variable, i.e. it should be of the form ~ terms.
 
 
@@ -68,21 +68,21 @@ strings specifying .xdf file names(s), or an RxXdfData object or list of
 RxXdfData objects. If not None, and the formula includes computations by
 factor, the by-group summary results will be written out to one or more
 ‘.xdf’ files. If more than one .xdf file is created and a single character
-string is specified, an integer will be appended to the base byGroupOutFile
+string is specified, an integer will be appended to the base by_group_out_file
 name for additional file names. The resulting RxXdfData objects will be
 listed in the categorical component of the output object.
 
 
 ##### summary_stats
 
-a character vector containing one or more of the
+a list of strings containing one or more of the
 following values: “Mean”, “StdDev”, “Min”, “Max”, “ValidObs”, “MissingObs”,
 “Sum”.
 
 
 ##### by_term
 
-logical variable. If True, missings will be removed by term
+bool variable. If True, missings will be removed by term
 (by variable or by interaction expression) before computing summary
 statistics. If False, observations with missings in any term will be
 removed before computations.
@@ -118,14 +118,13 @@ future use.
 
 ##### transform_function
 
-variable transformation function. See
-rxTransform for details.
+variable transformation function.
 
 
 ##### transform_variables
 
-character vector of input data set variables
-needed for the transformation function. See rxTransform for details.
+list of strings of input data set variables
+needed for the transformation function.
 
 
 ##### transform_packages
@@ -142,22 +141,22 @@ future use.
 
 ##### overwrite
 
-logical value. If True, an existing byGroupOutFile will
+bool value. If True, an existing byGroupOutFile will
 be overwritten. overwrite is ignored byGroupOutFile is None.
 
 
 ##### use_sparse_cube
 
-logical value. If True, sparse cube is used.
+bool value. If True, sparse cube is used.
 
 
 ##### remove_zero_counts
 
-logical flag. If True, rows with no observations
+bool flag. If True, rows with no observations
 will be removed from the output for counts of categorical data. By default,
 it has the same value as useSparseCube. For large summary computation, this
-should be set to True, otherwise R may run out of memory even if the
-internal C++ computation succeeds.
+should be set to True, otherwise the Python interpreter may run out of
+memory even if the internal C++ computation succeeds.
 
 
 ##### blocks_per_read
@@ -169,7 +168,7 @@ read from the data source.
 ##### rows_per_block
 
 maximum number of rows to write to each block in the
-byGroupOutFile (if it is not None).
+by_group_out_file (if it is not None).
 
 
 ##### report_progress

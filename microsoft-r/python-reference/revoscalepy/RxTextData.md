@@ -4,9 +4,9 @@
 title: "Generate Text Data Source Object" 
 description: "Main generator for class RxTextData, which extends RxDataSource." 
 keywords: "datasource, text file" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``RxTextData``
+## `RxTextData`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -60,14 +60,14 @@ the Details section for more information on using ‘.sts’ files.
 
 ##### return_data_frame
 
-logical indicating whether or not to convert the
+bool indicating whether or not to convert the
 result from a list to a data frame (for use in rxReadNext only). If False, a
 list is returned.
 
 
 ##### strings_as_factors
 
-logical indicating whether or not to automatically
+bool indicating whether or not to automatically
 convert strings to factors on import. This can be overridden by specifying
 “character” in column_classes and column_info. If True, the factor levels will
 be coded in the order encountered. Since this factor level ordering is row
@@ -77,12 +77,12 @@ column_info with specified “levels”.
 
 ##### column_classes
 
-character vector specifying the column types to use when
+list of strings specifying the column types to use when
 converting the data. The element names for the vector are used to identify
 which column should be converted to which type.
 
     Allowable column types are:
-        ”logical” (stored as uchar),
+        ”bool” (stored as uchar),
         “integer” (stored as int32),
         “float32” (the default for floating point data for ‘.xdf’ files),
         “numeric” (stored as float64 as in R),
@@ -124,7 +124,7 @@ overrides that supplied for column_classes.
 
         newName: character string specifying a new name for the variable.
         description: character string specifying a description for the variable.
-        levels: character vector containing the levels when type = “factor”. If
+        levels: list of strings containing the levels when type = “factor”. If
 
             the levels property is not provided, factor levels will be determined
             by the values in the source column. If levels are provided, any value
@@ -167,14 +167,14 @@ overrides that supplied for column_classes.
 
 ##### vars_to_keep
 
-character vector of variable names to include when reading
+list of strings of variable names to include when reading
 from the input data file. If None, argument is ignored. Cannot be used with
 vars_to_drop.
 
 
 ##### vars_to_drop
 
-character vector of variable names to exclude when reading
+list of strings of variable names to exclude when reading
 from the input data file. If None, argument is ignored. Cannot be used with
 vars_to_keep.
 
@@ -200,7 +200,7 @@ the delimiter is auto-sensed from the list “,”, ”       “, “;”, and 
 
 ##### combine_delimiters
 
-logical indicating whether or not to treat
+bool indicating whether or not to treat
 consecutive non-space (” “) delimiters as a single delimiter. Space ” ”
 delimiters are always combined.
 
@@ -282,7 +282,7 @@ is set to True.
 
 ##### first_row_is_column_names
 
-logical indicating if the first row
+bool indicating if the first row
 represents column names for reading text. If first_row_is_column_names is None,
 then column names are auto- detected. The logic for auto-detection is: if the
 first row contains all values that are interpreted as character and the second
@@ -337,13 +337,13 @@ numeric data to a file.
 
 ##### strip_zeros
 
-logical scalar. If True, if there are only zeros after the
+bool value. If True, if there are only zeros after the
 decimal point for a numeric, it will be written as an integer to a file.
 
 
 ##### quoted_delimiters
 
-logical scalar. If True, delimiters within quoted
+bool value. If True, delimiters within quoted
 strings will be ignored. This requires a slower parsing process. Only
 applicable to use_fast_read is set to True; delimiters within quotes are always
 supported when use_fast_read is set to False.
@@ -351,7 +351,7 @@ supported when use_fast_read is set to False.
 
 ##### is_fixed_format
 
-logical scalar. If True, the input data file is treated
+bool value. If True, the input data file is treated
 as a fixed format file. Fixed format files must have a ‘.sts’ file or a
 column_info argument specifying the start and width of each variable. If False,
 the input data file is treated as a delimited text file. If None, the text file
@@ -360,7 +360,7 @@ type (fixed or delimited text) is auto-determined.
 
 ##### use_fast_read
 
-None or logical scalar. If True, the data file is
+None or bool value. If True, the data file is
 accessed directly by the Microsoft R Services Compute Engine. If False,
 StatTransfer is used to access the data file. If None, the type of text import
 is auto-determined. use_fast_read should be set to False if importing Date or
@@ -369,7 +369,7 @@ quoted string, if the decimalPoint is not “.”, if the thousandsSeparator is 
 “,”, if the quoteMark is not “”“, or if combineDelimiters is set to True.
 use_fast_read should be set to True if rowsToSkip or defaultMissingColType are
 set. If use_fast_read is True, by default variables containing the values True
-and False or T and F will be created as logical variables. use_fast_read cannot
+and False or T and F will be created as bool variables. use_fast_read cannot
 be set to False if an HDFS file system is being used. If an incompatible
 setting of use_fast_read is detected, a warning will be issued and the value
 will be changed.
@@ -377,11 +377,11 @@ will be changed.
 
 ##### create_file_set
 
-logical value or None. Used only when writing. If True,
+bool value or None. Used only when writing. If True,
 a file folder of text files will be created instead of a single text file. A
 directory will be created whose name is the same as the text file that would
 otherwise be created, but with no extension. In the directory, the data will be
-split across a set of text files (see rowsPerOutFile below for determining how
+split across a set of text files (see rows_per_out_file below for determining how
 many rows of data will be in each file). If False, a single text file will be
 created. If None, a folder of files will be created if the input data set is a
 composite XDF file or a folder of text files. This argument is ignored if the
@@ -391,11 +391,8 @@ text file is fixed format.
 ##### rows_per_out_file
 
 numeric value or None. If a directory of text files
-is being created, and if the compute context is not RxHadoopMR, this will be
-the number of rows of data put into each file in the directory. When importing
-is being done on Hadoop using MapReduce, the number of rows per file is
-determined by the rows assigned to each MapReduce task. If None, the rows of
-data will match the input data.
+is being created, this will be the number of rows of data put into each
+file in the directory.
 
 
 ##### verbose
@@ -406,7 +403,7 @@ information on the text type (text or textFast) is printed.
 
 ##### check_vars_to_keep
 
-logical value. If True variable names specified in
+bool value. If True variable names specified in
 vars_to_keep will be checked against variables in the data set to make sure
 they exist. An error will be reported if not found. If there are more than 500
 variables in the data set, this flag is ignored and no checking is performed.
@@ -416,7 +413,7 @@ variables in the data set, this flag is ignored and no checking is performed.
 
 character string or RxFileSystem object indicating type of
 file system; “native” or RxNativeFileSystem object can be used for the local
-operating system, or an RxHdfsFileSystem object for the Hadoop file system.
+operating system.
 
 
 ##### input_encoding
@@ -428,14 +425,14 @@ Chinese encoding. Not supported when use_fast_read is set to True.
 
 ##### write_factors_as_indexes
 
-logical. If True, when writing to an
+bool. If True, when writing to an
 RxTextData data source, underlying factor indexes will be written instead of
 the string representations. Not supported when use_fast_read is set to False.
 
 
 ### Returns
 
-object of class ``RxTextData``.
+object of class `RxTextData`.
 
 
 ### Example

@@ -4,9 +4,9 @@
 title: "Machine Learning Extract Pixel Data Transform" 
 description: "Extracts the pixel values from an image." 
 keywords: "transform, image" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``extract_pixels``: Extract pixels form an image
+## *extract_pixels*: Extracts pixels form an image
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -48,8 +48,8 @@ Extracts the pixel values from an image.
 
 ### Details
 
-``extract_pixels`` extracts the pixel values from an image. The input variables
-are images of the same size, typically the output of a ``resizeImage`` transform. The
+`extract_pixels` extracts the pixel values from an image. The input variables
+are images of the same size, typically the output of a `resizeImage` transform. The
 output are pixel data in vector form that are typically used as features for a learner.
 
 
@@ -59,27 +59,27 @@ output are pixel data in vector form that are typically used as features for a l
 ##### cols
 
 A character string or list of variable names to transform. If
-``dict``, the keys represent the names of new variables to be created.
+`dict`, the keys represent the names of new variables to be created.
 
 
 ##### use_alpha
 
-Specifies whether to use alpha channel. The default value is ``False``.
+Specifies whether to use alpha channel. The default value is `False`.
 
 
 ##### use_red
 
-Specifies whether to use red channel. The default value is ``True``.
+Specifies whether to use red channel. The default value is `True`.
 
 
 ##### use_green
 
-Specifies whether to use green channel. The default value is ``True``.
+Specifies whether to use green channel. The default value is `True`.
 
 
 ##### use_blue
 
-Specifies whether to use blue channel. The default value is ``True``.
+Specifies whether to use blue channel. The default value is `True`.
 
 
 ##### interleave_argb
@@ -91,18 +91,18 @@ a convolutional neural network, since this would affect the shape of the kernel,
 
 ##### convert
 
-Whether to convert to floating point. The default value is ``False``.
+Whether to convert to floating point. The default value is `False`.
 
 
 ##### offset
 
-Specifies the offset (pre-scale). This requires ``convert = True``.
+Specifies the offset (pre-scale). This requires `convert = True`.
 The default value is *None*.
 
 
 ##### scale
 
-Specifies the scale factor. This requires ``convert = True``.
+Specifies the scale factor. This requires `convert = True`.
 The default value is *None*.
 
 
@@ -118,9 +118,9 @@ An object defining the transform.
 
 ### See also
 
-[``load_image``](load_image.md),
-[``resize_image``](resize_image.md),
-[``featurize_image``](featurize_image.md).
+[`load_image`](load_image.md),
+[`resize_image`](resize_image.md),
+[`featurize_image`](featurize_image.md).
 
 
 ### Example
@@ -178,7 +178,12 @@ Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: Training data does not support shuffling, so ignoring request to shuffle
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
 Using: AVX Math
 
 ***** Net definition *****
@@ -202,50 +207,38 @@ Momentum: 0.000000
 InitWtsDiameter: 0.100000
 ___________________________________________________________________
 Initializing 1 Hidden Layers, 6 Weights...
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Estimated Pre-training MeanError = 0.707823
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Iter:1/1, MeanErr=0.707823(0.00%), 0.00M WeightUpdates/sec
 Done!
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0.001
-Beginning processing data.
 Estimated Post-training MeanError = 0.707499
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.4368999
-Elapsed time: 00:00:00.0514994
+Elapsed time: 00:00:00.3937942
+Elapsed time: 00:00:00.0396408
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
-Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Using 2 threads to train.
 Automatically choosing a check frequency of 2.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Auto-tuning parameters: L2 = 5.
 Auto-tuning parameters: L1Threshold (L1/L2) = 1.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
-Beginning processing data.
 Using model from last iteration.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.5996705
-Elapsed time: 00:00:00.0412762
+Elapsed time: 00:00:02.0564633
+Elapsed time: 00:00:00.0290781
 
 rx_neural_network
 Beginning processing data.
-Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1549276
+Elapsed time: 00:00:00.1147199
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel     Score  Probability
@@ -255,7 +248,7 @@ rx_fast_linear
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.4770296
+Elapsed time: 00:00:00.5312009
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel  Score  Probability

@@ -4,9 +4,9 @@
 title: "hinge_loss" 
 description: "Hinge loss." 
 keywords: "loss, Hinge" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``hinge_loss``: Hinge Loss Function
+## *hinge_loss*: Hinge Loss Function
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -56,6 +56,6 @@ Margin value (settings).
 
 ### See also
 
-[``log_loss``](log_loss.md),
-[``smoothed_hinge_loss``](smoothed_hinge_loss.md),
-[``squared_loss``](squared_loss.md)
+[`log_loss`](log_loss.md),
+[`smoothed_hinge_loss`](smoothed_hinge_loss.md),
+[`squared_loss`](squared_loss.md)

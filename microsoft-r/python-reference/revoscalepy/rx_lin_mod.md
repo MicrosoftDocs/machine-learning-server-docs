@@ -4,9 +4,9 @@
 title: "Linear Models" 
 description: "Fit linear models on small or large data." 
 keywords: "linear" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_lin_mod``
+## `rx_lin_mod`
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -51,7 +51,7 @@ Fit linear models on small or large data.
 
 ##### formula
 
-formula as described in rxFormula.
+statistical model using symbolic formulas.
 
 
 ##### data
@@ -74,17 +74,17 @@ weights for the observations.
 
 ##### cube
 
-logical flag. If True and the first term of the predictor variables
+bool flag. If True and the first term of the predictor variables
 is categorical (a factor or an interaction of factors), the regression is
 performed by applying the Frisch-Waugh-Lovell Theorem, which uses a partitioned
-inverse to save on computation time and memory. See Details section below.
+inverse to save on computation time and memory.
 
 
 ##### cube_predictions
 
-logical flag. If True and cube is True the predicted
+bool flag. If True and cube is True the predicted
 values are computed and included in the countDF component of the returned
-value. This may be memory intensive. See Details section below.
+value. This may be memory intensive.
 
 
 ##### row_selection
@@ -106,13 +106,13 @@ None. Not currently supported, reserved for future use.
 
 variable transformation function. The variables used
 in the transformation function must be specified in transformVars if they
-are not variables used in the model. See rxTransform for details.
+are not variables used in the model.
 
 
 ##### transform_variables
 
-character vector of input data set variables needed
-for the transformation function. See rx_transform for details.
+list of strings of input data set variables needed
+for the transformation function.
 
 
 ##### transform_packages
@@ -127,7 +127,7 @@ None. Not currently supported, reserved for future use.
 
 ##### drop_first
 
-logical flag. If False, the last level is dropped in all sets
+bool flag. If False, the last level is dropped in all sets
 of factor levels in a model. If that level has no observations (in any of the
 sets), or if the model as formed is otherwise determined to be singular, then
 an attempt is made to estimate the model by dropping the first level in all sets
@@ -138,22 +138,21 @@ and the intercept is dropped.
 
 ##### drop_main
 
-logical value. If True, main-effect terms are dropped before their
+bool value. If True, main-effect terms are dropped before their
 interactions.
 
 
 ##### cov_coef
 
-logical flag. If True and if cube is False, the variance-covariance
-matrix of the regression coefficients is returned. Use the rxCovCoef function to
-obtain these data.
+bool flag. If True and if cube is False, the variance-covariance
+matrix of the regression coefficients is returned.
 
 
 ##### cov_data
 
-logical flag. If True and if cube is False and if constant term is
+bool flag. If True and if cube is False and if constant term is
 included in the formula, then the variance-covariance matrix of the data is
-returned. Use the rxCovData function to obtain these data.
+returned.
 
 
 ##### blocks_per_read
@@ -190,6 +189,11 @@ additional parameters
 ### Returns
 
 a rx_lin_mod_results object of linear model.
+
+
+### See also
+
+[`rx_logit`](rx_logit.md).
 
 
 ### Example

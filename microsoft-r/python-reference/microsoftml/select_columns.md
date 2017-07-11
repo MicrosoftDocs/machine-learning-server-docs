@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Selects a set of columns, dropping all others" 
+title: "Selects a set of columns and drops all others" 
 description: "Selects a set of columns to retrain, dropping all others." 
 keywords: "transform, schema" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``select_columns``: Select and keep a subset of columns
+## *select_columns*: Selects and keeps a subset of columns
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -66,5 +66,5 @@ An object defining the transform.
 
 ### See also
 
-[``concat``](concat.md),
-[``drop_columns``](drop_columns.md).
+[`concat`](concat.md),
+[`drop_columns`](drop_columns.md).

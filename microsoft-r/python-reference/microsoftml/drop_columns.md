@@ -4,9 +4,9 @@
 title: "Drops columns from the dataset" 
 description: "Specified columns to drop from the dataset." 
 keywords: "transform, schema" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``drop_columns``: Select and drop a subset of columns
+## *drop_columns*: Selects and drops a subset of columns
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -66,5 +66,5 @@ An object defining the transform.
 
 ### See also
 
-[``concat``](concat.md),
-[``select_columns``](select_columns.md).
+[`concat`](concat.md),
+[`select_columns`](select_columns.md).

@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Neural Net" 
-description: "Neural networks for regression modeling and for Binary and" 
+description: "Neural networks for regression modeling and for Binary and multi-class classification." 
 keywords: "models, classification, regression, neural network, dnn" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,10 +24,14 @@ ms.custom: ""
  
 ---
 
-## ``rx_neural_network``: Neural Network
+## *rx_neural_network*: Neural Network
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
+
+* [optimizers](optimizers.md) 
+
+* [math](math.md) 
 
 
 ### Usage
@@ -35,7 +39,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.rx_neural_network(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], method: [‘binary’, ‘multiClass’, ‘regression’] = ‘binary’, num_hidden_nodes: int = 100, num_iterations: int = 100, optimizer: [<function adadelta_optimizer at 0x000001F5FD74F400>, <function sgd_optimizer at 0x000001F5FD74F268>] = {‘name’: ‘SgdOptimizer’, ‘settings’: {}}, net_definition: str = None, init_wts_diameter: float = 0.1, max_norm: float = 0, acceleration: [<function avx_math at 0x000001F5FD74F598>, <function clr_math at 0x000001F5FD74F840>, <function gpu_math at 0x000001F5FD74F8C8>, <function mkl_math at 0x000001F5FD74F950>, <function sse_math at 0x000001F5FD74F9D8>] = {‘name’: ‘AvxMath’, ‘settings’: {}}, mini_batch_size: int = 1, normalize: [‘No’, ‘Warn’, ‘Auto’, ‘Yes’] = ‘Auto’, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
+microsoftml.rx_neural_network(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], method: [‘binary’, ‘multiClass’, ‘regression’] = ‘binary’, num_hidden_nodes: int = 100, num_iterations: int = 100, optimizer: [<function adadelta_optimizer at 0x00000177684130D0>, <function sgd_optimizer at 0x0000017768401BF8>] = {‘settings’: {}, ‘name’: ‘SgdOptimizer’}, net_definition: str = None, init_wts_diameter: float = 0.1, max_norm: float = 0, acceleration: [<function avx_math at 0x0000017768401F28>, <function clr_math at 0x0000017768413268>, <function gpu_math at 0x00000177684132F0>, <function mkl_math at 0x0000017768413378>, <function sse_math at 0x0000017768413400>] = {‘settings’: {}, ‘name’: ‘AvxMath’}, mini_batch_size: int = 1, normalize: [‘No’, ‘Warn’, ‘Auto’, ‘Yes’] = ‘Auto’, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
 ```
 
 
@@ -81,9 +85,9 @@ problems where a more traditional regression model cannot fit a solution.
 
 ##### formula
 
-The formula as described in ``rx_formula``.
-Interaction terms and ``F()`` are not currently supported in the
-.
+The formula as described in [revoscalepy.rx_formula](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/rx_formula).
+Interaction terms and `F()` are not currently supported in the
+[microsoftml](https://docs.microsoft.com/en-us/r-server/r/concept-what-is-the-microsoftml-package).
 
 
 ##### data
@@ -96,11 +100,11 @@ A data source object or a character string specifying a
 
 A character string denoting Fast Tree type:
 
-* ``"binary"`` for the default binary classification neural network. 
+* `"binary"` for the default binary classification neural network. 
 
-* ``"multiClass"`` for multi-class classification neural network. 
+* `"multiClass"` for multi-class classification neural network. 
 
-* ``"regression"`` for a regression neural network. 
+* `"regression"` for a regression neural network. 
 
 
 ##### num_hidden_nodes
@@ -117,16 +121,16 @@ The default value is 100.
 
 ##### optimizer
 
-A list specifying either the ``sgd`` or ``adaptive``
-optimization algorithm. This list can be created using ``sgd()`` or
-``ada_delta_sgd()``. The default value is ``sgd``.
+A list specifying either the `sgd` or `adaptive`
+optimization algorithm. This list can be created using `sgd()` or
+`ada_delta_sgd()`. The default value is `sgd`.
 
 
 ##### net_definition
 
 The Net# definition of the structure of the neural
 network. For more information about the Net# language, see
-[Reference Guide](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/.md)
+[Reference Guide](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/)
 
 
 ##### init_wts_diameter
@@ -152,11 +156,11 @@ For GPU acceleration, it is recommended to use a miniBatchSize
 greater than one.  If you want to use the GPU acceleration, there are
 additional manual setup steps are required:
 
-* Download and install NVidia CUDA Toolkit 6.5 ([CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-65.md)). 
+* Download and install NVidia CUDA Toolkit 6.5 ([CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-65)). 
 
-* Download and install NVidia cuDNN v2 Library ([cudnn Library](https://developer.nvidia.com/rdp/cudnn-archive.md)). 
+* Download and install NVidia cuDNN v2 Library ([cudnn Library](https://developer.nvidia.com/rdp/cudnn-archive)). 
 
-* Find the libs directory of the microsoftml package by calling ``import microsoftml, os``, ``os.path.join(microsoftml.__path__[0], "mxLibs")``. 
+* Find the libs directory of the microsoftml package by calling `import microsoftml, os`, `os.path.join(microsoftml.__path__[0], "mxLibs")`. 
 
 * Copy cublas64_65.dll, cudart64_65.dll and cusparse64_65.dll from the CUDA Toolkit 6.5 into the libs directory of the microsoftml package. 
 
@@ -175,30 +179,30 @@ negatively affect the accuracy. The default value is 1.
 
 Specifies the type of automatic normalization used:
 
-* ``"Warn"``: if normalization is needed, it is performed automatically. This is the default choice. 
+* `"Warn"`: if normalization is needed, it is performed automatically. This is the default choice. 
 
-* ``"No"``: no normalization is performed. 
+* `"No"`: no normalization is performed. 
 
-* ``"Yes"``: normalization is performed. 
+* `"Yes"`: normalization is performed. 
 
-* ``"Auto"``: if normalization is needed, a warning message is displayed, but normalization is not performed. 
+* `"Auto"`: if normalization is needed, a warning message is displayed, but normalization is not performed. 
 
 Normalization rescales disparate data ranges to a standard scale. Feature
 scaling insures the distances between data points are proportional and
 enables various optimization methods such as gradient descent to converge
-much faster. If normalization is performed, a ``MaxMin`` normalizer is
-used. It normalizes values in an interval [a, b] where ``-1 <= a <= 0``
-and ``0 <= b <= 1`` and ``b - a = 1``. This normalizer preserves
+much faster. If normalization is performed, a `MaxMin` normalizer is
+used. It normalizes values in an interval [a, b] where `-1 <= a <= 0`
+and `0 <= b <= 1` and `b - a = 1`. This normalizer preserves
 sparsity by mapping zero to zero.
 
 
 ##### ml_transforms
 
-Specifies a list of microsoftml transforms to be
+Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
-to be performed. See [``featurize_text``](featurize_text.md),
-[``categorical``](categorical.md),
-and [``categorical_hash``](categorical_hash.md), for transformations that are supported.
+to be performed. See [`featurize_text`](featurize_text.md),
+[`categorical`](categorical.md),
+and [`categorical_hash`](categorical_hash.md), for transformations that are supported.
 These transformations are performed after any specified Python transformations.
 The default value is *None*.
 
@@ -206,7 +210,7 @@ The default value is *None*.
 ##### ml_transform_vars
 
 Specifies a character vector of variable names
-to be used in ``ml_transforms`` or *None* if none are to be used.
+to be used in `ml_transforms` or *None* if none are to be used.
 The default value is *None*.
 
 
@@ -215,15 +219,16 @@ The default value is *None*.
 NOT SUPPORTED. Specifies the rows (observations) from the data set that
 are to be used by the model with the name of a logical variable from the
 data set (in quotes) or with a logical expression using variables in the
-data set. For example, ``row_selection = "old"`` will only use
-observations in which the value of the variable ``old`` is ``True``.
-``row_selection = (age > 20) & (age < 65) & (log(income) > 10)`` only uses
-observations in which the value of the ``age`` variable is between
-20 and 65 and the value of the ``log`` of the ``income`` variable is
-greater than 10. The row selection is performed after processing any data
-transformations (see the arguments ``transforms`` or
-``transform_function``). As with all expressions, ``row_selection`` can be
-defined outside of the function call using the ``expression``
+data set. For example:
+
+* `row_selection = "old"` will only use observations in which the value of the variable `old` is `True`. 
+
+* `row_selection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. 
+
+The row selection is performed after processing any data
+transformations (see the arguments `transforms` or
+`transform_function`). As with all expressions, `row_selection` can be
+defined outside of the function call using the `expression`
 function.
 
 
@@ -231,15 +236,15 @@ function.
 
 NOT SUPPORTED. An expression of the form that represents the
 first round of variable transformations. As with
-all expressions, ``transforms`` (or ``row_selection``) can be defined
-outside of the function call using the ``expression`` function.
+all expressions, `transforms` (or `row_selection`) can be defined
+outside of the function call using the `expression` function.
 
 
 ##### transform_objects
 
 NOT SUPPORTED. A named list that contains objects that can be
-referenced by ``transforms``, ``transform_function``, and
-``row_selection``.
+referenced by `transforms`, `transform_function`, and
+`row_selection`.
 
 
 ##### transform_function
@@ -256,21 +261,21 @@ the transformation function.
 ##### transform_packages
 
 NOT SUPPORTED. A character vector specifying additional Python packages
-(outside of those specified in ``RxOptions.get_option("transform_packages")``) to
+(outside of those specified in `RxOptions.get_option("transform_packages")`) to
 be made available and preloaded for use in variable transformation functions.
-For exmple, those explicitly defined in  functions via
-their ``transforms`` and ``transform_function`` arguments or those defined
-implicitly via their ``formula`` or ``row_selection`` arguments.  The
-``transform_packages`` argument may also be *None*, indicating that
-no packages outside ``RxOptions.get_option("transform_packages")`` are preloaded.
+For example, those explicitly defined in [revoscalepy](https://docs.microsoft.com/en-us/sql/advanced-analytics/python/what-is-revoscalepy) functions via
+their `transforms` and `transform_function` arguments or those defined
+implicitly via their `formula` or `row_selection` arguments.  The
+`transform_packages` argument may also be *None*, indicating that
+no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 
 
 ##### transform_environment
 
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
-If ``transform_environment = None``, a new “hash” environment with parent
-``baseenv`` is used instead.
+If `transform_environment = None`, a new “hash” environment with parent
+[revoscalepy.baseenv](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/baseenv) is used instead.
 
 
 ##### blocks_per_read
@@ -284,27 +289,27 @@ of data read from the data source.
 An integer value that specifies the level of reporting
 on the row processing progress:
 
-* ``0``: no progress is reported. 
+* `0`: no progress is reported. 
 
-* ``1``: the number of processed rows is printed and updated. 
+* `1`: the number of processed rows is printed and updated. 
 
-* ``2``: rows processed and timings are reported. 
+* `2`: rows processed and timings are reported. 
 
-* ``3``: rows processed and all timings are reported. 
+* `3`: rows processed and all timings are reported. 
 
 
 ##### verbose
 
 An integer value that specifies the amount of output wanted.
-If ``0``, no verbose output is printed during calculations. Integer
-values from ``1`` to ``4`` provide increasing amounts of information.
+If `0`, no verbose output is printed during calculations. Integer
+values from `1` to `4` provide increasing amounts of information.
 
 
 ##### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid ``RxComputeContext``.
-Currently local and ``RxInSqlServer`` compute contexts
+specified with a valid [revoscalepy.RxComputeContext](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/RxComputeContext).
+Currently local and [revoscalepy.RxInSqlServer](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/RxInSqlServer) compute contexts
 are supported.
 
 
@@ -315,7 +320,7 @@ NOT SUPPORTED. Control parameters for ensembling.
 
 ### Returns
 
-A [``NeuralNetwork``](learners_object.md) object with the trained model.
+A [`NeuralNetwork`](learners_object.md) object with the trained model.
 
 
 ### Note
@@ -326,19 +331,19 @@ memory.
 
 ### See also
 
-[``adadelta_optimizer``](adadelta_optimizer.md),
-[``sgd_optimizer``](sgd_optimizer.md),
-[``avx_math``](avx_math.md),
-[``clr_math``](clr_math.md),
-[``gpu_math``](gpu_math.md),
-[``mkl_math``](mkl_math.md),
-[``sse_math``](sse_math.md),
-[``rx_predict``](rx_predict.md).
+[`adadelta_optimizer`](adadelta_optimizer.md),
+[`sgd_optimizer`](sgd_optimizer.md),
+[`avx_math`](avx_math.md),
+[`clr_math`](clr_math.md),
+[`gpu_math`](gpu_math.md),
+[`mkl_math`](mkl_math.md),
+[`sse_math`](sse_math.md),
+[`rx_predict`](rx_predict.md).
 
 
 ### References
 
-[Wikipedia: Artificial neural network](http://en.wikipedia.org/wiki/Artificial_neural_network.md)
+[Wikipedia: Artificial neural network](http://en.wikipedia.org/wiki/Artificial_neural_network)
 
 
 ### Example
@@ -384,9 +389,14 @@ Output:
 ```
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
 Rows Read: 186, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: Training data does not support shuffling, so ignoring request to shuffle
 Using: AVX Math
 
 ***** Net definition *****
@@ -410,434 +420,128 @@ Momentum: 0.000000
 InitWtsDiameter: 0.100000
 ___________________________________________________________________
 Initializing 1 Hidden Layers, 701 Weights...
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Estimated Pre-training MeanError = 0.739703
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:1/100, MeanErr=0.683761(-7.56%), 38.04M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:2/100, MeanErr=0.648077(-5.22%), 44.89M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:3/100, MeanErr=0.643671(-0.68%), 31.73M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:4/100, MeanErr=0.642908(-0.12%), 44.58M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:5/100, MeanErr=0.642720(-0.03%), 47.49M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:6/100, MeanErr=0.642656(-0.01%), 38.09M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:7/100, MeanErr=0.642626(0.00%), 37.31M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:8/100, MeanErr=0.642607(0.00%), 49.70M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:9/100, MeanErr=0.642591(0.00%), 46.34M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:10/100, MeanErr=0.642577(0.00%), 46.88M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:11/100, MeanErr=0.642563(0.00%), 50.45M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:12/100, MeanErr=0.642549(0.00%), 51.89M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:13/100, MeanErr=0.642535(0.00%), 54.48M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:14/100, MeanErr=0.642521(0.00%), 51.95M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:15/100, MeanErr=0.642507(0.00%), 45.85M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:16/100, MeanErr=0.642493(0.00%), 53.67M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:17/100, MeanErr=0.642479(0.00%), 52.86M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:18/100, MeanErr=0.642465(0.00%), 47.69M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:19/100, MeanErr=0.642451(0.00%), 46.52M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:20/100, MeanErr=0.642437(0.00%), 50.72M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:21/100, MeanErr=0.642423(0.00%), 55.87M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:22/100, MeanErr=0.642409(0.00%), 49.30M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:23/100, MeanErr=0.642395(0.00%), 51.21M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:24/100, MeanErr=0.642381(0.00%), 56.24M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:25/100, MeanErr=0.642367(0.00%), 51.28M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:26/100, MeanErr=0.642353(0.00%), 55.13M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:27/100, MeanErr=0.642339(0.00%), 50.36M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:28/100, MeanErr=0.642325(0.00%), 55.31M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:29/100, MeanErr=0.642311(0.00%), 49.60M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:30/100, MeanErr=0.642296(0.00%), 56.90M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:31/100, MeanErr=0.642282(0.00%), 49.68M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:32/100, MeanErr=0.642268(0.00%), 55.94M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:33/100, MeanErr=0.642254(0.00%), 13.90M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:34/100, MeanErr=0.642239(0.00%), 48.70M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:35/100, MeanErr=0.642225(0.00%), 53.76M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:36/100, MeanErr=0.642211(0.00%), 50.44M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:37/100, MeanErr=0.642196(0.00%), 50.85M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:38/100, MeanErr=0.642182(0.00%), 55.01M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:39/100, MeanErr=0.642167(0.00%), 56.06M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:40/100, MeanErr=0.642153(0.00%), 49.78M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:41/100, MeanErr=0.642138(0.00%), 54.68M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:42/100, MeanErr=0.642124(0.00%), 53.09M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:43/100, MeanErr=0.642109(0.00%), 48.94M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:44/100, MeanErr=0.642094(0.00%), 46.54M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:45/100, MeanErr=0.642080(0.00%), 55.53M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:46/100, MeanErr=0.642065(0.00%), 29.99M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:47/100, MeanErr=0.642050(0.00%), 51.12M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:48/100, MeanErr=0.642035(0.00%), 54.88M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:49/100, MeanErr=0.642021(0.00%), 48.07M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:50/100, MeanErr=0.642006(0.00%), 49.33M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:51/100, MeanErr=0.641991(0.00%), 47.84M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:52/100, MeanErr=0.641976(0.00%), 52.12M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:53/100, MeanErr=0.641961(0.00%), 53.40M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:54/100, MeanErr=0.641946(0.00%), 49.96M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:55/100, MeanErr=0.641931(0.00%), 51.92M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:56/100, MeanErr=0.641916(0.00%), 53.78M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:57/100, MeanErr=0.641900(0.00%), 53.23M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:58/100, MeanErr=0.641885(0.00%), 30.30M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:59/100, MeanErr=0.641870(0.00%), 51.44M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:60/100, MeanErr=0.641855(0.00%), 36.17M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:61/100, MeanErr=0.641839(0.00%), 36.54M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:62/100, MeanErr=0.641824(0.00%), 37.08M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:63/100, MeanErr=0.641808(0.00%), 37.78M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:64/100, MeanErr=0.641793(0.00%), 38.03M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:65/100, MeanErr=0.641777(0.00%), 43.38M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:66/100, MeanErr=0.641762(0.00%), 45.75M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:67/100, MeanErr=0.641746(0.00%), 42.68M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:68/100, MeanErr=0.641730(0.00%), 41.75M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:69/100, MeanErr=0.641715(0.00%), 47.43M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:70/100, MeanErr=0.641699(0.00%), 43.77M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:71/100, MeanErr=0.641683(0.00%), 40.96M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:72/100, MeanErr=0.641667(0.00%), 40.56M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:73/100, MeanErr=0.641651(0.00%), 41.99M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:74/100, MeanErr=0.641635(0.00%), 37.58M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:75/100, MeanErr=0.641619(0.00%), 49.81M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:76/100, MeanErr=0.641603(0.00%), 45.45M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:77/100, MeanErr=0.641587(0.00%), 41.55M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:78/100, MeanErr=0.641570(0.00%), 50.41M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:79/100, MeanErr=0.641554(0.00%), 47.22M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:80/100, MeanErr=0.641538(0.00%), 53.25M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:81/100, MeanErr=0.641521(0.00%), 58.29M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:82/100, MeanErr=0.641505(0.00%), 59.41M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:83/100, MeanErr=0.641488(0.00%), 56.09M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:84/100, MeanErr=0.641471(0.00%), 59.00M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:85/100, MeanErr=0.641455(0.00%), 58.77M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:86/100, MeanErr=0.641438(0.00%), 59.88M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:87/100, MeanErr=0.641421(0.00%), 57.39M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:88/100, MeanErr=0.641404(0.00%), 56.77M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:89/100, MeanErr=0.641387(0.00%), 58.62M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:90/100, MeanErr=0.641370(0.00%), 54.02M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:91/100, MeanErr=0.641353(0.00%), 55.30M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:92/100, MeanErr=0.641336(0.00%), 46.65M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:93/100, MeanErr=0.641319(0.00%), 54.06M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:94/100, MeanErr=0.641301(0.00%), 54.03M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:95/100, MeanErr=0.641284(0.00%), 57.14M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:96/100, MeanErr=0.641266(0.00%), 21.37M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:97/100, MeanErr=0.641249(0.00%), 51.08M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:98/100, MeanErr=0.641231(0.00%), 57.02M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:99/100, MeanErr=0.641214(0.00%), 57.81M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:100/100, MeanErr=0.641196(0.00%), 58.54M WeightUpdates/sec
+Estimated Pre-training MeanError = 0.730590
+Iter:1/100, MeanErr=0.691490(-5.35%), 130.09M WeightUpdates/sec
+Iter:2/100, MeanErr=0.666216(-3.66%), 134.71M WeightUpdates/sec
+Iter:3/100, MeanErr=0.664896(-0.20%), 126.21M WeightUpdates/sec
+Iter:4/100, MeanErr=0.664536(-0.05%), 133.13M WeightUpdates/sec
+Iter:5/100, MeanErr=0.664888(0.05%), 136.78M WeightUpdates/sec
+Iter:6/100, MeanErr=0.664904(0.00%), 98.70M WeightUpdates/sec
+Iter:7/100, MeanErr=0.665018(0.02%), 61.67M WeightUpdates/sec
+Iter:8/100, MeanErr=0.664918(-0.02%), 125.35M WeightUpdates/sec
+Iter:9/100, MeanErr=0.664909(0.00%), 141.28M WeightUpdates/sec
+Iter:10/100, MeanErr=0.664908(0.00%), 131.59M WeightUpdates/sec
+Iter:11/100, MeanErr=0.664451(-0.07%), 128.32M WeightUpdates/sec
+Iter:12/100, MeanErr=0.663529(-0.14%), 135.15M WeightUpdates/sec
+Iter:13/100, MeanErr=0.664531(0.15%), 144.50M WeightUpdates/sec
+Iter:14/100, MeanErr=0.664893(0.05%), 132.23M WeightUpdates/sec
+Iter:15/100, MeanErr=0.664734(-0.02%), 141.28M WeightUpdates/sec
+Iter:16/100, MeanErr=0.664658(-0.01%), 126.07M WeightUpdates/sec
+Iter:17/100, MeanErr=0.664414(-0.04%), 121.92M WeightUpdates/sec
+Iter:18/100, MeanErr=0.664565(0.02%), 85.39M WeightUpdates/sec
+Iter:19/100, MeanErr=0.663448(-0.17%), 85.06M WeightUpdates/sec
+Iter:20/100, MeanErr=0.664974(0.23%), 115.80M WeightUpdates/sec
+Iter:21/100, MeanErr=0.664760(-0.03%), 105.99M WeightUpdates/sec
+Iter:22/100, MeanErr=0.664799(0.01%), 107.02M WeightUpdates/sec
+Iter:23/100, MeanErr=0.664361(-0.07%), 58.39M WeightUpdates/sec
+Iter:24/100, MeanErr=0.664651(0.04%), 121.61M WeightUpdates/sec
+Iter:25/100, MeanErr=0.664480(-0.03%), 138.03M WeightUpdates/sec
+Iter:26/100, MeanErr=0.664844(0.05%), 158.83M WeightUpdates/sec
+Iter:27/100, MeanErr=0.664653(-0.03%), 159.83M WeightUpdates/sec
+Iter:28/100, MeanErr=0.664116(-0.08%), 167.11M WeightUpdates/sec
+Iter:29/100, MeanErr=0.662992(-0.17%), 151.81M WeightUpdates/sec
+Iter:30/100, MeanErr=0.664311(0.20%), 128.17M WeightUpdates/sec
+Iter:31/100, MeanErr=0.664438(0.02%), 139.02M WeightUpdates/sec
+Iter:32/100, MeanErr=0.663755(-0.10%), 149.47M WeightUpdates/sec
+Iter:33/100, MeanErr=0.665021(0.19%), 150.50M WeightUpdates/sec
+Iter:34/100, MeanErr=0.664630(-0.06%), 151.95M WeightUpdates/sec
+Iter:35/100, MeanErr=0.664332(-0.04%), 159.59M WeightUpdates/sec
+Iter:36/100, MeanErr=0.664627(0.04%), 106.22M WeightUpdates/sec
+Iter:37/100, MeanErr=0.663591(-0.16%), 143.50M WeightUpdates/sec
+Iter:38/100, MeanErr=0.664399(0.12%), 134.77M WeightUpdates/sec
+Iter:39/100, MeanErr=0.664797(0.06%), 157.61M WeightUpdates/sec
+Iter:40/100, MeanErr=0.664349(-0.07%), 130.35M WeightUpdates/sec
+Iter:41/100, MeanErr=0.664250(-0.01%), 103.56M WeightUpdates/sec
+Iter:42/100, MeanErr=0.664207(-0.01%), 122.46M WeightUpdates/sec
+Iter:43/100, MeanErr=0.664357(0.02%), 118.85M WeightUpdates/sec
+Iter:44/100, MeanErr=0.664683(0.05%), 110.86M WeightUpdates/sec
+Iter:45/100, MeanErr=0.664323(-0.05%), 132.12M WeightUpdates/sec
+Iter:46/100, MeanErr=0.664173(-0.02%), 134.49M WeightUpdates/sec
+Iter:47/100, MeanErr=0.663999(-0.03%), 145.84M WeightUpdates/sec
+Iter:48/100, MeanErr=0.663668(-0.05%), 159.06M WeightUpdates/sec
+Iter:49/100, MeanErr=0.664426(0.11%), 100.07M WeightUpdates/sec
+Iter:50/100, MeanErr=0.663205(-0.18%), 140.56M WeightUpdates/sec
+Iter:51/100, MeanErr=0.663493(0.04%), 156.94M WeightUpdates/sec
+Iter:52/100, MeanErr=0.664565(0.16%), 163.55M WeightUpdates/sec
+Iter:53/100, MeanErr=0.664257(-0.05%), 154.30M WeightUpdates/sec
+Iter:54/100, MeanErr=0.664533(0.04%), 158.37M WeightUpdates/sec
+Iter:55/100, MeanErr=0.664280(-0.04%), 149.61M WeightUpdates/sec
+Iter:56/100, MeanErr=0.664543(0.04%), 154.08M WeightUpdates/sec
+Iter:57/100, MeanErr=0.664410(-0.02%), 104.91M WeightUpdates/sec
+Iter:58/100, MeanErr=0.664104(-0.05%), 135.32M WeightUpdates/sec
+Iter:59/100, MeanErr=0.664460(0.05%), 141.22M WeightUpdates/sec
+Iter:60/100, MeanErr=0.664304(-0.02%), 145.58M WeightUpdates/sec
+Iter:61/100, MeanErr=0.664408(0.02%), 150.15M WeightUpdates/sec
+Iter:62/100, MeanErr=0.664059(-0.05%), 96.64M WeightUpdates/sec
+Iter:63/100, MeanErr=0.664333(0.04%), 151.05M WeightUpdates/sec
+Iter:64/100, MeanErr=0.663928(-0.06%), 157.76M WeightUpdates/sec
+Iter:65/100, MeanErr=0.664319(0.06%), 154.37M WeightUpdates/sec
+Iter:66/100, MeanErr=0.664129(-0.03%), 157.46M WeightUpdates/sec
+Iter:67/100, MeanErr=0.664231(0.02%), 157.01M WeightUpdates/sec
+Iter:68/100, MeanErr=0.663682(-0.08%), 167.11M WeightUpdates/sec
+Iter:69/100, MeanErr=0.664151(0.07%), 160.92M WeightUpdates/sec
+Iter:70/100, MeanErr=0.663072(-0.16%), 129.89M WeightUpdates/sec
+Iter:71/100, MeanErr=0.664193(0.17%), 103.04M WeightUpdates/sec
+Iter:72/100, MeanErr=0.663938(-0.04%), 127.87M WeightUpdates/sec
+Iter:73/100, MeanErr=0.664114(0.03%), 103.85M WeightUpdates/sec
+Iter:74/100, MeanErr=0.664101(0.00%), 101.30M WeightUpdates/sec
+Iter:75/100, MeanErr=0.664130(0.00%), 76.86M WeightUpdates/sec
+Iter:76/100, MeanErr=0.664208(0.01%), 81.45M WeightUpdates/sec
+Iter:77/100, MeanErr=0.664257(0.01%), 83.43M WeightUpdates/sec
+Iter:78/100, MeanErr=0.663957(-0.05%), 60.13M WeightUpdates/sec
+Iter:79/100, MeanErr=0.663993(0.01%), 113.14M WeightUpdates/sec
+Iter:80/100, MeanErr=0.663889(-0.02%), 141.10M WeightUpdates/sec
+Iter:81/100, MeanErr=0.664064(0.03%), 117.91M WeightUpdates/sec
+Iter:82/100, MeanErr=0.660868(-0.48%), 141.53M WeightUpdates/sec
+Iter:83/100, MeanErr=0.664742(0.59%), 136.95M WeightUpdates/sec
+Iter:84/100, MeanErr=0.663644(-0.17%), 138.27M WeightUpdates/sec
+Iter:85/100, MeanErr=0.664162(0.08%), 131.39M WeightUpdates/sec
+Iter:86/100, MeanErr=0.664042(-0.02%), 106.33M WeightUpdates/sec
+Iter:87/100, MeanErr=0.663140(-0.14%), 121.29M WeightUpdates/sec
+Iter:88/100, MeanErr=0.664320(0.18%), 88.20M WeightUpdates/sec
+Iter:89/100, MeanErr=0.663686(-0.10%), 143.00M WeightUpdates/sec
+Iter:90/100, MeanErr=0.664123(0.07%), 152.80M WeightUpdates/sec
+Iter:91/100, MeanErr=0.663631(-0.07%), 140.62M WeightUpdates/sec
+Iter:92/100, MeanErr=0.663809(0.03%), 150.22M WeightUpdates/sec
+Iter:93/100, MeanErr=0.663860(0.01%), 130.14M WeightUpdates/sec
+Iter:94/100, MeanErr=0.663814(-0.01%), 155.17M WeightUpdates/sec
+Iter:95/100, MeanErr=0.664074(0.04%), 153.58M WeightUpdates/sec
+Iter:96/100, MeanErr=0.663993(-0.01%), 148.53M WeightUpdates/sec
+Iter:97/100, MeanErr=0.663752(-0.04%), 151.60M WeightUpdates/sec
+Iter:98/100, MeanErr=0.664019(0.04%), 152.02M WeightUpdates/sec
+Iter:99/100, MeanErr=0.662735(-0.19%), 134.71M WeightUpdates/sec
+Iter:100/100, MeanErr=0.664119(0.21%), 135.15M WeightUpdates/sec
 Done!
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Estimated Post-training MeanError = 0.638710
+Estimated Post-training MeanError = 0.661113
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.4102244
-Elapsed time: 00:00:00.0228952
+Elapsed time: 00:00:00.2275649
+Elapsed time: 00:00:00.0152035
 Beginning processing data.
-Rows Read: 62, Read Time: 0, Transform Time: 0
+Rows Read: 62, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1031192
+Elapsed time: 00:00:00.0678565
 Finished writing 62 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre1477668.xdf File will be overwritten if it exists.
+Data will be written to C:\Users\xavie\AppData\Local\Temp\rre677668.xdf File will be overwritten if it exists.
 
 Rows Processed: 5 
   isCase PredictedLabel     Score  Probability
-0  False          False -0.634014     0.346600
-1  False          False -0.633305     0.346761
-2   True          False -0.633376     0.346745
-3  False          False -0.633142     0.346798
-4  False          False -0.634376     0.346518
+0  False          False -0.526422     0.371352
+1  False          False -0.527511     0.371098
+2  False          False -0.526885     0.371244
+3  False          False -0.527576     0.371083
+4  False          False -0.527263     0.371156
 ```
 
 
@@ -889,7 +593,12 @@ Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=
 Beginning processing data.
 Rows Read: 112, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: Training data does not support shuffling, so ignoring request to shuffle
+Beginning processing data.
+Rows Read: 112, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 112, Read Time: 0, Transform Time: 0
+Beginning processing data.
 Using: AVX Math
 
 ***** Net definition *****
@@ -913,434 +622,128 @@ Momentum: 0.000000
 InitWtsDiameter: 0.100000
 ___________________________________________________________________
 Initializing 1 Hidden Layers, 803 Weights...
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Estimated Pre-training MeanError = 1.939311
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:1/100, MeanErr=1.932797(-0.34%), 37.82M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:2/100, MeanErr=1.921365(-0.59%), 35.42M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:3/100, MeanErr=1.919943(-0.07%), 23.34M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:4/100, MeanErr=1.919853(0.00%), 37.59M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:5/100, MeanErr=1.919846(0.00%), 37.73M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:6/100, MeanErr=1.919806(0.00%), 39.13M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:7/100, MeanErr=1.919742(0.00%), 38.63M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:8/100, MeanErr=1.919669(0.00%), 37.19M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:9/100, MeanErr=1.919591(0.00%), 39.10M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:10/100, MeanErr=1.919511(0.00%), 38.70M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:11/100, MeanErr=1.919430(0.00%), 39.48M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:12/100, MeanErr=1.919348(0.00%), 40.09M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:13/100, MeanErr=1.919266(0.00%), 38.08M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:14/100, MeanErr=1.919184(0.00%), 36.41M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:15/100, MeanErr=1.919102(0.00%), 35.11M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:16/100, MeanErr=1.919019(0.00%), 36.59M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:17/100, MeanErr=1.918935(0.00%), 36.68M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:18/100, MeanErr=1.918852(0.00%), 39.18M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:19/100, MeanErr=1.918768(0.00%), 37.57M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:20/100, MeanErr=1.918683(0.00%), 36.32M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:21/100, MeanErr=1.918599(0.00%), 32.46M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:22/100, MeanErr=1.918513(0.00%), 39.63M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:23/100, MeanErr=1.918428(0.00%), 39.05M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:24/100, MeanErr=1.918342(0.00%), 34.41M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:25/100, MeanErr=1.918255(0.00%), 37.29M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:26/100, MeanErr=1.918168(0.00%), 30.67M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:27/100, MeanErr=1.918081(0.00%), 33.98M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:28/100, MeanErr=1.917993(0.00%), 38.06M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:29/100, MeanErr=1.917904(0.00%), 39.57M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:30/100, MeanErr=1.917815(0.00%), 38.91M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:31/100, MeanErr=1.917725(0.00%), 39.71M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:32/100, MeanErr=1.917635(0.00%), 38.82M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:33/100, MeanErr=1.917545(0.00%), 17.81M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:34/100, MeanErr=1.917453(0.00%), 38.21M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:35/100, MeanErr=1.917361(0.00%), 40.85M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:36/100, MeanErr=1.917269(0.00%), 38.78M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:37/100, MeanErr=1.917176(0.00%), 37.37M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:38/100, MeanErr=1.917082(0.00%), 30.26M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:39/100, MeanErr=1.916987(0.00%), 37.25M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:40/100, MeanErr=1.916892(0.00%), 38.95M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:41/100, MeanErr=1.916797(0.00%), 40.04M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:42/100, MeanErr=1.916700(-0.01%), 36.32M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:43/100, MeanErr=1.916603(-0.01%), 38.32M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:44/100, MeanErr=1.916505(-0.01%), 33.20M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:45/100, MeanErr=1.916406(-0.01%), 38.11M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:46/100, MeanErr=1.916307(-0.01%), 42.42M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:47/100, MeanErr=1.916206(-0.01%), 39.43M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:48/100, MeanErr=1.916105(-0.01%), 39.97M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:49/100, MeanErr=1.916004(-0.01%), 22.03M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:50/100, MeanErr=1.915901(-0.01%), 37.29M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:51/100, MeanErr=1.915797(-0.01%), 37.62M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:52/100, MeanErr=1.915693(-0.01%), 34.18M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:53/100, MeanErr=1.915588(-0.01%), 40.87M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:54/100, MeanErr=1.915482(-0.01%), 40.76M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:55/100, MeanErr=1.915375(-0.01%), 40.57M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:56/100, MeanErr=1.915267(-0.01%), 39.50M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:57/100, MeanErr=1.915158(-0.01%), 36.69M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:58/100, MeanErr=1.915048(-0.01%), 41.42M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:59/100, MeanErr=1.914937(-0.01%), 39.89M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:60/100, MeanErr=1.914825(-0.01%), 40.28M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:61/100, MeanErr=1.914713(-0.01%), 35.41M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:62/100, MeanErr=1.914599(-0.01%), 39.13M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:63/100, MeanErr=1.914484(-0.01%), 37.14M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:64/100, MeanErr=1.914368(-0.01%), 14.93M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:65/100, MeanErr=1.914251(-0.01%), 37.28M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:66/100, MeanErr=1.914133(-0.01%), 40.25M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:67/100, MeanErr=1.914013(-0.01%), 35.58M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:68/100, MeanErr=1.913893(-0.01%), 42.65M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:69/100, MeanErr=1.913772(-0.01%), 37.33M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:70/100, MeanErr=1.913649(-0.01%), 40.79M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:71/100, MeanErr=1.913525(-0.01%), 40.69M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:72/100, MeanErr=1.913400(-0.01%), 39.87M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:73/100, MeanErr=1.913274(-0.01%), 41.28M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:74/100, MeanErr=1.913146(-0.01%), 36.73M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:75/100, MeanErr=1.913017(-0.01%), 36.40M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:76/100, MeanErr=1.912887(-0.01%), 39.87M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:77/100, MeanErr=1.912756(-0.01%), 39.15M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:78/100, MeanErr=1.912623(-0.01%), 40.30M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:79/100, MeanErr=1.912489(-0.01%), 38.72M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:80/100, MeanErr=1.912354(-0.01%), 29.15M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:81/100, MeanErr=1.912217(-0.01%), 35.44M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:82/100, MeanErr=1.912079(-0.01%), 38.01M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:83/100, MeanErr=1.911939(-0.01%), 39.05M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:84/100, MeanErr=1.911798(-0.01%), 36.75M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:85/100, MeanErr=1.911655(-0.01%), 41.40M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:86/100, MeanErr=1.911511(-0.01%), 38.08M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:87/100, MeanErr=1.911366(-0.01%), 33.25M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:88/100, MeanErr=1.911218(-0.01%), 30.90M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:89/100, MeanErr=1.911070(-0.01%), 40.71M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:90/100, MeanErr=1.910920(-0.01%), 41.91M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:91/100, MeanErr=1.910768(-0.01%), 37.50M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:92/100, MeanErr=1.910614(-0.01%), 40.02M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:93/100, MeanErr=1.910459(-0.01%), 38.15M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:94/100, MeanErr=1.910302(-0.01%), 37.35M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:95/100, MeanErr=1.910144(-0.01%), 39.30M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:96/100, MeanErr=1.909984(-0.01%), 38.22M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:97/100, MeanErr=1.909822(-0.01%), 40.04M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:98/100, MeanErr=1.909658(-0.01%), 41.32M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:99/100, MeanErr=1.909492(-0.01%), 38.34M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:100/100, MeanErr=1.909325(-0.01%), 36.37M WeightUpdates/sec
+Estimated Pre-training MeanError = 1.925313
+Iter:1/100, MeanErr=1.926644(0.07%), 21.67M WeightUpdates/sec
+Iter:2/100, MeanErr=1.918046(-0.45%), 42.21M WeightUpdates/sec
+Iter:3/100, MeanErr=1.917902(-0.01%), 34.93M WeightUpdates/sec
+Iter:4/100, MeanErr=1.917902(0.00%), 94.03M WeightUpdates/sec
+Iter:5/100, MeanErr=1.917264(-0.03%), 111.87M WeightUpdates/sec
+Iter:6/100, MeanErr=1.917767(0.03%), 89.73M WeightUpdates/sec
+Iter:7/100, MeanErr=1.917295(-0.02%), 86.36M WeightUpdates/sec
+Iter:8/100, MeanErr=1.917244(0.00%), 72.48M WeightUpdates/sec
+Iter:9/100, MeanErr=1.917821(0.03%), 82.30M WeightUpdates/sec
+Iter:10/100, MeanErr=1.913704(-0.21%), 84.50M WeightUpdates/sec
+Iter:11/100, MeanErr=1.916545(0.15%), 23.26M WeightUpdates/sec
+Iter:12/100, MeanErr=1.916350(-0.01%), 89.70M WeightUpdates/sec
+Iter:13/100, MeanErr=1.916910(0.03%), 103.01M WeightUpdates/sec
+Iter:14/100, MeanErr=1.916924(0.00%), 76.68M WeightUpdates/sec
+Iter:15/100, MeanErr=1.910940(-0.31%), 40.08M WeightUpdates/sec
+Iter:16/100, MeanErr=1.916100(0.27%), 77.94M WeightUpdates/sec
+Iter:17/100, MeanErr=1.914411(-0.09%), 105.49M WeightUpdates/sec
+Iter:18/100, MeanErr=1.917069(0.14%), 111.70M WeightUpdates/sec
+Iter:19/100, MeanErr=1.917084(0.00%), 121.87M WeightUpdates/sec
+Iter:20/100, MeanErr=1.917078(0.00%), 100.11M WeightUpdates/sec
+Iter:21/100, MeanErr=1.917574(0.03%), 97.58M WeightUpdates/sec
+Iter:22/100, MeanErr=1.917019(-0.03%), 83.36M WeightUpdates/sec
+Iter:23/100, MeanErr=1.915290(-0.09%), 32.30M WeightUpdates/sec
+Iter:24/100, MeanErr=1.916726(0.07%), 71.59M WeightUpdates/sec
+Iter:25/100, MeanErr=1.915015(-0.09%), 96.06M WeightUpdates/sec
+Iter:26/100, MeanErr=1.911989(-0.16%), 91.24M WeightUpdates/sec
+Iter:27/100, MeanErr=1.915882(0.20%), 91.17M WeightUpdates/sec
+Iter:28/100, MeanErr=1.916736(0.04%), 80.36M WeightUpdates/sec
+Iter:29/100, MeanErr=1.913311(-0.18%), 108.98M WeightUpdates/sec
+Iter:30/100, MeanErr=1.913811(0.03%), 112.81M WeightUpdates/sec
+Iter:31/100, MeanErr=1.916077(0.12%), 116.39M WeightUpdates/sec
+Iter:32/100, MeanErr=1.916517(0.02%), 120.71M WeightUpdates/sec
+Iter:33/100, MeanErr=1.914955(-0.08%), 77.35M WeightUpdates/sec
+Iter:34/100, MeanErr=1.915425(0.02%), 86.36M WeightUpdates/sec
+Iter:35/100, MeanErr=1.915095(-0.02%), 100.95M WeightUpdates/sec
+Iter:36/100, MeanErr=1.912926(-0.11%), 92.09M WeightUpdates/sec
+Iter:37/100, MeanErr=1.914749(0.10%), 62.23M WeightUpdates/sec
+Iter:38/100, MeanErr=1.913462(-0.07%), 73.79M WeightUpdates/sec
+Iter:39/100, MeanErr=1.915216(0.09%), 72.41M WeightUpdates/sec
+Iter:40/100, MeanErr=1.915082(-0.01%), 83.60M WeightUpdates/sec
+Iter:41/100, MeanErr=1.914830(-0.01%), 84.00M WeightUpdates/sec
+Iter:42/100, MeanErr=1.913280(-0.08%), 105.05M WeightUpdates/sec
+Iter:43/100, MeanErr=1.915441(0.11%), 85.26M WeightUpdates/sec
+Iter:44/100, MeanErr=1.913819(-0.08%), 99.98M WeightUpdates/sec
+Iter:45/100, MeanErr=1.913428(-0.02%), 25.04M WeightUpdates/sec
+Iter:46/100, MeanErr=1.914131(0.04%), 83.42M WeightUpdates/sec
+Iter:47/100, MeanErr=1.911981(-0.11%), 90.63M WeightUpdates/sec
+Iter:48/100, MeanErr=1.915121(0.16%), 115.91M WeightUpdates/sec
+Iter:49/100, MeanErr=1.914237(-0.05%), 85.97M WeightUpdates/sec
+Iter:50/100, MeanErr=1.914256(0.00%), 74.27M WeightUpdates/sec
+Iter:51/100, MeanErr=1.914513(0.01%), 108.46M WeightUpdates/sec
+Iter:52/100, MeanErr=1.913373(-0.06%), 104.14M WeightUpdates/sec
+Iter:53/100, MeanErr=1.913108(-0.01%), 102.96M WeightUpdates/sec
+Iter:54/100, MeanErr=1.914261(0.06%), 90.05M WeightUpdates/sec
+Iter:55/100, MeanErr=1.910450(-0.20%), 99.98M WeightUpdates/sec
+Iter:56/100, MeanErr=1.914064(0.19%), 48.23M WeightUpdates/sec
+Iter:57/100, MeanErr=1.913597(-0.02%), 86.72M WeightUpdates/sec
+Iter:58/100, MeanErr=1.910929(-0.14%), 104.72M WeightUpdates/sec
+Iter:59/100, MeanErr=1.912527(0.08%), 110.99M WeightUpdates/sec
+Iter:60/100, MeanErr=1.913345(0.04%), 117.10M WeightUpdates/sec
+Iter:61/100, MeanErr=1.911330(-0.11%), 119.38M WeightUpdates/sec
+Iter:62/100, MeanErr=1.909690(-0.09%), 109.76M WeightUpdates/sec
+Iter:63/100, MeanErr=1.912808(0.16%), 94.62M WeightUpdates/sec
+Iter:64/100, MeanErr=1.911461(-0.07%), 89.63M WeightUpdates/sec
+Iter:65/100, MeanErr=1.912925(0.08%), 101.68M WeightUpdates/sec
+Iter:66/100, MeanErr=1.912967(0.00%), 100.11M WeightUpdates/sec
+Iter:67/100, MeanErr=1.913066(0.01%), 40.16M WeightUpdates/sec
+Iter:68/100, MeanErr=1.912175(-0.05%), 69.68M WeightUpdates/sec
+Iter:69/100, MeanErr=1.911986(-0.01%), 77.54M WeightUpdates/sec
+Iter:70/100, MeanErr=1.911892(0.00%), 92.20M WeightUpdates/sec
+Iter:71/100, MeanErr=1.910784(-0.06%), 91.91M WeightUpdates/sec
+Iter:72/100, MeanErr=1.912165(0.07%), 15.90M WeightUpdates/sec
+Iter:73/100, MeanErr=1.907908(-0.22%), 71.57M WeightUpdates/sec
+Iter:74/100, MeanErr=1.911824(0.21%), 80.76M WeightUpdates/sec
+Iter:75/100, MeanErr=1.911102(-0.04%), 81.62M WeightUpdates/sec
+Iter:76/100, MeanErr=1.907967(-0.16%), 117.83M WeightUpdates/sec
+Iter:77/100, MeanErr=1.911890(0.21%), 96.54M WeightUpdates/sec
+Iter:78/100, MeanErr=1.910740(-0.06%), 61.07M WeightUpdates/sec
+Iter:79/100, MeanErr=1.910781(0.00%), 84.38M WeightUpdates/sec
+Iter:80/100, MeanErr=1.910306(-0.02%), 106.43M WeightUpdates/sec
+Iter:81/100, MeanErr=1.910362(0.00%), 85.29M WeightUpdates/sec
+Iter:82/100, MeanErr=1.910906(0.03%), 104.33M WeightUpdates/sec
+Iter:83/100, MeanErr=1.910384(-0.03%), 52.92M WeightUpdates/sec
+Iter:84/100, MeanErr=1.910919(0.03%), 94.81M WeightUpdates/sec
+Iter:85/100, MeanErr=1.910843(0.00%), 95.53M WeightUpdates/sec
+Iter:86/100, MeanErr=1.909650(-0.06%), 78.61M WeightUpdates/sec
+Iter:87/100, MeanErr=1.908350(-0.07%), 62.39M WeightUpdates/sec
+Iter:88/100, MeanErr=1.909900(0.08%), 59.74M WeightUpdates/sec
+Iter:89/100, MeanErr=1.910736(0.04%), 67.69M WeightUpdates/sec
+Iter:90/100, MeanErr=1.909085(-0.09%), 41.67M WeightUpdates/sec
+Iter:91/100, MeanErr=1.908917(-0.01%), 70.26M WeightUpdates/sec
+Iter:92/100, MeanErr=1.909353(0.02%), 45.31M WeightUpdates/sec
+Iter:93/100, MeanErr=1.909247(-0.01%), 70.50M WeightUpdates/sec
+Iter:94/100, MeanErr=1.909686(0.02%), 87.83M WeightUpdates/sec
+Iter:95/100, MeanErr=1.909142(-0.03%), 103.90M WeightUpdates/sec
+Iter:96/100, MeanErr=1.901593(-0.40%), 97.79M WeightUpdates/sec
+Iter:97/100, MeanErr=1.908373(0.36%), 43.74M WeightUpdates/sec
+Iter:98/100, MeanErr=1.908131(-0.01%), 51.47M WeightUpdates/sec
+Iter:99/100, MeanErr=1.909244(0.06%), 23.05M WeightUpdates/sec
+Iter:100/100, MeanErr=1.907185(-0.11%), 21.31M WeightUpdates/sec
 Done!
-Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Estimated Post-training MeanError = 1.899862
+Estimated Post-training MeanError = 1.896982
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.3905784
-Elapsed time: 00:00:00.0254920
+Elapsed time: 00:00:00.2953101
+Elapsed time: 00:00:00.0182802
 Beginning processing data.
 Rows Read: 38, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0976943
+Elapsed time: 00:00:00.0712023
 Finished writing 38 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre1477679.xdf File will be overwritten if it exists.
+Data will be written to C:\Users\xavie\AppData\Local\Temp\rre677679.xdf File will be overwritten if it exists.
 
 Rows Processed: 5 
       Species   Score.0   Score.1   Score.2
-0  versicolor  0.340877  0.353992  0.305132
-1  versicolor  0.340993  0.353902  0.305105
-2      setosa  0.347136  0.351932  0.300932
-3      setosa  0.347043  0.352020  0.300936
-4   virginica  0.338873  0.354638  0.306489
+0      setosa  0.306292  0.352901  0.340807
+1   virginica  0.297068  0.355387  0.347545
+2      setosa  0.305993  0.353035  0.340972
+3  versicolor  0.301401  0.354414  0.344185
+4   virginica  0.298529  0.355090  0.346381
 ```
 
 
@@ -1391,7 +794,12 @@ Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=
 Beginning processing data.
 Rows Read: 22, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: Training data does not support shuffling, so ignoring request to shuffle
+Beginning processing data.
+Rows Read: 22, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 22, Read Time: 0, Transform Time: 0
+Beginning processing data.
 Using: AVX Math
 
 ***** Net definition *****
@@ -1415,433 +823,147 @@ Momentum: 0.000000
 InitWtsDiameter: 0.100000
 ___________________________________________________________________
 Initializing 1 Hidden Layers, 801 Weights...
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Estimated Pre-training MeanError = 4404.420676
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:1/100, MeanErr=1556.382659(-64.66%), 7.83M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:2/100, MeanErr=126.349075(-91.88%), 8.41M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:3/100, MeanErr=135.388982(7.15%), 7.25M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:4/100, MeanErr=136.086021(0.51%), 8.00M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:5/100, MeanErr=135.384643(-0.52%), 7.80M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:6/100, MeanErr=134.640104(-0.55%), 8.23M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:7/100, MeanErr=133.914178(-0.54%), 8.48M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:8/100, MeanErr=133.208014(-0.53%), 8.54M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:9/100, MeanErr=132.520108(-0.52%), 8.80M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:10/100, MeanErr=131.849008(-0.51%), 7.80M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:11/100, MeanErr=131.193385(-0.50%), 8.08M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:12/100, MeanErr=130.551928(-0.49%), 7.21M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:13/100, MeanErr=129.923558(-0.48%), 8.54M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:14/100, MeanErr=129.307087(-0.47%), 6.90M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:15/100, MeanErr=128.701660(-0.47%), 3.62M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:16/100, MeanErr=128.106296(-0.46%), 5.75M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:17/100, MeanErr=127.520164(-0.46%), 5.93M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:18/100, MeanErr=126.942516(-0.45%), 6.61M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:19/100, MeanErr=126.372612(-0.45%), 6.34M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:20/100, MeanErr=125.809722(-0.45%), 6.62M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:21/100, MeanErr=125.253315(-0.44%), 6.35M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:22/100, MeanErr=124.702799(-0.44%), 5.59M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:23/100, MeanErr=124.157563(-0.44%), 6.84M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:24/100, MeanErr=123.617228(-0.44%), 6.79M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:25/100, MeanErr=123.081228(-0.43%), 5.22M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:26/100, MeanErr=122.549218(-0.43%), 5.80M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:27/100, MeanErr=122.020713(-0.43%), 6.73M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:28/100, MeanErr=121.495461(-0.43%), 7.18M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:29/100, MeanErr=120.972991(-0.43%), 5.47M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:30/100, MeanErr=120.453106(-0.43%), 6.73M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:31/100, MeanErr=119.935389(-0.43%), 6.95M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:32/100, MeanErr=119.419678(-0.43%), 8.42M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:33/100, MeanErr=118.905630(-0.43%), 8.46M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:34/100, MeanErr=118.393058(-0.43%), 6.42M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:35/100, MeanErr=117.881758(-0.43%), 8.55M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:36/100, MeanErr=117.371514(-0.43%), 8.10M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:37/100, MeanErr=116.862108(-0.43%), 8.05M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:38/100, MeanErr=116.353431(-0.44%), 6.35M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:39/100, MeanErr=115.845202(-0.44%), 8.25M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:40/100, MeanErr=115.337429(-0.44%), 8.55M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:41/100, MeanErr=114.829910(-0.44%), 8.38M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:42/100, MeanErr=114.322493(-0.44%), 7.18M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:43/100, MeanErr=113.815146(-0.44%), 7.98M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:44/100, MeanErr=113.307715(-0.45%), 8.41M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:45/100, MeanErr=112.800119(-0.45%), 8.73M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:46/100, MeanErr=112.292293(-0.45%), 7.90M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:47/100, MeanErr=111.784126(-0.45%), 7.96M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:48/100, MeanErr=111.275606(-0.45%), 8.99M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:49/100, MeanErr=110.766614(-0.46%), 8.85M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:50/100, MeanErr=110.257185(-0.46%), 8.60M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:51/100, MeanErr=109.747257(-0.46%), 8.32M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:52/100, MeanErr=109.236774(-0.47%), 7.58M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:53/100, MeanErr=108.725731(-0.47%), 8.54M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:54/100, MeanErr=108.214105(-0.47%), 9.17M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:55/100, MeanErr=107.701900(-0.47%), 8.60M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:56/100, MeanErr=107.189050(-0.48%), 8.02M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:57/100, MeanErr=106.675648(-0.48%), 8.51M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:58/100, MeanErr=106.161614(-0.48%), 3.09M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:59/100, MeanErr=105.647012(-0.48%), 8.15M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:60/100, MeanErr=105.131831(-0.49%), 8.97M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:61/100, MeanErr=104.616184(-0.49%), 8.73M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:62/100, MeanErr=104.099938(-0.49%), 8.98M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:63/100, MeanErr=103.583217(-0.50%), 9.36M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:64/100, MeanErr=103.066081(-0.50%), 7.67M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:65/100, MeanErr=102.548516(-0.50%), 7.48M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:66/100, MeanErr=102.030591(-0.51%), 8.49M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:67/100, MeanErr=101.512362(-0.51%), 8.34M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:68/100, MeanErr=100.993812(-0.51%), 8.43M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:69/100, MeanErr=100.475120(-0.51%), 7.67M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:70/100, MeanErr=99.956234(-0.52%), 9.07M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:71/100, MeanErr=99.437245(-0.52%), 9.14M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:72/100, MeanErr=98.918212(-0.52%), 7.79M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:73/100, MeanErr=98.399250(-0.52%), 8.58M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:74/100, MeanErr=97.880379(-0.53%), 8.82M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:75/100, MeanErr=97.361669(-0.53%), 4.93M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:76/100, MeanErr=96.843146(-0.53%), 8.80M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:77/100, MeanErr=96.324996(-0.54%), 8.88M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:78/100, MeanErr=95.807209(-0.54%), 6.89M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:79/100, MeanErr=95.289908(-0.54%), 5.29M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:80/100, MeanErr=94.773125(-0.54%), 7.64M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:81/100, MeanErr=94.256964(-0.54%), 7.30M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:82/100, MeanErr=93.741481(-0.55%), 9.21M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:83/100, MeanErr=93.226868(-0.55%), 8.32M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:84/100, MeanErr=92.713053(-0.55%), 7.40M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:85/100, MeanErr=92.200250(-0.55%), 7.69M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:86/100, MeanErr=91.688481(-0.56%), 8.67M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:87/100, MeanErr=91.177795(-0.56%), 8.56M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Iter:88/100, MeanErr=90.668352(-0.56%), 8.84M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:89/100, MeanErr=90.160213(-0.56%), 8.81M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:90/100, MeanErr=89.653455(-0.56%), 9.10M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:91/100, MeanErr=89.148198(-0.56%), 3.60M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:92/100, MeanErr=88.644471(-0.57%), 7.77M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:93/100, MeanErr=88.142379(-0.57%), 8.30M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:94/100, MeanErr=87.642032(-0.57%), 7.85M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:95/100, MeanErr=87.143463(-0.57%), 8.94M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:96/100, MeanErr=86.646854(-0.57%), 9.09M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:97/100, MeanErr=86.152191(-0.57%), 8.43M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:98/100, MeanErr=85.659597(-0.57%), 6.93M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Iter:99/100, MeanErr=85.169166(-0.57%), 8.55M WeightUpdates/sec
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0.001
-Beginning processing data.
-Iter:100/100, MeanErr=84.680970(-0.57%), 8.70M WeightUpdates/sec
+Estimated Pre-training MeanError = 4431.587508
+Iter:1/100, MeanErr=1732.891296(-60.90%), 25.02M WeightUpdates/sec
+Iter:2/100, MeanErr=153.409363(-91.15%), 23.82M WeightUpdates/sec
+Iter:3/100, MeanErr=118.063756(-23.04%), 16.82M WeightUpdates/sec
+Iter:4/100, MeanErr=117.111723(-0.81%), 11.16M WeightUpdates/sec
+Iter:5/100, MeanErr=113.286739(-3.27%), 20.39M WeightUpdates/sec
+Iter:6/100, MeanErr=114.052654(0.68%), 23.21M WeightUpdates/sec
+Iter:7/100, MeanErr=113.830717(-0.19%), 23.98M WeightUpdates/sec
+Iter:8/100, MeanErr=111.569165(-1.99%), 23.75M WeightUpdates/sec
+Iter:9/100, MeanErr=112.852787(1.15%), 26.49M WeightUpdates/sec
+Iter:10/100, MeanErr=113.097143(0.22%), 28.04M WeightUpdates/sec
+Iter:11/100, MeanErr=110.464180(-2.33%), 30.49M WeightUpdates/sec
+Iter:12/100, MeanErr=111.615003(1.04%), 28.95M WeightUpdates/sec
+Iter:13/100, MeanErr=107.387412(-3.79%), 29.68M WeightUpdates/sec
+Iter:14/100, MeanErr=111.018414(3.38%), 35.97M WeightUpdates/sec
+Iter:15/100, MeanErr=110.918491(-0.09%), 14.94M WeightUpdates/sec
+Iter:16/100, MeanErr=105.959554(-4.47%), 28.32M WeightUpdates/sec
+Iter:17/100, MeanErr=105.417626(-0.51%), 36.26M WeightUpdates/sec
+Iter:18/100, MeanErr=101.722564(-3.51%), 34.58M WeightUpdates/sec
+Iter:19/100, MeanErr=104.439772(2.67%), 32.85M WeightUpdates/sec
+Iter:20/100, MeanErr=103.860748(-0.55%), 34.18M WeightUpdates/sec
+Iter:21/100, MeanErr=98.501875(-5.16%), 37.45M WeightUpdates/sec
+Iter:22/100, MeanErr=105.877514(7.49%), 32.58M WeightUpdates/sec
+Iter:23/100, MeanErr=105.192747(-0.65%), 30.87M WeightUpdates/sec
+Iter:24/100, MeanErr=101.231016(-3.77%), 31.32M WeightUpdates/sec
+Iter:25/100, MeanErr=104.191897(2.92%), 31.75M WeightUpdates/sec
+Iter:26/100, MeanErr=96.809382(-7.09%), 34.52M WeightUpdates/sec
+Iter:27/100, MeanErr=102.712610(6.10%), 34.55M WeightUpdates/sec
+Iter:28/100, MeanErr=100.143548(-2.50%), 34.18M WeightUpdates/sec
+Iter:29/100, MeanErr=102.151606(2.01%), 37.99M WeightUpdates/sec
+Iter:30/100, MeanErr=99.446707(-2.65%), 32.97M WeightUpdates/sec
+Iter:31/100, MeanErr=99.512111(0.07%), 32.42M WeightUpdates/sec
+Iter:32/100, MeanErr=90.989352(-8.56%), 33.56M WeightUpdates/sec
+Iter:33/100, MeanErr=100.555054(10.51%), 34.77M WeightUpdates/sec
+Iter:34/100, MeanErr=94.510907(-6.01%), 36.47M WeightUpdates/sec
+Iter:35/100, MeanErr=98.095334(3.79%), 34.05M WeightUpdates/sec
+Iter:36/100, MeanErr=87.772617(-10.52%), 33.69M WeightUpdates/sec
+Iter:37/100, MeanErr=100.431796(14.42%), 37.36M WeightUpdates/sec
+Iter:38/100, MeanErr=98.025471(-2.40%), 35.40M WeightUpdates/sec
+Iter:39/100, MeanErr=93.616667(-4.50%), 31.95M WeightUpdates/sec
+Iter:40/100, MeanErr=95.567692(2.08%), 35.12M WeightUpdates/sec
+Iter:41/100, MeanErr=93.324832(-2.35%), 35.57M WeightUpdates/sec
+Iter:42/100, MeanErr=88.208258(-5.48%), 32.75M WeightUpdates/sec
+Iter:43/100, MeanErr=94.455553(7.08%), 34.15M WeightUpdates/sec
+Iter:44/100, MeanErr=90.753527(-3.92%), 34.71M WeightUpdates/sec
+Iter:45/100, MeanErr=93.307899(2.81%), 34.88M WeightUpdates/sec
+Iter:46/100, MeanErr=93.747801(0.47%), 32.32M WeightUpdates/sec
+Iter:47/100, MeanErr=93.289460(-0.49%), 32.85M WeightUpdates/sec
+Iter:48/100, MeanErr=87.644454(-6.05%), 34.13M WeightUpdates/sec
+Iter:49/100, MeanErr=88.007132(0.41%), 33.24M WeightUpdates/sec
+Iter:50/100, MeanErr=92.459351(5.06%), 5.18M WeightUpdates/sec
+Iter:51/100, MeanErr=89.934175(-2.73%), 4.39M WeightUpdates/sec
+Iter:52/100, MeanErr=90.304940(0.41%), 28.14M WeightUpdates/sec
+Iter:53/100, MeanErr=83.077270(-8.00%), 31.75M WeightUpdates/sec
+Iter:54/100, MeanErr=91.006037(9.54%), 26.63M WeightUpdates/sec
+Iter:55/100, MeanErr=87.371337(-3.99%), 27.79M WeightUpdates/sec
+Iter:56/100, MeanErr=86.584348(-0.90%), 32.21M WeightUpdates/sec
+Iter:57/100, MeanErr=88.972126(2.76%), 33.21M WeightUpdates/sec
+Iter:58/100, MeanErr=86.331117(-2.97%), 35.23M WeightUpdates/sec
+Iter:59/100, MeanErr=87.222200(1.03%), 33.26M WeightUpdates/sec
+Iter:60/100, MeanErr=86.409502(-0.93%), 32.32M WeightUpdates/sec
+Iter:61/100, MeanErr=85.757669(-0.75%), 37.14M WeightUpdates/sec
+Iter:62/100, MeanErr=86.520757(0.89%), 35.89M WeightUpdates/sec
+Iter:63/100, MeanErr=83.760556(-3.19%), 14.41M WeightUpdates/sec
+Iter:64/100, MeanErr=86.364208(3.11%), 31.08M WeightUpdates/sec
+Iter:65/100, MeanErr=83.941776(-2.80%), 32.65M WeightUpdates/sec
+Iter:66/100, MeanErr=84.440861(0.59%), 25.81M WeightUpdates/sec
+Iter:67/100, MeanErr=81.211987(-3.82%), 31.00M WeightUpdates/sec
+Iter:68/100, MeanErr=83.414775(2.71%), 34.60M WeightUpdates/sec
+Iter:69/100, MeanErr=78.628970(-5.74%), 32.77M WeightUpdates/sec
+Iter:70/100, MeanErr=78.758947(0.17%), 35.51M WeightUpdates/sec
+Iter:71/100, MeanErr=80.565879(2.29%), 33.41M WeightUpdates/sec
+Iter:72/100, MeanErr=79.998539(-0.70%), 34.74M WeightUpdates/sec
+Iter:73/100, MeanErr=80.395648(0.50%), 36.38M WeightUpdates/sec
+Iter:74/100, MeanErr=78.498790(-2.36%), 24.73M WeightUpdates/sec
+Iter:75/100, MeanErr=79.603451(1.41%), 10.18M WeightUpdates/sec
+Iter:76/100, MeanErr=80.082897(0.60%), 26.79M WeightUpdates/sec
+Iter:77/100, MeanErr=78.035992(-2.56%), 25.34M WeightUpdates/sec
+Iter:78/100, MeanErr=74.663794(-4.32%), 29.66M WeightUpdates/sec
+Iter:79/100, MeanErr=77.159675(3.34%), 32.99M WeightUpdates/sec
+Iter:80/100, MeanErr=76.891332(-0.35%), 36.47M WeightUpdates/sec
+Iter:81/100, MeanErr=77.547883(0.85%), 35.23M WeightUpdates/sec
+Iter:82/100, MeanErr=75.253815(-2.96%), 34.05M WeightUpdates/sec
+Iter:83/100, MeanErr=72.597325(-3.53%), 33.09M WeightUpdates/sec
+Iter:84/100, MeanErr=77.191398(6.33%), 31.06M WeightUpdates/sec
+Iter:85/100, MeanErr=75.357856(-2.38%), 36.68M WeightUpdates/sec
+Iter:86/100, MeanErr=75.371998(0.02%), 32.94M WeightUpdates/sec
+Iter:87/100, MeanErr=73.502589(-2.48%), 12.62M WeightUpdates/sec
+Iter:88/100, MeanErr=70.027318(-4.73%), 30.81M WeightUpdates/sec
+Iter:89/100, MeanErr=74.921495(6.99%), 29.64M WeightUpdates/sec
+Iter:90/100, MeanErr=72.224062(-3.60%), 24.50M WeightUpdates/sec
+Iter:91/100, MeanErr=69.426291(-3.87%), 21.87M WeightUpdates/sec
+Iter:92/100, MeanErr=72.133984(3.90%), 28.29M WeightUpdates/sec
+Iter:93/100, MeanErr=71.271876(-1.20%), 20.05M WeightUpdates/sec
+Iter:94/100, MeanErr=71.023653(-0.35%), 28.70M WeightUpdates/sec
+Iter:95/100, MeanErr=67.928765(-4.36%), 32.80M WeightUpdates/sec
+Iter:96/100, MeanErr=68.846256(1.35%), 35.18M WeightUpdates/sec
+Iter:97/100, MeanErr=68.488290(-0.52%), 30.59M WeightUpdates/sec
+Iter:98/100, MeanErr=67.395029(-1.60%), 26.66M WeightUpdates/sec
+Iter:99/100, MeanErr=68.411513(1.51%), 12.16M WeightUpdates/sec
+Iter:100/100, MeanErr=67.952709(-0.67%), 30.20M WeightUpdates/sec
 Done!
-Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Estimated Post-training MeanError = 86.662922
+Estimated Post-training MeanError = 61.751150
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.3825717
-Elapsed time: 00:00:00.0278796
+Elapsed time: 00:00:00.1785694
+Elapsed time: 00:00:00.0150234
 Beginning processing data.
 Rows Read: 8, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0994426
+Elapsed time: 00:00:00.0648070
 Finished writing 8 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre14776810.xdf File will be overwritten if it exists.
+Data will be written to C:\Users\xavie\AppData\Local\Temp\rre6776810.xdf File will be overwritten if it exists.
 
 Rows Processed: 5 
    rating      Score
-0    43.0  63.270035
-1    63.0  67.431671
-2    63.0  66.522995
-3    64.0  68.888336
-4    66.0  71.331184
+0    43.0  56.830418
+1    71.0  67.153664
+2    66.0  68.607536
+3    82.0  67.106064
+4    72.0  70.539070
 ```
 
+
+
+### optimizers
+
+* [*adadelta_optimizer*: Adaptive learing rate method](adadelta_optimizer.md) 
+
+* [*sgd_optimizer*: Stochastic Gradient Descent](sgd_optimizer.md) 
+
+
+### math
+
+* [*avx_math*](avx_math.md) 
+
+* [*clr_math*](clr_math.md) 
+
+* [*gpu_math*](gpu_math.md) 
+
+* [*mkl_math*](mkl_math.md) 
+
+* [*sse_math*](sse_math.md) 

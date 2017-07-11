@@ -4,9 +4,9 @@
 title: "Fast Forest" 
 description: "Machine Learning Fast Forest" 
 keywords: "models, classification, regression" 
-author: "HeidiSteen" 
-manager: "" 
-ms.date: "" 
+author: "bradsev" 
+manager: "jhubbard" 
+ms.date: "07/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -15,7 +15,7 @@ ms.assetid: ""
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
-ms.devlang: "" 
+ms.devlang: "Python" 
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-## ``rx_fast_forest``: Random Forest
+## *rx_fast_forest*: Random Forest
 
 
 *Applies to:* SQL Server 2017, Machine Learning Services 9.3
@@ -68,7 +68,7 @@ Decision trees have several advantages:
 
 Fast forest regression is a random forest and quantile regression forest
 implementation using the regression tree learner in
-[``rx_fast_trees``](rx_fast_trees.md).
+[`rx_fast_trees`](rx_fast_trees.md).
 The model consists of an ensemble of decision trees. Each tree in a decision
 forest outputs a Gaussian distribution by way of prediction. An aggregation
 is performed over the ensemble of trees to find a Gaussian distribution
@@ -76,10 +76,7 @@ closest to the combined distribution for all trees in the model.
 
 This decision forest classifier consists of an ensemble of decision trees.
 Generally, ensemble models provide better coverage and accuracy than single
-decision trees. Each tree in a decision forest outputs a Gaussian distribution
-by way of prediction. An aggregation is performed over the ensemble of trees
-to find a Gaussian distribution closest to the combined distribution
-for all trees in the model.
+decision trees. Each tree in a decision forest outputs a Gaussian distribution.
 
 
 ### Arguments
@@ -87,9 +84,9 @@ for all trees in the model.
 
 ##### formula
 
-The formula as described in ``rx_formula``.
-Interaction terms and ``F()`` are not currently supported in the
-.
+The formula as described in [revoscalepy.rx_formula](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/rx_formula).
+Interaction terms and `F()` are not currently supported in the
+[microsoftml](https://docs.microsoft.com/en-us/r-server/r/concept-what-is-the-microsoftml-package).
 
 
 ##### data
@@ -102,9 +99,9 @@ A data source object or a character string specifying a
 
 A character string denoting Fast Tree type:
 
-* ``"binary"`` for the default Fast Tree Binary Classification or 
+* `"binary"` for the default Fast Tree Binary Classification or 
 
-* ``"regression"`` for Fast Tree Regression. 
+* `"regression"` for Fast Tree Regression. 
 
 
 ##### num_trees
@@ -180,11 +177,11 @@ Specifies the random seed. The default value is *None*.
 
 ##### ml_transforms
 
-Specifies a list of microsoftml transforms to be
+Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
-to be performed. See [``featurize_text``](featurize_text.md),
-[``categorical``](categorical.md),
-and [``categorical_hash``](categorical_hash.md),
+to be performed. See [`featurize_text`](featurize_text.md),
+[`categorical`](categorical.md),
+and [`categorical_hash`](categorical_hash.md),
 for transformations that are supported.
 These transformations are performed after any specified Python transformations.
 The default value is *None*.
@@ -193,7 +190,7 @@ The default value is *None*.
 ##### ml_transform_vars
 
 Specifies a character vector of variable names
-to be used in ``ml_transforms`` or *None* if none are to be used.
+to be used in `ml_transforms` or *None* if none are to be used.
 The default value is *None*.
 
 
@@ -202,15 +199,16 @@ The default value is *None*.
 NOT SUPPORTED. Specifies the rows (observations) from the data set that
 are to be used by the model with the name of a logical variable from the
 data set (in quotes) or with a logical expression using variables in the
-data set. For example, ``row_selection = "old"`` will only use
-observations in which the value of the variable ``old`` is ``True``.
-``row_selection = (age > 20) & (age < 65) & (log(income) > 10)`` only uses
-observations in which the value of the ``age`` variable is between
-20 and 65 and the value of the ``log`` of the ``income`` variable is
-greater than 10. The row selection is performed after processing any data
-transformations (see the arguments ``transforms`` or
-``transform_function``). As with all expressions, ``row_selection`` can be
-defined outside of the function call using the ``expression``
+data set. For example:
+
+* `row_selection = "old"` will only use observations in which the value of the variable `old` is `True`. 
+
+* `row_selection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. 
+
+The row selection is performed after processing any data
+transformations (see the arguments `transforms` or
+`transform_function`). As with all expressions, `row_selection` can be
+defined outside of the function call using the `expression`
 function.
 
 
@@ -218,15 +216,15 @@ function.
 
 NOT SUPPORTED. An expression of the form  that represents the first round
 of variable transformations. As with
-all expressions, ``transforms`` (or ``row_selection``) can be defined
-outside of the function call using the ``expression`` function.
+all expressions, `transforms` (or `row_selection`) can be defined
+outside of the function call using the `expression` function.
 
 
 ##### transform_objects
 
 NOT SUPPORTED. A named list that contains objects that can be
-referenced by ``transforms``, ``transform_function``, and
-``row_selection``.
+referenced by `transforms`, `transform_function`, and
+`row_selection`.
 
 
 ##### transform_function
@@ -243,21 +241,21 @@ the transformation function.
 ##### transform_packages
 
 NOT SUPPORTED. A character vector specifying additional Python packages
-(outside of those specified in ``RxOptions.get_option("transform_packages")``) to
+(outside of those specified in `RxOptions.get_option("transform_packages")`) to
 be made available and preloaded for use in variable transformation functions.
-For exmple, those explicitly defined in  functions via
-their ``transforms`` and ``transform_function`` arguments or those defined
-implicitly via their ``formula`` or ``row_selection`` arguments.  The
-``transform_packages`` argument may also be *None*, indicating that
-no packages outside ``RxOptions.get_option("transform_packages")`` are preloaded.
+For example, those explicitly defined in [revoscalepy](https://docs.microsoft.com/en-us/sql/advanced-analytics/python/what-is-revoscalepy) functions via
+their `transforms` and `transform_function` arguments or those defined
+implicitly via their `formula` or `row_selection` arguments.  The
+`transform_packages` argument may also be *None*, indicating that
+no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 
 
 ##### transform_environment
 
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
-If ``transform_environment = None``, a new “hash” environment with parent
-``baseenv`` is used instead.
+If `transform_environment = None`, a new “hash” environment with parent
+[revoscalepy.baseenv](https://docs.microsoft.com/en-us/r-server/r-reference/revoscalpy/baseenv) is used instead.
 
 
 ##### blocks_per_read
@@ -271,27 +269,27 @@ of data read from the data source.
 An integer value that specifies the level of reporting
 on the row processing progress:
 
-* ``0``: no progress is reported. 
+* `0`: no progress is reported. 
 
-* ``1``: the number of processed rows is printed and updated. 
+* `1`: the number of processed rows is printed and updated. 
 
-* ``2``: rows processed and timings are reported. 
+* `2`: rows processed and timings are reported. 
 
-* ``3``: rows processed and all timings are reported. 
+* `3`: rows processed and all timings are reported. 
 
 
 ##### verbose
 
 An integer value that specifies the amount of output wanted.
-If ``0``, no verbose output is printed during calculations. Integer
-values from ``1`` to ``4`` provide increasing amounts of information.
+If `0`, no verbose output is printed during calculations. Integer
+values from `1` to `4` provide increasing amounts of information.
 
 
 ##### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid ``RxComputeContext``.
-Currently local and ``RxInSqlServer`` compute contexts
+specified with a valid `RxComputeContext`.
+Currently local and `RxInSqlServer` compute contexts
 are supported.
 
 
@@ -302,7 +300,7 @@ NOT SUPPORTED. Control parameters for ensembling.
 
 ### Returns
 
-A [``FastForest``](learners_object.md) object with the trained model.
+A [`FastForest`](learners_object.md) object with the trained model.
 
 
 ### Note
@@ -313,17 +311,17 @@ memory.
 
 ### See also
 
-[``rx_fast_trees``](rx_fast_trees.md),
-[``rx_predict``](rx_predict.md)
+[`rx_fast_trees`](rx_fast_trees.md),
+[`rx_predict`](rx_predict.md)
 
 
 ### References
 
-[Wikipedia: Random forest](http://en.wikipedia.org/wiki/Random_forest.md)
+[Wikipedia: Random forest](http://en.wikipedia.org/wiki/Random_forest)
 
-[Quantile regression forest](http://jmlr.org/papers/volume7/meinshausen06a/meinshausen06a.pdf.md)
+[Quantile regression forest](http://jmlr.org/papers/volume7/meinshausen06a/meinshausen06a.pdf)
 
-[From Stumps to Trees to Forests](https://blogs.technet.microsoft.com/machinelearning/2014/09/10/from-stumps-to-trees-to-forests/.md)
+[From Stumps to Trees to Forests](https://blogs.technet.microsoft.com/machinelearning/2014/09/10/from-stumps-to-trees-to-forests/)
 
 
 ### Example
@@ -379,23 +377,23 @@ Binning and forming Feature objects
 Reserved memory for tree learner: 7176 bytes
 Starting to train ...
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.2957124
-Elapsed time: 00:00:00.0586474
+Elapsed time: 00:00:00.2402626
+Elapsed time: 00:00:00.0445115
 Beginning processing data.
-Rows Read: 62, Read Time: 0.001, Transform Time: 0
+Rows Read: 62, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1114673
+Elapsed time: 00:00:00.0684475
 Finished writing 62 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre1477602.xdf File will be overwritten if it exists.
+Data will be written to C:\Users\xavie\AppData\Local\Temp\rre677602.xdf File will be overwritten if it exists.
 
 Rows Processed: 5 
-  isCase PredictedLabel     Score  Probability
-0  False          False -5.007770     0.118877
-1  False          False -7.616487     0.045365
-2  False          False -5.510193     0.099385
-3   True          False -5.326499     0.106158
-4   True          False -4.900945     0.123426
+  isCase PredictedLabel      Score  Probability
+0  False          False -14.341213     0.003216
+1   True          False -10.374554     0.015522
+2  False          False  -5.525540     0.098837
+3  False          False  -7.565562     0.046255
+4  False          False  -0.530725     0.447126
 ```
 
 
@@ -458,25 +456,25 @@ Changing data from row-wise to column-wise
 Beginning processing data.
 Rows Read: 87, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: Skipped 5 instances with missing features during training
-Processed 82 instances
+Warning: Skipped 4 instances with missing features during training
+Processed 83 instances
 Binning and forming Feature objects
-Reserved memory for tree learner: 21684 bytes
+Reserved memory for tree learner: 22308 bytes
 Starting to train ...
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1394465
-Elapsed time: 00:00:00.0327990
+Elapsed time: 00:00:00.1052124
+Elapsed time: 00:00:00.0210603
 Beginning processing data.
-Rows Read: 29, Read Time: 0, Transform Time: 0
+Rows Read: 29, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0862910
+Elapsed time: 00:00:00.0631821
 Finished writing 29 rows.
 Writing completed.
    Solar_R  Wind  Temp      Score
-0    193.0   6.9    70  28.145973
-1     44.0   9.7    62  16.289228
-2    149.0  12.6    74  18.734032
-3     13.0  12.0    67  16.196667
-4     48.0  14.3    80  34.342342
+0     36.0  14.3    72  13.254936
+1    238.0   6.3    77  24.971542
+2    259.0   9.7    73  22.683887
+3     71.0  10.3    77  13.646682
+4    320.0  16.6    73  22.557140
 ```
 
