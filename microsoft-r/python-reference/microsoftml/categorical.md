@@ -6,7 +6,7 @@ description: "Categorical transform that can be performed on data before trainin
 keywords: "transform, category" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/11/2017" 
+ms.date: "07/12/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,13 +24,13 @@ ms.custom: ""
  
 ---
 
-## *categorical*: Converts a text column into categories
+# *microsoftml.categorical*: Converts a text column into categories
 
 
-*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+**Applies to: SQL Server 2017, Machine Learning Services 9.3**
 
 
-### Usage
+## Usage
 
 
 
@@ -41,13 +41,13 @@ microsoftml.categorical(cols: [<class ‘str’>, <class ‘dict’>, <class ‘
 
 
 
-### Description
+## Description
 
 Categorical transform that can be performed on data before
 training a model.
 
 
-### Details
+## Details
 
 The `categorical` transform passes through a data set, operating
 on text columns, to build a dictionary of categories. For each row,
@@ -61,16 +61,16 @@ dictionary for each column that it is applied to.
 `categorical` is not currently supported to handle factor data.
 
 
-### Arguments
+## Arguments
 
 
-##### cols
+### cols
 
 A character string or list of variable names to transform. If
 `dict`, the keys represent the names of new variables to be created.
 
 
-##### output_kind
+### output_kind
 
 A character string that specifies the kind of output kind.
 
@@ -85,18 +85,18 @@ A character string that specifies the kind of output kind.
 The default value is `"Ind"`.
 
 
-##### max_num_terms
+### max_num_terms
 
 An integer that specifies the maximum number of
 categories to include in the dictionary. The default value is 1000000.
 
 
-##### terms
+### terms
 
 Optional character vector of terms or categories.
 
 
-##### sort
+### sort
 
 A character string that specifies the sorting criteria.
 
@@ -105,27 +105,27 @@ A character string that specifies the sorting criteria.
 * `"Value"`: Sort categories by values. 
 
 
-##### text_key_values
+### text_key_values
 
 Whether key value metadata should be text, regardless of the actual input type.
 
 
-##### kargs
+### kargs
 
 Additional arguments sent to compute engine.
 
 
-### Returns
+## Returns
 
 An object defining the transform.
 
 
-### See also
+## See also
 
 [`categorical_hash`](categorical_hash.md)
 
 
-### Example
+## Example
 
 
 
@@ -175,7 +175,7 @@ Output:
 
 ```
 Beginning processing data.
-Rows Read: 25, Read Time: 0.001, Transform Time: 0
+Rows Read: 25, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Not adding a normalizer.
 Beginning processing data.
@@ -192,13 +192,13 @@ improvement criterion: Mean Improvement
 Warning: Premature convergence occurred. The OptimizationTolerance may be set too small. ro equals zero. Is your function linear?
 L1 regularization selected 3 of 20 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.0412306
-Elapsed time: 00:00:00.1701984
+Elapsed time: 00:00:01.2469083
+Elapsed time: 00:00:00.1728038
 OrderedDict([('(Bias)', 0.2132386565208435), ('I hate it', -0.7938994765281677), ('I love it', 0.19674676656723022)])
 Beginning processing data.
 Rows Read: 10, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1450484
+Elapsed time: 00:00:00.1468210
 Finished writing 10 rows.
 Writing completed.
            review PredictedLabel     Score  Probability

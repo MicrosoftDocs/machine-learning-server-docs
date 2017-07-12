@@ -6,7 +6,7 @@ description: "Combines several columns into a single vector-valued column."
 keywords: "transform, schema" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/11/2017" 
+ms.date: "07/12/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,13 +24,13 @@ ms.custom: ""
  
 ---
 
-## *concat*: Concatenates multiple columns into a single vector
+# *microsoftml.concat*: Concatenates multiple columns into a single vector
 
 
-*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+**Applies to: SQL Server 2017, Machine Learning Services 9.3**
 
 
-### Usage
+## Usage
 
 
 
@@ -41,12 +41,12 @@ microsoftml.concat(cols: [<class ‘dict’>, <class ‘list’>], **kargs)
 
 
 
-### Description
+## Description
 
 Combines several columns into a single vector-valued column.
 
 
-### Details
+## Details
 
 `concat` creates a single vector-valued column from multiple
 columns. It can be performed on data before training a model. The concatenation
@@ -54,10 +54,10 @@ can significantly speed up the processing of data when the number of columns
 is as large as hundreds to thousands.
 
 
-### Arguments
+## Arguments
 
 
-##### cols
+### cols
 
 A character dict or list of variable names to transform. If
 `dict`, the keys represent the names of new variables to be created.
@@ -70,23 +70,23 @@ and also columns InNameC and InNameD into column OutName2, use the dict:
 dict(OutName1 = [InNameA, InNameB], outName2 = [InNameC, InNameD])
 
 
-##### kargs
+### kargs
 
 Additional arguments sent to the compute engine.
 
 
-### Returns
+## Returns
 
 An object defining the concatenation transform.
 
 
-### See also
+## See also
 
 [`drop_columns`](drop_columns.md),
 [`select_columns`](select_columns.md).
 
 
-### Example
+## Example
 
 
 
@@ -158,22 +158,22 @@ LBFGS multi-threading will attempt to load dataset into memory. In case of out-o
 Beginning optimization
 num vars: 15
 improvement criterion: Mean Improvement
-L1 regularization selected 11 of 15 weights.
+L1 regularization selected 9 of 15 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.2855185
-Elapsed time: 00:00:00.0383873
-OrderedDict([('0+(Bias)', 2.2455461025238037), ('1+(Bias)', 0.25067681074142456), ('2+(Bias)', -2.4962286949157715), ('0+Petal_Width', -2.8705310821533203), ('0+Petal_Length', -2.5397212505340576), ('0+Sepal_Width', 0.15964530408382416), ('0+Sepal_Length', -0.0009276362834498286), ('1+Sepal_Width', -0.22585509717464447), ('1+Petal_Length', 0.09019631147384644), ('2+Petal_Width', 2.6425082683563232), ('2+Petal_Length', 1.4481079578399658)])
+Elapsed time: 00:00:00.2954673
+Elapsed time: 00:00:00.0281821
+OrderedDict([('0+(Bias)', 1.9774837493896484), ('1+(Bias)', 0.5373485684394836), ('2+(Bias)', -2.5148351192474365), ('0+Petal_Width', -2.756577491760254), ('0+Petal_Length', -2.4635348320007324), ('0+Sepal_Width', 0.3193536102771759), ('1+Sepal_Width', -0.5068873167037964), ('2+Petal_Width', 2.651028633117676), ('2+Petal_Length', 1.5632216930389404)])
 Beginning processing data.
 Rows Read: 38, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1074682
+Elapsed time: 00:00:00.0988811
 Finished writing 38 rows.
 Writing completed.
     Score.0   Score.1   Score.2
-0  0.367040  0.452903  0.180057
-1  0.038351  0.353085  0.608563
-2  0.035455  0.321195  0.643350
-3  0.287874  0.477909  0.234217
-4  0.342016  0.467583  0.190401
+0  0.783630  0.194779  0.021591
+1  0.018291  0.246632  0.735077
+2  0.043484  0.340617  0.615899
+3  0.293035  0.499265  0.207701
+4  0.024589  0.287591  0.687820
 ```
 

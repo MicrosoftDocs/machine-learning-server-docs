@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "custom" 
-description: "Remover with specified by user list of stopwords." 
-keywords: "stop-words" 
+title: "clr_math" 
+description: "Default .NET math." 
+keywords: "neural network, math, clr" 
 author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "07/12/2017" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# *microsoftml.custom*: Removes custom stop words
+# *microsoftml.clr_math*: Options for *rx_neural_network*
 
 
 **Applies to: SQL Server 2017, Machine Learning Services 9.3**
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.custom(stopword: list = None)
+microsoftml.clr_math()
 ```
 
 
@@ -43,12 +43,12 @@ microsoftml.custom(stopword: list = None)
 
 ## Description
 
-Remover with specified by user list of stopwords.
+Default .NET math.
 
 
-## Arguments
+## See also
 
-
-### stopword
-
-List of stopwords (settings).
+[`avx_math`](avx_math.md),
+[`gpu_math`](gpu_math.md),
+[`mkl_math`](mkl_math.md),
+[`sse_math`](sse_math.md)

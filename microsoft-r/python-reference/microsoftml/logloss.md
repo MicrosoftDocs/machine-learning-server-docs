@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "custom" 
-description: "Remover with specified by user list of stopwords." 
-keywords: "stop-words" 
+title: "log_loss" 
+description: "Log loss." 
+keywords: "loss, log" 
 author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "07/12/2017" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# *microsoftml.custom*: Removes custom stop words
+# *microsoftml.log_loss*: Log loss function, options for *rx_fast_linear*
 
 
 **Applies to: SQL Server 2017, Machine Learning Services 9.3**
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.custom(stopword: list = None)
+microsoftml.log_loss()
 ```
 
 
@@ -43,12 +43,11 @@ microsoftml.custom(stopword: list = None)
 
 ## Description
 
-Remover with specified by user list of stopwords.
+Log loss.
 
 
-## Arguments
+## See also
 
-
-### stopword
-
-List of stopwords (settings).
+[`hinge_loss`](hinge_loss.md),
+[`smoothed_hinge_loss`](smoothed_hinge_loss.md),
+[`squared_loss`](squared_loss.md)

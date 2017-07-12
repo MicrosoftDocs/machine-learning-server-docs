@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "custom" 
-description: "Remover with specified by user list of stopwords." 
-keywords: "stop-words" 
+title: "sse_math" 
+description: "Implementation accelerated with SSE instructions." 
+keywords: "neural network, math, sse" 
 author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "07/12/2017" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# *microsoftml.custom*: Removes custom stop words
+# *microsoftml.sse_math*
 
 
 **Applies to: SQL Server 2017, Machine Learning Services 9.3**
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.custom(stopword: list = None)
+microsoftml.sse_math()
 ```
 
 
@@ -43,12 +43,12 @@ microsoftml.custom(stopword: list = None)
 
 ## Description
 
-Remover with specified by user list of stopwords.
+Implementation accelerated with SSE instructions.
 
 
-## Arguments
+## See also
 
-
-### stopword
-
-List of stopwords (settings).
+[`avx_math`](avx_math.md),
+[`clr_math`](clr_math.md),
+[`gpu_math`](gpu_math.md),
+[`mkl_math`](mkl_math.md)

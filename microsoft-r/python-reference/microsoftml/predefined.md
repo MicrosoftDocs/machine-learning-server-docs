@@ -6,7 +6,7 @@ description: "Remover with predefined list of stop words."
 keywords: "stop-words" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/11/2017" 
+ms.date: "07/12/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,13 +24,13 @@ ms.custom: ""
  
 ---
 
-## *predefined*: Removes stop words
+# *microsoftml.predefined*: Removes stop words
 
 
-*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+**Applies to: SQL Server 2017, Machine Learning Services 9.3**
 
 
-### Usage
+## Usage
 
 
 
@@ -41,6 +41,6 @@ microsoftml.predefined()
 
 
 
-### Description
+## Description
 
 Remover with predefined list of stop words.

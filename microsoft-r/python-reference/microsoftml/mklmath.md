@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "custom" 
-description: "Remover with specified by user list of stopwords." 
-keywords: "stop-words" 
+title: "mkl_math" 
+description: "Intel MKL implementation." 
+keywords: "neural network, math, mkl" 
 author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "07/12/2017" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# *microsoftml.custom*: Removes custom stop words
+# *microsoftml.mkl_math*: Options for *rx_neural_network*
 
 
 **Applies to: SQL Server 2017, Machine Learning Services 9.3**
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.custom(stopword: list = None)
+microsoftml.mkl_math(max_cache_size: numbers.Real = -1)
 ```
 
 
@@ -43,12 +43,20 @@ microsoftml.custom(stopword: list = None)
 
 ## Description
 
-Remover with specified by user list of stopwords.
+Intel MKL implementation.
 
 
 ## Arguments
 
 
-### stopword
+### max_cache_size
 
-List of stopwords (settings).
+Max cache size (settings).
+
+
+## See also
+
+[`avx_math`](avx_math.md),
+[`clr_math`](clr_math.md),
+[`gpu_math`](gpu_math.md),
+[`sse_math`](sse_math.md)
