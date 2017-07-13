@@ -62,7 +62,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 #### For DeployR for Microsoft R Server 8.0.5
 + **On Windows**: 
     1. Launch the DeployR administrator utility script with administrator privileges:
-       ```
+       ```NA
        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
        adminUtilities.bat
        ```       
