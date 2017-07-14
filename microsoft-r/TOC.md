@@ -222,8 +222,11 @@
 ## [Install R Client on Linux](r-client/install-on-linux.md)
 ## [Remote execution with R Server](r/how-to-execute-code-remotely.md)
 
+# [Python Function Reference](python-reference/introducing-python-package-reference.md)
+## [microsoftml for Python](python-reference/microsoftml/index.md)
+## [revoscalepy](python-reference/revoscalepy/index.md)
 
-# [Function Reference](r-reference/introducing-r-server-r-package-reference.md)
+# [R Function Reference](r-reference/introducing-r-server-r-package-reference.md)
 ## [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 ### [categorical](r-reference/microsoftml/categorical.md)
 ### [categoricalHash](r-reference/microsoftml/categoricalhash.md)
