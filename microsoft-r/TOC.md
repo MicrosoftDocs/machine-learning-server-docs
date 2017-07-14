@@ -223,8 +223,8 @@
 ## [Remote execution with R Server](r/how-to-execute-code-remotely.md)
 
 # [Python Function Reference](python-reference/introducing-python-package-reference.md)
-## [microsoftml for Python](python-reference/microsoftml/index.md)
-## [revoscalepy](python-reference/revoscalepy/index.md)
+## [revoscalepy](revoscalepy/revoscalepy-package.md)
+## [microsoftml for Python](microsoftml/microsoftml-package.md)
 
 # [R Function Reference](r-reference/introducing-r-server-r-package-reference.md)
 ## [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)

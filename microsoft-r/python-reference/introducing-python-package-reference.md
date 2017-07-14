@@ -33,8 +33,8 @@ This section contains the reference documentation for two proprietary Python pac
 
 |Package | Description |
 |----|----|
-|[microsoftml](microsoftml/index.md)|A collection of Python functions used for machine learning use cases. |
-|[revoscalepy](revoscalepy/index.md) | Data access, manipulation and transformations, visualization, and analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks. Developers who are familiar with Microsoft R Server and the RevoScaleR package will see notable similarities in the functions provided in revoscalepy. Conceptually, revoscalepy is the Python equivalent of the Microsoft R RevoScaleR package.|
+|[revoscalepy](revoscalepy/revoscalepy-package.md) | Data access, manipulation and transformations, visualization, and analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks. Developers who are familiar with Microsoft R Server and the RevoScaleR package will see notable similarities in the functions provided in revoscalepy. Conceptually, revoscalepy is the Python equivalent of the Microsoft R RevoScaleR package.|
+|[microsoftml](microsoftml/microsoftml-package.md)|A collection of Python functions used for machine learning use cases. |
 
 ## See also
 
