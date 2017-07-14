@@ -499,5 +499,5 @@ You can supply a vector of lambdas as a quick way to compare various choices:
 	  2.00 1.865339 0.44512940  0.44575060
 	 20.00 1.896779 0.08092296  0.08105322
 
-Notice that for \(\lambda = 0\), the ridge regression is identical to ordinary least squares, while as \(\backslash n\lambda \rightarrow \infty\), the coefficients of x and y approach 0.
 
+For lambda = 0, the ridge regression is identical to ordinary least squares, while as lambda_n approaches infinity, the coefficients of x and y approach 0.
