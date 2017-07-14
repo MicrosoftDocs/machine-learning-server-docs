@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "custom" 
-description: "Remover with specified by user list of stopwords." 
-keywords: "stop-words" 
+title: "adadelta_optimizer" 
+description: "Adaptive learing rate method." 
+keywords: "optimizer, adadelta" 
 author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "07/13/2017" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# *microsoftml.custom*: Removes custom stopwords
+# *microsoftml.adadelta_optimizer*: Adaptive learing rate method
 
 
 **Applies to: SQL Server 2017 RC1**
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.custom(stopword: list = None)
+microsoftml.adadelta_optimizer(decay: numbers.Real = 0.95, cond: numbers.Real = 1e-06)
 ```
 
 
@@ -43,12 +43,22 @@ microsoftml.custom(stopword: list = None)
 
 ## Description
 
-Remover with specified by user list of stopwords.
+Adaptive learing rate method.
 
 
 ## Arguments
 
 
-### stopword
+### decay
 
-List of stopwords (settings).
+Decay rate (settings).
+
+
+### cond
+
+Condition constant (settings).
+
+
+## See also
+
+[`sgd_optimizer`](sgd-optimizer.md)

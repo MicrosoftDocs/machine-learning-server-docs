@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/11/2017" 
+ms.date: "07/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,123 +24,57 @@ ms.custom: ""
  
 ---
 
-## Context
+# revoscalepy Function Library for Python
 
 
-*Applies to:* SQL Server 2017, Machine Learning Services 9.3
+**Applies to: SQL Server 2017 RC1**
 
-* [`RxComputeContext`](RxComputeContext.md) 
-
-* [`rx_set_compute_context`](rx_set_compute_context.md) 
-
-* [`RxInSqlServer`](RxInSqlServer.md) 
-
-* [`rx_exec`](rx_exec.md) 
-
-* [`RxLocalSeq`](RxLocalSeq.md) 
-
-* [`RxRemoteComputeContext`](RxRemoteComputeContext.md) 
-
-* [`RxRemoteJob`](RxRemoteJob.md) 
-
-* [`RxSpark`](RxSpark.md) 
-
-* [`rx_spark_connect`](rx_spark_connect.md) 
-
-* [`rx_spark_disconnect`](rx_spark_disconnect.md) 
-
-* [`rx_get_job_status`](rx_get_job_status.md) 
-
-* [`rx_cancel_job`](rx_cancel_job.md) 
-
-* [`rx_get_job_output`](rx_get_job_output.md) 
-
-* [`rx_cleanup_jobs`](rx_cleanup_jobs.md) 
-
-* [`rx_get_job_info`](rx_get_job_info.md) 
-
-* [`rx_get_job_results`](rx_get_job_results.md) 
-
-* [`rx_get_jobs`](rx_get_jobs.md) 
-
-* [`rx_wait_for_job`](rx_wait_for_job.md) 
-
-* [`RxRemoteJobStatus`](RxRemoteJobStatus.md) 
+* [computecontext](computecontext.md) 
+* [etl](etl.md) 
+* [functions](functions.md) 
+* [utils](utils.md) 
 
 
-## Datasource
+## computecontext
 
-* [`RxDataSource`](RxDataSource.md) 
-
-* [`RxFileSystem`](RxFileSystem.md) 
-
-* [`RxNativeFileSystem`](RxNativeFileSystem.md) 
-
-* [`RxHdfsFileSystem`](RxHdfsFileSystem.md) 
-
-* [`RxOdbcData`](RxOdbcData.md) 
-
-* [`RxSparkData`](RxSparkData.md) 
-
-* [`RxSqlServerData`](RxSqlServerData.md) 
-
-* [`RxTextData`](RxTextData.md) 
-
-* [`RxXdfData`](RxXdfData.md) 
+* [RxComputeContext](computecontext/RxComputeContext.md) 
+* [rx_get_compute_context](computecontext/RxComputeContext-get.md) 
+* [rx_set_compute_context](computecontext/RxComputeContext-set.md) 
+* [RxInSqlServer](computecontext/RxInSqlServer.md) 
+* [rx_exec](computecontext/RxInSqlServer-exec.md) 
+* [rx_cancel_job](computecontext/RxJob-cancel.md) 
+* [rx_get_job_status](computecontext/RxJob-status.md) 
+* [rx_get_jobs](computecontext/RxJob-get.md) 
+* [RxLocalSeq](computecontext/RxLocalSeq.md) 
 
 
 ## etl
 
-* [`rx_data_step`](rx_data_step.md) 
-
-* [`rx_import`](rx_import.md) 
+* [rx_import](etl/RxImport.md) 
 
 
 ## functions
 
-* [`rx_delete_object`](rx_delete_object.md) 
-
-* [`rx_btrees`](rx_btrees.md) 
-
-* [`rx_dtree`](rx_dtree.md) 
-
-* [`rx_dforest`](rx_dforest.md) 
-
-* [`rx_get_info`](rx_get_info.md) 
-
-* [`rx_get_var_info`](rx_get_var_info.md) 
-
-* [`rx_get_var_names`](rx_get_var_names.md) 
-
-* [`rx_lin_mod`](rx_lin_mod.md) 
-
-* [`rx_list_keys`](rx_list_keys.md) 
-
-* [`rx_logit`](rx_logit.md) 
-
-* [`rx_predict`](rx_predict.md) 
-
-* [`rx_predict_default`](rx_predict_default.md) 
-
-* [`rx_predict_rx_dtree`](rx_predict_rx_dtree.md) 
-
-* [`rx_predict_rx_dforest`](rx_predict_rx_dforest.md) 
-
-* [`rx_read_object`](rx_read_object.md) 
-
-* [`rx_serialize_model`](rx_serialize_model.md) 
-
-* [`rx_summary`](rx_summary.md) 
-
-* [`rx_write_object`](rx_write_object.md) 
-
-* [`rx_get_info`](rx_get_info.md) 
-
-* [`rx_get_var_info`](rx_get_var_info.md) 
-
-* [`rx_get_var_names`](rx_get_var_names.md) 
+* [rx_delete_object](functions/RxDeleteObject.md) 
+* [rx_btrees](functions/RxDTree-rx-btrees.md) 
+* [rx_dforest](functions/RxDTree-rx-dforest.md) 
+* [rx_dtree](functions/RxDTree-rx-dtree.md) 
+* [rx_lin_mod](functions/RxLinMod.md) 
+* [rx_list_keys](functions/RxListKeys.md) 
+* [rx_logit](functions/RxLogit.md) 
+* [`rx_predict`: Score using a Microsoft ML Machine Learning model](functions/RxPredict.md) 
+* [rx_predict_default](functions/RxPredict-default.md) 
+* [rx_predict_rx_dforest](functions/RxPredict-dforest.md) 
+* [rx_predict_rx_dtree](functions/RxPredict-dtree.md) 
+* [rx_read_object](functions/RxReadObject.md) 
+* [rx_summary](functions/RxSummary.md) 
+* [rx_write_object](functions/RxWriteObject.md) 
 
 
 ## utils
 
-* [`RxOptions`](RxOptions.md) 
+* [RxOptions](utils/RxOptions.md) 
+
+## See also
+
+ [Python function library help (SQL Server Machine Learning)](./introducing-python-package-reference.md)   

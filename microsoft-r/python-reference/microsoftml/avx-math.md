@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "custom" 
-description: "Remover with specified by user list of stopwords." 
-keywords: "stop-words" 
+title: "avx_math" 
+description: "Implementation accelerated with AVX instructions." 
+keywords: "neural network, math, avx" 
 author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "07/13/2017" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# *microsoftml.custom*: Removes custom stopwords
+# *microsoftml.avx_math*: Acceleration with AVX instructions
 
 
 **Applies to: SQL Server 2017 RC1**
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.custom(stopword: list = None)
+microsoftml.avx_math()
 ```
 
 
@@ -43,12 +43,12 @@ microsoftml.custom(stopword: list = None)
 
 ## Description
 
-Remover with specified by user list of stopwords.
+Implementation accelerated with AVX instructions.
 
 
-## Arguments
+## See also
 
-
-### stopword
-
-List of stopwords (settings).
+[`clr_math`](clr-math.md),
+[`gpu_math`](gpu-math.md),
+[`mkl_math`](mkl-math.md),
+[`sse_math`](sse-math.md)

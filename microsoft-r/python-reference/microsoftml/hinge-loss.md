@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "custom" 
-description: "Remover with specified by user list of stopwords." 
-keywords: "stop-words" 
+title: "hinge_loss" 
+description: "Hinge loss." 
+keywords: "loss, hinge" 
 author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "07/13/2017" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# *microsoftml.custom*: Removes custom stopwords
+# *microsoftml.hinge_loss*: Hinge loss function
 
 
 **Applies to: SQL Server 2017 RC1**
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-microsoftml.custom(stopword: list = None)
+microsoftml.hinge_loss(margin: numbers.Real = 1.0)
 ```
 
 
@@ -43,12 +43,19 @@ microsoftml.custom(stopword: list = None)
 
 ## Description
 
-Remover with specified by user list of stopwords.
+Hinge loss.
 
 
 ## Arguments
 
 
-### stopword
+### margin
 
-List of stopwords (settings).
+Margin value (settings).
+
+
+## See also
+
+[`log_loss`](log-loss.md),
+[`smoothed_hinge_loss`](smoothed-hinge-loss.md),
+[`squared_loss`](squared-loss.md)

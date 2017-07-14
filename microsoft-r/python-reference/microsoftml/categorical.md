@@ -6,7 +6,7 @@ description: "Categorical transform that can be performed on data before trainin
 keywords: "transform, category" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/12/2017" 
+ms.date: "07/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.categorical*: Converts a text column into categories
 
 
-**Applies to: SQL Server 2017, Machine Learning Services 9.3**
+**Applies to: SQL Server 2017 RC1**
 
 
 ## Usage
@@ -122,7 +122,7 @@ An object defining the transform.
 
 ## See also
 
-[`categorical_hash`](categorical_hash.md)
+[`categorical_hash`](categorical-hash.md)
 
 
 ## Example
@@ -192,13 +192,13 @@ improvement criterion: Mean Improvement
 Warning: Premature convergence occurred. The OptimizationTolerance may be set too small. ro equals zero. Is your function linear?
 L1 regularization selected 3 of 20 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.2469083
-Elapsed time: 00:00:00.1728038
+Elapsed time: 00:00:01.0948130
+Elapsed time: 00:00:00.1719949
 OrderedDict([('(Bias)', 0.2132386565208435), ('I hate it', -0.7938994765281677), ('I love it', 0.19674676656723022)])
 Beginning processing data.
 Rows Read: 10, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1468210
+Elapsed time: 00:00:00.1576086
 Finished writing 10 rows.
 Writing completed.
            review PredictedLabel     Score  Probability

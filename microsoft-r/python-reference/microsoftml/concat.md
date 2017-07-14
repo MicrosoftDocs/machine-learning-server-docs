@@ -6,7 +6,7 @@ description: "Combines several columns into a single vector-valued column."
 keywords: "transform, schema" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/12/2017" 
+ms.date: "07/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.concat*: Concatenates multiple columns into a single vector
 
 
-**Applies to: SQL Server 2017, Machine Learning Services 9.3**
+**Applies to: SQL Server 2017 RC1**
 
 
 ## Usage
@@ -82,8 +82,8 @@ An object defining the concatenation transform.
 
 ## See also
 
-[`drop_columns`](drop_columns.md),
-[`select_columns`](select_columns.md).
+[`drop_columns`](drop-columns.md),
+[`select_columns`](select-columns.md).
 
 
 ## Example
@@ -158,22 +158,22 @@ LBFGS multi-threading will attempt to load dataset into memory. In case of out-o
 Beginning optimization
 num vars: 15
 improvement criterion: Mean Improvement
-L1 regularization selected 9 of 15 weights.
+L1 regularization selected 10 of 15 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.2954673
-Elapsed time: 00:00:00.0281821
-OrderedDict([('0+(Bias)', 1.9774837493896484), ('1+(Bias)', 0.5373485684394836), ('2+(Bias)', -2.5148351192474365), ('0+Petal_Width', -2.756577491760254), ('0+Petal_Length', -2.4635348320007324), ('0+Sepal_Width', 0.3193536102771759), ('1+Sepal_Width', -0.5068873167037964), ('2+Petal_Width', 2.651028633117676), ('2+Petal_Length', 1.5632216930389404)])
+Elapsed time: 00:00:00.3257464
+Elapsed time: 00:00:00.0353484
+OrderedDict([('0+(Bias)', 2.2730488777160645), ('1+(Bias)', 0.10420583188533783), ('2+(Bias)', -2.377254009246826), ('0+Petal_Width', -2.8729135990142822), ('0+Petal_Length', -2.530698776245117), ('0+Sepal_Width', 0.189592182636261), ('1+Sepal_Width', -0.18231813609600067), ('1+Petal_Length', 0.08150684088468552), ('2+Petal_Width', 2.451059103012085), ('2+Petal_Length', 1.4465752840042114)])
 Beginning processing data.
 Rows Read: 38, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0988811
+Elapsed time: 00:00:00.1308339
 Finished writing 38 rows.
 Writing completed.
     Score.0   Score.1   Score.2
-0  0.783630  0.194779  0.021591
-1  0.018291  0.246632  0.735077
-2  0.043484  0.340617  0.615899
-3  0.293035  0.499265  0.207701
-4  0.024589  0.287591  0.687820
+0  0.153639  0.423265  0.423096
+1  0.370278  0.424350  0.205372
+2  0.822859  0.152765  0.024376
+3  0.380251  0.414229  0.205520
+4  0.253485  0.437870  0.308645
 ```
 
