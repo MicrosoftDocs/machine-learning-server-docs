@@ -29,12 +29,6 @@ ms.custom: ""
 
 **Applies to: SQL Server 2017 RC1**
 
-* [computecontext](computecontext.md) 
-* [etl](etl.md) 
-* [functions](functions.md) 
-* [utils](utils.md) 
-
-
 ## computecontext
 
 * [RxComputeContext](computecontext/RxComputeContext.md) 
