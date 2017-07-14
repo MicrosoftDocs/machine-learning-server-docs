@@ -37,7 +37,7 @@ Use these functions to set the compute context for python script execution, load
 
 | Function | Description |
 |----------|-------------|
-|[RxInSqlServer](computecontext/RxInSqlServer.md) | Creates a compute context for running RevoScalePy analyses inside Microsoft SQL Server. |
+|[RxInSqlServer](computecontext/RxInSqlServer.md) | Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server. |
 |[RxLocalSeq](computecontext/RxLocalSeq.md) | Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context. |
 
 ## Job functions
@@ -49,7 +49,6 @@ Use these functions to set the compute context for python script execution, load
 |[rx_cleanup_jobs](computecontext/RxJob-clean.md) |  Removes the artifacts for a specific job. |
 |[rx_get_job_status](computecontext/RxJob-status.md) | Obtain distributed computing processing status for the specified job. |
 |[rx_get_jobs](computecontext/RxJob-get.md) | Returns a list of job objects associated with the given compute context and matching the specified parameters. |
-
 |[RxJob class](THIS_IS_MISSING) |  |
 |[rx_get_job_info](THIS_IS_MISSING) |  |
 |[rx_wait_for_job](THIS_IS_MISSING) |  |
@@ -77,7 +76,7 @@ Use these functions to set the compute context for python script execution, load
 
 | Function | Description |
 |----------|-------------|
-|[rx_summary](functions/RxSummary.md)  | Produce univariate summaries of objects in RevoScalePy. |
+|[rx_summary](functions/RxSummary.md)  | Produce univariate summaries of objects in revoscalepy. |
 |[rx_lin_mod](functions/RxLinMod.md)  | Fit linear models on small or large data. |
 |[rx_logit](functions/RxLogit.md)  | Use rx_logit to fit logistic regression models for small or large data. |
 |[rx_dtree](functions/RxDTree-rx-dtree.md)  | Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
