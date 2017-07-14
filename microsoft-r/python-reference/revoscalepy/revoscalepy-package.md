@@ -33,41 +33,54 @@ The **revoscalepy** library is a proprietary Python package from Microsoft for u
 Use these functions to set the compute context for python script execution, load and manipulate data from external data sources, and manage objects. Data visualization and analysis functions are provided for the most common use cases.
 
 
-## Compute Context
+## Compute context
 
-* [RxComputeContext](computecontext/RxComputeContext.md) 
-* [rx_get_compute_context](computecontext/RxComputeContext-get.md) 
-* [rx_set_compute_context](computecontext/RxComputeContext-set.md) 
 * [RxInSqlServer](computecontext/RxInSqlServer.md) 
-* [rx_exec](computecontext/RxInSqlServer-exec.md) 
-* [rx_cancel_job](computecontext/RxJob-cancel.md) 
-* [rx_get_job_status](computecontext/RxJob-status.md) 
-* [rx_get_jobs](computecontext/RxJob-get.md) 
 * [RxLocalSeq](computecontext/RxLocalSeq.md) 
 
+## Job functions
+* [rx_exec](computecontext/RxInSqlServer-exec.md) 
+* [rx_cancel_job](computecontext/RxJob-cancel.md) 
+* [rx_cleanup_jobs](computecontext/RxJob-clean.md) 
+* [rx_get_job_status](computecontext/RxJob-status.md) 
+* [rx_get_jobs](computecontext/RxJob-get.md) 
 
-## ETL
+* [RxJob class](THIS_IS_MISSING)
+* [rx_get_job_info](THIS_IS_MISSING)
+* [rx_wait_for_job](THIS_IS_MISSING)
+* [rx_get_job_output](THIS_IS_MISSING)
+* [rx_get_job_results](THIS_IS_MISSING)
+
+
+## Data sources
+
+* [RxTextData](THIS_IS_MISSING)
+* [RxXdfData](THIS_IS_MISSING)
+* [RxOdbcData](THIS_IS_MISSING)
+* [RxSqlServerData](THIS_IS_MISSING)
+
+## Data manipulation (ETL)
 
 * [rx_import](etl/RxImport.md) 
+* [rx_data_step](THIS_IS_MISSING)
 
+## Analytic functions
 
-## Visualization and Analysis
-
-* [rx_delete_object](functions/RxDeleteObject.md) 
-* [rx_btrees](functions/RxDTree-rx-btrees.md) 
-* [rx_dforest](functions/RxDTree-rx-dforest.md) 
-* [rx_dtree](functions/RxDTree-rx-dtree.md) 
-* [rx_lin_mod](functions/RxLinMod.md) 
-* [rx_list_keys](functions/RxListKeys.md) 
-* [rx_logit](functions/RxLogit.md) 
-* [rx_predict](functions/RxPredict.md) 
-* [rx_predict_default](functions/RxPredict-default.md) 
-* [rx_predict_rx_dforest](functions/RxPredict-dforest.md) 
-* [rx_predict_rx_dtree](functions/RxPredict-dtree.md) 
-* [rx_read_object](functions/RxReadObject.md) 
 * [rx_summary](functions/RxSummary.md) 
-* [rx_write_object](functions/RxWriteObject.md) 
+* [rx_lin_mod](functions/RxLinMod.md) 
+* [rx_logit](functions/RxLogit.md) 
+* [rx_dtree](functions/RxDTree-rx-dtree.md) 
+* [rx_dforest](functions/RxDTree-rx-dforest.md) 
+* [rx_btrees](functions/RxDTree-rx-btrees.md) 
+* [rx_predict](functions/RxPredict.md) 
 
+## Serialization functions
+
+* [rx_serialize_mode](THIS_IS_MISSING) 
+* [rx_read_object](functions/RxReadObject.md)
+* [rx_write_object](functions/RxWriteObject.md)  
+* [rx_delete_object](functions/RxDeleteObject.md) 
+* [rx_list_keys](functions/RxListKeys.md) 
 
 ## Utility
 
