@@ -108,4 +108,4 @@ ms.custom: ""
 
 ## See also
 
- [Python function library help (SQL Server Machine Learning)](../../introducing-python-package-reference.md)   
+ [Python function library help (SQL Server Machine Learning)](../introducing-python-package-reference.md)   
