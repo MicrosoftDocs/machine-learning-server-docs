@@ -35,56 +35,71 @@ Use these functions to set the compute context for python script execution, load
 
 ## Compute context
 
-* [RxInSqlServer](computecontext/RxInSqlServer.md) 
-* [RxLocalSeq](computecontext/RxLocalSeq.md) 
+| Function | Description |
+|----------|-------------|
+|[RxInSqlServer](computecontext/RxInSqlServer.md) | Creates a compute context for running RevoScalePy analyses inside Microsoft SQL Server. |
+|[RxLocalSeq](computecontext/RxLocalSeq.md) | Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context. |
 
 ## Job functions
-* [rx_exec](computecontext/RxInSqlServer-exec.md) 
-* [rx_cancel_job](computecontext/RxJob-cancel.md) 
-* [rx_cleanup_jobs](computecontext/RxJob-clean.md) 
-* [rx_get_job_status](computecontext/RxJob-status.md) 
-* [rx_get_jobs](computecontext/RxJob-get.md) 
 
-* [RxJob class](THIS_IS_MISSING)
-* [rx_get_job_info](THIS_IS_MISSING)
-* [rx_wait_for_job](THIS_IS_MISSING)
-* [rx_get_job_output](THIS_IS_MISSING)
-* [rx_get_job_results](THIS_IS_MISSING)
+| Function | Description |
+|----------|-------------|
+|[rx_exec](computecontext/RxInSqlServer-exec.md) | Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster. |
+|[rx_cancel_job](computecontext/RxJob-cancel.md) | Removes all job-related artifacts from the distributed computing resources, including any job results. |
+|[rx_cleanup_jobs](computecontext/RxJob-clean.md) |  Removes the artifacts for a specific job. |
+|[rx_get_job_status](computecontext/RxJob-status.md) | Obtain distributed computing processing status for the specified job. |
+|[rx_get_jobs](computecontext/RxJob-get.md) | Returns a list of job objects associated with the given compute context and matching the specified parameters. |
+
+|[RxJob class](THIS_IS_MISSING) |  |
+|[rx_get_job_info](THIS_IS_MISSING) |  |
+|[rx_wait_for_job](THIS_IS_MISSING) |  |
+|[rx_get_job_output](THIS_IS_MISSING) |  |
+|[rx_get_job_results](THIS_IS_MISSING) |  |
 
 
 ## Data sources
 
-* [RxTextData](THIS_IS_MISSING)
-* [RxXdfData](THIS_IS_MISSING)
-* [RxOdbcData](THIS_IS_MISSING)
-* [RxSqlServerData](THIS_IS_MISSING)
+| Function | Description |
+|----------|-------------|
+|[RxTextData](THIS_IS_MISSING) |  |
+|[RxXdfData](THIS_IS_MISSING) |  |
+|[RxOdbcData](THIS_IS_MISSING) |  |
+|[RxSqlServerData](THIS_IS_MISSING) |  |
 
 ## Data manipulation (ETL)
 
-* [rx_import](etl/RxImport.md) 
-* [rx_data_step](THIS_IS_MISSING)
+| Function | Description |
+|----------|-------------|
+|[rx_import](etl/RxImport.md) | Import data into an .xdf file or data.frame.|
+|[rx_data_step](THIS_IS_MISSING) | |
 
 ## Analytic functions
 
-* [rx_summary](functions/RxSummary.md) 
-* [rx_lin_mod](functions/RxLinMod.md) 
-* [rx_logit](functions/RxLogit.md) 
-* [rx_dtree](functions/RxDTree-rx-dtree.md) 
-* [rx_dforest](functions/RxDTree-rx-dforest.md) 
-* [rx_btrees](functions/RxDTree-rx-btrees.md) 
-* [rx_predict](functions/RxPredict.md) 
+| Function | Description |
+|----------|-------------|
+|[rx_summary](functions/RxSummary.md)  | Produce univariate summaries of objects in RevoScalePy. |
+|[rx_lin_mod](functions/RxLinMod.md)  | Fit linear models on small or large data. |
+|[rx_logit](functions/RxLogit.md)  | Use rx_logit to fit logistic regression models for small or large data. |
+|[rx_dtree](functions/RxDTree-rx-dtree.md)  | Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
+|[rx_dforest](functions/RxDTree-rx-dforest.md)  | Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
+|[rx_btrees](functions/RxDTree-rx-btrees.md)  | Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
+|[rx_predict](functions/RxPredict.md)  | Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects. |
 
 ## Serialization functions
 
-* [rx_serialize_mode](THIS_IS_MISSING) 
-* [rx_read_object](functions/RxReadObject.md)
-* [rx_write_object](functions/RxWriteObject.md)  
-* [rx_delete_object](functions/RxDeleteObject.md) 
-* [rx_list_keys](functions/RxListKeys.md) 
+| Function | Description |
+|----------|-------------|
+|[rx_serialize_mode](THIS_IS_MISSING)  |  |
+|[rx_read_object](functions/RxReadObject.md) | Retrieves an ODBC data source objects. |
+|[rx_write_object](functions/RxWriteObject.md)   | Stores an ODBC data source object. |
+|[rx_delete_object](functions/RxDeleteObject.md)  | Deletes an object from the ODBC data source. |
+|[rx_list_keys](functions/RxListKeys.md)  | Enumerates all keys or versions for a given key, depending on the parameters. |
 
 ## Utility
 
-* [RxOptions](utils/RxOptions.md) 
+| Function | Description |
+|----------|-------------|
+|[RxOptions](utils/RxOptions.md) | Specify and retrieve options needed for **revoscalepy** computations. |
 
 ## See also
 

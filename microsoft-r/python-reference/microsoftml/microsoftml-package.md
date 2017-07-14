@@ -31,7 +31,7 @@ ms.custom: ""
 
 The **microsoftml** library is a proprietary Python package from Microsoft for use in SQL Server Machine Learning Server (Standalone) and SQL Server Machine Learning Services. Many functions in this library can be used with **revoscalepy** package, which is part of the same release.
 
-Use these functions for building and training models based on machine learning algorithms, and scoring datasets against 
+Use these functions for building and training models based on machine learning algorithms, and scoring datasets against your models.
 
 
 ## Training
