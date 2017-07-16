@@ -29,59 +29,43 @@ ms.custom: ""
 
 **Applies to: SQL Server 2017 RC1**
 
-The **microsoftml** library is a proprietary Python package from Microsoft for use in SQL Server Machine Learning Server (Standalone) and SQL Server Machine Learning Services. Many functions in this library can be used with **revoscalepy** package, which is part of the same release.
+The **microsoftml** library is a proprietary Python package from Microsoft for use in SQL Server Machine Learning Server (Standalone) and SQL Server Machine Learning Services. Many functions in this library can be used with the **revoscalepy** package, included in the same release.
 
-Use these functions for building and training models based on machine learning algorithms, and scoring datasets against your models.
+Use the **microsoftml** Python functions to apply machine learning transforms to data.
 
 
 ## Training
 
 * [*microsoftml.rx_fast_forest*: Random Forest](rx-fast-forest.md) 
 * [*microsoftml.rx_fast_linear*: Linear Model with Stochastic Dual Coordinate Ascent](rx-fast-linear.md) 
-  * [loss functions](rx-fast-linear.md) 
-    * [*microsoftml.hinge_loss*: Hinge loss function](hinge-loss.md) 
-    * [*microsoftml.log_loss*: Log loss function](log-loss.md) 
-    * [*microsoftml.smoothed_hinge_loss*: Smoothed hinge loss function](smoothed-hinge-loss.md) 
-    * [*microsoftml.squared_loss*: Squared loss function](squared-loss.md) 
 * [*microsoftml.rx_fast_trees*: Boosted Trees](rx-fast-trees.md) 
 * [*microsoftml.rx_logistic_regression*: Logistic Regression](rx-logistic-regression.md) 
 * [*microsoftml.rx_neural_network*: Neural Network](rx-neural-network.md) 
-  * [optimizers](rx-neural-network.md) 
-    * [*microsoftml.adadelta_optimizer*: Adaptive learing rate method](adadelta-optimizer.md) 
-    * [*microsoftml.sgd_optimizer*: Stochastic gradient descent](sgd-optimizer.md) 
-  * [math](rx-neural-network.md) 
-    * [*microsoftml.avx_math*: Acceleration with AVX instructions](avx-math.md) 
-    * [*microsoftml.clr_math*: Acceleration with .NET math](clr-math.md) 
-    * [*microsoftml.gpu_math*: Acceleration with NVidia CUDA](gpu-math.md) 
-    * [*microsoftml.mkl_math*: Acceleration with Intel MKL](mkl-math.md) 
-    * [*microsoftml.sse_math*: Acceleration with SSE instructions](sse-math.md) 
 * [*microsoftml.rx_oneclass_svm*: Anomaly Detection](rx-oneclass-svm.md) 
 
 
-# Transformations
+## Transforms
 
-(See [revoscalepy](../revoscalepy/revoscalepy-package.md) instead.)
-
-## Categorical Variable Handling
+### Categorical Variable Handling
 
 * [*microsoftml.categorical*: Converts a text column into categories](categorical.md) 
 * [*microsoftml.categorical_hash*: Hashes and converts a text column into categories](categorical-hash.md) 
 
 
-## Schema Manipulation
+### Schema Manipulation
 
 * [*microsoftml.concat*: Concatenates multiple columns into a single vector](concat.md) 
 * [*microsoftml.drop_columns*: Drops columns from a dataset](drop-columns.md) 
 * [*microsoftml.select_columns*: Retains columns of a dataset](select-columns.md) 
 
 
-## Variable Selection
+### Variable Selection
 
 * [*microsoftml.count_select*: Feature selection based on counts](count-select.md) 
 * [*microsoftml.mutualinformation_select*: Feature selection based on mutual information](mutualinformation-select.md) 
 
 
-## Text Analytics
+### Text Analytics
 
 * [*microsoftml.featurize_text*: Converts text columns into numerical features](featurize-text.md) 
   * [N-grams extractors](featurize-text.md) 
@@ -93,7 +77,7 @@ Use these functions for building and training models based on machine learning a
 * [*microsoftml.get_sentiment*: Sentiment analysis](get-sentiment.md) 
 
 
-## Image Analytics
+### Image Analytics
 
 * [*microsoftml.load_image*: Loads an image](load-image.md) 
 * [*microsoftml.resize_image*: Resizes an Image](resize-image.md) 
@@ -101,12 +85,12 @@ Use these functions for building and training models based on machine learning a
 * [*microsoftml.featurize_image*: Converts an image into features](featurize-image.md) 
 
 
-# Scorers
+### Scorers
 
 * [*microsoftml.rx_predict*: Scores using a Microsoft machine learning model](rx-predict.md) 
 
 
-# Featurizers
+### Featurization
 
 * [*microsoftml.rx_featurize*: Data transformation for data sources](rx-featurize.md) 
 
