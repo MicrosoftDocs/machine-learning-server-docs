@@ -27,7 +27,7 @@ ms.technology:
 
 # RevoScaleR with sparklyr step-by-step examples
 
-Microsoft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server and sparklyr can now be used in tandem within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
+Microsoft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server packages such as RevoScaleR and sparklyr can be used together within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
 
 + [Example 1: sparklyr data and MRS analytics](#example1)
 + [Example 2: MRS data and sparklyr analytics](#example2)
@@ -539,7 +539,6 @@ The ability to use both Microsoft R Server and sparklyr from within one Spark se
 ## Next step
 
 For more background in using Microsoft R Server with Spark, see [Get started with R Server and ScaleR on Spark](how-to-revoscaler-spark.md).
-
 
 ## See also
 
