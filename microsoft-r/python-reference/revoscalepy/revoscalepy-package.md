@@ -49,28 +49,28 @@ Use these functions to set the compute context for python script execution, load
 |[rx_cleanup_jobs](computecontext/RxJob-clean.md) |  Removes the artifacts for a specific job. |
 |[rx_get_job_status](computecontext/RxJob-status.md) | Obtain distributed computing processing status for the specified job. |
 |[rx_get_jobs](computecontext/RxJob-get.md) | Returns a list of job objects associated with the given compute context and matching the specified parameters. |
-|[RxJob class](THIS_IS_MISSING) |  |
-|[rx_get_job_info](THIS_IS_MISSING) |  |
-|[rx_wait_for_job](THIS_IS_MISSING) |  |
-|[rx_get_job_output](THIS_IS_MISSING) |  |
-|[rx_get_job_results](THIS_IS_MISSING) |  |
+|[RxJob class](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
+|[rx_get_job_info](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
+|[rx_wait_for_job](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
+|[rx_get_job_output](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
+|[rx_get_job_results](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
 
 
 ## Data sources
 
 | Function | Description |
 |----------|-------------|
-|[RxTextData](THIS_IS_MISSING) |  |
-|[RxXdfData](THIS_IS_MISSING) |  |
-|[RxOdbcData](THIS_IS_MISSING) |  |
-|[RxSqlServerData](THIS_IS_MISSING) |  |
+|[RxTextData](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
+|[RxXdfData](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
+|[RxOdbcData](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
+|[RxSqlServerData](THIS_IS_MISSING) |  Placeholder - content does not currently exist.|
 
 ## Data manipulation (ETL)
 
 | Function | Description |
 |----------|-------------|
 |[rx_import](etl/RxImport.md) | Import data into an .xdf file or data.frame.|
-|[rx_data_step](THIS_IS_MISSING) | |
+|[rx_data_step](THIS_IS_MISSING) | Placeholder - content does not currently exist.|
 
 ## Analytic functions
 
@@ -88,7 +88,7 @@ Use these functions to set the compute context for python script execution, load
 
 | Function | Description |
 |----------|-------------|
-|[rx_serialize_mode](THIS_IS_MISSING)  |  |
+|[rx_serialize_mode](THIS_IS_MISSING)  |  Placeholder - content does not currently exist.|
 |[rx_read_object](functions/RxReadObject.md) | Retrieves an ODBC data source objects. |
 |[rx_write_object](functions/RxWriteObject.md)   | Stores an ODBC data source object. |
 |[rx_delete_object](functions/RxDeleteObject.md)  | Deletes an object from the ODBC data source. |
