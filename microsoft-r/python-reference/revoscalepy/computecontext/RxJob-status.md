@@ -6,7 +6,7 @@ description: "Obtain distributed computing processing status for the specified j
 keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "07/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -83,8 +83,7 @@ from revoscalepy import RxInSqlServer
 from revoscalepy import rx_exec
 from revoscalepy import RxRemoteJobStatus
 from revoscalepy import rx_get_job_status
-from revoscalepy import rx_get_job_results
-from revoscalepy import rx_get_job_output
+from revoscalepy import rx_wait_for_job
 
 connection_string = 'Driver=SQL Server;Server=.;Database=RevoTestDb;Trusted_Connection=True;'
 
@@ -97,26 +96,23 @@ compute_context = RxInSqlServer(connection_string=connection_string,
 
 def hello_from_sql():
     import time
-
     print('Hello from SQL server')
     time.sleep(3)
-
     return 'We just ran Python code asynchronously on a SQL server!'
 
 job = rx_exec(function=hello_from_sql, compute_context=compute_context)
 
-# Poll until status is FINISHED
+# Poll initial status
 status = rx_get_job_status(job)
-while status != RxRemoteJobStatus.FINISHED:
-    time.sleep(1)
-    status = rx_get_job_status(job)
 
-# Print out what our code printed on sql
-output = rx_get_job_output(job)
-print(output)
+print(status)
 
-# Print out what we returned from SQL
-result = rx_get_job_results(job)
-print(result)
+# Wait for the job to finish or fail whatever the case may be
+rx_wait_for_job(job)
+
+# Poll final status
+status = rx_get_job_status(job)
+
+print(status)
 ```
 

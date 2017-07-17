@@ -6,7 +6,7 @@ description: "Calculate predicted or fitted values for a data set from an rx_dfo
 keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "07/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-revoscalepy.functions.RxPredict.rx_predict_rx_dforest(model_object=None, data: revoscalepy.datasource.RxDataSource.RxDataSource = None, output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, predict_var_names: list = None, write_model_vars: bool = False, extra_vars_to_write: list = None, append: typing.Union[list, str] = ‘none’, overwrite: bool = False, type: typing.Union[list, str] = None, cutoff: list = None, remove_missings: bool = False, compute_residuals: bool = False, residual_type: typing.Union[list, str] = ‘usual’, residual_var_names: list = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 0, xdf_compression_level: int = None, compute_context=None, **kwargs)
+revoscalepy.functions.RxPredict.rx_predict_rx_dforest(model_object=None, data: revoscalepy.datasource.RxDataSource.RxDataSource = None, output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, predict_var_names: list = None, write_model_vars: bool = False, extra_vars_to_write: list = None, append: typing.Union[list, str] = 'none', overwrite: bool = False, type: typing.Union[list, str] = None, cutoff: list = None, remove_missings: bool = False, compute_residuals: bool = False, residual_type: typing.Union[list, str] = 'usual', residual_var_names: list = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 0, xdf_compression_level: int = None, compute_context=None, **kwargs)
 ```
 
 
