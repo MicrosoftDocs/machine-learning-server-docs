@@ -36,7 +36,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 + **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached.
 
-> [!NOTE]
+> [!Important]
 > Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
 <br>
 
