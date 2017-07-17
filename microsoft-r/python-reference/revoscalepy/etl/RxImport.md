@@ -6,7 +6,7 @@ description: "Import data into an ‘.xdf’ file or data.frame."
 keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "07/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -364,5 +364,6 @@ from revoscalepy import rx_import, RxOptions, RxXdfData
 sample_data_path = RxOptions.get_option("sampleDataDir")
 ds = RxXdfData(os.path.join(sample_data_path, "kyphosis.xdf"))
 kyphosis = rx_import(input_data = ds)
+kyphosis.head()
 ```
 

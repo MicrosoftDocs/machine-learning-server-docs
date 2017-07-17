@@ -6,7 +6,7 @@ description: "This function does not attempt to retrieve any output objects; if 
 keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "07/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -119,14 +119,18 @@ job = rx_dforest(formula='ArrDelay ~ DayOfWeek',
 
 # Poll until status is RUNNING
 status = rx_get_job_status(job)
-while status != RxRemoteJobStatus.RUNNING:
+while status == RxRemoteJobStatus.QUEUED:
     time.sleep(1)
     status = rx_get_job_status(job)
 
-# Cancel the job
-rx_cancel_job(job)
+# Only running or queued jobs can be canceled
+if status == RxRemoteJobStatus.RUNNING
+    # Cancel the job
+    rx_cancel_job(job)
 
-# Cleanup after the job
-rx_cleanup_jobs(job)
+# Only canceled or failed jobs can be cleaned up
+if status == RxRemoteJobStatus.CANCELED or status == RxRemoteJobStatus.FAILED
+    # Cleanup after the job
+    rx_cleanup_jobs(job)
 ```
 

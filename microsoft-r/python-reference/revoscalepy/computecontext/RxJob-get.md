@@ -6,7 +6,7 @@ description: "Returns a list of job objects associated with the given compute co
 keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "07/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -105,3 +105,33 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ## Example
+
+
+
+```
+import time
+from revoscalepy import RxInSqlServer
+from revoscalepy import rx_exec
+from revoscalepy import rx_get_jobs
+
+connection_string = 'Driver=SQL Server;Server=.;Database=RevoTestDb;Trusted_Connection=True;'
+
+# Setting wait to False allows the job to be run asynchronously
+# Setting console_output to True allows us to get the console output of the distributed computing job
+compute_context = RxInSqlServer(connection_string=connection_string,
+                                num_tasks=1,
+                                console_output=True,
+                                wait=False)
+
+def hello_from_sql():
+    import time
+    print('Hello from SQL server')
+    time.sleep(3)
+    return 'We just ran Python code asynchronously on a SQL server!'
+
+job = rx_exec(function=hello_from_sql, compute_context=compute_context)
+
+job_list = rx_get_jobs(compute_context)
+print(job_list)
+```
+

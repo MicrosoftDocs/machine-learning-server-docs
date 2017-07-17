@@ -6,7 +6,7 @@ description: "Store/Retrieve objects to/from ODBC data sources. The APIs are mod
 keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "07/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-revoscalepy.functions.RxWriteObject.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData, key: str = None, value: str = None, version: str = None, key_name: str = ‘id’, value_name: str = ‘value’, version_name: str = ‘version’, serialize: bool = True, overwrite: bool = False, compress: str = ‘zip’)
+revoscalepy.functions.RxWriteObject.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData, key: str = None, value: str = None, version: str = None, key_name: str = 'id', value_name: str = 'value', version_name: str = 'version', serialize: bool = True, overwrite: bool = False, compress: str = 'zip')
 ```
 
 

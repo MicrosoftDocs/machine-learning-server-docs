@@ -6,7 +6,7 @@ description: "Functions to specify and retrieve options needed for RevoScalePy c
 keywords: "" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "07/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -52,7 +52,7 @@ Functions to specify and retrieve options needed for RevoScalePy computations. T
 ### unit_test_data_dir
 
 character string specifying path to RevoScalePy’s
-RUnit-based test data directory.
+test data directory.
 
 
 ### sample_data_dir
@@ -188,9 +188,9 @@ By default it points to a path corresponding to this client’s version.
 
 ### trace_level
 
-Specifies the traceLevel that MRS will run with. This
-parameter controls MRS Logging features as well as Runtime Tracing of
-ScaleR functions. Levels are inclusive, (i.e. level 3:INFO includes levels
+Specifies the traceLevel that ML server will run with. This
+parameter controls ML Server Logging features as well as Runtime Tracing of
+ScalePy functions. Levels are inclusive, (i.e. level 3:INFO includes levels
 2:WARN and 1:ERROR log messages). The options are:
 
     0: DISABLED - Tracing/Logging disabled.
@@ -230,8 +230,7 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ```
-import os
-from revoscalepy import rx_data_step, RxOptions, RxXdfData
+from revoscalepy import RxOptions
 sample_data_path = RxOptions.get_option("sampleDataDir")
 ```
 

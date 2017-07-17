@@ -6,7 +6,7 @@ description: "Generic function to compute predicted values and residuals using r
 keywords: "predict" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "07/17/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -117,11 +117,9 @@ Output:
 
 
 ```
-Data will be read from C:\xadupre\microsoft\bigAnalytics\python\revoscalepy\revoscalepy\data\sample_data\mortDefaultSmall.xdf
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre1290802.xdf File will be overwritten if it exists.
 
 Rows Processed: 100000 
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: Less than .001 seconds 
    creditScore_Pred
 0        700.089114
 1        699.834355
