@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "05/30/2017"
+ms.date: "07/17/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
