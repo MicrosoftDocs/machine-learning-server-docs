@@ -70,7 +70,7 @@ where `<version>` is the 3-digit R Server version number
 
 You can now provide some custom headers and make other changes before using the generated client library stub. See the <a href="https://github.com/Azure/autorest/blob/master/docs/user/cli.md" target="_blank">Command Line Interface</a> documentation for details regarding different configuration options and preferences.
 
-### Option 2. Build the Cloent Library Through Online Swagger Editor
+#### Option 2. Build the Cloent Library Through Online Swagger Editor
 If you are not willing to install a Swagger code generator locally on your machine, you could also obtain the client library in your preferred language from an online Swagger editor. Open the https://swagger.io/ webpage in your browser. You could then open the online editor by clicking on the Tools dropdown menu and then selecting the Swagger Editor. 
 ![Swagger Editor](./media/how-to-build-api-clients-from-swagger-for-app-integration/swaggerIO-mainPage.png)
 The editor will looks like the following picture. The left-hand-side is the editor window and the right hand side shows the rendered result of your swagger file. 
