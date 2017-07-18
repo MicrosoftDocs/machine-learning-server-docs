@@ -28,14 +28,14 @@ ms.technology:
 
 **Applies to:  Microsoft R Server 9.x**
 
-You can assess the state and health of your web and compute node environment with the set of diagnostic tests found in this Administration Utility. 
+You can assess the health of your web and compute node environment using the diagnostic tests in the Administration Utility. 
 Armed with this information, you can identify unresponsive components, execution problems, and access the log files. 
 
 The set of diagnostic tests include:
 + A general health check of the configuration
 + A raw report of the system status
 + A trace of an R code execution
-+ A trace of an web service execution
++ A trace of a web service execution
 
 <a name="test"></a>
 
@@ -47,9 +47,9 @@ The set of diagnostic tests include:
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
-1. If you haven't authenticated yet, you'll need to provide your username and password. 
+1. If you have not authenticated yet, you must provide your username and password. 
 
-1. For a 'health report' of the configuration including a code execution test, choose **Test configuration**.
+1. Choose **Test configuration** for a 'health report' of the configuration including a code execution test:
 
    1. Review the test results. If any issues arise, investigate the [log files](#logs) and attempt to resolve the issues.
 
@@ -64,12 +64,12 @@ The set of diagnostic tests include:
 
 1. To trace the execution of specific R code and retrieve request IDs for debugging purposes, choose **Trace code execution**:
       1. Enter the R code you want to run and trace. 
-      1. Press the Enter key (carriage return) to start the trace.
+      1. To start the trace, press the Enter key (carriage return).
       1. Review the trace output.
 
 1. To trace the execution of specific service and retrieve request IDs for debugging purposes, choose **Trace service execution**:  
-      1. Enter the service name and version following the syntax `<service-name>/<version>` such as `my-service/1.1`. 
-      1. Press the Enter key (carriage return) to start the trace.
+      1. Enter the service name and version after the syntax `<service-name>/<version>` such as `my-service/1.1`. 
+      1. To start the trace, press the Enter key (carriage return).
       1. Review the trace output to better understand how the execution is running or failing.
 
 <a name="logs"></a>
@@ -151,7 +151,7 @@ The following logging levels are available:
    1. Repeat these changes on every compute node and every web node.
       >Each node should have the same appsettings.json properties.
 
-   1. Repeat the same operation(s) that where running when the error(s) occurred. 
+   1. Repeat the same operation(s) that were running when the error(s) occurred. 
    
    1. Collect the [log files](#logs) from each node for debugging.
 
@@ -162,11 +162,11 @@ The following logging levels are available:
 This section contains pointers to help you troubleshoot some problems that can occur.
 
 >[!IMPORTANT]
->If the sections below don't solve your issue, please file a ticket with technical support and/or post your question in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+>If the following sections do not solve your issue, file a ticket with technical support and/or post your question in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### "BackEndConfiguration is missing URI" Error
 
-If you get an `BackEndConfiguration is missing URIs` error when trying to install a web node, then verify that your compute nodes are installed and [declared](../install/operationalize-r-server-enterprise-config.md#webnode) prior to installing the web node. 
+If you get an `BackEndConfiguration is missing URIs` error when trying to install a web node, then ensure your compute nodes are installed and [declared](../install/operationalize-r-server-enterprise-config.md#webnode) prior to installing web nodes. 
 
 ```
 Unhandled Exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> Microsoft.DeployR.Server.App.Common.Exceptions.ConfigurationException: BackEndConfiguration is missing URIs
@@ -176,16 +176,16 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 
 ### “Cannot establish connection with the web node” Error
 
-If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Verify the following:
-+ That the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Administration](configure-use-admin-utility.md#launch)
+If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Perform the following steps:
++ Verify that the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Administration](configure-use-admin-utility.md#launch)
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
-+ Restart the web node if you've recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](configure-use-admin-utility.md#startstop)
++ Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](configure-use-admin-utility.md#startstop)
 
-If the issue persists, check if you can post to the `login` API using curl, fiddler, or something similar and share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+If the issue persists, verify you can post to the `login` API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
 
-If you get an `HTTP status 503 (Service Unavailable)` response when using operationalization Rest APIs -or- get a `FAIL` result for the compute node during diagnostic testing, then it may be that one or more symlinks needed to start [`deployr-rserve`](https://github.com/Microsoft/deployr-rserve), the R execution component for the compute node, are missing.
+If you get an `HTTP status 503 (Service Unavailable)` response when using the Rest APIs or encounter a failure for the compute node during diagnostic testing, then one or more of the symlinks needed by [deployr-rserve](https://github.com/Microsoft/deployr-rserve) are missing. deployr-rserve is the R execution component for the compute node,
 
    1. Launch a command window with administrator privileges with `root`/ `sudo` privileges.
 
@@ -193,11 +193,11 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using operat
 
    1. If the test reveals that the compute node test has failed, type `pgrep -u rserve2` at a command prompt. 
 
-   1. If no process ID is returned, then the R execution component isn't running and we need to check which symlinks are missing.
+   1. If no process ID is returned, then the R execution component is not running and we need to check which symlinks are missing.
 
    1. At the command prompt, type `tail -f /opt/deployr/9.0.1/rserve/R/log`. The symlinks are revealed. 
 
-   1. Compare these to those listed in the [configuration](../install/operationalize-r-server-one-box-config.md) article.
+   1. Compare these symlinks to the symlinks listed in the [configuration](../install/operationalize-r-server-one-box-config.md) article.
 
    1. Add a few symlinks using the commands in the [configuration](../install/operationalize-r-server-one-box-config.md) article.
 
@@ -207,11 +207,11 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using operat
 
 ### Unauthorized / HTTP status 401
 
-If you've tried to set up R Server for LDAP/AD as described in the article "[Authentication Options for Operationalization](configure-authentication.md)", and you've run into connection issues or the `401` error, then we recommend that you try the `ldp.exe` tool to search the LDAP settings and compare them to what you’ve declared in appsettings.json. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+If you have [configured R Server to authenticate](configure-authentication.md) against LDAP/AD, but have encountered connection issues or a `401` error, then try the ldp.exe tool to search the LDAP settings and compare them to what you have declared in appsettings.json. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
-### Configuration didn't restore after upgrade
+### Configuration did not restore after upgrade
 
-If you followed the upgrade instructions but your configuration did not persist, then put the backed up version of the appsettings.json file under the following directories and reinstall R Server 9.1 again:
+If you followed the upgrade instructions but your configuration did not persist, then put the backup of the appsettings.json file under the following directories and reinstall R Server 9.1 again:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
 
    + On Linux: `/etc/deployr/current`
@@ -220,3 +220,18 @@ If you followed the upgrade instructions but your configuration did not persist,
 ### Alphanumeric error message when consuming service
 
 If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](#logs). 
+
+
+### Failed code execution with “ServiceBusyException” in the log
+ 
+If you encounter a code execution failure and find a `ServiceBusyException` error in the Web node log file, then a proxy issue may be blocking the execution.
+
+The workaround is to:
+1. Open the R initialization file, `<install folder>\R_SERVER\etc\Rprofile.site` 
+1. Add the following code as a new line in Rprofile.site:
+   ```R
+   utils::setInternet2(TRUE)
+   ```
+1. Save the file and restart Microsoft R Server.
+1. Repeat on every machine on which Microsoft R Server is installed.
+1. Run the diagnostic test or code execution again.

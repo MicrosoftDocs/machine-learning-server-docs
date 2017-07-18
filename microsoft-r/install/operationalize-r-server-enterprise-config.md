@@ -131,6 +131,9 @@ To replace an older version, you can uninstall the older distribution before ins
 
 ## How to configure for the enterprise
 
+>[!Important]
+>For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Microsoft R Server for operationalization in Azure. [Get ARM templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates) | [Learn more with this blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/)
+
 ### 1. Configure a database
 
 By default, the web node configuration sets up a local SQLite database. We strongly recommend that you use a SQL Server or PostgreSQL database for this configuration to achieve higher availability. In fact, you cannot use SQLite database at all if you have multiple web nodes or need a remote database. 
@@ -319,9 +322,3 @@ Keep in mind that web nodes are stateless. Therefore, session persistence ("stic
 
 1. [Evaluate](../operationalize/configure-evaluate-capacity.md) the configuration's capacity.
 
-
-
-
-## See also
-
-* [Blog article: Configuring R Server to Operationalize Analytics using ARM Templates](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/)
