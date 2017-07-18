@@ -239,7 +239,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 
         ```
         "Uris": {
-           "Values": [“http://10.0.0.1:12805”],
+           "Values": [“http://10.1.1.1:12805”],
            "Ranges": [“http://10.0.0.1-3:12805”]
         }
         ```
