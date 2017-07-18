@@ -125,7 +125,6 @@ To replace an older version of a one-box configuration, you can uninstall the ol
    <br>
    <br>
    **On Windows**: Follow these instructions: [R Server installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
-
    <br>
    **On Linux**:  Follow these instructions: [R Server installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
       
