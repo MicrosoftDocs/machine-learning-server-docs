@@ -61,7 +61,7 @@ Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.jso
 
 
 ### Build the Core Client Library
-## 1. Build the Client Library Through a Swagger Code Generator
+#### Option 1. Build the Client Library Through a Swagger Code Generator
 To build a client library, run the file through the Swagger code generator, and specify the language you want. If you were using AutoRest to generate a C# client library, it might look like this:
 ```
 AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-swagger-<version>.json -Namespace MyNamespace
@@ -70,12 +70,12 @@ where `<version>` is the 3-digit R Server version number
 
 You can now provide some custom headers and make other changes before using the generated client library stub. See the <a href="https://github.com/Azure/autorest/blob/master/docs/user/cli.md" target="_blank">Command Line Interface</a> documentation for details regarding different configuration options and preferences.
 
-## 2. Build the Cloent Library Through Online Swagger Editor
-If you are not willing to install a Swagger code generator locally on your machine, you could also obtain the client library in your preferred language from an online Swagger editor. You could open the https://swagger.io/ webpage in your browser. You could then open the online editor by clicking on the Tools dropdown menu and then selecting the Swagger Editor. 
-![Swagger Editor](./media/how-to-build-api-clients-from-swagger-for-app-integration/api-swagger-workflow.png)
+### Option 2. Build the Cloent Library Through Online Swagger Editor
+If you are not willing to install a Swagger code generator locally on your machine, you could also obtain the client library in your preferred language from an online Swagger editor. Open the https://swagger.io/ webpage in your browser. You could then open the online editor by clicking on the Tools dropdown menu and then selecting the Swagger Editor. 
+![Swagger Editor](./media/how-to-build-api-clients-from-swagger-for-app-integration/swaggerIO-mainPage.png)
 The editor will looks like the following picture. The left-hand-side is the editor window and the right hand side shows the rendered result of your swagger file. 
 To generate the client library, open the Swagger file on your local machine with an text editor. Copy everything in the Swagger file and replace the default code in the online Swagger Editor. Then, click on the Generate Client button on the top tool bar and select your desired language for the client library. 
-![Swagger Generate Client Library](./media/how-to-build-api-clients-from-swagger-for-app-integration/api-swagger-workflow.png)
+![Swagger Generate Client Library](./media/how-to-build-api-clients-from-swagger-for-app-integration/swaggerIO-generateClient.png)
 <a name="authentication"></a>
 
 ### Add Authentication Workflow Logic
