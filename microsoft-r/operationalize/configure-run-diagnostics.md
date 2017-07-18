@@ -227,8 +227,9 @@ If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a
 If you encounter a code execution failure and find a `ServiceBusyException` error in the Web node log file, then a proxy issue may be blocking the execution.
 
 The workaround is to:
-1. Open the R initialization file, `<install folder>\R_SERVER\etc\Rprofile.site` 
+1. Open the R initialization file <install folder>\R_SERVER\etc\Rprofile.site.
 1. Add the following code as a new line in Rprofile.site:
+
    ```R
    utils::setInternet2(TRUE)
    ```

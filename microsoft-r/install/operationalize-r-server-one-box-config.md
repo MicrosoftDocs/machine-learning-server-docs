@@ -59,7 +59,7 @@ The web nodes and compute nodes are supported on:
 - CentOS/RHEL 7.x
 
 
-## How to upgrade a one-box configuration from 9.0 to 9.1 
+## How to upgrade from 9.0 to 9.1 
 
 To replace an older version of a one-box configuration, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps.** 
 
@@ -115,7 +115,9 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 ## How to perform a one-box configuration
 
 >[!Important]
->For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Microsoft R Server for operationalization in Azure. [Get ARM templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates) | [Learn more with this blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/)
+>For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Microsoft R Server for operationalization in Azure.
+>
+>Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
 
 **To configure on a single machine:**
 
