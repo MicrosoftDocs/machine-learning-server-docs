@@ -42,7 +42,7 @@ Both libraries are built on the [Anaconda](https://www.continuum.io/why-anaconda
 
 ## Python naming conventions
 
-Both **revoscalepy** and **microsoftml** correspond to R language libraries in the form of [RevoScaleR](../r-reference/revoscaler/revoscaler-package.md) and [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md). If you have a background in R language or in these libraries in particular, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
+Both **revoscalepy** and **microsoftml** correspond to R language libraries in the form of [RevoScaleR](../r-reference/revoscaler/revoscaler.md) and [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md). If you have a background in R language or in these libraries in particular, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
 
 * lowercase package names (**microsoftml** contrasted with **MicrosoftML**) and most function names
 * underscore in function names (rx_import in **revoscalepy** contrasted with rxImport in **RevoScaleR**)
