@@ -88,7 +88,7 @@ Typing the name of the object arrDelayLm1 yields the following output:
 	DayOfWeek=Sunday    10.331806
 
 
-### Obtaining a Summary of the Model
+## Obtaining a Summary of the Model
 
 The print method for the rxLinMod model object shows only the call and the coefficients. You can obtain more information about the model by calling the summary method:
 
@@ -128,7 +128,7 @@ This produces the following output, which includes substantially more informatio
 	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16
 	Condition number: 1
 
-### Using Probability Weights
+## Using Probability Weights
 
 Probability weights are common in survey data; they represent the probability that a case was selected into the sample from the population, and are calculated as the inverse of the sampling fraction. The variable *perwt* in the census data represents a probability weight. You pass probability weights to the RevoScaleR analysis functions using the *pweights* argument, as in the following example:
 
@@ -201,7 +201,7 @@ This yields the following output:
 	F_age=65        Dropped
 
 
-### Using Frequency Weights
+## Using Frequency Weights
 
 Frequency weights are useful when your data has a particular form: a set of data in which one or more cases is exactly replicated. If you then compact the data to remove duplicated observations and create a variable to store the number of replications of each observation, you can use that new variable as a frequency weights variable in the RevoScaleR analysis functions.
 
@@ -286,7 +286,7 @@ Typing the name of the object shows the following output:
 	eyecolor=Green  0.40579710
 	eyecolor=Hazel     Dropped
 
-### Using rxLinMod with R Data Frames
+## Using rxLinMod with R Data Frames
 
 While RevoScaleR is primarily designed to work with data on disk, it can also be used with in-memory R data frames. As an example, consider the R sample data frame “cars”, which contains data recorded in the 1920s on the speed of cars and the distances taken to stop.
 
@@ -312,7 +312,7 @@ We get the following output (which matches the output given by the R function lm
 	speed         3.932409
 
 
-### Using the Cube Option for Conditional Predictions
+## Using the Cube Option for Conditional Predictions
 
 If the cube argument is set to TRUE and the first term of the independent variables is categorical, *rxLinMod* will compute and return a data frame with category counts. If there are no other independent variables, or if the *cubePredictions* argument is set to TRUE, the data frame will also contain predicted values. Let’s create a simple data frame to illustrate:
 
@@ -403,13 +403,12 @@ To compute the conditional within-group mean shown in the countDF for xfac1 equa
 
 Conditional within-group means can also be computed using additional continuous independent variables.
 
-### Fitted Values, Residuals, and Prediction
+## Fitted Values, Residuals, and Prediction
 
 When you fit a model with lm or any of the other core R model-fitting functions, you get back an object that includes as components both the fitted values for the response variable and the model residuals. For models fit with rxLinMod or other RevoScaleR functions, it is usually impractical to include these components, as they can be many megabytes in size. Instead, they are computed on demand using the rxPredict function. This function takes an rxLinMod object as its first argument, an input data set as its second argument, and an output data set as its third argument. If the input data set is the same as the data set used to fit the rxLinMod object, the resulting predictions are the fitted values for the model. If the input data set is a different data set (but one containing the same variable names used in fitting the rxLinMod object), the resulting predictions are true predictions of the response for the new data from the original model. In either case, residuals for the predicted values can be obtained by setting the flag computeResiduals to TRUE.
 
 For example, we can draw from the 7% sample of the large airline data set (available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409)) training and prediction data sets as follows (remember to customize the first line below for your own system):
 
-#  Fitted Values, Residuals, and Prediction
 
 	bigDataDir <- "C:/MRS/Data"
 	sampleAirData <- file.path(bigDataDir, "AirOnTime7Pct.xdf")
@@ -450,7 +449,7 @@ To see the first few rows of the result, use rxGetInfo as follows:
 	  4        6    FALSE             86      445      7.377952
 	  5      -23    FALSE            120      696      6.552242
 
-### Prediction Standard Errors, Confidence Intervals, and Prediction Intervals
+## Prediction Standard Errors, Confidence Intervals, and Prediction Intervals
 
 You can also use rxPredict to obtain prediction standard errors, provided you have included the variance-covariance matrix in the original rxLinMod fit. If you choose to compute the prediction standard errors, you can also obtain either of two kinds of intervals: *confidence intervals* that for a given confidence level tell us how confident we are that the expected value is within the given interval, and *prediction intervals* that specify, for a given confidence level, how likely future observations are to fall within the interval given what has already been observed. Standard error computations are computationally intensive, and they may become prohibitive on large data sets with a large number of predictors. To illustrate the computation, we start with a small data set, using the example on page 132 of *Introduction to the Practice of Statistics,* (5<sup>th</sup> Edition). The predictor, neaInc, is the increase in “non-exercise activity” in response to an increase in caloric intake. The response, fatGain, is the associated increase in fat. We first read in the data and create a data frame to use in our analysis:
 
@@ -566,7 +565,7 @@ We can then look at the first few lines of targetInfile to see the first few pre
 	  10       8.964355      10.121540
 
 <a name="stepwise-variable-selection"></a>
-### Stepwise Variable Selection
+## Stepwise Variable Selection
 
 Stepwise linear regression is an algorithm that helps you determine which variables are most important to a regression model. You provide a minimal, or lower, model formula and a maximal, or upper, model formula, and using forward selection, backward elimination, or bidirectional search, the algorithm determines the model formula that provides the best fit based on an AIC selection criterion.
 
@@ -664,7 +663,7 @@ The question is, can we improve this model by adding more predictors? If so, whi
 	  TaxiIn          0.16194266
 	  TaxiOut         0.99814931
 
-#### Methods of Variable Selection
+### Methods of Variable Selection
 
 Three methods of variable selection are supported by rxLinMod:
 
@@ -676,13 +675,13 @@ Three methods of variable selection are supported by rxLinMod:
 
 You specify the desired method by supplying a named component *"method"* in the list supplied for the *variableSelection* argument, or by specifying the *method* argument in a call to *rxStepControl* that is then passed as the *variableSelection* argument.
 
-#### Variable Selection with Wide Data
+### Variable Selection with Wide Data
 
 We’ve found that generalized linear models do not converge if the number of predictors is greater than the number of observations. If your data has more variables, it won’t be possible to include all of them in the maximal model for stepwise selection. We recommend you use domain experience and insights from initial data explorations to choose a subset of the variables to serve as the maximal model before performing stepwise selection.
 
 There are a few things you can do to reduce the number of predictors. If there are a lot of variables that measure the same quantitative or qualitative entity, try to select one variable that represents the entity best. For example, include a variable that identifies a person’s political party affiliation instead of including many variables representing how the person feels about individual issues. If your goal with linear modeling is the interpretation of individual predictors, you want to ensure that correlation between variables in the model is minimal to avoid multicollinearity. This means checking for these correlations before modeling. Sometimes it is useful to combine correlated variables into a composite variable. Height and weight are often correlated, but can be transformed into BMI. Combining variables allows you to reduce the number of variables without losing any information. Ultimately, the variables you select will depend on how you plan to use the results of your linear model.
 
-#### Specifying Model Scope
+### Specifying Model Scope
 
 You use the *scope* argument in *rxStepControl* (or a named component *"scope"* in the list supplied for the *variableSelection* argument) to specify which variables should be considered for inclusion in the final model selection and which should be ignored. Whether you specify a separate value for scope also determines which models the algorithm will try next.
 
@@ -712,7 +711,7 @@ In general, the models considered are determined from the *scope* argument as fo
 
 (This convention is identical to that used by R’s *step* function.)
 
-#### Specifying the Selection Criterion
+### Specifying the Selection Criterion
 
 By default, variable selection is determined using the Akaike Information Criterion, or AIC; this is the R standard. If you want a stepwise selection that is more SAS-like, you can specify *stepCriterion="SigLevel".* If this is set, rxLinMod uses either an F-test (default) or Chi-square test to determine whether to add or drop terms from the model. You can specify which test to perform using the *test* argument. For example, we can refit our airline model using the SigLevel step criterion with an F-test as follows:
 
@@ -737,7 +736,7 @@ You can control the significance levels for adding and dropping models using the
 				maxSigLevelToAdd=.10, minSigLevelToDrop=.10))
 
 
-#### Plotting Model Coefficients
+### Plotting Model Coefficients
 
 By default, the values of the parameters at each step of the stepwise selection are not preserved. Using an additional argument, *keepStepCoefs*, in your *rxStepControl* statement saves the values of the coefficients from each step of the regression. This coefficient data can then be plotted using another function, *rxStepPlot.*
 
@@ -792,7 +791,7 @@ The function *rxStepPlot* is easily customized by using additional graphical par
 
 By default, the *rxStepPlot* function uses 7 line colors. If the number of parameters exceeds the number of colors, they will be reused in the same order. However, the line types are set to vary from 1 to 5, so lines that have the same color may differ in line type. The line types can also be specified using the *lty* argument in the *rxStepPlot* call.
 
-### Fixed-Effects Models
+## Fixed-Effects Models
 
 Fixed-effects models are commonly associated with studies in which multiple observations are recorded for each test subject, for example, yearly observations of median housing price by city, or measurements of tensile strength from samples of steel rods by batch. To fit such a model with rxLinMod, include a factor variable specifying the subject (the cities, or the batch identifier) as the first predictor, and specify *cube=TRUE* to use a partitioned inverse and omit the intercept term.
 
@@ -830,11 +829,11 @@ For example, the MASS library contains the data set *petrol*, which consists of 
 	  EP    0.1587296
 
 
-### Least Squares Dummy Variable (LSDV) Models
+## Least Squares Dummy Variable (LSDV) Models
 
 RevoScaleR is capable of estimating huge models where fixed effects are estimated by dummy variables, that is, binary variables set to 1 or TRUE if the observation is in a particular category. Creation of these dummy variables is often accomplished by interacting two or more factor variables using “:” in the formula. If the first term in an rxLinMod (or rxLogit) model is purely categorical and the “cube” argument is set to TRUE, the estimation uses a partitioned inverse to save on computation time and memory.
 
-#### A Quick Review of Interacting Factors#
+### A Quick Review of Interacting Factors#
 
 First, let’s do a quick, cautionary review of interacting factor variables by experimenting with a small made-up data set.
 
@@ -988,7 +987,7 @@ results in:
 
 With large data sets it is common to estimate many interaction terms, and if some categories have zero counts, it may not even be obvious what the reference group is. Also note that setting *cube=TRUE* in the above model is of limited use: only the first term from the expanded expression (in this case *region*) is estimated using a partitioned inverse.
 
-#### Using Dummy Variables in rxLinMod: Letting the Data Speak Example 2
+### Using Dummy Variables in rxLinMod: Letting the Data Speak Example 2
 
 In previous articles, we looked at the CensusWorkers.xdf data set and examined the relationship between wage income and age. Now let’s add another variable, and examine the relationship between wage income and sex and age.
 
@@ -1166,11 +1165,10 @@ This model estimated a total of 92 coefficients, all for dummy variables represe
 
 ![](media/how-to-revoscaler-linear-model/image13.png)
 
-### Intercept-Only Models
+## Intercept-Only Models
 
 You may have seen intercept-only models fitted with R’s *lm* function, where the model formula is of the form response ~ 1. In RevoScaleR these models should be fitted using *rxSummary*, because the intercept-only model simply returns the mean of the response. For example:
 
-#  Intercept-Only Models
 
 	airlineDF <- rxDataStep(inData =
 		file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.xdf"))
