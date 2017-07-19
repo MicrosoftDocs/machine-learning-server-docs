@@ -37,11 +37,11 @@ Cross-Origin Resource Sharing (CORS) enables your client application to freely c
 1. Enable CORS in the `"CORS": {` section of the  appsettings.json file:
    1.  Set CORS `"Enabled": true`
 
-   1. Enter a comma-separated list of allowed `"Origins"` for your policy.  In this example, the policy allows cross-origin requests from “http://www.contoso.com”, “http://www.microsoft.com”, and no other origins.
+   1. Enter a comma-separated list of allowed `"Origins"` for your policy.  In this example, the policy allows cross-origin requests from "http://www.contoso.com", "http://www.microsoft.com", and no other origins.
    ```
    "CORS": {
       "Enabled": true,
-      "Origins": [“http://www.contoso.com”, “http://www.microsoft.com”]
+      "Origins": ["http://www.contoso.com", "http://www.microsoft.com"]
    }
    ```
 

@@ -75,7 +75,7 @@ If you run R code within T-SQL code, the server is always used as the compute co
 
 For more information, see SQL Server 2016 Books Online:
  + [Data Exploration and Predictive Modeling with R](https://msdn.microsoft.com/library/mt590947.aspx) 
- + [R Interoperability in SQL Server R Services](https://msdn.microsoft.com/library/mt709080.aspx)
+ + [R Interoperability in SQL Server R Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/r-interoperability-in-sql-server)
 
 ### Deploying, Managing, and Optimizing Solutions
 

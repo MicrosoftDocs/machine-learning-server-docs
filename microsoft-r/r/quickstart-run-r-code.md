@@ -280,7 +280,7 @@ This article walks through some R code you can use to predict whether a flight w
    ```
 
 1. Summarize the flight data.
-   ```
+   ```R
    rxSummary(~., data = flight_mrs, blocksPerRead = 2)
    ```
 

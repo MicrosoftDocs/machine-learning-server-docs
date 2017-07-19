@@ -36,13 +36,13 @@ To start or stop all DeployR-related services on the main server (not nodes) at 
 
 1. Launch the DeployR administrator utility script with administrator privileges:
    + On Windows:
-     ```
+     ```NA
      cd C:\Program Files\Microsoft\DeployR-<version>\deployr\tools\
      adminUtilities.bat
      ```
 
    + On Linux:
-     ```
+     ```NA
      cd /home/deployr-user/deployr/<version>/deployr/tools/ 
      sudo ./adminUtilities.sh
      ```
@@ -195,13 +195,13 @@ Follow these steps to back up the data in the database used by DeployR.
 
 1.  Run the database utility script as follows:
     + On Windows:
-      ```
+      ```NA
           cd C:\Program Files\Microsoft\DeployR-8.0\deployr\tools
           databaseUtils.bat
       ```
       
     + On Linux:
-      ```
+      ```NA
          cd /home/deployr-user/deployr/8.0.0/deployr/tools
          ./databaseUtils.sh
       ```

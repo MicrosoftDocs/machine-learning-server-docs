@@ -73,7 +73,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 
 + **On Linux**:
     1. Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
-       ```
+       ```NA
        cd $DEPLOYR_HOME/deployr/tools/ 
        ./adminUtilities.sh
        ```       
@@ -84,7 +84,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 
 #### For DeployR 8.0.0
 + **On Windows**: Run the following commands. All output from the diagnostic test are stored in `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\logs\diagnostics.zip`.
-   ```
+   ```NA
    cd C:\Program Files\Microsoft\DeployR-8.0\deployr\diagnostics 
    diagnostics.bat
    ```
@@ -92,7 +92,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
    > If the server log, `catalina.[YYYY-MM-DD].log`, contains information you do not wish to share with technical support, you can exclude that file. To do so, add `--exclude-server-log`, such as:`diagnostics.bat --exclude-server-log`
 
 + **On Linux / OS X**: Run the following commands. All output from the diagnostic test are stored in the `$DEPLOYR_HOME/deployr/logs/diagnostics.tar.gz`.
-   ```
+   ```NA
    cd $DEPLOYR_HOME/deployr/diagnostics 
    ./diagnostics.sh
    ```
@@ -176,7 +176,7 @@ If this should occur, do the following:
    1. Download zip from https://github.com/deployr/deployr-rserve/releases/download/v8.0.5/deployrRserve_8.0.5.zip
 
    1. Open a Command Window with **“Run as Administrator”** and run the following:
-      ```
+      ```NA
       cd “C:\Program Files\Microsoft SQL Server\130\R_SERVER\bin\x64”
       R.exe CMD INSTALL -l "C:\Program Files\Microsoft SQL Server\130\R_SERVER\library"   <PATH-TO-deployrRserve-ZIP>
       ```
@@ -203,7 +203,7 @@ During the installation of DeployR on Windows, you may get the error `Could not 
 If this should occur, do the following:
 
 1. Open a Command Window with **“Run as Administrator”** and run the following:
-   ```
+   ```NA
    sc delete Apache-Tomcat-for-DeployR-<version> 
    ```
    where &lt;version&gt; is the package version number such as, Apache-Tomcat-for-DeployR-8.0.5.
@@ -220,7 +220,7 @@ During the installation of DeployR on Windows, the error `Could not stop the ser
 If this should occur, do the following:
 
 1. Open a Command Window with **“Run as Administrator”** and run the following:
-   ```
+   ```NA
    sc delete RServe<version>
    ```
    where &lt;version&gt; is the package version number such as, RServe8.0.5.
@@ -259,12 +259,12 @@ To fix this issue, update the IP address in the DeployR Server Web Context as fo
 
 1. Launch the DeployR administrator utility script with administrator privileges:
     + On Windows, run:
-    ```
+    ```NA
     cd $DEPLOYR_HOME\deployr\tools\ 
     adminUtilities.bat 
     ```        
     + On Linux, run:
-    ```
+    ```NA
     cd $DEPLOYR_HOME/deployr/tools/
     ./adminUtilities.sh
     ```         
@@ -309,7 +309,7 @@ Usage tips for the `setWebContext` script arguments:
 1. Open a Command Window with **“Run as Administrator”**.
 
 1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. 
-   ```
+   ```NA
    cd $DEPLOYR_HOME\deployr\tools\
    setWebContext -ip <ip_address>
    ```
@@ -317,14 +317,14 @@ Usage tips for the `setWebContext` script arguments:
 1. Confirm the IP address you entered.
 
 1. Disable any automatic IP detection that might overwrite the IP you just assigned.
-   ```
+   ```NA
    setWebContext -disableauto
    ```           
 
 **On Linux:**
 
 1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. 
-   ```
+   ```NA
    cd $DEPLOYR_HOME/deployr/tools/
    ./setWebContext.sh -ip <ip_address>
    ```
@@ -332,7 +332,7 @@ Usage tips for the `setWebContext` script arguments:
 1. Confirm the IP address you entered.
 
 1. Disable any automatic IP detection that might overwrite the IP you just assigned.
-   ```
+   ```NA
    ./setWebContext.sh -disableauto
    ```
 
@@ -468,13 +468,13 @@ If you run into conflicts with other applications, consider changing the port nu
 1. Launch the DeployR administrator utility script with administrator privileges:
        
    + On Windows:
-     ```
+     ```NA
      cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
      adminUtilities.bat
      ```       
     
    + On Linux:
-     ```
+     ```NA
      cd $DEPLOYR_HOME/deployr/tools/ 
      sudo ./adminUtilities.sh
      ```       
@@ -499,7 +499,7 @@ If you run into conflicts with other applications, consider changing the port nu
 1. Save the file.
 
 1. Restart Tomcat for the changes to take effect.
-      ```
+      ```NA
       net stop Apache-Tomcat-for-DeployR-8.0
       net start Apache-Tomcat-for-DeployR-8.0
       ```
@@ -515,12 +515,12 @@ If you run into conflicts with other applications, consider changing the port nu
 1. Save the file.
 
 1. Restart Tomcat for the changes to take effect. At the prompt, type:
-   ```
+   ```NA
    /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh stop
    /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh start
    ```
    
-1.  Verify that the port changes are working as expected. At the prompt, type:
-   ```
+1. Verify that the port changes are working as expected. At the prompt, type:
+   ```NA
    netstat -p --listening --numeric-ports --numeric-hosts | grep -i java
    ``` 

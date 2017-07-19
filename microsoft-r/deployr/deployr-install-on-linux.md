@@ -88,17 +88,17 @@ Before you can install DeployR, you must manually install and configure the foll
 
 1.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them will ensure that the repositories contain the latest software. Run the following command:
     + For Redhat / CentOS:
-      ```
+      ```NA
       sudo yum clean all
       ```
       
     + For Ubuntu:
-      ```
+      ```NA
       sudo apt-get update
       ```
       
     + For OpenSUSE / SLES:
-      ```
+      ```NA
       sudo zypper clean --all
       ```
 
@@ -107,7 +107,7 @@ Before you can install DeployR, you must manually install and configure the foll
     >Install packages as `root` or a user with `sudo` permissions.
 
 	+ For Redhat / CentOS, check if the required packages are already installed and install any missing packages as follows:
-      ```
+      ```NA
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
       yum list make gcc gcc-c++ gfortran cairo-devel libicu-devel libstdc++
       
@@ -118,7 +118,7 @@ Before you can install DeployR, you must manually install and configure the foll
       ```
     	
 	+ For Ubuntu, check if the required packages are already installed and install any missing packages as follows:
-      ```
+      ```NA
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
       dpkg -l make gcc gcc-c++ gfortran cairo-devel libicu-devel libstdc++ licui18n
       
@@ -129,7 +129,7 @@ Before you can install DeployR, you must manually install and configure the foll
       ```
 
 	+ For SLES, check if the required packages are already installed and install any missing packages as follows:
-      ```
+      ```NA
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
       sudo zypper search -i <package-name>
       
@@ -190,7 +190,7 @@ The following steps outline what you need to do after running the DeployR instal
 1.  **Set the administrator's password** so you can log into the server and its landing page.
 
     1. Launch the DeployR Administrator Utility script  as `root` or a user with `sudo` permissions:
-       ```
+       ```NA
        cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
        ./adminUtilities.sh
        ```

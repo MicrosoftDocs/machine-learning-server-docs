@@ -132,7 +132,7 @@ The following steps outline what you need to do after running the DeployR instal
 1.  **Set the administrator's password** so you can log into the server and its landing page.
 
     1. Launch the DeployR Administrator Utility script with **administrator privileges**:
-       ```
+       ```NA
        cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
        adminUtilities.bat
        ```

@@ -103,11 +103,10 @@ For more information, see these SQL Server:
 
 Learn more about SQL Server Machine Learning Services here:
 
-+ In the [SQL Server Documentation Set](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) site, which also includes a tutorial for **SQL Server Machine Learning Services**.
++ In the [SQL Server Documentation Set](https://docs.microsoft.com/en-us/sql/advanced-analytics/getting-started-with-machine-learning-services) site, which also includes a tutorial for **SQL Server Machine Learning Services**.
 + [Data Science End-to-End Walkthrough](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough): Load, explore, and analyze the New York City taxi dataset. Build models and deploy them to SQL Server for production.
 + [Using the RevoScaleR Packages](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages): Deep dive on the analytical functions provided by the **ScaleR** package. Demonstrates how to create and use compute contexts, how to move data between local and server compute contexts using XDF files, and creates a simulation using R code that runs in SQL Server.
 + [Data Science Scenarios and Solution Templates](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/data-science-scenarios-and-solution-templates): Includes all the R and T-SQL code you need for fraud detection, churn analysis, predictive maintenance, and demand forecasting.
-+ [In-Database Advanced Analytics for SQL Developers (Tutorial)](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/sqldev-in-database-advanced-analytics-for-sql-developers)
-
++ [In-Database Python Analytics for SQL Developers](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/sqldev-in-database-python-for-sql-developers)
 
 Learn more about the [RevoScaleR package and its function here](~/r-reference/revoscaler/revoscaler.md).

@@ -69,13 +69,13 @@ You must update the server Web context or else you will not be able to access to
    1. Launch the DeployR administrator utility script with administrator privileges:
 
       + On Windows, run:
-        ```
+        ```NA
         cd %REVODEPLOYR8_1_HOME%\deployr\tools\ 
         adminUtilities.bat 
         ```        
 
       + On Linux, run:
-        ```
+        ````NA
         cd $DEPLOYR_HOME/deployr/tools/
         sudo ./adminUtilities.sh 
         ```         
@@ -111,7 +111,7 @@ You must update the server Web context or else you will not be able to access to
      1. Open a Command Window with **“Run as Administrator”**.
     
      1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
-        ```
+        ```NA
         cd $DEPLOYR_HOME\deployr\tools\
         setWebContext -ip <ip_address>  -disableauto
         ```
@@ -119,14 +119,14 @@ You must update the server Web context or else you will not be able to access to
      1. Confirm the IP address you entered.
     
      1. Disable any automatic IP detection that might overwrite the IP you just assigned.
-        ```
+        ```NA
         setWebContext -disableauto
         ```           
     
    + On Linux:
     
      1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
-        ```
+        ```NA
         cd $DEPLOYR_HOME/deployr/tools/
         ./setWebContext.sh -ip <ip_address>
         ```
@@ -134,7 +134,7 @@ You must update the server Web context or else you will not be able to access to
      1. Confirm the IP address you entered.
     
      1. Disable any automatic IP detection that might overwrite the IP you just assigned.
-        ```
+        ```NA
         ./setWebContext.sh -disableauto
         ```
 
@@ -205,9 +205,9 @@ You must update the server Web context or else you will not be able to access to
 1. Take note of the correct **Public IP address**.   
 
    + On Linux, run the following command  and take note of the IP returned:
-     ```
+     ```NA
      curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//
-     ```
+     ```NA
 
    + On Windows, visit this URL in your browser (http://checkip.dyndns.org/) and take note of the IP returned.
 
@@ -220,13 +220,13 @@ You must update the server Web context or else you will not be able to access to
         1. Launch the DeployR administrator utility script with administrator privileges:
 
             + On Windows, run:
-               ```
+               ```NA
                cd %REVODEPLOYR8_1_HOME%\deployr\tools\ 
                adminUtilities.bat 
                ```        
 
             + On Linux, run:
-               ```
+               ```NA
                cd $DEPLOYR_HOME/deployr/tools/
                ./adminUtilities.sh 
                ```         
@@ -256,40 +256,40 @@ You must update the server Web context or else you will not be able to access to
             1. Open a Command Window with **“Run as Administrator”**.
             
             1. Detect the appropriate external IP used for your AWS EC2 instance. 
-                ```
+                ```NA
                 cd $DEPLOYR_HOME\deployr\tools\
                 setWebContext -aws
                 ```
                 
             1. Set the appropriate public IP where `<ip_address>` is the public IP address of the machine. [Learn more about this script](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
-                ```
+                ```NA
                 setWebContext -ip <ip_address> 
                 ```
                 
             1. Confirm the IP address you entered.
             
             1. Disable any automatic IP detection that might overwrite the IP you just assigned.
-                ```
+                ```NA
                 setWebContext -disableauto
                 ```           
                 
         + On Linux:
         
             1. Detect the appropriate external IP used for your AWS EC2 instance. 
-                ```
+                ```NA
                 cd $DEPLOYR_HOME/deployr/tools/
                 setWebContext -aws
                 ```
                 
             1. Set the IP using the `setWebContext.sh` script where `<ip_address>` is the public IP address of the machine. [Learn more about the script arguments](deployr-admin-diagnostics-troubleshooting.md#set-context-800).
-                ```
+                ```NA
                ./setWebContext.sh -ip <ip_address>
                 ```
                 
             1.  Confirm the IP address you entered.
             
             1.  Disable any automatic IP detection that might overwrite the IP you just assigned.
-                ```
+                ```NA
                 ./setWebContext.sh -disableauto
                 ```
                 
