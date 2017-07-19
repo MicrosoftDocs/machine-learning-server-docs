@@ -31,7 +31,7 @@ ms.custom: ""
 
 This section contains Python reference documentation for two proprietary packages installed with [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) and [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) in the SQL Server 2017 RC1 release.
 
-Both libraries are built on the [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc). Both SQL Server offerings include Python 3.5 when you add Python support during installation. No additional software is required to use the functions in T-SQL.
+Both libraries are built on the [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc). Both SQL Server offerings include Python 3.5 when you add Python support during installation. No additional software is required to call Python functions in T-SQL script or stored procedures, or call **revoscalepy** functions in Python script executing in a SQL Server compute context.
 
 ## Python libraries
 
