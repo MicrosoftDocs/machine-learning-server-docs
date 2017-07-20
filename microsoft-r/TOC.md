@@ -2,7 +2,7 @@
 
 # Overview
 ## [What is Machine Learning Server?](what-is-microsoft-r-server.md)
-## [About Microsoft R Client](r-client/what-is-microsoft-r-client.md)
+## [What is Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 ## [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
 ## New in this release
 ### [What's new in R Server](whats-new-in-r-server.md)
@@ -39,12 +39,10 @@
 ##### [Enforce a YARN queue assignment](install/r-server-install-hadoop-yarnqueueusage.md)
 ##### [Troubleshoot installation problems](install/r-server-install-hadoop-troubleshoot.md)
 #### [Uninstall from Hadoop](install/r-server-install-uninstall-upgrade.md)
-#### [Install an older version](install/r-server-install-hadoop-901.md)
+#### Install an older version
 ##### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
 ##### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)
 ##### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
-#### [Get started on Spark](r/how-to-revoscaler-spark.md)
-#### [Get started on MapReduce](r/how-to-revoscaler-hadoop.md)
 
 ## Microsoft R Client
 ### [Install R Client on Windows](r-client/install-on-windows.md)
@@ -58,7 +56,7 @@
 ### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
 ### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)
 ### [Install R Server on a Teradata Client](install/r-server-install-teradata-client.md)
-### [Get started: ScaleR on Teradata](r/how-to-revoscaler-sql-server.md)
+### [Get started: ScaleR on Teradata](r/how-to-revoscaler-teradata.md)
 
 # Concepts
 
@@ -66,7 +64,6 @@
 ## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
 ## [RevoScaleR](r/concept-what-is-revoscaler.md)
 ## [Compute context](r/concept-what-is-compute-context.md)
-## [Data source objects](r/how-to-revoscaler-data-source.md)
 ## [Data transformations](r/concept-what-is-data-transformations.md)
 ## [XDF files](r/concept-what-is-xdf.md)
 
@@ -94,6 +91,7 @@
 ## [How-to guides](r/how-to-introduction.md)
 ### [Choose a MicrosoftML algorithm (cheatsheet)](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 ### [Execute code on remote R Server](r/how-to-execute-code-remotely.md)
+## [Use data source objects](r/how-to-revoscaler-data-source.md)
 ### Load and transform data
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
@@ -117,12 +115,14 @@
 ### [Correlation and Variance/Covariance Matrices](r/how-to-revoscaler-covcor.md)
 ### [Clustering](r/how-to-revoscaler-cluster.md)
 ### [Visualizing Huge Data Sets](r/how-to-revoscaler-visualize-huge-data-sets.md)
-### RevoScaleR Development
+### [RevoScaleR with Spark](r/how-to-revoscaler-spark.md)
+### [RevoScaleR with MapReduce](r/how-to-revoscaler-hadoop.md)
+### RevoScaleR development
 #### [Write custom chunking algorithms in RevoScaleR](r/how-to-developer-write-chunking-algorithms.md)
 #### [Write custom analyses for large data sets in RevoScaleR](r/how-to-developer-write-custom-analysis.md)
 #### [Converting RevoScaleR Model Objects for Use with PMML](r/how-to-developer-pmml.md)
 #### [Manage threads in RevoScaleR](r/how-to-developer-manage-threads.md)
-### [Distributed and parallel computing on R Server](r/how-to-revoscaler-distributed-computing.md)
+### [Distribute workloads](r/how-to-revoscaler-distributed-computing.md)
 #### [Compute context](r/how-to-revoscaler-distributed-computing-compute-context.md)
 #### [Distributed analysis](r/how-to-revoscaler-distributed-computing-distributed-analysis.md)
 #### [Background jobs](r/how-to-revoscaler-distributed-computing-background-jobs.md)
