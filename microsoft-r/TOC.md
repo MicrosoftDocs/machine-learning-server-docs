@@ -1,7 +1,8 @@
 # [Machine Learning Server](index.md)
-## [Overview](index.md)
-### [What is Machine Learning Server?](what-is-microsoft-r-server.md)
-### [About Microsoft R Client](r-client/what-is-microsoft-r-client.md)
+
+# Overview
+## [What is Machine Learning Server?](what-is-microsoft-r-server.md)
+## [About Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 ## [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
 ## New in this release
 ### [What's new in R Server](whats-new-in-r-server.md)
