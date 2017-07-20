@@ -53,7 +53,7 @@ The following resources are available to you:
 * [Azure ML Support Forum](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=MachineLearning) 
 * [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/)
 * [R Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=r+server)
-* [Adding Azure Data Lake Storage Access to your VM](http://packages.revolutionanalytics.com/doc/8.0.0/azure/ADLS%20Setup%20for%20an%20R%20Server%20VM%20on%20Azure.pdf)
+
 
 ## R Tools for Visual Studio
 * [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation)
@@ -161,9 +161,9 @@ Here is a list of the available archived documentation sets for RRE:
 * [RRE 8.0.0 Hadoop Install Guide](install/r-server-install-hadoop-800.md)
 * [RRE 8.0.0 Linux Install Guide](install/r-server-install-linux-server-800.md)
 * [RRE 7.5.0 Docs](http://packages.revolutionanalytics.com/doc/7.5.0/)
-* [RRE 7.4.1 Docs](http://packages.revolutionanalytics.com/doc/7.4.1/) and [DeployR 7.4.1 Docs](https://deployr.revolutionanalytics.com/doc/7.4.1/)
-* [RRE 7.4.0 Docs](http://packages.revolutionanalytics.com/doc/7.4.0/) and [DeployR 7.4.0 Docs](https://deployr.revolutionanalytics.com/doc/7.4.0/)
-* [RRE 7.3.0 Docs](http://packages.revolutionanalytics.com/doc/7.3.0/) and [DeployR 7.3.0 Docs](https://deployr.revolutionanalytics.com/doc/7.3.0/)
+* [RRE 7.4.1 Docs](http://packages.revolutionanalytics.com/doc/7.4.1/) 
+* [RRE 7.4.0 Docs](http://packages.revolutionanalytics.com/doc/7.4.0/) 
+* [RRE 7.3.0 Docs](http://packages.revolutionanalytics.com/doc/7.3.0/)
 * [RRE 7.2.0 Docs](http://packages.revolutionanalytics.com/doc/7.2.0/)
 
 **DeployR 8.x Docs**

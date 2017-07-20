@@ -94,14 +94,14 @@ If DeployR was installed as user `root`, do the following:
 
 
 + **ScaleR**: If you are using ScaleR inside Hadoop, add the following line to `.bash_profile` for user `rserve`. This will ensure all environment variables needed by ScaleR are set properly.
-  ```
+  ```NA
   . ./etc/profile.d/Revolution/bash_profile_additions
   ```
   
 + **Kerberos**: If your Hadoop cluster is secured using Kerberos, obtain a Kerberos ticket for principal `hdfs`. This ticket will act as the proxy for all other users.
 
   Be sure you are the Linux user `rserve` when obtaining the ticket. For example:
-  ```
+  ```NA
   su - rserve
   kinit hdfs
   ```

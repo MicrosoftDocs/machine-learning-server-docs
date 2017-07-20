@@ -56,7 +56,7 @@ R Server provides a Swagger template to simplify the integration. This template 
 
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
-Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number.
+Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/<version>/swagger/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number.
 Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` so you can consume that service. Obtain it directly from the user that published the service or retrieve yourself using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](how-to-consume-web-service-interact-in-r.md#swagger-app-dev)
 
 
@@ -161,11 +161,11 @@ Now that you have generated the client library and added authentication logic to
 
 ## Example: Core Client Library from Swagger (in CSharp)
 
-This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core operationalization APIs from your application. For other versions, get the file from `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json` where <version> is the R Server product version.
+This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core operationalization APIs from your application. For other versions, get the file from `https://microsoft.github.io/deployr-api-docs/<version>/swagger/rserver-swagger-<version>.json` where <version> is the R Server product version.
 
 Build and use a core R Server 9.1.0 client library from swagger in CSharp and Azure Active Directory authentication:
 
-1. Download `rserver-swagger-9.1.0.json` from https://microsoft.github.io/deployr-api-docs/swagger/9.1.0/rserver-swagger-9.1.0.json.
+1. Download `rserver-swagger-9.1.0.json` from https://microsoft.github.io/deployr-api-docs/9.1.0/swagger/rserver-swagger-9.1.0.json.
 
 1. Build the statically generated client library files for CSharp from the `rserver-swagger-9.1.0.json` swagger. 
    Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.
@@ -339,8 +339,8 @@ Build and use a service consumption client library from swagger in CSharp and Ac
 1. Begin consuming the service consumption APIs.
    ```
    // --- INVOKE API -----------------------------------------------------------------
-   InputParameters inputs = new InputParameters() { hp = 120, wt = 2.8 };
-   var serviceResult = api.Manual.Transmission(inputs).Result;
+   InputParameters inputs = new InputParameters() { Hp = 120, Wt = 2.8 };
+   var serviceResult = client.ManualTransmission(inputs);
     
    Console.Out.WriteLine(serviceResult.OutputParameters);
    ```

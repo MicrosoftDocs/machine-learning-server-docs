@@ -70,7 +70,7 @@ Pseudo code for the first option might be:
 
 Output would now include a fourth factor level called NA that would catch all values not covered by the other factors:
 
-```
+```R
 > rxGetInfo(dat, getVarInfo = TRUE)
 
 Data frame: dat 
