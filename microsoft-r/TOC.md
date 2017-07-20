@@ -20,7 +20,7 @@
 #### [Offline install](install/r-server-install-linux-offline.md)
 #### [Manage your installation](install/r-server-install-linux-manage-install.md)
 #### [Uninstall from Linux](install/r-server-install-linux-uninstall.md)
-#### [Install an older version](install/r-server-install-linux-server-901.md)
+#### Install an older version
 ##### [Install R Server 9.0.1](install/r-server-install-linux-server-901.md)
 ##### [Install R Server 8.0.5](install/r-server-install-linux-server-805.md)
 ### R Server for Hadoop
@@ -72,7 +72,7 @@
 # R in Machine Learning Server
 
 ## Quickstarts
-## [Run R code in Microsoft R](r/quickstart-run-r-code.md)
+### [Run R code in Microsoft R](r/quickstart-run-r-code.md)
 
 ## [Tutorials](r/tutorial-introduction.md)
 ### [Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md)
@@ -439,8 +439,9 @@
 ## [Additional resources](resources-more.md)
 
 
-# JOSEE CONFIG CONTENT
+# JOSEE 
 
+## CONFIG CONTENT
 ### [Configure to operationalize analytics](operationalize/configure-start-for-administrators.md)
 #### [Get started for administrators](operationalize/configure-start-for-administrators.md)
 #### [One-box configuration](install/operationalize-r-server-one-box-config.md)
@@ -457,7 +458,7 @@
 #### [Configure database](operationalize/configure-remote-database-to-operationalize.md)
 #### [Manage R packages](operationalize/configure-manage-r-packages.md)
 
-# JOSEE CLOUD CONTENT
+## CLOUD CONTENT
 
 ### [Provision in the Cloud](install/r-server-vm-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
@@ -466,7 +467,7 @@
 #### [Microsoft Data Science VM](install/r-server-vm-data-science.md)
 
 
-# JOSEE DEPLOYR
+## DEPLOYR
 
 ## Deploy and consume analytics
 ### Data scientists
