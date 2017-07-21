@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "7/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# What does it mean to deploy and consume analytics for Data Scientists
+# What does it mean to deploy and consume analytics?
 
 **Applies to:  Microsoft R Server 9.x**
 
