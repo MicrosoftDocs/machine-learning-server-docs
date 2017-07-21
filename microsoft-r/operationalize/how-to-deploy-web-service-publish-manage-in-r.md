@@ -68,7 +68,7 @@ A code sample for publishing web services can be [found later in this article](#
 
 Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
-Realtime web services, introduced in R Server 9.1, offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an R interpreter at consumption time even though the services use the R objects created by the model. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once. This type of web takes only R models created with [supported functions](#realtime) and does not support arbitrary R code. 
+Realtime web services, **introduced in R Server 9.1**, offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an R interpreter at consumption time even though the services use the R objects created by the model. Therefore, no additional resources or time is spent spinning up an R session for each call. Additionally, since the model is cached in memory, it is only loaded once. This type of web takes only R models created with [supported functions](#realtime) and does not support arbitrary R code. 
 
 Realtime web services, like all web services, are also identified by their name and version. These lower latency, faster load services take only a model object created with supported functions. No other R code is supported with Realtime web services. Additionally, you do not need to specify inputs or outputs since realtime web services default to data.frame inputs and outputs automatically. 
 
@@ -132,7 +132,7 @@ api <- publishService(
 )
 ```
 
-Example of realtime service: 
+Example of realtime service (supported in R Server 9.1+): 
 
 ```R
 # Publish a realtime service 'kyphosisService' version 'v1.0'
@@ -603,7 +603,7 @@ remoteLogout()
 
 In this example, the local model object (`model = kyphosisModel`) is generated using the `rxLogit` modeling function in the RevoScaleR package. 
 
-To learn more about the supported model formats, supported product versions, and supported platforms for realtime web services, [see here](#realtime).
+Realtime web services were introduced in R Server 9.1. To learn more about the supported model formats, supported product versions, and supported platforms for realtime web services, [see here](#realtime).
 
 ```R
 ##          REALTIME WEB SERVICE EXAMPLE                ##
