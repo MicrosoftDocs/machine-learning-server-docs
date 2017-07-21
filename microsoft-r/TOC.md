@@ -2,10 +2,10 @@
 
 # Overview
 ## [What is Machine Learning Server?](what-is-microsoft-r-server.md)
-## [What is Microsoft R Client](r-client/what-is-microsoft-r-client.md)
+## [What is Microsoft R Client?](r-client/what-is-microsoft-r-client.md)
 ## [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
 ## New in this release
-### [What's new in R Server](whats-new-in-r-server.md)
+### [What's new in Machine Learning Server](whats-new-in-r-server.md)
 ### [What's new in R Client](r-client/whats-new-in-r-client.md)
 
 # Install and configure
@@ -91,7 +91,7 @@
 ## [How-to guides](r/how-to-introduction.md)
 ### [Choose a MicrosoftML algorithm (cheatsheet)](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 ### [Execute code on remote R Server](r/how-to-execute-code-remotely.md)
-## [Use data source objects](r/how-to-revoscaler-data-source.md)
+### [Use data source objects](r/how-to-revoscaler-data-source.md)
 ### Load and transform data
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
@@ -118,10 +118,10 @@
 ### [RevoScaleR with Spark](r/how-to-revoscaler-spark.md)
 ### [RevoScaleR with MapReduce](r/how-to-revoscaler-hadoop.md)
 ### RevoScaleR development
-#### [Write custom chunking algorithms in RevoScaleR](r/how-to-developer-write-chunking-algorithms.md)
-#### [Write custom analyses for large data sets in RevoScaleR](r/how-to-developer-write-custom-analysis.md)
-#### [Converting RevoScaleR Model Objects for Use with PMML](r/how-to-developer-pmml.md)
-#### [Manage threads in RevoScaleR](r/how-to-developer-manage-threads.md)
+#### [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md)
+#### [Write custom analyses for large data sets](r/how-to-developer-write-custom-analysis.md)
+#### [Convert RevoScaleR Model Objects for Use with PMML](r/how-to-developer-pmml.md)
+#### [Manage threads](r/how-to-developer-manage-threads.md)
 ### [Distribute workloads](r/how-to-revoscaler-distributed-computing.md)
 #### [Compute context](r/how-to-revoscaler-distributed-computing-compute-context.md)
 #### [Distributed analysis](r/how-to-revoscaler-distributed-computing-distributed-analysis.md)
