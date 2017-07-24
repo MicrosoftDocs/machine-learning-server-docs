@@ -25,7 +25,7 @@ ms.technology:
 
 ---
 
-# Logging into R Server with mrsdeploy and opening a remote session
+# Log in to R Server with mrsdeploy and open a remote session
 
 **Applies to:  Microsoft R Server 9.x**
 
