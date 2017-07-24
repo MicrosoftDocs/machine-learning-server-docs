@@ -7,7 +7,7 @@ keywords: "quickstart, Microsoft R Server, deploy r models"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "5/10/2017"
+ms.date: "7/24/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -46,7 +46,7 @@ Before you begin this QuickStart, have the following ready:
 
 + An instance of [Microsoft R Server installed](../what-is-microsoft-r-server.md) that has been [configured to operationalize analytics](../install/operationalize-r-server-one-box-config.md).
 
-+ The connection details and access to that instance of Microsoft R Server. Contact your administrator for any missing connection details. You can [connect to R Server from your local machine](how-to-connect-log-in-with-mrsdeploy.md) in R to deploy your analytics as web services so they can be consumed. 
++ The connection details to that instance of Microsoft R Server. Contact your administrator for any missing connection details. After [connecting to R Server](how-to-connect-log-in-with-mrsdeploy.md) in R, deploy your analytics as web services so others can consume them. 
 
 
 ## Example code
@@ -153,7 +153,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    library(mrsdeploy)
    ```
 
-1. Create a GLM model called `carsModel` using the dataset `mtcars`, which is a built-in data frame in R. This model estimates the probability of a vehicle being fitted with a manual transmission based on horsepower (hp) and weight (wt)
+1. Create a GLM model called `carsModel` using the dataset `mtcars`, which is a built-in data frame in R. Using horsepower (hp) and weight (wt), this model estimates the probability that a vehicle has been fitted with a manual transmission.
 
    ```R
    # Create glm model with `mtcars` dataset
@@ -175,9 +175,9 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 ## B. Publish model as a web service
 
-1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`).  
+1. From your local R IDE, log in to Microsoft R Server **with your credentials**. Use the appropriate authentication function from [the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`) for your authentication method.  
 
-   For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
+   For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active Directory in the article "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
    >[!IMPORTANT]
    >Be sure to replace the remoteLogin() function with the [correct login details for your configuration](how-to-connect-log-in-with-mrsdeploy.md).
@@ -199,7 +199,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
 
-   When publishing, you must specify a name, a version, R code, inputs, and outputs needed for application integration among other parameters,. 
+   When publishing a service, specify its name and version, the R code, the inputs, and the outputs needed for application integration as well as other parameters. 
 
    >[!NOTE]
    >To publish a web service while in a remote R session, carefully [review these guidelines](../r/how-to-execute-code-remotely.md#publish-remote-session). 
@@ -217,7 +217,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 <br> 
 
-## C. Test the service by consuming it in R
+## C. Consume the service in R to test
 
 Consume the service in R directly after publishing it to verify that the results are as expected.
 
@@ -239,11 +239,11 @@ The results should match the results obtained when the model was run locally ear
 As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](../r/how-to-execute-code-remotely.md#diff) 
 
 >[!WARNING]
->If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](configure-run-diagnostics.md#logs). 
+>If you get an alphanumeric error code, such as `Message: b55088c4-e563-459a-8c41-dd2c625e891d`, when consuming a service, search for that code in the [compute node's log file](configure-run-diagnostics.md#logs) to reveal the full error message. 
 
 ## D. Get the Swagger-based JSON file
 
-You, or others, can test and consume the service using the Swagger-based JSON file that was generated automatically when the service was published. This Swagger-based JSON file is specific to this service. You can easily get this file during the same authenticated session in which you published the service. It can be downloaded to the local file system. This file can also be obtained later as described in the article "[How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)." 
+Anyone can test and consume the service using its auto-generated Swagger-based JSON file. This Swagger-based JSON file is specific to a given version of a service. You can easily get this file during the same authenticated session in which you published the service. It can be downloaded to the local file system. You can get this Swagger file as long as the web service exists as described in the article "[How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)." 
 
 In this example, we executed these commands to download the Swagger-based JSON file:
 
