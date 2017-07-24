@@ -7,7 +7,7 @@ keywords: "remote login to r server, connect to r server, mrsdeploy connection, 
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "7/24/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -45,7 +45,7 @@ In R Server, every API call between the Web server and client must be authentica
 
 By default, all `mrsdeploy` operations are available to authenticated users. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. 
 
-`mrsdeploy` provides two functions for authentication against R Server: remoteLogin() and remoteLoginAAD(). These functions support not just authentication, but creation of a remote R session on the R Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the R Server instance, and open a remote command prompt.
+`mrsdeploy` provides two functions for authentication against R Server: [remoteLogin()](../r-reference/mrsdeploy/remotelogin.md) and remoteLoginAAD(../r-reference/mrsdeploy/remoteloginaad.md). These functions support not just authentication, but creation of a remote R session on the R Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the R Server instance, and open a remote command prompt.
  The function you use depends on the [type of authentication and deployment in your organization](configure-authentication.md). 
 
 ### On premises authentication
@@ -266,7 +266,7 @@ REMOTE> exit     # Destroy remote session and logout
 
 ### Remain local without creating a remote R session (3)
 
-In this state, you can authenticate with remoteLogin() and its argument `session = FALSE` so that no remote R session is started. Without a remote R session, you'll only have the local R environment and command line.
+In this state, you can authenticate with [remoteLogin()](../r-reference/mrsdeploy/remotelogin.md) and its argument `session = FALSE` so that no remote R session is started. Without a remote R session, you'll only have the local R environment and command line.
 
 |Command|State|
 |---|---|
@@ -317,6 +317,7 @@ To terminate the remote R session, type 'exit' at the REMOTE> prompt.  Also, to 
 |---|---|
 |pause()|When executed from the remote R session, returns the user to the local '>' command prompt.|
 |resume()|When executed from the local R session, returns the user to the 'REMOTE>' command prompt, and sets a remote execution context.|
+|exit|Logs you out of the session.|
 
 **Example**
 
@@ -336,7 +337,7 @@ REMOTE>exit  #logout and terminate the remote R session
 
 To terminate the remote R session while you are on the remote command line, type 'exit' at the REMOTE> prompt.  
 
-To terminate the remote session from the local R session, type 'remoteLogout()'.
+To terminate the remote session from the local R session, type ['remoteLogout()'](../r-reference/mrsdeploy/remotelogout.md).
 
 
 
