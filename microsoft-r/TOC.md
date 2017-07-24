@@ -116,7 +116,7 @@
 ### [Choose a MicrosoftML algorithm (cheatsheet)](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 ### [Execute R code remotely](r/how-to-execute-code-remotely.md)
 #### [Log into remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-#### [Create remote session](r/how-to-execute-code-remotely.md)
+#### [Create remote session and execute](r/how-to-execute-code-remotely.md)
 ### [Use data source objects](r/how-to-revoscaler-data-source.md)
 ### Load and transform data
 #### [Import text data](r/how-to-revoscaler-data-import.md)
