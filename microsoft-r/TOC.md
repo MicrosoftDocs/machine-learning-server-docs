@@ -8,7 +8,7 @@
 ### [What's new in Machine Learning Server](whats-new-in-r-server.md)
 ### [What's new in R Client](r-client/whats-new-in-r-client.md)
 
-# Install and configure
+# Install & configure
 
 ## Machine Learning Server
 ### [Supported platforms](install/r-server-install-supported-platforms.md)
@@ -28,7 +28,7 @@
 #### [Install on Hadoop](install/r-server-install-hadoop.md)
 ##### [Cloudera Manager parcel installation](install/r-server-install-cloudera.md)
 ###### [Generate a parcel](install/r-server-install-cloudera-generate-parcel.md)
-###### [Deploy and activate](install/r-server-install-cloudera-deploy-activate.md)
+###### [Deploy & activate](install/r-server-install-cloudera-deploy-activate.md)
 ###### [Rollback to previous version](install/r-server-install-cloudera-rollback.md)
 ##### [Command line installation (CDH, HDP, MapR)](install/r-server-install-hadoop-command-line.md)
 ##### [Offline install](install/r-server-install-hadoop-offline.md)
@@ -69,7 +69,7 @@
 ### [R Client for Windows](r-client/install-on-windows.md)
 ### [R Client for Linux](r-client/install-on-linux.md)
 
-## [Python libraries and interpreter](install/python-libraries-interpreter.md)
+## [Python libraries & interpreter](install/python-libraries-interpreter.md)
 
 ## [Pretrained models](install/microsoftml-install-pretrained-models.md)
 
@@ -98,8 +98,8 @@
 
 ## [Tutorials](r/tutorial-introduction.md)
 ### [Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md)
-### [Import and transform data](r/tutorial-revoscaler-data-import-transform.md)
-### [Visualize and analyze data](r/tutorial-revoscaler-data-model-analysis.md)
+### [Import & transform data](r/tutorial-revoscaler-data-import-transform.md)
+### [Visualize & analyze data](r/tutorial-revoscaler-data-model-analysis.md)
 ### Work with larger datasets
 #### [Flight delays data analysis](r/tutorial-revoscaler-large-data-airline.md)
 #### [Loan data analysis](r/tutorial-revoscaler-large-data-loan.md)
@@ -116,14 +116,14 @@
 ### [Choose a MicrosoftML algorithm (cheatsheet)](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 ### [Execute R code remotely](r/how-to-execute-code-remotely.md)
 #### [Log into remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-#### [Create remote session and execute](r/how-to-execute-code-remotely.md)
+#### [Create remote session & execute](r/how-to-execute-code-remotely.md)
 ### [Use data source objects](r/how-to-revoscaler-data-source.md)
-### Load and transform data
+### Load & transform data
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
 #### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
 #### [Access HDFS data](r/how-to-revoscaler-data-hdfs.md)
-#### [Transform and subset data](r/how-to-revoscaler-data-transform.md)
+#### [Transform & subset data](r/how-to-revoscaler-data-transform.md)
 #### [Sort data](r/how-to-revoscaler-data-sort.md)
 #### [Merge data](r/scaler-data-merge.md)
 ### Summarize data
@@ -138,7 +138,7 @@
 #### [Decision Forest Models](r/how-to-revoscaler-decision-forest.md)
 ### [Stochastic Gradient Boosting](r/how-to-revoscaler-boosting.md)
 ### [Naive Bayes Classifier](r/how-to-revoscaler-naive-bayes.md)
-### [Correlation and Variance/Covariance Matrices](r/how-to-revoscaler-covcor.md)
+### [Correlation & Variance/Covariance Matrices](r/how-to-revoscaler-covcor.md)
 ### [Clustering](r/how-to-revoscaler-cluster.md)
 ### [Visualize Huge Data Sets](r/how-to-revoscaler-visualize-huge-data-sets.md)
 ### [RevoScaleR with Spark](r/how-to-revoscaler-spark.md)
@@ -157,8 +157,8 @@
 #### [Parallel execution using doRSR](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
 ### [Connect to R Server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-### Deploy and consume analytics
-#### [Publish and manage services](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
+### Deploy & consume analytics
+#### [Publish & manage services](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume services: request-response](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume services: asynchronous](operationalize/how-to-consume-web-service-asynchronously-batch.md)
 #### [Integrate services into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
@@ -167,12 +167,12 @@
 #### [Log into remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 #### [Create remote session](r/how-to-execute-code-remotely.md)
 ## [Use data source objects](r/how-to-revoscaler-data-source.md)
-### Load and transform data
+### Load & transform data
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
 #### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
 #### [Access HDFS data](r/how-to-revoscaler-data-hdfs.md)
-#### [Transform and subset data](r/how-to-revoscaler-data-transform.md)
+#### [Transform & subset data](r/how-to-revoscaler-data-transform.md)
 #### [Sort data](r/how-to-revoscaler-data-sort.md)
 #### [Merge data](r/scaler-data-merge.md)
 ### Summarize data
@@ -187,7 +187,7 @@
 #### [Decision Forest Models](r/how-to-revoscaler-decision-forest.md)
 ### [Stochastic Gradient Boosting](r/how-to-revoscaler-boosting.md)
 ### [Naive Bayes Classifier](r/how-to-revoscaler-naive-bayes.md)
-### [Correlation and Variance/Covariance Matrices](r/how-to-revoscaler-covcor.md)
+### [Correlation & Variance/Covariance Matrices](r/how-to-revoscaler-covcor.md)
 ### [Clustering](r/how-to-revoscaler-cluster.md)
 ### [Visualize Huge Data Sets](r/how-to-revoscaler-visualize-huge-data-sets.md)
 ### [RevoScaleR with Spark](r/how-to-revoscaler-spark.md)
@@ -205,8 +205,8 @@
 #### [Parallel loops using foreach](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel execution using doRSR](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
-### Deploy and consume analytics
-#### [Publish and manage services](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
+### Deploy & consume analytics
+#### [Publish & manage services](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume services: request-response](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume services: asynchronous](operationalize/how-to-consume-web-service-asynchronously-batch.md)
 #### [Integrate services into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
@@ -250,11 +250,11 @@
 ###### [Authentication & Authorization](deployr/deployr-security-authentication.md)
 ###### [HTTPS & SSL/TLS Support](deployr/deployr-security-https.md)
 ###### [Server Access Policies](deployr/deployr-security-server-access.md)
-###### [Project and Repository File Access Controls](deployr/deployr-security-project-access.md)
+###### [Project & Repository File Access Controls](deployr/deployr-security-project-access.md)
 ###### [Password Policies](deployr/deployr-security-passwords.md)
 ###### [Account Locking Policies](deployr/deployr-security-account-locking.md)
 ###### [RServe Execution Context](deployr/deployr-security-rserve-execution-context.md)
-##### [APIs and Client Libraries](deployr/deployr-tools-and-samples.md)
+##### [APIs & Client Libraries](deployr/deployr-tools-and-samples.md)
 ###### [Developer Docs & Downloads](deployr/deployr-tools-and-samples.md)
 ###### [API Overview](deployr/deployr-api-reference.md)
 ###### [Client Library Tutorial](deployr/deployr-client-library.md)
@@ -265,7 +265,7 @@
 ###### [About Repository Manager](deployr/deployr-repository-manager-about.md)
 ###### [Working with Directories](deployr/deployr-repository-manager-directories.md)
 ###### [Working with Files](deployr/deployr-repository-manager-files.md)
-###### [Testing and Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
+###### [Testing & Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
 
 ## [Reference](r-reference/introducing-r-server-r-package-reference.md)
 ### [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
@@ -568,7 +568,7 @@
 # Resources
 
 ## [R Server known issues](resources-known-issues.md)
-## [Deprecated and discontinued features](resources-deprecated-features.md)
+## [Deprecated & discontinued features](resources-deprecated-features.md)
 ## [Servicing support policy](resources-servicing-support.md)
 ## [Opting out of usage data collection](resources-opting-out.md)
 ## [Glossary](resources-glossary.md)
