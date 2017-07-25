@@ -14,7 +14,7 @@ ms.prod: "microsoft-r"
 # optional metadata
 #ROBOTS: ""
 #audience: ""
-#ms.devlang: ""
+#ms.devlang: "r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""

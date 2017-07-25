@@ -23,30 +23,42 @@ ms.technology: ""
 
 ---
 
-# How-to guides for data analysis in Microsoft R
+# How-to guides for data analysis and operationalization in R with Microsoft R
 
-This section of the documentation is for data scientists, analysts, and statisticians. The focus of this content area is on data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies. It provides step-by-step guidance for common tasks leveraging the libraries and packages in Microsoft R.
+This section of the documentation is for data scientists, analysts, and statisticians. The focus of this content area is on data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies as well as the deployment and consumption of models and code. It provides step-by-step guidance for common tasks leveraging the libraries and packages in Microsoft R.
 
 If you are new to R, be sure to also use the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](../resources-more.md).
 
 ## How-to guidance
 
+Data analysis
 * [Data acquisition](how-to-revoscaler-data-import.md)
-* [Data Summaries](how-to-revoscaler-data-summaries.md)
+* [Data summaries](how-to-revoscaler-data-summaries.md)
 * [Models in ScaleR](how-to-revoscaler-models.md)
-* [crosstabs](how-to-revoscaler-crosstabs.md)
-* [Linear Models](how-to-revoscaler-linear-model.md)
-* [Logistic Regression Models](how-to-revoscaler-logistic-regression.md)
-* [Generalized Linear Models](how-to-revoscaler-generalized-linear-model.md)
-* [Decision Tree Models](how-to-revoscaler-decision-tree.md)
-* [Decision Forest Models](how-to-revoscaler-decision-forest.md)
-* [Stochastic Gradient Boosting](how-to-revoscaler-boosting.md)
-* [Naïve Bayes Classifier](how-to-revoscaler-naive-bayes.md)
-* [Correlation and Variance/Covariance Matrices](how-to-revoscaler-covcor.md)
+* [Crosstabs](how-to-revoscaler-crosstabs.md)
+* [Linear models](how-to-revoscaler-linear-model.md)
+* [Logistic regression](how-to-revoscaler-logistic-regression.md)
+* [Generalized linear](how-to-revoscaler-generalized-linear-model.md)
+* [Decision trees](how-to-revoscaler-decision-tree.md)
+* [Decision forest](how-to-revoscaler-decision-forest.md)
+* [Stochastic gradient boosting](how-to-revoscaler-boosting.md)
+* [Naïve Bayes classifier](how-to-revoscaler-naive-bayes.md)
+* [Correlation and variance/covariance matrices](how-to-revoscaler-covcor.md)
 * [Clustering](how-to-revoscaler-cluster.md)
-* [Converting RevoScaleR Model Objects for Use in PMML](how-to-developer-pmml.md)
-* [Transform Functions](concept-what-is-data-transformations.md)
-* [Visualizing Huge Data Sets](how-to-revoscaler-visualize-huge-data-sets.md)
+* [Converting RevoScaleR model objects for use in PMML](how-to-developer-pmml.md)
+* [Transform functions](concept-what-is-data-transformations.md)
+* [Visualizing huge data sets](how-to-revoscaler-visualize-huge-data-sets.md)
+
+Remote code execution on R Server
+* [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
+* [Create remote session & execute](r/how-to-execute-code-remotely.md)
+
+Operationalization: deploy and consume models and code
+* [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
+* [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
+* [Consume (asynchronous)](operationalize/how-to-consume-web-service-asynchronously-batch.md)
+* [Integrate into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
+* [Manage access tokens](operationalize/how-to-manage-access-tokens.md)
 
 ## See Also
 
