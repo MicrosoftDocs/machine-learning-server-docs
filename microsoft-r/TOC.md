@@ -514,13 +514,13 @@
 ## How-to guides
 ## [Reference](python-reference/introducing-python-package-reference.md)
 ### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
-### [microsoftml for Python](python-reference/microsoftml/microsoftml-package.md)
+### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
 
 # Resources
 
 ## [R Server known issues](resources-known-issues.md)
 ## [Deprecated & discontinued features](resources-deprecated-features.md)
 ## [Servicing support policy](resources-servicing-support.md)
-## [Opting out of usage data collection](resources-opting-out.md)
+## [Opt out of usage data collection](resources-opting-out.md)
 ## [Glossary](resources-glossary.md)
 ## [Additional resources](resources-more.md)
