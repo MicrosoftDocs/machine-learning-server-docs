@@ -114,7 +114,7 @@
 
 ## [How-to guides](r/how-to-introduction.md)
 
-### Data access and manipulation
+### Data access & manipulation
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
 #### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
