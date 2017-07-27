@@ -144,7 +144,7 @@
 ### [Execute R code remotely](r/how-to-execute-code-remotely.md)
 #### [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 #### [Create remote session & execute](r/how-to-execute-code-remotely.md)
-### Deploy & consume analytic web services
+### Publish as web service
 #### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume (asynchronous)](operationalize/how-to-consume-web-service-asynchronously-batch.md)
