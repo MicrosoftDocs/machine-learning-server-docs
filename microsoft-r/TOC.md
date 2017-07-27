@@ -113,16 +113,13 @@
 ### [Samples for MicrosoftML](r/sample-microsoftml.md)
 
 ## [How-to guides](r/how-to-introduction.md)
-### [Choose a MicrosoftML algorithm](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
-### [Execute R code remotely](r/how-to-execute-code-remotely.md)
-#### [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-#### [Create remote session & execute](r/how-to-execute-code-remotely.md)
-### [Use data source objects](r/how-to-revoscaler-data-source.md)
-### Load & transform data
+
+### Data access and manipulation
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
 #### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
 #### [Access HDFS data](r/how-to-revoscaler-data-hdfs.md)
+#### [Use data source objects](r/how-to-revoscaler-data-source.md)
 #### [Transform & subset data](r/how-to-revoscaler-data-transform.md)
 #### [Sort data](r/how-to-revoscaler-data-sort.md)
 #### [Merge data](r/scaler-data-merge.md)
@@ -131,12 +128,22 @@
 #### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
 ### Models
 #### [Models in RevoScaleR](r/how-to-revoscaler-models.md)
+#### [Choose a MicrosoftML algorithm](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 #### [Linear](r/how-to-revoscaler-linear-model.md)
 #### [Logistic regression](r/how-to-revoscaler-logistic-regression.md)
 #### [Generalized linear](r/how-to-revoscaler-generalized-linear-model.md)
 #### [Decision tree](r/how-to-revoscaler-decision-tree.md)
 #### [Decision forest](r/how-to-revoscaler-decision-forest.md)
 #### [Estimating with stochastic gradient boosting](r/how-to-revoscaler-boosting.md)
+### Classify data
+#### [Naive Bayes](r/how-to-revoscaler-naive-bayes.md)
+#### [Clustering](r/how-to-revoscaler-cluster.md)
+### [Correlate data](r/how-to-revoscaler-covcor.md)
+### [Visualize data](r/how-to-revoscaler-visualize-huge-data-sets.md)
+
+### [Execute R code remotely](r/how-to-execute-code-remotely.md)
+#### [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
+#### [Create remote session & execute](r/how-to-execute-code-remotely.md)
 ### Deploy & consume analytic web services
 #### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
@@ -196,11 +203,7 @@
 ###### [Working with Directories](deployr/deployr-repository-manager-directories.md)
 ###### [Working with Files](deployr/deployr-repository-manager-files.md)
 ###### [Testing & Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
-### [Classification](r/how-to-revoscaler-naive-bayes.md)
-#### [Naive Bayes](r/how-to-revoscaler-naive-bayes.md)
-#### [Clustering](r/how-to-revoscaler-cluster.md)
-### [Correlation & variance/covariance matrices](r/how-to-revoscaler-covcor.md)
-### [Big data visualization](r/how-to-revoscaler-visualize-huge-data-sets.md)
+
 ### Use RevoScaleR on Hadoop
 #### [Spark](r/how-to-revoscaler-spark.md)
 #### [MapReduce](r/how-to-revoscaler-hadoop.md)
