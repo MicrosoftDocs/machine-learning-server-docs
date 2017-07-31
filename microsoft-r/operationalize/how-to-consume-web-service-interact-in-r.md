@@ -193,6 +193,8 @@ Other data scientists may want to explore, test, and consume Web services direct
 
 You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the mrsdeploy package.  After authenticating, data scientists can use the getService() function in R to call the service. Then, they can get details about the service and start consuming it.
 
+You can also [build a client library directly in R using the httr package](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
+
 >[!NOTE]
 > It is also possible to perform batch consumption as [described here](how-to-consume-web-service-asynchronously-batch.md).
 
@@ -236,9 +238,8 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
 
-Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
+Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  You can also [build a client library directly in R using the httr package](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
 
-You can also build a client library directly in R using the httr package.  Learn more in [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
    
 Application developers can get the Swagger-based JSON file in one of these ways:
 
