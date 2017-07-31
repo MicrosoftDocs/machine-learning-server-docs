@@ -81,8 +81,7 @@ You are not required to install a Swagger code generator on your machine. Instea
 1. Switch back to the Swagger site and paste the contents into the online editor. 
 1. Click the **Generate Client** button on the toolbar.
 1. Choose the language for the client. The client library is generated.
-
-![Swagger Generate Client Library](./media/how-to-build-api-clients-from-swagger-for-app-integration/swaggerIO-generateClient.png)
+   ![Swagger Generate Client Library](./media/how-to-build-api-clients-from-swagger-for-app-integration/swaggerIO-generateClient.png)
 
 ### Option 3. Build using httr package in R
 
