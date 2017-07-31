@@ -238,8 +238,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
 
-Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  You can also [build a client library directly in R using the httr package](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
-
+Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
    
 Application developers can get the Swagger-based JSON file in one of these ways:
 
