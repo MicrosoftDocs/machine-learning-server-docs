@@ -37,7 +37,7 @@ To list, examine, or consume the web service outside of R, use the [RESTful APIs
 
 ## Requirements
 
-Before you can use the web service management functions in the mrsdeploy R package, you must:
+Before you can use the functions in the mrsdeploy R package to manage your web services, you must:
 + Have access to an R Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
 + Authenticate with R Server using the remoteLogin() or remoteLoginAAD() functions in the mrsdeploy package as described in the article "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
@@ -237,6 +237,8 @@ cat(swagger, file = "swagger.json", append = FALSE)
 Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
 
 Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
+
+You can also build a client library directly in R using the httr package.  Learn more in [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
    
 Application developers can get the Swagger-based JSON file in one of these ways:
 

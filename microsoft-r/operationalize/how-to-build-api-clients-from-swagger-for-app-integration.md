@@ -83,6 +83,10 @@ You are not required to install a Swagger code generator on your machine. Instea
 1. Choose the language for the client. The client library is generated.
 
 ![Swagger Generate Client Library](./media/how-to-build-api-clients-from-swagger-for-app-integration/swaggerIO-generateClient.png)
+
+### Option 3. Build using httr package in R
+
+You can also build a client library directly in R using the httr package. Like option 2, this option does not require you to install a Swagger code generator on your machine. This is very convenient when you want to publish a web service and immediately generate a client library from the resulting Swagger file. Learn more in [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
 <a name="authentication"></a>
 
 ## Add Authentication Workflow Logic
