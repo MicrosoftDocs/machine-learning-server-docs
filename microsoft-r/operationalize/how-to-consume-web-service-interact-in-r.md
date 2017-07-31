@@ -37,7 +37,7 @@ To list, examine, or consume the web service outside of R, use the [RESTful APIs
 
 ## Requirements
 
-Before you can use the web service management functions in the mrsdeploy R package, you must:
+Before you can use the functions in the mrsdeploy R package to manage your web services, you must:
 + Have access to an R Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
 + Authenticate with R Server using the remoteLogin() or remoteLoginAAD() functions in the mrsdeploy package as described in the article "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
@@ -192,6 +192,8 @@ Users can consume the service directly using a single consumption call. This app
 Other data scientists may want to explore, test, and consume Web services directly in R using the functions in the mrsdeploy package. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
 
 You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the mrsdeploy package.  After authenticating, data scientists can use the getService() function in R to call the service. Then, they can get details about the service and start consuming it.
+
+You can also [build a client library directly in R using the httr package](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
 
 >[!NOTE]
 > It is also possible to perform batch consumption as [described here](how-to-consume-web-service-asynchronously-batch.md).
