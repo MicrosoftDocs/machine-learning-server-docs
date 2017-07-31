@@ -99,7 +99,7 @@ Before you interact with the core APIs, you must authenticate, get the bearer ac
 
 + **Azure Active Directory (AAD)**
 
-Add code to pass the AAD credentials, authority, and client ID. In turn, AAD issues the token.
+  Add code to pass the AAD credentials, authority, and client ID. In turn, AAD issues the token.
 
   Here is an example of Azure Active Directory authentication in CSharp:
 
