@@ -6,7 +6,7 @@ description: "Use rx_logit to fit logistic regression models for small or large 
 keywords: "logic" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

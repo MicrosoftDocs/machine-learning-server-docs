@@ -6,7 +6,7 @@ description: "Creates a local compute context object. Computations using rx_exec
 keywords: "context, local" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

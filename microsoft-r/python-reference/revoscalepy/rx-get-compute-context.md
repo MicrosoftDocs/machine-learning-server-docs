@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Get and Set the compute context" 
-description: "Get or set the active compute context for RevoScalePy computationsrx_set_compute_context(compute_context: ‘RxComputeContext’) rx_get_compute_context()" 
+description: "Get or set the active compute context for revoscalepy computationsrx_set_compute_context(compute_context: ‘RxComputeContext’) rx_get_compute_context()" 
 keywords: "context" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -43,7 +43,7 @@ revoscalepy.rx_get_compute_context() -> revoscalepy.computecontext.RxComputeCont
 
 ## Description
 
-Get or set the active compute context for RevoScalePy computations
+Get or set the active compute context for revoscalepy computations
 
 rx_set_compute_context(compute_context: ‘RxComputeContext’)
 rx_get_compute_context()

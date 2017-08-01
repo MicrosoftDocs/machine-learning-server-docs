@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Generate SQL Server In-Database Compute Context" 
-description: "Creates a compute context for running RevoScalePy analyses inside Microsoft SQL Server. Currently only supported in Windows." 
+description: "Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server. Currently only supported in Windows." 
 keywords: "sql" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -43,7 +43,7 @@ class revoscalepy.RxInSqlServer(connection_string: str, num_tasks: int = None, a
 
 ## Description
 
-Creates a compute context for running RevoScalePy analyses inside Microsoft SQL Server.
+Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server.
 Currently only supported in Windows.
 
 

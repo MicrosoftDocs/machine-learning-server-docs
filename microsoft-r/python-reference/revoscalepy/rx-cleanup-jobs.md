@@ -6,7 +6,7 @@ description: "If job_info_list is a RxRemoteJob object, rx_cleanup_jobs attempts
 keywords: "cleanup, job" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
