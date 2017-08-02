@@ -35,10 +35,9 @@ With an enterprise configuration, you can work with your production-grade data w
 ## Enterprise architecture
 
 This configuration includes one or more web nodes, one or more compute nodes, and a database.   
++ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have multiple web nodes to load balance your requests to multiple compute nodes. 
 
-+ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
-
-+ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
++ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 + The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
