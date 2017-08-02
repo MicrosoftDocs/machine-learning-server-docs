@@ -162,7 +162,7 @@ The following logging levels are available:
 This section contains pointers to help you troubleshoot some problems that can occur.
 
 >[!IMPORTANT]
->If the following sections do not solve your issue, file a ticket with technical support and/or post your question in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+>If this section do not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### "BackEndConfiguration is missing URI" Error
 
@@ -183,11 +183,9 @@ If you get the `Cannot establish connection with the web node` error, then the c
 
 If the issue persists, verify you can post to the `login` API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
-### Using mrsdeploy functions in a Spark compute context takes a very long time
+### Long delays when consuming web service on Spark
 
-Since the Spark application belongs to a user called “rserve2” when invoked from web service using mrsdeploy functions, we recommend that you do the following to workaround this issue.
-
-Create the following required folders for user “rserve2” in local and hdfs:
+If you encounter long delays when trying to consume a web service created with  mrsdeploy functions in a Spark compute context, you may need to add some missing folders.  The Spark application belongs to a user called “rserve2” whenever it is invoked from a web service using mrsdeploy functions. To work around this issue, create these required folders for user “rserve2” in local and hdfs:
  
 ```
 hadoop fs -mkdir /user/RevoShare/rserve2
@@ -196,7 +194,6 @@ hadoop fs -chmod 777 /user/RevoShare/rserve2
 mkdir /var/RevoShare/rserve2
 chmod 777 /var/RevoShare/rserve2
 ``` 
-
 
 
 ### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
