@@ -141,9 +141,6 @@
 ### [Correlate data](r/how-to-revoscaler-covcor.md)
 ### [Visualize data](r/how-to-revoscaler-visualize-huge-data-sets.md)
 
-### [Execute R code remotely](r/how-to-execute-code-remotely.md)
-#### [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-#### [Create remote session & execute](r/how-to-execute-code-remotely.md)
 ### Deploy & consume analytic web services
 #### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
@@ -203,6 +200,11 @@
 ###### [Working with Directories](deployr/deployr-repository-manager-directories.md)
 ###### [Working with Files](deployr/deployr-repository-manager-files.md)
 ###### [Testing & Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
+
+
+### [Execute R code remotely](r/how-to-execute-code-remotely.md)
+#### [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
+#### [Create remote session & execute](r/how-to-execute-code-remotely.md)
 
 ### Use RevoScaleR on Hadoop
 #### [Spark](r/how-to-revoscaler-spark.md)

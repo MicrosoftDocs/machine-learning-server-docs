@@ -183,6 +183,22 @@ If you get the `Cannot establish connection with the web node` error, then the c
 
 If the issue persists, verify you can post to the `login` API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
+### Using mrsdeploy functions in a Spark compute context takes a very long time
+
+Since the Spark application belongs to a user called “rserve2” when invoked from web service using mrsdeploy functions, we recommend that you do the following to workaround this issue.
+
+Create the following required folders for user “rserve2” in local and hdfs:
+ 
+```
+hadoop fs -mkdir /user/RevoShare/rserve2
+hadoop fs -chmod 777 /user/RevoShare/rserve2
+ 
+mkdir /var/RevoShare/rserve2
+chmod 777 /var/RevoShare/rserve2
+``` 
+
+
+
 ### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
 
 If you get an `HTTP status 503 (Service Unavailable)` response when using the Rest APIs or encounter a failure for the compute node during diagnostic testing, then one or more of the symlinks needed by [deployr-rserve](https://github.com/Microsoft/deployr-rserve) are missing. deployr-rserve is the R execution component for the compute node,
