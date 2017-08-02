@@ -95,7 +95,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
 
-1. From the menus, choose **Configure R Server for Operationalization** and then choose **Configure for one box**. The configuration script begins.
+1. From the menus, choose **Configure server** (or in previously releases, Configure R Server for Operationalization) and then choose **Configure for one box**. The configuration script begins.
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically setup using the configuration you had for R Server 9.0. Note: You can safely ignore the Python warning during upgrade.
 
@@ -142,7 +142,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
     >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
 
-    1. Choose the option to **Configure R Server for Operationalization**.
+    1. Choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
     1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 

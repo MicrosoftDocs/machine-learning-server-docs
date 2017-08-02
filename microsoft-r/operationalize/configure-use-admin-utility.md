@@ -28,10 +28,10 @@ ms.technology:
 
 **Applies to:  Microsoft R Server 9.x**
 
-This article describes how to use the administration utility to configure R Server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials.
+This article describes how to use the administration utility to configure the server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials.
 
 Use the utility to:
-+ [Configure R Server for operationalization](../install/operationalize-r-server-one-box-config.md) front-ends and back-ends
++ [Configure server for operationalization](../install/operationalize-r-server-one-box-config.md) front-ends and back-ends
 + [Set a local admin password](#admin-password)
 + [Stop and restart](#startstop) web and compute node services
 + [Update the service ports](#ports)

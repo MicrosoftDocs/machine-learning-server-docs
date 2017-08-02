@@ -106,7 +106,7 @@
 #### [Census data analysis](r/tutorial-revoscaler-large-data-census.md)
 #### [Tips on big data computing](r/tutorial-large-data-tips.md)
 
-## Samples
+## Samples & solutions
 ### [Sample data in RevoScaleR](r/sample-built-in-data.md)
 ### [RevoScaleR rxExecBy parallel processing example](r/tutorial-rxexecby.md)
 ### [R Server with Sparklyr example](r/tutorial-sparklyr-revoscaler.md)
@@ -513,7 +513,7 @@
 
 ## Quickstarts
 ## Tutorials
-## Samples
+## Samples & solutions
 ## How-to guides
 ## [Reference](python-reference/introducing-python-package-reference.md)
 ### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
