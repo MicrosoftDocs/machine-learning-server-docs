@@ -6,7 +6,7 @@ description: "Fit stochastic gradient boosted decision trees on an ‘.xdf’ fi
 keywords: "learner, tree" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

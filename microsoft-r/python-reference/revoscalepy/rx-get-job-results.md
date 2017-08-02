@@ -6,7 +6,7 @@ description: "Obtain distributed computing results and processing status.rx_get_
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -53,7 +53,7 @@ rx_get_job_results(job_info, console_output, auto_cleanup)
 
 ### job_info
 
-a job object as returned by rx_exec or a RevoScalePy
+a job object as returned by rx_exec or a revoscalepy
 analysis function, if available.
 
 
