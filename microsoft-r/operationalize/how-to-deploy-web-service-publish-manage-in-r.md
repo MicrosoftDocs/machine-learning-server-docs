@@ -7,7 +7,7 @@ keywords: "mrsdeploy package"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "8/1/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -183,7 +183,8 @@ api <- updateService(
      "v1.0.0",
      code = manualTransmission,
      mode = carsModel,
-     inputs = list(wt = "numeric", dist = "numeric")
+     inputs = list(carData = "data.frame"),
+     outputs = list(answer = "data.frame"),
      descr = "Updated after March data refresh."
 )
 ```
@@ -264,7 +265,7 @@ The base path for files is set to your working directory, but you can change tha
 
 ### 1. R code and model are objects
 
-In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`). The inputs and outputs are lists. For an example of inputs/outputs as dataframes, see ["Example 5"](#dataframe).
+In this example, the code comes from an object (`code = manualTransmission`) and the model comes from a model object (`model = carsModel`).  For an example of inputs/outputs as dataframes, see ["Example 5"](#dataframe).
 
 
 ```R
