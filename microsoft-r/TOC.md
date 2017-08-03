@@ -125,9 +125,9 @@
 #### [Transform & subset data](r/how-to-revoscaler-data-transform.md)
 #### [Sort data](r/how-to-revoscaler-data-sort.md)
 #### [Merge data](r/scaler-data-merge.md)
-### Summarize data
-#### [Statistical summaries](r/how-to-revoscaler-data-summaries.md)
-#### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
+#### Summarize data
+##### [Statistical summaries](r/how-to-revoscaler-data-summaries.md)
+##### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
 #### [Visualize data](r/how-to-revoscaler-visualize-huge-data-sets.md)
 ### Modeling
 #### [Models in RevoScaleR](r/how-to-revoscaler-models.md)
