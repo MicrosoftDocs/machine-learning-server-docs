@@ -48,7 +48,7 @@
 #### [R Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
 #### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 #### [Microsoft Data Science VM](install/r-server-vm-data-science.md)
-### [Configure to operationalize analytics](operationalize/configure-start-for-administrators.md)
+### [Configure to deploy/operationalize](operationalize/configure-start-for-administrators.md)
 #### [Get started for administrators](operationalize/configure-start-for-administrators.md)
 #### [One-box configuration](install/operationalize-r-server-one-box-config.md)
 #### [Enterprise configuration](install/operationalize-r-server-enterprise-config.md)
@@ -81,19 +81,20 @@
 
 # Concepts
 
-## [Operationalize analytics](what-is-operationalization.md)
 ## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
 ## [RevoScaleR](r/concept-what-is-revoscaler.md)
+## [Operationalize](what-is-operationalization.md)
+### [Key features of operationalization](what-is-operationalization.md)
+### [Deploy & consume analytics](operationalize/concept-operationalize-deploy-consume.md)
 ## [Compute context](r/concept-what-is-compute-context.md)
 ## [Data transformations](r/concept-what-is-data-transformations.md)
 ## [XDF files](r/concept-what-is-xdf.md)
 ## [REST APIs](operationalize/concept-api.md)
-## [Analytic deployment](operationalize/concept-operationalize-deploy-consume.md)
 
 # Working in R
 
 ## Quickstarts
-### [Run R code in Microsoft R](r/quickstart-run-r-code.md)
+### [Run R code with new functions](r/quickstart-run-r-code.md)
 ### [Deploy an R model as a web service](operationalize/quickstart-publish-r-web-service.md)
 
 ## [Tutorials](r/tutorial-introduction.md)
@@ -142,7 +143,7 @@
 ### [Correlate data](r/how-to-revoscaler-covcor.md)
 ### [Visualize data](r/how-to-revoscaler-visualize-huge-data-sets.md)
 
-### Deploy & consume analytic web services
+### Deploy & consume web services
 #### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume (asynchronous)](operationalize/how-to-consume-web-service-asynchronously-batch.md)
