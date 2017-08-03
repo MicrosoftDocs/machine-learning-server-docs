@@ -517,6 +517,7 @@
 ## Quickstarts
 ## Tutorials
 ## Samples & solutions
+### [Solution templates](r/sample-solutions.md)
 ## How-to guides
 ## [Reference](python-reference/introducing-python-package-reference.md)
 ### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
