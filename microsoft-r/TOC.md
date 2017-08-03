@@ -115,8 +115,8 @@
 ### [Samples for MicrosoftML](r/sample-microsoftml.md)
 
 ## [How-to guides](r/how-to-introduction.md)
-
-### Data access & manipulation
+### Business understanding
+### Data aquisition & understanding
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
 #### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
@@ -128,7 +128,8 @@
 ### Summarize data
 #### [Statistical summaries](r/how-to-revoscaler-data-summaries.md)
 #### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
-### Models
+#### [Visualize data](r/how-to-revoscaler-visualize-huge-data-sets.md)
+### Modeling
 #### [Models in RevoScaleR](r/how-to-revoscaler-models.md)
 #### [Choose a MicrosoftML algorithm](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 #### [Linear](r/how-to-revoscaler-linear-model.md)
@@ -137,13 +138,12 @@
 #### [Decision tree](r/how-to-revoscaler-decision-tree.md)
 #### [Decision forest](r/how-to-revoscaler-decision-forest.md)
 #### [Estimating with stochastic gradient boosting](r/how-to-revoscaler-boosting.md)
-### Classify data
-#### [Naive Bayes](r/how-to-revoscaler-naive-bayes.md)
+#### [Naive Bayes Classification](r/how-to-revoscaler-naive-bayes.md)
 #### [Clustering](r/how-to-revoscaler-cluster.md)
-### [Correlate data](r/how-to-revoscaler-covcor.md)
-### [Visualize data](r/how-to-revoscaler-visualize-huge-data-sets.md)
+#### [Correlate data](r/how-to-revoscaler-covcor.md)
 
-### Deploy & consume web services
+
+### Operationalize: deploy, manage, & consume
 #### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume (asynchronous)](operationalize/how-to-consume-web-service-asynchronously-batch.md)
@@ -520,6 +520,10 @@
 ## Samples & solutions
 ### [Solution templates](r/sample-solutions.md)
 ## How-to guides
+### Business understanding
+### Data aquisition & understanding
+### Modeling
+### Operationalize: deploy, manage, & consume
 ## [Reference](python-reference/introducing-python-package-reference.md)
 ### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 ### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
