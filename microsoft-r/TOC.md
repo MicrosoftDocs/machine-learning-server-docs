@@ -4,7 +4,7 @@
 ## [What is Machine Learning Server?](what-is-microsoft-r-server.md)
 ## [What is Microsoft R Client?](r-client/what-is-microsoft-r-client.md)
 ## [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
-## New in this release
+## What's new
 ### [What's new in Machine Learning Server](whats-new-in-r-server.md)
 ### [What's new in R Client](r-client/whats-new-in-r-client.md)
 
