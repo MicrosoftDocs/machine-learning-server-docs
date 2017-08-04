@@ -202,8 +202,8 @@
 
 
 ## [Execute R code remotely](r/how-to-execute-code-remotely.md)
-#### [Connect to remote server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-#### [Create remote R session & execute](r/how-to-execute-code-remotely.md)
+### [Connect to remote server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
+### [Create remote R session & execute](r/how-to-execute-code-remotely.md)
 
 ## Use RevoScaleR on Hadoop
 ### R
