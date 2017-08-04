@@ -8,15 +8,42 @@
 ### [What's new in Machine Learning Server](whats-new-in-r-server.md)
 ### [What's new in R Client](r-client/whats-new-in-r-client.md)
 
-# Install & configure
+# Quickstarts
 
-## Machine Learning Server
+## R 
+### [Run R code with new functions](r/quickstart-run-r-code.md)
+### [Deploy an R model as a web service](operationalize/quickstart-publish-r-web-service.md)
+## Python
+
+# Tutorials
+## [R](r/tutorial-introduction.md)
+### [Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md)
+### [Import & transform data](r/tutorial-revoscaler-data-import-transform.md)
+### [Visualize & analyze data](r/tutorial-revoscaler-data-model-analysis.md)
+### Work with larger datasets
+#### [Flight delays data analysis](r/tutorial-revoscaler-large-data-airline.md)
+#### [Loan data analysis](r/tutorial-revoscaler-large-data-loan.md)
+#### [Census data analysis](r/tutorial-revoscaler-large-data-census.md)
+#### [Tips on big data computing](r/tutorial-large-data-tips.md)
+## Python
+
+# Samples & solutions
+## [Solution templates](r/sample-solutions.md)
+## R samples
+### [Sample data in RevoScaleR](r/sample-built-in-data.md)
+### [RevoScaleR rxExecBy parallel processing example](r/tutorial-rxexecby.md)
+### [R Server with Sparklyr example](r/tutorial-sparklyr-revoscaler.md)
+### [Samples for MicrosoftML](r/sample-microsoftml.md)
+## Python
+
+# [How-to guides](r/how-to-introduction.md)
+## Install & configure
 ### [Supported platforms](install/r-server-install-supported-platforms.md)
-### R Server for Windows
+### Machine Learning Server for Windows
 #### [Install on Windows](install/r-server-install-windows.md)
 #### [Offline install](install/r-server-install-windows-offline.md)
 #### [Command line install](install/r-server-install-windows-command-line.md)
-### R Server for Linux
+### Machine Learning Server for Linux
 #### [Install on Linux](install/r-server-install-linux-server.md)
 #### [Offline install](install/r-server-install-linux-offline.md)
 #### [Manage your installation](install/r-server-install-linux-manage-install.md)
@@ -24,7 +51,7 @@
 #### Install an older version
 ##### [Install R Server 9.0.1](install/r-server-install-linux-server-901.md)
 ##### [Install R Server 8.0.5](install/r-server-install-linux-server-805.md)
-### R Server for Hadoop
+### Machine Learning Server for Hadoop
 #### [Install on Hadoop](install/r-server-install-hadoop.md)
 ##### [Cloudera Manager parcel installation](install/r-server-install-cloudera.md)
 ###### [Generate a parcel](install/r-server-install-cloudera-generate-parcel.md)
@@ -45,8 +72,8 @@
 ##### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
 ### [Cloud provisioning](install/r-server-vm-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
-#### [R Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
-#### [R Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+#### [### Machine Learning Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
+#### [Machine Learning Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 #### [Microsoft Data Science VM](install/r-server-vm-data-science.md)
 ### [Configure to deploy/operationalize](operationalize/configure-start-for-administrators.md)
 #### [Get started for administrators](operationalize/configure-start-for-administrators.md)
@@ -64,59 +91,24 @@
 #### [Configure database](operationalize/configure-remote-database-to-operationalize.md)
 #### [Manage R packages](operationalize/configure-manage-r-packages.md)
 
+### Microsoft R Client
+#### [R Client for Windows](r-client/install-on-windows.md)
+#### [R Client for Linux](r-client/install-on-linux.md)
 
-## Microsoft R Client
-### [R Client for Windows](r-client/install-on-windows.md)
-### [R Client for Linux](r-client/install-on-linux.md)
+### [Python libraries & interpreter](install/python-libraries-interpreter.md)
 
-## [Python libraries & interpreter](install/python-libraries-interpreter.md)
+### [Pretrained models](install/microsoftml-install-pretrained-models.md)
 
-## [Pretrained models](install/microsoftml-install-pretrained-models.md)
+### R Server (Teradata)
+#### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
+#### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)
+#### [Install R Server on a Teradata Client](install/r-server-install-teradata-client.md)
+#### [Get started: ScaleR on Teradata](r/how-to-revoscaler-teradata.md)
 
-## R Server (Teradata)
-### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
-### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)
-### [Install R Server on a Teradata Client](install/r-server-install-teradata-client.md)
-### [Get started: ScaleR on Teradata](r/how-to-revoscaler-teradata.md)
+## Business understanding
 
-# Concepts
-
-## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
-## [RevoScaleR](r/concept-what-is-revoscaler.md)
-## [Operationalize](what-is-operationalization.md)
-### [Key features of operationalization](what-is-operationalization.md)
-### [Deploy & consume analytics](operationalize/concept-operationalize-deploy-consume.md)
-## [Compute context](r/concept-what-is-compute-context.md)
-## [Data transformations](r/concept-what-is-data-transformations.md)
-## [XDF files](r/concept-what-is-xdf.md)
-## [REST APIs](operationalize/concept-api.md)
-
-# Working in R
-
-## Quickstarts
-### [Run R code with new functions](r/quickstart-run-r-code.md)
-### [Deploy an R model as a web service](operationalize/quickstart-publish-r-web-service.md)
-
-## [Tutorials](r/tutorial-introduction.md)
-### [Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md)
-### [Import & transform data](r/tutorial-revoscaler-data-import-transform.md)
-### [Visualize & analyze data](r/tutorial-revoscaler-data-model-analysis.md)
-### Work with larger datasets
-#### [Flight delays data analysis](r/tutorial-revoscaler-large-data-airline.md)
-#### [Loan data analysis](r/tutorial-revoscaler-large-data-loan.md)
-#### [Census data analysis](r/tutorial-revoscaler-large-data-census.md)
-#### [Tips on big data computing](r/tutorial-large-data-tips.md)
-
-## Samples & solutions
-### [Solution templates](r/sample-solutions.md)
-### [Sample data in RevoScaleR](r/sample-built-in-data.md)
-### [RevoScaleR rxExecBy parallel processing example](r/tutorial-rxexecby.md)
-### [R Server with Sparklyr example](r/tutorial-sparklyr-revoscaler.md)
-### [Samples for MicrosoftML](r/sample-microsoftml.md)
-
-## [How-to guides](r/how-to-introduction.md)
-### Business understanding
-### Data aquisition & understanding
+## Data aquisition & understanding
+### R
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
 #### [Import ODBC data](r/how-to-revoscaler-data-odbc.md)
@@ -129,7 +121,10 @@
 ##### [Statistical summaries](r/how-to-revoscaler-data-summaries.md)
 ##### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
 #### [Visualize data](r/how-to-revoscaler-visualize-huge-data-sets.md)
-### Modeling
+### Python
+
+## Modeling
+### R
 #### [Models in RevoScaleR](r/how-to-revoscaler-models.md)
 #### [Choose a MicrosoftML algorithm](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
 #### [Linear](r/how-to-revoscaler-linear-model.md)
@@ -141,14 +136,16 @@
 #### [Naive Bayes Classification](r/how-to-revoscaler-naive-bayes.md)
 #### [Clustering](r/how-to-revoscaler-cluster.md)
 #### [Correlate data](r/how-to-revoscaler-covcor.md)
+### Python
 
-
-### Operationalize: deploy, manage, & consume
+## Operationalize: deploy, manage, & consume
+### R
 #### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume (asynchronous)](operationalize/how-to-consume-web-service-asynchronously-batch.md)
 #### [Integrate into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
 #### [Manage access tokens](operationalize/how-to-manage-access-tokens.md)
+### Python
 #### [Archive] DeployR 8.x
 ##### [How to install DeployR](deployr/deployr-installation.md)
 ###### [Install DeployR for R Server for Windows](deployr/deployr-install-on-windows.md)
@@ -204,11 +201,12 @@
 ###### [Testing & Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
 
 
-### [Execute R code remotely](r/how-to-execute-code-remotely.md)
-#### [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-#### [Create remote session & execute](r/how-to-execute-code-remotely.md)
+## [Execute R code remotely](r/how-to-execute-code-remotely.md)
+#### [Connect to remote server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
+#### [Create remote R session & execute](r/how-to-execute-code-remotely.md)
 
-### Use RevoScaleR on Hadoop
+## Use RevoScaleR on Hadoop
+### R
 #### [Spark](r/how-to-revoscaler-spark.md)
 #### [MapReduce](r/how-to-revoscaler-hadoop.md)
 ### RevoScaleR development
@@ -224,8 +222,10 @@
 #### [Parallel loops using foreach](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel execution using doRSR](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
+### Python
 
 ## [Reference](r-reference/introducing-r-server-r-package-reference.md)
+### R packages
 ### [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 #### [categorical](r-reference/microsoftml/categorical.md)
 #### [categoricalHash](r-reference/microsoftml/categoricalhash.md)
@@ -512,21 +512,23 @@
 ####[setInputDataQuery](r-reference/sqlrutils/setinputdataquery.md) 
 ####[setInputParameterValue](r-reference/sqlrutils/setinputparametervalue.md) 
 ####[StoredProcedure](r-reference/sqlrutils/storedprocedure.md)
+### [Python libraries](python-reference/introducing-python-package-reference.md)
+#### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
+#### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
+### APIs
 
-# Working in Python
+# Concepts
 
-## Quickstarts
-## Tutorials
-## Samples & solutions
-### [Solution templates](r/sample-solutions.md)
-## How-to guides
-### Business understanding
-### Data aquisition & understanding
-### Modeling
-### Operationalize: deploy, manage, & consume
-## [Reference](python-reference/introducing-python-package-reference.md)
-### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
-### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
+## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
+## [RevoScaleR](r/concept-what-is-revoscaler.md)
+## [Operationalize](what-is-operationalization.md)
+### [Key features of operationalization](what-is-operationalization.md)
+### [Deploy & consume analytics](operationalize/concept-operationalize-deploy-consume.md)
+## [Compute context](r/concept-what-is-compute-context.md)
+## [Data transformations](r/concept-what-is-data-transformations.md)
+## [XDF files](r/concept-what-is-xdf.md)
+## [REST APIs](operationalize/concept-api.md)
+
 
 # Resources
 
