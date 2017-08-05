@@ -37,7 +37,6 @@
 ## Python samples
 
 # Concepts
-
 ## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
 ## [RevoScaleR](r/concept-what-is-revoscaler.md)
 ## [Operationalize](what-is-operationalization.md)
@@ -82,12 +81,12 @@
 ##### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
 ##### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)
 ##### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
-### [Cloud provisioning](install/r-server-vm-cloud.md)
+### [Provision in the cloud](install/r-server-vm-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
 #### [### Machine Learning Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
 #### [Machine Learning Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 #### [Microsoft Data Science VM](install/r-server-vm-data-science.md)
-### [Configure to deploy/operationalize](operationalize/configure-start-for-administrators.md)
+### [Configure to operationalize](operationalize/configure-start-for-administrators.md)
 #### [Get started for administrators](operationalize/configure-start-for-administrators.md)
 #### [One-box configuration](install/operationalize-r-server-one-box-config.md)
 #### [Enterprise configuration](install/operationalize-r-server-enterprise-config.md)
