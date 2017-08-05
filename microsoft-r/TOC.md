@@ -36,6 +36,18 @@
 ### [Samples for MicrosoftML](r/sample-microsoftml.md)
 ## Python samples
 
+# Concepts
+
+## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
+## [RevoScaleR](r/concept-what-is-revoscaler.md)
+## [Operationalize](what-is-operationalization.md)
+### [Key features of operationalization](what-is-operationalization.md)
+### [Deploy & consume analytics](operationalize/concept-operationalize-deploy-consume.md)
+## [Compute context](r/concept-what-is-compute-context.md)
+## [Data transformations](r/concept-what-is-data-transformations.md)
+## [XDF files](r/concept-what-is-xdf.md)
+## [REST APIs](operationalize/concept-api.md)
+
 # [How-to guides](r/how-to-introduction.md)
 ## Install & configure
 ### [Supported platforms](install/r-server-install-supported-platforms.md)
@@ -208,7 +220,8 @@
 ### R
 #### [Spark](r/how-to-revoscaler-spark.md)
 #### [MapReduce](r/how-to-revoscaler-hadoop.md)
-### RevoScaleR development
+## RevoScaleR development
+### R
 #### [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md)
 #### [Write custom analyses for large data sets](r/how-to-developer-write-custom-analysis.md)
 #### [Convert model objects for use with PMML](r/how-to-developer-pmml.md)
@@ -223,8 +236,8 @@
 #### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
 ### Python
 
-## [Reference](r-reference/introducing-r-server-r-package-reference.md)
-### R packages
+# [Reference](r-reference/introducing-r-server-r-package-reference.md)
+## R packages
 ### [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 #### [categorical](r-reference/microsoftml/categorical.md)
 #### [categoricalHash](r-reference/microsoftml/categoricalhash.md)
@@ -511,22 +524,11 @@
 ####[setInputDataQuery](r-reference/sqlrutils/setinputdataquery.md) 
 ####[setInputParameterValue](r-reference/sqlrutils/setinputparametervalue.md) 
 ####[StoredProcedure](r-reference/sqlrutils/storedprocedure.md)
-### [Python libraries](python-reference/introducing-python-package-reference.md)
-#### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
-#### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
-### APIs
+## [Python libraries](python-reference/introducing-python-package-reference.md)
+### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
+### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
+## APIs
 
-# Concepts
-
-## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
-## [RevoScaleR](r/concept-what-is-revoscaler.md)
-## [Operationalize](what-is-operationalization.md)
-### [Key features of operationalization](what-is-operationalization.md)
-### [Deploy & consume analytics](operationalize/concept-operationalize-deploy-consume.md)
-## [Compute context](r/concept-what-is-compute-context.md)
-## [Data transformations](r/concept-what-is-data-transformations.md)
-## [XDF files](r/concept-what-is-xdf.md)
-## [REST APIs](operationalize/concept-api.md)
 
 
 # Resources
