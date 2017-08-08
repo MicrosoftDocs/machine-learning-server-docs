@@ -253,13 +253,13 @@
 #### [Parallel execution using doRSR](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
 
-# [Reference](r-reference/introducing-r-server-r-package-reference.md)
+# Reference
 
 ## [Python libraries](python-reference/introducing-python-package-reference.md)
 ### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
 ### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 
-## [R packages](r-reference/index.md)
+## [R packages](r-reference/introducing-r-server-r-package-reference.md)
 ### [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 #### [categorical](r-reference/microsoftml/categorical.md)
 #### [categoricalHash](r-reference/microsoftml/categoricalhash.md)

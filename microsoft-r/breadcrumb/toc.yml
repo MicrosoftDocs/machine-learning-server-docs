@@ -8,8 +8,8 @@
     items:
     - name: R Package Reference
       tocHref: /r-reference/
-      topicHref: /r-reference/index
+      topicHref: /r-reference/introducing-r-server-r-package-reference
       items:
       - name: mrsdeploy
         topicHref: /r-reference/mrsdeploy/
-        topicHref: /r-reference/mrsdeploy/mrsdeploy
+        topicHref: /r-reference/mrsdeploy/mrsdeploy-package
