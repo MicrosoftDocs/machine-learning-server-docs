@@ -66,25 +66,30 @@
 ## [Pretrained models](install/microsoftml-install-pretrained-models.md)
 
 ## Client-side
-### R
+### [Python interpreter](install/python-libraries-interpreter.md)
+### Microsoft R Client
 #### [Microsoft R Client for Windows](r-client/install-on-windows.md)
 #### [Microsoft R Client for Linux](r-client/install-on-linux.md)
-### [Python](install/python-libraries-interpreter.md)
 
-## R Server for Teradata
-### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
-### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)
-### [Install R Server on a Teradata Client](install/r-server-install-teradata-client.md)
-### [Get started: ScaleR on Teradata](r/how-to-revoscaler-teradata.md)
+## R Server
+### All platforms (archives??? redirect)
+### On Teradata
+#### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
+#### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)
+#### [Install R Server on a Teradata Client](install/r-server-install-teradata-client.md)
+#### [Get started: ScaleR on Teradata](r/how-to-revoscaler-teradata.md)
 
 # Quickstarts
 
-## R 
-### [Run R code with new functions](r/quickstart-run-r-code.md)
-### [Deploy an R model as a web service](operationalize/quickstart-publish-r-web-service.md)
 ## Python
 
+## R 
+### [Run R code with new functions](r/quickstart-run-r-code.md)
+### [Deploy model as a web service](operationalize/quickstart-publish-r-web-service.md)
+
 # Tutorials
+## Python
+
 ## [R](r/tutorial-introduction.md)
 ### [Explore R-to-RevoScaleR](r/tutorial-r-to-revoscaler.md)
 ### [Import & transform data](r/tutorial-revoscaler-data-import-transform.md)
@@ -94,16 +99,19 @@
 #### [Loan data analysis](r/tutorial-revoscaler-large-data-loan.md)
 #### [Census data analysis](r/tutorial-revoscaler-large-data-census.md)
 #### [Tips on big data computing](r/tutorial-large-data-tips.md)
-## Python
+
 
 # Samples & solutions
-## [Solution templates](r/sample-solutions.md)
-## R samples
+
+## Python
+
+## R
 ### [Sample data in RevoScaleR](r/sample-built-in-data.md)
 ### [RevoScaleR rxExecBy parallel processing example](r/tutorial-rxexecby.md)
 ### [R Server with Sparklyr example](r/tutorial-sparklyr-revoscaler.md)
 ### [Samples for MicrosoftML](r/sample-microsoftml.md)
-## Python samples
+
+## [Solution templates](r/sample-solutions.md)
 
 # Concepts
 ## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
@@ -119,10 +127,13 @@
 # [How-to guides](r/how-to-introduction.md)
 
 ## 1. Business understanding
-### R
 ### Python
+### R
+
 
 ## 2. Data aquisition & understanding
+### Python
+
 ### R
 #### [Import text data](r/how-to-revoscaler-data-import.md)
 #### [Import SQL Server data](r/how-to-revoscaler-data-sql.md)
@@ -136,9 +147,10 @@
 ##### [Statistical summaries](r/how-to-revoscaler-data-summaries.md)
 ##### [Crosstabs](r/how-to-revoscaler-crosstabs.md)
 #### [Visualize data](r/how-to-revoscaler-visualize-huge-data-sets.md)
-### Python
 
 ## 3. Modeling
+### Python
+
 ### R
 #### [Models in RevoScaleR](r/how-to-revoscaler-models.md)
 #### [Choose a MicrosoftML algorithm](r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
@@ -151,9 +163,11 @@
 #### [Naive Bayes Classification](r/how-to-revoscaler-naive-bayes.md)
 #### [Clustering](r/how-to-revoscaler-cluster.md)
 #### [Correlate data](r/how-to-revoscaler-covcor.md)
-### Python
+
 
 ## 4. Operationalization: deploy & consume
+### Python
+
 ### R
 #### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
@@ -213,9 +227,9 @@
 ###### [Working with Directories](deployr/deployr-repository-manager-directories.md)
 ###### [Working with Files](deployr/deployr-repository-manager-files.md)
 ###### [Testing & Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
-### Python
 
-## Execute R code remotely
+
+## Remote R code execution
 ### [Connect to remote server in R](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 ### [Create remote R session & execute](r/how-to-execute-code-remotely.md)
 
@@ -223,6 +237,7 @@
 ### R
 #### [Spark](r/how-to-revoscaler-spark.md)
 #### [MapReduce](r/how-to-revoscaler-hadoop.md)
+
 ## RevoScaleR development
 ### R
 #### [Write custom chunking algorithms](r/how-to-developer-write-chunking-algorithms.md)
@@ -237,9 +252,15 @@
 #### [Parallel loops using foreach](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel execution using doRSR](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
-### Python
 
 # [Reference](r-reference/introducing-r-server-r-package-reference.md)
+
+## APIs
+
+## [Python libraries](python-reference/introducing-python-package-reference.md)
+### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
+### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
+
 ## R packages
 ### [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 #### [categorical](r-reference/microsoftml/categorical.md)
@@ -527,18 +548,12 @@
 ####[setInputDataQuery](r-reference/sqlrutils/setinputdataquery.md) 
 ####[setInputParameterValue](r-reference/sqlrutils/setinputparametervalue.md) 
 ####[StoredProcedure](r-reference/sqlrutils/storedprocedure.md)
-## [Python libraries](python-reference/introducing-python-package-reference.md)
-### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
-### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
-## APIs
-
-
 
 # Resources
 
-## [R Server known issues](resources-known-issues.md)
-## [Deprecated & discontinued features](resources-deprecated-features.md)
 ## [Servicing support policy](resources-servicing-support.md)
+## [Known issues](resources-known-issues.md)
+## [Deprecated & discontinued features](resources-deprecated-features.md)
 ## [Opt out of usage data collection](resources-opting-out.md)
-## [Glossary](resources-glossary.md)
 ## [Additional resources](resources-more.md)
+## [Glossary](resources-glossary.md)
