@@ -72,7 +72,7 @@ Realtime web services, **introduced in R Server 9.1**, offer even lower latency 
 
 Realtime web services, like all web services, are also identified by their name and version. These lower latency, faster load services take only a model object created with supported functions. No other R code is supported with Realtime web services. Additionally, you do not need to specify inputs or outputs since realtime web services default to data.frame inputs and outputs automatically. 
 
-Realtime web services are supported only on Windows platforms only for R Server 9.1. However, the resulting web service can be consumed on any platform.
+Realtime web services were introduced in R Server 9.1 and were only supported only on Windows platforms in that release.  However, the resulting web service can be consumed on any platform. In Machine Learning Server 9.2 and beyond, realtime is supported on all platforms.
 
 A code sample for publishing realtime services can be [found later in this article](#publishService).
 A longer [realtime example](#realtime-example) is also available.
