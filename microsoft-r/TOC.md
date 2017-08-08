@@ -63,22 +63,6 @@
 #### [R execution security](operationalize/configure-r-execution-security.md)
 #### [Manage R packages](operationalize/configure-manage-r-packages.md)
 
-## [Configure server to operationalize](operationalize/configure-start-for-administrators.md)
-### [Get started for administrators](operationalize/configure-start-for-administrators.md)
-### [One-box configuration](install/operationalize-r-server-one-box-config.md)
-### [Enterprise configuration](install/operationalize-r-server-enterprise-config.md)
-### [Troubleshoot](operationalize/configure-run-diagnostics.md)
-### [Administration utility](operationalize/configure-use-admin-utility.md)
-### [Find advanced configuration file](operationalize/configure-find-admin-configuration-file.md)
-### [Evaluate capacity](operationalize/configure-evaluate-capacity.md)
-### [Configure authentication](operationalize/configure-authentication.md)
-### [Configure connection security (SSL/TLS)](operationalize/configure-https.md)
-### [Manage permissions with roles](operationalize/configure-roles.md)
-### [Configure CORS](operationalize/configure-cors.md)
-### [R execution security](operationalize/configure-r-execution-security.md)
-### [Configure database](operationalize/configure-remote-database-to-operationalize.md)
-### [Manage R packages](operationalize/configure-manage-r-packages.md)
-
 ## [Pretrained models](install/microsoftml-install-pretrained-models.md)
 
 ## Client-side
