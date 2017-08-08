@@ -66,10 +66,11 @@
 ## [Pretrained models](install/microsoftml-install-pretrained-models.md)
 
 ## Client-side
-### [Python interpreter](install/python-libraries-interpreter.md)
 ### Microsoft R Client
 #### [Microsoft R Client for Windows](r-client/install-on-windows.md)
 #### [Microsoft R Client for Linux](r-client/install-on-linux.md)
+
+### [Python interpreter](install/python-libraries-interpreter.md)
 
 ## R Server
 ### All platforms (archives??? redirect)
@@ -165,7 +166,7 @@
 #### [Correlate data](r/how-to-revoscaler-covcor.md)
 
 
-## 4. Operationalization: deploy & consume
+## 4. Operationalization (deploy & consume)
 ### Python
 
 ### R
@@ -258,8 +259,8 @@
 ## APIs
 
 ## [Python libraries](python-reference/introducing-python-package-reference.md)
-### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 ### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
+### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 
 ## R packages
 ### [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
