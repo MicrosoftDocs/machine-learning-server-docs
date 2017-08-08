@@ -123,7 +123,6 @@
 ## [Compute context](r/concept-what-is-compute-context.md)
 ## [Data transformations](r/concept-what-is-data-transformations.md)
 ## [XDF files](r/concept-what-is-xdf.md)
-## [REST APIs](operationalize/concept-api.md)
 
 # [How-to guides](r/how-to-introduction.md)
 
@@ -132,7 +131,7 @@
 ### R
 
 
-## 2. Data aquisition & understanding
+## 2. Data aquisition
 ### Python
 
 ### R
@@ -255,8 +254,6 @@
 #### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
 
 # [Reference](r-reference/introducing-r-server-r-package-reference.md)
-
-## APIs
 
 ## [Python libraries](python-reference/introducing-python-package-reference.md)
 ### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
@@ -549,6 +546,8 @@
 ####[setInputDataQuery](r-reference/sqlrutils/setinputdataquery.md) 
 ####[setInputParameterValue](r-reference/sqlrutils/setinputparametervalue.md) 
 ####[StoredProcedure](r-reference/sqlrutils/storedprocedure.md)
+
+## [REST APIs](operationalize/concept-api.md)
 
 # Resources
 
