@@ -50,37 +50,38 @@
 # [How-to guides](r/how-to-introduction.md)
 ## Install & configure
 ### [Supported platforms](install/r-server-install-supported-platforms.md)
-### Machine Learning Server for Windows
-#### [Install on Windows](install/r-server-install-windows.md)
-#### [Offline install](install/r-server-install-windows-offline.md)
-#### [Command line install](install/r-server-install-windows-command-line.md)
-### Machine Learning Server for Linux
-#### [Install on Linux](install/r-server-install-linux-server.md)
-#### [Offline install](install/r-server-install-linux-offline.md)
-#### [Manage your installation](install/r-server-install-linux-manage-install.md)
-#### [Uninstall from Linux](install/r-server-install-linux-uninstall.md)
-#### Install an older version
-##### [Install R Server 9.0.1](install/r-server-install-linux-server-901.md)
-##### [Install R Server 8.0.5](install/r-server-install-linux-server-805.md)
-### Machine Learning Server for Hadoop
-#### [Install on Hadoop](install/r-server-install-hadoop.md)
-##### [Cloudera Manager parcel installation](install/r-server-install-cloudera.md)
-###### [Generate a parcel](install/r-server-install-cloudera-generate-parcel.md)
-###### [Deploy & activate](install/r-server-install-cloudera-deploy-activate.md)
-###### [Rollback to previous version](install/r-server-install-cloudera-rollback.md)
-##### [Command line installation (CDH, HDP, MapR)](install/r-server-install-hadoop-command-line.md)
-##### [Offline install](install/r-server-install-hadoop-offline.md)
-##### [Package dependency list](install/r-server-install-linux-hadoop-packages.md)
-##### [Manual package installation](install/r-server-install-hadoop-manual-package.md)
-#### Post-install configuration
-##### [Adjust Hadoop configuration](install/r-server-install-hadoop-configuration-r-workloads.md)
-##### [Enforce a YARN queue assignment](install/r-server-install-hadoop-yarnqueueusage.md)
-##### [Troubleshoot installation problems](install/r-server-install-hadoop-troubleshoot.md)
-#### [Uninstall from Hadoop](install/r-server-install-uninstall-upgrade.md)
-#### Install an older version
-##### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
-##### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)
-##### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
+### Machine Learning Server
+#### Windows
+##### [Install on Windows](install/r-server-install-windows.md)
+##### [Offline install](install/r-server-install-windows-offline.md)
+##### [Command line install](install/r-server-install-windows-command-line.md)
+#### Linux
+##### [Install on Linux](install/r-server-install-linux-server.md)
+##### [Offline install](install/r-server-install-linux-offline.md)
+##### [Manage your installation](install/r-server-install-linux-manage-install.md)
+##### [Uninstall from Linux](install/r-server-install-linux-uninstall.md)
+##### Install an older version
+###### [Install R Server 9.0.1](install/r-server-install-linux-server-901.md)
+###### [Install R Server 8.0.5](install/r-server-install-linux-server-805.md)
+#### Hadoop
+##### [Install on Hadoop](install/r-server-install-hadoop.md)
+###### [Cloudera Manager parcel installation](install/r-server-install-cloudera.md)
+####### [Generate a parcel](install/r-server-install-cloudera-generate-parcel.md)
+####### [Deploy & activate](install/r-server-install-cloudera-deploy-activate.md)
+####### [Rollback to previous version](install/r-server-install-cloudera-rollback.md)
+###### [Command line installation (CDH, HDP, MapR)](install/r-server-install-hadoop-command-line.md)
+###### [Offline install](install/r-server-install-hadoop-offline.md)
+###### [Package dependency list](install/r-server-install-linux-hadoop-packages.md)
+###### [Manual package installation](install/r-server-install-hadoop-manual-package.md)
+##### Post-install configuration
+###### [Adjust Hadoop configuration](install/r-server-install-hadoop-configuration-r-workloads.md)
+###### [Enforce a YARN queue assignment](install/r-server-install-hadoop-yarnqueueusage.md)
+###### [Troubleshoot installation problems](install/r-server-install-hadoop-troubleshoot.md)
+##### [Uninstall from Hadoop](install/r-server-install-uninstall-upgrade.md)
+##### Install an older version
+###### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
+###### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)
+###### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
 ### [Provision in the cloud](install/r-server-vm-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
 #### [### Machine Learning Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
@@ -102,15 +103,16 @@
 #### [Configure database](operationalize/configure-remote-database-to-operationalize.md)
 #### [Manage R packages](operationalize/configure-manage-r-packages.md)
 
-### Microsoft R Client
-#### [R Client for Windows](r-client/install-on-windows.md)
-#### [R Client for Linux](r-client/install-on-linux.md)
+### Client-side
+#### R
+##### [Microsoft R Client for Windows](r-client/install-on-windows.md)
+##### [Microsoft R Client for Linux](r-client/install-on-linux.md)
 
-### [Python libraries & interpreter](install/python-libraries-interpreter.md)
+#### [Python](install/python-libraries-interpreter.md)
 
 ### [Pretrained models](install/microsoftml-install-pretrained-models.md)
 
-### R Server (Teradata)
+### R Server 9.1 or earlier (Teradata)
 #### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
 #### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)
 #### [Install R Server on a Teradata Client](install/r-server-install-teradata-client.md)
