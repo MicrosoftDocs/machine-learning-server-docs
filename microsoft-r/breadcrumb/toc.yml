@@ -1,5 +1,5 @@
 - name: Docs
-  href: /
+  tocHref: /
   homepage: /
   items:
   - name: Microsoft Machine Learning Server

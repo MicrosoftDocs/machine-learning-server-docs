@@ -259,7 +259,7 @@
 ### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
 ### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 
-## R packages
+## [R packages](r-reference/index.md)
 ### [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 #### [categorical](r-reference/microsoftml/categorical.md)
 #### [categoricalHash](r-reference/microsoftml/categoricalhash.md)
