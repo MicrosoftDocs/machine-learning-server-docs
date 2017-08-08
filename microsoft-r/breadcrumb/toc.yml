@@ -2,9 +2,9 @@
   tocHref: /
   topicHref: /
   items:
-  - name: Microsoft Machine Learning Server -
+  - name: Microsoft Machine Learning Server
     tocHref: /r-server/
-    topicHref: /r-server/ 
+    topicHref: /r-server/index
     items:
     - name: R Package Reference
       tocHref: /r-reference/
