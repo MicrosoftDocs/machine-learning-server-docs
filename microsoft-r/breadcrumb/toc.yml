@@ -2,8 +2,14 @@
   href: /
   homepage: /
   items:
-  - name: Microsoft R
+  - name: Microsoft Machine Learning Server
     href: /r-server/
     homepage: /r-server/ 
-
-
+      items:
+        - name: R Package Reference
+        tocHref: /r-reference/
+        topicHref: /r-reference/index
+        items:
+          - name: "mrsdeploy"
+            topicHref: /r-reference/mrsdeploy/
+            topicHref: /r-reference/mrsdeploy/mrsdeploy
