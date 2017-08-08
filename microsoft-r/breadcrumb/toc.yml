@@ -11,5 +11,5 @@
       topicHref: /r-reference/introducing-r-server-r-package-reference
       items:
       - name: mrsdeploy
-        topicHref: /r-reference/mrsdeploy/
+        tocHref: /r-reference/mrsdeploy/
         topicHref: /r-reference/mrsdeploy/mrsdeploy-package

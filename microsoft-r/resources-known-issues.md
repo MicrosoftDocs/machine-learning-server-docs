@@ -25,7 +25,7 @@ ms.technology:
 
 ---
 
-# Known issues in Microsoft R Server 9.1
+# Known issues in Microsoft R Server
 
 Review workaround steps for the following known issues in this release. 
 
