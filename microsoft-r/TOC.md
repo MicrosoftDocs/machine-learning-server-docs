@@ -8,6 +8,76 @@
 ### [What's new in Machine Learning Server](whats-new-in-r-server.md)
 ### [What's new in R Client](r-client/whats-new-in-r-client.md)
 
+# Install & configure
+## [Supported platforms](install/r-server-install-supported-platforms.md)
+## Machine Learning Server
+### Windows
+#### [Install on Windows](install/r-server-install-windows.md)
+#### [Offline install](install/r-server-install-windows-offline.md)
+#### [Command line install](install/r-server-install-windows-command-line.md)
+### Linux
+#### [Install on Linux](install/r-server-install-linux-server.md)
+#### [Offline install](install/r-server-install-linux-offline.md)
+#### [Manage your installation](install/r-server-install-linux-manage-install.md)
+#### [Uninstall from Linux](install/r-server-install-linux-uninstall.md)
+#### Install an older version
+##### [Install R Server 9.0.1](install/r-server-install-linux-server-901.md)
+##### [Install R Server 8.0.5](install/r-server-install-linux-server-805.md)
+### Hadoop
+#### [Install on Hadoop](install/r-server-install-hadoop.md)
+##### [Cloudera Manager parcel installation](install/r-server-install-cloudera.md)
+###### [Generate a parcel](install/r-server-install-cloudera-generate-parcel.md)
+###### [Deploy & activate](install/r-server-install-cloudera-deploy-activate.md)
+###### [Rollback to previous version](install/r-server-install-cloudera-rollback.md)
+##### [Command line installation (CDH, HDP, MapR)](install/r-server-install-hadoop-command-line.md)
+##### [Offline install](install/r-server-install-hadoop-offline.md)
+##### [Package dependency list](install/r-server-install-linux-hadoop-packages.md)
+##### [Manual package installation](install/r-server-install-hadoop-manual-package.md)
+#### Post-install configuration
+##### [Adjust Hadoop configuration](install/r-server-install-hadoop-configuration-r-workloads.md)
+##### [Enforce a YARN queue assignment](install/r-server-install-hadoop-yarnqueueusage.md)
+##### [Troubleshoot installation problems](install/r-server-install-hadoop-troubleshoot.md)
+#### [Uninstall from Hadoop](install/r-server-install-uninstall-upgrade.md)
+#### Install an older version
+##### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
+##### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)
+##### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
+### [In the cloud](install/r-server-vm-cloud.md)
+#### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
+#### [### Machine Learning Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
+#### [Machine Learning Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+#### [Microsoft Data Science VM](install/r-server-vm-data-science.md)
+
+## [Configure server to operationalize](operationalize/configure-start-for-administrators.md)
+### [Get started for administrators](operationalize/configure-start-for-administrators.md)
+### [One-box configuration](install/operationalize-r-server-one-box-config.md)
+### [Enterprise configuration](install/operationalize-r-server-enterprise-config.md)
+### [Troubleshoot](operationalize/configure-run-diagnostics.md)
+### [Administration utility](operationalize/configure-use-admin-utility.md)
+### [Find advanced configuration file](operationalize/configure-find-admin-configuration-file.md)
+### [Evaluate capacity](operationalize/configure-evaluate-capacity.md)
+### [Configure authentication](operationalize/configure-authentication.md)
+### [Configure connection security (SSL/TLS)](operationalize/configure-https.md)
+### [Manage permissions with roles](operationalize/configure-roles.md)
+### [Configure CORS](operationalize/configure-cors.md)
+### [R execution security](operationalize/configure-r-execution-security.md)
+### [Configure database](operationalize/configure-remote-database-to-operationalize.md)
+### [Manage R packages](operationalize/configure-manage-r-packages.md)
+
+## Client-side
+### R
+#### [Microsoft R Client for Windows](r-client/install-on-windows.md)
+#### [Microsoft R Client for Linux](r-client/install-on-linux.md)
+### [Python](install/python-libraries-interpreter.md)
+
+## [Pretrained models](install/microsoftml-install-pretrained-models.md)
+
+## R Server for Teradata
+### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
+### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)
+### [Install R Server on a Teradata Client](install/r-server-install-teradata-client.md)
+### [Get started: ScaleR on Teradata](r/how-to-revoscaler-teradata.md)
+
 # Quickstarts
 
 ## R 
