@@ -1,15 +1,15 @@
 - name: Docs
   tocHref: /
-  homepage: /
+  topicHref: /
   items:
   - name: Microsoft Machine Learning Server
     href: /r-server/
-    homepage: /r-server/ 
+    topicHref: /r-server/ 
+    items:
+    - name: R Package Reference
+      tocHref: /r-reference/
+      topicHref: /r-reference/index
       items:
-        - name: R Package Reference
-        tocHref: /r-reference/
-        topicHref: /r-reference/index
-        items:
-          - name: "mrsdeploy"
-            topicHref: /r-reference/mrsdeploy/
-            topicHref: /r-reference/mrsdeploy/mrsdeploy
+      - name: mrsdeploy
+        topicHref: /r-reference/mrsdeploy/
+        topicHref: /r-reference/mrsdeploy/mrsdeploy
