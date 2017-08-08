@@ -46,7 +46,8 @@
 #### [Machine Learning Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 #### [Microsoft Data Science VM](install/r-server-vm-data-science.md)
 
-### [Configure to operationalize](operationalize/configure-start-for-administrators.md)
+### [Configure to operationalize](what-is-operationalization.md)
+#### [Get started for admins](operationalize/configure-start-for-administrators.md)
 #### [Configure: One-box](install/operationalize-r-server-one-box-config.md)
 #### [Configure: Enterprise](install/operationalize-r-server-enterprise-config.md)
 #### [Troubleshoot](operationalize/configure-run-diagnostics.md)
@@ -113,12 +114,10 @@
 ## [Solution templates](r/sample-solutions.md)
 
 # Concepts
+## [Compute context](r/concept-what-is-compute-context.md)
 ## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
 ## [RevoScaleR](r/concept-what-is-revoscaler.md)
-## [Operationalize](what-is-operationalization.md)
-### [Key features of operationalization](what-is-operationalization.md)
-### [Deploy & consume analytics](operationalize/concept-operationalize-deploy-consume.md)
-## [Compute context](r/concept-what-is-compute-context.md)
+## [Operationalization](operationalize/concept-operationalize-deploy-consume.md)
 ## [Data transformations](r/concept-what-is-data-transformations.md)
 ## [XDF files](r/concept-what-is-xdf.md)
 

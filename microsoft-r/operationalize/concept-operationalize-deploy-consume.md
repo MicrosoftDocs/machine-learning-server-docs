@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# What does it mean to deploy and consume analytics?
+# What is operationalization: deploy and consume analytics
 
 **Applies to:  Microsoft R Server 9.x**
 
