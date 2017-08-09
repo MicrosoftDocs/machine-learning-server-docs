@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "05/07/2017"
+ms.date: "08/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -138,6 +138,8 @@ The workaround is to recreate the symbolic link, update the site file, and resta
   ~~~~
   sudo rstudio-server restart
   ~~~~
+
+<a name="sparkdelays"></a>
 
 ## 7. Long delays when consuming web service on Spark
 
