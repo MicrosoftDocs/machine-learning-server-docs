@@ -35,6 +35,7 @@ Review workaround steps for the following known issues in this release.
 4. [Spark compute context: modelCount=1 does not work with rxTextData](#ml-ensembling-modelcount)  
 5. [Cloudera: "install_mrs_parcel.py" does not exist](#cdh-parcel-message) 
 6. [Cloudera: Connection error due to libjvm and libhdfs package dependencies](#cdh-rstudio-loc-cc) 
+7. [Long delays when consuming web service on Spark](#sparkdelays)
 
 Other release-specific pages include [What's New in 9.1](whats-new-in-r-server.md) and [Deprecated and Discontinued Features](resources-deprecated-features.md). For known issues in the 9.0.1 or 8.0.5 releases, see [Previous Releases](#Prev).
 
@@ -137,6 +138,18 @@ The workaround is to recreate the symbolic link, update the site file, and resta
   ~~~~
   sudo rstudio-server restart
   ~~~~
+
+## 7. Long delays when consuming web service on Spark
+
+If you encounter long delays when trying to consume a web service created with mrsdeploy functions in a Spark compute context, you may need to add some missing folders. The Spark application belongs to a user called “rserve2” whenever it is invoked from a web service using mrsdeploy functions. To work around this issue, create these required folders for user “rserve2” in local and hdfs:
+
+```
+hadoop fs -mkdir /user/RevoShare/rserve2
+hadoop fs -chmod 777 /user/RevoShare/rserve2
+
+mkdir /var/RevoShare/rserve2
+chmod 777 /var/RevoShare/rserve2
+```
 
 <a name="Prev"></a>
 
