@@ -6,7 +6,7 @@ description: "This function does not attempt to retrieve any output objects; if 
 keywords: "cancel" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

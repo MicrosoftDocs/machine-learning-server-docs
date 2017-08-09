@@ -71,7 +71,6 @@ This library is built for [Python 3.5](https://www.python.org/doc/). Aside from 
 |[RxOdbcData](RxOdbcData.md) | Generates a data source object from an ODBC data source.|
 |[RxSqlServerData](RxSqlServerData.md) | Generates a data source object from a SQL table or query.|
 
-
 ## Data manipulation (ETL)
 
 | Function | Description |
@@ -90,7 +89,6 @@ This library is built for [Python 3.5](https://www.python.org/doc/). Aside from 
 |[rx_dforest](rx-dforest.md) | Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
 |[rx_btrees](rx-btrees.md) | Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
 |[rx_predict](rx-predict.md) | Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects. |
-
 
 ## Serialization functions
 
@@ -113,6 +111,7 @@ This library is built for [Python 3.5](https://www.python.org/doc/). Aside from 
 |[rx_get_var_info](rx-get-var-info.md) | Get variable information for a R**revoscalepy** data source or data frame, including variable names, descriptions, and value labels.|
 |[rx_get_var_names](rx-get-var-names.md)  | Read the variable names for data source or data frame. |
 |[rx_set_var_info](rx-set-var-info.md)  | Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame.|
+|[RxMissingValues](RxMissingValues.md) | Provides missing values for various `NumPy` data types which you can use to mark missing values in a sequence of data in `ndarray`.|
 
 ## See also
 

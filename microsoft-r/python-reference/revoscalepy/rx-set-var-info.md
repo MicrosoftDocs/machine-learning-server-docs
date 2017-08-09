@@ -6,7 +6,7 @@ description: "Set the variable information for an “.xdf” file, including var
 keywords: "variables" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

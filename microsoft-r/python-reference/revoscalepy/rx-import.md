@@ -6,7 +6,7 @@ description: "Import data into an ‘.xdf’ file or data.frame."
 keywords: "import, datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -146,8 +146,8 @@ is to use column_info with specified “levels”.
 
 ### column_classes
 
-list of strings specifying the column types to use
-when converting the data. The element names for the vector are used to
+dictionary of column name to strings specifying the column types
+to use when converting the data. The element names for the vector are used to
 identify which column should be converted to which type.
 
     Allowable column types are:
@@ -343,7 +343,7 @@ data source objects to be imported.
 
 If an output_file is not specified, an output data frame is
 returned. If an output_file is specified, an RxXdfData data source is
-returned that can be used in subsequent RevoScalePy analysis.
+returned that can be used in subsequent revoscalepy analysis.
 
 
 ## Example
