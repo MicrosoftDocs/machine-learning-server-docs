@@ -30,7 +30,7 @@ ms.technology:
 Review workaround steps for the following known issues in this release. 
 
 1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
-2. [RevoScaleR: rxExecBy() terminates unexpectedly if NA values do not have a factor level](#revoscaler-rxexecby)  
+2. [RevoScaleR: rxExecBy() terminates unexpectedly when NA values do not have a factor level](#revoscaler-rxexecby)  
 3. [MicrosoftML error: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"](#ml-ensembling)  
 4. [Spark compute context: modelCount=1 does not work with rxTextData](#ml-ensembling-modelcount)  
 5. [Cloudera: "install_mrs_parcel.py" does not exist](#cdh-parcel-message) 
@@ -54,11 +54,11 @@ In comparison with the local compute context, rxMerge() used in a RxSpark comput
 
 <a name="revoscaler-rxexecby"></a>
 
-## 2. rxExecBy() terminates unexpectedly if NA values do not have a factor level
+## 2. rxExecBy() terminates unexpectedly when NA values do not have a factor level
 
 *Applies to: RevoScaleR package > rxExecBy function*
 
-R script using rxExecBy will suddenly abort if the data set presents factor columns containing NA values, and NA is not a factor level. For example, consider a variable for Gender with 3 factor levels: Female, Male, Unknown. If an existing value is not represented by one of the factors, the function will fail.
+R script using rxExecBy suddenly aborts when the data set presents factor columns containing NA values, and NA is not a factor level. For example, consider a variable for Gender with three factor levels: Female, Male, Unknown. If an existing value is not represented by one of the factors, the function fails.
 
 There are two possible workarounds:
 
@@ -87,7 +87,7 @@ Var 1: Gender
 
 *Applies to: MicrosoftML package > Ensembling*
 
-Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
+Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface fail during Ensembling. Examples include getSentiment() and featurizeImage().
 
 To work around this error, you can pre-featurize data using rxFeaturize(). The only other alternative is to avoid mixing Ensembling with transforms that produce this error. Finally, you could also wait until the issue is fixed in the next release.
 
@@ -104,7 +104,7 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 ## 5. Cloudera: "install_mrs_parcel.py" does not exist 
 
-If you are performing a [parcel installation of R Server in Cloudera](install/r-server-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Please ignore the message.
+If you are performing a [parcel installation of R Server in Cloudera](install/r-server-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Ignore the message.
 
 <a name="cdh-rstudio-loc-cc"></a>
 
@@ -116,7 +116,7 @@ R Server has a package dependency that is triggered only under a very specific c
 + RStudio is the IDE
 + Operation runs in local compute context on an edge node in a Hadoop cluster 
 
-Under this configuration, a failed operation could be the result of a package dependency, which will be evident in the error message stack through warnings about a missing libjvm or libhdfs package.
+Under this configuration, a failed operation could be the result of a package dependency, which is evident in the error message stack through warnings about a missing libjvm or libhdfs package.
 
 The workaround is to recreate the symbolic link, update the site file, and restart R Studio.
 
@@ -157,7 +157,7 @@ chmod 777 /var/RevoShare/rserve2
 
 ## Previous releases 
 
-This document also describes the known issues for the last several releases, listed below:
+This document also describes the known issues for the last several releases:
 
 + [Known issues for 9.0.1](#901)
 + [Known issues for 8.0.5](#805)
@@ -170,9 +170,9 @@ This document also describes the known issues for the last several releases, lis
  + On SLES 11 systems, there have been reports of threading interference between the Boost and
 MKL libraries.
  + The value of consoleOutput that is set in the `RxHadoopMR` compute context when `wait=FALSE`
-determines whether or not `consoleOutput` will be displayed when `rxGetJobResults` is called; the
+determines whether or not `consoleOutput` is displayed when `rxGetJobResults` is called; the
 value of `consoleOutput` in the latter function is ignored.
- + When using `RxInTeradata`, if you encounter an intermittent failure, simply try resubmitting your
+ + When using `RxInTeradata`, if you encounter an intermittent failure, try resubmitting your
 R command.
  + The `rxDataStep` function does not support the `varsToKeep` and `varsToDrop` arguments in
 `RxInTeradata`.
@@ -187,7 +187,7 @@ compute context.
 
 #### Package: RevoScaleR > Data Import and Manipulation
  + Appending to an existing table is not supported when writing to a Teradata database.
- + When reading `VARCHAR` columns from a database, white space will be trimmed. To prevent this,
+ + When reading `VARCHAR` columns from a database, white space is trimmed. To prevent this,
 enclose strings in non-white-space characters.
  + When using functions such as `rxDataStep` to create database tables with `VARCHAR` columns, the
 column width is estimated based on a sample of the data. If the width can vary, it may be
@@ -202,8 +202,7 @@ computation may result in exiting the software.
  + Composite xdf data set columns are removed when running `rxPredict(.)` with `rxDForest(.)` in
 Hadoop and writing to the input file.
  + The `rxDTree` function does not currently support in-formula transformations; in particular, using
-the `F()` syntax for creating factors on the fly is not supported. However, numeric data will be
-automatically binned.
+the `F()` syntax for creating factors on the fly is not supported. However, numeric data is automatically binned.
  + Ordered factors are treated the same as factors in all RevoScaleR analysis functions except
 `rxDTree`.
 
@@ -215,7 +214,7 @@ automatically binned.
  + The `RevoMods` timestamp() function, which masks the standard version from the utils package, is unable to find the `C_addhistory` object when running in  an Rgui, Rscript, etc. session. If you are calling `timestamp()`, call the `utils` version directly as `utils::timestamp()`.
 
 #### R Base and Recommended Packages
-+ In the `nls` function, use of the `port` algorithm occasionally causes the R front-end to stop unexpectedly. The `nls` help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms.
++ In the `nls` function, use of the `port` algorithm occasionally causes the R front end to stop unexpectedly. The `nls` help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms.
 
 #### Operationalize (Deploy & Consume Web Services) _features formerly referred to as DeployR_
 
@@ -229,10 +228,9 @@ automatically binned.
 #### Package: RevoScaleR > Distributed Computing
  + On SLES 11 systems, there have been reports of threading interference between the Boost and
 MKL libraries.
- + The value of consoleOutput that is set in the `RxHadoopMR` compute context when `wait=FALSE`
-determines whether or not `consoleOutput` will be displayed when `rxGetJobResults` is called; the
+ + The value of consoleOutput defined in the `RxHadoopMR` compute context when `wait=FALSE` determines whether `consoleOutput` is displayed when `rxGetJobResults` is called. The
 value of `consoleOutput` in the latter function is ignored.
- + When using `RxInTeradata`, if you encounter an intermittent failure, simply try resubmitting your
+ + When using `RxInTeradata`, if you encounter an intermittent failure, try resubmitting your
 R command.
  + The `rxDataStep` function does not support the `varsToKeep` and `varsToDrop` arguments in
 `RxInTeradata`.
@@ -243,7 +241,7 @@ compute context.
 
 #### Package: RevoScaleR > Data Import and Manipulation
  + Appending to an existing table is not supported when writing to a Teradata database.
- + When reading `VARCHAR` columns from a database, white space will be trimmed. To prevent this,
+ + When reading `VARCHAR` columns from a database, white space is trimmed. To prevent this,
 enclose strings in non-white-space characters.
  + When using functions such as `rxDataStep` to create database tables with `VARCHAR` columns, the
 column width is estimated based on a sample of the data. If the width can vary, it may be
@@ -258,8 +256,7 @@ computation may result in exiting the software.
  + Composite xdf data set columns are removed when running `rxPredict(.)` with `rxDForest(.)` in
 Hadoop and writing to the input file.
  + The `rxDTree` function does not currently support in-formula transformations; in particular, using
-the `F()` syntax for creating factors on the fly is not supported. However, numeric data will be
-automatically binned.
+the `F()` syntax for creating factors on the fly is not supported. However, numeric data is automatically binned.
  + Ordered factors are treated the same as factors in all RevoScaleR analysis functions except
 `rxDTree`.
 
@@ -277,4 +274,4 @@ automatically binned.
  + The `RevoMods` timestamp() function, which masks the standard version from the utils package, is unable to find the `C_addhistory` object when running in  an Rgui, Rscript, etc. session. If you are calling `timestamp()`, call the `utils` version directly as `utils::timestamp()`.
 
 #### R Base and Recommended Packages
-+ In the nls function, use of the `port` algorithm occasionally causes the R front-end to stop unexpectedly. The nls help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms.
++ In the nls function, use of the `port` algorithm occasionally causes the R front end to stop unexpectedly. The nls help file advises caution when using this algorithm. We recommend avoiding it altogether and using either the default Gauss-Newton or plinear algorithms.
