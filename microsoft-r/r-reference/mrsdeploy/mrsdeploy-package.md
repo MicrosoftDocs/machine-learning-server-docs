@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
 **Applies to:  Microsoft R Server 9.x**
 
-the mrsdeploy package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
+The mrsdeploy package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, see the individual function help topics in the table of contents.
 
@@ -49,7 +49,7 @@ The requirements for remote execution include:
 
 ## How to use mrsdeploy
 
-**the mrsdeploy package can only be used once Microsoft R Server has been configured to operationalize analytics**.  For more information, see [Configuring R Server to operationalize analytics](../../install/operationalize-r-server-one-box-config.md).
+**The mrsdeploy package can only be used once Microsoft R Server has been configured to operationalize analytics**.  For more information, see [Configuring R Server to operationalize analytics](../../install/operationalize-r-server-one-box-config.md).
 
 + On R Client, the mrsdeploy package is installed **and loaded** automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
 

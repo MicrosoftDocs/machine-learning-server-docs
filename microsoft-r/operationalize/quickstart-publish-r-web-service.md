@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Quickstart for deploying models as web services - Microsoft R Server | Microsoft Docs"
+title: "Quickstart for deploying models as web services with mrsdeploy - Microsoft R Server | Microsoft Docs"
 description: "How to deploy an R model as a service"
 keywords: "quickstart, Microsoft R Server, deploy r models"
 author: "j-martens"
@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 
 ---
-# Deploy an R Model as a web service
+# Deploy an R Model as a web service with mrsdeploy
 
 **Applies to: Microsoft R Client 3.x, Microsoft R Server 9.x**
 

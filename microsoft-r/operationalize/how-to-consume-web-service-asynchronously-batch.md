@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Consume web services asynchronously with batch scoring - Microsoft R Server | Microsoft Docs"
+title: "Consume web services asynchronously with batch scoring with mrsdeploy  - Microsoft R Server | Microsoft Docs"
 description: "Asynchronous web service consumption via batch processing in R Server"
 keywords: "batch processing of web services"
 author: "j-martens"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Asynchronous web service consumption via batch processing in R Server
+# Asynchronous web service consumption via batch processing in R Server with mrsdeploy 
 
 **Applies to:  Microsoft R Server 9.1**
 

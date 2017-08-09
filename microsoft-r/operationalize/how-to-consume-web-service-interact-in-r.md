@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to get and consume web services in R - Microsoft R Server | Microsoft Docs"
+title: "How to get and consume web services in R with mrsdeploy - Microsoft R Server | Microsoft Docs"
 description: "Web service interaction and consumption functions in the mrsdeploy package."
 keywords: "mrsdeploy package"
 author: "j-martens"
@@ -23,11 +23,11 @@ ms.technology: "r-server"
 
 ---
 
-# How to interact with and consume web services in R
+# How to interact with and consume web services in R with mrsdeploy 
 
 **Applies to:  Microsoft R Server 9.x**
 
-After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). the mrsdeploy R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
+After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). The mrsdeploy R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 If you do not want to list, examine, or consume the web service in R, a set of [RESTful APIs](concept-api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
