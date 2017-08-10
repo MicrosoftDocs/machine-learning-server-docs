@@ -164,13 +164,14 @@
 
 ## 4. Operationalization (deploy & consume)
 ### Python
+#### [Authenticate](operationalize/python/how-to-authenticate-with-server-in-python.md)
+#### [Deploy & manage services](operationalize/python/how-to-deploy-manage-web-services.md)
+#### [Find & consume services](operationalize/python/how-to-consume-web-services.md)
 
 ### R
-#### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
+#### [Deploy & manage services](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume (asynchronous)](operationalize/how-to-consume-web-service-asynchronously-batch.md)
-#### [Integrate into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
-#### [Manage access tokens](operationalize/how-to-manage-access-tokens.md)
 #### [Archive] DeployR 8.x
 ##### [How to install DeployR](deployr/deployr-installation.md)
 ###### [Install DeployR for R Server for Windows](deployr/deployr-install-on-windows.md)
@@ -224,6 +225,11 @@
 ###### [Working with Directories](deployr/deployr-repository-manager-directories.md)
 ###### [Working with Files](deployr/deployr-repository-manager-files.md)
 ###### [Testing & Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
+
+### APIs
+#### [About the REST APIs](operationalize/concept-api.md)
+#### [Integrate services into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
+#### [Manage access tokens](operationalize/how-to-manage-access-tokens.md)
 
 
 ## Remote R code execution
@@ -543,8 +549,6 @@
 ####[setInputDataQuery](r-reference/sqlrutils/setinputdataquery.md) 
 ####[setInputParameterValue](r-reference/sqlrutils/setinputparametervalue.md) 
 ####[StoredProcedure](r-reference/sqlrutils/storedprocedure.md)
-
-## [REST APIs](operationalize/concept-api.md)
 
 # Resources
 
