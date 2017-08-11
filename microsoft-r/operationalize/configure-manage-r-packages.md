@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# R Package Management when operationalizing analytics with R Server
+# R package management when operationalizing analytics with R Server
 
 **Applies to:  Microsoft R Server 9.x**
 

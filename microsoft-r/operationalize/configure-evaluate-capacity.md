@@ -32,9 +32,9 @@ The Evaluate Capacity tool allows you to test your own R code deployed as a web 
 
 You can define the parameters for the traffic simulation for a given configuration or for a given web service. You can test for maximum latency or maximum thread count.
 
-+ **Maximum Latency:** Define the maximum number of milliseconds for a web node request, the initial thread count, and the thread increments for the test. The test will increase the number of threads by the defined increment until the defined time limit is reached.
++ **Maximum Latency:** Define the maximum number of milliseconds for a web node request, the initial thread count, and the thread increments for the test. The test increases the number of threads by the defined increment until the defined time limit is reached.
 
-+ **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test will increase the number of parallel requests by the specified increment until the maximum number of threads is reached.
++ **Maximum Thread Count:** Define the number of threads against which you want to run, such as 10, 15, or 40.  The test increases the number of parallel requests by the specified increment until the maximum number of threads is reached.
 
 > [!Important]
 > Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
@@ -60,17 +60,17 @@ You can define the parameters for the traffic simulation for a given configurati
 
    1. From the sub-menu, choose the option for **Change thread/latency limits**.
    1. When prompted, enter `Time` to define the number of threads against which you want to test.
-   1. Specify the maximum latency in milliseconds after which the test will stop.
-   1. Specify the minimum thread count at which the test will start.
-   1. Specify the increment by which the number of threads will increase for each iteration until the maximum latency is reached.
+   1. Specify the maximum latency in milliseconds after which the test stops.
+   1. Specify the minimum thread count at which the test starts.
+   1. Specify the increment by which the number of threads increases for each iteration until the maximum latency is reached.
 
 1. To test for the maximum number of parallel requests that can be supported:
 
    1. From the sub-menu, choose the option for **Change thread/latency limits**.
    1. When prompted, enter `Threads` to define the maximal threshold for the duration of a web node request.
-   1. Specify the maximum thread count after which the test will stop running.
-   1. Specify the minimum thread count at which the test will start.
-   1. Specify the increment by which the number of threads will increase for each iteration.
+   1. Specify the maximum thread count after which the test stops running.
+   1. Specify the minimum thread count at which the test starts.
+   1. Specify the increment by which the number of threads increases for each iteration.
 
 <br>
 
@@ -121,9 +121,9 @@ You can also explore the results visually in a break-down graph using the URL th
 
 When using R Server for operationalization, R code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, R Server is capable of establishing and maintaining a pool of R shells for R code execution.  This pool limits the maximum number of R shells can be used to execute in parallel.
 
-There is a cost to creating an R shell both in time and memory. So having a pool of existing R shells awaiting R code execution requests means no time will be lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create R shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size(`InitialSize`), the longer it will take to start up the compute node. 
+There is a cost to creating an R shell both in time and memory. So having a pool of existing R shells awaiting R code execution requests means no time is lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create R shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size(`InitialSize`), the longer it takes to start up the compute node. 
 
-New R shells can be added to the pool until the maximum pool size (`MaxSize`) is reached. Whenever the last R shell in the pool is called, a new R shell is automatically created for the next, future execution request until the maximum is reached. After the maximum is reached, the compute node will return a `503 - server busy` response. However, during simulation test, the test will continue until the test threshold is met (maximum threads or latency). If the number of R shells needed to run the test exceeds the number of shells in the pool, a new R shell will be created on-demand when the request is made and the time it takes to execute the code will be longer since time will be spent creating the shell itself. 
+New R shells can be added to the pool until the maximum pool size (`MaxSize`) is reached. Whenever the last R shell in the pool is called, a new R shell is automatically created for the next, future execution request until the maximum is reached. After the maximum is reached, the compute node returns a `503 - server busy` response. However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of R shells needed to run the test exceeds the number of shells in the pool, a new R shell is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the shell itself. 
 
 The size of this pool can be adjusted in the external configuration file, appsettings.json, found on each compute node.
 
@@ -134,7 +134,7 @@ The size of this pool can be adjusted in the external configuration file, appset
   },
 ```
 
-Since each compute node has its own thread pool for R shells, configuring multiple compute nodes means that more pooled R shells will be available to your users. 
+Since each compute node has its own thread pool for R shells, configuring multiple compute nodes means that more pooled R shells are available to your users. 
 
 
 **To update the thread pool:**
@@ -143,7 +143,7 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
    1. Search for the section starting with `"Pool": {`
 
-   1. Set the `InitialSize`. This is the number of R shells that will be pre-created for your users each time the compute node is restarted.
+   1. Set the `InitialSize`. This is the number of R shells that are pre-created for your users each time the compute node is restarted.
 
    1. Set the `MaxSize`. This is the maximum number of R shells that can be pre-created and held in memory for processing R code execution requests. 
 

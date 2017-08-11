@@ -82,6 +82,7 @@
 # Quickstarts
 
 ## Python
+### [Deploy model as a web service](operationalize/python/quickstart-publish-python-web-service.md)
 
 ## R 
 ### [Run R code with new functions](r/quickstart-run-r-code.md)
