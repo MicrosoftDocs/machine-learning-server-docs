@@ -185,7 +185,9 @@ If the issue persists, verify you can post to the `login` API using curl, fiddle
 
 ### Long delays when consuming web service on Spark
 
-If you encounter long delays when trying to consume a web service created with mrsdeploy functions in a Spark compute context, you may need to add some missing folders. The Spark application belongs to a user called “rserve2” whenever it is invoked from a web service using mrsdeploy functions. To work around this issue, create these required folders for user “rserve2” in local and hdfs:
+If you encounter long delays when trying to consume a web service created with mrsdeploy functions in a Spark compute context, you may need to add some missing folders. The Spark application belongs to a user called “rserve2” whenever it is invoked from a web service using mrsdeploy functions. 
+
+To work around this issue, create these required folders for user “rserve2” in local and hdfs:
 
 ```
 hadoop fs -mkdir /user/RevoShare/rserve2
@@ -194,6 +196,15 @@ hadoop fs -chmod 777 /user/RevoShare/rserve2
 mkdir /var/RevoShare/rserve2
 chmod 777 /var/RevoShare/rserve2
 ```
+
+Now, to create a clean Spark compute context, then run:
+
+```R 
+rxSparkConnect(reset = TRUE)
+```
+
+The 'reset' parameter kills all pre-existing yarn applications, and create a new one.
+ 
 
 ### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
 
