@@ -143,8 +143,26 @@ The workaround is to recreate the symbolic link, update the site file, and resta
 
 ## 7. Long delays when consuming web service on Spark
 
+If you encounter long delays when trying to consume a web service created with mrsdeploy functions in a Spark compute context, you may need to add some missing folders. The Spark application belongs to a user called 'rserve2' whenever it is invoked from a web service using mrsdeploy functions. 
 
-If you encounter long delays when trying to consume a web service created with mrsdeploy functions in a Spark compute context, you may need to add some missing folders. The Spark application belongs to a user called “rserve2” whenever it is invoked from a web service using mrsdeploy functions. 
+To work around this issue, create these required folders for user 'rserve2' in local and hdfs:
+
+```
+hadoop fs -mkdir /user/RevoShare/rserve2
+hadoop fs -chmod 777 /user/RevoShare/rserve2
+
+mkdir /var/RevoShare/rserve2
+chmod 777 /var/RevoShare/rserve2
+```
+
+Next, create a new Spark compute context:
+
+```R 
+rxSparkConnect(reset = TRUE)
+```
+
+When 'reset = TRUE', all cached Spark Data Frames are freed and all existing Spark applications belonging to the current user are shut down.
+  If you encounter long delays when trying to consume a web service created with mrsdeploy functions in a Spark compute context, you may need to add some missing folders. The Spark application belongs to a user called “rserve2” whenever it is invoked from a web service using mrsdeploy functions. 
 
 To work around this issue, create these required folders for user “rserve2” in local and hdfs:
 
