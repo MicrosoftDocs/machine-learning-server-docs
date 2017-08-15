@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Client Library Tutorial | DeployR 8.x  | Microsoft Docs"
+title: "DeployR Client Library Tutorial | DeployR 8.x"
 description: "DeployR Client Library Tutorial"
 keywords: ""
 author: "j-martens"

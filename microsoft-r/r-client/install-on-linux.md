@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Linux  | Microsoft Docs"
+title: "Install Microsoft R Client on Linux | Microsoft Docs"
 description: "Microsoft R Client Install Guide Linux"
 keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "j-martens"

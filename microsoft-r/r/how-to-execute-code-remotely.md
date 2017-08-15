@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Remote Execution with mrsdeploy - Microsoft R Server  | Microsoft Docs"
+title: "Remote Execution with mrsdeploy - Microsoft R Server | Microsoft Docs"
 description: "Remote execution for Microsoft R Server"
 keywords: ""
 author: "j-martens"

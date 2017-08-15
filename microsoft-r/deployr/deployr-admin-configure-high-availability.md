@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Server, Grid & Database High Availability | DeployR 8.x  | Microsoft Docs"
+title: "DeployR Server, Grid & Database High Availability | DeployR 8.x"
 description: "How to Configure High Availability HA for DeployR Server, Grid & Database"
 keywords: ""
 author: "j-martens"

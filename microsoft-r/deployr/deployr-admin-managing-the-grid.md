@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Administration Console Help | DeployR 8.x  | Microsoft Docs"
+title: "DeployR Administration Console Help | DeployR 8.x"
 description: "Managing Grid Nodes in the DeployR Administration Console"
 keywords: ""
 author: "j-martens"
