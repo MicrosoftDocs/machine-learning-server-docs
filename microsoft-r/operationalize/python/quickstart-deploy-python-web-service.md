@@ -42,11 +42,11 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 Before you begin this QuickStart, have the following ready:
 
-+ WILL THERE BE A CLIENT OF SORTS WITH THIS PACKAGE???? An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
++ WILL THERE BE A CLIENT OF SORTS WITH THIS PACKAGE???? An instance of [Microsoft R Client installed](../../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
 
-+ An instance of [Machine Learning Server ](../what-is-microsoft-r-server.md) installed that has been [configured to operationalize analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
++ An instance of [Machine Learning Server ](../../what-is-microsoft-r-server.md) installed that has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
 
-+ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../operationalize/python/how-to-authenticate-with-server-in-python.md) in R, deploy your analytics as web services so others can consume them. 
++ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-with-server-in-python.md) in R, deploy your analytics as web services so others can consume them. 
 
 
 ## Example code
@@ -54,7 +54,7 @@ Before you begin this QuickStart, have the following ready:
 This article walks through the deployment of a simple Python model as a web service hosted in Machine Learning Server.  Here is the entire Python code for the example that we walk through in the sections that follow.
 
 >[!IMPORTANT]
->Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../operationalize/python/how-to-authenticate-with-server-in-python.md).
+>Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-with-server-in-python.md).
 
 ```r
 ##########################################################
@@ -202,7 +202,7 @@ Now let's dive into this example down. Let's start by creating the model locally
    When publishing a service, specify its name and version, the R code, the inputs, and the outputs needed for application integration as well as other parameters. 
 
    >[!NOTE]
-   >To publish a web service while in a remote R session, carefully [review these guidelines](../r/how-to-execute-code-remotely.md#publish-remote-session). 
+   >To publish a web service while in a remote R session, carefully [review these guidelines](../../r/how-to-execute-code-remotely.md#publish-remote-session). 
 
    ```R
    api <- publishService(
@@ -236,7 +236,7 @@ print(result$output("answer")) # 0.6418125
 ``` 
 
 The results should match the results obtained when the model was run locally earlier.
-As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](../r/how-to-execute-code-remotely.md#diff) 
+As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](../../r/how-to-execute-code-remotely.md#diff) 
 
 >[!WARNING]
 >If you get an alphanumeric error code, such as `Message: b55088c4-e563-459a-8c41-dd2c625e891d`, when consuming a service, search for that code in the [compute node's log file](configure-run-diagnostics.md#logs) to reveal the full error message. 
@@ -268,12 +268,12 @@ After it has been deployed, the web service can be:
 
 ## How to execute R code remotely
 
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](../r/how-to-execute-code-remotely.md).
+You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](../../r/how-to-execute-code-remotely.md).
 
 Requirements for remote execution include:
 
-+ Configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
-+ Obtain [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
++ Configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../../r-client-get-started.md). 
++ Obtain [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../../install/operationalize-r-server-one-box-config.md).
 
 ## More resources
 
@@ -282,12 +282,12 @@ This section provides a quick summary of useful links for data scientists operat
 >Use the table of contents to find all the guides and documentation needed by the administrator.
 
 **Key Documents**
- + [About Operationalization](../what-is-operationalization.md)    
- + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)    
+ + [About Operationalization](../../what-is-operationalization.md)    
+ + [Functions in mrsdeploy package](../../r-reference/mrsdeploy/mrsdeploy-package.md)    
  + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
  + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)    
  + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)    
- + [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)    
+ + [Execute on a remote Microsoft R Server](../../r/how-to-execute-code-remotely.md)    
 
 **Other Getting Started Guides**
  + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    
