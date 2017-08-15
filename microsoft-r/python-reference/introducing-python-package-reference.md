@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Python function library help (SQL Server Machine Learning)"
+title: "Python function library help (SQL Server Machine Learning) | Microsoft Docs"
 description: "Function reference for Python packages: microsoftml, revoscalepy"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-ms.date: "06/29/2017"
+ms.date: "08/04/2017"
 ms.author: heidist
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -27,17 +27,17 @@ ms.custom: ""
 
 # Python function help
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
-This section contains Python reference documentation for two proprietary packages installed with [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) and [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) in the SQL Server 2017 RC1 release.
+This section contains Python reference documentation for two proprietary packages installed with [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) and [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) in the SQL Server 2017 release.
 
-Both libraries are built on the [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc). Both SQL Server offerings include Python 3.5 when you add Python support during installation. No additional software is required to call Python functions in T-SQL script or stored procedures, or call **revoscalepy** functions in Python script executing in a SQL Server compute context.
+Both modules are built on the [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc). Both SQL Server offerings include Python 3.5 when you add Python support during installation. No additional software is required to call Python functions in T-SQL script or stored procedures, or call **revoscalepy** functions in Python script executing in a SQL Server compute context.
 
-## Python libraries
+## Python modules
 
-|Library | Description |
+|Module | Description |
 |----|----|
-|[revoscalepy](revoscalepy/revoscalepy-package.md) | Data access, manipulation and transformations, visualization, and analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks. Developers who are familiar with Microsoft R Server and the RevoScaleR package will see notable similarities in the functions provided in revoscalepy. Conceptually, revoscalepy is the Python equivalent of the Microsoft R RevoScaleR package.|
+|[revoscalepy](revoscalepy/revoscalepy-package.md) | Data access, manipulation and transformations, visualization, and analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks. Developers who are familiar with Microsoft R Server and the RevoScaleR package will see notable similarities in the functions provided in revoscalepy. Conceptually, revoscalepy is the Python equivalent of the [Microsoft R RevoScaleR package](../r-reference/revoscaler/revoscaler.md).|
 |[microsoftml](microsoftml/microsoftml-package.md)|A collection of Python functions used for machine learning use cases. |
 
 ## Python naming conventions

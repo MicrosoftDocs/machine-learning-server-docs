@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "revoscalepy (Function Library for Python) in SQL Server Machine Learning Server" 
+title: "revoscalepy (Function Library for Python) in SQL Server Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "08/04/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,7 +26,7 @@ ms.custom: ""
 
 # revoscalepy (Function Library for Python)
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 The **revoscalepy** library is a proprietary Python package that is part of [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) and [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services). Many functions in this library can be used with [**microsoftml**](../microsoftml/microsoftml-package.md), which is part of the same release.
 

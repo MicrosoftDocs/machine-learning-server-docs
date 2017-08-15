@@ -1,12 +1,11 @@
 --- 
  
 # required metadata 
-title: "microsoftml (Function Library for Python) in SQL Server Machine Learning Server" 
 description: "" 
 keywords: "microsoftml API, API" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "08/04/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +26,7 @@ ms.custom: ""
 # microsoftml (Function Library for Python)
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 The **microsoftml** library is a proprietary Python package from Microsoft for use in SQL Server Machine Learning Server (Standalone) and SQL Server Machine Learning Services. Many functions in this library can be used with the **revoscalepy** package, included in the same release.
 
