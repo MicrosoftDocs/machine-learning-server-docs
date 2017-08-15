@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "HTTPS SSL / TLS 1.2 connection security for Microsoft R Server | Microsoft Docs"
+title: "HTTPS SSL / TLS 1.2 connection security for Microsoft R Server  | Microsoft Docs"
 description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Microsoft R Server"
 keywords: ""
 author: "j-martens"

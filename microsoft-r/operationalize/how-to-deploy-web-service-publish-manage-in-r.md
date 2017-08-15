@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to publish and manage web services in R - Microsoft R Server | Microsoft Docs"
+title: "How to publish and manage web services in R - Microsoft R Server  | Microsoft Docs"
 description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block."
 keywords: "mrsdeploy package"
 author: "j-martens"

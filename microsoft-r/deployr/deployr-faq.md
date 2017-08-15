@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR FAQs | DeployR 8.x"
+title: "DeployR FAQs | DeployR 8.x  | Microsoft Docs"
 description: "Frequently asked questions about DeployR"
 keywords: "FAQs, frequently asked questions, DeployR"
 author: "j-martens"

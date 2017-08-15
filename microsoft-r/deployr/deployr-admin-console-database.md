@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Administration Console Help | DeployR 8.x"
+title: "DeployR Administration Console Help | DeployR 8.x  | Microsoft Docs"
 description: "Database Back and Restore in DeployR Administration Console"
 keywords: ""
 author: "j-martens"

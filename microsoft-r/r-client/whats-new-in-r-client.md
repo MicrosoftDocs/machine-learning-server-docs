@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Microsoft R Client Release Notes | Microsoft Docs"
+title: "Microsoft R Client Release Notes  | Microsoft Docs"
 description: "R Client Readme"
 keywords: ""
 author: "j-martens"

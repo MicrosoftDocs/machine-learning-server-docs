@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Getting Started for DeployR Administrators | DeployR 8.x"
+title: "Getting Started for DeployR Administrators | DeployR 8.x  | Microsoft Docs"
 description: "Getting started for DeployR Administrators: high level introduction to DeployR for the server administrator"
 keywords: ""
 author: "j-martens"

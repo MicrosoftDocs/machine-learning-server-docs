@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Evaluate the load balancing of your R Server configuration- Microsoft R Server | Microsoft Docs"
+title: "Evaluate the load balancing of your R Server configuration- Microsoft R Server  | Microsoft Docs"
 description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
 author: "j-martens"

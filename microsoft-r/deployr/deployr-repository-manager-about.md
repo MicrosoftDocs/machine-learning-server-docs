@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Repository Manager Help | DeployR 8.x"
+title: "DeployR Repository Manager Help | DeployR 8.x  | Microsoft Docs"
 description: "Introduction in the DeployR Repository Manager"
 keywords: ""
 author: "j-martens"
