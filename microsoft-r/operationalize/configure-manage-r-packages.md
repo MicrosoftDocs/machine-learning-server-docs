@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "R Package Management when operationalizing with R Server - Machine Learning Server || Microsoft Docs"
+title: "R Package Management when operationalizing with R Server - Machine Learning Server | Microsoft Docs"
 description: "R Package Management with Microsoft R Server"
 keywords: ""
 author: "j-martens"

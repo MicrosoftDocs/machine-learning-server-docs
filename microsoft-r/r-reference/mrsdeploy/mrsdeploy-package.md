@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What is mrsdeploy - Machine Learning Server || Microsoft Docs"
+title: "What is mrsdeploy - Machine Learning Server | Microsoft Docs"
 description: "mrsdeploy Functions"
 keywords: "mrsdeploy package reference"
 author: "j-martens"

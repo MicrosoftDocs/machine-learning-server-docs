@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Solution templates | Machine Learning Server || Microsoft Docs"
+title: "Solution templates | Machine Learning Server | Microsoft Docs"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"

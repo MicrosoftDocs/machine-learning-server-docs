@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure R Server to operationalize analytics (enterprise) - Machine Learning Server || Microsoft Docs"
+title: "Configure R Server to operationalize analytics (enterprise) - Machine Learning Server | Microsoft Docs"
 description: "Configure Operationalization for Microsoft R Server, load balancer, "
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"

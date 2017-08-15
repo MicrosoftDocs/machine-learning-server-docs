@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What is operationalization of web services - Machine Learning Server || Microsoft Docs"
+title: "What is operationalization of web services - Machine Learning Server | Microsoft Docs"
 description: "Operationalize Your Analytics with Microsoft R Server Get Started"
 keywords: ""
 author: "j-martens"

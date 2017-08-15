@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Quickstart for Administrators configuring for operationalization - Machine Learning Server || Microsoft Docs"
+title: "Quickstart for Administrators configuring for operationalization - Machine Learning Server | Microsoft Docs"
 description: "Getting started for Administrators"
 keywords: ""
 author: "j-martens"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Managing access tokens, bearer tokens, access_token, refresh_token - Machine Learning Server || Microsoft Docs"
+title: "Managing access tokens, bearer tokens, access_token, refresh_token - Machine Learning Server | Microsoft Docs"
 description: "Token Management for API Requests with Microsoft R Server"
 keywords: ""
 author: "j-martens"

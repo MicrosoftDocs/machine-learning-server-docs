@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "R Execution Security Considerations and user isolation - Machine Learning Server || Microsoft Docs"
+title: "R Execution Security Considerations and user isolation - Machine Learning Server | Microsoft Docs"
 description: "R Execution Security Considerations when operationalizing analytics with Microsoft R Server"
 keywords: "RServe; deployr-rserve; user isolation"
 author: "j-martens"
