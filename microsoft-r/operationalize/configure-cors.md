@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Cross-Origin Resource Sharing CORS in Microsoft R Server | Microsoft Docs"
+title: "Cross-Origin Resource Sharing CORS in Machine Learning Server || Microsoft Docs"
 description: "Enterprise-Grade Security: CORS with Microsoft R Server"
 keywords: ""
 author: "j-martens"

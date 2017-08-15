@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure a database for operationalization - Microsoft R Server | Microsoft Docs"
+title: "Configure a database for operationalization - Machine Learning Server || Microsoft Docs"
 description: "Configure a SQL Server or PostgreSQL Database database for Microsoft R Server"
 keywords: ""
 author: "j-martens"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Publish and consume Python web services - Microsoft R Server | Microsoft Docs"
+title: "Publish and consume Python web services - Machine Learning Server || Microsoft Docs"
 description: "Publish and consume Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"

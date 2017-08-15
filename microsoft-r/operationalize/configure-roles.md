@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Control web services permissions with roles - Microsoft R Server | Microsoft Docs"
+title: "Control web services permissions with roles - Machine Learning Server || Microsoft Docs"
 description: "Owner, contributor, reader authentication roles with Microsoft R Server"
 keywords: ""
 author: "j-martens"

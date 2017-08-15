@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "APIs for operationalizing your models and analytics - Microsoft R Server | Microsoft Docs"
+title: "APIs for operationalizing your models and analytics - Machine Learning Server || Microsoft Docs"
 description: "Operationalization APIs for authenticating, publishing, managing, and consuming web services with Microsoft R Server."
 keywords: ""
 author: "j-martens"

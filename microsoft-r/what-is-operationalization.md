@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to operationalize R analytics, web services, and models with Microsoft R Server - Microsoft R Server | Microsoft Docs"
+title: "How to operationalize R analytics, web services, and models with Microsoft R Server - Machine Learning Server || Microsoft Docs"
 description: "What is operationalization in Microsoft R Server"
 keywords: ""
 author: "j-martens"
