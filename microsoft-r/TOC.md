@@ -1,6 +1,4 @@
-# [Machine Learning Server](index.md)
-
-# Overview
+# [Overview](index.md)
 ## [What is Machine Learning Server?](what-is-microsoft-r-server.md)
 ## [What is Microsoft R Client?](r-client/what-is-microsoft-r-client.md)
 ## [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
@@ -48,7 +46,8 @@
 #### [Machine Learning Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
 #### [Microsoft Data Science VM](install/r-server-vm-data-science.md)
 
-### [Configure to operationalize](operationalize/configure-start-for-administrators.md)
+### [Configure to operationalize](what-is-operationalization.md)
+#### [Get started for admins](operationalize/configure-start-for-administrators.md)
 #### [Configure: One-box](install/operationalize-r-server-one-box-config.md)
 #### [Configure: Enterprise](install/operationalize-r-server-enterprise-config.md)
 #### [Troubleshoot](operationalize/configure-run-diagnostics.md)
@@ -58,7 +57,7 @@
 #### [Evaluate capacity](operationalize/configure-evaluate-capacity.md)
 #### [Authentication](operationalize/configure-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/configure-https.md)
-#### [Permissions with roles](operationalize/configure-roles.md)
+#### [Permissions (RBAC)](operationalize/configure-roles.md)
 #### [CORS](operationalize/configure-cors.md)
 #### [R execution security](operationalize/configure-r-execution-security.md)
 #### [Manage R packages](operationalize/configure-manage-r-packages.md)
@@ -83,6 +82,7 @@
 # Quickstarts
 
 ## Python
+### [Deploy model as a web service](operationalize/python/quickstart-publish-python-web-service.md)
 
 ## R 
 ### [Run R code with new functions](r/quickstart-run-r-code.md)
@@ -115,12 +115,10 @@
 ## [Solution templates](r/sample-solutions.md)
 
 # Concepts
+## [Compute context](r/concept-what-is-compute-context.md)
 ## [MicrosoftML](r/concept-what-is-the-microsoftml-package.md)
 ## [RevoScaleR](r/concept-what-is-revoscaler.md)
-## [Operationalize](what-is-operationalization.md)
-### [Key features of operationalization](what-is-operationalization.md)
-### [Deploy & consume analytics](operationalize/concept-operationalize-deploy-consume.md)
-## [Compute context](r/concept-what-is-compute-context.md)
+## [Operationalization](operationalize/concept-operationalize-deploy-consume.md)
 ## [Data transformations](r/concept-what-is-data-transformations.md)
 ## [XDF files](r/concept-what-is-xdf.md)
 
@@ -167,13 +165,14 @@
 
 ## 4. Operationalization (deploy & consume)
 ### Python
+#### [Authenticate](operationalize/python/how-to-authenticate-with-server-in-python.md)
+#### [Deploy & manage services](operationalize/python/how-to-deploy-manage-web-services.md)
+#### [Find & consume services](operationalize/python/how-to-consume-web-services.md)
 
 ### R
-#### [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
+#### [Deploy & manage services](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 #### [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
 #### [Consume (asynchronous)](operationalize/how-to-consume-web-service-asynchronously-batch.md)
-#### [Integrate into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
-#### [Manage access tokens](operationalize/how-to-manage-access-tokens.md)
 #### [Archive] DeployR 8.x
 ##### [How to install DeployR](deployr/deployr-installation.md)
 ###### [Install DeployR for R Server for Windows](deployr/deployr-install-on-windows.md)
@@ -228,6 +227,11 @@
 ###### [Working with Files](deployr/deployr-repository-manager-files.md)
 ###### [Testing & Debugging Scripts](deployr/deployr-repository-manager-testing-debugging-scripts.md)
 
+### APIs
+#### [About the REST APIs](operationalize/concept-api.md)
+#### [Integrate services into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
+#### [Manage access tokens](operationalize/how-to-manage-access-tokens.md)
+
 
 ## Remote R code execution
 ### [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
@@ -253,13 +257,13 @@
 #### [Parallel execution using doRSR](r/how-to-revoscaler-distributed-computing-foreach.md)
 #### [Parallel algorithms with PemaR](r/how-to-developer-pemar.md)
 
-# [Reference](r-reference/introducing-r-server-r-package-reference.md)
+# Reference
 
 ## [Python libraries](python-reference/introducing-python-package-reference.md)
 ### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
 ### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 
-## R packages
+## [R packages](r-reference/introducing-r-server-r-package-reference.md)
 ### [MicrosoftML](r-reference/microsoftml/microsoftml-package.md)
 #### [categorical](r-reference/microsoftml/categorical.md)
 #### [categoricalHash](r-reference/microsoftml/categoricalhash.md)
@@ -298,22 +302,16 @@
 ####[deleteRemoteFile](r-reference/mrsdeploy/deleteremotefile.md) 
 ####[deleteService](r-reference/mrsdeploy/deleteservice.md) 
 ####[deleteSnapshot](r-reference/mrsdeploy/deletesnapshot.md) 
-####[diffLocalRemote](r-reference/mrsdeploy/difflocalremote.md) 
+####[diffLocalRemote](r-reference/mrsdeploy/difflocalremote.md)
 ####[downloadSnapshot](r-reference/mrsdeploy/downloadsnapshot.md) 
-####[encodings](r-reference/mrsdeploy/encodings.md) 
 ####[getRemoteFile](r-reference/mrsdeploy/getremotefile.md) 
-####[getRemoteObject](r-reference/mrsdeploy/getremoteobject.md) 
+####[getRemoteObject](r-reference/mrsdeploy/getremoteobject.md)
 ####[getRemoteWorkspace](r-reference/mrsdeploy/getremoteworkspace.md) 
 ####[getService](r-reference/mrsdeploy/getservice.md) 
-####[getValidatedServiceType](r-reference/mrsdeploy/getvalidatedservicetype.md) 
-####[is.encoding](r-reference/mrsdeploy/is-encoding.md) 
-####[is.encodings](r-reference/mrsdeploy/is-encodings.md) 
-####[listRemoteFiles](r-reference/mrsdeploy/listremotefiles.md) 
+####[listRemoteFiles](r-reference/mrsdeploy/listremotefiles.md)
 ####[listServices](r-reference/mrsdeploy/listservices.md) 
 ####[listSnapshots](r-reference/mrsdeploy/listsnapshots.md) 
 ####[loadSnapshot](r-reference/mrsdeploy/loadsnapshot.md) 
-####[print.serviceDetails](r-reference/mrsdeploy/print-servicedetails.md) 
-####[print.snapshotDetails](r-reference/mrsdeploy/print-snapshotdetails.md) 
 ####[publishService](r-reference/mrsdeploy/publishservice.md) 
 ####[putLocalFile](r-reference/mrsdeploy/putlocalfile.md) 
 ####[putLocalObject](r-reference/mrsdeploy/putlocalobject.md) 
@@ -323,14 +321,7 @@
 ####[remoteLogin](r-reference/mrsdeploy/remotelogin.md) 
 ####[remoteLoginAAD](r-reference/mrsdeploy/remoteloginaad.md) 
 ####[remoteLogout](r-reference/mrsdeploy/remotelogout.md) 
-####[remoteScript](r-reference/mrsdeploy/remotescript.md) 
-####[request](r-reference/mrsdeploy/request.md) 
-####[resource](r-reference/mrsdeploy/resource.md) 
-####[resume](r-reference/mrsdeploy/resume.md) 
-####[serviceOption](r-reference/mrsdeploy/serviceoption.md) 
-####[serviceTypes](r-reference/mrsdeploy/servicetypes.md) 
-####[summary.serviceDetails](r-reference/mrsdeploy/summary-servicedetails.md) 
-####[summary.snapshotDetails](r-reference/mrsdeploy/summary-snapshotdetails.md) 
+####[remoteScript](r-reference/mrsdeploy/remotescript.md)  
 ####[updateService](r-reference/mrsdeploy/updateservice.md)
 
 ### [olapR](r-reference/olapr/olapr.md)
@@ -546,8 +537,6 @@
 ####[setInputDataQuery](r-reference/sqlrutils/setinputdataquery.md) 
 ####[setInputParameterValue](r-reference/sqlrutils/setinputparametervalue.md) 
 ####[StoredProcedure](r-reference/sqlrutils/storedprocedure.md)
-
-## [REST APIs](operationalize/concept-api.md)
 
 # Resources
 
