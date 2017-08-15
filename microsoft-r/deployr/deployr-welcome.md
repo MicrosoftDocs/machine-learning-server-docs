@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Website Redirect | DeployR 8.x  | Microsoft Docs"
+title: "Website Redirect | DeployR 8.x | Microsoft Docs"
 description: "DeployR introduction and overview."
 keywords: ""
 author: "j-martens"

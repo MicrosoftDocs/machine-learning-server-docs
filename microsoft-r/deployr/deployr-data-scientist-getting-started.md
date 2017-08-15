@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Getting Started with DeployR for Data Scientists | DeployR 8.x  | Microsoft Docs"
+title: "Getting Started with DeployR for Data Scientists | DeployR 8.x | Microsoft Docs"
 description: "Getting started for Data Scientists: high level introduction to DeployR for Data Scientists"
 keywords: "Data Scientists, r programmer, DeployR"
 author: "j-martens"

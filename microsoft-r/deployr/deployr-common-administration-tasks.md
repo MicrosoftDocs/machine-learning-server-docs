@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Common DeployR Administration Tasks | DeployR 8.x  | Microsoft Docs"
+title: "Common DeployR Administration Tasks | DeployR 8.x | Microsoft Docs"
 description: "Common DeployR Administration Tasks: Starting and Stopping DeployR, Inspecting Server Logs, Database Management "
 keywords: ""
 author: "j-martens"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What's New | DeployR 8.x  | Microsoft Docs"
+title: "What's New | DeployR 8.x | Microsoft Docs"
 description: "Updates, improvements, and changes in this release of DeployR"
 keywords: ""
 author: "j-martens"

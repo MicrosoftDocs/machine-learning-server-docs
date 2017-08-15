@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Authentication and Authorization | DeployR 8.x  | Microsoft Docs"
+title: "Authentication and Authorization | DeployR 8.x | Microsoft Docs"
 description: "Security in DeployR: Authentication, HTTPS, SSL, and access controls for server, Project file and Repository File, and more."
 keywords: ""
 author: "j-martens"
