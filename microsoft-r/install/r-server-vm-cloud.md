@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Microsoft R Server in the Cloud - Virtual Machine  | Microsoft Docs"
+title: "Microsoft R Server in the Cloud - Virtual Machine | Microsoft Docs"
 description: "Microsoft R Server in the Cloud: Azure"
 keywords: "Microsoft R Server, R Server, azure, virtual machine"
 author: "j-martens"

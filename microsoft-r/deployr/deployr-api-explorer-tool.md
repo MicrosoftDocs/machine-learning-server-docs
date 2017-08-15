@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR API Explorer Tool | DeployR 8.x  | Microsoft Docs"
+title: "DeployR API Explorer Tool | DeployR 8.x"
 description: "DeployR API Reference Guide"
 keywords: ""
 author: "j-martens"

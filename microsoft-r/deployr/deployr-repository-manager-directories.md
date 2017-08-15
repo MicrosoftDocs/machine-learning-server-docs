@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Repository Manager Help | DeployR 8.x  | Microsoft Docs"
+title: "DeployR Repository Manager Help | DeployR 8.x"
 description: "Working with Directories in the DeployR Repository Manager"
 keywords: ""
 author: "j-martens"

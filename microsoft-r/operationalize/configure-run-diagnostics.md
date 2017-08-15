@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Running diagnostics & troubleshooting the configuration for operationalization - Microsoft R Server  | Microsoft Docs"
+title: "Running diagnostics & troubleshooting the configuration for operationalization - Microsoft R Server | Microsoft Docs"
 description: "Troubleshooting and Diagnostics when configuring Microsoft R Server to operationalize"
 keywords: ""
 author: "j-martens"

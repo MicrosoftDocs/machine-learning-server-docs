@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Microsoft R Client compatibility with R Server  | Microsoft Docs"
+title: "Microsoft R Client compatibility with R Server | Microsoft Docs"
 description: "R Client's compatibility with R Server"
 keywords: "R Client compatibility, Microsoft R Client"
 author: "j-martens"
