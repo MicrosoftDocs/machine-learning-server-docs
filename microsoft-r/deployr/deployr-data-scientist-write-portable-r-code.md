@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Writing Portable R Code | DeployR 8.x"
+title: "Writing Portable R Code | DeployR 8.x | Microsoft Docs"
 description: "Data scientist's guide to Writing Portable R Code for DeployR "
 keywords: ""
 author: "j-martens"
