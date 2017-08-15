@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Windows | Microsoft Docs"
+title: "Install Microsoft R Client on Windows  | Microsoft Docs"
 description: "Microsoft R Client Install Guide Windows"
 keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Microsoft R Client"
 author: "j-martens"

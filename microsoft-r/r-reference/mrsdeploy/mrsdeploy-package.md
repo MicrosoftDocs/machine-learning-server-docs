@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What is mrsdeploy - Microsoft R Server | Microsoft Docs"
+title: "What is mrsdeploy - Microsoft R Server  | Microsoft Docs"
 description: "mrsdeploy Functions"
 keywords: "mrsdeploy package reference"
 author: "j-martens"

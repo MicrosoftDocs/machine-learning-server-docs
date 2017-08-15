@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Managing External Directories for Big Data | DeployR 8.x"
+title: "Managing External Directories for Big Data | DeployR 8.x  | Microsoft Docs"
 description: "Big Data in DeployR - Managing External Directories for Big Data"
 keywords: "big data, DeployR"
 author: "j-martens"

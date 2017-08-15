@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Microsoft R Glossary | Microsoft Docs"
+title: "Microsoft R Glossary  | Microsoft Docs"
 description: "DeployR and R Server Glossary Terms FAQ"
 keywords: ""
 author: "j-martens"

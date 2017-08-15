@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Microsoft R Server on the Data Science Virtual Machine | Microsoft Docs"
+title: "Microsoft R Server on the Data Science Virtual Machine  | Microsoft Docs"
 description: "Run R Server on the Microsoft Data Science Virtual Machine"
 keywords: "Microsoft R Server, HDInsight"
 author: "j-martens"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Application Developer Tools and Docs | DeployR 8.x"
+title: "DeployR Application Developer Tools and Docs | DeployR 8.x  | Microsoft Docs"
 description: "DeployR Application Developer Tools and Docs"
 keywords: ""
 author: "j-martens"

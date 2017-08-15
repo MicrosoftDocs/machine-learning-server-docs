@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to get and consume web services in R - Microsoft R Server | Microsoft Docs"
+title: "How to get and consume web services in R - Microsoft R Server  | Microsoft Docs"
 description: "Web service interaction and consumption functions in the mrsdeploy package."
 keywords: "mrsdeploy package"
 author: "j-martens"
