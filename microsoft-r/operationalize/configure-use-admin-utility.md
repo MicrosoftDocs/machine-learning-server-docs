@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Administration Utility - Microsoft R Server | Microsoft Docs"
+title: "Administration Utility - Machine Learning Server | Microsoft Docs"
 description: "configure R Server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials."
 keywords: ""
 author: "j-martens"

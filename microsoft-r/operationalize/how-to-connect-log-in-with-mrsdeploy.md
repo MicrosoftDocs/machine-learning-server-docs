@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Connect to R Server remotely using mrsdeploy - Microsoft R Server | Microsoft Docs"
+title: "Connect to R Server remotely using mrsdeploy - Machine Learning Server | Microsoft Docs"
 description: "Logging into R Server and connecting with mrsdeploy"
 keywords: "remote login to r server, connect to r server, mrsdeploy connection, log into r server"
 author: "j-martens"
@@ -29,7 +29,7 @@ ms.technology:
 
 **Applies to:  Microsoft R Server 9.x**
 
-the mrsdeploy package, delivered with Microsoft R Client and R Server, provides functions for:
+The mrsdeploy package, delivered with Microsoft R Client and R Server, provides functions for:
 + Establishing a remote session in a R console application for the purposes of executing code on that server
 + Publishing and managing an R web service that is backed by the R code block or script you provided.  
 

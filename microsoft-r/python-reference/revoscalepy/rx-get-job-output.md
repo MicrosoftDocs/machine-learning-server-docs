@@ -6,7 +6,7 @@ description: "During a job run, the state of the output is non-deterministic (th
 keywords: "job, output" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

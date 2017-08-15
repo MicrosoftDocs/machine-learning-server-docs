@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Managing access tokens, bearer tokens, access_token, refresh_token - Microsoft R Server | Microsoft Docs"
+title: "Managing access tokens, bearer tokens, access_token, refresh_token - Machine Learning Server | Microsoft Docs"
 description: "Token Management for API Requests with Microsoft R Server"
 keywords: ""
 author: "j-martens"
@@ -23,23 +23,23 @@ ms.technology:
   - r-server
 #ms.custom: ""
 ---
-
+    
 # Manage access tokens for R Server API requests
 
 **Applies to:  Microsoft R Server 9.x**
 
-Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the 'POST /login HTTP/1.1' API call, after which R Server will then issue a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users will receive a bearer token from AAD when they authenticate.
+Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the 'POST /login HTTP/1.1' API call, after which R Server issues a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users  receive a bearer token from AAD when they authenticate.
 
-This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful for the intended parties.
+This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful.
 
 >[!Important]
 >For proper access token signing and verification across your configuration, ensure that the JWT settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. Check with your administrator. [Learn more...](configure-authentication.md#ldap-jwt)
 
 ## Security Concerns 
 
-Though a party must authenticate first to receive the token, if the required steps are not taken to secure the token in transmission and storage, it can be intercepted and used by an unintended party. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, tokens do not have this mechanism and must be [transported in a secure channel such as transport layer security (HTTPS)](configure-https.md). 
+Despite the fact that a party must first authenticate to receive the token, that token can be intercepted and used by an unintended party if steps are not taken to secure the token in transmission and storage. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, tokens do not have this mechanism and must be [transported in a secure channel such as transport layer security (HTTPS)](configure-https.md). 
 
-If a token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it for an unauthorized access to a protected resource. The same security principles apply when storing or caching tokens for later use. Always ensure that your application transmits and stores tokens in a secure manner. 
+If a token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it to make an unauthorized access to a protected resource. The same security principles apply when storing or caching tokens for later use. Always ensure that your application transmits and stores tokens in a secure manner. 
 
 > You can [revoke a token](#revoke) if a user is no longer permitted to make requests on the API or if the token has been compromised.
 
@@ -52,7 +52,7 @@ The API bearer token's properties include an access_token / refresh_token pair a
 Tokens can be generated in one of two ways:
 + If Active Directory LDAP or a local administrator account is enabled, then send a 'POST /login HTTP/1.1' API request to retrieve the bearer token.
 
-+ If Azure Active Directory (AAD) is enabled, then [the token will come from AAD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios). 
++ If Azure Active Directory (AAD) is enabled, then [the token comes from AAD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-authentication-scenarios). 
 
 [Learn more about these authentication methods.](configure-authentication.md)
 
@@ -94,7 +94,7 @@ As defined by HTTP/1.1 [RFC2617], the application should send the access_token d
 
 You can do so by including the bearer token's access_token value in the HTTP request body as 'Authorization: Bearer {access_token_value}'. 
 
-When the API call is sent with the token, R Server will attempt to validate that the user is successfully authenticated and that the token itself is not expired.
+When the API call is sent with the token, R Server attempts to validate that the user is successfully authenticated and that the token itself is not expired.
 +  If the user is successfully authenticated but the bearer token's access_token or refresh_token is expired, a '401 - Unauthorized (invalid or expired refresh token)' error is returned.
 
 + If the user is not successfully authenticated, a '401 - Unauthorized (invalid credentials)' error is returned.

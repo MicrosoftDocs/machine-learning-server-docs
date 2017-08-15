@@ -51,7 +51,7 @@ This article walks through some R code you can use to predict whether a flight w
 
 ```r
        #############################################
-       ##           ENTIRE SAMPLE SCRIPT          ##
+       ##           ENTIRE EXAMPLE SCRIPT          ##
        #############################################
 
 #Step 1: Prep and Import Data

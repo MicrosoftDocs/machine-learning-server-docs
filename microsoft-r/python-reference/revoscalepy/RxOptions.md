@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Global Options for RevoScalePy" 
-description: "Functions to specify and retrieve options needed for RevoScalePy computations. These need to be set only once to carry out multiple computations." 
+title: "Global Options for revoscalepy" 
+description: "Functions to specify and retrieve options needed for revoscalepy computations. These need to be set only once to carry out multiple computations." 
 keywords: "options" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -43,7 +43,7 @@ class revoscalepy.RxOptions
 
 ## Description
 
-Functions to specify and retrieve options needed for RevoScalePy computations. These need to be set only once to carry out multiple computations.
+Functions to specify and retrieve options needed for revoscalepy computations. These need to be set only once to carry out multiple computations.
 
 
 ## Arguments
@@ -51,27 +51,27 @@ Functions to specify and retrieve options needed for RevoScalePy computations. T
 
 ### unitTestDataDir
 
-character string specifying path to RevoScalePy’s
+character string specifying path to revoscalepy’s
 test data directory.
 
 
 ### sampleDataDir
 
-character string specifying path to RevoScalePy’s
+character string specifying path to revoscalepy’s
 sample data directory.
 
 
 ### blocksPerRead
 
 default value to use for blocksPerRead argument for
-many RevoScalePy functions. Represents the number of blocks to read within
+many revoscalepy functions. Represents the number of blocks to read within
 each read chunk.
 
 
 ### reportProgress
 
 default value to use for reportProgress argument for
-many RevoScalePy functions. Options are:
+many revoscalepy functions. Options are:
 
     0: no progress is reported.
     1: the number of processed rows is printed and updated.
@@ -82,7 +82,7 @@ many RevoScalePy functions. Options are:
 ### RowDisplayMax
 
 scalar integer specifying the maximum number of rows
-to display when using the verbose argument in RevoScalePy functions. The
+to display when using the verbose argument in revoscalepy functions. The
 default of -1 displays all available rows.
 
 
@@ -103,7 +103,7 @@ scalar integer specifying the number of cores to use.
 If set to a value higher than the number of available cores, the number of
 available cores will be used. If set to -1, the number of available cores
 will be used. Increasing the number of cores to use will also increase the
-amount of memory required for RevoScalePy analysis functions.
+amount of memory required for revoscalepy analysis functions.
 
 
 ### NumDigits

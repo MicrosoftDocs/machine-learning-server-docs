@@ -33,7 +33,7 @@ ms.technology:
 
 ---
 
->Didn't find what you were looking for?  Suggest a term below.
+>Didn't find what you were looking for?  Suggest a term at the end of the article.
 >
 >For general R language terminology, check out CRAN's [R Language Definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.pdf).
 >
@@ -65,7 +65,7 @@ A feature in [RevoScaleR](r-reference/revoscaler/revoscaler.md) that lets you de
 
 **Data chunking**
 
-Using ScaleR on R Server, this is the ability to partition data into multiple parts for processing, reassembling it later for analysis. [Learn more…](r/tutorial-revoscaler-data-import-transform.md#chunking)
+Using ScaleR on R Server, data chunking is the ability to partition data into multiple parts for processing, reassembling it later for analysis. [Learn more…](r/tutorial-revoscaler-data-import-transform.md#chunking)
 
 <br>
 

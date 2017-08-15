@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Global Options for RevoScalePy" 
+title: "Global Options for revoscalepy" 
 description: "Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster." 
 keywords: "sql" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

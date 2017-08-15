@@ -6,7 +6,7 @@ description: "Calculate predicted or fitted values for a data set from an rx_dtr
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

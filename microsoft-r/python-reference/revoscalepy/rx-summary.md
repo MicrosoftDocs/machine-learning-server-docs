@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Object Summaries" 
-description: "Produce univariate summaries of objects in RevoScalePy." 
+description: "Produce univariate summaries of objects in revoscalepy." 
 keywords: "summary" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -43,7 +43,7 @@ revoscalepy.rx_summary(formula: str, data, by_group_out_file=None, summary_stats
 
 ## Description
 
-Produce univariate summaries of objects in RevoScalePy.
+Produce univariate summaries of objects in revoscalepy.
 
 
 ## Arguments
