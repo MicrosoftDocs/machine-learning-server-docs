@@ -1,10 +1,14 @@
 # [Overview](index.md)
-## [What is Machine Learning Server?](what-is-microsoft-r-server.md)
-## [What is Microsoft R Client?](r-client/what-is-microsoft-r-client.md)
-## [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
+## Welcome to Machine Learning Server
+## "What happened to R Server"
+## Machine Learning @ Microsoft
 ## What's new
 ### [What's new in Machine Learning Server](whats-new-in-r-server.md)
 ### [What's new in R Client](r-client/whats-new-in-r-client.md)
+## 9.1.0 Old docs
+### [What is Machine Learning Server?](what-is-microsoft-r-server.md)
+### [What is Microsoft R Client?](r-client/what-is-microsoft-r-client.md)
+### [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
 
 # Install & configure
 ## [Supported platforms](install/r-server-install-supported-platforms.md)
