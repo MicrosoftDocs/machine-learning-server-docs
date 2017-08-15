@@ -3,12 +3,11 @@
 ## "What happened to R Server"
 ## Machine Learning @ Microsoft
 ## What's new
-### [What's new in Machine Learning Server](whats-new-in-r-server.md)
-### [What's new in R Client](r-client/whats-new-in-r-client.md)
+### [Machine Learning Server](whats-new-in-r-server.md)
+### [Microsoft R Client](r-client/whats-new-in-r-client.md)
 ## 9.1.0 Old docs
 ### [What is Machine Learning Server?](what-is-microsoft-r-server.md)
 ### [What is Microsoft R Client?](r-client/what-is-microsoft-r-client.md)
-### [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
 
 # Install & configure
 ## [Supported platforms](install/r-server-install-supported-platforms.md)
@@ -131,6 +130,8 @@
 ## 1. Business understanding
 ### Python
 ### R
+#### [How to use Machine Learning Server with other technologies](what-is-r-server-interoperability.md)
+
 
 
 ## 2. Data aquisition
