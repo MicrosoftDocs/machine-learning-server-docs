@@ -26,7 +26,7 @@ ms.custom: ""
 
 # **create-model**
 
- Applies to: [**azure-ml-model-management-sdk package for Python**](./r-reference/mrsdeploy/mrsdeploy-package.md), version 1.0.0  
+ Applies to: [**azure-ml-model-management-sdk package for Python**](../r-reference/mrsdeploy/mrsdeploy-package.md), version 1.0.0  
 
  ## Description
 

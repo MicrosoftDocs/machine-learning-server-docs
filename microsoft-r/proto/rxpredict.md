@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  # **rxPredict.mlModel**
 
-Applies to: [**MicrosoftML package for R**](./r-reference/microsoftml/microsoftml-package.md), version 1.3..0 
+Applies to: [**MicrosoftML package for R**](../r-reference/microsoftml/microsoftml-package.md), version 1.3..0 
  
  ##Description
  

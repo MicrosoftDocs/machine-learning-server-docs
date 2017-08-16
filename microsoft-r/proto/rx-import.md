@@ -26,7 +26,7 @@ ms.custom: ""
 
 # **rx_import**
 
-Applies to: [**revoscalepy package for Python**](./python-reference/revoscalepy/revoscalepy-package.md), version 0.0.0 
+Applies to: [**revoscalepy package for Python**](../python-reference/revoscalepy/revoscalepy-package.md), version 0.0.0 
 
 ## Description
 

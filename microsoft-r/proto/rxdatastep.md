@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  # **rxDataStep**
 
-  Applies to: [**RevoScaleR package for R**](./r-reference/RevoscaleR/Revoscaler-package.md), version 9.1.0 
+  Applies to: [**RevoScaleR package for R**](../r-reference/RevoscaleR/Revoscaler-package.md), version 9.1.0 
  
  ##Description
  

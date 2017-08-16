@@ -26,7 +26,7 @@ ms.custom: ""
 
 # **rx_predict**
 
- Applies to: [**microsoftml package for Python**](./python-reference/microsoftml/microsoftml-package.md), version 0.0.0 
+ Applies to: [**microsoftml package for Python**](../python-reference/microsoftml/microsoftml-package.md), version 0.0.0 
 
 
 ## Description

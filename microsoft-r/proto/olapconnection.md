@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  # **OlapConnection**
 
- Applies to: [**olapR package for R**](./r-reference/olapR/olapr.md), version 1.0.0 
+ Applies to: [**olapR package for R**](../r-reference/olapR/olapr.md), version 1.0.0 
 
  
  ##Description

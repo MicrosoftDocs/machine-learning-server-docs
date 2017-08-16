@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  # **createSnapshot**
 
- Applies to: [**mrsdeploy package for R**](./r-reference/mrsdeploy/mrsdeploy-package.md), version 1.1.0  
+ Applies to: [**mrsdeploy package for R**](../r-reference/mrsdeploy/mrsdeploy-package.md), version 1.1.0  
  
  ##Description (unchanged)
  
