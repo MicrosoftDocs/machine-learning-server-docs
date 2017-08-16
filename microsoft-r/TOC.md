@@ -223,13 +223,13 @@
 ## [Remote execution with R Server](r/how-to-execute-code-remotely.md)
 
 # Prototype function help pages (H1, title, description)
-## [azure-ml-model-management fake](proto/azuremlsdk-fake.md)
-## [olapr.OlapConnection](proto/olapr/olapconnection.md) 
+## [azure-ml-model-management.fakeAPI](proto/azuremlsdk-fake.md)
+## [olapr.OlapConnection](proto/olapconnection.md) 
 ## [mrsdeploy.createSnapshot](proto/createsnapshot.md) 
 ## [MicrosoftML.rxPredict](proto/rxpredict.md)
 ## [RevoScaleR.rxDataStep](proto/rxdatastep.md) 
-## [microsoftml.rx-predict](proto/rx_predict.md)
-## [revoscalepy.rx-import](proto/rx_import.md)
+## [microsoftml.rx_predict](proto/rx-predict.md)
+## [revoscalepy.rx_import](proto/rx-import.md)
 
 # [Python Function Reference](python-reference/introducing-python-package-reference.md)
 ## [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
