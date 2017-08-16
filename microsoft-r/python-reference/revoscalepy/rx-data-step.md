@@ -6,7 +6,7 @@ description: "Transform data from an input data set to an output data set"
 keywords: "datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_data_step(input_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame, str] = None, output_file: typing.Union[str, revoscalepy.datasource.RxXdfData.RxXdfData, revoscalepy.datasource.RxTextData.RxTextData] = None, vars_to_keep: list = None, vars_to_drop: list = None, row_selection: str = None, transforms: dict = None, transform_objects: list = None, transform_function=None, transform_variables: list = None, transform_packages: list = None, transform_environment=None, append: list = None, overwrite: bool = False, row_variable_name: str = None, remove_missings_on_read: bool = False, remove_missings: bool = False, compute_low_high: bool = True, max_rows_by_cols: int = 3000000, rows_per_read: int = -1, start_row: int = 1, number_rows_read: int = -1, return_transform_objects: bool = False, blocks_per_read: int = None, report_progress: bool = True, xdf_compression_level: int = 0, strings_as_factors: bool = None, **kwargs) -> typing.Union[revoscalepy.datasource.RxXdfData.RxXdfData, pandas.core.frame.DataFrame]
+revoscalepy.rx_data_step(input_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame, str] = None, output_file: typing.Union[str, revoscalepy.datasource.RxXdfData.RxXdfData, revoscalepy.datasource.RxTextData.RxTextData] = None, vars_to_keep: list = None, vars_to_drop: list = None, row_selection: str = None, transforms: dict = None, transform_objects: list = None, transform_function=None, transform_variables: list = None, transform_packages: list = None, transform_environment=None, append: list = None, overwrite: bool = False, row_variable_name: str = None, remove_missings_on_read: bool = False, remove_missings: bool = False, compute_low_high: bool = True, max_rows_by_cols: int = 3000000, rows_per_read: int = -1, start_row: int = 1, number_rows_read: int = -1, return_transform_objects: bool = False, blocks_per_read: int = None, report_progress: int = None, xdf_compression_level: int = 0, strings_as_factors: bool = None, **kwargs) -> typing.Union[revoscalepy.datasource.RxXdfData.RxXdfData, pandas.core.frame.DataFrame]
 ```
 
 
@@ -248,7 +248,7 @@ additional arguments to be passed to the input data source.
 
 If an output_file is not specified, an output data frame is
 returned. If an output_file is specified, an RxXdfData data source is
-returned that can be used in subsequent RevoScalePy analysis.
+returned that can be used in subsequent revoscalepy analysis.
 
 
 ## Example

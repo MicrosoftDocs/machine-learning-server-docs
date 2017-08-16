@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "Get Variable Information for a Data Source" 
-description: "Get variable information for a RevoScalePy data source or data frame, including variable names, descriptions, and value labels" 
+description: "Get variable information for a revoscalepy data source or data frame, including variable names, descriptions, and value labels" 
 keywords: "info" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -43,7 +43,7 @@ revoscalepy.rx_get_var_info(data, get_value_labels: bool = True, vars_to_keep: l
 
 ## Description
 
-Get variable information for a RevoScalePy data source or data frame,
+Get variable information for a revoscalepy data source or data frame,
 including variable names, descriptions, and value labels
 
 

@@ -6,7 +6,7 @@ description: "Generic function to compute predicted values and residuals using r
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -112,9 +112,10 @@ Output:
 
 
 ```
-
-Rows Processed: 100000 
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.048 seconds 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 
+Computation time: 0.005 seconds.
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 
    creditScore_Pred
 0        700.089114
 1        699.834355
@@ -130,7 +131,7 @@ Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds
 
 
 ```
-revoscalepy.rx_predict_default(model_object=None, data: revoscalepy.datasource.RxDataSource.RxDataSource = None, output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, compute_standard_errors: bool = False, interval: typing.Union[list, str] = 'none', confidence_level: float = 0.95, compute_residuals: bool = False, type: typing.Union[list, str] = None, write_model_vars: bool = False, extra_vars_to_write: typing.Union[list, str] = None, remove_missings: bool = False, append: typing.Union[list, str] = None, overwrite: bool = False, check_factor_levels: bool = True, predict_var_names: typing.Union[list, str] = None, residual_var_names: typing.Union[list, str] = None, interval_var_names: typing.Union[list, str] = None, std_errors_var_names: typing.Union[list, str] = None, blocks_per_read: int = 0, report_progress: int = 0, verbose: int = 0, xdf_compression_level: int = 0, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None, **kwargs)
+revoscalepy.rx_predict_default(model_object=None, data: revoscalepy.datasource.RxDataSource.RxDataSource = None, output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, compute_standard_errors: bool = False, interval: typing.Union[list, str] = 'none', confidence_level: float = 0.95, compute_residuals: bool = False, type: typing.Union[list, str] = None, write_model_vars: bool = False, extra_vars_to_write: typing.Union[list, str] = None, remove_missings: bool = False, append: typing.Union[list, str] = None, overwrite: bool = False, check_factor_levels: bool = True, predict_var_names: typing.Union[list, str] = None, residual_var_names: typing.Union[list, str] = None, interval_var_names: typing.Union[list, str] = None, std_errors_var_names: typing.Union[list, str] = None, blocks_per_read: int = 0, report_progress: int = None, verbose: int = 0, xdf_compression_level: int = 0, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None, **kwargs)
 ```
 
 
@@ -158,8 +159,9 @@ a data frame or an RxXdfData data source object to be used for predictions.
 
 ### output_data
 
-an RxXdfData data source object or existing data frame
-to store predictions.
+a character string specifying the output ‘.xdf’ file, a
+RxXdfData object, RxTextData object, a RxOdbcData data source, or a
+RxSqlServerDta data source to store predictions.
 
 
 ### compute_standard_errors

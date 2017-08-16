@@ -6,7 +6,7 @@ description: "Read data from an “.xdf” file into a data frame."
 keywords: "xdf" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_read_xdf(file: str, vars_to_keep: list = None, vars_to_drop: list = None, row_var_name: str = None, start_row: int = 1, num_rows: int = None, return_data_frame: bool = True, strings_as_factors: bool = False, max_rows_by_columns: int = None, report_progress: int = 0, read_by_block: bool = False, cpp_interp: list = None)
+revoscalepy.rx_read_xdf(file: str, vars_to_keep: list = None, vars_to_drop: list = None, row_var_name: str = None, start_row: int = 1, num_rows: int = None, return_data_frame: bool = True, strings_as_factors: bool = False, max_rows_by_columns: int = None, report_progress: int = None, read_by_block: bool = False, cpp_interp: list = None)
 ```
 
 
@@ -158,6 +158,10 @@ Output:
 
 
 ```
+
+Rows Processed: 10
+Time to read data file: 0.00 secs.
+Time to convert to data frame: less than .001 secs.
    creditScore  houseAge  yearsEmploy  ccDebt  year  default
 0          691        16            9    6725  2000        0
 1          691         4            4    5077  2000        0

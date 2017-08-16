@@ -6,7 +6,7 @@ description: "Causes Python to block on an existing distributed job until comple
 keywords: "wait, job" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

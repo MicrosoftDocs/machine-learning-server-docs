@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Opting out of usage data collection - Microsoft R Server | Microsoft Docs"
+title: "Opting out of usage data collection - Machine Learning Server | Microsoft Docs"
 description: "Learn how to turn off telemetry data collection on Microsoft R Server and R Client using the `rxPrivacyControl` function in RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

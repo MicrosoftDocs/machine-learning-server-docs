@@ -24,7 +24,7 @@ ms.technology: "r-server"
 ---
 # Support Timeline for Microsoft R Server
 
-Microsoft R Server will be released a few times per year with each update version supported for two (2) years from its general availability (GA) release date. Furthermore, customers will also receive critical updates for the first year from general availability (GA) of each release as shown in the diagram below. 
+Microsoft R Server is released several times per year. Each updated version is supported for two (2) years from its general availability (GA) release date. Furthermore, customers also receive critical updates for the first year from general availability (GA) of each release as shown in the diagram.
 
 This support policy allows us to deliver innovation to customers at a rapid rate while providing flexibility for customers to adopt the innovation at their pace. 
 

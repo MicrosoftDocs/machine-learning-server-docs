@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure R Server to operationalize analytics (enterprise) - Microsoft R Server | Microsoft Docs"
+title: "Configure R Server to operationalize analytics (enterprise) - Machine Learning Server | Microsoft Docs"
 description: "Configure Operationalization for Microsoft R Server, load balancer, "
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
@@ -35,10 +35,9 @@ With an enterprise configuration, you can work with your production-grade data w
 ## Enterprise architecture
 
 This configuration includes one or more web nodes, one or more compute nodes, and a database.   
++ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have multiple web nodes to load balance your requests to multiple compute nodes. 
 
-+ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.
-
-+ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
++ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 + The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
@@ -83,7 +82,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
-1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
 1. From the submenu, choose the option to **Configure a compute node**.
 
@@ -114,7 +113,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
-1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
 1. From the submenu, choose the option to **Configure a web node**.     
 
@@ -187,7 +186,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
     >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next two steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
     
-1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
 1. From the submenu, choose the option to **Configure a compute node**.
 
@@ -273,7 +272,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
     >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
 
-   1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+   1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
    1. From the submenu, choose the option to **Configure a web node**.     
 

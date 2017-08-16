@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "R Execution Security Considerations and user isolation - Microsoft R Server | Microsoft Docs"
+title: "R Execution Security Considerations and user isolation - Machine Learning Server | Microsoft Docs"
 description: "R Execution Security Considerations when operationalizing analytics with Microsoft R Server"
 keywords: "RServe; deployr-rserve; user isolation"
 author: "j-martens"
@@ -33,13 +33,13 @@ This forked version of RServe is the R execution component behind the compute no
 This RServe fork acts as an interface to R, which by default is single threaded. However, in this context, this RServe fork sits atop of the RevoScaleR package. Therefore, if you use RevoScaleR package functions, you benefit from multi-threaded processing in the R shell.
 
 >[!IMPORTANT]
->Microsoft R Server's web and compute nodes are not designed for multi-tenancy. Please follow your organization's best practices to prevent data leakage.
+>Microsoft R Server's web and compute nodes are not designed for multi-tenancy. To prevent data leakage, follow your organization's best practices.
 
 ## The Execution Context
 
-As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the 'system' function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While this is useful functionality for individual users, **it is also a potential entry point through which the computer's security could be compromised.**
+As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the 'system' function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While the functionality is useful to individual users, **it is also a potential entry point through which the computer's security could be compromised.**
 
-R Server provides various [API calls](concept-api.md) that permit the execution of R scripts and R code. All authentication takes place on the web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Rserve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve only accepts socket connections from `localhost`. In other words, only thoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
+R Server provides various [API calls](concept-api.md) that permit the execution of R scripts and R code. All authentication takes place on the web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. Serve provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve only accepts socket connections from `localhost`. In other words, only hoses processes running on the same machine where RServe is running can directly connect to it and execute R code.
 
 >[!Important]
 >The compute node should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process.
@@ -49,7 +49,7 @@ R Server provides various [API calls](concept-api.md) that permit the execution 
 >-   RServe only accepts usernames and passwords in plain text from connecting clients.
 >-   RServe uses a plain text configuration file to store the username and password.
 
-If your configuration requires additional compute capacity, [additional compute nodes](../install/operationalize-r-server-enterprise-config.md#add-compute-nodes) can be added to provide sophisticated load-balancing capabilities.
+If your configuration requires additional compute capacity, you can add [additional compute nodes](../install/operationalize-r-server-enterprise-config.md#add-compute-nodes) for more sophisticated load-balancing capabilities.
 
 <a name="isolation"></a>
 
@@ -57,7 +57,7 @@ If your configuration requires additional compute capacity, [additional compute 
 
 In the R language, users can change files in the file system, download content from the web, download packages, and so on.
 
-In order to mitigate some of the risks associated with RServe, the service is setup to run using **a single account with write permissions** to the R working directory <MRS_home>\deployr\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces.
+In order to mitigate some of the risks associated with RServe, the service is set up to run using **a single account with write permissions** to the R working directory <MRS_home>\deployr\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces.
 
 >[!Important]
 >While the custom Rserve service can only write to the working directory, **there is no user isolation between the session folders**. Any user familiar with the directory structure could in theory access another user’s session folder from their R script.

@@ -24,15 +24,15 @@ ms.technology:
 #ms.custom: ""
 
 ---
-# Deploy an R Model as a web service with mrsdeploy
+# Deploy a Python model as a web service with azureml-model-management-sdk
 
-**Applies to: Microsoft R Client 3.x, Microsoft R Server 9.x**
+**Applies to: Microsoft R Client 3.4, Microsoft Learning Server 9.2**
 
 ## Objective
 
-Learn how to publish an R model as a web service with Microsoft R Server. Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the mrsdeploy package that ships with Microsoft R Client and R Server, you can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
+Learn how to deploy an Python model as a web service with Machine Learning Server. Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the azureml-model-management-sdk Python library that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
 
-An R Server web service is an R code execution on the [operationalization compute node](../install/operationalize-r-server-one-box-config.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
+In Machine Learning Server, a web service is a Python code execution on the [compute node](../install/operationalize-r-server-one-box-config.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the azureml-model-management-sdk Python library ](../python-reference/azureml-model-management-sdk/what-is-azureml-model-management-sdk.md) to gain access a service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
 
 ## Time estimate
 
@@ -42,19 +42,19 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 Before you begin this QuickStart, have the following ready:
 
-+ An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
++ WILL THERE BE A CLIENT OF SORTS WITH THIS PACKAGE???? An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
 
-+ An instance of [Microsoft R Server installed](../what-is-microsoft-r-server.md) that has been [configured to operationalize analytics](../install/operationalize-r-server-one-box-config.md).
++ An instance of [Machine Learning Server ](../what-is-microsoft-r-server.md) installed that has been [configured to operationalize analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
 
-+ The connection details to that instance of Microsoft R Server. Contact your administrator for any missing connection details. After [connecting to R Server](how-to-connect-log-in-with-mrsdeploy.md) in R, deploy your analytics as web services so others can consume them. 
++ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../operationalize/python/how-to-authenticate-with-server-in-python.md) in R, deploy your analytics as web services so others can consume them. 
 
 
 ## Example code
 
-This article walks through the deployment of a simple R model as a web service hosted in R Server.  Here is the entire R code for the example that we walk through in the sections that follow.
+This article walks through the deployment of a simple Python model as a web service hosted in Machine Learning Server.  Here is the entire Python code for the example that we walk through in the sections that follow.
 
 >[!IMPORTANT]
->Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+>Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../operationalize/python/how-to-authenticate-with-server-in-python.md).
 
 ```r
 ##########################################################

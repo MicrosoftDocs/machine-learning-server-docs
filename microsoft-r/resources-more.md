@@ -60,33 +60,33 @@ The following resources are available to you:
 
 ## Documentation Roadmap
 
-The best place to start are the Getting Started guides available on this site. After you've completed those tutorials, you'll be ready start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
+We recommend that you begin with the Quickstarts on this site. After you've completed those tutorials, you'll be ready start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
 
 The obvious place to start is with the rest of the **Microsoft R** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
 
-Next, you should be aware of the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. You can access that on the CRAN website or in your R installation directory.
+Next, we recommend the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions*. You can access that on the CRAN website or in your R installation directory.
 
-Beyond the standard R manuals, there are many books available to help you learn R, and to help you use R to do particular things. The rest of this article will help point you in the right direction. 
+Beyond the standard R manuals, there are many books available to help you learn R, and to help you use R to do particular things. The rest of this article helps point you in the right direction. 
 
 ### Introductory Material
 
-#### For Those New to R
+#### New to R?
 
 + _R for Dummies_ by Andrie de Vries and Joris Meys
-  <br>Excellent starting place for those new to R, filled with examples and tips
+  <br>Excellent starting place if you are new to R, filled with examples and tips
 
 + [_R FAQ_](http://cran.r-project.org/doc/FAQ/R-FAQ.html) by Kurt Hornik 
 
 + _An Introduction to R_ by the R Development Core Team, 2008
   <br>Based on “Notes on S-Plus” by Bill Venables and David Smith. Includes an extensive sample session in Appendix A
 
-#### For Intermediate R Users
+#### Intermediate R Users
 
 + _O’Reilly’s R Cookbook_ by Paul Teetor
-  <br>A book filled with recipes to help you accomplish very specific tasks
+  <br>A book filled with recipes to help you accomplish specific tasks.
 
 + _The Essential R Reference_ by Mark Gardener
-  <br>A dictionary-like reference to more than 400 R commands, including cross-references and examples
+  <br>A dictionary-like reference to more than 400-R commands, including cross-references and examples
 
 #### For SAS or SPSS Users
 
@@ -100,25 +100,25 @@ Beyond the standard R manuals, there are many books available to help you learn 
 <br>
 ### Information on Data Analysis and Statistics
 
-A good source of information on introductory data analysis and statistics is Peter Dalgaard’s *Introductory Statistics with R* . After a chapter on basic R operations, Dalgaard discusses probability and distributions, descriptive statistics and graphics, one- and two-sample tests, regression and correlation, ANOVA and Kruskal-Wallis, tabular data, power and computation of sample size, multiple regression, linear models, logistic regression, and survival.
+A good source of information on introductory data analysis and statistics is Peter Dalgaard’s *Introductory Statistics with R*. After a chapter on basic R operations, Dalgaard discusses probability and distributions, descriptive statistics and graphics, one- and two-sample tests, regression and correlation, ANOVA and Kruskal-Wallis, tabular data, power and computation of sample size, multiple regression, linear models, logistic regression, and survival.
 
 For more advanced techniques, the obvious starting point is *Modern Applied Statistics with S* by Bill Venables and Brian Ripley . This book starts with four introductory chapters on R, then gets into statistics from univariate statistics (chapter 5) to optimization (chapter 16). Along the way, the authors touch on many widely used techniques, including linear models, generalized linear models, clustering, tree-based methods, survival analysis, and many others.
 
 Rapidly becoming *the* book for aspiring data scientists is *The Elements of Statistical Learning* by Trevor Hastie, Robert Tibshirani, and Jerome Friedman. This book covers a variety of statistical techniques important in big data analysis and machine learning, including various tree-based methods, support vector machines, graphical models, and more.
 
-Linear models, generalized linear models, and other regression techniques are the subject of a number of texts, including Frank Harrell’s *Regression Modeling Strategies* , John Fox’s *Applied Regression Analysis and Generalized Linear Models* and his R-specific companion volume, *An R and S-PLUS Companion to Applied Regression* , and *Data Analysis Using Regression and Multilevel/Hierarchical Models* by Andrew Gelman and Jennifer Hill .
+Linear models, generalized linear models, and other regression techniques are the subject of a number of texts, including Frank Harrell’s *Regression Modeling Strategies*, John Fox’s *Applied Regression Analysis and Generalized Linear Models* and his R-specific companion volume, *An R and S-PLUS Companion to Applied Regression* , and *Data Analysis Using Regression and Multilevel/Hierarchical Models* by Andrew Gelman and Jennifer Hill .
 
 Other useful books that take you into more advanced statistics are *R in Action* by Robert I. Kabacoff , *A Handbook of Statistical Analyses Using R* by Brian Everitt and Torsten Hothorn , *Data Analysis and Graphics Using R* by John Maindonald and John Braun , and *The R Book* by Michael Crawley .
 
-If you are interested in an overview of the multiple uses of big data analytics, the book *Big Data, Big Analytics* by Michael Minelli, Michele Chambers, and Ambiga Dhiraj will give you a an excellent start in understanding what big data is and how it is used in real-world business applications.
+If you are interested in an overview of the multiple uses of big data analytics, the book *Big Data, Big Analytics* by Michael Minelli, Michele Chambers, and Ambiga Dhiraj gives you an excellent start in understanding what big data is and how it is used in real-world business applications.
 
 ### Information on Programming with R
 
-The newest book from John M. Chambers, *Software for Data Analysis: Programming with R* , gives a thorough description of programming in R, including tips on debugging, writing packages, creating classes and methods, and interfacing to code in other languages. It also includes a useful chapter describing how R works.
+The newest book from John M. Chambers, *Software for Data Analysis: Programming with R*, gives a thorough description of programming in R, including tips on debugging, writing packages, creating classes and methods, and interfacing to code in other languages. It also includes a useful chapter describing how R works.
 
 *R in a Nutshell* by Joseph Adler is unlike most books on R in that it deals with R first and foremost as a programming language; it does touch on statistical topics, but that is not its main focus.
 
-The book *S Programming* by Venables and Ripley is a concise, readable guide to programming in the S family of languages. Most of their advice remains valid, but the book was published when R was still at a pre-release version (0.90.1),so some details have changed over time.
+The book *S Programming* by Venables and Ripley is a concise, readable guide to programming in the S family of languages. Most of their advice remains valid, but the book was published when R was still at a pre-release version (0.90.1), some details have changed over time.
 
 The Blue Book, White Book, and Green Book all have one or more chapters devoted to programming in S, with different points of emphasis. The Blue Book focuses on basic function writing. The White Book describes the S Version 3 class system and how to define classes, generic functions, and methods in that system. The Green Book describes the S Version 4 class system and how to define classes and methods in that system.
 
@@ -126,23 +126,19 @@ The manual *Writing R Extensions* by the R Core Team describes how to write comp
 
 ### Information on Getting Data Into and Out of R
 
-The manual *R Data Import/Export* by the R Core Team describes how to read data into R from a variety of sources using both built-in R tools and additional packages. The book Data Manipulation with R by Phil Spector includes information on reading and writing data, and also further manipulation within R. And, of course, be sure to look at the *RevoScaleR User’s Guide* for information on data import and export capabilities provided by **RevoScaleR**.
+The manual *R Data Import/Export* by the R Core Team describes how to read data into R from a variety of sources using both built-in R tools and additional packages. The book Data Manipulation with R by Phil Spector includes information on reading and writing data, and also further manipulation within R. Also, be sure to look at the *RevoScaleR User’s Guide* for information on data import and export capabilities provided by **RevoScaleR**.
 
 ### Information on Creating Graphics with R
 
 All of the references mentioned up to now contain at least some material on graphics, because graphical exploration is a primary motivation for using R in the first place. The Blue Book, in particular, describes in detail the “traditional S graphics" framework.
 
-A popular graphics package that is rapidly growing its own complete package ecosystem is Hadley Wickham’s ggplot2 package, documented in Wickham’s *ggplot2: Elegant Graphics for Data Analysis* . The ggplot2 package implements in R many of the ideas from Leland Wilkinson’s *The Grammar of Graphics* .
+A popular graphics package that is rapidly growing its own complete package ecosystem is Hadley Wickham’s ggplot2 package, documented in Wickham’s *ggplot2: Elegant Graphics for Data Analysis*. The ggplot2 package implements in R many of the ideas from Leland Wilkinson’s *The Grammar of Graphics* .
 
-The ggplot2 package is a high-level graphics package. For lower-level graphics functionality, the definitive reference is Paul Murrell’s *R Graphics* , which describes both the traditional S graphics framework (in particular, its implementation in R by Ross Ihaka) and the grid graphics framework developed by Murrell. It also describes the lattice system, developed by Deepayan Sarkar, that uses the grid framework to implement the Trellis graphics system developed by Rick Becker and Bill Cleveland. Serious users of the lattice system will also want to consult Sarkar’s book, *Lattice: Multivariate Data Visualization with R* .
+The ggplot2 package is a high-level graphics package. For lower-level graphics functionality, the definitive reference is Paul Murrell’s *R Graphics*, which describes both the traditional S graphics framework (in particular, its implementation in R by Ross Ihaka) and the grid graphics framework developed by Murrell. It also describes the lattice system, developed by Deepayan Sarkar, that uses the grid framework to implement the Trellis graphics system developed by Rick Becker and Bill Cleveland. Serious users of the lattice system also  consult Sarkar’s book, *Lattice: Multivariate Data Visualization with R* .
 
-Trellis graphics are discussed thoroughly in Cleveland’s *Visualizing Data* . Cleveland’s earlier book, now its second edition, *The Elements of Graphing Data* remains essential reading for anyone interested in data visualization.
+Trellis graphics are discussed thoroughly in Cleveland’s *Visualizing Data*. Cleveland’s earlier book, now its second edition, *The Elements of Graphing Data* remains essential reading for anyone interested in data visualization.
 
 *Interactive and Dynamic Graphics for Data Analysis* by Dianne Cook and Deborah Swayne describes using R together with the GGobi visualization program for dynamic graphics.
-
-### Information on Parallel Programming in R
-
-While the *RevoScaleR Distributed Computing Guide* focuses on running computations over multiple nodes, it also includes basic examples of parallel programming that can be run on a multiple-core workstation. *Parallel R* by Q. Ethan McCallum and Stephen Weston describes some additional tools for parallel computing in R.
 
 
 ###Archived Product Documentation

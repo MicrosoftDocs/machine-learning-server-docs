@@ -6,7 +6,7 @@ description: "Base class for all revoscalepy data sources."
 keywords: "head" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "07/28/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -56,7 +56,7 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ```
-head(num_rows: int = 6, report_progress: int = 0)
+head(num_rows: int = 6, report_progress: int = None)
 ```
 
 
@@ -108,7 +108,7 @@ ds.head(num_rows=4)
 
 
 ```
-tail(num_rows: int = 6, report_progress: int = 0)
+tail(num_rows: int = 6, report_progress: int = None)
 ```
 
 

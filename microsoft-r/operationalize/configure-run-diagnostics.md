@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Running diagnostics & troubleshooting the configuration for operationalization - Microsoft R Server | Microsoft Docs"
+title: "Running diagnostics & troubleshooting the configuration for operationalization - Machine Learning Server | Microsoft Docs"
 description: "Troubleshooting and Diagnostics when configuring Microsoft R Server to operationalize"
 keywords: ""
 author: "j-martens"
@@ -162,7 +162,7 @@ The following logging levels are available:
 This section contains pointers to help you troubleshoot some problems that can occur.
 
 >[!IMPORTANT]
->If the following sections do not solve your issue, file a ticket with technical support and/or post your question in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+>If this section do not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### "BackEndConfiguration is missing URI" Error
 
@@ -182,6 +182,29 @@ If you get the `Cannot establish connection with the web node` error, then the c
 + Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](configure-use-admin-utility.md#startstop)
 
 If the issue persists, verify you can post to the `login` API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+
+### Long delays when consuming web service on Spark
+
+If you encounter long delays when trying to consume a web service created with mrsdeploy functions in a Spark compute context, you may need to add some missing folders. The Spark application belongs to a user called 'rserve2' whenever it is invoked from a web service using mrsdeploy functions. 
+
+To work around this issue, create these required folders for user 'rserve2' in local and hdfs:
+
+```
+hadoop fs -mkdir /user/RevoShare/rserve2
+hadoop fs -chmod 777 /user/RevoShare/rserve2
+ 
+mkdir /var/RevoShare/rserve2
+chmod 777 /var/RevoShare/rserve2
+``` 
+
+Next, create a new Spark compute context:
+
+```R 
+rxSparkConnect(reset = TRUE)
+```
+
+When 'reset = TRUE', all cached Spark Data Frames are freed and all existing Spark applications belonging to the current user are shut down.
+  
 
 ### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
 
