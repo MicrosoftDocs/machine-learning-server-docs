@@ -33,14 +33,6 @@ ms.technology: "r-server"
  
 Transform data from an input data set to an output data set
 
-This is what the metadata looks like:
-
- ```
-title: "rxDataStep (RevoScaleR package for R, Microsoft Machine Learning Server) | Microsoft Docs" 
-
-description: "Transform data from an input data set to an output data set." 
-```
-
  
  ##Usage
 
@@ -61,6 +53,15 @@ description: "Transform data from an input data set to an output data set."
                           
  
 ```
+
+## (metadata)
+
+This is what the metadata looks like:
+
+`title: "rxDataStep (RevoScaleR package for R, Microsoft Machine Learning Server) | Microsoft Docs" `
+
+`description: "Transform data from an input data set to an output data set." `
+
  
  ##Arguments
 

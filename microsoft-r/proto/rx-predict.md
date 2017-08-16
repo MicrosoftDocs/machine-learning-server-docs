@@ -33,24 +33,19 @@ ms.custom: ""
 
 Reports per-instance scoring results in a data frame or revoscalepy data source using a trained Microsoft ML Machine Learning model with a revoscalepydata source.
 
-This is what the metadata looks like:
-
- ```
-title: "rx_predict (microsoftml package for Python, Microsoft Machine Learning Server) | Microsoft Docs" 
-
-description: "Reports per-instance scoring results in a data frame or revoscalepy data source using a trained Microsoft ML Machine Learning model with a revoscalepydata source." 
- ```
-
-## Usage
-
-
+## Usage (should this wrap?)
 
 ```
 microsoftml.rx_predict(model, data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame], output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, write_model_vars: bool = False, extra_vars_to_write: list = None, suffix: str = None, overwrite: bool = False, data_threads: int = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None, **kargs)
 ```
 
+## (metadata)
 
+This is what the metadata looks like:
 
+`title: "rx_predict (microsoftml package for Python, Microsoft Machine Learning Server) | Microsoft Docs" `
+
+`description: "Reports per-instance scoring results in a data frame or revoscalepy data source using a trained Microsoft ML Machine Learning model with a revoscalepydata source." `
 
 ## Description
 

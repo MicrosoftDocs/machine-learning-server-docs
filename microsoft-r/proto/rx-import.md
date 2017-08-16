@@ -32,24 +32,19 @@ Applies to: [**revoscalepy package for Python**](../python-reference/revoscalepy
 
 Import data into an ‘.xdf’ file or data.frame.
 
-This is what the metadata looks like:
-
- ```
-title: "rx_import (revoscalepy package for Python, Microsoft Machine Learning Server) | Microsoft Docs" 
-
-description: "Import data into an ‘.xdf’ file or data.frame." 
- ```
-
 ## Usage
-
-
 
 ```
 revoscalepy.rx_import(input_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame, str], output_file=None, vars_to_keep: list = None, vars_to_drop: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: <built-in function callable> = None, transform_variables: dict = None, transform_packages: dict = None, transform_environment: dict = None, append: str = None, overwrite: bool = False, number_rows: int = None, strings_as_factors: bool = None, column_classes: dict = None, column_info: dict = None, rows_per_read: int = None, type: str = None, max_rows_by_columns: int = None, report_progress: int = None, verbose: int = None, xdf_compression_level: int = None, create_composite_set: bool = None, blocks_per_composite_file: int = None)
 ```
 
+## (metadata)
 
+This is what the metadata looks like:
 
+`title: "rx_import (revoscalepy package for Python, Microsoft Machine Learning Server) | Microsoft Docs" `
+
+`description: "Import data into an ‘.xdf’ file or data.frame." `
 
 ## Description
 

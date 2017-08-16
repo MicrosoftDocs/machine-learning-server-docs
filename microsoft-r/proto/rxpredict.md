@@ -35,14 +35,6 @@ Reports per-instance scoring results in a data frame or RevoScaleR data source
 using a trained Microsoft R Machine Learning model with a RevoScaleR data
 source.
 
-This is what the metadata looks like:
-
- ```
-title: "rxPredict.mlModel (MicrosoftML package for R, Microsoft Machine Learning Server) | Microsoft Docs" 
-
-description: "Reports per-instance scoring results in a data frame or RevoScaleR data source using a trained Microsoft R Machine Learning model with a RevoScaleR data source. " 
- ```
- 
  ##Usage
 
 ```   
@@ -55,6 +47,13 @@ rxPredict  (modelObject, data, outData = NULL,
     computeContext = rxGetOption("computeContext"), ...)
  
 ```
+## (metadata)
+
+This is what the metadata looks like:
+
+`title: "rxPredict.mlModel (MicrosoftML package for R, Microsoft Machine Learning Server) | Microsoft Docs" `
+
+`description: "Reports per-instance scoring results in a data frame or RevoScaleR data source using a trained Microsoft R Machine Learning model with a RevoScaleR data source. " `
  
  ##Arguments
 

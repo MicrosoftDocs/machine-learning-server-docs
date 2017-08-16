@@ -29,18 +29,9 @@ ms.technology: "r-server"
 
  Applies to: [**olapR package for R**](../r-reference/olapR/olapr.md), version 1.0.0 
 
- 
  ##Description
  
 Constructs an OlapConnection object.
-
-This is what the metadata looks like:
-
- ```
-title: "OlapConnection (olapR package for R, Microsoft Machine Learning Server) | Microsoft Docs" 
-
-description: "Constructs an OlapConnection object. " 
- ```
  
  ##Usage
 
@@ -52,11 +43,15 @@ description: "Constructs an OlapConnection object. "
   print.OlapConnection(ocs)
  
 ```
- 
+## (metadata)
+
+This is what the metadata looks like:
+
+`title: "OlapConnection (olapR package for R, Microsoft Machine Learning Server) | Microsoft Docs" `
+
+`description: "Constructs an OlapConnection object. " `
  
  ##Arguments
-
-   
     
  ### connectionString
  A valid connection string for connecting to Analysis Services 
