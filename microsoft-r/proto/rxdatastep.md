@@ -25,9 +25,9 @@ ms.technology: "r-server"
  
 --- 
  
- # rxDataStep
+ # **rxDataStep**
 
-  Applies to: [RevoScaleR package for R](./r-reference/RevoscaleR/Revoscaler-package.md), version 9.1.0 
+  Applies to: [**RevoScaleR package for R**](./r-reference/RevoscaleR/Revoscaler-package.md), version 9.1.0 
  
  ##Description
  
@@ -37,6 +37,7 @@ This is what the metadata looks like:
 
  ```
 title: "rxDataStep (RevoScaleR package for R, Microsoft Machine Learning Server) | Microsoft Docs" 
+
 description: "Transform data from an input data set to an output data set." 
 ```
 

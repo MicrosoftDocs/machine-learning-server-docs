@@ -24,9 +24,9 @@ ms.custom: ""
  
 ---
 
-# rx_import
+# **rx_import**
 
-Applies to: [revoscalepy package for Python](./python-reference/revoscalepy/revoscalepy-package.md), version 0.0.0 
+Applies to: [**revoscalepy package for Python**](./python-reference/revoscalepy/revoscalepy-package.md), version 0.0.0 
 
 ## Description
 
@@ -36,6 +36,7 @@ This is what the metadata looks like:
 
  ```
 title: "rx_import (revoscalepy package for Python, Microsoft Machine Learning Server) | Microsoft Docs" 
+
 description: "Import data into an ‘.xdf’ file or data.frame." 
  ```
 

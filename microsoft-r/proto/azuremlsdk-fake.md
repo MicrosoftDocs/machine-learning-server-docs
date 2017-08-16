@@ -24,9 +24,9 @@ ms.custom: ""
  
 ---
 
-# create-model
+# **create-model**
 
- Applies to: [azure-ml-model-management-sdk package for Python](./r-reference/mrsdeploy/mrsdeploy-package.md), version 1.0.0  
+ Applies to: [**azure-ml-model-management-sdk package for Python**](./r-reference/mrsdeploy/mrsdeploy-package.md), version 1.0.0  
 
  ## Description
 
@@ -36,6 +36,7 @@ ms.custom: ""
 
  ```
 title: "create-model (azure-ml-model-management-sdk package for Python, Microsoft Machine Learning Server) | Microsoft Docs"  
+
 description: "Creates a machine learning model in Python for use in Machine Learning Server or Azure Machine Learning Workbench." 
  ```
 

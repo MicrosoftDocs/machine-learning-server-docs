@@ -24,9 +24,9 @@ ms.custom: ""
  
 ---
 
-# rx_predict
+# **rx_predict**
 
- Applies to: [microsoftml package for Python](./python-reference/microsoftml/microsoftml-package.md), version 0.0.0 
+ Applies to: [**microsoftml package for Python**](./python-reference/microsoftml/microsoftml-package.md), version 0.0.0 
 
 
 ## Description
@@ -37,6 +37,7 @@ This is what the metadata looks like:
 
  ```
 title: "rx_predict (microsoftml package for Python, Microsoft Machine Learning Server) | Microsoft Docs" 
+
 description: "Reports per-instance scoring results in a data frame or revoscalepy data source using a trained Microsoft ML Machine Learning model with a revoscalepydata source." 
  ```
 

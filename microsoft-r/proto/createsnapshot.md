@@ -25,9 +25,9 @@ ms.technology: "r-server"
  
 --- 
  
- # createSnapshot
+ # **createSnapshot**
 
- Applies to: [mrsdeploy package for R](./r-reference/mrsdeploy/mrsdeploy-package.md), version 1.1.0  
+ Applies to: [**mrsdeploy package for R**](./r-reference/mrsdeploy/mrsdeploy-package.md), version 1.1.0  
  
  ##Description (unchanged)
  
@@ -38,6 +38,7 @@ This is what the metadata looks like:
 
  ```
 title: "createSnapshot (mrsdeploy package for R, Microsoft Machine Learning Server) | Microsoft Docs" 
+
 description: "Creates a snapshot of the remote R session and saves it on the server. Both the workspace and the files in the working directory are saved. " 
  ```
  
