@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "MicrosoftML: machine learning R algorithms" 
-description: "A package that provides state-of-the-art machine learning algorithms for R, developed  by Microsoft. It is used with the **RevoScaleR** package." 
+title: "MicrosoftML package for R (Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Function help reference for the MicrosoftML R package of Microsoft Machine Learning Server." 
 keywords: "MicrosoftML-package, package" 
 author: "bradsev"
 ms.author: "bradsev" 
@@ -25,11 +25,11 @@ ms.technology: "r-server"
  
 --- 
  
+# MicrosoftML package for R
+
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
  
- 
-# MicrosoftML: machine learning R algorithms  
- 
-The MicrosoftML package provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
+The **MicrosoftML** package provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
 
 This topic includes links to the reference documentation for the ML algorithms and transforms, and for the scoring and helper functions.
 

@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "microsoftml (Function Library for Python) in SQL Server Machine Learning Server" 
-description: "" 
+title: "microsoftml package for Python (Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Function help reference for the microsoftml python package of Microsoft Machine Learning Server." 
 keywords: "microsoftml API, API" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -24,14 +24,11 @@ ms.custom: ""
  
 ---
 
-# microsoftml (Function Library for Python)
+# microsoftml package for Python
 
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
-**Applies to: SQL Server 2017 RC1**
-
-The **microsoftml** library is a proprietary Python package from Microsoft for use in SQL Server Machine Learning Server (Standalone) and SQL Server Machine Learning Services. Many functions in this library can be used with the **revoscalepy** package, included in the same release.
-
-Use the **microsoftml** Python functions to apply machine learning transforms to data.
+The **microsoftml** library is a proprietary Python package used for applying machine learning transforms to data.
 
 
 ## Training

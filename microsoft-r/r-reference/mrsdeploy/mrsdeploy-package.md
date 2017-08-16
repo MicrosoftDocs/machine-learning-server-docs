@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "What is mrsdeploy - Microsoft R Server | Microsoft Docs"
-description: "mrsdeploy Functions"
+title: "mrsdeploy package for R (Microsoft Machine Learning Server) | Microsoft Docs"
+description: "Function help reference for the mrsdeploy R package of Microsoft Machine Learning Server."
 keywords: "mrsdeploy package reference"
 author: "j-martens"
 ms.author: "jmartens"
@@ -23,9 +23,9 @@ ms.technology: "r-server"
 
 ---
 
-# Introducing the mrsdeploy package
+# mrsdeploy package for R
  
-**Applies to:  Microsoft R Server 9.x**
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2
 
 the mrsdeploy package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 

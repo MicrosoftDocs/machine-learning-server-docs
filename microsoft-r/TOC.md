@@ -222,7 +222,7 @@
 ## [Install R Client on Linux](r-client/install-on-linux.md)
 ## [Remote execution with R Server](r/how-to-execute-code-remotely.md)
 
-# Prototype function help pages (H1, title, description)
+# Prototype Function Pages
 ## [azure-ml-model-management.fakeAPI](proto/azuremlsdk-fake.md)
 ## [olapr.OlapConnection](proto/olapconnection.md) 
 ## [mrsdeploy.createSnapshot](proto/createsnapshot.md) 
@@ -230,6 +230,16 @@
 ## [RevoScaleR.rxDataStep](proto/rxdatastep.md) 
 ## [microsoftml.rx_predict](proto/rx-predict.md)
 ## [revoscalepy.rx_import](proto/rx-import.md)
+
+# Prototype Landing Pages
+## [azure-ml-model-management-sdk package](proto/azuremlmdsdk-package.md)
+## [olapR package](r-reference/olapr/olapr.md)
+## [microsoftml package (Pyhon)](python-reference/microsoftml/microsoftml-package.md)
+## [MicrosoftML package (R)](r-reference/microsoftml/microsoftml-package.md)
+## [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md)
+## [revoscalepy package](python-reference/revoscalepy/revoscalepy-package.md)
+## [RevoScaleR](r-reference/revoscaler/revoscaler.md)
+
 
 # [Python Function Reference](python-reference/introducing-python-package-reference.md)
 ## [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)

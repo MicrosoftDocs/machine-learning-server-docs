@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "OlapR: OLAP Cube access in R" 
-description: "A package that allows for data to be imported from OLAP cubes stored in SQL Server Analysis Services into R." 
+title: "OlapR package for R (Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Function help reference for the olapR R package of Microsoft Machine Learning Server. It is used to import data from OLAP cubes stored in SQL Server Analysis Services into R." 
 keywords: "olapR" 
 author: "richcalaway"
 ms.author: "richcala" 
@@ -24,14 +24,13 @@ ms.technology: "r-server"
 #ms.custom: "" 
  
 --- 
-
  
-#olapR: OlapR: OLAP Cube access in R
+# olapRpackage for R
 
 
-Applies to version 1.0.0 of package **olapR**. This package is in prerelease.
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
-**olapR** is only available in R Server for Windows.
+**olapR** provides functions for importing data from OLAP cubes stored in SQL Server Analysis Services into R. It is only available in R Server for Windows.
  
 ##Description
 

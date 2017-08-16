@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "ScaleR Functions"
-description: "ScaleR Functions"
+title: "RevoScaleR package for R (Microsoft Machine Learning Server) | Microsoft Docs"
+description: "Function help reference for the RevoScaleR R package of Microsoft Machine Learning Server"
 keywords: "RevoScaleR, ScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,11 +23,11 @@ ms.technology: "r-server"
 
 ---
 
-# RevoScaleR Functions
+# RevoScaleR package for R
 
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
-
-The `RevoScaleR` package provides a set of over one hundred portable, scalable, and distributable data analysis functions.
+The **RevoScaleR** package provides a set of over one hundred portable, scalable, and distributable data analysis functions.
 
 This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  For a list of the entire set of `RevoScaleR` functions, see [ScaleR functions by category](revoanalytics-package.md)
 

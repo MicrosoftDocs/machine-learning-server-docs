@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "revoscalepy (Function Library for Python) in SQL Server Machine Learning Server" 
-description: "" 
+title: "revoscalepy package for Python (Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Function help reference for the revoscalepy Python package of Microsoft Machine Learning Server." 
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
@@ -24,13 +24,13 @@ ms.custom: ""
  
 ---
 
-# revoscalepy (Function Library for Python)
+# revoscalepy package for Python
 
-**Applies to: SQL Server 2017 RC1**
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
-The **revoscalepy** library is a proprietary Python package that is part of [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) and [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services). Many functions in this library can be used with [**microsoftml**](../microsoftml/microsoftml-package.md), which is part of the same release.
+The **revoscalepy** library is a proprietary Python package used to set the compute context for python script execution, load and manipulate data from external data sources, and manage objects. Data visualization and analysis functions are provided for the most common use cases.
 
-Use these functions to set the compute context for python script execution, load and manipulate data from external data sources, and manage objects. Data visualization and analysis functions are provided for the most common use cases.
+ Many functions in this library can be used with [**microsoftml**](../microsoftml/microsoftml-package.md), which is part of the same release.
 
 This library is built for [Python 3.5](https://www.python.org/doc/). Aside from an installation of either Machine Learning Server (Standalone) or Machine Learning Services for Python, there are no further requirements.
 
