@@ -26,7 +26,7 @@ ms.custom: ""
 
 # revoscalepy package for Python
 
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services**](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)**](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
 The **revoscalepy** library is a proprietary Python package used to set the compute context for python script execution, load and manipulate data from external data sources, and manage objects. Data visualization and analysis functions are provided for the most common use cases.
 
@@ -113,6 +113,10 @@ This library is built for [Python 3.5](https://www.python.org/doc/). Aside from 
 |[rx_set_var_info](rx-set-var-info.md)  | Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame.|
 |[RxMissingValues](RxMissingValues.md) | Provides missing values for various `NumPy` data types which you can use to mark missing values in a sequence of data in `ndarray`.|
 
+## Next steps
+
+For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
+
 ## See also
 
- [Python function library help (SQL Server Machine Learning)](../introducing-python-package-reference.md)   
+ [Python function library help (Machine Learning Server)](../introducing-python-package-reference.md)  

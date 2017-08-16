@@ -26,7 +26,7 @@ ms.custom: ""
 
 # microsoftml package for Python
 
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services**](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)**](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
 The **microsoftml** library is a proprietary Python package used for applying machine learning transforms to data.
 
@@ -91,6 +91,11 @@ The **microsoftml** library is a proprietary Python package used for applying ma
 
 * [*microsoftml.rx_featurize*: Data transformation for data sources](rx-featurize.md) 
 
+
+## Next steps
+
+For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
+
 ## See also
 
- [Python function library help (SQL Server Machine Learning)](../introducing-python-package-reference.md)   
+ [Python function library help (Machine Learning Server)](../introducing-python-package-reference.md)   

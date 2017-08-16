@@ -25,12 +25,12 @@ ms.technology: "r-server"
  
 --- 
  
-# olapRpackage for R
+# olapR package for R
 
 
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services**](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)**](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
-**olapR** provides functions for importing data from OLAP cubes stored in SQL Server Analysis Services into R. It is only available in R Server for Windows.
+The **olapR** library provides functions for importing data from OLAP cubes stored in SQL Server Analysis Services into R. It is only available in R Server for Windows.
  
 ##Description
 
@@ -145,10 +145,12 @@ To see the **olapR** functions that can be called from the R console:
 > To list all public functions, type library(help="olapR") at the R prompt.
 >
 
+## Next steps
+
+For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
+
 ## See also
 
-[Package Reference](../introducing-r-server-r-package-reference.md)
-
-[Install R Server](../../what-is-microsoft-r-server.md)
-
-[Install R Client](../../r-client/what-is-microsoft-r-client.md)
+ [R Package Reference](../introducing-r-server-r-package-reference.md) 
+ [Install R Server](../../what-is-microsoft-r-server.md) 
+ [Install R Client](../../r-client/what-is-microsoft-r-client.md)     

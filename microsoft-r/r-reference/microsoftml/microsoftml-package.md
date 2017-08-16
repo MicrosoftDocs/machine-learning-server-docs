@@ -27,9 +27,9 @@ ms.technology: "r-server"
  
 # MicrosoftML package for R
 
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services**](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)**](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
  
-The **MicrosoftML** package provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
+The **MicrosoftML** library provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the **RevoScaleR** package.
 
 This topic includes links to the reference documentation for the ML algorithms and transforms, and for the scoring and helper functions.
 
@@ -106,20 +106,19 @@ This topic includes links to the reference documentation for the ML algorithms a
 **Functions for neural networks.**
 * [optimizer](optimizer.md) Specifies optimization algorithms for the [rxNeuralNet](rxneuralnet.md) machine learning algorithm.
 
- 
-## What's next?
 
-[Introduction to Microsoft R](../../microsoft-r-getting-started.md)
+## Next steps
 
-[Diving into data analysis in Microsoft R](../../r/how-to-introduction.md)
+For more information on using this library, see the following links:
 
-[Cheat Sheet: How to choose a MicrosoftML algorithm](../../r/how-to-choose-microsoftml-algorithms-cheatsheet.md)
++ [Quickstarts]()   
++ [How-to guidance]()   
++ [Cheat Sheet: Choosing a MicrosoftML algorithm](../../r/how-to-choose-microsoftml-algorithms-cheatsheet.md)    
++ [MicrosoftML samples](../../r/sample-microsoftml.md)      
 
-[MicrosoftML samples](../../r/sample-microsoftml.md).
+## See also
 
-
-##Microsoft Technical Support
-To request technical support from the Microsoft Corporation, click on [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409).
+ [Python function library help (Machine Learning Server)](../introducing-python-package-reference.md)  
  
  
  

@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
 Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2
 
-the mrsdeploy package provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
+The **mrsdeploy** library provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided.  Each feature can be used independently but the greatest value is achieved when you can leverage both. 
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, see the individual function help topics in the table of contents.
 
@@ -138,7 +138,6 @@ The following functions are used to bundle R code or script as a web service. Th
 |`getService` |Gets a web service for consumption. |
 |`deleteService `|Deletes a web service on an R Server instance. |
 
-
 ## Next steps
 
 After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see these links:
@@ -151,10 +150,10 @@ After you are logged in to a remote server, you can publish a web service or iss
 
 + [Asynchronous batch execution of web services in R](../../operationalize/how-to-consume-web-service-asynchronously-batch.md)
 
+For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
+
 ## See also
 
-[Package Reference](../introducing-r-server-r-package-reference.md)
-
-[Install R Server](../../what-is-microsoft-r-server.md)
-
-[Install R Client](../../r-client/what-is-microsoft-r-client.md)
+ [R Package Reference](../introducing-r-server-r-package-reference.md)    
+ [Install R Server](../../what-is-microsoft-r-server.md)    
+ [Install R Client](../../r-client/what-is-microsoft-r-client.md)   

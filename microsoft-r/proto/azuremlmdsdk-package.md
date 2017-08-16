@@ -25,9 +25,9 @@ ms.technology: "r-server"
 
 # Azure-ml-model-manage-sdk package for Python
  
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**Azure Machine Learning Workbench**]() version 1.0
 
-The **Azure-ml-model-manage-sdk** package provides ...
+The **Azure-ml-model-manage-sdk** library provides model definition and management functions for custom machine learning models that you build and deploy on machine learning platforms from Microsoft.
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, see the individual function help topics in the table of contents.
 
@@ -138,23 +138,10 @@ The following functions are used to bundle R code or script as a web service. Th
 |`getService` |Gets a web service for consumption. |
 |`deleteService `|Deletes a web service on an R Server instance. |
 
-
 ## Next steps
 
-After you are logged in to a remote server, you can publish a web service or issue interactive commands against the remote R Server. For more information, see these links:
-
-+ [Remote Execution](../../r/how-to-execute-code-remotely.md)
-
-+ [How to publish and manage web services in R](../../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
-
-+ [How to interact with and consume web services in R](../../operationalize/how-to-consume-web-service-interact-in-r.md)
-
-+ [Asynchronous batch execution of web services in R](../../operationalize/how-to-consume-web-service-asynchronously-batch.md)
+For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
 
 ## See also
 
-[Package Reference](../introducing-r-server-r-package-reference.md)
-
-[Install R Server](../../what-is-microsoft-r-server.md)
-
-[Install R Client](../../r-client/what-is-microsoft-r-client.md)
+ [Python function library help (Machine Learning Server)](../introducing-python-package-reference.md)  

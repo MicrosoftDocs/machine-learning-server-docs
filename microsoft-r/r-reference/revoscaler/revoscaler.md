@@ -25,20 +25,28 @@ ms.technology: "r-server"
 
 # RevoScaleR package for R
 
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
+Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services**](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)**](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
-The **RevoScaleR** package provides a set of over one hundred portable, scalable, and distributable data analysis functions.
+The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis functions.
 
-This topic presents a curated list of functions commonly used by Microsoft R users. These functions can be called directly from the command line.  For a list of the entire set of `RevoScaleR` functions, see [ScaleR functions by category](revoanalytics-package.md)
+## How to load RevoScaleR
+
+This package is included in installations of...   It is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. Run the following commands in the order shown below to load the library, get the version, and run one of its signature commands.
+
+$ install.library(RevoScaleR)
+$ print.version(Revo)
+$ rxSummary****
+
+> [!Note]
+> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
+
+## Scope
 
 While most of these functions are of general application, some are specific to particular compute contexts and some may not be fully supported in all compute contexts. If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)
 + [Computing on a Teradata Datawarehouse](revoscaler-teradata-functions.md)
 + [Computing on SQL Server](https://msdn.microsoft.com/en-us/library/mt652103.aspx)
 
->Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
-
-<br />
 ## Data Analysis Functions
 <!--<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1066,3 +1074,11 @@ To see the **RevoScaleR** functions that can be called from the R console:
    > objects(5)
    ```
 4. Use `?<function_name>` to open the help page for that function.
+
+## Next steps
+
+For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
+
+## See also
+
+ [Python function library help (Machine Learning Server)](../introducing-python-package-reference.md)  
