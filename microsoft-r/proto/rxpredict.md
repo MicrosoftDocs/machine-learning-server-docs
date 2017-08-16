@@ -34,7 +34,13 @@ Applies to: [MicrosoftML package for R](./r-reference/microsoftml/microsoftml-pa
 Reports per-instance scoring results in a data frame or RevoScaleR data source
 using a trained Microsoft R Machine Learning model with a RevoScaleR data
 source.
- 
+
+This is what the metadata looks like:
+
+ ```
+title: "rxPredict.mlModel (MicrosoftML package for R, Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Reports per-instance scoring results in a data frame or RevoScaleR data source using a trained Microsoft R Machine Learning model with a RevoScaleR data source. " 
+ ```
  
  ##Usage
 

@@ -33,6 +33,13 @@ ms.custom: ""
 
 Reports per-instance scoring results in a data frame or revoscalepy data source using a trained Microsoft ML Machine Learning model with a revoscalepydata source.
 
+This is what the metadata looks like:
+
+ ```
+title: "rx_predict (microsoftml package for Python, Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Reports per-instance scoring results in a data frame or revoscalepy data source using a trained Microsoft ML Machine Learning model with a revoscalepydata source." 
+ ```
+
 ## Usage
 
 

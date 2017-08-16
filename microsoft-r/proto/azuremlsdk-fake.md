@@ -32,6 +32,13 @@ ms.custom: ""
 
  Creates a machine learning model in Python for use in Machine Learning Server or Azure Machine Learning Workbench.
 
+ This is what the metadata looks like:
+
+ ```
+title: "create-model (azure-ml-model-management-sdk package for Python, Microsoft Machine Learning Server) | Microsoft Docs"  
+description: "Creates a machine learning model in Python for use in Machine Learning Server or Azure Machine Learning Workbench." 
+ ```
+
 ## Usage
 
 

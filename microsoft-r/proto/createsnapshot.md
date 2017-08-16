@@ -34,6 +34,12 @@ ms.technology: "r-server"
 Creates a snapshot of the remote R session and saves it on the server. Both the workspace
 and the files in the working directory are saved.
  
+This is what the metadata looks like:
+
+ ```
+title: "createSnapshot (mrsdeploy package for R, Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Creates a snapshot of the remote R session and saves it on the server. Both the workspace and the files in the working directory are saved. " 
+ ```
  
  ##Usage (unchanged)
 

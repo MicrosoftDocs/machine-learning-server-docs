@@ -33,7 +33,13 @@ ms.technology: "r-server"
  ##Description
  
 Constructs an OlapConnection object.
- 
+
+This is what the metadata looks like:
+
+ ```
+title: "OlapConnection (olapR package for R, Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Constructs an OlapConnection object. " 
+ ```
  
  ##Usage
 

@@ -32,6 +32,13 @@ Applies to: [revoscalepy package for Python](./python-reference/revoscalepy/revo
 
 Import data into an ‘.xdf’ file or data.frame.
 
+This is what the metadata looks like:
+
+ ```
+title: "rx_import (revoscalepy package for Python, Microsoft Machine Learning Server) | Microsoft Docs" 
+description: "Import data into an ‘.xdf’ file or data.frame." 
+ ```
+
 ## Usage
 
 
