@@ -59,7 +59,7 @@ A user can belong to multiple groups, and therefore it is possible to be assigne
 
 When a user attempts to authenticate, R Server checks to see whether you've declared roles for web service interactions. If you have, then R Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups that you declare in R Server, then the user is authenticated and given permissions according to the role to which their group is assigned. See the following section on **"Role configuration states"** for more information.
 
-With AD/LDAP, you can further restrict users from logging in (and also calling any APIs) by only allowing certain groups to log in, while all other people in the organization are prohibitted.  Do so with [the 'SearchFilter' LDAP property](configure-authentication.md#encrypt). In the following example, only members of the mrsreaders, mrsowners, mrscontributors groups are allowed to log in to R Server.
+With AD/LDAP, you can **further restrict which users can log in and call APIs** by declaring those groups with the ['SearchFilter' LDAP property](configure-authentication.md#encrypt).  Then, users in other groups will not be able to call any APIs. In this example, only members of the mrsreaders, mrsowners, and mrscontributors groups can call APIs after logging in.
 
 ```
 "SearchFilter": "(&(sAMAccountName={0})(|(memberOf=CN=mrsreaders,OU=Readers,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrsowners,OU=Owner,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrscontributors,OU=Contributor,OU=AA,DC=pseudorandom,DC=cloud)))",         
