@@ -25,13 +25,15 @@ ms.technology:
 
 ---
 
-# R function library reference
+# R Function Library Reference
 
-This section contains the function reference documentation for proprietary *revo* packages installed with Microsoft R Client and R Server, or available in a service (SQL Server 2016 or later, or Azure). Each package offers functions used for specific categories of operations. 
+This section contains the function reference documentation for proprietary *revo* packages installed with Microsoft R Client and R Server, or available in a service. Each package offers functions used for specific categories of operations. 
 
 You can use these libraries and functions in combination with other open source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that has a Microsoft R installation.
 
-The function libraries are built on **R 3.3.0**.
+Ships in: Microsoft R Client (Windows and Linux), Microsoft R Server (all platforms), SQL Server 2016 and later (Windows only), Azure HD Insight, Azure Data Science Virtual Machines.
+
+Built on: **R 3.3.0**.
 
 |Package | Version | Description |
 |--------|---------|-------------|
@@ -55,9 +57,9 @@ The packages documented in this section are found only on installations of the M
 
 By default, packages are installed in the \Program Files\Microsoft\R Server\R_SERVER\library folder on Windows, and in the /usr/lib64/microsoft-r folder on the Linux native file system.
 
-## How to list packages and package versions
+## How to list packages and versions
 
-To get the version of an R package installed on your ocmputer, open an R console application and execute the following command: `installed.packages()`
+To get the version of an R package installed on your computer, open an R console application and execute the following command: `installed.packages()`
 
 ## How to view built-in help pages
 

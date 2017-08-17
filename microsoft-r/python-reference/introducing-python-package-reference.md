@@ -25,13 +25,15 @@ ms.custom: ""
 
 ---
 
-# Python function library reference
+# Python Function Library Reference
 
-This section contains Python reference documentation for two proprietary packages installed with [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) and [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) in the SQL Server 2017  release.
+This section contains Python reference documentation for two proprietary packages used for data transformation and manipuation, for machine learning workloads that you run in SQL Server 2017.
 
-The function libraries are built on the [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc), included when you add Python support during installation. 
+Ships in: [SQL Server 2017 > SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) and in [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server).
 
-The function libraries currently run on Windows only.
+Built on: [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc), included when you add Python support during installation. 
+
+Supported platforms: Currently, Windows only.
 
 ## Python libraries
 
@@ -44,15 +46,15 @@ The function libraries currently run on Windows only.
 
 The packages documented in this section are found only on installations of the Microsoft products or Azure services that provide them. Setup programs or scripts install the propertietary Python packages from Microsoft and any package dependencies. Unless noted otherwise, all of the packages listed in the preceding table are installed with the product or service.
 
-By default, packages are installed in the C:\Program Files\Microsoft SQL Server\130 y folder on Windows.
+By default, packages are installed in the C:\Program Files\Microsoft SQL Server\140 folder on Windows.
 
-## How to list packages and package versions
+## How to list packages and versions
 
 To get the version of an R package installed on your ocmputer, open an R console application and execute the following command: `installed.packages()`
 
 ## Python naming conventions
 
-Both **revoscalepy** and **microsoftml** correspond to R language libraries in the form of [RevoScaleR](../r-reference/revoscaler/revoscaler.md) and [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md). If you have a background in R language or in these libraries in particular, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
+Both **revoscalepy** and **microsoftml** correspond to the Microsoft R packages, [RevoScaleR](../r-reference/revoscaler/revoscaler.md) and [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md). If you have a background in these libraries, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
 
 * lowercase package names (**microsoftml** contrasted with **MicrosoftML**) and most function names
 * underscore in function names (rx_import in **revoscalepy** contrasted with rxImport in **RevoScaleR**)
@@ -60,6 +62,10 @@ Both **revoscalepy** and **microsoftml** correspond to R language libraries in t
 At this time, full parity does not yet exist between language-specific versions of each package, but you can expect gaps to close over time. For now, we recommend using the documentation specific to each language.
 
 No additional software is required to call Python functions in T-SQL script or stored procedures, or call **revoscalepy** functions in Python script executing in a SQL Server compute context.
+
+## Next steps
+
+Get started with these Python libraries in SQL Server 2017: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
 ## See also
 
