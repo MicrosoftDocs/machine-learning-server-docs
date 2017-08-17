@@ -29,11 +29,9 @@ ms.custom: ""
 
 This section contains Python reference documentation for two proprietary packages used for data transformation and manipuation, for machine learning workloads that you run in SQL Server 2017.
 
-Ships in: [SQL Server 2017 > SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) and in [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server).
-
 Built on: [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc), included when you add Python support during installation. 
 
-Supported platforms: Currently, Windows only.
+Supported platforms: Windows only.
 
 ## Python libraries
 
@@ -44,9 +42,13 @@ Supported platforms: Currently, Windows only.
 
 ## How to get packages
 
-The packages documented in this section are found only on installations of the Microsoft products or Azure services that provide them. Setup programs or scripts install the propertietary Python packages from Microsoft and any package dependencies. Unless noted otherwise, all of the packages listed in the preceding table are installed with the product or service.
+The packages documented in this section are found only on installations of the Microsoft products or Azure services that provide them. Setup programs or scripts install the propertietary Python packages from Microsoft and any package dependencies. Unless otherwise noted, all of the packages listed in the preceding table are installed with the product or service.
 
 By default, packages are installed in the C:\Program Files\Microsoft SQL Server\140 folder on Windows.
+
+Ships in:
++  [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) 
++ [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server).
 
 ## How to list packages and versions
 

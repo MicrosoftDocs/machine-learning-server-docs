@@ -31,8 +31,6 @@ This section contains the function reference documentation for proprietary *revo
 
 You can use these libraries and functions in combination with other open source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that has a Microsoft R installation.
 
-Ships in: Microsoft R Client (Windows and Linux), Microsoft R Server (all platforms), SQL Server 2016 and later (Windows only), Azure HD Insight, Azure Data Science Virtual Machines.
-
 Built on: **R 3.3.0**.
 
 |Package | Version | Description |
@@ -56,6 +54,13 @@ Built on: **R 3.3.0**.
 The packages documented in this section are found only on installations of the Microsoft products or Azure services that provide them. Setup programs or scripts install the propertietary R packages from Microsoft and any package dependencies. Unless noted otherwise, all of the packages listed in the preceding table are installed with the product or service.
 
 By default, packages are installed in the \Program Files\Microsoft\R Server\R_SERVER\library folder on Windows, and in the /usr/lib64/microsoft-r folder on the Linux native file system.
+
+Ships in: 
++ Microsoft R Client (Windows and Linux)  
++ Microsoft R Server (all platforms)  
++ SQL Server 2016 and later (Windows only)  
++ Azure HDInsight  
++ Azure Data Science Virtual Machines 
 
 ## How to list packages and versions
 
