@@ -30,8 +30,12 @@ Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-serve
 
 The **microsoftml** library is a proprietary Python package used for applying machine learning transforms to data.
 
+## How to use microsoftml
 
-## Training
+TBD
+
+
+## Training functions
 
 * [*microsoftml.rx_fast_forest*: Random Forest](rx-fast-forest.md) 
 * [*microsoftml.rx_fast_linear*: Linear Model with Stochastic Dual Coordinate Ascent](rx-fast-linear.md) 
@@ -41,7 +45,7 @@ The **microsoftml** library is a proprietary Python package used for applying ma
 * [*microsoftml.rx_oneclass_svm*: Anomaly Detection](rx-oneclass-svm.md) 
 
 
-## Transforms
+## Transform functions
 
 ### Categorical Variable Handling
 

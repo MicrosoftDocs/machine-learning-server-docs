@@ -45,15 +45,6 @@ The **olapR** library provides functions for importing data from OLAP cubes stor
 >[`https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi`](https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi)
 >
  
- ##Details
-
- | Item | Data |
-| :---| :--- |
-|  Package  |  olapR |
-|  Type  |  Package |
-|  Version  |  0.0.0.9001 |
-|  License  |  file LICENSE |
-
  ##How to use olapR
 
 To execute an MDX query on an OLAP Cube, you need to first create a connection string (`olapCnn`) and validate using the function `OlapConnection(connectionString)`. The connection string must have a Data Source (such as localhost) and a Provider (MSOLAP). 

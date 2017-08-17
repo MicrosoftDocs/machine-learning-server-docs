@@ -29,7 +29,7 @@ Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-serve
 
 The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis functions.
 
-## How to load RevoScaleR
+## How to use RevoScaleR
 
 This package is included in installations of...   It is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. Run the following commands in the order shown below to load the library, get the version, and run one of its signature commands.
 
@@ -40,7 +40,7 @@ $ rxSummary****
 > [!Note]
 > Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
 
-## Scope
+### Scope
 
 While most of these functions are of general application, some are specific to particular compute contexts and some may not be fully supported in all compute contexts. If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)

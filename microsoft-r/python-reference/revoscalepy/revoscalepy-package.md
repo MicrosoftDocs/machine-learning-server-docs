@@ -34,7 +34,11 @@ The **revoscalepy** library is a proprietary Python package used to set the comp
 
 This library is built for [Python 3.5](https://www.python.org/doc/). Aside from an installation of either Machine Learning Server (Standalone) or Machine Learning Services for Python, there are no further requirements.
 
-## Compute context
+## How to use revoscalepy
+
+TBD
+
+## Compute context functions
 
 | Function | Description |
 |----------|-------------|
@@ -60,7 +64,7 @@ This library is built for [Python 3.5](https://www.python.org/doc/). Aside from 
 |[rx_get_job_results](rx-get-job-results.md) | Returns results of the run or a message stating why results are not available.|
 
 
-## Data sources
+## Data source functions
 
 | Function | Description |
 |----------|-------------|
@@ -71,7 +75,7 @@ This library is built for [Python 3.5](https://www.python.org/doc/). Aside from 
 |[RxOdbcData](RxOdbcData.md) | Generates a data source object from an ODBC data source.|
 |[RxSqlServerData](RxSqlServerData.md) | Generates a data source object from a SQL table or query.|
 
-## Data manipulation (ETL)
+## Data manipulation (ETL) functions
 
 | Function | Description |
 |----------|-------------|
@@ -102,7 +106,7 @@ This library is built for [Python 3.5](https://www.python.org/doc/). Aside from 
 |[rx_list_keys](rx-list-keys.md)  | Enumerates all keys or versions for a given key, depending on the parameters. |
 
 
-## Utility
+## Utility functions
 
 | Function | Description |
 |----------|-------------|

@@ -58,7 +58,7 @@ The requirements for remote execution include:
 For a list of all `mrsdeploy` functions, including those for remote execution, see [mrsdeploy Functions](mrsdeploy-package.md).
 
 
-## Authentication functions and creating remote sessions
+## Authentication & remote session functions
 
 To use the functions in the mrsdeploy package, you must log into R Server as an authenticated user.  And if using the remote execution functionality, you can also create a remote R session upon login. 
 

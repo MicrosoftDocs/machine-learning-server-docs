@@ -41,6 +41,7 @@ This topic includes links to the reference documentation for the ML algorithms a
 |  License  |  file LICENSE |
 |  LazyLoad  |  yes |
 
+## How to use MicrosoftML for R
 
 ##Key algorithms and transforms in the package
 
