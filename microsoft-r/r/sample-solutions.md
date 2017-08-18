@@ -31,7 +31,7 @@ Several solution templates exist to help you accelerate time to value when using
 
 ## Marketing solutions 
 
-**Campaign Optimization**  
+&#9658;**Campaign Optimization**  
 
 When a business launches a marketing campaign to interest customers in new or existing product(s), they often use a set of business rules to select leads for their campaign to target. Machine learning can be used to help increase the response rate from these leads. 
   
@@ -46,7 +46,7 @@ This solution demonstrates how to use a model to predict actions that are expect
 
 ## Healthcare solutions
 
-**Predicting Hospital Length of Stay**
+&#9658;**Predicting Hospital Length of Stay**
 
 This solution enables a predictive model for Length of Stay for in-hospital admissions. Length of Stay (LOS) is defined in number of days from the initial admit date to the date that the patient is discharged from any given hospital facility. There can be significant variation of LOS across various facilities and across disease conditions and specialties even within the same healthcare system. Advanced LOS prediction at the time of admission can greatly enhance the quality of care as well as operational workload efficiency and help with accurate planning for discharges resulting in lowering of various other quality measures such as readmissions.
 
@@ -58,7 +58,7 @@ This solution enables a predictive model for Length of Stay for in-hospital admi
 
 ## Financial and retail solutions
 
-**Loan Credit Risk**
+&#9658;**Loan Credit Risk**
 
 If we had a crystal ball, we would only loan money to someone if we knew they would pay us back. A lending institution can make use of predictive analytics to reduce the number of loans it offers to those borrowers most likely to default, increasing the profitability of its loan portfolio. This solution is based on simulated data for a small personal loan financial institution, containing the borrower’s financial history as well as information about the requested loan. It uses predictive analytics to help decide whether or not to grant a loan for each borrower.
 
@@ -68,7 +68,7 @@ If we had a crystal ball, we would only loan money to someone if we knew they wo
 
 <br>
 
-**Loan ChargeOff**
+&#9658;**Loan ChargeOff**
 
 A charged off loan is a loan that is declared by a creditor (usually a lending institution) that an amount of debt is unlikely to be collected, usually when the loan repayment is severely delinquent by the debtor. Given that high chargeoff has negative impact on lending institutions’ year end financials, lending institutions often monitor loan chargeoff risk closely to prevent loans from getting charged-off. Using Azure HDInsight R Server, a lending institution can leverage machine learning predictive analytics to predict the likelihood of loans getting charged off and run a report on the analytics result stored in HDFS and hive tables.
 |||
@@ -77,7 +77,7 @@ A charged off loan is a loan that is declared by a creditor (usually a lending i
 
 <br>
 
-**Fraud Detection**
+&#9658;**Fraud Detection**
 
 Fraud detection is one of the earliest industrial applications of data mining and machine learning. This solution shows how to build and deploy a machine learning model for online retailers to detect fraudulent purchase transactions.
 
