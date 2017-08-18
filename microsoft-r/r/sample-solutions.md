@@ -31,7 +31,7 @@ Several solution templates exist to help you accelerate time to value when using
 
 ## &#9658; Marketing solutions 
 
-### Campaign Optimization 
+### Campaign optimization 
 
 When a business launches a marketing campaign to interest customers in new or existing product(s), they often use a set of business rules to select leads for their campaign to target. Machine learning can be used to help increase the response rate from these leads. 
   
@@ -41,7 +41,7 @@ This solution demonstrates how to use a model to predict actions that are expect
 |---|----|--|
 ||**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-campaign-optimization) <br>- [Code](https://github.com/Microsoft/r-server-campaign-optimization)|**Deploy on:**<br>- [SQL Server](https://aka.ms/campaignoptimization)<br>- [HDInsight Spark Cluster](https://aka.ms/campaign-hdi)|
 
-<a name="healthcare"></a> <br>
+<a name="healthcare"></a> 
 
 ## &#9658; Healthcare solutions
 
@@ -49,11 +49,11 @@ This solution demonstrates how to use a model to predict actions that are expect
 
 This solution enables a predictive model for Length of Stay for in-hospital admissions. Length of Stay (LOS) is defined in number of days from the initial admit date to the date that the patient is discharged from any given hospital facility. There can be significant variation of LOS across various facilities and across disease conditions and specialties even within the same healthcare system. Advanced LOS prediction at the time of admission can greatly enhance the quality of care as well as operational workload efficiency and help with accurate planning for discharges resulting in lowering of various other quality measures such as readmissions.
 
-|||
-|---|----|
-|**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-hospital-length-of-stay) <br>- [Code](https://github.com/Microsoft/r-server-hospital-length-of-stay)|**Deploy on:**<br>- [SQL Server](https://aka.ms/hospital-los)<br>&nbsp; |
+||||
+|---|----|--|
+||**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-hospital-length-of-stay) <br>- [Code](https://github.com/Microsoft/r-server-hospital-length-of-stay)|**Deploy on:**<br>- [SQL Server](https://aka.ms/hospital-los)<br>&nbsp; |
 
-<a name="financial"></a>  <br>
+<a name="financial"></a> 
 
 ## &#9658; Financial and retail solutions
 
