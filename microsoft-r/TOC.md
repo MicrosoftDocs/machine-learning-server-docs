@@ -1,8 +1,8 @@
-# [Overview](index.md)
+# [Overview](index.yml)
 ## Welcome to Machine Learning Server
 ## "What happened to R Server"
 ## Machine Learning @ Microsoft
-## What's new
+## [What's new](index-REMOVE.md)
 ### [Machine Learning Server](whats-new-in-r-server.md)
 ### [Microsoft R Client](r-client/whats-new-in-r-client.md)
 ## 9.1.0 Old docs
