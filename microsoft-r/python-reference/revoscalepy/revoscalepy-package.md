@@ -30,6 +30,12 @@ Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-serve
 
 The **revoscalepy** library is a proprietary Python package used to set the compute context for python script execution, load and manipulate data from external data sources, and manage objects. Data visualization and analysis functions are provided for the most common use cases.
 
+There are two use cases for this release: 
+
++ Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
++ Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../r/concept-what-is-compute-context.md). 
+
+
  Many functions in this library can be used with [**microsoftml**](../microsoftml/microsoftml-package.md), which is part of the same release.
 
 This library is built for [Python 3.5](https://www.python.org/doc/). Aside from an installation of either Machine Learning Server (Standalone) or Machine Learning Services for Python, there are no further requirements.

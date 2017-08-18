@@ -29,6 +29,7 @@ Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-serve
 
 The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis functions.
 
+
 ## How to use RevoScaleR
 
 This package is included in installations of...   It is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. Run the following commands in the order shown below to load the library, get the version, and run one of its signature commands.
