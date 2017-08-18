@@ -37,7 +37,7 @@ Read and follow these points before you begin the installation process.
 >
 >-   We highly recommend installing DeployR on a dedicated machine. Always install the DeployR main server first before any grid nodes.
 >
->-   While it is technically possible to run instances of two different versions of DeployR side-by-side on a single machine, we strongly recommend that you dedicate one machine for each server instance that is *in production* so as to avoid resource contention.
+>-   While it is technically possible to run instances of two different versions of DeployR side by side on a single machine, we strongly recommend that you dedicate one machine for each server instance that is *in production* so as to avoid resource contention.
 >
 
 <a name="system-requirements"></a>
@@ -60,7 +60,7 @@ _Table: System Requirements_
 <a name="depend"></a>
 ## Install Dependencies
 
-Before you can install DeployR, you must manually install and configure the following dependencies.
+Before you can install DeployR, you must manually install and configure the following dependencies:
 
 | Dependency                                                                                      | DeployR Server                                                                      | DeployR Grid Node                                                                   |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
@@ -79,14 +79,14 @@ Before you can install DeployR, you must manually install and configure the foll
 
     -   [Download the tar file from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install it **OR** install using your local package manager.
 
-    -   Set `JAVA_HOME` to the installation path for the JDK or JRE you just installed.
+    -   Set `JAVA_HOME` to the installation path for the JDK or JRE you installed.
         For example, if the installation path was `/usr/lib/jvm/jdk1.8.0_45/jre`, then the command would be:
 
             export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45/jre
 
-3.  Install [Microsoft R Server 2016](../install/r-server-install-linux-server.md), which includes ScaleR for multi-processor and big data support. Microsoft R Server can be downloaded from Volume License Service Center, MSDN and Visual Studio Dev Essentials. The file you download will also contain the DeployR installer.
+3.  Install [Microsoft R Server 2016](../install/r-server-install-linux-server.md), which includes ScaleR for multi-processor and big data support. Microsoft R Server can be downloaded from Volume License Service Center, MSDN, and Visual Studio Dev Essentials. The file your download will also contain the DeployR installer.
 
-1.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them will ensure that the repositories contain the latest software. Run the following command:
+1.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them ensures that the repositories contain the latest software. Run the following command:
     + For Redhat / CentOS:
       ```NA
       sudo yum clean all
@@ -97,7 +97,7 @@ Before you can install DeployR, you must manually install and configure the foll
       sudo apt-get update
       ```
       
-    + For OpenSUSE / SLES:
+    + For openSUSE / SLES:
       ```NA
       sudo zypper clean --all
       ```
@@ -151,13 +151,13 @@ Before you can install DeployR, you must manually install and configure the foll
 <a name="installserver"></a>
 ## Install DeployR Server
 
-The basic installation of DeployR will install the DeployR main server and configure a local H2 database on the same machine. If you wish to use a different database, you can configure DeployR to do so later as described in the steps below.
+The basic installation of DeployR installs the DeployR main server and configure a local H2 database on the same machine. If you wish to use a different database, you can configure DeployR to do so later as described in the steps as follows.
 
 In addition to this basic installation, DeployR Enterprise customers can also use a [remote database for DeployR](#postgresql) or install [additional grid nodes](#gridnodes) for optimized workload distribution.
 
 The following steps are for installing DeployR Enterprise after installing [these dependencies](#depend):
 
-1.  Log into the operating system as `root` or a user with `sudo` permissions.
+1.  Log in to the operating system as `root` or a user with `sudo` permissions.
 
     >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
@@ -176,18 +176,18 @@ The following steps are for installing DeployR Enterprise after installing [thes
 
 5.  When the installer starts, accept the terms of the agreement to continue.
 
-6.  From the installer menu, choose option `1`. This will install the DeployR server along with a local H2 database.
+6.  From the installer menu, choose option `1`. This installs the DeployR server along with a local H2 database.
 
-7.  Follow the remaining onscreen installer prompts. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
+7.  Follow the remaining onscreen installer prompts. If you are keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
 
-1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.  
+1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log in to the server until you set a password.  
 
 <a name="postinstall"></a>
 ##Post Installation Steps
 
 The following steps outline what you need to do after running the DeployR installer. 
 
-1.  **Set the administrator's password** so you can log into the server and its landing page.
+1.  **Set the administrator's password** so you can log in to the server and its landing page.
 
     1. Launch the DeployR Administrator Utility script  as `root` or a user with `sudo` permissions:
        ```NA
@@ -197,13 +197,13 @@ The following steps outline what you need to do after running the DeployR instal
        
     1. From the main menu, choose the option to set a password for the local DeployR `admin` account.
     
-    1. Enter a password for this account. Passwords must be **8-16 characters** long and contain at least 1 or more uppercase character(s), 1 or more lowercase character(s), 1 or more number(s), **and** 1 or more special character(s).
+    1. Enter a password for this account. Passwords must be **8-16 characters** long and contain at least one or more uppercase character(s), one or more lowercase character(s), one or more number(s), **and** one or more special character(s).
     
     1. Confirm the password.
     
-1. **Log into the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
+1. **Log in to the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
-   >At this point, you will only be able to login locally using `localhost`. You will be able to login remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
+   >At this point, you will only be able to login locally using `localhost`. You are able to log in remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
 
 1. If desired, **set up grid nodes**. You can install and configure any [additional grid nodes](#gridnodes).
 
@@ -211,7 +211,7 @@ The following steps outline what you need to do after running the DeployR instal
 
    >_HortonWorks Data Platform User Alert!_ &nbsp; Both DeployR and the [HDP Resource Manager](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_Reference_Guide/content/yarn-ports.html) use the same default port of 8050. To avoid conflicts, you can [change the DeployR port](deployr-admin-diagnostics-troubleshooting.md#changeport). 
 
-1. If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure that as [described here](#postgresql).
+1. If you want to **use a PostgreSQL database** locally or remotely instead of the default local H2 database, configure it as [described here](#postgresql).
 
 1. If you want to **provision DeployR on Azure or AWS** as described in [these steps](deployr-admin-install-in-cloud.md).
 
@@ -247,7 +247,7 @@ If you are using the IPTABLES firewall or equivalent service for your server, us
 
 If any of the following cases exist, update your firewall manually:
 
--   Whenever you use **non-default port numbers** for communications between DeployR and its dependencies, add those port numbers instead of those in the table above.
+-   Whenever you use **non-default port numbers** for communications between DeployR and its dependencies, add those port numbers instead of the port numbers in the table preceding.
 
 -   If connecting to a **remote PostgreSQL database**, be sure to open port 5432 to the public IP of the DeployR server.
 
@@ -271,11 +271,11 @@ To fix this issue, you must define the appropriate external server IP address an
 
 2.  From the main menu, choose option `3` to configure the Web Context and Security options for DeployR.
 
-3.  From the sub-menu, enter `A` to specify a different IP or fully qualified domain name (FQDN).
+3.  From the submenu, enter `A` to specify a different IP or fully qualified domain name (FQDN).
 
 4.  Specify the new IP or FQDN. For [Azure or AWS EC2 instances](deployr-admin-install-in-cloud.md) services, set it to the external **Public IP**.
 
-5.  Confirm the new value. Note that the IP autodetection will be turned off when you update the IP/FQDN.
+5.  Confirm the new value. The IP autodetection is turned off when you update the IP/FQDN.
 
 6.  Return to the main menu.
 
@@ -296,7 +296,7 @@ When you install the DeployR server, one local grid node is installed automatica
 
 _After installing the [main server for DeployR Enterprise](#installserver)_, install each grid node on a separate machine as follows:
 
-1.  Log into the operating system on the machine on which you will install the grid node as `root` or a user with `sudo` permissions.
+1.  Log in to the operating system on the machine on which you install the grid node as `root` or a user with `sudo` permissions.
 
 2.  Install Microsoft R Server 2016 and the DeployR Rserve component [as described here](#depend) on the grid node machine.
 
@@ -317,9 +317,9 @@ _After installing the [main server for DeployR Enterprise](#installserver)_, ins
 
 6.  When the installer starts, accept the terms of the agreement to continue.
 
-7.  When prompted by the installer, choose installation option `2` and follow the onscreen installer prompts. This will install a remote grid node.
+7.  When prompted by the installer, choose installation option `2` and follow the onscreen installer prompts. This installs a remote grid node.
 
-8.  Enter the directory path in which to install. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
+8.  Enter the directory path in which to install. If you are keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
 
 <br>
 <br>
@@ -329,7 +329,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
 1. [Set the proper firewall rules](#firewall) to open the RServe ports ONLY to the public IP of the DeployR server.
 
-1. Log into the DeployR landing page as `admin` at http://&lt;DEPLOYR\_SERVER\_IP&gt;:8050/deployr/landing where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
+1. Log in to the DeployR landing page as `admin` at http://&lt;DEPLOYR\_SERVER\_IP&gt;:8050/deployr/landing where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
 2.  Go to the **Administration Console**.
 
@@ -341,7 +341,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
     2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** &nbsp; [using these instructions](deployr-admin-managing-the-grid.md#creating-new-nodes). 
     
-    3.  When you try to add that new grid node configuration, DeployR will attempt to validate your settings. [Learn more...](deployr-admin-managing-the-grid.md#node-validation-and-errors)
+    3.  When you try to add that new grid node configuration, DeployR attempts to validate your settings. [Learn more...](deployr-admin-managing-the-grid.md#node-validation-and-errors)
 
     4.  Run a diagnostic test of each grid node individually as follows:
 
@@ -358,7 +358,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
 
 During the installation of DeployR, a local H2 database is automatically installed and configured for you. After installing DeployR, **but before using it**, you can configure DeployR to use a database in **PostgreSQL 9.1 or greater.**
 
-If you want to use a local or remote PostgreSQL database for DeployR instead of the default local H2 database, you'll need to:
+If you want to use a local or remote PostgreSQL database for DeployR instead of the default local H2 database, you need to:
 
 1.  Install and configure PostgreSQL as described for that product.
 
@@ -366,7 +366,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
 
 3.  Assign the proper permissions to the database user to read and write into the database.
 
-4.  [Download the JDBC42 Postgresql Driver for JDK 1.8](https://jdbc.postgresql.org/download.html) for the version of the database you installed and copy them under **both** of the following folders:
+4.  [Download the JDBC42 PostgreSQL Driver for JDK 1.8](https://jdbc.postgresql.org/download.html) for the version of the database you installed and copy them under **both** of the following folders:
 
     -   `$DEPLOYR_HOME/tomcat/tomcat7/lib`
 
@@ -436,7 +436,7 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 
 1.  Log in as `admin` to the DeployR landing page. If you haven't set a password for `admin` user yet, [do so now](#installserver).
 
-    After installing DeployR for Microsoft R Server 2016 and setting the password for the `admin` user account, you can log into the DeployR landing page. The landing page is accessible at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`, where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
+    After installing DeployR for Microsoft R Server 2016 and setting the password for the `admin` user account, you can log in to the DeployR landing page. The landing page is accessible at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`, where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
 2.  Go to the **Administration Console**.
 
@@ -449,9 +449,9 @@ In addition to the `admin` account, DeployR is delivered with the `testuser` acc
 <a name="migrate"></a>
 ## Migrate to DeployR for Microsoft R Server 2016
 
-Please carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
+Carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
 
->If you want to upgrade or reinstall your version or R or Microsoft R Server 2016, please [follow these instructions](deployr-admin-configure-reinstall-r.md).
+>If you want to upgrade or reinstall your version or R or Microsoft R Server 2016, [follow these instructions](deployr-admin-configure-reinstall-r.md).
 
 ### From Previous DeployR Version to DeployR for Microsoft R Server 2016:
 
@@ -479,7 +479,7 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
 
 8.  Restore that data into the DeployR for Microsoft R Server 2016 Administration Console.
 
-    1.  Log into the DeployR for Microsoft R Server 2016 landing page.
+    1.  Log in to the DeployR for Microsoft R Server 2016 landing page.
 
     2.  From the landing page, open the DeployR for Microsoft R Server 2016 Administration Console.
 
@@ -494,22 +494,22 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
     7.  Delete any of the old node configurations since those are version-specific and cannot be reused.
 
         >[!WARNING]
-        >Grid node configurations will not work after migration due to their dependence on a specific version of DeployR. After migrating, you will notice that the old grid configuration has been carried over to the newly installed DeployR version. However, since those grid nodes are not compatible with the DeployR server, they appear highlighted in the Administration Console when you first start the server. This highlighting indicates that a node is unresponsive. We recommend deleting these old grid nodes in the Administration Console the first time you log into the console.
+        >Grid node configurations will not work after migration due to their dependence on a specific version of DeployR. After migrating, you will notice that the old grid configuration has been carried over to the newly installed DeployR version. However, since those grid nodes are not compatible with the DeployR server, they appear highlighted in the Administration Console when you first start the server. This highlighting indicates that a node is unresponsive. We recommend deleting these old grid nodes in the Administration Console the first time you log in to the console.
 
 9.  Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR for Microsoft R Server 2016, update the client files so that they use the current version of `jsDeployR` [client library](deployr-tools-and-samples.md). After installation, update your application files to use the latest [JavaScript API calls](https://microsoft.github.io/js-client-library).
 
 <br>
 ### From DeployR for Microsoft R Server 2016 to Another Instance of This Version
 
-1.  Log into the landing page for the DeployR instance containing the data you wish to migrate.
+1.  Log in to the landing page for the DeployR instance containing the data you wish to migrate.
 
-    After installing DeployR for Microsoft R Server 2016 and setting the password for the `admin` user account, you can log into the DeployR landing page. The landing page is accessible at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`, where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
+    After installing DeployR for Microsoft R Server 2016 and setting the password for the `admin` user account, you can log in to the DeployR landing page. The landing page is accessible at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`, where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine.
 
 1.  From the landing page, open the Administration Console.
 
 2.  In the **Database** tab, click **Backup DeployR Database**. A zip file is created and downloaded to your local machine.
 
-3.  Then, log into the landing page for the DeployR instance to which you want to migrate the data.
+3.  Then, log in to the landing page for the DeployR instance to which you want to migrate the data.
 
 4.  From the landing page, open the Administration Console.
 
