@@ -455,7 +455,7 @@ Carefully follow these migration instructions to migrate users, R Scripts, proje
 
 ### From Previous DeployR Version to DeployR for Microsoft R Server 2016:
 
-The following instructions will walk you through a migration of DeployR 8.0.0 or earlier to DeployR for Microsoft R Server 2016.
+The following instructions walk you through a migration of DeployR 8.0.0 or earlier to DeployR for Microsoft R Server 2016.
 
 1.  **Do not uninstall** your older version of DeployR until you have backed up the data you want to keep and completed the data migration.
 
@@ -542,7 +542,7 @@ Remember to uninstall DeployR on both the main server and any other grid node ma
 
 4.  If you are using a PostgreSQL database for DeployR, then stop the process as described in the documentation for that database.
 
-5.  Remove DeployR, Tomcat and RServe directories. At the prompt, type:
+5.  Remove DeployR, Tomcat, and RServe directories. At the prompt, type:
 
         sudo rm -rf /home/deployr-user/deployr/8.0.5
 

@@ -2571,7 +2571,7 @@ The following code snippet demonstrates the mechanism for requesting DeployR-enc
 Encodings are provided for the following classes of R object:
 
 -   character, integer, numeric and logical
--   Date, POSIXct and POSIXlt
+-   Date, POSIXct, and POSIXlt
 -   vector, matrix
 -   ordered, factor
 -   list, data.frame.

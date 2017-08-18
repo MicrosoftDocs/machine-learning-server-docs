@@ -464,10 +464,9 @@ After authentication, you can start a Python session and create a model you'll p
        print (execute_response.error_message)
    ```
 
-1. Create a session snapshot of this Python session so this environment can be saved in the web service and reproduced at consume time. Note that 
-   you can only use a session snapshot that you've created.
+1. Create a session snapshot of this Python session so this environment can be saved in the web service and reproduced at consume time. You can only use a session snapshot that you've created.
 
-   Session snapshots are very useful when you need a prepared environment that includes certain libraries, objects, models, files and artifacts. Snapshots save the whole workspace and working directory. 
+   Session snapshots are useful when you need a prepared environment that includes certain libraries, objects, models, files, and artifacts. Snapshots save the whole workspace and working directory. 
 
    When publishing, you can only include a snapshot you've created. 
 
@@ -594,7 +593,7 @@ Now that we've created a web service, you can update, delete, or republish that 
 
 #### Update a web service
 
-You can update a web service to change the code, model, description, inputs, outputs and more. In this example, we update the service to add a description useful to people who might consume this service. 
+You can update a web service to change the code, model, description, inputs, outputs, and more. In this example, we update the service to add a description useful to people who might consume this service. 
 
 ```python
 #Define what needs to be updated. Here we add a description.

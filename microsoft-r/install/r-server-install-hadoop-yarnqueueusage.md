@@ -77,7 +77,7 @@ This procedure involves creating a custom R package that contains the function o
   This package is for internal Company ABC use only -- not for redistribution.
   ~~~~
 
-3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following sample code provides for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory. Note that the `RxSparkConnect` function is only available in V9 and later releases. 
+3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following sample code provides for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory. The `RxSparkConnect` function is only available in V9 and later releases. 
 
   ~~~~
     # sample code to enforce use of YARN queues for RxHadoopMR, RxSpark,
