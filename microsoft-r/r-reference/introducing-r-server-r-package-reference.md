@@ -31,6 +31,8 @@ This section contains the function reference documentation for proprietary *revo
 
 You can use these libraries and functions in combination with other open source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that has a Microsoft R installation.
 
+Supported platforms: Hadoop Spark, Hadoop MapReduce, Linux, Windows, SQL Server (Windows only).
+
 Built on: **R 3.3.0**.
 
 |Package | Version | Description |
@@ -56,11 +58,11 @@ The packages documented in this section are found only on installations of the M
 By default, packages are installed in the \Program Files\Microsoft\R Server\R_SERVER\library folder on Windows, and in the /usr/lib64/microsoft-r folder on the Linux native file system.
 
 Ships in: 
-+ Microsoft R Client (Windows and Linux)  
-+ Microsoft R Server (all platforms)  
-+ SQL Server 2016 and later (Windows only)  
-+ Azure HDInsight  
-+ Azure Data Science Virtual Machines 
++ [Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) 
++ [Microsoft R Server (all platforms)](../what-is-microsoft-r-server.md)   
++ [SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   
++ [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started)  
++ [Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)  
 
 ## How to list packages and versions
 
