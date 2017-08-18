@@ -42,21 +42,21 @@ Microsoft R Server for Windows has the following system requirements:
 
 **Teradata Version:** Teradata  Tools and Utilities 15.00 or 14.10.
 
-**Memory:** A minimum of 1GB of RAM is required; 4GB or more are recommended.
+**Memory:** A minimum of 1 GB of RAM is required; 4 GB or more are recommended.
 
-**Disk Space:** A minimum of 500MB of disk space is required.
+**Disk Space:** A minimum of 500 MB of disk space is required.
 
 Microsoft R Server on Linux systems has the following system requirements:
 
 **Processor:** 64-bit processor with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-**Operating System:** SUSE Linux Enterprise Server 11, Red Hat Enterprise Linux 5, Red Hat Enterprise Linux 6, or fully-compatible equivalents. Only 64-bit operating systems are supported.
+**Operating System:** SUSE Linux Enterprise Server 11, Red Hat Enterprise Linux 5, Red Hat Enterprise Linux 6, or fully compatible equivalents. Only 64-bit operating systems are supported.
 
 **Teradata Version:** Teradata Tools and Utilities 15.00 or 14.10.
 
-**Memory:** A minimum of 1GB of RAM is required; 4GB or more are recommended.
+**Memory:** A minimum of 1 GB of RAM is required; 4 GB or more are recommended.
 
-**Disk Space:** A minimum of 500MB of disk space is required.
+**Disk Space:** A minimum of 500 MB of disk space is required.
 
 ## Installing the Client Software
 
@@ -83,7 +83,7 @@ Complete the installation. You may want to define a DSN connection, but this is 
 
 **If you are using the 15.00 client:**
 
-The Teradata 15.00 Client for Windows is contained on Teradata At Your Service in the file BCD0-1740-0000-Windows_15.00.00_V1-1.zip, Teradata Tools and Utilities Windows (the exact file name will change with update releases; the basic process should be similar for all updates of a given major release). Download this file, extract the files from the zip, then run the TTU.exe in the TTU_Foundation_windows\Windows subdirectory to start the installation process.
+The Teradata 15.00 Client for Windows is contained on Teradata At Your Service in the file BCD0-1740-0000-Windows_15.00.00_V1-1.zip, Teradata Tools and Utilities Windows (the exact file name will change with update releases; the basic process should be similar for all updates of a given major release). To start the installation process, download this file, extract the files from the zip, then run the TTU.exe in the TTU_Foundation_windows\Windows subdirectory.
 
 Accept defaults until you reach the “Select Features” dialog. Choose the following items:
 
@@ -107,7 +107,7 @@ A DSN is a common way of encapsulating database connection information. On Windo
 3.	Click **Add…**
 4.	Select **Teradata** in the list view and then click **Finish**. The ODBC Driver Setup for Teradata Database dialog appears.
 5.	In the **Name** field, type **TDDSN**.
-6.	In the **Teradata Server Info** field, enter the fully-qualified domain name or IP address of the Teradata server.
+6.	In the **Teradata Server Info** field, enter the fully qualified domain name or IP address of the Teradata server.
 7.	Click **OK** to complete the DSN.
 8.	Click **OK** to close the ODBC Data Source Administrator.
 
@@ -273,7 +273,7 @@ After installing the tptstream package, update your system LD_LIBRARY_PATH envir
 
 #### Updating Your ODBC Driver Manager
 
-Database operations with ODBC depend upon having both an ODBC driver and an ODBC driver manager. Teradata ODBC drivers are provided in a client package that includes an ODBC driver manager; if you will be using Microsoft R Server exclusively with a Teradata database, we recommend that you use this supplied ODBC driver manager. If you will be using Microsoft R Server with other databases in addition to Teradata, we recommend installing unixODBC 2.3.1 for all your ODBC data management.
+Database operations with ODBC depend upon having both an ODBC driver and an ODBC driver manager. Teradata ODBC drivers are provided in a client package that includes an ODBC driver manager; if you are using Microsoft R Server exclusively with a Teradata database, we recommend that you use this supplied ODBC driver manager. If you are using Microsoft R Server with other databases in addition to Teradata, we recommend installing unixODBC 2.3.1 for all your ODBC data management.
 
 ##### Configuring the Teradata ODBC Driver Manager
 
@@ -329,7 +329,7 @@ After installing unixODBC, edit the file /etc/odbcinst.ini and add a section suc
 	DriverODBCVer=3.51
 	SQLLevel=1
 
-If you will be using RxOdbcData with a DSN, you need to define an appropriate DSN in the file /etc/odbc.ini, such as the following:
+If you are using RxOdbcData with a DSN, you need to define an appropriate DSN in the file /etc/odbc.ini, such as the following:
 
 	[TDDSN]
 	Driver=/opt/teradata/client/ODBC_64/lib/tdata.so
@@ -347,7 +347,7 @@ The RODBC package is not required to use RxTeradata, but it can be useful for ti
 
 ## Installing Microsoft R Server or R Client on the Client
 
-To download and install Microsoft R Server, you will need an MSDN subscription or a Microsoft Volume License Center sign-in. For development purposes, you can install the free Developer edition of R Server on Linux or Windows:
+To download and install Microsoft R Server, you need an MSDN subscription or a Microsoft Volume License Center sign-in. For development purposes, you can install the free Developer edition of R Server on Linux or Windows:
 
 + [Install R Server for Linux](r-server-install-linux-server.md)	
 + [Install R Server for Windows](r-server-install-windows.md)
@@ -359,7 +359,7 @@ Optionally, you can use Microsoft R Client. It also runs on Linux and Windows:
 
 ## Testing the Client Installation
 
-After installing your Teradata client software, you should test that you can communicate with your Teradata database. For this, you will typically need a connection string, which may look something like the following:
+After installing your Teradata client software, you should test that you can communicate with your Teradata database. For this, you typically need a connection string, which may look something like the following:
 
 	"DRIVER=Teradata;DBCNAME=machineNameOrIP;DATABASE=RevoTestDB;UID=myUserID;PWD=myPassword;"
 

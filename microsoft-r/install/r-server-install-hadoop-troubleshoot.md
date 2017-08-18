@@ -27,7 +27,7 @@ No two Hadoop installations are exactly alike, but most are quite similar. This 
 
 ## Missing dependencies
 
-Linux and Hadoop servers that are locked down will prevent the installation script from downloading any required dependencies that are missing on your system. For a list of all dependencies required by Microsoft R, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](r-server-install-linux-hadoop-packages.md).
+Linux and Hadoop servers that are locked down prevent the installation script from downloading any required dependencies that are missing on your system. For a list of all dependencies required by Microsoft R, see [Package Dependencies for Microsoft R Server installations on Linux and Hadoop](r-server-install-linux-hadoop-packages.md).
 
 ## No Valid Credentials
 
@@ -49,7 +49,7 @@ Of these, the most commonly misconfigured is the CLASSPATH.
 
 ## Unable to Load Shared Library
 
-If you see a message about being unable to load libhdfs.so, you may need to create a symbolic link from your installed version of libhdfs.so to the system library, such as the following:
+If you see a message about being unable to load libhdfs.so, you may need to create a symbolic link from your installed version of libhdfs.so to the system library, such as the following command:
 
 	ln -s /path/to/libhdfs.so /usr/lib64/libhdfs.so
 
@@ -57,9 +57,9 @@ Or, update your LD\_LIBRARY\_PATH environment variable to include the path to th
 
 	export LD\_LIBRARY\_PATH=$LD_LIBRARY_PATH:/path/to/libhdfs.so
 
-(This step is normally performed automatically during the RRE install. If you continue to see errors about libhdfs.so, you may need to both create the symbolic link as above and set LD_LIBRARY_PATH.)
+(This step is normally performed automatically during the RRE install. If you continue to see errors about libhdfs.so, you may need to both create the preceding symbolic link and set LD_LIBRARY_PATH.)
 
-Similarly, if you see a message about being unable to load libjvm.so, you may need to create a symbolic link from your installed version of libjvm.so to the system library, such as the following:
+Similarly, if you see a message about being unable to load libjvm.so, you may need to create a symbolic link from your installed version of libjvm.so to the system library, such as the following command:
 
 	ln -s /path/to/libjvm.so /usr/lib64/libjvm.so
 
@@ -84,7 +84,7 @@ On MapR, the quick installation installs the Hadoop files to /opt/mapr by defaul
 
 On Cloudera Manager parcel installs, the default path to the examples is */opt/cloudera/parcels/CDH/lib/hadoop-mapreduce-examples.jar*.)
 
-The following runs the pi example, which uses Monte Carlo sampling to estimate pi. The 5 tells Hadoop to use 5 mappers, the 300 says to use 300 samples per map:
+The following command runs the pi example, which uses Monte Carlo sampling to estimate pi. The 5 tells Hadoop to use 5 mappers, the 300 says to use 300 samples per map:
 
 	hadoop jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar pi 5 300
 
