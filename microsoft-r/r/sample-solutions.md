@@ -56,29 +56,38 @@ Explore machine learning how-to solutions at https://aka.ms/rsolutiontemplates.
 ## Medical solutions
 
 **Predicting Hospital Length of Stay**
-+ **Solution page**: https://microsoft.github.io/r-server-hospital-length-of-stay
-+ **Source code**: https://github.com/Microsoft/r-server-hospital-length-of-stay
+
 + **Summary**: This solution enables a predictive model for Length of Stay for in-hospital admissions. Length of Stay (LOS) is defined in number of days from the initial admit date to the date that the patient is discharged from any given hospital facility. There can be significant variation of LOS across various facilities and across disease conditions and specialties even within the same healthcare system. Advanced LOS prediction at the time of admission can greatly enhance the quality of care as well as operational workload efficiency and help with accurate planning for discharges resulting in lowering of various other quality measures such as readmissions.
+
++ **Solution page**: https://microsoft.github.io/r-server-hospital-length-of-stay
+
++ **Source code**: https://github.com/Microsoft/r-server-hospital-length-of-stay
 
 + **Deploy on Cortana Gallery**:
   + [SQL Server](https://aka.ms/hospital-los)
 
-## Financial
+## Financial Solutions
+
 **Loan Credit Risk**
-+ **Solution page**: https://microsoft.github.io/r-server-loan-credit-risk/
-+ **Source code**: https://github.com/Microsoft/r-server-loan-credit-risk/
-+ **Summary**:   
-  If we had a crystal ball, we would only loan money to someone if we knew they would pay us back. A lending institution can make use of predictive analytics to reduce the number of loans it offers to those borrowers most likely to default, increasing the profitability of its loan portfolio. This solution is based on simulated data for a small personal loan financial institution, containing the borrower’s financial history as well as information about the requested loan. It uses predictive analytics to help decide whether or not to grant a loan for each borrower.
+
+If we had a crystal ball, we would only loan money to someone if we knew they would pay us back. A lending institution can make use of predictive analytics to reduce the number of loans it offers to those borrowers most likely to default, increasing the profitability of its loan portfolio. This solution is based on simulated data for a small personal loan financial institution, containing the borrower’s financial history as well as information about the requested loan. It uses predictive analytics to help decide whether or not to grant a loan for each borrower.
+
++ **Solution page**: https://microsoft.github.io/r-server-fraud-detection/
+
++ **Source code**: https://github.com/Microsoft/r-server-fraud-detection
 
 + **Deploy on Cortana Gallery**:
   + [SQL Server](https://aka.ms/loan-credit-risk 
 HDInsight Spark Cluster https://aka.ms/loan-credit-risk-hdi 
 
 **Loan ChargeOff**
-+ **Solution page**: https://microsoft.github.io/r-server-loan-chargeoff
-+ **Source code**: https://github.com/Microsoft/r-server-loan-chargeoff/
+
 + **Summary**: 
   A charged off loan is a loan that is declared by a creditor (usually a lending institution) that an amount of debt is unlikely to be collected, usually when the loan repayment is severely delinquent by the debtor. Given that high chargeoff has negative impact on lending institutions’ year end financials, lending institutions often monitor loan chargeoff risk very closely to prevent loans from getting charged-off. Using Azure HDInsight R Server, a lending institution can leverage machine learning predictive analytics to predict the likelihood of loans getting charged off and run a report on the analytics result stored in HDFS and hive tables.
+
++ **Solution page**: https://microsoft.github.io/r-server-loan-chargeoff
+
++ **Source code**: https://github.com/Microsoft/r-server-loan-chargeoff/
 
 + **Deploy on Cortana Gallery**:
   + [SQL Server](https://aka.ms/loanchargeoffsql)
