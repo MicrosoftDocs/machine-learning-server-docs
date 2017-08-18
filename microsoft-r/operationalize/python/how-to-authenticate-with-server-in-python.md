@@ -54,7 +54,7 @@ This example assumes you have satisfied the [prerequisites](#prereq) to generate
 A step-by-step walkthrough with more detailed descriptions is provided below this code block.
 
 >[!IMPORTANT]
->This full example uses the local 'admin' account for authentication. You should use the credentials and [authentication method](#python-auth) configured by your administrator. 
+>This full example uses the local 'admin' account for authentication. Use the credentials and [authentication method](#python-auth) configured by your administrator. 
 
 ```python
 ##################################################
@@ -282,7 +282,7 @@ client.delete_web_service_version("Iris","V2.0",headers)
 
 ## Walkthrough
 
-This section runs through the above example in more detail.
+This section runs through the preceding example in more detail.
 
 <a name="prereq"></a>
 
@@ -290,14 +290,14 @@ This section runs through the above example in more detail.
 
 Before you can start authenticating with R Server and publishing your Python code and models, you must generate a client library using the Swagger document we provide. Here's how.
 
-1. Install a Swagger code generator on your local machine and familiarize yourself with it. You will use it to generate the API client libraries in Python. Popular tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires Node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
+1. Install a Swagger code generator on your local machine and familiarize yourself with it. You use it to generate the API client libraries in Python. Popular tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires Node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
 1. Download the Swagger file containing the core APIs for your version of R Server. This file contains a Swagger template defining the list of REST resources and the operations that can be called on those resources. Find this file under `https://microsoft.github.io/deployr-api-docs/swagger/<version>/rserver-swagger-<version>.json`, where `<version>` is the 3-digit R Server version number. 
 
    For example, for R Server 9.1 you would download from:
    https://microsoft.github.io/deployr-api-docs/9.1.0/swagger/rserver-swagger-9.1.0.json
 
-1. Generate the statically-generated client library by passing the `rserver-swagger-<version>.json` file to the Swagger code generator and specifying the language you want. In this case, you should specify Python.  
+1. Generate the statically generated client library by passing the `rserver-swagger-<version>.json` file to the Swagger code generator and specifying the language you want. In this case, you should specify Python.  
 
    For example, if you use AutoRest to generate a Python client library, it might look like this, where the 3-digit number represents the R Server version number:
    ```
@@ -312,7 +312,7 @@ Before you can start authenticating with R Server and publishing your Python cod
    
    ![autorest output path](./media/how-to-publish-consume-python-web-service/data-scientist-python-autorest.png)
 
-   For this default namespace, the client library itself is called `deploy_rclient.py`. If you open this file in your IDE such as Visual Studio, you will see something like this:
+   For this default namespace, the client library itself is called `deploy_rclient.py`. If you open this file in your IDE such as Visual Studio, you see something like this:
    
    ![autorest output path](./media/how-to-publish-consume-python-web-service/data-scientist-python-client-library.png)
 
@@ -340,7 +340,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
    **AD/LDAP or 'admin' account authentication**
 
-   You must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
+   You must call the `POST /login` API in order to authenticate. You need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server issues you a [bearer/access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, contact your administrator.
    ```python
    #Using client library generated from Autorest
    #Create client instance and point it at an R Server. 
@@ -357,7 +357,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
    **Azure Active Directory (AAD) authentication**
 
-   You must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
+   You must pass the AAD credentials, authority, and client ID. In turn, AAD issues [the `Bearer` access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, contact your administrator.
    ```python
    #Import the AAD authentication library
    import adal
@@ -422,7 +422,7 @@ After authentication, you can start a Python session and create a model you'll p
    session_id = response.session_id
    ```
 
-1. Create or call a model in Python that you'll publish as a web service. 
+1. Create or call a model in Python that you publish as a web service. 
 
    In this example, we train a SciKit-Learn support vector machines (SVM) model on the Iris Dataset on a remote R Server.  This dataset is available here: http://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html 
 
