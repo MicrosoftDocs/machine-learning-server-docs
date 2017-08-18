@@ -1,4 +1,4 @@
-# [Overview](index.yml)
+# [Overview](index.md)
 ## Welcome to Machine Learning Server
 ## "What happened to R Server"
 ## Machine Learning @ Microsoft
@@ -6,7 +6,7 @@
 ### [Machine Learning Server](whats-new-in-r-server.md)
 ### [Microsoft R Client](r-client/whats-new-in-r-client.md)
 ## 9.1.0 Old docs
-### [What is Machine Learning Server?](what-is-microsoft-r-server.md)
+### [What is Machine Learning Server?](what-is-microsoft-r-server-old.md)
 ### [What is Microsoft R Client?](r-client/what-is-microsoft-r-client.md)
 
 # Install & configure
