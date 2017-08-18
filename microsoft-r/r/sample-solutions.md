@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "Solution templates | Machine Learning Server | Microsoft Docs"
+title: "Solution templates for Machine Learning Server and R Server | Machine Learning Server | Microsoft Docs"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "08/05/2017"
+ms.date: "08/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
