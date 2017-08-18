@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "revoscalepy package for Python (Microsoft Machine Learning Server) | Microsoft Docs" 
-description: "Function help reference for the revoscalepy Python package of Microsoft Machine Learning Server." 
+title: "revoscalepy package for Python (SQL Server Machine Learning Server) | Microsoft Docs" 
+description: "Function help reference for the revoscalepy Python package of SQL Server Machine Learning Server." 
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/19/2017" 
+ms.date: "08/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,25 +26,28 @@ ms.custom: ""
 
 # revoscalepy package for Python
 
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services**](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)**](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
+The **revoscalepy** module is a collection of Python functions used for analyzing data at the point of origin. Functions include data transformation and manipulation, visualization, and statistical analysis.
 
-The **revoscalepy** library is a proprietary Python package used to set the compute context for python script execution, load and manipulate data from external data sources, and manage objects. Data visualization and analysis functions are provided for the most common use cases.
+**Ships in:** [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
-There are two use cases for this release: 
+**Built on:** [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). 
+
+## How to use revoscalepy
+
+The **revoscalepy** module is installed as part of SQL Server Machine Learning. When you add Python to your installation, you get the full set of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having SQL Server Machine Learning with Python.
+
+There are two primary use cases for this release: 
 
 + Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
 + Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../r/concept-what-is-compute-context.md). 
 
+Setup adds Python 3.5 to your path. There are no limitations on the Python functions you can call. Your code can call functions from **revoscalepy**, [**microsoftml**](../microsoftml/microsoftml-package.md), or any 35-compatible module you have installed on the computer.
 
- Many functions in this library can be used with [**microsoftml**](../microsoftml/microsoftml-package.md), which is part of the same release.
+## Functions by category
 
-This library is built for [Python 3.5](https://www.python.org/doc/). Aside from an installation of either Machine Learning Server (Standalone) or Machine Learning Services for Python, there are no further requirements.
+This section lists the functions by category to give you an idea of how each one is used. You can use the TOC to find functions listed in alphabetical order.
 
-## How to use revoscalepy
-
-TBD
-
-## Compute context functions
+### Compute context functions
 
 | Function | Description |
 |----------|-------------|
@@ -53,7 +56,7 @@ TBD
 |[rx_get_compute_context](rx-get-compute-context.md) | Returns the current compute context.|
 |[rx_set_compute_context](rx-set-compute-context.md) | Change the compute context to a different one.|
 
-## Job functions
+### Job functions
 
 | Function | Description |
 |----------|-------------|
@@ -70,7 +73,7 @@ TBD
 |[rx_get_job_results](rx-get-job-results.md) | Returns results of the run or a message stating why results are not available.|
 
 
-## Data source functions
+### Data source functions
 
 | Function | Description |
 |----------|-------------|
@@ -81,14 +84,14 @@ TBD
 |[RxOdbcData](RxOdbcData.md) | Generates a data source object from an ODBC data source.|
 |[RxSqlServerData](RxSqlServerData.md) | Generates a data source object from a SQL table or query.|
 
-## Data manipulation (ETL) functions
+### Data manipulation (ETL) functions
 
 | Function | Description |
 |----------|-------------|
 |[rx_import](rx-import.md) | Import data into an .xdf file or data frame.|
 |[rx_data_step](rx-data-step.md) | Transform data from an input data set to an output data set.|
 
-## Analytic functions
+### Analytic functions
 
 | Function | Description |
 |----------|-------------|
@@ -100,7 +103,7 @@ TBD
 |[rx_btrees](rx-btrees.md) | Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
 |[rx_predict](rx-predict.md) | Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects. |
 
-## Serialization functions
+### Serialization functions
 
 | Function | Description |
 |----------|-------------|
@@ -112,7 +115,7 @@ TBD
 |[rx_list_keys](rx-list-keys.md)  | Enumerates all keys or versions for a given key, depending on the parameters. |
 
 
-## Utility functions
+### Utility functions
 
 | Function | Description |
 |----------|-------------|
@@ -125,8 +128,14 @@ TBD
 
 ## Next steps
 
-For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
+Get started with these Python libraries in SQL Server 2017: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
+
+Continue on with the following tutorial to further your understanding:
+
++ [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
++ [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
 
 ## See also
 
- [Python function library help (Machine Learning Server)](../introducing-python-package-reference.md)  
+  [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
+  [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)

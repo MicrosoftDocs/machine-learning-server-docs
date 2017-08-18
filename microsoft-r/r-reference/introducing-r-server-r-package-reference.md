@@ -31,9 +31,9 @@ This section contains the function reference documentation for proprietary *revo
 
 You can use these libraries and functions in combination with other open source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that has a Microsoft R installation.
 
-Supported platforms: Hadoop Spark, Hadoop MapReduce, Linux, Windows, SQL Server (Windows only).
+**Supported platforms:** Hadoop Spark, Hadoop MapReduce, Linux, Windows, SQL Server (Windows only).
 
-Built on: **R 3.3.0**.
+**Built on:** R 3.3.0 (included when you install a product that provides this package).
 
 |Package | Version | Description |
 |--------|---------|-------------|

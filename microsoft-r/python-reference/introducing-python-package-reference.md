@@ -29,16 +29,16 @@ ms.custom: ""
 
 This section contains the Python reference documentation for two proprietary packages from Microsoft used for data science at scale and machine learning, respectively.  
 
-Supported platforms: SQL Server 2017 (Windows only). Additional platforms and compute contexts are planned for future releases.
+**Supported platforms:** SQL Server 2017 (Windows only). Additional platforms and compute contexts are planned for future releases.
 
-Built on: [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc), included when you add Python support during installation. 
+**Built on:** [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). 
 
 ## Python libraries
 
 |Modules | Version | Description |
 |--------|---------|-------------|
 |[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.2.0 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to your data residing in SQL Server. |
-|[microsoftml](microsoftml/microsoftml-package.md)| 1.4.0 | A collection of Python functions used for machine learning use, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
+|[microsoftml](microsoftml/microsoftml-package.md)| 1.4.0 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
 
 You can use the modules together or individually. You can also use any 35-compatible Python module and call its functions from Python code you run on SQL Server.
 
