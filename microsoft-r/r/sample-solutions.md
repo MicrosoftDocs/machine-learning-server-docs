@@ -66,6 +66,7 @@ If we had a crystal ball, we would only loan money to someone if we knew they wo
 |---|----|
 |**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-fraud-detection/) <br>- [Code](https://github.com/Microsoft/r-server-fraud-detection)|**Deploy on:**<br>- [SQL Server](https://aka.ms/loan-credit-risk)<br>- [HDInsight Spark Cluster](https://aka.ms/loan-credit-risk-hdi)|
 
+<br>
 
 **Loan ChargeOff**
 
@@ -74,6 +75,7 @@ A charged off loan is a loan that is declared by a creditor (usually a lending i
 |---|----|
 |**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-loan-chargeoff) <br>- [Code](https://github.com/Microsoft/r-server-loan-chargeoff/)|**Deploy on:**<br>- [SQL Server](https://aka.ms/loanchargeoffsql)<br>- [HDInsight Spark Cluster](https://aka.ms/loanchargeoffhdi)|
 
+<br>
 
 **Fraud Detection**
 
