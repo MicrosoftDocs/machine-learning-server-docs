@@ -27,24 +27,27 @@ ms.custom: ""
 
 # Python Function Library Reference
 
-This section contains Python reference documentation for two proprietary packages used for data transformation and manipuation, for machine learning workloads that you run in SQL Server 2017.
+This section contains Python reference documentation for two proprietary packages used for creating and training machine learning models, scoring data, and preparing data. Currently, the packages are integrated only with SQL Server 2017. There are two use cases for this release: 
+
++ Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
++ Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../r/concept-what-is-compute-context.md). 
+
+Supported platforms: SQL Server 2017 (Windows only).
 
 Built on: [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc), included when you add Python support during installation. 
-
-Supported platforms: Windows only.
 
 ## Python libraries
 
 |Package | Version | Description |
 |--------|---------|-------------|
-|[revoscalepy](revoscalepy/revoscalepy-package.md) | | Data access, manipulation and transformations, visualization, and analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks. Developers who are familiar with Microsoft R Server and the RevoScaleR package will see notable similarities in the functions provided in revoscalepy. Conceptually, revoscalepy is the Python equivalent of the Microsoft R RevoScaleR package.|
-|[microsoftml](microsoftml/microsoftml-package.md)| | A collection of Python functions used for machine learning use cases. |
+|[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.2.0 | Data access, manipulation and transformations, visualization, and analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks. Developers who are familiar with Microsoft R Server and the RevoScaleR package will see notable similarities in the functions provided in revoscalepy. Conceptually, revoscalepy is the Python equivalent of the Microsoft R RevoScaleR package.|
+|[microsoftml](microsoftml/microsoftml-package.md)| 1.4.0 | A collection of Python functions used for machine learning use cases. |
 
 ## How to get packages
 
-The packages documented in this section are found only on installations of the Microsoft products or Azure services that provide them. Setup programs or scripts install the propertietary Python packages from Microsoft and any package dependencies. Unless otherwise noted, all of the packages listed in the preceding table are installed with the product or service.
+You can get the packages described in this section when you run SQL Server 2017 Setup and choose features that include Machine Learning with Python support. In addition to the packages, SQL Server Setup installs the interpreters and libraries required to run any script or code that calls functions from either package.
 
-By default, packages are installed in the C:\Program Files\Microsoft SQL Server\140 folder on Windows.
+By default, packages are installed in the C:\Program Files\Microsoft SQL Server\140 folder.
 
 Ships in:
 +  [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) 
@@ -52,22 +55,28 @@ Ships in:
 
 ## How to list packages and versions
 
-To get the version of an R package installed on your ocmputer, open an R console application and execute the following command: `installed.packages()`
+To get the version of a Python package installed on your computer, start Python from the command line or open a Python IDE and execute the following commands:
 
-## Python naming conventions
+1. Start interactive help: >>>`help()`
+2. Get a list of all installed modules: help> `modules`
+3. import the module: `import revoscalepy`
+4. Get the version: `revoscalepy._version_`
+
+## Note to R Users: Python naming conventions
 
 Both **revoscalepy** and **microsoftml** correspond to the Microsoft R packages, [RevoScaleR](../r-reference/revoscaler/revoscaler.md) and [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md). If you have a background in these libraries, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
 
 * lowercase package names (**microsoftml** contrasted with **MicrosoftML**) and most function names
 * underscore in function names (rx_import in **revoscalepy** contrasted with rxImport in **RevoScaleR**)
 
-At this time, full parity does not yet exist between language-specific versions of each package, but you can expect gaps to close over time. For now, we recommend using the documentation specific to each language.
-
-No additional software is required to call Python functions in T-SQL script or stored procedures, or call **revoscalepy** functions in Python script executing in a SQL Server compute context.
-
 ## Next steps
 
 Get started with these Python libraries in SQL Server 2017: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
+
+Move forward with these tutorials to understand the advantages of working with Python in SQL Server:
+
++ [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
++ [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
 
 ## See also
 
