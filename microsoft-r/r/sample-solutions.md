@@ -24,12 +24,7 @@ ms.technology: "r-server"
 
 # Solution templates for Machine Learning Server and Microsoft R Server
 
-Several solution templates exist to help you accelerate time to value when using Machine Learning Server (or Microsoft R Server).
-
-We offer solutions tailored to specific industries and problem sets. 
-+ [Marketing](#marketing)
-+ [Medical](#medical)
-+ [Financial](#financial)
+Several solution templates exist to help you accelerate time to value when using Machine Learning Server or Microsoft R Server. We offer solutions tailored to specific industries and problem sets: [marketing](#marketing), [healthcare](#healthcare), [financial and retail](#financial).
 
 
 <a name="marketing"></a> 
@@ -45,11 +40,11 @@ This solution demonstrates how to use a model to predict actions that are expect
 
 |||
 |---|----|
-|Learn more:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-campaign-optimization) <br>- [Code](https://github.com/Microsoft/r-server-campaign-optimization)|Deploy on:<br>- [SQL Server](https://aka.ms/campaignoptimization)<br>- [HDInsight Spark Cluster](https://aka.ms/campaign-hdi)|
+|**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-campaign-optimization) <br>- [Code](https://github.com/Microsoft/r-server-campaign-optimization)|**Deploy on:**<br>- [SQL Server](https://aka.ms/campaignoptimization)<br>- [HDInsight Spark Cluster](https://aka.ms/campaign-hdi)|
 
-<a name="medical"></a> 
+<a name="healthcare"></a> <br>
 
-## Medical solutions
+## Healthcare solutions
 
 ### Predicting Hospital Length of Stay
 
@@ -57,11 +52,11 @@ This solution enables a predictive model for Length of Stay for in-hospital admi
 
 |||
 |---|----|
-|Learn more:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-hospital-length-of-stay) <br>- [Code](https://github.com/Microsoft/r-server-hospital-length-of-stay)|Deploy on:<br>- [SQL Server](https://aka.ms/hospital-los)<br>&nbsp; |
+|**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-hospital-length-of-stay) <br>- [Code](https://github.com/Microsoft/r-server-hospital-length-of-stay)|**Deploy on:**<br>- [SQL Server](https://aka.ms/hospital-los)<br>&nbsp; |
 
-<a name="financial"></a> 
+<a name="financial"></a>  <br>
 
-## Financial Solutions
+## Financial an retail solutions
 
 **Loan Credit Risk**
 
@@ -69,7 +64,7 @@ If we had a crystal ball, we would only loan money to someone if we knew they wo
 
 |||
 |---|----|
-|Learn more:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-fraud-detection/) <br>- [Code](https://github.com/Microsoft/r-server-fraud-detection)|Deploy on:<br>- [SQL Server](https://aka.ms/loan-credit-risk)<br>- [HDInsight Spark Cluster](https://aka.ms/loan-credit-risk-hdi)|
+|**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-fraud-detection/) <br>- [Code](https://github.com/Microsoft/r-server-fraud-detection)|**Deploy on:**<br>- [SQL Server](https://aka.ms/loan-credit-risk)<br>- [HDInsight Spark Cluster](https://aka.ms/loan-credit-risk-hdi)|
 
 
 ### Loan ChargeOff
@@ -77,7 +72,7 @@ If we had a crystal ball, we would only loan money to someone if we knew they wo
 A charged off loan is a loan that is declared by a creditor (usually a lending institution) that an amount of debt is unlikely to be collected, usually when the loan repayment is severely delinquent by the debtor. Given that high chargeoff has negative impact on lending institutions’ year end financials, lending institutions often monitor loan chargeoff risk closely to prevent loans from getting charged-off. Using Azure HDInsight R Server, a lending institution can leverage machine learning predictive analytics to predict the likelihood of loans getting charged off and run a report on the analytics result stored in HDFS and hive tables.
 |||
 |---|----|
-|Learn more:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-loan-chargeoff) <br>- [Code](https://github.com/Microsoft/r-server-loan-chargeoff/)|Deploy on:<br>- [SQL Server](https://aka.ms/loanchargeoffsql)<br>- [HDInsight Spark Cluster](https://aka.ms/loanchargeoffhdi)|
+|**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-loan-chargeoff) <br>- [Code](https://github.com/Microsoft/r-server-loan-chargeoff/)|**Deploy on:**<br>- [SQL Server](https://aka.ms/loanchargeoffsql)<br>- [HDInsight Spark Cluster](https://aka.ms/loanchargeoffhdi)|
 
 
 ### Fraud Detection
@@ -86,4 +81,4 @@ Fraud detection is one of the earliest industrial applications of data mining an
 
 |||
 |---|----|
-|Learn more:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-fraud-detection/) <br>- [Code](https://github.com/Microsoft/r-server-fraud-detection)|Deploy on:<br>- [SQL Server](https://aka.ms/fraud-detection)<br>- [HDInsight Spark Cluster](https://aka.ms/fraud-detectinon-hdi)|
+|**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-fraud-detection/) <br>- [Code](https://github.com/Microsoft/r-server-fraud-detection)|**Deploy on:**<br>- [SQL Server](https://aka.ms/fraud-detection)<br>- [HDInsight Spark Cluster](https://aka.ms/fraud-detectinon-hdi)|
