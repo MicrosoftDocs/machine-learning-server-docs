@@ -73,9 +73,14 @@ Both **revoscalepy** and **microsoftml** correspond to the Microsoft R packages,
 
 ## Next steps
 
-Get started with these Python libraries in SQL Server 2017: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
+First, read the introduction to each package to learn about common use case scenarios:
 
-Deepen your understanding with the following tutorials to understand the benefits of working with Python in SQL Server:
++ [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
++ [microsoftmlpackage for Python](microsoftml/microsoftml-package.md) 
+
+Next, add these Python modules to your SQL Server 2017 instance: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
+
+Lastly, follow these tutorials for hands on experience:
 
 + [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 

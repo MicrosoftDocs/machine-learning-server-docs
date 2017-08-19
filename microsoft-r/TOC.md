@@ -234,12 +234,9 @@
 # Prototype Landing Pages
 ## [azure-ml-model-management-sdk package](proto/azuremlmdsdk-package.md)
 ## [olapR package](r-reference/olapr/olapr.md)
-## [microsoftml package (Pyhon)](python-reference/microsoftml/microsoftml-package.md)
 ## [MicrosoftML package (R)](r-reference/microsoftml/microsoftml-package.md)
 ## [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md)
-## [revoscalepy package](python-reference/revoscalepy/revoscalepy-package.md)
 ## [RevoScaleR](r-reference/revoscaler/revoscaler.md)
-
 
 # [Python Function Reference](python-reference/introducing-python-package-reference.md)
 ## [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)

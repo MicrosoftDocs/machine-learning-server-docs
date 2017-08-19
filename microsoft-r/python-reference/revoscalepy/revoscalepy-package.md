@@ -30,24 +30,24 @@ The **revoscalepy** module is a collection of Python functions used for analyzin
 
 **Version:** 9.2.0
 
-**Applies to:** [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
+**Supported on:** [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
 **Built on:** [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). 
 
 ## How to use revoscalepy
 
-The **revoscalepy** module is installed as part of SQL Server Machine Learning. When you add Python to your installation, you get the full set of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having SQL Server Machine Learning with Python.
+The **revoscalepy** module is installed as part of SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having SQL Server Machine Learning with Python.
 
 There are two primary use cases for this release: 
 
 + Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
-+ Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../r/concept-what-is-compute-context.md). 
++ Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
 
-Setup adds Python 3.5 to your path. There are no limitations on the Python functions you can call. Your code can call functions from **revoscalepy**, [**microsoftml**](../microsoftml/microsoftml-package.md), or any 35-compatible module you have installed on the computer.
+Setup adds Python 3.5 to your path. You can use Python as you would normally, calling functions from any 35-compatible module you have installed on the computer.
 
 ## Functions by category
 
-This section lists the functions by category to give you an idea of how each one is used. You can use the TOC to find functions listed in alphabetical order.
+This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
 
 ### Compute context functions
 
@@ -130,9 +130,9 @@ This section lists the functions by category to give you an idea of how each one
 
 ## Next steps
 
-Get started with these Python libraries in SQL Server 2017: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
+Add both Python modules to your computer by running setup: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
-Continue on with the following tutorial to further your understanding:
+Next, follow these tutorials for hands on experience::
 
 + [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
