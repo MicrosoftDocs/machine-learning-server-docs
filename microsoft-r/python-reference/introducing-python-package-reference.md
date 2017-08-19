@@ -59,9 +59,9 @@ Ships in:
 
 To get the version of a Python module installed on your computer, start Python from the command line or open a Python IDE and execute the following commands:
 
-1. Open interactive help at the **>>>** prompt: `help()`
-2. Get a list of all installed modules at the **help>** prompt: `modules`
-3. import the module: `import revoscalepy`
+1. Open interactive help: `help()`
+2. List installed modules: `modules`
+3. Import the module for which you want version information: `import revoscalepy`
 4. Get the version: `revoscalepy._version_`
 
 ## Note to R Users: Python naming conventions
@@ -78,7 +78,9 @@ First, read the introduction to each package to learn about common use case scen
 + [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
 + [microsoftmlpackage for Python](microsoftml/microsoftml-package.md) 
 
-Next, add these Python modules to your SQL Server 2017 instance: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
+Next, add these Python modules to your SQL Server 2017 instance: 
+
++ [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
 Lastly, follow these tutorials for hands on experience:
 

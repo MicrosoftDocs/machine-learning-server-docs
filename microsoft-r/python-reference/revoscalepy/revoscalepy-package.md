@@ -41,7 +41,7 @@ The **revoscalepy** module is installed as part of SQL Server Machine Learning w
 There are two primary use cases for this release: 
 
 + Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
-+ Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
++ Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
 
 Setup adds Python 3.5 to your path. You can use Python as you would normally, calling functions from any 35-compatible module you have installed on the computer.
 
@@ -130,7 +130,9 @@ This section lists the functions by category to give you an idea of how each one
 
 ## Next steps
 
-Add both Python modules to your computer by running setup: [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
+Add both Python modules to your computer by running setup: 
+
++ [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
 Next, follow these tutorials for hands on experience::
 

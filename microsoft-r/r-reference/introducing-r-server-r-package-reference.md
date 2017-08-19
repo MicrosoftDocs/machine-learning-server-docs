@@ -27,7 +27,7 @@ ms.technology:
 
 # R Function Library Reference
 
-This section contains the function reference documentation for proprietary *revo* packages installed with Microsoft R Client and R Server, or available in a service. Each package offers functions used for specific categories of operations. 
+This section contains the function reference documentation for proprietary *revo* packages installed with Microsoft R Client and R Server, or available in an Azure service that provides R functionality. Each package offers functions used for specific categories of operations. 
 
 You can use these libraries and functions in combination with other open source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that has a Microsoft R installation.
 
@@ -40,16 +40,16 @@ You can use these libraries and functions in combination with other open source 
 |[MicrosoftML](microsoftml/microsoftml-package.md) | 1.3.0  | A collection of functions in Microsoft R used for machine learning at scale.|
 |[mrsdeploy](mrsdeploy/mrsdeploy-package.md) | 1.1.0 | Deployment functions for interactive remote execution at the command line, plus web service functions for bundling up R code blocks as discrete web services that can be deployed and managed on an R Server instance. Formally known as DeployR. |
 |[olapR](olapr/olapr.md) | 1.0.0 | A collection of functions for constructing MDX queries against an OLAP cube. Runs only on the Windows platform.|
-|RevoIOQ | 8.0.6 | Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (<sup> 1 </<sup>). |
-|RevoMods | 11.0.0 | Microsoft modifications and extensions to standard R functions. Reference documentation is online only (<sup> 1 </<sup>).  |
+|RevoIOQ | 8.0.6 | Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (<sup> 1 </sup>). |
+|RevoMods | 11.0.0 | Microsoft modifications and extensions to standard R functions. Reference documentation is online only (<sup> 1 </sup>).  |
 |[RevoPemaR](revopemar/pemar.md) | 10.0.0 | Developer functions for coding custom parallel external memory algorithms. |
 |[RevoScaleR](~/r-reference/revoscaler/revoscaler.md) | 9.1.0 | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](../what-is-microsoft-r-server.md) functionality. |
-|RevoTreeView | 10.0.0 | Decision tree functions, including the **rxDTree** function. Reference documentation is online only (<sup> 1 </<sup>). |
+|RevoTreeView | 10.0.0 | Decision tree functions, including the **rxDTree** function. Reference documentation is online only (<sup> 1 </sup>). |
 |[RevoUtils](revoutils/revoutils.md) | 10.0.3 | Utility functions useful when programming and developing R packages.|
-|RevoUtilsMath | 10.0.0 | Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (<sup> 1 </<sup>). |
+|RevoUtilsMath | 10.0.0 | Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (<sup> 1 </sup>). |
 |[sqlrutils](sqlrutils/sqlrutils.md) | 1.0.0 | A collection of functions for executing stored procedures against SQL Server.|
 
-<sup>1</<sup> Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in your preferred R IDE, such as **R Tools for Visual Studio**.
+<sup> 1 </sup> Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in your preferred R IDE, such as **R Tools for Visual Studio**.
 
 ## How to get packages
 
@@ -72,14 +72,12 @@ To get the version of an R package installed on your computer, open an R console
 
 Most R packages come with built-in help pages that open in separate window.
 
-To see the **RevoScaleR** functions that can be called from the R console:
-
 1. Open an R console tool, such as Rgui.exe or another R IDE.
 2. List the packages using `installed.packages()`
 3. Open help for a specific package using: `library(help="<package-name>")`
 4. Open help for a specific funtion using: `?<function_name>`
 
-R is case-sensitive. Be sure to type the package name using the correct case: `library(help = "RevoScaleR")`.
+R is case-sensitive. Be sure to type the package name using the correct case: for example, `library(help = "RevoScaleR")`.
 
 ## Deprecated & discontinued packages
 
@@ -107,8 +105,8 @@ Lastly, follow these tutorials for hands on experience:
 
 ## See also
 
- [Diving into data analysis in Microsoft R](../r/how-to-introduction.md)  
- [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md) 
+ [Diving into data analysis in Microsoft R](../r/how-to-introduction.md)     
+ [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)   
  [Additional learning resources and sample datasets](../resources-more.md)  
  
  
