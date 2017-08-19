@@ -28,10 +28,10 @@ ms.custom: ""
 
 The **microsoftml** module is a collection of Python functions used in machine learning workloads. It includes functions for training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.
 
-| Detail | |
+| Package detail | |
 |--------|-|
-| **Version:** |  1.3.4 |
-| **Supported on:** | [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Version: |  1.3.4 |
+| Supported on: | [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
 | **Built on:** | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 ## How to use microsoftml
