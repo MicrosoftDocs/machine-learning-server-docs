@@ -29,15 +29,15 @@ A process is an instance of a software program, running under an operating syste
 
 In order to perform parallel computations, a process must provide blocks of executable code to the operating system that can be run in parallel.
 
-There are two primary approaches to this problem. One approach is to use threads. Threads can be thought of as sub-programs that are still bound to the original process that creates them. They communicate with the creating process, while still being autonomous enough to allow the operating system to schedule their operation independently, thus allowing parallelization.
+There are two primary approaches to this problem. One approach is to use threads. Threads can be thought of as subprograms that are still bound to the original process that creates them. They communicate with the creating process, while still being autonomous enough to allow the operating system to schedule their operation independently, thus allowing parallelization.
 
-By way of contrast, forking a process (a technique only available on Unix-based systems) creates a complete copy of one process that differs only by a flag available within each of the resulting processes.
+By way of contrast, forking a process creates a complete copy of one process that differs only by a flag available within each of the resulting processes. Process forking is only available on Unix-based systems.
 
-Unfortunately, these two methods of parallelization are not completely compatible unless steps are taken to ensure that they do not interfere with each other and cause the software to malfunction. Specifically, program failures can be caused by forking a Unix process while the objects used to control communication and synchronization between threads are in use.
+Unfortunately, these two methods of parallelization are not compatible unless steps are taken to ensure that they do not interfere with each other and cause the software to malfunction. Specifically, program failures can be caused by forking a Unix process while the objects used to control communication and synchronization between threads are in use.
 
-In order to optimize performance, RevoScaleR is capable of establishing and maintaining a pool of threads. This way, there is no overhead in creating these threads to parallelize a computation. However, given the above issues, this functionality is, by default, disabled on Linux (this is not an issue on Windows, as Windows does not use fork; hence, the thread pool is always instantiated and ready for use on Windows).
+In order to optimize performance, RevoScaleR is capable of establishing and maintaining a pool of threads. This way, there is no overhead in creating these threads to parallelize a computation. However, given the preceding issues, this thread functionality is, by default, disabled on Linux. This is not an issue on Windows, as Windows does not use fork. The Windows thread pool is always instantiated and ready for use.
 
-If you know that you will not be forking your R process (such as spawning it using nohup or creating multiple R processes with the multicore package), or if you know exactly when you might fork a process, you can turn the thread pool on and off.  RevoScaleR provides an interface to activate the thread pool:
+You can turn the thread pool on and off if you will not fork your R process such as by spawning it, using nohup, or creating multiple R processes with the multicore package, or if you know exactly when you might fork a process.  RevoScaleR provides an interface to activate the thread pool:
 
 	rxSetEnableThreadPool(TRUE)
 
@@ -45,7 +45,7 @@ Similarly, the thread pool may be disabled as follows:
 
 	rxSetEnableThreadPool(FALSE)
 
-Enabling the thread pool will improve performance, but should not be done if there is any chance you will fork your R process. If you want to ensure that the thread pool is always enabled, you can add the above command to a *.First* function defined in either your own Rprofile startup file, or the system Rprofile.site file. For example, you can add the following lines after the closing right parenthesis of the existing Rprofile.site file:
+Enabling the thread pool improves performance, but should not be done if there is any chance you will fork your R process. If you want to ensure that the thread pool is always enabled, you can add the preceding command to a *.First* function defined in either your own Rprofile startup file, or the system Rprofile.site file. For example, you can add the following lines after the closing right parenthesis of the existing Rprofile.site file:
 
 	.First <- function()
 	{
@@ -56,7 +56,7 @@ Enabling the thread pool will improve performance, but should not be done if the
 
 The *.First.sys* function is normally run after all other initialization is complete, including the evaluation of the *.First* function. We need the call to *rxSetEnableThreadPool* to occur after RevoScaleR is loaded, and that is done by *.First.sys*, so we call *.First.sys* first.
 
-R has extensive facilities for managing random number generation, and these are all fully supported in RevoScaleR. In addition, RevoScaleR provides an interface to random number generators supplied by the Vector Statistical Library that is part of Intel’s Math Kernel Library. To use one of these generators, call the RevoScaleR function *rxRngNewStream*, specifying the desired generator (the default is a version of the Mersenne-Twister, MT-2203), the desired substream (if applicable), and a seed (if desired). See the help file for a complete list of the available generators and examples of their use.
+R has extensive facilities for managing random number generation, and these facilities are all fully supported in RevoScaleR. In addition, RevoScaleR provides an interface to random number generators supplied by the Vector Statistical Library that is part of Intel’s Math Kernel Library. To use one of these generators, call the RevoScaleR function *rxRngNewStream*, specifying the desired generator (the default is a version of the Mersenne-Twister, MT-2203), the desired substream (if applicable), and a seed (if desired). See the help file for a complete list of the available generators and examples of their use.
 
 The VSL random number generators are most useful in a distributed setting, where they allow parallel processes to generate uncorrelated random number streams. See the [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md)
 for complete details.
@@ -71,7 +71,7 @@ To obtain help on a RevoScaleR function, use the R *?* operator at the R prompt 
 
 	?rxLinMod
 
-We will often refer to help topic pages as a function’s help file, as in “see the *rxLinMod* help file for details.” This always means to type the *?* operator followed by the function name.
+We often refer to help topic pages as a function’s help file, as in “see the *rxLinMod* help file for details.” Meaning to type the *?* operator followed by the function name.
 
 ## See Also
 

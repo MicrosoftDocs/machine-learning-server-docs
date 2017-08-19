@@ -29,9 +29,9 @@ ms.technology: "r-server"
 
 This guide is an introduction to using the **RevoPemaR** package to write customized scalable and distributable analytics in R. *PEMA* stands for *P*arallel *E*xternal *M*emory *A*lgorithm. An external memory algorithm is one that does not require all of the data to be in memory at one time; that is, the data can be processed in chunks. Parallel external memory algorithms are those where the chunks of data can be processed in parallel, perhaps on different nodes of a cluster. The results are then combined and processed at the end (or at the end of each iteration). The **RevoPemaR** package provides a framework for writing parallel external memory algorithms in R, making use of the R reference classes introduced by John Chambers in R 2.12.
 
-The custom PEMA functions created using the **RevoPemaR** framework are appropriate for small and large datasets, but are particularly useful in three common situations: 1) to analyze data sets that are too big to fit in memory, 2) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data, and 3) to perform computations distributed over nodes in a cluster,
+The custom PEMA functions created using the **RevoPemaR** framework are appropriate for small and large datasets, but are useful in three common situations: 1) to analyze data sets that are too large to fit in memory, 2) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data, and 3) to perform computations distributed over nodes in a cluster,
 
-The RevoPemaR framework is portable. The goal is to be able to have code written using R on a desktop be deployed using the **RevoScaleR** package on a high performance platform, such as Hadoop.
+The RevoPemaR framework is portable. The goal is to be able to have code written using R on a desktop be deployed using the **RevoScaleR** package on a high-performance platform, such as Hadoop.
 
 ## Installation
 
@@ -50,13 +50,13 @@ R Reference Class objects are created using a generator function. This function 
 
 When working with reference class, here are a few tips to keep in mind:
 
--   Reference class generators are created using *setRefClass*. For the PEMA classes, we will use a wrapper for that function, *setPemaClass*.
+-   Reference class generators are created using *setRefClass*. For the PEMA classes, we use a wrapper for that function, *setPemaClass*.
 -   Field values are changed within methods using the non-local assignment operator (*\<\<-*)
--   Methods are documented internally with an initial line of text, rather than in an .Rd file. This information is accessed using the $help method for the generator function.
+-   Methods are documented internally with an initial line of text, rather than in a .Rd file. This information is accessed using the $help method for the generator function.
 -   The reference class object can be accessed in the methods using *.self*
 -   The parent method can be accessed using *.callSuper*
--   Use the *usingMethods* call to declare that a method will be used by another method.
--   The code for a method can be displayed using an instantiated reference class object, e.g. *myRefClassObj$initialize*.
+-   Use the *usingMethods* call to declare that a method is used by another method.
+-   The code for a method can be displayed using an instantiated reference class object, for example, *myRefClassObj$initialize*.
 
 ## A Tutorial Introduction to RevoPemaR
 
@@ -68,7 +68,7 @@ Start by making sure that the **RevoPemaR** package is loaded:
 
 	library(RevoPemaR)
 
-To create a PEMA class generator function, use the *setPemaClass* function. It is a wrapper function for *setRefClass*. As with *setRefClass*, we will specify four basic pieces of information when using *setPemaClass*: the class name, the superclasses, the fields, and the methods. The structure looks something like this:
+To create a PEMA class generator function, use the *setPemaClass* function. It is a wrapper function for *setRefClass*. As with *setRefClass*, we specify four basic pieces of information when using *setPemaClass*: the class name, the superclasses, the fields, and the methods. The structure looks something like this:
 
 	PemaMean <- setPemaClass(
 		Class = "PemaMean",
@@ -82,7 +82,7 @@ The *Class* is the class name of your choice. The *contains* argument must speci
 
 ### Specifying the fields for PemaMean
 
-The fields or member variables of our class represent all of the variables we need in order to compute and store our intermediate and final results. Here are the fields we will use for our “means” computation:
+The fields or member variables of our class represent all of the variables we need in order to compute and store our intermediate and final results. Here are the fields we use for our “means” computation:
 
 	fields = list(
 		sum = "numeric",
@@ -94,7 +94,7 @@ The fields or member variables of our class represent all of the variables we ne
 
 ### An Overview of the *methods* for *PemaMean*
 
-There are five methods we will specify for *PemaMean*. These methods are all in the *PemaBaseClass*, and need to be overloaded for any custom analysis.
+There are five methods we specify for *PemaMean*. These methods are all in the *PemaBaseClass*, and need to be overloaded for any custom analysis.
 
 -   *initialize*: initializes field values.
 -   *processData*: processes a chunk of data and updates field values
@@ -131,7 +131,7 @@ Now we finish the field initialization, setting the *varName* field to the input
 
 #### The *processData* method
 
-The *processData* method is the core of an external memory algorithm. It processes a chunk of data and computes intermediate results, updating the field value(s). It takes as an argument a rectangular list of data vectors; typically only the variable(s) of interest will be included. Note that in our example code we do not compute the mean within this method; that occurs after we have processed all of the data. Here we compute and update the intermediate results: the sum and number of observations:
+The *processData* method is the core of an external memory algorithm. It processes a chunk of data and computes intermediate results, updating the field value(s). It takes as an argument a rectangular list of data vectors; typically only the variable(s) of interest is included. In our example code we do not compute the mean within this method; that occurs after we have processed all of the data. Here we compute and update the intermediate results: the sum and number of observations:
 
 	processData = function(dataList)
 	{
@@ -173,7 +173,7 @@ Here is the *updateResults* method for our *PemaMean*:
 
 #### The *processResults* method
 
-The *processResults* performs any necessary computations to produce the final result from the accumulated intermediate results. In this case it is simple; we divide the sum by the number of valid observations (assuming we have some):
+The *processResults* performs any necessary computations to produce the final result from the accumulated intermediate results. In this case, it is simple; we divide the sum by the number of valid observations (assuming we have some):
 
 	processResults = function()
 	{
@@ -231,7 +231,7 @@ A version of the code in the previous section is contained within the **RevoPema
 	[35] "usingMethods"   
 
 
-Some of the methods (e.g., *initIteration,* *getFieldList*) are inherited from the *PemaBaseClass*. Others (e.g., .*callSuper*, *methods*) are inherited from the base reference class generator.
+Some of the methods (for example, *initIteration,* *getFieldList*) are inherited from the *PemaBaseClass*. Others (for example, *callSuper*, *methods*) are inherited from the base reference class generator.
 
 We can use the *help* method with the generator function to get help on specific methods:
 
@@ -242,7 +242,7 @@ We can use the *help* method with the generator function to get help on specific
 
 	sum, totalValidObs, and mean are all initialized to 0
 
-Next we’ll generate a default *PemaMean* object, and print out the values of its fields (including those inherited):
+Next we generate a default *PemaMean* object, and print out the values of its fields (including those inherited):
 
 	meanPemaObj <- PemaMean()
 	meanPemaObj
@@ -313,7 +313,7 @@ We can also print out the code for a specific method using an instantiated objec
 
 #### Using a *PemaMean* Object with the *pemaCompute* Function
 
-The *pemaCompute* function takes two required arguments: an “analysis” object and a data source object. The analysis object must be generated by *setPemaClass* and inherit (directly or indirectly) from *PemaBaseClass*. The data source object must be either a data frame or a data source object supported by the **RevoScaleR** package if it is available. The ellipses will take any additional information used in the *initialize* method.
+The *pemaCompute* function takes two required arguments: an “analysis” object and a data source object. The analysis object must be generated by *setPemaClass* and inherit (directly or indirectly) from *PemaBaseClass*. The data source object must be either a data frame or a data source object supported by the **RevoScaleR** package if it is available. The ellipses take any additional information used in the *initialize* method.
 
 Let’s compute a mean of some random numbers:
 
@@ -323,7 +323,7 @@ Let’s compute a mean of some random numbers:
 
 	[1] 0.00504128
 
-If we again print the values of the fields of our meanPemaObj, we will see the updated values:
+If we again print the values of the fields of our meanPemaObj, we see the updated values:
 
 	meanPemaObj
 
@@ -367,7 +367,7 @@ If we again print the values of the fields of our meanPemaObj, we will see the u
 	Field "varName":
 	[1] "x"
 
-By default the *pemaCompute* method will reinitialize the *pemaObj*. By setting the *initPema* flag to *FALSE*, we can add more data to our analysis:
+By default the *pemaCompute* method reinitializes the *pemaObj*. By setting the *initPema* flag to *FALSE*, we can add more data to our analysis:
 
 	pemaCompute(pemaObj = meanPemaObj,
 		data = data.frame(x = rnorm(1000)), varName = "x",
@@ -377,18 +377,18 @@ By default the *pemaCompute* method will reinitialize the *pemaObj*. By setting 
 	meanPemaObj$totalValidObs
 	[1] 2000
 
-Note that the number of total valid observations is now 2000.
+The number of total valid observations is now 2000.
 
 #### Using a *RevoScaleR* Data Source with the *pemaCompute* Function
 
-In the previous section we analysed data in memory. The **RevoScaleR** package provides a data source framework that allows data to be automatically extracted in chunks from data on disk or in a database. It also provides the *.xdf* file format that can very efficiently extract chunks of data.
+In the previous section, we analyzed data in memory. The **RevoScaleR** package provides a data source framework that allows data to be automatically extracted in chunks from data on disk or in a database. It also provides the *.xdf* file format that can efficiently extract chunks of data.
 
-We can use a sample .xdf file provided with the package. First we will create a data source for this file:
+We can use a sample .xdf file provided with the package. First we create a data source for this file:
 
 	airXdf <- RxXdfData(file.path(rxGetOption("sampleDataDir"),
 	    "AirlineDemoSmall.xdf"))
 
-Using the *meanPemaObj* created above, we compute the mean of the variable *ArrDelay* (the arrival delay in minutes). The data in this file is stored in three blocks, with 200,000 rows in each block. The *pemaCompute* function will process these chunks one at a time:
+Using the *meanPemaObj* created above, we compute the mean of the variable *ArrDelay* (the arrival delay in minutes). The data in this file is stored in three blocks, with 200,000 rows in each block. The *pemaCompute* function processes these chunks one at a time:
 
 	pemaCompute(meanPemaObj, data = airXdf, varName = "ArrDelay")
 
@@ -413,8 +413,8 @@ A number of examples are provided in the *demoScripts* directory of the *RevoPem
 
 Two PEMA text mining analyses are provided as examples.
 
--   *PemaPopularWords* will accumulate the words used in a variable containing character data. The initialize method provides a variety of arguments to fine-tune the processing. The code for the reference class generator is provided in *PemaPopularWords.R*, and examples using it in *PemaPopularWordsEx.R*.
--   *PemaWordCount* will count instances of specified words in a variable containing character data. The code for the reference class generator is provided in *PemaWordCount.R*, and examples using it in *PemaWordCountEx.R*.
+-   *PemaPopularWords* accumulates the words used in a variable containing character data. The initialize method provides a variety of arguments to fine-tune the processing. The code for the reference class generator is provided in *PemaPopularWords.R*, and examples using it in *PemaPopularWordsEx.R*.
+-   *PemaWordCount* counts instances of specified words in a variable containing character data. The code for the reference class generator is provided in *PemaWordCount.R*, and examples using it in *PemaWordCountEx.R*.
 
 If you are using **RevoScaleR** and are interested in exploring text mining with a large dataset, instructions for downloading and code for importing Amazon reviews of fine foods is contained in the script *finefoodsImport.R*
 
@@ -439,7 +439,7 @@ This class generator cannot be used directly. A child class generator must be cr
 
 The R Reference Classes provide standard R debugging tools, and *trace* and *untrace* methods are provided in the base reference class.
 
-The *PemaBaseClass* provides a simple way of printing trace output that is particularly useful in debugging code in a distributed environment. Calls to the *outputTrace* method within other methods will print the specified text if the *traceLevel* field value exceeds or is equal to the *outTraceLevel* argument:
+The *PemaBaseClass* provides a simple way of printing trace output that is particularly useful in debugging code in a distributed environment. Calls to the *outputTrace* method within other methods print the specified text if the *traceLevel* field value exceeds or is equal to the *outTraceLevel* argument:
 
 	meanPemaObj$outputTrace
 
