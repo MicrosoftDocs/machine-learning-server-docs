@@ -31,11 +31,12 @@ This section contains the function reference documentation for proprietary *revo
 
 You can use these libraries and functions in combination with other open source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that has a Microsoft R installation.
 
-**Supported platforms:** Hadoop Spark, Hadoop MapReduce, Linux, Windows, SQL Server (Windows only).
+| Library details | |
+|--------|-|
+| Supported platforms: | Hadoop MapReduce</br>Hadoop Spark</br>Linux</br> SQL Server (Windows only)</br>Windows|
+| Built on: | R 3.3.0 (included when you [install a product](#how-to-install) that provides this package). |
 
-**Built on:** R 3.3.0 (included when you install a product that provides this package).
-
-## Function libraries
+## R function libraries
 
 |Package | Version | Description |
 |--------|---------|-------------|
@@ -52,6 +53,8 @@ You can use these libraries and functions in combination with other open source 
 |[sqlrutils](sqlrutils/sqlrutils.md) | 1.0.0 | A collection of functions for executing stored procedures against SQL Server.|
 
 <sup> 1 </sup> Learn more about this package by typing ?"packagename" in the RGUI.exe console window or in the R Help page in your preferred R IDE, such as **R Tools for Visual Studio**.
+
+<a name="how-to-install"></a>
 
 ## How to get packages
 
