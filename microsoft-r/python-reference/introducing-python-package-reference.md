@@ -29,9 +29,10 @@ ms.custom: ""
 
 This section contains the Python reference documentation for two proprietary packages from Microsoft used for data science at scale and machine learning, respectively.  
 
-**Supported platforms:** SQL Server 2017 (Windows only). Additional platforms and compute contexts are planned for future releases.
-
-**Built on:** [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). 
+| Library details | |
+|--------|-|
+| Supported platforms: | SQL Server 2017 (Windows only). Additional platforms and compute contexts are planned for future releases.|
+| Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python libraries
 
@@ -40,10 +41,12 @@ This section contains the Python reference documentation for two proprietary pac
 |[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.2.0 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to your data residing in SQL Server. |
 |[microsoftml](microsoftml/microsoftml-package.md)| 1.4.0 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
 
-You can use the modules together or individually. You can also use any 35-compatible Python module and call its functions from Python code you run on SQL Server.
+You can use the modules together or individually. You can also use any 3.5-compatible Python module and call its functions from Python code you run on SQL Server.
 
 > [!Note]
-> Developers who are familiar with Microsoft R packages might notice similarities in the functions provided in revoscaley and microsoftmo. Conceptually, revoscalepy and microsftml are the Python equivalents of the RevoScaleR R package and the MicrosoftML R package, respectively.
+> Developers who are familiar with Microsoft R packages might notice similarities in the functions provided in revoscalepy and microsoftml. Conceptually, revoscalepy and microsftml are the Python equivalents of the RevoScaleR R package and the MicrosoftML R package, respectively.
+
+<a name="how-to-install"></a>
 
 ## How to get packages
 

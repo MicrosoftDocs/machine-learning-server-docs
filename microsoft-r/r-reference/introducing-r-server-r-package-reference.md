@@ -46,7 +46,7 @@ You can use these libraries and functions in combination with other open source 
 |RevoIOQ | 8.0.6 | Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (<sup> 1 </sup>). |
 |RevoMods | 11.0.0 | Microsoft modifications and extensions to standard R functions. Reference documentation is online only (<sup> 1 </sup>).  |
 |[RevoPemaR](revopemar/pemar.md) | 10.0.0 | Developer functions for coding custom parallel external memory algorithms. |
-|[RevoScaleR](~/r-reference/revoscaler/revoscaler.md) | 9.1.0 | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](../what-is-microsoft-r-server.md) functionality. |
+|[RevoScaleR](revoscaler/revoscaler.md) | 9.1.0 | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](../what-is-microsoft-r-server.md) functionality. |
 |RevoTreeView | 10.0.0 | Decision tree functions, including the **rxDTree** function. Reference documentation is online only (<sup> 1 </sup>). |
 |[RevoUtils](revoutils/revoutils.md) | 10.0.3 | Utility functions useful when programming and developing R packages.|
 |RevoUtilsMath | 10.0.0 | Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (<sup> 1 </sup>). |
@@ -98,8 +98,13 @@ For a list of deprecated or discontinued functions within an existing package, s
 
 First, read the introduction to each package to learn about common use case scenarios:
 
-+ [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
-+ [microsoftmlpackage for Python](microsoftml/microsoftml-package.md) 
++ [MicrosoftML](microsoftml/microsoftml-package.md) 
++ [mrsdeploy](mrsdeploy/mrsdeploy-package.md)   
++ [olapR](olapr/olapr.md)   
++ [RevoPemaR](revopemar/pemar.md)   
++ [RevoScaleR](revoscaler/revoscaler.md)  
++ [RevoUtils](revoutils/revoutils.md)   
++ [sqlrutils](sqlrutils/sqlrutils.md)   
 
 Next, add these the packages by installing [R Client](../r-client/what-is-microsoft-r-client.md) or [R Server](../what-is-microsoft-r-server.md). R Client is free. R Server developer edition is also free.
 
