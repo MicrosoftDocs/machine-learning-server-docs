@@ -35,6 +35,8 @@ You can use these libraries and functions in combination with other open source 
 
 **Built on:** R 3.3.0 (included when you install a product that provides this package).
 
+## Function libraries
+
 |Package | Version | Description |
 |--------|---------|-------------|
 |[MicrosoftML](microsoftml/microsoftml-package.md) | 1.3.0  | A collection of functions in Microsoft R used for machine learning at scale.|

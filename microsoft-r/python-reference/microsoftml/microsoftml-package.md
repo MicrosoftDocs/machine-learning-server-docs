@@ -28,11 +28,11 @@ ms.custom: ""
 
 The **microsoftml** module is a collection of Python functions used in machine learning workloads. It includes functions for training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.
 
-| Package detail | |
+| Package details | |
 |--------|-|
 | Version: |  1.3.4 |
 | Supported on: | [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
-| **Built on:** | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
+| Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 ## How to use microsoftml
 
@@ -44,14 +44,6 @@ There are two primary use cases for this release:
 + Calling **microsoftml** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **microsoftml** operations to a remote SQL Server instance that has the **microsoftml** interpreter.
 
 Setup adds Python 3.5 to your path. You can use Python as you would normally, calling functions from any 35-compatible module you have installed on the computer.
-
-## keep
-
-**Version:** 1.3.4
-
-**Supported on:** [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
-
-**Built on:** [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). 
 
 ## Functions by category
 

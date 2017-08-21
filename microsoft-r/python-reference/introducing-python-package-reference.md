@@ -35,7 +35,7 @@ This section contains the Python reference documentation for two proprietary pac
 
 ## Python libraries
 
-|Modules | Version | Description |
+|Module | Version | Description |
 |--------|---------|-------------|
 |[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.2.0 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to your data residing in SQL Server. |
 |[microsoftml](microsoftml/microsoftml-package.md)| 1.4.0 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
