@@ -60,7 +60,7 @@
 #### [Evaluate capacity](operationalize/configure-evaluate-capacity.md)
 #### [Authentication](operationalize/configure-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/configure-https.md)
-#### [Permissions (RBAC)](operationalize/configure-roles.md)
+#### [Roles & Permissions (RBAC)](operationalize/configure-roles.md)
 #### [CORS](operationalize/configure-cors.md)
 #### [R execution security](operationalize/configure-r-execution-security.md)
 #### [Manage R packages](operationalize/configure-manage-r-packages.md)

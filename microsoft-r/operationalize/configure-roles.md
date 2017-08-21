@@ -28,18 +28,18 @@ ms.technology:
 
 **Applies to:  Microsoft R Server 9.1**
 
-By default, authenticated R Server  users can publish, list, and get any web services. Additionally, users can also update and delete the web services they have deployed.
+By default, all authenticated Machine Learning Server (and R Server) users can publish/deploy, list, and get any web services as well as call all APIs. Additionally, users can also update and delete the web services they have deployed.
 
-You can use roles to further control who can publish, update, and delete web services in R Server. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method is configured for R Server. For more on configuring authentication for R Server, read the article, ["Authentication options."](configure-authentication.md)
+You can use roles to further control who can call the APIs and publish/deploy, update, and delete web services. There are several standard roles, each of which has different permissions. How users are put assigned to roles depends on what authentication method is configured for R Server. For more on configuring authentication, read the article, ["Authentication options."](configure-authentication.md)
 
 >[!IMPORTANT]
->**These roles are not the same as RBAC in Azure Active Directory.** While the default roles described here-in bear the same names as the roles you can define in Azure, it is not possible to inherit the Azure roles. If you want role-based access control over web services, you must set up roles again.
+>**These roles are not the same as RBAC in Azure Active Directory.** While the default roles described here-in bear the same names as the roles you can define in Azure, it is not possible to inherit the Azure roles. If you want role-based access control over web services and APIs, you must set up roles again.
 
 ## What do I need?
 
-To assign groups of users in your Active Directory to R Server roles for web services, you must have:
+To assign groups of users in your Active Directory to Machine Learning Server roles, you must have:
 
-+ An instance of Microsoft R Server that is [configured to operationalize analytics](../install/operationalize-r-server-enterprise-config.md)
++ An instance of Machine Learning Server that is [configured to operationalize analytics](../install/operationalize-r-server-enterprise-config.md)
 
 + Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](configure-authentication.md)
 
@@ -50,10 +50,15 @@ To assign groups of users in your Active Directory to R Server roles for web ser
 In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
 You can leverage the AD groups you have already defined in your organization to assign a collection of users to roles for web services. 
 
-In R Server, the administrator can assign one or more Active Directory groups to either the "Owner" or "Contributor" roles or both. Roles give specific permissions related to deploying and interacting with web services:
-+ `Owner`: users assigned to this role can manage any service.
-+ `Contributor`: users assigned to this role can publish and manage their services. They cannot manage the services of others.
-+ `Reader`: a catchall role implicitly given to any authenticated user that is not assigned another role. It is never explicitly declared. See next table. These users can only list and consume services.
+In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services:
++ `Owner`: users assigned to this role can manage any service and call any API, including centralized configuration APIs.
+
++ `Contributor`: users assigned to this role can publish/deploy a service and manage that service. They can also call most APIs. They cannot, however, access the centralized configuration APIs, nor can they manage the services of others.
+
++ `Reader`: 
+    + In Machine Learning Server 9.2+, users assigned to this role can list and consume any web service as well as call most other APIs. They cannot, however, access the centralized configuration APIs, nor the publish/deploy/update/delete APIs. 
+
+    + In R Server 9.1, this is a catchall role implicitly given to any authenticated user that is not assigned another role. It is never explicitly declared. See next table. These users can only list and consume services.
 
 A user can belong to multiple groups, and therefore it is possible to be assigned multiple roles and all of their permissions.
 
@@ -66,15 +71,15 @@ With AD/LDAP, you can **further restrict which users can log in and call APIs** 
 "UniqueUserIdentifierAttributeName": "sAMAccountName",
 ```
  
-## Roles for web service interactions
+## Roles 
 
 When roles are declared in the configuration file, the administrator has the choices of putting groups (of users) into these roles.
 
-|Role |Can do with<br>web services |Cannot do with<br>web services|
+|Role |Description|Permitted|Restricted|
 |-------------|------------|-----------------|---------------------|
-|`Owner` |● Publish any service, including new versions<br>&nbsp;&nbsp; of web services published by someone else <br>● Update any service <br>● Delete any service <br>● List all services <br>● Consume any service |N/A| 
-|`Contributor` |● Publish any service, including new versions<br>&nbsp;&nbsp; of web services published by someone else <br>● Update their services <br>● Delete their services <br>● List all services <br>● Consume any service|● Update service published by someone else<br>● Delete service published by someone else| 
-|`Reader`|● List all services<br>● Consume any service|● Publish any service <br>● Update any service <br>● Delete any service|
+|`Owner` |These users can manage any service and call any API, including centralized configuration APIs.|Web service APIs:<br>&nbsp;&#x2714; Publish **any** service<br>&nbsp;&#x2714; Update **any** service <br>&nbsp;&#x2714; Delete **any** service <br>&nbsp;&#x2714; List **any** service <br>&nbsp;&#x2714; Consume **any** service<br><br>Other APIs:<br>&nbsp;&#x2714; Call **any** other API|No API restrictions<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;| 
+|`Contributor` |These users can publish/deploy services and manage the services they publish. They can also call most other APIs. |Web service APIs:<br>&nbsp;&#x2714; Publish **any** service <br>&nbsp;&#x2714; Update their services <br>&nbsp;&#x2714; Delete their services <br>&nbsp;&#x2714; List **any** service <br>&nbsp;&#x2714; Consume **any** service<br><br>Other APIs:<br>&nbsp;&#x2714; Call almost any other API|<br>&nbsp;<br>&nbsp;<br>&nbsp;&#x2716; Update service published by another<br>&nbsp;&#x2716; Delete service published by another<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;&#x2716; Centralized node configuration (v9.2+)| 
+|`Reader`|In Machine Learning Server 9.2+, these users can list and consume any web service as well as call most, but not all, other APIs.  <br><br>In R Server 9.1, this is a catchall role implicitly given to any authenticated user that is not assigned another role. These users can only list and consume services. The role is never explicitly declared. |Web service APIs:<br>&nbsp;&#x2714; List **any** service<br>&nbsp;&#x2714; Consume **any** service<br><br>Other APIs:<br>&nbsp;&#x2714; Call almost any other APIs|<br>&nbsp;&#x2716; Publish **any** service <br>&nbsp;&#x2716; Update **any** service <br>&nbsp;&#x2716; Delete **any** service<br>&nbsp;<br>&nbsp;&#x2716; Centralized node configuration (v9.2+)|
 
 ## Role configuration states
 
