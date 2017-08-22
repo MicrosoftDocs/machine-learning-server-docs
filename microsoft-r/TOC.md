@@ -231,13 +231,6 @@
 ## [microsoftml.rx_predict](proto/rx-predict.md)
 ## [revoscalepy.rx_import](proto/rx-import.md)
 
-# Prototype Landing Pages
-## [azure-ml-model-management-sdk package](proto/azuremlmdsdk-package.md)
-## [olapR package](r-reference/olapr/olapr.md)
-## [MicrosoftML package (R)](r-reference/microsoftml/microsoftml-package.md)
-## [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md)
-## [RevoScaleR](r-reference/revoscaler/revoscaler.md)
-
 # [Python Function Reference](python-reference/introducing-python-package-reference.md)
 ## [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 ## [microsoftml for Python](python-reference/microsoftml/microsoftml-package.md)
@@ -322,10 +315,9 @@
 ###[setPemaClass](r-reference/revopemar/setpemaclass.md)
 
 ## [RevoScaleR](r-reference/revoscaler/revoscaler.md)
-### [Overview: Common ScaleR Functions](r-reference/revoscaler/revoscaler.md)
-### [Overview: Base R & ScaleR Function Comparisons](r-reference/revoscaler/revoscaler-compared-to-base-r.md)
-### [Overview: ScaleR functions for Teradata](r-reference/revoscaler/revoscaler-teradata-functions.md)
-### [Overview: ScaleR functions for Hadoop](r-reference/revoscaler/revoscaler-hadoop-functions.md)
+### [Comparison of Base R to RevoScaleR](r-reference/revoscaler/revoscaler-compared-to-base-r.md)
+### [RevoScaleR for Teradata compute context](r-reference/revoscaler/revoscaler-teradata-functions.md)
+### [RevoScaleR for for Hadoopcompute context](r-reference/revoscaler/revoscaler-hadoop-functions.md)
 ### [Functions by category](r-reference/revoscaler/revoanalytics-package.md) 
 ### [RevoScaleR-defunct](r-reference/revoscaler/revoscaler-defunct.md) 
 ### [RevoScaleR-deprecated](r-reference/revoscaler/revoscaler-deprecated.md)

@@ -38,7 +38,15 @@ The **RevoScaleR** library provides a set of over one hundred portable, scalable
 
 This package is included in installations of...   It is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. Run the following commands in the order shown below to load the library, get the version, and run one of its signature commands.
 
-In an R session, load **RevoScaleR** from the command line by typing`library(RevoScaleR)`.
+In an R session, load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
+
+## Old
+
+A package that provides high performance, scalable, portable, parallelized, full-featured predictive and descriptive analytics in R. Its high performance analytics (HPA) algorithms are threaded and distributable and scale from small to huge data. It also provides high performance computing (HPC) capabilities. 
+
+Its HPA algorithms include descriptive statistics, cross-tabulations, linear regression, covariance and correlation matrices, logistic regression, generalized linear models, k-means clustering, classification and regression trees, and decision forests. Its HPC functionality allows distribution of the execution of essentially any R function across cores and nodes, delivering the results back to the user.
+
+Analyses can be distributed automatically on Hadoop clusters (using distributions from Cloudera, Hortonworks, or MapR), HDInsight clusters with Spark, in SQL Server 2016 databases, and in Teradata data warehouses. RevoScaleR also provides support for data import, data transformations, sorting, merging, and reading and writing to the RevoScaleR data file format (.xdf) on appropriate platforms. 
 
 ### Scope
 

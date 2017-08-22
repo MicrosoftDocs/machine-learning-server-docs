@@ -73,6 +73,8 @@ Ships in:
 
 To get the version of an R package installed on your computer, open an R console application and execute the following command: `installed.packages()`
 
+To determine the version of the package, open its help page to view the version number just under the title: `library(help="<package-name>")`
+
 ## How to view built-in help pages
 
 Most R packages come with built-in help pages that open in separate window.
