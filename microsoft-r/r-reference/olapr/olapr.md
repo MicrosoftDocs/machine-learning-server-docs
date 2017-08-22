@@ -1,13 +1,13 @@
 --- 
  
 # required metadata 
-title: "OlapR package for R (Microsoft Machine Learning Server) | Microsoft Docs" 
-description: "Function help reference for the olapR R package of Microsoft Machine Learning Server. It is used to import data from OLAP cubes stored in SQL Server Analysis Services into R." 
+title: "OlapR package for R (Microsoft R Server) | Microsoft Docs" 
+description: "Function help reference for the olapR R package of Microsoft R Server, used to import data from OLAP cubes stored in SQL Server Analysis Services into R." 
 keywords: "olapR" 
-author: "richcalaway"
-ms.author: "richcala" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
-ms.date: "07/05/2017" 
+ms.date: "08/22/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

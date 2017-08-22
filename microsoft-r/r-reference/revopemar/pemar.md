@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: " RevoPemaR: Parallel External Memory Algorithms in R" 
+title: " RevoPemaR: Parallel External Memory Algorithms in R | Microsoft Docs" 
 description: "A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes." 
 keywords: "RevoPemaR, RevoPemaR-package, package" 
 author: "HeidiSteen"

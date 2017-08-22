@@ -1,13 +1,13 @@
 --- 
  
 # required metadata 
-title: "MicrosoftML package for R (Microsoft Machine Learning Server) | Microsoft Docs" 
-description: "Function help reference for the MicrosoftML R package of Microsoft Machine Learning Server." 
+title: "MicrosoftML package for R (Microsoft R Server) | Microsoft Docs" 
+description: "Function help reference for the MicrosoftML R package of Microsoft R." 
 keywords: "MicrosoftML-package, package" 
 author: "bradsev"
 ms.author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "06/20/2017" 
+ms.date: "08/22/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

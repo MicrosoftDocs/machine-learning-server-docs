@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "sqlrutils Functions"
+title: "sqlrutils Functions R Package for Microsoft R | Microsoft Docs"
 description: "A package used for executing stored procedures on SQL Server from R script."
 keywords: "sqlrutils package reference"
-author: "richcalaway"
-ms.author: "richcala"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "08/21/2017"
+ms.date: "08/22/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
