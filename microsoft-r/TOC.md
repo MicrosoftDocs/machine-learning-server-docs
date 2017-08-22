@@ -53,7 +53,7 @@
 #### [Get started for admins](operationalize/configure-start-for-administrators.md)
 #### [Configure: One-box](install/operationalize-r-server-one-box-config.md)
 #### [Configure: Enterprise](install/operationalize-r-server-enterprise-config.md)
-#### [Troubleshoot](operationalize/configure-run-diagnostics.md)
+#### [Diagnostics & Troubleshooting](operationalize/configure-run-diagnostics.md)
 #### [Administration utility](operationalize/configure-use-admin-utility.md)
 #### [Find advanced config file](operationalize/configure-find-admin-configuration-file.md)
 #### [Database setup](operationalize/configure-remote-database-to-operationalize.md)

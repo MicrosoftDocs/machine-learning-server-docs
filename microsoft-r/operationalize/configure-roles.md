@@ -52,7 +52,7 @@ To assign groups of users in your Active Directory to Machine Learning Server ro
 In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
 You can leverage the AD groups you have already defined in your organization to assign a collection of users to roles for web services. 
 
-In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. A user can belong to multiple groups, and therefore it is possible to be assigned multiple roles and all of their permissions. For more information on the roles in Machine Learning Server and R Server, see **"Available Roles"**.
+In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. A user can belong to multiple groups, and therefore it is possible to be assigned multiple roles and all of their permissions. For more information on the roles in Machine Learning Server and R Server, see the next section.
 
 When a user attempts to authenticate, the server checks to see whether you have declared roles. If you have, then Machine Learning Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned. For more information, see **"Role configuration states"**.
 
@@ -87,7 +87,7 @@ The following table explains which permissions are assigned to any authenticated
 |- Contributor + Owner &nbsp;_-or-_<br>- Contributor only|Reader|
 |- Reader + Contributor + Owner &nbsp;_-or-_<br>- Reader + Owner &nbsp;_-or-_<br>- Reader only|In v9.2+, all API access denied.<br>In v9.1, not applicable since Reader is never declared.|
 
-## Assign roles to AD/LDAP and Azure AD users
+## Assign roles to AD/LDAP & AAD users
 
 If you configure Machine Learning Server (or R Server) to [use Active Directory/LDAP or Azure Active Directory authentication](configure-authentication.md), then you can assign roles using Active Directory groups as follows:
 
@@ -197,7 +197,7 @@ Authentication: {
 }
 ```
 
-## Assign a role to the 'admin' account
+## Assign roles to the 'admin' account
 
 If only the default local administrator account is defined for Machine Learning Server (or R Server), then roles are not needed. In this case, the 'admin' user is implicitly assigned to the Contributor role.
 
