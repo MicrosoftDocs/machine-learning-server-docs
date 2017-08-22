@@ -47,7 +47,7 @@ To assign groups of users in your Active Directory to Machine Learning Server ro
 
 + The names of the groups that contain the users to whom you want to give special permissions
 
-## Groups versus roles for web services
+## Groups versus roles for access
 
 In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
 You can leverage the AD groups you have already defined in your organization to assign a collection of users to roles for web services. 
