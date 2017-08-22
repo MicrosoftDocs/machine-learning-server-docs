@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "RevoScaleR package for R (Microsoft Machine Learning Server) | Microsoft Docs"
-description: "Function help reference for the RevoScaleR R package of Microsoft Machine Learning Server"
+title: "RevoScaleR package for R | Microsoft Docs"
+description: "Function help reference for the RevoScaleR R package of Microsoft R"
 keywords: "RevoScaleR, ScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "06/22/2016"
+ms.date: "08/22/2016"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -25,21 +25,20 @@ ms.technology: "r-server"
 
 # RevoScaleR package for R
 
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services**](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)**](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
-
 The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis functions.
+
+| Package details | |
+|--------|-|
+| Version: |  9.1.0 |
+| Supported on: | [Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 
 ## How to use RevoScaleR
 
 This package is included in installations of...   It is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. Run the following commands in the order shown below to load the library, get the version, and run one of its signature commands.
 
-$ install.library(RevoScaleR)
-$ print.version(Revo)
-$ rxSummary****
-
-> [!Note]
-> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
+In an R session, load **RevoScaleR** from the command line by typing`library(RevoScaleR)`.
 
 ### Scope
 
@@ -47,6 +46,9 @@ While most of these functions are of general application, some are specific to p
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)
 + [Computing on a Teradata Datawarehouse](revoscaler-teradata-functions.md)
 + [Computing on SQL Server](https://msdn.microsoft.com/en-us/library/mt652103.aspx)
+
+> [!Note]
+> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
 
 ## Data Analysis Functions
 <!--<br />
@@ -953,133 +955,38 @@ These functions and many more can be used for high performance computing and dis
 <small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
 
 <br />
+
+
 ##Utility Functions
 
->Not all of these functions will work if you switch your compute context to Hadoop, Teradata, or SQL Server.
+Some of the utility functions are operational in local compute context only. Check the documentation for individual functions to confirm.
 
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="200px">`rxOptions`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Gets or sets `RevoScaleR`-specific options.</td>
-        <td>
-            <center><small>[**View**](rxoptions.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetOption`</td>
-                <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Retrieves a specific `RevoScaleR`-option.</td>
-        <td>
-            <center><small>[**View**](rxoptions.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetEnableThreadPool`</td>
-        <td> </td>
-        <td>Gets the current state of the thread pool, which on Linux can be either persistent or on-demand.</td>
-        <td>
-            <center><small>[**View**](rxgetenablethreadpool.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSetEnableThreadPool`</td>
-        <td> </td>
-        <td>Sets the thread pool state.</td>
-        <td>
-            <center><small>[**View**](rxgetenablethreadpool.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxStepControl`</td>
-        <td> </td>
-        <td>Construct `variable.selection` argument for `rxLinMod`.</td>
-        <td>
-            <center><small>[**View**](rxstepcontrol.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxIsOpen`</td>
-        <td> </td>
-        <td>Indicates whether a data source can be accessed.</td>
-        <td><center><small>[**View**](rxopen-methods.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSqlServerDropTable`</td>
-        <td> </td>
-        <td>Execute an SQL statement that drops a table.</td>
-        <td><center><small>[**View**](rxsqlserverdroptable.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSqlServerTableExists`</td>
-        <td> </td>
-        <td>Execute an SQL statement that checks for a table's existance.</td>
-        <td><center><small>[**View**](rxsqlserverdroptable.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxWriteNext`</td>
-        <td> </td>
-        <td>Writes the next chunk when moving data between ScaleR data sources.</td>
-        <td><center><small>[**View**](rxopen-methods.md)</small></center>
-        </td>
-    </tr>
-</table>
+| Function name | Description |
+|---------------|-------------|
+|[rxOptions](rxoptions.md) <sup>*</sup>| |
+|[rxGetOption](rxoptions.md) <sup>*</sup>|Retrieves a specific RevoScaleR option. |
+|[rxGetEnableThreadPool](rxgetenablethreadpool.md) |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand. |
+|[rxSetEnableThreadPool](rxgetenablethreadpool.md) |Sets the thread pool state. |
+|[rxStepControl](rxstepcontrol.md) | Construct `variable.selection` argument for rxLinMod.|
+|[rxIsOpen](rxopen-methods.md) | Indicates whether a data source can be accessed.|
+|[rxSqlServerDropTable](rxsqlserverdroptable.md) |Execute an SQL statement that drops a table. |
+|[rxSqlServerTableExists]((rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existance. |
+|[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between ScaleR data sources.|
 
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
-
-<br />
-<br />
-
-<a name="findmore"></a>
-## Get help on RevoScaleR functions from the R console
-
-To see the **RevoScaleR** functions that can be called from the R console:
-
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
-2. Load `RevoScaleR` from the command line by typing `library(RevoScaleR)`.
-1. In the console, open the package help by typing the following at the R prompt: `help(package="RevoScaleR")`.
-1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
- 
-> [!NOTE]
-> To list all public functions, type library(help="RevoScaleR") at the R prompt.
->
-
-**Search for an object**
-
-1. In an R console, return a numbered list of objects by typing the following at the R prompt `>`:
-   ```
-   > search()
-   ```
-
-2. Identify the position of the object you are interested in. You should see RevoScaleR in the list.
-
-   ![objects](./media/revoscaler/scaler-rconsole-obj.png)
-
-3. At the R prompt, type `objects(<position>)` to reveal the set of functions such as:
-   ```
-   > objects(5)
-   ```
-4. Use `?<function_name>` to open the help page for that function.
+<sup>*</sup> Signifies the most popular functions in this category.
 
 ## Next steps
 
-For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
+Add R packages to your computer by running setup for R Server or R Client: 
+
++ [R Client](../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../what-is-microsoft-r-server.md)
+
+Next, follow these tutorials for hands on experience::
+
++ [Explore R and RevoScaleR in 25 functions](../r/tutorial-r-to-revoscaler.md)  
++ [Quickstart: Run R Code in Microsoft R](../r/quickstart-run-r-code.md)
 
 ## See also
 
- [Python function library help (Machine Learning Server)](../introducing-python-package-reference.md)  
+ [R Package Reference](../introducing-r-server-r-package-reference.md) 
