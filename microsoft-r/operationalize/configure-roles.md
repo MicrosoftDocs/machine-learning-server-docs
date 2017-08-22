@@ -75,7 +75,7 @@ When roles are declared in the configuration file, the administrator has the cho
 
 ## Role configuration states
 
-Keep in mind that the permissions assigned to users is influenced not only by the roles you define, but also by the roles you do not define. When one or more role is not defined, then certain permissions are implicitly assumed. By default, no roles are declared. 
+Keep in mind that the permissions assigned to users are influenced not only by the roles you define, but also by the roles you do not define. When one or more roles is not defined, then certain permissions are implicitly assumed. By default, no roles are declared. 
 
 The following table explains which permissions are assigned to any authenticated user that is not explicitly assigned a role. 
 <br>
@@ -87,16 +87,6 @@ The following table explains which permissions are assigned to any authenticated
 |- Contributor + Owner &nbsp;_-or-_<br>- Contributor only|Reader|
 |- Reader + Contributor + Owner &nbsp;_-or-_<br>- Reader + Owner &nbsp;_-or-_<br>- Reader only|In v9.2+, all API access denied.<br>In v9.1, not applicable since Reader <br>is never declared.|
 
-## Web service permissions after role change
-
-A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to an Machine Learning Server (or R Server) role in the appsettings.json file anymore. 
-
-Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you still are allowed to interact with that web service version as you did before, but you cannot update or delete the services published by others. Now, if roles are defined for users, but you are no longer assigned to one of those roles, you become part of the "Reader" role implicitly and can no longer manage any services, including those that you published previously when you had another role. 
-
-## Assign a role to the 'admin' account
-
-If only the default local administrator account is defined for Machine Learning Server (or R Server), then roles are not needed. In this case, the 'admin' user is implicitly assigned to the Contributor role.
-
 ## Assign roles to AD/LDAP and Azure AD users
 
 If you configure Machine Learning Server (or R Server) to [use Active Directory/LDAP or Azure Active Directory authentication](configure-authentication.md), then you can assign roles using Active Directory groups as follows:
@@ -105,19 +95,23 @@ If you configure Machine Learning Server (or R Server) to [use Active Directory/
 
 On each web node, edit the appsettings.json configuration file in order to declare the roles and the groups that belong to them. 
 
-1. Open [the `appsetting.json` file](configure-find-admin-configuration-file.md) on each web node.
+1. Open [the appsetting.json file](configure-find-admin-configuration-file.md) on each web node.
 
 1. Search for the following section: `"Authorization": {`
 
 1. In that section, add the roles you need. Then, map one or more security groups to each role such as:
-
-   ```"Authorization": {```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Owner": [ "Administrators" ],```<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;```"Contributor": [ "RProgrammers", "Quality" ]```<br>```}``` 
+   ```
+   "Authorization": {
+     "Owner": [ "Administrators" ],
+     "Contributor": [ "RProgrammers", "Quality" ]
+   }
+   ``` 
 
    >[!WARNING]
    >For AD/LDAP authentications:
-   >1. Be careful not to use the `CN=` portion of the distinguished names. For example, if the distinguished name appears as `CN=Administrators`, enter only `Administrators` here.
+   >1. Be careful not to use the 'CN=' portion of the distinguished names. For example, if the distinguished name appears as 'CN=Administrators', enter only 'Administrators' here.
    
-   >2. Ensure that the username returned for the value of `UniqueUserIdentifierAttributeName` matches the username returned by `SearchFilter`. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.
+   >2. Ensure that the username returned for the value of 'UniqueUserIdentifierAttributeName' matches the username returned by 'SearchFilter'. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.
    
 <!--#### Step 2. Allow R Server to check groups in Azure Active Directory
 
@@ -152,9 +146,9 @@ R Server must be given the ability to verify the groups you declare against thos
 
 #### Step 2. Validate groups against AD/LDAP or AAD
 
-Return to [the `appsetting.json` file](configure-find-admin-configuration-file.md) on each web node and do the following:
+Return to [the appsetting.json file](configure-find-admin-configuration-file.md) on each web node and do the following:
 
-+ **For Azure Active Directory:** In appsettings.json, find the `"AzureActiveDirectory"` section. Make sure the alphanumeric client key you created in the portal **for the web app** is used for `"Key": ` property. This key allows Machine Learning Server to verify that the groups you've declared are valid in AAD. See following example. Learn more about [configuring Machine Learning Server to authenticate with Azure Active Directory](configure-authentication.md#aad).
++ **For Azure Active Directory:** In appsettings.json, find the "AzureActiveDirectory" section. Make sure the alphanumeric client key you created in the portal **for the web app** is used for "Key": property. This key allows Machine Learning Server to verify that the groups you've declared are valid in AAD. See following example. Learn more about [configuring Machine Learning Server to authenticate with Azure Active Directory](configure-authentication.md#aad).
 
   >[!IMPORTANT]
   > For more security, we recommend you [encrypt the key](configure-use-admin-utility.md#encrypt) before adding the information to appsettings.json.
@@ -162,7 +156,7 @@ Return to [the `appsetting.json` file](configure-find-admin-configuration-file.m
   >[!NOTE]
   > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD provides an overage claim in the token it returns. This claim along with the key you provide here allows Machine Learning Server to retrieve the group memberships for the user.
 
-+ **For Active Directory/LDAP:** In appsettings.json, find the `"LDAP"` section.  In order for the server to verify that the groups you have declared are valid in AD/LDAP, you must provide the `QueryUserDn` and `QueryUserPassword` in the `"LDAP"` section. See the following example. This allows Machine Learning Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring Machine Learning Server  to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
++ **For Active Directory/LDAP:** In appsettings.json, find the "LDAP" section.  In order for the server to verify that the groups you have declared are valid in AD/LDAP, you must provide the QueryUserDn and QueryUserPassword in the "LDAP" section. See the following example. This allows Machine Learning Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring Machine Learning Server  to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
 
 
 #### Step 3. Apply the changes to Machine Learning Server / R Server
@@ -202,6 +196,16 @@ Authentication: {
    "Contributor": [ "RProgrammers", "Quality" ]      
 }
 ```
+
+## Assign a role to the 'admin' account
+
+If only the default local administrator account is defined for Machine Learning Server (or R Server), then roles are not needed. In this case, the 'admin' user is implicitly assigned to the Contributor role.
+
+## Web service permissions after role change
+
+A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to an Machine Learning Server (or R Server) role in the appsettings.json file anymore. 
+
+Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you still are allowed to interact with that web service version as you did before, but you cannot update or delete the services published by others. Now, if roles are defined for users, but you are no longer assigned to one of those roles, you become part of the "Reader" role implicitly and can no longer manage any services, including those that you published previously when you had another role. 
 
 ## See Also
 
