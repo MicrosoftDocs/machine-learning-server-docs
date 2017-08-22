@@ -25,7 +25,9 @@ ms.technology: "r-server"
 
 # RevoScaleR package for R
 
-The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis functions.
+The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis R functions that run on the **RevoScaleR** interpreter built on open source R and extended to accommodate high performance computing (HPC) and analysis (HPA).
+
+HPA algorithms include descriptive statistics, cross-tabulations, linear regression, covariance and correlation matrices, logistic regression, generalized linear models, k-means clustering, classification and regression trees, and decision forests. HPC functionality is enabled on Hadoop processing frameworks (Spark and MapReduce) for distributed execution of essentially any R function across cores and nodes, delivering the results back to the user.
 
 | Package details | |
 |--------|-|
@@ -33,32 +35,22 @@ The **RevoScaleR** library provides a set of over one hundred portable, scalable
 | Supported on: | [Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
-
 ## How to use RevoScaleR
 
-This package is included in installations of...   It is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. Run the following commands in the order shown below to load the library, get the version, and run one of its signature commands.
+The **RevoScaleR** library is installed in all Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having Microsoft R.
 
-In an R session, load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
+**RevoScaleR** is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. 
 
-## Old
+If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
 
-A package that provides high performance, scalable, portable, parallelized, full-featured predictive and descriptive analytics in R. Its high performance analytics (HPA) algorithms are threaded and distributable and scale from small to huge data. It also provides high performance computing (HPC) capabilities. 
-
-Its HPA algorithms include descriptive statistics, cross-tabulations, linear regression, covariance and correlation matrices, logistic regression, generalized linear models, k-means clustering, classification and regression trees, and decision forests. Its HPC functionality allows distribution of the execution of essentially any R function across cores and nodes, delivering the results back to the user.
-
-Analyses can be distributed automatically on Hadoop clusters (using distributions from Cloudera, Hortonworks, or MapR), HDInsight clusters with Spark, in SQL Server 2016 databases, and in Teradata data warehouses. RevoScaleR also provides support for data import, data transformations, sorting, merging, and reading and writing to the RevoScaleR data file format (.xdf) on appropriate platforms. 
-
-### Scope
-
-While most of these functions are of general application, some are specific to particular compute contexts and some may not be fully supported in all compute contexts. If you are looking for the functions optimized for Hadoop, Teradata, or SQL Server compute contexts, see the relevant function list for that context:
+Some functions in **RevoScaleR** are specific to particular compute contexts. A filtered list of functions include the following:
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)
-+ [Computing on a Teradata Datawarehouse](revoscaler-teradata-functions.md)
-+ [Computing on SQL Server](https://msdn.microsoft.com/en-us/library/mt652103.aspx)
++ [Computing on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/scaler-functions-for-working-with-sql-server-data)
 
 > [!Note]
 > Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
 
-## Data Analysis Functions
+## Data analysis functions
 <!--<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![import](./media/revoscaler/import.png)
@@ -84,8 +76,8 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
  + The [**compute context**](#compute), which specifies where the computations should take place
  + The [**data source**](#data), which is the data to be used
 
-<br />
-####Import and Export Functions
+
+### Import and export functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -115,7 +107,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-####Manipulation, Cleansing, and Transformation Functions
+### Data transformation functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -130,18 +122,16 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-####Visualization Functions
+### Basic graphing functions
 
 | Function name | Description |
 |---------------|-------------|
-|[rxHistogram](rxhistogram.md) <sup>*</sup> |Creates a histogram from data. | 
-|[rxLinePlot](rxlineplot.md) <sup>*</sup> |Creates a line plot from data. | 
+|[rxHistogram](rxhistogram.md)  |Creates a histogram from data. | 
+|[rxLinePlot](rxlineplot.md) |Creates a line plot from data. | 
 |[rxLorenz](rxlorenz.md)  |Computes a Lorenz curve which can be plotted. | 
 |[rxRocCurve](rxroc.md)  |Computes and plots ROC curves from actual and predicted data. | 
 
-<sup>*</sup> Signifies the most popular functions in this category.
-
-####Analysis Functions for Descriptive Statistics and Cross-Tabulations
+### Descriptive statistics and cross-tabulation
 
 | Function name | Description |
 |---------------|-------------|
@@ -160,7 +150,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-####Analysis, Learning, and Prediction Functions for Statistical Modeling
+### Prediction functions for statistical modeling
 
 | Function name | Description |
 |---------------|-------------|
@@ -183,16 +173,16 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <a name="compute"></a>
 
-##Compute Context Functions
+##Compute context functions
 
 | Function name | Description |
 |---------------|-------------|
-|[rxSetComputeContext](rxsetcomputecontext.md) <sup>*</sup>|Sets a compute context. |
-|[rxGetComputeContext](rxsetcomputecontext.md) <sup>*</sup>|Gets the current compute context. |
-|[RxHadoopMR](rxhadoopmr.md) <sup>*</sup>|Creates an in-data, file-based Hadoop compute context. |
-|[RxSpark](rxspark.md) <sup>*</sup>|Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. |
-|[RxInTeradata](rxinteradata.md) <sup>*</sup>|Creates an in-database compute context for Teradata. |
-|[RxInSqlServertd](rxinsqlserver.md) |Creates an in-database compute context for SQL Server. |
+|[rxSetComputeContext](rxsetcomputecontext.md) |Sets a compute context. |
+|[rxGetComputeContext](rxsetcomputecontext.md) |Gets the current compute context. |
+|[RxHadoopMR](rxhadoopmr.md) |Creates an in-data, file-based Hadoop compute context. |
+|[RxSpark](rxspark.md) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. |
+|[RxInTeradata](rxinteradata.md) <|Creates an in-database compute context for Teradata. |
+|[RxInSqlServer](rxinsqlserver.md) |Creates an in-database compute context for SQL Server. |
 |[RxComputeContext](rxcomputecontext.md) |Creates a compute context. |
 |[RxLocalSeq](rxlocalseq.md) |Creates a local compute context for rxExec using sequential computations. |
 |[RxLocalParallel](rxlocalparallel.md) |Creates a local compute context for rxExec using the ***parallel** package as backend. |
@@ -200,11 +190,9 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |[rxInstalledPackages](rxinstalledpackages.md) |Returns the list of installed packages for a compute context. |
 |[rxFindPackage](rxfindpackage.md) |Returns the path to one or more packages for a compute context. |
 
-<sup>*</sup> Signifies the most popular functions in this category.
-
 <a name="data"></a>
 
-##Data Source Functions
+## Data source functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -216,7 +204,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |[RxTeradata](rxteradata.md) |Creates a Teradata data source object. |
 |[RxSqlServerData](rxsqlserverdata.md) |Creates a SQL Server data source object. |
 
-##HPC and Distributed Computing Functions
+## HPC and distributed computing functions
 
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../r/how-to-revoscaler-distributed-computing.md).
 
@@ -236,14 +224,14 @@ These functions and many more can be used for high performance computing and dis
 |[rxGetJobs](rxgetjobs.md) |Get the available distributed computing job information objects. |
 |[rxLocateFile](rxlocatefile.md) |Get the first occurrence of a specified input file in a set of specified paths. |
 
-##Utility Functions
+##Utility functions
 
 Some of the utility functions are operational in local compute context only. Check the documentation of individual functions to confirm.
 
 | Function name | Description |
 |---------------|-------------|
-|[rxOptions](rxoptions.md) <sup>*</sup>| Gets or sets a specific option.|
-|[rxGetOption](rxoptions.md) <sup>*</sup>|Retrieves a specific RevoScaleR option. |
+|[rxOptions](rxoptions.md) | Gets or sets a specific option.|
+|[rxGetOption](rxoptions.md) |Retrieves a specific RevoScaleR option. |
 |[rxGetEnableThreadPool](rxgetenablethreadpool.md) |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand. |
 |[rxSetEnableThreadPool](rxgetenablethreadpool.md) |Sets the thread pool state. |
 |[rxStepControl](rxstepcontrol.md) | Construct a variable.selection argument for rxLinMod.|
@@ -252,7 +240,7 @@ Some of the utility functions are operational in local compute context only. Che
 |[rxSqlServerTableExists](rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existance. |
 |[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between ScaleR data sources.|
 
-<sup>*</sup> Signifies the most popular functions in this category.
+
 
 ## Next steps
 

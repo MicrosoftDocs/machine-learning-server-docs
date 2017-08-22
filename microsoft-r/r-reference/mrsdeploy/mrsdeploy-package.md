@@ -25,7 +25,6 @@ ms.technology: "r-server"
 
 # mrsdeploy package for R
  
-
 The **mrsdeploy** library provides functions for establishing a remote session in a console application and for publishing and managing a web service that is backed by the R code block or script you provided. Each capability can be used independently but the greatest value is achieved when you can leverage both. 
 
 | Package details | |

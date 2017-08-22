@@ -315,10 +315,10 @@
 ###[setPemaClass](r-reference/revopemar/setpemaclass.md)
 
 ## [RevoScaleR](r-reference/revoscaler/revoscaler.md)
-### [Comparison of Base R to RevoScaleR](r-reference/revoscaler/revoscaler-compared-to-base-r.md)
-### [RevoScaleR for Teradata compute context](r-reference/revoscaler/revoscaler-teradata-functions.md)
-### [RevoScaleR for for Hadoopcompute context](r-reference/revoscaler/revoscaler-hadoop-functions.md)
-### [Functions by category](r-reference/revoscaler/revoanalytics-package.md) 
+### [R to RevoScaleR comparison](r-reference/revoscaler/revoscaler-compared-to-base-r.md)
+### [Teradata functions](r-reference/revoscaler/revoscaler-teradata-functions.md)
+### [Hadoop functions](r-reference/revoscaler/revoscaler-hadoop-functions.md)
+### [SQL Server functions](https://docs.microsoft.com/sql/advanced-analytics/r/scaler-functions-for-working-with-sql-server-data)
 ### [RevoScaleR-defunct](r-reference/revoscaler/revoscaler-defunct.md) 
 ### [RevoScaleR-deprecated](r-reference/revoscaler/revoscaler-deprecated.md)
 ### Data sets
