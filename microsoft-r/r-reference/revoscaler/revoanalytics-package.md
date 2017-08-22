@@ -430,15 +430,9 @@ at the R prompt):
 
 
 * [rxHadoopVersion](rxhadoopcommand.md): Return the current Hadoop version.
-
-
-
-
- 
  
  ##See Also
  [rxFormula](rxformula.md), [rxTransform](rxtransform.md), [rxPackage](rxpackage.md)   
- ##Author(s)
- Microsoft Corporation 
+
  
  
