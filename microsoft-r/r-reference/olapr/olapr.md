@@ -27,25 +27,19 @@ ms.technology: "r-server"
  
 # olapR package for R
 
-
-Applies to: [**Microsoft Machine Learning Server**](../what-is-microsoft-r-server.md) version 9.2, [**SQL Server 2017 Machine Learning Services**](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services), [**SQL Server 2017 Machine Learning Server (Standalone)**](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
-
 The **olapR** library provides functions for importing data from OLAP cubes stored in SQL Server Analysis Services into R. It is only available in R Server for Windows.
- 
-##Description
 
-**olapR** provides a simple R style API for generating and validating MDX queries against a SQL Server Analysis Services cube. olapR does not provide APIs for all MDX scenarios, but it does cover the most use cases, including slice, dice, drilldown, rollup, and pivot scenarios in N dimensions. You can also input a direct MDX query to Analysis Services for queries that cannot be constructed using the olapR APIs.  
+| Package details | |
+|--------|-|
+| Version: |  1.0.0 |
+| Runs on: | [SQL Server 2016 R Services or SQL Server 2017 Machine Learning Services (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
+| Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
+## How to use olapR
 
-> [!Important]
-> olapR requires the Analysis Services OLE DB provider. If you do not have SQL Server Analysis Services installed on your computer, you can download the provider from Microsoft:
->[`https://msdn.microsoft.com/en-us/library/dn141152.aspx#Analysis Services OLE DB Provider`](https://msdn.microsoft.com/en-us/library/dn141152.aspx#Analysis Services OLE DB Provider)
->
->The exact version you should install for SQL Server 2016 is here:
->[`https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi`](https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi)
->
- 
- ##How to use olapR
+The **olapR** library provides a simple R style API for generating and validating MDX queries against a SQL Server Analysis Services cube. **olapR** does not provide APIs for all MDX scenarios, but it does cover the most use cases including slice, dice, drilldown, rollup, and pivot scenarios in N dimensions. You can also input a direct MDX query to Analysis Services for queries that cannot be constructed using the olapR APIs.  
+
+**Workflow for using olapR**
 
 To execute an MDX query on an OLAP Cube, you need to first create a connection string (`olapCnn`) and validate using the function `OlapConnection(connectionString)`. The connection string must have a Data Source (such as localhost) and a Provider (MSOLAP). 
 
@@ -55,7 +49,15 @@ Finally, pass the `olapCnn` and query into either `executeMD` or `execute2D` to 
 
 OLAP (Online Analytical Processing) cubes are essentially multi-dimensional spreadsheets. "Cubes" can extend to any number of dimensions, and can be operated using the MDX (MultiDimensional Expression) query language. 
 
-## Function library
+> [!Important]
+> **olapR** requires the Analysis Services OLE DB provider. If you do not have SQL Server Analysis Services installed on your computer, you can download the provider from Microsoft:
+>[`https://msdn.microsoft.com/en-us/library/dn141152.aspx#Analysis Services OLE DB Provider`](https://msdn.microsoft.com/library/dn141152.aspx#Analysis Services OLE DB Provider)
+>
+>The exact version you should install for SQL Server 2016 is here:
+>[`https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi`](https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi)
+>
+ 
+## Class library
 
 |Function | Description |
 |---------|-------------|
@@ -112,36 +114,23 @@ Using the Analysis Services Tutorial Olap cube, this MDX query selects the inter
  
 ```
 
-##References
- 
-OLAP Cubes: 
-[`https://en.wikipedia.org/wiki/OLAP_cube`](https://en.wikipedia.org/wiki/OLAP_cube)
-
-MDX queries: 
-[`https://en.wikipedia.org/wiki/MultiDimensional_eXpressions`](https://en.wikipedia.org/wiki/MultiDimensional_eXpressions)
-
-Creating a Demo OLAP Cube (the same as the one used in the examples): 
-[`https://msdn.microsoft.com/en-us/library/ms170208.aspx`](https://msdn.microsoft.com/en-us/library/ms170208.aspx)
-
-## Get help on olapR functions from the R console
-
-To see the **olapR** functions that can be called from the R console:
-
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
-2. Load `olapR` from the command line by typing `library(olapR)`.
-1. In the console, open the package help by typing the following at the R prompt: `help(package="olapR")`.
-1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
- 
-> [!NOTE]
-> To list all public functions, type library(help="olapR") at the R prompt.
->
-
 ## Next steps
 
-For more information on using this library, see our articles in [Quickstarts]() and [How-to guidance]().
+Add R packages to your computer by running setup for R Server or R Client: 
+
++ [R Client](../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../what-is-microsoft-r-server.md)
+
+For help with MDX concepts:
+
++ OLAP Cubes: [https://en.wikipedia.org/wiki/OLAP_cube](https://en.wikipedia.org/wiki/OLAP_cube)
+
++ MDX queries: [https://en.wikipedia.org/wiki/MultiDimensional_eXpressions](https://en.wikipedia.org/wiki/MultiDimensional_eXpressions)
+
++ Creating a Demo OLAP Cube (identical to examples): [https://msdn.microsoft.com/en-us/library/ms170208.aspx](https://msdn.microsoft.com/en-us/library/ms170208.aspx)  
 
 ## See also
 
  [R Package Reference](../introducing-r-server-r-package-reference.md) 
- [Install R Server](../../what-is-microsoft-r-server.md) 
- [Install R Client](../../r-client/what-is-microsoft-r-client.md)     
+
+

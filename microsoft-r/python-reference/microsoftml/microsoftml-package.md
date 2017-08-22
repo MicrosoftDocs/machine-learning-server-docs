@@ -49,7 +49,7 @@ Setup adds Python 3.5 to your path. You can use Python as you would normally, ca
 
 This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
 
-### Training functions
+## 1-Training functions
 
 | Function | Description |
 |----------|-------------|
@@ -61,16 +61,16 @@ This section lists the functions by category to give you an idea of how each one
 |[microsoftml.rx_oneclass_svm](rx-oneclass-svm.md) | Anomaly Detection |
 
 
-### Transform functions
+## 2-Transform functions
 
-#### Categorical variable handling
+### Categorical variable handling
 
 | Function | Description |
 |----------|-------------|
 |[microsoftml.categorical](categorical.md) | Converts a text column into categories |
 |[microsoftml.categorical_hash](categorical-hash.md) | Hashes and converts a text column into categories |
 
-#### Schema manipulation
+### Schema manipulation
 
 | Function | Description |
 |----------|-------------|
@@ -79,7 +79,7 @@ This section lists the functions by category to give you an idea of how each one
 |[microsoftml.select_columns](select-columns.md) | Retains columns of a dataset |
 
 
-#### Variable selection
+### Variable selection
 
 | Function | Description |
 |----------|-------------|
@@ -87,7 +87,7 @@ This section lists the functions by category to give you an idea of how each one
 |[microsoftml.mutualinformation_select](mutualinformation-select.md) | Feature selection based on mutual information |
 
 
-#### Text analytics
+### Text analytics
 
 | Function | Description |
 |----------|-------------|
@@ -95,7 +95,7 @@ This section lists the functions by category to give you an idea of how each one
 |[microsoftml.get_sentiment](get-sentiment.md) | Sentiment analysis |
 
 
-#### Image analytics 
+### Image analytics 
 
 | Function | Description |
 |----------|-------------|
@@ -105,14 +105,14 @@ This section lists the functions by category to give you an idea of how each one
 |[microsoftml.featurize_image](featurize-image.md) | Converts an image into features |
 
 
-#### Scoring fucntions
+### Scoring functions
 
 | Function | Description |
 |----------|-------------|
 |[microsoftml.rx_predict](rx-predict.md) | Scores using a Microsoft machine learning model |
 
 
-#### Featurization functions
+### Featurization functions
 
 | Function | Description |
 |----------|-------------|

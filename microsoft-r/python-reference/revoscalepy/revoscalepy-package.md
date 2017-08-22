@@ -49,7 +49,7 @@ Setup adds Python 3.5 to your path. You can use Python as you would normally, ca
 
 This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
 
-### Compute context functions
+## 1-Compute context functions
 
 | Function | Description |
 |----------|-------------|
@@ -58,7 +58,7 @@ This section lists the functions by category to give you an idea of how each one
 |[rx_get_compute_context](rx-get-compute-context.md) | Returns the current compute context.|
 |[rx_set_compute_context](rx-set-compute-context.md) | Change the compute context to a different one.|
 
-### Job functions
+## 2-Job functions
 
 | Function | Description |
 |----------|-------------|
@@ -75,7 +75,7 @@ This section lists the functions by category to give you an idea of how each one
 |[rx_get_job_results](rx-get-job-results.md) | Returns results of the run or a message stating why results are not available.|
 
 
-### Data source functions
+## 3-Data source functions
 
 | Function | Description |
 |----------|-------------|
@@ -86,14 +86,14 @@ This section lists the functions by category to give you an idea of how each one
 |[RxOdbcData](RxOdbcData.md) | Generates a data source object from an ODBC data source.|
 |[RxSqlServerData](RxSqlServerData.md) | Generates a data source object from a SQL table or query.|
 
-### Data manipulation (ETL) functions
+## 4-Data manipulation (ETL) functions
 
 | Function | Description |
 |----------|-------------|
 |[rx_import](rx-import.md) | Import data into an .xdf file or data frame.|
 |[rx_data_step](rx-data-step.md) | Transform data from an input data set to an output data set.|
 
-### Analytic functions
+## 5-Analytic functions
 
 | Function | Description |
 |----------|-------------|
@@ -105,7 +105,7 @@ This section lists the functions by category to give you an idea of how each one
 |[rx_btrees](rx-btrees.md) | Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
 |[rx_predict](rx-predict.md) | Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects. |
 
-### Serialization functions
+## 6-Serialization functions
 
 | Function | Description |
 |----------|-------------|
@@ -117,7 +117,7 @@ This section lists the functions by category to give you an idea of how each one
 |[rx_list_keys](rx-list-keys.md)  | Enumerates all keys or versions for a given key, depending on the parameters. |
 
 
-### Utility functions
+## 7-Utility functions
 
 | Function | Description |
 |----------|-------------|
