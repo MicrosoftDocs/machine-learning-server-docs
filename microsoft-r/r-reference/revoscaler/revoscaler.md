@@ -30,7 +30,7 @@ The **RevoScaleR** library provides a set of over one hundred portable, scalable
 | Package details | |
 |--------|-|
 | Version: |  9.1.0 |
-| Supported on: | [Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Supported on: | [Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 
@@ -79,898 +79,169 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 <br />
 ####Import and Export Functions
 
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="160px">`rxImport`</td>
-        <td width="25px">
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC or Teradata connection, or data frame).</td>
-        <td>
-            <center><small>[**View**](rximport.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxDataStep`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame.</td>
-        <td>
-            <center><small>[**View**](rxdatastep.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxGetInfo`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Retrieves summary information from a data source or data frame.</td>
-        <td>
-            <center><small>[**View**](rxgetinfoxdf.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxSetInfo`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Sets a file description in an .xdf file or a description attribute in a data frame.</td>
-        <td>
-            <center><small>[**View**](rxsetinfo.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxGetVarInfo`</td>
-        <td> </td>
-        <td>Retrieves variable information from a data source or data frame.</td>
-        <td>
-            <center><small>[**View**](rxgetvarinfoxdf.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxSetVarInfo`</td>
-        <td> </td>
-        <td>Modifies variable information in an .xdf file or data frame.</td>
-        <td>
-            <center><small>[**View**](rxsetvarinfoxdf.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxGetVarNames`</td>
-        <td> </td>
-        <td>Retrieves variable names from a data source or data frame.</td>
-        <td>
-            <center><small>[**View**](rxgetvarnames.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxCreateColInfo`</td>
-        <td> </td>
-        <td>Generates a 'colInfo' list from a data source.</td>
-        <td>
-            <center><small>[**View**](rxcreatecolinfo.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxCompressXdf`</td>
-        <td> </td>
-        <td>Compresses an existing .xdf file, or a directory of .xdf files.</td>
-        <td>
-            <center><small>[**View**](rxcompressxdf.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`RxXdfData`</td>
-        <td> </td>
-        <td>Creates an efficient XDF data source object.</td>
-        <td>
-            <center><small>[**View**](rxxdfdata.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`RxTextData`</td>
-        <td> </td>
-        <td>Creates a comma delimited text data source object.</td>
-        <td>
-            <center><small>[**View**](rxtextdata.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`RxSasData`</td>
-        <td> </td>
-        <td>Creates a SAS data source object.</td>
-        <td>
-            <center><small>[**View**](rxsasdata.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`RxSpssData`</td>
-        <td> </td>
-        <td>Creates a SPSS data source object.</td>
-        <td>
-            <center><small>[**View**](rxspssdata.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`RxOdbcData`</td>
-        <td> </td>
-        <td>Creates a ODBC data source object.</td>
-        <td>
-            <center><small>[**View**](rxodbcdata.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`RxTeradata`</td>
-        <td> </td>
-        <td>Creates a Teradata data source object.</td>
-        <td>
-            <center><small>[**View**](rxteradata.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`RxSqlServerData`</td>
-        <td> </td>
-        <td>Creates a SQL Server data source object.</td>
-        <td>
-            <center><small>[**View**](rxsqlserverdata.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxOpen`</td>
-        <td> </td>
-        <td>Opens a data source for reading.</td>
-        <td>
-            <center><small>[**View**](rxopen-methods.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxClose`</td>
-        <td> </td>
-        <td>Closes a data source.</td>
-        <td>
-            <center><small>[**View**](rxopen-methods.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxReadNext`</td>
-        <td> </td>
-        <td>Read data from a source</td>
-        <td>
-            <center><small>[**View**](rxopen-methods.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxSetFileSystem`</td>
-        <td> </td>
-        <td>Specify a file system type for data for import.</td>
-        <td>
-            <center><small>[**View**](rxsetfilesystem.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxGetFileSystem`</td>
-        <td> </td>
-        <td>Retrieve the current file system type.</td>
-        <td>
-            <center><small>[**View**](rxsetfilesystem.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxHdfsFileSystem`</td>
-        <td> </td>
-        <td>Creates an HDFS file system object.</td>
-        <td>
-            <center><small>[**View**](rxhdfsfilesystem.md)<center></small></td>
-    </tr>
-    <tr>
-        <td>`rxNativeFileSystem`</td>
-        <td> </td>
-        <td>Creates a native file system object.</td>
-        <td>
-            <center><small>[**View**](rxnativefilesystem.md)<center></small></td>
-    </tr>
-</table>
+| Function name | Description |
+|---------------|-------------|
+|[rxImport](rximport.md) <sup>*</sup> |Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC or Teradata connection, or data frame). | 
+|[rxDataStep](rxdatastep.md) <sup>*</sup> |Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame. | 
+|[rxGetInfo](rxgetinfoxdf.md) <sup>*</sup> |Retrieves summary information from a data source or data frame. | 
+|[rxSetInfo](rxsetinfo.md) <sup>*</sup> |Sets a file description in an .xdf file or a description attribute in a data frame. | 
+|[rxGetVarInfo](rxgetvarinfoxdf.md) |Retrieves variable information from a data source or data frame. | 
+|[rxSetVarInfo](rxsetvarinfoxdf.md)  |Modifies variable information in an .xdf file or data frame. | 
+|[rxGetVarNames](rxgetvarnames.md)  |Retrieves variable names from a data source or data frame. | 
+|[rxCreateColInfo](rxcreatecolinfo.md)  |Generates a colInfo list from a data source. | 
+|[rxCompressXdf](rxcompressxdf.md)  |Compresses an existing .xdf file, or a directory of .xdf files. | 
+|[RxXdfData](rxxdfdata.md)  |Creates an efficient XDF data source object. | 
+|[RxTextData](rxtextdata.md)  |Creates a comma delimited text data source object. | 
+|[RxSasData](rxsasdata.md)  |Creates a SAS data source object. | 
+|[RxSpssData](rxspssdata.md)  |Creates a SPSS data source object. | 
+|[RxOdbcData](rxodbcdata.md)  |Creates a ODBC data source object. | 
+|[RxTeradata](rxteradata.md)  |Creates a Teradata data source object. | 
+|[RxSqlServerData](rxsqlserverdata.md)  |Creates a SQL Server data source object | 
+|[rxOpen](rxopen-methods.md)  |Opens a data source for reading. | 
+|[rxClose](rxopen-methods.md)  |Closes a data source. | 
+|[rxReadNext](rxopen-methods.md)  |Read data from a source. | 
+|[rxSetFileSystem](rxsetfilesystem.md)  |Specify a file system type for data for import. | 
+|[rxGetFileSystem](rxsetfilesystem.md)  |Retrieve the current file system type. | 
+|[rxHdfsFileSystem](rxhdfsfilesystem.md)  |Creates an HDFS file system object. | 
+|[rxNativeFileSystem](rxnativefilesystem.md)  |Creates a native file system object. | 
 
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
-<br />
+<sup>*</sup> Signifies the most popular functions in this category.
 
-<br />
 ####Manipulation, Cleansing, and Transformation Functions
 
+| Function name | Description |
+|---------------|-------------|
+|[rxDataStep](rxdatastep.md) <sup>*</sup> |Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from an .xdf file or a data frame. | 
+|[rxFactors](rxfactors.md) <sup>*</sup> |Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame. | 
+|[rxGetFuzzyDist](rxgetfuzzydist.md)  |Get fuzzy distances for a character vector. | 
+|[rxGetFuzzyKeys](rxgetfuzzykeys.md)  |Get fuzzy keys for a character vector. | 
+|[rxSplit](rxsplitxdf.md)  |Splits an .xdf file or data frame into multiple .xdf files or data frames. | 
+|[rxSort](rxsortxdf.md)  |Multi-key sorting of the variables an .xdf file or data frame. | 
+|[rxMerge](rxmergexdf.md)  |Merges two .xdf files or data frames using a variety of merge types. | 
+|[rxExecuteSQLDDL](rxexecutesqlddl.md)  |SQL Server R Services only. Runs an arbitrary SQL DDL command. | 
 
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="160px">`rxDataStep`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from an .xdf file or a data frame.</td>
-        <td>
-            <center><small>[**View**](rxdatastep.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxFactors`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Recode a factor variable or convert non-factor variable into a factor in an .xdf file or data frame.</td>
-        <td>
-            <center><small>[**View**](rxfactors.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetFuzzyDist`</td>
-        <td> </td>
-        <td>Get fuzzy distances for a character vector.</td>
-        <td>
-            <center><small>[**View**](rxgetfuzzydist.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetFuzzyKeys`</td>
-        <td> </td>
-        <td>Get fuzzy keys for a character vector.</td>
-        <td>
-            <center><small>[**View**](rxgetfuzzykeys.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSplit`</td>
-        <td> </td>
-        <td>Splits an .xdf file or data frame into multiple .xdf files or data frames.</td>
-        <td>
-            <center><small>[**View**](rxsplitxdf.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSort`</td>
-        <td> </td>
-        <td>Multi-key sorting of the variables an .xdf file or data frame.</td>
-        <td>
-            <center><small>[**View**](rxsortxdf.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxMerge`</td>
-        <td> </td>
-        <td>Merges two .xdf files or data frames using a variety of merge types.</td>
-        <td>
-            <center><small>[**View**](rxmergexdf.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxExecuteSQLDDL`</td>
-        <td> </td>
-        <td>SQL Server R Services only. Runs an arbitrary SQL DDL command.</td>
-        <td>
-            <center><small>[**View**](rxexecutesqlddl.md)</small></center>
-        </td>
-    </tr>
-</table>
+<sup>*</sup> Signifies the most popular functions in this category.
 
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
-
-
-<br/>
-
-
-<br />
 ####Visualization Functions
 
-|Function Name          | |Description|Help|
-|-----------------------|:-:|-----------------------|:--------------:|
-|`rxHistogram`       |![-](./media/revoscaler/award.png)|Creates a histogram from data.|<small>[**View**](rxhistogram.md)</small>|
-|`rxLinePlot`  |![-](./media/revoscaler/award.png)|Creates a line plot from data.|<small>[**View**](rxlineplot.md)</small>|
-| `rxLorenz`      | |Computes a Lorenz curve which can be plotted.|<small>[**View**](rxlorenz.md)</small>|
-|`rxRocCurve`  | |Computes and plots ROC curves from actual and predicted data.|<small>[**View**](rxroc.md)</small>|
+| Function name | Description |
+|---------------|-------------|
+|[rxHistogram](rxhistogram.md) <sup>*</sup> |Creates a histogram from data. | 
+|[rxLinePlot](rxlineplot.md) <sup>*</sup> |Creates a line plot from data. | 
+|[rxLorenz](rxlorenz.md)  |Computes a Lorenz curve which can be plotted. | 
+|[rxRocCurve](rxroc.md)  |Computes and plots ROC curves from actual and predicted data. | 
 
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
+<sup>*</sup> Signifies the most popular functions in this category.
 
-<br />
-
-<br />
 ####Analysis Functions for Descriptive Statistics and Cross-Tabulations
 
+| Function name | Description |
+|---------------|-------------|
+|[rxQuantile](rxquantile.md) <sup>*</sup> |Computes approximate quantiles for .xdf files and data frames without sorting. | 
+|[rxSummary](rxsummary.md) <sup>*</sup> |Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported. | 
+|[rxCrossTabs](rxcrosstabs.md) <sup>*</sup> |Formula-based cross-tabulation of data. | 
+|[rxCube](rxcube.md) <sup>*</sup> |Alternative formula-based cross-tabulation designed for efficient representation returning cube results. Writing output to .xdf file not supported. | 
+|[rxMarginals](rxmarginals.md)  |Marginal summaries of cross-tabulations. | 
+|[as.xtabs](as-xtabs.md)  |Converts cross tabulation results to an xtabs object. | 
+|[rxChiSquaredTest](rxchisquaredtest.md)  |Performs Chi-squared Test on xtabs object. Used with small data sets and does not chunk data. | 
+|[rxFisherTest](rxchisquaredtest.md)  |Performs Fisher's Exact Test on xtabs object. Used with small data sets and does not chunk data. | 
+|[rxKendallCor](rxchisquaredtest.md)  |Computes Kendall's Tau Rank Correlation Coefficient using xtabs object. | 
+|[rxPairwiseCrossTab](rxpairwisecrosstab.md)  |Apply a function to pairwise combinations of rows and columns of an xtabs object. | 
+|[rxRiskRatio](rxriskratio.md)  |Calculate the relative risk on a two-by-two xtabs object. | 
+|[rxOddsRatio](rxriskratio.md)  |Calculate the odds ratio on a two-by-two xtabs object. | 
 
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="150px">`rxQuantile`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Computes approximate quantiles for .xdf files and data frames without sorting.</td>
-        <td>
-            <center><small>[**View**](rxquantile.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSummary`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.</td>
-        <td>
-            <center><small>[**View**](rxsummary.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxCrossTabs`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Formula-based cross-tabulation of data.</td>
-        <td>
-            <center><small>[**View**](rxcrosstabs.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxCube`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Alternative formula-based cross-tabulation designed for efficient representation returning ‘cube’ results. Writing output to .xdf file not supported.</td>
-        <td>
-            <center><small>[**View**](rxcube.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxMarginals`</td>
-        <td> </td>
-        <td>Marginal summaries of cross-tabulations.</td>
-        <td>
-            <center><small>[**View**](rxmarginals.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`as.xtabs`</td>
-        <td> </td>
-        <td>Converts cross tabulation results to an `xtabs` object.</td>
-        <td>
-            <center><small>[**View**](as-xtabs.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxChiSquaredTest`</td>
-        <td> </td>
-        <td>Performs Chi-squared Test on `xtabs` object. Used with small data sets and does not chunk data.</td>
-        <td>
-            <center><small>[**View**](rxchisquaredtest.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxFisherTest`</td>
-        <td> </td>
-        <td>Performs Fisher's Exact Test on `xtabs` object. Used with small data sets and does not chunk data.</td>
-        <td>
-            <center><small>[**View**](rxchisquaredtest.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxKendallCor`</td>
-        <td> </td>
-        <td>Computes Kendall's Tau Rank Correlation Coefficient using `xtabs` object.</td>
-        <td>
-            <center><small>[**View**](rxchisquaredtest.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxPairwiseCrossTab`</td>
-        <td> </td>
-        <td>Apply a function to pairwise combinations of rows and columns of an `xtabs` object.</td>
-        <td>
-            <center><small>[**View**](rxpairwisecrosstab.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxRiskRatio`</td>
-        <td> </td>
-        <td>Calculate the relative risk on a two-by-two `xtabs` object.</td>
-        <td>
-            <center><small>[**View**](rxriskratio.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxOddsRatio`</td>
-        <td> </td>
-        <td>Calculate the odds ratio on a two-by-two `xtabs` object.</td>
-        <td>
-            <center><small>[**View**](rxriskratio.md)</small></center>
-        </td>
-    </tr>
-</table>
-
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
-
-<br />
+<sup>*</sup> Signifies the most popular functions in this category.
 
 ####Analysis, Learning, and Prediction Functions for Statistical Modeling
 
+| Function name | Description |
+|---------------|-------------|
+|[rxLinMod](rxlinmod.md) <sup>*</sup> |Fits a linear model to data. | 
+|[rxLogit](rxlogit.md) <sup>*</sup> |Fits a logistic regression model to data. | 
+|[rxGlm](rxglm.md) <sup>*</sup> |Fits a generalized linear model to data. | 
+|[rxCovCor](rxcovcor.md) <sup>*</sup> |Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables. | 
+|[rxDTree](rxdtree.md) <sup>*</sup> |Fits a classification or regression tree to data. | 
+|[rxBTrees](rxbtrees.md) <sup>*</sup> |Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm. | 
+|[rxDForest](rxdforest.md) <sup>*</sup> |Fits a classification or regression decision forest to data. | 
+|[rxPredict](rxPredict.md) <sup>*</sup> |Calculates predictions for fitted models. Output must be an XDF data source. | 
+|[rxKmeans](rxkmeans.md) <sup>*</sup> |Performs k-means clustering. | 
+|[rxNaiveBayes](rxnaivebayes.md) <sup>*</sup> |Performs Naive Bayes classification. | 
+|[rxCov](rxcovcor.md) |Calculate the covariance matrix for a set of variables. | 
+|[rxCor](rxcovcor.md)  |Calculate the correlation matrix for a set of variables. | 
+|[rxSSCP](rxcovcor.md)  |Calculate the sum of squares / cross-product matrix for a set of variables. | 
+|[rxRoc](rxroc.md)  |Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system. | 
 
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="150px">`rxLinMod`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Fits a linear model to data.</td>
-        <td>
-            <center><small>[**View**](rxlinmod.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxLogit`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Fits a logistic regression model to data.</td>
-        <td>
-            <center><small>[**View**](rxlogit.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGlm`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Fits a generalized linear model to data.</td>
-        <td>
-            <center><small>[**View**](rxglm.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxCovCor`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.</td>
-        <td>
-            <center><small>[**View**](rxcovcor.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxDTree`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Fits a classification or regression tree to data.</td>
-        <td>
-            <center><small>[**View**](rxdtree.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxBTrees`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.</td>
-        <td>
-            <center><small>[**View**](rxbtrees.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxDForest`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Fits a classification or regression decision forest to data.</td>
-        <td>
-            <center><small>[**View**](rxdforest.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxPredict`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Calculates predictions for fitted models. Output must be an XDF data source.</td>
-        <td>
-            <center><small>[**View**](../microsoftml/rxpredict.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxKmeans`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Performs k-means clustering.</td>
-        <td>
-            <center><small>[**View**](rxkmeans.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxNaiveBayes`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Performs Naive Bayes classification.</td>
-        <td>
-            <center><small>[**View**](rxnaivebayes.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxCov`</td>
-        <td> </td>
-        <td>Calculate the covariance matrix for a set of variables.</td>
-        <td>
-            <center><small>[**View**](rxcovcor.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxCor`</td>
-        <td> </td>
-        <td>Calculate the correlation matrix for a set of variables.</td>
-        <td>
-            <center><small>[**View**](rxcovcor.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxSSCP`</td>
-        <td> </td>
-        <td>Calculate the sum of squares / cross-product matrix for a set of variables.</td>
-        <td>
-            <center><small>[**View**](rxcovcor.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxRoc`</td>
-        <td> </td>
-        <td>Receiver Operating Characteristic (ROC) computations using actual and predicted values from binary classifier system.</td>
-        <td>
-            <center><small>[**View**](rxroc.md)</small></center>
-        </td>
-    </tr>
-</table>
+<sup>*</sup> Signifies the most popular functions in this category.
 
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
-
-<br />
 <a name="compute"></a>
+
 ##Compute Context Functions
 
+| Function name | Description |
+|---------------|-------------|
+|[rxSetComputeContext](rxsetcomputecontext.md) <sup>*</sup>|Sets a compute context. |
+|[rxGetComputeContext](rxsetcomputecontext.md) <sup>*</sup>|Gets the current compute context. |
+|[RxHadoopMR](rxhadoopmr.md) <sup>*</sup>|Creates an in-data, file-based Hadoop compute context. |
+|[RxSpark](rxspark.md) <sup>*</sup>|Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. |
+|[RxInTeradata](rxinteradata.md) <sup>*</sup>|Creates an in-database compute context for Teradata. |
+|[RxInSqlServertd](rxinsqlserver.md) |Creates an in-database compute context for SQL Server. |
+|[RxComputeContext](rxcomputecontext.md) |Creates a compute context. |
+|[RxLocalSeq](rxlocalseq.md) |Creates a local compute context for rxExec using sequential computations. |
+|[RxLocalParallel](rxlocalparallel.md) |Creates a local compute context for rxExec using the ***parallel** package as backend. |
+|[RxForeachDoPar](rxforeachdopar.md) |Creates a compute context for rxExec using the current **foreach** parallel backend. |
+|[rxInstalledPackages](rxinstalledpackages.md) |Returns the list of installed packages for a compute context. |
+|[rxFindPackage](rxfindpackage.md) |Returns the path to one or more packages for a compute context. |
 
+<sup>*</sup> Signifies the most popular functions in this category.
 
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="180px">`rxSetComputeContext`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Sets a compute context.</td>
-        <td>
-            <center><small>[**View**](rxsetcomputecontext.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetComputeContext`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Gets the current compute context.</td>
-        <td>
-            <center><small>[**View**](rxsetcomputecontext.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxHadoopMR`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Creates an in-data, file-based Hadoop compute context.</td>
-        <td>
-            <center><small>[**View**](rxhadoopmr.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxSpark`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.</td>
-        <td>
-            <center><small>[**View**](rxspark.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxInTeradata`</td>
-        <td>
-            <center>![-](./media/revoscaler/award.png)</center>
-        </td>
-        <td>Creates an in-database compute context for Teradata.</td>
-        <td>
-            <center><small>[**View**](rxinteradata.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxInSqlServer`
-            <td> </td>
-            <td>Creates an in-database compute context for SQL Server.</td>
-            <td>
-                <center><small>[**View**](rxinsqlserver.md)</small></center>
-            </td>
-    </tr>
-    <tr>
-        <td>`RxComputeContext`</td>
-        <td> </td>
-        <td>Creates a compute context.</td>
-        <td>
-            <center><small>[**View**](rxcomputecontext.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxLocalSeq`</td>
-        <td> </td>
-        <td>Creates a local compute context for `rxExec` using sequential computations.</td>
-        <td>
-            <center><small>[**View**](rxlocalseq.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxLocalParallel`</td>
-        <td> </td>
-        <td>Creates a local compute context for `rxExec` using the `parallel` package as backend.</td>
-        <td>
-            <center><small>[**View**](rxlocalparallel.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxForeachDoPar`</td>
-        <td> </td>
-        <td>Creates a compute context for `rxExec`using the current `foreach` parallel backend.</td>
-        <td>
-            <center><small>[**View**](rxforeachdopar.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxInstalledPackages`</td>
-        <td> </td>
-        <td>Returns the list of installed packages for a compute context.</td>
-        <td><center><small>[**View**](rxinstalledpackages.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxFindPackage`</td>
-        <td> </td>
-        <td>Returns the path to one or more packages for a compute context.</td>
-        <td><center><small>[**View**](rxfindpackage.md)</small></center>
-        </td>
-    </tr>
-</table>
-
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
-
-<br/>
 <a name="data"></a>
+
 ##Data Source Functions
 
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="150px">`RxXdfData`</td>
-        <td> </td>
-        <td>Creates an efficient XDF data source object.</td>
-        <td>
-            <center><small>[**View**](rxxdfdata.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxTextData`</td>
-        <td> </td>
-        <td>Creates a comma delimited text data source object.</td>
-        <td>
-            <center><small>[**View**](rxtextdata.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxSasData`</td>
-        <td> </td>
-        <td>Creates a SAS data source object.</td>
-        <td>
-            <center><small>[**View**](rxsasdata.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxSpssData`</td>
-        <td> </td>
-        <td>Creates a SPSS data source object.</td>
-        <td>
-            <center><small>[**View**](rxspssdata.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxOdbcData`</td>
-        <td> </td>
-        <td>Creates a ODBC data source object.</td>
-        <td>
-            <center><small>[**View**](rxodbcdata.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxTeradata`</td>
-        <td> </td>
-        <td>Creates a Teradata data source object.</td>
-        <td>
-            <center><small>[**View**](rxteradata.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`RxSqlServerData`</td>
-        <td> </td>
-        <td>Creates a SQL Server data source object.</td>
-        <td><center><small>[**View**](rxsqlserverdata.md)</small></center>
-        </td>
-    </tr>
-</table>
-
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
-
-<br />
+| Function name | Description |
+|---------------|-------------|
+|[RxXdfData](rxxdfdata.md) |Creates an efficient XDF data source object. |
+|[RxTextData](rxtextdata.md) |Creates a comma delimited text data source object. |
+|[RxSasData](rxsasdata.md) |Creates a SAS data source object. |
+|[RxSpssData](rxspssdata.md) |Creates a SPSS data source object. |
+|[RxOdbcData](rxodbcdata.md) |Creates a ODBC data source object. |
+|[RxTeradata](rxteradata.md) |Creates a Teradata data source object. |
+|[RxSqlServerData](rxsqlserverdata.md) |Creates a SQL Server data source object. |
 
 ##HPC and Distributed Computing Functions
 
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../r/how-to-revoscaler-distributed-computing.md).
 
-<table>
-    <tr>
-        <th>Function Name</th>
-        <th></th>
-        <th>Description</th>
-        <th>
-            <center>Help</center>
-        </th>
-    </tr>
-    <tr>
-        <td width="180px">`rxExec`</td>
-        <td> </td>
-        <td>Run an arbitrary R function on nodes or cores of a cluster.</td>
-        <td>
-            <center><small>[**View**](rxexec.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxRngNewStream`</td>
-        <td> </td>
-        <td>Support for Parallel Random Number Generation.</td>
-        <td>
-            <center><small>[**View**](rxrng.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxRngDelStream`</td>
-        <td> </td>
-        <td>Support for Parallel Random Number Generation.</td>
-        <td>
-            <center><small>[**View**](rxrng.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxRngGetStream`</td>
-        <td> </td>
-        <td>Support for Parallel Random Number Generation.</td>
-        <td>
-            <center><small>[**View**](rxrng.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxRngSetStream`</td>
-        <td> </td>
-        <td>Support for Parallel Random Number Generation.</td>
-        <td>
-            <center><small>[**View**](rxrng.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetAvailableNodes`</td>
-        <td> </td>
-        <td>Get all the available nodes on a distributed compute context.</td>
-        <td>
-            <center><small>[**View**](rxgetavailablenodes.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetNodeInfo`</td>
-        <td> </td>
-        <td>Get information on nodes specified for a distributed compute context.</td>
-        <td>
-            <center><small>[**View**](rxgetnodeinfo.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxPingNodes`</td>
-        <td> </td>
-        <td>Test round trip from user through computation node(s) in a cluster or cloud.</td>
-        <td>
-            <center><small>[**View**](rxpingnodes.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetJobStatus`</td>
-        <td> </td>
-        <td>Get the status of a non-waiting distributed computing job.</td>
-        <td>
-            <center><small>[**View**](rxgetjobresults.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetJobResults`</td>
-        <td> </td>
-        <td>Get the return object(s) of a non-waiting distributed computing job.</td>
-        <td>
-            <center><small>[**View**](rxgetjobresults.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetJobOutput`</td>
-        <td> </td>
-        <td>Get the console output from a non-waiting distributed computing job.</td>
-        <td>
-            <center><small>[**View**](rxgetjoboutput.md)</small></center>
-        </td>
-    </tr>
-    <tr>
-        <td>`rxGetJobs`</td>
-            <td> </td>
-            <td>Get the available distributed computing job information objects.</td>
-            <td>
-                <center><small>[**View**](rxgetjobs.md)</small></center>
-            </td>
-    </tr>
-    <tr>
-        <td>`rxLocateFile`</td>
-            <td> </td>
-            <td>Get the first occurrence of a specified input file in a set of specified paths.</td>
-            <td>
-                <center><small>[**View**](rxlocatefile.md)</small></center>
-            </td>
-    </tr>
-</table>
-
-<small>![-](./media/revoscaler/award.png) signifies the most popular functions</small>
-
-<br />
-
+| Function name | Description |
+|---------------|-------------|
+|[rxExec](rxexec.md) | Run an arbitrary R function on nodes or cores of a cluster.|
+|[rxRngNewStream]((rxrng.md) |Support for Parallel Random Number Generation. |
+|[rxRngDelStream](rxrng.md) |Support for Parallel Random Number Generation. |
+|[rxRngGetStream](rxrng.md) |Support for Parallel Random Number Generation.|
+|[rxRngSetStream](rxrng.md) |Support for Parallel Random Number Generation. |
+|[rxGetAvailableNodes](rxgetavailablenodes.md) |Get all the available nodes on a distributed compute context. |
+|[rxGetNodeInfo](rxgetnodeinfo.md) | Get information on nodes specified for a distributed compute context.|
+|[rxPingNodes](rxpingnodes.md) |Test round trip from user through computation node(s) in a cluster or cloud. |
+|[rxGetJobStatus](rxgetjobresults.md) |Get the status of a non-waiting distributed computing job. |
+|[rxGetJobResults](rxgetjobresults.md) |Get the return object(s) of a non-waiting distributed computing job. |
+|[rxGetJobOutput](rxgetjoboutput.md) |Get the console output from a non-waiting distributed computing job. |
+|[rxGetJobs](rxgetjobs.md) |Get the available distributed computing job information objects. |
+|[rxLocateFile](rxlocatefile.md) |Get the first occurrence of a specified input file in a set of specified paths. |
 
 ##Utility Functions
 
-Some of the utility functions are operational in local compute context only. Check the documentation for individual functions to confirm.
+Some of the utility functions are operational in local compute context only. Check the documentation of individual functions to confirm.
 
 | Function name | Description |
 |---------------|-------------|
-|[rxOptions](rxoptions.md) <sup>*</sup>| |
+|[rxOptions](rxoptions.md) <sup>*</sup>| Gets or sets a specific option.|
 |[rxGetOption](rxoptions.md) <sup>*</sup>|Retrieves a specific RevoScaleR option. |
 |[rxGetEnableThreadPool](rxgetenablethreadpool.md) |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand. |
 |[rxSetEnableThreadPool](rxgetenablethreadpool.md) |Sets the thread pool state. |
-|[rxStepControl](rxstepcontrol.md) | Construct `variable.selection` argument for rxLinMod.|
+|[rxStepControl](rxstepcontrol.md) | Construct a variable.selection argument for rxLinMod.|
 |[rxIsOpen](rxopen-methods.md) | Indicates whether a data source can be accessed.|
 |[rxSqlServerDropTable](rxsqlserverdroptable.md) |Execute an SQL statement that drops a table. |
-|[rxSqlServerTableExists]((rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existance. |
+|[rxSqlServerTableExists](rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existance. |
 |[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between ScaleR data sources.|
 
 <sup>*</sup> Signifies the most popular functions in this category.
@@ -979,13 +250,13 @@ Some of the utility functions are operational in local compute context only. Che
 
 Add R packages to your computer by running setup for R Server or R Client: 
 
-+ [R Client](../r-client/what-is-microsoft-r-client.md) 
-+ [R Server](../what-is-microsoft-r-server.md)
++ [R Client](../../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../../what-is-microsoft-r-server.md)
 
 Next, follow these tutorials for hands on experience::
 
-+ [Explore R and RevoScaleR in 25 functions](../r/tutorial-r-to-revoscaler.md)  
-+ [Quickstart: Run R Code in Microsoft R](../r/quickstart-run-r-code.md)
++ [Explore R and RevoScaleR in 25 functions](../../r/tutorial-r-to-revoscaler.md)  
++ [Quickstart: Run R Code in Microsoft R](../../r/quickstart-run-r-code.md)
 
 ## See also
 
