@@ -85,7 +85,7 @@ The following table explains which permissions are assigned to any authenticated
 |- No roles: RBAC not configured|Contributor|
 |- Owner only|Contributor|
 |- Contributor + Owner &nbsp;_-or-_<br>- Contributor only|Reader|
-|- Reader + Contributor + Owner &nbsp;_-or-_<br>- Reader + Owner &nbsp;_-or-_<br>- Reader only|In v9.2+, all API access denied.<br>In v9.1, not applicable since Reader <br>is never declared.|
+|- Reader + Contributor + Owner &nbsp;_-or-_<br>- Reader + Owner &nbsp;_-or-_<br>- Reader only|In v9.2+, all API access denied.<br>In v9.1, not applicable since Reader is never declared.|
 
 ## Assign roles to AD/LDAP and Azure AD users
 
