@@ -117,13 +117,13 @@ You can also explore the results visually in a break-down graph using the URL th
 
 <a name="pool"></a>
 
-### R Shell Pool 
+### Shell Pools 
 
-When using R Server for operationalization, R code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, R Server is capable of establishing and maintaining a pool of R shells for R code execution.  This pool limits the maximum number of R shells can be used to execute in parallel.
+When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python shells for code execution.  This pool limits the maximum number of R and Python shells can be used to execute in parallel.
 
-There is a cost to creating an R shell both in time and memory. So having a pool of existing R shells awaiting R code execution requests means no time is lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create R shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size(`InitialSize`), the longer it takes to start up the compute node. 
+There is a cost to creating a shell both in time and memory. So having a pool of existing shells awaiting code execution requests means no time is lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size(`InitialSize`), the longer it takes to start up the compute node. 
 
-New R shells can be added to the pool until the maximum pool size (`MaxSize`) is reached. Whenever the last R shell in the pool is called, a new R shell is automatically created for the next, future execution request until the maximum is reached. After the maximum is reached, the compute node returns a `503 - server busy` response. However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of R shells needed to run the test exceeds the number of shells in the pool, a new R shell is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the shell itself. 
+New shells can be added to the pool until the maximum pool size (`MaxSize`) is reached. Whenever the last shell in the pool is called, a new shell is automatically created for the next, future execution request until the maximum is reached. After the maximum is reached, the compute node returns a `503 - server busy` response. However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of shells needed to run the test exceeds the number of shells in the pool, a new shell is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the shell itself. 
 
 The size of this pool can be adjusted in the external configuration file, appsettings.json, found on each compute node.
 
@@ -134,8 +134,10 @@ The size of this pool can be adjusted in the external configuration file, appset
   },
 ```
 
-Since each compute node has its own thread pool for R shells, configuring multiple compute nodes means that more pooled R shells are available to your users. 
+Since each compute node has its own thread pool for shells, configuring multiple compute nodes means that more pooled shells are available to your users. 
 
+>[!Important]
+>If Machine Learning Server is configured for Python only, then only a pool of Python shells is created. If the server is configured only for R, then only a pool of R shells is created. And if it configured for both R and Python, then two separate pools will be created, each with the same initial size and maximum size. 
 
 **To update the thread pool:**
 
@@ -143,9 +145,9 @@ Since each compute node has its own thread pool for R shells, configuring multip
 
    1. Search for the section starting with `"Pool": {`
 
-   1. Set the `InitialSize`. This is the number of R shells that are pre-created for your users each time the compute node is restarted.
+   1. Set the `InitialSize`. This is the number of R and/or Python shells that are pre-created for your users each time the compute node is restarted.
 
-   1. Set the `MaxSize`. This is the maximum number of R shells that can be pre-created and held in memory for processing R code execution requests. 
+   1. Set the `MaxSize`. This is the maximum number of R and/or Python shells that can be pre-created and held in memory for processing code execution requests. 
 
    1. Save the file.
 

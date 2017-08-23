@@ -39,7 +39,10 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 ## Supported platforms
 
 The web nodes and compute nodes are supported on:
-- Windows Server 2012 R2, Windows Server 2016
+|Windows|Linux|
+|----|----|
+|- Windows Server 2012 R2, Windows Server 2016||
+
 - Ubuntu 14.04, Ubuntu 16.04,
 - CentOS/RHEL 7.x
 

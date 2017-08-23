@@ -33,9 +33,7 @@ Armed with this information, you can identify unresponsive components, execution
 
 The set of diagnostic tests include:
 + A general health check of the configuration
-+ A raw report of the system status
-+ A trace of an R code execution
-+ A trace of a web service execution
++ A trace of an execution (R code, Python code, or a web service)
 
 <a name="test"></a>
 
@@ -49,23 +47,39 @@ The set of diagnostic tests include:
 
 1. If you have not authenticated yet, you must provide your username and password. 
 
-1. Choose **Test configuration** for a 'health report' of the configuration including a code execution test:
+1. Choose the test you want to perform:
+   1. Test the health of the configuration
+   1. Trace an R code execution
+   1. Trace a Python code execution
+   1. Trace a web service execution
 
-   1. Review the test results. If any issues arise, investigate the [log files](#logs) and attempt to resolve the issues.
+### Test configuration
 
-   1. After making your corrections, [restart the component](configure-use-admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
+1. From the diagnostic menu, choose **Test configuration** for a 'health report' of the configuration including a code execution test.
 
-   1. Rerun the diagnostic test to make sure all is running smoothly now.
+1. Review the test results. If any issues arise, a raw report will appear. You can also investigate the [log files](#logs) and attempt to resolve the issues.
 
-   >[!NOTE]
-   >You can also get a health report directly using [the `status` API call](https://microsoft.github.io/deployr-api-docs/#get-status).
+1. After making your corrections, [restart the component](configure-use-admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
 
-1. For the 'raw details' on the health of the system and review the output, choose **Get raw server status**.
+1. Rerun the diagnostic test to make sure all is running smoothly now.
 
-1. To trace the execution of specific R code and retrieve request IDs for debugging purposes, choose **Trace code execution**:
-      1. Enter the R code you want to run and trace. 
-      1. To start the trace, press the Enter key (carriage return).
-      1. Review the trace output.
+You can also get a health report directly using [the `status` API call](https://microsoft.github.io/deployr-api-docs/#get-status).
+
+### Trace a code execution (R or Python)
+
+To go through the execution of a specific line of code and retrieve request IDs for debugging purposes, run a trace. 
+
+1. From the diagnostic menu, choose either **Trace R code execution** or **Trace Python code execution** depending on the language you are using. 
+
+1. When prompted, enter the code you want to trace. 
+
+1. To start the trace, press the Enter key (carriage return).
+
+1. Review the trace output.
+
+
+### Trace a code execution (R or Python)
+
 
 1. To trace the execution of specific service and retrieve request IDs for debugging purposes, choose **Trace service execution**:  
       1. Enter the service name and version after the syntax `<service-name>/<version>` such as `my-service/1.1`. 
