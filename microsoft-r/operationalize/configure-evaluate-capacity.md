@@ -24,9 +24,9 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Evaluate the load balancing capacity of your R Server configuration to operationalize
+# Evaluate the load balancing capacity of your configuration to operationalize
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
 The Evaluate Capacity tool allows you to test your own R code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.
 
@@ -117,7 +117,7 @@ You can also explore the results visually in a break-down graph using the URL th
 
 <a name="pool"></a>
 
-### Shell Pools 
+## Shell Pools 
 
 When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python shells for code execution.  This pool limits the maximum number of R and Python shells can be used to execute in parallel.
 
