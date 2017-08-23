@@ -37,23 +37,12 @@ The set of diagnostic tests include:
 
 <a name="test"></a>
 
-## Running Diagnostic Tests
-
-**To run diagnostic tests:**
-
+## Test the configuration
 1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
 1. If you have not authenticated yet, you must provide your username and password. 
-
-1. Choose the test you want to perform:
-   1. Test the health of the configuration
-   1. Trace an R code execution
-   1. Trace a Python code execution
-   1. Trace a web service execution
-
-### Test configuration
 
 1. From the diagnostic menu, choose **Test configuration** for a 'health report' of the configuration including a code execution test.
 
@@ -65,11 +54,17 @@ The set of diagnostic tests include:
 
 You can also get a health report directly using [the `status` API call](https://microsoft.github.io/deployr-api-docs/#get-status).
 
-### Trace a code execution (R or Python)
+## Trace a Python or R code execution 
 
 To go through the execution of a specific line of code and retrieve request IDs for debugging purposes, run a trace. 
 
-1. From the diagnostic menu, choose either **Trace R code execution** or **Trace Python code execution** depending on the language you are using. 
+1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+
+1. From the main menu, choose **Run Diagnostic Tests**.
+
+1. If you have not authenticated yet, you must provide your username and password. 
+
+1. From the diagnostic submenu, choose either **Trace R code execution** or **Trace Python code execution** depending on the language you are using. 
 
 1. When prompted, enter the code you want to trace. 
 
@@ -78,17 +73,27 @@ To go through the execution of a specific line of code and retrieve request IDs 
 1. Review the trace output.
 
 
-### Trace a code execution (R or Python)
+## Trace a web service execution
 
+To go through the execution of a specific web service and retrieve request IDs for debugging purposes, run a trace. 
 
-1. To trace the execution of specific service and retrieve request IDs for debugging purposes, choose **Trace service execution**:  
-      1. Enter the service name and version after the syntax `<service-name>/<version>` such as `my-service/1.1`. 
-      1. To start the trace, press the Enter key (carriage return).
-      1. Review the trace output to better understand how the execution is running or failing.
+1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+
+1. From the main menu, choose **Run Diagnostic Tests**.
+
+1. If you have not authenticated yet, you must provide your username and password. 
+
+1. From the diagnostic submenu, choose  **Trace service execution**:  
+
+1. Enter the service name and version after the syntax `<service-name>/<version>` such as `my-service/1.1`. 
+
+1. To start the trace, press the Enter key (carriage return).
+
+1. Review the trace output to better understand how the execution is running or failing.
 
 <a name="logs"></a>
 
-## Log files
+## Log files and levels
 
 Review the log and configuration files for any component that was identified as experiencing issues. The [logging level](#loglevel) can be changed to capture more or less information.
 
@@ -131,7 +136,7 @@ The logs can be found here:
 
 <a name="loglevel"></a>
 
-## Logging Levels
+### Logging Levels
 
 By default, the logging level is set to `Warning` so as not to slow performance. However, whenever you encounter an issue that you want to share with technical support or a forum, you can change the logging level to capture more information. 
 
