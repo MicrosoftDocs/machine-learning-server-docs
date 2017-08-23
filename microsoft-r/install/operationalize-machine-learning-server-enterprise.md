@@ -53,20 +53,21 @@ To replace an older version, you can uninstall the older distribution before ins
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
 1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
-   + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   
+   **Windows**: `C:\Users\Default\AppData\Local\DeployR\current`
 
-   + On Linux: `/etc/deployr/current`
+   **Linux**: `/etc/deployr/current`
 
 1. Install Machine Learning Server:
-   + On Windows: follow these instructions [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
-     >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, you must also:
-     >1. Manually install .NET Core 1.1.
-     >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   **Windows** instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+      
+   For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+   <br>
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
+   **Linux** instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
 1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu. 
 
@@ -82,19 +83,21 @@ To replace an older version, you can uninstall the older distribution before ins
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
 1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
-   + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   
+   **Windows**: `C:\Users\Default\AppData\Local\DeployR\current`
 
-   + On Linux: `/etc/deployr/current`
+   **Linux**: `/etc/deployr/current`
 
 1. Install Machine Learning Server:
-   + On Windows: follow these instructions [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
 
-     >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
+   **Windows** instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+      
+   For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+   <br>
 
-   + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   **Linux** instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 or 9.1 configuration files are present under the `current` folder mentioned previously.
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
 1. From the main utility menu, choose **Configure server** and then choose **Configure a web node** from the submenu. 
 
@@ -131,28 +134,29 @@ To configure that database, [follow these instructions](../operationalize/config
 
 Configure one or more compute nodes as needed. We highly recommend that you configure each node (compute or web) on its own machine for higher availability.
 
->[!Note]
->In this configuration, side-by-side installations of a web and compute node are not supported.
+In the Enterprise configuration, side-by-side installations of a web and compute node are not supported.
  
 1. Install Machine Learning Server and its dependencies:
-   + **On Windows**: Install Machine Learning Server [Standard steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
-   
-     >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, you must manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
-   
-   + **On Linux**: Install Machine Learning Server [Standard steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+
+   **Windows** instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+      
+   For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+   <br>
+
+   **Linux** instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
      
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. 
 
 1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu. 
 
    >[!NOTE]
-   >You can bypass this interactive node configuration step using the argument `-silentcomputenodeinstall` when launching the administration utility. Learn about all command line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   >Bypass this interactive node configuration step using the argument `-silentcomputenodeinstall` when launching the administration utility. Learn about all command line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
     
 1. When the configuration is finished, open the port 12805: 
-   + **Windows**: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
 
-   + **Linux**: If using IPTABLES or equivalent firewall service on Linux, then open the port 12805 using `iptables`  or the equivalent command.
+   **Windows**: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
+
+   **Linux**: If using IPTABLES or equivalent firewall service on Linux, then open the port 12805 using `iptables`  or the equivalent command.
 
 1. From the main utility menu, choose the option **Stop and start services** and restart the compute node so that it can be defined as a service.
 
@@ -167,21 +171,21 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 
 1. Install the same Machine Learning Server version you installed on the compute node. We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
-   **On Windows**: Install Machine Learning Server [Standard steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
-     >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, you must also:
-     >1. Manually install .NET Core 1.1.
-     >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+   **Windows** instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+      
+   For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+   <br>
 
-   **On Linux**: Install Machine Learning Server [Standard steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   **Linux** instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to begin setting up and configuring a web node.
 
-1. On only one of the web nodes, declare the IP addresses of every compute node with each web node. These URI declarations are stored in the database so that every single web nodes you set up can automatically find all declared compute nodes. Declare them as follows:
+1. On the first web node you configure, declare the IP addresses of every compute node with each web node. These URI declarations are stored in the database. Afterwards, each web node across your configuration can automatically find and communicate with the declared compute nodes. Declare them as follows:
    
    1. From the main utility menu, choose **Manage compute nodes** and then choose **Add URIs** from the submenu.
 
-   1. When prompted, enter the IP address of each compute node you want to configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma. For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`.
+   1. When prompted, enter the IP address of each compute node you want to configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma. 
+      For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`.
 
    1. Return the main menu of the utility.
 
@@ -192,7 +196,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
    1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).
    
    >[!NOTE]
-   >Alternately, use the command-line switches to bypass the interactive steps to install the node and set an admin password. The switches are `-silentwebnodeinstall mypassword`. Learn about all command line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   >Bypass the interactive steps to install the node and set an admin password using the command-line switches `-silentwebnodeinstall mypassword`. Learn about all command line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
 1. In the same utility, test the configuration. From the main utility menu, choose **Run Diagnostic Tests** and choose a [diagnostic test](../operationalize/configure-run-diagnostics.md).
 
