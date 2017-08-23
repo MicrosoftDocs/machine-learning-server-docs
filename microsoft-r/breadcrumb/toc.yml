@@ -6,6 +6,13 @@
     tocHref: /r-server/
     topicHref: /r-server/index
     items:
+    - name: Installation
+      tocHref: /r-server/install/
+      topicHref: /r-server/install/r-server-install-windows
+      items:
+      - name: Configure
+        tocHref: /r-server/operationalize/
+        topicHref: /r-server/operationalize/configure-start-for-administrators
     - name: R Package Reference
       tocHref: /r-server/r-reference/
       topicHref: /r-server/r-reference/introducing-r-server-r-package-reference
