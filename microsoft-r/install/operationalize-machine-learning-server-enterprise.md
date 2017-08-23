@@ -41,14 +41,13 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 The web nodes and compute nodes are supported on:
 |Windows|Linux|
 |----|----|
-|- Windows Server 2012 R2, Windows Server 2016||
-
-- Ubuntu 14.04, Ubuntu 16.04,
-- CentOS/RHEL 7.x
+|- Windows&nbsp;Server&nbsp;2012&nbsp;R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Windows Server 2016|- Ubuntu 14.04, Ubuntu 16.04,<br>- CentOS/RHEL 7.x|
 
 ## How to upgrade 
 
-To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps:** 
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). 
+
+**Carefully review the following steps.** 
 
 ### Upgrade a compute node
 
@@ -61,7 +60,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
    + Linux: `/etc/deployr/current`
 
-1. Install Machine Learning Server and its dependencies:
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
    + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
       
@@ -90,7 +89,7 @@ You can now **repeat these steps** for each compute node.
 
    + Linux: `/etc/deployr/current`
 
-1. Install Machine Learning Server and its dependencies:
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
    + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
       
@@ -135,7 +134,7 @@ Configure one or more compute nodes as needed. We highly recommend that you conf
 
 In the Enterprise configuration, side-by-side installations of a web and compute node are not supported.
  
-1. Install Machine Learning Server and its dependencies:
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
    + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
       
@@ -167,7 +166,7 @@ You can now **repeat these steps** for each compute node you want to add.
 
 In an enterprise configuration, you can set up one or more web nodes. Note that it is possible to run the web node service from within IIS. 
  
-1. Install Machine Learning Server and its dependencies:
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
    + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
       
