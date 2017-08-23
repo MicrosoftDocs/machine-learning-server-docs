@@ -23,7 +23,7 @@ ms.technology: "deployr"
 
 ---
 
-# How to administer the operationalization configuration
+# Manage and configure Machine Learning Server for operationalization
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
@@ -40,20 +40,27 @@ As an administrator, your key responsibilities are to ensure configuration for t
 Whenever your policies fail to deliver the expected runtime behavior or performance, you need to troubleshoot your deployment. For that we provide [diagnostic tools](configure-run-diagnostics.md) and numerous recommendations.
 
 <a name="configure-server-for-operationalization"></a>
+
 ## Configure web & compute nodes for analytic deployment and remote execution
 
-To benefit from Microsoft R Server’s web service deployment and remote execution features, you must first [configure R Server](../install/operationalize-r-server-one-box-config.md) after installation to act as a deployment server and host analytic web services. 
+To benefit from Machine Learning Server’s web service deployment and remote execution features, you must first [configure](../install/operationalize-r-server-one-box-config.md) the server after installation to act as a deployment server and host analytic web services. 
 
-All configurations have at least a single web node and single compute node:
+All configurations have at least a single web node, single compute node, and a database.
 
-+ A **web node** acts as an HTTP REST endpoint with which users can interact directly to make API calls. The web node accesses data in the database, and send jobs to the compute node.
++ **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have multiple web nodes to load balance your requests to multiple compute nodes. 
 
-+ A **compute node** is used to execute R code as a session or service. Each compute node has its [own pool of R shells](configure-evaluate-capacity.md#r-shell-pool).
++ **Compute nodes** are used to execute R and Python code as a session or service. Each compute node has its own [pool of R and python shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R and Python execution shells and benefit from load balancing across these compute nodes. 
 
-There are two types of configuration:
-1. **One-box**: the simplest configuration is a single web node and compute node on a single machine as described in this [One-box configuration](../install/operationalize-r-server-one-box-config.md) article.
++ The **database**. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
-1. **Enterprise**: a configuration where multiple nodes are configured on multiple machines along with other enterprise features as described in this [Enterprise configuration](../install/operationalize-r-server-enterprise-config.md) article.
+These nodes can be installed in one of two configurations:
+
++ **One-box configuration**: As the name suggests, involves one web node and one compute node run on a single machine. Set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R and Python analytics using Machine Learning Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage. This configuration is covered in this article. Learn more in this [One-box configuration](../install/operationalize-machine-learning-server-one-box.md) article.
+
+   ![One-box configuration](./media/operationalize-r-server-one-box-config/setup-onebox.png)
+
++ **Enterprise configuration**: A configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled up or down by adding or removing nodes. Learn more about this setup in the [enterprise configuration](../install/operationalize-machine-learning-server-enterprise.md) article. For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
+
 
 <a name="security"></a>
 

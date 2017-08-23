@@ -51,8 +51,11 @@
 
 ### [Configure to operationalize](what-is-operationalization.md)
 #### [Get started for admins](operationalize/configure-start-for-administrators.md)
+#### [Configure: One-box](install/operationalize-machine-learning-server-one-box.md)
+##### [9.0/9.1](install/operationalize-r-server-one-box-config.md)
+#### [Configure: Enterprise](install/operationalize-machine-learning-server-enterprise.md)
+##### [9.0/9.1](install/operationalize-r-server-one-box-config.md)
 #### [Configure: One-box](install/operationalize-r-server-one-box-config.md)
-#### [Configure: Enterprise](install/operationalize-r-server-enterprise-config.md)
 #### [Diagnostics & Troubleshooting](operationalize/configure-run-diagnostics.md)
 #### [Administration utility](operationalize/configure-use-admin-utility.md)
 #### [Find advanced config file](operationalize/configure-find-admin-configuration-file.md)

@@ -186,7 +186,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
     >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next two steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
     
-1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
+1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
 1. From the submenu, choose the option to **Configure a compute node**.
 
@@ -272,7 +272,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
     >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
 
-   1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
+   1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
    1. From the submenu, choose the option to **Configure a web node**.     
 
