@@ -36,7 +36,6 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 
 ![Enterprise Configuration](./media/operationalize-r-server-enterprise-config/configure-enterprise.png)
 
-
 ## Supported platforms
 
 The web nodes and compute nodes are supported on:
@@ -136,12 +135,12 @@ Configure one or more compute nodes as needed. We highly recommend that you conf
 >In this configuration, side-by-side installations of a web and compute node are not supported.
  
 1. Install Machine Learning Server and its dependencies:
-   + **Windows**, follow these instructions: [Machine Learning Server installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+   + **On Windows**: Install Machine Learning Server [Standard steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
    
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
    
-   + **Linux**, follow these instructions: [Machine Learning Server installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   + **On Linux**: Install Machine Learning Server [Standard steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
      
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. 
 
@@ -164,44 +163,36 @@ Configure one or more compute nodes as needed. We highly recommend that you conf
 
 ### 3. Configure web nodes
 
-In an enterprise configuration, you can set up one or more web nodes. Note that it is possible to run the web node service from within IIS.
+In an enterprise configuration, you can set up one or more web nodes. Note that it is possible to run the web node service from within IIS. 
 
->[!IMPORTANT]
->We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
+1. Install the same Machine Learning Server version you installed on the compute node. We highly recommend that you configure each node (compute or web) on its own machine for higher availability. 
 
-1. Install the same Machine Learning Server version you installed on the compute node.
-
-   + **Windows**: follow these instructions [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+   **On Windows**: Install Machine Learning Server [Standard steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
      >1. Manually install .NET Core 1.1.
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   + **Linux** follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   **On Linux**: Install Machine Learning Server [Standard steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to begin setting up and configuring a web node.
 
 1. On only one of the web nodes, declare the IP addresses of every compute node with each web node. These URI declarations are stored in the database so that every single web nodes you set up can automatically find all declared compute nodes. Declare them as follows:
    
-      1. From the main utility menu, choose **Manage compute nodes** and then choose **Add URIs** from the submenu.
+   1. From the main utility menu, choose **Manage compute nodes** and then choose **Add URIs** from the submenu.
 
-      1. When prompted, enter the IP address of each compute node you want to configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma, such as:
-         ```
-         http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
-         ```
+   1. When prompted, enter the IP address of each compute node you want to configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma. For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`.
 
-      1. Return the main menu of the utility.
+   1. Return the main menu of the utility.
 
 1. Also in the utility, configure the web node AFTER declaring the compute node URIs on at least one web node machine.
 
-      1. From the main menu, choose **Configure server**. 
+   1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
   
-      1. From the submenu, choose **Configure a web node**. 
-  
-      1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).
+   1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).
    
-      >[!NOTE]
-      >Alternately, use the command-line switches to bypass the interactive steps to install the node and set an admin password. The switches are `-silentwebnodeinstall mypassword`. Learn about all command line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   >[!NOTE]
+   >Alternately, use the command-line switches to bypass the interactive steps to install the node and set an admin password. The switches are `-silentwebnodeinstall mypassword`. Learn about all command line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
 1. In the same utility, test the configuration. From the main utility menu, choose **Run Diagnostic Tests** and choose a [diagnostic test](../operationalize/configure-run-diagnostics.md).
 
@@ -235,7 +226,7 @@ If you are provisioning on a cloud service, then you must also [create inbound s
 
 You can set up the load balancer of your choosing. Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required. 
 
-**For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)**
+**Important!** For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
 
 ### 7. Post configuration steps
 
