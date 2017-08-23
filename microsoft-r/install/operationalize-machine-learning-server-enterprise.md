@@ -54,18 +54,17 @@ To replace an older version, you can uninstall the older distribution before ins
 
 1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
    
-   **Windows**: `C:\Users\Default\AppData\Local\DeployR\current`
+   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
 
-   **Linux**: `/etc/deployr/current`
+   + Linux: `/etc/deployr/current`
 
 1. Install Machine Learning Server:
 
-   **Windows** instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
       
-   For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
-   <br>
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   **Linux** instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   + **Linux** instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
