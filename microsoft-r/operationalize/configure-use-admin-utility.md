@@ -38,6 +38,7 @@ Use the utility to:
 + [Run diagnostic tests](configure-run-diagnostics.md)
 + [Encrypt credentials](#encrypt)
 + [Evaluate the configuration's capacity](configure-evaluate-capacity.md)
++ [Manage compute nodes](#manage-nodes)
 + [Learn about command line switches to this utility script](#switch)
 
 <br>
@@ -58,8 +59,9 @@ Alternately, open a command line window with administrator privileges and enter 
 
 |Version|Commands|
 |----|------------|
-|9.1|cd <MRS_home>\o16n<br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0|cd <MRS_home>\deployr<br>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
+|9.2|cd \<server_home><br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
+|9.1|cd \<server_home><br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0|cd \<server_home><br>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
 
 where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
@@ -188,13 +190,42 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 [Learn how to configure the test parameters, run the test, and interpret the results.](configure-evaluate-capacity.md)
 
+
+<br><a name="manage-nodes"></a>
+
+## Manage Compute Nodes
+
+Declare the IP addresses of every compute node so they can be found across your configuration. These URI declarations are stored in the database so that every web node can automatically find and communicate with the declared compute nodes. 
+
+This option was introduced with Machine Learning Server 9.2.1.
+
+>[!Important]
+>1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to declare compute nodes. 
+>
+>2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs in appsettings.json are still read at startup and stored into the database. You can remove them from appsettings.json and manage them using this feature only now.
+
+**To declare compute nodes:**
+
+1. Log in to the machine on which one of your web nodes is installed.
+
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+
+1. From the main menu, choose the option **Manage compute nodes**.
+
+1. From the sub-menu, choose **Add URIs** to declare one or more compute node URIs.
+   
+1. When prompted, enter the IP address of each compute node you want to configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma. 
+   For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`.
+
+1. Return the main menu of the utility.
+
 <br><a name="switch"></a>
 
 ## Command line switches
 
 The following command line switches are available for the administration utility.
 
-|Switch|Description|Version|
+|Switch|Description|Introduced in version|
 |----|-----|:---:|
 |-silentoneboxinstall <password> <br><br>-silentinstall <password>|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently<br>  and sets an admin  password. For example: <br>`-silentinstall mypass123`|9.1|
 |-silentwebnodeinstall <password>|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently<br> and sets an admin password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
