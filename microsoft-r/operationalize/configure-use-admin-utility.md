@@ -213,7 +213,7 @@ This utility option was introduced with Machine Learning Server 9.2.1 to facilit
 
 1. From the sub-menu, choose **Add URIs** to declare one or more compute node URIs.
    
-1. When prompted, enter the IP address of each compute node you want to configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma. 
+1. When prompted, enter the IP address of each compute node you configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma. 
    For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`.
 
 1. Return the main menu of the utility.

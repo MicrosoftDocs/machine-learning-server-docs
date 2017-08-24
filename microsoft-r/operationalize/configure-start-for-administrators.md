@@ -53,13 +53,21 @@ All configurations have at least a single web node, single compute node, and a d
 
 + The **database**. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
+The web nodes and compute nodes are supported on:
+
+|Windows|Linux|
+|----|----|
+|- Windows&nbsp;Server&nbsp;2012&nbsp;R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Windows Server 2016|- Ubuntu 14.04, Ubuntu 16.04,<br>- CentOS/RHEL 7.x|
+
 These nodes can be installed in one of two configurations:
 
 + **One-box configuration**: As the name suggests, involves one web node and one compute node run on a single machine. Set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R and Python analytics using Machine Learning Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage. This configuration is covered in this article. Learn more in this [One-box configuration](../install/operationalize-machine-learning-server-one-box.md) article.
 
-   ![One-box configuration](./media/operationalize-r-server-one-box-config/setup-onebox.png)
+   ![One-box configuration](../operationalize/media/operationalize-machine-learning-server-one-box/setup-onebox.png)
 
 + **Enterprise configuration**: A configuration where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled up or down by adding or removing nodes. Learn more about this setup in the [enterprise configuration](../install/operationalize-machine-learning-server-enterprise.md) article. For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
+
+   ![Enterprise Configuration](../operationalize/media/operationalize-machine-learning-server-enterprise/configure-enterprise.png)
 
 
 <a name="security"></a>

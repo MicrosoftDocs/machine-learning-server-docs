@@ -34,14 +34,7 @@ An enterprise configuration involves multiple [web and compute nodes](../operati
 
 For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
 
-![Enterprise Configuration](./media/operationalize-r-server-enterprise-config/configure-enterprise.png)
-
-## Supported platforms
-
-The web nodes and compute nodes are supported on:
-|Windows|Linux|
-|----|----|
-|- Windows&nbsp;Server&nbsp;2012&nbsp;R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Windows Server 2016|- Ubuntu 14.04, Ubuntu 16.04,<br>- CentOS/RHEL 7.x|
+![Enterprise Configuration](./media/operationalize-machine-learning-server-enterprise/configure-enterprise.png)
 
 ## How to upgrade 
 

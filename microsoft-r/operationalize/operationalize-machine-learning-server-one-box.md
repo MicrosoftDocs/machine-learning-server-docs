@@ -32,7 +32,7 @@ To benefit from Microsoft Learning Server’s deployment and operationalization 
 
 Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box** and [Enterprise](operationalize-machine-learning-server-enterprise.md). A one-box configuration, as the name suggests, involves a single [web node and compute node](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) run on a single machine along with a database. Set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R and Python analytics using Machine Learning Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage. 
 
-![One-box configuration](./media/operationalize-r-server-one-box-config/setup-onebox.png)
+![One-box configuration](./media/operationalize-machine-learning-server-one-box/setup-onebox.png)
 
 ## Supported platforms 
 
