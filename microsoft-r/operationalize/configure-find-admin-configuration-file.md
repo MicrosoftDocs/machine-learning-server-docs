@@ -36,11 +36,11 @@ ms.technology:
 |Compute|\<server-home>/Microsoft.MLServer.ComputeNode|
 
 Where \<server-home> is:
-+ **Windows**: &nbsp;&nbsp;&nbsp; depending on the Machine Learning Server installation, either:
++ **Windows**, either:
   + C:\Program Files\Microsoft\ML\_Server\PYTHON\_SERVER\o16n  
   + C:\Program Files\Microsoft\ML\_Server\R\_SERVER\o16n 
 
-+ **Linux**: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/lib64/microsoft-r/rserver/o16n/9.2.1  
++ **Linux**: &nbsp;&nbsp;/usr/lib64/microsoft-r/rserver/o16n/9.2.1  
 
 
 ## Microsoft R Server 9.1.0
@@ -51,10 +51,10 @@ Where \<server-home> is:
 |Compute|\<server-home>/Microsoft.RServer.ComputeNode|
 
 Where \<server-home> is:
-+ **Windows**: &nbsp;&nbsp;&nbsp; \<r-home>\deployr  
-  (Type 'normalizePath(R.home())' in your R console for the R home)
++ **Windows**: \<r-home>\deployr  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Run 'normalizePath(R.home())' in the R console for R home._
 
-+ **Linux**: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/lib64/microsoft-r/rserver/o16n/9.1.0  
++ **Linux**: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/lib64/microsoft-r/rserver/o16n/9.1.0  
 
 
 ## Microsoft R Server 9.0.1
@@ -65,7 +65,7 @@ Where \<server-home> is:
 |Compute|\<server-home>/Microsoft.DeployR.Server.BackEnd|
 
 Where \<server-home> is:
-+ **Windows**: &nbsp;&nbsp;&nbsp; \<r-home>\deployr  
-  (Type 'normalizePath(R.home())' in your R console for the R home)
++ **Windows**: \<r-home>\deployr  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Run 'normalizePath(R.home())' in the R console for R home._
 
-+ **Linux**: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/lib64/microsoft-r/rserver/o16n/9.0.1  
++ **Linux**: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/lib64/microsoft-r/rserver/o16n/9.0.1  
