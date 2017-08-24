@@ -35,7 +35,7 @@ The installation path depends on the operating system and the type of node (web 
 |OS|Path|
 |----|------------|
 |Windows|C:\Program Files\Microsoft\ML\_Server\PYTHON\_SERVER\o16n\\\<node-directory><br>C:\Program Files\Microsoft\ML\_Server\R\_SERVER\o16n\\\<node-directory>|
-|Linux|/usr/lib64/microsoft-r/rserver/o16n/9.2.1/\<node-directory>||
+|Linux|/opt/microsoft/mlserver/9.2.1/o16n/\<node-directory>||
 
 Where the \<node-directory> name: 
 
