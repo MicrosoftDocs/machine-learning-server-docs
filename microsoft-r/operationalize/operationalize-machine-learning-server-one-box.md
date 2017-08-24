@@ -1,6 +1,74 @@
 ---
 
 # required metadata
+title: "Configure Machine Learning Server to operationalize analytics (one-box) - Machine Learning Server | Microsoft Docs"
+description: "Configure Operationalization for Machine Learning Server "
+keywords: "setup machine learning server for deployment; install machine learning server for deploying"
+author: "j-martens"
+ms.author: "jmartens"
+manager: "jhubbard"
+ms.date: "9/20/2017"
+ms.topic: "article"
+ms.prod: "microsoft-r"
+
+# optional metadata
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+ms.technology:
+  - deployr
+  - r-server
+#ms.custom: ""
+---
+
+# Configure Machine Learning Server to operationalize analytics (one-box)
+
+**Applies to:  Machine Learning Server** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Find R Server 9.x article)](../install/operationalize-r-server-one-box-config.md)
+
+You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box** and [Enterprise](operationalize-machine-learning-server-one-box.md). This article describes the one-box configuration.
+
+An enterprise configuration involves multiple [web and compute nodes](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) that  are configured on multiple machines along with other enterprise features.  These nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services.   
+
+For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
+
+![Enterprise Configuration](./media/operationalize-machine-learning-server-enterprise/configure-enterprise.png)
+
+## How to upgrade 
+
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). 
+
+Carefully review the following steps.
+
+### Upgrade a compute node
+
+>[!IMPORTANT]
+>Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
+
+1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
+   
+   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+
+   + Linux: `/etc/deployr/current`
+
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+
+   + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+      
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+
+   + Linux instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+
+
+
+
+---
+
+# required metadata
 title: "Configure R Server to operationalize analytics (one-box) - Machine Learning Server | Microsoft Docs"
 description: "Configuration Operationalization for Microsoft R Server"
 keywords: "setup r server for deployment; install r server for deploying"

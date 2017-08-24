@@ -38,7 +38,7 @@ Use the utility to:
 + [Run diagnostic tests](configure-run-diagnostics.md)
 + [Encrypt credentials](#encrypt)
 + [Evaluate the configuration's capacity](configure-evaluate-capacity.md)
-+ [Manage compute nodes](#manage-nodes)
++ [Manage compute nodes](#uris)
 + [Learn about command line switches to this utility script](#switch)
 
 <a name="launch"></a>
@@ -190,7 +190,7 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 [Learn how to configure the test parameters, run the test, and interpret the results.](configure-evaluate-capacity.md)
 
 
-<br><a name="manage-nodes"></a>
+<br><a name="uris"></a>
 
 ## Manage Compute Nodes
 
@@ -226,9 +226,9 @@ The following command line switches are available for the administration utility
 
 |Switch|Description|Introduced in version|
 |----|-----|:---:|
-|-silentoneboxinstall <password> <br><br>-silentinstall <password>|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently<br>  and sets an admin  password. For example: <br>`-silentinstall mypass123`|9.1|
-|-silentwebnodeinstall <password>|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently<br> and sets an admin password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
-|-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently. For example: <br>`-silentcomputenodeinstall`|9.1|
-|-setpassword <password>|Sets the password. Cannot be used <br> if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|
+|-silentoneboxinstall  <br><br>-silentinstall |Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. For example:<br> -silentinstall mypass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, URIs in 9.2|
+|-silentwebnodeinstall <password>|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silentlysets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. For example: -silentwebnodeinstall mypass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805|9.1, URIs in 9.2|
+|-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently. For example: -silentcomputenodeinstall|9.1|
+|-setpassword <password>|Sets the password. Cannot be used <br> if LDAP or AAD was configured. For example:<br> -setpassword mypass123|9.1|
 |-preparedbmigration <appSettingsPath>|Migrates the data from current database to a <br>different database schema. Takes the path to<br>the web node’s appsetting.json file as an<br> argument. This is uncommonly needed as a<br>step [when upgrading](../install/operationalize-r-server-enterprise-config.md#upgradewebnode). For example:<br>`-preparedbmigration C:/Program Files/`<br>`Microsoft/mrs/o16n/Microsoft.RServer.WebNode/`<br>appsettings.json|9.1|
 |-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName|Silently [encrypts secrets](#encrypt). For example: <br>-encryptsecret thesecret storeName storeLocationsubjectName|9.1|

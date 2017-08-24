@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Configure R Server to operationalize analytics (enterprise) - Machine Learning Server | Microsoft Docs"
+title: "Configure Machine Learning Server to operationalize analytics (enterprise) - Machine Learning Server | Microsoft Docs"
 description: "Configure Operationalization for Microsoft R Server, load balancer, "
-keywords: "setup r server for deployment; install r server for deploying"
+keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/19/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -26,7 +26,7 @@ ms.technology:
 
 # Configure Machine Learning Server to operationalize analytics (enterprise)
 
-**Applies to:  Machine Learning Server 9.2.1**
+**Applies to:  Machine Learning Server** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Find R Server 9.x article)](../install/operationalize-r-server-enterprise-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: [One-box](operationalize-machine-learning-server-one-box.md) and **Enterprise**. This article describes the enterprise configuration.
 
@@ -40,7 +40,7 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 
 To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). 
 
-**Carefully review the following steps.** 
+Carefully review the following steps.
 
 ### Upgrade a compute node
 
