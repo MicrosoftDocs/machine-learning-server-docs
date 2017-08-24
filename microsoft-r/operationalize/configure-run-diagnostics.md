@@ -86,7 +86,7 @@ To go through the execution of a specific web service and retrieve request IDs f
 
 1. If you have not authenticated yet, you must provide your username and password. 
 
-1. From the diagnostic submenu, choose  **Trace service execution**:  
+1. From the diagnostic submenu, choose  **Trace service execution**.
 
 1. Enter the service name and version after the syntax `<service-name>/<version>` such as `my-service/1.1`. 
 
@@ -104,17 +104,20 @@ You can find the logs in the `\<node-install-path>\logs` folder under your web a
 If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a> or contact technical support.
 
 By default, the logging level is set to `Warning` so as not to slow performance. However, whenever you encounter an issue that you want to share with technical support or a forum, you can change the logging level to capture more information.  The following logging levels are available:
-+ `Verbose`: The most detailed comprehensive logging level of all activity, which is rarely (if ever) enabled in production environments
 
-+ `Debug`: Logs robust details including internal system events, which are not necessarily observable
+|Level|Description|
+|----|---------|
+|Verbose|The most detailed comprehensive logging level of all activity, which is rarely (if ever) enabled in production environments|
 
-+ `Information`: Logs system events that correspond to its responsibilities and functions
+|Debug|Logs robust details including internal system events, which are not necessarily observable|
 
-+ `Warning`: Logs only when service is degraded, endangered, or may be behaving outside of its expected parameters.  (Default level)
+|Information|Logs system events that correspond to its responsibilities and functions|
 
-+ `Error`: Logs only errors (functionality is unavailable or expectations broken)
+|Warning|Logs only when service is degraded, endangered, or may be behaving outside of its expected parameters.  (Default level)|
 
-+ `Fatal`: Logs only fatal events that crash the application
+|Error|Logs only errors (functionality is unavailable or expectations broken)|
+
+|Fatal|Logs only fatal events that crash the application|
 
 **To update the logging level:**
 
@@ -122,9 +125,9 @@ By default, the logging level is set to `Warning` so as not to slow performance.
 
 1. Search for the section starting with `"Logging": {`
 
-1. Set the logging level for `"Default"`, which captures R Server default events. For debugging support, use the `Debug` level.
+1. Set the logging level for `"Default"`, which captures R Server default events. For debugging support, use the 'Debug' level.
 
-1. Set the logging level for `"System"`, which captures R Server .NET core events. For debugging support, use the `Debug` level. Use the same value as for `"Default"`.
+1. Set the logging level for `"System"`, which captures R Server .NET core events. For debugging support, use the 'Debug' level. Use the same value as for `"Default"`.
 
 1. Save the file.
 
