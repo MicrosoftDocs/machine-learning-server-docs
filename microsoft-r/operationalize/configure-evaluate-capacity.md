@@ -141,7 +141,7 @@ Since each compute node has its own thread pool for shells, configuring multiple
 
 **To update the thread pool:**
 
-   1. On each compute nodes, [open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
+   1. On each compute nodes, open the configuration file, \<compute-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
    1. Search for the section starting with `"Pool": {`
 

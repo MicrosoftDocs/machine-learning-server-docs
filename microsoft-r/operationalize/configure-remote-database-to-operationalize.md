@@ -54,7 +54,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
 1.  Update the database properties to point to the new database as follows:
 
-    1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md). 
+    1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
     1. Locate the `ConnectionStrings` property block.
 

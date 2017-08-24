@@ -37,7 +37,7 @@ The set of diagnostic tests include:
 
 <a name="test"></a>
 
-## Test the configuration
+## Test your configuration
 1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
@@ -46,7 +46,7 @@ The set of diagnostic tests include:
 
 1. From the diagnostic menu, choose **Test configuration** for a 'health report' of the configuration including a code execution test.
 
-1. Review the test results. If any issues arise, a raw report will appear. You can also investigate the [log files](#logs) and attempt to resolve the issues.
+1. Review the test results. If any issues arise, a raw report appears. You can also investigate the [log files](#logs) and attempt to resolve the issues.
 
 1. After making your corrections, [restart the component](configure-use-admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
 
@@ -54,7 +54,7 @@ The set of diagnostic tests include:
 
 You can also get a health report directly using [the `status` API call](https://microsoft.github.io/deployr-api-docs/#get-status).
 
-## Trace a Python or R code execution 
+## Trace a code execution 
 
 To go through the execution of a specific line of code and retrieve request IDs for debugging purposes, run a trace. 
 
@@ -95,52 +95,12 @@ To go through the execution of a specific web service and retrieve request IDs f
 
 ## Log files and levels
 
-Review the log and configuration files for any component that was identified as experiencing issues. The [logging level](#loglevel) can be changed to capture more or less information.
+Review the log and configuration files for any component that was identified as experiencing issues. 
+You can find the logs in the `\<node-install-path>\logs` folder under your web and compute node installation paths.  (Locate the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
-### Windows logs path
+If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a> or contact technical support.
 
-The logs can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
-
-|Node|Path on version 9.1|
-|----|------------|
-|Web|<MRS_home>\o16n\Microsoft.RServer.WebNode\logs|
-|Compute|<MRS_home>\o16n\Microsoft.RServer.ComputeNode\logs|
-
-<br>
-
-|Node|Path on version 9.0|
-|----|------------|
-|Web|<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI\logs|
-|Compute|<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd\logs|
-
-
-### Linux logs path
-
-The logs can be found here: 
-
-
-|Node|Path on version 9.1|
-|----|------------|
-|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/Microsoft.RServer.WebNode/logs|
-|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/Microsoft.RServer.ComputeNode/logs|
-
-<br>
-
-|Node|Path on version 9.0|
-|----|------------|
-|Web|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI/logs|
-|Compute|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd/logs|
-
-
-> If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a> or contact technical support.
-
-<a name="loglevel"></a>
-
-### Logging Levels
-
-By default, the logging level is set to `Warning` so as not to slow performance. However, whenever you encounter an issue that you want to share with technical support or a forum, you can change the logging level to capture more information. 
-
-The following logging levels are available:
+By default, the logging level is set to `Warning` so as not to slow performance. However, whenever you encounter an issue that you want to share with technical support or a forum, you can change the logging level to capture more information.  The following logging levels are available:
 + `Verbose`: The most detailed comprehensive logging level of all activity, which is rarely (if ever) enabled in production environments
 
 + `Debug`: Logs robust details including internal system events, which are not necessarily observable
@@ -155,25 +115,24 @@ The following logging levels are available:
 
 **To update the logging level:**
 
-   1. On each compute node AND each web node, [open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
+1. On each compute node AND each web node, open the configuration file, \<node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
-   1. Search for the section starting with `"Logging": {`
+1. Search for the section starting with `"Logging": {`
 
-   1. Set the logging level for `"Default"`, which captures R Server default events. For debugging support, use the `Debug` level.
+1. Set the logging level for `"Default"`, which captures R Server default events. For debugging support, use the `Debug` level.
 
-   1. Set the logging level for `"System"`, which captures R Server .NET core events. For debugging support, use the `Debug` level. Use the same value as for `"Default"`.
+1. Set the logging level for `"System"`, which captures R Server .NET core events. For debugging support, use the `Debug` level. Use the same value as for `"Default"`.
 
-   1. Save the file.
+1. Save the file.
 
-   1. [Restart](configure-use-admin-utility.md#startstop) the node services. 
+1. [Restart](configure-use-admin-utility.md#startstop) the node services. 
 
-   1. Repeat these changes on every compute node and every web node.
-      >Each node should have the same appsettings.json properties.
+1. Repeat these changes on every compute node and every web node.  
+   Each node should have the same appsettings.json properties.
 
-   1. Repeat the same operation(s) that were running when the error(s) occurred. 
+1. Repeat the same operation(s) that were running when the error(s) occurred. 
    
-   1. Collect the [log files](#logs) from each node for debugging.
-
+1. Collect the [log files](#logs) from each node for debugging.
 
 
 ## Troubleshooting
@@ -249,7 +208,7 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using the Re
 
 ### Unauthorized / HTTP status 401
 
-If you have [configured R Server to authenticate](configure-authentication.md) against LDAP/AD, but have encountered connection issues or a `401` error, then try the ldp.exe tool to search the LDAP settings and compare them to what you have declared in appsettings.json. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+If you [configured Machine Learning Server to authenticate](configure-authentication.md) against LDAP/AD, and your experience connection issues or a `401` error, very the LDAP settings you declared in appsettings.json. Use the ldp.exe tool to search the correct LDAP settings and compare them to what you have declared. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 ### Configuration did not restore after upgrade
 
@@ -261,12 +220,12 @@ If you followed the upgrade instructions but your configuration did not persist,
 
 ### Alphanumeric error message when consuming service
 
-If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](#logs). 
+If you get an error similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, search [compute node's log file](#logs) for the alphanumeric error code to read the full error message. 
 
 
 ### Failed code execution with “ServiceBusyException” in the log
  
-If you encounter a code execution failure and find a `ServiceBusyException` error in the Web node log file, then a proxy issue may be blocking the execution.
+If a code execution fails and returns a `ServiceBusyException` error in the Web node log file, then a proxy issue may be blocking the execution.
 
 The workaround is to:
 1. Open the R initialization file <install folder>\R_SERVER\etc\Rprofile.site.

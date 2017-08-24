@@ -160,7 +160,7 @@ The encryption function available in the administration utility relies on the RS
 
       1. Enter information you want to encrypt.  The tool returns an encrypted string.
 
-1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
+1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
 1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.md#encrypt) or the [authentication password](configure-authentication.md#encrypt) strings. 
 

@@ -95,7 +95,7 @@ If you configure Machine Learning Server (or R Server) to [use Active Directory/
 
 On each web node, edit the appsettings.json configuration file in order to declare the roles and the groups that belong to them. 
 
-1. Open [the appsetting.json file](configure-find-admin-configuration-file.md) on each web node.
+1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
 1. Search for the following section: `"Authorization": {`
 
