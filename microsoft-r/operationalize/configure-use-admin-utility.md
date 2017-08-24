@@ -193,9 +193,9 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 ## Manage Compute Nodes
 
-Declare the IP addresses of every compute node so they can be found across your configuration. These URI declarations are stored in the database so that every web node can automatically find and communicate with the declared compute nodes. 
+Whenever a web node is started, it looks in the database and configuration file for the list of URIs for all known compute nodes with which the web node might work. You can add to and manage this list of compute nodes using the Administration Utility. You can update this list of URIs from any web node and then all other web nodes will automatically know of the updated list the next time the web node is restarted.
 
-This option was introduced with Machine Learning Server 9.2.1.
+This utility option was introduced with Machine Learning Server 9.2.1 to facilitate the declaration and management of these URIs. Previous releases manage URIs in appsettings.json only.
 
 >[!Important]
 >1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to declare compute nodes. 
