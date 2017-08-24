@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Finding the appsettings.json configuration file for R Server - Machine Learning Server | Microsoft Docs"
-description: "Where to find appsettings.json for R Server, web node, compute node"
-keywords: "R Server configuration file, appsettings.json"
+title: "Default install paths for compute and web nodes - Machine Learning Server | Microsoft Docs"
+description: "Where to find appsettings.json for Machine Learning Server, web node, compute node"
+keywords: "Machine Learning Server configuration file, appsettings.json"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "8/24/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -30,14 +30,14 @@ ms.technology:
 
 ## Machine Learning Server 9.2.1
 
-The installation path for each node depends on the operating system and the type of node (web or compute).
+The installation path depends on the operating system and the type of node (web or compute).
 
 |OS|Path|
 |----|------------|
 |Windows|C:\Program Files\Microsoft\ML\_Server\PYTHON\_SERVER\o16n\\\<node-directory><br>C:\Program Files\Microsoft\ML\_Server\R\_SERVER\o16n\\\<node-directory>|
 |Linux|/usr/lib64/microsoft-r/rserver/o16n/9.2.1/\<node-directory>||
 
-Find the directory name for your node. 
+Where the \<node-directory> name: 
 
 |Type|Node Directory Name|
 |----|------------|
@@ -46,17 +46,19 @@ Find the directory name for your node.
 
 ## Microsoft R Server 9.1.0
 
-|Node type|Node install path|
+The installation path depends on the operating system and the type of node (web or compute).
+
+|OS|Path|
 |----|------------|
-|Web|\<server-home>/Microsoft.RServer.WebNode|
-|Compute|\<server-home>/Microsoft.RServer.ComputeNode|
+|Windows|\<r-home>\deployr<br>(_Run 'normalizePath(R.home())' in the R console for R home._)|
+|Linux|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/\<node-directory>||
 
-Where \<server-home> is:
-+ **Windows**: \<r-home>\deployr  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Run 'normalizePath(R.home())' in the R console for R home._
+Where the \<node-directory> name: 
 
-+ **Linux**: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/lib64/microsoft-r/rserver/o16n/9.1.0  
-
+|Type|Node Directory Name|
+|----|------------|
+|Web node|Microsoft.RServer.WebNode|
+|Compute node|Microsoft.RServer.ComputeNode|
 
 ## Microsoft R Server 9.0.1
 
