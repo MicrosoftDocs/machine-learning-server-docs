@@ -62,13 +62,16 @@ Where the \<node-directory> name:
 
 ## Microsoft R Server 9.0.1
 
-|Node type|Node install path|
+The installation path depends on the operating system and the type of node (web or compute).
+
+|OS|Path|
 |----|------------|
-|Web|\<server-home>/Microsoft.DeployR.Server.WebAPI|
-|Compute|\<server-home>/Microsoft.DeployR.Server.BackEnd|
+|Windows|\<r-home>\deployr<br>(_Run 'normalizePath(R.home())' in the R console for R home._)|
+|Linux|/usr/lib64/microsoft-r/rserver/o16n/9.0.1/\<node-directory>||
 
-Where \<server-home> is:
-+ **Windows**: \<r-home>\deployr  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Run 'normalizePath(R.home())' in the R console for R home._
+Where the \<node-directory> name: 
 
-+ **Linux**: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/lib64/microsoft-r/rserver/o16n/9.0.1  
+|Type|Node Directory Name|
+|----|------------|
+|Web node|Microsoft.DeployR.Server.WebAPI|
+|Compute node|Microsoft.DeployR.Server.BackEnd|
