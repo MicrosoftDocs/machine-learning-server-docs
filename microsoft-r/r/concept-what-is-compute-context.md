@@ -45,7 +45,7 @@ Use same-version R Server instances, or compatible co-released versions of R Cli
 
 In Microsoft R, every cR session that loads the RevoScaleR function library has a compute context type. The default is a local compute context, available on all platforms. 
 
-You can switch from local to any of the compute contexts in the following list. 
+You can switch from local to any of the compute contexts in the following list: 
 
 Context name | Alternative name | Allowed data sources |
 -----------|--------------------|-----------------------|
@@ -70,8 +70,8 @@ At an R command prompt, run `rxGetComputeContext()` to return the current comput
 
 1. Not all RevoScaleR capability is available on every distributed computing platform, such as Hadoop. 
 2. Only some RevoScaleR functions and rxExec run in a distributed manner.  
-3. The main R script including any open source routines still run locally in a single threaded process. 
-4. Data and objects needed for distributed execution of rxExec or a RevoScaleR function will need to be copied to the remote compute context if the object is not already there, such as to a cluster, database, or Hadoop. 
+3. The main R script including any open source routines still runs locally in a single threaded process. 
+4. Data and objects needed for distributed execution of rxExec or a RevoScaleR function needs to be copied to the remote compute context if the object is not already there, such as to a cluster, database, or Hadoop. 
 5. With limited exceptions (such as file copying to and from Hadoop), RevoScaleR does include functions for moving data.  
 6. Some RevoScaleR functions only run locally, such as sort, merge, and import, so data may have to be moved back and forth between the local and remote environment during the course of overall program execution. 
 7. rxPredict on a cluster is only possible if the data file is split.

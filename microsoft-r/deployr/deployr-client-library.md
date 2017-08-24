@@ -31,13 +31,13 @@ ms.technology: "deployr"
 
 ## Introduction
 
-The DeployR API exposes a wide range of R analytics services to client application developers. These services are exposed using standards based JSON and are delivered as Web services over HTTP(s). This standards based approach makes it possible to integrate DeployR services within just about any client application environment.
+The DeployR API exposes a wide range of R analytics services to client application developers. These services are exposed using standards-based JSON and are delivered as Web services over HTTP(s). This standards-based approach makes it possible to integrate DeployR services within just about any client application environment.
 
-To further simplify the integration of DeployR services within client applications several client libraries are provided for Java, JavaScript and .NET developers. These native client libraries provide a number of significant advantages over working directly with the raw API, including simplified service calls, encoding of call parameter data, and automatic handling of response markup on the API.
+To further simplify the integration of DeployR services within client applications, several client libraries are provided for Java, JavaScript and .NET developers. These native client libraries provide a number of significant advantages over working directly with the raw API, including simplified service calls, encoding of call parameter data, and automatic handling of response markup on the API.
 
 >**Try Out Our Examples!** Explore the client library examples for [Java, ](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
 
->Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles a lot of the complexity in building real world client applications so you don't have to.
+>Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles much of the complexity in building real world client applications so you don't have to.
 
 ### API Overview
 
@@ -63,7 +63,7 @@ All services on the DeployR API are documented in detail in the [API Reference G
 
 ### Hello World Example
 
-The following code snippets provide the ubiquituous "Hello World" example for the client libraries, demonstrating the basic programming model used when working with the client libraries in Java and JavaScript, and C\# respectively.
+The following code snippets provide the ubiquitous "Hello World" example for the client libraries, demonstrating the basic programming model used when working with the client libraries in Java and JavaScript, and C\# respectively.
 
 **Java:**
 
@@ -203,9 +203,9 @@ The first step for any client application developer using the client libraries i
 
 ## Authentication
 
-Once a connection to the DeployR server has been established the next step for a client application developer is to decide if end-users or the application itself needs access to [*authenticated services*](#api-overview) on the API.
+Once a connection to the DeployR server has been established, the next step for a client application developer is to decide if end users or the application itself needs access to [*authenticated services*](#api-overview) on the API.
 
-If *authenticated project*, *background job* or *repository* management services are needed by the application then the application must first authenticate. If an application only uses [*anonymous services*](#anonymous-services) then the application can operate *anonymously*, without ever authenticating.
+If *authenticated project*, *background job* or *repository* management services are needed by the application then the application must first authenticate. If an application only uses [*anonymous services*](#anonymous-services), then the application can operate *anonymously*, without ever authenticating.
 
 The following code snippets demonstrate how to authenticate using the client libraries:
 
@@ -254,7 +254,7 @@ The following code snippets demonstrate how to authenticate using the client lib
     RAuthentication authToken = new RBasicAuthentication("george", "s3cret");
     RUser rUser = rClient.login(authToken);
 
->Authenticated users not only have access to *authenticated services* on the API, they also have much broader access to R scripts, models and data files stored in the repository compared to *anonymous* users.
+>Authenticated users not only have access to *authenticated services* on the API, they also have much broader access to R scripts, models, and data files stored in the repository compared to *anonymous* users.
 
 ## Authenticated Services
 
@@ -275,7 +275,7 @@ A project is simply a DeployR-managed R session. Any project created by an authe
 
 2.  User Blackbox Project - a stateful, transient R session offering restricted API access that lives only for the duration of the current user HTTP session.
 
-3.  Persistent Project - a stateful, persistent R session offering unrestricted API access can can live indefiitely, across multiple user HTTP sessions.
+3.  Persistent Project - a stateful, persistent R session offering unrestricted API access can live indefinitely, across multiple user HTTP sessions.
 
 Each type of *authenticated project* is provided to support distinct workflows within client applications.
 
@@ -749,11 +749,11 @@ These services support the manipulation and management of R packages within *aut
 
 ### Background Job Services
 
-A background job is simply a request to execute an R analytics Web services in the background, possibly at some future time and date. By default, the result of that execution will be stored as a *persistent project* on behalf of the *authenticated* user making the request.
+A background job is simply a request to execute an R analytics Web service in the background, possibly at some future time and date. By default, the result of that execution is stored as a *persistent project* on behalf of the *authenticated* user making the request.
 
->By default, each background job execution stores it's results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) section.
+>By default, each background job execution stores its results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) section.
 
-Each job moves through a simple lifecyle on the server, starting with submission, followed by queueing, running and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be cancelled and when a job completes the *authenticated* user that sumitted the job can collect the results of the execution.
+Each job moves through a simple lifecycle on the server, starting with submission, followed by queueing, running, and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be cancelled, and when a job completes the *authenticated* user that submitted the job can collect the results of the execution.
 
 The following code snippets demonstrate some of the ways the client libraries make these services available.
 
@@ -927,7 +927,7 @@ The following code snippets demonstrate some of the ways the client libraries ma
 
 The [Repository Manager](deployr-repository-manager-about.md) is a tool, delivered as an easy-to-use Web interface, that serves as a bridge between the R scripts, models, and data created in existing analytics tools and the deployment of that work into the DeployR repository to support the development of client applications and integrations.
 
-That tool uses the full range of *repository services* on the DeployR API to deliver it's many *file* and *directory* related functionalities. Your own applications can also leverage these sames services as needed. The following code snippets demonstrate some of the ways the client libraries make these services available.
+That tool uses the full range of *repository services* on the DeployR API to deliver its many *file* and *directory-related functionalities. Your own applications can also leverage these same services as needed. The following code snippets demonstrate some of the ways the client libraries make these services available.
 
 
 **Java:**
@@ -1225,11 +1225,11 @@ The following code snippets demonstrate how the client libraries make these serv
     //
     exec = rClient.executeExternal(regressionURL, options);
 
->See the [Anonymous Projects](deployr-api-reference.md#r-for-application-developers) section for further details.
+>For further details, see the [Anonymous Projects](deployr-api-reference.md#r-for-application-developers) section.
 
 ## Standard Execution Model
 
-The DeployR API supports a standard set of parameters across all execution APIs which are commonly know as the standard execution model. A summary of those execution APIs are shown here:
+The DeployR API supports a standard set of parameters across all execution APIs that are commonly known as the standard execution model. A summary of those execution APIs is shown here:
 
 -   [/r/project/execute/code](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-code)
 -   [/r/project/execute/script](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)
@@ -1986,7 +1986,7 @@ The *post-execution* parameters allow the caller to retrieve data from the R ses
 
 ## R Object Data Encoding
 
-DeployR-specific encodings are used to encode R object data passing into and out of the DeployR server. Each of the client libraries provide support that simplifies the task of encoding R object data for sending to the DeployR server.
+DeployR-specific encodings are used to encode R object data passing into and out of the DeployR server. Each of the client libraries provides support that simplifies the task of encoding R object data for sending to the DeployR server.
 
 Encoded R object data can be sent on the *inputs* parameter on the following calls:
 
@@ -2003,7 +2003,7 @@ See the [Standard Execution Model](#standard-execution-model) section of this do
 DeployR-specific encodings are provided for the following classes of R object:
 
 -   character, integer, numeric and logical
--   Date, POSIXct and POSIXlt
+-   Date, POSIXct, and POSIXlt
 -   vector, matrix
 -   ordered, factor
 -   list, data.frame.
@@ -2456,7 +2456,7 @@ The following code snippets demonstrate the mechanism for creating these types o
 
 ## R Object Data Decoding
 
-DeployR-specific encodings are used to encode R object data passing into and out of the DeployR server. Each of the client libraries provide support that simplifies the task of decoding R object data being returned from the DeployR server.
+DeployR-specific encodings are used to encode R object data passing into and out of the DeployR server. Each of the client libraries provides support that simplifies the task of decoding R object data being returned from the DeployR server.
 
 One or more R objects can be returned as DeployR-encoded objects in the response markup on any of the following execution calls:
 
@@ -2514,7 +2514,7 @@ The following code snippets demonstrate the mechanism for requesting DeployR-enc
     options.routputs.Add("mtcars");
     options.routputs.Add("score");
 
-When working with temporary or persistent DeployR projects R objects can also be returned as DeployR-encoded objects in the response markup on the following workspace call:
+When working with temporary or persistent DeployR projects, R objects can also be returned as DeployR-encoded objects in the response markup on the following workspace call:
 
 -   [/r/project/workspace/get](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-get)
 
@@ -2571,7 +2571,7 @@ The following code snippet demonstrates the mechanism for requesting DeployR-enc
 Encodings are provided for the following classes of R object:
 
 -   character, integer, numeric and logical
--   Date, POSIXct and POSIXlt
+-   Date, POSIXct, and POSIXlt
 -   vector, matrix
 -   ordered, factor
 -   list, data.frame.

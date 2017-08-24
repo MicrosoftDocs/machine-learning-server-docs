@@ -102,13 +102,13 @@ Beyond the standard R manuals, there are many books available to help you learn 
 
 A good source of information on introductory data analysis and statistics is Peter Dalgaard’s *Introductory Statistics with R*. After a chapter on basic R operations, Dalgaard discusses probability and distributions, descriptive statistics and graphics, one- and two-sample tests, regression and correlation, ANOVA and Kruskal-Wallis, tabular data, power and computation of sample size, multiple regression, linear models, logistic regression, and survival.
 
-For more advanced techniques, the obvious starting point is *Modern Applied Statistics with S* by Bill Venables and Brian Ripley . This book starts with four introductory chapters on R, then gets into statistics from univariate statistics (chapter 5) to optimization (chapter 16). Along the way, the authors touch on many widely used techniques, including linear models, generalized linear models, clustering, tree-based methods, survival analysis, and many others.
+For more advanced techniques, the obvious starting point is *Modern Applied Statistics with S* by Bill Venables and Brian Ripley. This book starts with four introductory chapters on R, then gets into statistics from univariate statistics (chapter 5) to optimization (chapter 16). Along the way, the authors touch on many widely used techniques, including linear models, generalized linear models, clustering, tree-based methods, survival analysis, and many others.
 
 Rapidly becoming *the* book for aspiring data scientists is *The Elements of Statistical Learning* by Trevor Hastie, Robert Tibshirani, and Jerome Friedman. This book covers a variety of statistical techniques important in big data analysis and machine learning, including various tree-based methods, support vector machines, graphical models, and more.
 
-Linear models, generalized linear models, and other regression techniques are the subject of a number of texts, including Frank Harrell’s *Regression Modeling Strategies*, John Fox’s *Applied Regression Analysis and Generalized Linear Models* and his R-specific companion volume, *An R and S-PLUS Companion to Applied Regression* , and *Data Analysis Using Regression and Multilevel/Hierarchical Models* by Andrew Gelman and Jennifer Hill .
+Linear models, generalized linear models, and other regression techniques are the subject of a number of texts, including Frank Harrell’s *Regression Modeling Strategies*, John Fox’s *Applied Regression Analysis and Generalized Linear Models* and his R-specific companion volume, *An R and S-PLUS Companion to Applied Regression*, and *Data Analysis Using Regression and Multilevel/Hierarchical Models* by Andrew Gelman and Jennifer Hill.
 
-Other useful books that take you into more advanced statistics are *R in Action* by Robert I. Kabacoff , *A Handbook of Statistical Analyses Using R* by Brian Everitt and Torsten Hothorn , *Data Analysis and Graphics Using R* by John Maindonald and John Braun , and *The R Book* by Michael Crawley .
+Other useful books that take you into more advanced statistics are *R in Action* by Robert I. Kabacoff, *A Handbook of Statistical Analyses Using R* by Brian Everitt and Torsten Hothorn, *Data Analysis and Graphics Using R* by John Maindonald and John Braun, and *The R Book* by Michael Crawley.
 
 If you are interested in an overview of the multiple uses of big data analytics, the book *Big Data, Big Analytics* by Michael Minelli, Michele Chambers, and Ambiga Dhiraj gives you an excellent start in understanding what big data is and how it is used in real-world business applications.
 
@@ -132,7 +132,7 @@ The manual *R Data Import/Export* by the R Core Team describes how to read data 
 
 All of the references mentioned up to now contain at least some material on graphics, because graphical exploration is a primary motivation for using R in the first place. The Blue Book, in particular, describes in detail the “traditional S graphics" framework.
 
-A popular graphics package that is rapidly growing its own complete package ecosystem is Hadley Wickham’s ggplot2 package, documented in Wickham’s *ggplot2: Elegant Graphics for Data Analysis*. The ggplot2 package implements in R many of the ideas from Leland Wilkinson’s *The Grammar of Graphics* .
+A popular graphics package that is rapidly growing its own complete package ecosystem is Hadley Wickham’s ggplot2 package, documented in Wickham’s *ggplot2: Elegant Graphics for Data Analysis*. The ggplot2 package implements in R many of the ideas from Leland Wilkinson’s *The Grammar of Graphics*.
 
 The ggplot2 package is a high-level graphics package. For lower-level graphics functionality, the definitive reference is Paul Murrell’s *R Graphics*, which describes both the traditional S graphics framework (in particular, its implementation in R by Ross Ihaka) and the grid graphics framework developed by Murrell. It also describes the lattice system, developed by Deepayan Sarkar, that uses the grid framework to implement the Trellis graphics system developed by Rick Becker and Bill Cleveland. Serious users of the lattice system also  consult Sarkar’s book, *Lattice: Multivariate Data Visualization with R* .
 
@@ -164,7 +164,7 @@ Here is a list of the available archived documentation sets for RRE:
 
 **DeployR 8.x Docs**
 
-The documentation for these releases have been archived. [See here.](deployr/deployr-welcome.md)
+The documentation for these releases has been archived. [See here.](deployr/deployr-welcome.md)
 
 ### More Books on R
 

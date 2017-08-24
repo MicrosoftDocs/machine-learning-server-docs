@@ -25,9 +25,9 @@ ms.technology: "r-server"
 
 # Generalized Linear Models
 
-Generalized linear models (GLM) are a framework for a wide range of analyses. They relax the assumptions for a standard linear model in two ways. First, a functional form can be specified for the conditional mean of the predictor. This is referred to as the “link” function. Second, you can specify a distribution for the response variable. The rxGlm function in RevoScaleR provides the ability to estimate generalized linear models on large data sets.
+Generalized linear models (GLM) are a framework for a wide range of analyses. They relax the assumptions for a standard linear model in two ways. First, a functional form can be specified for the conditional mean of the predictor, referred to as the “link” function. Second, you can specify a distribution for the response variable. The rxGlm function in RevoScaleR provides the ability to estimate generalized linear models on large data sets.
 
-The following family/link combinations are implemented in C++ for performance enhancements: binomial/logit, gamma/log, poisson/log, and Tweedie. Other family/link combinations use a combination of C++ and R code. Any valid R family object that can be used with glm() can be used with rxGlm(), including those that are user-defined. The following table shows all of the supported family/link combinations (in addition to user-defined):
+The following family/link combinations are implemented in C++ for performance enhancements: binomial/logit, gamma/log, poisson/log, and Tweedie. Other family/link combinations use a combination of C++ and R code. Any valid R family object that can be used with glm() can be used with rxGlm(), including user-defined. The following table shows all of the supported family/link combinations (in addition to user-defined):
 
 | **Family**       | **Default Link Function**                   | **Other Available Link Functions**                               |
 |------------------|---------------------------------------------|------------------------------------------------------------------|
@@ -52,7 +52,7 @@ The Poisson family is used to estimate models of count data. Examples from the l
 
 We’ll start with a simple example from Kabacoff’s **R in Action** book, using data provided with the ***robust*** R package. The data are from a placebo-controlled clinical trial of 59 epileptics. Patients with partial seizures were enrolled in a randomized clinical trial of the anti-epileptic drug, progabide. Counts of epileptic seizures were recorded during the trial. The data set also includes a baseline 8-week seizure count and the age of the patient.
 
-To access this data, first make sure the ***robust*** package is installed, then use the *data* command to load the the data frame:
+To access this data, first make sure the ***robust*** package is installed, then use the *data* command to load the data frame:
 
 
 	  #  A Simple Example Using the Poisson Family
@@ -87,13 +87,13 @@ The data set has 59 observations, and 12 variables. The variables of interest ar
 
 ![](media/how-to-revoscaler-generalized-linear-model/image17.png)
 
-To estimate a model with *sumY* as the response variable and the *Base* number of seizures, *Age*, and the treatment as explanatory variables, we can use *rxGlm*. A benefit to using *rxGlm* is that the code will scale for use with a much bigger data set.
+To estimate a model with *sumY* as the response variable and the *Base* number of seizures, *Age*, and the treatment as explanatory variables, we can use *rxGlm*. A benefit to using *rxGlm* is that the code scales for use with a much bigger data set.
 
 	myGlm <- rxGlm(sumY~ Base + Age + Trt, dropFirst = TRUE, 
 	    data = breslow.dat, family = poisson())
 	summary(myGlm)
 
-This results in:
+Results in:
 	
 	Call:
 	rxGlm(formula = sumY ~ Base + Age + Trt, data = breslow.dat, 
@@ -131,9 +131,9 @@ To interpret the coefficients, it is sometimes useful to transform them back to 
 	  (Intercept)          Base           Age   Trt=placebo Trt=progabide 
 	    7.0204403     1.0229102     1.0230007            NA     0.8583864
 
-This suggests that, controlling for the base number of seizures and age, those taking progabide during the trial had 85% of the expected number seizures compared with those who didn’t.
+This suggests that, controlling for the base number of seizures and age, people taking progabide during the trial had 85% of the expected number seizures compared with people who didn’t.
 
-A common method of checking for overdispersion is to calculate the ratio of the residual deviance with the degrees of freedom, which should be about 1 to fit the assumptions of the model.
+A common method of checking for overdispersion is to calculate the ratio of the residual deviance with the degrees of freedom. This should be about 1 to fit the assumptions of the model.
 
 	myGlm$deviance/myGlm$df[2]
 
@@ -178,7 +178,7 @@ The quasi-poisson family can be used to handle over-dispersion. In this case, in
 	  Condition number of final variance-covariance matrix: 3.3382 
 	  Number of iterations: 4
 
-Notice that the coefficients are the same as when using the poisson family, but that the standard errors are larger; the effect of the treatment is no longer significant.
+Notice that the coefficients are the same as when using the poisson family, but that the standard errors are larger. The effect of the treatment is no longer significant.
 
 ### An Example Using the Gamma Family
 
@@ -234,13 +234,13 @@ The Gamma family is used with data containing positive values with a positive sk
 	  Condition number of final variance-covariance matrix: 12.4648 
 	  Number of iterations: 4
 
-But, note that these estimates are conditional on the fact that a claim was made.
+But, these estimates are conditional on the fact that a claim was made.
 
 ### An Example Using the Tweedie Family
 
 The Tweedie family of distributions provide flexible models for estimation. The power parameter *var.power* determines the shape of the distribution, with familiar models as special cases: if *var.power* is set to 0, Tweedie is a normal distribution; when set to 1, it is Poisson; when 2, it is Gamma; when 3, it is inverse Gaussian. If *var.power* is between 1 and 2, it is a compound Poisson distribution and is appropriate for positive data that also contains exact zeros, for example, insurance claims data, rainfall data, or fish-catch data. If *var.power* is greater than 2, it is appropriate for positive data.
 
-In this example, we’ll use a subsample from the 5% sample of the U.S. 2000 census. We will consider the annual cost of property insurance for heads of household ages 21 through 89, and its relationship to age, sex, and region. A variable “perwt” in the data set represents the probability weight for that observation. First, to create the subsample (specify the correct data path for your downloaded data):
+In this example, we use a subsample from the 5% sample of the U.S. 2000 census. We consider the annual cost of property insurance for heads of household ages 21 through 89, and its relationship to age, sex, and region. A variable “perwt” in the data set represents the probability weight for that observation. First, to create the subsample (specify the correct data path for your downloaded data):
 
 	bigDataDir = "C:/MRS/Data"
 	bigCensusData <- file.path(bigDataDir, "Census5PCT2000.xdf")
@@ -258,11 +258,11 @@ In this example, we’ll use a subsample from the 5% sample of the U.S. 2000 cen
 	  Number of blocks: 10
 	  Compression type: zlib
 
->The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
+>The `blocksPerRead` argument is ignored when run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
 An Xdf data source representing the new data file is returned. The new data file has over 5 million observations.
 
-Let’s do one more step in data cleaning. The variable *region* has some very long factor level character strings, and it also has a number of levels for which there are no observations. We can see this using *rxSummary*:
+Let’s do one more step in data cleaning. The variable *region* has some long factor level character strings, and it also has a number of levels for which there are no observations. We can see this using *rxSummary*:
 
 	rxSummary(~region, data = propinDS)
 
@@ -321,7 +321,7 @@ As a first step to analysis, let’s look at a histogram of the property insuran
 
 ![](media/how-to-revoscaler-generalized-linear-model/image18.png)
 
-This appears to be a good match for the Tweedie family with a variance power parameter between 1 and 2, since it has a “clump” of exact zeros in addition to a distribution of positive values.
+This data appears to be a good match for the Tweedie family with a variance power parameter between 1 and 2, since it has a “clump” of exact zeros in addition to a distribution of positive values.
 
 We can estimate the parameters using *rxGlm*, setting the *var.power* argument to 1.5. As explanatory variables we’ll use sex, an “on-the-fly” factor variable with a level for each age, and region:
 
@@ -438,7 +438,7 @@ We can estimate the parameters using *rxGlm*, setting the *var.power* argument t
 	  Condition number of final variance-covariance matrix: 5980.277 
 	  Number of iterations: 8 
 
-A good way to begin examining the results of of the estimated model is to look at predicted values for given explanatory characteristics. For example, let’s create a prediction data set for the South Atlantic region for all ages and sexes:
+A good way to begin examining the results of the estimated model is to look at predicted values for given explanatory characteristics. For example, let’s create a prediction data set for the South Atlantic region for all ages and sexes:
 
 	# Get the region factor levels
 	varInfo <- rxGetVarInfo(propinDS)
@@ -461,7 +461,7 @@ Now we’ll use that as a basis for a similar prediction data set for the Middle
 		labels = varInfo$region$levels)
 
 
-Next we’ll combine the two data sets, and compute the predicted values for annual property insurance cost using our estimated *rxGlm* model:
+Next we combine the two data sets, and compute the predicted values for annual property insurance cost using our estimated *rxGlm* model:
 
 	predData$predicted <- outData$propinsr_Pred
 	rxLinePlot( predicted ~age|region+sex, data = predData,
@@ -473,7 +473,7 @@ Next we’ll combine the two data sets, and compute the predicted values for ann
 
 ### Stepwise Generalized Linear Models
 
-Stepwise generalized linear models help you determine which variables are most important to include in the model. You provide a minimal, or lower, model formula and a maximal, or upper, model formula, and using forward selection, backward elimination, or bidirectional search, the algorithm determines the model formula that provides the best fit based on an AIC selection criterion or a significance level criterion.
+Stepwise generalized linear models help you determine which variables are most important to include in the model. You provide a minimal, or lower, model formula and a maximal, or upper, model formula. Using forward selection, backward elimination, or bidirectional search, the algorithm determines the model formula that provides the best fit based on an AIC selection criterion or a significance level criterion.
 
 As an example, consider again the Gamma family model from section 10.2:
 
@@ -482,7 +482,7 @@ As an example, consider again the Gamma family model from section 10.2:
 					dropFirst = TRUE, data = claimsXdf)
 	summary(claimsGlm)
 
-We can recast this as a stepwise model by specifying a variableSelection argument using the rxStepControl function to provide our stepwise arguments:
+We can recast this model as a stepwise model by specifying a variableSelection argument using the rxStepControl function to provide our stepwise arguments:
 
 	claimsGlmStep <- rxGlm(cost ~ age, family = Gamma, dropFirst=TRUE,
 						data=claimsXdf, variableSelection =
@@ -504,7 +504,7 @@ We can recast this as a stepwise model by specifying a variableSelection argumen
 	  Family-link: Gamma-inverse 
 	   
 	  Residual deviance: 18.0433 (on 116 degrees of freedom)
-	   
+	
 	  Coefficients:
 	  			  Estimate Std. Error t value Pr(>|t|)    
 	  (Intercept)  0.0040354  0.0004661   8.657 3.24e-14 ***
@@ -529,4 +529,4 @@ We see that in the stepwise model fit, age no longer appears in the final model.
 
 #### Plotting Model Coefficients
 
-The ability to save model coefficients using the argument *keepStepCoefs = TRUE* within the *rxStepControl* call and to plot them with the function *rxStepPlot* was described in great detail for stepwise *rxLinMod* in section 8.8.5. However, this functionality is also available for stepwise *rxGLM* objects.
+The ability to save model coefficients using the argument *keepStepCoefs = TRUE* within the *rxStepControl* call, and to plot them with the function *rxStepPlot* was described in great detail for stepwise *rxLinMod* in section 8.8.5. However, this functionality is also available for stepwise *rxGLM* objects.

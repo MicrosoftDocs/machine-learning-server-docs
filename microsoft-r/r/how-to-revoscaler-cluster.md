@@ -29,13 +29,13 @@ ms.technology: "r-server"
 
 ### K-means Clustering
 
-K-means clustering is a classification technique that groups observations of numeric data using one of several *iterative relocation* algorithms—that is, starting from some initial classification, which may be random, points are moved from cluster to another so as to minimize sums of squares. In RevoScaleR, the algorithm used is that of Lloyd .
+K-means clustering is a classification technique that groups observations of numeric data using one of several *iterative relocation* algorithms—that is, starting from some initial classification, which may be random, points are moved from cluster to another so as to minimize sums of squares. In RevoScaleR, the algorithm used is that of Lloyd.
 
 To perform k-means clustering with RevoScaleR, use the *rxKmeans* function.
 
 #### Clustering the Airline Data
 
-As a first example of k-means clustering, we will cluster the arrival delay and scheduled departure time in the airline data 7% subsample. To start, we extract variables of interest into a new working data set to which we’ll be writing additional information:
+As a first example of k-means clustering, we will cluster the arrival delay and scheduled departure time in the airline data 7% subsample. To start, we extract variables of interest into a new working data set to which we are writing additional information:
 
 	#  K-means Clustering
 
@@ -45,7 +45,7 @@ As a first example of k-means clustering, we will cluster the arrival delay and 
 	rxDataStep(inData = sampleAirData, outFile = "AirlineDataClusterVars.xdf",
 	  varsToKeep=c("DayOfWeek", "ArrDelay", "CRSDepTime", "DepDelay"))
 
-We specify the variables to cluster as a formula, and specify the number of clusters we’d like; initial centers for these clusters are then chosen at random.
+We specify the variables to cluster as a formula, and specify the number of clusters we’d like. Initial centers for these clusters are then chosen at random.
 
 	kclusts1 <- rxKmeans(formula= ~ArrDelay + CRSDepTime, 
 		data = "AirlineDataClusterVars.xdf",
@@ -87,7 +87,7 @@ This produces the following output (because the initial centers are chosen at ra
 
 The value returned by *rxKmeans* is a list similar to the list returned by the standard R kmeans function. The printed output shows a subset of this information, including the number of valid and missing observations, the cluster sizes, the cluster centers, and the within-cluster sums of squares.
 
-The cluster membership component is returned if the input is a data frame, but if the input is an .xdf file, cluster membership is returned only if *outFile* is specified, in which case it is returned not as part of the return object, but as a column in the specified file. In our example, we specified an *outFile*, and we see the cluster membership variable when we look at the file with *rxGetInfo*:
+The cluster membership component is returned if the input is a data frame, but if the input is a .xdf file, cluster membership is returned only if *outFile* is specified, in which case it is returned not as part of the return object, but as a column in the specified file. In our example, we specified an *outFile*, and we see the cluster membership variable when we look at the file with *rxGetInfo*:
 
 	rxGetInfo("AirlineDataClusterVars.xdf", getVarInfo=TRUE)
 	 File name: AirlineDataClusterVars.xdf 

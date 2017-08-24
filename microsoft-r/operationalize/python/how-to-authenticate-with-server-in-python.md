@@ -30,7 +30,6 @@ ms.technology:
 
 This article is for data scientists who wants to learn how to publish Python code/models as web services hosted in R Server and how to consume them. This article assumes you are proficient in Python.
 
-
 <a name="python-auth"></a>
 
 ### 1. Add authentication / header logic
@@ -53,7 +52,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
    **AD/LDAP or 'admin' account authentication**
 
-   You must call the `POST /login` API in order to authenticate. You'll need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server will issue you a [bearer/access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
+   You must call the `POST /login` API in order to authenticate. You need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server issues you a [bearer/access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, contact your administrator.
    ```python
    #Using client library generated from Autorest
    #Create client instance and point it at an R Server. 
@@ -70,7 +69,7 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
 
    **Azure Active Directory (AAD) authentication**
 
-   You must pass the AAD credentials, authority, and client ID. In turn, AAD will issue [the `Bearer` access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, please contact your administrator.
+   You must pass the AAD credentials, authority, and client ID. In turn, AAD issues [the `Bearer` access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, contact your administrator.
    ```python
    #Import the AAD authentication library
    import adal

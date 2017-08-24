@@ -34,7 +34,7 @@ Microsoft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https:
 
 ## Prerequisites
 
-To run the example code, your environment must provide the following:
+To run the example code, your environment must provide the following criteria:
 
 + A Hadoop cluster with Spark and valid installation of Microsoft R Server
 + Microsoft R Server configured for Hadoop and Spark
@@ -68,7 +68,7 @@ install.packages("sparklyr")
 
 ## Load data into HDFS
 
-To load SampleData into HDFS, please run these commands from within an edge node with MRS installed:
+To load SampleData into HDFS, run these commands from within an edge node with MRS installed:
 
 ````
 	hadoop fs -mkdir /share
@@ -294,7 +294,7 @@ This example assumes dployr and sparklyr data structures, with model training an
 
 ## Example 2: MRS data with sparklyr and dplyR modeling
 
-This example uses the airline data set. It includes multiple Microsoft R Server approaches for loading data, such as `RxTextData` for CSV files, and `RxOrcData` or `RxParquetData` for those formats. You can try different approaches by commenting out inactive paths. Given this data, the examples shows you how to parition and train a model with sparklyr.
+This example uses the airline data set. It includes multiple Microsoft R Server approaches for loading data, such as `RxTextData` for CSV files, and `RxOrcData` or `RxParquetData` for those formats. You can try different approaches by commenting out inactive paths. Given this data, the examples show you how to partition and train a model with sparklyr.
 
 1. Create a connection to Spark using `rxSparkConnect()`, specifying a sparklyr interop; using sparklyr and its interfaces to connect to Spark.
 2. Call `rxGetSparklyrConnection()` on the compute context to get a sparklyr connection object.
@@ -534,7 +534,7 @@ This example uses the airline data set. It includes multiple Microsoft R Server 
 
 ## Conclusion
 
-The ability to use both Microsoft R Server and sparklyr from within one Spark session will allow Microsoft R Server users to quickly and seamlessly utilize features provided by sparklyr within their solutions.
+The ability to use both Microsoft R Server and sparklyr from within one Spark session allow Microsoft R Server users to quickly and seamlessly utilize features provided by sparklyr within their solutions.
 
 ## Next step
 
