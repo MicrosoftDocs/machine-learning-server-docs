@@ -45,7 +45,7 @@ Additional [troubleshooting topics](#trouble) are also covered.
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
-1. If you have not authenticated yet, you must provide your username and password. 
+   If you have not authenticated yet, you must provide your username and password. 
 
 1. From the diagnostic menu, choose **Test configuration** for a 'health report' of the configuration including a code execution test.
 
@@ -65,7 +65,7 @@ To go through the execution of a specific line of code and retrieve request IDs 
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
-1. If you have not authenticated yet, you must provide your username and password. 
+   If you have not authenticated yet, you must provide your username and password. 
 
 1. From the diagnostic submenu, choose either **Trace R code execution** or **Trace Python code execution** depending on the language you are using. 
 
@@ -84,7 +84,7 @@ To go through the execution of a specific web service and retrieve request IDs f
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
-1. If you have not authenticated yet, you must provide your username and password. 
+   If you have not authenticated yet, you must provide your username and password. 
 
 1. From the diagnostic submenu, choose  **Trace service execution**.
 
@@ -108,15 +108,10 @@ By default, the logging level is set to `Warning` so as not to slow performance.
 |Level|Description|
 |----|---------|
 |Verbose|The most detailed comprehensive logging level of all activity, which is rarely (if ever) enabled in production environments|
-
 |Debug|Logs robust details including internal system events, which are not necessarily observable|
-
 |Information|Logs system events that correspond to its responsibilities and functions|
-
 |Warning|Logs only when service is degraded, endangered, or may be behaving outside of its expected parameters.  (Default level)|
-
 |Error|Logs only errors (functionality is unavailable or expectations broken)|
-
 |Fatal|Logs only fatal events that crash the application|
 
 **To update the logging level:**
