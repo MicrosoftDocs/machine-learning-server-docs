@@ -29,11 +29,14 @@ ms.technology:
 **Applies to:  Microsoft R Server 9.x**
 
 You can assess the health of your web and compute node environment using the diagnostic tests in the Administration Utility. 
-Armed with this information, you can identify unresponsive components, execution problems, and access the log files. 
+
+Armed with this information, you can identify unresponsive components, execution problems, and access [the log files](#logs). 
 
 The set of diagnostic tests include:
 + A general health check of the configuration
 + A trace of an execution (R code, Python code, or a web service)
+
+Additional [troubleshooting topics](#trouble) are also covered.
 
 <a name="test"></a>
 
@@ -134,6 +137,7 @@ By default, the logging level is set to `Warning` so as not to slow performance.
    
 1. Collect the [log files](#logs) from each node for debugging.
 
+<a name="trouble"></a>
 
 ## Troubleshooting
 
