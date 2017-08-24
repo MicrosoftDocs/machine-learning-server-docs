@@ -50,20 +50,15 @@ These instructions describe how to launch the Administrator Utility.
 
 **On Windows:**
 
-You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Microsoft R Server - Microsoft-R-Admin-Util**.  
-
->[!WARNING]
-> If your organization has the default powershell execution policy of "Restricted" (common for Windows 10 and Windows Server 2012), you may have issues running the administration utility using the shortcut. In that case, either use the alternate option detailed in the next bullet or you can change the execution policy to "Unrestricted." Read this article on [powershell execution policies](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) for details. 
-
-Alternately, open a command line window with administrator privileges and enter the following commands:
+Open a command line window with administrator privileges and enter the following commands:
 
 |Version|Commands|
 |----|------------|
-|9.2|cd \<server_home><br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
-|9.1|cd \<server_home><br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0|cd \<server_home><br>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
+|9.2.1|cd \<server_home><br>dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll|
+|9.1.0|cd \<server_home><br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0.1|cd \<server_home><br>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
 
-where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
+where '\<server_home>' is the [path to the installation directory](../operationalize/configure-find-admin-configuration-file.md).  
 
 **On Linux:**
 
@@ -71,8 +66,11 @@ Launch the administration utility script with `root` or `sudo` privileges with t
 
 |Version|Commands|
 |----|------------|
-|9.1|cd /usr/lib64/microsoft-r/rserver/o16n/9.1.0<br>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0|cd /usr/lib64/microsoft-deployr/9.0.1<br>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
+|9.2.1|cd \<server_home><br>sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll|
+|9.1.0|cd \<server_home><br>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0.1|cd \<server_home><br>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
+
+where '\<server_home>' is the [path to the installation directory](../operationalize/configure-find-admin-configuration-file.md).
 
 <br><a name="admin-password"></a>
 
@@ -96,7 +94,7 @@ This local 'admin' password must be 8-16 characters long and contain at least 1 
 1. Confirm the password.
 
 >[!NOTE]
->You can bypass script interface using the argument '-setpassword <password>' such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all command line switches for this script, [here](#switch).
+>You can bypass script interface using the argument '-setpassword <password>' such as `dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all command line switches for this script, [here](#switch).
 
 <br><a name="startstop"></a>
 
