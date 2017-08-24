@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Evaluate the load balancing of your R Server configuration- Machine Learning Server | Microsoft Docs"
+title: "Evaluate the load balancing of your configuration - Machine Learning Server | Microsoft Docs"
 description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
 author: "j-martens"
@@ -42,7 +42,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Configure Test Parameters
 
-1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
 
@@ -52,14 +52,14 @@ You can define the parameters for the traffic simulation for a given configurati
 
    1. From the sub-menu, choose the option for **Change the service for simulation**.
    1. Specify the new service:
-      + To use an existing service, enter `Yes` and provide the service's name and version as `<name>/<version>`. For example, `my-service/1.1`.
-      + To use the generated [default service], enter `No`.
-   1. When prompted, enter the required input parameters for the service in a JSON format. <br>For example, for a vector/matrix, follow the JSON format such as `[1,2,3]` for vector, `[[…]]` for matrix. A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.
+      + To use an existing service, enter 'Yes' and provide the service's name and version as '<name>/<version>'. For example, `my-service/1.1`.
+      + To use the generated [default service], enter 'No'.
+   1. When prompted, enter the required input parameters for the service in a JSON format. <br>For example, for a vector/matrix, follow the JSON format such as '[1,2,3]' for vector, '[[…]]' for matrix. A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.
 
 1. To test for the maximum latency:
 
    1. From the sub-menu, choose the option for **Change thread/latency limits**.
-   1. When prompted, enter `Time` to define the number of threads against which you want to test.
+   1. When prompted, enter 'Time' to define the number of threads against which you want to test.
    1. Specify the maximum latency in milliseconds after which the test stops.
    1. Specify the minimum thread count at which the test starts.
    1. Specify the increment by which the number of threads increases for each iteration until the maximum latency is reached.
@@ -67,7 +67,7 @@ You can define the parameters for the traffic simulation for a given configurati
 1. To test for the maximum number of parallel requests that can be supported:
 
    1. From the sub-menu, choose the option for **Change thread/latency limits**.
-   1. When prompted, enter `Threads` to define the maximal threshold for the duration of a web node request.
+   1. When prompted, enter 'Threads' to define the maximal threshold for the duration of a web node request.
    1. Specify the maximum thread count after which the test stops running.
    1. Specify the minimum thread count at which the test starts.
    1. Specify the increment by which the number of threads increases for each iteration.
@@ -104,11 +104,11 @@ The test results are divided into request processing stages to enable you to see
 
 |Stage|Time Measured|
 |------|-----------|
-|Web Node Request|Time for the request from the web node's controller to go all the way to [`deployr-rserve`](https://github.com/Microsoft/deployr-rserve) and back|
+|Web Node Request|Time for the request from the web node's controller to go all the way to [deployr-rserve](https://github.com/Microsoft/deployr-rserve) and back|
 |Create Shell|Time to create a shell or take it from the pool|
 |Initialize Shell|Time to load the data (model or snapshot) into the shell prior to execution|
 |Web Node to Compute Node|Time for a request from the web node to reach the compute node|
-|Compute Node Request|Time for a request from the compute node to reach [`deployr-rserve`](https://github.com/Microsoft/deployr-rserve) and return to the node|
+|Compute Node Request|Time for a request from the compute node to reach [deployr-rserve](https://github.com/Microsoft/deployr-rserve) and return to the node|
 
 <br>
 You can also explore the results visually in a break-down graph using the URL that is returned to the console. 
@@ -121,9 +121,9 @@ You can also explore the results visually in a break-down graph using the URL th
 
 When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python shells for code execution.  This pool limits the maximum number of R and Python shells can be used to execute in parallel.
 
-There is a cost to creating a shell both in time and memory. So having a pool of existing shells awaiting code execution requests means no time is lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size(`InitialSize`), the longer it takes to start up the compute node. 
+There is a cost to creating a shell both in time and memory. So having a pool of existing shells awaiting code execution requests means no time is lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size (InitialSize), the longer it takes to start up the compute node. 
 
-New shells can be added to the pool until the maximum pool size (`MaxSize`) is reached. Whenever the last shell in the pool is called, a new shell is automatically created for the next, future execution request until the maximum is reached. After the maximum is reached, the compute node returns a `503 - server busy` response. However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of shells needed to run the test exceeds the number of shells in the pool, a new shell is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the shell itself. 
+New shells can be added to the pool until the maximum pool size (MaxSize) is reached. Whenever the last shell in the pool is called, a new shell is automatically created for the next, future execution request until the maximum is reached. After the maximum is reached, the compute node returns a '503 - server busy' response. However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of shells needed to run the test exceeds the number of shells in the pool, a new shell is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the shell itself. 
 
 The size of this pool can be adjusted in the external configuration file, appsettings.json, found on each compute node.
 
@@ -145,9 +145,9 @@ Since each compute node has its own thread pool for shells, configuring multiple
 
    1. Search for the section starting with `"Pool": {`
 
-   1. Set the `InitialSize`. This is the number of R and/or Python shells that are pre-created for your users each time the compute node is restarted.
+   1. Set the InitialSize. This is the number of R and/or Python shells that are pre-created for your users each time the compute node is restarted.
 
-   1. Set the `MaxSize`. This is the maximum number of R and/or Python shells that can be pre-created and held in memory for processing code execution requests. 
+   1. Set the MaxSize. This is the maximum number of R and/or Python shells that can be pre-created and held in memory for processing code execution requests. 
 
    1. Save the file.
 
