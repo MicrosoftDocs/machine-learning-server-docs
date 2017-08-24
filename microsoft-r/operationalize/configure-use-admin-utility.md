@@ -24,9 +24,9 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Administration utility for operationalizing analytics with R Server
+# Administration utility for operationalizing analytics
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 This article describes how to use the administration utility to configure the server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials.
 
@@ -41,7 +41,6 @@ Use the utility to:
 + [Manage compute nodes](#manage-nodes)
 + [Learn about command line switches to this utility script](#switch)
 
-<br>
 <a name="launch"></a>
 
 ## Launch the Administrator Utility
@@ -82,7 +81,7 @@ This local 'admin' password must be 8-16 characters long and contain at least 1 
 
 **To set or update the local admin account password:**
 
-1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose the option to set a password for the local 'admin' account.
 
@@ -94,7 +93,9 @@ This local 'admin' password must be 8-16 characters long and contain at least 1 
 1. Confirm the password.
 
 >[!NOTE]
->You can bypass script interface using the argument '-setpassword <password>' such as `dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all command line switches for this script, [here](#switch).
+>You can bypass script interface using the argument '-setpassword <password>'. Learn about all command line switches for this script, [here](#switch). For example: 
+>
+>dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -setpassword my-password 
 
 <br><a name="startstop"></a>
 
@@ -104,7 +105,7 @@ To start or stop all operationalization-related services on the machine at once,
 
 **To stop or start a web node or compute node:**
 
-1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose the option **Stop and start services**.
 
@@ -120,7 +121,7 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 1. Log in to the machine on which your web node or compute node is installed.
 
-1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose the option **Change service ports**.
 
@@ -146,7 +147,7 @@ The encryption function available in the administration utility relies on the RS
 
    Ensure that your certificate is secured properly. On Windows, for example, you can use Bitlocker to encrypt the disk.  
 
-1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
       1. From the main menu, choose the option **Encrypt Credentials**.
 
@@ -200,13 +201,13 @@ This utility option was introduced with Machine Learning Server 9.2.1 to facilit
 >[!Important]
 >1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to declare compute nodes. 
 >
->2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs in appsettings.json are still read at startup and stored into the database. You can remove them from appsettings.json and manage them using this feature only now.
+>2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs in appsettings.json are still read at startup and stored into the database. You can remove them from the appsettings.json of each web node and manage them in one place with this feature now.
 
 **To declare compute nodes:**
 
 1. Log in to the machine on which one of your web nodes is installed.
 
-1. [Launch the administration utility](#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose the option **Manage compute nodes**.
 
