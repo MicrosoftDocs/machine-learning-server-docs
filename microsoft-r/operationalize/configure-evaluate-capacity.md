@@ -28,7 +28,7 @@ ms.technology:
 
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
-The Evaluate Capacity tool allows you to test your own R code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.
+The Evaluate Capacity tool allows you to test your own R and Python code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.
 
 You can define the parameters for the traffic simulation for a given configuration or for a given web service. You can test for maximum latency or maximum thread count.
 
@@ -52,7 +52,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
    1. From the sub-menu, choose the option for **Change the service for simulation**.
    1. Specify the new service:
-      + To use an existing service, enter 'Yes' and provide the service's name and version as '<name>/<version>'. For example, `my-service/1.1`.
+      + To use an existing service, enter 'Yes' and provide the service's name and version as '\<name>/\<version>'. For example, `my-service/1.1`.
       + To use the generated [default service], enter 'No'.
    1. When prompted, enter the required input parameters for the service in a JSON format. <br>For example, for a vector/matrix, follow the JSON format such as '[1,2,3]' for vector, '[[…]]' for matrix. A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.
 
@@ -108,7 +108,7 @@ The test results are divided into request processing stages to enable you to see
 |Create Shell|Time to create a shell or take it from the pool|
 |Initialize Shell|Time to load the data (model or snapshot) into the shell prior to execution|
 |Web Node to Compute Node|Time for a request from the web node to reach the compute node|
-|Compute Node Request|Time for a request from the compute node to reach [deployr-rserve](https://github.com/Microsoft/deployr-rserve) and return to the node|
+|Compute Node Request|Time for a request from the compute node to reach deployr-rserve and return to the node|
 
 <br>
 You can also explore the results visually in a break-down graph using the URL that is returned to the console. 

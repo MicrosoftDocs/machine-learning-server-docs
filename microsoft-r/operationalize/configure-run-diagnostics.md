@@ -41,7 +41,7 @@ Additional [troubleshooting topics](#trouble) are also covered.
 <a name="test"></a>
 
 ## Test your configuration
-1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -55,13 +55,13 @@ Additional [troubleshooting topics](#trouble) are also covered.
 
 1. Rerun the diagnostic test to make sure all is running smoothly now.
 
-You can also get a health report directly using [the `status` API call](https://microsoft.github.io/deployr-api-docs/#get-status).
+You can also get a health report directly using the [status](https://microsoft.github.io/deployr-api-docs/#get-status) API call.
 
 ## Trace a code execution 
 
 To go through the execution of a specific line of code and retrieve request IDs for debugging purposes, run a trace. 
 
-1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -80,7 +80,7 @@ To go through the execution of a specific line of code and retrieve request IDs 
 
 To go through the execution of a specific web service and retrieve request IDs for debugging purposes, run a trace. 
 
-1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux).
+1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -88,7 +88,7 @@ To go through the execution of a specific web service and retrieve request IDs f
 
 1. From the diagnostic submenu, choose  **Trace service execution**.
 
-1. Enter the service name and version after the syntax `<service-name>/<version>` such as `my-service/1.1`. 
+1. Enter the service name and version after the syntax '\<service-name>/\<version>' such as `my-service/1.1`. 
 
 1. To start the trace, press the Enter key (carriage return).
 
@@ -99,11 +99,11 @@ To go through the execution of a specific web service and retrieve request IDs f
 ## Log files and levels
 
 Review the log and configuration files for any component that was identified as experiencing issues. 
-You can find the logs in the `\<node-install-path>\logs` folder under your web and compute node installation paths.  (Locate the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+You can find the logs in the \<node-install-path>\logs folder under your web and compute node installation paths.  (Locate the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
 If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a> or contact technical support.
 
-By default, the logging level is set to `Warning` so as not to slow performance. However, whenever you encounter an issue that you want to share with technical support or a forum, you can change the logging level to capture more information.  The following logging levels are available:
+By default, the logging level is set to Warning so as not to slow performance. However, whenever you encounter an issue that you want to share with technical support or a forum, you can change the logging level to capture more information.  The following logging levels are available:
 
 |Level|Description|
 |----|---------|
@@ -161,7 +161,7 @@ If you get the `Cannot establish connection with the web node` error, then the c
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
 + Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](configure-use-admin-utility.md#startstop)
 
-If the issue persists, verify you can post to the `login` API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+If the issue persists, verify you can post to the login API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### Long delays when consuming web service on Spark
 
@@ -190,7 +190,7 @@ When 'reset = TRUE', all cached Spark Data Frames are freed and all existing Spa
 
 If you get an `HTTP status 503 (Service Unavailable)` response when using the Rest APIs or encounter a failure for the compute node during diagnostic testing, then one or more of the symlinks needed by [deployr-rserve](https://github.com/Microsoft/deployr-rserve) are missing. deployr-rserve is the R execution component for the compute node,
 
-   1. Launch a command window with administrator privileges with `root`/ `sudo` privileges.
+   1. Launch a command window with administrator privileges with root/sudo privileges.
 
    1. Run a [diagnostic test](#test) of the system on the machine hosting the compute node.
 
@@ -215,9 +215,9 @@ If you [configured Machine Learning Server to authenticate](configure-authentica
 ### Configuration did not restore after upgrade
 
 If you followed the upgrade instructions but your configuration did not persist, then put the backup of the appsettings.json file under the following directories and reinstall R Server 9.1 again:
-   + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   + On Windows: C:\Users\Default\AppData\Local\DeployR\current
 
-   + On Linux: `/etc/deployr/current`
+   + On Linux: /etc/deployr/current
 
 
 ### Alphanumeric error message when consuming service
