@@ -80,7 +80,7 @@ If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Lear
 Here is an example of different LDAP group configurations and the resulting roles assigned to the persona.
 
 |Example User <br>/ Persona|User's <br>LDAP Groups||Machine&nbsp;Learning&nbsp;Server<br>RBAC Configuration||User's<br>Role|
-|:-------------:|------------|:-:|------------|:-:|:------------:| 
+|:-------------:|:------------:|:-:|------------|:-:|:------------:| 
 |![Checkbox](./media/configure-roles/admin-persona.png)<br>Administrator|**sysadmins**<br>engineering<br>FTE-northwest|+|"Owner":&nbsp;[&nbsp;"**sysadmins**",&nbsp;"eng-mgrs"&nbsp;],<br>"Contributor": [ "datascientists" ]|=|**Owner**|
 |![Checkbox](./media/configure-roles/da-persona.png)<br>Lead data scientist|**eng-mgrs**<br>**datascientists**<br>FTE-northwest|+|"Owner": [ "sysadmins", "**eng-mgrs**" ],<br>"Contributor": [ "**datascientists**" ],<br>"Reader": [ "app-devs" ]|=|**Owner**|
 |![Checkbox](./media/configure-roles/da-persona.png)<br>R programmer|**datascientists**<br>FTE-northwest|+|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "**datascientists**" ],<br>"Reader": [ "app-devs" ]|=|**Contributor**|
