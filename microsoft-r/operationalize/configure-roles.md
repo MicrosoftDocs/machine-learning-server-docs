@@ -47,31 +47,16 @@ To assign groups of users in your Active Directory to Machine Learning Server ro
 
 + The names of the groups that contain the users to whom you want to give special permissions
 
-## Groups versus roles for access
+## Groups versus roles
 
 In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
 You can leverage the AD groups you have already defined in your organization to assign a collection of users to roles for web services. 
 
-In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. When a user attempts to authenticate with Machine Learning Server, the server checks to see whether any roles were declared. If there are roles, then Machine Learning Server checks to see to which group the user belongs based on the action you are trying to perform. 
+In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. 
 
 |||
 |-------------|------------| 
 |- Owner (highest permissions) <br>-&nbsp;Contributor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Reader|![Checkbox](./media/configure-roles/role-hierarchy.png)|
-
-
-
-If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned.  If the user belongs to multiple groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
-
-Here is an example of different LDAP group configurations and the resulting roles assigned to the persona.
-
-|Persona|LDAP Group Memberships|RBAC Configuration|Role Assignment|
-|:-------------:|------------|------------|:------------:| 
-|![Checkbox](./media/configure-roles/admin-persona.png)<br>Administrator|sysadmins<br>engineering<br>FTE-northwest|"Owner":&nbsp;[&nbsp;"sysadmins",&nbsp;"eng-mgrs"&nbsp;],<br>"Contributor": [ "datascientists" ]|Owner|
-|![Checkbox](./media/configure-roles/da-persona.png)<br>Lead data scientist|eng-mgrs<br>datascientists<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Owner|
-|![Checkbox](./media/configure-roles/da-persona.png)<br>R programmer|datascientists<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Contributor|
-|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|app-devs<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Reader|
-|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|vendor2|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]|Reader|
-
 
 
 
@@ -84,6 +69,23 @@ When roles are declared in the configuration file, the administrator has the cho
 |Owner|These users can manage any service and call any API, including centralized configuration APIs.|Web service APIs:<br>&nbsp;&#x2714; Publish **any** service<br>&nbsp;&#x2714; Update **any** service <br>&nbsp;&#x2714; Delete **any** service <br>&nbsp;&#x2714; List **any** service <br>&nbsp;&#x2714; Consume **any** service<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Other APIs:<br>&nbsp;&#x2714; Call **any** other API|No API restrictions<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;| 
 |Contributor|These users can publish/deploy services and manage the services they publish. They can also call most other APIs. |Web service APIs:<br>&nbsp;&#x2714; Publish **any** service <br>&nbsp;&#x2714; Update their services <br>&nbsp;&#x2714; Delete their services <br>&nbsp;&#x2714; List **any** service <br>&nbsp;&#x2714; Consume **any** service<br><br>Other APIs:<br>&nbsp;&#x2714; Call almost any other API|<br>&nbsp;&#x2716; Update service published by another<br>&nbsp;&#x2716; Delete service published by another<br>&nbsp;<br>&nbsp;<br>&nbsp;&#x2716; Centralized node configuration (v9.2+)| 
 |Reader|In Machine Learning Server 9.2+, these users can list and consume any service and call most other APIs.<br><br>In R Server 9.1, this catchall role is implicitly given to any authenticated user  not assigned a role. Users can list and consume services. Never explicitly declared. |Web service APIs:<br>&nbsp;&#x2714; List **any** service<br>&nbsp;&#x2714; Consume **any** service<br><br>Other APIs:<br>&nbsp;&#x2714; Call almost any other APIs|<br>&nbsp;&#x2716; Publish **any** service <br>&nbsp;&#x2716; Update **any** service <br>&nbsp;&#x2716; Delete **any** service<br>&nbsp;<br>&nbsp;&#x2716; Centralized node configuration (v9.2+)|
+
+
+## How are roles assigned
+
+When a user attempts to authenticate with Machine Learning Server, the server checks to see whether any roles were declared. If there are roles, then Machine Learning Server checks to see to which group the user belongs based on the action you are trying to perform. 
+
+If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned.  If the user belongs to multiple groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
+
+Here is an example of different LDAP group configurations and the resulting roles assigned to the persona.
+
+|Example User|User's LDAP Groups|RBAC Configuration|User's Role|
+|:-------------:|------------|------------|:------------:| 
+|![Checkbox](./media/configure-roles/admin-persona.png)<br>Administrator|sysadmins<br>engineering<br>FTE-northwest|"Owner":&nbsp;[&nbsp;"sysadmins",&nbsp;"eng-mgrs"&nbsp;],<br>"Contributor": [ "datascientists" ]|Owner|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>Lead data scientist|eng-mgrs<br>datascientists<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Owner|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>R programmer|datascientists<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Contributor|
+|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|app-devs<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Reader|
+|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|vendor2|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]|Reader|
 
 ## Role configuration states
 
@@ -99,11 +101,14 @@ The following table explains which permissions are assigned to any authenticated
 |- Contributor + Owner &nbsp;_-or-_<br>- Contributor only|Reader|
 |- Reader + Contributor + Owner &nbsp;_-or-_<br>- Reader + Owner &nbsp;_-or-_<br>- Reader only|v9.2+:  all API access denied<br>v9.1: not applicable since Reader is never declared|
 
-## Assign roles to AD/LDAP & AAD users
+## How to declare roles
 
-If you configure Machine Learning Server (or R Server) to [use Active Directory/LDAP or Azure Active Directory authentication](configure-authentication.md), then you can assign roles using Active Directory groups as follows:
+If you configure Machine Learning Server (or R Server) to [use Active Directory/LDAP or Azure Active Directory authentication](configure-authentication.md), then you can assign roles using Active Directory groups as described in the following sections.
 
-#### Step 1. Define desired roles
+>[!Note]
+>If only the default local administrator account is defined for Machine Learning Server (or R Server), then roles are not needed. In this case, the 'admin' user is implicitly assigned to the Contributor role.
+
+### Step 1. Define desired roles
 
 On each web node, edit the appsettings.json configuration file in order to declare the roles and the groups that belong to them. 
 
@@ -156,7 +161,7 @@ R Server must be given the ability to verify the groups you declare against thos
 
    ![Checkbox](./media/configure-roles/security-auth-1.png) -->
 
-#### Step 2. Validate groups against AD/LDAP or AAD
+### Step 2. Validate groups against AD/LDAP or AAD
 
 Return to [the appsetting.json file](configure-find-admin-configuration-file.md) on each web node and do the following:
 
@@ -178,13 +183,13 @@ Return to [the appsetting.json file](configure-find-admin-configuration-file.md)
   ```
 
 
-#### Step 3. Apply the changes to Machine Learning Server / R Server
+### Step 3. Apply the changes to Machine Learning Server / R Server
 
 1. [Restart the web node](configure-use-admin-utility.md#startstop) for the changes to take effect. Log in  using [the local 'admin' account](configure-authentication.md#local) in the administration utility.
 
 1. Repeat these changes in every web node you have configured.  The configuration must be the same across all web nodes.
 
-### Example
+## Example
 
 Here is an example of roles declared for AD/LDAP in appsettings.json on the web node:
 
@@ -216,9 +221,6 @@ Authentication: {
 }
 ```
 
-## Assign roles to the 'admin' account
-
-If only the default local administrator account is defined for Machine Learning Server (or R Server), then roles are not needed. In this case, the 'admin' user is implicitly assigned to the Contributor role.
 
 ## Web service permissions after role change
 
