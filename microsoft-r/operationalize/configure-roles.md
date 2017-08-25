@@ -54,6 +54,9 @@ You can leverage the AD groups you have already defined in your organization to 
 
 In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. A user can belong to multiple groups, and therefore it is possible to be assigned multiple roles and all of their permissions. For more information on the roles in Machine Learning Server and R Server, see the next section.
 
+|- Owner<br>-&nbsp;Contributor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Reader|![Checkbox](./media/configure-roles/role-hierarchy.png)|
+|-------------|------------|
+
 When a user attempts to authenticate, the server checks to see whether you have declared roles. If you have, then Machine Learning Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned. For more information, see **"Role configuration states"**.
 
 With AD/LDAP, you can **further restrict which users can log in and call APIs** by declaring those groups with the ['SearchFilter' LDAP property](configure-authentication.md#encrypt).  Then, users in other groups are not able to call any APIs. In this example, only members of the mrsreaders, mrsowners, and mrscontributors groups can call APIs after logging in.
@@ -66,6 +69,9 @@ With AD/LDAP, you can **further restrict which users can log in and call APIs** 
 ## Roles and their permissions
 
 When roles are declared in the configuration file, the administrator has the choices of putting groups (of users) into these roles.
+
+
+
 
 |Role |Description|Permitted|Prohibited|
 |-------------|------------|-----------------|---------------------|
