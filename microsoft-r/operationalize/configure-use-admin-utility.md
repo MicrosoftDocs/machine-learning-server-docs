@@ -194,16 +194,18 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 ## Manage Compute Nodes
 
-Whenever a web node is started, it looks in the database and configuration file for the list of URIs for all known compute nodes with which the web node might work. You can add to and manage this list of compute nodes using the Administration Utility. You can update this list of URIs from any web node and then all other web nodes will automatically know of the updated list the next time the web node is restarted.
+Whenever a web node is started, it looks for the list of compute node URIs to which it can send requests. 
 
-This utility option was introduced with Machine Learning Server 9.2.1 to facilitate the declaration and management of these URIs. Previous releases manage URIs in appsettings.json only.
+In 9.2, you can add to and manage this list of compute nodes using the Administration Utility so that the information is shared across all web nodes. Once you update the compute node URIs from one web node, then all other web nodes get the updated list automatically.
+
+In 9.1, this list is managed manually and individually for each web node in the appsettings.json file. The utility cannot be used for this purpose in that release.
 
 >[!Important]
->1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to declare compute nodes. 
+>1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to manage compute nodes. 
 >
->2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs in appsettings.json are still read at startup and stored into the database. You can remove them from the appsettings.json of each web node and manage them in one place with this feature now.
+>2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs are copied from the old appsettings.json to the database so they can be shared across all web nodes. If you remove a URI with the utility, it will be deleted from the appsettings.json file as well for consistency.
 
-**To declare compute nodes:**
+**To declare or manage compute nodes:**
 
 1. Log in to the machine on which one of your web nodes is installed.
 
@@ -213,8 +215,12 @@ This utility option was introduced with Machine Learning Server 9.2.1 to facilit
 
 1. From the sub-menu, choose **Add URIs** to declare one or more compute node URIs.
    
-1. When prompted, enter the IP address of each compute node you configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma. 
-   For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`.
+1. When prompted, enter the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
+   For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`
+
+   In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
+
+1. You can also choose to remove URIs or view the list of URIs. 
 
 1. Return the main menu of the utility.
 
@@ -229,6 +235,6 @@ The following command line switches are available for the administration utility
 |-silentoneboxinstall password uris <br><br>-silentinstall  password uris|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password must always be defined. For example:<br><br>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br>URIs in 9.2|
 |-silentwebnodeinstall password uris|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password must always be defined. For example:<br><br>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805|9.1, <br><br>URIs in 9.2|
 |-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently.  For example:<br><br>-silentcomputenodeinstall|9.1|
-|-setpassword|Sets the password. Cannot be used <br> if LDAP or AAD was configured.  For example:<br><br>-setpassword myPass123|9.1|
-|-preparedbmigration <appSettingsPath>|Migrates the data from current database to a different database schema. Takes the path to the web node’s appsetting.json file as an argument. This is uncommonly needed as a step when upgrading. For example:<br><br>-preparedbmigration \<web-node-dir>/appsettings.json|9.1|
+|-setpassword password|Sets the password. Cannot be used <br> if LDAP or AAD was configured.  For example:<br><br>-setpassword myPass123|9.1|
+|-preparedbmigration filePath|Migrates the data from current database to a different database schema. Takes the [path to the web node’s appsetting.json file](../operationalize/configure-find-admin-configuration-file.md) as an argument. This is uncommonly needed as a step when upgrading. For example:<br><br>-preparedbmigration \<web-node-dir>/appsettings.json|9.1|
 |-encryptsecret Secret CertificateStoreName CertificateStoreLocation CertificateSubjectName|Silently [encrypts secrets](#encrypt).  For example:<br><br>-encryptsecret&nbsp;theSecret&nbsp;Store&nbsp;Location Subject|9.1|
