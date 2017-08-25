@@ -56,7 +56,7 @@ In Machine Learning Server, the administrator can assign one or more Active Dire
 
 If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned.  If the user belongs to multiple groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
  
-|- Owner (most permissions) <br>-&nbsp;Contributor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Reader|![Checkbox](./media/configure-roles/role-hierarchy.png)|
+|- Owner (highest permissions) <br>-&nbsp;Contributor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Reader|![Checkbox](./media/configure-roles/role-hierarchy.png)|
 |-------------|------------|
 
 ## Roles and their permissions
