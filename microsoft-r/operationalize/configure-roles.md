@@ -66,11 +66,11 @@ Here is an example of different LDAP group configurations and the resulting role
 
 |Persona|LDAP Group Memberships|RBAC Configuration|Role Assignment|
 |:-------------:|------------|------------|:------------:| 
-|![Checkbox](./media/configure-roles/admin-persona.png)<br>Administrator|sysadmins<br>engineering<br>FTE-northwest|  "Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner":&nbsp;[&nbsp;"sysadmins",&nbsp;"eng-mgrs"&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>}|Owner|
-|![Checkbox](./media/configure-roles/da-persona.png)<br>Lead data scientist|eng-mgrs<br>datascientists<br>FTE-northwest|"Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner": [ "sysadmins", "eng-mgrs" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>&nbsp;&nbsp;&nbsp;&nbsp;"Reader": [ "app-devs" ]<br>}|Owner|
-|![Checkbox](./media/configure-roles/da-persona.png)<br>R programmer|datascientists<br>FTE-northwest|"Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner": [ "sysadmins", "eng-mgrs" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>&nbsp;&nbsp;&nbsp;&nbsp;"Reader": [ "app-devs" ]<br>}|Contributor|
-|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|app-devs<br>FTE-northwest|"Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner": [ "sysadmins", "eng-mgrs" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>&nbsp;&nbsp;&nbsp;&nbsp;"Reader": [ "app-devs" ]<br>}|Reader|
-|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|vendor2|"Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner": [ "sysadmins", "eng-mgrs" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>}|Reader|
+|![Checkbox](./media/configure-roles/admin-persona.png)<br>Administrator|sysadmins<br>engineering<br>FTE-northwest|"Owner":&nbsp;[&nbsp;"sysadmins",&nbsp;"eng-mgrs"&nbsp;],<br>"Contributor": [ "datascientists" ]|Owner|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>Lead data scientist|eng-mgrs<br>datascientists<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Owner|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>R programmer|datascientists<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Contributor|
+|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|app-devs<br>FTE-northwest|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]<br>"Reader": [ "app-devs" ]|Reader|
+|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|vendor2|"Owner": [ "sysadmins", "eng-mgrs" ],<br>"Contributor": [ "datascientists" ]|Reader|
 
 
 
