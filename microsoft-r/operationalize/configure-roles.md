@@ -2,12 +2,12 @@
 
 # required metadata
 title: "Control web services permissions with roles - Machine Learning Server | Microsoft Docs"
-description: "Owner, contributor, reader authentication roles with Microsoft R Server"
+description: "Owner, contributor, reader authentication roles with Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -26,7 +26,7 @@ ms.technology:
 
 # Roles to control web service permissions
 
-**Applies to:  Machine Learning Server 9.2.1, Microsoft R Server 9.1**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.1**
 
 In Machine Learning Server (and R Server), Role-Based Access Control (RBAC) enables fine-grained access management for the operationalization APIs. Using RBAC, you can grant only the amount of access that users need to perform their jobs. This article helps you get up and running with RBAC. 
 
