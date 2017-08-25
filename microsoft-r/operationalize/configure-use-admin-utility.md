@@ -205,7 +205,7 @@ In 9.1, this list is managed manually and individually for each web node in the 
 >
 >2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs are copied from the old appsettings.json to the database so they can be shared across all web nodes. If you remove a URI with the utility, it will be deleted from the appsettings.json file as well for consistency.
 
-**To declare or manage compute nodes:**
+**To declare or manage compute nodes in Machine Learning Server 9.2:**
 
 1. Log in to the machine on which one of your web nodes is installed.
 
@@ -216,7 +216,8 @@ In 9.1, this list is managed manually and individually for each web node in the 
 1. From the sub-menu, choose **Add URIs** to declare one or more compute node URIs.
    
 1. When prompted, enter the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
-   For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`
+
+   For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
 
    In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
 
