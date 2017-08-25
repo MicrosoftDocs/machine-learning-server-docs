@@ -52,26 +52,16 @@ To assign groups of users in your Active Directory to Machine Learning Server ro
 In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
 You can leverage the AD groups you have already defined in your organization to assign a collection of users to roles for web services. 
 
-In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. A user can belong to multiple groups, and therefore it is possible to be assigned multiple roles and all of their permissions. For more information on the roles in Machine Learning Server and R Server, see the next section.
+In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. When a user attempts to authenticate with Machine Learning Server, the server checks to see whether any roles were declared. If there are roles, then Machine Learning Server checks to see to which group the user belongs based on the action you are trying to perform. 
 
+If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned.  If the user belongs to multiple groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
+ 
 |- Owner<br>-&nbsp;Contributor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Reader|![Checkbox](./media/configure-roles/role-hierarchy.png)|
 |-------------|------------|
 
-When a user attempts to authenticate, the server checks to see whether you have declared roles. If you have, then Machine Learning Server checks to see to which group the user belongs based on the action you are trying to perform. If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned. For more information, see **"Role configuration states"**.
-
-With AD/LDAP, you can **further restrict which users can log in and call APIs** by declaring those groups with the ['SearchFilter' LDAP property](configure-authentication.md#encrypt).  Then, users in other groups are not able to call any APIs. In this example, only members of the mrsreaders, mrsowners, and mrscontributors groups can call APIs after logging in.
-
-```
-"SearchFilter": "(&(sAMAccountName={0})(|(memberOf=CN=mrsreaders,OU=Readers,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrsowners,OU=Owner,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrscontributors,OU=Contributor,OU=AA,DC=pseudorandom,DC=cloud)))",         
-"UniqueUserIdentifierAttributeName": "sAMAccountName",
-```
- 
 ## Roles and their permissions
 
 When roles are declared in the configuration file, the administrator has the choices of putting groups (of users) into these roles.
-
-
-
 
 |Role |Description|Permitted|Prohibited|
 |-------------|------------|-----------------|---------------------|
@@ -86,12 +76,12 @@ Keep in mind that the permissions assigned to users are influenced not only by t
 The following table explains which permissions are assigned to any authenticated user that is not explicitly assigned a role. 
 <br>
 
-|When these roles are declared|All other authenticated users are implicitly assigned to|
+|Possible configurations|Users without a role are implicitly assigned to|
 |-----|:--------------------:|
 |- No roles: RBAC not configured|Contributor|
 |- Owner only|Contributor|
 |- Contributor + Owner &nbsp;_-or-_<br>- Contributor only|Reader|
-|- Reader + Contributor + Owner &nbsp;_-or-_<br>- Reader + Owner &nbsp;_-or-_<br>- Reader only|In v9.2+, all API access denied.<br>In v9.1, not applicable since Reader is never declared.|
+|- Reader + Contributor + Owner &nbsp;_-or-_<br>- Reader + Owner &nbsp;_-or-_<br>- Reader only|v9.2+:  all API access denied<br>v9.1: not applicable since Reader is never declared|
 
 ## Assign roles to AD/LDAP & AAD users
 
@@ -163,6 +153,13 @@ Return to [the appsetting.json file](configure-find-admin-configuration-file.md)
   > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD provides an overage claim in the token it returns. This claim along with the key you provide here allows Machine Learning Server to retrieve the group memberships for the user.
 
 + **For Active Directory/LDAP:** In appsettings.json, find the "LDAP" section.  In order for the server to verify that the groups you have declared are valid in AD/LDAP, you must provide the QueryUserDn and QueryUserPassword in the "LDAP" section. See the following example. This allows Machine Learning Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring Machine Learning Server  to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
+
+  With AD/LDAP, you can **further restrict which users can log in and call APIs** by declaring those groups that are allowed with the ['SearchFilter' LDAP property](configure-authentication.md#encrypt).  Then, users in other groups are not able to call any APIs. In this example, only members of the mrsreaders, mrsowners, and mrscontributors groups can call APIs after logging in.
+
+  ```
+  "SearchFilter": "(&(sAMAccountName={0})(|(memberOf=CN=mrsreaders,OU=Readers,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrsowners,OU=Owner,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrscontributors,OU=Contributor,OU=AA,DC=pseudorandom,DC=cloud)))",         
+  "UniqueUserIdentifierAttributeName": "sAMAccountName",
+  ```
 
 
 #### Step 3. Apply the changes to Machine Learning Server / R Server
