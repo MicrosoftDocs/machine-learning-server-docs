@@ -194,11 +194,9 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 ## Manage Compute Nodes
 
-Whenever a web node is started, it looks for the list of compute node URIs to which it can send requests. 
+In order for the Machine Learning Server web nodes to know to which compute nodes it can send requests, you must maintain a complete list of compute node URIs. This list of compute node URIs is managed through the Administration Utility and shared across all web nodes automatically.
 
-In 9.2, you can add to and manage this list of compute nodes using the Administration Utility so that the information is shared across all web nodes. Once you update the compute node URIs from one web node, then all other web nodes get the updated list automatically.
-
-In 9.1, this list is managed manually and individually for each web node in the appsettings.json file. The utility cannot be used for this purpose in that release.
+In R Server 9.1, this list is managed manually and individually for each web node in the appsettings.json file. The utility cannot be used for this purpose in that release.
 
 >[!Important]
 >1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to manage compute nodes. 

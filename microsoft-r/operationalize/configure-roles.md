@@ -54,10 +54,26 @@ You can leverage the AD groups you have already defined in your organization to 
 
 In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. When a user attempts to authenticate with Machine Learning Server, the server checks to see whether any roles were declared. If there are roles, then Machine Learning Server checks to see to which group the user belongs based on the action you are trying to perform. 
 
-If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned.  If the user belongs to multiple groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
- 
+|||
+|-------------|------------| 
 |- Owner (highest permissions) <br>-&nbsp;Contributor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Reader|![Checkbox](./media/configure-roles/role-hierarchy.png)|
-|-------------|------------|
+
+
+
+If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned.  If the user belongs to multiple groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
+
+Here is an example of different LDAP group configurations and the resulting roles assigned to the persona.
+
+|Persona|LDAP Group Memberships|RBAC Configuration|Role Assignment|
+|:-------------:|------------|------------|:------------:| 
+|![Checkbox](./media/configure-roles/admin-persona.png)<br>Administrator|sysadmins<br>engineering<br>FTE-northwest|  "Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner":&nbsp;[&nbsp;"sysadmins",&nbsp;"eng-mgrs"&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>}|Owner|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>Lead data scientist|eng-mgrs<br>datascientists<br>FTE-northwest|"Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner": [ "sysadmins", "eng-mgrs" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>&nbsp;&nbsp;&nbsp;&nbsp;"Reader": [ "app-devs" ]<br>}|Owner|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>R programmer|datascientists<br>FTE-northwest|"Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner": [ "sysadmins", "eng-mgrs" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>&nbsp;&nbsp;&nbsp;&nbsp;"Reader": [ "app-devs" ]<br>}|Contributor|
+|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|app-devs<br>FTE-northwest|"Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner": [ "sysadmins", "eng-mgrs" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>&nbsp;&nbsp;&nbsp;&nbsp;"Reader": [ "app-devs" ]<br>}|Reader|
+|![Checkbox](./media/configure-roles/appdev-persona.png)<br>Application Developer|vendor2|"Authorization": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"Owner": [ "sysadmins", "eng-mgrs" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;"Contributor": [ "datascientists" ]<br>}|Reader|
+
+
+
 
 ## Roles and their permissions
 
