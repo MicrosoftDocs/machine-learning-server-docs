@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Configure Machine Learning Server to operationalize analytics (enterprise)
+# Configure Machine Learning Server to operationalize analytics (Enterprise)
 
 **Applies to:  Machine Learning Server** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Find R Server 9.x article)](../install/operationalize-r-server-enterprise-config.md)
 
@@ -100,7 +100,7 @@ You can now **repeat these steps** for each compute node.
 
 You can now **repeat these steps** for each node.
 
-## How to configure for the enterprise
+## How to configure
 
 >[!Important]
 >For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.  
