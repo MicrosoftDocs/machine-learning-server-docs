@@ -82,12 +82,12 @@ Here is an example of different LDAP group configurations and the resulting role
 |Example User <br>/ Persona|User's <br>LDAP Groups||Machine&nbsp;Learning&nbsp;Server<br>RBAC Configuration|User's<br>Role|
 |:-------------:|:------------:|:-:|------------|:------------:| 
 |![Checkbox](./media/configure-roles/p1.png)<br>Administrator|**sysadmins**<br>engineering<br>FTE-north|+|"Owner":&nbsp;[&nbsp;"**sysadmins**",&nbsp;"managers"&nbsp;],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ]|**Owner**|
-|![Checkbox](./media/configure-roles/p2.png)<br>Lead data scientist|**eng-mgrs**<br>**datascience**<br>FTE-north|+|"Owner": [ "sysadmins", "**eng&ndash;mgrs**" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**datascience**" ],<br>"Reader": [ "app-devs" ]|**Owner**|
-|![Checkbox](./media/configure-roles/p2.png)<br>R programmer|**datascience**<br>FTE-north|+|"Owner": [ "sysadmins", "eng&ndash;mgrs" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**datascience**" ],<br>"Reader": [ "app-devs" ]|**Contributor**|
-|![Checkbox](./media/configure-roles/da-persona.png)<br>Python developer|datascience<br>FTE-north|+|"Owner": [ "sysadmins", "eng&ndash;mgrs" ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=|**Contributor**|
-|![Checkbox](./media/configure-roles/p3.png)<br>Application Developer|**app-devs**<br>FTE-north|+|"Owner": [ "sysadmins", "eng&ndash;mgrs" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ],<br>"Reader": [ "**app-devs**" ]|**Reader**|
-|![Checkbox](./media/configure-roles/p3.png)<br>System Integrator|vendor2|+|"Owner": [ "sysadmins", "eng&ndash;mgrs" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ]|**Reader**|
-|![Checkbox](./media/configure-roles/p4.png)<br>Sales|sales|+|"Owner": [ "sysadmins", "eng&ndash;mgrs" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ]<br>"Reader": [ "app-devs" ]|no role or permissions|
+|![Checkbox](./media/configure-roles/p2.png)<br>Lead data scientist|**eng-mgrs**<br>**datascience**<br>FTE-north|+|"Owner": [ "sysadmins", "**managers**" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**datascience**" ],<br>"Reader": [ "app-devs" ]|**Owner**|
+|![Checkbox](./media/configure-roles/p2.png)<br>R programmer|**datascience**<br>FTE-north|+|"Owner": [ "sysadmins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**datascience**" ],<br>"Reader": [ "app-devs" ]|**Contributor**|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>Python developer|datascience<br>FTE-north|+|"Owner": [ "sysadmins", "managers" ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=|**Contributor**|
+|![Checkbox](./media/configure-roles/p3.png)<br>Application&nbsp;Developer|**app-devs**<br>FTE-north|+|"Owner": [ "sysadmins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ],<br>"Reader": [ "**app-devs**" ]|**Reader**|
+|![Checkbox](./media/configure-roles/p3.png)<br>System Integrator|vendor2|+|"Owner": [ "sysadmins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ]|**Reader**|
+|![Checkbox](./media/configure-roles/p4.png)<br>Sales|sales|+|"Owner": [ "sysadmins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ]<br>"Reader": [ "app-devs" ]|no role or permissions|
 
 ## Role configuration states
 
