@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "R Package Management when operationalizing with R Server - Machine Learning Server | Microsoft Docs"
-description: "R Package Management with Microsoft R Server"
+title: "R Package Management when operationalizing - Machine Learning Server | Microsoft Docs"
+description: "R Package Management with Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,15 +24,15 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# R package management when operationalizing analytics with R Server
+# R package management when operationalizing analytics with Machine Learning Server
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 One of the strengths of the R language is the thousands of third-party packages that have been made publicly available via CRAN, the Comprehensive R Archive Network. R includes various functions that make it easy to download and install these packages. Whenever you deploy an R script, the packages (and their dependencies) needed by that R code must be available at runtime, or else the execution fails. 
 
 By adopting the R package management approaches discussed herein, data scientists can avoid issues such as a locally tested script tested failing due to missing package dependencies in the remote environment.
 
-As the R Server administrator, you must ensure that the R code running on any compute nodes has access to the R package dependencies declared within that code. The right set of R package versions must be installed for the organization and accessible to all users.  
+As the Machine Learning Server administrator, you must ensure that the R code running on any compute nodes has access to the R package dependencies declared within that code. The right set of R package versions must be installed for the organization and accessible to all users.  
 
 However, in many enterprise environments, access to the Internet is limited or non-existent. In such environments, it is useful to create a local package repository that users can access from within the corporate firewall using [Option 1](#offline).
 
@@ -157,7 +157,7 @@ This option does require the  machines hosting the compute node have access to t
 >
 >**Applies to:** Development Environments
 
-To avoid issues where a locally tested script fails in the R Server environment due to missing package dependencies, install the R packages into the workspace of a remote R session yourself. 
+To avoid issues where a locally tested script fails in the Machine Learning Server environment due to missing package dependencies, install the R packages into the workspace of a remote R session yourself. 
 
 This remote execution and snapshot approach provides an excellent way to:
 + Try out new package or package versions without posing any risks to a stable production environment
@@ -181,7 +181,7 @@ The packages you install using this method do not 'contaminate' the production e
    > library(mrsdeploy)
    ```
 
-1. Authenticate to create the remote session.  Learn more about the authentication functions and their arguments in the article: "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md). " 
+1. Authenticate to create the remote session.  Learn more about the authentication functions and their arguments in the article: "[Connecting to Machine Learning Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md). " 
 
    + For example, for Azure Active Directory:
      ```R
@@ -222,7 +222,7 @@ The packages you install using this method do not 'contaminate' the production e
       > remoteScript("my-script.R")
       ```
 
-1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of an R session saved to Microsoft R Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](../r/how-to-execute-code-remotely.md)
+1. To allow the workspace and working directory to be reused later, create a session snapshot. A snapshot is a prepared environment image of an R session saved to Machine Learning Server, which includes the session's R packages, R objects and data files. This snapshot can be loaded into any subsequent remote R session for the user who created it. [Learn more about snapshots.](../r/how-to-execute-code-remotely.md)
 
    ```R
    REMOTE>pause()

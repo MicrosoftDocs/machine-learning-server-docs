@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
+ms.technology: 
   - deployr
   - r-server
 #ms.custom: ""

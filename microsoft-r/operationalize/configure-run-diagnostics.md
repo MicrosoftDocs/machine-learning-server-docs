@@ -2,12 +2,12 @@
 
 # required metadata
 title: "Running diagnostics & troubleshooting the configuration for operationalization - Machine Learning Server | Microsoft Docs"
-description: "Troubleshooting and Diagnostics when configuring Microsoft R Server to operationalize"
+description: "Troubleshooting and Diagnostics when configuring Machine Learning Server and Microsoft R Server to operationalize"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,11 +24,11 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Troubleshooting & diagnostics for R Server
+# Troubleshooting & diagnostics for Machine Learning Server
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.1**
 
-You can assess the health of your web and compute node environment using the diagnostic tests in the Administration Utility. 
+You can assess the health of your web and compute node environment using the diagnostic tests in the Administration Utility. This utility is installed by default with Machine Learning Server (and R Server).
 
 Armed with this information, you can identify unresponsive components, execution problems, and access [the log files](#logs). 
 
@@ -120,9 +120,9 @@ By default, the logging level is set to Warning so as not to slow performance. H
 
 1. Search for the section starting with `"Logging": {`
 
-1. Set the logging level for `"Default"`, which captures R Server default events. For debugging support, use the 'Debug' level.
+1. Set the logging level for `"Default"`, which captures Machine Learning Server default events. For debugging support, use the 'Debug' level.
 
-1. Set the logging level for `"System"`, which captures R Server .NET core events. For debugging support, use the 'Debug' level. Use the same value as for `"Default"`.
+1. Set the logging level for `"System"`, which captures Machine Learning Server .NET core events. For debugging support, use the 'Debug' level. Use the same value as for `"Default"`.
 
 1. Save the file.
 
@@ -157,9 +157,9 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 ### “Cannot establish connection with the web node” Error
 
 If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Perform the following steps:
-+ Verify that the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [R Server Administration](configure-use-admin-utility.md#launch)
++ Verify that the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [Machine Learning Server Administration](configure-use-admin-utility.md#launch)
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
-+ Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [R Server Operationalization Administration](configure-use-admin-utility.md#startstop)
++ Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [Machine Learning Server Operationalization Administration](configure-use-admin-utility.md#startstop)
 
 If the issue persists, verify you can post to the login API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
@@ -236,6 +236,6 @@ The workaround is to:
    ```R
    utils::setInternet2(TRUE)
    ```
-1. Save the file and restart Microsoft R Server.
-1. Repeat on every machine on which Microsoft R Server is installed.
+1. Save the file and restart Machine Learning Server.
+1. Repeat on every machine on which Machine Learning Server is installed.
 1. Run the diagnostic test or code execution again.

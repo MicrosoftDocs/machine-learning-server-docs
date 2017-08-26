@@ -2,12 +2,12 @@
 
 # required metadata
 title: "HTTPS SSL / TLS 1.2 connection security for Machine Learning Server | Microsoft Docs"
-description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Microsoft R Server"
+description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,9 +24,9 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Enable SSL or TLS for Connection Security in R Server
+# Enable SSL or TLS for Connection Security in Machine Learning Server
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
 >For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, these protocols are disabled by default.
 
@@ -40,7 +40,7 @@ You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/T
 
 <br />
 
-## Encrypt the Traffic between Client Applications and R Server
+## Encrypt the Traffic between Client Applications and Machine Learning Server/R Server
 
 >[!IMPORTANT] 
 >We strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  
@@ -166,7 +166,7 @@ On each Linux machine hosting a web node:
 
 1. Restart NGINX service.
 
-1. If using IPTABLES firewall, add the HTTPS port, which is 443 by default, to the firewall settings to allow communications between the client application and R Server. 
+1. If using IPTABLES firewall, add the HTTPS port, which is 443 by default, to the firewall settings to allow communications between the client application and Machine Learning Server. 
 
 1. Launch the administrator's utility and [restart the web node](configure-use-admin-utility.md#startstop).
 
@@ -174,7 +174,7 @@ On each Linux machine hosting a web node:
 
 1. Run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
-Now, you can access R Server to operationalize analytics securely on https://<webnode-server-name> from your client applications.
+Now, you can access Machine Learning Server to operationalize analytics securely on https://<webnode-server-name> from your client applications.
  
 
 <br />

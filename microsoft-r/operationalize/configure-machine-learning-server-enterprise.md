@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server to operationalize analytics (enterprise) - Machine Learning Server | Microsoft Docs"
-description: "Configure Operationalization for Microsoft R Server, load balancer, "
+title: "Configure Machine Learning Server to operationalize analytics (Enterprise) - Machine Learning Server | Microsoft Docs"
+description: "Configure Operationalization for Machine Learning Server, load balancer, "
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
@@ -34,7 +34,7 @@ An enterprise configuration involves multiple [web and compute nodes](../operati
 
 For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
 
-![Enterprise Configuration](./media/operationalize-machine-learning-server-enterprise/configure-enterprise.png)
+![Enterprise Configuration](./media/configure-machine-learning-server-enterprise/configure-enterprise.png)
 
 ## How to upgrade 
 
@@ -169,12 +169,20 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to begin setting up and configuring a web node.
 
-1. On the first web node you configure, declare the IP addresses of every compute node with each web node. These URI declarations are stored in the database. Afterwards, each web node across your configuration can automatically find and communicate with the declared compute nodes. Declare them as follows:
+1. In order for the Machine Learning Server web nodes to know to which compute nodes it can send requests, you must declare the complete list of compute node URIs through the administration utility. This list is shared across all web nodes automatically. **You only have to declare them once from one web node.** Here is how:
+
+   >[!NOTE]
+   >1. You only have to declare them once from one web node.
+   >
+   >2. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to manage compute nodes. 
    
    1. From the main utility menu, choose **Manage compute nodes** and then choose **Add URIs** from the submenu.
 
-   1. When prompted, enter the IP address of each compute node you want to configured in the previous step. You can specify a specific URI or  specify port ranges (or IP octets). For multiple compute nodes, separate each URI with a comma. 
-      For example: `http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`.
+   1. When prompted, enter the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
+
+      For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
+  
+      In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
 
    1. Return the main menu of the utility.
 

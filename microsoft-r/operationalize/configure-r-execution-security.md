@@ -2,12 +2,12 @@
 
 # required metadata
 title: "R Execution Security Considerations and user isolation - Machine Learning Server | Microsoft Docs"
-description: "R Execution Security Considerations when operationalizing analytics with Microsoft R Server"
+description: "R Execution Security Considerations when operationalizing analytics with Machine Learning Server"
 keywords: "RServe; deployr-rserve; user isolation"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,16 +24,18 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# R Execution Security Considerations for R Server
+# R Execution Security Considerations
+
+**Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
 `deployr-rserve` is a forked version of RServe maintained by Microsoft. In this forked version, we support parallel R sessions for both Windows and Linux thereby overcoming this limitation in the original rserve package.
 
-This forked version of RServe is the R execution component behind the compute node for Microsoft R Server. Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](configure-evaluate-capacity.md#r-shell-pool).  
+This forked version of RServe is the R execution component behind the compute node for Machine Learning Server. Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](configure-evaluate-capacity.md#r-shell-pool).  
 
 This RServe fork acts as an interface to R, which by default is single threaded. However, in this context, this RServe fork sits atop of the RevoScaleR package. Therefore, if you use RevoScaleR package functions, you benefit from multi-threaded processing in the R shell.
 
 >[!IMPORTANT]
->Microsoft R Server's web and compute nodes are not designed for multi-tenancy. To prevent data leakage, follow your organization's best practices.
+>Machine Learning Server's web and compute nodes are not designed for multi-tenancy. To prevent data leakage, follow your organization's best practices.
 
 ## The Execution Context
 

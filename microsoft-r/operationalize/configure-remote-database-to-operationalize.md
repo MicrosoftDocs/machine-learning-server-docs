@@ -2,12 +2,12 @@
 
 # required metadata
 title: "Configure a database for operationalization - Machine Learning Server | Microsoft Docs"
-description: "Configure a SQL Server or PostgreSQL Database database for Microsoft R Server"
+description: "Configure a SQL Server or PostgreSQL Database database for Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -18,25 +18,26 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
+ms.technology:
   - deployr
   - r-server
 #ms.custom: ""
 ---
 
-# Configuring an SQL Server or PostgreSQL database for R Server
+# Configuring an SQL Server or PostgreSQL database for Machine Learning Server
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
-The operationalization feature for R Server installs and uses a local SQLite database by default to store R session information, web service definitions, [session snapshots](../r/how-to-execute-code-remotely.md#snapshot), and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
+The operationalization feature for Machine Learning Server (and R Server) installs and uses a local SQLite database by default to store R session information, web service definitions, [session snapshots](../r/how-to-execute-code-remotely.md#snapshot), and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
 
 The database provides internal storage for the sessions, web services, snapshots and other entities created as a result of operationalization. When a request comes in to a web node (for example, to consume a service), the web node connects to the databases, retrieves parameters for the service, and then sends the information to a compute node for execution.
 
 > Consider the size of the machine hosting this database carefully to ensure that database performance does not degrade overall performance and throughput.
 
 This feature uses a SQLite 3.7+ database by default, but can be configured to use:
-+ SQL Server Professional, Standard, or Express Version 2008 or greater on a Windows machine
-+ PostgreSQL 9.2 or greater on a Linux machine
++ SQL Server (Windows) Professional, Standard, or Express Version 2008 or greater
++ SQL Server (Linux)
++ PostgreSQL 9.2 or greater (Linux)
 
 > [!Important]
 > Any data that was saved in the default local SQLite database will be lost if you configure a different database.

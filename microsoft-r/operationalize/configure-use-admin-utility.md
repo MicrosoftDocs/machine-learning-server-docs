@@ -2,12 +2,12 @@
 
 # required metadata
 title: "Administration Utility - Machine Learning Server | Microsoft Docs"
-description: "configure R Server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials."
+description: "configure Machine Learning Server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -174,7 +174,7 @@ The encryption function available in the administration utility relies on the RS
 ## Diagnostic Testing
 
 You can assess the state and health of your environment with the set of diagnostic tests found in this Administration Utility. 
-Armed with this information, you can identify unresponsive components, execution problems, and access the log files. The set of diagnostic tests include a general health check of the configuration and  the trace of R code executions or web service executions.
+Armed with this information, you can identify unresponsive components, execution problems, and access the log files. The set of diagnostic tests include a general health check of the configuration and  the trace of R and Python code executions or web service executions.
 
 [Learn how to run the diagnostics and troubleshoot.](configure-run-diagnostics.md)
 
