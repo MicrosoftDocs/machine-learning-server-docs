@@ -28,7 +28,7 @@ ms.technology:
 
 **Applies to:  Machine Learning Server** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Find R Server 9.x article)](../install/operationalize-r-server-enterprise-config.md)
 
-You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: [One-box](operationalize-machine-learning-server-one-box.md) and **Enterprise**. This article describes the enterprise configuration.
+You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: One-box and **Enterprise**. This article describes the enterprise configuration. For more on one-box configurations, [see here](operationalize-machine-learning-server-one-box.md).
 
 An enterprise configuration involves multiple [web and compute nodes](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) that  are configured on multiple machines along with other enterprise features.  These nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services.   
 
@@ -49,9 +49,9 @@ Carefully review the following steps.
 
 1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
    
-   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   + Windows: C:\Users\Default\AppData\Local\DeployR\current
 
-   + Linux: `/etc/deployr/current`
+   + Linux: /etc/deployr/current
 
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
@@ -78,9 +78,9 @@ You can now **repeat these steps** for each compute node.
 
 1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
    
-   + Windows: `C:\Users\Default\AppData\Local\DeployR\current`
+   + Windows: C:\Users\Default\AppData\Local\DeployR\current
 
-   + Linux: `/etc/deployr/current`
+   + Linux: /etc/deployr/current
 
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
@@ -236,4 +236,3 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
 1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
 
 1. [Evaluate](../operationalize/configure-evaluate-capacity.md) the configuration's capacity.
-
