@@ -142,7 +142,7 @@ By default, the logging level is set to Warning so as not to slow performance. H
 This section contains pointers to help you troubleshoot some problems that can occur.
 
 >[!IMPORTANT]
->If this section do not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+>If this section does not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### "BackEndConfiguration is missing URI" Error
 
@@ -214,7 +214,7 @@ If you [configured Machine Learning Server to authenticate](configure-authentica
 
 ### Configuration did not restore after upgrade
 
-If you followed the upgrade instructions but your configuration did not persist, then put the backup of the appsettings.json file under the following directories and reinstall R Server 9.1 again:
+If you followed the upgrade instructions but your configuration did not persist, then put the backup of the appsettings.json file under the following directories and reinstall Machine Learning Server again:
    + On Windows: C:\Users\Default\AppData\Local\DeployR\current
 
    + On Linux: /etc/deployr/current
@@ -230,7 +230,7 @@ If you get an error similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` w
 If a code execution fails and returns a `ServiceBusyException` error in the Web node log file, then a proxy issue may be blocking the execution.
 
 The workaround is to:
-1. Open the R initialization file <install folder>\R_SERVER\etc\Rprofile.site.
+1. Open the R initialization file \<install folder>\R_SERVER\etc\Rprofile.site.
 1. Add the following code as a new line in Rprofile.site:
 
    ```R

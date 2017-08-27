@@ -40,9 +40,7 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 
 To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). 
 
-Carefully review the following steps.
-
-### Upgrade a compute node
+Carefully review the steps in the following sections.
 
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
@@ -103,15 +101,17 @@ You can now **repeat these steps** for each node.
 ## How to configure
 
 >[!Important]
->For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.  
+>For your convenience, [Azure Management Resource templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.  
 >
 >Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/).
 
 ### 1. Configure a database
 
 While the web node configuration sets up a local SQLite database by default, you must use a SQL Server or PostgreSQL database for this configuration for any of the following situations:
-+ Have multiple web nodes (so data can be shared across web nodes)
++ Have multiple web nodes (so data can be shared across web nodes)  
+
 + Want to achieve higher availability
+
 + Need a remote database for your web node
 
 To configure that database, [follow these instructions](../operationalize/configure-remote-database-to-operationalize.md).
@@ -157,7 +157,7 @@ You can now **repeat these steps** for each compute node you want to add.
 
 ### 3. Configure web nodes
 
-In an enterprise configuration, you can set up one or more web nodes. Note that it is possible to run the web node service from within IIS. 
+In an enterprise configuration, you can set up one or more web nodes. It is possible to run the web node service from within IIS. 
  
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
