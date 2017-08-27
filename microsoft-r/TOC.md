@@ -68,17 +68,16 @@
 #### [CORS](operationalize/configure-cors.md)
 #### [R execution security](operationalize/configure-r-execution-security.md)
 #### [Manage R packages](operationalize/configure-manage-r-packages.md)
-
-## [Pretrained models](install/microsoftml-install-pretrained-models.md)
+### [Pretrained models](install/microsoftml-install-pretrained-models.md)
 
 ## Client-side
 ### Microsoft R Client
-#### [Microsoft R Client for Windows](r-client/install-on-windows.md)
-#### [Microsoft R Client for Linux](r-client/install-on-linux.md)
+#### [R Client: Windows](r-client/install-on-windows.md)
+#### [R Client: Linux](r-client/install-on-linux.md)
 
 ### [Python interpreter](install/python-libraries-interpreter.md)
 
-## R Server
+## R Server 9.1 or earlier
 ### All platforms (archives??? redirect)
 ### On Teradata
 #### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
@@ -89,11 +88,11 @@
 # Quickstarts
 
 ## Python
-### [Deploy model as a web service](operationalize/python/quickstart-deploy-python-web-service.md)
+### [Deploy model as service](operationalize/python/quickstart-deploy-python-web-service.md)
 
 ## R 
 ### [Run R code with new functions](r/quickstart-run-r-code.md)
-### [Deploy model as a web service](operationalize/quickstart-publish-r-web-service.md)
+### [Deploy model as service](operationalize/quickstart-publish-r-web-service.md)
 
 # Tutorials
 ## Python
