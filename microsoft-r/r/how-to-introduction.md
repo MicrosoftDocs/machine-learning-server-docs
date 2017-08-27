@@ -54,11 +54,11 @@ Remote code execution on R Server
 * [Create remote session & execute](r/how-to-execute-code-remotely.md)
 
 Operationalization: deploy and consume models and code
-* [Publish & manage](operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
-* [Consume (request-response)](operationalize/how-to-consume-web-service-interact-in-r.md)
-* [Consume (asynchronous)](operationalize/how-to-consume-web-service-asynchronously-batch.md)
-* [Integrate into apps](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
-* [Manage access tokens](operationalize/how-to-manage-access-tokens.md)
+* [Publish & manage](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
+* [Consume (request-response)](../operationalize/how-to-consume-web-service-interact-in-r.md)
+* [Consume (asynchronous)](../operationalize/how-to-consume-web-service-asynchronously-batch.md)
+* [Integrate into apps](../operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
+* [Manage access tokens](../operationalize/how-to-manage-access-tokens.md)
 
 ## See Also
 
