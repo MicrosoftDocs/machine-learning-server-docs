@@ -43,11 +43,6 @@
 ##### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
 ##### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)
 ##### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
-### [Virtual machines (Cloud)](install/r-server-vm-cloud.md)
-#### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
-#### Azure Linux VM](install/r-server-vm-azure-linux-9-0-1.md)
-#### [Azure Windows VM](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-#### [Data Science VM](install/r-server-vm-data-science.md)
 
 ### [Configure to operationalize](what-is-operationalization.md)
 #### [Get started for admins](operationalize/configure-start-for-administrators.md)
@@ -69,6 +64,11 @@
 #### [R package management](operationalize/configure-manage-r-packages.md)
 #### [Find install path](operationalize/configure-find-admin-configuration-file.md)
 ### [Pretrained models](install/microsoftml-install-pretrained-models.md)
+### [Virtual machines (Cloud)](install/r-server-vm-cloud.md)
+#### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
+#### [Azure Linux VM](install/r-server-vm-azure-linux-9-0-1.md)
+#### [Azure Windows VM](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
+#### [Data Science VM](install/r-server-vm-data-science.md)
 
 ## Client-side
 ### Microsoft R Client
