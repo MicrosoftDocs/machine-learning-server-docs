@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Evaluate the load balancing capacity of your configuration to operationalize
+# Evaluate the load balancing capacity of your configuration
 
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
