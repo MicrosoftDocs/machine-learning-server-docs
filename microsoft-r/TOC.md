@@ -43,7 +43,7 @@
 ##### [Install R Server 9.0.1](install/r-server-install-hadoop-901.md)
 ##### [Install R Server 9.0.1 on CDH](install/r-server-install-cloudera-901.md)
 ##### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
-### [In the cloud](install/r-server-vm-cloud.md)
+### [Cloud](install/r-server-vm-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
 #### [### Machine Learning Server for Linux (Azure VM)](install/r-server-vm-azure-linux-9-0-1.md)
 #### [Machine Learning Server for Windows (Azure VM)](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
@@ -59,21 +59,21 @@
 ##### [9.0/9.1](install/operationalize-r-server-enterprise-config.md)
 #### [Diagnostics & Troubleshooting](operationalize/configure-run-diagnostics.md)
 #### [Administration utility](operationalize/configure-use-admin-utility.md)
-#### [Find advanced config file](operationalize/configure-find-admin-configuration-file.md)
 #### [Database setup](operationalize/configure-remote-database-to-operationalize.md)
-#### [Evaluate capacity](operationalize/configure-evaluate-capacity.md)
+#### [Capacity evaluation](operationalize/configure-evaluate-capacity.md)
 #### [Authentication](operationalize/configure-authentication.md)
 #### [Connection security (SSL/TLS)](operationalize/configure-https.md)
 #### [Roles & Permissions (RBAC)](operationalize/configure-roles.md)
 #### [CORS](operationalize/configure-cors.md)
 #### [R execution security](operationalize/configure-r-execution-security.md)
-#### [Manage R packages](operationalize/configure-manage-r-packages.md)
+#### [R package management](operationalize/configure-manage-r-packages.md)
+#### [Find install path](operationalize/configure-find-admin-configuration-file.md)
 ### [Pretrained models](install/microsoftml-install-pretrained-models.md)
 
 ## Client-side
 ### Microsoft R Client
-#### [R Client: Windows](r-client/install-on-windows.md)
-#### [R Client: Linux](r-client/install-on-linux.md)
+#### [R Client on Windows](r-client/install-on-windows.md)
+#### [R Client on Linux](r-client/install-on-linux.md)
 
 ### [Python interpreter](install/python-libraries-interpreter.md)
 

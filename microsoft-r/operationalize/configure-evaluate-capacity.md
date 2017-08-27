@@ -104,11 +104,11 @@ The test results are divided into request processing stages to enable you to see
 
 |Stage|Time Measured|
 |------|-----------|
-|Web Node Request|Time for the request from the web node's controller to go all the way to [deployr-rserve](https://github.com/Microsoft/deployr-rserve) and back|
+|Web Node Request|Time for the request from the web node's controller to go all the way to [deployr-rserve](https://github.com/Microsoft/deployr-rserve)/JupyterKernel and back.|
 |Create Shell|Time to create a shell or take it from the pool|
 |Initialize Shell|Time to load the data (model or snapshot) into the shell prior to execution|
 |Web Node to Compute Node|Time for a request from the web node to reach the compute node|
-|Compute Node Request|Time for a request from the compute node to reach deployr-rserve and return to the node|
+|Compute Node Request|Time for a request from the compute node to reach deployr-rserve/JupyterKernel and return to the node|
 
 <br>
 You can also explore the results visually in a break-down graph using the URL that is returned to the console. 
