@@ -30,9 +30,9 @@ ms.technology:
 
 In Machine Learning Server (and R Server), Role-Based Access Control (RBAC) enables fine-grained access management for the operationalization APIs. Using RBAC, you can grant only the amount of access that users need to perform their jobs. This article helps you get up and running with RBAC. 
 
-By default, all authenticated users can publish/deploy, list, and get any web services as well as call all APIs. Additionally, users can also update and delete the web services they have deployed. Use the roles defined in this article to further control who can call the APIs and publish/deploy, update, and delete web services. 
+By default, all authenticated users can publish/deploy, list, and get any web services as well as call all APIs. Additionally, users can also update and delete the web services they have deployed. Use the roles defined in this article to restrict who can call the APIs and publish, update, and delete web services. 
 
-How users are put assigned to roles depends on what authentication method is configured for Machine Learning Server. For more on configuring authentication, read the article, ["Authentication options."](configure-authentication.md)
+How users are assigned to roles depends on the authentication method configured for Machine Learning Server. For more on configuring authentication, read the article, ["Authentication options."](configure-authentication.md)
 
 >[!IMPORTANT]
 >**These roles are not the same as RBAC in Azure Active Directory.** While the default roles described here-in bear the same names as the roles you can define in Azure, it is not possible to inherit the Azure roles. If you want role-based access control over web services and APIs, you must set up roles again.
@@ -49,10 +49,10 @@ To assign groups of users in your Active Directory to Machine Learning Server ro
 
 ## Groups versus roles
 
-In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like "Admin", "Engineering", "Level3", and so on. And, users might belong to more than one group.
-You can leverage the AD groups you have already defined in your organization to assign a collection of users to roles for web services. 
+In AD/LDAP and AAD, security groups are used to collect user accounts, computer accounts, and other groups into manageable units. Working with groups instead of with individual users helps simplify network maintenance and administration. Your organization might have groups like 'Admin', 'Engineering', 'Level3', and so on. And, users might belong to more than one group.
+You can use the AD groups you have already defined in your organization to assign a collection of users to roles for web services. 
 
-In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: "Owner", "Contributor", and "Reader". Roles give specific permissions related to deploying and interacting with web services and other APIs. 
+In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: 'Owner', 'Contributor', and 'Reader'. Roles give specific permissions related to deploying and interacting with web services and other APIs. 
 
 |||
 |-------------|------------| 
@@ -73,21 +73,21 @@ When roles are declared in the configuration file, the administrator has the cho
 
 ## How are roles assigned
 
-When a user attempts to authenticate with Machine Learning Server, the server checks to see whether any roles were declared. If there are roles, then Machine Learning Server checks to see to which group the user belongs based on the action you are trying to perform. 
+When a user attempts to authenticate with Machine Learning Server, the server checks to see whether any roles were declared. When roles are declared, Machine Learning Server checks to see to which group the user belongs. 
 
-If the user belongs to one of the AD/LDAP or AAD groups declared in Machine Learning Server, then that user is authenticated and given permissions according to the role to which their group is assigned.  If the user belongs to multiple groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
+If the user belongs to an AD/LDAP or AAD group assigned to a role, then that user is  given permissions according to their role.  If the user belongs to groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
 
 Here is an example of different LDAP group configurations and the resulting roles assigned to the persona.
 
 |Example User <br>/ Persona|User's <br>LDAP Groups||Machine&nbsp;Learning&nbsp;Server<br>RBAC Configuration|User's<br>Role|
 |:-------------:|:------------:|:-:|------------|:------------:| 
-|![Checkbox](./media/configure-roles/p1.png)<br>Administrator|**sysadmins**<br>engineering<br>FTE-north|+|"Owner":&nbsp;[&nbsp;"**sysadmins**",&nbsp;"managers"&nbsp;],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ]|**Owner**|
-|![Checkbox](./media/configure-roles/p2.png)<br>Lead data scientist|**eng-mgrs**<br>**datascience**<br>FTE-north|+|"Owner": [ "sysadmins", "**managers**" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**datascience**" ],<br>"Reader": [ "app-devs" ]|**Owner**|
-|![Checkbox](./media/configure-roles/p2.png)<br>R programmer|**datascience**<br>FTE-north|+|"Owner": [ "sysadmins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**datascience**" ],<br>"Reader": [ "app-devs" ]|**Contributor**|
-|![Checkbox](./media/configure-roles/da-persona.png)<br>Python developer|datascience<br>FTE-north|+|"Owner": [ "sysadmins", "managers" ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=|**Contributor**|
-|![Checkbox](./media/configure-roles/p3.png)<br>Application&nbsp;Developer|**app-devs**<br>FTE-north|+|"Owner": [ "sysadmins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ],<br>"Reader": [ "**app-devs**" ]|**Reader**|
-|![Checkbox](./media/configure-roles/p3.png)<br>System Integrator|vendor2|+|"Owner": [ "sysadmins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ]|**Reader**|
-|![Checkbox](./media/configure-roles/p4.png)<br>Sales|sales|+|"Owner": [ "sysadmins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "datascience" ]<br>"Reader": [ "app-devs" ]|no role or permissions|
+|![Checkbox](./media/configure-roles/p1.png)<br>Administrator|**admins**<br>engineering<br>FTE-north|+|"Owner":&nbsp;[&nbsp;"**admins**",&nbsp;"managers"&nbsp;],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "stats" ]|**Owner**|
+|![Checkbox](./media/configure-roles/p2.png)<br>Lead data scientist|**managers**<br>**stats**<br>FTE-north|+|"Owner": [ "admins", "**managers**" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**stats**" ],<br>"Reader": [ "app-devs" ]|**Owner**|
+|![Checkbox](./media/configure-roles/p2.png)<br>R programmer|**stats**<br>FTE-north|+|"Owner": [ "admins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**stats**" ],<br>"Reader": [ "app-devs" ]|**Contributor**|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>Python developer|stats<br>FTE-north|+|"Owner": [ "admins", "managers" ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=|**Contributor**|
+|![Checkbox](./media/configure-roles/p3.png)<br>Application&nbsp;Developer|**app-devs**<br>FTE-north|+|"Owner": [ "admins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "stats" ],<br>"Reader": [ "**app-devs**" ]|**Reader**|
+|![Checkbox](./media/configure-roles/p3.png)<br>System Integrator|vendor2|+|"Owner": [ "admins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "stats" ]|**Reader**|
+|![Checkbox](./media/configure-roles/p4.png)<br>Sales|sales|+|"Owner": [ "admins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "stats" ]<br>"Reader": [ "app-devs" ]|no role or permissions|
 
 ## Role configuration states
 
@@ -165,7 +165,7 @@ R Server must be given the ability to verify the groups you declare against thos
 
 ### Step 2. Validate groups against AD/LDAP or AAD
 
-Return to [the appsetting.json file](configure-find-admin-configuration-file.md) on each web node and do the following:
+Return to [the appsetting.json file](configure-find-admin-configuration-file.md) on each web node and make these updates:
 
 + **For Azure Active Directory:** In appsettings.json, find the "AzureActiveDirectory" section. Make sure the alphanumeric client key you created in the portal **for the web app** is used for "Key": property. This key allows Machine Learning Server to verify that the groups you've declared are valid in AAD. See following example. Learn more about [configuring Machine Learning Server to authenticate with Azure Active Directory](configure-authentication.md#aad).
 
@@ -173,9 +173,9 @@ Return to [the appsetting.json file](configure-find-admin-configuration-file.md)
   > For more security, we recommend you [encrypt the key](configure-use-admin-utility.md#encrypt) before adding the information to appsettings.json.
 
   >[!NOTE]
-  > If a given user belongs to more than groups that allowed in AAD (overage limit), AAD provides an overage claim in the token it returns. This claim along with the key you provide here allows Machine Learning Server to retrieve the group memberships for the user.
+  > If a given user belongs to more groups than are allowed in AAD (overage limit), AAD provides an overage claim in the token it returns. This claim along with the key you provide here allows Machine Learning Server to retrieve the group memberships for the user.
 
-+ **For Active Directory/LDAP:** In appsettings.json, find the "LDAP" section.  In order for the server to verify that the groups you have declared are valid in AD/LDAP, you must provide the QueryUserDn and QueryUserPassword in the "LDAP" section. See the following example. This allows Machine Learning Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring Machine Learning Server  to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
++ **For Active Directory/LDAP:** In appsettings.json, find the "LDAP" section.  In order for the server to verify that the groups you have declared are valid in AD/LDAP, you must provide the QueryUserDn and QueryUserPassword in the "LDAP" section. See the following example. These settings allow Machine Learning Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring Machine Learning Server  to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
 
   With AD/LDAP, you can **further restrict which users can log in and call APIs** by declaring those groups that are allowed with the ['SearchFilter' LDAP property](configure-authentication.md#encrypt).  Then, users in other groups are not able to call any APIs. In this example, only members of the mrsreaders, mrsowners, and mrscontributors groups can call APIs after logging in.
 
@@ -226,9 +226,9 @@ Authentication: {
 
 ## Web service permissions after role change
 
-A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to an Machine Learning Server (or R Server) role in the appsettings.json file anymore. 
+A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to a Machine Learning Server (or R Server) role in the appsettings.json file anymore. 
 
-Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you still are allowed to interact with that web service version as you did before, but you cannot update or delete the services published by others. Now, if roles are defined for users, but you are no longer assigned to one of those roles, you become part of the "Reader" role implicitly and can no longer manage any services, including those that you published previously when you had another role. 
+Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete, and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you can still interact with that web service version as before, but you cannot update or delete the services published by others. However, if roles are defined, but you are no longer assigned to any roles yourself, then you become part of the "Reader" role implicitly. Consequently, you can no longer manage any services, including those services that you published previously when you were assigned to a role. 
 
 ## See Also
 

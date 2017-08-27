@@ -28,18 +28,18 @@ ms.technology:
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
-This article describes how to use the administration utility to configure the server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials.
+This article describes how to use the administration utility to configure the server.
 
 Use the utility to:
-+ [Configure server for operationalization](../install/operationalize-r-server-one-box-config.md) front-ends and back-ends
-+ [Set a local admin password](#admin-password)
-+ [Stop and restart](#startstop) web and compute node services
-+ [Update the service ports](#ports)
-+ [Run diagnostic tests](configure-run-diagnostics.md)
-+ [Encrypt credentials](#encrypt)
-+ [Evaluate the configuration's capacity](configure-evaluate-capacity.md)
-+ [Manage compute nodes](#uris)
-+ [Learn about command line switches to this utility script](#switch)
++ [Configure server for operationalization](../install/operationalize-r-server-one-box-config.md) front-ends and back-ends     
++ [Set a local admin password](#admin-password)     
++ [Stop and restart](#startstop) web and compute node services     
++ [Update the service ports](#ports)     
++ [Run diagnostic tests](configure-run-diagnostics.md)     
++ [Encrypt credentials](#encrypt)     
++ [Evaluate the configuration's capacity](configure-evaluate-capacity.md)     
++ [Manage compute nodes](#uris)     
++ [Learn about command-line switches to this utility script](#switch)     
 
 <a name="launch"></a>
 
@@ -49,7 +49,7 @@ These instructions describe how to launch the Administrator Utility.
 
 **On Windows:**
 
-Open a command line window with administrator privileges and enter the following commands:
+Open a command-line window with administrator privileges and enter the following commands:
 
 |Version|Commands|
 |----|------------|
@@ -61,7 +61,7 @@ where '\<server_home>' is the [path to the installation directory](../operationa
 
 **On Linux:**
 
-Launch the administration utility script with `root` or `sudo` privileges with the following commands:
+Launch the administration utility script with root or sudo privileges with the following commands:
 
 |Version|Commands|
 |----|------------|
@@ -77,7 +77,7 @@ where '\<server_home>' is the [path to the installation directory](../operationa
 
 When no other form of [authentication](configure-authentication.md) is used, you must define a password for the local administrator account called 'admin'.  If you do enable another form of authentication, the local administrator account is automatically disabled.
 
-This local 'admin' password must be 8-16 characters long and contain at least 1 uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
+This admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
 
 **To set or update the local admin account password:**
 
@@ -93,7 +93,7 @@ This local 'admin' password must be 8-16 characters long and contain at least 1 
 1. Confirm the password.
 
 >[!NOTE]
->You can bypass script interface using the argument '-setpassword <password>'. Learn about all command line switches for this script, [here](#switch). For example: 
+>You can bypass script interface using the argument '-setpassword <password>'. Learn about all command-line switches for this script, [here](#switch). For example: 
 >
 >dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -setpassword my-password 
 
@@ -125,7 +125,7 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 1. From the main menu, choose the option **Change service ports**.
 
-1. From the sub-menu, choose the port you want to update.
+1. From the submenu, choose the port you want to update.
 
 1. Enter the port number. 
 
@@ -135,7 +135,7 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 ## Encrypt Credentials 
 
-For security purposes, we strongly recommend that you encrypt strings, such as remote database connection strings and LDAP/LDAP-S passwords, rather than store strings in plain text in the appsettings.json configuration file. 
+For security purposes, we strongly recommend that you encrypt strings in the appsettings.json configuration file. For example, you should encrypt any remote database connection strings and/or LDAP/LDAP-S passwords rather than store strings in plain text. 
 
 The encryption function available in the administration utility relies on the RSA algorithm for encryption. 
 
@@ -201,7 +201,7 @@ In R Server 9.1, this list is managed manually and individually for each web nod
 >[!Important]
 >1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to manage compute nodes. 
 >
->2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs are copied from the old appsettings.json to the database so they can be shared across all web nodes. If you remove a URI with the utility, it will be deleted from the appsettings.json file as well for consistency.
+>2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs are copied from the old appsettings.json to the database so they can be shared across all web nodes. If you remove a URI with the utility, it is deleted from the appsettings.json file as well for consistency.
 
 **To declare or manage compute nodes in Machine Learning Server 9.2:**
 
@@ -211,7 +211,7 @@ In R Server 9.1, this list is managed manually and individually for each web nod
 
 1. From the main menu, choose the option **Manage compute nodes**.
 
-1. From the sub-menu, choose **Add URIs** to declare one or more compute node URIs.
+1. From the submenu, choose **Add URIs** to declare one or more compute node URIs.
    
 1. When prompted, enter the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
 
@@ -225,14 +225,14 @@ In R Server 9.1, this list is managed manually and individually for each web nod
 
 <br><a name="switch"></a>
 
-## Command line switches
+## Command-line switches
 
-The following command line switches are available for the administration utility.
+The following command-line switches are available for the administration utility.
 
 |Switch|Description|Introduced in version|
 |----|-----|:---:|
-|-silentoneboxinstall password uris <br><br>-silentinstall  password uris|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password must always be defined. For example:<br><br>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br>URIs in 9.2|
-|-silentwebnodeinstall password uris|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password must always be defined. For example:<br><br>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805|9.1, <br><br>URIs in 9.2|
+|-silentoneboxinstall password uris <br><br>-silentinstall  password uris|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br><br>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br>URIs in 9.2|
+|-silentwebnodeinstall password uris|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br><br>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br><br>URIs in 9.2|
 |-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently.  For example:<br><br>-silentcomputenodeinstall|9.1|
 |-setpassword password|Sets the password. Cannot be used <br> if LDAP or AAD was configured.  For example:<br><br>-setpassword myPass123|9.1|
 |-preparedbmigration filePath|Migrates the data from current database to a different database schema. Takes the [path to the web node’s appsetting.json file](../operationalize/configure-find-admin-configuration-file.md) as an argument. This is uncommonly needed as a step when upgrading. For example:<br><br>-preparedbmigration \<web-node-dir>/appsettings.json|9.1|

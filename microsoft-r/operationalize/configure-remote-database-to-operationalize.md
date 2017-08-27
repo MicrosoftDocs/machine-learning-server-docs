@@ -28,9 +28,9 @@ ms.technology:
 
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
-The operationalization feature for Machine Learning Server (and R Server) installs and uses a local SQLite database by default to store R session information, web service definitions, [session snapshots](../r/how-to-execute-code-remotely.md#snapshot), and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is particularly useful when you want to use a remote database or when you have multiple web nodes. 
+The operationalization feature for Machine Learning Server (and R Server) installs and uses a local SQLite database by default to store R session information, web service definitions, [session snapshots](../r/how-to-execute-code-remotely.md#snapshot), and batch execution tracking information. Later, you can update the configuration to use another database locally or remotely. This is useful when you want to use a remote database or when you have multiple web nodes. 
 
-The database provides internal storage for the sessions, web services, snapshots and other entities created as a result of operationalization. When a request comes in to a web node (for example, to consume a service), the web node connects to the databases, retrieves parameters for the service, and then sends the information to a compute node for execution.
+The database provides internal storage for the sessions, web services, snapshots, and other entities created as a result of operationalization. When a request comes in to a web node (for example, to consume a service), the web node connects to the databases, retrieves parameters for the service, and then sends the information to a compute node for execution.
 
 > Consider the size of the machine hosting this database carefully to ensure that database performance does not degrade overall performance and throughput.
 
@@ -40,7 +40,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 + PostgreSQL 9.2 or greater (Linux)
 
 > [!Important]
-> Any data that was saved in the default local SQLite database will be lost if you configure a different database.
+> Any data that was saved in the default local SQLite database is lost if you configure a different database.
 
 <a name="sqlserver"></a>
 <a name="postgresql"></a>
@@ -84,12 +84,12 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
        "Connection":  "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;"
        ```
 
-       For SQL Server Database (**SQL authentication**), use your string properties which are similar to: 
+       For SQL Server Database (**SQL authentication**), use your string properties that are similar to: 
        ``` 
        "Connection":  "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;"
        ```
 
-       For PostgreSQL Database, use your string properties which will:
+       For PostgreSQL Database, use your string properties that will:
        ``` 
        "Connection":  "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
        ```       

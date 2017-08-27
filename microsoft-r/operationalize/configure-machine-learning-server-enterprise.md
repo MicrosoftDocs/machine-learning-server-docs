@@ -140,7 +140,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu. 
 
    >[!NOTE]
-   >Bypass this interactive node configuration step using the argument `-silentcomputenodeinstall` when launching the administration utility. Learn about all command line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   >Bypass this interactive node configuration step using the argument `-silentcomputenodeinstall` when launching the administration utility. Learn about all command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
     
 1. When the configuration is finished, open the port 12805: 
 
@@ -193,7 +193,7 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
    1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).
    
    >[!NOTE]
-   >Bypass the interactive steps to install the node and set an admin password using the command-line switches `-silentwebnodeinstall mypassword uri1,uri2`. Learn about all command line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   >Bypass the interactive steps to install the node and set an admin password using the command-line switches `-silentwebnodeinstall mypassword uri1,uri2`. Learn about all command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
 1. In the same utility, test the configuration. From the main utility menu, choose **Run Diagnostic Tests** and choose a [diagnostic test](../operationalize/configure-run-diagnostics.md).
 

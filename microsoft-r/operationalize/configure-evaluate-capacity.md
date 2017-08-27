@@ -50,7 +50,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 1. To choose a different web service:
 
-   1. From the sub-menu, choose the option for **Change the service for simulation**.
+   1. From the submenu, choose the option for **Change the service for simulation**.
    1. Specify the new service:
       + To use an existing service, enter 'Yes' and provide the service's name and version as '\<name>/\<version>'. For example, `my-service/1.1`.
       + To use the generated [default service], enter 'No'.
@@ -58,7 +58,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 1. To test for the maximum latency:
 
-   1. From the sub-menu, choose the option for **Change thread/latency limits**.
+   1. From the submenu, choose the option for **Change thread/latency limits**.
    1. When prompted, enter 'Time' to define the number of threads against which you want to test.
    1. Specify the maximum latency in milliseconds after which the test stops.
    1. Specify the minimum thread count at which the test starts.
@@ -66,7 +66,7 @@ You can define the parameters for the traffic simulation for a given configurati
 
 1. To test for the maximum number of parallel requests that can be supported:
 
-   1. From the sub-menu, choose the option for **Change thread/latency limits**.
+   1. From the submenu, choose the option for **Change thread/latency limits**.
    1. When prompted, enter 'Threads' to define the maximal threshold for the duration of a web node request.
    1. Specify the maximum thread count after which the test stops running.
    1. Specify the minimum thread count at which the test starts.
@@ -77,7 +77,7 @@ You can define the parameters for the traffic simulation for a given configurati
 ## Run Simulation Tests
 
 1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch).
-1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appears.
+1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appear.
 1. From the sub menu, choose the option to **Run capacity simulation** to start the simulation.
 1. Review the results onscreen.
 
@@ -137,7 +137,7 @@ The size of this pool can be adjusted in the external configuration file, appset
 Since each compute node has its own thread pool for shells, configuring multiple compute nodes means that more pooled shells are available to your users. 
 
 >[!Important]
->If Machine Learning Server is configured for Python only, then only a pool of Python shells is created. If the server is configured only for R, then only a pool of R shells is created. And if it configured for both R and Python, then two separate pools will be created, each with the same initial size and maximum size. 
+>If Machine Learning Server is configured for Python only, then only a pool of Python shells is created. If the server is configured only for R, then only a pool of R shells is created. And if it configured for both R and Python, then two separate pools are created, each with the same initial size and maximum size. 
 
 **To update the thread pool:**
 
@@ -145,7 +145,7 @@ Since each compute node has its own thread pool for shells, configuring multiple
 
    1. Search for the section starting with `"Pool": {`
 
-   1. Set the InitialSize. This is the number of R and/or Python shells that are pre-created for your users each time the compute node is restarted.
+   1. Set the InitialSize. This value is the number of R and/or Python shells that are pre-created for your users each time the compute node is restarted.
 
    1. Set the MaxSize. This is the maximum number of R and/or Python shells that can be pre-created and held in memory for processing code execution requests. 
 
