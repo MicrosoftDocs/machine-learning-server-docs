@@ -270,6 +270,7 @@
 # Reference
 
 ## [Python libraries](python-reference/introducing-python-package-reference.md)
+### [azureml-model-management-sdk](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 ### [microsoftml](python-reference/microsoftml/microsoftml-package.md)
 ### [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 
