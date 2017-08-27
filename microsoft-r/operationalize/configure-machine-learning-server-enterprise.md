@@ -45,7 +45,7 @@ Carefully review the steps in the following sections.
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
+1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
    
    + Windows: C:\Users\Default\AppData\Local\DeployR\current
 
@@ -53,11 +53,11 @@ Carefully review the steps in the following sections.
 
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-   + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   + Linux instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
@@ -74,7 +74,7 @@ You can now **repeat these steps** for each compute node.
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
+1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
    
    + Windows: C:\Users\Default\AppData\Local\DeployR\current
 
@@ -82,11 +82,11 @@ You can now **repeat these steps** for each compute node.
 
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-   + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   + Linux instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
@@ -129,11 +129,11 @@ In the Enterprise configuration, side-by-side installations of a web and compute
  
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-   + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   + Linux instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. 
 
@@ -161,11 +161,11 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
  
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-   + Windows instructions: [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
-   + Linux instructions: [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
+   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to begin setting up and configuring a web node.
 

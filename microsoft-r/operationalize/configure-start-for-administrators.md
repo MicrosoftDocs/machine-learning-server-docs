@@ -52,7 +52,7 @@ All configurations have at least a single web node, single compute node, and a d
 
 + **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have more than one web nodes to load balance your requests to multiple compute nodes. 
 
-+ **Compute nodes** are used to execute R and Python code as a session or service. Each compute node has its own [pool of R and python shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R and Python execution shells and benefit from load balancing across these compute nodes. 
++ **Compute nodes** are used to execute R and Python code as a session or service. Each compute node has its own [pool of R and python shells](../operationalize/configure-evaluate-capacity.md#pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R and Python execution shells and benefit from load balancing across these compute nodes. 
 
 + The **database**. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
@@ -123,7 +123,7 @@ The location of this file depends on the server version, operating system, and t
 
 + On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, compute node declarations, and more.
 
-+ On the compute node, this configuration file governs SSL, logging, [shell pool size](configure-evaluate-capacity.md#r-shell-pool), execution ports, and more.
++ On the compute node, this configuration file governs SSL, logging, [shell pool size](configure-evaluate-capacity.md#pool), execution ports, and more.
 
 ### Asynchronous batch sizes
 
