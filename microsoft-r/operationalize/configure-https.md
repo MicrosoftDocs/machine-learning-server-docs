@@ -198,6 +198,8 @@ When encrypting, you have the choice of using one of the following **compute nod
    > Make sure the name of the certificate matches the domain name of the compute node URL. 
    >
    > Also, take note of the `Subject` name of the certificate as you need this info later.
+   >
+   >For non production environments, this [blog post](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) demonstrates how to use a self-signed certificate in Linux. However, self-signed certificates are NOT recommended for production usage.
 
 1. Update the external JSON configuration file, appsettings.json to configure the HTTPS port for the compute node:
    1. Open the configuration file, \<compute-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 

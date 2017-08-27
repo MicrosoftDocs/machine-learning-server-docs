@@ -153,7 +153,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >
    >**Every web node must have the same values**.
     
-   1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you need this information later.  Read [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) to learn how to use a self-signed certificate in Linux for access token signing.
+   1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you need this information later.  Read [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) to learn how to use a self-signed certificate in Linux for access token signing. Self-signed certificates are NOT recommended for production usage.
 
    1. In the appsettings.json file, search for the section starting with `"JWTSigningCertificate": {`
 

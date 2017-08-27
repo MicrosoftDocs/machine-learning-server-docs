@@ -45,7 +45,7 @@
 ##### [Install R Server 8.0.5](install/r-server-install-hadoop-805.md)
 
 ### [Configure to operationalize](what-is-operationalization.md)
-#### [Get started for admins](operationalize/configure-start-for-administrators.md)
+#### [Get started: admins](operationalize/configure-start-for-administrators.md)
 #### [Configure: One-box](operationalize/configure-machine-learning-server-one-box.md)
 ##### [9.2.1](operationalize/configure-machine-learning-server-one-box.md)
 ##### [9.0/9.1](install/operationalize-r-server-one-box-config.md)
