@@ -25,7 +25,7 @@ ms.technology: "r-server"
  
 --- 
  
- #RevoPemaR package for R 
+ #RevoPemaR package
 
 The **RevoPemaR** package provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes.
 
@@ -44,7 +44,7 @@ In an R session, load **RevoPemaR** from the command line by typing`library(Revo
 > [!Note]
 > You can load this library on computer that does not have Hadoop (for example, on an R Client instance) if you change the compute context to Hadoop MapReduce or Spark and execute the code in that compute context.
 
-## Class library
+## Function list
 
 |Class | Description |
 |------|-------------|

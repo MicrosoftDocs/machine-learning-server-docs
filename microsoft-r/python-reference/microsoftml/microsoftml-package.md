@@ -6,7 +6,7 @@ description: "Function help reference for the microsoftml python package of SQL 
 keywords: "microsoftml API, API" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/13/2017" 
+ms.date: "08/29/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# microsoftml package for Python
+# microsoftml package
 
 The **microsoftml** module is a collection of Python functions used in machine learning workloads. It includes functions for training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.
 
@@ -42,8 +42,6 @@ There are two primary use cases for this release:
 
 + Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
 + Calling **microsoftml** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **microsoftml** operations to a remote SQL Server instance that has the **microsoftml** interpreter.
-
-Setup adds Python 3.5 to your path. You can use Python as you would normally, calling functions from any 3.5-compatible module you have installed on the computer.
 
 ## Functions by category
 

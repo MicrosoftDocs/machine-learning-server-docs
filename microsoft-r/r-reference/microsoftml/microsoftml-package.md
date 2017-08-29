@@ -25,7 +25,7 @@ ms.technology: "r-server"
  
 --- 
  
-# MicrosoftML package for R
+# MicrosoftML package
 
 The **MicrosoftML** library provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the [**RevoScaleR** package](../revoscaler/revoscaler.md).
 
@@ -39,9 +39,13 @@ The **MicrosoftML** library provides state-of-the-art fast, scalable machine lea
 
 The **MicrosoftML** module is installed as part of Microsoft R when you add R to your installation. It is also installed with the pretrained machine learning models. You can use any R IDE to write R script calling functions in **MicrosoftML**, but the script must run on a computer having our interpreters and libraries.
 
+## Functions by category
+
+This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
+
 <a name="ml-algorithms"></a>
 
-## Machine learning algorithms
+## 1-Machine learning algorithms
 
 | Function name | Description |
 |---------------|-------------|
@@ -56,7 +60,7 @@ The **MicrosoftML** module is installed as part of Microsoft R when you add R to
 
 <a name="ml-transforms"></a>
 
-## Transformation functions
+## 2-Transformation functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -73,7 +77,7 @@ The **MicrosoftML** module is installed as part of Microsoft R when you add R to
 |[featurizeImage](featurizeimage.md) | Featurizes an image using a pre-trained deep neural network model.|
 
 
-## Scoring and training functions
+## 3-Scoring and training functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -82,7 +86,7 @@ The **MicrosoftML** module is installed as part of Microsoft R when you add R to
 |[mlModel](mlmodel.md) | Provides a summary of a Microsoft R Machine Learning model.|
 
 
-## Loss functions for classification and regression
+## 4-Loss functions for classification and regression
 
 | Function name | Description |
 |---------------|-------------|
@@ -93,14 +97,14 @@ The **MicrosoftML** module is installed as part of Microsoft R when you add R to
 | [poissonLoss](loss.md) | Specifications for poisson regression loss function. | 
 |[squaredLoss](loss.md) | Specifications for squared regression loss function.   |   
 
-## Feature selection functions
+## 5-Feature selection functions
 
 | Function name | Description |
 |---------------|-------------|
 |[minCount](mincount.md) | Specification for feature selection in count mode. |
 |[mutualInformation](mutualinformation.md) | Specification for feature selection in mutual information mode. |
 
-## Ensemble modeling functions
+## 6-Ensemble modeling functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -110,7 +114,7 @@ The **MicrosoftML** module is installed as part of Microsoft R when you add R to
 |[logisticRegression](logisticregression.md) | Creates a list containing the function name and arguments to train a  Logistic Regression model with [rxEnsemble](rxensemble.md).|
 |[oneClassSvm](oneclasssvm.md) | Creates a list containing the function name and arguments to train a OneClassSvm model with [rxEnsemble](rxensemble.md).|
  
-## Neural networking functions
+## 7-Neural networking functions
 
 | Function name | Description |
 |---------------|-------------|

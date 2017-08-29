@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# sqlrutils package for R
+# sqlrutils package
 
 The **sqlrutils** package provides a mechanism for R users to put their R scripts into a T-SQL stored procedure, register that stored procedure with a database, and run the stored procedure from an R development environment.
 
@@ -48,7 +48,7 @@ In an R session, load **sqlrutils** from the command line by typing `library(sql
 > [!Note]
 > You can load this library on computer that does not have SQL Server (for example, on an R Client instance) if you change the compute context to SQL Server and execute the code in that compute context.
 
-## Class library
+## Function list
 
 |Class | Description |
 |------|-------------|

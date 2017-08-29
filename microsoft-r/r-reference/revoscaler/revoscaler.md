@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# RevoScaleR package for R
+# RevoScaleR package
 
 The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis R functions that run on the **RevoScaleR** interpreter built on open source R and extended to accommodate high performance computing (HPC) and analysis (HPA).
 
@@ -50,7 +50,11 @@ Some functions in **RevoScaleR** are specific to particular compute contexts. A 
 > [!Note]
 > Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
 
-## Data analysis functions
+## Functions by category
+
+This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
+
+## 1-Data analysis functions
 <!--<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![import](./media/revoscaler/import.png)
@@ -77,7 +81,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
  + The [**data source**](#data), which is the data to be used
 
 
-### Import and export functions
+### 2-Import and export functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -107,7 +111,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-### Data transformation functions
+### 3-Data transformation functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -122,7 +126,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-### Basic graphing functions
+### 4-Basic graphing functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -131,7 +135,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |[rxLorenz](rxlorenz.md)  |Computes a Lorenz curve which can be plotted. | 
 |[rxRocCurve](rxroc.md)  |Computes and plots ROC curves from actual and predicted data. | 
 
-### Descriptive statistics and cross-tabulation
+### 5-Descriptive statistics and cross-tabulation
 
 | Function name | Description |
 |---------------|-------------|
@@ -150,7 +154,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-### Prediction functions for statistical modeling
+### 6-Prediction functions for statistical modeling
 
 | Function name | Description |
 |---------------|-------------|
@@ -173,7 +177,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <a name="compute"></a>
 
-##Compute context functions
+## 7-Compute context functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -192,7 +196,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <a name="data"></a>
 
-## Data source functions
+## 8-Data source functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -204,7 +208,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |[RxTeradata](rxteradata.md) |Creates a Teradata data source object. |
 |[RxSqlServerData](rxsqlserverdata.md) |Creates a SQL Server data source object. |
 
-## HPC and distributed computing functions
+## 9-HPC and distributed computing functions
 
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../r/how-to-revoscaler-distributed-computing.md).
 
@@ -224,7 +228,7 @@ These functions and many more can be used for high performance computing and dis
 |[rxGetJobs](rxgetjobs.md) |Get the available distributed computing job information objects. |
 |[rxLocateFile](rxlocatefile.md) |Get the first occurrence of a specified input file in a set of specified paths. |
 
-##Utility functions
+## 10-Utility functions
 
 Some of the utility functions are operational in local compute context only. Check the documentation of individual functions to confirm.
 
@@ -239,8 +243,6 @@ Some of the utility functions are operational in local compute context only. Che
 |[rxSqlServerDropTable](rxsqlserverdroptable.md) |Execute an SQL statement that drops a table. |
 |[rxSqlServerTableExists](rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existance. |
 |[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between ScaleR data sources.|
-
-
 
 ## Next steps
 

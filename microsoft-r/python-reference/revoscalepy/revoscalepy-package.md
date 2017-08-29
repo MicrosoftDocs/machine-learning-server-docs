@@ -6,7 +6,7 @@ description: "Function help reference for the revoscalepy Python package of SQL 
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/19/2017" 
+ms.date: "08/29/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# revoscalepy package for Python
+# revoscalepy package
 
 The **revoscalepy** module is a collection of Python functions used for analyzing data at the point of origin. Functions include data transformation and manipulation, visualization, and statistical analysis. It also includes functions for controlling jobs and serializing data.
 
@@ -42,8 +42,6 @@ There are two primary use cases for this release:
 
 + Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
 + Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
-
-Setup adds Python 3.5 to your path. You can use Python as you would normally, calling functions from any 3.5-compatible module you have installed on the computer.
 
 ## Functions by category
 

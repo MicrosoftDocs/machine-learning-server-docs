@@ -25,7 +25,7 @@ ms.technology: "r-server"
  
 --- 
  
-# olapR package for R
+# olapR package
 
 The **olapR** library provides functions for importing data from OLAP cubes stored in SQL Server Analysis Services into R. It is only available in R Server for Windows.
 
@@ -57,7 +57,7 @@ OLAP (Online Analytical Processing) cubes are essentially multi-dimensional spre
 >[`https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi`](https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi)
 >
  
-## Class library
+## Function list
 
 |Function | Description |
 |---------|-------------|

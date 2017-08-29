@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# RevoUtils package for R 
+# RevoUtils package 
 
 The **RevoUtils** package provides utility functions that return information about your installation, such as path and memory usage.
 
@@ -39,7 +39,7 @@ From any R console window, you can call **RevoUtils** functions in an R session.
 
 In an R session, load **RevoUtils** from the command line by typing`library(RevoUtils)`.
 
-## Class library
+## Function list
 
 |Class | Description |
 |------|-------------|

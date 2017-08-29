@@ -1,9 +1,44 @@
 - name: Docs
-  href: /
-  homepage: /
+  tocHref: /
+  topicHref: /
   items:
-  - name: Microsoft R
-    href: /r-server/
-    homepage: /r-server/ 
-
+  - name: Machine Learning Server
+    tocHref: /r-server/
+    topicHref: /r-server/index
+    items:
+    - name: Python Package Reference
+      tocHref: /r-server/python-reference/
+      topicHref: /r-server/python-reference/introducing-python-package-reference
+      items:
+      - name: microsoftml
+        tocHref: /r-server/python-reference/microsoftml/
+        topicHref: /r-server/python-reference/microsoftml/microsoftml-package
+      - name: revoscalepy
+        tocHref: /r-server/python-reference/revoscalepy/
+        topicHref: /r-server/python-reference/revoscalepy/revoscalepy-package
+    - name: R Package Reference
+      tocHref: /r-server/r-reference/
+      topicHref: /r-server/r-reference/introducing-r-server-r-package-reference
+      items:
+      - name: microsoftml
+        tocHref: /r-server/r-reference/microsoftml/
+        topicHref: /r-server/r-reference/mrsdeploy/microsoftml-package
+      - name: mrsdeploy
+        tocHref: /r-server/r-reference/mrsdeploy/
+        topicHref: /r-server/r-reference/mrsdeploy/mrsdeploy-package
+      - name: olapr
+        tocHref: /r-server/r-reference/olapr/
+        topicHref: /r-server/r-reference/olapr/olapr
+      - name: revopemar
+        tocHref: /r-server/r-reference/revopemar/
+        topicHref: /r-server/r-reference/revopemar/pemar
+      - name: revoscaler
+        tocHref: /r-server/r-reference/revoscaler/
+        topicHref: /r-server/r-reference/revoscaler/revoscaler
+      - name: revoutils
+        tocHref: /r-server/r-reference/revoutils/
+        topicHref: /r-server/r-reference/revoutils/revoutils
+      - name: sqlrutils
+        tocHref: /r-server/r-reference/sqlrutils/
+        topicHref: /r-server/r-reference/sqlrutils/sqlrutils
 
