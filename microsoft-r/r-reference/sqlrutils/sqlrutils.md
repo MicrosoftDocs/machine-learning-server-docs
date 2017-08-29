@@ -67,8 +67,8 @@ In an R session, load **sqlrutils** from the command line by typing `library(sql
 
 Add R packages to your computer by running setup for R Server or R Client: 
 
-+ [R Client](../r-client/what-is-microsoft-r-client.md) 
-+ [R Server](../what-is-microsoft-r-server.md)
++ [R Client](../../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../-../what-is-microsoft-r-server.md)
 
 Next, review the steps in a typical sqlrutils workflow:
 

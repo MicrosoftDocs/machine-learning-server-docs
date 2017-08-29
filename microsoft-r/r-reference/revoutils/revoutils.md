@@ -30,7 +30,7 @@ The **RevoUtils** package provides utility functions that return information abo
 | Package details | |
 |--------|-|
 | Version: |  10.0.3 |
-| Supported on: | [Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Supported on: | [Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use RevoUtils
@@ -53,8 +53,8 @@ In an R session, load **RevoUtils** from the command line by typing`library(Revo
 
 Add R packages to your computer by running setup for R Server or R Client: 
 
-+ [R Client](../r-client/what-is-microsoft-r-client.md) 
-+ [R Server](../what-is-microsoft-r-server.md)
++ [R Client](../../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../../what-is-microsoft-r-server.md)
 
 ## See also
 

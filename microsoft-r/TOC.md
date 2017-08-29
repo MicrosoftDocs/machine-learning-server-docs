@@ -222,15 +222,6 @@
 ## [Install R Client on Linux](r-client/install-on-linux.md)
 ## [Remote execution with R Server](r/how-to-execute-code-remotely.md)
 
-# Prototype Function Pages
-## [azure-ml-model-management.fakeAPI](proto/azuremlsdk-fake.md)
-## [olapr.OlapConnection](proto/olapconnection.md) 
-## [mrsdeploy.createSnapshot](proto/createsnapshot.md) 
-## [MicrosoftML.rxPredict](proto/rxpredict.md)
-## [RevoScaleR.rxDataStep](proto/rxdatastep.md) 
-## [microsoftml.rx_predict](proto/rx-predict.md)
-## [revoscalepy.rx_import](proto/rx-import.md)
-
 # [Python Function Reference](python-reference/introducing-python-package-reference.md)
 ## [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md)
 ## [microsoftml for Python](python-reference/microsoftml/microsoftml-package.md)

@@ -32,7 +32,7 @@ The **RevoPemaR** package provides a framework for creating Parallel External Me
 | Package details | |
 |--------|-|
 | Version: |  10.0.0 |
-| Supported on: | [Microsoft R Server (Hadoop)](../what-is-microsoft-r-server.md)  
+| Supported on: | [Microsoft R Server (Hadoop)](../../what-is-microsoft-r-server.md)  
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
  
 ## How to use RevoPemaR
@@ -56,8 +56,8 @@ In an R session, load **RevoPemaR** from the command line by typing`library(Revo
 
 Add R packages to your computer by running setup for R Server or R Client: 
 
-+ [R Client](../r-client/what-is-microsoft-r-client.md) 
-+ [R Server](../what-is-microsoft-r-server.md)
++ [R Client](../../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../../what-is-microsoft-r-server.md)
 
 ## See also
 

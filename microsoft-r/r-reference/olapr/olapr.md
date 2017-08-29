@@ -118,8 +118,8 @@ Using the Analysis Services Tutorial Olap cube, this MDX query selects the inter
 
 Add R packages to your computer by running setup for R Server or R Client: 
 
-+ [R Client](../r-client/what-is-microsoft-r-client.md) 
-+ [R Server](../what-is-microsoft-r-server.md)
++ [R Client](../../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../../what-is-microsoft-r-server.md)
 
 For help with MDX concepts:
 
@@ -127,7 +127,7 @@ For help with MDX concepts:
 
 + MDX queries: [https://en.wikipedia.org/wiki/MultiDimensional_eXpressions](https://en.wikipedia.org/wiki/MultiDimensional_eXpressions)
 
-+ Creating a Demo OLAP Cube (identical to examples): [https://msdn.microsoft.com/en-us/library/ms170208.aspx](https://msdn.microsoft.com/en-us/library/ms170208.aspx)  
++ Creating a Demo OLAP Cube (identical to examples): [https://msdn.microsoft.com/library/ms170208.aspx](https://msdn.microsoft.com/en-us/library/ms170208.aspx)  
 
 ## See also
 
