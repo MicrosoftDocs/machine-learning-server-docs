@@ -81,7 +81,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
  + The [**data source**](#data), which is the data to be used
 
 
-### 2-Import and export functions
+### Import and export functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -111,7 +111,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-### 3-Data transformation functions
+### Data transformation functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -126,7 +126,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-### 4-Basic graphing functions
+### Basic graphing functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -135,7 +135,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |[rxLorenz](rxlorenz.md)  |Computes a Lorenz curve which can be plotted. | 
 |[rxRocCurve](rxroc.md)  |Computes and plots ROC curves from actual and predicted data. | 
 
-### 5-Descriptive statistics and cross-tabulation
+### Descriptive statistics and cross-tabulation
 
 | Function name | Description |
 |---------------|-------------|
@@ -154,7 +154,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
-### 6-Prediction functions for statistical modeling
+### Prediction functions for statistical modeling
 
 | Function name | Description |
 |---------------|-------------|
@@ -177,7 +177,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <a name="compute"></a>
 
-## 7-Compute context functions
+## 2-Compute context functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -196,7 +196,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 
 <a name="data"></a>
 
-## 8-Data source functions
+## 3-Data source functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -208,7 +208,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |[RxTeradata](rxteradata.md) |Creates a Teradata data source object. |
 |[RxSqlServerData](rxsqlserverdata.md) |Creates a SQL Server data source object. |
 
-## 9-HPC and distributed computing functions
+## 4-HPC and distributed computing functions
 
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../r/how-to-revoscaler-distributed-computing.md).
 
@@ -228,7 +228,7 @@ These functions and many more can be used for high performance computing and dis
 |[rxGetJobs](rxgetjobs.md) |Get the available distributed computing job information objects. |
 |[rxLocateFile](rxlocatefile.md) |Get the first occurrence of a specified input file in a set of specified paths. |
 
-## 10-Utility functions
+## 5-Utility functions
 
 Some of the utility functions are operational in local compute context only. Check the documentation of individual functions to confirm.
 
