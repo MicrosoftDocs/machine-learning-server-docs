@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Install DeployR for Microsoft R Server 2016 on Linux | DeployR 8.x"
+title: "Install DeployR for Microsoft R Server 2016 on Linux | DeployR 8.x | Microsoft Docs"
 description: "How to install, migrate, and configure DeployR"
 keywords: "install, installation, DeployR, configuration, configure"
 author: "j-martens"

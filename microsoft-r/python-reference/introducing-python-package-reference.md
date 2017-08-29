@@ -1,12 +1,20 @@
 ---
 
 # required metadata
+<<<<<<< HEAD
 title: "Python function library reference (SQL Server Machine Learning) | Microsoft Docs"
+=======
+title: "Python function library help (SQL Server Machine Learning) | Microsoft Docs"
+>>>>>>> dev
 description: "Function reference for Python packages: microsoftml, revoscalepy"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
+<<<<<<< HEAD
 ms.date: "08/17/2017"
+=======
+ms.date: "08/04/2017"
+>>>>>>> dev
 ms.author: heidist
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -34,7 +42,7 @@ This section contains the Python reference documentation for two proprietary pac
 | Supported platforms: | SQL Server 2017 (Windows only). Additional platforms and compute contexts are planned for future releases.|
 | Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
-## Python libraries
+## Python modules
 
 |Module | Version | Description |
 |--------|---------|-------------|
