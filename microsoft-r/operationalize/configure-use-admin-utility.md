@@ -53,9 +53,9 @@ Open a command-line window with administrator privileges and enter the following
 
 |Version|Commands|
 |----|------------|
-|9.2.1|cd \<server_home><br>dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll|
-|9.1.0|cd \<server_home><br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0.1|cd \<server_home><br>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
+|9.2.1|cd \<server_home><br/>dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll|
+|9.1.0|cd \<server_home><br/>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0.1|cd \<server_home><br/>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
 
 where '\<server_home>' is the [path to the installation directory](../operationalize/configure-find-admin-configuration-file.md).  
 
@@ -65,13 +65,13 @@ Launch the administration utility script with root or sudo privileges with the f
 
 |Version|Commands|
 |----|------------|
-|9.2.1|cd \<server_home><br>sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll|
-|9.1.0|cd \<server_home><br>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0.1|cd \<server_home><br>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
+|9.2.1|cd \<server_home><br/>sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll|
+|9.1.0|cd \<server_home><br/>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0.1|cd \<server_home><br/>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
 
 where '\<server_home>' is the [path to the installation directory](../operationalize/configure-find-admin-configuration-file.md).
 
-<br><a name="admin-password"></a>
+<br/><a name="admin-password"></a>
 
 ## Set/Update Local Administrator Password
 
@@ -97,7 +97,7 @@ This admin password must be 8-16 characters long and contain at least one upperc
 >
 >dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -setpassword my-password 
 
-<br><a name="startstop"></a>
+<br/><a name="startstop"></a>
 
 ## Starting and Stopping Services
 
@@ -111,7 +111,7 @@ To start or stop all operationalization-related services on the machine at once,
 
 1. From the submenu, choose which services to start or stop.
 
-<br><a name="ports"></a>
+<br/><a name="ports"></a>
 
 ## Update Port Numbers
 
@@ -131,7 +131,7 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 >The port number will be updated the next time the [service is restarted](#startstop).
 
-<br><a name="encrypt"></a>
+<br/><a name="encrypt"></a>
 
 ## Encrypt Credentials 
 
@@ -169,7 +169,7 @@ The encryption function available in the administration utility relies on the RS
 >You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](#switch).
 
 
-<br><a name="test"></a>
+<br/><a name="test"></a>
 
 ## Diagnostic Testing
 
@@ -178,7 +178,7 @@ Armed with this information, you can identify unresponsive components, execution
 
 [Learn how to run the diagnostics and troubleshoot.](configure-run-diagnostics.md)
 
-<br><a name="capacity"></a>
+<br/><a name="capacity"></a>
 
 ## Evaluate Capacity
 
@@ -190,7 +190,7 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 [Learn how to configure the test parameters, run the test, and interpret the results.](configure-evaluate-capacity.md)
 
 
-<br><a name="uris"></a>
+<br/><a name="uris"></a>
 
 ## Manage Compute Nodes
 
@@ -223,7 +223,7 @@ In R Server 9.1, this list is managed manually and individually for each web nod
 
 1. Return the main menu of the utility.
 
-<br><a name="switch"></a>
+<br/><a name="switch"></a>
 
 ## Command-line switches
 
@@ -231,9 +231,9 @@ The following command-line switches are available for the administration utility
 
 |Switch|Description|Introduced in version|
 |----|-----|:---:|
-|-silentoneboxinstall password uris <br><br>-silentinstall  password uris|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br><br>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br>URIs in 9.2|
-|-silentwebnodeinstall password uris|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br><br>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br><br>URIs in 9.2|
-|-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently.  For example:<br><br>-silentcomputenodeinstall|9.1|
-|-setpassword password|Sets the password. Cannot be used <br> if LDAP or AAD was configured.  For example:<br><br>-setpassword myPass123|9.1|
-|-preparedbmigration filePath|Migrates the data from current database to a different database schema. Takes the [path to the web node’s appsetting.json file](../operationalize/configure-find-admin-configuration-file.md) as an argument. This is uncommonly needed as a step when upgrading. For example:<br><br>-preparedbmigration \<web-node-dir>/appsettings.json|9.1|
-|-encryptsecret Secret CertificateStoreName CertificateStoreLocation CertificateSubjectName|Silently [encrypts secrets](#encrypt).  For example:<br><br>-encryptsecret&nbsp;theSecret&nbsp;Store&nbsp;Location Subject|9.1|
+|-silentoneboxinstall password uris <br/><br/>-silentinstall  password uris|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br/><br/>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/>URIs in 9.2|
+|-silentwebnodeinstall password uris|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br/><br/>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/><br/>URIs in 9.2|
+|-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently.  For example:<br/><br/>-silentcomputenodeinstall|9.1|
+|-setpassword password|Sets the password. Cannot be used <br/> if LDAP or AAD was configured.  For example:<br/><br/>-setpassword myPass123|9.1|
+|-preparedbmigration filePath|Migrates the data from current database to a different database schema. Takes the [path to the web node’s appsetting.json file](../operationalize/configure-find-admin-configuration-file.md) as an argument. This is uncommonly needed as a step when upgrading. For example:<br/><br/>-preparedbmigration \<web-node-dir>/appsettings.json|9.1|
+|-encryptsecret Secret CertificateStoreName CertificateStoreLocation CertificateSubjectName|Silently [encrypts secrets](#encrypt).  For example:<br/><br/>-encryptsecret&nbsp;theSecret&nbsp;Store&nbsp;Location Subject|9.1|

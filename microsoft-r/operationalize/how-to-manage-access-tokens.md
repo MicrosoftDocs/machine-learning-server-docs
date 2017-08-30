@@ -37,13 +37,13 @@ This bearer token is a lightweight security token that grants the “bearer” a
 
 ## Security Concerns 
 
-Despite the fact that a party must first authenticate to receive the token, that token can be intercepted and used by an unintended party if steps are not taken to secure the token in transmission and storage. While some security tokens have a built-in mechanism for preventing unauthorized parties from using them, tokens do not have this mechanism and must be [transported in a secure channel such as transport layer security (HTTPS)](configure-https.md). 
+Despite the fact that a party must first authenticate to receive the token, tokens can be intercepted  by an unintended party if the token is not secured in transmission and storage. While some security tokens have a built-in mechanism to protect against unauthorized parties, these tokens do not and must be [transported in a secure channel such as transport layer security (HTTPS)](configure-https.md). 
 
-If a token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token and use it to make an unauthorized access to a protected resource. The same security principles apply when storing or caching tokens for later use. Always ensure that your application transmits and stores tokens in a secure manner. 
+If a token is transmitted in the clear, a man-in the middle attack can be used by a malicious party to acquire the token to make an unauthorized access to a protected resource. The same security principles apply when storing or caching tokens for later use. Always ensure that your application transmits and stores tokens in a secure manner. 
 
 > You can [revoke a token](#revoke) if a user is no longer permitted to make requests on the API or if the token has been compromised.
 
-<br>
+<br/>
 
 ## Create tokens
 
@@ -84,9 +84,9 @@ The bearer token is made of an access_token property and  a refresh_token proper
 
 | |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
 |---|----|-----|
-|**Gets<br>Created**|Whenever the user logs in, or<br><br> a refreshToken api is called|Whenever the user logs in|
+|**Gets<br/>Created**|Whenever the user logs in, or<br/><br/> a refreshToken api is called|Whenever the user logs in|
 |**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If the refresh_token was revoked, or<br><br>If not used for 336 hours (14 days), or<br><br>When a new pair of access_token/refresh_token has been created|If not used for 336 hours (14 days), or<br><br>When the refresh_token expires, or<br><br>When a new access_token/refresh_token pair was created, or<br><br>If the refresh_token was revoked<br> <br>|
+|**Becomes<br/>Invalid**|If the refresh_token was revoked, or<br/><br/>If not used for 336 hours (14 days), or<br/><br/>When a new pair of access_token/refresh_token has been created|If not used for 336 hours (14 days), or<br/><br/>When the refresh_token expires, or<br/><br/>When a new access_token/refresh_token pair was created, or<br/><br/>If the refresh_token was revoked<br/> <br/>|
 
 ## Use tokens
 
@@ -95,7 +95,7 @@ As defined by HTTP/1.1 [RFC2617], the application should send the access_token d
 You can do so by including the bearer token's access_token value in the HTTP request body as 'Authorization: Bearer {access_token_value}'. 
 
 When the API call is sent with the token, R Server attempts to validate that the user is successfully authenticated and that the token itself is not expired.
-+  If the user is successfully authenticated but the bearer token's access_token or refresh_token is expired, a '401 - Unauthorized (invalid or expired refresh token)' error is returned.
++  If an authenticated user has a bearer token's access_token or refresh_token that is expired, then a '401 - Unauthorized (invalid or expired refresh token)' error is returned.
 
 + If the user is not successfully authenticated, a '401 - Unauthorized (invalid credentials)' error is returned.
 
@@ -121,9 +121,9 @@ Example HTTP header for publishing web service:
 
 A valid bearer token (with active access_token or refresh_token properties) keeps the user's authentication alive without requiring him or her to re-enter their credentials frequently.  
 
-The access_token can be used for as long as it’s active, which is up to one hour after login or renewal.  The refresh_token is active for 336 hours (14 days).  After the access_token expires, an active refresh_token can be used to get a new access_token / refresh_token pair as shown in the example below. This cycle can continue for up to 90 days after which the user must log in again. If the refresh_token expires, the tokens cannot be renewed and the user must log in again.  
+The access_token can be used for as long as it’s active, which is up to one hour after login or renewal.  The refresh_token is active for 336 hours (14 days).  After the access_token expires, an active refresh_token can be used to get a new access_token / refresh_token pair as shown in the following example. This cycle can continue for up to 90 days after which the user must log in again. If the refresh_token expires, the tokens cannot be renewed and the user must log in again.  
 
-Use [the 'POST /login/refreshToken HTTP/1.1' API call](https://microsoft.github.io/deployr-api-docs/?tags=User#refresh-user-access-token)  to refresh a token. 
+To refresh a token, use [the 'POST /login/refreshToken HTTP/1.1' API call](https://microsoft.github.io/deployr-api-docs/?tags=User#refresh-user-access-token). 
 
 #### Example: Refresh access_token
 
