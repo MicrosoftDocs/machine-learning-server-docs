@@ -50,8 +50,8 @@ Data analysis
 * [Visualizing huge data sets](how-to-revoscaler-visualize-huge-data-sets.md)
 
 Remote code execution on R Server
-* [Connect to remote server](operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-* [Create remote session & execute](r/how-to-execute-code-remotely.md)
+* [Connect to remote server](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
+* [Create remote session & execute](how-to-execute-code-remotely.md)
 
 Operationalization: deploy and consume models and code
 * [Publish & manage](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
