@@ -2,13 +2,10 @@
   tocHref: /
   topicHref: /
   items:
-  - name: Machine Learning Server
+  - name: Microsoft R
     tocHref: /r-server/
     topicHref: /r-server/index
     items:
-    - name: Configure
-      tocHref: /r-server/operationalize/
-      topicHref: /r-server/operationalize/configure-start-for-administrators
     - name: Python Package Reference
       tocHref: /r-server/python-reference/
       topicHref: /r-server/python-reference/introducing-python-package-reference
