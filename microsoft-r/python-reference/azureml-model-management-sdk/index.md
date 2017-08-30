@@ -41,4 +41,4 @@ Main Interface description goes here.
 
 * [*azureml.deploy.DeployClient*: Deploy Client Factory for *MLServer*](deploy-client.md) 
 
-* [*azureml.deploy.server.MLServer*: Deploy Client for *MLServer*](server/mlserver.md) 
+* [*azureml.deploy.server.MLServer*: Deploy Client for *MLServer*](mlserver.md) 
