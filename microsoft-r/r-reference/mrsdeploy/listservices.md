@@ -91,10 +91,7 @@ A list of services and service information.
  
 Other service methods: [deleteService](deleteservice.md),
 [getService](getservice.md),
-[print.serviceDetails](print-servicedetails.md),
 [publishService](publishservice.md),
-[serviceOption](serviceoption.md),
-[summary.serviceDetails](summary-servicedetails.md),
 [updateService](updateservice.md)
    
  ##Examples

@@ -146,11 +146,8 @@ Updates an existing service by `name` and version `v`.
  
 Other service methods: [deleteService](deleteservice.md),
 [getService](getservice.md), [listServices](listservices.md),
-[print.serviceDetails](print-servicedetails.md),
 [publishService](publishservice.md),
-[serviceOption](serviceoption.md),
-[summary.serviceDetails](summary-servicedetails.md)
-   
+
  ##Examples
 
  ```

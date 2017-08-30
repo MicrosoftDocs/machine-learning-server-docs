@@ -130,8 +130,8 @@ Add R packages to your computer by running setup for R Server or R Client:
 
 Next, refer to these introductory articles and samples to get started:
 
-+ [Cheatsheet: Choosing an algorithm](../../r/how-to-choose-microsoftml-algorithms-cheatsheet.m\d)  
-+ [MicrosoftML samples](../../r/sample-microsoftml)
++ [Cheatsheet: Choosing an algorithm](../../r/how-to-choose-microsoftml-algorithms-cheatsheet.md)  
++ [MicrosoftML samples](../../r/sample-microsoftml.md)
 
 ## See also
 
