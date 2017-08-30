@@ -40,7 +40,7 @@ Use the utility to:
 + [Evaluate the configuration's capacity](configure-evaluate-capacity.md)
 + [Learn about command line switches to this utility script](#switch)
 
-<br>
+<br/>
 <a name="launch"></a>
 
 ## Launch the Administrator Utility
@@ -58,8 +58,8 @@ Alternately, open a command line window with administrator privileges and enter 
 
 |Version|Commands|
 |----|------------|
-|9.1|cd <MRS_home>\o16n<br>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0|cd <MRS_home>\deployr<br>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
+|9.1|cd <MRS_home>\o16n<br/>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0|cd <MRS_home>\deployr<br/>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
 
 where `<MRS_home>` is the path to the Microsoft R Server installation directory. To find this path, enter `normalizePath(R.home())` in your R console.
 
@@ -69,10 +69,10 @@ Launch the administration utility script with `root` or `sudo` privileges with t
 
 |Version|Commands|
 |----|------------|
-|9.1|cd /usr/lib64/microsoft-r/rserver/o16n/9.1.0<br>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0|cd /usr/lib64/microsoft-deployr/9.0.1<br>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
+|9.1|cd /usr/lib64/microsoft-r/rserver/o16n/9.1.0<br/>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
+|9.0|cd /usr/lib64/microsoft-deployr/9.0.1<br/>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
 
-<br><a name="admin-password"></a>
+<br/><a name="admin-password"></a>
 
 ## Set/Update Local Administrator Password
 
@@ -96,7 +96,7 @@ This local 'admin' password must be 8-16 characters long and contain at least 1 
 >[!NOTE]
 >You can bypass script interface using the argument '-setpassword <password>' such as `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -setpassword my-password`. Learn about all command line switches for this script, [here](#switch).
 
-<br><a name="startstop"></a>
+<br/><a name="startstop"></a>
 
 ## Starting and Stopping Services
 
@@ -110,7 +110,7 @@ To start or stop all operationalization-related services on the machine at once,
 
 1. From the submenu, choose which services to start or stop.
 
-<br><a name="ports"></a>
+<br/><a name="ports"></a>
 
 ## Update Port Numbers
 
@@ -130,7 +130,7 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 >The port number will be updated the next time the [service is restarted](#startstop).
 
-<br><a name="encrypt"></a>
+<br/><a name="encrypt"></a>
 
 ## Encrypt Credentials 
 
@@ -168,7 +168,7 @@ The encryption function available in the administration utility relies on the RS
 >You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](#switch).
 
 
-<br><a name="test"></a>
+<br/><a name="test"></a>
 
 ## Diagnostic Testing
 
@@ -177,7 +177,7 @@ Armed with this information, you can identify unresponsive components, execution
 
 [Learn how to run the diagnostics and troubleshoot.](configure-run-diagnostics.md)
 
-<br><a name="capacity"></a>
+<br/><a name="capacity"></a>
 
 ## Evaluate Capacity
 
@@ -188,7 +188,7 @@ To evaluate the load balancing capacity, you can simulate the traffic for the co
 
 [Learn how to configure the test parameters, run the test, and interpret the results.](configure-evaluate-capacity.md)
 
-<br><a name="switch"></a>
+<br/><a name="switch"></a>
 
 ## Command line switches
 
@@ -196,9 +196,9 @@ The following command line switches are available for the administration utility
 
 |Switch|Description|Version|
 |----|-----|:---:|
-|-silentoneboxinstall <password> <br><br>-silentinstall <password>|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently<br>  and sets an admin  password. For example: <br>`-silentinstall mypass123`|9.1|
-|-silentwebnodeinstall <password>|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently<br> and sets an admin password. For example: <br>`-silentwebnodeinstall mypass123`|9.1|
-|-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently. For example: <br>`-silentcomputenodeinstall`|9.1|
-|-setpassword <password>|Sets the password. Cannot be used <br> if LDAP or AAD was configured. For example: <br>`-setpassword mypass123`|9.1|
-|-preparedbmigration <appSettingsPath>|Migrates the data from current database to a <br>different database schema. Takes the path to<br>the web node’s appsetting.json file as an<br> argument. This is uncommonly needed as a<br>step [when upgrading](../install/operationalize-r-server-enterprise-config.md#upgradewebnode). For example:<br>`-preparedbmigration C:/Program Files/`<br>`Microsoft/mrs/o16n/Microsoft.RServer.WebNode/`<br>appsettings.json|9.1|
-|-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName|Silently [encrypts secrets](#encrypt). For example: <br>-encryptsecret thesecret storeName storeLocationsubjectName|9.1|
+|-silentoneboxinstall <password> <br/><br/>-silentinstall <password>|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently<br/>  and sets an admin  password. For example: <br/>`-silentinstall mypass123`|9.1|
+|-silentwebnodeinstall <password>|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently<br/> and sets an admin password. For example: <br/>`-silentwebnodeinstall mypass123`|9.1|
+|-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently. For example: <br/>`-silentcomputenodeinstall`|9.1|
+|-setpassword <password>|Sets the password. Cannot be used <br/> if LDAP or AAD was configured. For example: <br/>`-setpassword mypass123`|9.1|
+|-preparedbmigration <appSettingsPath>|Migrates the data from current database to a <br/>different database schema. Takes the path to<br/>the web node’s appsetting.json file as an<br/> argument. This is uncommonly needed as a<br/>step [when upgrading](../install/operationalize-r-server-enterprise-config.md#upgradewebnode). For example:<br/>`-preparedbmigration C:/Program Files/`<br/>`Microsoft/mrs/o16n/Microsoft.RServer.WebNode/`<br/>appsettings.json|9.1|
+|-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName|Silently [encrypts secrets](#encrypt). For example: <br/>-encryptsecret thesecret storeName storeLocationsubjectName|9.1|

@@ -153,7 +153,7 @@ If you do not know your `tenantid`, `clientid`, or other details, please contact
 |username|If NULL, user is prompted to enter username `<username>@<AAD-account-domain>`|
 |password|If NULL, user is prompted to enter password|
 
-<br>
+<br/>
 
 ### Arguments for remote execution 
 
@@ -165,7 +165,7 @@ Take special note of the arguments `session` and `commandline` as these influenc
 
 |Argument|Description|
 | --- | --- |
-|`session`|If TRUE, create a remote session in R Server. <br>If omitted, it will still create a remote session.<br>If FALSE, do not create any remote R sessions.|
+|`session`|If TRUE, create a remote session in R Server. <br/>If omitted, it will still create a remote session.<br/>If FALSE, do not create any remote R sessions.|
 |`commandline`|If TRUE, creates a REMOTE command line in the R console. REMOTE command line is used to interact with the remote R session. This means that after the authenticated connection is made, the user will be executing R commands remotely until they switch back to the local command line or logout. Parameter is only valid if session parameter is TRUE.|
 
 For more details on remote execution, see [this article](../r/how-to-execute-code-remotely.md).
@@ -191,7 +191,7 @@ In this state, we'll authenticate using one of the two aforementioned login func
 
 |Command|State|
 |---|---|
-|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800"`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`REMOTE>`|![state 1](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-remote-session.png)<br>&nbsp;|
+|`> remoteLogin(`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800"`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br/><br/>`REMOTE>`|![state 1](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-remote-session.png)<br/>&nbsp;|
 
 When you see the default prompt `REMOTE>` in the command pane, you'll know that you are now interacting with your remote R session and are no longer in your local R environment:
 
@@ -235,7 +235,7 @@ In this state, you can authenticate using `remoteLogin`, which is one of the two
 
 |Command|State|
 |---|---|
-|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = TRUE,`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`commandline = FALSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`>`|![state 2](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-local-session.png)<br>&nbsp;|
+|`> remoteLogin(`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = TRUE,`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`commandline = FALSE`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br/><br/>`>`|![state 2](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-local-session.png)<br/>&nbsp;|
 
 In this example, we define an interactive authentication workflow that spans both our local and remote environments (just like state 1), but starts out in the local R session, and only then moves to the remote R session.
 
@@ -270,7 +270,7 @@ In this state, you can authenticate with remoteLogin() and its argument `session
 
 |Command|State|
 |---|---|
-|`> remoteLogin(`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = FALSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br><br>`>`|![state 3](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-local.png)<br>&nbsp;|
+|`> remoteLogin(`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`"http://localhost:12800",`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`session = FALSE`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`)`<br/><br/>`>`|![state 3](./media/how-to-connect-log-in-with-mrsdeploy/mrsdeploy-connect-local.png)<br/>&nbsp;|
 
 
 In this example, we define an interactive authentication workflow without a remote R session (`session = FALSE`). This is useful when working only with the web service functionality of the mrsdeploy package. After authentication, we remain confined within the local R session in order to publish and consume a service.
