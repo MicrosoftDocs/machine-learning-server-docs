@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "microsoftml (Function Library for Python) in SQL Server Machine Learning Server" 
-description: "" 
+title: "microsoftml package for Python (SQL Server Machine Learning Server) | Microsoft Docs" 
+description: "Function help reference for the microsoftml python package of SQL Server Machine Learning Server." 
 keywords: "microsoftml API, API" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "08/29/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,76 +24,110 @@ ms.custom: ""
  
 ---
 
-# microsoftml (Function Library for Python)
+# microsoftml package
+
+The **microsoftml** module is a collection of Python functions used in machine learning workloads. It includes functions for training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.
+
+| Package details | |
+|--------|-|
+| Version: |  1.3.4 |
+| Supported on: | [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
+
+## How to use microsoftml
+
+The **microsoftml** module is installed as part of SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **microsoftml**, but the script must run on a computer having SQL Server Machine Learning with Python.
+
+There are two primary use cases for this release: 
+
++ Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
++ Calling **microsoftml** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **microsoftml** operations to a remote SQL Server instance that has the **microsoftml** interpreter.
+
+## Functions by category
+
+This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
+
+## 1-Training functions
+
+| Function | Description |
+|----------|-------------|
+|[microsoftml.rx_fast_forest](rx-fast-forest.md)  | Random Forest |
+|[microsoftml.rx_fast_linear](rx-fast-linear.md) | Linear Model with Stochastic Dual Coordinate Ascent |
+|[microsoftml.rx_fast_trees](rx-fast-trees.md) | Boosted Trees |
+|[microsoftml.rx_logistic_regression](rx-logistic-regression.md) | Logistic Regression |
+|[microsoftml.rx_neural_network](rx-neural-network.md) | Neural Network |
+|[microsoftml.rx_oneclass_svm](rx-oneclass-svm.md) | Anomaly Detection |
 
 
-**Applies to: SQL Server 2017 RC1**
+## 2-Transform functions
 
-The **microsoftml** library is a proprietary Python package from Microsoft for use in SQL Server Machine Learning Server (Standalone) and SQL Server Machine Learning Services. Many functions in this library can be used with the **revoscalepy** package, included in the same release.
+### Categorical variable handling
 
-Use the **microsoftml** Python functions to apply machine learning transforms to data.
+| Function | Description |
+|----------|-------------|
+|[microsoftml.categorical](categorical.md) | Converts a text column into categories |
+|[microsoftml.categorical_hash](categorical-hash.md) | Hashes and converts a text column into categories |
 
+### Schema manipulation
 
-## Training
-
-* [*microsoftml.rx_fast_forest*: Random Forest](rx-fast-forest.md) 
-* [*microsoftml.rx_fast_linear*: Linear Model with Stochastic Dual Coordinate Ascent](rx-fast-linear.md) 
-* [*microsoftml.rx_fast_trees*: Boosted Trees](rx-fast-trees.md) 
-* [*microsoftml.rx_logistic_regression*: Logistic Regression](rx-logistic-regression.md) 
-* [*microsoftml.rx_neural_network*: Neural Network](rx-neural-network.md) 
-* [*microsoftml.rx_oneclass_svm*: Anomaly Detection](rx-oneclass-svm.md) 
-
-
-## Transforms
-
-### Categorical Variable Handling
-
-* [*microsoftml.categorical*: Converts a text column into categories](categorical.md) 
-* [*microsoftml.categorical_hash*: Hashes and converts a text column into categories](categorical-hash.md) 
+| Function | Description |
+|----------|-------------|
+|[microsoftml.concat](concat.md) | Concatenates multiple columns into a single vector |
+|[microsoftml.drop_columns](drop-columns.md) | Drops columns from a dataset |
+|[microsoftml.select_columns](select-columns.md) | Retains columns of a dataset |
 
 
-### Schema Manipulation
+### Variable selection
 
-* [*microsoftml.concat*: Concatenates multiple columns into a single vector](concat.md) 
-* [*microsoftml.drop_columns*: Drops columns from a dataset](drop-columns.md) 
-* [*microsoftml.select_columns*: Retains columns of a dataset](select-columns.md) 
-
-
-### Variable Selection
-
-* [*microsoftml.count_select*: Feature selection based on counts](count-select.md) 
-* [*microsoftml.mutualinformation_select*: Feature selection based on mutual information](mutualinformation-select.md) 
+| Function | Description |
+|----------|-------------|
+|[microsoftml.count_select](count-select.md) |Feature selection based on counts |
+|[microsoftml.mutualinformation_select](mutualinformation-select.md) | Feature selection based on mutual information |
 
 
-### Text Analytics
+### Text analytics
 
-* [*microsoftml.featurize_text*: Converts text columns into numerical features](featurize-text.md) 
-  * [N-grams extractors](featurize-text.md) 
-    * [*microsoftml.n_gram*: Converts text into features using n-grams](n-gram.md) 
-    * [*microsoftml.n_gram_hash*: Converts text into features using hashed n-grams](n-gram-hash.md) 
-  * [Stopwords removers](featurize-text.md) 
-    * [*microsoftml.custom*: Removes custom stopwords](custom.md) 
-    * [*microsoftml.predefined*: Removes predefined stopwords](predefined.md) 
-* [*microsoftml.get_sentiment*: Sentiment analysis](get-sentiment.md) 
+| Function | Description |
+|----------|-------------|
+|[microsoftml.featurize_text](featurize-text.md) | Converts text columns into numerical features |
+|[microsoftml.get_sentiment](get-sentiment.md) | Sentiment analysis |
 
 
-### Image Analytics
+### Image analytics 
 
-* [*microsoftml.load_image*: Loads an image](load-image.md) 
-* [*microsoftml.resize_image*: Resizes an Image](resize-image.md) 
-* [*microsoftml.extract_pixels*: Extracts pixels form an image](extract-pixels.md) 
-* [*microsoftml.featurize_image*: Converts an image into features](featurize-image.md) 
-
-
-### Scorers
-
-* [*microsoftml.rx_predict*: Scores using a Microsoft machine learning model](rx-predict.md) 
+| Function | Description |
+|----------|-------------|
+|[microsoftml.load_image](load-image.md) | Loads an image |
+|[microsoftml.resize_image](resize-image.md) | Resizes an Image |
+|[microsoftml.extract_pixels](extract-pixels.md) | Extracts pixels form an image |
+|[microsoftml.featurize_image](featurize-image.md) | Converts an image into features |
 
 
-### Featurization
+### Scoring functions
 
-* [*microsoftml.rx_featurize*: Data transformation for data sources](rx-featurize.md) 
+| Function | Description |
+|----------|-------------|
+|[microsoftml.rx_predict](rx-predict.md) | Scores using a Microsoft machine learning model |
+
+
+### Featurization functions
+
+| Function | Description |
+|----------|-------------|
+|[microsoftml.rx_featurize](rx-featurize.md) | Data transformation for data sources |
+
+
+## Next steps
+
+Add both Python modules to your computer by running setup: 
+
++ [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
+
+Next, follow this tutorial for hands on experience: 
+
++ [Using the MicrosoftML Package with SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/using-the-microsoftml-package) 
 
 ## See also
 
- [Python function library help (SQL Server Machine Learning)](../introducing-python-package-reference.md)   
+  [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
+  [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone) 

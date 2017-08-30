@@ -73,10 +73,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
 Other service methods: [deleteService](deleteservice.md),
 [listServices](listservices.md),
-[print.serviceDetails](print-servicedetails.md),
 [publishService](publishservice.md),
-[serviceOption](serviceoption.md),
-[summary.serviceDetails](summary-servicedetails.md),
 [updateService](updateservice.md)
    
  ##Examples

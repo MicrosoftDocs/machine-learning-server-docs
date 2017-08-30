@@ -82,7 +82,6 @@ Once the 'REMOTE>' command prompt is shown, these commands become available:
  
  ##See Also
  
-[resume](resume.md)
    
  ##Examples
 
