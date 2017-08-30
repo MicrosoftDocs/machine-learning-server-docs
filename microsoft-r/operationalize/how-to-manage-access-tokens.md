@@ -43,7 +43,7 @@ If a token is transmitted in the clear, a man-in the middle attack can be used b
 
 > You can [revoke a token](#revoke) if a user is no longer permitted to make requests on the API or if the token has been compromised.
 
-<br>
+<br/>
 
 ## Create tokens
 
@@ -84,9 +84,9 @@ The bearer token is made of an access_token property and  a refresh_token proper
 
 | |The "access_token" Lifecycle|The "refresh_token" Lifecycle|
 |---|----|-----|
-|**Gets<br>Created**|Whenever the user logs in, or<br><br> a refreshToken api is called|Whenever the user logs in|
+|**Gets<br/>Created**|Whenever the user logs in, or<br/><br/> a refreshToken api is called|Whenever the user logs in|
 |**Expires**|After 1 hour (3660 seconds) of inactivity|After 336 hours (14 days) of inactivity|
-|**Becomes<br>Invalid**|If the refresh_token was revoked, or<br><br>If not used for 336 hours (14 days), or<br><br>When a new pair of access_token/refresh_token has been created|If not used for 336 hours (14 days), or<br><br>When the refresh_token expires, or<br><br>When a new access_token/refresh_token pair was created, or<br><br>If the refresh_token was revoked<br> <br>|
+|**Becomes<br/>Invalid**|If the refresh_token was revoked, or<br/><br/>If not used for 336 hours (14 days), or<br/><br/>When a new pair of access_token/refresh_token has been created|If not used for 336 hours (14 days), or<br/><br/>When the refresh_token expires, or<br/><br/>When a new access_token/refresh_token pair was created, or<br/><br/>If the refresh_token was revoked<br/> <br/>|
 
 ## Use tokens
 
