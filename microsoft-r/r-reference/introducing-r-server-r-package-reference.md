@@ -33,15 +33,15 @@ You can use these libraries and functions in combination with other open source 
 
 | Library details | |
 |--------|-|
-| Supported platforms: | Hadoop MapReduce</br>Hadoop Spark</br>Linux</br> SQL Server (Windows only)</br>Windows|
+| [Supported platforms:](../../install/r-server-install-supported-platforms.md) | Hadoop MapReduce</br>Hadoop Spark</br>Linux</br> SQL Server (Windows only)</br>Windows|
 | Built on: | R 3.3.x (included when you [install a product](#how-to-install) that provides this package). |
 
 ## R function libraries
 
 |Package | Version | Description |
 |--------|---------|-------------|
-|[MicrosoftML](microsoftml/microsoftml-package.md) | 1.3.0  | A collection of functions in Microsoft R used for machine learning at scale.|
-|[mrsdeploy](mrsdeploy/mrsdeploy-package.md) | 1.1.0 | Deployment functions for interactive remote execution at the command line, plus web service functions for bundling up R code blocks as discrete web services that can be deployed and managed on an R Server instance. Formally known as DeployR. |
+|[MicrosoftML](microsoftml/microsoftml-package.md) | 1.3.0  | A collection of functions in Microsoft R used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.|
+|[mrsdeploy](mrsdeploy/mrsdeploy-package.md) | 1.1.0 | Deployment functions for interactive remote execution at the command line, plus web service functions for bundling R code blocks as discrete web services that can be deployed and managed on an R Server instance. Formally known as DeployR. |
 |[olapR](olapr/olapr.md) | 1.0.0 | A collection of functions for constructing MDX queries against an OLAP cube. Runs only on the Windows platform.|
 |RevoIOQ | 8.0.6 | Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (<sup> 1 </sup>). |
 |RevoMods | 11.0.0 | Microsoft modifications and extensions to standard R functions. Reference documentation is online only (<sup> 1 </sup>).  |

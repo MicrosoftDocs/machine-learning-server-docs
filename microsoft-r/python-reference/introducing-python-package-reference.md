@@ -1,20 +1,12 @@
 ---
 
 # required metadata
-<<<<<<< HEAD
 title: "Python function library reference (SQL Server Machine Learning) | Microsoft Docs"
-=======
-title: "Python function library help (SQL Server Machine Learning) | Microsoft Docs"
->>>>>>> dev
 description: "Function reference for Python packages: microsoftml, revoscalepy"
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"
-<<<<<<< HEAD
-ms.date: "08/17/2017"
-=======
-ms.date: "08/04/2017"
->>>>>>> dev
+ms.date: "08/29/2017"
 ms.author: heidist
 ms.topic: "article"
 ms.prod: "microsoft-r"
