@@ -34,13 +34,57 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
 ![One-box configuration](./media/configure-machine-learning-server-one-box/setup-onebox.png)
 
+
+<a name="onebox"></a>
+
+## How to configure
+
+>[!Important]
+>For your convenience, [Azure Management Resource templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
+>
+>Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
+
+**To configure on a single machine:**
+
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+
+   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
+      
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+
+   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
+
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux) so you can begin to configure a one-box setup.
+
+    >[!NOTE]
+    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For Machine Learning Server 9.2 on Windows, for example, the syntax might be: 
+    `dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+
+    1. Choose the option to **Configure server**.
+
+    1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
+
+       >[!IMPORTANT]
+       > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](configure-machine-learning-server-enterprise.md).
+
+    1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
+
+    1. Return to the main menu of the utility when the configuration ends.
+
+    1. [Run a diagnostic test of the configuration](../operationalize/configure-run-diagnostics.md).
+
+1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
+
+>[!Important]
+>Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
+
+You are now ready to begin operationalizing your R analytics with Machine Learning Server.
+
+
+
 ## How to upgrade 
 
-
-
 Carefully review the following steps.
-
-### Upgrade a compute node
 
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
@@ -88,49 +132,3 @@ Carefully review the following steps.
    >[!WARNING]
    >The entities created by users, specifically web services, and [snapshots](../r/how-to-execute-code-remotely.md#snapshot), are tied to their usernames. For this reason, you must be careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them. For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
 
-
-
-<a name="onebox"></a>
-
-## How to configure
-
->[!Important]
->For your convenience, [Azure Management Resource templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
->
->Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
-
-**To configure on a single machine:**
-
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
-
-   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
-
-   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
-
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux) so you can begin to configure a one-box setup.
-
-    >[!NOTE]
-    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For Machine Learning Server 9.2 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
-
-    1. Choose the option to **Configure server**.
-
-    1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
-
-       >[!IMPORTANT]
-       > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](configure-machine-learning-server-enterprise.md).
-
-    1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
-
-    1. Return to the main menu of the utility when the configuration ends.
-
-    1. [Run a diagnostic test of the configuration](../operationalize/configure-run-diagnostics.md).
-
-1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
-
->[!Important]
->Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
-
-You are now ready to begin operationalizing your R analytics with Machine Learning Server.

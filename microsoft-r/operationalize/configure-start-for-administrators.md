@@ -52,7 +52,7 @@ All configurations have at least a single web node, single compute node, and a d
 
 + **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have more than one web nodes to load balance your requests to multiple compute nodes. 
 
-+ **Compute nodes** are used to execute R and Python code as a session or service. Each compute node has its own [pool of R and python shells](../operationalize/configure-evaluate-capacity.md#pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R and Python execution shells and benefit from load balancing across these compute nodes. 
++ **Compute nodes** are used to execute R and Python code as a session or service. Each compute node has its own [pool of R and python shells](../operationalize/configure-evaluate-capacity.md#pool) and can therefore execute multiple requests at the same time. Scaling out compute nodes enables you to have more R and Python execution shells and benefit from load balancing across these compute nodes. 
 
 + The **database**. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
@@ -68,7 +68,7 @@ As the name suggests, a [one-box configuration](../operationalize/configure-mach
 
 #### Enterprise
 
-A [enterprise configuration](../operationalize/configure-machine-learning-server-enterprise.md) where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled up or down by adding or removing nodes. Learn more about this setup in the [enterprise configuration](../operationalize/configure-machine-learning-server-enterprise.md) article. For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
+A [enterprise configuration](../operationalize/configure-machine-learning-server-enterprise.md) where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled out or in by adding or removing nodes. Learn more about this setup in the [enterprise configuration](../operationalize/configure-machine-learning-server-enterprise.md) article. For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
 
 ![Enterprise Configuration](../operationalize/media/configure-machine-learning-server-enterprise/configure-enterprise.png)
 
@@ -155,7 +155,6 @@ In the context of a discussion on runtime policies, the topics of scalability an
 The answer to these questions ultimately depends on the configuration and node resources allocated to your deployment.
 
 To evaluate and simulate the capacity of a configuration, use the [Evaluate Capacity tool](configure-evaluate-capacity.md). You can also [adjust the pool size](configure-evaluate-capacity.md#pool) of available R shells for concurrent operations.
-<!--For detailed information and recommendations on tuning the server and grid for optimal throughput, read the [DeployR Scale & Throughput Guide](../deployr/deployr-admin-scale-and-throughput.md).-->
 
 ## Troubleshooting
 

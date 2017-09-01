@@ -30,73 +30,11 @@ ms.technology:
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the enterprise configuration. For more on one-box configurations, [see here](configure-machine-learning-server-one-box.md).
 
-An enterprise configuration involves multiple [web and compute nodes](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) that  are configured on multiple machines along with other enterprise features.  These nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services.   
+An enterprise configuration involves multiple [web and compute nodes](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) that  are configured on multiple machines along with other enterprise features.  These nodes can be scaled independently. Scaling out web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services.   
 
 For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
 
 ![Enterprise Configuration](./media/configure-machine-learning-server-enterprise/configure-enterprise.png)
-
-## How to upgrade 
-
-To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). 
-
-Carefully review the steps in the following sections.
-
->[!IMPORTANT]
->Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
-
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
-   
-   + Windows: C:\Users\Default\AppData\Local\DeployR\current
-
-   + Linux: /etc/deployr/current
-
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
-
-   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
-
-   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
-
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
-
-1. Choose **Configure server** from the menu and then **Configure a compute node** from the submenu. 
-
-1. When the script asks you if you want to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
-    
-You can now **repeat these steps** for each compute node.
-
-<a name="upgradewebnode"></a>
-
-### Upgrade a web node
-
->[!IMPORTANT]
->Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
-
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
-   
-   + Windows: C:\Users\Default\AppData\Local\DeployR\current
-
-   + Linux: /etc/deployr/current
-
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
-
-   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
-
-   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
-
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
-
-1. Choose **Configure server** from the menu and then **Configure a web node** from the submenu.  
-
-1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
-
-1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
-
-You can now **repeat these steps** for each node.
 
 ## How to configure
 
@@ -169,6 +107,16 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to begin setting up and configuring a web node.
 
+1. In the utility, configure the web node:
+
+   1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
+  
+   1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).
+   
+   >[!NOTE]
+   >Bypass the interactive steps to install the node and set an admin password using the command-line switches `-silentwebnodeinstall mypassword uri1,uri2`. Learn about all command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+
+
 1. In order for the Machine Learning Server web nodes to know to which compute nodes it can send requests, you must declare the complete list of compute node URIs through the administration utility. This list is shared across all web nodes automatically. **You only have to declare them once from one web node.** Here is how:
 
    >[!NOTE]
@@ -185,15 +133,6 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
       In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
 
    1. Return the main menu of the utility.
-
-1. Also in the utility, configure the web node AFTER declaring the compute node URIs on at least one web node machine.
-
-   1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
-  
-   1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).
-   
-   >[!NOTE]
-   >Bypass the interactive steps to install the node and set an admin password using the command-line switches `-silentwebnodeinstall mypassword uri1,uri2`. Learn about all command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
 1. In the same utility, test the configuration. From the main utility menu, choose **Run Diagnostic Tests** and choose a [diagnostic test](../operationalize/configure-run-diagnostics.md).
 
@@ -236,3 +175,66 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
 1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
 
 1. [Evaluate](../operationalize/configure-evaluate-capacity.md) the configuration's capacity.
+
+
+## How to upgrade 
+
+To replace an older version, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). 
+
+Carefully review the steps in the following sections.
+
+>[!IMPORTANT]
+>Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
+
+1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
+   
+   + Windows: C:\Users\Default\AppData\Local\DeployR\current
+
+   + Linux: /etc/deployr/current
+
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+
+   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
+      
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+
+   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
+
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+
+1. Choose **Configure server** from the menu and then **Configure a compute node** from the submenu. 
+
+1. When the script asks you if you want to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
+    
+You can now **repeat these steps** for each compute node.
+
+<a name="upgradewebnode"></a>
+
+### Upgrade a web node
+
+>[!IMPORTANT]
+>Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
+
+1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
+   
+   + Windows: C:\Users\Default\AppData\Local\DeployR\current
+
+   + Linux: /etc/deployr/current
+
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+
+   + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
+      
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+
+   + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
+
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+
+1. Choose **Configure server** from the menu and then **Configure a web node** from the submenu.  
+
+1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
+
+1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
+
+You can now **repeat these steps** for each node.
