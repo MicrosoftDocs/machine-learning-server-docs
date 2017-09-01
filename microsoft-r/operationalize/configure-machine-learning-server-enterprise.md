@@ -114,15 +114,6 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
    >[!NOTE]
    >Bypass the interactive steps to install the node and set an admin password using the command-line switches `-silentwebnodeinstall mypassword uri1,uri2`. Learn about all command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
-1. In order for the Machine Learning Server web nodes to know to which compute nodes it can send requests, you must declare the complete list of compute node URIs through the administration utility. This list is shared across all web nodes automatically. **You only have to declare them once from one web node.** Here is how:
-
-   >[!NOTE]
-   >1. You only have to declare them once from one web node.
-   >
-   >2. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to manage compute nodes. 
-   
-   1. From the main utility menu, choose **Manage compute nodes** and then choose **Add URIs** from the submenu.
-
    1. When prompted, enter the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
 
       For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
@@ -132,8 +123,6 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
    1. Return the main menu of the utility.
 
 1. In the same utility, test the configuration. From the main utility menu, choose **Run Diagnostic Tests** and choose a [diagnostic test](../operationalize/configure-run-diagnostics.md).
-
-1. In the same utility, restart the web node to define it as a service. From the main utility menu, choose the option **Stop and start services**.
 
 1. Exit the utility.
 
