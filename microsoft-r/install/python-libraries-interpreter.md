@@ -1,12 +1,13 @@
 ---
 
 # required metadata
-title: "How to install Python support in Machine Learning Server"
+title: "How to install Python support in Machine Learning Server | Microsoft Docs"
+description: "Installing python interpreter and libraries locally to interact with Machine Learning Server"
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "j-martens"
+ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "07/020/2017"
+ms.date: "09/20/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
