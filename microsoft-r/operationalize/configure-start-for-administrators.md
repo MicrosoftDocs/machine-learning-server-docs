@@ -30,9 +30,9 @@ ms.technology:
 
 >You can configure Machine Learning Server after installation to act as a deployment server and host analytic web services as well as to execute code remotely. For a general introduction to  operationalization, read the [About](../what-is-operationalization.md) topic.
 
-This guide is for system administrators of the operationalization feature in Machine Learning Server. If you are responsible for configuring or maintaining Machine Learning Server with the operationalization feature, then this guide is for you.
+This guide is for system administrators. If you are responsible for configuring or maintaining Machine Learning Server, then this guide is for you.
 
-As an administrator, your key responsibilities are to ensure configuration for the operationalization feature is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:
+As an administrator, your key responsibilities are to ensure machine learning server is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:
 
 -   Server [security policies](#security-policies), which include user authentication and authorization
 -   Server [R package management policies](#r-package-policies)
@@ -42,7 +42,7 @@ Whenever your policies fail to deliver the expected runtime behavior or performa
 
 <a name="configure-server-for-operationalization"></a>
 
-## Configure web & compute nodes for analytic deployment and remote execution
+## Configure web & compute nodes for analytics deployment and remote execution
 
 To benefit from Machine Learning Server’s web service deployment and remote execution features, you must first [configure](../install/operationalize-r-server-one-box-config.md) the server after installation to act as a deployment server and host analytic web services. 
 
@@ -50,7 +50,7 @@ To benefit from Machine Learning Server’s web service deployment and remote ex
 
 All configurations have at least a single web node, single compute node, and a database.
 
-+ **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have more than one web nodes to load balance your requests to multiple compute nodes. 
++ **Web nodes** act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have more than one web node to ensure high availability and avoid a single point of failure. 
 
 + **Compute nodes** are used to execute R and Python code as a session or service. Each compute node has its own [pool of R and python shells](../operationalize/configure-evaluate-capacity.md#pool) and can therefore execute multiple requests at the same time. Scaling out compute nodes enables you to have more R and Python execution shells and benefit from load balancing across these compute nodes. 
 
@@ -88,7 +88,7 @@ The web nodes and compute nodes are supported on these operating systems
 
 Machine Learning Server has many features that support the creation of secure applications. Common security considerations, such as data theft or vandalism, apply regardless of the version of Machine Learning Server you are using. Data integrity should also be considered as a security issue. If data is not protected, it is possible that it could become worthless if improvised data manipulation is permitted and the data is inadvertently or maliciously modified. In addition, there are often legal requirements that must be adhered to, such as the correct storage of confidential information. 
 
-User access to the Machine Learning Server and the operationalization services offered on its [API](concept-api.md) are entirely under your control as the server administrator. Machine Learning Server's operationalization feature offers seamless integration with popular enterprise security solutions like Active Directory LDAP or Azure Active Directory. You can configure Machine Learning Server to [authenticate](configure-authentication.md) using these methods to establish a trust relationship between your user community and the operationalization engine for Machine Learning Server. Your users can then supply simple `username` and `password` credentials in order to verify their identity. [A token is issued to an authenticated user.](how-to-manage-access-tokens.md)
+User access to the Machine Learning Server and the operationalization services offered on its [API](concept-api.md) are entirely under your control as the server administrator. Machine Learning Server offers seamless integration with popular enterprise security solutions like Active Directory LDAP or Azure Active Directory. You can configure Machine Learning Server to [authenticate](configure-authentication.md) using these methods to establish a trust relationship between your user community and the operationalization engine for Machine Learning Server. Your users can then supply simple `username` and `password` credentials in order to verify their identity. [A token is issued to an authenticated user.](how-to-manage-access-tokens.md)
 
 In addition to authentication, you can add other enterprise security around Machine Learning Server such as:
 
@@ -121,7 +121,7 @@ The external configuration file, \<node-install-path>\appsettings.json defines a
 
 The location of this file depends on the server version, operating system, and the node. Learn more in this article: ["Default installation paths for compute and web nodes"](configure-find-admin-configuration-file.md).
 
-+ On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, compute node declarations, and more.
++ On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, and more.
 
 + On the compute node, this configuration file governs SSL, logging, [shell pool size](configure-evaluate-capacity.md#pool), execution ports, and more.
 
@@ -133,7 +133,7 @@ This value is defined in `"MaxNumberOfThreadsPerBatchExecution"`  property in th
 
 ### Availability
 
-The operationalization feature consists of web and compute nodes that combine to deliver the full capabilities of this R and Python operationalization server. Each component can be configured for Active-Active High Availability to deliver a robust, reliable runtime environment.
+Machine Learning Server consists of web and compute nodes that combine to deliver the full capabilities of this R and Python operationalization server. Each component can be configured for Active-Active High Availability to deliver a robust, reliable runtime environment.
 
 You can configure Machine Learning Server to use multiple Web Nodes for Active-Active backup / recovery using a load balancer.
 
