@@ -30,7 +30,7 @@ ms.technology:
 
 `deployr-rserve` is a forked version of RServe maintained by Microsoft. In this forked version, we support parallel R sessions for both Windows and Linux thereby overcoming this limitation in the original rserve package.
 
-This forked version of RServe is the R execution component behind the compute node for Machine Learning Server. Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](configure-evaluate-capacity.md#pool).  
+This forked version of RServe is the R execution component behind the compute node for Machine Learning Server (and R Server). Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](configure-evaluate-capacity.md#pool).  
 
 This RServe fork acts as an interface to R, which by default is single threaded. However, in this context, this RServe fork sits atop of the RevoScaleR package. Therefore, if you use RevoScaleR package functions, you benefit from multi-threaded processing in the R shell.
 
@@ -41,7 +41,7 @@ This RServe fork acts as an interface to R, which by default is single threaded.
 
 As per the standard usage of R, the current user starts the R executable and interacts with the application via the R Language and the R Interpreter. The R language provides OS-level access via the 'system' function. With this function, a user can execute an OS command such as `system(“rmdir –r C:\\tmp”)`. While the functionality is useful to individual users, **it is also a potential entry point through which the computer's security could be compromised.**
 
-R Server provides various [API calls](concept-api.md) that permit the execution of R scripts and R code. All authentication takes place on the web node, and the execution of the R code is managed through R Server's custom version of RServe add-on component. RServe provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve only accepts socket connections from `localhost`. In other words, only those processes running on the same machine where RServe is running can directly connect to it and execute R code.
+Machine Learning Server provides various [API calls](concept-api.md) that permit the execution of R scripts and R code. All authentication takes place on the web node, and the execution of the R code is managed through Machine Learning's custom version of RServe add-on component. RServe provides a TCP/IP interface to the R Interpreter running on the machine. By default, Rserve runs on the same machine as the compute node. RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges. RServe inherits the permissions of that virtual service account. In the default configuration, Rserve only accepts socket connections from `localhost`. In other words, only those processes running on the same machine where RServe is running can directly connect to it and execute R code.
 
 >[!Important]
 >The compute node should, ideally, be the only local process that connects to RServe. To help ensure this is the case, a username and password is required to validate any connection between RServe and a client process.
