@@ -32,7 +32,7 @@ ms.technology:
 
 This guide is for system administrators. If you are responsible for configuring or maintaining Machine Learning Server, then this guide is for you.
 
-As an administrator, your key responsibilities are to ensure machine learning server is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:
+As an administrator, your key responsibilities are to ensure Machine Learning Server is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:
 
 -   Server [security policies](#security-policies), which include user authentication and authorization
 -   Server [R package management policies](#r-package-policies)
@@ -42,7 +42,7 @@ Whenever your policies fail to deliver the expected runtime behavior or performa
 
 <a name="configure-server-for-operationalization"></a>
 
-## Configure web & compute nodes for analytics deployment and remote execution
+## Configure web & compute nodes for analytic deployment and remote execution
 
 To benefit from Machine Learning Server’s web service deployment and remote execution features, you must first [configure](../install/operationalize-r-server-one-box-config.md) the server after installation to act as a deployment server and host analytic web services. 
 

@@ -30,7 +30,7 @@ ms.technology:
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the enterprise configuration. For more on one-box configurations, [see here](configure-machine-learning-server-one-box.md).
 
-An enterprise configuration involves multiple [web and compute nodes](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) that  are configured on multiple machines along with other enterprise features.  These nodes can be scaled independently. Scaling out web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services.   
+An enterprise configuration involves multiple [web and compute nodes](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) that  are configured on multiple machines along with other enterprise features.  These nodes can be scaled independently. Scaling out web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services. The web nodes are stateless therefore there is no need for session stickiness if you use a load balancer.
 
 For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
 
@@ -86,8 +86,6 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    **Linux**: If using IPTABLES or equivalent firewall service on Linux, then open the port 12805 using `iptables`  or the equivalent command.
 
-1. From the main utility menu, choose the option **Stop and start services** and restart the compute node so that it can be defined as a service.
-
 You can now **repeat these steps** for each compute node you want to add.
 
 
@@ -115,7 +113,6 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
    
    >[!NOTE]
    >Bypass the interactive steps to install the node and set an admin password using the command-line switches `-silentwebnodeinstall mypassword uri1,uri2`. Learn about all command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
-
 
 1. In order for the Machine Learning Server web nodes to know to which compute nodes it can send requests, you must declare the complete list of compute node URIs through the administration utility. This list is shared across all web nodes automatically. **You only have to declare them once from one web node.** Here is how:
 
@@ -157,16 +154,20 @@ In production environments, we strongly recommend the following approaches:
 
 1. For added security, restrict the list of IPs that can access the machine hosting the compute node.
 
+  
+**Important!** For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
+
 
 ### 5. Provision on the cloud
 
 If you are provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console. This endpoint allows clients to communicate with the  Machine Learning Server's operationalization server.
 
+
+
 ### 6. Set up a load balancer
 
 You can set up the load balancer of your choosing. Keep in mind that web nodes are stateless. Therefore, session persistence ("stickiness") is NOT required. 
 
-**Important!** For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
 
 ### 7. Post configuration steps
 
