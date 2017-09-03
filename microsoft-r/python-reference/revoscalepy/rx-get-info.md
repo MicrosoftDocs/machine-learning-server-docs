@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Get Data Source Information" 
+title: "rx_get_info: Get Data Source Information" 
 description: "Get basic information about an revoscalepy data source or data frame" 
 keywords: "xdf" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_get_info`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -180,7 +180,7 @@ Output:
 
 
 ```
-File name:C:\swarm\workspace\bigAnalytics-9.2\python\revoscalepy\revoscalepy\data\sample_data\claims.xdf
+File name:C:\swarm\workspace\bigAnalytics-9.2.1\python\revoscalepy\revoscalepy\data\sample_data\claims.xdf
 Number of observations:128.0
 Number of variables:6.0
 Number of blocks:1.0

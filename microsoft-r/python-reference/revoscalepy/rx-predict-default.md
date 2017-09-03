@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Predicted Values and Residuals for rx_lin_mod and rx_logit" 
+title: "rx_predict_default: Predicted Values and Residuals for rx_lin_mod and rx_logit" 
 description: "Compute predicted values and residuals using rx_lin_mod and rx_logit objects." 
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_predict_default`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage

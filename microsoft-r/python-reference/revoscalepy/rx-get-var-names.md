@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Variable names for a data source or data frame" 
+title: "rx_get_var_names: Variable names for a data source or data frame" 
 description: "Read the variable names for data source or data frame" 
 keywords: "variables" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_get_var_names`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage

@@ -101,7 +101,9 @@ This section lists the functions by category to give you an idea of how each one
 |[rx_dtree](rx-dtree.md) | Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
 |[rx_dforest](rx-dforest.md) | Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
 |[rx_btrees](rx-btrees.md) | Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
-|[rx_predict](rx-predict.md) | Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects. |
+|[rx_predict_default](rx-predict-default.md) | Compute predicted values and residuals using rx_lin_mod and rx_logit objects. |
+|[rx_predict_rx_dforest](python-reference/revoscalepy/rx-predict-rx-dforest.md) | Calculate predicted or fitted values for a data set from an rx_dforest or rx_btrees object. |
+|[rx_predict_rx_dtree](python-reference/revoscalepy/rx-predict-rx-dtree.md) | Calculate predicted or fitted values for a data set from an rx_dtree object. |
 
 ## 6-Serialization functions
 

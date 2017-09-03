@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Get Variable Information for a Data Source" 
+title: "rx_get_var_info: Get Variable Information for a Data Source" 
 description: "Get variable information for a revoscalepy data source or data frame, including variable names, descriptions, and value labels" 
 keywords: "info" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_get_var_info`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage

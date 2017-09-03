@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.squared_loss*: Squared loss function
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

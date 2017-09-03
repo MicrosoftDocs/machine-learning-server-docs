@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Import Data to .xdf or data frame" 
+title: "rx_import: Import Data to .xdf or data frame" 
 description: "Import data into an ‘.xdf’ file or data.frame." 
 keywords: "import, datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_import`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -60,7 +60,8 @@ RxTextData, and RxOdbcData.)
 ### output_file
 
 a character string representing the output ‘.xdf’ file,
-or a RxXdfData object. If None, a data frame will be returned in memory.
+a RxXdfData, RxHiveData, RxParquetData, RxOrcData or RxSparkDataFrame object.
+If None, a data frame will be returned in memory.
 
 
 ### vars_to_keep

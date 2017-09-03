@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Data Step for RevoScaleR data sources" 
+title: "rx_data_step: Data Step for RevoScaleR data sources" 
 description: "Transform data from an input data set to an output data set" 
 keywords: "datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_data_step`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage

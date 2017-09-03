@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Linear Models" 
+title: "rx_lin_mod: Linear Models" 
 description: "Fit linear models on small or large data." 
 keywords: "linear" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_lin_mod`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,7 +35,7 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_lin_mod(formula, data, pweights=None, fweights=None, cube: bool = False, cube_predictions: bool = False, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment=None, drop_first: bool = False, drop_main: bool = True, cov_coef: bool = False, cov_data: bool = False, blocks_per_read: int = 1, report_progress: int = None, verbose: int = 0, compute_context=None, **kwargs)
+revoscalepy.rx_lin_mod(formula, data, pweights=None, fweights=None, cube: bool = False, cube_predictions: bool = False, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: typing.Union[str, <built-in function callable>] = None, transform_variables: list = None, transform_packages: list = None, transform_environment=None, drop_first: bool = False, drop_main: bool = True, cov_coef: bool = False, cov_data: bool = False, blocks_per_read: int = 1, report_progress: int = None, verbose: int = 0, compute_context=None, **kwargs)
 ```
 
 

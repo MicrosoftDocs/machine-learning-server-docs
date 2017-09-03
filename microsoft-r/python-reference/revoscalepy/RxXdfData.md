@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Generate Xdf Data Source Object" 
+title: "RxXdfData: Generate Xdf Data Source Object" 
 description: "Main generator for class RxXdfData, which extends RxDataSource." 
 keywords: "datasource, xdf" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `RxXdfData`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage

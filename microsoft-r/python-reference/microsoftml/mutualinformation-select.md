@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.mutualinformation_select*: Feature selection based on mutual information
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

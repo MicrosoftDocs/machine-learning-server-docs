@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.sgd_optimizer*: Stochastic gradient descent
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

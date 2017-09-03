@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxDataSource" 
+title: "RxDataSource,head,tail: RxDataSource" 
 description: "Base class for all revoscalepy data sources." 
 keywords: "head" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `RxDataSource`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage

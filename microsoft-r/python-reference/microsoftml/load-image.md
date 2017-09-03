@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.load_image*: Loads an image
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

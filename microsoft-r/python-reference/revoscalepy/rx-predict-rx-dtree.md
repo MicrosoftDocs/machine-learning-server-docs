@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Prediction for Large Data Classification and Regression Trees" 
+title: "rx_predict_rx_dtree: Prediction for Large Data Classification and Regression Trees" 
 description: "Calculate predicted or fitted values for a data set from an rx_dtree object." 
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_predict_rx_dtree`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage

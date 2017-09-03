@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Predicted Values and Residuals for rx_lin_mod, rx_logit, rx_dtree," 
+title: "rx_predict,rx_predict_default,rx_predict_rx_dforest,rx_predict_rx_dtree: Predicted Values and Residuals for rx_lin_mod, rx_logit, rx_dtree," 
 description: "Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects.For specific functions, see:  rx_predict_default for rx_lin_mod and rx_logit objects. rx_predict_rx_dtree for rx_dtree object. rx_predict_rx_dforest for rx_dforest and rx_btrees objects." 
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_predict`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -112,10 +112,10 @@ Output:
 
 
 ```
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.048 seconds 
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.056 seconds 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: Less than .001 seconds 
 Computation time: 0.005 seconds.
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds 
    creditScore_Pred
 0        700.089114
 1        699.834355
