@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_cancel_job`
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

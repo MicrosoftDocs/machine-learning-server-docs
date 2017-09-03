@@ -27,7 +27,7 @@ ms.custom: ""
 # `RxNativeFileSystem`
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

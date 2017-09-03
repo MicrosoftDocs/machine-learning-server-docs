@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_list_keys`
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage
