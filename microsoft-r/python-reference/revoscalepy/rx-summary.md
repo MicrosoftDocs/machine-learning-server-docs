@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Object Summaries" 
+title: "rx_summary: Object Summaries" 
 description: "Produce univariate summaries of objects in revoscalepy." 
 keywords: "summary" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_summary`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

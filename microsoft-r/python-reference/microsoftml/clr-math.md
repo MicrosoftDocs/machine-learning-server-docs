@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.clr_math*: Acceleration with .NET math
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

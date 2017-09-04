@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_fast_linear*: Linear Model with Stochastic Dual Coordinate Ascent
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 * [loss functions](loss-functions.md) 
 

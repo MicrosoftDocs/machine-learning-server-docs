@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Generate Local Compute Context" 
+title: "RxLocalSeq: Generate Local Compute Context" 
 description: "Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context." 
 keywords: "context, local" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `RxLocalSeq`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage
@@ -44,9 +44,6 @@ class revoscalepy.RxLocalSeq
 ## Description
 
 Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context.
-
-
-## Arguments
 
 
 ## Returns

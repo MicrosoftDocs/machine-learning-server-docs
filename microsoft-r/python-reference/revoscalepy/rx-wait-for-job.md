@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Wait for Distributed Job to Complete" 
+title: "rx_wait_for_job: Wait for Distributed Job to Complete" 
 description: "Causes Python to block on an existing distributed job until completion.  This effectively turns a non-blocking job into a blocking job." 
 keywords: "wait, job" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_wait_for_job`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

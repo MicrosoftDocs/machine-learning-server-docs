@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Parallel External Memory Algorithm for Classification and Regression Decision Forests" 
+title: "rx_dforest: Parallel External Memory Algorithm for Classification and Regression Decision Forests" 
 description: "Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_dforest`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

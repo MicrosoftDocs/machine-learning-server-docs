@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Set Variable Information for .xdf File or Data Frame" 
+title: "rx_set_var_info: Set Variable Information for .xdf File or Data Frame" 
 description: "Set the variable information for an “.xdf” file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame" 
 keywords: "variables" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_set_var_info`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

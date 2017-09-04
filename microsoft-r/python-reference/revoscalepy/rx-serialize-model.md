@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Serialize the python model." 
+title: "rx_serialize_model: Serialize the python model." 
 description: "Serialize the given python model." 
 keywords: "serialization" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_serialize_model`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

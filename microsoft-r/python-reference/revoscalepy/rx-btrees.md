@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Parallel External Memory Algorithm for Stochastic Gradient Boosted Decision Trees" 
+title: "rx_btrees: Parallel External Memory Algorithm for Stochastic Gradient Boosted Decision Trees" 
 description: "Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_btrees`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

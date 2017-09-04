@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_neural_network*: Neural Network
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 * [optimizers](optimizers.md) 
 

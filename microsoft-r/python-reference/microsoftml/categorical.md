@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.categorical*: Converts a text column into categories
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

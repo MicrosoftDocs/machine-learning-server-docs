@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_logistic_regression*: Logistic Regression
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

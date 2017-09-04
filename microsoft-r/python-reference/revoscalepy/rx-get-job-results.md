@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Obtain Distributed Computing Job Status and Results" 
+title: "rx_get_job_results: Obtain Distributed Computing Job Status and Results" 
 description: "Obtain distributed computing results and processing status.rx_get_job_results(job_info, console_output, auto_cleanup)" 
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_get_job_results`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

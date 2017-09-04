@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Generate SqlServer Data Source Object" 
+title: "RxSqlServerData: Generate SqlServer Data Source Object" 
 description: "Main generator for class RxSqlServerData, which extends RxDataSource." 
 keywords: "datasource, sql" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "08/31/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `RxSqlServerData`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017**
 
 
 ## Usage
