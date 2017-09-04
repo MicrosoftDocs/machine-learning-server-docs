@@ -344,7 +344,7 @@ The following code creates a random selection variable to create a data frame wi
 		return(data)
 	}
 	censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
-	df <- rxXdfToDataFrame(file = censusWorkers, transformFunc = createRandomSample, 
+	df <- rxImport(file = censusWorkers, transformFunc = createRandomSample, 
 		transformVars = "age")
 
 The resulting data frame, *df*, has approximately 35,000 rows. You can look at the first few rows using *head* as follows:

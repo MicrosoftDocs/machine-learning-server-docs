@@ -145,8 +145,7 @@ You can have many compute context objects available for use; only one is active 
 If you are running on a Hadoop cluster configured for high-availabilty, you must specify the node providing the name service using the *nameNode* argument to *RxSpark*, and also specify the Hadoop port with the *port* argument:
 
 ~~~~
-	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server",
-	    port = 8020)
+	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020)
 ~~~~
 
 #### Using Microsoft R Server as a Hadoop Client
