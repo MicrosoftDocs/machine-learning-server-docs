@@ -407,30 +407,19 @@ The three expected delays are calculated (using the full data set) as:
 
 ### Computing a Large Scale Regression Using a Compute Cluster
 
-Up to now, all of our examples have assumed you are running your computations on a single computer, which might have multiple computational cores. Many users with large data to analyze, however, have access to compute clusters that work together to provide greater computing power. With RevoScaleR, you can easily connect to an HPC Server or Hadoop cluster and distribute your computation among the various nodes of the cluster.  Here we will show a quick example of using an HPC Server cluster consisting of a head node and one or more compute nodes. For more examples, see the [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md).
+Up to now, all of our examples have assumed you are running your computations on a single computer, which might have multiple computational cores. Many users with large data to analyze, however, have access to compute clusters that work together to provide greater computing power. With RevoScaleR, you can easily connect to a Hadoop cluster and distribute your computation among the various nodes of the cluster. Here we will show a quick example of using a Spark (Hadoop) cluster consisting of a name node and one or more data nodes. 
 
-To make the connection to an HPC Server cluster, you need to know the following pieces of information about your cluster (all of which can be obtained from your system administrator):
+To connect to a high availability cluster using default values, you only need to provide the cluster nameNode and port. The *nameNode* manages the namespace of the cluster.
 
-- The name of the cluster’s head node.
-- The name of the network share directory created for use by Microsoft R Server or R Client, and the subdirectory of that network share created for your use.
-- The path to the Microsoft R Server or R Client bin\x64 directory.
-- The name of the data directory created to hold .xdf files on each of the nodes.
+    myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020)
 
-After you have this information, you can create your distributed compute context object by calling RxHpcServer, substituting in the information for your setup in as appropriate:
+You can then make the cluster connection object active by using *rxSetComputContext*:
 
-    myCluster <- RxHpcServer(
-		headNode="cluster-head2",
-		shareDir= paste("AllShare\\", Sys.getenv("USERNAME"), sep="")
-		revoPath="C:\\Program Files\\Microsoft\\MRO-for-RRE\\8.0\\R-3.2.2\\bin\\x64\\",
-		dataPath="C:\\data")
+	rxSetComputeContext(myCluster)
 
-Here *headNode* should be the name of the cluster’s head node, *shareDir* should be your subdirectory of the network share directory, *revoPath* is the path to the Microsoft R Server or R Client bin\x64 directory, and *dataPath* is the path to the data directory on each node containing copies of the .xdf files you will be using. You can then make the cluster connection object active by using *rxSetComputContext*:
+With your compute context set to the cluster, all of the RevoScaleR data analysis functions (i.e., rxSummary, rxCube, rxCrossTabs, rxLinMod, rxLogit, rxGlm, rxCovCor (and related functions), rxDTree, rxDForest, rxBTrees, rxNaiveBayes, and rxKmeans) automatically distribute computations across the nodes of the cluster.  It is assumed that copies of the data are in the same path on each node. (Other options are discussed in the [RevoScaleR Distributed Computing Guide](http://go.microsoft.com/fwlink/?LinkID=698560&clcid=0x409).)
 
-	rxSetComputeContext( myCluster)
-
-With your compute context set to the HPC cluster, all of the RevoScaleR data analysis functions (i.e., rxSummary, rxCube, rxCrossTabs, rxLinMod, rxLogit, rxGlm, rxCovCor (and related functions), rxDTree, rxDForest, rxBTrees, rxNaiveBayes, and rxKmeans) will automatically distribute computations across the nodes of the cluster.  It is assumed that copies of the data are in the same path on each node. (Other options are discussed in the [RevoScaleR Distributed Computing Guide](http://go.microsoft.com/fwlink/?LinkID=698560&clcid=0x409).)
-
-Now you can re-run the large scale regression from Section 6.6, this time just specifying the name of the data file without the path:
+Now you can re-run the large scale regression, this time just specifying the name of the data file without the path:
 
 	dataFile <- "AirOnTime87to12.xdf"
 

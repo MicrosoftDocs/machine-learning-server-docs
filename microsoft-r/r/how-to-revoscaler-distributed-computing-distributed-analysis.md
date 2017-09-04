@@ -372,7 +372,7 @@ You may notice when running distributed computations that you get virtually no f
 > The `blocksPerRead` argument is ignored if script runs locally using R Client.
 >
 
-	myCluster <- RxHpcServer(myCluster, consoleOutput=TRUE)
+	myCluster <- RxSpark(myCluster, consoleOutput=TRUE)
 	rxOptions(computeContext=myCluster)
 
 Then, rerunning our previous example results in much more verbose output:
