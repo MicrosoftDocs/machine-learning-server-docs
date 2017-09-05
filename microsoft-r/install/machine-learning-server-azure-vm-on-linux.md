@@ -30,7 +30,7 @@ ms.technology:
 
 Machine Learning Server is the most broadly deployable enterprise-class analytics platform for R and Python available today. This virtual machine (VM) includes the Machine Learning Server version 9.2) for Linux (CentOS version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
 
-This VM also includes the custom [R packages](../r-reference/introducing-r-server-r-package-reference) and [Python libraries](../python-reference/introducing-python-package-reference.md) installed with the product that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
+This VM also includes the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) installed with the product that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
 
 
 ## Provision the Machine Learning Server Virtual Machine
