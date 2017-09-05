@@ -175,6 +175,10 @@ To replace an older version, you can uninstall the older distribution before ins
 
 Carefully review the steps in the following sections.
 
+<a name="upgradecomputenode"></a>
+
+### Upgrade a compute node
+
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
