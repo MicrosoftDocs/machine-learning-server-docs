@@ -64,11 +64,11 @@
 #### [R package management](operationalize/configure-manage-r-packages.md)
 #### [Find install path](operationalize/configure-find-admin-configuration-file.md)
 ### [Pretrained models](install/microsoftml-install-pretrained-models.md)
-### [Virtual machines (Cloud)](install/r-server-vm-cloud.md)
+### [Virtual machines (Cloud)](install/machine-learning-server-in-the-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
-#### [Azure Linux VM](install/r-server-vm-azure-linux-9-0-1.md)
-#### [Azure Windows VM](https://msdn.microsoft.com/en-us/library/mt759780.aspx)
-#### [Data Science VM](install/r-server-vm-data-science.md)
+#### [Azure Linux VM](install/machine-learning-server-azure-vm-on-linux)
+#### [Azure Windows VM](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure)
+#### [Data Science VM](install/machine-learning-server-on-data-science-vm)
 
 ## Client-side
 ### Microsoft R Client
