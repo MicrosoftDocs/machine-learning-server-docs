@@ -28,52 +28,41 @@ ms.technology:
 
 Microsoft R Server has been rebranding to Machine Learning Server in release 9.2 to reflect that Python has now joined R in our list of supported languages. We've added a series of proprietary libraries and tools for Python to complement our R offering. 
 
+[Read more about what's new in this release](something.md)
+
 ## Our committment to R is unchanged
 
-Microsoft
+Microsoft continues its commitment to R in the latest Machine Learning Server release as well as [Microsoft R Client](something.md), and [Microsoft R Open](https://mran.microsoft.com).
 
-## Upgrade R Server to Machine Learning Server
+## Upgrade to Machine Learning Server
 
-Upgrading is as easy as ever. Follow these instructions to upgrade to Machine Learning Server on Windows, Linux, and Hadoop. Don't forget to [upgrade your web and compute nodes]() if you are operationalizing your analytics.
+Upgrading from R Server to Machine Learning Server is as easy as ever. Follow these instructions to upgrade to Machine Learning Server on [Windows](something.md), [Linux](something.md), and [Hadoop](something.md). Don't forget to [upgrade your web and compute nodes]() if you are operationalizing your analytics.
 
 Microsoft R Server 9.1 for Teradata was the last release and will not have a Machine Learning Server equivalent.
 
-## Downloads of Microsoft R Server
+## Download older Microsoft R Server releases
 
 You can continue to download older versions of Microsoft R Server from here:
 
-+ HEIDI to provide links
++ [HEIDI to provide links](something.md)
 
-## Continued support for Microsoft R Server
++ link
 
-You can continue to get support in several ways.
-+ [Review our servicing support timeline]()
++ link
 
-+ [Post in our user forum (also rebranded)]()
+## Support for Microsoft R Server
+
+Microsoft is committed to providing customers with support. Support for Microsoft R Server continues in these ways: 
++ [Review our servicing support timeline](resources-servicing-support.md)
+
++ [Post in our user forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)  (also rebranded)
 
 ## Microsoft R Client
-## More on Machine Learning at Microsoft
 
+[Microsoft R Client](r-client/what-is-microsoft-r-client.md) has not been rebranded, but continues as an R-only client for Machine Learning Server and R Server. 
 
-## Next steps
+A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality with Python for Machine Learning Server. [Learn more](something.md)
 
-Learn more about Microsoft R in these articles:
+## Machine Learning at Microsoft
 
-+ [Operationalizing R code with R Server](what-is-operationalization.md)
-
-+ [What's new in R Server](whats-new-in-r-server.md)
-
-+ [What's new in R Client](whats-new-in-r-server.md)
-
-+ [Microsoft R Product Web Page](https://www.microsoft.com/en-us/cloud-platform/r-server)
-
-+ [Supported platforms in Microsoft R Server](install/r-server-install-supported-platforms.md)
-
-+ [Microsoft R Client Get Started](r-client-get-started.md)
-
-+ [Microsoft R Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
-
-+ [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx)
-
-+ [Additional Resources](resources-more.md)
-
+Read more about some of the machine learning offerings at Microsoft in this article, ["Machine Learning at Microsoft"](something.md).
