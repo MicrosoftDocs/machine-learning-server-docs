@@ -57,7 +57,7 @@ You can continue to download older versions of Microsoft R Server from here:
 
 Find the installation instructions for those releases [here](something.md). 
 
-## Get support for Microsoft R Server
+## Get support for R Server
 
 Microsoft is committed to providing customers with support. Support for Microsoft R Server continues in these ways: 
 + [Review our servicing support timeline](resources-servicing-support.md)
