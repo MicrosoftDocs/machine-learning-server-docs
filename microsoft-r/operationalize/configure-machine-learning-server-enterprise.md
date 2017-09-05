@@ -69,7 +69,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
    + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
@@ -78,7 +78,9 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu. 
 
    >[!NOTE]
-   >Bypass this interactive node configuration step using the argument `-silentcomputenodeinstall` when launching the administration utility. Learn about all command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   >To bypass this interactive node configuration step, specify the following switch when launching the utility:
+   >-silentcomputenodeinstall
+   >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
     
 1. When the configuration is finished, open the port 12805: 
 
@@ -99,14 +101,16 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
    + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to configure a web node:
 
    >[!NOTE]
-   >Bypass these interactive steps to install the node and set an admin password using the command-line switches `-silentwebnodeinstall mypassword uri1,uri2`. Learn about all command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
+   >-silentwebnodeinstall mypassword uri1,uri2
+   >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
    1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
   
@@ -184,7 +188,7 @@ Carefully review the steps in the following sections.
 
    + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
    + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
@@ -213,7 +217,7 @@ You can now **repeat these steps** for each compute node.
 
    + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
    + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 

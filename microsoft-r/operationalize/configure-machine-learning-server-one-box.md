@@ -50,15 +50,16 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
 
    + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux) so you can begin to configure a one-box setup.
 
     >[!NOTE]
-    >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For Machine Learning Server 9.2 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+    >To bypass the interactive configuration steps, specify the following argument and ['admin' password](../deployr/../operationalize/configure-authentication.md#local) when launching the utility:
+    >-silentoneboxinstall myPassword.
+    >If you choose this method, you can skip the next three substeps. Learn more about command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
 
     1. Choose the option to **Configure server**.
 
@@ -113,7 +114,7 @@ Carefully review the following steps.
 
    + Windows instructions: [Installation steps](../install/r-server-install-windows.md) | [Offline steps](../install/r-server-install-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
 
    + Linux instructions: [Installation steps](../install/r-server-install-linux-server.md) | [Offline steps](../install/r-server-install-linux-offline.md)
 
