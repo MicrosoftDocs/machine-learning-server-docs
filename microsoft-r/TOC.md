@@ -67,7 +67,7 @@
 ### [Virtual machines (Cloud)](install/machine-learning-server-in-the-cloud.md)
 #### [Azure HDInsight](install/r-server-vm-azure-hdinsight.md)
 #### [Azure Linux VM](install/machine-learning-server-azure-vm-on-linux.md)
-#### [Azure Windows VM](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure.md)
+#### [Azure Windows VM](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure)
 #### [Data Science VM](install/machine-learning-server-on-data-science-vm.md)
 
 ## Client-side
