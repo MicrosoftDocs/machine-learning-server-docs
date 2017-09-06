@@ -40,7 +40,7 @@ Upgrading from R Server to Machine Learning Server is as easy as ever. The R ana
 
 Follow these instructions to upgrade to Machine Learning Server on [Windows](something.md), [Linux](something.md), and [Hadoop](something.md). 
 
-Don't forget to [upgrade your web and compute nodes](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization.md) if you are operationalizing your analytics.
+Don't forget to [upgrade your web and compute nodes](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) if you are operationalizing your analytics.
 
 
 Microsoft R Server 9.1 for Teradata was the last release and will not have a Machine Learning Server equivalent.
