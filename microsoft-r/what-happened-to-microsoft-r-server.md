@@ -59,10 +59,10 @@ Find the installation instructions for those releases [here](something.md).
 
 ## Get support for R Server
 
-Microsoft is committed to providing customers with support. Support for Microsoft R Server continues in these ways: 
+Microsoft is committed to providing customers with support. Microsoft R Server support continues in these ways: 
 + [Review our servicing support timeline](resources-servicing-support.md)
 
-+ [Post in our user forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)  (also rebranded)
++ [Post in our user forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)  
 
 ## Future of Microsoft R Client
 
