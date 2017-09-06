@@ -36,7 +36,7 @@ Realtime class defining a service’s properties on the fluent API.
 
 
 
-## alias(alias)
+## alias
 
 
 
@@ -44,6 +44,9 @@ Realtime class defining a service’s properties on the fluent API.
 
 Set the service function name alias to call.
 
+### Usage
+
+`alias(alias)`
 
 ### Arguments
 
@@ -57,7 +60,7 @@ Self [`OperationalizationDefinition`](operationalization-definition.md) for flue
 
 
 
-## deploy()
+## deploy
 
 
 
@@ -65,6 +68,9 @@ Self [`OperationalizationDefinition`](operationalization-definition.md) for flue
 
 Bundle up the definition properties and publish the service.
 
+### Usage
+
+`deploy()`
 
 ### Returns
 
@@ -72,13 +78,16 @@ Self [`OperationalizationDefinition`](operationalization-definition.md) for flue
 
 
 
-## description(description)
+## description
 
 
 
 
 Set the service description.
 
+### Usage
+
+`description(description)`
 
 ### Arguments
 
@@ -92,7 +101,7 @@ Self [`OperationalizationDefinition`](operationalization-definition.md) for flue
 
 
 
-## redeploy(force=False)
+## redeploy
 
 
 
@@ -100,6 +109,9 @@ Self [`OperationalizationDefinition`](operationalization-definition.md) for flue
 
 Bundle up the definition properties and update the service.
 
+### Usage
+
+`redeploy(force=False)`
 
 ### Arguments
 
@@ -112,7 +124,7 @@ Bundle up the definition properties and update the service.
 Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
-## serialized_model(model)
+## serialized_model
 
 
 
@@ -120,6 +132,9 @@ Self [`OperationalizationDefinition`](operationalization-definition.md) for flue
 
 Serialized model.
 
+### Usage
+
+`serialized_model(model)`
 
 ### Arguments
 
@@ -133,7 +148,7 @@ Self [`OperationalizationDefinition`](operationalization-definition.md) for flue
 
 
 
-## version(version)
+## version
 
 
 
@@ -141,6 +156,9 @@ Self [`OperationalizationDefinition`](operationalization-definition.md) for flue
 
 Set the service version.
 
+### Usage
+
+`version(version)`
 
 ### Arguments
 

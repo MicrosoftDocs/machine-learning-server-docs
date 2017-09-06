@@ -31,7 +31,7 @@ Service object from metadata.
 
 
 
-## batch(records, parallel_count=10)
+## batch
 
 
 
@@ -39,6 +39,9 @@ Service object from metadata.
 
 Register a set of input records for batch execution on this service.
 
+### Usage
+
+`batch(records, parallel_count=10)`
 
 ### Arguments
 
@@ -63,7 +66,7 @@ lifecycle.
 
 
 
-## capabilities()
+## capabilities
 
 
 
@@ -71,6 +74,9 @@ lifecycle.
 
 Gets the service holding capabilities.
 
+### Usage
+
+`capabilities()`
 
 ### Returns
 
@@ -78,7 +84,7 @@ A dict of key/values describing the service.
 
 
 
-## get_batch(execution_id)
+## get_batch
 
 
 
@@ -86,6 +92,8 @@ A dict of key/values describing the service.
 
 Retrieve the *Batch* based on an *execution id*
 
+### Usage
+`get_batch(execution_id)`
 
 ### Arguments
 
@@ -116,7 +124,7 @@ A list of *execution ids*.
 
 
 
-## swagger()
+## swagger
 
 
 
@@ -124,3 +132,6 @@ A list of *execution ids*.
 
 Retrieves the *swagger.json* for this service (see [http://swagger.io/](http://swagger.io/)).
 :return: The swagger document for this service.
+
+### Usage
+`swagger()`

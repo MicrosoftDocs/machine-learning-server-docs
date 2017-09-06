@@ -30,7 +30,7 @@ Bases: [`azureml.deploy.operationalization.Operationalization`](operationalizati
 
 This module provides a service implementation for the ML Server.
 
-## authentication(context)
+## authentication
 
 **Override**
 
@@ -45,6 +45,9 @@ ML Server supports two forms of authentication contexts:
 
 * access-token: str *=4534535* 
 
+### Usage
+
+`authentication(context)`
 
 ### Arguments
 
@@ -61,7 +64,7 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-## delete_service(name, **opts)
+## delete_service
 
 
 Delete a web service.
@@ -72,6 +75,9 @@ Delete a web service.
 >>> print(success)
 True
 
+### Usage
+
+`delete_service(name, **opts)`
 
 ### Arguments
 
@@ -96,10 +102,7 @@ A *bool* indicating the service deletion was succeeded.
 If a HTTP fault occurred calling the ML Server.
 
 
-## deploy_realtime(name, **opts)
-
-
-
+## deploy_realtime
 
 Publish a new *realtime* web service on the ML Server by *name* and
 *version*.
@@ -122,6 +125,10 @@ All input and output types are defined as a *pandas.DataFrame*.
 **NOTE:** Using *deploy_realtime()* in this fashion is identical to
 publishing a service using the fluent APIS
 [`deploy()`](realtime-definition.md)
+
+## Usage
+
+`deploy_realtime(name, **opts)`
 
 
 ### Arguments
@@ -156,9 +163,7 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-## deploy_service(name, **opts)
-
-
+## deploy_service
 
 Publish an new web service on the ML Server by *name* and *version*.
 
@@ -185,6 +190,9 @@ Publish an new web service on the ML Server by *name* and *version*.
 publishing a service using the fluent APIS
 [`deploy()`](service-definition.md).
 
+## Usage
+
+`deploy_service(name, **opts)`
 
 ### Arguments
 
@@ -274,7 +282,7 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-## destructor()
+## destructor
 
 
 
@@ -284,8 +292,11 @@ If a HTTP fault occurred calling the ML Server.
 Destroy lifecycle method called by the framework. Invokes destructors
 for the class hierarchy.
 
+### Usage
 
-## get_service(name, **opts)
+`destructor()`
+
+## get_service
 
 
 Get a web service for consumption.
@@ -299,6 +310,9 @@ Get a web service for consumption.
    ...
    ...
 
+### Usage
+
+`get_service(name, **opts)`
 
 ### Arguments
 
@@ -325,11 +339,7 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-## initializer(http_client, config, adapters=None)
-
-
-
-
+## initializer
 
 **Override**
 
@@ -337,6 +347,9 @@ Init lifecycle method called by the framework, invoked during
 construction. Sets up attributes and invokes initializers for the class
 hierarchy.
 
+### Usage
+
+`initializer(http_client, config, adapters=None)`
 
 ### Arguments
 
@@ -358,7 +371,7 @@ A dict of transport adapters by url.
 
 
 
-## list_services(name=None, **opts)
+## list_services
 
 
 
@@ -386,6 +399,9 @@ the web service.
 >>> all_versions = client.list_services('add-service')
 >>> service = client.list_services('add-service', version='v1')
 
+### Usage
+
+`list_services(name=None, **opts)`
 
 ### Arguments
 
@@ -411,7 +427,7 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-## realtime_service(name)
+## realtime_service
 
 
 
@@ -424,6 +440,9 @@ Begin fluent API for defining a realtime web service.
       .description('A new realtime web service')
       .version('v1.0.0')
 
+### Usage
+
+`realtime_service(name)`
 
 ### Arguments
 
@@ -439,7 +458,7 @@ A [`RealtimeDefinition`](realtime-definition.md) for fluent API.
 
 
 
-## redeploy_realtime(name, **opts)
+## redeploy_realtime
 
 
 
@@ -467,6 +486,9 @@ All input and output types are defined as a *pandas.DataFrame*.
 updating a service using the fluent APIS
 [`redeploy()`](realtime-definition.md)
 
+### Usage
+
+`redeploy_realtime(name, **opts)`
 
 ### Arguments
 
@@ -499,7 +521,7 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-## redeploy_service(name, **opts)
+## redeploy_service
 
 
 Updates properties on an existing web service on the ML Server by *name*
@@ -531,6 +553,9 @@ updated.
 updating a service using the fluent APIS
 [`redeploy()`](service-definition.md)
 
+### Usage
+
+`redeploy_service(name, **opts)`
 
 ### Arguments
 
@@ -620,7 +645,7 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-## service(name)
+## service
 
 
 
@@ -633,6 +658,9 @@ Begin fluent API for defining a web service.
       .description('A new web service')
       .version('v1.0.0')
 
+### Usage
+
+`service(name)`
 
 ### Arguments
 
@@ -674,3 +702,17 @@ A [`ServiceDefinition`](service-definition.md) for fluent API.
     redeploy_service(name, **opts)
     service(name)
     
+TRIMMED??
+
+    authentication
+    delete_service
+    deploy_realtime
+    deploy_service
+    destructor
+    get_service
+    initializer
+    list_services
+    realtime_service
+    redeploy_realtime
+    redeploy_service
+    service
