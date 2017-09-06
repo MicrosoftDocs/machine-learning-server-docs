@@ -26,7 +26,7 @@ ms.technology:
 
 # Microsoft R Server is now Machine Learning Server
 
-Microsoft R Server has been rebranding to Machine Learning Server in release 9.2. This new name reflects Python has joined R on our list of supported languages.  There has been no loss of functionality for R users.
+In September 2017, Microsoft R Server was rebranded as Machine Learning Server in the 9.2 release. This new name reflects that Python has joined R on the list of supported languages.  There has been no loss of functionality for R users.
 
 [Read more about what's new in this release](something.md).
 
@@ -49,12 +49,6 @@ Microsoft R Server 9.1 for Teradata was the last release and will not have a Mac
 
 You can continue to download older versions of Microsoft R Server from here:
 
-+ [HEIDI to provide links](something.md) 
-
-+ link
-
-+ link
-
 | Site | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
@@ -71,12 +65,12 @@ Microsoft is committed to providing customers with support. Microsoft R Server s
 
 + [Post in our user forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)  
 
-## Future of Microsoft R Client
+## The future of Microsoft R Client
 
-[Microsoft R Client](r-client/what-is-microsoft-r-client.md) has not been rebranded. R Client continues as an R-only client for Machine Learning Server and R Server. 
+[Microsoft R Client](r-client/what-is-microsoft-r-client.md) was not rebranded and continues as an R-only client for Machine Learning Server and R Server. 
 
-A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality with Python for Machine Learning Server. [Learn more](something.md).
+A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality. [Learn more](install/python-libraries-interpreter.md).
 
 ## Machine Learning at Microsoft
 
-Read more about some of the machine learning offerings at Microsoft in this article, ["Machine Learning at Microsoft"](something.md).
+Read more about the machine learning offerings at Microsoft in this article, ["Machine Learning at Microsoft"](something.md).
