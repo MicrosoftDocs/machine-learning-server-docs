@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "What's New in Microsoft R Server 9.1"
-description: "Updates, improvements, and changes in this release of Microsoft R Server."
+title: "Feature announcements in Microsoft R Server releases"
+description: "Feature announcements, improvements, and changes in past releases of Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "05/20/2017"
+ms.date: "09/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,106 +23,29 @@ ms.technology: "r-server"
 
 ---
 
-# What's New in R Server 9.1
+# Features in previous releases of Microft R Server
 
-This release of R Server, built on open source R 3.3.3, includes new and updated packages, extending R Server through machine learning capabilities, operationalization enhancements with real-time scoring and dynamic scaling of VMs, and integration with sparklyr.  
+Microsoft R Server is subsumed by Machine Learning Server 9.2, which is built on features introduced over previous releases. If you have R Server 9.1 or earlier, this article enumerates features introduced in each release.
 
+## R Server 9.1
 
-Also, check out our [blog announcement post](https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/) for this release.
+| Feature or Enhancement | Description |
+|------------------------|----------------------|
+| MicrosoftML package | R Function library in R Server and on Apache Spark on a HDInsight cluster. Create text classification models for problems such as sentiment analysis and support ticket classification. Train deep neural nets with GPU acceleration in order to solve complex problems such as retail image classification and handwriting analysis. Work with high-dimensional categorical data for scenarios like online advertising click-through prediction. Solve common machine learning tasks such as churn prediction, loan risk analysis, and demand forecasting using state-or-the-art, fast and accurate algorithms. Train models 2x faster** than logistic regression with the Fast Linear Algorithm (SDCA). Train multilayer custom nets** on GPUs up to 8x faster with GPU acceleration for Neural Nets. Reduce training time up to 10x while still retaining model accuracy using feature selection. |
+| Pretrained models | Deep neural network models for sentiment analysis and image featurization |
+| Ensemble methods | Use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context. |
+| MicrosoftML and T-SQL integration | Real-time scoring in SQL Server. Execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way reduces the overhead of multiple process interactions and provides faster predictions. |
+| sparklyr interoperability | Within the same R script, you can mix and match functions from RevoScaleR and Microsoft ML packages with popular open source packages like sparklyr and through it, H2O. To learn more, see [Use R Server with sparklyr (step-by-step examples)](r/tutorial-sparklyr-revoscaler.md). |
+| Parallel processing with `rxExecBy` | On Spark and SQL Server, you can leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed in parallel using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run a prediction model over data collected about each person. Supported compute context includes `RxSpark` and `RxInSQLServer`.  |
+| RevoScaleR new functions | [`rxExecBy`](r-reference/revoscaler/rxexecby.md) enables parallel processing of partitioned data in Spark and SQL Server compute contexts. <br/><br/>[`rxExecByPartition`](r-reference/revoscaler/rxexecbypartition.md) for running analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.<br/><br/>[`rxGetPartitions`](r-reference/revoscaler/rxgetpartitions.md) gets the partitions of a previously partitioned Xdf data source. <br/><br/>[`rxGetSparklyrConnection`](r-reference/revoscaler/rxgetsparklyrconnection.md) gets a Spark compute context with sparklyr interop.  <br/><br/>[`RxOrcData`](r-reference/revoscaler/rxsparkdata.md) creates data sets based on data stored in Optimized Row Columnar (ORC) format.<br/><br/>[`rxSerializeModel`](r-reference/revoscaler/rxserializemodel.md) serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. <br/><br/>[`rxSparkCacheData`](r-reference/revoscaler/rxsparkcachedata.md) sets the Cache flag in a Spark compute context.<br/><br/>[`rxSyncPackages`](r-reference/revoscaler/rxsyncpackages.md) copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
+| RevoScaleR enhanced functions | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) adds multithreaded support. <br/><br/>[`rxImport`](r-reference/revoscaler/rximport.md) adds multithreaded support. <br/><br/>`rxMerge` for Merging data frames in Spark compute context. <br/><br/>
+| Cloudera installation improvements | R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager.|
+| Remote execution | Asynchronous remote execution is now supported using the mrsdeploy R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](r/how-to-execute-code-remotely.md#async). |
+| Operationalizing analytics | **Role-based access control** to analytical web services: Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  Learn more about [roles](operationalize/configure-roles.md).<br/><br/>**Scoring perform boosts with real time scoring**: Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. Learn more about [`Realtime` web services](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime).<br/><br/>**Asynchronously batch processing for large input data**: Web services can now be consumed asynchronously via batch execution. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Previously, web services could only be consumed using [the Request-Response method](operationalize/how-to-consume-web-service-interact-in-r.md#consume-service). Learn more about [asynchronous batch consumption](operationalize/how-to-consume-web-service-asynchronously-batch.md).<br/><br/>**Autoscaling of a grid of web and compute nodes on Azure**. A script template will be offered to easily spin up a set of R Server VMs in Azure, configure them as a grid for operationalizing analytics and remote execution. This grid can be scaled up or down based on CPU usage. <br/><br/>Read about the [differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/). |
 
-<a name="machinelearning"></a>
+For more information about this release, see this [blog announcement for 9.1](https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/).
 
-## Machine Learning enhancements
-
-In 9.1, the MicrosoftML algorithms are portable and distributed to run on Linux, Windows, and the most popular distributions of Hadoop (Cloudera, Hortonworks, MapR). Here are highlights of what you can do with this release:
-
--  Use **pre-trained deep neural network models** for **sentiment analysis** and **image featurization**. For instructions on how to install these models, see [How to install and deploy pre-trained machine learning models with MicrosoftML](install/microsoftml-install-pretrained-models.md). For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Samples for MicrosoftML](r/sample-microsoftml.md).
--  Run MicrosoftML transforms and algorithms with **Apache Spark on a HDInsight cluster** for scalable and extremely high performance data management, analysis, and visualization. For installation instructions, see [Install R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)](install/r-server-install-cloudera.md). For a tutorial walking you through the process, see [Practice data import and exploration on Apache Spark](r/how-to-revoscaler-spark.md).
--  Deploy **Ensemble methods** that use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context.
--  Perform **real-time scoring in SQL Server** to execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way reduces the overhead of multiple process interactions and provides much faster prediction performance in enterprise production scenarios. 
--	Create **text classification** models for problems such as sentiment analysis and support ticket classification. 
--	Train deep neural nets with **GPU acceleration** in order to solve complex problems such as retail image classification and handwriting analysis.
--	Work with **high-dimensional categorical data** for scenarios like online advertising click-through prediction.
--	Solve many other **common machine learning tasks** such as churn prediction, loan risk analysis, and demand forecasting using state-or-the-art, fast and accurate algorithms.
-- **Train models 2x faster** than logistic regression with the Fast Linear Algorithm (SDCA).
-- **Train multilayer custom nets** on GPUs up to 8x faster with GPU acceleration for Neural Nets.
-- Reduce training time up to 10x while still retaining model accuracy using **feature selection**.
-
-
-<a name="sparkinterop"></a>
-
-## Interoperability with sparklyr 
-
-Within the same R script, you can mix and match functions from RevoScaleR and Microsoft ML packages with popular open source packages like sparklyr and through it, H2O. To learn more, see [Use R Server with sparklyr (step-by-step examples)](r/tutorial-sparklyr-revoscaler.md).
-
-<a name="rxexecby"></a>
-
-## "Pleasingly Parallel" processing with rxExecBy on Spark and SQL Server
-
-Demand is growing for the ability to efficiently handle a large number of small models at scale. In this use case, modeling (or processing) occurs over data collected for singular entities (such as devices, people, products, days) where the per-entity data sets are relatively small in comparison with big data scenarios so often typical of R workloads. 
-
-In this release, you can leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed in parallel using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run a prediction model over data collected about each person. Supported compute context includes `RxSpark` and `RxInSQLServer`.  
-
-To learn more, see [Quickstart: Parallel processing on partitioned data with rxExecBy](r/tutorial-rxexecby.md).
-
-## Operationalizing analytics 
- 
-**Role-based access control** to analytical web services: Administrators can define authorization roles to give web service permissions to groups of users with authorization roles.  These roles determine who can publish, update, and delete their own web services, those who can also update and delete the web services published by other users, and who can only list and consume web services. Users are assigned to roles using the security groups defined in your organization's Active Directory /LDAP or Azure Active Directory server.  Learn more about [roles](operationalize/configure-roles.md).
- 
-**Scoring perform boosts with real time scoring**: Web services that are published with a supported R model object on Windows platforms can now benefit from an extra realtime performance boost and lower latency. Simply use a supported model object and set the  `serviceType = Realtime` argument at publish time. Expanded platform support in future releases. Learn more about [`Realtime` web services](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime).
- 
-**Asynchronously batch processing for large input data**: Web services can now be consumed asynchronously via batch execution. The Asynchronous Batch approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Previously, web services could only be consumed using [the Request-Response method](operationalize/how-to-consume-web-service-interact-in-r.md#consume-service). Learn more about [asynchronous batch consumption](operationalize/how-to-consume-web-service-asynchronously-batch.md).
-
-**Autoscaling of a grid of web and compute nodes on Azure**. A script template will be offered to easily spin up a set of R Server VMs in Azure, configure them as a grid for operationalizing analytics and remote execution. This grid can be scaled up or down based on CPU usage.
-
-
-Read about the [differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
-
-## Executing remotely 
-Asynchronous remote execution is now supported using the mrsdeploy R package.  To continue working in your development environment during the remote script execution, execute your R script asynchronously using the `async` parameter. This is particularly useful when you are running scripts that have long execution times. Learn more about [asynchronous remote execution](r/how-to-execute-code-remotely.md#async).
-
-## R Server deployment and administration in Cloudera Manager
-
-R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager. For details, see [Install R Server on CDH](install/r-server-install-cloudera.md).
-
-## SQL Server R Services and Machine Learning Services
-
-In SQL Server 2016, Microsoft introduced SQL Server R Services, a feature that supports enterprise-scale data science by integrating the R language with SQL Server database engine.
-
-In SQL Server 2017, machine learning becomes even more powerful, with addition of support for the popular Python language. To reflect the support for multiple languages, as of CTP 2.0, SQL Server R Services has also been renamed as Machine Learning Services (In-Database). To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
-
-<a name="rclient333-package-updates"></a>
-
-## New and updated packages
-
-The following packages have been updated in Microsoft R Server and Microsoft R Client:
-
-+ The **RevoScaleR** package has been updated to version 9.1.0 
-+ The **mrsdeploy** package has been updated to version 1.1.0
-+ The **curl** package has been updated to version 2.3
-+ The **jsonlite** package has been updated to version 1.3 
-
-**RevoScaleR 9.1.0 Function Updates**
-
-| Function | Status | Changes |
-|----------|--------|---------|
-| [`rxExecBy`](r-reference/revoscaler/rxexecby.md) | New | Enables parallel processing of partitioned data in Spark and SQL Server compute contexts. |
-| [`rxExecByPartition`](r-reference/revoscaler/rxexecbypartition.md) | New | Run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.|
-| [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) | Enhanced | Multithreaded support. |
-| [`rxGetPartitions`](r-reference/revoscaler/rxgetpartitions.md)  | New | Gets the partitions of a previously partitioned Xdf data source. |
-| [`rxGetSparklyrConnection`](r-reference/revoscaler/rxgetsparklyrconnection.md)  | New | Get a Spark compute context with sparklyr interop.  |
-| [`rxImport`](r-reference/revoscaler/rximport.md)  | Enhanced | Multithreaded support. |
-| `rxMerge` | Enhanced | Merging data frames in Spark compute context. |
-| [`RxOrcData`](r-reference/revoscaler/rxsparkdata.md) | New | Create data sets based on data stored in Optimized Row Columnar (ORC) format.|
-| [`rxSerializeModel`](r-reference/revoscaler/rxserializemodel.md)  | New | Serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. |
-| [`rxSparkCacheData`](r-reference/revoscaler/rxsparkcachedata.md) | New | Set the Cache flag in a Spark compute context.|
-| [`rxSyncPackages`](r-reference/revoscaler/rxsyncpackages.md)  | New | Copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
-
-## Previous releases
-
-If you haven't upgraded recently, you can review the feature announcments from the last several releases of Microsoft R Server to learn about cumulative updates.
-
-### 9.0.1 Announcements
+## R Server 9.0.1
 
 This release of R Server, built on open source R 3.3.2, includes new and updated packages, plus new operationalization features in the core engine. Key features in this release include the following:
 
@@ -136,7 +59,7 @@ This release of R Server, built on open source R 3.3.2, includes new and updated
 + [What's new in R Client](r-client/whats-new-in-r-client.md) contains information about new features for R Client.
 + [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) contains information about new features for SQL Server R Services (version 9.0).
 
-#### New and updated packages in 9.0.1
+### New and updated packages in 9.0.1
 
 **Microsoft Machine Learning algorithms (MicrosoftML package)** is a collection of functions for incorporating machine learning into R code or script that executes on R Server and R Client. It's available in the following Microsoft R products: R Server for Windows, R Client for Windows, and [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx). Availability for Linux, Hadoop, and [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/) is projected for the first quarter of 2017.
 
@@ -164,10 +87,10 @@ To learn more, see [Using Data from OLAP Cubes in R](https://msdn.microsoft.com/
 > [!NOTE]
 > Although ScaleR jobs only execute on Spark 2.0 if you have [R Server 9.0.1 for Hadoop](install/r-server-install-hadoop.md), you can create solutions containing Hive, Parquet, and Spark-related functions in R Client.
 
-#### General updates in 9.0.1
+### General updates in 9.0.1
 
 <a name="operationalize"></a>
-##### Operationalization features
+#### Operationalization features
 
 Formerly known as DeployR, the operationalization feature is now fully integrated into R Server, with a new ASP .NET core bringing improved support from Microsoft. After installing R Server on select platforms, you'll have everything you need to enable operationalization and [configure](install/operationalize-r-server-one-box-config.md) R Server to host R analytics web services and remote R sessions.  For details on which platforms, see [Supported platforms](install/r-server-install-supported-platforms.md).
 
@@ -192,7 +115,7 @@ The following table presents some of the main differences between Microsoft R Se
 
 Read about the [differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
 
-##### R Server 9.0.1 for Linux
+#### R Server 9.0.1 for Linux
 
 This release now supports Ubuntu 14.04 and 16.04 on premises. For installation instructions, see [Install R Server for Linux](install/r-server-install-linux-server.md).
 
@@ -214,7 +137,7 @@ Additional new ScaleR functions for Spark 2.0:
 
 For installation instructions, see [Install R Server for Hadoop](install/r-server-install-hadoop.md). For ScaleR help, see [ScaleR Function Reference](r-reference/revoscaler/revoscaler.md).
 
-##### R Server 9.0.1 for Windows
+#### R Server 9.0.1 for Windows
 
 As noted, installation of R Server or R Client on Windows delivers the new [Overview of MicrosoftML algorithms](r-reference/microsoftml/microsoftml-package.md) for machine learning.
 
@@ -238,7 +161,7 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 + In the upcoming SQL Server 2017 CTP 1.1 release, you will be able to unbind your SQL Server R Services instance and replace it with a 9.0.1 version that offers operationalization features and the Modern Lifecycle Support policy. Check [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx) for the latest information on CTP 1.1 when it becomes available.
 
 
-### 8.0.5 Announcements
+## R Server 8.0.5
 
 + On **Linux**:
   + Support for RedHat RHEL 7.x has been added.
@@ -279,12 +202,12 @@ R Server for Windows can be serviced under the [Modern Lifecycle policy](https:/
 
     + This release is of DeployR Enterprise only.
 
-### 8.0.3 Announcements
+## R Server 8.0.3
 
 + R Server 8.0.3 is a Windows-only, SQL-Server-only release. It is installed using SQL Server 2016 setup. Version 8.0.3 is succeeded by version 9.0.1 in SQL Server. Features are cumulative so what shipped in 8.0.3 is still available in 9.0.1. For a description of features, see [What's new in SQL Server R Services](https://msdn.microsoft.com/library/mt604847.aspx).
 
 
-### 8.0.0 Announcements
+## R Server 8.0.0
 
 + Revolution R Open is now Microsoft R Open, and Revolution R Enterprise is now generically known as Microsoft R Services, and specifically Microsoft R Server for Linux platforms.
 
@@ -313,7 +236,5 @@ algorithms for cleaning and analyzing text data.
 
 ## See Also
 
+ [Introduction to Machine Learning Server](what-is-machine-learning-server.md) 
  [Introduction to R Server](what-is-microsoft-r-server.md) 
- [Install R Server on Windows](install/r-server-install-windows.md)  
- [Install R Server on Linux](install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](install/r-server-install-hadoop.md)

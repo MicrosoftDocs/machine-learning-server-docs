@@ -41,11 +41,11 @@ TBD
 
 ## Previous versions
 
-+ [Feature announcements in R Server 9.1 and earlier](whats-new-in-r-server.md)
+See [Feature announcements in R Server 9.1 and earlier](whats-new-in-r-server.md).
 
 ## See Also
 
- [Welcome to Machine Learning Server](what-is-microsoft-machine-learning-server.md) 
+ [Welcome to Machine Learning Server](what-is-machine-learning-server.md) 
  [Install Machine Learning Server on Windows](install/r-server-install-windows.md)  
  [Install Machine Learning Server on Linux](install/r-server-install-linux-server.md)  
  [Install Machine Learning Server on Hadoop](install/r-server-install-hadoop.md)
