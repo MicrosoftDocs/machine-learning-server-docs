@@ -2,10 +2,8 @@
 ## [About Machine Learning Server](what-is-machine-learning-server.md)
 ## [Machine Learning at Microsoft](machine-learning-at-microsoft.md)
 ## [R Server's new name](rebranding-microsoft-r-server.md)
-### [Microsoft R Client](r-client/what-is-microsoft-r-client.md)
-## What's new
-### [Machine Learning Server](whats-new-in-machine-learning-server.md)
-### [Microsoft R Client](r-client/whats-new-in-r-client.md)
+## [What's new](whats-new-in-machine-learning-server.md)
+## [Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 # Install & configure
 ## [Supported platforms](install/r-server-install-supported-platforms.md)
 ## Machine Learning Server
