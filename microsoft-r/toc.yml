@@ -133,6 +133,7 @@
         href: install/machine-learning-server-azure-vm-on-linux.md
       - name: Azure Windows VM
         href: https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure
+        maintainContext: true
       - name: Data Science VM
         href: install/r-server-vm-data-science.md
   - name: Client-side
