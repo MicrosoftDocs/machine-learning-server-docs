@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "DeployClient: DeployClient title from deploy_client.md" 
-description: "The required description from deploy_client.md" 
-keywords: "The required keywords from deploy_client.md" 
+title: "DeployClient: " 
+description: "" 
+keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "08/30/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,39 +24,37 @@ ms.custom: ""
  
 ---
 
-# *azureml.deploy.DeployClient*: Deploy Client Factory for *MLServer*
-
-
-**Applies to: SQL Server 2017 RC2**
-
-
-## Usage
+# DeployClient
 
 
 
 ```
-azureml.deploy.DeployClient(host, auth=None, use=None, logging=False)
+azureml.deploy.DeployClient(host, auth=None, use=None)
 ```
 
 
 
 
-Factory
+Factory for creating Deployment Clients.
 
+**Basic Usage:**
 
-# Arguments
+>>> auth = ('username', 'password')
+>>> client = DeployClient('url', use='MLServer', auth=auth)
 
+**Module implementation plugin with `use` property:**
 
-## host
+Find and Load *module* as defined by *use* from namespace str:
 
-The base path for the server to call.
+>>> client = DeployClient('url', use='azureml.deploy.server.MLServer')
+>>> client = DeployClient('url', use='MLServer')
 
+Find and Load *module* from a file/path tuple:
 
-## logging
+>>> use = ('azureml.deploy.server.MLServer', '/path/to/mlserver.py')
+>>> client = DeployClient('url', use=use)
 
-turn logging on. Default is off.
+Find and Load *module* from an import reference:
 
-
-## Description
-
-The required description from deploy_client.md
+>>> from azureml.deploy.server import MLServer
+>>> client = DeployClient('url', use=MLServer)

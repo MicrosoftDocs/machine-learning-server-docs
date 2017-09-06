@@ -24,9 +24,9 @@ ms.technology:
 
 ---
 
-# What happened to Microsoft R Server?
+# Microsoft R Server is now Machine Learning Server
 
-Microsoft R Server has been rebranding to Machine Learning Server in release 9.2 to reflect that Python has now joined R in our list of supported languages. We've added a series of proprietary libraries and tools for Python to complement our R offering. There has been no loss of functionality for R users.
+Microsoft R Server has been rebranding to Machine Learning Server in release 9.2. This new name reflects Python has joined R on our list of supported languages.  There has been no loss of functionality for R users.
 
 [Read more about what's new in this release](something.md).
 
@@ -55,6 +55,13 @@ You can continue to download older versions of Microsoft R Server from here:
 
 + link
 
+| Site | Edition | Details |
+|------|---------|---------|
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server 9.1.0 for Linux** is provided on this site. |
+| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+
+
 Find the installation instructions for those releases [here](something.md). 
 
 ## Get support for R Server
@@ -68,7 +75,7 @@ Microsoft is committed to providing customers with support. Microsoft R Server s
 
 [Microsoft R Client](r-client/what-is-microsoft-r-client.md) has not been rebranded. R Client continues as an R-only client for Machine Learning Server and R Server. 
 
-A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality with Python for Machine Learning Server. [Learn more](something.md)
+A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality with Python for Machine Learning Server. [Learn more](something.md).
 
 ## Machine Learning at Microsoft
 

@@ -6,7 +6,7 @@ description: "This part of the documentation covers all the interfaces of azurem
 keywords: "The required keywords" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "08/30/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,9 +27,6 @@ ms.custom: ""
 # Developer Interface
 
 
-**Applies to: SQL Server 2017 RC2**
-
-
 ## Description
 
 This part of the documentation covers all the interfaces of *azureml.model-management-sdk*.
@@ -39,6 +36,22 @@ This part of the documentation covers all the interfaces of *azureml.model-manag
 
 Main Interface description goes here.
 
-* [*azureml.deploy.DeployClient*: Deploy Client Factory for *MLServer*](deploy-client.md) 
+* [DeployClient](deploy-client.md) 
 
-* [*azureml.deploy.server.MLServer*: Deploy Client for *MLServer*](mlserver.md) 
+* [MLServer](mlserver.md) 
+
+* [Operationalization](operationalization.md) 
+
+* [OperationalizationDefinition](operationalization-definition.md) 
+
+* [ServiceDefinition](service-definition.md) 
+
+* [RealtimeDefinition](realtime-definition.md) 
+
+* [Service](service.md) 
+
+* [ServiceResponse](service-response.md) 
+
+* [Batch](batch.md) 
+
+* [BatchResponse](batch-response.md) 

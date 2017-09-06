@@ -1,6 +1,6 @@
 # [Overview](index.md)
 ## Machine Learning Server
-## [Where's R Server?](what-happened-to-microsoft-r-server.md)
+## [R Server's new name](what-happened-to-microsoft-r-server.md)
 ## Machine Learning @ Microsoft
 ### [Microsoft R Client](r-client/whats-new-in-r-client.md)
 ## [What's new](index-REMOVE.md)
