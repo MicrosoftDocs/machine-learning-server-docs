@@ -39,6 +39,10 @@ R packages include ... Function libraries are built on Microsoft R Open (MRO), M
 
 TBD
 
+## General features and enhancements
+
+Setup 
+
 ## Previous versions
 
 See [Feature announcements in R Server 9.1 and earlier](whats-new-in-r-server.md).

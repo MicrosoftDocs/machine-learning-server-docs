@@ -26,7 +26,7 @@ ms.technology:
 
 # Welcome to Machine Learning Server
 
-Machine Learning Server is an enterprise class server for custom machine learning solutions written in Python and R. It runs on premises on Apache Spark over HDFS, Hadoop MapReduce, Linux, Windows, and SQL Server 2017. You can also run it in the cloud on Azure virtual machines, or access its function libraries through Azure HDInsight.
+Machine Learning Server is an enterprise class server for custom machine learning solutions written in Python and R. It runs on premises on [supported platforms](install/r-server-install-supported-platforms.md). You can also run it in the cloud on Azure virtual machines, or access its function libraries through Azure HDInsight.
 
 Scripts and code can be written in Python or R, calling functions from open source packages, proprietary packages from Microsoft, and third-party packages. Our propriety packages offer comprehensive function libraries for data manipulation and transformation, creating and training models, scoring data, visualizing and analyzing results.
 
