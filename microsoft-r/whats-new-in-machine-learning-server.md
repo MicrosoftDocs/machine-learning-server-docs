@@ -23,25 +23,31 @@ ms.technology: "r-server"
 
 ---
 
-# New in Machine Learning Server 9.2
+# New in 9.2
 
-Machine Learning Server 9.2 is based on Microsoft R Server 9.1, now with libraries and an interpreter for Python. Language-specific features are available when you add Python or R support (or both) during setup.
+Machine Learning Server 9.2 is based on Microsoft R Server 9.1, now with libraries and an interpreter for Python. Language-specific development is available when you add Python or R support (or both) during setup.
 
-## Python features
+## Python development
 
-TBD - Python libraries include **revoscalepy**, **microsoftml**, **mldeploy**, and **azure-model-management-sdk**. Modules are built on Anaconda 4.2 over Python 3.5. You can run any 3.5-compatible library on tPython interpreter included in Machine Learning Server.
++ libraries
++ interpreter
++ interoperability
++ Use cases
 
-## R features
+Python libraries include **revoscalepy**, **microsoftml**, **mldeploy**, and **azure-model-management-sdk**. Modules are built on Anaconda 4.2 over Python 3.5. You can run any 3.5-compatible library on tPython interpreter included in Machine Learning Server.
 
-TBD - R packages include ... Function libraries are built on Microsoft R Open (MRO), Microsoft's distribution of open source R 3.3.4.
+## R development
 
-## Operationalization features
++ libraries
++ interpreter (core engine))
++ interoperability
++ Use cases
+
+R packages include ... Function libraries are built on Microsoft R Open (MRO), Microsoft's distribution of open source R 3.3.4.
+
+## Operationalization
 
 TBD - covers shared operationalization features. If a feature is language-specific, it goes in one of the previous sections.
-
-## General features
-
-Setup? Unless there is more than that, we should cut this.
 
 ## Previous versions
 

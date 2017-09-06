@@ -8,7 +8,7 @@
 ## 9.1.0 Old Docs
 ### [What is R Server? (1)](what-is-microsoft-r-server-old.md)
 ### [What is R Server? (2)](what-is-microsoft-r-server.md)
-### [Feature announcements in R Server releases](whats-new-in-r-server.md)
+### [Feature announcements in previous releases](whats-new-in-r-server.md)
 # Install & configure
 ## [Supported platforms](install/r-server-install-supported-platforms.md)
 ## Machine Learning Server

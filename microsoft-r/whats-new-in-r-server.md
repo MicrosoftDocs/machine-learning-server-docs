@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Feature announcements in Microsoft R Server releases"
+title: "Feature announcements in Microsoft R Server releases | Microsoft Docs"
 description: "Feature announcements, improvements, and changes in past releases of Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Features in previous releases of Microsoft R Server
+# Feature annoucements from previous releases
 
 Microsoft R Server is subsumed by Machine Learning Server 9.2, which is built on features from earlier releases. If you have R Server 9.1 or earlier, this article enumerates features introduced in each version.
 
