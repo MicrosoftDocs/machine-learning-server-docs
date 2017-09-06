@@ -1,14 +1,10 @@
 # [Overview](index.md)
 ## [Machine Learning Server](what-is-machine-learning-server.md)
-## [R Server's new name](what-happened-to-microsoft-r-server.md)
-## [Machine Learning @ Microsoft](machine-learning-at-microsoft.md)
-## New features
+## [Machine Learning at Microsoft](machine-learning-at-microsoft.md)
+## [R Server's new name](rebranding-microsoft-r-server.md)
+## What's new
 ### [Machine Learning Server](whats-new-in-machine-learning-server.md)
 ### [Microsoft R Client](r-client/whats-new-in-r-client.md)
-## 9.1.0 Old Docs
-### [What is R Server? (1)](what-is-microsoft-r-server-old.md)
-### [What is R Server? (2)](what-is-microsoft-r-server.md)
-### [Feature announcements in previous releases](whats-new-in-r-server.md)
 # Install & configure
 ## [Supported platforms](install/r-server-install-supported-platforms.md)
 ## Machine Learning Server
@@ -79,6 +75,9 @@
 
 ## R Server 9.1 or earlier
 ### All platforms (archives??? redirect)
+### [What is R Server? (2)](what-is-microsoft-r-server.md)
+### [What is R Server? (1)](what-is-microsoft-r-server-old.md)
+### [Feature announcements in previous releases](whats-new-in-r-server.md)
 ### On Teradata
 #### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)
 #### [Install R Server 8.0.5 on a Teradata Server](install/r-server-install-teradata-805.md)

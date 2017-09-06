@@ -33,8 +33,10 @@ Machine Learning Server 9.2 is based on Microsoft R Server 9.1, now with librari
 + interpreter
 + interoperability
 + Use cases
+  + Deploy Python models and code as web services using the convenient Python classes and functions in the azureml-model-management-sdk library.
+  + Deploy realtime Python models as web services
 
-Python libraries include **revoscalepy**, **microsoftml**, **mldeploy**, and **azure-model-management-sdk**. Modules are built on Anaconda 4.2 over Python 3.5. You can run any 3.5-compatible library on tPython interpreter included in Machine Learning Server.
+Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-management-sdk**. Modules are built on Anaconda 4.2 over Python 3.5. You can run any 3.5-compatible library on tPython interpreter included in Machine Learning Server.
 
 ## R development
 
@@ -42,12 +44,16 @@ Python libraries include **revoscalepy**, **microsoftml**, **mldeploy**, and **a
 + interpreter (core engine))
 + interoperability
 + Use cases
+  + R realtime model scoring is now also supported on Linux
 
-R packages include ... Function libraries are built on Microsoft R Open (MRO), Microsoft's distribution of open source R 3.3.4.
+R packages include ... Function libraries are built on Microsoft R Open (MRO), Microsoft's distribution of open source R 3.4.1.
 
-## Operationalization
+## Configuration
 
-TBD - covers shared operationalization features. If a feature is language-specific, it goes in one of the previous sections.
++ Role-based access control (RBAC) has been extended with a new explicit Reader role.
+ 
++ Register your compute nodes with your web nodes in a centralized and simplified way in the Administration Utility.
+ 
 
 ## Previous versions
 
@@ -59,3 +65,4 @@ See [Feature announcements in R Server](whats-new-in-r-server.md), version 9.1 a
  [Install Machine Learning Server on Windows](install/r-server-install-windows.md)  
  [Install Machine Learning Server on Linux](install/r-server-install-linux-server.md)  
  [Install Machine Learning Server on Hadoop](install/r-server-install-hadoop.md)
+ [Configure Machine Learning Server to operationalize your analytics](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) 

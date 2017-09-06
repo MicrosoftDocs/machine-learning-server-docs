@@ -39,7 +39,9 @@ R support is built on a legacy of Microsoft R Server 9.1 and former Revolution R
 + Pretrained models ready to score data you provide
 + Open source distributions of R and Python
 + Interpreters and libraries for running script
-+ Operationalization: web service deployment, remote execution, and clustered topologies
++ Analytic deployment and consumption
++ Remote execution
++ Clustered topologies
 
 ## Next steps
 
