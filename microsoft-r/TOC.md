@@ -66,7 +66,7 @@
 #### [Data Science VM](install/machine-learning-server-on-data-science-vm.md)
 
 ## Client-side
-### Microsoft R Client
+### [Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 #### [R Client on Windows](r-client/install-on-windows.md)
 #### [R Client on Linux](r-client/install-on-linux.md)
 
