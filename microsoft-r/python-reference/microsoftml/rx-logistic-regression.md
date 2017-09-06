@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Logistic Regression" 
+title: "rx_logistic_regression: Logistic Regression" 
 description: "Machine Learning Logistic Regression" 
 keywords: "models, classification" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_logistic_regression*: Logistic Regression
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,27 @@ ms.custom: ""
 
 
 ```
-microsoftml.rx_logistic_regression(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], method: [‘binary’, ‘multiClass’] = ‘binary’, l2_weight: float = 1, l1_weight: float = 1, opt_tol: float = 1e-07, memory_size: int = 20, init_wts_diameter: float = 0, max_iterations: int = 2147483647, show_training_stats: bool = False, sgd_init_tol: float = 0, train_threads: int = None, dense_optimizer: bool = False, normalize: [‘No’, ‘Warn’, ‘Auto’, ‘Yes’] = ‘Auto’, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
+microsoftml.rx_logistic_regression(formula: str,
+    data: [revoscalepy.datasource.RxDataSource.RxDataSource,
+    pandas.core.frame.DataFrame], method: ['binary',
+    'multiClass'] = 'binary', l2_weight: float = 1,
+    l1_weight: float = 1, opt_tol: float = 1e-07,
+    memory_size: int = 20, init_wts_diameter: float = 0,
+    max_iterations: int = 2147483647,
+    show_training_stats: bool = False, sgd_init_tol: float = 0,
+    train_threads: int = None, dense_optimizer: bool = False,
+    normalize: ['No', 'Warn', 'Auto', 'Yes'] = 'Auto',
+    ml_transforms: list = None, ml_transform_vars: list = None,
+    row_selection: str = None, transforms: dict = None,
+    transform_objects: dict = None, transform_function: str = None,
+    transform_variables: list = None,
+    transform_packages: list = None,
+    transform_environment: dict = None, blocks_per_read: int = None,
+    report_progress: int = None, verbose: int = 1,
+    ensemble: microsoftml.modules.ensemble.EnsembleControl = None,
+    compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
 ```
+
 
 
 
@@ -341,7 +360,7 @@ are supported.
 
 ### ensemble
 
-NOT SUPPORTED. Control parameters for ensembling.
+Control parameters for ensembling.
 
 
 ## Returns
@@ -387,7 +406,10 @@ import numpy
 import pandas
 from microsoftml import rx_logistic_regression, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import infert
+from microsoftml.datasets.datasets import get_dataset
+
+infert = get_dataset("infert")
+
 
 import sklearn
 if sklearn.__version__ < "0.18":
@@ -424,36 +446,33 @@ Beginning processing data.
 Rows Read: 186, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
 Rows Read: 186, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
+Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
 LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
 Beginning optimization
 num vars: 6
 improvement criterion: Mean Improvement
-L1 regularization selected 6 of 6 weights.
+L1 regularization selected 5 of 6 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1565361
-Elapsed time: 00:00:00.0218508
-OrderedDict([('(Bias)', -1.349887490272522), ('spontaneous', 1.7814754247665405), ('induced', 0.4558817446231842), ('parity', -0.4133673906326294), ('age', 0.04120524972677231), ('education', 1.58187685883604e-06)])
+Elapsed time: 00:00:00.0646405
+Elapsed time: 00:00:00.0083991
+OrderedDict([('(Bias)', -1.2366217374801636), ('spontaneous', 1.9391206502914429), ('induced', 0.7497404217720032), ('parity', -0.31517016887664795), ('age', -3.162723260174971e-06)])
 Beginning processing data.
 Rows Read: 62, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0908720
+Elapsed time: 00:00:00.0287290
 Finished writing 62 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre888046.xdf File will be overwritten if it exists.
-
-Rows Processed: 5 
+Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds 
   isCase PredictedLabel     Score  Probability
-0   True          False -1.161809     0.238339
-1  False          False -1.162746     0.238169
-2  False          False -1.227894     0.226550
-3   True          False -0.343711     0.414908
-4  False          False -1.232577     0.225731
+0  False          False -1.341681     0.207234
+1   True           True  0.597440     0.645070
+2  False           True  0.544912     0.632954
+3  False          False -1.289152     0.215996
+4  False          False -1.019339     0.265156
 ```
 
 
@@ -470,7 +489,9 @@ import numpy
 import pandas
 from microsoftml import rx_logistic_regression, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import iris
+from microsoftml.datasets.datasets import get_dataset
+
+iris = get_dataset("iris")
 
 import sklearn
 if sklearn.__version__ < "0.18":
@@ -513,30 +534,27 @@ Beginning processing data.
 Beginning processing data.
 Rows Read: 112, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
 LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
 Beginning optimization
 num vars: 15
 improvement criterion: Mean Improvement
-L1 regularization selected 12 of 15 weights.
+L1 regularization selected 9 of 15 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1311209
-Elapsed time: 00:00:00.0225506
-OrderedDict([('setosa+(Bias)', 1.9019191265106201), ('versicolor+(Bias)', 0.6226328015327454), ('virginica+(Bias)', -2.52455472946167), ('setosa+Petal_Width', -2.6828320026397705), ('setosa+Petal_Length', -2.4247488975524902), ('setosa+Sepal_Width', 0.4123944938182831), ('setosa+Sepal_Length', 3.266686917413608e-06), ('versicolor+Sepal_Width', -0.7107791900634766), ('versicolor+Petal_Length', -1.046577835950302e-06), ('virginica+Petal_Width', 2.628147840499878), ('virginica+Petal_Length', 1.543938398361206), ('virginica+Sepal_Length', 0.11098485440015793)])
+Elapsed time: 00:00:00.0493224
+Elapsed time: 00:00:00.0080558
+OrderedDict([('setosa+(Bias)', 2.074636697769165), ('versicolor+(Bias)', 0.4899507164955139), ('virginica+(Bias)', -2.564580202102661), ('setosa+Petal_Width', -2.8389241695404053), ('setosa+Petal_Length', -2.4824044704437256), ('setosa+Sepal_Width', 0.274869441986084), ('versicolor+Sepal_Width', -0.2645561397075653), ('virginica+Petal_Width', 2.6924400329589844), ('virginica+Petal_Length', 1.5976412296295166)])
 Beginning processing data.
 Rows Read: 38, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0975634
+Elapsed time: 00:00:00.0331861
 Finished writing 38 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre888057.xdf File will be overwritten if it exists.
-
-Rows Processed: 5 
+Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds 
       Species   Score.0   Score.1   Score.2
-0   virginica  0.045128  0.351381  0.603492
-1      setosa  0.744778  0.213772  0.041450
-2      setosa  0.781826  0.191748  0.026426
-3  versicolor  0.207329  0.464515  0.328157
-4      setosa  0.819511  0.160212  0.020277
+0   virginica  0.044230  0.364927  0.590843
+1      setosa  0.767412  0.210586  0.022002
+2      setosa  0.756523  0.221933  0.021543
+3      setosa  0.767652  0.211191  0.021157
+4  versicolor  0.116369  0.498615  0.385016
 ```
 

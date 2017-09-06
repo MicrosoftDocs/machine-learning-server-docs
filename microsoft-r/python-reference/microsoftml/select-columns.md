@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Selects a set of columns and drops all others" 
+title: "select_columns: Selects a set of columns and drops all others" 
 description: "Selects a set of columns to retrain, dropping all others." 
 keywords: "transform, schema" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.select_columns*: Retains columns of a dataset
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,9 @@ ms.custom: ""
 
 
 ```
-microsoftml.select_columns(cols: [<class ‘list’>, <class ‘str’>], **kargs)
+microsoftml.select_columns(cols: [list, str], **kargs)
 ```
+
 
 
 

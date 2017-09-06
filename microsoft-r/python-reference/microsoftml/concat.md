@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Concat Transform" 
+title: "concat: Machine Learning Concat Transform" 
 description: "Combines several columns into a single vector-valued column." 
 keywords: "transform, schema" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.concat*: Concatenates multiple columns into a single vector
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,9 @@ ms.custom: ""
 
 
 ```
-microsoftml.concat(cols: [<class ‘dict’>, <class ‘list’>], **kargs)
+microsoftml.concat(cols: [dict, list], **kargs)
 ```
+
 
 
 
@@ -96,9 +97,11 @@ Example on logistic regression and concat.
 '''
 import numpy
 import pandas
-from microsoftml import rx_logistic_regression, concat, rx_predict
-from microsoftml.datasets.datasets import iris
 import sklearn
+from microsoftml import rx_logistic_regression, concat, rx_predict
+from microsoftml.datasets.datasets import get_dataset
+
+iris = get_dataset("iris")
 
 if sklearn.__version__ < "0.18":
     from sklearn.cross_validation import train_test_split
@@ -151,29 +154,28 @@ Beginning processing data.
 Rows Read: 112, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
-Rows Read: 112, Read Time: 0, Transform Time: 0
+Rows Read: 112, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
 LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
 Beginning optimization
 num vars: 15
 improvement criterion: Mean Improvement
-L1 regularization selected 10 of 15 weights.
+L1 regularization selected 9 of 15 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.3257464
-Elapsed time: 00:00:00.0353484
-OrderedDict([('0+(Bias)', 2.2730488777160645), ('1+(Bias)', 0.10420583188533783), ('2+(Bias)', -2.377254009246826), ('0+Petal_Width', -2.8729135990142822), ('0+Petal_Length', -2.530698776245117), ('0+Sepal_Width', 0.189592182636261), ('1+Sepal_Width', -0.18231813609600067), ('1+Petal_Length', 0.08150684088468552), ('2+Petal_Width', 2.451059103012085), ('2+Petal_Length', 1.4465752840042114)])
+Elapsed time: 00:00:00.2348578
+Elapsed time: 00:00:00.0197433
+OrderedDict([('0+(Bias)', 1.943994402885437), ('1+(Bias)', 0.6346845030784607), ('2+(Bias)', -2.57867693901062), ('0+Petal_Width', -2.7277402877807617), ('0+Petal_Length', -2.5394322872161865), ('0+Sepal_Width', 0.4810805320739746), ('1+Sepal_Width', -0.5790582299232483), ('2+Petal_Width', 2.547518491744995), ('2+Petal_Length', 1.6753791570663452)])
 Beginning processing data.
 Rows Read: 38, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1308339
+Elapsed time: 00:00:00.0662932
 Finished writing 38 rows.
 Writing completed.
     Score.0   Score.1   Score.2
-0  0.153639  0.423265  0.423096
-1  0.370278  0.424350  0.205372
-2  0.822859  0.152765  0.024376
-3  0.380251  0.414229  0.205520
-4  0.253485  0.437870  0.308645
+0  0.320061  0.504115  0.175825
+1  0.761624  0.216213  0.022163
+2  0.754765  0.215548  0.029687
+3  0.182810  0.517855  0.299335
+4  0.018770  0.290014  0.691216
 ```
 

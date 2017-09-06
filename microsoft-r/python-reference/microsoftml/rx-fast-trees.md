@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Fast Tree" 
+title: "rx_fast_trees: Fast Tree" 
 description: "Machine Learning Fast Tree" 
 keywords: "models, classification, regression" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_fast_trees*: Boosted Trees
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,27 @@ ms.custom: ""
 
 
 ```
-microsoftml.rx_fast_trees(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], method: [‘binary’, ‘regression’] = ‘binary’, num_trees: int = 100, num_leaves: int = 20, learning_rate: float = 0.2, min_split: int = 10, example_fraction: float = 0.7, feature_fraction: float = 1, split_fraction: float = 1, num_bins: int = 255, first_use_penalty: float = 0, gain_conf_level: float = 0, unbalanced_sets: bool = False, train_threads: int = 8, random_seed: int = None, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
+microsoftml.rx_fast_trees(formula: str,
+    data: [revoscalepy.datasource.RxDataSource.RxDataSource,
+    pandas.core.frame.DataFrame], method: ['binary',
+    'regression'] = 'binary', num_trees: int = 100,
+    num_leaves: int = 20, learning_rate: float = 0.2,
+    min_split: int = 10, example_fraction: float = 0.7,
+    feature_fraction: float = 1, split_fraction: float = 1,
+    num_bins: int = 255, first_use_penalty: float = 0,
+    gain_conf_level: float = 0, unbalanced_sets: bool = False,
+    train_threads: int = 8, random_seed: int = None,
+    ml_transforms: list = None, ml_transform_vars: list = None,
+    row_selection: str = None, transforms: dict = None,
+    transform_objects: dict = None, transform_function: str = None,
+    transform_variables: list = None,
+    transform_packages: list = None,
+    transform_environment: dict = None, blocks_per_read: int = None,
+    report_progress: int = None, verbose: int = 1,
+    ensemble: microsoftml.modules.ensemble.EnsembleControl = None,
+    compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
 ```
+
 
 
 
@@ -321,7 +340,7 @@ are supported.
 
 ### ensemble
 
-NOT SUPPORTED. Control parameters for ensembling.
+Control parameters for ensembling.
 
 
 ## Returns
@@ -360,7 +379,10 @@ import numpy
 import pandas
 from microsoftml import rx_fast_trees, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import infert
+from microsoftml.datasets.datasets import get_dataset
+
+infert = get_dataset("infert")
+
 import sklearn
 if sklearn.__version__ < "0.18":
     from sklearn.cross_validation import train_test_split
@@ -389,7 +411,6 @@ Output:
 
 
 ```
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
 Not adding a normalizer.
 Making per-feature arrays
 Changing data from row-wise to column-wise
@@ -398,26 +419,24 @@ Rows Read: 186, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Processed 186 instances
 Binning and forming Feature objects
-Reserved memory for tree learner: 7176 bytes
+Reserved memory for tree learner: 7020 bytes
 Starting to train ...
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1106227
-Elapsed time: 00:00:00.0270758
+Elapsed time: 00:00:00.0949161
+Elapsed time: 00:00:00.0112103
 Beginning processing data.
-Rows Read: 62, Read Time: 0, Transform Time: 0
+Rows Read: 62, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0646601
+Elapsed time: 00:00:00.0230457
 Finished writing 62 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre888035.xdf File will be overwritten if it exists.
-
-Rows Processed: 5 
-  isCase PredictedLabel     Score  Probability
-0   True           True  7.987956     0.960653
-1  False           True  5.768043     0.909473
-2  False          False -4.787213     0.128433
-3   True           True  5.768043     0.909473
-4  False           True  3.137261     0.778148
+Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds 
+  isCase PredictedLabel      Score  Probability
+0  False          False  -4.722279     0.131369
+1  False          False -11.550012     0.009757
+2  False          False  -7.312314     0.050935
+3   True           True   3.889991     0.825778
+4  False          False  -6.361800     0.072782
 ```
 
 
@@ -434,7 +453,10 @@ import numpy
 import pandas
 from microsoftml import rx_fast_trees, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import airquality
+from microsoftml.datasets.datasets import get_dataset
+
+airquality = get_dataset("airquality")
+
 import sklearn
 if sklearn.__version__ < "0.18":
     from sklearn.cross_validation import train_test_split
@@ -474,32 +496,31 @@ Output:
 
 ```
 'unbalanced_sets' ignored for method 'regression'
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
 Not adding a normalizer.
 Making per-feature arrays
 Changing data from row-wise to column-wise
 Beginning processing data.
 Rows Read: 87, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
-Warning: Skipped 3 instances with missing features during training
-Processed 84 instances
+Warning: Skipped 4 instances with missing features during training
+Processed 83 instances
 Binning and forming Feature objects
-Reserved memory for tree learner: 22620 bytes
+Reserved memory for tree learner: 21528 bytes
 Starting to train ...
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1547805
-Elapsed time: 00:00:00.0215328
+Elapsed time: 00:00:00.0512720
+Elapsed time: 00:00:00.0094435
 Beginning processing data.
 Rows Read: 29, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0569545
+Elapsed time: 00:00:00.0229873
 Finished writing 29 rows.
 Writing completed.
    Solar_R  Wind  Temp      Score
-0    307.0  12.0    66  21.226524
-1    259.0  15.5    76  13.275749
-2    259.0   9.7    73  16.470119
-3     13.0  12.0    67  10.831207
-4    131.0   8.0    76  25.103193
+0    115.0   7.4  76.0  26.003876
+1    307.0  12.0  66.0  18.057747
+2    230.0  10.9  75.0  10.896211
+3    259.0   9.7  73.0  13.726607
+4     92.0  15.5  84.0  37.972855
 ```
 

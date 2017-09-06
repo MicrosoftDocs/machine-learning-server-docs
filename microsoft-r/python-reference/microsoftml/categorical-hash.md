@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Categorical HashData Transform" 
+title: "categorical_hash: Machine Learning Categorical HashData Transform" 
 description: "Categorical hash transform that can be performed on data before training a model." 
 keywords: "transform, catagory, hash" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.categorical_hash*: Hashes and converts a text column into categories
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,12 @@ ms.custom: ""
 
 
 ```
-microsoftml.categorical_hash(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], hash_bits: int = 16, seed: int = 314489979, ordered: bool = True, invert_hash: int = 0, output_kind: [‘Bag’, ‘Ind’, ‘Key’, ‘Bin’] = ‘Bag’, **kargs)
+microsoftml.categorical_hash(cols: [str, dict, list],
+    hash_bits: int = 16, seed: int = 314489979,
+    ordered: bool = True, invert_hash: int = 0,
+    output_kind: ['Bag', 'Ind', 'Key', 'Bin'] = 'Bag', **kargs)
 ```
+
 
 
 
@@ -133,8 +137,9 @@ Example on rx_logistic_regression and categorical_hash.
 import numpy
 import pandas
 from microsoftml import rx_logistic_regression, categorical_hash, rx_predict
-from microsoftml.datasets.datasets import movie_reviews
+from microsoftml.datasets.datasets import get_dataset
 
+movie_reviews = get_dataset("movie_reviews")
 
 train_reviews = pandas.DataFrame(data=dict(
     review=[
@@ -180,28 +185,27 @@ Beginning processing data.
 Beginning processing data.
 Rows Read: 25, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
 LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
+Warning: Too few instances to use 4 threads, decreasing to 1 thread(s)
 Beginning optimization
 num vars: 65537
 improvement criterion: Mean Improvement
-Warning: Premature convergence occurred. The OptimizationTolerance may be set too small. ro equals zero. Is your function linear?
 L1 regularization selected 3 of 65537 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1810213
-Elapsed time: 00:00:00.0425518
-OrderedDict([('(Bias)', 0.21322768926620483), ('f1783', -0.7938960194587708), ('f38537', 0.19675208628177643)])
+Elapsed time: 00:00:00.1209392
+Elapsed time: 00:00:00.0190134
+OrderedDict([('(Bias)', 0.2132447361946106), ('f1783', -0.7939924597740173), ('f38537', 0.1968022584915161)])
 Beginning processing data.
 Rows Read: 10, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0924649
+Elapsed time: 00:00:00.0284223
 Finished writing 10 rows.
 Writing completed.
            review PredictedLabel     Score  Probability
-0   This is great           True  0.213228     0.553106
-1       I hate it          False -0.580668     0.358779
-2         Love it           True  0.213228     0.553106
-3  Really like it           True  0.213228     0.553106
-4       I hate it          False -0.580668     0.358779
+0   This is great           True  0.213245     0.553110
+1       I hate it          False -0.580748     0.358761
+2         Love it           True  0.213245     0.553110
+3  Really like it           True  0.213245     0.553110
+4       I hate it          False -0.580748     0.358761
 ```
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "adadelta_optimizer" 
-description: "Adaptive learing rate method." 
+title: "adadelta_optimizer: adadelta_optimizer" 
+description: "Adaptive learning rate method." 
 keywords: "optimizer, adadelta" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.adadelta_optimizer*: Adaptive learing rate method
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,15 +35,17 @@ ms.custom: ""
 
 
 ```
-microsoftml.adadelta_optimizer(decay: numbers.Real = 0.95, cond: numbers.Real = 1e-06)
+microsoftml.adadelta_optimizer(decay: numbers.Real = 0.95,
+    cond: numbers.Real = 1e-06)
 ```
+
 
 
 
 
 ## Description
 
-Adaptive learing rate method.
+Adaptive learning rate method.
 
 
 ## Arguments

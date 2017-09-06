@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Resize Image Transform" 
+title: "resize_image: Machine Learning Resize Image Transform" 
 description: "Resizes an image to a specified dimension using a specified resizing method." 
 keywords: "transform, image" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.resize_image*: Resizes an Image
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,11 @@ ms.custom: ""
 
 
 ```
-microsoftml.resize_image(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], width: int = 224, height: int = 224, resizing_option: [‘IsoPad’, ‘IsoCrop’, ‘Aniso’] = ‘IsoCrop’, **kargs)
+microsoftml.resize_image(cols: [str, dict, list], width: int = 224,
+    height: int = 224, resizing_option: ['IsoPad', 'IsoCrop',
+    'Aniso'] = 'IsoCrop', **kargs)
 ```
+
 
 
 
@@ -163,7 +166,7 @@ Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
+Rows Read: 1, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Using: AVX Math
 
@@ -194,8 +197,8 @@ Done!
 Estimated Post-training MeanError = 0.707499
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.3184114
-Elapsed time: 00:00:00.0230629
+Elapsed time: 00:00:00.0820600
+Elapsed time: 00:00:00.0090292
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
@@ -212,14 +215,14 @@ Auto-tuning parameters: L2 = 5.
 Auto-tuning parameters: L1Threshold (L1/L2) = 1.
 Using model from last iteration.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.7905856
-Elapsed time: 00:00:00.0363808
+Elapsed time: 00:00:01.0852660
+Elapsed time: 00:00:00.0132126
 
 rx_neural_network
 Beginning processing data.
-Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1547364
+Elapsed time: 00:00:00.0441601
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel     Score  Probability
@@ -227,9 +230,9 @@ Writing completed.
 
 rx_fast_linear
 Beginning processing data.
-Rows Read: 1, Read Time: 0, Transform Time: 0
+Rows Read: 1, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.6113945
+Elapsed time: 00:00:00.5196788
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel  Score  Probability

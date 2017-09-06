@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Text Transform" 
+title: "featurize_text: Machine Learning Text Transform" 
 description: "Text transforms that can be performed on data before training a model." 
 keywords: "transform, featurizer, text" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.featurize_text*: Converts text columns into numerical features
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 * [N-grams extractors](n-grams-extractors.md) 
 
@@ -39,8 +39,18 @@ ms.custom: ""
 
 
 ```
-microsoftml.featurize_text(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], language: [‘AutoDetect’, ‘English’, ‘French’, ‘German’, ‘Dutch’, ‘Italian’, ‘Spanish’, ‘Japanese’] = ‘English’, stopwords_remover=None, case: [‘Lower’, ‘Upper’, ‘None’] = ‘Lower’, keep_diacritics: bool = False, keep_punctuations: bool = True, keep_numbers: bool = True, dictionary: dict = None, word_feature_extractor={‘settings’: {‘ngramLength’: 1, ‘weighting’: ‘Tf’, ‘allLengths’: True, ‘maxNumTerms’: [10000000], ‘skipLength’: 0}, ‘name’: ‘NGram’}, char_feature_extractor=None, vector_normalizer: [‘None’, ‘L1’, ‘L2’, ‘LInf’] = ‘L2’, **kargs)
+microsoftml.featurize_text(cols: [str, dict, list], language: ['AutoDetect',
+    'English', 'French', 'German', 'Dutch', 'Italian', 'Spanish',
+    'Japanese'] = 'English', stopwords_remover=None, case: ['Lower',
+    'Upper', 'None'] = 'Lower', keep_diacritics: bool = False,
+    keep_punctuations: bool = True, keep_numbers: bool = True,
+    dictionary: dict = None, word_feature_extractor={'Name': 'NGram',
+    'Settings': {'Weighting': 'Tf', 'MaxNumTerms': [10000000],
+    'NgramLength': 1, 'AllLengths': True, 'SkipLength': 0}},
+    char_feature_extractor=None, vector_normalizer: ['None', 'L1', 'L2',
+    'LInf'] = 'L2', **kargs)
 ```
+
 
 
 
@@ -291,10 +301,10 @@ Output:
 
 ```
 Beginning processing data.
-Rows Read: 25, Read Time: 0.001, Transform Time: 0
+Rows Read: 25, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
-Rows Read: 25, Read Time: 0.001, Transform Time: 0
+Rows Read: 25, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Not adding a normalizer.
 Beginning processing data.
@@ -303,27 +313,27 @@ Beginning processing data.
 Beginning processing data.
 Rows Read: 25, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
 LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
+Warning: Too few instances to use 4 threads, decreasing to 1 thread(s)
 Beginning optimization
 num vars: 11
 improvement criterion: Mean Improvement
 L1 regularization selected 3 of 11 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.5068323
-Elapsed time: 00:00:00.0351387
+Elapsed time: 00:00:00.3725934
+Elapsed time: 00:00:00.0131199
 Beginning processing data.
 Rows Read: 10, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1972131
+Elapsed time: 00:00:00.0635453
 Finished writing 10 rows.
 Writing completed.
            review PredictedLabel     Score  Probability
-0   This is great           True  0.444046     0.609223
-1       I hate it          False -0.668465     0.338841
-2         Love it           True  0.994331     0.729942
-3  Really like it           True  0.444046     0.609223
-4       I hate it          False -0.668465     0.338841
+0   This is great           True  0.443986     0.609208
+1       I hate it          False -0.668449     0.338844
+2         Love it           True  0.994339     0.729944
+3  Really like it           True  0.443986     0.609208
+4       I hate it          False -0.668449     0.338844
 ```
 
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Sentiment Analyzer Transform" 
+title: "get_sentiment: Machine Learning Sentiment Analyzer Transform" 
 description: "Scores natural language text and assesses the probability the sentiments are positive." 
 keywords: "transform, text, sentiment, nlp" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.get_sentiment*: Sentiment analysis
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,9 @@ ms.custom: ""
 
 
 ```
-microsoftml.get_sentiment(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], **kargs)
+microsoftml.get_sentiment(cols: [str, dict, list], **kargs)
 ```
+
 
 
 
@@ -89,7 +90,6 @@ Example with get_sentiment and rx_logistic_regression.
 import numpy
 import pandas
 from microsoftml import rx_logistic_regression, rx_featurize, rx_predict, get_sentiment
-from microsoftml.datasets.datasets import movie_reviews
 
 # Create the data
 customer_reviews = pandas.DataFrame(data=dict(review=[
@@ -117,7 +117,7 @@ Output:
 Beginning processing data.
 Rows Read: 3, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:03.1078829
+Elapsed time: 00:00:02.4327924
 Finished writing 3 rows.
 Writing completed.
                                             review    scores         eval

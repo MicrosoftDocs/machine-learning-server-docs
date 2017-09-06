@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "smoothed_hinge_loss" 
+title: "smoothed_hinge_loss: smoothed_hinge_loss" 
 description: "Smoothed Hinge loss." 
 keywords: "loss, smooth, hinge" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.smoothed_hinge_loss*: Smoothed hinge loss function
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 microsoftml.smoothed_hinge_loss(smoothing_const: numbers.Real = 1.0)
 ```
+
 
 
 

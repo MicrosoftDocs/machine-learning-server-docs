@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "sse_math" 
+title: "sse_math: sse_math" 
 description: "Implementation accelerated with SSE instructions." 
 keywords: "neural network, math, sse" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.sse_math*: Acceleration with SSE instructions
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 microsoftml.sse_math()
 ```
+
 
 
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Categorical Data Transform" 
+title: "categorical: Machine Learning Categorical Data Transform" 
 description: "Categorical transform that can be performed on data before training a model." 
 keywords: "transform, category" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.categorical*: Converts a text column into categories
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,12 @@ ms.custom: ""
 
 
 ```
-microsoftml.categorical(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], output_kind: [‘Bag’, ‘Ind’, ‘Key’, ‘Bin’] = ‘Ind’, max_num_terms: int = 1000000, terms: int = None, sort: [‘Occurrence’, ‘Value’] = ‘Occurrence’, text_key_values: bool = False, **kargs)
+microsoftml.categorical(cols: [str, dict, list], output_kind: ['Bag', 'Ind',
+    'Key', 'Bin'] = 'Ind', max_num_terms: int = 1000000,
+    terms: int = None, sort: ['Occurrence', 'Value'] = 'Occurrence',
+    text_key_values: bool = False, **kargs)
 ```
+
 
 
 
@@ -184,28 +188,27 @@ Beginning processing data.
 Beginning processing data.
 Rows Read: 25, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
 LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
+Warning: Too few instances to use 4 threads, decreasing to 1 thread(s)
 Beginning optimization
 num vars: 20
 improvement criterion: Mean Improvement
-Warning: Premature convergence occurred. The OptimizationTolerance may be set too small. ro equals zero. Is your function linear?
 L1 regularization selected 3 of 20 weights.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.0948130
-Elapsed time: 00:00:00.1719949
-OrderedDict([('(Bias)', 0.2132386565208435), ('I hate it', -0.7938994765281677), ('I love it', 0.19674676656723022)])
+Elapsed time: 00:00:01.6550695
+Elapsed time: 00:00:00.2259981
+OrderedDict([('(Bias)', 0.21317288279533386), ('I hate it', -0.7937591671943665), ('I love it', 0.19668534398078918)])
 Beginning processing data.
 Rows Read: 10, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1576086
+Elapsed time: 00:00:00.1385248
 Finished writing 10 rows.
 Writing completed.
            review PredictedLabel     Score  Probability
-0   This is great           True  0.213239     0.553109
-1       I hate it          False -0.580661     0.358781
-2         Love it           True  0.213239     0.553109
-3  Really like it           True  0.213239     0.553109
-4       I hate it          False -0.580661     0.358781
+0   This is great           True  0.213173     0.553092
+1       I hate it          False -0.580586     0.358798
+2         Love it           True  0.213173     0.553092
+3  Really like it           True  0.213173     0.553092
+4       I hate it          False -0.580586     0.358798
 ```
 

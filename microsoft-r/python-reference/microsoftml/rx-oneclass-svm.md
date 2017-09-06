@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "OneClass SVM" 
+title: "rx_oneclass_svm: OneClass SVM" 
 description: "Machine Learning One Class Support Vector Machines" 
 keywords: "models, anomaly, detection" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_oneclass_svm*: Anomaly Detection
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,27 @@ ms.custom: ""
 
 
 ```
-microsoftml.rx_oneclass_svm(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], cache_size: float = 100, kernel: [<function linear_kernel at 0x000001FF51091F28>, <function polynomial_kernel at 0x000001FF510A30D0>, <function rbf_kernel at 0x000001FF51091D90>, <function sigmoid_kernel at 0x000001FF510A3158>] = {‘settings’: {}, ‘name’: ‘RbfKernel’}, epsilon: float = 0.001, nu: float = 0.1, shrink: bool = True, normalize: [‘No’, ‘Warn’, ‘Auto’, ‘Yes’] = ‘Auto’, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
+microsoftml.rx_oneclass_svm(formula: str,
+    data: [revoscalepy.datasource.RxDataSource.RxDataSource,
+    pandas.core.frame.DataFrame], cache_size: float = 100,
+    kernel: [<function linear_kernel at 0x0000007156EAC8C8>,
+    <function polynomial_kernel at 0x0000007156EAC950>,
+    <function rbf_kernel at 0x0000007156EAC7B8>,
+    <function sigmoid_kernel at 0x0000007156EACA60>] = {'Name': 'RbfKernel',
+    'Settings': {}}, epsilon: float = 0.001, nu: float = 0.1,
+    shrink: bool = True, normalize: ['No', 'Warn', 'Auto',
+    'Yes'] = 'Auto', ml_transforms: list = None,
+    ml_transform_vars: list = None, row_selection: str = None,
+    transforms: dict = None, transform_objects: dict = None,
+    transform_function: str = None,
+    transform_variables: list = None,
+    transform_packages: list = None,
+    transform_environment: dict = None, blocks_per_read: int = None,
+    report_progress: int = None, verbose: int = 1,
+    ensemble: microsoftml.modules.ensemble.EnsembleControl = None,
+    compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
 ```
+
 
 
 
@@ -87,7 +106,7 @@ A character string representing the kernel used for computing
 inner products. For more information, see `ma_kernel()`. The
 following choices are available:
 
-* `rbf_kernel`: Radial basis function kernel. It’s parameter represents“gamma“ in the term `exp(-gamma|x-y|^2`. If not specified, it defaults to `1` divided by the number of features used. For example, `rbf_kernel(gamma = .1)`. This is the default value. 
+* `rbf_kernel`: Radial basis function kernel. It’s parameter represents``gamma`` in the term `exp(-gamma|x-y|^2`. If not specified, it defaults to `1` divided by the number of features used. For example, `rbf_kernel(gamma = .1)`. This is the default value. 
 
 * `linear_kernel`: Linear kernel. 
 
@@ -258,7 +277,7 @@ are supported.
 
 ### ensemble
 
-NOT SUPPORTED. Control parameters for ensembling.
+Control parameters for ensembling.
 
 
 ## Returns
@@ -305,7 +324,9 @@ import numpy
 import pandas
 from microsoftml import rx_oneclass_svm, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import iris
+from microsoftml.datasets.datasets import get_dataset
+
+iris = get_dataset("iris")
 
 import sklearn
 if sklearn.__version__ < "0.18":
@@ -347,27 +368,27 @@ Beginning processing data.
 Rows Read: 112, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
-Rows Read: 112, Read Time: 0.001, Transform Time: 0
+Rows Read: 112, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Using these libsvm parameters: svm_type=2, nu=0.1, cache_size=100, eps=0.001, shrinking=1, kernel_type=2, gamma=0.25, degree=0, coef0=0
 Reconstructed gradient.
-optimization finished, #iter = 21
-obj = 52.925890, rho = 9.518713
-nSV = 12, nBSV = 10
+optimization finished, #iter = 15
+obj = 52.905421, rho = 9.506052
+nSV = 12, nBSV = 9
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1476847
-Elapsed time: 00:00:00.0382042
+Elapsed time: 00:00:00.0555122
+Elapsed time: 00:00:00.0212389
 Beginning processing data.
 Rows Read: 40, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0965106
+Elapsed time: 00:00:00.0349974
 Finished writing 40 rows.
 Writing completed.
     isIris     Score
-35     1.0  0.062792
-36     1.0 -0.618868
-37     1.0 -0.316010
-38     0.0  0.692209
-39     0.0  0.609160
+35     1.0 -0.142141
+36     1.0 -0.531449
+37     1.0 -0.189874
+38     0.0  0.635845
+39     0.0  0.555602
 ```
 

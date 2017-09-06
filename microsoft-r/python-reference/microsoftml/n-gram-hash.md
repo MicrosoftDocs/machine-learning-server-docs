@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "n_gram_hash" 
+title: "n_gram_hash: n_gram_hash" 
 description: "Extracts NGrams from text and convert them to vector using hashing trick." 
 keywords: "N-Grams, hash" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.n_gram_hash*: Converts text into features using hashed n-grams
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,12 @@ ms.custom: ""
 
 
 ```
-microsoftml.n_gram_hash(hash_bits: numbers.Real = 16, ngram_length: numbers.Real = 1, skip_length: numbers.Real = 0, all_lengths: bool = True, seed: numbers.Real = 314489979, ordered: bool = True, invert_hash: numbers.Real = 0)
+microsoftml.n_gram_hash(hash_bits: numbers.Real = 16,
+    ngram_length: numbers.Real = 1, skip_length: numbers.Real = 0,
+    all_lengths: bool = True, seed: numbers.Real = 314489979,
+    ordered: bool = True, invert_hash: numbers.Real = 0)
 ```
+
 
 
 
@@ -66,7 +70,7 @@ Maximum number of tokens to skip when constructing an ngram (settings).
 
 ### all_lengths
 
-Whether to include all ngram lengths up to ngramLength, or only ngramLength (settings).
+Whether to include all ngram lengths up to ngramLength or only ngramLength (settings).
 
 
 ### seed

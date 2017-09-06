@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Extract Pixel Data Transform" 
+title: "extract_pixels: Machine Learning Extract Pixel Data Transform" 
 description: "Extracts the pixel values from an image." 
 keywords: "transform, image" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.extract_pixels*: Extracts pixels form an image
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,13 @@ ms.custom: ""
 
 
 ```
-microsoftml.extract_pixels(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], use_alpha: bool = False, use_red: bool = True, use_green: bool = True, use_blue: bool = True, interleave_argb: bool = False, convert: bool = True, offset: float = None, scale: float = None, **kargs)
+microsoftml.extract_pixels(cols: [str, dict, list],
+    use_alpha: bool = False, use_red: bool = True,
+    use_green: bool = True, use_blue: bool = True,
+    interleave_argb: bool = False, convert: bool = True,
+    offset: float = None, scale: float = None, **kargs)
 ```
+
 
 
 
@@ -176,10 +181,10 @@ Output:
 ```
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
-Rows Read: 1, Read Time: 0.001, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 1, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
@@ -213,11 +218,11 @@ Done!
 Estimated Post-training MeanError = 0.707499
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.7307081
-Elapsed time: 00:00:00.0593366
+Elapsed time: 00:00:00.2716496
+Elapsed time: 00:00:00.0396484
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
-Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
@@ -231,14 +236,14 @@ Auto-tuning parameters: L2 = 5.
 Auto-tuning parameters: L1Threshold (L1/L2) = 1.
 Using model from last iteration.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.7638674
-Elapsed time: 00:00:00.0355348
+Elapsed time: 00:00:01.0508885
+Elapsed time: 00:00:00.0133784
 
 rx_neural_network
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1514638
+Elapsed time: 00:00:00.1339430
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel     Score  Probability
@@ -248,7 +253,7 @@ rx_fast_linear
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.4850464
+Elapsed time: 00:00:00.4977487
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel  Score  Probability

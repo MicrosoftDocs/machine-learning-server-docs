@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Load Image Transform" 
+title: "load_image: Machine Learning Load Image Transform" 
 description: "Loads image data." 
 keywords: "transform, image" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.load_image*: Loads an image
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,9 @@ ms.custom: ""
 
 
 ```
-microsoftml.load_image(cols: [<class ‘str’>, <class ‘dict’>, <class ‘list’>], **kargs)
+microsoftml.load_image(cols: [str, dict, list], **kargs)
 ```
+
 
 
 
@@ -167,8 +168,8 @@ Done!
 Estimated Post-training MeanError = 0.707499
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.2750510
-Elapsed time: 00:00:00.0257623
+Elapsed time: 00:00:00.0891958
+Elapsed time: 00:00:00.0095013
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
@@ -185,14 +186,14 @@ Auto-tuning parameters: L2 = 5.
 Auto-tuning parameters: L1Threshold (L1/L2) = 1.
 Using model from last iteration.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.6349013
-Elapsed time: 00:00:00.1168385
+Elapsed time: 00:00:01.0541236
+Elapsed time: 00:00:00.0113811
 
 rx_neural_network
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1469802
+Elapsed time: 00:00:00.0401500
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel     Score  Probability
@@ -202,7 +203,7 @@ rx_fast_linear
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.5146293
+Elapsed time: 00:00:00.4957253
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel  Score  Probability
