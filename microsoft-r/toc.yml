@@ -2,25 +2,15 @@
   href: index.md
   items:
   - name: Welcome to Machine Learning Server
-    href: placeholder.md
-  - name: What happened to R Server?
-    href: placeholder.md
-  - name: Machine Learning @ Microsoft
-    href: placeholder.md
-    maintainContext: true
+    href: what-is-machine-learning-server.md
   - name: What's new
-    href: index-REMOVE.md
-    items:
-    - name: Machine Learning Server
-      href: whats-new-in-r-server.md
-    - name: Microsoft R Client
-      href: r-client/whats-new-in-r-client.md
-  - name: 9.1.0 Old docs
-    items:
-    - name: What is Machine Learning Server?
-      href: what-is-microsoft-r-server-old.md
-    - name: What is Microsoft R Client?
-      href: r-client/what-is-microsoft-r-client.md
+    href: whats-new-in-machine-learning-server.md
+  - name: Machine Learning at Microsoft
+    href: machine-learning-at-microsoft.md
+  - name: R Server's new name
+    href: rebranding-microsoft-r-server.md
+  - name: Microsoft R Client
+    href: r-client/what-is-microsoft-r-client.md
 - name: Install & configure
   items:
   - name: Supported platforms
@@ -135,19 +125,20 @@
     - name: Pretrained models
       href: install/microsoftml-install-pretrained-models.md
     - name: Virtual machines (Cloud)
-      href: install/r-server-vm-cloud.md
+      href: install/machine-learning-server-in-the-cloud.md
       items:
       - name: Azure HDInsight
-        href: install/r-server-vm-azure-hdinsight.md
+        href: install/machine-learning-server-on-azure-hdinsight.md
       - name: Azure Linux VM
-        href: install/r-server-vm-azure-linux-9-0-1.md
+        href: install/machine-learning-server-azure-vm-on-linux.md
       - name: Azure Windows VM
-        href: https://msdn.microsoft.com/en-us/library/mt759780.aspx
+        href: https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure
       - name: Data Science VM
         href: install/r-server-vm-data-science.md
   - name: Client-side
     items:
     - name: Microsoft R Client
+      href: r-client/what-is-microsoft-r-client.md
       items:
       - name: R Client on Windows
         href: r-client/install-on-windows.md
@@ -158,6 +149,8 @@
   - name: R Server 9.1 or earlier
     items:
     - name: All platforms (archives??? redirect)
+    - name: Feature announcements in previous releases
+      href: whats-new-in-r-server.md
     - name: On Teradata
       items:
       - name: Install R Server 9.0.1 on a Teradata Server
@@ -484,6 +477,27 @@
     items:
     - name: azureml-model-management-sdk
       href: python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md
+      items:
+      - name: DeployClient
+        href: python-reference/azureml-model-management-sdk/deploy-client.md
+      - name: MLServer
+        href: python-reference/azureml-model-management-sdk/mlserver.md
+      - name: Operationalization
+        href: python-reference/azureml-model-management-sdk/operationalization.md
+      - name: OperationalizationDefinition
+        href: python-reference/azureml-model-management-sdk/operationalization-definition.md
+      - name: ServiceDefinition
+        href: python-reference/azureml-model-management-sdk/service-definition.md
+      - name: RealtimeDefinition
+        href: python-reference/azureml-model-management-sdk/realtime-definition.md
+      - name: Service
+        href: python-reference/azureml-model-management-sdk/service.md
+      - name: ServiceResponse
+        href: python-reference/azureml-model-management-sdk/service-response.md
+      - name: Batch
+        href: python-reference/azureml-model-management-sdk/batch.md
+      - name: BatchResponse
+        href: python-reference/azureml-model-management-sdk/batch-response.md
     - name: revoscalepy
       href: python-reference/revoscalepy/revoscalepy-package.md
       items:
@@ -545,6 +559,12 @@
         href: python-reference/revoscalepy/RxOptions.md
       - name: rx_predict
         href: python-reference/revoscalepy/rx-predict.md
+      - name: rx_predict_default
+        href: rx-predict-default.md
+      - name: rx_predict_rx_dtree
+        href: python-reference/revoscalepy/rx-predict-rx-dtree.md
+      - name: rx_predict_rx_dforest
+        href: python-reference/revoscalepy/rx-predict-rx-dforest.md
       - name: rx_read_object
         href: python-reference/revoscalepy/rx-read-object.md
       - name: rx_read_xdf
