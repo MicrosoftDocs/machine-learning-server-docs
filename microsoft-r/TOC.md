@@ -76,8 +76,6 @@
 
 ## R Server 9.1 or earlier
 ### All platforms (archives??? redirect)
-### [What is R Server? (2)](what-is-microsoft-r-server.md)
-### [What is R Server? (1)](what-is-microsoft-r-server-old.md)
 ### [Feature announcements in previous releases](whats-new-in-r-server.md)
 ### On Teradata
 #### [Install R Server 9.0.1 on a Teradata Server](install/r-server-install-teradata-server.md)

@@ -33,6 +33,7 @@ To benefit from disk scalability, performance and speed, push the compute contex
   
 You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
 
+For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## System Requirements
 

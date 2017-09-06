@@ -53,7 +53,10 @@ R packages include ... Function libraries are built on Microsoft R Open (MRO), M
 + Role-based access control (RBAC) has been extended with a new explicit Reader role.
  
 + Register your compute nodes with your web nodes in a centralized and simplified way in the Administration Utility.
- 
+
+## Notes
+
+For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## Previous versions
 
