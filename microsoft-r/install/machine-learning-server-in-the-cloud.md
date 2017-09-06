@@ -37,3 +37,5 @@ It is available in the cloud as follows:
 + [Machine Learning Server as preconfigured Azure virtual machine on Windows](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure)
 
 + [R Server on the Microsoft Data Science Virtual Machine](r-server-vm-data-science.md)
+  
+  Note: Machine Learning Server is coming soon on the Data Science VM.
