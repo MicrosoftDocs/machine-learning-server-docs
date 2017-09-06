@@ -1,5 +1,5 @@
 # [Overview](index.md)
-## [Machine Learning Server](what-is-machine-learning-server.md)
+## [Welcome to Machine Learning Server](what-is-machine-learning-server.md)
 ## [Machine Learning at Microsoft](machine-learning-at-microsoft.md)
 ## [R Server's new name](rebranding-microsoft-r-server.md)
 ## What's new
