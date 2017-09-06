@@ -28,11 +28,11 @@ ms.technology:
 
 Machine Learning Server is an enterprise class server for custom machine learning solutions written in Python and R. It runs on premises on [supported platforms](install/r-server-install-supported-platforms.md). You can also run it in the cloud on Azure virtual machines, or access its function libraries through Azure HDInsight.
 
-Scripts and code can be written in Python or R, calling functions from open source packages, proprietary packages from Microsoft, and third-party packages. Our propriety packages offer comprehensive, high performance function libraries for data manipulation and transformation, creating and training models, scoring data, visualizing and analyzing results.
+You can script in Python or R, calling functions from open source packages, proprietary packages from Microsoft, and third-party packages. Our propriety packages offer comprehensive, high performance function libraries for data manipulation and transformation, creating and training models, scoring data, visualizing and analyzing results.
 
-R support is mature, built on a legacy of Microsoft R Server and former Revolution R Enterprise products. Python support is new in this first release of Machine Learning Server. 
+R support is built on a legacy of Microsoft R Server 9.1 and former Revolution R Enterprise products. Python support is new in this first release of Machine Learning Server. 
 
-## Inside Machine Larning Server
+## Inside Machine Learning Server
 
 + R packages
 + Python modules
@@ -40,18 +40,6 @@ R support is mature, built on a legacy of Microsoft R Server and former Revoluti
 + Open source distributions of R and Python
 + Interpreters and libraries for running script
 + Operationalization: web service deployment, remote execution, and clustered topologies
-
-## R in Machine Learning Server
-
-TBD
-
-## Python in Machine Learning Server
-
-TBD
-
-## Operationalize your solutions
-
-TBD
 
 ## Next steps
 
