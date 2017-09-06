@@ -31,6 +31,32 @@ The mrsdeploy package provides functions for establishing a remote session in a 
 
 This topic is a high-level description of package functionality. These functions can be called directly from the command line. For syntax and other details, see the individual function help topics in the table of contents.
 
+
+
+## Main Interface
+
+Main Interface description goes here.
+
+* [DeployClient](deploy-client.md) 
+
+* [MLServer](mlserver.md) 
+
+* [Operationalization](operationalization.md) 
+
+* [OperationalizationDefinition](operationalization-definition.md) 
+
+* [ServiceDefinition](service-definition.md) 
+
+* [RealtimeDefinition](realtime-definition.md) 
+
+* [Service](service.md) 
+
+* [ServiceResponse](service-response.md) 
+
+* [Batch](batch.md) 
+
+* [BatchResponse](batch-response.md) 
+
 <a name="configure"></a>
 
 ## Supported configurations
