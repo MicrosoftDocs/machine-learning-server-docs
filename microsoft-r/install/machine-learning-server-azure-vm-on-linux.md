@@ -43,11 +43,12 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 1. Go to the Azure Portal: http://portal.azure.com.
 
-1. Click Virtual Machines in the left menu.
+1. Click **Virtual Machines** in the left menu.
 
-1. Click Add.
+1. Click **Add**.
 
-1. In the search box, enter: Machine Learning Server.
+1. In the search box, enter: "Machine Learning Server".
+
    A list of virtual machines matching this string appears.
 
 1. Choose the Linux version from the list. 
@@ -62,7 +63,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 1. At this point, you can also: 
     + [Install an R IDE](#ride) or a Python interpreter.
-    
+
     + Configure Machine Learning Server to [operationalize your analytics](#o16n) so it acts as a deployment server and host analytic web services. 
 
 <a name="connect"></a>
