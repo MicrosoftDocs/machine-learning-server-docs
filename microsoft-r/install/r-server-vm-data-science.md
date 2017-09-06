@@ -24,9 +24,9 @@ ms.technology:
 
 ---
 
-# Machine Learning Server on the Data Science Virtual Machine
+# R Server on the Data Science Virtual Machine
 
-The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including Machine Learning Server on the Linux VM and both Machine Learning Server and SQL Server Machine Learning  Services on the Windows.  Machine Learning (Developer Edition) includes the complete R distribution from CRAN and a Python interpreter, plus additional data-analysis functions with big-data capabilities, and the operationalization framework for integrating R and Python into applications as web services. The developer edition is identical to the enterprise Machine Learning  Server edition, but licensed for development/test use.
+The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including R Server on the Linux VM and both R Server and SQL Server Machine Learning  Services on the Windows. R Server (Developer Edition) includes the complete R distribution from CRAN and a Python interpreter, plus additional data-analysis functions with big-data capabilities, and the operationalization framework for integrating R and Python into applications as web services. The developer edition is identical to the enterprise R Server edition, but licensed for development/test use.
 
 Through Azure’s worldwide cloud infrastructure, you now have on-demand access to a data science development environment in which you can rapidly derive insights from your data, build predictive models and advanced analytics solutions for deployment to the cloud, on-premises or in a hybrid environment. 
 
@@ -34,7 +34,7 @@ The Microsoft Data Science Virtual Machine jump starts your analytics project by
 
 We encourage you to try the Microsoft Data Science Virtual Machine to jumpstart your analytics project. 
 
-## Start using Machine Learning Server/ Machine Learning Services in the Cloud
+## Start using R Server/ Machine Learning Services in the Cloud
 
 You’ll need to create your own Microsoft Data Science Virtual Machine (VM). To create this VM, you must have an Azure subscription and an Azure storage account. Learn more about creating a Data Science VM see [here.](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
 
