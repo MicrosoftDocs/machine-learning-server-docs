@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Predicted Values and Residuals for rx_lin_mod and rx_logit" 
+title: "rx_predict_default: Predicted Values and Residuals for rx_lin_mod and rx_logit" 
 description: "Compute predicted values and residuals using rx_lin_mod and rx_logit objects." 
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_predict_default`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,28 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_predict_default(model_object=None, data: revoscalepy.datasource.RxDataSource.RxDataSource = None, output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, compute_standard_errors: bool = False, interval: typing.Union[list, str] = 'none', confidence_level: float = 0.95, compute_residuals: bool = False, type: typing.Union[list, str] = None, write_model_vars: bool = False, extra_vars_to_write: typing.Union[list, str] = None, remove_missings: bool = False, append: typing.Union[list, str] = None, overwrite: bool = False, check_factor_levels: bool = True, predict_var_names: typing.Union[list, str] = None, residual_var_names: typing.Union[list, str] = None, interval_var_names: typing.Union[list, str] = None, std_errors_var_names: typing.Union[list, str] = None, blocks_per_read: int = 0, report_progress: int = None, verbose: int = 0, xdf_compression_level: int = 0, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None, **kwargs)
+revoscalepy.rx_predict_default(model_object=None,
+    data: revoscalepy.datasource.RxDataSource.RxDataSource = None,
+    output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource,
+    str] = None, compute_standard_errors: bool = False,
+    interval: typing.Union[list, str] = 'none',
+    confidence_level: float = 0.95, compute_residuals: bool = False,
+    type: typing.Union[list, str] = None,
+    write_model_vars: bool = False,
+    extra_vars_to_write: typing.Union[list, str] = None,
+    remove_missings: bool = False, append: typing.Union[list,
+    str] = None, overwrite: bool = False,
+    check_factor_levels: bool = True,
+    predict_var_names: typing.Union[list, str] = None,
+    residual_var_names: typing.Union[list, str] = None,
+    interval_var_names: typing.Union[list, str] = None,
+    std_errors_var_names: typing.Union[list, str] = None,
+    blocks_per_read: int = 0, report_progress: int = None,
+    verbose: int = 0, xdf_compression_level: int = 0,
+    compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None,
+    **kwargs)
 ```
+
 
 
 

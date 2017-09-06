@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Get Data Source Information" 
+title: "rx_get_info: Get Data Source Information" 
 description: "Get basic information about an revoscalepy data source or data frame" 
 keywords: "xdf" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_get_info`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,14 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_get_info(data, get_var_info: bool = False, get_block_sizes: bool = False, get_value_labels: bool = None, vars_to_keep: list = None, vars_to_drop: list = None, start_row: int = 1, num_rows: int = 0, compute_info: bool = False, all_nodes: bool = False, verbose: int = 0)
+revoscalepy.rx_get_info(data, get_var_info: bool = False,
+    get_block_sizes: bool = False, get_value_labels: bool = None,
+    vars_to_keep: list = None, vars_to_drop: list = None,
+    start_row: int = 1, num_rows: int = 0,
+    compute_info: bool = False, all_nodes: bool = False,
+    verbose: int = 0)
 ```
+
 
 
 
@@ -180,7 +186,7 @@ Output:
 
 
 ```
-File name:C:\swarm\workspace\bigAnalytics-9.2\python\revoscalepy\revoscalepy\data\sample_data\claims.xdf
+File name:C:\swarm\workspace\bigAnalytics-9.2.1\python\revoscalepy\revoscalepy\data\sample_data\claims.xdf
 Number of observations:128.0
 Number of variables:6.0
 Number of blocks:1.0

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Parallel External Memory Algorithm for Classification and Regression Decision Forests" 
+title: "rx_dforest: Parallel External Memory Algorithm for Classification and Regression Decision Forests" 
 description: "Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_dforest`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,20 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_dforest(formula, data, output_file=None, write_model_vars=False, overwrite=False, pweights=None, fweights=None, cost=None, min_split=None, min_bucket=None, max_depth=10, cp=0, max_compete=0, max_surrogate=0, use_surrogate=2, surrogate_style=0, n_tree=10, m_try=None, replace=True, cutoff=None, strata=None, sample_rate=None, importance=False, seed=None, compute_cp_table=False, compute_oob_error=1, max_num_bins=None, max_unordered_levels=32, remove_missings=False, use_sparse_cube=False, find_splits_in_parallel=True, row_selection=None, transforms=None, transform_objects=None, transform_function=None, transform_variables=None, transform_packages=None, transform_environment=None, blocks_per_read=1, report_progress=2, verbose=0, compute_context=None, xdf_compression_level=1, **kwargs)
+revoscalepy.rx_dforest(formula, data, output_file=None, write_model_vars=False,
+    overwrite=False, pweights=None, fweights=None, cost=None, min_split=None,
+    min_bucket=None, max_depth=10, cp=0, max_compete=0, max_surrogate=0,
+    use_surrogate=2, surrogate_style=0, n_tree=10, m_try=None, replace=True,
+    cutoff=None, strata=None, sample_rate=None, importance=False, seed=None,
+    compute_cp_table=False, compute_oob_error=1, max_num_bins=None,
+    max_unordered_levels=32, remove_missings=False, use_sparse_cube=False,
+    find_splits_in_parallel=True, row_selection=None, transforms=None,
+    transform_objects=None, transform_function=None, transform_variables=None,
+    transform_packages=None, transform_environment=None, blocks_per_read=1,
+    report_progress=2, verbose=0, compute_context=None, xdf_compression_level=1,
+    **kwargs)
 ```
+
 
 
 

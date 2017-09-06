@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxDataSource" 
+title: "RxDataSource,head,tail: RxDataSource" 
 description: "Base class for all revoscalepy data sources." 
 keywords: "head" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,16 +27,14 @@ ms.custom: ""
 # `RxDataSource`
 
 
-**Applies to: SQL Server 2017 RC1**
-
-
-## Usage
+**Applies to: SQL Server 2017 RC2**
 
 
 
 ```
-class revoscalepy.RxDataSource(column_info: dict = None)
+revoscalepy.RxDataSource(column_info: dict = None)
 ```
+
 
 
 
@@ -51,13 +49,11 @@ Base class for all revoscalepy data sources.
 Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
 
-## Usage
-
-
 
 ```
 head(num_rows: int = 6, report_progress: int = None)
 ```
+
 
 
 
@@ -103,13 +99,11 @@ ds.head(num_rows=4)
 
 
 
-## Usage
-
-
 
 ```
 tail(num_rows: int = 6, report_progress: int = None)
 ```
+
 
 
 

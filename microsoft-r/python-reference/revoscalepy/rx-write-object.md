@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Manage objects in ODBC Data Sources" 
+title: "rx_write_object: Manage objects in ODBC Data Sources" 
 description: "Store/Retrieve objects to/from ODBC data sources. The APIs are modelled after a simple key value store.rx_write_object(dest: RxOdbcData, key: str=None, value: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, serialize: bool=True, overwrite: bool=False, compress: str=’zip’)rx_read_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, deserialize: bool=True, decompress: str=’zip’)rx_delete_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’, all: bool=False)rx_list_keys(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’)" 
 keywords: "odbc" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_write_object`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,13 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData, key: str = None, value: str = None, version: str = None, key_name: str = 'id', value_name: str = 'value', version_name: str = 'version', serialize: bool = True, overwrite: bool = False, compress: str = 'zip')
+revoscalepy.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData,
+    key: str = None, value: str = None, version: str = None,
+    key_name: str = 'id', value_name: str = 'value',
+    version_name: str = 'version', serialize: bool = True,
+    overwrite: bool = False, compress: str = 'zip')
 ```
+
 
 
 

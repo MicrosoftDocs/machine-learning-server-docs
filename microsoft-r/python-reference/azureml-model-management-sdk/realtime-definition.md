@@ -24,13 +24,8 @@ ms.custom: ""
  
 ---
 
-# RealtimeDefinition
+# Class azureml.deploy.operationalization.RealtimeDefinition(name, op)
 
-
-
-```
-azureml.deploy.operationalization.RealtimeDefinition(name, op)
-```
 
 
 
@@ -41,9 +36,8 @@ Realtime class defining a service’s properties on the fluent API.
 
 
 
-```
-alias(alias)
-```
+## alias(alias)
+
 
 
 
@@ -51,21 +45,20 @@ alias(alias)
 Set the service function name alias to call.
 
 
-# Arguments
+### Arguments
 
 
-## alias
+#### alias
 
 
-# Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
 
-```
-deploy()
-```
+## deploy()
+
 
 
 
@@ -73,15 +66,13 @@ deploy()
 Bundle up the definition properties and publish the service.
 
 
-# Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
 
-```
-description(description)
-```
+## description(description)
 
 
 
@@ -89,21 +80,20 @@ description(description)
 Set the service description.
 
 
-# Arguments
+### Arguments
 
 
-## description
+### description
 
 
-# Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
 
-```
-redeploy(force=False)
-```
+## redeploy(force=False)
+
 
 
 
@@ -111,21 +101,19 @@ redeploy(force=False)
 Bundle up the definition properties and update the service.
 
 
-# Arguments
+### Arguments
 
 
-## force
+#### force
 
 
-# Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
+## serialized_model(model)
 
-```
-serialized_model(model)
-```
 
 
 
@@ -133,21 +121,20 @@ serialized_model(model)
 Serialized model.
 
 
-# Arguments
+### Arguments
 
 
-## model
+#### model
 
 
-# Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
 
-```
-version(version)
-```
+## version(version)
+
 
 
 
@@ -155,12 +142,12 @@ version(version)
 Set the service version.
 
 
-# Arguments
+### Arguments
 
 
-## version
+#### version
 
 
-# Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.

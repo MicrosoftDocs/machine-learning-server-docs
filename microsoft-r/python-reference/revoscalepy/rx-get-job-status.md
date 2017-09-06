@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Obtain Distributed Computing Job Status" 
+title: "rx_get_job_status: Obtain Distributed Computing Job Status" 
 description: "Obtain distributed computing processing status for the specified job.rx_get_job_status(job_info)" 
 keywords: "job, status" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_get_job_status`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 revoscalepy.rx_get_job_status(job_info: revoscalepy.computecontext.RxRemoteJob.RxRemoteJob) -> revoscalepy.computecontext.RxJob.RxRemoteJobStatus
 ```
+
 
 
 

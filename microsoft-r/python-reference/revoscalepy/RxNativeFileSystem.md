@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "" 
+title: "RxNativeFileSystem: " 
 description: "" 
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,15 +27,13 @@ ms.custom: ""
 # `RxNativeFileSystem`
 
 
-**Applies to: SQL Server 2017 RC1**
-
-
-## Usage
+**Applies to: SQL Server 2017 RC2**
 
 
 
 ```
-class revoscalepy.RxNativeFileSystem
+revoscalepy.RxNativeFileSystem
 ```
+
 
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Logistic Regression" 
+title: "rx_logit: Logistic Regression" 
 description: "Use rx_logit to fit logistic regression models for small or large data." 
 keywords: "logic" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_logit`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,9 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_logit(formula: str, data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame], pweights: str = None, fweights: str = None, cube: bool = False, cube_predictions: bool = False, variable_selection: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment=None, drop_first: bool = False, drop_main: bool = None, cov_coef: bool = False, cov_data: bool = False, initial_values: typing.Union[NoneType, list, int] = None, coef_label_style: str = None, blocks_per_read: int = None, max_iterations: int = None, coefficent_tolerance: float = 1e-06, gradient_tolerance: float = 1e-06, objective_function_tolerance: float = 1e-08, report_progress: int = None, verbose: int = 0, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None, **kwargs) -> revoscalepy.functions.RxLogit.RxLogitResults
+revoscalepy.rx_logit()
 ```
+
 
 
 

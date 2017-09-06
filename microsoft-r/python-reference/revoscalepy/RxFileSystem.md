@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Class RxFileData" 
+title: "RxFileSystem: Class RxFileData" 
 description: "File-based data source connection class." 
 keywords: "file, datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,16 +27,14 @@ ms.custom: ""
 # `RxFileSystem`
 
 
-**Applies to: SQL Server 2017 RC1**
-
-
-## Usage
+**Applies to: SQL Server 2017 RC2**
 
 
 
 ```
-class revoscalepy.RxFileSystem(file_system_type='native')
+revoscalepy.RxFileSystem(file_system_type='native')
 ```
+
 
 
 

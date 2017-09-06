@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Generate Xdf Data Source Object" 
+title: "RxXdfData: Generate Xdf Data Source Object" 
 description: "Main generator for class RxXdfData, which extends RxDataSource." 
 keywords: "datasource, xdf" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,16 +27,19 @@ ms.custom: ""
 # `RxXdfData`
 
 
-**Applies to: SQL Server 2017 RC1**
-
-
-## Usage
+**Applies to: SQL Server 2017 RC2**
 
 
 
 ```
-class revoscalepy.RxXdfData(file: str, vars_to_keep=None, vars_to_drop=None, return_data_frame=True, strings_as_factors=False, blocks_per_read=1, file_system: typing.Union[str, revoscalepy.datasource.RxFileSystem.RxFileSystem] = 'native', create_composite_set=None, create_partition_set=None, blocks_per_composite_file=3)
+revoscalepy.RxXdfData(file: str, vars_to_keep=None, vars_to_drop=None,
+    return_data_frame=True, strings_as_factors=False, blocks_per_read=1,
+    file_system: typing.Union[str,
+    revoscalepy.datasource.RxFileSystem.RxFileSystem] = 'native',
+    create_composite_set=None, create_partition_set=None,
+    blocks_per_composite_file=3)
 ```
+
 
 
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Read .xdf File" 
+title: "rx_read_xdf: Read .xdf File" 
 description: "Read data from an “.xdf” file into a data frame." 
 keywords: "xdf" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_read_xdf`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,15 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_read_xdf(file: str, vars_to_keep: list = None, vars_to_drop: list = None, row_var_name: str = None, start_row: int = 1, num_rows: int = None, return_data_frame: bool = True, strings_as_factors: bool = False, max_rows_by_columns: int = None, report_progress: int = None, read_by_block: bool = False, cpp_interp: list = None)
+revoscalepy.rx_read_xdf(file: str, vars_to_keep: list = None,
+    vars_to_drop: list = None, row_var_name: str = None,
+    start_row: int = 1, num_rows: int = None,
+    return_data_frame: bool = True,
+    strings_as_factors: bool = False,
+    max_rows_by_columns: int = None, report_progress: int = None,
+    read_by_block: bool = False, cpp_interp: list = None)
 ```
+
 
 
 

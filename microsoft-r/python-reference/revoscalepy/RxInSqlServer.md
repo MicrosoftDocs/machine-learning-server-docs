@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Generate SQL Server In-Database Compute Context" 
+title: "RxInSqlServer: Generate SQL Server In-Database Compute Context" 
 description: "Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server. Currently only supported in Windows." 
 keywords: "sql" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,16 +27,17 @@ ms.custom: ""
 # `RxInSqlServer`
 
 
-**Applies to: SQL Server 2017 RC1**
-
-
-## Usage
+**Applies to: SQL Server 2017 RC2**
 
 
 
 ```
-class revoscalepy.RxInSqlServer(connection_string: str, num_tasks: int = None, auto_cleanup: bool = None, console_output: bool = None, execution_timeout_seconds: int = None, wait: bool = True, packages_to_load: list = None)
+revoscalepy.RxInSqlServer(connection_string: str, num_tasks: int = None,
+    auto_cleanup: bool = None, console_output: bool = None,
+    execution_timeout_seconds: int = None, wait: bool = True,
+    packages_to_load: list = None)
 ```
+
 
 
 

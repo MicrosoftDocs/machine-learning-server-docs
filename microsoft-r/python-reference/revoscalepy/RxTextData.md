@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Generate Text Data Source Object" 
+title: "RxTextData: Generate Text Data Source Object" 
 description: "Main generator for class RxTextData, which extends RxDataSource." 
 keywords: "datasource, text file" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,16 +27,36 @@ ms.custom: ""
 # `RxTextData`
 
 
-**Applies to: SQL Server 2017 RC1**
-
-
-## Usage
+**Applies to: SQL Server 2017 RC2**
 
 
 
 ```
-class revoscalepy.RxTextData(file: str, strings_as_factors: bool = False, column_classes: dict = None, column_info: dict = None, vars_to_keep: list = None, vars_to_drop: list = None, missing_value_string: str = 'NA', rows_per_read: int = 500000, delimiter: str = None, combine_delimiters: bool = False, quote_mark: str = '"', decimal_point: str = '.', thousands_separator: str = None, read_date_format: str = '[%y[-][/]%m[-][/]%d]', read_posixct_format: str = '%y[-][/]%m[-][/]%d [%H:%M[:%S]][%p]', century_cutoff: int = 20, first_row_is_column_names=None, rows_to_sniff: int = 10000, rows_to_skip: int = 0, return_data_frame: bool = True, default_read_buffer_size: int = 10000, default_decimal_column_type: str = None, default_missing_column_type: str = None, write_precision: int = 7, strip_zeros: bool = False, quoted_delimiters: bool = False, is_fixed_format: bool = None, use_fast_read: bool = True, create_file_set: bool = None, rows_per_out_file: int = None, verbose: int = 0, check_vars_to_keep: bool = False, file_system: str = None, input_encoding: str = 'utf-8', write_factors_as_indexes: bool = False)
+revoscalepy.RxTextData(file: str, strings_as_factors: bool = False,
+    column_classes: dict = None, column_info: dict = None,
+    vars_to_keep: list = None, vars_to_drop: list = None,
+    missing_value_string: str = 'NA', rows_per_read: int = 500000,
+    delimiter: str = None, combine_delimiters: bool = False,
+    quote_mark: str = '"', decimal_point: str = '.',
+    thousands_separator: str = None,
+    read_date_format: str = '[%y[-][/]%m[-][/]%d]',
+    read_posixct_format: str = '%y[-][/]%m[-][/]%d [%H:%M[:%S]][%p]',
+    century_cutoff: int = 20, first_row_is_column_names=None,
+    rows_to_sniff: int = 10000, rows_to_skip: int = 0,
+    return_data_frame: bool = True,
+    default_read_buffer_size: int = 10000,
+    default_decimal_column_type: str = None,
+    default_missing_column_type: str = None,
+    write_precision: int = 7, strip_zeros: bool = False,
+    quoted_delimiters: bool = False, is_fixed_format: bool = None,
+    use_fast_read: bool = True, create_file_set: bool = None,
+    rows_per_out_file: int = None, verbose: int = 0,
+    check_vars_to_keep: bool = False, file_system: typing.Union[str,
+    revoscalepy.datasource.RxFileSystem.RxFileSystem] = 'native',
+    input_encoding: str = 'utf-8',
+    write_factors_as_indexes: bool = False)
 ```
+
 
 
 

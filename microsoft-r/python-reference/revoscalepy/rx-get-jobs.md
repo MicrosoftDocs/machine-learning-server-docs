@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Get Distributed Computing Jobs" 
+title: "rx_get_jobs: Get Distributed Computing Jobs" 
 description: "Returns a list of job objects associated with the given compute context and matching the specified parameters." 
 keywords: "get, job" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_get_jobs`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,13 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_get_jobs()
+revoscalepy.rx_get_jobs(compute_context: revoscalepy.computecontext.RxRemoteComputeContext.RxRemoteComputeContext,
+    exact_match: bool = False,
+    start_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.2.1\\runtime\\Python\\lib\\datetime.py'> = None,
+    end_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.2.1\\runtime\\Python\\lib\\datetime.py'> = None,
+    states: list = None, verbose: bool = True) -> list
 ```
+
 
 
 
@@ -109,7 +114,6 @@ Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwl
 
 
 ```
-import time
 from revoscalepy import RxInSqlServer
 from revoscalepy import rx_exec
 from revoscalepy import rx_get_jobs

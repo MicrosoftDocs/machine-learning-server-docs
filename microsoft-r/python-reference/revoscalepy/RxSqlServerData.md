@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Generate SqlServer Data Source Object" 
+title: "RxSqlServerData: Generate SqlServer Data Source Object" 
 description: "Main generator for class RxSqlServerData, which extends RxDataSource." 
 keywords: "datasource, sql" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,16 +27,22 @@ ms.custom: ""
 # `RxSqlServerData`
 
 
-**Applies to: SQL Server 2017 RC1**
-
-
-## Usage
+**Applies to: SQL Server 2017 RC2**
 
 
 
 ```
-class revoscalepy.RxSqlServerData(connection_string: str = None, table: str = None, sql_query: str = None, row_buffering: bool = True, return_data_frame: bool = True, string_as_factors: bool = False, column_classes: dict = None, column_info: dict = None, rows_per_read: int = 50000, verbose: bool = False, use_fast_read: bool = True, server: str = None, database_name: str = None, user: str = None, password: str = None, write_factors_as_indexes: bool = False, **kwargs)
+revoscalepy.RxSqlServerData(connection_string: str = None,
+    table: str = None, sql_query: str = None,
+    row_buffering: bool = True, return_data_frame: bool = True,
+    string_as_factors: bool = False, column_classes: dict = None,
+    column_info: dict = None, rows_per_read: int = 50000,
+    verbose: bool = False, use_fast_read: bool = True,
+    server: str = None, database_name: str = None,
+    user: str = None, password: str = None,
+    write_factors_as_indexes: bool = False, **kwargs)
 ```
+
 
 
 

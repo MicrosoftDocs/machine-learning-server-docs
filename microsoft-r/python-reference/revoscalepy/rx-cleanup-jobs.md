@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "" 
+title: "rx_cleanup_jobs: " 
 description: "If job_info_list is a RxRemoteJob object, rx_cleanup_jobs attempts to remove the artifacts. However, if the job has successfully completed and force is False, rx_cleanup_jobs issues a warning saying to either set force=True or use rx_get_job_results to get the results and delete the artifacts.If job_info_list is a list of jobs, rx_cleanup_jobs attempts to apply the cleanup rules for a single job to each element in the list." 
 keywords: "cleanup, job" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # `rx_cleanup_jobs`
 
 
-**Applies to: SQL Server 2017 RC1**
+**Applies to: SQL Server 2017 RC2**
 
 
 ## Usage
@@ -35,8 +35,10 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_cleanup_jobs(job_info_list: typing.Union[revoscalepy.computecontext.RxRemoteJob.RxRemoteJob, list], force: bool = False, verbose: bool = True)
+revoscalepy.rx_cleanup_jobs(job_info_list: typing.Union[revoscalepy.computecontext.RxRemoteJob.RxRemoteJob,
+    list], force: bool = False, verbose: bool = True)
 ```
+
 
 
 

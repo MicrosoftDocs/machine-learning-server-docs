@@ -24,29 +24,13 @@ ms.custom: ""
  
 ---
 
-# MLServer
-
-
-
-```
-azureml.deploy.server.MLServer
-```
-
-
-
+# Class azureml.deploy.server.MLServer
 
 Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization.md)
 
 This module provides a service implementation for the ML Server.
 
-
-
-```
-authentication(context)
-```
-
-
-
+## authentication(context)
 
 **Override**
 
@@ -62,26 +46,22 @@ ML Server supports two forms of authentication contexts:
 * access-token: str *=4534535* 
 
 
-# Arguments
+### Arguments
 
 
-## context
+#### context
 
 The authentication context: LDAP, Azure Active Directory
 (AAD), or exsisting *access-token* string.
 
 
-## HttpException
+#### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-```
-delete_service(name, **opts)
-```
-
-
+## delete_service(name, **opts)
 
 
 Delete a web service.
@@ -93,33 +73,30 @@ Delete a web service.
 True
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The web service name.
 
 
-## opts
+#### opts
 
 The web service *version* (*version=’v1.0.1*).
 
 
-# Returns
+### Returns
 
 A *bool* indicating the service deletion was succeeded.
 
 
-## HttpException
+#### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
-
-```
-deploy_realtime(name, **opts)
-```
+## deploy_realtime(name, **opts)
 
 
 
@@ -147,15 +124,15 @@ publishing a service using the fluent APIS
 [`deploy()`](realtime-definition.md)
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The web service name.
 
 
-## opts
+#### opts
 
 The service properties to publish. *opts* dict supports the
 following optional properties:
@@ -167,22 +144,19 @@ following optional properties:
     * alias (str) - The consume function name. Defaults to *consume*. 
 
 
-# Returns
+### Returns
 
 A new instance of [`Service`](service.md) representing the
 realtime service *redeployed*.
 
 
-## HttpException
+#### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-```
-deploy_service(name, **opts)
-```
-
+## deploy_service(name, **opts)
 
 
 
@@ -212,15 +186,15 @@ publishing a service using the fluent APIS
 [`deploy()`](service-definition.md).
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The unique web service name.
 
 
-## opts
+#### opts
 
 The service properties to publish. *opts* dict supports the
 following optional properties:
@@ -288,21 +262,19 @@ following optional properties:
       function name by default.
 
 
-# Returns
+### Returns
 
 A new instance of [`Service`](service.md) representing the
 service *deployed*.
 
 
-## HttpException
+#### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-```
-destructor()
-```
+## destructor()
 
 
 
@@ -313,12 +285,7 @@ Destroy lifecycle method called by the framework. Invokes destructors
 for the class hierarchy.
 
 
-
-```
-get_service(name, **opts)
-```
-
-
+## get_service(name, **opts)
 
 
 Get a web service for consumption.
@@ -333,34 +300,33 @@ Get a web service for consumption.
    ...
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The web service name.
 
 
-## opts
+#### opts
 
 The optional web service *version*. If *version=None* the
 most recent service will be returned.
 
 
-# Returns
+### Returns
 
 A new instance of [`Service`](service.md).
 
 
-## HttpException
+#### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-```
-initializer(http_client, config, adapters=None)
-```
+## initializer(http_client, config, adapters=None)
+
 
 
 
@@ -372,29 +338,27 @@ construction. Sets up attributes and invokes initializers for the class
 hierarchy.
 
 
-# Arguments
+### Arguments
 
 
-## http_client
+#### http_client
 
 The http request session to manage and persist
 settings across requests (auth, proxies).
 
 
-## config
+#### config
 
 The global configuration.
 
 
-## adapters
+#### adapters
 
 A dict of transport adapters by url.
 
 
 
-```
-list_services(name=None, **opts)
-```
+## list_services(name=None, **opts)
 
 
 
@@ -423,33 +387,31 @@ the web service.
 >>> service = client.list_services('add-service', version='v1')
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The web service name.
 
 
-## opts
+#### opts
 
 The optional web service *version*.
 
 
-# Returns
+### Returns
 
 A *list* of service metadata.
 
 
-## HttpException
+#### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-```
-realtime_service(name)
-```
+## realtime_service(name)
 
 
 
@@ -463,23 +425,21 @@ Begin fluent API for defining a realtime web service.
       .version('v1.0.0')
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The web service name.
 
 
-# Returns
+### Returns
 
 A [`RealtimeDefinition`](realtime-definition.md) for fluent API.
 
 
 
-```
-redeploy_realtime(name, **opts)
-```
+## redeploy_realtime(name, **opts)
 
 
 
@@ -508,15 +468,14 @@ updating a service using the fluent APIS
 [`redeploy()`](realtime-definition.md)
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The web service name.
 
-
-## opts
+#### opts
 
 The service properties to update. *opts* dict supports the
 following optional properties:
@@ -528,23 +487,19 @@ following optional properties:
     * alias (str) - The consume function name. Defaults to *consume*. 
 
 
-# Returns
+### Returns
 
 A new instance of [`Service`](service.md) representing the
 realtime service *redeployed*.
 
 
-## HttpException
+#### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-```
-redeploy_service(name, **opts)
-```
-
-
+## redeploy_service(name, **opts)
 
 
 Updates properties on an existing web service on the ML Server by *name*
@@ -577,15 +532,15 @@ updating a service using the fluent APIS
 [`redeploy()`](service-definition.md)
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The web service name.
 
 
-## opts
+#### opts
 
 The service properties to update. *opts* dict supports the
 following optional properties:
@@ -653,21 +608,19 @@ following optional properties:
       function name by default.
 
 
-# Returns
+### Returns
 
 A new instance of [`Service`](service.md) representing the
 service *deployed*.
 
 
-## HttpException
+#### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-```
-service(name)
-```
+## service(name)
 
 
 
@@ -681,14 +634,43 @@ Begin fluent API for defining a web service.
       .version('v1.0.0')
 
 
-# Arguments
+### Arguments
 
 
-## name
+#### name
 
 The web service name.
 
 
-# Returns
+### Returns
 
 A [`ServiceDefinition`](service-definition.md) for fluent API.
+
+## CHANGES
+
+1) Title metadata must be the function name. The string for this field populate the tab or window bar in the browser page. It is also #1 for SEO.  It should be like this "<API name> | Microsoft Docs "
+
+2) Only one # (H1).  All other sections are H2.  Anything that is H2 shows up in the right navigation pane. In this article, I demoted all the headings (# Arguments became ## Arguments, etc.)
+
+3) H1 text:
+   Current - # MLServer
+   Proposed -  # Class azureml.deploy.server.MLServer
+       Add Class + the string currently in ~~~ enlcosed MD.
+
+4) metadata regression -- we need valid values for ms.author (msft alias), Author (an actual GH user), and manager (msft manager).
+
+5) open issues: Needs to pivot off the overrides, not the Arguments, etc.  These should be the H2s (alpha order??):  
+
+    authentication(context)
+    delete_service(name, **opts)
+    deploy_realtime(name, **opts)
+    deploy_service(name, **opts)
+    destructor()
+    get_service(name, **opts)
+    initializer(http_client, config, adapters=None)
+    list_services(name=None, **opts)
+    realtime_service(name)
+    redeploy_realtime(name, **opts)
+    redeploy_service(name, **opts)
+    service(name)
+    

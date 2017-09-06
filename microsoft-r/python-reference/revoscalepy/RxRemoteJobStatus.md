@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Represents the execution status of a remote job" 
+title: "RxRemoteJobStatus: Represents the execution status of a remote job" 
 description: "This enumeration represents the execution status of a remote Python job.  The enumeration is returned from the rx_get_job_status method and will indicate the current status of the job.  The enumeration has the following values indicating job status:FINISHED - The job has run to a successful completionFAILED - The job has failedCANCELED - The job was cancelled before it could run to successful completion by using rx_cancel_jobUNDETERMINED - The job’s status could not be determined, typically meaning it has been executed on the server and the job has already been cleaned up by calling rx_get_job_results or rx_cleanup_jobsRUNNING - The distributed computing job is currently executing on the serverQUEUED - The distributed computing job is currently awaiting execution on the server" 
 keywords: "remote, job" 
 author: "Microsoft Corporation Microsoft Technical Support" 
 manager: "jhubbard" 
-ms.date: "07/28/2017" 
+ms.date: "09/06/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,16 +27,14 @@ ms.custom: ""
 # `RxRemoteJobStatus`
 
 
-**Applies to: SQL Server 2017 RC1**
-
-
-## Usage
+**Applies to: SQL Server 2017 RC2**
 
 
 
 ```
-class revoscalepy.RxRemoteJobStatus
+revoscalepy.RxRemoteJobStatus
 ```
+
 
 
 
@@ -105,8 +103,8 @@ status = rx_get_job_status(job)
 print(status)
 
 if status == RxRemoteJobStatus.RUNNING or status == RxRemoteJobStatus.QUEUED :
-    # Wait for the job to finish or fail whatever the case may be
-    rx_wait_for_job(job)
+# Wait for the job to finish or fail whatever the case may be
+rx_wait_for_job(job)
 
 # Poll final status
 status = rx_get_job_status(job)
