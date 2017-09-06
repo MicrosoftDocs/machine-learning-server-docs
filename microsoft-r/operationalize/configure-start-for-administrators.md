@@ -40,6 +40,7 @@ As an administrator, your key responsibilities are to ensure Machine Learning Se
 
 Whenever your policies fail to deliver the expected runtime behavior or performance, you need to troubleshoot your deployment. For that we provide [diagnostic tools](configure-run-diagnostics.md) and numerous recommendations.
 
+
 <a name="configure-server-for-operationalization"></a>
 
 ## Configure web & compute nodes for analytic deployment and remote execution
