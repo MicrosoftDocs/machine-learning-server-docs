@@ -1,8 +1,8 @@
 # [Overview](index.md)
-## [About Machine Learning Server](what-is-machine-learning-server.md)
+## [Welcome to Machine Learning Server](what-is-machine-learning-server.md)
+## [What's new](whats-new-in-machine-learning-server.md)
 ## [Machine Learning at Microsoft](machine-learning-at-microsoft.md)
 ## [R Server's new name](rebranding-microsoft-r-server.md)
-## [What's new](whats-new-in-machine-learning-server.md)
 ## [Microsoft R Client](r-client/what-is-microsoft-r-client.md)
 # Install & configure
 ## [Supported platforms](install/r-server-install-supported-platforms.md)
