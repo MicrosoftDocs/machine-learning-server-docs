@@ -93,6 +93,8 @@ sections:
     style: cards
     className: cardsD
     items:
+    - title: 
+      html: <p> </p>
     - title: Python Libraries
       html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
     - title: R Packages
