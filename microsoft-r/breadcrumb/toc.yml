@@ -32,6 +32,9 @@
       - name: revoscalepy
         tocHref: /r-server/python-reference/revoscalepy/
         topicHref: /r-server/python-reference/revoscalepy/revoscalepy-package
+      - name: azureml-model-management-sdk
+        tocHref: /r-server/python-reference/azureml-model-management-sdk/
+        topicHref: /r-server/python-reference/revoscalepy/revoscalepy-package
     - name: R Package Reference
       tocHref: /r-server/r-reference/
       topicHref: /r-server/r-reference/introducing-r-server-r-package-reference
