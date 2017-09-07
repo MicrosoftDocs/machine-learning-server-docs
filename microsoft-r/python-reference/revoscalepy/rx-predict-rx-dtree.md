@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_predict_rx_dtree`
+# rx_predict_rx_dtree
 
 
 **Applies to: SQL Server 2017 RC2**

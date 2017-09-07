@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_cleanup_jobs`
+# rx_cleanup_jobs
 
 
 **Applies to: SQL Server 2017 RC2**

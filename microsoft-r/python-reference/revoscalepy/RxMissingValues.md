@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `RxMissingValues`
+# RxMissingValues
 
 
 **Applies to: SQL Server 2017 RC2**

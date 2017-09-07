@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_write_object`
+# rx_write_object
 
 
 **Applies to: SQL Server 2017 RC2**

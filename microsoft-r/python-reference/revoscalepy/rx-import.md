@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_import`
+# rx_import
 
 
 **Applies to: SQL Server 2017 RC2**

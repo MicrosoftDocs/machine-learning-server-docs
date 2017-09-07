@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_predict_default`
+# rx_predict_default
 
 
 **Applies to: SQL Server 2017 RC2**

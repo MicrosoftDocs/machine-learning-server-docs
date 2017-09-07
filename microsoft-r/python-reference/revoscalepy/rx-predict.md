@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_predict`
+# rx_predict
 
 
 **Applies to: SQL Server 2017 RC2**
@@ -113,10 +113,10 @@ Output:
 
 
 ```
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.053 seconds 
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 
-Computation time: 0.006 seconds.
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.049 seconds 
 Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds 
+Computation time: 0.006 seconds.
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 
    creditScore_Pred
 0        700.089114
 1        699.834355

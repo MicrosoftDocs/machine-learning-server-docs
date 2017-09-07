@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `RxRemoteJob`
+# RxRemoteJob
 
 
 **Applies to: SQL Server 2017 RC2**

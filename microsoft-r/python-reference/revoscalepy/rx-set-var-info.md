@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_set_var_info`
+# rx_set_var_info
 
 
 **Applies to: SQL Server 2017 RC2**

@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_delete_object`
+# rx_delete_object
 
 
 **Applies to: SQL Server 2017 RC2**

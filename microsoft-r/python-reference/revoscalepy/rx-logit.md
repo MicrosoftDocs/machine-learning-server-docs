@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_logit`
+# rx_logit
 
 
 **Applies to: SQL Server 2017 RC2**

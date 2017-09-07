@@ -4,7 +4,7 @@
 title: "rx_cancel_job: Causes Python to cancel an existing distributed computing job" 
 description: "This function does not attempt to retrieve any output objects; if the output is desired the console_output flag can be used to display it.  This function does, however, remove all job-related artifacts from the distributed computing resources including any job results." 
 keywords: "cancel" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+author: "bradsev" 
 manager: "jhubbard" 
 ms.date: "09/06/2017" 
 ms.topic: "reference" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_cancel_job`
+# rx_cancel_job
 
 
 **Applies to: SQL Server 2017 RC2**
@@ -68,11 +68,6 @@ all console output will not be displayed.
 ## Returns
 
 *True* if the job is successfully cancelled; *False* otherwise.z
-
-
-## Author
-
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
 
 ## See also

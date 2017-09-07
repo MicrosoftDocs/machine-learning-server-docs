@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_get_var_names`
+# rx_get_var_names
 
 
 **Applies to: SQL Server 2017 RC2**

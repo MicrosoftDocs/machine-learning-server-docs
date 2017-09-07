@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_summary`
+# rx_summary
 
 
 **Applies to: SQL Server 2017 RC2**

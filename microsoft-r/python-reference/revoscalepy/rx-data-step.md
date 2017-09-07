@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_data_step`
+# rx_data_step
 
 
 **Applies to: SQL Server 2017 RC2**

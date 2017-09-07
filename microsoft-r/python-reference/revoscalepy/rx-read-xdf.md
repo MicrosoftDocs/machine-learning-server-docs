@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_read_xdf`
+# rx_read_xdf
 
 
 **Applies to: SQL Server 2017 RC2**

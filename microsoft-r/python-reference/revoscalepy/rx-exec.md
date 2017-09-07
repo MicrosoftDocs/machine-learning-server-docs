@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_exec`
+# rx_exec
 
 
 **Applies to: SQL Server 2017 RC2**

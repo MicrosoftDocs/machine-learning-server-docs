@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_wait_for_job`
+# rx_wait_for_job
 
 
 **Applies to: SQL Server 2017 RC2**

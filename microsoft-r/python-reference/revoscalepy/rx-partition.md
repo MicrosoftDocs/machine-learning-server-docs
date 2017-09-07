@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_partition`
+# rx_partition
 
 
 **Applies to: SQL Server 2017 RC2**

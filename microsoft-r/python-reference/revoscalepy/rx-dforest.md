@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_dforest`
+# rx_dforest
 
 
 **Applies to: SQL Server 2017 RC2**

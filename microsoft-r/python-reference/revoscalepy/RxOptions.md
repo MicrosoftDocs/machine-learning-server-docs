@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `RxOptions`
+# RxOptions
 
 
 **Applies to: SQL Server 2017 RC2**

@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_get_job_info`
+# rx_get_job_info
 
 
 **Applies to: SQL Server 2017 RC2**

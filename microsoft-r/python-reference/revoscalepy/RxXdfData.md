@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `RxXdfData`
+# RxXdfData
 
 
 **Applies to: SQL Server 2017 RC2**

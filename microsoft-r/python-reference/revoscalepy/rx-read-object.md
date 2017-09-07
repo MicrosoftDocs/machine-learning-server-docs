@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_read_object`
+# rx_read_object
 
 
 **Applies to: SQL Server 2017 RC2**
