@@ -109,7 +109,7 @@ The *Batch*.
 
 
 
-## list_batch_executions()
+## list_batch_executions
 
 
 
@@ -117,6 +117,9 @@ The *Batch*.
 
 Gets all batch executions currently queued for this service.
 
+### Usage
+
+`list_batch_executions()`
 
 ### Returns
 

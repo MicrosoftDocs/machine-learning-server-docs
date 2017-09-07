@@ -126,7 +126,7 @@ All input and output types are defined as a *pandas.DataFrame*.
 publishing a service using the fluent APIS
 [`deploy()`](realtime-definition.md)
 
-## Usage
+### Usage
 
 `deploy_realtime(name, **opts)`
 
@@ -190,7 +190,7 @@ Publish an new web service on the ML Server by *name* and *version*.
 publishing a service using the fluent APIS
 [`deploy()`](service-definition.md).
 
-## Usage
+### Usage
 
 `deploy_service(name, **opts)`
 
@@ -687,7 +687,7 @@ A [`ServiceDefinition`](service-definition.md) for fluent API.
 
 4) metadata regression -- we need valid values for ms.author (msft alias), Author (an actual GH user), and manager (msft manager).
 
-5) open issues: Needs to pivot off the overrides, not the Arguments, etc.  These should be the H2s (alpha order??):  
+5) open issues: H2 Needs to pivot off the overrides, not the Arguments, etc.  These should be the H2s (alpha order??):  
 
     authentication(context)
     delete_service(name, **opts)
@@ -702,7 +702,7 @@ A [`ServiceDefinition`](service-definition.md) for fluent API.
     redeploy_service(name, **opts)
     service(name)
     
-TRIMMED??
+TRIMMED??  If possible, then the signature gets folded into a ### Usage with `` tick marks
 
     authentication
     delete_service

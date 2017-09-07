@@ -306,7 +306,7 @@
 #### [RxOdbcData](python-reference/revoscalepy/RxOdbcData.md) 
 #### [RxOptions](python-reference/revoscalepy/RxOptions.md) 
 #### [rx_predict](python-reference/revoscalepy/rx-predict.md) 
-#### [rx_predict_default](rx-predict-default.md)
+#### [rx_predict_default](python-reference/revoscalepy/rx-predict-default.md)
 #### [rx_predict_rx_dtree](python-reference/revoscalepy/rx-predict-rx-dtree.md)
 #### [rx_predict_rx_dforest](python-reference/revoscalepy/rx-predict-rx-dforest.md)
 #### [rx_read_object](python-reference/revoscalepy/rx-read-object.md) 
