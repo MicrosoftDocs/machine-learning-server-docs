@@ -23,9 +23,9 @@ ms.technology: "r-server"
 
 ---
 
-# The azureml-model-management-sdk Python library
+# azureml-model-management-sdk library
  
-**Applies to:  Machine Learning Server**
+**Applies to:  Machine Learning Server, SQL Server 2017**
 
 'azureml-model-management-sdk' is a custom library developed by Microsoft. This library provides classes and functions for deploying and managing analytic web services that are backed by Python or R code block / scripts.  
 
