@@ -43,31 +43,20 @@ sections:
           - href: /r-server/operationalize/python/quickstart-deploy-python-web-service
 - title: Step-by-Step Tutorials
   items:
+  - type: paragraph
+    text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
   - type: list
     style: cards
     className: cardsD
     items:
+    - title: 
+      html: <p> </p>
     - title: Python Tutorials
       html: <p>Explore Python-to-revoscalepy</p>
     - title: R Tutorials
       html: <p><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></p>
-  - type: paragraph
-    text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
-  - type: paragraph
-    text: 'Python tutorials:'
-  - type: list
-    style: unordered
-    items:
-    - html: Explore Python-to-revoscalepy
-  - type: paragraph
-    text: 'R tutorials:'
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
-    - html: <a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
-    - html: <a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a>
-
+    - title: 
+      html: <p> </p>
 - title: Samples
   items:
   - type: paragraph
@@ -101,3 +90,5 @@ sections:
       html: <p><a href="/r-server/r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="/r-server/r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="/r-server/r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="/r-server/r-reference/introducing-r-server-r-package-reference">more...</a></p>
     - title: APIs
       html: <p><a href="api link">REST API Reference</a></p>
+    - title: 
+      html: <p> </p>
