@@ -24,7 +24,7 @@ sections:
 - title: 5-Minute Quickstarts
   items:
   - type: paragraph
-    text: 'Learn how to use Machine Learning Server:'
+    text: 'Learn how to use Machine Learning Server with these quickstarts:'
   - type: table
     style: dataMatrix
     columns:
@@ -33,7 +33,7 @@ sections:
       - image:
           src: https://docs.microsoft.com/media/logos/logo_python.svg
     rows:
-      - title: Run code with new functions
+      - title: Run&nbsp;code&nbsp;using&nbsp;functions&nbsp;from&nbsp;custom&nbsp;packages&nbsp;like&nbsp;RevoScaleR
         values:
         - href: /r-server/r/quickstart-run-r-code
         - href: 
@@ -49,14 +49,10 @@ sections:
     style: cards
     className: cardsD
     items:
-    - title: 
-      html: <p> </p>
     - title: Python Tutorials
       html: <p>Explore Python-to-revoscalepy</p>
     - title: R Tutorials
       html: <p><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></p>
-    - title: 
-      html: <p> </p>
 - title: Samples
   items:
   - type: paragraph
@@ -82,13 +78,9 @@ sections:
     style: cards
     className: cardsD
     items:
-    - title: 
-      html: <p> </p>
     - title: Python Libraries
       html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
     - title: R Packages
       html: <p><a href="/r-server/r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="/r-server/r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="/r-server/r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="/r-server/r-reference/introducing-r-server-r-package-reference">more...</a></p>
     - title: APIs
       html: <p><a href="api link">REST API Reference</a></p>
-    - title: 
-      html: <p> </p>
