@@ -187,7 +187,7 @@
         href: install/r-server-install-teradata-805.md
       - name: Install R Server on a Teradata Client
         href: install/r-server-install-teradata-client.md
-      - name: Get started: ScaleR on Teradata
+      - name: Get started ScaleR on Teradata
         href: r/how-to-revoscaler-teradata.md
 - name: Quickstarts
   items:

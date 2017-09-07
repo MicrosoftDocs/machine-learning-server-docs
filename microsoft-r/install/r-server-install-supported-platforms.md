@@ -22,7 +22,7 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Supported Platforms for Machine Learning Server and Microsoft R Server
+# Supported platforms for Machine Learning Server and Microsoft R Server
 
 This article specifies supported operating systems, distributions, and database platforms for all supported versions of Machine Learning Serve, Microsoft R Server, Revolution R Server, and Revolution R Workstation.
 
@@ -37,11 +37,11 @@ R support is based on [Microsoft R Open 3.3.4](https://mran.microsoft.com/open/)
 
 | SKU | Platforms |
 |-----|-----------|
-| **Machine Learning Server for Hadoop** | **Hadoop <sup> 1, 4</sup> Distributions:** Cloudera CDH 5.7-5.11, Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE Linux Enterprise Server 11 (SLES11) (<sup>2</sup>, <sup>4</sup>), Ubuntu 14.04 (<sup>2</sup>)<br/>**Spark <sup> 3</sup>:**  <br/>Versions 2.0 and 2.1  |
-| **Machine Learning Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x(<sup>4</sup>) and 7.x<br/>SLES11(<sup>4</sup>)<br/>Ubuntu 14.04 and 16.04|
-| **Machine Learning Server for Windows** | Windows 7 SP1(<sup>4</sup>), Windows 8.1(<sup>4</sup>), Windows 10(<sup>4</sup>) <br/>Windows Server 2012 R2, Windows Server 2016 | 
+| Machine Learning Server for Hadoop | Hadoop <sup> 1, 4</sup> Distributions: <br/>Cloudera CDH 5.7-5.11, Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>Operating Systems:<br/>RHEL 6.x and 7.x, SUSE Linux Enterprise Server 11 (SLES11) (<sup>2</sup>, <sup>4</sup>), Ubuntu 14.04 (<sup>2</sup>)<br/>Spark <sup> 3</sup>:<br/>Versions 2.0 and 2.1  |
+| Machine Learning Server for Linux | Red Hat Enterprise Linux (RHEL) and CentOS 6.x(<sup>4</sup>) and 7.x<br/>SLES11(<sup>4</sup>)<br/>Ubuntu 14.04 and 16.04|
+| Machine Learning Server for Windows | Windows 7 SP1(<sup>4</sup>), Windows 8.1(<sup>4</sup>), Windows 10(<sup>4</sup>) <br/>Windows Server 2012 R2, Windows Server 2016 | 
 
-<sup>1</sup> You can install **Machine Learning Server for Hadoop** on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for CDH, HDP, or MapR.
+<sup>1</sup> You can install Machine Learning Server for Hadoop on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for CDH, HDP, or MapR.
 
 <sup>2</sup> ???? Still applies ??? Cloudera installation using the built-in parcel generator script requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1 on CDH](r-server-install-cloudera.md).
 
