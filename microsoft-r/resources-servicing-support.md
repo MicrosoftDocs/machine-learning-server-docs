@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Support for Microsoft R Server versions | Microsoft Docs"
-description: "A list of the operating systems supported by editions and versions of Microsoft R Server and Revolution R Enterprise."
+title: "Support for Microsoft R Server versions - Machine Learning Server | Microsoft Docs"
+description: "A list of the operating systems supported by editions and versions of Microsoft R Server, Machine Learning Server, and Revolution R Enterprise."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "12/09/2016"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -39,4 +39,4 @@ This support policy allows us to deliver innovation to customers at a rapid rate
 |Microsoft R Server 8.0.5|7/1/2016|7/1/2018|
 |Microsoft R Server 9.0.1|1/1/2017|1/1/2019|
 |Microsoft R Server 9.1.0|5/1/2017|5/1/2019|
-|Machine Learning Server 9.2.1|2017|2019|
+|Machine Learning Server 9.2.1|10/1/2017|10/1/2019|

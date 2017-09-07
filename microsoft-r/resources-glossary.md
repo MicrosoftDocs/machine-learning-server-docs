@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Microsoft R Glossary | Microsoft Docs"
-description: "DeployR and R Server Glossary Terms FAQ"
+title: "Glossary - Machine Learning Server | Microsoft Docs"
+description: "Machine Learning Server, DeployR and R Server Glossary Terms FAQ"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "06/16/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -26,7 +26,7 @@ ms.technology:
 
 ---
 
-# Microsoft R Glossary
+# Machine Learning Server (and R Server) Glossary
 
 ---
 **Quick Links to Terms:** &nbsp;&nbsp;&nbsp;&nbsp;  A &nbsp;B &nbsp;[C](#C) &nbsp;[D](#D) &nbsp;E &nbsp;F &nbsp;G &nbsp;[H](#H) &nbsp;I &nbsp;J &nbsp;K &nbsp;L &nbsp;[M](#M) &nbsp;N &nbsp;[O](#O) &nbsp;[P](#P) &nbsp;Q &nbsp;[R](#R) &nbsp;[S](#S) &nbsp;T &nbsp;[U](#U) &nbsp;V &nbsp;[W](#W) &nbsp;[X](#X) &nbsp;Y &nbsp;Z</big>

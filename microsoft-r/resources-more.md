@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "03/17/2016"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -30,19 +30,19 @@ ms.technology:
 The following resources are available to you:
 
 ## Blogs and resources
-* [Microsoft R Server product web page](https://www.microsoft.com/en-us/server-cloud/products/r-server/)
-* [Supported platforms in Microsoft R Server](install/r-server-install-supported-platforms.md)
+* [Product web page](https://www.microsoft.com/en-us/server-cloud/products/r-server/)
+* [Supported platforms](install/r-server-install-supported-platforms.md)
 * [About R](https://mran.microsoft.com/documents/what-is-r/)
 * [R Language Resources](https://mran.microsoft.com/documents/getting-started/)
 * [R Blog](http://blog.revolutionanalytics.com/)
-* [Microsoft R Server Operationalization Examples](https://blogs.msdn.microsoft.com/rserver/2017/02/03/microsoft-r-server-operationalization-examples/)
+* [Operationalization Examples](https://blogs.msdn.microsoft.com/rserver/2017/02/03/microsoft-r-server-operationalization-examples/)
 * [Galaxy classification with neural networks: a data science workflow](https://blogs.msdn.microsoft.com/rserver/2017/03/22/galaxy-classification-with-neural-networks-a-data-science-workflow/)
 * [Running your R code on Azure with mrsdeploy](http://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
 
 
 
 ## Support
-* [Microsoft R Support Forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)
+* [User Support Forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)
 
 ## Sample datasets
 * [Sample Dataset Directory](http://packages.revolutionanalytics.com/datasets/)
@@ -52,7 +52,7 @@ The following resources are available to you:
 ## R Server on Azure 
 * [Azure ML Support Forum](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=MachineLearning) 
 * [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/)
-* [R Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=r+server)
+* [R Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=machine+learning+server)
 
 
 ## R Tools for Visual Studio
@@ -62,7 +62,7 @@ The following resources are available to you:
 
 We recommend that you begin with the Quickstarts on this site. After you've completed those tutorials, you'll be ready start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
 
-The obvious place to start is with the rest of the **Microsoft R** document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
+The obvious place to start is with the rest of the document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
 
 Next, we recommend the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions*. You can access that on the CRAN website or in your R installation directory.
 
@@ -149,7 +149,7 @@ The RPE is an older development tool that is now superseded by [R Tools for Visu
 * [RPE User's Guide](r/rpe/revorpe-users-guide.md)
 
 **Revolution R Enterprise Docs**
-Prior to Microsoft R Server, the product was called Revolution R Enterprise (RRE). DeployR has not changed names.
+Prior to Machine Learning Server and Microsoft R Server, the product was called Revolution R Enterprise (RRE). 
 
 Here is a list of the available archived documentation sets for RRE:
 * [RRE 8.0.0 Windows Install Guide](install/r-server-install-windows-800.md)

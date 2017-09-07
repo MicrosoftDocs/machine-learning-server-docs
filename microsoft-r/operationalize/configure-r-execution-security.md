@@ -7,7 +7,7 @@ keywords: "RServe; deployr-rserve; user isolation"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -51,7 +51,7 @@ Machine Learning Server provides various [API calls](concept-api.md) that permit
 >-   RServe only accepts usernames and passwords in plain text from connecting clients.
 >-   RServe uses a plain text configuration file to store the username and password.
 
-If your configuration requires additional compute capacity, you can add [additional compute nodes](../install/operationalize-r-server-enterprise-config.md#add-compute-nodes) for more sophisticated load-balancing capabilities.
+If your configuration requires additional compute capacity, you can add [additional compute nodes](../operationalize/configure-machine-learning-server-enterprise.md) for more sophisticated load-balancing capabilities.
 
 <a name="isolation"></a>
 

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "How to use Machine Learning Server on Linux VM in Azure - Virtual Machine - Machine Learning Server | Microsoft Docs"
+title: "How to use Machine Learning Server on Linux VM in Azure (Virtual Machine) - Machine Learning Server | Microsoft Docs"
 description: "Learn how to work with Machine Learning Server / R Server on Linux by using a virtual machine in Azure."
 keywords: "Machine Learning Server, R Server, linux, virtual machine"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -41,13 +41,17 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 **To create the Machine Learning Server on Linux VM:**
 
-1. Go to the [Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/).
+1. Go to the Azure Portal: http://portal.azure.com.
 
-1. In the search box, type **Machine Learning Server on Linux**.
+1. Click **Virtual Machines** in the left menu.
 
-1. Select **Machine Learning Server on Linux**. 
+1. Click **Add**.
 
-1. Click **Create Virtual Machine**. 
+1. In the search box, enter: "Machine Learning Server".
+
+   A list of virtual machines matching this string appears.
+
+1. Choose the Linux version from the list. 
 
 1. Accept the terms and get started by clicking **Create**. 
 
@@ -59,6 +63,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 1. At this point, you can also: 
     + [Install an R IDE](#ride) or a Python interpreter.
+
     + Configure Machine Learning Server to [operationalize your analytics](#o16n) so it acts as a deployment server and host analytic web services. 
 
 <a name="connect"></a>

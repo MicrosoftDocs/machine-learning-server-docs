@@ -79,7 +79,7 @@ Microsoft R Server offers the **best-in-class deployment** experience for the ad
 
 ## Configuration
 
-You can configure R Server to operationalize analytics [on a single machine](install/operationalize-r-server-one-box-config.md#onebox) or [scale across multiple machines](install/operationalize-r-server-enterprise-config.md) for business-critical applications with multiple nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are then transformed, analyzed, and visualized into an R analytics web service.
+You can configure R Server to operationalize analytics [on a single machine](operationalize/configure-machine-learning-server-one-box.md) or [scale across multiple machines](operationalize/configure-machine-learning-server-enterprise.md) for business-critical applications with multiple nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are then transformed, analyzed, and visualized into an R analytics web service.
 
 In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing (session persistence not required). R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/configure-start-for-administrators.md#security). In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure.
 

@@ -7,7 +7,7 @@ keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -75,7 +75,7 @@ While R is a command line driven program, you can also use your favorite R integ
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
 >[!IMPORTANT]
->You can connect remotely from your local IDE to an Machine Learning Server instance using [functions from the mrsdeploy package](../r/how-to-execute-code-remotely.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [Machine Learning Server administrator must configure Machine Learning Server](../install/operationalize-r-server-enterprise-config.md) for this functionality.
+>You can connect remotely from your local IDE to an Machine Learning Server instance using [functions from the mrsdeploy package](../r/how-to-execute-code-remotely.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [Machine Learning Server administrator must configure Machine Learning Server](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) for this functionality.
 
 <br><a name="try-r-client"></a>
 

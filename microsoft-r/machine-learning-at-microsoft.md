@@ -7,7 +7,7 @@ keywords: ""
 author: ""
 ms.author: ""
 manager: ""
-ms.date: "09/05/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -26,7 +26,7 @@ ms.technology:
 
 # Machine Learning at Microsoft
 
-Placeholder
+Placeholder - Article from Matt Winkler and Nagesh P coming soon...
 
 **See also**
 

@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -186,7 +186,7 @@ rxSparkConnect(reset = TRUE)
 When 'reset = TRUE', all cached Spark Data Frames are freed and all existing Spark applications belonging to the current user are shut down.
   
 
-### Compute Node Failed / HTTP status 503 on APIs (Linux Only)
+### Compute Node Failed / HTTP status 503 on APIs (9.0.1 - Linux Only)
 
 If you get an `HTTP status 503 (Service Unavailable)` response when using the Rest APIs or encounter a failure for the compute node during diagnostic testing, then one or more of the symlinks needed by [deployr-rserve](https://github.com/Microsoft/deployr-rserve) are missing. deployr-rserve is the R execution component for the compute node,
 

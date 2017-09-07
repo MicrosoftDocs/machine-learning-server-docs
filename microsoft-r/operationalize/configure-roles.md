@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -41,7 +41,7 @@ How users are assigned to roles depends on the authentication method configured 
 
 To assign groups of users in your Active Directory to Machine Learning Server roles, you must have:
 
-+ An instance of Machine Learning Server that is [configured to operationalize analytics](../install/operationalize-r-server-enterprise-config.md)
++ An instance of Machine Learning Server that is [configured to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization)
 
 + Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](configure-authentication.md)
 

@@ -7,7 +7,7 @@ keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -29,9 +29,9 @@ Microsoft R Client is a free, data science tool for high performance analytics. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and R Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)  
+To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Machine Learning Server (or Microsoft R Server) such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and Machine Learning Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)  
 
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package.  
+You can offload heavy processing to Machine Learning Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package.  
 
 For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.md#r-client-whats-new).
 
@@ -45,7 +45,7 @@ For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.m
 |Internet access|Needed to download R Client and any dependencies. If you do not have an internet connection, for the instructions for an [offline installation](#offline)|
 
 
-Also included and required for R Client setup is Microsoft R Open 3.3.3.  Microsoft R Open is a requirement of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
+Also included and required for R Client setup is Microsoft R Open 3.4.1.  Microsoft R Open is a requirement of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
 
 ## Setup Requirements
 
@@ -59,7 +59,7 @@ Also included and required for R Client setup is Microsoft R Open 3.3.3.  Micros
 
 ## How to install (with internet access)
 
-This section walks you through an R Client 3.3.3 deployment using the `install.sh` script. Under these instructions, your installation includes the ability to use the RevoScalerR and MicrosoftML packages.
+This section walks you through an R Client 3.4.1 deployment using the `install.sh` script. Under these instructions, your installation includes the ability to use the RevoScalerR and MicrosoftML packages.
 
 
 1. Log in as root or a user with super user privileges (`sudo su`). The following instructions assume root install.
@@ -74,7 +74,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 1. Unpack the file:
 
    ```
-   [tmp] $ tar zxvf microsoft-r-client-3.3.3.tar.gz
+   [tmp] $ tar zxvf microsoft-r-client-3.4.1.tar.gz
    ```
 
    The distribution is unpacked into an `MRC_Linux` folder at the download location. The distribution includes the following files:
@@ -125,7 +125,7 @@ This section walks you through an R Client 3.3.3 deployment using the `install.s
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
-If you previously installed version 3.3.2, it will be replaced with the 3.3.3 version. 
+If you previously installed version 3.3.3, it will be replaced with the 3.4.1 version. 
 
 ### Download R Client and its dependencies
 
@@ -133,9 +133,9 @@ From an internet-connected computer, download the following:
 
 1. Download Microsoft R Client for Linux from http://aka.ms/rclientlinux.
 
-1. Download the Microsoft R Open for this version of R Client. Microsoft R Open provides the R distribution used by R Server. [Direct link to microsoft-r-open-3.3.3.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297). Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. 
+1. Download the Microsoft R Open for this version of R Client. Microsoft R Open provides the R distribution used by Machine Learning Server. [Direct link to microsoft-r-open-3.4.1.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297). Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. 
 
-1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Microsoft R Server 9.1.0](../install/r-server-install-linux-hadoop-packages.md). If the **target system** is missing any, download the ones you will need.
+1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Machine Learning Server 9.2](../install/heidi-to-provide.md). If the **target system** is missing any, download the ones you will need.
 
    If you will be building and installing packages, including miniCRAN, we recommend that you also install the following binary packages: `gcc-c++` and `gcc-gfortran`.
    
@@ -150,8 +150,8 @@ From an internet-connected computer, download the following:
 1. Transfer these files to the machine without any internet connection  to a writable directory, such as **/tmp**, on your internet-restricted server. Use a a tool like [SmarTTY](http://smartty.sysprogs.com/download/) or [PuTTY](http://www.putty.org) or another mechanism.
 
    Files to be transferred include the following:
-   + `microsoft-r-open-3.3.3.tar.gz`
-   + `microsoft-r-client-3.3.3.tar.gz`
+   + `microsoft-r-open-3.4.1.tar.gz`
+   + `microsoft-r-client-3.4.1.tar.gz`
    + any missing packages from the dependency list
 
 ### Prepare the downloaded files for installation
@@ -171,7 +171,7 @@ On the target system which is disconnected from the internet:
 
 1. Unpack the Microsoft R Client gzipped file:
    ```
-   [root@localhost tmp] $ tar zxvf microsoft-r-client-3.3.3.tar.gz
+   [root@localhost tmp] $ tar zxvf microsoft-r-client-3.4.1.tar.gz
    ```
 
    A new folder called MRC_Linux is created under /tmp. This folder contains files and packages used during setup. 
@@ -179,7 +179,7 @@ On the target system which is disconnected from the internet:
 1. Copy the gzipped tar file for Microsoft R Open to the MRC_Linux folder containing the installation script (install.sh).  The install.sh script file for R Client looks for the gzipped tar file for Microsoft R Open. Assuming root permissions, copy the gzipped Microsoft R Open tar file to the same folder containing the installation script.
 
   ```
-  [root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRC_Linux
+  [root@localhost tmp] $ cp microsoft-r-open-3.4.1.tar.gz /tmp/MRC_Linux
   ```
 
 ### Run the Microsoft R Client install script
@@ -231,11 +231,11 @@ flag | Option | Description
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.
 
-## How to uninstall R Client 3.3.3
+## How to uninstall R Client 3.4.1
 
 1. Log in as root or a user with `sudo` privileges. If you are using `sudo`, precede commands requiring root privileges with `sudo` .
 
-1. Use your package manager to list the currently installed R Server packages. 
+1. Use your package manager to list the currently installed Machine Learning Server packages. 
    + If your package manager is **yum** (common for CentOS/Red Hat systems):
 
 	   ```
@@ -259,9 +259,9 @@ flag | Option | Description
 1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
 
    ```
-   yum erase microsoft-r-open-mro-3.3         #For CentOS/RHEL systems
-   apt-get remove microsoft-r-open-mro-3.3    #For Ubuntu systems
-   zypper remove microsoft-r-open-mro-3.3     #For SLES systems
+   yum erase microsoft-r-open-mro-3.4         #For CentOS/RHEL systems
+   apt-get remove microsoft-r-open-mro-3.4    #For Ubuntu systems
+   zypper remove microsoft-r-open-mro-3.4     #For SLES systems
    ```
 
 2. On the root node, verify the location of other files that need to be removed: `
@@ -296,4 +296,4 @@ You can learn more with these guides:
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ [Execute code on remote R Server](../r/how-to-execute-code-remotely.md)
++ [Execute code on remote Machine Learning Server](../r/how-to-execute-code-remotely.md)

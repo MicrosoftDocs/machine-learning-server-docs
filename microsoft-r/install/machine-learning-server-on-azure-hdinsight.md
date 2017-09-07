@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Machine Learning Server on HDInsight - Virtual Machine | Microsoft Docs"
+title: "Machine Learning Server on HDInsight Virtual Machine - Machine Learning Server | Microsoft Docs"
 description: "Machine Learning Server on HDInsight introduction"
 keywords: "Machine Learning Server , Microsoft R Server, HDInsight"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
