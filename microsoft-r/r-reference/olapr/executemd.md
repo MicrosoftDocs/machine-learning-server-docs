@@ -7,7 +7,7 @@ keywords: "olapR, executeMD"
 author: "richcalaway"
 ms.author: "richcala" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "09/23/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,13 +24,10 @@ ms.technology: "r-server"
 #ms.custom: "" 
  
 --- 
- 
- 
- 
- 
- #executeMD: olapR executeMD Methods
 
- Applies to version 1.0.0 of package olapR.
+#executeMD: olapR executeMD Methods
+
+Applies to version 1.0.0 of package olapR.
  
  
  ##Description
@@ -44,7 +41,6 @@ Takes a Query object or an MDX string, and returns the result as a multi-dimensi
 ```   
   executeMD(olapCnn, query)
   executeMD(olapCnn, mdx)
- 
 ```
  
  
