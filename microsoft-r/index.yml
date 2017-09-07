@@ -56,13 +56,13 @@ sections:
   - type: paragraph
     text: 'Python tutorials:'
   - type: list
-    style: ordered
+    style: unordered
     items:
     - html: Explore Python-to-revoscalepy
   - type: paragraph
     text: 'R tutorials:'
   - type: list
-    style: ordered
+    style: unordered
     items:
     - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
     - html: <a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
@@ -87,7 +87,6 @@ sections:
     items:
     - html: <a href="/r-server/r-client/what-is-microsoft-r-client">Microsoft R Client</a>
     - html: <a href="/r-server/install/python-libraries-interpreter">Python interpreter and library setup </a>
-    - html: <a hfre="/r-server/r/sample-solutions">Solution templates</a>
 - title: Reference
   items:
   - type: list
