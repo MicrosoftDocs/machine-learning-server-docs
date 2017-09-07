@@ -18,7 +18,8 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "
+ms.technology:
+  - r-server
 #ms.custom: ""
 
 ---
