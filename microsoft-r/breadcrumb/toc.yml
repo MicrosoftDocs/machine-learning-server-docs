@@ -9,12 +9,12 @@
     - name: Install & configure
       tocHref: /r-server/install/
       topicHref: /
-    - name: Install & configure / Windows
+    - name: Windows
       tocHref: /r-server/install/
       topicHref: /r-server/install/machine-learning-server-windows-install
       topicHref: /r-server/install/machine-learning-server-windows-offline
       topicHref: /r-server/install/machine-learning-server-windows-commandline
-    - name: Install & configure / Linux
+    - name: Linux
       tocHref: /r-server/install/
       topicHref: /r-server/install/machine-learning-server-linux-install
       topicHref: /r-server/install/machine-learning-server-linux-offline
