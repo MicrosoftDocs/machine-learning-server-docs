@@ -23,27 +23,29 @@ ms.technology: "r-server"
 
 ---
 
-# azureml-model-management-sdk Python Library
+# The azureml-model-management-sdk python library
  
 **Applies to:  Machine Learning Server**
 
-The azureml-model-management-sdk library provides classes and functions for deploying and managing an analytic web service that is backed by the R or Python code block or script.  
+'azureml-model-management-sdk' is a custom library that provides classes and functions for deploying and managing an analytic web service that is backed by a Python or R code block or script.  
 
 This topic is a high-level description of library functionality. These classes and functions can be called directly. For syntax and other details, see the individual function help topics in the table of contents.
 
 
-| Package details | |
+| Library details | |
 |--------|-|
 | Version: |  9.2.0 |
-| Supported on: | [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Supported on: | [Machine Learning Server](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
 | Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 
-## How to use revoscalepy
+## How to use azureml-model-management-sdk
 
-The **azureml-model-management-sdk** library is installed as part of Machine Learning Server and SQL Server Machine Learning Services when you add Python to your installation. It is also [available locally](../../install/python-libraries-interpreter.md).  When you install these products, you get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **azureml-model-management-sdk**, but the script must run on a computer having Machine Learning Server or SQL Server Machine Learning with Python.
+The **azureml-model-management-sdk** library is installed as part of Machine Learning Server and SQL Server Machine Learning Services when you add Python to your installation. It is also [available locally](../../install/python-libraries-interpreter.md).  When you install these products, you get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. 
 
-There are three primary use cases for this release: 
+You can use any Python IDE to write Python scripts that call the classes and functions in **azureml-model-management-sdk**, but the script must run on a computer having Machine Learning Server or SQL Server Machine Learning with Python.
+
+There are **three primary use cases** for this release: 
 
 + Adding authentication logic to your Python script
 + Deploying standard or realtime Python web services
@@ -73,23 +75,24 @@ There are three primary use cases for this release:
 
 
 
-## See also
-
-[Package Reference](../introducing-r-server-r-package-reference.md)
-
-[Install R Server](../../what-is-microsoft-r-server.md)
-
-[Install R Client](../../r-client/what-is-microsoft-r-client.md)
-
 
 ## Next steps
 
 Add both Python modules to your computer by running setup: 
 
-+ Set up [Machine Learning Server for Python](heidi-to-provide.md) or [Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
++ Set up [Machine Learning Server for Python](heidi-to-provide-set-up-link.md) or [Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
 Next, follow this quickstart for hands on experience:
 
 + [Quickstart: How to deploy Python model as a service](../../operationalize/python/quickstart-deploy-python-web-service.md) 
 
 + [How to publish and manage web services in Python](../../operationalize/python/how-to-deploy-manage-web-services.md)
+
+
+## See also
+
+[Library Reference](../introducing-python-package-reference.md)
+
+[Install Machine Learning Server](../../what-is-machine-learning-server.md)
+
+[Install the Python interpreter and libraries](../../install/python-libraries-interpreter.md)
