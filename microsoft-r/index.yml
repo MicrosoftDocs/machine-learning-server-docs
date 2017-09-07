@@ -54,9 +54,19 @@ sections:
     - title: R Tutorials
       html: <ul><li><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a><li><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a><li><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></li></ul>
   - type: paragraph
-    text: '<big>Python Tutorials</big> <ul><li>Use pyspark and revoscalepy together</li></ul>'
+    text: '<big>Python Tutorials</big>'
+  - type: list
+    style: unordered
+    items:
+    - html: Use pyspark and revoscalepy together
   - type: paragraph
-    text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
+    text: '<big>R Tutorials</big>'
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
+    - html: <a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
+    - html: <a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a><br/>&nbsp;
 - title: Samples
   items:
   - type: paragraph
