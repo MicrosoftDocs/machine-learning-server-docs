@@ -1,14 +1,14 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Machine Learning Server Documentation - Tutorials, API Reference
+title: Machine Learning Server Documentation
 metadata:
-  title: Machine Learning Server Documentation - Tutorials, API Reference
+  title: Machine Learning Server Documentation
   description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.  
   services: sql-database
   author: "j-martens"
   ms.author: "jmartens"
   manager: "jhubbard"
-  ms.date: "06/22/2017"
+  ms.date: "09/25/2017"
   ms.topic: "get-started-article"
   ms.prod: "microsoft-r"
   ms.service: sql-database
@@ -44,7 +44,7 @@ sections:
 - title: Step-by-Step Tutorials
   items:
   - type: paragraph
-    text: 'Learn how to discover insights faster and transform your business using Machine Learning Server:'
+    text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
   - type: paragraph
     text: 'Python tutorials:'
   - type: list
@@ -56,7 +56,7 @@ sections:
   - type: list
     style: ordered
     items:
-    - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR&#58;</a>
+    - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
     - html: <a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
     - html: <a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a>
 
@@ -64,13 +64,6 @@ sections:
   items:
   - type: paragraph
     text: 'Find scripts and solutions to manage common tasks.'
-  - type: list
-    style: unordered
-    className: spaced noBullet
-    items:
-    - html: <a href="">R samples</a>
-    - html: <a href="">Python samples </a>
-    - html: <a hfre="/r-server/r/sample-solutions">Solution templates</a>
   - type: list
     style: unordered
     items:
@@ -84,7 +77,7 @@ sections:
     className: cardsD
     items:
     - title: Python Libraries
-      html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">Azure ML Model Management SDK</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml package</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy package</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
+      html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
     - title: R Packages
       html: <p><a href="/r-server/r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="/r-server/r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="/r-server/r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="/r-server/r-reference/introducing-r-server-r-package-reference">more...</a></p>
     - title: APIs
