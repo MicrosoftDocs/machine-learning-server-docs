@@ -49,10 +49,10 @@ sections:
     style: cards
     className: cardsD
     items:
-    - title: Python Tutorials
-      html: &nbsp;<ul><li>Use pyspark and revoscalepy together</li></ul>
+    - title: Python Tutorials<br/>
+      html: <ul><li>Use pyspark and revoscalepy together</li></ul>
     - title: R Tutorials
-      html: &nbsp;<ul><li><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a><li><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a><li><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></li></ul>
+      html: <ul><li><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a><li><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a><li><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></li></ul>
 - title: Samples
   items:
   - type: paragraph
