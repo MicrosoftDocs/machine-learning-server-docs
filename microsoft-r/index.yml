@@ -19,12 +19,12 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.<br />Machine Learning Server includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms, from standalone installs on Linux and Windows, to large distributed deployments on node clusters.<br />Learn how to use Machine Learning Server with our quickstarts, tutorials, and samples.
+  description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.<br /><br />Machine Learning Server includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. Learn how to use Machine Learning Server with our quickstarts, tutorials, and samples.
 sections:
 - title: 5-Minute Quickstarts
   items:
   - type: paragraph
-    text: 'Intro text:'
+    text: 'Learn how to use Machine Learning Server:'
   - type: table
     style: dataMatrix
     columns:
@@ -45,12 +45,21 @@ sections:
   items:
   - type: paragraph
     text: 'Learn how to discover insights faster and transform your business using Machine Learning Server:'
+  - type: paragraph
+    text: 'Python tutorials:'
   - type: list
     style: ordered
     items:
-    - html: Explore R-to-RevoScaleR&#58; <a href="/r-server/r/tutorial-r-to-revoscaler">R</a> | Python
-    - html: Import and transform data&#58; <a href="/r-server/r/tutorial-revoscaler-data-import-transform">R</a> | Python
-    - html: Visualize and analyze data&#58; <a href="/r-server/r/tutorial-revoscaler-data-model-analysis">R</a> | Python
+    - html: Explore Python-to-revoscalepy
+  - type: paragraph
+    text: 'R tutorials:'
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR&#58;</a>
+    - html: <a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
+    - html: <a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a>
+
 - title: Samples
   items:
   - type: paragraph
@@ -58,6 +67,12 @@ sections:
   - type: list
     style: unordered
     className: spaced noBullet
+    items:
+    - html: <a href="">R samples</a>
+    - html: <a href="">Python samples </a>
+    - html: <a hfre="/r-server/r/sample-solutions">Solution templates</a>
+  - type: list
+    style: unordered
     items:
     - html: <a href="">R samples</a>
     - html: <a href="">Python samples </a>
