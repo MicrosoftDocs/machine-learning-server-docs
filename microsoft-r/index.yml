@@ -19,7 +19,7 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <div class="pull-right"><strong>Microsoft R Server is now Machine Learning Server.</strong></p>
+  description: <div class="pull-right"><strong>Microsoft R Server is now Machine Learning Server.</strong><a href="/r-server/rebranding-microsoft-r-server">Learn more about the rebranding.</a></div><br/><a href="/r-server/what-is-microsoft-r-server">Machine Learning Server</a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. 
 sections:
 - title: 5-Minute Quickstarts
   items:
