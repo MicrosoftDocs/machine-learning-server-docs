@@ -30,9 +30,9 @@ In September 2017, Microsoft R Server was released under the new name of **Machi
 
 [Read the "What's new in this release."](whats-new-in-machine-learning-server.md)
 
-## Our commitment to R is unchanged
+## Building on our commitment to R
 
-Microsoft continues its commitment to R not only in the latest Machine Learning Server release, but also in the newest [Microsoft R Client](r-client/what-is-microsoft-r-client.md) and [Microsoft R Open](https://mran.microsoft.com) releases.
+Microsoft continues its commitment and development in R -- not only in the latest Machine Learning Server release, but also in the newest [Microsoft R Client](r-client/what-is-microsoft-r-client.md) and [Microsoft R Open](https://mran.microsoft.com) releases.
 
 ## Upgrade to Machine Learning Server
 
