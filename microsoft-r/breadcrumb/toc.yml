@@ -6,6 +6,9 @@
     tocHref: /r-server/
     topicHref: /r-server/index
     items:
+    - name: Install & configure
+      tocHref: /r-server/install/
+      topicHref: /
     - name: Configure
       tocHref: /r-server/operationalize/
       topicHref: /r-server/operationalize/configure-start-for-administrators
