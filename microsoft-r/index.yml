@@ -94,8 +94,6 @@ sections:
     className: cardsD
     items:
     - title: Python Libraries
-      - image:
-          src: https://docs.microsoft.com/media/logos/logo_R.svg
       html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
     - title: R Packages
       html: <p><a href="/r-server/r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="/r-server/r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="/r-server/r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="/r-server/r-reference/introducing-r-server-r-package-reference">more...</a></p>
