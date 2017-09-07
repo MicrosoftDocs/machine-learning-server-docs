@@ -140,45 +140,45 @@
     - name: Prior feature announcements
       href: whats-new-in-r-server.md
     - name: On Windows
-        items:
-        - name: Install R Server 9.1
-          href: install/r-server-install-windows.md
-        - name: Install R Server 9.1 - Offline
-          href: install/r-server-install-windows-offline.md
-        - name: Install R Server 9.1 - Command line
-          href: install/r-server-install-windows-command-line.md
-        - name: Install R Server 8.1
-          href: install/r-server-install-windows-800.md
+      items:
+      - name: Install R Server 9.1
+        href: install/r-server-install-windows.md
+      - name: Install R Server 9.1 - Offline
+        href: install/r-server-install-windows-offline.md
+      - name: Install R Server 9.1 - Command line
+        href: install/r-server-install-windows-command-line.md
+      - name: Install R Server 8.1
+        href: install/r-server-install-windows-800.md
     - name: On Linux
-        items:
-        - name: Install R Server 9.0.1
-          href: install/r-server-install-linux-server-901.md
-        - name: Install R Server 9.0.1 - Offline
-          href: install/r-server-install-linux-offline.md
-        - name: Uninstall R Server 9.0.1
-          href: install/r-server-install-linux-uninstall.md
-        - name: Install R Server 8.0.5
-          href: install/r-server-install-linux-server-805.md
-        - name: Install R Server 8.0
-          href: install/r-server-install-linux-server-800.md     
+      items:
+      - name: Install R Server 9.0.1
+        href: install/r-server-install-linux-server-901.md
+      - name: Install R Server 9.0.1 - Offline
+        href: install/r-server-install-linux-offline.md
+      - name: Uninstall R Server 9.0.1
+        href: install/r-server-install-linux-uninstall.md
+      - name: Install R Server 8.0.5
+        href: install/r-server-install-linux-server-805.md
+      - name: Install R Server 8.0
+        href: install/r-server-install-linux-server-800.md     
     - name: On Hadoop
-        items:
-        - name: Install R Server 9.1 
-          href: install/r-server-install-hadoop.md
-        - name: Install R Server 9.1 - Command line
-          href: install/r-server-install-hadoop-command-line.md
-        - name: Install R Server 9.1 - Offline 
-          href: install/r-server-install-hadoop-offline.md
-        - name: Install R Server 9.1 - Cloudera
-          href: install/r-server-install-cloudera.md
-        - name: Uninstall R Server 9.1
-          href: install/r-server-install-uninstall-upgrade.md
-        - name: Install R Server 9.0.1
-          href: install/r-server-install-hadoop-901.md
-        - name: Install R Server 9.0.1 on CDH
-          href: install/r-server-install-cloudera-901.md
-        - name: Install R Server 8.0.5
-          href: install/r-server-install-hadoop-805.md
+      items:
+      - name: Install R Server 9.1 
+        href: install/r-server-install-hadoop.md
+      - name: Install R Server 9.1 - Command line
+        href: install/r-server-install-hadoop-command-line.md
+      - name: Install R Server 9.1 - Offline 
+        href: install/r-server-install-hadoop-offline.md
+      - name: Install R Server 9.1 - Cloudera
+        href: install/r-server-install-cloudera.md
+      - name: Uninstall R Server 9.1
+        href: install/r-server-install-uninstall-upgrade.md
+      - name: Install R Server 9.0.1
+        href: install/r-server-install-hadoop-901.md
+      - name: Install R Server 9.0.1 on CDH
+        href: install/r-server-install-cloudera-901.md
+      - name: Install R Server 8.0.5
+        href: install/r-server-install-hadoop-805.md
     - name: On Teradata
       items:
       - name: Install R Server 9.0.1 on a Teradata Server

@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "Install Machine Learning Server for Linux"
-description: "How to install, connect to, and use Machine Learning Server on computers running a Linux operating system."
+title: "Linux offline installation for Machine Learning Server | Microsoft Docs"
+description: "How to install Machine Learning Server for Linux with no internet connection."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Linux
+# How to install Machine Learning Server for Linux offline
 
 
 ## Next steps

@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "Install Machine Learning Server for Hadoop"
-description: "How to install, connect to, and use Machine Learning Server on a Hadoop cluster with Spark or MapReduce"
+title: "Hadoop offline installation for Machine Learning Server | Microsoft Docs"
+description: "How to install Machine Learning Server on a Hadoop cluster with no internet connection."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Hadoop
+# How to install Machine Learning Server for Hadoop offline
 
 
 ## Next steps

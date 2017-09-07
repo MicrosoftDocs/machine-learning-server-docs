@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "Install Machine Learning Server for Windows"
-description: "How to install, connect to, and use Machine Learning Server on computers running the Windows operating system."
+title: "Windows commandline installation for Machine Learning Server | Microsoft Docs"
+description: "How to install Machine Learning Server for Windows on the command line."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Windows
+# How to install Machine Learning Server for Windows on a command line
 
 
 ## Next steps
