@@ -118,7 +118,7 @@
       - name: Azure Linux VM
         href: install/machine-learning-server-azure-vm-on-linux.md
       - name: Azure Windows VM
-        href: https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure
+        href: https://docs.microsoft.com/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure
         maintainContext: true
       - name: Data Science VM
         href: install/r-server-vm-data-science.md
@@ -187,7 +187,7 @@
         href: install/r-server-install-teradata-805.md
       - name: Install R Server on a Teradata Client
         href: install/r-server-install-teradata-client.md
-      - name: 'Get started: ScaleR on Teradata'
+      - name: Get started: ScaleR on Teradata
         href: r/how-to-revoscaler-teradata.md
 - name: Quickstarts
   items:
