@@ -7,7 +7,7 @@ keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Micro
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -29,9 +29,9 @@ Microsoft R Client is a free, data science tool for high performance analytics. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)
+To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server (or R Server) such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and Machine Learning Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)
   
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
+You can offload heavy processing to Machine Learning Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
 
 For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.md#r-client-whats-new).
 
@@ -164,4 +164,4 @@ You can learn more with these guides:
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ [Execute code on remote R Server](../r/how-to-execute-code-remotely.md)
++ [Execute code on remote Machine Learning Server](../r/how-to-execute-code-remotely.md)

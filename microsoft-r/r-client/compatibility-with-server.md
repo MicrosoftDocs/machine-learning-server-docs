@@ -35,4 +35,4 @@ Learn about what's new in the latest [Microsoft R Client release](what-is-micros
 |Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Hadoop**|8.0.5 - 9.2|
 |Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Windows**|9.1 - 9.2|
 |R Server for **Teradata DB**|8.0.5 - 9.1|
-|HDInsight (cluster type: Machine Learning (or R) Server)|9.2|
+|HDInsight: cluster type = Machine Learning or R Server|9.2|

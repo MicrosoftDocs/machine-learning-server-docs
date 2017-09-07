@@ -7,7 +7,7 @@ keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "4/30/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -39,7 +39,7 @@ This article explains how to uninstall Microsoft R Client. **You do not have to 
 
 ## Program version and file locations
 
-As a first step, use your package manager to list the currently installed R Server packages. (Typically, CentOS and Red Hat systems use **yum**, Ubuntu systems use **apt-get**, and SLES systems use **zypper**):
+As a first step, use your package manager to list the currently installed Machine Learning Server packages. (Typically, CentOS and Red Hat systems use **yum**, Ubuntu systems use **apt-get**, and SLES systems use **zypper**):
 
 If your package manager is **yum**:
 
@@ -59,13 +59,15 @@ Packages are registered in a database that tracks all package installations in t
 
 Log in as root or a user with `sudo` privileges. If you are using `sudo`, precede commands requiring root privileges with `sudo` (for example, `sudo yum erase microsoft-r-server-mro-8.0`).
 
-## How to uninstall 9.0.1 or 9.1.0
+## How to uninstall
 
 1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
 
-        yum erase microsoft-r-server-mro-3.3 		#(CentOS/RHEL systems))
-		apt-get remove microsoft-r-server-mro-3.3	# (Ubuntu systems)
-		zypper remove microsoft-r-server-mro-3.3	# (SLES systems)
+        yum erase microsoft-r-server-mro-x.x 		#(CentOS/RHEL systems))
+		apt-get remove microsoft-r-server-mro-x.x	# (Ubuntu systems)
+		zypper remove microsoft-r-server-mro-x.x	# (SLES systems)
+
+   where x.x is 3.3 for R Server 9.0.1 or 9.1.0, and 3.4 for Machine Learning Server 9.2.
 
 2. On the root node, verify the location of other files that need to be removed: `
 
@@ -76,13 +78,6 @@ Log in as root or a user with `sudo` privileges. If you are using `sudo`, preced
         rm -fr /usr/lib64/microsoft-r
 
 The **rm** command removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
-
-## See Also
-
- [Install R on Hadoop overview](../install/r-server-install-hadoop.md)      
- [Install R Server 8.0.5 on Hadoop](../install/r-server-install-hadoop-805.md)      
- [Install Microsoft R Server on Linux](../install/r-server-install-linux-server.md) 
- [Troubleshoot R Server installation problems on Hadoop](../install/r-server-install-hadoop-troubleshoot.md)
 
 
 ## Learn More
