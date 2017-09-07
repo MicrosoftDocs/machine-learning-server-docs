@@ -9,7 +9,7 @@
     - name: Install & configure
       tocHref: /r-server/install/
       topicHref: /
-    - name: Configure
+    - name: Operationalize
       tocHref: /r-server/operationalize/
       topicHref: /r-server/operationalize/configure-start-for-administrators
     - name: Python Package Reference
