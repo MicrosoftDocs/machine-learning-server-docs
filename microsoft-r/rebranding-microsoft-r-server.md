@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What happened to Microsoft R Server and R Client"
+title: "What happened to Microsoft R Server - Machine Learning Server | Microsoft Docs"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
