@@ -19,7 +19,7 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: <a href="/r-server/what-is-microsoft-r-server"><strong>Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:right;"><strong>Announcement:</strong> Microsoft R Server is now Machine Learning Server. <a href="/r-server/rebranding-microsoft-r-server">Learn more...</a></div>
+  description: <a href="/r-server/what-is-microsoft-r-server"><strong>Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Machine Learning Server. <a href="/r-server/rebranding-microsoft-r-server">Learn more...</a></div>
 sections:
 - title: 5-Minute Quickstarts
   items:
