@@ -12,13 +12,9 @@
     - name: Windows
       tocHref: /r-server/install/
       topicHref: /r-server/install/machine-learning-server-windows-install
-      topicHref: /r-server/install/machine-learning-server-windows-offline
-      topicHref: /r-server/install/machine-learning-server-windows-commandline
     - name: Linux
       tocHref: /r-server/install/
       topicHref: /r-server/install/machine-learning-server-linux-install
-      topicHref: /r-server/install/machine-learning-server-linux-offline
-      topicHref: /r-server/install/machine-learning-server-linux-commandline
     - name: Configure
       tocHref: /r-server/operationalize/
       topicHref: /r-server/operationalize/configure-start-for-administrators
