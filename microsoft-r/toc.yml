@@ -20,34 +20,50 @@
     - name: Windows
       items:
       - name: Install on Windows
-        href: install/r-server-install-windows.md
+        href: install/machine-learning-server-install-windows.md
       - name: Offline install
-        href: install/r-server-install-windows-offline.md
+        href: 
       - name: Command line install
-        href: install/r-server-install-windows-command-line.md
+        href: 
+      - name: Install an older version
+        items:
+        - name: Install R Server 9.x
+          href: install/r-server-install-windows.md
+        - name: Install R Server 9.x - Offline
+          href: install/r-server-install-windows-offline.md
+        - name: Install R Server 9.x - Command line
+          href: install/r-server-install-windows-command-line.md
+        - name: Install R Server 8.x
+          href: install/r-server-install-windows-800.md
     - name: Linux
       items:
       - name: Install on Linux
-        href: install/r-server-install-linux-server.md
+        href: install/machine-learning-server-install-linux.md
       - name: Offline install
-        href: install/r-server-install-linux-offline.md
+        href: 
       - name: Manage your installation
         href: install/r-server-install-linux-manage-install.md
       - name: Uninstall from Linux
-        href: install/r-server-install-linux-uninstall.md
+        href: 
       - name: Install an older version
         items:
         - name: Install R Server 9.0.1
           href: install/r-server-install-linux-server-901.md
+        - name: Install R Server 9.0.1 - Offline
+          href: install/r-server-install-linux-offline.md
+        - name: Uninstall R Server 9.0.1
+          href: install/r-server-install-linux-uninstall.md
         - name: Install R Server 8.0.5
           href: install/r-server-install-linux-server-805.md
+        - name: Install R Server 8.0
+          href: install/r-server-install-linux-server-800.md          
     - name: Hadoop
       items:
       - name: Install on Hadoop
-        href: install/r-server-install-hadoop.md
+        href: install/machine-learning-server-install-hadoop.md
         items:
         - name: Cloudera Manager parcel installation
-          href: install/r-server-install-cloudera.md
+          href: install/machine-learning-server-install-cloudera.md
           items:
           - name: Generate a parcel
             href: install/r-server-install-cloudera-generate-parcel.md
@@ -56,9 +72,9 @@
           - name: Rollback to previous version
             href: install/r-server-install-cloudera-rollback.md
         - name: Command line installation (CDH, HDP, MapR)
-          href: install/r-server-install-hadoop-command-line.md
+          href: 
         - name: Offline install
-          href: install/r-server-install-hadoop-offline.md
+          href: 
         - name: Package dependency list
           href: install/r-server-install-linux-hadoop-packages.md
         - name: Manual package installation
@@ -69,12 +85,22 @@
           href: install/r-server-install-hadoop-configuration-r-workloads.md
         - name: Enforce a YARN queue assignment
           href: install/r-server-install-hadoop-yarnqueueusage.md
-        - name: Troubleshoot installation problems
+        - name: Troubleshoot R installation problems
           href: install/r-server-install-hadoop-troubleshoot.md
       - name: Uninstall from Hadoop
-        href: install/r-server-install-uninstall-upgrade.md
+        href: 
       - name: Install an older version
         items:
+        - name: Install R Server 9.1 
+          href: install/r-server-install-hadoop.md
+        - name: Install R Server 9.1 - Command line
+          href: install/r-server-install-hadoop-command-line.md
+        - name: Install R Server 9.1 - Offline 
+          href: install/r-server-install-hadoop-offline.md
+        - name: Install R Server 9.1 - Cloudera
+          href: install/r-server-install-cloudera.md
+        - name: Uninstall R Server 9.1
+          href: install/r-server-install-uninstall-upgrade.md
         - name: Install R Server 9.0.1
           href: install/r-server-install-hadoop-901.md
         - name: Install R Server 9.0.1 on CDH

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Supported Platforms for Microsoft R Server"
-description: "A list of the operating systems supported by editions and versions of Microsoft R Server."
+title: "Supported Platforms for Machine Learning Server and Microsoft R Server | Microsoft Docs"
+description: "A list of the operating systems supported by editions and versions of Machine Learning Server and Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "05/02/2017"
+ms.date: "09/07/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -22,12 +22,33 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Supported Platforms for Microsoft R Server
+# Supported Platforms for Machine Learning Server and Microsoft R Server
 
-This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R Server, Revolution R Server, and Revolution R Workstation.
+This article specifies supported operating systems, distributions, and database platforms for all supported versions of Machine Learning Serve, Microsoft R Server, Revolution R Server, and Revolution R Workstation.
 
 > [!Note]
 > 64-bit operating systems with x86-compatible Intel architecture (commonly known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips) are required on all platforms. Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
+
+## Machine Learning Server 9.2.1
+
+Python support is based on Anaconda 4.2 over Python 3.5.
+
+R support is based on [Microsoft R Open 3.3.4](https://mran.microsoft.com/open/), based on R-3.3.4.
+
+| SKU | Platforms |
+|-----|-----------|
+| **Machine Learning Server for Hadoop** | **Hadoop <sup> 1, 4</sup> Distributions:** Cloudera CDH 5.7-5.11, Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>**Operating Systems:** <br/>RHEL 6.x and 7.x, SUSE Linux Enterprise Server 11 (SLES11) (<sup>2</sup>, <sup>4</sup>), Ubuntu 14.04 (<sup>2</sup>)<br/>**Spark <sup> 3</sup>:**  <br/>Versions 2.0 and 2.1  |
+| **Machine Learning Server for Linux** | Red Hat Enterprise Linux (RHEL) and CentOS 6.x(<sup>4</sup>) and 7.x<br/>SLES11(<sup>4</sup>)<br/>Ubuntu 14.04 and 16.04|
+| **Machine Learning Server for Windows** | Windows 7 SP1(<sup>4</sup>), Windows 8.1(<sup>4</sup>), Windows 10(<sup>4</sup>) <br/>Windows Server 2012 R2, Windows Server 2016 | 
+
+<sup>1</sup> You can install **Machine Learning Server for Hadoop** on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for CDH, HDP, or MapR.
+
+<sup>2</sup> ???? Still applies ??? Cloudera installation using the built-in parcel generator script requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1 on CDH](r-server-install-cloudera.md).
+
+<sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark. Support for Spark 1.6 is dropped for this release.
+
+<sup>4</sup> Limited availability of [operationalization](../what-is-operationalization.md) and [MicrosoftML algorithms](../r-reference/microsoftml/microsoftml-package.md) due to .NET Core platform dependency. Neither feature is supported on Linux or Windows client operating systems. On Hadoop, you can install the features on edge nodes, assuming the native file system is CentOS/RHEL 7.x or Ubuntu 14.04 (there is no support for either feature on SUSE SLES11).
+
 
 ## Microsoft R Server 9.1
 
