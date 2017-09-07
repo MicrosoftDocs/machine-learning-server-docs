@@ -41,7 +41,7 @@
         href: install/machine-learning-server-hadoop-install.md
         items:
         - name: Cloudera Manager parcel installation
-          href: install/machine-learning-server-install-cloudera.md
+          href: install/machine-learning-server-cloudera-install.md
           items:
           - name: Generate a parcel (OLD)
             href: install/r-server-install-cloudera-generate-parcel.md
@@ -588,7 +588,7 @@
       - name: rx_predict
         href: python-reference/revoscalepy/rx-predict.md
       - name: rx_predict_default
-        href: rx-predict-default.md
+        href: python-reference/revoscalepy/rx-predict-default.md
       - name: rx_predict_rx_dtree
         href: python-reference/revoscalepy/rx-predict-rx-dtree.md
       - name: rx_predict_rx_dforest
