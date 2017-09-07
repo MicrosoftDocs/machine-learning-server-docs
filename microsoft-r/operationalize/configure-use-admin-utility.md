@@ -49,7 +49,11 @@ These instructions describe how to launch the Administrator Utility.
 
 **On Windows:**
 
-Open a command-line window with administrator privileges and enter the following commands:
+You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
+>[!Warning]
+>If your organization has the default powershell execution policy of "Restricted" (common for Windows 10 and Windows Server 2012), you may have issues running the administration utility using the shortcut. In that case, either use the alternate option detailed in the next bullet or you can change the execution policy to "Unrestricted." Read this article on powershell execution policies for details.
+
+Alternately, open a command-line window with administrator privileges and enter the following commands:
 
 |Version|Commands|
 |----|------------|
