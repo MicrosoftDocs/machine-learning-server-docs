@@ -9,8 +9,6 @@
     href: machine-learning-at-microsoft.md
   - name: R Server's new name
     href: rebranding-microsoft-r-server.md
-  - name: Microsoft R Client
-    href: r-client/what-is-microsoft-r-client.md
 - name: Install & configure
   items:
   - name: Supported platforms

@@ -70,6 +70,16 @@ sections:
     - html: <a href="heidi-to-provide-sample-link">R samples</a>
     - html: <a href="heidi-to-provide-sample-link">Python samples </a>
     - html: <a hfre="/r-server/r/sample-solutions">Solution templates</a>
+- title: Tools
+  items:
+  - type: paragraph
+    text: 'Use these tools to begin developing your analytics locally and then pushing the compute to the server:'
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/r-server/r-client/what-is-microsoft-r-client">Microsoft R Client</a>
+    - html: <a href="/r-server/install/python-libraries-interpreter">Python interpreter and library setup </a>
+    - html: <a hfre="/r-server/r/sample-solutions">Solution templates</a>
 - title: Reference
   items:
   - type: list
