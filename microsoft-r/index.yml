@@ -37,7 +37,7 @@ sections:
         values:
         - href: /r-server/r/quickstart-run-r-code
         - href: 
-      - title: Deploy a model as service
+      - title: Deploy a model as web service in Machine Learning Server
         values:
           - href: /r-server/operationalize/quickstart-publish-r-web-service
           - href: /r-server/operationalize/python/quickstart-deploy-python-web-service
