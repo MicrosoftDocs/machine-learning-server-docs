@@ -242,19 +242,23 @@
   items:
   - name: Compute context
     href: r/concept-what-is-compute-context.md
-  - name: MicrosoftML
-    href: r/concept-what-is-the-microsoftml-package.md
-  - name: RevoScaleR
-    href: r/concept-what-is-revoscaler.md
+  - name: Distributed and high performance computing 
+    href: 
   - name: Operationalization
     href: operationalize/concept-operationalize-deploy-consume.md
-  - name: Data transformations
-    href: r/concept-what-is-data-transformations.md
-  - name: XDF files
-    href: r/concept-what-is-xdf.md
+  - name: Packages
+    items: 
+    - name: MicrosoftML
+      href: r/concept-what-is-the-microsoftml-package.md
+    - name: RevoScaleR
+      href: r/concept-what-is-revoscaler.md
 - name: How-to guides
   href: r/how-to-introduction.md
   items:
+  - name: Tools
+    items:
+    - name: Configure Jupyter Notebooks
+      href: python/how-to-jupyter-nb.md
   - name: 1. Business understanding
     items:
     - name: Python
@@ -267,6 +271,10 @@
     - name: Python
     - name: R
       items:
+      - name: Data transformations
+        href: r/concept-what-is-data-transformations.md
+      - name: XDF files
+        href: r/concept-what-is-xdf.md
       - name: Import text data
         href: r/how-to-revoscaler-data-import.md
       - name: Import SQL Server data
@@ -547,6 +555,8 @@
         href: python-reference/revoscalepy/rx-dtree.md
       - name: rx_exec
         href: python-reference/revoscalepy/rx-exec.md
+      - name: rx_exec_by
+        href: python-reference/revoscalepy/rx-exec-by.md
       - name: rx_get_compute_context
         href: python-reference/revoscalepy/rx-get-compute-context.md
       - name: rx_get_info
@@ -585,6 +595,8 @@
         href: python-reference/revoscalepy/RxOdbcData.md
       - name: RxOptions
         href: python-reference/revoscalepy/RxOptions.md
+      - name: rx_partition
+        href: python-reference/revoscalepy/rx-partition.md
       - name: rx_predict
         href: python-reference/revoscalepy/rx-predict.md
       - name: rx_predict_default
