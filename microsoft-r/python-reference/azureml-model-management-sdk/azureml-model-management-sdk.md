@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# The azureml-model-management-sdk python library
+# The azureml-model-management-sdk Python library
  
 **Applies to:  Machine Learning Server**
 
@@ -39,7 +39,7 @@ This topic is a high-level description of library functionality. These classes a
 | Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 
-## How to use azureml-model-management-sdk
+## How to use this library
 
 The **azureml-model-management-sdk** library is installed as part of Machine Learning Server and SQL Server Machine Learning Services when you add Python to your installation. It is also [available locally](../../install/python-libraries-interpreter.md).  When you install these products, you get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. 
 
