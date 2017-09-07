@@ -43,6 +43,14 @@ sections:
           - href: /r-server/operationalize/python/quickstart-deploy-python-web-service
 - title: Step-by-Step Tutorials
   items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Python Tutorials
+      html: <p>Explore Python-to-revoscalepy</p>
+    - title: R Tutorials
+      html: <p><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></p>
   - type: paragraph
     text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
   - type: paragraph
@@ -86,7 +94,7 @@ sections:
     style: cards
     className: cardsD
     items:
-    - title: Python Libraries&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    - title: Python Libraries
       html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
     - title: R Packages
       html: <p><a href="/r-server/r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="/r-server/r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="/r-server/r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="/r-server/r-reference/introducing-r-server-r-package-reference">more...</a></p>
