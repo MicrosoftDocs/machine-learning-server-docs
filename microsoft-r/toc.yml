@@ -137,7 +137,7 @@
       href: install/python-libraries-interpreter.md
   - name: R Server 9.1 or earlier
     items:
-    - name: Feature announcements in previous releases
+    - name: Prior feature announcements
       href: whats-new-in-r-server.md
     - name: On Windows
         items:

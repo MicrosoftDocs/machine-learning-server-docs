@@ -7,7 +7,7 @@ keywords: "olapR, execute2D"
 author: "richcalaway"
 ms.author: "richcala" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "09/23/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,39 +25,35 @@ ms.technology: "r-server"
  
 --- 
  
- 
- 
- 
- #execute2D: olapR execute2D Methods
+#execute2D: olapR execute2D Methods
 
- Applies to version 1.0.0 of package olapR.
+Applies to version 1.0.0 of package olapR.
  
  
- ##Description
+##Description
  
 Takes a Query object or an MDX string, and returns the result as a data frame.
  
  
  
- ##Usage
+##Usage
 
 ```   
-  execute2D(olapCnn, query)
-  execute2D(olapCnn, mdx)
- 
+execute2D(olapCnn, query)
+execute2D(olapCnn, mdx)
 ```
  
  
- ##Arguments
+##Arguments
 
    
     
- ### olapCnn
- Object of class "OlapConnection" returned by `OlapConnection()` 
+### olapCnn
+Object of class "OlapConnection" returned by `OlapConnection()` 
   
     
- ### query
- Object of class "Query" returned by `Query()` 
+### query
+Object of class "Query" returned by `Query()` 
   
     
  ### mdx
