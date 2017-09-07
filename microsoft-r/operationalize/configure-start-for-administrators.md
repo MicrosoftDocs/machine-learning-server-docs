@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -45,7 +45,7 @@ Whenever your policies fail to deliver the expected runtime behavior or performa
 
 ## Configure web & compute nodes for analytic deployment and remote execution
 
-To benefit from Machine Learning Server’s web service deployment and remote execution features, you must first [configure](../install/operationalize-r-server-one-box-config.md) the server after installation to act as a deployment server and host analytic web services. 
+To benefit from Machine Learning Server’s web service deployment and remote execution features, you must first configure the server after installation to act as a deployment server and host analytic web services. 
 
 ### Configuration components
 
@@ -173,7 +173,7 @@ This section provides a quick summary of useful links for administrators working
 
 **Key Documents**
 -   [About Operationalization](../what-is-operationalization.md)
--   [Configuration](../install/operationalize-r-server-one-box-config.md)
+-   [Configuration](configure-start-for-administrators.md#configure-server-for-operationalization)
 -   [R Package Management](configure-manage-r-packages.md)
 -   [Diagnostic Testing & Troubleshooting](configure-run-diagnostics.md)
 -   [Capacity Evaluation](configure-evaluate-capacity.md)

@@ -28,7 +28,7 @@ ms.technology:
 
 **Applies to:  Microsoft R Server 9.x**
 
-The Microsoft R Server <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">REST APIs</a> are exposed by R Server's operationalization server, a standards-based server technology [capable of scaling to meet the needs of enterprise-grade deployments](../install/operationalize-r-server-enterprise-config.md). With the Machine Learning Server configured to operationalize, the full statistics, analytics, and visualization capabilities of R and Python can now be directly leveraged inside Web, desktop and mobile applications.
+The Microsoft R Server <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">REST APIs</a> are exposed by R Server's operationalization server, a standards-based server technology [capable of scaling to meet the needs of enterprise-grade deployments](configure-machine-learning-server-enterprise.md). With the Machine Learning Server configured to operationalize, the full statistics, analytics, and visualization capabilities of R and Python can now be directly leveraged inside Web, desktop and mobile applications.
 
 The APIs available with R Server can be categorized into two groups: Core APIs and the Service Consumption APIs.
 

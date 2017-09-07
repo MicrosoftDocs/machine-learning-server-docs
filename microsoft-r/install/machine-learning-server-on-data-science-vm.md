@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Machine Learning Server on the Data Science Virtual Machine | Microsoft Docs"
+title: "Machine Learning Server on the Data Science Virtual Machine - Machine Learning Server | Microsoft Docs"
 description: "Run Machine Learning Server on the Microsoft Data Science Virtual Machine"
 keywords: "Machine Learning Server, HDInsight"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 

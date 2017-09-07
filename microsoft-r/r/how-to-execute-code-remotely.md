@@ -48,7 +48,7 @@ With remote execution, you can:
 
 ## Supported configurations and mrsdeploy usage
 
-The R functions used for remote execution are provided in the mrsdeploy package, which is  installed with Microsoft R Server on almost every platform. Your administrator must [configure the server for the deployment and consumption of analytics](../install/operationalize-r-server-enterprise-config.md)** before you can use the functions in the package.  Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-package.md) for the list of [remote execution functions](../r-reference/mrsdeploy/mrsdeploy-package.md#remote-functions) in that package. 
+The R functions used for remote execution are provided in the mrsdeploy package, which is  installed with Microsoft R Server on almost every platform. Your administrator must [configure the server for the deployment and consumption of analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)** before you can use the functions in the package.  Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-package.md) for the list of [remote execution functions](../r-reference/mrsdeploy/mrsdeploy-package.md#remote-functions) in that package. 
 
  
 

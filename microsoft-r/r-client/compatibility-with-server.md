@@ -7,7 +7,7 @@ keywords: "R Client compatibility, Microsoft R Client"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 

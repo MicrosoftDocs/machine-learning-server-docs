@@ -7,7 +7,7 @@ keywords: "azureml-model-management-sdk package reference"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "09/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Deprecated, discontinued, or changed features in R Server | Microsoft Docs"
+title: "Deprecated, discontinued, or changed features - Machine Learning Server | Microsoft Docs"
 description: "Notifications about deprecated and discontinued features, packages, and functions in Microsoft R packages."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -22,9 +22,17 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Deprecated, discontinued, or changed features in Microsoft R Server
+# Deprecated, discontinued, or changed features
 
-This article notifies you about pending status changes to features and function libraries, such as deprecated and discontinued functions in RevoScaleR.
+**Applies to: Machine Learning Server and Microsoft R Server**
+
+This article notifies you about pending status changes to features and function libraries, such as deprecated and discontinued functions in the custom packages and libraries installed with the product.
+
+
+## Machine Learning Server 9.2.1
+
+Other release-specific pages include [What's New in 9.2](whats-new-in-machine-learning-server.md) and [Known issues](resources-known-issues.md).
+
 
 ## Microsoft R Server 9.1.0
 

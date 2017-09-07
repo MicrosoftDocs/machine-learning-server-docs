@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "How to use Machine Learning Server on Linux VM in Azure - Virtual Machine - Machine Learning Server | Microsoft Docs"
+title: "How to use Machine Learning Server on Linux VM in Azure (Virtual Machine) - Machine Learning Server | Microsoft Docs"
 description: "Learn how to work with Machine Learning Server / R Server on Linux by using a virtual machine in Azure."
 keywords: "Machine Learning Server, R Server, linux, virtual machine"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 

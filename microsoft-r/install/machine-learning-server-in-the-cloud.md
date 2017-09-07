@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Machine Learning Server in the Cloud - Virtual Machine - Machine Learning Server | Microsoft Docs"
+title: "Machine Learning Server in the Cloud (Virtual Machines) - Machine Learning Server | Microsoft Docs"
 description: "Machine Learning Server in the Cloud: Azure"
 keywords: "Machine Learning Server, R Server, azure, virtual machine"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 

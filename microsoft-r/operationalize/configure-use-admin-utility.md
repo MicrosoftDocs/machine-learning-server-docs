@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/20/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -31,7 +31,7 @@ ms.technology:
 This article describes how to use the administration utility to configure the server.
 
 Use the utility to:
-+ [Configure server for operationalization](../install/operationalize-r-server-one-box-config.md) front-ends and back-ends     
++ [Configure server for operationalization](configure-start-for-administrators.md#configure-server-for-operationalization) front-ends and back-ends     
 + [Set a local admin password](#admin-password)     
 + [Stop and restart](#startstop) web and compute node services     
 + [Update the service ports](#ports)     
@@ -231,9 +231,9 @@ The following command-line switches are available for the administration utility
 
 |Switch|Description|Introduced in version|
 |----|-----|:---:|
-|-silentoneboxinstall password uris <br/><br/>-silentinstall  password uris|Sets up a [one-box configuration](../install/operationalize-r-server-one-box-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br/><br/>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/>URIs in 9.2|
-|-silentwebnodeinstall password uris|Configures a [web node](../install/operationalize-r-server-enterprise-config.md) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br/><br/>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/><br/>URIs in 9.2|
-|-silentcomputenodeinstall|Configures a [compute node](../install/operationalize-r-server-enterprise-config.md) silently.  For example:<br/><br/>-silentcomputenodeinstall|9.1|
+|-silentoneboxinstall password uris <br/><br/>-silentinstall  password uris|Sets up a [one-box configuration](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br/><br/>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/>URIs in 9.2|
+|-silentwebnodeinstall password uris|Configures a [web node](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br/><br/>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/><br/>URIs in 9.2|
+|-silentcomputenodeinstall|Configures a [compute node](configure-start-for-administrators.md#configure-server-for-operationalization) silently.  For example:<br/><br/>-silentcomputenodeinstall|9.1|
 |-setpassword password|Sets the password. Cannot be used <br/> if LDAP or AAD was configured.  For example:<br/><br/>-setpassword myPass123|9.1|
 |-preparedbmigration filePath|Migrates the data from current database to a different database schema. Takes the [path to the web node’s appsetting.json file](../operationalize/configure-find-admin-configuration-file.md) as an argument. This is uncommonly needed as a step when upgrading. For example:<br/><br/>-preparedbmigration \<web-node-dir>/appsettings.json|9.1|
 |-encryptsecret Secret CertificateStoreName CertificateStoreLocation CertificateSubjectName|Silently [encrypts secrets](#encrypt).  For example:<br/><br/>-encryptsecret&nbsp;theSecret&nbsp;Store&nbsp;Location Subject|9.1|
