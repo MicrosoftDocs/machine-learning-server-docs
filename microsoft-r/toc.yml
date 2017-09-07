@@ -1,0 +1,1199 @@
+- name: Overview
+  href: index.md
+  items:
+  - name: Welcome to Machine Learning Server
+    href: what-is-machine-learning-server.md
+  - name: What's new
+    href: whats-new-in-machine-learning-server.md
+  - name: Machine Learning at Microsoft
+    href: machine-learning-at-microsoft.md
+  - name: R Server's new name
+    href: rebranding-microsoft-r-server.md
+  - name: Microsoft R Client
+    href: r-client/what-is-microsoft-r-client.md
+- name: Install & configure
+  items:
+  - name: Supported platforms
+    href: install/r-server-install-supported-platforms.md
+  - name: Machine Learning Server
+    items:
+    - name: Windows
+      items:
+      - name: Install on Windows
+        href: install/r-server-install-windows.md
+      - name: Offline install
+        href: install/r-server-install-windows-offline.md
+      - name: Command line install
+        href: install/r-server-install-windows-command-line.md
+    - name: Linux
+      items:
+      - name: Install on Linux
+        href: install/r-server-install-linux-server.md
+      - name: Offline install
+        href: install/r-server-install-linux-offline.md
+      - name: Manage your installation
+        href: install/r-server-install-linux-manage-install.md
+      - name: Uninstall from Linux
+        href: install/r-server-install-linux-uninstall.md
+      - name: Install an older version
+        items:
+        - name: Install R Server 9.0.1
+          href: install/r-server-install-linux-server-901.md
+        - name: Install R Server 8.0.5
+          href: install/r-server-install-linux-server-805.md
+    - name: Hadoop
+      items:
+      - name: Install on Hadoop
+        href: install/r-server-install-hadoop.md
+        items:
+        - name: Cloudera Manager parcel installation
+          href: install/r-server-install-cloudera.md
+          items:
+          - name: Generate a parcel
+            href: install/r-server-install-cloudera-generate-parcel.md
+          - name: Deploy & activate
+            href: install/r-server-install-cloudera-deploy-activate.md
+          - name: Rollback to previous version
+            href: install/r-server-install-cloudera-rollback.md
+        - name: Command line installation (CDH, HDP, MapR)
+          href: install/r-server-install-hadoop-command-line.md
+        - name: Offline install
+          href: install/r-server-install-hadoop-offline.md
+        - name: Package dependency list
+          href: install/r-server-install-linux-hadoop-packages.md
+        - name: Manual package installation
+          href: install/r-server-install-hadoop-manual-package.md
+      - name: Post-install configuration
+        items:
+        - name: Adjust Hadoop configuration
+          href: install/r-server-install-hadoop-configuration-r-workloads.md
+        - name: Enforce a YARN queue assignment
+          href: install/r-server-install-hadoop-yarnqueueusage.md
+        - name: Troubleshoot installation problems
+          href: install/r-server-install-hadoop-troubleshoot.md
+      - name: Uninstall from Hadoop
+        href: install/r-server-install-uninstall-upgrade.md
+      - name: Install an older version
+        items:
+        - name: Install R Server 9.0.1
+          href: install/r-server-install-hadoop-901.md
+        - name: Install R Server 9.0.1 on CDH
+          href: install/r-server-install-cloudera-901.md
+        - name: Install R Server 8.0.5
+          href: install/r-server-install-hadoop-805.md
+    - name: Configure to operationalize
+      href: what-is-operationalization.md
+      items:
+      - name: 'Get started: admins'
+        href: operationalize/configure-start-for-administrators.md
+      - name: 'Configure: One-box'
+        href: operationalize/configure-machine-learning-server-one-box.md
+        items:
+        - name: 9.2.1
+          href: operationalize/configure-machine-learning-server-one-box.md
+        - name: 9.0/9.1
+          href: install/operationalize-r-server-one-box-config.md
+      - name: 'Configure: Enterprise'
+        href: operationalize/configure-machine-learning-server-enterprise.md
+        items:
+        - name: 9.2.1
+          href: operationalize/configure-machine-learning-server-enterprise.md
+        - name: 9.0/9.1
+          href: install/operationalize-r-server-enterprise-config.md
+      - name: Diagnostics & Troubleshooting
+        href: operationalize/configure-run-diagnostics.md
+      - name: Administration utility
+        href: operationalize/configure-use-admin-utility.md
+      - name: Database setup
+        href: operationalize/configure-remote-database-to-operationalize.md
+      - name: Capacity evaluation
+        href: operationalize/configure-evaluate-capacity.md
+      - name: Authentication
+        href: operationalize/configure-authentication.md
+      - name: Connection security (SSL/TLS)
+        href: operationalize/configure-https.md
+      - name: Roles & Permissions (RBAC)
+        href: operationalize/configure-roles.md
+      - name: CORS
+        href: operationalize/configure-cors.md
+      - name: R execution security
+        href: operationalize/configure-r-execution-security.md
+      - name: R package management
+        href: operationalize/configure-manage-r-packages.md
+      - name: Find install path
+        href: operationalize/configure-find-admin-configuration-file.md
+    - name: Pretrained models
+      href: install/microsoftml-install-pretrained-models.md
+    - name: Virtual machines (Cloud)
+      href: install/machine-learning-server-in-the-cloud.md
+      items:
+      - name: Azure HDInsight
+        href: install/machine-learning-server-on-azure-hdinsight.md
+      - name: Azure Linux VM
+        href: install/machine-learning-server-azure-vm-on-linux.md
+      - name: Azure Windows VM
+        href: https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure
+        maintainContext: true
+      - name: Data Science VM
+        href: install/r-server-vm-data-science.md
+  - name: Client-side
+    items:
+    - name: Microsoft R Client
+      href: r-client/what-is-microsoft-r-client.md
+      items:
+      - name: R Client on Windows
+        href: r-client/install-on-windows.md
+      - name: R Client on Linux
+        href: r-client/install-on-linux.md
+    - name: Python interpreter
+      href: install/python-libraries-interpreter.md
+  - name: R Server 9.1 or earlier
+    items:
+    - name: All platforms (archives??? redirect)
+    - name: Feature announcements in previous releases
+      href: whats-new-in-r-server.md
+    - name: On Teradata
+      items:
+      - name: Install R Server 9.0.1 on a Teradata Server
+        href: install/r-server-install-teradata-server.md
+      - name: Install R Server 8.0.5 on a Teradata Server
+        href: install/r-server-install-teradata-805.md
+      - name: Install R Server on a Teradata Client
+        href: install/r-server-install-teradata-client.md
+      - name: 'Get started: ScaleR on Teradata'
+        href: r/how-to-revoscaler-teradata.md
+- name: Quickstarts
+  items:
+  - name: Python
+    items:
+    - name: Deploy model as service
+      href: operationalize/python/quickstart-deploy-python-web-service.md
+  - name: R
+    items:
+    - name: Run R code with new functions
+      href: r/quickstart-run-r-code.md
+    - name: Deploy model as service
+      href: operationalize/quickstart-publish-r-web-service.md
+- name: Tutorials
+  items:
+  - name: Python
+  - name: R
+    href: r/tutorial-introduction.md
+    items:
+    - name: Explore R-to-RevoScaleR
+      href: r/tutorial-r-to-revoscaler.md
+    - name: Import & transform data
+      href: r/tutorial-revoscaler-data-import-transform.md
+    - name: Visualize & analyze data
+      href: r/tutorial-revoscaler-data-model-analysis.md
+    - name: Work with larger datasets
+      items:
+      - name: Flight delays data analysis
+        href: r/tutorial-revoscaler-large-data-airline.md
+      - name: Loan data analysis
+        href: r/tutorial-revoscaler-large-data-loan.md
+      - name: Census data analysis
+        href: r/tutorial-revoscaler-large-data-census.md
+      - name: Tips on big data computing
+        href: r/tutorial-large-data-tips.md
+- name: Samples & solutions
+  items:
+  - name: Python
+  - name: R
+    items:
+    - name: Sample data in RevoScaleR
+      href: r/sample-built-in-data.md
+    - name: RevoScaleR rxExecBy parallel processing example
+      href: r/tutorial-rxexecby.md
+    - name: R Server with Sparklyr example
+      href: r/tutorial-sparklyr-revoscaler.md
+    - name: Samples for MicrosoftML
+      href: r/sample-microsoftml.md
+  - name: Solution templates
+    href: r/sample-solutions.md
+- name: Concepts
+  items:
+  - name: Compute context
+    href: r/concept-what-is-compute-context.md
+  - name: MicrosoftML
+    href: r/concept-what-is-the-microsoftml-package.md
+  - name: RevoScaleR
+    href: r/concept-what-is-revoscaler.md
+  - name: Operationalization
+    href: operationalize/concept-operationalize-deploy-consume.md
+  - name: Data transformations
+    href: r/concept-what-is-data-transformations.md
+  - name: XDF files
+    href: r/concept-what-is-xdf.md
+- name: How-to guides
+  href: r/how-to-introduction.md
+  items:
+  - name: 1. Business understanding
+    items:
+    - name: Python
+    - name: R
+      items:
+      - name: How to use Machine Learning Server with other technologies
+        href: what-is-r-server-interoperability.md
+  - name: 2. Data aquisition
+    items:
+    - name: Python
+    - name: R
+      items:
+      - name: Import text data
+        href: r/how-to-revoscaler-data-import.md
+      - name: Import SQL Server data
+        href: r/how-to-revoscaler-data-sql.md
+      - name: Import ODBC data
+        href: r/how-to-revoscaler-data-odbc.md
+      - name: Access HDFS data
+        href: r/how-to-revoscaler-data-hdfs.md
+      - name: Use data source objects
+        href: r/how-to-revoscaler-data-source.md
+      - name: Transform & subset data
+        href: r/how-to-revoscaler-data-transform.md
+      - name: Sort data
+        href: r/how-to-revoscaler-data-sort.md
+      - name: Merge data
+        href: r/scaler-data-merge.md
+      - name: Summarize data
+        items:
+        - name: Statistical summaries
+          href: r/how-to-revoscaler-data-summaries.md
+        - name: Crosstabs
+          href: r/how-to-revoscaler-crosstabs.md
+      - name: Visualize data
+        href: r/how-to-revoscaler-visualize-huge-data-sets.md
+  - name: 3. Modeling
+    items:
+    - name: Python
+    - name: R
+      items:
+      - name: Models in RevoScaleR
+        href: r/how-to-revoscaler-models.md
+      - name: Choose a MicrosoftML algorithm
+        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
+      - name: Linear
+        href: r/how-to-revoscaler-linear-model.md
+      - name: Logistic regression
+        href: r/how-to-revoscaler-logistic-regression.md
+      - name: Generalized linear
+        href: r/how-to-revoscaler-generalized-linear-model.md
+      - name: Decision tree
+        href: r/how-to-revoscaler-decision-tree.md
+      - name: Decision forest
+        href: r/how-to-revoscaler-decision-forest.md
+      - name: Estimating with stochastic gradient boosting
+        href: r/how-to-revoscaler-boosting.md
+      - name: Naive Bayes Classification
+        href: r/how-to-revoscaler-naive-bayes.md
+      - name: Clustering
+        href: r/how-to-revoscaler-cluster.md
+      - name: Correlate data
+        href: r/how-to-revoscaler-covcor.md
+  - name: 4. Operationalization (deploy & consume)
+    items:
+    - name: Python
+      items:
+      - name: Authenticate
+        href: operationalize/python/how-to-authenticate-with-server-in-python.md
+      - name: Deploy & manage services
+        href: operationalize/python/how-to-deploy-manage-web-services.md
+      - name: Find & consume services
+        href: operationalize/python/how-to-consume-web-services.md
+    - name: R
+      items:
+      - name: Deploy & manage services
+        href: operationalize/how-to-deploy-web-service-publish-manage-in-r.md
+      - name: Consume (request-response)
+        href: operationalize/how-to-consume-web-service-interact-in-r.md
+      - name: Consume (asynchronous)
+        href: operationalize/how-to-consume-web-service-asynchronously-batch.md
+      - name: '[Archive] DeployR 8.x'
+        items:
+        - name: How to install DeployR
+          href: deployr/deployr-installation.md
+          items:
+          - name: Install DeployR for R Server for Windows
+            href: deployr/deployr-install-on-windows.md
+          - name: Install DeployR for Microsoft R Server 8.0.5 on Linux
+            href: deployr/deployr-install-on-linux.md
+          - name: Install DeployR 8.0.0
+            href: deployr/deployr-installing-configuring.md
+        - name: Getting Started with DeployR
+          items:
+          - name: About DeployR 8.x
+            href: deployr/deployr-about.md
+          - name: Getting Started for Application Developers
+            href: deployr/deployr-application-developer-getting-started.md
+          - name: Getting Started for Administrators
+            href: deployr/deployr-administrator-getting-started.md
+          - name: Getting Started for Data Scientists
+            href: deployr/deployr-data-scientist-getting-started.md
+        - name: Administration & Configuration
+          href: deployr/deployr-administrator-getting-started.md
+          items:
+          - name: Administration Console Help
+            href: deployr/deployr-admin-console-about.md
+          - name: About DeployR Administration Console
+            href: deployr/deployr-admin-console-about.md
+          - name: Creating & Managing User Accounts
+            href: deployr/deployr-admin-console-user-accounts.md
+          - name: Managing Permissions with Roles
+            href: deployr/deployr-admin-console-permissions-with-roles.md
+          - name: Managing R Scripts
+            href: deployr/deployr-admin-console-managing-r-scripts.md
+          - name: Managing R Boundaries
+            href: deployr/deployr-admin-managing-r-boundaries.md
+          - name: Managing Access with IP Filters
+            href: deployr/deployr-admin-managing-access-with-ip-filters.md
+          - name: Managing the Grid
+            href: deployr/deployr-admin-managing-the-grid.md
+          - name: Managing Server Policies
+            href: deployr/deployr-admin-managing-server-policies.md
+          - name: Restoring & Backing Up the Database
+            href: deployr/deployr-admin-console-database.md
+          - name: Monitoring Events
+            href: deployr/deployr-admin-monitoring-events.md
+          - name: Common Administrative Tasks
+            href: deployr/deployr-common-administration-tasks.md
+          - name: Troubleshooting & Diagnostics
+            href: deployr/deployr-admin-diagnostics-troubleshooting.md
+          - name: Scale & Throughput
+            href: deployr/deployr-admin-scale-and-throughput.md
+          - name: DeployR in the Cloud
+            href: deployr/deployr-admin-install-in-cloud.md
+          - name: Server & Grid High Availability
+            href: deployr/deployr-admin-configure-high-availability.md
+          - name: Managing Big Data
+            href: deployr/deployr-admin-manage-big-data.md
+          - name: Using Hadoop Impersonation & DeployR
+            href: deployr/deployr-admin-hadoop-impersonation.md
+          - name: R Package Management
+            href: deployr/deployr-admin-r-package-management.md
+          - name: Updating DeployR after Java Update
+            href: deployr/deployr-admin-java-version.md
+          - name: Reinstalling or Upgrading the R Dependency
+            href: deployr/deployr-admin-configure-reinstall-r.md
+        - name: Security on DeployR
+          href: deployr/deployr-security.md
+          items:
+          - name: Introduction
+            href: deployr/deployr-security.md
+          - name: Authentication & Authorization
+            href: deployr/deployr-security-authentication.md
+          - name: HTTPS & SSL/TLS Support
+            href: deployr/deployr-security-https.md
+          - name: Server Access Policies
+            href: deployr/deployr-security-server-access.md
+          - name: Project & Repository File Access Controls
+            href: deployr/deployr-security-project-access.md
+          - name: Password Policies
+            href: deployr/deployr-security-passwords.md
+          - name: Account Locking Policies
+            href: deployr/deployr-security-account-locking.md
+          - name: RServe Execution Context
+            href: deployr/deployr-security-rserve-execution-context.md
+        - name: APIs & Client Libraries
+          href: deployr/deployr-tools-and-samples.md
+          items:
+          - name: Developer Docs & Downloads
+            href: deployr/deployr-tools-and-samples.md
+          - name: API Overview
+            href: deployr/deployr-api-reference.md
+          - name: Client Library Tutorial
+            href: deployr/deployr-client-library.md
+          - name: RBroker Framework Tutorial
+            href: deployr/deployr-rbroker-framework.md
+          - name: API Explorer Tool
+            href: deployr/deployr-api-explorer-tool.md
+        - name: Writing Portable R Code
+          href: deployr/deployr-data-scientist-write-portable-r-code.md
+        - name: Repository Manager Help
+          href: deployr/deployr-repository-manager-about.md
+          items:
+          - name: About Repository Manager
+            href: deployr/deployr-repository-manager-about.md
+          - name: Working with Directories
+            href: deployr/deployr-repository-manager-directories.md
+          - name: Working with Files
+            href: deployr/deployr-repository-manager-files.md
+          - name: Testing & Debugging Scripts
+            href: deployr/deployr-repository-manager-testing-debugging-scripts.md
+    - name: APIs
+      items:
+      - name: About the REST APIs
+        href: operationalize/concept-api.md
+      - name: Integrate services into apps
+        href: operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md
+      - name: Manage access tokens
+        href: operationalize/how-to-manage-access-tokens.md
+  - name: Remote R code execution
+    items:
+    - name: Connect to remote server
+      href: operationalize/how-to-connect-log-in-with-mrsdeploy.md
+    - name: Execute code remotely
+      href: r/how-to-execute-code-remotely.md
+  - name: RevoScaleR on Hadoop
+    items:
+    - name: R
+      items:
+      - name: Spark
+        href: r/how-to-revoscaler-spark.md
+      - name: MapReduce
+        href: r/how-to-revoscaler-hadoop.md
+  - name: RevoScaleR development
+    items:
+    - name: R
+      items:
+      - name: Write custom chunking algorithms
+        href: r/how-to-developer-write-chunking-algorithms.md
+      - name: Write custom analyses for large data sets
+        href: r/how-to-developer-write-custom-analysis.md
+      - name: Convert model objects for use with PMML
+        href: r/how-to-developer-pmml.md
+      - name: Manage threads
+        href: r/how-to-developer-manage-threads.md
+    - name: Distribute workloads
+      href: r/how-to-revoscaler-distributed-computing.md
+      items:
+      - name: Compute context
+        href: r/how-to-revoscaler-distributed-computing-compute-context.md
+      - name: Distributed analysis
+        href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
+      - name: Background jobs
+        href: r/how-to-revoscaler-distributed-computing-background-jobs.md
+      - name: Parallel jobs
+        href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
+      - name: Parallel loops using foreach
+        href: r/how-to-revoscaler-distributed-computing-foreach.md
+      - name: Parallel execution using doRSR
+        href: r/how-to-revoscaler-distributed-computing-foreach.md
+      - name: Parallel algorithms with PemaR
+        href: r/how-to-developer-pemar.md
+- name: Reference
+  items:
+  - name: Python libraries
+    href: python-reference/introducing-python-package-reference.md
+    items:
+    - name: azureml-model-management-sdk
+      href: python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md
+      items:
+      - name: DeployClient
+        href: python-reference/azureml-model-management-sdk/deploy-client.md
+      - name: MLServer
+        href: python-reference/azureml-model-management-sdk/mlserver.md
+      - name: Operationalization
+        href: python-reference/azureml-model-management-sdk/operationalization.md
+      - name: OperationalizationDefinition
+        href: python-reference/azureml-model-management-sdk/operationalization-definition.md
+      - name: ServiceDefinition
+        href: python-reference/azureml-model-management-sdk/service-definition.md
+      - name: RealtimeDefinition
+        href: python-reference/azureml-model-management-sdk/realtime-definition.md
+      - name: Service
+        href: python-reference/azureml-model-management-sdk/service.md
+      - name: ServiceResponse
+        href: python-reference/azureml-model-management-sdk/service-response.md
+      - name: Batch
+        href: python-reference/azureml-model-management-sdk/batch.md
+      - name: BatchResponse
+        href: python-reference/azureml-model-management-sdk/batch-response.md
+    - name: revoscalepy
+      href: python-reference/revoscalepy/revoscalepy-package.md
+      items:
+      - name: rx_btrees
+        href: python-reference/revoscalepy/rx-btrees.md
+      - name: rx_cancel_job
+        href: python-reference/revoscalepy/rx-cancel-job.md
+      - name: rx_cleanup_jobs
+        href: python-reference/revoscalepy/rx-cleanup-jobs.md
+      - name: RxDataSource
+        href: python-reference/revoscalepy/RxDataSource.md
+      - name: rx_data_step
+        href: python-reference/revoscalepy/rx-data-step.md
+      - name: rx_delete_object
+        href: python-reference/revoscalepy/rx-delete-object.md
+      - name: rx_dforest
+        href: python-reference/revoscalepy/rx-dforest.md
+      - name: rx_dtree
+        href: python-reference/revoscalepy/rx-dtree.md
+      - name: rx_exec
+        href: python-reference/revoscalepy/rx-exec.md
+      - name: rx_get_compute_context
+        href: python-reference/revoscalepy/rx-get-compute-context.md
+      - name: rx_get_info
+        href: python-reference/revoscalepy/rx-get-info.md
+      - name: rx_get_job_info
+        href: python-reference/revoscalepy/rx-get-job-info.md
+      - name: rx_get_job_output
+        href: python-reference/revoscalepy/rx-get-job-output.md
+      - name: rx_get_job_results
+        href: python-reference/revoscalepy/rx-get-job-results.md
+      - name: rx_get_jobs
+        href: python-reference/revoscalepy/rx-get-jobs.md
+      - name: rx_get_job_status
+        href: python-reference/revoscalepy/rx-get-job-status.md
+      - name: rx_get_var_info
+        href: python-reference/revoscalepy/rx-get-var-info.md
+      - name: rx_get_var_names
+        href: python-reference/revoscalepy/rx-get-var-names.md
+      - name: rx_import
+        href: python-reference/revoscalepy/rx-import.md
+      - name: RxInSqlServer
+        href: python-reference/revoscalepy/RxInSqlServer.md
+      - name: rx_lin_mod
+        href: python-reference/revoscalepy/rx-lin-mod.md
+      - name: rx_list_keys
+        href: python-reference/revoscalepy/rx-list-keys.md
+      - name: RxLocalSeq
+        href: python-reference/revoscalepy/RxLocalSeq.md
+      - name: rx_logit
+        href: python-reference/revoscalepy/rx-logit.md
+      - name: RxMissingValues
+        href: python-reference/revoscalepy/RxMissingValues.md
+      - name: RxNativeFileSystem
+        href: python-reference/revoscalepy/RxNativeFileSystem.md
+      - name: RxOdbcData
+        href: python-reference/revoscalepy/RxOdbcData.md
+      - name: RxOptions
+        href: python-reference/revoscalepy/RxOptions.md
+      - name: rx_predict
+        href: python-reference/revoscalepy/rx-predict.md
+      - name: rx_predict_default
+        href: rx-predict-default.md
+      - name: rx_predict_rx_dtree
+        href: python-reference/revoscalepy/rx-predict-rx-dtree.md
+      - name: rx_predict_rx_dforest
+        href: python-reference/revoscalepy/rx-predict-rx-dforest.md
+      - name: rx_read_object
+        href: python-reference/revoscalepy/rx-read-object.md
+      - name: rx_read_xdf
+        href: python-reference/revoscalepy/rx-read-xdf.md
+      - name: RxRemoteJob
+        href: python-reference/revoscalepy/RxRemoteJob.md
+      - name: RxRemoteJobStatus
+        href: python-reference/revoscalepy/RxRemoteJobStatus.md
+      - name: rx_set_compute_context
+        href: python-reference/revoscalepy/rx-set-compute-context.md
+      - name: rx_set_var_info
+        href: python-reference/revoscalepy/rx-set-var-info.md
+      - name: rx_serialize_model
+        href: python-reference/revoscalepy/rx-serialize-model.md
+      - name: RxSqlServerData
+        href: python-reference/revoscalepy/RxSqlServerData.md
+      - name: rx_summary
+        href: python-reference/revoscalepy/rx-summary.md
+      - name: RxTextData
+        href: python-reference/revoscalepy/RxTextData.md
+      - name: rx_wait_for_job
+        href: python-reference/revoscalepy/rx-wait-for-job.md
+      - name: rx_write_object
+        href: python-reference/revoscalepy/rx-write-object.md
+      - name: RxXdfData
+        href: python-reference/revoscalepy/RxXdfData.md
+    - name: microsoftml
+      href: python-reference/microsoftml/microsoftml-package.md
+      items:
+      - name: categorical
+        href: python-reference/microsoftml/categorical.md
+      - name: categorical_hash
+        href: python-reference/microsoftml/categorical-hash.md
+      - name: concat
+        href: python-reference/microsoftml/concat.md
+      - name: 'count_select '
+        href: python-reference/microsoftml/count-select.md
+      - name: drop_columns
+        href: python-reference/microsoftml/drop-columns.md
+      - name: extract_pixels
+        href: python-reference/microsoftml/extract-pixels.md
+      - name: featurize_image
+        href: python-reference/microsoftml/featurize-image.md
+      - name: featurize_text
+        href: python-reference/microsoftml/featurize-text.md
+      - name: get_sentiment
+        href: python-reference/microsoftml/get-sentiment.md
+      - name: load_image
+        href: python-reference/microsoftml/load-image.md
+      - name: loss functions
+        href: python-reference/microsoftml/rx-fast-linear.md
+      - name: mutualinformation_select
+        href: python-reference/microsoftml/mutualinformation-select.md
+      - name: resize_image
+        href: python-reference/microsoftml/resize-image.md
+      - name: rx_fast_forest
+        href: python-reference/microsoftml/rx-fast-forest.md
+      - name: rx_fast_linear
+        href: python-reference/microsoftml/rx-fast-linear.md
+      - name: rx_fast_trees
+        href: python-reference/microsoftml/rx-fast-trees.md
+      - name: rx_featurize
+        href: python-reference/microsoftml/rx-featurize.md
+      - name: rx_logistic_regression
+        href: python-reference/microsoftml/rx-logistic-regression.md
+      - name: rx_neural_network
+        href: python-reference/microsoftml/rx-neural-network.md
+      - name: rx_oneclass_svm
+        href: python-reference/microsoftml/rx-oneclass-svm.md
+      - name: rx_predict
+        href: python-reference/microsoftml/rx-predict.md
+      - name: select_columns
+        href: python-reference/microsoftml/select-columns.md
+  - name: R packages
+    href: r-reference/introducing-r-server-r-package-reference.md
+    items:
+    - name: MicrosoftML
+      href: r-reference/microsoftml/microsoftml-package.md
+      items:
+      - name: categorical
+        href: r-reference/microsoftml/categorical.md
+      - name: categoricalHash
+        href: r-reference/microsoftml/categoricalhash.md
+      - name: concat
+        href: r-reference/microsoftml/concat.md
+      - name: extractPixels
+        href: r-reference/microsoftml/extractpixels.md
+      - name: fastForest
+        href: r-reference/microsoftml/fastforest.md
+      - name: fastLinear
+        href: r-reference/microsoftml/fastlinear.md
+      - name: fastTrees
+        href: r-reference/microsoftml/fasttrees.md
+      - name: featurizeImage
+        href: r-reference/microsoftml/featurizeimage.md
+      - name: featurizeText
+        href: r-reference/microsoftml/featurizetext.md
+      - name: getSentiment
+        href: r-reference/microsoftml/getsentiment.md
+      - name: loadImage
+        href: r-reference/microsoftml/loadimage.md
+      - name: logisticRegression
+        href: r-reference/microsoftml/logisticregression.md
+      - name: loss
+        href: r-reference/microsoftml/loss.md
+      - name: minCount
+        href: r-reference/microsoftml/mincount.md
+      - name: mlModel
+        href: r-reference/microsoftml/mlmodel.md
+      - name: mutualInformation
+        href: r-reference/microsoftml/mutualinformation.md
+      - name: NeuralNet
+        href: r-reference/microsoftml/neuralnet.md
+      - name: ngram
+        href: r-reference/microsoftml/ngram.md
+      - name: OneClassSvm
+        href: r-reference/microsoftml/oneclasssvm.md
+      - name: optimizer
+        href: r-reference/microsoftml/optimizer.md
+      - name: resizeImage
+        href: r-reference/microsoftml/resizeimage.md
+      - name: rxEnsemble
+        href: r-reference/microsoftml/rxensemble.md
+      - name: rxFastForest
+        href: r-reference/microsoftml/rxfastforest.md
+      - name: rxFastLinear
+        href: r-reference/microsoftml/rxfastlinear.md
+      - name: rxFastTrees
+        href: r-reference/microsoftml/rxfasttrees.md
+      - name: rxFeaturize
+        href: r-reference/microsoftml/rxfeaturize.md
+      - name: rxLogisticRegression
+        href: r-reference/microsoftml/logisticregression.md
+      - name: rxNeuralNet
+        href: r-reference/microsoftml/rxneuralnet.md
+      - name: rxOneClassSvm
+        href: r-reference/microsoftml/rxoneclasssvm.md
+      - name: rxPredict
+        href: r-reference/microsoftml/rxpredict.md
+      - name: selectFeatures
+        href: r-reference/microsoftml/selectfeatures.md
+    - name: mrsdeploy
+      href: r-reference/mrsdeploy/mrsdeploy-package.md
+      items:
+      - name: createSnapshot
+        href: r-reference/mrsdeploy/createsnapshot.md
+      - name: deleteRemoteFile
+        href: r-reference/mrsdeploy/deleteremotefile.md
+      - name: deleteService
+        href: r-reference/mrsdeploy/deleteservice.md
+      - name: deleteSnapshot
+        href: r-reference/mrsdeploy/deletesnapshot.md
+      - name: diffLocalRemote
+        href: r-reference/mrsdeploy/difflocalremote.md
+      - name: downloadSnapshot
+        href: r-reference/mrsdeploy/downloadsnapshot.md
+      - name: getRemoteFile
+        href: r-reference/mrsdeploy/getremotefile.md
+      - name: getRemoteObject
+        href: r-reference/mrsdeploy/getremoteobject.md
+      - name: getRemoteWorkspace
+        href: r-reference/mrsdeploy/getremoteworkspace.md
+      - name: getService
+        href: r-reference/mrsdeploy/getservice.md
+      - name: listRemoteFiles
+        href: r-reference/mrsdeploy/listremotefiles.md
+      - name: listServices
+        href: r-reference/mrsdeploy/listservices.md
+      - name: listSnapshots
+        href: r-reference/mrsdeploy/listsnapshots.md
+      - name: loadSnapshot
+        href: r-reference/mrsdeploy/loadsnapshot.md
+      - name: publishService
+        href: r-reference/mrsdeploy/publishservice.md
+      - name: putLocalFile
+        href: r-reference/mrsdeploy/putlocalfile.md
+      - name: putLocalObject
+        href: r-reference/mrsdeploy/putlocalobject.md
+      - name: putLocalWorkspace
+        href: r-reference/mrsdeploy/putlocalworkspace.md
+      - name: remoteCommandLine
+        href: r-reference/mrsdeploy/remotecommandline.md
+      - name: remoteExecute
+        href: r-reference/mrsdeploy/remoteexecute.md
+      - name: remoteLogin
+        href: r-reference/mrsdeploy/remotelogin.md
+      - name: remoteLoginAAD
+        href: r-reference/mrsdeploy/remoteloginaad.md
+      - name: remoteLogout
+        href: r-reference/mrsdeploy/remotelogout.md
+      - name: remoteScript
+        href: r-reference/mrsdeploy/remotescript.md
+      - name: updateService
+        href: r-reference/mrsdeploy/updateservice.md
+    - name: olapR
+      href: r-reference/olapr/olapr.md
+      items:
+      - name: Execute2D
+        href: r-reference/olapr/execute2d.md
+      - name: ExecuteMD
+        href: r-reference/olapr/executemd.md
+      - name: Explore
+        href: r-reference/olapr/explore.md
+      - name: OlapConnection
+        href: r-reference/olapr/olapconnection.md
+      - name: Query
+        href: r-reference/olapr/query.md
+    - name: RevoPemaR
+      href: r-reference/revopemar/pemar.md
+      items:
+      - name: PemaBaseClass-class
+        href: r-reference/revopemar/pemabaseclass-class.md
+      - name: PemaBaseClass
+        href: r-reference/revopemar/pemabaseclass.md
+      - name: PemaByGroup-class
+        href: r-reference/revopemar/pemabygroup-class.md
+      - name: PemaByGroup
+        href: r-reference/revopemar/pemabygroup.md
+      - name: pemaCompute
+        href: r-reference/revopemar/pemacompute.md
+      - name: PemaMean-class
+        href: r-reference/revopemar/pemamean-class.md
+      - name: PemaMean
+        href: r-reference/revopemar/pemamean.md
+      - name: setPemaClass
+        href: r-reference/revopemar/setpemaclass.md
+    - name: RevoScaleR
+      href: r-reference/revoscaler/revoscaler.md
+      items:
+      - name: 'Overview: Common ScaleR Functions'
+        href: r-reference/revoscaler/revoscaler.md
+      - name: 'Overview: Base R & ScaleR Function Comparisons'
+        href: r-reference/revoscaler/revoscaler-compared-to-base-r.md
+      - name: 'Overview: ScaleR functions for Teradata'
+        href: r-reference/revoscaler/revoscaler-teradata-functions.md
+      - name: 'Overview: ScaleR functions for Hadoop'
+        href: r-reference/revoscaler/revoscaler-hadoop-functions.md
+      - name: Functions by category
+        href: r-reference/revoscaler/revoanalytics-package.md
+      - name: RevoScaleR-defunct
+        href: r-reference/revoscaler/revoscaler-defunct.md
+      - name: RevoScaleR-deprecated
+        href: r-reference/revoscaler/revoscaler-deprecated.md
+      - name: Data sets
+        items:
+        - name: AirlineData87to08
+          href: r-reference/revoscaler/airlinedata87to08.md
+        - name: AirlineDemoSmall
+          href: r-reference/revoscaler/airlinedemosmall.md
+        - name: AirOnTime87to12
+          href: r-reference/revoscaler/airontime87to12.md
+        - name: CensusUS5Pct2000
+          href: r-reference/revoscaler/censusus5pct2000.md
+        - name: CensusWorkers
+          href: r-reference/revoscaler/censusworkers.md
+        - name: claims
+          href: r-reference/revoscaler/claims.md
+        - name: DJIAdaily
+          href: r-reference/revoscaler/djiadaily.md
+        - name: Kyphosis
+          href: r-reference/revoscaler/kyphosis.md
+        - name: mortDefaultSmall
+          href: r-reference/revoscaler/mortdefaultsmall.md
+      - name: Functions
+        items:
+        - name: as.gbm
+          href: r-reference/revoscaler/as-gbm.md
+        - name: as.glm
+          href: r-reference/revoscaler/as-glm.md
+        - name: as.kmeans
+          href: r-reference/revoscaler/as-kmeans.md
+        - name: as.lm
+          href: r-reference/revoscaler/as-lm.md
+        - name: as.naiveBayes
+          href: r-reference/revoscaler/as-naivebayes.md
+        - name: as.randomForest
+          href: r-reference/revoscaler/as-randomforest.md
+        - name: as.rpart
+          href: r-reference/revoscaler/as-rpart.md
+        - name: as.xtabs
+          href: r-reference/revoscaler/as-xtabs.md
+        - name: prune.rxDTree
+          href: r-reference/revoscaler/prune-rxdtree.md
+        - name: rxAddInheritance
+          href: r-reference/revoscaler/rxaddinheritance.md
+        - name: rxBTrees
+          href: r-reference/revoscaler/rxbtrees.md
+        - name: rxCancelJob
+          href: r-reference/revoscaler/rxcanceljob.md
+        - name: rxChiSquaredTest
+          href: r-reference/revoscaler/rxchisquaredtest.md
+        - name: rxCleanup
+          href: r-reference/revoscaler/rxcleanup.md
+        - name: rxCompareContexts
+          href: r-reference/revoscaler/rxcomparecontexts.md
+        - name: rxCompressXdf
+          href: r-reference/revoscaler/rxcompressxdf.md
+        - name: RxComputeContext-class
+          href: r-reference/revoscaler/rxcomputecontext-class.md
+        - name: RxComputeContext
+          href: r-reference/revoscaler/rxcomputecontext.md
+        - name: rxCovCor
+          href: r-reference/revoscaler/rxcovcor.md
+        - name: rxCovRegression
+          href: r-reference/revoscaler/rxcovregression.md
+        - name: rxCreateColInfo
+          href: r-reference/revoscaler/rxcreatecolinfo.md
+        - name: rxCrossTabs
+          href: r-reference/revoscaler/rxcrosstabs.md
+        - name: rxCube
+          href: r-reference/revoscaler/rxcube.md
+        - name: RxDataSource-class
+          href: r-reference/revoscaler/rxdatasource-class.md
+        - name: RxDataSource
+          href: r-reference/revoscaler/rxdatasource.md
+        - name: rxDataStep
+          href: r-reference/revoscaler/rxdatastep.md
+        - name: rxDForest
+          href: r-reference/revoscaler/rxdforest.md
+        - name: rxDForestUtils
+          href: r-reference/revoscaler/rxdforestutils.md
+        - name: RxDistributedHpa-class
+          href: r-reference/revoscaler/rxdistributedhpa-class.md
+        - name: rxDistributeJob
+          href: r-reference/revoscaler/rxdistributejob.md
+        - name: rxDTree
+          href: r-reference/revoscaler/rxdtree.md
+        - name: rxDTreeBestCp
+          href: r-reference/revoscaler/rxdtreebestcp.md
+        - name: rxElemArg
+          href: r-reference/revoscaler/rxelemarg.md
+        - name: rxExec
+          href: r-reference/revoscaler/rxexec.md
+        - name: rxExecBy
+          href: r-reference/revoscaler/rxexecby.md
+        - name: rxExecByPartition
+          href: r-reference/revoscaler/rxexecbypartition.md
+        - name: rxExecuteSQLDDL
+          href: r-reference/revoscaler/rxexecutesqlddl.md
+        - name: rxExpression
+          href: r-reference/revoscaler/rxexpression.md
+        - name: rxFactors
+          href: r-reference/revoscaler/rxfactors.md
+        - name: RxFileData-class
+          href: r-reference/revoscaler/rxfiledata-class.md
+        - name: RxFileSystem
+          href: r-reference/revoscaler/rxfilesystem.md
+        - name: rxFindFileInPath
+          href: r-reference/revoscaler/rxfindfileinpath.md
+        - name: rxFindPackage
+          href: r-reference/revoscaler/rxfindpackage.md
+        - name: RxForeachDoPar-class
+          href: r-reference/revoscaler/rxforeachdopar-class.md
+        - name: RxForeachDoPar
+          href: r-reference/revoscaler/rxforeachdopar.md
+        - name: rxFormula
+          href: r-reference/revoscaler/rxformula.md
+        - name: rxGetAvailableNodes
+          href: r-reference/revoscaler/rxgetavailablenodes.md
+        - name: rxGetEnableThreadPool
+          href: r-reference/revoscaler/rxgetenablethreadpool.md
+        - name: rxGetFuzzyDist
+          href: r-reference/revoscaler/rxgetfuzzydist.md
+        - name: rxGetFuzzyKeys
+          href: r-reference/revoscaler/rxgetfuzzykeys.md
+        - name: rxGetInfoXdf
+          href: r-reference/revoscaler/rxgetinfoxdf.md
+        - name: rxGetJobInfo
+          href: r-reference/revoscaler/rxgetjobinfo.md
+        - name: rxGetJobOutput
+          href: r-reference/revoscaler/rxgetjoboutput.md
+        - name: rxGetJobResults
+          href: r-reference/revoscaler/rxgetjobresults.md
+        - name: rxGetJobs
+          href: r-reference/revoscaler/rxgetjobs.md
+        - name: rxGetPartitions
+          href: r-reference/revoscaler/rxgetpartitions.md
+        - name: rxGetSparklyrConnection
+          href: r-reference/revoscaler/rxgetsparklyrconnection.md
+        - name: rxGetNodeInfo
+          href: r-reference/revoscaler/rxgetnodeinfo.md
+        - name: rxGetVarInfoXdf
+          href: r-reference/revoscaler/rxgetvarinfoxdf.md
+        - name: rxGetVarNames
+          href: r-reference/revoscaler/rxgetvarnames.md
+        - name: rxGLM
+          href: r-reference/revoscaler/rxglm.md
+        - name: rxHadoopCommand
+          href: r-reference/revoscaler/rxhadoopcommand.md
+        - name: RxHadoopMR-class
+          href: r-reference/revoscaler/rxhadoopmr-class.md
+        - name: RxHadoopMR
+          href: r-reference/revoscaler/rxhadoopmr.md
+        - name: rxHdfsConnect
+          href: r-reference/revoscaler/rxhdfsconnect.md
+        - name: RxHdfsFileSystem
+          href: r-reference/revoscaler/rxhdfsfilesystem.md
+        - name: rxHistogram
+          href: r-reference/revoscaler/rxhistogram.md
+        - name: RxHPCServer-class
+          href: r-reference/revoscaler/rxhpcserver-class.md
+        - name: rxImport
+          href: r-reference/revoscaler/rximport.md
+        - name: RxInSqlServer-class
+          href: r-reference/revoscaler/rxinsqlserver-class.md
+        - name: RxInSqlServer
+          href: r-reference/revoscaler/rxinsqlserver.md
+        - name: rxInstalledPackages
+          href: r-reference/revoscaler/rxinstalledpackages.md
+        - name: rxInstallPackages
+          href: r-reference/revoscaler/rxinstallpackages.md
+        - name: RxInTeradata-class
+          href: r-reference/revoscaler/rxinteradata-class.md
+        - name: RxInTeradata
+          href: r-reference/revoscaler/rxinteradata.md
+        - name: rxKmeans
+          href: r-reference/revoscaler/rxkmeans.md
+        - name: rxLaunchClusterTaskManager
+          href: r-reference/revoscaler/rxlaunchclustertaskmanager.md
+        - name: rxLinePlot
+          href: r-reference/revoscaler/rxlineplot.md
+        - name: rxLinMod
+          href: r-reference/revoscaler/rxlinmod.md
+        - name: RxLocalParallel-class
+          href: r-reference/revoscaler/rxlocalparallel-class.md
+        - name: RxLocalParallel
+          href: r-reference/revoscaler/rxlocalparallel.md
+        - name: RxLocalSeq-class
+          href: r-reference/revoscaler/rxlocalseq-class.md
+        - name: RxLocalSeq
+          href: r-reference/revoscaler/rxlocalseq.md
+        - name: rxLocateFile
+          href: r-reference/revoscaler/rxlocatefile.md
+        - name: rxLogit
+          href: r-reference/revoscaler/rxlogit.md
+        - name: rxLorenz
+          href: r-reference/revoscaler/rxlorenz.md
+        - name: rxMakeRNodeNames
+          href: r-reference/revoscaler/rxmakernodenames.md
+        - name: rxMarginals
+          href: r-reference/revoscaler/rxmarginals.md
+        - name: rxMergeXdf
+          href: r-reference/revoscaler/rxmergexdf.md
+        - name: rxMultiTest
+          href: r-reference/revoscaler/rxmultitest.md
+        - name: rxNaiveBayes
+          href: r-reference/revoscaler/rxnaivebayes.md
+        - name: RxNativeFileSystem
+          href: r-reference/revoscaler/rxnativefilesystem.md
+        - name: rxNew
+          href: r-reference/revoscaler/rxnew.md
+        - name: rxOAuthParameters
+          href: r-reference/revoscaler/rxoauthparameters.md
+        - name: RxOdbcData-class
+          href: r-reference/revoscaler/rxodbcdata-class.md
+        - name: RxOdbcData
+          href: r-reference/revoscaler/rxodbcdata.md
+        - name: rxOpen-methods
+          href: r-reference/revoscaler/rxopen-methods.md
+        - name: rxOptions
+          href: r-reference/revoscaler/rxoptions.md
+        - name: rxPackage
+          href: r-reference/revoscaler/rxpackage.md
+        - name: rxPairwiseCrosstab
+          href: r-reference/revoscaler/rxpairwisecrosstab.md
+        - name: rxPingNodes
+          href: r-reference/revoscaler/rxpingnodes.md
+        - name: rxPredict
+          href: r-reference/revoscaler/rxpredict.md
+        - name: rxPredict.rxDForest
+          href: r-reference/revoscaler/rxpredict-rxdforest.md
+        - name: rxPredict.rxDTree
+          href: r-reference/revoscaler/rxpredict-rxdtree.md
+        - name: rxPredict.rxNaiveBayes
+          href: r-reference/revoscaler/rxpredict-rxnaivebayes.md
+        - name: rxPrivacyControl
+          href: r-reference/revoscaler/rxprivacycontrol.md
+        - name: rxQuantile
+          href: r-reference/revoscaler/rxquantile.md
+        - name: rxReadXdf
+          href: r-reference/revoscaler/rxreadxdf.md
+        - name: rxRealtimeScoring
+          href: r-reference/revoscaler/rxrealtimescoring.md
+        - name: rxRemoteCall
+          href: r-reference/revoscaler/rxremotecall.md
+        - name: rxRemoteFilePath
+          href: r-reference/revoscaler/rxremotefilepath.md
+        - name: rxRemoteGetId
+          href: r-reference/revoscaler/rxremotegetid.md
+        - name: rxRemoteHadoopMRCall
+          href: r-reference/revoscaler/rxremotehadoopmrcall.md
+        - name: rxRemovePackages
+          href: r-reference/revoscaler/rxremovepackages.md
+        - name: rxResultsDF
+          href: r-reference/revoscaler/rxresultsdf.md
+        - name: rxRiskRatio
+          href: r-reference/revoscaler/rxriskratio.md
+        - name: rxRng
+          href: r-reference/revoscaler/rxrng.md
+        - name: rxRoc
+          href: r-reference/revoscaler/rxroc.md
+        - name: RxSasData-class
+          href: r-reference/revoscaler/rxsasdata-class.md
+        - name: RxSasData
+          href: r-reference/revoscaler/rxsasdata.md
+        - name: rxSerializeModel
+          href: r-reference/revoscaler/rxserializemodel.md
+        - name: rxSetComputeContext
+          href: r-reference/revoscaler/rxsetcomputecontext.md
+        - name: rxSetFileSystem
+          href: r-reference/revoscaler/rxsetfilesystem.md
+        - name: rxSetInfo
+          href: r-reference/revoscaler/rxsetinfo.md
+        - name: rxSetVarInfoXdf
+          href: r-reference/revoscaler/rxsetvarinfoxdf.md
+        - name: rxSortXdf
+          href: r-reference/revoscaler/rxsortxdf.md
+        - name: RxSpark-class
+          href: r-reference/revoscaler/rxspark-class.md
+        - name: RxSpark
+          href: r-reference/revoscaler/rxspark.md
+        - name: rxSparkCacheData
+          href: r-reference/revoscaler/rxsparkcachedata.md
+        - name: RxSparkData
+          href: r-reference/revoscaler/rxsparkdata.md
+        - name: rxSparkDataOps
+          href: r-reference/revoscaler/rxsparkdataops.md
+        - name: rxSplitXdf
+          href: r-reference/revoscaler/rxsplitxdf.md
+        - name: RxSpssData-class
+          href: r-reference/revoscaler/rxspssdata-class.md
+        - name: RxSpssData
+          href: r-reference/revoscaler/rxspssdata.md
+        - name: rxSqlLibPaths
+          href: r-reference/revoscaler/rxsqllibpaths.md
+        - name: RxSqlServerData-class
+          href: r-reference/revoscaler/rxsqlserverdata-class.md
+        - name: RxSqlServerData
+          href: r-reference/revoscaler/rxsqlserverdata.md
+        - name: rxSqlServerDropTable
+          href: r-reference/revoscaler/rxsqlserverdroptable.md
+        - name: rxStepControl
+          href: r-reference/revoscaler/rxstepcontrol.md
+        - name: rxStepPlot
+          href: r-reference/revoscaler/rxstepplot.md
+        - name: rxStopEngine
+          href: r-reference/revoscaler/rxstopengine.md
+        - name: rxSummary
+          href: r-reference/revoscaler/rxsummary.md
+        - name: rxSyncPackages
+          href: r-reference/revoscaler/rxsyncpackages.md
+        - name: RxTeradata-class
+          href: r-reference/revoscaler/rxteradata-class.md
+        - name: RxTeradata
+          href: r-reference/revoscaler/rxteradata.md
+        - name: rxTeradataSql
+          href: r-reference/revoscaler/rxteradatasql.md
+        - name: RxTextData-class
+          href: r-reference/revoscaler/rxtextdata-class.md
+        - name: RxTextData
+          href: r-reference/revoscaler/rxtextdata.md
+        - name: rxTextToXdf
+          href: r-reference/revoscaler/rxtexttoxdf.md
+        - name: rxTlcBridge
+          href: r-reference/revoscaler/rxtlcbridge.md
+        - name: rxTransform
+          href: r-reference/revoscaler/rxtransform.md
+        - name: rxTweedie
+          href: r-reference/revoscaler/rxtweedie.md
+        - name: rxWaitForJob
+          href: r-reference/revoscaler/rxwaitforjob.md
+        - name: rxWriteObject
+          href: r-reference/revoscaler/rxwriteobject.md
+        - name: RxXdfData-class
+          href: r-reference/revoscaler/rxxdfdata-class.md
+        - name: RxXdfData
+          href: r-reference/revoscaler/rxxdfdata.md
+        - name: rxXdfFileName
+          href: r-reference/revoscaler/rxxdffilename.md
+        - name: rxXdfToText
+          href: r-reference/revoscaler/rxxdftotext.md
+    - name: RevoUtils
+      href: r-reference/revoutils/revoutils.md
+      items:
+      - name: getRevoRepos
+        href: r-reference/revoutils/getrevorepos.md
+      - name: readNews
+        href: r-reference/revoutils/readnews.md
+      - name: Revo.home
+        href: r-reference/revoutils/revo-home.md
+      - name: RevoInfo
+        href: r-reference/revoutils/revoinfo.md
+      - name: totalSystemMemory
+        href: r-reference/revoutils/totalsystemmemory.md
+    - name: sqlrutils
+      href: r-reference/sqlrutils/sqlrutils.md
+      items:
+      - name: executeStoredProcedure
+        href: r-reference/sqlrutils/executestoredprocedure.md
+      - name: getInputParameters
+        href: r-reference/sqlrutils/getinputparameters.md
+      - name: InputData
+        href: r-reference/sqlrutils/inputdata.md
+      - name: InputParameter
+        href: r-reference/sqlrutils/inputparameter.md
+      - name: OutputData
+        href: r-reference/sqlrutils/outputdata.md
+      - name: OutputParameter
+        href: r-reference/sqlrutils/outputparameter.md
+      - name: registerStoredProcedure
+        href: r-reference/sqlrutils/registerstoredprocedure.md
+      - name: setInputDataQuery
+        href: r-reference/sqlrutils/setinputdataquery.md
+      - name: setInputParameterValue
+        href: r-reference/sqlrutils/setinputparametervalue.md
+      - name: StoredProcedure
+        href: r-reference/sqlrutils/storedprocedure.md
+- name: Resources
+  items:
+  - name: Servicing support policy
+    href: resources-servicing-support.md
+  - name: Known issues
+    href: resources-known-issues.md
+  - name: Deprecated & discontinued features
+    href: resources-deprecated-features.md
+  - name: Opt out of usage data collection
+    href: resources-opting-out.md
+  - name: Additional resources
+    href: resources-more.md
+  - name: Glossary
+    href: resources-glossary.md
