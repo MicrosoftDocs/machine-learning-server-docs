@@ -53,6 +53,10 @@ sections:
       html: <ul><li>Use pyspark and revoscalepy together</li></ul>
     - title: R Tutorials
       html: <ul><li><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a><li><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a><li><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></li></ul>
+  - type: paragraph
+    text: '<big>Python Tutorials</big> <ul><li>Use pyspark and revoscalepy together</li></ul>'
+  - type: paragraph
+    text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
 - title: Samples
   items:
   - type: paragraph
