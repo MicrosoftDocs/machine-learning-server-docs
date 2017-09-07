@@ -145,6 +145,8 @@
         href: r-client/install-on-windows.md
       - name: R Client on Linux
         href: r-client/install-on-linux.md
+      - name: Server compatibility
+        href: r-client/compatibility-with-server.md
     - name: Python interpreter
       href: install/python-libraries-interpreter.md
   - name: R Server 9.1 or earlier
