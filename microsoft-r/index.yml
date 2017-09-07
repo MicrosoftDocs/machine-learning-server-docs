@@ -37,7 +37,7 @@ sections:
         values:
         - href: /r-server/r/quickstart-run-r-code
         - href: 
-      - title: Deploy a model as web service in Machine Learning Server
+      - title: Deploy a model as a web service in Machine Learning Server
         values:
           - href: /r-server/operationalize/quickstart-publish-r-web-service
           - href: /r-server/operationalize/python/quickstart-deploy-python-web-service
@@ -50,9 +50,9 @@ sections:
     className: cardsD
     items:
     - title: Python Tutorials
-      html: <p>Explore Python-to-revoscalepy</p>
+      html: <ul><li>Use pyspark and revoscalepy together</li></ul>
     - title: R Tutorials
-      html: <p><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></p>
+      html: <p><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a></p><p><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></p><ul><li><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a><li><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a><li><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></li></ul>
 - title: Samples
   items:
   - type: paragraph
