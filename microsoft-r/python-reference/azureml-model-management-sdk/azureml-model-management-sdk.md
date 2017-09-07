@@ -31,6 +31,7 @@ ms.technology: "r-server"
 
 This topic is a high-level description of library functionality. These classes and functions can be called directly. For syntax and other details, see the individual function help topics in the table of contents.
 
+<br/>
 
 | Library details | |
 |--------|-|
