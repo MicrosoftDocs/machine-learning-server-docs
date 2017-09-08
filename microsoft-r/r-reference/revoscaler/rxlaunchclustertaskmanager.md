@@ -65,9 +65,9 @@ For other compute contexts, if compute context is not supplied, current compute 
 UI is available for the context, this function will report an error.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

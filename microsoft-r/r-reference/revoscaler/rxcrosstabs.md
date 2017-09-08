@@ -265,8 +265,8 @@ formula used in the `rxCrossTabs` call.
 character vector of dependent variable names as extracted from the formula.
 
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

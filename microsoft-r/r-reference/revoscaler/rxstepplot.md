@@ -74,8 +74,8 @@ Plot stepwise coefficients for `rxLinMod`, `rxLogit` and `rxGlm` objects.
  
 the nonzero stepwise coefficients are returned invisibly.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

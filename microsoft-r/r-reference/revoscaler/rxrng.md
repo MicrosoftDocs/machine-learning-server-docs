@@ -115,9 +115,9 @@ independent streams can also be obtained from some of the other kinds
 using block-splitting and/or leapfrogging methods.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

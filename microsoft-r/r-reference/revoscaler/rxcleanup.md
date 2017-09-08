@@ -76,9 +76,9 @@ for a single job to each element in the list.
  
 This function is called for its side effects (removing job artifacts); it does not have a useful return value.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

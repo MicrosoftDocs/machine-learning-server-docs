@@ -131,9 +131,9 @@ Missing values are removed before computing the quantiles.
  
 A vector the length of `probs` is returned; if `names = TRUE`, it has a names attribute. 
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

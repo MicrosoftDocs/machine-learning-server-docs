@@ -100,9 +100,9 @@ invisibly.
 `FALSE` otherwise (for example, if the table did not exist).
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

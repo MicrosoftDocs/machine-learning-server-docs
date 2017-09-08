@@ -217,9 +217,9 @@ This algorithm is single-threaded and will always attempt to load the entire dat
 memory.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

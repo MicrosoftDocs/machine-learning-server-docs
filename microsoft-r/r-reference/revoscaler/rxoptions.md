@@ -333,14 +333,14 @@ list is returned as an invisible object. For `rxGetOption`, the current
 value of the requested option is returned.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  
  ##See Also
  
-[RevoScaleR](revoAnalytics-package.in.md),
+[RevoScaleR](revoAnalytics.md),
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxForeachDoPar](RxForeachDoPar.md),

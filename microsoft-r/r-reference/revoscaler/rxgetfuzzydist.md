@@ -139,8 +139,8 @@ For information on phonetic conversions, see [rxGetFuzzyKeys](rxGetFuzzyKeys.md)
 A data frame or data source containing the distances and either string and dictionary values or indexes. 
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

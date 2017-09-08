@@ -94,8 +94,8 @@ For `rxCorData` a `(p - 1) x (p - 1)`
 numeric matrix containing the correlations amongst the non-intercept terms in
 the model matrix.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

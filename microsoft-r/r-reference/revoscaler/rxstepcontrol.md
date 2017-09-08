@@ -122,9 +122,9 @@ in the initial `rxLogit` or `rxGlm` call. When `returnAlways=TRUE`,
  
 A list containing the options.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

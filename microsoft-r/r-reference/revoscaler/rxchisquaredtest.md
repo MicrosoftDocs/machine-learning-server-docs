@@ -76,8 +76,8 @@ Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coeff
 an object of class rxMultiTest.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

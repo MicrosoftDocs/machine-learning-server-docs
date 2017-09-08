@@ -93,8 +93,8 @@ print  (x, digits = 3, scientific = FALSE, p.value.digits = 3, ...)
  ##Value
  a rxPairwiseCrossTabList object. 
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

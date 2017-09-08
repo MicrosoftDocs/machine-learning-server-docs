@@ -434,9 +434,9 @@ Different threads on different nodes will be using different random streams so t
 different but equivalent results might be obtained for different number of threads.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

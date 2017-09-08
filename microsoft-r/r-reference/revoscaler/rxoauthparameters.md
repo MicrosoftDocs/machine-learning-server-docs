@@ -90,9 +90,9 @@ allows the specification of parameters that can be set to retreive a token.
 An rxOAuthParameters list object. This object may be used in
 [RxHdfsFileSystem](RxHdfsFileSystem.md) to set the OAuth request method for WebHdfs usage.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

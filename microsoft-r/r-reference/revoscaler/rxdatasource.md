@@ -68,8 +68,8 @@ output object. Additional arguments will then be applied.
  
 A type of RxDataSource data source object.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

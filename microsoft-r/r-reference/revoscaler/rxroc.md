@@ -175,9 +175,9 @@ variables: `threshold`, `sensitivity`, `specificity`, and
 The `rxAuc` S3 method for an `rxRoc` object returns the AUC (area
 under the curve) summary statistic.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

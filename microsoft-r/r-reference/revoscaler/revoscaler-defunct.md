@@ -107,8 +107,8 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
 [rxGetInfo](rxGetInfoXdf.md) should be used instead of `rxGetInfoXdf`.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

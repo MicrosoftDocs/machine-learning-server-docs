@@ -311,9 +311,9 @@ resulting in `xVal * ((maxDepth + 1) + 1)` additional passes for cross validatio
 
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

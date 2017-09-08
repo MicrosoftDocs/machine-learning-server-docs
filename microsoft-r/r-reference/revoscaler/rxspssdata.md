@@ -174,8 +174,8 @@ The `tail` method is not functional for this data source type and will report an
  
 object of class RxSpssData.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

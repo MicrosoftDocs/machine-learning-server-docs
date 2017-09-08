@@ -474,8 +474,8 @@ Use [rxGetAvailableNodes](rxGetAvailableNodes.md) instead of  `rxGetNodes`.
 For `rxSortXdf`: If sorting is successful, `TRUE`
 is returned; otherwise `FALSE`is returned.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

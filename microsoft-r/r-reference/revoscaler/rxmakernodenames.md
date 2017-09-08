@@ -78,9 +78,9 @@ from the associated computer. Note also that once a host name has been converted
 it is impossible to guarantee the reverse conversion.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

@@ -267,7 +267,7 @@ at the R prompt):
 * [as.kmeans](as.kmeans.md): Coerce an `rxKmeans` object to an `kmeans` object for use with the **pmml** package.
 
 
-* [as.randomForest](as.randomeforest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
+* [as.randomForest](as.randomforest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
 
 
 * [as.gbm](as.gbm.md): Coerce an `rxBTrees` object to a `gbm` object for use with the **pmml** package.

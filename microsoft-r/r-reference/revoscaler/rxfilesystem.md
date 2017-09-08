@@ -73,8 +73,8 @@ A type of RxFileSystem file system object. This object may be used in
 [rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
 [RxXdfData](RxXdfData.md) to set the file system.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

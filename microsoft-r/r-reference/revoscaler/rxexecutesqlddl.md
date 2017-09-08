@@ -61,9 +61,9 @@ Returns `NULL`; executed for its side-effect (the manipulation of the
 SQL data source).
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

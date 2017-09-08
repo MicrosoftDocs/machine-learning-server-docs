@@ -57,8 +57,8 @@ names will be used in the return value.
  
 character vector containing the names of the variables in the data source or data frame.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

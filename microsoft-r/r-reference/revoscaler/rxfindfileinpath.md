@@ -68,9 +68,9 @@ with the same `fileName`, the first instance of a directory in the path containi
  
 Returns NULL if the target file is not found in any of the possible locations, or the path to the file (not including the file name) if it is found.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

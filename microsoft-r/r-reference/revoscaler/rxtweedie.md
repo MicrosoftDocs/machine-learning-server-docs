@@ -62,8 +62,8 @@ This provides a way to specify the var.power and the link.power arguments to the
  
  
        
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

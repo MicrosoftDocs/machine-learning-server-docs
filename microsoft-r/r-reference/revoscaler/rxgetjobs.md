@@ -104,9 +104,9 @@ using the `startTime` and `endTime` parameters to narrow your search.
  
 Returns a `rxJobInfoList`, list of job information objects based on the compute context.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

@@ -131,9 +131,9 @@ The following is the list of models that are currently supported in real-time sc
 
 `rxUnserializeModel` returns original R model object. If metadata is also present returns a list containing the original model object and metadata.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

@@ -189,8 +189,8 @@ are written to the specified `outFile` file and an RxXdfData object is returned
 *invisibly* corresponding to the output file.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

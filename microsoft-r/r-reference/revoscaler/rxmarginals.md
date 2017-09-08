@@ -71,8 +71,8 @@ list for each contingency table stored in an rxCrossTabs object. Each element
 of the list contains a list of the marginal means (row, column, and grand) if
 `output` is `"means"` or marginal sums otherwise.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

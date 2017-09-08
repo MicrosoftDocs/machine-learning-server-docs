@@ -73,8 +73,8 @@ This function creates the data source instance in the Microsoft R Services Compu
 actually open the data. The methods [rxOpen](rxOpen-methods.md) and
 [rxClose](rxOpen-methods.md) will open and close the data.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

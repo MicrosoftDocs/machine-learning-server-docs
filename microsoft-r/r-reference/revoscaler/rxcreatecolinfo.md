@@ -87,7 +87,7 @@ It is also useful for repeated analysis on non-xdf data sources.
 A `colInfo` list that can be used as input for [rxImport](rxImport.md) and in data sources such as
 [RxTextData](RxTextData.md) and [RxSqlServerData](RxSqlServerData.md).
  
- ##Author(s)
+
  Microsoft Corporation [`Microsoft Technical Support`](http://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  

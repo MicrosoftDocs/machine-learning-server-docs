@@ -65,7 +65,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `outData`
- file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, a character string specifying  the output ‘.xdf’ file, a RxXdfData object, a RxOdbcData data source, or a RxSqlServerData  data source. `outData` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
+ file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, a character string specifying  the output ï¿½.xdfï¿½ file, a RxXdfData object, a RxOdbcData data source, or a RxSqlServerData  data source. `outData` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
   
   
     
@@ -278,8 +278,8 @@ in the data) have no effect.
 
 
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

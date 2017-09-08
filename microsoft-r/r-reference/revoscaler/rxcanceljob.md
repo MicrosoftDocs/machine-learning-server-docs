@@ -75,9 +75,9 @@ may get an error message if the job was not completely submitted before you pres
  
 `TRUE` if the job is successfully canceled; `FALSE` otherwise.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

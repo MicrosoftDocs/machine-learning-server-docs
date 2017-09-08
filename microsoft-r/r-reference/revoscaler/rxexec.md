@@ -203,8 +203,8 @@ If a waiting compute context is active, a list with an element for each job, whe
 returned by that job's function call(s). 
 If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResults](rxGetJobResults.md).
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

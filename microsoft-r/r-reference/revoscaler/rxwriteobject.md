@@ -160,9 +160,9 @@ and on the underlying package functions.
 `rxWriteObject` and `rxDeleteObject` return logical, `TRUE` on success.
 `rxListKeys` returns a single column data frame containing strings.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

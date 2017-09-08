@@ -79,9 +79,7 @@ An example of usage can be found in the **RevoPemaR** package.
  ##Value
  
 The result of the distributed computation.
- 
- ##Author(s)
- Microsoft Corporation [mrspack@microsoft.com](mrspack@microsoft.com)
+
  
  
  

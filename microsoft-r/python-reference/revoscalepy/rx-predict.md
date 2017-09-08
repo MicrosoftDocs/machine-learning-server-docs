@@ -306,10 +306,6 @@ additional parameters
 a data frame or a data source object of prediction results.
 
 
-## See also
-
-[`rx_predict`](revoscalepy/rx-predict.md).
-
 
 ## Example
 
@@ -475,10 +471,6 @@ additional parameters
 
 a data frame or a data source object of prediction results.
 
-
-## See also
-
-[`rx_predict`](revoscalepy/rx-predict.md).
 
 
 ## Example
@@ -657,10 +649,6 @@ additional parameters
 
 a data frame or a data source object of prediction results.
 
-
-## See also
-
-[`rx_predict`](revoscalepy/rx-predict.md).
 
 
 ## Example

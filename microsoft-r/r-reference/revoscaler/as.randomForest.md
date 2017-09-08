@@ -84,8 +84,8 @@ In many cases, this method can be used to coerce an object for use with the **pm
 an object of class randomForest.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

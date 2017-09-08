@@ -290,8 +290,8 @@ text file contain the same number of entries. Date, time, and currency data
 types are not currently supported and are imported as character data.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

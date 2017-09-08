@@ -79,9 +79,9 @@ It is a list with components similar to those of class `"rpart"` with the follow
 
 For other components, see rpart.object for details.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

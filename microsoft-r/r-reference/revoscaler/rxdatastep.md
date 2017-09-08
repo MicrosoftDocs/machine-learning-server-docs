@@ -203,8 +203,8 @@ When working with an [RxInSqlServer](RxInSqlServer.md) compute context, both the
 and output data sources must be [RxSqlServerData](RxSqlServerData.md).
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

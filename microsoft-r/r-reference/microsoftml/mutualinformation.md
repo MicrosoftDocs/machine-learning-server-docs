@@ -89,9 +89,9 @@ with the largest mutual information with the label.
  
 a character string defining the mode.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

@@ -336,8 +336,8 @@ Logistic regression is computed using the Iteratively Reweighted Least Squares
 (IRLS) algorithm, which is equivalent to full maximum likelihood.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##References

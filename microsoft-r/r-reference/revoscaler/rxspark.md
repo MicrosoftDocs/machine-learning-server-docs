@@ -329,8 +329,8 @@ This compute context is supported for Cloudera, Hortonworks, and MapR Hadoop dis
 object of class RxSpark.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

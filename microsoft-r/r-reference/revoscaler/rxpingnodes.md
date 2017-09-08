@@ -137,9 +137,9 @@ Finally, the `rxPingResults` object has a `logical` attribute associated with it
 the pinged nodes' states (after filtering) were set to `"success"`.  Otherwise, this attribute is set to `FALSE`.
 
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

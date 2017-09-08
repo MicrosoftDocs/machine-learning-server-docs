@@ -149,9 +149,9 @@ list of character scalars.  The node groups (on MS HPC) or queues (under LSF) to
 
 
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

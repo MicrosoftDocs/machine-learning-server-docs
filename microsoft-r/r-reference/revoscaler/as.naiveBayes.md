@@ -69,8 +69,8 @@ The underlying structure of the output object will be a subset of that produced 
 an object of class naiveBayes from **e1071**.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

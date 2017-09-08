@@ -204,8 +204,8 @@ arguments, the one in `connectionString` is ignored.
  
 object of class RxSqlServerData.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##References

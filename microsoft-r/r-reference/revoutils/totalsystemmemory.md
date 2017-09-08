@@ -50,9 +50,9 @@ systems, uses `wmic` to obtain the `TotalVisibleMemorySize`.
  
 A numeric value representing total system memory in kBytes, or `NA`.
  
- ##Author(s)
+
  
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+ 
 
  
  

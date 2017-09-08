@@ -66,8 +66,8 @@ Calculate the relative risk and odds ratio on a two-by-two table.
 an object of class htest.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

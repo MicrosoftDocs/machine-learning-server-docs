@@ -226,8 +226,8 @@ This compute context is supported for Cloudera (CDH4 and CDH5), Hortonworks (HDP
 object of class RxHadoopMR.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

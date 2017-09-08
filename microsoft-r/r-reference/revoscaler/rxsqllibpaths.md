@@ -63,8 +63,8 @@ See the help file for additional details.
 A character vector of the library paths containing both `"shared"` or `"private"` scope of the packages if the the user specified in the connection string is allowed access. On acccess denied, returns empty character vector.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

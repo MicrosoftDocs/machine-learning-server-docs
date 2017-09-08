@@ -262,8 +262,8 @@ We illustrate the use of these combinations in the examples below, which are ass
 a list of data frames or an invisible list of `RxXdfData` data source objects corresponding to the created output files.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

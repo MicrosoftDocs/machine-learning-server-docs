@@ -67,9 +67,9 @@ omitted from the comparison.  Note also that case is ignored for node name compa
 near matching of node names and partial domain information will be used when comparing node names.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

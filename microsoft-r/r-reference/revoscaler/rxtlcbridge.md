@@ -226,9 +226,9 @@ This function does not provide direct user functionality.
 an rxTlcBridge object, or an output data source or data frame
 
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

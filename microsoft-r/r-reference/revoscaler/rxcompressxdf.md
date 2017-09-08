@@ -79,8 +79,8 @@ will provide an adequate amount of compression at the fastest speed.
  
 A vector of [RxXdfData](RxXdfData.md) data sources
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

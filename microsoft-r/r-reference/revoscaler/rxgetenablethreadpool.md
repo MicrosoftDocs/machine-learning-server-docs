@@ -97,9 +97,9 @@ threads will be created on an ad hoc basis.
 `TRUE` if the thread pool was instantiated and in a ready state prior to making the call, or `FALSE` if the thread pool 
 was set to be created in an ad hoc fashion. 
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

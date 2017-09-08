@@ -64,8 +64,8 @@ or `RxComputeContext("RxInSqlServer", ...)` will create an RxInSqlServer instanc
 A type of RxComputeContext compute context object. This object may be used to in
 [rxSetComputeContext](rxSetComputeContext.md) or [rxOptions](rxOptions.md) to set the compute context.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

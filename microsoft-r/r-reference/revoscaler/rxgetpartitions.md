@@ -62,8 +62,8 @@ Get partitions enumeration of a partitioned Xdf data source.
 Data frame with `(n+1)` columns, the first `n` columns are partitioning columns specified by `varsToPartition` in rxPartition and the `(n+1)th` column is a data source column where each row contains an Xdf data source object of one partition.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

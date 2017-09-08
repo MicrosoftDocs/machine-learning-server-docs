@@ -165,8 +165,8 @@ For most purposes, the more general [rxDataStep](rxDataStep.md) is preferred for
 An [RxTextData](RxTextData.md) object representing the output text file.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

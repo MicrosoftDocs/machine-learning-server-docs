@@ -190,8 +190,8 @@ For information on similarity distance measures, see [rxGetFuzzyDist](rxGetFuzzy
 A character vector containing the fuzzy keys or a data source containing the fuzzy keys in a new variable.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

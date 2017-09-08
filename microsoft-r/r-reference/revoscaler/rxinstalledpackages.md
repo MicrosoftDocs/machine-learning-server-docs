@@ -107,8 +107,8 @@ In [RxInSqlServer](RxInSqlServer.md) compute context multiple rows for a package
 same package is installed in different `"system"`, `"shared"` and `"private"` scopes.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

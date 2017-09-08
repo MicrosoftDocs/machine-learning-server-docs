@@ -87,8 +87,8 @@ which contains a year's worth of simulated data.
 Microsoft Corporation.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##Examples

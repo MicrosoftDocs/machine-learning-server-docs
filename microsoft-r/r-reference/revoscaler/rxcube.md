@@ -260,8 +260,8 @@ variables defined in the formula plus a `"Counts"` column.
 See the Details section for more information regarding the content of these
 columns.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

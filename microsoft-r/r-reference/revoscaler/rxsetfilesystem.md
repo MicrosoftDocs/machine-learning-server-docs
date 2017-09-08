@@ -66,8 +66,8 @@ Next, if the compute context contains a file system, that RxFileSystem object is
 If no file system object has been found, the previously set RxFileSystem file system object is returned.
 The file system object is returned invisibly.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

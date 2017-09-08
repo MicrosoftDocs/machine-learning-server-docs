@@ -90,8 +90,8 @@ a list of lists with a character vector of paths from each node will be returned
  
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

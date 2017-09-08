@@ -76,8 +76,8 @@ working directory for other R functions that read from or write to files.
 object of class RxLocalSeq.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

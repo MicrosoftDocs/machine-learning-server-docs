@@ -56,8 +56,8 @@ Get the .xdf file path from a character string or RxXdfData object.
  
 a character string containing the path and name of the .xdf file
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also

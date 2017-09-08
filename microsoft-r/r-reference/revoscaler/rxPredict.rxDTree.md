@@ -153,9 +153,9 @@ of variables as the original fitted model. Notice that this is different from th
 Depending on the form of `data`, this function variously returns a data frame or a data source
 representing a .xdf file.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

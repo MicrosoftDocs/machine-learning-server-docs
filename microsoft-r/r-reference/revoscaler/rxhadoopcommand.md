@@ -204,9 +204,9 @@ are wrappers for various Hadoop file system commands:
 These functions are executed for their side effects and typically return `NULL`
 invisibly.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

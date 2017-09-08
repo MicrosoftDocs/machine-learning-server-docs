@@ -83,8 +83,8 @@ Models in Motor Insurance. *Proceedings of the 21st International
 Congress of Actuaries*, Zurich, 11-29.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##References

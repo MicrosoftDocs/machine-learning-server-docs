@@ -60,9 +60,9 @@ Note that this function will attempt to connect to the cluster when executed.
  
 a character vector of node names, or `NULL`.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

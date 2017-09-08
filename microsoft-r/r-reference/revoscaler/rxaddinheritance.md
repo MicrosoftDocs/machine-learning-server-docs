@@ -83,9 +83,9 @@ The original object, modified to include `inheritanceClass` as part of its `"cla
 In the case of `rxDTree` objects, the object may also be modified to include the `functions` component if it was
 previously `NULL`.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  
