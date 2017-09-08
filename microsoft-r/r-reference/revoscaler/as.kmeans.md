@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Conversion of a RevoScaleR rxKmeans object to a kmeans Object" 
+title: "as.kmeans function (RevoScaleR) | Microsoft Docs" 
 description: " Converts objects containing RevoScaleR-computed k-means clusters to an R kmeans object. " 
-keywords: "RevoScaleR, as.kmeans, as.kmeans.rxKmeans, category, models" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), as.kmeans, as.kmeans.rxKmeans, category, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #as.kmeans: Conversion of a RevoScaleR rxKmeans object to a kmeans Object
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #as.kmeans: Conversion of a RevoScaleR rxKmeans object to a kmeans Object 
  ##Description
  
 Converts objects containing RevoScaleR-computed k-means clusters to an R kmeans object.
@@ -48,11 +44,11 @@ as.kmeans  (x, ...)
 
    
     
- ### x
+ ### `x`
  object of class `"rxKmeans"`. 
   
     
- ###  ...
+ ### ` ...`
  additional arguments (currently not used). 
   
  
@@ -84,7 +80,7 @@ an object of class `"kmeans"`.
 [as.glm](as.glm.md),
 [as.rpart](as.rpart.md),
 [as.xtabs](as.xtabs.md),
-[rxKmeans](rxkmeans.md).
+[rxKmeans](rxKmeans.md).
    
  
  ##Examples

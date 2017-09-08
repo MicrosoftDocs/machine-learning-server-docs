@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxLocalParallel" 
+title: "RxLocalParallel-class function (RevoScaleR) | Microsoft Docs" 
 description: "   Class for the RevoScaleR Local Parallel Compute Context.   " 
-keywords: "RevoScaleR, RxLocalParallel-class, show,RxLocalParallel-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxLocalParallel-class, show,RxLocalParallel-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxLocalParallel-class: Class RxLocalParallel
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxLocalParallel-class: Class RxLocalParallel 
  ##Description
  
 Class for the RevoScaleR Local Parallel Compute Context.  
@@ -40,8 +36,8 @@ Class for the RevoScaleR Local Parallel Compute Context.
  ## Generators 
 
  
-The targeted generator [RxLocalParallel](rxlocalparallel.md) as well as the general generator
-[RxComputeContext](rxcomputecontext.md).
+The targeted generator [RxLocalParallel](RxLocalParallel.md) as well as the general generator
+[RxComputeContext](RxComputeContext.md).
  
  ## Extends 
 
@@ -53,7 +49,7 @@ Class RxComputeContext, directly.
  
 
 
-###show
+###`show`
 `signature(object = "RxLocalParallel")`: ...
 
 
@@ -65,11 +61,10 @@ Class RxComputeContext, directly.
  
  ##See Also
  
-[RxHadoopMR](rxhadoopmr.md),
-[RxSpark](rxspark.md),
-[RxInSqlServer](rxinsqlserver.md),
-[RxInTeradata](rxinteradata.md),
-[RxLocalSeq](rxlocalseq.md).
+[RxHadoopMR](RxHadoopMR.md),
+[RxSpark](RxSpark.md),
+[RxInSqlServer](RxInSqlServer.md),
+[RxLocalSeq](RxLocalSeq.md).
    
  ##Examples
 

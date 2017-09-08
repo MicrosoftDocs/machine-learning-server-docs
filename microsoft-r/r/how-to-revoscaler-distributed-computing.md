@@ -102,22 +102,25 @@ The *rxSplit* function works in the local compute context only; once you’ve sp
 
 ### Data Analysis with Split Data
 
-To use split data in your distributed data analysis, the first step is generally to split the data using rxSplit, which as we have seen is a local operation. So the next step is then to copy the split data to your cluster nodes. For the HPA functions such as rxLinMod, the split data must be found somewhere in your specified *dataPath* on each node. For example, to perform this example, we copied the split airline data DistAirlineData.xdf to the C:\data\distributed directory on each of the nodes compute10, compute11, compute12, and compute13. We could, however, have placed the split data in a different place on each node, so long as each of the locations was somewhere in the list of directories in *dataPath*.
+To use split data in your distributed data analysis, the first step is generally to split the data using rxSplit, which as we have seen is a local operation. So the next step is then to copy the split data to your cluster nodes. 
 
-Next, create a compute context that specifies *dataDistType="split"*. For example, here is our original HPC Server cluster compute context, with this flag added and with the distributed data folder added to the data path:
+Create an XDF source object:
 
-	myCluster <- RxHpcServer(
-	headNode="cluster-head2",
-	revoPath="C:\\Program Files\\Microsoft\\MRO-for-RRE\\8.0\\R-3.2.2\\bin\\x64\\",
-	    shareDir="\\AllShare\\myName",
-	dataPath=c("C:\\data","C:\\data\\distributed"),
-	dataDistType="split")
+    hdfsFS <- RxHdfsFileSystem()
+    bigAirDS <- RxXdfData(airDataDir, fileSystem = hdfsFS ) 
+    
+Connect to a the cluster:
+
+	myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = TRUE)
+
+Set the compute context to your cluster:
+
 	rxSetComputeContext(myCluster)
 
 We are now ready to fit a simple linear model:
 
 	AirlineLmDist <- rxLinMod(ArrDelay ~ DayOfWeek,
-		data="DistAirlineData.xdf",  cube=TRUE, blocksPerRead=30)
+		data="bigAirDS",  cube=TRUE, blocksPerRead=30)
 
 When we print the object, we see that we obtain the same model as when computed with the full data on all nodes:
 

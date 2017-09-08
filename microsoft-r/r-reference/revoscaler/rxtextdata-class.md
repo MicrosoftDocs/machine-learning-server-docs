@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxTextData" 
+title: "RxTextData-class function (RevoScaleR) | Microsoft Docs" 
 description: " Text data source connection class. " 
-keywords: "RevoScaleR, RxTextData-class, show,RxTextData-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxTextData-class, show,RxTextData-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxTextData-class: Class RxTextData
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxTextData-class: Class RxTextData 
  ##Description
  
 Text data source connection class.
@@ -40,8 +36,8 @@ Text data source connection class.
  ## Generators 
 
  
-The targeted generator [RxTextData](rxtextdata.md) as well as the general generator
-[rxNewDataSource](rxnew.md).
+The targeted generator [RxTextData](RxTextData.md) as well as the general generator
+[rxNewDataSource](rxNew.md).
  
  ## Extends 
 
@@ -54,7 +50,7 @@ Class RxDataSource, by class RxFileData.
  
 
 
-###show
+###`show`
 `signature(object = "RxTextData")`: ...
 
 
@@ -66,8 +62,8 @@ Class RxDataSource, by class RxFileData.
  
  ##See Also
  
-[RxDataSource-class](rxdatasource-class.md),
-[RxTextData](rxtextdata.md),
-[rxNewDataSource](rxnew.md)
+[RxDataSource-class](RxDataSource-class.md),
+[RxTextData](RxTextData.md),
+[rxNewDataSource](rxNew.md)
    
  

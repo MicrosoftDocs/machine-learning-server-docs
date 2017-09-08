@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "RevoScaleR HDFS File System object generator" 
+title: "RxHdfsFileSystem function (RevoScaleR) | Microsoft Docs" 
 description: " This is the main generator for RxHdfsFileSystem S3 class. " 
-keywords: "RevoScaleR, RxHdfsFileSystem, print.RxHdfsFileSystem, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxHdfsFileSystem, print.RxHdfsFileSystem, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #RxHdfsFileSystem: RevoScaleR HDFS File System object generator
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxHdfsFileSystem: RevoScaleR HDFS File System object generator 
  ##Description
  
 This is the main generator for RxHdfsFileSystem S3 class.
@@ -50,52 +46,52 @@ print  ( x, ... )
 
    
     
- ### object
+ ### `object`
  object of class RxHdfsFileSystem. This argument is optional. If supplied, the values of  the other arguments are used to replace those of `object` and the modified object is returned. If these arguments are not supplied, they will take their default values.  
   
     
- ### hostName
+ ### `hostName`
  character string specifying name of host for HDFS file system.  
   
     
- ### port
+ ### `port`
  integer specifying port number.  
   
     
- ### useWebHdfs
+ ### `useWebHdfs`
  NOT YET IMPLEMENTED Optional Flag indicating whether this is a HDFS or a WebHdfs interface - default FALSE  
   
     
- ### oAuthParameters
+ ### `oAuthParameters`
  NOT YET IMPLEMENTED Optional list of OAuth2 parameters created using rxOAuthParameters function  (valid only if useWebHdfs is TRUE) - default NULL  
   
     
- ### verbose
+ ### `verbose`
  Optional Flag indicating "verbose" mode for WebHdfs HTTP calls (valid only if useWebHdfs is TRUE) - default FALSE  
   
     
- ### x
+ ### `x`
  an RxHdfsFileSystem object.  
   
     
- ###  ...
+ ### ` ...`
  other arguments are passed to the underlying function.  
   
  
  
  ##Details
  
-Writing to the HDFS file system can only be done using a [RxHadoopMR](rxhadoopmr.md)
-compute context with an [RxXdfData](rxxdfdata.md) data source. The 'rxHadoop' commands,
-such as [rxHadoopCopy](rxhadoopcommand.md), can also be used to manipulate data sets in HDFS.
+Writing to the HDFS file system can only be done using a [RxHadoopMR](RxHadoopMR.md)
+compute context with an [RxXdfData](RxXdfData.md) data source. The 'rxHadoop' commands,
+such as [rxHadoopCopy](rxHadoopCommand.md), can also be used to manipulate data sets in HDFS.
  
  
  
  ##Value
  
 An RxHdfsFileSystem file system object. This object may be used to in
-[rxSetFileSystem](rxsetfilesystem.md), [rxOptions](rxoptions.md), [RxTextData](rxtextdata.md), or
-[RxXdfData](rxxdfdata.md) to set the file system.
+[rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
+[RxXdfData](RxXdfData.md) to set the file system.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -103,13 +99,13 @@ An RxHdfsFileSystem file system object. This object may be used to in
  
  ##See Also
  
-[RxFileSystem](rxfilesystem.md),
-[RxNativeFileSystem](rxnativefilesystem.md),
-[rxSetFileSystem](rxsetfilesystem.md),
-[rxOptions](rxoptions.md),
-[RxXdfData](rxxdfdata.md),
-[RxTextData](rxtextdata.md),
-[rxOAuthParameters](rxoauthparameters.md).
+[RxFileSystem](RxFileSystem.md),
+[RxNativeFileSystem](RxNativeFileSystem.md),
+[rxSetFileSystem](rxSetFileSystem.md),
+[rxOptions](rxOptions.md),
+[RxXdfData](RxXdfData.md),
+[RxTextData](RxTextData.md),
+[rxOAuthParameters](rxOAuthParameters.md).
    
  ##Examples
 

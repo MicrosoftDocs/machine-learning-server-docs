@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Stop Distributed Computing Engine" 
-description: " `rxStopEngine` stops the remote Spark application. " 
-keywords: "RevoScaleR, rxStopEngine, rxStopEngine,RxSpark-method, rxStopEngine,RxDistributedHpa-method, rxStopEngine,RxHadoopMR-method, rxStopEngine,RxHpcServer-method, rxStopEngine,RxInSqlServer-method, rxStopEngine,RxInTeradata-method, rxStopEngine,RxLsfCluster-method, computecontext" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxStopEngine function (RevoScaleR) | Microsoft Docs" 
+description: " rxStopEngine stops the remote Spark application. " 
+keywords: "(RevoScaleR), rxStopEngine, rxStopEngine,RxSpark-method, rxStopEngine,RxDistributedHpa-method, rxStopEngine,RxHadoopMR-method, rxStopEngine,RxInSqlServer-method, rxStopEngine,RxLsfCluster-method, computecontext" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -32,11 +31,7 @@ ms.technology: "r-server"
  
  
  
- 
- #rxStopEngine: Stop Distributed Computing Engine
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxStopEngine: Stop Distributed Computing Engine 
  ##Description
  
 `rxStopEngine` stops the remote Spark application.
@@ -54,12 +49,12 @@ ms.technology: "r-server"
 
    
     
- ### computeContext
- a valid [RxDistributedHpa-class](rxdistributedhpa-class.md). Currently only [RxSpark](rxspark.md) is supported.  
+ ### `computeContext`
+ a valid [RxDistributedHpa-class](RxDistributedHpa-class.md). Currently only [RxSpark](RxSpark.md) is supported.  
   
   
     
- ### scope
+ ### `scope`
  only used in `rxStopEngine` for `RxSpark`; a single `character` that takes the value of either:  
 *   `"session"`: stop engine applications running in the current R session. 
 *   `"user"`: stop engine applications running by the current user. 
@@ -72,7 +67,7 @@ ms.technology: "r-server"
  
 This function stops distributed computing engine applications with
 scope set to either "session" or "user". Specifically, for the
-[RxSpark](rxspark.md) compute context it stops the remote Spark
+[RxSpark](RxSpark.md) compute context it stops the remote Spark
 application(s).
  
  
@@ -88,7 +83,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxSpark](rxspark.md)
+[RxSpark](RxSpark.md)
    
  ##Examples
 

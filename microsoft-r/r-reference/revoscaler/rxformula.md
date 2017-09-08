@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Formula Syntax for RevoScaleR Analysis Functions" 
+title: "rxFormula function (RevoScaleR) | Microsoft Docs" 
 description: " Highlights of the similarities and differences in formulas between **RevoScaleR** and standard R functions. " 
-keywords: "RevoScaleR, rxFormula, models" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxFormula, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxFormula: Formula Syntax for RevoScaleR Analysis Functions
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxFormula: Formula Syntax for RevoScaleR Analysis Functions 
  ##Description
  
 Highlights of the similarities and differences in formulas between
@@ -44,7 +40,7 @@ are:
 
 
 * 
- With the exception of [rxSummary](rxsummary.md), dot (`.`)
+ With the exception of [rxSummary](rxSummary.md), dot (`.`)
 explanatory variable expansion is not supported.
 
 * 
@@ -63,7 +59,7 @@ A formula typically consists of a *response*, which in most
 **RevoScaleR** functions can be a single variable or multiple variables 
 combined using cbind, the `"~"` operator, and one or 
 more *predictors*,typically separated by the `"+"` operator.
-The [rxSummary](rxsummary.md) function typically requires a formula with no 
+The [rxSummary](rxSummary.md) function typically requires a formula with no 
 response.
 
 Interactions are indicated using the `":"` operator. The interaction of
@@ -97,12 +93,12 @@ categorical variables:
  
  ##See Also
  
-[rxTransform](rxtransform.md),
-[rxCrossTabs](rxcrosstabs.md),
-[rxCube](rxcube.md),
-[rxLinMod](rxlinmod.md),
-[rxLogit](rxlogit.md),
-[rxSummary](rxsummary.md).
+[rxTransform](rxTransform.md),
+[rxCrossTabs](rxCrossTabs.md),
+[rxCube](rxCube.md),
+[rxLinMod](rxLinMod.md),
+[rxLogit](rxLogit.md),
+[rxSummary](rxSummary.md).
    
  ##Examples
 

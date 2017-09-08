@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Find the Best Value of cp for Pruning rxDTree Object " 
+title: "rxDTreeBestCp function (RevoScaleR) | Microsoft Docs" 
 description: " Attempts to find the cp for optimal model pruning, where optimal is defined by default in terms of the 1 Standard Error criterion of Breiman, et al. " 
-keywords: "RevoScaleR, rxDTreeBestCp, models, tree, classif, regression" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxDTreeBestCp, models, tree, classif, regression" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxDTreeBestCp:  Find the Best Value of cp for Pruning rxDTree Object 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxDTreeBestCp:  Find the Best Value of cp for Pruning rxDTree Object  
  ##Description
  
 Attempts to find the cp for optimal model pruning, where optimal is defined by
@@ -49,11 +45,11 @@ of the 1 Standard Error criterion of Breiman, et al.
 
    
     
- ### x
+ ### `x`
   an object of class `rxDTree`.  
   
     
- ### nstd
+ ### `nstd`
   number of standard errors of cross-validation error to define optimality.  The default, 1, causes `rxDTreeBestCp` to find the simplest model within one standard error of the minimum cross-validation error.  
   
  
@@ -89,7 +85,7 @@ Wadsworth.
  
  ##See Also
  
-[rxDTree](rxdtree.md), [prune.rxDTree](prune-rxdtree.md).
+[rxDTree](rxDTree.md), [prune.rxDTree](prune.rxDTree.md).
    
  ##Examples
 

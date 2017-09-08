@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxHpcServer" 
+title: "RxHpcServer-class function (RevoScaleR) | Microsoft Docs" 
 description: " DEPRECATED: HPC Server compute context class. " 
-keywords: "RevoScaleR, RxHpcServer-class, show,RxHpcServer-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxHpcServer-class, show,RxHpcServer-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxHpcServer-class: Class RxHpcServer
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxHpcServer-class: Class RxHpcServer 
  ##Description
  
 DEPRECATED: HPC Server compute context class.
@@ -40,8 +36,8 @@ DEPRECATED: HPC Server compute context class.
  ## Generators 
 
  
-The targeted generator [RxHpcServer](revoscaler-deprecated.md) as well as the general generator
-[RxComputeContext](rxcomputecontext.md).
+The targeted generator [RxHpcServer](RevoScaleR-deprecated.md) as well as the general generator
+[RxComputeContext](RxComputeContext.md).
  
  ## Extends 
 
@@ -53,7 +49,7 @@ Class RxComputeContext, directly.
  
 
 
-###show
+###`show`
 `signature(object = "RxHpcServer")`: ...
 
 

@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: " Lorenz Curve and Gini Coefficient " 
+title: "rxLorenz function (RevoScaleR) | Microsoft Docs" 
 description: " Compute and plot an empirical Lorenz curve from a variable in a data set, optionally specifiying a separate variable from which to compute the y-values for the curve. Compute the Gini Coefficient from the Lorenz curve data. Appropriate for big data sets since data is binned with computations performed in one pass, rather than sorting the data as part of the computation process. " 
-keywords: "RevoScaleR, rxLorenz, rxGini, rxGini.rxLorenz, plot.rxLorenz,  univar " 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxLorenz, rxGini, rxGini.rxLorenz, plot.rxLorenz,  univar " 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -29,10 +28,7 @@ ms.technology: "r-server"
  
  
  
- #rxLorenz:  Lorenz Curve and Gini Coefficient 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxLorenz:  Lorenz Curve and Gini Coefficient  
  ##Description
  
 Compute and plot an empirical Lorenz curve from a variable in a data set, optionally
@@ -65,37 +61,37 @@ plot  (x, title = NULL, subtitle = NULL,
 
    
     
- ### orderVarName
+ ### `orderVarName`
   A character string with the name of the variable to use in computing approximate quantiles.  
   
     
- ### valueVarName
+ ### `valueVarName`
   A character string with the name of the variable to use to compute the mean values per quantile. Can be the same as `orderVarName`.  
   
     
- ### data
-  data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](rxdatasource-class.md) object representing a data set containing the actual and observed variables.  
+ ### `data`
+  data frame, character string containing an .xdf file name (with path), or  [RxDataSource-class](RxDataSource-class.md) object representing a data set containing the actual and observed variables.  
   
     
- ### numBreaks
+ ### `numBreaks`
   integer specifiying the number of breaks to use in comuting approximate quantiles.   
   
     
- ### pweights
+ ### `pweights`
  character string specifying the variable to use as probability weights for the observations. 
   
   
     
- ### fweights
+ ### `fweights`
  character string specifying the variable to use as frequency weights for the observations. 
   
   
   
- ### blocksPerRead
+ ### `blocksPerRead`
   number of blocks to read for each chunk of data read from the data source.  
   
     
- ### reportProgress
+ ### `reportProgress`
   integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -105,72 +101,72 @@ plot  (x, title = NULL, subtitle = NULL,
   
   
     
- ### verbose
+ ### `verbose`
  integer value. If `0`, no additional output is printed.  If `1`, additional information is printed as summary statistics are computed. 
   
   
   
- ### x
+ ### `x`
  output object from rxLorenz function. 
   
   
     
- ### title
+ ### `title`
  main title for the plot.    
   
   
     
- ### subtitle
+ ### `subtitle`
  subtitle (at the bottom) for the plot.   
   
   
     
- ### xTitle
+ ### `xTitle`
  title for the X axis.  
   
   
     
- ### yTitle
+ ### `yTitle`
  title for the Y axis.  
   
   
     
- ### lineColor
+ ### `lineColor`
  character or integer vector specifying line color for the Lorenz curve. See colors for a list of available colors.  
   
   
     
- ### lineStyle
+ ### `lineStyle`
  line style for line plot: `"blank"`, `"solid"`, `"dashed"`, `"dotted"`, `"dotdash"`, `"longdash"`, or `"twodash"`. Specify `"blank"` for no line, or set `type` to `"p"`.  
   
   
     
- ### lineWidth
+ ### `lineWidth`
  a positive number specifiying the line width for line plot.  The interpretation is device-specific.  
   
   
     
- ### equalityGridLine
+ ### `equalityGridLine`
  logical value.  If `TRUE`, a diagonal grid line will be drawn representing complete equality.  
   
   
     
- ### equalityColor
+ ### `equalityColor`
  character or integer vector specifying line color for the equality grid line. If `NULL`, the color of other grid lines will be used.  
   
   
     
- ### equalityStyle
+ ### `equalityStyle`
  line style for the equality grid line: `"blank"`, `"solid"`, `"dashed"`, `"dotted"`, `"dotdash"`, `"longdash"`, or `"twodash"`. If `NULL`, the style of other gride lines will be used.  
   
   
     
- ### equalityWidth
+ ### `equalityWidth`
  a positive number specifiying the line width for line plot.  If `NULL`, the width of other grid lines will be used.  
   
   
     
- ###  ...
+ ### ` ...`
   Additional arguments to be passed to `xyplot`.  
   
  
@@ -209,12 +205,12 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxPredict](../microsoftml/rxpredict.md),
-[rxLogit](rxlogit.md),
-[rxGlm](rxglm.md), 
-[rxLinePlot](rxlineplot.md),
-[rxQuantile](rxquantile.md),
-[rxRoc](rxroc.md).
+[rxPredict](rxPredict.md),
+[rxLogit](rxLogit.md),
+[rxGlm](rxGLM.md), 
+[rxLinePlot](rxLinePlot.md),
+[rxQuantile](rxQuantile.md),
+[rxRoc](rxRoc.md).
    
  ##Examples
 

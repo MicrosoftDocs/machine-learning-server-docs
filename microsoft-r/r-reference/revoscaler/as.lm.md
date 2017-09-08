@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Conversion of a RevoScaleR rxLinMod object to an lm Object" 
+title: "as.lm function (RevoScaleR) | Microsoft Docs" 
 description: " Converts objects containing linear model results to an lm object. " 
-keywords: "RevoScaleR, as.lm, as.lm.rxLinMod, category, models" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), as.lm, as.lm.rxLinMod, category, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #as.lm: Conversion of a RevoScaleR rxLinMod object to an lm Object
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #as.lm: Conversion of a RevoScaleR rxLinMod object to an lm Object 
  ##Description
  
 Converts objects containing linear model results to an lm object.
@@ -48,11 +44,11 @@ as.lm  (x, ...)
 
    
     
- ### x
+ ### `x`
  object of class rxLinMod. 
   
     
- ###  ...
+ ### ` ...`
  additional arguments (currently not used). 
   
  
@@ -80,7 +76,7 @@ an object of class lm.
  
  ##See Also
  
-[rxLinMod](rxlinmod.md),
+[rxLinMod](rxLinMod.md),
 lm,
 [as.glm](as.glm.md),
 [as.kmeans](as.kmeans.md),

@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: " Wait for Distributed Job to Complete " 
+title: "rxWaitForJob function (RevoScaleR) | Microsoft Docs" 
 description: " Causes R to block on an existing distributed job until completion. " 
-keywords: "RevoScaleR, rxWaitForJob, rxWaitForJob,RxDistributedJob-method, rxWaitForJob,RxDistributedSqlServerJob-method, rxWaitForJob,RxDistributedTeradataJob-method, rxWaitForJob,RxDistributedHadoopMRJob-method, rxWaitForJob,ANY-method, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxWaitForJob, rxWaitForJob,RxDistributedJob-method, rxWaitForJob,RxDistributedSqlServerJob-method, rxWaitForJob,RxDistributedTeradataJob-method, rxWaitForJob,RxDistributedHadoopMRJob-method, rxWaitForJob,ANY-method, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -31,10 +30,7 @@ ms.technology: "r-server"
  
  
  
- #rxWaitForJob:  Wait for Distributed Job to Complete 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxWaitForJob:  Wait for Distributed Job to Complete  
  ##Description
  
 Causes R to block on an existing distributed job until completion.
@@ -53,7 +49,7 @@ Causes R to block on an existing distributed job until completion.
 
    
   
- ### jobInfo
+ ### `jobInfo`
  A `jobInfo` object. 
   
  

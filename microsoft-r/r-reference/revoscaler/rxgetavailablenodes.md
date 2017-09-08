@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Gets a list of operational nodes on a cluster. " 
+title: "rxGetAvailableNodes function (RevoScaleR) | Microsoft Docs" 
 description: " Gets a list of operational nodes on a cluster. Note that this function will attempt to connect to the cluster when executed. " 
-keywords: "RevoScaleR, rxGetAvailableNodes, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxGetAvailableNodes, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxGetAvailableNodes:  Gets a list of operational nodes on a cluster. 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxGetAvailableNodes:  Gets a list of operational nodes on a cluster.  
  ##Description
  
 Gets a list of operational nodes on a cluster.
@@ -49,13 +45,13 @@ Note that this function will attempt to connect to the cluster when executed.
 
    
   
- ### computeContext
- A distributed compute context (preferred, see [RxComputeContext](rxcomputecontext.md))  or a `jobInfo` object 
+ ### `computeContext`
+ A distributed compute context (preferred, see [RxComputeContext](RxComputeContext.md))  or a `jobInfo` object 
   
   
   
- ### makeRNodeNames
- logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](rxmakernodenames.md) for details on name mangling. 
+ ### `makeRNodeNames`
+ logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](rxMakeRNodeNames.md) for details on name mangling. 
   
   
  
@@ -72,10 +68,10 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetNodeInfo](rxgetnodeinfo.md)
-[RxComputeContext](rxcomputecontext.md)
-[rxGetJobs](rxgetjobs.md)
-[rxMakeRNodeNames](rxmakernodenames.md)
+[rxGetNodeInfo](rxGetNodeInfo.md)
+[RxComputeContext](RxComputeContext.md)
+[rxGetJobs](rxGetJobs.md)
+[rxMakeRNodeNames](rxMakeRNodeNames.md)
    
  ##Examples
 

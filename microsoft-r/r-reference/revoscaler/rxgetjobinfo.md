@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Get Job Information from Distributed Computing Job " 
+title: "rxGetJobInfo function (RevoScaleR) | Microsoft Docs" 
 description: " Gets job information for a given distributed computing job. " 
-keywords: "RevoScaleR, rxGetJobInfo, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxGetJobInfo, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxGetJobInfo:  Get Job Information from Distributed Computing Job 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxGetJobInfo:  Get Job Information from Distributed Computing Job  
  ##Description
  
 Gets job information for a given distributed computing job.
@@ -48,7 +44,7 @@ Gets job information for a given distributed computing job.
 
    
   
- ### object
+ ### `object`
  an object containing `jobInfo` information, such as that returned from a non-waiting, distributed computation. 
   
  
@@ -80,13 +76,12 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxSpark](rxspark.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxInSqlServer](rxinsqlserver.md),
-[RxInTeradata](rxinteradata.md), 
-[rxGetJobStatus](rxgetjobresults.md), 
-[rxGetJobOutput](rxgetjoboutput.md), 
-[rxGetJobResults](rxgetjobresults.md)
+[RxSpark](RxSpark.md),
+[RxHadoopMR](RxHadoopMR.md),
+[RxInSqlServer](RxInSqlServer.md),
+[rxGetJobStatus](rxGetJobResults.md), 
+[rxGetJobOutput](rxGetJobOutput.md), 
+[rxGetJobResults](rxGetJobResults.md)
    
  ##Examples
 
@@ -95,14 +90,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
   ## Not run:
  
 # set up a non-waiting HPC Server compute context: 
-myCluster <- RxHpcServer( 
-headNode = "cluster-head2", 
-shareDir = "\\AllShare\\username", 
-revoPath = file.path(defaultRNodePath, "bin", "x64"), 
-workingDir = "C:\\Users\\username", 
-dataPath ="C:\\data", 
-wait = FALSE
-) 
+myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = FALSE) 
 rxOptions(computeContext=myCluster) 
 
 myJob <- rxExec(function(){ print( "Hello World"); return ( 1 ) })

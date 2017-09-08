@@ -411,7 +411,7 @@ Up to now, all of our examples have assumed you are running your computations on
 
 To connect to a high availability cluster using default values, you only need to provide the cluster nameNode and port. The *nameNode* manages the namespace of the cluster.
 
-    myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020)
+    myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020)
 
 You can then make the cluster connection object active by using *rxSetComputContext*:
 

@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: " Relative Risk Ratio and Odds Ratio " 
+title: "rxRiskRatio function (RevoScaleR) | Microsoft Docs" 
 description: " Calculate the relative risk and odds ratio on a two-by-two table. " 
-keywords: "RevoScaleR, rxRiskRatio, rxOddsRatio, htest" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxRiskRatio, rxOddsRatio, htest" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxRiskRatio:  Relative Risk Ratio and Odds Ratio 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxRiskRatio:  Relative Risk Ratio and Odds Ratio  
  
  ##Description
  
@@ -51,15 +47,15 @@ Calculate the relative risk and odds ratio on a two-by-two table.
 
    
     
- ### tbl
+ ### `tbl`
  two-by-two table. 
   
     
- ### conf.level
+ ### `conf.level`
  level of the confidence interval. 
   
     
- ### alternative
+ ### `alternative`
  character string defining alternative hypothesis. Supported values are `"two.sided"`, `"less"`, or `"greater"`. 
   
  
@@ -77,11 +73,11 @@ an object of class htest.
  
  ##See Also
  
-[rxChiSquaredTest](rxchisquaredtest.md),
-[rxFisherTest](rxchisquaredtest.md),
-[rxKendallCor](rxchisquaredtest.md),
-[rxMultiTest](rxmultitest.md),
-[rxPairwiseCrossTab](rxpairwisecrosstab.md)
+[rxChiSquaredTest](rxChiSquaredTest.md),
+[rxFisherTest](rxChiSquaredTest.md),
+[rxKendallCor](rxChiSquaredTest.md),
+[rxMultiTest](rxMultiTest.md),
+[rxPairwiseCrossTab](rxPairwiseCrosstab.md)
    
  
  ##Examples

@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: " Launches the job management UI for a compute context. " 
-description: " Launches the job management UI (if available) for a compute context. Currently this is only available for RxHadoopMR and RxHpcServer compute contexts. " 
-keywords: "RevoScaleR, rxLaunchClusterJobManager, rxLaunchClusterJobManager,character-method, rxLaunchClusterJobManager,RxHadoopMR-method, rxLaunchClusterJobManager,RxHpcServer-method, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxLaunchClusterJobManager function (RevoScaleR) | Microsoft Docs" 
+description: " Launches the job management UI (if available) for a compute context. Currently this is only available for RxHadoopMR and RxSpark compute contexts. " 
+keywords: "(RevoScaleR), rxLaunchClusterJobManager, rxLaunchClusterJobManager,character-method, rxLaunchClusterJobManager,RxHadoopMR-method, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -29,15 +28,11 @@ ms.technology: "r-server"
  
  
  
- 
- #rxLaunchClusterJobManager:  Launches the job management UI for a compute context. 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxLaunchClusterJobManager:  Launches the job management UI for a compute context.  
  ##Description
  
 Launches the job management UI (if available) for a compute context. Currently this is only
-available for RxHadoopMR and RxHpcServer compute contexts.
+available for RxHadoopMR and RxSpark compute contexts.
  
  
  
@@ -53,8 +48,8 @@ available for RxHadoopMR and RxHpcServer compute contexts.
 
    
   
- ### context
- The compute context used to determine which UI to launch, or a  character string with the name of the head node, or the character string "none" to launch a defult session. Note that use of a character string is deprecated, and only used for MS HPC clusters. 
+ ### `context`
+ The compute context used to determine which UI to launch. 
   
  
  
@@ -82,9 +77,9 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
    
   ## Not run:
  
-baseHPC <- RxHpcServer(headNode = "cluster-head")
-rxOptions(computeContext=baseHPC)
-rxLaunchClusterJobManager(baseHPC)
+myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020)
+rxOptions(computeContext=myCluster)
+rxLaunchClusterJobManager(myCluster)
  ## End(Not run) 
   
  

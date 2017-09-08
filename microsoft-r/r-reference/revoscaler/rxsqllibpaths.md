@@ -1,40 +1,36 @@
 --- 
  
 # required metadata 
-title: "Search Paths for Packages in SQL compute context" 
-description: " **NOTE: This new API is in pre-release mode and subject to change before final release.**  Gets the search path for the library trees for packages while executing inside the SQL server using [RxInSqlServer](rxinsqlserver.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script. " 
-keywords: "RevoScaleR, rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxSqlLibPaths function (RevoScaleR) | Microsoft Docs" 
+description: " **NOTE: This new API is in pre-release mode and subject to change before final release.**  Gets the search path for the library trees for packages while executing inside the SQL server using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script. " 
+keywords: "(RevoScaleR), rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxSqlLibPaths: Search Paths for Packages in SQL compute context
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxSqlLibPaths: Search Paths for Packages in SQL compute context 
  ##Description
  
 **NOTE: This new API is in pre-release mode and subject to change before final release.**
 
-Gets the search path for the library trees for packages while executing inside the SQL server using [RxInSqlServer](rxinsqlserver.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script.
+Gets the search path for the library trees for packages while executing inside the SQL server using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script.
  
  
  ##Usage
@@ -49,14 +45,14 @@ Gets the search path for the library trees for packages while executing inside t
    
   
     
- ### connectionString
- a `character` connection string for the SQL server. This should be local connection string as external connection strings are not supported while executing on a SQL server. You can also specify [RxInSqlServer](rxinsqlserver.md) compute context object for input from which the connection string will be extracted and used.  
+ ### `connectionString`
+ a `character` connection string for the SQL server. This should be local connection string as external connection strings are not supported while executing on a SQL server. You can also specify [RxInSqlServer](RxInSqlServer.md) compute context object for input from which the connection string will be extracted and used.  
    
  
  
  ##Details
  
-For [RxInSqlServer](rxinsqlserver.md) compute context, the user specified as part of connection string needs to be a member of one of the following roles `'db_owner'` `'rpkgs-shared'`,  `'rpkgs-private'` or `'rpkgs-private'` in the database. When rxExec() function is called from client machine with [RxInSqlServer](rxinsqlserver.md) compute context to execute the rx function on SQL server the `.libPaths()` is automatically updated to include the library paths returned by this [rxSqlLibPaths](rxsqllibpaths.md) function.
+For [RxInSqlServer](RxInSqlServer.md) compute context, the user specified as part of connection string needs to be a member of one of the following roles `'db_owner'` `'rpkgs-shared'`,  `'rpkgs-private'` or `'rpkgs-private'` in the database. When rxExec() function is called from client machine with [RxInSqlServer](RxInSqlServer.md) compute context to execute the rx function on SQL server the `.libPaths()` is automatically updated to include the library paths returned by this [rxSqlLibPaths](rxSqlLibPaths.md) function.
 
 See the help file for additional details.
  
@@ -73,13 +69,13 @@ A character vector of the library paths containing both `"shared"` or `"private"
  
  ##See Also
  
-[rxPackage](rxpackage.md),
+[rxPackage](rxPackage.md),
 .libPaths,
-[rxFindPackage](rxfindpackage.md),
-[rxInstalledPackages](rxinstalledpackages.md),
-[rxInstallPackages](rxinstallpackages.md),   
-[rxRemovePackages](rxremovepackages.md),
-[rxSyncPackages](rxsyncpackages.md),
+[rxFindPackage](rxFindPackage.md),
+[rxInstalledPackages](rxInstalledPackages.md),
+[rxInstallPackages](rxInstallPackages.md),   
+[rxRemovePackages](rxRemovePackages.md),
+[rxSyncPackages](rxSyncPackages.md),
 require
    
  ##Examples

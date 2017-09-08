@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Parallel External Memory Algorithm for Naive Bayes Classifiers" 
+title: "rxNaiveBayes function (RevoScaleR) | Microsoft Docs" 
 description: "     Fit Naive Bayes Classifiers on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
-keywords: "RevoScaleR, rxNaiveBayes, print.rxNaiveBayes, models, tree, classif, classification" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxNaiveBayes, print.rxNaiveBayes, models, tree, classif, classification" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxNaiveBayes: Parallel External Memory Algorithm for Naive Bayes Classifiers
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxNaiveBayes: Parallel External Memory Algorithm for Naive Bayes Classifiers 
  ##Description
  
 Fit Naive Bayes Classifiers on an .xdf file or data frame
@@ -48,20 +44,20 @@ for small or large data using parallel external memory algorithm.
 
    
     
- ### formula
-  formula as described in [rxFormula](rxformula.md).     
+ ### `formula`
+  formula as described in [rxFormula](rxFormula.md).     
   
     
- ### data
+ ### `data`
   either a data source object, a character string  specifying a .xdf file, or a data frame object. 
   
     
- ### smoothingFactor
+ ### `smoothingFactor`
   a positive smoothing factor to account for cases not present in the training data.  It avoids modeling issues by preventing zero conditional probability estimates. 
   
     
- ###  ...
-  additional arguments to be passed directly to [rxSummary](rxsummary.md) such as `byTerm`, `rowSelection`, `pweights`, `fweights`, `transforms`, `transformObjects`, `transformFunc`,  `transformVars`, `transformPackages`, `transformEnvir`,  `useSparseCube`, `removeZeroCounts`, `blocksPerRead`,  `reportProgress`, `verbose`, `xdfCompressionLevel`.   
+ ### ` ...`
+  additional arguments to be passed directly to [rxSummary](rxSummary.md) such as `byTerm`, `rowSelection`, `pweights`, `fweights`, `transforms`, `transformObjects`, `transformFunc`,  `transformVars`, `transformPackages`, `transformEnvir`,  `useSparseCube`, `removeZeroCounts`, `blocksPerRead`,  `reportProgress`, `verbose`, `xdfCompressionLevel`.   
   
  
  
@@ -102,7 +98,7 @@ Naive Bayes classifier
  
  ##See Also
  
-[rxPredict.rxNaiveBayes](rxnaivebayes.md).
+[rxPredict.rxNaiveBayes](rxPredict.rxNaiveBayes.md).
    
  ##Examples
 

@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Logistic Regression" 
-description: " Use `rxLogit` to fit logistic regression models for small or large data. " 
-keywords: "RevoScaleR, rxLogit, models, regression" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxLogit function (RevoScaleR) | Microsoft Docs" 
+description: " Use rxLogit to fit logistic regression models for small or large data. " 
+keywords: "(RevoScaleR), rxLogit, models, regression" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxLogit: Logistic Regression
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxLogit: Logistic Regression 
  ##Description
  
 Use `rxLogit` to fit logistic regression models for small or large data.
@@ -60,97 +56,97 @@ Use `rxLogit` to fit logistic regression models for small or large data.
 
    
     
- ### formula
- formula as described in [rxFormula](rxformula.md). Dependent variable  must be binary. It can be a logical variable, a factor with only two categories, or a numeric variable with values in   the range (0,1). In the latter case it will be converted to a logical. 
+ ### `formula`
+ formula as described in [rxFormula](rxFormula.md). Dependent variable  must be binary. It can be a logical variable, a factor with only two categories, or a numeric variable with values in   the range (0,1). In the latter case it will be converted to a logical. 
   
   
     
- ### data
+ ### `data`
  either a data source object, a character string specifying a .xdf file, or a data frame object. 
   
   
     
- ### pweights
+ ### `pweights`
  character string specifying the variable to use as probability weights for the observations. 
   
   
     
- ### fweights
+ ### `fweights`
  character string specifying the variable to use as frequency weights for the observations. 
   
   
     
- ### cube
+ ### `cube`
  logical flag. If `TRUE` and the first term of the predictor variables is categorical (a factor or an interaction of factors), the regression is performed by applying the Frisch-Waugh-Lovell Theorem, which uses a partitioned inverse to save on computation time and memory. See Details section below. 
   
   
     
- ### cubePredictions
+ ### `cubePredictions`
  logical flag. If `TRUE` and `cube` is `TRUE` the estimated model is evaluated (predicted) for each cell in the cube, fixing the non-cube variables in the model at their mean values, and these predictions  are included in the `countDF` component of the returned value. This may be time and  memory intensive for large models. See Details section below. 
   
   
     
- ### variableSelection
-  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](rxstepcontrol.md) for details. 
+ ### `variableSelection`
+  a list specifying various parameters that control aspects of stepwise regression. If it is an empty list (default), no stepwise model selection will be performed. If not, stepwise regression will be performed and `cube` must be `FALSE`. See [rxStepControl](rxStepControl.md) for details. 
   
   
     
- ### rowSelection
+ ### `rowSelection`
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### transforms
+ ### `transforms`
  an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### transformObjects
+ ### `transformObjects`
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
     
- ### transformFunc
- variable transformation function. See [rxTransform](rxtransform.md) for details. 
+ ### `transformFunc`
+ variable transformation function. See [rxTransform](rxTransform.md) for details. 
   
   
     
- ### transformVars
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
+ ### `transformVars`
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
   
   
     
- ### transformPackages
+ ### `transformPackages`
  character vector defining additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### transformEnvir
+ ### `transformEnvir`
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
     
- ### dropFirst
+ ### `dropFirst`
  logical flag. If `FALSE`, the last level is dropped in  all sets of factor levels in a model. If that level has no observations (in any of  the sets), or if the model as formed is otherwise determined to be singular, then  an attempt is made to estimate the model by dropping the first level in all sets  of factor levels. If `TRUE`, the starting position is to drop the first level.  Note that for cube regressions, the first set of factors is excluded from these rules  and the intercept is dropped.  
   
   
     
- ### dropMain
+ ### `dropMain`
  logical value. If `TRUE`, main-effect terms are dropped before their interactions. 
   
   
     
- ### covCoef
- logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](rxcovregression.md) function to obtain these data. 
+ ### `covCoef`
+ logical flag. If `TRUE` and if `cube` is `FALSE`,  the variance-covariance matrix of the regression coefficients is returned.  Use the [rxCovCoef](rxCovRegression.md) function to obtain these data. 
   
   
     
- ### covData
- logical flag. If `TRUE` and if `cube` is `FALSE` and if  constant term is included in the formula, then the variance-covariance matrix of the data is returned. Use the [rxCovData](rxcovregression.md) function to obtain these data. 
+ ### `covData`
+ logical flag. If `TRUE` and if `cube` is `FALSE` and if  constant term is included in the formula, then the variance-covariance matrix of the data is returned. Use the [rxCovData](rxCovRegression.md) function to obtain these data. 
   
   
     
- ### initialValues
+ ### `initialValues`
  Starting values for the Iteratively Reweighted Least Squares algorithm  used to estimate the model coefficients. Supported values for this argument come in four forms:  
 * `NA` - Initial values of the parameters are computed by a weighted least squares step in which,  if there is no user-specified weight, the expected value (mu) of the dependent variable is set to 0.75 if  the binary dependent variable is 1, and to 0.25 if it is 0, and to a correspondingly weighted value otherwise.  This is equivalent to the default option for the `glm` function's logistic regression initial values,  and can sometimes lead to convergence when the default `NULL` option does not, though it may result in  more iterations in other cases. If convergence fails with the default `NULL` option, estimation is  restarted with `NA`, and vice versa.   
 * `NULL` - (Default) The initial values will be estimated based on a linear regression. This can speed up  convergence significantly in many cases. If the model fails to converge using these values, estimation is automatically re-started using the `NA` option for the initial values.  
@@ -160,37 +156,37 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
   
     
- ### coefLabelStyle
+ ### `coefLabelStyle`
  character string specifying the coefficient label style.  The default is "Revo". If "R", R-compatible labels are created. 
   
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
  number of blocks to read for each chunk of data read from the data source. 
   
   
     
- ### maxIterations
+ ### `maxIterations`
  maximum number of iterations. 
   
   
     
- ### coeffTolerance
+ ### `coeffTolerance`
  convergence tolerance for coefficients. If the maximum absolute  change in the coefficients (step), divided by the maximum absolute coefficient value, is less than or equal to this tolerance at the end of an iteration, the estimation is considered to have converged. To disable this test, set this value to 0. 
   
   
     
- ### gradientTolerance
+ ### `gradientTolerance`
  This argument is deprecated. Use `objectiveFunctionTolerance` and  `coeffTolerance` to control convergence. 
   
   
     
- ### objectiveFunctionTolerance
+ ### `objectiveFunctionTolerance`
  convergence tolerance for the objective function. If the absolute  relative change in the deviance (-2.0 times log likelihood) is less than or equal to this tolerance at the end of an iteration, the estimation is considered to have converged. To disable this test, set this value to 0.  
   
   
     
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -200,18 +196,18 @@ Use `rxLogit` to fit logistic regression models for small or large data.
   
   
     
- ### verbose
+ ### `verbose`
  integer value. If `0`, no verbose output is printed during calculations. Integer values from `1` to `4` provide increasing amounts of information are provided. 
   
   
   
- ### computeContext
- a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ ### `computeContext`
+ a valid [RxComputeContext](RxComputeContext.md).  The `RxSpark` and `RxHadoopMR` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the Revolution Compute Engine. 
   
  
@@ -241,95 +237,95 @@ equivalent to the coefficients and will be included in `countDF` whenever
  
 an rxLogit object containing the following elements:
 
-###coefficients
+###`coefficients`
 named vector of coefficients.
 
 
-###covCoef
+###`covCoef`
 variance-covariance matrix for the regression coefficient estimates.
 
 
-###covData
+###`covData`
 variance-covariance matrix for the explanatory variables in the regression model.
 
 
-###condition.number
+###`condition.number`
 estimated reciprocal condition number of final weighted cross-product (X'WX) matrix.
 
 
-###rank
+###`rank`
 numeric rank of the fitted linear model.
 
 
-###aliased
+###`aliased`
 logical vector specifying whether columns were dropped or not due to collinearity.
 
 
-###coef.std.error
+###`coef.std.error`
 standard errors of the coefficients.
 
 
-###coef.t.value
+###`coef.t.value`
 coefficients divided by their standard errors. 
 
 
-###coef.p.value
+###`coef.p.value`
 p-values for coef.t.values, using the normal distribution (Pr(>|z|)) 
 
 
-###total.squares
+###`total.squares`
 Y'Y of raw Y's
 
 
-###f.pvalue
+###`f.pvalue`
 the p-value resulting from an F-test on the fitted model.
 
 
-###df
+###`df`
 degrees of freedom, a 3-vector (p, n-p, p*), the last being the number of non-aliased coefficients.
 
 
-###y.names
+###`y.names`
 names for dependent variables.
 
 
-###partitions
+###`partitions`
 when `cube` is `TRUE`, partitioned results will also be returned.
 
 
-###fstatistics
+###`fstatistics`
 (for models including non-intercept terms) a 3-vector with the value of the F-statistic with its numerator and denominator degrees of freedom.
 
 
-###params
+###`params`
 parameters sent to Microsoft R Services Compute Engine.
 
 
-###formula
+###`formula`
 the model formula
 
 
-###call
+###`call`
 the matched call.
 
 
-###countDF
+###`countDF`
 when cube is `TRUE`, a data frame containing category counts for the cube portion will also be returned. If `cubePredictions` is also `TRUE`, predicted values for each group in the cube are included.
 
 
-###nValidObs
+###`nValidObs`
 number of valid observations.
 
 
-###nMissingObs
+###`nMissingObs`
 number of missing observations.
 
 
-###deviance
+###`deviance`
 minus twice the maximized log-likelihood (up to a constant)
 
 
-###dispersion
+###`dispersion`
 for `rxLogit`, which estimates a generalized linear model with family `binomial`, the dispersion is always 1.
 
 
@@ -358,8 +354,8 @@ Lovell, M., 2008, A Simple Proof of the FWL (Frisch,Waugh,Lovell) Theorem,
  
  ##See Also
  
-[rxLinMod](rxlinmod.md),
-[rxTransform](rxtransform.md).
+[rxLinMod](rxLinMod.md),
+[rxTransform](rxTransform.md).
    
  ##Examples
 

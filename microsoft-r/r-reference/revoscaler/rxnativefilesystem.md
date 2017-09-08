@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "RevoScaleR Native File System Object Generator" 
+title: "RxNativeFileSystem function (RevoScaleR) | Microsoft Docs" 
 description: " This is the main generator for RxNativeFileSystem S3 class. " 
-keywords: "RevoScaleR, RxNativeFileSystem, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxNativeFileSystem, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #RxNativeFileSystem: RevoScaleR Native File System Object Generator
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxNativeFileSystem: RevoScaleR Native File System Object Generator 
  ##Description
  
 This is the main generator for RxNativeFileSystem S3 class.
@@ -46,8 +42,8 @@ This is the main generator for RxNativeFileSystem S3 class.
  ##Value
  
 An RxNativeFileSystem file system object. This object may be used in
-[rxSetFileSystem](rxsetfilesystem.md), [rxOptions](rxoptions.md), [RxTextData](rxtextdata.md), or
-[RxXdfData](rxxdfdata.md) to set the file system.
+[rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
+[RxXdfData](RxXdfData.md) to set the file system.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -55,12 +51,12 @@ An RxNativeFileSystem file system object. This object may be used in
  
  ##See Also
  
-[RxFileSystem](rxfilesystem.md),
-[RxHdfsFileSystem](rxhdfsfilesystem.md),
-[rxSetFileSystem](rxsetfilesystem.md),
-[rxOptions](rxoptions.md),
-[RxXdfData](rxxdfdata.md),
-[RxTextData](rxtextdata.md).
+[RxFileSystem](RxFileSystem.md),
+[RxHdfsFileSystem](RxHdfsFileSystem.md),
+[rxSetFileSystem](rxSetFileSystem.md),
+[rxOptions](rxOptions.md),
+[RxXdfData](RxXdfData.md),
+[RxTextData](RxTextData.md).
    
  ##Examples
 

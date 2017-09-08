@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Prediction for Large Data Classification and Regression Forests" 
-description: "     Calculate predicted or fitted values for a data set from an object inheriting from class `rxDForest`. " 
-keywords: "RevoScaleR, rxPredict.rxDForest, rxPredict.rxBTrees, models, tree, classif, regression, classification" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxPredict.rxDForest function (RevoScaleR) | Microsoft Docs" 
+description: "     Calculate predicted or fitted values for a data set from an object inheriting from class rxDForest. " 
+keywords: "(RevoScaleR), rxPredict.rxDForest, rxPredict.rxBTrees, models, tree, classif, regression, classification" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxPredict.rxDForest: Prediction for Large Data Classification and Regression Forests
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxPredict.rxDForest: Prediction for Large Data Classification and Regression Forests 
  
  ##Description
  
@@ -59,43 +55,43 @@ rxPredict  (modelObject, data = NULL,
 
    
     
- ### modelObject
+ ### `modelObject`
   object inheriting from class `rxDForest`. 
   
     
- ### data
+ ### `data`
   either a data source object, a character string  specifying a .xdf file, or a data frame object. 
   
     
- ### outData
+ ### `outData`
   file or existing data frame to store predictions;  can be same as the input file or `NULL`.  If not `NULL`, must be an .xdf file if `data` is an .xdf file  or a data frame if `data` is a data frame. 
   
     
- ### predVarNames
+ ### `predVarNames`
   character vector specifying name(s) to give to the prediction results. 
   
   
     
- ### writeModelVars
+ ### `writeModelVars`
   logical value. If `TRUE`, and the output file is different from the input file,  variables in the model will be written to the output file in addition to the predictions.  If variables from the input data set are transformed in the model,  the transformed variables will also be written out. 
   
     
- ### extraVarsToWrite
-  `NULL` or character vector of additional variables names from the input data to include in the `outData`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
+ ### `extraVarsToWrite`
+  `NULL` or character vector of additional variables names from the input data or transforms to include in the `outData`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
   
   
     
- ### append
-  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](rxteradata.md) data source. Ignored for data frames.    
+ ### `append`
+  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](RxTeradata.md) data source. Ignored for data frames.    
   
   
     
- ### overwrite
+ ### `overwrite`
   logical value. If `TRUE`, an existing `outData` will be overwritten.  `overwrite` is ignored if appending rows. Ignored for data frames.  
   
   
     
- ### type
+ ### `type`
   character string specifying the type of predicted values to be returned. Supported choices for an object of class `rxDForest` are "response", "prob", and "vote".  
 * `"response"` -  a vector of predicted values for a regression forest and  predicted classes (with majority vote) for a classification forest.   
 * `"prob"` -  (Classification only) a matrix of predicted class probabilities whose columns are the probability of the first, second, etc. class. It ensentially sums up the probability predictions for each class over all the trees and  thus may give different class predictions from those obtained with "response" or "vote".   
@@ -106,23 +102,23 @@ rxPredict  (modelObject, data = NULL,
   
   
     
- ### cutoff
+ ### `cutoff`
   (Classification only) a vector of length equal to the number of classes specifying the dividing factors for the class votes. The default is the one used when the decision forest is built.  
   
     
- ### removeMissings
+ ### `removeMissings`
   logical value.  If `TRUE`, rows with missing values are removed and  will not be included in the output data. 
   
     
- ### computeResiduals
+ ### `computeResiduals`
   logical value. If `TRUE`, residuals are computed. 
   
     
- ### residType
+ ### `residType`
   see residuals.rpart for details. 
   
     
- ### residVarNames
+ ### `residVarNames`
   character vector specifying name(s) to give to the residual results. 
   
   
@@ -141,11 +137,11 @@ rxPredict  (modelObject, data = NULL,
    
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
   number of blocks to read for each chunk of data  read from the data source. 
   
     
- ### reportProgress
+ ### `reportProgress`
   integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -154,16 +150,16 @@ rxPredict  (modelObject, data = NULL,
  
   
     
- ### verbose
+ ### `verbose`
   integer value.  If `0`, no verbose output is printed during calculations.  Integer values from `1` to `4` provide increasing amounts of information are provided. 
   
     
- ### xdfCompressionLevel
+ ### `xdfCompressionLevel`
  integer in the range of -1 to 9 indicating the compression level for the output data if written to an `.xdf` file.  The higher the value, the greater the amount of compression - resulting in smaller files but a longer time to create them. If `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression will be used. 
    
   
     
- ###  ...
+ ### ` ...`
   additional arguments to be passed directly to the Microsoft R Services Compute Engine.    
   
  
@@ -211,7 +207,7 @@ A streaming parallel decision tree algorithm.
  
  ##See Also
  
-rpart, [rxDForest](rxdforest.md), [rxBTrees](rxbtrees.md).
+rpart, [rxDForest](rxDForest.md), [rxBTrees](rxBTrees.md).
    
  ##Examples
 

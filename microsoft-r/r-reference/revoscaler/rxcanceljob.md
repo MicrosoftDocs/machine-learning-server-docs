@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: " Cancel Distributed Computing Job " 
+title: "rxCancelJob function (RevoScaleR) | Microsoft Docs" 
 description: " Causes R to cancel an existing distributed computing job. " 
-keywords: "RevoScaleR, rxCancelJob, rxCancelJob,list-method, rxCancelJob,RxDistributedJob-method, rxCancelJob,RxDistributedHadoopMRJob-method, rxCancelJob,RxDistributedSqlServerJob-method, rxCancelJob,RxDistributedTeradataJob-method, rxCancelJob,ANY-method, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxCancelJob, rxCancelJob,list-method, rxCancelJob,RxDistributedJob-method, rxCancelJob,RxDistributedHadoopMRJob-method, rxCancelJob,RxDistributedSqlServerJob-method, rxCancelJob,RxDistributedTeradataJob-method, rxCancelJob,ANY-method, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -33,10 +32,7 @@ ms.technology: "r-server"
  
  
  
- #rxCancelJob:  Cancel Distributed Computing Job 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxCancelJob:  Cancel Distributed Computing Job  
  ##Description
  
 Causes R to cancel an existing distributed computing job.
@@ -55,11 +51,11 @@ Causes R to cancel an existing distributed computing job.
 
    
   
- ### jobInfo
- a jobInfo object, such as that returned by [rxExec](rxexec.md) or one of the  RevoScaleR analysis functions in a non-waiting compute context, or the current contents of the `rxgLastPendingJob` object. 
+ ### `jobInfo`
+ a jobInfo object, such as that returned by [rxExec](rxExec.md) or one of the  RevoScaleR analysis functions in a non-waiting compute context, or the current contents of the `rxgLastPendingJob` object. 
   
   
- ### consoleOutput
+ ### `consoleOutput`
  If `NULL`, the `consoleOutput` value assigned to  the job by the compute context at launch is used.  If `TRUE`, any console output present at the time the job is canceled is displayed.  If `FALSE`, no console output  is displayed. 
   
  
@@ -87,9 +83,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetJobs](rxgetjobs.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxInTeradata](rxinteradata.md).
+[rxGetJobs](rxGetJobs.md),
+[RxHadoopMR](RxHadoopMR.md).
    
  ##Examples
 

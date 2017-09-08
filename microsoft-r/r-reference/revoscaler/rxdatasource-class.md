@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Class RxDataSource" 
+title: "RxDataSource-class function (RevoScaleR) | Microsoft Docs" 
 description: "   Base class for all Microsoft R Services Compute Engine data sources.   " 
-keywords: "RevoScaleR, RxDataSource-class, names,RxDataSource-method, show,RxDataSource-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxDataSource-class, names,RxDataSource-method, show,RxDataSource-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -29,10 +28,7 @@ ms.technology: "r-server"
  
  
  
- #RxDataSource-class: Class RxDataSource
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxDataSource-class: Class RxDataSource 
  ##Description
  
 Base class for all Microsoft R Services Compute Engine data sources.  
@@ -47,7 +43,7 @@ A virtual class: No objects may be created from it.
 
  
 The generator for classes that extend RxDataSource is
-[rxNewDataSource](rxnew.md).  
+[rxNewDataSource](rxNew.md).  
  
  ## Methods 
 
@@ -57,23 +53,23 @@ RxDataSource:
 
 
 
-###names
+###`names`
 `signature(x = "RxDataSource")`: ... 
 
 
-###[rxOpen](rxopen-methods.md)
+###`[rxOpen](rxOpen-methods.md)`
 `signature(src = "RxDataSource")`: ... 
 
 
-###[rxClose](rxopen-methods.md)
+###`[rxClose](rxOpen-methods.md)`
 `signature(src = "RxDataSource")`: ... 
 
 
-###[rxReadNext](rxopen-methods.md)
+###`[rxReadNext](rxOpen-methods.md)`
 `signature(src = "RxDataSource")`: ... 
 
 
-###[rxWriteNext](rxopen-methods.md)
+###`[rxWriteNext](rxOpen-methods.md)`
 `signature(from = "data.frame", to = "RxDataSource", verbose = 0)`: ... 
 
 
@@ -85,17 +81,17 @@ RxDataSource:
  
  ##See Also
  
-[RxXdfData-class](rxxdfdata-class.md),
-[RxXdfData](rxxdfdata.md),
-[RxTextData](rxtextdata.md),
-[RxSasData](rxsasdata.md),
-[RxSpssData](rxspssdata.md),
-[RxOdbcData](rxodbcdata.md),
-[RxTeradata](rxteradata.md),
-[rxNewDataSource](rxnew.md),
-[rxOpen](rxopen-methods.md),
-[rxReadNext](rxopen-methods.md),
-[rxWriteNext](rxopen-methods.md).
+[RxXdfData-class](RxXdfData-class.md),
+[RxXdfData](RxXdfData.md),
+[RxTextData](RxTextData.md),
+[RxSasData](RxSasData.md),
+[RxSpssData](RxSpssData.md),
+[RxOdbcData](RxOdbcData.md),
+[RxTeradata](RxTeradata.md),
+[rxNewDataSource](rxNew.md),
+[rxOpen](rxOpen-methods.md),
+[rxReadNext](rxOpen-methods.md),
+[rxWriteNext](rxOpen-methods.md).
    
  ##Examples
 

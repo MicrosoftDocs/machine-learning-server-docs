@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Fuzzy distances for a character vector" 
+title: "rxGetFuzzyDist function (RevoScaleR) | Microsoft Docs" 
 description: " EXPERIMENTAL: Get fuzzy distances for a character vector " 
-keywords: "RevoScaleR, rxGetFuzzyDist, manip" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxGetFuzzyDist, manip" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxGetFuzzyDist: Fuzzy distances for a character vector
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxGetFuzzyDist: Fuzzy distances for a character vector 
  ##Description
  
 EXPERIMENTAL: Get fuzzy distances for a character vector
@@ -53,67 +49,67 @@ EXPERIMENTAL: Get fuzzy distances for a character vector
 
    
     
- ### stringsIn
+ ### `stringsIn`
  Character vector of strings to process or name of character variable. 
   
     
- ### data
+ ### `data`
  `NULL` or data frame or RevoScaleR data source containing the variable to process. 
   
     
- ### outFile
+ ### `outFile`
  `NULL` or RevoScaleR data source in which to put output. 
   
     
- ### varsToKeep
+ ### `varsToKeep`
  `NULL` or character vector of variables from the input 'data' to keep in the output data set. They will be replicated for multiple matches. 
   
     
- ### matchMethod
+ ### `matchMethod`
  Method for matching to dictionary: 'none' for no matching, 'lv' for Levenshtein; 'j' for Jaro, 'jw' for JaroWinkler,  'exact' for exact matching 
   
   
- ### keyType
+ ### `keyType`
  Transformation type in creating keys to be matched: 'all' to retain all characters, 'alphanum' for alphanumeric characters only,  'alpha' for letters only", 'mphone3' for Metaphone3 phonetic transformation, 'soundex' for Soundex phonetic transformation,  'mphone3Vowels' for Metaphone3 encoding more than intial vowels, 'mphone3Exact' for Metaphone3 with more exact consonants, 'soundexNum' for Soundex with numbers only, 'soundexAll' for Soundex not truncated at 4 characters, and 'soundexAm' for the American variant of Soundex. 
   
     
- ### ignoreCase
+ ### `ignoreCase`
  A logical specifying whether or not to ignore case when comparing strings to the dictionary 
   
     
- ### ignoreSpaces
+ ### `ignoreSpaces`
  A logical specifying whether or not to ignore spaces.  If `FALSE`, for phonetic conversions each word in the string is processed separately and then concatenated together. 
   
     
- ### ignoreNumbers
+ ### `ignoreNumbers`
  A logical. If `FALSE`, numbers are converted to words before phonetic processing.  If `TRUE`, numbers are ignored or removed 
   
     
- ### ignoreWords
+ ### `ignoreWords`
  An optional character vector containing words to ignore when matching. 
   
     
- ### noMatchNA
+ ### `noMatchNA`
  A logical. If `TRUE`, if a match is not found an empty string is returned.   Only applies when dictionary is provided. 
   
     
- ### minDistance
+ ### `minDistance`
  Minimum distance required for a match; applies only to distance metric algorithms (Levenshtein, Jaro, JaroWinkler).  One is a perfect match. Zero is no similarity. 
   
     
- ### dictionary
+ ### `dictionary`
  Character vector containing the dictionary for string comparisons.   from strings before processing. 
   
     
- ### returnString
+ ### `returnString`
  A logical specifying whether to return the string and dictionary values 
   
     
- ### returnIndex
+ ### `returnIndex`
  `NULL` or logical specifying whether to return the string and dictionary indexes. If `NULL`, it is set to `!returnString` 
   .
     
- ### overwrite
+ ### `overwrite`
  A logical. If `TRUE` and the specified `outFile` exists, it will be overwritten. 
   
  
@@ -134,7 +130,7 @@ The Bag of Words measure looks at the number of matching words in a phrase, inde
 In the implementation used in `rxGetFuzzyDist`, all measures are 
 normalized to the same scale, where 0 is no match and 1 is a perfect match.  
 
-For information on phonetic conversions, see [rxGetFuzzyKeys](rxgetfuzzykeys.md).
+For information on phonetic conversions, see [rxGetFuzzyKeys](rxGetFuzzyKeys.md).
  
  
  
@@ -149,8 +145,8 @@ A data frame or data source containing the distances and either string and dicti
  
  ##See Also
  
-[rxGetFuzzyKeys](rxgetfuzzykeys.md),
-[rxDataStep](rxdatastep.md)
+[rxGetFuzzyKeys](rxGetFuzzyKeys.md),
+[rxDataStep](rxDataStep.md)
    
  ##Examples
 

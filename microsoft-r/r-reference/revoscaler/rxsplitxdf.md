@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Split a Single Data Set into Multiple Sets" 
+title: "rxSplitXdf function (RevoScaleR) | Microsoft Docs" 
 description: "    Split an input .xdf file or data frame into multiple .xdf files or a list of data frames. " 
-keywords: "RevoScaleR, rxSplitXdf, rxSplit, manip, file" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxSplitXdf, rxSplit, manip, file" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxSplitXdf: Split a Single Data Set into Multiple Sets
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxSplitXdf: Split a Single Data Set into Multiple Sets 
  ##Description
  
 Split an input .xdf file or data frame into multiple .xdf files or a list of data frames.
@@ -67,37 +63,37 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
 
    
     
- ### inData
- a data frame, a character string defining the path to the input .xdf file,  or an [RxXdfData](rxxdfdata.md) object  
+ ### `inData`
+ a data frame, a character string defining the path to the input .xdf file,  or an [RxXdfData](RxXdfData.md) object  
   
   
     
- ### inFile
-  a character string defining the path to the input .xdf file,  or an [RxXdfData](rxxdfdata.md) object 
+ ### `inFile`
+  a character string defining the path to the input .xdf file,  or an [RxXdfData](RxXdfData.md) object 
   
   
     
- ### outFilesBase
- a character string or vector defining the file names/paths to use in forming the the output .xdf files. These names/paths will be embellished with any specified `outFileSuffixes`. For `rxSplit`, `outFilesBase = NULL` means that the default value for .xdf and [RxXdfData](rxxdfdata.md)`inData` objects will be `basename(rxXdfFileName(inData))` while it will be a blank string for `inData` a data frame.   
+ ### `outFilesBase`
+ a character string or vector defining the file names/paths to use in forming the the output .xdf files. These names/paths will be embellished with any specified `outFileSuffixes`. For `rxSplit`, `outFilesBase = NULL` means that the default value for .xdf and [RxXdfData](RxXdfData.md)`inData` objects will be `basename(rxXdfFileName(inData))` while it will be a blank string for `inData` a data frame.   
   
   
     
- ### outFileSuffixes
+ ### `outFileSuffixes`
  a vector containing the suffixes to append to the base name(s)/path(s) specified in `outFilesBase`. Before appending, `outFileSuffixes` is converted to class character via the as.character function. If `NULL`, `seq(numOutFiles)` is used in its place if  `numOutFiles` is not `NULL`. 
   
   
     
- ### numOut
+ ### `numOut`
  number of outputs to create, e.g., the number of output files or number of data frames returned in the output list. 
   
   
     
- ### numOutFiles
+ ### `numOutFiles`
  number of files to create. This argument is used only when `outFilesBase` and `outFileSuffixes` do not provide sufficient information to form unique paths to multiple output files. See the Examples section for its use. 
   
   
     
- ### splitBy
+ ### `splitBy`
  a character string denoting the method to use in partitioning the `inFile` .xdf file. With  `numFiles` defined as the number of output files (formed by the combination of  `outFilesBase`, `outFileSuffixes`, and `numOutFiles` arguments), the supported values for `splitBy` are:   
 * `"rows"` - To the extent possible, a uniform partition of the number of *rows* in the `inFile` .xdf file is performed. The minimum number of rows in each output  file is defined by `floor(numRows/numFiles)`, where `numRows` is the number of rows in `inFile`.  Additional rows will be distributed uniformly amongst the last set of files.  
 * `"blocks"` - To the extent possible, a uniform partition of the number of *blocks* in the `inFile` .xdf file is performed. If `blocksPerRead = 1`,  the minimum number of blocks in each output  file is defined by `floor(numBlocks/numFiles)`, where `numBlocks` is the number of blocks in `inFile`.  Additional blocks will be distributed uniformly amongst the last set of files. For `blocksPerRead > 1`, the number of blocks in each output file is reduced accordingly since multiple blocks  read at one time are collapsed to a single block upon write. 
@@ -105,87 +101,87 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
   
   
     
- ### splitByFactor
+ ### `splitByFactor`
  character string identifying the name of the factor to use in splitting the `inFile` .xdf data such that each file contains the data corresponding to a single level of the factor. The `splitBy` argument is ignored if `splitByFactor` is a valid factor variable name.  If `splitByFactor = NULL`, the `splitBy` argument is used to define the split method.   
   
   
     
- ### varsToKeep
+ ### `varsToKeep`
  character vector of variable names to include when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop`. 
   
   
     
- ### varsToDrop
+ ### `varsToDrop`
  character vector of variable names to exclude when reading from the input data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep`. 
   
   
     
- ### rowSelection
+ ### `rowSelection`
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### transforms
+ ### `transforms`
  an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### transformObjects
+ ### `transformObjects`
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. Ignored for  data frames. 
   
   
     
- ### transformFunc
- variable transformation function. See [rxTransform](rxtransform.md) for details. 
+ ### `transformFunc`
+ variable transformation function. See [rxTransform](rxTransform.md) for details. 
   
   
     
- ### transformVars
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
+ ### `transformVars`
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
   
   
     
- ### transformPackages
+ ### `transformPackages`
  character vector defining additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### transformEnvir
+ ### `transformEnvir`
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
     
- ### overwrite
+ ### `overwrite`
  logical value. If `TRUE`, an existing `outFile` will be overwritten, or if appending columns existing columns with the same name will be overwritten. `overwrite` is ignored if appending rows. Ignored for data frames. 
   
   
     
- ### removeMissings
+ ### `removeMissings`
  logical value. If `TRUE`, rows with missing values will not be included in the output data. 
   
   
     
- ### rowsPerRead
+ ### `rowsPerRead`
  number of rows to read for each chunk of data read from the input data source. Use this argument for finer control of the number of rows per block in the output data source. If greater than 0, `blocksPerRead` is ignored. Cannot be used if `inFile` is the same as `outFile`. 
   
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
  number of blocks to read for each chunk of data read from the data source. Ignored for data frames or if `rowsPerRead` is positive. 
   
   
     
- ### updateLowHigh
+ ### `updateLowHigh`
  logical value. If `FALSE`, the low and high values for each variable in the `inFile` .xdf file will be copied to the header of each output file so that  all output files reflect the global range of the data. If `TRUE`, each variable's low and high values are updated to reflect the range of values in the corresponding file, likely resulting in different low and  high values for the same variable between output files. Note that when using `rxSplit` and the output is a list of data frames, the `updateLowHigh` argument has no effect. 
   
   
     
- ### maxRowsByCols
- argument sent directly to the [rxDataStep](rxdatastep.md) function behind the scenes when converting the output .xdf files (back) into a list of data frames. This parameter is provided primarily for the case where `rxSplit` is being used to split a .xdf file or `RxXdfData` data source into portions that are then read back into R as  a list of data frames. In this case, `maxRowsByCols` provides a mechanism for the user to control the maximum number of of elements read from the output .xdf file in an effort to limit the amount of memory needed for storing each partition  as a data frame object in R. 
+ ### `maxRowsByCols`
+ argument sent directly to the [rxDataStep](rxDataStep.md) function behind the scenes when converting the output .xdf files (back) into a list of data frames. This parameter is provided primarily for the case where `rxSplit` is being used to split a .xdf file or `RxXdfData` data source into portions that are then read back into R as  a list of data frames. In this case, `maxRowsByCols` provides a mechanism for the user to control the maximum number of of elements read from the output .xdf file in an effort to limit the amount of memory needed for storing each partition  as a data frame object in R. 
   
   
     
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -195,17 +191,17 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
   
   
     
- ### verbose
+ ### `verbose`
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
      
- ### xdfCompressionLevel
+ ### `xdfCompressionLevel`
  integer in the range of -1 to 9.  The higher the value, the greater the  amount of compression - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used. 
    
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the function used to partition the data. For example,  
 * `Uniform Partition` - a `fill` argument with supported values are `"left"`, `"center"`, or `"right"`, can be used to place the remaining rows/blocks in the set of output files. For example, if `sortBy = "blocks"`, `inFile` has `15` blocks, and the number of output files is `6`, the distribution of blocks for the set of `6` output files will be:  
 * `fill = "left"` - 3 3 3 2 2 2  
@@ -223,7 +219,7 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
 Behind the scenes, the `rxSplitXdf` function is called by `rxSplit` after converting the `inData` data source into
 a (temporary) .xdf file. If both `outFilesBase` and `outFileSuffixes` are `NULL` (the default),
 then the type of output is determined by the type of inData: if the `inData` is an .xdf file name 
-or an [RxXdfData](rxxdfdata.md) object, and list of `RxXdfData` data sources representing the new 
+or an [RxXdfData](RxXdfData.md) object, and list of `RxXdfData` data sources representing the new 
 split .xdf files is returned.  If the `inData` is a data frame, then the output is returned 
 as a list of data frames. 
 If `outFilesBase` is an empty character string and `outFileSuffixes` is `NULL`, a list of 
@@ -246,7 +242,7 @@ We illustrate the use of these combinations in the examples below, which are ass
 
 
 
-###
+###``
  | Col  1 | Col  2 | Col  3 |
 | :---| :---| :--- |
 |  **INPUT ARGUMENTS**  |   |  **OUTPUT FILE VECTOR**  |
@@ -272,9 +268,9 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
  
  ##See Also
  
-[rxDataStep](rxdatastep.md),
-[rxImport](rximport.md),
-[rxTransform](rxtransform.md)
+[rxDataStep](rxDataStep.md),
+[rxImport](rxImport.md),
+[rxTransform](rxTransform.md)
    
  ##Examples
 

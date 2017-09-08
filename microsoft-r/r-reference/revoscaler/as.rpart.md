@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Conversion of a RevoScaleR rxDTree object to an rpart Object" 
+title: "as.rpart function (RevoScaleR) | Microsoft Docs" 
 description: " Converts objects containing decision tree results to an rpart object. " 
-keywords: "RevoScaleR, as.rpart, as.rpart.rxDTree, category, models" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), as.rpart, as.rpart.rxDTree, category, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #as.rpart: Conversion of a RevoScaleR rxDTree object to an rpart Object
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #as.rpart: Conversion of a RevoScaleR rxDTree object to an rpart Object 
  ##Description
  
 Converts objects containing decision tree results to an rpart object.
@@ -48,11 +44,11 @@ as.rpart  (x, ...)
 
    
     
- ### x
+ ### `x`
  object of class rxDTree. 
   
     
- ###  ...
+ ### ` ...`
  additional arguments (currently not used). 
   
  
@@ -80,7 +76,7 @@ an object of class rpart.
  
  ##See Also
  
-[rxDTree](rxdtree.md),
+[rxDTree](rxDTree.md),
 [as.lm](as.lm.md),
 [as.kmeans](as.kmeans.md),
 [as.glm](as.glm.md),

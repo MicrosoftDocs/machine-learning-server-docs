@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxDistributedHpa" 
+title: "RxDistributedHpa-class function (RevoScaleR) | Microsoft Docs" 
 description: " Compute context class for clusters supporting RevoScaleR High Performance Analytics and High Perfomance Computing. " 
-keywords: "RevoScaleR, RxDistributedHpa-class, show,RxDistributedHpa-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxDistributedHpa-class, show,RxDistributedHpa-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxDistributedHpa-class: Class RxDistributedHpa
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxDistributedHpa-class: Class RxDistributedHpa 
  ##Description
  
 Compute context class for clusters supporting RevoScaleR High Performance Analytics and High Perfomance Computing.
@@ -48,10 +44,9 @@ Class RxComputeContext, directly.
  
  ##See Also
  
-[RxComputeContext-class](rxcomputecontext-class.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxSpark](rxspark.md),
-[RxInTeradata](rxinteradata.md),
-[RxInSqlServer](rxinsqlserver.md).
+[RxComputeContext-class](RxComputeContext-class.md),
+[RxHadoopMR](RxHadoopMR.md),
+[RxSpark](RxSpark.md),
+[RxInSqlServer](RxInSqlServer.md).
    
  

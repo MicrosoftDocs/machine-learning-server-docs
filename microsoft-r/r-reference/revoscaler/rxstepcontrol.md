@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Control for Stepwise Regression" 
+title: "rxStepControl function (RevoScaleR) | Microsoft Docs" 
 description: "     Various parameters that control aspects of stepwise regression. " 
-keywords: "RevoScaleR, rxStepControl, models, classification, regression" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxStepControl, models, classification, regression" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxStepControl: Control for Stepwise Regression
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxStepControl: Control for Stepwise Regression 
  
  ##Description
  
@@ -51,7 +47,7 @@ Various parameters that control aspects of stepwise regression.
 
    
     
- ### method
+ ### `method`
   a character string specifying the method of stepwise search:  
 *   "stepwise": bi-directional search. 
 *   "backward": backward elimination. 
@@ -59,51 +55,51 @@ Various parameters that control aspects of stepwise regression.
  Default is "stepwise" if the scope argument is not missing, otherwise "backward". 
   
     
- ### scope
+ ### `scope`
   either a single formula, or a named list containing components upper and lower, both formulae, defining the range of models to be examined in the stepwise search. 
   
     
- ### maxSteps
+ ### `maxSteps`
   an integer specifying the maximum number of steps to be considered, typically used to stop the process early and the default is 1000. 
   
   
     
- ### stepCriterion
+ ### `stepCriterion`
   a character string specifying the variable selection criterion:  
 *   "AIC": Akaike's information criterion. 
 *   "SigLevel": significance level, the traditional stepwise approach in SAS. 
  This argument is similar to the SELECT option of the GLMSELECT procedure in SAS.  Default is "AIC". 
   
     
- ### maxSigLevelToAdd
+ ### `maxSigLevelToAdd`
   a numeric scalar specifying the significance level for adding a variable to the model.  This argument is used only when stepCriterion = "SigLevel" and  is similar to the SLENTRY option of the GLMSELECT procedure in SAS. The defaults are 0.50 for "forward" and 0.15 for "stepwise". 
   
     
- ### minSigLevelToDrop
+ ### `minSigLevelToDrop`
   a numeric scalar specifying the significance level for dropping a variable from the model. This argument is used only when stepCriterion = "SigLevel" and  is similar to the SLSTAY option of the GLMSELECT procedure in SAS. The defaults are 0.10 for "backward" and 0.15 for "stepwise". 
   
     
- ### refitEachStep
+ ### `refitEachStep`
   a logical flag specifying whether or not to refit the model at each step. The default is `NULL`,  indicating to refit the model at each step for `rxLogit` and `rxGlm` but not for `rxLinMod`. 
   
     
- ### keepStepCoefs
-  a logical flag specifying whether or not to keep the model coefficients at each step.  If `TRUE`, a data.frame `stepCoefs` will be returned with the fitted model with rows corresponding to the coefficients and columns corresponding to the iterations. Additional computation may be required to generate the coefficients at each step. Those stepwise coefficients can be visualized by plotting the fitted model with [rxStepPlot](rxstepplot.md). 
+ ### `keepStepCoefs`
+  a logical flag specifying whether or not to keep the model coefficients at each step.  If `TRUE`, a data.frame `stepCoefs` will be returned with the fitted model with rows corresponding to the coefficients and columns corresponding to the iterations. Additional computation may be required to generate the coefficients at each step. Those stepwise coefficients can be visualized by plotting the fitted model with [rxStepPlot](rxStepPlot.md). 
   
     
- ### scale
+ ### `scale`
   optional numeric scalar specifying the scale parameter of the model. It is used in computing the AIC statistics for selecting the models. The default 0 indicates it should be estimated by maximum likelihood. See "scale" in step for details. 
   
     
- ### k
+ ### `k`
   optional numeric scalar specifying the weight of the number of  equivalent degrees of freedom in computing AIC for the penalty.  See "k" in step for details. 
   
     
- ### test
+ ### `test`
   a character string specifying the test statistic to be included in the results, either "F" or "Chisq". Both test statistics are relative to the original model. 
   
     
- ###  ...
+ ### ` ...`
   additional arguments to be passed directly to the Microsoft R Services Compute Engine. 
   
  
@@ -150,7 +146,7 @@ Vol. **33** No. **3**, 149--158.
  
  ##See Also
  
-step, [rxStepPlot](rxstepplot.md).
+step, [rxStepPlot](rxStepPlot.md).
    
  ##Examples
 

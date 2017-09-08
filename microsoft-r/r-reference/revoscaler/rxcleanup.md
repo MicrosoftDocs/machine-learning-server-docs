@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Cleanup of a Distributed Computing Job or Jobs. " 
+title: "rxCleanupJobs function (RevoScaleR) | Microsoft Docs" 
 description: " Removes artifacts created while executing a distributed computing job. " 
-keywords: "RevoScaleR, rxCleanupJobs, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxCleanupJobs, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxCleanupJobs:  Cleanup of a Distributed Computing Job or Jobs. 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxCleanupJobs:  Cleanup of a Distributed Computing Job or Jobs.  
  ##Description
  
 Removes artifacts created while executing a distributed computing job.
@@ -48,17 +44,17 @@ Removes artifacts created while executing a distributed computing job.
 
    
   
- ### jobInfoList
- `rxJobInfo` object or a list of job objects that can be obtained  from [rxGetJobs](rxgetjobs.md). 
+ ### `jobInfoList`
+ `rxJobInfo` object or a list of job objects that can be obtained  from [rxGetJobs](rxGetJobs.md). 
   
   
   
- ### force
+ ### `force`
  logical scalar. If `TRUE`, forces removal of job directories even if  there are retrievable results or if the current job state is undetermined. 
   
   
   
- ### verbose
+ ### `verbose`
  logical scalar.  If `TRUE`, will print the directories/records being deleted. 
   
  
@@ -69,7 +65,7 @@ Removes artifacts created while executing a distributed computing job.
 If `jobInfoList` is a `jobInfo` object, `rxCleanupJobs` attempts to remove the artifacts.
 However, if the job has successfully completed and `force=FALSE`,
 `rxCleanupJobs` issues a warning saying to either set `force=TRUE` or use 
-[rxGetJobResults](rxgetjobresults.md) to get the results and delete the artifacts.  
+[rxGetJobResults](rxGetJobResults.md) to get the results and delete the artifacts.  
 
 If `jobInfoList` is a list of jobs, `rxCleanupJobs` attempts to apply the cleanup rules 
 for a single job to each element in the list.
@@ -88,12 +84,11 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxGetJobs](rxgetjobs.md), 
-[rxGetJobOutput](rxgetjoboutput.md),
-[RxSpark](rxspark.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxInTeradata](rxinteradata.md),  
-[rxGetJobResults](rxgetjobresults.md)
+[rxGetJobs](rxGetJobs.md), 
+[rxGetJobOutput](rxGetJobOutput.md),
+[RxSpark](RxSpark.md),
+[RxHadoopMR](RxHadoopMR.md),
+[rxGetJobResults](rxGetJobResults.md)
    
  ##Examples
 

@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Marginal Table Statistics" 
-description: " Obtain marginal statistics on `rxCrossTabs` contingency tables. " 
-keywords: "RevoScaleR, rxMarginals, rxMarginals.rxCrossTabs, category, models" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxMarginals function (RevoScaleR) | Microsoft Docs" 
+description: " Obtain marginal statistics on rxCrossTabs contingency tables. " 
+keywords: "(RevoScaleR), rxMarginals, rxMarginals.rxCrossTabs, category, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxMarginals: Marginal Table Statistics
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxMarginals: Marginal Table Statistics 
  ##Description
  
 Obtain marginal statistics on `rxCrossTabs` contingency tables.
@@ -48,17 +44,17 @@ rxMarginals  (x, output = "sums", ...)
 
    
     
- ### x
+ ### `x`
  object of class rxCrossTabs. 
   
   
     
- ### output
+ ### `output`
  character string specifying the type of output to display.  Choices are `"sums"`, `"counts"` and `"means"`. 
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the underlying print method for the output list object. 
   
  
@@ -66,7 +62,7 @@ rxMarginals  (x, output = "sums", ...)
  ##Details
  
 Developed primarily as a method to access marginal statistics from
-[rxCrossTabs](rxcrosstabs.md) generated cross-tabulations.
+[rxCrossTabs](rxCrossTabs.md) generated cross-tabulations.
  
  
  ##Value
@@ -81,7 +77,7 @@ of the list contains a list of the marginal means (row, column, and grand) if
  
  ##See Also
  
-[rxCrossTabs](rxcrosstabs.md)
+[rxCrossTabs](rxCrossTabs.md)
    
  ##Examples
 

@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "RevoScaleR File System object generator" 
+title: "RxFileSystem function (RevoScaleR) | Microsoft Docs" 
 description: " This is the main generator for RxFileSystem S3 classes. " 
-keywords: "RevoScaleR, RxFileSystem, print.RxFileSystem, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxFileSystem, print.RxFileSystem, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #RxFileSystem: RevoScaleR File System object generator
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxFileSystem: RevoScaleR File System object generator 
  ##Description
  
 This is the main generator for RxFileSystem S3 classes.
@@ -50,15 +46,15 @@ print  ( x, ... )
 
    
     
- ### fileSystem
+ ### `fileSystem`
  character string specifying class name or file system type  existing `RxFileSystem` object.  Choices include: "RxNativeFileSystem" or "native", or "RxHdfsFileSystem" or "hdfs". Optional arguments `hostName` and `port` may be specified for HDFS file systems.  
   
     
- ### x
+ ### `x`
  an RxFileSystem object.  
   
     
- ###  ...
+ ### ` ...`
  other arguments are passed to the underlying function.  
   
  
@@ -67,15 +63,15 @@ print  ( x, ... )
  
 This is a wrapper to specific generator functions for the
 RevoScaleR file system classes. For example, the RxHdfsFileSystem class uses function
-[RxHdfsFileSystem](rxhdfsfilesystem.md) as a generator. Therefore either `RxHdfsFileSystem()`
+[RxHdfsFileSystem](RxHdfsFileSystem.md) as a generator. Therefore either `RxHdfsFileSystem()`
 or `RxFileSystem("hdfs")` will create an RxHdfsFileSystem object.
  
  
  ##Value
  
 A type of RxFileSystem file system object. This object may be used in
-[rxSetFileSystem](rxsetfilesystem.md), [rxOptions](rxoptions.md), [RxTextData](rxtextdata.md), or
-[RxXdfData](rxxdfdata.md) to set the file system.
+[rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
+[RxXdfData](RxXdfData.md) to set the file system.
  
  ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
@@ -83,12 +79,12 @@ A type of RxFileSystem file system object. This object may be used in
  
  ##See Also
  
-[RxNativeFileSystem](rxnativefilesystem.md),
-[RxHdfsFileSystem](rxhdfsfilesystem.md),
-[rxSetFileSystem](rxsetfilesystem.md),
-[rxOptions](rxoptions.md),
-[RxXdfData](rxxdfdata.md),
-[RxTextData](rxtextdata.md).
+[RxNativeFileSystem](RxNativeFileSystem.md),
+[RxHdfsFileSystem](RxHdfsFileSystem.md),
+[rxSetFileSystem](rxSetFileSystem.md),
+[rxOptions](rxOptions.md),
+[RxXdfData](RxXdfData.md),
+[RxTextData](RxTextData.md).
    
  ##Examples
 

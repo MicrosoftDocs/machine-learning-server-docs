@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Managing RevoScaleR Data Source Objects" 
+title: "rxOpen-methods function (RevoScaleR) | Microsoft Docs" 
 description: " These functions manage **RevoScaleR** data source objects. " 
-keywords: "RevoScaleR, rxOpen-methods, rxOpen, rxClose, rxIsOpen, rxReadNext, rxWriteNext, rxClose-methods, rxIsOpen-methods, rxReadNext-methods, rxWriteNext-methods, rxOpen,RxDataSource-method, rxClose,RxDataSource-method, rxIsOpen,RxDataSource-method, rxReadNext,RxDataSource-method, rxWriteNext,data.frame,RxDataSource-method, methods, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxOpen-methods, rxOpen, rxClose, rxIsOpen, rxReadNext, rxWriteNext, rxClose-methods, rxIsOpen-methods, rxReadNext-methods, rxWriteNext-methods, rxOpen,RxDataSource-method, rxClose,RxDataSource-method, rxIsOpen,RxDataSource-method, rxReadNext,RxDataSource-method, rxWriteNext,data.frame,RxDataSource-method, methods, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -41,10 +40,7 @@ ms.technology: "r-server"
  
  
  
- #rxOpen-methods: Managing RevoScaleR Data Source Objects
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxOpen-methods: Managing RevoScaleR Data Source Objects 
  ##Description
  
 These functions manage **RevoScaleR** data source objects.
@@ -65,23 +61,23 @@ These functions manage **RevoScaleR** data source objects.
 
    
     
- ### from
+ ### `from`
  data frame object. 
   
     
- ### src
+ ### `src`
  RxDataSource object. 
   
     
- ### to
+ ### `to`
  RxDataSource object. 
   
     
- ### mode
+ ### `mode`
  character string specifying the mode to open the file. Currently only `"r"` (read-only) is supported. 
   
     
- ###  ...
+ ### ` ...`
  any other arguments to be passed on. 
   
    
@@ -102,8 +98,8 @@ the `returnDataFrame` property within `src`.
  
  ##See Also
  
-[rxNewDataSource](rxnew.md),
-[RxXdfData](rxxdfdata.md).
+[rxNewDataSource](rxNew.md),
+[RxXdfData](RxXdfData.md).
    
  ##Examples
 

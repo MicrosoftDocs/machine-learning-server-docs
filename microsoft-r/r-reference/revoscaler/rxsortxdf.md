@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Variable sorting of an .xdf file or data frame. " 
+title: "rxSort function (RevoScaleR) | Microsoft Docs" 
 description: " Efficient multi-key sorting of the variables in an .xdf file or data frame in a local compute context. " 
-keywords: "RevoScaleR, rxSort, file" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxSort, file" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxSort:  Variable sorting of an .xdf file or data frame. 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxSort:  Variable sorting of an .xdf file or data frame.  
  ##Description
  
 Efficient multi-key sorting of the variables in an .xdf file or data frame in a local compute context.
@@ -55,39 +51,39 @@ Efficient multi-key sorting of the variables in an .xdf file or data frame in a 
    
   
     
- ### inData
+ ### `inData`
   a data frame, a character string denoting the path to an existing .xdf file, or an RxXdfData object.  
   
     
- ### inFile
+ ### `inFile`
   either an RxXdfData object or a character string denoting the path to an existing .xdf file.  
   
   
     
- ### outFile
+ ### `outFile`
   an .xdf path to store the sorted output. If `NULL`, a data frame with the sorted output  will be returned from `rxSort`.  
   
     
- ### sortByVars
+ ### `sortByVars`
   character vector containing the names of the variables to use for sorting. If multiple variables are used, the first `sortByVars` variable is sorted and common values are grouped. The second variable is then sorted within the first variable groups. The third variable is then sorted within groupings formed by the first two variables, and so on.  
   
     
- ### decreasing
+ ### `decreasing`
   a logical scalar or vector defining the whether or not the `sortByVars` variables are  to be sorted in decreasing or increasing order. If a vector, the length `decreasing` must be that of `sortByVars`. If a logical scalar, the value of `decreasing` is replicated to the length `sortByVars`.  
   
   
     
- ### type
+ ### `type`
   a character string defining the sorting method to use.  Type `"auto"` automatically determines the sort method based on the amount of memory required for sorting. If possible, all of the data will be sorted in memory. Type `"mergeSort"` uses a merge sort method, where chunks of data are pre-sorted, then merged together. Type `"varByVar"` uses a variable-by-variable sort method,  which assumes that the `sortByVars` variables and the calculated sorted index variable can be held in memory simultaneously. If `type="varByVar"`, the variables in the sorted data are re-ordered so that the variables named in `sortByVars` come first, followed by any remaining variables.  
   
   
     
- ### missingsLow
+ ### `missingsLow`
   a logical scalar for controlling the treatment of missing values. If `TRUE`, missing values  in the data are treated as the lowest value; if `FALSE`, they are treated as the highest value.  
   
   
     
- ### caseSensitive
+ ### `caseSensitive`
   a logical scalar. If `TRUE`, case sensitive sorting is performed for character data.  
   
   
@@ -97,42 +93,42 @@ Efficient multi-key sorting of the variables in an .xdf file or data frame in a 
    
   
     
- ### removeDupKeys
+ ### `removeDupKeys`
  logical scalar. If `TRUE`, only the first observation will be   kept when duplicate values of the key (`sortByVars`) are encountered. The sort  `type` must be set to `"auto"` or `"mergeSort"`.   
   
    
     
- ### varsToKeep
+ ### `varsToKeep`
  character vector defining variables to keep when writing the output to file. If `NULL`, this argument is ignored. This argument takes precedence over `varsToDrop` if both are specified, i.e., both are not `NULL`.  If both `varsToKeep` and `varsToDrop` are `NULL` then all variables are  written to the data source. 
   
   
     
- ### varsToDrop
+ ### `varsToDrop`
  character vector of variable names to exclude when writing the output data file. If `NULL`, this argument is ignored.  If both `varsToKeep` and `varsToDrop` are `NULL` then all variables are  written to the data source. 
   
   
     
- ### dupFreqVar
+ ### `dupFreqVar`
  character string denoting name of new variable for frequency counts if `removeDupKeys` is set to `TRUE`.  Ignored if `removeDupKeys` is set to `FALSE`.  If `NULL`, a new variable for frequency counts will not be created. 
   
   
     
- ### overwrite
+ ### `overwrite`
  logical value. If `TRUE`, an existing `outFile` will be overwritten. 
   
   
   
- ### maxRowsByCols
+ ### `maxRowsByCols`
  the maximum size of a data frame that will be returned if `outFile` is set to `NULL` and `inData` is an .xdf file , measured by the number of rows times the number of columns. If the number of rows times the number of columns being created from the .xdf file exceeds this, a warning will be reported and the number of rows in the returned data frame will be truncated. If `maxRowsByCols` is set to be too large, you may experience problems  from loading a huge data frame into memory. 
   
   
     
- ### bufferLimit
+ ### `bufferLimit`
  integer specifying the maximum size of the memory buffer (in Mb)  to use in sorting when `type` is set to `"auto"`.  The default value of `bufferLimit = -1` will attempt to  determine an appropriate buffer limit based on system memory.  
   
   
     
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -142,22 +138,22 @@ Efficient multi-key sorting of the variables in an .xdf file or data frame in a 
   
   
     
- ### verbose
+ ### `verbose`
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
      
- ### xdfCompressionLevel
+ ### `xdfCompressionLevel`
  integer in the range of -1 to 9.  The higher the value, the greater the  amount of compression for the output file - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and the output file will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used. 
    
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
  deprecated argument. It will be ignored. 
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the Revolution Compute Engine. 
   
  
@@ -178,7 +174,7 @@ defined by `varsToKeep` or `varsToDrop`.
  
 If an `outFile` is not specified, a data frame with the sorted data
 is returned. If an `outFile` is specified, an 
-[RxXdfData](rxxdfdata.md) data source is returned that can be used in
+[RxXdfData](RxXdfData.md) data source is returned that can be used in
 subsequent RevoScaleR analysis. If sorting is unsuccessful, `FALSE`
 is returned.
 

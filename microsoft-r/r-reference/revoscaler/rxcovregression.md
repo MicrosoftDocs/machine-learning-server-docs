@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Covariance and Correlation Matrices for Linear Model Coefficients and Explanatory Variables" 
-description: " Obtain covariance and correlation matrices for the coefficient estimates within `rxLinMod`,  `rxLogit`, and `rxGlm` objects and explanatory variables within `rxLinMod` and `rxLogit` objects. " 
-keywords: "RevoScaleR, rxCovCoef, rxCovCoef.rxLinMod, rxCovCoef.rxLogit, rxCovCoef.rxGlm, rxCorCoef, rxCorCoef.rxLinMod, rxCorCoef.rxLogit, rxCorCoef.rxGlm, rxCovData, rxCovData.rxLinMod, rxCovData.rxLogit, rxCorData, rxCorData.rxLinMod, rxCorData.rxLogit, models, regression" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxCovCoef function (RevoScaleR) | Microsoft Docs" 
+description: " Obtain covariance and correlation matrices for the coefficient estimates within rxLinMod,  rxLogit, and rxGlm objects and explanatory variables within rxLinMod and rxLogit objects. " 
+keywords: "(RevoScaleR), rxCovCoef, rxCovCoef.rxLinMod, rxCovCoef.rxLogit, rxCovCoef.rxGlm, rxCorCoef, rxCorCoef.rxLinMod, rxCorCoef.rxLogit, rxCorCoef.rxGlm, rxCovData, rxCovData.rxLinMod, rxCovData.rxLogit, rxCorData, rxCorData.rxLinMod, rxCorData.rxLogit, models, regression" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -39,10 +38,7 @@ ms.technology: "r-server"
  
  
  
- #rxCovCoef: Covariance and Correlation Matrices for Linear Model Coefficients and Explanatory Variables
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxCovCoef: Covariance and Correlation Matrices for Linear Model Coefficients and Explanatory Variables 
  ##Description
  
 Obtain covariance and correlation matrices for the coefficient estimates within `rxLinMod`, 
@@ -64,7 +60,7 @@ explanatory variables within `rxLinMod` and `rxLogit` objects.
 
    
     
- ### x
+ ### `x`
  object of class `rxLinMod`, `rxLogit`, or `rxGlm` that  satisfies conditions in the Details section. 
   
  
@@ -104,9 +100,9 @@ the model matrix.
  
  ##See Also
  
-[rxLinMod](rxlinmod.md),
-[rxLogit](rxlogit.md),
-[rxCovCor](rxcovcor.md).
+[rxLinMod](rxLinMod.md),
+[rxLogit](rxLogit.md),
+[rxCovCor](rxCovCor.md).
    
  ##Examples
 

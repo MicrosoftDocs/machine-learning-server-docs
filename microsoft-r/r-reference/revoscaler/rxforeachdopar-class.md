@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxForeachDoPar" 
+title: "RxForeachDoPar-class function (RevoScaleR) | Microsoft Docs" 
 description: "   Class for the RevoScaleR Compute Context using one of the foreach dopar back ends.   " 
-keywords: "RevoScaleR, RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxForeachDoPar-class: Class RxForeachDoPar
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxForeachDoPar-class: Class RxForeachDoPar 
  ##Description
  
 Class for the RevoScaleR Compute Context using one of the foreach dopar back ends.  
@@ -40,8 +36,8 @@ Class for the RevoScaleR Compute Context using one of the foreach dopar back end
  ## Generators 
 
  
-The targeted generator [RxForeachDoPar](rxforeachdopar.md) as well as the general generator
-[RxComputeContext](rxcomputecontext.md).
+The targeted generator [RxForeachDoPar](RxForeachDoPar.md) as well as the general generator
+[RxComputeContext](RxComputeContext.md).
  
  ## Extends 
 
@@ -53,7 +49,7 @@ Class RxComputeContext, directly.
  
 
 
-###show
+###`show`
 `signature(object = "RxForeachDoPar")`: ...
 
 
@@ -65,12 +61,11 @@ Class RxComputeContext, directly.
  
  ##See Also
  
-[RxComputeContext](rxcomputecontext.md),
-[RxLocalSeq](rxlocalseq.md),
-[RxLocalParallel](rxlocalparallel.md),
-[RxSpark](rxspark.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxInTeradata](rxinteradata.md).
+[RxComputeContext](RxComputeContext.md),
+[RxLocalSeq](RxLocalSeq.md),
+[RxLocalParallel](RxLocalParallel.md),
+[RxSpark](RxSpark.md),
+[RxHadoopMR](RxHadoopMR.md).
 
    
  ##Examples
