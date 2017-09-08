@@ -84,7 +84,7 @@ decision trees. Each tree in a decision forest outputs a Gaussian distribution.
 
 ### formula
 
-The formula as described in [revoscalepy.rx_formula](../revoscalepy/rx-formula.md).
+The formula as described in revoscalepy.rx_formula.
 Interaction terms and `F()` are not currently supported in
 [microsoftml](microsoftml-package.md).
 

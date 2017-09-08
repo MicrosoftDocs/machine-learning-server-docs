@@ -29,11 +29,6 @@ ms.custom: ""
 
 **Applies to: SQL Server 2017**
 
-* [optimizers](optimizers.md) 
-
-* [math](math.md) 
-
-
 ## Usage
 
 
