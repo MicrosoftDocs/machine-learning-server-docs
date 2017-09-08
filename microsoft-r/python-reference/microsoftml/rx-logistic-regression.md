@@ -99,9 +99,9 @@ performance of the logistic regression model.
 
 ### formula
 
-The formula as described in [revoscalepy.rx_formula](/python-reference/revoscale.py/api/rx-formula.md).
+The formula as described in revoscalepy.rx_formula
 Interaction terms and `F()` are not currently supported in
-[microsoftml](./microsoftml/index.md).
+[microsoftml](microsoftml-package.md).
 
 
 ### data
@@ -301,7 +301,7 @@ no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
 If `transform_environment = None`, a new “hash” environment with parent
-[revoscalepy.baseenv](/python-reference/revoscale.py/api/baseenv.md) is used instead.
+revoscalepy.baseenv is used instead.
 
 
 ### blocks_per_read
@@ -334,8 +334,8 @@ values from `1` to `4` provide increasing amounts of information.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](/python-reference/revoscale.py/api/RxComputeContext.md).
-Currently local and [revoscalepy.RxInSqlServer](/python-reference/revoscale.py/api/RxInSqlServer.md) compute contexts
+specified with a valid revoscalepy.RxComputeContext.
+Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 
 

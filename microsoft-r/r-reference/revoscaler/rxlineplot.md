@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Line Plot" 
+title: "rxLinePlot function (RevoScaleR) | Microsoft Docs" 
 description: " Line or scatter plot using data from an .xdf file or data frame - a wrapper function for xyplot. " 
-keywords: "RevoScaleR, rxLinePlot, hplot" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxLinePlot, hplot" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxLinePlot: Line Plot
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxLinePlot: Line Plot 
  ##Description
  
 Line or scatter plot using data from an .xdf file or data frame - a wrapper
@@ -59,146 +55,146 @@ function for xyplot.
 
    
     
- ### formula
+ ### `formula`
  formula for plot, taking the form of `y~x|g1 + g2`where `g1` and `g2` are optional conditioning factor variables. 
   
   
     
- ### data
+ ### `data`
  either an RxXdfData object, a character string specifying the .xdf file, or a data frame containing the data to plot. 
   
   
     
- ### rowSelection
+ ### `rowSelection`
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### transforms
+ ### `transforms`
  an expression of the form `list(name = expression, ...)` representing variable transformations required for the formula or rowSelection. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### transformObjects
+ ### `transformObjects`
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
     
- ### transformFunc
- variable transformation function. See [rxTransform](rxtransform.md) for details. 
+ ### `transformFunc`
+ variable transformation function. See [rxTransform](rxTransform.md) for details. 
   
   
     
- ### transformVars
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
+ ### `transformVars`
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
   
   
     
- ### transformPackages
+ ### `transformPackages`
  character vector defining additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### transformEnvir
+ ### `transformEnvir`
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
  number of blocks to read for each chunk of data read from  the data source. 
   
   
     
- ### type
+ ### `type`
  character vector specifying the type of plot. Use `"l"` for line, `"p"` for points, `"b"` for both, `"smooth"` for a  loess fit, `"s"` for stair steps, or `"r"` for a regression line. 
   
   
     
- ### title
+ ### `title`
  main title for the plot.  Alternatively `main` can be used. 
   
   
     
- ### subtitle
+ ### `subtitle`
  subtitle (at the bottom) for the plot.  Alternatively `sub` can be used. 
   
   
     
- ### xTitle
+ ### `xTitle`
  title for the X axis. Alternatively `xlab` can be used. 
   
   
     
- ### yTitle
+ ### `yTitle`
  title for the Y axis. Alternatively `ylab` can be used. 
   
   
     
- ### xNumTicks
+ ### `xNumTicks`
  number of tick marks for numeric X axis. 
   
   
     
- ### yNumTicks
+ ### `yNumTicks`
  number of tick marks for numeric Y axis. 
   
   
     
- ### legend
+ ### `legend`
  logical value. If `TRUE` and more than one line or set of symbols is plotted, a legend is is created. 
   
   
     
- ### lineColor
+ ### `lineColor`
  character or integer vector specifying line colors for the plot. See colors for a list of available colors. 
   
   
     
- ### lineStyle
+ ### `lineStyle`
  line style for line plot: `"blank"`, `"solid"`, `"dashed"`, `"dotted"`, `"dotdash"`, `"longdash"`, or `"twodash"`. Specify `"blank"` for no line, or set `type` to `"p"`. 
   
   
     
- ### lineWidth
+ ### `lineWidth`
  a positive number specifiying the line width for line plot.  The interpretation is device-specific. 
   
   
     
- ### symbolColor
+ ### `symbolColor`
  character or integer vector denoting the symbol colors. See colors for a list of available colors. 
   
   
     
- ### symbolStyle
+ ### `symbolStyle`
  character or integer vector denoting the symbol style(s): `"circle"`, `"solid circle"`, `"square"`, `"solid square"`, `"triangle"`, `"solid triangle"`, `"diamond"`, `"solid diamond"`, `"plus"` (3), `"cross"` (4), `"down triangle"` (6), `"square x"` (7), `"star"` (8), `"diamond +"` (9), `"circle +"` (10), `"up down triangle"` (11), `"square +"` (12), `"circle x"` (13), or any single character. 
   
   
     
- ### symbolSize
+ ### `symbolSize`
  numerical value giving the amount by which symbols should be magnified. 
   
   
     
- ### plotAreaColor
+ ### `plotAreaColor`
  background color for the plot area and legend. 
   
   
     
- ### gridColor
+ ### `gridColor`
  color for grid lines. See colors for a list of available colors. 
   
   
     
- ### gridLineWidth
+ ### `gridLineWidth`
  line width for grid lines. 
   
   
     
- ### gridLineStyle
+ ### `gridLineStyle`
  line style for grid lines: `"blank"`, `"solid"`, `"dashed"`, `"dotted"`, `"dotdash"`, `"longdash"`, or `"twodash"`. 
   
   
     
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -207,12 +203,12 @@ function for xyplot.
   
   
     
- ### print
+ ### `print`
  logical. If `TRUE`, the plot is printed. If `FALSE`, and the **lattice** package is loaded, an xyplot object is returned invisibly and can be printed later.  Note that the printing of the legend or key will depend on the trellis.par.getsettings at the time of printing. 
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the underlying xyplot function if loaded. 
   
  
@@ -228,14 +224,14 @@ function for xyplot.
 an xyplot object if the **lattice** is loaded.
 Otherwise `NULL`.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
 xyplot,
-[rxHistogram](rxhistogram.md).
+[rxHistogram](rxHistogram.md).
    
  ##Examples
 

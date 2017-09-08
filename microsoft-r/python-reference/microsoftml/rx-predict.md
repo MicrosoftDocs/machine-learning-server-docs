@@ -149,8 +149,8 @@ The default value is `1`.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](/python-reference/revoscale.py/api/RxComputeContext.md).
-Currently local and [revoscalepy.RxInSqlServer](/python-reference/revoscale.py/api/RxInSqlServer.md) compute contexts
+specified with a valid revoscalepy.RxComputeContext.
+Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 
 
@@ -161,7 +161,7 @@ Additional arguments sent to compute engine.
 
 ## Returns
 
-A data frame or an [revoscalepy.RxDataSource](/python-reference/revoscale.py/api/RxDataSource.md) object
+A data frame or an [revoscalepy.RxDataSource](../revoscalepy/RxDataSource.md) object
 representing the created output data. By default, output from scoring binary
 classifiers include three variables: `PredictedLabel`,
 `Score`, and `Probability`; `rx_oneclass_svm` and regression
@@ -174,8 +174,8 @@ of these output variable names.
 ## See also
 
 [`rx_featurize`](rx-featurize.md),
-[revoscalepy.rx_data_step](/python-reference/revoscale.py/api/rx-data-step.md),
-[revoscalepy.rx_import](/python-reference/revoscale.py/api/rx-import.md).
+[revoscalepy.rx_data_step](../revoscalepy/rx-data-step.md),
+[revoscalepy.rx_import](../revoscalepy/rx-import.md).
 
 
 ## Example

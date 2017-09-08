@@ -76,5 +76,5 @@ The weighting criteria (settings).
 
 ## See also
 
-[n_gram_hash](microsoftml.modules.text-analytics.n-gram-hash.md),
-[featurize_text](microsoftml.modules.text-analytics.featurize-text.md)
+[n_gram_hash](n-gram-hash.md),
+[featurize_text](featurize-text.md)

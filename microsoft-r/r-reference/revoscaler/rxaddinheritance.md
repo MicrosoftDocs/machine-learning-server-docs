@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Add Inheritance to Compatible Objects" 
-description: "Add a specific S3 class to the class of a compatible object. " 
-keywords: "RevoScaleR, rxAddInheritance, rxAddInheritance.default, rxAddInheritance.rxDTree, models, tree, classif, regression" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxAddInheritance function (RevoScaleR) | Microsoft Docs" 
+description: " 	Add a specific S3 class to the class of a compatible object. " 
+keywords: "(RevoScaleR), rxAddInheritance, rxAddInheritance.default, rxAddInheritance.rxDTree, models, tree, classif, regression" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxAddInheritance: Add Inheritance to Compatible Objects
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxAddInheritance: Add Inheritance to Compatible Objects 
  ##Description
  
 Add a specific S3 class to the `"class"` of a compatible object.
@@ -53,15 +49,15 @@ rxAddInheritance  (x, inheritanceClass = "rpart",    ...  )
 
    
     
- ### x
+ ### `x`
   the object to which inheritance is to be added. Specifically, for `rxAddInheritance.rxDTree`, an object of class `rxDTree`. 
   
     
- ### inheritanceClass
+ ### `inheritanceClass`
   the class to be inherited from. Specifically, for `rxAddInheritance.rxDTree`, the class `"rpart"`. 
   
     
- ###  ...
+ ### ` ...`
   additional arguments to be passed directly to other methods. 
   
  
@@ -87,15 +83,15 @@ The original object, modified to include `inheritanceClass` as part of its `"cla
 In the case of `rxDTree` objects, the object may also be modified to include the `functions` component if it was
 previously `NULL`.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  
  ##See Also
  
-[rxDTree](rxdtree.md).
+[rxDTree](rxDTree.md).
    
  ##Examples
 

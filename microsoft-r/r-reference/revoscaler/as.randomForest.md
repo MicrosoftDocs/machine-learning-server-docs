@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Conversion of an rxDForest, rxDTree, or rpart object to an randomForest Object" 
+title: "as.randomForest function (RevoScaleR) | Microsoft Docs" 
 description: " Converts objects containing decision tree results to an randomForest object. " 
-keywords: "RevoScaleR, as.randomForest, as.randomForest.rxDForest, as.randomForest.rxDTree, as.randomForest.rpart, category, models" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), as.randomForest, as.randomForest.rxDForest, as.randomForest.rxDTree, as.randomForest.rpart, category, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -29,10 +28,7 @@ ms.technology: "r-server"
  
  
  
- #as.randomForest: Conversion of an rxDForest, rxDTree, or rpart object to an randomForest Object
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #as.randomForest: Conversion of an rxDForest, rxDTree, or rpart object to an randomForest Object 
  ##Description
  
 Converts objects containing decision tree results to an randomForest object.
@@ -54,19 +50,19 @@ as.randomForest  (x, use.weight = TRUE, ties.method = c("random", "first", "last
 
    
     
- ### x
+ ### `x`
   object of class rxDForest, rxDTree, or rpart. 
   
     
- ### use.weight
+ ### `use.weight`
   a logical value (default being `TRUE`) specifying if the majority splitting direction  at a node should be decided based on the sum of case weights or the number of observations when the split variable at the node is a factor or ordered factor  but a certain level is not present (or not defined for the factor). 
   
     
- ### ties.method
+ ### `ties.method`
   a character string specifying how ties are handled when deciding the majority direction,  with the default being `"random"`. Refer to max.col for details. 
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to `as.randomForest.rpart`. 
   
  
@@ -88,17 +84,17 @@ In many cases, this method can be used to coerce an object for use with the **pm
 an object of class randomForest.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxDForest](rxdforest.md),
-[rxDTree](rxdtree.md),
+[rxDForest](rxDForest.md),
+[rxDTree](rxDTree.md),
 rpart,
 randomForest,
-[as.rpart](as-rpart.md).
+[as.rpart](as.rpart.md).
    
  
  ##Examples

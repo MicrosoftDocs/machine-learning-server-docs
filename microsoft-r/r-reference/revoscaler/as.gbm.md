@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Conversion of an rxBTrees, rxDTree, or rpart object to an gbm Object" 
+title: "as.gbm function (RevoScaleR) | Microsoft Docs" 
 description: " Converts objects containing decision tree results to an gbm object. " 
-keywords: "RevoScaleR, as.gbm, as.gbm.rxBTrees, as.gbm.rxDTree, as.gbm.rpart, category, models" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), as.gbm, as.gbm.rxBTrees, as.gbm.rxDTree, as.gbm.rpart, category, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -29,10 +28,7 @@ ms.technology: "r-server"
  
  
  
- #as.gbm: Conversion of an rxBTrees, rxDTree, or rpart object to an gbm Object
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #as.gbm: Conversion of an rxBTrees, rxDTree, or rpart object to an gbm Object 
  ##Description
  
 Converts objects containing decision tree results to an gbm object.
@@ -54,23 +50,23 @@ as.gbm  (x, use.weight = TRUE, cat.start = 0L, shrinkage = 1.0, ...)
 
    
     
- ### x
+ ### `x`
   object of class rxBTrees, rxDTree, or rpart. 
   
     
- ### use.weight
+ ### `use.weight`
   a logical value (default being `TRUE`) specifying if the majority splitting direction  at a node should be decided based on the sum of case weights or the number of observations when the split variable at the node is a factor or ordered factor  but a certain level is not present (or not defined for the factor). 
   
     
- ### cat.start
+ ### `cat.start`
   an integer specifying the starting position to add the categorical splits from the current tree  in the list of all the categorical splits in the collection of trees. 
   
     
- ### shrinkage
+ ### `shrinkage`
   numeric scalar specifying the learning rate of the boosting procedure for the current tree. 
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to `as.gbm.rpart`. 
   
  
@@ -92,17 +88,17 @@ In many cases, this method can be used to coerce an object for use with the **pm
 an object of class gbm.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxBTrees](rxbtrees.md),
-[rxDTree](rxdtree.md),
+[rxBTrees](rxBTrees.md),
+[rxDTree](rxDTree.md),
 rpart,
 gbm,
-[as.rpart](as-rpart.md).
+[as.rpart](as.rpart.md).
    
  
  ##Examples

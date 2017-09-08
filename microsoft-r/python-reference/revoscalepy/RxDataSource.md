@@ -4,7 +4,7 @@
 title: "RxDataSource,head,tail: RxDataSource" 
 description: "Base class for all revoscalepy data sources." 
 keywords: "head" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+author: HeidiSteen
 manager: "jhubbard" 
 ms.date: "08/31/2017" 
 ms.topic: "reference" 
@@ -46,9 +46,9 @@ class revoscalepy.RxDataSource(column_info: dict = None)
 Base class for all revoscalepy data sources.
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## Usage

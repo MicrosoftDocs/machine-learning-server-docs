@@ -99,8 +99,8 @@ Note that the reference class `PemaBaseClass` will be reinitalized at the beginn
 of the analysis unless `initPema` is set to `TRUE`, and will contain updated values upon completion.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

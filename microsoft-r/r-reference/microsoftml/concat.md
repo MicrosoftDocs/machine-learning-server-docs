@@ -70,9 +70,9 @@ is as large as hundreds to thousands.
  
 A `maml` object defining the concatenation transform.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

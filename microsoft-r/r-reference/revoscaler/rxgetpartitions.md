@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: " Get Partitions of a Partitioned Xdf Data Source " 
+title: "rxGetPartitions function (RevoScaleR) | Microsoft Docs" 
 description: " Get partitions enumeration of a partitioned Xdf data source. " 
-keywords: "RevoScaleR, rxGetPartitions, GetPartitions" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxGetPartitions, GetPartitions" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxGetPartitions:  Get Partitions of a Partitioned Xdf Data Source 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxGetPartitions:  Get Partitions of a Partitioned Xdf Data Source  
  
  ##Description
  
@@ -50,8 +46,8 @@ Get partitions enumeration of a partitioned Xdf data source.
 
    
     
- ### data
- an existing partitioned data source object which was created by [RxXdfData](rxxdfdata.md) with `createPartitionSet = TRUE` and constructed by rxPartition. 
+ ### `data`
+ an existing partitioned data source object which was created by [RxXdfData](RxXdfData.md) with `createPartitionSet = TRUE` and constructed by rxPartition. 
   
  
  
@@ -66,8 +62,8 @@ Get partitions enumeration of a partitioned Xdf data source.
 Data frame with `(n+1)` columns, the first `n` columns are partitioning columns specified by `varsToPartition` in rxPartition and the `(n+1)th` column is a data source column where each row contains an Xdf data source object of one partition.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  
@@ -75,7 +71,7 @@ Data frame with `(n+1)` columns, the first `n` columns are partitioning columns 
  
 RXdfData,
 rxPartition,
-[rxExecBy](rxexecby.md)
+rxExecBy
    
  
  ##Examples

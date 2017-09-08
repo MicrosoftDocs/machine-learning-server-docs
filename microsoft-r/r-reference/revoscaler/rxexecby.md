@@ -2,26 +2,25 @@
  
 # required metadata 
 title: "Partition Data by Key Values and Execute User Function on Each Partition" 
-description: " Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in `local`, `localpar`, [RxInSqlServer](rxinsqlserver.md) and [RxSpark](rxspark.md) compute contexts. " 
+description: " Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in local, localpar, [RxInSqlServer](RxInSqlServer.md) and [RxSpark](RxSpark.md) compute contexts. " 
 keywords: "RevoScaleR, rxExecBy, ExecBy" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+author: "HeidiSteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "06/23/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -36,8 +35,8 @@ ms.technology: "r-server"
  
 Partition input data source by keys and apply user defined function on individual partitions.
 If input data source is already partitioned, apply user defined function on partitions directly.
-Currently supported in `local`, `localpar`, [RxInSqlServer](rxinsqlserver.md) and
-[RxSpark](rxspark.md) compute contexts.
+Currently supported in `local`, `localpar`, [RxInSqlServer](RxInSqlServer.md) and
+[RxSpark](RxSpark.md) compute contexts.
  
  
  
@@ -54,37 +53,37 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](rxinsqlserver.md) an
 
    
     
- ### inData
- a data source object suppported in currently active compute context, e.g., [RxSqlServerData](rxsqlserverdata.md) for [RxInSqlServer](rxinsqlserver.md) and [RxHiveData](rxsparkdata.md) for [RxSpark](rxspark.md). In `local` and `localpar` compute contexts, a character string specifying a .xdf file or a data frame object can be also used. 
+ ### `inData`
+ a data source object suppported in currently active compute context, e.g., [RxSqlServerData](RxSqlServerData.md) for [RxInSqlServer](RxInSqlServer.md) and [RxHiveData](RxSparkData.md) for [RxSpark](RxSpark.md). In `local` and `localpar` compute contexts, a character string specifying a .xdf file or a data frame object can be also used. 
   
   
     
- ### keys
+ ### `keys`
  character vector of variable names to specify the values in those variables are used for partitioning. 
   
   
     
- ### func
- the user function to be executed. The user function takes `keys` and `data` as two required input arguments where `keys` determines the partitioning values and `data` is a data source object of the corresponding partition. `data` can be a [RxXdfData](rxxdfdata.md) object or a RxODBCData object, which can be transformed to a standard R data frame by using [rxDataStep](rxdatastep.md) method. The nodes or cores on which it is running are determined by the currently active compute context. 
+ ### `func`
+ the user function to be executed. The user function takes `keys` and `data` as two required input arguments where `keys` determines the partitioning values and `data` is a data source object of the corresponding partition. `data` can be a [RxXdfData](RxXdfData.md) object or a RxODBCData object, which can be transformed to a standard R data frame by using [rxDataStep](rxDataStep.md) method. The nodes or cores on which it is running are determined by the currently active compute context. 
   
   
     
- ### funcParams
+ ### `funcParams`
  list of additional arguments for the user function `func`. 
   
   
     
- ### filterFunc
- the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by rxPartition which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in [RxHadoopMR](rxhadoopmr.md) and [RxSpark](rxspark.md) compute contexts. 
+ ### `filterFunc`
+ the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by rxPartition which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in [RxHadoopMR](RxHadoopMR.md) and [RxSpark](RxSpark.md) compute contexts. 
   
   
     
- ### computeContext
+ ### `computeContext`
  a RxComputeContext object. 
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the Compute Engine. 
   
  
@@ -95,16 +94,16 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](rxinsqlserver.md) an
 A list which is the same length as the number of partitions in the `inData` argument. Each
 element in the top level list contains a three element list described below.
 
-###keys
+###`keys`
 a list which contains key values for the partition.
 
 
-###result
+###`result`
 the object returned from the invocation of the user function with `keys` values. When an error occurs during the invocation of the user function the value will be `NULL`.
 
 
-###status
-a string which takes the value of either `"OK"` or `"Error"`. In [RxSpark](rxspark.md) compute context, it may include additional warning and error messages.
+###`status`
+a string which takes the value of either `"OK"` or `"Error"`. In [RxSpark](RxSpark.md) compute context, it may include additional warning and error messages.
 
  
  
@@ -117,20 +116,20 @@ non-default loaded packages unless they are redefined or reloaded within the sco
  
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  
  ##See Also
  
-[rxExecByPartition](rxexecbypartition.md),
-[rxImport](rximport.md),
-[rxDataStep](rxdatastep.md),
-[RxTextData](rxtextdata.md),
-[RxXdfData](rxxdfdata.md),
-[RxHiveData](rxsparkdata.md),
-[RxSqlServerData](rxsqlserverdata.md)
+[rxExecByPartition](rxExecByPartition.md),
+[rxImport](rxImport.md),
+[rxDataStep](rxDataStep.md),
+[RxTextData](RxTextData.md),
+[RxXdfData](RxXdfData.md),
+[RxHiveData](RxSparkData.md),
+[RxSqlServerData](RxSqlServerData.md)
    
  ##Examples
 

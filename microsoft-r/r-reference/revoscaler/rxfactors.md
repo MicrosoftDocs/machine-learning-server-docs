@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Factor Variable Recoding " 
+title: "rxFactors function (RevoScaleR) | Microsoft Docs" 
 description: " Recodes a factor variable by mapping one set of factor levels and indices to a new set. Can also be used to convert non-factor variable into a factor. " 
-keywords: "RevoScaleR, rxFactors, manip, category" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxFactors, manip, category" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxFactors:  Factor Variable Recoding 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxFactors:  Factor Variable Recoding  
  ##Description
  
 Recodes a factor variable by mapping one set of factor levels and indices to a new set.
@@ -54,12 +50,12 @@ Can also be used to convert non-factor variable into a factor.
 
    
     
- ### inData
+ ### `inData`
  either an RxXdfData object, a character string specifying the .xdf file, or a data frame. 
   
   
     
- ### factorInfo
+ ### `factorInfo`
  character vector of variable names,a list of named variable information lists, or empty or `NULL`.  If `sortLevels` is set to `TRUE`, the levels of the variables named in the character vector will  all be sorted; if `sortLevels` is `TRUE` and `factorInfo` is empty or `NULL`, all   factors will be sorted.    If a `factorInfo` list is provided, each variable information list contains one or more of the   named elements given below.  
 *   Currently available properties for a column information list are:   
 * `levels` - optional vector, containing values to match in converting non-factor data to factor levels. If `levels = NULL`, all of the unique values in the data are converted to levels. in the order encountered. However, the user can  override this behavior and sort the resulting levels alphabetically by setting `sortLevels = TRUE`.   The user may also specify a subset of the data to convert to levels. In this case, if `otherLevel = NULL`,  all data values *not* found in the `levels` subset will be converted to missing (`NA`) values. For example, if a variable `x` is comprised of integer data `1`, `2`, `3`, `4`, `5`, then  
@@ -81,47 +77,47 @@ Can also be used to convert non-factor variable into a factor.
   
   
     
- ### sortLevels
+ ### `sortLevels`
  the default value to use for the `sortLevels` field in the `factorInfo` list. 
   
   
     
- ### otherLevel
+ ### `otherLevel`
  the default value to use for the `otherLevel` field in the `factorInfo` list. 
   
   
     
- ### outFile
+ ### `outFile`
  either an RxXdfData object, a character string specifying the .xdf file, or `NULL`. If `outFile = NULL`, a data frame is returned. When writing to HDFS, `outFile` must be an `RxXdfData` object representing a new composite XDF. 
   
   
     
- ### varsToKeep
+ ### `varsToKeep`
  character vector of variable names to include in the data file. If `NULL`, argument is ignored. Cannot be used with `varsToDrop`. 
   
   
     
- ### varsToDrop
+ ### `varsToDrop`
  character vector of variable names to not include in the data file. If `NULL`, argument is ignored. Cannot be used with `varsToKeep`. 
   
   
     
- ### overwrite
+ ### `overwrite`
  logical value. If `TRUE`, an existing `outFile` will be overwritten. Ignored if a dataframe is returned. 
   
   
     
- ### maxRowsByCols
- this argument is used only when  `inData` is referring to an .xdf file  (character string defining a path to an existing .xdf file or an RxXdfData object) and we wish to return the output as a data frame (`outFile = NULL`).   In this case, and behind the scenes, the output is written to a temporary .xdf file and `rxDataStep` is subsequently called to convert the output into a data frame. The `maxRowsByCols` argument is passed directly in the `rxDataStep` call, giving the user some control over the conversion. See [rxDataStep](rxdatastep.md) for more details on the `maxRowsByCols` argument. 
+ ### `maxRowsByCols`
+ this argument is used only when  `inData` is referring to an .xdf file  (character string defining a path to an existing .xdf file or an RxXdfData object) and we wish to return the output as a data frame (`outFile = NULL`).   In this case, and behind the scenes, the output is written to a temporary .xdf file and `rxDataStep` is subsequently called to convert the output into a data frame. The `maxRowsByCols` argument is passed directly in the `rxDataStep` call, giving the user some control over the conversion. See [rxDataStep](rxDataStep.md) for more details on the `maxRowsByCols` argument. 
   
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
  number of blocks to read for each chunk of data read from the data source. If the `data` and `outFile` are the same file, blocksPerRead must be 1. 
   
   
     
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -131,17 +127,17 @@ Can also be used to convert non-factor variable into a factor.
   
   
     
- ### verbose
+ ### `verbose`
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
     
- ### xdfCompressionLevel
+ ### `xdfCompressionLevel`
  integer in the range of -1 to 9.  The higher the value, the greater the  amount of compression - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used. 
    
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the Microsoft R Services Compute Engine. 
   
  
@@ -178,10 +174,10 @@ the values 7.123456 and 7.12346 would be placed in the same category.
 
 To recode a categorical or factor variable into a continuous variable within a 
 formula use `N()`. To recode continuous variable to a categorical or factor 
-variable within a formula use `F()`. See [rxFormula](rxformula.md). 
+variable within a formula use `F()`. See [rxFormula](rxFormula.md). 
 
 To rename the levels of a factor variable in an .xdf file (without change the levels
-themselves), use [rxSetVarInfoXdf](rxsetvarinfoxdf.md).
+themselves), use [rxSetVarInfoXdf](rxSetVarInfoXdf.md).
 
  
  
@@ -193,17 +189,17 @@ are written to the specified `outFile` file and an RxXdfData object is returned
 *invisibly* corresponding to the output file.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  
  ##See Also
  
-[rxFormula](rxformula.md),
-[rxSetVarInfoXdf](rxsetvarinfoxdf.md),
-[rxImport](rximport.md),
-[rxDataStep](rxdatastep.md).
+[rxFormula](rxFormula.md),
+[rxSetVarInfoXdf](rxSetVarInfoXdf.md),
+[rxImport](rxImport.md),
+[rxDataStep](rxDataStep.md).
    
  
  ##Examples

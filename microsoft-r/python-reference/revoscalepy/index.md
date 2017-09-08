@@ -76,8 +76,6 @@ ms.custom: ""
 
 * [`rx_predict`](rx-predict.md) 
 
-* [`rx_exec_by`](rx-exec-by.md) 
-
 * [`rx_partition`](rx-partition.md) 
 
 

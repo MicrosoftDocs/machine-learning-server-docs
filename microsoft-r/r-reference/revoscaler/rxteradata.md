@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Generate Teradata Data Source Object" 
+title: "RxTeradata function (RevoScaleR) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxTeradata, which extends RxDataSource. " 
-keywords: "RevoScaleR, RxTeradata, head.RxTeradata, tail.RxTeradata, database, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxTeradata, head.RxTeradata, tail.RxTeradata, database, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxTeradata: Generate Teradata Data Source Object
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxTeradata: Generate Teradata Data Source Object 
  ##Description
  
 This is the main generator for S4 class RxTeradata, which extends RxDataSource.
@@ -59,67 +55,67 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L,   ...  )
 
    
     
- ### table
+ ### `table`
  `NULL` or character string specifying the table name. Cannot be used with `sqlQuery`. 
   
   
     
- ### sqlQuery
- `NULL` or character string specifying a valid SQL select query. Cannot contain hidden characters such as tabs or newlines.  Cannot be used with `table`.  When using the data source in the `RxInTeradata` compute context, this query must be a valid SQL subquery, and in particular may not contain `ORDER BY` clauses. 
+ ### `sqlQuery`
+ `NULL` or character string specifying a valid SQL select query. Cannot contain hidden characters such as tabs or newlines.  Cannot be used with `table`. 
   
   
     
- ### dbmsName
+ ### `dbmsName`
  `NULL` or character string specifying the Database Management System (DBMS) name. 
   
   
     
- ### databaseName
+ ### `databaseName`
  `NULL` or character string specifying the name of the database. 
   
   
     
- ### connectionString
+ ### `connectionString`
  `NULL` or character string specifying the connection string. 
   
   
     
- ### user
+ ### `user`
  `NULL` or character string specifying the user name. 
   
   
     
- ### password
+ ### `password`
  `NULL` or character string specifying the password. 
   
   
     
- ### teradataId
+ ### `teradataId`
  `NULL` or character string specifying the teradataId. 
   
   
     
- ### rowBuffering
+ ### `rowBuffering`
  logical specifying whether or not to buffer rows on read from the database. If you are having problems with your ODBC driver,  try setting this to `FALSE`. 
   
   
     
- ### trimSpace
+ ### `trimSpace`
  logical specifying whether or not to trim the white character of string data for reading.  
   
   
     
- ### returnDataFrame
+ ### `returnDataFrame`
  logical indicating whether or not to convert the result from a list to a data frame (for use in `rxReadNext` only). If `FALSE`,  a list is returned. 
   
   
     
- ### stringsAsFactors
+ ### `stringsAsFactors`
  logical indicating whether or not to automatically convert strings to factors on import. This can be overridden by specifying `"character"` in `colClasses` and `colInfo`. If `TRUE`, the factor levels will be coded in the order encountered. Since this factor level ordering is row dependent, the preferred method for handling factor columns is to use `colInfo` with specified `"levels"`. 
   
   
     
- ### colClasses
+ ### `colClasses`
  character vector specifying the column types to use when converting the data. The element names for the vector are used to identify which column should be converted to which type.   
 *   Allowable column types are:  
    *   `"logical"` (stored as `uchar`), 
@@ -139,7 +135,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L,   ...  )
   
   
     
- ### colInfo
+ ### `colInfo`
  list of named variable information lists. Each variable information list contains one or more of the named elements given below. The information supplied for `colInfo` overrides that supplied for `colClasses`.  
 *   Currently available properties for a column information list are:  
 * `type` - character string specifying the data type for the column. See `colClasses` argument description for the available types.  
@@ -154,42 +150,42 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L,   ...  )
   
   
     
- ### rowsPerRead
+ ### `rowsPerRead`
  number of rows to read at a time. 
   
   
     
- ### verbose
+ ### `verbose`
  integer value. If `0`, no additional output is printed.  If `1`, information on the odbc data source type (`odbc` or `odbcFast`) is printed. 
    
   
      
- ### writeFactorsAsIndexes
+ ### `writeFactorsAsIndexes`
  logical. If `TRUE`, when writing to an `RxOdbcData` data source, underlying factor indexes will be written instead of the string representations. 
   
   
     
- ###  ...
- additional arguments to be passed directly to the underlying functions, including the Teradata Export driver. One important attribute that can be passed is the `TD_SPOOLMODE` attribute, which RevoScaleR sets to `"NoSpool"` for efficiency. If you encounter difficulties while extracting data, you might want to specify `TD_SPOOLMODE="Spool"`. To tune performance, use the `TD_MIN_SESSIONS` and `TD_MAX_SESSIONS` arguments to specify the minimum and maximum number of sessions.  If these are not specified, the default values of 1 and 4, respectively, are used. `TD_TRACE_LEVEL` specifies the types of diagnostic messages written by each instance of the driver to an external log file. Setting it to `1` turns off tracing  (the default), `2` activates the tracing function for driver specific activities, `3` activates the  tracing function for interaction with the Teradata Database, `4` activates the  tracing function for activities related to the Notify feature, `5` activates  the tracing function for activities involving the opcommon library, and `7` activates tracing for all of the above activities.  `TD_TRACE_OUTPUT` specifies the  name of the external file used for tracing messages. If a file with the specified  name already exists, that file will be overwritten. `TD_OUTLIMIT` limits the number of rows that the Export driver exports. `TD_MAX_DECIMAL_DIGITS` specifies the maximum number of decimal digits (a value for the maximum precision) to be returned by the database. The default value is 18, and values above that are not supported. See the *Teradata Parallel Transporter Application Programming Interface Programmer Guide* for details on allowable attributes. 
+ ### ` ...`
+ additional arguments to be passed directly to the underlying functions, including the Teradata Export driver. One important attribute that can be passed is the `TD_SPOOLMODE` attribute, which RevoScaleR sets to `"NoSpool"` for efficiency. If you encounter difficulties while extracting data, you might want to specify `TD_SPOOLMODE="Spool"`. To tune performance, use the `TD_MIN_SESSIONS` and `TD_MAX_SESSIONS` arguments to specify the minimum and maximum number of sessions.  If these are not specified, the default values of 1 and 4, respectively, are used. `TD_TRACE_LEVEL` specifies the types of diagnostic messages written by each instance of the driver to an external log file. Setting it to `1` turns off tracing  (the default), `2` activates the tracing function for driver specific activities, `3` activates the  tracing function for interaction with the Teradata Database, `4` activates the  tracing function for activities related to the Notify feature, `5` activates  the tracing function for activities involving the opcommon library, and `7` activates tracing for all of the above activities.  `TD_TRACE_OUTPUT` specifies the  name of the external file used for tracing messages. If a file with the specified  name already exists, that file will be overwritten. `TD_OUTLIMIT` limits the number of rows that the Export driver exports. `TD_MAX_DECIMAL_DIGITS` specifies the maximum number of decimal digits (a value for the maximum precision) to be returned by the database. The default value is 18, and values above that are not supported. See Chapter 6 of the *Teradata Parallel Transporter Application Programming Interface Programmer Guide* for details on allowable attributes. 
    
    
     
- ### x
+ ### `x`
  an `RxTeradata` object 
   
    
      
- ### n
+ ### `n`
  positive integer. Number of rows of the data set to extract. 
   
    
      
- ### addrownums
+ ### `addrownums`
  logical. If `TRUE`, row numbers will be created to match the original data set. 
   
    
      
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -199,8 +195,8 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L,   ...  )
   
   
      
- ### tableOpClause
- `NULL` or character string specifying optional  table operator clause(s) to use when running [rxDataStep](rxdatastep.md) in  [RxInTeradata](rxinteradata.md) compute context. 
+ ### `tableOpClause`
+ Deprecated. 
   
  
  
@@ -211,9 +207,7 @@ The `tail` method is not functional for this data source type and will report an
 The `RxTeradata` data source behaves differently depending upon the
 compute context currently in effect. In a local compute context,
 `RxTeradata` uses the Teradata Parallel Transporter's Export driver 
-to read large quantities of data quickly from Teradata. In the
-`RxInTeradata` compute context, data analysis is performed in-database, so
-the data is not moved out of the database but simply queried in-place.
+to read large quantities of data quickly from Teradata.
 
 To use the Teradata connector, you need Teradata ODBC drivers and the Teradata 
 Parallel Transporter installed on your client using the Teradata 14.10 or
@@ -231,8 +225,8 @@ arguments, the one in `connectionString` is ignored.
  
 object of class RxTeradata.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##References
@@ -245,10 +239,9 @@ Interface Programmer Guide*
  
  ##See Also
  
-[RxTeradata-class](rxteradata-class.md),
-[RxInTeradata](rxinteradata.md),
-[rxNewDataSource](rxnew.md),
-[rxImport](rximport.md).
+[RxTeradata-class](RxTeradata-class.md),
+[rxNewDataSource](rxNew.md),
+[rxImport](rxImport.md).
    
  ##Examples
 

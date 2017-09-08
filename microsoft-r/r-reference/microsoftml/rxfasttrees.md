@@ -288,9 +288,9 @@ This algorithm is multi-threaded and will always attempt to load the entire data
 memory.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

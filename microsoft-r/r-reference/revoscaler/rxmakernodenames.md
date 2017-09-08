@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Converts valid computer names into valid R variable names. " 
+title: "rxMakeRNodeNames function (RevoScaleR) | Microsoft Docs" 
 description: " Converts valid computer names into valid R variable names.  Should only be used when you want to guarantee that host  names are usable as variable names. " 
-keywords: "RevoScaleR, rxMakeRNodeNames, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxMakeRNodeNames, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxMakeRNodeNames:  Converts valid computer names into valid R variable names. 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxMakeRNodeNames:  Converts valid computer names into valid R variable names.  
  ##Description
  
 Converts valid computer names into valid R variable names.  Should only be used when you want to guarantee that host 
@@ -49,7 +45,7 @@ names are usable as variable names.
 
    
   
- ### nodeNames
+ ### `nodeNames`
  character vector of node names to be converted. 
   
  
@@ -82,9 +78,9 @@ from the associated computer. Note also that once a host name has been converted
 it is impossible to guarantee the reverse conversion.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

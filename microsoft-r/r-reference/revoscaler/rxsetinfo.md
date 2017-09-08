@@ -1,36 +1,31 @@
 --- 
  
 # required metadata 
-title: " Set info such as a description " 
+title: "rxSetInfo function (RevoScaleR) | Microsoft Docs" 
 description: " Set .xdf file or data frame information, such as a description " 
-keywords: "RevoScaleR, rxSetInfo, rxSetInfoXdf,  attribute " 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxSetInfo,  attribute " 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- 
- #rxSetInfo:  Set info such as a description 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxSetInfo:  Set info such as a description  
  ##Description
  
 Set .xdf file or data frame information, such as a description
@@ -49,34 +44,29 @@ Set .xdf file or data frame information, such as a description
 
    
     
- ### data
-  An .xdf file name, an [RxXdfData](rxxdfdata.md) object, or a data frame.  
+ ### `data`
+  An .xdf file name, an [RxXdfData](RxXdfData.md) object, or a data frame.  
   
     
- ### file
-  An .xdf file name or an [RxXdfData](rxxdfdata.md) object  
+ ### `file`
+  An .xdf file name or an [RxXdfData](RxXdfData.md) object  
   
   
   
- ### description
+ ### `description`
   character string containing the file or data frame description  
   
  
  
  ##Value
  
-An [RxXdfData](rxxdfdata.md) object representing the .xdf file, or a new
+An [RxXdfData](RxXdfData.md) object representing the .xdf file, or a new
 data frame with the `.rxDescription` attribute set to the
 specified `description`.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
  ##See Also
  
-[rxGetInfo](rxgetinfoxdf.md),
-[rxGetVarInfo](rxgetvarinfoxdf.md).
+[rxGetInfo](rxGetInfoXdf.md).
    
  
  ##Examples

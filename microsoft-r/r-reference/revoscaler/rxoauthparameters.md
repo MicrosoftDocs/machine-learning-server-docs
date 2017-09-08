@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "OAuth2 Token request" 
+title: "rxOAuthParameters function (RevoScaleR) | Microsoft Docs" 
 description: " Method to create parameter list to be used for getting an OAuth2 token. " 
-keywords: "RevoScaleR, rxOAuthParameters, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxOAuthParameters, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxOAuthParameters: OAuth2 Token request
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxOAuthParameters: OAuth2 Token request 
  ##Description
  
 Method to create parameter list to be used for getting an OAuth2 token.
@@ -48,35 +44,35 @@ Method to create parameter list to be used for getting an OAuth2 token.
    
   
     
- ### authUri
+ ### `authUri`
  Optional string containing OAuth Authentication URI - default NULL  
    
     
- ### tenantId
+ ### `tenantId`
  Optional string containing OAuth Tenant ID - default NULL  
   
     
- ### clientId
+ ### `clientId`
  Optional string containing OAuth ClientID - default NULL  
   
     
- ### resource
+ ### `resource`
  Optional string containing OAuth Resource  - default NULL  
   
     
- ### username
+ ### `username`
  Optional string containing OAuth Username - default NULL  
   
     
- ### password
+ ### `password`
  Optional string containing OAuth Password - default NULL  
   
     
- ### authToken
+ ### `authToken`
  Optional string containing a valid OAuth token to be used for WebHdfs requests - default NULL  
   
     
- ### useWindowsAuth
+ ### `useWindowsAuth`
  Optional Flag indicating if Windows Authentication should be used for obtaining the OAuth token (applicable only on Windows) - default NULL  
   
   
@@ -92,17 +88,17 @@ allows the specification of parameters that can be set to retreive a token.
  ##Value
  
 An rxOAuthParameters list object. This object may be used in
-[RxHdfsFileSystem](rxhdfsfilesystem.md) to set the OAuth request method for WebHdfs usage.
+[RxHdfsFileSystem](RxHdfsFileSystem.md) to set the OAuth request method for WebHdfs usage.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  
  ##See Also
  
-[RxHdfsFileSystem](rxhdfsfilesystem.md)
+[RxHdfsFileSystem](RxHdfsFileSystem.md)
    
  ##Examples
 

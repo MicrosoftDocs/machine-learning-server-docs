@@ -4,7 +4,7 @@
 title: "rx_cancel_job: Causes Python to cancel an existing distributed computing job" 
 description: "This function does not attempt to retrieve any output objects; if the output is desired the console_output flag can be used to display it.  This function does, however, remove all job-related artifacts from the distributed computing resources including any job results." 
 keywords: "cancel" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+author: HeidiSteen
 manager: "jhubbard" 
 ms.date: "08/31/2017" 
 ms.topic: "reference" 
@@ -68,9 +68,9 @@ all console output will not be displayed.
 *True* if the job is successfully cancelled; *False* otherwise.z
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## See also

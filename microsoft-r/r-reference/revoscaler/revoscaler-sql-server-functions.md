@@ -61,8 +61,6 @@ If you regularly move large amounts of data from a database to a local workstati
 + `rxImport` - Move data from an ODBC source to the XDF file
 + `RxXdfData` - Create an XDF data object
 + `RxDataStep` - Read data from XDF int a data frame
-+ `rxReadXdf` - Reads data from XDF into a data frame
-
 
 ## See Also
 [Comparison of ScaleR and CRAN R Functions](revoscaler-compared-to-base-r.md)

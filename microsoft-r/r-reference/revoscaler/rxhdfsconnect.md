@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Establish a Connection to the Hadoop Distributed File System " 
+title: "rxHdfsConnect function (RevoScaleR) | Microsoft Docs" 
 description: " Establishes a connection from RevoScaleR to the Hadoop Distributed File System (HDFS).  " 
-keywords: "RevoScaleR, rxHdfsConnect, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxHdfsConnect, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxHdfsConnect:  Establish a Connection to the Hadoop Distributed File System 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxHdfsConnect:  Establish a Connection to the Hadoop Distributed File System  
  ##Description
  
 Establishes a connection from RevoScaleR to the Hadoop Distributed
@@ -47,11 +43,11 @@ File System (HDFS).
 
    
     
- ### hostName
+ ### `hostName`
   character string specifying the host name of your Hadoop name node.  
   
     
- ### portNumber
+ ### `portNumber`
   integer scalar specifying the port number of your Hadoop name node.  
   
  
@@ -79,15 +75,15 @@ before initializing **rhdfs**.
  
 invisibly, the return value of `rxOptions`.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  
  ##See Also
  
-[rxOptions](rxoptions.md), `link{RxHdfsFileSystem}`
+[rxOptions](rxOptions.md), `link{RxHdfsFileSystem}`
    
  ##Examples
 

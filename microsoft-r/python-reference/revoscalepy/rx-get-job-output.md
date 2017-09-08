@@ -4,7 +4,7 @@
 title: "rx_get_job_output: Gets the console output from the various nodes in a non-waiting distributed computing job." 
 description: "During a job run, the state of the output is non-deterministic (that is, it may or may not be on disk, and what is on disk at any given point in time may not reflect the actual completion state of a job).If auto_cleanup has been set to True on the distributed computing job’s compute context, the console output will not persist after the job completes.Unlike rx_get_job_results, this function does not remove any job information upon retrieval." 
 keywords: "job, output" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+author: HeidiSteen
 manager: "jhubbard" 
 ms.date: "08/31/2017" 
 ms.topic: "reference" 
@@ -65,9 +65,9 @@ The distributed computing job for which to retrieve the job output
 *str* that contains the console output for the nodes participating in the distributed computing job
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## See also

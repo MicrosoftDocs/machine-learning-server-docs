@@ -64,9 +64,9 @@ intrusion, fraud, or other types of anomalous behavior.
 
 ### formula
 
-The formula as described in [revoscalepy.rx_formula](/python-reference/revoscale.py/api/rx-formula.md).
+The formula as described in revoscalepy.rx_formula.
 Interaction terms and `F()` are not currently supported in
-[microsoftml](./microsoftml/index.md).
+[microsoftml](microsoftml-package.md).
 
 
 ### data
@@ -206,7 +206,7 @@ the transformation function.
 NOT SUPPORTED. A character vector specifying additional Python packages
 (outside of those specified in `RxOptions.get_option("transform_packages")`) to
 be made available and preloaded for use in variable transformation functions.
-For example, those explicitly defined in [revoscalepy](/python-reference/revoscale.py/index.md) functions via
+For example, those explicitly defined in [revoscalepy](../revoscalepy/revoscalepy-package.md) functions via
 their `transforms` and `transform_function` arguments or those defined
 implicitly via their `formula` or `row_selection` arguments.  The
 `transform_packages` argument may also be *None*, indicating that
@@ -218,7 +218,7 @@ no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
 If `transform_environment = None`, a new “hash” environment with parent
-[revoscalepy.baseenv](/python-reference/revoscale.py/api/baseenv.md) is used instead.
+revoscalepy.baseenv is used instead.
 
 
 ### blocks_per_read
@@ -251,8 +251,8 @@ values from `1` to `4` provide increasing amounts of information.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](/python-reference/revoscale.py/api/RxComputeContext.md).
-Currently local and [revoscalepy.RxInSqlServer](/python-reference/revoscale.py/api/RxInSqlServer.md) compute contexts
+specified with a valid revoscalepy.RxComputeContext.
+Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 
 
@@ -284,7 +284,7 @@ This algorithm is single-threaded and will always attempt to load the entire dat
 
 [Wikipedia: Anomaly detection](https://en.wikipedia.org/wiki/Anomaly_detection)
 
-[Microsoft Azure Machine Learning Studio: One-Class Support Vector Machine](https://msdn.microsoft.com/en-us/library/azure/dn913103.aspx)
+[Microsoft Azure Machine Learning Studio: One-Class Support Vector Machine](https://msdn.microsoft.com/library/azure/dn913103.aspx)
 
 [Estimating the Support of a High-Dimensional Distribution](http://research.microsoft.com/pubs/69731/tr-99-87.pdf)
 
