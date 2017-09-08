@@ -19,7 +19,7 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: <a href="/r-server/what-is-microsoft-r-server"><strong>Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:right;"><strong>Announcement:</strong> Microsoft R Server is now Machine Learning Server. <a href="/r-server/rebranding-microsoft-r-server">Learn more...</a></div>
+  description: <a href="/r-server/what-is-microsoft-r-server"><strong>Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Machine Learning Server. <a href="/r-server/rebranding-microsoft-r-server">Learn more...</a></div>
 sections:
 - title: 5-Minute Quickstarts
   items:
@@ -45,14 +45,20 @@ sections:
   items:
   - type: paragraph
     text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
+  - type: paragraph
+    text: '<big>Python Tutorials</big>'
   - type: list
-    style: cards
-    className: cardsD
+    style: unordered
     items:
-    - title: Python Tutorials
-      html: &nbsp;<ul><li>Use pyspark and revoscalepy together</li></ul>
-    - title: R Tutorials
-      html: &nbsp;<ul><li><a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a><li><a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a><li><a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a></li></ul>
+    - html: Use pyspark and revoscalepy together
+  - type: paragraph
+    text: '<big>R Tutorials</big>'
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
+    - html: <a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
+    - html: <a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a><br/>&nbsp;
 - title: Samples
   items:
   - type: paragraph

@@ -28,7 +28,7 @@ ms.technology: "r-server"
 Machine Learning Server 9.2 is based on Microsoft R Server 9.1, now with libraries and an interpreter for solutions scripted in Python. Language-specific development is available when you add Python or R support (or both) during setup.
 
 > [!Note]
-> For features in R Client, see [What's New for Microsoft R Client](what-is-microsoft-r-client.md#r-client-whats-new).
+> For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## Python development
 
@@ -42,7 +42,7 @@ Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-m
 
 + [microsoftml](python-reference/microsoftml/microsoftml-package.md) parallelzation on Spark 2.0-2.4 over HDFS through[ensembling. 
 
-+ Deploy Python models and code as web services using the convenient Python classes and functions in the azureml-model-management-sdk library.
++ [Deploy Python models and code as web services](operationalize/python/quickstart-deploy-python-web-service.md) using the convenient Python classes and functions in the [azureml-model-management-sdk library](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
 
 + Deploy realtime Python models as web services.
 
@@ -51,14 +51,14 @@ Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-m
 
 R function libraries are built on Microsoft R Open (MRO), Microsoft's distribution of open source R 3.4.1. Enhancements for R in Machine Learning Server include the following items.
 
-+ R realtime model scoring is now also supported on Linux.
++ [R realtime model scoring](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime) is now also supported on Linux.
 
 
 ## Configuration
 
-+ Role-based access control (RBAC) has been extended with a new explicit Reader role.
++ [Role-based access control](operationalize/configure-roles.md) (RBAC) has been extended with a new explicit Reader role.
  
-+ Register your compute nodes with your web nodes in a centralized and simplified way in the Administration Utility.
++ [Register your compute nodes with your web nodes](operationalize/configure-use-admin-utility.md#uris) in a centralized and simplified way in the Administration Utility.
 
 ## Previous versions
 

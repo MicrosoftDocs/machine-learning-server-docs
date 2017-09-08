@@ -150,8 +150,6 @@ All tools for the standard base R (RTerm, Rgui.exe, and RScript) are also includ
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](../index.md) 
-
 + [Overview of Microsoft R Client](../r-client-get-started.md) 
 
 + [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)

@@ -84,8 +84,6 @@ The **rm** command removes the folder. Parameter "f" is for force and "r" for re
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](../index.md) 
-
 + [Overview of Microsoft R Client](../r-client-get-started.md) 
 
 + [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)

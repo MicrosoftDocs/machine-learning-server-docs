@@ -67,11 +67,11 @@ In the Enterprise configuration, side-by-side installations of a web and compute
  
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-   + Windows instructions: [Installation steps](../install/machine-learning-server-install-windows.md) | [Offline steps](../install/machine-learning-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-   + Linux instructions: [Installation steps](../install/machine-learning-server-install-linux.md) | [Offline steps](../install/machine-learning-server-install-linux-offline.md)
+   + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. 
 
@@ -99,11 +99,11 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
  
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-   + Windows instructions: [Installation steps](../install/machine-learning-server-install-windows.md) | [Offline steps](../install/machine-learning-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-   + Linux instructions: [Installation steps](../install/machine-learning-server-install-linux.md) | [Offline steps](../install/machine-learning-server-install-linux-offline.md)
+   + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to configure a web node:
 
@@ -128,7 +128,11 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
 1. Exit the utility.
 
-1. If using the IPTABLES firewall or equivalent service on Linux, then allow remote machines to access the public IP of the web node using the `iptables` command (or the equivalent) to open port 12800.
+1. When the configuration is finished, open the port 12800: 
+
+   **Windows**: Add an exception to your firewall to open port 12800. And, for additional security, you can also restrict communication for a private network or domain using a profile.
+
+   **Linux**: If using IPTABLES or equivalent firewall service on Linux, then open the port 12800 using `iptables`  or the equivalent command to allow remote machines to access the public IP of the web node using the `iptables` command (or the equivalent).
 
 You can now **repeat these steps** for each web node you want to add.
 
@@ -190,11 +194,11 @@ Carefully review the steps in the following sections.
 
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-   + Windows instructions: [Installation steps](../install/machine-learning-server-install-windows.md) | [Offline steps](../install/machine-learning-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-   + Linux instructions: [Installation steps](../install/machine-learning-server-install-linux.md) | [Offline steps](../install/machine-learning-server-install-linux-offline.md)
+   + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
@@ -219,11 +223,11 @@ You can now **repeat these steps** for each compute node.
 
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-   + Windows instructions: [Installation steps](../install/machine-learning-server-install-windows.md) | [Offline steps](../install/machine-learning-server-install-windows-offline.md)
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-   + Linux instructions: [Installation steps](../install/machine-learning-server-install-linux.md) | [Offline steps](../install/machine-learning-server-install-linux-offline.md)
+   + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 

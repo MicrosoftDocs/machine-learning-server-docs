@@ -474,10 +474,8 @@ Now that you've tried this example, you can start developing your own solutions 
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](../index.md) 
-
-+ [Overview of Microsoft R Server](../what-is-microsoft-r-server.md) 
++ [Overview of Machine Learning Server](../what-is-machine-learning-server.md) 
 
 + [Overview of Microsoft R Client](../r-client-get-started.md) 
 
-+ [Diving into data analysis with Microsoft R](how-to-introduction.md)
++ [Diving into data analysis](how-to-introduction.md)
