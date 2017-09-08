@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: " Get or Set Thread Pool State " 
+title: "rxGetEnableThreadPool function (RevoScaleR) | Microsoft Docs" 
 description: " Gets or sets the current state of the thread pool (in a ready state or created ad hoc). " 
-keywords: "RevoScaleR, rxGetEnableThreadPool, rxSetEnableThreadPool, iteration" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxGetEnableThreadPool, rxSetEnableThreadPool, iteration" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxGetEnableThreadPool:  Get or Set Thread Pool State 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxGetEnableThreadPool:  Get or Set Thread Pool State  
  ##Description
  
 Gets or sets the current state of the thread pool (in a ready state or created ad hoc).
@@ -49,7 +45,7 @@ Gets or sets the current state of the thread pool (in a ready state or created a
 
    
   
- ### enable
+ ### `enable`
   Logical scalar. If `TRUE`, the thread pool is instantiated and maintained in a ready state. If `FALSE`, threads are created in an ad hoc fashion; that is, they are created as needed.  
   
  
@@ -82,10 +78,10 @@ Using `multicore` and/or `doMC` to launch R processes with RevoScaleR
 
 
 
-Note that when using [rxExec](rxexec.md), the default behavior for any worker node process on a Linux host will be to have 
-the thread pool off (set to create threads in an ad hoc manner).  If the function passed to [rxExec](rxexec.md) is going to make 
+Note that when using [rxExec](rxExec.md), the default behavior for any worker node process on a Linux host will be to have 
+the thread pool off (set to create threads in an ad hoc manner).  If the function passed to [rxExec](rxExec.md) is going to make 
 multiple calls into RevoScaleR functions, you will probably want to include a call to `rxSetEnableThreadPool(TRUE)` as
-the first line of the function that you pass to [rxExec](rxexec.md).
+the first line of the function that you pass to [rxExec](rxExec.md).
 
 For distributed HPA functions run on worker nodes, threading is always automatically handled for the user.
 
@@ -101,15 +97,15 @@ threads will be created on an ad hoc basis.
 `TRUE` if the thread pool was instantiated and in a ready state prior to making the call, or `FALSE` if the thread pool 
 was set to be created in an ad hoc fashion. 
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  
  ##See Also
  
-[rxOptions](rxoptions.md)
+[rxOptions](rxOptions.md)
    
  
  ##Examples

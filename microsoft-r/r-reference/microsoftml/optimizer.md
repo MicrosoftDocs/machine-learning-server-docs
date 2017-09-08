@@ -126,9 +126,9 @@ Method" by Matthew D.Zeiler.
 A character string that contains the specification for the 
  optimization algorithm.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

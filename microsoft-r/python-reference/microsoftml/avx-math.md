@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.avx_math*: Acceleration with AVX instructions
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

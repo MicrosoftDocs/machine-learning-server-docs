@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Get Console Output from Distributed Computing Job " 
+title: "rxGetJobOutput function (RevoScaleR) | Microsoft Docs" 
 description: " Gets the console output from the various nodes in a non-waiting distributed computing job. " 
-keywords: "RevoScaleR, rxGetJobOutput, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxGetJobOutput, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxGetJobOutput:  Get Console Output from Distributed Computing Job 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxGetJobOutput:  Get Console Output from Distributed Computing Job  
  ##Description
  
 Gets the console output from the various nodes in a non-waiting distributed computing job.
@@ -48,7 +44,7 @@ Gets the console output from the various nodes in a non-waiting distributed comp
 
    
   
- ### jobInfo
+ ### `jobInfo`
  a job information object, such as that returned from a non-waiting,  distributed computation, for example, the `rxgLastPendingJob` object, if available. 
   
  
@@ -63,7 +59,7 @@ actual completion state of a job).
 If `autoCleanup` has been set to `TRUE`, the console output will not persist after the 
 job completes.
  
-Unlike [rxGetJobResults](rxgetjobresults.md), this function does not remove any job information upon
+Unlike [rxGetJobResults](rxGetJobResults.md), this function does not remove any job information upon
 retrieval.
  
  
@@ -74,14 +70,13 @@ useful return value.
  
  ##See Also
  
-[RxSpark](rxspark.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxInSqlServer](rxinsqlserver.md),
-[RxInTeradata](rxinteradata.md), 
-[rxGetJobs](rxgetjobs.md),
-[rxCleanupJobs](rxcleanup.md), 
-[rxGetJobResults](rxgetjobresults.md),
-[rxExec](rxexec.md).
+[RxSpark](RxSpark.md),
+[RxHadoopMR](RxHadoopMR.md),
+[RxInSqlServer](RxInSqlServer.md),
+[rxGetJobs](rxGetJobs.md),
+[rxCleanupJobs](rxCleanup.md), 
+[rxGetJobResults](rxGetJobResults.md),
+[rxExec](rxExec.md).
    
  ##Examples
 
@@ -90,14 +85,7 @@ useful return value.
   ## Not run:
  
 # set up a non-waiting HPC Server compute context: 
-myCluster <- RxHpcServer( 
-headNode = "cluster-head2", 
-shareDir = "\\AllShare\\username", 
-revoPath = file.path(defaultRNodePath, "bin", "x64"), 
-workingDir = "C:\\Users\\username", 
-dataPath ="C:\\data", 
-wait = FALSE
-) 
+myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = FALSE) 
 rxOptions(computeContext=myCluster) 
 
 myJob <- rxExec(function(){ print( "Hello World"); return ( 1 ) })

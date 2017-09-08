@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Installed Packages for Compute Context" 
+title: "rxInstalledPackages function (RevoScaleR) | Microsoft Docs" 
 description: " Find (or retrieve) details of installed packages for a compute context. " 
-keywords: "RevoScaleR, rxInstalledPackages, packages, sql, install, uninstall, remove, use" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxInstalledPackages, packages, sql, install, uninstall, remove, use" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxInstalledPackages: Installed Packages for Compute Context
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxInstalledPackages: Installed Packages for Compute Context 
  ##Description
  
 Find (or retrieve) details of installed packages for a compute context.
@@ -50,37 +46,37 @@ Find (or retrieve) details of installed packages for a compute context.
    
   
     
- ### computeContext
- an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](rxinteradata.md), [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
+ ### `computeContext`
+ an [RxComputeContext](RxComputeContext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](RxInSqlServer.md) and [RxLocalSeq](RxLocalSeq.md). 
   
   
     
- ### allNodes
- logical. If `TRUE` and an [RxInTeradata](rxinteradata.md) compute context is used, a list of results from each node is returned. 
+ ### `allNodes`
+ logical. 
    
    
     
- ### lib.loc
- a character vector describing the location of R library  trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace,  then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](rxinsqlserver.md) only `NULL` is supported. 
+ ### `lib.loc`
+ a character vector describing the location of R library  trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace,  then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](RxInSqlServer.md) only `NULL` is supported. 
   
    
     
- ### priority
+ ### `priority`
  character vector or `NULL` (default). If non-null, used to select packages;  `"high"` is equivalent to `c("base", "recommended")`.  To select all packages without an assigned priority use priority = `"NA"`. 
   
    
     
- ### noCache
+ ### `noCache`
  logical.  If `TRUE`, do not use cached information, nor cache it. 
   
    
     
- ### fields
+ ### `fields`
  a character vector giving the fields to extract from each package's DESCRIPTION file,  or `NULL`. If `NULL`, the following fields are used: `"Package"`, `"LibPath"`, `"Version"`, `"Priority"`, `"Depends"`,  `"Imports"`, `"LinkingTo"`, `"Suggests"`, `"Enhances"`,  `"License"`, `"License_is_FOSS"`, `"License_restricts_use"`,  `"OS_type"`, `"MD5sum"`, `"NeedsCompilation"`, and `"Built"`. Unavailable fields result in `NA` values. 
   
    
     
- ### subarch
+ ### `subarch`
  character string or `NULL`. If non-null and non-empty, used to select packages  which are installed for that sub-architecture.  
   
   
@@ -107,23 +103,23 @@ and `"Built"` (the R version the package was built under).
 Additional columns can be specified using the fields argument. 
 If using a distributed compute context with the `allNodes` set to `TRUE`,
 a list of matrices from each node will be returned.
-In [RxInSqlServer](rxinsqlserver.md) compute context multiple rows for a package will be returned if different versions of the
+In [RxInSqlServer](RxInSqlServer.md) compute context multiple rows for a package will be returned if different versions of the
 same package is installed in different `"system"`, `"shared"` and `"private"` scopes.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxPackage](rxpackage.md),
+[rxPackage](rxPackage.md),
 installed.packages,
-[rxFindPackage](rxfindpackage.md),
-[rxInstallPackages](rxinstallpackages.md),   
-[rxRemovePackages](rxremovepackages.md),
-[rxSyncPackages](rxsyncpackages.md),
-[rxSqlLibPaths](rxsqllibpaths.md),   
+[rxFindPackage](rxFindPackage.md),
+[rxInstallPackages](rxInstallPackages.md),   
+[rxRemovePackages](rxRemovePackages.md),
+[rxSyncPackages](rxSyncPackages.md),
+[rxSqlLibPaths](rxSqlLibPaths.md),   
 require
    
  ##Examples

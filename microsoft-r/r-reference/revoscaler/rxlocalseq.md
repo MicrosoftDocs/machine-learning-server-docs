@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Generate Local Compute Context" 
+title: "RxLocalSeq function (RevoScaleR) | Microsoft Docs" 
 description: " Creates a local compute context object.   This is the main generator for S4 class RxLocalSeq. Computations using rxExec will be processed sequentially. This is the default compute context. " 
-keywords: "RevoScaleR, RxLocalSeq, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxLocalSeq, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #RxLocalSeq: Generate Local Compute Context
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxLocalSeq: Generate Local Compute Context 
  ##Description
  
 Creates a local compute context object.  
@@ -49,16 +45,16 @@ will be processed sequentially. This is the default compute context.
 
    
     
- ### object
+ ### `object`
  a compute context object. If `object` has slots for   `dataPath` and/or `outDataPath`, they will be copied to the  equivalent slots for the new `RxLocalSeq` object. Explicit specifications  of the `dataPath` and/or outDataPath arguments will override this.  
   
     
- ### dataPath
- `NULL` or character vector defining the search path(s) for the input data source(s). If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxoptions.md) 
+ ### `dataPath`
+ `NULL` or character vector defining the search path(s) for the input data source(s). If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxOptions.md) 
    
     
- ### outDataPath
- `NULL` or character vector defining the search path(s) for  new output data file(s).  If not `NULL`, this overrides any specification for `dataPath`in [rxOptions](rxoptions.md)  
+ ### `outDataPath`
+ `NULL` or character vector defining the search path(s) for  new output data file(s).  If not `NULL`, this overrides any specification for `dataPath`in [rxOptions](rxOptions.md)  
    
  
  
@@ -80,18 +76,18 @@ working directory for other R functions that read from or write to files.
 object of class RxLocalSeq.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxSetComputeContext](rxsetcomputecontext.md),
-[rxExec](rxexec.md),
-[rxOptions](rxoptions.md),
-[RxComputeContext](rxcomputecontext.md),
-[RxLocalParallel](rxlocalparallel.md),
-[RxLocalSeq-class](rxlocalseq-class.md).
+[rxSetComputeContext](rxSetComputeContext.md),
+[rxExec](rxExec.md),
+[rxOptions](rxOptions.md),
+[RxComputeContext](RxComputeContext.md),
+[RxLocalParallel](RxLocalParallel.md),
+[RxLocalSeq-class](RxLocalSeq-class.md).
    
  
  ##Examples

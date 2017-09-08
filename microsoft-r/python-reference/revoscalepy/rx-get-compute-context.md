@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_get_compute_context
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

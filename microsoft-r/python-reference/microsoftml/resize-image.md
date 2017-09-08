@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.resize_image*: Resizes an Image
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

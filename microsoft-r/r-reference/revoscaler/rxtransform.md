@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Dynamic Variable Transformation Functions" 
+title: "rxTransform function (RevoScaleR) | Microsoft Docs" 
 description: " Description of the recommended method for creating *on the fly* variables. " 
-keywords: "RevoScaleR, rxTransform, transformFunc, transformVars, models" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxTransform, transformFunc, transformVars, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxTransform: Dynamic Variable Transformation Functions
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxTransform: Dynamic Variable Transformation Functions 
  ##Description
  
 Description of the recommended method for creating *on the fly*
@@ -120,22 +116,18 @@ the interaction with `transformObjects` objects packed into transformation funct
 
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
  
  ##See Also
  
-[rxFormula](rxformula.md),
-[rxTransform](rxtransform.md),
-[rxCrossTabs](rxcrosstabs.md),
-[rxCube](rxcube.md),
-[rxLinMod](rxlinmod.md),
-[rxLogit](rxlogit.md),
-[rxSummary](rxsummary.md),
-[rxDataStep](rxdatastep.md),
-[rxImport](rximport.md),
-[rxTextToXdf](rxtexttoxdf.md).
+[rxFormula](rxFormula.md),
+[rxTransform](rxTransform.md),
+[rxCrossTabs](rxCrossTabs.md),
+[rxCube](rxCube.md),
+[rxLinMod](rxLinMod.md),
+[rxLogit](rxLogit.md),
+[rxSummary](rxSummary.md),
+[rxDataStep](rxDataStep.md),
+[rxImport](rxImport.md).
    
  ##Examples
 

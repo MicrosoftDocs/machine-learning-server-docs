@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.n_gram_hash*: Converts text into features using hashed n-grams
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage
@@ -90,5 +90,5 @@ Limit the number of keys used to generate the slot name to this many. 0 means no
 
 ## See also
 
-[n_gram](microsoftml.modules.text-analytics.n-gram.md),
-[featurize_text](microsoftml.modules.text-analytics.featurize-text.md)
+[n_gram](n-gram.md),
+[featurize_text](featurize-text.md)

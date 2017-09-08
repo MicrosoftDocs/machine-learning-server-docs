@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Parallel External Memory Algorithm for Classification and Regression Trees" 
+title: "rxDTree function (RevoScaleR) | Microsoft Docs" 
 description: "     Fit classification and regression trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
-keywords: "RevoScaleR, rxDTree, print.rxDTree, models, tree, classif, regression, classification" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxDTree, print.rxDTree, models, tree, classif, regression, classification" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxDTree: Parallel External Memory Algorithm for Classification and Regression Trees
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxDTree: Parallel External Memory Algorithm for Classification and Regression Trees 
  
  ##Description
  
@@ -65,47 +61,47 @@ for small or large data using parallel external memory algorithm.
 
    
     
- ### formula
-  formula as described in [rxFormula](rxformula.md).   Currently, formula functions are not supported. 
+ ### `formula`
+  formula as described in [rxFormula](rxFormula.md).   Currently, formula functions are not supported. 
   
     
- ### data
+ ### `data`
   either a data source object, a character string  specifying a .xdf file, or a data frame object. 
   
     
- ### outFile
+ ### `outFile`
   either an RxXdfData data source object or a character string  specifying the .xdf file for storing the resulting node indices.  If `NULL`, then no node indices are stored to disk.  If the input data is a data frame,  the node indices are returned automatically.  If `rowSelection` is specified and not `NULL`,  then `outFile` cannot be the same as the `data`since the resulting set of node indices will generally not  have the same number of rows as the original data source. 
   
     
- ### outColName
+ ### `outColName`
   character string to be used as a column name  for the resulting node indices if `outFile` is not `NULL`.  Note that make.names is used on `outColName`to ensure that the column name is valid. If the `outFile` is an `RxOdbcData` source, dots are first converted to underscores. Thus, the default `outColName` becomes `"X_rxNode"`. 
   
     
- ### writeModelVars
+ ### `writeModelVars`
   logical value. If `TRUE`, and the output file is different from the input file,  variables in the model will be written to the output file in addition to the node numbers.  If variables from the input data set are transformed in the model,  the transformed variables will also be written out. 
   
     
- ### extraVarsToWrite
-  `NULL` or character vector of additional variables names from the input data to include in the `outFile`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
+ ### `extraVarsToWrite`
+  `NULL` or character vector of additional variables names from the input data or transforms to include in the `outFile`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
   
     
- ### overwrite
+ ### `overwrite`
   logical value. If `TRUE`, an existing `outFile`with an existing column named `outColName` will be overwritten. 
   
     
- ### pweights
+ ### `pweights`
   character string specifying the variable of numeric values to use as probability weights for the observations. 
   
     
- ### fweights
+ ### `fweights`
   character string specifying the variable of integer values to use as frequency weights for the observations. 
   
     
- ### method
+ ### `method`
   character string specifying the splitting method. Currently, only `"class"` or `"anova"` are supported. The default is `"class"` if the response is a factor, otherwise `"anova"`. 
   
     
- ### parms
+ ### `parms`
   optional list with components specifying additional parameters for the `"class"` splitting method, as follows:  
 * `prior` - a vector of prior probabilities. The priors must be positive and sum to 1. The default  priors are proportional to the data counts.  
 * `loss` - a loss matrix, which must have zeros on the diagonal and positive off-diagonal elements. By default, the off-diagonal elements are set to 1.  
@@ -113,31 +109,31 @@ for small or large data using parallel external memory algorithm.
  If `parms` is specified, any of the components can be specified or omitted. The defaults will be used for missing components. 
   
     
- ### cost
+ ### `cost`
   a vector of non-negative costs, containing one element for each variable in the model. Defaults to one for all variables. When deciding which split	to choose, the improvement on splitting on a variable is divided by its cost. 
   
     
- ### minSplit
+ ### `minSplit`
   the minimum number of observations that must exist in a node before a split is attempted. By default, this is `sqrt(num of obs)`. For non-XDF data sources, as `(num of obs)` is unknown in advance, it is wisest to specify this argument directly. 
   
     
- ### minBucket
+ ### `minBucket`
   the minimum number of observations in a terminal node (or leaf). By default, this is `minSplit`/3. 
   
     
- ### cp
+ ### `cp`
   numeric scalar specifying the complexity parameter. Any split that does not decrease overall lack-of-fit by at  least `cp` is not attempted. 
   
     
- ### maxCompete
+ ### `maxCompete`
   the maximum number of competitor splits retained in the output. These are useful model diagnostics, as they allow you to compare splits in the output with the alternatives. 
       
     
- ### maxSurrogate
+ ### `maxSurrogate`
   the maximum number of surrogate splits retained in the output. See the Details for a description of how surrogate splits are used in the model fitting. Setting this to 0 can greatly improve the performance of the algorithm; in some cases almost half the computation time is spent in computing surrogate splits. 
   
     
- ### useSurrogate
+ ### `useSurrogate`
   an integer specifying how surrogates are to be used in the splitting process:  
 * `0` - display-only; observations with a missing value for the primary split variable are not sent further down the tree.  
 * `1` - use surrogates,in order, to split observations missing the primary split variable. If all surrogates are missing, the  observation is not split.  
@@ -145,81 +141,81 @@ for small or large data using parallel external memory algorithm.
  The `0` value corresponds to the behavior of the `tree` function, and `2` (the default) corresponds to the recommendations of Breiman et al. 
   
     
- ### xVal
+ ### `xVal`
   the number of cross-validations to be performed along with the model building.  Currently, `1:xVal` is repeated and used to identify the folds. If not zero, the `cptable` component of the resulting model will contain both the mean (xerror) and standard deviation (xstd) of the cross-validation errors,  which can be used to select the optimal cost-complexity pruning of the fitted tree. Set it to zero if external cross-validation will be used to evaluate the fitted model because a value of k increases the compute time to (k+1)-fold over a value of zero. 
   
     
- ### surrogateStyle
+ ### `surrogateStyle`
   an integer controlling selection of a best surrogate. The default, `0`, instructs the program to use the total number of correct classifications for a potential surrogate, while `1` instructs the program to use the percentage of correct classification over  the non-missing values of the surrogate. Thus, `0` penalizes potential surrogates with a large number of missing values. 
   
     
- ### maxDepth
+ ### `maxDepth`
   the maximum depth of any tree node. The computations take much longer at greater depth, so lowering `maxDepth` can greatly speed up computation time. 
   
     
- ### maxNumBins
+ ### `maxNumBins`
   the maximum number of bins to use to cut numeric data.  The default is `min(1001, max(101, sqrt(num of obs)))`. For non-XDF data sources, as `(num of obs)` is unknown in advance, it is wisest to specify this argument directly. If set to `0`, unit binning will be used instead of cutting. See the 'Details' section for more information. 
   
     
- ### maxUnorderedLevels
+ ### `maxUnorderedLevels`
   the maximum number of levels allowed for an unordered factor predictor for multiclass (>2) classification. 
   
     
- ### removeMissings
+ ### `removeMissings`
   logical value.  If `TRUE`, rows with missing values are removed and  will not be included in the output data. 
   
     
- ### computeObsNodeId
+ ### `computeObsNodeId`
  logical value or NULL.  If `TRUE`, the tree node IDs for all the observations are computed and returned. If `NULL`, the IDs are computed for data.frame with less than 1000 observations  and are returned as the `where` component in the fitted `rxDTree` object. 
   
     
- ### useSparseCube
+ ### `useSparseCube`
  logical value. If `TRUE`, sparse cube is used. 
   
     
- ### findSplitsInParallel
+ ### `findSplitsInParallel`
   logical value.  If `TRUE`, optimal splits for each node are determined using parallelization methods;  this will typically speed up computation as the number of nodes on the same level is increased. 
   
     
- ### pruneCp
+ ### `pruneCp`
  Optional complexity parameter for pruning. If `pruneCp > 0`, `prune.rxDTree` is  called on the completed tree with the specified `pruneCp` and the pruned tree is returned. This contrasts with the `cp` parameter that determines which splits are considered in *growing* the tree. The option `pruneCp="auto"` causes `rxDTree` to call the function `rxDTreeBestCp` on the completed tree, then use its return value as the cp value for `prune.rxDTree`. 
   
   
     
- ### rowSelection
+ ### `rowSelection`
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### transforms
+ ### `transforms`
   an expression of the form `list(name = expression, ...)`representing the first round of variable transformations.  As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call  using the expression function. 
   
     
- ### transformObjects
+ ### `transformObjects`
   a named list containing objects that can be referenced by  `transforms`, `transformsFunc`, and `rowSelection`. 
   
     
- ### transformFunc
-  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxtransform.md) for details. 
+ ### `transformFunc`
+  variable transformation function.  The ".rxSetLowHigh" attribute must be set for transformed variables if they are to be used in `formula`. See [rxTransform](rxTransform.md) for details. 
   
     
- ### transformVars
-  character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxtransform.md) for details. 
+ ### `transformVars`
+  character vector of input data set variables  needed for the transformation function.  See [rxTransform](rxTransform.md) for details. 
   
     
- ### transformPackages
+ ### `transformPackages`
   character vector defining additional R packages  (outside of those specified in `rxGetOption("transformPackages")`)  to be made available and preloaded for use in variable transformation functions,  e.g., those explicitly defined in **RevoScaleR** functions  via their `transforms` and `transformFunc` arguments  or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
     
- ### transformEnvir
+ ### `transformEnvir`
   user-defined environment to serve as a parent to all environments  developed internally and used for variable data transformation. If `transformEnvir = NULL`,  a new "hash" environment with parent `baseenv()` is used instead. 
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
   number of blocks to read for each chunk of data  read from the data source. 
   
     
- ### reportProgress
+ ### `reportProgress`
   integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -228,20 +224,20 @@ for small or large data using parallel external memory algorithm.
  
   
     
- ### verbose
+ ### `verbose`
   integer value.  If `0`, no verbose output is printed during calculations.  Integer values from `1` to `2` provide increasing amounts of information are provided. 
   
     
- ### computeContext
- a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
+ ### `computeContext`
+ a valid [RxComputeContext](RxComputeContext.md).  The `RxSpark` and `RxHadoopMR` compute contexts distribute the computation among the nodes specified by the compute context; for other compute contexts, the computation is distributed if possible on the local computer. 
   
   
     
- ### xdfCompressionLevel
+ ### `xdfCompressionLevel`
   integer in the range of -1 to 9 indicating the compression level for the output data  if written to an `.xdf` file.   The higher the value, the greater the amount of compression -  resulting in smaller files but a longer time to create them.  If `xdfCompressionLevel` is set to 0, there will be no compression and  files will be compatible with the 6.0 release of Revolution R Enterprise.   If set to -1, a default level of compression will be used. 
   
     
- ###  ...
+ ### ` ...`
   additional arguments to be passed directly to the Microsoft R Services Compute Engine. 
   
  
@@ -315,9 +311,9 @@ resulting in `xVal * ((maxDepth + 1) + 1)` additional passes for cross validatio
 
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  
@@ -340,7 +336,7 @@ A streaming parallel decision tree algorithm.
  ##See Also
  
 rpart, rpart.control, rpart.object,
-[rxPredict.rxDTree](rxdtree.md), [rxAddInheritance](rxaddinheritance.md), [rxDForestUtils](rxdforestutils.md).
+[rxPredict.rxDTree](rxPredict.rxDTree.md), [rxAddInheritance](rxAddInheritance.md), [rxDForestUtils](rxDForestUtils.md).
    
  ##Examples
 

@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.categorical_hash*: Hashes and converts a text column into categories
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

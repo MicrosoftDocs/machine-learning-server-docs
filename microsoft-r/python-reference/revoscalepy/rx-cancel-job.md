@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_cancel_job
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage
@@ -68,6 +68,11 @@ all console output will not be displayed.
 ## Returns
 
 *True* if the job is successfully cancelled; *False* otherwise.z
+
+
+
+
+
 
 
 ## See also

@@ -144,7 +144,7 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |[rxCrossTabs](rxcrosstabs.md) <sup>*</sup> |Formula-based cross-tabulation of data. | 
 |[rxCube](rxcube.md) <sup>*</sup> |Alternative formula-based cross-tabulation designed for efficient representation returning cube results. Writing output to .xdf file not supported. | 
 |[rxMarginals](rxmarginals.md)  |Marginal summaries of cross-tabulations. | 
-|[as.xtabs](as-xtabs.md)  |Converts cross tabulation results to an xtabs object. | 
+|[as.xtabs](as.xtabs.md)  |Converts cross tabulation results to an xtabs object. | 
 |[rxChiSquaredTest](rxchisquaredtest.md)  |Performs Chi-squared Test on xtabs object. Used with small data sets and does not chunk data. | 
 |[rxFisherTest](rxchisquaredtest.md)  |Performs Fisher's Exact Test on xtabs object. Used with small data sets and does not chunk data. | 
 |[rxKendallCor](rxchisquaredtest.md)  |Computes Kendall's Tau Rank Correlation Coefficient using xtabs object. | 

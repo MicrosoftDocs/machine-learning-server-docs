@@ -62,9 +62,9 @@ Loads image data.
  
 A `maml` object defining the transform.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

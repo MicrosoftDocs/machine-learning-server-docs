@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_write_object
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

@@ -146,9 +146,9 @@ include one variable: `Score`; and multi-class classifiers include
 `Score`. If a `suffix` is provided, it is added to the end
 of these output variable names.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

@@ -187,7 +187,7 @@ at the R prompt):
 * [rxMarginals](rxmarginals.md): Marginal summaries of cross-tabulations.
 
 
-* [as.xtabs](as-xtabs.md): Converts cross tabulation results to an `xtabs` object.
+* [as.xtabs](as.xtabs.md): Converts cross tabulation results to an `xtabs` object.
 
 
 * [rxChiSquaredTest](rxchisquaredtest.md): Performs Chi-squared Test on `xtabs` object.
@@ -255,22 +255,22 @@ at the R prompt):
 * [rxNaiveBayes](rxnaivebayes.md): Performs Naive Bayes classification.
 
 
-* [as.lm](as-lm.md): Coerce an `rxLinMod` object to an `lm` object for use with the **pmml** package.
+* [as.lm](as.lm.md): Coerce an `rxLinMod` object to an `lm` object for use with the **pmml** package.
 
 
-* [as.glm](as-glm.md): Coerce an `rxLogit` or `rxGlm` object to a `glm` object for use with the **pmml** package.
+* [as.glm](as.glm.md): Coerce an `rxLogit` or `rxGlm` object to a `glm` object for use with the **pmml** package.
 
 
-* [as.rpart](as-rpart.md): Coerce an `rxDTree` object to an `rpart` object for use with the **pmml** package.
+* [as.rpart](as.rpart.md): Coerce an `rxDTree` object to an `rpart` object for use with the **pmml** package.
 
 
-* [as.kmeans](as-kmeans.md): Coerce an `rxKmeans` object to an `kmeans` object for use with the **pmml** package.
+* [as.kmeans](as.kmeans.md): Coerce an `rxKmeans` object to an `kmeans` object for use with the **pmml** package.
 
 
-* [as.randomForest](as-randomforest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
+* [as.randomForest](as.randomforest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
 
 
-* [as.gbm](as-gbm.md): Coerce an `rxBTrees` object to a `gbm` object for use with the **pmml** package.
+* [as.gbm](as.gbm.md): Coerce an `rxBTrees` object to a `gbm` object for use with the **pmml** package.
 
 
 

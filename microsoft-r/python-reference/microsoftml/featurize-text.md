@@ -27,11 +27,7 @@ ms.custom: ""
 # *microsoftml.featurize_text*: Converts text columns into numerical features
 
 
-**Applies to: SQL Server 2017 RC2**
-
-* [N-grams extractors](n-grams-extractors.md) 
-
-* [Stopwords removers](stopwords-removers.md) 
+**Applies to: SQL Server 2017**
 
 
 ## Usage

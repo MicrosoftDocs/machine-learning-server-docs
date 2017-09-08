@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.select_columns*: Retains columns of a dataset
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

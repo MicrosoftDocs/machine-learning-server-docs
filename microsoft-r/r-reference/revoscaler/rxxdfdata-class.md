@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Class RxXdfData" 
+title: "RxXdfData-class function (RevoScaleR) | Microsoft Docs" 
 description: " Xdf data source connection class. " 
-keywords: "RevoScaleR, RxXdfData-class, colnames,RxXdfData-method, dim,RxXdfData-method, dimnames,RxXdfData-method, formula,RxXdfData-method, length,RxXdfData-method, names,RxXdfData-method, names<-,RxXdfData-method, row.names,RxXdfData-method, show,RxXdfData-method, str,RxXdfData-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxXdfData-class, colnames,RxXdfData-method, dim,RxXdfData-method, dimnames,RxXdfData-method, formula,RxXdfData-method, length,RxXdfData-method, names,RxXdfData-method, names<-,RxXdfData-method, row.names,RxXdfData-method, show,RxXdfData-method, str,RxXdfData-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -38,10 +37,7 @@ ms.technology: "r-server"
  
  
  
- #RxXdfData-class: Class RxXdfData
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxXdfData-class: Class RxXdfData 
  ##Description
  
 Xdf data source connection class.
@@ -50,8 +46,8 @@ Xdf data source connection class.
  ## Generators 
 
  
-The targeted generator [RxXdfData](rxxdfdata.md) as well as the general generator
-[rxNewDataSource](rxnew.md).
+The targeted generator [RxXdfData](RxXdfData.md) as well as the general generator
+[rxNewDataSource](rxNew.md).
  
  ## Extends 
 
@@ -65,58 +61,58 @@ Class RxDataSource, by class RxFileData.
  
 
 
-###colnames
+###`colnames`
 `signature(x = "RxXdfData")`: ... 
 
 
-###dim
+###`dim`
 `signature(x = "RxXdfData")`: ... 
 
 
-###dimnames
+###`dimnames`
 `signature(x = "RxXdfData")`: ... 
 
 
-###formula
+###`formula`
 `signature(x = "RxXdfData")`: ... 
 
 
-###length
+###`length`
 `signature(x = "RxXdfData")`: ... 
 
 
-###names
+###`names`
 `signature(x = "RxXdfData")`: ... 
 
 
-###names<-
+###`names<-`
 `signature(x = "RxXdfData")`: ... 
 
 
-###row.names
+###`row.names`
 `signature(x = "RxXdfData")`: ... 
 
 
-###show
+###`show`
 `signature(object = "RxXdfData")`: ... 
 
 
-###str
+###`str`
 `signature(object = "RxXdfData")`: ... 
 
 
 
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxDataSource-class](rxdatasource-class.md),
-[RxXdfData](rxxdfdata.md),
-[rxNewDataSource](rxnew.md)
+[RxDataSource-class](RxDataSource-class.md),
+[RxXdfData](RxXdfData.md),
+[rxNewDataSource](rxNew.md)
    
  
  ##Examples

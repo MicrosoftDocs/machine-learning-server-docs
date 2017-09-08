@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxComputeContext" 
+title: "RxComputeContext-class function (RevoScaleR) | Microsoft Docs" 
 description: "   Base class for all RevoScaleR Compute Contexts.   " 
-keywords: "RevoScaleR, RxComputeContext-class, show,RxComputeContext-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxComputeContext-class, show,RxComputeContext-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxComputeContext-class: Class RxComputeContext
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxComputeContext-class: Class RxComputeContext 
  ##Description
  
 Base class for all RevoScaleR Compute Contexts.  
@@ -46,22 +42,21 @@ A virtual class: No objects may be created from it.
 
  
 The generator for classes that extend RxComputeContext is
-[RxComputeContext](rxcomputecontext.md).  
+[RxComputeContext](RxComputeContext.md).  
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxHadoopMR](rxhadoopmr.md),
-[RxSpark](rxspark.md),
-[RxInSqlServer](rxinsqlserver.md),
-[RxInTeradata](rxinteradata.md),
-[RxLocalSeq](rxlocalseq.md),
-[RxLocalParallel](rxlocalparallel.md),
-[RxForeachDoPar](rxforeachdopar.md).
+[RxHadoopMR](RxHadoopMR.md),
+[RxSpark](RxSpark.md),
+[RxInSqlServer](RxInSqlServer.md),
+[RxLocalSeq](RxLocalSeq.md),
+[RxLocalParallel](RxLocalParallel.md),
+[RxForeachDoPar](RxForeachDoPar.md).
    
  ##Examples
 

@@ -165,9 +165,9 @@ Transforms data from an input data set to an output data set.
 A data frame or an RxDataSource object
 representing the created output data.
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

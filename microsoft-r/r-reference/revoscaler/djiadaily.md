@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Dow Jones Industrial Average Data" 
+title: "DJIAdaily function (RevoScaleR) | Microsoft Docs" 
 description: " Daily data for the Dow Jones Industrial Average. " 
-keywords: "RevoScaleR, DJIAdaily, DJIAdaily.xdf, datasets" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), DJIAdaily, DJIAdaily.xdf, datasets" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #DJIAdaily: Dow Jones Industrial Average Data
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #DJIAdaily: Dow Jones Industrial Average Data 
  ##Description
  
 Daily data for the Dow Jones Industrial Average.
@@ -42,55 +38,55 @@ Daily data for the Dow Jones Industrial Average.
 An .xdf file with 20,636 observations on the following 13 variables.
 
 
-###Date
+###`Date`
 character string containing the date.
 
 
-###Open
+###`Open`
 opening value (stored as float).
 
 
-###High
+###`High`
 high value of day (stored as float).
 
 
-###Low
+###`Low`
 low value of day (stored as float).
 
 
-###Close
+###`Close`
 closing value (stored as float).
 
 
-###Volume
+###`Volume`
 daily volume (stored as float).
 
 
-###Adj.Close
+###`Adj.Close`
 closing value adjusted for stock splits and dividends (stored as float).
 
 
-###Year
+###`Year`
 integer value for year (1928 - 2010).
 
 
-###Month
+###`Month`
 integer value for month (1 - 12).
 
 
-###DayOfMonth
+###`DayOfMonth`
 integer value for day of month (1 - 31).
 
 
-###DayOfWeek
+###`DayOfWeek`
 character string containing day of week.
 
 
-###DaysSince1928
+###`DaysSince1928`
 integer for number of days since Jan. 1, 1928.
 
 
-###YearFrac
+###`YearFrac`
 fractional year (1928 + DaysSince1928/365.25) (stored as float).
 
 
@@ -108,8 +104,8 @@ the Dow Jones Industrial Average.
 http://ichart.finance.yahoo.com/table.csv?s=^DJI
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##Examples

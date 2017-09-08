@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.n_gram*: Converts text into features using n-grams
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage
@@ -79,5 +79,5 @@ The weighting criteria (settings).
 
 ## See also
 
-[n_gram_hash](microsoftml.modules.text-analytics.n-gram-hash.md),
-[featurize_text](microsoftml.modules.text-analytics.featurize-text.md)
+[n_gram_hash](n-gram-hash.md),
+[featurize_text](featurize-text.md)

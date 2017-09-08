@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.predefined*: Removes predefined stopwords
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

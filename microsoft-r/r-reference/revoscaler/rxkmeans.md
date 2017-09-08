@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "K-Means Clustering" 
+title: "rxKmeans function (RevoScaleR) | Microsoft Docs" 
 description: " Perform k-means clustering on small or large data. " 
-keywords: "RevoScaleR, rxKmeans, print.rxKmeans, cluster, multivariate, clustering" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxKmeans, print.rxKmeans, cluster, multivariate, clustering" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxKmeans: K-Means Clustering
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxKmeans: K-Means Clustering 
  ##Description
  
 Perform k-means clustering on small or large data.
@@ -62,114 +58,114 @@ print  (x, header = TRUE, ...)
 
    
     
- ### formula
- formula as described in [rxFormula](rxformula.md). 
+ ### `formula`
+ formula as described in [rxFormula](rxFormula.md). 
   
   
     
- ### data
+ ### `data`
  a data source object, a character string specifying a .xdf file, or a data frame object. 
   
   
     
- ### outFile
+ ### `outFile`
  either an RxXdfData data source object or a character string specifying the .xdf file for storing the resulting cluster indexes. If `NULL`, then no cluster indexes are stored to disk. Note that in the case that the input data is a data frame, the cluster indexes are returned automatically. Note also that, if `rowSelection` is specified and not `NULL`, then `outFile` cannot be the same as the `data` since the resulting set of cluster indexes will generally not have the same number of rows as the original data source. 
   
   
     
- ### outColName
+ ### `outColName`
  character string to be used as a column name for the resulting  cluster indexes if `outFile` is not `NULL`. Note that make.names is used on `outColName` to ensure that the column name is valid. If the `outFile` is an `RxOdbcData` source, dots are first converted to underscores. Thus, the default `outColName` becomes `"X_rxCluster"`. 
   
   
     
- ### writeModelVars
+ ### `writeModelVars`
  logical value. If `TRUE`, and the output file is different from the input file, variables in the model will be written to the output file in addition to the cluster numbers. If variables from the input data set are transformed in the model, the transformed variables will also be written out. 
   
   
     
- ### extraVarsToWrite
+ ### `extraVarsToWrite`
  `NULL` or character vector of additional variables names from the input data to include in the `outFile`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
   
   
     
- ### overwrite
+ ### `overwrite`
  logical value. If `TRUE`, an existing `outFile` with an existing column named `outColName` will be overwritten. 
   
   
     
- ### numClusters
+ ### `numClusters`
  number of clusters `k` to create. If `NULL`, then the `centers`argument must be specified. 
   
   
     
- ### centers
+ ### `centers`
  a `k x p` numeric matrix containing a set of initial (distinct) cluster centers. If `NULL`, then the `numClusters` argument must be specified. 
   
   
     
- ### algorithm
+ ### `algorithm`
  character string defining algorithm to use in defining the clusters. Currently supported algorithms are `"Lloyd"`. This argument is case insensitive. 
   
   
     
- ### numStartRows
+ ### `numStartRows`
  integer specifying the size of the sample used to choose initial centers. If 0, (the default), the size is chosen as the minimum of the number of observations or 10 times the number of clusters. 
   
   
     
- ### maxIterations
+ ### `maxIterations`
  maximum number of iterations allowed. 
   
   
     
- ### numStarts
+ ### `numStarts`
  if `centers` is `NULL`, `k` rows are randomly selected from the data source  for use as initial starting points. The `numStarts` argument defines the number of these random sets that are  to be chosen and evaluated, and the best result is returned. If `numStarts` is 0, the first `k` rows in the data set are used.  Random selection of rows is only supported for .xdf data sources using the native file system and data frames. If the .xdf file is compressed, the random sample is taken from a maximum of the first 5000 rows of data.  
   
   
     
- ### rowSelection
+ ### `rowSelection`
  name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.  For example, `rowSelection = "old"` will use only observations in which the value of the variable `old` is `TRUE`.  `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` will use only observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10.  The row selection is performed after processing any data transformations  (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function  call using the expression function. 
   
   
     
- ### transforms
+ ### `transforms`
  an expression of the form `list(name = expression, ...)` representing the first round of variable transformations. As with all expressions, `transforms` (or `rowSelection`)  can be defined outside of the function call using the expression function. 
   
   
     
- ### transformObjects
+ ### `transformObjects`
  a named list containing objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
     
- ### transformFunc
- variable transformation function. See [rxTransform](rxtransform.md) for details. 
+ ### `transformFunc`
+ variable transformation function. See [rxTransform](rxTransform.md) for details. 
   
   
     
- ### transformVars
- character vector of input data set variables needed for the transformation function. See [rxTransform](rxtransform.md) for details. 
+ ### `transformVars`
+ character vector of input data set variables needed for the transformation function. See [rxTransform](rxTransform.md) for details. 
   
   
   
   
     
- ### transformPackages
+ ### `transformPackages`
  character vector defining additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those  defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`,  indicating that no packages outside `rxGetOption("transformPackages")` will be preloaded. 
   
   
     
- ### transformEnvir
+ ### `transformEnvir`
  user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent  `baseenv()` is used instead. 
   
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
  number of blocks to read for each chunk of data read from the data source. 
   
   
     
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -179,33 +175,33 @@ print  (x, header = TRUE, ...)
   
   
     
- ### verbose
+ ### `verbose`
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
   
- ### computeContext
- a valid [RxComputeContext](rxcomputecontext.md).  The `RxSpark`, `RxHadoopMR`, and `RxInTeradata` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
+ ### `computeContext`
+ a valid [RxComputeContext](RxComputeContext.md).  The `RxSpark` and `RxHadoopMR` compute  contexts distribute the computation among the nodes specified by the  compute context; for other compute contexts, the  computation is distributed if possible on the local computer. 
   
   
    
      
- ### xdfCompressionLevel
+ ### `xdfCompressionLevel`
  integer in the range of -1 to 9 indicating the compression  level for the output data if written to an `.xdf` file.  The higher the value, the greater the  amount of compression - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used. 
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the Revolution Compute Engine. 
   
   
     
- ### x
+ ### `x`
  object of class rxKmeans. 
   
   
     
- ### header
+ ### `header`
  logical value. If `TRUE`, header information is printed. 
   
  
@@ -225,62 +221,62 @@ by specifying `seed=`*value* as part of your call. See the Examples.
 An object of class "rxKmeans" which is a list with components: 
 
 
-###cluster
+###`cluster`
 A vector of integers indicating the cluster to which each point is allocated. This information is always returned if the data source is a data frame. If the data source is not a data frame and `outFile` is specified. i.e., not `NULL`, the the cluster indexes are written/appended to the specified file with a column name as defined by `outColName`.
 
 
 
-###centers
+###`centers`
 matrix of cluster centers.
  
 
-###withinss
+###`withinss`
 within-cluster sum of squares (relative to the center) for each cluster.
 
 
-###totss
+###`totss`
 total within-cluster sum of squares.
  
 
-###tot.withinss
+###`tot.withinss`
 sum of the `withinss` vector.
 
 
-###betweenss
+###`betweenss`
 between-cluster sum of squares.
  
 
-###size
+###`size`
 number of points in each cluster.
 
 
-###valid.obs
+###`valid.obs`
 number of valid observations.
 
 
-###missing.obs
+###`missing.obs`
 number of missing observations.
 
 
-###numIterations
+###`numIterations`
 number iterations performed.
 
 
-###params
+###`params`
 parameters sent to Microsoft R Services Compute Engine.
 
 
-###formula
-formula as described in [rxFormula](rxformula.md).
+###`formula`
+formula as described in [rxFormula](rxFormula.md).
 
 
-###call
+###`call`
 the matched call.
 
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##References

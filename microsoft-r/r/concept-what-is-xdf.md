@@ -176,7 +176,7 @@ You can exercise greater control over the output file names by using the *outFil
 		varsToKeep = c("age", "incearn", "incwelfr", "educrec", "metro", "perwt")) 
 	names(splitFiles2)
 
-This creates the four directories C:/compute10, etc., and creates a file named “DistCensusData.xdf” in each directory. You will want to do something like this when using distributed data with the standard RevoScaleR analysis functions such as **rxLinMod** and **rxLogit** in an **RxHpcServer** compute context.
+This creates the four directories C:/compute10, etc., and creates a file named “DistCensusData.xdf” in each directory. You should adopt an approach like this when using distributed data with the standard RevoScaleR analysis functions such as **rxLinMod** and **rxLogit** in an **RxSpark** or **RxHadoopMR** compute context.
 
 You can supply the *outFilesSuffixes* arguments to exercise greater control over what is appended to the end of each file. Returning to our first example, we can add a hyphen between our base file name and the sequence 1 to 5 using *outFilesSuffixes* as follows:
 

@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_get_jobs
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage
@@ -99,9 +99,6 @@ objects). If no job status is returned, the job status shows none.
 ## Returns
 
 Returns a list of job information objects based on the compute context.
-
-
-## See also
 
 
 ## Example

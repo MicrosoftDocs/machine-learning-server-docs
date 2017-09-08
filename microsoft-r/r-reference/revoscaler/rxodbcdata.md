@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Generate ODBC Data Source Object" 
+title: "RxOdbcData function (RevoScaleR) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxOdbcData, which extends RxDataSource. " 
-keywords: "RevoScaleR, RxOdbcData, head.RxOdbcData, tail.RxOdbcData, database, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxOdbcData, head.RxOdbcData, tail.RxOdbcData, database, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxOdbcData: Generate ODBC Data Source Object
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxOdbcData: Generate ODBC Data Source Object 
  ##Description
  
 This is the main generator for S4 class RxOdbcData, which extends RxDataSource.
@@ -58,57 +54,57 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
 
    
     
- ### table
+ ### `table`
  `NULL` or character string specifying the table name. Cannot be used with `sqlQuery`. 
   
   
     
- ### sqlQuery
+ ### `sqlQuery`
  `NULL` or character string specifying a valid SQL select query. Cannot be used with `table`. 
   
   
     
- ### dbmsName
+ ### `dbmsName`
  `NULL` or character string specifying the Database Management System (DBMS) name. 
   
   
     
- ### databaseName
+ ### `databaseName`
  `NULL` or character string specifying the name of the database. 
   
   
     
- ### useFastRead
+ ### `useFastRead`
  logical specifying whether or not to use a direct ODBC connection. On Linux systems, this is the only ODBC connection available. 
   
   
     
- ### trimSpace
+ ### `trimSpace`
  logical specifying whether or not to trim the white character of string data for reading.  
   
   
     
- ### connectionString
+ ### `connectionString`
  `NULL` or character string specifying the connection string. 
   
   
     
- ### rowBuffering
+ ### `rowBuffering`
  logical specifying whether or not to buffer rows on read from the database. If you are having problems with your ODBC driver,  try setting this to `FALSE`. 
   
   
     
- ### returnDataFrame
+ ### `returnDataFrame`
  logical indicating whether or not to convert the result from a list to a data frame (for use in `rxReadNext` only). If `FALSE`,  a list is returned. 
   
   
     
- ### stringsAsFactors
+ ### `stringsAsFactors`
  logical indicating whether or not to automatically convert strings to factors on import. This can be overridden by specifying `"character"` in `colClasses` and `colInfo`. If `TRUE`, the factor levels will be coded in the order encountered. Since this factor level ordering is row dependent, the preferred method for handling factor columns is to use `colInfo` with specified `"levels"`. 
   
   
     
- ### colClasses
+ ### `colClasses`
  character vector specifying the column types to use when converting the data. The element names for the vector are used to identify which column should be converted to which type.   
 *   Allowable column types are:  
    *   `"logical"` (stored as `uchar`), 
@@ -128,7 +124,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
   
     
- ### colInfo
+ ### `colInfo`
  list of named variable information lists. Each variable information list contains one or more of the named elements given below. The information supplied for `colInfo` overrides that supplied for `colClasses`.  
 *   Currently available properties for a column information list are:  
 * `type` - character string specifying the data type for the column. See `colClasses` argument description for the available types. Specify `"factorIndex"` as the `type` for 0-based factor indexes. `levels` must also be specified.  
@@ -143,42 +139,42 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
   
     
- ### rowsPerRead
+ ### `rowsPerRead`
  number of rows to read at a time. 
   
   
     
- ### verbose
+ ### `verbose`
  integer value. If `0`, no additional output is printed.  If `1`, information on the odbc data source type (`odbc` or `odbcFast`) is printed. 
    
   
      
- ### writeFactorsAsIndexes
+ ### `writeFactorsAsIndexes`
  logical. If `TRUE`, when writing to an `RxOdbcData` data source, underlying factor indexes will be written instead of the string representations. 
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the underlying functions. 
    
    
     
- ### x
+ ### `x`
  an `RxOdbcData` object 
   
    
      
- ### n
+ ### `n`
  positive integer. Number of rows of the data set to extract. 
   
    
      
- ### addrownums
+ ### `addrownums`
  logical. If `TRUE`, row numbers will be created to match the original data set. 
   
    
      
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
    *   `0`: no progress is reported. 
    *   `1`: the number of processed rows is printed and updated. 
@@ -201,16 +197,16 @@ the underlying Teradata options.
  
 object of class RxOdbcData.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxOdbcData-class](rxodbcdata-class.md),
-[rxNewDataSource](rxnew.md),
-[rxImport](rximport.md),
-[RxTeradata](rxteradata.md).
+[RxOdbcData-class](RxOdbcData-class.md),
+[rxNewDataSource](rxNew.md),
+[rxImport](rxImport.md),
+[RxTeradata](RxTeradata.md).
    
  ##Examples
 

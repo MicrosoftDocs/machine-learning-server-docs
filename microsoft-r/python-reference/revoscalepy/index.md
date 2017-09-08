@@ -27,7 +27,7 @@ ms.custom: ""
 # context
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 * [RxInSqlServer](RxInSqlServer.md) 
 

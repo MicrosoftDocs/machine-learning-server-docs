@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.hinge_loss*: Hinge loss function
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

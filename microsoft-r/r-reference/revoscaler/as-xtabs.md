@@ -78,8 +78,8 @@ for use with the **pmml** package. **RevoScaleR** model objects that contain
 an object of class xtabs.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
@@ -87,10 +87,10 @@ an object of class xtabs.
 [rxCrossTabs](rxcrosstabs.md),
 [rxCube](rxcube.md),
 xtabs,
-[as.lm](as-lm.md),
-[as.kmeans](as-kmeans.md),
-[as.rpart](as-rpart.md),
-[as.glm](as-glm.md).
+[as.lm](as.lm.md),
+[as.kmeans](as.kmeans.md),
+[as.rpart](as.rpart.md),
+[as.glm](as.glm.md).
    
  
  ##Examples

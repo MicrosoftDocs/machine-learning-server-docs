@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_predict_rx_dforest
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

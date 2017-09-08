@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.log_loss*: Log loss function
 
 
-**Applies to: SQL Server 2017 RC2**
+**Applies to: SQL Server 2017**
 
 
 ## Usage

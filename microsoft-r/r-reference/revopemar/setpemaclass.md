@@ -94,8 +94,8 @@ parallelized when run on cluster supported by **RevoScaleR**.
 returns a generator function suitable for creating objects from the class, invisibly.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  
