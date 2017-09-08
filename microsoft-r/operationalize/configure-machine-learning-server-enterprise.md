@@ -81,12 +81,6 @@ In the Enterprise configuration, side-by-side installations of a web and compute
    >To bypass this interactive node configuration step, specify the following switch when launching the utility:
    >-silentcomputenodeinstall
    >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
-    
-1. When the configuration is finished, open the port 12805: 
-
-   **Windows**: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
-
-   **Linux**: If using IPTABLES or equivalent firewall service on Linux, then open the port 12805 using `iptables`  or the equivalent command.
 
 You can now **repeat these steps** for each compute node you want to add.
 
@@ -128,12 +122,6 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
 1. Exit the utility.
 
-1. When the configuration is finished, open the port 12800: 
-
-   **Windows**: Add an exception to your firewall to open port 12800. And, for additional security, you can also restrict communication for a private network or domain using a profile.
-
-   **Linux**: If using IPTABLES or equivalent firewall service on Linux, then open the port 12800 using `iptables`  or the equivalent command to allow remote machines to access the public IP of the web node using the `iptables` command (or the equivalent).
-
 You can now **repeat these steps** for each web node you want to add.
 
 >[!Important]
@@ -144,6 +132,17 @@ You can now **repeat these steps** for each web node you want to add.
 In production environments, we strongly recommend the following approaches:
 
 1. [Configure SSL/TLS](../operationalize/configure-https.md) and install the necessary certificates.
+
+1. After the certificates have been configured, open the appropriate port on each node:
+
+   On Windows: Add a firewall exception to open the port number listed in the table on every node. 
+  
+   On Linux: Use `iptables` or the equivalent command to open the port number listed in the table on every node.
+
+   |Node|Port|
+   |--|--|
+   |Web node|12800|
+   |Compute node|12805|
 
 1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).  
 
