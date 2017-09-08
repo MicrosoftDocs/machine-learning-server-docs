@@ -26,7 +26,7 @@ ms.technology:
 
 # Configure R Server to operationalize analytics (Enterprise)
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Looking for the Machine Learning Server article)](../operationalize/configure-machine-learning-server-enterprise.md)
 
 This article explains how to configure R Server after installation to act as a deployment server and to host analytic web services for operationalization. This article describes how to perform an enterprise configuration of these features. 
 

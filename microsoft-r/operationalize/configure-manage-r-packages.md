@@ -70,7 +70,7 @@ This production-safe approach provides an excellent way to:
       library(miniCRAN)
       ```   
    
-   1. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open is used. For example, for Microsoft R Server 9.1.0 that date is 2017-03-15.
+   1. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open is used. For example, for Machine Learning Server 9.2.1 that date is 2017-09-01.
 
       ```R
       # Define the package source: a CRAN mirror, or an MRAN snapshot

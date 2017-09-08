@@ -131,38 +131,6 @@ On each web node, edit the appsettings.json configuration file in order to decla
    >1. Be careful not to use the 'CN=' portion of the distinguished names. For example, if the distinguished name appears as 'CN=Administrators', enter only 'Administrators' here.
    
    >2. Ensure that the username returned for the value of 'UniqueUserIdentifierAttributeName' matches the username returned by 'SearchFilter'. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.
-   
-<!--#### Step 2. Allow R Server to check groups in Azure Active Directory
-
-R Server must be given the ability to verify the groups you declare against those in AAD or and AD/LDAP.  For AAD, you have an extra step to make that possible. For AD/LDAP, the default settings when you [set up R Server for AD/LDAP](configure-authentication.md#ldap) as sufficient.
-
-1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and update the configuration to allow R Server to match a user with his or her groups and authenticate with AAD as follows:
-
-1. In the left menu, choose **Active Directory**.
-
-1. Select the active directory you want to open.
-
-1. After open, click the **Applications** tab at the top.
-
-1. Open the web application you created when you [configured R Server for AAD authentication](configure-authentication.md#aad).
-
-1. With the application open, go to the bottom of the page and click the **Manage Manifest > Download Manifest**. A popup menu appears.
-   ![Manifest](./media/configure-roles/security-auth-2.png)
-
-1. Open the manifest file in a text editor and ensure that the property `"groupMembershipClaims"` looks like this:
-
-   ```"groupMembershipClaims": "SecurityGroup"```
-
-1. Save the manifest file.
-
-1. Back in the portal, click the **Manage Manifest > Upload Manifest** on the toolbar at the bottom of the window. Upload the edited file back into the portal.
-
-1. In the **Configure** tab, scroll to the **Keys** section. Take note of the key as you must add this to the `"AzureActiveDirectory"` section of the appsettings.json configuration file. This enables R Server to validate the group names at authentication time.  
-
-1. In the same tab, scroll to the **Permissions to other applications** section and click the **Delegated Permissions** listbox. and make sure that the **Read directory data** checkbox is enabled.
-
-   ![Checkbox](./media/configure-roles/security-auth-1.png) -->
-
 ### Step 2. Validate groups against AD/LDAP or AAD
 
 Return to [the appsetting.json file](configure-find-admin-configuration-file.md) on each web node and make these updates:
@@ -183,7 +151,6 @@ Return to [the appsetting.json file](configure-find-admin-configuration-file.md)
   "SearchFilter": "(&(sAMAccountName={0})(|(memberOf=CN=mrsreaders,OU=Readers,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrsowners,OU=Owner,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrscontributors,OU=Contributor,OU=AA,DC=pseudorandom,DC=cloud)))",         
   "UniqueUserIdentifierAttributeName": "sAMAccountName",
   ```
-
 
 ### Step 3. Apply the changes to Machine Learning Server / R Server
 
