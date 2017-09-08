@@ -29,8 +29,6 @@ ms.custom: ""
 
 **Applies to: SQL Server 2017**
 
-* [loss functions](loss-functions.md) 
-
 
 ## Usage
 
@@ -279,7 +277,7 @@ the transformation function.
 NOT SUPPORTED. A character vector specifying additional Python packages
 (outside of those specified in `RxOptions.get_option("transform_packages")`) to
 be made available and preloaded for use in variable transformation functions.
-For example, those explicitly defined in [revoscalepy](/python-reference/revoscale.py/index.md) functions via
+For example, those explicitly defined in [revoscalepy](../revoscalepy/revoscalepy-package.md) functions via
 their `transforms` and `transform_function` arguments or those defined
 implicitly via their `formula` or `row_selection` arguments.  The
 `transform_packages` argument may also be *None*, indicating that
