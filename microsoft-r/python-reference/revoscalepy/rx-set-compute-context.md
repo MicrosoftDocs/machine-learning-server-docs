@@ -4,7 +4,7 @@
 title: "rx_set_compute_context: Get and Set the compute context" 
 description: "Get or set the active compute context for revoscalepy computationsrx_set_compute_context(compute_context: ‘RxComputeContext’) rx_get_compute_context()" 
 keywords: "context" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+author: HeidiSteen
 manager: "jhubbard" 
 ms.date: "08/31/2017" 
 ms.topic: "reference" 

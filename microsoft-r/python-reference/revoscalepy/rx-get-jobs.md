@@ -4,7 +4,7 @@
 title: "rx_get_jobs: Get Distributed Computing Jobs" 
 description: "Returns a list of job objects associated with the given compute context and matching the specified parameters." 
 keywords: "get, job" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+author: HeidiSteen
 manager: "jhubbard" 
 ms.date: "08/31/2017" 
 ms.topic: "reference" 

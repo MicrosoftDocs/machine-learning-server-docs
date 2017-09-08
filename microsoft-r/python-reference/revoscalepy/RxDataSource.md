@@ -4,7 +4,7 @@
 title: "RxDataSource,head,tail: RxDataSource" 
 description: "Base class for all revoscalepy data sources." 
 keywords: "head" 
-author: "Microsoft Corporation Microsoft Technical Support" 
+author: HeidiSteen
 manager: "jhubbard" 
 ms.date: "08/31/2017" 
 ms.topic: "reference" 
