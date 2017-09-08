@@ -87,7 +87,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 1. Open the port 12805 _on every compute node_:
 
    >[!Warning]
-   > If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
+   >If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
 
    On Windows: Add a firewall exception to open the port number. 
   
