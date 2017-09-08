@@ -260,14 +260,12 @@
 - name: How-to guides
   href: r/how-to-introduction.md
   items:
-  - name: Tools
-    items:
-    - name: Configure Jupyter Notebooks
-      href: python/howto-revoscalepy-jupyter-nb-config.md
-  - name: 1. Business understanding
+  - name: Data prep & modeling
     items:
     - name: Python
       items:
+      - name: Configure Jupyter Notebooks
+        href: python/howto-revoscalepy-jupyter-nb-config.md
       - name: Use revoscalepy for Spark applications
         href: python/howto-revoscalepy.md
       - name: Parallel processing using revoscalepy
@@ -276,11 +274,6 @@
       items:
       - name: How to use Machine Learning Server with other technologies
         href: what-is-r-server-interoperability.md
-  - name: Data prep & modeling
-    items:
-    - name: Python
-    - name: R
-      items:
       - name: Data transformations
         href: r/concept-what-is-data-transformations.md
       - name: XDF files
@@ -309,11 +302,6 @@
           href: r/how-to-revoscaler-crosstabs.md
       - name: Visualize data
         href: r/how-to-revoscaler-visualize-huge-data-sets.md
-  - name: 3. Modeling
-    items:
-    - name: Python
-    - name: R
-      items:
       - name: Models in RevoScaleR
         href: r/how-to-revoscaler-models.md
       - name: Choose a MicrosoftML algorithm
