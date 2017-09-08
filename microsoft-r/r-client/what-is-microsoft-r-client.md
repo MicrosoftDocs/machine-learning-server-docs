@@ -131,8 +131,6 @@ The following release notes apply to Microsoft R Client, which can be downloaded
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](../index.md) 
-
 + [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)
 
 + [Compatibility with Machine Learning Server](compatibility-with-server.md)
