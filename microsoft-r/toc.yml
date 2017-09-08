@@ -1,5 +1,5 @@
 - name: Overview
-  href: index.md
+  href: index.yml
   items:
   - name: Welcome to Machine Learning Server
     href: what-is-machine-learning-server.md
