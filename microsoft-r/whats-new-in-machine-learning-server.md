@@ -28,7 +28,7 @@ ms.technology: "r-server"
 Machine Learning Server 9.2 is based on Microsoft R Server 9.1, now with libraries and an interpreter for solutions scripted in Python. Language-specific development is available when you add Python or R support (or both) during setup.
 
 > [!Note]
-> For features in R Client, see [What's New for Microsoft R Client](what-is-microsoft-r-client.md#r-client-whats-new).
+> For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## Python development
 

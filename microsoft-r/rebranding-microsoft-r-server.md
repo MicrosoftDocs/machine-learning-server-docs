@@ -38,7 +38,7 @@ Microsoft continues its commitment and development in R -- not only in the lates
 
 Upgrading from R Server to Machine Learning Server is as easy as ever. The R analytics and web services you developed under R Server will continue to work under Machine Learning Server.
 
-1. Follow these instructions to upgrade to Machine Learning Server on [Windows](heidi-to-provide.md), [Linux](heidi-to-provide.md), and [Hadoop](heidi-to-provide.md). 
+1. Follow these instructions to upgrade to Machine Learning Server on [Windows](heidi-to-provide-upgrade-win.md), [Linux](heidi-to-provide-upgrade-linux.md), and [Hadoop](heidi-to-provide-upgrade-hadoop.md). 
 
 1. Don't forget to [upgrade your web and compute nodes](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) if you are operationalizing your analytics.
 

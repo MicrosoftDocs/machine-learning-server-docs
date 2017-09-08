@@ -96,9 +96,9 @@ When ready, you can run that R code using R Client or even send those R commands
 
 ### Microsoft R Client 3.4.1
 
-This release of R Client, built on open source R 3.4.1. Download R Client from http://aka.ms/rclient (Windows) or http://aka.ms/rclientlinux (Linux). Key release features include:
+This release of R Client, built on open source R 3.4.1. Download R Client from http://aka.ms/rclient (Windows) or http://aka.ms/rclientlinux (Linux). 
 
-+ Several of the packages installed have been updated. Learn more about [here](../heidi-to-provide.md).
+Several of the packages installed have been updated. Learn more about [here](../whats-new-in-machine-learning-server.md).
 
 ### Microsoft R Client 3.3.3
 
@@ -106,7 +106,7 @@ This release of R Client, built on open source R 3.3.3. Key release features inc
 
 + Installations on Linux are now possible for R Client
 
-+ Several of the packages installed have been updated. Learn more about [here](../whats-new-in-r-server.md#rclient333-package-updates).
++ Several of the packages installed have been updated. Learn more about [here](../whats-new-in-r-server.md).
 
 ### Microsoft R Client 3.3.2
 
@@ -121,7 +121,7 @@ The following release notes apply to Microsoft R Client, which can be downloaded
   + `olapR`- adds MDX query support through connections to OLAP cubes on a SQL Server 2016 Analysis Services instance
   + and the packages bundled with [Microsoft R Open 3.3.2](https://mran.microsoft.com/rro/installed/#enhance)
   
-  Learn more about [the new and updated packages in this release](../whats-new-in-r-server.md#new-and-updated-packages).
+  Learn more about [the new and updated packages in this release](../whats-new-in-r-server.md).
 + Updated end-user license agreement
 + Telemetry collection is now enabled. [Learn more](../resources-opting-out.md) about this feature and how to turn it off.
 

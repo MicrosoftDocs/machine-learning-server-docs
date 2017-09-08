@@ -133,9 +133,9 @@ From an internet-connected computer, download the following:
 
 1. Download Microsoft R Client for Linux from http://aka.ms/rclientlinux.
 
-1. Download the Microsoft R Open for this version of R Client. Microsoft R Open provides the R distribution used by Machine Learning Server. [Direct link to microsoft-r-open-3.4.1.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297). Use the link provided to get the required component. Do NOT go to MRAN and download the latest or you may end up with the wrong version. 
+1. Download the Microsoft R Open for this version of R Client. Microsoft R Open provides the R distribution used by Machine Learning Server. [Direct link to microsoft-r-open-3.4.1.tar.gz](https://go.microsoft.com/fwlink/?linkid=845297). Use the link provided to get the required component. **Do NOT** go to MRAN and download the latest or you may end up with the wrong version. 
 
-1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Machine Learning Server 9.2](../install/heidi-to-provide.md). If the **target system** is missing any, download the ones you will need.
+1. On certain platforms, also download package dependencies. The list of [required packages are the same as those for Machine Learning Server 9.2](../install/machine-learning-server-linux-install.md). If the **target system** is missing any, download the ones you will need.
 
    If you will be building and installing packages, including miniCRAN, we recommend that you also install the following binary packages: `gcc-c++` and `gcc-gfortran`.
    
