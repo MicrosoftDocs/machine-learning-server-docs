@@ -324,7 +324,7 @@
         href: r/how-to-revoscaler-cluster.md
       - name: Correlate data
         href: r/how-to-revoscaler-covcor.md
-  - name: Operationalization (deploy & consume)
+  - name: Operationalization <br/>(deploy & consume)
     items:
     - name: Python
       items:
