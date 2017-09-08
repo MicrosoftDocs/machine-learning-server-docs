@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Jupyter Notebooks for revoscalepy in Machine Learining Server | Microsoft Docs "
-description: "How to configure a Jupyter notebook to call Python functions from revoscalepay and microsofml modules in Machine learning Server."
+title: "Quickstart: pyspark and revoscalepy interoperabilty in Machine Learning Server | Microsoft Docs "
+description: "Learn how to use pyspark and revoscalepy Python functions in Machine learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,9 +23,9 @@ ms.technology: ""
 
 ---
 
-# How to configure a Jupyter notebook for revoscalepay
+# Quickstart: use pyspark and revoscalepy together for Spark applications in Machine Learning Server
 
-Placeholder. This article explains how to configure a Jupyter Notebook so that you can call Python functions from revoscalepy, pyspark, microsoftml.
+Placeholder. This article is tutorial on interoperability.
 
 ## See Also
 

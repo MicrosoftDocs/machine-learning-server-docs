@@ -31,7 +31,7 @@
         href: install/machine-learning-server-linux-offline.md
       - name: Uninstall from Linux
         href: install/machine-learning-server-linux-commandline.md  
-      - name: Manage your R installation (RELOCATE)
+      - name: Manage your R installation (OLD)
         href: install/r-server-install-linux-manage-install.md  
     - name: Hadoop
       items:
@@ -195,6 +195,8 @@
     items:
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
+    - name: Pyspark and revoscalepy interoperability
+      href: python/quickstart-revoscalepy-pyspark.md
   - name: R
     items:
     - name: Run R code with new functions
@@ -204,6 +206,9 @@
 - name: Tutorials
   items:
   - name: Python
+    items:
+    - name: Create a logistic regression model (Spark)
+      href: python/tutorial-revoscalepy-logistic-regression.md
   - name: R
     href: r/tutorial-introduction.md
     items:
@@ -258,10 +263,15 @@
   - name: Tools
     items:
     - name: Configure Jupyter Notebooks
-      href: python/how-to-jupyter-nb.md
+      href: python/howto-revoscalepy-jupyter-nb-config.md
   - name: 1. Business understanding
     items:
     - name: Python
+      items:
+      - name: Use revoscalepy for Spark applications
+        href: python/howto-revoscalepy.md
+      - name: Parallel processing using revoscalepy
+        href: python/howto-revoscalepy-parallel-jobs.md
     - name: R
       items:
       - name: How to use Machine Learning Server with other technologies
