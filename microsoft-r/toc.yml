@@ -869,23 +869,23 @@
       - name: Functions
         items:
         - name: as.gbm
-          href: r-reference/revoscaler/as-gbm.md
+          href: r-reference/revoscaler/as.gbm.md
         - name: as.glm
-          href: r-reference/revoscaler/as-glm.md
+          href: r-reference/revoscaler/as.glm.md
         - name: as.kmeans
-          href: r-reference/revoscaler/as-kmeans.md
+          href: r-reference/revoscaler/as.kmeans.md
         - name: as.lm
-          href: r-reference/revoscaler/as-lm.md
+          href: r-reference/revoscaler/as.lm.md
         - name: as.naiveBayes
-          href: r-reference/revoscaler/as-naivebayes.md
+          href: r-reference/revoscaler/as.naivebayes.md
         - name: as.randomForest
-          href: r-reference/revoscaler/as-randomforest.md
+          href: r-reference/revoscaler/as.randomforest.md
         - name: as.rpart
-          href: r-reference/revoscaler/as-rpart.md
+          href: r-reference/revoscaler/as.rpart.md
         - name: as.xtabs
-          href: r-reference/revoscaler/as-xtabs.md
+          href: r-reference/revoscaler/as.xtabs.md
         - name: prune.rxDTree
-          href: r-reference/revoscaler/prune-rxdtree.md
+          href: r-reference/revoscaler/prune.rxdtree.md
         - name: rxAddInheritance
           href: r-reference/revoscaler/rxaddinheritance.md
         - name: rxBTrees
