@@ -61,9 +61,9 @@ and the job has already been cleaned up by calling *rx_get_job_results* or *rx_c
 *QUEUED* - The distributed computing job is currently awaiting execution on the server
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## See also

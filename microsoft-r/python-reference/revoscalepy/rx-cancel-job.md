@@ -68,9 +68,9 @@ all console output will not be displayed.
 *True* if the job is successfully cancelled; *False* otherwise.z
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## See also

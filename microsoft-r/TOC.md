@@ -253,7 +253,7 @@
 ### [RxNativeFileSystem](python-reference/revoscalepy/RxNativeFileSystem.md) 
 ### [RxOdbcData](python-reference/revoscalepy/RxOdbcData.md) 
 ### [RxOptions](python-reference/revoscalepy/RxOptions.md) 
-### [Rx-partition](python-reference/revoscalepy/rs-partition.md) 
+### [rx-partition](python-reference/revoscalepy/rx-partition.md) 
 ### [rx_predict_default](python-reference/revoscalepy/rx-predict-default.md) 
 ### [rx_predict_rx_dforest](python-reference/revoscalepy/rx-predict-rx-dforest.md) 
 ### [rx_predict_rx_dtree](python-reference/revoscalepy/rx-predict-rx-dtree.md) 

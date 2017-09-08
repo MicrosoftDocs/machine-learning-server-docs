@@ -96,9 +96,9 @@ objects). If no job status is returned, the job status shows none.
 Returns a list of job information objects based on the compute context.
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## See also

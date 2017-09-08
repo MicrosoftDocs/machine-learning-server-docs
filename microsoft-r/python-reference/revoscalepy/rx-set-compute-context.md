@@ -65,9 +65,9 @@ rx_set_compute_context returns the previously active compute context
 invisibly. rx_get_compute_context returns the active compute context.
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## See also

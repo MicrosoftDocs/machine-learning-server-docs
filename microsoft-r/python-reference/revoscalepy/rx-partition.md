@@ -100,7 +100,6 @@ holds the data of a specific partition.
 
 ## See also
 
-[`rx_exec_by`](rx-exec-by.md).
 [`RxXdfData`](RxXdfData.md).
 
 
@@ -166,7 +165,6 @@ an Xdf data source object of one partition.
 
 ## See also
 
-[`rx_exec_by`](rx-exec-by.md).
 [`RxXdfData`](RxXdfData.md).
 [`rx_partition`](revoscalepy/rx-partition.md).
 

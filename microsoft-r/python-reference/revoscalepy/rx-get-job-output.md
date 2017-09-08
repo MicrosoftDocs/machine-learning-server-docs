@@ -65,9 +65,9 @@ The distributed computing job for which to retrieve the job output
 *str* that contains the console output for the nodes participating in the distributed computing job
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## See also

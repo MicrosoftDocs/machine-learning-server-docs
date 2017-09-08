@@ -46,9 +46,9 @@ class revoscalepy.RxDataSource(column_info: dict = None)
 Base class for all revoscalepy data sources.
 
 
-## Author
 
-Microsoft Corporation [Microsoft Technical Support](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
 
 
 ## Usage
