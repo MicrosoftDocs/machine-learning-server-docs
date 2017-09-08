@@ -269,7 +269,7 @@ the transformation function.
 NOT SUPPORTED. A character vector specifying additional Python packages
 (outside of those specified in `RxOptions.get_option("transform_packages")`) to
 be made available and preloaded for use in variable transformation functions.
-For example, those explicitly defined in [revoscalepy](revoscalepy/revoscale-package.md) functions via
+For example, those explicitly defined in [revoscalepy](../revoscalepy/revoscalepy-package.md) functions via
 their `transforms` and `transform_function` arguments or those defined
 implicitly via their `formula` or `row_selection` arguments.  The
 `transform_packages` argument may also be *None*, indicating that
@@ -281,7 +281,7 @@ no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
 If `transform_environment = None`, a new “hash” environment with parent
-[revoscalepy.baseenv](../revoscalepy/baseenv.md) is used instead.
+revoscalepy.baseenv is used instead.
 
 
 ### blocks_per_read
@@ -314,7 +314,7 @@ values from `1` to `4` provide increasing amounts of information.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](../revoscalepy/RxComputeContext.md).
+specified with a valid revoscalepy.RxComputeContext.
 Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 

@@ -149,7 +149,7 @@ The default value is `1`.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](../revoscalepy/RxComputeContext.md).
+specified with a valid revoscalepy.RxComputeContext.
 Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 

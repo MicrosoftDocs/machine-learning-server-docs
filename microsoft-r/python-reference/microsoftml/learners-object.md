@@ -35,11 +35,11 @@ ms.custom: ""
 An instance of the following objects is returned by every
 training function. They all inherit from the class *BaseLearner* and implement common methods.
 
-* [`get_algo_args`](microsoftml/modules/base-learner/BaseLearner/get-algo-args.md) returns the training parameters, 
+* `get_algo_args` returns the training parameters, 
 
-* [`coef_`](microsoftml/modules/base-learner/BaseLearner/coef-.md) retrieves the coefficients, 
+* `coef_`retrieves the coefficients, 
 
-* [`summary_`](microsoftml/modules/base-learner/BaseLearner/summary-.md) returns training information. 
+* `summary_` returns training information. 
 
 The content changes based on the trained learner.
 

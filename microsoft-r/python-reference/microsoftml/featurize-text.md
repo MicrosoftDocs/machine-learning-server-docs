@@ -29,10 +29,6 @@ ms.custom: ""
 
 **Applies to: SQL Server 2017**
 
-* [N-grams extractors](n-grams-extractors.md) 
-
-* [Stopwords removers](stopwords-removers.md) 
-
 
 ## Usage
 

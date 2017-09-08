@@ -168,7 +168,7 @@ no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
 If `transform_environment = None`, a new “hash” environment with parent
-[revoscalepy.baseenv](../revoscalepy/baseenv.md) is used instead The default value is *None*.
+revoscalepy.baseenv is used instead The default value is *None*.
 
 
 ### blocks_per_read
@@ -204,7 +204,7 @@ The default value is `1`.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](../revoscalepy/RxComputeContext.md).
+specified with a valid revoscalepy.RxComputeContext.
 Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 

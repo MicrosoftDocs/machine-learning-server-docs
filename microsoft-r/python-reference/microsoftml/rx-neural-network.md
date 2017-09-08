@@ -85,7 +85,7 @@ problems where a more traditional regression model cannot fit a solution.
 
 ### formula
 
-The formula as described in [revoscalepy.rx_formula](../revoscalepy/rx-formula.md).
+The formula as described in revoscalepy.rx_formula.
 Interaction terms and `F()` are not currently supported in
 [microsoftml](microsoftml-package.md).
 
@@ -130,7 +130,7 @@ optimization algorithm. This list can be created using `sgd()` or
 
 The Net# definition of the structure of the neural
 network. For more information about the Net# language, see
-[Reference Guide](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/)
+[Reference Guide](https://azure.microsoft.com/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/)
 
 
 ### init_wts_diameter
@@ -275,7 +275,7 @@ no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
 If `transform_environment = None`, a new “hash” environment with parent
-[revoscalepy.baseenv](../revoscalepy/baseenv.md) is used instead.
+revoscalepy.baseenvis used instead.
 
 
 ### blocks_per_read
@@ -308,7 +308,7 @@ values from `1` to `4` provide increasing amounts of information.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](../revoscalepy/RxComputeContext.md).
+specified with a valid revoscalepy.RxComputeContext.
 Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 
