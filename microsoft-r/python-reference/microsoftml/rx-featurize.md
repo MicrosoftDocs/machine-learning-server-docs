@@ -51,7 +51,7 @@ Transforms data from an input data set to an output data set.
 
 ### data
 
-A [revoscalepy](/python-reference/revoscale.py/index.md) data source object, a data frame, or the path
+A [revoscalepy](../revoscalepy/revoscalepy-package.md) data source object, a data frame, or the path
 to a `.xdf` file.
 
 
@@ -156,7 +156,7 @@ The default value is *None*.
 NOT SUPPORTED. A character vector specifying additional Python packages
 (outside of those specified in `RxOptions.get_option("transform_packages")`) to
 be made available and preloaded for use in variable transformation functions.
-For example, those explicitly defined in [revoscalepy](/python-reference/revoscale.py/index.md) functions via
+For example, those explicitly defined in [revoscalepy](../revoscalepy/revoscalepy-package.md) functions via
 their `transforms` and `transform_function` arguments or those defined
 implicitly via their `formula` or `row_selection` arguments.  The
 `transform_packages` argument may also be *None*, indicating that
@@ -168,7 +168,7 @@ no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
 If `transform_environment = None`, a new “hash” environment with parent
-[revoscalepy.baseenv](/python-reference/revoscale.py/api/baseenv.md) is used instead The default value is *None*.
+[revoscalepy.baseenv](../revoscalepy/baseenv.md) is used instead The default value is *None*.
 
 
 ### blocks_per_read
@@ -204,22 +204,22 @@ The default value is `1`.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](/python-reference/revoscale.py/api/RxComputeContext.md).
-Currently local and [revoscalepy.RxInSqlServer](/python-reference/revoscale.py/api/RxInSqlServer.md) compute contexts
+specified with a valid [revoscalepy.RxComputeContext](../revoscalepy/RxComputeContext.md).
+Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 
 
 ## Returns
 
-A data frame or an [revoscalepy.RxDataSource](/python-reference/revoscale.py/api/RxDataSource.md) object
+A data frame or an [revoscalepy.RxDataSource](../revoscalepy/RxDataSource.md) object
 representing the created output data.
 
 
 ## See also
 
 [`rx_predict`](rx-predict.md),
-[revoscalepy.rx_data_step](/python-reference/revoscale.py/api/rx-data-step.md),
-[revoscalepy.rx_import](/python-reference/revoscale.py/api/rx-import.md).
+[revoscalepy.rx_data_step](../revoscalepy/rx-data-step.md),
+[revoscalepy.rx_import](../revoscalepy/rx-import.md).
 
 
 ## Example

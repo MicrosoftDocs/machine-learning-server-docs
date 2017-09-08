@@ -89,9 +89,9 @@ reproducible results, it is recommended that one sets `shuffle` to
 
 ### formula
 
-The formula described in [revoscalepy.rx_formula](/python-reference/revoscale.py/api/rx-formula.md).
+The formula described in [revoscalepy.rx_formula](../revoscalepy/rx-formula.md).
 Interaction terms and `F()` are not currently supported in
-[microsoftml](./microsoftml/index.md).
+[microsoftml](microsoftml-package.md).
 
 
 ### data
@@ -291,7 +291,7 @@ no packages outside `RxOptions.get_option("transform_packages")` are preloaded.
 NOT SUPPORTED. A user-defined environment to serve as a parent to all
 environments developed internally and used for variable data transformation.
 If `transform_environment = None`, a new “hash” environment with parent
-[revoscalepy.baseenv](/python-reference/revoscale.py/api/baseenv.md) is used instead.
+[revoscalepy.baseenv](../revoscalepy/baseenv.md) is used instead.
 
 
 ### blocks_per_read
@@ -324,8 +324,8 @@ values from `1` to `4` provide increasing amounts of information.
 ### compute_context
 
 Sets the context in which computations are executed,
-specified with a valid [revoscalepy.RxComputeContext](/python-reference/revoscale.py/api/RxComputeContext.md).
-Currently local and [revoscalepy.RxInSqlServer](/python-reference/revoscale.py/api/RxInSqlServer.md) compute contexts
+specified with a valid [revoscalepy.RxComputeContext](../revoscalepy/RxComputeContext.md).
+Currently local and [revoscalepy.RxInSqlServer](../revoscalepy/RxInSqlServer.md) compute contexts
 are supported.
 
 
