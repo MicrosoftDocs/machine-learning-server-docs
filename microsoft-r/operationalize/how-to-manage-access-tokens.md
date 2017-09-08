@@ -2,12 +2,12 @@
 
 # required metadata
 title: "Managing access tokens, bearer tokens, access_token, refresh_token - Machine Learning Server | Microsoft Docs"
-description: "Token Management for API Requests with Microsoft R Server"
+description: "Token Management for API Requests with Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,13 +24,13 @@ ms.technology:
 #ms.custom: ""
 ---
     
-# Manage access tokens for R Server API requests
+# Manage access tokens for API requests
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
-Microsoft R Server uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the 'POST /login HTTP/1.1' API call, after which R Server issues a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users  receive a bearer token from AAD when they authenticate.
+Machine Learning Server, formerly known as Microsoft R Server, uses tokens to identify and authenticate the user who is sending the API call within your application. Users must authenticate when making an API call. They can do so with the 'POST /login HTTP/1.1' API call, after which Machine Learning Server issues a bearer token to your application for this user. Alternately, if the organization is using Azure Active Directory (AAD), users  receive a bearer token from AAD when they authenticate.
 
-This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, R Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful.
+This bearer token is a lightweight security token that grants the “bearer” access to a protected resource, in this case, Machine Learning Server's core APIs for operationalizing analytics. After a user has been authenticated, the application must validate the user’s bearer token to ensure that authentication was successful.
 
 >[!Important]
 >For proper access token signing and verification across your configuration, ensure that the JWT settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. Check with your administrator. [Learn more...](configure-authentication.md#ldap-jwt)
@@ -94,7 +94,7 @@ As defined by HTTP/1.1 [RFC2617], the application should send the access_token d
 
 You can do so by including the bearer token's access_token value in the HTTP request body as 'Authorization: Bearer {access_token_value}'. 
 
-When the API call is sent with the token, R Server attempts to validate that the user is successfully authenticated and that the token itself is not expired.
+When the API call is sent with the token, Machine Learning Server attempts to validate that the user is successfully authenticated and that the token itself is not expired.
 +  If an authenticated user has a bearer token's access_token or refresh_token that is expired, then a '401 - Unauthorized (invalid or expired refresh token)' error is returned.
 
 + If the user is not successfully authenticated, a '401 - Unauthorized (invalid credentials)' error is returned.

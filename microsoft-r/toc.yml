@@ -266,7 +266,7 @@
       items:
       - name: How to use Machine Learning Server with other technologies
         href: what-is-r-server-interoperability.md
-  - name: 2. Data aquisition
+  - name: Data prep & modeling
     items:
     - name: Python
     - name: R
@@ -326,7 +326,7 @@
         href: r/how-to-revoscaler-cluster.md
       - name: Correlate data
         href: r/how-to-revoscaler-covcor.md
-  - name: 4. Operationalization (deploy & consume)
+  - name: Operationalization (deploy & consume)
     items:
     - name: Python
       items:

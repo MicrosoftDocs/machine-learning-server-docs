@@ -7,7 +7,7 @@ keywords: "mrsdeploy package"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "8/1/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,11 +23,11 @@ ms.technology: "r-server"
 
 ---
 
-# How to publish and manage R web services in R Server with mrsdeploy
+# How to publish and manage R web services in Machine Learning Server with mrsdeploy
 
-**Applies to:  Microsoft R Server 9.x** 
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x** 
 
-This article details how you can publish and manage your **analytic web services** directly in R. You can deploy your R models, scripts, and code as web services using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  The mrsdeploy R package containing these functions is installed with both Microsoft R Server and Microsoft R Client.
+This article details how you can publish and manage your **analytic web services** directly in R. You can deploy your R models, scripts, and code as web services using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  The mrsdeploy R package containing these functions is installed with both Machine Learning Server (and Microsoft R Server) and Microsoft R Client.
 
 These web services can be [consumed in R](how-to-consume-web-service-interact-in-r.md) by other authenticated users or in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
@@ -40,9 +40,9 @@ You can also publish or interact with a web service outside of R using the [REST
 ## Requirements
 
 Before you can use the web service management functions in the mrsdeploy R package, you must:
-+ Have access to an R Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
++ Have access to an Machine Learning Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
-+ Authenticate with R Server using the remoteLogin() or remoteLoginAAD() functions in the mrsdeploy package as described in "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
++ Authenticate with Machine Learning Server using the remoteLogin() or remoteLoginAAD() functions in the mrsdeploy package as described in "[Connecting to Machine Learning Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
 ## Web service types
 
@@ -92,7 +92,7 @@ While any authenticated user can also publish a web service by default, roles ca
 
 ## Publish and update web services
 
-To deploy your analytics, you must publish them as web services in R Server. Once hosted on R Server, you can update and manage them. They can also be consumed by other users. 
+To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. 
 
 <a name="versioning"></a>
 
@@ -102,7 +102,7 @@ Every time a web service is published, a version is assigned to the web service.
 
 At publish time, you can specify an alphanumeric string that is meaningful to the users who consume the service in your organization. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as [semantic versioning](http://semver.org/).
 
-If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by R Server. These GUID version numbers are harder to remember by the users consuming your services and are therefore less desirable. 
+If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by Machine Learning Server. These GUID version numbers are harder to remember by the users consuming your services and are therefore less desirable. 
 
 <a name="publishService"></a>
 
@@ -114,7 +114,7 @@ After you've authenticated, use the publishService() function in the mrsdeploy p
 |----|----|:----:|
 |publishService(...)|Returns an [API instance](how-to-consume-web-service-interact-in-r.md#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/publishservice.md)
 
-You can publish web services to a local R Server from your command line. If you [create a remote session](../r/how-to-execute-code-remotely.md#publish-remote-session), you can also publish a web service to a remote R Server from your local command line.  
+You can publish web services to a local Machine Learning Server from your command line. If you [create a remote session](../r/how-to-execute-code-remotely.md#publish-remote-session), you can also publish a web service to a remote Machine Learning Server from your local command line.  
 
 
 Example of standard web service:
@@ -273,7 +273,7 @@ In this example, the code comes from an object (`code = manualTransmission`) and
 #       Create & Test a Logistic Regression Model        #
 ##########################################################
 
-# For R Server 9.0, load mrsdeploy package on R Server     
+# For R Server 9.0, load mrsdeploy package     
 library(mrsdeploy)
 
 # Use logistic regression equation of vehicle transmission 
