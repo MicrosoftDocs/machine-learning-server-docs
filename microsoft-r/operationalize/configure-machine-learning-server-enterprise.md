@@ -128,7 +128,11 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
 1. Exit the utility.
 
-1. If using the IPTABLES firewall or equivalent service on Linux, then allow remote machines to access the public IP of the web node using the `iptables` command (or the equivalent) to open port 12800.
+1. When the configuration is finished, open the port 12800: 
+
+   **Windows**: Add an exception to your firewall to open port 12800. And, for additional security, you can also restrict communication for a private network or domain using a profile.
+
+   **Linux**: If using IPTABLES or equivalent firewall service on Linux, then open the port 12800 using `iptables`  or the equivalent command to allow remote machines to access the public IP of the web node using the `iptables` command (or the equivalent).
 
 You can now **repeat these steps** for each web node you want to add.
 
