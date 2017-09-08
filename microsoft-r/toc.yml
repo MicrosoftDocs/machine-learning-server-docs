@@ -269,7 +269,7 @@
       - name: Use revoscalepy for Spark applications
         href: python/howto-revoscalepy.md
       - name: Parallel processing using revoscalepy
-        href: python/howto-revoscalepy-parallel-jobs.md
+        href: python/howto-revoscalepy-parallel.md
     - name: R
       items:
       - name: How to use Machine Learning Server with other technologies

@@ -34,9 +34,9 @@ Machine Learning Server 9.2 is based on Microsoft R Server 9.1, now with librari
 
 Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-management-sdk**. Modules are built on Anaconda 4.2 over Python 3.5. You can run any 3.5-compatible library on a Python interpreter included in Machine Learning Server.
 
-+ [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) for Spark 2.0-2.4 over HDFS. When you install revoscalepy through Machine Learning Server, you can call [rxec_by](python-reference/revoscalepy/rxexec-by.md) and [rx_partition](python-reference/revoscalepy/rx-partition.md) for parallelization of workloads.
++ [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) for Spark 2.0-2.4 over HDFS, with support for [processing in parallel](python/howto-revoscalepy-parallel.md).
 
-+ revoscalepy and pyspark interoperations in a [Spark compute context](python-reference/revoscalepy/rxSparkConnect.md).
++ [revoscalepy and pyspark interoperability](python/quickstart-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSparkConnect.md).
 
 + [Pretrained models](install/microsoftml-install-pretrained-models.md) for image featurizaton and sentiment analysis articulated in Python.
 
