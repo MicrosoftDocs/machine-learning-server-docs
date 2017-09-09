@@ -31,15 +31,16 @@ This section contains the Python reference documentation for two proprietary pac
 
 | Library details | |
 |--------|-|
-| Supported platforms: | SQL Server 2017 (Windows only). Additional platforms and compute contexts are planned for future releases.|
-| Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
+| Supported platforms: | Machine Learning Server, SQL Server 2017 (Windows only). Additional platforms and compute contexts are planned for future releases.|
+| Built on: | [Anaconda 4.2.0](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python modules
 
 |Module | Version | Description |
 |--------|---------|-------------|
-|[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.2.0 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to your data residing in SQL Server. |
+|[azureml-model-management-sdk](azureml-model-management-sdk/azureml-model-management-sdk.md) | 9.2.1 | Classes and functions to authenticate, deploy, manage, and consume analytic web services in Python.  |
 |[microsoftml](microsoftml/microsoftml-package.md)| 1.4.0 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
+|[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.2.0 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to your data residing in SQL Server. |
 
 You can use the modules together or individually.
 
@@ -50,11 +51,12 @@ You can use the modules together or individually.
 
 ## How to get packages
 
-You can get the packages when you run SQL Server 2017 Setup and choose features that include Machine Learning with Python support. In addition to the packages, SQL Server Setup installs the Python interpreters and base modules required to run any script or code that calls functions from either package.
+You can get the packages when you run Machine Learning Server, or SQL Server 2017 Setup and choose features that include Machine Learning with Python support. In addition to the packages, Machine Learning Server setup and SQL Server setup both install the Python interpreters and base modules required to run any script or code that calls functions from either package.
 
-By default, packages are installed in the \Program files\Microsoft SQL Server\*instance name*\PYTHON_SERVICES
+For SQL Server, packages are installed by default in the \Program files\Microsoft SQL Server\*instance name*\PYTHON_SERVICES
 
 Ships in:
++  [Machine Learning Server](../what-is-machine-learning-server.md) 
 +  [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) 
 + [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server).
 
@@ -69,7 +71,7 @@ To get the version of a Python module installed on your computer, start Python f
 
 ## Note to R Users: Python naming conventions
 
-Both **revoscalepy** and **microsoftml** correspond to the Microsoft R packages, [RevoScaleR](../r-reference/revoscaler/revoscaler.md) and [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md). If you have a background in these libraries, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
+**revoscalepy**, **microsoftml**, and **azureml-model-management-sdk** correspond to the Microsoft R packages, [RevoScaleR](../r-reference/revoscaler/revoscaler.md), [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md), and [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md). If you have a background in these libraries, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
 
 * lowercase package names (**microsoftml** contrasted with **MicrosoftML**) and most function names
 * underscore in function names (rx_import in **revoscalepy** contrasted with rxImport in **RevoScaleR**)
@@ -78,8 +80,9 @@ Both **revoscalepy** and **microsoftml** correspond to the Microsoft R packages,
 
 First, read the introduction to each package to learn about common use case scenarios:
 
-+ [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
++ [azureml-model-management-sdk package for Python](azureml-model-management-sdk/azureml-model-management-sdk.md)  
 + [microsoftmlpackage for Python](microsoftml/microsoftml-package.md) 
++ [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
 
 Next, add these Python modules to your SQL Server 2017 instance: 
 
@@ -89,6 +92,7 @@ Lastly, follow these tutorials for hands on experience:
 
 + [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
++ [Deploy a model as a web service in Python](../operationalize/python/quickstart-deploy-python-web-service.md)
 
 ## See also
 

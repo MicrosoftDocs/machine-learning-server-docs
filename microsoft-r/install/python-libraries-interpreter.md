@@ -40,13 +40,15 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 1. Download the installation shell script from http://aka.ms/py-me.
 
-1. Run the script AS AN ADMINISTRATOR to install the interpreter and packages. Python 3.5.2 and Anaconda 4.2.0 are installed along with all packages listed above.
+1. Run the script AS AN ADMINISTRATOR to install the interpreter and packages. Anaconda 4.2.0, which includes Python 3.5.2, is installed along with all packages listed above.
 
 ## Install on Linux
 
-1. Download and install Anaconda Python interpreter with Python 3.5 from https://docs.continuum.io/anaconda/faq#id3 on your local machine. 
+1. Log in to your local machine. 
 
-   To work with Machine Learning Server, you must install Python 3.5.2 supported with Anaconda 4.2.0.
+1. Download and install Anaconda 4.2.0 from https://docs.continuum.io/anaconda/faq#id3. 
+
+   **To work with Machine Learning Server, you must install Anaconda 4.2.0, which includes Python 3.5.2.**
 
 1. Start up Anaconda.
 
@@ -55,24 +57,27 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    cd /usr/bin/python
    # upgrade pip if necessary
    pip install -U pip
-   # install custom libraries
-   pip install --no-index revoscalepy
+   # install the custom libraries you need
    pip install --no-index azureml-model-management
-   pip install --no-index pretrained model 
    pip install --no-index mml
+   pip install --no-index pretrained model 
+   pip install --no-index revoscalepy
    ```
 
 
 ## Example code to test the install
 
+Test your install and packages using this example code.
 
-### Run locally
+### Use custom package functions locally
 
 ```
 GET EXAMPLE OF CODE THAT RUNS LOCALLY USING MML PACKAGE
 ```
 
-### Push compute to Machine Learning Server
+### Push your compute to Machine Learning Server
+
+Run your script locally, but push the computation to Machine Learning Server for faster performance.
 
 ```
 GET EXAMPLE OF CODE THAT TAKES PREVIOUS EXAMPLE AND PUSHES IT TO MLS ON LINUX
