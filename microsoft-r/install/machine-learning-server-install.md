@@ -26,7 +26,7 @@ ms.technology: "r-server"
 
 You can install Machine Learning Server on a number of platforms. [See the list of supported platforms](r-server-install-supported-platforms.md).
 
-## Machine Learning Server Installation Guides 
+## Installation Guides 
 
 + [Install on Windows](machine-learning-server-windows-install.md)
 
@@ -40,7 +40,7 @@ You can install Machine Learning Server on a number of platforms. [See the list 
 
 + [Provision on the cloud](machine-learning-server-in-the-cloud.md)
 
-## Local Tools:
+## Local Tools
 
 + [Microsoft R Client](what-is-microsoft-r-client.md)
 
