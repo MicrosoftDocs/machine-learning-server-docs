@@ -1,12 +1,12 @@
 ---
 # required metadata
-title: "Linux commandline installation for Machine Learning Server | Microsoft Docs"
-description: "How to install Machine Learning Server for Linux on the command line."
+title: "How to install Machine Learning Server | Microsoft Docs"
+description: "How to install Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
-ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/15/2017"
+author: "j-martens"
+ms.author: "jmartens"
+ms.date: "09/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # How to install Machine Learning Server
 
-You can install Machine Learning Server on a number of platforms. 
+You can install Machine Learning Server on a number of platforms. There are several add-ons and tools you can also use.
 
 ## Installation Guides 
 
