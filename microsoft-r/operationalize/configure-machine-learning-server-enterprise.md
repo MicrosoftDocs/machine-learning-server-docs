@@ -82,13 +82,13 @@ In the Enterprise configuration, side-by-side installations of a web and compute
    >-silentcomputenodeinstall
    >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
-1. If you are going to configure SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node now.
+1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
 1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
 
    + On Windows: Add a firewall exception to open the port number. 
   
-   + On Linux: Use `iptables` or the equivalent command to open the port number.
+   + On Linux: Use 'iptables' or the equivalent command to open the port number.
 
 
 You can now **repeat these steps** for each compute node you want to add.
@@ -131,13 +131,13 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
 1. Exit the utility.
 
-1. If you are going to configure SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node now.
+1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
 1. Open the port 12800 _on every web node_. If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
 
    + On Windows: Add a firewall exception to open the port number. 
   
-   + On Linux: Use `iptables` or the equivalent command to open the port number.
+   + On Linux: Use 'iptables' or the equivalent command to open the port number.
 
 You can now **repeat these steps** for each web node you want to add.
 
