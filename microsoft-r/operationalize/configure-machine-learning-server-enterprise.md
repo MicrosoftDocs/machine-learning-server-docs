@@ -84,16 +84,13 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
 1. If you are going to configure SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node now.
 
-1. Open the port 12805 _on every compute node_:
-
-   >[!Warning]
-   >If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
+1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
 
    On Windows: Add a firewall exception to open the port number. 
   
    On Linux: Use `iptables` or the equivalent command to open the port number.
 
-Configure SSL/TLS and install the necessary certificates.
+
 You can now **repeat these steps** for each compute node you want to add.
 
 
@@ -134,6 +131,14 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
 1. Exit the utility.
 
+1. If you are going to configure SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node now.
+
+1. Open the port 12800 _on every compute node_. If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
+
+   On Windows: Add a firewall exception to open the port number. 
+  
+   On Linux: Use `iptables` or the equivalent command to open the port number.
+
 You can now **repeat these steps** for each web node you want to add.
 
 >[!Important]
@@ -145,23 +150,9 @@ In production environments, we strongly recommend the following approaches:
 
 1. [Configure SSL/TLS](../operationalize/configure-https.md) and install the necessary certificates.
 
-1. Open the port 12805 on each compute node:
-
-   >[!Warning]
-   > After the certificates have been configured, 
-   On Windows: Add a firewall exception to open the port number listed in the table on every node. 
-  
-   On Linux: Use `iptables` or the equivalent command to open the port number listed in the table on every node.
-
-   |Node|Port|
-   |--|--|
-   |Web node|12800|
-   |Compute node|12805|
-
 1. Authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).  
 
 1. For added security, restrict the list of IPs that can access the machine hosting the compute node.
-
   
 **Important!** For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.  These JWT settings are defined on each web node in the configuration file, appsetting.json. [Learn more...](../operationalize/configure-authentication.md#ldap-jwt)
 
