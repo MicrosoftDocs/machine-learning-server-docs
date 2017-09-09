@@ -34,14 +34,14 @@ R support is built on a legacy of Microsoft R Server 9.1 and former Revolution R
 
 ## Inside Machine Learning Server
 
-+ R packages
-+ Python modules
-+ Pretrained models ready to score data you provide
++ [R packages](r-reference/introducing-r-server-r-package-reference.md)
++ [Python modules](python-reference/introducing-python-package-reference.md)
++ [Pretrained models](install/microsoftml-install-pretrained-models.md) for visual analysis and text sentiment analysis, ready to score data you provide
 + Open source distributions of R and Python
-+ Interpreters and libraries for running script
-+ Analytic deployment and consumption
-+ Remote execution
-+ Clustered topologies
++ Interpreters and run time infrastructure for script execution
++ [Analytic deployment and consumption](operationalize/concept-operationalize-deploy-consume.md)
++ [Remote execution](r/how-to-execute-code-remotely.md)
++ Clustered topologies for [Spark and Hadoop MapReduce](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators) built into Machine Learning Server
 
 ## Next steps
 
@@ -51,6 +51,8 @@ Choose a quickstart to test-drive capabilities in ten minutes or less.
 
 Move on to tutorials for in-depth exploration.
 
+> [!Note]
+> You can use any R or Python IDE to write code using libraries from Machine Learning Server. Microsoft offers Python for Visual Studio and R for Visual Studio. To use Jupyter Notebook, see [How to configure Jupyter Noteboooks](python/howto-revoscalepy-jupyter-nb-config.md).
 
 **See also**
 
