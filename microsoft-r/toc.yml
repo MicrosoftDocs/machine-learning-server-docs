@@ -10,7 +10,7 @@
   - name: R Server's new name
     href: rebranding-microsoft-r-server.md
 - name: Install & configure
-  href: install/microsoft-r-server-install.md
+  href: install/machine-learning-server-install.md
   items:
   - name: Supported platforms
     href: install/r-server-install-supported-platforms.md
