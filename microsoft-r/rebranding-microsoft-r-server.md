@@ -38,7 +38,7 @@ Microsoft continues its commitment and development in R -- not only in the lates
 
 Upgrading from R Server to Machine Learning Server is as easy as ever. The R analytics and web services you developed under R Server will continue to work under Machine Learning Server.
 
-1. Follow these instructions to upgrade to Machine Learning Server on [Windows](heidi-to-provide-upgrade-win.md), [Linux](heidi-to-provide-upgrade-linux.md), and [Hadoop](heidi-to-provide-upgrade-hadoop.md). 
+1. Follow [these instructions to install Machine Learning Server](install/machine-learning-server-install.md) on Windows, Linux, and Hadoop. 
 
 1. Don't forget to [upgrade your web and compute nodes](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) if you are operationalizing your analytics.
 
@@ -58,6 +58,7 @@ The following table provides links for downloading older versions of Microsoft R
 |[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server 9.1.0 for Linux** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
+Install the new
 
 ## Get support for R Server
 
