@@ -83,7 +83,7 @@ There are three primary use cases for this release:
 
 Add both Python modules to your computer by running setup: 
 
-+ Set up [Machine Learning Server](heidi-to-provide-set-up-link.md) for Python or [Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
++ Set up [Machine Learning Server](../../install/machine-learning-server-install.md) for Python or [Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
 Next, follow this quickstart for hands on experience:
 

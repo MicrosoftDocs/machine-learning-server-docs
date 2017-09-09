@@ -47,7 +47,7 @@ Note that _Microsoft R Server 9.1 for Teradata_ was the last release and will no
 
 ## Download prior R Server releases
 
-The following table provides links for downloading older versions of Microsoft R Server. [Find the instructions for installing R Server here](heidi-to-provide.md). 
+The following table provides links for downloading older versions of Microsoft R Server. [Find the instructions for installing R Server here](install/r-server-install.md). 
 
 Want the new Machine Learning Server? [Learn how to install Machine Learning Server here.](install/machine-learning-server-install.md)
 
