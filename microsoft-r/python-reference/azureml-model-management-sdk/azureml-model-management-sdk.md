@@ -46,11 +46,13 @@ The **azureml-model-management-sdk** library is installed as part of Machine Lea
 
 You can use any Python IDE to write Python scripts that call the classes and functions in **azureml-model-management-sdk**, but the script must run on a computer having Machine Learning Server or SQL Server 2017 Machine Learning Server (Standalone) with Python.
 
-There are **three primary use cases** for this release: 
+## Use cases
+
+There are three primary use cases for this release: 
 
 + Adding authentication logic to your Python script
 + Deploying standard or realtime Python web services
-+ Consuming these web services
++ Managing and consuming these web services
 
 ## Main classes and functions
 

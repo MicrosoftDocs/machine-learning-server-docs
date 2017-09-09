@@ -36,7 +36,7 @@ Microsoft continues its commitment and development in R -- not only in the lates
 
 ## Upgrade to Machine Learning Server
 
-Upgrading from R Server to Machine Learning Server is as easy as ever. The R analytics and web services you developed under R Server will continue to work under Machine Learning Server.
+Moving from R Server to Machine Learning Server is as easy as ever. The R analytics and web services you developed under R Server will continue to work under Machine Learning Server.
 
 1. Follow [these instructions to install Machine Learning Server](install/machine-learning-server-install.md) on Windows, Linux, and Hadoop. 
 
@@ -47,18 +47,16 @@ Note that _Microsoft R Server 9.1 for Teradata_ was the last release and will no
 
 ## Download prior R Server releases
 
-The following table provides links for downloading older versions of Microsoft R Server.
+The following table provides links for downloading older versions of Microsoft R Server. [Find the instructions for installing R Server here](heidi-to-provide.md). 
 
-<br/>
-[Find the installation instructions for those releases here](heidi-to-provide.md). 
+Want the new Machine Learning Server? [Learn how to install Machine Learning Server here.](install/machine-learning-server-install.md)
 
-| Site | Edition | Details |
+| Site for R Server | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
 |[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server 9.1.0 for Linux** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
-Install the new
 
 ## Get support for R Server
 
