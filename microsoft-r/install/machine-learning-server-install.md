@@ -32,11 +32,11 @@ You can install Machine Learning Server on a number of platforms. There are seve
 
 + [Install on Windows](machine-learning-server-windows-install.md)
 
-+ [Install on Linux](install/machine-learning-server-linux-install.md)
++ [Install on Linux](machine-learning-server-linux-install.md)
 
 + [Install on Hadoop](machine-learning-server-hadoop-install.md)
 
-+ [Configure server to operationalize](configure-start-for-administrators.md)
++ [Configure server to operationalize](../operationalize/configure-start-for-administrators.md)
 
 + [Add Pretrained models](microsoftml-install-pretrained-models.md)
 
@@ -44,7 +44,7 @@ You can install Machine Learning Server on a number of platforms. There are seve
 
 ## Local Tools
 
-+ [Microsoft R Client](what-is-microsoft-r-client.md)
++ [Microsoft R Client](../r-client/what-is-microsoft-r-client.md)
 
 + [Python interpreter & libraries](python-libraries-interpreter.md)
 
