@@ -41,7 +41,7 @@ R support is built on a legacy of Microsoft R Server 9.1 and former Revolution R
 + Interpreters and run time infrastructure for script execution
 + [Analytic deployment and consumption](operationalize/concept-operationalize-deploy-consume.md)
 + [Remote execution](r/how-to-execute-code-remotely.md)
-+ Clustered topologies for [Spark and Hadoop MapReduce](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators) built into Machine Learning Server
++ Clustered topologies for [Spark and Hadoop MapReduce](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators.md) built into Machine Learning Server
 
 ## Next steps
 
