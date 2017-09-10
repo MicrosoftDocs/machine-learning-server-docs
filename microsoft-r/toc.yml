@@ -1069,11 +1069,11 @@
         - name: rxPredict
           href: r-reference/revoscaler/rxpredict.md
         - name: rxPredict.rxDForest
-          href: r-reference/revoscaler/rxpredict-rxdforest.md
+          href: r-reference/revoscaler/rxpredict.rxdforest.md
         - name: rxPredict.rxDTree
-          href: r-reference/revoscaler/rxpredict-rxdtree.md
+          href: r-reference/revoscaler/rxpredict.rxdtree.md
         - name: rxPredict.rxNaiveBayes
-          href: r-reference/revoscaler/rxpredict-rxnaivebayes.md
+          href: r-reference/revoscaler/rxpredict.rxnaivebayes.md
         - name: rxPrivacyControl
           href: r-reference/revoscaler/rxprivacycontrol.md
         - name: rxQuantile
