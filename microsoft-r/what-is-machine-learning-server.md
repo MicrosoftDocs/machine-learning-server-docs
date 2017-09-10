@@ -36,8 +36,8 @@ R support is built on a legacy of Microsoft R Server 9.1 and former Revolution R
 
 | Feature category | Description |
 |------------------|-------------|
-| R support | [R packages](r-reference/introducing-r-server-r-package-reference.md) for solutions written in R, with an open source distribution of R and run-time infrasTructure for script execution. |
-| Python support | [Python modules](python-reference/introducing-python-package-reference.md) for solutions written in Python,  with an open source distribution of Python and run-time infrasructure for script execution.  
+| R support | [R packages](r-reference/introducing-r-server-r-package-reference.md) for solutions written in R, with an open source distribution of R and run-time infrastructure for script execution. |
+| Python support | [Python modules](python-reference/introducing-python-package-reference.md) for solutions written in Python,  with an open source distribution of Python and run-time infrastructure for script execution.  
 | [Pretrained models](install/microsoftml-install-pretrained-models.md) | For visual analysis and text sentiment analysis, ready to score data you provide. |
 | [Deploy and consume](operationalize/concept-operationalize-deploy-consume.md) | Operationalize your server and deploy solutions as a web service. |
 | [Remote execution](r/how-to-execute-code-remotely.md) | Start remote sessions on a Machine Learning Server on your network from your client workstation. |

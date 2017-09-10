@@ -282,16 +282,14 @@
           href: r/how-to-revoscaler-spark.md
         - name: MapReduce
           href: r/how-to-revoscaler-hadoop.md
-        - name: Job management
-          items:
-          - name: Background jobs
-            href: r/how-to-revoscaler-distributed-computing-background-jobs.md
-          - name: Parallel jobs
-            href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
-          - name: Enforce a YARN queue assignment
-            href: install/r-server-install-hadoop-yarnqueueusage.md
-      - name: R Server interoperability
-        href: what-is-r-server-interoperability.md
+        - name: Background jobs
+          href: r/how-to-revoscaler-distributed-computing-background-jobs.md
+        - name: Parallel jobs
+          href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
+        - name: Enforce a YARN queue assignment
+          href: install/r-server-install-hadoop-yarnqueueusage.md
+      - name: Choose a MicrosoftML algorithm
+        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
       - name: Data transformations
         href: r/concept-what-is-data-transformations.md
       - name: XDF files
@@ -320,28 +318,27 @@
           href: r/how-to-revoscaler-crosstabs.md
       - name: Visualize data
         href: r/how-to-revoscaler-visualize-huge-data-sets.md
-      - name: Models in RevoScaleR
+      - name: Model data
         href: r/how-to-revoscaler-models.md
-      - name: Choose a MicrosoftML algorithm
-        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
-      - name: Linear
-        href: r/how-to-revoscaler-linear-model.md
-      - name: Logistic regression
-        href: r/how-to-revoscaler-logistic-regression.md
-      - name: Generalized linear
-        href: r/how-to-revoscaler-generalized-linear-model.md
-      - name: Decision tree
-        href: r/how-to-revoscaler-decision-tree.md
-      - name: Decision forest
-        href: r/how-to-revoscaler-decision-forest.md
-      - name: Estimating with stochastic gradient boosting
-        href: r/how-to-revoscaler-boosting.md
-      - name: Naive Bayes Classification
-        href: r/how-to-revoscaler-naive-bayes.md
-      - name: Clustering
-        href: r/how-to-revoscaler-cluster.md
-      - name: Correlate data
-        href: r/how-to-revoscaler-covcor.md
+        items:
+        - name: Linear regression
+          href: r/how-to-revoscaler-linear-model.md
+        - name: Logistic regression
+          href: r/how-to-revoscaler-logistic-regression.md
+        - name: Generalized linear
+          href: r/how-to-revoscaler-generalized-linear-model.md
+        - name: Decision tree
+          href: r/how-to-revoscaler-decision-tree.md
+        - name: Decision forest
+          href: r/how-to-revoscaler-decision-forest.md
+        - name: Estimating with stochastic gradient boosting
+          href: r/how-to-revoscaler-boosting.md
+        - name: Naive Bayes Classification
+          href: r/how-to-revoscaler-naive-bayes.md
+        - name: Clustering Classification
+          href: r/how-to-revoscaler-cluster.md
+        - name: Correlate data
+          href: r/how-to-revoscaler-covcor.md
   - name: Operationalization - deploy & consume
     items:
     - name: Python
@@ -1219,6 +1216,8 @@
         href: r-reference/sqlrutils/storedprocedure.md
 - name: Resources
   items:
+  - name: Product comparison
+    href: what-is-r-server-interoperability.md
   - name: Servicing support policy
     href: resources-servicing-support.md
   - name: Known issues
