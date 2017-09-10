@@ -246,7 +246,7 @@
     href: r/how-to-revoscaler-distributed-computing.md
   - name: Operationalization
     href: operationalize/concept-operationalize-deploy-consume.md
-  - name: Pretrained machine learning models
+  - name: Pretrained models
     href: install/microsoftml-install-pretrained-models.md
   - name: Packages
     items: 

@@ -22,10 +22,21 @@ ms.technology: "r-server"
 
 ---
 
-# About pre-trained machine learning models 
+# Pre-trained machine learning models for sentiment analysis and image detection
 
-Pre-trained deep neural network models for sentiment analysis and image featurization are available to use with MicrosoftML R package and the microsoftml python package. These models require large databases and are time-consuming to train. Using pre-trained models allow users to efficiently extract relevant features from text and images.
+Pre-trained deep neural network models for sentiment analysis of unstructured raw text and image featurization are available to use with [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and the [microsoftml Python package](../python-reference/microsoftml/microsoftml-package.md). We offer pre-trained models that can be used to score content you provide. 
 
-They can be installed as an optional component of the **Microsoft Machine Learning**, **SQL Server Machine Learning Services**, **Microsoft R Server** products. They are also available with the local tools for Python and  **Microsoft R Client**. For a list of these platforms, see the [Platform availability](../r/concept-what-is-the-microsoftml-package.md#platform-availability) section.
+Pre-trained models are installed as:
 
-For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](../r/sample-microsoftml.md).
++ an optional component of the **Machine Learning Server** or **SQL Server Machine Learning Services**. 
++ with local tools for Python and  **Microsoft R Client**. 
+
+For samples showing how to use pretrained models for sentiment analysis and image featurization, see [Samples for MicrosoftML](../r/sample-microsoftml.md).
+
+## Next steps
+
+Install the models by running the setup program or script for the platform you are using. 
+
+**See also:**
+
++ [Install Machine Learning Server](r-server-install.md)

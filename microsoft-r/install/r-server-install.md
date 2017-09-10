@@ -29,11 +29,16 @@ You can install Machine Learning Server on a number of platforms. There are seve
 ## Installation Guides 
 
 + [Supported platforms](r-server-install-supported-platforms.md)
++ [Install for Windows](machine-learning-server-windows-install.md)
++ [Install for Linux](machine-learning-server-linux-install.md)
++ [Install for Hadoop](machine-learning-server-hadoop-install.md)
++ [Install for Cloudera](machine-learning-server-cloudera-install.md)
 
-+ [Install for Windows](r-server-install-windows.md)
+## Previous versions
 
-+ [Install for Linux](r-server-install-linux-server.md)
-
-+ [Install for Hadoop](r-server-install-hadoop.md)
-
-+ [Install for Teradata](r-server-install-teradata-client.md)
++ [9.1 for Windows](r-server-install-windows.md)
++ [9.1 for Linux](r-server-install-linux-server.md)
++ [9.1 for Hadoop](r-server-install-hadoop.md)
++ [9.1 for Cloudera](r-server-install-cloudera.md)
++ [9.1 for Teradata Server](r-server-install-teradata-server.md)
++ [9.1 for Teradata Client](r-server-install-teradata-client.md)

@@ -26,7 +26,7 @@ ms.technology: "r-server"
 
 Machine Learning Server runs machine learning and data mining solutions written in R and Python in standalone and clustered topologies.
 
-This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server windows-offline.md). 
+This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
 If you previously installed R Server 9.x, you can do an in-place upgrade to Machine Learning 9.2.1 with R Server. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
@@ -52,7 +52,7 @@ The following additional components are included in Setup and required for Machi
 
 This section walks you through aMachine Learning Server 9.2.1 deployment using the standalone Windows installer. Under these instructions, your installation will be licensed and serviced as a SQL Server 2017 feature.
 
-### Download Machine Leearning Server installer
+### 1. Download Machine Learning Server installer
 
 You can get the zipped installation file from one of the following download sites.
 
@@ -62,7 +62,7 @@ You can get the zipped installation file from one of the following download site
 | [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **Machine Learning Server 9.2.1** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
-### Run Setup
+### 2. Run Setup
 
 1. In the Downloads folder, right-click to extract the contents of zipped executable.
 2. Double-click **ServerSetup.exe** to start the wizard.
@@ -76,7 +76,7 @@ You can get the zipped installation file from one of the following download site
 
 <sup>1</sup> Machine Learning Server for Windows is licensed as a SQL Server enterprise feature, even though it's installed independently of SQL Server on a Windows operating system.
 
-### Log files
+### 3. Check log files
 
 Post-installation, you can check the log files located in the system temp directory. An easy way to get there is typing `%temp%` as a Run command or search operation in Windows. If you installed all components, your log file list looks similar to this screenshot:
 
@@ -84,7 +84,7 @@ Post-installation, you can check the log files located in the system temp direct
 
 <a name="connect-validate"></a>
 
-### Connect and validate
+### 4. Connect and validate
 
 Machine Learning Server executes on demand as R Server or as a Python application:
  
