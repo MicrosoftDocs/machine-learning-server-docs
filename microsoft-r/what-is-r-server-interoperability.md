@@ -29,7 +29,7 @@ ms.technology:
 
 The following table broadly compares members of the Machine Learning Server and Microsoft R. All products with R support are built on Microsoft R Open and install the package automatically.
 
-There is no Python client or workstation version for Machine Learning Server. You can install the developer edition or an evaluation edition of Machine Learning Server if you require a free-of-charge version for study and development.
+There is no Python client or workstation version for Machine Learning Server. You can install the developer edition or an evaluation edition of Machine Learning Server if you require a free-of-charge copy for study and development.
 
 |Component  |Role |Price | Support | Intended use |
 |-----------|-----|------|---------|--------------|

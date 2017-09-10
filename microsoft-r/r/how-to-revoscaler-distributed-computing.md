@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Distributed and parallel computing overview (ScaleR in Microsoft R)"
-description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
+title: "Distributed and parallel computing overview (Machine Learning Server) | Microsoft Docs"
+description: "Distributed computing using SQL Server in-database and Hadoop clusters computing RevoScaleR package for r and revoscalepy for Python."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "04/02/2017"
+ms.date: "09/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,23 +23,19 @@ ms.technology: "r-server"
 
 ---
 
-# Distributed and parallel computing with ScaleR in Microsoft R
+# Distributed and parallel computing in Machine Learning Server
 
-In Microsoft R, the ScaleR functions in the RevoScaleR package are built to leverage the processing power inherent in the computing platform. On a distributed platform like Hadoop, ScaleR automatically uses the available nodes in a cluster. On multi-processor machines, ScaleR automatically runs jobs in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the ScaleR engine of platform capabilities, your script should include an object called a [compute context](how-to-revoscaler-distributed-computing-compute-context.md) that identifies the platform.
+RevoScaleR and revoscalepy functions are built to leverage the processing power inherent in a clustered computing platform. On a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revolscalepy and RevoScaleR automatically use the available nodes in a cluster. 
 
-*Parallel processing*, which leverages the computing power of a single machine, is both a R Server and R Client capability. Examples of jobs that can run in parallel include data import and linear modeling .
+Functions listed in these articles support distributed workloads: [RevoScaleR](r/how-to-revoscaler-distributed-computing-distributed-analysis.md) | revoscalepy.
 
-The degree of parallel processing you can achieve depends on whether the ScaleR runs on R Client or R Server, and if R Server, on the computational resources of the platform. On [R Client](../r-client/what-is-microsoft-r-client.md), the free workstation version that runs Windows or Linux, parallelization is restricted to a maximum of two processors, even if the machine has more capability. Thus, R Client offers parallelization, but to a much smaller degree given the constraints of two processors.
+On a single server with multiple cores, many jobs can run in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the engine of platform capabilities, your script should include an object called a [compute context](how-to-revoscaler-distributed-computing-compute-context.md) that identifies the platform.
 
-*Distributed computing* across multiple nodes is an R Server-only capability. The platform must be Hadoop (MapReduce or Spark) or Teradata, both of which provide a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
+*Distributed computing* requires the following: a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
 
-On a distributed platform, developers and data scientists will often write script that runs locally on one node, such as an edge node in a Hadoop cluster, but shift execution to data nodes for bigger jobs. For example, you might use the local compute context on an edge node to prepare data or set up variables, and then shift to an `RxSpark` context to run data analysis on data nodes.
+On a distributed platform, you might write script that runs locally on one node, such as an edge node in a Hadoop cluster, but shift execution to data nodes for bigger jobs. For example, you might use the local compute context on an edge node to prepare data or set up variables, and then shift to an `RxSpark` context to run data analysis on data nodes.
 
 In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific data source along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
-
-> [!NOTE]
-> R Client is limited to two threads for processing and in-memory datasets. To avoid paging data to disk, R Client is engineered to ignore the `blocksPerRead` argument, which results in all data being read into memory. If your datasets exceed memory, you should push the compute context to a Microsoft R Server instance on a supported platform (Hadoop, Linux, Windows, Teradata, SQL Server).
->
 
 ## Distributed computing overview
 

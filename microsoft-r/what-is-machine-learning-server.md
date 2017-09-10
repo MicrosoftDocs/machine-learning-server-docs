@@ -43,7 +43,7 @@ R support is built on a legacy of Microsoft R Server 9.1 and former Revolution R
 | [Remote execution](r/how-to-execute-code-remotely.md) | Start remote sessions on a Machine Learning Server on your network from your client workstation. |
 | Scale-out on premises | Clustered topologies for [Spark and Hadoop MapReduce](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators.md) built into Machine Learning Server. |
 
-See [What's New in Machine Learning Server](whats-new-in-machine-learning-server.md).
+For feature descriptions in this release, see [What's New in Machine Learning Server](whats-new-in-machine-learning-server.md).
 
 ## Next steps
 

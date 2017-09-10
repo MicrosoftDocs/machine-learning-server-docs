@@ -40,7 +40,7 @@ Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-m
 
 + [Pretrained models](install/microsoftml-install-pretrained-models.md) for image featurizaton and sentiment analysis articulated in Python.
 
-+ [microsoftml](python-reference/microsoftml/microsoftml-package.md) parallelzation on Spark 2.0-2.4 over HDFS through[ensembling. 
++ [microsoftml](python-reference/microsoftml/microsoftml-package.md) parallelzation on Spark 2.0-2.4 over HDFS through ensembling. 
 
 + [Deploy Python models and code as web services](operationalize/python/quickstart-deploy-python-web-service.md) using the convenient Python classes and functions in the [azureml-model-management-sdk library](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
 

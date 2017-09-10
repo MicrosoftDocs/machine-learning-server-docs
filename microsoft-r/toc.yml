@@ -245,14 +245,10 @@
     href: r/sample-solutions.md
 - name: Concepts
   items:
-  - name: Compute context 1
-    href: r/concept-what-is-compute-context.md
-  - name: Compute context 2
+  - name: Compute context
     href: r/how-to-revoscaler-distributed-computing-compute-context.md
   - name: Distributed computing 
     href: r/how-to-revoscaler-distributed-computing.md
-  - name: Distributed analysis
-    href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
   - name: Operationalization
     href: operationalize/concept-operationalize-deploy-consume.md
   - name: Packages
@@ -282,6 +278,8 @@
           href: r/how-to-revoscaler-spark.md
         - name: MapReduce
           href: r/how-to-revoscaler-hadoop.md
+        - name: RevoScaleR functions for distributed analysis
+          href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
         - name: Background jobs
           href: r/how-to-revoscaler-distributed-computing-background-jobs.md
         - name: Parallel jobs
@@ -290,26 +288,30 @@
           href: install/r-server-install-hadoop-yarnqueueusage.md
       - name: Choose a MicrosoftML algorithm
         href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
-      - name: Data transformations
-        href: r/concept-what-is-data-transformations.md
-      - name: XDF files
-        href: r/concept-what-is-xdf.md
-      - name: Import text data
-        href: r/how-to-revoscaler-data-import.md
-      - name: Import SQL Server data
-        href: r/how-to-revoscaler-data-sql.md
-      - name: Import ODBC data
-        href: r/how-to-revoscaler-data-odbc.md
-      - name: Access HDFS data
-        href: r/how-to-revoscaler-data-hdfs.md
-      - name: Use data source objects
-        href: r/how-to-revoscaler-data-source.md
-      - name: Transform & subset data
-        href: r/how-to-revoscaler-data-transform.md
-      - name: Sort data
-        href: r/how-to-revoscaler-data-sort.md
-      - name: Merge data
-        href: r/scaler-data-merge.md
+      - name: Set a compute context
+        href: r/concept-what-is-compute-context.md
+      - name: Data access and manipulation
+        items: 
+        - name: Data transformations
+          href: r/concept-what-is-data-transformations.md
+        - name: XDF files
+          href: r/concept-what-is-xdf.md
+        - name: Import text data
+          href: r/how-to-revoscaler-data-import.md
+        - name: Import SQL Server data
+          href: r/how-to-revoscaler-data-sql.md
+        - name: Import ODBC data
+          href: r/how-to-revoscaler-data-odbc.md
+        - name: Access HDFS data
+          href: r/how-to-revoscaler-data-hdfs.md
+        - name: Use data source objects
+          href: r/how-to-revoscaler-data-source.md
+        - name: Transform & subset data
+          href: r/how-to-revoscaler-data-transform.md
+        - name: Sort data
+          href: r/how-to-revoscaler-data-sort.md
+        - name: Merge data
+          href: r/scaler-data-merge.md
       - name: Summarize data
         items:
         - name: Statistical summaries
