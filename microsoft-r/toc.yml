@@ -486,21 +486,21 @@
     - name: Execute code remotely
       href: r/how-to-execute-code-remotely.md
   - name: RevoScaleR advanced development
-      items:
-      - name: Write custom chunking algorithms
-        href: r/how-to-developer-write-chunking-algorithms.md
-      - name: Write custom analyses for large data sets
-        href: r/how-to-developer-write-custom-analysis.md
-      - name: Convert model objects for use with PMML
-        href: r/how-to-developer-pmml.md
-      - name: Manage threads
-        href: r/how-to-developer-manage-threads.md
-      - name: Parallel loops using foreach
-        href: r/how-to-revoscaler-distributed-computing-foreach.md
-      - name: Parallel execution using doRSR
-        href: r/how-to-revoscaler-distributed-computing-foreach.md
-      - name: Parallel algorithms with PemaR
-        href: r/how-to-developer-pemar.md
+    items:
+    - name: Write custom chunking algorithms
+      href: r/how-to-developer-write-chunking-algorithms.md
+    - name: Write custom analyses for large data sets
+      href: r/how-to-developer-write-custom-analysis.md
+    - name: Convert model objects for use with PMML
+      href: r/how-to-developer-pmml.md
+    - name: Manage threads
+      href: r/how-to-developer-manage-threads.md
+    - name: Parallel loops using foreach
+      href: r/how-to-revoscaler-distributed-computing-foreach.md
+    - name: Parallel execution using doRSR
+      href: r/how-to-revoscaler-distributed-computing-foreach.md
+    - name: Parallel algorithms with PemaR
+      href: r/how-to-developer-pemar.md
 - name: Reference
   items:
   - name: Python libraries
