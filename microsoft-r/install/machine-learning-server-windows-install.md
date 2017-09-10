@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Windows
+# Install Machine Learning Server for Windows
 
 
 ## Next steps

@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Linux
+# Install Machine Learning Server for Linux
 
 
 ## Next steps

@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Hadoop offline
+# Install Machine Learning Server for Hadoop offline
 
 
 ## Next steps

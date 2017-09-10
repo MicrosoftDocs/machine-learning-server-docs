@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "Install Machine Learning Server for Hadoop"
-description: "How to install, connect to, and use Machine Learning Server on a Hadoop cluster with Spark or MapReduce"
+title: "Uninstall Machine Learning Server for Linux | Microsoft Docs"
+description: "How to uninstall Machine Learning Server for Linux."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# Install Machine Learning Server for Hadoop
+# Uninstall Machine Learning Server for Linux
 
 
 ## Next steps
