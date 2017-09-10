@@ -60,8 +60,6 @@
         items:
         - name: Adjust Hadoop configuration
           href: install/r-server-install-hadoop-configuration-r-workloads.md
-        - name: Enforce a YARN queue assignment
-          href: install/r-server-install-hadoop-yarnqueueusage.md
         - name: Troubleshoot R installation problems
           href: install/r-server-install-hadoop-troubleshoot.md
       - name: Uninstall from Hadoop
@@ -247,9 +245,9 @@
     href: r/sample-solutions.md
 - name: Concepts
   items:
-  - name: Compute context (1)
+  - name: `Compute context (1)`
     href: r/concept-what-is-compute-context.md
-  - name: Compute context (2)
+  - name: `Compute context (2)`
     href: r/how-to-revoscaler-distributed-computing-compute-context.md
   - name: Distributed computing 
     href: r/how-to-revoscaler-distributed-computing.md
@@ -290,6 +288,8 @@
             href: r/how-to-revoscaler-distributed-computing-background-jobs.md
           - name: Parallel jobs
             href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
+          - name: Enforce a YARN queue assignment
+            href: install/r-server-install-hadoop-yarnqueueusage.md
       - name: R Server interoperability
         href: what-is-r-server-interoperability.md
       - name: Data transformations
@@ -485,7 +485,7 @@
       href: operationalize/how-to-connect-log-in-with-mrsdeploy.md
     - name: Execute code remotely
       href: r/how-to-execute-code-remotely.md
-  - name: RevoScaleR development
+  - name: RevoScaleR advanced development
       items:
       - name: Write custom chunking algorithms
         href: r/how-to-developer-write-chunking-algorithms.md
