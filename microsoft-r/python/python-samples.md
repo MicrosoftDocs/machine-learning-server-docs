@@ -26,6 +26,8 @@ ms.technology:
 
 # Python Samples for Machine Learning Server
 
-The following samples are available for Python users:
+The following samples are available for Python users. Use these as examples of how to Machine Learning Server works.
 
-+ ???
+|Example|Description                                                     |
+|--------------|---------------------------------------------------------|
+|[add link](#link)|description of notebook, or other file...             |
