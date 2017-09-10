@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 In Machine Learning Server, every session that loads a function library has a [compute context](concept-what-is-compute-context.md). The default is local, available on all platforms. 
 
-You can set the compute context to shift script execution to a different server or platform. For example, you might want to bring calculations and analysis to where the data resides on a database platform, such as SQL Server, or on the Hadoop Distributed File System (HDFS) using Spark or MapReduce for processing layer.
+You can switch the compute context to shift script execution to a different server or platform. For example, you might want to bring calculations and analysis to where the data resides on a database platform, such as SQL Server, or on the Hadoop Distributed File System (HDFS) using Spark or MapReduce as the processing layer.
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ The RevoScaleR library supports the compute contexts in the following table.
 Context name | Alternative name | Allowed data sources |
 -----------|--------------------|-----------------------|
 [RxLocalSeq](../r-reference/revoscaler/rxlocalseq.md)      | local     | (all) |
-[RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md), [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
+[RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md), [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
 [RxHadoopMR](../r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md) |
 [RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](../r-reference/revoscaler/rxsqlserverdata.md) |
 
@@ -55,7 +55,7 @@ Context name | Alternative name |
 [RxLocalParallel](../r-reference/revoscaler/rxlocalparallel.md) | localpar  |  
 [RxForeachDoPar](../r-reference/revoscaler/rxforeachdopar.md)  | dopar     |  
 
-## Matrix: Compute context by data source
+## Supported data sources
 
 In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be limited. The following table shows the available combinations of compute contexts and data sources (x indicates available):
 
@@ -77,7 +77,7 @@ Within a data source type, you might find differences depending on the file syst
 At a command prompt, run `rxGetComputeContext()` to return the current compute context. Every platform supports the default local compute context **RxLocalSeq**. 
 
 
-## Set a Compute Context
+## Set a compute context
 
 This section uses examples to illustrate the syntax for setting compute context for several platforms.
 
@@ -103,17 +103,17 @@ myServer <- RxComputeContext("RxInSqlServer", sqlQuery = sqlQuery, connectionStr
 rxSetComputeContext(computeContext = myServer)
 ~~~~
 
-## Limitations when switching context
+## Limitations on switching
 
 1. Not all RevoScaleR capability is available on every distributed computing platform, such as Hadoop. 
 2. Only some RevoScaleR functions and rxExec run in a distributed manner.  
 3. The main R script including any open source routines still runs locally in a single threaded process. 
 4. Data and objects needed for distributed execution of rxExec or a RevoScaleR function needs to be copied to the remote compute context if the object is not already there, such as to a cluster, database, or Hadoop. 
-5. With limited exceptions (such as file copying to and from Hadoop), RevoScaleR does include functions for moving data.  
-6. Some RevoScaleR functions only run locally, such as sort, merge, and import, so data may have to be moved back and forth between the local and remote environment during the course of overall program execution. 
+5. With limited exceptions (such as file copying to and from Hadoop), RevoScaleR does not include functions for moving data.  
+6. Some RevoScaleR functions only run locally, such as sort, merge, and import, so data may have to be moved back and forth between the local and remote environments during the course of overall program execution. 
 7. rxPredict on a cluster is only possible if the data file is split.
 
-## Set a compute context for distributed processing on Hadoop 
+## Set a compute context for distributed processing 
 
 RevoScaleR functions can be used to distribute computations over more than one server instance, allowing you to run workloads on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a RevoScaleR interpreter on a different computer. 
 
@@ -124,7 +124,7 @@ RevoScaleR's distributed computing capabilities vary by platform and the details
 >
 
 
-## Waiting and Non-waiting compute sontexts
+## Waiting and Non-waiting compute contexts
 
 By default, all jobs are "waiting jobs" or "blocking jobs", where control of the command prompt is not returned until the job is complete. For jobs that complete quickly, this is an appropriate choice. However, for larger jobs that take several minutes to several hours ro tun on a cluster, it is often useful to send the job off to the cluster and then to be able to continue working in your local session. In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is returned and can be used to retrieve results later. 
 

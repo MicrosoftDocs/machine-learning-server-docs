@@ -35,7 +35,7 @@ For RevoScaleR, remote compute context is available for these platforms: SQL Ser
 
 For revoscalepy, Spark is the only compute context supported in this release. It can be local or remote.
 
-## Use cases for compute context switching
+## Use cases for switching context
 
 The primary use case for switching the compute context is to bring calculations and analysis to the data itself. As such, the use cases for compute context typically leverage a database platform, such as SQL Server, or data located on the Hadoop Distributed File System (HDFS) using Spark or MapReduce for processing layer.
 
@@ -47,7 +47,7 @@ Server to Server | Push platform-specific computations to a server on a differen
 > [!Tip]
 > If your objective is simply to use two or more Machine Learning Server instances interchangeably, or to shift execution from R Client to a more powerful Machine Learning Server, consider [remote execution](how-to-execute-code-remotely.md) rather than switching the compute context. Remote execution gives you the ability to run R sessions on any standalone Machine Learning Server installation on Windows or Linux. 
 
-## Use case: compute context for distributed computing
+## Use case for distributed computing
 
 A compute context object is the key to distributed computing with RevoScaleR. The default compute context tells the RevoScaleR engine to execute computations locally. In the default compute context, high-performance analytics (HPA) functions such as `rxLinMod` are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via `rxExec` are done sequentially.
 
