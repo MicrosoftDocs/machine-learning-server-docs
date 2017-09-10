@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Windows offline
+# Install Machine Learning Server for Windows offline
 
 
 ## Next steps

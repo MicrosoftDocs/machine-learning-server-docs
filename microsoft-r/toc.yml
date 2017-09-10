@@ -24,6 +24,8 @@
         href: install/machine-learning-server-windows-offline.md
       - name: Command line install
         href: install/machine-learning-server-windows-commandline.md
+      - name: Adding pretrained models on Windows
+        href: install/microsoftml-install-pretrained-models.md
     - name: Linux
       items:
       - name: Install on Linux
@@ -31,41 +33,36 @@
       - name: Offline install
         href: install/machine-learning-server-linux-offline.md
       - name: Uninstall from Linux
-        href: install/machine-learning-server-linux-commandline.md  
-      - name: Manage your R installation (OLD)
+        href: install/machine-learning-server-linux-uninstall.md  
+      - name: Manage your R installation 
         href: install/r-server-install-linux-manage-install.md  
     - name: Hadoop
       items:
       - name: Install on Hadoop
         href: install/machine-learning-server-hadoop-install.md
+      - name: Install on Cloudera
+        href: install/machine-learning-server-cloudera-install.md
         items:
-        - name: Cloudera Manager parcel installation
-          href: install/machine-learning-server-cloudera-install.md
-          items:
-          - name: Generate a parcel (OLD)
-            href: install/r-server-install-cloudera-generate-parcel.md
-          - name: Deploy & activate (OLD)
-            href: install/r-server-install-cloudera-deploy-activate.md
-          - name: Rollback to previous version (OLD)
-            href: install/r-server-install-cloudera-rollback.md
-        - name: Command line installation (CDH, HDP, MapR)
-          href: install/machine-learning-server-hadoop-commandline.md
-        - name: Offline install
-          href: install/machine-learning-server-hadoop-offline.md
-        - name: Package dependency list (OLD)
-          href: install/r-server-install-linux-hadoop-packages.md
-        - name: Manual package installation (OLD)
-          href: install/r-server-install-hadoop-manual-package.md
-      - name: Post-install configuration (OLD)
-        items:
-        - name: Adjust Hadoop configuration
-          href: install/r-server-install-hadoop-configuration-r-workloads.md
-        - name: Enforce a YARN queue assignment
-          href: install/r-server-install-hadoop-yarnqueueusage.md
-        - name: Troubleshoot R installation problems
-          href: install/r-server-install-hadoop-troubleshoot.md
+        - name: Generate a parcel
+          href: install/r-server-install-cloudera-generate-parcel.md
+        - name: Deploy & activate
+          href: install/r-server-install-cloudera-deploy-activate.md
+        - name: Rollback to previous version
+          href: install/r-server-install-cloudera-rollback.md
+      - name: Command line install
+        href: install/machine-learning-server-hadoop-commandline.md
+      - name: Offline install
+        href: install/machine-learning-server-hadoop-offline.md
       - name: Uninstall from Hadoop
-        href: 
+        href: install/machine-learning-server-hadoop-uninstall.md
+      - name: R Package dependency list
+        href: install/r-server-install-linux-hadoop-packages.md
+      - name: Manual R package install
+        href: install/r-server-install-hadoop-manual-package.md
+      - name: Hadoop configuration
+        href: install/r-server-install-hadoop-configuration-r-workloads.md
+      - name: Troubleshoot R installation
+        href: install/r-server-install-hadoop-troubleshoot.md
     - name: Configure to operationalize
       href: what-is-operationalization.md
       items:
@@ -107,8 +104,6 @@
         href: operationalize/configure-manage-r-packages.md
       - name: Find install path
         href: operationalize/configure-find-admin-configuration-file.md
-    - name: Adding pretrained models
-      href: install/microsoftml-install-pretrained-models.md
     - name: Virtual machines (Cloud)
       href: install/machine-learning-server-in-the-cloud.md
       items:
@@ -248,9 +243,9 @@
 - name: Concepts
   items:
   - name: Compute context
-    href: r/concept-what-is-compute-context.md
-  - name: Distributed and high performance computing 
-    href: 
+    href: r/concept-what-is-compute-context.md 
+  - name: Distributed computing 
+    href: r/how-to-revoscaler-distributed-computing.md
   - name: Operationalization
     href: operationalize/concept-operationalize-deploy-consume.md
   - name: Packages
@@ -262,40 +257,44 @@
 - name: How-to guides
   href: r/how-to-introduction.md
   items:
-  - name: Data prep & modeling
+  - name: Data & models
     items:
     - name: Python
       items:
-      - name: Configure Jupyter Notebooks
-        href: python/howto-revoscalepy-jupyter-nb-config.md
-      - name: Use revoscalepy for Spark applications
+      - name: Use revoscalepy on Spark
         href: python/howto-revoscalepy.md
       - name: Parallel processing using revoscalepy
         href: python/howto-revoscalepy-parallel.md
+      - name: Configure Jupyter Notebooks
+        href: python/howto-revoscalepy-jupyter-nb-config.md
     - name: R
       items:
-      - name: How to use Machine Learning Server with other technologies
-        href: what-is-r-server-interoperability.md
-      - name: Data transformations
-        href: r/concept-what-is-data-transformations.md
-      - name: XDF files
-        href: r/concept-what-is-xdf.md
-      - name: Import text data
-        href: r/how-to-revoscaler-data-import.md
-      - name: Import SQL Server data
-        href: r/how-to-revoscaler-data-sql.md
-      - name: Import ODBC data
-        href: r/how-to-revoscaler-data-odbc.md
-      - name: Access HDFS data
-        href: r/how-to-revoscaler-data-hdfs.md
-      - name: Use data source objects
-        href: r/how-to-revoscaler-data-source.md
-      - name: Transform & subset data
-        href: r/how-to-revoscaler-data-transform.md
-      - name: Sort data
-        href: r/how-to-revoscaler-data-sort.md
-      - name: Merge data
-        href: r/scaler-data-merge.md
+      - name: Choose a MicrosoftML algorithm
+        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
+      - name: Set a compute context
+        href: r/how-to-revoscaler-distributed-computing-compute-context.md
+      - name: Data access and manipulation
+        items: 
+        - name: Data transformations
+          href: r/concept-what-is-data-transformations.md
+        - name: XDF files
+          href: r/concept-what-is-xdf.md
+        - name: Import text data
+          href: r/how-to-revoscaler-data-import.md
+        - name: Import SQL Server data
+          href: r/how-to-revoscaler-data-sql.md
+        - name: Import ODBC data
+          href: r/how-to-revoscaler-data-odbc.md
+        - name: Access HDFS data
+          href: r/how-to-revoscaler-data-hdfs.md
+        - name: Use data source objects
+          href: r/how-to-revoscaler-data-source.md
+        - name: Transform & subset data
+          href: r/how-to-revoscaler-data-transform.md
+        - name: Sort data
+          href: r/how-to-revoscaler-data-sort.md
+        - name: Merge data
+          href: r/scaler-data-merge.md
       - name: Summarize data
         items:
         - name: Statistical summaries
@@ -304,28 +303,41 @@
           href: r/how-to-revoscaler-crosstabs.md
       - name: Visualize data
         href: r/how-to-revoscaler-visualize-huge-data-sets.md
-      - name: Models in RevoScaleR
+      - name: Model data
         href: r/how-to-revoscaler-models.md
-      - name: Choose a MicrosoftML algorithm
-        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
-      - name: Linear
-        href: r/how-to-revoscaler-linear-model.md
-      - name: Logistic regression
-        href: r/how-to-revoscaler-logistic-regression.md
-      - name: Generalized linear
-        href: r/how-to-revoscaler-generalized-linear-model.md
-      - name: Decision tree
-        href: r/how-to-revoscaler-decision-tree.md
-      - name: Decision forest
-        href: r/how-to-revoscaler-decision-forest.md
-      - name: Estimating with stochastic gradient boosting
-        href: r/how-to-revoscaler-boosting.md
-      - name: Naive Bayes Classification
-        href: r/how-to-revoscaler-naive-bayes.md
-      - name: Clustering
-        href: r/how-to-revoscaler-cluster.md
-      - name: Correlate data
-        href: r/how-to-revoscaler-covcor.md
+        items:
+        - name: Linear regression
+          href: r/how-to-revoscaler-linear-model.md
+        - name: Logistic regression
+          href: r/how-to-revoscaler-logistic-regression.md
+        - name: Generalized linear
+          href: r/how-to-revoscaler-generalized-linear-model.md
+        - name: Decision tree
+          href: r/how-to-revoscaler-decision-tree.md
+        - name: Decision forest
+          href: r/how-to-revoscaler-decision-forest.md
+        - name: Estimating with stochastic gradient boosting
+          href: r/how-to-revoscaler-boosting.md
+        - name: Naive Bayes Classification
+          href: r/how-to-revoscaler-naive-bayes.md
+        - name: Clustering Classification
+          href: r/how-to-revoscaler-cluster.md
+        - name: Correlate data
+          href: r/how-to-revoscaler-covcor.md
+      - name: Use RevoScaleR on Hadoop
+        items:
+        - name: Spark
+          href: r/how-to-revoscaler-spark.md
+        - name: MapReduce
+          href: r/how-to-revoscaler-hadoop.md
+        - name: RevoScaleR functions for distributed analysis
+          href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
+        - name: Background jobs
+          href: r/how-to-revoscaler-distributed-computing-background-jobs.md
+        - name: Parallel jobs
+          href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
+        - name: Enforce a YARN queue assignment
+          href: install/r-server-install-hadoop-yarnqueueusage.md
   - name: Operationalization - deploy & consume
     items:
     - name: Python
@@ -469,43 +481,22 @@
       href: operationalize/how-to-connect-log-in-with-mrsdeploy.md
     - name: Execute code remotely
       href: r/how-to-execute-code-remotely.md
-  - name: RevoScaleR on Hadoop
+  - name: RevoScaleR advanced development
     items:
-    - name: R
-      items:
-      - name: Spark
-        href: r/how-to-revoscaler-spark.md
-      - name: MapReduce
-        href: r/how-to-revoscaler-hadoop.md
-  - name: RevoScaleR development
-    items:
-    - name: R
-      items:
-      - name: Write custom chunking algorithms
-        href: r/how-to-developer-write-chunking-algorithms.md
-      - name: Write custom analyses for large data sets
-        href: r/how-to-developer-write-custom-analysis.md
-      - name: Convert model objects for use with PMML
-        href: r/how-to-developer-pmml.md
-      - name: Manage threads
-        href: r/how-to-developer-manage-threads.md
-    - name: Distribute workloads
-      href: r/how-to-revoscaler-distributed-computing.md
-      items:
-      - name: Compute context
-        href: r/how-to-revoscaler-distributed-computing-compute-context.md
-      - name: Distributed analysis
-        href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
-      - name: Background jobs
-        href: r/how-to-revoscaler-distributed-computing-background-jobs.md
-      - name: Parallel jobs
-        href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
-      - name: Parallel loops using foreach
-        href: r/how-to-revoscaler-distributed-computing-foreach.md
-      - name: Parallel execution using doRSR
-        href: r/how-to-revoscaler-distributed-computing-foreach.md
-      - name: Parallel algorithms with PemaR
-        href: r/how-to-developer-pemar.md
+    - name: Write custom chunking algorithms
+      href: r/how-to-developer-write-chunking-algorithms.md
+    - name: Write custom analyses for large data sets
+      href: r/how-to-developer-write-custom-analysis.md
+    - name: Convert model objects for use with PMML
+      href: r/how-to-developer-pmml.md
+    - name: Manage threads
+      href: r/how-to-developer-manage-threads.md
+    - name: Parallel loops using foreach
+      href: r/how-to-revoscaler-distributed-computing-foreach.md
+    - name: Parallel execution using doRSR
+      href: r/how-to-revoscaler-distributed-computing-foreach.md
+    - name: Parallel algorithms with PemaR
+      href: r/how-to-developer-pemar.md
 - name: Reference
   items:
   - name: Python libraries
@@ -1075,11 +1066,11 @@
         - name: rxPredict
           href: r-reference/revoscaler/rxpredict.md
         - name: rxPredict.rxDForest
-          href: r-reference/revoscaler/rxpredict-rxdforest.md
+          href: r-reference/revoscaler/rxpredict.rxdforest.md
         - name: rxPredict.rxDTree
-          href: r-reference/revoscaler/rxpredict-rxdtree.md
+          href: r-reference/revoscaler/rxpredict.rxdtree.md
         - name: rxPredict.rxNaiveBayes
-          href: r-reference/revoscaler/rxpredict-rxnaivebayes.md
+          href: r-reference/revoscaler/rxpredict.rxnaivebayes.md
         - name: rxPrivacyControl
           href: r-reference/revoscaler/rxprivacycontrol.md
         - name: rxQuantile
@@ -1224,6 +1215,8 @@
         href: r-reference/sqlrutils/storedprocedure.md
 - name: Resources
   items:
+  - name: Product comparison
+    href: what-is-r-server-interoperability.md
   - name: Servicing support policy
     href: resources-servicing-support.md
   - name: Known issues

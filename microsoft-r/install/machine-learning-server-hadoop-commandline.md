@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Hadoop on a command line
+# Install Machine Learning Server for Hadoop from a command line
 
 
 ## Next steps

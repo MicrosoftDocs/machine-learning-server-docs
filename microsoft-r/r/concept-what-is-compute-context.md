@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Compute context in Microsoft R"
-description: "Push a compute context to R Server on a different platform for remote execution."
+title: "Compute context for script execution on Machine Learning Server | Microsoft Docs"
+description: "Compute context for local, distributed, and parallel processing on Machine Learning Server using revoscalepy or RevoScaleR packages." 
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "05/30/2017"
+ms.date: "09/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,76 +23,55 @@ ms.technology: "r-server"
 
 ---
 
-# Compute context (Microsoft R)
+# Compute context for script execution on Machine Learning Server
 
-*Compute context* refers to the location of RevoScaleR computations, as executed by the RevoScaleR interpreter provided by an R Server or R Client. The ability to switch a compute context means that you can push execution to another RevoScaleR interpreter if you want to leverage data resources on that server.
+*Compute context* refers to the location of computations, as executed by revoscalepy for Python, or by the RevoScaleR interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to another interpreter if you want to leverage data resources on that server.
 
-The primary use case for switching the compute context is to bring calculations and analysis to the data itself. As such, the use cases for compute context typically leverage a database platform, such as SQL Server or Teradata, or data located on the Hadoop Distributed File System (HDFS) using Spark or MapReduce for processing layer.
+The compute context can be local to the current machine, or remote if you want to use a Machine Learning Server instance on another computer. Local is the default. By changing the compute context, you can transfer R and Python computations to the remote system, typically to get better performance or to minimize data transfer. 
+
+## Supported configurations
+
+For RevoScaleR, remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, HadoopMR and Spark, and Microsoft R Server (Linux and Windows). RevoScaleR functions like `RxSpark`, `RxHadoopMR`, or `RxInSQLServer` are used to set the compute context. 
+
+For revoscalepy, Spark is the only compute context supported in this release. It can be local or remote.
+
+## Use cases for switching context
+
+The primary use case for switching the compute context is to bring calculations and analysis to the data itself. As such, the use cases for compute context typically leverage a database platform, such as SQL Server, or data located on the Hadoop Distributed File System (HDFS) using Spark or MapReduce for processing layer.
 
 Use case | Description | 
 ---------|-------------|
-R Client to R Server on a database| Write and run script locally in R Client, pushing specific computations to a remote R Server instance. You can rotate calculations among systems having better processing capabilities or database assets.|
-R Server to R Server | Push platform-specific computations to an R Server on a different platform. Supported platforms include SQL Server, Teradata, Hadoop (Spark or MapReduce). You can implement a distributed processing architecture: RxLocalSeq, RxSpark, RxInSqlServer. |
+Client to Server| Write and run script locally in R Client, pushing specific computations to a remote Machine Learning Server instance. You can rotate calculations among systems having better processing capabilities or database assets.|
+Server to Server | Push platform-specific computations to a server on a different platform. Supported platforms include SQL Server,  Hadoop (Spark or MapReduce). You can implement a distributed processing architecture: RxLocalSeq, RxSpark, RxInSqlServer. |
 
 > [!Tip]
-> If your objective is simply to use two or more R Server instances interchangeably, or to shift execution from R Client to a more powerful R Server, consider [remote execution](how-to-execute-code-remotely.md) rather than switching the compute context. Remote execution gives you the ability to run R sessions on any standalone R Server installation on Windows or Linux. 
+> If your objective is simply to use two or more Machine Learning Server instances interchangeably, or to shift execution from R Client to a more powerful Machine Learning Server, consider [remote execution](how-to-execute-code-remotely.md) rather than switching the compute context. Remote execution gives you the ability to run R sessions on any standalone Machine Learning Server installation on Windows or Linux. 
 
-## Prerequisites
+## Use case for distributed computing
 
-Use same-version R Server instances, or compatible co-released versions of R Client and R Server (for example, R Client 3.3.3. and R Server 9.1). The specific dependency is to have the same version of RevoScaleR, but since RevoScaleR is only installed through R Client or R Server, the version prerequisite is satisfied through product installation.
+A compute context object is the key to distributed computing with RevoScaleR. The default compute context tells the RevoScaleR engine to execute computations locally. In the default compute context, high-performance analytics (HPA) functions such as `rxLinMod` are distributed only to the local cores, if there is more than one, and high-performance computations (HPC) submitted via `rxExec` are done sequentially.
 
-## List of compute contexts
+If you have distributed computing resources available to you, you can create a compute context object for those resources, set your compute context using `rxOptions`, and then use those distributed computing resources in subsequent calls to RevoScaleR.
 
-In Microsoft R, every cR session that loads the RevoScaleR function library has a compute context type. The default is a local compute context, available on all platforms. 
+You can create multiple compute context objects and switch between them easily. You can also modify existing compute context objects, for example, to add new computers as they come online.
 
-You can switch from local to any of the compute contexts in the following list: 
+The principal compute contexts are the following:
 
-Context name | Alternative name | Allowed data sources |
------------|--------------------|-----------------------|
-[RxLocalSeq](../r-reference/revoscaler/rxlocalseq.md)      | local     | (all) |
-[RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md), [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
-[RxHadoopMR](../r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md) |
-[RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](../r-reference/revoscaler/rxsqlserverdata.md) |
-[RxInTeradata](../r-reference/revoscaler/rxinteradata.md)    | teradata  | [RxTeradataData](../r-reference/revoscaler/rxteradata.md)  |
+- `RxLocalSeq`: the default compute context. This compute context is available on all platforms.
 
-Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. The following compute contexts are used for manual distributed computing:
+- `RxHadoopMR`: the compute context used to distribute computations on a Hadoop MapReduce cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [How to use RevoScaleR with Hadoop](how-to-revoscaler-hadoop.md).
 
-Context name | Alternative name | 
------------|--------------------|
-[RxLocalParallel](../r-reference/revoscaler/rxlocalparallel.md) | localpar  |  
-[RxForeachDoPar](../r-reference/revoscaler/rxforeachdopar.md)  | dopar     |  
+- `RxSpark`: the compute context used to distribute computations on a Hadoop Spark cluster. For more information, see the [How to use RevoScaleR with Spark](how-to-revoscaler-spark.md).
 
-## Get compute context
+The `RxInSqlServer` compute context is a special case in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using `RxInSqlServer` compute contexts, see the [Introducing Machine Learning with SQL Server](concept-what-is-sql-server-r-services.md).
 
-At an R command prompt, run `rxGetComputeContext()` to return the current compute context. Every platform supports the default local compute context **RxLocalSeq**. 
+## Next steps
 
-## Limitations when switching context
-
-1. Not all RevoScaleR capability is available on every distributed computing platform, such as Hadoop. 
-2. Only some RevoScaleR functions and rxExec run in a distributed manner.  
-3. The main R script including any open source routines still runs locally in a single threaded process. 
-4. Data and objects needed for distributed execution of rxExec or a RevoScaleR function needs to be copied to the remote compute context if the object is not already there, such as to a cluster, database, or Hadoop. 
-5. With limited exceptions (such as file copying to and from Hadoop), RevoScaleR does include functions for moving data.  
-6. Some RevoScaleR functions only run locally, such as sort, merge, and import, so data may have to be moved back and forth between the local and remote environment during the course of overall program execution. 
-7. rxPredict on a cluster is only possible if the data file is split.
-
-## Example: Create a compute context
-
-~~~~
-# Set a SQL Server compute context (requires RevoScaleR and SQL Server on same machine)
-
-connectionString <- "Server=(placeholder-server-name);Database=RevoAirlineDB;Trusted_Connection=true"
-
-sqlQuery <- "WITH nb AS (SELECT 0 AS n UNION ALL SELECT n+1 FROM nb where n < 9) SELECT n1.n+10*n2.n+100*n3.n+1 AS n, ABS(CHECKSUM(NewId())) 
-
-myServer <- RxComputeContext("RxInSqlServer", sqlQuery = sqlQuery, connectionString = connectionString)   
-                   
-rxSetComputeContext(computeContext = myServer)
-~~~~
+Learn how to get, set, and manage compute context in [How to set and manage compute context in Machine Learning Server](how-to-revoscaler-distributed-computing-compute-context.md).
 
 ## See Also
 
- [Introduction to R Server](../what-is-microsoft-r-server.md) 
- [Install R Server on Windows](../install/r-server-install-windows.md)  
- [Install R Server on Linux](../install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](../install/r-server-install-hadoop.md)
+ [Introduction to Machine Learning Server](../what-is-machine-learning-server.md) 
+ [Install Machine Learning Server on Windows](../install/machine-learning-server-windows-install.md)  
+ [Install Machine Learning Server on Linux](../install/machine-learning-server-linux-install.md)  
+ [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md)

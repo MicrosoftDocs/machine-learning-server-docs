@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Windows on a command line
+# Install Machine Learning Server for Windows from a command line
 
 
 ## Next steps

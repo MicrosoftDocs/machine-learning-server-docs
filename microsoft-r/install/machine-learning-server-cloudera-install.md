@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server on Cloudera
+# Install Machine Learning Server using Cloudera Manager
 
 
 ## Next steps

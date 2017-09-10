@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "Linux commandline installation for Machine Learning Server | Microsoft Docs"
-description: "How to install Machine Learning Server for Linux on the command line."
+title: "Uninstall Machine Learning Server for Hadoop| Microsoft Docs"
+description: "How to uninstall Machine Learning Server on a Hadoop cluster."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server for Linux on a command line
+# Uninstall Machine Learning Server for Hadoop
 
 
 ## Next steps
