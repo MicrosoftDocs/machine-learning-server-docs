@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # What's new in Machine Learning Server
 
-Machine Learning Server 9.2 expands upon Microsoft R Server 9.1 with new Python libaries for integrating machine learning into data analysis solutions in the enterprise. Full-spectrum data mining, from data transformation to analysis and visualization, is supported in R and Python. Machine learning algorithms, as well as pretrained models provided by Microsoft, are also available in both languages. Language-specific development is available when you add Python or R support (or both) during setup.
+Machine Learning Server 9.2 expands upon Microsoft R Server 9.1 with new Python libaries for integrating machine learning into data analysis solutions in the enterprise. Full-spectrum data mining, from data transformation to analysis and visualization, is supported in R and Python. Machine learning algorithms, as well as pretrained models provided by Microsoft, are also in both languages. Language-specific development is available when you add Python or R support (or both) during setup.
 
 > [!Note]
 > For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).

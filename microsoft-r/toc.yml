@@ -247,10 +247,14 @@
     href: r/sample-solutions.md
 - name: Concepts
   items:
-  - name: Compute context
+  - name: Compute context (1)
     href: r/concept-what-is-compute-context.md
-  - name: Distributed and high performance computing 
-    href: 
+  - name: Compute context (2)
+    href: r/how-to-revoscaler-distributed-computing-compute-context.md
+  - name: Distributed computing 
+    href: r/how-to-revoscaler-distributed-computing.md
+  - name: Distributed analysis
+    href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
   - name: Operationalization
     href: operationalize/concept-operationalize-deploy-consume.md
   - name: Packages
@@ -262,19 +266,31 @@
 - name: How-to guides
   href: r/how-to-introduction.md
   items:
-  - name: Data prep & modeling
+  - name: Data & models
     items:
     - name: Python
       items:
-      - name: Configure Jupyter Notebooks
-        href: python/howto-revoscalepy-jupyter-nb-config.md
-      - name: Use revoscalepy for Spark applications
+      - name: Use revoscalepy on Spark
         href: python/howto-revoscalepy.md
       - name: Parallel processing using revoscalepy
         href: python/howto-revoscalepy-parallel.md
+      - name: Configure Jupyter Notebooks
+        href: python/howto-revoscalepy-jupyter-nb-config.md
     - name: R
       items:
-      - name: How to use Machine Learning Server with other technologies
+      - name: Use RevoScaleR on Hadoop
+        items:
+        - name: Spark
+          href: r/how-to-revoscaler-spark.md
+        - name: MapReduce
+          href: r/how-to-revoscaler-hadoop.md
+        - name: Job management
+          items:
+          - name: Background jobs
+            href: r/how-to-revoscaler-distributed-computing-background-jobs.md
+          - name: Parallel jobs
+            href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
+      - name: R Server interoperability
         href: what-is-r-server-interoperability.md
       - name: Data transformations
         href: r/concept-what-is-data-transformations.md
@@ -469,17 +485,7 @@
       href: operationalize/how-to-connect-log-in-with-mrsdeploy.md
     - name: Execute code remotely
       href: r/how-to-execute-code-remotely.md
-  - name: RevoScaleR on Hadoop
-    items:
-    - name: R
-      items:
-      - name: Spark
-        href: r/how-to-revoscaler-spark.md
-      - name: MapReduce
-        href: r/how-to-revoscaler-hadoop.md
   - name: RevoScaleR development
-    items:
-    - name: R
       items:
       - name: Write custom chunking algorithms
         href: r/how-to-developer-write-chunking-algorithms.md
@@ -489,17 +495,6 @@
         href: r/how-to-developer-pmml.md
       - name: Manage threads
         href: r/how-to-developer-manage-threads.md
-    - name: Distribute workloads
-      href: r/how-to-revoscaler-distributed-computing.md
-      items:
-      - name: Compute context
-        href: r/how-to-revoscaler-distributed-computing-compute-context.md
-      - name: Distributed analysis
-        href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
-      - name: Background jobs
-        href: r/how-to-revoscaler-distributed-computing-background-jobs.md
-      - name: Parallel jobs
-        href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
       - name: Parallel loops using foreach
         href: r/how-to-revoscaler-distributed-computing-foreach.md
       - name: Parallel execution using doRSR
