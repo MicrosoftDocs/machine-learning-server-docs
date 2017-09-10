@@ -72,7 +72,7 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [How to use RevoScaleR on Hadoop](how-to-revoscaler-hadoop.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](how-to-revoscaler-distributed-computing.md#managing-distributed-data) for details.
 
 
-## Get compute context
+## Get aa compute context
 
 At a command prompt, run `rxGetComputeContext()` to return the current compute context. Every platform supports the default local compute context **RxLocalSeq**. 
 
@@ -103,16 +103,6 @@ myServer <- RxComputeContext("RxInSqlServer", sqlQuery = sqlQuery, connectionStr
 rxSetComputeContext(computeContext = myServer)
 ~~~~
 
-## Limitations on switching
-
-1. Not all RevoScaleR capability is available on every distributed computing platform, such as Hadoop. 
-2. Only some RevoScaleR functions and rxExec run in a distributed manner.  
-3. The main R script including any open source routines still runs locally in a single threaded process. 
-4. Data and objects needed for distributed execution of rxExec or a RevoScaleR function needs to be copied to the remote compute context if the object is not already there, such as to a cluster, database, or Hadoop. 
-5. With limited exceptions (such as file copying to and from Hadoop), RevoScaleR does not include functions for moving data.  
-6. Some RevoScaleR functions only run locally, such as sort, merge, and import, so data may have to be moved back and forth between the local and remote environments during the course of overall program execution. 
-7. rxPredict on a cluster is only possible if the data file is split.
-
 ## Set a compute context for distributed processing 
 
 RevoScaleR functions can be used to distribute computations over more than one server instance, allowing you to run workloads on multiple computers. To get distributed computations, you create one or more *compute contexts*, and then shift script execution to a RevoScaleR interpreter on a different computer. 
@@ -123,6 +113,15 @@ RevoScaleR's distributed computing capabilities vary by platform and the details
 > RevoScaleR is available in both Machine Learning Server Server and R Client. You can develop script in R Client for execution on the server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that introduce dependencies on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Machine Learning Server instance.
 >
 
+## Limitations on switching
+
+1. Not all RevoScaleR capability is available on every distributed computing platform, such as Hadoop. 
+2. Only some RevoScaleR functions and rxExec run in a distributed manner.  
+3. The main R script including any open source routines still runs locally in a single threaded process. 
+4. Data and objects needed for distributed execution of rxExec or a RevoScaleR function needs to be copied to the remote compute context if the object is not already there, such as to a cluster, database, or Hadoop. 
+5. With limited exceptions (such as file copying to and from Hadoop), RevoScaleR does not include functions for moving data.  
+6. Some RevoScaleR functions only run locally, such as sort, merge, and import, so data may have to be moved back and forth between the local and remote environments during the course of overall program execution. 
+7. rxPredict on a cluster is only possible if the data file is split.
 
 ## Waiting and Non-waiting compute contexts
 

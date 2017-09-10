@@ -38,30 +38,27 @@
       items:
       - name: Install on Hadoop
         href: install/machine-learning-server-hadoop-install.md
+      - name: Install on Cloudera
+        href: install/machine-learning-server-cloudera-install.md
         items:
-        - name: Cloudera Manager parcel installation
-          href: install/machine-learning-server-cloudera-install.md
-          items:
-          - name: Generate a parcel (OLD)
-            href: install/r-server-install-cloudera-generate-parcel.md
-          - name: Deploy & activate (OLD)
-            href: install/r-server-install-cloudera-deploy-activate.md
-          - name: Rollback to previous version (OLD)
-            href: install/r-server-install-cloudera-rollback.md
-        - name: Command line installation (CDH, HDP, MapR)
-          href: install/machine-learning-server-hadoop-commandline.md
-        - name: Offline install
-          href: install/machine-learning-server-hadoop-offline.md
-        - name: Package dependency list (OLD)
-          href: install/r-server-install-linux-hadoop-packages.md
-        - name: Manual package installation (OLD)
-          href: install/r-server-install-hadoop-manual-package.md
-      - name: Post-install configuration (OLD)
-        items:
-        - name: Adjust Hadoop configuration
-          href: install/r-server-install-hadoop-configuration-r-workloads.md
-        - name: Troubleshoot R installation problems
-          href: install/r-server-install-hadoop-troubleshoot.md
+        - name: Generate a parcel (OLD)
+          href: install/r-server-install-cloudera-generate-parcel.md
+        - name: Deploy & activate (OLD)
+          href: install/r-server-install-cloudera-deploy-activate.md
+        - name: Rollback to previous version (OLD)
+          href: install/r-server-install-cloudera-rollback.md
+      - name: Command line install
+        href: install/machine-learning-server-hadoop-commandline.md
+      - name: Offline install
+        href: install/machine-learning-server-hadoop-offline.md
+      - name: R Package dependency list
+        href: install/r-server-install-linux-hadoop-packages.md
+      - name: Manual R package installation 
+        href: install/r-server-install-hadoop-manual-package.md
+      - name: Adjust Hadoop configuration
+        href: install/r-server-install-hadoop-configuration-r-workloads.md
+      - name: Troubleshoot R installation problems
+        href: install/r-server-install-hadoop-troubleshoot.md
       - name: Uninstall from Hadoop
         href: 
     - name: Configure to operationalize
