@@ -245,9 +245,9 @@
     href: r/sample-solutions.md
 - name: Concepts
   items:
-  - name: `Compute context (1)`
+  - name: Compute context 1
     href: r/concept-what-is-compute-context.md
-  - name: `Compute context (2)`
+  - name: Compute context 2
     href: r/how-to-revoscaler-distributed-computing-compute-context.md
   - name: Distributed computing 
     href: r/how-to-revoscaler-distributed-computing.md
