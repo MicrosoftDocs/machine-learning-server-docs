@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Remote Execution with mrsdeploy - Machine Learning Server | Microsoft Docs"
-description: "Remote execution for Microsoft R Server"
+description: "Remote execution for Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
@@ -24,11 +24,11 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Execute on a remote Microsoft R Server using the mrsdeploy package
+# Execute on a remote server using the mrsdeploy package
 
-**Applies to:  Microsoft R Client 3.3.x, Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x, Microsoft R Client 3.x**
 
-Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server and test your work.  It is especially useful while developing and testing your analytics.
+Remote execution is the ability to issue R commands from either Machine Learning Server (or R Server) or R Client to a remote session running on another Machine Learning Server instance. You can use remote execution to offload heavy processing on server and test your work.  It is especially useful while developing and testing your analytics.
 
 Remote execution is supported in several ways:
 + From the command line in console applications
@@ -38,7 +38,7 @@ Remote execution is supported in several ways:
 You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
- + [Log in and out of R Server rationalize/how-to-connect-log-in-with-mrsdeploy.md)
+ + [Log in and out of Machine Learning Server rationalize/how-to-connect-log-in-with-mrsdeploy.md)
  + [Generate diff reports of the local and remote environments](#diff) and reconcile any differences    
  + [Execute R scripts and code remotely](#run)    
  + [Work with R objects/files remotely](#objects)    
@@ -48,7 +48,7 @@ With remote execution, you can:
 
 ## Supported configurations and mrsdeploy usage
 
-The R functions used for remote execution are provided in the mrsdeploy package, which is  installed with Microsoft R Server on almost every platform. Your administrator must [configure the server for the deployment and consumption of analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)** before you can use the functions in the package.  Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-package.md) for the list of [remote execution functions](../r-reference/mrsdeploy/mrsdeploy-package.md#remote-functions) in that package. 
+The R functions used for remote execution are provided in the mrsdeploy package, which is  installed with Machine Learning Server on almost every platform. Your administrator must [configure the server for the deployment and consumption of analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)** before you can use the functions in the package.  Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-package.md) for the list of [remote execution functions](../r-reference/mrsdeploy/mrsdeploy-package.md#remote-functions) in that package. 
 
  
 
@@ -56,9 +56,9 @@ The R functions used for remote execution are provided in the mrsdeploy package,
 
 ## How to create a remote session
 
-To create a remote session, you must first authenticate with R Server using one of the mrsdeploy login functions:  remoteLogin() and remoteLoginAAD(). With these functions, you can authenticate, set the arguments to create a remote R session on the R Server (`session = TRUE`) and even place yourself in the remote command line upon login `commandline = TRUE`. 
+To create a remote session, you must first authenticate with Machine Learning Server using one of the mrsdeploy login functions:  remoteLogin() and remoteLoginAAD(). With these functions, you can authenticate, set the arguments to create a remote R session on the Machine Learning Server (`session = TRUE`) and even place yourself in the remote command line upon login `commandline = TRUE`. 
 
-Read the article ["Connecting to R Server with mrsdeploy"](../operationalize/how-to-connect-log-in-with-mrsdeploy.md) for more on authentication with `mrsdeploy` and syntax. 
+Read the article ["Connecting to Machine Learning Server with mrsdeploy"](../operationalize/how-to-connect-log-in-with-mrsdeploy.md) for more on authentication with `mrsdeploy` and syntax. 
 
 <a name="switch"></a>
 
