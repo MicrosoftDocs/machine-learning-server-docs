@@ -54,7 +54,7 @@ Want the new Machine Learning Server? [Learn how to install Machine Learning Ser
 | Site for R Server | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server 9.1.0 for Linux** is provided on this site. |
+|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server. Choose the right version for your OS. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 
@@ -67,7 +67,7 @@ Microsoft is committed to providing customers with support. Microsoft R Server s
 
 ## The future of Microsoft R Client
 
-[Microsoft R Client](r-client/what-is-microsoft-r-client.md) was not rebranded and continues as an R-only client for Machine Learning Server and R Server. 
+[Microsoft R Client](r-client/what-is-microsoft-r-client.md) continues on as an R-only client for Machine Learning Server and R Server. 
 
 A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality. [Learn more](install/python-libraries-interpreter.md).
 

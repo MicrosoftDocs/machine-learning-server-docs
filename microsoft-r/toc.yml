@@ -232,6 +232,7 @@
 - name: Samples & solutions
   items:
   - name: Python
+    href: python/python-samples.md
   - name: R
     items:
     - name: Sample data in RevoScaleR
