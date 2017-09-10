@@ -107,7 +107,7 @@
         href: operationalize/configure-manage-r-packages.md
       - name: Find install path
         href: operationalize/configure-find-admin-configuration-file.md
-    - name: Pretrained models
+    - name: Adding pretrained models
       href: install/microsoftml-install-pretrained-models.md
     - name: Virtual machines (Cloud)
       href: install/machine-learning-server-in-the-cloud.md

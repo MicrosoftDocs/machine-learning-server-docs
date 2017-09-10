@@ -294,4 +294,4 @@ This section provides a quick summary of useful links for data scientists operat
  + [Administrators](configure-start-for-administrators.md)    
 
 **Support Channel**
- + [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+ + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
