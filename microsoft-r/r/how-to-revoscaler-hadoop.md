@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Practice data import and exploration on Hadoop MapReduce"
-description: "Tutorial for Microsoft R Server with Hadoop MapReduce."
+title: "How to use RevoScaleR with Hadoop MapReduce | Microsoft Docs"
+description: "Machine Learning Server with Apache Hadoop MapReduce, RevoScaleR features and components overview."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "03/13/2017"
+ms.date: "09/13/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Practice data import and exploration on Hadoop MapReduce
+# How to use RevoScaleR with Hadoop
 
 ## Overview
 

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Practice data import and exploration on Apache Spark"
-description: "Microsoft R Server with Apache Spark features and components overview."
+title: "How to use RevoScaleR with Apache Spark | Microsoft Docs"
+description: "Machine Learning Server with Apache Spark, RevoScaleR features and components overview."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "03/13/2017"
+ms.date: "09/11/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Practice data import and exploration on Apache Spark
+# How to use RevoScaleR with Spark
 
 ## Overview
 
