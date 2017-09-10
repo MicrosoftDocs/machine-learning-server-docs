@@ -42,10 +42,11 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 Before you begin this QuickStart, have the following ready:
 
-> [!div class="checklist"]
-> + An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
-> + An instance of [Machine Learning Server installed](../what-is-machine-learning-server.md) that has been [configured to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization).
-> + The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](how-to-connect-log-in-with-mrsdeploy.md) in R, deploy your analytics as web services so others can consume them. 
++ An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
+
++ An instance of [Machine Learning Server installed](../what-is-machine-learning-server.md) that has been [configured to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization).
+
++ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](how-to-connect-log-in-with-mrsdeploy.md) in R, deploy your analytics as web services so others can consume them. 
 
 
 ## Example code
