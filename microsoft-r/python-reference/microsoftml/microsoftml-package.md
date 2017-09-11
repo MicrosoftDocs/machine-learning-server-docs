@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "microsoftml package for Python (SQL Server Machine Learning Server) | Microsoft Docs" 
+title: "microsoftml package for Python (Microsoft Machine Learning Server and SQL Server Machine Learning Server) | Microsoft Docs" 
 description: "Function help reference for the microsoftml python package of SQL Server Machine Learning Server." 
 keywords: "microsoftml API, API" 
 author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "08/29/2017" 
+manager: "cgronlun" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
