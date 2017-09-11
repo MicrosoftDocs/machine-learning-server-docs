@@ -1,13 +1,13 @@
 --- 
  
 # required metadata 
-title: "MicrosoftML package for R (Microsoft R Server) | Microsoft Docs" 
+title: "MicrosoftML package for R (Microsoft Machine Learning Server and SQL Server Machine Learning Server) | Microsoft Docs" 
 description: "Function help reference for the MicrosoftML R package of Microsoft R." 
 keywords: "MicrosoftML-package, package" 
 author: "bradsev"
 ms.author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "08/22/2017" 
+manager: "cgronlun" 
+ms.date: "09/22/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -31,13 +31,13 @@ The **MicrosoftML** library provides state-of-the-art fast, scalable machine lea
 
 | Package details | |
 |--------|-|
-| Version: |  1.3.0 |
+| Version: |  1.3.4 |
 | Supported on: | [Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use MicrosoftML for R
 
-The **MicrosoftML** module is installed as part of Microsoft R when you add R to your installation. It is also installed with the pretrained machine learning models. You can use any R IDE to write R script calling functions in **MicrosoftML**, but the script must run on a computer having our interpreters and libraries.
+The **MicrosoftML** module is installed as part of Microsoft Machine Learning Server or SQL Server Machine Learning Server when you add R to your installation. It is also installed with the pretrained machine learning models. You can use any R IDE to write R script calling functions in **MicrosoftML**, but the script must run on a computer having our interpreters and libraries.
 
 ## Functions by category
 

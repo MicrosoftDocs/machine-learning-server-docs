@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "microsoftml package for Python (SQL Server Machine Learning Server) | Microsoft Docs" 
+title: "microsoftml package for Python (Microsoft Machine Learning Server and SQL Server Machine Learning Server) | Microsoft Docs" 
 description: "Function help reference for the microsoftml python package of SQL Server Machine Learning Server." 
 keywords: "microsoftml API, API" 
 author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "08/29/2017" 
+manager: "cgronlun" 
+ms.date: "09/22/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -36,9 +36,9 @@ The **microsoftml** module is a collection of Python functions used in machine l
 
 ## How to use microsoftml
 
-The **microsoftml** module is installed as part of SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **microsoftml**, but the script must run on a computer having SQL Server Machine Learning with Python.
+The **microsoftml** module is installed as part of Microsoft Machine Learning Server or SQL Server Machine Learning Server when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **microsoftml**, but the script must run on a computer having either Microsoft Machine Learning Server or SQL Server Machine Learning Server with Python.
 
-There are two primary use cases for this release: 
+There are two primary use cases for this release of SQL Server Machine Learning Server: 
 
 + Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
 + Calling **microsoftml** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **microsoftml** operations to a remote SQL Server instance that has the **microsoftml** interpreter.
