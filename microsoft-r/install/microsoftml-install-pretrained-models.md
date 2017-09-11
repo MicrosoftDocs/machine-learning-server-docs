@@ -26,17 +26,19 @@ ms.technology: "r-server"
 
 For sentiment analysis and image detection, Machine Learning Server offers two approaches for training the models: you can train the models yourself using your data, or install pre-trained models that come with training data obtained and developed by Microsoft. The advantage of pre-trained models is that you can score new content right away. 
 
-+ Sentiment analysis scores raw unstructured text in positive-negative terms, returning a score between 0 and 1.
++ Sentiment analysis scores raw unstructured text in positive-negative terms, returning a score between 0 (negative) and 1 (positive), indicating relative sentiment.
 
-+ Image detection identifies features of the image, returning
++ Image detection identifies features of the image. There are several use cases for this model: image recognition, image classification. For image recognition, the model returns n-grams that possibly describe the image. For image classification, the model evaluates images and returns a classification based on possible classes you provided (for example, is the image a fish or a dog).
 
 Pre-trained models are available for both R and Python development, through the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and the [microsoftml Python package](../python-reference/microsoftml/microsoftml-package.md). 
 
 ## Get the pretrained models
 
-Pre-trained models are installed through Setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. You can also get them through a local tools installation of the Python client libraries or through **Microsoft R Client**. 
+Pre-trained models are installed through Setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. You can also get them through a local tools installation of the Python client libraries (for microsoftml) or through **Microsoft R Client** (for MicrosoftML). 
 
-For samples showing how to use pretrained models for sentiment analysis and image featurization, see [Samples for MicrosoftML](../r/sample-microsoftml.md).
+Models that include training data are local, added to the MicrosoftML and microsftml library, respectively, when you run setup. The files are \mxlibs\<modelname>_updated.model for Python and \mxlibs\x64\<modelname>_updated.model for R.
+
+For samples showing how to use pretrained models, see [Samples for MicrosoftML](../r/sample-microsoftml.md).
 
 ## Next steps
 
