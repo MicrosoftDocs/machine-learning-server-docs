@@ -40,3 +40,5 @@ This support policy allows us to deliver innovation to customers at a rapid rate
 |Microsoft R Server 9.0.1|1/1/2017|1/1/2019|
 |Microsoft R Server 8.0.5|7/1/2016|7/1/2018|
 |Microsoft R Server 8.0.0                |1/1/2016                           |1/1/2018                          |
+
+
