@@ -37,7 +37,7 @@ The **MicrosoftML** library provides state-of-the-art fast, scalable machine lea
 
 ## How to use MicrosoftML for R
 
-The **MicrosoftML** module is installed as part of Microsoft Machine Learning Server when you add R to your installation. It is also installed with the pretrained machine learning models. You can use any R IDE to write R script calling functions in **MicrosoftML**, but the script must run on a computer having our interpreters and libraries.
+The **MicrosoftML** module is installed as part of Microsoft Machine Learning Server or SQL Server Machine Learning Server when you add R to your installation. It is also installed with the pretrained machine learning models. You can use any R IDE to write R script calling functions in **MicrosoftML**, but the script must run on a computer having our interpreters and libraries.
 
 ## Functions by category
 
