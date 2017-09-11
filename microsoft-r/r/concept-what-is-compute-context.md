@@ -25,19 +25,19 @@ ms.technology: "r-server"
 
 # Compute context for script execution on Machine Learning Server
 
-*Compute context* refers to the location of computations, as executed by revoscalepy for Python, or by the RevoScaleR interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to another interpreter if you want to leverage data resources on that server.
-
-The compute context can be local to the current machine, or remote if you want to use a Machine Learning Server instance on another computer. Local is the default. By changing the compute context, you can transfer R and Python computations to the remote system, typically to get better performance or to minimize data transfer. 
+*Compute context* refers to the location of computations, as executed by revoscalepy for Python, or by the RevoScaleR interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to an interpreter on another machine. Local is the default. Switching to a remote compute context is typically done to get better performance if the target system has more capability, or to minimize data transfer by bringing calculations to resident data. 
 
 ## Supported configurations
 
 For RevoScaleR, remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, HadoopMR and Spark, and Microsoft R Server (Linux and Windows). RevoScaleR functions like `RxSpark`, `RxHadoopMR`, or `RxInSQLServer` are used to set the compute context. 
 
-For revoscalepy, Spark is the only compute context supported in this release. It can be local or remote.
+For revoscalepy, Spark is the only compute context supported in this release. It can be local or remote. Spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
 
 ## Use cases for switching context
 
 The primary use case for switching the compute context is to bring calculations and analysis to the data itself. As such, the use cases for compute context typically leverage a database platform, such as SQL Server, or data located on the Hadoop Distributed File System (HDFS) using Spark or MapReduce for processing layer.
+
+The remote system must have Machine Learning Server installed on it. Interpreters for revoscalepy or RevoScaleR cannot be installed independently of the infrastructure that supports them.
 
 Use case | Description | 
 ---------|-------------|
