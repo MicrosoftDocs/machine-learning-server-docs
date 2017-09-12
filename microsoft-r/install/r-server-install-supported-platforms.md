@@ -41,9 +41,9 @@ Python support is based on Anaconda 4.2 over Python 3.5. R support is based on [
 
 <sup>1</sup> You can install Machine Learning Server for Hadoop on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for CDH, HDP, or MapR.
 
-<sup>2</sup> Cloudera installation using the built-in parcel generator script requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install R Server 9.1 on CDH](r-server-install-cloudera.md).
+<sup>2</sup> Cloudera installation using the built-in parcel generator script requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install Machine Learning Server on CDH](machine-learning-server-cloudera-install.md).
 
-<sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark. Spark 1.6 support is dropped for this release.
+<sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Your version of Hadoop must include a supported level of Spark (2.0-2.4). Spark 1.6 support is dropped for this release.
 
 <sup>4</sup> Limited availability of [operationalization](../what-is-operationalization.md) and [MicrosoftML algorithms](../r-reference/microsoftml/microsoftml-package.md) due to .NET Core platform dependency. Neither feature is supported on Linux or Windows client operating systems. On Hadoop, you can install the features on edge nodes, assuming the native file system is CentOS/RHEL 7.x or Ubuntu 14.04 (there is no support for either feature on SUSE SLES11).
 

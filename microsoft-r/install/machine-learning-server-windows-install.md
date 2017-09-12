@@ -59,8 +59,10 @@ You can get the zipped installation file from one of the following download site
 | Site | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Machine Learning Server*. |
-| [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **Machine Learning Server 9.2.1** is provided on this site. |
+| [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017 Enterprise edition" <sup>1</sup>, and then choose a per-core or CAL licensing option. A selection for **Machine Learning Server 9.2.1** is provided on this site. |
 | [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+
+<sup>1</sup> Machine Learning Server for Windows is licensed as a SQL Server enterprise feature, even though it's installed independently of SQL Server on a Windows operating system.
 
 ### 2. Run Setup
 
@@ -70,11 +72,9 @@ You can get the zipped installation file from one of the following download site
     + R Server (Standalone)
     + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for image detection and sentiment analysis.
     + Python
-4. Accept the SQL Server license agreement for Machine Learning Server <sup>1</sup>, as well as the license agreement for Microsoft R Open, Anaconda, and Python.
+4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open, Anaconda, and Python.
 5. Optionally, change the home directory for Machine Learning Server.
 6. At the end of the wizard, click **Install** to run setup.
-
-<sup>1</sup> Machine Learning Server for Windows is licensed as a SQL Server enterprise feature, even though it's installed independently of SQL Server on a Windows operating system.
 
 > [!NOTE]
 > By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
@@ -115,7 +115,7 @@ As a verification step, connect to each application and run a script or function
 
 On a Windows installation, we recommend that you run the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure the server for remote access and execution, web service deployment, or cluster topologies. 
 
-[Remote execution](../r/how-to-execute-code-remotely) makes the server accessible to client workstations running R Client or the Python client libraries on your network. Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
+[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running R Client or the Python client libraries on your network. Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
 
 ## What's Installed with Machine Learning Server
 
@@ -141,4 +141,4 @@ We recommend starting with any Quickstart tutorial listed in the contents pane.
 **See also**
 
 + [Install Machine Learning Server](r-server-install.md)
-+ [What's new in Machine Learning Server](../whats-new-machine-learning-server.md)
++ [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)
