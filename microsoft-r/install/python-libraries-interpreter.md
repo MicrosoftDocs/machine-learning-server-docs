@@ -67,18 +67,10 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 ## Example code to test the install
 
-Test your install and packages using this example code.
+Test your install and packages using this example code. 
 
-### Use custom package functions locally
+In this example, you can use some functions from the [microsoftml python package](../python-reference/microsoftml/microsoftml-package.md) to ????
 
 ```
 GET EXAMPLE OF CODE THAT RUNS LOCALLY USING MML PACKAGE
-```
-
-### Push your compute to Machine Learning Server
-
-Run your script locally, but push the computation to Machine Learning Server for faster performance.
-
-```
-GET EXAMPLE OF CODE THAT TAKES PREVIOUS EXAMPLE AND PUSHES IT TO MLS ON LINUX
 ```
