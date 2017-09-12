@@ -6,7 +6,7 @@ description: "Partition input data sources by key values and save the results to
 keywords: "partition" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_partition
 
 
-**Applies to: SQL Server 2017 RC2**
+ 
 
 
 ## Usage

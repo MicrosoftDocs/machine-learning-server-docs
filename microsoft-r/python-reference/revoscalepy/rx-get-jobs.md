@@ -6,7 +6,7 @@ description: "Returns a list of job objects associated with the given compute co
 keywords: "get, job" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_get_jobs
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -99,6 +99,9 @@ objects). If no job status is returned, the job status shows none.
 ## Returns
 
 Returns a list of job information objects based on the compute context.
+
+
+## See also
 
 
 ## Example

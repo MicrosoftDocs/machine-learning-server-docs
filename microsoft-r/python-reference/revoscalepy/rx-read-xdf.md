@@ -6,7 +6,7 @@ description: "Read data from an “.xdf” file into a data frame."
 keywords: "xdf" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_read_xdf
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -168,7 +168,7 @@ Output:
 
 Rows Processed: 10
 Time to read data file: 0.00 secs.
-Time to convert to data frame: 0.00 secs.
+Time to convert to data frame: less than .001 secs.
    creditScore  houseAge  yearsEmploy  ccDebt  year  default
 0          691        16            9    6725  2000        0
 1          691         4            4    5077  2000        0

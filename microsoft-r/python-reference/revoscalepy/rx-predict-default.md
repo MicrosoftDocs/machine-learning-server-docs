@@ -6,7 +6,7 @@ description: "Compute predicted values and residuals using rx_lin_mod and rx_log
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_predict_default
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -79,13 +79,15 @@ Objects with multiple dependent variables are not supported.
 ### data
 
 a data frame or an RxXdfData data source object to be used for predictions.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### output_data
 
 a character string specifying the output ‘.xdf’ file, a
 RxXdfData object, RxTextData object, a RxOdbcData data source, or a
-RxSqlServerDta data source to store predictions.
+RxSqlServerData data source to store predictions.
 
 
 ### compute_standard_errors

@@ -6,7 +6,7 @@ description: "Import data into an ‘.xdf’ file or data.frame."
 keywords: "import, datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_import
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -70,15 +70,18 @@ Import data into an ‘.xdf’ file or data.frame.
 
 a character string with the path for the data to import
 (delimited, fixed format, ODBC, or XDF). Alternatively, a data source
-object representing the input data source can be specified. (See
-RxTextData, and RxOdbcData.)
+object representing the input data source can be specified.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### output_file
 
-a character string representing the output ‘.xdf’ file,
-a RxXdfData, RxHiveData, RxParquetData, RxOrcData or RxSparkDataFrame object.
+a character string representing the output ‘.xdf’ file
+or an RxXdfData object.
 If None, a data frame will be returned in memory.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object.
 
 
 ### vars_to_keep

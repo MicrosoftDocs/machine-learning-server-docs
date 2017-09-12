@@ -6,7 +6,7 @@ description: "Produce univariate summaries of objects in revoscalepy."
 keywords: "summary" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_summary
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -68,6 +68,8 @@ does not contain a response variable, i.e. it should be of the form ~ terms.
 
 either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object to summarize.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### by_group_out_file

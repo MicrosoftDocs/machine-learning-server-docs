@@ -6,7 +6,7 @@ description: "Get or set the active compute context for revoscalepy computations
 keywords: "context" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_get_compute_context
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage

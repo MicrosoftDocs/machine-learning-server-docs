@@ -6,7 +6,7 @@ description: "Causes Python to block on an existing distributed job until comple
 keywords: "wait, job" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_wait_for_job
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage

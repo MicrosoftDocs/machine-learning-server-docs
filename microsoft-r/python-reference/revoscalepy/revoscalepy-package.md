@@ -4,9 +4,10 @@
 title: "revoscalepy package for Python (SQL Server Machine Learning Server) | Microsoft Docs" 
 description: "Function help reference for the revoscalepy Python package of SQL Server Machine Learning Server." 
 keywords: "" 
-author: "bradsev" 
+author: "HeidiSteen" 
 manager: "jhubbard" 
-ms.date: "08/29/2017" 
+ms.author: "heidist"
+ms.date: "09/29/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -30,18 +31,24 @@ The **revoscalepy** module is a collection of Python functions used for analyzin
 
 | Package details | |
 |--------|-|
-| Version: |  9.2.0 |
-| Supported on: | [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Version: |  9.2.1 |
+| Supported on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
 | Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 ## How to use revoscalepy
 
-The **revoscalepy** module is installed as part of SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having SQL Server Machine Learning with Python.
+The **revoscalepy** module is installed as part of Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules.
 
-There are two primary use cases for this release: 
+**revoscalepy** runs in a Spark compute context and SQL Server compute context. 
+
+In rxSpark compute context, you can perform statistical analysis, linear and logistic regressions, and predictive analytics. Scale out requires Machine Learning Server on all data nodes in your cluster. You can also call functions from script that runs on edge nodes, or on a single-box installation of Spark.
+
+In rxInSQLServer compute context, there are two primary use cases: 
 
 + Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
 + Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
+
+You can call **revoscalepy** functions in script that runs on other platforms, such as Windows or Linux, but your script should set the compute context before **revoscalepy** functions are called.
 
 ## Functions by category
 
@@ -52,9 +59,10 @@ This section lists the functions by category to give you an idea of how each one
 | Function | Description |
 |----------|-------------|
 |[RxInSqlServer](RxInSqlServer.md) | Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server. |
-|[RxLocalSeq](RxLocalSeq.md) | Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context. |
+|[RxLocalSeq](RxLocalSeq.md) | This is the default but you can call it switch back to a local compute context if your script runs in multiple. Computations using rx_exec will be processed sequentially. Valid only on Spark (Machine Learning Server for Hadoop) and SQL Server platforms. |
 |[rx_get_compute_context](rx-get-compute-context.md) | Returns the current compute context.|
 |[rx_set_compute_context](rx-set-compute-context.md) | Change the compute context to a different one.|
+|[RxSpark](RxSpark.md) | Creates a compute context for running revoscalepy analyses in a Spark cluster. |
 
 ## 2-Job functions
 
@@ -75,14 +83,18 @@ This section lists the functions by category to give you an idea of how each one
 
 ## 3-Data source functions
 
-| Function | Description |
-|----------|-------------|
-|[RxDataSource](RxDataSource.md) | Base class for all revoscalepy data sources.|
-|[RxNativeFileSystem](RxNativeFileSystem.md) | Data source is accessed through Linux instead of HDFS. |
-|[RxTextData](RxTextData.md) |  Generates a data source object from a text data. file|
-|[RxXdfData](RxXdfData.md) |  Generates a data source object from an XDF data source.|
-|[RxOdbcData](RxOdbcData.md) | Generates a data source object from an ODBC data source.|
-|[RxSqlServerData](RxSqlServerData.md) | Generates a data source object from a SQL table or query.|
+| Function | Compute Context | Description | 
+|----------|-----------------|-------------|
+|[RxDataSource](RxDataSource.md) |Both | Base class for all revoscalepy data sources.|
+|[RxNativeFileSystem](RxNativeFileSystem.md) |Both | Data source is accessed through Linux instead of HDFS. |
+|[RxTextData](RxTextData.md) | | Generates a data source object from a text data file.|
+|[RxXdfData](RxXdfData.md) |Both | Generates a data source object from an XDF data source.|
+|[RxOdbcData](RxOdbcData.md) | | Generates a data source object from an ODBC data source.|
+|[RxSParquetData](RxParquetData.md) | Spark| Generates a data source object from a Parquet data file (in Spark).|
+|[RxSParquetData](RxParquetData.md) | Spark| Generates a data source object from a Parquet data file (in Spark).|
+|[RxSparkData](RxSparkData.md) | Spark| Generates a data source object from a Spark data source.|
+|[RxSparkDataFrame](RxSparkDataFrame.md) | Spark| Generates a data source object from a Spark data frame.|
+|[RxSqlServerData](RxSqlServerData.md) | SQL | Generates a data source object from a SQL table or query.|
 
 ## 4-Data manipulation (ETL) functions
 
