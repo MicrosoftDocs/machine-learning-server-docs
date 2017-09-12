@@ -111,7 +111,9 @@ As a verification step, connect to each application and run a script or function
 4. Type `print(Revo.version)` to show the software version.
 5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
-### 5. Optional configuration for operationalization
+### 5. Enable server to host analytic web services and accept remote connections
+
+Machine Learning Server can be used as-is if you install and use an R IDE on the same box, but enable the server to host web services  
 
 On a Windows installation, we recommend that you run the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure the server for remote access and execution, web service deployment, or cluster topologies. 
 
