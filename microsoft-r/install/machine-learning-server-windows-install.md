@@ -138,7 +138,7 @@ Consider adding a development tool on the server to build script or solutions us
 
 We recommend starting with any Quickstart tutorial listed in the contents pane. 
 
-**See also**
+### See also
 
 + [Install Machine Learning Server](r-server-install.md)
 + [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)
