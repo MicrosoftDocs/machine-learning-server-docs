@@ -30,7 +30,7 @@ The **data transforms** provided by MicrosoftML allow you to compose a custom se
 
 The MicrosoftML packages provides fast and scalable **machine learning algorithms** that enable you to tackle common machine learning tasks such as classification, regression, and anomaly detection. These high-performance algorithms are multi-threaded, some of which execute off disk, so that they can scale up to 100s of GBs on a single-node. They are especially suitable for handling a large corpus of text data or high-dimensional categorical data. It enables you to run these functions locally on Windows or Linux machines or on Azure HDInsight (Hadoop/Spark) clusters.
 
-**Pretrained models** for sentiment analysis and image featurization can also be installed and deployed with MicrosoftML. For more information on the pretrained models and samples, see [R samples for MicrosoftML](sample-microsoftml.md) and [Python samples for MicrosoftML](../python/sample-microsoftml-python.md).
+**Pretrained models** for sentiment analysis and image featurization can also be installed and deployed with MicrosoftML. For more information on the pretrained models and samples, see [R samples for MicrosoftML](sample-microsoftml.md) and [Python samples for MicrosoftML](../python/samples-microsoftml-python.md).
 
 
 <a name="platform-availability"></a>
@@ -90,4 +90,4 @@ For guidance when choosing the appropriate machine learning algorithm from the M
 
 [Cheat Sheet: How to choose a MicrosoftML algorithm](how-to-choose-microsoftml-algorithms-cheatsheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
 
-[R samples for MicrosoftML](sample-microsoftml.md) and [Python samples for MicrosoftML](../python/sample-microsoftml-python.md) show how to use pretrained models for sentiment analysis and image featurization.
+[R samples for MicrosoftML](sample-microsoftml.md) and [Python samples for MicrosoftML](../python/samples-microsoftml-python.md) show how to use pretrained models for sentiment analysis and image featurization.
