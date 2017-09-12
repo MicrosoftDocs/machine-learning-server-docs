@@ -46,9 +46,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 1. Log in to your local machine. 
 
-1. Download and install Anaconda 4.2.12 from https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh. 
-
-   **To work with Machine Learning Server, you must install Anaconda 4.2.12, which includes Python 3.5.2.**
+1. Download and install Anaconda 4.2.12, which includes Python 3.5.2, from https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh. 
 
 1. Upgrade pip if necessary before installing the packages themselves.
 
@@ -61,11 +59,12 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
    In the terminal window, run the following commands:
    ```
-   pip install --no-index azureml-model-management
-   pip install --no-index mml
-   pip install --no-index pretrained model 
-   pip install --no-index revoscalepy
+   pip install <<revoscalepy-URL>>
+   pip install <<mml-URL>>
+   pip install <<pretrained model-URL>>
+   pip install azureml-model-management
    ```
+
 ## Example code to test the install
 
 Test your install and packages using this example code.
