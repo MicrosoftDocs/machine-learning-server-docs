@@ -71,6 +71,76 @@ Test your install and packages using this example code.
 
 In this example, you can use some functions from the [microsoftml python package](../python-reference/microsoftml/microsoftml-package.md) to ????
 
+### 1. Build some fake data
+
+We just need to make our data to start out. Let's create 1 label and 2000 random features.
+
+```Python
+from numpy.random import randn
+matrix = randn(2000, 2001)
+​
+import pandas
+data = pandas.DataFrame(data=matrix, columns=["Label"] + ["f%s" % i for i in range(1, matrix.shape[1])])
+data["Label"] = (data["Label"] > 0.5).apply(lambda x: 1.0 if x else 0.0)
+​
+print("problem dimension:", data.shape)
+print(data[["Label", "f1", "f2", data.columns[-1]]].head())
 ```
-GET EXAMPLE OF CODE THAT RUNS LOCALLY USING MML PACKAGE
+
+### 2. Train a logistic regression
+
+Next, let's train a logistic regression using rx_logistic_regression from the microsoftml Python package.
+
+```Python
+formula = "Label ~ {0}".format(" + ".join(data.columns[1:]))
+print(formula[:50] + " + ...")
+​
+from microsoftml import rx_logistic_regression
+​
+try:
+    logregml = rx_logistic_regression(formula, data=data)
+except Exception as e:
+    # The error is expected because patsy cannot handle
+    # so many features.
+    print(e)
 ```
+
+### 3. Manually define the formula 
+
+Let's skip patsy's parser to manually define the formula with object ModelDesc <http://patsy.readthedocs.io/en/latest/API-reference.html?highlight=lookupfactor#patsy.ModelDesc>_.
+
+```Python
+from patsy.desc import ModelDesc, Term
+from patsy.user_util import LookupFactor
+​
+patsy_features = [Term([LookupFactor(n)]) for n in data.columns[1:]][:10]
+model_formula = ModelDesc([Term([LookupFactor("Label")])], [Term([])] + patsy_features)
+​
+print(model_formula.describe() + " + ...")
+logregml = rx_logistic_regression(model_formula, data=data)
+```
+
+### The result 
+
+The result should resemble:
+
+```Python
+Label ~ f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + ...
+Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+Beginning processing data.
+Rows Read: 2000, Read Time: 0.046, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 2000, Read Time: 0.051, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
+Rows Read: 2000, Read Time: 0.058, Transform Time: 0
+Beginning processing data.
+Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
+LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
+Beginning optimization
+num vars: 11
+improvement criterion: Mean Improvement
+L1 regularization selected 11 of 11 weights.
+Not training a calibrator because it is not needed.
+``` 
