@@ -28,7 +28,7 @@ Machine Learning Server runs machine learning and data mining solutions written 
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
-If you previously installed R Server 9.x, you can do an in-place upgrade to Machine Learning 9.2.1 with R Server. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+The installation path for Machine Learning Server is new. If R Server 9.x is present, Machine Learning 9.2.1 is installed side-by-side. We recommend uninstalling the previous version. Because 9.2.1 is backward compatible, it is not necessary to have both.
 
 ## System requirements
 
@@ -46,7 +46,7 @@ The following additional components are included in Setup and required for Machi
 * Microsoft MPI 7.1
 * AS OLE DB (SQL Server 2016) provider
 * Microsoft Visual C++ 2015 Redistributable
-* Microsoft R Open 3.3.3 (if you install R Server)
+* Microsoft R Open 3.3.4 (if you install R Server)
 
 ## How to install
 
@@ -75,6 +75,9 @@ You can get the zipped installation file from one of the following download site
 6. At the end of the wizard, click **Install** to run setup.
 
 <sup>1</sup> Machine Learning Server for Windows is licensed as a SQL Server enterprise feature, even though it's installed independently of SQL Server on a Windows operating system.
+
+> [!NOTE]
+> By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
 
 ### 3. Check log files
 
@@ -108,13 +111,11 @@ As a verification step, connect to each application and run a script or function
 4. Type `print(Revo.version)` to show the software version.
 5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
-Additionally, run the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
+### 5. Optional configuration for operationalization
 
-## Enable Remote Connections and Analytic Deployment
+On a Windows installation, we recommend that you run the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure the server for remote access and execution, web service deployment, or cluster topologies. 
 
-(TO DO: Revise for python)
-
-The server can be used as-is if you install and use an R IDE on the same box, but to benefit from the deployment and consumption of web services with Microsoft R Server, then you must configure R Server after installation to act as a deployment server and host analytic web services. Possible configurations are a [one-box setup](operationalize-r-server-one-box-config.md) or an [enterprise setup](operationalize-r-server-enterprise-config.md). Doing so also enables remote execution, allowing you to connect to R Server from an R Client workstation and execute code on the server.
+[Remote execution](../r/how-to-execute-code-remotely) makes the server accessible to client workstations running R Client or the Python client libraries on your network. Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
 
 ## What's Installed with Machine Learning Server
 
@@ -132,9 +133,6 @@ An installation of Machine Learning Server includes some or all of the following
 Consider adding a development tool on the server to build script or solutions using R Server features:
 
 + [Visual Studio 2017](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://docs.microsoft.com/visualstudio/rtvs/installation) and the [Python for Visual Studio (PTVS)](https://www.visualstudio.com/vs/python/).
-
-> [!NOTE]
-> By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
 
 ## Next steps
 
