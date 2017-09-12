@@ -28,7 +28,7 @@ Machine Learning Server runs machine learning and data mining solutions written 
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
-The installation path for Machine Learning Server is new. If R Server 9.x is present, Machine Learning 9.2.1 is installed side-by-side. We recommend uninstalling the previous version. Because 9.2.1 is backward compatible, it is not necessary to have both.
+The installation path for Machine Learning Server is new. If R Server 9.x is present, Machine Learning 9.2.1 is installed side-by-side at \Program Files\Microsoft\ML Server. We recommend uninstalling the previous version of R Server to reduce overhead. Because 9.2.1 is backward compatible, it is not necessary to have both.
 
 ## System requirements
 
@@ -70,7 +70,7 @@ You can get the zipped installation file from one of the following download site
 2. Double-click **ServerSetup.exe** to start the wizard.
 3. In Configure installation, choose optional components. Required components are listed, but not configurable. Optional components include:
     + R Server (Standalone)
-    + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for image detection and sentiment analysis.
+    + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection
     + Python
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open, Anaconda, and Python.
 5. Optionally, change the home directory for Machine Learning Server.
