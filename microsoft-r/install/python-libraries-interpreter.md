@@ -2,7 +2,7 @@
 
 # required metadata
 title: "How to install Python support in Machine Learning Server | Microsoft Docs"
-description: "Installing python interpreter and libraries locally to interact with Machine Learning Server"
+description: "Installing python interpreter and packages locally to interact with Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
@@ -24,21 +24,21 @@ ms.technology:
 
 ---
 
-# How to install custom Python libraries and interpreter locally
+# How to install custom Python packages and interpreter locally
 
-Machine Learning Server provides a number of custom Python libraries for training, transformations, text and image analysis, modeling, deploying, and more. The libraries installed include  [revoscalepy, microsoftml, azureml-model-management-sdk](../python-reference/introducing-python-package-reference.md), and one library for the pretrained models. 
+Machine Learning Server provides a number of custom Python packages for training, transformations, text and image analysis, modeling, deploying, and more. The packages installed include  [revoscalepy, microsoftml, azureml-model-management-sdk](../python-reference/introducing-python-package-reference.md), and one library for the pretrained models. 
 
-You can also work locally with these libraries by installing a Python interpreter and the custom libraries on your machine. Then, from your local machine, you can:
+You can also work locally with these packages by installing a Python interpreter and the custom libraries on your machine. Then, from your local machine, you can:
 
 + Benefit from the best-of-breed machine learning algorithms without any server connection. These algorithms have been battle-tested by Microsoft and are now at your fingertips.
  
-+ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy library. By pushing computations onto the server, you can leverage the disk scalability, performance and speed of a production instance of Machine Learning Server on any supported platforms. 
++ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can leverage the disk scalability, performance and speed of a production instance of Machine Learning Server on any supported platforms. 
  
-This article describes how to install a Python interpreter (Anaconda) and custom libraries locally on a client computer.
+This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client computer.
 
 ## Install on Windows
 
-1. Download the installation shell script from http://aka.ms/py-me.
+1. Download the installation shell script from http://aka.ms/mls-py.
 
 1. Run the script AS AN ADMINISTRATOR to install the interpreter and packages. Anaconda 4.2.0, which includes Python 3.5.2, is installed along with all packages listed above.
 
