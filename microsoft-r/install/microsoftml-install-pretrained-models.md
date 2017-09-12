@@ -5,8 +5,8 @@ title: "How to install and deploy pretrained models with MicrosoftML"
 keywords: ""
 author: "bradsev"
 ms.author: "bradsev"
-manager: "jhubbard"
-ms.date: "05/05/2017"
+manager: "cgronlun"
+ms.date: "09/22/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -34,7 +34,11 @@ Pre-trained models are available for both R and Python development, through the 
 
 ## Get the pretrained models
 
-Pre-trained models are installed through Setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. You can also get them through a local tools installation of the Python client libraries (for microsoftml) or through **Microsoft R Client** (for MicrosoftML). 
+Pre-trained models are installed through setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page: 
+
+![1](./media/microsoftml-install-pretrained-models/msr-config-install-ml-model.png)
+
+You can also get them through a local tools installation of the Python client libraries (for microsoftml) or through **Microsoft R Client** (for MicrosoftML). 
 
 Models that include training data are local, added to the MicrosoftML and microsftml library, respectively, when you run setup. The files are \mxlibs\<modelname>_updated.model for Python and \mxlibs\x64\<modelname>_updated.model for R.
 

@@ -58,6 +58,7 @@ This section lists the functions by category to give you an idea of how each one
 |[microsoftml.rx_neural_network](rx-neural-network.md) | Neural Network |
 |[microsoftml.rx_oneclass_svm](rx-oneclass-svm.md) | Anomaly Detection |
 
+<a name="ml-transforms"></a>
 
 ## 2-Transform functions
 

@@ -226,6 +226,9 @@
   items:
   - name: Python
     href: python/python-samples.md
+    items:
+    - name: R samples for MicrosoftML
+      href: python/sample-microsoftml-python.md
   - name: R
     items:
     - name: Sample data in RevoScaleR
@@ -234,7 +237,7 @@
       href: r/tutorial-rxexecby.md
     - name: R Server with Sparklyr example
       href: r/tutorial-sparklyr-revoscaler.md
-    - name: Samples for MicrosoftML
+    - name: R samples for MicrosoftML
       href: r/sample-microsoftml.md
   - name: Solution templates
     href: r/sample-solutions.md
