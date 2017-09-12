@@ -228,7 +228,7 @@
     href: python/python-samples.md
     items:
     - name: R samples for MicrosoftML
-      href: python/sample-microsoftml-python.md
+      href: python/samples-microsoftml-python.md
   - name: R
     items:
     - name: Sample data in RevoScaleR
