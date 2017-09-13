@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Quickstart for deploying models as web services with mrsdeploy - Machine Learning Server | Microsoft Docs"
+title: "Quickstart for deploying Python models as web services - Machine Learning Server | Microsoft Docs"
 description: "How to deploy an R model as a service"
-keywords: "quickstart, Microsoft R Server, deploy r models"
+keywords: "quickstart, Machine Learning Server, deploy python models"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "7/24/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -26,11 +26,11 @@ ms.technology:
 ---
 # Deploy a Python model as a web service with azureml-model-management-sdk
 
-**Applies to: Microsoft R Client 3.4, Microsoft Learning Server 9.2**
+**Applies to: Microsoft Learning Server 9.2**
 
 ## Objective
 
-Learn how to deploy an Python model as a web service with Machine Learning Server. Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the azureml-model-management-sdk Python library that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
+Learn how to deploy an Python model as a web service with Machine Learning Server. Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
 
 In Machine Learning Server, a web service is a Python code execution on the [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the azureml-model-management-sdk Python library ](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to gain access a service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
 
@@ -42,104 +42,23 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 Before you begin this QuickStart, have the following ready:
 
-+ WILL THERE BE A CLIENT OF SORTS WITH THIS PACKAGE???? An instance of [Microsoft R Client installed](../../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
++ An instance of [Anaconda and the azureml-model-management-sdk package installed](../../install/python-libraries-interpreter.md) on your local machine.    
 
-+ An instance of [Machine Learning Server ](../../what-is-microsoft-r-server.md) installed that has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
++ An instance of [Machine Learning Server ](../../what-is-machine-learning-server.md) installed that has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
 
-+ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-with-server-in-python.md) in R, deploy your analytics as web services so others can consume them. 
++ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-in-python.md) in Python, deploy your analytics as web services so others can consume them. 
 
 
 ## Example code
 
-This article walks through the deployment of a simple Python model as a web service hosted in Machine Learning Server.  Here is the entire Python code for the example that we walk through in the sections that follow.
+The example for this quickstart is stored in a Jupyter notebook. This notebook format allows you to not only see the code alongside detailed explanations, but also allows you to try out the code.
+
+This example walks through the deployment of a Python model as a web service hosted in Machine Learning Server. We will build a simple linear model using the [rx_lin_mod](../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server or [locally](../../install/python-libraries-interpreter.md). This package requires a connection to Machine Learning Server.  
 
 >[!IMPORTANT]
->Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-with-server-in-python.md).
+>Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-in-python.md).
 
-```r
-##########################################################
-#       Create & Test a Logistic Regression Model        #
-##########################################################
-    
-# Use logistic regression equation of vehicle transmission 
-# in the data set mtcars to estimate the probability of 
-# a vehicle being fitted with a manual transmission 
-# based on horsepower (hp) and weight (wt)
-
-# If on R Server 9.0, load mrsdeploy package now
-library(mrsdeploy)
-
-# Create glm model with `mtcars` dataset
-carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
-
-# Produce a prediction function that can use the model
-manualTransmission <- function(hp, wt) {
-     newdata <- data.frame(hp = hp, wt = wt)
-     predict(carsModel, newdata, type = "response")
-}
-   
-# test function locally by printing results
-print(manualTransmission(120, 2.8)) # 0.6418125
-
-##########################################################
-#            Log into Microsoft R Server                 #
-##########################################################
-   
-# Use `remoteLogin` to authenticate with R Server using 
-# the local admin account. Use session = false so no 
-# remote R session started
-remoteLogin("http://localhost:12800", 
-            username = "admin", 
-            password = "{{YOUR_PASSWORD}}",
-            session = FALSE)
-
-##########################################################
-#             Publish Model as a Service                 #
-##########################################################
-
-# Generate a unique serviceName for demos 
-# and assign to variable serviceName
-serviceName <- paste0("mtService", round(as.numeric(Sys.time()), 0))
-
-# Publish as service using publishService() function from 
-# mrsdeploy package. Name service "mtService" and provide
-# unique version number. Assign service to the variable `api`
-api <- publishService(
-     serviceName,
-     code = manualTransmission,
-     model = carsModel,
-     inputs = list(hp = "numeric", wt = "numeric"),
-     outputs = list(answer = "numeric"),
-     v = "v1.0.0"
-)
-
-##########################################################
-#                 Consume Service in R                   #
-##########################################################
-   
-# Print capabilities that define the service holdings: service 
-# name, version, descriptions, inputs, outputs, and the 
-# name of the function to be consumed
-print(api$capabilities())
-   
-# Consume service by calling function, `manualTransmission`
-# contained in this service
-result <- api$manualTransmission(120, 2.8)
-
-# Print response output named `answer`
-print(result$output("answer")) # 0.6418125   
-
-##########################################################
-#         Get Service-specific Swagger File in R         #
-##########################################################
-   
-# During this authenticated session, download the  
-# Swagger-based JSON file that defines this service
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE)
-
-# Now share this Swagger-based JSON so others can consume it
-```
+[**Download the Jupyter notebook**]().
 
 
 ## A. Model locally
