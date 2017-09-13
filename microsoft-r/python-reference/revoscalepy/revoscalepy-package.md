@@ -181,7 +181,7 @@ For SQL Server, add both Python modules to your computer by running setup:
 
 + [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
-Follow these SQL Server tutorials for hands on experience::
+Follow these SQL Server tutorials for hands on experience:
 
 + [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 

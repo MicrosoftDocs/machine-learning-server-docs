@@ -26,17 +26,19 @@ ms.custom: ""
 
 # microsoftml package
 
-The **microsoftml** module is a collection of Python functions used in machine learning workloads. It includes functions for training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.
+The **microsoftml** module is a collection of Python functions used in machine learning solutions. It includes functions for training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.
 
 | Package details | |
 |--------|-|
 | Version: |  1.3.4 |
-| Supported on: | [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
-| Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
+| Supported on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 ## How to use microsoftml
 
-The **microsoftml** module is installed as part of Microsoft Machine Learning Server or SQL Server Machine Learning Server when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **microsoftml**, but the script must run on a computer having either Microsoft Machine Learning Server or SQL Server Machine Learning Server with Python.
+The **microsoftml** module is installed as part of Microsoft Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **microsoftml**, but the script must run on a computer having either Microsoft Machine Learning Server or SQL Server Machine Learning Server with Python.
+
+### In a SQL Server compute context
 
 There are two primary use cases for this release of SQL Server Machine Learning Server: 
 
@@ -120,15 +122,16 @@ This section lists the functions by category to give you an idea of how each one
 
 ## Next steps
 
-Add both Python modules to your computer by running setup: 
+For SQL Server, add both Python modules to your computer by running setup: 
 
 + [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
-Next, follow this tutorial for hands on experience: 
+Follow this SQL Server tutorial for hands on experience: 
 
 + [Using the MicrosoftML Package with SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/using-the-microsoftml-package) 
 
 ## See also
 
+  [Machine Learning Server](../../what-is-machine-learning-server.md)  
   [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
   [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone) 
