@@ -58,39 +58,9 @@ This example walks through the deployment of a Python model as a web service hos
 >[!IMPORTANT]
 >Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-in-python.md).
 
-[**Download the Jupyter notebook**]().
+[**Download the Jupyter notebook**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
 
 
-## A. Model locally
-Now let's dive into this example down. Let's start by creating the model locally, then publish it, and then share it with other authenticated users.
-
-1. Launch your R IDE or Rgui so you can start entering R code. 
-
-1. If you have R Server 9.0.1, load the mrsdeploy package. In R Server 9.1, this package is preloaded for you.
-
-   ```R
-   library(mrsdeploy)
-   ```
-
-1. Create a GLM model called `carsModel` using the dataset `mtcars`, which is a built-in data frame in R. Using horsepower (hp) and weight (wt), this model estimates the probability that a vehicle has been fitted with a manual transmission.
-
-   ```R
-   # Create glm model with `mtcars` dataset
-   carsModel <- glm(formula = am ~ hp + wt, data = mtcars, family = binomial)
-
-   # Produce a prediction function that can use the model
-   manualTransmission <- function(hp, wt) {
-     newdata <- data.frame(hp = hp, wt = wt)
-     predict(carsModel, newdata, type = "response")
-   }
-   
-   # test function locally by printing results
-   print(manualTransmission(120, 2.8)) # 0.6418125
-   ```
-
-1. Examine the results of the locally executed code. You can compare these results to the results of the web service later.
-
-<br> 
 
 ## B. Publish model as a web service
 
