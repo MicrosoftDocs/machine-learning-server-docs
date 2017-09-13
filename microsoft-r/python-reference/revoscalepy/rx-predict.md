@@ -6,7 +6,7 @@ description: "Generic function to compute predicted values and residuals using r
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_predict
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -66,6 +66,8 @@ supported.
 ### data
 
 a data frame or an RxXdfData data source object to be used for predictions.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### output_data
@@ -113,7 +115,7 @@ Output:
 
 
 ```
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.049 seconds 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.055 seconds 
 Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds 
 Computation time: 0.006 seconds.
 Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 

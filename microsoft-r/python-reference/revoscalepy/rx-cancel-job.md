@@ -6,7 +6,7 @@ description: "This function does not attempt to retrieve any output objects; if 
 keywords: "cancel" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_cancel_job
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -68,11 +68,6 @@ all console output will not be displayed.
 ## Returns
 
 *True* if the job is successfully cancelled; *False* otherwise.z
-
-
-
-
-
 
 
 ## See also

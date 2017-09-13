@@ -6,7 +6,7 @@ description: "Fit classification and regression trees on an ‘.xdf’ file or d
 keywords: "learner, tree" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_dtree
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -71,6 +71,8 @@ statistical model using symbolic formulas.
 
 either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### output_file

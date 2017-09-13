@@ -6,7 +6,7 @@ description: "Store/Retrieve objects to/from ODBC data sources. The APIs are mod
 keywords: "odbc" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_write_object
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage

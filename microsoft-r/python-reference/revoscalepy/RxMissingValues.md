@@ -6,7 +6,7 @@ description: "revoscalepy package uses Pandas dataframe as the abstraction to ho
 keywords: "missing values, NA, NaN, nan, none, None" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,10 +27,7 @@ ms.custom: ""
 # RxMissingValues
 
 
-**Applies to: SQL Server 2017**
-
-
-## Usage
+ 
 
 
 
