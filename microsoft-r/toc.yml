@@ -189,7 +189,7 @@
     items:
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
-    - name: Pyspark and revoscalepy interoperability
+    - name: PySpark and revoscalepy interoperability
       href: python/quickstart-revoscalepy-pyspark.md
   - name: R
     items:

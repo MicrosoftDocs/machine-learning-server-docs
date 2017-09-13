@@ -27,7 +27,7 @@ ms.custom: ""
 
 # revoscalepy package
 
-The **revoscalepy** module is a collection of Python functions used for analyzing data at the point of origin. Functions include data transformation and manipulation, visualization, and statistical analysis. It also includes functions for controlling jobs and serializing data.
+The **revoscalepy** module is a collection of Python functions used for analyzing data at the point of origin. Functions include data transformation and manipulation, visualization, and statistical analysis. It also includes functions for controlling jobs, serializing data, and utility functions for common tasks.
 
 | Package details | |
 |--------|-|
@@ -39,13 +39,14 @@ The **revoscalepy** module is a collection of Python functions used for analyzin
 
 The **revoscalepy** module is installed as part of Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules.
 
-**revoscalepy** runs in a Spark compute context and SQL Server compute context. 
+The **revoscalepy** module runs in a Spark compute context and SQL Server compute context. 
 
-In rxSpark compute context, you can perform statistical analysis, linear and logistic regressions, and predictive analytics. Scale out requires Machine Learning Server on all data nodes in your cluster. You can also call functions from script that runs on edge nodes, or on a single-box installation of Spark.
+In a [RxSpark](RxSpark.md) compute context, you can perform statistical analysis, linear and logistic regressions, and predictive analytics. Scale out requires Machine Learning Server on all data nodes in your cluster. You can also call functions from script that runs on edge nodes, or on a single-box installation of Spark.
 
-In rxInSQLServer compute context, there are two primary use cases: 
+In a [RxInSqlServer](RxInSqlServer.md) compute context, there are two primary use cases: 
 
 + Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
+
 + Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
 
 You can call **revoscalepy** functions in script that runs on other platforms, such as Windows or Linux, but your script should set the compute context before **revoscalepy** functions are called.
@@ -166,16 +167,21 @@ This section lists the functions by category to give you an idea of how each one
 
 ## Next steps
 
-Add both Python modules to your computer by running setup: 
+For Machine Learning Server, try a quickstart as an introduction to **revoscalepy**:
+
++ [revoscalepy and PySpark interoperability](../../python/quickstart-revoscalepy-pyspark.md) 
+
+For SQL Server, add both Python modules to your computer by running setup: 
 
 + [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
-Next, follow these tutorials for hands on experience::
+Follow these SQL Server tutorials for hands on experience::
 
 + [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
 
 ## See also
 
+  [Machine Learning Server](../../what-is-machine-learning-server.md)  
   [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
   [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
