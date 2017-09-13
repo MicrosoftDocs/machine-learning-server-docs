@@ -33,7 +33,7 @@ The **revoscalepy** module is a collection of Python functions used for analyzin
 |--------|-|
 | Version: |  9.2.1 |
 | Supported on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
-| Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
+| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 ## How to use revoscalepy
 
@@ -41,15 +41,20 @@ The **revoscalepy** module is installed as part of Machine Learning Server or SQ
 
 The **revoscalepy** module runs in a Spark compute context and SQL Server compute context. 
 
+### In a Spark compute context
+
 In a [RxSpark](RxSpark.md) compute context, you can perform statistical analysis, linear and logistic regressions, and predictive analytics. Scale out requires Machine Learning Server on all data nodes in your cluster. You can also call functions from script that runs on edge nodes, or on a single-box installation of Spark.
+
+### In a SQL Server compute context
 
 In a [RxInSqlServer](RxInSqlServer.md) compute context, there are two primary use cases: 
 
-+ Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
++ Call Python functions in T-SQL script or stored procedures running on SQL Server.  
 
-+ Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
++ Call **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
 
-You can call **revoscalepy** functions in script that runs on other platforms, such as Windows or Linux, but your script should set the compute context before **revoscalepy** functions are called.
+> [!Note]
+> You can call **revoscalepy** functions in script that runs on other platforms, such as Windows or Linux, but your script should set the compute context before **revoscalepy** functions are called.
 
 ## Functions by category
 
@@ -85,9 +90,9 @@ This section lists the functions by category to give you an idea of how each one
 |[RxParquetData](RxParquetData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Parquet data file.|
 |[RxSparkData](RxSparkData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Spark data source.|
 |[RxSparkDataFrame](RxSparkDataFrame.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Spark data frame.|
-|[rx_spark_cache_data](rx-spark-cache-data.md) [RxSpark](RxSpark.md) | Generates a data source object from cached data.|
-|[rx_spark_list_data](rx-spark-list-data.md) [RxSpark](RxSpark.md) | Generates a data source object from a list.|
-|[rx_spark_remove_data](rx-spark-remove-data.md) [RxSpark](RxSpark.md) | Deletes the Spark cached data source object.|
+|[rx_spark_cache_data](rx-spark-cache-data.md) | [RxSpark](RxSpark.md) | Generates a data source object from cached data.|
+|[rx_spark_list_data](rx-spark-list-data.md) | [RxSpark](RxSpark.md) | Generates a data source object from a list.|
+|[rx_spark_remove_data](rx-spark-remove-data.md) | [RxSpark](RxSpark.md) | Deletes the Spark cached data source object.|
 |[RxSqlServerData](RxSqlServerData.md) | [RxInSqlServer](RxInSqlServer.md)  | Generates a data source object from a SQL table or query.|
 
 ## 3-Data manipulation (ETL) functions
@@ -96,7 +101,6 @@ This section lists the functions by category to give you an idea of how each one
 |----------|-----------------|-------------|
 |[rx_import](rx-import.md) | All | Import data into an .xdf file or data frame.|
 |[rx_data_step](rx-data-step.md) | All | Transform data from an input data set to an output data set.|
-|[rx_create_col_info](rx-create-col-info.md) | [RxSpark](RxSpark.md) | ?? |
 
 ## 4-Analytic functions
 
@@ -116,36 +120,38 @@ This section lists the functions by category to give you an idea of how each one
 
 ## 5-Job functions
 
-| Function | Description |
-|----------|-------------|
-|[rx_exec](rx-exec.md) | Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster. |
-|[rx_cancel_job](rx-cancel-job.md) | Removes all job-related artifacts from the distributed computing resources, including any job results. |
-|[rx_cleanup_jobs](rx-cleanup-jobs.md) |  Removes the artifacts for a specific job. |
-|[RxRemoteJob class](RxRemoteJob.md) | Closes the remote job, purging all associated job-related data.|
-|[RxRemoteJobStatus](RxRemoteJobStatus.md) | Represents the execution status of a remote Python job.|
-|[rx_get_job_info](rx-get-job-info.md) | Contains complete information on the job’s compute context as well as other information needed by the distributed computing resources.|
-|[rx_get_job_output](rx-get-job-output.md) | Returns console output for the nodes participating in a distributed computing job.|
-|[rx_get_job_results](rx-get-job-results.md) | Returns results of the run or a message stating why results are not available.|
-|[rx_get_job_status](rx-get-job-status.md) | Obtain distributed computing processing status for the specified job. |
-|[rx_get_jobs](rx-get-jobs.md) | Returns a list of job objects associated with the given compute context and matching the specified parameters. |
-|[rx_wait_for_job](rx-wait-for-job.md) | Block on an existing distributed job until completion, effectively turning a non-blocking job into a blocking job.|
+In an [RxSpark](RxSpark.md) context, job management is built in. You only need job functions if you want to manually control the Yarn queue.
+
+| Function | Compute Context | Description |
+|----------|-----------------|-------------|
+|[rx_exec](rx-exec.md) | All | Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster. |
+|[rx_cancel_job](rx-cancel-job.md) | All | Removes all job-related artifacts from the distributed computing resources, including any job results. |
+|[rx_cleanup_jobs](rx-cleanup-jobs.md) | All | Removes the artifacts for a specific job. |
+|[RxRemoteJob class](RxRemoteJob.md) | All | Closes the remote job, purging all associated job-related data.|
+|[RxRemoteJobStatus](RxRemoteJobStatus.md) | All | Represents the execution status of a remote Python job.|
+|[rx_get_job_info](rx-get-job-info.md) | All | Contains complete information on the job’s compute context as well as other information needed by the distributed computing resources.|
+|[rx_get_job_output](rx-get-job-output.md) | All | Returns console output for the nodes participating in a distributed computing job.|
+|[rx_get_job_results](rx-get-job-results.md) | All | Returns results of the run or a message stating why results are not available.|
+|[rx_get_job_status](rx-get-job-status.md) | All | Obtain distributed computing processing status for the specified job. |
+|[rx_get_jobs](rx-get-jobs.md) | All | Returns a list of job objects associated with the given compute context and matching the specified parameters. |
+|[rx_wait_for_job](rx-wait-for-job.md) | All | Block on an existing distributed job until completion, effectively turning a non-blocking job into a blocking job.|
 
 
 ## 6-Serialization functions
 
-| Function | Description |
-|----------|-------------|
-|[rx_serialize_model](rx-serialize-model.md)  | Serialize a given python model. |
-|[rx_read_object](rx-read-object.md) | Retrieves an ODBC data source objects. |
-|[rx_read_xdf](rx-read-xdf.md) | Read data from an .xdf file into a data frame.|
-|[rx_write_object](rx-write-object.md)   | Stores an ODBC data source object. |
-|[rx_delete_object](rx-delete-object.md)  | Deletes an object from the ODBC data source. |
-|[rx_list_keys](rx-list-keys.md)  | Enumerates all keys or versions for a given key, depending on the parameters. |
+| Function | Compute Context | Description |
+|----------|---------------- |-------------|
+|[rx_serialize_model](rx-serialize-model.md)  | All | Serialize a given python model. |
+|[rx_read_object](rx-read-object.md) | All | Retrieves an ODBC data source objects. |
+|[rx_read_xdf](rx-read-xdf.md) | All | Read data from an .xdf file into a data frame.|
+|[rx_write_object](rx-write-object.md)   | All | Stores an ODBC data source object. |
+|[rx_delete_object](rx-delete-object.md)  | All | Deletes an object from the ODBC data source. |
+|[rx_list_keys](rx-list-keys.md)  | All | Enumerates all keys or versions for a given key, depending on the parameters. |
 
 
 ## 7-Utility functions
 
-| Function | Compute context | Description |
+| Function | Compute Context | Description |
 |----------|---------------- |-------------|
 |[RxOptions](RxOptions.md) | All | Specify and retrieve options needed for **revoscalepy** computations. |
 |[rx_get_info](rx-get-info.md) | All | Get basic information about a **revoscalepy** data source or data frame. |
@@ -154,16 +160,16 @@ This section lists the functions by category to give you an idea of how each one
 |[rx_set_var_info](rx-set-var-info.md)  | All | Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame.|
 |[RxMissingValues](RxMissingValues.md) | All | Provides missing values for various `NumPy` data types which you can use to mark missing values in a sequence of data in `ndarray`.|
 |[rx_privacy_control](rx-privacy-control.md) | All | Opt out of [usage data collection](../../resources-opting-out.md). |
-|[rx_hadoop_command](rx-hadoop-command.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_copy_from_local](rx-hadoop-copy-from-local.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_copy_to_local](rx-hadoop-copy-to-local.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_copy](rx-hadoop-copy.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_file_exists](rx-hadoop-file-exists.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_list_files](rx-hadoop-list-files.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_make_dir](rx-hadoop-make-dir.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_move](rx-hadoop-move.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_remove_dir](rx-hadoop-remove-dir.md) | [RxSpark](RxSpark.md) | ?? |
-|[rx_hadoop_remove](rx-hadoop-remove.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_command](rx-hadoop-command.md) | [RxSpark](RxSpark.md) | Execute arbitrary Hadoop commands and perform standard file operations in Hadoop. |
+|[rx_hadoop_copy_from_local](rx-hadoop-copy-from-local.md) | [RxSpark](RxSpark.md) |  Wraps the Hadoop `fs -copyFromLocal` command. |
+|[rx_hadoop_copy_to_local](rx-hadoop-copy-to-local.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -copyToLocal` command. |
+|[rx_hadoop_copy](rx-hadoop-copy.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -cp` command. |
+|[rx_hadoop_file_exists](rx-hadoop-file-exists.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -test -e` command. |
+|[rx_hadoop_list_files](rx-hadoop-list-files.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -ls or -lsr` command. |
+|[rx_hadoop_make_dir](rx-hadoop-make-dir.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -mkdir -p` command. |
+|[rx_hadoop_move](rx-hadoop-move.md) | [RxSpark](RxSpark.md) | wraps the Hadoop `fs -mv` command. |
+|[rx_hadoop_remove_dir](rx-hadoop-remove-dir.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -rm -r`  or `fs -rm -r -skipTrash` command. |
+|[rx_hadoop_remove](rx-hadoop-remove.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -rm` or `fs -rm -skipTrash` command. |
 
 ## Next steps
 
@@ -175,7 +181,7 @@ For SQL Server, add both Python modules to your computer by running setup:
 
 + [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
-Follow these SQL Server tutorials for hands on experience::
+Follow these SQL Server tutorials for hands on experience:
 
 + [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
