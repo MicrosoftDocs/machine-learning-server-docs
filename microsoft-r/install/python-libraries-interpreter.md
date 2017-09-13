@@ -42,9 +42,9 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 ## Install on Windows
 
-1. Download the installation shell script from http://aka.ms/mls-py.
+1. Download the installation shell script from http://aka.ms/mls-py. This script installs Anaconda 4.2.12, which includes Python 3.5.2, along with all packages listed previously.
 
-1. Run the script AS AN ADMINISTRATOR to install the interpreter and packages. Anaconda 4.2.0, which includes Python 3.5.2, is installed along with all packages listed previously.
+1. Run the script AS AN ADMINISTRATOR to install the interpreter and packages. 
 
 ## Install on Linux
 
