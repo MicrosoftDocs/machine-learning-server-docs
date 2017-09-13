@@ -565,6 +565,8 @@
         href: python-reference/revoscalepy/rx-get-jobs.md
       - name: rx_get_job_status
         href: python-reference/revoscalepy/rx-get-job-status.md
+      - name: rx_get_pyspark_connection
+        href: python-reference/revoscalepy/rx-get-pyspark-connection.md
       - name: rx_get_var_info
         href: python-reference/revoscalepy/rx-get-var-info.md
       - name: rx_get_var_names
@@ -573,6 +575,30 @@
         href: python-reference/revoscalepy/rx-import.md
       - name: RxInSqlServer
         href: python-reference/revoscalepy/RxInSqlServer.md
+      - name: rx_hadoop_command
+        href: python-reference/revoscalepy/rx-hadoop-command.md
+      - name: rx_hadoop_copy_from_local
+        href: python-reference/revoscalepy/rx-hadoop-copy-from-local.md
+      - name: rx_hadoop_copy_to_local
+        href: python-reference/revoscalepy/rx-hadoop-copy-to-local.md
+      - name: rx_hadoop_copy
+        href: python-reference/revoscalepy/rx-hadoop-copy.md
+      - name: rx_hadoop_file_exists
+        href: python-reference/revoscalepy/rx-hadoop-file-exists.md
+      - name: rx_hadoop_list_files
+        href: python-reference/revoscalepy/rx-hadoop-list-files.md
+      - name: rx_hadoop_make_dir
+        href: python-reference/revoscalepy/rx-hadoop-make-dir.md
+      - name: rx_hadoop_move
+        href: python-reference/revoscalepy/rx-hadoop-move.md
+      - name: rx_hadoop_remove_dir
+        href: python-reference/revoscalepy/rx-hadoop-remove-dir.md
+      - name: rx_hadoop_remove
+        href: python-reference/revoscalepy/rx-hadoop-remove.md
+      - name: RxHdfsFileSystem
+        href: python-reference/revoscalepy/RxHdfsFileSystem.md
+      - name: RxHiveData
+        href: python-reference/revoscalepy/RxHiveData.md
       - name: rx_lin_mod
         href: python-reference/revoscalepy/rx-lin-mod.md
       - name: rx_list_keys
@@ -589,6 +615,10 @@
         href: python-reference/revoscalepy/RxOdbcData.md
       - name: RxOptions
         href: python-reference/revoscalepy/RxOptions.md
+      - name: RxOrcData
+        href: python-reference/revoscalepy/RxOrcData.md
+      - name: RxParquetData
+        href: python-reference/revoscalepy/RxParquetData.md
       - name: rx_partition
         href: python-reference/revoscalepy/rx-partition.md
       - name: rx_predict
@@ -599,6 +629,8 @@
         href: python-reference/revoscalepy/rx-predict-rx-dtree.md
       - name: rx_predict_rx_dforest
         href: python-reference/revoscalepy/rx-predict-rx-dforest.md
+      - name: rx_privacy_control
+        href: python-reference/revoscalepy/rx-privacy-control.md
       - name: rx_read_object
         href: python-reference/revoscalepy/rx-read-object.md
       - name: rx_read_xdf
@@ -613,6 +645,22 @@
         href: python-reference/revoscalepy/rx-set-var-info.md
       - name: rx_serialize_model
         href: python-reference/revoscalepy/rx-serialize-model.md
+      - name: RxSpark
+        href: python-reference/revoscalepy/RxSpark.md
+      - name: RxSparkData
+        href: python-reference/revoscalepy/RxSparkData.md
+      - name: RxSparkDataFrame
+        href: python-reference/revoscalepy/RxSparkDataFrame.md
+      - name: rx_spark_cache_data
+        href: python-reference/revoscalepy/rx-spark-cache-data.md
+      - name: rx_spark_connect
+        href: python-reference/revoscalepy/rx-spark-connect.md
+      - name: rx_spark_disconnect
+        href: python-reference/revoscalepy/rx-spark-disconnect.md
+      - name: rx_spark_list_data
+        href: python-reference/revoscalepy/rx-spark-list-data.md
+      - name: rx_spark_remove_data
+        href: python-reference/revoscalepy/rx-spark-remove-data.md
       - name: RxSqlServerData
         href: python-reference/revoscalepy/RxSqlServerData.md
       - name: rx_summary

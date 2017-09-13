@@ -102,6 +102,7 @@ This section lists the functions by category to give you an idea of how each one
 | Function | Compute Context | Description |
 |----------|-----------------|-------------|
 |[rx_exec_by](rx-exec-by.md) | [RxSpark](RxSpark.md) | Execute an arbitrary function in parallel on multiple data nodes. |
+| [rx_partition](rx-partition.md) | |
 |[rx_summary](rx-summary.md) | All | Produce univariate summaries of objects in revoscalepy. |
 |[rx_lin_mod](rx-lin-mod.md) | All | Fit linear models on small or large data. |
 |[rx_logit](rx-logit.md) | All | Use rx_logit to fit logistic regression models for small or large data. |
