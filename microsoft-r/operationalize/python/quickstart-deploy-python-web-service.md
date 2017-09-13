@@ -58,30 +58,8 @@ This example walks through the deployment of a Python model as a web service hos
 >[!IMPORTANT]
 >Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-in-python.md).
 
-[**Download the Jupyter notebook**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
+[**Try it out. Download the Jupyter notebook**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
 
-
-
-## B. Publish model as a web service
-
-1. From your local R IDE, log in to Microsoft R Server **with your credentials**. Use the appropriate authentication function from [the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`) for your authentication method.  
-
-   For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active Directory in the article "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
-
-   >[!IMPORTANT]
-   >Be sure to replace the remoteLogin() function with the [correct login details for your configuration](how-to-connect-log-in-with-mrsdeploy.md).
-
-   ```R  
-   # Use `remoteLogin` to authenticate with R Server using 
-   # the local admin account. Use session = false so no 
-   # remote R session started
-   remoteLogin("http://localhost:12800", 
-            username = “admin”, 
-            password = “{{YOUR_PASSWORD}}”,
-            session = FALSE)
-   ``` 
-
-   Now, you are successfully connected to the remote R Server.
 
 1. Publish the model as a web service to R Server using [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the mrsdeploy package. 
 
