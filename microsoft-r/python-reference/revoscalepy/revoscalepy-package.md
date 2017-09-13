@@ -63,65 +63,77 @@ This section lists the functions by category to give you an idea of how each one
 |[rx_get_compute_context](rx-get-compute-context.md) | Returns the current compute context.|
 |[rx_set_compute_context](rx-set-compute-context.md) | Change the compute context to a different one.|
 |[RxSpark](RxSpark.md) | Creates a compute context for running revoscalepy analyses in a Spark cluster. |
+|[rx_get_pyspark_connection](rx-get-pyspark-connection.md) | Gets a connection to a PySpark data set, in support of revoscalepy and PySpark interoperability. |
+|[rx_spark_connect](rx-spark-connect.md) | Creates a persistent Spark Connection. |
+|[rx_spark_disconnect](rx-spark-disconnect.md) | Closes the connection. |
 
-## 2-Job functions
+
+
+## 2-Data source functions
+
+| Function | Compute Context | Description | 
+|----------|-----------------|-------------|
+|[RxDataSource](RxDataSource.md) | All | Base class for all revoscalepy data sources.|
+|[RxHdfsFileSystem](RxHdfsFileSystem.md) | [RxSpark](RxSpark.md) | Data source is accessed through HDFS instead of Linux. |
+|[RxNativeFileSystem](RxNativeFileSystem.md) | [RxSpark](RxSpark.md) | Data source is accessed through Linux instead of HDFS. |
+|[RxHiveData](RxHiveData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Hive data file.|
+|[RxTextData](RxTextData.md) | ?? | Generates a data source object from a text data file.|
+|[RxXdfData](RxXdfData.md) | All | Generates a data source object from an XDF data source.|
+|[RxOdbcData](RxOdbcData.md) | ?? | Generates a data source object from an ODBC data source.|
+|[RxOrcData](RxOrcData.md) | [RxSpark](RxSpark.md)| Generates a data source object from an Ord data file.|
+|[RxParquetData](RxParquetData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Parquet data file.|
+|[RxSparkData](RxSparkData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Spark data source.|
+|[RxSparkDataFrame](RxSparkDataFrame.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Spark data frame.|
+|[rx_spark_cache_data](rx-spark-cache-data.md) [RxSpark](RxSpark.md) | Generates a data source object from cached data.|
+|[rx_spark_list_data](rx-spark-list-data.md) [RxSpark](RxSpark.md) | Generates a data source object from a list.|
+|[rx_spark_remove_data](rx-spark-remove-data.md) [RxSpark](RxSpark.md) | Deletes the Spark cached data source object.|
+|[RxSqlServerData](RxSqlServerData.md) | [RxInSqlServer](RxInSqlServer.md)  | Generates a data source object from a SQL table or query.|
+
+## 3-Data manipulation (ETL) functions
+
+| Function | Compute Context | Description |
+|----------|-----------------|-------------|
+|[rx_import](rx-import.md) | All | Import data into an .xdf file or data frame.|
+|[rx_data_step](rx-data-step.md) | All | Transform data from an input data set to an output data set.|
+|[rx_create_col_info](rx-create-col-info.md) | [RxSpark](RxSpark.md) | ?? |
+
+## 4-Analytic functions
+
+| Function | Compute Context | Description |
+|----------|-----------------|-------------|
+|[rx_exec_by](rx-exec-by.md) | [RxSpark](RxSpark.md) | Execute an arbitrary function in parallel on multiple data nodes. |
+|[rx_summary](rx-summary.md) | All | Produce univariate summaries of objects in revoscalepy. |
+|[rx_lin_mod](rx-lin-mod.md) | All | Fit linear models on small or large data. |
+|[rx_logit](rx-logit.md) | All | Use rx_logit to fit logistic regression models for small or large data. |
+|[rx_dtree](rx-dtree.md) | All | Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
+|[rx_dforest](rx-dforest.md) | All | Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
+|[rx_btrees](rx-btrees.md) | All | Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
+|[rx_predict_default](rx-predict-default.md) | All | Compute predicted values and residuals using rx_lin_mod and rx_logit objects. |
+|[rx_predict_rx_dforest](rx-predict-rx-dforest.md) | All | Calculate predicted or fitted values for a data set from an rx_dforest or rx_btrees object. |
+|[rx_predict_rx_dtree](rx-predict-rx-dtree.md) | All | Calculate predicted or fitted values for a data set from an rx_dtree object. |
+
+## 5-Job functions
 
 | Function | Description |
 |----------|-------------|
 |[rx_exec](rx-exec.md) | Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster. |
 |[rx_cancel_job](rx-cancel-job.md) | Removes all job-related artifacts from the distributed computing resources, including any job results. |
 |[rx_cleanup_jobs](rx-cleanup-jobs.md) |  Removes the artifacts for a specific job. |
-|[rx_get_job_status](rx-get-job-status.md) | Obtain distributed computing processing status for the specified job. |
-|[rx_get_jobs](rx-get-jobs.md) | Returns a list of job objects associated with the given compute context and matching the specified parameters. |
 |[RxRemoteJob class](RxRemoteJob.md) | Closes the remote job, purging all associated job-related data.|
 |[RxRemoteJobStatus](RxRemoteJobStatus.md) | Represents the execution status of a remote Python job.|
 |[rx_get_job_info](rx-get-job-info.md) | Contains complete information on the job’s compute context as well as other information needed by the distributed computing resources.|
-|[rx_wait_for_job](rx-wait-for-job.md) | Block on an existing distributed job until completion, effectively turning a non-blocking job into a blocking job.|
 |[rx_get_job_output](rx-get-job-output.md) | Returns console output for the nodes participating in a distributed computing job.|
 |[rx_get_job_results](rx-get-job-results.md) | Returns results of the run or a message stating why results are not available.|
+|[rx_get_job_status](rx-get-job-status.md) | Obtain distributed computing processing status for the specified job. |
+|[rx_get_jobs](rx-get-jobs.md) | Returns a list of job objects associated with the given compute context and matching the specified parameters. |
+|[rx_wait_for_job](rx-wait-for-job.md) | Block on an existing distributed job until completion, effectively turning a non-blocking job into a blocking job.|
 
-
-## 3-Data source functions
-
-| Function | Compute Context | Description | 
-|----------|-----------------|-------------|
-|[RxDataSource](RxDataSource.md) |Both | Base class for all revoscalepy data sources.|
-|[RxNativeFileSystem](RxNativeFileSystem.md) |Both | Data source is accessed through Linux instead of HDFS. |
-|[RxTextData](RxTextData.md) | | Generates a data source object from a text data file.|
-|[RxXdfData](RxXdfData.md) |Both | Generates a data source object from an XDF data source.|
-|[RxOdbcData](RxOdbcData.md) | | Generates a data source object from an ODBC data source.|
-|[RxSParquetData](RxParquetData.md) | Spark| Generates a data source object from a Parquet data file (in Spark).|
-|[RxSParquetData](RxParquetData.md) | Spark| Generates a data source object from a Parquet data file (in Spark).|
-|[RxSparkData](RxSparkData.md) | Spark| Generates a data source object from a Spark data source.|
-|[RxSparkDataFrame](RxSparkDataFrame.md) | Spark| Generates a data source object from a Spark data frame.|
-|[RxSqlServerData](RxSqlServerData.md) | SQL | Generates a data source object from a SQL table or query.|
-
-## 4-Data manipulation (ETL) functions
-
-| Function | Description |
-|----------|-------------|
-|[rx_import](rx-import.md) | Import data into an .xdf file or data frame.|
-|[rx_data_step](rx-data-step.md) | Transform data from an input data set to an output data set.|
-
-## 5-Analytic functions
-
-| Function | Description |
-|----------|-------------|
-|[rx_summary](rx-summary.md) | Produce univariate summaries of objects in revoscalepy. |
-|[rx_lin_mod](rx-lin-mod.md) | Fit linear models on small or large data. |
-|[rx_logit](rx-logit.md) | Use rx_logit to fit logistic regression models for small or large data. |
-|[rx_dtree](rx-dtree.md) | Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
-|[rx_dforest](rx-dforest.md) | Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
-|[rx_btrees](rx-btrees.md) | Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm. |
-|[rx_predict_default](rx-predict-default.md) | Compute predicted values and residuals using rx_lin_mod and rx_logit objects. |
-|[rx_predict_rx_dforest](rx-predict-rx-dforest.md) | Calculate predicted or fitted values for a data set from an rx_dforest or rx_btrees object. |
-|[rx_predict_rx_dtree](rx-predict-rx-dtree.md) | Calculate predicted or fitted values for a data set from an rx_dtree object. |
 
 ## 6-Serialization functions
 
 | Function | Description |
 |----------|-------------|
-|[rx_serialize_model](rx-serialize-model.md)  |  Serialize a given python model. |
+|[rx_serialize_model](rx-serialize-model.md)  | Serialize a given python model. |
 |[rx_read_object](rx-read-object.md) | Retrieves an ODBC data source objects. |
 |[rx_read_xdf](rx-read-xdf.md) | Read data from an .xdf file into a data frame.|
 |[rx_write_object](rx-write-object.md)   | Stores an ODBC data source object. |
@@ -131,14 +143,25 @@ This section lists the functions by category to give you an idea of how each one
 
 ## 7-Utility functions
 
-| Function | Description |
-|----------|-------------|
-|[RxOptions](RxOptions.md) | Specify and retrieve options needed for **revoscalepy** computations. |
-|[rx_get_info](rx-get-info.md) | Get basic information about a **revoscalepy** data source or data frame. |
-|[rx_get_var_info](rx-get-var-info.md) | Get variable information for a R**revoscalepy** data source or data frame, including variable names, descriptions, and value labels.|
-|[rx_get_var_names](rx-get-var-names.md)  | Read the variable names for data source or data frame. |
-|[rx_set_var_info](rx-set-var-info.md)  | Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame.|
-|[RxMissingValues](RxMissingValues.md) | Provides missing values for various `NumPy` data types which you can use to mark missing values in a sequence of data in `ndarray`.|
+| Function | Compute context | Description |
+|----------|---------------- |-------------|
+|[RxOptions](RxOptions.md) | All | Specify and retrieve options needed for **revoscalepy** computations. |
+|[rx_get_info](rx-get-info.md) | All | Get basic information about a **revoscalepy** data source or data frame. |
+|[rx_get_var_info](rx-get-var-info.md) | All | Get variable information for a R**revoscalepy** data source or data frame, including variable names, descriptions, and value labels.|
+|[rx_get_var_names](rx-get-var-names.md)  | All | Read the variable names for data source or data frame. |
+|[rx_set_var_info](rx-set-var-info.md)  | All | Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame.|
+|[RxMissingValues](RxMissingValues.md) | All | Provides missing values for various `NumPy` data types which you can use to mark missing values in a sequence of data in `ndarray`.|
+|[rx_privacy_control](rx-privacy-control.md) | All | Opt out of [usage data collection](../../resources-opting-out.md). |
+|[rx_hadoop_command](rx-hadoop-command.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_copy_from_local](rx-hadoop-copy-from-local.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_copy_to_local](rx-hadoop-copy-to-local.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_copy](rx-hadoop-copy.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_file_exists](rx-hadoop-file-exists.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_list_files](rx-hadoop-list-files.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_make_dir](rx-hadoop-make-dir.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_move](rx-hadoop-move.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_remove_dir](rx-hadoop-remove-dir.md) | [RxSpark](RxSpark.md) | ?? |
+|[rx_hadoop_remove](rx-hadoop-remove.md) | [RxSpark](RxSpark.md) | ?? |
 
 ## Next steps
 
