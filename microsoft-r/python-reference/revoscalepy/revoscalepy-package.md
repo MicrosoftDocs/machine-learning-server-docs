@@ -49,9 +49,9 @@ In a [RxSpark](RxSpark.md) compute context, you can perform statistical analysis
 
 In a [RxInSqlServer](RxInSqlServer.md) compute context, there are two primary use cases: 
 
-+ Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
++ Call Python functions in T-SQL script or stored procedures running on SQL Server.  
 
-+ Calling **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
++ Call **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
 
 > [!Note]
 > You can call **revoscalepy** functions in script that runs on other platforms, such as Windows or Linux, but your script should set the compute context before **revoscalepy** functions are called.

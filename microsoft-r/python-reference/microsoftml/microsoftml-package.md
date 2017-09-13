@@ -42,8 +42,9 @@ The **microsoftml** module is installed as part of Microsoft Machine Learning Se
 
 There are two primary use cases for this release of SQL Server Machine Learning Server: 
 
-+ Calling Python functions in T-SQL script or stored procedures running on SQL Server.  
-+ Calling **microsoftml** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **microsoftml** operations to a remote SQL Server instance that has the **microsoftml** interpreter.
++ Call Python functions in T-SQL script or stored procedures running on SQL Server.  
+
++ Call **microsoftml** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **microsoftml** operations to a remote SQL Server instance that has the **microsoftml** interpreter.
 
 ## Functions by category
 
