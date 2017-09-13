@@ -26,13 +26,17 @@ ms.technology:
 
 # How to install custom Python packages and interpreter locally
 
-Machine Learning Server provides a number of custom Python packages for training, transformations, text and image analysis, modeling, deploying, and more. The packages installed include  [revoscalepy, microsoftml, azureml-model-management-sdk](../python-reference/introducing-python-package-reference.md), and one library for the pretrained models. 
+Machine Learning Server provides custom Python packages for training, transformations, text and image analysis, modeling, deploying, and more. The [packages installed](../python-reference/introducing-python-package-reference.md) include:
++ [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md)
++ [microsoftml](../python-reference/microsoftml/microsoftml-package.md)
++ [azureml-model-management-sdk](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
++ [Pretrained models](microsoftml-install-pretrained-models.md)
 
-You can also work locally with these packages by installing a Python interpreter and the custom libraries on your machine. Then, from your local machine, you can:
+You can also install a Python interpreter along with these custom packages locally on your machine, and:
 
-+ Benefit from the best-of-breed machine learning algorithms without any server connection. These algorithms have been battle-tested by Microsoft and are now at your fingertips.
++ Benefit from the best-of-breed machine learning algorithms without any server connection. These algorithms have been battle-tested by Microsoft.
  
-+ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can leverage the disk scalability, performance and speed of a production instance of Machine Learning Server on any supported platforms. 
++ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can leverage the disk scalability, performance, and speed of a production instance of Machine Learning Server on any supported platforms. 
  
 This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client computer.
 
@@ -40,7 +44,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 1. Download the installation shell script from http://aka.ms/mls-py.
 
-1. Run the script AS AN ADMINISTRATOR to install the interpreter and packages. Anaconda 4.2.0, which includes Python 3.5.2, is installed along with all packages listed above.
+1. Run the script AS AN ADMINISTRATOR to install the interpreter and packages. Anaconda 4.2.0, which includes Python 3.5.2, is installed along with all packages listed previously.
 
 ## Install on Linux
 
@@ -65,14 +69,14 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    pip install azureml-model-management
    ```
 
-## Example code to test the install
+## Example to test the install
 
 Test your install and packages using this example code. 
 
-In this example, you can use some functions from the [microsoftml python package](../python-reference/microsoftml/microsoftml-package.md) to ????
+In this example, you can use some functions from the [microsoftml python package](../python-reference/microsoftml/microsoftml-package.md) for logistic regression.
 
 ### Example
-1. Let's build some fake data. We just need to make our data to start out. Let's create 1 label and 2000 random features.
+1. Let's build some fake data. We just need to make our data to start out. Let's create one label and 2000 random features.
 
    ```Python
    from numpy.random import randn
@@ -86,7 +90,7 @@ In this example, you can use some functions from the [microsoftml python package
    print(data[["Label", "f1", "f2", data.columns[-1]]].head())
    ```
    
-   1. Train a logistic regression using rx_logistic_regression from the microsoftml Python package.
+1. Train a logistic regression using rx_logistic_regression from the microsoftml Python package.
 
    ```Python
    formula = "Label ~ {0}".format(" + ".join(data.columns[1:]))
