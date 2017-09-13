@@ -24,11 +24,14 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Windows
 
-Machine Learning Server runs machine learning and data mining solutions written in R and Python in standalone and clustered topologies.
+Machine Learning Server for Windows runs machine learning and data mining solutions written in R in standalone and clustered topologies. 
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
 The installation path for Machine Learning Server is new. If R Server 9.x is present, Machine Learning 9.2.1 is installed side-by-side at \Program Files\Microsoft\ML Server. We recommend uninstalling the previous version of R Server to reduce overhead. Because 9.2.1 is backward compatible, it is not necessary to have both.
+
+> [!Note]
+> Although you can add Python support during Setup, script that calls functions from Python libraries must execute on SQL Server 2017 Machine Learning Server or Spark over Hadoop Distributed File System (HDFS).
 
 ## System requirements
 
@@ -68,16 +71,16 @@ You can get the zipped installation file from one of the following download site
 
 1. In the Downloads folder, right-click to extract the contents of zipped executable.
 2. Double-click **ServerSetup.exe** to start the wizard.
-3. In Configure installation, choose optional components. Required components are listed, but not configurable. Optional components include:
+3. In Configure installation, choose components to install. Required components are listed, but not configurable. Components include:
     + R Server (Standalone)
-    + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection
+    + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection (install with R or Python, but not as a standalone component)
     + Python
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open, Anaconda, and Python.
 5. Optionally, change the home directory for Machine Learning Server.
 6. At the end of the wizard, click **Install** to run setup.
 
 > [!NOTE]
-> By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+> By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature off, use the RevoScaleR function `rxPrivacyControl` or the revoscalepy function `rx-privacy0control`. To turn it back on, change the setting to `TRUE`. For more information, see [Opting out of data collection](../resources-opting-out.md).
 
 ### 3. Check log files
 
