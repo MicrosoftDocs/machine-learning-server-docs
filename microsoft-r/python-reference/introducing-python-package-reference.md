@@ -38,7 +38,7 @@ This section contains the Python reference documentation for two proprietary pac
 
 |Module | Version | Description |
 |--------|---------|-------------|
-|[azureml-model-management-sdk](azureml-model-management-sdk/azureml-model-management-sdk.md) | 9.2.1 | Classes and functions to authenticate, deploy, manage, and consume analytic web services in Python.  |
+|[azureml-model-management-sdk](azureml-model-management-sdk/azureml-model-management-sdk.md) | 1.0.0 | Classes and functions to authenticate, deploy, manage, and consume analytic web services in Python.  |
 |[microsoftml](microsoftml/microsoftml-package.md)| 1.4.0 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
 |[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.2.0 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to your data residing in SQL Server. |
 

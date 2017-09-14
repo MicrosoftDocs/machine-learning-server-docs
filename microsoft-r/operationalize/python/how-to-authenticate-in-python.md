@@ -32,9 +32,9 @@ The [azureml-model-management-sdk](../../python-reference/azureml-model-manageme
 
 This section describes how to authenticate to Machine Learning Server on-premises or in the cloud using azureml-model-management-sdk so you can take advantage of these classes and functions for web services. Every API call between the Web server and client must be authenticated. The azureml-model-management-sdk functions, which place API calls on your behalf, are no different. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned. 
 
-azureml-model-management-sdk provides the client that supports several ways of authenticating against the Machine Learning Server. The arguments you use depends on the [type of authentication and deployment in your organization](configure-authentication.md). Authentication of user identity is handled via Active Directory. Machine Learning Server never stores or manages any usernames and passwords.
+azureml-model-management-sdk provides the client that supports several ways of authenticating against the Machine Learning Server. The arguments you use depends on the [type of authentication and deployment in your organization](../configure-authentication.md). Authentication of user identity is handled via Active Directory. Machine Learning Server never stores or manages any usernames and passwords.
 
-By default, all azureml-model-management-sdk operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. 
+By default, all azureml-model-management-sdk operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. 
 
 ## On premises authentication
 
