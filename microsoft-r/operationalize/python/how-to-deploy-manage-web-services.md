@@ -165,13 +165,13 @@ The following table lists [the supported data types](../../python-reference/azur
 
 |I/O data types|Write as|
 |--------|-----|
-|numeric|float|
-|integer|int|
-|logical|bool|
-|character or vector|str|
-|array|numpy.array |
+|Float|float|
+|Integer|int|
+|Boolean|bool|
+|String|str|
+|Array|numpy.array |
 |matrix|numpy.matrix |
-|data.frame|numpy.DataFrame|
+|Dataframe|numpy.DataFrame|
 
 <a name="updateService"></a>
 
