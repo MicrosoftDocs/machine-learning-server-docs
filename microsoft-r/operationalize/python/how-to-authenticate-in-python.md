@@ -87,7 +87,7 @@ from azureml.deploy.server import MLServer
 HOST = '{{YOUR_HOST_ENDPOINT}}'
 
 # Pass in credentials for the AAD context as a dictionary. 
-# Omit username and password if you want to be prompted for a login. 
+# Omit username & password to use ADAL to authenticate. 
 context = {
     'authuri': 'https://login.windows.net',
     'tenant': '{{AAD_DOMAIN}}',
@@ -100,6 +100,8 @@ context = {
 client = DeployClient(HOST, use=MLServer, auth=context)
 ```
 
+If you do not know your tenant id, clientid, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory). This code calls the `/user/login` API and requires a username and password. 
+
 |Argument|Description|
 |--- | --- |
 |host endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  This endpoint is the SIGN-ON URL value from the web application|
@@ -107,12 +109,28 @@ client = DeployClient(HOST, use=MLServer, auth=context)
 |tenant|The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.|
 |clientid|The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.|
 |resource|The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the `Audience` in the configuration file.|
-|username|If NULL, user is prompted to enter username \<username>@\<AAD-account-domain>. If you prefer not to provide the username/password in your script, you are prompted for it at runtime with a device code instead. Enter that code at https://aka.ms/devicelogin to complete the authentication. |
+|username|If NULL, user is prompted to enter username \<username>@\<AAD-account-domain>. |
 |password|If NULL, user is prompted to enter password|
 
->[!NOTE]
->If you do not know your tenant id, clientid, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory). This code calls the `/user/login` API and requires a username and password. 
+**Alternatives to putting the username and password in the script**
 
+If you omit the username and password from the dictionary for the AAD context, then you can either:
+
++ Get a device code to complete authentication and token creation via Azure Active Directory Authentication Libraries (ADAL). Enter that code at https://aka.ms/devicelogin to complete the authentication. 
+
++ Programmatically authenticate using a call back. Use this code like this: 
+  ```
+  def callback_fn(code):
+      print(code)
+
+  context = {
+      'authuri': 'https://login.windows.net',
+      'tenant': '{{AAD_DOMAIN}}',
+      'clientid': '{{NATIVE_APP_CLIENT_ID}}',
+      'resource': '{{WEB_APP_CLIENT_ID}}',
+      'user_code_callback': callback_fn 
+  }
+  ```
 
 ## Access tokens
 
