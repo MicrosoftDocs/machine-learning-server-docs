@@ -55,11 +55,6 @@ The example for this quickstart is stored in a Jupyter notebook. This notebook f
 
 This example walks through the deployment of a Python model as a web service hosted in Machine Learning Server. We will build a simple linear model using the [rx_lin_mod](../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server or [locally](../../install/python-libraries-interpreter.md). This package requires a connection to Machine Learning Server.  
 
->[!IMPORTANT]
->Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-in-python.md).
-
-[**Try it out. Download the Jupyter notebook**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
-
 The notebook example walks you through:
 + Create and run a linear model locally
 + Authenticate with Machine Learning Server
@@ -69,6 +64,12 @@ The notebook example walks you through:
 + Retrieve a web service object for consumption
 + Delete a service
 
+
+### &#9658; [**Download the Jupyter notebook to try it out**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
+
+
+>[!IMPORTANT]
+>Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-in-python.md).
 
 ## Next steps
 
