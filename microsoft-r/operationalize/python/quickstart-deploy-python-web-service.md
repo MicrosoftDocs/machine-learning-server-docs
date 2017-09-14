@@ -55,7 +55,7 @@ The example for this quickstart is stored in a Jupyter notebook. This notebook f
 
 This example walks through the deployment of a Python model as a web service hosted in Machine Learning Server. We will build a simple linear model using the [rx_lin_mod](../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server or [locally](../../install/python-libraries-interpreter.md). This package requires a connection to Machine Learning Server.  
 
-The notebook example walks you through:
+The notebook example walks you through how to:
 + Create and run a linear model locally
 + Authenticate with Machine Learning Server
 + Publish the model as a Python web service on Machine Learning Server
