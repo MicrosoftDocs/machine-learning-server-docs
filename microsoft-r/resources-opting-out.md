@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Opting out of usage data collection - Machine Learning Server | Microsoft Docs"
-description: "Learn how to turn off telemetry data collection on Microsoft R Server and R Client using the `rxPrivacyControl` function in RevoScaleR."
+description: "Learn how to turn off telemetry data collection on Machine Learning Server, Microsoft R Server and R Client using the rxPrivacyControl function in RevoScaleR or rx-privacy-control function in revoscalepy."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,31 +22,42 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Opting out of usage data collection (Microsoft R)
+# Opting out of usage data collection (Machine Learning Server and R Server)
 
-**Applies to:** version 9.0.1 and later
+**Applies to:** version 9.x and later
 
 By default, telemetry data is collected during your usage of Microsoft R Server and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. Please see the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
 
-To turn data collection off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
+To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler/rxprivacycontrol.md) from [RevoScaleR](r-reference/revoscaler/revoscaler.md) or [rx-privacy-control](python-reference/revoscalepy/rx-privacy-control.md) from [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md).
 
 ## Version Requirements
 
-To verify server version is 9.0.1 or later (or 3.3.2 for R Client), open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
+Privacy controls are in newer versions of the server. To verify server version is 9.x or later (or 3.3.x for R Client), open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
 
     > print(Revo.version)
 
 ## Permission Requirements
 
-Opting out of telemetry requires administrator rights. The instructions below explain how to run RGui.exe as an administrator.
+Opting out of telemetry requires administrator rights. The instructions below explain how to run console applications as an administrator.
 
-As an administrator, running the command `rxPrivacyControl(TRUE)` will permanently change the setting to TRUE, and `rxPrivacyControl(FALSE)` will permanently change the setting to FALSE. There is no user-facing way to change the setting for a single session.
+As an administrator, running the R command `rxPrivacyControl(TRUE)` will permanently change the setting to TRUE, and `rxPrivacyControl(FALSE)` will permanently change the setting to FALSE. There is no user-facing way to change the setting for a single session.
 
 Without a parameter, running `rxPrivacyControl()` returns the current setting. Similarly, if you are not an administrator, `rxPrivacyControl()` returns just the current setting.
 
-## How to opt out
+## How to opt out (Python)
+
+The revoscalepy package providing `rx-privacy-control` is installed when you add Python support to Machine Learning Server 9.2.1. 
+
+1. Start a Python session.
+2. Import revoscalepy
+3. Type `rx-privacy-control` to return the current value.
+4. Type `rx-privacy-control(FALSE)`to turn off telemetry data collection.
+
+## How to opt out (R)
 
 The RevoScaleR package providing `rxPrivacyControl` is installed and loaded in both R Client and R Server. To turn off telemetry data collection, you can use any R console application. The following steps include Rgui.exe which is available in all installations of R Server and R Client.
+
+**On Windows**
 
 1. Log in to the computer as an administrator.
 2. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.

@@ -28,10 +28,10 @@ Machine Learning Server for Windows runs machine learning and data mining soluti
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
-The installation path for Machine Learning Server is new. If R Server 9.x is present, Machine Learning 9.2.1 is installed side-by-side at \Program Files\Microsoft\ML Server. We recommend uninstalling the previous version of R Server to reduce overhead. Because 9.2.1 is backward compatible, it is not necessary to have both.
+The installation path for Machine Learning Server is new: \Program Files\Microsoft\ML Server. However, if R Server 9.x is present, Machine Learning 9.2.1 upgrades R Server to the new version.
 
 > [!Note]
-> Although you can add Python support during Setup, script that calls functions from Python libraries must execute on SQL Server 2017 Machine Learning Server or Spark over Hadoop Distributed File System (HDFS).
+> Although you can add Python support during Setup, script that calls functions from Python libraries must execute on SQL Server 2017 Machine Learning Server with Python, or Machine Learning Server for Hadoop in a Spark compute context. On Windows, you can run a web service that contains your script, but that is the only methodology we offer for Python on Windows. Additional Python capability for Machine Learning Server for Windows is planned for subsequent releases.
 
 ## System requirements
 
