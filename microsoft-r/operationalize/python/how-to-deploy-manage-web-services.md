@@ -143,7 +143,7 @@ webserv = client.realtime_service(linear_model) \
 
 <a name="updateService"></a>
 
-### Update service
+## Update web services
 
 To change a web service after you've published it while retaining the same name and version, use .redeploy instead of .deploy. 
 
@@ -204,7 +204,7 @@ client.delete_service(cars_model, version = "1.0")
 If it is successful, it returns the success status  _"True"_ If it fails for any reason, then it stops execution with error message.
 
 
-## Permissions for managing web services
+## Permissions on web services
 
 Out-of-the-box, any authenticated Machine Learning Server user can:
 + Update and delete web services they have published
@@ -215,7 +215,7 @@ By default, all web service operations are available to authenticated users. Des
 
 <a name="versioning"></a>
 
-## Versioning your services
+## Version your services
 
 Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services. Versions help the users consuming your service to easily identify it. 
 
@@ -224,7 +224,7 @@ At publish time, you can specify an alphanumeric string that is meaningful to th
 If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by Machine Learning Server. These GUID version numbers are harder to remember by the users consuming your services and are therefore less desirable. 
 
 
-## Session snapshots
+## Use session snapshots
 
 Create a session snapshot of this Python session so this environment can be saved in the web service and reproduced at consume time. You can only use a session snapshot that you've created. No one else can use your snapshots to publish a service.
 
