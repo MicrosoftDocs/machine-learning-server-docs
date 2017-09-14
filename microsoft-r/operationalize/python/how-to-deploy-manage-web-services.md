@@ -122,13 +122,12 @@ After you've authenticated, you can publish as a web service. Publishing returns
 # Give it a version of '1.0'
 # Assign the service to 'service' variable
 service = client.service(cars_model)\
-        .version("1.0")\
+        .version('1.0')\
         .code_fn(manualTransmission, init)\
         .inputs(hp=float, wt=float)\
         .outputs(answer=pd.DataFrame)\
         .models(cars_model=cars_model)\
         .description('My first python model')\
-        .artifacts(['answer.csv', 'image.png'])\
         .deploy()
 ```
 
@@ -149,7 +148,7 @@ s_model = rx_serialize_model(model, realtime_scoring_only=True)
 webserv = client.realtime_service(linear_model) \
         .version('1.0') \
         .serialized_model(s_model) \
-        .description("this is a realtime model") \
+        .description('this is a realtime model') \
         .deploy()
 ```
 
