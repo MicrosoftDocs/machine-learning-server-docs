@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Publish and consume Python web services - Machine Learning Server | Microsoft Docs"
+title: "Connect to Machine Learning Server in Python with azureml-model-management-sdk - Machine Learning Server | Microsoft Docs"
 description: "Publish and consume Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,9 +24,128 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Publish and consume Python web services
+# Authenticate with Machine Learning Server in Python with azureml-model-management-sdk
 
-**Applies to:  SQL Server 2017 CTP 2.0 (Public Preview)**
+**Applies to: Machine Learning Server 9.2**
+
+The [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) package, delivered with Machine Learning Server and provides functions for publishing and managing an R web service that is backed by the Python code block or script you provided.  
+
+
+## Authentication
+
+This section describes how to authenticate to Machine Learning Server on-premises or in the cloud using azureml-model-management-sdk.
+
+In Machine Learning Server, every API call between the Web server and client must be authenticated. The azureml-model-management-sdk functions, which place API calls on your behalf, are no different. Authentication of user identity is handled via Active Directory. Machine Learning Server never stores or manages usernames and passwords.
+
+By default, all azureml-model-management-sdk operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. 
+
+azureml-model-management-sdk provides a client that supports several ways of authenticating against the Machine Learning Server. 
+
+
+The function you use depends on the [type of authentication and deployment in your organization](configure-authentication.md). 
+
+### On premises authentication
+
+Use this approach if you are:
++ authenticating using Active Directory server on your network
++ using the [default administrator account](../configure-authentication.md#local) 
+
+```Python 
+# Import the DeployClient and MLServer classes from 
+# the azureml-model-management-sdk package so you can 
+# connect to Machine Learning Server (use=MLServer).
+
+from azureml.deploy import DeployClient
+from azureml.deploy.server import MLServer
+
+# Define the location of the Machine Learning Server
+# And provide your username and password
+HOST = '{{https://YOUR_HOST_ENDPOINT}}'
+context = ('{{YOUR_USERNAME}}', '{{YOUR_PASSWORD}}')
+client = DeployClient(HOST, use=MLServer, auth=context)
+```
+
+|Argument|Description|
+|--- | --- |
+|host endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](../configure-use-admin-utility.md#launch).|
+|username|If NULL, user is prompted to enter your AD or [local Machine Learning Server](../configure-authentication.md#local) username|
+|password|If NULL, user is prompted to enter password|
+
+If you do not know your connection settings, contact your administrator.
+
+This code calls `/user/login` API, which requires a username and password. 
+
+
+### Cloud authentication (AAD)
+
+Use this approach if you are authenticating using Azure Active Directory in the cloud.
+
+```Python 
+# First, import the DeployClient and MLServer classes from 
+# the azureml-model-management-sdk package so you can 
+# connect to Machine Learning Server (use=MLServer).
+
+from azureml.deploy import DeployClient
+from azureml.deploy.server import MLServer
+
+# Define the endpoint of the host Machine Learning Server
+HOST = '{{YOUR_HOST_ENDPOINT}}'
+
+# Pass in credentials for the AAD context as a dictionary 
+context = {
+    'authuri': 'https://login.windows.net',
+    'tenant': '{{AAD_DOMAIN}}',
+    'clientid': '{{NATIVE_APP_CLIENT_ID}}',
+    'resource': '{{WEB_APP_CLIENT_ID}}',
+    'username': '{{YOUR_USERNAME}}',  
+    'password': '{{YOUR_PASSWORD}}' 
+}
+​
+client = DeployClient(HOST, use=MLServer, auth=context)
+```
+
+|Argument|Description|
+|--- | --- |
+|host endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  This endpoint is the SIGN-ON URL value from the web application|
+|authuri|The URI of the authentication service for Azure Active Directory.|
+|tenant|The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.|
+|clientid|The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.|
+|resource|The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the `Audience` in the configuration file.|
+|username|If NULL, user is prompted to enter username \<username>@<AAD-account-domain>. If you prefer not to provide the username/password in your script, you are prompted for it at runtime with a device code instead. You must enter that code at https://aka.ms/devicelogin to complete the authentication. |
+|password|If NULL, user is prompted to enter password|
+
+>[!NOTE]
+>If you do not know your `tenant` id, `clientid`, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory). 
+
+
+
+<br/>
+
+### Access tokens
+
+After you authenticate with Active Directory or Azure Active Directory, an [access token](../how-to-manage-access-tokens.md) is issued. This access token is then passed in the request header of every subsequent request. Once authenticated, the user does not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. 
+
+Keep in mind that each API call and every azureml-model-management-sdk function requires authentication with Machine Learning Server. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned. 
+
+
+
+
+
+
+
+
+
+
+Initiate DeployClient and Provide Authentication
+The Client supports several ways of authenticating against the ML Server. Below, we are going to demonstrate examples using" Azure Active Directory AAD (username/password) and Azure Active Directory AAD (device code). Please fill your own credentials into the corresponding field.
+
+Below, we are going to demonstrate examples using" Azure Active Directory AAD (username/password) and Azure Active Directory AAD (device code). Please fill your own credentials into the corresponding field.
+
+
+
+
+
+
 
 This article is for data scientists who wants to learn how to publish Python code/models as web services hosted in R Server and how to consume them. This article assumes you are proficient in Python.
 
@@ -53,54 +172,5 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
    **AD/LDAP or 'admin' account authentication**
 
    You must call the `POST /login` API in order to authenticate. You need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server issues you a [bearer/access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, contact your administrator.
-   ```python
-   #Using client library generated from Autorest
-   #Create client instance and point it at an R Server. 
-   #In this case, R Server is local.
-   client = deployrclient.DeployRClient("http://localhost:12800")
 
-   #Define the login request and provide credentials. 
-   #Update values with the connection parameters from your admin.
-   login_request = deployrclient.models.LoginRequest("<<your-username>>","<<your-password>>")
-   #Make a call to the /login API. 
-   #Store the returned an access token in a variable.
-   token_response = client.login(login_request)
-   ```
-
-   **Azure Active Directory (AAD) authentication**
-
-   You must pass the AAD credentials, authority, and client ID. In turn, AAD issues [the `Bearer` access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, contact your administrator.
-   ```python
-   #Import the AAD authentication library
-   import adal
-
-   #Define the login request and provide credentials. 
-   #Use the AAD connection parameters provided by your admin.
-   url = "http://localhost:12800"
-   authuri = https://login.windows.net,
-   tenantid = "<<AAD_DOMAIN>>", 
-   clientid = "<<NATIVE_APP_CLIENT_ID>>", 
-   resource = "<<WEB_APP_CLIENT_ID>>", 
-
-   #Acquire authentication token using AAD Device Code Login
-   context = adal.AuthenticationContext(authuri+'/'+tenantid, api_version=None)
-   code = context.acquire_user_code(resource, clientid)
-   print(code['message'])
-   token = context.acquire_token_with_device_code(resource, code, clientid)
-   #The authentication code returned must be entered at https://aka.ms/devicelogin 
-   ```     
-
-1. Add the `Bearer` access token and check that R Server is currently running.  This token was returned during authentication and **must be included in every subsequent request header**. This example uses a client library generated by Autorest.
-
-   >[!IMPORTANT]
-   >Every API call must be authenticated. Therefore, remember to include headers with tokens to every single request.
-
-   ```python
-   #Add the returned access token to the headers variable.
-   headers = {"Authorization": "Bearer {0}".format(token_response.access_token)}
-
-   #Verify that the server is running.
-   #Remember to include `headers` in every request!
-   status_response = client.status(headers) 
-   print(status_response.status_code)
-   ```
+ 
