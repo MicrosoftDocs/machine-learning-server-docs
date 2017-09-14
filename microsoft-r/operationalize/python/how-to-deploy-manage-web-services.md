@@ -24,15 +24,15 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Publish and delete web services in Python 
+# Deploy and delete web services in Python 
 
 **Applies to: Machine Learning Server**
 
-This article is for data scientists who wants to learn how to publish and manage Python code/models as web services hosted in Machine Learning Server. This article assumes you are proficient in Python.
+This article is for data scientists who wants to learn how to deploy and manage Python code/models as web services hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
 Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and ultimately [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md).
 
-These web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).  You can also publish or interact with a web service outside of R using the [RESTful APIs](../concept-api.md), which provide direct programmatic access to a service's lifecycle.
+These web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).  You can also deploy or interact with a web service outside of R using the [RESTful APIs](../concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
 <a name="auth"></a>
 
@@ -51,11 +51,11 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 These web services offer fast execution and scoring of arbitrary Python or R code and models. They can contain code, models, and model assets. They can also take specific inputs and provide specific outputs for those users who are integrating the services inside their applications.
 
-Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any Python or R code, models, and any necessary model assets. When publishing a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
+Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any Python or R code, models, and any necessary model assets. When deploying a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
 
 While R code can come in several forms, the code and models for Python services comes in the form of a function handle. 
 
-A code example for publishing Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md).
+A code example for deploying Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md).
 
 <a name="realtime"></a>
 
@@ -72,13 +72,13 @@ Additionally, you do not need to specify inputs or outputs for realtime web serv
 
 The following functions are supported in a Python realtime service: 
 + These [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) functions: rxLogit, rxLinMod, rxBTrees, rxDTree, and rxDForest 
-+ These [MicrosoftML package](../../python-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script .
++ These [MicrosoftML package](../../python-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script.
 
-While R models are automatically serialized for realtime services, in Python you must manually serialize the model before publishing a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
+While R models are automatically serialized for realtime services, in Python you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
 
 
 
-A code example for publishing realtime services can be [found later in this article](#publishService). 
+A code example for deploying realtime services can be [found later in this article](#publishService). 
 
 
 Learn more about [R realtime services here](../how-to-deploy-web-service-publish-manage-in-r.md#realtime).
@@ -86,11 +86,13 @@ Learn more about [R realtime services here](../how-to-deploy-web-service-publish
 
 <a name="publishService"></a>
 
-## Publish web services
+## Deploy web services
 
 To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. 
 
-After you've authenticated, use publish the web service. Publishing returns an [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+Both deploy and publish are used synonymously.
+
+After you've authenticated, use publish as the web service. Publishing returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
 Example of standard web service:
 
@@ -133,13 +135,13 @@ webserv = client.realtime_service(linear_model) \
 
 ### Publishing new versions
 
-You can keep different versions of a web service. Simply update the version each time you use .deploy. (Learn more about versioning](#versioning).
+You can keep different versions of a web service. Update the version each time you use '.deploy'. [Learn more about versioning](#versioning).
 
 <a name="data-types"></a>
 
 ### Supported I/O data types
 
-The following table lists the supported data types for the input and output schemas of Python web services.
+The following table lists [the supported data types](../../python-reference/azureml-model-management-sdk/mlserver.md#deployservice) for the input and output schemas of Python web services.
 
 |I/O data types|Write as|
 |--------|-----|
@@ -155,9 +157,9 @@ The following table lists the supported data types for the input and output sche
 
 ## Update web services
 
-To change a web service after you've published it while retaining the same name and version, use .redeploy instead of .deploy. 
+To change a web service after you've published it while retaining the same name and version, use '.redeploy' instead of '.deploy'. 
 
-Also, specify what needs to change, such as the code, model, description, inputs, or outputs. When you update a service, it overwrites that named version and returns an [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+Also, specify what needs to change, such as the code, model, description, inputs, or outputs. When you update a service, it overwrites that named version and returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
 In this example, we update the service to add a description useful to people who might consume this service:
 
@@ -177,7 +179,7 @@ service = client.service(car_model)\
 
 
 >[!NOTE]
->If you want to change the name or version number, use .deploy instead and specify the new name or version number. 
+>If you want to change the name or version number, use '.deploy' instead and specify the new name or version number. 
 
 
 
@@ -201,7 +203,7 @@ If it is successful, it returns the success status  _"True"_ If it fails for any
 
 ## Permissions on web services
 
-Out-of-the-box, any authenticated Machine Learning Server user can:
+By default, any authenticated Machine Learning Server user can:
 + Update and delete web services they have published
 + Retrieve any web service object for consumption
 + Retrieve a list of any or all web services
@@ -221,9 +223,9 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 ## Use session snapshots
 
-Create a session snapshot of this Python session so this environment can be saved in the web service and reproduced at consume time. You can only use a session snapshot that you've created. No one else can use your snapshots to publish a service.
+Create a snapshot of this Python session to store this environment within a web service so it can be reproduced at consume time. You can only use a session snapshot that you've created. No one else can use your snapshots to publish a service.
 
-Session snapshots are very useful when you need a prepared environment that includes certain libraries, objects, models, files, and artifacts. Snapshots save the whole workspace and working directory. 
+Session snapshots are useful when you need environment preconfigured with certain libraries, objects, models, files, and artifacts. Snapshots save the whole workspace and working directory. 
 
 > [!NOTE] 
 > While session snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully and ensure that you keep only those workspace objects you need and purge the rest. In a session, you can use the Python `del` function or [the `deleteWorkspaceObject` API request](https://microsoft.github.io/deployr-api-docs/#delete-workspace-object) to remove unnecessary objects. 
