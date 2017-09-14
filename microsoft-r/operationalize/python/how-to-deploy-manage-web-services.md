@@ -163,7 +163,9 @@ You can keep different versions of a web service. Update the version each time y
 
 The following table lists [the supported data types](../../python-reference/azureml-model-management-sdk/mlserver.md#deployservice) for the input and output schemas of Python web services.
 
-|I/O data types|Write as|
+You can write these as a reference `bool` or a string `'bool'`.
+
+|I/O data types|In Python|
 |--------|-----|
 |Float|float|
 |Integer|int|
