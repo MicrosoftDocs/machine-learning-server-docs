@@ -32,7 +32,7 @@ This article is for data scientists who wants to learn how to deploy and manage 
 
 Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and ultimately [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime.
 
-These web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).  You can also deploy or interact with a web service outside of R using the [RESTful APIs](../concept-api.md), which provide direct programmatic access to a service's lifecycle.
+These web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).  You can also deploy or interact with a web service outside of Python using the [RESTful APIs](../concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
 <a name="auth"></a>
 
@@ -53,7 +53,8 @@ These web services offer fast execution and scoring of arbitrary Python or R cod
 
 Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any Python or R code, models, and any necessary model assets. When deploying a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
 
-While R code can come in several forms, the code and models for Python services comes in the form of a function handle. 
+In Python, you can define your code in the form of a function or a string, such as
+`code_fn=(run, init)` or `code_str=(“run”, “init”)`.
 
 A full code example for deploying Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md). A snippet of the deploy function can be [seen here](#deploy-example).
 
@@ -65,7 +66,9 @@ Once you've built a predictive model, in many cases the next step is to operatio
 
 Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, no additional resources or time is spent spinning up a session for each call. Additionally, since the model is cached in memory, it is only loaded once. 
 
-Additionally, you do not need to specify inputs or outputs for realtime web services. Dataframe inputs and outputs are assumed automatically.
+For realtime services, you do **not** need to specify:
++ inputs and outputs (dataframes are assumed)
++ code (only serialized models are supported)
 
 A code example for deploying realtime services can be [found later in this article](#deploy-example). 
 
@@ -128,6 +131,7 @@ service = client.service(cars_model)\
         .artifacts(['answer.csv', 'image.png'])\
         .deploy()
 ```
+
 
 **Example: publish a realtime service**
 
