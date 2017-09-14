@@ -40,7 +40,7 @@ For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.m
 |   |   |
 | - | - |
 |Operating Systems|64-bit versions of Microsoft Windows 7, 8.1, and 10|
-|Free disk space|600 MB recommended, after installation of all prerequisites<br>If pretrained models are installed, 1.2 GB is recommended|
+|Free disk space|600 MB recommended, after installation of all prerequisites<br>If pre-trained models are installed, 1.2 GB is recommended|
 |Available RAM|4+ GB recommended|
 |Internet access|Needed to download R Client and any dependencies|
 
@@ -69,7 +69,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Review the components that are installed as part of Microsoft R Client. 
     
-   While most are required, you can choose to add additional components such as [**pretrained models**](../install/microsoftml-install-pretrained-models.md). 
+   While most are required, you can choose to add additional components such as [**pre-trained models**](../install/microsoftml-install-pretrained-models.md). 
 
 1. Accept the Microsoft R Client license terms.
 
@@ -106,7 +106,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
    + Review the components that are installed as part of Microsoft R Client. 
     
-     While most are required, you can choose to add additional components such as [**pretrained models**](../install/microsoftml-install-pretrained-models.md). 
+     While most are required, you can choose to add additional components such as [**pre-trained models**](../install/microsoftml-install-pretrained-models.md). 
 
    + Accept the Microsoft R Client license terms.
 
