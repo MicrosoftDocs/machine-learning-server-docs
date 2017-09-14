@@ -67,12 +67,12 @@ Realtime web services offer even lower latency and better load to produce result
 
 Additionally, you do not need to specify inputs or outputs for realtime web services. Data.frame inputs and outputs are assumed automatically.
 
-**In Python, this type of web takes only models created with **supported functions** **and does not support arbitrary code.
+In Python, this type of web takes only models created with **supported functions** **and does not support arbitrary code.
 
 The following functions are supported in a Python realtime service: 
-+ These [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) functions: rxLogit, rxLinMod, rxBTrees, rxDTree, and rxDForest 
++ These [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) functions: rx_logit, rx_lin_mod, rx_btrees, rx_dtree, and rx_dforest 
 
-+ These [MicrosoftML package](../../python-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script.
++ These [MicrosoftML package](../../python-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: rx_fast_trees, rx_fast_forest, rx_logistic_regression, rx_oneclass_svm, rx_neural_network, rx_fast_linear, featurize_text, concat, categorical, categorical_hash, featurize_image, get_sentiment, load_image, resize_image, extract_pixels, select_columns, and drop_columns.
 
 A code example for deploying realtime services can be [found later in this article](#deploy-example). 
 
