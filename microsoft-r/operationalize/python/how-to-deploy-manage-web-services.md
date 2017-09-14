@@ -86,7 +86,7 @@ While R models are automatically serialized for realtime services, you must manu
 
 <a name="publishService"></a>
 
-## Publish a web service
+## Publish web services
 
 
 To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. 
@@ -202,23 +202,6 @@ client.delete_service(cars_model, version = "1.0")
 ```
 
 If it is successful, it returns the success status  _"True"_ If it fails for any reason, then it stops execution with error message.
-
-
-
-
-
-## Publish-to-consume workflow
-
-The workflow from publishing and consuming a Python web service is as follows:
-
-1. Fulfill the [prerequisite](#prereq) of having a Python client library generated from the core API swagger document.
-1. Add authentication and header logic to your Python script.
-1. Create a Python session, prepare the environment, and create a snapshot to preserve the environment.
-1. Publish the web service and embed this snapshot.
-1. Try out the web service by consuming it in your session.
-1. Manage these services.
-
-
 
 
 ## Permissions for managing web services
