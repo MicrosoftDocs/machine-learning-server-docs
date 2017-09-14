@@ -38,6 +38,10 @@ The **microsoftml** module is a collection of Python functions used in machine l
 
 The **microsoftml** module is installed as part of Microsoft Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **microsoftml**, but the script must run on a computer having either Microsoft Machine Learning Server or SQL Server Machine Learning Server with Python.
 
+### In a Spark compute context
+
+In a [RxSpark](RxSpark.md) compute context, the data sources used by **microsoftml** are created using [revoscalepy](../revoscalepy/revoscalepy-package.md) data sources for Spark. This is a hard dependency. Plan on using both libraries together.
+
 ### In a SQL Server compute context
 
 There are two primary use cases for this release of SQL Server Machine Learning Server: 

@@ -28,10 +28,10 @@ Machine Learning Server for Windows runs machine learning and data mining soluti
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
-The installation path for Machine Learning Server is new: \Program Files\Microsoft\ML Server. However, if R Server 9.x is present, Machine Learning 9.2.1 upgrades R Server to the new version.
+The installation path for Machine Learning Server is new: \Program Files\Microsoft\ML Server. However, if R Server 9.x is present, Machine Learning Server 9.2.1 upgrades R Server to the new version. There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
 > [!Note]
-> Although you can add Python support during Setup, script that calls functions from Python libraries must execute on SQL Server 2017 Machine Learning Server with Python, or Machine Learning Server for Hadoop in a Spark compute context. On Windows, you can run a web service that contains your script, but that is the only methodology we offer for Python on Windows. Additional Python capability for Machine Learning Server for Windows is planned for subsequent releases.
+> Although you can add Python support during Setup, script that calls functions from Python libraries must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark compute context. On Windows, you can run a web service that contains Python script, but web service execution is the only methodology we offer for Python on Windows in the 9.2.1 release. Additional capability for Python sessions and direct execution on Machine Learning Server for Windows is coming in subsequent releases.
 
 ## System requirements
 
@@ -69,18 +69,20 @@ You can get the zipped installation file from one of the following download site
 
 ### 2. Run Setup
 
+The setup wizard installs, upgrades, and uninstalls all in one workflow.
+
 1. In the Downloads folder, right-click to extract the contents of zipped executable.
 2. Double-click **ServerSetup.exe** to start the wizard.
-3. In Configure installation, choose components to install. Required components are listed, but not configurable. Components include:
+3. In Configure installation, choose components to install. **If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls R Server.** Required components are listed, but not configurable. Components that you can select for install or uninstall include:
     + R Server (Standalone)
-    + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection (install with R or Python, but not as a standalone component)
+    + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection (install the models with R or Python, but not as a standalone component)
     + Python
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open, Anaconda, and Python.
 5. Optionally, change the home directory for Machine Learning Server.
 6. At the end of the wizard, click **Install** to run setup.
 
 > [!NOTE]
-> By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature off, use the RevoScaleR function `rxPrivacyControl` or the revoscalepy function `rx-privacy0control`. To turn it back on, change the setting to `TRUE`. For more information, see [Opting out of data collection](../resources-opting-out.md).
+> By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature off, use the RevoScaleR function `rxPrivacyControl` or the revoscalepy function `rx-privacy-control`. To turn it back on, change the setting to `TRUE`. For more information, see [Opting out of data collection](../resources-opting-out.md).
 
 ### 3. Check log files
 

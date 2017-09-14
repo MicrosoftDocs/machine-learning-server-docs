@@ -77,15 +77,17 @@ This section lists the functions by category to give you an idea of how each one
 
 ## 2-Data source functions
 
+Data sources are used by [microsoftml functions](../microsoftml/microsoftml-package.md) as well as **revoscalepy**.
+
 | Function | Compute Context | Description | 
 |----------|-----------------|-------------|
 |[RxDataSource](RxDataSource.md) | All | Base class for all revoscalepy data sources.|
 |[RxHdfsFileSystem](RxHdfsFileSystem.md) | [RxSpark](RxSpark.md) | Data source is accessed through HDFS instead of Linux. |
 |[RxNativeFileSystem](RxNativeFileSystem.md) | [RxSpark](RxSpark.md) | Data source is accessed through Linux instead of HDFS. |
 |[RxHiveData](RxHiveData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Hive data file.|
-|[RxTextData](RxTextData.md) | ?? | Generates a data source object from a text data file.|
+|[RxTextData](RxTextData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a text data file.|
 |[RxXdfData](RxXdfData.md) | All | Generates a data source object from an XDF data source.|
-|[RxOdbcData](RxOdbcData.md) | ?? | Generates a data source object from an ODBC data source.|
+|[RxOdbcData](RxOdbcData.md) | All | Generates a data source object from an ODBC data source.|
 |[RxOrcData](RxOrcData.md) | [RxSpark](RxSpark.md)| Generates a data source object from an Ord data file.|
 |[RxParquetData](RxParquetData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Parquet data file.|
 |[RxSparkData](RxSparkData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Spark data source.|
