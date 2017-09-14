@@ -51,8 +51,8 @@ from azureml.deploy import DeployClient
 from azureml.deploy.server import MLServer
 
 # Define the location of the Machine Learning Server
-# And provide your username and password
 HOST = '{{https://YOUR_HOST_ENDPOINT}}'
+# And provide your username and password as a Python tuple
 context = ('{{YOUR_USERNAME}}', '{{YOUR_PASSWORD}}')
 client = DeployClient(HOST, use=MLServer, auth=context)
 ```
@@ -60,8 +60,8 @@ client = DeployClient(HOST, use=MLServer, auth=context)
 |Argument|Description|
 |--- | --- |
 |host endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this endpoint on the first screen when you [launch the administration utility](../configure-use-admin-utility.md#launch).|
-|username|If NULL, user is prompted to enter your AD or [local Machine Learning Server](../configure-authentication.md#local) username|
-|password|If NULL, user is prompted to enter password|
+|username|Enter your AD or [local Machine Learning Server](../configure-authentication.md#local) username. Username is required.|
+|password|Enter the password. This value is required.|
 
 >[!NOTE]
 >If you do not know your connection settings, contact your administrator. This code calls the `/user/login` API and requires a username and password. 
