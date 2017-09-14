@@ -30,7 +30,7 @@ Machine Learning Server provides custom Python packages for training, transforma
 + [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md)
 + [microsoftml](../python-reference/microsoftml/microsoftml-package.md)
 + [azureml-model-management-sdk](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
-+ [Pretrained models](microsoftml-install-pretrained-models.md)
++ [pre-trained models](microsoftml-install-pretrained-models.md)
 
 You can also install a Python interpreter along with these custom packages locally on your machine, and:
 

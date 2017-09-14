@@ -33,7 +33,7 @@ Machine Learning Server is available on a number of [platforms](r-server-install
 + [Install on Linux](machine-learning-server-linux-install.md)    
 + [Install on Hadoop](machine-learning-server-hadoop-install.md)    
 + [Configure server to operationalize](../operationalize/configure-start-for-administrators.md)    
-+ [Add Pretrained models](microsoftml-install-pretrained-models.md)    
++ [Add pre-trained models](microsoftml-install-pretrained-models.md)    
 + [Provision on the cloud](machine-learning-server-in-the-cloud.md)    
 
 ## Local Tools

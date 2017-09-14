@@ -53,7 +53,7 @@ The following additional components are included in Setup and required for Machi
 
 ## How to install
 
-This section walks you through aMachine Learning Server 9.2.1 deployment using the standalone Windows installer. Under these instructions, your installation will be licensed and serviced as a SQL Server 2017 feature.
+This section walks you through a Machine Learning Server 9.2.1 deployment using the standalone Windows installer. Under these instructions, your installation will be licensed and serviced as a SQL Server add-on feature.
 
 ### 1. Download Machine Learning Server installer
 
@@ -106,7 +106,7 @@ As a verification step, connect to each application and run a script or function
 1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
 2. Double-click **Python**.
 3. At the command line, type `help()` to open interactive help.
-4. Type `modules revoscalepy`, followed by `modules microsoftml` to print the function list for each module.
+4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
 
 **For R**
 

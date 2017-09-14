@@ -24,9 +24,9 @@ ms.technology: "r-server"
 
 # Python samples for MicrosoftML
 
-MicrosoftML samples that use the Python language are described and linked here to help you get started quickly with Microsoft Machine Learning Server. The sentiment analysis and image featurization quickstarts both use pretrained models. 
+MicrosoftML samples that use the Python language are described and linked here to help you get started quickly with Microsoft Machine Learning Server. The sentiment analysis and image featurization quickstarts both use pre-trained models. 
 
-Pre-trained models are installed through setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page. For details, see [How to install and deploy pretrained machine learning models with MicrosoftML](../install/microsoftml-install-pretrained-models.md).
+Pre-trained models are installed through setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page. For details, see [How to install and deploy pre-trained machine learning models with MicrosoftML](../install/microsoftml-install-pre-trained-models.md).
 
 ## Sentiment analysis
 
@@ -37,7 +37,7 @@ More specifically, the example provided shows how to use the [`featurize_text`](
 
 ## Image featurization
 
-Image featurization is the process that takes an image as input and produces a numeric vector (aka feature vector) that represents key characteristics (features) of that image. The features are extracted with an [`featurize_image`](../python-reference/microsoftml/featurize-image.md) transform that runs the image data through one of several available pretrained Deep Neural Net (DNN) models. Two samples are provided in the [MicrosoftML GitHub repo](link TBD) that show how to use these DNN models.
+Image featurization is the process that takes an image as input and produces a numeric vector (aka feature vector) that represents key characteristics (features) of that image. The features are extracted with an [`featurize_image`](../python-reference/microsoftml/featurize-image.md) transform that runs the image data through one of several available pre-trained Deep Neural Net (DNN) models. Two samples are provided in the [MicrosoftML GitHub repo](link TBD) that show how to use these DNN models.
 
 - **Sample 1: Find similar images**: Here is the scenario this sample addresses: You have a catalog of images in a repository. When you get a new image, you want to find the image from your catalog that most closely matches this new image.
 - **Sample 2: Train a model to classify images**: Here is the scenario this sample addresses: train a model to classify or recognize the type of an image using labeled observations from a training set provided. Specifically, this sample trains a multiclass linear model using the [`rx_logistic_regression`](../python-reference/microsoftml/rx-logistic-regression.md) algorithm to distinguish between fish, helicopter and fighter jet images. The multiclass training task uses the feature vectors of the images from the training set to learn how to classify these images.

@@ -49,9 +49,9 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 
 | Parameter | Description |
 |-----------|-------------|
-| `/install` | Runs RServerSetup.exe in install mode, used to add R Server or the [pretrained machine learning models](microsoftml-install-pretrained-models.md)|
+| `/install` | Runs RServerSetup.exe in install mode, used to add R Server or the [pre-trained machine learning models](microsoftml-install-pretrained-models.md)|
 | `/uninstall` | Removes an existing installation of R Server. |
-| `/modify` | Runs RServerSetup.exe in modify mode. Setup looks for an existing installation of R Server 9.1 and gives you options for changing an installation (for example, you could add the pretrained models, or uninstall the server). Use this option if you want to rerun (or repair) an installation. |
+| `/modify` | Runs RServerSetup.exe in modify mode. Setup looks for an existing installation of R Server 9.1 and gives you options for changing an installation (for example, you could add the pre-trained models, or uninstall the server). Use this option if you want to rerun (or repair) an installation. |
 
  
 **Install Options**
@@ -62,22 +62,22 @@ You can run RServerSetup.exe from the command line with options to expose or hid
 | `/installdir=""` | Specifies the installation directory. By default, this is C:\Program Files\Microsoft\R Server\R_SERVER. |
 | `/cachedir=""` | A download location for the .cab files. By default, setup uses `%temp%` for the local admin user. Assuming an online installation scenario, you can set this parameter to have setup download the .cabs to the folder you specify. |
 | `/mediadir=""` | The .cab file location setup uses to find .cab files in an offline installation. By default, setup uses `%temp%` for local admin. |
-| `/models` | Adds the [pretrained machine learning models](microsoftml-install-pretrained-models.md). Use with `/install`.|
+| `/models` | Adds the [pre-trained machine learning models](microsoftml-install-pretrained-models.md). Use with `/install`.|
 
 
 ## Default installation
 
 The default installation adds Microsoft R Server (MRS) and its required components: Microsoft R Open (MRO) and .NET Core used for operationalizing analytics and machine learning. The command line equivalent of a double-click invocation of RServerSetup.exe is `rserversetup.exe /install /full`.
 
-A default installation includes the MicrosoftML package, but not the pretrained models. You must explicitly add `/models` to an installation to add this feature.
+A default installation includes the MicrosoftML package, but not the pre-trained models. You must explicitly add `/models` to an installation to add this feature.
 
 ## Examples
 
-1. Run setup in unattended mode with no prompts or user interaction to install all features, including the pretrained models.
+1. Run setup in unattended mode with no prompts or user interaction to install all features, including the pre-trained models.
 
    `rserversetup.exe /quiet /models`
 
-2. Add the pretrained machine learning models to an existing installation. The pretrained models are inserted into the MicrosoftML package. Once installed, you cannot incrementally remove them. Removal will require uninstall and reinstall of R Server. 
+2. Add the pre-trained machine learning models to an existing installation. The pre-trained models are inserted into the MicrosoftML package. Once installed, you cannot incrementally remove them. Removal will require uninstall and reinstall of R Server. 
 
    `rserversetup.exe /install /models`
 
