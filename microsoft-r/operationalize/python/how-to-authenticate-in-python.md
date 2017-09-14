@@ -30,9 +30,6 @@ ms.technology:
 
 The [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) package, delivered with Machine Learning Server and provides functions for publishing and managing an R web service that is backed by the Python code block or script you provided.  
 
-
-## Authentication
-
 This section describes how to authenticate to Machine Learning Server on-premises or in the cloud using azureml-model-management-sdk.
 
 In Machine Learning Server, every API call between the Web server and client must be authenticated. The azureml-model-management-sdk functions, which place API calls on your behalf, are no different. Authentication of user identity is handled via Active Directory. Machine Learning Server never stores or manages usernames and passwords.
@@ -44,7 +41,7 @@ azureml-model-management-sdk provides a client that supports several ways of aut
 
 The function you use depends on the [type of authentication and deployment in your organization](configure-authentication.md). 
 
-### On premises authentication
+## On premises authentication
 
 Use this approach if you are:
 + authenticating using Active Directory server on your network
@@ -76,7 +73,7 @@ If you do not know your connection settings, contact your administrator.
 This code calls `/user/login` API, which requires a username and password. 
 
 
-### Cloud authentication (AAD)
+## Cloud authentication (AAD)
 
 Use this approach if you are authenticating using Azure Active Directory in the cloud.
 
@@ -111,11 +108,11 @@ client = DeployClient(HOST, use=MLServer, auth=context)
 |tenant|The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.|
 |clientid|The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.|
 |resource|The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the `Audience` in the configuration file.|
-|username|If NULL, user is prompted to enter username \<username>@<AAD-account-domain>. If you prefer not to provide the username/password in your script, you are prompted for it at runtime with a device code instead. You must enter that code at https://aka.ms/devicelogin to complete the authentication. |
+|username|If NULL, user is prompted to enter username \<username>@\<AAD-account-domain>. If you prefer not to provide the username/password in your script, you are prompted for it at runtime with a device code instead. You must enter that code at https://aka.ms/devicelogin to complete the authentication. |
 |password|If NULL, user is prompted to enter password|
 
 >[!NOTE]
->If you do not know your `tenant` id, `clientid`, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory). 
+>If you do not know your tenant id, clientid, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory). 
 
 
 
@@ -168,9 +165,3 @@ Before you interact with the core APIs, first authenticate, get the bearer acces
    ```   
 
 1. Add the authentication logic to your application to define a connection from your local machine to R Server, provide credentials, capture the access token, add that token to the header, and use that header for all subsequent requests.  Use the authentication method defined by your R Server administrator: basic admin account, Active Directory/LDAP (AD/LDAP), or Azure Active Directory (AAD).
-
-   **AD/LDAP or 'admin' account authentication**
-
-   You must call the `POST /login` API in order to authenticate. You need to pass in the  `username` and `password` for the local administrator, or if Active Directory is enabled, pass the LDAP account information. In turn, R Server issues you a [bearer/access token](../how-to-manage-access-tokens.md). After authenticated, the user will not need to provide credentials again as long as the token is still valid, and a header is submitted with every request. If you do not know your connection settings, contact your administrator.
-
- 
