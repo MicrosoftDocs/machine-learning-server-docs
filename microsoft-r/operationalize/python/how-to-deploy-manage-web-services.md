@@ -71,6 +71,7 @@ Additionally, you do not need to specify inputs or outputs for realtime web serv
 
 The following functions are supported in a Python realtime service: 
 + These [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) functions: rxLogit, rxLinMod, rxBTrees, rxDTree, and rxDForest 
+
 + These [MicrosoftML package](../../python-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script.
 
 A code example for deploying realtime services can be [found later in this article](#deploy-example). 
@@ -93,7 +94,7 @@ After you've authenticated, use publish as the web service. Publishing returns a
 
 <a name="deploy-example"></a>
 
-Example of standard web service:
+**Example of standard web service:**
 
 ```Python
 # Publish a standard service called 'cars_model'
@@ -110,9 +111,9 @@ service = client.service(cars_model)\
         .deploy()
 ```
 
-Example of realtime service: 
+**Example of realtime service:**
 
-```R
+```Python
 # Publish a realtime service 'kyphosisService' version 'v1.0'
 # Assign service to 'realtimeApi' variable
 
