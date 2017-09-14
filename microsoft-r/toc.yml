@@ -346,7 +346,7 @@
     - name: Python
       items:
       - name: Authenticate
-        href: operationalize/python/how-to-authenticate-with-server-in-python.md
+        href: operationalize/python/how-to-authenticate-in-python.md
       - name: Deploy & manage services
         href: operationalize/python/how-to-deploy-manage-web-services.md
       - name: Find & consume services

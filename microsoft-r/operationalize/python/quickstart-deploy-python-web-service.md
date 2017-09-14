@@ -70,27 +70,27 @@ The notebook example walks you through:
 &nbsp;
 
 >[!IMPORTANT]
->Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-in-python.md).
+>Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](how-to-authenticate-in-python.md).
 
 ## Next steps
 
 After it has been deployed, the web service can be: 
 + Consumed directly in Python by another data scientist for testing purposes, for example 
 
-+ [Integrated into an application by an application developer](how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
++ [Integrated into an application by an application developer](../how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
 ## See also
 
 This section provides a quick summary of useful links for data scientists operationalizing analytics with Machine Learning Server.
 
 **Key Documents**
- + [About Operationalization](../what-is-operationalization.md)    
- + [Functions in azureml-model-management-sdk package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
+ + [About Operationalization](../../what-is-operationalization.md)    
+ + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
  + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
  + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
  + [Asynchronous batch execution of web services in Python](how-to-consume-web-service-batch.md)    
- + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    
- + [Get started for administrators](configure-start-for-administrators.md)    
+ + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)    
+ + [Get started for administrators](../configure-start-for-administrators.md)    
 
 **Support Channel**
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
