@@ -189,6 +189,8 @@
     items:
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
+    - name: Run binary classifications
+      href: python/quickstart-binary-classification-with-microsoftml.md
     - name: PySpark and revoscalepy interoperability
       href: python/quickstart-revoscalepy-pyspark.md
   - name: R
