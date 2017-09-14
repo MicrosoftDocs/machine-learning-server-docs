@@ -60,53 +60,15 @@ This example walks through the deployment of a Python model as a web service hos
 
 [**Try it out. Download the Jupyter notebook**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
 
+The notebook example walks you through:
++ Create and run a linear model locally
++ Authenticate with Machine Learning Server
++ Publish the model as a Python web service on Machine Learning Server
++ Consume the service and make a prediction
++ List all services on Machine Learning Server
++ Retrieve a web service object for consumption
++ Delete a service
 
-1. Publish the model as a web service to R Server using [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the mrsdeploy package. 
-
-   In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
-
-
-   When publishing a service, specify its name and version, the R code, the inputs, and the outputs needed for application integration as well as other parameters. 
-
-   >[!NOTE]
-   >To publish a web service while in a remote R session, carefully [review these guidelines](../../r/how-to-execute-code-remotely.md#publish-remote-session). 
-
-   ```R
-   api <- publishService(
-     "mtService",
-     code = manualTransmission,
-     model = carsModel,
-     inputs = list(hp = "numeric", wt = "numeric"),
-     outputs = list(answer = "numeric"),
-     v = "v1.0.0"
-   )
-   ```
-
-<br> 
-
-## C. Consume the service in R to test
-
-Consume the service in R directly after publishing it to verify that the results are as expected.
-
-```R
-# Print capabilities that define the service holdings: service 
-# name, version, descriptions, inputs, outputs, and the 
-# name of the function to be consumed
-print(api$capabilities())
-   
-# Consume service by calling function, `manualTransmission`
-# contained in this service
-result <- api$manualTransmission(120, 2.8)
-
-# Print response output named `answer`
-print(result$output("answer")) # 0.6418125   
-``` 
-
-The results should match the results obtained when the model was run locally earlier.
-As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](../../r/how-to-execute-code-remotely.md#diff) 
-
->[!WARNING]
->If you get an alphanumeric error code, such as `Message: b55088c4-e563-459a-8c41-dd2c625e891d`, when consuming a service, search for that code in the [compute node's log file](configure-run-diagnostics.md#logs) to reveal the full error message. 
 
 ## D. Get the Swagger-based JSON file
 

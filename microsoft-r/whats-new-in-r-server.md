@@ -29,6 +29,10 @@ Microsoft R Server is subsumed by Machine Learning Server 9.2, which is built on
 
 ## R Server 9.1
 
+Release announcement blog: https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/
+
+
+
 | Feature                | Description |
 |------------------------|----------------------|
 | MicrosoftML package | R Function library in R Server and on Apache Spark on a HDInsight cluster. <br/><br/>**Create text classification models** for problems such as sentiment analysis and support ticket classification. <br/><br/>**Train deep neural nets** with GPU acceleration in order to solve complex problems such as retail image classification and handwriting analysis. <br/><br/>**Work with high-dimensional categorical data** for scenarios like online advertising click-through prediction.<br/><br/>**Solve common machine learning tasks** such as churn prediction, loan risk analysis, and demand forecasting using state-or-the-art, fast and accurate algorithms.<br/><br/>**Train models 2x faster** than logistic regression with the Fast Linear Algorithm (SDCA). <br/><br/>**Train multilayer custom nets** on GPUs up to 8x faster with GPU acceleration for Neural Nets. <br/><br/>**Reduce training time up** to 10x while still retaining model accuracy using feature selection. |
@@ -46,6 +50,8 @@ For more information about this release, see this [blog announcement for 9.1](ht
 
 ## R Server 9.0.1
 
+Release announcement blog: https://blogs.technet.microsoft.com/machinelearning/2016/12/07/introducing-microsoft-r-server-9-0/
+ 
 This release of R Server, built on open source R 3.3.2, included new and updated packages, plus new operationalization features in the core engine. 
 
 | Feature                | Description |
@@ -67,6 +73,8 @@ The following blog post presents some of the main differences between Microsoft 
 >R Server configured to operationalize analytics is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are completely new and the data stored in the database is structured differently. 
 
 ## R Server 8.0.5
+  
+Release announcement blog: https://blogs.technet.microsoft.com/machinelearning/2016/01/12/making-r-the-enterprise-standard-for-cross-platform-analytics-both-on-premises-and-in-the-cloud/
 
 | Feature                | Description |
 |------------------------|----------------------|
