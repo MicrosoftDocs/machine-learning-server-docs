@@ -44,7 +44,7 @@ Before you begin this QuickStart, have the following ready:
 
 + An instance of [Anaconda and the azureml-model-management-sdk package installed](../../install/python-libraries-interpreter.md) on your local machine.    
 
-+ An instance of [Machine Learning Server ](../../what-is-machine-learning-server.md) installed that has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
++ An instance of [Machine Learning Server ](../../what-is-machine-learning-server.md) installed with the Python option, which has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
 
 + The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-in-python.md) in Python, deploy your analytics as web services so others can consume them. 
 
