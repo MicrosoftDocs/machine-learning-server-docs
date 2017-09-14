@@ -40,7 +40,7 @@ The **microsoftml** module is installed as part of Microsoft Machine Learning Se
 
 ### In a Spark compute context
 
-In a [RxSpark](RxSpark.md) compute context, the data sources used by **microsoftml** are created using [revoscalepy](../revoscalepy/revoscalepy-package.md) data sources for Spark. This is a hard dependency. Plan on using both libraries together.
+In a [RxSpark](../revoscalepy/RxSpark.md) compute context, the data sources used by **microsoftml** are created using [revoscalepy](../revoscalepy/revoscalepy-package.md) data sources for Spark. This is a hard dependency. Plan on using both libraries together.
 
 ### In a SQL Server compute context
 
