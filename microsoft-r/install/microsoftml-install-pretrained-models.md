@@ -62,14 +62,15 @@ For samples demonstrating use of the pre-trained models, see [Samples for Micros
 
 ## Next steps
 
-Install the models by running the setup program or installation script for the platform you are using. 
-
-**See also:**
+Install the models by running the setup program or installation script for the target platform or product: 
 
 + [Install Machine Learning Server](r-server-install.md)
 + [Install R Client on Windows](../r-client/install-on-windows.md)
 + [Install R Client on Linux](../r-client/install-on-linux.md)
 + [Install Python Client Libraries](python-libraries-interpreter.md)
+
+Review the associated function reference help:
+
 + [featurize_image (microsoftml Python)](../python-reference/microsoftml/featurize-image.md)
 + [featurize_text (microsoftml Python)](../python-reference/microsoftml/featurize-text.md)
 + [featurizeImage (MicrosoftML R)](../r-reference/microsoftml/featurizeimage.md)
