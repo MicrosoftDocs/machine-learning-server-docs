@@ -279,7 +279,7 @@ Requirements for remote execution include:
 
 This section provides a quick summary of useful links for data scientists operationalizing R analytics with Machine Learning Server.
 
->Use the table of contents to find all the guides and documentation needed by the administrator.
+>Use the table of contents to find all the documentation.
 
 **Key Documents**
  + [About Operationalization](../what-is-operationalization.md)    
@@ -288,10 +288,8 @@ This section provides a quick summary of useful links for data scientists operat
  + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)    
  + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)    
  + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)    
-
-**Other Getting Started Guides**
  + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    
- + [Administrators](configure-start-for-administrators.md)    
+ + [Get started for administrators](configure-start-for-administrators.md)    
 
 **Support Channel**
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

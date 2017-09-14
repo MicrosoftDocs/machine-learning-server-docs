@@ -70,57 +70,27 @@ The notebook example walks you through:
 + Delete a service
 
 
-## D. Get the Swagger-based JSON file
-
-Anyone can test and consume the service using its auto-generated Swagger-based JSON file. This Swagger-based JSON file is specific to a given version of a service. You can easily get this file during the same authenticated session in which you published the service. It can be downloaded to the local file system. You can get this Swagger file as long as the web service exists as described in the article "[How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)." 
-
-In this example, we executed these commands to download the Swagger-based JSON file:
-
-```R
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE) 
-``` 
-
->[!NOTE]
->[Learn how to get and share](how-to-consume-web-service-interact-in-r.md#data-scientists-share) this Swagger-based JSON file after the session ends.
-
-
-
 ## Next steps
 
 After it has been deployed, the web service can be: 
-+ [Consumed directly in R by another data scientist](how-to-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
++ Consumed directly in Python by another data scientist for testing purposes, for example 
 
 + [Integrated into an application by an application developer](how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
-
-
-## How to execute R code remotely
-
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](../../r/how-to-execute-code-remotely.md).
-
-Requirements for remote execution include:
-
-+ Configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../../r-client-get-started.md). 
-+ Obtain [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../configure-start-for-administrators.md#configure-server-for-operationalization).
-
 ## More resources
 
-This section provides a quick summary of useful links for data scientists operationalizing R analytics with R Server.
+This section provides a quick summary of useful links for data scientists operationalizing analytics with Machine Learning Server.
 
->Use the table of contents to find all the guides and documentation needed by the administrator.
+>Use the table of contents to find all the documentation.
 
 **Key Documents**
- + [About Operationalization](../../what-is-operationalization.md)    
- + [Functions in mrsdeploy package](../../r-reference/mrsdeploy/mrsdeploy-package.md)    
- + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
- + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)    
- + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)    
- + [Execute on a remote Microsoft R Server](../../r/how-to-execute-code-remotely.md)    
-
-**Other Getting Started Guides**
+ + [About Operationalization](../what-is-operationalization.md)    
+ + [Functions in azureml-model-management-sdk package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
+ + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
+ + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
+ + [Asynchronous batch execution of web services in Python](how-to-consume-web-service-batch.md)    
  + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    
- + [Administrators](configure-start-for-administrators.md)    
+ + [Get started for administrators](configure-start-for-administrators.md)    
 
 **Support Channel**
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
