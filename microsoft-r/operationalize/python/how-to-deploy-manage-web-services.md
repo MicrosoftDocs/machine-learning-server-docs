@@ -181,18 +181,14 @@ You can write these as a reference `bool` or a string `'bool'`.
 
 To change a web service after you've published it without changing its name or version, use '.redeploy' instead of '.deploy' for the service object. Then, specify the changes, such as the code, model, description, inputs, or outputs. When you update a service, it overwrites that named version and returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
-In this example, we update the service to add a description useful to people who might consume this service and use a new code function, 'manualTransmission2'.
+In this example, we update the service to add a description useful to people who might consume this service. You still have to provide the name and version to identify the service to be updated.
 
 ```Python
 # Redeploy this standard service 'cars_model' version '1.0'
-# Using a new function for the model and updated description
+# Update only what changed. Here it is the description.
 service = client.service(cars_model)\
         .version("1.0")\
-        .code_fn(manualTransmission2, init)\
-        .inputs(hp=float, wt=float)\
-        .outputs(answer=pd.DataFrame)\
-        .models(cars_model=cars_model)\
-        .description('Predict transmission type (automatic or manual)')\
+        .description('The updated description')\
         .redeploy()
 ```
 
@@ -210,11 +206,11 @@ You can call 'delete_service' on the 'DeployClient' object to delete a specific 
 ```Python
 # -- List all services to find the one to delete--
 client.list_services()
-# -- Now delete cars_model v1.0
-client.delete_service(cars_model, version = "1.0")
+# -- Now delete cars_model 1.0
+client.delete_service(’tx-service’, version=‘1.0’)
 ```
 
-If it is successful, the success status  _"True"_  is returned. If it fails, then execution stops and an error message is produced.
+If it is successful, the success status  _'True'_  is returned. If it fails, then execution stops and an error message is produced.
 
 
 ## Permissions on web services
@@ -235,24 +231,3 @@ Every time a web service is published, a version is assigned to the web service.
 At publish time, you can specify an alphanumeric string that is meaningful to those who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
 
 If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
-
-
-## Use session snapshots
-
-Create a snapshot of a Python session to store its environment within a web service so it can be reproduced at consume time. Session snapshots are useful when you need environment preconfigured with certain libraries, objects, models, files, and artifacts. Snapshots save the whole workspace and working directory. 
-
-When publishing a service, you can only use a session snapshot that you've created. No one else can use your snapshots to publish a service.
-
-While session snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully and ensure that you keep only those workspace objects you need and purge the rest. In a session, you can use the Python 'del' function or [the `deleteWorkspaceObject` API request](https://microsoft.github.io/deployr-api-docs/#delete-workspace-object) to remove unnecessary objects. 
-
-```python
-#Create a snapshot of the current session.
-response = client.create_snapshot(session_id, deployrclient.models.CreateSnapshotRequest("Iris Snapshot"), headers)
-
-#Return the snapshot ID for reference when you publish later.
-response.snapshot_id
-
-#If you forget the ID, list every snapshot to get the ID again.
-for snapshot in client.list_snapshots(headers):
-    print(snapshot)
-```

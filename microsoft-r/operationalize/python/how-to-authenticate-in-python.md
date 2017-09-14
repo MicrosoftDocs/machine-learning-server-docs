@@ -119,7 +119,7 @@ If you omit the username and password from the dictionary for the AAD context, t
 + Get a device code to complete authentication and token creation via Azure Active Directory Authentication Libraries (ADAL). Enter that code at https://aka.ms/devicelogin to complete the authentication. 
 
 + Programmatically authenticate using a call back. Use this code like this: 
-  ```
+  ```Python
   def callback_fn(code):
       print(code)
 
