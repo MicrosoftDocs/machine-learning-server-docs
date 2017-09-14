@@ -62,12 +62,13 @@ Ships in:
 
 ## How to list modules and versions
 
-To get the version of a Python module installed on your computer, start Python from the command line or open a Python IDE and execute the following commands:
+To get the version of a Python module installed on your computer, start Python and execute the following commands:
 
-1. Open interactive help: `help()`
-2. List installed modules: `modules`
-3. Import the module for which you want version information: `import revoscalepy`
-4. Get the version: `revoscalepy._version_`
+1. Double-click **Python.exe** in \Program Files\Microsoft\ML Server\PYTHON_SERVER.
+2. Open interactive help: `help()`
+3. Type the name of a module at the help prompt: help> `revoscalepy`. Help returns the name, package contents, version, and file location.
+4. List all installed modules: `modules`
+5. Import a module: `import revoscalepy`
 
 ## Note to R Users: Python naming conventions
 

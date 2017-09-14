@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 RevoScaleR and revoscalepy functions are built to leverage the processing power inherent in a clustered computing platform. On a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revolscalepy and RevoScaleR automatically use the available nodes in a cluster. 
 
-Functions listed in these articles support distributed workloads: [RevoScaleR](r/how-to-revoscaler-distributed-computing-distributed-analysis.md) | revoscalepy.
+Functions listed in these articles support distributed workloads: [RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
 
 On a single server with multiple cores, many jobs can run in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the engine of platform capabilities, your script should include an object called a [compute context](how-to-revoscaler-distributed-computing-compute-context.md) that identifies the platform.
 
@@ -62,7 +62,7 @@ The second approach is via the **RevoScaleR** function `rxExec`, which allows yo
 <a name="managing-distributed-data"></a>
 ## Managing Distributed Data
 
-In HDFS, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend *composite* .xdf files, which are specialized files designed to be managed by HDFS. For more information, see [Import HDFS > Write a composite XDF](how-to-revoscaler-data-hdfs#write-a-composite-xdf).
+In HDFS, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend *composite* .xdf files, which are specialized files designed to be managed by HDFS. For more information, see [Import HDFS > Write a composite XDF](how-to-revoscaler-data-hdfs.md#write-a-composite-xdf).
 
 ## Distributing Data with rxSplit  
 

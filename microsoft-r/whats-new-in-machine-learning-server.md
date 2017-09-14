@@ -44,7 +44,7 @@ Together, the libraries provide full-spectrum data mining: data transformation a
 
 + [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with support for [processing in parallel](python/howto-revoscalepy-parallel.md).
 
-+ [revoscalepy and pyspark interoperability](python/quickstart-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSparkConnect.md).
++ [revoscalepy and pyspark interoperability](python/quickstart-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSpark.md).
 
 + [Pre-trained models](install/microsoftml-install-pretrained-models.md) for image classification and sentiment detection articulated in Python.
 

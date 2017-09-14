@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Pre-trained machine learning models for sentiment analysis and image detection
 
-For sentiment analysis and image detection, Machine Learning Server offers two approaches for training the models: you can train the models yourself using your data, or install pre-trained models that come with training data obtained and developed by Microsoft. The advantage of pre-trained models is that you can score new content right away. 
+For sentiment analysis of text and image classification, Machine Learning Server offers two approaches for training the models: you can train the models yourself using your data, or install pre-trained models that come with training data obtained and developed by Microsoft. The advantage of pre-trained models is that you can score and classify new content right away. 
 
 + Sentiment analysis scores raw unstructured text in positive-negative terms, returning a score between 0 (negative) and 1 (positive), indicating relative sentiment.
 
@@ -32,13 +32,31 @@ For sentiment analysis and image detection, Machine Learning Server offers two a
 
 Pre-trained models are available for both R and Python development, through the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and the [microsoftml Python package](../python-reference/microsoftml/microsoftml-package.md). 
 
-## Get the pretrained models
+## Benefits of using pretrained models
 
-Pre-trained models are installed through setup as an optional component of **Machine Learning Server** or **SQL Server Machine Learning** and added to the machine learning libraries on your computer. You can also get the R version of the models through Microsoft R Client.
+Pre-trained models have been made available to support customers who need to perform tasks such as sentiment analysis or image featurization, but do not have the resources to obtain the large datasets or train a complex model. Using pre-trained models lets you get started on text and image processing most efficiently.
 
-Pre-trained models are local, added to the MicrosoftML and microsftml library, respectively, when you run setup. The files are \mxlibs\<modelname>_updated.model for Python and \mxlibs\x64\<modelname>_updated.model for R.
+Currently the models that are available are deep neural network (DNN) models for sentiment analysis and image classification. All four pretrained models were trained on CNTK. The configuration of each network was based on the following reference implementations:
 
-Be sure to install Python or R with the models. 
++ Resnet-18
++ Resnet-50
++ ResNet-101
++ AlexNet
+
+For more information about deep residual networks and their implementation using CNTK, go the [Microsoft Research](https://www.microsoft.com/research/) web site and search for these articles:
+
++ "Microsoft Researchers’ Algorithm Sets ImageNet Challenge Milestone"
++ "Microsoft Computational Network Toolkit offers most efficient distributed deep learning computational performance"
+
+## How to install the models
+
+Pre-trained models are installed through setup as an optional component of **Machine Learning Server** or [**SQL Server Machine Learning**](https://docs.microsoft.com/sql/advanced-analytics/r/install-pretrained-models-sql-server) and added to the machine learning libraries on your computer. You can also get the R version of the models through [Microsoft R Client](../r-client/what-is-microsoft-r-client.md).
+
+1. Run a Machine Learning Server setup program for your target platform: [Install Machine Learning Server](r-server-install.md).
+
+2. When specifying components to install, add at least one language (R Server or Python) and the pre-trained models. Be sure to install Python or R with the models. The models cannot be installed as a standalone component.
+
+3. After setup completes, verify the models are on your computer. Pre-trained models are local, added to the MicrosoftML and microsftml library, respectively, when you run setup. The files are \mxlibs\<modelname>_updated.model for Python and \mxlibs\x64\<modelname>_updated.model for R.
 
 For samples demonstrating use of the pre-trained models, see [Samples for MicrosoftML](../r/sample-microsoftml.md).
 
