@@ -39,7 +39,7 @@ These web services can be [consumed in Python](how-to-consume-web-service.md) by
 ## Requirements
 
 Before you can use the web service management functions in the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), you must:
-+ Have access to a Python-enabled instance of Machine Learning Server that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
++ Have access to a Python-enabled instance of Machine Learning Server that was  [properly configured](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to host web services. 
 
 + Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server](how-to-authenticate-in-python.md)."
 
@@ -55,14 +55,13 @@ Standard web services, like all web services, are identified by their name and v
 
 While R code can come in several forms, the code and models for Python services comes in the form of a function handle. 
 
-A code example for deploying Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md).
+A full code example for deploying Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md). A snippet of the deploy function can be [seen here](#deploy-example).
 
 <a name="realtime"></a>
 
 ### Realtime web services
 
 Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
-
 
 Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, no additional resources or time is spent spinning up a session for each call. Additionally, since the model is cached in memory, it is only loaded once. 
 
@@ -72,16 +71,15 @@ Additionally, you do not need to specify inputs or outputs for realtime web serv
 
 The following functions are supported in a Python realtime service: 
 + These [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) functions: rxLogit, rxLinMod, rxBTrees, rxDTree, and rxDForest 
+
 + These [MicrosoftML package](../../python-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script.
+
+A code example for deploying realtime services can be [found later in this article](#deploy-example). 
+
 
 While R models are automatically serialized for realtime services, in Python you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
 
-
-
-A code example for deploying realtime services can be [found later in this article](#publishService). 
-
-
-Learn more about [R realtime services here](../how-to-deploy-web-service-publish-manage-in-r.md#realtime).
+More details about **R realtime services** and the supported functions in R are covered in [this article](../how-to-deploy-web-service-publish-manage-in-r.md#realtime).
 
 
 <a name="publishService"></a>
@@ -94,7 +92,9 @@ Both deploy and publish are used synonymously.
 
 After you've authenticated, use publish as the web service. Publishing returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
-Example of standard web service:
+<a name="deploy-example"></a>
+
+**Example of standard web service:**
 
 ```Python
 # Publish a standard service called 'cars_model'
@@ -111,9 +111,9 @@ service = client.service(cars_model)\
         .deploy()
 ```
 
-Example of realtime service: 
+**Example of realtime service:**
 
-```R
+```Python
 # Publish a realtime service 'kyphosisService' version 'v1.0'
 # Assign service to 'realtimeApi' variable
 
@@ -131,7 +131,7 @@ webserv = client.realtime_service(linear_model) \
         .deploy()
 ```
 
-**Learn how to get a [list of all services](how-to-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others.**
+Learn how to get a [list of all services](how-to-consume-web-services.md), retrieve a [web service object](how-to-consume-web-services.md) for consumption, and [share services](how-to-consume-web-services.md) with others.
 
 ### Publishing new versions
 

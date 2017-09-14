@@ -118,7 +118,7 @@ As a verification step, connect to each application and run a script or function
 
 ### 5. Enable server to host analytic web services and accept remote connections
 
-Machine Learning Server can be used as-is with an R IDE on the same box, but you can also [enable the server to host web services and to allow remote server connections](../operationalize/configure-start-for-administrators.md#configure-web--compute-nodes-for-analytic-deployment-and-remote-execution).
+Machine Learning Server can be used as-is with an R IDE on the same box, but you can also [enable the server to host web services and to allow remote server connections](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
 Configure the server to by running the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure the server for remote access and execution, web service deployment, or cluster topologies. 
 
