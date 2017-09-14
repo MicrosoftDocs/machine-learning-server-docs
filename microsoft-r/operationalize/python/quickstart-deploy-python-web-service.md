@@ -78,11 +78,9 @@ After it has been deployed, the web service can be:
 
 + [Integrated into an application by an application developer](how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
-## More resources
+## See also
 
 This section provides a quick summary of useful links for data scientists operationalizing analytics with Machine Learning Server.
-
->Use the table of contents to find all the documentation.
 
 **Key Documents**
  + [About Operationalization](../what-is-operationalization.md)    
@@ -95,3 +93,6 @@ This section provides a quick summary of useful links for data scientists operat
 
 **Support Channel**
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+
+
+Find more information in the table of contents.
