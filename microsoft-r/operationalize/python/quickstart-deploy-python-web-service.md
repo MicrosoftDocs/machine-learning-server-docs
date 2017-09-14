@@ -67,6 +67,7 @@ The notebook example walks you through:
 
 ### &#9658; [**Download the Jupyter notebook to try it out**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
 
+&nbsp;
 
 >[!IMPORTANT]
 >Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](../../operationalize/python/how-to-authenticate-in-python.md).
