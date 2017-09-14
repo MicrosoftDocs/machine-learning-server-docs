@@ -30,7 +30,7 @@ ms.technology:
 
 This article is for data scientists who wants to learn how to deploy and manage Python code/models as web services hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
-Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and ultimately [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md).
+Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and ultimately [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime.
 
 These web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).  You can also deploy or interact with a web service outside of R using the [RESTful APIs](../concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
@@ -86,15 +86,13 @@ More details about **R realtime services** and the supported functions in R are 
 
 ## Deploy web services
 
-To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. 
+To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. Both deploy and publish are used synonymously.
 
-Both deploy and publish are used synonymously.
-
-After you've authenticated, use publish as the web service. Publishing returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+After you've authenticated, you can publish as a web service. Publishing returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
 <a name="deploy-example"></a>
 
-**Example of standard web service:**
+**Example: publish a standard service**
 
 ```Python
 # Publish a standard service called 'cars_model'
@@ -111,7 +109,7 @@ service = client.service(cars_model)\
         .deploy()
 ```
 
-**Example of realtime service:**
+**Example: publish a realtime service**
 
 ```Python
 # Publish a realtime service 'kyphosisService' version 'v1.0'
@@ -139,7 +137,7 @@ You can keep different versions of a web service. Update the version each time y
 
 <a name="data-types"></a>
 
-### Supported I/O data types
+### Input and output data types
 
 The following table lists [the supported data types](../../python-reference/azureml-model-management-sdk/mlserver.md#deployservice) for the input and output schemas of Python web services.
 
@@ -157,16 +155,14 @@ The following table lists [the supported data types](../../python-reference/azur
 
 ## Update web services
 
-To change a web service after you've published it while retaining the same name and version, use '.redeploy' instead of '.deploy'. 
+To change a web service after you've published it without changing its name or version, use '.redeploy' instead of '.deploy' for the service object. Then, specify the changes, such as the code, model, description, inputs, or outputs. When you update a service, it overwrites that named version and returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
-Also, specify what needs to change, such as the code, model, description, inputs, or outputs. When you update a service, it overwrites that named version and returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
-
-In this example, we update the service to add a description useful to people who might consume this service:
+In this example, we update the service to add a description useful to people who might consume this service and use a new code function, 'manualTransmission2'.
 
 ```Python
 # Redeploy this standard service 'car_model' version '1.0'
 # Using a new function for the model and updated description
-service = client.service(car_model)\
+service = client.service(cars_model)\
         .version("1.0")\
         .code_fn(manualTransmission2, init)\
         .inputs(hp=float, wt=float)\
@@ -177,19 +173,16 @@ service = client.service(car_model)\
         .redeploy()
 ```
 
-
 >[!NOTE]
->If you want to change the name or version number, use '.deploy' instead and specify the new name or version number. 
-
-
+>To change either the name or the version of a web service, use '.deploy' instead of '.redeploy' along with the new name or version. 
 
 <a name="deleteService"></a>
 
 ## Delete web services
 
-When you no longer want to keep a web service you have published, you can delete it. You can also delete the services of others if you are [assigned to a role](../configure-roles.md) with those permissions. 
+When you no longer want to keep a web service that you have published, you can delete it. You can also delete the services of others if you are [assigned to a role](../configure-roles.md) with those permissions. 
 
-You can call delete_service on the DeployClient object to delete a specific service on the running Machine Learning Server.
+You can call 'delete_service' on the 'DeployClient' object to delete a specific service on Machine Learning Server.
 
 ```Python
 # -- List all services to find the one to delete--
@@ -198,7 +191,7 @@ client.list_services()
 client.delete_service(cars_model, version = "1.0")
 ```
 
-If it is successful, it returns the success status  _"True"_ If it fails for any reason, then it stops execution with error message.
+If it is successful, the success status  _"True"_  is returned. If it fails, then execution stops and an error message is produced.
 
 
 ## Permissions on web services
@@ -214,21 +207,20 @@ By default, all web service operations are available to authenticated users. Des
 
 ## Version your services
 
-Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services. Versions help the users consuming your service to easily identify it. 
+Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services and helps the people consuming your service to find it easily. 
 
-At publish time, you can specify an alphanumeric string that is meaningful to the users who consume the service in your organization. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
+At publish time, you can specify an alphanumeric string that is meaningful to those who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
 
-If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by Machine Learning Server. These GUID version numbers are harder to remember by the users consuming your services and are therefore less desirable. 
+If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
 
 
 ## Use session snapshots
 
-Create a snapshot of this Python session to store this environment within a web service so it can be reproduced at consume time. You can only use a session snapshot that you've created. No one else can use your snapshots to publish a service.
+Create a snapshot of a Python session to store its environment within a web service so it can be reproduced at consume time. Session snapshots are useful when you need environment preconfigured with certain libraries, objects, models, files, and artifacts. Snapshots save the whole workspace and working directory. 
 
-Session snapshots are useful when you need environment preconfigured with certain libraries, objects, models, files, and artifacts. Snapshots save the whole workspace and working directory. 
+When publishing a service, you can only use a session snapshot that you've created. No one else can use your snapshots to publish a service.
 
-> [!NOTE] 
-> While session snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully and ensure that you keep only those workspace objects you need and purge the rest. In a session, you can use the Python `del` function or [the `deleteWorkspaceObject` API request](https://microsoft.github.io/deployr-api-docs/#delete-workspace-object) to remove unnecessary objects. 
+While session snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully and ensure that you keep only those workspace objects you need and purge the rest. In a session, you can use the Python 'del' function or [the `deleteWorkspaceObject` API request](https://microsoft.github.io/deployr-api-docs/#delete-workspace-object) to remove unnecessary objects. 
 
 ```python
 #Create a snapshot of the current session.
