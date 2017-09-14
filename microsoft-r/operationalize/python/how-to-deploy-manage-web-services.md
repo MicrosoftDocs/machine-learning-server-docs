@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Publish, update, and delete Python web services - Machine Learning Server | Microsoft Docs"
+title: "Publish, deploy, update, and delete Python web services - Machine Learning Server | Microsoft Docs"
 description: "Publish, update, and delete Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"
@@ -24,19 +24,15 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Publish, update, and delete web services in Python 
+# Publish and delete web services in Python 
 
 **Applies to: Machine Learning Server**
 
-This article is for data scientists who wants to learn how to publish and manage Python code/models as web services hosted in Machine Learning Server and how to consume them. This article assumes you are proficient in Python.
+This article is for data scientists who wants to learn how to publish and manage Python code/models as web services hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
-Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md).
+Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and ultimately [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md).
 
-These web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
-
-You can also publish or interact with a web service outside of R using the [RESTful APIs](../concept-api.md), which provide direct programmatic access to a service's lifecycle.
-
-![Swagger Workflow](./media/how-to-publish-consume-python-web-service/data-scientist-python-workflow.png)
+These web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).  You can also publish or interact with a web service outside of R using the [RESTful APIs](../concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
 <a name="auth"></a>
 
@@ -47,7 +43,7 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 + Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server](how-to-authenticate-in-python.md)."
 
-## Web service types
+## Standard vs realtime services
 
 <a name="standard"></a>
 
@@ -59,7 +55,7 @@ Standard web services, like all web services, are identified by their name and v
 
 While R code can come in several forms, the code and models for Python services comes in the form of a function handle. 
 
-A code sample for publishing Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md).
+A code example for publishing Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md).
 
 <a name="realtime"></a>
 
@@ -67,21 +63,25 @@ A code sample for publishing Python web services can be [found in this Quickstar
 
 Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
-Learn more about [R realtime services here](../how-to-deploy-web-service-publish-manage-in-r.md#realtime).
 
 Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, no additional resources or time is spent spinning up a session for each call. Additionally, since the model is cached in memory, it is only loaded once. 
 
-**This type of web takes only models created with **supported functions** **and does not support arbitrary code.
+Additionally, you do not need to specify inputs or outputs for realtime web services. Data.frame inputs and outputs are assumed automatically.
+
+**In Python, this type of web takes only models created with **supported functions** **and does not support arbitrary code.
 
 The following functions are supported in a Python realtime service: 
 + These [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) functions: rxLogit, rxLinMod, rxBTrees, rxDTree, and rxDForest 
 + These [MicrosoftML package](../../python-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script .
 
-While R models are automatically serialized for realtime services, you must manually serialize the model before publishing a realtime service in Python. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
+While R models are automatically serialized for realtime services, in Python you must manually serialize the model before publishing a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
 
-**Additionally, you do not need to specify inputs or outputs since realtime web services default to data.frame inputs and outputs automatically.**
 
-**A code sample for publishing realtime services can be [found later in this article](#publishService). A longer [realtime example](#realtime-example) is also available.**
+
+A code example for publishing realtime services can be [found later in this article](#publishService). 
+
+
+Learn more about [R realtime services here](../how-to-deploy-web-service-publish-manage-in-r.md#realtime).
 
 
 <a name="publishService"></a>
