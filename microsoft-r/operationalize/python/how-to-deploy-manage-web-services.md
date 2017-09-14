@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Deploy and delete web services in Python 
+# Deploy and manage web services in Python 
 
 **Applies to: Machine Learning Server**
 
@@ -111,7 +111,7 @@ While R models are automatically serialized for realtime services, in Python you
 
 To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. Both deploy and publish are used synonymously.
 
-After you've authenticated, you can publish as a web service. Publishing returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+After you've authenticated, you can deploy as a web service. Deploying returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
 <a name="deploy-example"></a>
 
@@ -130,7 +130,6 @@ service = client.service(cars_model)\
         .description('My first python model')\
         .deploy()
 ```
-
 
 **Example: publish a realtime service**
 
@@ -183,7 +182,7 @@ To change a web service after you've published it without changing its name or v
 In this example, we update the service to add a description useful to people who might consume this service and use a new code function, 'manualTransmission2'.
 
 ```Python
-# Redeploy this standard service 'car_model' version '1.0'
+# Redeploy this standard service 'cars_model' version '1.0'
 # Using a new function for the model and updated description
 service = client.service(cars_model)\
         .version("1.0")\
@@ -192,7 +191,6 @@ service = client.service(cars_model)\
         .outputs(answer=pd.DataFrame)\
         .models(cars_model=cars_model)\
         .description('Predict transmission type (automatic or manual)')\
-        .artifacts(['answer.csv', 'image.png'])\
         .redeploy()
 ```
 
