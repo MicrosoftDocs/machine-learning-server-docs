@@ -65,22 +65,42 @@ Once you've built a predictive model, in many cases the next step is to operatio
 
 Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, no additional resources or time is spent spinning up a session for each call. Additionally, since the model is cached in memory, it is only loaded once. 
 
-Additionally, you do not need to specify inputs or outputs for realtime web services. Data.frame inputs and outputs are assumed automatically.
-
-In Python, this type of web takes only models created with **supported functions** **and does not support arbitrary code.
-
-The following functions are supported in a Python realtime service: 
-+ These [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) functions: rx_logit, rx_lin_mod, rx_btrees, rx_dtree, and rx_dforest 
-
-+ These [MicrosoftML package](../../python-reference/microsoftml/microsoftml-package.md) functions for machine learning and transform tasks: rx_fast_trees, rx_fast_forest, rx_logistic_regression, rx_oneclass_svm, rx_neural_network, rx_fast_linear, featurize_text, concat, categorical, categorical_hash, featurize_image, get_sentiment, load_image, resize_image, extract_pixels, select_columns, and drop_columns.
+Additionally, you do not need to specify inputs or outputs for realtime web services. Dataframe inputs and outputs are assumed automatically.
 
 A code example for deploying realtime services can be [found later in this article](#deploy-example). 
 
+#### Supported functions from revoscalepy for Python realtime services
+
+In Python, realtime web services take only models created with supported functions from revoscalepy and microsoftml, and does not support arbitrary code. From the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md), the following functions are supported:
+
++ rx_btrees, rx_dtree, rx_dforest 
++ rx_logit, rx_lin_mod
+
+#### Supported functions from microsoftml for Python realtime services
+
+In Python, realtime web services take only models created with supported functions from revoscalepy and microsoftml, and does not support arbitrary code. From the [microsoftml package](../../python-reference/microsoftml/microsoftml-package.md), the following functions  for machine learning and transform tasks are supported:
++ rx_fast_trees, rx_fast_forest, rx_fast_linear 
++ rx_logistic_regression, rx_neural_network, concat, 
++ rx_oneclass_svm, categorical, categorical_hash, 
++ featurize_text, featurize_image, get_sentiment, 
++ load_image, resize_image, extract_pixels, 
++ select_columns, and drop_columns. 
+
+There are additional restrictions on the format of the dataframe used as input with  microsoftml models:
+
+1. The dataframe must have the same number of columns as the formula specified for the model.
+
+1. The dataframe must be in the exact same order as the formula specified for the model.
+  
+1. These columns must have be of the same data type as the training data. Type casting is not possible.
+
+
+####  Serializing Python models first
 
 While R models are automatically serialized for realtime services, in Python you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
 
-More details about **R realtime services** and the supported functions in R are covered in [this article](../how-to-deploy-web-service-publish-manage-in-r.md#realtime).
-
+>[!Note]
+>To learn about **R realtime services** and the supported functions in R see [this article](../how-to-deploy-web-service-publish-manage-in-r.md#realtime).
 
 <a name="publishService"></a>
 
