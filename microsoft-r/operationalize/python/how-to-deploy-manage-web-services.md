@@ -88,19 +88,9 @@ Learn more about [R realtime services here](../how-to-deploy-web-service-publish
 
 ## Publish web services
 
-
 To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. 
 
-After you've authenticated, use the publishService() function in the mrsdeploy package to publish a web service.  See the [package reference for publishService()](../r-reference/mrsdeploy/publishservice.md) for the full description of all arguments.  
-
-You can keep different versions of a web service. Simply update the version each time you use .deploy. (Learn more about versioning](#versioning).
-
-|Function|Response|R Help|
-|----|----|:----:|
-|publishService(...)|Returns an [API instance](how-to-consume-web-service-interact-in-r.md#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/publishservice.md)
-
-You can publish web services to a local Machine Learning Server from your command line. If you [create a remote session](../r/how-to-execute-code-remotely.md#publish-remote-session), you can also publish a web service to a remote Machine Learning Server from your local command line.  
-
+After you've authenticated, use publish the web service. Publishing returns an [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
 Example of standard web service:
 
@@ -141,13 +131,33 @@ webserv = client.realtime_service(linear_model) \
 
 **Learn how to get a [list of all services](how-to-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others.**
 
+### Publishing new versions
+
+You can keep different versions of a web service. Simply update the version each time you use .deploy. (Learn more about versioning](#versioning).
+
+<a name="data-types"></a>
+
+### Supported I/O data types
+
+The following table lists the supported data types for the input and output schemas of Python web services.
+
+|I/O data types|Write as|
+|--------|-----|
+|numeric|float|
+|integer|int|
+|logical|bool|
+|character or vector|str|
+|array|numpy.array |
+|matrix|numpy.matrix |
+|data.frame|numpy.DataFrame|
+
 <a name="updateService"></a>
 
 ## Update web services
 
 To change a web service after you've published it while retaining the same name and version, use .redeploy instead of .deploy. 
 
-Also, specify what needs to change, such as the code, model, description, inputs, or outputs. When you update a service, it overwrites that named version and returns an [API instance](how-to-consume-web-service-interact-in-r.md#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.
+Also, specify what needs to change, such as the code, model, description, inputs, or outputs. When you update a service, it overwrites that named version and returns an [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
 In this example, we update the service to add a description useful to people who might consume this service:
 
@@ -169,21 +179,6 @@ service = client.service(car_model)\
 >[!NOTE]
 >If you want to change the name or version number, use .deploy instead and specify the new name or version number. 
 
-<a name="data-types"></a>
-
-### Supported I/O data types
-
-The following table lists the supported data types for the input and output schemas of Python web services.
-
-|I/O data types|Full support?|
-|--------|:----------:|
-|numeric|Yes| 
-|integer|Yes|
-|logical|Yes|
-|character|Yes|
-|vector|Yes|
-|matrix|Partial<br>(Not for logical & character matrices)|
-|data.frame|Yes<br>Note: Coercing an object during <br>I/O is a user-defined task|
 
 
 <a name="deleteService"></a>
