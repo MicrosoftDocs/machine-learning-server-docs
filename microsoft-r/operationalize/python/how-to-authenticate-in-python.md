@@ -42,6 +42,8 @@ Use this approach if you are:
 + authenticating using Active Directory server on your network
 + using the [default administrator account](../configure-authentication.md#local) 
 
+Be sure to pass credentials for AD or local as a tuple.
+
 ```Python 
 # Import the DeployClient and MLServer classes from 
 # the azureml-model-management-sdk package so you can 
@@ -71,6 +73,8 @@ client = DeployClient(HOST, use=MLServer, auth=context)
 
 Use this approach if you are authenticating using Azure Active Directory in the cloud.
 
+Be sure to pass credentials for AAD as a dictionary {}.
+
 ```Python 
 # First, import the DeployClient and MLServer classes from 
 # the azureml-model-management-sdk package so you can 
@@ -83,7 +87,7 @@ from azureml.deploy.server import MLServer
 HOST = '{{YOUR_HOST_ENDPOINT}}'
 
 # Pass in credentials for the AAD context as a dictionary. 
-# Omit username and password to be prompted for a login. 
+# Omit username and password if you want to be prompted for a login. 
 context = {
     'authuri': 'https://login.windows.net',
     'tenant': '{{AAD_DOMAIN}}',
