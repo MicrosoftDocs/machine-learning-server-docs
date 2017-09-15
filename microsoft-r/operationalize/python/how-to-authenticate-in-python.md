@@ -42,7 +42,7 @@ Use this approach if you are:
 + authenticating using Active Directory server on your network
 + using the [default administrator account](../configure-authentication.md#local) 
 
-Pass the username and password credentials for method as a Python tuple. If you do not know your connection settings, contact your administrator.
+Pass the username and password as a Python tuple for on premises authentication. If you do not know your connection settings, contact your administrator.
 
 ```Python 
 # Import the DeployClient and MLServer classes from 
@@ -59,7 +59,7 @@ context = ('{{YOUR_USERNAME}}', '{{YOUR_PASSWORD}}')
 client = DeployClient(HOST, use=MLServer, auth=context)
 ```
 
-This code calls the `/user/login` API and requires a username and password. 
+This code calls the `/user/login` API. 
 
 |Argument|Description|
 |--- | --- |
@@ -71,7 +71,7 @@ This code calls the `/user/login` API and requires a username and password.
 
 Use this approach if you are authenticating using Azure Active Directory in the cloud.
 
-Be sure to pass credentials for AAD as a dictionary {}.
+Pass the credentials as a Python dictionary {} for AAD authentication. 
 
 ```Python 
 # First, import the DeployClient and MLServer classes from 
@@ -98,15 +98,17 @@ context = {
 client = DeployClient(HOST, use=MLServer, auth=context)
 ```
 
-If you do not know your tenant id, clientid, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory). This code calls the `/user/login` API and requires a username and password. 
+This code calls the `/user/login` API.
+
+If you do not know your tenant id, clientid, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory).  
 
 |Argument|Description|
 |--- | --- |
-|host endpoint|Required.The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  This endpoint is the SIGN-ON URL value from the web application|
-|authuri|Required.The URI of the authentication service for Azure Active Directory.|
-|tenant|Required.The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.|
-|clientid|Required.The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.|
-|resource|Required.The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the `Audience` in the configuration file.|
+|host endpoint|Required. The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  This endpoint is the SIGN-ON URL value from the web application|
+|authuri|Required. The URI of the authentication service for Azure Active Directory.|
+|tenant|Required. The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.|
+|clientid|Required. The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.|
+|resource|Required. The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the `Audience` in the configuration file.|
 |username|If NULL, user is prompted. See following section. |
 |password|If NULL, user is prompted. See following section.|
 
@@ -130,7 +132,7 @@ If you omit the username and password from the dictionary for the AAD context, t
   }
   ```
 
-## A note of access tokens
+## A note about access tokens
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Active Directory. 
 
