@@ -134,6 +134,7 @@ On each web node, edit the appsettings.json configuration file in order to decla
 
    >3. For R Server 9.1 users: If you specify LDAP Root as the SearchBase in web node's appsettings.json, a search of the roles returns [LDAP referrals](https://technet.microsoft.com/en-us/library/cc978014.aspx) and throws a 'LDAPReferralException'. A workaround is to change the LDAP port in web node's appsettings.json from 389 to Global Catalog Port 3268. Or, in case of LDAPS, change Port to 3269 instead of 636. Global Catalogs do not return LDAP referrals in LDAP Search Results.  
 
+
 ### Step 2. Validate groups against AD/LDAP or AAD
 
 Return to [the appsetting.json file](configure-find-admin-configuration-file.md) on each web node and make these updates:
