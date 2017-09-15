@@ -94,16 +94,12 @@ Next, follow this quickstart for hands on experience:
 
 ## See also
 
-[Library Reference](../introducing-python-package-reference.md)
++ [Library Reference](../introducing-python-package-reference.md)
 
-[Install Machine Learning Server](../../what-is-machine-learning-server.md)
++ [Install Machine Learning Server](../../what-is-machine-learning-server.md)
 
-[Install the Python interpreter and libraries](../../install/python-libraries-interpreter.md)
++ [Install the Python interpreter and libraries](../../install/python-libraries-interpreter.md)
 
-[Quickstart: Deploy a model in Python](../../operationalize/python/quickstart-deploy-python-web-service.md)
++ [How to authenticate in Python](../../operationalize/python/how-to-authenticate-in-python.md)
 
-[How to deploy and manage web services in Python](../../operationalize/python/how-to-deploy-manage-web-services.md)
-
-[How to authenticate in Python](../../operationalize/python/how-to-authenticate-in-python.md)
-
-[How to list, get, and consume services in Python](../../operationalize/python/how-to-consume-web-services.md)
++ [How to list, get, and consume services in Python](../../operationalize/python/how-to-consume-web-services.md)
