@@ -30,11 +30,11 @@ ms.technology:
 
 The [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) package, delivered with Machine Learning Server, provides functions for publishing and managing a Python web service that is backed by the Python code block or script you provided.  
 
-This section describes how to authenticate to Machine Learning Server on-premises or in the cloud using azureml-model-management-sdk so you can take advantage of these classes and functions for web services. Every API call between the Web server and client must be authenticated. The azureml-model-management-sdk functions, which place API calls on your behalf, are no different. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned. 
+This section describes how to authenticate with Machine Learning Server on-premises or in the cloud using azureml-model-management-sdk. Every API call between the Web server and client must be authenticated. The azureml-model-management-sdk functions, which place API calls on your behalf, are no different. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned. 
 
-azureml-model-management-sdk provides the client that supports several ways of authenticating against the Machine Learning Server. The arguments you use depends on the [type of authentication and deployment in your organization](../configure-authentication.md). Authentication of user identity is handled via Active Directory. Machine Learning Server never stores or manages any usernames and passwords.
+azureml-model-management-sdk provides the client that supports several ways of authenticating against the Machine Learning Server. Authentication of user identity is handled via Active Directory. Machine Learning Server never stores or manages any usernames and passwords.  Ask your administrator for [authentication type configured](../configure-authentication.md) for Machine Learning Server and the connection details. 
 
-By default, all azureml-model-management-sdk operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. 
+By default, all web services operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization controls](../configure-roles.md) to further restrict the permissions around web services. 
 
 ## On premises authentication
 
@@ -61,9 +61,9 @@ client = DeployClient(HOST, use=MLServer, auth=context)
 
 |Argument|Description|
 |--- | --- |
-|host endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this endpoint on the first screen when you [launch the administration utility](../configure-use-admin-utility.md#launch).|
-|username|Enter your AD or [local Machine Learning Server](../configure-authentication.md#local) username. Username is required.|
-|password|Enter the password. This value is required.|
+|host endpoint|Required. The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this endpoint on the first screen when you [launch the administration utility](../configure-use-admin-utility.md#launch).|
+|username|Required. Enter your AD or [local Machine Learning Server](../configure-authentication.md#local) username.|
+|password|Required. Enter the password.|
 
 >[!NOTE]
 >If you do not know your connection settings, contact your administrator. This code calls the `/user/login` API and requires a username and password. 
