@@ -146,7 +146,7 @@ The full data set has 46 variables and almost 150 million observations.
 
 Data stored in the xdf file format can be read into a data frame, allowing the user to choose the rows and columns. For example, read  1000 rows beginning at the 100,000th row for the variables *ArrDelay*, *DepDelay*, and *DayOfWeek*.
 
-	testDF <- rxReadXdf(file = bigAirDS,
+	testDF <- rxDataStep(inData = bigAirDS,
 		varsToKeep = c("ArrDelay","DepDelay", "DayOfWeek"),
 		startRow = 100000, numRows = 1000)
 	summary(testDF)
@@ -195,7 +195,7 @@ It yields the following:
 
 But this is only 1/148,619 of the rows contained in the full data set. If we try to read all the rows of these columns, we will likely run into memory problems. For example, on most systems with 8GB or less of RAM, running the commented code below will fail on the full data set with a "cannot allocate vector" error.
 
-	# testDF <- rxReadXdf(file=dataName, varsToKeep = c("ArrDelay",
+	# testDF <- rxDataStep(inData=dataName, varsToKeep = c("ArrDelay",
 	#    "DepDelay", "DayOfWeek"))
 
 In the next section you will see how you can analyze a data set that is too big to fit into memory by using **RevoScaleR** functions.

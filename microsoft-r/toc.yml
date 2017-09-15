@@ -1130,7 +1130,7 @@
           href: r-reference/revoscaler/rxprivacycontrol.md
         - name: rxQuantile
           href: r-reference/revoscaler/rxquantile.md
-        - name: rxReadXdf
+        - name: rxReadXdf (deprecated)
           href: r-reference/revoscaler/rxreadxdf.md
         - name: rxRealtimeScoring
           href: r-reference/revoscaler/rxrealtimescoring.md

@@ -53,7 +53,9 @@ The call to **rxDataStep** uses the *rowSelection* argument to select only the r
 	
 	# Get information about the new data frame
 	rxGetInfo(data = myNewData, getVarInfo = TRUE)
-	
+
+You should see the following results: 
+
 	Data frame: myNewData 
 	Number of observations: 52 
 	Number of variables: 2 
@@ -188,8 +190,8 @@ For example, to create our factor variable, we can create the following function
 To test the function, read an arbitrary chunk out of the data set. For efficiency reasons, the data passed to the transformation function is stored as a list rather than a data frame, so when reading from the .xdf file we set the *returnDataFrame* argument to FALSE to emulate this behavior. Since we only use the variable *age* in our transformation function, we restrict the variables extracted to that.
 
 	censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")	
-	testData <- rxReadXdf(file = censusWorkers, startRow = 100, numRows = 10, 
-	returnDataFrame = FALSE, varsToKeep = c("age"))
+	testData <- rxDataStep(inata = censusWorkers, startRow = 100, numRows = 10, 
+	returnTransformObjects = FALSE, varsToKeep = c("age"))
 	
 	as.data.frame(ageTransform(testData))
 
@@ -655,11 +657,11 @@ These are particularly useful if you need to access additional rows of data when
 				# Compute the starting row of previous data to read
 			 startRow <- .rxStartRow - numRowsToRead
 			# Read previous rows from the .xdf file
-			 previousRowsDataList <- RevoScaleR::rxReadXdf(
-					file=.rxReadFileName, 
+			 previousRowsDataList <- RevoScaleR::rxDataStep(
+					inData=.rxReadFileName, 
 			   varsToKeep=names(dataList), 
 					startRow=startRow, numRows=numRowsToRead,
-			   returnDataFrame=FALSE)
+			   returnTransformObjects=FALSE)
 				# Concatenate the previous rows with the existing rows 
 			   dataList[[varForMoveAve]] <- 
 					c(previousRowsDataList[[varForMoveAve]], 
