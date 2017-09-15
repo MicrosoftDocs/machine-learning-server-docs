@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "OperationalizationDefinition,alias,deploy,description,redeploy,version: " 
+title: "OperationalizationDefinition,alias,deploy,description,redeploy,version: Base Operationalization Definition" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/15/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# OperationalizationDefinition
+# Base Operationalization Definition
+
+
+## Class OperationalizationDefinition
 
 
 
@@ -38,6 +41,22 @@ azureml.deploy.operationalization.OperationalizationDefinition(name, op,
 
 Base abstract class defining a service’s properties on the fluent API.
 
+Create a new publish definition.
+
+
+## Arguments
+
+
+### name
+
+The web service name
+
+
+### op
+
+
+### defs_extent
+
 
 
 ```
@@ -50,13 +69,13 @@ alias(alias)
 Set the service function name alias to call.
 
 
-# Arguments
+## Arguments
 
 
-## alias
+### alias
 
 
-# Returns
+## Returns
 
 Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
 
@@ -85,13 +104,13 @@ description(description)
 Set the service description.
 
 
-# Arguments
+## Arguments
 
 
-## description
+### description
 
 
-# Returns
+## Returns
 
 Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
 
@@ -108,13 +127,13 @@ Bundle up the definition properties and update the service.
 To be implemented by subclasses.
 
 
-# Arguments
+## Arguments
 
 
-## force
+### force
 
 
-# Returns
+## Returns
 
 Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
 
@@ -130,12 +149,12 @@ version(version)
 Set the service version.
 
 
-# Arguments
+## Arguments
 
 
-## version
+### version
 
 
-# Returns
+## Returns
 
 Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.

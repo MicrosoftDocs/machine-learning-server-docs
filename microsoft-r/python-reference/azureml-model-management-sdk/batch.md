@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Batch,api,execution_id,parallel_count,records,results,start: " 
+title: "Batch,api,execution_id,parallel_count,records,results,start: Batch Service" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/15/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# Batch
+# Batch Service
+
+
+## Class BatchService
 
 
 
@@ -94,17 +97,17 @@ results(show_partial_results=True)
 Poll batch results.
 
 
-# Arguments
+## Arguments
 
 
-## show_partial_results
+### show_partial_results
 
 To get partial execution results or not.
 
 
-# Returns
+## Returns
 
-An execution Self [`BatchResponse`](batch-response.md).
+An execution Self [`BatchResponse`](batch-response.md#BatchResponse).
 
 
 
@@ -118,6 +121,6 @@ start()
 Start a batch execution.
 
 
-# Returns
+## Returns
 
 Self

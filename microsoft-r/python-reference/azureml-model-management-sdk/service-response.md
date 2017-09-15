@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "ServiceResponse,api,artifact,artifacts,console_output,error,output,outputs,raw_outputs: " 
+title: "ServiceResponse,api,artifact,artifacts,console_output,error,output,outputs,raw_outputs: Web Service Response" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/15/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# ServiceResponse
+# Web Service Response
+
+
+## Class ServiceResponse
 
 
 
@@ -61,23 +64,23 @@ A convenience function to look up a file artifact by name and optionally
 base64 decode it.
 
 
-# Arguments
+## Arguments
 
 
-## artifact_name
+### artifact_name
 
 The name of the file artifact.
 
 
-## decode
+### decode
 
 Whether to decode the Base64 encoded artifact string.
 
 
-## encoding
+### encoding
 
 
-# Returns
+## Returns
 
 The file artifact as a Base64 encoded string if *decode=False*
 otherwise the decoded string.
@@ -127,13 +130,13 @@ output(output)
     A convenience function to look up a output values by name.
 
 
-# Arguments
+## Arguments
 
 
-## output
+### output
 
 
-# Returns
+## Returns
 
 The service output.
 

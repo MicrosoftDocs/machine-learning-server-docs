@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "DeployClient: " 
+title: "DeployClient: Deployment Client" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/15/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# DeployClient
+# Deployment Clients
+
+
+## Class DeployClient
 
 
 
@@ -35,26 +38,70 @@ azureml.deploy.DeployClient(host, auth=None, use=None)
 
 
 
-Factory for creating Deployment Clients.
+Defines the factory for creating Deployment Clients.
 
-**Basic Usage:**
-
->>> auth = ('username', 'password')
->>> client = DeployClient('url', use='MLServer', auth=auth)
-
-**Module implementation plugin with `use` property:**
-
-Find and Load *module* as defined by *use* from namespace str:
-
->>> client = DeployClient('url', use='azureml.deploy.server.MLServer')
->>> client = DeployClient('url', use='MLServer')
-
-Find and Load *module* from a file/path tuple:
-
->>> use = ('azureml.deploy.server.MLServer', '/path/to/mlserver.py')
->>> client = DeployClient('url', use=use)
+**Basic Usage Module implementation plugin with `use` property:**
 
 Find and Load *module* from an import reference:
 
->>> from azureml.deploy.server import MLServer
->>> client = DeployClient('url', use=MLServer)
+
+
+```
+from azureml.deploy import DeployClient
+from azureml.deploy.server import MLServer
+
+host = 'http://localhost:12800'
+ctx = ('username', 'password')
+mls_client = DeployClient(host, use='LServer, auth=ctx)
+```
+
+
+Find and Load *module* as defined by *use* from namespace str:
+
+
+
+```
+host = 'http://localhost:12800'
+ctx = ('username', 'password')
+
+mls_client = DeployClient(host, use='MLServer', auth=ctx)
+mls_client = DeployClient(host, use='azureml.deploy.server.MLServer',
+auth=ctx)
+```
+
+
+Find and Load *module* from a file/path tuple:
+
+
+
+```
+host = 'http://localhost:12800'
+ctx = ('username', 'password')
+
+use = ('azureml.deploy.server.MLServer', '/path/to/mlserver.py')
+mls_client = DeployClient(host, use=use, auth=ctx)
+```
+
+
+Create a new Deployment Client.
+
+
+## Arguments
+
+
+### host
+
+Server HTTP/HTTPS endpoint, including the port number.
+
+
+### auth
+
+(optional) Authentication context. Not all deployment
+clients require authentication. The *auth* is  **required** for
+**MLServer**
+
+
+### use
+
+(required) Deployment implementation to use (ex)
+*use=’MLServer’* to use The ML Server.

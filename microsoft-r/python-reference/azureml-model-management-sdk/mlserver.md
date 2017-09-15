@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "MLServer,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: " 
+title: "MLServer,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: MLServer" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/15/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,13 +24,32 @@ ms.custom: ""
  
 ---
 
-# Class azureml.deploy.server.MLServer
+# ML Server Deployment Client
 
-Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization.md)
+
+## Class MLServer
+
+
+
+```
+azureml.deploy.server.MLServer
+```
+
+
+
+
+Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization.md#Operationalization)
 
 This module provides a service implementation for the ML Server.
 
-## authentication
+
+
+```
+authentication(context)
+```
+
+
+
 
 **Override**
 
@@ -45,64 +64,71 @@ ML Server supports two forms of authentication contexts:
 
 * access-token: str *=4534535* 
 
-### Usage
 
-`authentication(context)`
-
-### Arguments
+## Arguments
 
 
-#### context
+### context
 
 The authentication context: LDAP, Azure Active Directory
 (AAD), or exsisting *access-token* string.
 
 
-#### HttpException
+### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-## delete_service
+```
+delete_service(name, **opts)
+```
+
+
 
 
 Delete a web service.
 
-[Complete documentation](https://go.microsoft.com/fwlink/?linkid=836352).
 
->>> success = client.delete_service('example', version='v1.0.1')
->>> print(success)
+
+```
+success = client.delete_service('example', version='v1.0.1')
+print(success)
 True
-
-### Usage
-
-`delete_service(name, **opts)`
-
-### Arguments
+```
 
 
-#### name
+
+## Arguments
+
+
+### name
 
 The web service name.
 
 
-#### opts
+### opts
 
 The web service *version* (*version=’v1.0.1*).
 
 
-### Returns
+## Returns
 
 A *bool* indicating the service deletion was succeeded.
 
 
-#### HttpException
+### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
-## deploy_realtime
+
+```
+deploy_realtime(name, **opts)
+```
+
+
+
 
 Publish a new *realtime* web service on the ML Server by *name* and
 *version*.
@@ -111,35 +137,37 @@ All input and output types are defined as a *pandas.DataFrame*.
 
 **Example:**
 
->>> model = rx_serialize_model(model, realtime_scoring_only=True)
->>> opts = {
-       'version': 'v1.0.0',
-       'description': 'Realtime service description.',
-       'serialized_model': model
-    }
->>> service = client.deploy_realtime('scoring', **opts)
->>> df = movie_reviews.as_df()
->>> res = service.consume(df)
->>> answer = res.outputs
+
+
+```
+model = rx_serialize_model(model, realtime_scoring_only=True)
+opts = {
+    'version': 'v1.0.0',
+    'description': 'Realtime service description.',
+    'serialized_model': model
+}
+
+service = client.deploy_realtime('scoring', **opts)
+df = movie_reviews.as_df()
+res = service.consume(df)
+answer = res.outputs
+```
+
 
 **NOTE:** Using *deploy_realtime()* in this fashion is identical to
 publishing a service using the fluent APIS
-[`deploy()`](realtime-definition.md)
-
-### Usage
-
-`deploy_realtime(name, **opts)`
+[`deploy()`](realtime-definition.md#deploy)
 
 
-### Arguments
+## Arguments
 
 
-#### name
+### name
 
 The web service name.
 
 
-#### opts
+### opts
 
 The service properties to publish. *opts* dict supports the
 following optional properties:
@@ -151,58 +179,66 @@ following optional properties:
     * alias (str) - The consume function name. Defaults to *consume*. 
 
 
-### Returns
+## Returns
 
-A new instance of [`Service`](service.md) representing the
+A new instance of [`Service`](service.md#Service) representing the
 realtime service *redeployed*.
 
 
-#### HttpException
+### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-## deploy_service
+```
+deploy_service(name, **opts)
+```
+
+
+
 
 Publish an new web service on the ML Server by *name* and *version*.
 
 **Example:**
 
->>> opts = {
-      'version': 'v1.0.0',
-      'description': 'Service description.',
-      'code_fn': run,
-      'init_fn': init,
-      'objects': {'local_obj': 50},
-      'models': {'model': 100},
-      'inputs': {'x': int},
-      'outputs': {'answer': float},
-      'artifacts': ['histogram.png'],
-      'alias': 'consume_service_fn_alias'
-    }
->>> service = client.deploy('regression', **opts)
->>> res = service.consume_service_fn_alias(100)
->>> answer = res.output('answer')
->>> histogram = res.artifact('histogram.png')
+
+
+```
+opts = {
+   'version': 'v1.0.0',
+   'description': 'Service description.',
+   'code_fn': run,
+   'init_fn': init,
+   'objects': {'local_obj': 50},
+   'models': {'model': 100},
+   'inputs': {'x': int},
+   'outputs': {'answer': float},
+   'artifacts': ['histogram.png'],
+   'alias': 'consume_service_fn_alias'
+ }
+
+ service = client.deploy('regression', **opts)
+ res = service.consume_service_fn_alias(100)
+ answer = res.output('answer')
+ histogram = res.artifact('histogram.png')
+```
+
 
 **NOTE:** Using *deploy_service()* in this fashion is identical to
 publishing a service using the fluent APIS
-[`deploy()`](service-definition.md).
-
-### Usage
-
-`deploy_service(name, **opts)`
-
-### Arguments
+[`deploy()`](service-definition.md#deploy).
 
 
-#### name
+## Arguments
+
+
+### name
 
 The unique web service name.
 
 
-#### opts
+### opts
 
 The service properties to publish. *opts* dict supports the
 following optional properties:
@@ -270,19 +306,21 @@ following optional properties:
       function name by default.
 
 
-### Returns
+## Returns
 
-A new instance of [`Service`](service.md) representing the
+A new instance of [`Service`](service.md#Service) representing the
 service *deployed*.
 
 
-#### HttpException
+### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-## destructor
+```
+destructor()
+```
 
 
 
@@ -292,54 +330,61 @@ If a HTTP fault occurred calling the ML Server.
 Destroy lifecycle method called by the framework. Invokes destructors
 for the class hierarchy.
 
-### Usage
 
-`destructor()`
 
-## get_service
+```
+get_service(name, **opts)
+```
+
+
 
 
 Get a web service for consumption.
 
-[Complete documentation](https://go.microsoft.com/fwlink/?linkid=836352).
 
->>> service = client.get_service('example', version='v1.0.1')
->>> print(service)
+
+```
+service = client.get_service('example', version='v1.0.1')
+print(service)
 <ExampleService>
    ...
    ...
    ...
-
-### Usage
-
-`get_service(name, **opts)`
-
-### Arguments
+```
 
 
-#### name
+
+## Arguments
+
+
+### name
 
 The web service name.
 
 
-#### opts
+### opts
 
 The optional web service *version*. If *version=None* the
 most recent service will be returned.
 
 
-### Returns
+## Returns
 
-A new instance of [`Service`](service.md).
+A new instance of [`Service`](service.md#Service).
 
 
-#### HttpException
+### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-## initializer
+```
+initializer(http_client, config, adapters=None)
+```
+
+
+
 
 **Override**
 
@@ -347,31 +392,30 @@ Init lifecycle method called by the framework, invoked during
 construction. Sets up attributes and invokes initializers for the class
 hierarchy.
 
-### Usage
 
-`initializer(http_client, config, adapters=None)`
-
-### Arguments
+## Arguments
 
 
-#### http_client
+### http_client
 
 The http request session to manage and persist
 settings across requests (auth, proxies).
 
 
-#### config
+### config
 
 The global configuration.
 
 
-#### adapters
+### adapters
 
 A dict of transport adapters by url.
 
 
 
-## list_services
+```
+list_services(name=None, **opts)
+```
 
 
 
@@ -390,44 +434,48 @@ you to retrieve service information regarding:
 * A specific version for a named service 
 
 Users can use this information along with the
-[`get_service()`](azureml/deploy/server/MLServer/get-service.md) operation to interact with and consume
+`[get_service()](#getservice)` operation to interact with and consume
 the web service.
 
 **Example:**
 
->>> all_services = client.list_services()
->>> all_versions = client.list_services('add-service')
->>> service = client.list_services('add-service', version='v1')
-
-### Usage
-
-`list_services(name=None, **opts)`
-
-### Arguments
 
 
-#### name
+```
+all_services = client.list_services()
+all_versions = client.list_services('add-service')
+service = client.list_services('add-service', version='v1')
+```
+
+
+
+## Arguments
+
+
+### name
 
 The web service name.
 
 
-#### opts
+### opts
 
 The optional web service *version*.
 
 
-### Returns
+## Returns
 
 A *list* of service metadata.
 
 
-#### HttpException
+### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-## realtime_service
+```
+realtime_service(name)
+```
 
 
 
@@ -440,25 +488,24 @@ Begin fluent API for defining a realtime web service.
       .description('A new realtime web service')
       .version('v1.0.0')
 
-### Usage
 
-`realtime_service(name)`
-
-### Arguments
+## Arguments
 
 
-#### name
+### name
 
 The web service name.
 
 
-### Returns
+## Returns
 
-A [`RealtimeDefinition`](realtime-definition.md) for fluent API.
+A [`RealtimeDefinition`](realtime-definition.md#RealtimeDefinition) for fluent API.
 
 
 
-## redeploy_realtime
+```
+redeploy_realtime(name, **opts)
+```
 
 
 
@@ -471,33 +518,37 @@ All input and output types are defined as a *pandas.DataFrame*.
 
 **Example:**
 
->>> model = rx_serialize_model(model, realtime_scoring_only=True)
->>> opts = {
-       'version': 'v1.0.0',
-       'description': 'Realtime service description.',
-       'serialized_model': model
-    }
->>> service = client.redeploy_realtime('scoring', **opts)
->>> df = movie_reviews.as_df()
->>> res = service.consume(df)
->>> answer = res.outputs
+
+
+```
+model = rx_serialize_model(model, realtime_scoring_only=True)
+opts = {
+    'version': 'v1.0.0',
+    'description': 'Realtime service description.',
+    'serialized_model': model
+ }
+
+ service = client.redeploy_realtime('scoring', **opts)
+ df = movie_reviews.as_df()
+ res = service.consume(df)
+ answer = res.outputs
+```
+
 
 **NOTE:** Using *redeploy_realtime()* in this fashion is identical to
 updating a service using the fluent APIS
-[`redeploy()`](realtime-definition.md)
-
-### Usage
-
-`redeploy_realtime(name, **opts)`
-
-### Arguments
+[`redeploy()`](realtime-definition.md#redeploy)
 
 
-#### name
+## Arguments
+
+
+### name
 
 The web service name.
 
-#### opts
+
+### opts
 
 The service properties to update. *opts* dict supports the
 following optional properties:
@@ -509,19 +560,23 @@ following optional properties:
     * alias (str) - The consume function name. Defaults to *consume*. 
 
 
-### Returns
+## Returns
 
-A new instance of [`Service`](service.md) representing the
+A new instance of [`Service`](service.md#Service) representing the
 realtime service *redeployed*.
 
 
-#### HttpException
+### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-## redeploy_service
+```
+redeploy_service(name, **opts)
+```
+
+
 
 
 Updates properties on an existing web service on the ML Server by *name*
@@ -532,40 +587,43 @@ updated.
 
 **Example:**
 
->>> opts = {
-      'version': 'v1.0.0',
-      'description': 'Service description.',
-      'code_fn': run,
-      'init_fn': init,
-      'objects': {'local_obj': 50},
-      'models': {'model': 100},
-      'inputs': {'x': int},
-      'outputs': {'answer': float},
-      'artifacts': ['histogram.png'],
-      'alias': 'consume_service_fn_alias'
-    }
->>> service = client.redeploy('regression', **opts)
->>> res = service.consume_service_fn_alias(100)
->>> answer = res.output('answer')
->>> histogram = res.artifact('histogram.png')
+
+
+```
+opts = {
+   'version': 'v1.0.0',
+   'description': 'Service description.',
+   'code_fn': run,
+   'init_fn': init,
+   'objects': {'local_obj': 50},
+   'models': {'model': 100},
+   'inputs': {'x': int},
+   'outputs': {'answer': float},
+   'artifacts': ['histogram.png'],
+   'alias': 'consume_service_fn_alias'
+ }
+
+ service = client.redeploy('regression', **opts)
+ res = service.consume_service_fn_alias(100)
+ answer = res.output('answer')
+ histogram = res.artifact('histogram.png')
+```
+
 
 **NOTE:** Using *redeploy_service()* in this fashion is identical to
 updating a service using the fluent APIS
-[`redeploy()`](service-definition.md)
-
-### Usage
-
-`redeploy_service(name, **opts)`
-
-### Arguments
+[`redeploy()`](service-definition.md#redeploy)
 
 
-#### name
+## Arguments
+
+
+### name
 
 The web service name.
 
 
-#### opts
+### opts
 
 The service properties to update. *opts* dict supports the
 following optional properties:
@@ -633,19 +691,21 @@ following optional properties:
       function name by default.
 
 
-### Returns
+## Returns
 
-A new instance of [`Service`](service.md) representing the
+A new instance of [`Service`](service.md#Service) representing the
 service *deployed*.
 
 
-#### HttpException
+### HttpException
 
 If a HTTP fault occurred calling the ML Server.
 
 
 
-## service
+```
+service(name)
+```
 
 
 
@@ -658,61 +718,15 @@ Begin fluent API for defining a web service.
       .description('A new web service')
       .version('v1.0.0')
 
-### Usage
 
-`service(name)`
-
-### Arguments
+## Arguments
 
 
-#### name
+### name
 
 The web service name.
 
 
-### Returns
+## Returns
 
-A [`ServiceDefinition`](service-definition.md) for fluent API.
-
-## CHANGES
-
-1) Title metadata must be the function name. The string for this field populate the tab or window bar in the browser page. It is also #1 for SEO.  It should be like this "<API name> | Microsoft Docs "
-
-2) Only one # (H1).  All other sections are H2.  Anything that is H2 shows up in the right navigation pane. In this article, I demoted all the headings (# Arguments became ## Arguments, etc.)
-
-3) H1 text:
-   Current - # MLServer
-   Proposed -  # Class azureml.deploy.server.MLServer
-       Add Class + the string currently in ~~~ enlcosed MD.
-
-4) metadata regression -- we need valid values for ms.author (msft alias), Author (an actual GH user), and manager (msft manager).
-
-5) open issues: H2 Needs to pivot off the overrides, not the Arguments, etc.  These should be the H2s (alpha order??):  
-
-    authentication(context)
-    delete_service(name, **opts)
-    deploy_realtime(name, **opts)
-    deploy_service(name, **opts)
-    destructor()
-    get_service(name, **opts)
-    initializer(http_client, config, adapters=None)
-    list_services(name=None, **opts)
-    realtime_service(name)
-    redeploy_realtime(name, **opts)
-    redeploy_service(name, **opts)
-    service(name)
-    
-TRIMMED??  If possible, then the signature gets folded into a ### Usage with `` tick marks
-
-    authentication
-    delete_service
-    deploy_realtime
-    deploy_service
-    destructor
-    get_service
-    initializer
-    list_services
-    realtime_service
-    redeploy_realtime
-    redeploy_service
-    service
+A [`ServiceDefinition`](service-definition.md#ServiceDefinition) for fluent API.

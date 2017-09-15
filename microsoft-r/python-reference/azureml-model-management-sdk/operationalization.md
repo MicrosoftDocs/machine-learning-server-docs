@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Operationalization,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: " 
+title: "Operationalization,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: Base Operationalization Definition" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/15/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# Operationalization
+# Base Operationalization
+
+
+## Class Operationalization
 
 
 
@@ -165,17 +168,17 @@ Begin fluent API for defining a realtime web service.
       .version('v1.0.0')
 
 
-# Arguments
+## Arguments
 
 
-## name
+### name
 
 The web service name.
 
 
-# Returns
+## Returns
 
-A [`RealtimeDefinition`](realtime-definition.md) for fluent API.
+A [`RealtimeDefinition`](realtime-definition.md#RealtimeDefinition) for fluent API.
 
 
 
@@ -217,14 +220,14 @@ Begin fluent API for defining a web service.
       .version('v1.0.0')
 
 
-# Arguments
+## Arguments
 
 
-## name
+### name
 
 The web service name.
 
 
-# Returns
+## Returns
 
-A [`ServiceDefinition`](service-definition.md) for fluent API.
+A [`ServiceDefinition`](service-definition.md#ServiceDefinition) for fluent API.
