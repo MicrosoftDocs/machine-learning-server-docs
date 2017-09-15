@@ -46,7 +46,7 @@ These web services offer fast execution and scoring of arbitrary Python or R cod
 
 Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any Python or R code, models, and any necessary model assets. When deploying a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
 
-See a standard web service deployment example: [R](../../operationalize/quickstart-publish-r-web-service.md)  |  [Python](../../operationalize/python/quickstart-deploy-python-web-service.md)
+**See a standard web service deployment example: [R](../../operationalize/quickstart-publish-r-web-service.md)  |  [Python](../../operationalize/python/quickstart-deploy-python-web-service.md)**
 
 <a name="realtime"></a>
 
@@ -63,7 +63,7 @@ For realtime services, you do **not** need to specify:
 + code (only serialized models are supported)
 
 
-See a realtime web service deployment example: [R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](../operationalize/python/how-to-deploy-manage-web-services.md#realtime-example)
+**See a realtime web service deployment example: [R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](../operationalize/python/how-to-deploy-manage-web-services.md#realtime-example)**
 
 <a name=r></a>
 
