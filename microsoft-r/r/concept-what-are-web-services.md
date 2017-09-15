@@ -93,6 +93,6 @@ There are additional restrictions on the input dataframe format for microsoftml 
 
 ## See also
 
-[Deploy and manage web services in R](../operationalize/how-to-deploy-web-service-publish-manage.md)
+[Deploy and manage web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 
-[Deploy and manage web services in Python](../../operationalize/python/how-to-deploy-manage-web-services.md)
+[Deploy and manage web services in Python](../operationalize/python/how-to-deploy-manage-web-services.md)
