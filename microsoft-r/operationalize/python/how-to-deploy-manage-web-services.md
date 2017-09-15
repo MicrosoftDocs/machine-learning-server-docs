@@ -56,20 +56,19 @@ After you've authenticated, you can deploy as a web service. Deploying returns a
 
 ### Standard web services
 
-Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional arguments are possible -- many of which are shown in the following example.
+Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional parameters are possible -- many of which are shown in the following example.
 
 In Python, you can define your code in the form of a function or a string, such as
 `code_fn=(run, init)` or `code_str=(“run”, “init”)`.
 
 <a name="deploy-example"></a>
-
-**Example: publish a standard service**
+Example: 
 
 ```Python
-# Publish a standard service called 'cars_model'
+# Publish a standard service called 'TxService'
 # Give it a version of '1.0'
 # Assign the service to 'service' variable
-service = client.service(cars_model)\
+service = client.service('TxService')\
         .version('1.0')\
         .code_fn(manualTransmission, init)\
         .inputs(hp=float, wt=float)\
@@ -78,29 +77,33 @@ service = client.service(cars_model)\
         .description('My first python model')\
         .deploy()
 ```
+
+[For a full example try out the quickstart for deploying web services](quickstart-deploy-python-web-service.md)
+
 <a name=realtime-example></a>
 
 ### Realtime web services
 
-For realtime services, you do **not** need to specify:
+Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. [Learn more about how...](../../r/concept-what-are-web-services.md)
+
+Realtime web services are also identified by their name and version. However, unlike standard web services, you **cannot** specify the following for realtime web services:
 + inputs and outputs (dataframes are assumed)
 + code (only serialized models are supported)
 
+Realtime web services only accept models created with [the supported functions from packages installed with the product](../../r/concept-what-are-web-services.md#realtime). 
+
 In Python, you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
 
-**Example: publish a realtime service**
+Example: 
 
 ```Python
-# Publish a realtime service 'kyphosisService' version 'v1.0'
-# Assign service to 'realtimeApi' variable
-
 # serialize the model using revoscalepy.rx_serialize_model
 from revoscalepy import rx_serialize_model
 s_model = rx_serialize_model(model, realtime_scoring_only=True)
 
 # To publish the realtime service, 
-# we first initiate a 'realtimeDefinition' object.
-# Then keep annotate the object with other parameters
+# initiate a 'realtimeDefinition' object.
+# Then annotate the object with other parameters
 webserv = client.realtime_service(linear_model) \
         .version('1.0') \
         .serialized_model(s_model) \
@@ -132,6 +135,17 @@ You can write these as a reference `bool` or a string `'bool'`.
 |matrix|numpy.matrix |
 |Dataframe|numpy.DataFrame|
 
+
+<a name="versioning"></a>
+
+### Version your services
+
+Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services and helps the people consuming your service to find it easily. 
+
+At publish time, you can specify an alphanumeric string that is meaningful to those who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
+
+If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
+
 <a name="updateService"></a>
 
 ## Update web services
@@ -141,10 +155,10 @@ To change a web service after you've published it without changing its name or v
 In this example, we update the service to add a description useful to people who might consume this service. You still have to provide the name and version to identify the service to be updated.
 
 ```Python
-# Redeploy this standard service 'cars_model' version '1.0'
+# Redeploy this standard service 'TxService' version '1.0'
 # Update only what changed. Here it is the description.
-service = client.service(cars_model)\
-        .version("1.0")\
+service = client.service('TxService')\
+        .version('1.0')\
         .description('The updated description')\
         .redeploy()
 ```
@@ -163,12 +177,11 @@ You can call 'delete_service' on the 'DeployClient' object to delete a specific 
 ```Python
 # -- List all services to find the one to delete--
 client.list_services()
-# -- Now delete cars_model 1.0
-client.delete_service(’tx-service’, version=‘1.0’)
+# -- Now delete TxService 1.0
+client.delete_service('TxService', version='1.0')
 ```
 
 If it is successful, the success status  _'True'_  is returned. If it fails, then execution stops and an error message is produced.
-
 
 ## Permissions on web services
 
@@ -178,13 +191,3 @@ By default, any authenticated Machine Learning Server user can:
 + Retrieve a list of any or all web services
 
 By default, all web service operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. Ask your administrator for details on your role.
-
-<a name="versioning"></a>
-
-## Version your services
-
-Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services and helps the people consuming your service to find it easily. 
-
-At publish time, you can specify an alphanumeric string that is meaningful to those who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
-
-If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
