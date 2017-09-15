@@ -67,7 +67,7 @@ The notebook example walks you through how to:
 + Delete a service
 
 
-### &#9658; [**Download the Jupyter notebook to try it out**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
+### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/web-services/deploy/Quickstart_Publish_Python_Web_Service.ipynb).
 
 &nbsp;
 
