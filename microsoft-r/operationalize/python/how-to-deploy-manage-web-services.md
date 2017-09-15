@@ -51,9 +51,6 @@ These web services offer fast execution and scoring of arbitrary Python or R cod
 
 Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any Python or R code, models, and any necessary model assets. When deploying a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
 
-In Python, you can define your code in the form of a function or a string, such as
-`code_fn=(run, init)` or `code_str=(“run”, “init”)`.
-
 A full code example for deploying Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md). A snippet of the deploy function can be [seen here](#deploy-example).
 
 <a name="realtime"></a>
@@ -96,13 +93,6 @@ There are additional restrictions on the format of the dataframe used as input w
 1. These columns must have be of the same data type as the training data. Type casting is not possible.
 
 
-###  Serializing Python models 
-
-While R models are automatically serialized for realtime services, in Python you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
-
->[!Note]
->To learn about **R realtime services** and the supported functions in R, see [this article](../how-to-deploy-web-service-publish-manage-in-r.md#realtime).
-
 <a name="publishService"></a>
 
 ## Deploy web services
@@ -110,6 +100,11 @@ While R models are automatically serialized for realtime services, in Python you
 To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. Both deploy and publish are used synonymously.
 
 After you've authenticated, you can deploy as a web service. Deploying returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+
+### Standard web services
+
+In Python, you can define your code in the form of a function or a string, such as
+`code_fn=(run, init)` or `code_str=(“run”, “init”)`.
 
 <a name="deploy-example"></a>
 
@@ -128,6 +123,10 @@ service = client.service(cars_model)\
         .description('My first python model')\
         .deploy()
 ```
+
+### Realtime web services
+
+In Python, you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
 
 **Example: publish a realtime service**
 
