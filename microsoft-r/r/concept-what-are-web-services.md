@@ -69,6 +69,8 @@ For realtime services, you do **not** need to specify:
 
 ### Supported functions in R
 
+A model object created with supported functions, such as:
+
 |R package|Supported functions|
 |-------------|--------------------|
 |[RevoScaleR](../r-reference/revoscaler/revoscaler.md)|rxLogit, rxLinMod, rxBTrees, rxDTree, and rxDForest| 
