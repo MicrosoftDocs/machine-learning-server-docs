@@ -28,8 +28,6 @@ Machine Learning Server for Windows runs machine learning and data mining soluti
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
-The installation path for Machine Learning Server is new: \Program Files\Microsoft\ML Server. However, if R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path and upgrades it to the new version. There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
-
 > [!Note]
 > Although you can add Python support during Setup, script that calls functions from Python libraries must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark compute context. On Windows, you can run a web service that contains Python script, but web service execution is the only methodology we offer for Python on Windows in the 9.2.1 release. Additional capability for Python sessions and direct execution on Machine Learning Server for Windows is coming in subsequent releases.
 
@@ -50,6 +48,12 @@ The following additional components are included in Setup and required for Machi
 * AS OLE DB (SQL Server 2016) provider
 * Microsoft Visual C++ 2015 Redistributable
 * Microsoft R Open 3.4.1 (if you install R Server)
+
+## Running setup on existing installations
+
+The installation path for Machine Learning Server is new: \Program Files\Microsoft\ML Server. However, if R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path and upgrades it to the new version. 
+
+There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
 ## How to install
 
