@@ -32,6 +32,8 @@ The [azureml-model-management-sdk](../../python-reference/azureml-model-manageme
 
 This section describes how to authenticate with Machine Learning Server on-premises or in the cloud using azureml-model-management-sdk. Every API call between the Web server and client must be authenticated. The azureml-model-management-sdk functions, which place API calls on your behalf, are no different. If the user does not provide a valid login, an `Unauthorized` HTTP `401` status code is returned. 
 
+## Overview
+
 azureml-model-management-sdk provides the client that supports several ways of authenticating against the Machine Learning Server. Authentication of user identity is handled via Active Directory. Machine Learning Server never stores or manages any usernames and passwords.  Ask your administrator for [authentication type configured](../configure-authentication.md) for Machine Learning Server and the connection details. 
 
 By default, all web services operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization controls](../configure-roles.md) to further restrict the permissions around web services. 
