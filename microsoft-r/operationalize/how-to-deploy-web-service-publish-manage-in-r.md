@@ -31,9 +31,9 @@ This article details how you can publish and manage your [analytic web services]
 
 These web services can be [consumed in R](how-to-consume-web-service-interact-in-r.md) by other authenticated users or in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
-Using the mrsdeploy R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: **standard R web services** and **realtime R web services**.  Additionally, you can get a [list of all services](how-to-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others.
+Using the mrsdeploy R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: [standard R web services and realtime R web services](../r/concept-what-are-web-services.md).  
 
-You can also publish or interact with a web service outside of R using the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
+Additionally, you can get a [list of all services](how-to-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others. You can also publish or interact with a web service outside of R using the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
 <a name="auth"></a>
 
@@ -85,7 +85,7 @@ You can publish web services to a local Machine Learning Server from your comman
 
 #### Standard web services
 
-Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional arguments are possible -- many of which are shown in the following example.
+[Standard web services](../r/concept-what-are-web-services.md), like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional arguments are possible -- many of which are shown in the following example.
 
 Example of standard web service:
 
@@ -822,6 +822,7 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
 + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md).
++ [What are web services](concept-operationalize-deploy-consume.md)
 + [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
