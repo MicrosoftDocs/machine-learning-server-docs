@@ -37,6 +37,8 @@ The database provides internal storage for the sessions, web services, snapshots
 This feature uses a SQLite 3.7+ database by default, but can be configured to use:
 + SQL Server (Windows) Professional, Standard, or Express Version 2008 or greater
 + SQL Server (Linux)
++ Azure SQL DB
++ Azure Database for PostgreSQL
 + PostgreSQL 9.2 or greater (Linux)
 
 > [!Important]
@@ -60,9 +62,9 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
     1. Locate the `ConnectionStrings` property block.
 
     1. Within that property block, locate the type of database you want to set up.
-       + For SQL Server, look for `"sqlserver": {`.
+       + For SQL Server or Azure SQL DB, look for `"sqlserver": {`.
 
-       + For SQL Server, look for `"postgresql": {`.
+       + For PostgreSQL or Azure Database for PostgreSQL, look for `"postgresql": {`.
 
     1. In the appropriate database section, enable that database type by adding the property `"Enabled": true,`. 
        >[!WARNING]
