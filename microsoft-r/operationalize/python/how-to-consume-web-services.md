@@ -24,8 +24,9 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Publish and consume Python web services
+# List, Get, and Consume Python web services
 
+<!--
 **Applies to:  SQL Server 2017 CTP 2.0 (Public Preview)**
 
 This article is for data scientists who wants to learn how to publish Python code/models as web services hosted in R Server and how to consume them. This article assumes you are proficient in Python.
@@ -657,3 +658,4 @@ In this example, we delete the second web service version we just published.
 #Delete the second version we just published.
 client.delete_web_service_version("Iris","V2.0",headers)
 ```
+-->

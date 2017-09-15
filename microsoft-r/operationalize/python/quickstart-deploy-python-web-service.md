@@ -30,9 +30,11 @@ ms.technology:
 
 ## Objective
 
-Learn how to deploy an Python model as a web service with Machine Learning Server. Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
+Learn how to deploy an Python model as a [web service with Machine Learning Server](../../r/concept-what-are-web-services.md). Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
 
 In Machine Learning Server, a web service is a Python code execution on the [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the azureml-model-management-sdk Python library ](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to gain access a service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
+
+[Learn more about web services](../../r/concept-what-are-web-services.md).
 
 ## Time estimate
 
@@ -65,7 +67,7 @@ The notebook example walks you through how to:
 + Delete a service
 
 
-### &#9658; [**Download the Jupyter notebook to try it out**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
+### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/web-services/deploy/Quickstart_Publish_Python_Web_Service.ipynb).
 
 &nbsp;
 
@@ -84,16 +86,15 @@ After it has been deployed, the web service can be:
 This section provides a quick summary of useful links for data scientists operationalizing analytics with Machine Learning Server.
 
 **Key Documents**
- + [About Operationalization](../../what-is-operationalization.md)    
+ + [About Operationalization](../../what-is-operationalization.md)   
+ + [What are web services](../../r/concept-what-are-web-services.md) 
  + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
  + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
  + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
- + [Asynchronous batch execution of web services in Python](how-to-consume-web-service-batch.md)    
  + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)    
  + [Get started for administrators](../configure-start-for-administrators.md)    
 
 **Support Channel**
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
-
 
 Find more information in the table of contents.
