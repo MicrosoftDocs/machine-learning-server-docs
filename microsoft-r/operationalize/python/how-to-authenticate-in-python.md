@@ -42,7 +42,7 @@ Use this approach if you are:
 + authenticating using Active Directory server on your network
 + using the [default administrator account](../configure-authentication.md#local) 
 
-Be sure to pass credentials for AD or local as a tuple.
+Pass the username and password credentials for method as a Python tuple. If you do not know your connection settings, contact your administrator.
 
 ```Python 
 # Import the DeployClient and MLServer classes from 
@@ -59,15 +59,13 @@ context = ('{{YOUR_USERNAME}}', '{{YOUR_PASSWORD}}')
 client = DeployClient(HOST, use=MLServer, auth=context)
 ```
 
+This code calls the `/user/login` API and requires a username and password. 
+
 |Argument|Description|
 |--- | --- |
 |host endpoint|Required. The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this endpoint on the first screen when you [launch the administration utility](../configure-use-admin-utility.md#launch).|
 |username|Required. Enter your AD or [local Machine Learning Server](../configure-authentication.md#local) username.|
 |password|Required. Enter the password.|
-
->[!NOTE]
->If you do not know your connection settings, contact your administrator. This code calls the `/user/login` API and requires a username and password. 
-
 
 ## Cloud authentication (AAD)
 
@@ -104,13 +102,13 @@ If you do not know your tenant id, clientid, or other details, contact your admi
 
 |Argument|Description|
 |--- | --- |
-|host endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  This endpoint is the SIGN-ON URL value from the web application|
-|authuri|The URI of the authentication service for Azure Active Directory.|
-|tenant|The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.|
-|clientid|The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.|
-|resource|The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the `Audience` in the configuration file.|
-|username|If NULL, user is prompted to enter username \<username>@\<AAD-account-domain>. |
-|password|If NULL, user is prompted to enter password|
+|host endpoint|Required.The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  This endpoint is the SIGN-ON URL value from the web application|
+|authuri|Required.The URI of the authentication service for Azure Active Directory.|
+|tenant|Required.The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.|
+|clientid|Required.The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.|
+|resource|Required.The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the `Audience` in the configuration file.|
+|username|If NULL, user is prompted. See following section. |
+|password|If NULL, user is prompted. See following section.|
 
 **Alternatives to putting the username and password in the script**
 
@@ -118,7 +116,7 @@ If you omit the username and password from the dictionary for the AAD context, t
 
 + Get a device code to complete authentication and token creation via Azure Active Directory Authentication Libraries (ADAL). Enter that code at https://aka.ms/devicelogin to complete the authentication. 
 
-+ Programmatically authenticate using a call back. Use this code like this: 
++ Programmatically authenticate using a call back, such as: 
   ```Python
   def callback_fn(code):
       print(code)
@@ -132,7 +130,7 @@ If you omit the username and password from the dictionary for the AAD context, t
   }
   ```
 
-## Access tokens
+## A note of access tokens
 
 Keep in mind that all APIs require authentication; therefore, all users must authenticate when making an API call using the `POST /login` API or through Active Directory. 
 
