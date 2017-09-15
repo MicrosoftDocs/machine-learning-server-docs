@@ -91,7 +91,6 @@ This section provides a quick summary of useful links for data scientists operat
  + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
  + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
  + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
- + [Asynchronous batch execution of web services in Python](how-to-consume-web-service-batch.md)    
  + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)    
  + [Get started for administrators](../configure-start-for-administrators.md)    
 
