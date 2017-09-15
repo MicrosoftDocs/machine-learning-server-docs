@@ -100,6 +100,6 @@ Next, follow this quickstart for hands on experience:
 
 + [Install the Python interpreter and libraries](../../install/python-libraries-interpreter.md)
 
-+ [How to authenticate in Python](../../operationalize/python/how-to-authenticate-in-python.md)
++ [How to authenticate in Python with this package](../../operationalize/python/how-to-authenticate-in-python.md)
 
-+ [How to list, get, and consume services in Python](../../operationalize/python/how-to-consume-web-services.md)
++ [How to list, get, and consume services in Python with this package](../../operationalize/python/how-to-consume-web-services.md)
