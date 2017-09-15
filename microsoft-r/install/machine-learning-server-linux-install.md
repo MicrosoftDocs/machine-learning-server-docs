@@ -48,12 +48,15 @@ The installation path for Machine Learning Server is new: /opt/microsoft/mlserve
 
 + Root or super user permissions
 
-The following additional components are included in Setup and required for R Server.
+The following additional components are included in Setup and required for full language support in Machine Learning Server.
 
 * Microsoft R Open 3.4.1  
 * Microsoft .NET Core 1.1 
+* Anaconda 4.2 with Python 3.5
 
 ## Installation paths
+
+Installed software can be found at the following paths:
 
 + Install root: /opt/microsoft/mlserver/9.2.1
 
@@ -64,46 +67,59 @@ The following additional components are included in Setup and required for R Ser
 Setup downloads packages from [packages.microsoft.com](https://packages.microsoft.com) for Linux installation.
 
 > [!Tip]
-> You can quickly stand up virtual machines in Azure: [Ubuntu virtual machine on Azure](https://docs.microsoft.com/sql/linux/quickstart-install-connect-ubuntu)
+> You can get Linux virtual machines in Azure if you want to use computing resources in the cloud: [Ubuntu virtual machine on Azure](https://docs.microsoft.com/sql/linux/quickstart-install-connect-ubuntu)
 
-### Ubuntu 16.04
+### Ubuntu 14.04 - 16.04
 
-sudo apt-get install microsoft-mlserver-all-9.2.1
+1. Enter `sudo su` to install as root.
 
-echo "deb https://mlrepo:2oE8gc7BY\$673dRwtYo6mL*K@mlserverrepo.westus2.cloudapp.azure.com/8f9b9035111344af80c81e11b0cb0eeb/ubuntu/16.04 ./" > /etc/apt/sources.list.d/mlserver.list
-apt-get update
-apt-get install microsoft-mlserver-packages-9.2.1     (this will install R)
-/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh     (this will activate R Server)
+2. Set the location of the packages using this example syntax for 16.04. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
+    ```
+     wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+     dpkg -i packages-microsoft-prod.deb
+    ```
 
-note: some small (read, docker) images of ubuntu may not have the https apt transport option. Install it using:
-apt-get install apt-transport-https
+3. Update packages on your system: `apt-get update` 
 
-### Ubuntu 14.04
+4. Optionally, if your system does not have the `https apt transport` option: `apt-get install apt-transport-https`
 
-note: some small (read, docker) images of ubuntu may not have the https apt transport option. Install it using the below commands BEFORE running the regular commands
-apt-get update
-apt-get install apt-transport-https
+5. Install the server: `apt-get install microsoft-mlserver-all-9.2.1`  
 
-echo "deb https://mlrepo:2oE8gc7BY\$673dRwtYo6mL*K@mlserverrepo.westus2.cloudapp.azure.com/8f9b9035111344af80c81e11b0cb0eeb/ubuntu/14.04 ./" > /etc/apt/sources.list.d/mlserver.list
-apt-get update
-apt-get install microsoft-mlserver-packages-9.2.1     (this will install R)
-/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh     (this will activate R Server)
+6. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
 
-### CentOS 6/7
+> [!Note]
+> The configuration files for Machine Learning Server can be found at `/etc/apt/sources.list.d/mlserver.list`
 
-yum install microsoft-mlserver-packages-9.2.1 
+### Red Hat and CentOS 6/7
 
-printf "[mlrepo]\nname=mlserver\nbaseurl=https://mlrepo:2oE8gc7BY\$673dRwtYo6mL*K@mlserverrepo.westus2.cloudapp.azure.com/8f9b9035111344af80c81e11b0cb0eeb/rpm\ngpgcheck=0\nenabled=1\n" > /etc/yum.repos.d/mlserver.repo
-yum install microsoft-mlserver-packages-9.2.1    (this will install R Server)
-/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh     (this will activate R Server)
+1. Enter `sudo su` to install as root.
 
-### SUSE
+2. Set the location of the packages using this example syntax for 7.0. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-printf "[mlrepo]\nname=mlserver\nbaseurl=https://mlrepo:2oE8gc7BY\$673dRwtYo6mL*K@mlserverrepo.westus2.cloudapp.azure.com/8f9b9035111344af80c81e11b0cb0eeb/rpm\ngpgcheck=0\ntype=rpm-md\n" > /etc/zypp/repos.d/mlserver.repo
-zypper install Microsoft-mlserver-packages-9.2.1
-/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh
+   ```rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm```
 
+3. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
+
+4. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+
+> [!Note]
+> The configuration files for Machine Learning Server can be found at `/etc/apt/sources.list.d/mlserver.list`
+
+### SUSE SLES11
+
+1. Enter `sudo su` to install as root.
+
+2. Set the location of the packages using this example syntax for SLES11. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+
+   ```rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm```
+
+3. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
+
+4. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+
+> [!Note]
+> The configuration files for Machine Learning Server can be found at `/etc/zypp/repos.d/mlserver.repo`
 
 ## Next steps
 

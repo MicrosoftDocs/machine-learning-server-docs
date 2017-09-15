@@ -25,9 +25,13 @@ ms.technology:
 
 ---
 
-# Known issues in Machine Learning Server and Microsoft R Server
+# Known issues in Machine Learning Server 9.2.1 and Microsoft R Server
 
 Review workaround steps for the following known issues in this release. 
+
+## In this release
+
+There are no known issues reported for Machine Learning Server 9.2.1
 
 <a name="Prev"></a>
 

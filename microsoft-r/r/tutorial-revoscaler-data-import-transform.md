@@ -337,7 +337,7 @@ We can also easily extract a subsample of the data file into a data frame in mem
 
 ## Load a data subset
 
-This exercise shows you how to use **rxReadXdf** to read an arbitrary chunk of the dataset into a data frame for further examination. As a first step, lets get the number of rows, columns, and return the initial rows to better understand the available data. Standard R methods provide this information.
+This exercise shows you how to use **rxDataStep** to read an arbitrary chunk of the dataset into a data frame for further examination. As a first step, lets get the number of rows, columns, and return the initial rows to better understand the available data. Standard R methods provide this information.
 
 	nrow(airXdfData)
 	ncol(airXdfData)
@@ -358,7 +358,7 @@ This exercise shows you how to use **rxReadXdf** to read an arbitrary chunk of t
 
 From *nrow* we see that the number of rows is 600,000. To read 10 rows into a data frame starting with the 100,000th row:
 
-	airXdfDataSmall <- rxReadXdf(airXdfData, numRows=10, startRow=100000)
+	airXdfDataSmall <- rxDataStep(inData=airXdfData, numRows=10, startRow=100000)
 	airXdfDataSmall
 
 This code should generate the following output:

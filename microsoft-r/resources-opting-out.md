@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "03/24/2017"
+ms.date: "09/15/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,11 +24,11 @@ ms.technology: "r-server"
 ---
 # Opting out of usage data collection (Machine Learning Server and R Server)
 
-**Applies to:** version 9.x and later
+**Applies to:** version 9.0.1-9.2.1
 
-By default, telemetry data is collected during your usage of Microsoft R Server and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. Please see the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
+By default, telemetry data is collected during your usage of Machine Learning Server, Microsoft R Server, and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. Please see the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
 
-To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler/rxprivacycontrol.md) from [RevoScaleR](r-reference/revoscaler/revoscaler.md) or [rx-privacy-control](python-reference/revoscalepy/rx-privacy-control.md) from [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md).
+To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler/rxprivacycontrol.md) from [RevoScaleR](r-reference/revoscaler/revoscaler.md) on any platform, or [rx-privacy-control](python-reference/revoscalepy/rx-privacy-control.md) from [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) (Spark only).
 
 ## Version Requirements
 
@@ -46,10 +46,10 @@ Without a parameter, running `rxPrivacyControl()` returns the current setting. S
 
 ## How to opt out (Python)
 
-The revoscalepy package providing `rx-privacy-control` is installed when you add Python support to Machine Learning Server 9.2.1. 
+The revoscalepy package providing `rx-privacy-control` is installed when you add Python support to Machine Learning Server 9.2.1 for Hadoop:
 
-1. Start a Python session.
-2. Import revoscalepy
+1. On any data node that has revoscalepy, start a Python session.
+2. Type `import revoscalepy` to load the library.
 3. Type `rx-privacy-control` to return the current value.
 4. Type `rx-privacy-control(FALSE)`to turn off telemetry data collection.
 

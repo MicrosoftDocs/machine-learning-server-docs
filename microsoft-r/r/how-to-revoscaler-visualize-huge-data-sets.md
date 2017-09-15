@@ -190,10 +190,10 @@ We’d like to compare the ages of men with ages of their wives. This is more co
 			# Go back to the original data set and read the
 			# required rows in the previous chunk
 			needPreviousRows <- 1 - min(spouseRow, na.rm = TRUE)
-			previousData <- rxReadXdf(censusUS2000,
+			previousData <- rxDataStep(inData = censusUS2000,
 				startRow = startRow - needPreviousRows,
 				numRows = needPreviousRows, varsToKeep = spouseVars,
-				returnDataFrame = FALSE, reportProgress = 0)
+				returnTransformObjects = FALSE, reportProgress = 0)
 
 			# Get the spouse locations
 			whichPrevious <- which(spouseFlag == "previous")
@@ -228,9 +228,9 @@ We’d like to compare the ages of men with ages of their wives. This is more co
 			# Go back to the original data set and read the
 			# required rows in the next chunk
 			needNextRows <- max(spouseRow, na.rm=TRUE) - numRows
-			nextData <- rxReadXdf(censusUS2000, startRow = endRow+1,
+			nextData <- rxDataStep(inData = censusUS2000, startRow = endRow+1,
 				numRows = needNextRows, varsToKeep = spouseVars,
-				returnDataFrame = FALSE, reportProgress = 0)
+				returnTransformObjects = FALSE, reportProgress = 0)
 
 			# Get the spouse locations
 			whichNext <- which(spouseFlag == "next")
@@ -254,14 +254,14 @@ We can test the transform function by reading in a small number of rows of data.
 
 	varsToKeep=c("age", "region", "incwage", "racwht", "nchild", "perwt", "sploc",
 		"pernum", "sex")
-	testDF <- rxReadXdf(bigCensusData, numRows = 6, startRow=9,
-		varsToKeep = varsToKeep, returnDataFrame=FALSE)
+	testDF <- rxDataStep(inData=bigCensusData, numRows = 6, startRow=9,
+		varsToKeep = varsToKeep, returnDTransformObjects=FALSE)
 	.rxStartRow <- 9
 	.rxReadFileName <- bigCensusData
 	newTestDF <- as.data.frame(spouseAgeTransform(testDF))
 	.rxStartRow <- 8
-	testDF2 <- rxReadXdf(bigCensusData, numRows = 8, startRow=8,
-		varsToKeep = varsToKeep, returnDataFrame=FALSE)
+	testDF2 <- rxDataStep(inData=bigCensusData, numRows = 8, startRow=8,
+		varsToKeep = varsToKeep, returnTransformObjects=FALSE)
 	newTestDF2 <- as.data.frame(spouseAgeTransform(testDF2))
 	newTestDF[,c("age", "incwage", "sploc", "hasSpouse" ,"spouseAge", "ageDiff")]
 	newTestDF2[,c("age", "incwage", "sploc", "hasSpouse" ,"spouseAge", "ageDiff")]

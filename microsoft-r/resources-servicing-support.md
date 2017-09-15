@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Support for Microsoft R Server versions - Machine Learning Server | Microsoft Docs"
+title: "Support for Machine Learning Server and Microsoft R Server 9.0.1-9.2.1 | Microsoft Docs"
 description: "A list of the operating systems supported by editions and versions of Microsoft R Server, Machine Learning Server, and Revolution R Enterprise."
 keywords: ""
 author: "j-martens"
