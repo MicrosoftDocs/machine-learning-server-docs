@@ -59,7 +59,9 @@ After you've authenticated, you can deploy as a web service. Deploying returns a
 Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional parameters are possible -- many of which are shown in the following example.
 
 In Python, you can define your code in the form of a function or a string, such as
-`code_fn=(run, init)` or `code_str=(“run”, “init”)`.
+`code_fn=(run, init)` or `code_str=('run', 'init')`.
+
+You can define an 'init' function to be bootstrapped to the web service. This 'init' function handles service initialization. Use it to load the packages, datasets, and global variables you need when the service is called the first time. Then, benefit from the performance enhancement since the server no longer needs to reloading these each time it is run. However, it is important to note that all imports are scoped to the 'init' function and not to the global namespace. Consequently, you must still import the modules in each run or consume function. 
 
 <a name="deploy-example"></a>
 Example: 
