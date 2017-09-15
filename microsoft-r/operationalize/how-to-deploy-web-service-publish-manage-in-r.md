@@ -113,7 +113,8 @@ For a full example, you can also follow the quickstart article "[Deploying an R 
 
 #### Realtime web services
 
-Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. [Learn more...](concept-what-are-web-services.md)
+Realtime web services offer even lower latency to produce results faster and score more models in parallel. 
+ [Learn more...](concept-what-are-web-services.md)
 
 Realtime web services are also identified by their name and version. However, unlike standard web services, you cannot specify the following for realtime web services:
 + inputs and outputs (dataframes are assumed)

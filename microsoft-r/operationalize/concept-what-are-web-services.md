@@ -54,14 +54,13 @@ Standard web services, like all web services, are identified by their name and v
 
 Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
-Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, no additional resources or time is spent spinning up a session for each call. Additionally, since the model is cached in memory, it is only loaded once. 
-
-Realtime web services do not support arbitrary code and only accept models created with the supported functions from packages installed with the product. See the following sections for a list of supported functions by language and package.
+Realtime web services offer even lower latency to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, fewer additional resources and less time is spent spinning up a session for each call. Additionally, the model is only loaded once in the compute node and can be scored multiple times.
 
 For realtime services, you do **not** need to specify:
 + inputs and outputs (dataframes are assumed)
 + code (only serialized models are supported)
 
+Realtime web services do not support arbitrary code and only accept models created with the supported functions from packages installed with the product. See the following sections for a list of supported functions by language and package.
 
 **See a realtime web service deployment example: [R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](../operationalize/python/how-to-deploy-manage-web-services.md#realtime-example)**
 
@@ -69,7 +68,7 @@ For realtime services, you do **not** need to specify:
 
 ### Supported functions in R
 
-A model object created with supported functions, such as:
+A model object created with these supported functions:
 
 |R package|Supported functions|
 |-------------|--------------------|
