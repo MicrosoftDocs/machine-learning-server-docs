@@ -79,20 +79,23 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
 1. Enter `sudo su` to install as root.
 
-2. Set the location of the packages using this example syntax for 16.04. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+2. Set the location of the packages using this example syntax for 16.04. Run each command separately. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
     ```
      wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+
      dpkg -i packages-microsoft-prod.deb
     ```
 
-3. Update packages on your system: `apt-get update` 
+3. Verify mlserver.list exists: `ls -la /etc/apt/sources.list.d/`
 
-4. Optionally, if your system does not have the `https apt transport` option: `apt-get install apt-transport-https`
+4. Update packages on your system: `apt-get update` 
 
-5. Install the server: `apt-get install microsoft-mlserver-all-9.2.1`  
+5. Optionally, if your system does not have the `https apt transport` option: `apt-get install apt-transport-https`
 
-6. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
+6. Install the server: `apt-get install microsoft-mlserver-all-9.2.1`  
+
+7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
 
 > [!Note]
 > The configuration files for Machine Learning Server can be found at `/etc/apt/sources.list.d/mlserver.list`
@@ -191,6 +194,35 @@ As another verification step, run the Revo64 program. By default, Revo64 is inst
 ~~~~
 
 To quit the program, type `q()` at the command line with no arguments.
+
+<a name="package-list"></a>
+
+## Packages installed 
+
+The following .NET and Microsoft packages are installed:
+
+dotnet-host 
+dotnet-hostfxr-1.1.0
+dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+
+microsoft-mlserver-adminutil-9.2
+microsoft-mlserver-all-9.2.1 
+microsoft-mlserver-computenode-9.2
+microsoft-mlserver-config-rserve-9.2 
+microsoft-mlserver-hadoop-9.2.1
+microsoft-mlserver-mlm-py-9.2.1 
+microsoft-mlserver-mlm-r-9.2.1
+microsoft-mlserver-mml-py-9.2.1
+microsoft-mlserver-mml-r-9.2.1
+microsoft-mlserver-packages-py-9.2.1 
+microsoft-mlserver-packages-r-9.2.1
+microsoft-mlserver-python-9.2.1 
+microsoft-mlserver-webnode-9.2
+microsoft-r-open-foreachiterators-3.4.1 
+microsoft-r-open-mkl-3.4.1
+microsoft-r-open-mro-3.4.1 
+
+Other package dependencies are installed if the package is not found on the system. This list will vary for each installation.
 
 ## Next steps
 
