@@ -30,11 +30,11 @@ ms.technology:
 
 ## Objective
 
-Learn how to deploy an Python model as a [web service with Machine Learning Server](../../r/concept-what-are-web-services.md). Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
+Learn how to deploy an Python model as a [web service with Machine Learning Server](../concept-what-are-web-services.md). Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
 
-In Machine Learning Server, a web service is a Python code execution on the [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the azureml-model-management-sdk Python library ](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to gain access a service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
+In Machine Learning Server, a web service is a Python code execution on the [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the azureml-model-management-sdk Python library ](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to manage a service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle. 
 
-[Learn more about web services](../../r/concept-what-are-web-services.md).
+[Learn more about web services](../concept-what-are-web-services.md).
 
 ## Time estimate
 
@@ -46,7 +46,8 @@ Before you begin this QuickStart, have the following ready:
 
 + An instance of [Anaconda and the azureml-model-management-sdk package installed](../../install/python-libraries-interpreter.md) on your local machine.    
 
-+ An instance of [Machine Learning Server ](../../what-is-machine-learning-server.md) installed with the Python option, which has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
++ An instance of [Machine Learning Server ](../../what-is-machine-learning-server.md) installed with the Python option, which has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure.
+ 
 
 + The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-in-python.md) in Python, deploy your analytics as web services so others can consume them. 
 
@@ -87,7 +88,7 @@ This section provides a quick summary of useful links for data scientists operat
 
 **Key Documents**
  + [About Operationalization](../../what-is-operationalization.md)   
- + [What are web services](../../r/concept-what-are-web-services.md) 
+ + [What are web services](../concept-what-are-web-services.md) 
  + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
  + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
  + [Working with web services in Python](how-to-deploy-manage-web-services.md)    

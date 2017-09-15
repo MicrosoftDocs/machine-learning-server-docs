@@ -28,9 +28,9 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-This article is for data scientists who wants to learn how to deploy and manage Python code/models as [analytic web services](../../r/concept-what-are-web-services.md) hosted in Machine Learning Server. This article assumes you are proficient in Python.
+This article is for data scientists who wants to learn how to deploy and manage Python code/models as [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
-Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more...](../../r/concept-what-are-web-services.md)
+Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more...](../concept-what-are-web-services.md)
 
 Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime.
 
@@ -61,7 +61,7 @@ Standard web services, like all web services, are identified by their name and v
 In Python, you can define your code in the form of a function or a string, such as
 `code_fn=(run, init)` or `code_str=('run', 'init')`.
 
-You can define an 'init' function to be bootstrapped to the web service. This 'init' function handles service initialization. Use it to load the packages, datasets, and global variables you need when the service is called the first time. Then, benefit from the performance enhancement since the server no longer needs to reloading these each time it is run. However, it is important to note that all imports are scoped to the 'init' function and not to the global namespace. Consequently, you must still import the modules in each run or consume function. 
+You can define an 'init' function to be bootstrapped to the web service. This 'init' function handles service initialization. Use it to load the packages, datasets, and global variables you need when the service is called the first time. Then, benefit from the performance enhancement since the server no longer needs to reloading these each time it is run. One caveat, however, is that all imports are scoped to the 'init' function and not to the global namespace. Consequently, you must still import the modules in each run or consume function. 
 
 <a name="deploy-example"></a>
 Example: 
@@ -86,13 +86,13 @@ For a full example, try out the [quickstart for deploying web services](quicksta
 
 ### Realtime web services
 
-Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. [Learn more...](../../r/concept-what-are-web-services.md)
+Realtime web services offer even lower latency to produce results faster and score more models in parallel. [Learn more...](../concept-what-are-web-services.md)
 
 Realtime web services are also identified by their name and version. However, unlike standard web services, you **cannot** specify the following for realtime web services:
 + inputs and outputs (dataframes are assumed)
 + code (only serialized models are supported)
 
-Realtime web services only accept models created with [the supported functions from packages installed with the product](../../r/concept-what-are-web-services.md#realtime). 
+Realtime web services only accept models created with [the supported functions from packages installed with the product](../concept-what-are-web-services.md#realtime). 
 
 In Python, you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
 
@@ -201,7 +201,7 @@ By default, all web service operations are available to authenticated users. Des
 
 ## See also
 
-[What are web services](../../r/concept-what-are-web-services.md)
+[What are web services](../concept-what-are-web-services.md)
 
 [Authenticate in Python](how-to-authenticate-in-python.md)
 
