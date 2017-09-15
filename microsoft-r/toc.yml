@@ -252,7 +252,7 @@
   - name: Operationalization
     href: operationalize/concept-operationalize-deploy-consume.md
   - name: Web services
-    href: r/concept-what-are-web-services.md
+    href: operationalize/concept-what-are-web-services.md
   - name: Pre-trained models
     href: install/microsoftml-install-pretrained-models.md
   - name: Packages

@@ -27,11 +27,11 @@ ms.technology: "r-server"
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x** 
 
-This article details how you can publish and manage your [analytic web services](../r/concept-what-are-web-services.md) directly in R. You can deploy your R models, scripts, and code as web services using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  The mrsdeploy R package containing these functions is installed with both Machine Learning Server (and Microsoft R Server) and Microsoft R Client.
+This article details how you can publish and manage your [analytic web services](concept-what-are-web-services.md) directly in R. You can deploy your R models, scripts, and code as web services using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  The mrsdeploy R package containing these functions is installed with both Machine Learning Server (and Microsoft R Server) and Microsoft R Client.
 
 These web services can be [consumed in R](how-to-consume-web-service-interact-in-r.md) by other authenticated users or in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
-Using the mrsdeploy R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: [standard R web services and realtime R web services](../r/concept-what-are-web-services.md).  
+Using the mrsdeploy R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: [standard R web services and realtime R web services](concept-what-are-web-services.md).  
 
 Additionally, you can get a [list of all services](how-to-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others. You can also publish or interact with a web service outside of R using the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
@@ -85,7 +85,7 @@ You can publish web services to a local Machine Learning Server from your comman
 
 #### Standard web services
 
-[Standard web services](../r/concept-what-are-web-services.md), like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional arguments are possible -- many of which are shown in the following example.
+[Standard web services](concept-what-are-web-services.md), like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional arguments are possible -- many of which are shown in the following example.
 
 Example of standard web service:
 
@@ -113,13 +113,13 @@ For a full example, you can also follow the quickstart article "[Deploying an R 
 
 #### Realtime web services
 
-Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. [Learn more...](../r/concept-what-are-web-services.md)
+Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. [Learn more...](concept-what-are-web-services.md)
 
 Realtime web services are also identified by their name and version. However, unlike standard web services, you cannot specify the following for realtime web services:
 + inputs and outputs (dataframes are assumed)
-+ code (only [certain models are supported](../r/concept-what-are-web-services.md#realtime))
++ code (only [certain models are supported](concept-what-are-web-services.md#realtime))
 
-Realtime web services only accept model objects created with the [supported functions](../r/concept-what-are-web-services.md#realtime) from packages installed with the product.
+Realtime web services only accept model objects created with the [supported functions](concept-what-are-web-services.md#realtime) from packages installed with the product.
 
 Example of realtime service (supported since R Server 9.1): 
 
