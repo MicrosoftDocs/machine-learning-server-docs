@@ -153,4 +153,6 @@ We recommend starting with any Quickstart tutorial listed in the contents pane.
 
 + [Install Machine Learning Server](r-server-install.md)
 + [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)
++ [Supported platforms](r-server-install-supported-platforms.md)  
 + [Known Issues](../resources-known-issues.md)  
++ [Configure Machine Learning Server to operationalize your analytics](../what-is-operationalization.md) 
