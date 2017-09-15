@@ -44,18 +44,6 @@ Before you can use the web service management functions in the mrsdeploy R packa
 
 + Authenticate with Machine Learning Server using the remoteLogin() or remoteLoginAAD() functions in the mrsdeploy package as described in "[Connecting to Machine Learning Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
-## Web service types
-
-<a name="standard"></a>
-
-### Standard R web services
-
- These web services offer fast execution and scoring of arbitrary R code and R models. They can contain R code, models, and model assets. They can also take specific inputs and provide specific outputs for those users who are integrating the services inside their applications.
-
-Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any R code, models, and any necessary model assets. When publishing a standard web service, you must also define the required inputs and any output the application developers use to integrate the service in their applications.
-
-A code sample for publishing web services can be [found later in this article](#publishService).
-
 ## Permissions for managing web services
 
 Any authenticated user can:
