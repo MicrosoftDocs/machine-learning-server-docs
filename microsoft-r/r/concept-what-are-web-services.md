@@ -28,7 +28,9 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-To offer other users a chance to use the code and predictive models you have developed, you can deploy them as web service hosted in Machine Learning Server. Web services in Machine Learning Server can be based on Python or R. They can be deployed on one platform and consumed in another. 
+To offer other users a chance to use the code and predictive models you have developed, you can deploy them as web service hosted in Machine Learning Server. Once you deploy the web service, it can be consumed by other authenticated users.
+
+Web services in Machine Learning Server can be based on Python or R. They can also be deployed on one platform and consumed in another. 
 
 There are two types of web services: standard and realtime. 
 
@@ -44,7 +46,7 @@ These web services offer fast execution and scoring of arbitrary Python or R cod
 
 Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any Python or R code, models, and any necessary model assets. When deploying a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
 
-See a standard web service deployment example: [R]()  |  [Python]()
+See a standard web service deployment example: [R](../../operationalize/quickstart-publish-r-web-service.md)  |  [Python](../../operationalize/python/quickstart-deploy-python-web-service.md)
 
 <a name="realtime"></a>
 
@@ -61,7 +63,7 @@ For realtime services, you do **not** need to specify:
 + code (only serialized models are supported)
 
 
-See a realtime web service deployment example: [R]()  |  [Python]()
+See a realtime web service deployment example: [R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](../operationalize/python/how-to-deploy-manage-web-services.md#realtime-example)
 
 <a name=r></a>
 
@@ -88,3 +90,9 @@ There are additional restrictions on the input dataframe format for microsoftml 
 |-------------|--------------------|
 |[revoscalepy](../../python-reference/revoscalepy/revoscalepy-package.md)|rx_btrees, rx_dforest, rx_dtree, rx_logit, rx_lin_mod|
 |[microsoftml](../../python-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>categorical, categorical_hash, concat, extract_pixels, featurize_text, featurize_image, get_sentiment, rx_fast_trees, rx_fast_forest, rx_fast_linear, rx_logistic_regression, rx_neural_network, rx_oneclass_svm, load_image, resize_image, select_columns, and drop_columns.<br/><br/>See the [input dataframe format restrictions above](#inputdf).|
+
+## See also
+
+[Deploy and manage web services in R](../operationalize/how-to-deploy-web-service-publish-manage.md)
+
+[Deploy and manage web services in Python](../../operationalize/python/how-to-deploy-manage-web-services.md)

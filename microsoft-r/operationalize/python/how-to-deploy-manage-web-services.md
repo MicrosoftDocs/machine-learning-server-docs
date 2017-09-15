@@ -28,7 +28,7 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-This article is for data scientists who wants to learn how to deploy and manage Python code/models as web services hosted in Machine Learning Server. This article assumes you are proficient in Python.
+This article is for data scientists who wants to learn how to deploy and manage Python code/models as [analytic web services](../../r/concept-what-are-web-services.md) hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
 Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime.
 
@@ -123,6 +123,7 @@ service = client.service(cars_model)\
         .description('My first python model')\
         .deploy()
 ```
+<a name=realtime-example></a>
 
 ### Realtime web services
 
