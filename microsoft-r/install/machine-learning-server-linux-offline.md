@@ -24,6 +24,7 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Linux offline
 
+No install.sh script.
 
 ## Next steps
 

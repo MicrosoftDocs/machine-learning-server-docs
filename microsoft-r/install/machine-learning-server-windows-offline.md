@@ -33,13 +33,13 @@ Before you start, review the following articles for requirements and restriction
 
 ## Downloads
 
-On an internet-connectec computer, download all of the following files.
+On an internet-connected computer, download all of the following files.
 
 <a name="file-list"></a>
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | serversetup.exe from the following sites:<br/><br/>[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) <br/><br/> [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) <br/><br/> [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | R Server |
+|Machine Learning Server setup | serversetup.exe from any one of the following sites:<br/><br/>[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) <br/><br/> [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) <br/><br/> [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | R Server |
 |NameForMLM |[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
 |Microsoft R Open |[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852724) | R |
 |Microsoft Python Open |[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
@@ -49,14 +49,14 @@ On an internet-connectec computer, download all of the following files.
 
 Use a tool or device to transfer the files the offline server. Extract the zipped executable for setup. Place files in the following locations:
 
-+ Put the serversetup.exe in a Downloads folder. It is not important where this file resides.
++ Put the serversetup.exe in a convenient folder. It is not important where this file resides.
 + Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. 
 
 ## Run setup
 
 After files are placed, use the wizard or run setup from the commandline:
 
-+ [Install Machine Learning Server](machine-learning-server-windows-install.md)
++ [Install Machine Learning Server > How to install > Run setup](machine-learning-server-windows-install.md#how-to-install)
 + [Commandline installation](machine-learning-server-windows-commandline.md)
 
 ## Check log files
@@ -105,3 +105,4 @@ We recommend starting with any Quickstart tutorial listed in the contents pane.
 
 + [Machine Learning Server](../what-is-machine-learning-server.md)
 + [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)
++ [Known Issues](../resources-known-issues.md)  

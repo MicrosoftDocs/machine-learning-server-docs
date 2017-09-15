@@ -22,11 +22,11 @@ ms.technology: "r-server"
 
 ---
 
-# Install Machine Learning Server for Windows from a command line
+# Commandline install for Machine Learning Server for Windows
 
 This article provides syntax and examples for running Machine Learning Server **ServerSetup.exe** from the command line. You can use command line parameters for an internet-connected or offline installation. A command line installation requires administrator permissions.
 
-Before you start, review the following articles for system requirements, prerequisites, download links, and steps:
+Before you start, review the following articles for requirements and restrictions:
 
 + [Install Machine Learning Server 9.2.1 on Windows](machine-learning-server-windows-install.md) for an internet-connected installation.
 + [Offline installation](machine-learning-server-windows-offline.md) for a machine with no internet access.
@@ -76,7 +76,7 @@ A default installation includes R_SERVER and the R packages, but not PYTHON_SERV
 
    `serversetup.exe /quiet /python /models`
 
-2. Add the pre-trained machine learning models to an existing installation. The pre-trained models are inserted into the MicrosoftML (R) and microsoftml (Python) libraries, or both if you added support for both languages. Once installed, you cannot incrementally remove them. Removal will require uninstall and reinstall of server. 
+2. Add the [pre-trained machine learning models](microsoftml-install-pretrained-models.md) to an existing installation. You cannot install them as a standalone component. The models require R or Python. During installation, the pre-trained models are inserted into the MicrosoftML (R) and microsoftml (Python) libraries, or both if you add both languages. Once installed, you cannot incrementally remove them. Removal will require uninstall and reinstall of Python or R Server. 
 
    `serversetup.exe /install /models`
 
