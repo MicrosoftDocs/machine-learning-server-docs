@@ -40,7 +40,7 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 + Disk space must be a minimum of 500 MB.
 
-+ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](machine-learning-linux-offline.md).
++ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](machine-learning-server=linux-offline.md).
 
 + A package manager (yum for CentOS/RHEL systems, apt for Ubuntu, dpkg for Ubuntu offline, zypper for SLES systems, )
 
@@ -65,6 +65,8 @@ Installed software can be found at the following paths:
 + Install root: /opt/microsoft/mlserver/9.2.1
 
 + Microsoft R Open root: /opt/microsoft/ropen/3.4.1
+
+<a name="how-to-install"></a>
 
 ## How to install
 
@@ -125,6 +127,79 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 > [!Note]
 > The configuration files for Machine Learning Server can be found at `/etc/zypp/repos.d/mlserver.repo`
 
+## Connect and validate
+
+1. List installed packages:
+
+  + On CentOS and RHEL: `rpm -qa | grep microsoft` 
+  + On Ubuntu: `apt list --installed | grep microsoft`  
+  + On SLES11: `zypper se microsoft`
+
+2. Once you have a package name, you can obtain verbose version information. For example:
+
+   + On CentOS and RHEL: `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`
+   + On Ubuntu: `$ dpkg --status microsoft-r-server-packages-9.1.x86_64`  
+   + On SLES: `zypper info microsoft-r-server-packages-9.1.x86_64`
+
+Partial output is as follows (note version 9.2.1):
+
+   ```
+	  Name        : microsoft-mlserver-all-9.2.1       Relocations: /usr/lib64
+	  Version     : 9.2.1                              Vendor: Microsoft
+	  . . .
+   ```
+
+### Start Revo64
+
+As another verification step, run the Revo64 program. By default, Revo64 is installed in the /usr/bin directory, available to any user who can log in to the machine:
+
+1. From /Home or any other working directory:
+
+   `[<path>] $ Revo64`
+
+2. Run a RevoScaleR function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
+
+   `> rxSummary(~., iris)`
+
+  Output from the iris dataset should look similar to the following:
+
+~~~~
+        Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
+        Computation time: 0.005 seconds.
+        Call:
+        rxSummary(formula = ~., data = iris)
+
+        Summary Statistics Results for: ~.
+        Data: iris
+        Number of valid observations: 150
+
+         Name         Mean     StdDev    Min Max ValidObs MissingObs
+         Sepal.Length 5.843333 0.8280661 4.3 7.9 150      0
+         Sepal.Width  3.057333 0.4358663 2.0 4.4 150      0
+         Petal.Length 3.758000 1.7652982 1.0 6.9 150      0
+         Petal.Width  1.199333 0.7622377 0.1 2.5 150      0
+
+        Category Counts for Species
+        Number of categories: 3
+        Number of valid observations: 150
+        Number of missing observations: 0
+
+         Species    Counts
+         setosa     50
+         versicolor 50
+         virginica  50
+~~~~
+
+To quit the program, type `q()` at the command line with no arguments.
+
 ## Next steps
 
-## See also
+We recommend starting with any Quickstart tutorial listed in the contents pane. 
+
+### See also
+
++ [Install Machine Learning Server](r-server-install.md)
++ [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)
++ [Supported platforms](r-server-install-supported-platforms.md)  
++ [Known Issues](../resources-known-issues.md)  
++ [Configure Machine Learning Server to operationalize your analytics](../what-is-operationalization.md)
