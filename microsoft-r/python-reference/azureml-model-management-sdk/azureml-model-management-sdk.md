@@ -94,8 +94,12 @@ Next, follow this quickstart for hands on experience:
 
 ## See also
 
-[Library Reference](../introducing-python-package-reference.md)
++ [Library Reference](../introducing-python-package-reference.md)
 
-[Install Machine Learning Server](../../what-is-machine-learning-server.md)
++ [Install Machine Learning Server](../../what-is-machine-learning-server.md)
 
-[Install the Python interpreter and libraries](../../install/python-libraries-interpreter.md)
++ [Install the Python interpreter and libraries](../../install/python-libraries-interpreter.md)
+
++ [How to authenticate in Python with this package](../../operationalize/python/how-to-authenticate-in-python.md)
+
++ [How to list, get, and consume services in Python with this package](../../operationalize/python/how-to-consume-web-services.md)

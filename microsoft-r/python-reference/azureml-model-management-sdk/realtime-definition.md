@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RealtimeDefinition,alias,deploy,description,redeploy,serialized_model,version: " 
+title: "RealtimeDefinition,alias,deploy,description,redeploy,serialized_model,version: Realtime Service Definition Definition" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/15/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,148 +24,157 @@ ms.custom: ""
  
 ---
 
-# Class azureml.deploy.operationalization.RealtimeDefinition(name, op)
+# Realtime Service Definition
+
+
+## Class RealtimeDefinition
+
+
+
+```
+azureml.deploy.operationalization.RealtimeDefinition(name, op)
+```
 
 
 
 
-
-Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md)
+Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition)
 
 Realtime class defining a service’s properties on the fluent API.
 
+Defines a realtime service publish definition.
 
 
-## alias
+## Arguments
 
+
+### name
+
+
+### op
+
+
+
+```
+alias(alias)
+```
 
 
 
 
 Set the service function name alias to call.
 
-### Usage
 
-`alias(alias)`
-
-### Arguments
+## Arguments
 
 
-#### alias
+### alias
 
 
-### Returns
+## Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-## deploy
-
+```
+deploy()
+```
 
 
 
 
 Bundle up the definition properties and publish the service.
 
-### Usage
 
-`deploy()`
+## Returns
 
-### Returns
-
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-## description
+```
+description(description)
+```
 
 
 
 
 Set the service description.
 
-### Usage
 
-`description(description)`
-
-### Arguments
+## Arguments
 
 
 ### description
 
 
-### Returns
+## Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-## redeploy
-
+```
+redeploy(force=False)
+```
 
 
 
 
 Bundle up the definition properties and update the service.
 
-### Usage
 
-`redeploy(force=False)`
-
-### Arguments
+## Arguments
 
 
-#### force
+### force
 
 
-### Returns
+## Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
-## serialized_model
 
+```
+serialized_model(model)
+```
 
 
 
 
 Serialized model.
 
-### Usage
 
-`serialized_model(model)`
-
-### Arguments
+## Arguments
 
 
-#### model
+### model
 
 
-### Returns
+## Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-## version
-
+```
+version(version)
+```
 
 
 
 
 Set the service version.
 
-### Usage
 
-`version(version)`
-
-### Arguments
+## Arguments
 
 
-#### version
+### version
 
 
-### Returns
+## Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
