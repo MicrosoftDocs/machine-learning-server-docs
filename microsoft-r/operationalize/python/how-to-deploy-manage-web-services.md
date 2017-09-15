@@ -78,13 +78,13 @@ service = client.service('TxService')\
         .deploy()
 ```
 
-[For a full example try out the quickstart for deploying web services](quickstart-deploy-python-web-service.md)
+For a full example, try out the [quickstart for deploying web services](quickstart-deploy-python-web-service.md).
 
 <a name=realtime-example></a>
 
 ### Realtime web services
 
-Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. [Learn more about how...](../../r/concept-what-are-web-services.md)
+Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. [Learn more...](../../r/concept-what-are-web-services.md)
 
 Realtime web services are also identified by their name and version. However, unlike standard web services, you **cannot** specify the following for realtime web services:
 + inputs and outputs (dataframes are assumed)
@@ -150,9 +150,14 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 ## Update web services
 
-To change a web service after you've published it without changing its name or version, use '.redeploy' instead of '.deploy' for the service object. Then, specify the changes, such as the code, model, description, inputs, or outputs. When you update a service, it overwrites that named version and returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+To update an existing web service without changing its name or version, specify the following parameters:
++ The name and version to identify the service to be updated.
++ What needs to change, such as the code, model, description, inputs, or outputs.
++ '.redeploy' instead of '.deploy'  
 
-In this example, we update the service to add a description useful to people who might consume this service. You still have to provide the name and version to identify the service to be updated.
+When you update a service, it overwrites that named version and returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+
+In this example, we update the service with a new description. 
 
 ```Python
 # Redeploy this standard service 'TxService' version '1.0'
