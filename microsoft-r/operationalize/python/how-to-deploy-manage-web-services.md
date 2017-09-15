@@ -152,7 +152,7 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 To update an existing web service without changing its name or version, specify the following parameters:
 + The name and version to identify the service to be updated.
-+ What needs to change, such as the code, model, description, inputs, or outputs.
++ The parameters that need changed, such as the code, model, description, inputs, or outputs.
 + '.redeploy' instead of '.deploy'  
 
 When you update a service, it overwrites that named version and returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
@@ -196,3 +196,11 @@ By default, any authenticated Machine Learning Server user can:
 + Retrieve a list of any or all web services
 
 By default, all web service operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. Ask your administrator for details on your role.
+
+## See also
+
+[What are web services](../../r/concept-what-are-web-services.md)
+
+[Authenticate in Python](how-to-authenticate-in-python.md)
+
+[Find and consume web services](how-to-consume-web-services.md)
