@@ -30,6 +30,8 @@ ms.technology:
 
 This article is for data scientists who wants to learn how to deploy and manage Python code/models as [analytic web services](../../r/concept-what-are-web-services.md) hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
+Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more...](../../r/concept-what-are-web-services.md)
+
 Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime.
 
 Web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).   [RESTful APIs](../concept-api.md) are also available to provide direct programmatic access to a service's lifecycle.
@@ -43,55 +45,6 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 + Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server](how-to-authenticate-in-python.md)."
 
-<a name="standard"></a>
-
-## Standard web services
-
-These web services offer fast execution and scoring of arbitrary Python or R code and models. They can contain code, models, and model assets. They can also take specific inputs and provide specific outputs for those users who are integrating the services inside their applications.
-
-Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any Python or R code, models, and any necessary model assets. When deploying a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
-
-A full code example for deploying Python web services can be [found in this Quickstart](quickstart-deploy-python-web-service.md). A snippet of the deploy function can be [seen here](#deploy-example).
-
-<a name="realtime"></a>
-
-## Realtime web services
-
-Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
-
-Realtime web services offer even lower latency and better load to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, no additional resources or time is spent spinning up a session for each call. Additionally, since the model is cached in memory, it is only loaded once. 
-
-For realtime services, you do **not** need to specify:
-+ inputs and outputs (dataframes are assumed)
-+ code (only serialized models are supported)
-
-A code example for deploying realtime services can be [found later in this article](#deploy-example). 
-
-### Supported revoscalepy functions for realtime
-
-In Python, realtime web services take only models created with supported functions from revoscalepy and microsoftml, and does not support arbitrary code. From the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md), the following functions are supported:
-
-+ rx_btrees, rx_dtree, rx_dforest 
-+ rx_logit, rx_lin_mod
-
-### Supported microsoftmly functions for realtime
-
-In Python, realtime web services take only models created with supported functions from revoscalepy and microsoftml, and does not support arbitrary code. From the [microsoftml package](../../python-reference/microsoftml/microsoftml-package.md), the following functions  for machine learning and transform tasks are supported:
-+ rx_fast_trees, rx_fast_forest, rx_fast_linear 
-+ rx_logistic_regression, rx_neural_network, concat, 
-+ rx_oneclass_svm, categorical, categorical_hash, 
-+ featurize_text, featurize_image, get_sentiment, 
-+ load_image, resize_image, extract_pixels, 
-+ select_columns, and drop_columns. 
-
-There are additional restrictions on the format of the dataframe used as input with  microsoftml models:
-
-1. The dataframe must have the same number of columns as the formula specified for the model.
-
-1. The dataframe must be in the exact same order as the formula specified for the model.
-  
-1. These columns must have be of the same data type as the training data. Type casting is not possible.
-
 
 <a name="publishService"></a>
 
@@ -102,6 +55,8 @@ To deploy your analytics, you must publish them as web services in Machine Learn
 After you've authenticated, you can deploy as a web service. Deploying returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
 ### Standard web services
+
+Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional arguments are possible -- many of which are shown in the following example.
 
 In Python, you can define your code in the form of a function or a string, such as
 `code_fn=(run, init)` or `code_str=(“run”, “init”)`.
@@ -126,6 +81,10 @@ service = client.service(cars_model)\
 <a name=realtime-example></a>
 
 ### Realtime web services
+
+For realtime services, you do **not** need to specify:
++ inputs and outputs (dataframes are assumed)
++ code (only serialized models are supported)
 
 In Python, you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
 
