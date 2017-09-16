@@ -112,7 +112,7 @@ By default, the logging level is set to Warning so as not to slow performance. H
 |Information|Logs system events that correspond to its responsibilities and functions|
 |Warning|Logs only when service is degraded, endangered, or may be behaving outside of its expected parameters.  (Default level)|
 |Error|Logs only errors (functionality is unavailable or expectations broken)|
-|Fatal|Logs only fatal events that crash the application|
+|Critical|Logs only fatal events that crash the application|
 
 **To update the logging level:**
 
