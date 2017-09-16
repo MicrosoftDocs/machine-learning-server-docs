@@ -118,13 +118,17 @@ On each web node, edit the appsettings.json configuration file in order to decla
 
 1. Search for the following section: `"Authorization": {`
 
-1. In that section, add the roles you need. Then, map one or more security groups to each role such as:
+1. In that section, add only the roles you need. Then, map the security groups to each role you want to define such as:
    ```
    "Authorization": {
      "Owner": [ "Administrators" ],
-     "Contributor": [ "RProgrammers", "Quality" ]
+     "Contributor": [ "RProgrammers", "Quality" ],
+     "Reader": [ "App developers" ]
+     "CacheLifeTimeInMinutes": 60
    }
    ``` 
+
+   The 'CacheLifeTimeInMinutes' attribute was added in Machine Learning Server 9.2 to indicate the length of time that Machine Learning Server caches the information received from LDAP or AAD regarding user group membership. After the cache lifetime elapses, the roles and users are checked again. If you make changes to the groups in your LDAP or AAD configuration, those changes aren't detected by Machine Learning Server until the cache lifetime expires and the configuration is checked again. 
 
    >[!WARNING]
    >For AD/LDAP authentications:
