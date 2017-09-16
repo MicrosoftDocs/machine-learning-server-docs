@@ -269,11 +269,11 @@
     - name: Python
       items:
       - name: Use revoscalepy on Spark
-        href: python/howto-revoscalepy.md
+        href: python/how-to-revoscalepy.md
       - name: Parallel processing using revoscalepy
-        href: python/howto-revoscalepy-parallel.md
+        href: python/how-to-revoscalepy-parallel.md
       - name: Configure Jupyter Notebooks
-        href: python/howto-revoscalepy-jupyter-nb-config.md
+        href: python/how-to-revoscalepy-jupyter-nb-config.md
     - name: R
       items:
       - name: Choose a MicrosoftML algorithm

@@ -42,7 +42,7 @@ Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-m
 
 Together, the libraries provide full-spectrum data mining: data transformation and manipulation, analysis and visualization, model management. Machine learning algorithms, as well as pre-trained models provided by Microsoft, are now in Python. 
 
-+ [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with support for [processing in parallel](python/howto-revoscalepy-parallel.md).
++ [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with support for [processing in parallel](python/how-to-revoscalepy-parallel.md).
 
 + [revoscalepy and pyspark interoperability](python/quickstart-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSpark.md).
 
