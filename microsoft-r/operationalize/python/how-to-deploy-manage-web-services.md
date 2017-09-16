@@ -72,7 +72,7 @@ Standard web services, like all web services, are identified by their name and v
 
 For a full example, try out the [quickstart guide for deploying web services in Python](quickstart-deploy-python-web-service.md).
 
-The following table lists the supported data types for the input and output schemas of Python web services.  You can write these as a reference `bool` or as a string `'bool'`.
+This table presents the supported data types for the input and output schemas of Python web services.  Write these as a reference `bool` or as a string `'bool'`.
 
 |I/O data types||
 |--------|-----|
@@ -85,7 +85,7 @@ The following table lists the supported data types for the input and output sche
 
 [Realtime web services](../concept-what-are-web-services.md#realtime) are also identified by their name and version. The following additional parameters can be defined for the realtime service: 
 + A description
-+ A model created with [supported functions](../concept-what-are-web-services.md#realtime) and serialized with [revoscalepy.rx_serialize_model](../../python-reference/revoscalepy/rx-serialize-model.md)
++ A model created with certain [supported functions](../concept-what-are-web-services.md#realtime) and serialized with [revoscalepy.rx_serialize_model](../../python-reference/revoscalepy/rx-serialize-model.md)
 
 Dataframes are assumed for inputs and outputs. Code is not supported.
 
