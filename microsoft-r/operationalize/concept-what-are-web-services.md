@@ -28,7 +28,7 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-To offer other users a chance to use the code and predictive models you have developed, you can deploy them as web service hosted in Machine Learning Server. Once you deploy the web service, it can be consumed by other authenticated users.
+Offer users a chance to use your code and predictive models by deploying them as web service hosted in Machine Learning Server. Once you deploy the web service, it can be consumed by other authenticated users.
 
 Web services in Machine Learning Server can be based on Python or R. They can also be deployed on one platform and consumed in another. 
 
@@ -38,7 +38,7 @@ There are two types of web services: standard and realtime.
 
 ## Requirements
 
-Before you can deploy, manage, or consume web services, you must have access to an instance of Machine Learning Server that was  [properly configured](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to host web services. 
+Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
 
 <a name="standard"></a>
 
@@ -46,7 +46,7 @@ Before you can deploy, manage, or consume web services, you must have access to 
 
 These web services offer fast execution and scoring of arbitrary Python or R code and models. They can contain code, models, and model assets. They can also take specific inputs and provide specific outputs for those users who are integrating the services inside their applications.
 
-Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any Python or R code, models, and any necessary model assets. When deploying a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
+Standard web services, like all web services, are identified by their name and version. Additionally, they can also be defined by any Python or R code, models, and any necessary model assets. When deploying a standard web service, you should also define the required inputs and any output the application developers use to integrate the service in their applications.
 
 **See a standard web service deployment example: [R](../operationalize/quickstart-publish-r-web-service.md)  |  [Python](../operationalize/python/quickstart-deploy-python-web-service.md)**
 
@@ -60,7 +60,7 @@ For realtime services, you do **not** need to specify:
 + inputs and outputs (dataframes are assumed)
 + code (only serialized models are supported)
 
-Realtime web services do not support arbitrary code and only accept models created with the supported functions from packages installed with the product. See the following sections for a list of supported functions by language and package.
+Realtime web services do not support arbitrary code and only accept models created with the supported functions from packages installed with the product. See the following sections for the list of supported functions by language and package.
 
 **See a realtime web service deployment example: [R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](../operationalize/python/how-to-deploy-manage-web-services.md#realtime-example)**
 
@@ -73,7 +73,7 @@ A model object created with these supported functions:
 |R package|Supported functions|
 |-------------|--------------------|
 |[RevoScaleR](../r-reference/revoscaler/revoscaler.md)|rxLogit, rxLinMod, rxBTrees, rxDTree, and rxDForest| 
-|[MicrosoftML](../r-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script .|
+|[MicrosoftML](../r-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script.|
 <a name="inputdf"></a>
 There are additional restrictions on the input dataframe format for microsoftml models:
 
@@ -90,7 +90,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 |Python package|Supported functions|
 |-------------|--------------------|
 |[revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md)|rx_btrees, rx_dforest, rx_dtree, rx_logit, rx_lin_mod|
-|[microsoftml](../python-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>categorical, categorical_hash, concat, extract_pixels, featurize_text, featurize_image, get_sentiment, rx_fast_trees, rx_fast_forest, rx_fast_linear, rx_logistic_regression, rx_neural_network, rx_oneclass_svm, load_image, resize_image, select_columns, and drop_columns.<br/><br/>See the [input dataframe format restrictions above](#inputdf).|
+|[microsoftml](../python-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>categorical, categorical_hash, concat, extract_pixels, featurize_text, featurize_image, get_sentiment, rx_fast_trees, rx_fast_forest, rx_fast_linear, rx_logistic_regression, rx_neural_network, rx_oneclass_svm, load_image, resize_image, select_columns, and drop_columns.<br/><br/>See the preceding [input dataframe format restrictions](#inputdf).|
 
 
 <a name="versioning"></a>
@@ -99,7 +99,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 
 Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services and helps the people consuming your service to find it easily. 
 
-At publish time, you can specify an alphanumeric string that is meaningful to those who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
+At publish time, specify an alphanumeric string that is meaningful to those users who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
 
 If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
 

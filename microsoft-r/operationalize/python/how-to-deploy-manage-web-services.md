@@ -41,7 +41,7 @@ To deploy your analytics, you must publish them as web services in Machine Learn
 
 When you deploy Python code or a model as a web service, a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
 
-Once hosted on Machine Learning Server, you can update and manage them.  Web services can be [consumed in Python](how-to-consume-web-service.md) or in the [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md) by authenticated users .
+Once hosted on Machine Learning Server, you can update and manage them.  Authenticated users can  [consume web services in Python](how-to-consume-web-service.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 <a name="auth"></a>
 
@@ -154,7 +154,7 @@ service = client.service('myService')\
 
 ## Delete web services
 
-When you no longer want to keep a web service that you have published, you can delete it. You can also delete the services of others if you are [assigned to a role](../configure-roles.md) with those permissions. 
+When you no longer want to keep a web service that you have published, you can delete it.  If you are [assigned to "Owner" role](../configure-roles.md), you can also delete the services of others.
 
 You can call 'delete_service' on the 'DeployClient' object to delete a specific service on Machine Learning Server.
 

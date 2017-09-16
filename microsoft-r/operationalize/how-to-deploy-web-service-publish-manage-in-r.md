@@ -40,7 +40,7 @@ Additionally, you can get a [list of all services](how-to-consume-web-service-in
 ## Requirements
 
 Before you can use the web service management functions in the mrsdeploy R package, you must:
-+ Have access to an Machine Learning Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
++ Have access to a Machine Learning Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
 + Authenticate with Machine Learning Server using the remoteLogin() or remoteLoginAAD() functions in the mrsdeploy package as described in "[Connecting to Machine Learning Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 

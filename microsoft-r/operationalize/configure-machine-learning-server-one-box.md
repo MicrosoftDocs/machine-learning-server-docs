@@ -122,7 +122,7 @@ Carefully review the following steps.
 
 1. From the menus, choose **Configure server** and then choose **Configure for one box**. The configuration script begins.
 
-1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically setup using the configuration you had for R Server 9.x. Note: You can safely ignore the Python warning during upgrade.
+1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically set up using the configuration you had for R Server 9.x. Note: You can safely ignore the Python warning during upgrade.
 
 1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
 
