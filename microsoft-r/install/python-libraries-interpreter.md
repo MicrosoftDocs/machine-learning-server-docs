@@ -36,7 +36,7 @@ You can also install a Python interpreter along with these custom packages local
 
 + Benefit from the best-of-breed machine learning algorithms without any server connection. These algorithms have been battle-tested by Microsoft.
  
-+ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can leverage the disk scalability, performance, and speed of a production instance of Machine Learning Server on any supported platforms. 
++ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can benefit from the disk scalability, performance, and speed of a production instance of Machine Learning Server on any supported platforms. 
  
 This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client computer.
 
@@ -52,7 +52,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    .\Install-PyForMLS.ps1
    ```
 
-   Note: To override the default install path use the -InstallFolder command-line argument followed by the new path. For example: 
+   Note: , use the -InstallFolder command-line argument followed by the new path. For example: 
    ```
    .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
    ```
@@ -86,7 +86,7 @@ Test your install and packages using this example code.
 
 In this example, you can use some functions from the [microsoftml python package](../python-reference/microsoftml/microsoftml-package.md) for logistic regression.
 
-1. Let's build some fake data. We just need to make our data to start out. Let's create one label and 2000 random features.
+1. Let's build some fake data. We just need to make our data to start out. Let's create a single label and 2000 random features.
 
    ```Python
    from numpy.random import randn
@@ -129,7 +129,7 @@ In this example, you can use some functions from the [microsoftml python package
    logregml = rx_logistic_regression(model_formula, data=data)
    ```
 
-1. Examine the results. They should resemble the following:
+1. Examine the results. They should resemble the following output:
 
     ```Python
     Label ~ f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + ...
