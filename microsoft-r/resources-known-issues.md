@@ -29,7 +29,7 @@ ms.technology:
 
 Review workaround steps for the following known issues in this release. 
 
-## In this release
+## In 9.2.1
 
 There are no known issues reported for Machine Learning Server 9.2.1
 
