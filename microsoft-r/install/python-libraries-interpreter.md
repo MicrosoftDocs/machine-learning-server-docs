@@ -131,23 +131,23 @@ In this example, you can use some functions from the [microsoftml python package
 
 1. Examine the results. They should resemble the following:
 
-```Python
-Label ~ f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + ...
-Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
-Beginning processing data.
-Rows Read: 2000, Read Time: 0.046, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
-Rows Read: 2000, Read Time: 0.051, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
-Rows Read: 2000, Read Time: 0.058, Transform Time: 0
-Beginning processing data.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
-LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
-Beginning optimization
-num vars: 11
-improvement criterion: Mean Improvement
-L1 regularization selected 11 of 11 weights.
-Not training a calibrator because it is not needed.
-``` 
+    ```Python
+    Label ~ f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + ...
+    Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+    Beginning processing data.
+    Rows Read: 2000, Read Time: 0.046, Transform Time: 0
+    Beginning processing data.
+    Beginning processing data.
+    Rows Read: 2000, Read Time: 0.051, Transform Time: 0
+    Beginning processing data.
+    Beginning processing data.
+    Rows Read: 2000, Read Time: 0.058, Transform Time: 0
+    Beginning processing data.
+    Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
+    LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
+    Beginning optimization
+    num vars: 11
+    improvement criterion: Mean Improvement
+    L1 regularization selected 11 of 11 weights.
+    Not training a calibrator because it is not needed.
+    ``` 
