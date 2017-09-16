@@ -202,5 +202,5 @@ To further your understanding of RevoScaleR usage with HadoopMR or Spark, contin
 ## See Also
 
  [Machine Learning Server](../what-is-machine-learning-server.md) 
- [Install Machine Learning Server on Linux](../install/machine-learning-serverl-linux-install.md)  
+ [Install Machine Learning Server on Linux](../install/machine-learning-server-linux-install.md)  
  [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md)

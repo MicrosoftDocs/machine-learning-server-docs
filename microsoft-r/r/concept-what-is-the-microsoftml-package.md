@@ -82,7 +82,7 @@ For guidance when choosing the appropriate machine learning algorithm from the M
 
 ## See also
 
-[Machine Learning Server](../what-is-machine-learningserver.md)   
+[Machine Learning Server](../what-is-machine-learning-server.md)   
 
 [R samples for MicrosoftML](sample-microsoftml.md)
 

@@ -26,7 +26,7 @@ ms.technology: "r-server"
 
 MicrosoftML samples that use the R language are described and linked here to help you get started quickly with Microsoft Machine Learning Server. The sentiment analysis and image featurization quickstarts both use pre-trained models. 
 
-Pre-trained models are installed through setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page. For details, see [How to install and deploy pre-trained machine learning models with MicrosoftML](../install/microsoftml-install-pre-trained-models.md).
+Pre-trained models are installed through setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page. For details, see [How to install and deploy pre-trained machine learning models with MicrosoftML](../install/microsoftml-install-pretrained-models.md).
 
 
 ## Breast cancer prediction using rxFastLinear
