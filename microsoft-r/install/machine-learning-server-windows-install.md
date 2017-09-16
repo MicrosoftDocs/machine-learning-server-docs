@@ -29,7 +29,7 @@ Machine Learning Server for Windows runs machine learning and data mining soluti
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
 > [!Note]
-> Python support is new in this release. Although you can add Python during setup, script that calls Python functions must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark [compute context](../r/concept-what-is-compute-context.md). On Windows, Python operations are limited to running Machine Learning Server web services that contain Python script. More capability, including Python sessions and direct execution, is projected for future releases.
+> Python support is new in this release. Although you can add Python, local script that calls proprietary Python functions must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark [compute context](../r/concept-what-is-compute-context.md). <br/><br/>On Windows, Python operations are limited to generic Python script that pushes proprietary function calls to remote instances, or running Machine Learning Server [web services](../operationalize/concept-what-are-web-services) that contain Python script. More capability, including Python sessions and direct execution, is projected for future releases.
 
 ## System requirements
 
@@ -76,10 +76,12 @@ The setup wizard installs, upgrades, and uninstalls all in one workflow.
 1. In the Downloads folder, right-click to extract the contents of zipped executable.
 2. Double-click **ServerSetup.exe** to start the wizard.
 3. In Configure installation, choose components to install:
-    a. **R Server (Standalone)**. You should check this option. On Windows, most functionality is R-related. **If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls your existing R Server instance.**  
-    b. [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection (install the models with R or Python, but not as a standalone component).
-    c. **Python** adds the Python libraries. You can write local script that calls Python, but your script must set a compute context for Python execution on a SQL Server 2017 instance or Spark cluster that has the interpreter.
-    d. Other components are listed, but not configurable. These components are required and listed in Setup for visibility.
+
+    + **R Server (Standalone)**. You should check this option. On Windows, most functionality is R-related. **If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls your existing R Server instance.**  
+    + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection (install the models with R or Python, but not as a standalone component).
+    + **Python** adds the Python libraries. You can write local script that calls Python, but your script must set a compute context for Python execution on a SQL Server 2017 instance or Spark cluster that has the interpreter.
+    + Other components are listed, but not configurable. These components are required and listed in Setup for visibility.
+
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open, Anaconda, and Python.
 5. Optionally, change the home directory for Machine Learning Server.
 6. At the end of the wizard, click **Install** to run setup.
