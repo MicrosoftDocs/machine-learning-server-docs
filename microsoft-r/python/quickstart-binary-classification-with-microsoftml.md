@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 
 ---
-# Predict income using binary classification with microsoftml
+# Predict income using binary classification with the microsoftml Python package
 
 **Applies to: Microsoft Learning Server 9.2**
 
