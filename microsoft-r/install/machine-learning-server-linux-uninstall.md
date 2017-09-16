@@ -47,34 +47,53 @@ Uninstall reverses the installation steps, including uninstalling any package de
 
 ## How to uninstall 9.2.1
 
-1. On any node, uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO. Most packages are uninstalled with MRO, including Microsoft R Server. 
+1. On root@, uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO. Most packages are uninstalled with MRO, including microsoft-mlserver-packages-r. 
 
   + On RHEL: `yum erase microsoft-r-open-mro-3.4.1`     
   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.4.1`  
   + On SUSE: `zypper remove microsoft-r-open-mro-3.4.1`    
 
-2. On edge nodes only, you could have additional packages if you installed features for operationalizing analytics. On a 9.2.1 installation, this is the azureml-model-management package, which you can uninstall using the same syntax in the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
+2. Remove the proprietary Python packages:
+
+  + On RHEL: `yum erase microsoft-mlserver-python-9.2.1`     
+  + On Ubuntu: `apt-get purge microsoft-mlserver-python-9.2.1`  
+  + On SUSE: `zypper remove microsoft-mlserver-python-9.2.1`
+
+3. Remove the hadoop package:
+
+  + On RHEL: `yum erase microsoft-mlserver-hadoop-9.2.1`     
+  + On Ubuntu: `apt-get purge microsoft-mlserver-hadoop-9.2.1`  
+  + On SUSE: `zypper remove microsoft-mlserver-hadoop-9.2.1`
+
+4. You could have additional packages if you installed features for operationalizing analytics. On a 9.2.1 installation, this is the azureml-model-management library, which you can uninstall using the same syntax in the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
 
   + microsoft-mlserver-adminutil-9.2
   + microsoft-mlserver-webnode-9.2
   + microsoft-mlserver-computenode-9.2
-  + microsoft-mlserver-config-rserve-9.2 
 
-3. After packages are removed, remove remaining files. On root@, determine whether additional files still exist:
+5. Re-list the packages from Microsoft to check for remaining files:
+
+  + On RHEL: `yum list \*microsoft\*`   
+  + On Ubuntu: `apt list --installed | grep microsoft`  
+  + On SUSE: `zypper search \*microsoft-r\*`  
+
+ Most likely, you have `dotnet-sharedframework-microsoft.netcore.app-1.1.2`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If Machine learning Server is the only Microsoft software you have, you can remove it now.
+
+6. After packages are removed, remove remaining files. On root@, determine whether additional files still exist:
 
   + `$ ls /opt/microsoft/mlserver/9.2.1/`
 
-4. Remove the entire directory:
+7. Remove the entire directory:
 
   + `$ rm -fr ls /opt/microsoft/mlserver/9.2.1/`
 
-RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
+RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft/mlserver. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
 <a name="installed-packages"></a>
 
-## Installed packages
+## Package list
 
-On an internet-connected computer, download the following Microsoft packages:
+Machine Learning Server for Linux adds the following packages at a minimum. When uninstalling software, refer to this list when searching for packages to remove.
 
     dotnet-host
     dotnet-hostfxr-1.1.0

@@ -37,7 +37,7 @@ Before you start, review the following article for requirements and restrictions
 
 ## Package location
 
-Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). The base file name is microsoft-mlserver-all-9.2.1.<ext> with different file extensions based on the package manager of the target platform.
+Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). The base file name is microsoft-mlserver-all-9.2.1.*ext* with different file extensions (.rpm, .deb) based on the package manager of the target platform.
 
 ## Step 1: Download
 

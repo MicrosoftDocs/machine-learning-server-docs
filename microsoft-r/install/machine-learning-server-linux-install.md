@@ -81,12 +81,12 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 2. Set the location of the packages using this example syntax for 16.04. Run each command separately. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
     ```
-     wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+     wget http://packages.microsoft.com/config/ubuntu/16.04/microsoft-mlserver-all-9.2.1.deb
 
-     dpkg -i packages-microsoft-prod.deb
+     dpkg -i microsoft-mlserver-all-9.2.1.deb
     ```
 
-3. Verify the mlserver.list cpnfiguration file exists: `ls -la /etc/apt/sources.list.d/`
+3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
 4. Update packages on your system: `apt-get update` 
 
@@ -103,7 +103,7 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
 2. Set the location of the packages using this example syntax for 7.0. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-   ```rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm```
+   ```rpm -Uvh http://packages.microsoft.com/config/rhel/7/microsoft-mlserver-all-9.2.1.rpm```
 
 3. Verify the mlserver.list cpnfiguration file exists: `ls -la /etc/apt/sources.list.d/`
 
@@ -117,7 +117,7 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
 2. Set the location of the packages using this example syntax for SLES11. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-   ```rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm```
+   ```rpm -Uvh http://packages.microsoft.com/config/sles/11/microsoft-mlserver-all-9.2.1.rpm```
 
 3. Verify the mlserver.list cpnfiguration file exists
 

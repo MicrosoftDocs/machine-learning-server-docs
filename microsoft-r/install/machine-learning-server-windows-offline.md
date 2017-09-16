@@ -56,7 +56,7 @@ Use a tool or device to transfer the files to the offline server. Extract the zi
 
 After files are placed, use the wizard or run setup from the commandline:
 
-+ [Install Machine Learning Server > How to install > Run setup](machine-learning-server-windows-install.md#how-to-install)
++ [Install Machine Learning Server > How to install > Run setup](machine-learning-server-windows-install.md#howtoinstall)
 + [Commandline installation](machine-learning-server-windows-commandline.md)
 
 ## Check log files
