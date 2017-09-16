@@ -46,10 +46,9 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 1. Launch a new PowerShell window with elevated administrator permissions ('as administrator').
 
-1. Go to the folder in which you downloaded the installer. 
-
-1. Run the script:
+1. Go to the folder in which you downloaded the installer and run the script:
    ```
+   cd {{download-directory}}
    .\Install-PyForMLS.ps1
    ```
 
