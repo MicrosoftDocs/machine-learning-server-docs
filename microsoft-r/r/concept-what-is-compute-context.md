@@ -29,7 +29,7 @@ ms.technology: "r-server"
 
 ## Supported configurations
 
-For RevoScaleR, remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, HadoopMR and Spark, and Microsoft R Server (Linux and Windows). RevoScaleR functions like `RxSpark`, `RxHadoopMR`, or `RxInSQLServer` are used to set the compute context. 
+For RevoScaleR, remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, HadoopMR and Spark, and Machine Learning Server (Linux and Windows). RevoScaleR functions like `RxSpark`, `RxHadoopMR`, or `RxInSQLServer` are used to set the compute context. 
 
 For revoscalepy, Spark is the only compute context supported in this release. It can be local or remote. Spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
 

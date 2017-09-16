@@ -117,8 +117,8 @@ Lastly, follow these tutorials for hands on experience:
 
 ## See also
 
- [Diving into data analysis in Microsoft R](../r/how-to-introduction.md)     
- [Microsoft R Getting Started Guide](../microsoft-r-getting-started.md)   
+ [How-to guides in Machine Learning Server](../r/how-to-introduction.md)     
+ [Machine Learning Server](../what-is-machine-learning-server.md)   
  [Additional learning resources and sample datasets](../resources-more.md)  
  
  

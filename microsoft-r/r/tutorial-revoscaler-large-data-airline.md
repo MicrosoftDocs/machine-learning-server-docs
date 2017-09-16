@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Load and analyze a large airline data set with RevoScaleR in Microsoft R"
+title: "Tutorial: Load and analyze a large airline data set with RevoScaleR in Machine Learning Server | Microsoft Docs"
 description: "Learn how to work with big data using a sample airline dataset in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Tutorial: Load and analyze a large airline data set with RevoScaleR (Microsoft R)
+# Tutorial: Load and analyze a large airline data set with RevoScaleR
 
 This tutorial builds on what you learned in the [first RevoScaleR tutorial](tutorial-revoscaler-data-import-transform.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps, except this time you will use a much larger data set.
 
@@ -441,8 +441,8 @@ To reset the compute context to your local machine, use:
 
 ## See Also
 
-[Introduction to Microsoft R](../microsoft-r-getting-started.md)
+[Machine Learning Server](../what-is-machine-learning-server.md)	
 
-[Diving into data analysis in Microsoft R](how-to-introduction.md)
+[How-to guides in Machine Learning Server](how-to-introduction.md)
 
 [RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

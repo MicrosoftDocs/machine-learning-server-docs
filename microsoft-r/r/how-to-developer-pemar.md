@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Get started with PemaR functions in Microsoft R"
-description: "Getting started with the RevoPemaR package in Microsoft R."
+title: "Get started with PemaR functions in Machine Learning Server | Microsoft Docs"
+description: "Getting started with the RevoPemaR package in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Get started with PemaR function in Microsoft R
+# Get started with PemaR function in MMachine Learning Server
 
 ## Overview
 
@@ -35,7 +35,7 @@ The RevoPemaR framework is portable. The goal is to be able to have code written
 
 ## Installation
 
-The **RevoPemaR** package is included with Microsoft R Server and R Client (which also contains the **RevoScaleR** package). The **RevoPemaR** package can also be installed with a standard download of R 3.2.2
+The **RevoPemaR** package is included with Microsoft Machine Learning Server and R Client (which also contains the **RevoScaleR** package). The **RevoPemaR** package can also be installed with a standard download of MRO 3.4.1
 
 ## Some Tips on R Reference Classes
 

@@ -3,7 +3,7 @@
 # required metadata
 title: "ScaleR Functions"
 description: "ScaleR Functions"
-keywords: "RevoScaleR, ScaleR"
+keywords: "RevoScaleR, RevoScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Comparison of Base R and ScaleR Functions
+# Comparison of Base R and RevoScaleR Functions
 
 This topic provides a list of the functions provided by the **RevoScaleR** package and lists comparable functions included in the base distribution of R.  
 

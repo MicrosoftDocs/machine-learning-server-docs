@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Tips on Computing with Big Data in R"
-description: "Tips on Computing with Big Data in R"
+title: "Tips on Computing with Big Data in R (Machine Learning Server) | Microsoft Docs"
+description: "Tips on Computing with Big Data in R on Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -33,7 +33,7 @@ When it comes to big data, R users are faced with two issues related to scale: c
 
 If you are used to working with smaller data sets in R, you want to think differently about how you perform your analyses when using big data. If you are used to working in a High Performance Computing (HPC) environment, you also want to think differently when you add analysis of big data to the picture. High-Performance Computing is CPU-centric, typically focusing on using many cores to perform lots of processing on small amounts of data. High Performance Analytics (HPA) is data-centric. The focus is on feeding data to the cores—on disk I/O, data locality, efficient threading, and data management in RAM.
 
-The **RevoScaleR** package that is included with Microsoft R Server provides tools and examples for addressing the speed and capacity issues involved in High-Performance Analytics. It provides data management and analysis functionality that scales from small, in-memory data sets to huge data sets stored on disk. The analysis functions are threaded to use multiple cores, and computations can be distributed across multiple computers (nodes) on a cluster or in the cloud.
+The **RevoScaleR** package that is included with Machine Learning Server provides tools and examples for addressing the speed and capacity issues involved in High-Performance Analytics. It provides data management and analysis functionality that scales from small, in-memory data sets to huge data sets stored on disk. The analysis functions are threaded to use multiple cores, and computations can be distributed across multiple computers (nodes) on a cluster or in the cloud.
 
 In this article, we review some tips for handling big data with R.
 

@@ -242,7 +242,7 @@ Some of the utility functions are operational in local compute context only. Che
 |[rxIsOpen](rxopen-methods.md) | Indicates whether a data source can be accessed.|
 |[rxSqlServerDropTable](rxsqlserverdroptable.md) |Execute an SQL statement that drops a table. |
 |[rxSqlServerTableExists](rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existance. |
-|[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between ScaleR data sources.|
+|[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between RevoScaleR data sources.|
 
 ## Next steps
 

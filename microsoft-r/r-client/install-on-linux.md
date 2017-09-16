@@ -286,7 +286,7 @@ You can learn more with these guides:
 
 + [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
++ [How-to guides in Machine Learning Server](../r/how-to-introduction.md)
 
 + [RevoScaleR R package reference](../r/tutorial-introduction.md)
 

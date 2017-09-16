@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Estimating Decision Tree Models"
-description: "Decision Trees with RevoScaleR."
+title: "Estimate Decision Tree Models using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+description: "Decision Trees with RevoScaleR in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"

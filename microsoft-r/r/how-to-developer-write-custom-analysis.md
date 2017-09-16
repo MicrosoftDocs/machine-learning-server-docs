@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Writing custom analyses for large data sets using ScaleR (Microsoft R)"
-description: "Get started with custom analysis of big data using ScaleR functions in Microsoft R."
+title: "Writing custom analyses for large data sets using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+description: "Get started with custom analysis of big data using RevoScaleR functions in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Writing custom analyses for large data sets in ScaleR
+# Writing custom analyses for large data sets in RevoScaleR
 
 This article explains how to use ScaleR to get data one chunk at a time, and then perform a custom analysis. There are four basic steps in the analysis:
 
@@ -146,8 +146,8 @@ Larger data sets containing the full airline, census, and mortgage default data 
 
 ## See Also
 
-[Introduction to Microsoft R](../microsoft-r-getting-started.md)
+[Machine Learning Server](../what-is-machine-learning-server.md)
 
-[Diving into data analysis in Microsoft R](how-to-introduction.md)
+[How-to guides in Machine Learning Server](how-to-introduction.md)
 
 [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)

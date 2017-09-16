@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to get started with MicrosoftML"
+title: "How to get started with MicrosoftML (Machine Learning Server) | Microsoft Docs"
 keywords: ""
 author: "bradsev"
 ms.author: "bradsev"
@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # What is the MicrosoftML package?
 
-**MicrosoftML** for **Microsoft Machine Learning Server** and **SQL Server Machine Learning Services** adds state-of-the-art data transforms, machine learning algorithms, and pre-trained models to Microsoft R and Python functionality.  
+**MicrosoftML** for **Microsoft Machine Learning Server** and **SQL Server Machine Learning Services** adds state-of-the-art data transforms, machine learning algorithms, and pre-trained models to R and Python functionality.  
 
 The **data transforms** provided by MicrosoftML allow you to compose a custom set of transforms in a pipeline that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to format your data. 
 
@@ -36,7 +36,7 @@ The MicrosoftML packages provides fast and scalable **machine learning algorithm
 <a name="platform-availability"></a>
 ## Installation and platform availability
 
-MicrosoftML is installed as part of **Microsoft Machine Learning Server 9.2.1**, **Microsoft R Client**, and in the **SQL Server Machine Learning Services** on various platforms. For information on the supported platforms, see [Supported Platforms for Microsoft R Server](../install/r-server-install-supported-platforms.md).
+MicrosoftML is installed as part of **Microsoft Machine Learning Server 9.2.1**, **Microsoft R Client**, and in the **SQL Server Machine Learning Services** on various platforms. For information on the supported platforms, see [Supported Platforms for Machine Learning Server](../install/r-server-install-supported-platforms.md).
 
 To install pre-trained machine learning models for sentiment analysis and image featurization, you must opt in during setup. For details, see [Pre-trained machine learning models](../install/microsoftml-install-pretrained-models.md).
 
@@ -72,11 +72,7 @@ Algorithm (R/Python) | ML task supported | Scalability | Application Examples
 **MicrosoftML** also provides transforms to help tailor your data for machine learning. They are used to clean, wrangle, train, and score your data. For a description of the transforms, see [Machine learning R transforms](~/r-reference/microsoftml/microsoftml-package.md#ml-transforms) and [Machine learning Python transforms](~/python-reference/microsoftml/microsoftml-package.md#ml-transforms) reference documentation.
 
 
-## What's new?
-For the new features included in latest release of MicrosoftML, see [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md).
-
-
-## What's next?
+## Next steps
 
 For reference documentation on the R individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](../r-reference/microsoftml/microsoftml-package.md).
 
@@ -86,8 +82,8 @@ For guidance when choosing the appropriate machine learning algorithm from the M
 
 ## See also
 
-[About Microsoft R Server](../what-is-microsoft-r-server.md) for general information about R Server.   
+[Machine Learning Server](../what-is-machine-learningserver.md)   
 
-[Cheat Sheet: How to choose a MicrosoftML algorithm](how-to-choose-microsoftml-algorithms-cheatsheet.md) provides guidance on how to approach the choice of an ML algorithm for your scenario.
+[R samples for MicrosoftML](sample-microsoftml.md)
 
-[R samples for MicrosoftML](sample-microsoftml.md) and [Python samples for MicrosoftML](../python/samples-microsoftml-python.md) show how to use pre-trained models for sentiment analysis and image featurization.
+[Python samples for MicrosoftML](../python/samples-microsoftml-python.md) 

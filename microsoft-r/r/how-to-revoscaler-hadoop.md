@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 ## Overview
 
-This guide is an introduction to using the ScaleR functions in a **RevoScaleR** package in a Hadoop distributed computing environment. ScaleR functions offer scalable and extremely high-performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ScaleR’s big data capabilities with MapReduce.
+This guide is an introduction to using the RevoScaleR functions in a **RevoScaleR** package in a Hadoop distributed computing environment. RevoScaleR functions offer scalable and extremely high-performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ScaleR’s big data capabilities with MapReduce.
 
 While this guide is not a Hadoop tutorial, no prior experience in Hadoop is required to complete the tutorial. If you can connect to your Hadoop cluster, this guide walks you through the rest.
 
@@ -35,13 +35,13 @@ While this guide is not a Hadoop tutorial, no prior experience in Hadoop is requ
 
 The **RevoScaleR** package provides a set of portable, scalable, distributable data analysis functions. Many functions are platform-agnostic; others are exclusive to the computing context, leveraging platform-specific capabilities for tasks like file management.
 
-To perform an analysis using ScaleR functions, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
+To perform an analysis using RevoScaleR functions, the user specifies three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
 
 This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [RevoScaleR Functions for Hadoop](../r-reference/revoscaler/revoscaler-hadoop-functions.md).
 
 **Compute Context and Supported Data Sources**
 
-The Hadoop compute context is established through *RxHadoopMR*, where the following two types of data sources can be used: a comma-delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). In ScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be used with the Hadoop Distributed File System (HDFS).
+The Hadoop compute context is established through *RxHadoopMR*, where the following two types of data sources can be used: a comma-delimited text data source (see *RxTextData*) and an efficient XDF data file format (see *RxXdfData*). In RevoScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be used with the Hadoop Distributed File System (HDFS).
 
 **Data Manipulation and Computations**
 
@@ -74,7 +74,7 @@ When running on Hadoop, the RevoScaleR analysis functions process data contained
 
 This tutorial introduces several high-performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster and these tasks:
 
-1.  Start Microsoft R Server.
+1.  Start Machine Learning Server.
 2.  Create a compute context for Hadoop.
 3.  Copy a data set into the Hadoop Distributed File System.
 4.  Create a data source.
@@ -83,7 +83,7 @@ This tutorial introduces several high-performance analytics features of **RevoSc
 
 ### Check versions
 
-Supported distributions of Hadoop are listed in [Supported platforms](../install/r-server-install-supported-platforms.md). For setup instructions, see [Install R Server on Hadoop](../install/r-server-install-hadoop-805.md).
+Supported distributions of Hadoop are listed in [Supported platforms](../install/r-server-install-supported-platforms.md). For setup instructions, see [Install Machine Learning Server on Hadoop](../install/r-server-install-hadoop-805.md).
 
 You can confirm the server version by typing `print(Revo.version)`.
 
@@ -95,14 +95,14 @@ This tutorial also uses the AirlineDemoSmall.csv file from the RevoScaleR Sample
 
 You can obtain both data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
-### Start R Server
+### Start Revo64
 
-Microsoft R Server for Hadoop runs on Linux. On Linux hosts in a Hadoop cluster, start R Server by typing `Revo64` at the shell prompt.  
+Machine Learning Server for Hadoop runs on Linux. On Linux hosts in a Hadoop cluster, start server session by typing `Revo64` at the shell prompt.  
 
 	[<username>]$ cd MRSLinux90
 	[<username> MRSLinux90]$ Revo64
 
-You see a `>` prompt, indicating an R Server session, and the ability to issue ScaleR commands, including commands that set up the compute context.
+You see a `>` prompt, indicating an Revo64 session, and the ability to issue RevoScaleR commands, including commands that set up the compute context.
 
 ### Create a compute context
 
@@ -134,9 +134,9 @@ If you are running on a Hadoop cluster configured for high-availabilty, you must
 	myHadoopCluster <- RxHadoopMR(nameNode = "my-name-service-server",
 	    port = 8020)
 
-#### Use Microsoft R Server as a Hadoop Client
+#### Use Machine Learning Server as a Hadoop Client
 
-If you are running Microsoft R Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that runs **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxHadoopMR* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly facing host name, or IP address of your Hadoop cluster’s name node or an edge node that run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
+If you are running Machine Learning Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that runs **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxHadoopMR* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly facing host name, or IP address of your Hadoop cluster’s name node or an edge node that run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
 
 	mySshUsername <- "user1"
 	#public facing cluster IP address
@@ -194,7 +194,7 @@ Now that you have defined your compute context, make it the active compute conte
 
 ### Copy a data file
 
-For our first explorations, we work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Server distribution. You can verify that it is on your local system as follows:
+For our first explorations, we work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Machine Learning Server distribution. You can verify that it is on your local system as follows:
 
 	file.exists(system.file("SampleData/AirlineDemoSmall.csv",
 	    package="RevoScaleR"))
@@ -699,7 +699,7 @@ To modify an existing composite XDF using *rxDataStep* set the *overwrite* argum
 
 ### Using Data from Hive for Your Analyses
 
-There are multiple ways to access and use data from Hive for analyses with R Server. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
+There are multiple ways to access and use data from Hive for analyses with Machine Learning Server. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
 
 1. If running from a remote client or edge node, and the data is modest, then use RxOdbcData to stream results, or land them as XDF in the local file system, for subsequent analysis in a local compute context.
 2. If the data is large, then use the Hive command-line interface (hive or beeline) from an edge node to run the Hive query with results spooled to a text file on HDFS for subsequent analysis in a distributed fashion using the HadoopMR or Spark compute contexts.
@@ -708,7 +708,7 @@ Here’s how to get started with each of these approaches.
 
 #### Accessing data via ODBC
 
-Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. After you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from R Server is just like accessing data from any other data source.
+Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. After you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from Machine Learning Server is just like accessing data from any other data source.
 
 	mySQL = "SELECT * FROM CustData"
 	myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
@@ -739,7 +739,7 @@ Here are some sample R statements that output a Hive query to the local and HDFS
 
 	system('beeline -u "jdbc:hive2://.." –e "insert overwrite directory \'/your-hadoop-dir\' row format delimited fields terminated by \',\' select * from emp"')
 
-After you’ve exported the query results to a text file, it can be streamed directly as input to a ScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
+After you’ve exported the query results to a text file, it can be streamed directly as input to a RevoScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
 
 	hiveOut <-file.path(bigDataDirRoot,"myHiveData")
 	myHiveData <- RxTextData(file = hiveOut, fileSystem = hdfsFS)

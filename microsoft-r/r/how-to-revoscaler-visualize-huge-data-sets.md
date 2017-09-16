@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Visualizing Huge Data Sets"
+title: "Visualizing Huge Data Sets using RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "Visualizing huge data sets with an example from the U.S. Census."
 keywords: ""
 author: "HeidiSteen"
@@ -30,7 +30,7 @@ By combining the power and flexibility of the open-source R language with the fa
 This example focuses on a basic demographic pattern: in general, more boys than girls are born and the death rate is higher for males at every age. So, typically we observe a decline in the ratio of males to females as age increases.
 
 <a name="chunking"></a>
->**Important!**  Since Microsoft R Client can only process datasets that fit into the available memory,  chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server for Windows. 
+>**Important!**  Since Microsoft R Client can only process datasets that fit into the available memory,  chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Machine Learning Server instance. 
 
 
 ### Examining the Data

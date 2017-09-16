@@ -67,7 +67,7 @@ The data manipulation and computation functions in ScaleR are appropriate for sm
 
 **High Performance Analysis (HPA)**
 
-HPA functions in ScaleR do the heavy lifting in terms of data science. Most HPA functions are portable across multiple computing platforms, including Windows and RedHat Linux workstations and servers, and distributed computing platforms such as Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying ScaleR engine in R Server handles the distribution of the computations across cores and nodes automatically.
+HPA functions in ScaleR do the heavy lifting in terms of data science. Most HPA functions are portable across multiple computing platforms, including Windows and RedHat Linux workstations and servers, and distributed computing platforms such as Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR engine in Machine Learning Server handles the distribution of the computations across cores and nodes automatically.
 
 ## How ScaleR distributes jobs in Spark
 
@@ -86,7 +86,7 @@ When running on Hadoop, the ScaleR analysis functions process data contained in 
 
 This tutorial introduces several high-performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster and these tasks:
 
-1.  Start Microsoft R Server.
+1.  Start Revo64.
 2.  Create a compute context for Spark.
 3.  Copy a data set into the Hadoop Distributed File System.
 4.  Create a data source.
@@ -95,7 +95,7 @@ This tutorial introduces several high-performance analytics features of **RevoSc
 
 ### Check versions
 
-Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](../install/r-server-install-supported-platforms.md). For setup instructions, see [Install R Server on Hadoop](../install/r-server-install-hadoop-805.md).
+Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](../install/r-server-install-supported-platforms.md). For setup instructions, see [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md).
 
 You can confirm the server version by typing `print(Revo.version)`.
 
@@ -107,16 +107,16 @@ This tutorial also uses the AirlineDemoSmall.csv file from the RevoScaleR Sample
 
 You can obtain both data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
-### Start R Server
+### Start Revo64
 
-Microsoft R Server for Hadoop runs on Linux. On Linux hosts in a Hadoop cluster, start R Server by typing `Revo64` at the shell prompt. 
+Machine Learning Server for Hadoop runs on Linux. On Linux hosts in a Hadoop cluster, start an R session by typing `Revo64` at the shell prompt. 
 
 	[<username>]$ cd MRSLinux90
 	[<username> MRSLinux90]$ Revo64
 
 ### Create a compute context
 
-A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. In this tutorial, we focus on using the nodes of the Hadoop cluster (internally via Spark) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether commands are issued from a node of your cluster or from a client accessing the cluster remotely.
+A *compute context* specifies the computing resources to be used by RevoScaleR’s distributable computing functions. In this tutorial, we focus on using the nodes of the Hadoop cluster (internally via Spark) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether commands are issued from a node of your cluster or from a client accessing the cluster remotely.
 
 #### Define a Compute Context on the Cluster
 
@@ -148,9 +148,9 @@ If you are running on a Hadoop cluster configured for high-availabilty, you must
 	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020)
 ~~~~
 
-#### Using Microsoft R Server as a Hadoop Client
+#### Using Machine Learning Server as a Hadoop Client
 
-If you are running Microsoft R Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that runs **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxSpark* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly facing host name, or IP address of your Hadoop cluster’s name node or an edge node that run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
+If you are runningMachine Learning Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that runs **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxSpark* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly facing host name, or IP address of your Hadoop cluster’s name node or an edge node that run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
 
 ~~~~
 	mySshUsername <- "user1"
@@ -231,7 +231,7 @@ If persistentRun mode is enabled, then the RxSpark compute context cannot be a N
 
 ### Copy a data file 
 
-For our first explorations, we work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Server distribution. You can verify that it is on your local system as follows:
+For our first explorations, we work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Machine Learning Server distribution. You can verify that it is on your local system as follows:
 
 ~~~~
 	file.exists(system.file("SampleData/AirlineDemoSmall.csv",
@@ -757,7 +757,7 @@ To modify an existing composite XDF using *rxDataStep* set the *overwrite* argum
 
 ### Using Data from Hive for Your Analyses
 
-There are multiple ways to access and use data from Hive for analyses with R Server. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
+There are multiple ways to access and use data from Hive for analyses with RevoScaleR. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
 
 1. If running from a remote client or edge node, and the data is modest, then use RxOdbcData to stream results, or land them as XDF in the local file system, for subsequent analysis in a local compute context.
 2. If the data is large, then use the Hive command-line interface (hive or beeline) from an edge node to run the Hive query with results spooled to a text file on HDFS for subsequent analysis in a distributed fashion using the HadoopMR or Spark compute contexts.
@@ -766,7 +766,7 @@ Here’s how to get started with each of these approaches.
 
 #### Accessing data via ODBC
 
-Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from R Server is just like accessing data from any other data source.
+Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from Machine Learning Server is just like accessing data from any other data source.
 
 	mySQL = "SELECT * FROM CustData"
 	myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")

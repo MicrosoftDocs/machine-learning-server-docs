@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Clustering"
+title: "Cluster classification using RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "k-means clustering with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Clustering
+# Cluster classification in RevoScaleR
 
 *Clustering* is the general name for any of a large number of classification techniques that involve assigning observations to membership in one of two or more clusters on the basis of some distance metric.
 

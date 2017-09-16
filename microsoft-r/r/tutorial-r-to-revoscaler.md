@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Tutorial: Explore R-to-RevoScaleR in 25 functions"
-description: "Explore and execute R and RevoScaleR commands using R Microsoft R Client or R Server."
+title: "Tutorial: Explore R-to-RevoScaleR in 25 functions (Machine Learning Server) | Microsoft Docs"
+description: "Explore and execute R and RevoScaleR commands on R Client or Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -27,14 +27,14 @@ ms.technology:
 
 # Tutorial: Explore R and RevoScaleR in 25 functions
 
-**Applies to: Microsoft R Client, Microsoft R Server** 
+**Applies to: Microsoft R Client, Machine Learning Server**
 
-If you are new to both R and Microsoft R, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
+If you are new to both R and Machine Learning Server, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
 
-This tutorial starts with base R commands before transitioning to RevoScaleR functions in Microsoft R. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
+This tutorial starts with base R commands before transitioning to RevoScaleR functions. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to R Server.
+> R Client and Machine Learning Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to Machine Learning Server.
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ R is case-sensitive. If you hand-type commands in this example, be sure to use t
 
 ## Start with R
 
-Because Microsoft R is built on R, this tutorial begins with an exploration of base R commands.
+Because RevoScaleR is built on R, this tutorial begins with an exploration of base R commands.
 
 ### Load data
 
@@ -456,7 +456,7 @@ The function `lapply` can be used to apply the same function to each component o
 <a name="ExploreScaleRFunctions"></a>
 ## Expore RevoScaleR Functions
 
-The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. When you start the R console application on a computer that has R Server or R Client, the RevoScaleR function library is loaded automatically.
+The **RevoScaleR** package, included in Machine Learning Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. When you start the R console application on a computer that has Machine Learning Server or R Client, the RevoScaleR function library is loaded automatically.
 
 ### Load Data with *rxImport*
 
@@ -468,7 +468,7 @@ Let’s start simply by using a delimited text file available in the [built-in s
 
 	mortData <- rxImport(inData = inDataFile)
 
-If we anticipate repeating the same analysis on a larger data set later, we could prepare for that by putting placeholders in our code for output files. An output file is an XDF file, native to R Client and R Server, persisted on disk and structured to hold modular data. If we included an output file with rxImport, the output object returned from *rxImport* would be a small object representing the .xdf file on disk (an RxXdfData object), rather than an in-memory data frame containing all of the data. 
+If we anticipate repeating the same analysis on a larger data set later, we could prepare for that by putting placeholders in our code for output files. An output file is an XDF file, native to R Client and Machine Learning Server, persisted on disk and structured to hold modular data. If we included an output file with rxImport, the output object returned from *rxImport* would be a small object representing the .xdf file on disk (an RxXdfData object), rather than an in-memory data frame containing all of the data. 
 
 For now, let's continue to work with the data in memory. We can do this by omitting the outFile argument, or by setting the *outFile* parameter to NULL. The following code is equivalent to the importing task of that above:
 

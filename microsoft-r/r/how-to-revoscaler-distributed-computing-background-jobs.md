@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Running background jobs (ScaleR in Microsoft R)"
-description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
+title: "Running background jobs using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+description: "Machine Learning Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,9 +23,9 @@ ms.technology: "r-server"
 
 ---
 
-# Running background jobs (ScaleR in Microsoft R) 
+# Running background jobs using RevoScaleR
 
-In Microsoft R, you can run jobs interactively, waiting for results before continuing on to the next operation, or you can run them asynchronously in the background if a job is long-running.
+In Machine Learning Server, you can run jobs interactively, waiting for results before continuing on to the next operation, or you can run them asynchronously in the background if a job is long-running.
 
 <a name="non-waiting-jobs"></a>
 ## Non-Waiting jobs

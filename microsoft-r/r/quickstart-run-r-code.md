@@ -24,11 +24,11 @@ ms.technology: "r-client"
 ---
 # Run R code in Microsoft R
 
-**Applies to: Microsoft R Client, Microsoft R Server**
+**Applies to: Microsoft R Client, Machine Learning Server**
 
 ## Objective
 
-Learn how to predict flight delays in R locally using R Client or R Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight is delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight is delayed or on-time.
+Learn how to predict flight delays in R locally using R Client or Machine Learning Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight is delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight is delayed or on-time.
 
 In machine learning and statistics, classification is the task of identifying the class or category to which an observation belongs based on a training dataset containing observations with known categories. Classification is generally a supervised learning problem. This quick start is a binary classification task with two classes.
 
@@ -41,7 +41,7 @@ If you have completed the prerequisites, this task takes approximately 10 minute
 ## Prerequisites
 
 This quickstart assumes that you have:
-+ An installed instance of Microsoft R Client or Microsoft R Server 
++ An installed instance of Microsoft R Client or Machine Learning Server 
 + R running on the command line or in an R integrated development environment (IDE). Read the article [Get Started with Microsoft R Client](../r-client-get-started.md) for more information.
 + An internet connection to get [sample data in the RTVS Github repository](https://github.com/Microsoft/RTVS-docs/tree/master/examples/MRS_and_Machine_Learning/Datasets).
 
@@ -478,4 +478,4 @@ You can learn more with these guides:
 
 + [Overview of Microsoft R Client](../r-client-get-started.md) 
 
-+ [Diving into data analysis](how-to-introduction.md)
++ [How-to guides in Machine Learning Server](how-to-introduction.md)

@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Parallel computing in Microsoft R"
-description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
+title: "Parallel computing in Machine Learning Server | Microsoft Docs"
+description: "Machine Learning Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,9 +23,9 @@ ms.technology: "r-server"
 
 ---
 
-# Running jobs in parallel (ScaleR in Microsoft R)
+# Running jobs in parallel using RevoScaleR
 
-ScaleR function library includes functions that are engineered to work in parallel automatically. Additionally, a special purpose function called `rxExec` can be used to manually construct parallelization. With `rxExec`, you can take an arbitrary function and run it in parallel on your distributed computing resources in Hadoop or Teradata. This in turn allows you to tackle a large variety of parallel computing problems, in particular in the *high-performance computing class*. 
+RevoScaleR function library includes functions that are engineered to work in parallel automatically. Additionally, a special purpose function called `rxExec` can be used to manually construct parallelization. With `rxExec`, you can take an arbitrary function and run it in parallel on your distributed computing resources in Hadoop or Teradata. This in turn allows you to tackle a large variety of parallel computing problems, in particular in the *high-performance computing class*. 
 
 <a name="parallel-computing-with-rxexec"></a>
 ## Parallel Computing with rxExec

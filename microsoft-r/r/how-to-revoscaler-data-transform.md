@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to transform and subset data in Microsft R"
+title: "How to transform and subset data in RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "How to manipulate and transform data in RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to transform and subset data in Microsft R
+# How to transform and subset data using RevoScaleR
 
 A crucial step in many analyses is transforming the data into a form best suited for the chosen analysis. For example, to reduce variations in scale between variables, you might take a log or a power of the original variable before fitting the dataset to a linear model. Additionally, transforming data minimizes passes through the data, which is more efficient.
 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Solution templates for Machine Learning Server and R Server | Machine Learning Server | Microsoft Docs"
+title: "Solution templates for Machine Learning Server and R Server 9.1| Machine Learning Server | Microsoft Docs"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
@@ -22,9 +22,9 @@ ms.technology: "r-server"
 
 ---
 
-# Solution templates for Machine Learning Server and Microsoft R Server
+# Solution templates for Machine Learning Server and Microsoft R Server 9.1
 
-Several solution templates exist to help you accelerate time to value when using Machine Learning Server or Microsoft R Server. We offer solutions tailored to specific industries and problem sets: [marketing](#marketing), [healthcare](#healthcare), [financial and retail](#financial).
+Several solution templates exist to help you accelerate time to value when using Machine Learning Server or Microsoft R Server 9.1. We offer solutions tailored to specific industries and problem sets: [marketing](#marketing), [healthcare](#healthcare), [financial and retail](#financial).
 
 
 <a name="marketing"></a> 

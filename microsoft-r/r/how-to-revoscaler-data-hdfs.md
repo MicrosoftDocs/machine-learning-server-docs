@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Import HDFS data (Microsoft R)"
-description: "Load data from Hadoop Distributed File System (HDFS) into a RevoScaleR session in Microsoft R."
+title: "Import HDFS data (Machine Learning Server) | Microsoft Docs"
+description: "Load data from Hadoop Distributed File System (HDFS) into a RevoScaleR session in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,9 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Import and consume HDFS data files in Microsoft R
-
-**Applies to: Microsoft R Server for Hadoop**
+# Import and consume HDFS data files using ReovScaleR
 
 This article explains how to load data from the Hadoop Distributed File System (HDFS) into an R data frame or an .xdf file. Example script shows several use cases for using RevoScaleR functions with HDFS data.
 
@@ -203,6 +201,6 @@ To further your understanding of RevoScaleR usage with HadoopMR or Spark, contin
 
 ## See Also
 
- [Introduction to R Server](../what-is-microsoft-r-server.md) 
- [Install R Server on Linux](../install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](../install/r-server-install-hadoop.md)
+ [Machine Learning Server](../what-is-machine-learning-server.md) 
+ [Install Machine Learning Server on Linux](../install/machine-learning-serverl-linux-install.md)  
+ [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md)

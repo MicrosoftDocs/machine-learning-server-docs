@@ -70,6 +70,8 @@ You can get the zipped installation file from one of the following download site
 
 <sup>1</sup> Machine Learning Server for Windows is licensed as a SQL Server enterprise feature, even though it's installed independently of SQL Server on a Windows operating system.
 
+<a name="howtoinstall"></a>
+
 ### 2. Run Setup
 
 The setup wizard installs, upgrades, and uninstalls all in one workflow.
