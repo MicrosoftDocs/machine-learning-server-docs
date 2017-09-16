@@ -28,15 +28,20 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-This article is for data scientists who wants to learn how to deploy and manage Python code/models as analytic web services hosted in Machine Learning Server. This article assumes you are proficient in Python.
-
-Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md).
+This article is for data scientists who wants to learn how to deploy and manage Python code/models as [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
 Using the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)  Python package, which ships with Machine Learning Server, you can develop, test, and [deploy these Python analytics](#publishService) as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime. [RESTful APIs](../concept-api.md) are also available to provide direct programmatic access to a service's lifecycle.
 
 By default, web service operations are available to authenticated users. However, your administrator can also [assign role-based authorization (RBAC)](../configure-roles.md) to further control the permissions around web services. 
 
 
+## Overview
+
+To deploy your analytics, you must publish them as web services in Machine Learning Server. Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md). 
+
+When you deploy Python code or a model as a web service, a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
+
+Once hosted on Machine Learning Server, you can update and manage them.  Web services can be [consumed in Python](how-to-consume-web-service.md) or in the [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md) by authenticated users .
 
 <a name="auth"></a>
 
@@ -50,80 +55,22 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 <a name="publishService"></a>
 
-## Deploy web services
+## Web service definitions
 
-To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them.  Web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md). Both deploy and publish are used synonymously.
+The list of available parameters that can be defined for a web service depends on whether it is a standard or realtime web service. 
 
-After authenticating, you can deploy as a web service. A [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
+### Parameters for standard web services
 
-### Standard web services
+Standard web services, like all web services, are identified by their name and version. Additional parameters can be defined for the service, including:
++ A description
++ Arbitrary Python code as a function or a string, such as `code_fn=(run, init)` or `code_str=('run', 'init')`
++ Models
++ Any model assets
++ Inputs
++ Outputs for integrators
++ Artifacts
 
-Standard web services, like all web services, are identified by their name and version. Additionally, a standard web service is also defined by any code, models, and any necessary model assets. When deploying, you should also define the required inputs and any output the application developers use to integrate the service in their applications. Additional parameters are possible -- many of which are shown in the following example.
-
-In Python, you can define your code in the form of a function or a string, such as
-`code_fn=(run, init)` or `code_str=('run', 'init')`.
-
-You can define an 'init' function to be bootstrapped to the web service. This 'init' function handles service initialization. Use it to load the packages, datasets, and global variables you need when the service is called the first time. Then, benefit from the performance enhancement since the server no longer needs to reloading these each time it is run. One caveat, however, is that all imports are scoped to the 'init' function and not to the global namespace. Consequently, you must still import the modules in each run or consume function. 
-
-<a name="deploy-example"></a>
-Example: 
-
-```Python
-# Publish a standard service called 'TxService'
-# Give it a version of '1.0'
-# Assign the service to 'service' variable
-service = client.service('TxService')\
-        .version('1.0')\
-        .code_fn(manualTransmission, init)\
-        .inputs(hp=float, wt=float)\
-        .outputs(answer=pd.DataFrame)\
-        .models(cars_model=cars_model)\
-        .description('My first python model')\
-        .deploy()
-```
-
-For a full example, try out the [quickstart for deploying web services](quickstart-deploy-python-web-service.md).
-
-<a name=realtime-example></a>
-
-### Realtime web services
-
-Realtime web services offer even lower latency to produce results faster and score more models in parallel. [Learn more...](../concept-what-are-web-services.md)
-
-Realtime web services are also identified by their name and version. However, unlike standard web services, you **cannot** specify the following for realtime web services:
-+ inputs and outputs (dataframes are assumed)
-+ code (only serialized models are supported)
-
-Realtime web services only accept models created with [the supported functions from packages installed with the product](../concept-what-are-web-services.md#realtime). 
-
-In Python, you must manually serialize the model before deploying a realtime service. Use the [rx_serialize_model function](../../python-reference/revoscalepy/rx-serialize-model.md) from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server. Other serialization functions are not supported.
-
-Example: 
-
-```Python
-# serialize the model using revoscalepy.rx_serialize_model
-from revoscalepy import rx_serialize_model
-s_model = rx_serialize_model(model, realtime_scoring_only=True)
-
-# To publish the realtime service, 
-# initiate a 'realtimeDefinition' object.
-# Then annotate the object with other parameters
-webserv = client.realtime_service(linear_model) \
-        .version('1.0') \
-        .serialized_model(s_model) \
-        .description('this is a realtime model') \
-        .deploy()
-```
-
-Learn how to get a [list of all services](how-to-consume-web-services.md), retrieve a [web service object](how-to-consume-web-services.md) for consumption, and [share services](how-to-consume-web-services.md) with others.
-
-### Publishing new versions
-
-You can keep different versions of a web service. Update the version each time you use '.deploy'. [Learn more about versioning](#versioning).
-
-<a name="data-types"></a>
-
-### Input and output data types
+For a full example, try out the [quickstart guide for deploying web services in Python](quickstart-deploy-python-web-service.md).
 
 The following table lists the supported data types for the input and output schemas of Python web services.  You can write these as a reference `bool` or as a string `'bool'`.
 
@@ -134,30 +81,74 @@ The following table lists the supported data types for the input and output sche
 |Boolean &rarr; bool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Dataframe &rarr; numpy.DataFrame|
 |String &rarr; str||
 
-<a name="updateService"></a>
+### Parameters for realtime web services
 
-## Update web services
+[Realtime web services](../concept-what-are-web-services.md#realtime) are also identified by their name and version. The following additional parameters can be defined for the realtime service: 
++ A description
++ A model created with [supported functions](../concept-what-are-web-services.md#realtime) and serialized with [revoscalepy.rx_serialize_model](../../python-reference/revoscalepy/rx-serialize-model.md)
 
-To update an existing web service without changing its name or version, specify the following parameters:
-+ The name and version to identify the service to be updated.
-+ The parameters that need changed, such as the code, model, description, inputs, or outputs.
-+ '.redeploy' instead of '.deploy'  
+Dataframes are assumed for inputs and outputs. Code is not supported.
 
-When you update a service, it overwrites that named version and returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+## Deploy and update services
 
-In this example, we update the service with a new description. 
+### Publish a service
+
+To publish a service, specify the name, version, and any other needed parameters. Be sure to end with '.deploy'.
+
+Here is a standard web service example:
+```Python
+service = client.service('myService')\
+        .version('v1.0')\
+        .description('cars model')\
+        .code_fn(manualTransmission, init)\
+        .inputs(hp=float, wt=float)\
+        {{...}}
+        .deploy()
+```
+
+Here is a realtime web service example:
+<a name=realtime-example></a>
 
 ```Python
-# Redeploy this standard service 'TxService' version '1.0'
-# Update only what changed. Here it is the description.
-service = client.service('TxService')\
-        .version('1.0')\
-        .description('The updated description')\
+# Serialize the model using revoscalepy.rx_serialize_model
+from revoscalepy import rx_serialize_model
+s_model = rx_serialize_model(model, realtime_scoring_only=True)
+
+# Publish the realtime service 
+webserv = client.realtime_service('myService') \
+        .version('1.0') \
+        .serialized_model(s_model) \
+        .description('this is a realtime model') \
+        .deploy()
+```
+
+### Update an existing service version
+
+To update an existing web service, specify the name and version of that service and the parameters that need changed. When you use '.redeploy', the service version is overwritten and a new [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
+
+Update the service with a '.redeploy' such as:
+```Python
+# Redeploy this standard service 'myService' version 'v1.0'
+# Only the description has changed.
+service = client.service('myService')\
+        .version('v1.0')\
+        .description('The updated description for cars model')\
         .redeploy()
 ```
 
->[!NOTE]
->To change either the name or the version of a web service, use '.deploy' instead of '.redeploy' along with the new name or version. 
+### Publish a new service version
+
+You can deploy different versions of a web service.  To publish a [new version of the service](../concept-what-are-web-services.md#versioning), specify the same name, a new version, and end with '.deploy', such as:
+
+```Python
+service = client.service('myService')\
+        .version('v2.0')\
+        .description('cars model')\
+        .code_fn(manualTransmission, init)\    
+        .inputs(hp=float, wt=float)\
+        {{...}}
+        .deploy()
+```
 
 <a name="deleteService"></a>
 
@@ -170,16 +161,18 @@ You can call 'delete_service' on the 'DeployClient' object to delete a specific 
 ```Python
 # -- List all services to find the one to delete--
 client.list_services()
-# -- Now delete TxService 1.0
-client.delete_service('TxService', version='1.0')
+# -- Now delete myService v1.0
+client.delete_service('myService', version='v1.0')
 ```
 
-If it is successful, the success status  _'True'_  is returned. If it fails, then execution stops and an error message is produced.
+If successful, the status  _'True'_  is returned. If it fails, then the execution stops and an error message is returned.
 
 ## See also
 
-[What are web services](../concept-what-are-web-services.md)
+[What are web services?](../concept-what-are-web-services.md)
 
-[Authenticate in Python](how-to-authenticate-in-python.md)
+[Quickstart: Deploying web services in Python](quickstart-deploy-python-web-service.md).
 
-[Find and consume web services](how-to-consume-web-services.md)
+[How to authenticate in Python](how-to-authenticate-in-python.md)
+
+[How to find, get, and consume web services](how-to-consume-web-services.md)
