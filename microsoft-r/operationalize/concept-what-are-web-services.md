@@ -32,6 +32,8 @@ To offer other users a chance to use the code and predictive models you have dev
 
 Web services in Machine Learning Server can be based on Python or R. They can also be deployed on one platform and consumed in another. 
 
+Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
+
 There are two types of web services: standard and realtime. 
 
 ## Requirements
@@ -51,8 +53,6 @@ Standard web services, like all web services, are identified by their name and v
 <a name="realtime"></a>
 
 ## Realtime web services
-
-Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
 Realtime web services offer even lower latency to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, fewer additional resources and less time is spent spinning up a session for each call. Additionally, the model is only loaded once in the compute node and can be scored multiple times.
 
@@ -91,6 +91,27 @@ There are additional restrictions on the input dataframe format for microsoftml 
 |-------------|--------------------|
 |[revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md)|rx_btrees, rx_dforest, rx_dtree, rx_logit, rx_lin_mod|
 |[microsoftml](../python-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>categorical, categorical_hash, concat, extract_pixels, featurize_text, featurize_image, get_sentiment, rx_fast_trees, rx_fast_forest, rx_fast_linear, rx_logistic_regression, rx_neural_network, rx_oneclass_svm, load_image, resize_image, select_columns, and drop_columns.<br/><br/>See the [input dataframe format restrictions above](#inputdf).|
+
+
+<a name="versioning"></a>
+
+## Versioning your services
+
+Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services and helps the people consuming your service to find it easily. 
+
+At publish time, you can specify an alphanumeric string that is meaningful to those who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
+
+If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
+
+
+## Permissions on web services
+
+By default, any authenticated Machine Learning Server user can:
++ Update and delete web services they have published
++ Retrieve any web service object for consumption
++ Retrieve a list of any or all web services
+
+By default, all web service operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. Ask your administrator for details on your role.
 
 ## See also
 

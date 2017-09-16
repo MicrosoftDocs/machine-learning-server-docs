@@ -28,13 +28,15 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-This article is for data scientists who wants to learn how to deploy and manage Python code/models as [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server. This article assumes you are proficient in Python.
+This article is for data scientists who wants to learn how to deploy and manage Python code/models as analytic web services hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
-Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more...](../concept-what-are-web-services.md)
+Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md)
 
-Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime.
+Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime. [RESTful APIs](../concept-api.md) are also available to provide direct programmatic access to a service's lifecycle.
 
-Web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).   [RESTful APIs](../concept-api.md) are also available to provide direct programmatic access to a service's lifecycle.
+By default, web service operations are available to authenticated users. However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. 
+
+
 
 <a name="auth"></a>
 
@@ -51,6 +53,8 @@ Before you can use the web service management functions in the [azureml-model-ma
 ## Deploy web services
 
 To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. Both deploy and publish are used synonymously.
+
+Web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 After you've authenticated, you can deploy as a web service. Deploying returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
 
@@ -138,16 +142,6 @@ You can write these as a reference `bool` or a string `'bool'`.
 |Dataframe|numpy.DataFrame|
 
 
-<a name="versioning"></a>
-
-### Version your services
-
-Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services and helps the people consuming your service to find it easily. 
-
-At publish time, you can specify an alphanumeric string that is meaningful to those who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
-
-If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
-
 <a name="updateService"></a>
 
 ## Update web services
@@ -189,15 +183,6 @@ client.delete_service('TxService', version='1.0')
 ```
 
 If it is successful, the success status  _'True'_  is returned. If it fails, then execution stops and an error message is produced.
-
-## Permissions on web services
-
-By default, any authenticated Machine Learning Server user can:
-+ Update and delete web services they have published
-+ Retrieve any web service object for consumption
-+ Retrieve a list of any or all web services
-
-By default, all web service operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. Ask your administrator for details on your role.
 
 ## See also
 
