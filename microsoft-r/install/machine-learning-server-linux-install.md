@@ -30,7 +30,7 @@ Machine Learning Server for Linux runs machine learning and data mining solution
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-linux-offline.md). 
 
 > [!Note]
-> Although you can add Python support during Setup, script that calls functions from Python libraries must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark compute context. On Linux, you can run a web service that contains Python script, but web service execution is the only methodology we offer for Python on Linux in the 9.2.1 release. Additional capability for Python sessions and direct execution on Machine Learning Server for Linux is coming in subsequent releases.
+> Python support is new in this release. Although you can add Python to Machine Learning Server for Windows, local script that calls our [proprietary Python functions](../python-reference/introducing-python-package-reference.md) must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or on [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark [remote compute context](../r/concept-what-is-compute-context.md). <br/><br/>On Windows, Python operations are limited to generic Python script, pushing  proprietary function calls to remote instances. You can also run Machine Learning Server [web services](../operationalize/concept-what-are-web-services.md) that contain  compiled Python script. More capability, including interactive Python sessions and direct execution of proprietary functions, is projected for future releases.
 
 ## System and setup requirements
 
@@ -41,6 +41,7 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 + An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](machine-learning-server-linux-offline.md).
 
 + A package manager:
+
     + yum for CentOS/RHEL systems
     + apt for Ubuntu
     + dpkg for Ubuntu offline
@@ -58,7 +59,7 @@ There is no support for side-by-side installations of older and newer versions, 
 
 ## Installation paths
 
-Installed software can be found at the following paths:
+After installation completes, software can be found at the following paths:
 
 + Install root: /opt/microsoft/mlserver/9.2.1
 
@@ -85,7 +86,7 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
      dpkg -i packages-microsoft-prod.deb
     ```
 
-3. Verify mlserver.list exists: `ls -la /etc/apt/sources.list.d/`
+3. Verify the mlserver.list cpnfiguration file exists: `ls -la /etc/apt/sources.list.d/`
 
 4. Update packages on your system: `apt-get update` 
 
@@ -95,8 +96,6 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
 7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
 
-> [!Note]
-> The configuration files for Machine Learning Server can be found at `/etc/apt/sources.list.d/mlserver.list`
 
 ### Red Hat and CentOS 6/7
 
@@ -106,12 +105,11 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
    ```rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm```
 
-3. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
+3. Verify the mlserver.list cpnfiguration file exists: `ls -la /etc/apt/sources.list.d/`
 
-4. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+4. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
 
-> [!Note]
-> The configuration files for Machine Learning Server can be found at `/etc/apt/sources.list.d/mlserver.list`
+5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 ### SUSE SLES11
 
@@ -121,12 +119,12 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
    ```rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm```
 
-3. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
+3. Verify the mlserver.list cpnfiguration file exists
 
-4. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+4. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
 
-> [!Note]
-> The configuration files for Machine Learning Server can be found at `/etc/zypp/repos.d/mlserver.repo`
+5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+
 
 ## Connect and validate
 
@@ -138,15 +136,23 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   + On CentOS and RHEL: `$ rpm -qi microsoft-r-server-packages-9.1.x86_64`
-   + On Ubuntu: `$ dpkg --status microsoft-r-server-packages-9.1.x86_64`  
-   + On SLES: `zypper info microsoft-r-server-packages-9.1.x86_64`
+   + On CentOS and RHEL: `$ rpm -qi microsoft-mlserver-packages-r-9.2.1`
+   + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.2.1`  
+   + On SLES: `zypper info microsoft-mlserver-packages-r-9.2.1`
 
-Partial output is as follows (note version 9.2.1):
+Output on Ubuntu is as follows:
 
    ```
-	  Name        : microsoft-mlserver-all-9.2.1       Relocations: /usr/lib64
-	  Version     : 9.2.1                              Vendor: Microsoft
+    Package: microsoft-mlserver-packages-r-9.2.1
+    Status: install ok installed
+    Priority: optional
+    Section: devel
+    Installed-Size: 195249
+    Maintainer: revobuil@microsoft.com
+    Architecture: amd64
+    Version: 9.2.1.1287
+    Depends: microsoft-r-open-mro-3.4.1, microsoft-r-open-mkl-3.4.1, microsoft-r-open-foreachiterators-3.4.1
+    Description: Microsoft Machine Learning Server
 	  . . .
    ```
 
@@ -228,7 +234,30 @@ The following .NET and Microsoft packages are installed:
 
 Other package dependencies are installed if the package is not found on the system. This list will vary for each installation.
 
-rpm -qpR
+## Enable operationalization
+
+Machine Learning Server can be used as-is with an R IDE on the same box, but you can also [enable the server to host web services and to allow remote server connections](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+
+Configure the server to by running the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure the server for remote access and execution, web service deployment, or cluster topologies. 
+
+[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
+
+## What's installed
+
+An installation of Machine Learning Server includes some or all of the following components.
+
+| Component | Description |
+|-----------|-------------|
+| Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). |
+| R Server proprietary libraries and script engine | R Server packages provide libraries of functions. R Server libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Linux, the default R Server installation directory is `/opt/microsoft/mlserver/9.2.1`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
+| Python proprietary libraries | Propietary packages provide modules of class objects and static functions. Python libraries are in the `<install-directory>\lib\site-packages` folder. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. <br/><br/>On Windows, the default installation directory is `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`.  |
+| Anaconda 4.2 with Python 3.5.2 | An open source distribution of Python.|
+| [Admin tool](../operationalize/configure-use-admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
+| [Pre-trained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image detection. |
+
+Consider adding a development tool on the server to build script or solutions using R Server features:
+
++ [Visual Studio 2017](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://docs.microsoft.com/visualstudio/rtvs/installation) and the [Python for Visual Studio (PTVS)](https://www.visualstudio.com/vs/python/).
 
 ## Next steps
 

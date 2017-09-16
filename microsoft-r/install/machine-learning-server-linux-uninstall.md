@@ -39,13 +39,13 @@ Uninstall reverses the installation steps, including uninstalling any package de
   + On SUSE: `zypper search \*microsoft-r\*`    
 
 
-2. Get package version information. On a 9.2.1 installation, you should see about 16 packages. Since multiple major versions can coexist, the package list could be much longer. Given a list of packages, you can get verbose version information for particular packages in the list. The following examples are for Microsoft R Open version 3.4.1:
+2. Get package version information. On a 9.2.1 installation, you should see about [16 packages](#installed-packages). Since multiple major versions can coexist, the package list could be much longer. Given a list of packages, you can get verbose version information for particular packages in the list. The following examples are for Microsoft R Open version 3.4.1:
 
   + On RHEL: `rpm -qi microsoft-r-open-mro-3.4.1`   
   + On Ubuntu: `dpkg --status microsoft-r-open-mro-3.4.1` 
   + On SUSE: `zypper info microsoft-r-open-mro-3.4.1`     
 
-## How to uninstall 9.x
+## How to uninstall 9.2.1
 
 1. On any node, uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO. Most packages are uninstalled with MRO, including Microsoft R Server. 
 
@@ -53,12 +53,12 @@ Uninstall reverses the installation steps, including uninstalling any package de
   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.4.1`  
   + On SUSE: `zypper remove microsoft-r-open-mro-3.4.1`    
 
-2. On edge nodes only, you could have additional packages if you installed features for operationalizing analytics. On a 9.x installation, this is the mrsdeploy package, which you can uninstall using the same syntax in the previous step. In the 9.1 release, multiple packages provide the feature. Uninstall each one in the following order:
+2. On edge nodes only, you could have additional packages if you installed features for operationalizing analytics. On a 9.2.1 installation, this is the azureml-model-management package, which you can uninstall using the same syntax in the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
 
   + microsoft-mlserver-adminutil-9.2
+  + microsoft-mlserver-webnode-9.2
   + microsoft-mlserver-computenode-9.2
   + microsoft-mlserver-config-rserve-9.2 
-  + microsoft-mlserver-webnode-9.2
 
 3. After packages are removed, remove remaining files. On root@, determine whether additional files still exist:
 
@@ -69,6 +69,33 @@ Uninstall reverses the installation steps, including uninstalling any package de
   + `$ rm -fr ls /opt/microsoft/mlserver/9.2.1/`
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
+
+<a name="installed-packages"></a>
+
+## Installed packages
+
+On an internet-connected computer, download the following Microsoft packages:
+
+    dotnet-host
+    dotnet-hostfxr-1.1.0
+    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+    
+    microsoft-mlserver-adminutil-9.2
+    microsoft-mlserver-all-9.2.1 
+    microsoft-mlserver-computenode-9.2
+    microsoft-mlserver-config-rserve-9.2 
+    microsoft-mlserver-hadoop-9.2.1
+    microsoft-mlserver-mlm-py-9.2.1 
+    microsoft-mlserver-mlm-r-9.2.1
+    microsoft-mlserver-mml-py-9.2.1
+    microsoft-mlserver-mml-r-9.2.1
+    microsoft-mlserver-packages-py-9.2.1 
+    microsoft-mlserver-packages-r-9.2.1
+    microsoft-mlserver-python-9.2.1 
+    microsoft-mlserver-webnode-9.2
+    microsoft-r-open-foreachiterators-3.4.1 
+    microsoft-r-open-mkl-3.4.1
+    microsoft-r-open-mro-3.4.1 
 
 ## See also
 

@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Offline installation for Machine Learning Server for Windows
 
-By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.2.1 for Windows. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
+By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.2.1 for Windows. If firewall constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
 Before you start, review the following articles for requirements and restrictions:
 
@@ -39,7 +39,7 @@ On an internet-connected computer, download all of the following files.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | serversetup.exe from any one of the following sites:<br/><br/>[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) <br/><br/> [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) <br/><br/> [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | R Server |
+|Machine Learning Server setup | Get serversetup.exe from one of these sites:<br/><br/>[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) <br/> [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) <br/> [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | R Server |
 |NameForMLM |[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
 |Microsoft R Open |[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852724) | R |
 |Microsoft Python Open |[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
@@ -47,7 +47,7 @@ On an internet-connected computer, download all of the following files.
 
 ## Transfer and place files
 
-Use a tool or device to transfer the files the offline server. Extract the zipped executable for setup. Place files in the following locations:
+Use a tool or device to transfer the files to the offline server. Extract the zipped executable for setup. Place files in the following locations:
 
 + Put the serversetup.exe in a convenient folder. It is not important where this file resides.
 + Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. 
@@ -65,23 +65,15 @@ Post-installation, you can check the log files located in the system temp direct
 
   ![Machine Learning Server setup log files](./media/mlserver-setup-log-files.png)
 
+<a name="connect-validate"></a>
+
 ## Connect and validate
 
-Machine Learning Server executes on demand as R Server or as a Python application:
- 
-+ Python runs when you execute a .py script. 
-+ R Server runs as a background process, as **Microsoft R Server Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
-
-As a verification step, connect to each application and run a script or function.
-
-**For Python**
-
-1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
-2. Double-click **Python**.
-3. At the command line, type `help()` to open interactive help.
-4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
+Machine Learning Server executes on demand as R Server or as a Python application. As a verification step, connect to each application and run a script or function.
 
 **For R**
+
+R Server runs as a background process, as **Microsoft R Server Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
 
 1. Go to C:\Program Files\Microsoft\ML Server\R_SERVER\bin\x64.
 2. Double-click Rgui.exe to start the R Console application.
@@ -89,13 +81,15 @@ As a verification step, connect to each application and run a script or function
 4. Type `print(Revo.version)` to show the software version.
 5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
-## Enable server to host analytic web services and accept remote connections
+**For Python**
 
-Machine Learning Server can be used as-is with an R IDE on the same box, but you can also [enable the server to host web services and to allow remote server connections](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+Python runs when you execute a .py script or run commands in a Python console window. Machine Learning Server for Hadoop (Spark) and SQL Server Machine Learning Server have the Python interpreters for our proprietary Python libraries. On Windows, Setup adds Anaconda 4.2 with Python 3.5. You can write Python script that executes base functionality locally. Your local script can push proprietrary Python calls to remote SQL or Spark compute contexts.
 
-Configure the server to by running the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure the server for remote access and execution, web service deployment, or cluster topologies. 
+1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
+2. Double-click **Python**.
+3. At the command line, type `help()` to open interactive help.
+4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
 
-[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running R Client or the Python client libraries on your network. Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
 
 ## Next steps
 

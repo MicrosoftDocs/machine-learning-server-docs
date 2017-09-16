@@ -29,7 +29,7 @@ Machine Learning Server for Windows runs machine learning and data mining soluti
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
 > [!Note]
-> Python support is new in this release. Although you can add Python, local script that calls [proprietary Python functions](../python-reference/introducing-python-package-reference.md) must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark [compute context](../r/concept-what-is-compute-context.md). <br/><br/>On Windows, Python operations are limited to generic Python script, pushing any proprietary function calls to remote instances. You can also run Machine Learning Server [web services](../operationalize/concept-what-are-web-services) that contain  compiled Python script. More capability, including interactive Python sessions and direct execution, is projected for future releases.
+> Python support is new in this release. Although you can add Python to Machine Learning Server for Windows, local script that calls our [proprietary Python functions](../python-reference/introducing-python-package-reference.md) must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or on [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark [remote compute context](../r/concept-what-is-compute-context.md). <br/><br/>On Windows, Python operations are limited to generic Python script, pushing  proprietary function calls to remote instances. You can also run Machine Learning Server [web services](../operationalize/concept-what-are-web-services.md) that contain  compiled Python script. More capability, including interactive Python sessions and direct execution of proprietary functions, is projected for future releases.
 
 ## System requirements
 
@@ -46,6 +46,7 @@ The following additional components are included in Setup and required for Machi
 * AS OLE DB (SQL Server 2016) provider
 * Microsoft Visual C++ 2015 Redistributable
 * Microsoft R Open 3.4.1 (if you install R Server)
+* Anaconda 4.2 with Python 3.5
 
 ## Running setup on existing installations
 
@@ -53,7 +54,7 @@ The installation path for Machine Learning Server is new: \Program Files\Microso
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
-## How to install
+## How to install and verify
 
 This section walks you through a Machine Learning Server 9.2.1 deployment using the standalone Windows installer. Under these instructions, your installation will be licensed and serviced as a SQL Server add-on feature.
 
@@ -77,10 +78,10 @@ The setup wizard installs, upgrades, and uninstalls all in one workflow.
 2. Double-click **ServerSetup.exe** to start the wizard.
 3. In Configure installation, choose components to install:
 
-    + **R Server (Standalone)**. You should check this option. On Windows, most functionality is R-related. **If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls your existing R Server instance.**  
-    + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection (install the models with R or Python, but not as a standalone component).
-    + **Python** adds the Python libraries. You can write local script that calls Python, but your script must set a compute context for Python execution on a SQL Server 2017 instance or Spark cluster that has the interpreter.
-    + Other components are listed, but not configurable. These components are required and listed in Setup for visibility.
+    + **R Server (Standalone)**. You should check this option. On Windows, most functionality is R-related. *If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls your existing R Server instance.*  
+    + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection. You can install the models with R or Python, but not as a standalone component.
+    + **Python** adds the Python libraries. You can write local script that calls Python, but your script must set a compute context for Python execution on a remote SQL Server 2017 instance or Spark cluster that has the interpreter.
+    + Other components are listed for visiblity, but are not configurable. These components are required.
 
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open, Anaconda, and Python.
 5. Optionally, change the home directory for Machine Learning Server.
@@ -113,7 +114,7 @@ R Server runs as a background process, as **Microsoft R Server Engine** in Task 
 
 **For Python**
 
-Python runs when you execute a .py script or run commands in a Python console window. Machine Learning Server for Hadoop (Spark) and SQL Server Machine Learning Server have the Python interpreters for our proprietary Python libraries. On Windows, Setup adds Anaconda 4.2 with Python 3.5. You can write Python script that executes base functionality locally, and proprietrary Python calls on SQL or Spark.
+Python runs when you execute a .py script or run commands in a Python console window. Machine Learning Server for Hadoop (Spark) and SQL Server Machine Learning Server have the Python interpreters for our proprietary Python libraries. On Windows, Setup adds Anaconda 4.2 with Python 3.5. You can write Python script that executes base functionality locally. Your local script can push proprietrary Python calls to remote SQL or Spark compute contexts.
 
 1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
 2. Double-click **Python**.
@@ -126,20 +127,20 @@ Machine Learning Server can be used as-is with an R IDE on the same box, but you
 
 Configure the server to by running the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure the server for remote access and execution, web service deployment, or cluster topologies. 
 
-[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running R Client or the Python client libraries on your network. Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
+[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-windows.md) on your network. Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
 
-## What's Installed with Machine Learning Server
+## What's installed
 
 An installation of Machine Learning Server includes some or all of the following components.
 
 | Component | Description |
 |-----------|-------------|
 | Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are under `<install-directory>\bin`. Documentation is under `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
-| Microsoft R Server proprietary libraries and script engine | MRS packages provide libraries of functions. MRS libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Windows, the default R Server installation directory is `C:\Program Files\Microsoft\ML Server\R_SERVER`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
+| R Server proprietary libraries and script engine | R Server packages provide libraries of functions. R Server libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Windows, the default R Server installation directory is `C:\Program Files\Microsoft\ML Server\R_SERVER`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
 | Python proprietary libraries | Propietary packages provide modules of class objects and static functions. Python libraries are in the `<install-directory>\lib\site-packages` folder. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. <br/><br/>On Windows, the default installation directory is `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`.  |
 | Anaconda 4.2 with Python 3.5.2 | An open source distribution of Python.|
 | [Admin tool](../operationalize/configure-use-admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
-| [Pretrained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image detection. |
+| [Pre-trained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image detection. |
 
 Consider adding a development tool on the server to build script or solutions using R Server features:
 
