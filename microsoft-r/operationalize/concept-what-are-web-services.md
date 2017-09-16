@@ -95,7 +95,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 
 <a name="versioning"></a>
 
-## Versioning your services
+## Versioning
 
 Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services and helps the people consuming your service to find it easily. 
 
@@ -104,7 +104,7 @@ At publish time, you can specify an alphanumeric string that is meaningful to th
 If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
 
 
-## Permissions on web services
+## Permissions
 
 By default, any authenticated Machine Learning Server user can:
 + Update and delete web services they have published

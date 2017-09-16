@@ -30,11 +30,11 @@ ms.technology:
 
 This article is for data scientists who wants to learn how to deploy and manage Python code/models as analytic web services hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
-Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md)
+Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md).
 
-Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), which ships with Machine Learning Server, you can develop, test, and [deploy](#publishService) these Python analytics as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime. [RESTful APIs](../concept-api.md) are also available to provide direct programmatic access to a service's lifecycle.
+Using the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)  Python package, which ships with Machine Learning Server, you can develop, test, and [deploy these Python analytics](#publishService) as web services in your production environment. This package can also be [installed locally](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime. [RESTful APIs](../concept-api.md) are also available to provide direct programmatic access to a service's lifecycle.
 
-By default, web service operations are available to authenticated users. However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. 
+By default, web service operations are available to authenticated users. However, your administrator can also [assign role-based authorization (RBAC)](../configure-roles.md) to further control the permissions around web services. 
 
 
 
@@ -42,7 +42,7 @@ By default, web service operations are available to authenticated users. However
 
 ## Requirements
 
-Before you can use the web service management functions in the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md), you must:
+Before you can use the web service management functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package, you must:
 + Have access to a Python-enabled instance of Machine Learning Server that was  [properly configured](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to host web services. 
 
 + Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server](how-to-authenticate-in-python.md)."
@@ -52,11 +52,9 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 ## Deploy web services
 
-To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them. They can also be consumed by other users. Both deploy and publish are used synonymously.
+To deploy your analytics, you must publish them as web services in Machine Learning Server. Once hosted on Machine Learning Server, you can update and manage them.  Web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md). Both deploy and publish are used synonymously.
 
-Web services can be [consumed in Python](how-to-consume-web-service.md) by other authenticated users or in the [language of their choice via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
-
-After you've authenticated, you can deploy as a web service. Deploying returns a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service.
+After authenticating, you can deploy as a web service. A [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
 
 ### Standard web services
 
@@ -127,20 +125,14 @@ You can keep different versions of a web service. Update the version each time y
 
 ### Input and output data types
 
-The following table lists [the supported data types](../../python-reference/azureml-model-management-sdk/mlserver.md#deployservice) for the input and output schemas of Python web services.
+The following table lists the supported data types for the input and output schemas of Python web services.  You can write these as a reference `bool` or as a string `'bool'`.
 
-You can write these as a reference `bool` or a string `'bool'`.
-
-|I/O data types|In Python|
+|I/O data types||
 |--------|-----|
-|Float|float|
-|Integer|int|
-|Boolean|bool|
-|String|str|
-|Array|numpy.array |
-|matrix|numpy.matrix |
-|Dataframe|numpy.DataFrame|
-
+|Float &rarr; float|Array &rarr; numpy.array |
+|Integer &rarr; int|Matrix &rarr; numpy.matrix |
+|Boolean &rarr; bool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Dataframe &rarr; numpy.DataFrame|
+|String &rarr; str||
 
 <a name="updateService"></a>
 
