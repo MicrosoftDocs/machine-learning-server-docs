@@ -33,21 +33,74 @@ Before you start, review the following article for requirements and restrictions
 > [!Note] 
 > There is no install.sh script in this release.
 
-## Downloads
-
-On an internet-connected computer, download all of the following packages.
-
 <a name="file-list"></a>
 
-| Package | Download | Used for | 
-|-----------|----------|----------|
-|TBD 1 | TBD2 | R Server |
-|TBD 1 | TBD2 | Python |
-|TBD 1 | TBD2 | Pre-trained models, R or Python  |
+## Package downloads
+
+On an internet-connected computer, download the following Microsoft packages:
+
+    dotnet-host
+    dotnet-hostfxr-1.1.0
+    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+    
+    microsoft-mlserver-adminutil-9.2
+    microsoft-mlserver-all-9.2.1 
+    microsoft-mlserver-computenode-9.2
+    microsoft-mlserver-config-rserve-9.2 
+    microsoft-mlserver-hadoop-9.2.1
+    microsoft-mlserver-mlm-py-9.2.1 
+    microsoft-mlserver-mlm-r-9.2.1
+    microsoft-mlserver-mml-py-9.2.1
+    microsoft-mlserver-mml-r-9.2.1
+    microsoft-mlserver-packages-py-9.2.1 
+    microsoft-mlserver-packages-r-9.2.1
+    microsoft-mlserver-python-9.2.1 
+    microsoft-mlserver-webnode-9.2
+    microsoft-r-open-foreachiterators-3.4.1 
+    microsoft-r-open-mkl-3.4.1
+    microsoft-r-open-mro-3.4.1 
+
+## Package dependencies
+
+rpm -qpR {.rpm-file}
+rpm -qR {package}
+
+You might also need the following additional packages:
+
+    fontconfig
+    fontconfig-config 
+    fonts-dejavu-core 
+    libcairo2 
+    libdatrie1 
+    libfontconfig1
+    libgomp1 
+    libgraphite2-3 
+    libharfbuzz0b 
+    libice6 
+    liblttng-ust-ctl2
+    liblttng-ust0 
+    libpango-1.0-0 
+    libpango1.0-0 
+    libpangocairo-1.0-0
+    libpangoft2-1.0-0 
+    libpangox-1.0-0 
+    libpangoxft-1.0-0 
+    libpixman-1-0 
+    libsm6
+    libthai-data 
+    libthai0 
+    libunwind8 
+    liburcu1 
+    libxcb-render0 
+    libxcb-shm0 
+    libxft2
+    libxrender1 
+    libxt6 
+    x11-common
 
 ## Transfer and place files
 
-Use a tool or device to transfer the files the offline server. Extract the zipped executable for setup. Place files in the following locations:
+Use a tool or device to transfer the files the offline server. Place files in the following locations:
 
 + TBD
 

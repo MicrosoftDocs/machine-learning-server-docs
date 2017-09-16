@@ -32,25 +32,23 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 > [!Note]
 > Although you can add Python support during Setup, script that calls functions from Python libraries must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark compute context. On Linux, you can run a web service that contains Python script, but web service execution is the only methodology we offer for Python on Linux in the 9.2.1 release. Additional capability for Python sessions and direct execution on Machine Learning Server for Linux is coming in subsequent releases.
 
-## System requirements
+## System and setup requirements
 
 + Operating system must be a [supported version of Linux](r-server-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-+ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
++ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended. Disk space must be a minimum of 500 MB.
 
-+ Disk space must be a minimum of 500 MB.
++ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](machine-learning-server-linux-offline.md).
 
-+ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](machine-learning-server=linux-offline.md).
-
-+ A package manager (yum for CentOS/RHEL systems, apt for Ubuntu, dpkg for Ubuntu offline, zypper for SLES systems, )
++ A package manager:
+    + yum for CentOS/RHEL systems
+    + apt for Ubuntu
+    + dpkg for Ubuntu offline
+    + zypper for SUSE systems
+    + rpm for CentOS, RHEL, SUSE
 
 + Root or super user permissions
 
-The following additional components are included in Setup and required for full language support in Machine Learning Server.
-
-* Microsoft R Open 3.4.1  
-* Microsoft .NET Core 1.1 
-* Anaconda 4.2 with Python 3.5
 
 ## Running setup on existing installations
 
@@ -199,30 +197,38 @@ To quit the program, type `q()` at the command line with no arguments.
 
 ## Packages installed 
 
+In addition to packages for Machine Learning Server, the following additional components are required for operationalization features and full language support.
+
+* Microsoft R Open 3.4.1  
+* Microsoft .NET Core 1.1 
+* Anaconda 4.2 with Python 3.5
+
 The following .NET and Microsoft packages are installed:
 
-dotnet-host 
-dotnet-hostfxr-1.1.0
-dotnet-sharedframework-microsoft.netcore.app-1.1.2 
-
-microsoft-mlserver-adminutil-9.2
-microsoft-mlserver-all-9.2.1 
-microsoft-mlserver-computenode-9.2
-microsoft-mlserver-config-rserve-9.2 
-microsoft-mlserver-hadoop-9.2.1
-microsoft-mlserver-mlm-py-9.2.1 
-microsoft-mlserver-mlm-r-9.2.1
-microsoft-mlserver-mml-py-9.2.1
-microsoft-mlserver-mml-r-9.2.1
-microsoft-mlserver-packages-py-9.2.1 
-microsoft-mlserver-packages-r-9.2.1
-microsoft-mlserver-python-9.2.1 
-microsoft-mlserver-webnode-9.2
-microsoft-r-open-foreachiterators-3.4.1 
-microsoft-r-open-mkl-3.4.1
-microsoft-r-open-mro-3.4.1 
+    dotnet-host 
+    dotnet-hostfxr-1.1.0
+    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+    
+    microsoft-mlserver-adminutil-9.2
+    microsoft-mlserver-all-9.2.1 
+    microsoft-mlserver-computenode-9.2
+    microsoft-mlserver-config-rserve-9.2 
+    microsoft-mlserver-hadoop-9.2.1
+    microsoft-mlserver-mlm-py-9.2.1 
+    microsoft-mlserver-mlm-r-9.2.1
+    microsoft-mlserver-mml-py-9.2.1
+    microsoft-mlserver-mml-r-9.2.1
+    microsoft-mlserver-packages-py-9.2.1 
+    microsoft-mlserver-packages-r-9.2.1
+    microsoft-mlserver-python-9.2.1 
+    microsoft-mlserver-webnode-9.2
+    microsoft-r-open-foreachiterators-3.4.1 
+    microsoft-r-open-mkl-3.4.1
+    microsoft-r-open-mro-3.4.1 
 
 Other package dependencies are installed if the package is not found on the system. This list will vary for each installation.
+
+rpm -qpR
 
 ## Next steps
 

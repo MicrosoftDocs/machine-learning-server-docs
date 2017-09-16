@@ -72,7 +72,7 @@ A default installation includes R_SERVER and the R packages, but not PYTHON_SERV
 
 ## Examples
 
-1. Run setup in unattended mode with no prompts or user interaction, including everything. R Server is implicit. It does not have a parameter to explicitly include or exclude it. Arguments exist for Python and the pre-trained models.
+1. Run setup in unattended mode with no prompts or user interaction, to install everything. R Server is implicit. It does not have a parameter to explicitly include or exclude it. Arguments exist for Python and the pre-trained models.
 
    `serversetup.exe /quiet /python /models`
 

@@ -29,15 +29,13 @@ Machine Learning Server for Windows runs machine learning and data mining soluti
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
 > [!Note]
-> Although you can add Python support during Setup, script that calls functions from Python libraries must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark compute context. On Windows, you can run a web service that contains Python script, but web service execution is the only methodology we offer for Python on Windows in the 9.2.1 release. Additional capability for Python sessions and direct execution on Machine Learning Server for Windows is coming in subsequent releases.
+> Python support is new in this release. Although you can add Python during setup, script that calls Python functions must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark [compute context](../r/concept-what-is-compute-context.md). On Windows, Python operations are limited to running Machine Learning Server web services that contain Python script. More capability, including Python sessions and direct execution, is projected for future releases.
 
 ## System requirements
 
-+ Operating system must be a [supported version of Windows](r-server-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended. 
++ Operating system must be a [supported version of 64-bit Windows](r-server-install-supported-platforms.md). 
 
-+ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended.
-
-+ Disk space must be a minimum of 500 MB.
++ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended. Disk space must be a minimum of 500 MB.
 
 + .NET Framework 4.5.2 or later. The installer checks for this version of the .NET Framework and provides a download link if it's missing. A computer restart is required after a .NET Framework installation.
 
@@ -77,16 +75,17 @@ The setup wizard installs, upgrades, and uninstalls all in one workflow.
 
 1. In the Downloads folder, right-click to extract the contents of zipped executable.
 2. Double-click **ServerSetup.exe** to start the wizard.
-3. In Configure installation, choose components to install. **If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls R Server.** Required components are listed, but not configurable. Components that you can select for install or uninstall include:
-    + R Server (Standalone)
-    + [Pre-trained Models](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection (install the models with R or Python, but not as a standalone component)
-    + Python
+3. In Configure installation, choose components to install:
+    a. **R Server (Standalone)**. You should check this option. On Windows, most functionality is R-related. **If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls your existing R Server instance.**  
+    b. [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection (install the models with R or Python, but not as a standalone component).
+    c. **Python** adds the Python libraries. You can write local script that calls Python, but your script must set a compute context for Python execution on a SQL Server 2017 instance or Spark cluster that has the interpreter.
+    d. Other components are listed, but not configurable. These components are required and listed in Setup for visibility.
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open, Anaconda, and Python.
 5. Optionally, change the home directory for Machine Learning Server.
 6. At the end of the wizard, click **Install** to run setup.
 
 > [!NOTE]
-> By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature off, use the RevoScaleR function `rxPrivacyControl` or the revoscalepy function `rx-privacy-control`. To turn it back on, change the setting to `TRUE`. For more information, see [Opting out of data collection](../resources-opting-out.md).
+> By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature on or off, see [Opting out of data collection](../resources-opting-out.md).
 
 ### 3. Check log files
 
@@ -98,27 +97,26 @@ Post-installation, you can check the log files located in the system temp direct
 
 ### 4. Connect and validate
 
-Machine Learning Server executes on demand as R Server or as a Python application:
- 
-+ Python runs when you execute a .py script. 
-+ R Server runs as a background process, as **Microsoft R Server Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
-
-As a verification step, connect to each application and run a script or function.
-
-**For Python**
-
-1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
-2. Double-click **Python**.
-3. At the command line, type `help()` to open interactive help.
-4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
+Machine Learning Server executes on demand as R Server or as a Python application. As a verification step, connect to each application and run a script or function.
 
 **For R**
+
+R Server runs as a background process, as **Microsoft R Server Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
 
 1. Go to C:\Program Files\Microsoft\ML Server\R_SERVER\bin\x64.
 2. Double-click Rgui.exe to start the R Console application.
 3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
 4. Type `print(Revo.version)` to show the software version.
 5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
+
+**For Python**
+
+Python runs when you execute a .py script or run commands in a Python console window. Machine Learning Server for Hadoop (Spark) and SQL Server Machine Learning Server have the Python interpreters for our proprietary Python libraries. On Windows, Setup adds Anaconda 4.2 with Python 3.5. You can write Python script that executes base functionality locally, and proprietrary Python calls on SQL or Spark.
+
+1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
+2. Double-click **Python**.
+3. At the command line, type `help()` to open interactive help.
+4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
 
 ### 5. Enable server to host analytic web services and accept remote connections
 
@@ -156,3 +154,5 @@ We recommend starting with any Quickstart tutorial listed in the contents pane.
 + [Supported platforms](r-server-install-supported-platforms.md)  
 + [Known Issues](../resources-known-issues.md)  
 + [Configure Machine Learning Server to operationalize your analytics](../what-is-operationalization.md) 
++ [R Function Reference](../r-reference/introducing-r-server-r-package-reference.md)
++ [Python Function Reference](../python-reference/introducing-python-package-reference.md)
