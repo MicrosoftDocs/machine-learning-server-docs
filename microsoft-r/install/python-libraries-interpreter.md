@@ -36,7 +36,7 @@ You can also install a Python interpreter along with these custom packages local
 
 + Benefit from the best-of-breed machine learning algorithms without any server connection. These algorithms have been battle-tested by Microsoft.
  
-+ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can leverage the disk scalability, performance, and speed of a production instance of Machine Learning Server on any supported platforms. 
++ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can benefit from the disk scalability, performance, and speed of a production instance of Machine Learning Server on any supported platforms. 
  
 This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client computer.
 
@@ -44,7 +44,18 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 1. Download the installation shell script from http://aka.ms/mls-py. This script installs Anaconda 4.2.12, which includes Python 3.5.2, along with all packages listed previously.
 
-1. Run the script AS AN ADMINISTRATOR to install the interpreter and packages. 
+1. Launch a new PowerShell window with elevated administrator permissions ('as administrator').
+
+1. Go to the folder in which you downloaded the installer and run the script:
+   ```
+   cd {{download-directory}}
+   .\Install-PyForMLS.ps1
+   ```
+
+   Note: , use the -InstallFolder command-line argument followed by the new path. For example: 
+   ```
+   .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
+   ```
 
 ## Install on Linux
 
@@ -75,8 +86,7 @@ Test your install and packages using this example code.
 
 In this example, you can use some functions from the [microsoftml python package](../python-reference/microsoftml/microsoftml-package.md) for logistic regression.
 
-### Example
-1. Let's build some fake data. We just need to make our data to start out. Let's create one label and 2000 random features.
+1. Let's build some fake data. We just need to make our data to start out. Let's create a single label and 2000 random features.
 
    ```Python
    from numpy.random import randn
@@ -119,27 +129,25 @@ In this example, you can use some functions from the [microsoftml python package
    logregml = rx_logistic_regression(model_formula, data=data)
    ```
 
-### The result 
+1. Examine the results. They should resemble the following output:
 
-The result should resemble:
-
-```Python
-Label ~ f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + ...
-Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
-Beginning processing data.
-Rows Read: 2000, Read Time: 0.046, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
-Rows Read: 2000, Read Time: 0.051, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
-Rows Read: 2000, Read Time: 0.058, Transform Time: 0
-Beginning processing data.
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
-LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
-Beginning optimization
-num vars: 11
-improvement criterion: Mean Improvement
-L1 regularization selected 11 of 11 weights.
-Not training a calibrator because it is not needed.
-``` 
+    ```Python
+    Label ~ f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + ...
+    Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
+    Beginning processing data.
+    Rows Read: 2000, Read Time: 0.046, Transform Time: 0
+    Beginning processing data.
+    Beginning processing data.
+    Rows Read: 2000, Read Time: 0.051, Transform Time: 0
+    Beginning processing data.
+    Beginning processing data.
+    Rows Read: 2000, Read Time: 0.058, Transform Time: 0
+    Beginning processing data.
+    Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
+    LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
+    Beginning optimization
+    num vars: 11
+    improvement criterion: Mean Improvement
+    L1 regularization selected 11 of 11 weights.
+    Not training a calibrator because it is not needed.
+    ``` 
