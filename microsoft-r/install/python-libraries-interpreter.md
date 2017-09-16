@@ -86,7 +86,6 @@ Test your install and packages using this example code.
 
 In this example, you can use some functions from the [microsoftml python package](../python-reference/microsoftml/microsoftml-package.md) for logistic regression.
 
-### Example
 1. Let's build some fake data. We just need to make our data to start out. Let's create one label and 2000 random features.
 
    ```Python
@@ -130,9 +129,7 @@ In this example, you can use some functions from the [microsoftml python package
    logregml = rx_logistic_regression(model_formula, data=data)
    ```
 
-### The result 
-
-The result should resemble:
+1. Examine the results. They should resemble the following:
 
 ```Python
 Label ~ f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + ...
