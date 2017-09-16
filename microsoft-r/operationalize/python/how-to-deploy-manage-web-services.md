@@ -59,7 +59,7 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 The list of available parameters that can be defined for a web service depends on whether it is a standard or realtime web service. 
 
-### Standard web services
+### Parameters for standard web services
 
 Standard web services, like all web services, are identified by their name and version. Additional parameters can be defined for the service, including:
 + A description
@@ -70,6 +70,8 @@ Standard web services, like all web services, are identified by their name and v
 + Outputs for integrators
 + Artifacts
 
+For a full example, try out the [quickstart guide for deploying web services in Python](quickstart-deploy-python-web-service.md).
+
 The following table lists the supported data types for the input and output schemas of Python web services.  You can write these as a reference `bool` or as a string `'bool'`.
 
 |I/O data types||
@@ -79,11 +81,12 @@ The following table lists the supported data types for the input and output sche
 |Boolean &rarr; bool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Dataframe &rarr; numpy.DataFrame|
 |String &rarr; str||
 
-### Realtime web services
+### Parameters for realtime web services
 
 [Realtime web services](../concept-what-are-web-services.md#realtime) are also identified by their name and version. The following additional parameters can be defined for the realtime service: 
 + A description
 + A model created with [supported functions](../concept-what-are-web-services.md#realtime) and serialized with [revoscalepy.rx_serialize_model](../../python-reference/revoscalepy/rx-serialize-model.md)
+
 Dataframes are assumed for inputs and outputs. Code is not supported.
 
 ## Deploy and update services
@@ -103,8 +106,6 @@ service = client.service('myService')\
         .deploy()
 ```
 
-For a full Python example, try out the [quickstart for deploying web services](quickstart-deploy-python-web-service.md).
-
 Here is a realtime web service example:
 <a name=realtime-example></a>
 
@@ -120,6 +121,7 @@ webserv = client.realtime_service('myService') \
         .description('this is a realtime model') \
         .deploy()
 ```
+
 ### Update an existing service version
 
 To update an existing web service, specify the name and version of that service and the parameters that need changed. When you use '.redeploy', the service version is overwritten and a new [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
@@ -127,7 +129,7 @@ To update an existing web service, specify the name and version of that service 
 Update the service with a '.redeploy' such as:
 ```Python
 # Redeploy this standard service 'myService' version 'v1.0'
-# Update only what changed. Here it is the description.
+# Only the description has changed.
 service = client.service('myService')\
         .version('v1.0')\
         .description('The updated description for cars model')\
@@ -163,14 +165,14 @@ client.list_services()
 client.delete_service('myService', version='v1.0')
 ```
 
-If it is successful, the success status  _'True'_  is returned. If it fails, then execution stops and an error message is produced.
+If successful, the status  _'True'_  is returned. If it fails, then the execution stops and an error message is returned.
 
 ## See also
 
-[What are web services](../concept-what-are-web-services.md)
+[What are web services?](../concept-what-are-web-services.md)
 
-[Quickstart for deploying web services in Python](quickstart-deploy-python-web-service.md).
+[Quickstart: Deploying web services in Python](quickstart-deploy-python-web-service.md).
 
-[Authenticate in Python](how-to-authenticate-in-python.md)
+[How to authenticate in Python](how-to-authenticate-in-python.md)
 
-[Find, get, and consume web services](how-to-consume-web-services.md)
+[How to find, get, and consume web services](how-to-consume-web-services.md)
