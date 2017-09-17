@@ -41,7 +41,7 @@ Python support is based on Anaconda 4.2 over Python 3.5. R support is based on [
 
 <sup>1</sup> You can install Machine Learning Server for Hadoop on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for CDH, HDP, or MapR.
 
-<sup>2</sup> Cloudera installation using the built-in parcel generator script requires CentOS/RHEL 7.0 as the operating system. The parcel generator excludes any R Server features that it cannot install. For more information, see [Install Machine Learning Server on CDH](machine-learning-server-cloudera-install.md).
+<sup>2</sup> Cloudera installation using the [built-in parcel installation script](machine-learning-server-cloudera-install.md) can execute on CentOS/RHEL 7.0. The parcel generator excludes any R Server features that it cannot install. If parcel installation is too restrictive, follow the instructions for a generic [Hadoop installation](machine-learning-server-hadoop-install.md).
 
 <sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Your version of Hadoop must include a supported level of Spark (2.0-2.4). Spark 1.6 support is dropped for this release.
 

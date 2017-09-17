@@ -24,13 +24,13 @@ ms.technology: "r-server"
 
 # Uninstall Machine Learning Server for Linux
 
-This article explains how to uninstall Machine Learning Server on Hadoop or Linux. 
+This article explains how to uninstall Machine Learning Server 9.2.1 for Linux. 
 
-For upgrades from 9.0.1-to-9.1, uninstall is unnecessary. Setup automatically replaces previous versions of R Server or Microsoft R Open 3.3.2 if they are detected so that setup can install newer versions.
+To upgrade from either a 9.0.1 or 9.1 installation, uninstall is unnecessary. Setup automatically replaces previous versions of R Server or Microsoft R Open 3.3.2 with newer versions. If you have 8.x, you must uninstall first.
 
 ## Collect information
 
-Uninstall reverses the installation steps, including uninstalling any package dependencies used only by R Server. Start is by collecting information about your installation.
+Uninstall reverses the installation steps, including uninstalling any package dependencies used only by the server. Start by collecting information about your installation.
 
 1. List the packages from Microsoft.
 
@@ -47,7 +47,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
 
 ## How to uninstall 9.2.1
 
-1. On root@, uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO. Most R packages are uninstalled with MRO, including microsoft-mlserver-packages-r. 
+1. On root@, uninstall Microsoft R Open (MRO) first. This action removes any dependent packages used only by MRO, which includes packages like microsoft-mlserver-packages-r. 
 
   + On RHEL: `yum erase microsoft-r-open-mro-3.4.1`     
   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.4.1`  
@@ -79,7 +79,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
 
  Most likely, you have `dotnet-sharedframework-microsoft.netcore.app-1.1.2`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If Machine learning Server is the only Microsoft software you have, you can remove it now.
 
-6. After packages are removed, remove remaining files. On root@, determine whether additional files still exist:
+6. After packages are uninstalled, remove remaining files. On root@, determine whether additional files still exist:
 
   + `$ ls /opt/microsoft/mlserver/9.2.1/`
 

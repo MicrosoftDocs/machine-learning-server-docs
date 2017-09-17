@@ -40,7 +40,7 @@ In contrast with previous releases, there is no install.sh script. Package manag
 |-----------------|----------|
 |[yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) | RHEL, CentOS|
 |[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu onlne |
-| [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
+|[dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
 |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
 |[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
 
@@ -48,61 +48,115 @@ In contrast with previous releases, there is no install.sh script. Package manag
 
 ## Package location
 
-Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). The base file name is microsoft-mlserver-all-9.2.1.*ext* with different file extensions (.rpm, .deb) based on the package manager of the target platform.
+Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). 
 
-+ `<operating system>\<version>\microsoft-mlserver-all-9.2.1.rpm`
++ https://packages.microsoft.com/rhel/7/prod/ (centos 7)
++ https://packages.microsoft.com/sles/11/prod/ (sles 11)
++ https://packages.microsoft.com/rhel/6/prod/ (centos 6)
++ https://packages.microsoft.com/ubuntu/14.04/prod/ (Ubuntu 14.04)
++ https://packages.microsoft.com/ubuntu/16.04/prod/ (Ubuntu 16.04)
+
 
 <a name="package-list"></a>
 
-## Package install order
+## Package list
 
-The following packages comprise a full Machine Learning Server installation. Install them in the order listed:
+The following packages comprise a full Machine Learning Server installation:
 
-1.	microsoft-mlserver-packages-r-9.2.1
-2.	microsoft-mlserver-mml-r-9.2.1
-3.	microsoft-mlserver-python-9.2.1
-4.	microsoft-mlserver-mlm-r-9.2.1
-5.	microsoft-mlserver-packages-py-9.2.1
-6.	microsoft-mlserver-mml-py-9.2.1
-7.	microsoft-mlserver-mlm-py-9.2.1
-8.	microsoft-mlserver-hadoop-9.2.1
-9.	microsoft-mlserver-adminutil-9.2
-10.	microsoft-mlserver-computenode-9.2
-11.	microsoft-mlserver-config-rserve-9.2
-12.	microsoft-mlserver-dotnet-9.2
-13.	microsoft-mlserver-webnode-9.2
+```
+ microsoft-mlserver-packages-r-9.2.1
+ microsoft-mlserver-mml-r-9.2.1
+ microsoft-mlserver-python-9.2.1
+ microsoft-mlserver-mlm-r-9.2.1
+ microsoft-mlserver-packages-py-9.2.1
+ microsoft-mlserver-mml-py-9.2.1
+ microsoft-mlserver-mlm-py-9.2.1
+ microsoft-mlserver-hadoop-9.2.1
+ microsoft-mlserver-adminutil-9.2
+ microsoft-mlserver-computenode-9.2
+ microsoft-mlserver-config-rserve-9.2
+ microsoft-mlserver-dotnet-9.2
+ microsoft-mlserver-webnode-9.2
+```
 
 Microsoft R Open is also required:
 
-1. microsoft-r-open-foreachiterators-3.4.1 
-2. microsoft-r-open-mkl-3.4.1
-3. microsoft-r-open-mro-3.4.1 
+```
+ microsoft-r-open-foreachiterators-3.4.1 
+ microsoft-r-open-mkl-3.4.1
+ microsoft-r-open-mro-3.4.1 
+```
 
 Microsoft .NET Core 1.1 is used for operationalization:
 
-1. dotnet-host
-2. dotnet-hostfxr-1.1.0
-3. dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+```
+ dotnet-host
+ dotnet-hostfxr-1.1.0
+ dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+```
 
-Additional open source packages must be installed if a package is required but not found on the system. This list varies for each installation.
+Additional open source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:
+
+```
+ cairo
+ fontconfig 
+ fontpackages-filesystem
+ graphite2 
+ harfbuzz 
+ libICE  
+ libSM   
+ libXdamage  
+ libXext  
+ libXfixes  
+ libXft  
+ libXrender  
+ libXt    
+ libXxf86vm  
+ libicu      
+ libpng12   
+ libthai
+ libunwind     
+ libxshmfence   
+ mesa-libEGL
+ mesa-libGL     
+ mesa-libgbm    
+ mesa-libglapi 
+ pango   
+ paratype-pt-sans-caption-fonts  
+ pixman  
+```
+
+> [!Tip]
+> To generate a list of dependencies, run `rpm -qpR microsoft-mlserver-packages-all-9.2.1.rpm` (RHEL, CentOS, SUSE) or `dpkg -I microsoft-mlserver-all-9.2.1.deb | grep Depends` (Ubuntu)
+>
 
 ## Download packages
 
-If your system provides a graphical user interface, you can click the file to download it. Otherwise, use `rpm` or `wget`. The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+If your system provides a graphical user interface, you can click the file to download it. Otherwise, use `rpm` or `wget`. We recommend donwloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
+
+The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 + Download to CentOS or RHEL or SUSE: `sudo rpm -Uvh http://packages.microsoft.com/config/rhel/6/microsoft-mlserver-packages-r-9.2.1.rpm`
-
 + Download to Ubuntu: `wget http://packages.microsoft.com/config/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
 
 Repeat for each package.
 
 ## Install packages
 
-+ Install on CentOS or RHEL or SUSE:  `rpm -qpR microsoft-mlserver-packages-r-9.2.1.rpm`
+The package manager determines the installation order. Assuming all packages are in the same folder:
 
-+ Install on Ubuntu: `dpkg -I microsoft-mlserver-packages-r-9.2.1.deb | grep Depends`
++ Install on CentOS or RHEL: `yum install *.rpm` 
++ Install on Ubuntu: `dpkg -I *.deb`
++ Install on SUSE: `zypper install *.rpm`
 
 Repeat for each package.
+
+## Activate the server
+
+Run the activation script from either the R or Python directory:
+
++ `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
++ or `/opt/microsoft/mlserver/9.2.1/bin/python/activate.sh`
 
 ## Connect and validate
 

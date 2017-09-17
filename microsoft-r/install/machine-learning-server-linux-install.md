@@ -75,7 +75,9 @@ After installation completes, software can be found at the following paths:
 
 ## How to install
 
-Setup downloads packages from [packages.microsoft.com](https://packages.microsoft.com) for Linux installation.
+The package manager downloads packages from the  [packages.microsoft.com](https://packages.microsoft.com) repo.
+
+Once you set the repo, use the install syntax for your package manager to specify "microsoft-mlserver-all-9.2.1.*ext*", with different file extensions (.rpm, .deb) based on the package manager of the target platform. This file gives the package manager the necessary information to get all additional packages used in a Machine Learning Server for Linux installation.
 
 > [!Tip]
 > You can get Linux virtual machines in Azure if you want to use computing resources in the cloud: [Ubuntu virtual machine on Azure](https://docs.microsoft.com/sql/linux/quickstart-install-connect-ubuntu)
@@ -84,10 +86,10 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
 1. Enter `sudo su` to install as root.
 
-2. Set the location of the packages using this example syntax for 16.04. Run each command separately. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+2. Set the location of the package repo. This example specifies 16.04. Run each command separately. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
     ```
-     wget http://packages.microsoft.com/config/ubuntu/16.04/microsoft-mlserver-all-9.2.1.deb
+     wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb
 
      dpkg -i microsoft-mlserver-all-9.2.1.deb
     ```
@@ -107,9 +109,9 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
 1. Enter `sudo su` to install as root.
 
-2. Set the location of the packages using this example syntax for 7.0. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+2. Set the location of the package repo. This example specifies 7.0. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-   ```rpm -Uvh http://packages.microsoft.com/config/rhel/7/microsoft-mlserver-all-9.2.1.rpm```
+   ```rpm -Uvh a.	https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm```
 
 3. Verify the mlserver.list cpnfiguration file exists: `ls -la /etc/apt/sources.list.d/`
 
@@ -123,7 +125,7 @@ Setup downloads packages from [packages.microsoft.com](https://packages.microsof
 
 2. Set the location of the packages using this example syntax for SLES11. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-   ```rpm -Uvh http://packages.microsoft.com/config/sles/11/microsoft-mlserver-all-9.2.1.rpm```
+   ```rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-all-9.2.1.rpm```
 
 3. Verify the mlserver.list cpnfiguration file exists
 
@@ -238,7 +240,7 @@ The following .NET and Microsoft packages are installed:
     microsoft-r-open-mkl-3.4.1
     microsoft-r-open-mro-3.4.1 
 
-Additional open source packages are installed if a package is required but not found on the system. This list varies for each installation.
+Additional open source packages are installed if a package is required but not found on the system. This list varies for each installation. 
 
 ## Enable operationalization
 

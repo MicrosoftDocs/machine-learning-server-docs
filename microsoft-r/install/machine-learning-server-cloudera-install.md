@@ -1,7 +1,7 @@
 ---
 # required metadata
 title: "Install Machine Learning Server on Cloudera"
-description: "How to install, connect to, and use Machine Learning Server on a Cloudera Hadoop disribution"
+description: "How to install, connect to, and use Machine Learning Server on a Cloudera Hadoop disribution."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -24,7 +24,25 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server using Cloudera Manager
 
+Cloudera offers a parcel installation methodology for adding services and features to a cluster. This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.2.1 on a Cloudera distribution of Apache Hadoop (CDH). 
+
+The Machine Learning Server parcel installation script can be generated on any [supported version of Linux](r-server-install-supported-platforms.md), but must execute on RHEL or CentOS 7.0 as the native operating system. If your operating system is different, use the regular [Hadoop installation instuctions](machine-learning-server-hadoop-install.md) instead.
+
+## Requirements
+
++ Machine Learning Server 9.2.1 for Hadoop, downloaded to a writable directory such as /tmp/, and unpacked.
+
+You must have a folder ...
+
+## Parcel generation
+
+## Parcel execution
+
+## Rollback (optional)
 
 ## Next steps
 
 ## See also
+
+
+[Install R Server 9.1 on the Cloudera distribution](r-server-install-cloudera.md)
