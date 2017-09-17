@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Hadoop commandline installation for Machine Learning Server | Microsoft Docs"
+title: "Hadoop command line installation for Machine Learning Server | Microsoft Docs"
 description: "How to install Machine Learning Server for Hadoop on the command line."
 keywords: ""
 author: "HeidiSteen"

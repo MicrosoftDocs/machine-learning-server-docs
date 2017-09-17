@@ -30,8 +30,15 @@ Before you start, review the following article for requirements and restrictions
 
 + [Install Machine Learning Server 9.2.1 on Linux](machine-learning-server-linux-install.md) for an internet-connected installation.
 
-> [!Note] 
-> In contrast with previous releases, there is no install.sh script in this release.
+## Package managers
+
+In contrast with previous releases, there is no install.sh script. Package managers are used for installation:
+
+    + [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) for CentOS/RHEL systems
+    + [apt](https://help.ubuntu.com/lts/serverguide/apt.html) for Ubuntu
+    + [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) for Ubuntu offline
+    + [zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) for SUSE systems
+    + [rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) for RHEL, CentOS, SUSE
 
 <a name="file-list"></a>
 
@@ -39,51 +46,67 @@ Before you start, review the following article for requirements and restrictions
 
 Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). The base file name is microsoft-mlserver-all-9.2.1.*ext* with different file extensions (.rpm, .deb) based on the package manager of the target platform.
 
-## Step 1: Download
++ `<operating system>\<version>\microsoft-mlserver-all-9.2.1.rpm`
 
-Download the necessary packages to a computer connected to the internet. If your system provides a graphical user interface, you can click the file to download it. Otherwise, use the follwoing commands:
+<a name="package-list"></a>
 
-+ Download to CentOS or RHEL:
-+ Download to Ubuntu:
-+ Download to SUSE:
+## Package install order
+
+The following packages comprise a full Machine Learning Server installation. Install them in the order listed:
+
+1.	microsoft-mlserver-packages-r-9.2.1
+2.	microsoft-mlserver-mml-r-9.2.1
+3.	microsoft-mlserver-python-9.2.1
+4.	microsoft-mlserver-mlm-r-9.2.1
+5.	microsoft-mlserver-packages-py-9.2.1
+6.	microsoft-mlserver-mml-py-9.2.1
+7.	microsoft-mlserver-mlm-py-9.2.1
+8.	microsoft-mlserver-hadoop-9.2.1
+9.	microsoft-mlserver-adminutil-9.2
+10.	microsoft-mlserver-computenode-9.2
+11.	microsoft-mlserver-config-rserve-9.2
+12.	microsoft-mlserver-dotnet-9.2
+13.	microsoft-mlserver-webnode-9.2
+
+Microsoft R Open is also required:
+
+1. microsoft-r-open-foreachiterators-3.4.1 
+2. microsoft-r-open-mkl-3.4.1
+3. microsoft-r-open-mro-3.4.1 
+
+Microsoft .NET Core 1.1 is used for operationalization:
+
+1. dotnet-host
+2. dotnet-hostfxr-1.1.0
+3. dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+
+Anaconda and Python:
+
+    ???
+
+Other package dependencies are installed if the package is not found on the system. This list will vary for each installation.
+
+## Download packages
+
+If your system provides a graphical user interface, you can click the file to download it. Otherwise, use `rpm` or `wget`. The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different.
+
++ Download to CentOS or RHEL or SUSE: `sudo rpm -Uvh http://packages.microsoft.com/config/rhel/6/microsoft-mlserver-packages-r-9.2.1.rpm`
+
++ Download to Ubuntu: `wget http://packages.microsoft.com/config/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
 
 For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-## Step 2: Verify
+Repeat for each package.
 
-You should find the files at the following locations.
+## Install packages
 
-TBD
-TBD
-TBD
++ Install on CentOS or RHEL or SUSE:  `rpm -qpR microsoft-mlserver-packages-r-9.2.1.rpm`
 
-## Step 3: Get dependencies
++ Install on Ubuntu: `dpkg -I microsoft-mlserver-packages-r-9.2.1.deb | grep Depends`
 
-Run the following commands to produce a list of dependent packages.
+Repeat for each package.
 
-rpm -qpR {.rpm-file}
-rpm -qR {package}
-
-**On Ubuntu:** `dpkg -I microsoft-mlserver-all-9.2.1.deb | grep Depends`
-
-**On CentOS, RHEL SUSE:**  `rpm -qpR microsoft-mlserver-all-9.2.1.rpm`
-
-Download thw additional packages reported by the above commands.
-
-## Step 4: Transfer
-
-Use a tool or device to transfer the files to the offline server. Place files in the following locations:
-
-TBD
-TBD
-
-## Step 5: Install
-
-After files are placed, run setup following the same procedure as articulated for internet-connected setup:
-
-+ [Install Machine Learning Server > How to install](machine-learning-server-linux-install.md#how-to-install)
-
-## Step 6: Connect and validate
+## Connect and validate
 
 1. List installed packages:
 
@@ -155,41 +178,6 @@ As another verification step, run the Revo64 program. By default, Revo64 is inst
 ~~~~
 
 To quit the program, type `q()` at the command line with no arguments.
-
-<a name="package-list"></a>
-
-## Packages installed 
-
-In addition to packages for Machine Learning Server, the following additional components are required for operationalization features and full language support.
-
-* Microsoft R Open 3.4.1  
-* Microsoft .NET Core 1.1 
-* Anaconda 4.2 with Python 3.5
-
-The following .NET and Microsoft packages are installed:
-
-    dotnet-host 
-    dotnet-hostfxr-1.1.0
-    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
-    
-    microsoft-mlserver-adminutil-9.2
-    microsoft-mlserver-all-9.2.1 
-    microsoft-mlserver-computenode-9.2
-    microsoft-mlserver-config-rserve-9.2 
-    microsoft-mlserver-hadoop-9.2.1
-    microsoft-mlserver-mlm-py-9.2.1 
-    microsoft-mlserver-mlm-r-9.2.1
-    microsoft-mlserver-mml-py-9.2.1
-    microsoft-mlserver-mml-r-9.2.1
-    microsoft-mlserver-packages-py-9.2.1 
-    microsoft-mlserver-packages-r-9.2.1
-    microsoft-mlserver-python-9.2.1 
-    microsoft-mlserver-webnode-9.2
-    microsoft-r-open-foreachiterators-3.4.1 
-    microsoft-r-open-mkl-3.4.1
-    microsoft-r-open-mro-3.4.1 
-
-Other package dependencies are installed if the package is not found on the system. This list will vary for each installation.
 
 ## Next steps
 

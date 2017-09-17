@@ -47,25 +47,25 @@ Uninstall reverses the installation steps, including uninstalling any package de
 
 ## How to uninstall 9.2.1
 
-1. On root@, uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO. Most packages are uninstalled with MRO, including microsoft-mlserver-packages-r. 
+1. On root@, uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO. Most R packages are uninstalled with MRO, including microsoft-mlserver-packages-r. 
 
   + On RHEL: `yum erase microsoft-r-open-mro-3.4.1`     
   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.4.1`  
   + On SUSE: `zypper remove microsoft-r-open-mro-3.4.1`    
 
-2. Remove the proprietary Python packages:
+2. Remove the Machine Learning Server Python packages:
 
   + On RHEL: `yum erase microsoft-mlserver-python-9.2.1`     
   + On Ubuntu: `apt-get purge microsoft-mlserver-python-9.2.1`  
   + On SUSE: `zypper remove microsoft-mlserver-python-9.2.1`
 
-3. Remove the hadoop package:
+3. Remove the Hadoop package:
 
   + On RHEL: `yum erase microsoft-mlserver-hadoop-9.2.1`     
   + On Ubuntu: `apt-get purge microsoft-mlserver-hadoop-9.2.1`  
   + On SUSE: `zypper remove microsoft-mlserver-hadoop-9.2.1`
 
-4. You could have additional packages if you installed features for operationalizing analytics. On a 9.2.1 installation, this is the azureml-model-management library, which you can uninstall using the same syntax in the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
+4. You have additional packages if you installed operationalization features. On a 9.2.1 installation, this is the azureml-model-management library, which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
 
   + microsoft-mlserver-adminutil-9.2
   + microsoft-mlserver-webnode-9.2
