@@ -42,7 +42,7 @@ This topic is a high-level description of package functionality. These classes a
 
 ## How to use this package
 
-The **azureml-model-management-sdk** package is installed as part of Machine Learning Server and SQL Server 2017 Machine Learning Server (Standalone) when you add Python to your installation. It is also [available locally](../../install/python-libraries-interpreter.md).  When you install these products, you get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. 
+The **azureml-model-management-sdk** package is installed as part of Machine Learning Server and SQL Server 2017 Machine Learning Server (Standalone) when you add Python to your installation. It is also [available locally on Windows](../../install/python-libraries-interpreter.md).  When you install these products, you get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. 
 
 You can use any Python IDE to write Python scripts that call the classes and functions in **azureml-model-management-sdk**, but the script must run on a computer having Machine Learning Server or SQL Server 2017 Machine Learning Server (Standalone) with Python.
 
@@ -98,7 +98,7 @@ Next, follow this quickstart for hands on experience:
 
 + [Install Machine Learning Server](../../what-is-machine-learning-server.md)
 
-+ [Install the Python interpreter and libraries](../../install/python-libraries-interpreter.md)
++ [Install the Python interpreter and libraries on Windows](../../install/python-libraries-interpreter.md)
 
 + [How to authenticate in Python with this package](../../operationalize/python/how-to-authenticate-in-python.md)
 

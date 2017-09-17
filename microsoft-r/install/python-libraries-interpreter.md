@@ -24,7 +24,7 @@ ms.technology:
 
 ---
 
-# How to install custom Python packages and interpreter locally
+# How to install custom Python packages and interpreter locally on Windows
 
 Machine Learning Server provides custom Python packages for training, transformations, text and image analysis, modeling, deploying, and more. The [packages installed](../python-reference/introducing-python-package-reference.md) include:
 + [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md)
@@ -32,15 +32,16 @@ Machine Learning Server provides custom Python packages for training, transforma
 + [azureml-model-management-sdk](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 + [pre-trained models](microsoftml-install-pretrained-models.md)
 
-You can also install a Python interpreter along with these custom packages locally on your machine, and:
+You can install a Python interpreter along with these custom packages locally on your Windows machine, and:
 
 + Benefit from the best-of-breed machine learning algorithms without any server connection. These algorithms have been battle-tested by Microsoft.
  
 + Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can benefit from the disk scalability, performance, and speed of a production instance of Machine Learning Server on any supported platforms. 
  
-This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client computer.
+This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client Windows computer.
 
-## Install on Windows
+
+1. Log into your local Windows machine.
 
 1. Download the installation shell script from http://aka.ms/mls-py. This script installs Anaconda 4.2.12, which includes Python 3.5.2, along with all packages listed previously.
 
@@ -56,7 +57,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    ```
    .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
    ```
-
+<!--
 ## Install on Linux
 
 1. Log in to your local machine. 
@@ -79,6 +80,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    pip install <<pretrained model-URL>>
    pip install azureml-model-management
    ```
+-->
 
 ## Example to test the install
 

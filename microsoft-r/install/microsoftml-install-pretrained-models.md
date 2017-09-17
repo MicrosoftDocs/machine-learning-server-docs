@@ -67,7 +67,7 @@ Install the models by running the setup program or installation script for the t
 + [Install Machine Learning Server](r-server-install.md)
 + [Install R Client on Windows](../r-client/install-on-windows.md)
 + [Install R Client on Linux](../r-client/install-on-linux.md)
-+ [Install Python Client Libraries](python-libraries-interpreter.md)
++ [Install Python client libraries](python-libraries-interpreter.md)
 
 Review the associated function reference help:
 

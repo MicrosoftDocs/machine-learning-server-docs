@@ -39,4 +39,4 @@ Machine Learning Server is available on a number of [platforms](r-server-install
 ## Local Tools
 
 + [Microsoft R Client](../r-client/what-is-microsoft-r-client.md)    
-+ [Python interpreter & libraries](python-libraries-interpreter.md)    
++ [Python interpreter & libraries on Windows](python-libraries-interpreter.md)    

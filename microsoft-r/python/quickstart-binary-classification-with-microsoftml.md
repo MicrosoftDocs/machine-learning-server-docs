@@ -43,11 +43,7 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 ## Prerequisites
 
-Before you begin this QuickStart, have the following ready:
-
-+ An instance of [Anaconda and the microsoftml package installed](../install/python-libraries-interpreter.md) on your local machine.  This package requires a connection to Machine Learning Server.   
-
-+ An instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option.
+Before you begin this QuickStart, have an instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option.
 
 ## Example code
 
