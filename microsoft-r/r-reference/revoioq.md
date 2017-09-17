@@ -32,8 +32,8 @@ ms.custom: ""
 | Package details | |
 |--------|-|
 | Version: |  8.0.7 |
-| Supported on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |   
-| Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
+| Runs on: | [Machine Learning Server 9.2.1](../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |   
+| Built on: | R 3.3.x (included when you [install a product](ntroducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
  
 ## How to use RevoIOQ
 

@@ -27,11 +27,13 @@ ms.custom: ""
 
 # Python Function Library Reference
 
-This section contains the Python reference documentation for two proprietary packages from Microsoft used for data science at scale and machine learning, respectively.  
+This section contains the Python reference documentation for two proprietary packages from Microsoft used for data science at scale and machine learning.  
+
+You can use these libraries and functions in combination with other open source or third-party packages, but to use the proprietary packages, your Python code must run against a service or on a computer that provides the interpreters.
 
 | Library details | |
 |--------|-|
-| [Supported platforms](../install/r-server-install-supported-platforms.md) | Machine Learning Server for Hadoop, SQL Server 2017 Machine Learning (Windows only). Additional computing platforms are planned for future releases.|
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md), [SQL Server 2017 Machine Learning (Windows only)]((https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)). Additional computing platforms are planned for future releases.|
 | Built on: | [Anaconda 4.2.0](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python modules
