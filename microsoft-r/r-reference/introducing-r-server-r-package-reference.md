@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "R function library reference (Microsoft R) | Microsoft Docs"
-description: "Function reference for R packages in Microsoft R, including MicrosoftML, mrsdeploy, RevoScaleR, RevoPemaR, and others."
+title: "R function library reference (Machine Learning Server) | Microsoft Docs"
+description: "Function reference for R packages in Machine Learning Server, including MicrosoftML, mrsdeploy, RevoScaleR, RevoPemaR, and others."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -110,7 +110,7 @@ First, read the introduction to each package to learn about common use case scen
 + [RevoUtils](revoutils/revoutils.md)   
 + [sqlrutils](sqlrutils/sqlrutils.md)   
 
-Next, add these the packages by installing [R Client](../r-client/what-is-microsoft-r-client.md) or [Machine Learning Server](../what-is-microsoft-machine-learning-server.md). R Client is free. Machine Learning Server developer edition is also free.
+Next, add these the packages by installing [R Client](../r-client/what-is-microsoft-r-client.md) or [Machine Learning Server](../what-is-machine-learning-server.md). R Client is free. Machine Learning Server developer edition is also free.
 
 Lastly, follow these tutorials for hands on experience:
 

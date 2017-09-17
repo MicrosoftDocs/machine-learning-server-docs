@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Python function library reference (SQL Server Machine Learning) | Microsoft Docs"
-description: "Function reference for Python packages: microsoftml, revoscalepy"
+title: "Python function library reference (Machine Learning Server) | Microsoft Docs"
+description: "Function reference for Python packages: microsoftml, revoscalepy, azureml-model-mananagement-sdk in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 manager: "jhubbard"

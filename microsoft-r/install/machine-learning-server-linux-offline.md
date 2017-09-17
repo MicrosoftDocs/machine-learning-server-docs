@@ -84,11 +84,7 @@ Microsoft .NET Core 1.1 is used for operationalization:
 2. dotnet-hostfxr-1.1.0
 3. dotnet-sharedframework-microsoft.netcore.app-1.1.2 
 
-Anaconda and Python:
-
-    ???
-
-Other package dependencies are installed if the package is not found on the system. This list will vary for each installation.
+Additional open source packages must be installed if a package is required but not found on the system. This list varies for each installation.
 
 ## Download packages
 

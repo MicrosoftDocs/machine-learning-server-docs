@@ -238,7 +238,7 @@ The following .NET and Microsoft packages are installed:
     microsoft-r-open-mkl-3.4.1
     microsoft-r-open-mro-3.4.1 
 
-Other package dependencies are installed if the package is not found on the system. This list will vary for each installation.
+Additional open source packages are installed if a package is required but not found on the system. This list varies for each installation.
 
 ## Enable operationalization
 
