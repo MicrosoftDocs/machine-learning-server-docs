@@ -57,30 +57,6 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    ```
    .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
    ```
-<!--
-## Install on Linux
-
-1. Log in to your local machine. 
-
-1. Download and install Anaconda 4.2.12, which includes Python 3.5.2, from https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh. 
-
-1. Upgrade pip if necessary before installing the packages themselves.
-
-   In a terminal window, run the following command:
-   ```
-   pip install -U pip
-   ```
-
-1. Install the desired custom packages for Machine Learning Server.
-
-   In the terminal window, run the following commands:
-   ```
-   pip install <<revoscalepy-URL>>
-   pip install <<mml-URL>>
-   pip install <<pretrained model-URL>>
-   pip install azureml-model-management
-   ```
--->
 
 ## Example to test the install
 
