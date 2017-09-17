@@ -46,7 +46,7 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 ## Package managers
 
-Package managers are used for installation. Unlike previous releases, there is no install.sh script. 
+Installation is through package managers. Unlike previous releases, there is no install.sh script. 
 
 | Package manager | Platform |
 |-----------------|----------|
@@ -59,7 +59,7 @@ Package managers are used for installation. Unlike previous releases, there is n
 
 ## Running setup on existing installations
 
-The installation path for Machine Learning Server is new: /opt/microsoft/mlserver/${VERSION}. However, if R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path (/usr/lib64/microsoft-r/#{VERSION}) and replaces it with the new version. 
+The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.2.1`. However, if R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
@@ -67,32 +67,25 @@ There is no support for side-by-side installations of older and newer versions, 
 
 After installation completes, software can be found at the following paths:
 
-+ Install root: /opt/microsoft/mlserver/9.2.1
-+ Microsoft R Open root: /opt/microsoft/ropen/3.4.1
-+ Executables like Revo64 and mlserver-python are at /usr/bin
++ Install root: `/opt/microsoft/mlserver/9.2.1`
++ Microsoft R Open root: `/opt/microsoft/ropen/3.4.1`
++ Executables like Revo64 and mlserver-python are at `/usr/bin`
 
 <a name="how-to-install"></a>
 
 ## How to install
 
-The package manager downloads packages from the  [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and install the software.
+The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software.
 
-As a first step, set the repo. Next, use the install syntax for your package manager to specify "microsoft-mlserver-all-9.2.1.*ext*", with different file extensions (.rpm, .deb) based on the package manager of the target platform. This file gives the package manager information about additional packages used in a Machine Learning Server for Linux installation.
+As a first step, set the repo. For a list of example syntax, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software)
 
-> [!Tip]
-> You can get Linux virtual machines in Azure if you want to use computing resources in the cloud: [Ubuntu virtual machine on Azure](https://docs.microsoft.com/sql/linux/quickstart-install-connect-ubuntu)
+Next, use the install syntax for your package manager to specify "microsoft-mlserver-all-9.2.1.*ext*", with different file extensions (.rpm, .deb) based on the package manager of the target platform. This file gives the package manager information about additional packages used in a Machine Learning Server for Linux installation.
 
 ### Ubuntu 14.04 - 16.04
 
 1. Enter `sudo su` to install as root.
 
-2. Set the location of the package repo. This example specifies 16.04. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software). Run each command separately. 
-
-    ```
-     wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb
-
-     dpkg -i microsoft-mlserver-all-9.2.1.deb
-    ```
+2. Set the location of the package repo. This example specifies 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb`
 
 3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
@@ -109,9 +102,7 @@ As a first step, set the repo. Next, use the install syntax for your package man
 
 1. Enter `sudo su` to install as root.
 
-2. Set the location of the package repo. This example specifies 7.0. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
-
-   ```rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm```
+2. Set the location of the package repo. This example specifies 7.0: `rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm`
 
 3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
@@ -123,9 +114,7 @@ As a first step, set the repo. Next, use the install syntax for your package man
 
 1. Enter `sudo su` to install as root.
 
-2. Set the location of the packages using this example syntax for SLES11. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
-
-   ```rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-all-9.2.1.rpm```
+2. Set the location of the packages using this example syntax for SLES11: `rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-all-9.2.1.rpm`
 
 3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
@@ -166,7 +155,7 @@ Output on Ubuntu is as follows:
 
 ### Start Revo64
 
-As another verification step, run the Revo64 program. By default, Revo64 is installed in the /usr/bin directory, available to any user who can log in to the machine:
+As another verification step, run the **Revo64** program. By default, **Revo64** is installed in the /usr/bin directory, available to any user who can log in to the machine:
 
 1. From /Home or any other working directory:
 
@@ -250,43 +239,6 @@ To quit the program, type `q()` at the command line with no arguments.
 
 To quit the program, type `quit()` at the command line with no arguments.
 
-<a name="package-list"></a>
-
-## Packages list 
-
-In addition to packages for Machine Learning Server, the following additional components are required for operationalization features and full language support.
-
-* Microsoft R Open 3.4.1  
-* Microsoft .NET Core 1.1 
-* Anaconda 4.2 with Python 3.5 as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
-
-The following Microsoft packages are installed:
-    
-    microsoft-mlserver-adminutil-9.2
-    microsoft-mlserver-all-9.2.1 
-    microsoft-mlserver-computenode-9.2
-    microsoft-mlserver-config-rserve-9.2 
-    microsoft-mlserver-hadoop-9.2.1
-    microsoft-mlserver-mlm-py-9.2.1 
-    microsoft-mlserver-mlm-r-9.2.1
-    microsoft-mlserver-mml-py-9.2.1
-    microsoft-mlserver-mml-r-9.2.1
-    microsoft-mlserver-packages-py-9.2.1 
-    microsoft-mlserver-packages-r-9.2.1
-    microsoft-mlserver-python-9.2.1 
-    microsoft-mlserver-webnode-9.2
-    microsoft-r-open-foreachiterators-3.4.1 
-    microsoft-r-open-mkl-3.4.1
-    microsoft-r-open-mro-3.4.1 
-
-On Ubuntu, .NET Core 1.1 is installed:
-
-    dotnet-host 
-    dotnet-hostfxr-1.1.0
-    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
-
-Additional open source packages are installed if a package is required but not found on the system. This list varies for each installation. Refer to [offline installation](machine-learning-server-linux-offline.md) instructions for an example list.
-
 ## Enable operationalization
 
 Machine Learning Server can be used as-is with an R IDE on the same box, but you can also [enable the server to host web services and to allow remote server connections](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
@@ -311,6 +263,47 @@ An installation of Machine Learning Server includes some or all of the following
 Consider adding a development tool on the server to build script or solutions using R Server features:
 
 + [Visual Studio 2017](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://docs.microsoft.com/visualstudio/rtvs/installation) and the [Python for Visual Studio (PTVS)](https://www.visualstudio.com/vs/python/).
+
+<a name="package-list"></a>
+
+## Packages list 
+
+The following packages comprise a full Machine Learning Server installation:
+
+```
+ microsoft-mlserver-packages-r-9.2.1
+ microsoft-mlserver-mml-r-9.2.1
+ microsoft-mlserver-python-9.2.1
+ microsoft-mlserver-mlm-r-9.2.1
+ microsoft-mlserver-packages-py-9.2.1
+ microsoft-mlserver-mml-py-9.2.1
+ microsoft-mlserver-mlm-py-9.2.1
+ microsoft-mlserver-hadoop-9.2.1
+ microsoft-mlserver-adminutil-9.2
+ microsoft-mlserver-computenode-9.2
+ microsoft-mlserver-config-rserve-9.2
+ microsoft-mlserver-dotnet-9.2
+ microsoft-mlserver-webnode-9.2
+```
+The microsoft-mlserver-python-9.2.1 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
+
+Microsoft R Open is also required:
+
+```
+ microsoft-r-open-foreachiterators-3.4.1 
+ microsoft-r-open-mkl-3.4.1
+ microsoft-r-open-mro-3.4.1 
+```
+
+Microsoft .NET Core 1.1, used for operationalization, must be added to Ubuntu:
+
+```
+ dotnet-host
+ dotnet-hostfxr-1.1.0
+ dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+```
+
+Additional open source packages are installed if a package is required but not found on the system. This list varies for each installation. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.
 
 ## Next steps
 

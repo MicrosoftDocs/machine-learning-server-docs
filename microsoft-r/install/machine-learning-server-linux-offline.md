@@ -78,6 +78,7 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-dotnet-9.2
  microsoft-mlserver-webnode-9.2
 ```
+The microsoft-mlserver-python-9.2.1 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
 
 Microsoft R Open is also required:
 
