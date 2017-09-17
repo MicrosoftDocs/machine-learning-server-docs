@@ -26,7 +26,8 @@ ms.technology: "r-server"
 
 This article explains how to uninstall Machine Learning Server 9.2.1 for Linux. 
 
-To upgrade from either a 9.0.1 or 9.1 installation, uninstall is unnecessary. Setup automatically replaces previous versions of R Server or Microsoft R Open 3.3.2 with newer versions. If you have 8.x, you must uninstall first.
+> [!Note]
+> To upgrade from either a 9.0.1 or 9.1 installation, you can skip uninstall. Setup automatically replaces previous versions of R Server or Microsoft R Open 3.3.2 with newer versions. However, if you have 8.x, you must uninstall first.
 
 ## Collect information
 
@@ -65,7 +66,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
   + On Ubuntu: `apt-get purge microsoft-mlserver-hadoop-9.2.1`  
   + On SUSE: `zypper remove microsoft-mlserver-hadoop-9.2.1`
 
-4. You have additional packages if you installed operationalization features. On a 9.2.1 installation, this is the azureml-model-management library, which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
+4. You have additional packages if you installed the operationalization feature. On a 9.2.1 installation, this is the azureml-model-management library, which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
 
   + microsoft-mlserver-adminutil-9.2
   + microsoft-mlserver-webnode-9.2
@@ -77,7 +78,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
   + On Ubuntu: `apt list --installed | grep microsoft`  
   + On SUSE: `zypper search \*microsoft-r\*`  
 
- On Ubuntu, you have `dotnet-sharedframework-microsoft.netcore.app-1.1.2`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If Machine learning Server is the only Microsoft software you have, you can remove it now.
+  On Ubuntu, you have `dotnet-sharedframework-microsoft.netcore.app-1.1.2`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If Machine learning Server is the only Microsoft software you have, you can remove it now.
 
 6. After packages are uninstalled, remove remaining files. On root@, determine whether additional files still exist:
 

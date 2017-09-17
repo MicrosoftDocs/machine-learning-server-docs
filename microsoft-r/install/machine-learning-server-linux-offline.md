@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Offline installation of Machine Learning Server for Linux 
 
-By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.2.1 for Linux. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
+By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.2.1 for Linux. If firewall constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
 Before you start, review the following article for requirements and restrictions:
 
@@ -126,13 +126,9 @@ Additional open source packages must be installed if a package is required but n
  pixman  
 ```
 
-> [!Tip]
-> To generate a list of dependencies, run `rpm -qpR microsoft-mlserver-packages-all-9.2.1.rpm` (RHEL, CentOS, SUSE) or `dpkg -I microsoft-mlserver-all-9.2.1.deb | grep Depends` (Ubuntu)
->
-
 ## Download packages
 
-If your system provides a graphical user interface, you can click the file to download it. Otherwise, use `rpm` or `wget`. We recommend donwloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
+If your system provides a graphical user interface, you can click a file to download it. Otherwise, use `rpm` or `wget`. We recommend donwloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
@@ -149,7 +145,7 @@ The package manager determines the installation order. Assuming all packages are
 + Install on Ubuntu: `dpkg -I *.deb`
 + Install on SUSE: `zypper install *.rpm`
 
-Repeat for each package.
+This step completes installation.
 
 ## Activate the server
 
@@ -172,7 +168,7 @@ Run the activation script from either the R or Python directory:
    + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.2.1`  
    + On SLES: `zypper info microsoft-mlserver-packages-r-9.2.1`
 
-Output on Ubuntu is as follows:
+  Output on Ubuntu is as follows:
 
    ```
     Package: microsoft-mlserver-packages-r-9.2.1
@@ -237,7 +233,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
    `[<path>] $ mlserver-python`
 
-2. At the Python command prompt, paste the following script:
+2. Run a revosclapy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
 
 ~~~~
         import os

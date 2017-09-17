@@ -34,11 +34,11 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 ## System and setup requirements
 
-+ Operating system must be a [supported version of Linux](r-server-install-supported-platforms.md) on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
++ Operating system must be a [supported version of 64-bit Linux](r-server-install-supported-platforms.md).
 
-+ Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended. Disk space must be a minimum of 500 MB.
++ Minimum RAM is 2 GB. Minimum disk space is 500 MB (8 GB or more is recommended).
 
-+ An internet connection. If you do not have an internet connection, for the instructions for an [offline installation](machine-learning-server-linux-offline.md).
++ An internet connection. If you do not have an internet connection, use the [offline installation instructions](machine-learning-server-linux-offline.md).
 
 + Root or super user permissions
 
@@ -46,7 +46,7 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 ## Package managers
 
-In contrast with previous releases, there is no install.sh script. Package managers are used for installation.
+Package managers are used for installation. Unlike previous releases, there is no install.sh script. 
 
 | Package manager | Platform |
 |-----------------|----------|
@@ -69,14 +69,15 @@ After installation completes, software can be found at the following paths:
 
 + Install root: /opt/microsoft/mlserver/9.2.1
 + Microsoft R Open root: /opt/microsoft/ropen/3.4.1
++ Executables like Revo64 and mlserver-python are at /usr/bin
 
 <a name="how-to-install"></a>
 
 ## How to install
 
-The package manager downloads packages from the  [packages.microsoft.com](https://packages.microsoft.com) repo.
+The package manager downloads packages from the  [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and install the software.
 
-Once you set the repo, use the install syntax for your package manager to specify "microsoft-mlserver-all-9.2.1.*ext*", with different file extensions (.rpm, .deb) based on the package manager of the target platform. This file gives the package manager the necessary information to get all additional packages used in a Machine Learning Server for Linux installation.
+As a first step, set the repo. Next, use the install syntax for your package manager to specify "microsoft-mlserver-all-9.2.1.*ext*", with different file extensions (.rpm, .deb) based on the package manager of the target platform. This file gives the package manager information about additional packages used in a Machine Learning Server for Linux installation.
 
 > [!Tip]
 > You can get Linux virtual machines in Azure if you want to use computing resources in the cloud: [Ubuntu virtual machine on Azure](https://docs.microsoft.com/sql/linux/quickstart-install-connect-ubuntu)
@@ -85,7 +86,7 @@ Once you set the repo, use the install syntax for your package manager to specif
 
 1. Enter `sudo su` to install as root.
 
-2. Set the location of the package repo. This example specifies 16.04. Run each command separately. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+2. Set the location of the package repo. This example specifies 16.04. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software). Run each command separately. 
 
     ```
      wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb
@@ -110,9 +111,9 @@ Once you set the repo, use the install syntax for your package manager to specif
 
 2. Set the location of the package repo. This example specifies 7.0. For more examples, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-   ```rpm -Uvh a.	https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm```
+   ```rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm```
 
-3. Verify the mlserver.list cpnfiguration file exists: `ls -la /etc/apt/sources.list.d/`
+3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
 4. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
 
@@ -126,7 +127,7 @@ Once you set the repo, use the install syntax for your package manager to specif
 
    ```rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-all-9.2.1.rpm```
 
-3. Verify the mlserver.list cpnfiguration file exists
+3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
 4. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
 
@@ -212,7 +213,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
    `[<path>] $ mlserver-python`
 
-2. At the Python command prompt, paste the following script:
+2. Run a revosclapy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
 
 ~~~~
         import os
@@ -251,7 +252,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 <a name="package-list"></a>
 
-## Packages installed 
+## Packages list 
 
 In addition to packages for Machine Learning Server, the following additional components are required for operationalization features and full language support.
 
