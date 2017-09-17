@@ -30,15 +30,19 @@ Before you start, review the following article for requirements and restrictions
 
 + [Install Machine Learning Server 9.2.1 on Linux](machine-learning-server-linux-install.md) for an internet-connected installation.
 
+<a name="package-manager"></a>
+
 ## Package managers
 
-In contrast with previous releases, there is no install.sh script. Package managers are used for installation:
+In contrast with previous releases, there is no install.sh script. Package managers are used for installation.
 
-+ [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) for CentOS/RHEL systems
-+ [apt](https://help.ubuntu.com/lts/serverguide/apt.html) for Ubuntu
-+ [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) for Ubuntu offline
-+ [zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) for SUSE systems
-+ [rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) for RHEL, CentOS, SUSE
+| Package manager | Platform |
+|-----------------|----------|
+|[yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) | RHEL, CentOS|
+|[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu onlne |
+| [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
+|[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
+|[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
 
 <a name="file-list"></a>
 

@@ -60,12 +60,14 @@ You can use these libraries and functions in combination with other open source 
 
 The packages documented in this section are found only on installations of the Microsoft products or Azure services that provide them. Setup programs or scripts install the propertietary R packages from Microsoft and any package dependencies. Unless noted otherwise, all of the packages listed in the preceding table are installed with the product or service.
 
-By default, packages are installed in the \Program Files\Microsoft\R Server\R_SERVER\library folder on Windows, and in the /usr/lib64/microsoft-r folder on the Linux native file system.
+By default, packages are installed in the \Program Files\Microsoft\ML Server\R_SERVER\library folder on Windows, and in the /opt/microsoft/mlserver/9.2.1 folder on the Linux native file system.
 
-Ships in: 
+Ships in:
++  [Machine Learning Server](../what-is-machine-learning-server.md) 
++  [SQL Server 2017 Machine Learning Services (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) 
++ [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 + [Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) 
-+ [Microsoft R Server (all platforms)](../what-is-microsoft-r-server.md)   
-+ [SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   
++ [Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   
 + [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started)  
 + [Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)  
 
@@ -94,7 +96,7 @@ The following packages exist for backward compatibility but are no longer under 
 * RevoRsrConnector
 * revolpe
 
-For a list of deprecated or discontinued functions within an existing package, see [Release notes for R Server](../resources-deprecated-features.md).
+For a list of deprecated or discontinued functions within an existing package, see [Deprecated, discontinued, or changed features](../resources-deprecated-features.md).
 
 ## Next steps
 
@@ -108,12 +110,12 @@ First, read the introduction to each package to learn about common use case scen
 + [RevoUtils](revoutils/revoutils.md)   
 + [sqlrutils](sqlrutils/sqlrutils.md)   
 
-Next, add these the packages by installing [R Client](../r-client/what-is-microsoft-r-client.md) or [R Server](../what-is-microsoft-r-server.md). R Client is free. R Server developer edition is also free.
+Next, add these the packages by installing [R Client](../r-client/what-is-microsoft-r-client.md) or [Machine Learning Server](../what-is-microsoft-machine-learning-server.md). R Client is free. Machine Learning Server developer edition is also free.
 
 Lastly, follow these tutorials for hands on experience:
 
 + [Explore R and RevoScaleR in 25 functions](../r/tutorial-r-to-revoscaler.md)  
-+ [Quickstart: Run R Code in Microsoft R](../r/quickstart-run-r-code.md)
++ [Quickstart: Run R Code in Machine Learning Server](../r/quickstart-run-r-code.md)
 
 ## See also
 

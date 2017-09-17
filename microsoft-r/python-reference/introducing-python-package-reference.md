@@ -33,7 +33,7 @@ You can use these libraries and functions in combination with other open source 
 
 | Library details | |
 |--------|-|
-| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md), [SQL Server 2017 Machine Learning (Windows only)]((https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)). Additional computing platforms are planned for future releases.|
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md)<br/>[SQL Server 2017 Machine Learning (Windows only)]((https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)). <br/>Additional compute contexts are planned for future releases.|
 | Built on: | [Anaconda 4.2.0](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python modules
@@ -58,9 +58,9 @@ You can get the packages when you run Machine Learning Server, or SQL Server 201
 For SQL Server, packages are installed by default in the \Program files\Microsoft SQL Server\*instance name*\PYTHON_SERVICES
 
 Ships in:
-+  [Machine Learning Server](../what-is-machine-learning-server.md) 
-+  [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) 
-+ [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server).
++ [Machine Learning Server](../what-is-machine-learning-server.md) 
++ [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) 
++ [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
 ## How to list modules and versions
 
@@ -87,17 +87,16 @@ First, read the introduction to each package to learn about common use case scen
 + [microsoftmlpackage for Python](microsoftml/microsoftml-package.md) 
 + [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
 
-Next, add these Python modules to your SQL Server 2017 instance: 
+Next, follow these tutorials for hands on experience:
 
-+ [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
-
-Lastly, follow these tutorials for hands on experience:
-
-+ [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
++ [Use revoscalpy to create a model (in SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
 + [Deploy a model as a web service in Python](../operationalize/python/quickstart-deploy-python-web-service.md)
 
 ## See also
 
+  [How-to guides in Machine Learning Server](../r/how-to-introduction.md)     
+  [Machine Learning Server](../what-is-machine-learning-server.md)   
   [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
-  [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+  [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)    
+  [Additional learning resources and sample datasets](../resources-more.md)  
