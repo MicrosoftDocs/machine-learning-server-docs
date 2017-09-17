@@ -42,11 +42,11 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 + A package manager:
 
-    + [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) for CentOS/RHEL systems
-    + [apt](https://help.ubuntu.com/lts/serverguide/apt.html) for Ubuntu
-    + [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) for Ubuntu offline
-    + [zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) for SUSE systems
-    + [rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) for RHEL, CentOS, SUSE
+  + [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) for CentOS/RHEL systems
+  + [apt](https://help.ubuntu.com/lts/serverguide/apt.html) for Ubuntu
+  + [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) for Ubuntu offline
+  + [zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) for SUSE systems
+  + [rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) for RHEL, CentOS, SUSE
 
 + Root or super user permissions
 

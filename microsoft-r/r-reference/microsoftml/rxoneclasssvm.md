@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "OneClass SVM" 
+title: "rxOneClassSvm function (MicrosoftML) | Microsoft Docs" 
 description: " Machine Learning One Class Support Vector Machines " 
-keywords: "MicrosoftML, rxOneClassSvm, anomaly, detection, models" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), rxOneClassSvm, anomaly, detection, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxOneClassSvm: OneClass SVM
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #rxOneClassSvm: OneClass SVM 
  ##Description
  
 Machine Learning One Class Support Vector Machines
@@ -56,23 +52,23 @@ Machine Learning One Class Support Vector Machines
 
    
   
- ### formula
+ ### `formula`
  The formula as described in rxFormula. Interaction terms and `F()` are not currently supported in the **MicrosoftML**. 
   
   
   
- ### data
+ ### `data`
  A data source object or a character string specifying a .xdf file or a data frame object. 
   
   
   
- ### cacheSize
+ ### `cacheSize`
  The maximal size in MB of the cache that stores the training data. Increase this for large training sets. The default value is 100 MB. 
   
   
   
- ### kernel
- A character string representing the kernel used for computing inner products. The following choices are available:   
+ ### `kernel`
+ A character string representing the kernel used for computing inner products. For more information, see [maKernel](kernel.md). The following choices are available:   
 *   `rbfKernel()`: Radial basis function kernel. It's parameter  represents`gamma` in the term `exp(-gamma|x-y|^2`. If not  specified, it defaults to `1` divided by the number of features used. For example, `rbfKernel(gamma = .1)`. This is the default value. 
 *   `linearKernel()`: Linear kernel.   
 *   `polynomialKernel()`: Polynomial kernel with parameter names `a`,  `bias`, and `deg` in the term `(a*<x,y> + bias)^deg`. The  `bias`, defaults to `0`. The degree, `deg`, defaults to  `3`. If `a` is not specified, it is set to `1` divided by the number of features. For example, `maKernelPoynomial(bias = 0, deg = ``  3)`.   
@@ -81,22 +77,22 @@ Machine Learning One Class Support Vector Machines
   
   
   
- ### epsilon
+ ### `epsilon`
  The threshold for optimizer convergence. If the  improvement between iterations is less than the threshold, the algorithm  stops and returns the current model. The value must be greater than or equal to `.Machine$double.eps`. The default value is 0.001. 
   
   
   
- ### nu
+ ### `nu`
  The trade-off between the fraction of outliers and the number of support vectors (represented by the Greek letter nu). Must be between 0 and 1, typically between 0.1 and 0.5. The default value is 0.1. 
   
   
   
- ### shrink
+ ### `shrink`
  Uses the shrinking heuristic if `TRUE`. In this case, some samples will be "shrunk" during the training procedure, which may speed up training. The default value is `TRUE`. 
   
   
   
- ### normalize
+ ### `normalize`
  Specifies the type of automatic normalization used:  
 *   `"auto"`: if normalization is needed, it is performed  automatically. This is the default choice.    
 *   `"no"`: no normalization is performed.  
@@ -106,57 +102,57 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
- ### mlTransforms
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ ### `mlTransforms`
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](categorical.md), and [categoricalHash](categoricalHash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
- ### mlTransformVars
+ ### `mlTransformVars`
  Specifies a character vector of variable names to be used in `mlTransforms` or `NULL` if none are to be used. The default value is `NULL`. 
   
   
   
- ### rowSelection
+ ### `rowSelection`
  Specifies the rows (observations) from the data set that are to be used by the model with the name of a logical variable from the  data set (in quotes) or with a logical expression using variables in the    data set. For example, `rowSelection = "old"` will only use observations in which the value of the variable `old` is `TRUE`. `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function call using the expression function. 
   
   
   
- ### transforms
+ ### `transforms`
  An expression of the form `list(name = expression, ``...)` that represents the first round of variable transformations. As with  all expressions, `transforms` (or `rowSelection`) can be defined outside of the function call using the expression function. 
   
   
   
- ### transformObjects
+ ### `transformObjects`
  A named list that contains objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
   
- ### transformFunc
+ ### `transformFunc`
  The variable transformation function. See rxTransform for details. 
   
   
   
- ### transformVars
+ ### `transformVars`
  A character vector of input data set variables needed for the transformation function. See rxTransform for details. 
   
   
   
- ### transformPackages
+ ### `transformPackages`
  A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
   
   
   
- ### transformEnvir
+ ### `transformEnvir`
  A user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
   
- ### blocksPerRead
+ ### `blocksPerRead`
  Specifies the number of blocks to read for each chunk  of data read from the data source. 
   
   
   
- ### reportProgress
+ ### `reportProgress`
  An integer value that specifies the level of reporting on the row processing progress:   
 *   `0`: no progress is reported.      
 *   `1`: the number of processed rows is printed and updated.    
@@ -166,22 +162,22 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
- ### verbose
+ ### `verbose`
  An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information. 
   
   
   
- ### computeContext
+ ### `computeContext`
  Sets the context in which computations are executed, specified with a valid RxComputeContext. Currently local and RxInSqlServer compute contexts are supported. 
   
   
   
- ### ensemble
+ ### `ensemble`
  Control parameters for ensembling. 
   
   
   
- ###  ...
+ ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  
@@ -217,9 +213,9 @@ This algorithm is single-threaded and will always attempt to load the entire dat
 memory.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
@@ -243,10 +239,12 @@ memory.
  
  ##See Also
  
-[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md), [rxFastLinear](rxfastlinear.md),
-[rxLogisticRegression](logisticregression.md), [rxNeuralNet](neuralnet.md),
-[featurizeText](featurizetext.md), [categorical](categorical.md),
-[categoricalHash](categoricalhash.md), [rxPredict.mlModel](rxpredict.md).
+[rbfKernel](kernel.md), [linearKernel](kernel.md),
+[polynomialKernel](kernel.md), [sigmoidKernel](kernel.md)
+[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md), [rxFastLinear](rxFastLinear.md),
+[rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
+[featurizeText](featurizeText.md), [categorical](categorical.md),
+[categoricalHash](categoricalHash.md), [rxPredict.mlModel](rxPredict.md).
    
  ##Examples
 
@@ -282,6 +280,7 @@ memory.
   rxCube(Score ~ F(isIris), data = scoreDF)
  
 ```
+ 
  
  
  

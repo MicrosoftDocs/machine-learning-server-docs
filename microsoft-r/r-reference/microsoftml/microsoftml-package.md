@@ -31,13 +31,15 @@ The **MicrosoftML** library provides state-of-the-art fast, scalable machine lea
 
 | Package details | |
 |--------|-|
-| Version: |  1.3.4 |
+| Version: |  1.5.0 |
 | Supported on: | [Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use MicrosoftML for R
 
 The **MicrosoftML** module is installed as part of Microsoft Machine Learning Server or SQL Server Machine Learning Server when you add R to your installation. It is also installed with the pre-trained machine learning models. You can use any R IDE to write R script calling functions in **MicrosoftML**, but the script must run on a computer having our interpreters and libraries.
+
+Use this library with [RevoScaleR](../revoscaler/revoscaler.md) data sources.
 
 ## Functions by category
 
@@ -70,6 +72,7 @@ This section lists the functions by category to give you an idea of how each one
 |[featurizeText](featurizetext.md) | Produces a bag of counts of sequences of consecutive words, called n-grams, from a given corpus of text. It offers language detection, tokenization, stopwords removing, text normalization and feature generation.  |
 |[getSentiment](getsentiment.md) | Scores natural language text and creates a column that contains probabilities that the sentiments in the text are positive.|
 |[ngram](ngram.md) | allows defining arguments for count-based and hash-based feature extraction.|
+|[selectColumns](selectcolumns.md) | Selects a set of columns to retrain, dropping all others. |
 |[selectFeatures](selectfeatures.md) | Selects features from the specified variables using a specified mode.|
 |[loadImage](loadimage.md) | Loads image data.|
 |[resizeImage](resizeimage.md) | Resizes an image to a specified dimension using a specified resizing method.|
@@ -83,6 +86,7 @@ This section lists the functions by category to give you an idea of how each one
 |---------------|-------------|
 |[rxPredict.mlModel](rxpredict.md) | Runs the scoring library either from SQL Server, using the stored procedure, or from R code enabling real-time scoring to provide much faster prediction performance.|
 |[rxFeaturize](rxfeaturize.md) | Transforms data from an input data set to an output data set.|
+|[mlDataStep](mldatastep.md) | Provides a summary of a Microsoft R Machine Learning model.|
 |[mlModel](mlmodel.md) | Provides a summary of a Microsoft R Machine Learning model.|
 
 
@@ -121,12 +125,17 @@ This section lists the functions by category to give you an idea of how each one
 |[optimizer](optimizer.md) | Specifies optimization algorithms for the [rxNeuralNet](rxneuralnet.md) machine learning algorithm.|
 
 
+## 8-Package state functions
+| Function name | Description |
+|---------------|-------------|
+|[rxHashEnv](rxHashEnv.md) | An environment object used to store package-wide state. |
+
 ## Next steps
 
-Add R packages to your computer by running setup for R Server or R Client: 
+Add R packages to your computer by running setup for Machine Learning Server or R Client: 
 
 + [R Client](../../r-client/what-is-microsoft-r-client.md) 
-+ [R Server](../../what-is-microsoft-r-server.md)
++ [Machine Learning Server](../../what-is-machine-learning-server.md)
 
 Next, refer to these introductory articles and samples to get started:
 

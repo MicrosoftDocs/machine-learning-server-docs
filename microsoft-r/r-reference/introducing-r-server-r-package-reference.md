@@ -40,15 +40,15 @@ You can use these libraries and functions in combination with other open source 
 
 |Package | Version | Description |
 |--------|---------|-------------|
-|[MicrosoftML](microsoftml/microsoftml-package.md) | 1.3.0  | A collection of functions in Microsoft R used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.|
+|[MicrosoftML](microsoftml/microsoftml-package.md) | 1.5.0  | A collection of functions in Microsoft R used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.|
 |[mrsdeploy](mrsdeploy/mrsdeploy-package.md) | 1.1.0 | Deployment functions for interactive remote execution at the command line, plus web service functions for bundling R code blocks as discrete web services that can be deployed and managed on an R Server instance. Formally known as DeployR. |
 |[olapR](olapr/olapr.md) | 1.0.0 | A collection of functions for constructing MDX queries against an OLAP cube. Runs only on the Windows platform.|
-|RevoIOQ | 8.0.6 | Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**. Reference documentation is online only (<sup> 1 </sup>). |
+|[RevoIOQ](revoioq.md) | 8.0.7 | Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**.|
 |RevoMods | 11.0.0 | Microsoft modifications and extensions to standard R functions. Reference documentation is online only (<sup> 1 </sup>).  |
 |[RevoPemaR](revopemar/pemar.md) | 10.0.0 | Developer functions for coding custom parallel external memory algorithms. |
-|[RevoScaleR](revoscaler/revoscaler.md) | 9.1.0 | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](../what-is-microsoft-r-server.md) functionality. |
+|[RevoScaleR](revoscaler/revoscaler.md) | 9.2.1 | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](../what-is-microsoft-r-server.md) functionality. |
 |RevoTreeView | 10.0.0 | Decision tree functions, including the **rxDTree** function. Reference documentation is online only (<sup> 1 </sup>). |
-|[RevoUtils](revoutils/revoutils.md) | 10.0.3 | Utility functions useful when programming and developing R packages.|
+|[RevoUtils](revoutils/revoutils.md) | 10.0.4 | Utility functions useful when programming and developing R packages.|
 |RevoUtilsMath | 10.0.0 | Microsoft's distribution of the Intel Math Kernal Library (MKL). Reference documentation is online only (<sup> 1 </sup>). |
 |[sqlrutils](sqlrutils/sqlrutils.md) | 1.0.0 | A collection of functions for executing stored procedures against SQL Server.|
 

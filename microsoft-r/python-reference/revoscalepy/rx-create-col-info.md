@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# `rx_create_col_info`
+# rx_create_col_info
 
 
  

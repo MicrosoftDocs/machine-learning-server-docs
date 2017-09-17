@@ -782,6 +782,8 @@
         href: r-reference/microsoftml/rxfasttrees.md
       - name: rxFeaturize
         href: r-reference/microsoftml/rxfeaturize.md
+      - name: rxHashEnv
+        href: r-reference/microsoftml/rxhashenv.md
       - name: rxLogisticRegression
         href: r-reference/microsoftml/logisticregression.md
       - name: rxNeuralNet
@@ -790,6 +792,8 @@
         href: r-reference/microsoftml/rxoneclasssvm.md
       - name: rxPredict
         href: r-reference/microsoftml/rxpredict.md
+      - name: selectColumns
+        href: r-reference/microsoftml/selectColumns.md
       - name: selectFeatures
         href: r-reference/microsoftml/selectfeatures.md
     - name: mrsdeploy

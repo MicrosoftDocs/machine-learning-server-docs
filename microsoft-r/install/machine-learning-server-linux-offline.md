@@ -34,11 +34,11 @@ Before you start, review the following article for requirements and restrictions
 
 In contrast with previous releases, there is no install.sh script. Package managers are used for installation:
 
-    + [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) for CentOS/RHEL systems
-    + [apt](https://help.ubuntu.com/lts/serverguide/apt.html) for Ubuntu
-    + [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) for Ubuntu offline
-    + [zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) for SUSE systems
-    + [rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) for RHEL, CentOS, SUSE
++ [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) for CentOS/RHEL systems
++ [apt](https://help.ubuntu.com/lts/serverguide/apt.html) for Ubuntu
++ [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) for Ubuntu offline
++ [zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) for SUSE systems
++ [rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) for RHEL, CentOS, SUSE
 
 <a name="file-list"></a>
 
@@ -88,13 +88,11 @@ Other package dependencies are installed if the package is not found on the syst
 
 ## Download packages
 
-If your system provides a graphical user interface, you can click the file to download it. Otherwise, use `rpm` or `wget`. The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different.
+If your system provides a graphical user interface, you can click the file to download it. Otherwise, use `rpm` or `wget`. The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 + Download to CentOS or RHEL or SUSE: `sudo rpm -Uvh http://packages.microsoft.com/config/rhel/6/microsoft-mlserver-packages-r-9.2.1.rpm`
 
 + Download to Ubuntu: `wget http://packages.microsoft.com/config/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
-
-For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 Repeat for each package.
 

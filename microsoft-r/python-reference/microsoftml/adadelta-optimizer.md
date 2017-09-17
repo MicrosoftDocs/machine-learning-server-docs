@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.adadelta_optimizer*: Adaptive learing rate method
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage

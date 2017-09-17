@@ -30,7 +30,7 @@ ms.technology: "r-server"
  
  #as.xtabs: Conversion of a RevoScaleR Cross Tabulation Object to an xtabs Object
 
- Applies to version 9.1.0 of package RevoScaleR.
+ 
  
  ##Description
  

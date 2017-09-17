@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.n_gram_hash*: Converts text into features using hashed n-grams
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage

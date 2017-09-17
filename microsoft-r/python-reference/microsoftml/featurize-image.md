@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.featurize_image*: Converts an image into features
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage

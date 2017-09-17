@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_predict*: Scores using a Microsoft machine learning model
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage

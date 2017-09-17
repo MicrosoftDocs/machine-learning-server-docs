@@ -1,43 +1,45 @@
 --- 
  
 # required metadata 
-title: "Classification and Regression Loss functions" 
+title: "loss functions function (MicrosoftML) | Microsoft Docs" 
 description: " The loss functions for classification and regression. " 
-keywords: "MicrosoftML, loss functions, expLoss, hingeLoss, logLoss, smoothHingeLoss, poissonLoss, squaredLoss, loss" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), loss functions, expLoss, hingeLoss, logLoss, poissonLoss, smoothHingeLoss, squaredLoss, loss" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
-#loss functions: Classification and Regression Loss functions
-
-Applies to version 1.3.0 of package MicrosoftML.
  
-##Description
+ 
+ 
+ 
+ 
+ 
+ #loss functions: Classification and Regression Loss functions 
+ ##Description
  
 The loss functions for classification and regression.
  
  
-##Usage
+ ##Usage
 
 ```   
   expLoss(beta = 1, ...)
@@ -58,23 +60,23 @@ The loss functions for classification and regression.
 
    
   
- ### beta
+ ### `beta`
  Specifies the numeric value of beta (dilation). The default value  is 1. 
   
   
   
- ###  ...
- hidden argument. 
-  
-  
-  
- ### margin
+ ### `margin`
  Specifies the numeric margin value. The default value is 1. 
   
   
   
- ### smoothingConst
+ ### `smoothingConst`
  Specifies the numeric value of the smoothing constant. The default value is 1. 
+  
+  
+  
+ ### ` ...`
+ hidden argument. 
   
  
  
@@ -116,33 +118,36 @@ The regression loss functions supported are:
  
 A character string defining the loss function.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
  ##See Also
  
-[rxFastLinear](rxfastlinear.md), [rxNeuralNet](rxneuralnet.md)
+[rxFastLinear](rxFastLinear.md), [rxNeuralNet](rxNeuralNet.md)
    
  ##Examples
 
-	train <- function(lossFunction) {
+ ```
+   
+  train <- function(lossFunction) {
   
       result <- rxFastLinear(isCase ~ age + parity + education + spontaneous + induced,
                     transforms = list(isCase = case == 1), lossFunction = lossFunction,
                     data = infert,
                     type = "binary")
       coef(result)[["age"]]
-	}
+  }
   
-	age <- list()
-	age$LogLoss <- train(logLoss())
-	age$LogLossHinge <- train(hingeLoss())
-	age$LogLossSmoothHinge <- train(smoothHingeLoss())
-	age
+  age <- list()
+  age$LogLoss <- train(logLoss())
+  age$LogLossHinge <- train(hingeLoss())
+  age$LogLossSmoothHinge <- train(smoothHingeLoss())
+  age
  
-
+```
+ 
  
  

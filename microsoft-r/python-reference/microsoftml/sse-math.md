@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.sse_math*: Acceleration with SSE instructions
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
