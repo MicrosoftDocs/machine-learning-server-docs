@@ -40,6 +40,7 @@ You can install a Python interpreter along with these custom packages locally on
  
 This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client Windows computer.
 
+## Install on Windows
 
 1. Log into your local Windows machine.
 
