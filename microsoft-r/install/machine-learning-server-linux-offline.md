@@ -87,7 +87,7 @@ Microsoft R Open is also required:
  microsoft-r-open-mro-3.4.1 
 ```
 
-Microsoft .NET Core 1.1 is used for operationalization:
+Microsoft .NET Core 1.1, used for operationalization, must be added to Ubuntu:
 
 ```
  dotnet-host
@@ -230,6 +230,49 @@ As another verification step, run the Revo64 program. By default, Revo64 is inst
 ~~~~
 
 To quit the program, type `q()` at the command line with no arguments.
+
+### Start Python
+
+1. From Home or any other user directory:
+
+   `[<path>] $ mlserver-python`
+
+2. At the Python command prompt, paste the following script:
+
+~~~~
+        import os
+        from revoscalepy import rx_summary, RxOptions, RxXdfData
+        sample_data_path = RxOptions.get_option("sampleDataDir")
+        ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+        summary = rx_summary("ArrDelay+DayOfWeek", ds)
+        print(summary)
+~~~~
+
+  Output from the sample dataset should look similar to the following:
+
+~~~~ 
+        Summary Statistics Results for: ArrDelay+DayOfWeek
+        File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+        Number of valid observations: 600000.0
+        
+               Name       Mean     StdDev   Min     Max  ValidObs  MissingObs
+        0  ArrDelay  11.317935  40.688536 -86.0  1490.0  582628.0     17372.0
+        
+        Category Counts for DayOfWeek
+        Number of categories: 7
+        
+                    Counts
+        DayOfWeek         
+        1          97975.0
+        2          77725.0
+        3          78875.0
+        4          81304.0
+        5          82987.0
+        6          86159.0
+        7          94975.0
+~~~~
+
+To quit the program, type `quit()` at the command line with no arguments.
 
 ## Next steps
 

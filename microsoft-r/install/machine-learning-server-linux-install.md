@@ -68,7 +68,6 @@ There is no support for side-by-side installations of older and newer versions, 
 After installation completes, software can be found at the following paths:
 
 + Install root: /opt/microsoft/mlserver/9.2.1
-
 + Microsoft R Open root: /opt/microsoft/ropen/3.4.1
 
 <a name="how-to-install"></a>
@@ -207,6 +206,49 @@ As another verification step, run the Revo64 program. By default, Revo64 is inst
 
 To quit the program, type `q()` at the command line with no arguments.
 
+### Start Python
+
+1. From Home or any other user directory:
+
+   `[<path>] $ mlserver-python`
+
+2. At the Python command prompt, paste the following script:
+
+~~~~
+        import os
+        from revoscalepy import rx_summary, RxOptions, RxXdfData
+        sample_data_path = RxOptions.get_option("sampleDataDir")
+        ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+        summary = rx_summary("ArrDelay+DayOfWeek", ds)
+        print(summary)
+~~~~
+
+  Output from the sample dataset should look similar to the following:
+
+~~~~ 
+        Summary Statistics Results for: ArrDelay+DayOfWeek
+        File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+        Number of valid observations: 600000.0
+        
+               Name       Mean     StdDev   Min     Max  ValidObs  MissingObs
+        0  ArrDelay  11.317935  40.688536 -86.0  1490.0  582628.0     17372.0
+        
+        Category Counts for DayOfWeek
+        Number of categories: 7
+        
+                    Counts
+        DayOfWeek         
+        1          97975.0
+        2          77725.0
+        3          78875.0
+        4          81304.0
+        5          82987.0
+        6          86159.0
+        7          94975.0
+~~~~
+
+To quit the program, type `quit()` at the command line with no arguments.
+
 <a name="package-list"></a>
 
 ## Packages installed 
@@ -215,13 +257,9 @@ In addition to packages for Machine Learning Server, the following additional co
 
 * Microsoft R Open 3.4.1  
 * Microsoft .NET Core 1.1 
-* Anaconda 4.2 with Python 3.5
+* Anaconda 4.2 with Python 3.5 as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
 
-The following .NET and Microsoft packages are installed:
-
-    dotnet-host 
-    dotnet-hostfxr-1.1.0
-    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+The following Microsoft packages are installed:
     
     microsoft-mlserver-adminutil-9.2
     microsoft-mlserver-all-9.2.1 
@@ -240,7 +278,13 @@ The following .NET and Microsoft packages are installed:
     microsoft-r-open-mkl-3.4.1
     microsoft-r-open-mro-3.4.1 
 
-Additional open source packages are installed if a package is required but not found on the system. This list varies for each installation. 
+On Ubuntu, .NET Core 1.1 is installed:
+
+    dotnet-host 
+    dotnet-hostfxr-1.1.0
+    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+
+Additional open source packages are installed if a package is required but not found on the system. This list varies for each installation. Refer to [offline installation](machine-learning-server-linux-offline.md) instructions for an example list.
 
 ## Enable operationalization
 
