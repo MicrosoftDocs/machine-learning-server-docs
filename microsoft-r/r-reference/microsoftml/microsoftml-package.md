@@ -32,7 +32,7 @@ The **MicrosoftML** library provides state-of-the-art fast, scalable machine lea
 | Package details | |
 |--------|-|
 | Version: |  1.5.0 |
-| Supported on: | [Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server (all platforms)](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Supported on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use MicrosoftML for R
@@ -86,7 +86,6 @@ This section lists the functions by category to give you an idea of how each one
 |---------------|-------------|
 |[rxPredict.mlModel](rxpredict.md) | Runs the scoring library either from SQL Server, using the stored procedure, or from R code enabling real-time scoring to provide much faster prediction performance.|
 |[rxFeaturize](rxfeaturize.md) | Transforms data from an input data set to an output data set.|
-|[mlDataStep](mldatastep.md) | Provides a summary of a Microsoft R Machine Learning model.|
 |[mlModel](mlmodel.md) | Provides a summary of a Microsoft R Machine Learning model.|
 
 

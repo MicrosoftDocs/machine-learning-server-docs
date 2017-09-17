@@ -31,7 +31,7 @@ This section contains the Python reference documentation for two proprietary pac
 
 | Library details | |
 |--------|-|
-| Supported platforms: | Machine Learning Server, SQL Server 2017 (Windows only). Additional platforms and compute contexts are planned for future releases.|
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | Machine Learning Server for Hadoop, SQL Server 2017 Machine Learning (Windows only). Additional computing platforms are planned for future releases.|
 | Built on: | [Anaconda 4.2.0](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python modules

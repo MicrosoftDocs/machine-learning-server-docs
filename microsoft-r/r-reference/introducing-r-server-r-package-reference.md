@@ -33,7 +33,7 @@ You can use these libraries and functions in combination with other open source 
 
 | Library details | |
 |--------|-|
-| [Supported platforms:](../install/r-server-install-supported-platforms.md) | Hadoop MapReduce</br>Hadoop Spark</br>Linux</br> SQL Server (Windows only)</br>Windows|
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | Machine Learning Server, Microsft R Client, SQL Server 2016 and later, Azure HDInsight, Azure Data Science virtual machines. |
 | Built on: | R 3.3.x (included when you [install a product](#how-to-install) that provides this package). |
 
 ## R function libraries
