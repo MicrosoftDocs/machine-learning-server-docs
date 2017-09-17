@@ -168,7 +168,6 @@ an Xdf data source object of one partition.
 
 [`rx_exec_by`](rx-exec-by.md).
 [`RxXdfData`](RxXdfData.md).
-[`rx_partition`](revoscalepy/rx-partition.md).
 
 
 ## Example
