@@ -220,7 +220,7 @@
   - name: Python
     href: python/python-samples.md
     items:
-    - name: R samples for MicrosoftML
+    - name: Python samples for MicrosoftML
       href: python/samples-microsoftml-python.md
   - name: R
     items:
