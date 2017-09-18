@@ -34,7 +34,7 @@ Machine Learning Server is engineered for the following architecture:
 
 ## System and setup requirements
 
-+ Operating system must be a [supported version of Hadoop on 64-bit Linux](r-server-install-supported-platforms.md).
++ Native operating system must be a [supported version of Hadoop on 64-bit Linux](r-server-install-supported-platforms.md).
 
 + Minimum RAM is 8 GB (16 GB or more is recommended). Minimum disk space is 500 MB per node.
 
@@ -71,6 +71,21 @@ After installation completes, software can be found at the following paths:
 + Executables such as Revo64 and mlserver-python are at `/usr/bin`
 
 ## Data node installation
+
+The recommendation is to run the [full setup package](machine-learning-server-linux-install.md) on every node. This approach is fast because it installs the full collection of packages, including the Hadoop package (microsoft-mlserver-hadoop-9.2.1).
+
+
+
+
+ 
+
+apt-get install microsoft-mlserver-all-9.2.1
+
+
+
+ which automatically detects Hadoop and adds the g.	 package:
+
+
 
 You can start on any data node, installing sequentially, or install on multiple data nodes concurrently. By default, `wget` and `rpm` use the local working directory, but lets assume `/tmp/mlserver`.
 
@@ -142,7 +157,7 @@ We recommend starting with [How to use RevoScaleR with Spark](../r/how-to-revosc
 
 For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Distributed computing > Function list](../r/how-to-revoscaler-distributed-computing.md#distributed-computing-overview).
 
-### See also
+## See also
 
 + [Install on Linux](machine-learning-server-linux-install.md)
 + [Install Machine Learning Server](r-server-install.md)

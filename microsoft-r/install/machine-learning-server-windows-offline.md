@@ -29,7 +29,7 @@ By default, installers connect to Microsoft download sites to get required and u
 Before you start, review the following articles for requirements and restrictions:
 
 + [Install Machine Learning Server 9.2.1 on Windows](machine-learning-server-windows-install.md) for an internet-connected installation.
-+ [Commandline installation](machine-learning-server-windows-offline.md) for a scripted installation.
++ [Command line installation](machine-learning-server-windows-offline.md) for a scripted installation.
 
 ## Downloads
 
@@ -96,7 +96,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
 
 We recommend starting with any Quickstart tutorial listed in the contents pane. 
 
-### See also
+## See also
 
 + [Install Machine Learning Server](r-server-install.md)
 + [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)

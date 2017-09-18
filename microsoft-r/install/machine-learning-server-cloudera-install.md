@@ -32,6 +32,8 @@ On a Hadoop cluster, Machine Learning Server is installed on all data nodes. You
 
 The Machine Learning Server parcel installation script can be generated on any [supported version of Linux](r-server-install-supported-platforms.md), but must execute on RHEL or CentOS 7.0 as the native operating system. 
 
+We no longer use installation scripts that divide distribution download and unpacking into separate tasks. To get the files required for script generation, [install Machine Learning Server for Linux](machine-learning-server-linux-install.md) on any node or Linux box. You can install the developer edition to avoid using up an enterprise license on a computer outside your cluster.
+
 If your operating system is not 7.0, or if you want to add [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes, use the regular [Hadoop installation instuctions](machine-learning-server-hadoop-install.md) instead.
 
 ## Preparation
@@ -46,13 +48,33 @@ Python is a part of the Parcel installer, controlled by the command line option,
 
 ## Parcel generation
 
+Create the parcel on a computer that has an installation of Machine Learning Server for Linux.
+
+1. Log on as root: `sudo su`
+2. Go to the installation folder: `cd /opt/microsoft/mlserver/9.2.1/libraries/common/hadoop`
+3. List the contents: `ls` to confirm the following files exist:
+
+  ```compute  create-dirs.sh  discover-java.sh  getHadoopEnvVars.py  jar  mrs-clean-hadoop-workspace  mrs-hadoop  mrs-spark-submit  templates  utils  workflow``
+
+4. Do a dry run of the parcel generator to `bash generate_mlserver_parcel.sh -n`
+
 ## Parcel execution
 
 ## Rollback (optional)
 
 ## Next steps
 
+We recommend starting with [How to use RevoScaleR with Spark](../r/how-to-revoscaler-spark.md) or [How to use RevoScaleR with Hadoop MapReduce](../r/how-to-revoscaler-hadoop.md). 
+
+For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Distributed computing > Function list](../r/how-to-revoscaler-distributed-computing.md#distributed-computing-overview).
+
 ## See also
 
++ [Install on Linux](machine-learning-server-linux-install.md)
++ [Install Machine Learning Server](r-server-install.md)
++ [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)
++ [Supported platforms](r-server-install-supported-platforms.md)  
++ [Known Issues](../resources-known-issues.md)  
++ [Configure Machine Learning Server to operationalize your analytics](../what-is-operationalization.md)
 
 [Install R Server 9.1 on the Cloudera distribution](r-server-install-cloudera.md)
