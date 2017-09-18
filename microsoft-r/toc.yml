@@ -820,6 +820,10 @@
         href: r-reference/mrsdeploy/listsnapshots.md
       - name: loadSnapshot
         href: r-reference/mrsdeploy/loadsnapshot.md
+      - name: print.serviceDetails
+        href: r-reference/mrsdeploy/print.serviceDetails.md
+      - name: print.snapshotDetails
+        href: r-reference/mrsdeploy/print.snapshotDetails.md
       - name: publishService
         href: r-reference/mrsdeploy/publishservice.md
       - name: putLocalFile
@@ -840,6 +844,18 @@
         href: r-reference/mrsdeploy/remotelogout.md
       - name: remoteScript
         href: r-reference/mrsdeploy/remotescript.md
+      - name: request
+        href: r-reference/mrsdeploy/request.md
+      - name: resume        
+        href: r-reference/mrsdeploy/resume.md
+      - name: serviceOption
+        href: r-reference/mrsdeploy/serviceOption.md
+      - name: serviceTypes
+        href: r-reference/mrsdeploy/serviceTypes.md
+      - name: summary.serviceDetails
+        href: r-reference/mrsdeploy/summary.serviceDetails.md
+      - name: summary.snapshotDetails
+        href: r-reference/mrsdeploy/summary.snapshotDetails.md
       - name: updateService
         href: r-reference/mrsdeploy/updateservice.md
     - name: olapR

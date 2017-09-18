@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: "getService function (mrsdeploy) | Microsoft Docs" 
-description: " Get a web service for consumption on running on R Server. " 
-keywords: "(mrsdeploy), getService" 
+title: "serviceOption function (mrsdeploy) | Microsoft Docs" 
+description: " Retrieve, set, and list the different service options. " 
+keywords: "(mrsdeploy), serviceOption" 
 author: "heidisteen" 
 manager: "jhubbard" 
 ms.date: "09/18/2017" 
@@ -27,16 +27,16 @@ ms.custom: ""
  
  
  
- #getService: Get a web service for consumption. 
+ #serviceOption: Retrieve, set, and list the different service options. 
  ##Description
  
-Get a web service for consumption on running on R Server.
+Retrieve, set, and list the different service options.
  
  
  ##Usage
 
 ```   
-  getService(name, v = character(0), destination = NULL)
+  serviceOption()
  
 ```
  
@@ -45,17 +45,12 @@ Get a web service for consumption on running on R Server.
    
   
  ### `name`
- The web service name. 
+ The option name. 
   
   
   
- ### `v`
- The web service version. 
-  
-  
-  
- ### `destination`
- (optional) The codegen output directory location. 
+ ### `value`
+ The option value to be set. 
   
  
  
@@ -65,13 +60,16 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 
  
  
+ ##Value
+ 
+A list of the current service options.
+ 
  ##See Also
  
 Other service methods: [deleteService](deleteService.md),
-[listServices](listServices.md),
+[getService](getService.md), [listServices](listServices.md),
 [print.serviceDetails](print.serviceDetails.md),
 [publishService](publishService.md),
-[serviceOption](serviceOption.md),
 [summary.serviceDetails](summary.serviceDetails.md),
 [updateService](updateService.md)
    
@@ -81,8 +79,17 @@ Other service methods: [deleteService](deleteService.md),
    
   ## Not run:
  
-# Discover the `add-service` version `1.0.1`
-api <- getService("add-service", "1.0.1")
+
+# --- set option name|value
+opts <- serviceOption()
+opts$set('base_dir', getwd())
+
+# --- get option
+opts <- serviceOption()
+base_dir <- opts$get('base_dir')
+
+# --- list options
+options <- serviceOption()$get()
  ## End(Not run) 
   
  

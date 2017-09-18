@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Load a snapshot from the R server into the remote session." 
+title: "loadSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Loads the specified snapshot from the R server into the remote session.The workspace is updated with the objects saved in the snapshot, and saved files are restored to the working directory. " 
-keywords: "mrsdeploy, loadSnapshot" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), loadSnapshot" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #loadSnapshot: Load a snapshot from the R server into the remote session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #loadSnapshot: Load a snapshot from the R server into the remote session. 
  ##Description
  
 Loads the specified snapshot from the R server into the remote session.The workspace
@@ -49,7 +45,7 @@ is updated with the objects saved in the snapshot, and saved files are restored 
 
    
   
- ### snapshot_id
+ ### `snapshot_id`
  Identifier of the snapshot to load. 
   
  
@@ -66,13 +62,13 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[createSnapshot](createsnapshot.md)
+[createSnapshot](createSnapshot.md)
 
-[deleteSnapshot](deletesnapshot.md)
+[deleteSnapshot](deleteSnapshot.md)
 
-[listSnapshots](listsnapshots.md)
+[listSnapshots](listSnapshots.md)
 
-[downloadSnapshot](downloadsnapshot.md)
+[downloadSnapshot](downloadSnapshot.md)
    
  ##Examples
 
@@ -85,5 +81,4 @@ loadSnapshot("8ce7eb47-3aeb-4c5a-b0a5-a2025f07d9cd")
   
  
 ```
- 
  

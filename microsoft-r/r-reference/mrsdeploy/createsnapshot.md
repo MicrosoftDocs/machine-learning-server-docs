@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Create a snapshot of the remote R session." 
+title: "createSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Creates a snapshot of the remote R session and saves it on the server. Both the workspace and the files in the working directory are saved. " 
-keywords: "mrsdeploy, createSnapshot" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), createSnapshot" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #createSnapshot: Create a snapshot of the remote R session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #createSnapshot: Create a snapshot of the remote R session. 
  ##Description
  
 Creates a snapshot of the remote R session and saves it on the server. Both the workspace
@@ -49,7 +45,7 @@ and the files in the working directory are saved.
 
    
   
- ### name
+ ### `name`
  Name describing the snapshot to be saved. 
   
  
@@ -66,13 +62,13 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[deleteSnapshot](deletesnapshot.md)
+[deleteSnapshot](deleteSnapshot.md)
 
-[listSnapshots](listsnapshots.md)
+[listSnapshots](listSnapshots.md)
 
-[loadSnapshot](loadsnapshot.md)
+[loadSnapshot](loadSnapshot.md)
 
-[downloadSnapshot](downloadsnapshot.md)
+[downloadSnapshot](downloadSnapshot.md)
    
  ##Examples
 
@@ -85,5 +81,4 @@ snapshot_id<-createSnapshot()
   
  
 ```
- 
  
