@@ -28,7 +28,7 @@ ms.technology: "r-server"
 
 By default, telemetry data is collected during your usage of Machine Learning Server, Microsoft R Server, and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. Please see the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
 
-To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler/rxprivacycontrol.md) from [RevoScaleR](r-reference/revoscaler/revoscaler.md) on any platform, or [rx-privacy-control](python-reference/revoscalepy/rx-privacy-control.md) from [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) (Spark only).
+To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler/rxprivacycontrol.md) from [RevoScaleR](r-reference/revoscaler/revoscaler.md) on any platform, or [rx_privacy_control](python-reference/revoscalepy/rx-privacy-control.md) from [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md).
 
 ## Version Requirements
 
@@ -48,23 +48,31 @@ Without a parameter, running `rxPrivacyControl()` returns the current setting. S
 
 The revoscalepy package providing `rx-privacy-control` is installed when you add Python support to Machine Learning Server 9.2.1 for Hadoop:
 
-1. On any data node that has revoscalepy, start a Python session.
-2. Type `import revoscalepy` to load the library.
-3. Type `rx-privacy-control` to return the current value.
-4. Type `rx-privacy-control(FALSE)`to turn off telemetry data collection.
+1. Log on as root: `sudo su`
+2. Start a Python session: `mlserver-python`
+3. Load the library:`import revoscalepy`
+4. Return the current value: `revoscalepy.rx_privacy_control()` 
+5. Change the current value:`revoscalepy.rx_privacy_control(TRUE)` to turn on telemetry data collection. Otherwise, set it to FALSE.
 
 ## How to opt out (R)
 
-The RevoScaleR package providing `rxPrivacyControl` is installed and loaded in both R Client and R Server. To turn off telemetry data collection, you can use any R console application. The following steps include Rgui.exe which is available in all installations of R Server and R Client.
+The RevoScaleR package provides`rxPrivacyControl` is installed and loaded in both R Client and R Server. To turn off telemetry data collection, you can use the builtin R console application, which loads RevoScaleR automatically.
+
+**On Linux**
+
+1. Log on as root: `sudo su`
+2. Start an session: `Revo64`
+3. Return the current value: `rxPrivacyControl` 
+4. Change the current value:`rxPrivacyControl(TRUE)` to turn on telemetry data collection. Otherwise, set it to FALSE.
+
 
 **On Windows**
 
 1. Log in to the computer as an administrator.
 2. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
 3. Right-click Rgui.exe and select **Run as administrator**.
-4. At the command line, type search() to view a list of objects already loaded. You should see the RevoScaleR package in the list.
-5. Type `rxPrivacyControl` to return the current value.
-6. Type `rxPrivacyControl(FALSE)`to turn off telemetry data collection.
+4. Type `rxPrivacyControl` to return the current value.
+5. Type `rxPrivacyControl(FALSE)`to turn off telemetry data collection.
 
 The  `rxPrivacyControl` command sets the state to be opted-in or out for anonymous usage collection.
 

@@ -24,6 +24,8 @@
         href: install/machine-learning-server-windows-offline.md
       - name: Command line install
         href: install/machine-learning-server-windows-commandline.md
+      - name: Uninstall from Windows
+        href: install/machine-learning-server-windows-uninstall.md
     - name: Linux
       items:
       - name: Install on Linux

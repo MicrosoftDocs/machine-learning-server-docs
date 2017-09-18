@@ -35,23 +35,29 @@ You can uninstall existing software and upgrade to newer versions node by node a
 
 1. List the packages from Microsoft.
 
-  + On RHEL: `yum list \*microsoft\*`   
-  + On Ubuntu: `apt list --installed | grep microsoft`  
-  + On SUSE: `zypper search \*microsoft-r\*`    
+ + On RHEL: `yum list \*microsoft\*`   
+ + On Ubuntu: `apt list --installed | grep microsoft`  
+ + On SUSE: `zypper search \*microsoft-r\*`    
 
 2. Operationalization features run on edge nodes. On a 9.2.1 installation, this is the [azureml-model-management library](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md), which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
 
-  + On RHEL: `yum erase microsoft-mlserver-adminutil-9.2`
-  + On RHEL: `yum erase microsoft-mlserver-webnode-9.2`
-  + On RHEL: `yum erase microsoft-mlserver-computenode-9.2`
+ **On CentOS and RHEL**
 
-  + On Ubuntu: `apt-get purge microsoft-mlserver-adminutil-9.2` 
-  + On Ubuntu: `apt-get purge microsoft-mlserver-webnode-9.2` 
-  + On Ubuntu: `apt-get purge microsoft-mlserver-computenode-9.2`  
-  
-  + On SUSE: `zypper remove microsoft-mlserver-adminutil-9.2`   
-  + On SUSE: `zypper remove microsoft-mlserver-webnode-9.2`   
-  + On SUSE: `zypper remove microsoft-mlserver-computenode-9.2`   
+ + `yum erase microsoft-mlserver-adminutil-9.2`
+ + `yum erase microsoft-mlserver-webnode-9.2`
+ + `yum erase microsoft-mlserver-computenode-9.2`
+
+ **On Ubunute**
+
+ + `apt-get purge microsoft-mlserver-adminutil-9.2` 
+ + `apt-get purge microsoft-mlserver-webnode-9.2` 
+ + `apt-get purge microsoft-mlserver-computenode-9.2`  
+ 
+ **On SUSE**
+
+ + `zypper remove microsoft-mlserver-adminutil-9.2`   
+ + `zypper remove microsoft-mlserver-webnode-9.2`   
+ + `zypper remove microsoft-mlserver-computenode-9.2`   
 
 ## Uninstall data nodes
 

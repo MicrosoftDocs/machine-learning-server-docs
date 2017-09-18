@@ -24,15 +24,13 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Hadoop
 
-On a Hadoop cluster, Machine Learning Server must be installed on all data nodes on a Hadoop cluster running a commerical distribution: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes.
+On a Hadoop cluster, Machine Learning Server must be installed on all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes.
 
-On Hadoop, Machine Learning Server requires the following architecture:
+Machine Learning Server is engineered for the following architecture:
 
-+ MapReduce
 + Hadoop Distributed File System (HDFS)
 + Apache YARN
-
-Machine Learning Server support also supports Spark versions 2.0-2.4 over HDFS.
++ MapReduce or Spark 2.0-2.4
 
 ## System and setup requirements
 
@@ -70,7 +68,7 @@ After installation completes, software can be found at the following paths:
 
 + Install root: `/opt/microsoft/mlserver/9.2.1`
 + Microsoft R Open root: `/opt/microsoft/ropen/3.4.1`
-+ Executables like Revo64 and mlserver-python are at `/usr/bin`
++ Executables such as Revo64 and mlserver-python are at `/usr/bin`
 
 ## Data node installation
 
