@@ -140,7 +140,7 @@ Additional open source packages are installed if a package is required but not f
 
 ## Next steps
 
-We recommend starting with [How to use RevoScaleR with Spark](how-to-revoscaler-spark.md) or [How to use RevoScaleR with Hadoop MapReduce](how-to-revoscaler-hadoop.md). 
+We recommend starting with [How to use RevoScaleR with Spark](../r/how-to-revoscaler-spark.md) or [How to use RevoScaleR with Hadoop MapReduce](../r/how-to-revoscaler-hadoop.md). 
 
 For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Distributed computing > Function list](../r/how-to-revoscaler-distributed-computing.md#distributed-computing-overview).
 
