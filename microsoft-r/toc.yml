@@ -481,7 +481,7 @@
       href: operationalize/how-to-connect-log-in-with-mrsdeploy.md
     - name: Execute code remotely
       href: r/how-to-execute-code-remotely.md
-  - name: RevoScaleR advanced development
+  - name: Advanced development in R
     items:
     - name: Write custom chunking algorithms
       href: r/how-to-developer-write-chunking-algorithms.md
