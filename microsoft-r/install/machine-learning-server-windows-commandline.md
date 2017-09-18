@@ -103,7 +103,7 @@ A default installation includes R_SERVER and the R packages, but not PYTHON_SERV
 
 We recommend continuing with any Quickstart tutorial listed in the contents pane. 
 
-### See also
+## See also
 
 + [Install Machine Learning Server](r-server-install.md)
 + [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)

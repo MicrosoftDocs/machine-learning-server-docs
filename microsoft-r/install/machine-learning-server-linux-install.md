@@ -74,11 +74,7 @@ After installation completes, software can be found at the following paths:
 
 ## How to install
 
-The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software.
-
-As a first step, set the repo. For a list of example syntax, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software)
-
-Next, use the install syntax for your package manager to specify "microsoft-mlserver-all-9.2.1.*ext*", with different file extensions (.rpm, .deb) based on the package manager of the target platform. This file gives the package manager information about additional packages used in a Machine Learning Server for Linux installation.
+The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setitng the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software)
 
 ### Ubuntu 14.04 - 16.04
 
@@ -86,7 +82,7 @@ Next, use the install syntax for your package manager to specify "microsoft-mlse
 
 2. Set the location of the package repo. This example specifies 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb`
 
-3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
+3. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
 4. Update packages on your system: `apt-get update` 
 
@@ -103,7 +99,7 @@ Next, use the install syntax for your package manager to specify "microsoft-mlse
 
 2. Set the location of the package repo. This example specifies 7.0: `rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm`
 
-3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
+3. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
 4. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
 
@@ -113,9 +109,9 @@ Next, use the install syntax for your package manager to specify "microsoft-mlse
 
 1. Install as root: `sudo su`
 
-2. Set the location of the packages using this example syntax for SLES11: `rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-all-9.2.1.rpm`
+2. Set the location of the package repo using this example syntax for SLES11: `rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-all-9.2.1.rpm`
 
-3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
+3. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
 4. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
 
@@ -308,7 +304,7 @@ Additional open source packages are installed if a package is required but not f
 
 We recommend starting with any Quickstart tutorial listed in the contents pane. 
 
-### See also
+## See also
 
 + [Install Machine Learning Server](r-server-install.md)
 + [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)

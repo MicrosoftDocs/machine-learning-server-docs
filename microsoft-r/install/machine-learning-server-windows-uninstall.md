@@ -89,7 +89,7 @@ Next
 Wscript.Quit 0 
 ```
 
-### See also
+## See also
 
 + [Install Machine Learning Server](r-server-install.md)
 + [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)

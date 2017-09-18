@@ -275,7 +275,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 We recommend starting with any Quickstart tutorial listed in the contents pane. 
 
-### See also
+## See also
 
 + [Install Machine Learning Server](r-server-install.md)
 + [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)
