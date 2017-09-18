@@ -66,7 +66,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
   + On Ubuntu: `apt-get purge microsoft-mlserver-hadoop-9.2.1`  
   + On SUSE: `zypper remove microsoft-mlserver-hadoop-9.2.1`
 
-4. You have additional packages if you installed the operationalization feature. On a 9.2.1 installation, this is the azureml-model-management library, which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
+4. You have additional packages if you installed the operationalization feature. On a 9.2.1 installation, this is the On a 9.2.1 installation, this is the [azureml-model-management library](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md), which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
 
   + microsoft-mlserver-adminutil-9.2
   + microsoft-mlserver-webnode-9.2
