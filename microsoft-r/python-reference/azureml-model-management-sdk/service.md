@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Service,batch,capabilities,get_batch,list_batch_executions,swagger: Web Service" 
+title: "Service,batch,capabilities,get_batch,list_batch_executions,swagger: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/15/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# Web Service
+# Service
 
 
 ## Class Service
@@ -43,7 +43,7 @@ Service object from metadata.
 Constructor
 
 
-## Arguments
+### Arguments
 
 
 ### service
@@ -63,7 +63,7 @@ batch(records, parallel_count=10)
 Register a set of input records for batch execution on this service.
 
 
-## Arguments
+### Arguments
 
 
 ### records
@@ -79,14 +79,16 @@ the batch. Default value is 10. Please make sure not to use too
 high of a number because it might negatively impact performance.
 
 
-## Returns
+### Returns
 
 The *Batch* object to control service batching
 lifecycle.
 
 
 
-```
+## capabilities
+
+```python
 capabilities()
 ```
 
@@ -96,13 +98,15 @@ capabilities()
 Gets the service holding capabilities.
 
 
-## Returns
+### Returns
 
 A dict of key/values describing the service.
 
 
 
-```
+## get_batch
+
+```python
 get_batch(execution_id)
 ```
 
@@ -112,7 +116,7 @@ get_batch(execution_id)
 Retrieve the *Batch* based on an *execution id*
 
 
-## Arguments
+### Arguments
 
 
 ### execution_id
@@ -120,13 +124,15 @@ Retrieve the *Batch* based on an *execution id*
 The id of the batch execution.
 
 
-## Returns
+### Returns
 
 The *Batch*.
 
 
 
-```
+## list_executions
+
+```python
 list_batch_executions()
 ```
 
@@ -136,14 +142,16 @@ list_batch_executions()
 Gets all batch executions currently queued for this service.
 
 
-## Returns
+### Returns
 
 A list of *execution ids*.
 
 
 
-```
-swagger()
+## swagger
+
+```python
+swagger\(\)
 ```
 
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RealtimeDefinition,alias,deploy,description,redeploy,serialized_model,version: Realtime Service Definition Definition" 
+title: "RealtimeDefinition,alias,deploy,description,redeploy,serialized_model,version: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/15/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# Realtime Service Definition
+# RealtimeDefinition
 
 
 ## Class RealtimeDefinition
@@ -45,7 +45,7 @@ Realtime class defining a service’s properties on the fluent API.
 Defines a realtime service publish definition.
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -55,7 +55,7 @@ Defines a realtime service publish definition.
 
 
 
-```
+```python
 alias(alias)
 ```
 
@@ -65,19 +65,21 @@ alias(alias)
 Set the service function name alias to call.
 
 
-## Arguments
+### Arguments
 
 
 ### alias
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## deploy
+
+```python
 deploy()
 ```
 
@@ -87,13 +89,15 @@ deploy()
 Bundle up the definition properties and publish the service.
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## description
+
+```python
 description(description)
 ```
 
@@ -103,19 +107,21 @@ description(description)
 Set the service description.
 
 
-## Arguments
+### Arguments
 
 
 ### description
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## redeploy
+
+```python
 redeploy(force=False)
 ```
 
@@ -125,19 +131,21 @@ redeploy(force=False)
 Bundle up the definition properties and update the service.
 
 
-## Arguments
+### Arguments
 
 
 ### force
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## serialized_model
+
+```python
 serialized_model(model)
 ```
 
@@ -147,19 +155,21 @@ serialized_model(model)
 Serialized model.
 
 
-## Arguments
+### Arguments
 
 
 ### model
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## version
+
+```python
 version(version)
 ```
 
@@ -169,12 +179,12 @@ version(version)
 Set the service version.
 
 
-## Arguments
+### Arguments
 
 
 ### version
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.

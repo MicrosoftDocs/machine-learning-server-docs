@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Operationalization,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: Base Operationalization Definition" 
+title: "Operationalization,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/15/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# Base Operationalization
+# Operationalization
 
 
 ## Class Operationalization
@@ -48,7 +48,9 @@ methods for the class hierarchy.
 
 
 
-```
+## authentication
+
+```python
 authentication(context)
 ```
 
@@ -74,7 +76,9 @@ Sub-class should override.
 
 
 
-```
+## deploy_realtime
+
+```python
 deploy_realtime(name, **opts)
 ```
 
@@ -96,7 +100,9 @@ Sub-class should override.
 
 
 
-```
+## destructor
+
+```python
 destructor()
 ```
 
@@ -124,7 +130,9 @@ Sub-class should override.
 
 
 
-```
+## initializer
+
+```python
 initializer(api_client, config)
 ```
 
@@ -141,7 +149,9 @@ Object with configuration property name/value pairs
 
 
 
-```
+## list_services
+
+```python
 list_services(name=None, **opts)
 ```
 
@@ -152,7 +162,9 @@ Sub-class should override.
 
 
 
-```
+## realtime_service
+
+```python
 realtime_service(name)
 ```
 
@@ -163,12 +175,17 @@ Begin fluent API for defining a realtime web service.
 
 **Example:**
 
->>> client.realtime_service('scoring')
+
+
+    ```
+    client.realtime_service('scoring')
       .description('A new realtime web service')
       .version('v1.0.0')
+    ```
 
 
-## Arguments
+
+### Arguments
 
 
 ### name
@@ -176,7 +193,7 @@ Begin fluent API for defining a realtime web service.
 The web service name.
 
 
-## Returns
+### Returns
 
 A [`RealtimeDefinition`](realtime-definition.md#RealtimeDefinition) for fluent API.
 
@@ -193,7 +210,9 @@ return a new service instance.
 
 
 
-```
+## redeploy_service
+
+```python
 redeploy_service(name, force=False, **opts)
 ```
 
@@ -204,7 +223,9 @@ Sub-class should override.
 
 
 
-```
+## service
+
+```python
 service(name)
 ```
 
@@ -215,12 +236,17 @@ Begin fluent API for defining a web service.
 
 **Example:**
 
->>> client.service('scoring')
-      .description('A new web service')
-      .version('v1.0.0')
 
 
-## Arguments
+```
+client.service('scoring')
+   .description('A new web service')
+   .version('v1.0.0')
+```
+
+
+
+### Arguments
 
 
 ### name
@@ -228,6 +254,6 @@ Begin fluent API for defining a web service.
 The web service name.
 
 
-## Returns
+### Returns
 
 A [`ServiceDefinition`](service-definition.md#ServiceDefinition) for fluent API.

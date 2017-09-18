@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "ServiceResponse,api,artifact,artifacts,console_output,error,output,outputs,raw_outputs: Web Service Response" 
+title: "ServiceResponse,api,artifact,artifacts,console_output,error,output,outputs,raw_outputs: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/15/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# Web Service Response
+# ServiceResponse
 
 
 ## Class ServiceResponse
@@ -42,7 +42,9 @@ Create a new Response Object by service name and raw service metadata.
 
 
 
-```
+## api
+
+```python
 api
 ```
 
@@ -53,7 +55,9 @@ Gets the api endpoint.
 
 
 
-```
+## artifact
+
+```python
 artifact(artifact_name, decode=True, encoding=None)
 ```
 
@@ -64,7 +68,7 @@ A convenience function to look up a file artifact by name and optionally
 base64 decode it.
 
 
-## Arguments
+### Arguments
 
 
 ### artifact_name
@@ -80,14 +84,16 @@ Whether to decode the Base64 encoded artifact string.
 ### encoding
 
 
-## Returns
+### Returns
 
 The file artifact as a Base64 encoded string if *decode=False*
 otherwise the decoded string.
 
 
 
-```
+## artifacts
+
+```python
 artifacts
 ```
 
@@ -98,7 +104,9 @@ Gets the response outputs if present.
 
 
 
-```
+## console_output
+
+```python
 console_output
 ```
 
@@ -109,7 +117,9 @@ Gets the console output if present.
 
 
 
-```
+## error 
+
+```python
 error
 ```
 
@@ -120,7 +130,9 @@ Gets the error if present.
 
 
 
-```
+## output
+
+```python
 output(output)
 ```
 
@@ -130,19 +142,21 @@ output(output)
     A convenience function to look up a output values by name.
 
 
-## Arguments
+### Arguments
 
 
 ### output
 
 
-## Returns
+### Returns
 
 The service output.
 
 
 
-```
+## outputs
+
+```python
 outputs
 ```
 
@@ -153,7 +167,9 @@ Gets the response outputs if present.
 
 
 
-```
+## raw_outputs
+
+```python
 raw_outputs
 ```
 

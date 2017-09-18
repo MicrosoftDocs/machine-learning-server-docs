@@ -123,7 +123,7 @@ On each web node, edit the appsettings.json configuration file in order to decla
    "Authorization": {
      "Owner": [ "Administrators" ],
      "Contributor": [ "RProgrammers", "Quality" ],
-     "Reader": [ "App developers" ]
+     "Reader": [ "App developers" ],
      "CacheLifeTimeInMinutes": 60
    }
    ``` 

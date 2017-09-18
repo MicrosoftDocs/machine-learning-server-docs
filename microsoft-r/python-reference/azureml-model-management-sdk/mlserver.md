@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "MLServer,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: MLServer" 
+title: "MLServer,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/15/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# ML Server Deployment Client
+# MLServer
 
 
 ## Class MLServer
@@ -44,7 +44,9 @@ This module provides a service implementation for the ML Server.
 
 
 
-```
+## authentication
+
+```python
 authentication(context)
 ```
 
@@ -65,7 +67,7 @@ ML Server supports two forms of authentication contexts:
 * access-token: str *=4534535* 
 
 
-## Arguments
+### Arguments
 
 
 ### context
@@ -80,7 +82,9 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-```
+## delete_service
+
+```python
 delete_service(name, **opts)
 ```
 
@@ -99,7 +103,7 @@ True
 
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -112,7 +116,7 @@ The web service name.
 The web service *version* (*version=’v1.0.1*).
 
 
-## Returns
+### Returns
 
 A *bool* indicating the service deletion was succeeded.
 
@@ -123,7 +127,9 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-```
+## deploy_realtime
+
+```python
 deploy_realtime(name, **opts)
 ```
 
@@ -159,7 +165,7 @@ publishing a service using the fluent APIS
 [`deploy()`](realtime-definition.md#deploy)
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -179,7 +185,7 @@ following optional properties:
     * alias (str) - The consume function name. Defaults to *consume*. 
 
 
-## Returns
+### Returns
 
 A new instance of [`Service`](service.md#Service) representing the
 realtime service *redeployed*.
@@ -230,7 +236,7 @@ publishing a service using the fluent APIS
 [`deploy()`](service-definition.md#deploy).
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -306,7 +312,7 @@ following optional properties:
       function name by default.
 
 
-## Returns
+### Returns
 
 A new instance of [`Service`](service.md#Service) representing the
 service *deployed*.
@@ -318,7 +324,9 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-```
+## destructor
+
+```python
 destructor()
 ```
 
@@ -332,7 +340,9 @@ for the class hierarchy.
 
 
 
-```
+## get_service
+
+```python
 get_service(name, **opts)
 ```
 
@@ -354,7 +364,7 @@ print(service)
 
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -368,7 +378,7 @@ The optional web service *version*. If *version=None* the
 most recent service will be returned.
 
 
-## Returns
+### Returns
 
 A new instance of [`Service`](service.md#Service).
 
@@ -393,7 +403,7 @@ construction. Sets up attributes and invokes initializers for the class
 hierarchy.
 
 
-## Arguments
+### Arguments
 
 
 ### http_client
@@ -413,7 +423,9 @@ A dict of transport adapters by url.
 
 
 
-```
+## list_services
+
+```python
 list_services(name=None, **opts)
 ```
 
@@ -449,7 +461,7 @@ service = client.list_services('add-service', version='v1')
 
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -462,7 +474,7 @@ The web service name.
 The optional web service *version*.
 
 
-## Returns
+### Returns
 
 A *list* of service metadata.
 
@@ -473,7 +485,9 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-```
+## realtime_service
+
+```python
 realtime_service(name)
 ```
 
@@ -484,12 +498,17 @@ Begin fluent API for defining a realtime web service.
 
 **Example:**
 
->>> client.realtime_service('scoring')
+
+
+    ```
+    client.realtime_service('scoring')
       .description('A new realtime web service')
       .version('v1.0.0')
+    ```
 
 
-## Arguments
+
+### Arguments
 
 
 ### name
@@ -497,13 +516,15 @@ Begin fluent API for defining a realtime web service.
 The web service name.
 
 
-## Returns
+### Returns
 
 A [`RealtimeDefinition`](realtime-definition.md#RealtimeDefinition) for fluent API.
 
 
 
-```
+## redeploy_realtime
+
+```python
 redeploy_realtime(name, **opts)
 ```
 
@@ -540,7 +561,7 @@ updating a service using the fluent APIS
 [`redeploy()`](realtime-definition.md#redeploy)
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -560,7 +581,7 @@ following optional properties:
     * alias (str) - The consume function name. Defaults to *consume*. 
 
 
-## Returns
+### Returns
 
 A new instance of [`Service`](service.md#Service) representing the
 realtime service *redeployed*.
@@ -572,7 +593,9 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-```
+## redeploy_service
+
+```python
 redeploy_service(name, **opts)
 ```
 
@@ -615,7 +638,7 @@ updating a service using the fluent APIS
 [`redeploy()`](service-definition.md#redeploy)
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -691,7 +714,7 @@ following optional properties:
       function name by default.
 
 
-## Returns
+### Returns
 
 A new instance of [`Service`](service.md#Service) representing the
 service *deployed*.
@@ -703,7 +726,9 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-```
+## service
+
+```python
 service(name)
 ```
 
@@ -714,12 +739,17 @@ Begin fluent API for defining a web service.
 
 **Example:**
 
->>> client.service('scoring')
-      .description('A new web service')
-      .version('v1.0.0')
 
 
-## Arguments
+```
+client.service('scoring')
+   .description('A new web service')
+   .version('v1.0.0')
+```
+
+
+
+### Arguments
 
 
 ### name
@@ -727,6 +757,6 @@ Begin fluent API for defining a web service.
 The web service name.
 
 
-## Returns
+### Returns
 
 A [`ServiceDefinition`](service-definition.md#ServiceDefinition) for fluent API.
