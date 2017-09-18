@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to get started with MicrosoftML (Machine Learning Server) | Microsoft Docs"
+title: "How to get started with MicrosoftML - Machine Learning Server | Microsoft Docs"
 keywords: ""
 author: "bradsev"
 ms.author: "bradsev"

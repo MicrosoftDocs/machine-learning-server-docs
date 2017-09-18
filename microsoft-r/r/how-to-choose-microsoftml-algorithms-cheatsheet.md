@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Cheat Sheet: How to choose a MicrosoftML algorithm (Machine Learning Server) | Microsoft Docs"
+title: "Cheat Sheet: How to choose a MicrosoftML algorithm - Machine Learning Server | Microsoft Docs"
 description: "A printable machine learning algorithm cheat sheet that helps you choose the right MicrosoftML algorithm for your predictive model when using Machine Learning Server."
 keywords: "MicrosoftML"
 author: "bradsev"
