@@ -64,23 +64,23 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 The following packages comprise a full Machine Learning Server installation:
 
 ```
- microsoft-mlserver-packages-r-9.2.1
- microsoft-mlserver-mml-r-9.2.1
- microsoft-mlserver-python-9.2.1
- microsoft-mlserver-mlm-r-9.2.1
- microsoft-mlserver-packages-py-9.2.1
- microsoft-mlserver-mml-py-9.2.1
- microsoft-mlserver-mlm-py-9.2.1
- microsoft-mlserver-hadoop-9.2.1
- microsoft-mlserver-adminutil-9.2
- microsoft-mlserver-computenode-9.2
- microsoft-mlserver-config-rserve-9.2
- microsoft-mlserver-dotnet-9.2
- microsoft-mlserver-webnode-9.2
+ microsoft-mlserver-packages-r-9.2.1        ** core
+ microsoft-mlserver-python-9.2.1            ** core
+ microsoft-mlserver-packages-py-9.2.1       ** core
+ microsoft-mlserver-mml-r-9.2.1             ** micorsoftml (optional)
+ microsoft-mlserver-mml-py-9.2.1            ** micorsoftml (optional)
+ microsoft-mlserver-mlm-r-9.2.1             ** pre-trained models (requires mml)
+ microsoft-mlserver-mlm-py-9.2.1            ** pre-trained models (requires mml)
+ microsoft-mlserver-hadoop-9.2.1            ** hadoop (required for hadoop)
+ microsoft-mlserver-adminutil-9.2           ** operationalization (optional)
+ microsoft-mlserver-computenode-9.2         ** operationalization (optional)
+ microsoft-mlserver-config-rserve-9.2       ** operationalization (optional) 
+ microsoft-mlserver-dotnet-9.2              ** operationalization (optional)
+ microsoft-mlserver-webnode-9.2             ** operationalization (optional)
 ```
 The microsoft-mlserver-python-9.2.1 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
 
-Microsoft R Open is also required:
+Microsoft R Open is required for R execution:
 
 ```
  microsoft-r-open-foreachiterators-3.4.1 
