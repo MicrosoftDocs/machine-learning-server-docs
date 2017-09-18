@@ -73,7 +73,7 @@ The **`rxLogisticRegression() / rx_logistic_regression()`** algorithm is used to
 **Tasks supported**: binary and multiclass classification
 
 ### Ensemble methods
-The **`rxEnsemble()`** algorithm uses a combination of learning algorithms to provide better predictive performance that the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context. 
+The **`rxEnsemble() /rx_emsemble()`** algorithm uses a combination of learning algorithms to provide better predictive performance that the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context. 
 
 **Tasks supported**: binary and multiclass classification, regression
 
