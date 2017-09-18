@@ -29,7 +29,7 @@ This article explains how to uninstall Machine Learning Server 9.2.1 for Linux.
 > [!Note]
 > To upgrade from either a 9.0.1 or 9.1 installation, you can skip uninstall. Setup automatically replaces previous versions of R Server or Microsoft R Open 3.3.2 with newer versions. However, if you have 8.x, you must uninstall first.
 
-## Collect information
+## Gather information
 
 Uninstall reverses the installation steps, including uninstalling any package dependencies used only by the server. Start by collecting information about your installation.
 
@@ -46,7 +46,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
   + On Ubuntu: `dpkg --status microsoft-r-open-mro-3.4.1` 
   + On SUSE: `zypper info microsoft-r-open-mro-3.4.1`     
 
-## How to uninstall 9.2.1
+## Uninstall 9.2.1
 
 1. On root@, uninstall Microsoft R Open (MRO) first. This action removes any dependent packages used only by MRO, which includes packages like microsoft-mlserver-packages-r. 
 

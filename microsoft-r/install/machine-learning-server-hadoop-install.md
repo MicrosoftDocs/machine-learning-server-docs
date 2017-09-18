@@ -24,6 +24,7 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Hadoop
 
+On a Hadoop cluster, Machine Learning Server must be installed on all data nodes. Optionally, you can install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes.
 
 ## Next steps
 

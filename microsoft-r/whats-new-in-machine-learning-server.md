@@ -26,7 +26,6 @@ ms.technology: "r-server"
 # What's new in Machine Learning Server
 
 Machine Learning Server 9.2 expands upon Microsoft R Server 9.1 with new Python libaries for integrating machine learning and data science into analytical solutions in the enterprise. Language-specific development is available when you add Python or R support (or both) during setup.
-
   
 Release announcement: https://blogs.technet.microsoft.com/machinelearning/2016/01/12/making-r-the-enterprise-standard-for-cross-platform-analytics-both-on-premises-and-in-the-cloud/
 
@@ -36,7 +35,7 @@ Release announcement: https://blogs.technet.microsoft.com/machinelearning/2016/0
 
 ## Python development
 
-In Machine Learning Server, Python support is through libraries that can be used in script executing in either Spark over Hadoop Distributed File System (HDFS) or in a SQL Server compute context. 
+In Machine Learning Server, Python support is through libraries that can be used in script executing locally, or remotely in either Spark over Hadoop Distributed File System (HDFS) or in a SQL Server compute context. 
 
 Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-management-sdk**. Modules are built on Anaconda 4.2 over Python 3.5. You can run any 3.5-compatible library on a Python interpreter included in Machine Learning Server.
 

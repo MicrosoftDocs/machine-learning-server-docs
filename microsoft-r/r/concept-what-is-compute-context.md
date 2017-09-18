@@ -27,11 +27,23 @@ ms.technology: "r-server"
 
 *Compute context* refers to the location of computations, as executed by revoscalepy for Python, or by the RevoScaleR interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to an interpreter on another machine. Local is the default. Switching to a remote compute context is typically done to get better performance if the target system has more capability, or to minimize data transfer by bringing calculations to resident data. 
 
-## Supported configurations
+You can set a compute context using functions from RevoScaleR and revoscalepy.
 
-For RevoScaleR, remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, HadoopMR and Spark, and Machine Learning Server (Linux and Windows). RevoScaleR functions like `RxSpark`, `RxHadoopMR`, or `RxInSQLServer` are used to set the compute context. 
+## List of compute contexts
 
-For revoscalepy, Spark is the only compute context supported in this release. It can be local or remote. Spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
+The revoscalepy library only supports the local compute context, RxSpark, and RxInSqlServer. It does not support remote executiong on Hadoop MapReduce in this release. On a Spark cluster, revoscalepy can execute locally or remote. Recall that spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
+
+The RevoScaleR library supports the compute contexts in the following table.
+
+Context name | Alternative name | Allowed data sources |
+-----------|--------------------|-----------------------|
+[RxLocalSeq](../r-reference/revoscaler/rxlocalseq.md)      | local     | (all) |
+[RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md), [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
+[RxHadoopMR](../r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md) |
+[RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](../r-reference/revoscaler/rxsqlserverdata.md) |
+[RxLocalParallel](../r-reference/revoscaler/rxlocalparallel.md) | localpar  |  
+[RxForeachDoPar](../r-reference/revoscaler/rxforeachdopar.md)  | dopar     | 
+
 
 ## Use cases for switching context
 

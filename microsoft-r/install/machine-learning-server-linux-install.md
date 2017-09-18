@@ -30,7 +30,7 @@ Machine Learning Server for Linux runs machine learning and data mining solution
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-linux-offline.md). 
 
 > [!Note]
-> Python support is new in this release. Although you can add Python to Machine Learning Server for Windows, local script that calls our [proprietary Python functions](../python-reference/introducing-python-package-reference.md) must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or on [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark [remote compute context](../r/concept-what-is-compute-context.md). <br/><br/>On Windows, Python operations are limited to generic Python script, pushing  proprietary function calls to remote instances. You can also run Machine Learning Server [web services](../operationalize/concept-what-are-web-services.md) that contain  compiled Python script. More capability, including interactive Python sessions and direct execution of proprietary functions, is projected for future releases.
+> Python support is new and there are a few limitations in remote computing scenarios. 1) Remote execution is not supported on Windows or Linux. 2) Remote compute contexts must be Spark or SQL Server. In computing that is local to the machine, there are no limitations.
 
 ## System and setup requirements
 
@@ -83,7 +83,7 @@ Next, use the install syntax for your package manager to specify "microsoft-mlse
 
 ### Ubuntu 14.04 - 16.04
 
-1. Enter `sudo su` to install as root.
+1. Install as root: `sudo su`
 
 2. Set the location of the package repo. This example specifies 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb`
 
@@ -91,7 +91,7 @@ Next, use the install syntax for your package manager to specify "microsoft-mlse
 
 4. Update packages on your system: `apt-get update` 
 
-5. Optionally, if your system does not have the `https apt transport` option: `apt-get install apt-transport-https`
+5. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
 
 6. Install the server: `apt-get install microsoft-mlserver-all-9.2.1`  
 
@@ -100,7 +100,7 @@ Next, use the install syntax for your package manager to specify "microsoft-mlse
 
 ### Red Hat and CentOS 6/7
 
-1. Enter `sudo su` to install as root.
+1. Install as root: `sudo su`
 
 2. Set the location of the package repo. This example specifies 7.0: `rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm`
 
@@ -112,7 +112,7 @@ Next, use the install syntax for your package manager to specify "microsoft-mlse
 
 ### SUSE SLES11
 
-1. Enter `sudo su` to install as root.
+1. Install as root: `sudo su`
 
 2. Set the location of the packages using this example syntax for SLES11: `rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-all-9.2.1.rpm`
 

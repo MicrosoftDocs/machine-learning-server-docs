@@ -38,8 +38,6 @@
         href: install/machine-learning-server-cloudera-install.md
       - name: Install on Hadoop
         href: install/machine-learning-server-hadoop-install.md
-      - name: Command line install
-        href: install/machine-learning-server-hadoop-commandline.md
       - name: Offline install
         href: install/machine-learning-server-hadoop-offline.md
       - name: Uninstall from Hadoop

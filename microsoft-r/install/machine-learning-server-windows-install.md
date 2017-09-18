@@ -24,12 +24,12 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Windows
 
-Machine Learning Server for Windows runs machine learning and data mining solutions written in R in standalone and clustered topologies. 
+Machine Learning Server for Windows runs machine learning and data mining solutions written in R or Python in standalone and clustered topologies. 
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
 > [!Note]
-> Python support is new in this release. Although you can add Python to Machine Learning Server for Windows, local script that calls our [proprietary Python functions](../python-reference/introducing-python-package-reference.md) must execute on [SQL Server 2017 Machine Learning Server with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-service), or on [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) in a Spark [remote compute context](../r/concept-what-is-compute-context.md). <br/><br/>On Windows, Python operations are limited to generic Python script, pushing  proprietary function calls to remote instances. You can also run Machine Learning Server [web services](../operationalize/concept-what-are-web-services.md) that contain  compiled Python script. More capability, including interactive Python sessions and direct execution of proprietary functions, is projected for future releases.
+> Python support is new and there are a few limitations in remote computing scenarios. 1) Remote execution is not supported on Windows or Linux. 2) Remote compute contexts must be Spark or SQL Server. In computing that is local to the machine, there are no limitations.
 
 ## System requirements
 
@@ -80,9 +80,9 @@ The setup wizard installs, upgrades, and uninstalls all in one workflow.
 2. Double-click **ServerSetup.exe** to start the wizard.
 3. In Configure installation, choose components to install:
 
-    + **R Server (Standalone)**. You should check this option. On Windows, most functionality is R-related. *If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls your existing R Server instance.*  
+    + **R Server (Standalone)**. This option is selected by default. *If you clear a checkbox for R Server on a computer that has a previous release, Setup uninstalls your existing R Server instance.*  
     + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection. You can install the models with R or Python, but not as a standalone component.
-    + **Python** adds the Python libraries. You can write local script that calls Python, but your script must set a compute context for Python execution on a remote SQL Server 2017 instance or Spark cluster that has the interpreter.
+    + **Python** adds the Python libraries. 
     + Other components are listed for visiblity, but are not configurable. These components are required.
 
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open, Anaconda, and Python.
@@ -116,12 +116,22 @@ R Server runs as a background process, as **Microsoft R Server Engine** in Task 
 
 **For Python**
 
-Python runs when you execute a .py script or run commands in a Python console window. Machine Learning Server for Hadoop (Spark) and SQL Server Machine Learning Server have the Python interpreters for our proprietary Python libraries. On Windows, Setup adds Anaconda 4.2 with Python 3.5. You can write Python script that executes base functionality locally. Your local script can push proprietrary Python calls to remote SQL or Spark compute contexts.
+Python runs when you execute a .py script or run commands in a Python console window. On Windows, Setup adds Anaconda 4.2 with Python 3.5. 
 
 1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
 2. Double-click **Python**.
 3. At the command line, type `help()` to open interactive help.
 4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
+5. Paste in the following revoscalepy script to return summary statistics from the built-in AirlineDemo demo data:
+
+ ~~~~
+        import os
+        from revoscalepy import rx_summary, RxOptions, RxXdfData
+        sample_data_path = RxOptions.get_option("sampleDataDir")
+        ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+        summary = rx_summary("ArrDelay+DayOfWeek", ds)
+        print(summary)
+~~~~
 
 ### 5. Enable server to host analytic web services and accept remote connections
 

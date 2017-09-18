@@ -39,22 +39,21 @@ The **revoscalepy** module is a collection of Python functions used for analyzin
 
 The **revoscalepy** module is installed as part of Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules.
 
-The **revoscalepy** module runs in a Spark compute context and SQL Server compute context. 
+The **revoscalepy** module runs locally on all platforms, and remotely in a [RxSpark](RxSpark.md) or RxInSQLServer compute context. 
 
-### In a Spark compute context
+### In a local compute context
 
-In a [RxSpark](RxSpark.md) compute context, you can perform statistical analysis, linear and logistic regressions, and predictive analytics. Scale out requires Machine Learning Server on all data nodes in your cluster. You can also call functions from script that runs on edge nodes, or on a single-box installation of Spark.
+**Revoscalepy**y operations include statistical analysis, linear and logistic regressions, and predictive analytics. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to the cluster. 
 
-### In a SQL Server compute context
+### In a remote compute context
 
-In a [RxInSqlServer](RxInSqlServer.md) compute context, there are two primary use cases: 
+In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server. For **revoscalepy**, this is supported for an [RxSpark](RxSpark.md) cluster. For example, script running on Windows might shift execution to a Spark cluster to process data there. 
+
+Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. For SQL Server, there are two primary use cases: 
 
 + Call Python functions in T-SQL script or stored procedures running on SQL Server.  
 
 + Call **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
-
-> [!Note]
-> You can call **revoscalepy** functions in script that runs on other platforms, such as Windows or Linux, but your script should set the compute context before **revoscalepy** functions are called.
 
 ## Functions by category
 
@@ -64,11 +63,11 @@ This section lists the functions by category to give you an idea of how each one
 
 | Function | Description |
 |----------|-------------|
-|[RxInSqlServer](RxInSqlServer.md) | Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server. |
-|[RxLocalSeq](RxLocalSeq.md) | This is the default but you can call it switch back to a local compute context if your script runs in multiple. Computations using rx_exec will be processed sequentially. Valid only on Spark (Machine Learning Server for Hadoop) and SQL Server platforms. |
+|[RxInSqlServer](RxInSqlServer.md) | Creates a compute context for running revoscalepy analyses insidea remote Microsoft SQL Server. |
+|[RxLocalSeq](RxLocalSeq.md) | This is the default but you can call it switch back to a local compute context if your script runs in multiple. Computations using rx_exec will be processed sequentially. |
 |[rx_get_compute_context](rx-get-compute-context.md) | Returns the current compute context.|
 |[rx_set_compute_context](rx-set-compute-context.md) | Change the compute context to a different one.|
-|[RxSpark](RxSpark.md) | Creates a compute context for running revoscalepy analyses in a Spark cluster. |
+|[RxSpark](RxSpark.md) | Creates a compute context for running revoscalepy analyses in a remote Spark cluster. |
 |[rx_get_pyspark_connection](rx-get-pyspark-connection.md) | Gets a connection to a PySpark data set, in support of revoscalepy and PySpark interoperability. |
 |[rx_spark_connect](rx-spark-connect.md) | Creates a persistent Spark Connection. |
 |[rx_spark_disconnect](rx-spark-disconnect.md) | Closes the connection. |
@@ -82,20 +81,20 @@ Data sources are used by [microsoftml functions](../microsoftml/microsoftml-pack
 | Function | Compute Context | Description | 
 |----------|-----------------|-------------|
 |[RxDataSource](RxDataSource.md) | All | Base class for all revoscalepy data sources.|
-|[RxHdfsFileSystem](RxHdfsFileSystem.md) | [RxSpark](RxSpark.md) | Data source is accessed through HDFS instead of Linux. |
-|[RxNativeFileSystem](RxNativeFileSystem.md) | [RxSpark](RxSpark.md) | Data source is accessed through Linux instead of HDFS. |
-|[RxHiveData](RxHiveData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Hive data file.|
-|[RxTextData](RxTextData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a text data file.|
+|[RxHdfsFileSystem](RxHdfsFileSystem.md) | Local, [RxSpark](RxSpark.md) | Data source is accessed through HDFS instead of Linux. |
+|[RxNativeFileSystem](RxNativeFileSystem.md) | Local, [RxSpark](RxSpark.md) | Data source is accessed through Linux instead of HDFS. |
+|[RxHiveData](RxHiveData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Hive data file.|
+|[RxTextData](RxTextData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a text data file.|
 |[RxXdfData](RxXdfData.md) | All | Generates a data source object from an XDF data source.|
 |[RxOdbcData](RxOdbcData.md) | All | Generates a data source object from an ODBC data source.|
-|[RxOrcData](RxOrcData.md) | [RxSpark](RxSpark.md)| Generates a data source object from an Ord data file.|
-|[RxParquetData](RxParquetData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Parquet data file.|
-|[RxSparkData](RxSparkData.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Spark data source.|
-|[RxSparkDataFrame](RxSparkDataFrame.md) | [RxSpark](RxSpark.md) | Generates a data source object from a Spark data frame.|
-|[rx_spark_cache_data](rx-spark-cache-data.md) | [RxSpark](RxSpark.md) | Generates a data source object from cached data.|
-|[rx_spark_list_data](rx-spark-list-data.md) | [RxSpark](RxSpark.md) | Generates a data source object from a list.|
-|[rx_spark_remove_data](rx-spark-remove-data.md) | [RxSpark](RxSpark.md) | Deletes the Spark cached data source object.|
-|[RxSqlServerData](RxSqlServerData.md) | [RxInSqlServer](RxInSqlServer.md)  | Generates a data source object from a SQL table or query.|
+|[RxOrcData](RxOrcData.md) | Local, [RxSpark](RxSpark.md)| Generates a data source object from an Ord data file.|
+|[RxParquetData](RxParquetData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Parquet data file.|
+|[RxSparkData](RxSparkData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Spark data source.|
+|[RxSparkDataFrame](RxSparkDataFrame.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Spark data frame.|
+|[rx_spark_cache_data](rx-spark-cache-data.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from cached data.|
+|[rx_spark_list_data](rx-spark-list-data.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a list.|
+|[rx_spark_remove_data](rx-spark-remove-data.md) | Local, [RxSpark](RxSpark.md) | Deletes the Spark cached data source object.|
+|[RxSqlServerData](RxSqlServerData.md) | Local, [RxInSqlServer](RxInSqlServer.md)  | Generates a data source object from a SQL table or query.|
 
 ## 3-Data manipulation (ETL) functions
 
@@ -108,8 +107,8 @@ Data sources are used by [microsoftml functions](../microsoftml/microsoftml-pack
 
 | Function | Compute Context | Description |
 |----------|-----------------|-------------|
-|[rx_exec_by](rx-exec-by.md) | [RxSpark](RxSpark.md) | Execute an arbitrary function in parallel on multiple data nodes. |
-| [rx_partition](rx-partition.md) | |
+|[rx_exec_by](rx-exec-by.md) | Local, [RxSpark](RxSpark.md) | Execute an arbitrary function in parallel on multiple data nodes. |
+| [rx_partition](rx-partition.md) | Local, [RxSpark](RxSpark.md) | Partition input data sources by key values and save the results to a partitioned .xdf on disk. |
 |[rx_summary](rx-summary.md) | All | Produce univariate summaries of objects in revoscalepy. |
 |[rx_lin_mod](rx-lin-mod.md) | All | Fit linear models on small or large data. |
 |[rx_logit](rx-logit.md) | All | Use rx_logit to fit logistic regression models for small or large data. |
@@ -162,16 +161,16 @@ In an [RxSpark](RxSpark.md) context, job management is built in. You only need j
 |[rx_set_var_info](rx-set-var-info.md)  | All | Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame.|
 |[RxMissingValues](RxMissingValues.md) | All | Provides missing values for various `NumPy` data types which you can use to mark missing values in a sequence of data in `ndarray`.|
 |[rx_privacy_control](rx-privacy-control.md) | All | Opt out of [usage data collection](../../resources-opting-out.md). |
-|[rx_hadoop_command](rx-hadoop-command.md) | [RxSpark](RxSpark.md) | Execute arbitrary Hadoop commands and perform standard file operations in Hadoop. |
-|[rx_hadoop_copy_from_local](rx-hadoop-copy-from-local.md) | [RxSpark](RxSpark.md) |  Wraps the Hadoop `fs -copyFromLocal` command. |
-|[rx_hadoop_copy_to_local](rx-hadoop-copy-to-local.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -copyToLocal` command. |
-|[rx_hadoop_copy](rx-hadoop-copy.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -cp` command. |
-|[rx_hadoop_file_exists](rx-hadoop-file-exists.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -test -e` command. |
-|[rx_hadoop_list_files](rx-hadoop-list-files.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -ls or -lsr` command. |
-|[rx_hadoop_make_dir](rx-hadoop-make-dir.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -mkdir -p` command. |
-|[rx_hadoop_move](rx-hadoop-move.md) | [RxSpark](RxSpark.md) | wraps the Hadoop `fs -mv` command. |
-|[rx_hadoop_remove_dir](rx-hadoop-remove-dir.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -rm -r`  or `fs -rm -r -skipTrash` command. |
-|[rx_hadoop_remove](rx-hadoop-remove.md) | [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -rm` or `fs -rm -skipTrash` command. |
+|[rx_hadoop_command](rx-hadoop-command.md) | Local, [RxSpark](RxSpark.md) | Execute arbitrary Hadoop commands and perform standard file operations in Hadoop. |
+|[rx_hadoop_copy_from_local](rx-hadoop-copy-from-local.md) | Local, [RxSpark](RxSpark.md) |  Wraps the Hadoop `fs -copyFromLocal` command. |
+|[rx_hadoop_copy_to_local](rx-hadoop-copy-to-local.md) | Local, [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -copyToLocal` command. |
+|[rx_hadoop_copy](rx-hadoop-copy.md) | Local, [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -cp` command. |
+|[rx_hadoop_file_exists](rx-hadoop-file-exists.md) | Local, [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -test -e` command. |
+|[rx_hadoop_list_files](rx-hadoop-list-files.md) | Local, [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -ls or -lsr` command. |
+|[rx_hadoop_make_dir](rx-hadoop-make-dir.md) | Local, [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -mkdir -p` command. |
+|[rx_hadoop_move](rx-hadoop-move.md) | Local, [RxSpark](RxSpark.md) | wraps the Hadoop `fs -mv` command. |
+|[rx_hadoop_remove_dir](rx-hadoop-remove-dir.md) | Local, [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -rm -r`  or `fs -rm -r -skipTrash` command. |
+|[rx_hadoop_remove](rx-hadoop-remove.md) | Local, [RxSpark](RxSpark.md) | Wraps the Hadoop `fs -rm` or `fs -rm -skipTrash` command. |
 
 ## Next steps
 

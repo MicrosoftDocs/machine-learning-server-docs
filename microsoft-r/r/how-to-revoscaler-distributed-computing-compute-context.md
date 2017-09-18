@@ -37,7 +37,7 @@ For R, the specific dependency is to have the same version of RevoScaleR. This m
 
 ## List of compute contexts
 
-The revoscalepy library only supports the Spark compute context, local and remote.
+The revoscalepy library supports the local compute context, RxSpark, and RxInSqlServer.
 
 The RevoScaleR library supports the compute contexts in the following table.
 

@@ -38,17 +38,7 @@ The **microsoftml** module is a collection of Python functions used in machine l
 
 The **microsoftml** module is installed as part of Microsoft Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **microsoftml**, but the script must run on a computer having either Microsoft Machine Learning Server or SQL Server Machine Learning Server with Python.
 
-### In a Spark compute context
-
-In a [RxSpark](../revoscalepy/RxSpark.md) compute context, the data sources used by **microsoftml** are created using [revoscalepy](../revoscalepy/revoscalepy-package.md) data sources for Spark. This is a hard dependency. Plan on using both libraries together.
-
-### In a SQL Server compute context
-
-There are two primary use cases for this release of SQL Server Machine Learning Server: 
-
-+ Call Python functions in T-SQL script or stored procedures running on SQL Server.  
-
-+ Call **microsoftml** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **microsoftml** operations to a remote SQL Server instance that has the **microsoftml** interpreter.
+**Microsoftml** and **revoscalepy** are tightly coupled; data sources used in **microsoftml** are defined as [**revoscalepy**](../revoscalepy/revoscalepy-package.md) objects. Compute context limitations in **revoscalepy** transfer to **microsoftml**. Namely, all functionality is available for local operations, but switching to a remote compute context requires [RxSpark](../revoscalepy/RxSpark.md) or [RxInSQLServer](../revoscalepy/RxInSQLServer.md).
 
 ## Functions by category
 
