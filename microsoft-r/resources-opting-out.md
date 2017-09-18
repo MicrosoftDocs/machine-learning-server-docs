@@ -24,7 +24,7 @@ ms.technology: "r-server"
 ---
 # Opting out of usage data collection (Machine Learning Server and R Server)
 
-**Applies to:** version 9.0.1-9.2.1
+**Applies to:** Machine Learning Server, Microsoft R Server 9.x
 
 By default, telemetry data is collected during your usage of Machine Learning Server, Microsoft R Server, and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. Please see the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
 

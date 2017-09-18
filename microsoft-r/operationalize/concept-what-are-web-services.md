@@ -111,7 +111,7 @@ By default, any authenticated Machine Learning Server user can:
 + Retrieve any web service object for consumption
 + Retrieve a list of any or all web services
 
-By default, all web service operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](../configure-roles.md) to further control the permissions around web services. Ask your administrator for details on your role.
+By default, all web service operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. Ask your administrator for details on your role.
 
 ## See also
 
