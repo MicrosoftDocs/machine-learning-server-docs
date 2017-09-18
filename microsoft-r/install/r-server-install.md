@@ -38,18 +38,18 @@ This section provides links to installation documentation for R Server 9.1 and e
 ## 9.0.1
 
 + [9.0.1 - Windows](r-server-install-windows.md)
-+ [9.0.1 - Install Linux](install/r-server-install-linux-server-901.md)
-+ [9.0.1 - Install Hadoop](install/r-server-install-hadoop-901.md)
-+ [9.0.1 - Install Cloudera](install/r-server-install-cloudera-901.md)
++ [9.0.1 - Install Linux](r-server-install-linux-server-901.md)
++ [9.0.1 - Install Hadoop](r-server-install-hadoop-901.md)
++ [9.0.1 - Install Cloudera](r-server-install-cloudera-901.md)
 
 ## 8.0.5
 
 + [8.0.5 - Windows](r-server-install-windows-800.md)
-+ [8.0.5 - Install Linux](install/r-server-install-linux-server-805.md)
-+ [8.0.5 - Install Hadoop](install/r-server-install-hadoop-805.md)
++ [8.0.5 - Install Linux](r-server-install-linux-server-805.md)
++ [8.0.5 - Install Hadoop](r-server-install-hadoop-805.md)
 
 ## 8.0
 
 + [8.0 - Windows](r-server-install-windows-800.md)
-+ [8.0 - Install Linux](install/r-server-install-linux-server-800.md)  
-+ [8.0 - Install Hadoop](install/r-server-install-hadoop-800.md)
++ [8.0 - Install Linux](r-server-install-linux-server-800.md)  
++ [8.0 - Install Hadoop](r-server-install-hadoop-800.md)

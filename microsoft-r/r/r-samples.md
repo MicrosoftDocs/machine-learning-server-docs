@@ -30,7 +30,11 @@ The following samples are available for R developers. Use these as examples to l
 
 |Example|Description                                                     |
 |--------------|---------------------------------------------------------|
-|[Sample data in RevoScaleR](r/sample-built-in-data.md) | Links and instructions for using built-in sample data and online data sets.|
-|[RevoScaleR rxExecBy parallel processing example]( r/tutorial-rxexecby.md) | Demo script illustrating rxExecBy for parallel processing. |
-|[R Server with Sparklyr example](r/tutorial-sparklyr-revoscaler.md) | Sample code and instructions.|
-|[R samples for MicrosoftML](r/sample-microsoftml.md) | Descriptions and links to various samples showing how to use machine learning algorithms in R script or code. |
+|[Sample data in RevoScaleR](sample-built-in-data.md) | Links and instructions for using built-in sample data and online data sets.|
+|[RevoScaleR rxExecBy parallel processing example](tutorial-rxexecby.md) | Demo script illustrating rxExecBy for parallel processing. |
+|[R Server with Sparklyr example](tutorial-sparklyr-revoscaler.md) | Sample code and instructions.|
+|[R samples for MicrosoftML](sample-microsoftml.md) | Descriptions and links to various samples showing how to use machine learning algorithms in R script or code. |
+
+## See also
+
+[Python samples](../python/python-samples.md)
