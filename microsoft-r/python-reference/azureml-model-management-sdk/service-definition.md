@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "ServiceDefinition,alias,artifact,artifacts,code_fn,code_str,deploy,description,inputs,models,objects,outputs,redeploy,version: Web Service Definition" 
+title: "ServiceDefinition,alias,artifact,artifacts,code_fn,code_str,deploy,description,inputs,models,objects,outputs,redeploy,version: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/15/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# Web Service Definition
+# ServiceDefinition
 
 
 ## Class ServiceDefinition
@@ -44,7 +44,7 @@ Service class defining a service’s properties on the fluent API.
 
 
 
-```
+```python
 alias(alias)
 ```
 
@@ -54,19 +54,21 @@ alias(alias)
 Set the service function name alias to call.
 
 
-## Arguments
+### Arguments
 
 
 ### alias
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## artifact
+
+```python
 artifact(artifact)
 ```
 
@@ -76,19 +78,21 @@ artifact(artifact)
 A single File artifact.
 
 
-## Arguments
+### Arguments
 
 
 ### artifact
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## artifacts
+
+```python
 artifacts(artifacts)
 ```
 
@@ -98,19 +102,21 @@ artifacts(artifacts)
 File artifacts.
 
 
-## Arguments
+### Arguments
 
 
 ### artifacts
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## code_fn
+
+```python
 code_fn(code, init=None)
 ```
 
@@ -124,7 +130,9 @@ Set the service consume function as a function.
 
 
 
-```
+## code_str
+
+```python
 code_str(code, init=None)
 ```
 
@@ -134,7 +142,7 @@ code_str(code, init=None)
 Set the service consume function as a block of python code.
 
 
-## Arguments
+### Arguments
 
 
 ### code
@@ -143,13 +151,15 @@ Set the service consume function as a block of python code.
 ### init
 
 
-## Returns
+### Returns
 
 A [`ServiceDefinition`](azureml/deploy/operationalization/ServiceDefinition.md) for fluent API.
 
 
 
-```
+## deploy
+
+```python
 deploy()
 ```
 
@@ -159,13 +169,15 @@ deploy()
 Bundle up the definition properties and publish the service.
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## description
+
+```python
 description(description)
 ```
 
@@ -175,19 +187,21 @@ description(description)
 Set the service description.
 
 
-## Arguments
+### Arguments
 
 
 ### description
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## inputs
+
+```python
 inputs(**inputs)
 ```
 
@@ -197,19 +211,21 @@ inputs(**inputs)
 Defines inputs.
 
 
-## Arguments
+### Arguments
 
 
 ### inputs
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## models
+
+```python
 models(**models)
 ```
 
@@ -219,19 +235,21 @@ models(**models)
 Models.
 
 
-## Arguments
+### Arguments
 
 
 ### models
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## objects
+
+```python
 objects(**objects)
 ```
 
@@ -241,19 +259,21 @@ objects(**objects)
 Objects.
 
 
-## Arguments
+### Arguments
 
 
 ### objects
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## outputs
+
+```python
 outputs(**outputs)
 ```
 
@@ -263,19 +283,21 @@ outputs(**outputs)
 Defines utputs.
 
 
-## Arguments
+### Arguments
 
 
 ### outputs
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## redeploy
+
+```python
 redeploy(force=False)
 ```
 
@@ -285,19 +307,21 @@ redeploy(force=False)
 Bundle up the definition properties and update the service.
 
 
-## Arguments
+### Arguments
 
 
 ### force
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
 
 
 
-```
+## version
+
+```python
 version(version)
 ```
 
@@ -307,12 +331,12 @@ version(version)
 Set the service version.
 
 
-## Arguments
+### Arguments
 
 
 ### version
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.

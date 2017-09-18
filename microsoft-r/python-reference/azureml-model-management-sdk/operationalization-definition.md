@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "OperationalizationDefinition,alias,deploy,description,redeploy,version: Base Operationalization Definition" 
+title: "OperationalizationDefinition,alias,deploy,description,redeploy,version: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/15/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# Base Operationalization Definition
+# OperationalizationDefinition
 
 
 ## Class OperationalizationDefinition
@@ -44,7 +44,7 @@ Base abstract class defining a service’s properties on the fluent API.
 Create a new publish definition.
 
 
-## Arguments
+### Arguments
 
 
 ### name
@@ -59,7 +59,7 @@ The web service name
 
 
 
-```
+```python
 alias(alias)
 ```
 
@@ -69,19 +69,21 @@ alias(alias)
 Set the service function name alias to call.
 
 
-## Arguments
+### Arguments
 
 
 ### alias
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
 
 
 
-```
+## deploy
+
+```python
 deploy()
 ```
 
@@ -94,7 +96,9 @@ Bundle up the definition properties and publish the service.
 
 
 
-```
+## description
+
+```python
 description(description)
 ```
 
@@ -104,19 +108,21 @@ description(description)
 Set the service description.
 
 
-## Arguments
+### Arguments
 
 
 ### description
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
 
 
 
-```
+## redeploy
+
+```python
 redeploy(force=False)
 ```
 
@@ -127,19 +133,21 @@ Bundle up the definition properties and update the service.
 To be implemented by subclasses.
 
 
-## Arguments
+### Arguments
 
 
 ### force
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
 
 
 
-```
+## version
+
+```python
 version(version)
 ```
 
@@ -149,12 +157,12 @@ version(version)
 Set the service version.
 
 
-## Arguments
+### Arguments
 
 
 ### version
 
 
-## Returns
+### Returns
 
 Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.

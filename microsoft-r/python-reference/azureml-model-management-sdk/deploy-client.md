@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "DeployClient: Deployment Client" 
+title: "DeployClient: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/15/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# Deployment Clients
+# DeployClient
 
 
 ## Class DeployClient
@@ -86,7 +86,7 @@ mls_client = DeployClient(host, use=use, auth=ctx)
 Create a new Deployment Client.
 
 
-## Arguments
+### Arguments
 
 
 ### host
