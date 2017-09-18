@@ -523,6 +523,53 @@
         href: python-reference/azureml-model-management-sdk/batch.md
       - name: BatchResponse
         href: python-reference/azureml-model-management-sdk/batch-response.md
+    - name: microsoftml
+      href: python-reference/microsoftml/microsoftml-package.md
+      items:
+      - name: categorical
+        href: python-reference/microsoftml/categorical.md
+      - name: categorical_hash
+        href: python-reference/microsoftml/categorical-hash.md
+      - name: concat
+        href: python-reference/microsoftml/concat.md
+      - name: 'count_select '
+        href: python-reference/microsoftml/count-select.md
+      - name: drop_columns
+        href: python-reference/microsoftml/drop-columns.md
+      - name: extract_pixels
+        href: python-reference/microsoftml/extract-pixels.md
+      - name: featurize_image
+        href: python-reference/microsoftml/featurize-image.md
+      - name: featurize_text
+        href: python-reference/microsoftml/featurize-text.md
+      - name: get_sentiment
+        href: python-reference/microsoftml/get-sentiment.md
+      - name: load_image
+        href: python-reference/microsoftml/load-image.md
+      - name: loss functions
+        href: python-reference/microsoftml/rx-fast-linear.md
+      - name: mutualinformation_select
+        href: python-reference/microsoftml/mutualinformation-select.md
+      - name: resize_image
+        href: python-reference/microsoftml/resize-image.md
+      - name: rx_fast_forest
+        href: python-reference/microsoftml/rx-fast-forest.md
+      - name: rx_fast_linear
+        href: python-reference/microsoftml/rx-fast-linear.md
+      - name: rx_fast_trees
+        href: python-reference/microsoftml/rx-fast-trees.md
+      - name: rx_featurize
+        href: python-reference/microsoftml/rx-featurize.md
+      - name: rx_logistic_regression
+        href: python-reference/microsoftml/rx-logistic-regression.md
+      - name: rx_neural_network
+        href: python-reference/microsoftml/rx-neural-network.md
+      - name: rx_oneclass_svm
+        href: python-reference/microsoftml/rx-oneclass-svm.md
+      - name: rx_predict
+        href: python-reference/microsoftml/rx-predict.md
+      - name: select_columns
+        href: python-reference/microsoftml/select-columns.md        
     - name: revoscalepy
       href: python-reference/revoscalepy/revoscalepy-package.md
       items:
@@ -668,53 +715,6 @@
         href: python-reference/revoscalepy/rx-write-object.md
       - name: RxXdfData
         href: python-reference/revoscalepy/RxXdfData.md
-    - name: microsoftml
-      href: python-reference/microsoftml/microsoftml-package.md
-      items:
-      - name: categorical
-        href: python-reference/microsoftml/categorical.md
-      - name: categorical_hash
-        href: python-reference/microsoftml/categorical-hash.md
-      - name: concat
-        href: python-reference/microsoftml/concat.md
-      - name: 'count_select '
-        href: python-reference/microsoftml/count-select.md
-      - name: drop_columns
-        href: python-reference/microsoftml/drop-columns.md
-      - name: extract_pixels
-        href: python-reference/microsoftml/extract-pixels.md
-      - name: featurize_image
-        href: python-reference/microsoftml/featurize-image.md
-      - name: featurize_text
-        href: python-reference/microsoftml/featurize-text.md
-      - name: get_sentiment
-        href: python-reference/microsoftml/get-sentiment.md
-      - name: load_image
-        href: python-reference/microsoftml/load-image.md
-      - name: loss functions
-        href: python-reference/microsoftml/rx-fast-linear.md
-      - name: mutualinformation_select
-        href: python-reference/microsoftml/mutualinformation-select.md
-      - name: resize_image
-        href: python-reference/microsoftml/resize-image.md
-      - name: rx_fast_forest
-        href: python-reference/microsoftml/rx-fast-forest.md
-      - name: rx_fast_linear
-        href: python-reference/microsoftml/rx-fast-linear.md
-      - name: rx_fast_trees
-        href: python-reference/microsoftml/rx-fast-trees.md
-      - name: rx_featurize
-        href: python-reference/microsoftml/rx-featurize.md
-      - name: rx_logistic_regression
-        href: python-reference/microsoftml/rx-logistic-regression.md
-      - name: rx_neural_network
-        href: python-reference/microsoftml/rx-neural-network.md
-      - name: rx_oneclass_svm
-        href: python-reference/microsoftml/rx-oneclass-svm.md
-      - name: rx_predict
-        href: python-reference/microsoftml/rx-predict.md
-      - name: select_columns
-        href: python-reference/microsoftml/select-columns.md
   - name: R packages
     href: r-reference/introducing-r-server-r-package-reference.md
     items:
@@ -853,6 +853,8 @@
         href: r-reference/olapr/olapconnection.md
       - name: Query
         href: r-reference/olapr/query.md
+    - name: RevoIOQ
+      href: r-reference/revoioq.md
     - name: RevoPemaR
       href: r-reference/revopemar/pemar.md
       items:
