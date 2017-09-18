@@ -1,7 +1,7 @@
 ---
 # required metadata
-title: "How to install Machine Learning Server | Microsoft Docs"
-description: "How to install Machine Learning Server."
+title: "How to install earlier versions of Microsoft R Server | Microsoft Docs"
+description: "How to install Microsoft R Server 9.1, 9.0.1, 8.0.5, and 8.0."
 keywords: ""
 author: "HeidiSteen"
 author: "j-martens"
@@ -22,19 +22,11 @@ ms.technology: "r-server"
 
 ---
 
-# How to install Machine Learning Server
+# Installation guides for earlier releases
 
-You can install Machine Learning Server on a number of platforms. There are several add-ons and tools you can also use.
+This section provides links to installation documentation for R Server 9.1 and earlier. For Machine Learning Server installation, see [How to install and configure Machine Learning Server](machine-learning-server-install.md).
 
-## Installation Guides 
-
-+ [Supported platforms](r-server-install-supported-platforms.md)
-+ [Install for Windows](machine-learning-server-windows-install.md)
-+ [Install for Linux](machine-learning-server-linux-install.md)
-+ [Install for Hadoop](machine-learning-server-hadoop-install.md)
-+ [Install for Cloudera](machine-learning-server-cloudera-install.md)
-
-## Previous versions
+## 9.1 release
 
 + [9.1 for Windows](r-server-install-windows.md)
 + [9.1 for Linux](r-server-install-linux-server.md)
@@ -42,3 +34,22 @@ You can install Machine Learning Server on a number of platforms. There are seve
 + [9.1 for Cloudera](r-server-install-cloudera.md)
 + [9.1 for Teradata Server](r-server-install-teradata-server.md)
 + [9.1 for Teradata Client](r-server-install-teradata-client.md)
+
+## 9.0.1
+
++ [9.0.1 - Windows](r-server-install-windows.md)
++ [9.0.1 - Install Linux](r-server-install-linux-server-901.md)
++ [9.0.1 - Install Hadoop](r-server-install-hadoop-901.md)
++ [9.0.1 - Install Cloudera](r-server-install-cloudera-901.md)
+
+## 8.0.5
+
++ [8.0.5 - Windows](r-server-install-windows-800.md)
++ [8.0.5 - Install Linux](r-server-install-linux-server-805.md)
++ [8.0.5 - Install Hadoop](r-server-install-hadoop-805.md)
+
+## 8.0
+
++ [8.0 - Windows](r-server-install-windows-800.md)
++ [8.0 - Install Linux](r-server-install-linux-server-800.md)  
++ [8.0 - Install Hadoop](r-server-install-hadoop-800.md)

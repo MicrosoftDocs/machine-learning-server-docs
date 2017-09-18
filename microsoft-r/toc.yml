@@ -109,6 +109,7 @@
     - name: Python interpreter & libraries
       href: install/python-libraries-interpreter.md
   - name: R Server 9.1 or earlier
+    href: install/r-server-install.md
     items:
     - name: Prior feature announcements
       href: whats-new-in-r-server.md
@@ -220,9 +221,10 @@
   - name: Python
     href: python/python-samples.md
     items:
-    - name: R samples for MicrosoftML
+    - name: Python samples for MicrosoftML
       href: python/samples-microsoftml-python.md
   - name: R
+    href: r/r-samples.md
     items:
     - name: Sample data in RevoScaleR
       href: r/sample-built-in-data.md

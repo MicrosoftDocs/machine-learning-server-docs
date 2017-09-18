@@ -6,7 +6,7 @@ description: "Function help reference for the microsoftml python package of SQL 
 keywords: "microsoftml API, API" 
 author: "bradsev" 
 manager: "cgronlun" 
-ms.date: "09/22/2017" 
+ms.date: "09/25/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -31,7 +31,7 @@ The **microsoftml** module is a collection of Python functions used in machine l
 | Package details | |
 |--------|-|
 | Version: |  1.3.4 |
-| Supported on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Supported on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 ## How to use microsoftml
