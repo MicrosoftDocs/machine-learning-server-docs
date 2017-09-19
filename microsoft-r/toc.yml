@@ -197,7 +197,7 @@
   - name: Python
     items:
     - name: PySpark and revoscalepy interoperability
-      href: python/quickstart-revoscalepy-pyspark.md
+      href: python/tutorial-revoscalepy-pyspark.md
   - name: R
     href: r/tutorial-introduction.md
     items:

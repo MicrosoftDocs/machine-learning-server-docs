@@ -39,7 +39,7 @@ The **revoscalepy** module is a collection of Python functions used for analyzin
 
 The **revoscalepy** module is installed as part of Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules.
 
-The **revoscalepy** module runs locally on all platforms, and remotely in a [RxSpark](RxSpark.md) or RxInSQLServer compute context. 
+The **revoscalepy** module runs locally on all platforms, and remotely in a [RxSpark](RxSpark.md) or RxInSQLServer compute context. For a review of common tasks, see [How to use revoscalepy with Spark](../../python/how-to-revoscalepy.md).
 
 ### In a local compute context
 
@@ -176,7 +176,7 @@ In an [RxSpark](RxSpark.md) context, job management is built in. You only need j
 
 For Machine Learning Server, try a quickstart as an introduction to **revoscalepy**:
 
-+ [revoscalepy and PySpark interoperability](../../python/quickstart-revoscalepy-pyspark.md) 
++ [revoscalepy and PySpark interoperability](../../python/tutorial-revoscalepy-pyspark.md) 
 
 For SQL Server, add both Python modules to your computer by running setup: 
 

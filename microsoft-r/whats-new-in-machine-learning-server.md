@@ -44,7 +44,7 @@ Together, the libraries provide full-spectrum data mining: data transformation a
 
  Originally introduced in SQL Server 2017, this library is extended in Machine Learning Server to support a remote compute context for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with Python functions that run jobs in parallel across multiple nodes. This [tutorial](python/quickstart-revoscalepy-linear-regression-model.md) gets you started.
 
-+ [revoscalepy and pyspark interoperability](python/quickstart-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSpark.md).
++ [revoscalepy and pyspark interoperability](python/tutorial-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSpark.md).
 
 + [Pre-trained models](install/microsoftml-install-pretrained-models.md) for image classification and sentiment detection articulated in Python.
 
