@@ -196,7 +196,7 @@
   - name: Python
     items:
     - name: Create a model using revoscalepy
-      href: python/quickstart-revoscalepy-model.md
+      href: python/quickstart-revoscalepy-linear-regression-model.md
   - name: R
     href: r/tutorial-introduction.md
     items:

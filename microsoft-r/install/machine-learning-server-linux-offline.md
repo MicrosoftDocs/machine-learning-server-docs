@@ -237,6 +237,7 @@ To quit the program, type `q()` at the command line with no arguments.
 2. Run a revosclapy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
 
     ~~~~
+    import os
     import revoscalepy 
     sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
     ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))

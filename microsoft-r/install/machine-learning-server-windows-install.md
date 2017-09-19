@@ -126,6 +126,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
 5. Paste in the following revoscalepy script to return summary statistics from the built-in AirlineDemo demo data:
 
     ~~~~
+    import os
     import revoscalepy 
     sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
     ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))

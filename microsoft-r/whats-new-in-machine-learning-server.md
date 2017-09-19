@@ -40,7 +40,9 @@ Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-m
 
 Together, the libraries provide full-spectrum data mining: data transformation and manipulation, analysis and visualization, model management. Machine learning algorithms, as well as pre-trained models provided by Microsoft, are now in Python. 
 
-+ [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) is a library provided by Microsoft to support distributed computing, remote compute contexts, and high-performance algorithms for Python, similar to RevoScaleR. Originally introduced in SQL Server 2017, it is extended in Machine Learning Server for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with Python functions that run jobs in parallel across multiple nodes.
++ [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) is a library provided by Microsoft to support distributed computing, local compute context, remote compute context for SQL Server and Spark, and high-performance algorithms for Python, similar to RevoScaleR. 
+
+ Originally introduced in SQL Server 2017, this library is extended in Machine Learning Server to support a remote compute context for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with Python functions that run jobs in parallel across multiple nodes. This [tutorial](python/quickstart-revoscalepy-linear-regression-model.md) gets you started.
 
 + [revoscalepy and pyspark interoperability](python/quickstart-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSpark.md).
 
@@ -61,7 +63,7 @@ R function libraries are built on [Microsoft R Open (MRO)](https://mran.microsof
 
 + [R realtime model scoring](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime) is now also supported on Linux.
 
-The last several releases of R Server added substantial capability for R developers. To review recent additions to R support, see [feature announcements](whats-new-in-r-server.md) for previous versions.
+The last several releases of R Server added substantial capability for R developers. To review recent additions to R functionality, see [feature announcements](whats-new-in-r-server.md) for previous versions.
 
 ## Configuration
 
