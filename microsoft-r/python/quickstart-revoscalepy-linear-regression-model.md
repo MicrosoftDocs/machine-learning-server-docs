@@ -43,28 +43,32 @@ The revoscalepy package for Python contains objects, transformations, and algori
 
 ## Import libraries and functions
 
-Paste in the following statements:
+Paste in the following statements. In the Python shell, you get better results if you paste statements individually.
 
 ```
+import revoscalepy
+import os
+import pandas
+
 from revoscalepy import RxComputeContext, RxXdfData
 from revoscalepy import rx_lin_mod, rx_predict, rx_summary
 from revoscalepy import RxOptions, rx_import
 
 from pandas import Categorical
-import os
+
 ```
 
 ## Create a data source object
 
 The data is retrieved locally from sample .xdf files included in Machine Learning Server. In this step, set the file path and then create a data source object to load the data. The sample data provides airline delays over a given time period, for multiple airlines.
 
-    sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
+    sample_data_path = RxOptions.get_option("sampleDataDir")
 
-    data_source = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+    data_source = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
 
-## Create a linear regression models
+## Create a linear regression model
 
-You can model the relationship between dependent and independent variables. In this step, the duration of a delay is captured for each day of the week. If the variables are independent, we should see a straight line.
+You can model the relationship between dependent and independent variables. In this step, the duration of a delay is captured for each day of the week. If we plotted this dadta, and the variables are independent, we should see a straight line.
 
     linmod_local = revoscalepy.rx_lin_mod("ArrDelay ~ DayOfWeek", data = data_source)
 
@@ -76,7 +80,7 @@ Using a prediction function, you can predict the likelihood of a delay for each 
 
 ## Summarize data
 
-In this last step, lets print a summary of the output to get statistical descriptions, 
+In this last step, extract summary statistics from the sample dataset and then print the output to the console. The rx_summary function returns mean, standard deviation, and min-max values.
 
     summary = revoscalepy.rx_summary("ArrDelay ~ DayOfWeek", data = data_source)
 
