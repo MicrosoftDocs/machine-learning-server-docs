@@ -34,18 +34,35 @@ This article introduces the revoscalepy Python functions in a **revoscalepy** pa
 
 When you set the [compute context](concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue.
 
+> [!Note]
+> For installation instructions, see [Install Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md).
+
 ## Set a Spark compute context and manage connections
 
-what does a local compute context mean if the node is a data node within a cluster?
+When you use an IDE to connect to Machine Learning Server in a cluster, the connection should be to the server instance on the edge node. 
 
+**Local compute context on Spark**
+
+By default, the local compute context is the computing environment of the edge node.
+
+**Remote compute context on Spark**
+
+From the edge node, you can push computations to the data layer by creating a remote Spark compute context. In this context, execution is on all data nodes. In Machine Learning Server, revoscalepy includes support for remote compute context on Spark (2.0-2.4).
+
+The following example shows how to connect to the edge node, set a remote compute context to clustered data nodes, switch back to a local compute context, and disconnect from the server.
+
+~~~
 + rxSparkConnect, Disconnect, RxSetComputeContext
+~~~
+
+As part of execution in Spark, your data source must be a format that Spark understands, such as text, Hive, Orc, and Parquet. You can also create and consume .xdf files, a data file format native to Machine Learning Server, accessible in Python and R script.
 
 ## Specify a data source and location
 
 Data source objects provided by revoscalepy in a Spark compute context include [RxTextData](../python-reference/revoscalepy/rxtextdata.md) [RxXdfData](../python-reference/revoscalepy/rxxdfdata.md), and the [RxSparkData](../python-reference/revoscalepy/rxSparkdata.md) with derivatives for RxHiveData, RxOrcData, RxParquetData and RxSparkDataFrame.
 
-
 ### Create a data source
+
 The following example illustrates an Xdf data source object that pulls data from a local sample directory created when you install Machine Learning Server. The "sampleDataDir" argument is a reference to the sampleDataDir folder, known to revoscalepy.
 
 ```python
@@ -73,7 +90,7 @@ airlinedata.head()
 
 ## Summarize data
 
-To quickly understand the fundamental characteristics of your data, use the **rx_summary** function to return basic statistical descriptors. Mean, standard deviation, and min-max values. A count of total observations, missing observations, and valid observations is included.
+To quickly understand fundamental characteristics of your data, use the **rx_summary** function to return basic statistical descriptors. Mean, standard deviation, and min-max values. A count of total observations, missing observations, and valid observations is included.
 
 A minimum specification of the [rx_summmary](../python-reference/revoscalepy/rx-summary.md) function consists of a valid data source object and a formula giving the fields to summarize.
 

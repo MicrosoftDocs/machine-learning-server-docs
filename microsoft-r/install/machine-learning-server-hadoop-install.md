@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Hadoop
 
-On a Hadoop cluster, Machine Learning Server must be installed on all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes.
+On a Hadoop cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes only.
 
 Machine Learning Server is engineered for the following architecture:
 
@@ -80,7 +80,7 @@ We recommend running the [full setup package](machine-learning-server-linux-inst
 
 **Approach 2: Manual steps for partial installation**
 
-Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes. Be prepared to do more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Unexpected problems are more likely. 
+Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Unexpected problems are more likely if you leave some packages out. 
 
 1. Install as root: `sudo su`
 
@@ -109,7 +109,11 @@ Repeat this procedure on remaining nodes.
 
 ## Edge node installation
 
-[Operationalization](../operationalize/concept-operationalize-deploy-consume.md) features relevant to Hadoop include remote interactive sessions and the ability to deploy and consume compiled script as a Web service. To use these features in Hadoop, install the packages providing operationalization functionality on an edge node. Operationalization does not support Yarn queues and cannot run in a distributed manner.
+Machine Learning Server is required on the edge node. You should run [full setup](machine-learning-server-linux-install.md).
+
+Full setup gives you [operationalization](../operationalize/concept-operationalize-deploy-consume.md) features that enable additional ways of deploying and consuming script. For example, web services providing compiled code, or running script in real time, executes on the edge node. 
+
+You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.
 
 <a name="package-list"></a>
 

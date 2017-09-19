@@ -26,7 +26,7 @@ ms.technology: "r-server"
 
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.2.1 on a Cloudera distribution of Apache Hadoop (CDH). 
 
-Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server is installed on all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
+Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server is installed on the edge node and all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
 
 If your operating system is not 7.0, or if you want to add [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes, use the regular [Hadoop installation instuctions](machine-learning-server-hadoop-install.md) instead.
 
@@ -39,7 +39,7 @@ This section explains how to obtain the parcel generation script and simulate pa
 A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Visual Studio Subscriptions](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) or [Volume licensing](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409):
 
 + Search for "SQL Server" to list features licensed through SQL Server. For licensing purposes, Machine Learning Server is a supplemental feature to SQL Server.
-+ Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp/**, on one of the data nodes.
++ Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp/**, on one of the nodes.
 
 ### Unpack the distribution
 
@@ -138,7 +138,7 @@ The Custom Service Descriptor (CSD) enables monitoring and administration from w
 
 2. On the left, find and select **MLServer-9.2.1** in the parcel list. If you don't see it, check the parcel-repo folder. 
 
-3. On the right, in the parcel details page, **MLServer-9.2.1** should have a status of *Downloaded* with an option to *Distribute*. Click **Distribute** to roll out Machine Learning Server on available data nodes.
+3. On the right, in the parcel details page, **MLServer-9.2.1** should have a status of *Downloaded* with an option to *Distribute*. Click **Distribute** to roll out Machine Learning Server on available nodes.
 
 4. Status changes to *distributed*. Click **Activate** on the button to make Machine Learning Server operational in the cluster.
 
