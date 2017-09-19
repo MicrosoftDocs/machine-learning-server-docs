@@ -83,6 +83,7 @@ We recommend running the [full setup package](machine-learning-server-linux-inst
 Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes. Be prepared to do more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Unexpected problems are more likely. 
 
 1. Install as root: `sudo su`
+
 2. Refer to the [annotated package list](#package-list) and download individual packages from the package repo corresponding to your platform:
 
    + [https://packages.microsoft.com/ubuntu/14.04/prod/](https://packages.microsoft.com/ubuntu/14.04/prod/)
@@ -91,8 +92,11 @@ Alternatively, you can install a subset of packages. You might do this if you do
    + [https://packages.microsoft.com/sles/11/prod/](https://packages.microsoft.com/sles/11/prod/)
 
 3. Make a directory to contain your packages: `hadoop fs -mkdir /tmp/mlsdatanode`
-4. Copy the packages into it: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
+ 
+4. Copy the packages: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
+
 5. Switch to the directory: `cd /tmp/mlsdatanode`
+
 6. Install the packages using the tool and syntax for your platform:
 
     + On Ubunutu online: `apt-get install *.rpm`
