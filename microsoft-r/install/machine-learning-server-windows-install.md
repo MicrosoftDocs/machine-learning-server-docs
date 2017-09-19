@@ -76,15 +76,18 @@ You can get the zipped installation file from one of the following download site
 The setup wizard installs, upgrades, and uninstalls all in one workflow.
 
 1. In the Downloads folder, right-click to extract the contents of zipped executable.
-2. Double-click **ServerSetup.exe** to start the wizard.
-3. In Configure installation, choose components to install:
 
-    + Core components are listed for visiblity, but are not configurable. These components are required.
-    + **R** adds the R libraries. *If you clear the checkbox for R on a computer that has an existing R Server installation, Setup uninstalls your existing R Server instance.*  
+2. Double-click **ServerSetup.exe** to start the wizard.
+
+3. In Configure installation, choose components to install. *If you clear the checkbox for R on a computer that has an existing R Server installation, Setup uninstalls your existing R Server instance.* 
+
+    + **Core components** are listed for visibility, but are not configurable. Core components are required.
+    + **R** adds the R libraries.  
     + **Python** adds the Python libraries. 
     + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection. You can install the models with R or Python, but not as a standalone component.
 
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open and Anaconda.
+
 5. At the end of the wizard, click **Install** to run setup.
 
 > [!NOTE]
