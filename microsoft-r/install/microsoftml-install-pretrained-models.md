@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to install and deploy pre-trained models with MicrosoftML (Machine Learning Server) | Microsoft Docs"
+title: "Install and deploy pre-trained models with MicrosoftML - Machine Learning Server | Microsoft Docs"
 keywords: ""
 author: "bradsev"
 ms.author: "bradsev"
