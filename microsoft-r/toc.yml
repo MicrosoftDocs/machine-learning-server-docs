@@ -195,8 +195,8 @@
   items:
   - name: Python
     items:
-    - name: Create a logistic regression model (Spark)
-      href: python/tutorial-revoscalepy-logistic-regression.md
+    - name: Create a model using revoscalepy
+      href: python/quickstart-revoscalepy-model.md
   - name: R
     href: r/tutorial-introduction.md
     items:
