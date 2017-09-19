@@ -72,37 +72,27 @@ After installation completes, software can be found at the following paths:
 
 ## Data node installation
 
-The recommendation is to run the [full setup package](machine-learning-server-linux-install.md) on every node. This approach is fast because it installs the full collection of packages, including the Hadoop package (microsoft-mlserver-hadoop-9.2.1).
+We recommend running the [full setup package](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do the bulk of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.2.1) and setting it up for activation.
 
+Alternatively, you can manually install a subset of packages. You might do this if you do not want operationalization on your data nodes.
 
+You can start on any data node, installing sequentially, or install on multiple data nodes concurrently. 
 
-
- 
-
-apt-get install microsoft-mlserver-all-9.2.1
-
-
-
- which automatically detects Hadoop and adds the g.	 package:
-
-
-
-You can start on any data node, installing sequentially, or install on multiple data nodes concurrently. By default, `wget` and `rpm` use the local working directory, but lets assume `/tmp/mlserver`.
+By default, `wget` and `rpm` use the local working directory, but lets assume `/tmp/mlserver`.
 
 1. Install as root: `sudo su`
 2. Set the location of the package repo:
     a. On Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb`
     b. On CentOS and RHEL 7: `rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm`
-3. Verify the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
-4. Make a directory for components that run only on data nodes: `hadoop fs -mkdir /tmp/mlsdatanode`
-5. Copy all packages into that directory: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
-6. Delete the ones you cannot use. Refer to the [annotated package list](#package-list) for details.
-7. Change directory to the directory: `cd /tmp/mlsdatanode`
-8. Install the subset of packages in the directory:
+3. Make a directory for components that run only on data nodes: `hadoop fs -mkdir /tmp/mlsdatanode`
+4. Copy the packages you want into that directory: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
+5. Delete the ones you cannot use. Refer to the [annotated package list](#package-list) for details.
+6. Change directory to the directory: `cd /tmp/mlsdatanode`
+7. Install the subset of packages in the directory:
     a. On Ubunutu online: `apt-get install *.rpm`
     b. On Ubunutu offline: `dpkg -I *.deb`
     c. On CentOS and RHEL: `yum install *.rpm` 
-9. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+8. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 Repeat this procedure on remaining nodes.
 
@@ -120,11 +110,11 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-packages-r-9.2.1        ** core
  microsoft-mlserver-python-9.2.1            ** core
  microsoft-mlserver-packages-py-9.2.1       ** core
- microsoft-mlserver-mml-r-9.2.1             ** micorsoftml (optional)
- microsoft-mlserver-mml-py-9.2.1            ** micorsoftml (optional)
+ microsoft-mlserver-hadoop-9.2.1            ** hadoop (required for hadoop)
+ microsoft-mlserver-mml-r-9.2.1             ** microsoftml (optional)
+ microsoft-mlserver-mml-py-9.2.1            ** microsoftml (optional)
  microsoft-mlserver-mlm-r-9.2.1             ** pre-trained models (requires mml)
  microsoft-mlserver-mlm-py-9.2.1            ** pre-trained models (requires mml)
- microsoft-mlserver-hadoop-9.2.1            ** hadoop (required for hadoop)
  microsoft-mlserver-adminutil-9.2           ** operationalization (optional)
  microsoft-mlserver-computenode-9.2         ** operationalization (optional)
  microsoft-mlserver-config-rserve-9.2       ** operationalization (optional) 
@@ -149,7 +139,7 @@ Microsoft .NET Core 1.1, used for operationalization, must be added to Ubuntu:
  dotnet-sharedframework-microsoft.netcore.app-1.1.2 
 ```
 
-Additional open source packages are installed if a package is required but not found on the system. This list varies for each installation. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.
+Additional open source packages could be required. The potential list of packages varies for each computer. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.
 
 ## Next steps
 

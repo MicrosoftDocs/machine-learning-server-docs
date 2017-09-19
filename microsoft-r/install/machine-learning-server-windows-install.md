@@ -101,7 +101,7 @@ If there were errors during Setup, check the log files located in the system tem
 
 <a name="connect-validate"></a>
 
-### 4. Connect and validate
+## Connect and validate
 
 Machine Learning Server executes on demand as R Server or as a Python application. As a verification step, connect to each application and run a script or function.
 
@@ -133,7 +133,7 @@ summary = revoscalepy.rx_summary("ArrDelay+DayOfWeek", ds)
 print(summary)
 ~~~~
 
-### 5. Enable server to host analytic web services and accept remote connections
+Enable server to host analytic web services and accept remote connections
 
 Machine Learning Server can be used as-is with an R IDE on the same box, but you can also [enable the server to host web services and to allow remote server connections](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
