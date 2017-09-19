@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "How to install and deploy pre-trained models with MicrosoftML"
+title: "How to install and deploy pre-trained models with MicrosoftML (Machine Learning Server) | Microsoft Docs"
 keywords: ""
 author: "bradsev"
 ms.author: "bradsev"
 manager: "cgronlun"
-ms.date: "09/22/2017"
+ms.date: "09/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -58,7 +58,7 @@ Pre-trained models are installed through setup as an optional component of Machi
 
 3. After setup completes, verify the models are on your computer. Pre-trained models are local, added to the MicrosoftML and microsftml library, respectively, when you run setup. The files are \mxlibs\<modelname>_updated.model for Python and \mxlibs\x64\<modelname>_updated.model for R.
 
-For samples demonstrating use of the pre-trained models, see [Samples for MicrosoftML](../r/sample-microsoftml.md).
+For samples demonstrating use of the pre-trained models, see [R Samples for MicrosoftML](../r/sample-microsoftml.md) and [Python Samples for MicrosoftML](../python/sample-microsoftml.md).
 
 ## Next steps
 
