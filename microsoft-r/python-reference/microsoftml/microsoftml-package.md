@@ -48,6 +48,7 @@ This section lists the functions by category to give you an idea of how each one
 
 | Function | Description |
 |----------|-------------|
+|[microsoftml.rx_ensemble](rx-ensemble.md) | Train an ensemble of models |
 |[microsoftml.rx_fast_forest](rx-fast-forest.md)  | Random Forest |
 |[microsoftml.rx_fast_linear](rx-fast-linear.md) | Linear Model with Stochastic Dual Coordinate Ascent |
 |[microsoftml.rx_fast_trees](rx-fast-trees.md) | Boosted Trees |

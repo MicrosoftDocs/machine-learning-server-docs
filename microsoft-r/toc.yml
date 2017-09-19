@@ -554,6 +554,8 @@
         href: python-reference/microsoftml/mutualinformation-select.md
       - name: resize_image
         href: python-reference/microsoftml/resize-image.md
+      - name: rx_ensemble
+        href: python-reference/microsoftml/rx-ensemble.md
       - name: rx_fast_forest
         href: python-reference/microsoftml/rx-fast-forest.md
       - name: rx_fast_linear
