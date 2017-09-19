@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "How to use RevoScaleR with Apache Spark | Microsoft Docs"
-description: "Machine Learning Server with Apache Spark, RevoScaleR features and components overview."
+title: "How to use RevoScaleR with Apache Spark - Machine Learning Server | Microsoft Docs"
+description: "Get started with RevoScaleR and Spark on Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "09/11/2017"
+ms.date: "09/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -23,55 +23,63 @@ ms.technology: "r-server"
 
 ---
 
-# How to use RevoScaleR with Spark
+# How to use RevoScaleR in a Spark compute context
 
 ## Overview
 
-This article introduces the ScaleR functions in a **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. ScaleR functions offer scalable and extremely high-performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. Spark is an open source big data processing framework on Hadoop. This guide focuses on using ScaleR’s big data capabilities in a Hadoop environment with Spark.
+This article introduces the RevoScaleR functions in a **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. 
 
-While this article is not a Hadoop or Spark tutorial, no prior experience in Hadoop is required to complete the tutorial. If you can connect to your Hadoop cluster, this guide walks you through the rest.
++ Hadoop provides a distributed file system with HDFS.
++ Yarn provides the job scheduling infrastructure.
++ Spark provides the processing framework. 
++ RevoScaleR provides scalable and high-performance data management, analysis, and visualization functions. 
 
-**Data Sources and Functions Supported in Spark**
+When you set the [compute context](concept-what-is-compute-context.md) to [RxSpark](../r-reference/revoscaler/rxSpark.md), RevoScaleR functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue.
 
-The **RevoScaleR** package provides a set of custom data analysis functions. Many functions are platform-agnostic; others are exclusive to the computing context, leveraging platform-specific capabilities for tasks like file management.
+> [!Note]
+> For a comprehensive list of functions for the Spark or Hadoop compute contexts, see [RevoScaleR Functions for Hadoop](../r-reference/revoscaler/revoscaler-hadoop-functions.md). For a list of which functions support distributed computing, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
+>
 
-Analyzing data using ScaleR functions requires three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
+### Typical workflow
 
-This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [ScaleR Functions for Hadoop](../r-reference/revoscaler/revoscaler-hadoop-functions.md).
+Analyzing data using RevoScaleR functions requires three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
 
-**Compute Context**
+This section briefly summarizes each aspect. 
 
-The Spark compute context is established through `RxSpark` or `rxSparkConnect()` to create the Spark compute context and use `rxSparkDisconnect()` to return to a local compute context. `rxSparkConnect()` maintains a persistent Spark session and results in more efficient execution of ScaleR functions for this context.
+**Spark compute context**
+
+The Spark compute context is established through `RxSpark` or `rxSparkConnect()` to create the Spark compute context and use `rxSparkDisconnect()` to return to a local compute context. `rxSparkConnect()` maintains a persistent Spark session and results in more efficient execution of RevoScaleR functions for this context.
 
 **Supported Data Sources**
 
-Data sources, of which there are four, are specified through the following functions: 
+Data sources are specified through the following functions: 
 
 |Function | Description |
 |---------|-------------|
 |`RxTextData` | A comma-delimited text data source. |
-|`RxXdfData` | Data in the XDF data file format. In ScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. |
+|`RxXdfData` | Data in the XDF data file format. In RevoScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. |
 |`RxHiveData` | Generates a Hive Data Source object.|
 |`RxParquetData` | Generates a Parquet Data Source object.|
+|`RxOrcData` | Generates an Orc Data Source object.|
 
 All of these data sources can be used with the Hadoop Distributed File System (HDFS).
 
 
 **Data Manipulation and Computations**
 
-The data manipulation and computation functions in ScaleR are appropriate for small and large datasets, but are useful for these scenarios:
+The data manipulation and computation functions in RevoScaleR are appropriate for small and large datasets, but are useful for these scenarios:
 
-- Analyze data sets that are too large to fit in memory.
+- Analyze data sets too large to fit in memory.
 - Perform computations distributed over several cores, processors, or nodes in a cluster.
-- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
+- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data sets on a cluster of computers.
 
 **High Performance Analysis (HPA)**
 
-HPA functions in ScaleR do the heavy lifting in terms of data science. Most HPA functions are portable across multiple computing platforms, including Windows and RedHat Linux workstations and servers, and distributed computing platforms such as Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR engine in Machine Learning Server handles the distribution of the computations across cores and nodes automatically.
+HPA functions in RevoScaleR do the heavy lifting in terms of data science. Most HPA functions are portable across multiple computing platforms, including Windows and RedHat Linux workstations and servers, and distributed computing platforms such as Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR engine in Machine Learning Server handles the distribution of the computations across cores and nodes automatically.
 
-## How ScaleR distributes jobs in Spark
+## How RevoScaleR distributes jobs in Spark
 
-On Hadoop the ScaleR analysis functions go through the following steps:
+In a Spark cluster, the RevoScaleR analysis functions go through the following steps:
 
 -   A master process is initiated to run the main thread of the algorithm.
 -   The master process initiates a Spark job to make a pass through the data.
@@ -79,21 +87,20 @@ On Hadoop the ScaleR analysis functions go through the following steps:
 -   The master process examines the results. For iterative algorithms, it decides if another pass through the data is required. If so, it initiates another Spark job and repeats.
 -   When complete, the final results are computed and returned.
 
-When running on Hadoop, the ScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from ScaleR, without performing the computations within the Hadoop framework. An example can be found in [Using a Local Compute Context with HDFS Data](#bkmk_local_compute_with_hdfs).
+When running on Spark, the RevoScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from RevoScaleR, without performing the computations within the Hadoop framework. An example can be found in [Using a Local Compute Context with HDFS Data](#bkmk_local_compute_with_hdfs).
 
+## Tutorial
 
-## Tutorial steps
-
-This tutorial introduces several high-performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster and these tasks:
+This tutorial introduces several high-performance analytics features of **RevoScaleR** using data stored on HDFS and these tasks:
 
 1.  Start Revo64.
 2.  Create a compute context for Spark.
-3.  Copy a data set into the Hadoop Distributed File System.
+3.  Copy a data set into HDFS.
 4.  Create a data source.
 5.  Summarize your data.
 6.  Fit a linear model to the data.
 
-### Check versions
+### Before you start
 
 Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](../install/r-server-install-supported-platforms.md). For setup instructions, see [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md).
 
@@ -109,10 +116,7 @@ You can obtain both data sets [online](http://go.microsoft.com/fwlink/?LinkID=69
 
 ### Start Revo64
 
-Machine Learning Server for Hadoop runs on Linux. On Linux hosts in a Hadoop cluster, start an R session by typing `Revo64` at the shell prompt. 
-
-	[<username>]$ cd MRSLinux90
-	[<username> MRSLinux90]$ Revo64
+Machine Learning Server for Hadoop runs on Linux. Start an R session by typing `Revo64` at the shell prompt: $ `Revo64`
 
 ### Create a compute context
 
@@ -124,8 +128,7 @@ On a node of the Hadoop cluster (which may be an edge node), define a Spark comp
 
 	myHadoopCluster <- RxSpark()
 
->[!NOTE]
-> The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
+The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
 
 ~~~~
 	myShareDir = paste( "/var/RevoShare", Sys.info()[["user"]],
@@ -150,7 +153,7 @@ If you are running on a Hadoop cluster configured for high-availabilty, you must
 
 #### Using Machine Learning Server as a Hadoop Client
 
-If you are runningMachine Learning Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that runs **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxSpark* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly facing host name, or IP address of your Hadoop cluster’s name node or an edge node that run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
+If you are running Machine Learning Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that runs **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxSpark* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly facing host name, or IP address of your Hadoop cluster’s name node or an edge node that run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
 
 ~~~~
 	mySshUsername <- "user1"
@@ -797,7 +800,7 @@ Here are some sample R statements that output a Hive query to the local and HDFS
 
 	system('beeline -u "jdbc:hive2://.." –e "insert overwrite directory \'/your-hadoop-dir\' row format delimited fields terminated by \',\' select * from emp"')
 
-After you’ve exported the query results to a text file, it can be streamed directly as input to a ScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
+After you’ve exported the query results to a text file, it can be streamed directly as input to a RevoScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
 
 	hiveOut <-file.path(bigDataDirRoot,"myHiveData")
 	myHiveData <- RxTextData(file = hiveOut, fileSystem = hdfsFS)

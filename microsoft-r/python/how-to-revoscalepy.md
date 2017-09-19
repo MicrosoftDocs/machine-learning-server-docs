@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to: use revoscalepy for Spark applications in Machine Learning Server | Microsoft Docs "
+title: "How to use revoscalepy with Apache Spark - Machine Learning Server  | Microsoft Docs "
 description: "Learn what you can do with revoscalepy in a Spark compute context in Machine learning Server."
 keywords: ""
 author: "HeidiSteen"
@@ -23,20 +23,47 @@ ms.technology: ""
 
 ---
 
-# How to: use revoscalepy in a Spark compute context
+# How to use revoscalepy in a Spark compute context
 
-Placeholder. This article explains the generic use cases for revoscalepy: Spark compute context, data mining.
+This article introduces the revoscalepy Python functions in a **revoscalepy** package with Apache Spark (Spark) running on a Hadoop cluster. 
+
++ Hadoop provides a distributed file system with HDFS.
++ Yarn provides the job scheduling infrastructure.
++ Spark provides the processing framework. 
++ revoscalepy provides scalable and high-performance data management, analysis, and visualization Python functions. 
+
+When you set the [compute context](concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue.
 
 ## Set a Spark compute context and manage connections
 
-+ rxSparkConnect, Disconnect, RxSetComputeContent
+what does a local compute context mean if the node is a data node within a cluster?
+
++ rxSparkConnect, Disconnect, RxSetComputeContext
 
 ## Specify a data source and location
 
-+ Data source objects: RxOdbc, Text, Xdf, Parquet, Orc, Hive
-+ Make directories
-+ Import data
-+ Cache data
+Data source objects provided by revoscalepy in a Spark compute context include [RxTextData](../python-reference/revoscalepy/rxtextdata.md) [RxXdfData](../python-reference/revoscalepy/rxxdfdata.md), and the [RxSparkData](../python-reference/revoscalepy/rxSparkdata.md) with derivatives for RxHiveData, RxOrcData, RxParquetData and RxSparkDataFrame.
+
+
+### Create a data source
+The following example illustrates an Xdf data source object that pulls data from a local sample directory created when you install Machine Learning Server. The "sampleDataDir" argument is a reference to the sampleDataDir folder, known to revoscalepy.
+
+```python
+import os
+import revoscalepy
+
+sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
+d_s = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+```
+
+### Import data into a data frame
+
+Data is automatically loaded into a data frame, but you can load it explicity using the rx_import and following syntax. In mlserver-python, you can use head and tail functions, similar to R, to return the first or last part of the data set.
+
+```python
+airlinedata = rx_import(input_data = d_s)
+airlinedata.head()
+```
 
 ## Get information from revoscalepy
 
@@ -46,16 +73,26 @@ Placeholder. This article explains the generic use cases for revoscalepy: Spark 
 
 ## Summarize data
 
-+ RxSummary
+To quickly understand the fundamental characteristics of your data, use the **rx_summary** function to return basic statistical descriptors. Mean, standard deviation, and min-max values. A count of total observations, missing observations, and valid observations is included.
 
-## Define models, train, and score data
+A minimum specification of the [rx_summmary](../python-reference/revoscalepy/rx-summary.md) function consists of a valid data source object and a formula giving the fields to summarize.
+
+The formula is symbolic and typically does not contain a response variable. It should be of the form of ~ terms. 
+
++ Get the term list from a data source: `revoscalepy.rx_get_var_names(data_source)`
+
+## Define and train models, score data
 
 + Logistic regression -- link
 + Linear regression
 + Predictions
 
+## Use Spark helper functions
+
+
+
 ## See Also
 
-[microsoftml function reference](../python-reference/microsoftml/microsoftml-package.md)
-
-[revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)
++ [Python function reference](../python-reference/introducing-python-package-reference.md)
++ [microsoftml function reference](../python-reference/microsoftml/microsoftml-package.md)
++ [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)
