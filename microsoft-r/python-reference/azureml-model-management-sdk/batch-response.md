@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/18/2017" 
+ms.date: "09/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -81,7 +81,7 @@ execution(index)
 Extracts the service execution results within the batch at this
 execution *index*.
 :param index: The batch execution index.
-:returns: An execution Self [`ServiceResponse`](service-response.md#ServiceResponse).
+:returns: An execution Self [`ServiceResponse`]((service-response.md#serviceresponse).
 
 
 

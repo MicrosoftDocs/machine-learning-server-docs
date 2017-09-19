@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/18/2017" 
+ms.date: "09/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -52,7 +52,7 @@ from azureml.deploy.server import MLServer
 
 host = 'http://localhost:12800'
 ctx = ('username', 'password')
-mls_client = DeployClient(host, use='LServer, auth=ctx)
+mls_client = DeployClient(host, use='MLServer, auth=ctx)
 ```
 
 

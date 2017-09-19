@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/18/2017" 
+ms.date: "09/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -195,7 +195,7 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition.md#RealtimeDefinition) for fluent API.
+A [`RealtimeDefinition`](realtime-definition.md#realtimedefinition) for fluent API.
 
 
 
@@ -256,4 +256,4 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition.md#ServiceDefinition) for fluent API.
+A [`ServiceDefinition`](service-definition.md#servicedefinition) for fluent API.
