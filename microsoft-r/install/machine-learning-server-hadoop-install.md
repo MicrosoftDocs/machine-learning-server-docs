@@ -70,6 +70,15 @@ After installation completes, software can be found at the following paths:
 + Microsoft R Open root: `/opt/microsoft/ropen/3.4.1`
 + Executables such as Revo64 and mlserver-python are at `/usr/bin`
 
+## Edge node installation
+
+Machine Learning Server is required on the edge node. You should run [full setup](machine-learning-server-linux-install.md) to install on this node.
+
+Full setup gives you core components for both R and Python, machine learning algortims, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features only run on edge nodes and enable additional ways of deploying and consuming script. For example, you can build and deploy web services providing compiled code, or running script in real time. 
+
+> [!Note]
+>You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.
+
 ## Data node installation
 
 You can start on any data node, installing sequentially, or install on multiple data nodes concurrently. There are two approaches for installing Machine Learning Server on data nodes. 
@@ -106,14 +115,6 @@ Alternatively, you can install a subset of packages. You might do this if you do
 7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 Repeat this procedure on remaining nodes.
-
-## Edge node installation
-
-Machine Learning Server is required on the edge node. You should run [full setup](machine-learning-server-linux-install.md).
-
-Full setup gives you [operationalization](../operationalize/concept-operationalize-deploy-consume.md) features that enable additional ways of deploying and consuming script. For example, web services providing compiled code, or running script in real time, executes on the edge node. 
-
-You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.
 
 <a name="package-list"></a>
 

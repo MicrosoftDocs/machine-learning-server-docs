@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "09/07/2017"
+ms.date: "09/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -39,11 +39,11 @@ When you set the [compute context](concept-what-is-compute-context.md) to [RxSpa
 
 ## Set a Spark compute context and manage connections
 
-When you use an IDE to connect to Machine Learning Server in a cluster, the connection should be to the server instance on the edge node. 
+When you use an IDE to connect to Machine Learning Server in a Hadoop cluster, the connection should be to the server (**mlserver-python** program) running on the edge node. 
 
 **Local compute context on Spark**
 
-By default, the local compute context is the computing environment of the edge node.
+By default, the local compute context is the computing environment of the edge node. All mlserver-python code runs here unless you specify a remote compute context.
 
 **Remote compute context on Spark**
 
