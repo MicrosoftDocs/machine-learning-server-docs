@@ -51,6 +51,12 @@ Any authenticated user can retrieve a list of web services using the 'list_servi
 
 You can use arguments to return a specific web service or all labeled versions of a given web service. 
  
+```Python
+## -- Return all web services
+client.list_services()
+
+```
+
 1. If no parameter are provided, it will return a list of all services on the running server
    ```Python
    client.list_services()
