@@ -23,15 +23,13 @@ ms.technology: ""
 
 ---
 
-# Python tutorial: Create a linear regression model using revscalepy
+# Create a linear regression model using revoscalepy in Python
 
-This example demonstrates how you can create a logistic regression model in a local compute context in Machine Learning Server, using an algorithm from the revoscalepy package and built-in sample data. 
+This Python quickstart demonstrates a linear regression model on a local Machine Learning Server, using functions from the revoscalepy package and built-in sample data. 
 
-All operations are performed from a Python command line using Machine Learning Server in the default local compute context.
+All operations are performed from a Python command line using Machine Learning Server in the default local compute context. By default, operations run locally, which means that if you don't specify a different compute context, the data is fetched from the data source, and the model-fitting runs in your current Python environment.
 
-By default, operations are run locally, which means that if you don't specify a different compute context, the data will be fetched from the data source, and the model-fitting will run in your current Python environment.
-
-The revoscalepy package for Python contains objects, transformations, and algorithms similar to those provided for the [RevoScaleR package](../r-reference/revoscaler/revoscaler.md) for the R language. With revoscalepy, you can write Python script that creates a compute context, moves data between compute contexts, transforms data, and trains predictive models using popular algorithms such as logistic and linear regression, decision trees, and more.
+The [revoscalepy library for Python](../python-reference/revoscalepy/revoscalepy-package.md) contains objects, transformations, and algorithms similar to those provided for the [RevoScaleR package](../r-reference/revoscaler/revoscaler.md) for the R language. With revoscalepy, you can write Python script that creates a compute context, moves data between compute contexts, transforms data, and trains predictive models using popular algorithms such as logistic and linear regression, decision trees, and more.
 
 > [!Note]
 > For the SQL Server version of this tutorial, see [Use Python with revoscalepy to create a model (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model).
