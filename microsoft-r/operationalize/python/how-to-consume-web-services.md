@@ -24,17 +24,15 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# List, get, and consume Python web services
+# List, get, and consume web services in Python
 
 **Applies to:  Machine Learning Server**
 
-This article is for data scientists who wants to learn how to find, examine, and consume the [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server using Python. Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md). This article assumes you are proficient in Python.
+This article is for data scientists who wants to learn how to find, examine, and consume the [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server using Python. Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md). This article assumes that you are proficient in Python.
 
-After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in Python using the functions in the [azureml-model-management-sdk package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md). The azureml-model-management-sdk package is installed with Machine Learning Server.  
+After a web service has been published, any authenticated user can list, examine, and consume that web service. You can do so directly in Python using the functions in the [azureml-model-management-sdk package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md). The azureml-model-management-sdk package is installed with Machine Learning Server.  To list, examine, or consume the web service _outside_ of Python, use the [RESTful APIs](concept-api.md) that provide direct programmatic access to a service's lifecycle.
 
-To list, examine, or consume the web service outside of Python, use the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
-
-By default, web service operations are available to authenticated users. However, your administrator can also [assign role-based authorization (RBAC)](../configure-roles.md) to further control the permissions around web services. 
+By default, web service operations are available to authenticated users. However, your administrator can also assign [roles](../configure-roles.md)  (RBAC) to further control the permissions around web services. 
 
 <a name="auth"></a>
 
@@ -43,23 +41,30 @@ By default, web service operations are available to authenticated users. However
 Before you can use the web service management functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package, you must:
 + Have access to a Python-enabled instance of Machine Learning Server that was  [properly configured](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to host web services. 
 
-+ Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server](how-to-authenticate-in-python.md)."
++ Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)."
 
 <a name="list_services"></a>
 
 ## Find and list web services
 
-Any authenticated user can retrieve a list of web services using the 'list_services' function.  
+Any authenticated user can retrieve a list of web services using the 'list_services' function on the DeployClient object. 
 
-Use function arguments to return a specific web service or all labeled versions of a given web service. To check current services available on the current Machine Learning Server, call 'list_services' on the DeployClient object.
+You can use arguments to return a specific web service or all labeled versions of a given web service. 
+ 
 1. If no parameter are provided, it will return a list of all services on the running server
-   ```client.list_services()```
+   ```Python
+   client.list_services()
+   ```
 
 1. If a service name is provided, it will return a list of all versions of this service.
-   ```client.list_services('myService')```
+   ```Python
+   client.list_services('myService')
+   ```
 
 1. If a service name and a version are provided, it will return a list containing details only for this specific service
-   ```client.list_services('myService', version='v1.0')```
+   ```Python
+   client.list_services('myService', version='v1.0')
+   ```
 
 Your ability to see the code inside the web service depends on your permissions. Did you publish the web service, or if you have [the "Owner" role](../configure-roles.md):
 + If yes, then the code in the service is returned along with other metadata.
