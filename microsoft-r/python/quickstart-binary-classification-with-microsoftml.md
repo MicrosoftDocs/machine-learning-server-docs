@@ -24,17 +24,16 @@ ms.technology:
 #ms.custom: ""
 
 ---
-# Predict income using binary classification with the microsoftml Python package
+# An example of binary classification with the microsoftml Python package
 
 **Applies to: Microsoft Learning Server 9.2**
 
 ## Objective
 
-Learn how to use binary classification with using the functions in the [microsoftml package](../python-reference/microsoftml/microsoftml-package.md) that ships with Machine Learning Server.
+Learn how to use binary classification using the functions in the [microsoftml package](../python-reference/microsoftml/microsoftml-package.md) that ships with Machine Learning Server.
  Data scientists work [locally in their preferred Python IDE](../install/python-libraries-interpreter.md) and favorite version control tools to build scripts and models.  
 
-
-This example attempts to predict if someone will exceed a given income threshold using a linear model build with the [rx_fast_linear](../python-reference/microsoftml/rx_fast_linear.md) function from the [microsoftml package](../python-reference/microsoftml/microsoftml-package.md). 
+This example uses the well known breast cancer dataset. The dataset contains characteristics of cell nuclei and has a target label to indicate whether the tumor was benign (0) or malignant (1). The example builds a linear model with the [rx_fast_linear](../python-reference/microsoftml/rx_fast_linear.md) function from the [microsoftml package](../python-reference/microsoftml/microsoftml-package.md). 
 
 
 ## Time estimate
@@ -60,7 +59,7 @@ This quickstart notebook walks you through how to:
 
 You can try it yourself with the notebook. 
 
-### &#9658; [**Download the Jupyter notebook to try it out**](https://notebooks.azure.com/jmartens/libraries/pyservice17).
+### &#9658; [**Download the Jupyter notebook to try it out**]().
 
 
 
