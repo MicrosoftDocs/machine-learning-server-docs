@@ -200,12 +200,11 @@ To quit the program, type `q()` at the command line with no arguments.
 2. Run a revosclapy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
 
 ~~~~
-        import os
-        from revoscalepy import rx_summary, RxOptions, RxXdfData
-        sample_data_path = RxOptions.get_option("sampleDataDir")
-        ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
-        summary = rx_summary("ArrDelay+DayOfWeek", ds)
-        print(summary)
+import revoscalepy 
+sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
+ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+summary = revoscalepy.rx_summary("ArrDelay+DayOfWeek", ds)  
+print(summary)
 ~~~~
 
   Output from the sample dataset should look similar to the following:
@@ -249,8 +248,8 @@ An installation of Machine Learning Server includes some or all of the following
 | Component | Description |
 |-----------|-------------|
 | Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). |
-| R Server proprietary libraries and script engine | R Server packages provide libraries of functions. R Server libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Linux, the default R Server installation directory is `/opt/microsoft/mlserver/9.2.1`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
-| Python proprietary libraries | Propietary packages provide modules of class objects and static functions. Python libraries are in the `<install-directory>\lib\site-packages` folder. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. <br/><br/>On Windows, the default installation directory is `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`.  |
+| R proprietary libraries and script engine | Properietary R libraries are co-located with R base libraries. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Linux, the default R installation directory is `/opt/microsoft/mlserver/9.2.1`. <br/><br/>RevoScaleR is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. RevoScaleR also supports the ability to transfer computations to other RevoScaleRr instances on other computers and platforms through compute context instructions. |
+| Python proprietary libraries | Propietary packages provide modules of class objects and static functions. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. |
 | Anaconda 4.2 with Python 3.5.2 | An open source distribution of Python.|
 | [Admin tool](../operationalize/configure-use-admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
 | [Pre-trained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image detection. |

@@ -62,7 +62,7 @@ After files are placed, use the wizard or run setup from the command line:
 
 ## Check log files
 
-Post-installation, you can check the log files located in the system temp directory. An easy way to get there is typing `%temp%` as a Run command or search operation in Windows. If you installed all components, your log file list looks similar to this screenshot:
+If there are errors during Setup, check the log files located in the system temp directory. An easy way to get there is typing `%temp%` as a Run command or search operation in Windows. If you installed all components, your log file list looks similar to this screenshot:
 
   ![Machine Learning Server setup log files](./media/mlserver-setup-log-files.png)
 
@@ -74,23 +74,31 @@ Machine Learning Server executes on demand as R Server or as a Python applicatio
 
 **For R**
 
-R Server runs as a background process, as **Microsoft R Server Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
+R Server runs as a background process, as **Microsoft ML Server Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
 
 1. Go to C:\Program Files\Microsoft\ML Server\R_SERVER\bin\x64.
-2. Double-click Rgui.exe to start the R Console application.
+2. Double-click **Rgui.exe** to start the R Console application.
 3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
 4. Type `print(Revo.version)` to show the software version.
 5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
 **For Python**
 
-Python runs when you execute a .py script or run commands in a Python console window. Machine Learning Server for Hadoop (Spark) and SQL Server Machine Learning Server have the Python interpreters for our proprietary Python libraries. On Windows, Setup adds Anaconda 4.2 with Python 3.5. You can write Python script that executes base functionality locally. Your local script can push proprietrary Python calls to remote SQL or Spark compute contexts.
+Python runs when you execute a .py script or run commands in a Python console window.
 
 1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
-2. Double-click **Python**.
+2. Double-click **Python.exe**.
 3. At the command line, type `help()` to open interactive help.
 4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
+5. Paste in the following revoscalepy script to return summary statistics from the built-in AirlineDemo demo data:
 
+~~~~
+import revoscalepy 
+sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
+ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+summary = revoscalepy.rx_summary("ArrDelay+DayOfWeek", ds)  
+print(summary)
+~~~~
 
 ## Next steps
 

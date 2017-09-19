@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Uninstall Machine Learning Server for Windows
 
-You can re-run the Windows installer to remove Machine Learning Server for Windows. Clearing the checkbox for each option in the Configuration page removes that component from your computer. Common infrastructure components, such as .NET Core or the Analysis Services OLE DB provider, are not removed because doing so might break other applications using those components.
+You can re-run the Windows installer to remove Machine Learning Server for Windows. Clearing the checkbox for an option in the Configuration page removes that component from your computer. Redistributable components, such as the Analysis Services OLE DB provider, are not removed because doing so might break other applications using those components.
 
 If you have ServerSetup.exe in the Downloads folder, double-click the file to start it. Clear the options. Click **Install**.
 

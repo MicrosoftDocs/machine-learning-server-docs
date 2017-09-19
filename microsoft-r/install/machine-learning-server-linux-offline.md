@@ -237,12 +237,11 @@ To quit the program, type `q()` at the command line with no arguments.
 2. Run a revosclapy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
 
 ~~~~
-        import os
-        from revoscalepy import rx_summary, RxOptions, RxXdfData
-        sample_data_path = RxOptions.get_option("sampleDataDir")
-        ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
-        summary = rx_summary("ArrDelay+DayOfWeek", ds)
-        print(summary)
+import revoscalepy 
+sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
+ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+summary = revoscalepy.rx_summary("ArrDelay+DayOfWeek", ds)  
+print(summary)
 ~~~~
 
   Output from the sample dataset should look similar to the following:
