@@ -72,27 +72,30 @@ After installation completes, software can be found at the following paths:
 
 ## Data node installation
 
+You can start on any data node, installing sequentially, or install on multiple data nodes concurrently. There are two approaches for installing Machine Learning Server on data nodes. 
+
+**Package managers for full installation** 
+
 We recommend running the [full setup package](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do the bulk of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.2.1) and setting it up for activation.
 
-Alternatively, you can manually install a subset of packages. You might do this if you do not want operationalization on your data nodes.
+**Manual steps for partial installation**
 
-You can start on any data node, installing sequentially, or install on multiple data nodes concurrently. 
-
-By default, `wget` and `rpm` use the local working directory, but lets assume `/tmp/mlserver`.
+Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes. Be prepared to do more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. 
 
 1. Install as root: `sudo su`
-2. Set the location of the package repo:
-    a. On Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb`
-    b. On CentOS and RHEL 7: `rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm`
-3. Make a directory for components that run only on data nodes: `hadoop fs -mkdir /tmp/mlsdatanode`
-4. Copy the packages you want into that directory: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
-5. Delete the ones you cannot use. Refer to the [annotated package list](#package-list) for details.
-6. Change directory to the directory: `cd /tmp/mlsdatanode`
-7. Install the subset of packages in the directory:
+2. Refer to the [annotated package list](#package-list) and download individual packages from the package repo corresponding to your platform:
+    a. [https://packages.microsoft.com/ubuntu/14.04/prod/](https://packages.microsoft.com/ubuntu/14.04/prod/)
+    b. [https://packages.microsoft.com/ubuntu/16.04/prod/](https://packages.microsoft.com/ubuntu/16.04/prod/)
+    c. [https://packages.microsoft.com/rhel/7.3/prod/](https://packages.microsoft.com/rhel/7.3/prod/)
+    d. [https://packages.microsoft.com/sles/11/prod/](https://packages.microsoft.com/sles/11/prod/)
+3. Make a directory to contain your packages: `hadoop fs -mkdir /tmp/mlsdatanode`
+4. Copy the packages you downloaded into that directory: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
+5. Switch to the directory: `cd /tmp/mlsdatanode`
+6. Install the packages using the tool and syntax for your platform:
     a. On Ubunutu online: `apt-get install *.rpm`
     b. On Ubunutu offline: `dpkg -I *.deb`
     c. On CentOS and RHEL: `yum install *.rpm` 
-8. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 Repeat this procedure on remaining nodes.
 

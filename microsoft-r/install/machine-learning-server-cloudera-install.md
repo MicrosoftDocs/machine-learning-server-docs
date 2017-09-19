@@ -132,7 +132,7 @@ The Custom Service Descriptor (CSD) enables monitoring and administration from w
 
     `sudo service cloudera-scm-server restart`
 
-### Parcel distribution in cloudera Manager
+## Activate in Cloudera Manager
 
 1. In Cloudera Manager, click the parcel icon on the top right menu bar.
 
@@ -148,7 +148,7 @@ The Custom Service Descriptor (CSD) enables monitoring and administration from w
 
 You are finished with this task when status is "distributed, activated" and the next available action is *Deactivate*.
 
-### Add MLServer-9.2.1 as a service
+## Add MLServer-9.2.1 as a service
 
 1. In Cloudera Manager home page, click the down arrow by the cluster name and choose **Add Service**.
 
@@ -162,7 +162,7 @@ You are finished with this task when status is "distributed, activated" and the 
 
 Machine Learning Server should now be deployed in the cluster.
 
-## Rollback (optional)
+## Rollback a deployment
 
 You have the option of rolling back the active deployment in Cloudera Manager, perhaps to use an older version. You can have multiple versions in Cloudera, but only can be active at any given time. 
 
