@@ -91,7 +91,7 @@ Alternatively, you can install a subset of packages. You might do this if you do
    + [https://packages.microsoft.com/sles/11/prod/](https://packages.microsoft.com/sles/11/prod/)
 
 3. Make a directory to contain your packages: `hadoop fs -mkdir /tmp/mlsdatanode`
-4. Copy the packages you downloaded into that directory: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
+4. Copy the packages into it: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
 5. Switch to the directory: `cd /tmp/mlsdatanode`
 6. Install the packages using the tool and syntax for your platform:
 
@@ -118,8 +118,8 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-python-9.2.1            ** core
  microsoft-mlserver-packages-py-9.2.1       ** core
  microsoft-mlserver-hadoop-9.2.1            ** hadoop (required for hadoop)
- microsoft-mlserver-mml-r-9.2.1             ** microsoftml (optional)
- microsoft-mlserver-mml-py-9.2.1            ** microsoftml (optional)
+ microsoft-mlserver-mml-r-9.2.1             ** microsoftml for R (optional)
+ microsoft-mlserver-mml-py-9.2.1            ** microsoftml for Python (optional)
  microsoft-mlserver-mlm-r-9.2.1             ** pre-trained models (requires mml)
  microsoft-mlserver-mlm-py-9.2.1            ** pre-trained models (requires mml)
  microsoft-mlserver-adminutil-9.2           ** operationalization (optional)

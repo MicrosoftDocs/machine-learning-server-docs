@@ -263,8 +263,6 @@
       items:
       - name: Use revoscalepy on Spark
         href: python/how-to-revoscalepy.md
-      - name: Parallel processing using revoscalepy
-        href: python/how-to-revoscalepy-parallel.md
       - name: Configure Jupyter Notebooks
         href: python/how-to-revoscalepy-jupyter-nb-config.md
     - name: R
