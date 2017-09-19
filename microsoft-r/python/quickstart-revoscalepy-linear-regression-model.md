@@ -56,7 +56,7 @@ import os
 
 ## Create a data source object
 
-The data is retrieved locally from sample .xdf files included in Machine Learning Server. In this step, set the file path and then create a data source object to load the data.
+The data is retrieved locally from sample .xdf files included in Machine Learning Server. In this step, set the file path and then create a data source object to load the data. The sample data provides airline delays over a given time period, for multiple airlines.
 
     sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
 
@@ -64,21 +64,30 @@ The data is retrieved locally from sample .xdf files included in Machine Learnin
 
 ## Create a linear regression models
 
+You can model the relationship between dependent and independent variables. In this step, the duration of a delay is captured for each day of the week. If the variables are independent, we should see a straight line.
+
     linmod_local = revoscalepy.rx_lin_mod("ArrDelay ~ DayOfWeek", data = data_source)
 
-
 ## Predict delays
+
+Using a prediction function, you can predict the likelihood of a delay for each day.
 
     predict = revoscalepy.rx_predict(linmod_local, data = revoscalepy.rx_import(input_data = data_source))
 
 ## Summarize data
 
+In this last step, lets print a summary of the output to get statistical descriptions, 
+
     summary = revoscalepy.rx_summary("ArrDelay ~ DayOfWeek", data = data_source)
+
+    print(summary)
 
 
 ## Next steps
 
 The ability to switch compute context to a different machine or platform is a powerful capability. To see how this works, continue with the SQL Server version of this tutorial: [Use Python with revoscalepy to create a model (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model).
+
+You can also review [linear modeling for RevoScaleR](https://docs.microsoft.com/r-server/r/how-to-revoscaler-linear-model). The revoscalepy implementation is very similar.
 
 
 ## See Also
