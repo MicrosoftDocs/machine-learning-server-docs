@@ -68,13 +68,13 @@ You can run ServerSetup.exe from the command line with options to expose or hide
 
 The default installation adds R_SERVER and its required components: Microsoft R Open (MRO) and .NET Core used for operationalizing analytics and machine learning. The command line equivalent of a double-click invocation of ServerSetup.exe is `serversetup.exe /install /full`.
 
-A default installation includes R_SERVER and the R packages, but not PYTHON_SERVER or the pre-trained models. You must explicitly add `/python` and `/models` to an installation to add these features.
+A default installation includes R and Python, but not the pre-trained models. You must explicitly add `/models` to an installation to add this feature.
 
 ## Examples
 
 1. Run setup in unattended mode with no prompts or user interaction, to install everything. R Server is implicit. It does not have a parameter to explicitly include or exclude it. Arguments exist for Python and the pre-trained models.
 
-   `serversetup.exe /quiet /python /models`
+   `serversetup.exe /quiet /models`
 
 2. Add the [pre-trained machine learning models](microsoftml-install-pretrained-models.md) to an existing installation. You cannot install them as a standalone component. The models require R or Python. During installation, the pre-trained models are inserted into the MicrosoftML (R) and microsoftml (Python) libraries, or both if you add both languages. Once installed, you cannot incrementally remove them. Removal will require uninstall and reinstall of Python or R Server. 
 
