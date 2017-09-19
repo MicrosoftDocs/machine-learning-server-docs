@@ -26,13 +26,13 @@ ms.technology: "r-server"
 
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.2.1 on a Cloudera distribution of Apache Hadoop (CDH). 
 
-Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server is installed on all data nodes. You can use a generated parcel to distribute Machine Learning Server packages across nodes within your CDH cluster.
+Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server is installed on all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
 
 If your operating system is not 7.0, or if you want to add [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes, use the regular [Hadoop installation instuctions](machine-learning-server-hadoop-install.md) instead.
 
 ## Prepare for installation
 
-This section explains how to get the parcel generation script and simulate parcel creation.
+This section explains how to obtain the parcel generation script and simulate parcel creation.
 
 ### Download a Machine Learning Server distribution
 
@@ -49,7 +49,7 @@ A package manager installation used for Linux or Hadoop won't provide the parcel
 
 The distribution is unpacked into an **Hadoop** folder at the download location. The distribution includes the following files:
 
-| File | Description |
+| File or folder | Description |
 |------|-------------|
 |`install.sh` | Script for installing Machine Learning Server. Do not use this for a parcel install. |
 |`generate_mlserver_parcel.sh` | Script for generating a parcel used for installing Machine Learning Server on CDH. |
@@ -78,7 +78,7 @@ When the script is finished, the location of the parcel, checksum, and CSD is pr
 
 ## Flags used for parcel generation
 
-You can run parcel generator with the following flags.
+You can run parcel generator with the following flags to suppress prompts or choose components.
 
 flag | Option | Description
 -----|--------|------------
@@ -100,7 +100,7 @@ Repeat the command without **-n** parameter to create the files: `bash generate_
 
 ## Distribute parcels and CSDs
 
-This section explains how to place parcel generator script and CSD file in CDH.
+This section explains how to place parcel generator script and CSD files in CDH.
 
 ### Copy to the parcel repository
 
