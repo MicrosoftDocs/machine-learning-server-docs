@@ -195,7 +195,7 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition.md#realtimedefinition) for fluent API.
+A [`RealtimeDefinition`](realtime-definition#realtimedefinition) for fluent API.
 
 
 
@@ -256,4 +256,4 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition.md#servicedefinition) for fluent API.
+A [`ServiceDefinition`](service-definition#servicedefinition) for fluent API.

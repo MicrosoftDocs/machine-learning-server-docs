@@ -187,7 +187,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service#service) representing the
 realtime service *redeployed*.
 
 
@@ -314,7 +314,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service#service) representing the
 service *deployed*.
 
 
@@ -380,7 +380,7 @@ most recent service will be returned.
 
 ### Returns
 
-A new instance of [`Service`](service.md#service).
+A new instance of [`Service`](service#service).
 
 
 ### HttpException
@@ -518,7 +518,7 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition.md#realtimedefinition) for fluent API.
+A [`RealtimeDefinition`](realtime-definition#realtimedefinition) for fluent API.
 
 
 
@@ -583,7 +583,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service#service) representing the
 realtime service *redeployed*.
 
 
@@ -716,7 +716,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service#service) representing the
 service *deployed*.
 
 
@@ -759,4 +759,4 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition.md#servicedefinition) for fluent API.
+A [`ServiceDefinition`](service-definition#servicedefinition) for fluent API.

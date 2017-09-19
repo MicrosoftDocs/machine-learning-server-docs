@@ -38,7 +38,7 @@ azureml.deploy.operationalization.ServiceDefinition(name, op)
 
 
 
-Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition)
+Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition#operationalizationdefinition)
 
 Service class defining a service’s properties on the fluent API.
 
@@ -62,7 +62,7 @@ Set the service function name alias to call.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -86,7 +86,7 @@ A single File artifact.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -110,7 +110,7 @@ File artifacts.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -126,7 +126,7 @@ code_fn(code, init=None)
 Set the service consume function as a function.
 :param code:
 :param init:
-:returns: Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+:returns: Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -153,7 +153,7 @@ Set the service consume function as a block of python code.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition.md#servicedefinition) for fluent API.
+A [`ServiceDefinition`](service-definition#servicedefinition) for fluent API.
 
 
 
@@ -171,7 +171,7 @@ Bundle up the definition properties and publish the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -195,7 +195,7 @@ Set the service description.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -219,7 +219,7 @@ Defines inputs.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -243,7 +243,7 @@ Models.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -267,7 +267,7 @@ Objects.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -291,7 +291,7 @@ Defines utputs.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -315,7 +315,7 @@ Bundle up the definition properties and update the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
 
 
 
@@ -339,4 +339,4 @@ Set the service version.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationdefinition) for fluent API.
