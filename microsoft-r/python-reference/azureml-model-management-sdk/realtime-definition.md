@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/18/2017" 
+ms.date: "09/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -38,7 +38,7 @@ azureml.deploy.operationalization.RealtimeDefinition(name, op)
 
 
 
-Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition)
+Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition)
 
 Realtime class defining a service’s properties on the fluent API.
 
@@ -73,7 +73,7 @@ Set the service function name alias to call.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -91,7 +91,7 @@ Bundle up the definition properties and publish the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -115,7 +115,7 @@ Set the service description.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -139,7 +139,7 @@ Bundle up the definition properties and update the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -163,7 +163,7 @@ Serialized model.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -187,4 +187,4 @@ Set the service version.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#OperationalizationDefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.

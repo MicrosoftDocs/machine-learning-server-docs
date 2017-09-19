@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/18/2017" 
+ms.date: "09/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -39,17 +39,6 @@ azureml.deploy.server.service.Service(service, http_client)
 
 
 Service object from metadata.
-
-Constructor
-
-
-### Arguments
-
-
-### service
-
-
-### http_client
 
 
 
@@ -95,12 +84,45 @@ capabilities()
 
 
 
-Gets the service holding capabilities.
+Provides the following information describing the holdings of this
+service:
+
+* *api* -  The API REST endpoint. 
+
+* *name* - The service name. 
+
+* *version* - The service version. 
+
+* *published_by* - The service publishing author. 
+
+* *runtime* - The service runtime context _R|Python_. 
+
+* *description* - The service description. 
+
+* *creation_time* - The service publish timestamp. 
+
+* *snapshot_id* - The snapshot identifier this service is bound with. 
+
+* *inputs* - The input schema name/type definition. 
+
+* *outputs* - The output schema name/type definition. 
+
+* *inputs_encoded* - The input schema name/type encoded to python. 
+
+* *outputs_encoded* - The output schema name/type encoded to python. 
+
+* *artifacts* - The supported generated files. 
+
+* *operation_id* - The function `alias`. 
+
+* *swagger* - The API REST endpoint to this service’s *swagger.json*
+
+      document.
 
 
 ### Returns
 
-A dict of key/values describing the service.
+A `dict` of key/values describing the service.
 
 
 
@@ -113,7 +135,7 @@ get_batch(execution_id)
 
 
 
-Retrieve the *Batch* based on an *execution id*
+Retrieve the service batch based on an execution identifier.
 
 
 ### Arguments
@@ -121,12 +143,13 @@ Retrieve the *Batch* based on an *execution id*
 
 ### execution_id
 
-The id of the batch execution.
+The identifier of the batch execution.
 
 
 ### Returns
 
-The *Batch*.
+The [`Batch`](batch.md#Batch) represented by the given execution
+identifier.
 
 
 
@@ -158,4 +181,4 @@ swagger\(\)
 
 
 Retrieves the *swagger.json* for this service (see [http://swagger.io/](http://swagger.io/)).
-:return: The swagger document for this service.
+:returns: The swagger document for this service as a json `str`.

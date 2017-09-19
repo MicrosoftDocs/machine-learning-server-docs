@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/18/2017" 
+ms.date: "09/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -187,7 +187,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#Service) representing the
+A new instance of [`Service`](service.md#service) representing the
 realtime service *redeployed*.
 
 
@@ -314,7 +314,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#Service) representing the
+A new instance of [`Service`](service.md#service) representing the
 service *deployed*.
 
 
@@ -380,7 +380,7 @@ most recent service will be returned.
 
 ### Returns
 
-A new instance of [`Service`](service.md#Service).
+A new instance of [`Service`](service.md#service).
 
 
 ### HttpException
@@ -518,7 +518,7 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition.md#RealtimeDefinition) for fluent API.
+A [`RealtimeDefinition`](realtime-definition.md#realtimedefinition) for fluent API.
 
 
 
@@ -583,7 +583,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#Service) representing the
+A new instance of [`Service`](service.md#service) representing the
 realtime service *redeployed*.
 
 
@@ -716,7 +716,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#Service) representing the
+A new instance of [`Service`](service.md#service) representing the
 service *deployed*.
 
 
@@ -759,4 +759,4 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition.md#ServiceDefinition) for fluent API.
+A [`ServiceDefinition`](service-definition.md#servicedefinition) for fluent API.

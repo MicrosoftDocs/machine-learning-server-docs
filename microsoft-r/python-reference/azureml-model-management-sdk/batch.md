@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/18/2017" 
+ms.date: "09/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -82,9 +82,7 @@ Gets this batch’s parallel count of threads.
 
 
 
-## records
-
-```python
+```
 records
 ```
 
@@ -95,9 +93,7 @@ Gets the batch input records.
 
 
 
-## results
-
-```python
+```
 results(show_partial_results=True)
 ```
 
@@ -117,7 +113,7 @@ To get partial execution results or not.
 
 ### Returns
 
-An execution Self [`BatchResponse`](batch-response.md#BatchResponse).
+An execution Self [`BatchResponse`](batch-response.md#batchresponse).
 
 
 
@@ -137,9 +133,11 @@ Start a batch execution.
 
 Self
 
-``
+## artifacts
+
+```python
 artifact(index, file_name)
-``
+```
 
 Get the file artifact for this service batch execution *index*.
 
@@ -157,15 +155,22 @@ Artifact filename
 
 A single file artifact.
 
-``
+## cancel
+
+```python
 cancel()
-``
+```
 
 Cancel this batch execution.
 
-``
+## download
+
+
+
+```
 download(index, file_name=None, destination=cwd())
-``
+```
+
 
 Download the file artifact to file-system in the *destination*.
 
@@ -187,9 +192,11 @@ Download location.
 
 A *list* of downloaded file-paths.
 
-``
+## list_artifacts
+
+```python
 list_artifacts(index)
-``
+```
 
 List the file artifact names belonging to this service batch execution
 *index*.
@@ -206,15 +213,19 @@ A *list* of file artifact names.
 
 Gets this batch’s parallel count of threads.
 
-``
+## records
+
+```python
 records
-``
+```
 
 Gets the batch input records.
 
-``
+## results
+
+```python
 results(show_partial_results=True)
-``
+```
 
 Poll batch results.
 
@@ -226,4 +237,4 @@ To get partial execution results or not.
 
 ### Returns
 
-An execution Self [*BatchResponse*](batch-response.md#BatchResponse).
+An execution Self [*BatchResponse*](batch-response.md#batchresponse).

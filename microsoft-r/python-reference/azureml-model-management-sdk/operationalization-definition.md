@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/18/2017" 
+ms.date: "09/19/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -77,7 +77,7 @@ Set the service function name alias to call.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -92,7 +92,7 @@ deploy()
 
 Bundle up the definition properties and publish the service.
 :return:
-:returns: Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
+:returns: Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -116,7 +116,7 @@ Set the service description.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -141,7 +141,7 @@ To be implemented by subclasses.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
 
 
 
@@ -165,4 +165,4 @@ Set the service version.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](azureml/deploy/operationalization/OperationalizationDefinition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalizationdefinition) for fluent API.
