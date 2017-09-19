@@ -45,150 +45,70 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 + Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server](how-to-authenticate-in-python.md)."
 
-<a name="listServices"></a>
+<a name="list_services"></a>
 
 ## Find and list web services
 
-Any authenticated user can retrieve a list of web services using the 'delete_service' function on the 'DeployClient' object .  
+Any authenticated user can retrieve a list of web services using the 'list_services' function.  
 
-You can call 'delete_service' on the 'DeployClient' object to delete a specific service on Machine Learning Server.
+Use function arguments to return a specific web service or all labeled versions of a given web service. To check current services available on the current Machine Learning Server, call 'list_services' on the DeployClient object.
+1. If no parameter are provided, it will return a list of all services on the running server
+   ```client.list_services()```
 
+1. If a service name is provided, it will return a list of all versions of this service.
+   ```client.list_services('myService')```
 
-Use function arguments to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../r-reference/mrsdeploy/listservices.md) for the full description of all arguments.
+1. If a service name and a version are provided, it will return a list containing details only for this specific service
+   ```client.list_services('myService', version='v1.0')```
 
-Your ability to see the code inside the web service depends on your permissions. Did you publish the web service or do you have the "Owner" role?
+Your ability to see the code inside the web service depends on your permissions. Did you publish the web service, or if you have [the "Owner" role](../configure-roles.md):
 + If yes, then the code in the service is returned along with other metadata.
 + If no, then the code in the service is never returned in the metadata.
 
 To learn more about the roles in your organization, contact your Machine Learning Server administrator.
 
-|Function|Response|R Function Help|
-|----|----|:----:|
-|listServices(...)| R list containing service metadata.|[View](../r-reference/mrsdeploy/listservices.md)|
-
-Once you find the service you want, use [the getService() function](#getService) to retrieve the service object for consumption.
-
-Example code:
-
-## Delete web services
+Once you find the service you want, use [the get_service() function](#getService) to retrieve the service object for consumption.
 
 
-```Python
-# -- List all services to find the one to delete--
-client.list_services()
-# -- Now delete myService v1.0
-client.delete_service('myService', version='v1.0')
-```
 
-```R
-# Return metadata for all services hosted on this server
-serviceAll <- listServices()
-
-# Return metadata for all versions of service "mtService" 
-mtServiceAll <- listServices("mtService")
-
-# Return metadata for version "v1" of service "mtService" 
-mtService <- listServices("mtService", "v1")
-
-# View service capabilities/schema for mtService v1. 
-# For example, the input schema:
-#   list(name = "wt", type = "numeric")
-#   list(name = "dist", type = "numeric")
-print(mtService)
-```
-
-For a detailed example with listServices, check out these ["Workflow" examples](how-to-deploy-web-service-publish-manage-in-r.md#workflow).
-
-Example output:
-
-|R Server 9.1+|R Server 9.0|
-|--------|--------|
-|![9.1 output](./media/how-to-consume-web-service-interact-in-r/returns91.png)|![9.0 output](./media/how-to-consume-web-service-interact-in-r/returns90.png)|
-
-<a name="getService"></a>
+<a name="get_service"></a>
 
 ## Retrieve and examine service objects
 
-Any authenticated user can retrieve a web service object for consumption. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
+Any authenticated user can retrieve a [web service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consumption unless special role-based restrictions are in place. See your administrator for information about roles.  
 
-After you've authenticated, use the getService() function in the mrsdeploy package to retrieve a service object. See the [package reference help page for getService()](../r-reference/mrsdeploy/getservice.md) for the full description of all arguments. 
+After you've authenticated, use the 'get_service()' function from the azureml-model-management-sdk package to retrieve a service object. 
+
+After the object is returned, you can use the help function to explore the published service, "print(help(serviceObject))". You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them. 
+
+Then, you can print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. 
+
+Example code:
 
 
-|Function|Response|R Function Help|
-|----|----|:----:|
-|getService(...)|Returns an [API instance](#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/getservice.md)|
+```Python
+# -- List all versions of the service 'myService'--
+client.list_services('myService')
 
-
-Example:
-
-```R
-# Get service using getService() function from `mrsdeploy` package.
-# Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.0")
-
-# Print capabilities to see what service can do.
-print(api$capabilities())
-     
-# Start interacting with the service, for example:
-# Calling the function, `manualTransmission`
-# contained in this service.
-result <- api$manualTransmission(120, 2.8)
+# -- Now get the service object for myService v2.0
+svc = client.get_service('myService', version='v2.0')
+# -- Learn more about that service.
+print(help(svc))
+# -- View the service capabilities/schema for this service
+svc.capabilities()
 ```
 
-For a detailed example with getService, check out these ["Workflow" examples](how-to-deploy-web-service-publish-manage-in-r.md#workflow).
+####Interact with API clients
 
-
-<a name="api-client"></a>
-
-## Interact with API clients
-
-When you publish, update, or get a web service, an API instance is returned as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class. This instance is a client stub you can use to consume that service and view its service holdings. 
-
-You can use the following supported public functions to interact with the API client instance.
+You can use the following supported public functions to interact with the DeployClient API instance.
 
 | Function      | Description                                            |
 | ------------- |--------------------------------------------------------|
 | print       |	Print method that lists all members of the object      |
 | capabilities | Report on the service features such as I/O schema, name, version	   |
-| consume     |	Consume the service based on I/O schema                |
-| consume _alias_ | Alias to the consume function for convenience (see alias argument for the [publishService function](../r-reference/mrsdeploy/publishservice.md)). |
-| swagger     |	Displays the service's swagger specification         |
-| batch |Define the data records to be batched. There are additional publish functions used to [consume a service asynchronously via batch execution](how-to-consume-web-service-asynchronously-batch.md#public-fx-batch).|
+| swagger     |	Displays the service's swagger specification, such as 'swagger(json=True)'         |
+| batch |Define the data records to be batched. There are additional publish functions used to consume a service asynchronously via batch execution. For example, 'batch(records, parallel_count=10)'|
 
-
-Example:
-
-```R
-# Get service using getService() function from `mrsdeploy`.
-# Assign service to the variable `api`
-api <- getService("mtService", "v1.0.0")
-
-# Print capabilities to see what service can do.
-print(api)
-
-# Print the service name, version, inputs, outputs, and the
-# Swagger-based JSON file used to consume the service 
-cap <- api$capabilities()
-print(cap$name)
-print(cap$version)
-print(cap$inputs)
-print(cap$outputs)
-print(cap$swagger)
-
-# Start interacting with the service by calling it with the
-# generic name `consume` based on I/O schema
-result <- api$consume(120, 2.8)
-
-# Or, start interacting with the service using the alias argument
-# that was defined at publication time.
-result <- api$manualTransmission(120, 2.8)
-
-# Since you're authenticated, get this service's `swagger.json`.
-swagger <- api$swagger(json = FALSE)
-cat(swagger)
-```
-
-For a detailed example, check out these ["Workflow" examples](how-to-deploy-web-service-publish-manage-in-r.md#workflow).
 
 <a name="consume-service"></a>
 

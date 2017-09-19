@@ -148,7 +148,7 @@ The identifier of the batch execution.
 
 ### Returns
 
-The [`Batch`](batch.md#Batch) represented by the given execution
+The [`Batch`](batch) represented by the given execution
 identifier.
 
 

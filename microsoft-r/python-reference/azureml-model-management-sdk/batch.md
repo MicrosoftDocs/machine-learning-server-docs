@@ -113,7 +113,7 @@ To get partial execution results or not.
 
 ### Returns
 
-An execution Self [`BatchResponse`](batch-response#batchresponse).
+An execution Self [`BatchResponse`](batch-response).
 
 
 
@@ -237,4 +237,4 @@ To get partial execution results or not.
 
 ### Returns
 
-An execution Self [*BatchResponse*](batch-response#batchresponse).
+An execution Self [*BatchResponse*](batch-response).
