@@ -66,30 +66,24 @@ You can use arguments to return a specific web service or all labeled versions o
    client.list_services('myService', version='v1.0')
    ```
 
-Your ability to see the code inside the web service depends on your permissions. Did you publish the web service, or if you have [the "Owner" role](../configure-roles.md):
+Your ability to see the code inside the web service depends on your permissions depends on whether you published the web service and/or are assigned to the ["Owner" role](../configure-roles.md):
 + If yes, then the code in the service is returned along with other metadata.
 + If no, then the code in the service is never returned in the metadata.
-
 To learn more about the roles in your organization, contact your Machine Learning Server administrator.
 
 Once you find the service you want, use [the get_service() function](#getService) to retrieve the service object for consumption.
-
-
 
 <a name="get_service"></a>
 
 ## Retrieve and examine service objects
 
-Any authenticated user can retrieve a [web service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consumption unless special role-based restrictions are in place. See your administrator for information about roles.  
+Authenticated users can retrieve a given [web service object](../../python-reference/azureml-model-management-sdk/service.md), which contains the client stub for consuming that server using the 'get_service()' function from the azureml-model-management-sdk package. 
 
-After you've authenticated, use the 'get_service()' function from the azureml-model-management-sdk package to retrieve a service object. 
+After the object is returned, you can use a help function to explore the published service, such as `print(help(serviceObject))`. You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them. 
 
-After the object is returned, you can use the help function to explore the published service, "print(help(serviceObject))". You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them. 
-
-Then, you can print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. 
+You can also print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. 
 
 Example code:
-
 
 ```Python
 # -- List all versions of the service 'myService'--
