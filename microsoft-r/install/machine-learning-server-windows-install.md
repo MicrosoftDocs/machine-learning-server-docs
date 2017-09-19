@@ -53,11 +53,11 @@ The installation path for Machine Learning Server is new: \Program Files\Microso
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
-## How to install and verify
+## How to install
 
 This section walks you through a Machine Learning Server 9.2.1 deployment using the standalone Windows installer. Under these instructions, your installation will be licensed and serviced as a SQL Server supplemental feature.
 
-### 1. Download Machine Learning Server installer
+### Download Machine Learning Server installer
 
 You can get the zipped installation file from one of the following download sites.
 
@@ -71,7 +71,7 @@ You can get the zipped installation file from one of the following download site
 
 <a name="howtoinstall"></a>
 
-### 2. Run Setup
+### Run Setup
 
 The setup wizard installs, upgrades, and uninstalls all in one workflow.
 
@@ -93,7 +93,7 @@ The setup wizard installs, upgrades, and uninstalls all in one workflow.
 > [!NOTE]
 > By default, telemetry data is collected during your usage of Machine Learning Server. To turn this feature on or off, see [Opting out of data collection](../resources-opting-out.md).
 
-### 3. Check log files
+### Check log files
 
 If there were errors during Setup, check the log files located in the system temp directory. An easy way to get there is typing `%temp%` as a Run command or search operation in Windows. If you installed all components, your log file list looks similar to this screenshot:
 
@@ -125,15 +125,41 @@ Python runs when you execute a .py script or run commands in a Python console wi
 4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
 5. Paste in the following revoscalepy script to return summary statistics from the built-in AirlineDemo demo data:
 
-~~~~
-import revoscalepy 
-sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
-ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
-summary = revoscalepy.rx_summary("ArrDelay+DayOfWeek", ds)  
-print(summary)
-~~~~
+    ~~~~
+    import revoscalepy 
+    sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
+    ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+    summary = revoscalepy.rx_summary("ArrDelay+DayOfWeek", ds)  
+    print(summary)
+    ~~~~
 
-Enable server to host analytic web services and accept remote connections
+  Output from the sample dataset should look similar to the following:
+
+    ~~~~ 
+    Summary Statistics Results for: ArrDelay+DayOfWeek
+    File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    Number of valid observations: 600000.0
+    
+            Name       Mean     StdDev   Min     Max  ValidObs  MissingObs
+    0  ArrDelay  11.317935  40.688536 -86.0  1490.0  582628.0     17372.0
+    
+    Category Counts for DayOfWeek
+    Number of categories: 7
+    
+                Counts
+    DayOfWeek         
+    1          97975.0
+    2          77725.0
+    3          78875.0
+    4          81304.0
+    5          82987.0
+    6          86159.0
+    7          94975.0
+    ~~~~
+
+To quit the program, type `quit()` at the command line with no arguments.
+
+## Enable server to host analytic web services and accept remote connections
 
 Machine Learning Server can be used as-is with an R IDE on the same box, but you can also [enable the server to host web services and to allow remote server connections](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 

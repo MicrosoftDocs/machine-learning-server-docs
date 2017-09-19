@@ -236,37 +236,37 @@ To quit the program, type `q()` at the command line with no arguments.
 
 2. Run a revosclapy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
 
-~~~~
-import revoscalepy 
-sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
-ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
-summary = revoscalepy.rx_summary("ArrDelay+DayOfWeek", ds)  
-print(summary)
-~~~~
+    ~~~~
+    import revoscalepy 
+    sample_data_path = revoscalepy.RxOptions.get_option("sampleDataDir")
+    ds = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+    summary = revoscalepy.rx_summary("ArrDelay+DayOfWeek", ds)  
+    print(summary)
+    ~~~~
 
   Output from the sample dataset should look similar to the following:
 
-~~~~ 
-        Summary Statistics Results for: ArrDelay+DayOfWeek
-        File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
-        Number of valid observations: 600000.0
-        
-               Name       Mean     StdDev   Min     Max  ValidObs  MissingObs
-        0  ArrDelay  11.317935  40.688536 -86.0  1490.0  582628.0     17372.0
-        
-        Category Counts for DayOfWeek
-        Number of categories: 7
-        
-                    Counts
-        DayOfWeek         
-        1          97975.0
-        2          77725.0
-        3          78875.0
-        4          81304.0
-        5          82987.0
-        6          86159.0
-        7          94975.0
-~~~~
+    ~~~~ 
+    Summary Statistics Results for: ArrDelay+DayOfWeek
+    File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    Number of valid observations: 600000.0
+    
+            Name       Mean     StdDev   Min     Max  ValidObs  MissingObs
+    0  ArrDelay  11.317935  40.688536 -86.0  1490.0  582628.0     17372.0
+    
+    Category Counts for DayOfWeek
+    Number of categories: 7
+    
+                Counts
+    DayOfWeek         
+    1          97975.0
+    2          77725.0
+    3          78875.0
+    4          81304.0
+    5          82987.0
+    6          86159.0
+    7          94975.0
+    ~~~~
 
 To quit the program, type `quit()` at the command line with no arguments.
 

@@ -38,15 +38,14 @@ This section explains how to get the parcel generation script and simulate parce
 
 A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Visual Studio Subscriptions](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) or [Volume licensing](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409):
 
-+ Search for "SQL Server" to list features licenced through SQL Server. For licensing purposes, Machine Learning Server is a supplemental feature to SQL Server.
-+ Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp**, to one of the data nodes.
++ Search for "SQL Server" to list features licensed through SQL Server. For licensing purposes, Machine Learning Server is a supplemental feature to SQL Server.
++ Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp/**, on one of the data nodes.
 
 ### Unpack the distribution
 
-1. On node, log in as root or a user with super user privileges:`sudo su`
-2. Switch to the **/tmp** directory (assuming it's the download location): `cd /tmp/`
-3. Unpack the file:
-        `[root@cdh4-mn0 tmp] $ tar zxvf en_microsoft_ml_server_921_for_hadoop_x64_<some-number>.tar.gz`
+1. Log on as root or a user with super user privileges:`sudo su`
+2. Switch to the **/tmp/** directory (assuming it's the download location): `cd /tmp/`
+3. Unpack the file: `tar zxvf en_microsoft_ml_server_921_for_hadoop_x64_<some-number>.tar.gz`
 
 The distribution is unpacked into an **Hadoop** folder at the download location. The distribution includes the following files:
 
@@ -94,15 +93,14 @@ flag | Option | Description
 
 ## Run the script
 
-Repeat the command without **-n** parameter to create the files: `bash generate_mrs_parcel.sh`
+Repeat the command without **-n** parameter to create the files: `bash generate_mlserver_parcel.sh`
 
-+ Parcel name is **MLServer-9.2.1**
-+ Parcel generator is **generate_mlserver_parcel.sh**
-+ The CSD is **MLServer**
++ The parcel generator file name is **MLServer-9.2.1**
++ The CSD file name is **MLServer**
 
 ## Distribute parcels and CSDs
 
-This section explains how to place parcels and CSD files in CDH.
+This section explains how to place parcel generator script and CSD file in CDH.
 
 ### Copy to the parcel repository
 
@@ -120,7 +118,7 @@ The Custom Service Descriptor (CSD) enables monitoring and administration from w
 
 1. Copy the CSD file **MLServer-9.2.1-CONFIG.jar** to the Cloudera CSD directory, typically /opt/cloudera/csd.
 
-    `service cloudera-scm-server restart`
+    `cp ./MLServer-9.2.1-CONFIG.jar /opt/cloudera/csd/`
 
 2. Modify the permissions of CSD file as follows: 
 
