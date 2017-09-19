@@ -248,12 +248,10 @@
     href: operationalize/concept-operationalize-deploy-consume.md
   - name: Pre-trained models
     href: install/microsoftml-install-pretrained-models.md
-  - name: Packages
-    items: 
-    - name: MicrosoftML
-      href: r/concept-what-is-the-microsoftml-package.md
-    - name: RevoScaleR
-      href: r/concept-what-is-revoscaler.md
+  - name: MicrosoftML
+    href: r/concept-what-is-the-microsoftml-package.md
+  - name: RevoScaleR
+    href: r/concept-what-is-revoscaler.md
 - name: How-to guides
   href: r/how-to-introduction.md
   items:

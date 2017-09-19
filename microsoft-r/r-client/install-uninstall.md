@@ -92,6 +92,6 @@ You can learn more with these guides:
 
 + [RevoScaleR R package reference](../r/tutorial-introduction.md)
 
-+ [MicrosoftML R package reference](../r/concept-what-is-the-microsoftml-package.md)
++ [MicrosoftML R package reference](../r-reference/microsoftml/microsoftml-package.md)
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)

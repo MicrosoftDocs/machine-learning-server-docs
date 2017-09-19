@@ -469,7 +469,6 @@ This tutorial demonstrated how to use several important functions, but on a smal
 
  [RevoScaleR Getting Started with Hadoop](how-to-revoscaler-hadoop.md)	
  [RevoScaleR Getting Started with SQL server](how-to-revoscaler-sql-server.md)	
- [What is RevoScaleR](concept-what-is-revoscaler.md)	
  [Machine Learning Server](../what-is-machine-learning-server.md)	
  [How-to guides in Machine Learning Server](how-to-introduction.md)	
  [RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

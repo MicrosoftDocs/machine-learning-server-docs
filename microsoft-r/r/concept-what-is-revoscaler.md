@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What is RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Get started with RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "Learn about the benefits of RevoScaleR and how to use it in custom script and code."
 keywords: ""
 author: "HeidiSteen"
@@ -85,7 +85,7 @@ RevoScaleR has the concept of *compute context* that sets the location for data 
 
 Local is the default, and it supports the full range of data source inputs. As its name suggests, a local compute context uses only the physical cores of the local computer. Local compute context is provided by RevoScaleR on both R Client and R Server instances.
 
-Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has R Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for RevoScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in R Server only: HDInsight, Hadoop (both MapReduce and Spark), Teradata, SQL Server, and R Server (Windows and Linux). For more information, see [Compute Context](concept-what-is-revoscaler.md#compute-context).
+Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has R Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for RevoScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in R Server only: HDInsight, Hadoop (both MapReduce and Spark), Teradata, SQL Server, and R Server (Windows and Linux). For more information, see [Compute Context](concept-what-is-compute-context.md).
 
 ### Efficiently Storing and Retrieving Data
 

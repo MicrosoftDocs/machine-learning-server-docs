@@ -249,7 +249,7 @@ This article walks through some R code you can use to predict whether a flight w
    inputFileWeatherURL <- paste0(github, "Weather_Sample.csv")
    ```
 
-1. Create a temporary directory to store the intermediate XDF files. The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  [Learn more](concept-what-is-revoscaler.md)
+1. Create a temporary directory to store the intermediate XDF files. The External Data Frame (XDF) file format is a high-performance, binary file format for storing big data sets for use with RevoScaleR. This file format has an R interface and optimizes rows and columns for faster processing and analysis.  [Learn more](concept-what-is-xdf.md)
    ```r
    td <- tempdir()
    outFileFlight <- paste0(td, "/flight.xdf")

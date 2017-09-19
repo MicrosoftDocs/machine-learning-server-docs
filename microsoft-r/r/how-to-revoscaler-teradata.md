@@ -37,17 +37,17 @@ There are three key components to running **RevoScaleR** high-performance analyt
 
 **RevoScaleR** provides a variety of data sources and compute contexts that can be used with the high-performance analytics functions. This guide focuses on analyzing Teradata data in-database. That is, the data is located in a Teradata database and the computations are performed at the location of the data. We also consider a second use case: data is extracted from the Teradata database, taking advantage of the Teradata Parallel Transporter (TPT), and computations are performed on a computer alongside the Teradata Platform.
 
-More detailed examples of using **RevoScaleR** can be found in the following articles in this documentation set:
+More information on **RevoScaleR** can be found here:
 
--   [*RevoScaleR Getting Started Guide*](tutorial-revoscaler-data-import-transform.md)
--   [*RevoScaleR User’s Guide*](concept-what-is-revoscaler.md)
--   [*RevoScaleR Distributed Computing Guide*](how-to-revoscaler-distributed-computing.md)
--   [*RevoScaleR ODBC Data Import Guide*](how-to-revoscaler-data-odbc.md)
+- [Tutorial: Data Import](tutorial-revoscaler-data-import-transform.md)
+- [RevoScaleR Function Reference](../r-reference/revoscaler/revoscaler.md)
+- [Distributed Computing](how-to-revoscaler-distributed-computing.md)
+- [RevoScaleR ODBC Data Import](how-to-revoscaler-data-odbc.md)
 
 For information on other distributed computing compute contexts, see:
 
--   [*RevoScaleR MapReduce Getting Started Guide*](how-to-revoscaler-hadoop.md)
--   [*RevoScaleR Spark Getting Started Guide*](how-to-revoscaler-spark.md)
+- [RevoScaleR MapReduce Getting Started Guide](how-to-revoscaler-hadoop.md)
+- [RevoScaleR Spark Getting Started Guide](how-to-revoscaler-spark.md)
 
 ## Installation
 
