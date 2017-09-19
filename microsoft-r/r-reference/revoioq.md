@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RevoIOQ function (RevoIOQ) | Microsoft Docs" 
+title: "RevoIOQ function (RevoIOQ) - Machine Learning Server | Microsoft Docs" 
 description: "Installation and operation qualification of Machine Learning Server" 
 keywords: "(RevoIOQ), RevoIOQ, package" 
 author: "heidisteen" 
@@ -25,7 +25,7 @@ ms.custom: ""
 --- 
  
  
- #RevoIOQ package
+ # RevoIOQ package
 
  The **RevoIOQ** package provides a function for testing installation and operational qualification of R packages provided in Machine Learning Server, Microsoft R Server, and R Client.
  

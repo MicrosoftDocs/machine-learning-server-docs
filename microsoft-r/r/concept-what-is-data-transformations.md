@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Data transformations in RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Data transformations in RevoScaleR - Machine Learning Server | Microsoft Docs"
 description: "RevoScaleR transform functions."
 keywords: ""
 author: "HeidiSteen"
