@@ -59,7 +59,7 @@ This quickstart notebook walks you through how to:
 
 You can try it yourself with the notebook. 
 
-### &#9658; [**Download the Jupyter notebook to try it out**]().
+### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb).
 
 
 

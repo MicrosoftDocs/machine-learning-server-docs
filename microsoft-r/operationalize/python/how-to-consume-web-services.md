@@ -49,7 +49,10 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 ## Find and list web services
 
-Any authenticated user can retrieve a list of web services using the listServices() function in the mrsdeploy package.  
+Any authenticated user can retrieve a list of web services using the 'delete_service' function on the 'DeployClient' object .  
+
+You can call 'delete_service' on the 'DeployClient' object to delete a specific service on Machine Learning Server.
+
 
 Use function arguments to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../r-reference/mrsdeploy/listservices.md) for the full description of all arguments.
 
@@ -66,6 +69,16 @@ To learn more about the roles in your organization, contact your Machine Learnin
 Once you find the service you want, use [the getService() function](#getService) to retrieve the service object for consumption.
 
 Example code:
+
+## Delete web services
+
+
+```Python
+# -- List all services to find the one to delete--
+client.list_services()
+# -- Now delete myService v1.0
+client.delete_service('myService', version='v1.0')
+```
 
 ```R
 # Return metadata for all services hosted on this server
