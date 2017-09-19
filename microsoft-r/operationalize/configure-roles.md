@@ -95,6 +95,7 @@ Keep in mind that the permissions assigned to users are influenced not only by t
 
 The following table explains which permissions are assigned to any authenticated user that is not explicitly assigned a role. 
 <br>
+<a name="configroles"></a>
 
 |Possible configurations|Users without a role are implicitly assigned to|
 |-----|:--------------------:|
@@ -206,7 +207,7 @@ Authentication: {
 
 A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to a Machine Learning Server (or R Server) role in the appsettings.json file. 
 
-Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete, and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you can still interact with that web service version as before, but you cannot update or delete the services published by others. However, if roles are defined, but you are no longer assigned to any roles yourself, then you become part of the "Reader" role implicitly (if Reader is defined, link to table above?). Consequently, you can no longer manage any services, including those services that you published previously when you were assigned to a role. 
+Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete, and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you can still interact with that web service version as before, but you cannot update or delete the services published by others. However, if roles are defined, but you are no longer assigned to any roles yourself, then you become part of the "Reader" role implicitly if "Reader" is defined ([see here](#configroles))). Consequently, you can no longer manage any services, including those services that you published previously when you were assigned to a role. 
 
 ## See Also
 
