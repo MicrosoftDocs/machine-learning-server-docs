@@ -24,9 +24,9 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server using Cloudera Manager
 
-Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server is installed on all data nodes. You can use a generated parcel to distribute Machine Learning Server packages across nodes within your CDH cluster.
-
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.2.1 on a Cloudera distribution of Apache Hadoop (CDH). 
+
+Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server is installed on all data nodes. You can use a generated parcel to distribute Machine Learning Server packages across nodes within your CDH cluster.
 
 If your operating system is not 7.0, or if you want to add [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes, use the regular [Hadoop installation instuctions](machine-learning-server-hadoop-install.md) instead.
 
@@ -34,52 +34,141 @@ If your operating system is not 7.0, or if you want to add [operationalization f
 
 A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Visual Studio Subscriptions](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) or [Volume licensing](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409):
 
-+ Search for "SQL Server 2017" to list features licenced through SQL Server. For licensing purposes, Machine Learning Server is an add-on feature to SQL Server.
-+ Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp**.
++ Search for "SQL Server" to list features licenced through SQL Server. For licensing purposes, Machine Learning Server is a supplemental feature to SQL Server.
++ Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp**, to one of the data nodes.
 
 ## Unpack the distribution
 
-1. On the master node, log in as root or a user with super user privileges (`sudo su`). In our examples, the master node is a machine named `cdh4-mn0`.
-2. Switch to the **/tmp** directory (assuming it's the download location): `cd /tmp`
+1. On node, log in as root or a user with super user privileges:`sudo su`
+2. Switch to the **/tmp** directory (assuming it's the download location): `cd /tmp/`
 3. Unpack the file:
-        `[root@cdh4-mn0 tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
+        `[root@cdh4-mn0 tmp] $ tar zxvf en_microsoft_ml_server_921_for_hadoop_x64_<some-number>.tar.gz`
 
-The distribution is unpacked into an `MRS91Hadoop` folder at the download location. The distribution includes the following files:
+The distribution is unpacked into an `Hadoop` folder at the download location. The distribution includes the following files:
 
 | File | Description |
 |------|-------------|
 |`install.sh` | Script for installing Machine Learning Server. Do not use this for a parcel install. |
-|`generate_mrs_parcel.sh` | Script for generating a parcel used for installing Machine Learning Server on CDH. |
+|`generate_mlserver_parcel.sh` | Script for generating a parcel used for installing Machine Learning Server on CDH. |
 | `EULA.txt` | End user license agreements for each separately licensed component. |
 | DEB folder | Contains Machine Learning packages for deployment on Ubuntu. |
 | RPM folder | Contains Machine Learning packages for deployment on CentOS/RHEL and SUSE |
 | Parcel folder | Contains files used to generate a parcel for installation on CDH. |
 
+## Test with a dry run
 
+The script includes a **-n** flag that steps through actions without actually deploying anything. Start with a dry run to review the prompts.
 
+The script downloads Microsoft R Open and builds a parcel by extracting information from RPM packages. You can append flags to run unattended setup or customize feature selections.
 
+1. Switch to the Hadoop directory: `cd /Hadoop`
+
+2. Run the script with `-n` to simulate parcel generation:
+
+    `[root@cdh4-mn0 Hadoop] $ bash generate_mlserver_parcel.sh -n`
+
+You are prompted to read and accept license agreements. 
+  
+You are also asked to specify the underlying operating system. If the platform supports it, the parcel generator adds installation instructions for features having a dependency on .NET Core, such as Microsoft machine learning and [operationalization features](../operationalize/concept-operationalize-deploy-consume.md). RHEL 7.x has .NET Core support.
+
+When the script is finished, the location of the parcel, checksum, and CSD is printed to the console. Remember the files do not yet exist. This is just a dry run. Running the script without `-n` generates the files.
+
+## Flag reference
+
+You can run parcel generator with the following flags.
+
+flag | Option | Description
+-----|--------|------------
+ -m | --distro-name [DISTRO]| Target Linux distribution for this parcel, one of: el6 el7 sles11
+ -l | --add-mml  | Add Python and microsoftml to the Parcel regardless of the target system.
+ -a | --accept-eula | Accept all end user license agreements.
+ -d | --download-mro | Download Microsoft r open for distribution to an offline system.
+ -s | --silent | Perform a silent, unattended install.
+ -u | --unattended | Perform an unattended install.
+ -n | --dry-run | Don't do anything, just show what would be done.
+ -h | --help | Print this help text.
+
+## Run the script
+
+Repeat the command without **-n** parameter. This time, the parcel, .sha, and CSD file are actually created.
 
 + Parcel name is `MLServer-9.2.1` (used to be MRS-9.2.1)
 + Parcel generator is `generate_mlserver_parcel.sh`
 + The CSD is also called `MLServer`
 
-Python is a part of the Parcel installer, controlled by the command line option, `-l` or `--add-mml`.
+~~~~
+$ bash generate_mrs_parcel.sh
+~~~~
 
-## Parcel generation
+## Copy to the parcel repository
 
-Create the parcel on a computer that has an installation of Machine Learning Server for Linux.
+By default, Cloudera Manager finds parcels in the Cloudera parcel repository. In this step, copy the parcel you generated to the repository.
 
-1. Log on as root: `sudo su`
-2. Go to the installation folder: `cd /opt/microsoft/mlserver/9.2.1/libraries/common/hadoop`
-3. List the contents: `ls` to confirm the following files exist:
+1. Copy `MLServer-9.2.1` and `MLServer-9.2.1.sha` to the Cloudera parcel repository, typically /opt/cloudera/parcels.
 
-  ```compute  create-dirs.sh  discover-java.sh  getHadoopEnvVars.py  jar  mrs-clean-hadoop-workspace  mrs-hadoop  mrs-spark-submit  templates  utils  workflow``
+    `[root@cdh4-mn0 Hadoop]# cp ./MLServer-9.2.1.parcel /opt/cloudera/parcel-repo/`
 
-4. Do a dry run of the parcel generator to `bash generate_mlserver_parcel.sh -n`
+    `[root@cdh4-mn0 Hadoop]# cp ./MLServer-9.2.1.parcel.sha /opt/cloudera/parcel-repo/`
 
-## Parcel execution
+## Copy to the CSD repository
+
+The Custom Service Descriptor (CSD) enables monitoring and administration from within Cloudera Manager. In this step, copy the CSD (a .jar file) to the Cloudera repository for CSD files. 
+
+1. Copy the CSD file `MLServer-9.2.1-CONFIG.jar` to the Cloudera CSD directory, typically /opt/cloudera/csd.
+
+    `[root@cdh4-mn0 MRS_Linux]# service cloudera-scm-server restart`
+
+2. Modify the permissions of CSD file as follows: 
+
+    `sudo chmod 644 /opt/cloudera/csd/MLServer-9.2.1-CONFIG.jar`
+
+    `sudo chown cloudera-scm:cloudera-scm /opt/cloudera/csd/MLServer-9.2.1-CONFIG.jar`
+
+3.	Restart the cloudera-scm-server service:
+
+    `sudo service cloudera-scm-server restart`
+
+## Parcel distribution
+
+1. In Cloudera Manager, click the parcel icon on the top right menu bar.
+
+   ![parcel icon in cloudera manager](./media/r-server-install-cloudera-deploy-activate/cloudera-manager-parcel-icon.png)
+
+2. On the left, find and select **MLServer-9.2.1** in the parcel list. If you don't see it, check the parcel-repo folder. 
+
+3. On the right, in the parcel details page, **MLServer-9.2.1** should have a status of *Downloaded* with an option to *Distribute*. Click **Distribute** to roll out Machine Learning Server on available data nodes.
+
+4. Status changes to *distributed*. Click **Activate** on the button to make Machine Learning Server operational in the cluster.
+
+   ![Activate button in parcel detail](./media/r-server-install-cloudera-deploy-activate/cloudera-manager-activate-button.png)
+
+You are finished with this task when status is "distributed, activated" and the next available action is *Deactivate*.
+
+## Add MLServer-9.2.1 as a service
+
+1. In Cloudera Manager home page, click the down arrow by the cluster name and choose **Add Service**.
+
+   ![add service command in cloudera manager](./media/r-server-install-cloudera-deploy-activate/cloudera-manager-add-service.png)
+
+2. Find and select **MLServer-9.2.1** and click **Continue** to start a wizard for adding services.
+
+3. In the next page, add role assignments on all nodes used to run the service, both edge and data nodes. Click **Continue**.
+
+4. On the last page, click **Finish** to start the service.
+
+Machine Learning Server should now be deployed in the cluster.
 
 ## Rollback (optional)
+
+You have the option of rolling back the active deployment in Cloudera Manager, perhaps to use an older version. You can have multiple versions in Cloudera, but only can be active at any given time. 
+
+1. In Cloudera Manager, click the Parcel icon to open the parcel list.
+
+2. Find MLServer-9.2.1 and click **Deactivate**.
+
+The parcel still exists, but Machine Learning Server is not operational in the cluster.
+
+The above steps apply to 9.2.1. If you have R Server 9.1 or 9.0.1, see [Install R Server 9.1 on CDH](r-server-install-cloudera.md) and [Install R Server 9.0.1 on CDH](r-server-install-cloudera-901.md) for release-specific documentation.
 
 ## Next steps
 

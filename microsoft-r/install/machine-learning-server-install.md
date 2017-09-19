@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to install and configure Machine Learning Server
+# Install and configure Machine Learning Server
 
 Machine Learning Server is available on a number of [platforms](r-server-install-supported-platforms.md). There are also several add-ons and tools you can also use.  Looking for earlier versions? See [Installation guides for earlier releases](r-server-install.md) for links.
 
