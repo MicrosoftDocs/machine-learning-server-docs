@@ -24,18 +24,18 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Roles to control web service permissions
+# Roles and permissions (BRAC)
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.1**
 
-In Machine Learning Server (and R Server), Role-Based Access Control (RBAC) enables fine-grained access management for the operationalization APIs. Using RBAC, you can grant only the amount of access that users need to perform their jobs. This article helps you get up and running with RBAC. 
+In Machine Learning Server (and R Server), Role-Based Access Control (RBAC) enables fine-grained access management for the operationalization APIs. Using RBAC, you can grant only the level of access that users need to perform their jobs. This article helps you get up and running with RBAC. 
 
 By default, all authenticated users can publish/deploy, list, and get any web services as well as call all APIs. Additionally, users can also update and delete the web services they have deployed. Use the roles defined in this article to restrict who can call the APIs and publish, update, and delete web services. 
 
 How users are assigned to roles depends on the authentication method configured for Machine Learning Server. For more on configuring authentication, read the article, ["Authentication options."](configure-authentication.md)
 
 >[!IMPORTANT]
->**These roles are not the same as RBAC in Azure Active Directory.** While the default roles described here-in bear the same names as the roles you can define in Azure, it is not possible to inherit the Azure roles. If you want role-based access control over web services and APIs, you must set up roles again.
+>**These roles are not the same as RBAC in Azure Active Directory.** While the default roles described here-in bear the same names as the roles you can define in Azure, it is not possible to inherit the Azure roles. If you want role-based access control over web services and APIs, you must set up roles again in Machine learning server.
 
 ## What do I need?
 
@@ -73,7 +73,7 @@ When roles are declared in the configuration file, the administrator has the cho
 
 ## How are roles assigned
 
-When a user attempts to authenticate with Machine Learning Server, the server checks to see whether any roles were declared. When roles are declared, Machine Learning Server checks to see to which group the user belongs. 
+When a user calls a Machine Learning Server API, the server checks to see whether any roles were declared. When roles are declared, Machine Learning Server checks to see to which group the user belongs. 
 
 If the user belongs to an AD/LDAP or AAD group assigned to a role, then that user is  given permissions according to their role.  If the user belongs to groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
 
@@ -108,7 +108,7 @@ The following table explains which permissions are assigned to any authenticated
 If you configure Machine Learning Server (or R Server) to [use Active Directory/LDAP or Azure Active Directory authentication](configure-authentication.md), then you can assign roles using Active Directory groups as described in the following sections.
 
 >[!Note]
->If only the default local administrator account is defined for Machine Learning Server (or R Server), then roles are not needed. In this case, the 'admin' user is implicitly assigned to the Contributor role.
+>If only the default local administrator account is defined for Machine Learning Server (or R Server), then roles are not needed. In this case, the 'admin' user is implicitly assigned to the Owner role (can call any API).
 
 ### Step 1. Define desired roles
 
@@ -129,6 +129,9 @@ On each web node, edit the appsettings.json configuration file in order to decla
    ``` 
 
    The 'CacheLifeTimeInMinutes' attribute was added in Machine Learning Server 9.2 to indicate the length of time that Machine Learning Server caches the information received from LDAP or AAD regarding user group membership. After the cache lifetime elapses, the roles and users are checked again. If you make changes to the groups in your LDAP or AAD configuration, those changes aren't detected by Machine Learning Server until the cache lifetime expires and the configuration is checked again. 
+   
+   >[!IMPORTANT]
+   Defining a Reader role might affect web service consumption latency as roles are being validated on each call to the web service.
 
    >[!WARNING]
    >For AD/LDAP authentications:
@@ -201,9 +204,9 @@ Authentication: {
 
 ## Web service permissions after role change
 
-A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to a Machine Learning Server (or R Server) role in the appsettings.json file anymore. 
+A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to a Machine Learning Server (or R Server) role in the appsettings.json file. 
 
-Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete, and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you can still interact with that web service version as before, but you cannot update or delete the services published by others. However, if roles are defined, but you are no longer assigned to any roles yourself, then you become part of the "Reader" role implicitly. Consequently, you can no longer manage any services, including those services that you published previously when you were assigned to a role. 
+Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete, and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you can still interact with that web service version as before, but you cannot update or delete the services published by others. However, if roles are defined, but you are no longer assigned to any roles yourself, then you become part of the "Reader" role implicitly (if Reader is defined, link to table above?). Consequently, you can no longer manage any services, including those services that you published previously when you were assigned to a role. 
 
 ## See Also
 
