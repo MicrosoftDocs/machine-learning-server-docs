@@ -172,9 +172,9 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 
 ## See also
 
-+ [azureml-model-management-sdk package overview](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
-+ [How to publish and manage web services in Python](how-to-deploy-manage-web-services.md)
++ [What are web services?](../concept-what-are-web-services.md)
++ [Package overview: azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 + [Quickstart: Deploying an Python model as a web service](quickstart-deploy-python-web-service.md)
-+ [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md).
-+ [About web services](../concept-what-are-web-services.md)
++ [How to authenticate with Machine Learning Server in Python](how-to-authenticate-in-python.md).
++ [How to publish and manage web services in Python](how-to-deploy-manage-web-services.md)
 + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)
