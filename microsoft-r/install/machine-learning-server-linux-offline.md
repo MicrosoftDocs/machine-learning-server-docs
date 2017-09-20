@@ -22,7 +22,7 @@ ms.technology: "r-server"
 
 ---
 
-# Offline installation of Machine Learning Server for Linux 
+# Offline installation Machine Learning Server for Linux 
 
 By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.2.1 for Linux. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
@@ -133,7 +133,7 @@ If your system provides a graphical user interface, you can click a file to down
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-+ Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7.3/prod/microsoft-mlserver-packages-r-9.2.1.rpm` 
++ Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.2.1.rpm` 
 + Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.2.1.rpm`
 

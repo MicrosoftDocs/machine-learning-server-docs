@@ -97,7 +97,7 @@ Alternatively, you can install a subset of packages. You might do this if you do
 
    + [https://packages.microsoft.com/ubuntu/14.04/prod/](https://packages.microsoft.com/ubuntu/14.04/prod/)
    + [https://packages.microsoft.com/ubuntu/16.04/prod/](https://packages.microsoft.com/ubuntu/16.04/prod/)
-   + [https://packages.microsoft.com/rhel/7.3/prod/](https://packages.microsoft.com/rhel/7.3/prod/)
+   + [https://packages.microsoft.com/rhel/7/prod/](https://packages.microsoft.com/rhel/7/prod/)
    + [https://packages.microsoft.com/sles/11/prod/](https://packages.microsoft.com/sles/11/prod/)
 
 3. Make a directory to contain your packages: `hadoop fs -mkdir /tmp/mlsdatanode`
