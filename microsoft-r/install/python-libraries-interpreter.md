@@ -61,13 +61,6 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 ## Install on Linux
 
-Requirements:
-
-+ Operating system must be a [supported version of 64-bit Linux](r-server-install-supported-platforms.md).
-+ Minimum RAM is 2 GB. Minimum disk space is 500 MB (8 GB or more is recommended).
-+ An internet connection. If you do not have an internet connection, use the [offline installation instructions](machine-learning-server-linux-offline.md).
-
-
 On each supported OS, the package manager downloads packages from the repository, determines dependencies, retrieves additional packages, and installs the software. After installation completes, mlserver-python executable is at '/usr/bin'.
  
 **On Ubuntu 14.04 - 16.04**

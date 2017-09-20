@@ -110,7 +110,7 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 ## Consuming
 
-Whenever the web service is deployed or updated, a Swagger-based JSON file is automatically generated. This file defines the service and is used to consume the service by other authenticated users on various platforms and in various languages. 
+Whenever a web service is deployed or updated, a Swagger-based JSON file is automatically generated. This file defines the service and is used to consume the service by other authenticated users on various platforms and in various languages. 
 
 You can make it easy for others to find your web services by providing them with the name and version of the web service. Using that name and version, users can retrieve the Swagger file to consume the web service directly in R, Python, or via the API. 
 
