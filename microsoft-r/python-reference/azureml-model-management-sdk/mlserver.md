@@ -197,7 +197,9 @@ If a HTTP fault occurred calling the ML Server.
 
 
 
-```
+## deploy_service
+
+```python
 deploy_service(name, **opts)
 ```
 
@@ -279,7 +281,7 @@ following optional properties:
 
   * numpy.matrix 
 
-  * numpy.DataFrame 
+  * pandas.DataFrame 
 
 * outputs (dict) - Defines the web service output schema. If empty, the service will not return a response value. *outputs* are defined as a dictionary `{'x'=int}` or `{'x': 'int'}` that describes the output parameter names and their corresponding data *types*. The following types are supported: 
 
@@ -295,7 +297,7 @@ following optional properties:
 
   * numpy.matrix 
 
-  * numpy.DataFrame 
+  * pandas.DataFrame 
 
 * artifacts (list) - A collection of file artifacts to return. File content is encoded as a *Base64 String*. 
 
@@ -567,11 +569,11 @@ The web service name.
 The service properties to update as a `dict`.  The *opts*
 supports the following optional properties:
 
-    * version (str) - Defines the web service version. 
+* version (str) - Defines the web service version. 
 
-    * description (str) - The service description. 
+* description (str) - The service description. 
 
-    * alias (str) - The consume function name. Defaults to *consume*. 
+* alias (str) - The consume function name. Defaults to *consume*. 
 
 
 ### Returns
@@ -658,34 +660,13 @@ supports the following optional properties:
 
 * models (dict) - Name and value of *models* to include. 
 
-* inputs (dict) - Service input schema by *name* and *type*. 
+* inputs (dict) - Service input schema by *name* and *type*. The following types are supported: - int - float - str - bool - numpy.array - numpy.matrix - pandas.DataFrame 
 
-  The following types are supported:
-  - int
-  - float
-  - str
-  - bool
-  - numpy.array
-  - numpy.matrix
-  - numpy.DataFrame
-
-* outputs (dict) - Defines the web service output schema. If empty, the service will not return a response value. *outputs* are defined as a dictionary `{'x'=int}` or `{'x': 'int'}` that describes the output parameter names and their corresponding data *types*. 
-
-      The following types are supported:
-      - int
-      - float
-      - str
-      - bool
-      - numpy.array
-      - numpy.matrix
-      - numpy.DataFrame
+* outputs (dict) - Defines the web service output schema. If empty, the service will not return a response value. *outputs* are defined as a dictionary `{'x'=int}` or `{'x': 'int'}` that describes the output parameter names and their corresponding data *types*. The following types are supported: - int - float - str - bool - numpy.array - numpy.matrix - pandas.DataFrame 
 
 * artifacts (list) - A collection of file artifacts to return. File content is encoded as a *Base64 String*. 
 
-* alias (str) - The consume function name. Defaults to *consume*.
-
-      If *code_fn* function is provided, then it will use that
-      function name by default.
+* alias (str) - The consume function name. Defaults to *consume*. If *code_fn* function is provided, then it will use that function name by default. 
 
 
 ### Returns

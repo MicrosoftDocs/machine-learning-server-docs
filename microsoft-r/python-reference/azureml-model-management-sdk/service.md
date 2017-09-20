@@ -182,4 +182,8 @@ swagger()
 
 
 Retrieves the *swagger.json* for this service (see [http://swagger.io/](http://swagger.io/)).
-:returns: The swagger document for this service as a json `str`.
+
+
+### Returns
+
+The swagger document for this service as a json `str`.

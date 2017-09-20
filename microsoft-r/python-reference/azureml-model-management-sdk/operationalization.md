@@ -102,7 +102,9 @@ Sub-class should override and implement.
 
 
 
-```
+## deploy_service
+
+```python
 deploy_service(name, **opts)
 ```
 
