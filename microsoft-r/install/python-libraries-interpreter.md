@@ -36,13 +36,13 @@ You can install a Python interpreter along with these custom packages locally on
 
 + Benefit from the best-of-breed machine learning algorithms without any server connection. These algorithms have been battle-tested by Microsoft.
  
-+ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can benefit from the disk scalability, performance, and speed of a production instance of Machine Learning Server on any supported platforms. 
++ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can benefit from the disk scalability and performance of Machine Learning Server on any supported platforms. 
  
 This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client Windows computer.
 
 ## Install on Windows
 
-1. Log into your local Windows machine.
+1. Log in to your local Windows machine.
 
 1. Download the installation shell script from http://aka.ms/mls-py. This script installs Anaconda 4.2.12, which includes Python 3.5.2, along with all packages listed previously.
 

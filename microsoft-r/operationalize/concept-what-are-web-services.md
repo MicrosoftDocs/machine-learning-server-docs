@@ -125,50 +125,13 @@ You can make it easy for others to find your web services by providing them with
 
 ### How are web services consumed
 
-Web services can be consumed in two ways:
+Web services can be consumed using one of these approaches:
 
-|Consumption approach|Description|Learn&nbsp;more...|
-|---|---|---|
-|Request Response|The service is consumed directly using a single consumption call|&bull; [In R](../operationalize/how-to-consume-web-service-interact-in-r.md)<br/>&bull;[&nbsp;In&nbsp;Python](../operationalize/python/how-to-consume-web-services.md)
-|Asynchronous Batch|Users send as a single request to the server who in turn makes multiple asynchronous API calls on their behalf|&bull; [In R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)|
+|Approach|Description|
+|---|---|
+|Request Response|The service is consumed directly using a single consumption call.<br/>Learn how [in R](../operationalize/how-to-consume-web-service-interact-in-r.md) \| [in&nbsp;Python](../operationalize/python/how-to-consume-web-services.md)
+|Asynchronous Batch|Users send as a single request to the server who in turn makes multiple asynchronous API calls on their behalf.<br/>Learn how [in R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)|
 
-
-
-Application developers can get the Swagger-based JSON file in one of these ways:
-A data scientist, probably the one who published the service, can send you the Swagger-based JSON file. This approach is often faster than the following one. They can get the file in R with the following code and send it to the application developer:
-R
-
-
-
-
-
-
-You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the mrsdeploy package. After authenticating, data scientists can use the getService() function in R to call the service. Then, they can get details about the service and start consuming it.
-
-
-You can also build a client library directly in R using the httr package.
-Note
-
-It is also possible to perform batch consumption as described here.
-In this example, replace the following remoteLogin() function with the correct login details for your configuration. Connecting to Machine Learning Server using the mrsdeploy package is covered in this article.
-R
-
-
-Collaborate with application developers
-Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service.
-Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "How to integrate web services and authentication into your application" for more details.
-Application developers can get the Swagger-based JSON file in one of these ways:
-A data scientist, probably the one who published the service, can send you the Swagger-based JSON file. This approach is often faster than the following one. They can get the file in R with the following code and send it to the application developer:
-R
-
-Copy
-api <- getService("<name>", "<version>")
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE) 
-Or, the application developer can request the file as an authenticated user with an active bearer token in the request header (since all API calls must be authenticated). The URL is formed as follows:
-
-Copy
-GET /api/<service-name>/<service-version>/swagger.json
 
 
 <a name=permissions></a>
