@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Uninstall Microsoft R Client to upgrade to a newer version | Microsoft Docs"
-description: ""
+title: "Uninstall Microsoft R Client to upgrade to a newer version - Machine Learning Server | Microsoft Docs"
+description: "Explains how to uninstall Microsoft R Client. You do not have to uninstall R Client before installing a more recent version."
 keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
 author: "j-martens"
 ms.author: "jmartens"
