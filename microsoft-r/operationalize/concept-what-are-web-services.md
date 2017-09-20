@@ -115,6 +115,10 @@ By default, all web service operations are available to authenticated users. Des
 
 ## See also
 
-[Deploy and manage web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
+**In R:**
++ [Deploy and manage web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
++ [List, get, and consume web services in R](how-to-consume-web-service-interact-in-r.md)
 
-[Deploy and manage web services in Python](../operationalize/python/how-to-deploy-manage-web-services.md)
+**In Python:**
++ [Deploy and manage web services in Python](../operationalize/python/how-to-deploy-manage-web-services.md)
++ [List, get, and consume web services in Python](../how-to-consume-web-services.md)
