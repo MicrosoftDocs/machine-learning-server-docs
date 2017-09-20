@@ -52,18 +52,18 @@ Together, the libraries provide full-spectrum data mining: data transformation a
 
 + [Deploy Python models and code as web services](operationalize/python/quickstart-deploy-python-web-service.md) using the convenient Python classes and functions in the [azureml-model-management-sdk library](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
 
-+ Deploy realtime Python models as web services.
++ [Deploy realtime Python models as web services](operationalize/concept-what-are-web-services.md#realtime).
 
 > [!Note]
-> Remote execution is not currently available for Python script. For more information about how this feature works in R, see [Remote execution in R](r/how-to-execute-code-remotely.md).
+> Remote execution is not available for Python scripts. For information about to do this in R, see [Remote execution in R](r/how-to-execute-code-remotely.md).
 
 ## R development
 
-R function libraries are built on [Microsoft R Open (MRO)](https://mran.microsoft.com/open/), Microsoft's distribution of open source R 3.4.1. Enhancements for R in Machine Learning Server include the following items.
++ R function libraries are built on [Microsoft R Open (MRO)](https://mran.microsoft.com/open/), Microsoft's distribution of open source R 3.4.1. 
 
 + [R realtime model scoring](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime) is now also supported on Linux.
 
-The last several releases of R Server added substantial capability for R developers. To review recent additions to R functionality, see [feature announcements](whats-new-in-r-server.md) for previous versions.
++ The last several releases of R Server added substantial capability for R developers. To review recent additions to R functionality, see [feature announcements](whats-new-in-r-server.md) for previous versions.
 
 ## Configuration
 
@@ -73,7 +73,7 @@ The last several releases of R Server added substantial capability for R develop
 
 ## Previous versions
 
-Visit [Feature announcements in R Server](whats-new-in-r-server.md), version 9.1 and earlier, for descriptions of features added in recent past releases.
+Visit [Feature announcements in R Server](whats-new-in-r-server.md) version 9.1 and earlier, for descriptions of features added in recent past releases.
 
 ## See Also
 
