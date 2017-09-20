@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# Batch
+# Class Batch
 
 
-## Class Batch
+## Batch
 
 
 
@@ -113,7 +113,7 @@ To get partial execution results or not.
 
 ### Returns
 
-An execution Self [`BatchResponse`](batch-response).
+An execution Self [`BatchResponse`](batch-response#batchresponse).
 
 
 
@@ -237,4 +237,4 @@ To get partial execution results or not.
 
 ### Returns
 
-An execution Self [*BatchResponse*](batch-response).
+An execution Self [*BatchResponse*](batch-response#batchresponse).

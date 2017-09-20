@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# DeployClient
+# Class DeployClient
 
 
-## Class DeployClient
+## DeployClient
 
 
 

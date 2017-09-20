@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# Service
+# Class Service
 
 
-## Class Service
+## Service
 
 
 
@@ -148,7 +148,7 @@ The identifier of the batch execution.
 
 ### Returns
 
-The [`Batch`](batch) represented by the given execution
+The [`Batch`](batch#batch) represented by the given execution
 identifier.
 
 
