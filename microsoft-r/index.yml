@@ -37,6 +37,10 @@ sections:
         values:
         - href: /r-server/r/quickstart-run-r-code
         - href: 
+      - title: Create a model with revoscalepy
+        values:
+        - href: /r-server/python/quickstart-revoscalepy-linear-regression-model
+        - href: 
       - title: Deploy a model as a web service in Machine Learning Server
         values:
           - href: /r-server/operationalize/quickstart-publish-r-web-service
@@ -50,12 +54,6 @@ sections:
   - type: paragraph
     text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
   - type: paragraph
-    text: '<big>Python Tutorials</big>'
-  - type: list
-    style: unordered
-    items:
-    - html: Use pyspark and revoscalepy together
-  - type: paragraph
     text: '<big>R Tutorials</big>'
   - type: list
     style: unordered
@@ -63,6 +61,12 @@ sections:
     - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
     - html: <a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
     - html: <a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a><br/>&nbsp;
+  - type: paragraph
+    text: '<big>Python Tutorials</big>'
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="python/tutorial-revoscalepy-pyspark">Use PySpark and revoscalepy together</a>
 - title: Samples
   items:
   - type: paragraph
@@ -70,9 +74,9 @@ sections:
   - type: list
     style: unordered
     items:
+    - html: <a href="r/r-samples.md">R samples</a>
     - html: <a href="python/python-samples.md">Python samples </a>
-    - html: <a href="r/sample-built-in-data.md">R samples</a>
-    - html: <a href="/r-server/r/sample-solutions">Solution templates</a><br/>&nbsp;
+    - html: <a href="r/sample-solutions">Solution templates</a><br/>&nbsp;
 - title: Tools
   items:
   - type: paragraph
@@ -88,9 +92,9 @@ sections:
     style: cards
     className: cardsD
     items:
-    - title: Python Libraries
-      html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
     - title: R Packages
       html: <p><a href="/r-server/r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="/r-server/r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="/r-server/r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="/r-server/r-reference/introducing-r-server-r-package-reference">more...</a></p>
+    - title: Python Libraries
+      html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
     - title: APIs
       html: <p><a href="https://microsoft.github.io/deployr-api-docs/">REST API Reference</a></p>
