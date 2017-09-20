@@ -91,7 +91,6 @@ print(help(svc))
 svc.capabilities()
 ```
 
-
 >[!Note]
 >You can only see the code stored within a web service if you have published the web service or are assigned to the "Owner" role. To learn more [about roles](../configure-roles.md) in your organization, contact your Machine Learning Server administrator.
 
@@ -99,80 +98,60 @@ svc.capabilities()
 
 ## Consume web services 
 
-Web services are published to facilitate the consumption and integration of the operationalized models and code.  Whenever the web service is published or updated, a Swagger-based JSON file is generated automatically that define the service.
+Web services are published to facilitate the consumption and integration of the operationalized models and code into systems and applications. Whenever the web service is deployed or updated, a Swagger-based JSON file, which defines the service, is automatically generated.
 
-When you publish a service, you can let people know that it is ready for consumption. Users can get the Swagger file they need to consume the service directly in R or via the API. To make it easy for others to find your service, provide them with the service name and version number (or they can use [the list_services function](#list_services)).
+When you publish a service, you can let people know that it is ready for consumption by sharing its name and version with them. Web services are [consumed by data scientists, quality engineers, and application developer](../concept-what-are-web-services.md#consume). They can be consumed in Python, R, or via the API. 
 
-Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described in the following section. Another approach is the [asynchronous "Batch" consumption approach](how-to-consume-web-service-asynchronously-batch.md), where users send as a single request to Machine Learning Server, which then makes multiple asynchronous API calls on your behalf.
-  
-<a name="data-scientists-share"></a>
+Users can consume the service directly using a single consumption call, which is referred to as a "Request Response" approach. [Learn about the various approaches to consuming web services](../concept-what-are-web-services.md#consume).
 
-#### Collaborate with data scientists
+### Consuming in Python
 
-Other data scientists may want to explore, test, and consume Web services directly in R using the functions in the mrsdeploy package. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
+[After authenticating with Machine Learning Server](how-to-authenticate-in-python.md) users can also interact with and consume services using other functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package.
 
-You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the mrsdeploy package.  After authenticating, data scientists can use the getService() function in R to call the service. Then, they can get details about the service and start consuming it.
+Example of a request-response consume:
 
-You can also [build a client library directly in R using the httr package](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
+```Python
+# Import the DeployClient and MLServer classes from the azureml-model-management-sdk package.
+from azureml.deploy import DeployClient
+from azureml.deploy.server import MLServer
 
->[!NOTE]
-> It is also possible to perform batch consumption as [described here](how-to-consume-web-service-asynchronously-batch.md).
+# Define the location of Machine Learning Server
+# for local onebox for the server: http://localhost:12800
+HOST = 'http://localhost:12800'
+context = ('admin', '{{YOUR_ADMIN_PASSWORD}}')
+client = DeployClient(HOST, use=MLServer, auth=context)
 
+# Retrieve the service object for myService v2.0 and assign to `svc`.
+svc = client.get_service('myService', version='v2.0')
 
-In this example, replace the following remoteLogin() function with the correct login details for your configuration. Connecting to Machine Learning Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+# Start interacting with the service.
+# Let's call the function `manualTransmission` in this service
+res = service.manualTransmission(120, 2.8)
 
-```R
-##########################################################################
-#      Perform Request-Response Consumption & Get Swagger Back in R      #
-##########################################################################
-
-# Use `remoteLogin` to authenticate with the server using the local admin 
-# account. Use session = false so no remote R session started
-remoteLogin("http://localhost:12800", 
-            username = “admin”, 
-            password = “{{YOUR_PASSWORD}}”,
-            session = FALSE)
-   
-# Get service using getService() function from `mrsdeploy`
-# Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.0")
+# Pluck out the named output `answer` that was defined at deploy time.
+print(res.output('answer'))
 
 # Print capabilities to see what service can do.
-print(api$capabilities())
-
-# Start interacting with the service, for example:
-# Calling the function, `manualTransmission` contained in this service.
-result <- api$manualTransmission(120, 2.8)
-
-# Print response output named `answer`
-print(result$output("answer")) # 0.6418125  
+print(svc.capabilities())
 
 # Since you're authenticated now, get `swagger.json`.
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE)
+cap = svc.capabilities()
+swagger_URL = cap['swagger']
+print(swagger_URL)
+
+# Print the contents of the swagger doc
+print(svc.swagger())
 ```
 
-<a name="swagger-app-dev"></a>
-
-#### Collaborate with application developers
+### Sharing the Swagger with application developers
 
 Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
-
-Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
+The Swagger-based JSON file is used to generate client libraries for integration. Read "[How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
    
-Application developers can get the Swagger-based JSON file in one of these ways:
-
-+ A data scientist, probably the one who published the service, can send you the Swagger-based JSON file. This approach is often faster than the following one. They can get the file in R with the following code and send it to the application developer:
-   ```R
-   api <- getService("<name>", "<version>")
-   swagger <- api$swagger()
-   cat(swagger, file = "swagger.json", append = FALSE) 
-   ```
-
-+ Or, the application developer can request the file  **as an authenticated user with an [active bearer token](../how-to-build-api-clients-from-swagger-for-app-integration.md#authentication) in the request header** (since all API calls must be authenticated). The URL is formed as follows:
-  ```
-  GET /api/<service-name>/<service-version>/swagger.json
-  ```
+The easiest way to share the Swagger file with an application developer is to use the code shown in the preceding example. Alternately, the application developer can request the file as an authenticated user with an [active bearer token](../how-to-build-api-clients-from-swagger-for-app-integration.md#authentication) in the request header using this API:
+```
+GET /api/{{service-name}}/{{service-version}}/swagger.json
+```
 
 ## See also
 

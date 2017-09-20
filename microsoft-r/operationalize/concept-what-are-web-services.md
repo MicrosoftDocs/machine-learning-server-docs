@@ -114,6 +114,7 @@ Whenever a web service is deployed or updated, a Swagger-based JSON file is auto
 
 You can make it easy for others to find your web services by providing them with the name and version of the web service. Using that name and version, users can retrieve the Swagger file to consume the web service directly in R, Python, or via the API. 
 
+
 ### Who consumes web services
 
 + Data scientists who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
