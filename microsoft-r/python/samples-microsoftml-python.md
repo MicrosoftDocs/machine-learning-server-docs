@@ -25,7 +25,22 @@ ms.technology: "r-server"
 
 # Python samples for MicrosoftML
 
-MicrosoftML samples that use the Python language are described and linked here to help you get started quickly with Microsoft Machine Learning Server. For a list of these samples, see [MicrosoftML 101 Samples](https://github.com/Microsoft/ML-Server-Python-Samples/tree/master/microsoftml/101). We also provide some more advanced samples described and linked in the following sections.
+MicrosoftML samples that use the Python language are described and linked here to help you get started quickly with Microsoft Machine Learning Server. We provide samples for tasks that are quick to run.  We also provide some more advanced samples that are described in sections following the simpler task-based samples. 
+
+## Samples for tasks
+
+|Example|Description                                                     |
+|--------------|---------------------------------------------------------|
+|[plot_binary_classification.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_binary_classification.py)|Find a frontier to separate two clouds of data points. |
+|[plot_categorical_features.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_categorical_features.py)|Convert categorical data to numerical data to classify it.  |
+|[plot_formula.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_formula.py)|Modeling limitations when feature set is too large.  |
+|[plot_image_featurizer_classify.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_image_featurizer_classify.py)|Use image featurization for image classification. |
+|[plot_image_featurizer_match.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_image_featurizer_match.py)|Use image featurization for finding similar images.  |
+|[plot_iris.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_iris.py)|How to do multi-class classification on the Iris Dataset. |
+|[plot_loss_function.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_loss_function.py)|How loss function parameters effect model errors when training a linear classifier.   |
+|[plot_mistakes.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_mistakes.py)|Why input schemas for training and testing must be the same. |
+|[plot_mutualinformation.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_mutualinformation.py)|How to select and merge features before training.  |
+|[plot_regression_wines.py](plot_regression_wines.py)|Use a regression to predict wine quality.  |
 
 ## Sentiment analysis with a pre-trained model
 
@@ -48,6 +63,10 @@ The sample then shows how to improve the prediction by choosing optimal hyperpar
 Text featurization is a machine learning technique that converts text into numerical values that are used to capture features of interest. The [Plot text featurization](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/202/plot_sentiment_analysis.py) sample is a text analytics example that creates columns *features* containing n-grams probabilities for positive and negative sentiments computed from their sentences. The featurized text data is then used to train a model to predict if a sentence expresses positive or negative sentiments. We repeat the training and prediction with  n-grams of different lengths and compare their speed and performance with an ROC curve. We also show how to use a combination of two sets of features and plot the results. For more information on text featurization, see [text featurization](http://blog.revolutionanalytics.com/2017/08/text-featurization-microsoftml.html).
 
 
+## Next steps
+Now that you've tried some of these examples, you can start developing your own solutions using the MicrosoftML packages and APIs for R and Python:
 
+- [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md)
+- [`MicrosoftML` Python package functions](../python-reference/microsoftml/microsoftml-package.md)
 
 
