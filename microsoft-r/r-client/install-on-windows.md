@@ -39,7 +39,7 @@ For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.m
 
 |   |   |
 | - | - |
-|Operating Systems|64-bit versions of Microsoft Windows 7, 8.1, and 10|
+|Operating&nbsp;Systems|64-bit versions of Microsoft Windows 7, 8.1, and 10|
 |Free disk space|600 MB recommended, after installation of all prerequisites<br>If pre-trained models are installed, 1.2 GB is recommended|
 |Available RAM|4+ GB recommended|
 |Internet access|Needed to download R Client and any dependencies|
