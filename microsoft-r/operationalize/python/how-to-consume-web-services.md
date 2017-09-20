@@ -52,25 +52,15 @@ Any authenticated user can retrieve a list of web services using the 'list_servi
 You can use arguments to return a specific web service or all labeled versions of a given web service. 
  
 ```Python
-## -- Return all web services
+## -- Return metadata for all services hosted on this server
 client.list_services()
 
+## -- Return metadata for all versions of service "myService" 
+client.list_services('myService')
+
+## -- Return metadata for a specific version "v1.0" of service "myService" 
+client.list_services('myService', version='v1.0')
 ```
-
-1. If no parameter are provided, it will return a list of all services on the running server
-   ```Python
-   client.list_services()
-   ```
-
-1. If a service name is provided, it will return a list of all versions of this service.
-   ```Python
-   client.list_services('myService')
-   ```
-
-1. If a service name and a version are provided, it will return a list containing details only for this specific service
-   ```Python
-   client.list_services('myService', version='v1.0')
-   ```
 
 Your ability to see the code inside the web service depends on your permissions depends on whether you published the web service and/or are assigned to the ["Owner" role](../configure-roles.md):
 + If yes, then the code in the service is returned along with other metadata.
