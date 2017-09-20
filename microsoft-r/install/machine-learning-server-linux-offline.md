@@ -129,12 +129,13 @@ Additional open source packages must be installed if a package is required but n
 
 ## Download packages
 
-If your system provides a graphical user interface, you can click a file to download it. Otherwise, use `rpm` or `wget`. We recommend donwloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
+If your system provides a graphical user interface, you can click a file to download it. Otherwise, use `wget`. We recommend donwloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-+ Download to CentOS or RHEL or SUSE: `sudo rpm -Uvh http://packages.microsoft.com/config/rhel/6/microsoft-mlserver-packages-r-9.2.1.rpm`
-+ Download to Ubuntu: `wget http://packages.microsoft.com/config/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
++ Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7.3/prod/microsoft-mlserver-packages-r-9.2.1.rpm` 
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
++ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.2.1.rpm`
 
 Repeat for each package.
 
