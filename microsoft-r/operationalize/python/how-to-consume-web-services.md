@@ -30,7 +30,7 @@ ms.technology:
 
 This article is for data scientists who wants to learn how to find, examine, and consume the [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server using Python. Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md). This article assumes that you are proficient in Python.
 
-After a web service has been published, any authenticated user can list, examine, and consume that web service. You can do so directly in Python using the functions in the [azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md). The azureml-model-management-sdk package is installed with Machine Learning Server.  To list, examine, or consume the web service _outside_ of Python, use the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle.
+After a web service has been published, any authenticated user can list, examine, and consume that web service. You can do so directly in Python using the functions in the [azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md). The azureml-model-management-sdk package is installed with Machine Learning Server.  To list, examine, or consume the web service _outside_ of Python, use the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 By default, web service operations are available to authenticated users. However, your administrator can also assign [roles](../configure-roles.md)  (RBAC) to further control the permissions around web services. 
 
@@ -111,7 +111,7 @@ Users can consume the service directly using a single consumption call, which is
 
 ```Python
 # Let's call the function `manualTransmission` in this service
-res = service.manualTransmission(120, 2.8)
+res = svc.manualTransmission(120, 2.8)
 
 # Pluck out the named output `answer`.
 print(res.output('answer'))
