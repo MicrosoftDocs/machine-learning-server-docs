@@ -32,7 +32,7 @@ This article introduces the revoscalepy Python functions in a **revoscalepy** pa
 + Spark provides the processing framework. 
 + revoscalepy provides scalable and high-performance data management, analysis, and visualization Python functions. 
 
-When you set the [compute context](concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue.
+When you set the [compute context](../r/concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue.
 
 > [!Note]
 > For installation instructions, see [Install Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md).
