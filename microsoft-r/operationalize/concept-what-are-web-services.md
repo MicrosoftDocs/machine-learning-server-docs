@@ -110,18 +110,17 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 ## Consuming
 
-Whenever a web service is deployed or updated, a Swagger-based JSON file is automatically generated. This file defines the service and is used to consume the service by other authenticated users on various platforms and in various languages. 
+After a web service has been published, authenticated users can consume that web service on various platforms and in various languages.  You can do so directly in R or Python using the custom packages installed with the product, using APIs, or in your [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
 
-You can make it easy for others to find your web services by providing them with the name and version of the web service. Using that name and version, users can retrieve the Swagger file to consume the web service directly in R, Python, or via the API. 
-
+You can make it easy for others to find your web services by providing them with the name and version of the web service. 
 
 ### Who consumes web services
 
-+ Data scientists who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
++ **Data scientists** who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
 
-+ Quality engineers who want to bring the models in these web services into validation and monitoring cycles.
++ **Quality engineers** who want to bring the models in these web services into validation and monitoring cycles.
 
-+ Application developers who want to call and integrate a web service into their applications. Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
++ **Application developers** who want to call and integrate a web service into their applications. Using the Swagger-based JSON file that is automatically generated when the service is deployed, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  Services can also be consumed using the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle.
 
 
 ### How are web services consumed
