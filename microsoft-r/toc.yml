@@ -260,16 +260,12 @@
     items:
     - name: Python
       items:
-      - name: Choose a MicrosoftML algorithm
-        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
       - name: Use revoscalepy on Spark
         href: python/how-to-revoscalepy.md
       - name: Configure Jupyter Notebooks
         href: python/how-to-revoscalepy-jupyter-nb-config.md
     - name: R
       items:
-      - name: Choose a MicrosoftML algorithm
-        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
       - name: Set a compute context
         href: r/how-to-revoscaler-distributed-computing-compute-context.md
       - name: Data access and manipulation
@@ -337,6 +333,8 @@
           href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
         - name: Enforce a YARN queue assignment
           href: install/r-server-install-hadoop-yarnqueueusage.md
+    - name: Choose a MicrosoftML algorithm
+      href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
   - name: Operationalization - deploy & consume
     items:
     - name: Python
@@ -547,8 +545,6 @@
         href: python-reference/microsoftml/get-sentiment.md
       - name: load_image
         href: python-reference/microsoftml/load-image.md
-      - name: loss functions
-        href: python-reference/microsoftml/rx-fast-linear.md
       - name: mutualinformation_select
         href: python-reference/microsoftml/mutualinformation-select.md
       - name: resize_image
