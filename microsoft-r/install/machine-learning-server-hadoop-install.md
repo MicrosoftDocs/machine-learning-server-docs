@@ -109,7 +109,7 @@ Alternatively, you can install a subset of packages. You might do this if you do
 6. Install the packages using the tool and syntax for your platform:
 
     + On Ubunutu online: `apt-get install *.rpm`
-    + On Ubunutu offline: `dpkg -I *.deb`
+    + On Ubunutu offline: `dpkg -i *.deb`
     + On CentOS and RHEL: `yum install *.rpm` 
 
 7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`

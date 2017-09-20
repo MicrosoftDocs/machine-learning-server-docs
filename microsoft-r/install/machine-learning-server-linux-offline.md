@@ -143,7 +143,7 @@ Repeat for each package.
 The package manager determines the installation order. Assuming all packages are in the same folder:
 
 + Install on CentOS or RHEL: `yum install *.rpm` 
-+ Install on Ubuntu: `dpkg -I *.deb`
++ Install on Ubuntu: `dpkg -i *.deb`
 + Install on SUSE: `zypper install *.rpm`
 
 This step completes installation.
