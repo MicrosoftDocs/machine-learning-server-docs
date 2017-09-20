@@ -40,7 +40,7 @@ MicrosoftML samples that use the Python language are described and linked here t
 |[plot_loss_function.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_loss_function.py)|How loss function parameters effect model errors when training a linear classifier.   |
 |[plot_mistakes.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_mistakes.py)|Why input schemas for training and testing must be the same. |
 |[plot_mutualinformation.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_mutualinformation.py)|How to select and merge features before training.  |
-|[plot_regression_wines.py](plot_regression_wines.py)|Use a regression to predict wine quality.  |
+|[plot_regression_wines.py](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/101/plot_regression_wines.py)|Use a regression to predict wine quality.  |
 
 ## Sentiment analysis with a pre-trained model
 
