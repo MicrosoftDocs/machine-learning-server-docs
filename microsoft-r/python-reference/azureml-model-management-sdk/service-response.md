@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/19/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -38,7 +38,9 @@ azureml.deploy.server.service.ServiceResponse(api, response, output_schema)
 
 
 
-Create a new Response Object by service name and raw service metadata.
+Represents the response from a service invocation. The response will
+contain any outputs and file artifacts produced in addition to any console
+output or errors messages.
 
 
 
@@ -78,16 +80,22 @@ The name of the file artifact.
 
 ### decode
 
-Whether to decode the Base64 encoded artifact string.
+Whether to decode the Base64 encoded artifact string. The
+default is `True`.
 
 
 ### encoding
 
+The encoding scheme to be used. The default is to apply
+no encoding. For a list of all encoding schemes please visit
+*Standard Encodings:*
+[https://docs.python.org/3/library/codecs.html#standard-encodings](https://docs.python.org/3/library/codecs.html#standard-encodings)
+
 
 ### Returns
 
-The file artifact as a Base64 encoded string if *decode=False*
-otherwise the decoded string.
+The file artifact as a Base64 encoded string if
+`decode=False` otherwise the decoded string.
 
 
 
@@ -100,7 +108,8 @@ artifacts
 
 
 
-Gets the response outputs if present.
+Gets the non-decoded response file artifacts if present.
+:returns: A `list` of non-decoded response file artifacts if present.
 
 
 
@@ -139,7 +148,7 @@ output(output)
 
 
 
-    A convenience function to look up a output values by name.
+    A convenience function to look up an output value by name.
 
 
 ### Arguments
@@ -147,10 +156,12 @@ output(output)
 
 ### output
 
+The name of the output.
+
 
 ### Returns
 
-The service output.
+The service output’s value.
 
 
 

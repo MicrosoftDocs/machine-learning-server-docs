@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/19/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -39,7 +39,7 @@ azureml.deploy.operationalization.OperationalizationDefinition(name, op,
 
 
 
-Base abstract class defining a service’s properties on the fluent API.
+Base abstract class defining a service’s properties.
 
 Create a new publish definition.
 
@@ -49,15 +49,17 @@ Create a new publish definition.
 
 ### name
 
-The web service name
+The web service name.
 
 
 ### op
 
+A reference to the deploy client instance.
+
 
 ### defs_extent
 
-
+A mixin of subclass specific definitions.
 
 ```python
 alias(alias)
@@ -66,13 +68,29 @@ alias(alias)
 
 
 
-Set the service function name alias to call.
+Set the optional service function name alias to use in order to consume
+the service.
+
+**Example:**
+
+
+
+```
+service = client.service('score-service').alias('score').deploy()
+
+# `score()` is the function that will call the `score-service`
+result = service.score()
+```
+
 
 
 ### Arguments
 
 
 ### alias
+
+The service function name alias to use in order to consume
+the service.
 
 
 ### Returns
@@ -91,8 +109,14 @@ deploy()
 
 
 Bundle up the definition properties and publish the service.
-:return:
-:returns: Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
+
+To be implemented by subclasses.
+
+
+### Returns
+
+A new instance of [`Service`](service#service) representing the
+service *deployed*.
 
 
 
@@ -105,13 +129,15 @@ description(description)
 
 
 
-Set the service description.
+Set the service’s optional description.
 
 
 ### Arguments
 
 
 ### description
+
+The description of the service.
 
 
 ### Returns
@@ -130,18 +156,14 @@ redeploy(force=False)
 
 
 Bundle up the definition properties and update the service.
+
 To be implemented by subclasses.
-
-
-### Arguments
-
-
-### force
 
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
+A new instance of [`Service`](service#service) representing the
+service *deployed*.
 
 
 
@@ -154,13 +176,15 @@ version(version)
 
 
 
-Set the service version.
+Set the service’s optional version.
 
 
 ### Arguments
 
 
 ### version
+
+The version of the service.
 
 
 ### Returns

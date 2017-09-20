@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/19/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -63,16 +63,29 @@ for the class hierarchy.
 An optional _noonp_ method where subclass implementers MAY provide this
 method definition by overriding.
 
+Sub-class should override and implement.
 
 
+### Arguments
+
+
+### context
+
+The optional authentication context as defined in the
+implementing sub-class.
+
+
+
+## delete_service
+
+```python
+delete_service(name, **opts)
 ```
-delete_service(name)
-```
 
 
 
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
@@ -85,7 +98,7 @@ deploy_realtime(name, **opts)
 
 
 
-return a new service instance.
+Sub-class should override and implement.
 
 
 
@@ -96,7 +109,7 @@ deploy_service(name, **opts)
 
 
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
@@ -114,10 +127,14 @@ Destroy lifecycle method. Invokes destructors for the class hierarchy.
 An optional _noonp_ method where subclass implementers MAY provide this
 method definition by overriding.
 
+Sub-class should override and implement.
 
 
-```
-get_service(name)
+
+## get_service
+
+```python
+get_service(name, **opts)
 ```
 
 
@@ -126,14 +143,14 @@ get_service(name)
 Retrieve service meta-data from the name source and return an new
 service instance.
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
 ## initializer
 
 ```python
-initializer(api_client, config)
+initializer(api_client, config, adapters=None)
 ```
 
 
@@ -145,7 +162,7 @@ and invokes initializers for the class hierarchy.
 An optional _noonp_ method where subclass implementers MAY provide this
 method definition by overriding.
 
-Object with configuration property name/value pairs
+Sub-class should override and implement.
 
 
 
@@ -158,7 +175,7 @@ list_services(name=None, **opts)
 
 
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
@@ -171,17 +188,18 @@ realtime_service(name)
 
 
 
-Begin fluent API for defining a realtime web service.
+Begin fluent API chaining of properties for defining a *realtime* web
+service.
 
 **Example:**
 
 
 
-    ```
-    client.realtime_service('scoring')
-      .description('A new realtime web service')
-      .version('v1.0.0')
-    ```
+```
+client.realtime_service('scoring')
+   .description('A new realtime web service')
+   .version('v1.0.0')
+```
 
 
 
@@ -195,7 +213,8 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition#realtimedefinition) for fluent API.
+A [`RealtimeDefinition`](realtime-definition#realtimedefinition) instance for fluent API
+chaining.
 
 
 
@@ -206,7 +225,7 @@ redeploy_realtime(name, force=False, **opts)
 
 
 
-return a new service instance.
+Sub-class should override and implement.
 
 
 
@@ -219,7 +238,7 @@ redeploy_service(name, force=False, **opts)
 
 
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
@@ -232,7 +251,8 @@ service(name)
 
 
 
-Begin fluent API for defining a web service.
+Begin fluent API chaining of properties for defining a *standard* web
+service.
 
 **Example:**
 
@@ -256,4 +276,5 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition#servicedefinition) for fluent API.
+A [`ServiceDefinition`](service-definition#servicedefinition) instance for fluent API
+chaining.

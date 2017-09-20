@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/19/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -39,7 +39,10 @@ azureml.deploy.server.service.BatchResponse(api, execution_id, response,
 
 
 
-Create a new Response Object by service name and raw service metadata.
+Represents a service’s entire batch execution response at a particular state
+in time. Using this, a batch execution index can be supplied to the
+`execution(index)` function in order to retrieve the service’s
+[`ServiceResponse`](service-response#serviceresponse).
 
 
 
@@ -66,6 +69,7 @@ completed_item_count
 
 
 Gets the number of completed batch results processed thus far.
+:returns: The number of completed batch results processed thus far.
 
 
 
@@ -80,8 +84,19 @@ execution(index)
 
 Extracts the service execution results within the batch at this
 execution *index*.
-:param index: The batch execution index.
-:returns: An execution Self [`ServiceResponse`](service-response#serviceresponse).
+
+
+### Arguments
+
+
+### index
+
+The batch execution index.
+
+
+### Returns
+
+The execution results [`ServiceResponse`](service-response#serviceresponse).
 
 
 
@@ -94,7 +109,10 @@ execution_id
 
 
 
-Gets this batch’s *execution id* if currently started, otherwise *None*.
+Gets this batch’s execution identifier if a batch has been started,
+otherwise `None`.
+:returns: This batch’s execution identifier if a batch has been started,
+otherwise `None`.
 
 
 
@@ -108,3 +126,4 @@ total_item_count
 
 
 Gets the total number of batch results processed in any state.
+:returns: The total number of batch results processed in any state.

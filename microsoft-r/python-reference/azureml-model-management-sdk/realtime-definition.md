@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/19/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -40,18 +40,7 @@ azureml.deploy.operationalization.RealtimeDefinition(name, op)
 
 Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition#operationalizationDefinition)
 
-Realtime class defining a service’s properties on the fluent API.
-
-Defines a realtime service publish definition.
-
-
-### Arguments
-
-
-### name
-
-
-### op
+Realtime class defining a *realtime* service’s properties for publishing.
 
 
 
@@ -62,13 +51,29 @@ alias(alias)
 
 
 
-Set the service function name alias to call.
+Set the optional service function name alias to use in order to consume
+the service.
+
+**Example:**
+
+
+
+```
+service = client.service('score-service').alias('score').deploy()
+
+# `score()` is the function that will call the `score-service`
+result = service.score()
+```
+
 
 
 ### Arguments
 
 
 ### alias
+
+The service function name alias to use in order to consume
+the service.
 
 
 ### Returns
@@ -91,7 +96,8 @@ Bundle up the definition properties and publish the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalizationDefinition) for fluent API.
+A new instance of [`Service`](service#service) representing the
+service *deployed*.
 
 
 
@@ -104,13 +110,15 @@ description(description)
 
 
 
-Set the service description.
+Set the service’s optional description.
 
 
 ### Arguments
 
 
 ### description
+
+The description of the service.
 
 
 ### Returns
@@ -131,15 +139,10 @@ redeploy(force=False)
 Bundle up the definition properties and update the service.
 
 
-### Arguments
-
-
-### force
-
-
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalizationDefinition) for fluent API.
+A new instance of [`Service`](service#service) representing the
+service *deployed*.
 
 
 
@@ -160,10 +163,14 @@ Serialized model.
 
 ### model
 
+The required serialized model used for this realtime
+service.
+
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalizationDefinition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalizationDefinition) for fluent API
+chaining.
 
 
 
@@ -176,13 +183,15 @@ version(version)
 
 
 
-Set the service version.
+Set the service’s optional version.
 
 
 ### Arguments
 
 
 ### version
+
+The version of the service.
 
 
 ### Returns

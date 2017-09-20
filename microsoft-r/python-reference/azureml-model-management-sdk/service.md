@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/19/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -38,9 +38,12 @@ azureml.deploy.server.service.Service(service, http_client)
 
 
 
-Service object from metadata.
+Dynamic object for service consumption and batching based on service
+metadata attributes.
 
 
+
+## batch
 
 ```
 batch(records, parallel_count=10)
@@ -70,8 +73,8 @@ high of a number because it might negatively impact performance.
 
 ### Returns
 
-The *Batch* object to control service batching
-lifecycle.
+The [`Batch`](batch#batch) instance to control this service’s
+batching lifecycle.
 
 
 
@@ -115,9 +118,7 @@ service:
 
 * *operation_id* - The function `alias`. 
 
-* *swagger* - The API REST endpoint to this service’s *swagger.json*
-
-      document.
+* *swagger* - The API REST endpoint to this service’s *swagger.json* document. 
 
 
 ### Returns
@@ -135,7 +136,7 @@ get_batch(execution_id)
 
 
 
-Retrieve the service batch based on an execution identifier.
+Retrieves the service batch based on an execution identifier.
 
 
 ### Arguments
@@ -148,8 +149,8 @@ The identifier of the batch execution.
 
 ### Returns
 
-The [`Batch`](batch#batch) represented by the given execution
-identifier.
+The [`Batch`](batch#batch) instance to control this service’s
+batching lifecycle.
 
 
 
@@ -162,19 +163,19 @@ list_batch_executions()
 
 
 
-Gets all batch executions currently queued for this service.
+Gets all batch execution identifiers currently queued for this service.
 
 
 ### Returns
 
-A list of *execution ids*.
+A `list` of execution identifiers.
 
 
 
 ## swagger
 
 ```python
-swagger\(\)
+swagger()
 ```
 
 

@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/19/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -65,7 +65,8 @@ execution_id
 
 
 
-Gets this batch’s *execution id* if currently started, otherwise *None*.
+Gets this batch’s execution identifier if currently started, otherwise
+`None`.
 
 
 
@@ -100,7 +101,7 @@ results(show_partial_results=True)
 
 
 
-Poll batch results.
+Poll for batch results.
 
 
 ### Arguments
@@ -109,11 +110,12 @@ Poll batch results.
 ### show_partial_results
 
 To get partial execution results or not.
+The default is to include partial results.
 
 
 ### Returns
 
-An execution Self [`BatchResponse`](batch-response#batchresponse).
+An instance of [`BatchResponse`](batch-response#batchresponse).
 
 
 
@@ -126,12 +128,12 @@ start()
 
 
 
-Start a batch execution.
+Starts a batch execution for this service.
 
 
 ### Returns
 
-Self
+An instance of itself [`Batch`](azureml/deploy/server/service/Batch.md).
 
 ## artifacts
 

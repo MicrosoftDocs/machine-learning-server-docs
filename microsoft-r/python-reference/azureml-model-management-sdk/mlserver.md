@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/19/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -73,7 +73,7 @@ ML Server supports two forms of authentication contexts:
 ### context
 
 The authentication context: LDAP, Azure Active Directory
-(AAD), or exsisting *access-token* string.
+(AAD), or existing *access-token* string.
 
 
 ### HttpException
@@ -113,12 +113,12 @@ The web service name.
 
 ### opts
 
-The web service *version* (*version=’v1.0.1*).
+The web service version (*version=’v1.0.1*).
 
 
 ### Returns
 
-A *bool* indicating the service deletion was succeeded.
+A `bool` indicating the service deletion was succeeded.
 
 
 ### HttpException
@@ -139,7 +139,7 @@ deploy_realtime(name, **opts)
 Publish a new *realtime* web service on the ML Server by *name* and
 *version*.
 
-All input and output types are defined as a *pandas.DataFrame*.
+All input and output types are defined as a `pandas.DataFrame`.
 
 **Example:**
 
@@ -175,14 +175,14 @@ The web service name.
 
 ### opts
 
-The service properties to publish. *opts* dict supports the
-following optional properties:
+The service properties to publish as a `dict`. The *opts*
+supports the following optional properties:
 
-    * version (str) - Defines a unique alphanumeric web service version. If the version is left blank, a unique *guid* is generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. 
+* version (str) - Defines a unique alphanumeric web service version. If the version is left blank, a unique *guid* is generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. 
 
-    * description (str) - The service description. 
+* description (str) - The service description. 
 
-    * alias (str) - The consume function name. Defaults to *consume*. 
+* alias (str) - The consume function name. Defaults to *consume*. 
 
 
 ### Returns
@@ -231,7 +231,7 @@ opts = {
 ```
 
 
-**NOTE:** Using *deploy_service()* in this fashion is identical to
+**NOTE:** Using `deploy_service()` in this fashion is identical to
 publishing a service using the fluent APIS
 [`deploy()`](service-definition.md#deploy).
 
@@ -265,44 +265,37 @@ following optional properties:
 
 * models (dict) - Name and value of *models* to include. 
 
-* inputs (dict) - Service input schema by *name* and *type*.
+* inputs (dict) - Service input schema by *name* and *type*. The following types are supported: 
 
-      The following types are supported:
-          * int 
+  * int 
 
-          * float 
+  * float 
 
-          * str 
+  * str 
 
-          * bool 
+  * bool 
 
-          * numpy.array 
+  * numpy.array 
 
-          * numpy.matrix 
+  * numpy.matrix 
 
-          * numpy.DataFrame 
+  * numpy.DataFrame 
 
-* outputs (dict) - Defines the web service output schema. If
+* outputs (dict) - Defines the web service output schema. If empty, the service will not return a response value. *outputs* are defined as a dictionary `{'x'=int}` or `{'x': 'int'}` that describes the output parameter names and their corresponding data *types*. The following types are supported: 
 
-      empty, the service will not return a response value.
-      *outputs* are defined as a dictionary *{‘x’=int}* or
-      *{‘x’: ‘int’} that describes the output parameter names and
-      their corresponding data `types*.
+  * int 
 
-  The following types are supported:
-      * int 
+  * float 
 
-      * float 
+  * str 
 
-      * str 
+  * bool 
 
-      * bool 
+  * numpy.array 
 
-      * numpy.array 
+  * numpy.matrix 
 
-      * numpy.matrix 
-
-      * numpy.DataFrame 
+  * numpy.DataFrame 
 
 * artifacts (list) - A collection of file artifacts to return. File content is encoded as a *Base64 String*. 
 
@@ -374,7 +367,7 @@ The web service name.
 
 ### opts
 
-The optional web service *version*. If *version=None* the
+The optional web service version. If `version=None` the
 most recent service will be returned.
 
 
@@ -419,7 +412,7 @@ The global configuration.
 
 ### adapters
 
-A dict of transport adapters by url.
+A `dict` of transport adapters by url.
 
 
 
@@ -453,8 +446,8 @@ the web service.
 
 ```
 all_services = client.list_services()
-all_versions = client.list_services('add-service')
-service = client.list_services('add-service', version='v1')
+all_versions_of_add_service = client.list_services('add-service')
+add_service_v1 = client.list_services('add-service', version='v1')
 ```
 
 
@@ -469,12 +462,12 @@ The web service name.
 
 ### opts
 
-The optional web service *version*.
+The optional web service version.
 
 
 ### Returns
 
-A *list* of service metadata.
+A `list` of service metadata.
 
 
 ### HttpException
@@ -492,17 +485,18 @@ realtime_service(name)
 
 
 
-Begin fluent API for defining a realtime web service.
+Begin fluent API chaining of properties for defining a *realtime* web
+service.
 
 **Example:**
 
 
 
-    ```
-    client.realtime_service('scoring')
-      .description('A new realtime web service')
-      .version('v1.0.0')
-    ```
+```
+client.realtime_service('scoring')
+   .description('A new realtime web service')
+   .version('v1.0.0')
+```
 
 
 
@@ -516,7 +510,8 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition#realtimedefinition) for fluent API.
+A [`RealtimeDefinition`](realtime-definition#realtimedefinition) instance for fluent API
+chaining.
 
 
 
@@ -530,10 +525,10 @@ redeploy_realtime(name, **opts)
 
 
 Updates properties on an existing *realtime* web service on the
-Server by *name* and *version*. If *version=None* the most recent
+Server by *name* and *version*. If `version=None` the most recent
 service will be updated.
 
-All input and output types are defined as a *pandas.DataFrame*.
+All input and output types are defined as a `pandas.DataFrame`.
 
 **Example:**
 
@@ -569,8 +564,8 @@ The web service name.
 
 ### opts
 
-The service properties to update. *opts* dict supports the
-following optional properties:
+The service properties to update as a `dict`.  The *opts*
+supports the following optional properties:
 
     * version (str) - Defines the web service version. 
 
@@ -601,7 +596,7 @@ redeploy_service(name, **opts)
 
 
 Updates properties on an existing web service on the ML Server by *name*
-and *version*. If *version=None* the most recent service will be
+and *version*. If `version=None` the most recent service will be
 updated.
 
 **Example:**
@@ -644,8 +639,8 @@ The web service name.
 
 ### opts
 
-The service properties to update. *opts* dict supports the
-following optional properties:
+The service properties to update as a `dict`. The *opts*
+supports the following optional properties:
 
 * version (str) - Defines a unique alphanumeric web service version. If the version is left blank, a unique *guid* is generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. 
 
@@ -663,44 +658,27 @@ following optional properties:
 
 * models (dict) - Name and value of *models* to include. 
 
-* inputs (dict) - Service input schema by *name* and *type*.
-
-      The following types are supported:
-          * int 
-
-          * float 
-
-          * str 
-
-          * bool 
-
-          * numpy.array 
-
-          * numpy.matrix 
-
-          * numpy.DataFrame 
-
-* outputs (dict) - Defines the web service output schema. If
-
-      empty, the service will not return a response value.
-      *outputs* are defined as a dictionary *{‘x’=int}* or
-      *{‘x’: ‘int’} that describes the output parameter names and
-      their corresponding data `types*.
+* inputs (dict) - Service input schema by *name* and *type*. 
 
   The following types are supported:
-      * int 
+  - int
+  - float
+  - str
+  - bool
+  - numpy.array
+  - numpy.matrix
+  - numpy.DataFrame
 
-      * float 
+* outputs (dict) - Defines the web service output schema. If empty, the service will not return a response value. *outputs* are defined as a dictionary `{'x'=int}` or `{'x': 'int'}` that describes the output parameter names and their corresponding data *types*. 
 
-      * str 
-
-      * bool 
-
-      * numpy.array 
-
-      * numpy.matrix 
-
-      * numpy.DataFrame 
+      The following types are supported:
+      - int
+      - float
+      - str
+      - bool
+      - numpy.array
+      - numpy.matrix
+      - numpy.DataFrame
 
 * artifacts (list) - A collection of file artifacts to return. File content is encoded as a *Base64 String*. 
 
@@ -731,7 +709,8 @@ service(name)
 
 
 
-Begin fluent API for defining a web service.
+Begin fluent API chaining of properties for defining a *standard* web
+service.
 
 **Example:**
 
@@ -755,4 +734,5 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition#servicedefinition) for fluent API.
+A [`ServiceDefinition`](service-definition#servicedefinition) instance for fluent API
+chaining.
