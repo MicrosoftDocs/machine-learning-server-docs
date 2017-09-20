@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# OperationalizationDefinition
+# Class OperationalizationDefinition
 
 
-## Class OperationalizationDefinition
+## OperationalizationDefinition
 
 
 
@@ -77,7 +77,7 @@ Set the service function name alias to call.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
 
 
 
@@ -92,7 +92,7 @@ deploy()
 
 Bundle up the definition properties and publish the service.
 :return:
-:returns: Self [`OperationalizationDefinition`](operationalization-definition) for fluent API.
+:returns: Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
 
 
 
@@ -116,7 +116,7 @@ Set the service description.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
 
 
 
@@ -141,7 +141,7 @@ To be implemented by subclasses.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
 
 
 
@@ -165,4 +165,4 @@ Set the service version.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.

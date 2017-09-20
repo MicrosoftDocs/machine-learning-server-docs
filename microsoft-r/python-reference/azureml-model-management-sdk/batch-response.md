@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# BatchResponse
+# Class BatchResponse
 
 
-## Class BatchResponse
+## BatchResponse
 
 
 
@@ -81,7 +81,7 @@ execution(index)
 Extracts the service execution results within the batch at this
 execution *index*.
 :param index: The batch execution index.
-:returns: An execution Self [`ServiceResponse`](service-response).
+:returns: An execution Self [`ServiceResponse`](service-response#serviceresponse).
 
 
 

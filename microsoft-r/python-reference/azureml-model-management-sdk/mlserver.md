@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# MLServer
+# Class MLServer
 
 
-## Class MLServer
+## MLServer
 
 
 
@@ -38,7 +38,7 @@ azureml.deploy.server.MLServer
 
 
 
-Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization)
+Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization#operationalization)
 
 This module provides a service implementation for the ML Server.
 
@@ -187,7 +187,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service) representing the
+A new instance of [`Service`](service#service) representing the
 realtime service *redeployed*.
 
 
@@ -314,7 +314,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service) representing the
+A new instance of [`Service`](service#service) representing the
 service *deployed*.
 
 
@@ -380,7 +380,7 @@ most recent service will be returned.
 
 ### Returns
 
-A new instance of [`Service`](service).
+A new instance of [`Service`](service#service).
 
 
 ### HttpException
@@ -433,8 +433,6 @@ list_services(name=None, **opts)
 
 
 List the different published web services on the ML Server.
-
-[Complete documentation](https://go.microsoft.com/fwlink/?linkid=836352).
 
 The service *name* and service *version* are optional. This call allows
 you to retrieve service information regarding:
@@ -518,7 +516,7 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition) for fluent API.
+A [`RealtimeDefinition`](realtime-definition#realtimedefinition) for fluent API.
 
 
 
@@ -583,7 +581,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service) representing the
+A new instance of [`Service`](service#service) representing the
 realtime service *redeployed*.
 
 
@@ -605,8 +603,6 @@ redeploy_service(name, **opts)
 Updates properties on an existing web service on the ML Server by *name*
 and *version*. If *version=None* the most recent service will be
 updated.
-
-[Complete documentation](https://go.microsoft.com/fwlink/?linkid=836352).
 
 **Example:**
 
@@ -716,7 +712,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service) representing the
+A new instance of [`Service`](service#service) representing the
 service *deployed*.
 
 
@@ -759,4 +755,4 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition) for fluent API.
+A [`ServiceDefinition`](service-definition#servicedefinition) for fluent API.

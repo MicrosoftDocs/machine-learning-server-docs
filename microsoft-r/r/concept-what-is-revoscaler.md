@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Get started with RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Get started with RevoScaleR - Machine Learning Server | Microsoft Docs"
 description: "Learn about the benefits of RevoScaleR and how to use it in custom script and code."
 keywords: ""
 author: "HeidiSteen"

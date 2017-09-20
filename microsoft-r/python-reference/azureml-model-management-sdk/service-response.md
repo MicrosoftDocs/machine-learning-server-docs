@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# ServiceResponse
+# Class ServiceResponse
 
 
-## Class ServiceResponse
+## ServiceResponse
 
 
 

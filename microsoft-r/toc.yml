@@ -260,6 +260,8 @@
     items:
     - name: Python
       items:
+      - name: Choose a MicrosoftML algorithm
+        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
       - name: Use revoscalepy on Spark
         href: python/how-to-revoscalepy.md
       - name: Configure Jupyter Notebooks
