@@ -41,6 +41,10 @@ sections:
         values:
           - href: /r-server/operationalize/quickstart-publish-r-web-service
           - href: /r-server/operationalize/python/quickstart-deploy-python-web-service
+      - title: Run a binary classification using microsoftml package 
+        values:
+          - href: 
+          - href: /r-server/python/quickstart-binary-classification-with-microsoftml
 - title: Step-by-Step Tutorials
   items:
   - type: paragraph

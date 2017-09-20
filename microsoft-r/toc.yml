@@ -545,8 +545,6 @@
         href: python-reference/microsoftml/get-sentiment.md
       - name: load_image
         href: python-reference/microsoftml/load-image.md
-      - name: loss functions
-        href: python-reference/microsoftml/rx-fast-linear.md
       - name: mutualinformation_select
         href: python-reference/microsoftml/mutualinformation-select.md
       - name: resize_image
