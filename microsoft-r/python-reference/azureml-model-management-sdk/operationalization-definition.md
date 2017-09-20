@@ -115,7 +115,7 @@ To be implemented by subclasses.
 
 ### Returns
 
-A new instance of [`Service`](service#service) representing the
+A new instance of [`Service`](service.md#service) representing the
 service *deployed*.
 
 
@@ -162,7 +162,7 @@ To be implemented by subclasses.
 
 ### Returns
 
-A new instance of [`Service`](service#service) representing the
+A new instance of [`Service`](service.md#service) representing the
 service *deployed*.
 
 

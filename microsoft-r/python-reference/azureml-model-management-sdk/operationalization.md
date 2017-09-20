@@ -278,5 +278,5 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition#servicedefinition) instance for fluent API
+A [`ServiceDefinition`](service-definition) instance for fluent API
 chaining.

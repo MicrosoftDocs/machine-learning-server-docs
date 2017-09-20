@@ -187,7 +187,7 @@ supports the following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service) representing the
+A new instance of [`Service`](service.md#service) representing the
 realtime service *redeployed*.
 
 
@@ -309,7 +309,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service) representing the
+A new instance of [`Service`](service.md#service) representing the
 service *deployed*.
 
 
@@ -350,7 +350,7 @@ Get a web service for consumption.
 
 ```
 service = client.get_service('example', version='v1.0.1')
-print(service)
+print(service.md#service)
 <ExampleService>
    ...
    ...
@@ -375,7 +375,7 @@ most recent service will be returned.
 
 ### Returns
 
-A new instance of [`Service`](service).
+A new instance of [`Service`](service.md#service).
 
 
 ### HttpException
@@ -578,7 +578,7 @@ supports the following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service) representing the
+A new instance of [`Service`](service.md#service) representing the
 realtime service *redeployed*.
 
 
@@ -671,7 +671,7 @@ supports the following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service) representing the
+A new instance of [`Service`](service.md#service) representing the
 service *deployed*.
 
 

@@ -73,7 +73,7 @@ high of a number because it might negatively impact performance.
 
 ### Returns
 
-The [`Batch`](batch#batch) instance to control this service’s
+The [`Batch`](batch) instance to control this service’s
 batching lifecycle.
 
 
@@ -149,7 +149,7 @@ The identifier of the batch execution.
 
 ### Returns
 
-The [`Batch`](batch#batch) instance to control this service’s
+The [`Batch`](batch) instance to control this service’s
 batching lifecycle.
 
 
