@@ -263,7 +263,7 @@ Consider adding a development tool on the server to build script or solutions us
 
 <a name="package-list"></a>
 
-## Packages list 
+## Package list 
 
 The following packages comprise a full Machine Learning Server installation:
 
