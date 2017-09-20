@@ -126,7 +126,7 @@ svc = client.get_service('myService', version='v2.0')
 
 # Start interacting with the service.
 # Let's call the function `manualTransmission` in this service
-res = service.manualTransmission(120, 2.8)
+res = svc.manualTransmission(120, 2.8)
 
 # Pluck out the named output `answer` that was defined at deploy time.
 print(res.output('answer'))
