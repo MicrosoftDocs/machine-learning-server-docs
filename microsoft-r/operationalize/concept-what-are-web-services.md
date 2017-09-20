@@ -28,7 +28,7 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-Offer users a chance to use your code and predictive models by deploying them as web service hosted in Machine Learning Server. Once you deploy the web service, it can be consumed by other authenticated users.
+You can offer users a chance to use your code and predictive models by deploying them as web service hosted in Machine Learning Server. Web services are deployed to facilitate the consumption and integration of the operationalized models and code they contain. 
 
 Web services in Machine Learning Server can be based on Python or R. They can also be deployed on one platform and consumed in another. 
 
@@ -39,6 +39,8 @@ There are two types of web services: standard and realtime.
 ## Requirements
 
 Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
+
+When you deploying your code and models, you are publishing them in the form of portable web services stored in Machine Learning Server so they can be operationalized by others.  Web services can be versioned and managed by their creators or those with [special permissions](#permissions).
 
 <a name="standard"></a>
 
@@ -93,6 +95,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 |[microsoftml](../python-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>categorical, categorical_hash, concat, extract_pixels, featurize_text, featurize_image, get_sentiment, rx_fast_trees, rx_fast_forest, rx_fast_linear, rx_logistic_regression, rx_neural_network, rx_oneclass_svm, load_image, resize_image, select_columns, and drop_columns.<br/><br/>See the preceding [input dataframe format restrictions](#inputdf).|
 
 
+
 <a name="versioning"></a>
 
 ## Versioning
@@ -103,6 +106,23 @@ At publish time, specify an alphanumeric string that is meaningful to those user
 
 If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
 
+<a name="consume"></a>
+
+## Consuming
+
+Whenever the web service is deployed or updated, a Swagger-based JSON file is automatically generated. This file defines the service and is used to consume the service by other authenticated users on various platforms and in various languages. 
+
+Using the web service's name and version, users can get the Swagger file they need to consume the service directly in R, Python, or via the API. 
+
+Web services can be consumed in two ways:
+
+|Consumption approach|Description|Learn more|
+|---|---|:---:|
+|Request Response|The service is consumed directly using a single consumption call|[In R](../operationalize/how-to-consume-web-service-interact-in-r.md)<br/><br/>[In Python](../operationalize/python/how-to-consume-web-services.md)
+|Asynchronous Batch|Users send as a single request to the server who in turn makes multiple asynchronous API calls on their behalf|[In R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)<br/><br/>Doc coming soon|
+
+
+<a name=permissions></a>
 
 ## Permissions
 
@@ -118,6 +138,7 @@ By default, all web service operations are available to authenticated users. Des
 **In R:**
 + [Deploy and manage web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)
 + [List, get, and consume web services in R](../operationalize/how-to-consume-web-service-interact-in-r.md)
++ [Asynchronous web service consumption via batch](../operationalize/how-to-consume-web-service-asynchronously-batch.md)
 
 **In Python:**
 + [Deploy and manage web services in Python](../operationalize/python/how-to-deploy-manage-web-services.md)

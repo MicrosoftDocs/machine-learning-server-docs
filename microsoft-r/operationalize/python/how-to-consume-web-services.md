@@ -73,8 +73,6 @@ After the object is returned, you can use a help function to explore the publish
 
 You can also print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. [Learn more about capabilities...](../../python-reference/azureml-model-management-sdk/service.md#capabilities)
 
-You can only see the code stored within a web service if you have published the web service or are assigned to the "Owner" role. To learn more [about roles](../configure-roles.md) in your organization, contact your Machine Learning Server administrator.
-
 You can use [supported public functions to interact with service object](../../python-reference/azureml-model-management-sdk/service.md).
 
 Example code:
@@ -92,6 +90,10 @@ print(help(svc))
 # -- View the service object's capabilities/schema
 svc.capabilities()
 ```
+
+
+>[!Note]
+>You can only see the code stored within a web service if you have published the web service or are assigned to the "Owner" role. To learn more [about roles](../configure-roles.md) in your organization, contact your Machine Learning Server administrator.
 
 <a name="consume-service"></a>
 
