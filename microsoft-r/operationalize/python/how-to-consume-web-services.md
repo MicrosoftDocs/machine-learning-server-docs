@@ -71,9 +71,11 @@ Authenticated users can retrieve the [web service object](../../python-reference
 
 After the object is returned, you can use a help function to explore the published service, such as `print(help(myServiceObject))`. You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them. 
 
-You can also print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. 
+You can also print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. [Learn more about capabilities...](../../python-reference/azureml-model-management-sdk/service.md#capabilities)
 
 You can only see the code stored within a web service if you have published the web service or are assigned to the "Owner" role. To learn more [about roles](../configure-roles.md) in your organization, contact your Machine Learning Server administrator.
+
+You can use [supported public functions to interact with service object](../../python-reference/azureml-model-management-sdk/service.md).
 
 Example code:
 
@@ -88,18 +90,6 @@ print(help(svc))
 # -- View the service capabilities/schema for this service
 svc.capabilities()
 ```
-
-####Interact with API clients
-
-You can use the following supported public functions to interact with the DeployClient API instance.
-
-| Function      | Description                                            |
-| ------------- |--------------------------------------------------------|
-| print       |	Print method that lists all members of the object      |
-| capabilities | Report on the service features such as I/O schema, name, version	   |
-| swagger     |	Displays the service's swagger specification, such as 'swagger(json=True)'         |
-| batch |Define the data records to be batched. There are additional publish functions used to consume a service asynchronously via batch execution. For example, 'batch(records, parallel_count=10)'|
-
 
 <a name="consume-service"></a>
 

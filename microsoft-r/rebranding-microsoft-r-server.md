@@ -73,4 +73,4 @@ A Python interpreter can also be installed locally along with the custom Python 
 
 ## Machine Learning at Microsoft
 
-Read more about the machine learning offerings at Microsoft in this article, ["Machine Learning at Microsoft."](gary-to-provide.md)
+Read more about the machine learning offerings at Microsoft in this article, ["Machine Learning at Microsoft."](link-to-machine-learning-at-microsoft.md)
