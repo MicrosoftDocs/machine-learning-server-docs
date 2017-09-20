@@ -47,9 +47,7 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 ## Find and list web services
 
-Any authenticated user can retrieve a list of web services using the `list_services` function on the DeployClient object. 
-
-You can use arguments to return a specific web service or all labeled versions of a given web service. 
+Any authenticated user can retrieve a list of web services using the `list_services` function on the DeployClient object. You can use arguments to return a specific web service or all labeled versions of a given web service. 
  
 ```Python
 ## -- Return metadata for all services hosted on this server
@@ -62,19 +60,20 @@ client.list_services('myService')
 client.list_services('myService', version='v1.0')
 ```
 
-You can only see the code stored within a web service if you either published the web service and/or are assigned to the ["Owner" role](../configure-roles.md). To learn more about the roles in your organization, contact your Machine Learning Server administrator.
 
-Once you find the service you want, use [the get_service() function](#getService) to retrieve the service object for consumption.
+Once you find the service you want, use the [get_service](#get_service)  function to retrieve the service object for consumption.
 
 <a name="get_service"></a>
 
 ## Retrieve and examine service objects
 
-Authenticated users can retrieve a given [web service object](../../python-reference/azureml-model-management-sdk/service.md), which contains the client stub for consuming that server using the `get_service()` function from the azureml-model-management-sdk package. 
+Authenticated users can retrieve the [web service object](../../python-reference/azureml-model-management-sdk/service.md) in order to get the client stub for consuming that service. Use the `get_service` function from the azureml-model-management-sdk package to retrieve the object. 
 
-After the object is returned, you can use a help function to explore the published service, such as `print(help(serviceObject))`. You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them. 
+After the object is returned, you can use a help function to explore the published service, such as `print(help(myServiceObject))`. You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them. 
 
 You can also print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. 
+
+You can only see the code stored within a web service if you have published the web service or are assigned to the "Owner" role. To learn more [about roles](../configure-roles.md) in your organization, contact your Machine Learning Server administrator.
 
 Example code:
 
@@ -108,7 +107,7 @@ You can use the following supported public functions to interact with the Deploy
 
 Web services are published to facilitate the consumption and integration of the operationalized models and code.  Whenever the web service is published or updated, a Swagger-based JSON file is generated automatically that define the service.
 
-When you publish a service, you can let people know that it is ready for consumption. Users can get the Swagger file they need to consume the service directly in R or via the API. To make it easy for others to find your service, provide them with the service name and version number (or they can use [the listServices() function](#listServices)).
+When you publish a service, you can let people know that it is ready for consumption. Users can get the Swagger file they need to consume the service directly in R or via the API. To make it easy for others to find your service, provide them with the service name and version number (or they can use [the list_services function](#list_services)).
 
 Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described in the following section. Another approach is the [asynchronous "Batch" consumption approach](how-to-consume-web-service-asynchronously-batch.md), where users send as a single request to Machine Learning Server, which then makes multiple asynchronous API calls on your behalf.
   
