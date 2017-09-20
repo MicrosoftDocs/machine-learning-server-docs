@@ -30,4 +30,6 @@ The following samples are available for Python users. Use these as examples of h
 
 |Example|Description                                                     |
 |--------------|---------------------------------------------------------|
+|[Sentiment analysis](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/202/plot_sentiment_analysis.py)|Featurize text data as a bag of counts of n-grams and train a model to predict if the text expresses positive or negative sentiments.    |
+|[add link](#link)|How to improve model prediction by choosing optimal hyperparameters for the learner.          |
 |[add link](#link)|description of notebook, or other file...             |

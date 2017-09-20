@@ -65,15 +65,15 @@ You can try it yourself with the notebook.
 
 ## Next steps
 
+Now that you've tried this example, you can start developing your own solutions using the MicrosoftML packages and APIs for R and Python:
+
+- [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md)
+- [`MicrosoftML` Python package functions](../python-reference/microsoftml/microsoftml-package.md)
+
 
 ## See also
 
-This section provides a quick summary of useful links for data scientists looking to perform machine learning tasks with Machine Learning Server.
-
-**Key Documents**
-
-**Support Channel**
- + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+For more about Machine Learning Sever in general, see [Overview of Machine Learning Server](../what-is-machine-learning-server.md) 
 
 
-Find more information in the table of contents.
+For more machine learning samples using the microsoftml Python package, see [Python samples for MicrosoftML](samples-microsoftml-python.md).
