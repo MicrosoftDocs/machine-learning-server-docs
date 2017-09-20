@@ -6,7 +6,7 @@ description: "Creates a compute context for running revoscalepy analyses inside 
 keywords: "sql" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,10 +27,7 @@ ms.custom: ""
 # RxInSqlServer
 
 
-**Applies to: SQL Server 2017**
-
-
-## Usage
+ 
 
 
 

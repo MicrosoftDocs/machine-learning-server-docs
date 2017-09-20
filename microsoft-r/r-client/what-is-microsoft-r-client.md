@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "What is Microsoft R Client | Microsoft Docs"
-description: "Microsoft R Client"
+title: "What is Microsoft R Client? - Machine Learning Server | Microsoft Docs"
+description: "Microsoft R Client is a free data science tool for high performance analytics. With it, you can use any open source R package."
 keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 ms.author: "jmartens"
@@ -135,11 +135,11 @@ You can learn more with these guides:
 
 + [Compatibility with Machine Learning Server](compatibility-with-server.md)
 
-+ [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
++ [How-to guides in Machine Learning Server](../r/how-to-introduction.md)
 
 + [RevoScaleR R package reference](../r/tutorial-introduction.md)
 
-+ [MicrosoftML R package reference](../r/concept-what-is-the-microsoftml-package.md)
++ [MicrosoftML R package reference](../r-reference/microsoftml/microsoftml-package.md)
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 

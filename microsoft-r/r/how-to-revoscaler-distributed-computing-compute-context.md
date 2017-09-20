@@ -37,7 +37,7 @@ For R, the specific dependency is to have the same version of RevoScaleR. This m
 
 ## List of compute contexts
 
-The revoscalepy library only supports the Spark compute context, local and remote.
+The revoscalepy library supports the local compute context, RxSpark, and RxInSqlServer.
 
 The RevoScaleR library supports the compute contexts in the following table.
 
@@ -110,7 +110,7 @@ RevoScaleR functions can be used to distribute computations over more than one s
 RevoScaleR's distributed computing capabilities vary by platform and the details for creating a compute context vary depending upon the specific framework used to support those distributed computing capabilities. However, once you have established a computing context, you can use the same **RevoScaleR** commands to manage your data, analyze data, and control computations in all frameworks.
 
 > [!NOTE]
-> RevoScaleR is available in both Machine Learning Server Server and R Client. You can develop script in R Client for execution on the server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that introduce dependencies on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Machine Learning Server instance.
+> RevoScaleR is available in both Machine Learning Server and R Client. You can develop script in R Client for execution on the server.  However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if the scope of operations involve much larger datasets that introduce dependencies on chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Machine Learning Server instance.
 >
 
 ## Limitations on switching

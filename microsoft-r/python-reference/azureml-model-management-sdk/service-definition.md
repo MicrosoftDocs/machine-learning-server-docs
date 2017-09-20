@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "ServiceDefinition,alias,artifact,artifacts,code_fn,code_str,deploy,description,inputs,models,objects,outputs,redeploy,version: " 
+title: "ServiceDefinition,alias,artifact,artifacts,code_fn,code_str,deploy,description,inputs,models,objects,outputs,redeploy,version: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,6 +27,9 @@ ms.custom: ""
 # ServiceDefinition
 
 
+## Class ServiceDefinition
+
+
 
 ```
 azureml.deploy.operationalization.ServiceDefinition(name, op)
@@ -35,79 +38,108 @@ azureml.deploy.operationalization.ServiceDefinition(name, op)
 
 
 
-Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md)
+Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md#operationalization-definition))
 
-Service class defining a service’s properties on the fluent API.
+Service class defining a *standard* service’s properties for publishing.
 
 
 
-```
+```python
 alias(alias)
 ```
 
 
 
 
-Set the service function name alias to call.
+Set the optional service function name alias to use in order to consume
+the service.
 
-
-# Arguments
-
-
-## alias
-
-
-# Returns
-
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+**Example:**
 
 
 
 ```
+service = client.service('score-service').alias('score').deploy()
+
+# `score()` is the function that will call the `score-service`
+result = service.score()
+```
+
+
+
+### Arguments
+
+
+### alias
+
+The service function name alias to use in order to consume
+the service.
+
+
+### Returns
+
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.
+
+
+
+## artifact
+
+```python
 artifact(artifact)
 ```
 
 
 
 
-A single File artifact.
+Define a service’s optional supported file artifact by name. A
+convenience to calling `.artifacts(['file.png'])` with a list of one.
 
 
-# Arguments
+### Arguments
 
 
-## artifact
+### artifact
+
+A single file artifact by name.
 
 
-# Returns
+### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+chaining.
 
 
 
-```
+## artifacts
+
+```python
 artifacts(artifacts)
 ```
 
 
 
 
-File artifacts.
+Defines a service’s optional supported file artifacts by name.
 
 
-# Arguments
+### Arguments
 
 
-## artifacts
+### artifacts
+
+A `list` of file artifacts by name.
 
 
-# Returns
+### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+chaining.
 
 
 
-```
+## code_fn
+
+```python
 code_fn(code, init=None)
 ```
 
@@ -115,38 +147,89 @@ code_fn(code, init=None)
 
 
 Set the service consume function as a function.
-:param code:
-:param init:
-:returns: Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+
+**Example:**
 
 
 
 ```
+def init():
+    pass
+
+def score(df):
+    pass
+
+.code_fn(score, init)
+```
+
+
+
+### Arguments
+
+
+### code
+
+A function handle as a reference to run python code.
+
+
+### init
+
+An optional function handle as a reference to initialize
+the service.
+
+
+### Returns
+
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+chaining.
+
+
+
+## code_str
+
+```python
 code_str(code, init=None)
 ```
 
 
 
 
-Set the service consume function as a block of python code.
-
-
-# Arguments
-
-
-## code
-
-
-## init
-
-
-# Returns
-
-A [`ServiceDefinition`](azureml/deploy/operationalization/ServiceDefinition.md) for fluent API.
+Set the service consume function as a block of python code as a `str`.
 
 
 
 ```
+init = 'import pandas as pd'
+code = 'print(pd)'
+
+.code_str(code, init)
+```
+
+
+
+### Arguments
+
+
+### code
+
+A block of python code as a `str`.
+
+
+### init
+
+An optional block of python code as a `str` to initialize
+the service.
+
+
+### Returns
+
+A [`ServiceDefinition`](service-definition) for fluent API chaining.
+
+
+
+## deploy
+
+```python
 deploy()
 ```
 
@@ -156,123 +239,191 @@ deploy()
 Bundle up the definition properties and publish the service.
 
 
-# Returns
+### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+A new instance of [`Service`](service.md#service) representing the
+service *deployed*.
 
 
 
-```
+## description
+
+```python
 description(description)
 ```
 
 
 
 
-Set the service description.
+Set the service’s optional description.
 
 
-# Arguments
+### Arguments
 
 
-## description
+### description
+
+The description of the service.
 
 
-# Returns
+### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.
 
 
 
-```
+## inputs
+
+```python
 inputs(**inputs)
 ```
 
 
 
 
-Defines inputs.
+Defines a service’s optional supported inputs by name and type.
 
-
-# Arguments
-
-
-## inputs
-
-
-# Returns
-
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+**Example:**
 
 
 
 ```
+.inputs(a=float, b=int, c=str, d=bool, e='pandas.DataFrame')
+```
+
+
+
+### Arguments
+
+
+### inputs
+
+The inputs by name and type.
+
+
+### Returns
+
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+chaining.
+
+
+
+## models
+
+```python
 models(**models)
 ```
 
 
 
 
-Models.
+Include any model(s) used for this service.
 
-
-# Arguments
-
-
-## models
-
-
-# Returns
-
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+**Example:**
 
 
 
 ```
+cars_model = rx_lin_mod(formula="am ~ hp + wt",data=mtcars)
+
+.models(cars_model=cars_model)
+```
+
+
+
+### Arguments
+
+
+### models
+
+Any models by name and value.
+
+
+### Returns
+
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+chaining.
+
+
+
+## objects
+
+```python
 objects(**objects)
 ```
 
 
 
 
-Objects.
+Include any object(s) used for this service.
 
-
-# Arguments
-
-
-## objects
-
-
-# Returns
-
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+**Example:**
 
 
 
 ```
+x = 5
+y = 'hello'
+
+.objects(x=x, y=y)
+```
+
+
+
+### Arguments
+
+
+### objects
+
+Any objects by name and value.
+
+
+### Returns
+
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+chaining.
+
+
+
+## outputs
+
+```python
 outputs(**outputs)
 ```
 
 
 
 
-Defines utputs.
+Defines a service’s optional supported outputs by name and type.
 
-
-# Arguments
-
-
-## outputs
-
-
-# Returns
-
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+**Example:**
 
 
 
 ```
+.outputs(a=float, b=int, c=str, d=bool, e='pandas.DataFrame')
+```
+
+
+
+### Arguments
+
+
+### outputs
+
+The outputs by name and type.
+
+
+### Returns
+
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+chaining.
+
+
+
+## redeploy
+
+```python
 redeploy(force=False)
 ```
 
@@ -282,34 +433,33 @@ redeploy(force=False)
 Bundle up the definition properties and update the service.
 
 
-# Arguments
+### Returns
 
-
-## force
-
-
-# Returns
-
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+A new instance of [`Service`](service.md#service) representing the
+service *deployed*.
 
 
 
-```
+## version
+
+```python
 version(version)
 ```
 
 
 
 
-Set the service version.
+Set the service’s optional version.
 
 
-# Arguments
+### Arguments
 
 
-## version
+### version
+
+The version of the service.
 
 
-# Returns
+### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.

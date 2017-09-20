@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Linux | Microsoft Docs"
-description: "Microsoft R Client Install Guide Linux"
+title: "Install Microsoft R Client on Linux - Machine Learning Server | Microsoft Docs"
+description: "Guide to installing Microsoft R Client on Linux. R Client is a free, data science tool for high performance analytics."
 keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "j-martens"
 ms.author: "jmartens"
@@ -41,7 +41,7 @@ For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.m
 | - | - |
 |Operating Systems|Supported versions include:<br>- Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br>- Ubuntu 14.04 and 16.04<br>- SUSE Linux Enterprise Server 11 (SLES11)<br><br>Must be a supported version of Linux on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.|
 |Available RAM|2 GB of RAM is required; 8 GB or more are recommended|
-|Free disk space|600 MB recommended, after installation of all prerequisites<br>1.2 GB recommended if pretrained models are installed|
+|Free disk space|600 MB recommended, after installation of all prerequisites<br>1.2 GB recommended if pre-trained models are installed|
 |Internet access|Needed to download R Client and any dependencies. If you do not have an internet connection, for the instructions for an [offline installation](#offline)|
 
 
@@ -104,7 +104,7 @@ This section walks you through an R Client 3.4.1 deployment using the `install.s
 
 1. Run the script. 
 
-   To include the [**pretrained machine learning models for MicrosoftML**](../install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
+   To include the [**pre-trained machine learning models for MicrosoftML**](../install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
 
    ```
    [root@localhost MRC_Linux] $ bash install.sh
@@ -194,7 +194,7 @@ R Client for Linux is deployed by running the install script with no parameters.
 
 1. Run the script. 
 
-   To include the [**pretrained machine learning models for MicrosoftML**](../install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
+   To include the [**pre-trained machine learning models for MicrosoftML**](../install/microsoftml-install-pretrained-models.md) when you install, then specify the switch `-m` for install.sh. 
 
    ```
    [root@localhost MRC_Linux] $ bash install.sh
@@ -226,7 +226,7 @@ flag | Option | Description
 -----|--------|------------
  -a | --accept-eula | Accept all end user license agreements.
  -d | --download-mro |  Download microsoft r open for distribution to an offline system.
- -m | --models | Install Microsoft ML pretrained models.
+ -m | --models | Install Microsoft ML pre-trained models.
  -s | --silent | Perform a silent, unattended install.
  -u | --unattended | Perform an unattended install.
  -h | --help | Print this help text.
@@ -286,11 +286,11 @@ You can learn more with these guides:
 
 + [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
++ [How-to guides in Machine Learning Server](../r/how-to-introduction.md)
 
 + [RevoScaleR R package reference](../r/tutorial-introduction.md)
 
-+ [MicrosoftML R package reference](../r/concept-what-is-the-microsoftml-package.md)
++ [MicrosoftML R package reference](../r-reference/microsoftml/microsoftml-package.md)
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 

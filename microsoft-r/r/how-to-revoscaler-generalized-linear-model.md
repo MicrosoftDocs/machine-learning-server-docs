@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Generalized Linear Models (RevoScaleR)"
+title: "Generalized Linear Models (RevoScaleR) in Machine Learning Server | Microsoft Docs"
 description: "Generalized linear models with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Generalized Linear Models
+# Generalized Linear Models using RevoScaleR
 
 Generalized linear models (GLM) are a framework for a wide range of analyses. They relax the assumptions for a standard linear model in two ways. First, a functional form can be specified for the conditional mean of the predictor, referred to as the “link” function. Second, you can specify a distribution for the response variable. The rxGlm function in RevoScaleR provides the ability to estimate generalized linear models on large data sets.
 

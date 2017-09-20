@@ -44,7 +44,9 @@ Before you begin this QuickStart, have the following ready:
 
 + An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
 
-+ An instance of [Machine Learning Server installed](../what-is-machine-learning-server.md) that has been [configured to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization).
++ An instance of [Machine Learning Server installed](../what-is-machine-learning-server.md) that has been [configured to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization). 
+
+  For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure.
 
 + The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](how-to-connect-log-in-with-mrsdeploy.md) in R, deploy your analytics as web services so others can consume them. 
 
@@ -279,7 +281,7 @@ Requirements for remote execution include:
 
 This section provides a quick summary of useful links for data scientists operationalizing R analytics with Machine Learning Server.
 
->Use the table of contents to find all the guides and documentation needed by the administrator.
+>Use the table of contents to find all the documentation.
 
 **Key Documents**
  + [About Operationalization](../what-is-operationalization.md)    
@@ -288,10 +290,8 @@ This section provides a quick summary of useful links for data scientists operat
  + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)    
  + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)    
  + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)    
-
-**Other Getting Started Guides**
  + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    
- + [Administrators](configure-start-for-administrators.md)    
+ + [Get started for administrators](configure-start-for-administrators.md)    
 
 **Support Channel**
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

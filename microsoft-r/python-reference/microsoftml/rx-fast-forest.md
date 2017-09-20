@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_fast_forest*: Random Forest
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage

@@ -6,7 +6,7 @@ description: "Partition input data sources by key values and save the results to
 keywords: "partition" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_partition
 
 
-**Applies to: SQL Server 2017 RC2**
+ 
 
 
 ## Usage
@@ -168,7 +168,6 @@ an Xdf data source object of one partition.
 
 [`rx_exec_by`](rx-exec-by.md).
 [`RxXdfData`](RxXdfData.md).
-[`rx_partition`](revoscalepy/rx-partition.md).
 
 
 ## Example

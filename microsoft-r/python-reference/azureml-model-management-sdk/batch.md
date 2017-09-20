@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Batch,api,execution_id,parallel_count,records,results,start: " 
+title: "Batch,api,execution_id,parallel_count,records,results,start: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# Batch
+# Class Batch
+
+
+## Batch
 
 
 
@@ -40,7 +43,9 @@ Manager of a service’s batch execution lifecycle.
 
 
 
-```
+## api
+
+```python
 api
 ```
 
@@ -51,18 +56,23 @@ Gets the api endpoint.
 
 
 
-```
+## execution_id
+
+```python
 execution_id
 ```
 
 
 
 
-Gets this batch’s *execution id* if currently started, otherwise *None*.
+Gets this batch’s execution identifier if currently started, otherwise
+`None`.
 
 
 
-```
+## parallel_count
+
+```python
 parallel_count
 ```
 
@@ -91,33 +101,142 @@ results(show_partial_results=True)
 
 
 
-Poll batch results.
+Poll for batch results.
 
 
-# Arguments
+### Arguments
 
 
-## show_partial_results
+### show_partial_results
 
 To get partial execution results or not.
+The default is to include partial results.
 
 
-# Returns
+### Returns
 
-An execution Self [`BatchResponse`](batch-response.md).
+An instance of [`BatchResponse`](batch-response#batchresponse).
 
 
 
-```
+## start
+
+```python
 start()
 ```
 
 
 
 
-Start a batch execution.
+Starts a batch execution for this service.
 
 
-# Returns
+### Returns
 
-Self
+An instance of itself [`Batch`](azureml/deploy/server/service/Batch.md).
+
+## artifacts
+
+```python
+artifact(index, file_name)
+```
+
+Get the file artifact for this service batch execution *index*.
+
+### Arguments
+
+### index
+
+Batch execution index.
+
+### file_name
+
+Artifact filename
+
+### Returns
+
+A single file artifact.
+
+## cancel
+
+```python
+cancel()
+```
+
+Cancel this batch execution.
+
+## download
+
+
+
+```
+download(index, file_name=None, destination=cwd())
+```
+
+
+Download the file artifact to file-system in the *destination*.
+
+### Arguments
+
+### index
+
+Batch execution index.
+
+### file_name
+
+The file artifact name.
+
+### destination
+
+Download location.
+
+### Returns
+
+A *list* of downloaded file-paths.
+
+## list_artifacts
+
+```python
+list_artifacts(index)
+```
+
+List the file artifact names belonging to this service batch execution
+*index*.
+
+### Arguments
+
+### index
+
+Batch execution index.
+
+### Returns
+
+A *list* of file artifact names.
+
+Gets this batch’s parallel count of threads.
+
+## records
+
+```python
+records
+```
+
+Gets the batch input records.
+
+## results
+
+```python
+results(show_partial_results=True)
+```
+
+Poll batch results.
+
+### Arguments
+
+### show_partial_results
+
+To get partial execution results or not.
+
+### Returns
+
+An execution Self [*BatchResponse*](batch-response#batchresponse).

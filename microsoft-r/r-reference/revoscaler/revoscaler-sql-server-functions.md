@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 #ScaleR Functions for Working with SQL Server Data
 
-This topic provides an overview of the main ScaleR functions for use with SQL Server, along with comments on their syntax.
+This topic provides an overview of the main RevoScaleR functions for use with SQL Server, along with comments on their syntax.
 
 
 ## Functions for working with SQL Server Data Sources
@@ -63,4 +63,4 @@ If you regularly move large amounts of data from a database to a local workstati
 + `RxDataStep` - Read data from XDF int a data frame
 
 ## See Also
-[Comparison of ScaleR and CRAN R Functions](revoscaler-compared-to-base-r.md)
+[Comparison of RevoScaleR and CRAN R Functions](revoscaler-compared-to-base-r.md)

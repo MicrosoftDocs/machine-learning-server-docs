@@ -52,11 +52,11 @@ To access these RESTful APIs outside of R, generate an API client library in you
 
 ## Get the Swagger file
 
-Machine Learning Server provides a Swagger template to simplify the integration. This template defines the available resources in the REST API and defines the operations you can call on those resources. A standard set of core operationalization APIs are [available and defined](https://microsoft.github.io/deployr-api-docs/) in `rserver-swagger-<version>.json`, where <version> is the 3-digit product version number. Additionally, another Swagger-based JSON file is generated for each web service version.  
+Machine Learning Server provides a Swagger template to simplify the integration. This template defines the available resources in the REST API and defines the operations you can call on those resources. A standard set of core operationalization APIs are [available and defined](https://microsoft.github.io/deployr-api-docs/) in `mlserver-swagger-<version>.json`, where <version> is the 3-digit product version number. Additionally, another Swagger-based JSON file is generated for each web service version. For R Server users, replace mlserver-swagger with rserver-swagger in the filename.
 
 API&nbsp;Types|Corresponding Swagger-based JSON File
 ------------------------|------------------
-Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/<version>/swagger/rserver-swagger-<version>.json`, where `<version>` is the 3-digit product version number.
+Core&nbsp;APIs|Download Swagger file containing the set of core operationalization APIs from `https://microsoft.github.io/deployr-api-docs/<version>/swagger/mlserver-swagger-<version>.json`, where `<version>` is the 3-digit product version number.<br/>&bull; For 9.2.1: https://microsoft.github.io/deployr-api-docs/9.2.1/swagger/mlserver-swagger-9.2.1.json<br/>&bull; For 9.1.0 https://microsoft.github.io/deployr-api-docs/9.1.0/swagger/rserver-swagger-9.1.0.json
 Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.json` so you can consume that service. Obtain it directly from the user that published the service or retrieve yourself using 'GET /api/{service}/{version}/swagger.json'. [Learn more...](how-to-consume-web-service-interact-in-r.md#swagger-app-dev)
 
 
@@ -64,7 +64,7 @@ Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.jso
 ### Option 1. Build using a Swagger code generator
 To build a client library, run the file through the Swagger code generator, and specify the language you want. If you use AutoRest to generate a C# client library, it might look like  command:
 ```
-AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-swagger-<version>.json -Namespace MyNamespace
+AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input mlserver-swagger-<version>.json -Namespace MyNamespace
 ```
 where `<version>` is the 3-digit product version number.
 
@@ -164,17 +164,17 @@ Now that you have generated the client library and added authentication logic to
 
 ## Example: Core Client Library from Swagger (in CSharp)
 
-This example shows how you can use the `rserver-swagger-9.1.0.json` swagger file to build a client library to interact with the core operationalization APIs from your application. For other versions, get the file from `https://microsoft.github.io/deployr-api-docs/<version>/swagger/rserver-swagger-<version>.json` where <version> is the server product version.
+This example shows how you can use the `mlserver-swagger-9.2.1.json` swagger file to build a client library to interact with the core operationalization APIs from your application. For other versions, get the file from `https://microsoft.github.io/deployr-api-docs/<version>/swagger/mlserver-swagger-<version>.json` where <version> is the server product version.
 
-Build and use a core R Server 9.1.0 client library from swagger in CSharp and Azure Active Directory authentication:
+Build and use a core Machine Learning Server 9.2.1 client library from swagger in CSharp and Azure Active Directory authentication:
 
-1. Download `rserver-swagger-9.1.0.json` from https://microsoft.github.io/deployr-api-docs/9.1.0/swagger/rserver-swagger-9.1.0.json.
+1. Download `mlserver-swagger-9.2.1.json` from https://microsoft.github.io/deployr-api-docs/9.2.1/swagger/mlserver-swagger-9.2.1.json.
 
-1. Build the statically generated client library files for CSharp from the `rserver-swagger-9.1.0.json` swagger. 
+1. Build the statically generated client library files for CSharp from the `mlserver-swagger-9.2.1.json` swagger. 
    Notice the language is `CSharp` and the namespace is `IO.Swagger.Client`.
 
    ```
-   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input rserver-swagger-9.1.0.json -Namespace IO.Swagger.Client
+   AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input mlserver-swagger-9.2.1.json -Namespace IO.Swagger.Client
    ```
 
 1. In Visual Studio, add the following `NuGet` package dependencies to your VS project. 

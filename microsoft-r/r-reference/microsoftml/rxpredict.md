@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Score using a Microsoft R Machine Learning model" 
+title: "rxPredict.mlModel function (MicrosoftML) | Microsoft Docs" 
 description: " Reports per-instance scoring results in a data frame or RevoScaleR data source using a trained Microsoft R Machine Learning model with a RevoScaleR data source. " 
-keywords: "MicrosoftML, rxPredict.mlModel, manip" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), rxPredict.mlModel, manip" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxPredict.mlModel: Score using a Microsoft R Machine Learning model
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #rxPredict.mlModel: Score using a Microsoft R Machine Learning model 
  ##Description
  
 Reports per-instance scoring results in a data frame or RevoScaleR data source
@@ -56,52 +52,52 @@ rxPredict  (modelObject, data, outData = NULL,
 
    
   
- ### modelObject
- A model information object returned from a MicrosoftML model. For example, an object returned from [rxFastTrees](rxfasttrees.md) or [rxLogisticRegression](logisticregression.md). 
+ ### `modelObject`
+ A model information object returned from a MicrosoftML model. For example, an object returned from [rxFastTrees](rxFastTrees.md) or [rxLogisticRegression](rxLogisticRegression.md). 
   
   
   
- ### data
+ ### `data`
  A **RevoScaleR** data source object, a data frame, or the path to a `.xdf` file. 
   
   
   
- ### outData
+ ### `outData`
  Output text or xdf file name or an `RxDataSource` with write capabilities in which to store predictions. If `NULL`, a data frame is returned. The default value is `NULL`. 
   
   
   
- ### writeModelVars
+ ### `writeModelVars`
  If `TRUE`, variables in the model are written to the output data set in addition to the scoring variables. If variables from the input data set are transformed in the model, the transformed variables are also included. The default value is `FALSE`. 
   
   
   
- ### extraVarsToWrite
+ ### `extraVarsToWrite`
  `NULL` or character vector of additional variables names from the input data to include in the `outData`. If `writeModelVars` is `TRUE`, model variables are included as well. The default value is `NULL`. 
   
   
   
- ### suffix
+ ### `suffix`
  A character string specifying suffix to append to the created  scoring variable(s) or `NULL` in there is no suffix. The default  value is `NULL`. 
   
   
   
- ### overwrite
+ ### `overwrite`
  If `TRUE`, an existing `outData` is overwritten; if `FALSE` an existing `outData` is not overwritten. The default  value is `FALSE`. 
   
   
   
- ### dataThreads
+ ### `dataThreads`
  An integer specifying the desired degree of parallelism in the data pipeline. If `NULL`, the number of threads used is determined internally. The default value is `NULL`. 
   
   
   
- ### blocksPerRead
+ ### `blocksPerRead`
  Specifies the number of blocks to read for each chunk  of data read from the data source. 
   
   
   
- ### reportProgress
+ ### `reportProgress`
  An integer value that specifies the level of reporting  on the row processing progress:   
 *   `0`: no progress is reported.     
 *   `1`: the number of processed rows is printed and updated.   
@@ -111,17 +107,17 @@ rxPredict  (modelObject, data, outData = NULL,
   
   
   
- ### verbose
+ ### `verbose`
  An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information.  The default value is `1`. 
   
   
   
- ### computeContext
+ ### `computeContext`
  Sets the context in which computations are executed, specified with a valid RxComputeContext. Currently local and RxInSqlServer compute contexts are supported. 
   
   
   
- ###  ...
+ ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  
@@ -146,17 +142,17 @@ include one variable: `Score`; and multi-class classifiers include
 `Score`. If a `suffix` is provided, it is added to the end
 of these output variable names.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
  ##See Also
  
-[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md),
-[rxLogisticRegression](logisticregression.md), [rxNeuralNet](neuralnet.md),
-[rxOneClassSvm](oneclasssvm.md).
+[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
+[rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md).
    
  ##Examples
 
@@ -202,5 +198,6 @@ of these output variable names.
   file.remove(xdfOut)
  
 ```
+ 
  
  

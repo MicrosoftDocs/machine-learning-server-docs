@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Converting RevoScaleR Model Objects for Use in PMML"
-description: "Using PMML with RevoScaleR model objects."
+title: "Convert RevoScaleR Model Objects for Use in PMML (Machine Learning Server) | Microsoft Docs"
+description: "Using PMML with RevoScaleR model objects in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"

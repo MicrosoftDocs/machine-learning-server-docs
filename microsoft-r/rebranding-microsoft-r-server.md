@@ -69,8 +69,4 @@ Microsoft is committed to providing customers with support. Microsoft R Server s
 
 [Microsoft R Client](r-client/what-is-microsoft-r-client.md) continues on as an R-only client for Machine Learning Server and R Server. 
 
-A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality. [Learn more](install/python-libraries-interpreter.md).
-
-## Machine Learning at Microsoft
-
-Read more about the machine learning offerings at Microsoft in this article, ["Machine Learning at Microsoft."](gary-to-provide.md)
+A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality on a Windows machine. [Learn more](install/python-libraries-interpreter.md).

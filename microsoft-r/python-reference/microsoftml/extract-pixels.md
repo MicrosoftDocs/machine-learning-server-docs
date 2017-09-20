@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.extract_pixels*: Extracts pixels form an image
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage

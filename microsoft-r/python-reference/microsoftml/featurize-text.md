@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.featurize_text*: Converts text columns into numerical features
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage

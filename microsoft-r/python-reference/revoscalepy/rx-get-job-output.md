@@ -6,7 +6,7 @@ description: "During a job run, the state of the output is non-deterministic (th
 keywords: "job, output" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # rx_get_job_output
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage

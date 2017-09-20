@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Data Summaries"
+title: "Data Summaries using RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "Summarizing data in RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Data Summaries
+# Data Summaries using RevoScaleR
 
 In other articles, we’ve used the rxGetVarInfo and rxSummary functions to view summary information about data files and the data itself. In this article, we explore the use of these functions in more detail, and also take a look at the rxLorenz function as a way of visually summarizing cumulative distributions of variables.
 

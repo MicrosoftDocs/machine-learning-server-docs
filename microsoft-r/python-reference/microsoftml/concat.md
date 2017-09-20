@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.concat*: Concatenates multiple columns into a single vector
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage

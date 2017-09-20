@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Service,batch,capabilities,get_batch,list_batch_executions,swagger: " 
+title: "Service,batch,capabilities,get_batch,list_batch_executions,swagger: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,35 +24,47 @@ ms.custom: ""
  
 ---
 
-# Class azureml.deploy.server.service.Service(service, http_client)
+# Class Service
 
 
-Service object from metadata.
+## Service
+
+
+
+```
+azureml.deploy.server.service.Service(service, http_client)
+```
+
+
+
+
+Dynamic object for service consumption and batching based on service
+metadata attributes.
 
 
 
 ## batch
 
+```
+batch(records, parallel_count=10)
+```
 
 
 
 
 Register a set of input records for batch execution on this service.
 
-### Usage
-
-`batch(records, parallel_count=10)`
 
 ### Arguments
 
 
-#### records
+### records
 
 The *data.frame* or *list* of
 input records to execute.
 
 
-#### parallel_count
+### parallel_count
 
 Number of threads used to process entries in
 the batch. Default value is 10. Please make sure not to use too
@@ -61,80 +73,117 @@ high of a number because it might negatively impact performance.
 
 ### Returns
 
-The *Batch* object to control service batching
-lifecycle.
+The [`Batch`](batch) instance to control this service’s
+batching lifecycle.
 
 
 
 ## capabilities
 
+```python
+capabilities()
+```
 
 
 
 
-Gets the service holding capabilities.
+Provides the following information describing the holdings of this
+service:
 
-### Usage
+* *api* -  The API REST endpoint. 
 
-`capabilities()`
+* *name* - The service name. 
+
+* *version* - The service version. 
+
+* *published_by* - The service publishing author. 
+
+* *runtime* - The service runtime context _R|Python_. 
+
+* *description* - The service description. 
+
+* *creation_time* - The service publish timestamp. 
+
+* *snapshot_id* - The snapshot identifier this service is bound with. 
+
+* *inputs* - The input schema name/type definition. 
+
+* *outputs* - The output schema name/type definition. 
+
+* *inputs_encoded* - The input schema name/type encoded to python. 
+
+* *outputs_encoded* - The output schema name/type encoded to python. 
+
+* *artifacts* - The supported generated files. 
+
+* *operation_id* - The function `alias`. 
+
+* *swagger* - The API REST endpoint to this service’s *swagger.json* document. 
+
 
 ### Returns
 
-A dict of key/values describing the service.
+A `dict` of key/values describing the service.
 
 
 
 ## get_batch
 
+```python
+get_batch(execution_id)
+```
 
 
 
 
-Retrieve the *Batch* based on an *execution id*
+Retrieves the service batch based on an execution identifier.
 
-### Usage
-`get_batch(execution_id)`
 
 ### Arguments
 
 
-#### execution_id
+### execution_id
 
-The id of the batch execution.
+The identifier of the batch execution.
 
 
 ### Returns
 
-The *Batch*.
+The [`Batch`](batch) instance to control this service’s
+batching lifecycle.
 
 
 
-## list_batch_executions
+## list_executions
+
+```python
+list_batch_executions()
+```
 
 
 
 
+Gets all batch execution identifiers currently queued for this service.
 
-Gets all batch executions currently queued for this service.
-
-### Usage
-
-`list_batch_executions()`
 
 ### Returns
 
-A list of *execution ids*.
+A `list` of execution identifiers.
 
 
 
 ## swagger
 
+```python
+swagger()
+```
 
 
 
 
 Retrieves the *swagger.json* for this service (see [http://swagger.io/](http://swagger.io/)).
-:return: The swagger document for this service.
 
-### Usage
-`swagger()`
+
+### Returns
+
+The swagger document for this service as a json `str`.

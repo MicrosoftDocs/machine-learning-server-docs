@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Uninstall Microsoft R Client to upgrade to a newer version | Microsoft Docs"
-description: ""
+title: "Uninstall Microsoft R Client to upgrade to a newer version - Machine Learning Server | Microsoft Docs"
+description: "Explains how to uninstall Microsoft R Client. You do not have to uninstall R Client before installing a more recent version."
 keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
 author: "j-martens"
 ms.author: "jmartens"
@@ -88,10 +88,10 @@ You can learn more with these guides:
 
 + [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
++ [How-to guides in Machine Learning Server](../r/how-to-introduction.md)
 
 + [RevoScaleR R package reference](../r/tutorial-introduction.md)
 
-+ [MicrosoftML R package reference](../r/concept-what-is-the-microsoftml-package.md)
++ [MicrosoftML R package reference](../r-reference/microsoftml/microsoftml-package.md)
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)

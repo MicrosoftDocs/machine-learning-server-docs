@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "BatchResponse,api,completed_item_count,execution_id,total_item_count: " 
+title: "BatchResponse,api,completed_item_count,execution,execution_id,total_item_count: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# BatchResponse
+# Class BatchResponse
+
+
+## BatchResponse
 
 
 
@@ -36,11 +39,16 @@ azureml.deploy.server.service.BatchResponse(api, execution_id, response,
 
 
 
-Create a new Response Object by service name and raw service metadata.
+Represents a service’s entire batch execution response at a particular state
+in time. Using this, a batch execution index can be supplied to the
+`execution(index)` function in order to retrieve the service’s
+[`ServiceResponse`](service-response#serviceresponse).
 
 
 
-```
+## api
+
+```python
 api
 ```
 
@@ -51,7 +59,9 @@ Gets the api endpoint.
 
 
 
-```
+## completed_item_count
+
+```python
 completed_item_count
 ```
 
@@ -59,21 +69,56 @@ completed_item_count
 
 
 Gets the number of completed batch results processed thus far.
+:returns: The number of completed batch results processed thus far.
 
 
 
+## execution
+
+```python
+execution(index)
 ```
+
+
+
+
+Extracts the service execution results within the batch at this
+execution *index*.
+
+
+### Arguments
+
+
+### index
+
+The batch execution index.
+
+
+### Returns
+
+The execution results [`ServiceResponse`](service-response#serviceresponse).
+
+
+
+## execution_id
+
+```python
 execution_id
 ```
 
 
 
 
-Gets this batch’s *execution id* if currently started, otherwise *None*.
+Gets this batch’s execution identifier if a batch has been started,
+otherwise `None`.
+:returns: This batch’s execution identifier if a batch has been started,
+otherwise `None`.
 
 
 
-```
+## total_item_count
+
+```python
 total_item_count
 ```
 
@@ -81,3 +126,4 @@ total_item_count
 
 
 Gets the total number of batch results processed in any state.
+:returns: The total number of batch results processed in any state.

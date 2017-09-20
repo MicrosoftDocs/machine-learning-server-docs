@@ -33,7 +33,7 @@ RevoScaleR provides functions for retrieving information about sample data. Use 
 
 1. Open the R console or start a Revo64 session.
 
-  On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
+  On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\ML Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
 
 2. Retrieve the file list by entering the following command at the command prompt:
 
@@ -90,7 +90,7 @@ You can easily upload any CSV file into SQL Server if you want to step through d
 2. Right-click **RevoClaimsDB > Tasks > Import Data**.
 3. In Choose a Data Source:
 	+ For Data source, select **Flat File Source**. 
-	+ For File name, navigate to the sample data directory (by default, it is C:\Program Files\Microsoft\R Server\R_SERVER\Library\RevoScaleR\SampleData), and select *claims.txt* and click **Open**.
+	+ For File name, navigate to the sample data directory (by default, it is C:\Program Files\Microsoft\ML Server\R_SERVER\Library\RevoScaleR\SampleData), and select *claims.txt* and click **Open**.
 	+ For Format > Text qualifier, replace *<none>* with a double quote character ". Stripping out the double quotation marks from column headings will simplify the query syntax later when importing data into a RevoScaleR session.
 	+ Accept the rest of the defaults by clicking **Next**.
 4. In Choose a Destination:
@@ -105,6 +105,6 @@ You can easily upload any CSV file into SQL Server if you want to step through d
 
 ## See Also
 
- [Introduction to Microsoft R](../microsoft-r-getting-started.md)	
- [Diving into data analysis in Microsoft R](how-to-introduction.md)	
+ [Machine Learning Server](../what-is-machine-learning-server.md)	
+ [How-to guides in Machine Learning Server](how-to-introduction.md)	
  [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)	

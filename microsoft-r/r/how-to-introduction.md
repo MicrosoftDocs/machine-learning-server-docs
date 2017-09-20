@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "How-to deep dives into data analysis and visualization in Microsoft R"
-description: "Documentation for data science, statistics, analysis and visualization using Microsoft R libraries and tools."
+title: "How-to deep dives into data analysis and visualization in Machine Learning Server | Microsoft Docs"
+description: "Documentation for data science, statistics, analysis and visualization using Machine Learning Server R and Python libraries and tools."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,9 +23,9 @@ ms.technology: ""
 
 ---
 
-# How-to guides for data analysis and operationalization in R with Microsoft R
+# How-to guides for data analysis and operationalization
 
-This section of the documentation is for data scientists, analysts, and statisticians. The focus of this content area is on data acquisition, transformation and manipulation, visualization, and analysis using Microsoft R products and technologies as well as the deployment and consumption of models and code. It provides step-by-step guidance for common tasks leveraging the libraries and packages in Microsoft R.
+This section of the Machine Learning Server documentation is for data scientists, analysts, and statisticians. The focus of this content area is on data acquisition, transformation and manipulation, visualization, and analysis in R and Python, as well as the deployment and consumption of models and code. It provides step-by-step guidance for common tasks leveraging the libraries and packages in Machine Learning Server.
 
 If you are new to R, be sure to also use the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](../resources-more.md).
 
@@ -49,7 +49,7 @@ Data analysis
 * [Transform functions](concept-what-is-data-transformations.md)
 * [Visualizing huge data sets](how-to-revoscaler-visualize-huge-data-sets.md)
 
-Remote code execution on R Server
+Remote code execution on Machine Learning Server
 * [Connect to remote server](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
 * [Create remote session & execute](how-to-execute-code-remotely.md)
 
@@ -64,4 +64,4 @@ Operationalization: deploy and consume models and code
 
 [Learning Resources](../resources-more.md)
 
-[Introduction to Microsoft R](../microsoft-r-getting-started.md)
+[Machine Learning Server](../what-is-machine-learning-server.md)

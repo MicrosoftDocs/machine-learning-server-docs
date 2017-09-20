@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Using foreach and iterators"
+title: "Using foreach and iterators (Machine Learning Server) | Microsoft Docs"
 description: "High level guide to using foreach and iterators packages."
 keywords: ""
 author: "HeidiSteen"
@@ -66,7 +66,7 @@ To actually run in parallel, we need to have a “parallel backend” for
 In order for loops coded with `foreach` to run in parallel, you must
 register a parallel backend to manage the execution of the loop. Any
 type of mechanism for running code in parallel could potentially have a
-parallel backend written for it. Currently, Microsoft R
+parallel backend written for it. Currently, Machine Learning Server
 includes the `doParallel` backend; this uses the `parallel` package of R
 2.14.0 or later to run jobs in parallel, using either of the component
 parallelization methods incorporated into the parallel package:

@@ -6,7 +6,7 @@ description: "Main generator class for RxNativeFileSystem"
 keywords: "filesystem native" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # RxNativeFileSystem
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 

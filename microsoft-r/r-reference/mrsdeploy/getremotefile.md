@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Get the content of a file from remote R session." 
+title: "getRemoteFile function (mrsdeploy) | Microsoft Docs" 
 description: " Get the content of a file from the working directory of the remote R session. " 
-keywords: "mrsdeploy, getRemoteFile" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), getRemoteFile" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #getRemoteFile: Get the content of a file from remote R session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #getRemoteFile: Get the content of a file from remote R session. 
  ##Description
  
 Get the content of a file from the working directory of the remote R session.
@@ -48,12 +44,12 @@ Get the content of a file from the working directory of the remote R session.
 
    
   
- ### filename
+ ### `filename`
  Name of the file in the remote working directory. 
   
   
   
- ### as
+ ### `as`
  The content type of the file ("text" or "raw").  For binary files use 'raw'. 
   
  
@@ -71,11 +67,11 @@ or `NULL` if the file content cannot be retrieved.
  
  ##See Also
  
-[deleteRemoteFile](deleteremotefile.md)
+[deleteRemoteFile](deleteRemoteFile.md)
 
-[listRemoteFiles](listremotefiles.md)
+[listRemoteFiles](listRemoteFiles.md)
 
-[putLocalFile](putlocalfile.md)
+[putLocalFile](putLocalFile.md)
    
  ##Examples
 
@@ -93,5 +89,4 @@ close(fh)
   
  
 ```
- 
  

@@ -25,29 +25,37 @@ ms.technology: "r-server"
 
 # What's new in Machine Learning Server
 
+**Applies to: Machine Learning Server9.2.1** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Find R Server 9.x What's New)](whats-new-in-r-server.md) 
+
 Machine Learning Server 9.2 expands upon Microsoft R Server 9.1 with new Python libaries for integrating machine learning and data science into analytical solutions in the enterprise. Language-specific development is available when you add Python or R support (or both) during setup.
 
 > [!Note]
-> For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
+> Read our [release announcement for Machine Learning Server](https://blogs.technet.microsoft.com/machinelearning/2016/01/12/making-r-the-enterprise-standard-for-cross-platform-analytics-both-on-premises-and-in-the-cloud/). For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## Python development
 
+In Machine Learning Server, Python support is through libraries that can be used in script executing locally, or remotely in either Spark over Hadoop Distributed File System (HDFS) or in a SQL Server compute context. 
+
 Python libraries include **revoscalepy**, **microsoftml**, and **azureml-model-management-sdk**. Modules are built on Anaconda 4.2 over Python 3.5. You can run any 3.5-compatible library on a Python interpreter included in Machine Learning Server.
 
-Together, the libraries provide full-spectrum data mining: data transformation and manipulation, analysis and visualization, model management. Machine learning algorithms, as well as pretrained models provided by Microsoft, are now in Python. 
+Together, the libraries provide full-spectrum data mining: data transformation and manipulation, analysis and visualization, model management. Machine learning algorithms, as well as pre-trained models provided by Microsoft, are now in Python. 
 
-+ [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with support for [processing in parallel](python/howto-revoscalepy-parallel.md).
++ [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) is a library provided by Microsoft to support distributed computing, local compute context, remote compute context for SQL Server and Spark, and high-performance algorithms for Python, similar to RevoScaleR. 
 
-+ [revoscalepy and pyspark interoperability](python/quickstart-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSparkConnect.md).
+ Originally introduced in SQL Server 2017, this library is extended in Machine Learning Server to support a remote compute context for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with Python functions that run jobs in parallel across multiple nodes. This [tutorial](python/quickstart-revoscalepy-linear-regression-model.md) gets you started.
 
-+ [Pretrained models](install/microsoftml-install-pretrained-models.md) for image featurizaton and sentiment analysis articulated in Python.
++ [revoscalepy and pyspark interoperability](python/tutorial-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSpark.md).
 
-+ [microsoftml](python-reference/microsoftml/microsoftml-package.md) parallelzation on Spark 2.0-2.4 over HDFS through ensembling. 
++ [Pre-trained models](install/microsoftml-install-pretrained-models.md) for image classification and sentiment detection articulated in Python.
+
++ [microsoftml](python-reference/microsoftml/microsoftml-package.md) machine learning algorithms and data mining. 
 
 + [Deploy Python models and code as web services](operationalize/python/quickstart-deploy-python-web-service.md) using the convenient Python classes and functions in the [azureml-model-management-sdk library](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
 
 + Deploy realtime Python models as web services.
 
+> [!Note]
+> Remote execution is not currently available for Python script. For more information about how this feature works in R, see [Remote execution in R](r/how-to-execute-code-remotely.md).
 
 ## R development
 
@@ -55,7 +63,7 @@ R function libraries are built on [Microsoft R Open (MRO)](https://mran.microsof
 
 + [R realtime model scoring](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime) is now also supported on Linux.
 
-The last several releases of R Server added substantial capability for R developers. To review recent additions to R support, see [feature announcements](whats-new-in-r-server.md) for previous versions.
+The last several releases of R Server added substantial capability for R developers. To review recent additions to R functionality, see [feature announcements](whats-new-in-r-server.md) for previous versions.
 
 ## Configuration
 

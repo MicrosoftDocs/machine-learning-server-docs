@@ -5,8 +5,6 @@
     href: what-is-machine-learning-server.md
   - name: What's new
     href: whats-new-in-machine-learning-server.md
-  - name: Machine Learning at Microsoft
-    href: machine-learning-at-microsoft.md
   - name: R Server's new name
     href: rebranding-microsoft-r-server.md
 - name: Install & configure
@@ -24,6 +22,8 @@
         href: install/machine-learning-server-windows-offline.md
       - name: Command line install
         href: install/machine-learning-server-windows-commandline.md
+      - name: Uninstall from Windows
+        href: install/machine-learning-server-windows-uninstall.md
     - name: Linux
       items:
       - name: Install on Linux
@@ -32,35 +32,14 @@
         href: install/machine-learning-server-linux-offline.md
       - name: Uninstall from Linux
         href: install/machine-learning-server-linux-uninstall.md  
-      - name: Manage your R installation 
-        href: install/r-server-install-linux-manage-install.md  
     - name: Hadoop
       items:
-      - name: Install on Hadoop
-        href: install/machine-learning-server-hadoop-install.md
       - name: Install on Cloudera
         href: install/machine-learning-server-cloudera-install.md
-        items:
-        - name: Generate a parcel
-          href: install/r-server-install-cloudera-generate-parcel.md
-        - name: Deploy & activate
-          href: install/r-server-install-cloudera-deploy-activate.md
-        - name: Rollback to previous version
-          href: install/r-server-install-cloudera-rollback.md
-      - name: Command line install
-        href: install/machine-learning-server-hadoop-commandline.md
-      - name: Offline install
-        href: install/machine-learning-server-hadoop-offline.md
+      - name: Install on Hadoop
+        href: install/machine-learning-server-hadoop-install.md
       - name: Uninstall from Hadoop
         href: install/machine-learning-server-hadoop-uninstall.md
-      - name: R Package dependency list
-        href: install/r-server-install-linux-hadoop-packages.md
-      - name: Manual R package install
-        href: install/r-server-install-hadoop-manual-package.md
-      - name: Hadoop configuration
-        href: install/r-server-install-hadoop-configuration-r-workloads.md
-      - name: Troubleshoot R installation
-        href: install/r-server-install-hadoop-troubleshoot.md
     - name: Configure to operationalize
       href: what-is-operationalization.md
       items:
@@ -128,6 +107,7 @@
     - name: Python interpreter & libraries
       href: install/python-libraries-interpreter.md
   - name: R Server 9.1 or earlier
+    href: install/r-server-install.md
     items:
     - name: Prior feature announcements
       href: whats-new-in-r-server.md
@@ -154,7 +134,9 @@
       - name: 8.0.5 - Install
         href: install/r-server-install-linux-server-805.md
       - name: 8.0 - Install
-        href: install/r-server-install-linux-server-800.md     
+        href: install/r-server-install-linux-server-800.md   
+      - name: Manage your R installation 
+        href: install/r-server-install-linux-manage-install.md    
     - name: On Hadoop
       items:
       - name: 9.1 - Install
@@ -163,7 +145,7 @@
         href: install/r-server-install-hadoop-command-line.md
       - name: 9.1 - Offline 
         href: install/r-server-install-hadoop-offline.md
-      - name: I9.1 - Cloudera
+      - name: 9.1 - Cloudera
         href: install/r-server-install-cloudera.md
       - name: 9.1 - Uninstall
         href: install/r-server-install-uninstall-upgrade.md
@@ -173,6 +155,14 @@
         href: install/r-server-install-cloudera-901.md
       - name: 8.0.5 - Install
         href: install/r-server-install-hadoop-805.md
+      - name: R Package dependency list
+        href: install/r-server-install-linux-hadoop-packages.md
+      - name: Manual R package install
+        href: install/r-server-install-hadoop-manual-package.md
+      - name: Hadoop configuration
+        href: install/r-server-install-hadoop-configuration-r-workloads.md
+      - name: Troubleshoot R installation
+        href: install/r-server-install-hadoop-troubleshoot.md
     - name: On Teradata
       items:
       - name: Install R Server 9.0.1 on a Teradata Server
@@ -189,8 +179,11 @@
     items:
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
-    - name: Pyspark and revoscalepy interoperability
-      href: python/quickstart-revoscalepy-pyspark.md
+    - name: Run binary classifications
+      href: python/quickstart-binary-classification-with-microsoftml.md
+    - name: Create a revoscalepy model
+      href: python/quickstart-revoscalepy-linear-regression-model.md
+
   - name: R
     items:
     - name: Run R code with new functions
@@ -201,8 +194,8 @@
   items:
   - name: Python
     items:
-    - name: Create a logistic regression model (Spark)
-      href: python/tutorial-revoscalepy-logistic-regression.md
+    - name: PySpark and revoscalepy interoperability
+      href: python/tutorial-revoscalepy-pyspark.md
   - name: R
     href: r/tutorial-introduction.md
     items:
@@ -227,9 +220,10 @@
   - name: Python
     href: python/python-samples.md
     items:
-    - name: R samples for MicrosoftML
+    - name: Python samples for MicrosoftML
       href: python/samples-microsoftml-python.md
   - name: R
+    href: r/r-samples.md
     items:
     - name: Sample data in RevoScaleR
       href: r/sample-built-in-data.md
@@ -247,16 +241,16 @@
     href: r/concept-what-is-compute-context.md 
   - name: Distributed computing 
     href: r/how-to-revoscaler-distributed-computing.md
+  - name: Web services
+    href: operationalize/concept-what-are-web-services.md
   - name: Operationalization
     href: operationalize/concept-operationalize-deploy-consume.md
-  - name: Pretrained models
+  - name: Pre-trained models
     href: install/microsoftml-install-pretrained-models.md
-  - name: Packages
-    items: 
-    - name: MicrosoftML
-      href: r/concept-what-is-the-microsoftml-package.md
-    - name: RevoScaleR
-      href: r/concept-what-is-revoscaler.md
+  - name: MicrosoftML
+    href: r/concept-what-is-the-microsoftml-package.md
+  - name: RevoScaleR
+    href: r/concept-what-is-revoscaler.md
 - name: How-to guides
   href: r/how-to-introduction.md
   items:
@@ -265,15 +259,11 @@
     - name: Python
       items:
       - name: Use revoscalepy on Spark
-        href: python/howto-revoscalepy.md
-      - name: Parallel processing using revoscalepy
-        href: python/howto-revoscalepy-parallel.md
+        href: python/how-to-revoscalepy.md
       - name: Configure Jupyter Notebooks
-        href: python/howto-revoscalepy-jupyter-nb-config.md
+        href: python/how-to-revoscalepy-jupyter-nb-config.md
     - name: R
       items:
-      - name: Choose a MicrosoftML algorithm
-        href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
       - name: Set a compute context
         href: r/how-to-revoscaler-distributed-computing-compute-context.md
       - name: Data access and manipulation
@@ -341,12 +331,14 @@
           href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
         - name: Enforce a YARN queue assignment
           href: install/r-server-install-hadoop-yarnqueueusage.md
+    - name: Choose a MicrosoftML algorithm
+      href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
   - name: Operationalization - deploy & consume
     items:
     - name: Python
       items:
       - name: Authenticate
-        href: operationalize/python/how-to-authenticate-with-server-in-python.md
+        href: operationalize/python/how-to-authenticate-in-python.md
       - name: Deploy & manage services
         href: operationalize/python/how-to-deploy-manage-web-services.md
       - name: Find & consume services
@@ -484,7 +476,7 @@
       href: operationalize/how-to-connect-log-in-with-mrsdeploy.md
     - name: Execute code remotely
       href: r/how-to-execute-code-remotely.md
-  - name: RevoScaleR advanced development
+  - name: Advanced development in R
     items:
     - name: Write custom chunking algorithms
       href: r/how-to-developer-write-chunking-algorithms.md
@@ -528,6 +520,53 @@
         href: python-reference/azureml-model-management-sdk/batch.md
       - name: BatchResponse
         href: python-reference/azureml-model-management-sdk/batch-response.md
+    - name: microsoftml
+      href: python-reference/microsoftml/microsoftml-package.md
+      items:
+      - name: categorical
+        href: python-reference/microsoftml/categorical.md
+      - name: categorical_hash
+        href: python-reference/microsoftml/categorical-hash.md
+      - name: concat
+        href: python-reference/microsoftml/concat.md
+      - name: 'count_select '
+        href: python-reference/microsoftml/count-select.md
+      - name: drop_columns
+        href: python-reference/microsoftml/drop-columns.md
+      - name: extract_pixels
+        href: python-reference/microsoftml/extract-pixels.md
+      - name: featurize_image
+        href: python-reference/microsoftml/featurize-image.md
+      - name: featurize_text
+        href: python-reference/microsoftml/featurize-text.md
+      - name: get_sentiment
+        href: python-reference/microsoftml/get-sentiment.md
+      - name: load_image
+        href: python-reference/microsoftml/load-image.md
+      - name: mutualinformation_select
+        href: python-reference/microsoftml/mutualinformation-select.md
+      - name: resize_image
+        href: python-reference/microsoftml/resize-image.md
+      - name: rx_ensemble
+        href: python-reference/microsoftml/rx-ensemble.md
+      - name: rx_fast_forest
+        href: python-reference/microsoftml/rx-fast-forest.md
+      - name: rx_fast_linear
+        href: python-reference/microsoftml/rx-fast-linear.md
+      - name: rx_fast_trees
+        href: python-reference/microsoftml/rx-fast-trees.md
+      - name: rx_featurize
+        href: python-reference/microsoftml/rx-featurize.md
+      - name: rx_logistic_regression
+        href: python-reference/microsoftml/rx-logistic-regression.md
+      - name: rx_neural_network
+        href: python-reference/microsoftml/rx-neural-network.md
+      - name: rx_oneclass_svm
+        href: python-reference/microsoftml/rx-oneclass-svm.md
+      - name: rx_predict
+        href: python-reference/microsoftml/rx-predict.md
+      - name: select_columns
+        href: python-reference/microsoftml/select-columns.md        
     - name: revoscalepy
       href: python-reference/revoscalepy/revoscalepy-package.md
       items:
@@ -565,6 +604,8 @@
         href: python-reference/revoscalepy/rx-get-jobs.md
       - name: rx_get_job_status
         href: python-reference/revoscalepy/rx-get-job-status.md
+      - name: rx_get_pyspark_connection
+        href: python-reference/revoscalepy/rx-get-pyspark-connection.md
       - name: rx_get_var_info
         href: python-reference/revoscalepy/rx-get-var-info.md
       - name: rx_get_var_names
@@ -573,6 +614,30 @@
         href: python-reference/revoscalepy/rx-import.md
       - name: RxInSqlServer
         href: python-reference/revoscalepy/RxInSqlServer.md
+      - name: rx_hadoop_command
+        href: python-reference/revoscalepy/rx-hadoop-command.md
+      - name: rx_hadoop_copy_from_local
+        href: python-reference/revoscalepy/rx-hadoop-copy-from-local.md
+      - name: rx_hadoop_copy_to_local
+        href: python-reference/revoscalepy/rx-hadoop-copy-to-local.md
+      - name: rx_hadoop_copy
+        href: python-reference/revoscalepy/rx-hadoop-copy.md
+      - name: rx_hadoop_file_exists
+        href: python-reference/revoscalepy/rx-hadoop-file-exists.md
+      - name: rx_hadoop_list_files
+        href: python-reference/revoscalepy/rx-hadoop-list-files.md
+      - name: rx_hadoop_make_dir
+        href: python-reference/revoscalepy/rx-hadoop-make-dir.md
+      - name: rx_hadoop_move
+        href: python-reference/revoscalepy/rx-hadoop-move.md
+      - name: rx_hadoop_remove_dir
+        href: python-reference/revoscalepy/rx-hadoop-remove-dir.md
+      - name: rx_hadoop_remove
+        href: python-reference/revoscalepy/rx-hadoop-remove.md
+      - name: RxHdfsFileSystem
+        href: python-reference/revoscalepy/RxHdfsFileSystem.md
+      - name: RxHiveData
+        href: python-reference/revoscalepy/RxHiveData.md
       - name: rx_lin_mod
         href: python-reference/revoscalepy/rx-lin-mod.md
       - name: rx_list_keys
@@ -589,6 +654,10 @@
         href: python-reference/revoscalepy/RxOdbcData.md
       - name: RxOptions
         href: python-reference/revoscalepy/RxOptions.md
+      - name: RxOrcData
+        href: python-reference/revoscalepy/RxOrcData.md
+      - name: RxParquetData
+        href: python-reference/revoscalepy/RxParquetData.md
       - name: rx_partition
         href: python-reference/revoscalepy/rx-partition.md
       - name: rx_predict
@@ -599,6 +668,8 @@
         href: python-reference/revoscalepy/rx-predict-rx-dtree.md
       - name: rx_predict_rx_dforest
         href: python-reference/revoscalepy/rx-predict-rx-dforest.md
+      - name: rx_privacy_control
+        href: python-reference/revoscalepy/rx-privacy-control.md
       - name: rx_read_object
         href: python-reference/revoscalepy/rx-read-object.md
       - name: rx_read_xdf
@@ -613,6 +684,22 @@
         href: python-reference/revoscalepy/rx-set-var-info.md
       - name: rx_serialize_model
         href: python-reference/revoscalepy/rx-serialize-model.md
+      - name: RxSpark
+        href: python-reference/revoscalepy/RxSpark.md
+      - name: RxSparkData
+        href: python-reference/revoscalepy/RxSparkData.md
+      - name: RxSparkDataFrame
+        href: python-reference/revoscalepy/RxSparkDataFrame.md
+      - name: rx_spark_cache_data
+        href: python-reference/revoscalepy/rx-spark-cache-data.md
+      - name: rx_spark_connect
+        href: python-reference/revoscalepy/rx-spark-connect.md
+      - name: rx_spark_disconnect
+        href: python-reference/revoscalepy/rx-spark-disconnect.md
+      - name: rx_spark_list_data
+        href: python-reference/revoscalepy/rx-spark-list-data.md
+      - name: rx_spark_remove_data
+        href: python-reference/revoscalepy/rx-spark-remove-data.md
       - name: RxSqlServerData
         href: python-reference/revoscalepy/RxSqlServerData.md
       - name: rx_summary
@@ -625,53 +712,6 @@
         href: python-reference/revoscalepy/rx-write-object.md
       - name: RxXdfData
         href: python-reference/revoscalepy/RxXdfData.md
-    - name: microsoftml
-      href: python-reference/microsoftml/microsoftml-package.md
-      items:
-      - name: categorical
-        href: python-reference/microsoftml/categorical.md
-      - name: categorical_hash
-        href: python-reference/microsoftml/categorical-hash.md
-      - name: concat
-        href: python-reference/microsoftml/concat.md
-      - name: 'count_select '
-        href: python-reference/microsoftml/count-select.md
-      - name: drop_columns
-        href: python-reference/microsoftml/drop-columns.md
-      - name: extract_pixels
-        href: python-reference/microsoftml/extract-pixels.md
-      - name: featurize_image
-        href: python-reference/microsoftml/featurize-image.md
-      - name: featurize_text
-        href: python-reference/microsoftml/featurize-text.md
-      - name: get_sentiment
-        href: python-reference/microsoftml/get-sentiment.md
-      - name: load_image
-        href: python-reference/microsoftml/load-image.md
-      - name: loss functions
-        href: python-reference/microsoftml/rx-fast-linear.md
-      - name: mutualinformation_select
-        href: python-reference/microsoftml/mutualinformation-select.md
-      - name: resize_image
-        href: python-reference/microsoftml/resize-image.md
-      - name: rx_fast_forest
-        href: python-reference/microsoftml/rx-fast-forest.md
-      - name: rx_fast_linear
-        href: python-reference/microsoftml/rx-fast-linear.md
-      - name: rx_fast_trees
-        href: python-reference/microsoftml/rx-fast-trees.md
-      - name: rx_featurize
-        href: python-reference/microsoftml/rx-featurize.md
-      - name: rx_logistic_regression
-        href: python-reference/microsoftml/rx-logistic-regression.md
-      - name: rx_neural_network
-        href: python-reference/microsoftml/rx-neural-network.md
-      - name: rx_oneclass_svm
-        href: python-reference/microsoftml/rx-oneclass-svm.md
-      - name: rx_predict
-        href: python-reference/microsoftml/rx-predict.md
-      - name: select_columns
-        href: python-reference/microsoftml/select-columns.md
   - name: R packages
     href: r-reference/introducing-r-server-r-package-reference.md
     items:
@@ -730,6 +770,8 @@
         href: r-reference/microsoftml/rxfasttrees.md
       - name: rxFeaturize
         href: r-reference/microsoftml/rxfeaturize.md
+      - name: rxHashEnv
+        href: r-reference/microsoftml/rxhashenv.md
       - name: rxLogisticRegression
         href: r-reference/microsoftml/logisticregression.md
       - name: rxNeuralNet
@@ -738,6 +780,8 @@
         href: r-reference/microsoftml/rxoneclasssvm.md
       - name: rxPredict
         href: r-reference/microsoftml/rxpredict.md
+      - name: selectColumns
+        href: r-reference/microsoftml/selectColumns.md
       - name: selectFeatures
         href: r-reference/microsoftml/selectfeatures.md
     - name: mrsdeploy
@@ -771,6 +815,10 @@
         href: r-reference/mrsdeploy/listsnapshots.md
       - name: loadSnapshot
         href: r-reference/mrsdeploy/loadsnapshot.md
+      - name: print.serviceDetails
+        href: r-reference/mrsdeploy/print.serviceDetails.md
+      - name: print.snapshotDetails
+        href: r-reference/mrsdeploy/print.snapshotDetails.md
       - name: publishService
         href: r-reference/mrsdeploy/publishservice.md
       - name: putLocalFile
@@ -791,6 +839,18 @@
         href: r-reference/mrsdeploy/remotelogout.md
       - name: remoteScript
         href: r-reference/mrsdeploy/remotescript.md
+      - name: request
+        href: r-reference/mrsdeploy/request.md
+      - name: resume        
+        href: r-reference/mrsdeploy/resume.md
+      - name: serviceOption
+        href: r-reference/mrsdeploy/serviceOption.md
+      - name: serviceTypes
+        href: r-reference/mrsdeploy/serviceTypes.md
+      - name: summary.serviceDetails
+        href: r-reference/mrsdeploy/summary.serviceDetails.md
+      - name: summary.snapshotDetails
+        href: r-reference/mrsdeploy/summary.snapshotDetails.md
       - name: updateService
         href: r-reference/mrsdeploy/updateservice.md
     - name: olapR
@@ -806,6 +866,8 @@
         href: r-reference/olapr/olapconnection.md
       - name: Query
         href: r-reference/olapr/query.md
+    - name: RevoIOQ
+      href: r-reference/revoioq.md
     - name: RevoPemaR
       href: r-reference/revopemar/pemar.md
       items:
@@ -1078,7 +1140,7 @@
           href: r-reference/revoscaler/rxprivacycontrol.md
         - name: rxQuantile
           href: r-reference/revoscaler/rxquantile.md
-        - name: rxReadXdf
+        - name: rxReadXdf (deprecated)
           href: r-reference/revoscaler/rxreadxdf.md
         - name: rxRealtimeScoring
           href: r-reference/revoscaler/rxrealtimescoring.md

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Crosstabs"
+title: "Crosstabs using RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "Cross-tabulations (contingency tables) with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Crosstabs
+# Crosstabs using RevoScaleR
 
 Crosstabs, also known as *contingency tables* or *crosstabulations*, are a convenient way to summarize cross-classified categorical data—that is, data that can be tabulated according to multiple levels of two or more factors. If only two factors are involved, the table is sometimes called a *two-way table*. If three factors are involved, the table is sometimes called a *three-way table*.
 

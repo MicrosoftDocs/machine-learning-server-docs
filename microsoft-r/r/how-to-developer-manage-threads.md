@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Manage threads in RevoScaleR"
+title: "Manage threads in RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: ""
 keywords: "How ScaleR establishes and manages thread pools for parallel processing."
 author: "HeidiSteen"
@@ -61,7 +61,7 @@ R has extensive facilities for managing random number generation, and these faci
 The VSL random number generators are most useful in a distributed setting, where they allow parallel processes to generate uncorrelated random number streams. See the [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md)
 for complete details.
 
-RevoScaleR depends on a number of packages that are specified as “default packages” in Microsoft R Server and R Client. To ensure these packages are loaded when using Rscript, you must include the flag *–-default-packages=* (with nothing on the right-hand side), and not use the flag *–-vanilla* when invoking Rscript. In particular, the methods package is required for correct operation of RevoScaleR.
+RevoScaleR depends on a number of packages that are specified as “default packages” in Machine Learning Server and R Client. To ensure these packages are loaded when using Rscript, you must include the flag *–-default-packages=* (with nothing on the right-hand side), and not use the flag *–-vanilla* when invoking Rscript. In particular, the methods package is required for correct operation of RevoScaleR.
 
 The RevoScaleR package includes comprehensive help for all of its functions and data sets, along with an overview topic describing the package as a whole. To view this overview topic, use the R "?" operator at the R prompt as follows:
 
@@ -75,8 +75,8 @@ We often refer to help topic pages as a function’s help file, as in “see the
 
 ## See Also
 
-[Introduction to Microsoft R](../microsoft-r-getting-started.md)
+[Machine Learning Server](../what-is-machine-learning-server.md)
 
-[Diving into data analysis in Microsoft R](how-to-introduction.md)
+[How-to guides in Machine Learing Server](how-to-introduction.md)
 
 [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)

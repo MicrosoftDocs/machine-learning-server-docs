@@ -6,7 +6,7 @@ description: ""
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/06/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,15 +27,23 @@ ms.custom: ""
 # context
 
 
-**Applies to: SQL Server 2017**
+ 
 
 * [RxInSqlServer](RxInSqlServer.md) 
 
 * [RxLocalSeq](RxLocalSeq.md) 
 
+* [RxSpark](RxSpark.md) 
+
 * [rx_get_compute_context](rx-get-compute-context.md) 
 
 * [rx_set_compute_context](rx-set-compute-context.md) 
+
+* [rx_spark_connect](rx-spark-connect.md) 
+
+* [rx_spark_disconnect](rx-spark-disconnect.md) 
+
+* [rx_get_pyspark_connection](rx-get-pyspark-connection.md) 
 
 
 # datasource
@@ -44,6 +52,8 @@ ms.custom: ""
 
 * [RxNativeFileSystem](RxNativeFileSystem.md) 
 
+* [RxHdfsFileSystem](RxHdfsFileSystem.md) 
+
 * [RxOdbcData](RxOdbcData.md) 
 
 * [RxSqlServerData](RxSqlServerData.md) 
@@ -51,6 +61,22 @@ ms.custom: ""
 * [RxTextData](RxTextData.md) 
 
 * [RxXdfData](RxXdfData.md) 
+
+* [RxSparkData](RxSparkData.md) 
+
+* [RxHiveData](RxHiveData.md) 
+
+* [RxParquetData](RxParquetData.md) 
+
+* [RxOrcData](RxOrcData.md) 
+
+* [RxSparkDataFrame](RxSparkDataFrame.md) 
+
+* [rx_spark_cache_data](rx-spark-cache-data.md) 
+
+* [rx_spark_list_data](rx-spark-list-data.md) 
+
+* [rx_spark_remove_data](rx-spark-remove-data.md) 
 
 
 # etl
@@ -134,3 +160,25 @@ ms.custom: ""
 * [rx_set_var_info](rx-set-var-info.md) 
 
 * [RxMissingValues](RxMissingValues.md) 
+
+* [rx_privacy_control](rx-privacy-control.md) 
+
+* [rx_hadoop_command](rx-hadoop-command.md) 
+
+* [rx_hadoop_copy_from_local](rx-hadoop-copy-from-local.md) 
+
+* [rx_hadoop_copy_to_local](rx-hadoop-copy-to-local.md) 
+
+* [rx_hadoop_copy](rx-hadoop-copy.md) 
+
+* [rx_hadoop_file_exists](rx-hadoop-file-exists.md) 
+
+* [rx_hadoop_list_files](rx-hadoop-list-files.md) 
+
+* [rx_hadoop_make_dir](rx-hadoop-make-dir.md) 
+
+* [rx_hadoop_move](rx-hadoop-move.md) 
+
+* [rx_hadoop_remove_dir](rx-hadoop-remove-dir.md) 
+
+* [rx_hadoop_remove](rx-hadoop-remove.md) 

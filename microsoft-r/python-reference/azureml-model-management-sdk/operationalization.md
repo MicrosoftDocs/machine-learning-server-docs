@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Operationalization,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: " 
+title: "Operationalization,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
 author: "Microsoft" 
 manager: "Microsoft" 
-ms.date: "09/05/2017" 
+ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,10 @@ ms.custom: ""
  
 ---
 
-# Operationalization
+# Class Operationalization
+
+
+## Operationalization
 
 
 
@@ -45,7 +48,9 @@ methods for the class hierarchy.
 
 
 
-```
+## authentication
+
+```python
 authentication(context)
 ```
 
@@ -58,42 +63,61 @@ for the class hierarchy.
 An optional _noonp_ method where subclass implementers MAY provide this
 method definition by overriding.
 
+Sub-class should override and implement.
 
 
+### Arguments
+
+
+### context
+
+The optional authentication context as defined in the
+implementing sub-class.
+
+
+
+## delete_service
+
+```python
+delete_service(name, **opts)
 ```
-delete_service(name)
-```
 
 
 
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
-```
+## deploy_realtime
+
+```python
 deploy_realtime(name, **opts)
 ```
 
 
 
 
-return a new service instance.
+Sub-class should override and implement.
 
 
 
-```
+## deploy_service
+
+```python
 deploy_service(name, **opts)
 ```
 
 
 
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
-```
+## destructor
+
+```python
 destructor()
 ```
 
@@ -105,10 +129,14 @@ Destroy lifecycle method. Invokes destructors for the class hierarchy.
 An optional _noonp_ method where subclass implementers MAY provide this
 method definition by overriding.
 
+Sub-class should override and implement.
 
 
-```
-get_service(name)
+
+## get_service
+
+```python
+get_service(name, **opts)
 ```
 
 
@@ -117,12 +145,14 @@ get_service(name)
 Retrieve service meta-data from the name source and return an new
 service instance.
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
-```
-initializer(api_client, config)
+## initializer
+
+```python
+initializer(api_client, config, adapters=None)
 ```
 
 
@@ -134,48 +164,59 @@ and invokes initializers for the class hierarchy.
 An optional _noonp_ method where subclass implementers MAY provide this
 method definition by overriding.
 
-Object with configuration property name/value pairs
+Sub-class should override and implement.
 
 
 
-```
+## list_services
+
+```python
 list_services(name=None, **opts)
 ```
 
 
 
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
-```
+## realtime_service
+
+```python
 realtime_service(name)
 ```
 
 
 
 
-Begin fluent API for defining a realtime web service.
+Begin fluent API chaining of properties for defining a *realtime* web
+service.
 
 **Example:**
 
->>> client.realtime_service('scoring')
-      .description('A new realtime web service')
-      .version('v1.0.0')
 
 
-# Arguments
+```
+client.realtime_service('scoring')
+   .description('A new realtime web service')
+   .version('v1.0.0')
+```
 
 
-## name
+
+### Arguments
+
+
+### name
 
 The web service name.
 
 
-# Returns
+### Returns
 
-A [`RealtimeDefinition`](realtime-definition.md) for fluent API.
+A [`RealtimeDefinition`](realtime-definition#realtimedefinition) instance for fluent API
+chaining.
 
 
 
@@ -186,45 +227,56 @@ redeploy_realtime(name, force=False, **opts)
 
 
 
-return a new service instance.
+Sub-class should override and implement.
 
 
 
-```
+## redeploy_service
+
+```python
 redeploy_service(name, force=False, **opts)
 ```
 
 
 
 
-Sub-class should override.
+Sub-class should override and implement.
 
 
 
-```
+## service
+
+```python
 service(name)
 ```
 
 
 
 
-Begin fluent API for defining a web service.
+Begin fluent API chaining of properties for defining a *standard* web
+service.
 
 **Example:**
 
->>> client.service('scoring')
-      .description('A new web service')
-      .version('v1.0.0')
 
 
-# Arguments
+```
+client.service('scoring')
+   .description('A new web service')
+   .version('v1.0.0')
+```
 
 
-## name
+
+### Arguments
+
+
+### name
 
 The web service name.
 
 
-# Returns
+### Returns
 
-A [`ServiceDefinition`](service-definition.md) for fluent API.
+A [`ServiceDefinition`](service-definition) instance for fluent API
+chaining.

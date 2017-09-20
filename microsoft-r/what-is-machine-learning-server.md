@@ -38,7 +38,7 @@ R support is built on a legacy of Microsoft R Server 9.1 and former Revolution R
 |------------------|-------------|
 | R support | [R packages](r-reference/introducing-r-server-r-package-reference.md) for solutions written in R, with an open source distribution of R and run-time infrastructure for script execution. |
 | Python support | [Python modules](python-reference/introducing-python-package-reference.md) for solutions written in Python,  with an open source distribution of Python and run-time infrastructure for script execution.  
-| [Pretrained models](install/microsoftml-install-pretrained-models.md) | For visual analysis and text sentiment analysis, ready to score data you provide. |
+| [pre-trained models](install/microsoftml-install-pretrained-models.md) | For visual analysis and text sentiment analysis, ready to score data you provide. |
 | [Deploy and consume](operationalize/concept-operationalize-deploy-consume.md) | Operationalize your server and deploy solutions as a web service. |
 | [Remote execution](r/how-to-execute-code-remotely.md) | Start remote sessions on a Machine Learning Server on your network from your client workstation. |
 | Scale-out on premises | Clustered topologies for [Spark and Hadoop MapReduce](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators.md) built into Machine Learning Server. |
@@ -54,7 +54,7 @@ Choose a quickstart to test-drive capabilities in ten minutes or less.
 Move on to tutorials for in-depth exploration.
 
 > [!Note]
-> You can use any R or Python IDE to write code using libraries from Machine Learning Server. Microsoft offers Python for Visual Studio and R for Visual Studio. To use Jupyter Notebook, see [How to configure Jupyter Noteboooks](python/howto-revoscalepy-jupyter-nb-config.md).
+> You can use any R or Python IDE to write code using libraries from Machine Learning Server. Microsoft offers Python for Visual Studio and R for Visual Studio. To use Jupyter Notebook, see [How to configure Jupyter Noteboooks](python/how-to-revoscalepy-jupyter-nb-config.md).
 
 **See also**
 
