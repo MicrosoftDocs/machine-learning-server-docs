@@ -139,6 +139,8 @@ GET /api/{{service-name}}/{{service-version}}/swagger.json
 
 + [What are web services?](../concept-what-are-web-services.md)
 
++ [Jupyter notebook: how explore and consume a web service](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/web-services/deploy-consume/Explore_Consume_Python_Web_Services.ipynb)
+
 + [Package overview: azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 
 + [Quickstart: Deploying an Python model as a web service](quickstart-deploy-python-web-service.md)
