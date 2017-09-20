@@ -106,7 +106,7 @@ Users can consume the service directly using a single consumption call, which is
 
 ### Consuming in Python
 
-[After authenticating with Machine Learning Server](how-to-authenticate-in-python.md) users can also interact with and consume services using other functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package.
+[After authenticating with Machine Learning Server](how-to-authenticate-in-python.md), users can also interact with and consume services using other functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package.
 
 Example of a request-response consume:
 
