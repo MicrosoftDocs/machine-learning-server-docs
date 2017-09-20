@@ -47,7 +47,7 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 ## Find and list web services
 
-Any authenticated user can retrieve a list of web services using the 'list_services' function on the DeployClient object. 
+Any authenticated user can retrieve a list of web services using the `list_services` function on the DeployClient object. 
 
 You can use arguments to return a specific web service or all labeled versions of a given web service. 
  
@@ -62,10 +62,7 @@ client.list_services('myService')
 client.list_services('myService', version='v1.0')
 ```
 
-Your ability to see the code inside the web service depends on your permissions depends on whether you published the web service and/or are assigned to the ["Owner" role](../configure-roles.md):
-+ If yes, then the code in the service is returned along with other metadata.
-+ If no, then the code in the service is never returned in the metadata.
-To learn more about the roles in your organization, contact your Machine Learning Server administrator.
+You can only see the code stored within a web service if you either published the web service and/or are assigned to the ["Owner" role](../configure-roles.md). To learn more about the roles in your organization, contact your Machine Learning Server administrator.
 
 Once you find the service you want, use [the get_service() function](#getService) to retrieve the service object for consumption.
 
@@ -73,7 +70,7 @@ Once you find the service you want, use [the get_service() function](#getService
 
 ## Retrieve and examine service objects
 
-Authenticated users can retrieve a given [web service object](../../python-reference/azureml-model-management-sdk/service.md), which contains the client stub for consuming that server using the 'get_service()' function from the azureml-model-management-sdk package. 
+Authenticated users can retrieve a given [web service object](../../python-reference/azureml-model-management-sdk/service.md), which contains the client stub for consuming that server using the `get_service()` function from the azureml-model-management-sdk package. 
 
 After the object is returned, you can use a help function to explore the published service, such as `print(help(serviceObject))`. You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them. 
 
