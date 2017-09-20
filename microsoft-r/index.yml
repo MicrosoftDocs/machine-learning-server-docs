@@ -93,4 +93,4 @@ sections:
     - title: R Packages
       html: <p><a href="/r-server/r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="/r-server/r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="/r-server/r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="/r-server/r-reference/introducing-r-server-r-package-reference">more...</a></p>
     - title: APIs
-      html: <p><a href="api link">REST API Reference</a></p>
+      html: <p><a href="https://microsoft.github.io/deployr-api-docs/">REST API Reference</a></p>
