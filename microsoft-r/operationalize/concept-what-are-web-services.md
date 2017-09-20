@@ -40,7 +40,7 @@ There are two types of web services: standard and realtime.
 
 Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
 
-When you deploying your code and models, you are publishing them in the form of web services stored in Machine Learning Server so they can be operationalized by others.  Web services can be versioned and managed by their creators or those with [special permissions](#permissions).
+When you deploy your code and models, they are published as web services in Machine Learning Server and can be operationalized by others.  Web services can be versioned and managed by their creators or those users with [special permissions](#permissions).
 
 <a name="standard"></a>
 
@@ -74,7 +74,7 @@ A model object created with these supported functions:
 
 |R package|Supported functions|
 |-------------|--------------------|
-|[RevoScaleR](../r-reference/revoscaler/revoscaler.md)|rxLogit, rxLinMod, rxBTrees, rxDTree, and rxDForest| 
+|[RevoScaleR](../r-reference/revoscaler/revoscaler.md)|rxBTrees, rxDTree, rxDForest, rxLogit, rxLinMod|
 |[MicrosoftML](../r-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script.|
 <a name="inputdf"></a>
 There are additional restrictions on the input dataframe format for microsoftml models:
@@ -87,7 +87,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 
 <a name=python></a>
 
-### Supported functions in Python - CAN WE KEEP THE SAME ORDER OF FUNCTIONS AS R SECTION ABOVE (it's the same functions, just different name)
+### Supported functions in Python
 
 |Python package|Supported functions|
 |-------------|--------------------|
@@ -110,18 +110,17 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 ## Consuming
 
-Whenever a web service is deployed or updated, a Swagger-based JSON file is automatically generated. This file defines the service and is used to consume the service by other authenticated users on various platforms and in various languages. 
+After a web service has been published, authenticated users can consume that web service on various platforms and in various languages.  You can consume directly in R or Python, using APIs, or in your preferred language via Swagger.
 
-You can make it easy for others to find your web services by providing them with the name and version of the web service. Using that name and version, users can retrieve the Swagger file to consume the web service directly in R, Python, or via the API. 
-
+You can make it easy for others to find your web services by providing them with the name and version of the web service.
 
 ### Who consumes web services
 
-+ Data scientists who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
++ **Data scientists** who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
 
-+ Quality engineers who want to bring the models in these web services into validation and monitoring cycles.
++ **Quality engineers** who want to bring the models in these web services into validation and monitoring cycles.
 
-+ Application developers who want to call and integrate a web service into their applications. Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
++ **Application developers** who want to call and integrate a web service into their applications. Using the Swagger-based JSON file that was generated when the service was deployed, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  Services can also be consumed using the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle.
 
 
 ### How are web services consumed
@@ -145,7 +144,7 @@ By default, any authenticated Machine Learning Server user can:
 + Retrieve any web service object for consumption
 + Retrieve a list of any or all web services
 
-Note that destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. When you list services you can see your role for each one of them.
+Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. When you list services, you can see your role for each one of them.
 
 ## See also
 
