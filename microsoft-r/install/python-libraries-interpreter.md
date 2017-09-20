@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to install Python support in Machine Learning Server | Microsoft Docs"
+title: "Install Python support in Machine Learning Server | Microsoft Docs"
 description: "Installing python interpreter and packages locally to interact with Machine Learning Server"
 keywords: ""
 author: "j-martens"
@@ -59,6 +59,66 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
    ```
 
+## Install on Linux
+
+Requirements:
+
++ Operating system must be a [supported version of 64-bit Linux](r-server-install-supported-platforms.md).
++ Minimum RAM is 2 GB. Minimum disk space is 500 MB (8 GB or more is recommended).
++ An internet connection. If you do not have an internet connection, use the [offline installation instructions](machine-learning-server-linux-offline.md).
+
+
+On each supported OS, the package manager downloads packages from the repository, determines dependencies, retrieves additional packages, and installs the software. After installation completes, mlserver-python executable is at '/usr/bin'.
+ 
+**On Ubuntu 14.04 - 16.04**
+
+With root or sudo permissions, run the following commands:
+```
+# Set location of the package repository. For example for 16.04.
+wget https://packages.microsoft.com/ubuntu/16.04/prod/microsoft-mlserver-packages-py-9.2.1.deb
+
+# Verification step: look for the mlserver.list configuration file
+ls -la /etc/apt/sources.list.d/
+
+# Update packages on your system
+apt-get update
+
+# If your system does not have the https apt transport option
+apt-get install apt-transport-https
+
+# Install the packages
+apt-get install microsoft-mlserver-packages-py-9.2.1
+```     
+
+**Red Hat and CentOS 6/7**
+
+With root or sudo permissions, run the following commands:
+```
+# Set location of the package repository. For example for 7.
+rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-py-9.2.1.rpm
+
+# Verification step: look for the mlserver.list configuration file
+ls -la /etc/apt/sources.list.d/
+
+# Install the packages
+yum install microsoft-mlserver-packages-py-9.2.1
+``` 
+
+**SUSE Linux Enterprise Server 11**
+
+With root or sudo permissions, run the following commands:
+```
+# Set location of the package repository. For example for SLES 11.
+rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-py-9.2.1.rpm
+
+# Verification step: look for the mlserver.list configuration file
+ls -la /etc/apt/sources.list.d/
+
+# Install the packages
+zypper install microsoft-mlserver-packages-py-9.2.1
+``` 
+
+
 ## Example to test the install
 
 Test your install and packages using this example code. 
@@ -70,7 +130,7 @@ In this example, you can use some functions from the [microsoftml python package
    ```Python
    from numpy.random import randn
    matrix = randn(2000, 2001)
-​   
+​    
    import pandas
    data = pandas.DataFrame(data=matrix, columns=["Label"] + ["f%s" % i for i in range(1, matrix.shape[1])])
    data["Label"] = (data["Label"] > 0.5).apply(lambda x: 1.0 if x else 0.0)

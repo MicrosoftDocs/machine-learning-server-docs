@@ -112,17 +112,15 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 Whenever the web service is deployed or updated, a Swagger-based JSON file is automatically generated. This file defines the service and is used to consume the service by other authenticated users on various platforms and in various languages. 
 
-You can make it easy for others to find your web services by providing them with the name and version of the web service.
-
-Using the name and version, users can get the Swagger file they need to consume the web service directly in R, Python, or via the API. 
+You can make it easy for others to find your web services by providing them with the name and version of the web service. Using that name and version, users can retrieve the Swagger file to consume the web service directly in R, Python, or via the API. 
 
 ### Who consumes web services
 
-+ Data scientists may want to explore and consume the services directly [in R using the mrsdeploy package](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) or [in Python using the azureml-model-management-sdk package](../operationalize/python/how-to-consume-web-services.md#consume-service).
++ Data scientists who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
 
-+ Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
++ Quality engineers who want to bring the models in these web services into validation and monitoring cycles.
 
-+ Application developers can call and integrate a web service into their applications. Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
++ Application developers who want to call and integrate a web service into their applications. Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
 
 
 ### How are web services consumed
@@ -146,42 +144,14 @@ R
 
 
 You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the mrsdeploy package. After authenticating, data scientists can use the getService() function in R to call the service. Then, they can get details about the service and start consuming it.
+
+
 You can also build a client library directly in R using the httr package.
 Note
 
 It is also possible to perform batch consumption as described here.
 In this example, replace the following remoteLogin() function with the correct login details for your configuration. Connecting to Machine Learning Server using the mrsdeploy package is covered in this article.
 R
-
-Copy
-##########################################################################
-#      Perform Request-Response Consumption & Get Swagger Back in R      #
-##########################################################################
-
-# Use `remoteLogin` to authenticate with the server using the local admin 
-# account. Use session = false so no remote R session started
-remoteLogin("http://localhost:12800", 
-            username = “admin”, 
-            password = “{{YOUR_PASSWORD}}”,
-            session = FALSE)
-
-# Get service using getService() function from `mrsdeploy`
-# Assign service to the variable `api`.
-api <- getService("mtService", "v1.0.0")
-
-# Print capabilities to see what service can do.
-print(api$capabilities())
-
-# Start interacting with the service, for example:
-# Calling the function, `manualTransmission` contained in this service.
-result <- api$manualTransmission(120, 2.8)
-
-# Print response output named `answer`
-print(result$output("answer")) # 0.6418125  
-
-# Since you're authenticated now, get `swagger.json`.
-swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE)
 
 
 Collaborate with application developers
