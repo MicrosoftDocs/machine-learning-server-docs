@@ -38,7 +38,7 @@ azureml.deploy.operationalization.RealtimeDefinition(name, op)
 
 
 
-Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition)
+Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md#operationalization-definition))
 
 Realtime class defining a *realtime* service’s properties for publishing.
 
@@ -78,7 +78,7 @@ the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.
 
 
 
@@ -123,7 +123,7 @@ The description of the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.
 
 
 
@@ -169,7 +169,7 @@ service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition) for fluent API
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
 chaining.
 
 
@@ -196,4 +196,4 @@ The version of the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.
