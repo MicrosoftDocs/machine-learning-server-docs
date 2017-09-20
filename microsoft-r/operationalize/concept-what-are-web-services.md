@@ -32,7 +32,7 @@ You can offer users a chance to use your code and predictive models by deploying
 
 Web services in Machine Learning Server can be based on Python or R. They can also be deployed on one platform and consumed in another. 
 
-Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model in real time. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
+Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model on demand. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
 There are two types of web services: standard and realtime. 
 
@@ -40,7 +40,7 @@ There are two types of web services: standard and realtime.
 
 Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
 
-When you deploying your code and models, you are publishing them in the form of portable web services stored in Machine Learning Server so they can be operationalized by others.  Web services can be versioned and managed by their creators or those with [special permissions](#permissions).
+When you deploying your code and models, you are publishing them in the form of web services stored in Machine Learning Server so they can be operationalized by others.  Web services can be versioned and managed by their creators or those with [special permissions](#permissions).
 
 <a name="standard"></a>
 
@@ -56,7 +56,7 @@ Standard web services, like all web services, are identified by their name and v
 
 ## Realtime web services
 
-Realtime web services offer even lower latency to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not rely on an interpreter at consumption time even though the services use the objects created by the model. Therefore, fewer additional resources and less time is spent spinning up a session for each call. Additionally, the model is only loaded once in the compute node and can be scored multiple times.
+Realtime web services offer even lower latency to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not depend on an interpreter at consumption time even though the services use the objects created by the model. Therefore, fewer additional resources and less time is spent spinning up a session for each call. Additionally, the model is only loaded once in the compute node and can be scored multiple times.
 
 For realtime services, you do **not** need to specify:
 + inputs and outputs (dataframes are assumed)
@@ -87,7 +87,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 
 <a name=python></a>
 
-### Supported functions in Python
+### Supported functions in Python - CAN WE KEEP THE SAME ORDER OF FUNCTIONS AS R SECTION ABOVE (it's the same functions, just different name)
 
 |Python package|Supported functions|
 |-------------|--------------------|
@@ -110,17 +110,18 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 ## Consuming
 
-After a web service has been published, authenticated users can consume that web service on various platforms and in various languages.  You can do so directly in R or Python using the custom packages installed with the product, using APIs, or in your [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
+Whenever a web service is deployed or updated, a Swagger-based JSON file is automatically generated. This file defines the service and is used to consume the service by other authenticated users on various platforms and in various languages. 
 
-You can make it easy for others to find your web services by providing them with the name and version of the web service. 
+You can make it easy for others to find your web services by providing them with the name and version of the web service. Using that name and version, users can retrieve the Swagger file to consume the web service directly in R, Python, or via the API. 
+
 
 ### Who consumes web services
 
-+ **Data scientists** who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
++ Data scientists who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
 
-+ **Quality engineers** who want to bring the models in these web services into validation and monitoring cycles.
++ Quality engineers who want to bring the models in these web services into validation and monitoring cycles.
 
-+ **Application developers** who want to call and integrate a web service into their applications. Using the Swagger-based JSON file that is automatically generated when the service is deployed, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  Services can also be consumed using the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle.
++ Application developers who want to call and integrate a web service into their applications. Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
 
 
 ### How are web services consumed
@@ -129,8 +130,8 @@ Web services can be consumed using one of these approaches:
 
 |Approach|Description|
 |---|---|
-|Request Response|The service is consumed directly using a single consumption call.<br/>Learn how [in R](../operationalize/how-to-consume-web-service-interact-in-r.md) \| [in&nbsp;Python](../operationalize/python/how-to-consume-web-services.md)
-|Asynchronous Batch|Users send as a single request to the server who in turn makes multiple asynchronous API calls on their behalf.<br/>Learn how [in R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)|
+|Request Response|The service is consumed directly using a single synchronous consumption call.<br/>Learn how [in R](../operationalize/how-to-consume-web-service-interact-in-r.md) \| [in&nbsp;Python](../operationalize/python/how-to-consume-web-services.md)
+|Asynchronous Batch|Users send a single asynchronous request to the server who in turn makes multiple service calls on their behalf.<br/>Learn how [in R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)|
 
 
 
@@ -139,11 +140,12 @@ Web services can be consumed using one of these approaches:
 ## Permissions
 
 By default, any authenticated Machine Learning Server user can:
++ Publish a new service
 + Update and delete web services they have published
 + Retrieve any web service object for consumption
 + Retrieve a list of any or all web services
 
-By default, all web service operations are available to authenticated users. Destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. Ask your administrator for details on your role.
+Note that destructive tasks, such as deleting a web service, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. When you list services you can see your role for each one of them.
 
 ## See also
 
