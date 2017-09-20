@@ -83,11 +83,13 @@ Example code:
 # -- List all versions of the service 'myService'--
 client.list_services('myService')
 
-# -- Now get the service object for myService v2.0
+# -- Retrieve the service object for myService v2.0
 svc = client.get_service('myService', version='v2.0')
+
 # -- Learn more about that service.
 print(help(svc))
-# -- View the service capabilities/schema for this service
+
+# -- View the service object's capabilities/schema
 svc.capabilities()
 ```
 
@@ -173,8 +175,13 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 ## See also
 
 + [What are web services?](../concept-what-are-web-services.md)
+
 + [Package overview: azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
+
 + [Quickstart: Deploying an Python model as a web service](quickstart-deploy-python-web-service.md)
+
 + [How to authenticate with Machine Learning Server in Python](how-to-authenticate-in-python.md).
+
 + [How to publish and manage web services in Python](how-to-deploy-manage-web-services.md)
+
 + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)
