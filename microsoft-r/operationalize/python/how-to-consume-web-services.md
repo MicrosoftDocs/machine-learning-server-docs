@@ -30,7 +30,7 @@ ms.technology:
 
 This article is for data scientists who wants to learn how to find, examine, and consume the [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server using Python. Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md). This article assumes that you are proficient in Python.
 
-After a web service has been published, any authenticated user can list, examine, and consume that web service. You can do so directly in Python using the functions in the [azureml-model-management-sdk package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md). The azureml-model-management-sdk package is installed with Machine Learning Server.  To list, examine, or consume the web service _outside_ of Python, use the [RESTful APIs](concept-api.md) that provide direct programmatic access to a service's lifecycle.
+After a web service has been published, any authenticated user can list, examine, and consume that web service. You can do so directly in Python using the functions in the [azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md). The azureml-model-management-sdk package is installed with Machine Learning Server.  To list, examine, or consume the web service _outside_ of Python, use the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle.
 
 By default, web service operations are available to authenticated users. However, your administrator can also assign [roles](../configure-roles.md)  (RBAC) to further control the permissions around web services. 
 
@@ -164,7 +164,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 
 Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
 
-Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
+Using the Swagger-based JSON file, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
    
 Application developers can get the Swagger-based JSON file in one of these ways:
 
@@ -175,16 +175,16 @@ Application developers can get the Swagger-based JSON file in one of these ways:
    cat(swagger, file = "swagger.json", append = FALSE) 
    ```
 
-+ Or, the application developer can request the file  **as an authenticated user with an [active bearer token](how-to-build-api-clients-from-swagger-for-app-integration.md#authentication) in the request header** (since all API calls must be authenticated). The URL is formed as follows:
++ Or, the application developer can request the file  **as an authenticated user with an [active bearer token](../how-to-build-api-clients-from-swagger-for-app-integration.md#authentication) in the request header** (since all API calls must be authenticated). The URL is formed as follows:
   ```
   GET /api/<service-name>/<service-version>/swagger.json
   ```
 
 ## See also
 
-+ [azureml-model-management-sdk package overview](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
++ [azureml-model-management-sdk package overview](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 + [How to publish and manage web services in Python](how-to-deploy-manage-web-services.md)
-+ [Quickstart: Deploying an Python model as a web service](quickstart-publish-python-web-service.md)
++ [Quickstart: Deploying an Python model as a web service](quickstart-deploy-python-web-service.md)
 + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md).
 + [About web services](../concept-what-are-web-services.md)
 + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)

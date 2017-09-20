@@ -41,7 +41,7 @@ To deploy your analytics, you must publish them as web services in Machine Learn
 
 When you deploy Python code or a model as a web service, a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
 
-Once hosted on Machine Learning Server, you can update and manage them.  Authenticated users can  [consume web services in Python](how-to-consume-web-service.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
+Once hosted on Machine Learning Server, you can update and manage them.  Authenticated users can  [consume web services in Python](how-to-consume-web-services.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 <a name="auth"></a>
 
