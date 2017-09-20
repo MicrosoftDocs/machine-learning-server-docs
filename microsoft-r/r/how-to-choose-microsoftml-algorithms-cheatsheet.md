@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Cheat Sheet: How to choose a MicrosoftML algorithm - Machine Learning Server | Microsoft Docs"
-description: "A printable machine learning algorithm cheat sheet that helps you choose the right MicrosoftML algorithm for your predictive model when using Machine Learning Server."
+title: "Cheat sheet: How to choose a MicrosoftML algorithm - Machine Learning Server | Microsoft Docs"
+description: "A printable cheat sheet helps you choose a MicrosoftML package algorithm for a predictive model when using Machine Learning Server."
 keywords: "MicrosoftML"
 author: "bradsev"
 ms.author: "bradsev"
@@ -23,16 +23,16 @@ ms.technology: "r-server"
 
 ---
 
-# Cheat Sheet: How to choose a MicrosoftML algorithm
+# Cheat sheet: How to choose a MicrosoftML algorithm
 
 The **MicrosoftML: Algorithm Cheat Sheet** helps you choose the right machine learning algorithm for a predictive analytics model when using Machine Learning Server. The algorithms are available in R or Python.
 
 MicrosoftML provides a library of algorithms from the  ***regression***, ***classification (two-class and multi-class)***, and ***anomaly detection*** families. Each is designed to address a different type of machine learning problem.
 
 ## Download the MicrosoftML Algorithm Cheat Sheet
-**Download the cheat sheet here: [MicrosoftML: Algorithm Cheat Sheet (11x17 in.)](http://download.microsoft.com/download/B/3/1/B31FE451-E69B-4569-9B32-CFA9FB40027E/microsoftml-algorithm-cheat-sheet-v1.pdf)**
+**Download the cheat sheet here: [MicrosoftML Package: Algorithm Cheat Sheet v2 (11x17 in.)](https://go.microsoft.com/fwlink/?linkid=858939)**
 
-![MicrosoftML: Algorithm Cheat Sheet: Learn how to choose a Machine Learning algorithm.](./media/how-to-choose-microsoftml-algorithms-cheatsheet/microsoftml-algorithm-cheat-sheet.png)
+![MicrosoftML: Algorithm Cheat Sheet: Learn how to choose a Machine Learning algorithm.](./media/how-to-choose-microsoftml-algorithms-cheatsheet/microsoftml-package-algorithm-cheat-sheet.png)
 
 Download and print the **MicrosoftML: Algorithm Cheat Sheet** in tabloid size to keep it handy for guidance when choosing a machine learning algorithm.
 
