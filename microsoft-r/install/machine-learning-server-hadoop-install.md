@@ -74,10 +74,10 @@ After installation completes, software can be found at the following paths:
 
 Machine Learning Server is required on the edge node. You should run [full setup](machine-learning-server-linux-install.md) to install on this node.
 
-Full setup gives you core components for both R and Python, machine learning algortims, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features only run on edge nodes and enable additional ways of deploying and consuming script. For example, you can build and deploy web services providing compiled code, or running script in real time. 
+Full setup gives you core components for both R and Python, machine learning algorthims and pretrained models, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services providing compiled code, or running script in real time. 
 
 > [!Note]
->You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.
+> You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.
 
 ## Data node installation
 
@@ -89,7 +89,7 @@ We recommend running the [full setup package](machine-learning-server-linux-inst
 
 **Approach 2: Manual steps for partial installation**
 
-Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Unexpected problems are more likely if you leave some packages out. 
+Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Hence, unexpected problems are more likely if you leave some packages out. 
 
 1. Install as root: `sudo su`
 
