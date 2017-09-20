@@ -118,8 +118,8 @@ Web services can be consumed in two ways:
 
 |Consumption approach|Description|Learn more|
 |---|---|:---:|
-|Request Response|The service is consumed directly using a single consumption call|[In R](../operationalize/how-to-consume-web-service-interact-in-r.md)<br/><br/>[In Python](../operationalize/python/how-to-consume-web-services.md)
-|Asynchronous Batch|Users send as a single request to the server who in turn makes multiple asynchronous API calls on their behalf|[In R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)<br/><br/>Doc coming soon|
+|Request Response|The service is consumed directly using a single consumption call|[- In R](../operationalize/how-to-consume-web-service-interact-in-r.md)<br/>[- In Python](../operationalize/python/how-to-consume-web-services.md)
+|Asynchronous Batch|Users send as a single request to the server who in turn makes multiple asynchronous API calls on their behalf|[- In R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)|
 
 
 <a name=permissions></a>
