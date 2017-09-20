@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Linux | Microsoft Docs"
-description: "Microsoft R Client Install Guide Linux"
+title: "Install Microsoft R Client on Linux - Machine Learning Server | Microsoft Docs"
+description: "Guide to installing Microsoft R Client on Linux. R Client is a free, data science tool for high performance analytics."
 keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "j-martens"
 ms.author: "jmartens"

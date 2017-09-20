@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Windows | Microsoft Docs"
-description: "Microsoft R Client Install Guide Windows"
+title: "Install Microsoft R Client on Windows - Machine Learning Server | Microsoft Docs"
+description: "Guide to installing Microsoft R Client on Windows. R Client is a free, data science tool for high performance analytics."
 keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Microsoft R Client"
 author: "j-martens"
 ms.author: "jmartens"
