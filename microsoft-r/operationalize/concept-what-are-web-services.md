@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Publish, deploy, update, and delete Python web services - Machine Learning Server | Microsoft Docs"
+title: "What is a web service - Machine Learning Server | Microsoft Docs"
 description: "Publish, update, and delete Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"
@@ -116,10 +116,10 @@ Using the web service's name and version, users can get the Swagger file they ne
 
 Web services can be consumed in two ways:
 
-|Consumption approach|Description|Learn more|
+|Consumption approach|Description|Learn&nbsp;more...|
 |---|---|:---:|
-|Request Response|The service is consumed directly using a single consumption call|<li>[In R](../operationalize/how-to-consume-web-service-interact-in-r.md)<br/><li>[&nbsp;In&nbsp;Python](../operationalize/python/how-to-consume-web-services.md)
-|Asynchronous Batch|Users send as a single request to the server who in turn makes multiple asynchronous API calls on their behalf|<li>[In R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)|
+|Request Response|The service is consumed directly using a single consumption call|&bull; [In R](../operationalize/how-to-consume-web-service-interact-in-r.md)<br/>&bull;[&nbsp;In&nbsp;Python](../operationalize/python/how-to-consume-web-services.md)
+|Asynchronous Batch|Users send as a single request to the server who in turn makes multiple asynchronous API calls on their behalf|&bull; [In R](../operationalize/how-to-consume-web-service-asynchronously-batch.md)|
 
 
 <a name=permissions></a>
