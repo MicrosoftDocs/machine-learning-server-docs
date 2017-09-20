@@ -25,26 +25,26 @@ ms.technology: ""
 
 # Tutorial: PySpark and revoscalepy interoperability in Machine Learning Server
 
-Machine Learning Server 9.2.1 offers full support for both Python and R. As part of our Python integration, we support integration between proprietary modules like [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md) and microsoftml and Apache Sparks' [PySpark](https://spark.apache.org/downloads.html) programmable interface. PySpark has both a shell and IDE experience, and contains a comprehensive set of functions for data preparation and machine learning. 
+[PySpark](https://spark.apache.org/downloads.html) is Apache Spark's programmable interface for Python. The [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md) module is Machine Learning Server's Python library for data science at scale. In this tutorial, you learn how to create a logistic regression model using functions from both libraries.
 
-You can call functions from PySpark and revoscalpy in a single Spark application. For example, you could use PySpark for data preparation, with microsoftml's distributed machine learning and deep learning algorithms to build compelling AI applications.
+> [!div class="checklist"]
+> * Import packages
+> * Connect to Spark using revoscalepy.rx_spark_connect(), specifying a PySpark interoperability
+> * Use PySpark for basic data manipulation
+> * Use revoscalepy to build a logistic regression model
+
+You can call functions from PySpark and revoscalpy in a single Spark application. In this tutorial, use PySpark for data preparation, and revoscalepy for the model.
+
+> [!Note]
+> The [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md) module also functions for data sources and data manipulation. We use PySpark in this tutorial to illustrate a basic technique for passing data objects between the two programming contexts.
 
 ## Prerequisites
 
-+ A Hadoop cluster with Spark 2.0-2.4 with [Machine Learning Server for Hadoop](..install/machine-learning-server-hadoop-install.md)
++ A Hadoop cluster with Spark 2.0-2.4 with [Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md)
++ A Jupyter Notebook, updated to include the MMLSPy kernel. Select this kernel in your Jupyter notebook to use the interoperability feature.
 + Sample data (AirlineSubsetCsv mentioned in the example) should exist in the blob store under a storage account
-+ A Jupyter Notebook, updated to include the MMLSPy kernel. Select this kernel in your Jupyter notebook to use the interoperability feature
 
-## Code Example
-
-In this example, we will:
-
-1.	Create a connection to Spark using rx_spark_connect(), specifying a PySpark interop
-2.	Get the PySpark context
-3.	Use PySpark to do some basic data manipulation
-4.	Build a logistic regression model using Machine Learning Server
-
-### Import the relevant packages
+## Import the relevant packages
 
 ```Python
 from pyspark import SparkContext
@@ -52,7 +52,7 @@ from pyspark.sql import SparkSession
 from revoscalepy import *
 ```
 
-### Start Spark compute context
+## Connect to Spark
 
 Setting `interop = ‘pyspark’` indicates that you want interoperability.
 
@@ -63,7 +63,13 @@ Setting `interop = ‘pyspark’` indicates that you want interoperability.
     # Get the PySpark context
     sc = rx_get_pyspark_connection(cc)
     spark = SparkSession(sc)
-    
+```
+
+## Data acquisition and manipulation
+
+
+
+```Python
     # Read in the airline data from your blob store
     
     airlineDF = spark.read.csv('wasb://data@preshahstorage.blob.core.windows.net/delayDataLarge/AirlineSubsetCsv', 
@@ -117,12 +123,18 @@ Setting `interop = ‘pyspark’` indicates that you want interoperability.
         #'Carrier': { 'type': 'factor' }
     }
     
-    # Define Spark data frame data source. This needs to be done to pass Spark dataframes to revoscalepy
+    # Define Spark data frame data source, required for passing Spark dataframes to revoscalepy
     
     # ML functions
     trainDS = RxSparkDataFrame(airlineTrainDF, column_info=column_info)
     testDS = RxSparkDataFrame(airlineTestDF, column_info=column_info)
-    
+ ```
+
+## Create the model
+
+A logistic regression model requires a symbolic, specifying the dependent and indepdendent variables, and a data set. You can output the results using the print function.
+
+ ```Python
     # Create the formula
     formula = "ArrDel15 ~ DayOfMonth + DayOfWeek + CRSDepTime + CRSArrTime"
     
@@ -133,13 +145,11 @@ Setting `interop = ‘pyspark’` indicates that you want interoperability.
     print(logitModel.summary())
 ```
 
-## Conclusion
+## Next steps
 
-This tutorial demonstrates revoscalepy function calls in Python script that also makes calls to PySpark, showing how you to 
+This tutorial explores a complete workflow using PySpark for data preparation and revoscalepy functions for logistic regression. For further exploration, review our [Python samples](python-samples.md).
 
-
-
-## See Also
+## See also
 
 + [microsoftml function reference](../python-reference/microsoftml/microsoftml-package.md)
 + [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)
