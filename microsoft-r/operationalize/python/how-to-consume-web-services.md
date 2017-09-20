@@ -60,7 +60,6 @@ client.list_services('myService')
 client.list_services('myService', version='v1.0')
 ```
 
-
 Once you find the service you want, use the [get_service](#get_service)  function to retrieve the service object for consumption.
 
 <a name="get_service"></a>
@@ -108,38 +107,21 @@ Users can consume the service directly using a single consumption call, which is
 
 [After authenticating with Machine Learning Server](how-to-authenticate-in-python.md), users can also interact with and consume services using other functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package.
 
-Example of a request-response consume:
+**[For a full example of a request-response consume, see this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/web-services/deploy-consume/Explore_Consume_Python_Web_Services.ipynb)**
 
 ```Python
-# Import the DeployClient and MLServer classes from the azureml-model-management-sdk package.
-from azureml.deploy import DeployClient
-from azureml.deploy.server import MLServer
-
-# Define the location of Machine Learning Server
-# for local onebox for the server: http://localhost:12800
-HOST = 'http://localhost:12800'
-context = ('admin', '{{YOUR_ADMIN_PASSWORD}}')
-client = DeployClient(HOST, use=MLServer, auth=context)
-
-# Retrieve the service object for myService v2.0 and assign to `svc`.
-svc = client.get_service('myService', version='v2.0')
-
-# Start interacting with the service.
 # Let's call the function `manualTransmission` in this service
-res = svc.manualTransmission(120, 2.8)
+res = service.manualTransmission(120, 2.8)
 
-# Pluck out the named output `answer` that was defined at deploy time.
+# Pluck out the named output `answer`.
 print(res.output('answer'))
 
-# Print capabilities to see what service can do.
-print(svc.capabilities())
-
-# Since you're authenticated now, get `swagger.json`.
+# Get `swagger.json` that defines the service.
 cap = svc.capabilities()
 swagger_URL = cap['swagger']
 print(swagger_URL)
 
-# Print the contents of the swagger doc
+# Print the contents of the swagger file.
 print(svc.swagger())
 ```
 
@@ -148,7 +130,7 @@ print(svc.swagger())
 Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service. 
 The Swagger-based JSON file is used to generate client libraries for integration. Read "[How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  
    
-The easiest way to share the Swagger file with an application developer is to use the code shown in the preceding example. Alternately, the application developer can request the file as an authenticated user with an [active bearer token](../how-to-build-api-clients-from-swagger-for-app-integration.md#authentication) in the request header using this API:
+The easiest way to share the Swagger file with an application developer is to use the code shown [in this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/web-services/deploy-consume/Explore_Consume_Python_Web_Services.ipynb). Alternately, the application developer can request the file as an authenticated user with an [active bearer token](../how-to-build-api-clients-from-swagger-for-app-integration.md#authentication) in the request header using this API:
 ```
 GET /api/{{service-name}}/{{service-version}}/swagger.json
 ```
