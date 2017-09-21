@@ -70,7 +70,7 @@ The notebook example walks you through how to:
 &nbsp;
 
 >[!IMPORTANT]
->Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](how-to-authenticate-in-python.md).
+>Be sure to use the correct login details for your configuration when trying the notebook. Authentication is covered [in this article](how-to-authenticate-in-python.md).
 
 ## Next steps
 
