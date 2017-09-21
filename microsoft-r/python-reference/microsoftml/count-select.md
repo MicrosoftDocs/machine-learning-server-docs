@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Count Mode Feature Selection Transform" 
+title: "count_select: Machine Learning Count Mode Feature Selection Transform" 
 description: "Selects the features for which the count of non-default values is greater than or equal to a threshold." 
 keywords: "feature, selection, count" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.count_select*: Feature selection based on counts
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,9 @@ ms.custom: ""
 
 
 ```
-microsoftml.count_select(cols: [<class ‘list’>, <class ‘str’>], count: int = 1, **kargs)
+microsoftml.count_select(cols: [list, str], count: int = 1, **kargs)
 ```
+
 
 
 

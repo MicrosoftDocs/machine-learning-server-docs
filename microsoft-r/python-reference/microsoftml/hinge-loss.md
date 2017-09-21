@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "hinge_loss" 
+title: "hinge_loss: hinge_loss" 
 description: "Hinge loss." 
 keywords: "loss, hinge" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.hinge_loss*: Hinge loss function
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 microsoftml.hinge_loss(margin: numbers.Real = 1.0)
 ```
+
 
 
 

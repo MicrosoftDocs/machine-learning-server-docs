@@ -6,7 +6,7 @@ description: "Store/Retrieve objects to/from ODBC data sources. The APIs are mod
 keywords: "keys" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_list_keys`
+# rx_list_keys
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,11 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_list_keys(src: revoscalepy.datasource.RxOdbcData.RxOdbcData, key: str = None, version: str = None, key_name: str = 'id', version_name: str = 'version')
+revoscalepy.rx_list_keys(src: revoscalepy.datasource.RxOdbcData.RxOdbcData,
+    key: str = None, version: str = None,
+    key_name: str = 'id', version_name: str = 'version')
 ```
+
 
 
 

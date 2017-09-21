@@ -6,7 +6,7 @@ description: "Main generator for class RxOdbcData, which extends RxDataSource."
 keywords: "odbc, datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,19 +24,25 @@ ms.custom: ""
  
 ---
 
-# `RxOdbcData`
+# RxOdbcData
 
 
-**Applies to: SQL Server 2017**
-
-
-## Usage
+ 
 
 
 
 ```
-class revoscalepy.RxOdbcData(connection_string: str = None, table: str = None, sql_query: str = None, dbms_name: str = None, database_name: str = None, use_fast_read: bool = True, trim_space: bool = True, row_buffering: bool = True, return_data_frame: bool = True, string_as_factors: bool = False, column_classes: dict = None, column_info: dict = None, rows_per_read: int = 500000, verbose: int = 0, write_factors_as_indexes: bool = False, **kwargs)
+revoscalepy.RxOdbcData(connection_string: str = None,
+    table: str = None, sql_query: str = None,
+    dbms_name: str = None, database_name: str = None,
+    use_fast_read: bool = True, trim_space: bool = True,
+    row_buffering: bool = True, return_data_frame: bool = True,
+    string_as_factors: bool = False, column_classes: dict = None,
+    column_info: dict = None, rows_per_read: int = 500000,
+    verbose: int = 0, write_factors_as_indexes: bool = False,
+    **kwargs)
 ```
+
 
 
 

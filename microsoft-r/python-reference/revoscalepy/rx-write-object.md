@@ -6,7 +6,7 @@ description: "Store/Retrieve objects to/from ODBC data sources. The APIs are mod
 keywords: "odbc" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_write_object`
+# rx_write_object
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,13 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData, key: str = None, value: str = None, version: str = None, key_name: str = 'id', value_name: str = 'value', version_name: str = 'version', serialize: bool = True, overwrite: bool = False, compress: str = 'zip')
+revoscalepy.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData,
+    key: str = None, value: str = None, version: str = None,
+    key_name: str = 'id', value_name: str = 'value',
+    version_name: str = 'version', serialize: bool = True,
+    overwrite: bool = False, compress: str = 'zip')
 ```
+
 
 
 

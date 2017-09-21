@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "RevoScaleR with Sparklyr example (Microsoft R Server)"
-description: "Sparklyr interoperability with Microsoft R Server 9.1"
+title: "RevoScaleR with Sparklyr example (Machine Learning Server) | Microsoft Docs"
+description: "Sparklyr interoperability with RevoScaleR on Machine Learning Server"
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -27,18 +27,18 @@ ms.technology:
 
 # RevoScaleR with sparklyr step-by-step examples
 
-Microsoft R Server (MRS) 9.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Microsoft R Server packages such as RevoScaleR and sparklyr can be used together within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
+Machine Learning Server supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Machine Learning Server packages such as RevoScaleR and sparklyr can be used together within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
 
 + [Example 1: sparklyr data and MRS analytics](#example1)
 + [Example 2: MRS data and sparklyr analytics](#example2)
 
 ## Prerequisites
 
-To run the example code, your environment must provide the following:
+To run the example code, your environment must provide the following criteria:
 
-+ A Hadoop cluster with Spark and valid installation of Microsoft R Server
-+ Microsoft R Server configured for Hadoop and Spark
-+ Microsoft R Server SampleData loaded into HDFS
++ A Hadoop cluster with Spark and valid installation of Machine Learning Server
++ Machine Learning Server configured for Hadoop and Spark
++ Machine Learning Server SampleData loaded into HDFS
 + gcc and g++ installed on the edgenode that the example runs on
 + Write permissions to the R Library Directory
 + Read/Write permissions to HDFS directory /user/RevoShare
@@ -50,7 +50,7 @@ How you install the sparklyr R package depends on whether or not you are on HDI.
 
 **Windows, Linux, or Hadoop users**
 
-Since the default MRAN package snapshot for your version of R Server is used automatically, you can install sparklyr like you would any other package.
+Since the default MRAN package snapshot for your version of Machine Learning Server is used automatically, you can install sparklyr like you would any other package.
 
 ```R
 install.packages("sparklyr")
@@ -58,7 +58,7 @@ install.packages("sparklyr")
 
 **Azure HDInsight (HDI) users**
 
-If on HDI, you need to specify the MRAN snapshot date that contains the required package version. For R Server 9.1, use 2017-05-01. 
+If on HDI, you need to specify the MRAN snapshot date that contains the required package version. For Machine Learning Server use 2017-05-01. 
 
 ```R
 options(repos = "https://mran.microsoft.com/snapshot/2017-05-01")
@@ -68,7 +68,7 @@ install.packages("sparklyr")
 
 ## Load data into HDFS
 
-To load SampleData into HDFS, please run these commands from within an edge node with MRS installed:
+To load SampleData into HDFS, run these commands from within an edge node with MRS installed:
 
 ````
 	hadoop fs -mkdir /share
@@ -86,7 +86,7 @@ To load SampleData into HDFS, please run these commands from within an edge node
 
 ## Example 1: sparklyr data with MRS modeling
 
-This example assumes dployr and sparklyr data structures, with model training and predictive analysis using Microsoft R Server.
+This example assumes dployr and sparklyr data structures, with model training and predictive analysis using Machine Learning Server.
 
 1. Create a connection to Spark using `rxSparkConnect()`, specifying a sparklyr interop; using sparklyr and its interfaces to connect to Spark.
 2. Call `rxGetSparklyrConnection()` on the compute context to get a sparklyr connection object.
@@ -294,11 +294,11 @@ This example assumes dployr and sparklyr data structures, with model training an
 
 ## Example 2: MRS data with sparklyr and dplyR modeling
 
-This example uses the airline data set. It includes multiple Microsoft R Server approaches for loading data, such as `RxTextData` for CSV files, and `RxOrcData` or `RxParquetData` for those formats. You can try different approaches by commenting out inactive paths. Given this data, the examples shows you how to parition and train a model with sparklyr.
+This example uses the airline data set. It includes multiple Machine Learning Server approaches for loading data, such as `RxTextData` for CSV files, and `RxOrcData` or `RxParquetData` for those formats. You can try different approaches by commenting out inactive paths. Given this data, the examples show you how to partition and train a model with sparklyr.
 
 1. Create a connection to Spark using `rxSparkConnect()`, specifying a sparklyr interop; using sparklyr and its interfaces to connect to Spark.
 2. Call `rxGetSparklyrConnection()` on the compute context to get a sparklyr connection object.
-3. Use Microsoft R Server to load data from many sources.
+3. Use Machine Learning Server to load data from many sources.
 4. Partition the data in-Spark into a training and scoring set using dplyr.
 5. After partitioning, register the training set DataFrame in Spark to a Hive table.
 6. Train a model using sparklyr to call Spark ML algorithms.
@@ -534,14 +534,14 @@ This example uses the airline data set. It includes multiple Microsoft R Server 
 
 ## Conclusion
 
-The ability to use both Microsoft R Server and sparklyr from within one Spark session will allow Microsoft R Server users to quickly and seamlessly utilize features provided by sparklyr within their solutions.
+The ability to use both Machine Learning Server and sparklyr from within one Spark session allow Machine Learning Server users to quickly and seamlessly utilize features provided by sparklyr within their solutions.
 
 ## Next step
 
-For more background in using Microsoft R Server with Spark, see [Get started with R Server and ScaleR on Spark](how-to-revoscaler-spark.md).
+For more background, see [Get started with Machine Learning Server and RevoScaleR on Spark](how-to-revoscaler-spark.md).
 
 ## See also
 
- [What's new in R Server]   (../whats-new-in-r-server.md)    
+ [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md)    
  [Tips on computing with big data](tutorial-large-data-tips.md)    
- [Diving into Data Analysis](how-to-introduction.md)    
+ [How-to guides in Machine Learning Server](how-to-introduction.md)    

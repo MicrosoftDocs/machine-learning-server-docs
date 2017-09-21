@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Delete a file from the remote R session." 
+title: "deleteRemoteFile function (mrsdeploy) | Microsoft Docs" 
 description: " Delete a file from the working directory of the remote R session. " 
-keywords: "mrsdeploy, deleteRemoteFile" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), deleteRemoteFile" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #deleteRemoteFile: Delete a file from the remote R session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #deleteRemoteFile: Delete a file from the remote R session. 
  ##Description
  
 Delete a file from the working directory of the remote R session.
@@ -48,7 +44,7 @@ Delete a file from the working directory of the remote R session.
 
    
   
- ### filename
+ ### `filename`
  Name of the file to delete. 
   
  
@@ -65,11 +61,11 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[getRemoteFile](getremotefile.md)
+[getRemoteFile](getRemoteFile.md)
 
-[listRemoteFiles](listremotefiles.md)
+[listRemoteFiles](listRemoteFiles.md)
 
-[putLocalFile](putlocalfile.md)
+[putLocalFile](putLocalFile.md)
    
  ##Examples
 
@@ -82,5 +78,4 @@ deleteRemoteFile("c:/data/test.csv")
   
  
 ```
- 
  

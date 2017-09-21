@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Copy the workspace of the local R session." 
+title: "putLocalWorkspace function (mrsdeploy) | Microsoft Docs" 
 description: " Copy all objects from the local R session and load them into the remote R session. " 
-keywords: "mrsdeploy, putLocalWorkspace" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), putLocalWorkspace" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #putLocalWorkspace: Copy the workspace of the local R session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #putLocalWorkspace: Copy the workspace of the local R session. 
  ##Description
  
 Copy all objects from the local R session and load them into the remote R session.
@@ -52,11 +48,11 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[getRemoteWorkspace](getremoteworkspace.md)
+[getRemoteWorkspace](getRemoteWorkspace.md)
 
-[getRemoteObject](getremoteobject.md)
+[getRemoteObject](getRemoteObject.md)
 
-[putLocalObject](putlocalobject.md)
+[putLocalObject](putLocalObject.md)
    
  ##Examples
 
@@ -69,5 +65,4 @@ putLocalWorkspace()
   
  
 ```
- 
  

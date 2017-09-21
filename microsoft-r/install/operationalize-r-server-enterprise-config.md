@@ -7,7 +7,7 @@ keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/19/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -26,7 +26,7 @@ ms.technology:
 
 # Configure R Server to operationalize analytics (Enterprise)
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Looking for the Machine Learning Server article)](../operationalize/configure-machine-learning-server-enterprise.md)
 
 This article explains how to configure R Server after installation to act as a deployment server and to host analytic web services for operationalization. This article describes how to perform an enterprise configuration of these features. 
 
@@ -37,8 +37,7 @@ With an enterprise configuration, you can work with your production-grade data w
 This configuration includes one or more web nodes, one or more compute nodes, and a database.   
 + Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have multiple web nodes to load balance your requests to multiple compute nodes. 
 
-+ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
-+ The database. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
++ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 + The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
@@ -83,7 +82,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
-1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
 1. From the submenu, choose the option to **Configure a compute node**.
 
@@ -114,7 +113,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
-1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
 1. From the submenu, choose the option to **Configure a web node**.     
 
@@ -222,7 +221,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. Declare the IP addresses of every compute node with each web node.
-   1. [Open the appsettings.json configuration file](../operationalize/configure-find-admin-configuration-file.md).
+   1. Open the configuration file, \<server-home>/Microsoft.RServer.WebNode/appsettings.json. (Find [\<server-home>](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
    1. In the file, search for the section starting with `"BackEndConfiguration": {` .
 

@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Get a list of snapshots for the current user." 
+title: "listSnapshots function (mrsdeploy) | Microsoft Docs" 
 description: " Get a list of all the snapshots on the R server that are available to the current user. " 
-keywords: "mrsdeploy, listSnapshots" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), listSnapshots" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #listSnapshots: Get a list of snapshots for the current user.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #listSnapshots: Get a list of snapshots for the current user. 
  ##Description
  
 Get a list of all the snapshots on the R server that are available to the current user.
@@ -56,13 +52,13 @@ A character vector containing the snapshot ids.
  
  ##See Also
  
-[createSnapshot](createsnapshot.md)
+[createSnapshot](createSnapshot.md)
 
-[deleteSnapshot](deletesnapshot.md)
+[deleteSnapshot](deleteSnapshot.md)
 
-[loadSnapshot](loadsnapshot.md)
+[loadSnapshot](loadSnapshot.md)
 
-[downloadSnapshot](downloadsnapshot.md)
+[downloadSnapshot](downloadSnapshot.md)
    
  ##Examples
 
@@ -75,5 +71,4 @@ snapshots<-listSnapshots()
   
  
 ```
- 
  

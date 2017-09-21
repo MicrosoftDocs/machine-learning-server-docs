@@ -29,28 +29,28 @@ ms.technology: "deployr"
 
 >Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
 
-Typically when invoking system commands from R, those commands will run as the user that started R. In the case of Hadoop, if user `abc` logs into a node on a Hadoop cluster and starts R, any *system* commands, such as `system("hadoop fs -ls /")`, will run as user `abc`. File permissions in HDFS will be honored accordingly, for example user `abc` will not be able to access files in HDFS if that user does not have proper permissions.
+Typically when invoking system commands from R, those commands run as the user that started R. In the case of Hadoop, if user `abc` logs in to a node on a Hadoop cluster and starts R, any *system* commands, such as `system("hadoop fs -ls /")`, run as user `abc`. File permissions in HDFS are honored accordingly. For example, user `abc` cannot access files in HDFS if that user does not have proper permissions.
 
-However when using DeployR, every R session is started as the same user. This is an artifact of the Rserve component that was used to create and interact with R sessions. In order to work around this circumstance, [Hadoop Impersonation](https://issues.apache.org/jira/browse/HADOOP-8561) will be used. Hadoop impersonation is employed by standard Hadoop services like Hue and WebHDFS.
+However when using DeployR, every R session is started as the same user. This is an artifact of the Rserve component that was used to create and interact with R sessions. In order to work around this circumstance, [Hadoop Impersonation](https://issues.apache.org/jira/browse/HADOOP-8561) is used. Hadoop impersonation is employed by standard Hadoop services like Hue and WebHDFS.
 
-The idea behind impersonation is that R will set an environment variable that tells Hadoop to run commands as a different user than the user who started the R session. You can use one of two Hadoop-supported environment variables:
+The idea behind impersonation is that R sets an environment variable that tells Hadoop to run commands as a different user than the user who started the R session. You can use one of two Hadoop-supported environment variables:
 
 -   `HADOOP_USER_NAME` for non-kerberos secured clusters
 -   `HADOOP_PROXY_USER` for clusters secured with Kerberos.
 
 This document assumes we are working with a Kerberos secured cluster.
 
-The rest of the document will focus on the steps needed to get Hadoop Impersonation to work with DeployR.
+The rest of the document focuses on the steps needed to get Hadoop Impersonation to work with DeployR.
 
 ## Creating the 'rserve' User
 
-Since, the DeployR Rserve component runs by default as the `apache` user who **does not** have a `home` directory, we recommend that you create a new user that:
+Since the DeployR Rserve component runs by default as the `apache` user who **does not** have a `home` directory, we recommend that you create a new user that:
 
--   Will be used when running Rserve
+-   Is used when running Rserve
 -   Has a `home` directory
 -   Starts a bash shell
 
-In this example, we will create the user `rserve` and change which user used to run Rserve.
+In this example, we create the user `rserve` and change which user used to run Rserve.
 
 **Non Root Installation**
 
@@ -67,13 +67,13 @@ If DeployR was installed as user `root`, do the following:
 
         cd /opt/deploy/<version>
 
-3.  Go the `rserve` sub-directory and open `rserve.sh` in an editor. For example:
+3.  Go the `rserve` subdirectory and open `rserve.sh` in an editor. For example:
 
         vi /opt/deploy/<version>/rserve/rserve.sh
 
 4.  Replace all instances of `apache` with `rserve`. 
 
-    >There are 2 instances of the string `apache` in the file.
+    >There are two instances of the string `apache` in the file.
 
 5.  Give full write permissions to directory `workdir`. For example:
 
@@ -93,12 +93,12 @@ If DeployR was installed as user `root`, do the following:
 ## Setting Up the Environment for the 'rserve' User
 
 
-+ **ScaleR**: If you are using ScaleR inside Hadoop, add the following line to `.bash_profile` for user `rserve`. This will ensure all environment variables needed by ScaleR are set properly.
++ **ScaleR**: If you are using ScaleR inside Hadoop, add the following line to `.bash_profile` for user `rserve`. This ensures all environment variables needed by ScaleR are set properly.
   ```NA
   . ./etc/profile.d/Revolution/bash_profile_additions
   ```
   
-+ **Kerberos**: If your Hadoop cluster is secured using Kerberos, obtain a Kerberos ticket for principal `hdfs`. This ticket will act as the proxy for all other users.
++ **Kerberos**: If your Hadoop cluster is secured using Kerberos, obtain a Kerberos ticket for principal `hdfs`. This ticket acts as the proxy for all other users.
 
   Be sure you are the Linux user `rserve` when obtaining the ticket. For example:
   ```NA
@@ -122,7 +122,7 @@ If DeployR was installed as user `root`, do the following:
         df<-read.table(pipe(paste('hadoop fs -cat ', filename, sep="")), sep=",", header=TRUE)
         summary(df)
 
-    When you run this program from the R console as user `rserve`, it will work because principal `hdfs` has a valid Kerberos ticket for the Linux user `rserve`.
+    When you run this program from the R console as user `rserve`, it works because principal `hdfs` has a valid Kerberos ticket for the Linux user `rserve`.
 
 3.  Modify the script to use the `HADOOP_PROXY_USER` environment variable. For example, add `Sys.setenv(HADOOP_PROXY_USER='rserve')`:
 
@@ -146,17 +146,17 @@ If DeployR was installed as user `root`, do the following:
         > summary(df)
         Error in object[[i]] : object of type 'closure' is not subsettable
 
-4.  RScript for DeployR - We don't want to leave line of code that sets the HADOOP\_PROXY\_USER in our R Script. So we remove it and revert back to our original script. In addition, we will pass the filename into the script from our DeployR client application. So, the script simply becomes:
+4.  RScript for DeployR - We don't want to leave line of code that sets the HADOOP\_PROXY\_USER in our R Script. So we remove it and revert back to our original script. In addition, we pass the filename into the script from our DeployR client application. So, the script simply becomes:
 
         df<-read.table(pipe(paste('hadoop fs -cat ', filename, sep="")), sep=",", header=TRUE)
         summary(df)
 
-We can now upload the script to DeployR using the Repository Manager. In our example, user `testuser` will create a directory called `demo` in the DeployR Repository Manager and name our RScript `piperead.R`.
+We can now upload the script to DeployR using the Repository Manager. In our example, user `testuser` creates a directory called `demo` in the DeployR Repository Manager and name our RScript `piperead.R`.
 
 <a name="create-deployr-client"></a>
 ## Creating a DeployR Client
 
-Create a DeployR client application to control which user will be running the script.
+Create a DeployR client application to control which user is running the script.
 
 This example code is written in Visual Basic using the DeployR .NET client library. An equivalent example could be written in C\#, Java or JavaScript.
 
@@ -240,7 +240,7 @@ We can now extend this example to include two more RScripts for execution.
 
 **Second RScript**
 
-This script demonstrates how to copy a file from HDFS into the working directory of the R session. This RScript will be uploaded to the DeployR repository as `copy_to_workspace.R`, in directory `demo` for user `testuser`.
+This script demonstrates how to copy a file from HDFS into the working directory of the R session. This RScript is uploaded to the DeployR repository as `copy_to_workspace.R`, in directory `demo` for user `testuser`.
 
     #copy a file from HDFS into the working directory
 
@@ -250,7 +250,7 @@ This script demonstrates how to copy a file from HDFS into the working directory
 
 **Third RScript**
 
-This script runs a ScaleR algorithm as a MapReduce job in Hadoop. This RScript will be uploaded to the DeployR repository as `scaleR_hadoop.R`, in directory `demo` for user `testuser`.
+This script runs a ScaleR algorithm as a MapReduce job in Hadoop. This RScript is uploaded to the DeployR repository as `scaleR_hadoop.R`, in directory `demo` for user `testuser`.
 
     #run an rxSummary on 'filename'
 
@@ -272,7 +272,7 @@ This script runs a ScaleR algorithm as a MapReduce job in Hadoop. This RScript w
     adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
     print(adsSummary)
 
-**Update VB.NET code that executes all 3 examples**
+**Update VB.NET code that executes all three examples**
 
 This is an update of the [code shown here](#create-deployr-client) that now reads in and executes all three scripts.
 

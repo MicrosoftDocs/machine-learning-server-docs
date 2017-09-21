@@ -6,7 +6,7 @@ description: "Creates a local compute context object. Computations using rx_exec
 keywords: "context, local" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,19 +24,17 @@ ms.custom: ""
  
 ---
 
-# `RxLocalSeq`
+# RxLocalSeq
 
 
-**Applies to: SQL Server 2017**
-
-
-## Usage
+ 
 
 
 
 ```
-class revoscalepy.RxLocalSeq
+revoscalepy.RxLocalSeq
 ```
+
 
 
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "sgd_optimizer" 
+title: "sgd_optimizer: sgd_optimizer" 
 description: "Stochastic gradient descent optimizer." 
 keywords: "optimizer, sgd" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.sgd_optimizer*: Stochastic gradient descent
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,14 @@ ms.custom: ""
 
 
 ```
-microsoftml.sgd_optimizer(learning_rate: numbers.Real = None, momentum: numbers.Real = None, nag: bool = None, weight_decay: numbers.Real = None, l_rate_red_ratio: numbers.Real = None, l_rate_red_freq: numbers.Real = None, l_rate_red_error_ratio: numbers.Real = None)
+microsoftml.sgd_optimizer(learning_rate: numbers.Real = None,
+    momentum: numbers.Real = None, nag: bool = None,
+    weight_decay: numbers.Real = None,
+    l_rate_red_ratio: numbers.Real = None,
+    l_rate_red_freq: numbers.Real = None,
+    l_rate_red_error_ratio: numbers.Real = None)
 ```
+
 
 
 

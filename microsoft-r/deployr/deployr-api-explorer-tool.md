@@ -31,20 +31,20 @@ ms.technology: "deployr"
 
 The DeployR API is extensive, providing a wide range of services related to [users](deployr-api-reference.md#users-on-the-api), [projects](deployr-api-reference.md#projects-on-the-api), [jobs](deployr-api-reference.md#jobs-on-the-api) and the [repository](deployr-api-reference.md#repository-on-the-api). To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool. This tool allows developers to explore the DeployR API in an interactive manner.
 
->You cannot log into DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you'll need to log into each one in a separate brand of browser. 
+>You cannot log in to DeployR from two different accounts within the same brand of browser program. To use two or more different accounts, you need to log in to each one in a separate brand of browser. 
 
 >[!NOTE]
 >Hovering your mouse over most UI elements in the API Explorer reveals helpful tooltips.
 
 ##Accessing the API Explorer
 
-The API Explorer is accessible after auto-installing DeployR. With a manual installation on Linux, make sure you install the API Explorer software. For more information, refer to the DeployR Installation Guide for your OS.
+The API Explorer is accessible after auto-installing DeployR. With a manual installation on Linux, make sure you install the API Explorer software. For more information, see the DeployR Installation Guide for your OS.
 
 + Visit the DeployR home page at `http://<DEPLOYR-SERVER-IP-ADDRESS-AND-PORT>/deployr/landing/`. From there, you can launch the API Explorer in your Web browser by clicking the API Explorer link near the top of the page.
 
 + Or, access the API Explorer directly here: `http://<DEPLOYR-SERVER-IP-ADDRESS-AND-PORT>/deployr/test/drive/deployr/api.html`.
 
->This tool requires that the Adobe Flash Player plug-in be installed and enabled in your Web browser.
+>This tool requires that the Adobe Flash Player plug-in is installed and enabled in your Web browser.
 
 
 ## Overview of the API Explorer Interface 
@@ -53,7 +53,7 @@ The interface to the API Explorer consists of four main panels:
 
 ###Panel 1: Preferences 
 
-At the top of the API Explorer window, you can find the Preferences Panel. Preference controls are on the right side of this panel. You can use these controls to set global preferences for all of the API calls you will make within this tool.
+At the top of the API Explorer window, you can find the Preferences Panel. Preference controls are on the right side of this panel. You can use these controls to set global preferences for all of the API calls you make within this tool.
 
 ![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-1.png)
 
@@ -70,15 +70,15 @@ The center section of the API Explorer window contains the API tabs panel:
 ![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-2.png)
 
 
-Use the functionality found under each tab in API Explorer to interact with and invoke a subset of the full API. Each of these tabs is described in the following sections.
+Use the functionality found under each tab in API Explorer to interact with and invoke a subset of the full API. Each of these tabs is described in the following sections:
 
 **DeployR Tab**
 
 The DeployR tab is the starting point in the API Explorer. This tab gives the user access to the full set of [User APIs](deployr-api-reference.md#users).
 
-When a user first launches the API Explorer the DeployR tab and the Repo Scripts tab are the only tabs enabled in the API Tabs Panel. In order to gain access to additional tabs you must first sign-in to DeployR.
+When a user first launches the API Explorer the DeployR tab and the Repo Scripts tab are the only tabs enabled in the API Tabs Panel. In order to gain access to additional tabs, you must first sign in to DeployR.
 
-Once you successfully authenticates with DeployR the following tabs are activated:
+Once you successfully authenticate with DeployR the following tabs are activated:
 
 ![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-5.png)
 
@@ -125,7 +125,7 @@ The Packages tab offers access to the full set of [Project Package APIs](deployr
 
 **About Tab**
 
-The About tab offers access to the [/r/project/about](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-about) and [/r/project/about/update](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-about-update) APIs. These APIs appear in their own tab simply due to space constraints in the UI.
+The About tab offers access to the [/r/project/about](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-about) and [/r/project/about/update](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-about-update) APIs. These APIs appear in their own tab due to space constraints in the UI.
 
 **Repo Files Tab**
 

@@ -43,16 +43,16 @@ RxSparkConnect(..,
 
 Use of a specific queue can be enforced by the Hadoop system administrator by providing an installation override to the `RxSpark()`, `RxSparkConnect()`, and `RxHadoopMR()` compute context functions. A benefit is that you no longer have to explicitly specify the queue.  
 
-This procedure involves creating a custom R package which contains the function overrides, installing that package on the nodes in use by end-users, and adding the package to the default search path on these nodes. The following code block provides an example. If you use this code as a template, remember to change the ‘mrsjobs’ YARN queue name to the queue name that's valid for your system.
+This procedure involves creating a custom R package that contains the function overrides, installing that package on the nodes in use by end users, and adding the package to the default search path on these nodes. The following code block provides an example. If you use this code as a template, remember to change the ‘mrsjobs’ YARN queue name to the queue name that's valid for your system.
 
-1. Create a new R package, such as “abcMods” if your company abbreviation is ‘abc’, by installing the “devtools” package and running the following command, or use the `package.skeleton()` function in base R.  To learn more about creating R packages, see [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) on the CRAN website, or this [online version of R Packages](http://r-pkgs.had.co.nz/) from Hadley Wickham..
+1. Create a new R package, such as “abcMods” if your company abbreviation is ‘abc’, by installing the “devtools” package and running the following command, or use the `package.skeleton()` function in base R.  To learn more about creating R packages, see [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) on the CRAN website, or [online version of R Packages](http://r-pkgs.had.co.nz/) from Hadley Wickham.
 
   ~~~~
   > library(devtools)
   > create('/dev/abcMods',rstudio=FALSE)
    ~~~~
 
-2. This will create the essential package files in the requested directory, in this case ‘/dev/abcMods’. Edit each of the following to fill in the relevant info.
+2. This creates the essential package files in the requested directory, in this case ‘/dev/abcMods’. Edit each of the following to fill in the relevant info.
 
   DESCRIPTION – text file containing the description of the R package:
 
@@ -77,7 +77,7 @@ This procedure involves creating a custom R package which contains the function 
   This package is for internal Company ABC use only -- not for redistribution.
   ~~~~
 
-3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following provides sample code for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory. Please note that the `RxSparkConnect` function is only available in V9 and later releases. 
+3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following sample code provides for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory. The `RxSparkConnect` function is only available in V9 and later releases. 
 
   ~~~~
     # sample code to enforce use of YARN queues for RxHadoopMR, RxSpark,
@@ -141,14 +141,14 @@ This procedure involves creating a custom R package which contains the function 
   }
 ~~~~
 
-4. After editing the above components of the package, run the following Linux commands to build the package from the directory containing the **abcMods** directory:
+4. After editing the previous components of the package, run the following Linux commands to build the package from the directory containing the **abcMods** directory:
 
   ~~~~
   R CMD build abcMods
   R CMD INSTALL abcmods_0.1-0    (if needed run this using sudo)
   ~~~~
 
-  If you need to build the package for users on Windows then the equivalent commands would be as follows where ‘rpath’ is defined to point to the version of R Server to which you’d like to add the library.  
+  If you need to build the package for users on Windows, then the equivalent commands would be as follows where ‘rpath’ is defined to point to the version of R Server to which you’d like to add the library.  
 
   ~~~~
   set rpath="C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64\R.exe"
@@ -171,4 +171,4 @@ This procedure involves creating a custom R package which contains the function 
   options(defaultPackages=c(getOption("defaultPackages"), "rpart", "lattice", "RevoScaleR", "RevoMods", "RevoUtils", "RevoUtilsMath", "abcMods"))
   ~~~~
 
-7. Once everything tests out to your satisfaction, install the package on all the edge nodes that your users will be logging into. To do this, copy "Rprofile.site" and R’s library/abcMods directory to each of these nodes, or install the package from the abcmods_0.1-0 tar file on each node and manually edit the "Rprofile.site" file on each node.    
+7. Once everything tests out to your satisfaction, install the package on all the edge nodes that your users are logging in to. To do this, copy "Rprofile.site" and R’s library/abcMods directory to each of these nodes, or install the package from the abcmods_0.1-0 tar file on each node and manually edit the "Rprofile.site" file on each node.    

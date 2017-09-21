@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Mutual Information Mode Feature Selection Transform" 
+title: "mutualinformation_select: Machine Learning Mutual Information Mode Feature Selection Transform" 
 description: "Selects the top k features across all specified columns ordered by their mutual information with the label column." 
 keywords: "feature, selection, mutual, information" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.mutualinformation_select*: Feature selection based on mutual information
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,10 @@ ms.custom: ""
 
 
 ```
-microsoftml.mutualinformation_select(cols: [<class ‘list’>, <class ‘str’>], label: str, num_features_to_keep: int = 1000, num_bins: int = 256, **kargs)
+microsoftml.mutualinformation_select(cols: [list, str], label: str,
+    num_features_to_keep: int = 1000, num_bins: int = 256, **kargs)
 ```
+
 
 
 

@@ -6,7 +6,7 @@ description: "Get variable information for a revoscalepy data source or data fra
 keywords: "info" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_get_var_info`
+# rx_get_var_info
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,11 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_get_var_info(data, get_value_labels: bool = True, vars_to_keep: list = None, vars_to_drop: list = None, compute_info: bool = True, all_nodes: bool = False)
+revoscalepy.rx_get_var_info(data, get_value_labels: bool = True,
+    vars_to_keep: list = None, vars_to_drop: list = None,
+    compute_info: bool = False, all_nodes: bool = False)
 ```
+
 
 
 
@@ -56,6 +59,8 @@ a data frame, a character string specifying an “.xdf”, or an
 RxDataSource object. If a local compute context is being used, this
 argument may also be a list of data sources, in which case the output will
 be returned in a named list. See the details section for more information.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### get_value_labels
@@ -80,11 +85,8 @@ ignored. Cannot be used with vars_to_keep.
 
 ### compute_info
 
-bool value. If True, and get_var_info is True,
-variable information (e.g., high/low values) for non-xdf data sources will
-be computed by reading through the data set. If True, and get_var_info is
-False, the number of variables will be gotten from from non-xdf data
-sources (but not the number of rows).
+bool value. If True, variable information (e.g., high/low values)
+for non-xdf data sources will be computed by reading through the data set.
 
 
 ### all_nodes

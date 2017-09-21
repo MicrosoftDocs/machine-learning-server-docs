@@ -6,7 +6,7 @@ description: "File-based data source connection class."
 keywords: "file, datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,19 +24,17 @@ ms.custom: ""
  
 ---
 
-# `RxFileSystem`
+# RxFileSystem
 
 
-**Applies to: SQL Server 2017**
-
-
-## Usage
+ 
 
 
 
 ```
-class revoscalepy.RxFileSystem(file_system_type='native')
+revoscalepy.RxFileSystem(file_system_type='native')
 ```
+
 
 
 

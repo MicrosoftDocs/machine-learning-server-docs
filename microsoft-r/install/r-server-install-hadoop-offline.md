@@ -121,7 +121,7 @@ R Server for Hadoop is deployed by running the install script with no parameters
 
   `[root@localhost tmp] $ cd MRS91Hadoop`
 
-2. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pretrained machine learning models.
+2. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pre-trained machine learning models.
 
    `[root@localhost MRS91Hadoop] $ bash install.sh -h -m`
 

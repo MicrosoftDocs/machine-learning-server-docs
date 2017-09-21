@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "clr_math" 
+title: "clr_math: clr_math" 
 description: "Default .NET math." 
 keywords: "neural network, math, clr" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.clr_math*: Acceleration with .NET math
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 microsoftml.clr_math()
 ```
+
 
 
 

@@ -6,7 +6,7 @@ description: "Calculate predicted or fitted values for a data set from an rx_dfo
 keywords: "predict" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_predict_rx_dforest`
+# rx_predict_rx_dforest
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,21 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_predict_rx_dforest(model_object=None, data: revoscalepy.datasource.RxDataSource.RxDataSource = None, output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, predict_var_names: list = None, write_model_vars: bool = False, extra_vars_to_write: list = None, append: typing.Union[list, str] = 'none', overwrite: bool = False, type: typing.Union[list, str] = None, cutoff: list = None, remove_missings: bool = False, compute_residuals: bool = False, residual_type: typing.Union[list, str] = 'usual', residual_var_names: list = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 0, xdf_compression_level: int = None, compute_context=None, **kwargs)
+revoscalepy.rx_predict_rx_dforest(model_object=None,
+    data: revoscalepy.datasource.RxDataSource.RxDataSource = None,
+    output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource,
+    str] = None, predict_var_names: list = None,
+    write_model_vars: bool = False,
+    extra_vars_to_write: list = None, append: typing.Union[list,
+    str] = 'none', overwrite: bool = False, type: typing.Union[list,
+    str] = None, cutoff: list = None,
+    remove_missings: bool = False, compute_residuals: bool = False,
+    residual_type: typing.Union[list, str] = 'usual',
+    residual_var_names: list = None, blocks_per_read: int = None,
+    report_progress: int = None, verbose: int = 0,
+    xdf_compression_level: int = None, compute_context=None, **kwargs)
 ```
+
 
 
 
@@ -57,6 +70,8 @@ object returned from a call to rx_dtree.
 ### data
 
 a data frame or an RxXdfData data source object to be used for predictions.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### output_data

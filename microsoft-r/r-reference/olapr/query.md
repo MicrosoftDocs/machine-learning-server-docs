@@ -7,7 +7,7 @@ keywords: "olapR, Query"
 author: "richcalaway"
 ms.author: "richcala" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "09/25/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,9 +25,9 @@ ms.technology: "r-server"
  
 --- 
  
- #Query: olapR Query Construction
+# Query: olapR Query Construction
 
- Applies to version 1.0.0 of package olapR.
+Applies to version 1.0.0 of package olapR.
  
  
  ##Description
@@ -65,7 +65,6 @@ ms.technology: "r-server"
   compose(qry)
   
   is.Query(qry)
- 
 ```
  
  

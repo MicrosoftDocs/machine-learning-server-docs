@@ -3,10 +3,10 @@
 # required metadata 
 title: "rx_exec: Run a Function With Different Sets of Arguments" 
 description: "Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster." 
-keywords: "sql" 
+keywords: "parallel execution, multiple executions, remote execution, sql" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_exec`
+# rx_exec
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,13 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_exec(function: typing.Callable, args: typing.Union[dict, typing.List[dict]] = None, times_to_run: int = -1, task_chunk_size: int = None, compute_context=None, local_state: dict = {}, callback: typing.Callable = None, continue_on_failure: bool = True, **kwargs)
+revoscalepy.rx_exec(function: typing.Callable, args: typing.Union[dict,
+    typing.List[dict]] = None, times_to_run: int = -1,
+    task_chunk_size: int = None, compute_context=None,
+    local_state: dict = {}, callback: typing.Callable = None,
+    continue_on_failure: bool = True, **kwargs)
 ```
+
 
 
 
@@ -82,13 +87,13 @@ task_chunk_size so that each worker can do its allotment of tasks in a single py
 
 ### compute_context
 
-a RxComputeContext object. Note, if using RxLocalParallel in a Python script called directly
-from the command line, you must use a if __name__ == “__main__”: around your code that calls rx_exec.
+a RxComputeContext object.
 
 
 ### local_state
 
 dictionary with variables to be passed to a RxInSqlServer compute context
+not supported in RxSpark compute context.
 
 
 ### callback
@@ -133,6 +138,7 @@ object, or a list of a jobInfo objects for multiple executions.
 
 `RxComputeContext`,
 [`RxLocalSeq`](RxLocalSeq.md),
+`RxLocalParallel`,
 [`RxInSqlServer`](RxInSqlServer.md),
 [`rx_get_compute_context`](rx-get-compute-context.md),
 [`rx_set_compute_context`](rx-set-compute-context.md).
@@ -159,10 +165,9 @@ args = [
     {'data' : in_mort_ds, 'formula' : formula, 'n_tree': 7}
 ]
 
-if __name__ == "__main__":
-    models = rx_exec(rx_btrees, args = args)
-    # Alternatively
-    models = rx_exec(rx_btrees, data=in_mort_ds, formula=formula, n_tree=[3,5,7])
+models = rx_exec(rx_btrees, args = args)
+# Alternatively
+models = rx_exec(rx_btrees, data=in_mort_ds, formula=formula, n_tree=[3,5,7])
 
 ###
 ## SQL rx_exec
@@ -190,6 +195,33 @@ def remote_call(dataset):
 
 results = rx_exec(function = remote_call, args={'dataset': ds}, compute_context = cc)
 print(results)
+
+###
+## Run rx_exec in RxSpark compute context
+###
+from revoscalepy import *
+
+# start Spark app
+spark_cc = rx_spark_connect()
+
+# define function to conditional check
+def my_check_fun(id_param):
+    if id_param == 13:
+        raise Exception("Ensure to fail")
+    return id_param
+
+# prepare args for each run with total 20 runs
+elem_arg = []
+for i in range(0,20):
+    elem_arg.append({"id_param": i})
+
+# get result and print
+results = rx_exec(my_check_fun, elem_arg, continue_on_failure=True)
+print(results)
+
+# stop Spark app
+rx_spark_disconnect(spark_cc)
+
 ## End(Not run)
 ```
 

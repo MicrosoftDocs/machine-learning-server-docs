@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Drops columns from the dataset" 
+title: "drop_columns: Drops columns from the dataset" 
 description: "Specified columns to drop from the dataset." 
 keywords: "transform, schema" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.drop_columns*: Drops columns from a dataset
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,9 @@ ms.custom: ""
 
 
 ```
-microsoftml.drop_columns(cols: [<class ‘list’>, <class ‘str’>], **kargs)
+microsoftml.drop_columns(cols: [list, str], **kargs)
 ```
+
 
 
 

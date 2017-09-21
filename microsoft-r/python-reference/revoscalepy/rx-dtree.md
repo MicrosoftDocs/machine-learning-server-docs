@@ -6,7 +6,7 @@ description: "Fit classification and regression trees on an ‘.xdf’ file or d
 keywords: "learner, tree" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_dtree`
+# rx_dtree
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,20 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_dtree(formula, data, output_file=None, output_column_name='.rxNode', write_model_vars=False, extra_vars_to_write=None, overwrite=False, pweights=None, fweights=None, method=None, parms=None, cost=None, min_split=None, min_bucket=None, max_depth=10, cp=0, max_compete=0, max_surrogate=0, use_surrogate=2, surrogate_style=0, x_val=2, max_num_bins=None, max_unordered_levels=32, remove_missings=False, compute_obs_node_id=None, use_sparse_cube=False, find_splits_in_parallel=True, prune_cp=0, row_selection=None, transforms=None, transform_objects=None, transform_function=None, transform_variables=None, transform_packages=None, transform_environment=None, blocks_per_read=1, report_progress=2, verbose=0, compute_context=None, xdf_compression_level=1, **kwargs)
+revoscalepy.rx_dtree(formula, data, output_file=None,
+    output_column_name='.rxNode', write_model_vars=False,
+    extra_vars_to_write=None, overwrite=False, pweights=None, fweights=None,
+    method=None, parms=None, cost=None, min_split=None, min_bucket=None,
+    max_depth=10, cp=0, max_compete=0, max_surrogate=0, use_surrogate=2,
+    surrogate_style=0, x_val=2, max_num_bins=None, max_unordered_levels=32,
+    remove_missings=False, compute_obs_node_id=None, use_sparse_cube=False,
+    find_splits_in_parallel=True, prune_cp=0, row_selection=None,
+    transforms=None, transform_objects=None, transform_function=None,
+    transform_variables=None, transform_packages=None,
+    transform_environment=None, blocks_per_read=1, report_progress=2, verbose=0,
+    compute_context=None, xdf_compression_level=1, **kwargs)
 ```
+
 
 
 
@@ -59,6 +71,8 @@ statistical model using symbolic formulas.
 
 either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### output_file

@@ -589,10 +589,6 @@ If you want to retrieve a previous command, simply press UP ARROW. For example,
 
 You can close the graphics window.
 
-## Finding More Information
-
-This *Getting Started Guide* has introduced the main features of the Revolution R Enterprise R Productivity Environment. More information on the RPE can be found in the [R Productivity Environment User’s Guide](revorpe-users-guide.md). A basic introduction to the R language can be found [here](../../microsoft-r-getting-started.md).
-
 ## Keyboard Navigation Among Windows
 
 You can navigate from window to window using keyboard shortcut keys:
