@@ -34,13 +34,9 @@ Web services in Machine Learning Server can be based on Python or R. They can al
 
 Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model on demand. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
+**Requirement** Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
+
 There are two types of web services: standard and realtime. 
-
-## Requirements
-
-Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
-
-When you deploy your code and models, they are published as web services in Machine Learning Server and can be operationalized by others.  Web services can be versioned and managed by their creators or those users with [special permissions](#permissions).
 
 <a name="standard"></a>
 
