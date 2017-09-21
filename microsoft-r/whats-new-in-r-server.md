@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # Feature annoucements from previous releases
 
-Microsoft R Server is subsumed by Machine Learning Server 9.2, which is built on features from earlier releases. If you have R Server 9.1 or earlier, this article enumerates features introduced in each version.
+Microsoft R Server is subsumed by Machine Learning Server 9.2.1, which is built on features from earlier releases. If you have R Server 9.1 or earlier, this article enumerates features introduced in each version.
 
 ## R Server 9.1
 
