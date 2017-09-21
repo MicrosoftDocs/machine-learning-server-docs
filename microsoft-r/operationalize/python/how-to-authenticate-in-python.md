@@ -26,7 +26,7 @@ ms.technology:
 
 # Authenticate with Machine Learning Server in Python with azureml-model-management-sdk
 
-**Applies to: Machine Learning Server 9.2**
+**Applies to: Machine Learning Server**
 
 The [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) package, delivered with Machine Learning Server, provides functions for publishing and managing a Python web service that is backed by the Python code block or script you provided.  
 
