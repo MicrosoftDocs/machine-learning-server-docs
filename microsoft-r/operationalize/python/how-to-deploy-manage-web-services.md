@@ -35,7 +35,7 @@ Using the [azureml-model-management-sdk](../../python-reference/azureml-model-ma
 By default, web service operations are available to authenticated users. However, your administrator can also [assign role-based authorization (RBAC)](../configure-roles.md) to further control the permissions around web services. 
 
 >[!IMPORTANT]
->**Web service definition:** In Machine Learning Server, your R and Python code and models can be deployed as web services. Exposed as web services hosted in Machine Learning Server, these models and code can be accessed and consumed in R, Python, programmatically using REST APIs, or using Swagger generated client libraries. [Learn more...](../concept-what-are-web-services.md)
+>**Web service definition:** In Machine Learning Server, your R and Python code and models can be deployed as web services. Exposed as web services hosted in Machine Learning Server, these models and code can be accessed and consumed in R, Python, programmatically using REST APIs, or using Swagger generated client libraries. Web services can be deployed from one platform and consumed on another. [Learn more...](../concept-what-are-web-services.md)
 
 ## Overview
 
