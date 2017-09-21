@@ -95,7 +95,7 @@ the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition.md#operationalization-definition)) for fluent API.
 
 
 
@@ -142,7 +142,7 @@ The description of the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition.md#operationalization-definition)) for fluent API.
 
 
 
@@ -189,4 +189,4 @@ The version of the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition.md#operationalization-definition)) for fluent API.
