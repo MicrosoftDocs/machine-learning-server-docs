@@ -333,7 +333,7 @@
           href: install/r-server-install-hadoop-yarnqueueusage.md
     - name: Choose a MicrosoftML algorithm
       href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
-  - name: Operationalization - deploy & consume
+  - name: Operationalization: deploy & consume
     items:
     - name: Python
       items:
@@ -471,12 +471,13 @@
       - name: Manage access tokens
         href: operationalize/how-to-manage-access-tokens.md
   - name: Remote R code execution
+  - name: Run R code remotely
     items:
     - name: Connect to remote server
       href: operationalize/how-to-connect-log-in-with-mrsdeploy.md
     - name: Execute code remotely
       href: r/how-to-execute-code-remotely.md
-  - name: Advanced development in R
+  - name: Advanced R development
     items:
     - name: Write custom chunking algorithms
       href: r/how-to-developer-write-chunking-algorithms.md
