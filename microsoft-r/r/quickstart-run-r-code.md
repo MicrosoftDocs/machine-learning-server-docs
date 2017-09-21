@@ -24,7 +24,7 @@ ms.technology: "r-client"
 ---
 # Run R code in Microsoft R
 
-**Applies to: Microsoft R Client, Machine Learning Server**
+**Applies to: Microsoft R Client, Machine Learning Server, R Server 9.x**
 
 ## Objective
 

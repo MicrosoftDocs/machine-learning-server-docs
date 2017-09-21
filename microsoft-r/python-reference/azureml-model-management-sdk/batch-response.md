@@ -42,7 +42,7 @@ azureml.deploy.server.service.BatchResponse(api, execution_id, response,
 Represents a service’s entire batch execution response at a particular state
 in time. Using this, a batch execution index can be supplied to the
 `execution(index)` function in order to retrieve the service’s
-[`ServiceResponse`](service-response#serviceresponse).
+[`ServiceResponse`](service-response.md).
 
 
 
@@ -96,7 +96,7 @@ The batch execution index.
 
 ### Returns
 
-The execution results [`ServiceResponse`](service-response#serviceresponse).
+The execution results [`ServiceResponse`](service-response.md).
 
 
 

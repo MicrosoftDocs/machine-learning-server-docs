@@ -38,7 +38,7 @@ azureml.deploy.operationalization.ServiceDefinition(name, op)
 
 
 
-Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md#operationalization-definition))
+Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md)
 
 Service class defining a *standard* service’s properties for publishing.
 
@@ -78,7 +78,7 @@ the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
 
@@ -105,7 +105,7 @@ A single file artifact by name.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API
 chaining.
 
 
@@ -132,7 +132,7 @@ A `list` of file artifacts by name.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API
 chaining.
 
 
@@ -180,7 +180,7 @@ the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API
 chaining.
 
 
@@ -223,7 +223,7 @@ the service.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition) for fluent API chaining.
+A [`ServiceDefinition`](service-definition.md) for fluent API chaining.
 
 
 
@@ -241,7 +241,7 @@ Bundle up the definition properties and publish the service.
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service.md) representing the
 service *deployed*.
 
 
@@ -268,7 +268,7 @@ The description of the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
 
@@ -303,7 +303,7 @@ The inputs by name and type.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API
 chaining.
 
 
@@ -341,7 +341,7 @@ Any models by name and value.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API
 chaining.
 
 
@@ -380,7 +380,7 @@ Any objects by name and value.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API
 chaining.
 
 
@@ -416,7 +416,7 @@ The outputs by name and type.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API
 chaining.
 
 
@@ -435,7 +435,7 @@ Bundle up the definition properties and update the service.
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service.md) representing the
 service *deployed*.
 
 
@@ -462,4 +462,4 @@ The version of the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition.md#operationalization-definition)) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
