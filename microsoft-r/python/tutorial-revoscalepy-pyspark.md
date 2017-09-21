@@ -40,9 +40,9 @@ ms.technology: ""
 
 + A Hadoop cluster with Spark 2.0-2.4 with [Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md)
 + A Python IDE, such as Jupyter Notebooks, [Visual Studio for Python](https://www.visualstudio.com/vs/python/), or PyCharm. 
-+ Sample data (AirlineSubsetCsv mentioned in the example) downloaded from our sample data web site to your Spark cluster.
++ Sample data (AirlineSubsetCsv mentioned in the example) downloaded from our [sample data web site](https://packages.revolutionanalytics.com/datasets/) to your Spark cluster.
 
-> [!Note]
+> [!Note]                                                                                                                 
 > Jupyter Notebook users, update your notebook to include the MMLSPy kernel. Select this kernel in your Jupyter notebook to use the interoperability feature.
 >
 

@@ -1,6 +1,6 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Machine Learning Server Documentation
+title: Microsoft Machine Learning Server Documentation
 metadata:
   title: Machine Learning Server Documentation
   description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.  
@@ -19,7 +19,7 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: <a href="what-is-microsoft-r-server"><strong>Microsoft Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Machine Learning Server. <a href="rebranding-microsoft-r-server">Learn more...</a></div>
+  description: <a href="what-is-microsoft-r-server"><strong>Microsoft Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Microsoft Machine Learning Server. <a href="rebranding-microsoft-r-server">Learn more...</a></div>
 sections:
 - title: 5-Minute Quickstarts
   items:

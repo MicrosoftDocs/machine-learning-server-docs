@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
 **Applies to:  Machine Learning Server, SQL Server 2017**
 
-'azureml-model-management-sdk' is a custom Python package developed by Microsoft. This package provides classes and functions for deploying and managing analytic web services that are backed by Python or R code block / scripts.  
+'azureml-model-management-sdk' is a custom Python package developed by Microsoft. This package provides the classes and functions to deploy and interact with analytic web services. These web services are backed by code block and scripts in Python or R.  
 
 This topic is a high-level description of package functionality. These classes and functions can be called directly. For syntax and other details, see the individual function help topics in the table of contents.
 
@@ -44,7 +44,7 @@ This topic is a high-level description of package functionality. These classes a
 
 The **azureml-model-management-sdk** package is installed as part of Machine Learning Server and SQL Server 2017 Machine Learning Server (Standalone) when you add Python to your installation. It is also [available locally on Windows](../../install/python-libraries-interpreter.md).  When you install these products, you get the full collection of proprietary packages plus a Python distribution with its modules and interpreters. 
 
-You can use any Python IDE to write Python scripts that call the classes and functions in **azureml-model-management-sdk**, but the script must run on a computer having Machine Learning Server or SQL Server 2017 Machine Learning Server (Standalone) with Python.
+You can use any Python IDE to write Python scripts that call the classes and functions in **azureml-model-management-sdk**. However, the script must run on a computer having Machine Learning Server or SQL Server 2017 Machine Learning Server (Standalone) with Python.
 
 ## Use cases
 
@@ -85,10 +85,11 @@ Add both Python modules to your computer by running setup:
 
 + Set up [Machine Learning Server](../../install/machine-learning-server-install.md) for Python or [Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
-Next, follow this quickstart for hands on experience:
+Next, follow this quickstart to try it yourself:
 
 + [Quickstart: How to deploy Python model as a service](../../operationalize/python/quickstart-deploy-python-web-service.md) 
 
+Or, read this how-to article:
 + [How to publish and manage web services in Python](../../operationalize/python/how-to-deploy-manage-web-services.md)
 
 

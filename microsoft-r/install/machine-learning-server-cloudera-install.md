@@ -28,7 +28,7 @@ This article explains how to generate, deploy, and activate an installation parc
 
 Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server runs on the edge node and all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
 
-You can create a parcel generation script on any [supported version of Linux](r-server-install-supported-platforms.md), but execution requires CentOS or RHEL 7.0 as the native file system. A parcel cannot install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md). If your operating system is not 7.0, or if you want to add operationalization on edge nodes, use the regular [Hadoop installation instuctions](machine-learning-server-hadoop-install.md) instead.
+You can create a parcel generation script on any [supported version of Linux](r-server-install-supported-platforms.md), but execution requires CentOS or RHEL 7.0 as the native file system. A parcel cannot install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md). If your operating system is not 7.0, or if you want to add operationalization on edge nodes, use the regular [Hadoop installation instructions](machine-learning-server-hadoop-install.md) instead.
 
 ## Prepare for installation
 
@@ -47,13 +47,13 @@ A package manager installation used for Linux or Hadoop won't provide the parcel
 2. Switch to the **/tmp/** directory (assuming it's the download location): `cd /tmp/`
 3. Unpack the file: `tar zxvf en_microsoft_ml_server_921_for_hadoop_x64_<some-number>.tar.gz`
 
-The distribution is unpacked into an **Hadoop** folder at the download location. The distribution includes the following files:
+The distribution is unpacked into a **Hadoop** folder at the download location. The distribution includes the following files:
 
 | File or folder | Description |
 |------|-------------|
 |`install.sh` | Script for installing Machine Learning Server. Do not use this for a parcel install. |
 |`generate_mlserver_parcel.sh` | Script for generating a parcel used for installing Machine Learning Server on CDH. |
-| `EULA.txt` | End user license agreements for each separately licensed component. |
+| `EULA.txt` | End-user license agreements for each separately licensed component. |
 | DEB folder | Contains Machine Learning packages for deployment on Ubuntu. |
 | RPM folder | Contains Machine Learning packages for deployment on CentOS/RHEL and SUSE |
 | Parcel folder | Contains files used to generate a parcel for installation on CDH. |
@@ -84,7 +84,7 @@ flag | Option | Description
 -----|--------|------------
  -m | --distro-name [DISTRO]| Target Linux distribution for this parcel, one of: el6 el7 sles11
  -l | --add-mml  | Add Python and microsoftml to the Parcel regardless of the target system.
- -a | --accept-eula | Accept all end user license agreements.
+ -a | --accept-eula | Accept all end-user license agreements.
  -d | --download-mro | Download Microsoft r open for distribution to an offline system.
  -s | --silent | Perform a silent, unattended install.
  -u | --unattended | Perform an unattended install.
