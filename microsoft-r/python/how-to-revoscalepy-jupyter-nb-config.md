@@ -25,9 +25,28 @@ ms.technology: ""
 
 # How to configure a Jupyter notebook for revoscalepy
 
-Placeholder. This article explains how to configure a Jupyter Notebook so that you can call Python functions from revoscalepy, pyspark, microsoftml.
+This article explains how to access a local Jupyter Notebook App and load our samples from Github. It also explains how to create a new notebook configured for Python functions from revoscalepy and microsoftml.
+
+Jupyter Notebook is distributed with Anaconda, which is the Python distribution used by Machine Learning Server. If you installed Machine Learning Server, you have the components required to run notebooks.
+
+## On Windows
+
+1. At an elevated command prompt, navigate to the Jupyter-notebook executable: ``
+2. Start the app: `jupyter-notebook`
+3. The dashboard opens in your default browser at http://localhost:8888/tree 
+4. 
+
+
+Jupyter Notebook App
+notebooks
+kernel
+Notebook Dashboard 
+
+> [!Note]
+> For installation instructions, see 
 
 ## See Also
 
 + [microsoftml function reference](../python-reference/microsoftml/microsoftml-package.md)
 + [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)
++ [Jupyter/IPython Notebook Quick Start Guide](https://jupyter-notebook-beginner-guide.readthedocs.io)
