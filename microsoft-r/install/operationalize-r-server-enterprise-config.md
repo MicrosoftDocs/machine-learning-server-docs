@@ -35,13 +35,13 @@ With an enterprise configuration, you can work with your production-grade data w
 ## Enterprise architecture
 
 This configuration includes one or more web nodes, one or more compute nodes, and a database.   
-+ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have multiple web nodes to load balance your requests to multiple compute nodes. 
++ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have multiple web nodes to load balance your requests across multiple compute nodes. 
 
 + Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 + The database. While an SQLite 3.7+ database is installed by default, we strongly recommend that you set up a [SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
-In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, with multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services.   
+In an enterprise configuration, these nodes can be scaled independently. Scaling up web nodes enables an active-active configuration that allows you to load balance the incoming API requests.  Additionally, if you have multiple web nodes, you must use a [SQL Server or PostgreSQL database](../operationalize/configure-remote-database-to-operationalize.md) to share data and web services across web node services.   
 
 For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md).
 
@@ -64,7 +64,7 @@ To replace an older version, you can uninstall the older distribution before ins
 ### Upgrade a compute node
 
 >[!IMPORTANT]
->Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
+>Before you begin, back up the appsettings.json file on each node. You can use this backup if there is an issue during the upgrade.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -80,7 +80,7 @@ To replace an older version, you can uninstall the older distribution before ins
 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks for any 9.0 configuration files present under the `current` folder mentioned previously.
 
 1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
@@ -96,7 +96,7 @@ To replace an older version, you can uninstall the older distribution before ins
 ### Upgrade a web node
 
 >[!IMPORTANT]
->Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
+>Before you begin, back up the appsettings.json file on each node. You can use this backup if there is an issue during the upgrade.
 
 1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
@@ -131,7 +131,7 @@ To replace an older version, you can uninstall the older distribution before ins
 ## How to configure for the enterprise
 
 >[!Important]
->For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Microsoft R Server for operationalization in Azure.  
+>For your convenience, [Azure Management Resource templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Microsoft R Server for operationalization in Azure.  
 >
 >Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/).
 
@@ -184,7 +184,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
 
     >[!NOTE]
     >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next two steps. For R Server 9.1 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
     
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -270,7 +270,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 
     >[!NOTE]
     >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
 
    1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -285,7 +285,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 
    1. Exit the utility.
 
-1. If using the IPTABLES firewall or equivalent service on Linux, then allow remote machines to access the public IP of the web node using the `iptables` command (or the equivalent) to open port 12800.
+1. For IPTABLES firewall or equivalent service on Linux, allow remote machines to access the web node's public IP using `iptables` (or the equivalent command) to open port 12800.
 
 Your web node is now configured. Repeat these steps for each web node you want to add.
 
