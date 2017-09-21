@@ -26,7 +26,7 @@ ms.technology:
 ---
 # Deploy a Python model as a web service with azureml-model-management-sdk
 
-**Applies to: Microsoft Learning Server 9.2**
+**Applies to: Microsoft Learning Server 9.2.1**
 
 ## Objective
 
