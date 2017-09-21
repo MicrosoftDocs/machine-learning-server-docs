@@ -333,7 +333,7 @@
           href: install/r-server-install-hadoop-yarnqueueusage.md
     - name: Choose a MicrosoftML algorithm
       href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
-  - name: Operationalization&#59; deploy & consume
+  - name: Operationalization\: deploy & consume /:
     items:
     - name: Python
       items:
