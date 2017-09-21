@@ -351,7 +351,7 @@
         href: operationalize/how-to-consume-web-service-interact-in-r.md
       - name: Consume (asynchronous)
         href: operationalize/how-to-consume-web-service-asynchronously-batch.md
-      - name: '[Archive] DeployR 8.x'
+      - name: 'DeployR 8.x [Archive]'
         items:
         - name: How to install DeployR
           href: deployr/deployr-installation.md
