@@ -37,6 +37,10 @@ When you set the [compute context](../r/concept-what-is-compute-context.md) to [
 > [!Note]
 > For installation instructions, see [Install Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md).
 
+## Start Python
+
+On Linux, enter **mlserver-python** at the command line.
+
 ## Set a Spark compute context and manage connections
 
 When you use an IDE to connect to Machine Learning Server in a Hadoop cluster, the connection should be to the server (**mlserver-python** program) running on the edge node. 

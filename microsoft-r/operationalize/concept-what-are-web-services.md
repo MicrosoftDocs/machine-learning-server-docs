@@ -28,7 +28,7 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-You can offer users a chance to use your code and predictive models by deploying them as web service hosted in Machine Learning Server. Web services are deployed to facilitate the consumption and integration of the operationalized models and code they contain. 
+You can offer users a chance to use your code and predictive models by deploying them as web services hosted in Machine Learning Server. Web services are deployed to facilitate the consumption and integration of the operationalized models and code they contain. 
 
 Web services in Machine Learning Server can be based on Python or R. They can also be deployed on one platform and consumed in another. 
 
