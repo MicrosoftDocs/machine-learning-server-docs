@@ -120,7 +120,7 @@ You can make it easy for others to find your web services by providing them with
 
 + **Quality engineers** who want to bring the models in these web services into validation and monitoring cycles.
 
-+ **Application developers** who want to call and integrate a web service into their applications. Using the Swagger-based JSON file that was generated when the service was deployed, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  Services can also be consumed using the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle.
++ **Application developers** who want to call and integrate a web service into their applications. Using the Swagger-based JSON file that was generated when the service was deployed, application developers can generate client libraries for integration. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  Services can also be consumed using the [RESTful APIs](concept-api.md) that provide direct programmatic access to a service's lifecycle.
 
 
 ### How are web services consumed
