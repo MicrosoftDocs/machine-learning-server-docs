@@ -115,7 +115,7 @@ Microsoft R Open is the enhanced distribution of open source R from Microsoft th
 
 <a name="mrs"></a>**Microsoft R Server**
 
-See <a href="#mls"><i>Machine Learning Serverr</i></a>
+See <a href="#mls"><i>Machine Learning Server</i></a>
 
 <br>
 
@@ -166,7 +166,7 @@ See <a href="#mro"><i>Microsoft R Open</i></a>
 
 **R Server**
 
-See <a href="#mls"><i>Machine Learning Serverr</i></a>
+See <a href="#mls"><i>Machine Learning Server</i></a>
 
 <br>
 
