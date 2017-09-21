@@ -49,7 +49,7 @@ Use this glossary to find the definitions to common terms in the Microsoft R doc
 
 ## C
 
-**Compute Context**
+**Compute context**
 
 A feature in [RevoScaleR](r-reference/revoscaler/revoscaler.md) that lets you define an environment, either local or remote, and then transfer R computations to that environment, typically to get better performance or to minimize data transfer. Local is the default. Remote compute context is available for these platforms: SQL Server, HDInsight, Teradata, Hadoop MR and Spark, and Microsoft R Server (Linux and Windows). [Learn more…](r/how-to-revoscaler-distributed-computing-compute-context.md)
 
@@ -71,7 +71,7 @@ Using ScaleR on R Server, data chunking is the ability to partition data into mu
 
 **DeployR**
 
-See [<i>Operationalizing Analytics</i>](#o16n)
+See [<i>Operationalizing analytics</i>](#o16n)
 
 <br>
 
@@ -97,6 +97,10 @@ HPA is paradigm describing the distribution of data across multiple cores by mea
 
 ## M 
 
+<a name="mls"></a>**Machine Learning Server**
+
+Machine Learning Server is an enterprise class server and flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. [Learn more…](what-is-machine-learning-server.md)
+
 <a name="mrc"></a>**Microsoft R Client**
 
 Microsoft R Client is a free, community-supported, data science tool for high performance analytics. R Client is built on top of Microsoft R Open and includes RevoScaleR so you can benefit from parallelization and remote computing. [Learn more…](r-client/what-is-microsoft-r-client.md)
@@ -111,7 +115,7 @@ Microsoft R Open is the enhanced distribution of open source R from Microsoft th
 
 <a name="mrs"></a>**Microsoft R Server**
 
-Use R—the powerful, statistical programming language—in an enterprise-class, big data analytics platform. R Server, built on ScaleR technology, is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers (Linux and Windows) and clusters (Hadoop and Apache Spark). [Learn more…](what-is-microsoft-r-server.md)
+See <a href="#mls"><i>Machine Learning Serverr</i></a>
 
 <br>
 
@@ -125,9 +129,9 @@ The Intel® Math Kernel Library (Intel® MKL) is a library of optimized math rou
 
 ## O
 
-<a name="o16n"></a>**Operationalizing Analytics**
+<a name="o16n"></a>**Operationalizing analytics**
 
-Configure R Server to act as a deployment engine to publish your analytics and enable them to be easily consumed in a production environment. [Learn more…](what-is-operationalization.md)
+Configure Machine Learning Server to act as a deployment engine to publish and host your analytics so they can be easily consumed in a production environment. [Learn more…](what-is-operationalization.md)
 
 
 <a name="P"></a>
@@ -162,7 +166,7 @@ See <a href="#mro"><i>Microsoft R Open</i></a>
 
 **R Server**
 
-See <a href="#mrs"><i>Microsoft R Server</i></a>
+See <a href="#mls"><i>Machine Learning Serverr</i></a>
 
 <br>
 

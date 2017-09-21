@@ -24,9 +24,9 @@ ms.technology:
 
 ---
 
-# Microsoft R Server is now Machine Learning Server
+# Microsoft R Server is now Microsoft Machine Learning Server
 
-In September 2017, Microsoft R Server was released under the new name of **Machine Learning Server 9.2**. The rebranding reflects that Python has joined R on the list of supported languages and capabilities. The R capabilities have also been enhanced. There is no loss of functionality for users of a prior R Server release.
+In September 2017, Microsoft R Server was released under the new name of **Microsoft Machine Learning Server 9.2**. The rebranding reflects that Python has joined R on the list of supported languages and capabilities. The R capabilities have also been enhanced. There is no loss of functionality for users of a prior R Server release.
 
 [Read the "What's new in this release."](whats-new-in-machine-learning-server.md)
 
@@ -69,4 +69,4 @@ Microsoft is committed to providing customers with support. Microsoft R Server s
 
 [Microsoft R Client](r-client/what-is-microsoft-r-client.md) continues on as an R-only client for Machine Learning Server and R Server. 
 
-A Python interpreter can also be installed locally along with the custom Python libraries to gain similar functionality on a Windows machine. [Learn more](install/python-libraries-interpreter.md).
+A Python interpreter can also be installed locally along with the custom Python packages to gain similar functionality on a Windows machine. [Learn more](install/python-libraries-interpreter.md).
