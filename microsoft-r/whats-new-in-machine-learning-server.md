@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "New in Machine Learning Server 9.2 | Microsoft Docs"
+title: "New in Machine Learning Server 9.2.1 | Microsoft Docs"
 description: "New features, improvements, and changes in this release of Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

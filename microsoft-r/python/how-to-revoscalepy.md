@@ -25,14 +25,14 @@ ms.technology: ""
 
 # How to use revoscalepy in a Spark compute context
 
-This article introduces the revoscalepy Python functions in a **revoscalepy** package with Apache Spark (Spark) running on a Hadoop cluster. 
+This article introduces Python functions in a **revoscalepy** package with Apache Spark (Spark) running on a Hadoop cluster. 
 
 + Hadoop provides a distributed file system with HDFS.
 + Yarn provides the job scheduling infrastructure.
 + Spark provides the processing framework. 
 + revoscalepy provides scalable and high-performance data management, analysis, and visualization Python functions. 
 
-When you set the [compute context](../r/concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue.
+When you set the [compute context](../r/concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue, or tracking the physical location of data in HDFS; Spark does both tasks for you.
 
 > [!Note]
 > For installation instructions, see [Install Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md).
@@ -43,21 +43,34 @@ When you use an IDE to connect to Machine Learning Server in a Hadoop cluster, t
 
 **Local compute context on Spark**
 
-By default, the local compute context is the computing environment of the edge node. All mlserver-python code runs here unless you specify a remote compute context.
+By default, the local compute context is the computing environment of the edge node. All mlserver-python code runs here until you specify a remote compute context.
 
 **Remote compute context on Spark**
 
 From the edge node, you can push computations to the data layer by creating a remote Spark compute context. In this context, execution is on all data nodes. In Machine Learning Server, revoscalepy includes support for remote compute context on Spark (2.0-2.4).
 
-The following example shows how to connect to the edge node, set a remote compute context to clustered data nodes, switch back to a local compute context, and disconnect from the server.
+The following example shows how to set a remote compute context to clustered data nodes, execute functions in the Spark comute context, switch back to a local compute context, and disconnect from the server.
 
-~~~
-+ rxSparkConnect, Disconnect, RxSetComputeContext
-~~~
+```Python
+# rxSparkConnect, Disconnect, RxSetComputeContext
+from revoscalepy import RxOrcData, rx_spark_connect, rx_spark_list_data, rx_lin_mod, rx_spark_cache_data
+cc = rx_spark_connect()
+col_info = {"DayOfWeek": {"type": "factor"}}
+df = RxOrcData(file = "/share/sample_data/AirlineDemoSmallOrc", column_info = col_info)
+df = rx_spark_cache_data(df, True)
 
-As part of execution in Spark, your data source must be a format that Spark understands, such as text, Hive, Orc, and Parquet. You can also create and consume .xdf files, a data file format native to Machine Learning Server, accessible in Python and R script.
+# After the first run, a Spark data object is added into the list
+rx_lin_mod("ArrDelay ~ DayOfWeek", data = df)
+rx_spark_list_data(True)
+
+# Disconnect, switching back to a local compute context on edge node
+rx_spark_disconnect(cc)
+rx_get_compute_context()
+```
 
 ## Specify a data source and location
+
+As part of execution in Spark, your data source must be a format that Spark understands, such as text, Hive, Orc, and Parquet. You can also create and consume [.xdf files](../r/concept-what-is-xdf.md), a data file format native to Machine Learning Server, accessible in Python and R script.
 
 Data source objects provided by revoscalepy in a Spark compute context include [RxTextData](../python-reference/revoscalepy/rxtextdata.md) [RxXdfData](../python-reference/revoscalepy/rxxdfdata.md), and the [RxSparkData](../python-reference/revoscalepy/rxSparkdata.md) with derivatives for RxHiveData, RxOrcData, RxParquetData and RxSparkDataFrame.
 
@@ -98,15 +111,21 @@ The formula is symbolic and typically does not contain a response variable. It s
 
 + Get the term list from a data source: `revoscalepy.rx_get_var_names(data_source)`
 
+```python
+airlinedata = rx_import(input_data = d_s)
+airlinedata.head()
+```
+
 ## Define and train models, score data
 
 + Logistic regression -- link
 + Linear regression
 + Predictions
 
-## Use Spark helper functions
-
-
+```python
+airlinedata = rx_import(input_data = d_s)
+airlinedata.head()
+```
 
 ## See Also
 
