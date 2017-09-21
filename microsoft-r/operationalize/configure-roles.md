@@ -75,25 +75,25 @@ When roles are declared in the configuration file, the administrator has the cho
 
 When a user calls a Machine Learning Server API, the server checks to see whether any roles were declared. When roles are declared, Machine Learning Server checks to see to which group the user belongs. 
 
-If the user belongs to an AD/LDAP or AAD group assigned to a role, then that user is  given permissions according to their role.  If the user belongs to groups that are assigned to multiple roles, then that user is automatically assigned to the role with the highest permissions. 
+If the user belongs to an AD/LDAP or AAD group assigned to a role, then that user is  given permissions according to their role.  If a user belongs to groups that are assigned to multiple roles, then the user is assigned to the role with the highest permissions. 
 
 Here is an example of different LDAP group configurations and the resulting roles assigned to the persona.
 
 |Example User <br>/ Persona|User's <br>LDAP Groups||Machine&nbsp;Learning&nbsp;Server<br>RBAC Configuration|User's<br>Role|
 |:-------------:|:------------:|:-:|------------|:------------:| 
-|![Checkbox](./media/configure-roles/p1.png)<br>Administrator|**admins**<br>engineering<br>FTE-north|+|"Owner":&nbsp;[&nbsp;"**admins**",&nbsp;"managers"&nbsp;],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "stats" ]|**Owner**|
-|![Checkbox](./media/configure-roles/p2.png)<br>Lead data scientist|**managers**<br>**stats**<br>FTE-north|+|"Owner": [ "admins", "**managers**" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**stats**" ],<br>"Reader": [ "app-devs" ]|**Owner**|
-|![Checkbox](./media/configure-roles/p2.png)<br>R programmer|**stats**<br>FTE-north|+|"Owner": [ "admins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "**stats**" ],<br>"Reader": [ "app-devs" ]|**Contributor**|
-|![Checkbox](./media/configure-roles/da-persona.png)<br>Python developer|stats<br>FTE-north|+|"Owner": [ "admins", "managers" ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=|**Contributor**|
-|![Checkbox](./media/configure-roles/p3.png)<br>Application&nbsp;Developer|**app-devs**<br>FTE-north|+|"Owner": [ "admins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "stats" ],<br>"Reader": [ "**app-devs**" ]|**Reader**|
-|![Checkbox](./media/configure-roles/p3.png)<br>System Integrator|vendor2|+|"Owner": [ "admins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "stats" ]|**Reader**|
-|![Checkbox](./media/configure-roles/p4.png)<br>Sales|sales|+|"Owner": [ "admins", "managers" ],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": [ "stats" ]<br>"Reader": [ "app-devs" ]|no role or permissions|
+|![Checkbox](./media/configure-roles/p1.png)<br>Administrator|**admins**<br>engineering<br>FTE-north|+|"Owner":&nbsp;["**admins**",&nbsp;"managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]|**Owner**|
+|![Checkbox](./media/configure-roles/p2.png)<br>Lead data scientist|**managers**<br>**stats**<br>FTE-north|+|"Owner": ["admins", "**managers**"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["**stats**"],<br>"Reader": ["app-devs"]|**Owner**|
+|![Checkbox](./media/configure-roles/p2.png)<br>R programmer|**stats**<br>FTE-north|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["**stats**"],<br>"Reader": ["app-devs"]|**Contributor**|
+|![Checkbox](./media/configure-roles/da-persona.png)<br>Python developer|stats<br>FTE-north|+|"Owner": ["admins", "managers"]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=|**Contributor**|
+|![Checkbox](./media/configure-roles/p3.png)<br>Application&nbsp;Developer|**app-devs**<br>FTE-north|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"],<br>"Reader": ["**app-devs**"]|**Reader**|
+|![Checkbox](./media/configure-roles/p3.png)<br>System Integrator|vendor2|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]|**Reader**|
+|![Checkbox](./media/configure-roles/p4.png)<br>Sales|sales|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]<br>"Reader": ["app-devs"]|no role or permissions|
 
 ## Role configuration states
 
-Keep in mind that the permissions assigned to users are influenced not only by the roles you define, but also by the roles you do not define. When one or more roles is not defined, then certain permissions are implicitly assumed. By default, no roles are declared. 
+The permissions assigned to users are influenced not only by the roles you define, but also by the roles you **do not** define. When one or more roles is not defined, then certain permissions are implicitly assumed. By default, no roles are declared. 
 
-The following table explains which permissions are assigned to any authenticated user that is not explicitly assigned a role. 
+The table shows which permissions are granted to those authenticated users who are not explicitly assigned to any role. 
 <br>
 <a name="configroles"></a>
 
@@ -106,7 +106,7 @@ The following table explains which permissions are assigned to any authenticated
 
 ## How to declare roles
 
-If you configure Machine Learning Server (or R Server) to [use Active Directory/LDAP or Azure Active Directory authentication](configure-authentication.md), then you can assign roles using Active Directory groups as described in the following sections.
+If you configure Machine Learning Server (or R Server) to [use Active Directory/LDAP or Azure Active Directory authentication](configure-authentication.md), then you can assign roles using Active Directory groups as described here.
 
 >[!Note]
 >If only the default local administrator account is defined for Machine Learning Server (or R Server), then roles are not needed. In this case, the 'admin' user is implicitly assigned to the Owner role (can call any API).
@@ -129,7 +129,7 @@ On each web node, edit the appsettings.json configuration file in order to decla
    }
    ``` 
 
-   The 'CacheLifeTimeInMinutes' attribute was added in Machine Learning Server 9.2.1 to indicate the length of time that Machine Learning Server caches the information received from LDAP or AAD regarding user group membership. After the cache lifetime elapses, the roles and users are checked again. If you make changes to the groups in your LDAP or AAD configuration, those changes aren't detected by Machine Learning Server until the cache lifetime expires and the configuration is checked again. 
+   The 'CacheLifeTimeInMinutes' attribute was added in Machine Learning Server 9.2.1. It indicates the length of time that Machine Learning Server caches the information received from LDAP or AAD regarding user group membership. After the cache lifetime elapses, the roles and users are checked again. The changes you make to the groups in your LDAP or AAD configuration are not reflected in  Machine Learning Server until the cache lifetime expires and the configuration is checked again. 
    
    >[!IMPORTANT]
    Defining a Reader role might affect web service consumption latency as roles are being validated on each call to the web service.
@@ -140,7 +140,7 @@ On each web node, edit the appsettings.json configuration file in order to decla
    
    >2. Ensure that the username returned for the value of 'UniqueUserIdentifierAttributeName' matches the username returned by 'SearchFilter'. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.
 
-   >3. For R Server 9.1 users: If you specify LDAP Root as the SearchBase in web node's appsettings.json, a search of the roles returns [LDAP referrals](https://technet.microsoft.com/en-us/library/cc978014.aspx) and throws a 'LDAPReferralException'. A workaround is to change the LDAP port in web node's appsettings.json from 389 to Global Catalog Port 3268. Or, in case of LDAPS, change Port to 3269 instead of 636. Global Catalogs do not return LDAP referrals in LDAP Search Results.  
+   >3. For R Server 9.1 users: If you specify LDAP Root as the SearchBase in web node's appsettings.json, a search of the roles returns [LDAP referrals](https://technet.microsoft.com/en-us/library/cc978014.aspx) and throws a 'LDAPReferralException'. A workaround is to change the LDAP port in web node's appsettings.json from 389 to Global Catalog Port 3268. Or, for LDAPS, change Port to 3269 instead of 636. Global Catalogs do not return LDAP referrals in LDAP Search Results.  
 
 
 ### Step 2. Validate groups against AD/LDAP or AAD
@@ -153,11 +153,11 @@ Return to [the appsetting.json file](configure-find-admin-configuration-file.md)
   > For more security, we recommend you [encrypt the key](configure-use-admin-utility.md#encrypt) before adding the information to appsettings.json.
 
   >[!NOTE]
-  > If a given user belongs to more groups than are allowed in AAD (overage limit), AAD provides an overage claim in the token it returns. This claim along with the key you provide here allows Machine Learning Server to retrieve the group memberships for the user.
+  > If a user belongs to more groups than allowed in AAD, AAD provides an overage claim in the token it returns. This claim along with the key you provide here allows Machine Learning Server to retrieve the group memberships for the user.
 
-+ **For Active Directory/LDAP:** In appsettings.json, find the "LDAP" section.  In order for the server to verify that the groups you have declared are valid in AD/LDAP, you must provide the QueryUserDn and QueryUserPassword in the "LDAP" section. See the following example. These settings allow Machine Learning Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring Machine Learning Server  to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
++ **For Active Directory/LDAP:** In appsettings.json, find the "LDAP" section.  The server verifies that the groups you have declared are valid in AD/LDAP using the QueryUserDn and QueryUserPassword values in the "LDAP" section. See the following example: These settings allow Machine Learning Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring Machine Learning Server  to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
 
-  With AD/LDAP, you can **further restrict which users can log in and call APIs** by declaring those groups that are allowed with the ['SearchFilter' LDAP property](configure-authentication.md#encrypt).  Then, users in other groups are not able to call any APIs. In this example, only members of the mrsreaders, mrsowners, and mrscontributors groups can call APIs after logging in.
+  With AD/LDAP, you can **restrict which users can log in and call APIs** by declaring the groups with permissions in the ['SearchFilter' LDAP property](configure-authentication.md#encrypt).  Then, users in other groups are not able to call any APIs. In this example, only members of the 'mrsreaders', 'mrsowners', and 'mrscontributors' groups can call APIs after logging in.
 
   ```
   "SearchFilter": "(&(sAMAccountName={0})(|(memberOf=CN=mrsreaders,OU=Readers,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrsowners,OU=Owner,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrscontributors,OU=Contributor,OU=AA,DC=pseudorandom,DC=cloud)))",         
@@ -197,17 +197,17 @@ Authentication: {
 }
  
 "Authorization": {
-   "Owner": [ "Administrators" ],
-   "Contributor": [ "RProgrammers", "Quality" ]      
+   "Owner": ["Administrators"],
+   "Contributor": ["RProgrammers", "Quality"]      
 }
 ```
 
 
 ## Web service permissions after role change
 
-A user might change roles because they no longer belong to the same security group in AD/LDAP or AAD, or perhaps that security group is no longer mapped to a Machine Learning Server (or R Server) role in the appsettings.json file. 
+Over time, a user role can change if they are no longer part of a security group in AD/LDAP or AAD, or if a security group is no longer mapped to a role in Machine Learning Server. 
 
-Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, then you can continue to update, delete, and interact with that web service version as long as you are assigned this role. However, if you are reassigned to the "Contributor" role, then you can still interact with that web service version as before, but you cannot update or delete the services published by others. However, if roles are defined, but you are no longer assigned to any roles yourself, then you become part of the "Reader" role implicitly if "Reader" is defined ([see here](#configroles))). Consequently, you can no longer manage any services, including those services that you published previously when you were assigned to a role. 
+Whenever a user's role changes, that user may not longer be able to perform the same tasks on their web services. If you publish a web service while assigned to the "Owner" role, you can continue to manage and interact with that web service version as long as you are assigned this role. However, if you are reassigned to "Contributor", then you can still interact with that web service version as before, but you cannot update or delete the services published by others. Or, if roles are defined and you are no longer assigned to any roles, then you are implicitly assigned to the "Reader" role if it exists ([see here](#configroles). Consequently, you can no longer manage any services, including those services that you published previously when you were assigned to a role. 
 
 ## See Also
 
