@@ -22,7 +22,7 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Opting out of usage data collection (Machine Learning Server and R Server)
+# Opting out of usage data collection
 
 **Applies to:** Machine Learning Server, Microsoft R Server 9.x
 

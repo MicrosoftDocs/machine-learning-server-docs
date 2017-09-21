@@ -281,9 +281,6 @@ Requirements for remote execution include:
 
 This section provides a quick summary of useful links for data scientists operationalizing R analytics with Machine Learning Server.
 
->Use the table of contents to find all the documentation.
-
-**Key Documents**
  + [About Operationalization](../what-is-operationalization.md)    
  + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)    
  + [Connecting to Machine Learning Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
@@ -292,6 +289,4 @@ This section provides a quick summary of useful links for data scientists operat
  + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)    
  + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    
  + [Get started for administrators](configure-start-for-administrators.md)    
-
-**Support Channel**
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

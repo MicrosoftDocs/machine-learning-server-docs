@@ -27,14 +27,14 @@ ms.custom: ""
 
 # Python Function Library Reference
 
-This section contains the Python reference documentation for two proprietary packages from Microsoft used for data science and machine learning on premises and at scale.  
+This section contains the Python reference documentation for three proprietary packages from Microsoft used for data science and machine learning on premises and at scale.  
 
 You can use these libraries and functions in combination with other open source or third-party packages, but to use the proprietary packages, your Python code must run against a service or on a computer that provides the interpreters.
 
 | Library details | |
 |--------|-|
-| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1](../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)|
-| Built on: | [Anaconda 4.2.0](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1](../what-is-machine-learning-server.md) </br>[SQL Server 2017  (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
+| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python modules
 
@@ -51,7 +51,7 @@ You can use these libraries and functions in combination with other open source 
 
 ## How to get packages
 
-You can get the packages when you run Machine Learning Server, or SQL Server 2017 Setup and choose features that include Machine Learning with Python support. In addition to the packages, Machine Learning Server setup and SQL Server setup both install the Python interpreters and base modules required to run any script or code that calls functions from either package.
+You can get the packages when you run Machine Learning Server, or SQL Server 2017 Setup, and choose features that include Machine Learning with Python support. In addition to the packages, Machine Learning Server setup and SQL Server setup both install the Python interpreters and base modules required to run any script or code that calls functions from properietary package.
 
 For SQL Server, packages are installed by default in the \Program files\Microsoft SQL Server\*instance name*\PYTHON_SERVICES
 

@@ -333,7 +333,7 @@
           href: install/r-server-install-hadoop-yarnqueueusage.md
     - name: Choose a MicrosoftML algorithm
       href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
-  - name: Operationalization - deploy & consume
+  - name: "Operationalization: deploy & consume"
     items:
     - name: Python
       items:
@@ -351,7 +351,7 @@
         href: operationalize/how-to-consume-web-service-interact-in-r.md
       - name: Consume (asynchronous)
         href: operationalize/how-to-consume-web-service-asynchronously-batch.md
-      - name: '[Archive] DeployR 8.x'
+      - name: 'DeployR 8.x [Archive]'
         items:
         - name: How to install DeployR
           href: deployr/deployr-installation.md
@@ -470,13 +470,13 @@
         href: operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md
       - name: Manage access tokens
         href: operationalize/how-to-manage-access-tokens.md
-  - name: Remote R code execution
+  - name: Run R code remotely
     items:
     - name: Connect to remote server
       href: operationalize/how-to-connect-log-in-with-mrsdeploy.md
     - name: Execute code remotely
       href: r/how-to-execute-code-remotely.md
-  - name: Advanced development in R
+  - name: Advanced R development
     items:
     - name: Write custom chunking algorithms
       href: r/how-to-developer-write-chunking-algorithms.md
@@ -494,7 +494,7 @@
       href: r/how-to-developer-pemar.md
 - name: Reference
   items:
-  - name: Python libraries
+  - name: Python packagess
     href: python-reference/introducing-python-package-reference.md
     items:
     - name: azureml-model-management-sdk

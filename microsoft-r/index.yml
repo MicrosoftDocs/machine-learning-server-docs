@@ -1,6 +1,6 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Machine Learning Server Documentation
+title: Microsoft Machine Learning Server Documentation
 metadata:
   title: Machine Learning Server Documentation
   description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.  
@@ -19,12 +19,10 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: <a href="/r-server/what-is-microsoft-r-server"><strong>Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Machine Learning Server. <a href="/r-server/rebranding-microsoft-r-server">Learn more...</a></div>
+  description: <a href="what-is-microsoft-r-server"><strong>Microsoft Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Microsoft Machine Learning Server. <a href="rebranding-microsoft-r-server">Learn more...</a></div>
 sections:
 - title: 5-Minute Quickstarts
   items:
-  - type: paragraph
-    text: 'Learn how to use Machine Learning Server with these quickstarts:'
   - type: table
     style: dataMatrix
     columns:
@@ -35,20 +33,20 @@ sections:
     rows:
       - title: Run&nbsp;code&nbsp;using&nbsp;functions&nbsp;from&nbsp;custom&nbsp;packages&nbsp;like&nbsp;RevoScaleR
         values:
-        - href: /r-server/r/quickstart-run-r-code
+        - href: r/quickstart-run-r-code
         - href: 
       - title: Create a model with revoscalepy
         values:
-        - href: /r-server/python/quickstart-revoscalepy-linear-regression-model
+        - href: python/quickstart-revoscalepy-linear-regression-model
         - href: 
       - title: Deploy a model as a web service in Machine Learning Server
         values:
-          - href: /r-server/operationalize/quickstart-publish-r-web-service
-          - href: /r-server/operationalize/python/quickstart-deploy-python-web-service
+          - href: operationalize/quickstart-publish-r-web-service
+          - href: operationalize/python/quickstart-deploy-python-web-service
       - title: Run a binary classification using microsoftml package 
         values:
           - href: 
-          - href: /r-server/python/quickstart-binary-classification-with-microsoftml
+          - href: python/quickstart-binary-classification-with-microsoftml
 - title: Step-by-Step Tutorials
   items:
   - type: paragraph
@@ -58,15 +56,15 @@ sections:
   - type: list
     style: unordered
     items:
-    - html: <a href="/r-server/r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
-    - html: <a href="/r-server/r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
-    - html: <a href="/r-server/r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a><br/>&nbsp;
+    - html: <a href="r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
+    - html: <a href="r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
+    - html: <a href="r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a><br/>&nbsp;
   - type: paragraph
     text: '<big>Python Tutorials</big>'
   - type: list
     style: unordered
     items:
-    - html: <a href="python/tutorial-revoscalepy-pyspark">Use PySpark and revoscalepy together</a>
+    - html: <a href="python/tutorial-revoscalepy-pyspark">Use PySpark and revoscalepy together</a><br/>&nbsp;
 - title: Samples
   items:
   - type: paragraph
@@ -84,8 +82,8 @@ sections:
   - type: list
     style: unordered
     items:
-    - html: <a href="/r-server/r-client/what-is-microsoft-r-client">Microsoft R Client</a>
-    - html: <a href="/r-server/install/python-libraries-interpreter">Python interpreter and library setup </a><br/>&nbsp;
+    - html: <a href="r-client/what-is-microsoft-r-client">Microsoft R Client</a>
+    - html: <a href="install/python-libraries-interpreter">Python interpreter and library setup </a><br/>&nbsp;
 - title: Reference
   items:
   - type: list
@@ -93,8 +91,8 @@ sections:
     className: cardsD
     items:
     - title: R Packages
-      html: <p><a href="/r-server/r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="/r-server/r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="/r-server/r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="/r-server/r-reference/introducing-r-server-r-package-reference">more...</a></p>
-    - title: Python Libraries
-      html: <p><a href="/r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="/r-server/python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="/r-server/python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="/r-server/python-reference/introducing-python-package-reference">more...</a></p>
+      html: <p><a href="r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="r-reference/introducing-r-server-r-package-reference">more...</a></p>
+    - title: Python Packages
+      html: <p><a href="python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="python-reference/introducing-python-package-reference">more...</a></p>
     - title: APIs
       html: <p><a href="https://microsoft.github.io/deployr-api-docs/">REST API Reference</a></p>

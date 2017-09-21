@@ -115,7 +115,7 @@ The default is to include partial results.
 
 ### Returns
 
-An instance of [`BatchResponse`](batch-response#batchresponse).
+An instance of [`BatchResponse`](batch-response.md).
 
 
 
@@ -133,7 +133,7 @@ Starts a batch execution for this service.
 
 ### Returns
 
-An instance of itself [`Batch`](azureml/deploy/server/service/Batch.md).
+An instance of itself [`Batch`](Batch.md).
 
 ## artifacts
 
@@ -239,4 +239,4 @@ To get partial execution results or not.
 
 ### Returns
 
-An execution Self [*BatchResponse*](batch-response#batchresponse).
+An execution Self [*BatchResponse*](batch-response.md).

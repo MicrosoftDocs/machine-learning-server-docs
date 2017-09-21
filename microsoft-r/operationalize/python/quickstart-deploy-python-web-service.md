@@ -26,7 +26,7 @@ ms.technology:
 ---
 # Deploy a Python model as a web service with azureml-model-management-sdk
 
-**Applies to: Microsoft Learning Server 9.2**
+**Applies to: Microsoft Learning Server 9.2.1**
 
 ## Objective
 
@@ -57,13 +57,14 @@ The example for this quickstart is stored in a Jupyter notebook. This notebook f
 This example walks through the deployment of a Python model as a web service hosted in Machine Learning Server. We will build a simple linear model using the [rx_lin_mod](../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server or [locally on Windows machine](../../install/python-libraries-interpreter.md). This package requires a connection to Machine Learning Server.  
 
 The notebook example walks you through how to:
-+ Create and run a linear model locally
-+ Authenticate with Machine Learning Server
-+ Publish the model as a Python web service on Machine Learning Server
-+ Consume the service and make a prediction
-+ List all services on Machine Learning Server
-+ Retrieve a web service object for consumption
-+ Delete a service
+> [!div class="checklist"]
+> * Create and run a linear model locally
+> * Authenticate with Machine Learning Server
+> * Publish the model as a Python web service on Machine Learning Server
+> * Consume the service and make a prediction
+> * List all services on Machine Learning Server
+> * Retrieve a web service object for consumption
+> * Delete a service
 
 
 ### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/web-services/deploy-consume/Quickstart_Publish_Python_Web_Service.ipynb).
@@ -82,18 +83,13 @@ After it has been deployed, the web service can be:
 
 ## See also
 
-This section provides a quick summary of useful links for data scientists operationalizing analytics with Machine Learning Server.
+This section provides a quick summary of useful links for data scientists looking to operationalize their analytics with Machine Learning Server.
 
-**Key Documents**
  + [About Operationalization](../../what-is-operationalization.md)   
  + [What are web services](../concept-what-are-web-services.md) 
  + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
  + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
  + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
  + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)    
- + [Get started for administrators](../configure-start-for-administrators.md)    
-
-**Support Channel**
+ + [Get started for administrators](../configure-start-for-administrators.md)     
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
-
-Find more information in the table of contents.

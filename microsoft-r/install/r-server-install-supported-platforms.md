@@ -31,7 +31,7 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Machine Learning Server 9.2.1
 
-Python support is based on Anaconda 4.2 over Python 3.5. R support is based on [Microsoft R Open 3.3.4](https://mran.microsoft.com/open/), based on R-3.3.4.
+Python support is based on Anaconda 4.2 over Python 3.5. R support is based on [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), based on R-3.4.1.
 
 | SKU | Platforms |
 |-----|-----------|

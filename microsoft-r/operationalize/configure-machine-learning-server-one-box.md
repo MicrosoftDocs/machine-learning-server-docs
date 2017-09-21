@@ -97,7 +97,7 @@ Carefully review the following steps.
    >[!Warning]
    >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.x first, you cannot retrieve your database data.
 
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2 in the next step:
+1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
    
    + Windows: C:\Users\Default\AppData\Local\DeployR\current
 

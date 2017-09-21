@@ -28,7 +28,7 @@ ms.technology:
 
 >Looking for an older version? See here: [R Server 9.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
-Machine Learning Server, formerly known as R Server, is the most broadly deployable enterprise-class analytics platform for R and Python available today. This virtual machine (VM) includes the Machine Learning Server version 9.2 for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
+Machine Learning Server, formerly known as R Server, is the most broadly deployable enterprise-class analytics platform for R and Python available today. This virtual machine (VM) includes the Machine Learning Server version 9.2.1 for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
 
 This VM also includes the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) installed with the product that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
 
@@ -56,7 +56,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 1. Accept the terms and get started by clicking **Create**. 
 
 1. Use the onscreen prompts and fields to configure your Machine Learning Server VM. 
-   >- You'll need an Azure subscription to create the VM.
+   >- You need an Azure subscription to create the VM.
    >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/en-us/documentation/services/virtual-machines/linux/)
 
 1. After the VM is deployed and running, [connect](#connect) to the VM to begin interacting with Machine Learning Server. 
@@ -84,7 +84,7 @@ To start Machine Learning Server, simple type `R` at the command prompt. The Mac
 
 ## Configure an R IDE
 
-With Machine Learning Server installed, you can configure your favorite R integrated development environment (IDE) to point to the Machine Learning Server R executable. This way, whenever you execute your R code, you'll do so using Machine Learning Server and benefit from its proprietary packages.  Machine Learning Server works well popular IDEs such as [RStudio](https://www.rstudio.com) Desktop or Server. 
+With Machine Learning Server installed, you can configure your favorite R integrated development environment (IDE) to point to the Machine Learning Server R executable. This way, whenever you execute your R code, you do so using Machine Learning Server and benefit from its proprietary packages.  Machine Learning Server works well with popular IDEs such as [RStudio](https://www.rstudio.com) Desktop or Server. 
 
 #### Configure RStudio for Machine Learning Server
   1. Launch RStudio.
@@ -114,7 +114,7 @@ After adding access to port TCP/8787 to the inbound security rules, RStudio Serv
 Some related articles are:
 
 + [Azure Compute, Network, and Storage Providers for Windows applications under Azure Resource Manager deployment model](https://azure.microsoft.com/en-gb/documentation/articles/virtual-machines-azurerm-versus-azuresm/)
-+ [Creating Azure VMs with ARM PowerShell cmdlets](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/05/05/creating-azure-vms-with-arm-powershell-cmdlets.aspx)
++ [Creating Azure VMs with Azure Resource Manager PowerShell cmdlets](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/05/05/creating-azure-vms-with-arm-powershell-cmdlets.aspx)
 
 <a name="o16n"></a>
 
@@ -143,6 +143,6 @@ See these additional resources to learn about R in general:
 
 + [Cross Validated](https://stats.stackexchange.com/): A site for questions about statistical issues in machine learning
 
-+ [R Help mailing list](https://www.r-project.org/mail.html): The list and its archives offers a good resource of historical information
++ [R Help mailing list](https://www.r-project.org/mail.html): The list and its archives offer a good resource of historical information
 
 + [MRAN website](https://mran.microsoft.com/documents/getting-started/): Many other R resources.
