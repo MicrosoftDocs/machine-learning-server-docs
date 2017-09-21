@@ -26,9 +26,9 @@ ms.technology: "r-server"
 
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.2.1 on a Cloudera distribution of Apache Hadoop (CDH). 
 
-Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server is installed on the edge node and all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
+Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server runs on the edge node and all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
 
-You can create a parcel generation script on any [supported version of Linux](r-server-install-supported-platforms.md), but execution requires CentOS or RHEL 7.0 as the native file system. If your operating system is not 7.0, or if you want to add [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes, use the regular [Hadoop installation instuctions](machine-learning-server-hadoop-install.md) instead.
+You can create a parcel generation script on any [supported version of Linux](r-server-install-supported-platforms.md), but execution requires CentOS or RHEL 7.0 as the native file system. A parcel cannot install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md). If your operating system is not 7.0, or if you want to add operationalization on edge nodes, use the regular [Hadoop installation instuctions](machine-learning-server-hadoop-install.md) instead.
 
 ## Prepare for installation
 
