@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Microsoft R Server on the Data Science Virtual Machine | Microsoft Docs"
-description: "Run R Server on the Microsoft Data Science Virtual Machine"
-keywords: "Microsoft R Server, HDInsight"
+title: "Machine Learning Server on the Data Science Virtual Machine | Microsoft Docs"
+description: "Run Machine Learning Server on the Microsoft Data Science Virtual Machine"
+keywords: "Machine Learning Server, HDInsight"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/30/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,17 +24,17 @@ ms.technology:
 
 ---
 
-# Microsoft R Server on the Data Science Virtual Machine
+# R Server on the Data Science Virtual Machine
 
-The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including Microsoft R Server on the Linux VM and both Microsoft R Server and SQL Server R Services on the Windows.  R Server (Developer Edition) includes the complete R distribution from CRAN, plus additional data-analysis functions with big-data capabilities, and the DeployR framework for integrating R into applications as a web service. The developer edition is identical to the enterprise Microsoft R Server edition, but licensed for development/test use.
+The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including R Server on the Linux VM and both R Server and SQL Server Machine Learning  Services on the Windows. R Server (Developer Edition) includes the complete R distribution from CRAN and a Python interpreter, plus additional data-analysis functions with big-data capabilities, and the operationalization framework for integrating R and Python into applications as web services. The developer edition is identical to the enterprise R Server edition, but licensed for development/test use.
 
 Through Azure’s worldwide cloud infrastructure, you now have on-demand access to a data science development environment in which you can rapidly derive insights from your data, build predictive models and advanced analytics solutions for deployment to the cloud, on-premises or in a hybrid environment. 
 
-The Microsoft Data Science Virtual Machine jump starts your analytics project by saving you the trouble of having to discover and install these tools individually. Hosting the data science machine on Azure gains you high availability and a consistent set of tools used across your data science team.   It enables you to work on tasks in a variety of languages including R. Visual Studio provides an IDE to develop and test your code that is easy to use. The Azure SDK included in the VM allows you to build your applications using various services on Microsoft’s cloud platform. 
+The Microsoft Data Science Virtual Machine jump starts your analytics project by saving you the trouble of having to discover and install these tools individually. Hosting the data science machine on Azure gains you high availability and a consistent set of tools used across your data science team.   It enables you to work on tasks in a variety of languages including R and Python. Visual Studio provides an IDE to develop and test your code that is easy to use. The Azure SDK included in the VM allows you to build your applications using various services on Microsoft’s cloud platform. 
 
 We encourage you to try the Microsoft Data Science Virtual Machine to jumpstart your analytics project. 
 
-## Start using Microsoft R Server/ R Services in the Cloud
+## Start using R Server/ Machine Learning Services in the Cloud
 
 You’ll need to create your own Microsoft Data Science Virtual Machine (VM). To create this VM, you must have an Azure subscription and an Azure storage account. Learn more about creating a Data Science VM see [here.](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
 
@@ -45,8 +45,10 @@ After you provision your virtual machine from the image, you can start exploring
 
 ## Learn More
 
-+ [How to create a Microsoft Data Science VM](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
++ [Overview of Data Science Virtual Machine](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-data-science-virtual-machine-overview)
 
-+ [How to provision the Data Science virtual machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
++ Provision the Data Science Virtual Machine - [Windows](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) | [Linux](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-data-science-dsvm-ubuntu-intro)
+
++ Use the Data Science Virtual Machine - [Windows](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-data-science-vm-do-ten-things) | [Linux](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-data-science-linux-dsvm-walkthrough)
 
 + Try the virtual machine for free via a [30-day Azure free trial](https://azure.microsoft.com/free/)

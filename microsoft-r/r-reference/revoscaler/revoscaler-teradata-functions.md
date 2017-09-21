@@ -29,7 +29,7 @@ The `RevoScaleR` package provides a set of portable, scalable, distributable dat
 
 This page presents a curated list of functions that might be particularly interesting to Teradata DB users. These functions can be called directly from the command line.
 
-The `RevoScaleR` package supports a single Teradata DB compute context, `RxTeradata`. For details on `RxTeradata` compute context, see the [*RevoScaleR Teradata DB Getting Started Guide*](../../r/how-to-revoscaler-sql-server.md#using-a-teradata-data-source-and-computecontext).
+The `RevoScaleR` package supports a single Teradata DB compute context, `RxTeradata`. For details on `RxTeradata` compute context, see the [*RevoScaleR Teradata DB Getting Started Guide*](../../r/how-to-revoscaler-teradata.md).
 
 >If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](revoscaler.md).
 

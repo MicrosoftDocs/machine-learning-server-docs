@@ -2,10 +2,16 @@
   tocHref: /
   topicHref: /
   items:
-  - name: Microsoft R
+  - name: Machine Learning Server
     tocHref: /r-server/
     topicHref: /r-server/index
     items:
+    - name: Install & configure
+      tocHref: /r-server/install/
+      topicHref: /
+    - name: Operationalize
+      tocHref: /r-server/operationalize/
+      topicHref: /r-server/operationalize/configure-start-for-administrators
     - name: Python Package Reference
       tocHref: /r-server/python-reference/
       topicHref: /r-server/python-reference/introducing-python-package-reference
@@ -16,6 +22,9 @@
       - name: revoscalepy
         tocHref: /r-server/python-reference/revoscalepy/
         topicHref: /r-server/python-reference/revoscalepy/revoscalepy-package
+      - name: azureml-model-management-sdk
+        tocHref: /r-server/python-reference/azureml-model-management-sdk/
+        topicHref: /r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk
     - name: R Package Reference
       tocHref: /r-server/r-reference/
       topicHref: /r-server/r-reference/introducing-r-server-r-package-reference

@@ -6,7 +6,7 @@ description: "Serialize the given python model."
 keywords: "serialization" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_serialize_model`
+# rx_serialize_model
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,10 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_serialize_model(model, realtime_scoring_only: bool) -> bytes
+revoscalepy.rx_serialize_model(model,
+    realtime_scoring_only: bool) -> bytes
 ```
+
 
 
 

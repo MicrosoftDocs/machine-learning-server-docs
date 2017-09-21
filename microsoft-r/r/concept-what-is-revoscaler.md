@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What is RevoScaleR (Microsoft R)"
+title: "Get started with RevoScaleR - Machine Learning Server | Microsoft Docs"
 description: "Learn about the benefits of RevoScaleR and how to use it in custom script and code."
 keywords: ""
 author: "HeidiSteen"
@@ -25,15 +25,15 @@ ms.technology: "r-server"
 
 # What is RevoScaleR?
 
-RevoScaleR is a collection of proprietary functions in Microsoft R used for practicing data science at scale. For data scientists, RevoScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
+RevoScaleR is a collection of proprietary functions in Machine Learning Server used for practicing data science at scale. For data scientists, RevoScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
 
-RevoScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](../r-client/what-is-microsoft-r-client.md) or commercially in [Microsoft R Server](../what-is-microsoft-r-server.md) on supported platforms. RevoScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and will be coming soon to Azure Machine Learning.
+RevoScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](../r-client/what-is-microsoft-r-client.md) or commercially in [Machine Learning Server](../what-is-machine-learning-server.md) on supported platforms. RevoScaleR is also embedded in Azure HDInsight, and Azure Data Science virtual machines.
 
 The RevoScaleR functions run on a computational engine include in the aforementioned products. As such, the package cannot be downloaded or used independently of the products and services that provide it.
 
 RevoScaleR is engineered to adapt to the computational power of the platform it runs on. On R Server for Hadoop, script using RevoScaleR functions that run in parallel will automatically use nodes in the cluster. Whereas on the free R Client, scale is provided at much lower levels (2 processors, data resides in-memory).
 
-RevoScaleR provides enhanced capabilities to many elements of the open source R programming language. In fact, there are [RevoScaleR equivalents for many common base R functions](../r-reference/revoscaler/revoscaler-compared-to-base-r.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because Microsoft R is compatible with the open source R language, solutions often use a combination of base R and RevoScaleR functions. RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable in your R script that uses the RevoScaleR package.
+RevoScaleR provides enhanced capabilities to many elements of the open source R programming language. In fact, there are [RevoScaleR equivalents for many common base R functions](../r-reference/revoscaler/revoscaler-compared-to-base-r.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because RevoScaleR is compatible with the open source R language, solutions often use a combination of base R and RevoScaleR functions. RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable in your R script that uses the RevoScaleR package.
 
 ## What can you do with RevoScaleR?
 
@@ -85,7 +85,7 @@ RevoScaleR has the concept of *compute context* that sets the location for data 
 
 Local is the default, and it supports the full range of data source inputs. As its name suggests, a local compute context uses only the physical cores of the local computer. Local compute context is provided by RevoScaleR on both R Client and R Server instances.
 
-Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has R Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for RevoScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in R Server only: HDInsight, Hadoop (both MapReduce and Spark), Teradata, SQL Server, and R Server (Windows and Linux). For more information, see [Compute Context](concept-what-is-revoscaler.md#compute-context).
+Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has R Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for RevoScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in R Server only: HDInsight, Hadoop (both MapReduce and Spark), Teradata, SQL Server, and R Server (Windows and Linux). For more information, see [Compute Context](concept-what-is-compute-context.md).
 
 ### Efficiently Storing and Retrieving Data
 
@@ -107,6 +107,6 @@ All of the main analysis functions in RevoScaleR use updating or external memory
 
 ## See Also
 
- [Introduction to Microsoft R](../microsoft-r-getting-started.md)   
- [Diving into data analysis in Microsoft R](how-to-introduction.md) 
+ [Introduction to Machine Learning Server](../what-is-machine-learning-server.md)   
+ [How-to guides for Machine Learning Server](how-to-introduction.md) 
  [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)   

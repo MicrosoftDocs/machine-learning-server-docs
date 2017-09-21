@@ -6,7 +6,7 @@ description: "Get basic information about an revoscalepy data source or data fra
 keywords: "xdf" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_get_info`
+# rx_get_info
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,14 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_get_info(data, get_var_info: bool = False, get_block_sizes: bool = False, get_value_labels: bool = None, vars_to_keep: list = None, vars_to_drop: list = None, start_row: int = 1, num_rows: int = 0, compute_info: bool = False, all_nodes: bool = False, verbose: int = 0)
+revoscalepy.rx_get_info(data, get_var_info: bool = False,
+    get_block_sizes: bool = False, get_value_labels: bool = None,
+    vars_to_keep: list = None, vars_to_drop: list = None,
+    start_row: int = 1, num_rows: int = 0,
+    compute_info: bool = False, all_nodes: bool = False,
+    verbose: int = 0)
 ```
+
 
 
 
@@ -55,6 +61,8 @@ a data frame, a character string specifying an “.xdf”, or an
 RxDataSource object. If a local compute context is being used, this
 argument may also be a list of data sources, in which case the output will
 be returned in a named list. See the details section for more information.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### get_var_info

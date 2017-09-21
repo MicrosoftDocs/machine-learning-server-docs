@@ -2,6 +2,14 @@
  "redirections":
  [
   {
+      "source_path" : "microsoft-r/what-is-microsoft-r-server.md",
+      "redirect_url" : "/r-server/rebranding-microsoft-r-server"
+  },
+  {
+      "source_path" : "microsoft-r/r-client/whats-new-in-r-client.md",
+      "redirect_url" : "/r-server/r-client/what-is-microsoft-r-client"
+  },
+  {
       "source_path" : "microsoft-r/microsoftml-introduction.md",
       "redirect_url" : "/r-server/r/concept-what-is-the-microsoftml-package"
   },

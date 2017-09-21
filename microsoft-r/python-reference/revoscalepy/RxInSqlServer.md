@@ -6,7 +6,7 @@ description: "Creates a compute context for running revoscalepy analyses inside 
 keywords: "sql" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,19 +24,20 @@ ms.custom: ""
  
 ---
 
-# `RxInSqlServer`
+# RxInSqlServer
 
 
-**Applies to: SQL Server 2017**
-
-
-## Usage
+ 
 
 
 
 ```
-class revoscalepy.RxInSqlServer(connection_string: str, num_tasks: int = None, auto_cleanup: bool = None, console_output: bool = None, execution_timeout_seconds: int = None, wait: bool = True, packages_to_load: list = None)
+revoscalepy.RxInSqlServer(connection_string: str, num_tasks: int = None,
+    auto_cleanup: bool = None, console_output: bool = None,
+    execution_timeout_seconds: int = None, wait: bool = True,
+    packages_to_load: list = None)
 ```
+
 
 
 

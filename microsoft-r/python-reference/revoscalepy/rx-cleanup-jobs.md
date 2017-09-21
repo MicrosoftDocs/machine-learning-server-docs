@@ -6,7 +6,7 @@ description: "If job_info_list is a RxRemoteJob object, rx_cleanup_jobs attempts
 keywords: "cleanup, job" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_cleanup_jobs`
+# rx_cleanup_jobs
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,10 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_cleanup_jobs(job_info_list: typing.Union[revoscalepy.computecontext.RxRemoteJob.RxRemoteJob, list], force: bool = False, verbose: bool = True)
+revoscalepy.rx_cleanup_jobs(job_info_list: typing.Union[revoscalepy.computecontext.RxRemoteJob.RxRemoteJob,
+    list], force: bool = False, verbose: bool = True)
 ```
+
 
 
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "log_loss" 
+title: "log_loss: log_loss" 
 description: "Log loss." 
 keywords: "loss, log" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.log_loss*: Log loss function
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 microsoftml.log_loss()
 ```
+
 
 
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "mkl_math" 
+title: "mkl_math: mkl_math" 
 description: "Intel MKL implementation." 
 keywords: "neural network, math, mkl" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.mkl_math*: Acceleration with Intel MKL
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 microsoftml.mkl_math(max_cache_size: numbers.Real = -1)
 ```
+
 
 
 

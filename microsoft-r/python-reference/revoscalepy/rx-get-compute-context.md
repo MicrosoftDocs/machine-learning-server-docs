@@ -4,9 +4,9 @@
 title: "rx_get_compute_context: Get and Set the compute context" 
 description: "Get or set the active compute context for revoscalepy computationsrx_set_compute_context(compute_context: ‘RxComputeContext’) rx_get_compute_context()" 
 keywords: "context" 
-author: HeidiSteen
+author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_get_compute_context`
+# rx_get_compute_context
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 revoscalepy.rx_get_compute_context() -> revoscalepy.computecontext.RxComputeContext.RxComputeContext
 ```
+
 
 
 
@@ -63,11 +64,6 @@ Choices include: “RxLocalSeq” or “local”, “RxInSqlServer”.
 
 rx_set_compute_context returns the previously active compute context
 invisibly. rx_get_compute_context returns the active compute context.
-
-
-
-
-
 
 
 ## See also

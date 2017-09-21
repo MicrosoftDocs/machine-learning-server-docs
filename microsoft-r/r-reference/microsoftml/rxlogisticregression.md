@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Logistic Regression" 
+title: "rxLogisticRegression function (MicrosoftML) | Microsoft Docs" 
 description: " Machine Learning Logistic Regression " 
-keywords: "MicrosoftML, rxLogisticRegression, classification, models" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), rxLogisticRegression, classification, models" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxLogisticRegression: Logistic Regression
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #rxLogisticRegression: Logistic Regression 
  ##Description
  
 Machine Learning Logistic Regression
@@ -58,72 +54,72 @@ Machine Learning Logistic Regression
 
    
   
- ### formula
+ ### `formula`
  The formula as described in rxFormula. Interaction terms and `F()` are not currently supported in the **MicrosoftML**. 
   
   
   
- ### data
+ ### `data`
  A data source object or a character string specifying a .xdf file or a data frame object. 
   
   
   
- ### type
+ ### `type`
  A character string that specifies the type of Logistic Regression:  `"binary"` for the default binary classification logistic regression or `"multi"` for multinomial logistic regression. 
   
   
   
- ### l2Weight
+ ### `l2Weight`
  The L2 regularization weight. Its value must be greater than  or equal to `0` and the default value is set to `1`. 
   
   
   
- ### l1Weight
+ ### `l1Weight`
  The L1 regularization weight. Its value must be greater than  or equal to `0` and the default value is set to `1`. 
   
   
   
- ### optTol
+ ### `optTol`
  Threshold value for optimizer convergence. If the improvement between iterations is less than the threshold, the algorithm stops and returns the current model. Smaller values are slower, but more accurate. The default value is `1e-07`. 
   
   
   
- ### memorySize
+ ### `memorySize`
  Memory size for L-BFGS, specifying the number of past positions and gradients to store for the computation of the next step. This optimization parameter limits the amount of memory that is used to compute the magnitude and direction of the next step. When you specify less memory,  training is faster but less accurate. Must be greater than or equal to  `1` and the default value is `20`. 
   
   
   
- ### initWtsScale
+ ### `initWtsScale`
  Sets the initial weights diameter that specifies  the range from which values are drawn for the initial weights. These   weights are initialized randomly from within this range. For  example, if the diameter is specified to be `d`, then the weights  are uniformly distributed between `-d/2` and `d/2`. The default value is `0`, which specifies that allthe  weights are  initialized to `0`. 
   
   
   
- ### maxIterations
+ ### `maxIterations`
  Sets the maximum number of iterations. After this number  of steps, the algorithm stops even if it has not satisfied convergence criteria. 
   
   
   
- ### showTrainingStats
- Specify `TRUE` to show the statistics of  training data and the trained model; otherwise, `FALSE`. The  default value is `FALSE`. For additional information about model  statistics, see [summary.mlModel](mlmodel.md). 
+ ### `showTrainingStats`
+ Specify `TRUE` to show the statistics of  training data and the trained model; otherwise, `FALSE`. The  default value is `FALSE`. For additional information about model  statistics, see [summary.mlModel](mlModel.md). 
   
   
   
- ### sgdInitTol
+ ### `sgdInitTol`
  Set to a number greater than 0 to use Stochastic Gradient Descent (SGD) to find the initial parameters. A non-zero value  set specifies the tolerance SGD uses to determine convergence. The default value is `0` specifying that SGD is not used. 
   
   
   
- ### trainThreads
+ ### `trainThreads`
  The number of threads to use in training the model.  This should be set to the number of cores on the machine. Note that  L-BFGS multi-threading attempts to load dataset into memory. In case of out-of-memory issues, set `trainThreads` to `1` to turn off multi-threading. If `NULL` the number of threads to use is determined internally. The default value is `NULL`. 
   
   
   
- ### denseOptimizer
+ ### `denseOptimizer`
  If `TRUE`, forces densification of the internal optimization vectors. If `FALSE`, enables the logistic regression  optimizer use sparse or dense internal states as it finds appropriate.   Setting `denseOptimizer` to `TRUE` requires the internal  optimizer to use a dense internal state, which may help alleviate load  on the garbage collector for some varieties of larger problems. 
   
   
   
- ### normalize
+ ### `normalize`
  Specifies the type of automatic normalization used:  
 *   `"auto"`: if normalization is needed, it is performed  automatically. This is the default choice.    
 *   `"no"`: no normalization is performed.  
@@ -133,57 +129,57 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
- ### mlTransforms
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that aresupported. These transformations are performed after any specified R transformations. The default avlue is `NULL`. 
+ ### `mlTransforms`
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](categorical.md), and [categoricalHash](categoricalHash.md), for transformations that aresupported. These transformations are performed after any specified R transformations. The default avlue is `NULL`. 
   
   
   
- ### mlTransformVars
+ ### `mlTransformVars`
  Specifies a character vector of variable names to be used in `mlTransforms` or `NULL` if none are to be used. The default value is `NULL`. 
   
   
   
- ### rowSelection
+ ### `rowSelection`
  Specifies the rows (observations) from the data set that are to be used by the model with the name of a logical variable from the  data set (in quotes) or with a logical expression using variables in the    data set. For example, `rowSelection = "old"` will only use observations in which the value of the variable `old` is `TRUE`. `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function call using the expression function. 
   
   
   
- ### transforms
+ ### `transforms`
  An expression of the form `list(name = expression, ``...)` that represents the first round of variable transformations. As with  all expressions, `transforms` (or `rowSelection`) can be defined outside of the function call using the expression function. 
   
   
   
- ### transformObjects
+ ### `transformObjects`
  A named list that contains objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
   
- ### transformFunc
+ ### `transformFunc`
  The variable transformation function. See rxTransform for details. 
   
   
   
- ### transformVars
+ ### `transformVars`
  A character vector of input data set variables needed for the transformation function. See rxTransform for details. 
   
   
   
- ### transformPackages
+ ### `transformPackages`
  A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
   
   
   
- ### transformEnvir
+ ### `transformEnvir`
  A user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
   
- ### blocksPerRead
+ ### `blocksPerRead`
  Specifies the number of blocks to read for each chunk  of data read from the data source. 
   
   
   
- ### reportProgress
+ ### `reportProgress`
  An integer value that specifies the level of reporting on the row processing progress:   
 *   `0`: no progress is reported.      
 *   `1`: the number of processed rows is printed and updated.    
@@ -193,22 +189,22 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
- ### verbose
+ ### `verbose`
  An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information. 
   
   
   
- ### computeContext
+ ### `computeContext`
  Sets the context in which computations are executed, specified with a valid RxComputeContext. Currently local and RxInSqlServer compute contexts are supported. 
   
   
   
- ### ensemble
+ ### `ensemble`
  Control parameters for ensembling. 
   
   
   
- ###  ...
+ ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  
@@ -288,9 +284,9 @@ This algorithm will attempt to load the entire dataset into memory
 when `trainThreads > 1` (multi-threading).
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
@@ -311,11 +307,11 @@ when `trainThreads > 1` (multi-threading).
  
  ##See Also
  
-[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md),
-[rxFastLinear](rxfastlinear.md), [rxNeuralNet](neuralnet.md),
-[rxOneClassSvm](oneclasssvm.md), [featurizeText](featurizetext.md),
-[categorical](categorical.md), [categoricalHash](categoricalhash.md),
-[rxPredict.mlModel](rxpredict.md).
+[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
+[rxFastLinear](rxFastLinear.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](featurizeText.md),
+[categorical](categorical.md), [categoricalHash](categoricalHash.md),
+[rxPredict.mlModel](rxPredict.md).
    
  ##Examples
 
@@ -359,6 +355,7 @@ when `trainThreads > 1` (multi-threading).
   scoreMultiDF[badPrediction,]
  
 ```
+ 
  
  
  

@@ -7,7 +7,7 @@ keywords: "olapR, explore"
 author: "richcalaway"
 ms.author: "richcala" 
 manager: "jhubbard" 
-ms.date: "03/23/2017" 
+ms.date: "09/25/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,8 @@ ms.technology: "r-server"
 #ms.custom: "" 
  
 --- 
- 
- 
- 
- #explore: olapR explore Method
+
+#explore: olapR explore Method
 
  Applies to version 1.0.0 of package olapR.
  
@@ -42,7 +40,6 @@ Allows for exploration of cube metadata
 
 ```   
   explore(olapCnn, cube = NULL, dimension = NULL, hierarchy = NULL, level = NULL)
- 
 ```
  
  

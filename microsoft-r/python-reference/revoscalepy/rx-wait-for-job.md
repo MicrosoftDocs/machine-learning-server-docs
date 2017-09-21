@@ -6,7 +6,7 @@ description: "Causes Python to block on an existing distributed job until comple
 keywords: "wait, job" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_wait_for_job`
+# rx_wait_for_job
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 revoscalepy.rx_wait_for_job(job_info: revoscalepy.computecontext.RxRemoteJob.RxRemoteJob)
 ```
+
 
 
 

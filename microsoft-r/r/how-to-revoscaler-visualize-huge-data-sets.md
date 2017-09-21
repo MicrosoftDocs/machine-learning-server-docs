@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Visualizing Huge Data Sets"
+title: "Visualizing Huge Data Sets using RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "Visualizing huge data sets with an example from the U.S. Census."
 keywords: ""
 author: "HeidiSteen"
@@ -30,7 +30,7 @@ By combining the power and flexibility of the open-source R language with the fa
 This example focuses on a basic demographic pattern: in general, more boys than girls are born and the death rate is higher for males at every age. So, typically we observe a decline in the ratio of males to females as age increases.
 
 <a name="chunking"></a>
->**Important!**  Since Microsoft R Client can only process datasets that fit into the available memory,  chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Microsoft R Server instance. You can also upgrade to a SQL Server license with R Server for Windows. 
+>**Important!**  Since Microsoft R Client can only process datasets that fit into the available memory,  chunking is not supported. When run locally with R Client, the `blocksPerRead` argument is ignored and all data must be read into memory. When working with Big Data, this may result in memory exhaustion. You can work around this limitation when you push the compute context to a Machine Learning Server instance. 
 
 
 ### Examining the Data
@@ -190,10 +190,10 @@ We’d like to compare the ages of men with ages of their wives. This is more co
 			# Go back to the original data set and read the
 			# required rows in the previous chunk
 			needPreviousRows <- 1 - min(spouseRow, na.rm = TRUE)
-			previousData <- rxReadXdf(censusUS2000,
+			previousData <- rxDataStep(inData = censusUS2000,
 				startRow = startRow - needPreviousRows,
 				numRows = needPreviousRows, varsToKeep = spouseVars,
-				returnDataFrame = FALSE, reportProgress = 0)
+				returnTransformObjects = FALSE, reportProgress = 0)
 
 			# Get the spouse locations
 			whichPrevious <- which(spouseFlag == "previous")
@@ -228,9 +228,9 @@ We’d like to compare the ages of men with ages of their wives. This is more co
 			# Go back to the original data set and read the
 			# required rows in the next chunk
 			needNextRows <- max(spouseRow, na.rm=TRUE) - numRows
-			nextData <- rxReadXdf(censusUS2000, startRow = endRow+1,
+			nextData <- rxDataStep(inData = censusUS2000, startRow = endRow+1,
 				numRows = needNextRows, varsToKeep = spouseVars,
-				returnDataFrame = FALSE, reportProgress = 0)
+				returnTransformObjects = FALSE, reportProgress = 0)
 
 			# Get the spouse locations
 			whichNext <- which(spouseFlag == "next")
@@ -254,14 +254,14 @@ We can test the transform function by reading in a small number of rows of data.
 
 	varsToKeep=c("age", "region", "incwage", "racwht", "nchild", "perwt", "sploc",
 		"pernum", "sex")
-	testDF <- rxReadXdf(bigCensusData, numRows = 6, startRow=9,
-		varsToKeep = varsToKeep, returnDataFrame=FALSE)
+	testDF <- rxDataStep(inData=bigCensusData, numRows = 6, startRow=9,
+		varsToKeep = varsToKeep, returnDTransformObjects=FALSE)
 	.rxStartRow <- 9
 	.rxReadFileName <- bigCensusData
 	newTestDF <- as.data.frame(spouseAgeTransform(testDF))
 	.rxStartRow <- 8
-	testDF2 <- rxReadXdf(bigCensusData, numRows = 8, startRow=8,
-		varsToKeep = varsToKeep, returnDataFrame=FALSE)
+	testDF2 <- rxDataStep(inData=bigCensusData, numRows = 8, startRow=8,
+		varsToKeep = varsToKeep, returnTransformObjects=FALSE)
 	newTestDF2 <- as.data.frame(spouseAgeTransform(testDF2))
 	newTestDF[,c("age", "incwage", "sploc", "hasSpouse" ,"spouseAge", "ageDiff")]
 	newTestDF2[,c("age", "incwage", "sploc", "hasSpouse" ,"spouseAge", "ageDiff")]

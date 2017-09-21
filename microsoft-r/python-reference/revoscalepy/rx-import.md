@@ -6,7 +6,7 @@ description: "Import data into an ‘.xdf’ file or data.frame."
 keywords: "import, datasource" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_import`
+# rx_import
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,25 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_import(input_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame, str], output_file=None, vars_to_keep: list = None, vars_to_drop: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: <built-in function callable> = None, transform_variables: dict = None, transform_packages: dict = None, transform_environment: dict = None, append: str = None, overwrite: bool = False, number_rows: int = None, strings_as_factors: bool = None, column_classes: dict = None, column_info: dict = None, rows_per_read: int = None, type: str = None, max_rows_by_columns: int = None, report_progress: int = None, verbose: int = None, xdf_compression_level: int = None, create_composite_set: bool = None, blocks_per_composite_file: int = None)
+revoscalepy.rx_import(input_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource,
+    pandas.core.frame.DataFrame, str], output_file=None,
+    vars_to_keep: list = None, vars_to_drop: list = None,
+    row_selection: str = None, transforms: dict = None,
+    transform_objects: dict = None, transform_function: <built-
+    in function callable> = None,
+    transform_variables: dict = None,
+    transform_packages: dict = None,
+    transform_environment: dict = None, append: str = None,
+    overwrite: bool = False, number_rows: int = None,
+    strings_as_factors: bool = None, column_classes: dict = None,
+    column_info: dict = None, rows_per_read: int = None,
+    type: str = None, max_rows_by_columns: int = None,
+    report_progress: int = None, verbose: int = None,
+    xdf_compression_level: int = None,
+    create_composite_set: bool = None,
+    blocks_per_composite_file: int = None)
 ```
+
 
 
 
@@ -53,15 +70,18 @@ Import data into an ‘.xdf’ file or data.frame.
 
 a character string with the path for the data to import
 (delimited, fixed format, ODBC, or XDF). Alternatively, a data source
-object representing the input data source can be specified. (See
-RxTextData, and RxOdbcData.)
+object representing the input data source can be specified.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### output_file
 
-a character string representing the output ‘.xdf’ file,
-a RxXdfData, RxHiveData, RxParquetData, RxOrcData or RxSparkDataFrame object.
+a character string representing the output ‘.xdf’ file
+or an RxXdfData object.
 If None, a data frame will be returned in memory.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object.
 
 
 ### vars_to_keep

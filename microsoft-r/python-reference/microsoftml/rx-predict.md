@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Scores using a Microsoft ML Machine Learning model" 
+title: "rx_predict: Scores using a Microsoft ML Machine Learning model" 
 description: "Reports per-instance scoring results in a data frame or revoscalepy data source using a trained Microsoft ML Machine Learning model with arevoscalepydata source." 
 keywords: "models, prediction" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_predict*: Scores using a Microsoft machine learning model
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,19 @@ ms.custom: ""
 
 
 ```
-microsoftml.rx_predict(model, data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame], output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, write_model_vars: bool = False, extra_vars_to_write: list = None, suffix: str = None, overwrite: bool = False, data_threads: int = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None, **kargs)
+microsoftml.rx_predict(model,
+    data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource,
+    pandas.core.frame.DataFrame],
+    output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource,
+    str] = None, write_model_vars: bool = False,
+    extra_vars_to_write: list = None, suffix: str = None,
+    overwrite: bool = False, data_threads: int = None,
+    blocks_per_read: int = None, report_progress: int = None,
+    verbose: int = 1,
+    compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None,
+    **kargs)
 ```
+
 
 
 
@@ -190,7 +201,10 @@ import numpy
 import pandas
 from microsoftml import rx_fast_linear, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import infert
+from microsoftml.datasets.datasets import get_dataset
+
+infert = get_dataset("infert")
+
 import sklearn
 if sklearn.__version__ < "0.18":
     from sklearn.cross_validation import train_test_split
@@ -221,38 +235,36 @@ Output:
 ```
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
+Rows Read: 186, Read Time: 0, Transform Time: 0
+Beginning processing data.
+Beginning processing data.
 Rows Read: 186, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
-Beginning processing data.
-Beginning processing data.
-Rows Read: 186, Read Time: 0, Transform Time: 0
+Rows Read: 186, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Using 2 threads to train.
 Automatically choosing a check frequency of 2.
 Auto-tuning parameters: maxIterations = 8064.
 Auto-tuning parameters: L2 = 2.666837E-05.
 Auto-tuning parameters: L1Threshold (L1/L2) = 0.
-Using best model from iteration 570.
+Using best model from iteration 590.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.8088403
-Elapsed time: 00:00:00.0239236
+Elapsed time: 00:00:00.6058289
+Elapsed time: 00:00:00.0084728
 Beginning processing data.
 Rows Read: 62, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0915609
+Elapsed time: 00:00:00.0302359
 Finished writing 62 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre8880911.xdf File will be overwritten if it exists.
-
-Rows Processed: 5 
+Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds 
   isCase PredictedLabel     Score  Probability
-0  False          False -2.049673     0.114085
-1  False           True  0.530216     0.629534
-2  False          False -2.280835     0.092723
-3   True           True  2.195549     0.899849
-4  False          False -0.860523     0.297230
+0  False           True  0.576775     0.640325
+1  False          False -2.929549     0.050712
+2   True          False -2.370090     0.085482
+3  False          False -1.700105     0.154452
+4  False          False -0.110981     0.472283
 ```
 
 
@@ -269,7 +281,10 @@ import numpy
 import pandas
 from microsoftml import rx_fast_trees, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import airquality
+from microsoftml.datasets.datasets import get_dataset
+
+airquality = get_dataset("airquality")
+
 import sklearn
 if sklearn.__version__ < "0.18":
     from sklearn.cross_validation import train_test_split
@@ -309,32 +324,31 @@ Output:
 
 ```
 'unbalanced_sets' ignored for method 'regression'
-Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
 Not adding a normalizer.
 Making per-feature arrays
 Changing data from row-wise to column-wise
 Beginning processing data.
-Rows Read: 87, Read Time: 0, Transform Time: 0
+Rows Read: 87, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Warning: Skipped 4 instances with missing features during training
 Processed 83 instances
 Binning and forming Feature objects
-Reserved memory for tree learner: 21840 bytes
+Reserved memory for tree learner: 22620 bytes
 Starting to train ...
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.0820105
-Elapsed time: 00:00:00.0235356
+Elapsed time: 00:00:00.0390764
+Elapsed time: 00:00:00.0080750
 Beginning processing data.
-Rows Read: 29, Read Time: 0, Transform Time: 0
+Rows Read: 29, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0652775
+Elapsed time: 00:00:00.0221875
 Finished writing 29 rows.
 Writing completed.
    Solar_R  Wind  Temp      Score
-0     77.0   7.4    82  16.359118
-1    220.0  10.3    78  40.989021
-2    276.0   5.1    88  91.789886
-3    260.0   6.9    81  94.888527
-4    212.0   9.7    79  37.633297
+0    290.0   9.2  66.0  33.195541
+1    259.0  15.5  77.0  20.906796
+2    276.0   5.1  88.0  76.594643
+3    139.0  10.3  81.0  31.668842
+4    236.0  14.9  81.0  43.590839
 ```
 

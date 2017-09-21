@@ -4,9 +4,9 @@
 title: "RxDataSource,head,tail: RxDataSource" 
 description: "Base class for all revoscalepy data sources." 
 keywords: "head" 
-author: HeidiSteen
+author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,19 +24,17 @@ ms.custom: ""
  
 ---
 
-# `RxDataSource`
+# RxDataSource
 
 
-**Applies to: SQL Server 2017**
-
-
-## Usage
+ 
 
 
 
 ```
-class revoscalepy.RxDataSource(column_info: dict = None)
+revoscalepy.RxDataSource(column_info: dict = None)
 ```
+
 
 
 
@@ -47,17 +45,10 @@ Base class for all revoscalepy data sources.
 
 
 
-
-
-
-
-## Usage
-
-
-
 ```
 head(num_rows: int = 6, report_progress: int = None)
 ```
+
 
 
 
@@ -103,13 +94,11 @@ ds.head(num_rows=4)
 
 
 
-## Usage
-
-
 
 ```
 tail(num_rows: int = 6, report_progress: int = None)
 ```
+
 
 
 

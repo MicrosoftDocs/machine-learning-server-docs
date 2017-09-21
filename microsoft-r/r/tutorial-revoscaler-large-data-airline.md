@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Load and analyze a large airline data set with RevoScaleR in Microsoft R"
+title: "Tutorial: Load and analyze a large airline data set with RevoScaleR in Machine Learning Server | Microsoft Docs"
 description: "Learn how to work with big data using a sample airline dataset in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Tutorial: Load and analyze a large airline data set with RevoScaleR (Microsoft R)
+# Tutorial: Load and analyze a large airline data set with RevoScaleR
 
 This tutorial builds on what you learned in the [first RevoScaleR tutorial](tutorial-revoscaler-data-import-transform.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps, except this time you will use a much larger data set.
 
@@ -146,7 +146,7 @@ The full data set has 46 variables and almost 150 million observations.
 
 Data stored in the xdf file format can be read into a data frame, allowing the user to choose the rows and columns. For example, read  1000 rows beginning at the 100,000th row for the variables *ArrDelay*, *DepDelay*, and *DayOfWeek*.
 
-	testDF <- rxReadXdf(file = bigAirDS,
+	testDF <- rxDataStep(inData = bigAirDS,
 		varsToKeep = c("ArrDelay","DepDelay", "DayOfWeek"),
 		startRow = 100000, numRows = 1000)
 	summary(testDF)
@@ -195,7 +195,7 @@ It yields the following:
 
 But this is only 1/148,619 of the rows contained in the full data set. If we try to read all the rows of these columns, we will likely run into memory problems. For example, on most systems with 8GB or less of RAM, running the commented code below will fail on the full data set with a "cannot allocate vector" error.
 
-	# testDF <- rxReadXdf(file=dataName, varsToKeep = c("ArrDelay",
+	# testDF <- rxDataStep(inData=dataName, varsToKeep = c("ArrDelay",
 	#    "DepDelay", "DayOfWeek"))
 
 In the next section you will see how you can analyze a data set that is too big to fit into memory by using **RevoScaleR** functions.
@@ -441,8 +441,8 @@ To reset the compute context to your local machine, use:
 
 ## See Also
 
-[Introduction to Microsoft R](../microsoft-r-getting-started.md)
+[Machine Learning Server](../what-is-machine-learning-server.md)	
 
-[Diving into data analysis in Microsoft R](how-to-introduction.md)
+[How-to guides in Machine Learning Server](how-to-introduction.md)
 
 [RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

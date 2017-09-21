@@ -6,7 +6,7 @@ description: "Read the variable names for data source or data frame"
 keywords: "variables" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_get_var_names`
+# rx_get_var_names
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 revoscalepy.rx_get_var_names(data)
 ```
+
 
 
 
@@ -52,6 +53,8 @@ Read the variable names for data source or data frame
 ### data
 
 an RxDataSource object, a character string specifying the “.xdf” file, or a data frame.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ## Returns

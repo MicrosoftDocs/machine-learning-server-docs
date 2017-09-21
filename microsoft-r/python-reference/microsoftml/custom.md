@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "custom" 
-description: "Remover with specified by user list of stopwords." 
+title: "custom: custom" 
+description: "Remover with list of stopwords specified by the user." 
 keywords: "stop-words" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.custom*: Removes custom stopwords
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -41,9 +41,10 @@ microsoftml.custom(stopword: list = None)
 
 
 
+
 ## Description
 
-Remover with specified by user list of stopwords.
+Remover with list of stopwords specified by the user.
 
 
 ## Arguments

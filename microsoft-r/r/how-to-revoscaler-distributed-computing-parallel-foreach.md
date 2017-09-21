@@ -26,7 +26,7 @@ ms.technology: "r-server"
 # Parallel execution using doRSR for script containing ScaleR and foreach constructs
 
 The open-source [foreach package](https://CRAN.R-project.org/package=foreach) combines a looping structure for R script 
-that can execute in parallel. When you need to loop through repeated operations, and you have multiple processors or nodes to work with, you can use **foreach** in your script to execute a forloop in parallel. Developed by Microsoft, foreach is an open source package that is bundled with R Server but is also available on the Comprehensive R Archive Network, CRAN.  
+that can execute in parallel. When you need to loop through repeated operations, and you have multiple processors or nodes to work with, you can use **foreach** in your script to execute a forloop in parallel. Developed by Microsoft, foreach is an open source package that is bundled with Machine Learning Server but is also available on the Comprehensive R Archive Network, CRAN.  
 
 To execute code that leverages foreach, you will need a parallel backend engine, similar to **NetWorkSpaces**, **snow**, and **rmpi**. For integration with script leveraging ScaleR, you can use the **doRSR** package. The **doRSR** package is a parallel backend for RevoScaleR, built on top of `rxExec`, and included with all RevoScaleR distributions.
 

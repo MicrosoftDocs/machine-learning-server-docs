@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Data Summaries"
+title: "Data Summaries using RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "Summarizing data in RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
@@ -23,13 +23,13 @@ ms.technology: "r-server"
 
 ---
 
-# Data Summaries
+# Data Summaries using RevoScaleR
 
 In other articles, we’ve used the rxGetVarInfo and rxSummary functions to view summary information about data files and the data itself. In this article, we explore the use of these functions in more detail, and also take a look at the rxLorenz function as a way of visually summarizing cumulative distributions of variables.
 
 ### Using Variable Information
 
-The rxGetVarInfo function returns a list containing information about each variable in a .xdf file. For numeric data, this information includes Low/High values. These Low/High values do not necessarily indicate the minimum and maximum of a numeric or integer variable. Rather, they indicate the values RevoScaleR uses to establish the lowest and highest factor levels when treating the variable as a factor. For practical purposes, this is what you will want—for example, if you want to create histograms or hexbin plots, you want to treat the numerical data as categorical, with levels corresponding to the plotting bins. It is often convenient to cut off the highest and lowest data points, and the Low/High information allows you to do this.
+The rxGetVarInfo function returns a list containing information about each variable in a .xdf file. For numeric data, this information includes Low/High values. These Low/High values do not necessarily indicate the minimum and maximum of a numeric or integer variable. Rather, they indicate the values RevoScaleR uses to establish the lowest and highest factor levels when treating the variable as a factor. For practical purposes, this is what you want—for example, if you want to create histograms or hexbin plots, you want to treat the numerical data as categorical, with levels corresponding to the plotting bins. It is often convenient to cut off the highest and lowest data points, and the Low/High information allows you to do this.
 
 For example, consider again the census data from earlier tutorials.
 
@@ -39,7 +39,7 @@ For example, consider again the census data from earlier tutorials.
 	names(censusWorkerInfo)
 
 
-This returns the following:
+Returns the following:
 
 	  [1] "age" "incwage" "perwt" "sex" "wkswork1" "state"
 
@@ -114,7 +114,7 @@ To reset the low and high values, we use the same process with the original valu
 
 ## Formulas for rxSummary
 
-The *rxSummary* function provides descriptive statistics using a *formula* argument similar to that used in R’s modeling functions. With one exception, the formula given to *rxSummary* may not contain a response variable, so that *rxSummary* is generally given a formula of the form “~ predictors.” For example, returning to the CensusWorkers data file we used in other aritcles and tutorials, we can obtain a data summary of that file as follows:
+The *rxSummary* function provides descriptive statistics using a *formula* argument similar to that used in R’s modeling functions. With one exception, the formula given to *rxSummary* may not contain a response variable, so that *rxSummary* is given a formula of the form “~ predictors.” For example, returning to the CensusWorkers data file we used in other articles and tutorials, we can obtain a data summary of that file as follows:
 
 	# Formulas in rxSummary
 	  
@@ -122,7 +122,7 @@ The *rxSummary* function provides descriptive statistics using a *formula* argum
 	censusWorkers <- file.path(readPath, "CensusWorkers.xdf")
 	rxSummary(~ age + incwage + perwt + sex + wkswork1, data = censusWorkers)
 
-This gives the following output:
+Gives the following output:
 
 	Call:
 	rxSummary(formula = ~age + incwage + perwt + sex + wkswork1, 
@@ -181,7 +181,7 @@ The request produces the following output:
 	 ArrDelay for DayOfWeek=Saturday  Saturday  11.875326 45.24540 -73 1370 83851   
 	 ArrDelay for DayOfWeek=Sunday    Sunday    10.331806 37.33348 -86 1202 93395 
 
-Interactions provide the one exception to the “responseless” formula mentioned above. If you want to obtain the interaction of a continuous variable with one or more factors, you can use a formula of the form y ~ x:z, where y is the continuous variable and x and z are factors. This has precisely the same effect as specifying the formula as ~y:x:z, but is more suggestive of the result—that is, summary statistics for y at every combination of levels of x and z.
+Interactions provide the one exception to the “responseless” formula mentioned preceding. If you want to obtain the interaction of a continuous variable with one or more factors, you can use a formula of the form y ~ x:z, where y is the continuous variable and x and z are factors. This has precisely the same effect as specifying the formula as ~y:x:z, but is more suggestive of the result—that is, summary statistics for y at every combination of levels of x and z.
 
 ## On-the-Fly Factors in Formulas
 
@@ -319,9 +319,9 @@ It is also possible to perform on-the-fly row selections. In the example below, 
 	 Female 39             97209
 
 
-## Writing By-Group Summary Statistics to an .xdf File
+## Writing By-Group Summary Statistics to a .xdf File
 
-By-group statistics are often computed for further analysis or plotting. It can be convenient to store these results in an .xdf file, especially if there are a large number of groups. For example, let’s compute the mean and standard deviation of wage income and number of weeks work for each year of age for both men and women using the CensusWorkers.xdf file with data from three states:
+By-group statistics are often computed for further analysis or plotting. It can be convenient to store these results in a .xdf file, especially when there are a large number of groups. For example, let’s compute the mean and standard deviation of wage income and number of weeks work for each year of age for both men and women using the CensusWorkers.xdf file with data from three states:
 
 	# Writing By-Group Summary Statistics to an .xdf File
 	  
@@ -384,15 +384,15 @@ We can plot directly from the .xdf file to visualize our results:
 
 ### Transforming Data in rxSummary
 
-You can use the *transforms* argument to modify your data set on the fly before computing a summary. When used in this way, the original data is unmodified and no permanent copy of the modified data is written to disk. The data summaries returned, however, reflect the modified data.
+You can use the *transforms* argument to modify your data set before computing a summary. When used in this way, the original data is unmodified and no permanent copy of the modified data is written to disk. The data summaries returned, however, reflect the modified data.
 
-You can also transform data in the formula itself, by specifying simple functions of the original variables. For example, you can get a summary based on the natural logarithm of a variable as follows :
+You can also transform data in the formula itself, by specifying simple functions of the original variables. For example, you can get a summary based on the natural logarithm of a variable as follows:
 	
 	#Transforming data in rxSummary
 	
 	rxSummary(~ log(incwage), data = censusWorkers)
 
-This gives the following output:
+Gives the following output:
 
 	Call:
 	rxSummary(formula = ~log(incwage), data = censusWorkers)
@@ -407,7 +407,7 @@ This gives the following output:
 
 ### Using rxGetVarInfo and rxSummary with Wide Data
 
-The functions *rxGetVarInfo* and *rxSummary* provide useful information for summarizing your data set, but these two functions may need to be used differently when the data contain many variables. You will find that building a better understanding of the distribution of each variable and the relationships between variables will allow you to make better decisions during the modeling phase. This is especially important for wide data that may contain hundreds if not thousands of variables. The main goal for your data exploration should be to find any outliers or influential data points, identify redundant variables or correlated variables and transform or combine any variables that seem appropriate.
+The functions *rxGetVarInfo* and *rxSummary* provide useful information for summarizing your data set, but these two functions may need to be used differently when the data contain many variables. Building a better understanding of the distribution of each variable and the relationships between variables allow you to make better decisions during the modeling phase. This is especially important for wide data that may contain hundreds if not thousands of variables. The main goal for your data exploration should be to find any outliers or influential data points, identify redundant variables or correlated variables and transform or combine any variables that seem appropriate.
 
 Once you have your data imported to .xdf, the data type information can easily be accessed using the *rxGetVarInfo* function. However, since wide data has so many variables, printed output can be hard to read. As an alternative, try saving your variable information to an object that can serve as in informal data dictionary. We demonstrate this using the claims data from the sample data directory:
 
@@ -422,7 +422,7 @@ We can then obtain the information for an individual variable as follows:
 
 	 [1] 8 factor levels: 17-20 21-24 25-29 30-34 35-39 40-49 50-59 60+
 
-The rxSummary function is a great way to look at the distribution of individual variables and identify outliers. With wide data you will want to store the results of this function into an object. This object will then contain a data frame with the results of the numeric variables, “sDataFrame”, and a list of data frames with the counts for each categorical variable,”categorical”:
+The rxSummary function is a great way to look at the distribution of individual variables and identify outliers. With wide data, you want to store the results of this function into an object. This object contains a data frame with the results of the numeric variables, “sDataFrame”, and a list of data frames with the counts for each categorical variable,”categorical”:
 
 	readPath <- rxGetOption("sampleDataDir") 
 	censusWorkers <- file.path(readPath, "CensusWorkers.xdf") 
@@ -433,7 +433,7 @@ The rxSummary function is a great way to look at the distribution of individual 
 	[1] "nobs.valid"       "nobs.missing"     "sDataFrame"       "categorical"     
 	[5] "params"           "formula"          "call"             "categorical.type"
 
-Printing the rxSummary results to the console wouldn’t be very useful with so many variables. Saving the results in an object allows us to not only access the summary results programmatically, but also to view the results separately for numeric and categorical variables. We access the sDataFrame (printed to show structure) as follows:
+Printing the rxSummary results to the console wouldn’t be useful with so many variables. Saving the results in an object allows us to not only access the summary results programmatically, but also to view the results separately for numeric and categorical variables. We access the sDataFrame (printed to show structure) as follows:
 	
 	censusSummary$sDataFrame
 	      Name        Mean       StdDev Min    Max ValidObs MissingObs
@@ -451,11 +451,11 @@ To view the categorical variables, we access the categorical component:
 	1   Male 189344
 	2 Female 161777
 
-Another key piece of data exploration for wide data is looking at the relationships between variables to find variables that are measuring the same information or variables that are correlated. With variables that are measuring the same information perhaps one stands out as being representative of the group. During data exploration, you will want to use your domain knowledge to group variables into related sets or prioritize variables that are important based on the field or industry. Paring the data set down to related sets will allow you to look more closely at redundancy and relatedness within each set. When looking for correlation between variables the function *rxCrosstabs* is extremely useful. In [Crosstabs](how-to-revoscaler-crosstabs.md) you will see how to use rxCrosstabs and rxLinePlot to graph the relationship between two variables. Graphs allow for a really quick view of the relationship between two variables, which may come in handy when you have many variables to consider.
+Another key piece of data exploration for wide data is looking at the relationships between variables to find variables that are measuring the same information or variables that are correlated. With variables that are measuring the same information perhaps one stands out as being representative of the group. During data exploration, you want to use your domain knowledge to group variables into related sets or prioritize variables that are important based on the field or industry. Paring the data set down to related sets allow you to look more closely at redundancy and relatedness within each set. When looking for correlation between variables the function *rxCrosstabs* is useful. In [Crosstabs](how-to-revoscaler-crosstabs.md), you see how to use rxCrosstabs and rxLinePlot to graph the relationship between two variables. Graphs allow for a quick view of the relationship between two variables, which may come in handy when you have many variables to consider.
 
 ## Computing and Plotting Lorenz Curves
 
-The Lorenz curves was originally developed to illustrate income inequality. For example, it can show us what percentage of total income is attributed to the lowest earning 10% of the population. The rxLorenz function provides a ‘big data’ version, using approximate quantiles to quickly compute the cumulative distribution by quantile in a single pass through the data.
+The Lorenz curves were originally developed to illustrate income inequality. For example, it can show us what percentage of total income is attributed to the lowest earning 10% of the population. The rxLorenz function provides a ‘big data’ version, using approximate quantiles to quickly compute the cumulative distribution by quantile in a single pass through the data.
 
 The rxLorenz function requires an *orderVarName*, the name of the variable used to compute the quantiles. A separate *valueVarName* can also be specified. This is the name of the variable used to compute the mean values by quantile. By default, the same variable is used for both. We can continue to use the Census Workers data set as an example, computing a Lorenz curve for the distribution of income:
 

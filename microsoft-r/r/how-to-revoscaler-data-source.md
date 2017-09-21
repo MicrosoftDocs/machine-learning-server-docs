@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Data source objects in RevoScaleR"
+title: "Data source objects in RevoScaleR (Machine Learning Server) | Microsoft Docs"
 description: "Learn when and how to create data source objects in R code leveraging the RevoScaleR function libraries."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Data Sources
+# Data Sources in RevoScaleR
 
 A *data source* in RevoScaleR is an R object representing a data set. It is the return object of **rxImport** for read operations and **rxDataStep** for write operations. Although the data itself may be on disk, a data source is an in-memory object that allows you to treat data from disparate sources in a consistent manner within RevoScaleR. 
 
@@ -58,7 +58,7 @@ You can create a data source the same way you create any object in R, by giving 
 		> myTextDS <- RxTextData("/usr/lib64/microsoft-r/3.3/lib64/R/library/RevoScaleR/SampleData/claims.txt")
 
 		# Load sample text file on Windows. Remember to replace Window's \ with R's /
-		> myTextDS <- RxTextData("C:/Program Files/Microsoft/R Server/R_SERVER/library/RevoScaleR/SampleData/claims.txt")
+		> myTextDS <- RxTextData("C:/Program Files/Microsoft/ML Server/R_SERVER/library/RevoScaleR/SampleData/claims.txt")
 
 As a coding best practice, create a file object first, and pass that to the data source:
 
@@ -70,7 +70,7 @@ After the data source object is created, you can return object properties, preco
 		# Return properties
 		> myTextDS
 			RxTextData Source
-			"C:/Program Files/Microsoft/R Server/R_SERVER/library/RevoScaleR/SampleData/claims.txt"
+			"C:/Program Files/Microsoft/ML Server/R_SERVER/library/RevoScaleR/SampleData/claims.txt"
 			centuryCutoff: 20
 			rowsToSniff: 10000
 			rowsToSkip: 0
@@ -91,7 +91,7 @@ After the data source object is created, you can return object properties, preco
 
 		# Return first 10 rows			
 		> rxGetInfo(myTextDS, numRows=10)
-			File name: C:/Program Files/Microsoft/R Server/R_SERVER/library/RevoScaleR/SampleData/claims.txt 
+			File name: C:/Program Files/Microsoft/ML Server/R_SERVER/library/RevoScaleR/SampleData/claims.txt 
 			Data Source: Text 
 			Data (10 rows starting with row 1):
 			RowNum   age car.age type cost number
@@ -215,7 +215,7 @@ Compute a regression, passing the data source as the data argument to **rxLinMod
 	  Linear Regression Results for: cost ~ age + car_age
 	  Data: sourceDataSAS (RxSasData Data Source)
 	  File name:
-	      C:/Program Files/Microsoft/R Server/R_SERVER/library/RevoScaleR/SampleData/claims.sas7bdat
+	      C:/Program Files/Microsoft/ML Server/R_SERVER/library/RevoScaleR/SampleData/claims.sas7bdat
 	  Dependent variable(s): cost
 	  Total independent variables: 13 (Including number dropped: 2)
 	  Number of valid observations: 123
