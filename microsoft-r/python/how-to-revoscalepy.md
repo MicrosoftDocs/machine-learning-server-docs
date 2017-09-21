@@ -30,9 +30,9 @@ This article introduces Python functions in a **revoscalepy** package with Apach
 + Hadoop provides a distributed file system with HDFS.
 + Yarn provides the job scheduling infrastructure.
 + Spark provides the processing framework. 
-+ revoscalepy provides scalable and high-performance data management, analysis, and visualization Python functions. 
++ revoscalepy provides scalable and high-performance data management, analytical, and visualization Python functions. 
 
-When you set the [compute context](../r/concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue, or tracking the physical location of data in HDFS; Spark does both tasks for you.
+When you set the [compute context](../r/concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy functions automatically distribute the workload across all the data nodes. There is no overhead in managing jobs or the queue, or tracking the physical location of data in HDFS; Spark does both for you.
 
 > [!Note]
 > For installation instructions, see [Install Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md).
@@ -88,43 +88,62 @@ d_s = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf
 
 ### Import data into a data frame
 
-Data is automatically loaded into a data frame, but you can load it explicity using the rx_import and following syntax. In mlserver-python, you can use head and tail functions, similar to R, to return the first or last part of the data set.
+Data is automatically loaded into a data frame even without rx_import, but you can load it explicitly using the rx_import , which is useful if you want to include parameters. 
+
+In mlserver-python, you can use head and tail functions, similar to R, to return the first or last part of the data set.
 
 ```python
-airlinedata = rx_import(input_data = d_s)
+airlinedata = rx_import(input_data = d_s, outFile="/tmp/airExample.xdf")
 airlinedata.head()
 ```
-
-## Get information from revoscalepy
-
-+ Get the edition, which determines capacity/capability available to you.
-+ List data sources
-+ Read objects
 
 ## Summarize data
 
 To quickly understand fundamental characteristics of your data, use the **rx_summary** function to return basic statistical descriptors. Mean, standard deviation, and min-max values. A count of total observations, missing observations, and valid observations is included.
 
-A minimum specification of the [rx_summmary](../python-reference/revoscalepy/rx-summary.md) function consists of a valid data source object and a formula giving the fields to summarize.
+A minimum specification of the [rx_summmary](../python-reference/revoscalepy/rx-summary.md) function consists of a valid data source object and a formula giving the fields to summarize. The formula is symbolic, providing variables used in the model. and typically does not contain a response variable. It should be of the form of ~ terms. 
 
-The formula is symbolic and typically does not contain a response variable. It should be of the form of ~ terms. 
-
-+ Get the term list from a data source: `revoscalepy.rx_get_var_names(data_source)`
+> [!Tip]
+> Get the term list from a data source to see what is available: `revoscalepy.rx_get_var_names(data_source)`
 
 ```python
-airlinedata = rx_import(input_data = d_s)
-airlinedata.head()
+import os
+from revoscalepy import rx_summary, RxOptions, RxXdfData
+sample_data_path = RxOptions.get_option("sampleDataDir")
+ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
+summary = rx_summary("ArrDelay+DayOfWeek", ds)
+print(summary)
 ```
 
-## Define and train models, score data
+## Create models
 
-+ Logistic regression -- link
-+ Linear regression
-+ Predictions
+The following examples produce a linear regression, followed by predicted values for the linear regression model.
 
 ```python
-airlinedata = rx_import(input_data = d_s)
-airlinedata.head()
+# Linear regression
+import os
+import tempfile
+from revoscalepy import RxOptions, RxXdfData, rx_lin_mod
+
+sample_data_path = RxOptions.get_option("sampleDataDir")
+in_mort_ds = RxXdfData(os.path.join(sample_data_path, "mortDefaultSmall.xdf"))
+
+lin_mod = rx_lin_mod("creditScore ~ yearsEmploy", in_mort_ds)
+print(lin_mod)
+```
+
+```python
+# Add predicted values
+import os
+from revoscalepy import RxOptions, RxXdfData, rx_lin_mod, rx_predict, rx_data_step
+
+sample_data_path = RxOptions.get_option("sampleDataDir")
+mort_ds = RxXdfData(os.path.join(sample_data_path, "mortDefaultSmall.xdf"))
+mort_df = rx_data_step(mort_ds)
+
+lin_mod = rx_lin_mod("creditScore ~ yearsEmploy", mort_df)
+pred = rx_predict(lin_mod, data = mort_df)
+print(pred.head())
 ```
 
 ## See Also
