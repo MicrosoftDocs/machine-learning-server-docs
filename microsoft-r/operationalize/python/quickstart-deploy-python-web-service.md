@@ -61,10 +61,8 @@ The notebook example walks you through how to:
 > * Create and run a linear model locally
 > * Authenticate with Machine Learning Server
 > * Publish the model as a Python web service on Machine Learning Server
-> * Consume the service and make a prediction
-> * List all services on Machine Learning Server
-> * Retrieve a web service object for consumption
-> * Delete a service
+> * Examine, test, and consume the service
+> * Delete the service
 
 
 ### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/web-services/deploy-consume/Quickstart_Publish_Python_Web_Service.ipynb).
