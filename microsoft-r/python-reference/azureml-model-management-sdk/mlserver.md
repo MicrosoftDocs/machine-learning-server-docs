@@ -38,7 +38,7 @@ azureml.deploy.server.MLServer
 
 
 
-Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization.md#operationalization)
+Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization.md)
 
 This module provides a service implementation for the ML Server.
 
@@ -187,7 +187,7 @@ supports the following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service.md) representing the
 realtime service *redeployed*.
 
 
@@ -309,7 +309,7 @@ following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service.md) representing the
 service *deployed*.
 
 
@@ -375,7 +375,7 @@ most recent service will be returned.
 
 ### Returns
 
-A new instance of [`Service`](service.md#service).
+A new instance of [`Service`](service.md).
 
 
 ### HttpException
@@ -512,7 +512,7 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition#realtimedefinition) instance for fluent API
+A [`RealtimeDefinition`](realtime-definition.md) instance for fluent API
 chaining.
 
 
@@ -578,7 +578,7 @@ supports the following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service.md) representing the
 realtime service *redeployed*.
 
 
@@ -671,7 +671,7 @@ supports the following optional properties:
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service.md) representing the
 service *deployed*.
 
 
@@ -715,5 +715,5 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition) instance for fluent API
+A [`ServiceDefinition`](service-definition.md) instance for fluent API
 chaining.

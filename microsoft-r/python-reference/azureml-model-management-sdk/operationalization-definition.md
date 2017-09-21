@@ -95,7 +95,7 @@ the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition.md#operationalization-definition)) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
 
@@ -115,7 +115,7 @@ To be implemented by subclasses.
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service.md) representing the
 service *deployed*.
 
 
@@ -142,7 +142,7 @@ The description of the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition.md#operationalization-definition)) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.
 
 
 
@@ -162,7 +162,7 @@ To be implemented by subclasses.
 
 ### Returns
 
-A new instance of [`Service`](service.md#service) representing the
+A new instance of [`Service`](service.md) representing the
 service *deployed*.
 
 
@@ -189,4 +189,4 @@ The version of the service.
 
 ### Returns
 
-Self [`OperationalizationDefinition`](operationalization-definition#operationalization-definition.md#operationalization-definition)) for fluent API.
+Self [`OperationalizationDefinition`](operationalization-definition.md) for fluent API.

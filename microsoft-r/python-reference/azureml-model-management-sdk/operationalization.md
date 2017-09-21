@@ -215,7 +215,7 @@ The web service name.
 
 ### Returns
 
-A [`RealtimeDefinition`](realtime-definition#realtimedefinition) instance for fluent API
+A [`RealtimeDefinition`](realtime-definition.md) instance for fluent API
 chaining.
 
 
@@ -278,5 +278,5 @@ The web service name.
 
 ### Returns
 
-A [`ServiceDefinition`](service-definition) instance for fluent API
+A [`ServiceDefinition`](service-definition.md) instance for fluent API
 chaining.
