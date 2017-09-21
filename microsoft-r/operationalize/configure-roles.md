@@ -129,7 +129,7 @@ On each web node, edit the appsettings.json configuration file in order to decla
    }
    ``` 
 
-   The 'CacheLifeTimeInMinutes' attribute was added in Machine Learning Server 9.2 to indicate the length of time that Machine Learning Server caches the information received from LDAP or AAD regarding user group membership. After the cache lifetime elapses, the roles and users are checked again. If you make changes to the groups in your LDAP or AAD configuration, those changes aren't detected by Machine Learning Server until the cache lifetime expires and the configuration is checked again. 
+   The 'CacheLifeTimeInMinutes' attribute was added in Machine Learning Server 9.2.1 to indicate the length of time that Machine Learning Server caches the information received from LDAP or AAD regarding user group membership. After the cache lifetime elapses, the roles and users are checked again. If you make changes to the groups in your LDAP or AAD configuration, those changes aren't detected by Machine Learning Server until the cache lifetime expires and the configuration is checked again. 
    
    >[!IMPORTANT]
    Defining a Reader role might affect web service consumption latency as roles are being validated on each call to the web service.

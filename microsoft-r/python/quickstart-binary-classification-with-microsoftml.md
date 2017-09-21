@@ -26,7 +26,7 @@ ms.technology:
 ---
 # An example of binary classification with the microsoftml Python package
 
-**Applies to: Microsoft Learning Server 9.2**
+**Applies to: Microsoft Learning Server 9.2.1**
 
 ## Objective
 
