@@ -56,7 +56,7 @@ Move on to tutorials for in-depth exploration.
 > [!Note]
 > You can use any R or Python IDE to write code using libraries from Machine Learning Server. Microsoft offers Python for Visual Studio and R for Visual Studio. To use Jupyter Notebook, see [How to configure Jupyter Noteboooks](python/how-to-revoscalepy-jupyter-nb-config.md).
 
-**See also**
+## See also
 
 + [What's new in Machine Learning Server](whats-new-in-machine-learning-server.md)
 + [Learning Resources](resources-more.md)
