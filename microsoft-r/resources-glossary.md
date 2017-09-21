@@ -210,6 +210,10 @@ An algorithm that takes a given set of values and a chunk of data, and then outp
 
 ## W
 
+**Web service**
+In Machine Learning Server, your R and Python code and models can be deployed as web services. Exposed as web services hosted in Machine Learning Server, these models and code can be accessed and consumed in R, Python, programmatically using REST APIs, or using Swagger generated client libraries. [Learn more...](operationalize/concept-what-are-web-services.md)
+
+
 **Write Once, Deploy Anywhere (WODA)**
 
 Refers to the ability to create script locally, with the option of running it remotely on any supported platform with minimal changes. In practice, some distributed platforms have specialized data handling requirements. You may have to specify a context-specific *data source* along with the *compute context* to enable execution on a different platform. In most cases, the bulk of your analysis scripts can proceed with no further changes.
