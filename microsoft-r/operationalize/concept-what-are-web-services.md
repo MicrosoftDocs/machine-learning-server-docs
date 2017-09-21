@@ -144,11 +144,13 @@ Destructive tasks, such as deleting a web service, are available only to the use
 
 ## See also
 
-**In R:**
+In R:
  + [Deploy and manage web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)     
-+ [List, get, and consume web services in R](../operationalize/how-to-consume-web-service-interact-in-r.md)    
+ + [List, get, and consume web services in R](../operationalize/how-to-consume-web-service-interact-in-r.md)    
+
  + [Asynchronous web service consumption via batch](../operationalize/how-to-consume-web-service-asynchronously-batch.md)    
 
-**In Python:**
+In Python:
  + [Deploy and manage web services in Python](../operationalize/python/how-to-deploy-manage-web-services.md)    
+
  + [List, get, and consume web services in Python](../operationalize/python/how-to-consume-web-services.md)    
