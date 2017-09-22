@@ -49,6 +49,8 @@ Before you begin this QuickStart, have the following ready:
 
 + The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-in-python.md) in Python, deploy your analytics as web services so others can consume them. 
 
++ Familiarity with Python. [Here's a video tutorial on Python programming](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
+
 
 ## Example code
 

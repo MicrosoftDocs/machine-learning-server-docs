@@ -42,7 +42,9 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 ## Prerequisites
 
-Before you begin this QuickStart, have an instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option.
+Before you begin this QuickStart, have an instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option. 
+
+Familiarity with Python is assumed. [Here's a video tutorial on Python programming](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
 
 ## Example code
 
