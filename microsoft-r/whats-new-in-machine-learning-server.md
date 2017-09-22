@@ -30,7 +30,7 @@ ms.technology: "r-server"
 Machine Learning Server 9.2.1 expands upon Microsoft R Server 9.1 with new Python libaries for integrating machine learning and data science into analytical solutions in the enterprise. Language-specific development is available when you add Python or R support (or both) during setup.
 
 > [!Note]
-> Read our [release announcement for Machine Learning Serve 9.2.1](https://aka.ms/mlserver92). <br/><br/>For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
+> Read our [release announcement for Machine Learning Server 9.2.1](https://aka.ms/mlserver92). <br/><br/>For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## Python development
 
