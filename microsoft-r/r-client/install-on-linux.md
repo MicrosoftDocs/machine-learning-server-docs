@@ -31,7 +31,7 @@ R Client allows you to work with production data locally using the full set of S
 
 To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Machine Learning Server (or Microsoft R Server) such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and Machine Learning Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)  
 
-You can offload heavy processing to Machine Learning Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package.  
+You can offload heavy processing to Machine Learning Server or test your analytics during their development. You by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package.  
 
 For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.md#r-client-whats-new).
 
@@ -49,7 +49,14 @@ Also included and required for R Client setup is Microsoft R Open 3.4.1.  Micros
 
 ## Setup Requirements
 
-+ A package manager (yum for RHEL systems, zypper for SLES systems)
++ A package manager
+  | Package manager | Platform |
+  |-----------------|----------|
+  |[yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) | RHEL, CentOS|
+  |[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu onlne |
+  | [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
+  |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
+  |[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
 
 + Root or super user permissions
 
@@ -57,50 +64,82 @@ Also included and required for R Client setup is Microsoft R Open 3.4.1.  Micros
 
 + You may need to disable your antivirus software. If you do, please turn it back on as soon as you are finished.
 
+## Installation paths
+After installation completes, software can be found at the following paths:
++ Install root: /opt/microsoft/rclient/3.4.1
++ Microsoft R Open root: /opt/microsoft/ropen/3.4.1
++ Executables like Revo64 are under /usr/bin
+
+There is no support for side-by-side installations of older and newer versions. 
+
 ## How to install (with internet access)
 
-This section walks you through an R Client 3.4.1 deployment using the `install.sh` script. Under these instructions, your installation includes the ability to use the RevoScalerR and MicrosoftML packages.
+This section walks you through an R Client 3.4.1 deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML packages, and mrsdeploy.
 
+The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setitng the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-1. Log in as root or a user with super user privileges (`sudo su`). The following instructions assume root install.
+ 
+**On Ubuntu 14.04 - 16.04**
 
-1. Get the zipped installer file from http://aka.ms/rclientlinux. <br>
-   Download the software to a writable directory, such as **/tmp**.
+With root or sudo permissions, run the following commands:
+```
+# Install as root or sudo
+sudo su
 
-1. Switch to the **/tmp** directory (assuming it's the download location).
+# Set location of the package repository. 
+# On Ubuntu 14.04.
+# wget https://packages.microsoft.com/ubuntu/14.04/prod/packages-microsoft-prod.deb 
+# On Ubuntu 16.04.
+wget https://packages.microsoft.com/ubuntu/16.04/prod/packages-microsoft-prod.deb 
 
-1. Unpack the distribution and run the installation script.
+dpkg -i packages-microsoft-prod.deb 
 
-1. Unpack the file:
+# Verification step: look for the mlserver.list configuration file
+ls -la /etc/apt/sources.list.d/
 
-   ```
-   [tmp] $ tar zxvf microsoft-r-client-3.4.1.tar.gz
-   ```
+# Update packages on your system
+apt-get update
 
-   The distribution is unpacked into an `MRC_Linux` folder at the download location. The distribution includes the following files:
+# If your system does not have the https apt transport option
+apt-get install apt-transport-https
 
-   | File | Description |
-   |------|-------------|
-   |`install.sh` | Script for installing R Client. |
-   | `EULA.txt` | End user license agreements for each separately licensed component. |
-   | DEB folder | Contains Microsoft R packages for deployment on Ubuntu. |
-   | RPM folder | Contains Microsoft R packages for deployment on CentOS/RHEL and SUSE |
+# Install the packages
+apt-get install microsoft-r-client-packages-3.4.1
+```     
 
-   Microsoft R Client packages include a core engine and function libraries, platform packages, and machine learning.
+**Red Hat and CentOS 6/7**
 
-1. Install R Client for Linux, which is deployed by running the install script with no parameters.
+With root or sudo permissions, run the following commands:
+```
+# Install as root or sudo
+sudo su
 
-1. Verify system repositories are up to date:
+# Set location of the package repository. # #On RHEL 6:
+#rpm -Uvh https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.1.rpm
+# On RHEL 7:
+wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.1.rpm
 
-   ```
-   [root@localhost tmp] $ yum clean all
-   ```
+# Verification step: look for the mlserver.list configuration file
+ls -la /etc/apt/sources.list.d/
 
-1. Change to the `MRC_Linux` directory containing the installation script:
+# Install the packages
+yum install microsoft-r-client-packages-3.4.1
+``` 
 
-   ```
-   [root@localhost tmp] $ cd /tmp/MRC_Linux
-   ```
+**SUSE Linux Enterprise Server 11**
+
+With root or sudo permissions, run the following commands:
+```
+# Set location of the package repository. For example for SLES 11.
+rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.1.rpm
+
+# Verification step: look for the mlserver.list configuration file
+ls -la /etc/apt/sources.list.d/
+
+# Install the packages
+zypper install microsoft-r-client-packages-3.4.1
+``` 
+
 
 1. Run the script. 
 
@@ -116,7 +155,7 @@ This section walks you through an R Client 3.4.1 deployment using the `install.s
 
    Installation begins immediately. Installer output shows the packages and location of the log file. 
    
-   You can now [set up your IDE and try out some sample code](../r-client-get-started.md).
+You can now [set up your IDE and try out some sample code](../r-client-get-started.md).
 
 <br>
 <a name="offline"></a>
