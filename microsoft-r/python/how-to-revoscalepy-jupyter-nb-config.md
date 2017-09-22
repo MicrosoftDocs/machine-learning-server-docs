@@ -54,14 +54,6 @@ Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 
 8. After the notebook loads, click **Run** to step through the content. For this particular notebook, no additional configuration is required. For the azureml notebooks, read the readme for configuration requirements.
 
-## On Linux or a Spark cluster edge node
-
-For a local single user experience, we recommend that you run Jupyter Notebook on the edge node of the cluster. 
-
-1. Download our Python samples, which include two notebooks, from Github: [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples)
-
-3. Start the Jupyter Notebook App by typing this at the command line: `jupyter notebook`
-
 
 ## Configure for multi-user access
 
