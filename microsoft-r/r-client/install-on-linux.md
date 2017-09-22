@@ -27,7 +27,7 @@ ms.technology: "r-client"
 
 Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](../r/tutorial-revoscaler-data-import-transform.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
+R Client allows you to work with production data locally using the full set of RevoScaleR functions, but there are some constraints. On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
 To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Machine Learning Server (or Microsoft R Server) such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and Machine Learning Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)  
 
@@ -88,11 +88,9 @@ sudo su
 
 # Set location of the package repository. 
 # On Ubuntu 14.04.
-# wget https://packages.microsoft.com/ubuntu/14.04/prod/packages-microsoft-prod.deb 
+# wget http://packages.microsoft.com/ubuntu/14.04/prod/packages-microsoft-prod.deb 
 # On Ubuntu 16.04.
-wget https://packages.microsoft.com/ubuntu/16.04/prod/packages-microsoft-prod.deb 
-
-dpkg -i packages-microsoft-prod.deb 
+wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb 
 
 # Verification step: look for the mlserver.list configuration file
 ls -la /etc/apt/sources.list.d/
@@ -100,7 +98,7 @@ ls -la /etc/apt/sources.list.d/
 # Update packages on your system
 apt-get update
 
-# If your system does not have the https apt transport option
+# Optionally, if your system does not have the https apt transport option
 apt-get install apt-transport-https
 
 # Install the packages
@@ -114,13 +112,12 @@ With root or sudo permissions, run the following commands:
 # Install as root or sudo
 sudo su
 
-# Set location of the package repository. # #On RHEL 6:
-#rpm -Uvh https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.1.rpm
+# Set location of the package repository. 
+# On RHEL 6:
+# rpm -Uvh http://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 # On RHEL 7:
-wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.1.rpm
+wget http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
-# Verification step: look for the mlserver.list configuration file
-ls -la /etc/apt/sources.list.d/
 
 # Install the packages
 yum install microsoft-r-client-packages-3.4.1
@@ -131,10 +128,8 @@ yum install microsoft-r-client-packages-3.4.1
 With root or sudo permissions, run the following commands:
 ```
 # Set location of the package repository. For example for SLES 11.
-rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.1.rpm
+sudo rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm
 
-# Verification step: look for the mlserver.list configuration file
-ls -la /etc/apt/sources.list.d/
 
 # Install the packages
 zypper install microsoft-r-client-packages-3.4.1

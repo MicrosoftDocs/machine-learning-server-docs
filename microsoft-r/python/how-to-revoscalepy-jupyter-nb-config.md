@@ -38,7 +38,7 @@ Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 
 1. To download just the .ipynb files from the Github repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
 
-  + Go to the source page  [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
+  + Go to the source page [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
   + In the Github page for this sample, click **Raw** to view the Python script for this notebook.
   + Use the browser save-as command to save a local copy of the file. Use a **.ipynb** file extension.
 
@@ -69,15 +69,19 @@ Run the following command to install the kernel:
 sudo /usr/bin/anaconda/bin/jupyter kernelspec install /opt/microsoft/mlserver/9.2.1/libraries/jupyter/kernels/MMLSPy
 ```
 
-Or, do the following steps (it should produce the same results):
+## Check kernel installation
+
+Verify the file is in the expected location.
 
 1. Run `jupyter –data-dir` from the node on which Jupyter Notebook Server is installed.
 2. Note the path returned by `-data-dir`. This is where Jupyter stores its data directories, including kernels.
-3. Copy the **MMLSPy** directory from `/opt/microsoft/mlserver/9.2.1/libraries/kernels/` to the kernels subdirectory under the data directory.
+3. Navigate to the folder. You should see **MMLSPy** listed.
+
+If the installation command did not succeed, you can manually copy the **MMLSPy** directory from `/opt/microsoft/mlserver/9.2.1/libraries/kernels/` to the kernels subdirectory under the data directory.
 
 You might need to restart your server in order for the server to pick up the kernel.
 
-## Test the configuration
+## Use the MMLSPy notebook option
 
 In Jupyter dashboard, click **New** to create a new notebook. You should see the new kernel (MMLSPy) in the drop down.
 
