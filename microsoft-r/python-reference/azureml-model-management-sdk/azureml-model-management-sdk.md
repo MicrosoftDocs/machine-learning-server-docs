@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What is azureml-model-management-sdk - Machine Learning Server | Microsoft Docs"
+title: "azureml-model-management-sdk package for Python - Machine Learning Server | Microsoft Docs"
 description: "azureml-model-management-sdk Functions"
 keywords: "azureml-model-management-sdk package reference"
 author: "j-martens"

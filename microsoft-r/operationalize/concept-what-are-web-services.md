@@ -28,19 +28,15 @@ ms.technology:
 
 **Applies to: Machine Learning Server**
 
-You can offer users a chance to use your code and predictive models by deploying them as web service hosted in Machine Learning Server. Web services are deployed to facilitate the consumption and integration of the operationalized models and code they contain. 
+In a nutshell, your R and Python code and models can be deployed as web services. Exposed as web services hosted in Machine Learning Server, these models and code can be accessed and consumed in R, Python, programmatically using REST APIs, or using Swagger generated client libraries. Web services can be deployed from one platform and consumed on another. 
 
-Web services in Machine Learning Server can be based on Python or R. They can also be deployed on one platform and consumed in another. 
+Offer users a chance to use your code and predictive models by deploying them as web services. Web services  facilitate the consumption and integration of the operationalized models and code they contain.  
 
 Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model on demand. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
+**Requirement!** Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
+
 There are two types of web services: standard and realtime. 
-
-## Requirements
-
-Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
-
-When you deploy your code and models, they are published as web services in Machine Learning Server and can be operationalized by others.  Web services can be versioned and managed by their creators or those users with [special permissions](#permissions).
 
 <a name="standard"></a>
 
@@ -56,19 +52,19 @@ Standard web services, like all web services, are identified by their name and v
 
 ## Realtime web services
 
+Realtime web services do not support arbitrary code and only accept models created with the supported functions from packages installed with the product. See the following sections for the list of supported functions by language and package.
+
 Realtime web services offer even lower latency to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not depend on an interpreter at consumption time even though the services use the objects created by the model. Therefore, fewer additional resources and less time is spent spinning up a session for each call. Additionally, the model is only loaded once in the compute node and can be scored multiple times.
 
 For realtime services, you do **not** need to specify:
 + inputs and outputs (dataframes are assumed)
 + code (only serialized models are supported)
 
-Realtime web services do not support arbitrary code and only accept models created with the supported functions from packages installed with the product. See the following sections for the list of supported functions by language and package.
-
 **See a realtime web service deployment example: [R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](../operationalize/python/how-to-deploy-manage-web-services.md#realtime-example)**
 
 <a name=r></a>
 
-### Supported functions in R
+### Supported R functions for realtime
 
 A model object created with these supported functions:
 
@@ -87,7 +83,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 
 <a name=python></a>
 
-### Supported functions in Python
+### Supported Python functions for realtime
 
 |Python package|Supported functions|
 |-------------|--------------------|
@@ -108,13 +104,11 @@ If you do not specify a version, a globally unique identifier (GUID) is automati
 
 <a name="consume"></a>
 
-## Consuming
+## Who consumes web services
 
 After a web service has been published, authenticated users can consume that web service on various platforms and in various languages.  You can consume directly in R or Python, using APIs, or in your preferred language via Swagger.
 
 You can make it easy for others to find your web services by providing them with the name and version of the web service.
-
-### Who consumes web services
 
 + **Data scientists** who want to explore and consume the services directly [in R](../operationalize/how-to-consume-web-service-interact-in-r.md#consume-service) and [in Python](../operationalize/python/how-to-consume-web-services.md#consume-service).
 
@@ -123,7 +117,7 @@ You can make it easy for others to find your web services by providing them with
 + **Application developers** who want to call and integrate a web service into their applications. Developers can generate client libraries for integration using the Swagger-based JSON file generated during service deployment. Read "[How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)" for more details.  Services can also be consumed using the [RESTful APIs](concept-api.md) that provide direct programmatic access to a service's lifecycle.
 
 
-### How are web services consumed
+## How are web services consumed
 
 Web services can be consumed using one of these approaches:
 
@@ -148,11 +142,13 @@ Destructive tasks, such as deleting a web service, are available only to the use
 
 ## See also
 
-**In R:**
+In R:
  + [Deploy and manage web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)     
-+ [List, get, and consume web services in R](../operationalize/how-to-consume-web-service-interact-in-r.md)    
+ + [List, get, and consume web services in R](../operationalize/how-to-consume-web-service-interact-in-r.md)    
+
  + [Asynchronous web service consumption via batch](../operationalize/how-to-consume-web-service-asynchronously-batch.md)    
 
-**In Python:**
+In Python:
  + [Deploy and manage web services in Python](../operationalize/python/how-to-deploy-manage-web-services.md)    
+
  + [List, get, and consume web services in Python](../operationalize/python/how-to-consume-web-services.md)    

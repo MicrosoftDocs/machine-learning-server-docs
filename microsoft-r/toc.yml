@@ -333,23 +333,23 @@
           href: install/r-server-install-hadoop-yarnqueueusage.md
     - name: Choose a MicrosoftML algorithm
       href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
-  - name: "Operationalization: deploy & consume"
+  - name: "Operationalize models & code"
     items:
     - name: Python
       items:
-      - name: Authenticate
+      - name: Authenticate in Python
         href: operationalize/python/how-to-authenticate-in-python.md
-      - name: Deploy & manage services
+      - name: Deploy & manage web services
         href: operationalize/python/how-to-deploy-manage-web-services.md
-      - name: Find & consume services
+      - name: Consume services synchronously
         href: operationalize/python/how-to-consume-web-services.md
     - name: R
       items:
-      - name: Deploy & manage services
+      - name: Deploy & manage web services
         href: operationalize/how-to-deploy-web-service-publish-manage-in-r.md
-      - name: Consume (request-response)
+      - name: Consume services synchronously
         href: operationalize/how-to-consume-web-service-interact-in-r.md
-      - name: Consume (asynchronous)
+      - name: Consume services asynchronously
         href: operationalize/how-to-consume-web-service-asynchronously-batch.md
       - name: 'DeployR 8.x [Archive]'
         items:
