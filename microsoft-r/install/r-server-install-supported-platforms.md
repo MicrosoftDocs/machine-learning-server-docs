@@ -31,11 +31,11 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Machine Learning Server 9.2.1
 
-Python support is based on Anaconda 4.2 over Python 3.5. R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), which is based on R-3.4.1.
+R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), which is based on R-3.4.1. Python support is based on Anaconda 4.2 over Python 3.5. 
 
 | SKU | Platforms |
 |-----|-----------|
-| [Machine Learning <br/>Server for Hadoop](machine-learning-server-hadoop-install.md) | Hadoop Distributions: [Cloudera CDH 5.7-5.11](machine-learning-server-cloudera-install.md), Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>You can install Machine Learning Server on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.<br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**, Ubuntu 14.04 and 16.04 <br/><br/>Spark 2.0 and 2.4 hrough a Hadoop distribution on CDH, HDP, or MapR. <br/>Spark 1.6 support is dropped for this release. |
+| [Machine Learning <br/>Server for Hadoop](machine-learning-server-hadoop-install.md) | Hadoop Distributions: [Cloudera CDH 5.7-5.11](machine-learning-server-cloudera-install.md), Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>You can install Machine Learning Server on [open source Apache Hadoop](http://hadoop.apache.org) but we can only offer support for commercial distributions.<br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**, Ubuntu 14.04 and 16.04 <br/><br/>Spark 2.0 and 2.4 hrough a Hadoop distribution on CDH, HDP, or MapR. <br/>Spark 1.6 support is dropped for this release. |
 | [Machine Learning <br/>Server for Linux](machine-learning-server-linux-install.md) | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>1</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**<br/>Ubuntu 14.04 and 16.04|
 | [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup><big>1</big></sup>**, Windows 8.1 **<sup><big>1</big></sup>**, Windows 10 **<sup><big>1</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
 
