@@ -44,12 +44,18 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 Before you begin this QuickStart, have the following ready:
 
-+ An instance of [Machine Learning Server ](../../what-is-machine-learning-server.md) installed with the Python option, which has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure.
++ An instance of Machine Learning Server with Python, **which has been [configured to operationalize analytics](../../operationalize/configure-machine-learning-server-one-box.md)**. For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure. Or, for 9.2.1 on Linux, for example, you can configure to operationalize with:
+  ```
+  cd /opt/microsoft/mlserver/9.2.1/o16n/
+  sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
+  # follow script prompts to configure a one-box or enterprise setup.
+  ```
  
-
 + The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-in-python.md) in Python, deploy your analytics as web services so others can consume them. 
 
 + Familiarity with Python. [Here's a video tutorial on Python programming](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
+
++ Familiarity with Jupyter notebooks. This article explains [how to load sample Python notebooks from Machine Learning samples on Github. ](../../python/how-to-revoscalepy-jupyter-nb-config.md)
 
 
 ## Example code

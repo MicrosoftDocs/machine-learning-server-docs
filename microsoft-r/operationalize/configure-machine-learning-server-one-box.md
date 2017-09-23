@@ -54,7 +54,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux) so you can begin to configure a one-box setup.
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges from the Start menu (Windows) or root/sudo privileges (Linux) so you can begin to configure a one-box setup.
 
     >[!NOTE]
     >To bypass the interactive configuration steps, specify the following argument and ['admin' password](../deployr/../operationalize/configure-authentication.md#local) when launching the utility:
