@@ -57,6 +57,8 @@ from azureml.deploy.server import MLServer
 # Define the location of the Machine Learning Server
 HOST = '{{https://YOUR_HOST_ENDPOINT}}'
 # And provide your username and password as a Python tuple
+# for local admin with password Pass123!
+# context = ('admin', 'Pass123!')
 context = ('{{YOUR_USERNAME}}', '{{YOUR_PASSWORD}}')
 client = DeployClient(HOST, use=MLServer, auth=context)
 ```
