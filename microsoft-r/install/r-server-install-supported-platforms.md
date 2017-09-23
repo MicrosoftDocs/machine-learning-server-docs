@@ -35,8 +35,8 @@ Python support is based on Anaconda 4.2 over Python 3.5. R support is based on [
 
 | SKU | Platforms |
 |-----|-----------|
-| Machine Learning Server for Hadoop | Hadoop <sup> 1, 4</sup> Distributions: <br/>Cloudera CDH 5.7-5.11, Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>Operating Systems:<br/>RHEL 6.x and 7.x, SUSE Linux Enterprise Server 11 (SLES11) (<sup>2</sup>, <sup>4</sup>), Ubuntu 14.04 and 16.04|(<sup>2</sup>)<br/>Spark <sup> 3</sup>:<br/>Versions 2.0 and 2.4  |
-| Machine Learning Server for Linux | Red Hat Enterprise Linux (RHEL) and CentOS 6.x(<sup>4</sup>) and 7.x<br/>SLES11(<sup>4</sup>)<br/>Ubuntu 14.04 and 16.04|
+| Machine Learning Server for Hadoop | Hadoop <sup> 1, 4</sup> Distributions: <br/>Cloudera CDH 5.7-5.11, Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>Operating Systems:<br/>Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 <sup><big>2</big></sup>, **<sup><big>4</big></sup>**, Ubuntu 14.04 and 16.04|(<sup>2</sup>)<br/>Spark <sup> 3</sup>:<br/>Versions 2.0 and 2.4  |
+| Machine Learning Server for Linux | Red Hat Enterprise Linux  and CentOS 6.x(<sup>4</sup>) and 7.x<br/>SUSE Linux Enterprise Server 11(<sup>4</sup>)<br/>Ubuntu 14.04 and 16.04|
 | Machine Learning Server for Windows | Windows 7 SP1(<sup>4</sup>), Windows 8.1(<sup>4</sup>), Windows 10(<sup>4</sup>) <br/>Windows Server 2012 R2, Windows Server 2016 | 
 
 <sup>1</sup> You can install Machine Learning Server for Hadoop on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for CDH, HDP, or MapR.
@@ -45,7 +45,9 @@ Python support is based on Anaconda 4.2 over Python 3.5. R support is based on [
 
 <sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Your version of Hadoop must include a supported level of Spark (2.0-2.4). Spark 1.6 support is dropped for this release.
 
-<sup>4</sup> Limited availability of [operationalization](../what-is-operationalization.md) and [MicrosoftML algorithms](../r-reference/microsoftml/microsoftml-package.md) due to .NET Core platform dependency. Neither feature is supported on Linux or Windows client operating systems. On Hadoop, you can install the features on edge nodes, assuming the native file system is CentOS/RHEL 7.x or Ubuntu 14.04 (there is no support for either feature on SUSE SLES11).
+<sup>4</sup> **.NET Core platform dependency**: The following features require .NET Core:
++ The machine learning algorithms  in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) 
++ The ability to configure Machine Learning Server to [operationalize your R analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). These features are NOT available on the marked platforms. On Hadoop, you can install the features on edge nodes, assuming the native file system is CentOS/RHEL 7.x or Ubuntu 14.04 (there is no support for either feature on SUSE SLES11).
 
 
 ## Microsoft R Server 9.1
