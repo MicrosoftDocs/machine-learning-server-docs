@@ -44,7 +44,8 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 Before you begin this QuickStart, have the following ready:
 
-+ An instance of Machine Learning Server with Python, **which has been [configured to operationalize analytics](../../operationalize/configure-machine-learning-server-one-box.md)**. For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure. Or, for 9.2.1 on Linux, for example, you can configure to operationalize with:
++ An instance of Machine Learning Server with Python, **which has been [configured to operationalize analytics](../../operationalize/configure-machine-learning-server-one-box.md)**. For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure. 
+  For example, to configure Machine Learning Server 9.2.1 to operationalize on Linux:
   ```
   cd /opt/microsoft/mlserver/9.2.1/o16n/
   sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
