@@ -45,13 +45,8 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 Before you begin this QuickStart, have the following ready:
 
 > [!div class="checklist"]
-> * An instance of Machine Learning Server with Python **that's [configured to operationalize analytics](../../operationalize/configure-machine-learning-server-one-box.md)**. Try an [Azure Management Resource (ARM) template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) to quickly configure a server for operationalization. Or, to configure Machine Learning Server 9.2.1 on Linux, try:
-   ```
-   cd /opt/microsoft/mlserver/9.2.1/o16n/
-   sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-   # follow script prompts to configure a one-box or enterprise setup.
-   ```
-> * The [connection details to that server instance](../../operationalize/python/how-to-authenticate-in-python.md) from your administrator.  
+> * An instance of Machine Learning Server with Python that's **[configured to operationalize analytics](../../operationalize/configure-machine-learning-server-one-box.md)**. Try an [Azure Management Resource (ARM) template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) to quickly configure a server for operationalization. Or, to configure Machine Learning Server 9.2.1 on Linux, try:<br/>`cd /opt/microsoft/mlserver/9.2.1/o16n/`<br/>`sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll`<br/>`# follow script prompts to configure a one-box or enterprise setup.`
+> * The [connection details (host, username, password) to that server instance](../../operationalize/python/how-to-authenticate-in-python.md) from your administrator.  
 > * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
 > * Familiarity with Jupyter notebooks. Learn more on [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
 
