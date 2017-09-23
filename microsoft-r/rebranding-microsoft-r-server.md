@@ -26,11 +26,9 @@ ms.technology:
 
 # Microsoft R Server is now Microsoft Machine Learning Server
 
-In September 2017, Microsoft R Server was released under the new name of **Microsoft Machine Learning Server 9.2.1**. Developed from Microsoft R Server 9.x and the former Revolution R Enterprise products, significant machine learning and AI capabilities enhancements have been made in every release. In 9.2.1, Machine Learning Server brings support for the full data science lifecycle of your Python-based analytics. 
+In September 2017, Microsoft R Server was released under the new name of **Microsoft Machine Learning Server**. In 9.2.1, Machine Learning Server added support for the full data science lifecycle of Python-based analytics to its list of machine learning and AI capabilities enhancements. The R capabilities have also been enhanced. 
 
-The rebranding reflects that Python has joined R on the list of supported languages and capabilities. The R capabilities have also been enhanced. There is no loss of functionality for users of a prior R Server release.
-
-[Read the "What's new in this release."](whats-new-in-machine-learning-server.md)
+Read the ["What's new in this release."](whats-new-in-machine-learning-server.md)
 
 ## Building on our commitment to R
 
