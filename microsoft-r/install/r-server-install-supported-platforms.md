@@ -40,7 +40,10 @@ Python support is based on Anaconda 4.2 over Python 3.5. R support includes [Mic
 | [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup><big>1</big></sup>**, Windows 8.1 **<sup><big>1</big></sup>**, Windows 10 **<sup><big>1</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
 
 <sup>1</sup> **.NET Core platform dependency**: The following features require .NET Core and are therefore NOT supported on the marked platforms:
-(a) configuring Machine Learning Server to [operationalize your R analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization), and (b) the machine learning algorithms  in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md). On Hadoop, you can install these features on edge nodes, assuming the native file system is CentOS/RHEL 7.x or Ubuntu.
++ Configuring Machine Learning Server to [operationalize your R analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization), 
++ The machine learning algorithms  in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md). 
+
+On Hadoop, you can install these features on edge nodes, assuming the native file system is CentOS/RHEL 7.x or Ubuntu.
 
 
 ## Microsoft R Server 9.1
