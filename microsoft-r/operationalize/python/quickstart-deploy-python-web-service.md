@@ -44,19 +44,16 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 Before you begin this QuickStart, have the following ready:
 
-+ An instance of Machine Learning Server with Python, **which has been [configured to operationalize analytics](../../operationalize/configure-machine-learning-server-one-box.md)**. For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure. 
-  For example, to configure Machine Learning Server 9.2.1 to operationalize on Linux:
-  ```
-  cd /opt/microsoft/mlserver/9.2.1/o16n/
-  sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-  # follow script prompts to configure a one-box or enterprise setup.
-  ```
- 
-+ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-in-python.md) in Python, deploy your analytics as web services so others can consume them. 
-
-+ Familiarity with Python. [Here's a video tutorial on Python programming](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
-
-+ Familiarity with Jupyter notebooks. This article explains [how to load sample Python notebooks from Machine Learning samples on Github. ](../../python/how-to-revoscalepy-jupyter-nb-config.md)
+> [!div class="checklist"]
+> * An instance of Machine Learning Server with Python, **which has been [configured to operationalize analytics](../../operationalize/configure-machine-learning-server-one-box.md)**. For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure. <br/><br/>For example, to configure Machine Learning Server 9.2.1 to operationalize on Linux:
+   ```
+   cd /opt/microsoft/mlserver/9.2.1/o16n/
+   sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
+   # follow script prompts to configure a one-box or enterprise setup.
+   ```
+> * The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-in-python.md) in Python, deploy your analytics as web services so others can consume them. 
+> * Familiarity with Python. [Here's a video tutorial on Python programming](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
+> * Familiarity with Jupyter notebooks. This article explains [how to load sample Python notebooks from Machine Learning samples on Github. ](../../python/how-to-revoscalepy-jupyter-nb-config.md)
 
 
 ## Example code
@@ -66,12 +63,11 @@ The example for this quickstart is stored in a Jupyter notebook. This notebook f
 This example walks through the deployment of a Python model as a web service hosted in Machine Learning Server. We will build a simple linear model using the [rx_lin_mod](../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server or [locally on Windows machine](../../install/python-libraries-interpreter.md). This package requires a connection to Machine Learning Server.  
 
 The notebook example walks you through how to:
-> [!div class="checklist"]
-> * Create and run a linear model locally
-> * Authenticate with Machine Learning Server
-> * Publish the model as a Python web service on Machine Learning Server
-> * Examine, test, and consume the service
-> * Delete the service
+* Create and run a linear model locally
+* Authenticate with Machine Learning Server
+* Publish the model as a Python web service on Machine Learning Server
+* Examine, test, and consume the service
+* Delete the service
 
 
 ### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Quickstart_Publish_Python_Web_Service.ipynb).
