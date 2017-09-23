@@ -37,17 +37,11 @@ R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), w
 
 | SKU | Platforms |
 |-----|-----------|
-| Machine Learning <br/>Server for Hadoop | Hadoop Distributions:**<sup><big>1</big></sup>** Cloudera CDH 5.7-5.11, Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>2,4</big></sup>**, Ubuntu 14.04 and 16.04 **<sup><big>2</big></sup>**<br/><br/>Spark **<sup><big>3</big></sup>** 2.0 and 2.4  |
-| Machine Learning <br/>Server for Linux | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>4</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>4</big></sup>**<br/>Ubuntu 14.04 and 16.04|
-| Machine Learning <br/>Server&nbsp;for&nbsp;Windows | Windows 7 SP1 **<sup><big>4</big></sup>**, Windows 8.1 **<sup><big>4</big></sup>**, Windows 10 **<sup><big>4</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 | 
+| [Machine Learning <br/>Server for Hadoop](machine-learning-server-hadoop-install.md) | Hadoop Distributions: [Cloudera CDH 5.7-5.11](machine-learning-server-cloudera-install.md), Hortonworks HDP 2.4-2.6, MapR 5.0-5.2  You can install Machine Learning Server for Hadoop on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.<br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**, Ubuntu 14.04 and 16.04 <br/><br/>Spark 2.0 and 2.4 hrough a Hadoop distribution on CDH, HDP, or MapR. Spark 1.6 support is dropped for this release. |
+| [Machine Learning <br/>Server for Linux](machine-learning-server-linux-install.md) | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>1</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**<br/>Ubuntu 14.04 and 16.04|
+| [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup><big>1</big></sup>**, Windows 8.1 **<sup><big>1</big></sup>**, Windows 10 **<sup><big>1</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
 
-<sup>1</sup> You can install Machine Learning Server for Hadoop on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for CDH, HDP, or MapR.
-
-<sup>2</sup> Cloudera installation using the [built-in parcel installation script](machine-learning-server-cloudera-install.md) can execute on CentOS/RHEL 7.0. The parcel generator excludes any R Server features that it cannot install. If parcel installation is too restrictive, follow the instructions for a generic [Hadoop installation](machine-learning-server-hadoop-install.md).
-
-<sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Your version of Hadoop must include a supported level of Spark (2.0-2.4). Spark 1.6 support is dropped for this release.
-
-<sup>4</sup> **.NET Core platform dependency**: The following features require .NET Core and are therefore NOT supported on the marked platforms:
+<sup>1</sup> **.NET Core platform dependency**: The following features require .NET Core and are therefore NOT supported on the marked platforms:
 (a) configuring Machine Learning Server to [operationalize your R analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization), and (b) the machine learning algorithms  in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md). On Hadoop, you can install these features on edge nodes, assuming the native file system is CentOS/RHEL 7.x or Ubuntu.
 
 

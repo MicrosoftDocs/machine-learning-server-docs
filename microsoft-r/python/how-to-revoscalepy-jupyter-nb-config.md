@@ -25,7 +25,7 @@ ms.technology: ""
 
 # How to use Jupyter notebooks in single-user and multi-user servers
 
-This article explains how to load sample Python notebooks for Machine Learning samples on Github. It also explains how to add our libraries to a remote Jupyter server acting as central hub for multi-user notebooks on your network.
+This article explains how to load sample Python notebooks from Machine Learning samples on Github. It also explains how to add our libraries to a remote Jupyter server acting as central hub for multi-user notebooks on your network.
 
 Jupyter Notebooks is distributed with Anaconda, which is the Python distribution used by Machine Learning Server. If you installed Machine Learning Server, you have the components necessary for running notebooks as a single user on localhost.
 
@@ -34,7 +34,7 @@ Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 > [!Note]
 > Jupyter Notebooks are a presentation concept, integrating script and text on the same page. Script is interactive on the page, often Python or R, but could be any one of the 40 languages supported by Jupyter. The text is user-provided content that describes the script. Notebooks are executed on a server, accessed over http, and rendered as HTML in a browser to the person requesting the notebook. For more information, see [Jupyter documentation](https://jupyter.readthedocs.io/atest/content-quickstart.html).
 
-## On Windows
+## Load on Windows
 
 1. Download just the .ipynb files from the Github repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
 
@@ -54,7 +54,7 @@ Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
   + Navigate to the folder where you saved the .ipynb file. Most likely, it's in the Downloads folder: `\Downloads\ML-Server-Python-Samples-master\microsoftml\quickstarts\binary-classification\Binary+Classification+Quickstart.ipynb`
    + Select the file and click **Open** to add the notebook to your server.
 
-3. Click the notebook to load it, then click **Run** to step through the content. For this particular notebook, no additional configuration is required. For the azureml notebooks, read the readme for configuration requirements.
+3. Click the notebook to load it, then click **Run** to step through the content and script. For this particular notebook, no additional configuration is required. For the web service notebook, read the readme for configuration requirements.
 
 ## Configure for multi-user access
 
