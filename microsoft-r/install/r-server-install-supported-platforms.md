@@ -35,7 +35,7 @@ Python support is based on Anaconda 4.2 over Python 3.5. R support is based on [
 
 | SKU | Platforms |
 |-----|-----------|
-| Machine Learning Server for Hadoop | Hadoop **<sup><big>1, 4</big></sup>** Distributions: <br/>Cloudera CDH 5.7-5.11, Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>Operating Systems:<br/>Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>2, 4</big></sup>**, Ubuntu 14.04 and 16.04 (**<sup><big>2</big></sup>**)<br/>Spark **<sup><big>3</big></sup>**:<br/>Versions 2.0 and 2.4  |
+| Machine Learning Server for Hadoop | Hadoop Distributions:**<sup><big>1,4</big></sup>** Cloudera CDH 5.7-5.11, Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>2,4</big></sup>**, Ubuntu 14.04 and 16.04 **<sup><big>2</big></sup>**<br/><br/>Spark:**<sup><big>3</big></sup>** Versions 2.0 and 2.4  |
 | Machine Learning Server for Linux | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>4</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>4</big></sup>**<br/>Ubuntu 14.04 and 16.04|
 | Machine Learning Server for Windows | Windows 7 SP1 **<sup><big>4</big></sup>**, Windows 8.1 **<sup><big>4</big></sup>**, Windows 10 **<sup><big>4</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 | 
 
