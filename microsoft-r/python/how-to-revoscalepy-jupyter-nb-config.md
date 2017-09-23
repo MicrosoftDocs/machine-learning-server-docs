@@ -38,8 +38,8 @@ Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 
 1. Download just the .ipynb files from the Github repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
 
-  + Go to the source page [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
-  + In the Github page for this sample, click **Raw** to view the Python script for this notebook.
+  + Go to the source page: [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
+  + In the Github page for this notebook, click **Raw** to show the Python script.
   + Use the browser save-as command to save a local copy of the file. Apply an **.ipynb** file extension.
 
   > [!Note]
@@ -47,10 +47,11 @@ Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 
 2. Upload the .ipynb to your local server:
 
-  + Open the Notebook Dashboard by navigating to the Jupyter-notebook executable on your computer: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts`, and then type this at the command line: `jupyter-notebook`
+  + Navigate to the Jupyter-notebook executable on your computer: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts`
+  + Right-click **Run as administrator** on `jupyter-notebook.exe`
   + The Notebook Dashboard opens in your default browser at `http://localhost:8888/tree`. 
   + Click **Upload** on the top right corner.
-  + Navigate to the folder where you saved the .ipynb file. By default, it's in the Downloads folder: `\Downloads\ML-Server-Python-Samples-master\microsoftml\quickstarts\binary-classification\Binary+Classification+Quickstart.ipynb`
+  + Navigate to the folder where you saved the .ipynb file. Most likely, it's in the Downloads folder: `\Downloads\ML-Server-Python-Samples-master\microsoftml\quickstarts\binary-classification\Binary+Classification+Quickstart.ipynb`
    + Select the file and click **Open** to add the notebook to your server.
 
 3. Click the notebook to load it, then click **Run** to step through the content. For this particular notebook, no additional configuration is required. For the azureml notebooks, read the readme for configuration requirements.
@@ -86,7 +87,7 @@ In Jupyter dashboard, click **New** to create a new notebook. You should see the
 ![mmlspy kernel in New notebook list](./media/jupyternb-new-mmlspy.png)
 
 
-## See Also
+## See also
 
 + [microsoftml function reference](../python-reference/microsoftml/microsoftml-package.md)
 + [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)
