@@ -25,37 +25,35 @@ ms.technology: ""
 
 # How to use Jupyter notebooks in single-user and multi-user servers
 
-This article explains how to access a local Jupyter Notebook App and load Machine Learning Server samples from Github. It also explains how to add our libraries to a remote Jupyter server acting as central hub for multi-user notebooks on your network.
+This article explains how to load sample Python notebooks for Machine Learning samples on Github. It also explains how to add our libraries to a remote Jupyter server acting as central hub for multi-user notebooks on your network.
 
 Jupyter Notebooks is distributed with Anaconda, which is the Python distribution used by Machine Learning Server. If you installed Machine Learning Server, you have the components necessary for running notebooks as a single user on localhost.
 
 Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 
 > [!Note]
-> Jupyter Notebooks are presentation concept, integrating script and text on the same page. Script is interactive on the page, often Python or R, but could be any one of the 40 languages supported by Jupyter. The text is user-provided content that describes the script. Notebooks are executed on a server, accessed over http, and rendered as HTML in a browser to the person requesting the notebook. For more information, see [Jupyter documentation](https://jupyter.readthedocs.io/atest/content-quickstart.html).
+> Jupyter Notebooks are a presentation concept, integrating script and text on the same page. Script is interactive on the page, often Python or R, but could be any one of the 40 languages supported by Jupyter. The text is user-provided content that describes the script. Notebooks are executed on a server, accessed over http, and rendered as HTML in a browser to the person requesting the notebook. For more information, see [Jupyter documentation](https://jupyter.readthedocs.io/atest/content-quickstart.html).
 
 ## On Windows
 
-1. To download just the .ipynb files from the Github repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
+1. Download just the .ipynb files from the Github repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
 
   + Go to the source page [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
   + In the Github page for this sample, click **Raw** to view the Python script for this notebook.
-  + Use the browser save-as command to save a local copy of the file. Use a **.ipynb** file extension.
+  + Use the browser save-as command to save a local copy of the file. Apply an **.ipynb** file extension.
 
   > [!Note]
-  > Some browsers append a .txt file extension automatically. Remove the extra .txt extension if you see it in the file name.
+  > Some browsers append a .txt file extension automatically. Remove the extraneous .txt extension if you see it in the file name.
 
-2. To upload the .ipynb to your local server:
+2. Upload the .ipynb to your local server:
 
-  + At an elevated command prompt, navigate to the Jupyter-notebook executable on your computer: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts`
-  + Start the Jupyter Notebook App by typing this at the command line: `jupyter-notebook`
+  + Open the Notebook Dashboard by navigating to the Jupyter-notebook executable on your computer: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts`, and then type this at the command line: `jupyter-notebook`
   + The Notebook Dashboard opens in your default browser at `http://localhost:8888/tree`. 
   + Click **Upload** on the top right corner.
   + Navigate to the folder where you saved the .ipynb file. By default, it's in the Downloads folder: `\Downloads\ML-Server-Python-Samples-master\microsoftml\quickstarts\binary-classification\Binary+Classification+Quickstart.ipynb`
    + Select the file and click **Open** to add the notebook to your server.
 
 3. Click the notebook to load it, then click **Run** to step through the content. For this particular notebook, no additional configuration is required. For the azureml notebooks, read the readme for configuration requirements.
-
 
 ## Configure for multi-user access
 

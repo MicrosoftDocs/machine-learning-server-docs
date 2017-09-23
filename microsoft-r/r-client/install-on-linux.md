@@ -103,6 +103,9 @@ apt-get install apt-transport-https
 
 # Install the packages
 apt-get install microsoft-r-client-packages-3.4.1
+
+# List the packages
+ls /opt/microsoft/r-client/
 ```     
 
 **Red Hat and CentOS 6/7**
@@ -118,7 +121,6 @@ sudo su
 # On RHEL 7:
 wget http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
-
 # Install the packages
 yum install microsoft-r-client-packages-3.4.1
 ``` 
@@ -129,7 +131,6 @@ With root or sudo permissions, run the following commands:
 ```
 # Set location of the package repository. For example for SLES 11.
 sudo rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm
-
 
 # Install the packages
 zypper install microsoft-r-client-packages-3.4.1
