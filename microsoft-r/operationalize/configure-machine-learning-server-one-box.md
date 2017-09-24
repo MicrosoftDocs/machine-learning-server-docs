@@ -40,13 +40,13 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 ## How to configure
 
 >[!Important]
->For your convenience, [Azure Management Resource templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
+>For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
 >
 >Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
 
 **To configure on a single machine:**
 
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
 
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
@@ -54,25 +54,33 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux) so you can begin to configure a one-box setup.
+1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges:
+   
+   + Windows instructions: launch the administration utility as an administrator (right-click) using the shortcut in the Start menu called Administration Utility.
 
-    >[!NOTE]
-    >To bypass the interactive configuration steps, specify the following argument and ['admin' password](../deployr/../operationalize/configure-authentication.md#local) when launching the utility:
-    >-silentoneboxinstall myPassword.
-    >If you choose this method, you can skip the next three substeps. Learn more about command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+   + Linux instructions:  
+     ```
+     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
+     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
+     ```
 
-    1. Choose the option to **Configure server**.
+   >[!NOTE]
+   >To bypass the interactive configuration steps, specify the following argument and ['admin' password](../deployr/../operationalize/configure-authentication.md#local) when launching the utility:
+   >-silentoneboxinstall myPassword.
+   >If you choose this method, you can skip the next three substeps. Learn more about command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
 
-    1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
+1. Choose the option to **Configure server**.
 
-       >[!IMPORTANT]
-       > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](configure-machine-learning-server-enterprise.md).
+1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
-    1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
+   >[!IMPORTANT]
+   > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](configure-machine-learning-server-enterprise.md).
 
-    1. Return to the main menu of the utility when the configuration ends.
+1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
 
-    1. [Run a diagnostic test of the configuration](../operationalize/configure-run-diagnostics.md).
+1. Return to the main menu of the utility when the configuration ends.
+
+1. [Run a diagnostic test of the configuration](../operationalize/configure-run-diagnostics.md).
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
@@ -110,7 +118,7 @@ Carefully review the following steps.
 
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
 
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
 
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
@@ -119,6 +127,14 @@ Carefully review the following steps.
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+
+   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
+
+   + Linux instructions:  
+     ```
+     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
+     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
+     ```
 
 1. From the menus, choose **Configure server** and then choose **Configure for one box**. The configuration script begins.
 
