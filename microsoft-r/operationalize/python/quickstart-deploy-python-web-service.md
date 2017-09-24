@@ -32,7 +32,7 @@ ms.technology:
 
 Learn how to deploy an Python model as a [web service with Machine Learning Server](../concept-what-are-web-services.md). Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
 
-In Machine Learning Server, a web service is a model and/or code that has been deployed and hosted in the server.  Each web service is uniquely defined by a `name` and `version`. When consumed, the service consists of the code execution on a [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). [Learn more about web services](../concept-what-are-web-services.md).
+In Machine Learning Server, a web service is a model and/or code that has been deployed and hosted in the server.  Each web service is uniquely defined by a `name` and `version`. When consumed, the service consists of the code execution on a [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). Learn more [about web services](../concept-what-are-web-services.md).
 
 You can use the functions in [the azureml-model-management-sdk Python library ](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to manage the web service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle. 
 
@@ -46,9 +46,9 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 Before you begin this QuickStart, have the following ready:
 
 > [!div class="checklist"]
-> * Machine Learning Server with Python that's **[configured to operationalize models](../../operationalize/configure-machine-learning-server-one-box.md)**. Try an [Azure Resource Management template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) to quickly configure a server for operationalization.<br/>
-> * The [connection details (host, username, password)](../../operationalize/python/how-to-authenticate-in-python.md)  to that server instance from your administrator.  <br/>
-> * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).<br/>
+> * Machine Learning Server with Python that's **[configured to operationalize models](../../operationalize/configure-machine-learning-server-one-box.md)**. Try an [Azure Resource Management template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) to quickly configure a server for operationalization.<br/>&nbsp;
+> * The [connection details (host, username, password)](../../operationalize/python/how-to-authenticate-in-python.md)  to that server instance from your administrator.  <br/>&nbsp;
+> * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).<br/>&nbsp;
 > * Familiarity with Jupyter notebooks. Learn [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
 
 
