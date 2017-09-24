@@ -60,21 +60,23 @@ This example walks through the deployment of a Python model as a web service hos
 
 The notebook example walks you through how to:
 * Create and run a linear model locally
-* Authenticate with Machine Learning Server
-* Publish the model as a Python web service on Machine Learning Server
-* Examine, test, and consume the service
+
+* [Authenticate with Machine Learning Server](how-to-authenticate-in-python.md) from your Python script
+
+* Publish the model as a Python web service to Machine Learning Server
+
+* Examine, test, and consume the service in the same session
+
 * Delete the service
 
 
 ### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Quickstart_Publish_Python_Web_Service.ipynb).
 
->[!IMPORTANT]
->Use the correct login details for your configuration when trying the notebook. Authentication is covered [in this article](how-to-authenticate-in-python.md).
-
 ## Next steps
 
 After it has been deployed, the web service can be: 
-+ Consumed directly in Python by another data scientist for testing purposes, for example 
+
++ [Consumed directly in Python by someone else](how-to-consume-web-services.md) for testing purposes See an example in [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Explore_Consume_Python_Web_Services.ipynb).
 
 + [Integrated into an application by an application developer](../how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
