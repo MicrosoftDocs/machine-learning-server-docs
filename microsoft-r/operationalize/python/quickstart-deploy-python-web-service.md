@@ -45,10 +45,10 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 Before you begin this QuickStart, have the following ready:
 
 > [!div class="checklist"]
-> * An instance of Machine Learning Server with Python that's **[configured to operationalize analytics](../../operationalize/configure-machine-learning-server-one-box.md)**. Try an [Azure Management Resource (ARM) template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) to quickly configure a server for operationalization.
-> * The [connection details (host, username, password) to that server instance](../../operationalize/python/how-to-authenticate-in-python.md) from your administrator.  
+> * Machine Learning Server with Python that's **[configured to operationalize models](../../operationalize/configure-machine-learning-server-one-box.md)**. Try an [Azure Resource Management template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) to quickly configure a server for operationalization.
+> * The [connection details (host, username, password)](../../operationalize/python/how-to-authenticate-in-python.md)  to that server instance from your administrator.  
 > * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
-> * Familiarity with Jupyter notebooks. Learn more on [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
+> * Familiarity with Jupyter notebooks. Learn [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
 
 
 ## Example code

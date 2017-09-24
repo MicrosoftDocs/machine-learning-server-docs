@@ -40,7 +40,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 ## How to configure
 
 >[!Important]
->For your convenience, [Azure Management Resource templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
+>For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
 >
 >Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
 
