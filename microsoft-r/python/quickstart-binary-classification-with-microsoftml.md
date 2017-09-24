@@ -77,8 +77,8 @@ You can try it yourself with the notebook.
 
 Now that you've tried this example, you can start developing your own solutions using the MicrosoftML packages and APIs for R and Python:
 
-- [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md)
-- [`MicrosoftML` Python package functions](../python-reference/microsoftml/microsoftml-package.md)
+- [MicrosoftML R package functions](../r-reference/microsoftml/microsoftml-package.md)
+- [microsoftml Python package functions](../python-reference/microsoftml/microsoftml-package.md)
 
 
 ## See also
