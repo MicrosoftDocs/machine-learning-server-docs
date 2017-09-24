@@ -39,7 +39,7 @@ You can use the functions in [the azureml-model-management-sdk Python library ](
 
 ## Time estimate
 
-If you have completed the prerequisites, this task takes approximately *10* minutes to complete.
+After you have completed the prerequisites, this task takes approximately *10* minutes to complete.
 
 ## Prerequisites
 
@@ -59,16 +59,17 @@ The example for this quickstart is stored in a Jupyter notebook. This notebook f
 This example walks through the deployment of a Python model as a web service hosted in Machine Learning Server. We will build a simple linear model using the [rx_lin_mod](../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server or [locally on Windows machine](../../install/python-libraries-interpreter.md). This package requires a connection to Machine Learning Server.  
 
 The notebook example walks you through how to:
-* Create and run a linear model locally
+1. Create and run a linear model locally
 
-* [Authenticate with Machine Learning Server](how-to-authenticate-in-python.md) from your Python script
+1. [Authenticate with Machine Learning Server](how-to-authenticate-in-python.md) from your Python script
 
-* Publish the model as a Python web service to Machine Learning Server
+1. Publish the model as a Python web service to Machine Learning Server
 
-* Examine, test, and consume the service in the same session
+1. Examine, test, and consume the service in the same session
 
-* Delete the service
+1. Delete the service
 
+You can try it yourself with the notebook. 
 
 ### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Quickstart_Publish_Python_Web_Service.ipynb).
 

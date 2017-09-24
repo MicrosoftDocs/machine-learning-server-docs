@@ -38,13 +38,17 @@ This example uses the well known breast cancer dataset. The dataset contains cha
 
 ## Time estimate
 
-If you have completed the prerequisites, this task takes approximately *10* minutes to complete.
+After you have completed the prerequisites, this task takes approximately *10* minutes to complete.
 
 ## Prerequisites
 
-Before you begin this QuickStart, have an instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option. 
+Before you begin this QuickStart, have an the following ready:
 
-Familiarity with Python is assumed. [Here's a video tutorial on Python programming](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
+> [!div class="checklist"]
+> * An instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option.<br/>&nbsp;
+> * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).<br/>&nbsp;
+> * Familiarity with Jupyter notebooks. Learn [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
+
 
 ## Example code
 
@@ -53,11 +57,15 @@ The example for this quickstart is stored in a Jupyter notebook. This notebook f
 
 
 This quickstart notebook walks you through how to:
-+ Load the example data
-+ Import the microsoftml package
-+ Add transforms for featurization
-+ Train and evaluate the model 
-+ Predict using the model on new data
+1. Load the example data
+
+1. Import the microsoftml package
+
+1. Add transforms for featurization
+
+1. Train and evaluate the model 
+
+1. Predict using the model on new data
 
 You can try it yourself with the notebook. 
 
