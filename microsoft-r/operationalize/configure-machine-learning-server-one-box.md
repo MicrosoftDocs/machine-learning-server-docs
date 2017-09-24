@@ -60,7 +60,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/
+     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
@@ -132,7 +132,7 @@ Carefully review the following steps.
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/
+     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
