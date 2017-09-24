@@ -38,7 +38,7 @@ The following resources are available to you:
 * [Operationalization Examples](https://blogs.msdn.microsoft.com/rserver/2017/02/03/microsoft-r-server-operationalization-examples/)
 * [Galaxy classification with neural networks: a data science workflow](https://blogs.msdn.microsoft.com/rserver/2017/03/22/galaxy-classification-with-neural-networks-a-data-science-workflow/)
 * [Running your R code on Azure with mrsdeploy](http://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
-
+* [Python programming tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382)
 
 
 ## Support

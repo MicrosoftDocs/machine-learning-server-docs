@@ -75,7 +75,7 @@ Microsoft R Server offers the **best-in-class deployment** experience for the ad
 
 <br>
 
-<div align=center><iframe width="560" height="315" src="https://www.youtube.com/embed/1Nvs6QShWqY" frameborder="0" allowfullscreen></iframe></div>
+<div align=center><iframe width="560" height="315" src="https://www.youtube.com/embed/7i19-s9mxJU" frameborder="0" allowfullscreen></iframe></div>
 
 ## Configuration
 
