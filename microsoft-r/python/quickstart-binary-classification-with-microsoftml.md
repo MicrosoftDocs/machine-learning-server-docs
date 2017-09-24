@@ -47,7 +47,7 @@ Before you begin this QuickStart, have an the following ready:
 > [!div class="checklist"]
 > * An instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option.<br/>&nbsp;
 > * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).<br/>&nbsp;
-> * Familiarity with Jupyter notebooks. Learn [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
+> * Familiarity with Jupyter notebooks. Learn [how to load sample Python notebooks](how-to-revoscalepy-jupyter-nb-config.md). 
 
 
 ## Example code
