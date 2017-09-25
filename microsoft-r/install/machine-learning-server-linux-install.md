@@ -78,15 +78,27 @@ The package manager downloads packages from the [packages.microsoft.com](https:/
 
 Activation is a separate step. If you forget to activate, the server works, but the following error appears when you call an API: "Express Edition will continue to be enforced."
 
+### Red Hat and CentOS 6/7
+
+1. Install as root: `sudo su`
+
+2. Update packages on your system: `yum update` 
+
+3. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `wget http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
+
+4. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
+
+5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+
 ### Ubuntu 14.04 - 16.04
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repoat the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
+2. Update packages on your system: `apt-get update` 
 
-3. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
+3. Set the location of the package repoat the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
 
-4. Update packages on your system: `apt-get update` 
+4. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
 5. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
 
@@ -94,16 +106,6 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
 
-
-### Red Hat and CentOS 6/7
-
-1. Install as root: `sudo su`
-
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
-
-3. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
-
-5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 ### SUSE SLES11
 
