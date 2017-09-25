@@ -3,50 +3,50 @@
   topicHref: /
   items:
   - name: Machine Learning Server
-    tocHref: /r-server/
-    topicHref: /r-server/index
+    tocHref: /machine-learning-server/
+    topicHref: /machine-learning-server/index
     items:
     - name: Install & configure
-      tocHref: /r-server/install/
+      tocHref: /machine-learning-server/install/
       topicHref: /
     - name: Operationalize
-      tocHref: /r-server/operationalize/
-      topicHref: /r-server/operationalize/configure-start-for-administrators
+      tocHref: /machine-learning-server/operationalize/
+      topicHref: /machine-learning-server/operationalize/configure-start-for-administrators
     - name: Python Package Reference
-      tocHref: /r-server/python-reference/
-      topicHref: /r-server/python-reference/introducing-python-package-reference
+      tocHref: /machine-learning-server/python-reference/
+      topicHref: /machine-learning-server/python-reference/introducing-python-package-reference
       items:
       - name: microsoftml
-        tocHref: /r-server/python-reference/microsoftml/
-        topicHref: /r-server/python-reference/microsoftml/microsoftml-package
+        tocHref: /machine-learning-server/python-reference/microsoftml/
+        topicHref: /machine-learning-server/python-reference/microsoftml/microsoftml-package
       - name: revoscalepy
-        tocHref: /r-server/python-reference/revoscalepy/
-        topicHref: /r-server/python-reference/revoscalepy/revoscalepy-package
+        tocHref: /machine-learning-server/python-reference/revoscalepy/
+        topicHref: /machine-learning-server/python-reference/revoscalepy/revoscalepy-package
       - name: azureml-model-management-sdk
-        tocHref: /r-server/python-reference/azureml-model-management-sdk/
-        topicHref: /r-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk
+        tocHref: /machine-learning-server/python-reference/azureml-model-management-sdk/
+        topicHref: /machine-learning-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk
     - name: R Package Reference
-      tocHref: /r-server/r-reference/
-      topicHref: /r-server/r-reference/introducing-r-server-r-package-reference
+      tocHref: /machine-learning-server/r-reference/
+      topicHref: /machine-learning-server/r-reference/introducing-r-server-r-package-reference
       items:
       - name: microsoftml
-        tocHref: /r-server/r-reference/microsoftml/
-        topicHref: /r-server/r-reference/mrsdeploy/microsoftml-package
+        tocHref: /machine-learning-server/r-reference/microsoftml/
+        topicHref: /machine-learning-server/r-reference/mrsdeploy/microsoftml-package
       - name: mrsdeploy
-        tocHref: /r-server/r-reference/mrsdeploy/
-        topicHref: /r-server/r-reference/mrsdeploy/mrsdeploy-package
+        tocHref: /machine-learning-server/r-reference/mrsdeploy/
+        topicHref: /machine-learning-server/r-reference/mrsdeploy/mrsdeploy-package
       - name: olapr
-        tocHref: /r-server/r-reference/olapr/
-        topicHref: /r-server/r-reference/olapr/olapr
+        tocHref: /machine-learning-server/r-reference/olapr/
+        topicHref: /machine-learning-server/r-reference/olapr/olapr
       - name: revopemar
-        tocHref: /r-server/r-reference/revopemar/
-        topicHref: /r-server/r-reference/revopemar/pemar
+        tocHref: /machine-learning-server/r-reference/revopemar/
+        topicHref: /machine-learning-server/r-reference/revopemar/pemar
       - name: revoscaler
-        tocHref: /r-server/r-reference/revoscaler/
-        topicHref: /r-server/r-reference/revoscaler/revoscaler
+        tocHref: /machine-learning-server/r-reference/revoscaler/
+        topicHref: /machine-learning-server/r-reference/revoscaler/revoscaler
       - name: revoutils
-        tocHref: /r-server/r-reference/revoutils/
-        topicHref: /r-server/r-reference/revoutils/revoutils
+        tocHref: /machine-learning-server/r-reference/revoutils/
+        topicHref: /machine-learning-server/r-reference/revoutils/revoutils
       - name: sqlrutils
-        tocHref: /r-server/r-reference/sqlrutils/
-        topicHref: /r-server/r-reference/sqlrutils/sqlrutils
+        tocHref: /machine-learning-server/r-reference/sqlrutils/
+        topicHref: /machine-learning-server/r-reference/sqlrutils/sqlrutils

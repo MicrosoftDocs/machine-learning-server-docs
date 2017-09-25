@@ -100,7 +100,7 @@ print(summary)
 
 The ability to switch compute context to a different machine or platform is a powerful capability. To see how this works, continue with the SQL Server version of this tutorial: [Use Python with revoscalepy to create a model (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model).
 
-You can also review [linear modeling for RevoScaleR](https://docs.microsoft.com/r-server/r/how-to-revoscaler-linear-model). For linear models, the Python iplementation in revoscalepy is very similar to the R implementation in RevoScaleR.
+You can also review [linear modeling for RevoScaleR](../r/how-to-revoscaler-linear-model.md). For linear models, the Python iplementation in revoscalepy is very similar to the R implementation in RevoScaleR.
 
 
 ## See Also
