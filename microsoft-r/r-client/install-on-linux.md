@@ -89,17 +89,20 @@ sudo su
 # If your system does not have the https apt transport option, add it now
 apt-get install apt-transport-https
 
-# Update packages on your system
-apt-get update
-
 # Set the package repository location containing the R Client distribution. 
 # On Ubuntu 14.04.
 # wget http://packages.microsoft.com/config/ubuntu/14.04/prod/packages-microsoft-prod.deb 
 # On Ubuntu 16.04.
 wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb 
 
-# Check for mlserver.list configuration file to verify download.
+# Register the repo.
+dpkg -i packages-microsoft-prod.deb
+
+# Check for microsoft-prod.list configuration file to verify registration.
 ls -la /etc/apt/sources.list.d/
+
+# Update packages on your system
+apt-get update
 
 # Install the packages
 apt-get install microsoft-r-client-packages-3.4.1
@@ -115,17 +118,17 @@ With root or sudo permissions, run the following commands:
 # Install as root or sudo
 sudo su
 
-# Update packages on your system
-yum update
-
 # Set the package repository location containing the R Client distribution. 
 # On RHEL 6:
-# wget  http://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
+# rpm -Uvh http://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 # On RHEL 7:
-wget http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
-# Check for mlserver.repo configuration file to verify download.
+# Check for microsoft-prod.repo configuration file to verify registration.
 ls -la /etc/yum.repos.d/ 
+
+# Update packages on your system
+yum update
 
 # Install the packages
 yum install microsoft-r-client-packages-3.4.1
