@@ -24,6 +24,8 @@ ms.technology: "r-server"
 
 # Install R Server 9.1 on the Cloudera distribution of Apache Hadoop (CDH)
 
+**Looking for the 9.2.1 release? See [Machine Learning Server for Cloudera installation](machine-learning-server-cloudera-install.md)**
+
 Cloudera offers a parcel installation methodology for adding services and features to a cluster. If you prefer parcel installation over the regular install script used for deploying R Server on other Hadoop distributions, you can use functionality we provide to create the parcel.
 
 If you've used parcel installation in previous releases of Microsoft R Server, the 9.1.0 release is enhanced in two respects. First, instead of using pre-built parcels downloaded from Microsoft, you can generate your own parcel using a new generate_mrs_parcel.sh script. Secondly, we added support for Custom Service Descriptors (CSDs), which means you can now deploy, configure, and monitor R Server in CDH as a managed service in Cloudera Manager.
