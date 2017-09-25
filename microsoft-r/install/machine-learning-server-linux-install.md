@@ -86,7 +86,7 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 3. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
 
-4. As a verification step, check whether the **mlserver.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
+4. As a verification step, check whether the **microsoft-prod.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
 
 5. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
 

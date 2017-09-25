@@ -124,7 +124,7 @@ yum update
 # On RHEL 7:
 rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
-# Check for mlserver.repo configuration file to verify download.
+# Check for microsoft-prod.repo configuration file to verify download.
 ls -la /etc/yum.repos.d/ 
 
 # Install the packages
