@@ -70,26 +70,28 @@ After installation completes, software can be found at the following paths:
 + Microsoft R Open root: `/opt/microsoft/ropen/3.4.1`
 + Executables such as Revo64 and mlserver-python are at `/usr/bin`
 
-## Edge node installation
+## 1 - Edge node installation
 
-Machine Learning Server is required on the edge node. You should run [full setup](machine-learning-server-linux-install.md) to install on this node.
+Start here. Machine Learning Server is required on the edge node. You should run full setup, following the installation commands for the Linux operating system used by your cluster: [Linux install > How to install](machine-learning-server-linux-install.md#how-to-install).
 
-Full setup gives you core components for both R and Python, machine learning algorthims and pretrained models, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services providing compiled code, or running script in real time. 
+Full setup gives you core components for both R and Python, machine learning algorthims and pretrained models, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services, which allows you to invoke and access your solution programmatically, through a REST API.
 
 > [!Note]
 > You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.
 
-## Data node installation
+## 2 - Data node installation
 
-You can start on any data node, installing sequentially, or install on multiple data nodes concurrently. There are two approaches for installing Machine Learning Server on data nodes. 
+You can continue installation by running Setup on any data node, either sequentially or on multiple data nodes concurrently. There are two approaches for installing Machine Learning Server on data nodes. 
 
 **Approach 1: Package managers for full installation** 
 
-We recommend running the [full setup package](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do most of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.2.1) and setting it up for activation.
+Again, we recommend running the [full setup](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do most of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.2.1) and setting it up for activation.
+
+As before, follow the installation steps for the Linux operating system used by your cluster: [Linux install > How to install](machine-learning-server-linux-install.md#how-to-install).
 
 **Approach 2: Manual steps for partial installation**
 
-Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Hence, unexpected problems are more likely if you leave some packages out. 
+Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes,or if you want to exclude a specific language. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Hence, unexpected problems are more likely if you leave some packages out. 
 
 1. Install as root: `sudo su`
 
