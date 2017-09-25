@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Merge data in RevoScaleR using rxSort (Microsoft R)"
+title: "Merge data in RevoScaleR using rxSort (Machine Learning Server) | Microsoft Docs"
 description: "How to merge data in a data frame or XDF file with the RevoScaleR rxMerge function."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# How to merge data using rxMerge (Microsoft R)
+# How to merge data using rxMerge in RevoScaleR
 
 Merging allows you to combine the information from two data sets into a third data set that can be used for subsequent analysis. One example is merging account information such as account number and billing address with transaction data such as account number and purchase details to create invoices. In this case, the two files are merged on the common information, that is, the account number.
 
@@ -242,7 +242,7 @@ The new .xdf file has an additional variable, EducExp:
 
 ## See Also
 
- [Introduction to R Server](~/what-is-microsoft-r-server.md) 
- [Install R Server on Windows](~/install/r-server-install-windows.md)  
- [Install R Server on Linux](~/install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](~/install/r-server-install-hadoop.md)
+ [Machine Learning Server](~/what-is-machine-learning-server.md) 
+ [Install Machine Learning Server on Windows](~/install/machine-learning-server-windows-install.md)  
+ [Install Machine Learning Server on Linux](~/install/machine-learning-server-linux-install.md)  
+ [Install Machine Learning Server on Hadoop](~/install/machine-learning-server-hadoop-install.md)

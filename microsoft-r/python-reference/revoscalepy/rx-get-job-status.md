@@ -6,7 +6,7 @@ description: "Obtain distributed computing processing status for the specified j
 keywords: "job, status" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_get_job_status`
+# rx_get_job_status
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -37,6 +37,7 @@ ms.custom: ""
 ```
 revoscalepy.rx_get_job_status(job_info: revoscalepy.computecontext.RxRemoteJob.RxRemoteJob) -> revoscalepy.computecontext.RxJob.RxRemoteJobStatus
 ```
+
 
 
 

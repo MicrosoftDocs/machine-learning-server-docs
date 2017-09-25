@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "rxRealTimeScoring function (RevoScaleR) | Microsoft Docs" 
-description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR** and **MicrosoftML** packages to  Microsoft R Server and SQL Server platforms with near real-time performance.  You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [link](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [publishService](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)  documentation. " 
+description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR** and **MicrosoftML** packages to Machine Learning Server and SQL Server platforms with near real-time performance.  " 
 keywords: "(RevoScaleR), rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
 author: "heidisteen" 
 manager: "jhubbard" 
@@ -29,18 +29,18 @@ ms.custom: ""
  #rxRealTimeScoring: Real-time scoring in SQL Server R Services 
  ##Description
  
-Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to  Microsoft R Server and SQL Server platforms with near real-time performance.
+Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to Machine Learning Server and SQL Server platforms with near real-time performance.
 
-You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
+You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
 .
 
-**NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
+**NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
  documentation.
  
  
  ##Details
  
-With Microsoft R Server 9.1 version, we are introducing this feature which allows models trained using **RevoScaleR** and **MicrosoftML** packages to be used for high performance scoring in SQL Server. These models can be published and scored without using R interpreter, which reduces the overhead of multiple process interactions. Hence it allows for faster prediction performance in enterprise scenarios.
+This feature allows models trained using **RevoScaleR** and **MicrosoftML** packages to be used for high performance scoring in SQL Server. These models can be published and scored without using R interpreter, which reduces the overhead of multiple process interactions. Hence it allows for faster prediction performance in enterprise scenarios.
 
 The following is the list of models that are currently supported in real-time scoring:
 

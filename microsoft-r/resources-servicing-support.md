@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Support for Microsoft R Server versions | Microsoft Docs"
-description: "A list of the operating systems supported by editions and versions of Microsoft R Server and Revolution R Enterprise."
+title: "Support for Machine Learning Server and Microsoft R Server 9.0.1-9.2.1 | Microsoft Docs"
+description: "A list of the operating systems supported by editions and versions of Microsoft R Server, Machine Learning Server, and Revolution R Enterprise."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "12/09/2016"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -22,9 +22,9 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Support Timeline for Microsoft R Server
+# Support Timeline for Microsoft R Server & Machine Learning Server
 
-Microsoft R Server will be released a few times per year with each update version supported for two (2) years from its general availability (GA) release date. Furthermore, customers will also receive critical updates for the first year from general availability (GA) of each release as shown in the diagram below. 
+Machine Learning Server (previously called Microsoft R Server) is released several times per year. Each updated version is supported for two (2) years from its general availability (GA) release date. Furthermore, customers also receive critical updates for the first year from general availability (GA) of each release as shown in the diagram.
 
 This support policy allows us to deliver innovation to customers at a rapid rate while providing flexibility for customers to adopt the innovation at their pace. 
 
@@ -35,7 +35,10 @@ This support policy allows us to deliver innovation to customers at a rapid rate
 
 |Version History|Availability                       |Support End Date                  |
 |:-------------------:|:---------------------------------:|:--------------------------------:|
-|Microsoft R Server 8.0.0                |1/1/2016                           |1/1/2018                          |
-|Microsoft R Server 8.0.5|7/1/2016|7/1/2018|
-|Microsoft R Server 9.0.1|1/1/2017|1/1/2019|
+|Machine Learning Server 9.2.1|10/1/2017|10/1/2019|
 |Microsoft R Server 9.1.0|5/1/2017|5/1/2019|
+|Microsoft R Server 9.0.1|1/1/2017|1/1/2019|
+|Microsoft R Server 8.0.5|7/1/2016|7/1/2018|
+|Microsoft R Server 8.0.0                |1/1/2016                           |1/1/2018                          |
+
+

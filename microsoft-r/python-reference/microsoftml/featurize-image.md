@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Image Featurization Transform" 
+title: "featurize_image: Machine Learning Image Featurization Transform" 
 description: "Featurizes an image using a pre-trained deep neural network model." 
 keywords: "transform, image, featurize, dnn, cnn, resnet, alexnet" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.featurize_image*: Converts an image into features
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,10 @@ ms.custom: ""
 
 
 ```
-microsoftml.featurize_image(cols: [<class ‘dict’>, <class ‘str’>], dnn_model: [‘Resnet18’, ‘Resnet50’, ‘Resnet101’, ‘Alexnet’] = ‘Resnet18’, **kargs)
+microsoftml.featurize_image(cols: [dict, str], dnn_model: ['Resnet18',
+    'Resnet50', 'Resnet101', 'Alexnet'] = 'Resnet18', **kargs)
 ```
+
 
 
 
@@ -186,8 +188,8 @@ Done!
 Estimated Post-training MeanError = 0.707499
 ___________________________________________________________________
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.3115391
-Elapsed time: 00:00:00.0283708
+Elapsed time: 00:00:00.0751759
+Elapsed time: 00:00:00.0080433
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
@@ -204,14 +206,14 @@ Auto-tuning parameters: L2 = 5.
 Auto-tuning parameters: L1Threshold (L1/L2) = 1.
 Using model from last iteration.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:01.8308254
-Elapsed time: 00:00:00.0516810
+Elapsed time: 00:00:01.0104773
+Elapsed time: 00:00:00.0106935
 
 rx_neural_network
 Beginning processing data.
 Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.1627278
+Elapsed time: 00:00:00.0420328
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel     Score  Probability
@@ -219,9 +221,9 @@ Writing completed.
 
 rx_fast_linear
 Beginning processing data.
-Rows Read: 1, Read Time: 0.001, Transform Time: 0
+Rows Read: 1, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.5943643
+Elapsed time: 00:00:00.4449623
 Finished writing 1 rows.
 Writing completed.
   PredictedLabel  Score  Probability

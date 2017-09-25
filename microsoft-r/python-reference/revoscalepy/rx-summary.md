@@ -6,7 +6,7 @@ description: "Produce univariate summaries of objects in revoscalepy."
 keywords: "summary" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_summary`
+# rx_summary
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,17 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_summary(formula: str, data, by_group_out_file=None, summary_stats: list = None, by_term: bool = True, pweights=None, fweights=None, row_selection: str = None, transforms=None, transform_objects=None, transform_function=None, transform_variables=None, transform_packages=None, transform_environment=None, overwrite: bool = False, use_sparse_cube: bool = None, remove_zero_counts: bool = None, blocks_per_read: int = None, rows_per_block: int = 100000, report_progress: int = None, verbose: int = 0, compute_context=None, **kwargs)
+revoscalepy.rx_summary(formula: str, data, by_group_out_file=None,
+    summary_stats: list = None, by_term: bool = True, pweights=None,
+    fweights=None, row_selection: str = None, transforms=None,
+    transform_objects=None, transform_function=None, transform_variables=None,
+    transform_packages=None, transform_environment=None,
+    overwrite: bool = False, use_sparse_cube: bool = None,
+    remove_zero_counts: bool = None, blocks_per_read: int = None,
+    rows_per_block: int = 100000, report_progress: int = None,
+    verbose: int = 0, compute_context=None, **kwargs)
 ```
+
 
 
 
@@ -59,6 +68,8 @@ does not contain a response variable, i.e. it should be of the form ~ terms.
 
 either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object to summarize.
+If a Spark compute context is being used, this argument may also be an RxHiveData,
+RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### by_group_out_file

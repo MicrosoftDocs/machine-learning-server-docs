@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Analyzing loan data using RevoScaleR in Microsoft R"
+title: "Tutorial: Analyzing loan data using RevoScaleR in Machine Learning Server | Microsoft Docs"
 description: "Learn how to work with big datasets using sample loan data in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Tutorial: Analyzing loan data with RevoScaleR (Microsoft R)
+# Tutorial: Analyzing loan data with RevoScaleR
 
 This example builds on what you learned in an [earlier tutorial](tutorial-revoscaler-data-import-transform.md) by showing you how to import .csv files to create an .xdf file, and use statistical RevoScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
 
@@ -31,7 +31,7 @@ This example builds on what you learned in an [earlier tutorial](tutorial-revosc
 
 Data import and exploration are covered further on, but to complete those steps you will need a collection of .csv files providing the sample data.
 
-The sample data used in this tutorial consists of simulated data on mortgage defaults. A small version of the data set is pre-installed with the **RevoScaleR** package that ships with R Client and R Server. It provides 100,000 observations. Alternatively, you can download a larger version of the data set providing 10 million observations.
+The sample data used in this tutorial consists of simulated data on mortgage defaults. A small version of the data set is pre-installed with the **RevoScaleR** package that ships with R Client and Machine Learning Server. It provides 100,000 observations. Alternatively, you can download a larger version of the data set providing 10 million observations.
 
 **Use the pre-installed .csv files**
 
@@ -404,8 +404,8 @@ The results should be printed to your console, with the highest default rate at 
 
 ## See Also
 
-[Introduction to Microsoft R](../microsoft-r-getting-started.md)
+[Machine Learning Server](../what-is-machine-learning-server.md)	
 
-[Diving into data analysis in Microsoft R](how-to-introduction.md)
+[How-to guides in Machine Learning Server](how-to-introduction.md)
 
 [RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

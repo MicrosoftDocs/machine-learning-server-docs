@@ -1,40 +1,37 @@
 --- 
  
 # required metadata 
-title: "Neural Net" 
+title: "rxNeuralNet function (MicrosoftML) | Microsoft Docs" 
 description: " Neural networks for regression modeling and for Binary and multi-class classification. " 
-keywords: "MicrosoftML, rxNeuralNet, classification, dnn, models, network, neural, regression" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), rxNeuralNet, classification, dnn, models, network, neural, regression" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxNeuralNet: Neural Net
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #rxNeuralNet: Neural Net 
  ##Description
  
-Neural networks for regression modeling and for Binary and multi-class classification.
+Neural networks for regression modeling and for Binary and
+multi-class classification.
  
  
  ##Usage
@@ -58,17 +55,17 @@ Neural networks for regression modeling and for Binary and multi-class classific
 
    
   
- ### formula
+ ### `formula`
  The formula as described in rxFormula. Interaction terms and `F()` are not currently supported in the **MicrosoftML**. 
   
   
   
- ### data
+ ### `data`
  A data source object or a character string specifying a .xdf file or a data frame object. 
   
   
   
- ### type
+ ### `type`
  A character string denoting Fast Tree type:   
 *   `"binary"` for the default binary classification neural network.  
 *   `"multiClass"` for multi-class classification neural network.  
@@ -77,37 +74,37 @@ Neural networks for regression modeling and for Binary and multi-class classific
   
   
   
- ### numHiddenNodes
+ ### `numHiddenNodes`
  The default number of hidden nodes in the neural net. The default value is 100. 
   
   
   
- ### numIterations
+ ### `numIterations`
  The number of iterations on the full training set. The default value is 100. 
   
   
   
- ### optimizer
+ ### `optimizer`
  A list specifying either the `sgd` or `adaptive` optimization algorithm. This list can be created using [sgd](optimizer.md) or [adaDeltaSgd](optimizer.md). The default value is `sgd`. 
   
   
   
- ### netDefinition
+ ### `netDefinition`
  The Net# definition of the structure of the neural network. For more information about the Net# language, see   [`Reference Guide`](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/)  
   
   
   
- ### initWtsDiameter
+ ### `initWtsDiameter`
  Sets the initial weights diameter that specifies  the range from which values are drawn for the initial learning weights.    The weights are initialized randomly from within this range. The default value is 0.1. 
   
   
   
- ### maxNorm
+ ### `maxNorm`
  Specifies an upper bound to constrain the norm of the incoming  weight vector at each hidden unit. This can be very important in maxout  neural networks as well as in cases where training produces unbounded weights. 
   
   
   
- ### acceleration
+ ### `acceleration`
  Specifies the type of hardware acceleration to use.  Possible values are "sse" and "gpu".  For GPU acceleration, it is recommended to use a miniBatchSize greater than one.  If you want to use the GPU acceleration, there are additional manual setup steps are required:    
 *  Download and install NVidia CUDA Toolkit 6.5  ([`CUDA Toolkit`](https://developer.nvidia.com/cuda-toolkit-65) ).  
 *  Download and install NVidia cuDNN v2 Library  ([`cudnn Library`](https://developer.nvidia.com/rdp/cudnn-archive) ).  
@@ -118,12 +115,12 @@ Neural networks for regression modeling and for Binary and multi-class classific
   
   
   
- ### miniBatchSize
+ ### `miniBatchSize`
  Sets the mini-batch size. Recommended values are between  1 and 256. This parameter is only used when the acceleration is GPU. Setting  this parameter to a higher value improves the speed of training, but it might negatively affect the accuracy. The default value is 1. 
   
   
   
- ### normalize
+ ### `normalize`
  Specifies the type of automatic normalization used:  
 *   `"auto"`: if normalization is needed, it is performed  automatically. This is the default choice.    
 *   `"no"`: no normalization is performed.  
@@ -133,57 +130,57 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
- ### mlTransforms
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ ### `mlTransforms`
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](categorical.md), and [categoricalHash](categoricalHash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
- ### mlTransformVars
+ ### `mlTransformVars`
  Specifies a character vector of variable names to be used in `mlTransforms` or `NULL` if none are to be used. The default value is `NULL`. 
   
   
   
- ### rowSelection
+ ### `rowSelection`
  Specifies the rows (observations) from the data set that are to be used by the model with the name of a logical variable from the  data set (in quotes) or with a logical expression using variables in the    data set. For example, `rowSelection = "old"` will only use observations in which the value of the variable `old` is `TRUE`. `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function call using the expression function. 
   
   
   
- ### transforms
+ ### `transforms`
  An expression of the form `list(name = expression, ``...)` that represents the first round of variable transformations. As with  all expressions, `transforms` (or `rowSelection`) can be defined outside of the function call using the expression function. 
   
   
   
- ### transformObjects
+ ### `transformObjects`
  A named list that contains objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
   
- ### transformFunc
+ ### `transformFunc`
  The variable transformation function. See rxTransform for details. 
   
   
   
- ### transformVars
+ ### `transformVars`
  A character vector of input data set variables needed for the transformation function. See rxTransform for details. 
   
   
   
- ### transformPackages
+ ### `transformPackages`
  A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
   
   
   
- ### transformEnvir
+ ### `transformEnvir`
  A user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
   
- ### blocksPerRead
+ ### `blocksPerRead`
  Specifies the number of blocks to read for each chunk  of data read from the data source. 
   
   
   
- ### reportProgress
+ ### `reportProgress`
  An integer value that specifies the level of reporting on the row processing progress:   
 *   `0`: no progress is reported.      
 *   `1`: the number of processed rows is printed and updated.    
@@ -193,22 +190,22 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
   
   
   
- ### verbose
+ ### `verbose`
  An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information. 
   
   
   
- ### computeContext
+ ### `computeContext`
  Sets the context in which computations are executed, specified with a valid RxComputeContext. Currently local and RxInSqlServer compute contexts are supported. 
   
   
   
- ### ensemble
+ ### `ensemble`
  Control parameters for ensembling. 
   
   
   
- ###  ...
+ ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  
@@ -259,9 +256,9 @@ This algorithm is single-threaded and will not attempt to load the entire datase
 memory.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
@@ -273,11 +270,11 @@ memory.
  
  ##See Also
  
-[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md),
-[rxFastLinear](rxfastlinear.md), [rxLogisticRegression](logisticregression.md),
-[rxOneClassSvm](oneclasssvm.md), [featurizeText](featurizetext.md),
-[categorical](categorical.md), [categoricalHash](categoricalhash.md),
-[rxPredict.mlModel](rxpredict.md).
+[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
+[rxFastLinear](rxFastLinear.md), [rxLogisticRegression](rxLogisticRegression.md),
+[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](featurizeText.md),
+[categorical](categorical.md), [categoricalHash](categoricalHash.md),
+[rxPredict.mlModel](rxPredict.md).
    
  ##Examples
 
@@ -339,6 +336,7 @@ memory.
   scoreMultiDF[badPrediction,]
  
 ```
+ 
  
  
  

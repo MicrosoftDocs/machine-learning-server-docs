@@ -4,9 +4,9 @@
 title: "rx_get_jobs: Get Distributed Computing Jobs" 
 description: "Returns a list of job objects associated with the given compute context and matching the specified parameters." 
 keywords: "get, job" 
-author: HeidiSteen
+author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_get_jobs`
+# rx_get_jobs
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,13 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_get_jobs(compute_context: revoscalepy.computecontext.RxRemoteComputeContext.RxRemoteComputeContext, exact_match: bool = False, start_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.2.1\\runtime\\Python\\lib\\datetime.py'> = None, end_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.2.1\\runtime\\Python\\lib\\datetime.py'> = None, states: list = None, verbose: bool = True) -> list
+revoscalepy.rx_get_jobs(compute_context: revoscalepy.computecontext.RxRemoteComputeContext.RxRemoteComputeContext,
+    exact_match: bool = False,
+    start_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.2.1\\runtime\\Python\\lib\\datetime.py'> = None,
+    end_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.2.1\\runtime\\Python\\lib\\datetime.py'> = None,
+    states: list = None, verbose: bool = True) -> list
 ```
+
 
 
 
@@ -94,11 +99,6 @@ objects). If no job status is returned, the job status shows none.
 ## Returns
 
 Returns a list of job information objects based on the compute context.
-
-
-
-
-
 
 
 ## See also

@@ -6,7 +6,7 @@ description: "Functions to specify and retrieve options needed for revoscalepy c
 keywords: "options" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,19 +24,17 @@ ms.custom: ""
  
 ---
 
-# `RxOptions`
+# RxOptions
 
 
-**Applies to: SQL Server 2017**
-
-
-## Usage
+ 
 
 
 
 ```
-class revoscalepy.RxOptions
+revoscalepy.RxOptions
 ```
+
 
 
 

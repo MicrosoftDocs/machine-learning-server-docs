@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Fast Linear Model - Stochastic Dual Coordinate Ascent" 
+title: "rx_fast_linear: Fast Linear Model - Stochastic Dual Coordinate Ascent" 
 description: "A Stochastic Dual Coordinate Ascent (SDCA) optimization trainer for linear binary classification and regression." 
 keywords: "models, linear, SDCA, stochastic, classification, regression" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_fast_linear*: Linear Model with Stochastic Dual Coordinate Ascent
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,9 @@ ms.custom: ""
 
 
 ```
-microsoftml.rx_fast_linear(formula: str, data: [<class ‘revoscalepy.datasource.RxDataSource.RxDataSource’>, <class ‘pandas.core.frame.DataFrame’>], method: [‘binary’, ‘regression’] = ‘binary’, loss_function: {‘regression’: [<function squared_loss at 0x000001FF510836A8>], ‘binary’: [<function hinge_loss at 0x000001FF510837B8>, <function log_loss at 0x000001FF51083400>, <function smoothed_hinge_loss at 0x000001FF51083840>]} = None, l2_weight: float = None, l1_weight: float = None, train_threads: int = None, convergence_tolerance: float = 0.1, max_iterations: int = None, shuffle: bool = True, check_frequency: int = None, normalize: [‘No’, ‘Warn’, ‘Auto’, ‘Yes’] = ‘Auto’, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, ensemble: dict = None, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
+microsoftml.rx_fast_linear()
 ```
+
 
 
 
@@ -112,9 +113,9 @@ For binary classification, the following choices are available:
 
 * [`log_loss`](log-loss.md): The log-loss. This is the default. 
 
-* `hinge_loss()`: The SVM hinge loss. Its parameter represents the margin size. 
+* [`hinge_loss`](hinge-loss.md): The SVM hinge loss. Its parameter represents the margin size. 
 
-* `smooth_hinge_loss()`: The smoothed hinge loss. Its parameter represents the smoothing constant. 
+* `smooth_hinge_loss`: The smoothed hinge loss. Its parameter represents the smoothing constant. 
 
 For linear regression, squared loss [`squared_loss`](squared-loss.md) is
 currently supported. When this parameter is set to *None*, its
@@ -123,6 +124,10 @@ default value depends on the type of learning:
 * [`log_loss`](log-loss.md) for binary classification. 
 
 * [`squared_loss`](squared-loss.md) for linear regression. 
+
+The following example changes the loss_function to
+[`hinge_loss`](hinge-loss.md):
+`rx_fast_linear(..., loss_function=hinge_loss())`.
 
 
 ### l1_weight
@@ -329,7 +334,7 @@ are supported.
 
 ### ensemble
 
-NOT SUPPORTED. Control parameters for ensembling.
+Control parameters for ensembling.
 
 
 ## Returns
@@ -370,7 +375,10 @@ import numpy
 import pandas
 from microsoftml import rx_fast_linear, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import infert
+from microsoftml.datasets.datasets import get_dataset
+
+infert = get_dataset("infert")
+
 import sklearn
 if sklearn.__version__ < "0.18":
     from sklearn.cross_validation import train_test_split
@@ -414,25 +422,23 @@ Automatically choosing a check frequency of 2.
 Auto-tuning parameters: maxIterations = 8064.
 Auto-tuning parameters: L2 = 2.666837E-05.
 Auto-tuning parameters: L1Threshold (L1/L2) = 0.
-Using best model from iteration 526.
+Using best model from iteration 568.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.8783353
-Elapsed time: 00:00:00.0208239
+Elapsed time: 00:00:00.5810985
+Elapsed time: 00:00:00.0084876
 Beginning processing data.
 Rows Read: 62, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0999950
+Elapsed time: 00:00:00.0292334
 Finished writing 62 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre888013.xdf File will be overwritten if it exists.
-
-Rows Processed: 5 
+Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: Less than .001 seconds 
   isCase PredictedLabel     Score  Probability
-0   True           True  1.719275     0.848035
-1   True          False -0.014548     0.496363
-2  False          False -0.951842     0.278515
-3   True           True  0.152362     0.538017
-4  False          False -2.320998     0.089399
+0   True           True  0.990544     0.729195
+1  False          False -2.307120     0.090535
+2  False          False -0.608565     0.352387
+3   True           True  1.028217     0.736570
+4   True          False -3.913066     0.019588
 ```
 
 
@@ -449,7 +455,9 @@ import numpy
 import pandas
 from microsoftml import rx_fast_linear, rx_predict
 from revoscalepy.etl.RxDataStep import rx_data_step
-from microsoftml.datasets.datasets import attitude
+from microsoftml.datasets.datasets import get_dataset
+
+attitude = get_dataset("attitude")
 
 import sklearn
 if sklearn.__version__ < "0.18":
@@ -481,10 +489,10 @@ Output:
 ```
 Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
 Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
+Rows Read: 22, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
-Rows Read: 22, Read Time: 0, Transform Time: 0
+Rows Read: 22, Read Time: 0.001, Transform Time: 0
 Beginning processing data.
 Beginning processing data.
 Rows Read: 22, Read Time: 0, Transform Time: 0
@@ -494,25 +502,23 @@ Automatically choosing a check frequency of 2.
 Auto-tuning parameters: maxIterations = 68180.
 Auto-tuning parameters: L2 = 0.01.
 Auto-tuning parameters: L1Threshold (L1/L2) = 0.
-Using best model from iteration 50.
+Using best model from iteration 54.
 Not training a calibrator because it is not needed.
-Elapsed time: 00:00:00.1975311
-Elapsed time: 00:00:00.0200734
+Elapsed time: 00:00:00.1114324
+Elapsed time: 00:00:00.0090901
 Beginning processing data.
 Rows Read: 8, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0894476
+Elapsed time: 00:00:00.0330772
 Finished writing 8 rows.
 Writing completed.
-Data will be written to C:\Users\xadupre\AppData\Local\Temp\rre888024.xdf File will be overwritten if it exists.
-
-Rows Processed: 5 
+Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: Less than .001 seconds 
    rating      Score
-0    78.0  73.949799
-1    50.0  59.101944
-2    65.0  66.404938
-3    72.0  78.721451
-4    63.0  56.442398
+0    71.0  72.630440
+1    67.0  56.995350
+2    67.0  52.958641
+3    72.0  80.894539
+4    50.0  38.375427
 ```
 
 

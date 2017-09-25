@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Logout of the remote R session." 
+title: "remoteLogout function (mrsdeploy) | Microsoft Docs" 
 description: " Logout of the remote session on the R Server. " 
-keywords: "mrsdeploy, remoteLogout" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), remoteLogout" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #remoteLogout: Logout of the remote R session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #remoteLogout: Logout of the remote R session. 
  ##Description
  
 Logout of the remote session on the R Server.
@@ -52,9 +48,9 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[remoteLogin](remotelogin.md)
+[remoteLogin](remoteLogin.md)
 
-[remoteLoginAAD](remoteloginaad.md)
+[remoteLoginAAD](remoteLoginAAD.md)
    
  ##Examples
 
@@ -67,5 +63,4 @@ remoteLogout()
   
  
 ```
- 
  

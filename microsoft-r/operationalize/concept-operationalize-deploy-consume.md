@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "What is operationalization of web services - Microsoft R Server | Microsoft Docs"
+title: "What is operationalization of web services - Machine Learning Server | Microsoft Docs"
 description: "Operationalize Your Analytics with Microsoft R Server Get Started"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "7/21/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# What does it mean to deploy and consume analytics for Data Scientists
+# What is operationalization: deploy and consume analytics
 
 **Applies to:  Microsoft R Server 9.x**
 
@@ -32,7 +32,8 @@ Now that you've learned about [R Server's operationalization feature](../what-is
 
 Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the mrsdeploy package that ships with Microsoft R Client and R Server, the data scientist can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 
-An R Server web service is an R code execution on the [operationalization compute node](../install/operationalize-r-server-one-box-config.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  the mrsdeploy package provides functions for publishing and managing a web service that is backed by the R code block or script you provided. The package also provides functions for establishing a [remote execution](../r/how-to-execute-code-remotely.md) session in a console application.  [Learn more about this package](../r-reference/mrsdeploy/mrsdeploy-package.md). Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
+An R Server web service is an R code execution on the [operationalization compute node](configure-start-for-administrators.md#configure-server-for-operationalization)
+. Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  The mrsdeploy package provides functions for publishing and managing a web service that is backed by the R code block or script you provided. The package also provides functions for establishing a [remote execution](../r/how-to-execute-code-remotely.md) session in a console application.  [Learn more about this package](../r-reference/mrsdeploy/mrsdeploy-package.md). Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
 
 After it has been deployed, the web service can be: 
 + [Consumed directly in R by another data scientist](how-to-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
@@ -46,7 +47,7 @@ You'll develop your R analytics locally with R Client, deploy them to Microsoft 
 
 **On the local client**, you'll need to [install R Client](../r-client-get-started.md) first.  You'll also need to [configure the R IDE](https://msdn.microsoft.com/en-us/microsoft-r/r-client-get-started#step-2-configure-your-ide) of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.  After you have this set up, you can develop your R analytics in your local R IDE using the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) that was installed with Microsoft R Client (and R Server). 
 
-**On the remote server**, you'll need the connection details and access to an instance of [Microsoft R Server](../what-is-microsoft-r-server.md) with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md). After R Server is configured for operationalization, you'll be able to [connect to it from your local machine](how-to-connect-log-in-with-mrsdeploy.md), deploy your models and other analytics to Microsoft R Server as web services, and finally consume or share those services. Please contact your administrator for any missing connection details.
+**On the remote server**, you'll need the connection details and access to an instance of [Microsoft R Server](../what-is-microsoft-r-server.md) with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization). After R Server is configured for operationalization, you'll be able to [connect to it from your local machine](how-to-connect-log-in-with-mrsdeploy.md), deploy your models and other analytics to Microsoft R Server as web services, and finally consume or share those services. Please contact your administrator for any missing connection details.
 
 ## Deploy R code and models as web services
 
@@ -59,7 +60,8 @@ We recommend that you follow [this publish quickstart](quickstart-publish-r-web-
 ## Share services with others for consumption 
 
 >[!IMPORTANT]
-> Anyone who wishes to consume the service must have [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
+> Anyone who wishes to consume the service must have [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization)
+.
 
 When the web service is published, a Swagger-based JSON file is generated automatically to define the service. You can now hand off this file to share the predictive web service with **other authenticated users of R Server**, such as:
 
@@ -78,7 +80,7 @@ You can use Microsoft R Client to run your R code locally and from R Client you 
 Requirements for remote execution include:
 
 + You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
-+ You must also have [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
++ You must also have [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configure-machine-learning-server-one-box.md).
 
 ## More resources
 

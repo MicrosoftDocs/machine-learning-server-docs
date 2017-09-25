@@ -6,7 +6,7 @@ description: "Obtain distributed computing results and processing status.rx_get_
 keywords: "" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "08/31/2017" 
+ms.date: "09/11/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,10 +24,10 @@ ms.custom: ""
  
 ---
 
-# `rx_get_job_results`
+# rx_get_job_results
 
 
-**Applies to: SQL Server 2017**
+ 
 
 
 ## Usage
@@ -35,8 +35,11 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_get_job_results(job_info: revoscalepy.computecontext.RxRemoteJob.RxRemoteJob, console_output: bool = None, auto_cleanup: bool = None) -> list
+revoscalepy.rx_get_job_results(job_info: revoscalepy.computecontext.RxRemoteJob.RxRemoteJob,
+    console_output: bool = None,
+    auto_cleanup: bool = None) -> list
 ```
+
 
 
 

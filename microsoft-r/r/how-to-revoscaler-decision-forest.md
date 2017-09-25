@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Estimating Decision Forest Models"
+title: "RevoScaleR User's Guide--Estimating Decision Forest Models (Machine Learning Server) | Microsoft Docs"
 description: "Decision forests with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
@@ -27,11 +27,11 @@ ms.technology: "r-server"
 
 The *rxDForest* function in RevoScaleR fits a *decision forest*, which is an ensemble of decision trees. Each tree is fitted to a bootstrap sample of the original data, which leaves about 1/3 of the data unused in the fitting of each tree. Each data point in the original data is fed through each of the trees for which it was unused; the decision forest prediction for that data point is the statistical *mode* of the individual tree predictions, that is, the majority prediction (for classification; for regression problems, the prediction is the mean of the individual predictions).
 
-Unlike individual decision trees, decision forests are not prone to overfitting, and they are consistently shown to be among the best machine learning algorithms. RevoScaleR implements decision forests in the *rxDForest* function, which uses the same basic tree-fitting algorithm as *rxDTree* (see ["The *rxDTree* Algorithm"](how-to-revoscaler-decision-tree.md#the-rxdtree-algorithm)). To create the forest, you specify the number of trees using the *nTree* argument and the number of variables to consider for splitting in each tree using the *mTry* argument. In most cases, you will also want to specify the maximum depth to grow the individual trees: greater depth typically results in greater accuracy, but as with *rxDTree*, also results in significantly longer fitting times.
+Unlike individual decision trees, decision forests are not prone to overfitting, and they are consistently shown to be among the best machine learning algorithms. RevoScaleR implements decision forests in the *rxDForest* function, which uses the same basic tree-fitting algorithm as *rxDTree* (see ["The *rxDTree* Algorithm"](how-to-revoscaler-decision-tree.md#the-rxdtree-algorithm)). To create the forest, you specify the number of trees using the *nTree* argument and the number of variables to consider for splitting in each tree using the *mTry* argument. In most cases, you specify the maximum depth to grow the individual trees: greater depth typically results in greater accuracy, but as with *rxDTree*, also results in longer fitting times.
 
 ### A Simple Classification Forest
 
-In [Logistic Regression Models](how-to-revoscaler-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxDForest* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit this):
+In [Logistic Regression Models](how-to-revoscaler-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxDForest* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit):
   
 	data("kyphosis", package="rpart")
 	kyphForest <- rxDForest(Kyphosis ~ Age + Start + Number, seed = 10,
@@ -58,7 +58,7 @@ While decision forests do not produce a unified model, as logistic regression an
 
 	dfPreds <- rxPredict(kyphForest, data=kyphosis)
 
-Comparing this to the Kyphosis variable in the original kyphosis data, we see that approximately 88 percent of cases are classified correctly:
+Compared to the Kyphosis variable in the original kyphosis data, we see that approximately 88 percent of cases are classified correctly:
 
 	sum(as.character(dfPreds[,1]) ==
 		as.character(kyphosis$Kyphosis))/81
@@ -89,7 +89,7 @@ As a simple example of a regression forest, consider the classic *stackloss* dat
 	  
 ### A Larger Regression Forest Model
 
-As a more complex example, we return to the censusWorkers data to which we earlier fit a decision tree. We will create a regression forest predicting wage income from age, sex, and weeks worked, using the *perwt* variable as probability weights (note that we retain the *maxDepth* and *minBucket* parameters from our earlier decision tree example):
+As a more complex example, we return to the censusWorkers data to which we earlier fit a decision tree. We create a regression forest predicting wage income from age, sex, and weeks worked, using the *perwt* variable as probability weights (note that we retain the *maxDepth* and *minBucket* parameters from our earlier decision tree example):
 
 	#  A Larger Regression Forest Model
 	  
@@ -128,7 +128,7 @@ As an example of a large data classification forest, consider the following simp
 		data = sampleAirData, blocksPerRead = 30, maxDepth = 5, 
 		nTree=20, mTry=2, method="class", seed = 8)
 	
-This yields the following:
+Yields the following:
 
 	airlineForest
 
@@ -206,7 +206,7 @@ Looking at the fitted object’s forest component, we see that a number of the f
 		. . .
 
 
-This may well be because our response is extremely unbalanced--that is, the percentage of flights that are late by 15 minutes or more is quite small. We can tune the fit by providing a *loss matrix*, which allows us to penalize certain predictions in favor of others. You specify the loss matrix using the parms argument, which takes a list with named components. The loss component is specified as either a matrix, or equivalently, a vector that can be coerced to a matrix. In the binary classification case, it can be useful to start with a loss matrix with a penalty roughly equivalent to the ratio of the two classes. So, in our case we know that the on-time flights outnumber the late flights approximately 4 to 1 :
+This may well be because our response is extremely unbalanced--that is, the percentage of flights that are late by 15 minutes or more is quite small. We can tune the fit by providing a *loss matrix*, which allows us to penalize certain predictions in favor of others. You specify the loss matrix using the parms argument, which takes a list with named components. The loss component is specified as either a matrix, or equivalently, a vector that can be coerced to a matrix. In the binary classification case, it can be useful to start with a loss matrix with a penalty roughly equivalent to the ratio of the two classes. So, in our case we know that the on-time flights outnumber the late flights approximately 4 to 1:
 
 	airlineForest2 <- rxDForest(ArrDel15 ~ CRSDepTime + DayOfWeek, 
 		data = sampleAirData, blocksPerRead = 30, maxDepth = 5, seed = 8,
@@ -229,7 +229,7 @@ This may well be because our response is extremely unbalanced--that is, the perc
 		 FALSE 4719374 3427900    0.420742
 		 TRUE   877680 1160261    0.430670
 	  
-This model no longer predicts all flights as on time, but now over-predicts late flights. Adjusting the loss matrix again, this time reducing the penalty, yields the following:
+This model no longer predicts all flights as on time, but now over-predicts late flights. Adjusting the loss matrix again, this time reducing the penalty, yields the following output:
 
 	Call:
 	rxDForest(formula = ArrDel15 ~ CRSDepTime + DayOfWeek, data = sampleAirData, 
@@ -252,6 +252,6 @@ This model no longer predicts all flights as on time, but now over-predicts late
 
 The *rxDForest* function has a number of options for controlling the model fit. Most of these control parameters are identical to the same controls in *rxDTree*. A full listing of these options can be found in the *rxDForest* help file, but the following have been found in our testing to be the most useful at controlling the time required to fit a model with *rxDForest*:
 
--   *maxDepth*: this sets the maximum depth of any node of the tree. Computations grow rapidly more expensive as the depth increases, so we recommend a maxDepth of 10 to 15.
--   *maxNumBins*: this controls the maximum number of bins used for each variable. Managing the number of bins is important in controlling memory usage. The default is to use the larger of 101 and the square root of the number of observations for small to moderate size data sets (up to about one million observations), but for larger sets to use 1001 bins. For small data sets with continuous predictors, you may find that you need to increase the *maxNumBins* to obtain models that resemble those from rpart.
--   *minSplit*, *minBucket*: these determine how many observations must be in a node before a split is attempted (*minSplit*) and how many must remain in a terminal node (*minBucket*).
+-   *maxDepth*: sets the maximum depth of any node of the tree. Computations grow rapidly more expensive as the depth increases, so we recommend a maxDepth of 10 to 15.
+-   *maxNumBins*: controls the maximum number of bins used for each variable. Managing the number of bins is important in controlling memory usage. The default is to use the larger of 101 and the square root of the number of observations for small to moderate size data sets (up to about one million observations), but for larger sets to use 1001 bins. For small data sets with continuous predictors, you may find that you need to increase the *maxNumBins* to obtain models that resemble those from rpart.
+-   *minSplit*, *minBucket*: determine how many observations must be in a node before a split is attempted (*minSplit*) and how many must remain in a terminal node (*minBucket*).

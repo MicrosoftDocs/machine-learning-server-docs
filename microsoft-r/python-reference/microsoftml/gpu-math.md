@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "gpu_math" 
+title: "gpu_math: gpu_math" 
 description: "NVidia CUDA implementation." 
 keywords: "neural network, math, gpu" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.gpu_math*: Acceleration with NVidia CUDA
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,10 @@ ms.custom: ""
 
 
 ```
-microsoftml.gpu_math(gpu_id: numbers.Real = -1, cu_dnn: bool = False, cu_dnn_algo: str = ‘ImplicitPrecompGemm’)
+microsoftml.gpu_math(gpu_id: numbers.Real = -1,
+    cu_dnn: bool = False, cu_dnn_algo: str = 'ImplicitPrecompGemm')
 ```
+
 
 
 

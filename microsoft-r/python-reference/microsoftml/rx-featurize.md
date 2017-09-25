@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Data Transformation for revoscalepy data sources" 
+title: "rx_featurize: Data Transformation for revoscalepy data sources" 
 description: "Transforms data from an input data set to an output data set." 
 keywords: "transform, featurizer" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "07/13/2017" 
+ms.date: "09/05/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 # *microsoftml.rx_featurize*: Data transformation for data sources
 
 
-**Applies to: SQL Server 2017**
+
 
 
 ## Usage
@@ -35,8 +35,22 @@ ms.custom: ""
 
 
 ```
-microsoftml.rx_featurize(data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, pandas.core.frame.DataFrame], output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource, str] = None, overwrite: bool = False, data_threads: int = None, random_seed: int = None, max_slots: int = 5000, ml_transforms: list = None, ml_transform_vars: list = None, row_selection: str = None, transforms: dict = None, transform_objects: dict = None, transform_function: str = None, transform_variables: list = None, transform_packages: list = None, transform_environment: dict = None, blocks_per_read: int = None, report_progress: int = None, verbose: int = 1, compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
+microsoftml.rx_featurize(data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource,
+    pandas.core.frame.DataFrame],
+    output_data: typing.Union[revoscalepy.datasource.RxDataSource.RxDataSource,
+    str] = None, overwrite: bool = False,
+    data_threads: int = None, random_seed: int = None,
+    max_slots: int = 5000, ml_transforms: list = None,
+    ml_transform_vars: list = None, row_selection: str = None,
+    transforms: dict = None, transform_objects: dict = None,
+    transform_function: str = None,
+    transform_variables: list = None,
+    transform_packages: list = None,
+    transform_environment: dict = None, blocks_per_read: int = None,
+    report_progress: int = None, verbose: int = 1,
+    compute_context: revoscalepy.computecontext.RxComputeContext.RxComputeContext = None)
 ```
+
 
 
 
@@ -269,7 +283,7 @@ Beginning processing data.
 Beginning processing data.
 Rows Read: 5, Read Time: 0, Transform Time: 0
 Beginning processing data.
-Elapsed time: 00:00:00.0806065
+Elapsed time: 00:00:00.0521300
 Finished writing 5 rows.
 Writing completed.
   places_visited  xdatacat.London  xdatacat.Brunei  xdatacat.Paris  \

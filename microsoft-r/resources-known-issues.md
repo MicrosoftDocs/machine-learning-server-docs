@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Microsoft R Server - Known Issues | Microsoft Docs"
-description: "Known Issues with Microsoft R Server"
+title: "Machine Learning Server and Microsoft R Server - Known Issues - Machine Learning Server | Microsoft Docs"
+description: "Known Issues with Machine Learning Server and Microsoft R Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "08/10/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -25,9 +25,28 @@ ms.technology:
 
 ---
 
-# Known issues in Microsoft R Server 9.1
+# Known issues in Machine Learning Server 9.2.1 and Microsoft R Server
 
 Review workaround steps for the following known issues in this release. 
+
+## In 9.2.1
+
+There are no known issues reported for Machine Learning Server 9.2.1
+
+<a name="Prev"></a>
+
+## Previous releases 
+
+This document also describes the known issues for the last several releases:
+
++ [Known issues for 9.1.0](#910)
++ [Known issues for 9.0.1](#901)
++ [Known issues for 8.0.5](#805)
+
+<a name="910"></a>
+
+### Microsoft R Server 9.1.0
+
 
 1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
 2. [RevoScaleR: rxExecBy() terminates unexpectedly when NA values do not have a factor level](#revoscaler-rxexecby)  
@@ -41,7 +60,7 @@ Other release-specific pages include [What's New in 9.1](whats-new-in-r-server.m
 
 <a name="revoscaler-rxmerge"></a>
 
-## 1. rxMerge() behaviors in RxSpark compute context
+#### 1. rxMerge() behaviors in RxSpark compute context
 
 *Applies to: RevoScaleR package > rxMerge function*
 
@@ -54,7 +73,7 @@ In comparison with the local compute context, rxMerge() used in a RxSpark comput
 
 <a name="revoscaler-rxexecby"></a>
 
-## 2. rxExecBy() terminates unexpectedly when NA values do not have a factor level
+#### 2. rxExecBy() terminates unexpectedly when NA values do not have a factor level
 
 *Applies to: RevoScaleR package > rxExecBy function*
 
@@ -83,7 +102,7 @@ Var 1: Gender
 ```
 <a name="ml-ensembling"></a>
 
-## 3. MicrosoftML error: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
+#### 3. MicrosoftML error: "Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
 
 *Applies to: MicrosoftML package > Ensembling*
 
@@ -94,7 +113,7 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 <a name="ml-ensembling-modelcount"></a>
 
-## 4. Spark compute context: modelCount=1 does not work with rxTextData
+#### 4. Spark compute context: modelCount=1 does not work with rxTextData
 
 *Applies to: MicrosoftML package > Ensembling*
 
@@ -102,13 +121,13 @@ To work around this error, you can pre-featurize data using rxFeaturize(). The o
 
 <a name="cdh-parcel-message"></a>
 
-## 5. Cloudera: "install_mrs_parcel.py" does not exist 
+#### 5. Cloudera: "install_mrs_parcel.py" does not exist 
 
 If you are performing a [parcel installation of R Server in Cloudera](install/r-server-install-cloudera.md), you might notice a message directing you to use a python installation script for automated deployment. The exact message is "If you wish to automate the Parcel installation please run:", followed by "install_mrs_parcel.py". Currently, that script is not available. Ignore the message.
 
 <a name="cdh-rstudio-loc-cc"></a>
 
-## 6. Cloudera: Connection error related to libjvm or libhdfs package dependencies
+#### 6. Cloudera: Connection error related to libjvm or libhdfs package dependencies
 
 R Server has a package dependency that is triggered only under a very specific configuration:
 
@@ -141,7 +160,7 @@ The workaround is to recreate the symbolic link, update the site file, and resta
 
 <a name="sparkdelays"></a>
 
-## 7. Long delays when consuming web service on Spark
+#### 7. Long delays when consuming web service on Spark
 
 If you encounter long delays when trying to consume a web service created with mrsdeploy functions in a Spark compute context, you may need to add some missing folders. The Spark application belongs to a user called 'rserve2' whenever it is invoked from a web service using mrsdeploy functions. 
 
@@ -182,14 +201,6 @@ rxSparkConnect(reset = TRUE)
 
 The 'reset' parameter kills all pre-existing yarn applications, and create a new one.
 
-<a name="Prev"></a>
-
-## Previous releases 
-
-This document also describes the known issues for the last several releases:
-
-+ [Known issues for 9.0.1](#901)
-+ [Known issues for 8.0.5](#805)
 
 <a name="901"></a>
 

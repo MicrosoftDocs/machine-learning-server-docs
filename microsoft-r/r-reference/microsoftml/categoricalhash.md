@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Categorical HashData Transform" 
+title: "categoricalHash function (MicrosoftML) | Microsoft Docs" 
 description: " Categorical hash transform that can be performed on data before  training a model. " 
-keywords: "MicrosoftML, categoricalHash, transform" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), categoricalHash, transform" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #categoricalHash: Machine Learning Categorical HashData Transform
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #categoricalHash: Machine Learning Categorical HashData Transform 
  ##Description
  
 Categorical hash transform that can be performed on data before 
@@ -42,7 +38,7 @@ training a model.
 
 ```   
   categoricalHash(vars, hashBits = 16, seed = 314489979, ordered = TRUE,
-    invertHash = 0, bag = TRUE, ...)
+    invertHash = 0, outputKind = "Bag", ...)
  
 ```
  
@@ -50,37 +46,41 @@ training a model.
 
    
   
- ### vars
+ ### `vars`
  A character vector or list of variable names to transform. If named, the names represent the names of new variables to be created. 
   
   
   
- ### hashBits
+ ### `hashBits`
  An integer specifying the number of bits to hash into.  Must be between 1 and 30, inclusive. The default value is 16. 
   
   
   
- ### seed
+ ### `seed`
  An integer specifying the hashing seed. The default value is 314489979. 
   
   
   
- ### ordered
+ ### `ordered`
  `TRUE` to include the position of each term in the  hash. Otherwise, `FALSE`. The default value is `TRUE`. 
   
   
   
- ### invertHash
+ ### `invertHash`
  An integer specifying the limit on the number of keys  that can be used to generate the slot name. `0` means no invert  hashing; `-1` means no limit. While a zero value gives better  performance, a non-zero value is needed to get meaningful coefficent names. The default value is `0`. 
   
   
   
- ### bag
- `TRUE` to combine multiple indicator vectors into a single  bag vector instead of concatenating them. This is only relevant when the  input is a vector. The default value is `TRUE`. 
+ ### `outputKind`
+ A character string that specifies the kind of output kind.   
+*   `"ind"`: Outputs an indicator vector. The input column is a vector   of categories, and the output contains one indicator vector per slot in   the input column.    
+*   `"bag"`: Outputs a multi-set vector. If the input column is a  vector of categories, the output contains one vector, where the value in   each slot is the number of occurrences of the category in the input  vector. If the input column contains a single category, the indicator  vector and the bag vector are equivalent   
+*   `"key"`: Outputs an index. The output is an integer id (between 1 and the number of categories in the dictionary) of the category.   
+ The default value is `"Bag"`. 
   
   
   
- ###  ...
+ ### ` ...`
  Additional arguments sent to the compute engine. 
   
  
@@ -98,17 +98,17 @@ the input column is a vector, a single indicator bag is returned for it.
  
 a `maml` object defining the transform.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
  ##See Also
  
-[rxFastTrees](rxfasttrees.md), [rxFastForest](rxfastforest.md),
-[rxNeuralNet](rxneuralnet.md), [rxOneClassSvm](rxoneclasssvm.md),
-[rxLogisticRegression](rxlogisticregression.md).
+[rxFastTrees](rxFastTrees.md), [rxFastForest](rxFastForest.md),
+[rxNeuralNet](rxNeuralNet.md), [rxOneClassSvm](rxOneClassSvm.md),
+[rxLogisticRegression](rxLogisticRegression.md).
    
  ##Examples
 
@@ -171,5 +171,6 @@ a `maml` object defining the transform.
   scoreOutDF2
  
 ```
+ 
  
  

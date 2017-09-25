@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Remote login to Microsoft R Server using Azure Active directory." 
+title: "remoteLoginAAD function (mrsdeploy) | Microsoft Docs" 
 description: " Authenticates the user and creates a remote R session. " 
-keywords: "mrsdeploy, remoteLoginAAD" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), remoteLoginAAD" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #remoteLoginAAD: Remote login to Microsoft R Server using Azure Active directory.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #remoteLoginAAD: Remote login to Microsoft R Server using Azure Active directory. 
  ##Description
  
 Authenticates the user and creates a remote R session.
@@ -51,57 +47,57 @@ Authenticates the user and creates a remote R session.
 
    
   
- ### deployr_endpoint
+ ### `deployr_endpoint`
  The Microsoft R Server HTTP/HTTPS endpoint, including the port number. 
   
   
   
- ### authuri
+ ### `authuri`
  The URI of the authentication service for Azure Active Directory. 
   
   
   
- ### tenantid
+ ### `tenantid`
  The tenant ID of the Azure Active Directory account being used to authenticate. 
   
   
   
- ### clientid
+ ### `clientid`
  the client ID of the Application for the Azure Active Directory account. 
   
   
   
- ### resource
+ ### `resource`
  The resource ID of the Application for the Azure Active Directory account. 
   
   
   
- ### session
+ ### `session`
  If `TRUE`,  create a remote session. 
   
   
   
- ### diff
+ ### `diff`
  If `TRUE`, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if `session` parameter is `TRUE`. 
   
   
   
- ### commandline
- If `TRUE`,  creates a "REMOTE' command line in the R console. Parameter is only  valid if `session` parameter is `TRUE`. 
+ ### `commandline`
+ If `TRUE`,  creates a "REMOTE' command line in the R console. Parameter is only valid if `session` parameter is `TRUE`. 
   
   
   
- ### prompt
+ ### `prompt`
  The command prompt to be used for the remote session 
   
   
   
- ### username
+ ### `username`
  if `NULL`. the user will be prompted to enter username and password 
   
   
   
- ### password
+ ### `password`
  if `NULL`, the user will be prompted to enter username and password 
   
  
@@ -114,9 +110,9 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[remoteLogout](remotelogout.md)
+[remoteLogout](remoteLogout.md)
 
-[remoteCommandLine](remotecommandline.md)
+[remoteCommandLine](remoteCommandLine.md)
    
  ##Examples
 
@@ -136,5 +132,4 @@ remoteLoginAAD("http://localhost:12800",
   
  
 ```
- 
  

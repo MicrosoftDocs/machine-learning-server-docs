@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Copy an object from the local R session to the remote R session." 
+title: "putLocalObject function (mrsdeploy) | Microsoft Docs" 
 description: " Copy an object from the workspace of the local R session to the workspace  of the remote R session. " 
-keywords: "mrsdeploy, putLocalObject" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), putLocalObject" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #putLocalObject: Copy an object from the local R session to the remote R session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #putLocalObject: Copy an object from the local R session to the remote R session. 
  ##Description
  
 Copy an object from the workspace of the local R session to the workspace 
@@ -49,12 +45,12 @@ of the remote R session.
 
    
   
- ### obj
+ ### `obj`
  A character vector containing the names of the R Objects in the local R session to load in the remote R session 
   
   
   
- ### name
+ ### `name`
  The name of an R list object (created if necessary) in the remote R session that will contain the R objects from the local R session.  If `name` is `NULL`, then R objects from the local R session will be loaded in the GlobalEnv of the remote R session. 
   
  
@@ -71,11 +67,11 @@ list of R objects or `NULL`
  
  ##See Also
  
-[getRemoteWorkspace](getremoteworkspace.md)
+[getRemoteWorkspace](getRemoteWorkspace.md)
 
-[getRemoteObject](getremoteobject.md)
+[getRemoteObject](getRemoteObject.md)
 
-[putLocalWorkspace](putlocalworkspace.md)
+[putLocalWorkspace](putLocalWorkspace.md)
    
  ##Examples
 
@@ -91,5 +87,4 @@ putLocalObject(c("aa","bb"), name="myObjsFromLocal")
   
  
 ```
- 
  

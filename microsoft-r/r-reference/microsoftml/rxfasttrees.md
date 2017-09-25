@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Fast Tree" 
+title: "rxFastTrees function (MicrosoftML) | Microsoft Docs" 
 description: " Machine Learning Fast Tree " 
-keywords: "MicrosoftML, rxFastTrees, classification, models, regression" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), rxFastTrees, classification, models, regression" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxFastTrees: Fast Tree
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #rxFastTrees: Fast Tree 
  ##Description
  
 Machine Learning Fast Tree
@@ -59,137 +55,137 @@ Machine Learning Fast Tree
 
    
   
- ### formula
+ ### `formula`
  The formula as described in rxFormula. Interaction terms and `F()` are not currently supported in the **MicrosoftML**. 
   
   
   
- ### data
+ ### `data`
  A data source object or a character string specifying a .xdf file or a data frame object. 
   
   
   
- ### type
+ ### `type`
  A character string that specifies the type of Fast Tree: `"binary"` for the default Fast Tree Binary Classification or `"regression"` for Fast Tree Regression. 
   
   
   
- ### numTrees
+ ### `numTrees`
  Specifies the total number of decision trees to create in  the ensemble.By creating more decision trees, you can potentially get  better coverage, but the training time increases. The default value is 100. 
   
   
   
- ### numLeaves
+ ### `numLeaves`
  The maximum number of leaves (terminal nodes) that can be created in any tree. Higher values potentially increase the size of the tree and get better precision, but risk overfitting and requiring longer training times. The default value is 20. 
   
   
   
- ### learningRate
+ ### `learningRate`
  Determines the size of the step taken in the direction of the gradient in each step of the learning process.  This determines how fast or slow the learner converges on the optimal solution.  If the step size is too big, you might overshoot the optimal solution.  If the step size is too samll, training takes longer to converge to the best solution. 
   
   
   
- ### minSplit
+ ### `minSplit`
  Minimum number of training instances required to form a leaf. That is, the minimal number of documents allowed in a leaf of a regression tree, out of the sub-sampled data. A 'split' means that features in each level of the tree (node) are randomly divided. The default value is  10. Only the number of instances is counted even if instances are weighted. 
   
   
   
- ### exampleFraction
+ ### `exampleFraction`
  The fraction of randomly chosen instances to use for each tree. The default value is 0.7. 
   
   
   
- ### featureFraction
+ ### `featureFraction`
  The fraction of randomly chosen features to use for each tree. The default value is 1. 
   
   
   
- ### splitFraction
+ ### `splitFraction`
  The fraction of randomly chosen features to use on each split. The default value is 1. 
   
   
   
- ### numBins
+ ### `numBins`
  Maximum number of distinct values (bins) per feature. If the feature has fewer values than the number indicated, each value is placed  in its own bin.  If there are more values, the algorithm creates  `numBins` bins. 
   
   
   
- ### firstUsePenalty
+ ### `firstUsePenalty`
  The feature first use penalty coefficient.  This is a form of regularization that incurs a penalty for using a new feature when creating the tree. Increase this value to create trees that don't use many features. The default value is 0. 
   
   
   
- ### gainConfLevel
+ ### `gainConfLevel`
  Tree fitting gain confidence requirement (should be in the range [0,1)). The default value is 0. 
   
   
   
- ### unbalancedSets
+ ### `unbalancedSets`
  If `TRUE`, derivatives optimized for unbalanced sets are used. Only applicable when `type` equal to `"binary"`. The default value is `FALSE`. 
   
   
   
- ### trainThreads
+ ### `trainThreads`
  The number of threads to use in training. The default  value is 8. 
   
   
   
- ### randomSeed
+ ### `randomSeed`
  Specifies the random seed. The default value is `NULL`. 
   
   
   
- ### mlTransforms
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizetext.md), [categorical](categorical.md), and [categoricalHash](categoricalhash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
+ ### `mlTransforms`
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](categorical.md), and [categoricalHash](categoricalHash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
   
   
   
- ### mlTransformVars
+ ### `mlTransformVars`
  Specifies a character vector of variable names to be used in `mlTransforms` or `NULL` if none are to be used. The default value is `NULL`. 
   
   
   
- ### rowSelection
+ ### `rowSelection`
  Specifies the rows (observations) from the data set that are to be used by the model with the name of a logical variable from the  data set (in quotes) or with a logical expression using variables in the    data set. For example, `rowSelection = "old"` will only use observations in which the value of the variable `old` is `TRUE`. `rowSelection = (age > 20) & (age < 65) & (log(income) > 10)` only uses observations in which the value of the `age` variable is between 20 and 65 and the value of the `log` of the `income` variable is greater than 10. The row selection is performed after processing any data transformations (see the arguments `transforms` or `transformFunc`). As with all expressions, `rowSelection` can be defined outside of the function call using the expression function. 
   
   
   
- ### transforms
+ ### `transforms`
  An expression of the form `list(name = expression, ``...)` that represents the first round of variable transformations. As with  all expressions, `transforms` (or `rowSelection`) can be defined outside of the function call using the expression function. 
   
   
   
- ### transformObjects
+ ### `transformObjects`
  A named list that contains objects that can be referenced by `transforms`, `transformsFunc`, and `rowSelection`. 
   
   
   
- ### transformFunc
+ ### `transformFunc`
  The variable transformation function. See rxTransform for details. 
   
   
   
- ### transformVars
+ ### `transformVars`
  A character vector of input data set variables needed for the transformation function. See rxTransform for details. 
   
   
   
- ### transformPackages
+ ### `transformPackages`
  A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
   
   
   
- ### transformEnvir
+ ### `transformEnvir`
  A user-defined environment to serve as a parent to all environments developed internally and used for variable data transformation. If `transformEnvir = NULL`, a new "hash" environment with parent `baseenv()` is used instead. 
   
   
   
- ### blocksPerRead
+ ### `blocksPerRead`
  Specifies the number of blocks to read for each chunk  of data read from the data source. 
   
   
   
- ### reportProgress
+ ### `reportProgress`
  An integer value that specifies the level of reporting on the row processing progress:   
 *   `0`: no progress is reported.      
 *   `1`: the number of processed rows is printed and updated.    
@@ -199,22 +195,22 @@ Machine Learning Fast Tree
   
   
   
- ### verbose
+ ### `verbose`
  An integer value that specifies the amount of output wanted. If `0`, no verbose output is printed during calculations. Integer  values from `1` to `4` provide increasing amounts of information. 
   
   
   
- ### computeContext
+ ### `computeContext`
  Sets the context in which computations are executed, specified with a valid RxComputeContext. Currently local and RxInSqlServer compute contexts are supported. 
   
   
   
- ### ensemble
+ ### `ensemble`
  Control parameters for ensembling. 
   
   
   
- ###  ...
+ ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  
@@ -288,9 +284,9 @@ This algorithm is multi-threaded and will always attempt to load the entire data
 memory.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
@@ -305,11 +301,11 @@ memory.
  
  ##See Also
  
-[rxFastForest](rxfastforest.md), [rxFastLinear](rxfastlinear.md),
-[rxLogisticRegression](logisticregression.md), [rxNeuralNet](neuralnet.md),
-[rxOneClassSvm](oneclasssvm.md), [featurizeText](featurizetext.md),
-[categorical](categorical.md), [categoricalHash](categoricalhash.md),
-[rxPredict.mlModel](rxpredict.md).
+[rxFastForest](rxFastForest.md), [rxFastLinear](rxFastLinear.md),
+[rxLogisticRegression](rxLogisticRegression.md), [rxNeuralNet](rxNeuralNet.md),
+[rxOneClassSvm](rxOneClassSvm.md), [featurizeText](featurizeText.md),
+[categorical](categorical.md), [categoricalHash](categoricalHash.md),
+[rxPredict.mlModel](rxPredict.md).
    
  ##Examples
 
@@ -355,6 +351,7 @@ memory.
   rxLinePlot(Score ~ Ozone, type = c("p", "smooth"), data = fastTreeScoreDF)
  
 ```
+ 
  
  
  
