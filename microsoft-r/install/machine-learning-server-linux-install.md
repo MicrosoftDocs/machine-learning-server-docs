@@ -82,7 +82,7 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo. This example specifies 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod//microsoft-mlserver-all-9.2.1.deb`
+2. Set the location of the package repoat the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
 
 3. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
@@ -99,11 +99,9 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo. This example specifies 7.0: `rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-all-9.2.1.rpm`
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
 
-3. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
-
-4. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
+3. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
 
 5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
@@ -111,13 +109,11 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo using this example syntax for SLES11: `rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-all-9.2.1.rpm`
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `sudo rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm`
 
-3. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
+3. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
 
-4. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
-
-5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+4. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 
 ## Connect and validate
@@ -236,13 +232,15 @@ To quit the program, type `q()` at the command line with no arguments.
 
 To quit the program, type `quit()` at the command line with no arguments.
 
-## Enable operationalization
+## Enable server to host analytic web services and accept remote connections
 
-Machine Learning Server can be used as-is with an R IDE on the same box, but you can also [enable the server to host web services and to allow remote server connections](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+Machine Learning Server can be with an R IDE on the same box, but you can also [enable the server to [host web services](../operationalize/concept-what-are-web-services.md) and to allow remote server connections].(../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
 
-Configure the server to by running the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure the server for remote access and execution, web service deployment, or cluster topologies. 
+Configure the server for remote access and execution and web service deployment using the [Administrator Utility](../operationalize/configure-use-admin-utility.md).
 
-[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
+[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
+
+Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
 
 ## What's installed
 

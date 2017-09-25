@@ -32,22 +32,24 @@ ms.technology:
 
 Learn how to deploy an Python model as a [web service with Machine Learning Server](../concept-what-are-web-services.md). Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
 
-In Machine Learning Server, a web service is a Python code execution on the [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the azureml-model-management-sdk Python library ](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to manage a service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle. 
+In Machine Learning Server, a web service is a model and/or code that has been deployed and hosted in the server.  Each web service is uniquely defined by a `name` and `version`. When consumed, the service consists of the code execution on a [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). Learn more [about web services](../concept-what-are-web-services.md).
 
-[Learn more about web services](../concept-what-are-web-services.md).
+You can use the functions in [the azureml-model-management-sdk Python library ](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to manage the web service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle. 
+
 
 ## Time estimate
 
-If you have completed the prerequisites, this task takes approximately *10* minutes to complete.
+After you have completed the prerequisites, this task takes approximately *10* minutes to complete.
 
 ## Prerequisites
 
 Before you begin this QuickStart, have the following ready:
 
-+ An instance of [Machine Learning Server ](../../what-is-machine-learning-server.md) installed with the Python option, which has been [configured to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure.
- 
-
-+ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](../../operationalize/python/how-to-authenticate-in-python.md) in Python, deploy your analytics as web services so others can consume them. 
+> [!div class="checklist"]
+> * Machine Learning Server with Python that's **[configured to operationalize models](../../operationalize/configure-machine-learning-server-one-box.md)**. Try an [Azure Resource Management template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) to quickly configure a server for operationalization.<br/>&nbsp;
+> * The [connection details (host, username, password)](../../operationalize/python/how-to-authenticate-in-python.md)  to that server instance from your administrator.  <br/>&nbsp;
+> * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).<br/>&nbsp;
+> * Familiarity with Jupyter notebooks. Learn [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
 
 
 ## Example code
@@ -57,27 +59,25 @@ The example for this quickstart is stored in a Jupyter notebook. This notebook f
 This example walks through the deployment of a Python model as a web service hosted in Machine Learning Server. We will build a simple linear model using the [rx_lin_mod](../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server or [locally on Windows machine](../../install/python-libraries-interpreter.md). This package requires a connection to Machine Learning Server.  
 
 The notebook example walks you through how to:
-> [!div class="checklist"]
-> * Create and run a linear model locally
-> * Authenticate with Machine Learning Server
-> * Publish the model as a Python web service on Machine Learning Server
-> * Consume the service and make a prediction
-> * List all services on Machine Learning Server
-> * Retrieve a web service object for consumption
-> * Delete a service
+1. Create and run a linear model locally
 
+1. [Authenticate with Machine Learning Server](how-to-authenticate-in-python.md) from your Python script
 
-### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/web-services/deploy-consume/Quickstart_Publish_Python_Web_Service.ipynb).
+1. Publish the model as a Python web service to Machine Learning Server
 
-&nbsp;
+1. Examine, test, and consume the service in the same session
 
->[!IMPORTANT]
->Be sure to replace with the correct login details for your configuration. Connecting to Machine Learning Server using the azureml-model-management-sdk library is covered [in this article](how-to-authenticate-in-python.md).
+1. Delete the service
+
+You can try it yourself with the notebook. 
+
+### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Quickstart_Publish_Python_Web_Service.ipynb).
 
 ## Next steps
 
 After it has been deployed, the web service can be: 
-+ Consumed directly in Python by another data scientist for testing purposes, for example 
+
++ [Consumed directly in Python by someone else](how-to-consume-web-services.md) for testing purposes See an example in [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Explore_Consume_Python_Web_Services.ipynb).
 
 + [Integrated into an application by an application developer](../how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 
