@@ -120,9 +120,9 @@ yum update
 
 # Set the package repository location containing the R Client distribution. 
 # On RHEL 6:
-# wget  http://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
+# rpm -Uvh http://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 # On RHEL 7:
-wget http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
 # Check for mlserver.repo configuration file to verify download.
 ls -la /etc/yum.repos.d/ 
