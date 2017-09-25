@@ -8,7 +8,7 @@
     items:
     - name: Install & configure
       tocHref: /machine-learning-server/install/
-      topicHref: /
+      topicHref: /machine-learning-server/machine-learning-server-install
     - name: Operationalize
       tocHref: /machine-learning-server/operationalize/
       topicHref: /machine-learning-server/operationalize/configure-start-for-administrators
