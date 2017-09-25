@@ -74,7 +74,7 @@ After installation completes, software can be found at the following paths:
 
 Start here. Machine Learning Server is required on the edge node. You should run full setup, following the installation commands for the Linux operating system used by your cluster: [Linux install > How to install](machine-learning-server-linux-install.md#how-to-install).
 
-Full setup gives you core components for both R and Python, machine learning algorthims and pretrained models, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services, which allows you to invoke and access your solution programmatically, through a REST API.
+Full setup gives you core components for both R and Python, machine learning algorithms and pretrained models, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services, which allows you to invoke and access your solution programmatically, through a REST API.
 
 > [!Note]
 > You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.
@@ -110,8 +110,8 @@ Alternatively, you can install a subset of packages. You might do this if you do
 
 6. Install the packages using the tool and syntax for your platform:
 
-    + On Ubunutu online: `apt-get install *.rpm`
-    + On Ubunutu offline: `dpkg -i *.deb`
+    + On Ubuntu online: `apt-get install *.rpm`
+    + On Ubuntu offline: `dpkg -i *.deb`
     + On CentOS and RHEL: `yum install *.rpm` 
 
 7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
