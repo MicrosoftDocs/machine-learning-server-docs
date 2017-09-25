@@ -12,6 +12,9 @@
     - name: Operationalize
       tocHref: /machine-learning-server/operationalize/
       topicHref: /machine-learning-server/operationalize/configure-start-for-administrators
+    - name: Microsoft R Client
+      tocHref: /machine-learning-server/r-client/
+      topicHref: /machine-learning-server/r-client/what-is-microsoft-r-client
     - name: Python Package Reference
       tocHref: /machine-learning-server/python-reference/
       topicHref: /machine-learning-server/python-reference/introducing-python-package-reference
