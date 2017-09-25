@@ -39,7 +39,7 @@ On an internet-connected computer, download all of the following files.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | Get serversetup.exe from one of these sites:<br/><br/>[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) <br/> [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) <br/> [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | R Server |
+|Machine Learning Server setup | Get serversetup.exe from one of these sites:<br/><br/>[Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) <br/>  *pending* - [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) <br/>  *pending* - [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | R Server |
 |Pre-trained Models |[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
 |Microsoft R Open 3.4.1.0|[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
 |Microsoft Python Open |[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
@@ -52,7 +52,7 @@ On an internet-connected computer, download all of the following files.
 
 Use a tool or device to transfer the files to the offline server. Extract the zipped executable for setup. Place files in the following locations:
 
-+ Put the serversetup.exe in a convenient folder. It is not important where this file resides.
++ Put the unzipped serversetup.exe in a convenient folder. It is not important where this file resides.
 + Put the CAB files in the setup user's temp folder: `C:\Users\<user-name>\AppData\Local\Temp`. 
 
 ## Run setup

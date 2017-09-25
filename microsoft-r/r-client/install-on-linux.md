@@ -53,7 +53,7 @@ Also included and required for R Client setup is Microsoft R Open 3.4.1.  Micros
   | Package manager | Platform |
   |-----------------|----------|
   |[yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) | RHEL, CentOS|
-  |[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu onlne |
+  |[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu online |
   |[dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
   |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
   |[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
@@ -76,7 +76,7 @@ There is no support for side-by-side installations of older and newer versions.
 
 This section walks you through an R Client 3.4.1 deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML packages, and mrsdeploy.
 
-The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setitng the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software).
+The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software).
 
  
 **On Ubuntu 14.04 - 16.04**
@@ -92,7 +92,7 @@ apt-get install apt-transport-https
 # Update packages on your system
 apt-get update
 
-# Set the package repository location containing the Machine Learning Server distribution. 
+# Set the package repository location containing the R Client distribution. 
 # On Ubuntu 14.04.
 # wget http://packages.microsoft.com/config/ubuntu/14.04/prod/packages-microsoft-prod.deb 
 # On Ubuntu 16.04.
@@ -115,14 +115,20 @@ With root or sudo permissions, run the following commands:
 # Install as root or sudo
 sudo su
 
-# Set the package repository location containing the Machine Learning Server distribution. 
+# Update packages on your system
+yum update
+
+# Set the package repository location containing the R Client distribution. 
 # On RHEL 6:
 # wget  http://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 # On RHEL 7:
 wget http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
+# Check for mlserver.repo configuration file to verify download.
+ls -la /etc/yum.repos.d/ 
+
 # Install the packages
-yum install microsoft-mlserver-all-9.2.1
+yum install microsoft-r-client-packages-3.4.1
 ``` 
 
 **SUSE Linux Enterprise Server 11**
@@ -132,8 +138,11 @@ With root or sudo permissions, run the following commands:
 # Install as root or sudo
 sudo su
 
+# Update packages on your system
+zypper update
+
 # Install the packages
-zypper install microsoft-mlserver-all-9.2.1
+zypper install microsoft-r-client-packages-3.4.1
 ``` 
 
 
@@ -160,24 +169,14 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 
 ### Package list
 
-The following packages comprise a full Machine Learning Server installation:
+The following packages comprise a full R Client installation:
 
 ```
- microsoft-mlserver-packages-r-9.2.1        ** core
- microsoft-mlserver-python-9.2.1            ** core
- microsoft-mlserver-packages-py-9.2.1       ** core
- microsoft-mlserver-mml-r-9.2.1             ** microsoftml for R (optional)
- microsoft-mlserver-mml-py-9.2.1            ** microsoftml for Python (optional)
- microsoft-mlserver-mlm-r-9.2.1             ** pre-trained models (requires mml)
- microsoft-mlserver-mlm-py-9.2.1            ** pre-trained models (requires mml)
- microsoft-mlserver-hadoop-9.2.1            ** hadoop (required for hadoop)
- microsoft-mlserver-adminutil-9.2           ** operationalization (optional)
- microsoft-mlserver-computenode-9.2         ** operationalization (optional)
- microsoft-mlserver-config-rserve-9.2       ** operationalization (optional) 
- microsoft-mlserver-dotnet-9.2              ** operationalization (optional)
- microsoft-mlserver-webnode-9.2             ** operationalization (optional)
+ microsoft-r-client-packages-3.4.1       ** core
+ microsoft-r-client-mlm-r-3.4.1          ** pre-trained models (requires mml)
+ microsoft-r-client-mml-r-3.4.1          ** microsoftml for R (optional)
+
 ```
-The microsoft-mlserver-python-9.2.1 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
 
 Microsoft R Open is required for R execution:
 
@@ -185,14 +184,6 @@ Microsoft R Open is required for R execution:
  microsoft-r-open-foreachiterators-3.4.1 
  microsoft-r-open-mkl-3.4.1
  microsoft-r-open-mro-3.4.1 
-```
-
-Microsoft .NET Core 1.1, used for operationalization, must be added to Ubuntu:
-
-```
- dotnet-host
- dotnet-hostfxr-1.1.0
- dotnet-sharedframework-microsoft.netcore.app-1.1.2 
 ```
 
 Additional open source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:
@@ -232,11 +223,11 @@ If your system provides a graphical user interface, you can click a file to down
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-+ Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-mlserver-packages-r-9.2.1.rpm` 
-+ Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.2.1.rpm` 
-+ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.2.1.rpm`
-+ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/prod/ubuntu/14.04/microsoft-mlserver-packages-r-9.2.1.deb`
-+ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
++ Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.1.rpm` 
++ Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.1.rpm` 
++ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.1.rpm`
++ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/prod/ubuntu/14.04/microsoft-r-client-packages-3.4.1.deb`
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-r-client-packages-3.4.1.deb`
 
 Repeat for each package.
 
@@ -260,23 +251,23 @@ This step completes installation.
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   + On CentOS and RHEL: `$ rpm -qi microsoft-mlserver-packages-r-9.2.1`
-   + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.2.1`  
-   + On SLES: `zypper info microsoft-mlserver-packages-r-9.2.1`
+   + On CentOS and RHEL: `$ rpm -qi microsoft-r-client-packages-3.4.1`
+   + On Ubuntu: `$ dpkg --status microsoft-r-client-packages-3.4.1`  
+   + On SLES: `zypper info microsoft-r-client-packages-3.4.1`
 
   Output on Ubuntu is as follows:
 
    ```
-    Package: microsoft-mlserver-packages-r-9.2.1
+    Package: microsoft-r-client-packages-3.4.1
     Status: install ok installed
     Priority: optional
     Section: devel
     Installed-Size: 195249
     Maintainer: revobuil@microsoft.com
     Architecture: amd64
-    Version: 9.2.1.1287
+    Version: 3.4.1
     Depends: microsoft-r-open-mro-3.4.1, microsoft-r-open-mkl-3.4.1, microsoft-r-open-foreachiterators-3.4.1
-    Description: Microsoft Machine Learning Server
+    Description: Microsoft R Client 3.4.1
 	  . . .
    ```
 
@@ -295,68 +286,24 @@ Review the recommendations in [Package Management](../operationalize/configure-m
   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.4.1`  
   + On SUSE: `zypper remove microsoft-r-open-mro-3.4.1`    
 
-2. Remove the Machine Learning Server Python packages:
-
-  + On RHEL: `yum erase microsoft-mlserver-python-9.2.1`     
-  + On Ubuntu: `apt-get purge microsoft-mlserver-python-9.2.1`  
-  + On SUSE: `zypper remove microsoft-mlserver-python-9.2.1`
-
-3. Remove the Hadoop package:
-
-  + On RHEL: `yum erase microsoft-mlserver-hadoop-9.2.1`     
-  + On Ubuntu: `apt-get purge microsoft-mlserver-hadoop-9.2.1`  
-  + On SUSE: `zypper remove microsoft-mlserver-hadoop-9.2.1`
-
-4. You have additional packages if you installed the operationalization feature. On a 9.2.1 installation, this is the On a 9.2.1 installation, this is the [azureml-model-management library](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md), which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
-
-  + microsoft-mlserver-adminutil-9.2
-  + microsoft-mlserver-webnode-9.2
-  + microsoft-mlserver-computenode-9.2
-
-5. Re-list the packages from Microsoft to check for remaining files:
+2. Re-list the packages from Microsoft to check for remaining files:
 
   + On RHEL: `yum list \*microsoft\*`   
   + On Ubuntu: `apt list --installed | grep microsoft`  
   + On SUSE: `zypper search \*microsoft-r\*`  
 
-  On Ubuntu, you have `dotnet-sharedframework-microsoft.netcore.app-1.1.2`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If Machine learning Server is the only Microsoft software you have, you can remove it now.
+  On Ubuntu, you might have `dotnet-sharedframework-microsoft.netcore.app-1.1.2`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If R Client is the only Microsoft software you have, you can remove it now.
 
 6. After packages are uninstalled, remove remaining files. On root@, determine whether additional files still exist:
 
-  + `$ ls /opt/microsoft/mlserver/9.2.1/`
+  + `$ ls /opt/microsoft/rclient/3.4.1/`
 
 7. Remove the entire directory:
 
-  + `$ rm -fr ls /opt/microsoft/mlserver/9.2.1/`
+  + `$ rm -fr ls /opt/microsoft/rclient/3.4.1/`
 
-RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft/mlserver. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
+RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft/rclient. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
-<a name="installed-packages"></a>
-
-### Package list
-
-Machine Learning Server for Linux adds the following packages at a minimum. When uninstalling software, refer to this list when searching for packages to remove.
-
-    dotnet-host
-    dotnet-hostfxr-1.1.0
-    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
-    
-    microsoft-mlserver-adminutil-9.2
-    microsoft-mlserver-all-9.2.1 
-    microsoft-mlserver-computenode-9.2
-    microsoft-mlserver-config-rserve-9.2 
-    microsoft-mlserver-hadoop-9.2.1
-    microsoft-mlserver-mlm-py-9.2.1 
-    microsoft-mlserver-mlm-r-9.2.1
-    microsoft-mlserver-mml-py-9.2.1
-    microsoft-mlserver-mml-r-9.2.1
-    microsoft-mlserver-packages-py-9.2.1 
-    microsoft-mlserver-packages-r-9.2.1
-    microsoft-mlserver-python-9.2.1 
-    microsoft-mlserver-webnode-9.2
-    microsoft-r-open-foreachiterators-3.4.1 
-    microsoft-r-open-mkl-3.4.1
-    microsoft-r-open-mro-3.4.1 
 
 ## Learn More
 

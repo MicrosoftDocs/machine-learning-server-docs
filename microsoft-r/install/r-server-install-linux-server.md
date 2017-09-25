@@ -24,6 +24,8 @@ ms.technology: "r-server"
 
 # R Server 9.1 Installation for Linux Systems
 
+**Looking for the 9.2.1 release? See [Machine Learning Server for Linux installation](machine-learning-server-linux-install.md)**
+
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. 
 
 This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see the instructions for an [offline installation](r-server-install-linux-offline.md).
