@@ -51,7 +51,7 @@ Installation is through package managers. Unlike previous releases, there is no 
 | Package manager | Platform |
 |-----------------|----------|
 |[yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) | RHEL, CentOS|
-|[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu onlne |
+|[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu online |
 | [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
 |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
 |[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
