@@ -82,11 +82,11 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 1. Install as root: `sudo su`
 
-2. Update packages on your system: `yum update` 
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
 
-3. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
+3. As a verification step, check whether the **microsoft-prod.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
 
-4. As a verification step, check whether the **microsoft-prod.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
+4. Update packages on your system: `yum update` 
 
 5. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
 
@@ -96,26 +96,28 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 1. Install as root: `sudo su`
 
-2. Update packages on your system: `apt-get update` 
+2. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
 
-3. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
+3. Set the location of the package repeat the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
 
-4. Set the location of the package repeat the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
+4. Register the repo: `dpkg -i packages-microsoft-prod.deb`
 
-5. As a verification step, check whether the **mlserver.list** configuration file exists: `ls -la /etc/apt/sources.list.d/`
+5. As a verification step, check whether the **microsoft-prod.list** configuration file exists: `ls -la /etc/apt/sources.list.d/`
 
-6. Install the server: `apt-get install microsoft-mlserver-all-9.2.1`  
+6. Update packages on your system: `apt-get update` 
 
-7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
+7. Install the server: `apt-get install microsoft-mlserver-all-9.2.1`  
+
+8. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
 
 
 ### SUSE SLES11
 
 1. Install as root: `sudo su`
 
-2. Update packages on your system: `zypper update` 
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `sudo rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm`
 
-3. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `sudo rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm`
+3. Update packages on your system: `zypper update` 
 
 4. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
 
