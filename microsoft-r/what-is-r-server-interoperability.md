@@ -73,7 +73,7 @@ Features provided by [Machine Learning Server](what-is-microsoft-r-server.md), [
             <td><b>Analytic Breadth &amp; Depth</b></td>
             <td>Open source packages only.</td>
             <td>Open source R packages plus proprietary packages.</td>
-            <td>Open source R packages plus proprietary packages with support for parallelization and distributed workloads. Propietary Python packages for solutions written in that language.</td>
+            <td>Open source R packages plus proprietary packages with support for parallelization and distributed workloads. Proprietary Python packages for solutions written in that language.</td>
         </tr>
         <tr>
             <td><b><a href="what-is-operationalization.md">Operationalizing</a> R Analytics</b></td>

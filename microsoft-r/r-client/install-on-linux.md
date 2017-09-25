@@ -53,7 +53,7 @@ Also included and required for R Client setup is Microsoft R Open 3.4.1.  Micros
   | Package manager | Platform |
   |-----------------|----------|
   |[yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) | RHEL, CentOS|
-  |[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu onlne |
+  |[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu online |
   |[dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
   |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
   |[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
@@ -76,7 +76,7 @@ There is no support for side-by-side installations of older and newer versions.
 
 This section walks you through an R Client 3.4.1 deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML packages, and mrsdeploy.
 
-The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setitng the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software).
+The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software).
 
  
 **On Ubuntu 14.04 - 16.04**
