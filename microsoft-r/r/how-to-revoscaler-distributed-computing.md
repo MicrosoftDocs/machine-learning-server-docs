@@ -31,7 +31,7 @@ ReovScaleR and revoscalepy, which are designed to process large data one chunk a
 
 ## Functions for distributed computations
 
-RevoScaleR and revoscalepy functions are built to leverage the resources of a clustered computing platform. On a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revolscalepy and RevoScaleR automatically use the available nodes in a cluster. 
+RevoScaleR and revoscalepy functions are built to leverage the resources of a clustered computing platform. On a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revoscalepy and RevoScaleR automatically use the available nodes in a cluster. 
 
 For a list of functions that support distributed workloads, see [RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
 
@@ -107,7 +107,7 @@ Create an XDF source object:
     hdfsFS <- RxHdfsFileSystem()
     bigAirDS <- RxXdfData(airDataDir, fileSystem = hdfsFS ) 
     
-Connect to a the cluster:
+Connect to the cluster:
 
 	myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = TRUE)
 

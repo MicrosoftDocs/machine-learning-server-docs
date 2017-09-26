@@ -45,7 +45,7 @@ The **revoscalepy** module runs locally on all platforms, and remotely in a [RxS
 
 ### In a local compute context
 
-**Revoscalepy**y operations include statistical analysis, linear and logistic regressions, and predictive analytics. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to the cluster. 
+**Revoscalepy** operations include statistical analysis, linear and logistic regressions, and predictive analytics. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to the cluster. 
 
 ### In a remote compute context
 
@@ -65,7 +65,7 @@ This section lists the functions by category to give you an idea of how each one
 
 | Function | Description |
 |----------|-------------|
-|[RxInSqlServer](RxInSqlServer.md) | Creates a compute context for running revoscalepy analyses insidea remote Microsoft SQL Server. |
+|[RxInSqlServer](RxInSqlServer.md) | Creates a compute context for running revoscalepy analyses inside a remote Microsoft SQL Server. |
 |[RxLocalSeq](RxLocalSeq.md) | This is the default but you can call it switch back to a local compute context if your script runs in multiple. Computations using rx_exec will be processed sequentially. |
 |[rx_get_compute_context](rx-get-compute-context.md) | Returns the current compute context.|
 |[rx_set_compute_context](rx-set-compute-context.md) | Change the compute context to a different one.|
@@ -89,7 +89,7 @@ Data sources are used by [microsoftml functions](../microsoftml/microsoftml-pack
 |[RxTextData](RxTextData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a text data file.|
 |[RxXdfData](RxXdfData.md) | All | Generates a data source object from an XDF data source.|
 |[RxOdbcData](RxOdbcData.md) | All | Generates a data source object from an ODBC data source.|
-|[RxOrcData](RxOrcData.md) | Local, [RxSpark](RxSpark.md)| Generates a data source object from an Ord data file.|
+|[RxOrcData](RxOrcData.md) | Local, [RxSpark](RxSpark.md)| Generates a data source object from an Orc data file.|
 |[RxParquetData](RxParquetData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Parquet data file.|
 |[RxSparkData](RxSparkData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Spark data source.|
 |[RxSparkDataFrame](RxSparkDataFrame.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Spark data frame.|
@@ -158,7 +158,7 @@ In an [RxSpark](RxSpark.md) context, job management is built in. You only need j
 |----------|---------------- |-------------|
 |[RxOptions](RxOptions.md) | All | Specify and retrieve options needed for **revoscalepy** computations. |
 |[rx_get_info](rx-get-info.md) | All | Get basic information about a **revoscalepy** data source or data frame. |
-|[rx_get_var_info](rx-get-var-info.md) | All | Get variable information for a R**revoscalepy** data source or data frame, including variable names, descriptions, and value labels.|
+|[rx_get_var_info](rx-get-var-info.md) | All | Get variable information for a **revoscalepy** data source or data frame, including variable names, descriptions, and value labels.|
 |[rx_get_var_names](rx-get-var-names.md)  | All | Read the variable names for data source or data frame. |
 |[rx_set_var_info](rx-set-var-info.md)  | All | Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame.|
 |[RxMissingValues](RxMissingValues.md) | All | Provides missing values for various `NumPy` data types which you can use to mark missing values in a sequence of data in `ndarray`.|
@@ -184,9 +184,9 @@ For SQL Server, add both Python modules to your computer by running setup:
 
 + [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
-Follow these SQL Server tutorials for hands on experience:
+Follow these SQL Server tutorials for hands-on experience:
 
-+ [Use revoscalpy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
++ [Use revoscalepy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
 
 ## See also
