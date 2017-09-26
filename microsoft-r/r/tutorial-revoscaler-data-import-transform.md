@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 **Applies to: Microsoft R Client, Machine Learning Server**
 
-In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text delimited .csv file into an R session and use functions from [RevoScaleR](../r-reference/revoscaler/revoscaler.md) to ascertain the shape of the data. 
+In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text-delimited .csv file into an R session and use functions from [RevoScaleR](../r-reference/revoscaler/revoscaler.md) to ascertain the shape of the data. 
 
 To load data, use **rxImport** from the RevoScaleR function library. The **rxImport** function converts source data into a columnar format for consumption in R and returns a data source object that wraps a dataset with useful metadata. Optionally, by specifying an *outFile* parameter, you can create an XDF file if you want to persist the data for future calculations.
 
@@ -49,7 +49,7 @@ To complete this tutorial as written, use an R console application and built-in 
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
-The command prompt for a R is `>`. You can hand-type case-sensitive R commands, or copy-paste multi-line commands at the console command prompt. The R interpreter can queue up multiple commands and run them sequentially.
+The command prompt for R is `>`. You can hand-type case-sensitive R commands, or copy-paste multi-line commands at the console command prompt. The R interpreter can queue up multiple commands and run them sequentially.
 
 ### How to locate built-in data
 
@@ -95,13 +95,13 @@ On line two, `airXdfData` is a data source object returned by **rxImport**, whic
 
 ## Save as XDF
 
-Although we could work with the data frame for the duration of the session, it often helps to save the data as an .xdf file for reuse at a later date. To create an .xdf file, run **rxImport** with an *outFile* parameter specifying the name and and a folder for which you have write permissions:
+Although we could work with the data frame for the duration of the session, it often helps to save the data as an .xdf file for reuse at a later date. To create an .xdf file, run **rxImport** with an *outFile* parameter specifying the name and a folder for which you have write permissions:
 
 ~~~~
 	airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf")
 ~~~~
 
-Common errors occuring on your first file save exercise might include:
+Common errors occurring on your first file save exercise might include:
 
 + "Error: '\u' used without hex digits in character string..." indicates an invalid path delimiter. R uses forward slash delimiters (/), even if the path is on the Windows file system.	
 + "Error in file <<file-name>>; Permission denied" is obviously a permission error. Choosing a different folder or granting write-access to the current folder will resolve the error.	
@@ -141,7 +141,7 @@ Notice how the output includes the precomputed metadata for each variable, plus 
     Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
     Var 3: DayOfWeek, Type: character
 
-From the output, we can determine whether the number of observation is large enough to warrant subdivision into smaller blocks. Additionally, we can see which variables exist, the data type, and for numeric data, the range of values. The presence of string variables is a consideration. To use this data in subsequent analysis, we might need to convert strings to numeric data for ArrDelay. Likewise, we might want to convert DayOfWeek to a factor variable so that we can group observations by day. We can do all of these things in a subsequent import.
+From the output, we can determine whether the number of observations is large enough to warrant subdivision into smaller blocks. Additionally, we can see which variables exist, the data type, and for numeric data, the range of values. The presence of string variables is a consideration. To use this data in subsequent analysis, we might need to convert strings to numeric data for ArrDelay. Likewise, we might want to convert DayOfWeek to a factor variable so that we can group observations by day. We can do all of these things in a subsequent import.
 
 > [!Tip]
 > To get just the variable information, use the standalone **rxGetVarInfo()** function to return precomputed metadata about variables in the .xdf file (for example, `rxGetVarInfo(airXdfData)`).
@@ -436,7 +436,7 @@ This tutorial demonstrated data import and exploration, but there are several mo
 
 ### Try demo scripts
 
- Another way to learn about RevoScaleR is through demo scripts. Scripts provided in your Machine Learning Server installation contain code that's very similar to what you see in the tutorials. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in [R Tools for Visua Studio](https://www.visualstudio.com/vs/rtvs/).
+ Another way to learn about RevoScaleR is through demo scripts. Scripts provided in your Machine Learning Server installation contain code that's very similar to what you see in the tutorials. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in [R Tools for Visual Studio](https://www.visualstudio.com/vs/rtvs/).
 
  Demo scripts are located in the *demoScripts* subdirectory of your Machine Learning Server installation. On Windows, this is typically:
 
