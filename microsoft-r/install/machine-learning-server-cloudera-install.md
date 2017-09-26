@@ -189,7 +189,7 @@ The above steps apply to 9.2.1. If you have R Server 9.1 or 9.0.1, see [Install 
 
 We recommend starting with [How to use RevoScaleR with Spark](../r/how-to-revoscaler-spark.md) or [How to use RevoScaleR with Hadoop MapReduce](../r/how-to-revoscaler-hadoop.md). 
 
-For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Distributed computing > Function list](../r/how-to-revoscaler-distributed-computing.md#distributed-computing-overview).
+For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Running a distributed anlaysis using RevoScaleR functions](../r/how-to-revoscaler-distributed-computing-distributed-analysis.md).
 
 ## See also
 

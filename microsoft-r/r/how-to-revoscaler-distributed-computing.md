@@ -31,7 +31,7 @@ RevoScaleR and revoscalepy, which are designed to process large data one chunk a
 
 ## Functions for distributed computations
 
-When executed on a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revoscalepy and RevoScaleR automatically use the available nodes in a cluster. For a list of functions that support distributed workloads, see [RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
+When executed on a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revoscalepy and RevoScaleR automatically use the available nodes in a cluster. For a list of functions that support distributed workloads, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
 
 ## Architecture supporting workload distribution
 
