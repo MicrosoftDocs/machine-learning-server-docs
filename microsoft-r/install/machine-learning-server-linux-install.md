@@ -98,7 +98,7 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 2. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
 
-3. Set the location of the package repeat the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
+3. Set the location of the package repo the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
 
 4. Register the repo: `dpkg -i packages-microsoft-prod.deb`
 

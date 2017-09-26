@@ -104,8 +104,11 @@ flag | Option | Description
 
 Repeat the command without **-n** parameter to create the files: `bash generate_mlserver_parcel.sh`
 
-+ The parcel generator file name is **MLServer-9.2.1**
++ The parcel generator file name is **MLServer-9.2.1-[DISTRO].parcel**
 + The CSD file name is **MLServer**
+
+> [!Note]
+> The parcel generator file name includes a placeholder for the distribution. Remember to replace it with a valid value before executing the copy commands.
 
 ## Distribute parcels and CSDs
 
@@ -115,11 +118,12 @@ This section explains how to place parcel generator script and CSD files in CDH.
 
 By default, Cloudera Manager finds parcels in the Cloudera parcel repository. In this step, copy the parcel you generated to the repository.
 
+
 1. Copy **MLServer-9.2.1** and **MLServer-9.2.1.sha** to the Cloudera parcel repository, typically /opt/cloudera/parcels.
 
-    `cp ./MLServer-9.2.1.parcel /opt/cloudera/parcel-repo/`
+    `cp ./MLServer-9.2.1-[DISTRO].parcel /opt/cloudera/parcel-repo/`
 
-    `cp ./MLServer-9.2.1.parcel.sha /opt/cloudera/parcel-repo/`
+    `cp ./MLServer-9.2.1-[DISTRO].parcel.sha /opt/cloudera/parcel-repo/`
 
 ### Copy to the CSD repository
 
