@@ -34,9 +34,9 @@ You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/T
 
 |HTTPS Certificates|Description|Web Node|Compute Node|
 |------------------------------------|------------------------------------------------------------------------|--------------|---------------|
-|API certificate|Secures communication between client applications and web node.|Yes, with private key|No|
-|Compute node certificate|Encrypts the traffic between the web node and compute node. You can use a unique certificate for each compute node, or you can use one common Multi-Domain (SAN) certificate for all compute nodes.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate is not needed._ |No|Yes, with private key|
-|Authentication certificate|Authenticates the web node with the compute node so that only the web node can communicate with the compute node.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate is not needed._|Yes, with private and a public key|No|
+|API certificate|Secures communication between client applications and web node.<br/>This certificate works for both one-box and enterprise setups.|Yes, with private key|No|
+|Compute node certificate|Encrypts the traffic between the web node and compute node. You can use a unique certificate for each compute node, or you can use one common Multi-Domain (SAN) certificate for all compute nodes.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate is not needed._ <br/>This certificate works for enterprise setups.|No|Yes, with private key|
+|Authentication certificate|Authenticates the web node with the compute node so that only the web node can communicate with the compute node.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate is not needed._<br/>This certificate works for enterprise setups.|Yes, with private and a public key|No|
 
 <br />
 
@@ -73,6 +73,7 @@ This section walks you through the steps for securing the connections between th
            "Port": 443,
            "HttpsEnabled": true,
            "HttpsCertificate": {
+               "Enabled": true,
                "StoreName": "My",        
                "StoreLocation": "LocalMachine",
                "SubjectName": "CN=<certificate-subject-name>"
@@ -118,6 +119,8 @@ On each machine hosting a web node:
 1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
 
 1. Run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
+
+1. Restart the node or just run 'iisreset' on the command-line.
 
 1. Repeat on every web node.
 
@@ -213,6 +216,7 @@ When encrypting, you have the choice of using one of the following **compute nod
               "Port": <https-port-number>,
               "HttpsEnabled": true,
               "HttpsCertificate": {
+                  "Enabled": true,
                   "StoreName": "My",        
                   "StoreLocation": "LocalMachine",
                   "SubjectName": "CN=<certificate-subject-name>"
@@ -235,6 +239,8 @@ When encrypting, you have the choice of using one of the following **compute nod
    > Make sure the name of the certificate matches the domain name of the compute node URL. 
 
 1. Launch IIS and follow the [instructions above](#iis).
+
+1. Restart the node or just run 'iisreset' on the command-line.
 
 
 #### Linux: Encrypting Traffic between Web Node and Compute Node
