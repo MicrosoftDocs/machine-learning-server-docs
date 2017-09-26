@@ -454,7 +454,7 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Rev
  <a name="chunking"></a>
 ### Overcome R Client data chunking limitations by pushing compute context or migrating to Machine Learning Server
 
-A primary benefit of RevoScaleR is the ability to redistribute data into component parts for processing in parallel, reassembling the data later for final analysis. This behavior is called *chunking*, and it's one of the key mechanisms by which RevoScaleR processes and analyzes very large datasets.
+*Data chunking* is a RevoScaleR capability that partitions data into multiple parts for processing in parallel, reassembling it later for analysis. It's one of the key mechanisms by which RevoScaleR processes and analyzes very large datasets.
 
 In Machine Learning Server, chunking functionality is available only when RevoScaleR functions are executed on Machine Learning Server for Windows, Teradata, SQL Server, Linux, or Hadoop. You cannot use chunking on systems that have just Microsoft R Client. R Client requires that data fits into available memory. Moreover, it can only use a maximum of two threads for analysis. Internally, when RevoScaleR is running in R Client, the `blocksPerRead` argument is deliberately, which results in all data being read into memory. 
 

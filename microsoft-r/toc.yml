@@ -288,15 +288,15 @@
           href: r/how-to-revoscaler-data-sort.md
         - name: Merge data
           href: r/scaler-data-merge.md
-      - name: Summarize data
+      - name: Summarization
         items:
         - name: Statistical summaries
           href: r/how-to-revoscaler-data-summaries.md
         - name: Crosstabs
           href: r/how-to-revoscaler-crosstabs.md
-      - name: Visualize data
+      - name: Visualization
         href: r/how-to-revoscaler-visualize-huge-data-sets.md
-      - name: Model data
+      - name: Modeling
         href: r/how-to-revoscaler-models.md
         items:
         - name: Linear regression
@@ -1292,5 +1292,3 @@
     href: resources-opting-out.md
   - name: Additional resources
     href: resources-more.md
-  - name: Glossary
-    href: resources-glossary.md
