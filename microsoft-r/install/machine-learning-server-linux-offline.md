@@ -39,7 +39,7 @@ In contrast with previous releases, there is no install.sh script. Package manag
 | Package manager | Platform |
 |-----------------|----------|
 |[yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) | RHEL, CentOS|
-|[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu onlne |
+|[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu online |
 |[dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
 |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
 |[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
@@ -129,15 +129,15 @@ Additional open source packages must be installed if a package is required but n
 
 ## Download packages
 
-If your system provides a graphical user interface, you can click a file to download it. Otherwise, use `wget`. We recommend donwloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
+If your system provides a graphical user interface, you can click a file to download it. Otherwise, use `wget`. We recommend downloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 + Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.2.1.rpm` 
-+ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.2.1/microsoft-mlserver-packages-r-9.2.1.deb`
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.2.1.rpm`
 
-Repeat for each package.
+Repeat for each package in the [package list](#Package list).
 
 ## Install packages
 
@@ -188,7 +188,7 @@ Run the activation script from either the R or Python directory:
 
 ### Start Revo64
 
-As another verification step, run the Revo64 program. By default, Revo64 is installed in the /usr/bin directory, available to any user who can log in to the machine:
+As another verification step, run the Revo64 program. By default, Revo64 is linked to the /usr/bin directory, available to any user who can log in to the machine:
 
 1. From /Home or any other working directory:
 
@@ -235,7 +235,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
    `[<path>] $ mlserver-python`
 
-2. Run a revosclapy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
+2. Run a revoscalepy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
 
     ~~~~
     import os

@@ -50,7 +50,7 @@ Installation is through package managers. Unlike previous releases, there is no 
 | Package manager | Platform |
 |-----------------|----------|
 |[yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-yum.html) | RHEL, CentOS|
-|[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu onlne |
+|[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu online |
 | [dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
 |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
 |[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
@@ -74,46 +74,64 @@ After installation completes, software can be found at the following paths:
 
 ## How to install
 
-The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setitng the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 Activation is a separate step. If you forget to activate, the server works, but the following error appears when you call an API: "Express Edition will continue to be enforced."
-
-### Ubuntu 14.04 - 16.04
-
-1. Install as root: `sudo su`
-
-2. Set the location of the package repoat the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
-
-3. As a verification step, check whether the mlserver.list configuration file exists: `ls -la /etc/apt/sources.list.d/`
-
-4. Update packages on your system: `apt-get update` 
-
-5. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
-
-6. Install the server: `apt-get install microsoft-mlserver-all-9.2.1`  
-
-7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
-
 
 ### Red Hat and CentOS 6/7
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
 
-3. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
+3. As a verification step, check whether the **microsoft-prod.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
 
-5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+4. Update packages on your system: `yum update` 
 
-### SUSE SLES11
+5. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
+
+6. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+
+### Ubuntu 14.04 - 16.04
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `sudo rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm`
+2. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
 
-3. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
+3. Set the location of the package repo the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
 
-4. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+4. Register the repo: `dpkg -i packages-microsoft-prod.deb`
+
+5. As a verification step, check whether the **microsoft-prod.list** configuration file exists: `ls -la /etc/apt/sources.list.d/`
+
+6. Update packages on your system: `apt-get update` 
+
+7. Install the server: `apt-get install microsoft-mlserver-all-9.2.1`  
+
+8. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
+
+
+### SUSE (SLES11 only)
+
+1. Install as root: `sudo su`
+
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `zypper -ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com`
+
+3. Update packages on your system: `zypper update` 
+
+4. Install the server: `zypper install microsoft-mlserver-sles11-9.2.1` 
+
+5. You might get a message stating that PackageKit is blocking zypper. Enter `y` to quit PackageKit and allow zypper to continue.
+
+6. You are prompted whether to trust the repository signing key. You can choose `t` to temporarily trust the key for the purposes of downloading and installing Machine Learning Server. 
+
+7. You might get a "Digest verification failed" message (this is a temporary issue that will be resolved soon). Enter `y` to continue.
+
+8. When asked to confirm the list of packages to install, enter `y` to continue. 
+
+9. Review and accept the license agreements for MRO, Anaconda, and Machine Learning Server.
+
+10. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 
 ## Connect and validate
@@ -195,7 +213,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
    `[<path>] $ mlserver-python`
 
-2. Run a revosclapy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
+2. Run a revoscalepy function, such as **rx_Summary** on a dataset. Many sample datasets are built in. At the Python command prompt, paste the following script:
 
     ~~~~
     import os
@@ -234,13 +252,9 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable server to host analytic web services and accept remote connections
 
-Machine Learning Server can be with an R IDE on the same box, but you can also [enable the server to [host web services](../operationalize/concept-what-are-web-services.md) and to allow remote server connections].(../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
 
-Configure the server for remote access and execution and web service deployment using the [Administrator Utility](../operationalize/configure-use-admin-utility.md).
-
-[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
-
-Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
+To configure the server, use the [Administrator Utility](../operationalize/configure-use-admin-utility.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
 
 ## What's installed
 
@@ -250,7 +264,7 @@ An installation of Machine Learning Server includes some or all of the following
 |-----------|-------------|
 | Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). |
 | R proprietary libraries and script engine | Properietary R libraries are co-located with R base libraries. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Linux, the default R installation directory is `/opt/microsoft/mlserver/9.2.1`. <br/><br/>RevoScaleR is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. RevoScaleR also supports the ability to transfer computations to other RevoScaleRr instances on other computers and platforms through compute context instructions. |
-| Python proprietary libraries | Propietary packages provide modules of class objects and static functions. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. |
+| Python proprietary libraries | Proprietary packages provide modules of class objects and static functions. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. |
 | Anaconda 4.2 with Python 3.5.2 | An open source distribution of Python.|
 | [Admin tool](../operationalize/configure-use-admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
 | [Pre-trained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image detection. |

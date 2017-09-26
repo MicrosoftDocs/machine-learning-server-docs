@@ -45,7 +45,7 @@ There is no Python client or workstation version for Machine Learning Server. Yo
 
 ## Compare features by product
 
-Features provided by [Machine Learning Server](what-is-microsoft-r-server.md), [Microsoft R Client](r-client/what-is-microsoft-r-client.md), and [Microsoft R Open](https://mran.microsoft.com/open/) can be categorized as shown in this table. This table slices key features by components. Additional capability provided in R Client and Machine Learning Server is delivered via propertietary packages.
+Features provided by [Machine Learning Server](what-is-microsoft-r-server.md), [Microsoft R Client](r-client/what-is-microsoft-r-client.md), and [Microsoft R Open](https://mran.microsoft.com/open/) can be categorized as shown in this table. This table slices key features by components. Additional capability provided in R Client and Machine Learning Server is delivered via proprietary packages.
 
 <table>
     <thead>
@@ -73,7 +73,7 @@ Features provided by [Machine Learning Server](what-is-microsoft-r-server.md), [
             <td><b>Analytic Breadth &amp; Depth</b></td>
             <td>Open source packages only.</td>
             <td>Open source R packages plus proprietary packages.</td>
-            <td>Open source R packages plus proprietary packages with support for parallelization and distributed workloads. Propietary Python packages for solutions written in that language.</td>
+            <td>Open source R packages plus proprietary packages with support for parallelization and distributed workloads. Proprietary Python packages for solutions written in that language.</td>
         </tr>
         <tr>
             <td><b><a href="what-is-operationalization.md">Operationalizing</a> R Analytics</b></td>

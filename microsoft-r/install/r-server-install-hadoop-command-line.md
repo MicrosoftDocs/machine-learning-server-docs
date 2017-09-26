@@ -24,6 +24,8 @@ ms.technology: "r-server"
 
 # Command line installation for R Server 9.1 on Hadoop (CDH, HDP, MapR)
 
+**Looking for the 9.2.1 release? See [Machine Learning Server for Hadoop installation](machine-learning-server-hadoop-install.md)**
+
 R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, HortonWorks, and MapR. For most users, installing R Server on a cluster involves running the same series of steps on each data node of the cluster. A summary of setup tasks is as follows:
 
 - Download the installer

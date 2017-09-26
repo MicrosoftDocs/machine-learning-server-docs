@@ -24,6 +24,9 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server using Cloudera Manager
 
+> [!Note]
+> Parcel installation will be available once the Machine Learning Server installers are on the [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Until then, please use the [installation instructions for Hadoop](machine-learning-server-hadoop-install.md).
+
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.2.1 on a Cloudera distribution of Apache Hadoop (CDH). 
 
 Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server runs on the edge node and all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
@@ -101,8 +104,11 @@ flag | Option | Description
 
 Repeat the command without **-n** parameter to create the files: `bash generate_mlserver_parcel.sh`
 
-+ The parcel generator file name is **MLServer-9.2.1**
++ The parcel generator file name is **MLServer-9.2.1-[DISTRO].parcel**
 + The CSD file name is **MLServer**
+
+> [!Note]
+> The parcel generator file name includes a placeholder for the distribution. Remember to replace it with a valid value before executing the copy commands.
 
 ## Distribute parcels and CSDs
 
@@ -112,11 +118,12 @@ This section explains how to place parcel generator script and CSD files in CDH.
 
 By default, Cloudera Manager finds parcels in the Cloudera parcel repository. In this step, copy the parcel you generated to the repository.
 
+
 1. Copy **MLServer-9.2.1** and **MLServer-9.2.1.sha** to the Cloudera parcel repository, typically /opt/cloudera/parcels.
 
-    `cp ./MLServer-9.2.1.parcel /opt/cloudera/parcel-repo/`
+    `cp ./MLServer-9.2.1-[DISTRO].parcel /opt/cloudera/parcel-repo/`
 
-    `cp ./MLServer-9.2.1.parcel.sha /opt/cloudera/parcel-repo/`
+    `cp ./MLServer-9.2.1-[DISTRO].parcel.sha /opt/cloudera/parcel-repo/`
 
 ### Copy to the CSD repository
 
@@ -182,7 +189,7 @@ The above steps apply to 9.2.1. If you have R Server 9.1 or 9.0.1, see [Install 
 
 We recommend starting with [How to use RevoScaleR with Spark](../r/how-to-revoscaler-spark.md) or [How to use RevoScaleR with Hadoop MapReduce](../r/how-to-revoscaler-hadoop.md). 
 
-For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Distributed computing > Function list](../r/how-to-revoscaler-distributed-computing.md#distributed-computing-overview).
+For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Running a distributed analysis using RevoScaleR functions](../r/how-to-revoscaler-distributed-computing-distributed-analysis.md).
 
 ## See also
 

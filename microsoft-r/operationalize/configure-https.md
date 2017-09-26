@@ -34,9 +34,9 @@ You can use HTTPS within a connection encrypted by SSL/TLS 1.2.  To enable SSL/T
 
 |HTTPS Certificates|Description|Web Node|Compute Node|
 |------------------------------------|------------------------------------------------------------------------|--------------|---------------|
-|API certificate|Secures communication between client applications and web node.|Yes, with private key|No|
-|Compute node certificate|Encrypts the traffic between the web node and compute node. You can use a unique certificate for each compute node, or you can use one common Multi-Domain (SAN) certificate for all compute nodes.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate is not needed._ |No|Yes, with private key|
-|Authentication certificate|Authenticates the web node with the compute node so that only the web node can communicate with the compute node.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate is not needed._|Yes, with private and a public key|No|
+|API certificate|Secures communication between client applications and web node.<br/>This certificate works for both one-box and enterprise setups.|Yes, with private key|No|
+|Compute node certificate|Encrypts the traffic between the web node and compute node. You can use a unique certificate for each compute node, or you can use one common Multi-Domain (SAN) certificate for all compute nodes.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate is not needed._ <br/>This certificate works for enterprise setups.|No|Yes, with private key|
+|Authentication certificate|Authenticates the web node with the compute node so that only the web node can communicate with the compute node.<br>_Note: If a compute node is inside the web node's trust boundary, then this certificate is not needed._<br/>This certificate works for enterprise setups.|Yes, with private and a public key|No|
 
 <br />
 
@@ -73,6 +73,7 @@ This section walks you through the steps for securing the connections between th
            "Port": 443,
            "HttpsEnabled": true,
            "HttpsCertificate": {
+               "Enabled": true,
                "StoreName": "My",        
                "StoreLocation": "LocalMachine",
                "SubjectName": "CN=<certificate-subject-name>"
@@ -96,32 +97,47 @@ On each machine hosting a web node:
 1. Open the certificate store:
 
    1. Install the trusted, signed **API HTTPS certificate** with a private key in the certificate store.
+
    1. Make sure the name of the certificate matches the domain name of the web node URL. 
+   
    1. Set the private key permissions. 
       1. Right click on the certificate and choose Manage private certificate from the menu.
+   
       1. Add a group called `NETWORK SERVICE` and give that group `Read` access. 
       ![Group](./media/configure-https/security-http-addgroup.png) 
+
 <a name="iis"></a>
 
 1. Launch IIS.
 
    1. In the **Connections** pane on the left, expand the **Sites** folder and select the website.
+
    1. Click on **Bindings** under the **Actions** pane on the right.
+
    1. Click on **Add**.
+
    1. Choose **HTTPS** as the type and enter the **Port**, which is 443 by default. Take note of the port number. 
+
    1. Select the SSL certificate you installed previously. 
+
    1. Click **OK** to create the new HTTPS binding.
+
    1. Back in the **Connections** pane, select the website name.
+
    1. Click the **SSL Settings** icon in the center of the screen to open the dialog. 
+
    1. Select the checkbox to **Require SSL** and require a client certificate.
 
 1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
 
 1. Run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
+1. Restart the node or just run 'iisreset' on the command-line.
+
 1. Repeat on every web node.
 
 > If satisfied with the new HTTPS binding, consider removing the "HTTP" binding to prevent any access via HTTP.
+
 <br />
 
 #### Linux: Encrypting Traffic
@@ -213,6 +229,7 @@ When encrypting, you have the choice of using one of the following **compute nod
               "Port": <https-port-number>,
               "HttpsEnabled": true,
               "HttpsCertificate": {
+                  "Enabled": true,
                   "StoreName": "My",        
                   "StoreLocation": "LocalMachine",
                   "SubjectName": "CN=<certificate-subject-name>"
@@ -235,6 +252,8 @@ When encrypting, you have the choice of using one of the following **compute nod
    > Make sure the name of the certificate matches the domain name of the compute node URL. 
 
 1. Launch IIS and follow the [instructions above](#iis).
+
+1. Restart the node or just run 'iisreset' on the command-line.
 
 
 #### Linux: Encrypting Traffic between Web Node and Compute Node
@@ -283,28 +302,31 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Repeat on each compute node.
 
-1. On each web node, update the configuration file appsettings.json to reflect the secure URL for each compute node.
+1. On each web node, update the compute node URIs so they can be found.
 
    1. Log in to each web node machine.
 
-   1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+      + **For Machine Learning Server 9.2.1**, [declare the new URIs in the "Manage Compute Nodes" section of the administration utility](configure-use-admin-utility.md#uris).
+   
+      + **For R Server 9.x**:
+        1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+         
+        1. Update the `"Uris": {` properties so that declared compute node now points to `https://<compute-node-ip>` (without the port number):
+           ```
+           "Uris": {
+              "Values": [
+                "https://<IP-ADDRESS-OF-COMPUTE-NODE-1>",
+                "https://<IP-ADDRESS-OF-COMPUTE-NODE-2>",
+                "https://<IP-ADDRESS-OF-COMPUTE-NODE-3>"       
+              ]
+           }
+           ```
 
-   1. Update the `"Uris": {` properties so that declared compute node now points to `https://<compute-node-ip>` (without the port number):
-      ```
-      "Uris": {
-         "Values": [
-           "https://<IP-ADDRESS-OF-COMPUTE-NODE-1>",
-           "https://<IP-ADDRESS-OF-COMPUTE-NODE-2>",
-           "https://<IP-ADDRESS-OF-COMPUTE-NODE-3>"       
-         ]
-       }
-       ```
+        1. Close and save the file.
 
-   1. Close and save the file.
+        1. Launch the administrator's utility and [restart the web node](configure-use-admin-utility.md#startstop).
 
-   1. Launch the administrator's utility and [restart the web node](configure-use-admin-utility.md#startstop).
-
-   1. Verify the configuration by running [diagnostic test](configure-run-diagnostics.md) on the web node.
+   1. Verify the configuration by running [diagnostic test](configure-run-diagnostics.md) in the administration utility on the web node.
 
    1. Repeat on each web node.  
 <br>

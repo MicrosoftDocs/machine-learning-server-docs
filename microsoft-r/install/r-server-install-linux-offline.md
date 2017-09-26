@@ -25,6 +25,8 @@ ms.technology: "r-server"
 
 # Offline installation of R Server 9.1 for Linux
 
+**Looking for the 9.2.1 release? See [Machine Learning Server for Linux installation](machine-learning-server-linux-offline.md)**
+
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
 If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
@@ -168,7 +170,7 @@ Partial output is as follows (note version 9.1.0):
 
 ### Start Revo64
 
-As another verification step, run the Revo64 program. By default, Revo64 is installed in the /usr/bin directory, available to any user who can log in to the machine:
+As another verification step, run the Revo64 program. By default, Revo64 is linked to the /usr/bin directory, available to any user who can log in to the machine:
 
 1. From /Home or any other working directory:
 

@@ -64,8 +64,8 @@ You can get the zipped installation file from one of the following download site
 | Site | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Machine Learning Server*. |
-| [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server" <sup>1</sup>, and then choose a per-core or CAL licensing option. A selection for **Machine Learning Server 9.2.1** is provided on this site. |
-| [Visual Studio Subscriptions](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+| *pending* - [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server" <sup>1</sup>, and then choose a per-core or CAL licensing option. A selection for **Machine Learning Server 9.2.1** is provided on this site. |
+| *pending* - [MSDN Subscriptions](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
 
 <sup>1</sup> Machine Learning Server for Windows is licensed as a SQL Server enterprise feature, even though it's installed independently of SQL Server on a Windows operating system.
 
@@ -163,13 +163,9 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable server to host analytic web services and accept remote connections
 
-Machine Learning Server can be with an R IDE on the same box, but you can also [enable the server to [host web services](../operationalize/concept-what-are-web-services.md) and to allow remote server connections].(../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
 
-Configure the server for remote access and execution and web service deployment using the [Administrator Utility](../operationalize/configure-use-admin-utility.md).
-
-[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
-
-Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
+To configure the server, use the [Administrator Utility](../operationalize/configure-use-admin-utility.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
 
 ## What's installed
 
