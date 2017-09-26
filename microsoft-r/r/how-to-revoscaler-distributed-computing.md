@@ -27,31 +27,25 @@ ms.technology: "r-server"
 
 *Distributed computing*, sometimes referred to as *high performance computing* or *high performance analysis*, is the breakdown of a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be pulled together to create the final result. 
 
-ReovScaleR and revoscalepy, which are designed to process large data one chunk at a time, can also process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation.  Instead of passing large amounts of data from node to node, the computations are distributed to the data.
+RevoScaleR and revoscalepy, which are designed to process large data one chunk at a time, can also process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are distributed to the data.
 
 ## Functions for distributed computations
 
-RevoScaleR and revoscalepy functions are built to leverage the resources of a clustered computing platform. On a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revoscalepy and RevoScaleR automatically use the available nodes in a cluster. 
-
-For a list of functions that support distributed workloads, see [RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
+When executed on a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revoscalepy and RevoScaleR automatically use the available nodes in a cluster. For a list of functions that support distributed workloads, see [RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
 
 ## Architecture supporting workload distribution
 
-Distributed computed is similar to parallel computing, but in Machine Learning Server, it specifically refers to workload distribution across multiple physical servers.
+Distributed computed is conceptually similar to parallel computing, but in Machine Learning Server, it specifically refers to workload distribution across multiple physical servers. Distributed platforms provide the following: a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
  
 On a single server with multiple cores, many jobs can run in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the engine of platform capabilities, your script should include an object called a [compute context](how-to-revoscaler-distributed-computing-compute-context.md) that identifies the platform.
 
-Distributed computing requires the following: a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
+On a distributed platform, you might write script that runs locally on one node, such as an edge node in a Hadoop cluster, but shift execution to data nodes for bigger jobs. For example, you might use the local compute context on an edge node to prepare data or set up variables, and then shift to an `RxSpark` context to run data analysis on data nodes. In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific data source along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
 
-On a distributed platform, you might write script that runs locally on one node, such as an edge node in a Hadoop cluster, but shift execution to data nodes for bigger jobs. For example, you might use the local compute context on an edge node to prepare data or set up variables, and then shift to an `RxSpark` context to run data analysis on data nodes.
+## Distributed computing with RevoScaleR
 
-In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific data source along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
+RevoScaleR provides two main approaches for distributed computing: master node and `rxExec`. 
 
-## Distributed computing overview
-
-**RevoScaleR** provides two main approaches for distributed computing: master node and `rxExec`. 
-
-The first, the *master node* path, exemplifies the high-performance analytics approach. By establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following **RevoScaleR** analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
+The first, the *master node* path, exemplifies the high-performance analytics approach. By establishing a distributed computing context object which specifies your distributed computing resources, you can call any of the following RevoScaleR analysis functions and have the computation proceed in parallel on the specified computing resources and return the answer to you:
 
 - `rxSummary`
 - `rxLinMod`
@@ -74,7 +68,7 @@ The second approach is via the **RevoScaleR** function `rxExec`, which allows yo
 
 In HDFS, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend *composite* .xdf files, which are specialized files designed to be managed by HDFS. For more information, see [Import HDFS > Write a composite XDF](how-to-revoscaler-data-hdfs.md#write-a-composite-xdf).
 
-## Distributing Data with rxSplit  
+## Distributing data with rxSplit  
 
 For some computations, such as those involving distributed prediction, it is most efficient to perform the computations on a distributed data set, one in which each node sees only the data it is supposed to work on. You can split an .xdf file into portions suitable for distribution using the function *rxSplit*. For example, to split the large airline data into five files for distribution on a five node cluster, you could use *rxSplit* as follows:
 
