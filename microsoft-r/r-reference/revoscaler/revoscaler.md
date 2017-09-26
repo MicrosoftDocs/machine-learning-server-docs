@@ -95,10 +95,10 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 |[rxCreateColInfo](rxcreatecolinfo.md)  |Generates a colInfo list from a data source. | 
 |[rxCompressXdf](rxcompressxdf.md)  |Compresses an existing .xdf file, or a directory of .xdf files. | 
 |[RxXdfData](rxxdfdata.md)  |Creates an efficient XDF data source object. | 
-|[RxTextData](rxtextdata.md)  |Creates a comma delimited text data source object. | 
+|[RxTextData](rxtextdata.md)  |Creates a comma-delimited text data source object. | 
 |[RxSasData](rxsasdata.md)  |Creates a SAS data source object. | 
-|[RxSpssData](rxspssdata.md)  |Creates a SPSS data source object. | 
-|[RxOdbcData](rxodbcdata.md)  |Creates a ODBC data source object. | 
+|[RxSpssData](rxspssdata.md)  |Creates an SPSS data source object. | 
+|[RxOdbcData](rxodbcdata.md)  |Creates an ODBC data source object. | 
 |[RxTeradata](rxteradata.md)  |Creates a Teradata data source object. | 
 |[RxSqlServerData](rxsqlserverdata.md)  |Creates a SQL Server data source object | 
 |[rxOpen](rxopen-methods.md)  |Opens a data source for reading. | 
@@ -201,10 +201,10 @@ Whenever you want to perform an analysis using `RevoScaleR` functions, you shoul
 | Function name | Description |
 |---------------|-------------|
 |[RxXdfData](rxxdfdata.md) |Creates an efficient XDF data source object. |
-|[RxTextData](rxtextdata.md) |Creates a comma delimited text data source object. |
+|[RxTextData](rxtextdata.md) |Creates a comma-delimited text data source object. |
 |[RxSasData](rxsasdata.md) |Creates a SAS data source object. |
-|[RxSpssData](rxspssdata.md) |Creates a SPSS data source object. |
-|[RxOdbcData](rxodbcdata.md) |Creates a ODBC data source object. |
+|[RxSpssData](rxspssdata.md) |Creates an SPSS data source object. |
+|[RxOdbcData](rxodbcdata.md) |Creates an ODBC data source object. |
 |[RxTeradata](rxteradata.md) |Creates a Teradata data source object. |
 |[RxSqlServerData](rxsqlserverdata.md) |Creates a SQL Server data source object. |
 
@@ -215,7 +215,7 @@ These functions and many more can be used for high performance computing and dis
 | Function name | Description |
 |---------------|-------------|
 |[rxExec](rxexec.md) | Run an arbitrary R function on nodes or cores of a cluster.|
-|[rxRngNewStream]((rxrng.md) |Support for Parallel Random Number Generation. |
+|[rxRngNewStream](rxrng.md) |Support for Parallel Random Number Generation. |
 |[rxRngDelStream](rxrng.md) |Support for Parallel Random Number Generation. |
 |[rxRngGetStream](rxrng.md) |Support for Parallel Random Number Generation.|
 |[rxRngSetStream](rxrng.md) |Support for Parallel Random Number Generation. |
@@ -241,7 +241,7 @@ Some of the utility functions are operational in local compute context only. Che
 |[rxStepControl](rxstepcontrol.md) | Construct a variable.selection argument for rxLinMod.|
 |[rxIsOpen](rxopen-methods.md) | Indicates whether a data source can be accessed.|
 |[rxSqlServerDropTable](rxsqlserverdroptable.md) |Execute an SQL statement that drops a table. |
-|[rxSqlServerTableExists](rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existance. |
+|[rxSqlServerTableExists](rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existence. |
 |[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between RevoScaleR data sources.|
 
 ## Next steps
@@ -251,7 +251,7 @@ Add R packages to your computer by running setup for R Server or R Client:
 + [R Client](../../r-client/what-is-microsoft-r-client.md) 
 + [R Server](../../what-is-microsoft-r-server.md)
 
-Next, follow these tutorials for hands on experience::
+Next, follow these tutorials for hands on experience:
 
 + [Explore R and RevoScaleR in 25 functions](../../r/tutorial-r-to-revoscaler.md)  
 + [Quickstart: Run R Code in Microsoft R](../../r/quickstart-run-r-code.md)

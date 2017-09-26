@@ -98,7 +98,7 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 2. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
 
-3. Set the location of the package repeat the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
+3. Set the location of the package repo the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
 
 4. Register the repo: `dpkg -i packages-microsoft-prod.deb`
 
@@ -111,17 +111,27 @@ Activation is a separate step. If you forget to activate, the server works, but 
 8. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
 
 
-### SUSE SLES11
+### SUSE (SLES11 only)
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `sudo rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm`
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `zypper -ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com`
 
 3. Update packages on your system: `zypper update` 
 
-4. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
+4. Install the server: `zypper install microsoft-mlserver-sles11-9.2.1` 
 
-5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+5. You might get a message stating that PackageKit is blocking zypper. Enter `y` to quit PackageKit and allow zypper to continue.
+
+6. You are prompted whether to trust the repository signing key. You can choose `t` to temporarily trust the key for the purposes of downloading and installing Machine Learning Server. 
+
+7. You might get a "Digest verification failed" message (this is a temporary issue that will be resolved soon). Enter `y` to continue.
+
+8. When asked to confirm the list of packages to install, enter `y` to continue. 
+
+9. Review and accept the license agreements for MRO, Anaconda, and Machine Learning Server.
+
+10. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 
 ## Connect and validate
@@ -242,13 +252,9 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable server to host analytic web services and accept remote connections
 
-Machine Learning Server can be with an R IDE on the same box, but you can also [enable the server to [host web services](../operationalize/concept-what-are-web-services.md) and to allow remote server connections].(../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
 
-Configure the server for remote access and execution and web service deployment using the [Administrator Utility](../operationalize/configure-use-admin-utility.md).
-
-[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
-
-Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
+To configure the server, use the [Administrator Utility](../operationalize/configure-use-admin-utility.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
 
 ## What's installed
 

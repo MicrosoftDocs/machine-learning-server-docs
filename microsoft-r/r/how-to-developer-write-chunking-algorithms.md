@@ -42,6 +42,8 @@ Chunking is supported on Machine Learning Server, but not the free R Client. Bec
 
 ## What chunking algorithms do
 
+An updating algorithm takes a given set of values and a chunk of data, and then outputs a revised set of values cumulative for all chunks. The simplest example is an updating sum: sum is computed for the first chunk, followed by a second chunk, which each successive chunk contributing to a revised value until reaching the cumulative sum. 
+
 Updating algorithms perform four main tasks:
 
 - Initialization: declare and initialize variables needed in the computation.
