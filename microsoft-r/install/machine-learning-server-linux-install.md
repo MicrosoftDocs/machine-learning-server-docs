@@ -111,17 +111,27 @@ Activation is a separate step. If you forget to activate, the server works, but 
 8. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
 
 
-### SUSE SLES11
+### SUSE (SLES11 only)
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `sudo rpm -Uvh http://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm`
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `zypper -ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com`
 
 3. Update packages on your system: `zypper update` 
 
-4. Install the server: `zypper install microsoft-mlserver-all-9.2.1` 
+4. Install the server: `zypper install microsoft-mlserver-sles11-9.2.1` 
 
-5. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+5. You might get a message stating that PackageKit is blocking zypper. Enter `y` to quit PackageKit and allow zypper to continue.
+
+6. You are prompted whether to trust the repository signing key. You can choose `t` to temporarily trust the key for the purposes of downloading and installing Machine Learning Server. 
+
+7. You might get a "Digest verification failed" message (this is a temporary issue that will be resolved soon). Enter `y` to continue.
+
+8. When asked to confirm the list of packages to install, enter `y` to continue. 
+
+9. Review and accept the license agreements for MRO, Anaconda, and Machine Learning Server.
+
+10. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
 
 ## Connect and validate

@@ -134,10 +134,10 @@ If your system provides a graphical user interface, you can click a file to down
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 + Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.2.1.rpm` 
-+ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-mlserver-packages-r-9.2.1.deb`
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.2.1/microsoft-mlserver-packages-r-9.2.1.deb`
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.2.1.rpm`
 
-Repeat for each package.
+Repeat for each package in the [package list](#Package list).
 
 ## Install packages
 
