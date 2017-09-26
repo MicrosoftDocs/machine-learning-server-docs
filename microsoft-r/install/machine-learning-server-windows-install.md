@@ -163,7 +163,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable server to host analytic web services and accept remote connections
 
-The server can be used as-is if you link it to an IDE on the same box, but to benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
+To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
 
 To configure the server, use the [Administrator Utility](../operationalize/configure-use-admin-utility.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
 
