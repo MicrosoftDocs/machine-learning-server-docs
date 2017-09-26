@@ -252,13 +252,11 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable server to host analytic web services and accept remote connections
 
-Machine Learning Server can be with an R IDE on the same box, but you can also [enable the server to [host web services](../operationalize/concept-what-are-web-services.md) and to allow remote server connections].(../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)
+Machine Learning Server can be linked to an R IDE on the same box, but you can also [configure the server](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to [host web services](../operationalize/concept-what-are-web-services.md) and allow remote server connections. [Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
 
 Configure the server for remote access and execution and web service deployment using the [Administrator Utility](../operationalize/configure-use-admin-utility.md).
 
-[Remote execution](../r/how-to-execute-code-remotely.md) makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
-
-Configuration steps are few and the benefit is big, so please take a few minutes to complete this task.
+Configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
 
 ## What's installed
 

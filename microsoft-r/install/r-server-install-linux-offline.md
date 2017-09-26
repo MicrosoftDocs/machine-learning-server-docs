@@ -170,7 +170,7 @@ Partial output is as follows (note version 9.1.0):
 
 ### Start Revo64
 
-As another verification step, run the Revo64 program. By default, Revo64 is installed in the /usr/bin directory, available to any user who can log in to the machine:
+As another verification step, run the Revo64 program. By default, Revo64 is linked to the /usr/bin directory, available to any user who can log in to the machine:
 
 1. From /Home or any other working directory:
 

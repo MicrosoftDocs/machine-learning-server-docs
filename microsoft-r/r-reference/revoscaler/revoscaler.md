@@ -215,7 +215,7 @@ These functions and many more can be used for high performance computing and dis
 | Function name | Description |
 |---------------|-------------|
 |[rxExec](rxexec.md) | Run an arbitrary R function on nodes or cores of a cluster.|
-|[rxRngNewStream]((rxrng.md) |Support for Parallel Random Number Generation. |
+|[rxRngNewStream](rxrng.md) |Support for Parallel Random Number Generation. |
 |[rxRngDelStream](rxrng.md) |Support for Parallel Random Number Generation. |
 |[rxRngGetStream](rxrng.md) |Support for Parallel Random Number Generation.|
 |[rxRngSetStream](rxrng.md) |Support for Parallel Random Number Generation. |
