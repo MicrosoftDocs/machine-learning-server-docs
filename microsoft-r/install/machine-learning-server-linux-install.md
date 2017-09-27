@@ -86,6 +86,9 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 3. As a verification step, check whether the **microsoft-prod.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
 
+   > [!Note]
+   > If the file is missing, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration).
+
 4. Update packages on your system: `yum update` 
 
 5. Install the server: `yum install microsoft-mlserver-all-9.2.1` 
@@ -103,6 +106,9 @@ Activation is a separate step. If you forget to activate, the server works, but 
 4. Register the repo: `dpkg -i packages-microsoft-prod.deb`
 
 5. As a verification step, check whether the **microsoft-prod.list** configuration file exists: `ls -la /etc/apt/sources.list.d/`
+
+   > [!Note]
+   > If the file is missing, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration).
 
 6. Update packages on your system: `apt-get update` 
 
