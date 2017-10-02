@@ -78,7 +78,9 @@ This section walks you through an R Client 3.4.1 deployment. Under these instruc
 
 The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software).
 
- 
+> [!Note]
+> If the repository configuration file is not present in the /etc directory, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration) for repository registration.
+
 **On Ubuntu 14.04 - 16.04**
 
 With root or sudo permissions, run the following commands:
