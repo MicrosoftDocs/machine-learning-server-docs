@@ -41,7 +41,7 @@ R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), w
 
 <sup>1</sup> **.NET Core platform dependency**: Certain features like the machine learning algorithms in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and configuring to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) are NOT supported on the marked (1) platforms since they require .NET Core.
 
-<sup>2</sup> **Server OS required to operationalize analytics:** Machine Learning Server cannot be configured to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) on non-server platforms such as these marked (2) platforms. See the full list of supported platforms for operationalizing [here](../operationalize/configure-start-for-administrators.md#supported-platforms).
+<sup>2</sup> **Server OS required to operationalize analytics:** We don't recommand to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) on non-server platforms such as these marked (2). While some might work, only server platforms are supported. See the full list of supported platforms for operationalizing [here](../operationalize/configure-start-for-administrators.md#supported-platforms).
 
 
 ## Microsoft R Server 9.1
