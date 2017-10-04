@@ -65,7 +65,7 @@ Externally defined functions provide data manipulation instructions in an outer 
 	# Return variable metadata; it is identical to that of option 1
 	> rxGetVarInfo(NewDS)
 
-For more examples of both approaches, see [How to transform and subset data](concept-what-is-data-transformations.md).
+For more examples of both approaches, see [How to transform and subset data](how-to-revoscaler-data-transform.md).
 
 ## Arguments used in transformations
 
