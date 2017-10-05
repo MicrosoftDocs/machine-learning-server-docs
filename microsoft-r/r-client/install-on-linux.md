@@ -181,9 +181,8 @@ The following packages comprise a full R Client installation:
 
 ```
  microsoft-r-client-packages-3.4.1       ** core
- microsoft-r-client-mlm-r-3.4.1          ** pre-trained models (requires mml)
- microsoft-r-client-mml-r-3.4.1          ** microsoftml for R (optional)
-
+ microsoft-r-client-mml-3.4.1          ** microsoftml for R (optional)
+ microsoft-r-client-mlm-3.4.1          ** pre-trained models (requires microsoftml)
 ```
 
 Microsoft R Open is required for R execution:
