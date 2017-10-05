@@ -34,15 +34,22 @@ The installation path depends on the operating system and the type of node (web 
 
 |OS|Path|
 |----|------------|
-|Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n\\\<node-directory><br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n\\\<node-directory>|
-|Linux|/opt/microsoft/mlserver/9.2.1/o16n/\<node-directory>||
+|Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
+|Linux|/opt/microsoft/mlserver/9.2.1/o16n||
 
-Where the \<node-directory> name: 
 
-|Type|Node Directory Name|
-|----|------------|
-|Web node|Microsoft.MLServer.WebNode|
-|Compute node|Microsoft.MLServer.ComputeNode|
++ **Administration utility** is under: \<server-directory>\Microsoft.MLServer.Utils.AdminUtil\
+
++ **Log files** are under: \<server-directory>\\\<node-directory>\logs\*.*
+
++ **appsettings.json** is under: \<server-directory>\\\<node-directory>\appsettings.json
+
+  Where the \<node-directory> name: 
+
+  |Type|Node directory name|
+  |----|------------|
+  |Web node|Microsoft.MLServer.WebNode|
+  |Compute node|Microsoft.MLServer.ComputeNode|
 
 ## Microsoft R Server 9.1.0
 
