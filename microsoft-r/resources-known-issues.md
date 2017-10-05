@@ -31,7 +31,17 @@ Review workaround steps for the following known issues in this release.
 
 ## In 9.2.1
 
-There are no known issues reported for Machine Learning Server 9.2.1
+The following issues are known in this release:
+1. [Configure Machine Learning Server web node warning: "Web Node was not able to start because it is not configured."](#o16n-node)  
+
+>[!NOTE]
+>Other release-specific pages include [What's New in 9.2.1](whats-new-in-machine-learning-server.md) and [Deprecated and Discontinued Features](resources-deprecated-features.md). For known issues in the previous releases, see [Previous Releases](#Prev).
+
+<a name="o16n-node"></a>
+
+#### 1. Configure Machine Learning Server web node warning: "Web Node was not able to start because it is not configured."
+
+When configuring your web node, you might see the following message:  "Web Node was not able to start because it is not configured." Typically, this is not really an issue since the web node is automatically restarted within 5 minutes by an auto-recovery mechanism. After five minutes, run the [diagnostics](operationalize/configure-run-diagnostics.md).
 
 <a name="Prev"></a>
 
