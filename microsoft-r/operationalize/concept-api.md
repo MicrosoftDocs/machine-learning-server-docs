@@ -51,7 +51,7 @@ Status|This API returns a health report of the configuration, including the numb
 
 <br>
 
-The core APIs are accessible from and described in  `mlserver-swagger-<version>.json`, **a Swagger-based JSON document**. Download this file from https://microsoft.github.io/deployr-api-docs/swagger/mlserver-swagger-<version>.json, where `<version>` is the 3-digit product version number. Swagger is a popular specification for a JSON file that describes REST APIs.  For R Server users, replace mlserver-swagger with rserver-swagger.
+The core APIs are accessible from and described in  `mlserver-swagger-<version>.json`, **a Swagger-based JSON document**. Download this file from https://microsoft.github.io/deployr-api-docs/swagger/mlserver-swagger-\<version>.json, where `<version>` is the 3-digit product version number. Swagger is a popular specification for a JSON file that describes REST APIs.  For R Server users, replace mlserver-swagger with rserver-swagger.
 
 You can access all of these core APIs using a client library built from `rserver-swagger-<version>.json` using [these instructions and example](how-to-build-api-clients-from-swagger-for-app-integration.md).
 

@@ -121,7 +121,7 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
@@ -262,7 +262,7 @@ You can now **repeat these steps** for each compute node.
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
