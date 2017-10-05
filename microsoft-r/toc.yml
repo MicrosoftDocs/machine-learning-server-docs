@@ -343,6 +343,8 @@
         href: operationalize/python/how-to-deploy-manage-web-services.md
       - name: Consume services synchronously
         href: operationalize/python/how-to-consume-web-services.md
+      - name: Consume services asynchronously
+        href: operationalize/python/how-to-consume-web-services-async.md
     - name: R
       items:
       - name: Deploy & manage web services
