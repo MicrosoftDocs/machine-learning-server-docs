@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/25/2017"
+ms.date: "10/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -178,3 +178,8 @@ If successful, the status  _'True'_  is returned. If it fails, then the executio
 [How to authenticate in Python](how-to-authenticate-in-python.md)
 
 [How to find, get, and consume web services](how-to-consume-web-services.md)
+
+[How to consume web services in Python synchronously (request/response)](how-to-consume-web-services.md)    
+ 
+[How to consume web services in Python asynchronously (batch)](how-to-consume-web-services-async.md)    
+ 
