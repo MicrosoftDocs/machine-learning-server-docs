@@ -78,7 +78,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.ComputeNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
@@ -225,7 +225,7 @@ Carefully review the steps in the following sections.
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.ComputeNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
