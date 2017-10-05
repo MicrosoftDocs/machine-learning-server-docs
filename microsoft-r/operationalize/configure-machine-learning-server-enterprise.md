@@ -125,10 +125,10 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
-   >[!NOTE]
-   >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
-   >-silentwebnodeinstall mypassword uri1,uri2
-   >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+     >[!NOTE]
+     >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
+     >-silentwebnodeinstall mypassword uri1,uri2
+     >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
    1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
   

@@ -180,7 +180,7 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 The following packages comprise a full R Client installation:
 
 ```
- microsoft-r-client-packages-3.4.1       ** core
+ microsoft-r-client-packages-3.4.1     ** core
  microsoft-r-client-mml-3.4.1          ** microsoftml for R (optional)
  microsoft-r-client-mlm-3.4.1          ** pre-trained models (requires microsoftml)
 ```
