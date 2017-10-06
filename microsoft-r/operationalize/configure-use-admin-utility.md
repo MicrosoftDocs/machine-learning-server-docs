@@ -115,6 +115,9 @@ To start or stop all operationalization-related services on the machine at once,
 
 1. From the submenu, choose which services to start or stop.
 
+>[!Warning]
+>If the following error occurs when attempting to start a web node _"Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -97 EAFNOSUPPORT address family not supported"_, then disable IPv6 on your operating system.
+
 <br/><a name="ports"></a>
 
 ## Update Port Numbers

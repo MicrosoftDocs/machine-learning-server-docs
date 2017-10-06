@@ -7,7 +7,7 @@ keywords: "quickstart, Machine Learning Server, deploy python models"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/25/2017"
+ms.date: "10/05/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -90,6 +90,8 @@ This section provides a quick summary of useful links for data scientists lookin
  + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
  + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
  + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
+ + [How to consume web services in Python synchronously (request/response)](how-to-consume-web-services.md)    
+ + [How to consume web services in Python asynchronously (batch)](how-to-consume-web-services-async.md)    
  + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)    
  + [Get started for administrators](../configure-start-for-administrators.md)     
  + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

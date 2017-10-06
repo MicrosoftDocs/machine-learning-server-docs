@@ -239,3 +239,9 @@ The workaround is to:
 1. Save the file and restart Machine Learning Server.
 1. Repeat on every machine on which Machine Learning Server is installed.
 1. Run the diagnostic test or code execution again.
+
+### Error: "Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -97 EAFNOSUPPORT address family not supported"
+
+Applies to: Machine Learning Server
+
+If the following error occurs when attempting to start a web node _"Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -97 EAFNOSUPPORT address family not supported"_, then disable IPv6 on your operating system.
