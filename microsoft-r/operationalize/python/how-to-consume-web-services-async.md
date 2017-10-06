@@ -223,10 +223,12 @@ While the batch task is running, you can monitor and poll the results. Once the 
 There are several public functions you can use to get the results and status of a batch execution.
 
 &ndash; Monitor or get the batch execution results
-+ **Syntax:** `results(showPartialResults = TRUE)` <br>&nbsp;
++ **Syntax:** `results(showPartialResults = TRUE)` 
+
   |Argument|Description|
   |----|----|
   |`showPartialResults`|This argument returns the already processed results of the batch execution even if it has not been fully completed. If `showPartialResults = FALSE`, then returns only the results if the execution has completed.|
+
 + **Returns:** A batch result object is returned, which in our example is called `batchRes`. <br>&nbsp;
 
 &ndash; Get the status of the batch execution. 
