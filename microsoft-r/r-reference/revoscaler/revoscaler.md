@@ -39,24 +39,30 @@ Functions run on the **RevoScaleR** interpreter, built on open source R, but ext
 
 The **RevoScaleR** library is found in all Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having Microsoft R.
 
-**RevoScaleR** runs locally on all platforms and remotely on Hadoop processing frameworks (Spark and MapReduce) and SQL Server. On a Hadoop cluster, for functions that execute on parallel architecture, the workload executes on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster. 
+**RevoScaleR** is often preloaded into tools that integrate with R Client and R Server, which means you can call functions without having to load the library. If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
 
-**RevoScaleR** is often preloaded into tools that integrate with R Client and R Server, which means you can call functions without having to load the library. 
+### Run it locally
 
-If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
+**RevoScaleR** runs locally on all platforms, including R Client. On a standalone Linux or windows system, data and operations are local to the machine. On Hadoop, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
+
+### Run it in a remote compute context
+
+**RevoScaleR** runs remotely on computers that have a server installation. In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server, supported on Hadoop and SQL Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. 
+
+On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), functions that execute in parallel distribute workload execution on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster. 
 
 Some functions in **RevoScaleR** are specific to particular compute contexts. A filtered list of functions include the following:
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)
 + [Computing on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/scaler-functions-for-working-with-sql-server-data)
 
-> [!Note]
-> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
-
 ## Functions by category
 
-The library includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. The library also includes functions for controlling jobs, serializing data, and performing common utility tasks.
+The library includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. It also includes functions for controlling jobs, serializing data, and performing common utility tasks.
 
-This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
+This section lists the functions by category to give you an idea of how each one is used. The table of contents lists functions in alphabetical order.
+
+> [!Note]
+> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
 
 ## 1-Data analysis functions
 <!--<br />
