@@ -60,7 +60,7 @@ For realtime services, you do **not** need to specify:
 + inputs and outputs (dataframes are assumed)
 + code (only serialized models are supported)
 
-**See a realtime web service deployment example: [R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](../operationalize/python/how-to-deploy-manage-web-services.md#realtime-example)**
+**See realtime web service deployment examples: [R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](../operationalize/python/how-to-deploy-manage-web-services.md#realtime-example)**
 
 <a name=r></a>
 
