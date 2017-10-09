@@ -62,7 +62,7 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 | Fixed-Format Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)`) | X |  X |   |   |
 | Delimited Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)) | X | X | X  |   |
 | .xdf data files ([`RxXdfData`](../r-reference/revoscaler/rxxdfdata.md)`) | X | X | X  |   |
-| ([RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including [`RxHiveData`](../r-reference/revoscaler/RxHiveData.md), [`RxParquetData`](../r-reference/revoscaler/RxParquetData.md), [`RxOrcData`](../r-reference/revoscaler/RxOrcData.md))  |  X | X | X  |   |
+| ([RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including **`RxHiveData`**, **`RxParquetData`**, **`RxOrcData`**)  |  X | X | X  |   |
 | ODBC data (`RxOdbcData`) | X |   | X  |  X |
 | SQL Server database ([`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md)) |   |   |   | X |
 | SAS data files (`RxSasData`) | X |   |   |   |
