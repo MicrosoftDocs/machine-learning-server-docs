@@ -25,22 +25,20 @@ ms.technology: "r-server"
 
 # Compute context for script execution on Machine Learning Server
 
-*Compute context* refers to the location of computations, as executed by revoscalepy for Python, or by the RevoScaleR interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to an interpreter on another machine. 
+Both RevoScaleR and revoscalepy packages have functions that run in a remote compute context. *Compute context* refers to the location of computations, as executed by revoscalepy for Python, or by the RevoScaleR interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to an interpreter on another machine. 
 
-Local is the default. 
+Local is the default, supported on all platforms. Remote is a server-only feature. For example, script running on R Client on Windows might shift execution to Machine Learning Server in a Spark cluster to process data there. 
 
 Switching to a remote compute context is typically done for two reasons:
 
 + Get better performance if the target system has more capability.
 + Minimize data transfer by bringing calculations to resident data. 
 
-Remote compute context is available when you run Machine Learning Server on Spark, MapReduce, and SQL Server.
-
-You can switch the compute context from local to remote using functions from RevoScaleR and revoscalepy.
+On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), functions that execute in parallel distribute workload execution on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster. 
 
 ## List of compute contexts
 
-The revoscalepy library only supports the local compute context, RxSpark, and RxInSqlServer. It does not support remote executiong on Hadoop MapReduce in this release. On a Spark cluster, revoscalepy can execute locally or remote. Recall that spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
+The revoscalepy library only supports the local compute context, and remote context through RxSpark, and RxInSqlServer. It does not support remote executiong on Hadoop MapReduce in this release. On a Spark cluster, revoscalepy can execute locally or remote. Recall that spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
 
 The RevoScaleR library supports the compute contexts in the following table.
 

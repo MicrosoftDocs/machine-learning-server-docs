@@ -43,14 +43,11 @@ The **revoscalepy** module is found in Machine Learning Server or SQL Server Mac
 
 The **revoscalepy** module runs locally on all platforms, and remotely in a [RxSpark](RxSpark.md) or RxInSQLServer compute context. For a review of common tasks, see [How to use revoscalepy with Spark](../../python/how-to-revoscalepy.md).
 
-> [!Note]
-> Some function names begin with `rx-` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
+### Run it locally
 
-### In a local compute context
+On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
-**Revoscalepy** operations include statistical analysis, linear and logistic regressions, and predictive analytics. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
-
-### In a remote compute context
+### Run it in a remote compute context
 
 In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server, supported on Spark and SQL Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. 
 
@@ -64,10 +61,12 @@ For SQL Server, there are two primary use cases for remote compute context:
 
 ## Functions by category
 
-It includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. You can do descriptive statistics, linear regression, logistic regression, classification and regression trees, and decision forests. The library also includes functions for controlling jobs, serializing data, and performing common utility tasks.
+The library includes  data transformation and manipulation, visualization, predictions, and statistical analysis functions. It also includes functions for controlling jobs, serializing data, and performing common utility tasks.
 
+This section lists the functions by category to give you an idea of how each one is used. The table of contents to listsfunctions in alphabetical order.
 
-This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
+> [!Note]
+> Some function names begin with `rx-` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
 
 ## 1-Compute context functions
 
