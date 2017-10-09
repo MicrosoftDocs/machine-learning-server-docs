@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 The **RevoScaleR** library is a collection of portable, scalable, and distributable R functions for analyzing data at scale. You can use it for descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. 
 
-Functions run on the **RevoScaleR** interpreter, built on open source R, but extended to leverage the multithreaded and multinode architecture of the host platform.
+Functions run on the **RevoScaleR** interpreter, built on open source R, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
 | Package details | |
 |--------|-|
@@ -47,11 +47,11 @@ This is the default. **RevoScaleR** runs locally on all platforms, including R C
 
 ### Remote compute context
 
-**RevoScaleR** runs remotely on computers that have a server installation. In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server, supported on Hadoop and SQL Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. 
+**RevoScaleR** runs remotely on computers that have a server installation. In a remote compute context, the script running on a local R Client or Machine Learning Server shifts execution to a remote Machine Learning Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. 
 
-On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), functions that execute in parallel distribute workload execution on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster. 
+On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), set the compute context to [RxSpark](RxSpark.md) or [RxHadoopMR](RxHadoopMR.md) and give the cluster name. In this context, if you call a function that can run in parallel, the task is distributed across data nodes in the cluster, where the operation is co-located with the data. 
 
-On SQL Server, there are two primary use cases for remote compute context: 
+On SQL Server, set the compute context to [RxInSQLServer](RxInSqlServer.md). There are two primary use cases for remote compute context: 
 
 + Call R functions in T-SQL script or stored procedures running on SQL Server.  
 
