@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "09/09/2017"
+ms.date: "09/28/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -25,9 +25,18 @@ ms.technology: "r-server"
 
 # Compute context for script execution on Machine Learning Server
 
-*Compute context* refers to the location of computations, as executed by revoscalepy for Python, or by the RevoScaleR interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to an interpreter on another machine. Local is the default. Switching to a remote compute context is typically done to get better performance if the target system has more capability, or to minimize data transfer by bringing calculations to resident data. 
+*Compute context* refers to the location of computations, as executed by revoscalepy for Python, or by the RevoScaleR interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to an interpreter on another machine. 
 
-You can set a compute context using functions from RevoScaleR and revoscalepy.
+Local is the default. 
+
+Switching to a remote compute context is typically done for two reasons:
+
++ Get better performance if the target system has more capability.
++ Minimize data transfer by bringing calculations to resident data. 
+
+Remote compute context is available when you run Machine Learning Server on Spark, MapReduce, and SQL Server.
+
+You can switch the compute context from local to remote using functions from RevoScaleR and revoscalepy.
 
 ## List of compute contexts
 

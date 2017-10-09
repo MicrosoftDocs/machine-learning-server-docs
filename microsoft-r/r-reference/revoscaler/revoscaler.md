@@ -25,9 +25,11 @@ ms.technology: "r-server"
 
 # RevoScaleR package
 
-The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis R functions that run on the **RevoScaleR** interpreter built on open source R and extended to accommodate high performance computing (HPC) and analysis (HPA).
+The **RevoScaleR** library s a collection of portable, scalable, and distributable R functions for analyzing data at scale, at the point of origin. It includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. You can do descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. The library also includes functions for controlling jobs, serializing data, and performing common utility tasks.
 
-HPA algorithms include descriptive statistics, cross-tabulations, linear regression, covariance and correlation matrices, logistic regression, generalized linear models, k-means clustering, classification and regression trees, and decision forests. HPC functionality is enabled on Hadoop processing frameworks (Spark and MapReduce) for distributed execution of essentially any R function across cores and nodes, delivering the results back to the user.
+Functions run on the **RevoScaleR** interpreter, built on open source R, but extended to leverage the multithreaded and multinode architecture of the host platform.
+
+**RevoScaleR** runs locally on all platforms and remotely on Hadoop processing frameworks (Spark and MapReduce) and SQL Server. On a Hadoop cluster, for functions that execute on parallel architecture, the workload executes on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster.  
 
 | Package details | |
 |--------|-|
@@ -37,7 +39,7 @@ HPA algorithms include descriptive statistics, cross-tabulations, linear regress
 
 ## How to use RevoScaleR
 
-The **RevoScaleR** library is installed in all Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having Microsoft R.
+The **RevoScaleR** library is found in all Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having Microsoft R.
 
 **RevoScaleR** is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. 
 
