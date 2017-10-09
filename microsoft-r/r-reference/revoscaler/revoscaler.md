@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "RevoScaleR package for R | Microsoft Docs"
-description: "Function help reference for the RevoScaleR R package of Microsoft R"
+title: "RevoScaleR package for R (Machine Learning Server) | Microsoft Docs"
+description: "Function help reference for the RevoScaleR R package of Machine Learning Server and Microsoft R"
 keywords: "RevoScaleR, ScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "08/22/2016"
+ms.date: "10/09/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # RevoScaleR package
 
-The **RevoScaleR** library is a collection of portable, scalable, and distributable R functions for analyzing data at scale. You can use it for descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. 
+The **RevoScaleR** library is a collection of portable, scalable, and distributable R functions for importing, transforming, and analyzing data at scale. You can use it for descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. 
 
 Functions run on the **RevoScaleR** interpreter, built on open source R, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
@@ -41,11 +41,11 @@ The **RevoScaleR** library is found in Machine Learning Server and Microsoft R p
 
 **RevoScaleR** is often preloaded into tools that integrate with Machine Learning Server and R Client, which means you can call functions without having to load the library. If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
 
-### Local compute context
+### Run it locally
 
 This is the default. **RevoScaleR** runs locally on all platforms, including R Client. On a standalone Linux or windows system, data and operations are local to the machine. On Hadoop, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
-### Remote compute context
+### Run in a remote compute context
 
 **RevoScaleR** runs remotely on computers that have a server installation. In a remote compute context, the script running on a local R Client or Machine Learning Server shifts execution to a remote Machine Learning Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. 
 

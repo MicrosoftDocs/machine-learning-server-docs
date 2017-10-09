@@ -1,13 +1,13 @@
 --- 
  
 # required metadata 
-title: "revoscalepy package for Python (SQL Server Machine Learning Server) | Microsoft Docs" 
-description: "Function help reference for the revoscalepy Python package of SQL Server Machine Learning Server." 
+title: "revoscalepy package for Python (Machine Learning Server) | Microsoft Docs" 
+description: "Function help reference for the revoscalepy Python package of Machine Learning Server." 
 keywords: "" 
 author: "HeidiSteen" 
 manager: "jhubbard" 
 ms.author: "heidist"
-ms.date: "09/29/2017" 
+ms.date: "10/09/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,7 +27,7 @@ ms.custom: ""
 
 # revoscalepy package
 
-The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for analyzing data at scale. You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests. 
+The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for importing, transforming, and analyzing data at scale. You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests. 
 
 Functions run on the **revoscalepy** interpreter, built on open source Python, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
@@ -43,11 +43,11 @@ The **revoscalepy** module is found in Machine Learning Server or SQL Server Mac
 
 You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules. For a review of common tasks, see [How to use revoscalepy with Spark](../../python/how-to-revoscalepy.md).
 
-### Local compute context
+### Run it locally
 
 This is the default. The **revoscalepy** library runs locally on all platforms. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
-### Remote compute context
+### Run in a remote compute context
 
 In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server on Spark or SQL Server. For example, script running on Windows might shift execution to a Spark cluster to process data there.
 
