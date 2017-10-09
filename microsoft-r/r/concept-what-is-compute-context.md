@@ -38,7 +38,13 @@ Many functions can execute in parallel. On distributed platforms, such as Hadoop
 
 ## revoscalepy: List of compute contexts
 
-The revoscalepy library only supports the local compute context, and remote context through RxSpark, and RxInSqlServer. It does not support remote execution on Hadoop MapReduce in this release. On a Spark cluster, revoscalepy can execute locally or remote. Recall that spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
+The revoscalepy library only supports the local compute context, and remote context for Spark and SQL Server.
+
+Context name | Alternative name | Usage |
+-----------|--------------------|-----------------------|
+[RxLocalSeq](../r-reference/revoscaler/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. |
+[RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | Use for a remote compute context where the target is a Spark 2.0-2.4 cluster over Hadoop Distributed File System (HDFS). |
+[RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | Use for a remote compute context where the target server is SQL Server 2016 or later with R Server. |
 
 ## RevoScaleR: List of compute contexts
 
