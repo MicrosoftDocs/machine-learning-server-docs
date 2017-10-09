@@ -109,7 +109,8 @@ service = client.service('myService')\
 ```
 
 Here is a realtime web service example:
-<a name=realtime-example></a>
+
+<a name="realtime-example"></a>
 
 ```Python
 # Serialize the model using revoscalepy.rx_serialize_model
