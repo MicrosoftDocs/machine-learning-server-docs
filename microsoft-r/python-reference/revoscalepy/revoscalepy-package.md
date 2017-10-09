@@ -45,6 +45,9 @@ The **revoscalepy** module is found in Machine Learning Server or SQL Server Mac
 
 The **revoscalepy** module runs locally on all platforms, and remotely in a [RxSpark](RxSpark.md) or RxInSQLServer compute context. For a review of common tasks, see [How to use revoscalepy with Spark](../../python/how-to-revoscalepy.md).
 
+> [!Note]
+> Some function names begin with `rx-` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
+
 ### In a local compute context
 
 **Revoscalepy** operations include statistical analysis, linear and logistic regressions, and predictive analytics. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to the cluster. 

@@ -50,7 +50,7 @@ Some functions in **RevoScaleR** are specific to particular compute contexts. A 
 + [Computing on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/scaler-functions-for-working-with-sql-server-data)
 
 > [!Note]
-> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
+> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
 
 ## Functions by category
 
