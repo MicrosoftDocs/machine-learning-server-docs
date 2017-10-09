@@ -36,11 +36,13 @@ Switching to a remote compute context is typically done for two reasons:
 
 Many functions can execute in parallel. On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), such functions can distribute workload execution to all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster. 
 
-## List of compute contexts
+## revoscalepy: List of compute contexts
 
 The revoscalepy library only supports the local compute context, and remote context through RxSpark, and RxInSqlServer. It does not support remote execution on Hadoop MapReduce in this release. On a Spark cluster, revoscalepy can execute locally or remote. Recall that spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
 
-The RevoScaleR library supports a broader range compute contexts in the following table.
+## RevoScaleR: List of compute contexts
+
+The RevoScaleR library supports the compute contexts in the following table.
 
 Context name | Alternative name | Allowed data sources |
 -----------|--------------------|-----------------------|
@@ -48,8 +50,31 @@ Context name | Alternative name | Allowed data sources |
 [RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md), [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
 [RxHadoopMR](../r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md) |
 [RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](../r-reference/revoscaler/rxsqlserverdata.md) |
+
+
+Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. The following compute contexts are used for manual distributed computing:
+
+Context name | Alternative name | 
+-----------|--------------------|
 [RxLocalParallel](../r-reference/revoscaler/rxlocalparallel.md) | localpar  |  
-[RxForeachDoPar](../r-reference/revoscaler/rxforeachdopar.md)  | dopar     | 
+[RxForeachDoPar](../r-reference/revoscaler/rxforeachdopar.md)  | dopar     |  
+
+## RevoScaleR: Data sources by compute context
+
+In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be limited. The following table shows the available combinations of compute contexts and data sources (x indicates available):
+
+| Data Source | [`RxLocalSeq`](../r-reference/revoscaler/rxlocalseq.md) | [`RxHadoopMR`](../r-reference/revoscaler/rxhadoopmr.md) | [`RxSpark`](../r-reference/revoscaler/rxspark.md) | [`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md) |
+|-------------|------------|------------|--------------|---------------|
+| Delimited Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)) | X | X | X  |   |
+| Fixed-Format Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)`) | X |  X |   |   |
+| .xdf data files ([`RxXdfData`](../r-reference/revoscaler/rxxdfdata.md)`) | X | X | X  |   |
+| SAS data files (`RxSasData`) | X |   |   |   |
+| SPSS data files (`RxSpssData`) | X |   |   |   |
+| ODBC data (`RxOdbcData`) | X |   | X  |  X |
+| SQL Server database ([`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md)) |   |   |   | X |
+| HDFS data files ([RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData)  |  X | X | X  |   |
+
+Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [How to use RevoScaleR on Hadoop](how-to-revoscaler-hadoop.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](how-to-revoscaler-distributed-computing.md#managing-distributed-data) for details.
 
 
 ## Use cases for switching context

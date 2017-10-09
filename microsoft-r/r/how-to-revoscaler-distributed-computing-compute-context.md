@@ -35,43 +35,6 @@ For Python, the compute context must be Spark 2.0-2.4 on HDFS.
 
 For R, the specific dependency is to have the same version of RevoScaleR. This means you must have same-version server instances for both local and remote, or compatible co-released versions of R Client and Machine Learning Server (for example, R Client 3.3.4. and Machine Learning Server 9.2.1). Because RevoScaleR is only installed through R Client or Machine Learning Server, the version prerequisite can only be satisfied through product installation.
 
-## List of compute contexts
-
-The revoscalepy library supports the local compute context, RxSpark, and RxInSqlServer.
-
-The RevoScaleR library supports the compute contexts in the following table.
-
-Context name | Alternative name | Allowed data sources |
------------|--------------------|-----------------------|
-[RxLocalSeq](../r-reference/revoscaler/rxlocalseq.md)      | local     | (all) |
-[RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md), [RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including RxHiveData, RxParquetData, RxOrcData  |
-[RxHadoopMR](../r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | [RxTextData](../r-reference/revoscaler/rxtextdata.md), [RxXdfData](../r-reference/revoscaler/rxxdfdata.md) |
-[RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | [RxSqlServerData](../r-reference/revoscaler/rxsqlserverdata.md) |
-
-Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. The following compute contexts are used for manual distributed computing:
-
-Context name | Alternative name | 
------------|--------------------|
-[RxLocalParallel](../r-reference/revoscaler/rxlocalparallel.md) | localpar  |  
-[RxForeachDoPar](../r-reference/revoscaler/rxforeachdopar.md)  | dopar     |  
-
-## Supported data sources
-
-In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed compute context, however, your choice of data sources may be limited. The following table shows the available combinations of compute contexts and data sources (x indicates available):
-
-| Data Source | `RxLocalSeq` | `RxHadoopMR` | `RxSpark` | `RxInSqlServer` |
-|-------------|------------|------------|--------------|---------------|
-| Delimited Text (`RxTextdata`) | X | X | X  |   |
-| Fixed-Format Text (`RxTextData`) | X |  X |   |   |
-| .xdf data files (`RxXdfData`) | X | X | X  |   |
-| SAS data files (`RxSasData`) | X |   |   |   |
-| SPSS data files (`RxSpssData`) | X |   |   |   |
-| ODBC data (`RxOdbcData`) | X |   | X  |  X |
-| SQL Server database (`RxSqlServerData`) |   |   |   | X |
-
-Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [How to use RevoScaleR on Hadoop](how-to-revoscaler-hadoop.md). Similarly, predictions in a distributed compute context require that the data be split across the available nodes. See [Managing Distributed Data](how-to-revoscaler-distributed-computing.md#managing-distributed-data) for details.
-
-
 ## Get a compute context
 
 At a command prompt, run `rxGetComputeContext()` to return the current compute context. Every platform supports the default local compute context **RxLocalSeq**. 
