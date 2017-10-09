@@ -25,11 +25,9 @@ ms.technology: "r-server"
 
 # RevoScaleR package
 
-The **RevoScaleR** library s a collection of portable, scalable, and distributable R functions for analyzing data at scale, at the point of origin. It includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. You can do descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. The library also includes functions for controlling jobs, serializing data, and performing common utility tasks.
+The **RevoScaleR** library is a collection of portable, scalable, and distributable R functions for analyzing data at scale, at the point of origin. You can use it for descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. 
 
 Functions run on the **RevoScaleR** interpreter, built on open source R, but extended to leverage the multithreaded and multinode architecture of the host platform.
-
-**RevoScaleR** runs locally on all platforms and remotely on Hadoop processing frameworks (Spark and MapReduce) and SQL Server. On a Hadoop cluster, for functions that execute on parallel architecture, the workload executes on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster.  
 
 | Package details | |
 |--------|-|
@@ -41,7 +39,9 @@ Functions run on the **RevoScaleR** interpreter, built on open source R, but ext
 
 The **RevoScaleR** library is found in all Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having Microsoft R.
 
-**RevoScaleR** is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. 
+**RevoScaleR** runs locally on all platforms and remotely on Hadoop processing frameworks (Spark and MapReduce) and SQL Server. On a Hadoop cluster, for functions that execute on parallel architecture, the workload executes on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster. 
+
+**RevoScaleR** is often preloaded into tools that integrate with R Client and R Server, which means you can call functions without having to load the library. 
 
 If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
 
@@ -53,6 +53,8 @@ Some functions in **RevoScaleR** are specific to particular compute contexts. A 
 > Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
 
 ## Functions by category
+
+The library includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. The library also includes functions for controlling jobs, serializing data, and performing common utility tasks.
 
 This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
 

@@ -27,11 +27,9 @@ ms.custom: ""
 
 # revoscalepy package
 
-The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for analyzing data at scale, at the point of origin. It includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. You can do descriptive statistics, linear regression, logistic regression, classification and regression trees, and decision forests. The library also includes functions for controlling jobs, serializing data, and performing common utility tasks.
+The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for analyzing data at scale, at the point of origin. You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests. 
 
 Functions run on the **revoscalepy** interpreter, built on open source Python, but extended to leverage the multithreaded and multinode architecture of the host platform.
-
-**revoscalepy** runs locally on all platforms and remotely on Spark and SQL Server 2017 with Python. On a Spark cluster, for functions that execute on parallel architecture, the workload executes on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster.  
 
 | Package details | |
 |--------|-|
@@ -50,19 +48,24 @@ The **revoscalepy** module runs locally on all platforms, and remotely in a [RxS
 
 ### In a local compute context
 
-**Revoscalepy** operations include statistical analysis, linear and logistic regressions, and predictive analytics. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to the cluster. 
+**Revoscalepy** operations include statistical analysis, linear and logistic regressions, and predictive analytics. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
 ### In a remote compute context
 
-In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server. For **revoscalepy**, this is supported for an [RxSpark](RxSpark.md) cluster. For example, script running on Windows might shift execution to a Spark cluster to process data there. Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. 
+In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server, supported on Spark and SQL Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. 
 
-For SQL Server, there are two primary use cases: 
+For Spark, set the compute context to [RxSpark](RxSpark.md) cluster and give the cluster name. In this context, if you call a function that can run in parallel, the task is distributed across data nodes in the cluster, where the operation is co-located with the data. This capability is built into Spark. 
+
+For SQL Server, there are two primary use cases for remote compute context: 
 
 + Call Python functions in T-SQL script or stored procedures running on SQL Server.  
 
 + Call **revoscalepy** functions in Python script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **revoscalepy** operations to a remote SQL Server instance that has the **revoscalepy** interpreter.
 
 ## Functions by category
+
+It includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. You can do descriptive statistics, linear regression, logistic regression, classification and regression trees, and decision forests. The library also includes functions for controlling jobs, serializing data, and performing common utility tasks.
+
 
 This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
 
