@@ -27,7 +27,7 @@ ms.custom: ""
 
 # revoscalepy package
 
-The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for analyzing data at scale, at the point of origin. You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests. 
+The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for analyzing data at scale. You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests. 
 
 Functions run on the **revoscalepy** interpreter, built on open source Python, but extended to leverage the multithreaded and multinode architecture of the host platform.
 
@@ -39,21 +39,21 @@ Functions run on the **revoscalepy** interpreter, built on open source Python, b
 
 ## How to use revoscalepy
 
-The **revoscalepy** module is found in Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreter. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules.
+The **revoscalepy** module is found in Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreter. 
 
-The **revoscalepy** module runs locally on all platforms, and remotely in a [RxSpark](RxSpark.md) or RxInSQLServer compute context. For a review of common tasks, see [How to use revoscalepy with Spark](../../python/how-to-revoscalepy.md).
+You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules. For a review of common tasks, see [How to use revoscalepy with Spark](../../python/how-to-revoscalepy.md).
 
-### Run it locally
+### Local compute context
 
-On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
+This is the default. *revoscalepy** runs locally on all platforms. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
-### Run it in a remote compute context
+### Remote compute context
 
 In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server, supported on Spark and SQL Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. 
 
-For Spark, set the compute context to [RxSpark](RxSpark.md) cluster and give the cluster name. In this context, if you call a function that can run in parallel, the task is distributed across data nodes in the cluster, where the operation is co-located with the data. This capability is built into Spark. 
+On Spark, set the compute context to [RxSpark](RxSpark.md) cluster and give the cluster name. In this context, if you call a function that can run in parallel, the task is distributed across data nodes in the cluster, where the operation is co-located with the data. This capability is built into Spark. 
 
-For SQL Server, there are two primary use cases for remote compute context: 
+On SQL Server, set the compute context to [RxInSQLServer](RxSInqlServer.md). There are two primary use cases for remote compute context: 
 
 + Call Python functions in T-SQL script or stored procedures running on SQL Server.  
 

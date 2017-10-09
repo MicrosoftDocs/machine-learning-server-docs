@@ -40,7 +40,7 @@ On distributed platforms, such as Hadoop processing frameworks (Spark and MapRed
 
 The revoscalepy library only supports the local compute context, and remote context through RxSpark, and RxInSqlServer. It does not support remote executiong on Hadoop MapReduce in this release. On a Spark cluster, revoscalepy can execute locally or remote. Recall that spark must be 2.0-2.4 over Hadoop Distributed File System (HDFS).
 
-The RevoScaleR library supports the compute contexts in the following table.
+The RevoScaleR library supports a broader range compute contexts in the following table.
 
 Context name | Alternative name | Allowed data sources |
 -----------|--------------------|-----------------------|

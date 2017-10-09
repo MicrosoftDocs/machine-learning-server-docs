@@ -25,31 +25,37 @@ ms.technology: "r-server"
 
 # RevoScaleR package
 
-The **RevoScaleR** library is a collection of portable, scalable, and distributable R functions for analyzing data at scale, at the point of origin. You can use it for descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. 
+The **RevoScaleR** library is a collection of portable, scalable, and distributable R functions for analyzing data at scale. You can use it for descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. 
 
 Functions run on the **RevoScaleR** interpreter, built on open source R, but extended to leverage the multithreaded and multinode architecture of the host platform.
 
 | Package details | |
 |--------|-|
 | Version: |  9.2.1 |
-| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use RevoScaleR
 
-The **RevoScaleR** library is found in all Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having Microsoft R.
+The **RevoScaleR** library is found in Machine Learning Server and Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having the interpreter and libraries.
 
-**RevoScaleR** is often preloaded into tools that integrate with R Client and R Server, which means you can call functions without having to load the library. If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
+**RevoScaleR** is often preloaded into tools that integrate with Machine Learning Server and R Client, which means you can call functions without having to load the library. If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
 
-### Run it locally
+### Local compute context
 
-**RevoScaleR** runs locally on all platforms, including R Client. On a standalone Linux or windows system, data and operations are local to the machine. On Hadoop, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
+This is the default. **RevoScaleR** runs locally on all platforms, including R Client. On a standalone Linux or windows system, data and operations are local to the machine. On Hadoop, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
-### Run it in a remote compute context
+### Remote compute context
 
 **RevoScaleR** runs remotely on computers that have a server installation. In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server, supported on Hadoop and SQL Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. 
 
 On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), functions that execute in parallel distribute workload execution on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster. 
+
+On SQL Server, there are two primary use cases for remote compute context: 
+
++ Call R functions in T-SQL script or stored procedures running on SQL Server.  
+
++ Call **RevoScaleR** functions in R script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **RevoScaleR** operations to a remote SQL Server instance that has the **RevoScaleR** interpreter.
 
 Some functions in **RevoScaleR** are specific to particular compute contexts. A filtered list of functions include the following:
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)
