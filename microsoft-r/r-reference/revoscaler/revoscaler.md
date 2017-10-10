@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "RevoScaleR package for R | Microsoft Docs"
-description: "Function help reference for the RevoScaleR R package of Microsoft R"
+title: "RevoScaleR package for R (Machine Learning Server) | Microsoft Docs"
+description: "Function help reference for the RevoScaleR R package of Machine Learning Server and Microsoft R"
 keywords: "RevoScaleR, ScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "08/22/2016"
+ms.date: "10/09/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -25,34 +25,50 @@ ms.technology: "r-server"
 
 # RevoScaleR package
 
-The **RevoScaleR** library provides a set of over one hundred portable, scalable, and distributable data analysis R functions that run on the **RevoScaleR** interpreter built on open source R and extended to accommodate high performance computing (HPC) and analysis (HPA).
+The **RevoScaleR** library is a collection of portable, scalable, and distributable R functions for importing, transforming, and analyzing data at scale. You can use it for descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. 
 
-HPA algorithms include descriptive statistics, cross-tabulations, linear regression, covariance and correlation matrices, logistic regression, generalized linear models, k-means clustering, classification and regression trees, and decision forests. HPC functionality is enabled on Hadoop processing frameworks (Spark and MapReduce) for distributed execution of essentially any R function across cores and nodes, delivering the results back to the user.
+Functions run on the **RevoScaleR** interpreter, built on open source R, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
 | Package details | |
 |--------|-|
 | Version: |  9.2.1 |
-| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use RevoScaleR
 
-The **RevoScaleR** library is installed in all Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having Microsoft R.
+The **RevoScaleR** library is found in Machine Learning Server and Microsoft R products. You can use any R IDE to write R script calling functions in **RevoScaleR**, but the script must run on a computer having the interpreter and libraries.
 
-**RevoScaleR** is often preloaded into tools that integrate with R Server, which means you can call functions without having to load the library. 
+**RevoScaleR** is often preloaded into tools that integrate with Machine Learning Server and R Client, which means you can call functions without having to load the library. If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
 
-If the library is not loaded, you can load **RevoScaleR** from the command line by typing `library(RevoScaleR)`.
+### Run it locally
+
+This is the default. **RevoScaleR** runs locally on all platforms, including R Client. On a standalone Linux or windows system, data and operations are local to the machine. On Hadoop, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
+
+### Run in a remote compute context
+
+**RevoScaleR** runs remotely on computers that have a server installation. In a remote compute context, the script running on a local R Client or Machine Learning Server shifts execution to a remote Machine Learning Server. For example, script running on Windows might shift execution to a Spark cluster to process data there. 
+
+On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), set the compute context to [RxSpark](RxSpark.md) or [RxHadoopMR](RxHadoopMR.md) and give the cluster name. In this context, if you call a function that can run in parallel, the task is distributed across data nodes in the cluster, where the operation is co-located with the data. 
+
+On SQL Server, set the compute context to [RxInSQLServer](RxInSqlServer.md). There are two primary use cases for remote compute context: 
+
++ Call R functions in T-SQL script or stored procedures running on SQL Server.  
+
++ Call **RevoScaleR** functions in R script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **RevoScaleR** operations to a remote SQL Server instance that has the **RevoScaleR** interpreter.
 
 Some functions in **RevoScaleR** are specific to particular compute contexts. A filtered list of functions include the following:
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)
 + [Computing on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/scaler-functions-for-working-with-sql-server-data)
 
-> [!Note]
-> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used to distinguish the class constructors such as data sources and compute contexts.
-
 ## Functions by category
 
-This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
+The library includes data transformation and manipulation, visualization, predictions, and statistical analysis functions. It also includes functions for controlling jobs, serializing data, and performing common utility tasks.
+
+This section lists the functions by category to give you an idea of how each one is used. The table of contents lists functions in alphabetical order.
+
+> [!Note]
+> Some function names begin with `rx` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
 
 ## 1-Data analysis functions
 <!--<br />
