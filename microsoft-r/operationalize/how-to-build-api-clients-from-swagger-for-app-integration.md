@@ -348,6 +348,12 @@ Build and use a service consumption client library from swagger in CSharp and Ac
    Console.Out.WriteLine(serviceResult.OutputParameters);
    ```
 
+## Example in Java
+
+The following blog article shows how to create a Java client. 
+
+https://blogs.msdn.microsoft.com/mlserver/2017/10/04/enterprise-friendly-java-client-for-microsoft-machine-learning-server/
+
 ## See also
 
 + [Blog article: REST Calls using PostMan](https://blogs.msdn.microsoft.com/rserver/2017/02/22/rest-calls-using-postman-for-r-server-o16n/)
