@@ -29,6 +29,23 @@ In Machine Learning Server, every session that loads a function library has a [c
 
 You can switch to a remote compute context to shift script execution to a different server or platform. For example, you might want to bring calculations and analysis to where the data resides on a database platform, such as SQL Server, or on the Hadoop Distributed File System (HDFS) using Spark or MapReduce as the processing layer.
 
+
+
+You can create multiple compute context objects and switch between them easily. You can also modify existing compute context objects, for example, to add new computers as they come online.
+
+The principal compute contexts are the following:
+
+- `RxLocalSeq`: the default compute context. This compute context is available on all platforms.
+
+- `RxHadoopMR`: the compute context used to distribute computations on a Hadoop MapReduce cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [How to use RevoScaleR with Hadoop](how-to-revoscaler-hadoop.md).
+
+- `RxSpark`: the compute context used to distribute computations on a Hadoop Spark cluster. For more information, see the [How to use RevoScaleR with Spark](how-to-revoscaler-spark.md).
+
+The `RxInSqlServer` compute context is a special case in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. For details on creating and using `RxInSqlServer` compute contexts, see the [Introducing Machine Learning with SQL Server](concept-what-is-sql-server-r-services.md).
+
+
+
+
 ## Prerequisites
 
 For Python, the compute context must be Spark 2.0-2.4 on HDFS.
