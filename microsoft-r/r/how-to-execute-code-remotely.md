@@ -38,7 +38,7 @@ Remote execution is supported in several ways:
 You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
- + [Log in and out of Machine Learning Server rationalize/how-to-connect-log-in-with-mrsdeploy.md)
+ + [Log in and out of Machine Learning Server](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
  + [Generate diff reports of the local and remote environments](#diff) and reconcile any differences    
  + [Execute R scripts and code remotely](#run)    
  + [Work with R objects/files remotely](#objects)    

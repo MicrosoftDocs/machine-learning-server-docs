@@ -25,30 +25,31 @@ ms.technology: "r-server"
 
 # Compute context for script execution on Machine Learning Server
 
-*Compute context* refers to the location of computations, as executed by **revoscalepy** for Python, or by the **RevoScaleR** interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context means that you can push execution to an interpreter on another machine. 
+*Compute context* refers to the location of computations, as executed by **revoscalepy** for Python, or by the **RevoScaleR** interpreter for R on a Machine Learning Server or R Client. The ability to switch a compute context refers to pushing execution to an interpreter on another machine. If you switch a compute context, the functions executing on the remote server are from **revoscalepy** or  **RevoScaleR**. 
 
-Local is the default, supported on all platforms. Remote is a server-only feature. For example, script running on R Client on Windows might shift execution to Machine Learning Server in a Spark cluster to process data there. 
+The primary reason for shifting context is to eliminate data transfer over your network by bringing computations to resident data. This is particularly relevent for big data platforms like Hadoop, where data is distributed and managed over multiple nodes, or for data sets that are simply too large for a client workstation.
 
-Switching to a remote compute context is typically done for two reasons:
+| Compute context | How used... |
+|-----------------|-------------|
+| Local | Local is the default, supported by all products, on all platforms. Script executes on the local machine. |
+| Remote | Remote is a server-only feature, available for selected data platforms: Spark over HDFS, Hadoop MapReduce, SQL Server. For example, script running locally in R Client can shift execution to a remote Machine Learning Server in a Spark cluster to process data there. 
 
-+ Get better performance if the target system has more capability.
-+ Minimize data transfer by bringing calculations to resident data. 
+Many analytical functions can execute in parallel. On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), **revoscalepy** and **RevoScaleR** can distribute workload execution to all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data, enabled when you set a remote compute context to your Hadoop cluster.
 
-Many functions can execute in parallel. On distributed platforms, such as Hadoop processing frameworks (Spark and MapReduce), such functions can distribute workload execution to all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster. 
+> [!Tip]
+> If your objective is simply to use two or more Machine Learning Server instances interchangeably, or to shift execution from R Client to a more powerful Machine Learning Server on Windows or Linux, consider [remote execution](how-to-execute-code-remotely.md). Remote execution is data platform and library agnostic. From a local R session, you can switch to a remote R session and call functions from any library, including base R and third-party vendors. 
 
-## revoscalepy: List of compute contexts
+## revoscalepy: compute context list
 
-The revoscalepy library only supports the local compute context, and remote context for Spark and SQL Server.
+The revoscalepy library only supports the local compute context, and remote compute context for Spark and SQL Server.
 
 Context name | Alternative name | Usage |
 -----------|--------------------|-----------------------|
 [RxLocalSeq](../r-reference/revoscaler/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. |
 [RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | Use for a remote compute context where the target is a Spark 2.0-2.4 cluster over Hadoop Distributed File System (HDFS). |
-[RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | Use for a remote compute context where the target server is SQL Server 2016 or later with R Server. |
+[RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | Use for a remote compute context where the target server is SQL Server 2017 Machine Learning with Python support. |
 
-## RevoScaleR: List of compute contexts
-
-The RevoScaleR library supports the compute contexts in the following table.
+## RevoScaleR: compute context list
 
 Context name | Alternative name | Usage |
 -----------|--------------------|-----------------------|
@@ -68,7 +69,7 @@ In the local compute context, all of RevoScaleR’s supported data sources are a
 | Fixed-Format Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)`) | X |  X |   |   |
 | Delimited Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)) | X | X | X  |   |
 | .xdf data files ([`RxXdfData`](../r-reference/revoscaler/rxxdfdata.md)`) | X | X | X  |   |
-| ([RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including **`RxHiveData`**, **`RxParquetData`**, **`RxOrcData`**)  |  X | X | X  |   |
+| ([RxSparkData](../r-reference/revoscaler/rxsparkdata.md) including `RxHiveData`, `RxParquetData`, `RxOrcData`)  |  X | X | X  |   |
 | ODBC data (`RxOdbcData`) | X |   | X  |  X |
 | SQL Server database ([`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md)) |   |   |   | X |
 | SAS data files (`RxSasData`) | X |   |   |   |
@@ -88,8 +89,7 @@ Use case | Description |
 Client to Server| Write and run script locally in R Client, pushing specific computations to a remote Machine Learning Server instance. You can rotate calculations among systems having better processing capabilities or database assets.|
 Server to Server | Push platform-specific computations to a server on a different platform. Supported platforms include SQL Server,  Hadoop (Spark or MapReduce). You can implement a distributed processing architecture: RxLocalSeq, RxSpark, RxInSqlServer. |
 
-> [!Tip]
-> If your objective is simply to use two or more Machine Learning Server instances interchangeably, or to shift execution from R Client to a more powerful Machine Learning Server, consider [remote execution](how-to-execute-code-remotely.md) rather than switching the compute context. Remote execution gives you the ability to run R sessions on any standalone Machine Learning Server installation on Windows or Linux. 
+
 
 ## Use case for distributed computing
 
@@ -115,7 +115,7 @@ Learn how to get, set, and manage compute context in [How to set and manage comp
 
 ## See Also
 
- [Introduction to Machine Learning Server](../what-is-machine-learning-server.md) 
- [Install Machine Learning Server on Windows](../install/machine-learning-server-windows-install.md)  
- [Install Machine Learning Server on Linux](../install/machine-learning-server-linux-install.md)  
- [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md)
++ [Introduction to Machine Learning Server](../what-is-machine-learning-server.md) 
++ [Install Machine Learning Server on Windows](../install/machine-learning-server-windows-install.md)  
++ [Install Machine Learning Server on Linux](../install/machine-learning-server-linux-install.md)  
++ [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md)

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "ScaleR Functions"
-description: "ScaleR Functions"
+title: "Base R and RevoScaleR function comparison (Machine Learning Server and Microsoft R) | Microsoft Docs"
+description: "RevoScaleR function side-by-side comparison with base R functions"
 keywords: "RevoScaleR, RevoScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "04/18/2017"
+ms.date: "10/11/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
