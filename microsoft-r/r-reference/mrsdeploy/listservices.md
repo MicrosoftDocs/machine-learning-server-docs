@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "listServices function (mrsdeploy) | Microsoft Docs" 
+title: "listServices function (mrsdeploy) " 
 description: " List the different published web services on the R Server instance. " 
 keywords: "(mrsdeploy), listServices" 
 author: "heidisteen" 

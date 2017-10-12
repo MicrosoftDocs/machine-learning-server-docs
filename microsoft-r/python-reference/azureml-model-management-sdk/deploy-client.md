@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "DeployClient: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "DeployClient: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

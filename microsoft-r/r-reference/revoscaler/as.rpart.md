@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "as.rpart function (RevoScaleR) | Microsoft Docs" 
+title: "as.rpart function (RevoScaleR) " 
 description: " Converts objects containing decision tree results to an rpart object. " 
 keywords: "(RevoScaleR), as.rpart, as.rpart.rxDTree, category, models" 
 author: "heidisteen" 

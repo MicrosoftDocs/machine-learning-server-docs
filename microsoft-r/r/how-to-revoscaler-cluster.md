@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Cluster classification using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Cluster classification using RevoScaleR (Machine Learning Server) "
 description: "k-means clustering with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

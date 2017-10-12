@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Python tutorial: Linear regression model using revoscalepy on Machine Learning Server | Microsoft Docs"
+title: "Python tutorial: Linear regression model using revoscalepy on Machine Learning Server "
 description: "Learn how to build and deploy a model using revoscalepy Python functions. Predict outcomes. Summarize  data."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "ngram function (MicrosoftML) | Microsoft Docs" 
+title: "ngram function (MicrosoftML) " 
 description: " Feature Extractors that can be used with mtText. " 
 keywords: "(MicrosoftML), ngram, ngramCount, ngramHash, transform" 
 author: "heidisteen" 

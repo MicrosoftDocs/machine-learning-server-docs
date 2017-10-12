@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxQuantile function (RevoScaleR) | Microsoft Docs" 
+title: "rxQuantile function (RevoScaleR) " 
 description: " Quickly computes approximate quantiles (without sorting) " 
 keywords: "(RevoScaleR), rxQuantile, univar" 
 author: "heidisteen" 

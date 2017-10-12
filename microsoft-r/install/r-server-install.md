@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "How to install earlier versions of Microsoft R Server | Microsoft Docs"
+title: "How to install earlier versions of Microsoft R Server "
 description: "How to install Microsoft R Server 9.1, 9.0.1, 8.0.5, and 8.0."
 keywords: ""
 author: "HeidiSteen"

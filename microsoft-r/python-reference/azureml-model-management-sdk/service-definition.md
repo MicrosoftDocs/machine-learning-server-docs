@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "ServiceDefinition,alias,artifact,artifacts,code_fn,code_str,deploy,description,inputs,models,objects,outputs,redeploy,version: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "ServiceDefinition,alias,artifact,artifacts,code_fn,code_str,deploy,description,inputs,models,objects,outputs,redeploy,version: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

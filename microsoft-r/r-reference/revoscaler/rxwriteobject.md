@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxWriteObject function (RevoScaleR) | Microsoft Docs" 
+title: "rxWriteObject function (RevoScaleR) " 
 description: " Store/Retrieve R objects to/from ODBC data sources. The APIs are modelled after a simple key value store. These are generic APIs and if the ODBC data source isn't specified in the argument, the function does serialization or deserialization of the R object with the specified compression if any. " 
 keywords: "(RevoScaleR), rxWriteObject, rxReadObject, rxDeleteObject, rxListKeys" 
 author: "heidisteen" 

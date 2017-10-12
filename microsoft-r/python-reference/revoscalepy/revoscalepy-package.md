@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "revoscalepy package for Python (Machine Learning Server) | Microsoft Docs" 
+title: "revoscalepy package for Python (Machine Learning Server) " 
 description: "Function help reference for the revoscalepy Python package of Machine Learning Server." 
 keywords: "" 
 author: "HeidiSteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Fitting Linear Models (RevoScaleR) in Machine Learning Server | Microsoft Docs"
+title: "Fitting Linear Models (RevoScaleR) in Machine Learning Server "
 description: "Linear Models with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

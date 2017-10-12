@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetJobOutput function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetJobOutput function (RevoScaleR) " 
 description: " Gets the console output from the various nodes in a non-waiting distributed computing job. " 
 keywords: "(RevoScaleR), rxGetJobOutput, IO" 
 author: "heidisteen" 

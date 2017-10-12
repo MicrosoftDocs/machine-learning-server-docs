@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxTlcBridge function (RevoScaleR) | Microsoft Docs" 
+title: "rxTlcBridge function (RevoScaleR) " 
 description: " Bridge code for additional packages " 
 keywords: "(RevoScaleR), rxTlcBridge" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxOdbcData-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxOdbcData-class function (RevoScaleR) " 
 description: " ODBC data source connection class. " 
 keywords: "(RevoScaleR), RxOdbcData-class, show,RxOdbcData-method, classes" 
 author: "heidisteen" 

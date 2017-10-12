@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Uninstall Machine Learning Server for Hadoop| Microsoft Docs"
+title: "Uninstall Machine Learning Server for Hadoop"
 description: "How to uninstall Machine Learning Server on a Hadoop cluster."
 keywords: ""
 author: "HeidiSteen"

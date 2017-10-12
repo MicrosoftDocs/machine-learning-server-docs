@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Import relational data using ODBC (Machine Learning Server) | Microsoft Docs"
+title: "Import relational data using ODBC (Machine Learning Server) "
 description: "How to import relational data using ODBC and rxImport in RevoScaleR in Machine Learning Server"
 keywords: ""
 author: "HeidiSteen"

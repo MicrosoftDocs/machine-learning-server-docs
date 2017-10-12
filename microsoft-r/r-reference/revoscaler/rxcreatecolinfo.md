@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxCreateColInfo function (RevoScaleR) | Microsoft Docs" 
+title: "rxCreateColInfo function (RevoScaleR) " 
 description: " Generates a colInfo list from a data source that can be used in rxImport or an RxDataSource constructor. " 
 keywords: "(RevoScaleR), rxCreateColInfo, file, connection" 
 author: "heidisteen" 

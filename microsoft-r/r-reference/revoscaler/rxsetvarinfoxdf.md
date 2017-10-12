@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSetVarInfo function (RevoScaleR) | Microsoft Docs" 
+title: "rxSetVarInfo function (RevoScaleR) " 
 description: " Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame  " 
 keywords: "(RevoScaleR), rxSetVarInfo, rxSetVarInfoXdf, attribute" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Default install paths for compute and web nodes - Machine Learning Server | Microsoft Docs"
+title: "Default install paths for compute and web nodes - Machine Learning Server "
 description: "Where to find appsettings.json for Machine Learning Server, web node, compute node"
 keywords: "Machine Learning Server configuration file, appsettings.json"
 author: "j-martens"

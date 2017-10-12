@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxBTrees function (RevoScaleR) | Microsoft Docs" 
+title: "rxBTrees function (RevoScaleR) " 
 description: "Fit stochastic gradient boosted decision trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "(RevoScaleR), rxBTrees, plot.rxBTrees, print.rxBTrees, models, tree, classif, regression, classification" 
 author: "heidisteen" 

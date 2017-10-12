@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxLocalParallel-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxLocalParallel-class function (RevoScaleR) " 
 description: "   Class for the RevoScaleR Local Parallel Compute Context.   " 
 keywords: "(RevoScaleR), RxLocalParallel-class, show,RxLocalParallel-method, classes" 
 author: "heidisteen" 

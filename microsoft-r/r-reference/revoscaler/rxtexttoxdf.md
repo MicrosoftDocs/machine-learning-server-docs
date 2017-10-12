@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxTextToXdf function (RevoScaleR) | Microsoft Docs" 
+title: "rxTextToXdf function (RevoScaleR) " 
 description: " Import text data into to an .xdf file using fastText mode. Can also use rxImport. " 
 keywords: "(RevoScaleR), rxTextToXdf, file, connection" 
 author: "heidisteen" 

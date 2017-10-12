@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetNodeInfo function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetNodeInfo function (RevoScaleR) " 
 description: " Provides information about the capabilities of the nodes on a cluster. " 
 keywords: "(RevoScaleR), rxGetNodeInfo, IO" 
 author: "heidisteen" 

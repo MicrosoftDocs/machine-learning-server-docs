@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "as.xtabs function (RevoScaleR) | Microsoft Docs" 
+title: "as.xtabs function (RevoScaleR) " 
 description: " Converts objects containing cross tabulation results to an xtabs object. " 
 keywords: "(RevoScaleR), as.xtabs, as.xtabs.rxCrossTabs, as.xtabs.rxCube, category, models" 
 author: "heidisteen" 

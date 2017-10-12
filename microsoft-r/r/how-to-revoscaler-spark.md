@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to use RevoScaleR with Apache Spark - Machine Learning Server | Microsoft Docs"
+title: "How to use RevoScaleR with Apache Spark - Machine Learning Server "
 description: "Get started with RevoScaleR and Spark on Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

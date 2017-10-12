@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxRemoteCall function (RevoScaleR) | Microsoft Docs" 
+title: "rxRemoteCall function (RevoScaleR) " 
 description: "Function that is executed on the master node in a distributed computing environment. This function should **not** be called directly by the user and, rather, serves as a necessary and convenient mechanism for performing remote R calls on the master node in a distributed computing environment." 
 keywords: "(RevoScaleR), rxRemoteCall, datasets" 
 author: "heidisteen" 

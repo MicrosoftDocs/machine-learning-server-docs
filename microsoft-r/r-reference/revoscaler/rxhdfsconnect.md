@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxHdfsConnect function (RevoScaleR) | Microsoft Docs" 
+title: "rxHdfsConnect function (RevoScaleR) " 
 description: " Establishes a connection from RevoScaleR to the Hadoop Distributed File System (HDFS).  " 
 keywords: "(RevoScaleR), rxHdfsConnect, file, connection" 
 author: "heidisteen" 

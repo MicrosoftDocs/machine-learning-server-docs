@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "getRemoteFile function (mrsdeploy) | Microsoft Docs" 
+title: "getRemoteFile function (mrsdeploy) " 
 description: " Get the content of a file from the working directory of the remote R session. " 
 keywords: "(mrsdeploy), getRemoteFile" 
 author: "heidisteen" 

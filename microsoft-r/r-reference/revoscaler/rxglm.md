@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGlm function (RevoScaleR) | Microsoft Docs" 
+title: "rxGlm function (RevoScaleR) " 
 description: " Use rxGlm to fit generalized linear regression models for small or large data. Any valid glm family object can be used. " 
 keywords: "(RevoScaleR), rxGlm, models, regression" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxCube function (RevoScaleR) | Microsoft Docs" 
+title: "rxCube function (RevoScaleR) " 
 description: " Use rxCube to create efficiently represented contingency tables from cross-classifying factors using a formula interface. It performs equivalent calculations to the rxCrossTabs function, but returns its results in a different way. " 
 keywords: "(RevoScaleR), rxCube, print.rxCube, summary.rxCube, as.data.frame.rxCube, subset.rxCube, [.rxCube, category, models" 
 author: "heidisteen" 

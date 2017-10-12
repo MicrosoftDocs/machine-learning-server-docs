@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "deleteSnapshot function (mrsdeploy) | Microsoft Docs" 
+title: "deleteSnapshot function (mrsdeploy) " 
 description: " Deletes the specified snapshot from the repository on the R Server. " 
 keywords: "(mrsdeploy), deleteSnapshot" 
 author: "heidisteen" 

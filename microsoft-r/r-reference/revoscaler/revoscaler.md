@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR package for R (Machine Learning Server) | Microsoft Docs"
+title: "RevoScaleR package for R (Machine Learning Server) "
 description: "Function help reference for the RevoScaleR R package of Machine Learning Server and Microsoft R"
 keywords: "RevoScaleR, ScaleR"
 author: "HeidiSteen"

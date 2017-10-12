@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxHpcServer-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxHpcServer-class function (RevoScaleR) " 
 description: " DEPRECATED: HPC Server compute context class. " 
 keywords: "(RevoScaleR), RxHpcServer-class, show,RxHpcServer-method, classes" 
 author: "heidisteen" 

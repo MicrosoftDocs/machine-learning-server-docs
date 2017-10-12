@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to set and manage compute context in Machine Learning Server | Microsoft Docs"
+title: "How to set and manage compute context in Machine Learning Server "
 description: "Push a compute context to Machine Learning Server on a different computer or platform for remote execution."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "categorical function (MicrosoftML) | Microsoft Docs" 
+title: "categorical function (MicrosoftML) " 
 description: " Categorical transform that can be performed on data before  training a model. " 
 keywords: "(MicrosoftML), categorical, transform" 
 author: "heidisteen" 

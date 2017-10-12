@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Parallel computing in Machine Learning Server | Microsoft Docs"
+title: "Parallel computing in Machine Learning Server "
 description: "Machine Learning Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"

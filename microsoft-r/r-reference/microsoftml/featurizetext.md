@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "stopwordsDefault function (MicrosoftML) | Microsoft Docs" 
+title: "stopwordsDefault function (MicrosoftML) " 
 description: " Text transforms that can be performed on data before training  a model. " 
 keywords: "(MicrosoftML), stopwordsDefault, featurizeText, stopwordsCustom, termDictionary, transform" 
 author: "heidisteen" 

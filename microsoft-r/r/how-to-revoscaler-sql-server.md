@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR Getting Started Guide for SQL Server (Machine Learning Server) | Microsoft Docs"
+title: "RevoScaleR Getting Started Guide for SQL Server (Machine Learning Server) "
 description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
 keywords: ""
 author: "jeannt"

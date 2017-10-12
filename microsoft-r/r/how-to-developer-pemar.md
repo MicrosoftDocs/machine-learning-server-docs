@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Get started with PemaR functions in Machine Learning Server | Microsoft Docs"
+title: "Get started with PemaR functions in Machine Learning Server "
 description: "Getting started with the RevoPemaR package in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

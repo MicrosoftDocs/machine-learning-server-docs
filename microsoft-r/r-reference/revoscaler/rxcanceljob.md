@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxCancelJob function (RevoScaleR) | Microsoft Docs" 
+title: "rxCancelJob function (RevoScaleR) " 
 description: " Causes R to cancel an existing distributed computing job. " 
 keywords: "(RevoScaleR), rxCancelJob, rxCancelJob,list-method, rxCancelJob,RxDistributedJob-method, rxCancelJob,RxDistributedHadoopMRJob-method, rxCancelJob,RxDistributedSqlServerJob-method, rxCancelJob,RxDistributedTeradataJob-method, rxCancelJob,ANY-method, IO" 
 author: "heidisteen" 

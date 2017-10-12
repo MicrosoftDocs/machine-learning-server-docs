@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "publishService function (mrsdeploy) | Microsoft Docs" 
+title: "publishService function (mrsdeploy) " 
 description: " Publishes an R code block or a Realtime model as a new web service running on R Server. " 
 keywords: "(mrsdeploy), publishService" 
 author: "heidisteen" 

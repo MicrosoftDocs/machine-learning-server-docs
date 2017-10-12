@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "remoteLoginAAD function (mrsdeploy) | Microsoft Docs" 
+title: "remoteLoginAAD function (mrsdeploy) " 
 description: " Authenticates the user and creates a remote R session. " 
 keywords: "(mrsdeploy), remoteLoginAAD" 
 author: "heidisteen" 

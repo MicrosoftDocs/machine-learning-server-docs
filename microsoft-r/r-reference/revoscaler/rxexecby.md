@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxExecBy function (RevoScaleR) | Microsoft Docs" 
+title: "rxExecBy function (RevoScaleR) " 
 description: " Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in local, localpar, [RxInSqlServer](RxInSqlServer.md) and [RxSpark](RxSpark.md) compute contexts. " 
 keywords: "RevoScaleR, rxExecBy, ExecBy" 
 author: "HeidiSteen" 

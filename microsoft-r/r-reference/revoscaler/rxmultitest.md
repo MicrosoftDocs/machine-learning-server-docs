@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxMultiTest function (RevoScaleR) | Microsoft Docs" 
+title: "rxMultiTest function (RevoScaleR) " 
 description: " Collects a list of tests for variable independence into a table. " 
 keywords: "(RevoScaleR), rxMultiTest, print.rxMultiTest, htest" 
 author: "heidisteen" 

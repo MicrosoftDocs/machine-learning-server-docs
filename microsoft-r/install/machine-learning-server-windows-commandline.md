@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Windows command line installation for Machine Learning Server | Microsoft Docs"
+title: "Windows command line installation for Machine Learning Server "
 description: "How to install Machine Learning Server for Windows on the command line."
 keywords: ""
 author: "HeidiSteen"

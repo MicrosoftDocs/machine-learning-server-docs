@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxLogit function (RevoScaleR) | Microsoft Docs" 
+title: "rxLogit function (RevoScaleR) " 
 description: " Use rxLogit to fit logistic regression models for small or large data. " 
 keywords: "(RevoScaleR), rxLogit, models, regression" 
 author: "heidisteen" 

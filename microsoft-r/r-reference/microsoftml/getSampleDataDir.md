@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "getSampleDataDir function (MicrosoftML) | Microsoft Docs" 
+title: "getSampleDataDir function (MicrosoftML) " 
 description: " Location where downloaded sample data is stored. " 
 keywords: "(MicrosoftML), getSampleDataDir, transform" 
 author: "heidisteen" 

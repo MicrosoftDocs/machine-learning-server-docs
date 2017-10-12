@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "listSnapshots function (mrsdeploy) | Microsoft Docs" 
+title: "listSnapshots function (mrsdeploy) " 
 description: " Get a list of all the snapshots on the R server that are available to the current user. " 
 keywords: "(mrsdeploy), listSnapshots" 
 author: "heidisteen" 

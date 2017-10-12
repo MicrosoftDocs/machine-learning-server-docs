@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSort function (RevoScaleR) | Microsoft Docs" 
+title: "rxSort function (RevoScaleR) " 
 description: " Efficient multi-key sorting of the variables in an .xdf file or data frame in a local compute context. " 
 keywords: "(RevoScaleR), rxSort, file" 
 author: "heidisteen" 

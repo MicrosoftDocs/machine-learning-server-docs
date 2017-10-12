@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "serviceOption function (mrsdeploy) | Microsoft Docs" 
+title: "serviceOption function (mrsdeploy) " 
 description: " Retrieve, set, and list the different service options. " 
 keywords: "(mrsdeploy), serviceOption" 
 author: "heidisteen" 

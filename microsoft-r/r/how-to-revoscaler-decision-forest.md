@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Estimating Decision Forest Models (Machine Learning Server) | Microsoft Docs"
+title: "RevoScaleR User's Guide--Estimating Decision Forest Models (Machine Learning Server) "
 description: "Decision forests with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

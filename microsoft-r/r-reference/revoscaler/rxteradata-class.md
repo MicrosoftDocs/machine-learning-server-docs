@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxTeradata-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxTeradata-class function (RevoScaleR) " 
 description: " Teradata data source connection class. " 
 keywords: "(RevoScaleR), RxTeradata-class, show,RxTeradata-method, classes" 
 author: "heidisteen" 

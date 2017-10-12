@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "getNetDefinition function (MicrosoftML) | Microsoft Docs" 
+title: "getNetDefinition function (MicrosoftML) " 
 description: " Returns the Net# definition from a trained neural network model. " 
 keywords: "(MicrosoftML), getNetDefinition, transform" 
 author: "heidisteen" 

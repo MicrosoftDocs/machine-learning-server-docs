@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxXdfToText function (RevoScaleR) | Microsoft Docs" 
+title: "rxXdfToText function (RevoScaleR) " 
 description: " Write .xdf file content to a delimited text file. rxDataStep recommended. " 
 keywords: "(RevoScaleR), rxXdfToText, file, connection" 
 author: "heidisteen" 

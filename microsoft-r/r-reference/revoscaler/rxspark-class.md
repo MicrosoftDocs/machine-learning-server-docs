@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxSpark-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxSpark-class function (RevoScaleR) " 
 description: " Spark compute context class. " 
 keywords: "(RevoScaleR), RxSpark-class, show,RxSpark-method, classes" 
 author: "heidisteen" 

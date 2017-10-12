@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "ensembleControl function (MicrosoftML) | Microsoft Docs" 
+title: "ensembleControl function (MicrosoftML) " 
 description: " Control the parameters used to create an ensemble. " 
 keywords: "(MicrosoftML), ensembleControl" 
 author: "heidisteen" 

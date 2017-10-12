@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "mortDefaultSmall function (RevoScaleR) | Microsoft Docs" 
+title: "mortDefaultSmall function (RevoScaleR) " 
 description: " Simulated data on mortgage defaults. " 
 keywords: "(RevoScaleR), mortDefaultSmall, mortDefaultSmall.xdf, mortDefaultSmall2000.csv, mortDefaultSmall2001.csv, mortDefaultSmall2002.csv, mortDefaultSmall2003.csv, mortDefaultSmall2004.csv, mortDefaultSmall2005.csv, mortDefaultSmall2006.csv, mortDefaultSmall2007.csv, mortDefaultSmall2008.csv, mortDefaultSmall2009.csv, datasets" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "dropColumns function (MicrosoftML) | Microsoft Docs" 
+title: "dropColumns function (MicrosoftML) " 
 description: " Specified columns to drop from the dataset. " 
 keywords: "(MicrosoftML), dropColumns, transform" 
 author: "heidisteen" 

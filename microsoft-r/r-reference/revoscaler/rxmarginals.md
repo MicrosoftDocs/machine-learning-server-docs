@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxMarginals function (RevoScaleR) | Microsoft Docs" 
+title: "rxMarginals function (RevoScaleR) " 
 description: " Obtain marginal statistics on rxCrossTabs contingency tables. " 
 keywords: "(RevoScaleR), rxMarginals, rxMarginals.rxCrossTabs, category, models" 
 author: "heidisteen" 

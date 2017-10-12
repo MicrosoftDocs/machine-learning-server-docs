@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Uninstall Machine Learning Server for Windows| Microsoft Docs"
+title: "Uninstall Machine Learning Server for Windows"
 description: "How to uninstall Machine Learning Server for Windows."
 keywords: ""
 author: "HeidiSteen"

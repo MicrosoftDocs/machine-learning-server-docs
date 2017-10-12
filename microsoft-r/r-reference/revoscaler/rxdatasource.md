@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxDataSource function (RevoScaleR) | Microsoft Docs" 
+title: "RxDataSource function (RevoScaleR) " 
 description: " A generator for RxDataSource S4 classes. " 
 keywords: "(RevoScaleR), RxDataSource, file, connection" 
 author: "heidisteen" 

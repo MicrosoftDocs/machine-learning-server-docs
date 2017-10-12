@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxFeaturize function (MicrosoftML) | Microsoft Docs" 
+title: "rxFeaturize function (MicrosoftML) " 
 description: " Transforms data from an input data set to an output data set. " 
 keywords: "(MicrosoftML), rxFeaturize, manip" 
 author: "heidisteen" 

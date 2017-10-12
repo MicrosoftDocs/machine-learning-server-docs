@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxFactors function (RevoScaleR) | Microsoft Docs" 
+title: "rxFactors function (RevoScaleR) " 
 description: " Recodes a factor variable by mapping one set of factor levels and indices to a new set. Can also be used to convert non-factor variable into a factor. " 
 keywords: "(RevoScaleR), rxFactors, manip, category" 
 author: "heidisteen" 

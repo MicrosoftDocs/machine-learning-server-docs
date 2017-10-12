@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Generalized Linear Models (RevoScaleR) in Machine Learning Server | Microsoft Docs"
+title: "Generalized Linear Models (RevoScaleR) in Machine Learning Server "
 description: "Generalized linear models with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxFindFileInPath function (RevoScaleR) | Microsoft Docs" 
+title: "rxFindFileInPath function (RevoScaleR) " 
 description: " Sequentially checks the entries in a delimited path string for a provided file name. " 
 keywords: "(RevoScaleR), rxFindFileInPath, IO" 
 author: "heidisteen" 

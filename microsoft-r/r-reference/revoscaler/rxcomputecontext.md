@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxComputeContext function (RevoScaleR) | Microsoft Docs" 
+title: "RxComputeContext function (RevoScaleR) " 
 description: " This is the main generator for RxComputeContext S4 classes. " 
 keywords: "(RevoScaleR), RxComputeContext, file, connection" 
 author: "heidisteen" 

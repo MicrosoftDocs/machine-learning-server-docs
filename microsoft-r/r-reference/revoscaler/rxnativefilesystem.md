@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxNativeFileSystem function (RevoScaleR) | Microsoft Docs" 
+title: "RxNativeFileSystem function (RevoScaleR) " 
 description: " This is the main generator for RxNativeFileSystem S3 class. " 
 keywords: "(RevoScaleR), RxNativeFileSystem, file, connection" 
 author: "heidisteen" 

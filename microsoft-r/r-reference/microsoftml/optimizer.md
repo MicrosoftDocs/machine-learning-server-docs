@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "maOptimizer function (MicrosoftML) | Microsoft Docs" 
+title: "maOptimizer function (MicrosoftML) " 
 description: " Specifies Optimization Algorithms for Neural Net. " 
 keywords: "(MicrosoftML), maOptimizer, adaDeltaSgd, sgd, optimizer" 
 author: "heidisteen" 

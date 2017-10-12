@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Running background jobs using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Running background jobs using RevoScaleR (Machine Learning Server) "
 description: "Machine Learning Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"

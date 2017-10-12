@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "as.lm function (RevoScaleR) | Microsoft Docs" 
+title: "as.lm function (RevoScaleR) " 
 description: " Converts objects containing linear model results to an lm object. " 
 keywords: "(RevoScaleR), as.lm, as.lm.rxLinMod, category, models" 
 author: "heidisteen" 

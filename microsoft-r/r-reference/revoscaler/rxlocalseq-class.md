@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxLocalSeq-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxLocalSeq-class function (RevoScaleR) " 
 description: "   Class for the RevoScaleR Local Compute Context.   " 
 keywords: "(RevoScaleR), RxLocalSeq-class, show,RxLocalSeq-method, classes" 
 author: "heidisteen" 

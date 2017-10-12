@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "updateService function (mrsdeploy) | Microsoft Docs" 
+title: "updateService function (mrsdeploy) " 
 description: " Updates an existing web service on an R Server instance. " 
 keywords: "(mrsdeploy), updateService" 
 author: "heidisteen" 

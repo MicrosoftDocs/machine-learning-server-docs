@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxFastForest function (MicrosoftML) | Microsoft Docs" 
+title: "rxFastForest function (MicrosoftML) " 
 description: " Machine Learning Fast Forest " 
 keywords: "(MicrosoftML), rxFastForest, classification, models, regression" 
 author: "heidisteen" 

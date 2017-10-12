@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Windows offline installation for Machine Learning Server | Microsoft Docs"
+title: "Windows offline installation for Machine Learning Server "
 description: "How to install Machine Learning Server for Windows with no internet connection."
 keywords: ""
 author: "HeidiSteen"

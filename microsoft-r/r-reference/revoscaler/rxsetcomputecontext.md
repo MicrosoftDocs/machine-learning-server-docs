@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSetComputeContext function (RevoScaleR) | Microsoft Docs" 
+title: "rxSetComputeContext function (RevoScaleR) " 
 description: " Get or set the active compute context for RevoScaleR computations " 
 keywords: "(RevoScaleR), rxSetComputeContext, rxGetComputeContext, IO" 
 author: "heidisteen" 
