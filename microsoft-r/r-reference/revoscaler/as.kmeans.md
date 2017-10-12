@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "as.kmeans function (RevoScaleR) | Microsoft Docs" 
+title: "as.kmeans function (RevoScaleR) " 
 description: " Converts objects containing RevoScaleR-computed k-means clusters to an R kmeans object. " 
 keywords: "(RevoScaleR), as.kmeans, as.kmeans.rxKmeans, category, models" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxPredict function (RevoScaleR) | Microsoft Docs" 
+title: "rxPredict function (RevoScaleR) " 
 description: " Compute predicted values and residuals using rxLinMod, rxLogit and rxGlm objects. " 
 keywords: "(RevoScaleR), rxPredict, rxPredict.default, methods, models, regression" 
 author: "heidisteen" 

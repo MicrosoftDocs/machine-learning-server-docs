@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "selectFeatures function (MicrosoftML) | Microsoft Docs" 
+title: "selectFeatures function (MicrosoftML) " 
 description: " The feature selection transform selects features from the specified variables using the specified mode. " 
 keywords: "(MicrosoftML), selectFeatures, feature, selection, transform" 
 author: "heidisteen" 

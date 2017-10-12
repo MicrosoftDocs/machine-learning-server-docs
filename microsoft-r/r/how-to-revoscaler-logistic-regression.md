@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Fitting Logistic Regression Models (RevoScaleR) in Machine Learning Server | Microsoft Docs"
+title: "Fitting Logistic Regression Models (RevoScaleR) in Machine Learning Server "
 description: "Logistic regression with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

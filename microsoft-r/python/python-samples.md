@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Python Samples - Machine Learning Server | Microsoft Docs"
+title: "Python Samples - Machine Learning Server "
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"

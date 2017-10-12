@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "prune.rxDTree function (RevoScaleR) | Microsoft Docs" 
+title: "prune.rxDTree function (RevoScaleR) " 
 description: " 	Prune a decision tree created by rxDTree and return the smaller tree. " 
 keywords: "(RevoScaleR), prune.rxDTree, models, tree, classif, regression" 
 author: "heidisteen" 

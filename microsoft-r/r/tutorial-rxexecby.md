@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "rxExecBy example: parallel processing on partitioned data in Machine Learning Server | Microsoft Docs"
+title: "rxExecBy example: parallel processing on partitioned data in Machine Learning Server "
 description: "Parallel processing of partitioned data with the RevoScaleR function rxExecBy"
 keywords: ""
 author: "HeidiSteen"

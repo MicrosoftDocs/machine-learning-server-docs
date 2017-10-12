@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetVarNames function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetVarNames function (RevoScaleR) " 
 description: " Read the variable names for data source or data frame " 
 keywords: "(RevoScaleR), rxGetVarNames, attribute" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxImport function (RevoScaleR) | Microsoft Docs" 
+title: "rxImport function (RevoScaleR) " 
 description: " Import data into an .xdf file or data.frame. " 
 keywords: "(RevoScaleR), rxImport, file, connection" 
 author: "heidisteen" 

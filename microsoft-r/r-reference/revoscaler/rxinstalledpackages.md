@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxInstalledPackages function (RevoScaleR) | Microsoft Docs" 
+title: "rxInstalledPackages function (RevoScaleR) " 
 description: " Find (or retrieve) details of installed packages for a compute context. " 
 keywords: "(RevoScaleR), rxInstalledPackages, packages, sql, install, uninstall, remove, use" 
 author: "heidisteen" 

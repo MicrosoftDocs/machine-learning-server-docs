@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "as.gbm function (RevoScaleR) | Microsoft Docs" 
+title: "as.gbm function (RevoScaleR) " 
 description: " Converts objects containing decision tree results to an gbm object. " 
 keywords: "(RevoScaleR), as.gbm, as.gbm.rxBTrees, as.gbm.rxDTree, as.gbm.rpart, category, models" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "LDAP AD and Azure Active Directory authentication for Machine Learning Server | Microsoft Docs"
+title: "LDAP AD and Azure Active Directory authentication for Machine Learning Server "
 description: "Enterprise-Grade Security: Authentication with Machine Learning Server"
 keywords: "Machine Learning Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
 author: "j-martens"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Machine Learning Server and Microsoft R Server - Known Issues - Machine Learning Server | Microsoft Docs"
+title: "Machine Learning Server and Microsoft R Server - Known Issues - Machine Learning Server "
 description: "Known Issues with Machine Learning Server and Microsoft R Server"
 keywords: ""
 author: "j-martens"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSetInfo function (RevoScaleR) | Microsoft Docs" 
+title: "rxSetInfo function (RevoScaleR) " 
 description: " Set .xdf file or data frame information, such as a description " 
 keywords: "(RevoScaleR), rxSetInfo,  attribute " 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "resizeImage function (MicrosoftML) | Microsoft Docs" 
+title: "resizeImage function (MicrosoftML) " 
 description: " Resizes an image to a specified dimension using a specified resizing method. " 
 keywords: "(MicrosoftML), resizeImage, image, transform" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "Batch,api,execution_id,parallel_count,records,results,start: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "Batch,api,execution_id,parallel_count,records,results,start: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

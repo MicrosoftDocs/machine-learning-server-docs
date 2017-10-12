@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxPingNodes function (RevoScaleR) | Microsoft Docs" 
+title: "rxPingNodes function (RevoScaleR) " 
 description: " This function provides a simple test of the compute context's ability to perform a round trip through one or more  computation nodes. " 
 keywords: "(RevoScaleR), rxPingNodes, IO" 
 author: "heidisteen" 

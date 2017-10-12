@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Upgrading or Reinstalling Microsoft R Server, Revolution R Open, or R | DeployR 8.x | Microsoft Docs"
+title: "Upgrading or Reinstalling Microsoft R Server, Revolution R Open, or R - DeployR 8.x "
 description: "Reinstalling R on a machine with DeployR"
 keywords: ""
 author: "j-martens"

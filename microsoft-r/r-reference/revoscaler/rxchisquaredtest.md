@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxChiSquaredTest function (RevoScaleR) | Microsoft Docs" 
+title: "rxChiSquaredTest function (RevoScaleR) " 
 description: " Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient " 
 keywords: "(RevoScaleR), rxChiSquaredTest, rxFisherTest, rxKendallCor, htest" 
 author: "heidisteen" 

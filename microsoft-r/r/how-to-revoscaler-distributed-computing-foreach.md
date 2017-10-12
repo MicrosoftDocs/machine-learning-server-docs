@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Using foreach and iterators (Machine Learning Server) | Microsoft Docs"
+title: "Using foreach and iterators (Machine Learning Server) "
 description: "High level guide to using foreach and iterators packages."
 keywords: ""
 author: "HeidiSteen"

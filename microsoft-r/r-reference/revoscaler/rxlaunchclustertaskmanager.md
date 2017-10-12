@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxLaunchClusterJobManager function (RevoScaleR) | Microsoft Docs" 
+title: "rxLaunchClusterJobManager function (RevoScaleR) " 
 description: " Launches the job management UI (if available) for a compute context. Currently this is only available for RxHadoopMR and RxSpark compute contexts. " 
 keywords: "(RevoScaleR), rxLaunchClusterJobManager, rxLaunchClusterJobManager,character-method, rxLaunchClusterJobManager,RxHadoopMR-method, IO" 
 author: "heidisteen" 

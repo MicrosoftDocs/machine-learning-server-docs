@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Distributed and parallel execution for high-performance computing (Machine Learning Server) | Microsoft Docs"
+title: "Distributed and parallel execution for high-performance computing (Machine Learning Server) "
 description: "High performance computing (HPC) for distributed computing using SQL Server in-database and Hadoop clusters computing RevoScaleR package for r and revoscalepy for Python."
 keywords: ""
 author: "HeidiSteen"

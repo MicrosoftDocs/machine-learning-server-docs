@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Cross-Origin Resource Sharing CORS in Machine Learning Server | Microsoft Docs"
+title: "Cross-Origin Resource Sharing CORS in Machine Learning Server "
 description: "Enterprise-Grade Security: CORS with Machine Learning Server"
 keywords: ""
 author: "j-martens"

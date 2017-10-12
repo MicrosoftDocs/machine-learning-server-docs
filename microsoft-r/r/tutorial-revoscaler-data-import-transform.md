@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Data import and exploration (Machine Learning Server) | Microsoft Docs"
+title: "Tutorial: Data import and exploration (Machine Learning Server) "
 description: "Learn how to import and explore data using the RevoScaleR functions in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

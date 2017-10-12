@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSetFileSystem function (RevoScaleR) | Microsoft Docs" 
+title: "rxSetFileSystem function (RevoScaleR) " 
 description: " Set and get the default file system for RevoScaleR operations. " 
 keywords: "(RevoScaleR), rxSetFileSystem, rxGetFileSystem, file, connection" 
 author: "heidisteen" 

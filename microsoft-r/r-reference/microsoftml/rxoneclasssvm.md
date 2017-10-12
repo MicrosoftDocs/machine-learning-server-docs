@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxOneClassSvm function (MicrosoftML) | Microsoft Docs" 
+title: "rxOneClassSvm function (MicrosoftML) " 
 description: " Machine Learning One Class Support Vector Machines " 
 keywords: "(MicrosoftML), rxOneClassSvm, anomaly, detection, models" 
 author: "heidisteen" 

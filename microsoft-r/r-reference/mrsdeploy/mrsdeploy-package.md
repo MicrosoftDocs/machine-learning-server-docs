@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "mrsdeploy package for R - Machine Learning Server | Microsoft Docs"
+title: "mrsdeploy package for R - Machine Learning Server "
 description: "Function help reference for the mrsdeploy R package of Machine Learning Server."
 keywords: "mrsdeploy package reference"
 author: "j-martens"

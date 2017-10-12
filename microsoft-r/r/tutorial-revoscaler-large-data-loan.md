@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Analyzing loan data using RevoScaleR in Machine Learning Server | Microsoft Docs"
+title: "Tutorial: Analyzing loan data using RevoScaleR in Machine Learning Server "
 description: "Learn how to work with big datasets using sample loan data in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"

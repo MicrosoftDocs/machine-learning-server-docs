@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to transform and subset data in RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "How to transform and subset data in RevoScaleR (Machine Learning Server) "
 description: "How to manipulate and transform data in RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

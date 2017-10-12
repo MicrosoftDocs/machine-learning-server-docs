@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "neuralNet function (MicrosoftML) | Microsoft Docs" 
+title: "neuralNet function (MicrosoftML) " 
 description: " Creates a list containing the function name and arguments to train a  NeuralNet model with [rxEnsemble](rxEnsemble.md). " 
 keywords: "(MicrosoftML), neuralNet" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "oneClassSvm function (MicrosoftML) | Microsoft Docs" 
+title: "oneClassSvm function (MicrosoftML) " 
 description: " Creates a list containing the function name and arguments to train a  OneClassSvm model with [rxEnsemble](rxEnsemble.md). " 
 keywords: "(MicrosoftML), oneClassSvm" 
 author: "heidisteen" 

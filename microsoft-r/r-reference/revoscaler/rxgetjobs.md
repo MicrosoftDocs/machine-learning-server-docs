@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetJobs function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetJobs function (RevoScaleR) " 
 description: " Returns a list of job objects associated with the given compute context  and matching the specified parameters. " 
 keywords: "(RevoScaleR), rxGetJobs, rxGetJobs,RxDistributedHpa-method, rxGetJobs,RxForeachDoPar-method, rxGetJobs,RxHadoopMR-method, rxGetJobs,RxInSqlServer-method, rxGetJobs,RxLocalParallel-method, rxGetJobs,RxLocalSeq-method, IO" 
 author: "heidisteen" 

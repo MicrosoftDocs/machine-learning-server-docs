@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxKmeans function (RevoScaleR) | Microsoft Docs" 
+title: "rxKmeans function (RevoScaleR) " 
 description: " Perform k-means clustering on small or large data. " 
 keywords: "(RevoScaleR), rxKmeans, print.rxKmeans, cluster, multivariate, clustering" 
 author: "heidisteen" 

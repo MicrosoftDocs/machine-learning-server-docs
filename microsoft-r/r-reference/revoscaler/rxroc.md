@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxRoc function (RevoScaleR) | Microsoft Docs" 
+title: "rxRoc function (RevoScaleR) " 
 description: " Compute and plot an ROC curve using actual and predicted values from binary classifier system " 
 keywords: "(RevoScaleR), rxRoc, rxRocCurve, rxAuc, as.data.frame.rxRoc, plot.rxRoc, rxAuc.rxRoc, hplot" 
 author: "heidisteen" 

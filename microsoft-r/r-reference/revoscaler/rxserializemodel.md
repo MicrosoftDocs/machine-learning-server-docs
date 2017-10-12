@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSerializeModel function (RevoScaleR) | Microsoft Docs" 
+title: "rxSerializeModel function (RevoScaleR) " 
 description: "   Serialize a **RevoScaleR**/**MicrosoftML** model in raw format to enable saving the model. This allows model to be loaded into SQL Server for real-time scoring. " 
 keywords: "(RevoScaleR), rxSerializeModel, rxUnserializeModel" 
 author: "heidisteen" 

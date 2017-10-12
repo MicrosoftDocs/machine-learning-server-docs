@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxPredict.rxNaiveBayes function (RevoScaleR) | Microsoft Docs" 
+title: "rxPredict.rxNaiveBayes function (RevoScaleR) " 
 description: "     Calculate predicted or fitted values for a data set from an rxNaiveBayes object. " 
 keywords: "(RevoScaleR), rxPredict.rxNaiveBayes, models, tree, classif, classification" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Remote Execution with mrsdeploy - Machine Learning Server | Microsoft Docs"
+title: "Remote Execution with mrsdeploy - Machine Learning Server "
 description: "Remote execution for Machine Learning Server"
 keywords: ""
 author: "j-martens"

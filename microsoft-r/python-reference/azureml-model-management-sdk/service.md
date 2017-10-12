@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "Service,batch,capabilities,get_batch,list_batch_executions,swagger: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "Service,batch,capabilities,get_batch,list_batch_executions,swagger: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

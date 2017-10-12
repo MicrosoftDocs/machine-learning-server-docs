@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxOpen-methods function (RevoScaleR) | Microsoft Docs" 
+title: "rxOpen-methods function (RevoScaleR) " 
 description: " These functions manage **RevoScaleR** data source objects. " 
 keywords: "(RevoScaleR), rxOpen-methods, rxOpen, rxClose, rxIsOpen, rxReadNext, rxWriteNext, rxClose-methods, rxIsOpen-methods, rxReadNext-methods, rxWriteNext-methods, rxOpen,RxDataSource-method, rxClose,RxDataSource-method, rxIsOpen,RxDataSource-method, rxReadNext,RxDataSource-method, rxWriteNext,data.frame,RxDataSource-method, methods, file, connection" 
 author: "heidisteen" 

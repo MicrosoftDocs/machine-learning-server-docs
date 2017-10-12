@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "AirlineDemoSmall function (RevoScaleR) | Microsoft Docs" 
+title: "AirlineDemoSmall function (RevoScaleR) " 
 description: " A small sample of airline on-time performance data. " 
 keywords: "(RevoScaleR), AirlineDemoSmall, AirlineDemoSmall.xdf, AirlineDemoSmallUC.xdf, AirlineDemoSmall.csv, AirlineDemo1kNoMissing.csv, datasets" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxNaiveBayes function (RevoScaleR) | Microsoft Docs" 
+title: "rxNaiveBayes function (RevoScaleR) " 
 description: "     Fit Naive Bayes Classifiers on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "(RevoScaleR), rxNaiveBayes, print.rxNaiveBayes, models, tree, classif, classification" 
 author: "heidisteen" 

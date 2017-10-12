@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "OperationalizationDefinition,alias,deploy,description,redeploy,version: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "OperationalizationDefinition,alias,deploy,description,redeploy,version: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxStopEngine function (RevoScaleR) | Microsoft Docs" 
+title: "rxStopEngine function (RevoScaleR) " 
 description: " rxStopEngine stops the remote Spark application. " 
 keywords: "(RevoScaleR), rxStopEngine, rxStopEngine,RxSpark-method, rxStopEngine,RxDistributedHpa-method, rxStopEngine,RxHadoopMR-method, rxStopEngine,RxInSqlServer-method, rxStopEngine,RxLsfCluster-method, computecontext" 
 author: "heidisteen" 

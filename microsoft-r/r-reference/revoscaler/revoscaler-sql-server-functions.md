@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "SQL Server RevoScaleR functions (Machine Learning Server and Microsoft R) | Microsoft Docs"
+title: "SQL Server RevoScaleR functions (Machine Learning Server and Microsoft R) "
 description: "RevoScaleR functions for a SQL Server compute context"
 keywords: ""
 author: "HeidiSteen"

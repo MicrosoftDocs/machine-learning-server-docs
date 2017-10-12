@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxMerge function (RevoScaleR) | Microsoft Docs" 
+title: "rxMerge function (RevoScaleR) " 
 description: " Merge (join) two data sources on one or more match variables. In local compute context, the data sources may be sorted .xdf files or data frames. In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md). " 
 keywords: "(RevoScaleR), rxMerge, rxMergeXdf, file" 
 author: "heidisteen" 

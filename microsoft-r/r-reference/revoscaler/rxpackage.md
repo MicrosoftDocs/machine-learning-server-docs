@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxPackage function (RevoScaleR) | Microsoft Docs" 
+title: "rxPackage function (RevoScaleR) " 
 description: " **NOTE: This feature and the rx APIs listed below are in pre-release mode and subject to change before final release.**  This section describes how to enable & disable SQL R Services package management on SQL server, install R packages on SQL server database, use installed packages on SQL server database and remove R packages on SQL server. **RevoScaleR** provides the necessary rx functions to install and uninstall packages. " 
 keywords: "(RevoScaleR), rxPackage, packages, sql, install, uninstall, remove, use" 
 author: "heidisteen" 

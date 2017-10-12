@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxDataSource-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxDataSource-class function (RevoScaleR) " 
 description: "   Base class for all Microsoft R Services Compute Engine data sources.   " 
 keywords: "(RevoScaleR), RxDataSource-class, names,RxDataSource-method, show,RxDataSource-method, classes" 
 author: "heidisteen" 

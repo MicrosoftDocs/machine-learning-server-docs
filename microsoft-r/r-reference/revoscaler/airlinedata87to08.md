@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "AirlineData87to08 function (RevoScaleR) | Microsoft Docs" 
+title: "AirlineData87to08 function (RevoScaleR) " 
 description: " Airline on-time performance data from 1987 to 2008. " 
 keywords: "(RevoScaleR), AirlineData87to08, AirlineData87to08.xdf, datasets" 
 author: "heidisteen" 

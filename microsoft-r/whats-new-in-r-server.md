@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Feature announcements in Microsoft R Server releases | Microsoft Docs"
+title: "Feature announcements in Microsoft R Server releases "
 description: "Feature announcements, improvements, and changes in past releases of Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Installing and Configuring DeployR | DeployR 8.x | Microsoft Docs"
+title: "Installing and Configuring DeployR - DeployR 8.x "
 description: "How to install, migrate, and configure DeployR"
 keywords: "install, installation, DeployR, configuration, configure"
 author: "j-martens"

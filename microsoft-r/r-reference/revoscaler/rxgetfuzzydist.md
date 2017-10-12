@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetFuzzyDist function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetFuzzyDist function (RevoScaleR) " 
 description: " EXPERIMENTAL: Get fuzzy distances for a character vector " 
 keywords: "(RevoScaleR), rxGetFuzzyDist, manip" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: ""RevoScaleR-deprecated" function (RevoScaleR) | Microsoft Docs" 
+title: ""RevoScaleR-deprecated" function (RevoScaleR) " 
 description: " These functions are provided for compatibility with  older versions of RevoScaleR only, and may be defunct as soon as the next release.  " 
 keywords: "(RevoScaleR), "RevoScaleR-deprecated", rxGetNodes, RxHpcServer, rxImportToXdf, rxDataStepXdf, rxDataFrameToXdf, rxXdfToDataFrame, rxSortXdf" 
 author: "heidisteen" 

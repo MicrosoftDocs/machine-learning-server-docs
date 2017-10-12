@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxSqlServerData-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxSqlServerData-class function (RevoScaleR) " 
 description: " Microsoft SQL Server data source connection class. " 
 keywords: "(RevoScaleR), RxSqlServerData-class, show,RxSqlServerData-method, classes" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxInstallPackages function (RevoScaleR) | Microsoft Docs" 
+title: "rxInstallPackages function (RevoScaleR) " 
 description: "  **NOTE: This new API is in pre-release mode and subject to change before final release.**  Install Packages from Repositories or Local Files for a compute context.  " 
 keywords: "(RevoScaleR), rxInstallPackages, install, use, packages, sql" 
 author: "heidisteen" 

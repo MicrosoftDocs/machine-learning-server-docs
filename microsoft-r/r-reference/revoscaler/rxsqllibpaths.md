@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSqlLibPaths function (RevoScaleR) | Microsoft Docs" 
+title: "rxSqlLibPaths function (RevoScaleR) " 
 description: " **NOTE: This new API is in pre-release mode and subject to change before final release.**  Gets the search path for the library trees for packages while executing inside the SQL server using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script. " 
 keywords: "(RevoScaleR), rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxSasData function (RevoScaleR) | Microsoft Docs" 
+title: "RxSasData function (RevoScaleR) " 
 description: " Generate an RxSasData object that contains information about a SAS data set to be imported or analyzed. RxSasData is an S4 class, which extends  RxDataSource. " 
 keywords: "(RevoScaleR), RxSasData, head.RxSasData, tail.RxSasData, file, connection" 
 author: "heidisteen" 

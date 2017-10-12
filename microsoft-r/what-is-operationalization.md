@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to operationalize R analytics, web services, and models with Microsoft R Server - Machine Learning Server | Microsoft Docs"
+title: "How to operationalize R analytics, web services, and models with Microsoft R Server - Machine Learning Server "
 description: "What is operationalization in Microsoft R Server"
 keywords: ""
 author: "j-martens"
@@ -27,7 +27,7 @@ ms.technology:
 
 # Operationalize analytics with R Server
 
-**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x | Microsoft Docs" docs [here](what-is-operationalization.md).)
+**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x " docs [here](what-is-operationalization.md).)
 
 Operationalization refers to the process of publishing R models and code to Microsoft R Server in the form of web services and the consumption of these services within client applications to affect business results.
 

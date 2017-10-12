@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Import text, SAS, and SPSS data into Machine Learning Server using rxImport | Microsoft Docs"
+title: "Import text, SAS, and SPSS data into Machine Learning Server using rxImport "
 description: "Load data in Machine Learning Server using the RevoScaleR rxImport function."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxRemoteHadoopMRCall function (RevoScaleR) | Microsoft Docs" 
+title: "rxRemoteHadoopMRCall function (RevoScaleR) " 
 description: "Function that is executed by a master process in a Hadoop MapReduce cluster. This function should **not** be called directly by the user. It serves as an internal mechanism for performing remote and distributed R calls on  a Hadoop MapReduce cluster." 
 keywords: "(RevoScaleR), rxRemoteHadoopMRCall, datasets" 
 author: "heidisteen" 

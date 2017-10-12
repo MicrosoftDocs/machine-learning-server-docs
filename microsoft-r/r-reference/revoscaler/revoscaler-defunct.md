@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: ""RevoScaleR-defunct" function (RevoScaleR) | Microsoft Docs" 
+title: ""RevoScaleR-defunct" function (RevoScaleR) " 
 description: " The functions or variables listed here are no longer part of RevoScaleR as they are no longer needed.  " 
 keywords: "(RevoScaleR), "RevoScaleR-defunct", rxGetVarInfoXdf, rxGetInfoXdf" 
 author: "heidisteen" 

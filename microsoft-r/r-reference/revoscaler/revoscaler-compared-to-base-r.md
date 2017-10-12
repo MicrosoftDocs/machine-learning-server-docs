@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Base R and RevoScaleR function comparison (Machine Learning Server and Microsoft R) | Microsoft Docs"
+title: "Base R and RevoScaleR function comparison (Machine Learning Server and Microsoft R) "
 description: "RevoScaleR function side-by-side comparison with base R functions"
 keywords: "RevoScaleR, RevoScaleR"
 author: "HeidiSteen"

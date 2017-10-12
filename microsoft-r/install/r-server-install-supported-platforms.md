@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Supported Platforms for Machine Learning Server and Microsoft R Server | Microsoft Docs"
+title: "Supported Platforms for Machine Learning Server and Microsoft R Server "
 description: "A list of the operating systems supported by editions and versions of Machine Learning Server and Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"

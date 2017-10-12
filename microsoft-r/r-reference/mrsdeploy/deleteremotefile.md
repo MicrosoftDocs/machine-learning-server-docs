@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "deleteRemoteFile function (mrsdeploy) | Microsoft Docs" 
+title: "deleteRemoteFile function (mrsdeploy) " 
 description: " Delete a file from the working directory of the remote R session. " 
 keywords: "(mrsdeploy), deleteRemoteFile" 
 author: "heidisteen" 

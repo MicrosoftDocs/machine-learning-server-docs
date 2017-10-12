@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "loss functions function (MicrosoftML) | Microsoft Docs" 
+title: "loss functions function (MicrosoftML) " 
 description: " The loss functions for classification and regression. " 
 keywords: "(MicrosoftML), loss functions, expLoss, hingeLoss, logLoss, poissonLoss, smoothHingeLoss, squaredLoss, loss" 
 author: "heidisteen" 

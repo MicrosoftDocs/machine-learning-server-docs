@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Welcome to Machine Learning Server | Microsoft Docs"
+title: "Welcome to Machine Learning Server "
 description: "Develop machine learning models and scripts in Python and R for on-prem deployment behind the firewall. Microsoft R Server and Python packages and interpreters are included."
 keywords: ""
 author: "HeidiSteen"

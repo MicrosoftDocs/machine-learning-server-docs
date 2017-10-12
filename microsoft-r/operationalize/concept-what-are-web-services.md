@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What is a web service - Machine Learning Server | Microsoft Docs"
+title: "What is a web service - Machine Learning Server "
 description: "Publish, update, and delete Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"

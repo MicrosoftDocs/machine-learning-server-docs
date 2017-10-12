@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxSasData-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxSasData-class function (RevoScaleR) " 
 description: " SAS data source connection class. " 
 keywords: "(RevoScaleR), RxSasData-class, show,RxSasData-method, classes" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Integrate analytic web services and authentication into your application - Machine Learning Server | Microsoft Docs"
+title: "Integrate analytic web services and authentication into your application - Machine Learning Server "
 description: "Use Swagger to help integrate your R and Python analytics into your applications."
 keywords: ""
 author: "j-martens"

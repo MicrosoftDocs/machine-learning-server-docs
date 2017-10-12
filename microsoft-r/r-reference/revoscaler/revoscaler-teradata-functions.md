@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Teradata RevoScaleR Functions (Machine Learning Server and Microsoft R) | Microsoft Docs"
+title: "Teradata RevoScaleR Functions (Machine Learning Server and Microsoft R) "
 description: "RevoScaleR Functions for a Teradata compute context"
 keywords: ""
 author: "HeidiSteen"

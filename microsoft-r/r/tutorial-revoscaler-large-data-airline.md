@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Load and analyze a large airline data set with RevoScaleR in Machine Learning Server | Microsoft Docs"
+title: "Tutorial: Load and analyze a large airline data set with RevoScaleR in Machine Learning Server "
 description: "Learn how to work with big data using a sample airline dataset in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"

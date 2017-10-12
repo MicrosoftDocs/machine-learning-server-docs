@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Explore R-to-RevoScaleR in 25 functions (Machine Learning Server) | Microsoft Docs"
+title: "Tutorial: Explore R-to-RevoScaleR in 25 functions (Machine Learning Server) "
 description: "Explore and execute R and RevoScaleR commands on R Client or Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

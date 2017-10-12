@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetAvailableNodes function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetAvailableNodes function (RevoScaleR) " 
 description: " Gets a list of operational nodes on a cluster. Note that this function will attempt to connect to the cluster when executed. " 
 keywords: "(RevoScaleR), rxGetAvailableNodes, IO" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "R Package Management Guide | DeployR 8.x | Microsoft Docs"
+title: "R Package Management Guide - DeployR 8.x "
 description: "Managing R Packages in DeployR - for DeployR administrators"
 keywords: "r packages, DeployR"
 author: "j-martens"

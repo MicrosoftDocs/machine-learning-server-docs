@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Consume web services asynchronously with batch scoring in Python  - Machine Learning Server | Microsoft Docs"
+title: "Consume web services asynchronously with batch scoring in Python  - Machine Learning Server "
 description: "Asynchronous web service consumption via batch processing in Python - Machine Learning Server"
 keywords: "batch processing of web services"
 author: "j-martens"

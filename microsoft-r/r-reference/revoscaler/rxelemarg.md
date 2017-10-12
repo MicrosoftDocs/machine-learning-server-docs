@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxElemArg function (RevoScaleR) | Microsoft Docs" 
+title: "rxElemArg function (RevoScaleR) " 
 description: " Allows different argument values to be passed to different (named and unnamed) nodes or cores through the elipsis argument for rxExec. A vector or list of the argument values is used. " 
 keywords: "(RevoScaleR), rxElemArg, IO" 
 author: "heidisteen" 

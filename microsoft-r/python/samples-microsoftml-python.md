@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Python samples for MicrosoftML - Machine Learning Server | Microsoft Docs"
+title: "Python samples for MicrosoftML - Machine Learning Server "
 description: "MicrosoftML samples using the Python language are described and linked here to help you get started quickly with Microsoft Machine Learning Server."
 keywords: ""
 author: "bradsev"

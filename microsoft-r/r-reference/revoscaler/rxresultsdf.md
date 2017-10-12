@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxResultsDF function (RevoScaleR) | Microsoft Docs" 
+title: "rxResultsDF function (RevoScaleR) " 
 description: " Obtain a counts, sums, or means data frame from an analysis object. " 
 keywords: "(RevoScaleR), rxResultsDF, rxResultsDF.rxCrossTabs, rxResultsDF.rxCube, rxResultsDF.rxLinMod, rxResultsDF.rxLogit, rxResultsDF.rxSummary, category, models" 
 author: "heidisteen" 

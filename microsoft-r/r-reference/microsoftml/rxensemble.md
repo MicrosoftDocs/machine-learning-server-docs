@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxEnsemble function (MicrosoftML) | Microsoft Docs" 
+title: "rxEnsemble function (MicrosoftML) " 
 description: " Train an ensemble of models " 
 keywords: "(MicrosoftML), rxEnsemble" 
 author: "heidisteen" 
