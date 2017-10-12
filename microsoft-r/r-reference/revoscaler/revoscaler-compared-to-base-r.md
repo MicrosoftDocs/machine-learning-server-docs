@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # Comparison of Base R and RevoScaleR Functions
 
-This topic provides a list of the functions provided by the **RevoScaleR** package and lists comparable functions included in the base distribution of R.  
+This article provides a list of the functions provided by the **RevoScaleR** package and lists comparable functions included in the base distribution of R.  
 
 ##  <a name="bkmk_DataInputAndOutput"></a> Data Input and Output  
 

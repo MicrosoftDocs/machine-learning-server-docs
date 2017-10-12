@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # RevoScaleR Functions for a SQL Server compute context
 
-This topic provides an overview of the main RevoScaleR functions for use with SQL Server, along with comments on their syntax.
+This article provides an overview of the main RevoScaleR functions for use with SQL Server, along with comments on their syntax.
 
 
 ## Functions for working with SQL Server Data Sources

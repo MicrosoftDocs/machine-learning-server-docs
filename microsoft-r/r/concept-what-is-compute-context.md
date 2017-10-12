@@ -25,16 +25,16 @@ ms.technology: "r-server"
 
 # Compute context for script execution
 
-*Compute context* refers to the location of the computational engine that is handling a specific workload. The default is local. You can switch from local to remote compute context to push execution of data-centric **revoscalepy** or  **RevoScaleR** functions to an interpreter on another machine. For example, script running locally in R Client can shift execution to a remote Machine Learning Server in a Spark cluster to process data there. 
+*Compute context* refers to the location of the computational engine that is handling a specific workload. The default is local. You can switch from local to remote compute context, pushing execution of data-centric **revoscalepy** or  **RevoScaleR** functions to an interpreter on another machine. For example, script running locally in R Client can shift execution to a remote Machine Learning Server in a Spark cluster to process data there. 
 
-The primary reason for shifting compute context is to eliminate data transfer over your network, bringing computations to where the data resides. This is particularly relevent for big data platforms like Hadoop, where data is distributed over multiple nodes, or for data sets that are simply too large for a client workstation.
+The primary reason for shifting compute context is to eliminate data transfer over your network, bringing computations to where the data resides. This is particularly relevant for big data platforms like Hadoop, where data is distributed over multiple nodes, or for data sets that are simply too large for a client workstation.
 
 | Context | How used |
 |---------|----------|
-| Local | Local is the default, supported by all products (including R Client), on all platforms. Script executes using local machine resources. |
+| Local | Local is the default, supported by all products (including R Client), on all platforms. Script execution runs on local interpreters and uses local machine resources. |
 | Remote | Remote is a server-only feature, available for selected data platforms: Spark over HDFS, Hadoop MapReduce, SQL Server. The remote system must have Machine Learning Server installed on it. 
 
-Many analytical functions can execute in parallel. On distributed platforms like Hadoop, **revoscalepy** and **RevoScaleR** can distribute workload execution to all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data, enabled when you set a remote compute context to your Hadoop cluster.
+Many analytical functions can execute in parallel. On distributed platforms like Hadoop, **revoscalepy** and **RevoScaleR** can distribute workload execution to all available cores and nodes. This capability translates into high-performance computing for predictive and statistical analysis of big data, enabled when you set a remote compute context to your Hadoop cluster.
 
 > [!Tip]
 > If your objective is simply to use two or more Machine Learning Server instances interchangeably, or to shift execution from R Client to a more powerful Machine Learning Server on Windows or Linux, consider [remote execution](how-to-execute-code-remotely.md). Remote execution is data platform and library agnostic. From a local R session, you can switch to a remote R session and call functions from any library, including base R and third-party vendors. 
@@ -62,10 +62,10 @@ The following table shows viable combinations of compute contexts and data sourc
 | Fixed-Format Text ([`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)`) | X |  X |   | 
 | Delimited Text ([`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)) | X | X |   | 
 | .xdf data files ([`RxXdfData`](../python-reference/revoscalepy/rxxdfdata.md)`) | X | X |  | 
-| Spark data ([RxHiveData](../python-reference/revoscalepy/rxhivedata.md))|  X | X |   | 
-| Spark data [RxParquetData](../python-reference/revoscalepy/rxparquetdata.md)) |  X | X |  | 
-| Spark data [RxOrcData](../python-reference/revoscalepy/rxorcdata.md)) |  X | X |  | 
-| Spark data [RxSparkDataFrame](../python-reference/revoscalepy/rxsparkdataframe.md))  | X |  X  |    |
+| Spark data (`[RxHiveData`](../python-reference/revoscalepy/rxhivedata.md))|  X | X |   | 
+| Spark data ([`RxParquetData`](../python-reference/revoscalepy/rxparquetdata.md)) |  X | X |  | 
+| Spark data ([`RxOrcData`](../python-reference/revoscalepy/rxorcdata.md)) |  X | X |  | 
+| Spark data ([`RxSparkDataFrame`](../python-reference/revoscalepy/rxsparkdataframe.md))  | X |  X  |    |
 | ODBC data ([`RxOdbcData`](../python-reference/revoscalepy/rxodbcdata.md)) | X |  X | X  |
 | SQL Server database ([`RxSqlServerData`](../python-reference/revoscalepy/rxsqlserverdata.md)) | X |   |  X |
 
@@ -93,9 +93,9 @@ The following table shows viable combinations of compute contexts and data sourc
 | Fixed-Format Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)`) | X |  X |   |   |
 | Delimited Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)) | X | X | X  |   |
 | .xdf data files ([`RxXdfData`](../r-reference/revoscaler/rxxdfdata.md)`) | X | X | X  |   |
-| Spark data [RxHiveData](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
-| Spark data [RxParquetData](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
-| Spark data [RxOrcData](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
+| Spark data (`[RxHiveData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
+| Spark data (`[RxParquetData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
+| Spark data (`[RxOrcData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
 | ODBC data ([`RxOdbcData`](../r-reference/revoscaler/rxodbcdata.md)) | X |   | X  |  X |
 | SQL Server database ([`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md)) |   |   |   | X |
 | SAS data files ([`RxSasData`](../r-reference/revoscaler/rxsasdata.md)) | X |   |   |   |
@@ -121,7 +121,7 @@ If you have distributed computing resources available to you, you can create a c
 
 ## Next steps
 
-Learn how to get, set, and manage compute context in [How to set and manage compute context in Machine Learning Server](how-to-revoscaler-distributed-computing-compute-context.md).
+Step-by-step instructions on how to get, set, and manage compute context in [How to set and manage compute context in Machine Learning Server](how-to-revoscaler-distributed-computing-compute-context.md).
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Distributed and parallel execution for high performance computing (Machine Learning Server) | Microsoft Docs"
+title: "Distributed and parallel execution for high-performance computing (Machine Learning Server) | Microsoft Docs"
 description: "High performance computing (HPC) for distributed computing using SQL Server in-database and Hadoop clusters computing RevoScaleR package for r and revoscalepy for Python."
 keywords: ""
 author: "HeidiSteen"
@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # Distributed and parallel computing in Machine Learning Server
 
-*Distributed computing*, sometimes referred to as *high performance computing* or *high performance analysis*, is the breakdown of a complicated computation into component parts, while maintaining a framework that allows for the results of those independent computations to be pulled together to create the final result. 
+*Distributed computing*, sometimes referred to as *high-performance computing* or *high-performance analysis*, is the breakdown of a complicated computation into component parts, while maintaining a framework that allows for the results of those independent computations to be pulled together to create the final result. 
 
 The RevoScaleR and revoscalepy function libraries, which are designed to process large data one chunk at a time, can also process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are farmed out to nodes in the cluster, executing on the node provided the data.
 
