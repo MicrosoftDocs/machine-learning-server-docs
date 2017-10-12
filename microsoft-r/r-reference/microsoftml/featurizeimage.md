@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "featurizeImage function (MicrosoftML) | Microsoft Docs" 
+title: "featurizeImage function (MicrosoftML) " 
 description: " Featurizes an image using a pre-trained deep neural network model. " 
 keywords: "(MicrosoftML), featurizeImage, alexnet, cnn, dnn, featurize, image, resnet, transform" 
 author: "heidisteen" 

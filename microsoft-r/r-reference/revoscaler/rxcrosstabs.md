@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxCrossTabs function (RevoScaleR) | Microsoft Docs" 
+title: "rxCrossTabs function (RevoScaleR) " 
 description: " Use rxCrossTabs to create contingency tables from cross- classifying factors using a formula interface. It performs equivalent computations to the [rxCube](rxCube.md) function, but returns its results in a different way. " 
 keywords: "(RevoScaleR), rxCrossTabs, print.rxCrossTabs, summary.rxCrossTabs, mean.rxCrossTabs, as.list.rxCrossTabs, category, models" 
 author: "heidisteen" 

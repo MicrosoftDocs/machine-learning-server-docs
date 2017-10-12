@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "More Resources - Machine Learning Server | Microsoft Docs"
+title: "More Resources - Machine Learning Server "
 description: "Links to additional Resources for Machine Learning Server and Microsoft R products"
 keywords: ""
 author: "j-martens"

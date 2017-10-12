@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "loadImage function (MicrosoftML) | Microsoft Docs" 
+title: "loadImage function (MicrosoftML) " 
 description: " Loads image data. " 
 keywords: "(MicrosoftML), loadImage, image, transform" 
 author: "heidisteen" 

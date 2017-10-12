@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "Kyphosis function (RevoScaleR) | Microsoft Docs" 
+title: "Kyphosis function (RevoScaleR) " 
 description: " The kyphosis data in .xdf format. " 
 keywords: "(RevoScaleR), Kyphosis, Kyphosis.xdf, datasets" 
 author: "heidisteen" 

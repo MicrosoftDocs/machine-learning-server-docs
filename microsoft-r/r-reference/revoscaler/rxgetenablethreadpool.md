@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetEnableThreadPool function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetEnableThreadPool function (RevoScaleR) " 
 description: " Gets or sets the current state of the thread pool (in a ready state or created ad hoc). " 
 keywords: "(RevoScaleR), rxGetEnableThreadPool, rxSetEnableThreadPool, iteration" 
 author: "heidisteen" 

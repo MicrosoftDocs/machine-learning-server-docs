@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxRngNewStream function (RevoScaleR) | Microsoft Docs" 
+title: "rxRngNewStream function (RevoScaleR) " 
 description: " R interface to Parallel Random Number Generators (RNGs) in MKL. " 
 keywords: "(RevoScaleR), rxRngNewStream, rxRngGetStream, rxRngSetStream, rxRngDelStream, distribution, sysdata" 
 author: "heidisteen" 

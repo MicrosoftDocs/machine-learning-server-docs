@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "sqlrutils Functions R Package for Microsoft R | Microsoft Docs"
+title: "sqlrutils Functions R Package for Microsoft R "
 description: "A package used for executing stored procedures on SQL Server from R script."
 keywords: "sqlrutils package reference"
 author: "HeidiSteen"

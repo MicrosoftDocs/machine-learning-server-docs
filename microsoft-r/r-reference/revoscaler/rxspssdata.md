@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxSpssData function (RevoScaleR) | Microsoft Docs" 
+title: "RxSpssData function (RevoScaleR) " 
 description: " Generate an RxSpssData object that contains information about an SPSS data set to be imported or analyzed. RxSpssData is an S4 class, which extends  RxDataSource." 
 keywords: "(RevoScaleR), RxSpssData, head.RxSpssData, tail.RxSpssData, file, connection" 
 author: "heidisteen" 

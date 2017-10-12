@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to use revoscalepy with Apache Spark - Machine Learning Server  | Microsoft Docs "
+title: "How to use revoscalepy with Apache Spark - Machine Learning Server   "
 description: "Learn what you can do with revoscalepy in a Spark compute context in Machine learning Server."
 keywords: ""
 author: "HeidiSteen"

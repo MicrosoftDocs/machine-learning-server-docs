@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxForeachDoPar function (RevoScaleR) | Microsoft Docs" 
+title: "RxForeachDoPar function (RevoScaleR) " 
 description: " Creates a compute context object using the registered foreach parallel back end. This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxForeachDoPar. " 
 keywords: "(RevoScaleR), RxForeachDoPar, IO" 
 author: "heidisteen" 

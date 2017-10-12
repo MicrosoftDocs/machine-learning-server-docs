@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxDTree function (RevoScaleR) | Microsoft Docs" 
+title: "rxDTree function (RevoScaleR) " 
 description: "     Fit classification and regression trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "(RevoScaleR), rxDTree, print.rxDTree, models, tree, classif, regression, classification" 
 author: "heidisteen" 

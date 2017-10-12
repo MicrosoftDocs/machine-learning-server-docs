@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxXdfData function (RevoScaleR) | Microsoft Docs" 
+title: "RxXdfData function (RevoScaleR) " 
 description: " This is the main generator for S4 class RxXdfData, which extends RxDataSource. " 
 keywords: "(RevoScaleR), RxXdfData, XdfData, head.RxXdfData, summary.RxXdfData, tail.RxXdfData, file, connection" 
 author: "heidisteen" 

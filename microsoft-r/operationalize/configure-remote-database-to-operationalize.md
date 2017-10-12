@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure a database for operationalization - Machine Learning Server | Microsoft Docs"
+title: "Configure a database for operationalization - Machine Learning Server "
 description: "Configure a SQL Server or PostgreSQL Database database for Machine Learning Server"
 keywords: ""
 author: "j-martens"

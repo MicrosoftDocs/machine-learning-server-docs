@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to use RevoScaleR with Hadoop MapReduce | Microsoft Docs"
+title: "How to use RevoScaleR with Hadoop MapReduce "
 description: "Machine Learning Server with Apache Hadoop MapReduce, RevoScaleR features and components overview."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "extractPixels function (MicrosoftML) | Microsoft Docs" 
+title: "extractPixels function (MicrosoftML) " 
 description: " Extracts the pixel values from an image. " 
 keywords: "(MicrosoftML), extractPixels, image, transform" 
 author: "heidisteen" 

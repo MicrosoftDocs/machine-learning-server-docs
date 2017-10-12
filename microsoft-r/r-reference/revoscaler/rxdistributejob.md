@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxDistributeJob function (RevoScaleR) | Microsoft Docs" 
+title: "rxDistributeJob function (RevoScaleR) " 
 description: " Allows distributed execution of a function in parallel across nodes (computers)  of a 'compute context' such as a cluster. A helper functions checks to see if the 'compute context' is appropriate. " 
 keywords: "(RevoScaleR), rxDistributeJob, rxIsDistributedContext, IO" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Sort data in RevoScaleR using rxSort (Machine Learning Server) | Microsoft Docs"
+title: "Sort data in RevoScaleR using rxSort (Machine Learning Server) "
 description: "How to sort data in a data frame or XDF file with the RevoScaleR rxSort function."
 keywords: ""
 author: "HeidiSteen"

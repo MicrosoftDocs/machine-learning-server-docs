@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSparkListData, rxSparkRemoveData {RevoScaleR} function (RevoScaleR) | Microsoft Docs" 
+title: "rxSparkListData, rxSparkRemoveData {RevoScaleR} function (RevoScaleR) " 
 description: " Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](RxSpark.md) compute context. " 
 keywords: "(RevoScaleR), rxSparkListData, rxSparkRemoveData {RevoScaleR}, rxSparkListData, rxSparkRemoveData" 
 author: "heidisteen" 

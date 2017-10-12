@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxStepPlot function (RevoScaleR) | Microsoft Docs" 
+title: "rxStepPlot function (RevoScaleR) " 
 description: " Plot stepwise coefficients for rxLinMod, rxLogit and rxGlm objects. " 
 keywords: "(RevoScaleR), rxStepPlot, hplot" 
 author: "heidisteen" 

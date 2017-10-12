@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetPartitions function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetPartitions function (RevoScaleR) " 
 description: " Get partitions enumeration of a partitioned Xdf data source. " 
 keywords: "(RevoScaleR), rxGetPartitions, GetPartitions" 
 author: "heidisteen" 

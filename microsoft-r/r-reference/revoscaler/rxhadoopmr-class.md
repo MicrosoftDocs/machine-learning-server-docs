@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxHadoopMR-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxHadoopMR-class function (RevoScaleR) " 
 description: " Hadoop Map Reduce Local (File) compute context class. " 
 keywords: "(RevoScaleR), RxHadoopMR-class, show,RxHadoopMR-method, classes" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Administration Utility - Machine Learning Server | Microsoft Docs"
+title: "Administration Utility - Machine Learning Server "
 description: "configure Machine Learning Server for operationalization, set passwords, restart nodes, update ports, run diagnostics, and encrypt credentials."
 keywords: ""
 author: "j-martens"

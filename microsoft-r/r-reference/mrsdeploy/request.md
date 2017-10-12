@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "request function (mrsdeploy) | Microsoft Docs" 
+title: "request function (mrsdeploy) " 
 description: " HTTP requests made easy and more fluent around curl. " 
 keywords: "(mrsdeploy), request" 
 author: "heidisteen" 

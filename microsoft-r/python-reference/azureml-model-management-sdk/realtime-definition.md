@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RealtimeDefinition,alias,deploy,description,redeploy,serialized_model,version: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "RealtimeDefinition,alias,deploy,description,redeploy,serialized_model,version: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

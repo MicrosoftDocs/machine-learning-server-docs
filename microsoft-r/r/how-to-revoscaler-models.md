@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Models in RevoScaleR on Machine Learning Server | Microsoft Docs"
+title: "Models in RevoScaleR on Machine Learning Server "
 description: "Models in RevoScaleR on Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

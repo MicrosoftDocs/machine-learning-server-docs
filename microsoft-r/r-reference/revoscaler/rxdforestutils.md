@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxDForestUtils function (RevoScaleR) | Microsoft Docs" 
+title: "rxDForestUtils function (RevoScaleR) " 
 description: "     Utility Functions for rxDForest. " 
 keywords: "(RevoScaleR), rxDForestUtils, rxVarImpPlot, rxLeafSize, rxTreeDepth, rxTreeSize, rxVarUsed, rxGetTree, models, tree, classif, regression, classification" 
 author: "heidisteen" 

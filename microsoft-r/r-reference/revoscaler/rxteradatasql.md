@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxTeradataSql function (RevoScaleR) | Microsoft Docs" 
+title: "rxTeradataSql function (RevoScaleR) " 
 description: " Execute an arbitrary SQL statement that does not return data in a Teradata data base. " 
 keywords: "(RevoScaleR), rxTeradataSql, rxTeradataTableExists, rxTeradataDropTable, file" 
 author: "heidisteen" 

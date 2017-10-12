@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Introducing SQL Server R Services (Machine Learning Server) | Microsoft Docs"
+title: "Introducing SQL Server R Services (Machine Learning Server) "
 description: "SQL Server R Services introduction"
 keywords: "SQL Server R Services"
 author: "j-martens"

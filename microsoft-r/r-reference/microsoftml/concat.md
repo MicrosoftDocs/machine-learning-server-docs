@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "concat function (MicrosoftML) | Microsoft Docs" 
+title: "concat function (MicrosoftML) " 
 description: " Combines several columns into a single vector-valued column. " 
 keywords: "(MicrosoftML), concat, transform" 
 author: "heidisteen" 

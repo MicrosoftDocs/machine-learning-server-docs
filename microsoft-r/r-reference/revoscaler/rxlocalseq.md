@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxLocalSeq function (RevoScaleR) | Microsoft Docs" 
+title: "RxLocalSeq function (RevoScaleR) " 
 description: " Creates a local compute context object.   This is the main generator for S4 class RxLocalSeq. Computations using rxExec will be processed sequentially. This is the default compute context. " 
 keywords: "(RevoScaleR), RxLocalSeq, IO" 
 author: "heidisteen" 

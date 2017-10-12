@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxHistogram function (RevoScaleR) | Microsoft Docs" 
+title: "rxHistogram function (RevoScaleR) " 
 description: " Histogram plot for a variable in an .xdf file or data frame " 
 keywords: "(RevoScaleR), rxHistogram, hplot" 
 author: "heidisteen" 

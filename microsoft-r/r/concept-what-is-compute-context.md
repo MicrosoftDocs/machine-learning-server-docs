@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Compute context for script execution on Machine Learning Server | Microsoft Docs"
+title: "Compute context for script execution on Machine Learning Server "
 description: "Compute context for local, distributed, and parallel processing on Machine Learning Server using revoscalepy or RevoScaleR packages." 
 keywords: ""
 author: "HeidiSteen"

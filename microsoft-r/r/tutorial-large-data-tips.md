@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tips on Computing with Big Data in R (Machine Learning Server) | Microsoft Docs"
+title: "Tips on Computing with Big Data in R (Machine Learning Server) "
 description: "Tips on Computing with Big Data in R on Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxExec function (RevoScaleR) | Microsoft Docs" 
+title: "rxExec function (RevoScaleR) " 
 description: " Allows distributed execution of a function in parallel across nodes (computers) or cores  of a compute context such as a cluster. " 
 keywords: "(RevoScaleR), rxExec, IO" 
 author: "heidisteen" 

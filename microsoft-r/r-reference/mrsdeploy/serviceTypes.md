@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "serviceTypes function (mrsdeploy) | Microsoft Docs" 
+title: "serviceTypes function (mrsdeploy) " 
 description: " Defines the enumerated list of the supported service types. " 
 keywords: "(mrsdeploy), serviceTypes" 
 author: "heidisteen" 

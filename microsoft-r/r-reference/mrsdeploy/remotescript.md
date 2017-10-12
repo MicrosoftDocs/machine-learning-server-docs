@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "remoteScript function (mrsdeploy) | Microsoft Docs" 
+title: "remoteScript function (mrsdeploy) " 
 description: " A simple wrapper function for executing a remote R script. " 
 keywords: "(mrsdeploy), remoteScript" 
 author: "heidisteen" 

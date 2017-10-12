@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxReadXdf function (RevoScaleR) | Microsoft Docs" 
+title: "rxReadXdf function (RevoScaleR) " 
 description: " Read data from an .xdf file into a data frame. " 
 keywords: "(RevoScaleR), rxReadXdf, file, connection" 
 author: "heidisteen" 

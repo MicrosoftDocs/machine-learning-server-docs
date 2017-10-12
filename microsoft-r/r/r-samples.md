@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "R Samples - Machine Learning Server | Microsoft Docs"
+title: "R Samples - Machine Learning Server "
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"

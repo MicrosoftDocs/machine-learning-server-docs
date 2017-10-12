@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Data Summaries using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Data Summaries using RevoScaleR (Machine Learning Server) "
 description: "Summarizing data in RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

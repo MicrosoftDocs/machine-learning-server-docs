@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "downloadSnapshot function (mrsdeploy) | Microsoft Docs" 
+title: "downloadSnapshot function (mrsdeploy) " 
 description: " Downloads the specified snapshot from the R server in zip format. " 
 keywords: "(mrsdeploy), downloadSnapshot" 
 author: "heidisteen" 

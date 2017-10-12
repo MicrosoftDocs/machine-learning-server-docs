@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Estimate Models using Stochastic Gradient Boosting (Machine Learning Server) | Microsoft Docs"
+title: "Estimate Models using Stochastic Gradient Boosting (Machine Learning Server) "
 description: "Boosted trees with RevoScaleR in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

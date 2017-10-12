@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Visualize and analyze data using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Tutorial: Visualize and analyze data using RevoScaleR (Machine Learning Server) "
 description: "Learn how to visualize and analyze data using the RevoScaleR functions in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

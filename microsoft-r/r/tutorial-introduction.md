@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Get started with Machine Learning Server tutorials | Microsoft Docs"
+title: "Get started with Machine Learning Server tutorials "
 description: "Learn Machine Learning Server step by step using tutorial exercises and sample data."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxXdfFileName-methods function (RevoScaleR) | Microsoft Docs" 
+title: "rxXdfFileName-methods function (RevoScaleR) " 
 description: " Get the .xdf file path from a character string or RxXdfData object. " 
 keywords: "(RevoScaleR), rxXdfFileName-methods, rxXdfFileName, rxXdfFileName,RxXdfData-method, rxXdfFileName,character-method, rxXdfFileName,ANY-method, methods, file, connection" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "summary.mlModel function (MicrosoftML) | Microsoft Docs" 
+title: "summary.mlModel function (MicrosoftML) " 
 description: " Summary of a Microsoft R Machine Learning model. " 
 keywords: "(MicrosoftML), summary.mlModel, coef.mlModel, file, manip" 
 author: "heidisteen" 

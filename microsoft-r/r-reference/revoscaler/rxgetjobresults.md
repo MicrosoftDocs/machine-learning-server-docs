@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetJobResults function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetJobResults function (RevoScaleR) " 
 description: " Obtain distributed computing results and processing status. " 
 keywords: "(RevoScaleR), rxGetJobResults, rxGetJobStatus, IO" 
 author: "heidisteen" 

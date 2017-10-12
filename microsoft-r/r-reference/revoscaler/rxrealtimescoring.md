@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxRealTimeScoring function (RevoScaleR) | Microsoft Docs" 
+title: "rxRealTimeScoring function (RevoScaleR) " 
 description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR** and **MicrosoftML** packages to Machine Learning Server and SQL Server platforms with near real-time performance.  " 
 keywords: "(RevoScaleR), rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
 author: "heidisteen" 

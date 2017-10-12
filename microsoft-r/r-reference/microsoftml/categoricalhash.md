@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "categoricalHash function (MicrosoftML) | Microsoft Docs" 
+title: "categoricalHash function (MicrosoftML) " 
 description: " Categorical hash transform that can be performed on data before  training a model. " 
 keywords: "(MicrosoftML), categoricalHash, transform" 
 author: "heidisteen" 

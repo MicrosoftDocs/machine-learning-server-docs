@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxHadoopCommand function (RevoScaleR) | Microsoft Docs" 
+title: "rxHadoopCommand function (RevoScaleR) " 
 description: " Execute arbitrary Hadoop commands and perform standard file operations in Hadoop. " 
 keywords: "(RevoScaleR), rxHadoopCommand, rxHadoopCopy, rxHadoopCopyFromLocal, rxHadoopCopyFromClient, rxHadoopCopyToLocal, rxHadoopFileExists, rxHadoopListFiles, rxHadoopMakeDir, rxHadoopMove, rxHadoopRemove, rxHadoopRemoveDir, rxHadoopVersion, file" 
 author: "heidisteen" 

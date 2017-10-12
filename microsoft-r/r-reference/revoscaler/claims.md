@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "claims function (RevoScaleR) | Microsoft Docs" 
+title: "claims function (RevoScaleR) " 
 description: " Observations on automobile insurance claims. " 
 keywords: "(RevoScaleR), claims, claims.xdf, claims.txt, claimsExtra.txt, datasets" 
 author: "heidisteen" 

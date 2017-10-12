@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Product comparison for Machine Learning Server and Microsoft R | Microsoft Docs"
+title: "Product comparison for Machine Learning Server and Microsoft R "
 description: "Understand the relationship and interaction between Machine Learning Server, Microsoft R Server, R Client, R Open."
 keywords: ""
 author: "HeidiSteen"

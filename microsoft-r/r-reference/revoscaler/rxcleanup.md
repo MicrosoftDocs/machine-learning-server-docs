@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxCleanupJobs function (RevoScaleR) | Microsoft Docs" 
+title: "rxCleanupJobs function (RevoScaleR) " 
 description: " Removes artifacts created while executing a distributed computing job. " 
 keywords: "(RevoScaleR), rxCleanupJobs, IO" 
 author: "heidisteen" 

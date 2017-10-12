@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "summary.serviceDetails function (mrsdeploy) | Microsoft Docs" 
+title: "summary.serviceDetails function (mrsdeploy) " 
 description: " Defines the R summary generic for serviceDetails during a  listServices(). " 
 keywords: "(mrsdeploy), summary.serviceDetails" 
 author: "heidisteen" 

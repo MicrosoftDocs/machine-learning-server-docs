@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSyncPackages function (RevoScaleR) | Microsoft Docs" 
+title: "rxSyncPackages function (RevoScaleR) " 
 description: "  **NOTE: This new API is in pre-release mode and subject to change before final release.**  Synchronizes all packages listed in for database to the files system for a compute context. The packages contained in the database are installed on the file system so they can be loaded by R. rxSyncPackages should be called after SQL Server is restored to a new machine or if a R package on the file system is believed to be corrupted.  " 
 keywords: "(RevoScaleR), rxSyncPackages, sync, synchronize, use, packages, sql" 
 author: "heidisteen" 

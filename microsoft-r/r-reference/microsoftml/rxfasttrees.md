@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxFastTrees function (MicrosoftML) | Microsoft Docs" 
+title: "rxFastTrees function (MicrosoftML) " 
 description: " Machine Learning Fast Tree " 
 keywords: "(MicrosoftML), rxFastTrees, classification, models, regression" 
 author: "heidisteen" 

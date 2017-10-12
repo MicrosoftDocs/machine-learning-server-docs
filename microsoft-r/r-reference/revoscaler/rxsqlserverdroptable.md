@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSqlServerDropTable function (RevoScaleR) | Microsoft Docs" 
+title: "rxSqlServerDropTable function (RevoScaleR) " 
 description: " Execute a SQL statement that drops a table or checks for existence. " 
 keywords: "(RevoScaleR), rxSqlServerDropTable, rxSqlServerTableExists, file" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxRiskRatio function (RevoScaleR) | Microsoft Docs" 
+title: "rxRiskRatio function (RevoScaleR) " 
 description: " Calculate the relative risk and odds ratio on a two-by-two table. " 
 keywords: "(RevoScaleR), rxRiskRatio, rxOddsRatio, htest" 
 author: "heidisteen" 

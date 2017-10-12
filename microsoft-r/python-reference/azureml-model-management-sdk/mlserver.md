@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "MLServer,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "MLServer,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

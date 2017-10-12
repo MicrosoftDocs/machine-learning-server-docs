@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server to operationalize analytics (one-box) - Machine Learning Server | Microsoft Docs"
+title: "Configure Machine Learning Server to operationalize analytics (one-box) - Machine Learning Server "
 description: "Configure Operationalization for Machine Learning Server "
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"

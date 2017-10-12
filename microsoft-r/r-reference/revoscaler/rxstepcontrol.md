@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxStepControl function (RevoScaleR) | Microsoft Docs" 
+title: "rxStepControl function (RevoScaleR) " 
 description: "     Various parameters that control aspects of stepwise regression. " 
 keywords: "(RevoScaleR), rxStepControl, models, classification, regression" 
 author: "heidisteen" 

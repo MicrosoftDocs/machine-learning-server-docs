@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxOdbcData function (RevoScaleR) | Microsoft Docs" 
+title: "RxOdbcData function (RevoScaleR) " 
 description: " This is the main generator for S4 class RxOdbcData, which extends RxDataSource. " 
 keywords: "(RevoScaleR), RxOdbcData, head.RxOdbcData, tail.RxOdbcData, database, connection" 
 author: "heidisteen" 

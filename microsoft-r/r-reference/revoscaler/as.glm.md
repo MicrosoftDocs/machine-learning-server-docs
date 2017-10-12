@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "as.glm function (RevoScaleR) | Microsoft Docs" 
+title: "as.glm function (RevoScaleR) " 
 description: " Converts objects containing generalized linear model results to a glm object. " 
 keywords: "(RevoScaleR), as.glm, as.glm.rxLogit, as.glm.rxGlm" 
 author: "heidisteen" 

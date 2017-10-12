@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "AirOnTime87to12 function (RevoScaleR) | Microsoft Docs" 
+title: "AirOnTime87to12 function (RevoScaleR) " 
 description: " Airline on-time performance data from 1987 to 2012. " 
 keywords: "(RevoScaleR), AirOnTime87to12, AirOnTime87to12.xdf, AirOnTime7Pct, AirOnTime7Pct.xdf, datasets" 
 author: "heidisteen" 

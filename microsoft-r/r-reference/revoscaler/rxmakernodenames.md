@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxMakeRNodeNames function (RevoScaleR) | Microsoft Docs" 
+title: "rxMakeRNodeNames function (RevoScaleR) " 
 description: " Converts valid computer names into valid R variable names.  Should only be used when you want to guarantee that host  names are usable as variable names. " 
 keywords: "(RevoScaleR), rxMakeRNodeNames, IO" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Estimate Correlation and Variance/Covariance Matrices in RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Estimate Correlation and Variance/Covariance Matrices in RevoScaleR (Machine Learning Server) "
 description: "Correlation and variance/covariance matrices in RevoScaleR in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "CensusUS5Pct2000 function (RevoScaleR) | Microsoft Docs" 
+title: "CensusUS5Pct2000 function (RevoScaleR) " 
 description: " The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format. " 
 keywords: "(RevoScaleR), CensusUS5Pct2000, CensusUS5Pct2000.xdf, datasets" 
 author: "heidisteen" 

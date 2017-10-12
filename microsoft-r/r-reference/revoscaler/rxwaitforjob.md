@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxWaitForJob function (RevoScaleR) | Microsoft Docs" 
+title: "rxWaitForJob function (RevoScaleR) " 
 description: " Causes R to block on an existing distributed job until completion. " 
 keywords: "(RevoScaleR), rxWaitForJob, rxWaitForJob,RxDistributedJob-method, rxWaitForJob,RxDistributedSqlServerJob-method, rxWaitForJob,RxDistributedTeradataJob-method, rxWaitForJob,RxDistributedHadoopMRJob-method, rxWaitForJob,ANY-method, IO" 
 author: "heidisteen" 

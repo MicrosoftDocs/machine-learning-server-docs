@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Distributed analysis (RevoScaleR in Machine Learning Server) | Microsoft Docs"
+title: "Distributed analysis (RevoScaleR in Machine Learning Server) "
 description: "Distribute an analysis over multiple nodes using RevoScaleR functions."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Publish, deploy, update, and delete Python web services - Machine Learning Server | Microsoft Docs"
+title: "Publish, deploy, update, and delete Python web services - Machine Learning Server "
 description: "Publish, update, and delete Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"

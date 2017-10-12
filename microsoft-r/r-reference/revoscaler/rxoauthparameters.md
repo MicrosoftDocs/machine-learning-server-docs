@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxOAuthParameters function (RevoScaleR) | Microsoft Docs" 
+title: "rxOAuthParameters function (RevoScaleR) " 
 description: " Method to create parameter list to be used for getting an OAuth2 token. " 
 keywords: "(RevoScaleR), rxOAuthParameters, file, connection" 
 author: "heidisteen" 

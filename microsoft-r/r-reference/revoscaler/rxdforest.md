@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxDForest function (RevoScaleR) | Microsoft Docs" 
+title: "rxDForest function (RevoScaleR) " 
 description: "     Fit classification and regression decision forests on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "(RevoScaleR), rxDForest, plot.rxDForest, print.rxDForest, models, tree, classif, regression, classification" 
 author: "heidisteen" 

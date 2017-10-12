@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Solution templates for Machine Learning Server and R Server 9.1| Machine Learning Server | Microsoft Docs"
+title: "Solution templates for Machine Learning Server and R Server 9.1| Machine Learning Server "
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"

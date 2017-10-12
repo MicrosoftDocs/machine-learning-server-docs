@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxLogisticRegression function (MicrosoftML) | Microsoft Docs" 
+title: "rxLogisticRegression function (MicrosoftML) " 
 description: " Machine Learning Logistic Regression " 
 keywords: "(MicrosoftML), rxLogisticRegression, classification, models" 
 author: "heidisteen" 

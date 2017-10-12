@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Pre-trained machine learning models for sentiment analysis and image detection - Machine Learning Server | Microsoft Docs"
+title: "Pre-trained machine learning models for sentiment analysis and image detection - Machine Learning Server "
 keywords: ""
 author: "bradsev"
 ms.author: "bradsev"

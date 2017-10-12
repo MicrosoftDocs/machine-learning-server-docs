@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "R function library reference - Machine Learning Server | Microsoft Docs"
+title: "R function library reference - Machine Learning Server "
 description: "Function reference for R packages in Machine Learning Server, including MicrosoftML, mrsdeploy, RevoScaleR, RevoPemaR, and others."
 keywords: ""
 author: "HeidiSteen"

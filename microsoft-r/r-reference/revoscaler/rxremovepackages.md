@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxRemovePackages function (RevoScaleR) | Microsoft Docs" 
+title: "rxRemovePackages function (RevoScaleR) " 
 description: " **NOTE: This new API is in pre-release mode and subject to change before final release.**  Removes installed packages from a compute context. " 
 keywords: "(RevoScaleR), rxRemovePackages, remove, uninstall, packages, sql" 
 author: "heidisteen" 

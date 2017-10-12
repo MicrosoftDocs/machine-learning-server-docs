@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxSummary function (RevoScaleR) | Microsoft Docs" 
+title: "rxSummary function (RevoScaleR) " 
 description: " Produce univariate summaries of objects in **RevoScaleR**. " 
 keywords: "(RevoScaleR), rxSummary, univar" 
 author: "heidisteen" 

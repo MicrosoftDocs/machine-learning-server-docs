@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetFuzzyKeys function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetFuzzyKeys function (RevoScaleR) " 
 description: " EXPERIMENTAL: Get fuzzy keys for a character vector " 
 keywords: "(RevoScaleR), rxGetFuzzyKeys, manip" 
 author: "heidisteen" 

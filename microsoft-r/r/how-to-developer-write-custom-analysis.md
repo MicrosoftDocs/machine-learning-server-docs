@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Writing custom analyses for large data sets using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Writing custom analyses for large data sets using RevoScaleR (Machine Learning Server) "
 description: "Get started with custom analysis of big data using RevoScaleR functions in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

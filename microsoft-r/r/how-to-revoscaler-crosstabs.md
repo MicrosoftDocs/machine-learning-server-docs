@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Crosstabs using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Crosstabs using RevoScaleR (Machine Learning Server) "
 description: "Cross-tabulations (contingency tables) with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxRemoteFilePath function (RevoScaleR) | Microsoft Docs" 
+title: "rxRemoteFilePath function (RevoScaleR) " 
 description: "This is a utility function to automatically build a path according to file path rules of the remote compute context platform." 
 keywords: "(RevoScaleR), rxRemoteFilePath, IO" 
 author: "heidisteen" 
