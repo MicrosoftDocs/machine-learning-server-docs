@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "ScaleR Functions"
-description: "ScaleR Functions"
+title: "Base R and RevoScaleR function comparison (Machine Learning Server and Microsoft R) | Microsoft Docs"
+description: "RevoScaleR function side-by-side comparison with base R functions"
 keywords: "RevoScaleR, RevoScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "04/18/2017"
+ms.date: "10/11/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # Comparison of Base R and RevoScaleR Functions
 
-This topic provides a list of the functions provided by the **RevoScaleR** package and lists comparable functions included in the base distribution of R.  
+This article provides a list of the functions provided by the **RevoScaleR** package and lists comparable functions included in the base distribution of R.  
 
 ##  <a name="bkmk_DataInputAndOutput"></a> Data Input and Output  
 

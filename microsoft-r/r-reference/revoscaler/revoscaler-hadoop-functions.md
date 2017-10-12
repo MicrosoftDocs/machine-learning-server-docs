@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "ScaleR Functions for Hadoop"
+title: "Hadoop RevoScaleR functions (Machine Learning Server and Microsoft R) | Microsoft Docs"
 description: "Microsoft R RevoScaleR Functions for Apache Hadoop MapReduce and Hadoop Spark."
 keywords: "RevoScaleR, RevoScaleR, Microsoft R, Hadoop, Spark"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "12/08/2016"
+ms.date: "10/11/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 

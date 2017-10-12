@@ -892,20 +892,6 @@
     - name: RevoScaleR
       href: r-reference/revoscaler/revoscaler.md
       items:
-      - name: 'Overview: Common ScaleR Functions'
-        href: r-reference/revoscaler/revoscaler.md
-      - name: 'Overview: Base R & ScaleR Function Comparisons'
-        href: r-reference/revoscaler/revoscaler-compared-to-base-r.md
-      - name: 'Overview: ScaleR functions for Teradata'
-        href: r-reference/revoscaler/revoscaler-teradata-functions.md
-      - name: 'Overview: ScaleR functions for Hadoop'
-        href: r-reference/revoscaler/revoscaler-hadoop-functions.md
-      - name: Functions by category
-        href: r-reference/revoscaler/revoanalytics-package.md
-      - name: RevoScaleR-defunct
-        href: r-reference/revoscaler/revoscaler-defunct.md
-      - name: RevoScaleR-deprecated
-        href: r-reference/revoscaler/revoscaler-deprecated.md
       - name: Data sets
         items:
         - name: AirlineData87to08
@@ -1244,6 +1230,20 @@
           href: r-reference/revoscaler/rxxdffilename.md
         - name: rxXdfToText
           href: r-reference/revoscaler/rxxdftotext.md
+      - name: Base R-to-RevoScaleR comparison
+        href: r-reference/revoscaler/revoscaler-compared-to-base-r.md
+      - name: Functions by category
+        href: r-reference/revoscaler/revoanalytics-package.md
+      - name: Defunct functions
+        href: r-reference/revoscaler/revoscaler-defunct.md
+      - name: Deprecated functions
+        href: r-reference/revoscaler/revoscaler-deprecated.md
+      - name: Hadoop functions
+        href: r-reference/revoscaler/revoscaler-hadoop-functions.md
+      - name: SQL Server functions
+        href: r-reference/revoscaler/revoscaler-sql-server-functions.md
+      - name: Teradata functions
+        href: r-reference/revoscaler/revoscaler-teradata-functions.md
     - name: RevoUtils
       href: r-reference/revoutils/revoutils.md
       items:
