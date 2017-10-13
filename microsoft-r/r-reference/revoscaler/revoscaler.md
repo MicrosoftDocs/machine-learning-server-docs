@@ -161,7 +161,7 @@ This section lists the functions by category to give you an idea of how each one
 
 <a name="graphing-functions"></a>
 
-## 4-Basic graphing functions
+## 4-Graphing functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -172,7 +172,7 @@ This section lists the functions by category to give you an idea of how each one
 
 <a name="statistics-functions"></a>
 
-## 5-Descriptive statistics and cross-tabulation
+## 5-Descriptive statistics
 
 | Function name | Description |
 |---------------|-------------|
@@ -193,7 +193,7 @@ This section lists the functions by category to give you an idea of how each one
 
 <a name="prediction-functions"></a>
 
-## 6-Prediction functions for statistical modeling
+## 6-Prediction functions
 
 | Function name | Description |
 |---------------|-------------|
@@ -235,7 +235,7 @@ This section lists the functions by category to give you an idea of how each one
 
 <a name="distributed-computing-functions"></a>
 
-## 8-Distributed computing functions
+## 8-Distributed computing
 
 These functions and many more can be used for high performance computing and distributed computing. Learn more about the entire set of functions in [Distributed Computing](../../r/how-to-revoscaler-distributed-computing.md).
 

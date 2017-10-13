@@ -29,9 +29,9 @@ In Machine Learning Server, every session that loads a function library has a [c
 
 You can switch to a remote compute context to shift script execution to a different server or platform. For example, you might want to bring calculations and analysis to where the data resides on a database platform, such as SQL Server, or on the Hadoop Distributed File System (HDFS) using Spark or MapReduce as the processing layer.
 
-You can create multiple compute context objects, but use them one at a time. Often, functions operate identically in local and remote context. If script execution is successful locally, you can generally expect the same results on the remote server, subject to these [limitations](#limits-on-context-shift). 
+You can create multiple compute context objects: just use them one at a time. Often, functions operate identically in local and remote context. If script execution is successful locally, you can generally expect the same results on the remote server, subject to these [limitations](#limits-on-context-shift). 
 
-This article is focuses primarily on Hadoop Spark and MapReduce. For SQL Server compute contexts, see [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.
+This article is focused primarily on Hadoop Spark and MapReduce. For SQL Server compute contexts, see [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.
 
 ## Prerequisites
 
@@ -41,8 +41,8 @@ The following table is a recap of platform and data source requirements for each
 
 | Library | Platforms & Data Sources |
 |---------|-------------------------|
-| RevoScaleR | Hadoop (Spark or MapReduce): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, stored procedures, Text, XDF, ODBC |
-| revoscalepy | Hadoop (Spark): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, stored procedures, Text, XDF, ODBC |
+| RevoScaleR | Hadoop (Spark or MapReduce): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables,  Text, XDF, ODBC |
+| revoscalepy | Hadoop (Spark): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, Text, XDF, ODBC |
 
 > [!NOTE]
 > RevoScaleR is available in both Machine Learning Server and R Client. You can develop script in R Client for execution on the server. However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if datasets are large and come with dependencies on data chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Machine Learning Server instance that provides data chunking.
@@ -98,11 +98,9 @@ rxSetComputeContext(computeContext = myServer)
 
 <a name="limits-on-context-shift"></a>
 
-## Limits on switching
+## Limitations of remote compute context
 
-The primary benefit of remote computing is bringing analysis to the data, using the inherent capabilities of the host platform. For a list of functions that are multithreaded and cluster aware, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
-
-As a counter point, data manipulation and transformaton use cases are not an intended use case. As such, many of these functions come with local compute requirements. The following table covers exceptions to remote computing.
+A primary benefit of remote computing is to perform distributed analysis using the inherent capabilities of the host platform. For a list of analytical functions that are multithreaded and cluster aware, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md). As a counter point, the concept of "remote compute context" is not optimized for data manipulation and transformaton workloads. As such, many data-related functions come with local compute requirements. The following table describes the exceptions to remote computing.
 
 | Limit | Details |
 |-------|---------|

@@ -41,7 +41,7 @@ Many analytical functions can execute in parallel. On a multi-core computer, a n
 
 ## revoscalepy compute context and data sources
 
-Remote computing is available for specific data sources on selected platforms. The following tables articulate viable combinations.
+Remote computing is available for specific data sources on selected platforms. The following tables document supported combinations.
 
 ### Compute contexts
 
@@ -50,19 +50,19 @@ Context name | Alternative name | Usage |
 | [RxLocalSeq](../python-reference/revoscalepy/rxlocalseq.md)  | local  | All server and client configurations support a local compute context. |
 | [RxInSqlServer](../python-reference/revoscalepy/rxinsqlserver.md) | sqlserver | Use for a remote compute context where the target server is a single database node (SQL Server 2017 Machine Learning with Python support). Computation is parallel on a multi-core server, but not distributed.|
 | [RxSpark](../python-reference/revoscalepy/rxsparkdata.md) | spark  | Use for a remote compute context where the target is a Spark 2.0-2.4 cluster over Hadoop Distributed File System (HDFS). The connection specifies the cluster name. Workloads are distributed across available nodes. |
-| Spark compute context with PySpark connection ([rx-get-pyspark-connection](../python-reference/revoscalepy/rx-get-pyspark-connection.md))   | spark     | Use this approach when the script makes PySpark calls in addition to revoscalepy. |
+| [Spark compute context with PySpark connection](../python-reference/revoscalepy/rx-get-pyspark-connection.md) | spark | Use this approach when the script makes PySpark calls in addition to revoscalepy. |
 
 
 ### Data sources per compute context
 
-Given a compute context, the following table shows which data sources are available on that platform (x indicates available):
+Given a compute context, the following table shows which data sources are available (x indicates available):
 
 | Data Source | [`RxLocalSeq`](../python-reference/revoscalepy/rxlocalseq.md) | [`RxSpark`](../python-reference/revoscalepy/rxspark.md) | [`RxInSqlServer`](../python-reference/revoscalepy/rxinsqlserver.md) |
 |-------------|------------|------------|--------------|
 | Fixed-Format Text ([`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)`) | X |  X |   | 
 | Delimited Text ([`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)) | X | X |   | 
 | .xdf data files ([`RxXdfData`](../python-reference/revoscalepy/rxxdfdata.md)`) | X | X |  | 
-| Spark data (`[RxHiveData`](../python-reference/revoscalepy/rxhivedata.md))|  X | X |   | 
+| Spark data ([`RxHiveData`](../python-reference/revoscalepy/rxhivedata.md))|  X | X |   | 
 | Spark data ([`RxParquetData`](../python-reference/revoscalepy/rxparquetdata.md)) |  X | X |  | 
 | Spark data ([`RxOrcData`](../python-reference/revoscalepy/rxorcdata.md)) |  X | X |  | 
 | Spark data ([`RxSparkDataFrame`](../python-reference/revoscalepy/rxsparkdataframe.md))  | X |  X  |    |
@@ -71,7 +71,7 @@ Given a compute context, the following table shows which data sources are availa
 
 ## RevoScaleR compute contexts and data sources
 
-Remote computing is available for specific data sources on selected platforms. The following tables articulate viable combinations.
+Remote computing is available for specific data sources on selected platforms. The following tables document supported combinations.
 
 ### Compute contexts
 
@@ -86,7 +86,7 @@ Context name | Alternative name | Usage |
 
 ### Data sources per compute context
 
-Given a compute context, the following table shows which data sources are available on that platform (x indicates available):
+Given a compute context, the following table shows which data sources are available (x indicates available):
 
 | Data Source | [`RxLocalSeq`](../r-reference/revoscaler/rxlocalseq.md) | [`RxHadoopMR`](../r-reference/revoscaler/rxhadoopmr.md) | [`RxSpark`](../r-reference/revoscaler/rxspark.md) | [`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md) |
 |-------------|------------|------------|--------------|---------------|
