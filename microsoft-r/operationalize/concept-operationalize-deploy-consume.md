@@ -2,12 +2,12 @@
 
 # required metadata
 title: "What is operationalization of web services - Machine Learning Server "
-description: "Operationalize Your Analytics with Microsoft R Server Get Started"
+description: "Operationalize Your Analytics with Machine Learning Server Get Started"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "7/21/2017"
+ms.date: "10/12/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -24,20 +24,21 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# What is operationalization: deploy and consume analytics
+# What is operationalization?
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
-Now that you've learned about [R Server's operationalization feature](../what-is-operationalization.md), we can dig into how data scientists can deploy and consume web services in order to operationalize their R analytics.
+Operationalization refers to the process of deploying R and Python models and code to Machine Learning Server in the form of [web services](concept-what-are-web-services.md) and the subsequent consumption of these services within client applications to affect business results.
 
-Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the mrsdeploy package that ships with Microsoft R Client and R Server, the data scientist can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
+Today, more businesses are adopting advanced analytics for mission critical decision making. Typically, data scientists first build the predictive models, and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
 
-An R Server web service is an R code execution on the [operationalization compute node](configure-start-for-administrators.md#configure-server-for-operationalization)
-. Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. This package is installed with Microsoft R Client as well as Microsoft R Server.  The mrsdeploy package provides functions for publishing and managing a web service that is backed by the R code block or script you provided. The package also provides functions for establishing a [remote execution](../r/how-to-execute-code-remotely.md) session in a console application.  [Learn more about this package](../r-reference/mrsdeploy/mrsdeploy-package.md). Similarly, a set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are available to provide direct programmatic access to a service's lifecycle directly. 
+Being able to operationalize your analytics is a central capability in Machine Learning Server. After installing Machine Learning Server on select platforms, you'll have everything you need to [configure the server to securely host R and Python analytics web services](configure-start-for-administrators.md#configure-server-for-operationalization).  For details on which platforms, see [Supported platforms](configure-start-for-administrators.md#supported-platforms).
 
-After it has been deployed, the web service can be: 
-+ [Consumed directly in R by another data scientist](how-to-consume-web-service-interact-in-r.md#data-scientists-share), for testing purposes for example 
-+ [Integrated into an application by an application developer](how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
+Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) or Machine Learning Server in their preferred IDE and favorite version control tools to build scripts and models. Using the mrsdeploy R package and/or the azureml-model-management-sdk Python package that ships the products, the data scientist can develop, test, and ultimately deploy these R and Python analytics as web services in their production environment. 
+
+Once deployed, the analytic web service is available to a broader audience within the organization who can then, in turn, consume the analytics. Machine Learning Server provides the operationalizing tools to deploy R and Python analytics inside web, desktop, mobile, and dashboard applications and backend systems. Machine Learning Server turns your scripts into analytics web services, so R and Python code can be easily executed by applications running on a secure server.
+
+Support for Python was added in Microsoft Machine Learning Server 9.2.1.
 
 ![Operationalization Engine](./media/concept-operationalize-deploy-consume/data-scientist-easy-deploy.png) 
 
@@ -49,58 +50,39 @@ You'll develop your R analytics locally with R Client, deploy them to Microsoft 
 
 **On the remote server**, you'll need the connection details and access to an instance of [Microsoft R Server](../what-is-microsoft-r-server.md) with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization). After R Server is configured for operationalization, you'll be able to [connect to it from your local machine](how-to-connect-log-in-with-mrsdeploy.md), deploy your models and other analytics to Microsoft R Server as web services, and finally consume or share those services. Please contact your administrator for any missing connection details.
 
-## Deploy R code and models as web services
-
-You can publish your R code and models as standard or realtime web services. Once you publish, they are deployed and hosted in R Server. You can use the APIs directly or [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the mrsdeploy R package. 
-
-We recommend that you follow [this publish quickstart](quickstart-publish-r-web-service.md) to publish an R model as a service yourself. 
-
-<a name="share"></a>
-
-## Share services with others for consumption 
-
->[!IMPORTANT]
-> Anyone who wishes to consume the service must have [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization)
-.
-
-When the web service is published, a Swagger-based JSON file is generated automatically to define the service. You can now hand off this file to share the predictive web service with **other authenticated users of R Server**, such as:
-
-Services can be consumed in multiple ways: 
-1. Direct consumption in R using the mrsdeploy package, which installed with Microsoft R Server and R Client. Approaches include "Request - Response" and "Asynchronous Batch Execution".
-
-2. Application developers can integrate web services into their applications using the APIs defined in a service specific Swagger-based JSON file. 
-
-Learn more about sharing the Swagger-based JSON file with others in the article ["Working with web services in R"](how-to-consume-web-service-interact-in-r.md) and the article [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md).
-
-
-## Execute R code remotely
-
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](../r/how-to-execute-code-remotely.md).
-
-Requirements for remote execution include:
-
-+ You must configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
-+ You must also have [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](configure-machine-learning-server-one-box.md).
-
 ## More resources
 
-This section provides a quick summary of useful links for data scientists operationalizing R analytics with R Server.
+This section provides a quick summary of useful links for data scientists operationalizing R and Python analytics with Machine Learning Server.
 
 >Use the table of contents to find all of the guides and documentation needed by the administrator.
 
 **Key Documents**
-+ [About Operationalization](../what-is-operationalization.md)
-+ [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
-+ [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)
-+ [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
-+ [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
-+ [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
-+ [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)
-+ [Comparison between 8.x and 9.x](../whats-new-in-r-server.md)
++ [What are web services?](concept-what-are-web-services.md)
 
-**Other Getting Started Guides**
++ For R users:
+    + [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
+    + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)
+    + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
+    + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
+    + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
+    + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)
+
++ For Python users:
+    + [Quickstart: Deploying an Python model as a web service](python/quickstart-deploy-python-web-service.md)
+    + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
+    + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
+    + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
+    + [How to consume web services in Python synchronously (request/response)](how-to-consume-web-services.md)    
+    + [How to consume web services in Python asynchronously (batch)](how-to-consume-web-services-async.md)    
+ 
++ [What's new in Machine Learning Server](../whats-new-in-r-server.md)
+
++ [The differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
+
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
-+ [Administrators](configure-start-for-administrators.md)
 
-**Support Channel**
-+ [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
++ [Get started for Administrators](configure-start-for-administrators.md)
+
++ [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+
+
