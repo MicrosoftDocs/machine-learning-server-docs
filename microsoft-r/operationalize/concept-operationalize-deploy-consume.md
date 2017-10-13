@@ -53,15 +53,13 @@ You'll develop your R and Python analytics locally, deploy them to Machine Learn
 
 **On the local client**, you'll need to install:
 + [Microsoft R Client](../r-client-get-started.md) if working with R code.  You'll also need to [configure the R IDE](https://msdn.microsoft.com/en-us/microsoft-r/r-client-get-started#step-2-configure-your-ide) of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.  After you have this set up, you can develop your R analytics in your local R IDE using the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) that was installed with Microsoft R Client (and R Server). 
-+ [Local Python interpreter](../install/python-libraries-interpreter) if working with Python code.  After you have this set up, you can develop your Python analytics in your local interpreter using the functions in the [azureml-model-management-sdk Python package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
++ [Local Python interpreter](../install/python-libraries-interpreter.md) if working with Python code.  After you have this set up, you can develop your Python analytics in your local interpreter using the functions in the [azureml-model-management-sdk Python package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
 
 **On the remote server**, you'll need the connection details and access to an instance of [Machine Learning Server](../what-is-microsoft-r-server.md) with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization). After Machine Learning Server is configured for operationalization, you'll be able to [connect to it from your local machine](how-to-connect-log-in-with-mrsdeploy.md), deploy your models and other analytics to Machine Learning Server as web services, and finally consume or share those services. Please contact your administrator for any missing connection details.
 
 ## More resources
 
 This section provides a quick summary of useful links for data scientists operationalizing R and Python analytics with Machine Learning Server.
-
->Use the table of contents to find all of the guides and documentation needed by the administrator.
 
 **Key Documents**
 + [What are web services?](concept-what-are-web-services.md)
