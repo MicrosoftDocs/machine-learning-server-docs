@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "BatchResponse,api,completed_item_count,execution,execution_id,total_item_count: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "BatchResponse,api,completed_item_count,execution,execution_id,total_item_count: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

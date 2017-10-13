@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure Jupyter Notebooks for revoscalepy in Machine Learning Server | Microsoft Docs "
+title: "Configure Jupyter Notebooks for revoscalepy in Machine Learning Server  "
 description: "How to configure a Jupyter notebook to call Python functions from revoscalepay and microsofml modules in Machine learning Server."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxDistributedHpa-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxDistributedHpa-class function (RevoScaleR) " 
 description: " Compute context class for clusters supporting RevoScaleR High Performance Analytics and High Perfomance Computing. " 
 keywords: "(RevoScaleR), RxDistributedHpa-class, show,RxDistributedHpa-method, classes" 
 author: "heidisteen" 

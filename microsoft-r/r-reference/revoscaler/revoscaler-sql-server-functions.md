@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "ScaleR Functions"
-description: "ScaleR Functions"
-keywords: "RevoScaleR, ScaleR"
+title: "SQL Server RevoScaleR functions (Machine Learning Server and Microsoft R) "
+description: "RevoScaleR functions for a SQL Server compute context"
+keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "06/13/2016"
+ms.date: "10/11/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -23,9 +23,9 @@ ms.technology: "r-server"
 
 ---
 
-#ScaleR Functions for Working with SQL Server Data
+# RevoScaleR Functions for a SQL Server compute context
 
-This topic provides an overview of the main RevoScaleR functions for use with SQL Server, along with comments on their syntax.
+This article provides an overview of the main RevoScaleR functions for use with SQL Server, along with comments on their syntax.
 
 
 ## Functions for working with SQL Server Data Sources
@@ -40,7 +40,7 @@ In addition to defining a data source, you can execute DDL statements from R, if
 ## Functions for Defining or Managing a Compute Context
 The following functions let you define a new compute context, switch compute contexts, or identify the current compute context.
 + [RxComputeContext](rxcomputecontext.md) - Create a compute context.
-+ [rxInSqlServer](rxinsqlserver.md) - Generate a SQL Server compute context that lets **ScaleR** functions run in SQL Server R Services.
++ [rxInSqlServer](rxinsqlserver.md) - Generate a SQL Server compute context that lets **RevoScaleR** functions run in SQL Server R Services.
 + [rxGetComputeContext](rxsetcomputecontext.md) - Get the current compute context.
 + [rxSetComputeContext](rxsetcomputecontext.md) - Specify which compute context to use. The local compute context is available by default, or you can specify the keyword **local**.
 

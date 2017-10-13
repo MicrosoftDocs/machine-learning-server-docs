@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "as.randomForest function (RevoScaleR) | Microsoft Docs" 
+title: "as.randomForest function (RevoScaleR) " 
 description: " Converts objects containing decision tree results to an randomForest object. " 
 keywords: "(RevoScaleR), as.randomForest, as.randomForest.rxDForest, as.randomForest.rxDTree, as.randomForest.rpart, category, models" 
 author: "heidisteen" 

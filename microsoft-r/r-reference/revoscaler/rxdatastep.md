@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxDataStep function (RevoScaleR) | Microsoft Docs" 
+title: "rxDataStep function (RevoScaleR) " 
 description: "    Transform data from an input data set to an output data set " 
 keywords: "(RevoScaleR), rxDataStep, manip, file" 
 author: "heidisteen" 

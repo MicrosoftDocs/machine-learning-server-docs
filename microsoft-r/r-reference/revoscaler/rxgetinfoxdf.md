@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetInfo function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetInfo function (RevoScaleR) " 
 description: " Get basic information about an RevoScaleR data source or data frame  " 
 keywords: "(RevoScaleR), rxGetInfo, attribute" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxForeachDoPar-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxForeachDoPar-class function (RevoScaleR) " 
 description: "   Class for the RevoScaleR Compute Context using one of the foreach dopar back ends.   " 
 keywords: "(RevoScaleR), RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
 author: "heidisteen" 

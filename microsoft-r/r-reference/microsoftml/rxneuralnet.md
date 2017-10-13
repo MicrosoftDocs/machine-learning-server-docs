@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxNeuralNet function (MicrosoftML) | Microsoft Docs" 
+title: "rxNeuralNet function (MicrosoftML) " 
 description: " Neural networks for regression modeling and for Binary and multi-class classification. " 
 keywords: "(MicrosoftML), rxNeuralNet, classification, dnn, models, network, neural, regression" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxFormula function (RevoScaleR) | Microsoft Docs" 
+title: "rxFormula function (RevoScaleR) " 
 description: " Highlights of the similarities and differences in formulas between **RevoScaleR** and standard R functions. " 
 keywords: "(RevoScaleR), rxFormula, models" 
 author: "heidisteen" 

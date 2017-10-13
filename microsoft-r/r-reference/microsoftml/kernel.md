@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "kernel function (MicrosoftML) | Microsoft Docs" 
+title: "kernel function (MicrosoftML) " 
 description: " Kernels supported for use in computing inner products. " 
 keywords: "(MicrosoftML), kernel, linearKernel, maKernel, polynomialKernel, rbfKernel, sigmoidKernel" 
 author: "heidisteen" 

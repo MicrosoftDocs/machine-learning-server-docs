@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxPredict.mlModel function (MicrosoftML) | Microsoft Docs" 
+title: "rxPredict.mlModel function (MicrosoftML) " 
 description: " Reports per-instance scoring results in a data frame or RevoScaleR data source using a trained Microsoft R Machine Learning model with a RevoScaleR data source. " 
 keywords: "(MicrosoftML), rxPredict.mlModel, manip" 
 author: "heidisteen" 

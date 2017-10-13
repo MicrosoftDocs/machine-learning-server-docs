@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxXdfData-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxXdfData-class function (RevoScaleR) " 
 description: " Xdf data source connection class. " 
 keywords: "(RevoScaleR), RxXdfData-class, colnames,RxXdfData-method, dim,RxXdfData-method, dimnames,RxXdfData-method, formula,RxXdfData-method, length,RxXdfData-method, names,RxXdfData-method, names<-,RxXdfData-method, row.names,RxXdfData-method, show,RxXdfData-method, str,RxXdfData-method, classes" 
 author: "heidisteen" 

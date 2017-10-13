@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "remoteLogout function (mrsdeploy) | Microsoft Docs" 
+title: "remoteLogout function (mrsdeploy) " 
 description: " Logout of the remote session on the R Server. " 
 keywords: "(mrsdeploy), remoteLogout" 
 author: "heidisteen" 

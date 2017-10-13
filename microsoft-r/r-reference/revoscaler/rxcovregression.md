@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxCovCoef function (RevoScaleR) | Microsoft Docs" 
+title: "rxCovCoef function (RevoScaleR) " 
 description: " Obtain covariance and correlation matrices for the coefficient estimates within rxLinMod,  rxLogit, and rxGlm objects and explanatory variables within rxLinMod and rxLogit objects. " 
 keywords: "(RevoScaleR), rxCovCoef, rxCovCoef.rxLinMod, rxCovCoef.rxLogit, rxCovCoef.rxGlm, rxCorCoef, rxCorCoef.rxLinMod, rxCorCoef.rxLogit, rxCorCoef.rxGlm, rxCovData, rxCovData.rxLinMod, rxCovData.rxLogit, rxCorData, rxCorData.rxLinMod, rxCorData.rxLogit, models, regression" 
 author: "heidisteen" 

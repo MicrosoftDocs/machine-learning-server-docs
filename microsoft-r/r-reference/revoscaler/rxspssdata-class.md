@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxSpssData-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxSpssData-class function (RevoScaleR) " 
 description: " SPSS data source connection class. " 
 keywords: "(RevoScaleR), RxSpssData-class, show,RxSpssData-method, classes" 
 author: "heidisteen" 

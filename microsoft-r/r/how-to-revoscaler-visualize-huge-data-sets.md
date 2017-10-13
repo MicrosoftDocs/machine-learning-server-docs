@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Visualizing Huge Data Sets using RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Visualizing Huge Data Sets using RevoScaleR (Machine Learning Server) "
 description: "Visualizing huge data sets with an example from the U.S. Census."
 keywords: ""
 author: "HeidiSteen"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "pow function (RevoScaleR) | Microsoft Docs" 
+title: "pow function (RevoScaleR) " 
 description: " Formula expression functions for **RevoScaleR**. " 
 keywords: "(RevoScaleR), pow, models" 
 author: "heidisteen" 

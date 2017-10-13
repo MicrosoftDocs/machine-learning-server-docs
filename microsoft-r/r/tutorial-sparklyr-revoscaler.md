@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR with Sparklyr example (Machine Learning Server) | Microsoft Docs"
+title: "RevoScaleR with Sparklyr example (Machine Learning Server) "
 description: "Sparklyr interoperability with RevoScaleR on Machine Learning Server"
 keywords: ""
 author: "HeidiSteen"

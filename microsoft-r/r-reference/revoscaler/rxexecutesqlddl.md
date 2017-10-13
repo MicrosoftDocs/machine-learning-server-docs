@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxExecuteSQLDDL function (RevoScaleR) | Microsoft Docs" 
+title: "rxExecuteSQLDDL function (RevoScaleR) " 
 description: " Execute a command to define, manipulate, or control SQL data (but not  return data). " 
 keywords: "(RevoScaleR), rxExecuteSQLDDL, rxExecuteSQLDDL,RxDataSource-method,  ~kwd1 ,  ~kwd2 " 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxComputeContext-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxComputeContext-class function (RevoScaleR) " 
 description: "   Base class for all RevoScaleR Compute Contexts.   " 
 keywords: "(RevoScaleR), RxComputeContext-class, show,RxComputeContext-method, classes" 
 author: "heidisteen" 

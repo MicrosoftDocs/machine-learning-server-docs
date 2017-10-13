@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxGetJobInfo function (RevoScaleR) | Microsoft Docs" 
+title: "rxGetJobInfo function (RevoScaleR) " 
 description: " Gets job information for a given distributed computing job. " 
 keywords: "(RevoScaleR), rxGetJobInfo, IO" 
 author: "heidisteen" 

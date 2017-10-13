@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Import HDFS data (Machine Learning Server) | Microsoft Docs"
+title: "Import HDFS data (Machine Learning Server) "
 description: "Load data from Hadoop Distributed File System (HDFS) into a RevoScaleR session in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

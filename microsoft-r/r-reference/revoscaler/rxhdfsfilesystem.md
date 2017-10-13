@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxHdfsFileSystem function (RevoScaleR) | Microsoft Docs" 
+title: "RxHdfsFileSystem function (RevoScaleR) " 
 description: " This is the main generator for RxHdfsFileSystem S3 class. " 
 keywords: "(RevoScaleR), RxHdfsFileSystem, print.RxHdfsFileSystem, file, connection" 
 author: "heidisteen" 

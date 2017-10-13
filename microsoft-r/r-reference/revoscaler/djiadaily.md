@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "DJIAdaily function (RevoScaleR) | Microsoft Docs" 
+title: "DJIAdaily function (RevoScaleR) " 
 description: " Daily data for the Dow Jones Industrial Average. " 
 keywords: "(RevoScaleR), DJIAdaily, DJIAdaily.xdf, datasets" 
 author: "heidisteen" 

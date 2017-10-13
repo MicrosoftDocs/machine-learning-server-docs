@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Linux offline installation for Machine Learning Server 9.2.1 | Microsoft Docs"
+title: "Linux offline installation for Machine Learning Server 9.2.1 "
 description: "How to install Machine Learning Server for Linux with no internet connection."
 keywords: ""
 author: "HeidiSteen"

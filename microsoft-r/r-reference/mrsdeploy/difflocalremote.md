@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "diffLocalRemote function (mrsdeploy) | Microsoft Docs" 
+title: "diffLocalRemote function (mrsdeploy) " 
 description: " Generate a 'diff' report between local and remote R sessions " 
 keywords: "(mrsdeploy), diffLocalRemote" 
 author: "heidisteen" 

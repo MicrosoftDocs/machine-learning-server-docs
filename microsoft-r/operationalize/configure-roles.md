@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Control web services permissions with roles - Machine Learning Server | Microsoft Docs"
+title: "Control web services permissions with roles - Machine Learning Server "
 description: "Owner, contributor, reader authentication roles with Machine Learning Server"
 keywords: ""
 author: "j-martens"

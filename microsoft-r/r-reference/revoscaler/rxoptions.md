@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxOptions function (RevoScaleR) | Microsoft Docs" 
+title: "rxOptions function (RevoScaleR) " 
 description: " Functions to specify and retrieve options needed for **RevoScaleR** computations. These need to be set only once to carry out multiple computations. " 
 keywords: "(RevoScaleR), rxOptions, rxGetOption, rxIsExpressEdition, environment, error, print" 
 author: "heidisteen" 

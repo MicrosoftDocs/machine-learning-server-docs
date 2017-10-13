@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxTeradata function (RevoScaleR) | Microsoft Docs" 
+title: "RxTeradata function (RevoScaleR) " 
 description: " This is the main generator for S4 class RxTeradata, which extends RxDataSource. " 
 keywords: "(RevoScaleR), RxTeradata, head.RxTeradata, tail.RxTeradata, database, connection" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxCompressXdf function (RevoScaleR) | Microsoft Docs" 
+title: "rxCompressXdf function (RevoScaleR) " 
 description: " Compress one or more .xdf files " 
 keywords: "(RevoScaleR), rxCompressXdf, manip, file" 
 author: "heidisteen" 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Create an XDF file (Machine Learning Server) | Microsoft Docs"
+title: "Create an XDF file (Machine Learning Server) "
 description: "How to import CSV and other files to create an XDF file on Machine Learning Server"
 keywords: ""
 author: "HeidiSteen"

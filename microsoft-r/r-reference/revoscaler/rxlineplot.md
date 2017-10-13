@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxLinePlot function (RevoScaleR) | Microsoft Docs" 
+title: "rxLinePlot function (RevoScaleR) " 
 description: " Line or scatter plot using data from an .xdf file or data frame - a wrapper function for xyplot. " 
 keywords: "(RevoScaleR), rxLinePlot, hplot" 
 author: "heidisteen" 

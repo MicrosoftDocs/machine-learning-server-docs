@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxCompareContexts function (RevoScaleR) | Microsoft Docs" 
+title: "rxCompareContexts function (RevoScaleR) " 
 description: " Determines if two compute contexts are equivalent. " 
 keywords: "(RevoScaleR), rxCompareContexts, IO" 
 author: "heidisteen" 

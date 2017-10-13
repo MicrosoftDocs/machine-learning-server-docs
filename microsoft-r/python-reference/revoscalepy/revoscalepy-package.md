@@ -1,13 +1,13 @@
 --- 
  
 # required metadata 
-title: "revoscalepy package for Python (SQL Server Machine Learning Server) | Microsoft Docs" 
-description: "Function help reference for the revoscalepy Python package of SQL Server Machine Learning Server." 
+title: "revoscalepy package for Python (Machine Learning Server) " 
+description: "Function help reference for the revoscalepy Python package of Machine Learning Server." 
 keywords: "" 
 author: "HeidiSteen" 
 manager: "jhubbard" 
 ms.author: "heidist"
-ms.date: "09/29/2017" 
+ms.date: "10/09/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,31 +27,33 @@ ms.custom: ""
 
 # revoscalepy package
 
-The **revoscalepy** module is a collection of Python functions used for analyzing data at scale, at the point of origin. Functions include data transformation and manipulation, visualization, predictions, and statistical analysis. The library also includes functions for controlling jobs, serializing data, and performing common utility tasks.
+The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for importing, transforming, and analyzing data at scale. You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests. 
 
-On a Spark cluster, for functions that support distribution, the workload executes on all available cores and nodes. This capability translates into high performance computing for predictive and statistical analysis of big data in your cluster.  
+Functions run on the **revoscalepy** interpreter, built on open source Python, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
 | Package details | |
 |--------|-|
 | Version: |  9.2.1 |
-| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)(https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
 
 ## How to use revoscalepy
 
-The **revoscalepy** module is installed as part of Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreter. You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules.
+The **revoscalepy** module is found in Machine Learning Server or SQL Server Machine Learning when you add Python to your installation. You get the full collection of proprietary packages plus a Python distribution with its modules and interpreter. 
 
-The **revoscalepy** module runs locally on all platforms, and remotely in a [RxSpark](RxSpark.md) or RxInSQLServer compute context. For a review of common tasks, see [How to use revoscalepy with Spark](../../python/how-to-revoscalepy.md).
+You can use any Python IDE to write Python script calling functions in **revoscalepy**, but the script must run on a computer having our proprietary modules. For a review of common tasks, see [How to use revoscalepy with Spark](../../python/how-to-revoscalepy.md).
 
-### In a local compute context
+### Run it locally
 
-**Revoscalepy** operations include statistical analysis, linear and logistic regressions, and predictive analytics. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to the cluster. 
+This is the default. The **revoscalepy** library runs locally on all platforms. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
-### In a remote compute context
+### Run in a remote compute context
 
-In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server. For **revoscalepy**, this is supported for an [RxSpark](RxSpark.md) cluster. For example, script running on Windows might shift execution to a Spark cluster to process data there. Similarly, script might shift to a remote SQL Server instance using a [RxInSqlServer](RxInSqlServer.md) compute context. 
+In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server on Spark or SQL Server. For example, script running on Windows might shift execution to a Spark cluster to process data there.
 
-For SQL Server, there are two primary use cases: 
+On Spark, set the compute context to [RxSpark](RxSpark.md) cluster and give the cluster name. In this context, if you call a function that can run in parallel, the task is distributed across data nodes in the cluster, where the operation is co-located with the data. 
+
+On SQL Server, set the compute context to [RxInSQLServer](RxInSqlServer.md). There are two primary use cases for remote compute context: 
 
 + Call Python functions in T-SQL script or stored procedures running on SQL Server.  
 
@@ -59,7 +61,12 @@ For SQL Server, there are two primary use cases:
 
 ## Functions by category
 
-This section lists the functions by category to give you an idea of how each one is used. You can also use the table of contents to find functions in alphabetical order.
+The library includes  data transformation and manipulation, visualization, predictions, and statistical analysis functions. It also includes functions for controlling jobs, serializing data, and performing common utility tasks.
+
+This section lists the functions by category to give you an idea of how each one is used. The table of contents to lists functions in alphabetical order.
+
+> [!Note]
+> Some function names begin with `rx-` and others with `Rx`. The `Rx` function name prefix is used for class constructors for data sources and compute contexts.
 
 ## 1-Compute context functions
 

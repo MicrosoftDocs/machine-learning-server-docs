@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "CensusWorkers function (RevoScaleR) | Microsoft Docs" 
+title: "CensusWorkers function (RevoScaleR) " 
 description: " A small subset of the IPUMS 5% sample of the 2000 U.S. Census data containing information on the working population from Connecticut, Indiana, and Washington. " 
 keywords: "(RevoScaleR), CensusWorkers, CensusWorkers.xdf, datasets" 
 author: "heidisteen" 

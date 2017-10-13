@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Connect remotely using mrsdeploy - Machine Learning Server | Microsoft Docs"
+title: "Connect remotely using mrsdeploy - Machine Learning Server "
 description: "Logging into Machine Learning Server and connecting with mrsdeploy"
 keywords: "Machine Learning Server, remote login to r server, connect to r server, mrsdeploy connection, log into r server"
 author: "j-martens"

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "ScaleR Functions"
-description: "ScaleR Functions"
-keywords: "RevoScaleR, ScaleR"
+title: "Teradata RevoScaleR Functions (Machine Learning Server and Microsoft R) "
+description: "RevoScaleR Functions for a Teradata compute context"
+keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "06/22/2016"
+ms.date: "10/11/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 

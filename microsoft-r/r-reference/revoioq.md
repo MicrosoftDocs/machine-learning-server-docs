@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RevoIOQ function (RevoIOQ) - Machine Learning Server | Microsoft Docs" 
+title: "RevoIOQ function (RevoIOQ) - Machine Learning Server " 
 description: "Installation and operation qualification of Machine Learning Server" 
 keywords: "(RevoIOQ), RevoIOQ, package" 
 author: "heidisteen" 

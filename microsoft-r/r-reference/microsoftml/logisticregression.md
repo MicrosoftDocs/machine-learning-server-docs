@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "logisticRegression function (MicrosoftML) | Microsoft Docs" 
+title: "logisticRegression function (MicrosoftML) " 
 description: " Creates a list containing the function name and arguments to train a  logistic regression model with [rxEnsemble](rxEnsemble.md). " 
 keywords: "(MicrosoftML), logisticRegression" 
 author: "heidisteen" 

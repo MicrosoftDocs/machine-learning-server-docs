@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Evaluate the load balancing of your configuration - Machine Learning Server | Microsoft Docs"
+title: "Evaluate the load balancing of your configuration - Machine Learning Server "
 description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
 author: "j-martens"

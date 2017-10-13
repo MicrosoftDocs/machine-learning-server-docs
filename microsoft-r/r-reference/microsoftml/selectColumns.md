@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "selectColumns function (MicrosoftML) | Microsoft Docs" 
+title: "selectColumns function (MicrosoftML) " 
 description: " Selects a set of columns to retrain, dropping all others. " 
 keywords: "(MicrosoftML), selectColumns, transform" 
 author: "heidisteen" 

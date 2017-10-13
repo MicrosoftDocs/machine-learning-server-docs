@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Linux - Machine Learning Server | Microsoft Docs"
+title: "Install Microsoft R Client on Linux - Machine Learning Server "
 description: "Guide to installing Microsoft R Client on Linux. R Client is a free, data science tool for high performance analytics."
 keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "j-martens"
@@ -180,10 +180,9 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 The following packages comprise a full R Client installation:
 
 ```
- microsoft-r-client-packages-3.4.1       ** core
- microsoft-r-client-mlm-r-3.4.1          ** pre-trained models (requires mml)
- microsoft-r-client-mml-r-3.4.1          ** microsoftml for R (optional)
-
+ microsoft-r-client-packages-3.4.1     ** core
+ microsoft-r-client-mml-3.4.1          ** microsoftml for R (optional)
+ microsoft-r-client-mlm-3.4.1          ** pre-trained models (requires microsoftml)
 ```
 
 Microsoft R Open is required for R execution:

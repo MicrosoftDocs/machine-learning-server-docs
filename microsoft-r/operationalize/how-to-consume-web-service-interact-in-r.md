@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How to get and consume web services in R with mrsdeploy - Machine Learning Server | Microsoft Docs"
+title: "How to get and consume web services in R with mrsdeploy - Machine Learning Server "
 description: "Web service interaction and consumption functions in the mrsdeploy package."
 keywords: "mrsdeploy package"
 author: "j-martens"

@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "MicrosoftML package for R (Microsoft Machine Learning Server and SQL Server Machine Learning Server) | Microsoft Docs" 
+title: "MicrosoftML package for R (Microsoft Machine Learning Server and SQL Server Machine Learning Server) " 
 description: "Function help reference for the MicrosoftML R package of Microsoft R." 
 keywords: "MicrosoftML-package, package" 
 author: "bradsev"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Deprecated, discontinued, or changed features - Machine Learning Server | Microsoft Docs"
+title: "Deprecated, discontinued, or changed features - Machine Learning Server "
 description: "Notifications about deprecated and discontinued features, packages, and functions in Microsoft R packages."
 keywords: ""
 author: "j-martens"

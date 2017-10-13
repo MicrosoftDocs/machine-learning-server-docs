@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxSqlServerData function (RevoScaleR) | Microsoft Docs" 
+title: "RxSqlServerData function (RevoScaleR) " 
 description: " This is the main generator for S4 class RxSqlServerData, which extends RxDataSource. " 
 keywords: "(RevoScaleR), RxSqlServerData, head.RxSqlServerData, tail.RxSqlServerData, database, connection" 
 author: "heidisteen" 

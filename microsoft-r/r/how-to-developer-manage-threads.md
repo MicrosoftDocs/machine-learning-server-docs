@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Manage threads in RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Manage threads in RevoScaleR (Machine Learning Server) "
 description: ""
 keywords: "How ScaleR establishes and manages thread pools for parallel processing."
 author: "HeidiSteen"

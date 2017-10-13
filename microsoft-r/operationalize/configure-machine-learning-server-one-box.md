@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server to operationalize analytics (one-box) - Machine Learning Server | Microsoft Docs"
+title: "Configure Machine Learning Server to operationalize analytics (one-box) - Machine Learning Server "
 description: "Configure Operationalization for Machine Learning Server "
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
@@ -42,7 +42,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 >[!Important]
 >For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
 >
->Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
+>Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/enterprise-configuration). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
 
 **To configure on a single machine:**
 
@@ -60,7 +60,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
@@ -132,7 +132,7 @@ Carefully review the following steps.
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 

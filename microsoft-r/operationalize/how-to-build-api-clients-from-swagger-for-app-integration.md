@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Integrate analytic web services and authentication into your application - Machine Learning Server | Microsoft Docs"
+title: "Integrate analytic web services and authentication into your application - Machine Learning Server "
 description: "Use Swagger to help integrate your R and Python analytics into your applications."
 keywords: ""
 author: "j-martens"
@@ -347,6 +347,12 @@ Build and use a service consumption client library from swagger in CSharp and Ac
     
    Console.Out.WriteLine(serviceResult.OutputParameters);
    ```
+
+## Example in Java
+
+The following blog article shows how to create a Java client. 
+
+https://blogs.msdn.microsoft.com/mlserver/2017/10/04/enterprise-friendly-java-client-for-microsoft-machine-learning-server/
 
 ## See also
 

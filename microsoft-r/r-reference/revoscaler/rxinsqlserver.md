@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxInSqlServer function (RevoScaleR) | Microsoft Docs" 
+title: "RxInSqlServer function (RevoScaleR) " 
 description: "Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server.  Currently only supported in Windows." 
 keywords: "(RevoScaleR), RxInSqlServer, IO" 
 author: "heidisteen" 

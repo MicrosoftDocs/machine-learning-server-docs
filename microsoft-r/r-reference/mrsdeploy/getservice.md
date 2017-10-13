@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "getService function (mrsdeploy) | Microsoft Docs" 
+title: "getService function (mrsdeploy) " 
 description: " Get a web service for consumption on running on R Server. " 
 keywords: "(mrsdeploy), getService" 
 author: "heidisteen" 

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Consume web services in Python - Machine Learning Server | Microsoft Docs"
+title: "Consume web services in Python - Machine Learning Server "
 description: "Publish and consume Python web services with Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/25/2017"
+ms.date: "10/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 

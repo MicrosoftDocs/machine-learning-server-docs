@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "HTTPS SSL / TLS 1.2 connection security for Machine Learning Server | Microsoft Docs"
+title: "HTTPS SSL / TLS 1.2 connection security for Machine Learning Server "
 description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Machine Learning Server"
 keywords: ""
 author: "j-martens"

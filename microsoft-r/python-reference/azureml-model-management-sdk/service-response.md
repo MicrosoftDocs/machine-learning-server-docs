@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "ServiceResponse,api,artifact,artifacts,console_output,error,output,outputs,raw_outputs: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+title: "ServiceResponse,api,artifact,artifacts,console_output,error,output,outputs,raw_outputs: from azureml-model-management-sdk – Machine Learning Server " 
 description: "" 
 keywords: "" 
 author: "Microsoft" 

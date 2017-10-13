@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "How to operationalize R analytics, web services, and models with Microsoft R Server - Machine Learning Server | Microsoft Docs"
+title: "How to operationalize R analytics, web services, and models with Microsoft R Server - Machine Learning Server "
 description: "What is operationalization in Microsoft R Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "10/12/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -25,20 +25,20 @@ ms.technology:
 
 ---
 
-# Operationalize analytics with R Server
+# Operationalize analytics with  Machine Learning Server
 
-**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x | Microsoft Docs" docs [here](what-is-operationalization.md).)
+**Applies to: Machine Learning Server, Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x" docs [here](what-is-operationalization.md).)
 
-Operationalization refers to the process of publishing R models and code to Microsoft R Server in the form of web services and the consumption of these services within client applications to affect business results.
+Operationalization refers to the process of publishing R and Python models and code to  Machine Learning Server in the form of web services and the consumption of these services within client applications to affect business results.
 
 Today, more businesses are adopting advanced analytics for mission critical decision making in areas such as fraud detection, healthcare, and manufacturing. Typically, data scientists first build the predictive models, and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
 
-Being able to operationalize your analytics is a central capability in R Server. Formerly known as DeployR, this capability for operationalizing your code is fully integrated into R Server. After installing R Server on select platforms, you'll have everything you need to [configure R Server to host R analytics web services and remote R sessions](operationalize/configure-start-for-administrators.md).  For details on which platforms, see [Supported platforms](install/r-server-install-supported-platforms.md).
+Being able to operationalize your analytics is a central capability in  Machine Learning Server. Formerly known as DeployR, this capability for operationalizing your code is fully integrated into  Machine Learning Server. After installing Machine Learning Server on select platforms, you'll have everything you need to [configure Machine Learning Server to host R and Python analytics web services and remote R sessions](operationalize/configure-start-for-administrators.md).  For details on which platforms, see [Supported platforms](install/r-server-install-supported-platforms.md).
 
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics. Microsoft R Server provides the operationalizing tools to deploy R analytics inside web, desktop, mobile, and dashboard applications and backend systems. R Server turns your R scripts into analytics web services, so R code can be easily executed by applications running on a secure server.
+In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics.   Machine Learning Server provides the operationalizing tools to deploy R and Python analytics inside web, desktop, mobile, and dashboard applications and backend systems. Machine Learning Server turns your scripts into analytics web services, so R and Python code can be easily executed by applications running on a secure server.
 
 >[!Important]
->R Server 9.x is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are new and the data stored in the database is structured differently. Check out [this table](whats-new-in-r-server.md#8vs9) to see  the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5, which was available in R Server 8.0.5.
+> Machine Learning Server and R Server 9.x is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are new and the data stored in the database is structured differently. Check out [this table](whats-new-in-r-server.md#8vs9) to see  the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5, which was available in R Server 8.0.5.
 
 ## Solving long development lifecycles
 
@@ -46,51 +46,51 @@ R is a great modeling tool, but **the challenge lies in how to effectively opera
 
 ![Engine](./media/what-is-operationalization/about-traditional-challenge.png) 
 
-Introducing Microsoft R Server, the deployment engine for your advanced R analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
+Introducing  Machine Learning Server, the deployment engine for your advanced R and Python analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
 
 ## What you get
 
-After you [configure R Server to operationalize](operationalize/configure-start-for-administrators.md), you can: 
+After you [configure Machine Learning Server to operationalize](operationalize/configure-start-for-administrators.md), you can: 
 
 ||Key Features|
 |-|-|
-|![1](./media/what-is-operationalization/about-1.png)|● Data scientists turn R analytics into Web services with one line of code<br>● Developers use Swagger-based [REST APIs](operationalize/concept-api.md) that are [easy to consume](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md) <br>&nbsp; &nbsp; with any programming languages including R|
-|![2](./media/what-is-operationalization/about-2.png)|● Model in one platform, then deploy and score web services in another platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](operationalize/configure-start-for-administrators.md) <br>● Model on-premises, then score your data in the cloud, or vice versa <br>● With Microsoft R Server, it is easier/faster to use the power of R in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
+|![1](./media/what-is-operationalization/about-1.png)|● Data scientists turn R and Python analytics into Web services with one line of code<br>● Developers use Swagger-based [REST APIs](operationalize/concept-api.md) that are [easy to consume](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md) <br>&nbsp; &nbsp; with any programming languages including R|
+|![2](./media/what-is-operationalization/about-2.png)|● Model in one platform, then deploy and score web services in another platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](operationalize/configure-start-for-administrators.md) <br>● Model on-premises, then score your data in the cloud, or vice versa <br>● With Machine Learning Server, it is easier/faster to use the power of R and Python in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
 |![3](./media/what-is-operationalization/about-3.png)|● Perform fast scoring: realtime & batch <br>● Scale to a grid for powerful computing with load balancing<br>● Use [diagnostic](operationalize/configure-run-diagnostics.md) and [capacity evaluation](operationalize/configure-evaluate-capacity.md) tools|
 |![4](./media/what-is-operationalization/about-4.png)|● Integrate with [enterprise authentication (AD/LDAP or Azure AD)](operationalize/configure-authentication.md)<br>● Connect securely: [HTTPS with SSL/TLS 1.2](operationalize/configure-https.md)<br>● Enterprise grade high availability|
 
-An operationalized R Server offers the ability to host and bundle R analytics into web services with minimal code changes. R Server accepts interactive commands through [mrsdeploy functions](r-reference/mrsdeploy/mrsdeploy-package.md) for remote execution and web service deployment. Data scientists can use `mrsdeploy` functions  on the command line. Application developers can write code to instrument equivalent operations and integrate web services into their applications using [easy-to-consume Swagger-based APIs](operationalize/concept-api.md) in any programming language.
+An operationalized Machine Learning Server offers the ability to host and bundle R and Python analytics into web services with minimal code changes. Machine Learning Server accepts interactive commands through [mrsdeploy functions](r-reference/mrsdeploy/mrsdeploy-package.md) for remote execution and web service deployment. Data scientists can use `mrsdeploy` functions  on the command line. Application developers can write code to instrument equivalent operations and integrate web services into their applications using [easy-to-consume Swagger-based APIs](operationalize/concept-api.md) in any programming language.
 
 ## Actors in Operationalizing Analytics
 
-Microsoft R Server offers the **best-in-class deployment** experience for the administrator, data scientists, and application developers alike. 
+Machine Learning Server offers the **best-in-class deployment** experience for the administrator, data scientists, and application developers alike. 
 
 ![Personas](./media/what-is-operationalization/about-personas.png)
 
-+ **Administrators** The [easy configuration](operationalize/configure-start-for-administrators.md) of Microsoft R Server for operationalizing analytics includes enterprise grade security and reliability on many platforms. It scales for business-critical applications and offers support for production-grade workloads and high availability. [Diagnostic](operationalize/configure-run-diagnostics.md) and [capacity evaluation](operationalize/configure-evaluate-capacity.md) tools are provided to help you tune and manage. R Server's engine seamlessly integrates with popular enterprise security solutions such as [LDAP/Active Directory and Azure Active Directory](operationalize/configure-authentication.md). Connections can also be secured [SSL/TLS 1.2](operationalize/configure-https.md). 
++ **Administrators** The [easy configuration](operationalize/configure-start-for-administrators.md) of Machine Learning Server for operationalizing analytics includes enterprise grade security and reliability on many platforms. It scales for business-critical applications and offers support for production-grade workloads and high availability. [Diagnostic](operationalize/configure-run-diagnostics.md) and [capacity evaluation](operationalize/configure-evaluate-capacity.md) tools are provided to help you tune and manage. Machine Learning Server's engine seamlessly integrates with popular enterprise security solutions such as [LDAP/Active Directory and Azure Active Directory](operationalize/configure-authentication.md). Connections can also be secured [SSL/TLS 1.2](operationalize/configure-https.md). 
 
-+ **Data Scientists** In a single line of code, data scientists can deploy  models or any arbitrary R code as analytic web services. 
++ **Data Scientists** In a single line of code, data scientists can deploy  models or any arbitrary R and Python code as analytic web services. 
 
 + **Application Developers** Using their favorite development environment, application developers can easily integrate those web services into their apps using Swagger-based [REST APIs](operationalize/concept-api.md) with any programming languages including R. They can perform fast scoring: realtime & batch. 
 
 <br>
 
-<div align=center><iframe width="560" height="315" src="https://www.youtube.com/embed/7i19-s9mxJU" frameborder="0" allowfullscreen></iframe></div>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/7i19-s9mxJU" frameborder="0" allowfullscreen></iframe></div>
 
 ## Configuration
 
-You can configure R Server to operationalize analytics [on a single machine](operationalize/configure-machine-learning-server-one-box.md) or [scale across multiple machines](operationalize/configure-machine-learning-server-enterprise.md) for business-critical applications with multiple nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are then transformed, analyzed, and visualized into an R analytics web service.
+You can configure Machine Learning Server to operationalize analytics [on a single machine](operationalize/configure-machine-learning-server-one-box.md) or [scale across multiple machines](operationalize/configure-machine-learning-server-enterprise.md) for business-critical applications with multiple nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are then transformed, analyzed, and visualized into an R and Python analytics web service.
 
-In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing (session persistence not required). R Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/configure-start-for-administrators.md#security). In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure.
+In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing (session persistence not required). Machine Learning Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/configure-start-for-administrators.md#security). In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure.
 
-The ability to use R Server to operationalize analytics is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported R Server platforms](install/r-server-install-supported-platforms.md).
+The ability to use Machine Learning Server to operationalize analytics is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported Machine Learning Server platforms](install/r-server-install-supported-platforms.md).
 
 ## Next steps
 
-Now that you know about R Server's capability to operationalize your analytics, explore these articles to learn more.
+Now that you know about Machine Learning Server's capability to operationalize your analytics, explore these articles to learn more.
 
-+ [What's new in R Server](whats-new-in-r-server.md)
++ [What's new in Machine Learning Server](whats-new-in-r-server.md)
 + [Administrator Get Started](operationalize/configure-start-for-administrators.md)
 + [Data Scientist Get Started](operationalize/concept-operationalize-deploy-consume.md)
 + [How to integrate web services and authentication into your application](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
-+ [The differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
++ [The differences between DeployR and Machine Learning Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).

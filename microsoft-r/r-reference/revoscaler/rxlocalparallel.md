@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxLocalParallel function (RevoScaleR) | Microsoft Docs" 
+title: "RxLocalParallel function (RevoScaleR) " 
 description: " Creates a local compute context object that uses the doParallel back-end for HPC computations  performed using rxExec.  This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel. " 
 keywords: "(RevoScaleR), RxLocalParallel, IO" 
 author: "heidisteen" 

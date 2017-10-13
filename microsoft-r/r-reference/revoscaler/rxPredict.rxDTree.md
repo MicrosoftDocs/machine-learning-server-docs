@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxPredict.rxDTree function (RevoScaleR) | Microsoft Docs" 
+title: "rxPredict.rxDTree function (RevoScaleR) " 
 description: "     Calculate predicted or fitted values for a data set from an rxDTree object. " 
 keywords: "(RevoScaleR), rxPredict.rxDTree, models, tree, classif, regression, classification" 
 author: "heidisteen" 

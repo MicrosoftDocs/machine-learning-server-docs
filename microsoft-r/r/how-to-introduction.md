@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "How-to deep dives into data analysis and visualization in Machine Learning Server | Microsoft Docs"
+title: "How-to deep dives into data analysis and visualization in Machine Learning Server "
 description: "Documentation for data science, statistics, analysis and visualization using Machine Learning Server R and Python libraries and tools."
 keywords: ""
 author: "HeidiSteen"

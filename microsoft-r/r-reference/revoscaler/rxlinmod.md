@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxLinMod function (RevoScaleR) | Microsoft Docs" 
+title: "rxLinMod function (RevoScaleR) " 
 description: " Fit linear models on small or large data. " 
 keywords: "(RevoScaleR), rxLinMod, models, regression" 
 author: "heidisteen" 

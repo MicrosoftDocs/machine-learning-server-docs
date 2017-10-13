@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Data source objects in RevoScaleR (Machine Learning Server) | Microsoft Docs"
+title: "Data source objects in RevoScaleR (Machine Learning Server) "
 description: "Learn when and how to create data source objects in R code leveraging the RevoScaleR function libraries."
 keywords: ""
 author: "HeidiSteen"

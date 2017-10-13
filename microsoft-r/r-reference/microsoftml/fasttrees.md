@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "fastTrees function (MicrosoftML) | Microsoft Docs" 
+title: "fastTrees function (MicrosoftML) " 
 description: " Creates a list containing the function name and arguments to train a  FastTree model with [rxEnsemble](rxEnsemble.md). " 
 keywords: "(MicrosoftML), fastTrees" 
 author: "heidisteen" 

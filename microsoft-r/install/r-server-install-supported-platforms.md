@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Supported Platforms for Machine Learning Server and Microsoft R Server | Microsoft Docs"
+title: "Supported Platforms for Machine Learning Server and Microsoft R Server "
 description: "A list of the operating systems supported by editions and versions of Machine Learning Server and Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
@@ -35,15 +35,13 @@ R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), w
 
 | SKU | Platforms |
 |-----|-----------|
-| [Machine Learning <br/>Server for Hadoop](machine-learning-server-hadoop-install.md) | Hadoop Distributions: [Cloudera CDH 5.7-5.11](machine-learning-server-cloudera-install.md), Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>You can install Machine Learning Server on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.<br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>&#42;</big></sup>**, Ubuntu 14.04 and 16.04 <br/><br/>Spark 2.0 and 2.4 hrough a Hadoop distribution on CDH, HDP, or MapR.|
-| [Machine Learning <br/>Server for Linux](machine-learning-server-linux-install.md) | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>&#42;</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>&#42;</big></sup>**<br/>Ubuntu 14.04 and 16.04|
-| [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup><big>&#42;</big></sup>**, Windows 8.1 **<sup><big>&#42;</big></sup>**, Windows 10 **<sup><big>&#42;</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
+| [Machine Learning <br/>Server for Hadoop](machine-learning-server-hadoop-install.md) | Hadoop Distributions: [Cloudera CDH 5.7-5.11](machine-learning-server-cloudera-install.md), Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>You can install Machine Learning Server on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.<br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**, Ubuntu 14.04 and 16.04 <br/><br/>Spark 2.0 and 2.4 through a Hadoop distribution on CDH, HDP, or MapR. <br/><br/>Machine Learning Server can be configured on CentOS/RHEL 7.x or Ubuntu to operationalize on edge nodes only.|
+| [Machine Learning <br/>Server for Linux](machine-learning-server-linux-install.md) | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>1</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**<br/>Ubuntu 14.04 and 16.04|
+| [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup><big>1,2</big></sup>**, Windows 8.1 **<sup><big>1,2</big></sup>**, Windows 10 **<sup><big>1,2</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
 
-<sup>&#42;</sup> **.NET Core platform dependency**: The following features require .NET Core and are therefore NOT supported on the marked (*) platforms:
-+ Configuring Machine Learning Server to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) 
-+ The machine learning algorithms  in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) 
+<sup>1</sup> **.NET Core platform dependency**: Certain features like the machine learning algorithms in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and configuring to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) are NOT supported on the marked (1) platforms since they require .NET Core.
 
-  On Hadoop, you can install these features on edge nodes, assuming the native file system is CentOS/RHEL 7.x or Ubuntu.
+<sup>2</sup> Use a **server OS for operationalizing analytics.** We do NOT recommend that you [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) on non-server platforms such as these marked (2). While some might work, only server platforms are supported. See the full list of supported platforms for operationalizing [here](../operationalize/configure-start-for-administrators.md#supported-platforms).
 
 
 ## Microsoft R Server 9.1

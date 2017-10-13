@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxInSqlServer-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxInSqlServer-class function (RevoScaleR) " 
 description: " Creates a compute context for running Microsoft R Server analyses inside Microsoft SQL Server.  Currently only supported in Windows. " 
 keywords: "(RevoScaleR), RxInSqlServer-class, doPreJobValidation,RxInSqlServer-method, initialize,RxInSqlServer-method, show,RxInSqlServer-method, classes" 
 author: "heidisteen" 

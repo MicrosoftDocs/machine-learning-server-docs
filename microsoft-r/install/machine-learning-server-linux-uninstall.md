@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Uninstall Machine Learning Server for Linux | Microsoft Docs"
+title: "Uninstall Machine Learning Server for Linux "
 description: "How to uninstall Machine Learning Server for Linux."
 keywords: ""
 author: "HeidiSteen"

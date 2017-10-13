@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxFileData-class function (RevoScaleR) | Microsoft Docs" 
+title: "RxFileData-class function (RevoScaleR) " 
 description: " File-based data source connection class. " 
 keywords: "(RevoScaleR), RxFileData-class, show,RxFileData-method, classes" 
 author: "heidisteen" 

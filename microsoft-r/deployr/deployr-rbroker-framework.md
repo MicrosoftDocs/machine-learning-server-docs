@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR RBroker Framework Tutorial | DeployR 8.x | Microsoft Docs"
+title: "DeployR RBroker Framework Tutorial - DeployR 8.x "
 description: "The tutorial for DeployR's RBroker framework"
 keywords: "DeployR, tutorial, RBroker, framework"
 author: "j-martens"

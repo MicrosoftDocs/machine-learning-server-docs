@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "RxHadoopMR function (RevoScaleR) | Microsoft Docs" 
+title: "RxHadoopMR function (RevoScaleR) " 
 description: " Creates a compute context for use with a Hadoop cluster.  RxHadoopMR compute context is deprecated. Please consider using RxSpark compute context instead. " 
 keywords: "(RevoScaleR), RxHadoopMR, IO" 
 author: "heidisteen" 

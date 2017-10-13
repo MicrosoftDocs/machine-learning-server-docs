@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxPrivacyControl function (RevoScaleR) | Microsoft Docs" 
+title: "rxPrivacyControl function (RevoScaleR) " 
 description: "     Sets the state to be opted-in or out for anonymous usage collection. " 
 keywords: "(RevoScaleR), rxPrivacyControl, privacy, optin" 
 author: "heidisteen" 

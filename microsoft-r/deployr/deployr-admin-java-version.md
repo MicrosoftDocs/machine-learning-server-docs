@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Update DeployR after Java update | DeployR 8.x | Microsoft Docs"
+title: "Update DeployR after Java update - DeployR 8.x "
 description: "Update DeployR after Java update"
 keywords: "DeployR, JRE, JDK, Java, Update"
 author: "j-martens"

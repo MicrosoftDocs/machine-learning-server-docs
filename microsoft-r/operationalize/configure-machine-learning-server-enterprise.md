@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server to operationalize analytics (Enterprise) - Machine Learning Server | Microsoft Docs"
+title: "Configure Machine Learning Server to operationalize analytics (Enterprise) - Machine Learning Server "
 description: "Configure Operationalization for Machine Learning Server, load balancer, "
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
@@ -41,7 +41,7 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 >[!Important]
 >For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.  
 >
->Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/).
+>Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/one-box-configuration). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/).
 
 ### 1. Configure a database
 
@@ -78,7 +78,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.ComputeNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
@@ -121,14 +121,14 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
-   >[!NOTE]
-   >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
-   >-silentwebnodeinstall mypassword uri1,uri2
-   >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+     >[!NOTE]
+     >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
+     >-silentwebnodeinstall mypassword uri1,uri2
+     >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
 
    1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
   
@@ -142,6 +142,9 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    1. Return the main menu of the utility.
 
+   >[!Important]
+   >When configuring your web node, you might see the following message:  "Web Node was not able to start because it is not configured." Typically, this is not really an issue since the web node is automatically restarted within 5 minutes by an auto-recovery mechanism.
+ 
 1. In the same utility, test the configuration. From the main utility menu, choose **Run Diagnostic Tests** and choose a [diagnostic test](../operationalize/configure-run-diagnostics.md).
 
 1. Exit the utility.
@@ -225,7 +228,7 @@ Carefully review the steps in the following sections.
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.ComputeNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 
@@ -262,7 +265,7 @@ You can now **repeat these steps** for each compute node.
 
    + Linux instructions:  
      ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n/Microsoft.MLServer.WebNode
+     cd /opt/microsoft/mlserver/9.2.1/o16n
      sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
      ```
 

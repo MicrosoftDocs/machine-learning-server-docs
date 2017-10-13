@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "How to install Machine Learning Server | Microsoft Docs"
+title: "How to install Machine Learning Server "
 description: "How to install Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"

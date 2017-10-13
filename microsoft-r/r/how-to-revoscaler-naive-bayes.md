@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Naive Bayes Classifier using RevoScaleR on Machine Learning Server | Microsoft Docs"
+title: "Naive Bayes Classifier using RevoScaleR on Machine Learning Server "
 description: "Naive Bayes Classifier in RevoScaleR."
 keywords: ""
 author: "HeidiSteen"

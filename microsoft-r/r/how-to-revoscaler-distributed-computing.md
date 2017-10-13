@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Distributed and parallel execution for high performance computing (Machine Learning Server) | Microsoft Docs"
+title: "Distributed and parallel execution for high-performance computing (Machine Learning Server) "
 description: "High performance computing (HPC) for distributed computing using SQL Server in-database and Hadoop clusters computing RevoScaleR package for r and revoscalepy for Python."
 keywords: ""
 author: "HeidiSteen"
@@ -25,9 +25,9 @@ ms.technology: "r-server"
 
 # Distributed and parallel computing in Machine Learning Server
 
-*Distributed computing*, sometimes referred to as *high performance computing* or *high performance analysis*, is the breakdown of a complicated computation into pieces that can be performed independently, while maintaining a framework that allows for the results of those independent computations to be pulled together to create the final result. 
+*Distributed computing*, sometimes referred to as *high-performance computing* or *high-performance analysis*, is the breakdown of a complicated computation into component parts, while maintaining a framework that allows for the results of those independent computations to be pulled together to create the final result. 
 
-RevoScaleR and revoscalepy, which are designed to process large data one chunk at a time, can also process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are distributed to the data.
+The RevoScaleR and revoscalepy function libraries, which are designed to process large data one chunk at a time, can also process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are farmed out to nodes in the cluster, executing on the node provided the data.
 
 ## Functions for distributed computations
 
@@ -35,7 +35,7 @@ When executed on a distributed platform like Spark over Hadoop Distributed File 
 
 ## Architecture supporting workload distribution
 
-Distributed computed is conceptually similar to parallel computing, but in Machine Learning Server, it specifically refers to workload distribution across multiple physical servers. Distributed platforms provide the following: a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
+Distributed computing is conceptually similar to parallel computing, but in Machine Learning Server, it specifically refers to workload distribution across multiple physical servers. Distributed platforms provide the following: a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
  
 On a single server with multiple cores, many jobs can run in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the engine of platform capabilities, your script should include an object called a [compute context](how-to-revoscaler-distributed-computing-compute-context.md) that identifies the platform.
 
@@ -64,6 +64,7 @@ In the master node approach, you submit a job by calling a **RevoScaleR** analys
 The second approach is via the **RevoScaleR** function `rxExec`, which allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). The `rxExec` approach exemplifies the traditional high-performance computing approach: when using `rxExec`, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. 
 
 <a name="managing-distributed-data"></a>
+
 ## Managing Distributed Data
 
 In HDFS, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend *composite* .xdf files, which are specialized files designed to be managed by HDFS. For more information, see [Import HDFS > Write a composite XDF](how-to-revoscaler-data-hdfs.md#write-a-composite-xdf).

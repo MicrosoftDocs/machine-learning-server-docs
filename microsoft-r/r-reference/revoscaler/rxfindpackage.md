@@ -1,7 +1,7 @@
 --- 
  
 # required metadata 
-title: "rxFindPackage function (RevoScaleR) | Microsoft Docs" 
+title: "rxFindPackage function (RevoScaleR) " 
 description: " Find the path for one or more packages for a compute context. " 
 keywords: "(RevoScaleR), rxFindPackage, packages, sql, install, uninstall, remove, use" 
 author: "heidisteen" 

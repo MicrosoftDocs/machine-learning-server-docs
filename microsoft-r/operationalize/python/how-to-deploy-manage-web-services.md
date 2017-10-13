@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Publish, deploy, update, and delete Python web services - Machine Learning Server | Microsoft Docs"
+title: "Publish, deploy, update, and delete Python web services - Machine Learning Server "
 description: "Publish, update, and delete Python web services with Microsoft R Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/25/2017"
+ms.date: "10/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -109,7 +109,8 @@ service = client.service('myService')\
 ```
 
 Here is a realtime web service example:
-<a name=realtime-example></a>
+
+<a name="realtime-example"></a>
 
 ```Python
 # Serialize the model using revoscalepy.rx_serialize_model
@@ -178,3 +179,8 @@ If successful, the status  _'True'_  is returned. If it fails, then the executio
 [How to authenticate in Python](how-to-authenticate-in-python.md)
 
 [How to find, get, and consume web services](how-to-consume-web-services.md)
+
+[How to consume web services in Python synchronously (request/response)](how-to-consume-web-services.md)    
+ 
+[How to consume web services in Python asynchronously (batch)](how-to-consume-web-services-async.md)    
+ 
