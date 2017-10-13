@@ -112,7 +112,7 @@ A primary benefit of remote computing is to perform distributed analysis using t
 |-------|---------|
 | Script execution of open source routines | Scripts use a combination of open source and proprietary functions. Only revoscalepy and RevoScaleR functions, with the respective interpreters, are multithreaded and distributable. Open source routines in your script still run locally in a single threaded process. |
 | Single-threaded proprietary functions | Analyses that do not run in parallel include [import and export functions](../r-reference/revoscaler/revoscaler.md#import-export-functions), [data transformation functions](../r-reference/revoscaler/revoscaler.md#data-transform-functions), [graphing functions](../r-reference/revoscaler/revoscaler.md#graphing-functions). |
-| Date location and operational limits | Sort and merge must be local. Import is multithreaded, but not cluster-aware. If you execute rxImport in a Hadoop cluster,  <br/><br/>Data may have to be moved back and forth between the local and remote environments during the course of overall program execution. Except for file copying in Hadoop, RevoScaleR does not include functions for moving data. |
+| Date location and operational limits | Sort and merge must be local. Import is multithreaded, but not cluster-aware. If you execute rxImport in a Hadoop cluster, it runs multithreaded on the current node. <br/><br/>Data may have to be moved back and forth between the local and remote environments during the course of overall program execution. Except for file copying in Hadoop, RevoScaleR does not include functions for moving data. |
 
 
 ## Set a no-wait compute context
@@ -122,8 +122,8 @@ By default, all jobs are "waiting jobs" or "blocking jobs", where control of the
 For large jobs that run longer, execute the job but use a non-waiting compute context to continue working in your local session. In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is used to retrieve results later. 
 
 To set the compute context object to run "no wait" jobs, set the argument *wait* to *FALSE*. 
-R
-```
+
+```R
     myHadoopCluster <- RxSpark(myHadoopCluster, wait=FALSE)
 ```
 
