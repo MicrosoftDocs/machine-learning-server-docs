@@ -59,10 +59,10 @@ The following table shows viable combinations of compute contexts and data sourc
 
 | Data Source | [`RxLocalSeq`](../python-reference/revoscalepy/rxlocalseq.md) | [`RxSpark`](../python-reference/revoscalepy/rxspark.md) | [`RxInSqlServer`](../python-reference/revoscalepy/rxinsqlserver.md) |
 |-------------|------------|------------|--------------|
-| Fixed-Format Text ([`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)`) | X |  X |   | 
+| Fixed-Format Text ([`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)) | X |  X |   | 
 | Delimited Text ([`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)) | X | X |   | 
-| .xdf data files ([`RxXdfData`](../python-reference/revoscalepy/rxxdfdata.md)`) | X | X |  | 
-| Spark data (`[RxHiveData`](../python-reference/revoscalepy/rxhivedata.md))|  X | X |   | 
+| .xdf data files ([`RxXdfData`](../python-reference/revoscalepy/rxxdfdata.md)) | X | X |  | 
+| Spark data ([`RxHiveData`](../python-reference/revoscalepy/rxhivedata.md))|  X | X |   | 
 | Spark data ([`RxParquetData`](../python-reference/revoscalepy/rxparquetdata.md)) |  X | X |  | 
 | Spark data ([`RxOrcData`](../python-reference/revoscalepy/rxorcdata.md)) |  X | X |  | 
 | Spark data ([`RxSparkDataFrame`](../python-reference/revoscalepy/rxsparkdataframe.md))  | X |  X  |    |
@@ -90,12 +90,12 @@ The following table shows viable combinations of compute contexts and data sourc
 
 | Data Source | [`RxLocalSeq`](../r-reference/revoscaler/rxlocalseq.md) | [`RxHadoopMR`](../r-reference/revoscaler/rxhadoopmr.md) | [`RxSpark`](../r-reference/revoscaler/rxspark.md) | [`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md) |
 |-------------|------------|------------|--------------|---------------|
-| Fixed-Format Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)`) | X |  X |   |   |
+| Fixed-Format Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)) | X |  X |   |   |
 | Delimited Text ([`RxTextData`](../r-reference/revoscaler/rxtextdata.md)) | X | X | X  |   |
-| .xdf data files ([`RxXdfData`](../r-reference/revoscaler/rxxdfdata.md)`) | X | X | X  |   |
-| Spark data (`[RxHiveData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
-| Spark data (`[RxParquetData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
-| Spark data (`[RxOrcData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
+| .xdf data files ([`RxXdfData`](../r-reference/revoscaler/rxxdfdata.md)) | X | X | X  |   |
+| Spark data ([`RxHiveData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
+| Spark data ([`RxParquetData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
+| Spark data ([`RxOrcData`](../r-reference/revoscaler/rxsparkdata.md)) |  X | X | X  |   |
 | ODBC data ([`RxOdbcData`](../r-reference/revoscaler/rxodbcdata.md)) | X |   | X  |  X |
 | SQL Server database ([`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md)) |   |   |   | X |
 | SAS data files ([`RxSasData`](../r-reference/revoscaler/rxsasdata.md)) | X |   |   |   |
