@@ -45,7 +45,7 @@ Support for Python was added in Microsoft Machine Learning Server 9.2.1.
 <br>
 <br>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7i19-s9mxJU" frameborder="0" allowfullscreen></iframe>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/7i19-s9mxJU" frameborder="0" allowfullscreen></iframe></div>
 
 ## What you'll need
 
