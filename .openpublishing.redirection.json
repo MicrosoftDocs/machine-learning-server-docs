@@ -58,6 +58,10 @@
      "redirect_url" : "/r-server/index"
   },
     {
+     "source_path" : "STARTMSDN--DO_NOT_ADD_NEW_ENTRIES_BEYOND_THIS_POINT.md",
+     "redirect_url" : "/r-server/index"
+  },
+    { 
       "source_path" : "microsoft-r/deployr-about.md",
       "redirect_url" : "/r-server/deployr/deployr-about"
   },

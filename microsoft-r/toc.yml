@@ -496,7 +496,7 @@
       href: r/how-to-developer-pemar.md
 - name: Reference
   items:
-  - name: Python packagess
+  - name: Python packages
     href: python-reference/introducing-python-package-reference.md
     items:
     - name: azureml-model-management-sdk
