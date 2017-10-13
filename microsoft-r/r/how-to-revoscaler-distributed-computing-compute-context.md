@@ -41,8 +41,10 @@ The following table is a recap of platform and data source requirements for each
 
 | Library | Platforms & Data Sources |
 |---------|-------------------------|
-| RevoScaleR | Hadoop (Spark or MapReduce): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables,  Text, XDF, ODBC |
-| revoscalepy | Hadoop (Spark): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, Text, XDF, ODBC |
+| RevoScaleR | Hadoop (Spark or MapReduce): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
+| revoscalepy | Hadoop (Spark): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
+
+<sup>(1)</sup> You can load text or .xdf files locally, but be aware that code and data is run through SQL Server, which results in [implicit data type conversions](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#r-and-sql-data-types).
 
 > [!NOTE]
 > RevoScaleR is available in both Machine Learning Server and R Client. You can develop script in R Client for execution on the server. However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if datasets are large and come with dependencies on data chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Machine Learning Server instance that provides data chunking.
