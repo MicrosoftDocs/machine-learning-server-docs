@@ -34,14 +34,14 @@ The primary reason for shifting compute context is to eliminate data transfer ov
 | Local | Local is the default, supported by all products (including R Client), on all platforms. Script execution runs on local interpreters and uses local machine resources. |
 | Remote | Remote is a server-only feature, available for selected data platforms: Spark over HDFS, Hadoop MapReduce, SQL Server. The remote system must have Machine Learning Server installed on it. 
 
-Many analytical functions can execute in parallel. On distributed platforms like Hadoop, **revoscalepy** and **RevoScaleR** can distribute workload execution to all available cores and nodes. This capability translates into high-performance computing for predictive and statistical analysis of big data, enabled when you set a remote compute context to your Hadoop cluster.
+Many analytical functions can execute in parallel. On a multi-core computer, a number of **revoscalepy** and **RevoScaleR** functions run multi-threaded. On distributed platforms like Hadoop, **revoscalepy** and **RevoScaleR** can distribute workload execution to all available cores and nodes. This capability translates into high-performance computing for predictive and statistical analysis of big data, enabled when you set a remote compute context to your Hadoop cluster.
 
 > [!Tip]
 > If your objective is simply to use two or more Machine Learning Server instances interchangeably, or to shift execution from R Client to a more powerful Machine Learning Server on Windows or Linux, consider [remote execution](how-to-execute-code-remotely.md). Remote execution is data platform and library agnostic. From a local R session, you can switch to a remote R session and call functions from any library, including base R and third-party vendors. 
 
 ## revoscalepy compute context and data sources
 
-Support for data sources can vary depending on the compute context.
+Remote computing is available for specific data sources on selected platforms. The following tables document the supported combinations.
 
 ### Compute contexts
 
@@ -50,12 +50,12 @@ Context name | Alternative name | Usage |
 | [RxLocalSeq](../python-reference/revoscalepy/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. |
 | [RxInSqlServer](../python-reference/revoscalepy/rxinsqlserver.md)   | sqlserver | Use for a remote compute context where the target server is a single database node (SQL Server 2017 Machine Learning with Python support). Computation is parallel, but not distributed.|
 | [RxSpark](../python-reference/revoscalepy/rxsparkdata.md)         | spark     | Use for a remote compute context where the target is a Spark 2.0-2.4 cluster over Hadoop Distributed File System (HDFS). |
-| Spark compute context with PySpark connection ([rx-get-pyspark-connection](../python-reference/revoscalepy/rx-get-pyspark-connection.md))   | spark     | Use for a remote compute context where the target is a Spark 2.0-2.4 cluster over Hadoop Distributed File System (HDFS). |
+| [Spark compute context with PySpark connection](../python-reference/revoscalepy/rx-get-pyspark-connection.md)   | spark     | Use this approach when the script makes PySpark calls in addition to revoscalepy. |
 
 
 ### Data sources per compute context
 
-The following table shows viable combinations of compute contexts and data sources (x indicates available):
+Given a compute context, the following table shows which data sources are available (x indicates available):
 
 | Data Source | [`RxLocalSeq`](../python-reference/revoscalepy/rxlocalseq.md) | [`RxSpark`](../python-reference/revoscalepy/rxspark.md) | [`RxInSqlServer`](../python-reference/revoscalepy/rxinsqlserver.md) |
 |-------------|------------|------------|--------------|
@@ -71,7 +71,7 @@ The following table shows viable combinations of compute contexts and data sourc
 
 ## RevoScaleR compute contexts and data sources
 
-Support for data sources can vary depending on the compute context.
+Remote computing is available for specific data sources on selected platforms. The following tables document the supported combinations.
 
 ### Compute contexts
 
@@ -86,7 +86,7 @@ Context name | Alternative name | Usage |
 
 ### Data sources per compute context
 
-The following table shows viable combinations of compute contexts and data sources (x indicates available):
+Given a compute context, the following table shows which data sources are available (x indicates available):
 
 | Data Source | [`RxLocalSeq`](../r-reference/revoscaler/rxlocalseq.md) | [`RxHadoopMR`](../r-reference/revoscaler/rxhadoopmr.md) | [`RxSpark`](../r-reference/revoscaler/rxspark.md) | [`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md) |
 |-------------|------------|------------|--------------|---------------|

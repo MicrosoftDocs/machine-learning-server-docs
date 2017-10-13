@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 In Machine Learning Server, every session that loads a function library has a [compute context](concept-what-is-compute-context.md). The default is local, available on all platforms. No action is required to use a local compute context.
 
-You can switch to a remote compute context to shift script execution to a different server or platform. For example, you might want to bring calculations and analysis to where the data resides on a database platform, such as SQL Server, or on the Hadoop Distributed File System (HDFS) using Spark or MapReduce as the processing layer.
+You can switch to a remote compute context to shift script execution to a different server or platform. For example, you might want to bring calculations and analysis to where the data resides on a database platform, such as SQL Server, or Hadoop Distributed File System (HDFS) using Spark or MapReduce as the processing layer.
 
 You can create multiple compute context objects: just use them one at a time. Often, functions operate identically in local and remote context. If script execution is successful locally, you can generally expect the same results on the remote server, subject to these [limitations](#limits-on-context-shift). 
 
@@ -73,13 +73,17 @@ This section uses examples to illustrate the syntax for setting compute context.
 
 The compute context used to distribute computations on a Hadoop Spark 2-2.4 cluster. For more information, see the [How to use RevoScaleR with Spark](how-to-revoscaler-spark.md).
 
+```R
     myHadoopCluster <- RxSpark(myHadoopCluster)
+```
 
 ### For MapReduce
 
 The compute context used to distribute computations on a Hadoop MapReduce cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [How to use RevoScaleR with Hadoop](how-to-revoscaler-hadoop.md)
 
+```R
     myHadoopCluster <- RxHadoopMR(myHadoopCluster)
+```
 
 ### For SQL Server (in-database)
 
@@ -87,7 +91,7 @@ The `RxInSqlServer` compute context is a special case in that it runs computatio
 
 For setting up a remote compute context to SQL Server, we provide an example below, but point you to [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation for additional instructions.
 
-~~~~
+```R
 # Requires RevoScaleR and SQL Server on same machine
 connectionString <- "Server=(placeholder-server-name);Database=RevoAirlineDB;Trusted_Connection=true"
 
@@ -96,7 +100,7 @@ sqlQuery <- "WITH nb AS (SELECT 0 AS n UNION ALL SELECT n+1 FROM nb where n < 9)
 myServer <- RxComputeContext("RxInSqlServer", sqlQuery = sqlQuery, connectionString = connectionString)   
                    
 rxSetComputeContext(computeContext = myServer)
-~~~~
+```
 
 <a name="limits-on-context-shift"></a>
 
@@ -118,8 +122,10 @@ By default, all jobs are "waiting jobs" or "blocking jobs", where control of the
 For large jobs that run longer, execute the job but use a non-waiting compute context to continue working in your local session. In this case, you can specify the compute context to be *non-waiting* (or *non-blocking*), in which case an object containing information about the pending job is used to retrieve results later. 
 
 To set the compute context object to run "no wait" jobs, set the argument *wait* to *FALSE*. 
-
+R
+```
     myHadoopCluster <- RxSpark(myHadoopCluster, wait=FALSE)
+```
 
 Another use for non-waiting compute contexts is for massively parallel jobs involving multiple clusters. You can define a non-waiting compute context on each cluster, launch all your jobs, then aggregate the results from all the jobs once they complete.
 
@@ -129,7 +135,9 @@ For more information, see [Non-Waiting Jobs](how-to-revoscaler-distributed-compu
 
 If you want console output from each of the cluster R processes printed to your user console, specify *consoleOutput=TRUE* in your compute context.
 
+```R
     myHadoopCluster <- RxSpark(myHadoopCluster, consoleOutput=TRUE)
+```
 
 ## Update a compute context
 
@@ -137,11 +145,15 @@ Once you have a compute context object, modify it using the same function that o
 
 For example, to change only the `suppressWarning` parameter of a Spark compute context *myHadoopCluster* from TRUE to FALSE:
 
+```R
     myHadoopCluster <- RxSpark(myHadoopCluster, suppressWarning=FALSE)
+```
 
 To list parameters and default values, use the `args` function with the name of the compute context constructor, for example:
 
+```R
 	args(RxSpark)
+```
 
 which gives the following output:
 
@@ -162,24 +174,32 @@ which gives the following output:
 
 You can temporarily modify an existing compute context and set the modified context as the current compute context by calling `rxSetComputeContext`. For example, if you have defined *myHadoopCluster* to be a waiting cluster and want to set the current compute context to be non-waiting, you can call `rxSetComputeContext` as follows:
 
+```R
 	rxSetComputeContext(myHadoopCluster, wait=FALSE)
+```
 
 The `rxSetComputeContext` function returns the previous compute context, so it can be used in constructions like the following:
 
+```R
     oldContext <- rxSetComputeContext(myCluster, wait=FALSE)
     …
     # do some computing with a non-waiting compute context
     …
     # restore previous compute context
     rxSetComputeContext(oldContext)
+```
 
 You can specify the compute context by name, as we have done here, but you can also specify it by calling a compute context constructor in the call to `rxSetComputeContext`. For example, to return to the local sequential compute context after using a cluster context, you can call `rxSetComputeContext` as follows:
 
+```R
 	rxSetComputeContext(RxLocalSeq())
+```
 
 In this case, you can also use the descriptive string "local" to do the same thing:
 
+```R
 	rxSetComputeContext("local")
+```
 
 ## Create additional compute contexts
 
@@ -187,7 +207,9 @@ Given a set of distributed computing resources, you might want to create multipl
 
 Because the initial specification of a compute context can be somewhat tedious, it is usually simplest to create additional compute contexts by modifying an existing compute context, in precisely the same way as we updated a compute context in the previous section. For example, suppose instead of simply modifying our existing compute context from *wait=TRUE* to *wait=FALSE*, we create a new compute context for non-waiting jobs:
 
+```R
 	myNoWaitCluster <- RxSpark(myHadoopCluster, wait=FALSE)
+```
 
 > [!TIP]
 > Store commonly used compute context objects in an R script, or add their definitions to an R startup file.
