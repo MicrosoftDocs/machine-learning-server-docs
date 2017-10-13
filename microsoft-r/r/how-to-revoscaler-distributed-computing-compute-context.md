@@ -41,8 +41,8 @@ The following table is a recap of platform and data source requirements for each
 
 | Library | Platforms & Data Sources |
 |---------|-------------------------|
-| RevoScaleR | Hadoop (Spark or MapReduce): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
-| revoscalepy | Hadoop (Spark): Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
+| RevoScaleR | Spark 2-2.4 over HDFS, Hadoop MapReduce: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
+| revoscalepy | Spark 2-2.4 over HDFS: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server 2017 Machine Learning with Python: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
 
 <sup>(1)</sup> You can load text or .xdf files locally, but be aware that code and data is run through SQL Server, which results in [implicit data type conversions](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#r-and-sql-data-types).
 
