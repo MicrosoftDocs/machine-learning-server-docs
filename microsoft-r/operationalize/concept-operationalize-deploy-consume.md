@@ -41,12 +41,17 @@ Once deployed, the analytic web service is available to a broader audience withi
 Support for Python was added in Microsoft Machine Learning Server 9.2.1.
 
 ![Operationalization Engine](./media/concept-operationalize-deploy-consume/data-scientist-easy-deploy.png) 
+<br>
+
+<div align=center><iframe width="560" height="315" src="https://www.youtube.com/embed/7i19-s9mxJU" frameborder="0" allowfullscreen></iframe></div>
 
 ## What you'll need
 
 You'll develop your R analytics locally with R Client, deploy them to Microsoft R Server as web services, and then consume or share them.
 
-**On the local client**, you'll need to [install R Client](../r-client-get-started.md) first.  You'll also need to [configure the R IDE](https://msdn.microsoft.com/en-us/microsoft-r/r-client-get-started#step-2-configure-your-ide) of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.  After you have this set up, you can develop your R analytics in your local R IDE using the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) that was installed with Microsoft R Client (and R Server). 
+**On the local client**, you'll need to install
++ [Microsoft R Client](../r-client-get-started.md) first.  You'll also need to [configure the R IDE](https://msdn.microsoft.com/en-us/microsoft-r/r-client-get-started#step-2-configure-your-ide) of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.  After you have this set up, you can develop your R analytics in your local R IDE using the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) that was installed with Microsoft R Client (and R Server). 
++ [Local Python interpreter](../install/python-libraries-interpreter)
 
 **On the remote server**, you'll need the connection details and access to an instance of [Microsoft R Server](../what-is-microsoft-r-server.md) with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization). After R Server is configured for operationalization, you'll be able to [connect to it from your local machine](how-to-connect-log-in-with-mrsdeploy.md), deploy your models and other analytics to Microsoft R Server as web services, and finally consume or share those services. Please contact your administrator for any missing connection details.
 
@@ -69,11 +74,11 @@ This section provides a quick summary of useful links for data scientists operat
 
 + For Python users:
     + [Quickstart: Deploying an Python model as a web service](python/quickstart-deploy-python-web-service.md)
-    + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
-    + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
-    + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
-    + [How to consume web services in Python synchronously (request/response)](how-to-consume-web-services.md)    
-    + [How to consume web services in Python asynchronously (batch)](how-to-consume-web-services-async.md)    
+    + [Functions in azureml-model-management-sdk package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
+    + [Connecting to Machine Learning Server in Python](python/how-to-authenticate-in-python.md)    
+    + [Working with web services in Python](python/how-to-deploy-manage-web-services.md)    
+    + [How to consume web services in Python synchronously (request/response)](python/how-to-consume-web-services.md)    
+    + [How to consume web services in Python asynchronously (batch)](python/how-to-consume-web-services-async.md)    
  
 + [What's new in Machine Learning Server](../whats-new-in-r-server.md)
 
