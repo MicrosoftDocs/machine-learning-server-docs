@@ -66,7 +66,7 @@ For realtime services, you do **not** need to specify:
 
 **See realtime web service deployment examples: [R](how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](python/how-to-deploy-manage-web-services.md#realtime-example)**
 
-<a name=r></a>
+<a name="r"></a>
 
 ### Supported R functions for realtime
 
@@ -85,7 +85,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
   
 1. The columns must be of the same data type as the training data. Type casting is not possible.
 
-<a name=python></a>
+<a name="python"></a>
 
 ### Supported Python functions for realtime
 
@@ -132,7 +132,7 @@ Web services can be consumed using one of these approaches:
 
 
 
-<a name=permissions></a>
+<a name="permissions"></a>
 
 ## Permissions
 

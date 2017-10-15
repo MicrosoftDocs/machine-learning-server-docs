@@ -1692,7 +1692,7 @@ The following code snippets extend the sample demonstrated in the [client applic
         }
     }
 
-<a name=gridprimer></a>
+<a name="gridprimer"></a>
 
 ## Grid Resource Management
 

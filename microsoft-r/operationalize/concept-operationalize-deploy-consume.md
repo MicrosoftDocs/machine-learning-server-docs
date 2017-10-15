@@ -42,8 +42,7 @@ Support for Python was added in Microsoft Machine Learning Server 9.2.1.
 
 ![Operationalization Engine](./media/concept-operationalize-deploy-consume/data-scientist-easy-deploy.png) 
 
-<br>
-<br>
+## Video introduction
 
 <div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/7i19-s9mxJU" frameborder="0" allowfullscreen></iframe></div>
 
@@ -57,7 +56,13 @@ You'll develop your R and Python analytics locally, deploy them to Machine Learn
 
 **On the remote server**, you'll need the connection details and access to an instance of [Machine Learning Server](../what-is-microsoft-r-server.md) with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization). After Machine Learning Server is configured for operationalization, you'll be able to [connect to it from your local machine](how-to-connect-log-in-with-mrsdeploy.md), deploy your models and other analytics to Machine Learning Server as web services, and finally consume or share those services. Please contact your administrator for any missing connection details.
 
-## More resources
+## Configuring to operationalize
+
+To benefit from Machine Learning Server’s web service deployment and remote execution features, you must first configure the server after installation to act as a deployment server and host analytic web services. 
+
+Learn how to [configure Machine Learning Server to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization).
+
+## Learn more
 
 This section provides a quick summary of useful links for data scientists operationalizing R and Python analytics with Machine Learning Server.
 
