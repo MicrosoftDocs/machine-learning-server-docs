@@ -25,72 +25,73 @@ ms.technology:
 
 ---
 
-# Operationalize analytics with  Machine Learning Server
+# Operationalize analytics with Machine Learning Server
 
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Find "DeployR 8.x" docs [here](what-is-operationalization.md).)
 
-Operationalization refers to the process of publishing R and Python models and code to  Machine Learning Server in the form of web services and the consumption of these services within client applications to affect business results.
+**Operationalization** refers to the process of deploying R and Python models and code to Machine Learning Server in the form of [web services](concept-what-are-web-services.md) and the subsequent consumption of these services within client applications to affect business results.
 
-Today, more businesses are adopting advanced analytics for mission critical decision making in areas such as fraud detection, healthcare, and manufacturing. Typically, data scientists first build the predictive models, and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
+Today, more businesses are adopting advanced analytics for mission critical decision making. Typically, data scientists first build the predictive models, and only then can businesses deploy those models in a production environment and consume them for predictive actions. 
 
-Being able to operationalize your analytics is a central capability in  Machine Learning Server. Formerly known as DeployR, this capability for operationalizing your code is fully integrated into  Machine Learning Server. After installing Machine Learning Server on select platforms, you'll have everything you need to [configure Machine Learning Server to host R and Python analytics web services and remote R sessions](operationalize/configure-start-for-administrators.md).  For details on which platforms, see [Supported platforms](install/r-server-install-supported-platforms.md).
+Being able to operationalize your analytics is a central capability in Machine Learning Server. After installing Machine Learning Server on select platforms, you'll have everything you need to [configure the server to securely host R and Python analytics web services](configure-start-for-administrators.md#configure-server-for-operationalization).  For details on which platforms, see [Supported platforms](configure-start-for-administrators.md#supported-platforms).
 
-In many enterprises, the final step is to deploy an interface to the underlying analysis to a broader audience within the organization who can then, in turn, consume the analytics.   Machine Learning Server provides the operationalizing tools to deploy R and Python analytics inside web, desktop, mobile, and dashboard applications and backend systems. Machine Learning Server turns your scripts into analytics web services, so R and Python code can be easily executed by applications running on a secure server.
+Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) or Machine Learning Server in their preferred IDE and favorite version control tools to build scripts and models. Using the mrsdeploy R package and/or the azureml-model-management-sdk Python package that ships the products, the data scientist can develop, test, and ultimately deploy these R and Python analytics as web services in their production environment. 
 
->[!Important]
-> Machine Learning Server and R Server 9.x is **not backwards compatible** with DeployR 8.x. There is no migration path as the APIs are new and the data stored in the database is structured differently. Check out [this table](whats-new-in-r-server.md#8vs9) to see  the main differences between Microsoft R Server 9.x configured to operationalize analytics and the add-on DeployR 8.0.5, which was available in R Server 8.0.5.
+Once deployed, the analytic web service is available to a broader audience within the organization who can then, in turn, consume the analytics. Machine Learning Server provides the operationalizing tools to deploy R and Python analytics inside web, desktop, mobile, and dashboard applications and backend systems. Machine Learning Server turns your scripts into analytics web services, so R and Python code can be easily executed by applications running on a secure server.
 
-## Solving long development lifecycles
+Support for Python was added in Microsoft Machine Learning Server 9.2.1.
 
-R is a great modeling tool, but **the challenge lies in how to effectively operationalize R**. Traditionally, effectively operationalizing R has not been an easy process (slow innovation and error-prone) and it can take months to rewrite these models before you can use them. 
+![Operationalization Engine](./media/concept-operationalize-deploy-consume/data-scientist-easy-deploy.png) 
 
-![Engine](./media/what-is-operationalization/about-traditional-challenge.png) 
-
-Introducing  Machine Learning Server, the deployment engine for your advanced R and Python analytics. Regardless of the source, language or method, you can simplify, deploy, and realize the promise and power of advanced analytics.
-
-## What you get
-
-After you [configure Machine Learning Server to operationalize](operationalize/configure-start-for-administrators.md), you can: 
-
-||Key Features|
-|-|-|
-|![1](./media/what-is-operationalization/about-1.png)|● Data scientists turn R and Python analytics into Web services with one line of code<br>● Developers use Swagger-based [REST APIs](operationalize/concept-api.md) that are [easy to consume](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md) <br>&nbsp; &nbsp; with any programming languages including R|
-|![2](./media/what-is-operationalization/about-2.png)|● Model in one platform, then deploy and score web services in another platform:<br>&nbsp; &nbsp; [Windows, SQL, Linux/Hadoop](operationalize/configure-start-for-administrators.md) <br>● Model on-premises, then score your data in the cloud, or vice versa <br>● With Machine Learning Server, it is easier/faster to use the power of R and Python in production<br>&nbsp; &nbsp; to unlock insights hidden in your data |
-|![3](./media/what-is-operationalization/about-3.png)|● Perform fast scoring: realtime & batch <br>● Scale to a grid for powerful computing with load balancing<br>● Use [diagnostic](operationalize/configure-run-diagnostics.md) and [capacity evaluation](operationalize/configure-evaluate-capacity.md) tools|
-|![4](./media/what-is-operationalization/about-4.png)|● Integrate with [enterprise authentication (AD/LDAP or Azure AD)](operationalize/configure-authentication.md)<br>● Connect securely: [HTTPS with SSL/TLS 1.2](operationalize/configure-https.md)<br>● Enterprise grade high availability|
-
-An operationalized Machine Learning Server offers the ability to host and bundle R and Python analytics into web services with minimal code changes. Machine Learning Server accepts interactive commands through [mrsdeploy functions](r-reference/mrsdeploy/mrsdeploy-package.md) for remote execution and web service deployment. Data scientists can use `mrsdeploy` functions  on the command line. Application developers can write code to instrument equivalent operations and integrate web services into their applications using [easy-to-consume Swagger-based APIs](operationalize/concept-api.md) in any programming language.
-
-## Actors in Operationalizing Analytics
-
-Machine Learning Server offers the **best-in-class deployment** experience for the administrator, data scientists, and application developers alike. 
-
-![Personas](./media/what-is-operationalization/about-personas.png)
-
-+ **Administrators** The [easy configuration](operationalize/configure-start-for-administrators.md) of Machine Learning Server for operationalizing analytics includes enterprise grade security and reliability on many platforms. It scales for business-critical applications and offers support for production-grade workloads and high availability. [Diagnostic](operationalize/configure-run-diagnostics.md) and [capacity evaluation](operationalize/configure-evaluate-capacity.md) tools are provided to help you tune and manage. Machine Learning Server's engine seamlessly integrates with popular enterprise security solutions such as [LDAP/Active Directory and Azure Active Directory](operationalize/configure-authentication.md). Connections can also be secured [SSL/TLS 1.2](operationalize/configure-https.md). 
-
-+ **Data Scientists** In a single line of code, data scientists can deploy  models or any arbitrary R and Python code as analytic web services. 
-
-+ **Application Developers** Using their favorite development environment, application developers can easily integrate those web services into their apps using Swagger-based [REST APIs](operationalize/concept-api.md) with any programming languages including R. They can perform fast scoring: realtime & batch. 
-
-<br>
+## Video introduction
 
 <div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/7i19-s9mxJU" frameborder="0" allowfullscreen></iframe></div>
 
-## Configuration
+## What you'll need
 
-You can configure Machine Learning Server to operationalize analytics [on a single machine](operationalize/configure-machine-learning-server-one-box.md) or [scale across multiple machines](operationalize/configure-machine-learning-server-enterprise.md) for business-critical applications with multiple nodes on clustered servers for load balancing. This gives you the ability to pipeline data streams that are then transformed, analyzed, and visualized into an R and Python analytics web service.
+You'll develop your R and Python analytics locally, deploy them to Machine Learning Server as web services, and then consume or share them.
 
-In a Windows environment, multi-server topologies are supported through Windows clustering methodologies. Compute nodes can be made highly available using Windows server failover clusters in Active-Active mode. Web nodes can be scaled out using Windows network load balancing (session persistence not required). Machine Learning Server also supports production-grade workloads and seamless integration with popular [enterprise security solutions](operationalize/configure-start-for-administrators.md#security). In this context, clustered topologies are composed of standalone servers, not nodes in Hadoop or cloud services in Azure.
+**On the local client**, you'll need to install:
++ [Microsoft R Client](../r-client-get-started.md) if working with R code.  You'll also need to [configure the R IDE](https://msdn.microsoft.com/en-us/microsoft-r/r-client-get-started#step-2-configure-your-ide) of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.  After you have this set up, you can develop your R analytics in your local R IDE using the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) that was installed with Microsoft R Client (and R Server). 
++ [Local Python interpreter](../install/python-libraries-interpreter.md) if working with Python code.  After you have this set up, you can develop your Python analytics in your local interpreter using the functions in the [azureml-model-management-sdk Python package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
 
-The ability to use Machine Learning Server to operationalize analytics is available in many, but not all, of the supported platforms. For the most up-to-date list, see [supported Machine Learning Server platforms](install/r-server-install-supported-platforms.md).
+**On the remote server**, you'll need the connection details and access to an instance of [Machine Learning Server](../what-is-microsoft-r-server.md) with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization). After Machine Learning Server is configured for operationalization, you'll be able to [connect to it from your local machine](how-to-connect-log-in-with-mrsdeploy.md), deploy your models and other analytics to Machine Learning Server as web services, and finally consume or share those services. Please contact your administrator for any missing connection details.
 
-## Next steps
+## Configuring to operationalize
 
-Now that you know about Machine Learning Server's capability to operationalize your analytics, explore these articles to learn more.
+To benefit from Machine Learning Server’s web service deployment and remote execution features, you must first configure the server after installation to act as a deployment server and host analytic web services. 
 
-+ [What's new in Machine Learning Server](whats-new-in-r-server.md)
-+ [Administrator Get Started](operationalize/configure-start-for-administrators.md)
-+ [Data Scientist Get Started](operationalize/concept-operationalize-deploy-consume.md)
-+ [How to integrate web services and authentication into your application](operationalize/how-to-build-api-clients-from-swagger-for-app-integration.md)
-+ [The differences between DeployR and Machine Learning Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
+Learn how to [configure Machine Learning Server to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization).
+
+## Learn more
+
+This section provides a quick summary of useful links for data scientists operationalizing R and Python analytics with Machine Learning Server.
+
+**Key Documents**
++ [What are web services?](concept-what-are-web-services.md)
+
++ For R users:
+    + [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
+    + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)
+    + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
+    + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
+    + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
+    + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)
+
++ For Python users:
+    + [Quickstart: Deploying an Python model as a web service](python/quickstart-deploy-python-web-service.md)
+    + [Functions in azureml-model-management-sdk package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
+    + [Connecting to Machine Learning Server in Python](python/how-to-authenticate-in-python.md)    
+    + [Working with web services in Python](python/how-to-deploy-manage-web-services.md)    
+    + [How to consume web services in Python synchronously (request/response)](python/how-to-consume-web-services.md)    
+    + [How to consume web services in Python asynchronously (batch)](python/how-to-consume-web-services-async.md)    
+ 
++ [What's new in Machine Learning Server](../whats-new-in-r-server.md)
+
++ [The differences between DeployR and R Server 9.x Operationalization](https://blogs.msdn.microsoft.com/rserver/2017/05/11/1885/).
+
++ [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
+
++ [Get started for Administrators](configure-start-for-administrators.md)
+
++ [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
