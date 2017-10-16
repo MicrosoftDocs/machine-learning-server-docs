@@ -73,7 +73,7 @@ A [enterprise configuration](../operationalize/configure-machine-learning-server
 
 ![Enterprise Configuration](../operationalize/media/configure-machine-learning-server-enterprise/configure-enterprise.png)
 
-<a name=supported-platforms></a>
+<a name="supported-platforms"></a>
 
 ### Supported platforms
 
