@@ -41,7 +41,7 @@ Once deployed, the analytic web service is available to a broader audience withi
 
 Support for Python was added in Microsoft Machine Learning Server 9.2.1.
 
-![Operationalization Engine](/operationalize/media/concept-operationalize-deploy-consume/data-scientist-easy-deploy.png) 
+![Operationalization Engine](/media/what-is-operationalization/data-scientist-easy-deploy.png) 
 
 ## Video introduction
 
