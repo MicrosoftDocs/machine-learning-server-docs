@@ -41,7 +41,7 @@ Additionally, through its operationalization feature, you deploy your models to 
 | R support | [R packages](r-reference/introducing-r-server-r-package-reference.md) for solutions written in R, with an open source distribution of R and run-time infrastructure for script execution. |
 | Python support | [Python modules](python-reference/introducing-python-package-reference.md) for solutions written in Python,  with an open source distribution of Python and run-time infrastructure for script execution.  
 | [Pre-trained models](install/microsoftml-install-pretrained-models.md) | For visual analysis and text sentiment analysis, ready to score data you provide. |
-| [Deploy and consume](operationalize/concept-operationalize-deploy-consume.md) | Operationalize your server and deploy solutions as a web service. |
+| [Deploy and consume](what-is-operationalization.md) | Operationalize your server and deploy solutions as a web service. |
 | [Remote execution](r/how-to-execute-code-remotely.md) | Start remote sessions on a Machine Learning Server on your network from your client workstation. |
 | Scale-out on premises | Clustered topologies for [Spark and Hadoop MapReduce](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators.md) built into Machine Learning Server. |
 

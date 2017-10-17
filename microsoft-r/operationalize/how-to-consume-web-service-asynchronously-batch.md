@@ -47,8 +47,6 @@ Use these following [public API functions](#public-fx-batch)  to define, start, 
 
 Use this sample code to follow along with the workflow described in greater detail in the following sections. 
 
-Here, we publish the same web service that was published [in this tutorial](concept-operationalize-deploy-consume.md) article. Then, we consume that web service asynchronously. 
-
 >[!IMPORTANT]
 >Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to Machine Learning Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
@@ -515,7 +513,8 @@ for(i in seq(batchRes$totalItemCount)) {
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to Machine Learning Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
-+ [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
++ [What is operationalization?](../what-is-operationalization.md)
++ [What are web services?](../operationalize/concept-what-are-web-services.md)
 + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
