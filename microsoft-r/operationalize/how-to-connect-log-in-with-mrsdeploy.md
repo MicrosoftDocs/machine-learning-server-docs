@@ -343,9 +343,9 @@ To terminate the remote session from the local R session, type ['remoteLogout()'
 
 
 ## See also
-
++ [What is operationalization?](../what-is-operationalization.md)
++ [What are web services?](concept-what-are-web-services.md)
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
-+ [Data scientist's get started guide](concept-operationalize-deploy-consume.md)
 + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
 + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)

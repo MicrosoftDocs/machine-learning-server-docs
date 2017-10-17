@@ -819,12 +819,11 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 ```
 
 ## See also
-
++ [What is operationalization?](../what-is-operationalization.md)
++ [What are web services?](concept-what-are-web-services.md)
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
 + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md).
-+ [What are web services](concept-operationalize-deploy-consume.md)
-+ [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
