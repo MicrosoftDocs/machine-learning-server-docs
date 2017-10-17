@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Hadoop
 
-On a Hadoop cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes only.
+On a Hadoop cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../what-is-operationalization.md) on edge nodes only.
 
 Machine Learning Server is engineered for the following architecture:
 
@@ -74,7 +74,7 @@ After installation completes, software can be found at the following paths:
 
 Start here. Machine Learning Server is required on the edge node. You should run full setup, following the installation commands for the Linux operating system used by your cluster: [Linux install > How to install](machine-learning-server-linux-install.md#how-to-install).
 
-Full setup gives you core components for both R and Python, machine learning algorithms and pretrained models, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services, which allows you to invoke and access your solution programmatically, through a REST API.
+Full setup gives you core components for both R and Python, machine learning algorithms and pretrained models, and [operationalization](../what-is-operationalization.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services, which allows you to invoke and access your solution programmatically, through a REST API.
 
 > [!Note]
 > You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.

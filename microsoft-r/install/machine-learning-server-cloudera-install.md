@@ -35,7 +35,7 @@ Cloudera offers a parcel installation methodology for adding services and featur
 
 You can create a parcel generation script on any [supported version of Linux](r-server-install-supported-platforms.md), but execution requires CentOS or RHEL 7.0 as the native file system. 
 
-The parcel generator excludes any R Server features that it cannot install, such as [operationalization](../operationalize/concept-operationalize-deploy-consume.md). 
+The parcel generator excludes any R Server features that it cannot install, such as [operationalization](../what-is-operationalization.md). 
 
 If parcel installation is too restrictive, follow the instructions for a generic [Hadoop installation](machine-learning-server-hadoop-install.md) instead.
 
@@ -79,7 +79,7 @@ The script downloads Microsoft R Open and builds a parcel by extracting informat
 
 You are prompted to read and accept license agreements. 
   
-You are also asked to specify the underlying operating system. If the platform supports it, the parcel generator adds installation instructions for features having a dependency on .NET Core, such as Microsoft machine learning and [operationalization features](../operationalize/concept-operationalize-deploy-consume.md). 
+You are also asked to specify the underlying operating system. If the platform supports it, the parcel generator adds installation instructions for features having a dependency on .NET Core, such as Microsoft machine learning and [operationalization features](../what-is-operationalization.md). 
 
 When the script is finished, the location of the parcel, checksum, and CSD is printed to the console. Remember the files do not yet exist. This is just a dry run. Running the script without **-n** generates the files.
 

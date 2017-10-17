@@ -345,5 +345,5 @@ REMOTE>api <- publishService(
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-+ [Get started guide for Data scientists](../operationalize/concept-operationalize-deploy-consume.md)
++ [Get started guide for Data scientists](../what-is-operationalization.md)
 + [Working with web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)

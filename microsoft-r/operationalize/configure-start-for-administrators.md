@@ -176,13 +176,13 @@ This section provides a quick summary of useful links for administrators working
 -   [About Operationalization](../what-is-operationalization.md)
 -   [Configuration](configure-start-for-administrators.md#configure-server-for-operationalization)
 -   [R Package Management](configure-manage-r-packages.md)
+-   [What are web services?](concept-what-are-web-services.md)
 -   [Diagnostic Testing & Troubleshooting](configure-run-diagnostics.md)
 -   [Capacity Evaluation](configure-evaluate-capacity.md)
 -   [Comparison between 8.x and 9.x](../whats-new-in-r-server.md)
 
 **Other Getting Started Guides**
 -   [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
--   [Data Scientists](concept-operationalize-deploy-consume.md)
 
 **Support Channel**
 -   [Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
