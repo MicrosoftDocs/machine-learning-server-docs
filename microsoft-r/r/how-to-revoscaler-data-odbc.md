@@ -37,7 +37,7 @@ To import data from a relational database management system, do the following:
 4. For read operations, use **rxImport** to read data
 5. For write operations, use **rxDataStep** to write data back to the data source
 
-## About ODBC  in Microsoft R
+## About ODBC in Microsoft R
 
 In Microsoft R, an ODBC and **RxOdbcData** dependency exists for data imported from relational database systems like Oracle, PostGreSQL, and MySQL, to name a few. ODBC is primarily required for **RxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **RxSqlServerData**, the connection fails. 
 
