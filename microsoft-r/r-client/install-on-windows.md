@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Install Microsoft R Client on Windows"
-description: "Microsoft R Client Install Guide Windows"
+title: "Install Microsoft R Client on Windows - Machine Learning Server "
+description: "Guide to installing Microsoft R Client on Windows. R Client is a free, data science tool for high performance analytics."
 keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Microsoft R Client"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "4/19/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -29,26 +29,31 @@ Microsoft R Client is a free, data science tool for high performance analytics. 
 
 R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)
+To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server (or R Server) such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and Machine Learning Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)
   
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
+You can offload heavy processing to Machine Learning Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
 
+For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## System Requirements
 
 |   |   |
 | - | - |
-|Operating Systems|64-bit versions of Microsoft Windows 7, 8.1, and 10|
-|Free disk space|600 MB recommended, after installation of all prerequisites<br>If pretrained models are installed, 1.2 GB is recommended|
+|Operating&nbsp;Systems|64-bit versions of Microsoft Windows 7, 8.1, and 10|
+|Free disk space|600 MB recommended, after installation of all prerequisites<br>If pre-trained models are installed, 1.2 GB is recommended|
 |Available RAM|4+ GB recommended|
 |Internet access|Needed to download R Client and any dependencies|
+|.NET Framework 4.5.2| Framework component must be installed to run setup. Use the link provided in the setup wizard. Installing this component requires a computer restart.|
 
+The following additional components are included in Setup and required:
++ Microsoft R Open 3.4.1
++ Microsoft MPI 7.1
++ AS OLE DB (SQL Server 2016) provider
++ Microsoft Visual C++ 2015 Redistributable
 
 ## Setup Requirements
 
 On the machine onto which you are installing, follow this guidance before you begin installing:
-
-1. The [.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642) component must be installed to run setup. Use the link provided in the setup wizard. Installing this component requires a computer restart.
 
 1. Always install Microsoft R Client to a local drive on your computer.
 
@@ -68,7 +73,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Review the components that are installed as part of Microsoft R Client. 
     
-   While most are required, you can choose to add additional components such as [**pretrained models**](../install/microsoftml-install-pretrained-models.md). 
+   While most are required, you can choose to add additional components such as [**pre-trained models**](../install/microsoftml-install-pretrained-models.md). 
 
 1. Accept the Microsoft R Client license terms.
 
@@ -83,40 +88,42 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. On a machine with _**unrestricted**_ internet access:
 
-   + Download Microsoft R Client from http://aka.ms/rclient/.
+   1. Download Microsoft R Client from http://aka.ms/rclient/.
 
-   + Download the Microsoft R Open ( *.cab) needed to install R Client from http://go.microsoft.com/fwlink/?LinkID=842800.
+   1. Download the Microsoft R Open ( *.cab) needed to install R Client from https://go.microsoft.com/fwlink/?LinkId=852724.
 
-   + Download .NET Framework 4.5.2 from https://www.microsoft.com/download/details.aspx?id=42642.
+   1. Download .NET Framework 4.5.2 from https://www.microsoft.com/download/details.aspx?id=42642.
 
-   + Copy the downloaded files to a network share or portable drive.
+   1. Download, if desired, the .cab file for pre-trained machine learning models from: https://go.microsoft.com/fwlink/?LinkId=852727. Learn more about these [pre-trained models](../install/microsoftml-install-pretrained-models.md). 
+   
+   1. Copy the downloaded files to a network share or portable drive.
 
 1. On the machine with _**restricted**_ internet access:
 
-   + Log in with administrator privileges.
+   1. Log in with administrator privileges.
 
-   + Copy the .cab file and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put those files under `%temp%`. 
+   1. Copy the .cab file and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put the CAB files in the setup user's temp folder under `%temp%`. 
 
-   + Also, copy and install the .NET Framework.  Restart your computer if you installed the .NET Framework.
+   1. Copy and install the .NET Framework.  Restart your computer if you installed the .NET Framework.
 
-   + Run `RClientSetup.exe`, which finds the cab file in the temp folder for you.
+   1. Run `RClientSetup.exe`, which finds the cab file in the temp folder for you.
    
-   + Accept the default installation path for Microsoft R Client or choose another location.
+   1. Accept the default installation path for Microsoft R Client or choose another location.
 
-   + Review the components that are installed as part of Microsoft R Client. 
+   1. Review the components that are installed as part of Microsoft R Client. 
     
-     While most are required, you can choose to add additional components such as [**pretrained models**](../install/microsoftml-install-pretrained-models.md). 
+     While most are required, you can choose to add additional components such as [**pre-trained models**](../install/microsoftml-install-pretrained-models.md). 
 
-   + Accept the Microsoft R Client license terms.
+   1. Accept the Microsoft R Client license terms.
 
-   + Accept the Microsoft R Open license term. Microsoft R Client is built on Microsoft R Open, Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
+   1. Accept the Microsoft R Open license term. Microsoft R Client is built on Microsoft R Open, Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
 
 1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: mrupdate::mrCheckForUpdates()
 
 >[!IMPORTANT]
 >Review the recommendations in [Package Management](../operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.
 
-<a name=silent></a> 
+<a name="silent"></a> 
 
 ## Silent and Passive Installs
 
@@ -149,18 +156,16 @@ All tools for the standard base R (RTerm, Rgui.exe, and RScript) are also includ
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](../index.md) 
-
 + [Overview of Microsoft R Client](../r-client-get-started.md) 
 
 + [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)
 
-+ [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
++ [How-to guides in Machine Learning Server](../r/how-to-introduction.md)
 
 + [RevoScaleR R package reference](../r/tutorial-introduction.md)
 
-+ [MicrosoftML R package reference](../r/concept-what-is-the-microsoftml-package.md)
++ [MicrosoftML R package reference](../r-reference/microsoftml/microsoftml-package.md)
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ [Execute code on remote R Server](../r/how-to-execute-code-remotely.md)
++ [Execute code on remote Machine Learning Server](../r/how-to-execute-code-remotely.md)

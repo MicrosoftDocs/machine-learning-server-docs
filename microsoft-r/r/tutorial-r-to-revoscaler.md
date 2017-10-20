@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Tutorial: Explore R-to-RevoScaleR in 25 functions"
-description: "Explore and execute R and RevoScaleR commands using R Microsoft R Client or R Server."
+title: "Tutorial: Explore R-to-RevoScaleR in 25 functions (Machine Learning Server) "
+description: "Explore and execute R and RevoScaleR commands on R Client or Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -27,18 +27,18 @@ ms.technology:
 
 # Tutorial: Explore R and RevoScaleR in 25 functions
 
-**Applies to: Microsoft R Client, Microsoft R Server** 
+**Applies to: Microsoft R Client, Machine Learning Server**
 
-If you are new to both R and Microsoft R, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you'll learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
+If you are new to both R and Machine Learning Server, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
 
-This tutorial starts with base R commands before transitioning to RevoScaleR functions in Microsoft R. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
+This tutorial starts with base R commands before transitioning to RevoScaleR functions. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to R Server.
+> R Client and Machine Learning Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to Machine Learning Server.
 
 ## Prerequisites
 
-This is our simplest tutorial in terms of data and tools, but it's also expansive in its coverage of base R and RevoScaleR functions. To complete the tasks, use the command line tool **RGui.exe** on Windows or start the **Revo64** program on Linux. 
+This is our simplest tutorial in terms of data and tools, but it's also expansive in its coverage of base R and RevoScaleR functions. To complete the tasks, use the command-line tool **RGui.exe** on Windows or start the **Revo64** program on Linux. 
 
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
@@ -51,7 +51,7 @@ R is case-sensitive. If you hand-type commands in this example, be sure to use t
 
 ## Start with R
 
-Because Microsoft R is built on R, this tutorial begins with an exploration of base R commands.
+Because RevoScaleR is built on R, this tutorial begins with an exploration of base R commands.
 
 ### Load data
 
@@ -144,7 +144,7 @@ The default uniform distribution is over the interval 0 to 1. You can specify al
 	[21] 73.598221 63.888835 35.261694 54.481692
 	[25] 37.575176
 
-Another commonly used vector is the `sequence`, a uniformly-spaced run of numbers. For the common case of a run of integers, you can use the infix operator, :, as follows:
+Another commonly used vector is the `sequence`, a uniformly spaced run of numbers. For the common case of a run of integers, you can use the infix operator, :, as follows:
 
 	1:10
 
@@ -190,11 +190,11 @@ For an exploration of the shape of the data, the usual tools are `stem` (to crea
 
 	hist(michelson)
 
-The resulting histogram is shown as the left plot below. We can make the histogram look more like the stemplot by specifying the `nclass` argument to `hist`:
+The resulting histogram is shown as the left plot following. We can make the histogram look more like the stemplot by specifying the `nclass` argument to `hist`:
 
 	hist(michelson, nclass=5)
 
-The resulting histogram is shown as the right plot in the figure below.
+The resulting histogram is shown as the right plot in the figure following.
 
 ![](media/tutorial-r-to-revoscaler/image6.jpeg)
 
@@ -213,7 +213,7 @@ Another useful exploratory plot, especially for comparing two distributions, is 
 ![](media/tutorial-r-to-revoscaler/image8.jpeg)
 
 > [!Tip]
-> These plots are great if you have a small data set in memory. However, when working with big data, some plot types may not be very informative when working directly with the data (for example, scatter plots can produce a big blob of ink) and others may be computational intensive (if sorting is required). A better alternative is the *rxHistogram* function in RevoScaleR that efficiently computes and renders histograms for large data sets. Additionally, RevoScaleR functions such as *rxCube* can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.
+> These plots are great if you have a small data set in memory. However, when working with big data, some plot types may not be informative when working directly with the data (for example, scatter plots can produce a large blob of ink) and others may be computational intensive (if sorting is required). A better alternative is the *rxHistogram* function in RevoScaleR that efficiently computes and renders histograms for large data sets. Additionally, RevoScaleR functions such as *rxCube* can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.
 
 ### Summary Statistics
 
@@ -249,14 +249,14 @@ In most disciplines, meaningful data sets have multiple variables, typically obs
 	"Y. Betancourt"    90 326  34   87   22   2    3  122   29 .267 .278 .374 .656 
 	"A. Beltre"        92 352  46   91   16   0   16  155   46 .259 .329 .440 .769
 
-Copy and paste the table into a text editor (such as Notepad on Windows, or emacs or vi on Unix-type machines) and save the file as **msStats.txt** in the working directory returned by the *getwd* function, for example:
+Copy and paste the table into a text editor (such as Notepad on Windows, or emacs or vi on Unix type machines) and save the file as **msStats.txt** in the working directory returned by the *getwd* function, for example:
 
 	getwd()
 
 	 [1] "/Users/joe"
 
 > [!Tip]
-> On Windows, the working directory is probably a bin folder in program files, and by default you won't have permission to save the file at that location. Use *setwd("/Users/TEMP")* to change the working directory to /Users/TEMP and save the file.
+> On Windows, the working directory is probably a bin folder in program files, and by default you don't have permission to save the file at that location. Use *setwd("/Users/TEMP")* to change the working directory to /Users/TEMP and save the file.
 
 You can then read the data into R using the `read.table` function. The argument *header=TRUE* specifies that the first line is a header of variable names:
 
@@ -403,7 +403,7 @@ When you need to manipulate the rows or columns of a matrix, an incredibly usefu
 
 	[1]  105 1755   64
 
-The row products are just as simple:
+The row products are as simple:
 
 	apply(A, 1, prod)
 
@@ -420,7 +420,7 @@ To sort the columns of *A*, just replace *prod* with *sort*:
 
 ### Lists and *lapply* function
 
-A `list` in R is a very flexible data object that can be used to combine data of different types and different lengths for almost any purpose. Arbitrary lists can be created with either the list function or the c function; many other functions, especially the statistical modeling functions, return their output as list objects.
+A `list` in R is a flexible data object that can be used to combine data of different types and different lengths for almost any purpose. Arbitrary lists can be created with either the list function or the c function; many other functions, especially the statistical modeling functions, return their output as list objects.
 
 For example, we can combine a character vector, a numeric vector, and a numeric matrix in a single list as follows:
 
@@ -456,19 +456,19 @@ The function `lapply` can be used to apply the same function to each component o
 <a name="ExploreScaleRFunctions"></a>
 ## Expore RevoScaleR Functions
 
-The **RevoScaleR** package, included in Microsoft R Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. When you start the R console application on a computer that has R Server or R Client, the RevoScaleR function library is loaded automatically.
+The **RevoScaleR** package, included in Machine Learning Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. When you start the R console application on a computer that has Machine Learning Server or R Client, the RevoScaleR function library is loaded automatically.
 
 ### Load Data with *rxImport*
 
-The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you will need a [locally installed ODBC driver](how-to-revoscaler-data-odbc.md) for your database to access data on a local or remote computer. 
+The *rxImport* function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata, or ODBC connection. There’s no need to have SAS or SPSS installed on your system to import those file types, but you need a [locally installed ODBC driver](how-to-revoscaler-data-odbc.md) for your database to access data on a local or remote computer. 
 
-Let’s start simply by using a delimited text file available in the [built-in sample data directory](sample-built-in-data.md) of the **RevoScaleR** package. We’ll store the location of the file in a character string (*inDataFile*), then import the data into an in-memory data set (data frame) called *mortData*:
+Let’s start simply by using a delimited text file available in the [built-in sample data directory](sample-built-in-data.md) of the **RevoScaleR** package. We store the location of the file in a character string (*inDataFile*), then import the data into an in-memory data set (data frame) called *mortData*:
 
 	inDataFile <- file.path(rxGetOption("sampleDataDir"), "mortDefaultSmall2000.csv")
 
 	mortData <- rxImport(inData = inDataFile)
 
-If we anticipate repeating the same analysis on a larger data set later, we could prepare for that by putting placeholders in our code for output files. An output file is an XDF file, native to R Client and R Server, persisted on disk and structured to hold modular data. If we included an output file with rxImport, the output object returned from *rxImport* would be a small object representing the .xdf file on disk (an RxXdfData object), rather than an in-memory data frame containing all of the data. 
+If we anticipate repeating the same analysis on a larger data set later, we could prepare for that by putting placeholders in our code for output files. An output file is an XDF file, native to R Client and Machine Learning Server, persisted on disk and structured to hold modular data. If we included an output file with rxImport, the output object returned from *rxImport* would be a small object representing the .xdf file on disk (an RxXdfData object), rather than an in-memory data frame containing all of the data. 
 
 For now, let's continue to work with the data in memory. We can do this by omitting the outFile argument, or by setting the *outFile* parameter to NULL. The following code is equivalent to the importing task of that above:
 
@@ -477,7 +477,7 @@ For now, let's continue to work with the data in memory. We can do this by omitt
 
 ### Retrieve metadata
 
-There are a number of basic methods we can use to learn about the data set and its variables that will work on the return object of *rxImport*, regardless of whether it is a data frame or *RxXdfData* object. 
+There are a number of basic methods we can use to learn about the data set and its variables that work on the return object of *rxImport*, regardless of whether it is a data frame or *RxXdfData* object. 
 
 To get the number of rows, cols, and names of the imported data:
 
@@ -485,7 +485,7 @@ To get the number of rows, cols, and names of the imported data:
 	ncol(mortData)
 	names(mortData)
 
-Output for these commands are as follows:
+Output for these commands is as follows:
 
 	> nrow(mortData)
 	[1] 10000
@@ -506,7 +506,7 @@ Output:
 	2 691 4 4 5077 2000 0
 	3 743 18 3 3080 2000 0
 
-The rxGetInfo function allows you to quickly get information about your data set and its variables all at one time, including more information about variable types and ranges. Let’s try it on *mortData*, having the first 3 rows of the data set printed out:
+The rxGetInfo function allows you to quickly get information about your data set and its variables all at one time, including more information about variable types and ranges. Let’s try it on *mortData*, having the first three rows of the data set printed out:
 
 	rxGetInfo(mortData, getVarInfo = TRUE, numRows=3)
 
@@ -548,7 +548,7 @@ The rxDataStep function provides a framework for the majority of your data manip
 				labels = c("Low Debt", "High Debt")),
 			lowScore = creditScore < 625))
 
-Our new data set, *mortDataNew*, will not have the variable year, but adds two new variables: a categorical variable named *catDebt* that uses R’s `cut` function to break the *ccDebt* variable into two categories, and a logical variable, *lowScore*, that will be TRUE for individuals with low credit scores. These *transforms* expressions follow the rule that they must be able to operate on a chunk of data at a time; that is, the computation for a single row of data cannot depend on values in other rows of data. 
+Our new data set, *mortDataNew*, will not have the variable year, but adds two new variables: a categorical variable named *catDebt* that uses R’s `cut` function to break the *ccDebt* variable into two categories, and a logical variable, *lowScore*, that is TRUE for individuals with low credit scores. These *transforms* expressions follow the rule that they must be able to operate on a chunk of data at a time; that is, the computation for a single row of data cannot depend on values in other rows of data. 
 
 With the *rowSelection* argument, we have also removed any observations with high credit scores, above or equal to 850. We can use the rxGetVarInfo function to confirm:
 
@@ -565,13 +565,13 @@ With the *rowSelection* argument, we have also removed any observations with hig
 
 ### Visualize with *rxHistogram*, *rxCube*, and *rxLinePlot*
 
-The rxHistogram function will show us the distribution of any of the variables in our data set. For example, let’s look at credit score:
+The rxHistogram function shows us the distribution of any of the variables in our data set. For example, let’s look at credit score:
 
 	rxHistogram(~creditScore, data = mortDataNew )
 
 ![](media/tutorial-r-to-revoscaler/image14.png)
 
-The rxCube function will compute category counts, and can operate on the interaction of categorical variables. Using the *F()* notation to convert a variable into an on-the-fly categorical factor variable (with a level for each integer value), we can compute the counts for each credit score for the two groups who have low and high credit card debt:
+The rxCube function computes category counts, and can operate on the interaction of categorical variables. Using the *F()* notation to convert a variable into an on-the-fly categorical factor variable (with a level for each integer value), we can compute the counts for each credit score for the two groups who have low and high credit card debt:
 
 	mortCube <- rxCube(~F(creditScore):catDebt, data = mortDataNew)
 
@@ -583,7 +583,7 @@ The *rxLinePlot* function is a convenient way to plot output from *rxCube*. We u
 
 ### Analyze with *rxLogit*
 
-**RevoScaleR** provides the foundation for a variety of high performance, scalable data analyses. Here we’ll do a logistic regression, but you’ll probably also want to take look at computing summary statistics (*rxSummary*), computing cross-tabs (*rxCrossTabs*), estimating linear models (*rxLinMod*) or generalized linear models (*rxGlm*), and estimating variance-covariance or correlation matrices (*rxCovCor*) that can be used as inputs to other R functions such as principal components analysis and factor analysis. Now, let’s estimate a logistic regression on whether or not an individual defaulted on their loan, using credit card debt and years of employment as independent variables:
+**RevoScaleR** provides the foundation for a variety of high performance, scalable data analyses. Here we do a logistic regression, but you probably also want to take look at computing summary statistics (*rxSummary*), computing cross-tabs (*rxCrossTabs*), estimating linear models (*rxLinMod*) or generalized linear models (*rxGlm*), and estimating variance-covariance or correlation matrices (*rxCovCor*) that can be used as inputs to other R functions such as principal components analysis and factor analysis. Now, let’s estimate a logistic regression on whether or not an individual defaulted on their loan, using credit card debt and years of employment as independent variables:
 
 	myLogit <- rxLogit(default~ccDebt+yearsEmploy , data=mortDataNew)
 	summary(myLogit)
@@ -616,7 +616,7 @@ We get the following output:
 
 Until now, our exploration has been limited to small data sets in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. 
 
-After downloading and unpacking the data, set your path to the correct location in the code below. It will be more efficient to store the imported data on disk, so we’ll also specify the locations for our imported and transformed data sets:
+After downloading and unpacking the data, set your path to the correct location in the code below. It is more efficient to store the imported data on disk, so we also specify the locations for our imported and transformed data sets:
 
 	# bigDataDir <- "C:/MicrosoftR/Data" # Specify the location
 	inDataFile <- file.path(bigDataDir, "mortDefault",
@@ -624,7 +624,7 @@ After downloading and unpacking the data, set your path to the correct location 
 	outFile <- "myMortData.xdf"
 	outFile2 <- "myMortData2.xdf"
 
-That’s it! Now you can re-use all of the importing, data step, plotting and analysis code above on the larger data set.
+That’s it! Now you can reuse all of the importing, data step, plotting, and analysis code preceding on the larger data set.
 
 	# Import data
 	mortData <- rxImport(inData = inDataFile, outFile = outFile)
@@ -632,7 +632,7 @@ That’s it! Now you can re-use all of the importing, data step, plotting and an
 	Rows Read: 500000, Total Rows Processed: 500000, Total Chunk Time: 1.043 seconds
 	Rows Read: 500000, Total Rows Processed: 1000000, Total Chunk Time: 1.001 seconds
 
-Note that because we have specified an output file when importing the data, the returned *mortData* object is a small object in memory representing the .xdf data file, rather than a full data frame containing all of the data in memory. It can be used in **RevoScaleR** analysis functions in the same way as data frames.
+Because we have specified an output file when importing the data, the returned *mortData* object is a small object in memory representing the .xdf data file, rather than a full data frame containing all of the data in memory. It can be used in **RevoScaleR** analysis functions in the same way as data frames.
 
 	# Some quick information about my data
 	rxGetInfo(mortData, getVarInfo = TRUE, numRows=5)

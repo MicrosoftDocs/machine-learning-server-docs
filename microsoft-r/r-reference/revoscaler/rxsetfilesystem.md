@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Set and Get RevoScaleR File System" 
+title: "rxSetFileSystem function (RevoScaleR) " 
 description: " Set and get the default file system for RevoScaleR operations. " 
-keywords: "RevoScaleR, rxSetFileSystem, rxGetFileSystem, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxSetFileSystem, rxGetFileSystem, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxSetFileSystem: Set and Get RevoScaleR File System
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxSetFileSystem: Set and Get RevoScaleR File System 
  ##Description
  
 Set and get the default file system for RevoScaleR operations.
@@ -48,17 +44,17 @@ Set and get the default file system for RevoScaleR operations.
 
    
     
- ### fileSystem
+ ### `fileSystem`
  character string specifying class name, file system type, or  existing `RxFileSystem` object.  Choices include: "RxNativeFileSystem" or "native", or "RxHdfsFileSystem" or "hdfs". Optional arguments `hostName` and `port` may be specified for HDFS file systems.  
   
     
- ###  ...
+ ### ` ...`
  other arguments are passed to the underlying class generator.  
   
   
     
- ### x
- optional [RxXdfData](rxxdfdata.md) or [RxTextData](rxtextdata.md) object from which to retrieve the file system object.  
+ ### `x`
+ optional [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md) object from which to retrieve the file system object.  
   
  
  
@@ -70,18 +66,18 @@ Next, if the compute context contains a file system, that RxFileSystem object is
 If no file system object has been found, the previously set RxFileSystem file system object is returned.
 The file system object is returned invisibly.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxFileSystem](rxfilesystem.md),
-[RxNativeFileSystem](rxnativefilesystem.md),
-[RxHdfsFileSystem](rxhdfsfilesystem.md),
-[rxOptions](rxoptions.md),
-[RxXdfData](rxxdfdata.md),
-[RxTextData](rxtextdata.md).
+[RxFileSystem](RxFileSystem.md),
+[RxNativeFileSystem](RxNativeFileSystem.md),
+[RxHdfsFileSystem](RxHdfsFileSystem.md),
+[rxOptions](rxOptions.md),
+[RxXdfData](RxXdfData.md),
+[RxTextData](RxTextData.md).
    
  ##Examples
 

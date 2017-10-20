@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Set the Cache Flag in Spark Compute Context " 
-description: " Use this function to set the cache flag to control whether data objects should be cached in Spark memory system, applicable for `RxXdfData`, `RxHiveData`, `RxParquetData`, and `RxOrcData`.  " 
-keywords: "RevoScaleR, rxSparkCacheData {RevoScaleR}, rxSparkCacheData" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxSparkCacheData {RevoScaleR} function (RevoScaleR) " 
+description: " Use this function to set the cache flag to control whether data objects should be cached in Spark memory system, applicable for RxXdfData, RxHiveData, RxParquetData, and RxOrcData.  " 
+keywords: "(RevoScaleR), rxSparkCacheData {RevoScaleR}, rxSparkCacheData" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxSparkCacheData {RevoScaleR}:  Set the Cache Flag in Spark Compute Context 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxSparkCacheData {RevoScaleR}:  Set the Cache Flag in Spark Compute Context  
  
  ##Description
  
@@ -49,11 +45,11 @@ Use this function to set the cache flag to control whether data objects should b
 
    
     
- ### data
+ ### `data`
  a data source that can be RxXdfData, RxHiveData, RxParquetData, or RxOrcData. RxTextData is currently not supported. 
   
     
- ### cache
+ ### `cache`
  logical value controlling whether the data should be cached or not. If `TRUE`the data will be cached in the Spark memory system after the first use for performance enhancement. 
   
  
@@ -71,7 +67,7 @@ data object with new cache flag.
  
  ##See Also
  
-[rxSparkListData](rxsparkdataops.md), [rxSparkRemoveData](rxsparkdataops.md), [RxXdfData](rxxdfdata.md), [RxHiveData](rxsparkdata.md), [RxParquetData](rxsparkdata.md), [RxOrcData](rxsparkdata.md).
+[rxSparkListData](rxSparkDataOps.md), [rxSparkRemoveData](rxSparkDataOps.md), [RxXdfData](RxXdfData.md), [RxHiveData](RxSparkData.md), [RxParquetData](RxSparkData.md), [RxOrcData](RxSparkData.md).
    
  ##Examples
 

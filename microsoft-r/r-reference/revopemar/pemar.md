@@ -1,13 +1,13 @@
 --- 
  
 # required metadata 
-title: " RevoPemaR: Parallel External Memory Algorithms in R" 
+title: " RevoPemaR: Parallel External Memory Algorithms in R " 
 description: "A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes." 
 keywords: "RevoPemaR, RevoPemaR-package, package" 
-author: "richcalaway"
-ms.author: "richcala" 
+author: "HeidiSteen"
+ms.author: "heidist" 
 manager: "jhubbard" 
-ms.date: "04/03/2017" 
+ms.date: "08/21/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,52 +25,40 @@ ms.technology: "r-server"
  
 --- 
  
- #RevoPemaR-package:  RevoPemaR: Parallel External Memory Algorithms in R 
+ #RevoPemaR package
 
- Applies to version 8.0.3 of package RevoPemaR.
- 
- ##Description
- 
-A package that provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes.
+The **RevoPemaR** package provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes.
 
-When used with the **RevoScaleR** package, analyses can be distributed automatically on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP, Teradata appliances, IBM Platform Computing LSF clusters, and Windows HPC Server clusters. For additional documentation, see [Get started with PemaR functions in Microsoft R](https://msdn.microsoft.com/microsoft-r/pemar-getting-started).
-
+| Package details | |
+|--------|-|
+| Version: |  10.0.0 |
+| Runs on: | [Machine Learning Server (Hadoop)](../../install/machine-learning-server-hadoop-install.md)  
+| Built on: | R 3.4.1 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
  
- ##Details
- 
-| Col  1 | Col  2 |
-| :---| :--- |
-|  Package:  |  RevoPemaR |
-|  Type:  |  Package |
-|  Version:  |  0.1.0 |
-|  License:  |  Apache License 2.0 |
-|  LazyLoad:  |  yes |
+## How to use RevoPemaR
 
-## Class library
+When used with the **RevoScaleR** package, analyses can be distributed automatically on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP. For additional documentation, see [Get started with PemaR functions in Microsoft R](https://msdn.microsoft.com/microsoft-r/pemar-getting-started).
+
+In an R session, load **RevoPemaR** from the command line by typing`library(RevoPemaR)`.
+
+> [!Note]
+> You can load this library on computer that does not have Hadoop (for example, on an R Client instance) if you change the compute context to Hadoop MapReduce or Spark and execute the code in that compute context.
+
+## Function list
 
 |Class | Description |
 |------|-------------|
-|[`PemaBaseClass`](pemabaseclass-class.md) |A base reference class generator for parallel external memory algorithms.|
-|[`setPemaClass`](setpemaclass.md)|Returns a generator function for creating a parallel external memory algorithm reference class.|
-|[`pemaCompute`](pemacompute.md) |Estimates a parallel external memory algorithm as described by a PEMA reference class object. |
+|[PemaBaseClass](pemabaseclass-class.md) |A base reference class generator for parallel external memory algorithms.|
+|[setPemaClass](setpemaclass.md)|Returns a generator function for creating a parallel external memory algorithm reference class.|
+|[pemaCompute](pemacompute.md) |Estimates a parallel external memory algorithm as described by a PEMA reference class object. |
 
-## Get help on RevoPemaR functions from the R console
+## Next steps
 
-To see the **RevoPemaR** functions that can be called from the R console:
+Add R packages to your computer by running setup for R Server or R Client: 
 
-1. With Microsoft R Server or R Client installed, launch an R console with `Rgui.exe` or another preferred R IDE such as R Tools for Visual Studio.
-2. Load `RevoPemaR` from the command line by typing `library(RevoPemaR)`.
-1. In the console, open the package help by typing the following at the R prompt: `help(package="RevoPemaR")`.
-1. In the help tab, review the list of functions for this package. Click a link to get the specific help page for that function.
- 
-> [!NOTE]
-> To list all public functions, type library(help="RevoPemaR") at the R prompt.
->
++ [R Client](../../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../../what-is-microsoft-r-server.md)
 
 ## See also
 
-[Package Reference](../introducing-r-server-r-package-reference.md)
-
-[Install R Server](../../what-is-microsoft-r-server.md)
-
-[Install R Client](../../r-client/what-is-microsoft-r-client.md)
+ [Package Reference](../introducing-r-server-r-package-reference.md)    

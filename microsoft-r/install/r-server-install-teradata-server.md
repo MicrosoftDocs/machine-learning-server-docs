@@ -4,9 +4,10 @@
 title: "R Server installation for Teradata servers"
 description: "Install Microsoft R Server 9.1 on Teradata servers."
 keywords: ""
-author: "jeffstokes72"
+author: "bradsev"
+ms.author: "bradsev" 
 manager: "jhubbard"
-ms.date: "04/20/2017"
+ms.date: "09/12/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -26,8 +27,10 @@ ms.technology: "r-server"
 
 Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server 9.1 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
 
->[!NOTE]
->Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
+> [!Important]
+> In Machine Learning Server 9.2.1, there is no support for Teradata. However, R Server 9.1 is a supported release. You can install R Server 9.1 for Teradata as documented in this guide to get enterprise R functionality on your appliance.
+
+Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
 
 ## System Requirements
 
@@ -39,9 +42,9 @@ Microsoft R Server for Teradata has the following system requirements:
 
 **Teradata Version:** Teradata 15.10, 15.00, or 14.10.
 
-**Memory:** A minimum of 1GB of RAM is required; 4GB or more are recommended.
+**Memory:** A minimum of 1 GB of RAM is required; 4 GB or more are recommended.
 
-**Disk Space:** A minimum of 500MB of disk space is required
+**Disk Space:** A minimum of 500 MB of disk space is required
 
 The following specific libraries must be installed on the Teradata appliance from the SLES 11 installation DVDs:
 
@@ -57,7 +60,7 @@ The following specific libraries must be installed on the Teradata appliance fro
 
 * SLE-11-SP1-SDK-DVD-x86_64-GM-DVD1.iso/suse/x86_64/gcc-fortran-4.3-62.198.x86_64.rpm
 
-**Dependency:** The file libstdc++6-5.3.1.x86_64.rpm is **included** with MRS 9.1. This may cause conflicts with existing rpms. If you opt to perform this install, the rpm will need to be installed on **each node**. If you cannot install this rpm MRS 9.1 will not work.
+**Dependency:** The file libstdc++6-5.3.1.x86_64.rpm is **included** with MRS 9.1. This may cause conflicts with existing rpms. If you opt to perform this install, the rpm needs to be installed on **each node**. If you cannot install this, rpm MRS 9.1 will not work.
 
 A method of doing so is to execute the following command on each node:
 
@@ -149,7 +152,7 @@ If you have previously run Microsoft R Server on your Teradata database, restart
 
 ## Adding and Configuring Users
 
-All users who will interact with the database, including the database administrator, need to have specific grants. The following example provides an existing “sysdba” user the required grants to run the revoTdSetup.sh script:
+All users who interact with the database, including the database administrator, need to have specific grants. The following example provides an existing “sysdba” user the required grants to run the revoTdSetup.sh script:
 
 	grant all on sysdba to sysdba with grant option;
 
@@ -163,9 +166,9 @@ If you don’t already have such a user, the following example creates a databas
 	grant select on sys_calendar to sysdba with grant option;
 	grant select on dbc to public;
 
-You will often want to allow a user account to run jobs on data in other databases also. The lines shown below are examples of the types of permissions your Revolution users may require. (For convenience, these steps are organized according to the purpose of the permissions granted.)
+You will often want to allow a user account to run jobs on data in other databases also. The lines shown as follows are examples of the types of permissions your Revolution users may require. (For convenience, these steps are organized according to the purpose of the permissions granted.)
 
-  1.  First, you will need to grant permissions for the user account to work with the Revolution database.  Logon to bteq with your admin account, and run the following lines.  Substitute the new user account name for 'ut1' in the sample lines below.
+  1.  First, you need to grant permissions for the user account to work with the Revolution database.  Log on to bteq with your admin account, and run the following lines.  Substitute the new user account name for 'ut1' in the sample lines as follows:
 
 			-- grant ut1 various permissions on revoAnalytics_Zqht2 DB
 			grant execute procedure on revoAnalytics_Zqht2.InitRevoJob to ut1;
@@ -183,7 +186,7 @@ You will often want to allow a user account to run jobs on data in other databas
 			grant create view on revoAnalytics_Zqht2 to ut1;
 			grant drop view on revoAnalytics_Zqht2 to ut1;
 
-  2.  Next you will need to grant permissions for the user account and the revolution database to work with data in the user account database.  Run the following lines, substituting your user account name for 'ut1'.
+  2.  Next you need to grant permissions for the user account and the revolution database to work with data in the user account database.  Run the following lines, substituting your user account name for 'ut1'.
 
 			-- grant ut1 rights on db with data to be analyzed -
 			-- in this case itself
@@ -195,7 +198,7 @@ You will often want to allow a user account to run jobs on data in other databas
 			grant create table on ut1 to revoAnalytics_Zqht2;
 			grant drop table on ut1 to revoAnalytics_Zqht2;
 
-  3.  Finally, you will want to grant permissions on any other databases you wish that account to have access to.  Run the following lines, substituting your user account name for 'ut1', and your other database name for 'RevoTestDB'.
+  3.  Finally, you want to grant permissions on any other databases you wish that account to have access to.  Run the following lines, substituting your user account name for 'ut1', and your other database name for 'RevoTestDB'.
 
 			-- grant ut1 rights on db with data to be analyzed
 			grant select on RevoTestDB to ut1;
@@ -207,21 +210,21 @@ You will often want to allow a user account to run jobs on data in other databas
 
 ## Managing Memory in In-Teradata Computations
 
-Because a Teradata cluster node typically has many worker processes (AMPs) running constantly, it is important to limit how much memory a distributed analysis consumes. Microsoft R Server provides stored procedures in the revoAnalytics\_Zqht2 scheduler database that allow a database administrator to set the memory limits for master and worker processes working on a RevoScaleR job. By default, the master process memory limit is 2000 MB (approximately 2GB) and the worker process memory limit is 1000MB (approximately 1GB).
+Because a Teradata cluster node typically has many worker processes (AMPs) running constantly, it is important to limit how much memory a distributed analysis consumes. Microsoft R Server provides stored procedures in the revoAnalytics\_Zqht2 scheduler database that allow a database administrator to set the memory limits for master and worker processes working on a RevoScaleR job. By default, the master process memory limit is 2000 MB (2GB) and the worker process memory limit is 1000 MB (1GB).
 
 These limits may be customized by a database administrator using the SetMasterMemoryLimitMB() and SetWorkerMemoryLimitMB() stored procedures, defined in the revoAnalytics\_Zqht2 database created on installation.
 
-For example, to set the master memory limit to 3000MB:
+For example, to set the master memory limit to 3000 MB:
 
 	call revoAnalytics_Zqht2.SetMasterMemoryLimitMB(3000);
 
-To set the worker memory limit to 1500MB:
+To set the worker memory limit to 1500 MB:
 
 	call revoAnalytics_Zqht2.SetWorkerMemoryLimitMB(1500);
 
 The current memory limits can be viewed in the revoAnalytics\_Zqht2.Properties table.
 
-Note that memory limits that have been changed are in effect immediately, and no restart of the database is required.
+Memory limits that have been changed are in effect immediately, and no restart of the database is required.
 
 ## Maintaining the Revolution Database
 
@@ -233,9 +236,9 @@ Two tables in the revoAnalytics\_Zqht2 database may require periodic cleanup:
 
 ## Installing Additional R Packages
 
-The R community is an active, open-source community, and new packages extending R’s capacity for statistics, data analysis, graphics, and interconnectivity are added frequently. The most up-to-date source for these third-party packages is the Comprehensive R Archive Network (CRAN), a network of servers around the world that store open-source R distributions, extensions, documentation and binaries. The repository (<http://cran.r-project.org/>) has grown from only 12 packages in 1997 to over 5300 packages currently. However, CRAN does not maintain source packages by R version, and Microsoft R Server for Teradata is seldom the latest R version, so packages from CRAN may be incompatible with Microsoft R Server for Teradata. Microsoft’s MRAN archive (<http://mran.microsoft.com>), however, maintains daily snapshots of the CRAN repository. Users may take advantage of this repository and download the chosen packages from any specific date, but notice that they are completely external to Teradata.
+The R community is an active, open-source community, and new packages extending R’s capacity for statistics, data analysis, graphics, and interconnectivity are added frequently. The most up-to-date source for these third-party packages is the Comprehensive R Archive Network (CRAN), a network of servers around the world that store open-source R distributions, extensions, documentation, and binaries. The repository (<http://cran.r-project.org/>) has grown from only 12 packages in 1997 to over 5300 packages currently. However, CRAN does not maintain source packages by R version, and Microsoft R Server for Teradata is seldom the latest R version, so packages from CRAN may be incompatible with Microsoft R Server for Teradata. Microsoft’s MRAN archive (<http://mran.microsoft.com>), however, maintains daily snapshots of the CRAN repository. Users may take advantage of this repository and download the chosen packages from any specific date, but notice that they are external to Teradata.
 
-In most cases, the natural place to install additional R packages is to the client workstation. Installation to the Teradata data warehouse is required only if you plan to use the package’s functions as transform functions inside RevoScaleR functions, in which case the packages will actually need to be loaded in-database. If you need a package for this purpose, you can do so as follows:
+In most cases, the natural place to install additional R packages is to the client workstation. Installation to the Teradata data warehouse is required only if you plan to use the package’s functions as transform functions inside RevoScaleR functions, in which case the packages will need to be loaded in-database. If you need a package for this purpose, you can do so as follows:
 
 To manually distribute and install the package:
 

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Data transformations in Microsoft R"
+title: "Data transformations in RevoScaleR - Machine Learning Server "
 description: "RevoScaleR transform functions."
 keywords: ""
 author: "HeidiSteen"
@@ -22,7 +22,7 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Data transformations using RevoScaleR functions (Microsoft R)
+# Data transformations using RevoScaleR functions (Machine Learning Server)
 
 Loading an initial dataset is typically just the first step in a continuum of data manipulation tasks that persist until your project is completed. Common examples of data manipulation include isolating a subset, slicing a dataset by variables or rows,and  converting or merging variables into new forms, often resulting in new data structures along the way.
 
@@ -65,7 +65,7 @@ Externally defined functions provide data manipulation instructions in an outer 
 	# Return variable metadata; it is identical to that of option 1
 	> rxGetVarInfo(NewDS)
 
-For more examples of both approaches, see [How to transform and subset data](concept-what-is-data-transformations.md).
+For more examples of both approaches, see [How to transform and subset data](how-to-revoscaler-data-transform.md).
 
 ## Arguments used in transformations
 

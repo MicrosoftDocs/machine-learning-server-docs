@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "LDAP AD and Azure Active Directory authentication for Microsoft R Server | Microsoft Docs"
-description: "Enterprise-Grade Security: Authentication with Microsoft R Server"
-keywords: "R Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
+title: "LDAP AD and Azure Active Directory authentication for Machine Learning Server "
+description: "Enterprise-Grade Security: Authentication with Machine Learning Server"
+keywords: "Machine Learning Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,11 +24,11 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Authenticate R Server users against LDAP AD or Azure Active Directory
+# Authenticate Machine Learning Server users against LDAP AD or Azure Active Directory
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
-R Server's offers seamless integration with authentication solutions when configured to operationalize analytics.
+Machine Learning Server's offers seamless integration with authentication solutions when configured to operationalize analytics.
 
 ![Security](./media/configure-authentication/security.png)
 
@@ -36,26 +36,26 @@ To secure connections and communications, you have several options:
 
 |Authentication Method|When to Use|
 |----------------------------------|----------------------------------|
-|[Local 'admin' account](#local)|For [one-box](../install/operationalize-r-server-one-box-config.md) configurations|
-|[Active Directory / LDAP](#ldap)|For [enterprise](../install/operationalize-r-server-enterprise-config.md) on-premises configurations|
-|[Active Directory / LDAP-S](#ldap)|For [enterprise](../install/operationalize-r-server-enterprise-config.md) on-premises configurations with SSL/TLS enabled|
-|[Azure Active Directory](#aad)|For [enterprise](../install/operationalize-r-server-enterprise-config.md) cloud configurations|
+|[Local 'admin' account](#local)|For [one-box](configure-machine-learning-server-one-box.md) configurations|
+|[Active Directory / LDAP](#ldap)|For [enterprise](configure-machine-learning-server-enterprise.md) on-premises configurations|
+|[Active Directory / LDAP-S](#ldap)|For [enterprise](configure-machine-learning-server-enterprise.md) on-premises configurations with SSL/TLS enabled|
+|[Azure Active Directory](#aad)|For [enterprise](configure-machine-learning-server-enterprise.md) cloud configurations|
 
 <a name="local"></a>
 
 ## Local Administrator Account Authentication
 
-During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for R Server. This account allows you to use the [administration utility](configure-use-admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
+During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for In Machine Learning Server (and R Server). This account allows you to use the [administration utility](configure-use-admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
 
-While this account might be sufficient when trying to operationalize with a [one-box configuration](../install/operationalize-r-server-one-box-config.md#onebox) since everything is running within the trust boundary, it is insufficient for [enterprise configurations](../install/operationalize-r-server-enterprise-config.md).
+While this account might be sufficient when trying to operationalize with a [one-box configuration](configure-machine-learning-server-one-box.md) since everything is running within the trust boundary, it is insufficient for [enterprise configurations](configure-machine-learning-server-enterprise.md).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](configure-use-admin-utility.md#admin-password).
 
-To log in to Microsoft R Server with this user for remote execution or web service functionalities, use remoteLogin() as described in the article "[Connecting to R Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
+To log in to Machine Learning Server with this user for remote execution or web service functionalities, use remoteLogin() as described in the article "[Connecting to Machine Learning Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
 
 >[!WARNING]
-> If you enable Azure Active Directory or Active Directory/LDAP authentication, this 'admin' account can no longer be used to authenticate with R Server.
+> If you enable Azure Active Directory or Active Directory/LDAP authentication, this 'admin' account can no longer be used to authenticate with Machine Learning Server.
 
 
 <a name="ldap"></a>
@@ -82,7 +82,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, appsettings.json:
 
-   1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
+   1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
    1. Search for the section starting with `"LDAP": {`
    
@@ -94,7 +94,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |---------------|-------------------------------|
    |Host|Address of the Active Directory server|
    |Port|(version 9.1+) Used to override the default LDAP port. By default, the LDAP port is 389 and the LDAP-S port is 636.|      
-   |UseLDAPS|Set 'true' for LDAP-S or 'false' for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by R Server. |
+   |UseLDAPS|Set 'true' for LDAP-S or 'false' for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by Machine Learning Server. |
    |BindFilter|(version 9.0.1 only) The template used to do the Bind operation. For example, "CN={0},CN=DeployR,DC=TEST,DC=COM". {0} is the user's DN.|
    |QueryUserDn|Distinguished name of user with read-only query capabilities with which to authenticate|
    |QueryUserPassword|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](configure-use-admin-utility.md#encrypt) before adding the information to this file.|
@@ -153,7 +153,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >
    >**Every web node must have the same values**.
     
-   1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you need this information later.  Read [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) to learn how to use a self-signed certificate in Linux for access token signing.
+   1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you need this information later.  Read [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) to learn how to use a self-signed certificate in Linux for access token signing. Self-signed certificates are NOT recommended for production usage.
 
    1. In the appsettings.json file, search for the section starting with `"JWTSigningCertificate": {`
 
@@ -177,7 +177,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Repeat these steps on each machine hosting the web node.
 
-1. Share the connection details with any users who authenticate with R Server either to make [API calls](concept-api.md) directly or indirectly in R [using remoteLogin() function in the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md).
+1. Share the connection details with any users who authenticate with Machine Learning Server either to make [API calls](concept-api.md) directly or indirectly in R [using remoteLogin() function in the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md).
 
 
 <br>
@@ -204,7 +204,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
  
    1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
 
-   1. In the wizard, enter a **Name** for your application, such as `R Server Web app`.
+   1. In the wizard, enter a **Name** for your application, such as `Machine Learning Server Web app`.
 
    1. For the **Type**, click the **Web Application And/Or Web API**. 
 
@@ -217,7 +217,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
    1. After the application has been added, click the **Configure** tab. 
       ![Configure web application](./media/configure-authentication/webapp1.png)
 
-   1. Copy the **Client ID** for the web app. Later, you configure your Native application and Microsoft R Server with this ID.
+   1. Copy the **Client ID** for the web app. Later, you configure your Native application and Machine Learning Server with this ID.
 
    1. Add a client key to the web app's **Keys** section by selecting a key duration and take note of the key. 
    
@@ -232,13 +232,13 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
 
 **Step 3: Create a native application**
 
-Now, create a native app. This app links the web app to the Microsoft R Server web node.
+Now, create a native app. This app links the web app to the Machine Learning Server web node.
 
    1. In the **Applications** tab, click **ADD** at the bottom to create an app registration. A dialog appears.
 
    1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
 
-   1. In the wizard, enter a **Name** for your native application, such as `R Server Native app`.
+   1. In the wizard, enter a **Name** for your native application, such as `Machine Learning Server Native app`.
 
    1. For the **Type**, click the **Native Client Application**. 
 
@@ -250,7 +250,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
    1. After the application has been added, click the **Configure** tab. 
 
-   1. Copy the **Client ID** for the native app. Later, you use this ID to enable AAD in Microsoft R Server.
+   1. Copy the **Client ID** for the native app. Later, you use this ID to enable AAD in Machine Learning Server.
 
    1. Scroll down and click **Add Application** button. A dialog opens in which you can define which apps can access the native app.
 
@@ -269,7 +269,7 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
 **Step 4: Enable Azure AD on each web node**
 
-1. [Open the appsettings.json configuration file](configure-find-admin-configuration-file.md).
+1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
 1. Search for the section starting with:
    ```
@@ -316,12 +316,12 @@ Now, create a native app. This app links the web app to the Microsoft R Server w
 
 **Step 5: Share the required AAD connection details with your users**
 
-Share the connection details, such as the Authority and Audience, with any users who need to authenticate with R Server to make [API calls](concept-api.md) directly or indirectly in R [using remoteLoginAAD() function in the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md#aad-arguments). 
+Share the connection details, such as the Authority and Audience, with any users who need to authenticate with Machine Learning Server to make [API calls](concept-api.md) directly or indirectly in R [using remoteLoginAAD() function in the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md#aad-arguments). 
 
 If you do not specify a username and password as arguments to the login call or R functions, you are prompted for your AAD username (<username>@<AAD-account-domain>) and password. 
 
 >[!IMPORTANT]
->Learn how to authenticate with AAD using the remoteLoginAAD() function in the mrsdeploy R package as described in this article: "[Connecting to R Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
+>Learn how to authenticate with AAD using the remoteLoginAAD() function in the mrsdeploy R package as described in this article: "[Connecting to Machine Learning Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
 ## See also
 

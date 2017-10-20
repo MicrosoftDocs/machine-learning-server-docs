@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Predicted Values and Residuals for rxLinMod, rxLogit, and rxGlm" 
-description: " Compute predicted values and residuals using `rxLinMod`, `rxLogit` and `rxGlm` objects. " 
-keywords: "RevoScaleR, rxPredict, rxPredict.default, methods, models, regression" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxPredict function (RevoScaleR) " 
+description: " Compute predicted values and residuals using rxLinMod, rxLogit and rxGlm objects. " 
+keywords: "(RevoScaleR), rxPredict, rxPredict.default, methods, models, regression" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxPredict: Predicted Values and Residuals for rxLinMod, rxLogit, and rxGlm
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxPredict: Predicted Values and Residuals for rxLinMod, rxLogit, and rxGlm 
  ##Description
  
 Compute predicted values and residuals using `rxLinMod`, `rxLogit` and `rxGlm` objects.
@@ -58,107 +54,107 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
 
    
     
- ### modelObject
+ ### `modelObject`
  object returned from a call to `rxLinMod`, `rxLogit`, or `rxGlm`. Objects with multiple dependent variables are not supported in rxPredict. 
   
   
     
- ### data
- An [RxXdfData](rxxdfdata.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](rxhadoopmr.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
+ ### `data`
+ An [RxXdfData](RxXdfData.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](RxHadoopMR.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
   
   
     
- ### outData
- file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, must be an .xdf file if `data` is an .xdf file or a data frame if `data` is a data frame. `outData` can also be a delimited [RxTextData](rxtextdata.md) data source if using a native file system and not appending. 
+ ### `outData`
+ file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, a character string specifying  the output �.xdf� file, a RxXdfData object, a RxOdbcData data source, or a RxSqlServerData  data source. `outData` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
   
   
     
- ### computeStdErrors
+ ### `computeStdErrors`
  logical value. If `TRUE`, the standard errors  for each dependent variable are calculated. 
   
   
     
- ### interval
+ ### `interval`
  character string defining the type of interval calculation to perform. Supported values are `"none"`, `"confidence"`, and `"prediction"`. 
   
   
     
- ### confLevel
+ ### `confLevel`
  numeric value representing the confidence level on the interval [0, 1]. 
   
   
     
- ### computeResiduals
+ ### `computeResiduals`
  logical value. If `TRUE`, residuals are computed. 
   
   
     
- ### type
- the type of prediction desired for [rxGlm](rxglm.md) and [rxLogit](rxlogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
+ ### `type`
+ the type of prediction desired for [rxGlm](rxGLM.md) and [rxLogit](rxLogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
   
   
     
- ### writeModelVars
+ ### `writeModelVars`
  logical value. If `TRUE`, and the output data set is different from the input data set, variables in the model will be written to the output data set in addition to the predictions (and residuals, standard errors, and confidence bounds, if requested). If variables from the input data set are transformed in the model, the transformed variables will also be included. 
   
   
     
- ### extraVarsToWrite
- `NULL` or character vector of additional variables names from the input data to include in the `outData`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
+ ### `extraVarsToWrite`
+ `NULL` or character vector of additional variables names from the input data or transforms to include in the `outData`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
   
   
     
- ### removeMissings
+ ### `removeMissings`
  logical value. If `TRUE`, rows with missing values are removed. 
   
   
     
- ### append
-  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](rxteradata.md) data source. Ignored for data frames.    
+ ### `append`
+  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](RxTeradata.md) data source. Ignored for data frames.    
   
   
     
- ### overwrite
+ ### `overwrite`
   logical value. If `TRUE`, an existing `outData` will be overwritten.  `overwrite` is ignored if appending rows. Ignored for data frames.  
   
   
     
- ### checkFactorLevels
+ ### `checkFactorLevels`
  logical value. If `TRUE`, up to 1000 factor levels  for the data will be verified against factor levels in the model. Setting to `FALSE` can speed up computations if using lots of factors.  
   
   
     
- ### predVarNames
+ ### `predVarNames`
  character vector specifying name(s) to give to the prediction results 
   
   
     
- ### residVarNames
+ ### `residVarNames`
  character vector specifying name(s) to give to the residual results. 
   
   
     
- ### intervalVarNames
+ ### `intervalVarNames`
  `NULL` or a character vector defining low and high confidence interval variable names, respectively. If `NULL`, the strings `"_Lower"` and `"_Upper"` are appended to the dependent variable names to form the  confidence interval variable names. 
   
   
     
- ### stdErrorsVarNames
+ ### `stdErrorsVarNames`
  `NULL` or a character vector defining variable names corresponding to the standard errors, if calculated. If `NULL`, the string `"_StdErr"` is appended to the dependent variable names to form the  standard errors variable names. 
   
   
     
- ### predNames
+ ### `predNames`
  character vector specifying name(s) to give to the prediction and residual results; if length is 2, the second name is used for residuals. This argument is deprecated and `predVarNames` and `residVarNames` should be used instead. 
   
   
     
- ### blocksPerRead
+ ### `blocksPerRead`
  number of blocks to read for each chunk of data read from the data source. If the `data` and `outData` are the same file, blocksPerRead must be 1. 
   
   
     
- ### reportProgress
+ ### `reportProgress`
  integer value with options:  
 *   `0`: no progress is reported. 
 *   `1`: the number of processed rows is printed and updated. 
@@ -168,17 +164,17 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
   
      
- ### verbose
+ ### `verbose`
  integer value. If `0`, no additional output is printed.  If `1`, additional summary information is printed. 
   
   
      
- ### xdfCompressionLevel
+ ### `xdfCompressionLevel`
  integer in the range of -1 to 9 indicating the compression  level for the output data if written to an `.xdf` file.  The higher the value, the greater the  amount of compression - resulting in smaller files but a longer time to create them. If  `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible  with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression  will be used. 
    
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed directly to the Revolution Compute Engine. 
   
  
@@ -208,7 +204,7 @@ is `NULL`, a vector or list of the computed values will be returned.
 If a transformation function is being used for the model estimation,
 the information variable `.rxIsPrediction` can be used to
 exclude computations for the dependent variable when running
-`rxPredict`.  See [rxTransform](rxtransform.md) for an example.
+`rxPredict`.  See [rxTransform](rxTransform.md) for an example.
  
  
  
@@ -220,12 +216,12 @@ results are added to the data frame and it is returned.
 If `outData` is `NULL`, a data frame containing
 the predicted values (and residuals and standard errors, if requested) is returned.
 
-If an .xdf file is specified as the input `data`, an [RxXdfData](rxxdfdata.md)
+If an .xdf file is specified as the input `data`, an [RxXdfData](RxXdfData.md)
 data source object is returned that can be used in subsequent RevoScaleR analyses.
-If `outData` is an .xdf file, the [RxXdfData](rxxdfdata.md) 
+If `outData` is an .xdf file, the [RxXdfData](RxXdfData.md) 
 data source represents the `outData` file.  If `outData` is `NULL`,
 the predicted values (and, if requested, residuals) are appended to the original
-`data` file. The returned [RxXdfData](rxxdfdata.md) object represents this file.
+`data` file. The returned [RxXdfData](RxXdfData.md) object represents this file.
  
  
  ## Computing Standard Errors of Predicted Values 
@@ -247,7 +243,7 @@ In calculating the prediction standard errors, keep the following in mind:
 
 
 * 
- Prediction standard errors are available for both [rxLinMod](rxlinmod.md) and [rxLogit](rxlogit.md) models.
+ Prediction standard errors are available for both [rxLinMod](rxLinMod.md) and [rxLogit](rxLogit.md) models.
 
 
 * 
@@ -255,7 +251,7 @@ In calculating the prediction standard errors, keep the following in mind:
 
 
 * 
- [rxLinMod](rxlinmod.md) and [rxLogit](rxlogit.md) must be called with `covCoef = TRUE` because the variance-covariance
+ [rxLinMod](rxLinMod.md) and [rxLogit](rxLogit.md) must be called with `covCoef = TRUE` because the variance-covariance
 matrix of the coefficients must be available.
 
 
@@ -268,7 +264,7 @@ matrix of the coefficients must be available.
 
 
 * 
- For [rxLogit](rxlogit.md), `interval = "confidence"` is supported (unlike predict.glm, 
+ For [rxLogit](rxLogit.md), `interval = "confidence"` is supported (unlike predict.glm, 
 which does not support confidence bounds), but `interval = "prediction"` is not supported.
 
 
@@ -282,18 +278,18 @@ in the data) have no effect.
 
 
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxLinMod](rxlinmod.md),
-[rxLogit](rxlogit.md),
-[rxGlm](rxglm.md),
-[rxPredict.rxDTree](rxdtree.md),
-[rxPredict.rxDForest](rxdforest.md),
-[rxPredict.rxNaiveBayes](rxnaivebayes.md).
+[rxLinMod](rxLinMod.md),
+[rxLogit](rxLogit.md),
+[rxGlm](rxGLM.md),
+[rxPredict.rxDTree](rxPredict.rxDTree.md),
+[rxPredict.rxDForest](rxPredict.rxDForest.md),
+[rxPredict.rxNaiveBayes](rxPredict.rxNaiveBayes.md).
    
  ##Examples
 

@@ -27,7 +27,7 @@ ms.technology: "r-server"
  
  #RevoScaleR-package:  RevoScaleR: Scalable Data Management and Analysis and High Performance Computing from Microsoft Corporation 
 
- Applies to version 9.1.0 of package RevoScaleR.
+ 
  
  ##Description
  
@@ -66,7 +66,7 @@ The key functions/concepts in the package
 are as follows (to list all public functions, type library(help="RevoScaleR")
 at the R prompt):
 
-**Input/Output**
+## Input/Output
 
 
 * [rxImport](rximport.md): Creates an .xdf file or data frame from a data source (e.g. text, SAS, SPSS data files, ODBC or Teradata connection, or data frame).
@@ -143,7 +143,7 @@ at the R prompt):
 
 
 
-**Data Manipulations/Data Step**
+## Data Manipulations/Data Step 
 
 
 * [rxDataStep](rxdatastep.md): Transform and subset data.
@@ -169,7 +169,7 @@ at the R prompt):
 
 
 
-**Descriptive Statistics and Cross Tabs**
+## Descriptive Statistics and Cross Tabs
 
 
 * [rxSummary](rxsummary.md): Basic summary statistics of data, including computations by group.
@@ -187,7 +187,7 @@ at the R prompt):
 * [rxMarginals](rxmarginals.md): Marginal summaries of cross-tabulations.
 
 
-* [as.xtabs](as-xtabs.md): Converts cross tabulation results to an `xtabs` object.
+* [as.xtabs](as.xtabs.md): Converts cross tabulation results to an `xtabs` object.
 
 
 * [rxChiSquaredTest](rxchisquaredtest.md): Performs Chi-squared Test on `xtabs` object.
@@ -210,7 +210,7 @@ at the R prompt):
 
 
 
-**Statistical Modeling**
+## Statistical Modeling 
 
 
 * [rxLinMod](rxlinmod.md): Fits a linear model to data.
@@ -255,27 +255,27 @@ at the R prompt):
 * [rxNaiveBayes](rxnaivebayes.md): Performs Naive Bayes classification.
 
 
-* [as.lm](as-lm.md): Coerce an `rxLinMod` object to an `lm` object for use with the **pmml** package.
+* [as.lm](as.lm.md): Coerce an `rxLinMod` object to an `lm` object for use with the **pmml** package.
 
 
-* [as.glm](as-glm.md): Coerce an `rxLogit` or `rxGlm` object to a `glm` object for use with the **pmml** package.
+* [as.glm](as.glm.md): Coerce an `rxLogit` or `rxGlm` object to a `glm` object for use with the **pmml** package.
 
 
-* [as.rpart](as-rpart.md): Coerce an `rxDTree` object to an `rpart` object for use with the **pmml** package.
+* [as.rpart](as.rpart.md): Coerce an `rxDTree` object to an `rpart` object for use with the **pmml** package.
 
 
-* [as.kmeans](as-kmeans.md): Coerce an `rxKmeans` object to an `kmeans` object for use with the **pmml** package.
+* [as.kmeans](as.kmeans.md): Coerce an `rxKmeans` object to an `kmeans` object for use with the **pmml** package.
 
 
-* [as.randomForest](as-randomforest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
+* [as.randomForest](as.randomforest.md): Coerce an `rxDForest` object to a `randomForest` object for use with the **pmml** package.
 
 
-* [as.gbm](as-gbm.md): Coerce an `rxBTrees` object to a `gbm` object for use with the **pmml** package.
+* [as.gbm](as.gbm.md): Coerce an `rxBTrees` object to a `gbm` object for use with the **pmml** package.
 
 
 
 
-**Utility Functions**
+## Utility Functions 
 
 
 * [rxOptions](rxoptions.md): Gets or sets **RevoScaleR**-specific options.
@@ -298,7 +298,7 @@ at the R prompt):
 
 
 
-**Basic Graphing Functions**
+## Basic Graphing Functions 
 
 
 * [rxHistogram](rxhistogram.md): Creates a histogram from data.
@@ -315,7 +315,7 @@ at the R prompt):
 
 
 
-**HPC and Distributed Computing**
+## HPC and Distributed Computing 
 
 
 * [RxComputeContext](rxcomputecontext.md): Creates a compute context.
@@ -377,7 +377,7 @@ at the R prompt):
 
 
 
-**Package Management Functions**
+## Package Management Functions 
 
 
 * [rxInstalledPackages](rxinstalledpackages.md): Find (or retrieve) details of installed packages for a compute context.
@@ -396,8 +396,7 @@ at the R prompt):
 ,
 
 
-
-**Hadoop Convenience Functions**
+## Hadoop Convenience Functions
 
 
 * [rxHadoopCommand](rxhadoopcommand.md): Execute an arbitrary Hadoop command.
@@ -431,15 +430,9 @@ at the R prompt):
 
 
 * [rxHadoopVersion](rxhadoopcommand.md): Return the current Hadoop version.
-
-
-
-
- 
  
  ##See Also
  [rxFormula](rxformula.md), [rxTransform](rxtransform.md), [rxPackage](rxpackage.md)   
- ##Author(s)
- Microsoft Corporation 
+
  
  

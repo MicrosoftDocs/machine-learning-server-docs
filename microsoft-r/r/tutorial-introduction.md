@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Get started with Microsoft R tutorials"
-description: "Learn Microsoft R step by step using tutorial exercises and sample data."
+title: "Get started with Machine Learning Server tutorials "
+description: "Learn Machine Learning Server step by step using tutorial exercises and sample data."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -25,13 +25,13 @@ ms.technology:
 
 ---
 
-# Tutorials and sample data for Microsoft R
+# Tutorials and sample data for Machine Learning Server
 
-New to the R language or Microsoft R products and libraries? These tutorials will help you get started.
+New to the R language or Machine Learning Server products and libraries? These tutorials will help you get started.
 
-+ [Expore R and ScaleR in 25 functions or less](tutorial-r-to-revoscaler.md)
-+ [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md)
-+ [Practice data manipulation and statistical analysis](tutorial-revoscaler-data-model-analysis.md)
++ [Expore R and RevoScaleR in 25 functions or less](tutorial-r-to-revoscaler.md)
++ [Learn data import and exploration](tutorial-revoscaler-data-import-transform.md)
++ [Learn data manipulation and statistical analysis](tutorial-revoscaler-data-model-analysis.md)
 
 ## Move forward with larger data sets
 
@@ -43,7 +43,7 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 
 + [Get started with RevoScaleR on Hadoop MapReduce](how-to-revoscaler-hadoop.md)
 + [Get started with RevoScaleR on Hadoop Spark](how-to-revoscaler-spark.md)
-+ [Get started with RevoScaleRon Teradata](how-to-revoscaler-sql-server.md)
++ [Get started with RevoScaleR on SQL Server](how-to-revoscaler-sql-server.md)
 
 ## Custom code
 
@@ -58,6 +58,6 @@ New to the R language or Microsoft R products and libraries? These tutorials wil
 
 ## See Also
 
- [What's new in R Server](../whats-new-in-r-server.md) 
+ [What's new in Machine Learning Server](../whats-new-in-machine-learning-server.md) 
  [Tips on computing with big data](tutorial-large-data-tips.md) 
  [How to guidance](how-to-introduction.md)

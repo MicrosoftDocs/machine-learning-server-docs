@@ -1,11 +1,11 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Crosstabs"
+title: "Crosstabs using RevoScaleR (Machine Learning Server) "
 description: "Cross-tabulations (contingency tables) with RevoScaleR."
 keywords: ""
-author: "richcalaway"
-ms.author: "richcala"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
@@ -23,11 +23,11 @@ ms.technology: "r-server"
 
 ---
 
-# Crosstabs
+# Crosstabs using RevoScaleR
 
 Crosstabs, also known as *contingency tables* or *crosstabulations*, are a convenient way to summarize cross-classified categorical data—that is, data that can be tabulated according to multiple levels of two or more factors. If only two factors are involved, the table is sometimes called a *two-way table*. If three factors are involved, the table is sometimes called a *three-way table*.
 
-For large data sets, cross-tabulations of binned numeric data, that is, data which has been converted to a factor where the levels represent ranges of values, can be a very fast way to get insight into the relationships among variables. In RevoScaleR, the *rxCube* function is the primary tool to create contingency tables.
+For large data sets, cross-tabulations of binned numeric data, that is, data that has been converted to a factor where the levels represent ranges of values, can be a fast way to get insight into the relationships among variables. In RevoScaleR, the *rxCube* function is the primary tool to create contingency tables.
 
 For example, the built-in data set *UCBAdmissions* includes information on admissions by gender to various departments at the University of California at Berkeley. We can look at the contingency table as follows:
 
@@ -37,7 +37,7 @@ For example, the built-in data set *UCBAdmissions* includes information on admis
 
 (Because cross-tabulations are explicitly about exploring interactions between variables, multiple predictors must always be specified using the interaction operator ":", and not the terms operator "+".)
 
-Typing *z* yields the following:
+Typing *z* yields the following output:
 
 	Call:
 	rxCube(formula = Freq ~ Gender:Admit, data = UCBADF)
@@ -55,7 +55,7 @@ Typing *z* yields the following:
 	3   Male Rejected 248.83333      6
 	4 Female Rejected 213.00000      6
 
-This data set is widely used in statistics texts because it illustrates Simpson’s paradox, which is that in some cases a comparison that holds true in a number of groups is reversed when those groups are aggregated to form a single group. From the above table, in which admissions data is aggregated across all departments, it would appear that males are admitted at a higher rate than women. However, if we look at the more granular analysis by department, we find that in four of the six departments, women are admitted at a higher rate than men:
+This data set is widely used in statistics texts because it illustrates Simpson’s paradox, which is that in some cases a comparison that holds true in a number of groups is reversed when those groups are aggregated to form a single group. From the preceding table, in which admissions data is aggregated across all departments, it would appear that males are admitted at a higher rate than women. However, if we look at the more granular analysis by department, we find that in four of the six departments, women are admitted at a higher rate than men:
 
 	z2 <- rxCube(Freq ~ Gender:Admit:Dept, data = UCBADF)
 	z2
@@ -114,7 +114,7 @@ We create our original model as follows:
 	censusWorkersCube <- rxCube(incwage ~ F(age), data=censusWorkers)
 
 
-We first look at the results in tabular form by typing the returned object name, *censusWorkersCube*, which yields the following:
+We first look at the results in tabular form by typing the returned object name, *censusWorkersCube*, which yields the following output:
 	
 	Call:
 	rxCube(formula = incwage ~ F(age), data = censusWorkers)
@@ -187,7 +187,7 @@ The resulting plot shows clearly the relationship of income on age:
 
 ## Transforming Data
 
-Because crosstabs require categorical data for the predictors, you have to do some work to crosstabulate continuous data. In the previous section, we saw that the F() wrapper can do a simple transformation within a formula. The *transforms* argument to *rxCrossTabs* can be used to give you greater control over such transformations.
+Because crosstabs require categorical data for the predictors, you have to do some work to crosstabulate continuous data. In the previous section, we saw that the F() wrapper can do a transformation within a formula. The *transforms* argument to *rxCrossTabs* can be used to give you greater control over such transformations.
 
 For example, the *kyphosis* data from the *rpart* package consists of one categorical variable, *Kyphosis*, and three continuous variables *Age*, *Number*, and *Start*. The *Start* variable indicates the topmost vertebra involved in a certain type of spinal surgery, and has a range of 1 to 18. Since there are 7 cervical vertebrae and 12 thoracic vertebrae, we can specify a transform that classifies the start variable as either cervical or thoracic as follows:
 
@@ -200,7 +200,7 @@ Similarly, we can create a factorized Age variable as follows (in the original d
 	cut(Age, breaks=c(0, 12, 60, 119, 180, 220), labels=c("<1", "1-4", 
 	    "5-9", "10-15", ">15"))
 
-We can now crosstabulate the data using the above transforms and it is instructive to start by looking at the three two-way tables formed by tabulating Kyphosis with the three predictor variables:
+We can now crosstabulate the data using the preceding transforms and it is instructive to start by looking at the three two-way tables formed by tabulating Kyphosis with the three predictor variables:
 
 	library(rpart)
 	rxCube(~ Kyphosis:Age, data = kyphosis, 
@@ -449,7 +449,7 @@ You can see, for example, that in Department A, 62 percent of male applicants ar
 
 ## A Large Data Example
 
-The power of *rxCrossTabs* is most evident when you need to tabulate a data set that won’t fit into memory. For example, in the large airline data set AirOnTime87to12.xdf, you can obtain the mean arrival delay by carrier and day of week as follows (if you have downloaded the data set, modify the first line below to reflect your local path):
+The power of *rxCrossTabs* is most evident when you need to tabulate a data set that won’t fit into memory. For example, in the large airline data set AirOnTime87to12.xdf, you can obtain the mean arrival delay by carrier and day of week as follows (if you have downloaded the data set, modify the first line as follows to reflect your local path):
 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
@@ -461,7 +461,7 @@ The power of *rxCrossTabs* is most evident when you need to tabulate a data set 
 	    data = bigAirData, blocksPerRead = 30)
 	print(arrDelayXT)
 
-This gives the following output:
+Gives the following output:
 
 	Call:
 	rxCrossTabs(formula = ArrDelay ~ UniqueCarrier:DayOfWeek, data = bigAirData, 
@@ -511,9 +511,9 @@ This gives the following output:
 
 ## Using Sparse Cubes
 
-An additional tool that may be useful when using *rxCube* and *rxCrossTabs* with large data is the *useSparseCube* parameter.  Compiling cross-tabulations of categorical data can sometimes result in a large number of cells with zero counts, yielding at its core a “sparse matrix”.  In the usual case, memory is allocated for every cell in the cube, but for large cubes this may overwhelm memory resources. If we instead allocate space only for cells with positive counts, such operations may often proceed successfully.
+An additional tool that may be useful when using *rxCube* and *rxCrossTabs* with large data is the *useSparseCube* parameter.  Compiling cross-tabulations of categorical data can sometimes result in a large number of cells with zero counts, yielding at its core a “sparse matrix”.  In the usual case, memory is allocated for every cell in the cube, but large cubes may overwhelm memory resources. If we instead allocate space only for cells with positive counts, such operations may often proceed successfully.
 
-As an example, let’s look at the airline data again and construct a case where the cross-tabulation yields many zero entries.  As the overwhelming number of flights in the data set were not cancelled, by appending the *Cancelled* predictor in the formula, we would expect a large number of categorical predictor combinations to have zero observations.  Note that because the *Cancelled* predictor is a logical rather than a factor variable, we need to use the *F(.)* function to convert it.
+As an example, let’s look at the airline data again and construct a case where the cross-tabulation yields many zero entries.  As the overwhelming number of flights in the data set were not canceled, by appending the *Cancelled* predictor in the formula, we would expect a large number of categorical predictor combinations to have zero observations.  Because the *Cancelled* predictor is a logical rather than a factor variable, we need to use the *F(.)* function to convert it.
 
 	bigDataDir <- "C:/MRS/Data"
 	bigAirData <- file.path(bigDataDir, "AirOnTime87to12/AirOnTime87to12.xdf")
@@ -522,7 +522,7 @@ As an example, let’s look at the airline data again and construct a case where
                          data = bigAirData, blocksPerRead = 30, useSparseCube = TRUE)
 	print(arrDelaySparse)
 
-This gives the following output.  Note that we get 210 rows with F_Cancelled = 0. By default, if useSparseCube=TRUE, rows with zero counts are removed from the result.
+This gives the following output.  We get 210 rows with F_Cancelled = 0. By default, if useSparseCube=TRUE, rows with zero counts are removed from the result.
 	
 	Call:
 	rxCube(formula = ArrDelay ~ UniqueCarrier:DayOfWeek:F(Cancelled), 
@@ -586,13 +586,13 @@ You can then use this as input to any of the following functions:
 -   *rxFisherTest*: performs Fisher’s exact test of independence.
 -   *rxKendallCor*: performs a Kendall tau test of independence. There are three flavors of test, a, b, and c; by default, the b flavor, which accounts for ties, is used.
 
-(In fact, regular *rxCrossTabs* or *rxCube* output can be used as input to these functions, but they will be converted to *xtabs* format first, so it is generally somewhat more efficient to have *rxCrossTabs* return the *xtabs* format directly.)
+(In fact, regular *rxCrossTabs* or *rxCube* output can be used as input to these functions, but they are converted to *xtabs* format first, so it is somewhat more efficient to have *rxCrossTabs* return the *xtabs* format directly.)
 
-Here we use the *arrDelayXTab* data created above and perform a Pearson’s chi-squared test of independence on it:
+Here we use the *arrDelayXTab* data created preceding and perform a Pearson’s chi-squared test of independence on it:
 
 	rxChiSquaredTest(arrDelayXTab)
 
-This gives the following output:
+Gives the following output:
 
 	Chi-squared test of independence between UniqueCarrier and DayOfWeek 
 	 X-squared  df p-value
@@ -627,12 +627,12 @@ The chi-squared test works equally well on this example:
 	 X-squared df      p-value
 	   91.6096  1 1.055797e-21
 
-In both cases, we are given indisputable evidence of the independence of our two predictor factors. For this example, we could have just as easily used the standard R functions *chisq.test* and *fisher.test*. The RevoScaleR enhancements, however, permit *rxChisSquaredTest* and *rxFisherTest* to work on *xtabs* objects with multiple tables. For example, if we expand our examination of the admissions data to include the department info, we obtain a multi-way contingency table:
+In both cases, we are given indisputable evidence of the independence of our two predictor factors. For this example, we could have as easily used the standard R functions *chisq.test* and *fisher.test*. The RevoScaleR enhancements, however, permit *rxChisSquaredTest* and *rxFisherTest* to work on *xtabs* objects with multiple tables. For example, if we expand our examination of the admissions data to include the department info, we obtain a multi-way contingency table:
 
 	admissCTabs2 <- rxCrossTabs(Freq ~ Gender:Admit:Dept, data = UCBADF,
 	    returnXtabs=TRUE)
 
-The chi-squared and Fisher’s exact test results are shown below; notice that they provide a test of independence between Gender and Admit for each level of Dept:
+The chi-squared and Fisher’s exact test results are shown as follows; notice that they provide a test of independence between Gender and Admit for each level of Dept:
 
 	rxChiSquaredTest(admissCTabs2)
 
@@ -658,7 +658,7 @@ The chi-squared and Fisher’s exact test results are shown below; notice that t
 	   HA: two.sided 
 	   H0:  odds ratio = 1
 
-Like Fisher’s exact test, the Kendall tau correlation test works best on smaller contingency tables. Here is an example of what it returns when applied to our admissions data (the results will differ from run to run as the underlying algorithm relies on sampling):
+Like Fisher’s exact test, the Kendall tau correlation test works best on smaller contingency tables. Here is an example of what it returns when applied to our admissions data (the results differ from run to run as the underlying algorithm relies on sampling):
 
 	rxKendallCor(admissCTabs2)
 	

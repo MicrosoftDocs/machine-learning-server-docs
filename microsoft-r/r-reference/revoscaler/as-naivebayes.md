@@ -29,7 +29,7 @@ ms.technology: "r-server"
  
  #as.naiveBayes: Conversion of a RevoScaleR rxNaiveBayes object to a e1071 naiveBayes object
 
- Applies to version 9.1.0 of package RevoScaleR.
+ 
  
  ##Description
  
@@ -73,18 +73,18 @@ The underlying structure of the output object will be a subset of that produced 
 an object of class naiveBayes from **e1071**.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
 [rxNaiveBayes](rxnaivebayes.md),
-[as.lm](as-lm.md),
-[as.kmeans](as-kmeans.md),
-[as.glm](as-glm.md),
-[as.gbm](as-gbm.md),
-[as.xtabs](as-xtabs.md).
+[as.lm](as.lm.md),
+[as.kmeans](as.kmeans.md),
+[as.glm](as.glm.md),
+[as.gbm](as.gbm.md),
+[as.xtabs](as.xtabs.md).
    
  
  ##Examples

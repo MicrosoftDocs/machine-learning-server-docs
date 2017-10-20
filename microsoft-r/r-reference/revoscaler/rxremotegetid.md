@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Provides a unique identifier for the process. " 
+title: "rxRemoteGetId function (RevoScaleR) " 
 description: " Provides a unique identifier for the process in the range [1:N] where N is the number of processes. " 
-keywords: "RevoScaleR, rxRemoteGetId, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxRemoteGetId, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxRemoteGetId:  Provides a unique identifier for the process. 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxRemoteGetId:  Provides a unique identifier for the process.  
  ##Description
  
 Provides a unique identifier for the process in the range [1:N] where N is the number of processes.
@@ -45,7 +41,7 @@ Provides a unique identifier for the process in the range [1:N] where N is the n
  
  ##Details
  
-This function is intended for use in calls to [rxExec](rxexec.md) to identify the process performing a given computation.  
+This function is intended for use in calls to [rxExec](rxExec.md) to identify the process performing a given computation.  
 
 You can also use `rxRemoteGetId` to obtain separate random number seeds.
 See the examples.

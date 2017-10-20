@@ -24,6 +24,8 @@ ms.technology: "r-server"
 
 # R Server 9.1 Installation for Linux Systems
 
+**Looking for the 9.2.1 release? See [Machine Learning Server for Linux installation](machine-learning-server-linux-install.md)**
+
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. 
 
 This article explains how to install Microsoft R Server 9.1.0 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see the instructions for an [offline installation](r-server-install-linux-offline.md).
@@ -115,7 +117,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
   `[root@localhost tmp] $ cd /tmp/MRS91Linux`
 
-4. Run the script. To include the [pretrained machine learning models for MicrosoftML](microsoftml-install-pretrained-models.md), append the `-m` switch. 
+4. Run the script. To include the [pre-trained machine learning models for MicrosoftML](microsoftml-install-pretrained-models.md), append the `-m` switch. 
 
    `[root@localhost MRS91Linux] $ bash install.sh -m`
 
@@ -147,7 +149,7 @@ Partial output is as follows (note version 9.1.0):
 
 ### Start Revo64
 
-As another verification step, run the Revo64 program. By default, Revo64 is installed in the /usr/bin directory, available to any user who can log in to the machine:
+As another verification step, run the Revo64 program. By default, Revo64 is linked to the /usr/bin directory, available to any user who can log in to the machine:
 
 1. From /Home or any other working directory:
 

@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxFileData" 
+title: "RxFileData-class function (RevoScaleR) " 
 description: " File-based data source connection class. " 
-keywords: "RevoScaleR, RxFileData-class, show,RxFileData-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxFileData-class, show,RxFileData-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxFileData-class: Class RxFileData
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxFileData-class: Class RxFileData 
  ##Description
  
 File-based data source connection class.
@@ -42,13 +38,13 @@ File-based data source connection class.
  
 Class RxDataSource, directly.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxDataSource-class](rxdatasource-class.md),
-[rxNewDataSource](rxnew.md)
+[RxDataSource-class](RxDataSource-class.md),
+[rxNewDataSource](rxNew.md)
    
  

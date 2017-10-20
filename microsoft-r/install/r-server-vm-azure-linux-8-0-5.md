@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "How to use R Server on Linux VM in Azure | Microsoft Azure"
+title: "How to use Machine Learning Server on Linux VM in Azure - Virtual Machine "
 description: "Learn how to work with R Server on Linux by using a virtual machine in Azure."
 keywords: "R Server, linux, virtual machine"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "12/30/2016"
+ms.date: "6/30/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -110,7 +110,7 @@ Some related articles are:
 + [Azure Compute, Network, and Storage Providers for Windows applications under Azure Resource Manager deployment model](https://azure.microsoft.com/en-gb/documentation/articles/virtual-machines-azurerm-versus-azuresm/)
 + [Creating Azure VMs with ARM PowerShell cmdlets](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/05/05/creating-azure-vms-with-arm-powershell-cmdlets.aspx)
 
-<a name=deployrconfig></a>
+<a name="deployrconfig"></a>
 
 ## Use DeployR on the Virtual Machine
 

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Supported Platforms for Microsoft R Server"
-description: "A list of the operating systems supported by editions and versions of Microsoft R Server."
+title: "Supported Platforms for Machine Learning Server and Microsoft R Server "
+description: "A list of the operating systems supported by editions and versions of Machine Learning Server and Microsoft R Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "05/02/2017"
+ms.date: "09/07/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -22,12 +22,27 @@ ms.technology: "r-server"
 #ms.custom: ""
 
 ---
-# Supported Platforms for Microsoft R Server
+# Supported platforms for Machine Learning Server and Microsoft R Server
 
-This article specifies supported operating systems, distributions, and database platforms for all supported versions of Microsoft R Server, Revolution R Server, and Revolution R Workstation.
+This article specifies supported operating systems, distributions, and database platforms for all supported versions of Machine Learning Server, Microsoft R Server, Revolution R Server, and Revolution R Workstation.
 
 > [!Note]
 > 64-bit operating systems with x86-compatible Intel architecture (commonly known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips) are required on all platforms. Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
+
+## Machine Learning Server 9.2.1
+
+R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), which is based on R-3.4.1. Python support is based on Anaconda 4.2 over Python 3.5. 
+
+| SKU | Platforms |
+|-----|-----------|
+| [Machine Learning <br/>Server for Hadoop](machine-learning-server-hadoop-install.md) | Hadoop Distributions: [Cloudera CDH 5.7-5.11](machine-learning-server-cloudera-install.md), Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>You can install Machine Learning Server on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.<br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**, Ubuntu 14.04 and 16.04 <br/><br/>Spark 2.0 and 2.4 through a Hadoop distribution on CDH, HDP, or MapR. <br/><br/>Machine Learning Server can be configured on CentOS/RHEL 7.x or Ubuntu to operationalize on edge nodes only.|
+| [Machine Learning <br/>Server for Linux](machine-learning-server-linux-install.md) | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>1</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**<br/>Ubuntu 14.04 and 16.04|
+| [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup><big>1,2</big></sup>**, Windows 8.1 **<sup><big>1,2</big></sup>**, Windows 10 **<sup><big>1,2</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
+
+<sup>1</sup> **.NET Core platform dependency**: Certain features like the machine learning algorithms in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and configuring to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) are NOT supported on the marked (1) platforms since they require .NET Core.
+
+<sup>2</sup> Use a **server OS for operationalizing analytics.** We do NOT recommend that you [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) on non-server platforms such as these marked (2). While some might work, only server platforms are supported. See the full list of supported platforms for operationalizing [here](../operationalize/configure-start-for-administrators.md#supported-platforms).
+
 
 ## Microsoft R Server 9.1
 

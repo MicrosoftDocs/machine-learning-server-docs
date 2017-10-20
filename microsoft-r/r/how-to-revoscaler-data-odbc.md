@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Import relational data using ODBC (Microsoft R)"
-description: "How to import relational data using ODBC and rxImport in RevoScaleR"
+title: "Import relational data using ODBC (Machine Learning Server) "
+description: "How to import relational data using ODBC and rxImport in RevoScaleR in Machine Learning Server"
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Import relational data using ODBC (Microsoft R)
+# Import relational data using ODBC 
 
 RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. ODBC connections are enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database. The ODBC Driver Manager sets up and manages the connection between them.
 
@@ -37,7 +37,7 @@ To import data from a relational database management system, do the following:
 4. For read operations, use **rxImport** to read data
 5. For write operations, use **rxDataStep** to write data back to the data source
 
-## About ODBC  in Microsoft R
+## About ODBC in Microsoft R
 
 In Microsoft R, an ODBC and **RxOdbcData** dependency exists for data imported from relational database systems like Oracle, PostGreSQL, and MySQL, to name a few. ODBC is primarily required for **RxOdbcData** data sources, but it is also used internally for DBMS-specific connections to SQL Server. If you delete the ODBC driver for SQL Server and then try to use **RxSqlServerData**, the connection fails. 
 
@@ -45,7 +45,7 @@ Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sou
 
 For Teradata, you should avoid ODBC and create an **RxTeradata** data source instead (see [RevoScaleR Teradata Getting Started Guide](https://msdn.microsoft.com/en-us/microsoft-r/scaler-teradata-getting-started) for details).
 
-For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbdData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](how-to-revoscaler-data-sql.md).
+For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbcData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](how-to-revoscaler-data-sql.md).
 
 ## How to configure ODBC for relational data access
 
@@ -73,7 +73,7 @@ For more information, SQL Server documentation provides in-depth instructions fo
 
 ### 2 - Install drivers
 
-ODBC drivers must be installed on the machine running R Server or R Client. You will need a driver that corresponds to the database version you plan to use. To check which drivers are installed, use the instructions below.
+ODBC drivers must be installed on the machine running Machine Learning Server or R Client. You will need a driver that corresponds to the database version you plan to use. To check which drivers are installed, use the instructions below.
 
 **On Linux**
 
@@ -107,7 +107,7 @@ This step uses examples to illustrate connection strings, query strings, **RxOdb
 
 Query strings must consist of data extraction queries (SELECT and SHOW statements) that populate a single data frame or .xdf file. As long as a single extracted table is produced, you can use queries linked by AND, OR, and multiple FROM clauses. Unsupported syntax includes INSERT queries or multiple query strings separated by a semicolon.
 
-Recall that **RxOdbcData** provides local compute context only, which means that when you create the object, any read or write operations are executed by R Server on the local machine.
+Recall that **RxOdbcData** provides local compute context only, which means that when you create the object, any read or write operations are executed by Machine Learning Server on the local machine.
 
 #### Using SQL Server
 

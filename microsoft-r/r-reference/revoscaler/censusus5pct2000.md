@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "IPUMS 2000 U.S. Census Data" 
+title: "CensusUS5Pct2000 function (RevoScaleR) " 
 description: " The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format. " 
-keywords: "RevoScaleR, CensusUS5Pct2000, CensusUS5Pct2000.xdf, datasets" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), CensusUS5Pct2000, CensusUS5Pct2000.xdf, datasets" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #CensusUS5Pct2000: IPUMS 2000 U.S. Census Data
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #CensusUS5Pct2000: IPUMS 2000 U.S. Census Data 
  ##Description
  
 The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format.
@@ -75,13 +71,13 @@ Use Microdata Series*. [`http://www.ipums.org`](http://www.ipums.org)
 .
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[CensusWorkers](censusworkers.md)
+[CensusWorkers](CensusWorkers.md)
    
  ##Examples
 

@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Subset of IPUMS 2000 U.S. Census Data" 
+title: "CensusWorkers function (RevoScaleR) " 
 description: " A small subset of the IPUMS 5% sample of the 2000 U.S. Census data containing information on the working population from Connecticut, Indiana, and Washington. " 
-keywords: "RevoScaleR, CensusWorkers, CensusWorkers.xdf, datasets" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), CensusWorkers, CensusWorkers.xdf, datasets" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #CensusWorkers: Subset of IPUMS 2000 U.S. Census Data
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #CensusWorkers: Subset of IPUMS 2000 U.S. Census Data 
  ##Description
  
 A small subset of the IPUMS 5% sample of the 2000 U.S. Census data containing
@@ -44,27 +40,27 @@ Washington.
 An .xdf file with 351121 observations on the following 6 variables.
 
 
-###age
+###`age`
 integer variable containing ages.
 
 
-###incwage
+###`incwage`
 integer variable containing wage and salary income. The value 999999 from the original data has been converted to missing.
 
 
-###perwt
+###`perwt`
 integer variable containing person weights, that is, a frequency weight for each person record. This is treated as integer data in R.
 
 
-###sex
+###`sex`
 factor variable sex with levels `Male` and `Female`.
 
 
-###wkswork1
+###`wkswork1`
 integer variable containing the weeks worked the previous year.
 
 
-###state
+###`state`
 factor variable containing the state with levels `Connecticut`, `Indiana`, and `Washington`.
 
 
@@ -91,13 +87,13 @@ Minnesota Population Center, University of Minnesota.
 .
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[CensusUS5Pct2000](censusus5pct2000.md)
+[CensusUS5Pct2000](CensusUS5Pct2000.md)
    
  ##Examples
 

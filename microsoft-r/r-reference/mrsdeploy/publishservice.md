@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Publishes an R code block or a Realtime model as a new web service." 
+title: "publishService function (mrsdeploy) " 
 description: " Publishes an R code block or a Realtime model as a new web service running on R Server. " 
-keywords: "mrsdeploy, publishService" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), publishService" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #publishService: Publishes an R code block or a Realtime model as a new web service.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #publishService: Publishes an R code block or a Realtime model as a new web service. 
  ##Description
  
 Publishes an R code block or a Realtime model as a new web service running on
@@ -51,35 +47,36 @@ R Server.
 
    
   
- ### name
- The web service name. 
+ ### `name`
+ A string representing the web service name. Use quotes such as  "MyService". We recommend a name that is easily understood and remembered. 
   
   
   
- ### code
- R code to publish. `code` can take the form of:  
-*   A function handle. 
-*   A block of R code. 
-*   A File-path to an `.R` file containing a block of R code. 
+ ### `code`
+ Required for standard web services. The R code to publish.  If you use a path, the base path is your local current working directory. `code` can take the form of:  
+*   A function handle such as  `code = function(hp, wt) {` `newdata <- data.frame(hp = hp, wt = wt)` `predict(model, newdata, type = "response")` `}` 
+*   A block of arbitrary R code as a character string such as`code = "result <- x + y"` 
+*   A filepath to a local `.R` file containing R code such as `code = "/path/to/R/script.R"` 
  If serviceType is 'Realtime', code has to be NULL. 
   
   
   
- ### model
- (optional) An object or a file-path to an external  representation of R objects to be loaded and used with `code`.  The specified file can be: 
-*   File-path to an `.RData` file holding R objects to be loaded. 
-*   File-path to an `.R` file which will be evaluated into an environment and loaded. 
- If serviceType is 'Realtime', model has to be an R object. 
+ ### `model`
+ (optional) For standard web services, an `object` or a filepath to an external representation of R objects to be loaded and used  with `code`. The specified file can be: 
+*   Filepath to a local `.RData` file holding R objects to be loaded. For example,  `model = "/path/to/glm-model.RData"` 
+*   Filepath to a local `.R` file that is evaluated into an environment and loaded. For example,  `model = "/path/to/glm-model.R"` 
+*   An object. For example,  `model = "model = am.glm"` 
+ For realtime web services (serviceType = 'Realtime'), only an R model  object is accepted. For example, `model = "model = am.glm"` 
   
   
   
- ### snapshot
- (optional) Identifier of the snapshot to load. If serviceType is 'Realtime', snapshot has to be NULL. 
+ ### `snapshot`
+ (optional) Identifier of the session snapshot to load. Can replace the model argument or be merged with it. If serviceType is 'Realtime', snapshot has to be NULL. 
   
   
   
- ### inputs
- (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list  `list(x = "logical")` which describe the input parameter  names and their corresponding **Data Types**:  
+ ### `inputs`
+ (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list  `list(x = "logical")` which describes the input parameter  names and their corresponding **data types**:  
 *   `numeric` 
 *   `integer` 
 *   `logical` 
@@ -87,12 +84,12 @@ R Server.
 *   `vector` 
 *   `matrix` 
 *   `data.frame` 
- . If serviceTypeis 'Realtime', inputs has to be NULL. Once published, service's inputs will default to  list(inputData = 'data.frame'). 
+ If serviceType is 'Realtime', inputs has to be NULL. Once published,  service inputs automatically default to  list(inputData = 'data.frame'). 
   
   
   
- ### outputs
- (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a  named list `list(x = "logical")` which describe the output parameter  names and their corresponding **Data Types**:  
+ ### `outputs`
+ (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a  named list `list(x = "logical")` that describes the output parameter  names and their corresponding **data types**:  
 *   `numeric` 
 *   `integer` 
 *   `logical` 
@@ -100,37 +97,37 @@ R Server.
 *   `vector` 
 *   `matrix` 
 *   `data.frame` 
- Note: If `code` is defined as a `function` then only one output value can be claimed. If serviceType is 'Realtime', outputs has to be NULL. Once published, service's outputs will default to  list(outputData = 'data.frame'). 
+ Note: If `code` is defined as a `function`, then only one output value can be claimed. If serviceType is 'Realtime', outputs has to be NULL. Once published,  service outputs automatically default to  list(inputData = 'data.frame'). 
   
   
   
- ### artifacts
+ ### `artifacts`
  (optional) A character vector of filenames defining which file artifacts should be returned during service consumption. File content is encoded as a `Base64 String`. 
   
   
   
- ### v
- (optional) Web service version. If the version is left blank, a unique `guid` will be generated in its place. Useful during service  development before the author is ready to officially publish a semantic  version to share. 
+ ### `v`
+ (optional) Defines a unique alphanumeric web service version.  If the version is left blank, a unique `guid` is generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. 
   
   
   
- ### alias
- (optional) Defines predication RPC function used to consume the  service. 
+ ### `alias`
+ (optional) An alias name of the predication remote procedure call (RPC) function used to consume the service. If code is a function,  then it will use that function name by default. 
   
   
   
- ### destination
+ ### `destination`
  (optional) The codegen output directory location. 
   
   
   
- ### descr
+ ### `descr`
  (optional) The description of the web service. 
   
   
   
- ### serviceType
- (optional) The type of the web service. Valid values are  'Script' and 'Realtime'. Defaults to 'Script'. 
+ ### `serviceType`
+ (optional) The type of the web service. Valid values are  'Script' and 'Realtime'. Defaults to 'Script', which is for a standard web  service, contains arbitrary R code, R scripts and/or models. 'Realtime' contains only a supported model object (see 'model' argument above). 
   
  
  
@@ -142,12 +139,12 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-Other service methods: [deleteService](deleteservice.md),
-[getService](getservice.md), [listServices](listservices.md),
-[print.serviceDetails](print-servicedetails.md),
-[serviceOption](serviceoption.md),
-[summary.serviceDetails](summary-servicedetails.md),
-[updateService](updateservice.md)
+Other service methods: [deleteService](deleteService.md),
+[getService](getService.md), [listServices](listServices.md),
+[print.serviceDetails](print.serviceDetails.md),
+[serviceOption](serviceOption.md),
+[summary.serviceDetails](summary.serviceDetails.md),
+[updateService](updateService.md)
    
  ##Examples
 
@@ -207,5 +204,4 @@ publishService(
   
  
 ```
- 
  

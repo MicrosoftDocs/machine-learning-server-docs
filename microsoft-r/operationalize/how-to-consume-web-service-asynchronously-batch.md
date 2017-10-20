@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Consume web services asynchronously with batch scoring - Microsoft R Server | Microsoft Docs"
-description: "Asynchronous web service consumption via batch processing in R Server"
+title: "Consume web services asynchronously with batch scoring with mrsdeploy  - Machine Learning Server "
+description: "Asynchronous web service consumption via batch processing in Machine Learning Server"
 keywords: "batch processing of web services"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/25/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -23,11 +23,11 @@ ms.technology: "r-server"
 
 ---
 
-# Asynchronous web service consumption via batch processing in R Server
+# Asynchronous web service consumption via batch processing with mrsdeploy 
 
-**Applies to:  Microsoft R Server 9.1**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.1**
 
-In this article, you can learn how to consume  a web service asynchronously, which is especially useful with large input data sets and long-running computations. The typical approach to consuming web services, ["Request Response" consumption](how-to-consume-web-service-interact-in-r.md#consume-service), involves a single API call to execute the code in that web service once.  The "Asynchronous Batch" approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to R Server. Then, R Server immediately executes those operations once for every row of data provided. 
+In this article, you can learn how to consume  a web service asynchronously, which is especially useful with large input data sets and long-running computations. The typical approach to consuming web services, ["Request Response" consumption](how-to-consume-web-service-interact-in-r.md#consume-service), involves a single API call to execute the code in that web service once.  The "Asynchronous Batch" approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to Machine Learning Server. Then, Machine Learning Server immediately executes those operations once for every row of data provided. 
 
 ## Asynchronous batch workflow
 
@@ -47,10 +47,8 @@ Use these following [public API functions](#public-fx-batch)  to define, start, 
 
 Use this sample code to follow along with the workflow described in greater detail in the following sections. 
 
-Here, we publish the same web service that was published [in this tutorial](concept-operationalize-deploy-consume.md) article. Then, we consume that web service asynchronously. 
-
 >[!IMPORTANT]
->Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+>Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to Machine Learning Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 ```R
 ##          EXAMPLE: DEPLOY MODEL & BATCH CONSUME SERVICE               ##
@@ -83,10 +81,10 @@ manualTransmission <- function(hp, wt) {
 print(manualTransmission(120, 2.8)) # 0.6418125
 
 ##########################################################################
-#                 Log into Microsoft R Server                            #
+#                 Log into Server                            #
 ##########################################################################
 
-# Use `remoteLogin` to authenticate local admin account with R Server. 
+# Use `remoteLogin` to authenticate local admin account. 
 # Use session = false so that no remote R session started
 remoteLogin("http://localhost:12800", 
             username = "admin", 
@@ -229,7 +227,7 @@ Once you have the batch object, use these public functions to interact with it.
 
 ## 1. Get the web service
 
-Once you have authenticated, retrieve the web service from R Server, assign it to a variable, and define the inputs to it as record data in a data frame, CSV, or TSV. 
+Once you have authenticated, retrieve the web service from the server, assign it to a variable, and define the inputs to it as record data in a data frame, CSV, or TSV. 
 
 Batching begins by retrieving the web service containing the code against which you score the data records you define next. You can get a service using its name and version with the getService() function from `mrsdeploy`. The result is a service object, which in our example is called `txService`.  
 The `getService` function is covered in detail in the article "[How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)."
@@ -284,7 +282,7 @@ Next, use the public api functions to start the asynchronous batch execution on 
 <a name="start-fx"></a>
 
 ### Start batch execution task
-Start the batch task with `start()`. R Server starts the batch execution and assigns an ID to the execution and returns the batch object. 
+Start the batch task with `start()`. Machine Learning Server starts the batch execution and assigns an ID to the execution and returns the batch object. 
 
 **Syntax:** `start()`
 
@@ -458,7 +456,7 @@ Retrieve a list of every artifact that was generated during the batch execution 
 
 ### Display artifact contents
 
-Display the contents of a named artifact returned in the preceding list with `artifact()`. R Server returns the ID for the named batch object. 
+Display the contents of a named artifact returned in the preceding list with `artifact()`. Machine Learning Server returns the ID for the named batch object. 
 
 **Syntax:** `artifact(index, fileName)`
 
@@ -514,8 +512,9 @@ for(i in seq(batchRes$totalItemCount)) {
 ## See also
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
-+ [Connecting to R Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
-+ [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
++ [Connecting to Machine Learning Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)
++ [What is operationalization?](../what-is-operationalization.md)
++ [What are web services?](../operationalize/concept-what-are-web-services.md)
 + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
-+ [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)
++ [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)

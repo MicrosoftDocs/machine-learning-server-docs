@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: " Multiple Variable Independence Tests " 
+title: "rxMultiTest function (RevoScaleR) " 
 description: " Collects a list of tests for variable independence into a table. " 
-keywords: "RevoScaleR, rxMultiTest, print.rxMultiTest, htest" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxMultiTest, print.rxMultiTest, htest" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #rxMultiTest:  Multiple Variable Independence Tests 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxMultiTest:  Multiple Variable Independence Tests  
  
  ##Description
  
@@ -54,22 +50,22 @@ print  (x, ...)
 
    
     
- ### tests
+ ### `tests`
  a list of objects of class htest. 
   
   
     
- ### title
+ ### `title`
  a title for the multiTest table. If `NULL`, the title is determined from  the method slot of the htest. 
   
   
     
- ### x
+ ### `x`
  object of class rxMultiTest. 
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to the print method. 
   
  
@@ -80,19 +76,19 @@ print  (x, ...)
 an object of class rxMultiTest.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  
  ##See Also
  
-[rxChiSquaredTest](rxchisquaredtest.md),
-[rxFisherTest](rxchisquaredtest.md),
-[rxKendallCor](rxchisquaredtest.md),
-[rxPairwiseCrossTab](rxpairwisecrosstab.md),
-[rxRiskRatio](rxriskratio.md),
-[rxOddsRatio](rxriskratio.md).
+[rxChiSquaredTest](rxChiSquaredTest.md),
+[rxFisherTest](rxChiSquaredTest.md),
+[rxKendallCor](rxChiSquaredTest.md),
+[rxPairwiseCrossTab](rxPairwiseCrosstab.md),
+[rxRiskRatio](rxRiskRatio.md),
+[rxOddsRatio](rxRiskRatio.md).
    
  
  ##Examples

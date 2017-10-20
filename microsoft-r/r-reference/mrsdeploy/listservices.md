@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "List the different published web services." 
+title: "listServices function (mrsdeploy) " 
 description: " List the different published web services on the R Server instance. " 
-keywords: "mrsdeploy, listServices" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), listServices" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #listServices: List the different published web services.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #listServices: List the different published web services. 
  ##Description
  
 List the different published web services on the R Server instance.
@@ -48,13 +44,13 @@ List the different published web services on the R Server instance.
 
    
   
- ### name
- The optional web service name. 
+ ### `name`
+ When a name is specified, returns only web services with that  name. Use quotes around the name string, such as "MyService". 
   
   
   
- ### v
- The optional web service version. 
+ ### `v`
+ When specified, returns only web services with that version. 
   
  
  
@@ -89,13 +85,13 @@ A list of services and service information.
  
  ##See Also
  
-Other service methods: [deleteService](deleteservice.md),
-[getService](getservice.md),
-[print.serviceDetails](print-servicedetails.md),
-[publishService](publishservice.md),
-[serviceOption](serviceoption.md),
-[summary.serviceDetails](summary-servicedetails.md),
-[updateService](updateservice.md)
+Other service methods: [deleteService](deleteService.md),
+[getService](getService.md),
+[print.serviceDetails](print.serviceDetails.md),
+[publishService](publishService.md),
+[serviceOption](serviceOption.md),
+[summary.serviceDetails](summary.serviceDetails.md),
+[updateService](updateService.md)
    
  ##Examples
 
@@ -116,5 +112,4 @@ service <- listServices("transmission", "1.0.1")
   
  
 ```
- 
  

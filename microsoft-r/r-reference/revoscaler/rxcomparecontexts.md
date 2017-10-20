@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Compare Two Compute Context Objects " 
+title: "rxCompareContexts function (RevoScaleR) " 
 description: " Determines if two compute contexts are equivalent. " 
-keywords: "RevoScaleR, rxCompareContexts, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxCompareContexts, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxCompareContexts:  Compare Two Compute Context Objects 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxCompareContexts:  Compare Two Compute Context Objects  
  ##Description
  
 Determines if two compute contexts are equivalent.
@@ -48,15 +44,15 @@ Determines if two compute contexts are equivalent.
 
    
   
- ### context1
+ ### `context1`
  The first compute context to be compared. 
   
   
- ### context2
+ ### `context2`
  The second compute context to be compared. 
   
   
- ### exactMatch
+ ### `exactMatch`
  Determines if compute contexts are matched simply by the location specified for the compute context, or by all fields in the full compute context. The location is specified by the `headNode` (if available) and `shareDir` parameters. See Details for more information. 
   
  
@@ -71,9 +67,9 @@ omitted from the comparison.  Note also that case is ignored for node name compa
 near matching of node names and partial domain information will be used when comparing node names.
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  

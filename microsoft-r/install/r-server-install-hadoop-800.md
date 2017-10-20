@@ -27,19 +27,19 @@ Older versions of R Server for Hadoop are no longer available on the Microsoft d
 
 ## Recommendations for installation
 
-We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
+We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually be reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.
 
 We recommend installing Microsoft R Server as `root` on each node of your Hadoop cluster if you want all users to be granted access by default. Non-root installs are supported, but require that the path to the R executable files be added to each user’s path.
 
 Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
 
-1. Sign in to [Azure Portal](https://ms.portal.azure.com).
+1. Sign in to [Azure portal](https://ms.portal.azure.com).
 2. Click **New** in the top left side bar.
 3. In the search box, type the name of one of these vendors: Cloudera, HortonWorks, and MapR. Several of these vendors offer sandbox deployments that make it easier to get started.
 
 ## System Requirements
 
-R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as practicable to maximize the available compute resources. Nodes must have the same version of R Server (side-by-side is not supported).
+R Server must be installed on at least one master or client node that serves as the submit node; it should be installed on as many workers as practicable to maximize the available compute resources. Nodes must have the same version of R Server (side by side is not supported).
 
 Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions. Microsoft R Server 8.0 works with the following Hadoop distributions:
 
@@ -57,7 +57,7 @@ Minimum system configuration requirements for Microsoft R Server are as follows:
 
 **Processor:** 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs). Itanium-architecture CPUs (also known as IA-64) are not supported. Multiple-core CPUs are recommended.
 
-**Operating System:** The Hadoop distribution must be installed on Red Hat Enterprise Linux 6.x (or a fully compatible operating system like CentOS). For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported.See [Supported platforms in Microsoft R Server](r-server-install-supported-platforms.md) for more information.
+**Operating System:** The Hadoop distribution must be installed on Red Hat Enterprise Linux 6.x (or a fully compatible operating system like CentOS). For HDP 1.3.0 systems *only*, RHEL 5.x operating systems are also supported. See [Supported platforms in Microsoft R Server](r-server-install-supported-platforms.md) for more information.
 
 **Memory:** A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended. Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.
 
@@ -98,7 +98,7 @@ For most users, installing on the cluster means simply running the standard Micr
   From the unpacked tar file:
 		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
 
-9. Unpack and run the installer script, as follows (the tarball name may include an operating system ID denoted below by <OS>):
+9. Unpack and run the installer script, as follows (the tarball name may include an operating system ID denoted as follows by <OS>):
 
 		cd /tmp
 		tar xvzf Microsoft-R-Server-<OS>.tar.gz
@@ -115,7 +115,7 @@ If you have multiple nodes, you can automate the installation across nodes using
 
 Obtain the Microsoft R Open for Microsoft R Server rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](#StandardCommandLineInstall) steps 3 through 8.
 
-The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
+The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines as follows due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
 		alias pdshw=’pdsh -w\`cat myhosts.txt\` -R ssh’
 		alias pdcpw=’pdcp -w\`cat myhosts.txt\` -R ssh’
@@ -189,7 +189,7 @@ Microsoft R Server requires several packages that may not be in a default Red Ha
 		yum install gcc-gfortran cairo-devel python-devel \\
 		tk-devel libicu-devel
 
-Run this command on all the nodes of your cluster that will be running Microsoft R Server. You can also use a distributed shell such as pdsh to distribute the command (here we use the pdshw alias we defined in [Distributed Installation](#DistributedInstallation); this alias includes the list of host names and specifies the use of ssh):
+Run this command on all the nodes of your cluster that is running Microsoft R Server. You can also use a distributed shell such as pdsh to distribute the command (here we use the pdshw alias we defined in [Distributed Installation](#DistributedInstallation); this alias includes the list of host names and specifies the use of ssh):
 
 		pdshw yum install gcc-gfortran cairo-devel python-devel tk-devel libicu-devel
 
@@ -231,13 +231,13 @@ Once you have installed the Microsoft R Server prerequisites, install the Cloude
 
 7. Click **Parcels** to bring up the Parcels page.
 
-8. Click **Check for New Parcels**. MRO 3.2.2-1and MRS 8.0.0-1 should each appear with a **Distribute** button. After clicking Check for New Parcels you may need to click on “All Clusters” under the “Location” section on the left to see the new parcels.
+8. Click **Check for New Parcels**. MRO 3.2.2-1and MRS 8.0.0-1 should each appear with a **Distribute** button. After clicking Check for New Parcels, you may need to click on “All Clusters” under the “Location” section on the left to see the new parcels.
 
-9. Click the MRO 3.2.2 **Distribute** button. Microsoft R Open will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+9. Click the MRO 3.2.2 **Distribute** button. Microsoft R Open is distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
 10. Click **Activate**. Activation prepares Microsoft R Open to be used by the cluster.
 
-11. Click the MRS 8.0.0-1 **Distribute** button. Microsoft R Server will be distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
+11. Click the MRS 8.0.0-1 **Distribute** button. Microsoft R Server is distributed to all the nodes of your cluster. When the distribution is complete, the **Distribute** button is replaced with an **Activate** button.
 
 12. Click **Activate**. Activation prepares Microsoft R Server to be used by the cluster.
 
@@ -272,7 +272,7 @@ The HDFS directory can also be created in a user’s R session (provided the top
 		rxHadoopMakeDir("/user/RevoShare/username")
 		rxHadoopCommand("fs -chmod uog+rwx /user/RevoShare/username")
 
-As part of this process make sure to check that the base directories /user and /user/RevoShare have uog+rwx permissions as well.
+As part of this process, make sure to check that the base directories /user and /user/RevoShare have uog+rwx permissions as well.
 
 ## Verify Installation
 
@@ -343,7 +343,7 @@ That should return a list of files in the native file system. If either the call
 
 ## Next Steps
 
-To get started with Microsoft R Server on Hadoop, we recommend the [Practice data import and exploration on Hadoop ](../r/how-to-revoscaler-hadoop.md).
+To get started with Microsoft R Server on Hadoop, we recommend the [Practice data import and exploration on Hadoop](../r/how-to-revoscaler-hadoop.md).
 
 ## See Also
 

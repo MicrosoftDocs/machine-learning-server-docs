@@ -1,9 +1,55 @@
 - name: Docs
-  href: /
-  homepage: /
+  tocHref: /
+  topicHref: /
   items:
-  - name: Microsoft R
-    href: /r-server/
-    homepage: /r-server/ 
-
-
+  - name: Machine Learning Server
+    tocHref: /machine-learning-server/
+    topicHref: /machine-learning-server/index
+    items:
+    - name: Install & configure
+      tocHref: /machine-learning-server/install/
+      topicHref: /machine-learning-server/machine-learning-server-install
+    - name: Operationalize
+      tocHref: /machine-learning-server/operationalize/
+      topicHref: /machine-learning-server/operationalize/configure-start-for-administrators
+    - name: Microsoft R Client
+      tocHref: /machine-learning-server/r-client/
+      topicHref: /machine-learning-server/r-client/what-is-microsoft-r-client
+    - name: Python Package Reference
+      tocHref: /machine-learning-server/python-reference/
+      topicHref: /machine-learning-server/python-reference/introducing-python-package-reference
+      items:
+      - name: microsoftml
+        tocHref: /machine-learning-server/python-reference/microsoftml/
+        topicHref: /machine-learning-server/python-reference/microsoftml/microsoftml-package
+      - name: revoscalepy
+        tocHref: /machine-learning-server/python-reference/revoscalepy/
+        topicHref: /machine-learning-server/python-reference/revoscalepy/revoscalepy-package
+      - name: azureml-model-management-sdk
+        tocHref: /machine-learning-server/python-reference/azureml-model-management-sdk/
+        topicHref: /machine-learning-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk
+    - name: R Package Reference
+      tocHref: /machine-learning-server/r-reference/
+      topicHref: /machine-learning-server/r-reference/introducing-r-server-r-package-reference
+      items:
+      - name: microsoftml
+        tocHref: /machine-learning-server/r-reference/microsoftml/
+        topicHref: /machine-learning-server/r-reference/mrsdeploy/microsoftml-package
+      - name: mrsdeploy
+        tocHref: /machine-learning-server/r-reference/mrsdeploy/
+        topicHref: /machine-learning-server/r-reference/mrsdeploy/mrsdeploy-package
+      - name: olapr
+        tocHref: /machine-learning-server/r-reference/olapr/
+        topicHref: /machine-learning-server/r-reference/olapr/olapr
+      - name: revopemar
+        tocHref: /machine-learning-server/r-reference/revopemar/
+        topicHref: /machine-learning-server/r-reference/revopemar/pemar
+      - name: revoscaler
+        tocHref: /machine-learning-server/r-reference/revoscaler/
+        topicHref: /machine-learning-server/r-reference/revoscaler/revoscaler
+      - name: revoutils
+        tocHref: /machine-learning-server/r-reference/revoutils/
+        topicHref: /machine-learning-server/r-reference/revoutils/revoutils
+      - name: sqlrutils
+        tocHref: /machine-learning-server/r-reference/sqlrutils/
+        topicHref: /machine-learning-server/r-reference/sqlrutils/sqlrutils

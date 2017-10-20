@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configuring CA Single Sign-On | DeployR 8.x"
+title: "Configuring CA Single Sign-On - DeployR 8.x "
 description: "How to configure CA Single Sign-On for DeployR"
 keywords: ""
 author: "j-martens"

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Getting Started with DeployR for Application Developers | DeployR 8.x"
+title: "Getting Started with DeployR for Application Developers - DeployR 8.x "
 description: "Getting started for Application Developers: high level introduction to DeployR for Application Developers"
 keywords: "Application Developers, r programmer, DeployR"
 author: "j-martens"

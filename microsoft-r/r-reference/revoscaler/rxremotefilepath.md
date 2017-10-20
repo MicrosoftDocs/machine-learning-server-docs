@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Merge path using the remote platform's separator." 
+title: "rxRemoteFilePath function (RevoScaleR) " 
 description: "This is a utility function to automatically build a path according to file path rules of the remote compute context platform." 
-keywords: "RevoScaleR, rxRemoteFilePath, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxRemoteFilePath, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxRemoteFilePath: Merge path using the remote platform's separator.
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxRemoteFilePath: Merge path using the remote platform's separator. 
  ##Description
  This is a utility function to automatically build a path
 according to file path rules of the remote compute context platform. 
@@ -43,24 +39,24 @@ according to file path rules of the remote compute context platform.
 
    
     
- ###  ...
+ ### ` ...`
  character strings containing parts of the path to be merged. 
   
     
- ### computeContext
- An [RxComputeContext](rxcomputecontext.md) context object specifying the platform information. 
+ ### `computeContext`
+ An [RxComputeContext](RxComputeContext.md) context object specifying the platform information. 
   
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxComputeContext](rxcomputecontext.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxSpark](rxspark.md).
+[RxComputeContext](RxComputeContext.md),
+[RxHadoopMR](RxHadoopMR.md),
+[RxSpark](RxSpark.md).
    
  ##Examples
 

@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Function to generate a 'colInfo' list from a data source " 
-description: " Generates a `colInfo` list from a data source that can be used in `rxImport` or an `RxDataSource` constructor. " 
-keywords: "RevoScaleR, rxCreateColInfo, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxCreateColInfo function (RevoScaleR) " 
+description: " Generates a colInfo list from a data source that can be used in rxImport or an RxDataSource constructor. " 
+keywords: "(RevoScaleR), rxCreateColInfo, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxCreateColInfo:  Function to generate a 'colInfo' list from a data source 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxCreateColInfo:  Function to generate a 'colInfo' list from a data source  
  ##Description
  
 Generates a `colInfo` list from a data source that can be used in `rxImport` or
@@ -49,33 +45,33 @@ an `RxDataSource` constructor.
 
    
     
- ### data
-  An [RxDataSource](rxdatasource.md) object, a character string containing an .xdf file name, or a data frame.  An object returned from [rxGetVarInfo](rxgetvarinfoxdf.md) is also supported.  
+ ### `data`
+  An [RxDataSource](RxDataSource.md) object, a character string containing an .xdf file name, or a data frame.  An object returned from [rxGetVarInfo](rxGetVarInfoXdf.md) is also supported.  
   
     
- ### includeLowHigh
+ ### `includeLowHigh`
   If `TRUE`, the low/high values will be included in the `colInfo` object.  Note that this will override any actual low/high values in the data set if the `colInfo` object is applied to a different data source.  
   
     
- ### factorsOnly
+ ### `factorsOnly`
   If `TRUE`, only column information for factor variables will be included in the output.  
   
   
     
- ### varsToKeep
+ ### `varsToKeep`
   `NULL` to include all variables, or character vector of variables to include.  
   
   
     
- ### sortLevels
+ ### `sortLevels`
   If `TRUE`, factor levels will be sorted. If factor levels represent integers, they will be put in numeric order.    
   
     
- ### computeInfo
+ ### `computeInfo`
   If `TRUE`, a pass through the data will be taken for non-xdf data sources in order to compute factor levels and low/high values.  
   
     
- ### useFactorIndex
+ ### `useFactorIndex`
   If `TRUE`, the `factorIndex` variable type will be used instead of `factor`.  
   
  
@@ -88,24 +84,24 @@ It is also useful for repeated analysis on non-xdf data sources.
  
  ##Value
  
-A `colInfo` list that can be used as input for [rxImport](rximport.md) and in data sources such as
-[RxTextData](rxtextdata.md) and [RxSqlServerData](rxsqlserverdata.md).
+A `colInfo` list that can be used as input for [rxImport](rxImport.md) and in data sources such as
+[RxTextData](RxTextData.md) and [RxSqlServerData](RxSqlServerData.md).
  
- ##Author(s)
+
  Microsoft Corporation [`Microsoft Technical Support`](http://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
-[RxDataSource-class](rxdatasource-class.md),
-[RxTextData](rxtextdata.md),
-[RxSqlServerData](rxsqlserverdata.md),
-[RxSpssData](rxspssdata.md),
-[RxSasData](rxsasdata.md),
-[RxOdbcData](rxodbcdata.md),
-[RxTeradata](rxteradata.md),
-[RxXdfData](rxxdfdata.md),
-[rxImport](rximport.md).
+[RxDataSource-class](RxDataSource-class.md),
+[RxTextData](RxTextData.md),
+[RxSqlServerData](RxSqlServerData.md),
+[RxSpssData](RxSpssData.md),
+[RxSasData](RxSasData.md),
+[RxOdbcData](RxOdbcData.md),
+[RxTeradata](RxTeradata.md),
+[RxXdfData](RxXdfData.md),
+[rxImport](rxImport.md).
    
  ##Examples
 

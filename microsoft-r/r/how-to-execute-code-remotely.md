@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Remote Execution with mrsdeploy - Microsoft R Server | Microsoft Docs"
-description: "Remote execution for Microsoft R Server"
+title: "Remote Execution with mrsdeploy - Machine Learning Server "
+description: "Remote execution for Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "7/24/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,34 +24,41 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Execute on a remote Microsoft R Server using the mrsdeploy package
+# Execute on a remote server using the mrsdeploy package
 
-**Applies to:  Microsoft R Client 3.3.x, Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x, Microsoft R Client 3.x**
 
-Remote execution is the ability to issue R commands from either R Server or R Client to a remote session running on another R Server instance. You can use remote execution to offload heavy processing on server and test your work.  It is especially useful while developing and testing your analytics.
+Remote execution is the ability to issue R commands from either Machine Learning Server (or R Server) or R Client to a remote session running on another Machine Learning Server instance. You can use remote execution to offload heavy processing on server and test your work.  It is especially useful while developing and testing your analytics.
 
-Remote execution is supported via the command line in console applications, in R scripts that call [functions from the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md), or from code that calls the APIs. You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
+Remote execution is supported in several ways:
++ From the command line in console applications
++ In R scripts that call [functions from the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)
++ From code that calls the APIs. 
+
+You can enter 'R' code just as you would in a local R console. R code entered at the remote command line executes on the remote server.
 
 With remote execution, you can:
-+ [Log in to and out of an R Server remotely](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-+ [Generate diff reports of the local and remote environments](#diff) and reconcile any differences
-+ [Execute R scripts and code remotely](#run)
-+ [Work with R objects/files remotely](#objects)
-+ [Create and manage snapshots of the remote environment for reuse](#snapshot)
+ + [Log in and out of Machine Learning Server](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
+ + [Generate diff reports of the local and remote environments](#diff) and reconcile any differences    
+ + [Execute R scripts and code remotely](#run)    
+ + [Work with R objects/files remotely](#objects)    
+ + [Create and manage snapshots of the remote environment for reuse](#snapshot)    
 
 ![Remote Execution](./media/how-to-execute-code-remotely/remote-execution.png) 
 
 ## Supported configurations and mrsdeploy usage
 
-The R functions used for remote execution are provided in the mrsdeploy package. However, the mrsdeploy package can only be used **after Microsoft R Server has been [configured to operationalize analytics](../install/operationalize-r-server-enterprise-config.md)** by your administrator. 
+The R functions used for remote execution are provided in the mrsdeploy package, which is  installed with Machine Learning Server on almost every platform. Your administrator must [configure the server for the deployment and consumption of analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)** before you can use the functions in the package.  Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-package.md) for the list of [remote execution functions](../r-reference/mrsdeploy/mrsdeploy-package.md#remote-functions) in that package. 
 
-Read the article ["`mrsdeploy` functions"](../r-reference/mrsdeploy/mrsdeploy-package.md) for the supported configurations for this package and remote execution as well as for a list of the [remote execution functions](../r-reference/mrsdeploy/mrsdeploy-package.md#remote-functions) contained in that package. 
+ 
+
+
 
 ## How to create a remote session
 
-To create a remote session, you must first authenticate with R Server using one of the mrsdeploy login functions:  remoteLogin() and remoteLoginAAD(). With these functions, you can authenticate, set the arguments to create a remote R session on the R Server (`session = TRUE`) and even place yourself in the remote command line upon login `commandline = TRUE`. 
+To create a remote session, you must first authenticate with Machine Learning Server using one of the mrsdeploy login functions:  remoteLogin() and remoteLoginAAD(). With these functions, you can authenticate, set the arguments to create a remote R session on the Machine Learning Server (`session = TRUE`) and even place yourself in the remote command line upon login `commandline = TRUE`. 
 
-Read the article ["Connecting to R Server with mrsdeploy"](../operationalize/how-to-connect-log-in-with-mrsdeploy.md) for more on authentication with `mrsdeploy` and syntax. 
+Read the article ["Connecting to Machine Learning Server with mrsdeploy"](../operationalize/how-to-connect-log-in-with-mrsdeploy.md) for more on authentication with `mrsdeploy` and syntax. 
 
 <a name="switch"></a>
 
@@ -109,7 +116,7 @@ This function takes a path to an R script to be executed remotely. You also have
 >If you need more granular control of a remote execution scenario, use the remoteExecute() function.
 
 ### Package dependencies
-If your R Script has R package dependencies, those packages must be installed on the Microsoft R server. You can either ask your Administrator to install them globally directly on the server, or install them yourself for the duration of your remote session using the install.packages() function. Leave the `lib` parameter empty.
+If your R script has R package dependencies, those packages must be installed on the Microsoft R Server. Your administrator can install them globally on the server or you can install them yourself for the duration of your remote session using the install.packages() function. Leave the `lib` parameter empty.
 
 ### Limitations in a remote context
 
@@ -123,7 +130,7 @@ In most cases, “system” commands work.  However, system commands that write 
 
 ### Asynchronous remote execution
 
-If you want to continue working in your development environment during the remote script execution, you can execute your R script asynchronously. This is useful when you are running scripts that have long execution times. 
+To continue working in your development environment during the remote script execution, you can execute your R script asynchronously. Asynchronous script execution is useful when you are running scripts that have long execution times. 
 
 To execute an R script asynchronously, set the async parameter for remoteScript() to TRUE. When remoteScript() is executed, the script is run asynchronously in a new remote R console window. All R console output and any plots from that execution are returned to the same window.
 
@@ -186,7 +193,7 @@ The following functions are available for working with files:  putLocalFile(), g
 
 When you plot remotely, the default plot size is 400 x 400 pixels. If you desire higher-resolution output, you must tell the remote session the size of plot to create. 
 
-On a local session, you might do the following:
+On a local session, you might change the width and height as follows:
 
 ```R
 > png(filename="myplot.png", width=1440, height=900)
@@ -235,17 +242,17 @@ If you need a prepared environment for remote script execution that includes R p
 + The session's workspace along with the installed R packages
 + Any files and artifacts in the working directory
 
-A session snapshot can be loaded into any subsequent remote R session for the user who created it. For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.  Instead of loading the data file and object each time you want to execute the script, create a session snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. However, any necessary packages must be reloaded as described in the following section.
+A session snapshot can be loaded into any subsequent remote R session for the user who created it. For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.  Instead of loading the data file and object each time you want to execute the script, create a session snapshot of an R session containing them. Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created. However, any necessary packages must be reloaded as described in the next section.
 
 Snapshots are only accessible to the user who creates them and cannot be shared across users.
 
 The following functions are available for working with snapshots:  
-listSnapshots(), createSnapshot(), loadSnapshot(), downloadSnapshot() and deleteSnapshot().
+listSnapshots(), createSnapshot(), loadSnapshot(), downloadSnapshot(), and deleteSnapshot().
 
 ### Snapshot guidance and warnings
 
 Take note of the following tips and recommendations around using session snapshots:
-+ One caveat is that while the workspace is saved inside the session snapshot, it does not save loaded packages.  If packages are needed by your code, they should be included in the R code that is part of the web service using the require() function. require() is used to load packages from within other functions. For example, you can write the following code to load the RevoScaleR package:
++ One caveat is that while the workspace is saved inside the session snapshot, it does not save loaded packages.  If your code depends on certain R packages, use the require() function to include those packages directly in the R code that is part of the web service. The require() function loads packages from within other functions. For example, you can write the following code to load the RevoScaleR package:
  
   ```R 
   delayPrediction <- function(depTime, dayOfWeek) {
@@ -255,7 +262,7 @@ Take note of the following tips and recommendations around using session snapsho
   }
   ```
 
-+ While snapshots can also be used when publishing a web service for environment dependencies, it may have an impact on the performance of the consumption time.  For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.  And, if you only need a single object, consider passing that object alone itself instead of using a snapshot.
++ While you can use snapshots when publishing a web service for environment dependencies, it can have an impact on performance at consumption time.  For optimal performance, consider the size of the snapshot carefully especially when publishing a service. Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.  And, if you only need a single object, consider passing that object alone itself instead of using a snapshot.
 
 + **R Server 9.0 users** When loading a library for the REMOTE session, set lib.loc=getwd() as such: 
 `library("<packagename>", lib.loc=getwd())`
@@ -287,7 +294,7 @@ To publish a web service after you create a remote session (argument `session = 
 
 + Publish from your local session:  At the `REMOTE>` prompt, use pause() to return the R command line in your local session. Then, publish your service. Use resume() from your local prompt to return to the command line in the remote R session.
 
-+ Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with remoteLogin() or remoteLoginAAD(). But this time, explicitly set the argument `session = FALSE`  so that a second remote session is NOT created **and** provide your username and password directly in the function. When attempting to log in from a remote session, you are not prompted for user credentials. Instead, pass valid values for `username` and `password` to this function. Then, you are authenticated and able to publish from the `REMOTE>` prompt.
++ Authenticate again from within the remote session to enable connections from that remote session to the web node API. At the `REMOTE>` prompt, authenticate with remoteLogin() or remoteLoginAAD(). However, explicitly set the argument `session = FALSE` this time so that a second remote session is NOT created **and** provide your username and password directly in the function. When attempting to log in from a remote session, you are not prompted for user credentials. Instead, pass valid values for `username` and `password` to this function. Then, you are authenticated and able to publish from the `REMOTE>` prompt.
 
 >[!WARNING]
 >If you try to publish a web service from the remote R session without authenticating from that session, you get a message such as `Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`.  
@@ -338,5 +345,5 @@ REMOTE>api <- publishService(
 
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Connecting to R Server from mrsdeploy](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)
-+ [Get started guide for Data scientists](../operationalize/concept-operationalize-deploy-consume.md)
++ [Get started guide for Data scientists](../what-is-operationalization.md)
 + [Working with web services in R](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md)

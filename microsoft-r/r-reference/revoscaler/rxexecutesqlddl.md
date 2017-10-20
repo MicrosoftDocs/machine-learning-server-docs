@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: " Execute SQL Command for Data Manipulation, Definition, or Control " 
+title: "rxExecuteSQLDDL function (RevoScaleR) " 
 description: " Execute a command to define, manipulate, or control SQL data (but not  return data). " 
-keywords: "RevoScaleR, rxExecuteSQLDDL, rxExecuteSQLDDL,RxDataSource-method,  ~kwd1 ,  ~kwd2 " 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxExecuteSQLDDL, rxExecuteSQLDDL,RxDataSource-method,  ~kwd1 ,  ~kwd2 " 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxExecuteSQLDDL:  Execute SQL Command for Data Manipulation, Definition, or Control 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxExecuteSQLDDL:  Execute SQL Command for Data Manipulation, Definition, or Control  
  ##Description
  
 Execute a command to define, manipulate, or control SQL data (but not 
@@ -49,11 +45,11 @@ return data).
 
    
     
- ### src
+ ### `src`
   An RxOdbcData data source.  
   
     
- ###  ...
+ ### ` ...`
   Additional arguments, typically `sSQLString=` supplied with a character string specifying the SQL command to be executed. The typical SQL commands are `CREATE TABLE` and `DROP TABLE`.  
   
  
@@ -65,9 +61,9 @@ Returns `NULL`; executed for its side-effect (the manipulation of the
 SQL data source).
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  
@@ -75,7 +71,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxOdbcData](rxodbcdata.md)
+[RxOdbcData](RxOdbcData.md)
    
  ##Examples
 

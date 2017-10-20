@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Get a list of files from the remote R session." 
+title: "listRemoteFiles function (mrsdeploy) " 
 description: " Get a list of files in the working directory of the remote R session. " 
-keywords: "mrsdeploy, listRemoteFiles" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), listRemoteFiles" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #listRemoteFiles: Get a list of files from the remote R session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #listRemoteFiles: Get a list of files from the remote R session. 
  ##Description
  
 Get a list of files in the working directory of the remote R session.
@@ -56,11 +52,11 @@ A character vector containing the file names in the working directory of the rem
  
  ##See Also
  
-[getRemoteFile](getremotefile.md)
+[getRemoteFile](getRemoteFile.md)
 
-[deleteRemoteFile](deleteremotefile.md)
+[deleteRemoteFile](deleteRemoteFile.md)
 
-[putLocalFile](putlocalfile.md)
+[putLocalFile](putLocalFile.md)
    
  ##Examples
 
@@ -73,5 +69,4 @@ files<-listRemoteFiles()
   
  
 ```
- 
  

@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Remove Packages from Compute Context" 
+title: "rxRemovePackages function (RevoScaleR) " 
 description: " **NOTE: This new API is in pre-release mode and subject to change before final release.**  Removes installed packages from a compute context. " 
-keywords: "RevoScaleR, rxRemovePackages, remove, uninstall, packages, sql" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxRemovePackages, remove, uninstall, packages, sql" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxRemovePackages: Remove Packages from Compute Context
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxRemovePackages: Remove Packages from Compute Context 
  ##Description
  
 **NOTE: This new API is in pre-release mode and subject to change before final release.**
@@ -51,43 +47,43 @@ Removes installed packages from a compute context.
    
   
     
- ### pkgs
+ ### `pkgs`
  a `character` vector of names of the packages to be removed. 
    
   
     
- ### lib
- a `character` vector  identifying library path from where the package needs to be removed. This argument is not supported in [RxInSqlServer](rxinsqlserver.md) compute context. Only valid for local compute context. 
+ ### `lib`
+ a `character` vector  identifying library path from where the package needs to be removed. This argument is not supported in [RxInSqlServer](RxInSqlServer.md) compute context. Only valid for local compute context. 
    
    
     
- ### dependencies
- logical. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. If `TRUE`, does dependency resolution of the packages being removed and removes the dependent packages also if the dependent packages aren't referenced by other packages outside the dependency closure.  
+ ### `dependencies`
+ logical. Applicable only for [RxInSqlServer](RxInSqlServer.md) compute context. If `TRUE`, does dependency resolution of the packages being removed and removes the dependent packages also if the dependent packages aren't referenced by other packages outside the dependency closure.  
   
   
     
- ### checkReferences
- logical. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. If `TRUE`, verifies there are no references to the dependent packages by other packages outside the dependency closure.  
+ ### `checkReferences`
+ logical. Applicable only for [RxInSqlServer](RxInSqlServer.md) compute context. If `TRUE`, verifies there are no references to the dependent packages by other packages outside the dependency closure.  
   
   
     
- ### verbose
+ ### `verbose`
  logical. If `TRUE`, "progress report" is given during removal of given packages. 
   
   
     
- ### scope
- character. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. Should be either `"shared"` or `"private"`.  `"shared"` removes the packages from per database shared location on SQL server which in turn could have been used (referred) by multiple different users. `"private"` removes the packages from per database, per user private location on SQL server which is only accessible to the single user. 
+ ### `scope`
+ character. Applicable only for [RxInSqlServer](RxInSqlServer.md) compute context. Should be either `"shared"` or `"private"`.  `"shared"` removes the packages from per database shared location on SQL server which in turn could have been used (referred) by multiple different users. `"private"` removes the packages from per database, per user private location on SQL server which is only accessible to the single user. 
   
   
     
- ### owner
- character. Applicable only for [RxInSqlServer](rxinsqlserver.md) compute context. This is generally empty `''` value.  Should be either empty `''` or a valid SQL database user account name. Only users in `'db_owner'` role for a database can specify this value to remove packages on  behalf of other users.  
+ ### `owner`
+ character. Applicable only for [RxInSqlServer](RxInSqlServer.md) compute context. This is generally empty `''` value.  Should be either empty `''` or a valid SQL database user account name. Only users in `'db_owner'` role for a database can specify this value to remove packages on  behalf of other users.  
   
   
     
- ### computeContext
- an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
+ ### `computeContext`
+ an [RxComputeContext](RxComputeContext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](RxInSqlServer.md), [RxLocalSeq](RxLocalSeq.md). 
   
   
  
@@ -95,7 +91,7 @@ Removes installed packages from a compute context.
  ##Details
  
 This is a simple wrapper for remove.packages. 
-For [RxInSqlServer](rxinsqlserver.md) compute context the user specified as part of connection string is used for removing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can remove packages from `"shared"` location and their own `"private"` location. Users in `'rpkgs-private'` role can only remove packages from their own `"private"` location.
+For [RxInSqlServer](RxInSqlServer.md) compute context the user specified as part of connection string is used for removing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can remove packages from `"shared"` location and their own `"private"` location. Users in `'rpkgs-private'` role can only remove packages from their own `"private"` location.
 
 See the help file for additional details.
  
@@ -106,19 +102,19 @@ See the help file for additional details.
 Invisible `NULL`
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxPackage](rxpackage.md),
+[rxPackage](rxPackage.md),
 remove.packages,
-[rxFindPackage](rxfindpackage.md),
-[rxInstalledPackages](rxinstalledpackages.md),
-[rxInstallPackages](rxinstallpackages.md),  
-[rxSyncPackages](rxsyncpackages.md),
-[rxSqlLibPaths](rxsqllibpaths.md),   
+[rxFindPackage](rxFindPackage.md),
+[rxInstalledPackages](rxInstalledPackages.md),
+[rxInstallPackages](rxInstallPackages.md),  
+[rxSyncPackages](rxSyncPackages.md),
+[rxSqlLibPaths](rxSqlLibPaths.md),   
 require
    
  ##Examples

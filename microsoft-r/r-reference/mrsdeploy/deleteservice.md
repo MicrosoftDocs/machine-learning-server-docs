@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Delete a web service.." 
+title: "deleteService function (mrsdeploy) " 
 description: " Delete a web service on an R Server instance. " 
-keywords: "mrsdeploy, deleteService" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), deleteService" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #deleteService: Delete a web service..
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #deleteService: Delete a web service.. 
  ##Description
  
 Delete a web service on an R Server instance.
@@ -48,12 +44,12 @@ Delete a web service on an R Server instance.
 
    
   
- ### name
+ ### `name`
  The web service name. 
   
   
   
- ### v
+ ### `v`
  The web service version. 
   
  
@@ -66,13 +62,13 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-Other service methods: [getService](getservice.md),
-[listServices](listservices.md),
-[print.serviceDetails](print-servicedetails.md),
-[publishService](publishservice.md),
-[serviceOption](serviceoption.md),
-[summary.serviceDetails](summary-servicedetails.md),
-[updateService](updateservice.md)
+Other service methods: [getService](getService.md),
+[listServices](listServices.md),
+[print.serviceDetails](print.serviceDetails.md),
+[publishService](publishService.md),
+[serviceOption](serviceOption.md),
+[summary.serviceDetails](summary.serviceDetails.md),
+[updateService](updateService.md)
    
  ##Examples
 
@@ -86,5 +82,4 @@ deleteService("add-service", "1.0.1")
   
  
 ```
- 
  

@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Generate SQL Server In-Database Compute Context" 
+title: "RxInSqlServer function (RevoScaleR) " 
 description: "Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server.  Currently only supported in Windows." 
-keywords: "RevoScaleR, RxInSqlServer, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxInSqlServer, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #RxInSqlServer: Generate SQL Server In-Database Compute Context
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxInSqlServer: Generate SQL Server In-Database Compute Context 
  ##Description
  Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server.
 
@@ -49,85 +45,84 @@ Currently only supported in Windows.
 
    
     
- ### object
+ ### `object`
   An optional RxInSqlServer object.  
   
     
- ### connectionString
+ ### `connectionString`
   An ODBC connection string used to connect to the Microsoft SQL Server database.  
   
   
     
- ### numTasks
+ ### `numTasks`
   Number of tasks (processes) to run for each computation. This is the maximum number of tasks that will be used; SQL Server  may start fewer processes if there is not enough data, if too many resources are already being used by other jobs, or if  numTasks exceeds the MAXDOP (maximum degree of parallelism) configuration option in SQL Server. Each of the tasks is given data in parallel, and does computations in parallel, and so computation time may decrease as `numTasks` increases. However, that may not always be the case, and computation time may even increase if too many tasks are competing for machine resources. Note that `rxOptions(numCoresToUse=n)` controls how many cores (actually, threads) are used in parallel within each process,  and there is a trade-off between `numCoresToUse` and `numTasks` that depends upon the specific algorithm,  the type of data, the hardware, and the other jobs that are running.  
   
   
     
- ### wait
+ ### `wait`
   logical value. If `TRUE`, the job will be blocking and will not return until   it has completed or has failed. If `FALSE`, the job will be non-blocking and return immediately,  allowing you to continue running other R code. The object `rxgLastPendingJob` is created with the job information. The client connection with SQL Server must be maintained while the job is running, even in non-blocking mode.  
   
     
- ### consoleOutput
-  logical scalar.If `TRUE`, causes the standard output  of the R process started by SQL Server to be printed to the user console. This value may be  overwritten by passing a non-`NULL` logical value to the `consoleOutput` argument  provided in [rxExec](rxexec.md) and [rxGetJobResults](rxgetjobresults.md).  
+ ### `consoleOutput`
+  logical scalar.If `TRUE`, causes the standard output  of the R process started by SQL Server to be printed to the user console. This value may be  overwritten by passing a non-`NULL` logical value to the `consoleOutput` argument  provided in [rxExec](rxExec.md) and [rxGetJobResults](rxGetJobResults.md).  
   
     
- ### autoCleanup
-  logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxgetjobresults.md), and the output via [rxGetJobOutput](rxgetjoboutput.md) until the  [rxCleanupJobs](rxcleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.  
+ ### `autoCleanup`
+  logical scalar. If `TRUE`, the default behavior is to clean up the  temporary computational artifacts and delete the result objects upon retrieval.  If `FALSE`,  then the computational results are not deleted, and the results may be acquired using  [rxGetJobResults](rxGetJobResults.md), and the output via [rxGetJobOutput](rxGetJobOutput.md) until the  [rxCleanupJobs](rxCleanup.md) is used to delete the results and other artifacts. Leaving this flag set to `FALSE` can result in accumulation of compute artifacts which you may eventually need to delete before they fill up your hard drive.  
   
   
     
- ### executionTimeoutSeconds
+ ### `executionTimeoutSeconds`
   numeric scalar. Defaults to 0 which means infinite wait.  
   
   
     
- ### packagesToLoad
+ ### `packagesToLoad`
  optional character vector specifying additional packages to be  loaded on the nodes when jobs are run in this compute context.  
   
   
     
- ### shareDir
+ ### `shareDir`
  character string specifying the temporary directory on the client that is  used to serialize the R objects back and forth. If not specified, a subdirectory under  Absolute or paths relative to current directory can be specified.  
   
   
     
- ### server
+ ### `server`
  Target SQL Server instance. 	 Can also be specified in the connection string with the `Server` keyword. 
   
   
     
- ### databaseName
+ ### `databaseName`
  Database on the target SQL Server instance. 	 Can also be specified in the connection string with the `Database` keyword. 
   
   
     
- ### user
+ ### `user`
  SQL login to connect to the SQL Server instance.   SQL login can also be specified in the connection string with the `uid` keyword. 
   
   
     
- ### password
+ ### `password`
  Password associated with the SQL login. Can also be specified in the connection  string with the `pwd` keyword. 
   
   
     
- ###  ...
+ ### ` ...`
  additional arguments to be passed to the underlying function. Two useful additional arguments are `traceEnabled=TRUE` and `traceLevel=7`, which taken together enable run-time tracing of your in-SQL Server computations. `traceEnabled` and `traceLevel` are deprecated as of MRS 9.0.2 and will be removed from this compute context in the next major release. Please use `rxOptions(traceLevel=7)` to enable run-time tracing in-SQL Server. 
   
    
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxComputeContext](rxcomputecontext.md),
-[RxInSqlServer-class](rxinsqlserver-class.md),
-[RxSqlServerData](rxsqlserverdata.md),
-[RxInTeradata](rxinteradata.md),
-[rxOptions](rxoptions.md).
+[RxComputeContext](RxComputeContext.md),
+[RxInSqlServer-class](RxInSqlServer-class.md),
+[RxSqlServerData](RxSqlServerData.md),
+[rxOptions](rxOptions.md).
    
  
  ##Examples

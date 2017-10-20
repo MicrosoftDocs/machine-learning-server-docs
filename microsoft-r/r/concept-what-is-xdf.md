@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Create an XDF file in R Server"
-description: "How to import CSV and other files to create an XDF file on Microsoft R Server"
+title: "Create an XDF file (Machine Learning Server) "
+description: "How to import CSV and other files to create an XDF file on Machine Learning Server"
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "05/02/2017"
+ms.date: "09/16/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -23,9 +23,9 @@ ms.technology: "r-server"
 
 ---
 
-# Create an XDF file in Microsoft R Server
+# Create an XDF file in Machine Learning Server
 
-XDF is the native file format for persisted data in Microsoft R Server and it offers the following benefits:
+XDF is the native file format for persisted data in Machine Learning Server and it offers the following benefits:
 
 + Compression, applied when the file is written to disk. 
 + Columnar storage, one column per variable, for efficient read-write operations of variable data. In data science and machine learning, variables rather than rowsets are the data structures typically used in analysis.  
@@ -33,13 +33,13 @@ XDF is the native file format for persisted data in Microsoft R Server and it of
 
 XDF files are not strictly required for statistical analysis and data mining, but when data sets are large or complex, XDF offers stability in the form of persisted data under your control, plus the ability to subset and transform data for repeated analysis.
 
-To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to R Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the *outFile* parameter, **rxImport** creates an XDF file.
+To create an XDF file, use the **rxImport** function in RevoScaleR to pipe external data to Machine Learning Server. By default, **rxImport** loads data into an in-memory data frame, but by specifying the *outFile* parameter, **rxImport** creates an XDF file.
 
 ## Example: Create an XDF
 
 You can create an XDF using any data that can be loaded by **rxImport**, and by specifying an *outFile* consisting of a file path to a writable directory.
 
-This example uses an R console and [sample data](sample-built-in-data.md) to create an XDF using data from a single CSV file. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\R Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
+This example uses an R console and [sample data](sample-built-in-data.md) to create an XDF using data from a single CSV file. On Windows, you can run **Rgui.exe**, located at \Program Files\Microsoft\ML Server\R_SERVER\bin\x64. On Linux, you can type **Revo64** at the command line.
 
     # Set the source file location using inData argument
     > mysourcedata <- file.path(rxGetOption("sampleDataDir", "mortDefaultSmall2000.csv"))
@@ -176,7 +176,7 @@ You can exercise greater control over the output file names by using the *outFil
 		varsToKeep = c("age", "incearn", "incwelfr", "educrec", "metro", "perwt")) 
 	names(splitFiles2)
 
-This creates the four directories C:/compute10, etc., and creates a file named “DistCensusData.xdf” in each directory. You will want to do something like this when using distributed data with the standard RevoScaleR analysis functions such as **rxLinMod** and **rxLogit** in an **RxHpcServer** compute context.
+This creates the four directories C:/compute10, etc., and creates a file named “DistCensusData.xdf” in each directory. You should adopt an approach like this when using distributed data with the standard RevoScaleR analysis functions such as **rxLinMod** and **rxLogit** in an **RxSpark** or **RxHadoopMR** compute context.
 
 You can supply the *outFilesSuffixes* arguments to exercise greater control over what is appended to the end of each file. Returning to our first example, we can add a hyphen between our base file name and the sequence 1 to 5 using *outFilesSuffixes* as follows:
 
@@ -246,7 +246,7 @@ You can import multiple text files into a single XDF. For instructions, see [Imp
 
 ## See also
 
- [Introduction to R Server](../what-is-microsoft-r-server.md) 
- [Install R Server on Windows](../install/r-server-install-windows.md)  
- [Install R Server on Linux](../install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](../install/r-server-install-hadoop.md)
+ [Machine Learning Server](../what-is-machine-learning-server.md) 
+ [Install Machine Learning Server on Windows](../install/machine-learning-server-windows-install.md)  
+ [Install Machine Learning Server on Linux](../install/machine-learning-server-linux-install.md)  
+ [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md)

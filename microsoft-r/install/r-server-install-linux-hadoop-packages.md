@@ -26,7 +26,7 @@ ms.technology: "r-server"
 --------------------
 This article lists the Linux packages required for running or building Microsoft R packages on Linux and Hadoop platforms.
 
-For computers with an internet connection, setup will download and add any missing dependencies automatically, but if your system is not internet-connected or not configured to use a package manager, a separate download followed by manual install of dependent packages is required.
+For computers with an internet connection, setup downloads and adds any missing dependencies automatically. But, if your system is not internet-connected or not configured to use a package manager, a separate download followed by manual install of dependent packages is required.
 
 You can download files from your Linux or Hadoop vendor. 
 
@@ -35,7 +35,7 @@ You can use this syntax to download specific packages:
 yum install --downloadonly --downloaddir=/tmp/<download-here> <package-name>
 ~~~~
 
-Alternativley, for offline installations, you can download packages over an internet connection, upload to an internet-restricted Linux machine, and then use `rpm -i <package-name>` to install the package.
+Alternatively, for offline installations, you can download packages over an internet connection, upload to an internet-restricted Linux machine, and then use `rpm -i <package-name>` to install the package.
 
 For a list of supported operating systems and versions, see [Supported platforms](r-server-install-supported-platforms.md).
 
@@ -63,7 +63,7 @@ Package  |  Version  | Repository  |
 `pango`  | 1.28.1-11.el6  | base  | 
 `pixman`  | 0.32.8-1.el6  | base  | 
 
-<sup>1</sup> If you are performing a manual or offline *parcel* installation using on Cloudera on SUSE SLES, the SUSE dependenies are as follows: `cairo`, `fontconfig`, `freetype`, `xorg-x11-libICE`, `xorg-x11-libSM`, `xorg-x11-libX11`, `xorg-x11-libXau`, `libXft`, `xorg-x11-libXrender`, `xorg-x11-libXt`, `libgomp43`, `libpng12-0`, `libthai`, `xorg-x11-libxcb pango`
+<sup>1</sup> If you are performing a manual or offline *parcel* installation using on Cloudera on SUSE SLES, the SUSE dependencies are as follows: `cairo`, `fontconfig`, `freetype`, `xorg-x11-libICE`, `xorg-x11-libSM`, `xorg-x11-libX11`, `xorg-x11-libXau`, `libXft`, `xorg-x11-libXrender`, `xorg-x11-libXt`, `libgomp43`, `libpng12-0`, `libthai`, `xorg-x11-libxcb pango`
 
 **Applies to:** Ubuntu
 
@@ -100,9 +100,9 @@ pixman  | x86_64  | 0.32.8-1.el6  | base  | 243 k
 
 ## Package dependencies for Microsoft R Server 8.0.5
 
-In release 8.0.5, the installer was significantly revised. Most package dependencies are included in the version of Microsoft R Open that installs with R Server, accounting for the much smaller list of dependencies.
+In release 8.0.5, the installer was revised. Most package dependencies are included in the version of Microsoft R Open that installs with R Server, accounting for the much smaller list of dependencies.
 
-The following list of eighteen packages are Linux packages that `yum` looks for during an R Server installation.
+The following list of 18 packages are Linux packages that `yum` looks for during an R Server installation.
 
 Package  | Architecture  | Version  | Repository  | Size
 ---------|---------------|----------|-------------|-----
@@ -127,7 +127,7 @@ pixman  | x86_64  | 0.32.8-1.el6  | base  | 243 k
 
 ## Package dependencies for Microsoft R Server 8.0.0
 
-Most of the packages listed in Table 1 (for RHEL systems) and Table 2 (for SLES 11 systems), are explicitly required by Microsoft R Server, either to build R itself or as a prerequisite for an additional Microsoft package. Table 3 and Table 4 are downstream dependencies (dependencies of packages listed in Table 1 or Table 2), for RHEL systems and Table 4 for SLES 11 systems, respectively. These are automatically installed while the automated script is running. Dependency lists are based on default installs of RHEL 6 and SLES11; if your system has a minimal installation of the operating system, additional packages may be required.
+Most of the packages listed in Table 1 (for RHEL systems) and Table 2 (for SLES 11 systems), are explicitly required by Microsoft R Server, either to build R itself or as a prerequisite for an additional Microsoft package. Table 3 and Table 4 are downstream dependencies (dependencies of packages listed in Table 1 or Table 2), for RHEL systems and Table 4 for SLES 11 systems, respectively. These packages are automatically installed while the automated script is running. Dependency lists are based on default installs of RHEL 6 and SLES11; if your system has a minimal installation of the operating system, additional packages may be required.
 
 Table 1. Packages Explicitly Required by Microsoft R Server on RHEL Systems
 

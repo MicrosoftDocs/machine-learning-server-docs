@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Image Featurization Transform" 
+title: "featurizeImage function (MicrosoftML) " 
 description: " Featurizes an image using a pre-trained deep neural network model. " 
-keywords: "MicrosoftML, featurizeImage, alexnet, cnn, dnn, featurize, image, resnet, transform" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), featurizeImage, alexnet, cnn, dnn, featurize, image, resnet, transform" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #featurizeImage: Machine Learning Image Featurization Transform
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #featurizeImage: Machine Learning Image Featurization Transform 
  ##Description
  
 Featurizes an image using a pre-trained deep neural network model.
@@ -40,7 +36,7 @@ Featurizes an image using a pre-trained deep neural network model.
  ##Usage
 
 ```   
-  featurizeImage(var, outVar = NULL, dnnModel = "resnet18")
+  featurizeImage(var, outVar = NULL, dnnModel = "Resnet18")
  
 ```
  
@@ -48,17 +44,17 @@ Featurizes an image using a pre-trained deep neural network model.
 
    
   
- ### var
+ ### `var`
  Input variable containing extracted pixel values. 
   
   
   
- ### outVar
+ ### `outVar`
  The prefix of the output variables containing the image features. If null, the input variable name will be used. The default value is `NULL`. 
   
   
   
- ### dnnModel
+ ### `dnnModel`
  The pre-trained deep neural network. The possible options are:  
 *   `"resnet18"` 
 *   `"resnet50"` 
@@ -117,6 +113,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
       mlTransformVars = "Path")
  
 ```
+ 
  
  
  

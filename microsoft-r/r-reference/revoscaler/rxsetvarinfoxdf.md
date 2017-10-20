@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "Set Variable Information for .xdf File or Data Frame" 
+title: "rxSetVarInfo function (RevoScaleR) " 
 description: " Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame  " 
-keywords: "RevoScaleR, rxSetVarInfo, rxSetVarInfoXdf, attribute" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxSetVarInfo, rxSetVarInfoXdf, attribute" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxSetVarInfo: Set Variable Information for .xdf File or Data Frame
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxSetVarInfo: Set Variable Information for .xdf File or Data Frame 
  ##Description
  
 Set the variable information for an .xdf file, including variable
@@ -50,16 +46,16 @@ in a data frame
 
    
     
- ### varInfo
+ ### `varInfo`
  list containing lists of variable information for variables in the XDF data source or data frame.  
   
     
- ### data
- a data frame, a character string specifying the .xdf file, or an [RxXdfData](rxxdfdata.md) object.  
+ ### `data`
+ a data frame, a character string specifying the .xdf file, or an [RxXdfData](RxXdfData.md) object.  
   
     
- ### file
- character string specifying the .xdf file or   an [RxXdfData](rxxdfdata.md) object.  
+ ### `file`
+ character string specifying the .xdf file or   an [RxXdfData](RxXdfData.md) object.  
   
  
  
@@ -113,27 +109,21 @@ POSIXct variable.
  
 If the input data is a data frame, a data frame is returned containing variables
 with the new attributes.  If the input data represents an .xdf file or
-composite file, an [RxXdfData](rxxdfdata.md) object representing the modified 
+composite file, an [RxXdfData](RxXdfData.md) object representing the modified 
 file is returned.
  
  ##Note
  
 `rxSetVarInfoXdf` and `rxSetVarInfo` do not change the underlying data 
 so the user cannot set the variable type and storage type using this function, or recode the
-levels of a factor variable.  To recode factors, use [rxFactors](rxfactors.md).
+levels of a factor variable.  To recode factors, use [rxFactors](rxFactors.md).
 `rxSetVarInfo` is not supported for single .xdf files in HDFS.
- 
- 
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
-[rxGetVarInfo](rxgetvarinfoxdf.md),
-[rxDataStep](rxdatastep.md),
-[rxFactors](rxfactors.md),
-[rxGetInfo](rxgetinfoxdf.md).
+[rxDataStep](rxDataStep.md),
+[rxFactors](rxFactors.md),
    
  ##Examples
 

@@ -1,11 +1,11 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Estimating Models using Stochastic Gradient Boosting"
-description: "Boosted trees with RevoScaleR."
+title: "Estimate Models using Stochastic Gradient Boosting (Machine Learning Server) "
+description: "Boosted trees with RevoScaleR in Machine Learning Server."
 keywords: ""
-author: "richcalaway"
-ms.author: "richcala"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
@@ -23,11 +23,11 @@ ms.technology: "r-server"
 
 ---
 
-# Estimating Models Using Stochastic Gradient Boosting
+# Estimate Models Using Stochastic Gradient Boosting 
 
-The *rxBTrees* function in RevoScaleR, like *rxDForest*, fits a decision forest to your data, but the forest is generated using a stochastic gradient boosting algorithm. This is similar to the decision forest algorithm in that each tree is fitted to a subsample of the training set (sampling without replacement) and predictions are made by aggregating over the predictions of all trees. Unlike the *rxDForest* algorithm, the boosted trees are added one at a time, and at each iteration, a regression tree is fitted to the current pseudo-residuals, i.e., the gradient of the loss functional being minimized.
+The *rxBTrees* function in RevoScaleR, like *rxDForest*, fits a decision forest to your data, but the forest is generated using a stochastic gradient boosting algorithm. This is similar to the decision forest algorithm in that each tree is fitted to a subsample of the training set (sampling without replacement) and predictions are made by aggregating over the predictions of all trees. Unlike the *rxDForest* algorithm, the boosted trees are added one at a time, and at each iteration, a regression tree is fitted to the current pseudo-residuals, that is, the gradient of the loss functional being minimized.
 
-Like the *rxDForest* function, *rxBTrees* uses the same basic tree-fitting algorithm as *rxDTree* (see ["The *rxDTree* Algorithm"](how-to-revoscaler-decision-tree.md#the-rxdtree-algorithm)). To create the forest, you specify the number of trees using the *nTree* argument and the number of variables to consider for splitting at each tree node using the *mTry* argument. In most cases, you will also want to specify the maximum depth to grow the individual trees: shallow trees seem to be sufficient in many applications, but as with *rxDTree* and *rxDForest*, greater depth typically results in longer fitting times.
+Like the *rxDForest* function, *rxBTrees* uses the same basic tree-fitting algorithm as *rxDTree* (see ["The *rxDTree* Algorithm"](how-to-revoscaler-decision-tree.md#the-rxdtree-algorithm)). To create the forest, you specify the number of trees using the *nTree* argument and the number of variables to consider for splitting at each tree node using the *mTry* argument. In most cases, you specify the maximum depth to grow the individual trees: shallow trees seem to be sufficient in many applications, but as with *rxDTree* and *rxDForest*, greater depth typically results in longer fitting times.
 
 Different model types are supported by specifying different loss functions, as follows:
 
@@ -37,7 +37,7 @@ Different model types are supported by specifying different loss functions, as f
 
 ### A Simple Binary Classification Forest
 
-In [Logistic Regression](how-to-revoscaler-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxBTrees* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit this):
+In [Logistic Regression](how-to-revoscaler-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxBTrees* as follows. We set the *seed* argument to ensure reproducibility; in most cases you can omit it:
 
 	#  A Simple Classification Forest
 	  
@@ -79,7 +79,7 @@ As a simple example of a regression forest, consider the classic *stackloss* dat
 	  
 ### A Simple Multinomial Forest Model
 
-As a simple multinomial example, we will fit an *rxBTrees* model to the iris data:
+As a simple multinomial example, we fit an *rxBTrees* model to the iris data:
 
 	#  A Multinomial Forest Model
 	  
@@ -107,6 +107,6 @@ The principal parameter controlling the boosting algorithm itself is the *learni
 
 The *rxBTrees* function has a number of other options for controlling the model fit. Most of these control parameters are identical to the same controls in *rxDTree*. A full listing of these options can be found in the *rxBTrees* help file, but the following have been found in our testing to be the most useful at controlling the time required to fit a model with *rxBTrees*:
 
--   *maxDepth*: this sets the maximum depth of any node of the tree. Computations grow more expensive as the depth increases, so we recommend starting with maxDepth=1, i.e., boosted stumps.
--   *maxNumBins*: this controls the maximum number of bins used for each variable. Managing the number of bins is important in controlling memory usage. The default is to use the larger of 101 and the square root of the number of observations for small to moderate size data sets (up to about one million observations), but for larger sets to use 1001 bins. For small data sets with continuous predictors, you may find that you need to increase the *maxNumBins* to obtain models that resemble those from rpart.
--   *minSplit*, *minBucket*: these determine how many observations must be in a node before a split is attempted (*minSplit*) and how many must remain in a terminal node (*minBucket*).
+-   *maxDepth*: sets the maximum depth of any node of the tree. Computations grow more expensive as the depth increases, so we recommend starting with maxDepth=1, that is, boosted stumps.
+-   *maxNumBins*: controls the maximum number of bins used for each variable. Managing the number of bins is important in controlling memory usage. The default is to use the larger of 101 and the square root of the number of observations for small to moderate size data sets (up to about one million observations), but for larger sets to use 1001 bins. For small data sets with continuous predictors, you may find that you need to increase the *maxNumBins* to obtain models that resemble rpart.
+-   *minSplit*, *minBucket*: determine how many observations must be in a node before a split is attempted (*minSplit*) and how many must remain in a terminal node (*minBucket*).

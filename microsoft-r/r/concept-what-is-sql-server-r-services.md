@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Introducing SQL Server R Services"
+title: "Introducing SQL Server R Services (Machine Learning Server) "
 description: "SQL Server R Services introduction"
 keywords: "SQL Server R Services"
 author: "j-martens"
@@ -32,7 +32,7 @@ In SQL Server 2016, Microsoft introduced SQL Server R Services, a feature that s
 
 In SQL Server 2017, machine learning becomes even more powerful, with addition of support for the popular Python language. To reflect the support for multiple languages, as of CTP 2.0, SQL Server R Services has also been renamed as Machine Learning Services (In-Database). To read up on the latest changes in CTP 2.0 release of SQL Server 2017, see [What's new for R in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r-services/what-s-new-in-sql-server-r-services) in the SQL Server product documentation. 
 
-SQL Server Machine Learning Services is an installation of R that runs alongside SQL Server (operating as a SQL Server service) and communicates securely with SQL Server.  During the installation process, Microsoft R Open and ScaleR libraries are installed onto SQL Server so that you can integrate your server data wth SQL Server and Microsoft’s BI tools. Because SQL Server Machine Learning Services integrates the R and Python languages with SQL Server, you can keep analytics close to the data and eliminate the costs and security risks associated with data movement.
+SQL Server Machine Learning Services is an installation of R that runs alongside SQL Server (operating as a SQL Server service) and communicates securely with SQL Server.  During the installation process, Microsoft R Open and RevoScaleR libraries are installed onto SQL Server so that you can integrate your server data wth SQL Server and Microsoft’s BI tools. Because SQL Server Machine Learning Services integrates the R and Python languages with SQL Server, you can keep analytics close to the data and eliminate the costs and security risks associated with data movement.
 
 
 >[!WARNING]
@@ -40,7 +40,7 @@ SQL Server Machine Learning Services is an installation of R that runs alongside
 
 SQL Server Machine Learning Services combines R and Python with a comprehensive set of SQL Server tools and technologies that offer superior performance, security, reliability and manageability. You can deploy R and Python solutions using convenient, familiar tools, and your production applications can call the R runtime and retrieve predictions and visuals using Transact-SQL. With Enterprise Edition, you also get the ScaleR libraries to overcome R’s inherent performance and scale limitations.
 
-The **RevoScaleR** and **MicrosoftML** packages are included when you install **SQL Server R Services** on an instance of SQL Server 2016. RevoScaleR and MicrosoftML are also included in all installations of **Microsoft R Server**.  
+The **RevoScaleR** and **MicrosoftML** packages are included when you install **SQL Server R Services** on an instance of SQL Server 2016. RevoScaleR and MicrosoftML are also included in all installations of **Machine Learning Server**.  
 
 ## What&#39;s New in Machine Learning with SQL Server
  
@@ -103,11 +103,10 @@ For more information, see these SQL Server:
 
 Learn more about SQL Server Machine Learning Services here:
 
-+ In the [SQL Server Documentation Set](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) site, which also includes a tutorial for **SQL Server Machine Learning Services**.
++ In the [SQL Server Documentation Set](https://docs.microsoft.com/en-us/sql/advanced-analytics/getting-started-with-machine-learning-services) site, which also includes a tutorial for **SQL Server Machine Learning Services**.
 + [Data Science End-to-End Walkthrough](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough): Load, explore, and analyze the New York City taxi dataset. Build models and deploy them to SQL Server for production.
 + [Using the RevoScaleR Packages](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages): Deep dive on the analytical functions provided by the **ScaleR** package. Demonstrates how to create and use compute contexts, how to move data between local and server compute contexts using XDF files, and creates a simulation using R code that runs in SQL Server.
 + [Data Science Scenarios and Solution Templates](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/data-science-scenarios-and-solution-templates): Includes all the R and T-SQL code you need for fraud detection, churn analysis, predictive maintenance, and demand forecasting.
-+ [In-Database Advanced Analytics for SQL Developers (Tutorial)](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/sqldev-in-database-advanced-analytics-for-sql-developers)
-
++ [In-Database Python Analytics for SQL Developers](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/sqldev-in-database-python-for-sql-developers)
 
 Learn more about the [RevoScaleR package and its function here](~/r-reference/revoscaler/revoscaler.md).

@@ -24,6 +24,8 @@ ms.technology: "r-server"
 
 # Command line installation for R Server 9.1 on Hadoop (CDH, HDP, MapR)
 
+**Looking for the 9.2.1 release? See [Machine Learning Server for Hadoop installation](machine-learning-server-hadoop-install.md)**
+
 R Server for Hadoop is supported on Hadoop distributions provided by Cloudera, HortonWorks, and MapR. For most users, installing R Server on a cluster involves running the same series of steps on each data node of the cluster. A summary of setup tasks is as follows:
 
 - Download the installer
@@ -98,7 +100,7 @@ The Hadoop component is deployed by running the install script with the **-p** p
 3. Change to the directory to which you mounted or unpacked the installer (for example, /tmp/MRS91Hadoop if you unpacked the tar.gz file):
 		[username] $ `cd /tmp`
 		[username tmp] $ `cd MRS91Hadoop`
-4. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pretrained machine learning models:
+4. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pre-trained machine learning models:
 		[username tmp MRS91Hadoop] $ `sudo bash install.sh -p -m`
 5. When prompted to accept the license terms for Microsoft R Open, click Enter to read the EULA, click **q** when you are finished reading, and then click **y** to accept the terms.
 6. Repeat the key sequence to accept license terms for Microsoft R Server.
@@ -118,7 +120,7 @@ flag | Option | Description
 -----|--------|------------
  -a | --accept-eula | Accept all end user license agreements.
  -d | --download-mro |  Download microsoft r open for distribution to an offline system.
- -m | --models | Install Microsoft pretrained machine learning models.
+ -m | --models | Install Microsoft pre-trained machine learning models.
  -p | --hadoop | Install the Hadoop component.
  -r | --no-dotnet-core | Opt out of installing .NET Core (required for mrsdeploy and MicrosoftML)
  -s | --silent | Perform a silent, unattended install.

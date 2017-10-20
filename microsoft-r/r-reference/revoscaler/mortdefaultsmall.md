@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Smaller Mortgage Default Demonstration Data" 
+title: "mortDefaultSmall function (RevoScaleR) " 
 description: " Simulated data on mortgage defaults. " 
-keywords: "RevoScaleR, mortDefaultSmall, mortDefaultSmall.xdf, mortDefaultSmall2000.csv, mortDefaultSmall2001.csv, mortDefaultSmall2002.csv, mortDefaultSmall2003.csv, mortDefaultSmall2004.csv, mortDefaultSmall2005.csv, mortDefaultSmall2006.csv, mortDefaultSmall2007.csv, mortDefaultSmall2008.csv, mortDefaultSmall2009.csv, datasets" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), mortDefaultSmall, mortDefaultSmall.xdf, mortDefaultSmall2000.csv, mortDefaultSmall2001.csv, mortDefaultSmall2002.csv, mortDefaultSmall2003.csv, mortDefaultSmall2004.csv, mortDefaultSmall2005.csv, mortDefaultSmall2006.csv, mortDefaultSmall2007.csv, mortDefaultSmall2008.csv, mortDefaultSmall2009.csv, datasets" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -38,10 +37,7 @@ ms.technology: "r-server"
  
  
  
- #mortDefaultSmall: Smaller Mortgage Default Demonstration Data
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #mortDefaultSmall: Smaller Mortgage Default Demonstration Data 
  ##Description
  
 Simulated data on mortgage defaults.
@@ -52,27 +48,27 @@ Simulated data on mortgage defaults.
 An .xdf file with 50000 observations on the following 6 variables.
 
 
-###creditScore
+###`creditScore`
 FICO credit scores (stored as an integer).
 
 
-###houseAge
+###`houseAge`
 house age, by range (stored as integer).
 
 
-###yearsEmploy
+###`yearsEmploy`
 years employed at current employer (stored as integer).
 
 
-###ccDebt
+###`ccDebt`
 the amount of debt (stored as integer).
 
 
-###year
+###`year`
 year of the observation (stored as integer).
 
 
-###default
+###`default`
 1 if the homeowner was in default on the loan, 0 otherwise (stored as an integer).
 
 
@@ -91,8 +87,8 @@ which contains a year's worth of simulated data.
 Microsoft Corporation.
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##Examples

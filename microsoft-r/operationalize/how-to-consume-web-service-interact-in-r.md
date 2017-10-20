@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "How to get and consume web services in R - Microsoft R Server | Microsoft Docs"
+title: "How to get and consume web services in R with mrsdeploy - Machine Learning Server "
 description: "Web service interaction and consumption functions in the mrsdeploy package."
 keywords: "mrsdeploy package"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,11 +23,11 @@ ms.technology: "r-server"
 
 ---
 
-# How to interact with and consume web services in R
+# How to interact with and consume web services in R with mrsdeploy 
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
-After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). the mrsdeploy R package is installed with both Microsoft R Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
+After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). The mrsdeploy R package is installed with both Machine Learning Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 If you do not want to list, examine, or consume the web service in R, a set of [RESTful APIs](concept-api.md) are also available to provide direct programmatic access to a service's lifecycle directly.
 
@@ -37,17 +37,17 @@ To list, examine, or consume the web service outside of R, use the [RESTful APIs
 
 ## Requirements
 
-Before you can use the web service management functions in the mrsdeploy R package, you must:
-+ Have access to an R Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
+Before you can use the functions in the mrsdeploy R package to manage your web services, you must:
++ Have access to a Machine Learning Server instance that was  [properly configured](../r-reference/mrsdeploy/mrsdeploy-package.md#configure) to host web services. 
 
-+ Authenticate with R Server using the `remoteLogin` or `remoteLoginAAD` functions in the mrsdeploy package as described in the article "[Connecting to R Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
++ Authenticate with Machine Learning Server using the remoteLogin() or remoteLoginAAD() functions in the mrsdeploy package as described in the article "[Connecting to Machine Learning Server to use mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
 
 <a name="listServices"></a>
 
 ## Find and list web services
 
-Any authenticated user can retrieve a list of web services using the `listServices` function in the mrsdeploy package.  
+Any authenticated user can retrieve a list of web services using the listServices() function in the mrsdeploy package.  
 
 Use function arguments to return a specific web service or all labeled versions of a given web service. See the [package reference help page for listServices()](../r-reference/mrsdeploy/listservices.md) for the full description of all arguments.
 
@@ -55,18 +55,18 @@ Your ability to see the code inside the web service depends on your permissions.
 + If yes, then the code in the service is returned along with other metadata.
 + If no, then the code in the service is never returned in the metadata.
 
-To learn more about the roles in your organization, contact your Microsoft R Server administrator.
+To learn more about the roles in your organization, contact your Machine Learning Server administrator.
 
 |Function|Response|R Function Help|
 |----|----|:----:|
-|`listServices(...)`| R `list` containing service metadata.|[View](../r-reference/mrsdeploy/listservices.md)|
+|listServices(...)| R list containing service metadata.|[View](../r-reference/mrsdeploy/listservices.md)|
 
-Once you find the service you want, use [the `getService` function](#getService) to retrieve the service object for consumption.
+Once you find the service you want, use [the getService() function](#getService) to retrieve the service object for consumption.
 
 Example code:
 
 ```R
-# Return metadata for all services hosted on this R Server
+# Return metadata for all services hosted on this server
 serviceAll <- listServices()
 
 # Return metadata for all versions of service "mtService" 
@@ -96,12 +96,12 @@ Example output:
 
 Any authenticated user can retrieve a web service object for consumption. After the object is returned, you can look at its capabilities to see what the service can do and how it should be consumed.
 
-After you've authenticated, use the `getService` function in the mrsdeploy package to retrieve a service object. See the [package reference help page for getService()](../r-reference/mrsdeploy/getservice.md) for the full description of all arguments. 
+After you've authenticated, use the getService() function in the mrsdeploy package to retrieve a service object. See the [package reference help page for getService()](../r-reference/mrsdeploy/getservice.md) for the full description of all arguments. 
 
 
 |Function|Response|R Function Help|
 |----|----|:----:|
-|`getService(...)`|Returns an [API instance](#api-client) (`client stub` for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/getservice.md)|
+|getService(...)|Returns an [API instance](#api-client) client stub for consuming that service and viewing its service holdings) as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class.|[View](../r-reference/mrsdeploy/getservice.md)|
 
 
 Example:
@@ -127,18 +127,18 @@ For a detailed example with getService, check out these ["Workflow" examples](ho
 
 ## Interact with API clients
 
-When you publish, update, or get a web service, an API instance is returned as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class. This instance is a `client stub` you can use to consume that service and view its service holdings. 
+When you publish, update, or get a web service, an API instance is returned as an [R6](https://cran.r-project.org/web/packages/R6/index.html) class. This instance is a client stub you can use to consume that service and view its service holdings. 
 
 You can use the following supported public functions to interact with the API client instance.
 
 | Function      | Description                                            |
 | ------------- |--------------------------------------------------------|
-| `print`       |	Print method that lists all members of the object      |
-| `capabilities` | Report on the service features such as I/O schema, `name`, `version`	   |
-| `consume`     |	Consume the service based on I/O schema                |
-| consume _alias_ | Alias to the `consume` function for convenience (see `alias` argument for the [`publishService` function](../r-reference/mrsdeploy/publishservice.md)). |
-| `swagger`     |	Displays the service's `swagger` specification         |
-| `batch` |Define the data records to be batched. There are additional publish functions used to [consume a service asynchronously via batch execution](how-to-consume-web-service-asynchronously-batch.md#public-fx-batch).|
+| print       |	Print method that lists all members of the object      |
+| capabilities | Report on the service features such as I/O schema, name, version	   |
+| consume     |	Consume the service based on I/O schema                |
+| consume _alias_ | Alias to the consume function for convenience (see alias argument for the [publishService function](../r-reference/mrsdeploy/publishservice.md)). |
+| swagger     |	Displays the service's swagger specification         |
+| batch |Define the data records to be batched. There are additional publish functions used to [consume a service asynchronously via batch execution](how-to-consume-web-service-asynchronously-batch.md#public-fx-batch).|
 
 
 Example:
@@ -181,9 +181,9 @@ For a detailed example, check out these ["Workflow" examples](how-to-deploy-web-
 
 Web services are published to facilitate the consumption and integration of the operationalized models and code.  Whenever the web service is published or updated, a Swagger-based JSON file is generated automatically that define the service.
 
-When you publish a service, you can let people know that it is ready for consumption. Users can get the Swagger file they need to consume the service directly in R or via the API. To make it easy for others to find your service, provide them with the service name and version number (or they can use [the `listServices` function](#listServices)).
+When you publish a service, you can let people know that it is ready for consumption. Users can get the Swagger file they need to consume the service directly in R or via the API. To make it easy for others to find your service, provide them with the service name and version number (or they can use [the listServices() function](#listServices)).
 
-Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described in the following section. Another approach is the [asynchronous "Batch" consumption approach](how-to-consume-web-service-asynchronously-batch.md), where users send as a single request to R Server, which then makes multiple asynchronous API calls on your behalf.
+Users can consume the service directly using a single consumption call. This approach is referred to as a "Request Response" approach and is described in the following section. Another approach is the [asynchronous "Batch" consumption approach](how-to-consume-web-service-asynchronously-batch.md), where users send as a single request to Machine Learning Server, which then makes multiple asynchronous API calls on your behalf.
   
 <a name="data-scientists-share"></a>
 
@@ -191,20 +191,22 @@ Users can consume the service directly using a single consumption call. This app
 
 Other data scientists may want to explore, test, and consume Web services directly in R using the functions in the mrsdeploy package. Quality engineers might want to bring the models in these web services into validation and monitoring cycles.
 
-You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the mrsdeploy package.  After authenticating, data scientists can use the `getService` function in R to call the service. Then, they can get details about the service and start consuming it.
+You can share the name and version of a web service with fellow data scientists so they can call that service in R using the functions in the mrsdeploy package.  After authenticating, data scientists can use the getService() function in R to call the service. Then, they can get details about the service and start consuming it.
+
+You can also [build a client library directly in R using the httr package](https://blogs.msdn.microsoft.com/rserver/2017/07/20/using-r-to-generate-api-client-from-swagger/).
 
 >[!NOTE]
 > It is also possible to perform batch consumption as [described here](how-to-consume-web-service-asynchronously-batch.md).
 
 
-In this example, replace the following remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+In this example, replace the following remoteLogin() function with the correct login details for your configuration. Connecting to Machine Learning Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 ```R
 ##########################################################################
 #      Perform Request-Response Consumption & Get Swagger Back in R      #
 ##########################################################################
 
-# Use `remoteLogin` to authenticate with R Server using the local admin 
+# Use `remoteLogin` to authenticate with the server using the local admin 
 # account. Use session = false so no remote R session started
 remoteLogin("http://localhost:12800", 
             username = “admin”, 
@@ -254,12 +256,12 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 
 
 ## See also
-
++ [What is operationalization?](../what-is-operationalization.md)
++ [What are web services?](../operationalize/concept-what-are-web-services.md)
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [How to publish and manage web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
-+ [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md).
-+ [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
++ [Connecting to Machine Learning Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md).
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
-+ [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)
++ [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)

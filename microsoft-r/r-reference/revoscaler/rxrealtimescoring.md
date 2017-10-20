@@ -1,50 +1,46 @@
 --- 
  
 # required metadata 
-title: "Real-time scoring in SQL Server R Services" 
-description: " Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to  Microsoft R Server and SQL Server platforms with near real-time performance.  You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishService)  documentation. " 
-keywords: "RevoScaleR, rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxRealTimeScoring function (RevoScaleR) " 
+description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR** and **MicrosoftML** packages to Machine Learning Server and SQL Server platforms with near real-time performance.  " 
+keywords: "(RevoScaleR), rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxRealTimeScoring: Real-time scoring in SQL Server R Services
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxRealTimeScoring: Real-time scoring in SQL Server R Services 
  ##Description
  
-Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to  Microsoft R Server and SQL Server platforms with near real-time performance.
+Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to Machine Learning Server and SQL Server platforms with near real-time performance.
 
-You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
+You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
 .
 
-**NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishService)
+**NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
  documentation.
  
  
  ##Details
  
-With Microsoft R Server 9.1 version, we are introducing this feature which allows models trained using **RevoScaleR** and **MicrosoftML** packages to be used for high performance scoring in SQL Server. These models can be published and scored without using R interpreter, which reduces the overhead of multiple process interactions. Hence it allows for faster prediction performance in enterprise scenarios.
+This feature allows models trained using **RevoScaleR** and **MicrosoftML** packages to be used for high performance scoring in SQL Server. These models can be published and scored without using R interpreter, which reduces the overhead of multiple process interactions. Hence it allows for faster prediction performance in enterprise scenarios.
 
 The following is the list of models that are currently supported in real-time scoring:
 
@@ -127,10 +123,10 @@ To enable this functionality in SQL Server, we are adding support for serializin
 
 
 * 
- [rxSerializeModel](rxserializemodel.md)() - Serialize a **RevoScaleR**/**MicrosoftML** model in `raw` format to enable saving the model to a database. This enables the model to be loaded into SQL Server for real-time scoring.
+ [rxSerializeModel](rxSerializeModel.md)() - Serialize a **RevoScaleR**/**MicrosoftML** model in `raw` format to enable saving the model to a database. This enables the model to be loaded into SQL Server for real-time scoring.
 
 * 
- [rxUnserializeModel](rxserializemodel.md)() - Retrieve the original R model object from the serialized raw model.
+ [rxUnserializeModel](rxSerializeModel.md)() - Retrieve the original R model object from the serialized raw model.
 
 
 
@@ -141,7 +137,7 @@ The serialized models can be published to the target SQL Server Database table i
 
 
 * 
- [rxWriteObject](rxwriteobject.md)() - Store/retrieve R objects to/from ODBC data sources like SQL Server. The API is modeled after a simple key value store.
+ [rxWriteObject](rxWriteObject.md)() - Store/retrieve R objects to/from ODBC data sources like SQL Server. The API is modeled after a simple key value store.
 
 
 
@@ -153,7 +149,7 @@ The serialized models can be published to the target SQL Server Database table i
 
 By default, real-time scoring functionality is disabled on SQL Server R Services and it needs to be enabled on a particular SQL database. To use this functionality, the server administrator needs to do the following:
 
-**`RegisterRExt.exe`** is the command line utility which ships with RevoScaleR package and allows administrators to enable real-time scoring feature in a SQL server database. You can find RegisterRExt.exe at `<SQLInstancePath>\R_SERVICES\library\RevoScaleR\x64\RegisterRExe.exe`.
+**`RegisterRExt.exe`** is the command line utility which ships with RevoScaleR package and allows administrators to enable real-time scoring feature in a SQL server database. You can find RegisterRExt.exe at `<SQLInstancePath>\R_SERVICES\library\RevoScaleR\rxLibs\x64\RegisterRExe.exe`.
 
 
 To enable SQL Server R Services real-time scoring, open an elevated command prompt and use the following command:
@@ -239,16 +235,16 @@ Arguments other than `modelObject`/`data` available in `rxPredict` are not suppo
 
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxSerializeModel](rxserializemodel.md),
-[rxWriteObject](rxwriteobject.md),
+[rxSerializeModel](rxSerializeModel.md),
+[rxWriteObject](rxWriteObject.md),
 publishService,
-[rxPredict](../microsoftml/rxpredict.md)
+[rxPredict](rxPredict.md)
    
  ##Examples
 

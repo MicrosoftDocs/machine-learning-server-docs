@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Introducing Microsoft R Client"
-description: "Microsoft R Client"
+title: "What is Microsoft R Client? - Machine Learning Server "
+description: "Microsoft R Client is a free data science tool for high performance analytics. With it, you can use any open source R package."
 keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "5/15/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -27,18 +27,18 @@ ms.technology: "r-client"
 
 Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open/) so you can use any open source R package to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](../r/tutorial-revoscaler-data-import-transform.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for RevoScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Microsoft R Server such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and R Server for Hadoop. [Learn more about its compatibility](compatibility-with-server.md). 
+R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is limited up to two threads for RevoScaleR functions. To benefit from disk scalability, performance and speed, you can push the compute context to a production instance of Machine Learning Server (or R Server) such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and Machine Learning Server for Hadoop. [Learn more about its compatibility](compatibility-with-server.md). 
 
-You can offload heavy processing to R Server or test your analytics during their developmentYou by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
+You can offload heavy processing to Machine Learning Server or test your analytics during their development. You by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
 
 <div align=center><iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
  
 
-## R Server vs R Client
+## Machine Learning Server vs R Client
 
-Microsoft R Server and Microsoft R Client offer virtually identical packages, but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. R Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. 
+Machine Learning Server and Microsoft R Client offer virtually identical R packages, but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. Machine Learning Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. 
 
-You can work with R Client standalone. You can also use it with R Server, where you learn and develop on R Client, and then migrate your work to R Server or execute it remotely on an R Server whenever you need the scale, support, and infrastructure of an operationalized server. 
+You can work with R Client standalone. You can also use it with Machine Learning Server, where you learn and develop on R Client, and then migrate your work to Machine Learning Server or execute it remotely on an Machine Learning Server whenever you need the scale, support, and infrastructure of an operationalized server. 
 
 ## Get started with R Client
 
@@ -60,7 +60,7 @@ The first step is to download Microsoft R Client for your operating system and i
 
 + [Install Microsoft R Client for Linux](install-on-linux.md)
 
-+ [Compatibility with R Server](compatibility-with-server.md)
++ [Compatibility with Machine Learning Server & R Server](compatibility-with-server.md)
 
 <br><a name="configure-ide"></a>
 
@@ -75,7 +75,7 @@ While R is a command line driven program, you can also use your favorite R integ
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
 >[!IMPORTANT]
->You can connect remotely from your local IDE to an R Server instance using [functions from the mrsdeploy package](../r/how-to-execute-code-remotely.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [R Server administrator must configure R Server](../install/operationalize-r-server-enterprise-config.md) for this functionality.
+>You can connect remotely from your local IDE to an Machine Learning Server instance using [functions from the mrsdeploy package](../r/how-to-execute-code-remotely.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [Machine Learning Server administrator must configure Machine Learning Server](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) for this functionality.
 
 <br><a name="try-r-client"></a>
 
@@ -87,25 +87,60 @@ Now that you've installed R Client, you can start building and running some R co
 
 + Or, develop your own solutions using [`RevoScaleR` R package functions](~/r-reference/revoscaler/revoscaler.md), [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md), and APIs. 
 
-When ready, you can run that R code using R Client or even send those R commands to a [remote R Server](../r/how-to-execute-code-remotely.md) for execution if Microsoft R Server is also installed in your organization. 
+When ready, you can run that R code using R Client or even send those R commands to a [remote Machine Learning Server](../r/how-to-execute-code-remotely.md) for execution if Machine Learning Server is also installed in your organization. 
+
+
+<a name="r-client-whats-new"></a>
+
+## What's new in Microsoft R Client
+
+### Microsoft R Client 3.4.1
+
+This release of R Client, built on open source R 3.4.1. Download R Client from http://aka.ms/rclient (Windows) or http://aka.ms/rclientlinux (Linux). 
+
+Several of the packages installed have been updated. Learn more about [here](../whats-new-in-machine-learning-server.md).
+
+### Microsoft R Client 3.3.3
+
+This release of R Client, built on open source R 3.3.3. Key release features include:
+
++ Installations on Linux are now possible for R Client
+
++ Several of the packages installed have been updated. Learn more about [here](../whats-new-in-r-server.md).
+
+### Microsoft R Client 3.3.2
+
+The following release notes apply to Microsoft R Client, which can be downloaded from http://aka.ms/rclient/download.
+
++ New enhanced Microsoft R Client [Getting Started](what-is-microsoft-r-client.md) guide
++ A new 'version check' and auto-update is now possible using CheckForUpdates() in your R Console 
++ [Offline installations](what-is-microsoft-r-client.md#installrclient) are now possible for R Client
++ New packages now bundled with Microsoft R Client (and Microsoft R Open):
+  + `mrsdeploy` - adds remote execution and web service deployment from R Client 3.3.2 to a remote R Server 9.0.1 instance
+  + `MicrosoftML` - adds machine learning algorithms to R script that executes on either R Client or R Server
+  + `olapR`- adds MDX query support through connections to OLAP cubes on a SQL Server 2016 Analysis Services instance
+  + and the packages bundled with [Microsoft R Open 3.3.2](https://mran.microsoft.com/rro/installed/#enhance)
+  
+  Learn more about [the new and updated packages in this release](../whats-new-in-r-server.md).
++ Updated end-user license agreement
++ Telemetry collection is now enabled. [Learn more](../resources-opting-out.md) about this feature and how to turn it off.
+
 
 
 ## Learn More
 
 You can learn more with these guides:
 
-+ [Overview of Microsoft R](../index.md) 
-
 + [Quickstart: Running R code in Microsoft R](../r/quickstart-run-r-code.md) (example)
 
-+ [Compatibility with R Server](compatibility-with-server.md)
++ [Compatibility with Machine Learning Server](compatibility-with-server.md)
 
-+ [Diving into data analysis with Microsoft R](../r/how-to-introduction.md)
++ [How-to guides in Machine Learning Server](../r/how-to-introduction.md)
 
 + [RevoScaleR R package reference](../r/tutorial-introduction.md)
 
-+ [MicrosoftML R package reference](../r/concept-what-is-the-microsoftml-package.md)
++ [MicrosoftML R package reference](../r-reference/microsoftml/microsoftml-package.md)
 
 + [mrsdeploy R package reference](../r-reference/mrsdeploy/mrsdeploy-package.md)
 
-+ [Execute code on remote R Server](../r/how-to-execute-code-remotely.md)
++ [Execute R code on remote Machine Learning Server](../r/how-to-execute-code-remotely.md)

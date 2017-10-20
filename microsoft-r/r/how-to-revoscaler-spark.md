@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Practice data import and exploration on Apache Spark"
-description: "Microsoft R Server with Apache Spark features and components overview."
+title: "How to use RevoScaleR with Apache Spark - Machine Learning Server "
+description: "Get started with RevoScaleR and Spark on Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "03/13/2017"
+ms.date: "09/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -23,55 +23,63 @@ ms.technology: "r-server"
 
 ---
 
-# Practice data import and exploration on Apache Spark
+# How to use RevoScaleR in a Spark compute context
 
 ## Overview
 
-This article introduces the ScaleR functions in a **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. ScaleR functions offer scalable and extremely high performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. Spark is an open source big data processing framework on Hadoop. This guide focuses on using ScaleR’s big data capabilities in a Hadoop environment with Spark.
+This article introduces the RevoScaleR functions in a **RevoScaleR** package with Apache Spark (Spark) running on a Hadoop cluster. 
 
-While this article is not a Hadoop or Spark tutorial, no prior experience in Hadoop is required to complete the tutorial. If you can connect to your Hadoop cluster, this guide walks you through the rest.
++ Hadoop provides a distributed file system with HDFS.
++ Yarn provides the job scheduling infrastructure.
++ Spark provides the processing framework. 
++ RevoScaleR provides scalable and high-performance data management, analysis, and visualization functions. 
 
-**Data Sources and Functions Supported in Spark**
+When you set the [compute context](concept-what-is-compute-context.md) to [RxSpark](../r-reference/revoscaler/rxSpark.md), RevoScaleR functions automatically distribute the workload across all the data nodes. There is no requirement for managing jobs or the queue.
 
-The **RevoScaleR** package provides a set of custom data analysis functions. Many functions are platform-agnostic; others are exclusive to the computing context, leveraging platform-specific capabilities for tasks like file management.
+> [!Note]
+> For a comprehensive list of functions for the Spark or Hadoop compute contexts, see [RevoScaleR Functions for Hadoop](../r-reference/revoscaler/revoscaler-hadoop-functions.md). For a list of which functions support distributed computing, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
+>
 
-Analyzing data using ScaleR functions requires three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
+### Typical workflow
 
-This section briefly summarizes how functions are used. For a comprehensive list of functions for the Hadoop compute context, see [ScaleR Functions for Hadoop](../r-reference/revoscaler/revoscaler-hadoop-functions.md).
+Analyzing data using RevoScaleR functions requires three distinct pieces of information: where the computations should take place (the compute context), the data to use (the data source), and what analysis to perform (the analysis function).
 
-**Compute Context**
+This section briefly summarizes each aspect. 
 
-The Spark compute context is established through `RxSpark` or `rxSparkConnect()` to create the Spark compute context and use `rxSparkDisconnect()` to return to a local compute context. `rxSparkConnect()` maintains a persistent Spark session and results in more efficient execution of ScaleR functions for this context.
+**Spark compute context**
+
+The Spark compute context is established through `RxSpark` or `rxSparkConnect()` to create the Spark compute context and use `rxSparkDisconnect()` to return to a local compute context. `rxSparkConnect()` maintains a persistent Spark session and results in more efficient execution of RevoScaleR functions for this context.
 
 **Supported Data Sources**
 
-Data sources, of which there are four, are specified through the following functions. 
+Data sources are specified through the following functions: 
 
 |Function | Description |
 |---------|-------------|
-|`RxTextData` | A comma delimited text data source. |
-|`RxXdfData` | Data in the XDF data file format. In ScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. |
+|`RxTextData` | A comma-delimited text data source. |
+|`RxXdfData` | Data in the XDF data file format. In RevoScaleR, the XDF file format is modified for Hadoop to store data in a composite set of files rather than a single file. |
 |`RxHiveData` | Generates a Hive Data Source object.|
 |`RxParquetData` | Generates a Parquet Data Source object.|
+|`RxOrcData` | Generates an Orc Data Source object.|
 
 All of these data sources can be used with the Hadoop Distributed File System (HDFS).
 
 
 **Data Manipulation and Computations**
 
-The data manipulation and computation functions in ScaleR are appropriate for small and large datasets, but are particularly useful for these scenarios:
+The data manipulation and computation functions in RevoScaleR are appropriate for small and large datasets, but are useful for these scenarios:
 
-- Analyze data sets that are too big to fit in memory.
+- Analyze data sets too large to fit in memory.
 - Perform computations distributed over several cores, processors, or nodes in a cluster.
-- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data and/or a cluster of computers.
+- Create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data sets on a cluster of computers.
 
 **High Performance Analysis (HPA)**
 
-HPA functions in ScaleR do the heavy lifting in terms of data science. Most HPA functions are portable across multiple computing platforms, including Windows and RedHat Linux workstations and servers, and distributed computing platforms such as Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying ScaleR engine in R Server handles the distribution of the computations across cores and nodes automatically.
+HPA functions in RevoScaleR do the heavy lifting in terms of data science. Most HPA functions are portable across multiple computing platforms, including Windows and RedHat Linux workstations and servers, and distributed computing platforms such as Hadoop. You can do exploratory analysis on your laptop, then deploy the same analytics code on a Hadoop cluster. The underlying RevoScaleR engine in Machine Learning Server handles the distribution of the computations across cores and nodes automatically.
 
-## How ScaleR distributes jobs in Spark
+## How RevoScaleR distributes jobs in Spark
 
-On Hadoop the ScaleR analysis functions go through the following steps.
+In a Spark cluster, the RevoScaleR analysis functions go through the following steps:
 
 -   A master process is initiated to run the main thread of the algorithm.
 -   The master process initiates a Spark job to make a pass through the data.
@@ -79,23 +87,22 @@ On Hadoop the ScaleR analysis functions go through the following steps.
 -   The master process examines the results. For iterative algorithms, it decides if another pass through the data is required. If so, it initiates another Spark job and repeats.
 -   When complete, the final results are computed and returned.
 
-When running on Hadoop, the ScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from ScaleR, without performing the computations within the Hadoop framework. An example can be found in [Using a Local Compute Context with HDFS Data](#bkmk_local_compute_with_hdfs).
+When running on Spark, the RevoScaleR analysis functions process data contained in the Hadoop Distributed File System (HDFS). HDFS data can also be accessed directly from RevoScaleR, without performing the computations within the Hadoop framework. An example can be found in [Using a Local Compute Context with HDFS Data](#bkmk_local_compute_with_hdfs).
 
+## Tutorial
 
-## Tutorial steps
+This tutorial introduces several high-performance analytics features of **RevoScaleR** using data stored on HDFS and these tasks:
 
-This tutorial introduces several high performance analytics features of **RevoScaleR** using data stored on your Hadoop cluster and these tasks:
-
-1.  Start Microsoft R Server.
+1.  Start Revo64.
 2.  Create a compute context for Spark.
-3.  Copy a data set into the Hadoop Distributed File System.
+3.  Copy a data set into HDFS.
 4.  Create a data source.
 5.  Summarize your data.
 6.  Fit a linear model to the data.
 
-### Check versions
+### Before you start
 
-Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](../install/r-server-install-supported-platforms.md). For setup instructions, see [Install R Server on Hadoop](../install/r-server-install-hadoop-805.md).
+Supported distributions of Hadoop with a Spark engine are listed in [Supported platforms](../install/r-server-install-supported-platforms.md). For setup instructions, see [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md).
 
 You can confirm the server version by typing `print(Revo.version)`.
 
@@ -107,16 +114,13 @@ This tutorial also uses the AirlineDemoSmall.csv file from the RevoScaleR Sample
 
 You can obtain both data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
-### Start R Server
+### Start Revo64
 
-Microsoft R Server for Hadoop runs on Linux. On Linux hosts in a Hadoop cluster, start R Server by typing `Revo64` at the shell prompt. 
-
-	[<username>]$ cd MRSLinux90
-	[<username> MRSLinux90]$ Revo64
+Machine Learning Server for Hadoop runs on Linux. Start an R session by typing `Revo64` at the shell prompt: $ `Revo64`
 
 ### Create a compute context
 
-A *compute context* specifies the computing resources to be used by ScaleR’s distributable computing functions. In this tutorial, we focus on using the nodes of the Hadoop cluster (internally via Spark) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether commands are issued from a node of your cluster or from a client accessing the cluster remotely.
+A *compute context* specifies the computing resources to be used by RevoScaleR’s distributable computing functions. In this tutorial, we focus on using the nodes of the Hadoop cluster (internally via Spark) as the computing resources. In defining your compute context, you may have to specify different parameters depending on whether commands are issued from a node of your cluster or from a client accessing the cluster remotely.
 
 #### Define a Compute Context on the Cluster
 
@@ -124,8 +128,7 @@ On a node of the Hadoop cluster (which may be an edge node), define a Spark comp
 
 	myHadoopCluster <- RxSpark()
 
->[!NOTE]
-> The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
+The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
 
 ~~~~
 	myShareDir = paste( "/var/RevoShare", Sys.info()[["user"]],
@@ -145,13 +148,12 @@ You can have many compute context objects available for use; only one is active 
 If you are running on a Hadoop cluster configured for high-availabilty, you must specify the node providing the name service using the *nameNode* argument to *RxSpark*, and also specify the Hadoop port with the *port* argument:
 
 ~~~~
-	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server",
-	    port = 8020)
+	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020)
 ~~~~
 
-#### Using Microsoft R Server as a Hadoop Client
+#### Using Machine Learning Server as a Hadoop Client
 
-If you are running Microsoft R Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that will run **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxSpark* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly-facing host name or IP address of your Hadoop cluster’s name node or an edge node that will run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
+If you are running Machine Learning Server from Linux or from a Windows computer equipped with PuTTY *and/or* both the Cygwin shell and Cygwin OpenSSH packages, you can create a compute context that runs **RevoScaleR** functions from your local client in a distributed fashion on your Hadoop cluster. You use *RxSpark* to create the compute context, but use additional arguments to specify your user name, the file-sharing directory where you have read and write access, the publicly facing host name, or IP address of your Hadoop cluster’s name node or an edge node that run the master processes, and any additional switches to pass to the ssh command (such as the -i flag if you are using a pem or ppk file for authentication, or -p to specify a non-standard ssh port number). For example:
 
 ~~~~
 	mySshUsername <- "user1"
@@ -170,7 +172,7 @@ If you are running Microsoft R Server from Linux or from a Windows computer equi
 ~~~~
 
 >[!NOTE]
->if you are using a pem or ppk file for authentication the permissions of the file must be modified to ensure that only the owner has full read and write access (i.e. chmod go-rwx user1.pem).
+>if you are using a pem or ppk file for authentication the permissions of the file must be modified to ensure that only the owner has full read and write access (that is, chmod go-rwx user1.pem).
 
 If you are using PuTTY, you may incorporate the publicly facing host name and any authentication requirements into a PuTTY saved session, and use the name of that saved session as the sshHostname. For example:
 
@@ -219,7 +221,7 @@ Now that you have defined your compute context, make it the active compute conte
 
 #### Using RxSpark Compute Context in Persistent Mode
 
-By default, with RxSpark Compute Context, a new Spark application will be launched when a job starts and will be terminated when the job completes. To avoid the overhead of Spark initialization on launching time, the persistentRun mode (experimental) is introduced. If you set persistentRun as “TRUE”, the Spark application (and associated processes) will persist across jobs until idleTimeout or the rxStopEngine is called explicitly:
+By default, with RxSpark Compute Context, a new Spark application is launched when a job starts and is terminated when the job completes. To avoid the overhead of Spark initialization on launching time, the persistentRun mode (experimental) is introduced. If you set persistentRun as “TRUE”, the Spark application (and associated processes) persists across jobs until idleTimeout or the rxStopEngine is called explicitly:
 
 ~~~~
     myHadoopCluster <- RxSpark(persistentRun = TRUE, idleTimeout = 600)
@@ -232,7 +234,7 @@ If persistentRun mode is enabled, then the RxSpark compute context cannot be a N
 
 ### Copy a data file 
 
-For our first explorations, we will work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Microsoft R Server distribution. You can verify that it is on your local system as follows:
+For our first explorations, we work with one of RevoScaleR’s built-in data sets, *AirlineDemoSmall.csv*. This is part of the standard Machine Learning Server distribution. You can verify that it is on your local system as follows:
 
 ~~~~
 	file.exists(system.file("SampleData/AirlineDemoSmall.csv",
@@ -240,7 +242,7 @@ For our first explorations, we will work with one of RevoScaleR’s built-in dat
 	[1] TRUE
 ~~~~
 
-To use this file in our distributed computations, it must first be copied to HDFS. For our examples, we will make extensive use of the HDFS shared director, /share:
+To use this file in our distributed computations, it must first be copied to HDFS. For our examples, we make extensive use of the HDFS shared director, /share:
 
 ~~~~
 	bigDataDirRoot <- "/share" # HDFS location of the example data
@@ -270,7 +272,7 @@ We can then verify that it exists as follows:
 
 ### Create a data source
 
-We will create a data source using this file, specifying that it is on the Hadoop Distributed File System. We first create a file system object that uses the default values:
+We create a data source using this file, specifying that it is on the Hadoop Distributed File System. We first create a file system object that uses the default values:
 
 ~~~~
 	hdfsFS <- RxHdfsFileSystem()
@@ -297,7 +299,7 @@ Use the *rxSummary* function to obtain descriptive statistics for your data. The
 	adsSummary
 ~~~~
 
-Summary statistics will be computed on the variables in the formula, removing missing values for all rows in the included variables:
+Summary statistics are computed on the variables in the formula, removing missing values for all rows in the included variables:
 
 ~~~~
 	Call:
@@ -326,7 +328,7 @@ Summary statistics will be computed on the variables in the formula, removing mi
 	 Sunday    94975
 ~~~~
 
-Notice that the summary information shows cell counts for categorical variables, and appropriately does not provide summary statistics such as *Mean* and *StdDev*. Also notice that the *Call:* line will show the actual call you entered or the call provided by *summary*, so will appear differently in different circumstances.
+Notice that the summary information shows cell counts for categorical variables, and appropriately does not provide summary statistics such as *Mean* and *StdDev*. Also notice that the *Call:* line shows the actual call you entered or the call provided by *summary*, so appear differently in different circumstances.
 
 You can also compute summary information by one or more categories by using interactions of a numeric variable with a factor variable. For example, to compute summary statistics on Arrival Delay by Day of Week:
 
@@ -362,7 +364,7 @@ The output shows the summary statistics for *ArrDelay* for each day of the week:
 <a name="bkmk_local_compute_with_hdfs"></a>
 ### Use a local compute context
 
-At times it may be more efficient to perform smaller computations on the local node rather than using Spark. You can easily do this, accessing the same data from the HDFS file system. When working with the local compute context, you will need to specify the name of a specific data file. The same basic code is then used to run the analysis; simply change the compute context to a local context. (Note that this will not work if you are accessing the Hadoop cluster via a client.)
+At times, it may be more efficient to perform smaller computations on the local node rather than using Spark. You can easily do this, accessing the same data from the HDFS file system. When working with the local compute context, you need to specify the name of a specific data file. The same basic code is then used to run the analysis; simply change the compute context to a local context. (Note that this will not work if you are accessing the Hadoop cluster via a client.)
 
 	rxSetComputeContext("local")
 	inputFile <-file.path(bigDataDirRoot,"AirlineDemoSmall/AirlineDemoSmall.csv")
@@ -452,7 +454,7 @@ When running all but the shortest analyses in Hadoop, it can be convenient to le
 	myHadoopNoWaitCluster <- RxSpark(myHadoopCluster, wait = FALSE)
 	rxSetComputeContext(myHadoopNoWaitCluster)
 
-Once you have set your compute context to non-waiting, distributed **RevoScaleR** functions return relatively quickly with a *jobInfo* object, which you can use to track the progress of your job, and, when the job is complete, obtain the results of the job. For example, we can re-run our linear model in the non-waiting case as follows:
+Once you have set your compute context to non-waiting, distributed **RevoScaleR** functions return relatively quickly with a *jobInfo* object, which you can use to track the progress of your job, and, when the job is complete, obtain the results of the job. For example, we can rerun our linear model in the non-waiting case as follows:
 
 	job1 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
 	rxGetJobStatus(job1)
@@ -469,7 +471,7 @@ If, after submitting a job in a non-waiting compute context, you decide you don�
 	job2 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
 	rxCancelJob(job2)
 
-The *rxCancelJob* function returns *TRUE* if the job is successfully cancelled, *FALSE* otherwise.
+The *rxCancelJob* function returns *TRUE* if the job is successfully canceled, *FALSE* otherwise.
 
 For the remainder of this tutorial, we return to a waiting compute context:
 
@@ -491,7 +493,7 @@ As before, our first step is to copy the data into HDFS. We specify the location
 	rxHadoopMakeDir(airDataDir)
 	rxHadoopCopyFromLocal("/tmp/airOT2012*.csv", airDataDir)
 
-The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you will use the data sources created in this manual as you continue to explore distributed computing in the [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md):
+The original CSV files have rather unwieldy variable names, so we supply a colInfo list to make them more manageable (we won’t use all of these variables in this manual, but you use the data sources created in this manual as you continue to explore distributed computing in the [RevoScaleR Distributed Computing Guide](how-to-revoscaler-distributed-computing.md):
 
 	airlineColInfo <- list(
 	     MONTH = list(newName = "Month", type = "integer"),
@@ -593,15 +595,15 @@ Notice that the results indicate we have processed all the data, six million obs
 <a name="importingDataAsCompositeXdfFiles"></a>
 ### Import data as composite XDF files
 
-As we have seen, you can analyze CSV files directly with RevoScaleR on Hadoop, but the analysis can be done more quickly if the data is stored in a more efficient format. The RevoScaleR .xdf format is extremely efficient, but is modified somewhat for HDFS so that individual files remain within a single HDFS block. (The HDFS block size varies from installation to installation but is typically either 64MB or 128MB.) When you use rxImport on Hadoop, you specify an RxTextData data source such as bigAirDS as the inData and an RxXdfData data source with fileSystem set to an HDFS file system as the outFile argument to create a set of *composite .xdf files*. The RxXdfData object can then be used as the data argument in subsequent RevoScaleR analyses.
+As we have seen, you can analyze CSV files directly with RevoScaleR on Hadoop, but the analysis can be done more quickly if the data is stored in a more efficient format. The RevoScaleR .xdf format is extremely efficient, but is modified somewhat for HDFS so that individual files remain within a single HDFS block. (The HDFS block size varies from installation to installation but is typically either 64 MB or 128 MB.) When you use rxImport on Hadoop, you specify an RxTextData data source such as bigAirDS as the inData and an RxXdfData data source with fileSystem set to an HDFS file system as the outFile argument to create a set of *composite .xdf files*. The RxXdfData object can then be used as the data argument in subsequent RevoScaleR analyses.
 
-For our airline data, we will define our RxXdfData object as follows (the second “user” should be replaced by your actual user name on the Hadoop cluster):
+For our airline data, we define our RxXdfData object as follows (the second “user” should be replaced by your actual user name on the Hadoop cluster):
 
 	bigAirXdfName <- "/user/RevoShare/user/AirlineOnTime2012"
 	airData <- RxXdfData( bigAirXdfName,
 	                        fileSystem = hdfsFS )
 
-We set a block size of 250000 rows and specify that we will read all the data by specifying
+We set a block size of 250000 rows and specify that we read all the data by specifying
 
 	numRowsToRead = -1:
 	blockSize <- 250000
@@ -664,7 +666,7 @@ You should see the following results (which should match the results we found fo
 
 ### Handling larger linear models
 
-The data set contains a variable *UniqueCarrier* which contains airline codes for 15 carriers. Because the RevoScaleR Compute Engine handles factor variables so efficiently, we can do a linear regression looking at the Arrival Delay by Carrier. This will take a little longer, of course, than the previous analysis, because we are estimating 15 instead of 7 parameters.
+The data set contains a variable *UniqueCarrier*, which contains airline codes for 15 carriers. Because the RevoScaleR Compute Engine handles factor variables so efficiently, we can do a linear regression looking at the Arrival Delay by Carrier. This takes a little longer than the previous analysis, because we are estimating 15 instead of 7 parameters.
 
 	delayCarrier <- rxLinMod(ArrDelay ~ UniqueCarrier,
 		data = airData, cube = TRUE)
@@ -731,7 +733,7 @@ which results in:
 
 ### Prediction on Large Data
 
-You can predict (or score) from a fitted model on Hadoop using *rxPredict*. In this example we will compute predicted values and their residuals for the logistic regression in the previous section. These new prediction variables will be output to a new composite XDF in HDFS.(As in an earlier example, the second “user” in the airDataPredDir path should be changed to the actual user name of your Hadoop user.)
+You can predict (or score) from a fitted model on Hadoop using *rxPredict*. In this example, we compute predicted values and their residuals for the logistic regression in the previous section. These new prediction variables are output to a new composite XDF in HDFS. (As in an earlier example, the second “user” in the airDataPredDir path should be changed to the actual user name of your Hadoop user.)
 
 	airDataPredDir <- "/user/RevoShare/user/airDataPred"
     airDataPred <- RxXdfData(airDataPredDir, fileSystem=hdfsFS)
@@ -740,13 +742,13 @@ You can predict (or score) from a fitted model on Hadoop using *rxPredict*. In t
 
 By putting in a call to *rxGetVarInfo* we see that two variables, *ArrDel15\_Pred* and *ArrDel15\_Resid* were written to the *airDataPred* composite XDF. If, in addition to the prediction variables, we wanted to have the variables used in the model written to our *outData* we would need to add the *writeModelVars=TRUE* to our *rxPredict* call.
 
-Alternatively, we can update the *airData* to include the predicted values and residuals by not specifying an *outData* argument, which is *NULL* by default. Since the *airData* composite XDF already exists we would need to add *overwrite=TRUE* to the *rxPredict* call.
+Alternatively, we can update the *airData* to include the predicted values and residuals by not specifying an *outData* argument, which is *NULL* by default. Since the *airData* composite XDF already exists, we would need to add *overwrite=TRUE* to the *rxPredict* call.
 
-Note that an *RxTextData* object can be used as the input data for *rxPredict* on Hadoop, but only XDF can be written to HDFS. When using a CSV file or directory of CSV files as the input data to *rxPredict* the *outData* argument must be set to an *RxXdfData* object.
+An *RxTextData* object can be used as the input data for *rxPredict* on Hadoop, but only XDF can be written to HDFS. When using a CSV file or directory of CSV files as the input data to *rxPredict* the *outData* argument must be set to an *RxXdfData* object.
 
 ### Performing Data Operations on Large Data
 
-To create or modify data in HDFS on Hadoop we can use the *rxDataStep* function. Suppose we want to repeat the analyses with a “cleaner” version of the large airline dataset. To do this we will keep only the flights having arrival delay information and flights that did not depart more than one hour early. We can put a call to *rxDataStep* to output a new composite XDF to HDFS. (As in an earlier example, the second “user” in the newAirDir path should be changed to the actual user name of your Hadoop user.)
+To create or modify data in HDFS on Hadoop, we can use the *rxDataStep* function. Suppose we want to repeat the analyses with a “cleaner” version of the large airline dataset. To do this we keep only the flights having arrival delay information and flights that did not depart more than one hour early. We can put a call to *rxDataStep* to output a new composite XDF to HDFS. (As in an earlier example, the second “user” in the newAirDir path should be changed to the actual user name of your Hadoop user.)
 
 	newAirDir <- "/user/RevoShare/user/newAirData"
 	newAirXdf <- RxXdfData(newAirDir,fileSystem=hdfsFS)
@@ -758,16 +760,16 @@ To modify an existing composite XDF using *rxDataStep* set the *overwrite* argum
 
 ### Using Data from Hive for Your Analyses
 
-There are multiple ways to access and use data from Hive for analyses with R Server. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
+There are multiple ways to access and use data from Hive for analyses with RevoScaleR. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
 
 1. If running from a remote client or edge node, and the data is modest, then use RxOdbcData to stream results, or land them as XDF in the local file system, for subsequent analysis in a local compute context.
-2. If the data is large then use the Hive command line interface (hive or beeline) from an edge node to run the Hive query with results spooled to a text file on HDFS for subsequent analysis in a distributed fashion using the HadoopMR or Spark compute contexts.
+2. If the data is large, then use the Hive command-line interface (hive or beeline) from an edge node to run the Hive query with results spooled to a text file on HDFS for subsequent analysis in a distributed fashion using the HadoopMR or Spark compute contexts.
 
 Here’s how to get started with each of these approaches.
 
 #### Accessing data via ODBC
 
-Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from R Server is just like accessing data from any other data source.
+Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from Machine Learning Server is just like accessing data from any other data source.
 
 	mySQL = "SELECT * FROM CustData"
 	myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
@@ -776,7 +778,7 @@ Start by following your Hadoop vendor’s recommendations for accessing Hive via
 
 #### Accessing data via an Export to Text Files
 
-This approach uses the Hive command line interface to first spool the results to text files in the local or HDFS file systems and then analyze them in a distributed fashion using local or HadoopMR/Spark compute contexts.
+This approach uses the Hive command-line interface to first spool the results to text files in the local or HDFS file systems and then analyze them in a distributed fashion using local or HadoopMR/Spark compute contexts.
 
 First, check with your Hadoop system administrator find out whether the ‘hive’ or ‘beeline’ command should be used to run a Hive query from the command line, and obtain the needed credentials for access.
 
@@ -798,7 +800,7 @@ Here are some sample R statements that output a Hive query to the local and HDFS
 
 	system('beeline -u "jdbc:hive2://.." –e "insert overwrite directory \'/your-hadoop-dir\' row format delimited fields terminated by \',\' select * from emp"')
 
-After you’ve exported the query results to a text file, it can be streamed directly as input to a ScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
+After you’ve exported the query results to a text file, it can be streamed directly as input to a RevoScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
 
 	hiveOut <-file.path(bigDataDirRoot,"myHiveData")
 	myHiveData <- RxTextData(file = hiveOut, fileSystem = hdfsFS)
@@ -807,7 +809,7 @@ After you’ve exported the query results to a text file, it can be streamed dir
 
 ### Writing to CSV in HDFS
 
-If you [converted your CSV to XDF](#importingDataAsCompositeXdfFiles) to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory will be created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
+If you [converted your CSV to XDF](#importingDataAsCompositeXdfFiles) to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory is created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
 
 Suppose we want to write out a folder of CSV in HDFS from our airData composite XDF after we performed the logistic regression and prediction, so that the new CSV files contain the predicted values and residuals. We can do this as follows:
 
@@ -815,9 +817,9 @@ Suppose we want to write out a folder of CSV in HDFS from our airData composite 
 	airDataCsvDS <- RxTextData(airDataCsvDir,fileSystem=hdfsFS)
 	rxDataStep(inData=airData, outFile=airDataCsvDS)
 
-You will notice that the *rxDataStep* wrote out one CSV for every .xdfd file in the input composite XDF file. This is the default behaviour for writing CSV from composite XDF to HDFS when the compute context is set to RxSpark.
+You notice that the *rxDataStep* wrote out one CSV for every .xdfd file in the input composite XDF file. This is the default behavior for writing CSV from composite XDF to HDFS when the compute context is set to RxSpark.
 
-Alternatively, you could switch your compute context back to “local” when you are done performing your analyses and take advantage of two arguments within *RxTextData* that give you slightly more control when writing out CSV files to HDFS: *createFileSet* and *rowsPerOutFile*. When *createFileSet* is set to TRUE a folder of CSV files is written to the directory you specify. When *createFileSet* is set to FALSE a single CSV file is written. The second argument, *rowsPerOutFile*, can be set to an integer to indicate how many rows to write to each CSV file when *createFileSet* is TRUE. Returning to the example above, suppose we wanted to write out a folder of CSVs but we wanted to write out the airData but into only 6 CSV files.
+Alternatively, you could switch your compute context back to “local” when you are done performing your analyses and take advantage of two arguments within *RxTextData* that give you slightly more control when writing out CSV files to HDFS: *createFileSet* and *rowsPerOutFile*. When *createFileSet* is set to TRUE a folder of CSV files is written to the directory you specify. When *createFileSet* is set to FALSE a single CSV file is written. The second argument, *rowsPerOutFile*, can be set to an integer to indicate how many rows to write to each CSV file when *createFileSet* is TRUE. Returning to the example above, suppose we wanted to write out a folder of CSVs but we wanted to write out the airData but into only six CSV files.
 
 	rxSetComputeContext("local")
 	airDataCsvRowsDir <-file.path("/user/RevoShare/MRS/airDataCsvRows")
@@ -826,7 +828,7 @@ Alternatively, you could switch your compute context back to “local” when yo
 	rxDataStep(inData=airData, outFile=airDataCsvRowsDS)
 
 
-Note that when using an RxSpark compute context, createFileSet defaults to TRUE and rowsPerOutFile has no effect. Thus if you wish to create a single CSV or customize the number of rows per file you must perform the rxDataStep in a local compute context (data can still be in HDFS).
+When using an RxSpark compute context, createFileSet defaults to TRUE and rowsPerOutFile has no effect. Thus if you wish to create a single CSV or customize the number of rows per file you must perform the rxDataStep in a local compute context (data can still be in HDFS).
 
 ## Parallel Partial Decision Forests
 

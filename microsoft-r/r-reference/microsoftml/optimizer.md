@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Optimization Algorithms" 
+title: "maOptimizer function (MicrosoftML) " 
 description: " Specifies Optimization Algorithms for Neural Net. " 
-keywords: "MicrosoftML, maOptimizer, adaDeltaSgd, sgd, optimizer" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), maOptimizer, adaDeltaSgd, sgd, optimizer" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -30,13 +29,10 @@ ms.technology: "r-server"
  
  
  
- #maOptimizer: Optimization Algorithms
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #maOptimizer: Optimization Algorithms 
  ##Description
  
-Specifies optimization algorithms for the [rxNeuralNet](neuralnet.md) machine learning algorithm.
+Specifies Optimization Algorithms for Neural Net.
  
  
  ##Usage
@@ -53,37 +49,37 @@ Specifies optimization algorithms for the [rxNeuralNet](neuralnet.md) machine le
 
    
   
- ### decay
+ ### `decay`
  Specifies the decay rate applied to gradients when calculating the step in the ADADELTA adaptive optimization algorithm. This rate is used  to ensure that the learning rate continues to make progress by giving smaller weights to remote gradients in the calculation of the step size. Mathematically, it replaces the mean square of the gradients with an exponentially decaying  average of the squared gradients in the denominator of the update rule. The  value assigned must be in the range (0,1). 
   
   
   
- ### conditioningConst
+ ### `conditioningConst`
  Specifies a conditioning constant for the ADADELTA  adaptive optimization algorithm that is used to condition the step size in   regions where the exponentially decaying average of the squared gradients  is small. The value assigned must be in the range (0,1). 
   
   
   
- ### learningRate
+ ### `learningRate`
  Specifies the size of the step taken in the direction of the negative gradient for each iteration of the learning process.   The default value is `= 0.001`. 
   
   
   
- ### momentum
+ ### `momentum`
  Specifies weights for each dimension that control the contribution of the previous step to the size of the next step during  training. This modifies the `learningRate` to speed up training. The value must be `>= 0` and `< 1`. 
   
   
   
- ### nag
+ ### `nag`
  If `TRUE`, Nesterov's Accelerated Gradient Descent is used.  This method reduces the oracle complexity of gradient descent and is optimal  for smooth convex optimization. 
   
   
   
- ### weightDecay
+ ### `weightDecay`
  Specifies the scaling weights for the step size. After  each weight update, the weights in the network are scaled by `(1 -  ``learningRate * weightDecay)`. The value must be `>= 0` and `< 1`. 
   
   
   
- ### lRateRedRatio
+ ### `lRateRedRatio`
  Specifies the learning rate reduction ratio: the ratio by which the learning rate is reduced during training. Reducing the learning rate can avoid local minima. The value must be `> 0` and `<= 1`.    
 *   A value of `1.0` means no reduction.   
 *   A value of `0.9` means the learning rate is reduced to 90  its current value.  
@@ -94,12 +90,12 @@ Specifies optimization algorithms for the [rxNeuralNet](neuralnet.md) machine le
   
   
   
- ### lRateRedFreq
+ ### `lRateRedFreq`
  Sets the learning rate reduction frequency by specifying  number of iterations betweeen reductions. For example, if `10` is  specified, the learning rate is reduced once every 10 iterations. 
   
   
   
- ### lRateRedErrorRatio
+ ### `lRateRedErrorRatio`
  Spefifies the learning rate reduction error criterion.  If set to `0`, the learning rate is reduced if the loss increases between iterations. If set to a fractional value greater than`0`, the learning rate is reduced if the loss decreases by less than that fraction of its previous value. 
   
  
@@ -107,7 +103,7 @@ Specifies optimization algorithms for the [rxNeuralNet](neuralnet.md) machine le
  ##Details
  
 These functions can be used for the `optimizer` argument in 
-[rxNeuralNet](neuralnet.md). 
+[rxNeuralNet](rxNeuralNet.md). 
 
 
 * 
@@ -140,7 +136,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[rxNeuralNet](neuralnet.md),
+[rxNeuralNet](rxNeuralNet.md),
    
  ##Examples
 
@@ -158,5 +154,6 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
           optimizer = adaDeltaSgd(decay = .9, conditioningConst = 1e-05))
  
 ```
+ 
  
  

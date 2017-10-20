@@ -1,11 +1,11 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Converting RevoScaleR Model Objects for Use in PMML"
-description: "Using PMML with RevoScaleR model objects."
+title: "Convert RevoScaleR Model Objects for Use in PMML (Machine Learning Server) "
+description: "Using PMML with RevoScaleR model objects in Machine Learning Server."
 keywords: ""
-author: "richcalaway"
-ms.author: "richcala"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 The objects returned by RevoScaleR predictive analytics functions have similarities to objects returned by the predictive analytics functions provided by base and recommended packages in R. A key difference between these two types of model objects is that RevoScaleR model objects typically do not contain any components that have the same length as the number of rows in the original data set. For example, if you use base R's lm function to estimate a linear model, the result object contains not only all of the data used to estimate the model, but components such as residuals and fitted.values that contain values corresponding to every observation in the data set. For estimating models using big data, this is not appropriate.
 
-However, there is overlap in the model object components that can be very useful when working with other packages. For example, the *pmml* package will generate PMML (Predictive Model Markup Language) code for a number of R model types. PMML is an XML-base language which allows users to share models between PMML compliant applications. For more information about PMML, visit <http://www.dmg.org> .
+However, there is overlap in the model object components that can be very useful when working with other packages. For example, the *pmml* package generates PMML (Predictive Model Markup Language) code for a number of R model types. PMML is an XML-base language that allows users to share models between PMML compliant applications. For more information about PMML, visit <http://www.dmg.org> .
 
 RevoScaleR provides a set of coercion methods to convert a RevoScaleR model object to a standard R model object: *as.lm*, *as.glm*, *as.rpart*, and *as.kmeans*. As suggested above, these coerced model objects do not have all of the information available in a standard R model object, but do contain information about the fitted model that is similar to standard R.
 

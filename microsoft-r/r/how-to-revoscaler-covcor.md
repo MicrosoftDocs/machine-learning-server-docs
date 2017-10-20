@@ -1,11 +1,11 @@
 ---
 
 # required metadata
-title: "RevoScaleR User's Guide--Estimating Correlation and Variance/Covariance Matrices"
-description: "Correlation and variance/covariance matrices in RevoScaleR."
+title: "Estimate Correlation and Variance/Covariance Matrices in RevoScaleR (Machine Learning Server) "
+description: "Correlation and variance/covariance matrices in RevoScaleR in Machine Learning Server."
 keywords: ""
-author: "richcalaway"
-ms.author: "richcala"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "03/17/2016"
 ms.topic: "get-started-article"
@@ -25,13 +25,13 @@ ms.technology: "r-server"
 
 # Estimating Correlation and Variance/Covariance Matrices
 
-The *rxCovCor* function in RevoScaleR calculates the covariance, correlation, or sum of squares/cross-product matrix for a set of variables in an .xdf file or data frame. The size of these matrices is determined by the number of variables rather than the number of observations, so typically the results can easily fit into memory in R. A broad category of analyses can be computed from some form of a cross-product matrix, for example, factor analysis and principal components.
+The *rxCovCor* function in RevoScaleR calculates the covariance, correlation, or sum of squares/cross-product matrix for a set of variables in a .xdf file or data frame. The size of these matrices is determined by the number of variables rather than the number of observations, so typically the results can easily fit into memory in R. A broad category of analyses can be computed from some form of a cross-product matrix, for example, factor analysis and principal components.
 
-A cross-product matrix is a matrix of the form X'X, where X represents an arbitrary set of raw or standardized variables. More generally, this is a matrix of the form X'WX, where W is a diagonal weighting matrix.
+A cross-product matrix is a matrix of the form X'X, where X represents an arbitrary set of raw or standardized variables. More generally, this matrix is of the form X'WX, where W is a diagonal weighting matrix.
 
 ### Computing Cross-Product Matrices
 
-While rxCovCor is the primary tool for computing covariance, correlation, and other cross-product matrices, you will seldom call it directly. Instead, it is usually simpler to use one of the following convenience functions:
+While rxCovCor is the primary tool for computing covariance, correlation, and other cross-product matrices, you will seldom call it directly. Instead, it is generally simpler to use one of the following convenience functions:
 
 -   rxCov: Use rxCov to return the covariance matrix
 -   rxCor: Use rxCor to return the correlation matrix
@@ -39,7 +39,7 @@ While rxCovCor is the primary tool for computing covariance, correlation, and ot
 
 ### Computing a Correlation Matrix for Use in Factor Analysis
 
-The 5% sample of the U.S. 2000 census has over 14 million observations. In this example we will compute the correlation matrix for 16 variables derived from variables in the data set for individuals over the age of 20. This correlation matrix is then used as input into the standard R factor analysis function, *factanal.*
+The 5% sample of the U.S. 2000 census has over 14 million observations. In this example, we compute the correlation matrix for 16 variables derived from variables in the data set for individuals over the age of 20. This correlation matrix is then used as input into the standard R factor analysis function, *factanal.*
 
 First, we specify the name and location of the data set:
 
@@ -48,7 +48,7 @@ First, we specify the name and location of the data set:
 	bigDataDir <- "C:/MRS/Data"
 	bigCensusData <- file.path(bigDataDir, "Census5PCT2000.xdf"
 
-Next, we can take a quick look at some basic demographic and socio-economic variables by calling *rxSummary.* (For more information on variables in the census data, see <http://usa.ipums.org/usa-action/variables/group>.) Throughout the analysis we will use the probability weighting variable, *perwt*, and restrict the analysis to people over the age of 20.
+Next, we can take a quick look at some basic demographic and socio-economic variables by calling *rxSummary.* (For more information on variables in the census data, see <http://usa.ipums.org/usa-action/variables/group>.) Throughout the analysis we use the probability weighting variable, *perwt*, and restrict the analysis to people over the age of 20.
 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
@@ -57,7 +57,7 @@ Next, we can take a quick look at some basic demographic and socio-economic vari
 	 	data = bigCensusData, blocksPerRead = 5, pweights = "perwt", 
 		rowSelection = age > 20)
 
-This call provides summary information about the variables in this weighted sub-sample, including cell counts for factor variables:
+This call provides summary information about the variables in this weighted subsample, including cell counts for factor variables:
 
 	Call:
 	rxSummary(formula = ~phone + speakeng + wkswork1 + incwelfr + 
@@ -180,7 +180,7 @@ This call provides summary information about the variables in this weighted sub-
 	 Yes    156286187
 
 
-Next we will call the *rxCor* function, a convenience function for *rxCovCor* that returns just the Pearson’s correlation matrix for the variables specified. We will make heavy use of the *transforms* argument to create a series of logical (or dummy) variables from factor variables to be used in the creation of the correlation matrix.
+Next we call the *rxCor* function, a convenience function for *rxCovCor* that returns just the Pearson’s correlation matrix for the variables specified. We make heavy use of the *transforms* argument to create a series of logical (or dummy) variables from factor variables to be used in the creation of the correlation matrix.
 
 	censusCor <- rxCor(formula=~poverty + noPhone + noEnglish  + onSocialSecurity + 
 		onWelfare + working + incearn + noHighSchool + inCity + renter + 
@@ -208,12 +208,12 @@ Next we will call the *rxCor* function, a convenience function for *rxCovCor* th
 			older = age > 64	
 	 		))
 	
-The resulting correlation matrix is used as input into the factor analysis function provided by the stats package in R. In interpreting the results, note that the variable *poverty* represents family income as a percentage of a poverty threshold, so increases as family income increases. First, specify two factors:
+The resulting correlation matrix is used as input into the factor analysis function provided by the stats package in R. In interpreting the results, the variable *poverty* represents family income as a percentage of a poverty threshold, so increases as family income increases. First, specify two factors:
 
 	censusFa <- factanal(covmat = censusCor, factors=2)
 	print(censusFa, digits=2, cutoff = .2, sort= TRUE)
 
-This results in:
+Results in:
 
 	Call:
 	factanal(factors = 2, covmat = censusCor)
@@ -310,9 +310,9 @@ The degrees of freedom for the model is 102 and the fit was 0.343
 
 ### Computing A Covariance Matrix for Principal Components Analysis
 
-Principal components analysis, or PCA, is a technique closely related to factor analysis. PCA seeks to find a set of orthogonal axes such that the first axis, or *first principal component*, accounts for as much variability as possible and subsequent axes or components are chosen to maximize variance while maintaining orthogonality with previous axes. Principal components are typically computed either by a singular value decomposition of the data matrix or an eigenvalue decomposition of a covariance or correlation matrix; the latter permits us to use *rxCovCor* and its relatives with the standard R function *princomp*.
+Principal components analysis, or PCA, is a technique closely related to factor analysis. PCA seeks to find a set of orthogonal axes such that the first axis, or *first principal component*, accounts for as much variability as possible, and subsequent axes or components are chosen to maximize variance while maintaining orthogonality with previous axes. Principal components are typically computed either by a singular value decomposition of the data matrix or an eigenvalue decomposition of a covariance or correlation matrix; the latter permits us to use *rxCovCor* and its relatives with the standard R function *princomp*.
 
-As an example, we will use the rxCov function to calculate a covariance matrix for the log of the iris data, and pass this to the princomp function; this will reproduce the example from pages 303-304 of *Modern Applied Statistics with S* :
+As an example, we use the rxCov function to calculate a covariance matrix for the log of the iris data, and pass the matrix to the princomp function; this reproduces the example from pages 303-304 of *Modern Applied Statistics with S*:
 
 	#  Computing A Covariance Matrix for Principal Components Analysis
 	  
@@ -323,7 +323,7 @@ As an example, we will use the rxCov function to calculate a covariance matrix f
 	irisPca <- princomp(covmat=irisCov, cor=TRUE)
 	summary(irisPca)
 
-This yields the following:
+Yields the following:
 
 	Importance of components:
 	                          Comp.1    Comp.2     Comp.3    Comp.4
@@ -331,11 +331,11 @@ This yields the following:
 	Proportion of Variance 0.7331284 0.2267568 0.03325206 0.0068628
 	Cumulative Proportion  0.7331284 0.9598851 0.99313720 1.0000000
 
-The default plot method for objects of class princomp is a *screeplot*, which is a barplot of the variances of the principal components. We can obtain the plot as usual by calling plot with our principal components object:
+The default plot method for objects of class princomp is a *scree plot*, which is a barplot of the variances of the principal components. We can obtain the plot as usual by calling plot with our principal components object:
 
 	plot(irisPca)
 
-This yields the following plot:
+Yields the following plot:
 
 ![](media/how-to-revoscaler-covcor/image23.png)
 
@@ -355,7 +355,7 @@ Another useful bit of output is given by the loadings function, which returns a 
 	  Proportion Var   0.25   0.25   0.25   0.25
 	  Cumulative Var   0.25   0.50   0.75   1.00
 	  
-You may have noticed that we supplied the flag cor=TRUE in the call to princomp; this tells princomp to use the correlation matrix rather than the covariance matrix to compute the principal components. We can obtain the same results by omitting the flag but submitting the correlation matrix as returned by rxCor instead:
+You may have noticed that we supplied the flag cor=TRUE in the call to princomp; this flag tells princomp to use the correlation matrix rather than the covariance matrix to compute the principal components. We can obtain the same results by omitting the flag but submitting the correlation matrix as returned by rxCor instead:
 
 	irisCor <- rxCor(~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, 
 	    data=irisLog)
@@ -366,7 +366,7 @@ You may have noticed that we supplied the flag cor=TRUE in the call to princomp;
 
 ### A Large Data Principal Components Analysis
 
-Stock market data for open, high, low, close, and adjusted close from 1962 to 2010 is available at <https://github.com/thebigjc/HackReduce/blob/master/datasets/nyse/daily_prices/NYSE_daily_prices_subset.csv>. The full data set includes 9.2 million observations of daily open-high-low-close data for some 2800 stocks. As you might expect, these data are highly correlated, and principal components analysis can be used for data reduction. We read the original data into an .xdf file, NYSE\_daily\_prices.xdf, using the same process we used in the *Getting Started Guide* to read our mortgage data (set *revoDataDir* to the full path to the NYSE directory containing the .csv files when you unpack the download):
+Stock market data for open, high, low, close, and adjusted close from 1962 to 2010 is available at <https://github.com/thebigjc/HackReduce/blob/master/datasets/nyse/daily_prices/NYSE_daily_prices_subset.csv>. The full data set includes 9.2 million observations of daily open-high-low-close data for some 2800 stocks. As you might expect, these data are highly correlated, and principal components analysis can be used for data reduction. We read the original data into a .xdf file, NYSE\_daily\_prices.xdf, using the same process we used in the *Getting Started Guide* to read our mortgage data (set *revoDataDir* to the full path to the NYSE directory containing the .csv files when you unpack the download):
 
 	#  A Large Data Principal Components Analysis
 	
@@ -396,7 +396,7 @@ Once we have our .xdf file, we proceed as before:
 	plot(stockPca)
 
 
-This yields the following output:
+Yields the following output:
 
 	> summary(stockPca)
 	Importance of components:
@@ -424,7 +424,7 @@ This yields the following output:
 	Cumulative Var    0.2    0.4    0.6    0.8    1.0
 
 
-The screeplot is shown below:
+The scree plot is shown as follows:
 
 ![](media/how-to-revoscaler-covcor/image24.png)
 
@@ -448,7 +448,7 @@ The solution to the ridge regression is
 
 ![](media/how-to-revoscaler-covcor/math3.png)
 
-where ![](media/how-to-revoscaler-covcor/math4.png) is the model matrix. This is similar to the ordinary least squares regression solution with a “ridge” added along the diagonal.
+where ![](media/how-to-revoscaler-covcor/math4.png) is the model matrix. This matrix is similar to the ordinary least squares regression solution with a “ridge” added along the diagonal.
 
 Since the model matrix is embedded in the correlation matrix, the following function allows us to compute the ridge regression solution:
 
@@ -499,5 +499,4 @@ You can supply a vector of lambdas as a quick way to compare various choices:
 	  2.00 1.865339 0.44512940  0.44575060
 	 20.00 1.896779 0.08092296  0.08105322
 
-Notice that for \(\lambda = 0\), the ridge regression is identical to ordinary least squares, while as \(\backslash n\lambda \rightarrow \infty\), the coefficients of x and y approach 0.
-
+For λ = 0, the ridge regression is identical to ordinary least squares, while as λ → ∞, the coefficients of x and y approach 0.

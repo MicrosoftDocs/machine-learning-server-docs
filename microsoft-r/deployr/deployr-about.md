@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "About DeployR"
+title: "About DeployR - DeployR 8.x "
 description: "DeployR introduction and overview."
 keywords: ""
 author: "j-martens"

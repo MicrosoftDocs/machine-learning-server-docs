@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Finding the appsettings.json configuration file for R Server - Microsoft R Server | Microsoft Docs"
-description: "Where to find appsettings.json for R Server, web node, compute node"
-keywords: "R Server configuration file, appsettings.json"
+title: "Default install paths for compute and web nodes - Machine Learning Server "
+description: "Where to find appsettings.json for Machine Learning Server, web node, compute node"
+keywords: "Machine Learning Server configuration file, appsettings.json"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,48 +24,61 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Finding the appsettings.json configuration file for R Server
+# Default install paths for compute and web nodes
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
-The external configuration file, appsettings.json, defines a number of policies used when deploying and operationalizing web services with R Server. There is one appsettings.json file on each web node and on each compute node. This file contains a wide range of policy configuration options for that node.
+## Machine Learning Server 9.2.1
 
-+ On the web node, this configuration file governs authentication, SSL, CORS support, service logging, database connections, token signing, compute node declarations, and more.
+The installation path depends on the operating system and the type of node (web or compute).
 
-+ On the compute node, this configuration file governs SSL, logging, [R shell pool size](configure-evaluate-capacity.md#r-shell-pool), R execution ports, and more.
-
-The location of this file depends on the R Server version and operating system you have. 
-
-### Windows path to config file
-
-The file can be found as follows where `<MRS_home>` is the path to the Microsoft R Server installation directory. Type `normalizePath(R.home())` in your R console to find the path to `<MRS_home>`.
-
-|Node|Path on version 9.1|
+|OS|Path|
 |----|------------|
-|Web|<MRS_home>\o16n\Microsoft.RServer.WebNode|
-|Compute|<MRS_home>\o16n\Microsoft.RServer.ComputeNode|
+|Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
+|Linux|/opt/microsoft/mlserver/9.2.1/o16n||
 
-<br>
 
-|Node|Path on version 9.0|
++ **Administration utility** is under: \<server-directory>\Microsoft.MLServer.Utils.AdminUtil\
+
++ **Log files** are under: \<server-directory>\\\<node-directory>\logs\*.*
+
++ **appsettings.json** is under: \<server-directory>\\\<node-directory>\appsettings.json
+
+  Where the \<node-directory> name: 
+
+  |Type|Node directory name|
+  |----|------------|
+  |Web node|Microsoft.MLServer.WebNode|
+  |Compute node|Microsoft.MLServer.ComputeNode|
+
+## Microsoft R Server 9.1.0
+
+The installation path depends on the operating system and the type of node (web or compute).
+
+|OS|Path|
 |----|------------|
-|Web|<MRS_home>\deployr\Microsoft.DeployR.Server.WebAPI|
-|Compute|<MRS_home>\deployr\Microsoft.DeployR.Server.BackEnd|
+|Windows|\<r-home>\deployr<br>(_Run 'normalizePath(R.home())' in the R console for R home._)|
+|Linux|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/\<node-directory>||
 
+Where the \<node-directory> name: 
 
-### Linux path to config file
-
-The file can be found here: 
-
-
-|Node|Path on version 9.1|
+|Type|Node Directory Name|
 |----|------------|
-|Web|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/Microsoft.RServer.WebNode|
-|Compute|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/Microsoft.RServer.ComputeNode|
+|Web node|Microsoft.RServer.WebNode|
+|Compute node|Microsoft.RServer.ComputeNode|
 
-<br>
+## Microsoft R Server 9.0.1
 
-|Node|Path on version 9.0|
+The installation path depends on the operating system and the type of node (web or compute).
+
+|OS|Path|
 |----|------------|
-|Web|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.WebAPI|
-|Compute|/usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Server.BackEnd|
+|Windows|\<r-home>\deployr<br>(_Run 'normalizePath(R.home())' in the R console for R home._)|
+|Linux|/usr/lib64/microsoft-r/rserver/o16n/9.0.1/\<node-directory>||
+
+Where the \<node-directory> name: 
+
+|Type|Node Directory Name|
+|----|------------|
+|Web node|Microsoft.DeployR.Server.WebAPI|
+|Compute node|Microsoft.DeployR.Server.BackEnd|

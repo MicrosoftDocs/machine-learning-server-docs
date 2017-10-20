@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "SQL R Services Package Management" 
+title: "rxPackage function (RevoScaleR) " 
 description: " **NOTE: This feature and the rx APIs listed below are in pre-release mode and subject to change before final release.**  This section describes how to enable & disable SQL R Services package management on SQL server, install R packages on SQL server database, use installed packages on SQL server database and remove R packages on SQL server. **RevoScaleR** provides the necessary rx functions to install and uninstall packages. " 
-keywords: "RevoScaleR, rxPackage, packages, sql, install, uninstall, remove, use" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxPackage, packages, sql, install, uninstall, remove, use" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxPackage: SQL R Services Package Management
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxPackage: SQL R Services Package Management 
  ##Description
  
 **NOTE: This feature and the rx APIs listed below are in pre-release mode and subject to change before final release.**
@@ -71,22 +67,22 @@ SQL R services provides the following core client functions for managing librari
 
 
 * 
- [rxInstalledPackages](rxinstalledpackages.md)() - to enumerate installed packages in a database on SQL server
+ [rxInstalledPackages](rxInstalledPackages.md)() - to enumerate installed packages in a database on SQL server
 
 * 
- [rxInstallPackages](rxinstallpackages.md)() - to install packages, including dependency resolution, from a repository to onto a library in a database and further install the same packages on a secured per database, per user location on file system on SQL server
+ [rxInstallPackages](rxInstallPackages.md)() - to install packages, including dependency resolution, from a repository to onto a library in a database and further install the same packages on a secured per database, per user location on file system on SQL server
 
 * 
- [rxRemovePackages](rxremovepackages.md)() - to remove installed packages from a library in a database and further uninstall the packages from secured per database, per user location on SQL server
+ [rxRemovePackages](rxRemovePackages.md)() - to remove installed packages from a library in a database and further uninstall the packages from secured per database, per user location on SQL server
 
 * 
- [rxSqlLibPaths](rxsqllibpaths.md)() - to get secured library paths for the given user to refer to the installed packages for SQL server to then use it in .libPaths() to refer to the packages
+ [rxSqlLibPaths](rxSqlLibPaths.md)() - to get secured library paths for the given user to refer to the installed packages for SQL server to then use it in .libPaths() to refer to the packages
 
 * 
  library() - same as R functionality to load the installed package and user the functionality provided by the package
 
 * 
- [rxSyncPackages](rxsyncpackages.md)() - to synchronize packages from database on SQL server to the file system used by R
+ [rxSyncPackages](rxSyncPackages.md)() - to synchronize packages from database on SQL server to the file system used by R
 
 
 
@@ -213,17 +209,17 @@ The SQL R services package management is still in active development and not ful
  
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxSqlLibPaths](rxsqllibpaths.md),
-[rxInstalledPackages](rxinstalledpackages.md),
-[rxInstallPackages](rxinstallpackages.md),   
-[rxRemovePackages](rxremovepackages.md),
-[rxFindPackage](rxfindpackage.md),
+[rxSqlLibPaths](rxSqlLibPaths.md),
+[rxInstalledPackages](rxInstalledPackages.md),
+[rxInstallPackages](rxInstallPackages.md),   
+[rxRemovePackages](rxRemovePackages.md),
+[rxFindPackage](rxFindPackage.md),
 library
 require
    

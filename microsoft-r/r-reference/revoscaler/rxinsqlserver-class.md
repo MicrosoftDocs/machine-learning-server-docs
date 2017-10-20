@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Class RxInSqlServer" 
+title: "RxInSqlServer-class function (RevoScaleR) " 
 description: " Creates a compute context for running Microsoft R Server analyses inside Microsoft SQL Server.  Currently only supported in Windows. " 
-keywords: "RevoScaleR, RxInSqlServer-class, doPreJobValidation,RxInSqlServer-method, initialize,RxInSqlServer-method, show,RxInSqlServer-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxInSqlServer-class, doPreJobValidation,RxInSqlServer-method, initialize,RxInSqlServer-method, show,RxInSqlServer-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -30,10 +29,7 @@ ms.technology: "r-server"
  
  
  
- #RxInSqlServer-class: Class RxInSqlServer
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxInSqlServer-class: Class RxInSqlServer 
  ##Description
  
 Creates a compute context for running Microsoft R Server analyses inside Microsoft SQL Server.
@@ -52,44 +48,44 @@ Objects can be created by calls of the form .
  
 
 
-###connectionString:
+###`connectionString`:
 Object of class `"character"` ~~ 
 
 
 
-###wait:
+###`wait`:
 Object of class `"logical"` ~~ 
 
 
-###consoleOutput:
+###`consoleOutput`:
 Object of class `"logical"` ~~ 
 
 
-###autoCleanup:
+###`autoCleanup`:
 Object of class `"logical"` ~~ 
 
 
 
 
-###dataPath:
+###`dataPath`:
 Object of class `"characterORNULL"` ~~ 
 
 
 
-###packagesToLoad:
+###`packagesToLoad`:
 Object of class `"characterORNULL"` ~~ 
 
 
 
-###executionTimeout:
+###`executionTimeout`:
 Object of class `"numeric"` ~~ 
 
 
-###description:
+###`description`:
 Object of class `"character"` ~~ 
 
 
-###version:
+###`version`:
 Object of class `"character"` ~~ 
 
 
@@ -107,29 +103,29 @@ Class RxComputeContext, by class "RxLocalSeq", distance 1.
  
 
 
-###doPreJobValidation
+###`doPreJobValidation`
 `signature(object = "RxInSqlServer")`: ... 
 
 
-###initialize
+###`initialize`
 `signature(.Object = "RxInSqlServer")`: ... 
 
 
-###show
+###`show`
 `signature(object = "RxInSqlServer")`: ... 
 
 
 
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxInSqlServer](rxinsqlserver.md),
-[RxSqlServerData](rxsqlserverdata.md)
+[RxInSqlServer](RxInSqlServer.md),
+[RxSqlServerData](RxSqlServerData.md)
    
  ##Examples
 

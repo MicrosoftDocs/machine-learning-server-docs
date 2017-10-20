@@ -1,20 +1,20 @@
 ---
 
 # required metadata
-title: "Quickstart for deploying models as web services - Microsoft R Server | Microsoft Docs"
+title: "Quickstart for deploying models as web services with mrsdeploy - Machine Learning Server "
 description: "How to deploy an R model as a service"
-keywords: "quickstart, Microsoft R Server, deploy r models"
+keywords: "quickstart, Machine Learning Server, Microsoft R Server, deploy r models"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "5/10/2017"
+ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
 # optional metadata
 #ROBOTS: ""
 #audience: ""
-#ms.devlang: ""
+#ms.devlang: "r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
@@ -24,15 +24,15 @@ ms.technology:
 #ms.custom: ""
 
 ---
-# Deploy an R Model as a web service
+# Deploy an R Model as a web service with mrsdeploy
 
-**Applies to: Microsoft R Client 3.x, Microsoft R Server 9.x**
+**Applies to: Microsoft R Client 3.x, Machine Learning Server, Microsoft R Server 9.x**
 
 ## Objective
 
-Learn how to publish an R model as a web service with Microsoft R Server. Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the mrsdeploy package that ships with Microsoft R Client and R Server, you can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
+Learn how to publish an R model as a web service with Machine Learning Server, formerly known as Microsoft R Server. Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the mrsdeploy package that ships with Microsoft R Client and Machine Learning Server, you can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 
-An R Server web service is an R code execution on the [operationalization compute node](../install/operationalize-r-server-one-box-config.md). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
+An Machine Learning Server R web service is an R code execution on the [operationalization compute node](configure-start-for-administrators.md#configure-server-for-operationalization). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
 
 ## Time estimate
 
@@ -44,17 +44,19 @@ Before you begin this QuickStart, have the following ready:
 
 + An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
 
-+ An instance of [Microsoft R Server installed](../what-is-microsoft-r-server.md) that has been [configured to operationalize analytics](../install/operationalize-r-server-one-box-config.md).
++ An instance of [Machine Learning Server installed](../what-is-machine-learning-server.md) that has been [configured to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization). 
 
-+ The connection details and access to that instance of Microsoft R Server. Contact your administrator for any missing connection details. You can [connect to R Server from your local machine](how-to-connect-log-in-with-mrsdeploy.md) in R to deploy your analytics as web services so they can be consumed. 
+  For your convenience, [Azure Resource Management (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure the server for operationalization in Azure.
+
++ The connection details to that instance of Machine Learning Server. Contact your administrator for any missing connection details. After [connecting to Machine Learning Server](how-to-connect-log-in-with-mrsdeploy.md) in R, deploy your analytics as web services so others can consume them. 
 
 
 ## Example code
 
-This article walks through the deployment of a simple R model as a web service hosted in R Server.  Here is the entire R code for the example that we walk through in the sections that follow.
+This article walks through the deployment of a simple R model as a web service hosted in Machine Learning Server.  Here is the entire R code for the example that we walk through in the sections that follow.
 
 >[!IMPORTANT]
->Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to R Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
+>Be sure to replace the remoteLogin() function with the correct login details for your configuration. Connecting to Machine Learning Server using the mrsdeploy package is covered [in this article](how-to-connect-log-in-with-mrsdeploy.md).
 
 ```r
 ##########################################################
@@ -82,10 +84,10 @@ manualTransmission <- function(hp, wt) {
 print(manualTransmission(120, 2.8)) # 0.6418125
 
 ##########################################################
-#            Log into Microsoft R Server                 #
+#            Log into Server                 #
 ##########################################################
    
-# Use `remoteLogin` to authenticate with R Server using 
+# Use `remoteLogin` to authenticate with Server using 
 # the local admin account. Use session = false so no 
 # remote R session started
 remoteLogin("http://localhost:12800", 
@@ -147,13 +149,13 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 1. Launch your R IDE or Rgui so you can start entering R code. 
 
-1. If you have R Server 9.0.1, load the mrsdeploy package. In R Server 9.1, this package is preloaded for you.
+1. If you have R Server 9.0.1, load the mrsdeploy package. In later releases, this package is preloaded for you.
 
    ```R
    library(mrsdeploy)
    ```
 
-1. Create a GLM model called `carsModel` using the dataset `mtcars`, which is a built-in data frame in R. This model estimates the probability of a vehicle being fitted with a manual transmission based on horsepower (hp) and weight (wt)
+1. Create a GLM model called `carsModel` using the dataset `mtcars`, which is a built-in data frame in R. Using horsepower (hp) and weight (wt), this model estimates the probability that a vehicle has been fitted with a manual transmission.
 
    ```R
    # Create glm model with `mtcars` dataset
@@ -175,15 +177,15 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 ## B. Publish model as a web service
 
-1. From your local R IDE, log in to Microsoft R Server **with your credentials** using the appropriate authentication function from [the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`).  
+1. From your local R IDE, log in to Machine Learning Server **with your credentials**. Use the appropriate authentication function from [the mrsdeploy package](how-to-connect-log-in-with-mrsdeploy.md) (`remoteLogin` or `remoteLoginAAD`) for your authentication method.  
 
-   For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active directory, the authentication functions, and their arguments in the article: "[Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
+   For simplicity, the following code uses the basic local 'admin' account for authentication with the `remoteLogin` function and `session = false` so that no remote R session is started.  Learn more about authenticating with Active Directory LDAP or Azure Active Directory in the article "[Connecting to Machine Learning Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
    >[!IMPORTANT]
    >Be sure to replace the remoteLogin() function with the [correct login details for your configuration](how-to-connect-log-in-with-mrsdeploy.md).
 
    ```R  
-   # Use `remoteLogin` to authenticate with R Server using 
+   # Use `remoteLogin` to authenticate with Server using 
    # the local admin account. Use session = false so no 
    # remote R session started
    remoteLogin("http://localhost:12800", 
@@ -192,14 +194,14 @@ Now let's dive into this example down. Let's start by creating the model locally
             session = FALSE)
    ``` 
 
-   Now, you are successfully connected to the remote R Server.
+   Now, you are successfully connected to the remote Machine Learning Server.
 
-1. Publish the model as a web service to R Server using [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the mrsdeploy package. 
+1. Publish the model as a web service to Machine Learning Server using [the publishService() function](how-to-deploy-web-service-publish-manage-in-r.md) from the mrsdeploy package. 
 
    In this example, you publish a web service called `"mtService"` using the model `carsModel` and the function `manualTransmission`. As an input, the service takes a list of vehicle horsepower and vehicle weight represented as an R numerical. As an output, a percentage as an R numeric for the probability each vehicle has of being fitted with a manual transmission. 
 
 
-   When publishing, you must specify a name, a version, R code, inputs, and outputs needed for application integration among other parameters,. 
+   When publishing a service, specify its name and version, the R code, the inputs, and the outputs needed for application integration as well as other parameters. 
 
    >[!NOTE]
    >To publish a web service while in a remote R session, carefully [review these guidelines](../r/how-to-execute-code-remotely.md#publish-remote-session). 
@@ -217,7 +219,7 @@ Now let's dive into this example down. Let's start by creating the model locally
 
 <br> 
 
-## C. Test the service by consuming it in R
+## C. Consume the service in R to test
 
 Consume the service in R directly after publishing it to verify that the results are as expected.
 
@@ -236,14 +238,14 @@ print(result$output("answer")) # 0.6418125
 ``` 
 
 The results should match the results obtained when the model was run locally earlier.
-As long as the package versions are the same on R Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](../r/how-to-execute-code-remotely.md#diff) 
+As long as the package versions are the same on Machine Learning Server as they are locally, you should get the same results. You can check for differences using [a remote session "diff report."](../r/how-to-execute-code-remotely.md#diff) 
 
 >[!WARNING]
->If you get an alphanumeric error message similar to `Message: b55088c4-e563-459a-8c41-dd2c625e891d` when consuming a web service, use that string to find the full error message text in the [compute node's log file](configure-run-diagnostics.md#logs). 
+>If you get an alphanumeric error code, such as `Message: b55088c4-e563-459a-8c41-dd2c625e891d`, when consuming a service, search for that code in the [compute node's log file](configure-run-diagnostics.md#logs) to reveal the full error message. 
 
 ## D. Get the Swagger-based JSON file
 
-You, or others, can test and consume the service using the Swagger-based JSON file that was generated automatically when the service was published. This Swagger-based JSON file is specific to this service. You can easily get this file during the same authenticated session in which you published the service. It can be downloaded to the local file system. This file can also be obtained later as described in the article "[How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)." 
+Anyone can test and consume the service using its auto-generated Swagger-based JSON file. This Swagger-based JSON file is specific to a given version of a service. You can easily get this file during the same authenticated session in which you published the service. It can be downloaded to the local file system. You can get this Swagger file as long as the web service exists as described in the article "[How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)." 
 
 In this example, we executed these commands to download the Swagger-based JSON file:
 
@@ -253,7 +255,7 @@ cat(swagger, file = "swagger.json", append = FALSE)
 ``` 
 
 >[!NOTE]
->See [the next section](#share) for the code to get this Swagger-based JSON file after the session ends.
+>[Learn how to get and share](how-to-consume-web-service-interact-in-r.md#data-scientists-share) this Swagger-based JSON file after the session ends.
 
 
 
@@ -268,30 +270,23 @@ After it has been deployed, the web service can be:
 
 ## How to execute R code remotely
 
-You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to R Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft R Server](../r/how-to-execute-code-remotely.md).
+You can use Microsoft R Client to run your R code locally and from R Client you can connect remotely to Machine Learning Server to run your code there. You can easily switch between the local context and the remote context using pause() and resume() functions.  Learn more in this article, [Remote Execution in Microsoft Machine Learning Server](../r/how-to-execute-code-remotely.md).
 
 Requirements for remote execution include:
 
 + Configure an R Integrated Development Environment (IDE) to work with [Microsoft R Client](../r-client-get-started.md). 
-+ Obtain [authenticated access](configure-authentication.md) to an instance of Microsoft R Server with its [operationalization feature configured](../install/operationalize-r-server-one-box-config.md).
++ Obtain [authenticated access](configure-authentication.md) to an instance of Machine Learning Server with its [operationalization feature configured](configure-start-for-administrators.md#configure-server-for-operationalization).
 
 ## More resources
 
-This section provides a quick summary of useful links for data scientists operationalizing R analytics with R Server.
+This section provides a quick summary of useful links for data scientists operationalizing R analytics with Machine Learning Server.
 
->Use the table of contents to find all the guides and documentation needed by the administrator.
-
-**Key Documents**
  + [About Operationalization](../what-is-operationalization.md)    
  + [Functions in mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md)    
- + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
+ + [Connecting to Machine Learning Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)    
  + [Working with web services in R](how-to-deploy-web-service-publish-manage-in-r.md)    
  + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)    
- + [Execute on a remote Microsoft R Server](../r/how-to-execute-code-remotely.md)    
-
-**Other Getting Started Guides**
+ + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)    
  + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)    
- + [Administrators](configure-start-for-administrators.md)    
-
-**Support Channel**
- + [Microsoft R Server Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)
+ + [Get started for administrators](configure-start-for-administrators.md)    
+ + [User Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)

@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "HTTP requests made easy and more fluent around curl." 
+title: "request function (mrsdeploy) " 
 description: " HTTP requests made easy and more fluent around curl. " 
-keywords: "mrsdeploy, request" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), request" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #request: HTTP requests made easy and more fluent around `curl`.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #request: HTTP requests made easy and more fluent around `curl`. 
  ##Description
  
 HTTP requests made easy and more fluent around `curl`.
@@ -43,5 +39,4 @@ HTTP requests made easy and more fluent around `curl`.
   request(host = NULL)
  
 ```
- 
  

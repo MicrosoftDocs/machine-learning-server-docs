@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxLocalSeq" 
+title: "RxLocalSeq-class function (RevoScaleR) " 
 description: "   Class for the RevoScaleR Local Compute Context.   " 
-keywords: "RevoScaleR, RxLocalSeq-class, show,RxLocalSeq-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxLocalSeq-class, show,RxLocalSeq-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxLocalSeq-class: Class RxLocalSeq
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxLocalSeq-class: Class RxLocalSeq 
  ##Description
  
 Class for the RevoScaleR Local Compute Context.  
@@ -40,8 +36,8 @@ Class for the RevoScaleR Local Compute Context.
  ## Generators 
 
  
-The targeted generator [RxLocalSeq](rxlocalseq.md) as well as the general generator
-[RxComputeContext](rxcomputecontext.md).
+The targeted generator [RxLocalSeq](RxLocalSeq.md) as well as the general generator
+[RxComputeContext](RxComputeContext.md).
  
  ## Extends 
 
@@ -53,26 +49,25 @@ Class RxComputeContext, directly.
  
 
 
-###show
+###`show`
 `signature(object = "RxLocalSeq")`: ...
 
 
 
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxSpark](rxspark.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxInSqlServer](rxinsqlserver.md),
-[RxInTeradata](rxinteradata.md),
-[RxLocalParallel](rxlocalparallel.md),
-[RxForeachDoPar](rxforeachdopar.md),
-[RxComputeContext](rxcomputecontext.md),
-[rxSetComputeContext](rxsetcomputecontext.md).
+[RxSpark](RxSpark.md),
+[RxHadoopMR](RxHadoopMR.md),
+[RxInSqlServer](RxInSqlServer.md),
+[RxLocalParallel](RxLocalParallel.md),
+[RxForeachDoPar](RxForeachDoPar.md),
+[RxComputeContext](RxComputeContext.md),
+[rxSetComputeContext](rxSetComputeContext.md).
    
  ##Examples
 

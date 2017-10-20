@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Class RxSasData" 
+title: "RxSasData-class function (RevoScaleR) " 
 description: " SAS data source connection class. " 
-keywords: "RevoScaleR, RxSasData-class, show,RxSasData-method, classes" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), RxSasData-class, show,RxSasData-method, classes" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #RxSasData-class: Class RxSasData
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #RxSasData-class: Class RxSasData 
  ##Description
  
 SAS data source connection class.
@@ -40,8 +36,8 @@ SAS data source connection class.
  ## Generators 
 
  
-The targeted generator [RxSasData](rxsasdata.md) as well as the general generator
-[rxNewDataSource](rxnew.md).
+The targeted generator [RxSasData](RxSasData.md) as well as the general generator
+[rxNewDataSource](rxNew.md).
  
  ## Extends 
 
@@ -54,20 +50,20 @@ Class RxDataSource, by class RxFileData.
  
 
 
-###show
+###`show`
 `signature(object = "RxSasData")`: ...
 
 
 
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxDataSource-class](rxdatasource-class.md),
-[RxSasData](rxsasdata.md),
-[rxNewDataSource](rxnew.md)
+[RxDataSource-class](RxDataSource-class.md),
+[RxSasData](RxSasData.md),
+[rxNewDataSource](rxNew.md)
    
  

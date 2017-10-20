@@ -25,6 +25,8 @@ ms.technology: "r-server"
 
 # Offline installation for R Server 9.1 for Windows
 
+**Looking for the 9.2.1 release? See [Machine Learning Server for Windows installation](machine-learning-server-windows-offline.md)**
+
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
 In this release, most components required for R Server installation are embedded, which means fewer prerequisites have to be downloaded in advance. The following components are now included in the Windows installer:

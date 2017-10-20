@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: "RevoScaleR Data Sources: Class Generator" 
+title: "rxNewDataSource function (RevoScaleR) " 
 description: " This is the main generator for RxDataSource S4 classes. " 
-keywords: "RevoScaleR, rxNewDataSource, rxNewDataSource,character-method, file, connection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxNewDataSource, rxNewDataSource,character-method, file, connection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxNewDataSource: RevoScaleR Data Sources: Class Generator
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxNewDataSource: RevoScaleR Data Sources: Class Generator 
  ##Description
  
 This is the main generator for RxDataSource S4 classes.
@@ -48,11 +44,11 @@ rxNewDataSource  (name, ...)
 
    
     
- ### name
+ ### `name`
  character name of the specific class to instantiate. 
   
     
- ###  ...
+ ### ` ...`
  any other arguments are passed to the class generator `name`. 
   
  
@@ -61,7 +57,7 @@ rxNewDataSource  (name, ...)
  
 This is a wrapper to specific class generator functions for the
 RCE data source classes. For example, the RxXdfData class uses function
-[RxXdfData](rxxdfdata.md) as a generator. Therefore either `RxXdfData(...)`
+[RxXdfData](RxXdfData.md) as a generator. Therefore either `RxXdfData(...)`
 or `rxNewDataSource("RxXdfData", ...)` will create an RxXdfData instance.
  
  
@@ -74,23 +70,23 @@ actual RevoScaleR data sources.
 
  
 This function creates the data source instance in the Microsoft R Services Compute Engine, but does not
-actually open the data. The methods [rxOpen](rxopen-methods.md) and
-[rxClose](rxopen-methods.md) will open and close the data.
+actually open the data. The methods [rxOpen](rxOpen-methods.md) and
+[rxClose](rxOpen-methods.md) will open and close the data.
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[RxXdfData](rxxdfdata.md),
-[RxTextData](rxtextdata.md),
-[RxSasData](rxsasdata.md),
-[RxSpssData](rxspssdata.md),
-[RxOdbcData](rxodbcdata.md),
-[RxTeradata](rxteradata.md),
-[rxOpen](rxopen-methods.md),
-[rxReadNext](rxopen-methods.md).
+[RxXdfData](RxXdfData.md),
+[RxTextData](RxTextData.md),
+[RxSasData](RxSasData.md),
+[RxSpssData](RxSpssData.md),
+[RxOdbcData](RxOdbcData.md),
+[RxTeradata](RxTeradata.md),
+[rxOpen](rxOpen-methods.md),
+[rxReadNext](rxOpen-methods.md).
    
  ##Examples
 

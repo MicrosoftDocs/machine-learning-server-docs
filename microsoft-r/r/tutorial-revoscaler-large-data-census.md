@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Tutorial: Analyzing census data using RevoScaleR in Microsoft R"
+title: "Tutorial: Analyzing census data using RevoScaleR in Machine Learning Server "
 description: "Learn how to work with big datasets using sample census data in this RevoScaleR tutorial walkthrough."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Tutorial: Analyzing US census data with RevoScaleR (Microsoft R)
+# Tutorial: Analyzing US census data with RevoScaleR
 
 This example builds on what you learned in an [earlier tutorial](tutorial-revoscaler-data-import-transform.md) by exploring the import and statistical RevoScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
 
@@ -174,8 +174,8 @@ This should give the result:
 
 ## See Also
 
-[Introduction to Microsoft R](../microsoft-r-getting-started.md)
+[Machine Learning Server](../what-is-machine-learning-server.md)	
 
-[Diving into data analysis in Microsoft R](how-to-introduction.md)
+[How-to guides in Machine Learning Server](how-to-introduction.md)
 
 [RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

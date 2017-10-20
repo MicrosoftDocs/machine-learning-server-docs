@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Import SQL data from Azure SQL Database and SQL Server (Microsoft R)"
+title: "Import SQL data from Azure SQL Database and SQL Server (Machine Learning Server) "
 description: "How to import relational data from Azure SQL and SQL Server databases in RevoScaleR"
 keywords: ""
 author: "HeidiSteen"
@@ -23,15 +23,15 @@ ms.technology: "r-server"
 
 ---
 
-# Import SQL Server relational data (Microsoft R)
+# Import SQL Server relational data
 
-This article shows you how to import relational data from SQL Server into a data frame or .xdf file in Microsoft R. Source data can originate from Azure SQL Database, or SQL Server on premises or on [an Azure virtual machine](https://docs.microsoft.com/sql/linux/sql-server-linux-azure-virtual-machine#a-idconnecta-connect-to-the-linux-vm).
+This article shows you how to import relational data from SQL Server into a data frame or .xdf file in Machine Learning Server. Source data can originate from Azure SQL Database, or SQL Server on premises or on [an Azure virtual machine](https://docs.microsoft.com/sql/linux/sql-server-linux-azure-virtual-machine#a-idconnecta-connect-to-the-linux-vm).
 
 ## Prerequisites
 
 + [Azure subscription, Azure SQL Database, AdventureWorksLT	sample database](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal)
 + [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) (any supported version and edition) with the [AdventureWorksDW sample database](https://www.microsoft.com/download/details.aspx?id=49502)	
-+ Microsoft R Server 9.1 for Windows or Linux	
++ Machine Learning Server for Windows or Linux	
 + R console application (RGui.exe on Windows or Revo64 on Linux)
 
 > [!Note]
@@ -74,7 +74,7 @@ After `Driver`, all remaining connection properties from `Server` to `Connection
 
 On Azure SQL Database, access is controlled through firewall rules created for specific IP addresses. Creating a firewall rule is a requirement for accessing Azure SQL Database from a client application.
 
-1. On your client machine running Microsoft R, sign in to the [Azure portal](https://ms.portal.azure.com) and locate AdventureWorksLT. 
+1. On your client machine running Machine Learning Server, sign in to the [Azure portal](https://ms.portal.azure.com) and locate AdventureWorksLT. 
 
 2. Use **Overview > Set server firewall > Add client IP** to create a rule for the local client. 
 
@@ -106,11 +106,11 @@ Queries should be data extraction queries (SELECT and SHOW statements) for readi
 
 ### 4 - Set the data source
 
-Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in Microsoft R](how-to-revoscaler-data-source.md).
+Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in RevoScaleR](how-to-revoscaler-data-source.md).
 
 		> sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
 
-You could substitute **RxSqlServerData** for **RxOdbcData** if you want the option of setting the compute context to a remote SQL Server instance (for example, if you want to run **rxMerge**, **rxImport**, or **rxSort** on a remote SQL Server that also has an R Server installation on the same machine). Otherwise, **RxOdbcData** is local compute context only.
+You could substitute **RxSqlServerData** for **RxOdbcData** if you want the option of setting the compute context to a remote SQL Server instance (for example, if you want to run **rxMerge**, **rxImport**, or **rxSort** on a remote SQL Server that also has a Machine Learning Server installation on the same machine). Otherwise, **RxOdbcData** is local compute context only.
 
 ### 5 - Set the output file
 

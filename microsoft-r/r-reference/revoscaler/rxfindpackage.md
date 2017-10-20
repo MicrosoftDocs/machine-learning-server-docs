@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Find Packages for Compute Context" 
+title: "rxFindPackage function (RevoScaleR) " 
 description: " Find the path for one or more packages for a compute context. " 
-keywords: "RevoScaleR, rxFindPackage, packages, sql, install, uninstall, remove, use" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxFindPackage, packages, sql, install, uninstall, remove, use" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxFindPackage: Find Packages for Compute Context
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxFindPackage: Find Packages for Compute Context 
  ##Description
  
 Find the path for one or more packages for a compute context.
@@ -50,32 +46,32 @@ Find the path for one or more packages for a compute context.
    
   
     
- ### package
+ ### `package`
  character vector of name(s) of packag(es). 
   
   
     
- ### computeContext
- an [RxComputeContext](rxcomputecontext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInTeradata](rxinteradata.md), [RxInSqlServer](rxinsqlserver.md), [RxLocalSeq](rxlocalseq.md). 
+ ### `computeContext`
+ an [RxComputeContext](RxComputeContext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](RxInSqlServer.md) and [RxLocalSeq](RxLocalSeq.md). 
   
   
     
- ### allNodes
- logical. If `TRUE` and an [RxInTeradata](rxinteradata.md) compute context is used, a list of results from each node is returned. 
+ ### `allNodes`
+ logical 
    
    
     
- ### lib.loc
- a character vector describing the location of R library trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace, then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](rxinsqlserver.md) only `NULL` is supported. 
+ ### `lib.loc`
+ a character vector describing the location of R library trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace, then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](RxInSqlServer.md) only `NULL` is supported. 
   
    
     
- ### quiet
+ ### `quiet`
  logical. If `FALSE`, warnings or an error is given if the package is not found. 
   
    
     
- ### verbose
+ ### `verbose`
  logical. If `TRUE`, additional diagnostics are printed if available. 
   
  
@@ -94,19 +90,19 @@ a list of lists with a character vector of paths from each node will be returned
  
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##See Also
  
-[rxPackage](rxpackage.md),
+[rxPackage](rxPackage.md),
 find.package,
-[rxInstalledPackages](rxinstalledpackages.md),
-[rxInstallPackages](rxinstallpackages.md),   
-[rxRemovePackages](rxremovepackages.md),
-[rxSyncPackages](rxsyncpackages.md),
-[rxSqlLibPaths](rxsqllibpaths.md),   
+[rxInstalledPackages](rxInstalledPackages.md),
+[rxInstallPackages](rxInstallPackages.md),   
+[rxRemovePackages](rxRemovePackages.md),
+[rxSyncPackages](rxSyncPackages.md),
+[rxSqlLibPaths](rxSqlLibPaths.md),   
 require
    
  ##Examples

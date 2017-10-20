@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: " Run A Function on Multiple Nodes or Cores " 
-description: " Allows distributed execution of a function in parallel across nodes (computers) or cores of a compute context such as a cluster. " 
-keywords: "RevoScaleR, rxExec, IO" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxExec function (RevoScaleR) " 
+description: " Allows distributed execution of a function in parallel across nodes (computers) or cores  of a compute context such as a cluster. " 
+keywords: "(RevoScaleR), rxExec, IO" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxExec:  Run A Function on Multiple Nodes or Cores 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxExec:  Run A Function on Multiple Nodes or Cores  
  ##Description
  
 Allows distributed execution of a function in parallel across nodes (computers) or cores 
@@ -52,85 +48,82 @@ of a "compute context" such as a cluster.
 
    
   
- ### FUN
- the function to be executed; the nodes or cores on which it is run are determined by the currently-active compute context and by the other arguments of [rxExec](rxexec.md). 
+ ### `FUN`
+ the function to be executed; the nodes or cores on which it is run are determined by the currently-active compute context and by the other arguments of [rxExec](rxExec.md). 
   
   
   
- ###  ...
- arguments passed to the function `FUN` each time it is executed.  Separate argument values can be sent for each computation by wrapping a vector or list of argument values in [rxElemArg](rxelemarg.md). 
+ ### ` ...`
+ arguments passed to the function `FUN` each time it is executed.  Separate argument values can be sent for each computation by wrapping a vector or list of argument values in [rxElemArg](rxElemArg.md). 
   
   
   
- ### elemArgs
- a vector or list specifying arguments to `FUN`. This allows a different set of arguments to be passed to `FUN` each time it is executed.  The length of the vector or list must match the number of times the function will  be executed. Each of these elements will be passed in turn  to `FUN`. Using a list of lists allows multiple named or unnamed parameters to be passed. If `elemArgs` has length 1, that argument is passed to all compute  elements (and thus is an alternative to  ...). The elements of `elemArgs` may be named; if they are node names those elements will be passed to those nodes. Alternatively, they can be "rxElem1", "rxElem2" and so on. In this case, the list of returned values will have those corresponding names. See the Details section for more information. This is an alternative to using [rxElemArg](rxelemarg.md) one or more times.  
+ ### `elemArgs`
+ a vector or list specifying arguments to `FUN`. This allows a different set of arguments to be passed to `FUN` each time it is executed.  The length of the vector or list must match the number of times the function will  be executed. Each of these elements will be passed in turn  to `FUN`. Using a list of lists allows multiple named or unnamed parameters to be passed. If `elemArgs` has length 1, that argument is passed to all compute  elements (and thus is an alternative to  ...). The elements of `elemArgs` may be named; if they are node names those elements will be passed to those nodes. Alternatively, they can be "rxElem1", "rxElem2" and so on. In this case, the list of returned values will have those corresponding names. See the Details section for more information. This is an alternative to using [rxElemArg](rxElemArg.md) one or more times.  
   
   
   
- ### elemType
- the distributed computing mode to be used. Handling of this parameter depends upon compute context, as follows:  
-* `RxInTeradata` - Allowable types are  `"nodes"` (the default). If   `elemType="nodes"` the computation is performed on each AMP of the Teradata platform.   
-* `local or `RxForeachDoPar` or `RxSpark` or `RxHadoopMR`` - The `elemType` parameter is ignored.  
+ ### `elemType`
+ [Deprecated]. The distributed computing mode to be used. This parameter is currently deprecated and is not honored by any of the supported compute contexts. It might come back to use in the future.      
   
   
   
-  
- ### oncePerElem
+ ### `oncePerElem`
  logical flag. If `TRUE` and `elemType="nodes"`, `FUN` will be run exactly once on each specified node. In this case, each element of the return list will be named with the name of the node that computed that element. If `FALSE`, a node may  be used more than once (but never simultaneously). `oncePerElem` must be set to `FALSE`if `elemType="cores"`.  This parameter is ignored if the active compute context is local. 
   
   
   
- ### timesToRun
+ ### `timesToRun`
  integer specifying the the total number of instances of the function  `FUN` to run. If `timesToRun=-1`, the default, then times is set to the  length of the `elemArgs` argument, if it exists, else to the number of nodes or cores specified in the compute context object, if that is exact. In the latter case, if the `elemType="nodes"` and a single set of arguments is being passed to each node, each  element of the return list will be named with the name of the node that computed that element. If `timesToRun` is not -1, it must be consistent with this other information.  
   
   
   
- ### packagesToLoad
+ ### `packagesToLoad`
  optional character vector specifying additional packages to be  loaded on the nodes for this job. If provided, these packages are loaded after any `packagesToLoad` specified in the current distributed compute context. 
   
   
   
- ### execObjects
+ ### `execObjects`
  optional character vector specifying additional objects to be  exported to the nodes for this job, or an environment containing these objects.  The specified objects are added to `FUN`'s environment, unless that environment is locked, in which case they are added to the environment in which `FUN` is evaluated. For purposes of efficiency, this argument should not be used for exporting large data  objects. Passing large data through reference to a shared storage location (e.g., HDFS) is recommended. 
   
   
   
- ### taskChunkSize
+ ### `taskChunkSize`
  optional integer scalar specifying the number of tasks to be executed per compute element, or worker. By submitting tasks in chunks, you can avoid some of the overhead of starting new R processes over and over. For example, if you are running thousands of identical simulations on a cluster,  it makes sense to specify the `taskChunkSize` so that each  worker can do its allotment of tasks in a single R process.  This argument is incompatible with the `oncePerElem` argument; if both are supplied, this one is ignored. It is also incompatible with lists supplied to `elemArgs` with compute element names. 
   
   
   
- ### quote
+ ### `quote`
  logical flag. If `TRUE`, underlying calls to `do.call` have the corresponding flag set to `TRUE`. This is primarily of use to the **doRSR** package, but may be of use to other users. 
   
    
   
- ### consoleOutput
- `NULL` or logical value. If `TRUE`, the console output from the  all of the processes is printed to the user console. Note that the output from different nodes or cores may be interleaved in an unpredictable way. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](rxgetjoboutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used.  This parameter is ignored  if the active compute context is local. 
+ ### `consoleOutput`
+ `NULL` or logical value. If `TRUE`, the console output from the  all of the processes is printed to the user console. Note that the output from different nodes or cores may be interleaved in an unpredictable way. If `FALSE`,  no console output is displayed. Output can be retrieved with the function  [rxGetJobOutput](rxGetJobOutput.md) for a non-waiting job. If not `NULL`,  this flag overrides the  value set in the compute context when the job was submitted. If `NULL`,  the setting in the compute context will be used.  This parameter is ignored  if the active compute context is local. 
   
   
   
- ### autoCleanup
- `NULL` or logical value. If `TRUE`, artifacts created by the distributed  computing job are deleted when the results are returned or retrieved using [rxGetJobResults](rxgetjobresults.md). If `FALSE`, the artifacts are not deleted,  and the results may be obtained repeatedly using [rxGetJobResults](rxgetjobresults.md),  and the console output via [rxGetJobOutput](rxgetjoboutput.md) until  [rxCleanupJobs](rxcleanup.md) is used to delete the artifacts. If not `NULL`, this flag overrides  the value set in the compute context when the job was submitted. If you routinely  set `autoCleanup=FALSE`, you may eventually fill your hard disk with  compute artifacts. If you set `autoCleanup=TRUE` and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`.  This  parameter is ignored if the active compute context is local. 
+ ### `autoCleanup`
+ `NULL` or logical value. If `TRUE`, artifacts created by the distributed  computing job are deleted when the results are returned or retrieved using [rxGetJobResults](rxGetJobResults.md). If `FALSE`, the artifacts are not deleted,  and the results may be obtained repeatedly using [rxGetJobResults](rxGetJobResults.md),  and the console output via [rxGetJobOutput](rxGetJobOutput.md) until  [rxCleanupJobs](rxCleanup.md) is used to delete the artifacts. If not `NULL`, this flag overrides  the value set in the compute context when the job was submitted. If you routinely  set `autoCleanup=FALSE`, you may eventually fill your hard disk with  compute artifacts. If you set `autoCleanup=TRUE` and experience performance degradation on a Windows XP client, consider setting `autoCleanup=FALSE`.  This  parameter is ignored if the active compute context is local. 
   
   
   
- ### continueOnFailure
+ ### `continueOnFailure`
  `NULL` or logical value.  If `TRUE`, the default, then if an individual instance of a job fails due to a hardware or network failure, an attempt will be made to rerun that job.  (R syntax errors, however, will cause immediate failure as usual.) Furthermore, should a process instance of a job fail due to a user code failure, the rest of the processes will continue,  and the failed process will produce a warning when the output is collected.  Additionally, the position  in the returned list where the failure occured will contain the error as opposed to a result. This  parameter is ignored if the active compute context is local or `RxForeachDoPar`.  
   
   
   
- ### RNGseed
+ ### `RNGseed`
  `NULL`, the string `"auto"`, or an integer to be used as the seed for parallel random number generation. See the Details section for a description of how the `"auto"` string is used. 
   
   
   
- ### RNGkind
- `NULL` or a character string specifying the type of random number generator to be used. Allowable strings are the strings accepted by [rxRngNewStream](rxrng.md), `"auto"`, and, if the active compute context is local parallel, `"L'Ecuyer-CMRG"` (for compatibility with the parallel package). See the Details section for a description of how the `"auto"` string is used. 
+ ### `RNGkind`
+ `NULL` or a character string specifying the type of random number generator to be used. Allowable strings are the strings accepted by [rxRngNewStream](rxRng.md), `"auto"`, and, if the active compute context is local parallel, `"L'Ecuyer-CMRG"` (for compatibility with the parallel package). See the Details section for a description of how the `"auto"` string is used. 
   
   
   
- ### foreachOpts
+ ### `foreachOpts`
  `NULL` or a list containing options to be passed to the foreach parallel computing backend. See foreach for details. 
   
  
@@ -143,7 +136,7 @@ are performed sequentially.
 There are two primary sets of use cases:  In the first set, each computing element 
 (node or core) gets the same argument values; in this case, do not use `elemArgs` or 
 `rxElemArg`.  In the second, each element gets a different set of 
-arguments; use [rxElemArg](rxelemarg.md) for each argument that has different values, or 
+arguments; use [rxElemArg](rxElemArg.md) for each argument that has different values, or 
 an `elemArgs` whose length is equal to the number of times `FUN` will
 be executed.
 
@@ -156,7 +149,7 @@ be executed.
 
 
 **Set 2: Every computing element gets a different set of arguments.**
-If [rxElemArg](rxelemarg.md) is used, the length of the vector or list for the enclosed argument
+If [rxElemArg](rxElemArg.md) is used, the length of the vector or list for the enclosed argument
 must equal the number of compute elements. For example,
 
 `rxExec(FUN, arg1 = 1, arg2 = rxElemArg(c(1:5)))` 
@@ -175,9 +168,9 @@ the processing, so arguments intended for a particular node may not be used; the
 however.
 
 The component names must be valid R syntactic names. If you have nodes on your cluster with names that
-are not valid R syntactic names, use the function [rxMakeRNodeNames](rxmakernodenames.md) on the node name to 
+are not valid R syntactic names, use the function [rxMakeRNodeNames](rxMakeRNodeNames.md) on the node name to 
 determine the appropriate name to give the list component. When the return value is a list with elements
-named by compute node, the node names are as returned by the [rxMakeRNodeNames](rxmakernodenames.md) function.
+named by compute node, the node names are as returned by the [rxMakeRNodeNames](rxMakeRNodeNames.md) function.
 
 
 
@@ -208,29 +201,28 @@ of seeds, one for each worker. In the special case of a local parallel compute c
  
 If a waiting compute context is active, a list with an element for each job, where each element contains the value(s) 
 returned by that job's function call(s). 
-If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResults](rxgetjobresults.md).
+If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResults](rxGetJobResults.md).
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  
  ##See Also
  
-[rxElemArg](rxelemarg.md),
-[rxGetJobResults](rxgetjobresults.md),
-[rxGetJobStatus](rxgetjobresults.md),
-[RxComputeContext](rxcomputecontext.md),
-[rxSetComputeContext](rxsetcomputecontext.md),
-[RxSpark](rxspark.md),
-[RxHadoopMR](rxhadoopmr.md),
-[RxInTeradata](rxinteradata.md), 
-[RxForeachDoPar](rxforeachdopar.md),
-[RxLocalParallel](rxlocalparallel.md),
-[RxLocalSeq](rxlocalseq.md),
-[rxGetNodeInfo](rxgetnodeinfo.md),
-[rxMakeRNodeNames](rxmakernodenames.md)
-[rxRngNewStream](rxrng.md)
+[rxElemArg](rxElemArg.md),
+[rxGetJobResults](rxGetJobResults.md),
+[rxGetJobStatus](rxGetJobResults.md),
+[RxComputeContext](RxComputeContext.md),
+[rxSetComputeContext](rxSetComputeContext.md),
+[RxSpark](RxSpark.md),
+[RxHadoopMR](RxHadoopMR.md),
+[RxForeachDoPar](RxForeachDoPar.md),
+[RxLocalParallel](RxLocalParallel.md),
+[RxLocalSeq](RxLocalSeq.md),
+[rxGetNodeInfo](rxGetNodeInfo.md),
+[rxMakeRNodeNames](rxMakeRNodeNames.md)
+[rxRngNewStream](rxRng.md)
    
  ##Examples
 

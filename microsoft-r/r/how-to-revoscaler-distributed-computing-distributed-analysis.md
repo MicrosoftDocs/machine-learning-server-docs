@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Distributed analysis (RevoScaleR in Microsoft R)"
-description: "Microsoft R Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
+title: "Distributed analysis (RevoScaleR in Machine Learning Server) "
+description: "Distribute an analysis over multiple nodes using RevoScaleR functions."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "03/23/2017"
+ms.date: "10/13/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,11 +23,16 @@ ms.technology: "r-server"
 
 ---
 
-# Running Distributed Analyses
+# Running distributed analyses using RevoScaleR
 
-This article explains how to work with output in a [distributed compute context](how-to-revoscaler-distributed-computing.md) in R Server on Hadoop or Teradata.
+Many RevoScaleR functions support parallelization. On a multi-core machine, the functions are multithreaded. On a cluster platform like Hadoop, analysis runs on all data nodes having the RevoScaleR engine. 
 
-Given a registered a distributed compute context, any of the following functions can be used to perform distributed computations:
+RevoScaleR can structure an analysis for parallel execution with no additional configuration on your part, assuming you set the [compute context](how-to-revoscaler-distributed-computing-compute-context.md). Setting the compute context to RxSparkConnect or RxHadoopMR tells RevoScaleR to look for data nodes. Using the default local compute context tells the engine to look for available processors on a multi-core machine.
+
+> [!Note]
+> RevoScaleR also runs on R Client. On R Client, RevoScaleR is limited to two threads for processing and in-memory datasets. To avoid paging data to disk, R Client is engineered to ignore the `blocksPerRead` argument, which results in all data being read into memory. If your datasets exceed memory, you should push the compute context to a server instance on a supported platform (Hadoop, Linux, Windows, SQL Server).
+
+Given a registered a distributed compute context, the following functions can perform distributed computations:
 
 - `rxSummary`
 - `rxLinMod`
@@ -44,7 +49,9 @@ Given a registered a distributed compute context, any of the following functions
 
 Except for `rxExec`, we refer to these functions as the RevoScaleR *high-performance analytics*, or HPA functions. 
 
-The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. For more information, see [Parallel computing in Microsoft R](how-to-revoscaler-distributed-computing-parallel-jobs.md).
+The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. 
+
+`rxPredict` on a cluster is only possible if the data file is split.
 
 **How to obtain node-level information**
 
@@ -372,7 +379,7 @@ You may notice when running distributed computations that you get virtually no f
 > The `blocksPerRead` argument is ignored if script runs locally using R Client.
 >
 
-	myCluster <- RxHpcServer(myCluster, consoleOutput=TRUE)
+	myCluster <- RxSpark(myCluster, consoleOutput=TRUE)
 	rxOptions(computeContext=myCluster)
 
 Then, rerunning our previous example results in much more verbose output:

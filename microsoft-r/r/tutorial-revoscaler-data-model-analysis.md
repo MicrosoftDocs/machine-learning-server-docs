@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Tutorial: Visualize and analyze data (Microsoft R)"
-description: "Learn how to visualize and analyze data using the RevoScaleR functions in Microsoft R."
+title: "Tutorial: Visualize and analyze data using RevoScaleR (Machine Learning Server) "
+description: "Learn how to visualize and analyze data using the RevoScaleR functions in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,16 +23,16 @@ ms.technology: "r-server"
 
 ---
 
-# Tutorial: Visualize and analyze data (Microsoft R)
+# Tutorial: Visualize and analyze data using RevoScaleR
 
-**Applies to: Microsoft R Client, Microsoft R Server** 
+**Applies to: Microsoft R Client, Machine Learning Server** 
 
 This tutorial builds on what you learned in the previous [data import and exploration tutorial](tutorial-revoscaler-data-import-transform.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
 
 This tutorial focuses on analysis and predictions.
 
 > [!Note]
-> R Client and R Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to R Server.
+> R Client and Machine Learning Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to Machine Learning Server.
 
 ## What you will learn
 
@@ -459,17 +459,16 @@ This tutorial demonstrated how to use several important functions, but on a smal
 
 ### Try demo scripts
 
- Another way to learn about ScaleR is through demo scripts. Scripts provided in your Microsoft R installation contain code that's very similar to what you see in this tutorial. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in RTVS.
+ Another way to learn about ScaleR is through demo scripts. Scripts provided in your Machine Learning Server installation contain code that's very similar to what you see in this tutorial. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in RTVS.
 
- Demo scripts are located in the *demoScripts* subdirectory of your Microsoft R installation. On Windows, this is typically:
+ Demo scripts are located in the *demoScripts* subdirectory of your Machine Learning Server installation. On Windows, this is typically:
 
  	`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
 
 ## See Also
 
- [ScaleR Getting Started with Hadoop](how-to-revoscaler-hadoop.md)	
- [ScaleR Getting Started with Teradata](how-to-revoscaler-sql-server.md)	
- [What is RevoScaleR](concept-what-is-revoscaler.md)	
- [Introduction to Microsoft R](../microsoft-r-getting-started.md)	
- [Diving into data analysis in Microsoft R](how-to-introduction.md)	
+ [RevoScaleR Getting Started with Hadoop](how-to-revoscaler-hadoop.md)	
+ [RevoScaleR Getting Started with SQL server](how-to-revoscaler-sql-server.md)	
+ [Machine Learning Server](../what-is-machine-learning-server.md)	
+ [How-to guides in Machine Learning Server](how-to-introduction.md)	
  [RevoScaleR Functions](../r-reference/revoscaler/revoscaler.md)

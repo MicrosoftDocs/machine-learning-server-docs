@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "DeployR Server, Grid & Database High Availability | DeployR 8.x"
+title: "DeployR Server, Grid & Database High Availability - DeployR 8.x "
 description: "How to Configure High Availability HA for DeployR Server, Grid & Database"
 keywords: ""
 author: "j-martens"
@@ -31,7 +31,7 @@ ms.technology: "deployr"
 
 ## Server High Availability
 
-When discussing high-availability in the context of server systems, clustered Java Web applications are a common architectural solution. However, due to the non-serializable socket connections maintained per R session by the DeployR server, full distributed session management across servers in a cluster is not possible, as it depends on serializable session state.
+When discussing high-availability in the context of server systems, clustered Java Web applications are a common architectural solution. However, due to the non-serializable socket connections maintained per R session by the DeployR server, full distributed session management across servers in a cluster is not possible. It depends on serializable session state.
 
 There are however alternative deployment options that can be adopted to improve server availability and overall uptime. The relative merits of these deployment options are discussed in the following sections.
 
@@ -47,7 +47,7 @@ The following steps detail how to configure this type of deployment:
 1.  **DeployR Database Setup**
 
     -   Install a single, standalone instance of the DeployR database.
-    -   This single database instance will be used by the `primary` and `standby` servers, as detailed next.
+    -   This single database instance is used by the `primary` and `standby` servers, as detailed next.
 
 2.  **Primary Server Setup**
 
@@ -66,22 +66,22 @@ The following steps detail how to configure this type of deployment:
     -   Using either the `primary` or `standby` server administration console:
     -   Add details for each grid node you have provisioned for your deployment.
 
-At this point your `Primary-Standby Deployment` is fully configured. As the `primary` and `standby` servers in your deployment are sharing a single instance of the DeployR database your servers are also sharing:
+At this point, your `Primary-Standby Deployment` is fully configured. As the `primary` and `standby` servers in your deployment are sharing a single instance of the DeployR database your servers are also sharing:
 
 1.  A single DeployR repository where all R scripts, models, etc. are managed.
 2.  A single DeployR grid.
 
-While this can be an effective deployment model please take careful note of the following:
+While this can be an effective deployment model, take careful note of the following:
 
-1.  Failover is not automatic. Your application must detect when the `primary` becomes unresponsive and then actively take steps to re-route all traffic to the `standby`.
+1.  Failover is not automatic. Your application must detect when the `primary` becomes unresponsive and then actively take steps to reroute all traffic to the `standby`.
 
-2.  A single grid means zombie tasks (initiated by a `primary` that then fails) can leak grid resources (memory and/or processor cycles) that can not be reclaimed by the `standby` when it takes over active management of the grid. This type of resource impairment can lead to performance degradation over time.
+2.  A single grid means zombie tasks (initiated by a `primary` that then fails) can leak grid resources (memory and/or processor cycles) that cannot be reclaimed by the `standby` when it takes over active management of the grid. This type of resource impairment can lead to performance degradation over time.
 
-Potentially a better deployment model would isolate failures to ensure resource impairment by zombie tasks would not continue to impact on overall availability or responsiveness of the system. This forms the motivation for the next deployment model to be described, `Load Balanced Deployment`.
+A potentially better deployment model would isolate failures, in order to ensure that resource impairment by zombie tasks would not continue to impact overall availability or responsiveness of the system. This model forms the motivation for the next deployment model to be described, `Load Balanced Deployment`.
 
 ### Load Balanced Deployment
 
-While multiple DeployR servers can not participate in a classic cluster configuration with automatic failover it is possible to deploy multiple servers behind a HTTP load balancer to distribute load and even adapt to server failures at runtime.
+While multiple DeployR servers can not participate in a classic cluster configuration with automatic failover,, it is possible to deploy multiple servers behind a HTTP load balancer to distribute load and even adapt to server failures at runtime.
 
 The following steps detail how to configure this type of deployment:
 
@@ -97,7 +97,7 @@ The following steps detail how to configure this type of deployment:
     -   Configure the load balancer to enforce sticky HTTP sessions.
     -   Register the IP endpoint of each DeployR server with your load balancer.
 
-At this point your `Load Balanced Deployment` is fully configured. In the event of a server failure all other servers in the cluster will continue functioning unaffected. However, given each server in your deployment operates independently of the other servers there is one important implication:
+At this point, your `Load Balanced Deployment` is fully configured. In the event of a server failure all other servers in the cluster will continue functioning unaffected. However, given each server in your deployment operates independently of the other servers there is one important implication:
 
 Your R scripts, models, etc. must be manually replicated across the DeployR repositories associated with each of your servers.
 

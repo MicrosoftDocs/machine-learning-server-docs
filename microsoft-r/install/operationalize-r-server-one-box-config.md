@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Configure R Server to operationalize analytics (one-box) - Microsoft R Server | Microsoft Docs"
+title: "Configure R Server to operationalize analytics (one-box) - Microsoft R Server "
 description: "Configuration Operationalization for Microsoft R Server"
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "6/21/2017"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -26,7 +26,7 @@ ms.technology:
 
 # Configuring R Server to operationalize analytics with a one-box configuration
 
-**Applies to:  Microsoft R Server 9.x**
+**Applies to:  Microsoft R Server 9.x**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Looking for the Machine Learning Server article)](../operationalize/configure-machine-learning-server-one-box.md)
 
 To benefit from Microsoft R Server’s deployment and operationalization features, you can configure R Server after installation to act as a deployment server and host analytic web services.
 
@@ -35,9 +35,9 @@ To benefit from Microsoft R Server’s deployment and operationalization feature
 
 All configurations have at least a single web node, single compute node, and a database.
 
-+ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. 
++ Web nodes act as HTTP REST endpoints with which users can interact directly to make API calls. These nodes also access the data in the database and send requests to the compute node for processing. Web nodes are stateless, and therefore, session persistence ("stickiness") is not required. A single web node can route multiple requests simultaneously. However, you must have multiple web nodes to load balance your requests to multiple compute nodes. 
 
-+ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#r-shell-pool). Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
++ Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](../operationalize/configure-evaluate-capacity.md#pool) and can therefore execute multiple requests at the same time. Scaling up compute nodes enables you to have more R execution shells and benefit from load balancing across these compute nodes. 
 
 + The database. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
@@ -59,7 +59,7 @@ The web nodes and compute nodes are supported on:
 - CentOS/RHEL 7.x
 
 
-## How to upgrade a one-box configuration from 9.0 to 9.1 
+## How to upgrade from 9.0 to 9.1 
 
 To replace an older version of a one-box configuration, you can uninstall the older distribution before installing the new version (there is no in-place upgrade). **Carefully review the following steps.** 
 
@@ -95,7 +95,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
 1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
 
-1. From the menus, choose **Configure R Server for Operationalization** and then choose **Configure for one box**. The configuration script begins.
+1. From the menus, choose **Configure server** (or in previously releases, Configure R Server for Operationalization) and then choose **Configure for one box**. The configuration script begins.
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically setup using the configuration you had for R Server 9.0. Note: You can safely ignore the Python warning during upgrade.
 
@@ -114,13 +114,17 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
 ## How to perform a one-box configuration
 
+>[!Important]
+>For your convenience, [Azure Management Resource (ARM) templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Microsoft R Server for operationalization in Azure.
+>
+>Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
+
 **To configure on a single machine:**
 
 1. Install Microsoft R Server and any dependencies:
    <br>
    <br>
    **On Windows**: Follow these instructions: [R Server installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
-
    <br>
    **On Linux**:  Follow these instructions: [R Server installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
       
@@ -138,7 +142,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
     >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
 
-    1. Choose the option to **Configure R Server for Operationalization**.
+    1. Choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
     1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
 
@@ -157,7 +161,3 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 >R Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
 You are now ready to begin operationalizing your R analytics with R Server.
-
-## See also
-
-* [Blog article: Configuring R Server to Operationalize Analytics using ARM Templates](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/)

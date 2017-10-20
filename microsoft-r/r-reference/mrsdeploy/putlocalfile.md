@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Upload a file from the local machine to the remote R session." 
+title: "putLocalFile function (mrsdeploy) " 
 description: " Uploads a file from the local machine and writes it to the working directory of the remote R session. This function is often used if a 'data' file needs to be accessed by a script running on the remote R session. " 
-keywords: "mrsdeploy, putLocalFile" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(mrsdeploy), putLocalFile" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #putLocalFile: Upload a file from the local machine to the remote R session.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #putLocalFile: Upload a file from the local machine to the remote R session. 
  ##Description
  
 Uploads a file from the local machine and writes it to the working directory of
@@ -50,7 +46,7 @@ by a script running on the remote R session.
 
    
   
- ### filename
+ ### `filename`
  Name of the file to copy. 
   
  
@@ -67,11 +63,11 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
  
  ##See Also
  
-[getRemoteFile](getremotefile.md)
+[getRemoteFile](getRemoteFile.md)
 
-[deleteRemoteFile](deleteremotefile.md)
+[deleteRemoteFile](deleteRemoteFile.md)
 
-[listRemoteFiles](listremotefiles.md)
+[listRemoteFiles](listRemoteFiles.md)
    
  ##Examples
 
@@ -85,5 +81,4 @@ putLocalFile("c:/data/test.png", as="raw")
   
  
 ```
- 
  

@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Running background jobs (ScaleR in Microsoft R)"
-description: "Microsoft R Server in-database and cluster computing using the ScaleR engine and RevoScaleR package."
+title: "Running background jobs using RevoScaleR (Machine Learning Server) "
+description: "Machine Learning Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -23,9 +23,9 @@ ms.technology: "r-server"
 
 ---
 
-# Running background jobs (ScaleR in Microsoft R) 
+# Running background jobs using RevoScaleR
 
-In Microsoft R, you can run jobs interactively, waiting for results before continuing on to the next operation, or you can run them asynchronously in the background if a job is long-running.
+In Machine Learning Server, you can run jobs interactively, waiting for results before continuing on to the next operation, or you can run them asynchronously in the background if a job is long-running.
 
 <a name="non-waiting-jobs"></a>
 ## Non-Waiting jobs
@@ -46,12 +46,7 @@ For all jobs that run on the cluster, the object `rxgLastPendingJob` is automati
 
 To create non-waiting jobs, you simply set wait=FALSE in your compute context object:
 
-	myNoWaitCluster <-  RxHpcServer(
-		headNode="cluster-head2",
-		shareDir="\\AllShare\\myName",
-		revoPath="C:\\Program Files\\Microsoft\\MRO-for-RRE\\8.0\\R-3.2.2\\bin\\x64\\",
-		dataPath="C:\\data",
-		computeOnHeadNode= TRUE, wait=FALSE)
+	myNoWaitCluster <-  RxSpark(nameNode = "my-name-service-server", port = 8020), wait=FALSE)
 	rxOptions(computeContext=myNoWaitCluster)
 
 When *wait* is set to *FALSE*, a job information object rather than a job results object is returned from the submitted job. You should always *assign* this result so that you can use it to obtain job status while the job is running and obtain the job results when the job completes. For example, returning to our initial waiting job example, calling `rxExec` to get data set information, in the non-blocking case we augment our call to `rxExec` with an assignment, and then use the assigned object as input to the `rxGetJobStatus` and `rxGetJobResults` functions:
@@ -64,7 +59,7 @@ If you call `rxGetJobStatus` quickly, it may show us that the job is "running", 
 
 	rxGetJobResults(job1)
 
-As in the case of the waiting job, we obtain the following results from our five-node HPC Server cluster (note that the name of the head node is mangled here to be an R syntactic name):
+As in the case of the waiting job, we obtain the following results from our five-node cluster (note that the name of the head node is mangled here to be an R syntactic name):
 
 	$CLUSTER_HEAD2
 	File name: C:\data\AirlineData87to08.xdf
@@ -111,12 +106,6 @@ Calling rxGetJobStatus again a few seconds later shows us that the job has compl
 	rxGetJobStatus(delayArrJobInfo)
 
 	[1] "finished"
-
-If we are using our R Productivity Environment, we can view the job status by clicking on the object’s name in the Object Browser:
-
-![Object Browser](./media/how-to-revoscaler-distributed-computing-background-jobs/object_browser_1.png)
-
-> The R Productivity Environment (RPE) is available only for version 8.0.0 of Revolution R Enterprise 2016. It does not apply to Microsoft R Server 8.0.5 or Microsoft R Client.
 
 We can then call `rxGetJobResults` to obtain the actual computation results:
 

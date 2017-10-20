@@ -1,12 +1,12 @@
 ---
 
 # required metadata
-title: "How to install and deploy pretrained models with MicrosoftML"
+title: "Pre-trained machine learning models for sentiment analysis and image detection - Machine Learning Server "
 keywords: ""
 author: "bradsev"
 ms.author: "bradsev"
-manager: "jhubbard"
-ms.date: "05/05/2017"
+manager: "cgronlun"
+ms.date: "09/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -22,29 +22,56 @@ ms.technology: "r-server"
 
 ---
 
-# How to install and deploy pre-trained machine learning models with MicrosoftML
+# Pre-trained machine learning models for sentiment analysis and image detection
 
-Pre-trained deep neural network models for sentiment analysis and image featurization are available to use with MicrosoftML. These models require large databases and are time-consuming to train. Using pre-trained models allow users to efficiently extract relevant features from text and images.
+For sentiment analysis of text and image classification, Machine Learning Server offers two approaches for training the models: you can train the models yourself using your data, or install pre-trained models that come with training data obtained and developed by Microsoft. The advantage of pre-trained models is that you can score and classify new content right away. 
 
-## Installation
++ Sentiment analysis scores raw unstructured text in positive-negative terms, returning a score between 0 (negative) and 1 (positive), indicating relative sentiment.
 
-The **MicrosoftML** package is installed by default with **Microsoft R Client**, **Microsoft R Server** and with the **SQL Server Machine Learning Services** on the supported platforms. For a list of these platforms, see the [Platform availability](../r/concept-what-is-the-microsoftml-package.md#platform-availability) section in the getting started topic.
++ Image detection identifies features of the image. There are several use cases for this model: image recognition, image classification. For image recognition, the model returns n-grams that possibly describe the image. For image classification, the model evaluates images and returns a classification based on possible classes you provided (for example, is the image a fish or a dog).
 
-But the pretrained ML models are not installed by default. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page. To see this box you must click the dropdown menu for **Microsoft R Client** or **Microsoft R Server** in **The following components will be included** section. If these models are not installed, you will get an error if you use the `getSentiment()` or `featurizeImage()` functions.
+Pre-trained models are available for both R and Python development, through the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and the [microsoftml Python package](../python-reference/microsoftml/microsoftml-package.md). 
 
+## Benefits of using pre-trained models
 
-![MicrosoftML-install-pretrained-models](./media/microsoftml-install-pretrained-models/msr-config-install-ml-model.png)
+Pre-trained models have been made available to support customers who need to perform tasks such as sentiment analysis or image featurization, but do not have the resources to obtain the large datasets or train a complex model. Using pre-trained models lets you get started on text and image processing most efficiently.
 
-For quickstarts that show how to use pretrained models for sentiment analysis and image featurization, see [Quickstarts for MicrosoftML](../r/sample-microsoftml.md).
+Currently the models that are available are deep neural network (DNN) models for sentiment analysis and image classification. All four pre-trained models were trained on CNTK. The configuration of each network was based on the following reference implementations:
 
++ Resnet-18
++ Resnet-50
++ ResNet-101
++ AlexNet
 
-## Error when Ensembling with pre-trained algorithms
+For more information about deep residual networks and their implementation using CNTK, go the [Microsoft Research](https://www.microsoft.com/research/) web site and search for these articles:
 
-"Transform pipeline 0 contains transforms that do not implement IRowToRowMapper"
++ Microsoft Researchers’ Algorithm Sets ImageNet Challenge Milestone
++ Microsoft Computational Network Toolkit offers most efficient distributed deep learning computational performance
 
-*Applies to: MicrosoftML package > Ensembling*
+## How to install the models
 
-Certain machine learning transforms that don’t implement the **IRowToRowMapper** interface will fail during Ensembling. Examples include getSentiment() and featurizeImage().
+Pre-trained models are installed through setup as an optional component of Machine Learning Server or [SQL Server Machine Learning](https://docs.microsoft.com/sql/advanced-analytics/r/install-pretrained-models-sql-server). You can also get the R version of the models through [Microsoft R Client](../r-client/what-is-microsoft-r-client.md).
 
-For more information on this error and the possible workarounds and other known issues, see [Known issues in Microsoft R Server 9.1](../resources-known-issues.md#ml-ensembling).
+1. Run a Machine Learning Server setup program for your target platform: [Install Machine Learning Server](r-server-install.md).
 
+2. When specifying components to install, add at least one language (R Server or Python) and the pre-trained models. Language support is required. The models cannot be installed as a standalone component.
+
+3. After setup completes, verify the models are on your computer. Pre-trained models are local, added to the MicrosoftML and microsftml library, respectively, when you run setup. The files are \mxlibs\<modelname>_updated.model for Python and \mxlibs\x64\<modelname>_updated.model for R.
+
+For samples demonstrating use of the pre-trained models, see [R Samples for MicrosoftML](../r/sample-microsoftml.md) and [Python Samples for MicrosoftML](../python/samples-microsoftml-python.md).
+
+## Next steps
+
+Install the models by running the setup program or installation script for the target platform or product: 
+
++ [Install Machine Learning Server](r-server-install.md)
++ [Install R Client on Windows](../r-client/install-on-windows.md)
++ [Install R Client on Linux](../r-client/install-on-linux.md)
++ [Install Python client libraries](python-libraries-interpreter.md)
+
+Review the associated function reference help:
+
++ [featurize_image (microsoftml Python)](../python-reference/microsoftml/featurize-image.md)
++ [featurize_text (microsoftml Python)](../python-reference/microsoftml/featurize-text.md)
++ [featurizeImage (MicrosoftML R)](../r-reference/microsoftml/featurizeimage.md)
++ [featurizeText (MicrosoftML R)](../r-reference/microsoftml/featurizetext.md)

@@ -1,36 +1,32 @@
 --- 
  
 # required metadata 
-title: " rxSqlServerDropTable " 
+title: "rxSqlServerDropTable function (RevoScaleR) " 
 description: " Execute a SQL statement that drops a table or checks for existence. " 
-keywords: "RevoScaleR, rxSqlServerDropTable, rxSqlServerTableExists, file" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), rxSqlServerDropTable, rxSqlServerTableExists, file" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
- #rxSqlServerDropTable:  rxSqlServerDropTable 
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxSqlServerDropTable:  rxSqlServerDropTable  
  ##Description
  
 Execute a SQL statement that drops a table or checks for existence.
@@ -49,17 +45,17 @@ Execute a SQL statement that drops a table or checks for existence.
 
    
     
- ### table
-  character string specifying a table name or an [RxSqlServerData](rxsqlserverdata.md)data source that has the `table` specified.  
+ ### `table`
+  character string specifying a table name or an [RxSqlServerData](RxSqlServerData.md)data source that has the `table` specified.  
   
   
     
- ### connectionString
+ ### `connectionString`
  `NULL` or character string specifying the connection string.  If `NULL`, the connection string from the currently  active compute context will be used if available.  
   
   
     
- ###  ...
+ ### ` ...`
   Additional arguments to be passed through.  
   
   
@@ -77,9 +73,9 @@ An SQL query is passed to the ODBC driver.
 `FALSE` otherwise (for example, if the table did not exist).
  
  
- ##Author(s)
+
  
-Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
 
  
  
@@ -87,8 +83,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##See Also
  
-[RxInSqlServer](rxinsqlserver.md),
-[RxSqlServerData](rxsqlserverdata.md).
+[RxInSqlServer](RxInSqlServer.md),
+[RxSqlServerData](RxSqlServerData.md).
    
  ##Examples
 

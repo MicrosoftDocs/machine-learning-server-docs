@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Machine Learning Feature Selection Transform" 
+title: "selectFeatures function (MicrosoftML) " 
 description: " The feature selection transform selects features from the specified variables using the specified mode. " 
-keywords: "MicrosoftML, selectFeatures, feature, selection, transform" 
-author: "bradsev"
-ms.author: "bradsev" 
+keywords: "(MicrosoftML), selectFeatures, feature, selection, transform" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/13/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #selectFeatures: Machine Learning Feature Selection Transform
-
- Applies to version 1.3.0 of package MicrosoftML.
- 
+ #selectFeatures: Machine Learning Feature Selection Transform 
  ##Description
  
 The feature selection transform selects features from the specified
@@ -49,17 +45,17 @@ variables using the specified mode.
 
    
   
- ### vars
+ ### `vars`
  A formula or a vector/list of strings specifying the name of variables upon which the feature selection is performed, if the mode is  minCount(). For example, `~ var1 + var2 + var3`. If mode is mutualInformation(), a formula or a named list of strings describing the dependent variable and the independent variables. For example, `label ~ ``var1 + var2 + var3`. 
   
   
   
- ### mode
- Specifies the mode of feature selection. This can be either  [minCount](mincount.md) or [mutualInformation](mutualinformation.md). 
+ ### `mode`
+ Specifies the mode of feature selection. This can be either  [minCount](minCount.md) or [mutualInformation](mutualInformation.md). 
   
   
   
- ###  ...
+ ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
   
  
@@ -68,7 +64,7 @@ variables using the specified mode.
  
 The feature selection transform selects features from the specified
 variables using one of the two modes: count or mutual information. For more
-information, see [minCount](mincount.md) and [mutualInformation](mutualinformation.md).
+information, see [minCount](minCount.md) and [mutualInformation](mutualInformation.md).
  
  
  ##Value
@@ -77,7 +73,7 @@ A `maml` object defining the transform.
  
  ##See Also
  
-[minCount](mincount.md) [mutualInformation](mutualinformation.md)
+[minCount](minCount.md) [mutualInformation](mutualInformation.md)
    
  ##Examples
 
@@ -149,6 +145,7 @@ A `maml` object defining the transform.
   summary(outModel3)
  
 ```
+ 
  
  
  

@@ -1,35 +1,31 @@
 --- 
  
 # required metadata 
-title: "Get sparklyr connection from Spark compute context" 
-description: " Get a Spark compute context with sparklyr interop.  `rxGetSparklyrConnection` get sparklyr spark connection from created Spark compute context. " 
-keywords: "RevoScaleR, rxGetSparklyrConnection" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "rxGetSparklyrConnection function (RevoScaleR) " 
+description: " Get a Spark compute context with sparklyr interop.  rxGetSparklyrConnection get sparklyr spark connection from created Spark compute context. " 
+keywords: "(RevoScaleR), rxGetSparklyrConnection" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
- #rxGetSparklyrConnection: Get sparklyr connection from Spark compute context
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #rxGetSparklyrConnection: Get sparklyr connection from Spark compute context 
  ##Description
   Get a Spark compute context with sparklyr interop.
  `rxGetSparklyrConnection` get sparklyr spark connection from created Spark compute context.
@@ -48,7 +44,7 @@ ms.technology: "r-server"
 
    
     
- ### computeContext
+ ### `computeContext`
  Compute context get created by `rxSparkConnect`. 
   
  
@@ -59,8 +55,8 @@ ms.technology: "r-server"
 object of sparklyr spark connection
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  

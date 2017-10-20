@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Write custom chunking algorithms in ScaleR (Microsoft R)"
+title: "Write custom chunking algorithms in ScaleR (Machine Learning Server)"
 description: "Learn how to use rxDataStep to apply arbitrary R functions on chunked data."
 keywords: ""
 author: "HeidiSteen"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-# Write custom chunking algorithms in ScaleR
+# Write custom chunking algorithms in RevoScaleR
 
 Scalability in ScaleR is based on chunking or external memory algorithms that can analyze chunks of data in parallel and then combine intermediate results into a single analysis. Because of the chunking algorithms, it's possible to analyze huge datasets that vastly exceed the memory capacity of any one machine.
 
@@ -38,9 +38,11 @@ In this article, you'll step through an example that teaches a simple chunking a
 
 Sample data for this example is the *AirlineDemoSmall.xdf* file with a local compute context. For instructions on how to import this data set, see the tutorial in [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md).
 
-Chunking is supported on Microsoft R Server, but not the free R Client. Because the dataset is small enough to reside in memory on most computers, most systems succeed in running this example locally. however, if the data does not fit in memory, you will need to use R Server instead.
+Chunking is supported on Machine Learning Server, but not the free R Client. Because the dataset is small enough to reside in memory on most computers, most systems succeed in running this example locally. however, if the data does not fit in memory, you will need to use Machine Learning Server instead.
 
 ## What chunking algorithms do
+
+An updating algorithm takes a given set of values and a chunk of data, and then outputs a revised set of values cumulative for all chunks. The simplest example is an updating sum: sum is computed for the first chunk, followed by a second chunk, which each successive chunk contributing to a revised value until reaching the cumulative sum. 
 
 Updating algorithms perform four main tasks:
 
@@ -91,7 +93,7 @@ To try this out, create a new script *chunkTable.R* with the following contents:
 		return(AggregateResults())
 	}
 
-Note that the `blocksPerRead` argument is ignored if this script runs locally using R Client. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported in R Client. When run locally with R Client, all data must be read into memory. You can work around this limitation when you push the compute context to a [Microsoft R Server instance](../what-is-microsoft-r-server.md).
+Note that the `blocksPerRead` argument is ignored if this script runs locally using R Client. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported in R Client. When run locally with R Client, all data must be read into memory. You can work around this limitation when you push the compute context to a [Machine Learning Server instance](../what-is-machine-learning-server.md).
 
 To test the function, use the sample data *AirlineDemoSmall.xdf* file with a local compute context. For more information, see the tutorial in [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md).
 
@@ -131,8 +133,8 @@ And to delete the intermediate results file:
 
 ## See Also
 
-[Introduction to Microsoft R](../microsoft-r-getting-started.md)
+[Machine Learning Server](../what-is-machine-learning-server.md)	
 
-[Diving into data analysis in Microsoft R](how-to-introduction.md)
+[How-to guides in Machine Learning Server](how-to-introduction.md)
 
 [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)

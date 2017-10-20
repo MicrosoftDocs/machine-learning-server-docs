@@ -1,27 +1,26 @@
 --- 
  
 # required metadata 
-title: "Small Airline Demonstration File" 
+title: "AirlineDemoSmall function (RevoScaleR) " 
 description: " A small sample of airline on-time performance data. " 
-keywords: "RevoScaleR, AirlineDemoSmall, AirlineDemoSmall.xdf, AirlineDemoSmallUC.xdf, AirlineDemoSmall.csv, AirlineDemo1kNoMissing.csv, datasets" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+keywords: "(RevoScaleR), AirlineDemoSmall, AirlineDemoSmall.xdf, AirlineDemoSmallUC.xdf, AirlineDemoSmall.csv, AirlineDemo1kNoMissing.csv, datasets" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/18/2017" 
+ms.date: "09/07/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
@@ -31,10 +30,7 @@ ms.technology: "r-server"
  
  
  
- #AirlineDemoSmall: Small Airline Demonstration File
-
- Applies to version 9.1.0 of package RevoScaleR.
- 
+ #AirlineDemoSmall: Small Airline Demonstration File 
  ##Description
  
 A small sample of airline on-time performance data.
@@ -45,15 +41,15 @@ A small sample of airline on-time performance data.
 An .xdf file with 600000 observations on the following 3 variables.
 
 
-###ArrDelay
+###`ArrDelay`
 arrival delay, in minutes (stored as integer).
 
 
-###CRSDepTime
+###`CRSDepTime`
 schedule departure time (stored as float32).
 
 
-###DayOfWeek
+###`DayOfWeek`
 day of the week (stored as a factor).
 
 
@@ -83,8 +79,8 @@ American Statistical Association Statistical Computing Group, Data Expo '09.
 
  
  
- ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+ 
  
  
  ##References
@@ -98,7 +94,7 @@ Research and Innovative Technology Administration. Airline On-Time Statistics.
  
  ##See Also
  
-[AirOnTime87to12](airontime87to12.md)
+[AirOnTime87to12](AirOnTime87to12.md)
    
  ##Examples
 

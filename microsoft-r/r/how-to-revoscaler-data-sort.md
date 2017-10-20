@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Sort data in RevoScaleR using rxSort (Microsoft R)"
+title: "Sort data in RevoScaleR using rxSort (Machine Learning Server) "
 description: "How to sort data in a data frame or XDF file with the RevoScaleR rxSort function."
 keywords: ""
 author: "HeidiSteen"
@@ -23,18 +23,26 @@ ms.technology: "r-server"
 
 ---
 
-# How to sort data using rxSort (Microsoft R)
+# How to sort data using rxSort in RevoScaleR
 
-Many analysis and plotting algorithms require as a first step that the data be sorted. Sorting a massive data set is both memory-intensive and time-consuming, but the **rxSort** function provides an efficient solution. The **rxSort** function allows you to sort by one or many keys. A *stable* sorting routine is used, so that, in the case of ties, remaining columns are left in the same order as they were in the original data set.
+Many analysis and plotting algorithms require as a first step that the
+data be sorted. Sorting a massive data set is both memory-intensive and
+time-consuming, but the **rxSort** function provides an efficient
+solution. The **rxSort** function allows you to sort by one or many
+keys. A *stable* sorting routine is used, so that, in the case of ties,
+remaining columns are left in the same order as they were in the original
+data set.
 
-As a simple example, we can sort the census worker data by *age* and *incwage*. We will sort first by *age*, using the default increasing sort, and then by *incwage*, which we will sort in decreasing order:
+As a simple example, we can sort the census worker data by *age* and
+*incwage*. We will sort first by *age*, using the default increasing
+sort, and then by *incwage*, which we will sort in decreasing order:
 
 	#  Sorting Data
 	
 	censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
 	outXDF <- "censusWorkersSorted.xdf"
-	rxSort(inData = censusWorkers, outFile = outXDF, sortByVars=c("age",
-		"incwage"), decreasing=c(FALSE, TRUE))
+	rxSort(inData = censusWorkers, outFile = outXDF,
+		sortByVars=c("age", "incwage"), decreasing=c(FALSE, TRUE))
 
 The first few lines of the sorted file can be viewed as follows:
 
@@ -255,7 +263,7 @@ Sorting data is, in the general case, a prerequisite to finding exact quantiles,
 
 ## See Also
 
- [Introduction to R Server](../what-is-microsoft-r-server.md) 
- [Install R Server on Windows](../install/r-server-install-windows.md)  
- [Install R Server on Linux](../install/r-server-install-linux-server.md)  
- [Install R Server on Hadoop](../install/r-server-install-hadoop.md)
+ [Machine Learning Server](../what-is-machine-learning-server.md) 
+ [Install Machine Learning Server on Windows](../install/machine-learning-server-windows-install.md)  
+ [Install Machine Learning Server on Linux](../install/machine-learning-server-linux-install.md)  
+ [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md)

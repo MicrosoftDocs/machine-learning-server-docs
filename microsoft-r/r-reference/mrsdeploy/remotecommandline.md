@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Display the REMOTE command prompt." 
-description: " Displays the REMOTE command prompt and provides a remote execution context.  All R commands entered at the R console will be executed in the remote R session. " 
-keywords: "mrsdeploy, remoteCommandLine" 
-author: "HeidiSteen"
-ms.author: "heidist" 
+title: "remoteCommandLine function (mrsdeploy) " 
+description: " Displays the 'REMOTE>' command prompt and provides a remote execution context.  All R commands entered at the R console will be executed in the remote R session. " 
+keywords: "(mrsdeploy), remoteCommandLine" 
+author: "heidisteen" 
 manager: "jhubbard" 
-ms.date: "04/17/2017" 
+ms.date: "09/18/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #remoteCommandLine: Display the 'REMOTE>' command prompt.
-
- Applies to version 1.1.0 of package mrsdeploy.
- 
+ #remoteCommandLine: Display the 'REMOTE>' command prompt. 
  ##Description
  
 Displays the 'REMOTE>' command prompt and provides a remote execution context.  All R commands
@@ -50,22 +46,22 @@ entered at the R console will be executed in the remote R session.
 
    
   
- ### prompt
+ ### `prompt`
  The command prompt to be shown when in 'REMOTE' mode. 
   
   
   
- ### displayPlots
+ ### `displayPlots`
  If `TRUE`, plots generated during execution are displayed in the local plot window. **NOTE** This capability requires that the '`png`' package is installed on the local machine. 
   
   
   
- ### writePlots
+ ### `writePlots`
  If `TRUE`, plots generated during execution are copied to the working directory of the local session. 
   
   
   
- ### recPlots
+ ### `recPlots`
  If `TRUE`, plots will be created using the '`recordPlot`' function in R. 
   
  
@@ -104,5 +100,4 @@ REMOTE>exit
   
  
 ```
- 
  
