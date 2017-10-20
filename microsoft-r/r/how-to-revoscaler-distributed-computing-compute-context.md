@@ -41,8 +41,8 @@ The following table is a recap of platform and data source requirements for each
 
 | Library | Platforms & Data Sources |
 |---------|-------------------------|
-| RevoScaleR | Spark 2-2.4 over HDFS, Hadoop MapReduce: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
-| revoscalepy | Spark 2-2.4 over HDFS: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server 2017 Machine Learning with Python: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
+| RevoScaleR | Spark 2.0-2.1 over HDFS, Hadoop MapReduce: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
+| revoscalepy | Spark 2.0-2.1 over HDFS: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server 2017 Machine Learning with Python: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
 
 <sup>(1)</sup> You can load text or .xdf files locally, but be aware that code and data is run through SQL Server, which results in [implicit data type conversions](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#r-and-sql-data-types).
 
@@ -71,7 +71,7 @@ This section uses examples to illustrate the syntax for setting compute context.
 
 ### For Spark
 
-The compute context used to distribute computations on a Hadoop Spark 2-2.4 cluster. For more information, see the [How to use RevoScaleR with Spark](how-to-revoscaler-spark.md).
+The compute context used to distribute computations on a Hadoop Spark 2.0-2.1 cluster. For more information, see the [How to use RevoScaleR with Spark](how-to-revoscaler-spark.md).
 
 ```R
     myHadoopCluster <- RxSpark(myHadoopCluster)
@@ -106,7 +106,7 @@ rxSetComputeContext(computeContext = myServer)
 
 ## Limitations of remote compute context
 
-A primary benefit of remote computing is to perform distributed analysis using the inherent capabilities of the host platform. For a list of analytical functions that are multithreaded and cluster aware, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md). As a counter point, the concept of "remote compute context" is not optimized for data manipulation and transformaton workloads. As such, many data-related functions come with local compute requirements. The following table describes the exceptions to remote computing.
+A primary benefit of remote computing is to perform distributed analysis using the inherent capabilities of the host platform. For a list of analytical functions that are multithreaded and cluster aware, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md). As a counter point, the concept of "remote compute context" is not optimized for data manipulation and transformation workloads. As such, many data-related functions come with local compute requirements. The following table describes the exceptions to remote computing.
 
 | Limit | Details |
 |-------|---------|

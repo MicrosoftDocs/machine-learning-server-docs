@@ -29,7 +29,7 @@ This article introduces Python functions in a [revoscalepy](../python-reference/
 
 + Hadoop distributed file system for finding and accessing data.
 + Yarn for job scheduling and management.
-+ Spark as the processing framework (versions 2.0-2.4).
++ Spark as the processing framework (versions 2.0-2.1).
 
 The revoscalepy library provides cluster-aware Python functions for data management, predictive analytics, and visualization. When you set the [compute context](../r/concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy f automatically distributes the workload across all the data nodes. There is no overhead in managing jobs or the queue, or tracking the physical location of data in HDFS; Spark does both for you.
 
@@ -48,7 +48,7 @@ By default, the local compute context is the implicit computing environment. All
 
 From the edge node, you can push computations to the data layer by creating a remote Spark compute context. In this context, execution is on all data nodes. 
 
-The following example shows how to set a remote compute context to clustered data nodes, execute functions in the Spark comute context, switch back to a local compute context, and disconnect from the server.
+The following example shows how to set a remote compute context to clustered data nodes, execute functions in the Spark compute context, switch back to a local compute context, and disconnect from the server.
 
 ```Python
 # Load the functions
@@ -93,7 +93,7 @@ d_s = revoscalepy.RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf
 
 ### Import data into a data frame
 
-Data is automatically loaded into a data frame even without rx_import, but you can load it explicitly using the rx_import , which is useful if you want to include parameters. 
+Data is automatically loaded into a data frame even without rx_import, but you can load it explicitly using the rx_import, which is useful if you want to include parameters. 
 
 In mlserver-python, you can use head and tail functions, similar to R, to return the first or last part of the data set.
 
