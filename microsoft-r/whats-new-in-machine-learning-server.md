@@ -42,7 +42,7 @@ Together, the libraries provide full-spectrum data mining: data transformation a
 
 + [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) is a library provided by Microsoft to support distributed computing, local compute context, remote compute context for SQL Server and Spark, and high-performance algorithms for Python, similar to RevoScaleR. 
 
- Originally introduced in SQL Server 2017, this library is extended in Machine Learning Server to support a remote compute context for Spark 2.0-2.4 over the Hadoop Distributed File System (HDFS), with Python functions that run jobs in parallel across multiple nodes. This [tutorial](python/quickstart-revoscalepy-linear-regression-model.md) gets you started.
+ Originally introduced in SQL Server 2017, this library is extended in Machine Learning Server to support a remote compute context for Spark 2.0-2.1 over the Hadoop Distributed File System (HDFS), with Python functions that run jobs in parallel across multiple nodes. This [tutorial](python/quickstart-revoscalepy-linear-regression-model.md) gets you started.
 
 + [revoscalepy and pyspark interoperability](python/tutorial-revoscalepy-pyspark.md) in a [Spark compute context](python-reference/revoscalepy/rxSpark.md).
 

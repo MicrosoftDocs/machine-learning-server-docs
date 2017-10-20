@@ -32,7 +32,7 @@ To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler
 
 ## Version Requirements
 
-Privacy controls are in newer versions of the server. To verify server version is 9.x or later (or 3.3.x for R Client), open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
+Privacy controls are in newer versions of the server. To verify server version is 9.x or later (or 3.4.1 for R Client), open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
 
     > print(Revo.version)
 

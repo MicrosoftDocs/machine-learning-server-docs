@@ -112,7 +112,7 @@ This section lists the functions by category to give you an idea of how each one
 
 <a name="import-export-functions"></a>
 
-## 2-Import and export
+## 2-Import and save-as
 
 | Function name | Description |
 |---------------|-------------|

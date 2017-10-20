@@ -30,7 +30,7 @@ Machine Learning Server is engineered for the following architecture:
 
 + Hadoop Distributed File System (HDFS)
 + Apache YARN
-+ MapReduce or Spark 2.0-2.4
++ MapReduce or Spark 2.0-2.1
 
 ## System and setup requirements
 
