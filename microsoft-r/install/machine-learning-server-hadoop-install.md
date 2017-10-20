@@ -91,7 +91,7 @@ As before, follow the installation steps for the Linux operating system used by 
 
 **Approach 2: Manual steps for partial installation**
 
-Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes,or if you want to exclude a specific language. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Hence, unexpected problems are more likely if you leave some packages out. 
+Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes, or if you want to exclude a specific language. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Hence, unexpected problems are more likely if you leave some packages out. 
 
 1. Install as root: `sudo su`
 

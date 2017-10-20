@@ -56,12 +56,12 @@ The revoscalepy package providing `rx-privacy-control` is installed when you add
 
 ## How to opt out (R)
 
-The RevoScaleR package provides`rxPrivacyControl` is installed and loaded in both R Client and R Server. To turn off telemetry data collection, you can use the builtin R console application, which loads RevoScaleR automatically.
+The RevoScaleR package provides`rxPrivacyControl` is installed and loaded in both R Client and R Server. To turn off telemetry data collection, you can use the built-in R console application, which loads RevoScaleR automatically.
 
 **On Linux**
 
 1. Log on as root: `sudo su`
-2. Start an session: `Revo64`
+2. Start an R session: `Revo64`
 3. Return the current value: `rxPrivacyControl` 
 4. Change the current value:`rxPrivacyControl(TRUE)` to turn on telemetry data collection. Otherwise, set it to FALSE.
 

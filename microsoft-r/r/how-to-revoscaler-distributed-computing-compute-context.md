@@ -106,7 +106,7 @@ rxSetComputeContext(computeContext = myServer)
 
 ## Limitations of remote compute context
 
-A primary benefit of remote computing is to perform distributed analysis using the inherent capabilities of the host platform. For a list of analytical functions that are multithreaded and cluster aware, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md). As a counter point, the concept of "remote compute context" is not optimized for data manipulation and transformaton workloads. As such, many data-related functions come with local compute requirements. The following table describes the exceptions to remote computing.
+A primary benefit of remote computing is to perform distributed analysis using the inherent capabilities of the host platform. For a list of analytical functions that are multithreaded and cluster aware, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md). As a counter point, the concept of "remote compute context" is not optimized for data manipulation and transformation workloads. As such, many data-related functions come with local compute requirements. The following table describes the exceptions to remote computing.
 
 | Limit | Details |
 |-------|---------|

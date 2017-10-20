@@ -140,10 +140,10 @@ The following functions are used to bundle R code or script as a web service. Th
 |Function | Description |
 |---------|-------------|
 |[publishService](publishService.md) | Publishes an R code block as a new web service running on Machine Learning Server. |
-|[updateService](updateService.md) | Updates an existing web service on an Machine Learning Server instance. |
+|[updateService](updateService.md) | Updates an existing web service on a Machine Learning Server instance. |
 |[listServices](listServices.md) | Lists the different published web services on the Machine Learning Server instance. |
 |[getService](getService.md) | Gets a web service for consumption. |
-|[deleteService](deleteService.md) |Deletes a web service on an Machine Learning Server instance. |
+|[deleteService](deleteService.md) |Deletes a web service on a Machine Learning Server instance. |
 
 ## Next steps
 

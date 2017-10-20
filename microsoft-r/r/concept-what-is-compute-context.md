@@ -42,7 +42,7 @@ Although similarly named, [remote execution](how-to-execute-code-remotely.md) is
 
 Remote execution is for using two or more Machine Learning Server instances interchangeably, or shifting execution from R Client to a more powerful Machine Learning Server on Windows or Linux. Remote execution is data platform and library agnostic: you can call functions from any library, including base R and third-party vendors. Remote execution is an operationalization feature, which you can enable as a post-installation task.
 
-Remote compute context is used for data-centric operations. Script or code that runs in a remote compute context can include functions from these R and Python libraries only: **RevoScaleR (R)**, **MicrosoftML (R)**, **revoscalepy (Python)**, and **microsoftml (Python)**. No additional configuration is required. If you have server or client instals at the same functional level, you can write script that shifts the compute context.
+Remote compute context is used for data-centric operations. Script or code that runs in a remote compute context can include functions from these R and Python libraries only: **RevoScaleR (R)**, **MicrosoftML (R)**, **revoscalepy (Python)**, and **microsoftml (Python)**. No additional configuration is required. If you have server or client installs at the same functional level, you can write script that shifts the compute context.
 
 ## revoscalepy compute context and data sources
 
