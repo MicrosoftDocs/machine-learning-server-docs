@@ -54,14 +54,14 @@ Context name | Alternative name | Usage |
 -----------|--------------------|-----------------------|
 | [RxLocalSeq](../python-reference/revoscalepy/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. |
 | [RxInSqlServer](../python-reference/revoscalepy/rxinsqlserver.md)   | sqlserver | Use for a remote compute context where the target server is a single database node (SQL Server 2017 Machine Learning with Python support). Computation is parallel, but not distributed.|
-| [rx-get-spark-connect](../python-reference/revoscalepy/rx-get-spark-connect.md)         | spark     | Use for a remote compute context where the target is a Spark 2.0-2.1 cluster over Hadoop Distributed File System (HDFS). |
+| [rx-spark-connect](../python-reference/revoscalepy/rx-spark-connect.md)         | spark     | Use for a remote compute context where the target is a Spark 2.0-2.1 cluster over Hadoop Distributed File System (HDFS). |
 
 
 ### Data sources per compute context
 
 Given a compute context, the following table shows which data sources are available (x indicates available):
 
-| Data Source | [`RxLocalSeq`](../python-reference/revoscalepy/rxlocalseq.md) | [rx-get-spark-connect](../python-reference/revoscalepy/rx-get-spark-connect.md) | [`RxInSqlServer`](../python-reference/revoscalepy/rxinsqlserver.md) |
+| Data Source | [`RxLocalSeq`](../python-reference/revoscalepy/rxlocalseq.md) | [rx-get-spark-connect](../python-reference/revoscalepy/rx-spark-connect.md) | [`RxInSqlServer`](../python-reference/revoscalepy/rxinsqlserver.md) |
 |-------------|------------|------------|--------------|
 | [`RxTextData`](../python-reference/revoscalepy/rxtextdata.md) | X |  X |   | 
 | [`RxXdfData`](../python-reference/revoscalepy/rxxdfdata.md) | X | X |  | 
