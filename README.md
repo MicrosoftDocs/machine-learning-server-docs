@@ -10,4 +10,4 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 Thank you for your interest in [Docs.microsoft.com](https://docs.microsoft.com/), home of technical content for Microsoft products and services.
 
-If you are interested in making contributions to content in this repository, please visit our [Docs contributor guide](https://docs.microsoft.com/contribute)first for assistance. If you are a Microsoft employee, please visit the [internal version](https://aka.ms/docsguidescontribute) of the guide.
+If you are interested in making contributions to content in this repository, please visit our [Docs contributor guide](https://docs.microsoft.com/contribute) first for assistance. If you are a Microsoft employee, please visit the [internal version](https://aka.ms/docsguidescontribute) of the guide.
