@@ -6,7 +6,7 @@ description: "Reports per-instance scoring results in a data frame or revoscalep
 keywords: "models, prediction" 
 author: "bradsev" 
 manager: "jhubbard" 
-ms.date: "09/05/2017" 
+ms.date: "10/23/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -79,7 +79,7 @@ For example, an object returned from `rx_fast_trees` or `rx_logistic_regression`
 
 ### data
 
-A [revoscalepy](/python-reference/revoscale.py/index.md) data source object, a data frame, or the path
+A [revoscalepy](../revoscale/index.md) data source object, a data frame, or the path
 to a `.xdf` file.
 
 
