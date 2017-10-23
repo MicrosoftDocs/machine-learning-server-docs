@@ -87,7 +87,7 @@ In **RevoMods** functions are discontinued (all were intended for use solely by 
 
 ###Known Issues
 
-See here: https://msdn.microsoft.com/microsoft-r/rserver-known-issues
+See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-known-issues
 
 ## Microsoft R Server 8.0.5
 
@@ -165,7 +165,7 @@ prediction data set.
 
 **Known Issues**
 
-See here: https://msdn.microsoft.com/en-us/microsoft-r/rserver-known-issues
+See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-known-issues
 
 ## Microsoft R Server 8.0.0
 
