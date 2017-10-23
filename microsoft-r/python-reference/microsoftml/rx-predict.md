@@ -79,7 +79,7 @@ For example, an object returned from `rx_fast_trees` or `rx_logistic_regression`
 
 ### data
 
-A [revoscalepy](../revoscale/index.md) data source object, a data frame, or the path
+A [revoscalepy](../revoscalepy/index.md) data source object, a data frame, or the path
 to a `.xdf` file.
 
 
