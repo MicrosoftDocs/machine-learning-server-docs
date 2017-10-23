@@ -31,11 +31,11 @@ sections:
       - image:
           src: https://docs.microsoft.com/media/logos/logo_python.svg
     rows:
-      - title: Run&nbsp;code&nbsp;using&nbsp;functions&nbsp;from&nbsp;custom&nbsp;packages&nbsp;like&nbsp;RevoScaleR
+      - title: Run&nbsp;R&nbsp;code&nbsp;in&nbsp;R&nbsp;Client&nbsp;and&nbsp;Machine&nbsp;Learning&nbsp;Server
         values:
         - href: r/quickstart-run-r-code
         - href: 
-      - title: Create a model with revoscalepy
+      - title: Create a Python model with revoscalepy
         values:
         - href: python/quickstart-revoscalepy-linear-regression-model
         - href: 
