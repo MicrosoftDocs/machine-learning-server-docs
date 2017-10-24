@@ -4,14 +4,12 @@ title: Microsoft Machine Learning Server Documentation
 metadata:
   title: Machine Learning Server Documentation
   description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.  
-  services: sql-database
   author: "j-martens"
   ms.author: "jmartens"
   manager: "jhubbard"
-  ms.date: "09/25/2017"
+  ms.date: "10/23/2017"
   ms.topic: "get-started-article"
   ms.prod: "microsoft-r"
-  ms.service: sql-database
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
@@ -19,7 +17,7 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: <a href="what-is-microsoft-r-server"><strong>Microsoft Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Microsoft Machine Learning Server. <a href="rebranding-microsoft-r-server">Learn more...</a></div>
+  description: <a href="what-is-machine-learning-server">Microsoft Machine Learning Server</a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Microsoft Machine Learning Server. <a href="rebranding-microsoft-r-server">Learn more...</a></div>
 sections:
 - title: 5-Minute Quickstarts
   items:
@@ -31,11 +29,11 @@ sections:
       - image:
           src: https://docs.microsoft.com/media/logos/logo_python.svg
     rows:
-      - title: Run&nbsp;code&nbsp;using&nbsp;functions&nbsp;from&nbsp;custom&nbsp;packages&nbsp;like&nbsp;RevoScaleR
+      - title: Run&nbsp;R&nbsp;code&nbsp;in&nbsp;R&nbsp;Client&nbsp;and&nbsp;Machine&nbsp;Learning&nbsp;Server
         values:
         - href: r/quickstart-run-r-code
         - href: 
-      - title: Create a model with revoscalepy
+      - title: Create a Python model with revoscalepy
         values:
         - href: python/quickstart-revoscalepy-linear-regression-model
         - href: 

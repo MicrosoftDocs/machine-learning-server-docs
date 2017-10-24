@@ -52,7 +52,7 @@ from azureml.deploy.server import MLServer
 
 host = 'http://localhost:12800'
 ctx = ('username', 'password')
-mls_client = DeployClient(host, use='MLServer, auth=ctx)
+mls_client = DeployClient(host, use=MLServer, auth=ctx)
 ```
 
 
@@ -64,7 +64,7 @@ Find and Load *module* as defined by *use* from namespace str:
 host = 'http://localhost:12800'
 ctx = ('username', 'password')
 
-mls_client = DeployClient(host, use='MLServer', auth=ctx)
+mls_client = DeployClient(host, use=MLServer, auth=ctx)
 mls_client = DeployClient(host, use='azureml.deploy.server.MLServer',
 auth=ctx)
 ```
