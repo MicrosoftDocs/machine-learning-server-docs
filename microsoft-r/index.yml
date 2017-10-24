@@ -4,14 +4,12 @@ title: Microsoft Machine Learning Server Documentation
 metadata:
   title: Machine Learning Server Documentation
   description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.  
-  services: sql-database
   author: "j-martens"
   ms.author: "jmartens"
   manager: "jhubbard"
-  ms.date: "09/25/2017"
+  ms.date: "10/23/2017"
   ms.topic: "get-started-article"
   ms.prod: "microsoft-r"
-  ms.service: sql-database
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
