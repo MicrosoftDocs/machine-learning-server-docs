@@ -50,7 +50,7 @@ sections:
   - type: paragraph
     text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
   - type: paragraph
-    text: '<big>&nbsp;&nbsp;R Tutorials</big>'
+    text: '&nbsp;<big>&nbsp;&nbsp;R Tutorials</big>'
   - type: list
     style: unordered
     items:
@@ -58,7 +58,7 @@ sections:
     - html: <a href="r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
     - html: <a href="r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a><br/>&nbsp;
   - type: paragraph
-    text: '<big>&nbsp;Python Tutorials</big>'
+    text: '&nbsp;<big>&nbsp;&nbsp;Python Tutorials</big>'
   - type: list
     style: unordered
     items:
@@ -72,7 +72,7 @@ sections:
     items:
     - html: <a href="r/r-samples.md">R samples</a>
     - html: <a href="python/python-samples.md">Python samples </a>
-    - html: <a href="r/sample-solutions">Solution templates</a><br/>&nbsp;
+    - html: <a href="r/sample-solutions">Solution templates</a>
 - title: Tools
   items:
   - type: paragraph
@@ -81,7 +81,7 @@ sections:
     style: unordered
     items:
     - html: <a href="r-client/what-is-microsoft-r-client">Microsoft R Client</a>
-    - html: <a href="install/python-libraries-interpreter">Python interpreter and library setup </a><br/>&nbsp;
+    - html: <a href="install/python-libraries-interpreter">Python interpreter and library setup </a>
 - title: Reference
   items:
   - type: list
