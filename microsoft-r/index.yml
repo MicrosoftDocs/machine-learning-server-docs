@@ -88,7 +88,7 @@ sections:
     style: cards
     className: cardsD
     items:
-    - title: &nbsp;&nbsp;R Packages
+    - title: .&nbsp;&nbsp;R Packages
       html: <p>&nbsp;&nbsp;<a href="r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p>&nbsp;&nbsp;<a href="r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p>&nbsp;&nbsp;<a href="r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p>&nbsp;&nbsp;<a href="r-reference/introducing-r-server-r-package-reference">more...</a></p>
     - title: Python Packages
       html: <p><a href="python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="python-reference/introducing-python-package-reference">more...</a></p>
