@@ -21,6 +21,8 @@ abstract:
 sections:
 - title: 5-Minute Quickstarts
   items:
+  - type: paragraph
+    text: 'Get started with Machine Learning Server using R or Python:'  
   - type: table
     style: dataMatrix
     columns:
