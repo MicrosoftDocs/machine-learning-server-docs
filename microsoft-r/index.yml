@@ -1,6 +1,6 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Microsoft Machine Learning Server Documentation
+title: Machine Learning Server Documentation
 metadata:
   title: Machine Learning Server Documentation
   description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.  
@@ -17,7 +17,7 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: <a href="what-is-machine-learning-server">Microsoft Machine Learning Server</a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of <a href="r-reference/introducing-r-server-r-package-reference">R packages</a>, <a href="python-reference/introducing-python-package-reference">Python packages</a>, interpreters, and infrastructure for developing and deploying distributed R and Python-based machine learning and data science solutions on a <a href="install/r-server-install-supported-platforms">range of platforms</a>. <br/><br/>Today, Machine Learning Server is available on-premises on Windows, Linux, Hadoop Spark, and SQL Server. The server is also available in the cloud on Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. Machine Learning Server is also available for Public Preview on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics  <br/><br/><div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Microsoft Machine Learning Server. <a href="rebranding-microsoft-r-server">Learn more...</a></div>
+  description: <a href="what-is-machine-learning-server">Microsoft Machine Learning Server</a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of <a href="r-reference/introducing-r-server-r-package-reference">R packages</a>, <a href="python-reference/introducing-python-package-reference">Python packages</a>, interpreters, and infrastructure for developing and deploying distributed R and Python-based machine learning and data science solutions on a <a href="install/r-server-install-supported-platforms">range of platforms</a>. <br/><br/>Today, Machine Learning Server is available on-premises on Windows, Linux, Hadoop Spark, and SQL Server. The server is also available in the cloud on Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. Machine Learning Server is also available for Public Preview on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics  <br/><br/><div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Microsoft Machine Learning Server. <a href="rebranding-microsoft-r-server">(more)</a></div>
 sections:
 - title: 5-Minute Quickstarts
   items:
@@ -31,7 +31,7 @@ sections:
       - image:
           src: https://docs.microsoft.com/media/logos/logo_python.svg
     rows:
-      - title: Run&nbsp;R&nbsp;code&nbsp;in&nbsp;R&nbsp;Client&nbsp;and&nbsp;Machine&nbsp;Learning&nbsp;Server
+      - title: Run&nbsp;R&nbsp;code&nbsp;in&nbsp;Machine&nbsp;Learning&nbsp;Server&nbsp;&&nbsp;R&nbsp;Client
         values:
         - href: r/quickstart-run-r-code
         - href: 
@@ -39,14 +39,14 @@ sections:
         values:
         - href: python/quickstart-revoscalepy-linear-regression-model
         - href: 
-      - title: Deploy a model as a web service in Machine Learning Server
-        values:
-          - href: operationalize/quickstart-publish-r-web-service
-          - href: operationalize/python/quickstart-deploy-python-web-service
-      - title: Run a binary classification using microsoftml package 
+      - title: Run a binary classification using microsoftml 
         values:
           - href: 
           - href: python/quickstart-binary-classification-with-microsoftml
+      - title: Deploy a model as a web service
+        values:
+          - href: operationalize/quickstart-publish-r-web-service
+          - href: operationalize/python/quickstart-deploy-python-web-service
 - title: Step-by-Step Tutorials
   items:
   - type: paragraph
