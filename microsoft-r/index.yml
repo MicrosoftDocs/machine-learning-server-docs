@@ -50,7 +50,7 @@ sections:
   - type: paragraph
     text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
   - type: paragraph
-    text: '<big>R Tutorials</big>'
+    text: '<big>&nbsp;&nbsp;R Tutorials</big>'
   - type: list
     style: unordered
     items:
@@ -58,11 +58,11 @@ sections:
     - html: <a href="r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
     - html: <a href="r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a><br/>&nbsp;
   - type: paragraph
-    text: '<big>Python Tutorials</big>'
+    text: '<big>&nbsp;Python Tutorials</big>'
   - type: list
     style: unordered
     items:
-    - html: <a href="python/tutorial-revoscalepy-pyspark">Use PySpark and revoscalepy together</a><br/>&nbsp;
+    - html: <a href="python/tutorial-revoscalepy-pyspark">Use PySpark and revoscalepy together</a>
 - title: Samples
   items:
   - type: paragraph
