@@ -25,9 +25,11 @@ ms.technology: "r-server"
 
 # Compute context for script execution
 
-*Compute context* refers to the location of the computational engine that is handling a specific workload. The default is local. You can switch from local to remote compute context, pushing execution of data-centric **RevoScaleR**, **revoscalepy**, and **MicrosoftML**  functions to an interpreter on another machine. For example, script running locally in R Client can shift execution to a remote Machine Learning Server in a Spark cluster to process data there. 
+*Compute context* refers to the location of the computational engine handling a given workload. The default is local. You can switch from local to remote, pushing execution of data-centric **RevoScaleR**, **revoscalepy**, and **MicrosoftML**  functions to an interpreter on another machine. For example, script running locally in R Client can shift execution to a remote Machine Learning Server in a Spark cluster to process data there. 
 
 The primary reason for shifting compute context is to eliminate data transfer over your network, bringing computations to where the data resides. This is particularly relevant for big data platforms like Hadoop, where data is distributed over multiple nodes, or for data sets that are simply too large for a client workstation.
+
+## Compare local and remote
 
 | Context | How used |
 |---------|----------|
@@ -40,22 +42,19 @@ Many analytical functions in **RevoScaleR**, **revoscalepy**, and **MicrosoftML*
 
 Although similarly named, [remote execution](how-to-execute-code-remotely.md) is distinct from a remote compute context. 
 
-Remote execution is for using two or more Machine Learning Server instances interchangeably, or shifting execution from R Client to a more powerful Machine Learning Server on Windows or Linux. Remote execution is data platform and library agnostic: you can call functions from any library, including base R and third-party vendors. Remote execution is an operationalization feature, which you can enable as a post-installation task.
+Remote execution is about using two or more Machine Learning Server instances interchangeably, or shifting execution from R Client to a more powerful Machine Learning Server on Windows or Linux. Remote execution is data platform and library agnostic: you can call functions from any library, including base R and third-party vendors. Remote execution is an operationalization feature, which you can enable as a post-installation task.
 
 Remote compute context is used for data-centric operations. Script or code that runs in a remote compute context can include functions from these R and Python libraries only: **RevoScaleR (R)**, **MicrosoftML (R)**, **revoscalepy (Python)**, and **microsoftml (Python)**. No additional configuration is required. If you have server or client installs at the same functional level, you can write script that shifts the compute context.
 
-## revoscalepy compute context and data sources
+## revoscalepy compute contexts
 
 Remote computing is available for specific data sources on selected platforms. The following tables document the supported combinations.
-
-### Compute contexts
 
 Context name | Alternative name | Usage |
 -----------|--------------------|-----------------------|
 | [RxLocalSeq](../python-reference/revoscalepy/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. |
 | [RxInSqlServer](../python-reference/revoscalepy/rxinsqlserver.md)   | sqlserver | Use for a remote compute context where the target server is a single database node (SQL Server 2017 Machine Learning with Python support). Computation is parallel, but not distributed.|
 | [rx-spark-connect](../python-reference/revoscalepy/rx-spark-connect.md)         | spark     | Use for a remote compute context where the target is a Spark 2.0-2.1 cluster over Hadoop Distributed File System (HDFS). |
-
 
 ### Data sources per compute context
 
@@ -72,11 +71,9 @@ Given a compute context, the following table shows which data sources are availa
 | [`RxOdbcData`](../python-reference/revoscalepy/rxodbcdata.md) | X |  X | X  |
 | [`RxSqlServerData`](../python-reference/revoscalepy/rxsqlserverdata.md) | X |   |  X |
 
-## RevoScaleR compute contexts and data sources
+## RevoScaleR compute contexts
 
 Remote computing is available for specific data sources on selected platforms. The following tables document the supported combinations.
-
-### Compute contexts
 
 Context name | Alternative name | Usage |
 -----------|--------------------|-----------------------|
