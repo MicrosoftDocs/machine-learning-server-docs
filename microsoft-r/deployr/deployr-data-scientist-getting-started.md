@@ -7,7 +7,7 @@ keywords: "Data Scientists, r programmer, DeployR"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "03/17/2016"
+ms.date: "11/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
