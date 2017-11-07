@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: ""RevoScaleR-deprecated" function (RevoScaleR) " 
+title: "RevoScaleR-deprecated function (RevoScaleR) " 
 description: " These functions are provided for compatibility with  older versions of RevoScaleR only, and may be defunct as soon as the next release.  " 
-keywords: "(RevoScaleR), "RevoScaleR-deprecated", rxGetNodes, RxHpcServer, rxImportToXdf, rxDataStepXdf, rxDataFrameToXdf, rxXdfToDataFrame, rxSortXdf" 
+keywords: "(RevoScaleR), RevoScaleR-deprecated, rxGetNodes, RxHpcServer, rxImportToXdf, rxDataStepXdf, rxDataFrameToXdf, rxXdfToDataFrame, rxSortXdf" 
 author: "heidisteen" 
 manager: "jhubbard" 
 ms.date: "09/07/2017" 
@@ -32,7 +32,7 @@ ms.custom: ""
  
  
  
- #"RevoScaleR-deprecated": Deprecated functions in RevoScaleR 
+ #RevoScaleR-deprecated: Deprecated functions in RevoScaleR 
  ##Description
  
 These functions are provided for compatibility with 
@@ -482,7 +482,7 @@ is returned; otherwise `FALSE`is returned.
  
 [rxImport](rxImport.md),
 [rxDataStep](rxDataStep.md),
-["RevoScaleR-defunct"](RevoScaleR-defunct.md).
+[RevoScaleR-defunct](RevoScaleR-defunct.md).
    
  
  
