@@ -1,17 +1,15 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Microsoft Machine Learning Server Documentation
+title: Machine Learning Server Documentation
 metadata:
   title: Machine Learning Server Documentation
   description: Machine Learning Server is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.  
-  services: sql-database
   author: "j-martens"
   ms.author: "jmartens"
   manager: "jhubbard"
-  ms.date: "09/25/2017"
+  ms.date: "10/23/2017"
   ms.topic: "get-started-article"
   ms.prod: "microsoft-r"
-  ms.service: sql-database
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
@@ -19,10 +17,12 @@ metadata:
   - r-client
   - r-server
 abstract:
-  description: <a href="what-is-microsoft-r-server"><strong>Microsoft Machine Learning Server</strong></a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of packages, interpreters, and infrastructure for developing and deploying R and Python-based machine learning and data science solutions on a range of platforms. <br/><br/> <div style="text-align:center;"><strong>Announcement:</strong> Microsoft R Server is now Microsoft Machine Learning Server. <a href="rebranding-microsoft-r-server">Learn more...</a></div>
+  description: <div style="text-align:right;"><strong>Announcement:</strong> Microsoft R Server is now Microsoft Machine Learning Server. <a href="rebranding-microsoft-r-server">(more)</a></div><br><a href="what-is-machine-learning-server">Microsoft Machine Learning Server</a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of <a href="r-reference/introducing-r-server-r-package-reference">R packages</a>, <a href="python-reference/introducing-python-package-reference">Python packages</a>, interpreters, and infrastructure for developing and  <a href="what-is-operationalization">deploying</a> distributed R and Python-based machine learning and data science solutions on a <a href="install/r-server-install-supported-platforms">range of platforms</a>  across on-premises and cloud configurations.
 sections:
 - title: 5-Minute Quickstarts
   items:
+  - type: paragraph
+    text: 'Get started with Machine Learning Server using R or Python:'  
   - type: table
     style: dataMatrix
     columns:
@@ -31,40 +31,40 @@ sections:
       - image:
           src: https://docs.microsoft.com/media/logos/logo_python.svg
     rows:
-      - title: Run&nbsp;code&nbsp;using&nbsp;functions&nbsp;from&nbsp;custom&nbsp;packages&nbsp;like&nbsp;RevoScaleR
+      - title: Run&nbsp;R&nbsp;code&nbsp;in&nbsp;Machine&nbsp;Learning&nbsp;Server&nbsp;/&nbsp;R&nbsp;Client
         values:
         - href: r/quickstart-run-r-code
         - href: 
-      - title: Create a model with revoscalepy
+      - title: Create a Python model with revoscalepy
         values:
         - href: python/quickstart-revoscalepy-linear-regression-model
         - href: 
-      - title: Deploy a model as a web service in Machine Learning Server
-        values:
-          - href: operationalize/quickstart-publish-r-web-service
-          - href: operationalize/python/quickstart-deploy-python-web-service
-      - title: Run a binary classification using microsoftml package 
+      - title: Run a binary classification using microsoftml 
         values:
           - href: 
           - href: python/quickstart-binary-classification-with-microsoftml
+      - title: Deploy a model as a web service
+        values:
+          - href: operationalize/quickstart-publish-r-web-service
+          - href: operationalize/python/quickstart-deploy-python-web-service
 - title: Step-by-Step Tutorials
   items:
   - type: paragraph
     text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
   - type: paragraph
-    text: '<big>R Tutorials</big>'
+    text: '&nbsp;<big>&nbsp;&nbsp;R Tutorials</big>'
   - type: list
     style: unordered
     items:
     - html: <a href="r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
     - html: <a href="r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
-    - html: <a href="r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a><br/>&nbsp;
+    - html: <a href="r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a>
   - type: paragraph
-    text: '<big>Python Tutorials</big>'
+    text: '&nbsp;<big>&nbsp;&nbsp;Python Tutorials</big>'
   - type: list
     style: unordered
     items:
-    - html: <a href="python/tutorial-revoscalepy-pyspark">Use PySpark and revoscalepy together</a><br/>&nbsp;
+    - html: <a href="python/tutorial-revoscalepy-pyspark">Use PySpark and revoscalepy together</a>
 - title: Samples
   items:
   - type: paragraph
@@ -74,7 +74,7 @@ sections:
     items:
     - html: <a href="r/r-samples.md">R samples</a>
     - html: <a href="python/python-samples.md">Python samples </a>
-    - html: <a href="r/sample-solutions">Solution templates</a><br/>&nbsp;
+    - html: <a href="r/sample-solutions">Solution templates</a>
 - title: Tools
   items:
   - type: paragraph
@@ -83,7 +83,7 @@ sections:
     style: unordered
     items:
     - html: <a href="r-client/what-is-microsoft-r-client">Microsoft R Client</a>
-    - html: <a href="install/python-libraries-interpreter">Python interpreter and library setup </a><br/>&nbsp;
+    - html: <a href="install/python-libraries-interpreter">Python interpreter and library setup </a>
 - title: Reference
   items:
   - type: list
