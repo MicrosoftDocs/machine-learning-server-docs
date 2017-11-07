@@ -33,7 +33,10 @@ Review workaround steps for the following known issues in this release.
 
 The following issues are known in this release:
 1. [Configure Machine Learning Server web node warning: "Web Node was not able to start because it is not configured."](#o16n-node)  
+2. [Client certificate is ignored when the Subject or Issue is blank.](#o16n-clientcert)
+3. [Web node connection to compute node times out during a batch execution.](#o16n-batchtimeout)
 
+#### 
 >[!NOTE]
 >Other release-specific pages include [What's New in 9.2.1](whats-new-in-machine-learning-server.md) and [Deprecated and Discontinued Features](resources-deprecated-features.md). For known issues in the previous releases, see [Previous Releases](#Prev).
 
@@ -42,6 +45,20 @@ The following issues are known in this release:
 #### 1. Configure Machine Learning Server web node warning: "Web Node was not able to start because it is not configured."
 
 When configuring your web node, you might see the following message:  "Web Node was not able to start because it is not configured." Typically, this is not really an issue since the web node is automatically restarted within 5 minutes by an auto-recovery mechanism. After five minutes, run the [diagnostics](operationalize/configure-run-diagnostics.md).
+
+<a name="o16n-clientcert"></a>
+
+#### 2. Client certificate is ignored when the Subject or Issue is blank.
+
+If you are using a client certificate, both the Subject AND Issuer need to be set to a value in order for the certificate to be used. If any of those is not set, the certificate settings are ignored without warning.
+
+<a name="o16n-batchtimeout"></a>
+
+#### 3. Web node connection to compute node times out during a batch execution.
+
+If you are consuming a long-running web service via batch mode, you may encounter a connection timeout between the web and compute node. In batch executions, if a web service is still running after 10 minutes, the connection from the web node to the compute node times out. The web node then starts another session on another compute node or shell. The initial shell that was running when the connection timed out continues to run but never returns a result. 
+
+
 
 <a name="Prev"></a>
 
@@ -210,6 +227,12 @@ rxSparkConnect(reset = TRUE)
 ```
 
 The 'reset' parameter kills all pre-existing yarn applications, and create a new one.
+
+<a name="o16n-batchtimeout"></a>
+
+#### 8. Web node connection to compute node times out during a batch execution.
+
+If you are consuming a long-running web service via batch mode, you may encounter a connection timeout between the web and compute node. In batch executions, if a web service is still running after 10 minutes, the connection from the web node to the compute node times out. The web node then starts another session on another compute node or shell. The initial shell that was running when the connection timed out continues to run but never returns a result. 
 
 
 <a name="901"></a>

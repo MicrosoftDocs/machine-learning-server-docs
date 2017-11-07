@@ -6,7 +6,7 @@ description: "Logging into Machine Learning Server and connecting with mrsdeploy
 keywords: "Machine Learning Server, remote login to r server, connect to r server, mrsdeploy connection, log into r server"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"

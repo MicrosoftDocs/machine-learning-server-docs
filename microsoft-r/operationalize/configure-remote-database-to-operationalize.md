@@ -6,7 +6,7 @@ description: "Configure a SQL Server or PostgreSQL Database database for Machine
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"

@@ -6,7 +6,7 @@ description: "Learn about Microsoft R features and components in R Server, R Cli
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "05/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"

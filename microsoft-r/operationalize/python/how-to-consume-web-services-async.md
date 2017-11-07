@@ -6,7 +6,7 @@ description: "Asynchronous web service consumption via batch processing in Pytho
 keywords: "batch processing of web services"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "10/05/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"

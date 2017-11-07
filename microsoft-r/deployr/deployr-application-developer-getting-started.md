@@ -6,8 +6,8 @@ description: "Getting started for Application Developers: high level introductio
 keywords: "Application Developers, r programmer, DeployR"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
-ms.date: "05/06/2016"
+manager: "cgronlun"
+ms.date: "11/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
