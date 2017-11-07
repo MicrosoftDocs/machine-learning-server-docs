@@ -6,7 +6,7 @@ description: "Installing python interpreter and packages locally to interact wit
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"

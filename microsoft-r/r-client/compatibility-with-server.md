@@ -6,7 +6,7 @@ description: "Table of Microsoft R Client compatibility with various offerings o
 keywords: "R Client compatibility, Microsoft R Client"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"

@@ -6,7 +6,7 @@ description: "Guide to installing Microsoft R Client on Linux. R Client is a fre
 keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"

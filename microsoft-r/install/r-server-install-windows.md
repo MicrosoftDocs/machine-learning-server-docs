@@ -6,7 +6,7 @@ description: "How to install, connect to, and use Microsoft R Server 9.1 on comp
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "06/29/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"

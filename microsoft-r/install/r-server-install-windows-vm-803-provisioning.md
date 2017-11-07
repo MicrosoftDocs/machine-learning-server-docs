@@ -6,7 +6,7 @@ description: "Provision the R Server 8.0.3 Only SQL Server 2016 Enterprise VM on
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "12/20/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"

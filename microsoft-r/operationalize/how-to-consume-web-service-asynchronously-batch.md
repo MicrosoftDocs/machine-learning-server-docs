@@ -6,7 +6,7 @@ description: "Asynchronous web service consumption via batch processing in Machi
 keywords: "batch processing of web services"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "reference"
 ms.prod: "microsoft-r"

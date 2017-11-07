@@ -6,7 +6,7 @@ description: "Configure Operationalization for Machine Learning Server, load bal
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"

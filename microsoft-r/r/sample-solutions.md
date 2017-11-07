@@ -5,7 +5,7 @@ title: "Solution templates for Machine Learning Server and R Server 9.1| Machine
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "08/19/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"

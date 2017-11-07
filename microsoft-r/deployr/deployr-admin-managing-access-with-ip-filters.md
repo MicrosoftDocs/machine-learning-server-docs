@@ -6,7 +6,7 @@ description: "Managing Access with IP Filters in the DeployR Administration Cons
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"

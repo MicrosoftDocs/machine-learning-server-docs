@@ -5,7 +5,7 @@ description: "Develop machine learning models and scripts in Python and R for on
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "09/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"

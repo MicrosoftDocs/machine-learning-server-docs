@@ -6,7 +6,7 @@ description: "Troubleshooting and Diagnostics when configuring Machine Learning 
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -142,7 +142,9 @@ By default, the logging level is set to Warning so as not to slow performance. H
 This section contains pointers to help you troubleshoot some problems that can occur.
 
 >[!IMPORTANT]
->If this section does not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+>1. **In addition to the info below,review the issues listed in the [Known Issues article](../resources-known-issue.md) as well.**
+>
+>2. If this section does not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### "BackEndConfiguration is missing URI" Error
 

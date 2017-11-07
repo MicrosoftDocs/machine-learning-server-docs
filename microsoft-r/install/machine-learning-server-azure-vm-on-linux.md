@@ -6,7 +6,7 @@ description: "Learn how to work with Machine Learning Server / R Server on Linux
 keywords: "Machine Learning Server, R Server, linux, virtual machine"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
