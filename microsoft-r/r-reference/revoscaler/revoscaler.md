@@ -224,7 +224,7 @@ This section lists the functions by category to give you an idea of how each one
 |[rxGetComputeContext](rxsetcomputecontext.md) |Gets the current compute context. |
 |[RxHadoopMR](rxhadoopmr.md) |Creates an in-data, file-based Hadoop compute context. |
 |[RxSpark](rxspark.md) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. |
-|[RxInTeradata](rxinteradata.md) <|Creates an in-database compute context for Teradata. |
+|[RxInTeradata](rxinteradata.md) |Creates an in-database compute context for Teradata. |
 |[RxInSqlServer](rxinsqlserver.md) |Creates an in-database compute context for SQL Server. |
 |[RxComputeContext](rxcomputecontext.md) |Creates a compute context. |
 |[RxLocalSeq](rxlocalseq.md) |Creates a local compute context for rxExec using sequential computations. |

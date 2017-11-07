@@ -210,7 +210,7 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using the Re
 
 ### Unauthorized / HTTP status 401
 
-If you [configured Machine Learning Server to authenticate](configure-authentication.md) against LDAP/AD, and your experience connection issues or a `401` error, very the LDAP settings you declared in appsettings.json. Use the ldp.exe tool to search the correct LDAP settings and compare them to what you have declared. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+If you [configured Machine Learning Server to authenticate](configure-authentication.md) against LDAP/AD, and you experience connection issues or a `401` error, verify the LDAP settings you declared in appsettings.json. Use the ldp.exe tool to search the correct LDAP settings and compare them to what you have declared. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 ### Configuration did not restore after upgrade
 

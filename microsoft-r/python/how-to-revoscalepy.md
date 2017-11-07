@@ -31,7 +31,7 @@ This article introduces Python functions in a [revoscalepy](../python-reference/
 + Yarn for job scheduling and management.
 + Spark as the processing framework (versions 2.0-2.1).
 
-The revoscalepy library provides cluster-aware Python functions for data management, predictive analytics, and visualization. When you set the [compute context](../r/concept-what-is-compute-context.md) to [RxSpark](../python-reference/revoscalepy/rxSpark.md), revoscalepy f automatically distributes the workload across all the data nodes. There is no overhead in managing jobs or the queue, or tracking the physical location of data in HDFS; Spark does both for you.
+The revoscalepy library provides cluster-aware Python functions for data management, predictive analytics, and visualization. When you set the [compute context](../r/concept-what-is-compute-context.md) to [rx-spark-connect](../python-reference/revoscalepy/rx-spark-connect.md), revoscalepy f automatically distributes the workload across all the data nodes. There is no overhead in managing jobs or the queue, or tracking the physical location of data in HDFS; Spark does both for you.
 
 > [!Note]
 > For installation instructions, see [Install Machine Learning Server for Hadoop](../install/machine-learning-server-hadoop-install.md).
