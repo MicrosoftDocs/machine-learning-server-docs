@@ -26,7 +26,7 @@ ms.technology: "deployr"
 
 **Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
+>Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
 
 DeployR is an integration technology for deploying R analytics inside web, desktop, mobile, and dashboard applications as well as backend systems. DeployR turns your R scripts into [analytics web services](#analytics-web-service), so R code can be easily executed by applications running on a secure server.
