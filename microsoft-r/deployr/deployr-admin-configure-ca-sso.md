@@ -6,8 +6,8 @@ description: "How to configure CA Single Sign-On for DeployR"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
-ms.date: "03/17/2016"
+manager: "cgronlun"
+ms.date: "11/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -27,7 +27,7 @@ ms.technology: "deployr"
 
 **Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
+>Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
 ## Introduction
 

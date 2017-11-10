@@ -1,9 +1,9 @@
 --- 
  
 # required metadata 
-title: ""RevoScaleR-defunct" function (RevoScaleR) " 
+title: "RevoScaleR-defunct function (RevoScaleR) " 
 description: " The functions or variables listed here are no longer part of RevoScaleR as they are no longer needed.  " 
-keywords: "(RevoScaleR), "RevoScaleR-defunct", rxGetVarInfoXdf, rxGetInfoXdf" 
+keywords: "(RevoScaleR), RevoScaleR-defunct, rxGetVarInfoXdf, rxGetInfoXdf" 
 author: "heidisteen" 
 manager: "jhubbard" 
 ms.date: "09/07/2017" 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  
  
- #"RevoScaleR-defunct": Defunct functions in RevoScaleR 
+ #RevoScaleR-defunct: Defunct functions in RevoScaleR 
  ##Description
  
 The functions or variables listed here are no longer part of RevoScaleR as they are no longer needed. 
@@ -115,5 +115,5 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
  
 [rxGetVarInfo](rxGetVarInfoXdf.md),
 [rxGetInfo](rxGetInfoXdf.md),
-["RevoScaleR-deprecated"](RevoScaleR-deprecated.md).
+[RevoScaleR-deprecated](RevoScaleR-deprecated.md).
    

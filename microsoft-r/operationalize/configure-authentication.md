@@ -6,7 +6,7 @@ description: "Enterprise-Grade Security: Authentication with Machine Learning Se
 keywords: "Machine Learning Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"

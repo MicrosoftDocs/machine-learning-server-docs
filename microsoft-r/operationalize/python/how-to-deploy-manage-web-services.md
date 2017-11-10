@@ -6,7 +6,7 @@ description: "Publish, update, and delete Python web services with Microsoft R S
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "10/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -91,6 +91,8 @@ This table presents the supported data types for the input and output schemas of
 
 Dataframes are assumed for inputs and outputs. Code is not supported.
 
+For a full example of realtime web services in Python, try out [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb).
+
 ## Deploy and update services
 
 ### Publish a service
@@ -124,6 +126,8 @@ webserv = client.realtime_service('myService') \
         .description('this is a realtime model') \
         .deploy()
 ```
+
+For a full example of realtime web services in Python, try out [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb).
 
 ### Update an existing service version
 

@@ -6,7 +6,7 @@ description: "Web service interaction and consumption functions in the mrsdeploy
 keywords: "mrsdeploy package"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -256,12 +256,12 @@ Application developers can get the Swagger-based JSON file in one of these ways:
 
 
 ## See also
-
++ [What is operationalization?](../what-is-operationalization.md)
++ [What are web services?](../operationalize/concept-what-are-web-services.md)
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [How to publish and manage web services in R](how-to-deploy-web-service-publish-manage-in-r.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
 + [Connecting to Machine Learning Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md).
-+ [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
 + [Execute on a remote Machine Learning Server](../r/how-to-execute-code-remotely.md)

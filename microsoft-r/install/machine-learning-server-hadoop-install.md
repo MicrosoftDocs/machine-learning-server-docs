@@ -24,13 +24,13 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Hadoop
 
-On a Hadoop cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../operationalize/concept-operationalize-deploy-consume.md) on edge nodes only.
+On a Hadoop cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../what-is-operationalization.md) on edge nodes only.
 
 Machine Learning Server is engineered for the following architecture:
 
 + Hadoop Distributed File System (HDFS)
 + Apache YARN
-+ MapReduce or Spark 2.0-2.4
++ MapReduce or Spark 2.0-2.1
 
 ## System and setup requirements
 
@@ -74,7 +74,7 @@ After installation completes, software can be found at the following paths:
 
 Start here. Machine Learning Server is required on the edge node. You should run full setup, following the installation commands for the Linux operating system used by your cluster: [Linux install > How to install](machine-learning-server-linux-install.md#how-to-install).
 
-Full setup gives you core components for both R and Python, machine learning algorithms and pretrained models, and [operationalization](../operationalize/concept-operationalize-deploy-consume.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services, which allows you to invoke and access your solution programmatically, through a REST API.
+Full setup gives you core components for both R and Python, machine learning algorithms and pretrained models, and [operationalization](../what-is-operationalization.md). Operationalization features run on edge nodes, enabling additional ways of deploying and consuming script. For example, you can build and deploy web services, which allows you to invoke and access your solution programmatically, through a REST API.
 
 > [!Note]
 > You cannot use operationalization on data nodes. Operationalization does not support Yarn queues and cannot run in a distributed manner.
@@ -91,7 +91,7 @@ As before, follow the installation steps for the Linux operating system used by 
 
 **Approach 2: Manual steps for partial installation**
 
-Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes,or if you want to exclude a specific language. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Hence, unexpected problems are more likely if you leave some packages out. 
+Alternatively, you can install a subset of packages. You might do this if you do not want operationalization on your data nodes, or if you want to exclude a specific language. Be prepared for more testing if you choose this approach. The packages are not specifically designed to run as standalone modules. Hence, unexpected problems are more likely if you leave some packages out. 
 
 1. Install as root: `sudo su`
 

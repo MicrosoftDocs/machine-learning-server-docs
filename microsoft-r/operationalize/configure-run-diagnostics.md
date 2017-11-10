@@ -6,8 +6,8 @@ description: "Troubleshooting and Diagnostics when configuring Machine Learning 
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
-ms.date: "9/25/2017"
+manager: "cgronlun"
+ms.date: "11/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -142,7 +142,8 @@ By default, the logging level is set to Warning so as not to slow performance. H
 This section contains pointers to help you troubleshoot some problems that can occur.
 
 >[!IMPORTANT]
->If this section does not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+>1. In addition to the info below, review the issues listed in the **[Known Issues article](../resources-known-issues.md)** as well.
+>2. If this section does not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### "BackEndConfiguration is missing URI" Error
 
@@ -210,7 +211,7 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using the Re
 
 ### Unauthorized / HTTP status 401
 
-If you [configured Machine Learning Server to authenticate](configure-authentication.md) against LDAP/AD, and your experience connection issues or a `401` error, very the LDAP settings you declared in appsettings.json. Use the ldp.exe tool to search the correct LDAP settings and compare them to what you have declared. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
+If you [configured Machine Learning Server to authenticate](configure-authentication.md) against LDAP/AD, and you experience connection issues or a `401` error, verify the LDAP settings you declared in appsettings.json. Use the ldp.exe tool to search the correct LDAP settings and compare them to what you have declared. You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
 ### Configuration did not restore after upgrade
 

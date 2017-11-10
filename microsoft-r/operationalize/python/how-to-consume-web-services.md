@@ -6,7 +6,7 @@ description: "Publish and consume Python web services with Machine Learning Serv
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "10/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"

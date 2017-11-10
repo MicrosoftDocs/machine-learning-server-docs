@@ -6,8 +6,8 @@ description: "The tutorial for DeployR's RBroker framework"
 keywords: "DeployR, tutorial, RBroker, framework"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
-ms.date: "05/06/2016"
+manager: "cgronlun"
+ms.date: "11/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -28,7 +28,7 @@ ms.technology: "deployr"
 
 **Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
+>Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
 ## Introduction
 
@@ -1692,7 +1692,7 @@ The following code snippets extend the sample demonstrated in the [client applic
         }
     }
 
-<a name=gridprimer></a>
+<a name="gridprimer"></a>
 
 ## Grid Resource Management
 

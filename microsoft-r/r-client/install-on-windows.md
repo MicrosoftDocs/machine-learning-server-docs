@@ -6,7 +6,7 @@ description: "Guide to installing Microsoft R Client on Windows. R Client is a f
 keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Microsoft R Client"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
@@ -123,7 +123,7 @@ On the machine onto which you are installing, follow this guidance before you be
 >[!IMPORTANT]
 >Review the recommendations in [Package Management](../operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.
 
-<a name=silent></a> 
+<a name="silent"></a> 
 
 ## Silent and Passive Installs
 

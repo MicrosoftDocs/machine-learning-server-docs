@@ -6,7 +6,7 @@ description: "Microsoft R Client is a free data science tool for high performanc
 keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"

@@ -1,5 +1,7 @@
-- name: Overview
+- name: Machine Learning Server Documentation
   href: index.yml
+- name: Overview
+  expanded: true
   items:
   - name: Welcome to Machine Learning Server
     href: what-is-machine-learning-server.md
@@ -243,8 +245,6 @@
     href: r/how-to-revoscaler-distributed-computing.md
   - name: Web services
     href: operationalize/concept-what-are-web-services.md
-  - name: Operationalization
-    href: operationalize/concept-operationalize-deploy-consume.md
   - name: Pre-trained models
     href: install/microsoftml-install-pretrained-models.md
   - name: MicrosoftML

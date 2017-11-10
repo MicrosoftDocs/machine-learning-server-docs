@@ -1,4 +1,4 @@
----
+https://www.cloudera.com/documentation/cdh/5-0-x/CDH5-Security-Guide/CDH5-Security-Guide.htmlcC---
 # required metadata
 title: "Adjust your Hadoop cluster configuration for R server workloads"
 description: "Adjust your Hadoop cluster configuration for R server workloads."
@@ -67,8 +67,8 @@ You can then add the path to /share/AirlineDemoSmall to the pool with an addDire
 
 By default, most Hadoop configurations are relatively insecure. Security features such as SELinux and IPtables firewalls are often turned off to help get the Hadoop cluster up and running quickly. However, Cloudera and Hortonworks distributions of Hadoop support Kerberos authentication, which allows Hadoop to operate in a much more secure manner. To use Kerberos authentication with your particular version of Hadoop, see one of the following documents:
 
-- [Cloudera CDH5](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CDH5/latest/CDH5-Security-Guide/CDH5-Security-Guide.html)
-- [Cloudera CDH5 with Cloudera Manager 5](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM5/latest/Configuring-Hadoop-Security-with-Cloudera-Manager/cm5chs_using_cm_sec_config.html)
+- [Cloudera CDH5](https://www.cloudera.com/documentation/cdh/5-0-x/CDH5-Security-Guide/CDH5-Security-Guide.html)
+- [Cloudera CDH5 with Cloudera Manager 5](http://www.cloudera.com/documentation/cdh/5-1-x/CDH5-Security-Guide/cdh5sg_cdh5_hadoop_security.htmll)
 - [Hortonworks HDP 1.3](http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.1/bk_installing_manually_book/content/rpm-chap14.html)
 - [Hortonworks HDP 2.x](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.2/bk_installing_manually_book/content/rpm-chap14.html)
 - [Hortonworks HDP (1.3 or 2.x) with Ambari](http://docs.hortonworks.com/HDPDocuments/Ambari-2.1.2.0/bk_Ambari_Security_Guide/content/ch_amb_sec_guide.html)

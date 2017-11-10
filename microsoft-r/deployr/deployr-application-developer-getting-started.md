@@ -6,8 +6,8 @@ description: "Getting started for Application Developers: high level introductio
 keywords: "Application Developers, r programmer, DeployR"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
-ms.date: "05/06/2016"
+manager: "cgronlun"
+ms.date: "11/10/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -27,7 +27,7 @@ ms.technology: "deployr"
 
 **Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
+>Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
 This guide for application developers introduces DeployR, the *R Integration Server*. If you are an application developer or a systems integrator, then this guide explains what DeployR can do for you.
 

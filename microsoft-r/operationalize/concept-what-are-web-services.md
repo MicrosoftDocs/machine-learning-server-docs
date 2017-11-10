@@ -6,7 +6,7 @@ description: "Publish, update, and delete Python web services with Microsoft R S
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -66,7 +66,7 @@ For realtime services, you do **not** need to specify:
 
 **See realtime web service deployment examples: [R](how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](python/how-to-deploy-manage-web-services.md#realtime-example)**
 
-<a name=r></a>
+<a name="r"></a>
 
 ### Supported R functions for realtime
 
@@ -85,7 +85,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
   
 1. The columns must be of the same data type as the training data. Type casting is not possible.
 
-<a name=python></a>
+<a name="python"></a>
 
 ### Supported Python functions for realtime
 
@@ -102,7 +102,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 
 Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services and helps the people consuming your service to find it easily. 
 
-At publish time, specify an alphanumeric string that is meaningful to those users who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
+At publish time, specify an alphanumeric string that is meaningful to those users who consume the service. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly recommend a **consistent and meaningful versioning convention** across your organization or team such as semantic versioning. Learn more about semantic versioning here: http://semver.org/.
 
 If you do not specify a version, a globally unique identifier (GUID) is automatically assigned. These GUID numbers are long making them harder to remember and use. 
 
@@ -132,7 +132,7 @@ Web services can be consumed using one of these approaches:
 
 
 
-<a name=permissions></a>
+<a name="permissions"></a>
 
 ## Permissions
 

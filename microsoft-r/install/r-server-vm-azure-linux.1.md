@@ -6,7 +6,7 @@ description: "Learn how to work with R Server on Linux by using a virtual machin
 keywords: "R Server, linux, virtual machine"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "4/26/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -28,7 +28,7 @@ ms.technology:
 
 >Looking for an older version? See here: [9.0.1](r-server-vm-azure-linux-9-0-1.md) or [8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
-Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server version 9.1) for Linux (CentOS version 7.2 or Ubuntu version 16.04). More information on this version can be found at: https://msdn.microsoft.com/en-us/microsoft-r/rserver-install-linux-server. 
+Microsoft R Server is the most broadly deployable enterprise-class analytics platform for R available today. This virtual machine (VM) includes the Microsoft R Server version 9.1) for Linux (CentOS version 7.2 or Ubuntu version 16.04). 
 
 This VM also includes:
 

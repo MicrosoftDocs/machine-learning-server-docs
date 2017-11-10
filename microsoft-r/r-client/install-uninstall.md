@@ -6,7 +6,7 @@ description: "Explains how to uninstall Microsoft R Client. You do not have to u
 keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"

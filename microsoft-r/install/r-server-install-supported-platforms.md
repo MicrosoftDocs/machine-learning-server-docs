@@ -31,6 +31,8 @@ This article specifies supported operating systems, distributions, and database 
 
 ## Machine Learning Server 9.2.1
 
+Machine Learning Server is available **on-premises** on Windows, Linux, Hadoop Spark, and SQL Server. It is also **[in the cloud](machine-learning-server-in-the-cloud.md)** on Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
+
 R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), which is based on R-3.4.1. Python support is based on Anaconda 4.2 over Python 3.5. 
 
 | SKU | Platforms |

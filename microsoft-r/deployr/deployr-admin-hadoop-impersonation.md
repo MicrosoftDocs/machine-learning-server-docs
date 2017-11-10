@@ -6,8 +6,8 @@ description: "DeployR and Hadoop Impersonation"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
-ms.date: "05/06/2016"
+manager: "cgronlun"
+ms.date: "11/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -27,7 +27,7 @@ ms.technology: "deployr"
 
 **Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
->Looking for docs for Microsoft R Server 9? [Start here](../what-is-operationalization.md).
+>Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
 Typically when invoking system commands from R, those commands run as the user that started R. In the case of Hadoop, if user `abc` logs in to a node on a Hadoop cluster and starts R, any *system* commands, such as `system("hadoop fs -ls /")`, run as user `abc`. File permissions in HDFS are honored accordingly. For example, user `abc` cannot access files in HDFS if that user does not have proper permissions.
 

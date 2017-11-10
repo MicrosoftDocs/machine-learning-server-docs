@@ -6,7 +6,7 @@ description: "Provision the R Server 8.0.3 Only SQL Server 2016 Enterprise VM on
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "12/20/2016"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -85,11 +85,6 @@ When you need to use data from your Azure storage account, there are several opt
 
 + Copy the data from your storage account to the local file system using a utility, such as [AzCopy](https://docs.microsoft.com/en-us/azure/storage/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only).
 + Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files](https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-how-to-use-files).
-
-
-## Using Data in an Azure Data Lake Storage (ADLS) account
-
-You can read data from ADLS storage using ScaleR, if you reference the storage account the same way that you would an HDFS file system, by using webHDFS. For more information, see this [setup guide](http://packages.revolutionanalytics.com/doc/8.0.0/azure/ADLS%20Setup%20for%20an%20R%20Server%20VM%20on%20Azure.pdf).
 
  ## Resources
 

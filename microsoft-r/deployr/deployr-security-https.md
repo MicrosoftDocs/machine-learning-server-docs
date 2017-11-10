@@ -6,8 +6,8 @@ description: "Security in DeployR: Authentication, HTTPS, SSL, and access contro
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
-ms.date: "06/27/2016"
+manager: "cgronlun"
+ms.date: "11/10/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -102,7 +102,7 @@ After configuring DeployR to use one of those databases, you must also configure
 
     + Read these articles for information on how to enable TLS for SQL Server: 
         + https://support.microsoft.com/en-us/kb/316898 
-        + https://msdn.microsoft.com/en-us/library/ms378751(v=sql.110).aspx
+        + https://docs.microsoft.com/en-us/sql/connect/jdbc/securing-jdbc-driver-applications
         + https://support.microsoft.com/en-us/kb/3135244
 
     + In the `$DEPLOYR_HOME/deployr/deployr.groovy` external configuration file, add `encrypt=true;trustServerCertificate=true` to the connection string.

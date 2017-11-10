@@ -6,7 +6,7 @@ description: "Web service deployment functions in the mrsdeploy package in Micro
 keywords: "mrsdeploy package"
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
@@ -63,7 +63,7 @@ To deploy your analytics, you must publish them as web services in Machine Learn
 
 Every time a web service is published, a version is assigned to the web service. Versioning enables users to better manage the release of their web services. Versions help the users consuming your service to easily identify it. 
 
-At publish time, you can specify an alphanumeric string that is meaningful to the users who consume the service in your organization. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly a **consistent and meaningful versioning convention** across your organization or team such as [semantic versioning](http://semver.org/).
+At publish time, you can specify an alphanumeric string that is meaningful to the users who consume the service in your organization. For example, you could use '2.0', 'v1.0.0', 'v1.0.0-alpha', or 'test-1'. Meaningful versions are helpful when you intend to share services with others. We highly recommend a **consistent and meaningful versioning convention** across your organization or team such as [semantic versioning](http://semver.org/).
 
 If you do not specify a version, a globally unique identifier (GUID) is automatically assigned by Machine Learning Server. These GUID version numbers are harder to remember by the users consuming your services and are therefore less desirable. 
 
@@ -819,12 +819,11 @@ cat(rtSwagger, file = "realtimeSwagger.json", append = FALSE)
 ```
 
 ## See also
-
++ [What is operationalization?](../what-is-operationalization.md)
++ [What are web services?](concept-what-are-web-services.md)
 + [mrsdeploy function overview](../r-reference/mrsdeploy/mrsdeploy-package.md)
 + [Quickstart: Deploying an R model as a web service](quickstart-publish-r-web-service.md)
 + [Connecting to R Server from mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md).
-+ [What are web services](concept-operationalize-deploy-consume.md)
-+ [Get started guide for data scientists](concept-operationalize-deploy-consume.md)
 + [How to interact with and consume web services in R](how-to-consume-web-service-interact-in-r.md)
 + [How to integrate web services and authentication into your application](how-to-build-api-clients-from-swagger-for-app-integration.md)
 + [Asynchronous batch execution of web services in R](how-to-consume-web-service-asynchronously-batch.md)
