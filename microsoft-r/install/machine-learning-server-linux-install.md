@@ -121,7 +121,7 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `zypper -ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com`
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `zypper ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com`
 
 3. Update packages on your system: `zypper update` 
 
