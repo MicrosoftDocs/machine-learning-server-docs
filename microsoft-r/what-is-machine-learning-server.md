@@ -6,7 +6,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "09/05/2017"
+ms.date: "11/14/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -42,7 +42,7 @@ Microsoft Machine Learning Server includes:
 
 + **The best AI innovation from Microsoft and open source**
 
-  Microsoft strives to make AI accessible to every individual and organization. Microsoft Machine Learning Server includes a rich set of highly-scalable, distributed set of algorithms such as [RevoscaleR](/r-reference/revoscaler/revoscaler.md), [revoscalepy](/python-reference/revoscalepy/revoscalepy-package.md), and [microsoftML](/python-reference/microsoftml/microsoftml-package.md) that can work on data sizes larger than the size of physical memory, and run on a wide variety of platforms in a distributed manner. Learn more about the collection of Microsoft's custom [R packages](r-reference/introducing-r-server-r-package-reference.md) and [Python packages](python-reference/introducing-python-package-reference.md) included with the product.
+  Microsoft strives to make AI accessible to every individual and organization. Microsoft Machine Learning Server includes a rich set of highly-scalable, distributed set of algorithms such as [RevoscaleR](r-reference/revoscaler/revoscaler.md), [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md), and [microsoftML](python-reference/microsoftml/microsoftml-package.md) that can work on data sizes larger than the size of physical memory, and run on a wide variety of platforms in a distributed manner. Learn more about the collection of Microsoft's custom [R packages](r-reference/introducing-r-server-r-package-reference.md) and [Python packages](python-reference/introducing-python-package-reference.md) included with the product.
   
   Machine Learning Server bridges these Microsoft innovations and those coming from the open source community (R, Python and AI toolkits) all on top of a single enterprise-grade platform. Any R or Python open source machine learning package can work side-by-side with any proprietary innovation from Microsoft. 
 
