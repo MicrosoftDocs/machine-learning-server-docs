@@ -27,15 +27,13 @@ ms.technology: "r-server"
 
 In Machine Learning Server, every session that loads a function library has a [compute context](concept-what-is-compute-context.md). The default is local, available on all platforms. No action is required to use a local compute context.
 
-You can switch to a remote compute context to shift script execution to a different server or platform. For example, you might want to bring calculations and analysis to where the data resides on a database platform, such as SQL Server, or Hadoop Distributed File System (HDFS) using Spark or MapReduce as the processing layer.
+This article explains how to shift script execution to a remote Hadoop or Spark cluster, for the purpose of bring calculations to the data itself and eliminating data transfer over your network. For SQL Server compute contexts, see [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.
 
 You can create multiple compute context objects: just use them one at a time. Often, functions operate identically in local and remote context. If script execution is successful locally, you can generally expect the same results on the remote server, subject to these [limitations](#limits-on-context-shift). 
 
-This article is focused primarily on Hadoop Spark and MapReduce. For SQL Server compute contexts, see [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.
-
 ## Prerequisites
 
-Shifting a compute context requires that the remote computer has Machine Learning Server at the same functional level as the client. A remote Machine Learning Server 9.2.1 can accept a compute context shift from another Machine Learning Server 9.2.1 interpreter, from a SQL Server 2017 Machine Learning Services instance, and for R developers, from R Client at the same functional level (3.4.1).
+The remote computer must be at the same functional level as the system sending the reqest. A remote Machine Learning Server 9.2.1 can accept a compute context shift from another 9.2.1 interpreter on Machine Learning Server,a  SQL Server 2017 Machine Learning Services instance, and for R developers on Microsoft R Client at the same functional level (3.4.1).
 
 The following table is a recap of platform and data source requirements for each function library.
 
