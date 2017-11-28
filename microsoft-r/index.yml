@@ -83,7 +83,7 @@ sections:
     style: unordered
     items:
     - html: <a href="r-client/what-is-microsoft-r-client">Microsoft R Client</a>
-    - html: <a href="install/python-libraries-interpreter">Python interpreter and library setup </a>
+    - html: <a href="install/python-libraries-interpreter2">Python interpreter and library setup </a>
 - title: Reference
   items:
   - type: list
