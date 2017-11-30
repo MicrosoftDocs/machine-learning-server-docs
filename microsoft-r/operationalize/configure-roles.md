@@ -53,7 +53,7 @@ In AD/LDAP and AAD, security groups are used to collect user accounts, computer 
 You can use the AD groups you have already defined in your organization to assign a collection of users to roles for web services. 
 
 >[!Warning]
->Security group names must be unique in order to be assigned to a Machine Learning Server role. If a group in LDAP or AAD bears the same name as another group in that LDAP or AAD directory, then it cannot be assigned to a role in Machine Learning Server or R Server.
+>Security group names must be unique across your LDAP/AAD configuration in order to be assigned to a Machine Learning Server role. If a group in LDAP or AAD bears the same name as another group in that LDAP or AAD directory, then it cannot be assigned to a role in Machine Learning Server or R Server.
 
 In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: 'Owner', 'Contributor', and 'Reader'. Roles give specific permissions related to deploying and interacting with web services and other APIs. 
 
