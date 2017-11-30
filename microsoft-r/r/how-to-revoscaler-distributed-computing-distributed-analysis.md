@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # Running distributed analyses using RevoScaleR
 
-Many RevoScaleR functions support parallelization. On a multi-core machine, the functions are multithreaded. On a cluster platform like Hadoop, analysis runs on all data nodes having the RevoScaleR engine. 
+Many RevoScaleR functions support parallelization. On a standalone multi-core server, functions that are multithreaded run on all available cores. In an RxSpark or RxHadoop remote compute context, multithreaded analysis runs on all data nodes having the RevoScaleR engine. 
 
 RevoScaleR can structure an analysis for parallel execution with no additional configuration on your part, assuming you set the [compute context](how-to-revoscaler-distributed-computing-compute-context.md). Setting the compute context to RxSparkConnect or RxHadoopMR tells RevoScaleR to look for data nodes. Using the default local compute context tells the engine to look for available processors on a multi-core machine.
 
@@ -62,7 +62,7 @@ You can request basic information about a data set from each node using the `rxG
 	rxGetInfo(data=airData)
 
 > [!NOTE]
-> To load a dataset, use AirOntime2012.xdf from the [data set download site](http://packages.revolutionanalytics.com/datasets) and make sure it is in your dataPath. You can then run `airData <- RxXdfData("AirOnTime2012.xdf"` to load the data on a cluster.
+> To load a dataset, use AirOntime2012.xdf from the [data set download site](http://packages.revolutionanalytics.com/datasets) and make sure it is in your dataPath. You can then run `airData <- RxXdfData("AirOnTime2012.xdf")` to load the data on a cluster.
 
 On a five-node cluster, the call to *rxGetInfo* returns the following:
 

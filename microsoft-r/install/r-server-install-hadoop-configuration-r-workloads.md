@@ -1,4 +1,4 @@
-https://www.cloudera.com/documentation/cdh/5-0-x/CDH5-Security-Guide/CDH5-Security-Guide.htmlcC---
+---
 # required metadata
 title: "Adjust your Hadoop cluster configuration for R server workloads"
 description: "Adjust your Hadoop cluster configuration for R server workloads."

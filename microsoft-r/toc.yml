@@ -278,7 +278,7 @@
           href: r/how-to-revoscaler-data-sql.md
         - name: Import ODBC data
           href: r/how-to-revoscaler-data-odbc.md
-        - name: Access HDFS data
+        - name: Import HDFS files
           href: r/how-to-revoscaler-data-hdfs.md
         - name: Use data source objects
           href: r/how-to-revoscaler-data-source.md
