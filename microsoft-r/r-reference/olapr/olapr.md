@@ -7,7 +7,7 @@ keywords: "olapR"
 author: "HeidiSteen"
 ms.author: "heidist" 
 manager: "jhubbard" 
-ms.date: "08/22/2017" 
+ms.date: "12/01/2017" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -27,34 +27,38 @@ ms.technology: "r-server"
  
 # olapR package
 
-The **olapR** library provides functions for importing data from OLAP cubes stored in SQL Server Analysis Services into R. It is only available in R Server for Windows.
+The **olapR** library provides R functions for importing data from OLAP cubes stored in SQL Server Analysis Services into a data frame. This package is available on premises, on Windows only.
 
 | Package details | |
 |--------|-|
 | Version: |  1.0.0 |
-| Runs on: | [SQL Server 2016 R Services or SQL Server 2017 Machine Learning Services (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
+| Runs on: | [Machine Learning Server 9.2.1 for Windows](../../what-is-machine-learning-server.md) </br>[R Client (Windows)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1](../../what-is-microsoft-r-server.md)   <br/>[SQL Server Machine Learning Services(Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
 | Built on: | R 3.4.1 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use olapR
 
-The **olapR** library provides a simple R style API for generating and validating MDX queries against a SQL Server Analysis Services cube. **olapR** does not provide APIs for all MDX scenarios, but it does cover the most use cases including slice, dice, drilldown, rollup, and pivot scenarios in N dimensions. You can also input a direct MDX query to Analysis Services for queries that cannot be constructed using the olapR APIs.  
+The **olapR** library provides a simple R style API for generating and validating MDX queries against an Analysis Services cube. **olapR** does not provide APIs for all MDX scenarios, but it does cover the most use cases including slice, dice, drilldown, rollup, and pivot scenarios in N dimensions. You can also input a direct MDX query to Analysis Services for queries that cannot be constructed using the olapR APIs.  
 
 **Workflow for using olapR**
 
+1. Load the library.
+2. Create a connection string pointing to a MOLAP cube on an Analysis Services instance, for which you have read access.
+3. Use the connection string on a connection.
+4. Verify the connection using the explore function.
+5. Set up a query by submitting an MDX query string or by building a query structure 
+6. Execute the query and verify the result.
+
 To execute an MDX query on an OLAP Cube, you need to first create a connection string (`olapCnn`) and validate using the function `OlapConnection(connectionString)`. The connection string must have a Data Source (such as localhost) and a Provider (MSOLAP). 
 
-After the connection is established, construct the query using the Query() object. Set the query details using cube(), axis(), columns(), slicers(), and so forth. 
+After the connection is established, you can either pass in a fully defined MDX query, or you can construct the query using the `Query()` object, setting the query details using cube(), axis(), columns(), slicers(), and so forth. 
 
 Finally, pass the `olapCnn` and query into either `executeMD` or `execute2D` to get a multidimensional array or a data frame back.
 
-OLAP (Online Analytical Processing) cubes are essentially multi-dimensional spreadsheets. "Cubes" can extend to any number of dimensions, and can be operated using the MDX (MultiDimensional Expression) query language. 
-
 > [!Important]
-> **olapR** requires the Analysis Services OLE DB provider. If you do not have SQL Server Analysis Services installed on your computer, you can download the provider from Microsoft:
->[`https://msdn.microsoft.com/en-us/library/dn141152.aspx#Analysis Services OLE DB Provider`](https://msdn.microsoft.com/library/dn141152.aspx#Analysis Services OLE DB Provider)
+> **olapR** requires the Analysis Services OLE DB provider. If you do not have SQL Server Analysis Services installed on your computer, download the provider from Microsoft:
+>[Data providers used for Analysis Services connections](https://docs.microsoft.com/sql/analysis-services/instances/data-providers-used-for-analysis-services-connections)
 >
->The exact version you should install for SQL Server 2016 is here:
->[`https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi`](https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi)
+>The exact version you should install for SQL Server 2016 is [here](https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi).
 >
  
 ## Function list
@@ -69,7 +73,9 @@ OLAP (Online Analytical Processing) cubes are essentially multi-dimensional spre
 
 ##MDX concepts
 
-MDX is the query language for multidimensional OLAP cubes. Cube data can be accessed using a variety of operations:
+MDX is the query language for multidimensional OLAP (MOLAP) cubes containing processed and aggregated data stored in structures optimized for data analysis and exploration. Cubes are used in business and scientific applications to draw insights about relationships in historical data. Internally, cubes consist of mostly quantifiable numeric data, which is sliced along dimensions like date and time, geography, or other entities. A typical query might roll up sales for a given region and time period, sliced by product category, promotion, sales channel, and so forth.
+
+ Cube data can be accessed using a variety of operations:
 
 * Slicing - Taking a subset of the cube by picking a value for one dimension, resulting in a cube that is one dimension smaller.
 
@@ -90,13 +96,14 @@ FROM [Analysis Services Tutorial]
 WHERE [Sales Territory].[Sales Territory Country].[Australia]
 ~~~~
 
-Using the Analysis Services Tutorial Olap cube, this MDX query selects the internet sales count and sales amount and places them on the Column axis. On the Row axis it places all possible values of the "Product Line" dimension. Then, using the WHERE clause (which is the slicer axis in MDX queries), it filters the query so that only the sales from Australia matter. Without the slicer axis, we would roll up and summarize the sales from all countries.
+Using an AdventureWorks Olap cube from the [multidimensional cube tutorial](https://docs.microsoft.com/sql/analysis-services/multidimensional-modeling-adventure-works-tutorial), this MDX query selects the internet sales count and sales amount and places them on the Column axis. On the Row axis it places all possible values of the "Product Line" dimension. Then, using the WHERE clause (which is the slicer axis in MDX queries), it filters the query so that only the sales from Australia matter. Without the slicer axis, we would roll up and summarize the sales from all countries.
  
  ##olapR examples
 
  ```
+    library(olapR)
    
-    cnnstr <- "Data Source=localhost; Provider=MSOLAP;"
+    cnnstr <- "Data Source=localhost; Provider=MSOLAP; initial catalog=Analysis Services Tutorial"
     olapCnn <- OlapConnection(cnnstr)
     
     qry <- Query()
@@ -116,21 +123,18 @@ Using the Analysis Services Tutorial Olap cube, this MDX query selects the inter
 
 ## Next steps
 
-Add R packages to your computer by running setup for R Server or R Client: 
-
-+ [R Client](../../r-client/what-is-microsoft-r-client.md) 
-+ [R Server](../../what-is-microsoft-r-server.md)
-
-For help with MDX concepts:
+Learn more about MDX concepts:
 
 + OLAP Cubes: [https://en.wikipedia.org/wiki/OLAP_cube](https://en.wikipedia.org/wiki/OLAP_cube)
 
 + MDX queries: [https://en.wikipedia.org/wiki/MultiDimensional_eXpressions](https://en.wikipedia.org/wiki/MultiDimensional_eXpressions)
 
-+ Creating a Demo OLAP Cube (identical to examples): [https://msdn.microsoft.com/library/ms170208.aspx](https://msdn.microsoft.com/en-us/library/ms170208.aspx)  
++ Creating a Demo OLAP Cube (identical to examples): [multidimensional cube tutorial](https://docs.microsoft.com/sql/analysis-services/multidimensional-modeling-adventure-works-tutorial)  
 
 ## See also
 
- [R Package Reference](../introducing-r-server-r-package-reference.md) 
-
++ [Using data from Olap cubes in R (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/r/using-data-from-olap-cubes-in-r)
++ [R Package Reference](../introducing-r-server-r-package-reference.md) 
++ [R Client](../../r-client/what-is-microsoft-r-client.md) 
++ [R Server](../../what-is-microsoft-r-server.md)
 
