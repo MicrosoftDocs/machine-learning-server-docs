@@ -26,9 +26,7 @@ ms.technology: "r-server"
 
 By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.2.1 for Linux. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
-Before you start, review the following article for requirements and restrictions:
-
-+ [Install Machine Learning Server 9.2.1 on Linux](machine-learning-server-linux-install.md) for an internet-connected installation.
+Before you start, review the following article for general information about setup: [Install Machine Learning Server 9.2.1 on Linux](machine-learning-server-linux-install.md).
 
 <a name="package-manager"></a>
 
