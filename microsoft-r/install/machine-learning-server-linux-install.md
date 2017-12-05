@@ -30,12 +30,11 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 This article covers the following items:
 > [!div class="checklist"]
-- [Prerequisites]
-- [Package manager overview]
-- [In-place upgrades of existing installations]
-- [Installation steps]
-- [Verification]
-- [An inventory of what's installed]
+- Prerequisites
+- Package manager overview
+- In-place upgrades of existing installations
+- Installation steps
+- An inventory of what's installed
 
 > [!Note]
 > Python support is new and there are a few limitations in remote computing scenarios. 1) Remote execution is not supported on Windows or Linux. 2) Remote compute contexts must be Spark or SQL Server. In computing that is local to the machine, there are no limitations.

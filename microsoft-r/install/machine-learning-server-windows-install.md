@@ -51,7 +51,7 @@ In development environments, you can install the free developer edition of Machi
 > [!Note]
 > When you purchase an enterprise license of Machine Learning Server for Windows, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (10 nodes for each core licensed under enterprise licensing).
 
-## Running setup on existing installations
+## Upgrade existing installations
 
 Setup performs an in-place upgrade on an existing installation. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path and upgrades it to the new version. 
 
@@ -162,7 +162,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
 To quit the program, type `quit()` at the command line with no arguments.
 
 
-## Enable server to host analytic web services and accept remote connections
+## Enable web service deployment and remote connections
 
 To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
 
