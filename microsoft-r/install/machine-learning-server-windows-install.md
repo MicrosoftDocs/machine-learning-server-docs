@@ -48,6 +48,9 @@ Setup also downloads Microsoft R Open 3.4.1 (if you add R) and Anaconda 4.2 with
 
 In development environments, you can install the free developer edition of Machine Learning Server. On production servers, the enterprise edition of Machine Learning Server for Windows is licensed by the core as a SQL Server enterprise feature. For example, if your server has 4 cores, you need two 2-core packs of SQL Server Enterprise. For more information, start with the [SQL Server pricing page](https://www.microsoft.com/sql-server/sql-server-2017-pricing).
 
+> [!Note]
+> When you purchase an enterprise license of Machine Learning Server for Windows, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (10 nodes for each core licensed under enterprise licensing).
+
 ## Running setup on existing installations
 
 Setup performs an in-place upgrade on an existing installation. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path and upgrades it to the new version. 
