@@ -101,23 +101,29 @@ Using an AdventureWorks Olap cube from the [multidimensional cube tutorial](http
  ##olapR examples
 
  ```
-    library(olapR)
-   
-    cnnstr <- "Data Source=localhost; Provider=MSOLAP; initial catalog=Analysis Services Tutorial"
-    olapCnn <- OlapConnection(cnnstr)
+# load the library
+library(olapR)
+
+# Connect to a local SSAS default instance and the Analysis Services Tutorial database.
+# For named instances, use server-name\\instancename, escaping the instance name delimiter.
+# For databases containing multiple cubes, use the cube= parameter to specify which one to use.
+cnnstr <- "Data Source=localhost; Provider=MSOLAP; initial catalog=Analysis Services Tutorial"
+olapCnn <- OlapConnection(cnnstr)
+
+# Approach 1 - build the mdx query in R
+qry <- Query()
     
-    qry <- Query()
+cube(qry) <- "[Analysis Services Tutorial]"
+columns(qry) <- c("[Measures].[Internet Sales Count]", "[Measures].[Internet Sales-Sales Amount]")
+rows(qry) <- c("[Product].[Product Line].[Product Line].MEMBERS") 
+slicers(qry) <- c("[Sales Territory].[Sales Territory Country].[Australia]")
     
-    cube(qry) <- "[Analysis Services Tutorial]"
-    columns(qry) <- c("[Measures].[Internet Sales Count]", "[Measures].[Internet Sales-Sales Amount]")
-    rows(qry) <- c("[Product].[Product Line].[Product Line].MEMBERS") 
-    slicers(qry) <- c("[Sales Territory].[Sales Territory Country].[Australia]")
+result1 <- executeMD(olapCnn, qry)
+
+# Approach 2 - Submit a fully formed MDX query
+mdx <- "SELECT {[Measures].[Internet Sales Count], [Measures].[Internet Sales-Sales Amount]} ON AXIS(0), {[Product].[Product Line].[Product Line].MEMBERS} ON AXIS(1) FROM [Analysis Services Tutorial] WHERE [Sales Territory].[Sales Territory Country].[Australia]"
     
-    result1 <- executeMD(olapCnn, qry)
-    
-    mdx <- "SELECT {[Measures].[Internet Sales Count], [Measures].[Internet Sales-Sales Amount]} ON AXIS(0), {[Product].[Product Line].[Product Line].MEMBERS} ON AXIS(1) FROM [Analysis Services Tutorial] WHERE [Sales Territory].[Sales Territory Country].[Australia]"
-    
-    result2 <- execute2D(olapCnn, mdx)
+result2 <- execute2D(olapCnn, mdx)
  
 ```
 
@@ -129,7 +135,7 @@ Learn more about MDX concepts:
 
 + MDX queries: [https://en.wikipedia.org/wiki/MultiDimensional_eXpressions](https://en.wikipedia.org/wiki/MultiDimensional_eXpressions)
 
-+ Creating a Demo OLAP Cube (identical to examples): [multidimensional cube tutorial](https://docs.microsoft.com/sql/analysis-services/multidimensional-modeling-adventure-works-tutorial)  
++ Create a demo OLAP Cube (identical to examples): [multidimensional cube tutorial](https://docs.microsoft.com/sql/analysis-services/multidimensional-modeling-adventure-works-tutorial)  
 
 ## See also
 

@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "09/15/2017"
+ms.date: "12/05/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -28,6 +28,15 @@ Machine Learning Server for Linux runs machine learning and data mining solution
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-linux-offline.md). 
 
+This article covers the following items:
+> [!div class="checklist"]
+- [Prerequisites]
+- [Package manager overview]
+- [In-place upgrades of existing installations]
+- [Installation steps]
+- [Verification]
+- [An inventory of what's installed]
+
 > [!Note]
 > Python support is new and there are a few limitations in remote computing scenarios. 1) Remote execution is not supported on Windows or Linux. 2) Remote compute contexts must be Spark or SQL Server. In computing that is local to the machine, there are no limitations.
 
@@ -45,7 +54,7 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 ## Package managers
 
-Installation is through package managers. Unlike previous releases, there is no install.sh script. 
+Setup is through package managers that retrieve distributions from Microsoft web sites and install the software. Unlike previous releases, there is no install.sh script. You must have one of these package managers to install Machine Learning Server for Linux.
 
 | Package manager | Platform |
 |-----------------|----------|
@@ -55,6 +64,9 @@ Installation is through package managers. Unlike previous releases, there is no 
 |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
 |[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
 
+The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+
+Activation is a separate step *not* performed by the package manager. If you forget to activate, the server works, but the following error appears when you call an API: "Express Edition will continue to be enforced."
 
 ## Running setup on existing installations
 
@@ -72,13 +84,9 @@ After installation completes, software can be found at the following paths:
 
 <a name="how-to-install"></a>
 
-## How to install
+## Install on Red Hat or CentOS
 
-The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
-
-Activation is a separate step. If you forget to activate, the server works, but the following error appears when you call an API: "Express Edition will continue to be enforced."
-
-### Red Hat and CentOS 6/7
+Follow these instructions for Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS 6/7.
 
 1. Install as root: `sudo su`
 
@@ -95,7 +103,13 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 6. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
-### Ubuntu 14.04 - 16.04
+7. List installed packages as a verification step: `rpm -qa | grep microsoft` 
+
+8. Once you have a package name, you can obtain verbose version information: `$ rpm -qi microsoft-mlserver-packages-r-9.2.1`
+
+## Install on Ubuntu 
+
+Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04 - 16.04 only).
 
 1. Install as root: `sudo su`
 
@@ -116,8 +130,29 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 8. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`     
 
+9. List installed packages as a verification step: `apt list --installed | grep microsoft`  
 
-### SUSE (SLES11 only)
+10. Once you have a package name, you can obtain verbose version information: `$ dpkg --status microsoft-mlserver-packages-r-9.2.1`  
+
+Output on Ubuntu is as follows:
+
+   ```
+    Package: microsoft-mlserver-packages-r-9.2.1
+    Status: install ok installed
+    Priority: optional
+    Section: devel
+    Installed-Size: 195249
+    Maintainer: revobuil@microsoft.com
+    Architecture: amd64
+    Version: 9.2.1.1287
+    Depends: microsoft-r-open-mro-3.4.1, microsoft-r-open-mkl-3.4.1, microsoft-r-open-foreachiterators-3.4.1
+    Description: Microsoft Machine Learning Server
+	  . . .
+   ```
+
+## Install on SUSE
+
+Follow these instructions for Machine Learning Server for Linux on SUSE (SLES11 only).
 
 1. Install as root: `sudo su`
 
@@ -139,36 +174,9 @@ Activation is a separate step. If you forget to activate, the server works, but 
 
 10. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
 
+11. List installed packages as a verification step: `zypper se microsoft`
 
-## Connect and validate
-
-1. List installed packages:
-
-  + On CentOS and RHEL: `rpm -qa | grep microsoft` 
-  + On Ubuntu: `apt list --installed | grep microsoft`  
-  + On SLES11: `zypper se microsoft`
-
-2. Once you have a package name, you can obtain verbose version information. For example:
-
-   + On CentOS and RHEL: `$ rpm -qi microsoft-mlserver-packages-r-9.2.1`
-   + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.2.1`  
-   + On SLES: `zypper info microsoft-mlserver-packages-r-9.2.1`
-
-Output on Ubuntu is as follows:
-
-   ```
-    Package: microsoft-mlserver-packages-r-9.2.1
-    Status: install ok installed
-    Priority: optional
-    Section: devel
-    Installed-Size: 195249
-    Maintainer: revobuil@microsoft.com
-    Architecture: amd64
-    Version: 9.2.1.1287
-    Depends: microsoft-r-open-mro-3.4.1, microsoft-r-open-mkl-3.4.1, microsoft-r-open-foreachiterators-3.4.1
-    Description: Microsoft Machine Learning Server
-	  . . .
-   ```
+12. Once you have a package name, you can obtain verbose version information: `zypper info microsoft-mlserver-packages-r-9.2.1`
 
 ### Start Revo64
 
@@ -261,6 +269,9 @@ To quit the program, type `quit()` at the command line with no arguments.
 To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
 
 To configure the server, use the [Administrator Utility](../operationalize/configure-use-admin-utility.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
+
+> [!Note]
+> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, remote compute context is not available for HadoopMR.
 
 ## What's installed
 
