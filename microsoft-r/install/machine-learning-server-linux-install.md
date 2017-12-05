@@ -48,7 +48,7 @@ This article covers the following items:
 
 ## Licensing
 
-In development environments, you can install the free developer edition of Machine Learning Server. On production servers, the enterprise edition of Machine Learning Server for Linux is licensed by the core as a SQL Server enterprise feature. For example, if your server has 4 cores, you need two 2-core packs of SQL Server Enterprise. For more information, start with the [SQL Server pricing page](https://www.microsoft.com/sql-server/sql-server-2017-pricing).
+In development environments, you can install the free developer edition of Machine Learning Server. On production servers, the enterprise edition of Machine Learning Server for Linux is licensed by the core as a SQL Server enterprise feature. For example, if your server has 4 cores, you would need two 2-core packs of SQL Server Enterprise. For more information, start with the [SQL Server pricing page](https://www.microsoft.com/sql-server/sql-server-2017-pricing).
 
 > [!Note]
 > When you purchase an enterprise license of Machine Learning Server for Linux, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (10 nodes for each core licensed under enterprise licensing).
@@ -181,7 +181,7 @@ Follow these instructions for Machine Learning Server for Linux on SUSE (SLES11 
 
 12. Once you have a package name, you can obtain verbose version information: `zypper info microsoft-mlserver-packages-r-9.2.1`
 
-### Start Revo64
+## Start Revo64
 
 As another verification step, run the **Revo64** program. By default, **Revo64** is installed in the /usr/bin directory, available to any user who can log in to the machine:
 
@@ -224,7 +224,7 @@ As another verification step, run the **Revo64** program. By default, **Revo64**
 
 To quit the program, type `q()` at the command line with no arguments.
 
-### Start Python
+## Start Python
 
 1. From Home or any other user directory:
 

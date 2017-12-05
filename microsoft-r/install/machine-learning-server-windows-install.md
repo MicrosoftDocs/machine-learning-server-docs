@@ -46,7 +46,7 @@ Setup also downloads Microsoft R Open 3.4.1 (if you add R) and Anaconda 4.2 with
 
 ## Licensing
 
-In development environments, you can install the free developer edition of Machine Learning Server. On production servers, the enterprise edition of Machine Learning Server for Windows is licensed by the core as a SQL Server enterprise feature. For example, if your server has 4 cores, you need two 2-core packs of SQL Server Enterprise. For more information, start with the [SQL Server pricing page](https://www.microsoft.com/sql-server/sql-server-2017-pricing).
+In development environments, you can install the free developer edition of Machine Learning Server. On production servers, the enterprise edition of Machine Learning Server for Windows is licensed by the core as a SQL Server enterprise feature. For example, if your server has 4 cores, you would need two 2-core packs of SQL Server Enterprise. For more information, start with the [SQL Server pricing page](https://www.microsoft.com/sql-server/sql-server-2017-pricing).
 
 > [!Note]
 > When you purchase an enterprise license of Machine Learning Server for Windows, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (10 nodes for each core licensed under enterprise licensing).
