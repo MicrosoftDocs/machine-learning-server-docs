@@ -36,9 +36,6 @@ This article covers the following items:
 - Installation steps
 - An inventory of what's installed
 
-> [!Note]
-> Python support is new and there are a few limitations in remote computing scenarios. 1) Remote execution is not supported on Windows or Linux. 2) Remote compute contexts must be Spark or SQL Server. In computing that is local to the machine, there are no limitations.
-
 ## System and setup requirements
 
 + Operating system must be a [supported version of 64-bit Linux](r-server-install-supported-platforms.md).
@@ -74,9 +71,9 @@ The package manager downloads packages from the [packages.microsoft.com](https:/
 
 Activation is a separate step *not* performed by the package manager. If you forget to activate, the server works, but the following error appears when you call an API: "Express Edition will continue to be enforced."
 
-## Running setup on existing installations
+## Upgrade existing installations
 
-The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.2.1`. However, if R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
+Setup performs an in-place upgrade on an existing installation. Although the installation path is new (`/opt/microsoft/mlserver/9.2.1`), when R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and upgrades it to the new version. 
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
@@ -270,14 +267,17 @@ To quit the program, type `q()` at the command line with no arguments.
 
 To quit the program, type `quit()` at the command line with no arguments.
 
-## Enable server to host analytic web services and accept remote connections
+## Enable web service deployment and remote connections
 
-To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
+When you [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization), you gain the following benefits:
+
++ [Deploy Python and R script as a web service](../operationalize/concept-what-are-web-services.md) 
++ [Connect to a remote R server for code execution](../r/how-to-execute-code-remotely.md). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) or other Machine Learning Server nodes on your network. 
 
 To configure the server, use the [Administrator Utility](../operationalize/configure-use-admin-utility.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
 
 > [!Note]
-> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, remote compute context is not available for HadoopMR.
+> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, [remote compute context](../r/concept-what-is-compute-context.md) is not available for HadoopMR. 
 
 ## What's installed
 

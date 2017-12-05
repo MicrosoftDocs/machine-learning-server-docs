@@ -164,12 +164,15 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable web service deployment and remote connections
 
-To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
+When you [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization), you gain the following benefits:
+
++ [Deploy Python and R script as a web service](../operationalize/concept-what-are-web-services.md) 
++ [Connect to a remote R server for code execution](../r/how-to-execute-code-remotely.md). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) or other Machine Learning Server nodes on your network. 
 
 To configure the server, use the [Administrator Utility](../operationalize/configure-use-admin-utility.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
 
 > [!Note]
-> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, remote compute context is not available for HadoopMR. 
+> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, [remote compute context](../r/concept-what-is-compute-context.md) is not available for HadoopMR. 
 
 ## What's installed
 
