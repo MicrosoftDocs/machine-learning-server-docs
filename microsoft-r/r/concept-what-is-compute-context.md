@@ -29,7 +29,7 @@ In Machine Learning Server, a *compute context* refers to the location of the co
 
 The primary reason for shifting compute context is to eliminate data transfer over your network, bringing computations to where the data resides. This is particularly relevant for big data platforms like Hadoop, where data is distributed over multiple nodes, or for data sets that are simply too large for a client workstation.
 
-## Compare "local" and "remote"
+## Compare "local" to "remote"
 
 | Context | Usage |
 |---------|----------|
@@ -40,13 +40,13 @@ The primary reason for shifting compute context is to eliminate data transfer ov
 
 Although similarly named, remote execution is distinct from a remote compute context. 
 
-| Concept | Applies to | Usage | Configuration |
+| Concept | Language | Usage | Configuration |
 |---------|------------|-------|---------------|
 | Remote compute context | R and Python | Data-centric. Script or code that runs in a remote compute context can include functions from our proprietary libraries: **RevoScaleR (R)**, **MicrosoftML (R)**, **revoscalepy (Python)**, and **microsoftml (Python)**.  | None required. If you have server or client installs at the same functional level, you can write script that shifts the compute context. |
 | Remote execution | R only | Machine-centric, using two or more Machine Learning Server instances interchangeably, or shifting execution from R Client to a more powerful Machine Learning Server on Windows or Linux. Remote execution is data and library agnostic: you can call functions from any library, including base R and third-party vendors. | An operationalization feature, enabled as a post-installation task. For more information, see [remote execution](how-to-execute-code-remotely.md). |
 
 
-## (Python) revoscalepy: compute contexts & data sources
+## Compute contexts & data sources for revoscalepy
 
 Remote computing is available for specific data sources on selected platforms. The following tables document the supported combinations for revoscalepy.
 
@@ -55,16 +55,6 @@ Context name | Alias | Usage |
 | [`RxLocalSeq`](../python-reference/revoscalepy/rxlocalseq.md)   | local  | All server and client configurations support a local compute context. |
 | [`RxInSqlServer`](../python-reference/revoscalepy/rxinsqlserver.md) | sqlserver | Remote compute context. Target server is a single database node (SQL Server 2017 Machine Learning with Python support). Computation is parallel, but not distributed.| 
 | [`rx-spark-connect`](../python-reference/revoscalepy/rx-spark-connect.md) | spark | Remote compute context. Target is a Spark 2.0-2.1 cluster over Hadoop Distributed File System (HDFS). |
-
-
-
-
-Context name | Alias | Usage | Supported data sources |
--------------|-------|-------|------------------------|
-| [`RxLocalSeq`](../python-reference/revoscalepy/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. | <br>[`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)</br><br>[`RxXdfData`](../python-reference/revoscalepy/rxxdfdata.md)</br><br>[`RxHiveData`](../python-reference/revoscalepy/rxhivedata.md)</br><br>[`RxParquetData`](../python-reference/revoscalepy/rxparquetdata.md)</br><br>[`RxOrcData`](../python-reference/revoscalepy/rxorcdata.md) </br><br>[`RxSparkDataFrame`](../python-reference/revoscalepy/rxsparkdataframe.md)</br><br>[`RxOdbcData`](../python-reference/revoscalepy/rxodbcdata.md) </br><br>[`RxSqlServerData`](../python-reference/revoscalepy/rxsqlserverdata.md)</br>
-| [`RxInSqlServer`](../python-reference/revoscalepy/rxinsqlserver.md)   | sqlserver | Use for a remote compute context where the target server is a single database node (SQL Server 2017 Machine Learning with Python support). Computation is parallel, but not distributed.| <br>[`RxOdbcData`](../python-reference/revoscalepy/rxodbcdata.md) </br><br>[`RxSqlServerData`](../python-reference/revoscalepy/rxsqlserverdata.md)</br> |
-| [`rx-spark-connect`](../python-reference/revoscalepy/rx-spark-connect.md)         | spark     | Use for a remote compute context where the target is a Spark 2.0-2.1 cluster over Hadoop Distributed File System (HDFS). | <br>[`RxTextData`](../python-reference/revoscalepy/rxtextdata.md)</br><br>[`RxXdfData`](../python-reference/revoscalepy/rxxdfdata.md)</br><br>[`RxHiveData`](../python-reference/revoscalepy/rxhivedata.md)</br><br>[`RxParquetData`](../python-reference/revoscalepy/rxparquetdata.md)</br><br>[`RxOrcData`](../python-reference/revoscalepy/rxorcdata.md) </br><br>[`RxSparkDataFrame`](../python-reference/revoscalepy/rxsparkdataframe.md)</br><br>[`RxOdbcData`](../python-reference/revoscalepy/rxodbcdata.md) </br> |
-
 
 ### Data sources per compute context
 
@@ -81,18 +71,18 @@ Given a compute context, the following table shows which data sources are availa
 | [`RxOdbcData`](../python-reference/revoscalepy/rxodbcdata.md) | X |  X | X  |
 | [`RxSqlServerData`](../python-reference/revoscalepy/rxsqlserverdata.md) | X |   |  X |
 
-## (R) RevoScaleR: compute contexts & data sources
+## Compute contexts & data sources for RevoScaleR
 
 Remote computing is available for specific data sources on selected platforms. The following tables document the supported combinations.
 
 Context name | Alias | Usage |
 -----------|--------------------|-----------------------|
-[RxLocalSeq](../r-reference/revoscaler/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. |
-[RxSpark](../r-reference/revoscaler/rxspark.md)         | spark     | Remote compute context. Target is a Spark cluster on Hadoop. |
-[RxHadoopMR](../r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | Remote compute context. Target is Hadoop MapReduce.|
-[RxInSqlServer](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | Remote compute context. Target server is a single database node (SQL Server 2016 R Services or SQL Server 2017 Machine Learning Services). Computation is parallel, but not distributed. |
-[RxLocalParallel](../r-reference/revoscaler/rxlocalparallel.md) |localpar | Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. You can use compute context for manual distributed computing. | 
-[RxForeachDoPar](../r-reference/revoscaler/rxforeachdopar.md) | dopar | Use for manual distributed computing. |
+[`RxLocalSeq`](../r-reference/revoscaler/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. |
+[`RxSpark`](../r-reference/revoscaler/rxspark.md)         | spark     | Remote compute context. Target is a Spark cluster on Hadoop. |
+[`RxHadoopMR`](../r-reference/revoscaler/rxhadoopmr.md)      | hadoopmr  | Remote compute context. Target is Hadoop MapReduce.|
+[`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | Remote compute context. Target server is a single database node (SQL Server 2016 R Services or SQL Server 2017 Machine Learning Services). Computation is parallel, but not distributed. |
+[`RxLocalParallel`](../r-reference/revoscaler/rxlocalparallel.md) |localpar | Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. You can use compute context for manual distributed computing. | 
+[`RxForeachDoPar`](../r-reference/revoscaler/rxforeachdopar.md) | dopar | Use for manual distributed computing. |
 
 ### Data sources per compute context
 
@@ -113,7 +103,7 @@ Given a compute context, the following table shows which data sources are availa
 > [!Note]
 > Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [How to use RevoScaleR on Hadoop](how-to-revoscaler-hadoop.md). 
 
-## When to switch a compute context
+## When to switch context
 
 The primary use case for switching the compute context is to bring calculations and analysis to the data itself. As such, the use cases for a remote compute context leverage database platforms, such as SQL Server, or data located on the Hadoop Distributed File System (HDFS) using Spark or MapReduce for processing layer.
 
@@ -122,7 +112,7 @@ Use case | Description |
 Client to Server| Write and run script locally in R Client, pushing specific computations to a remote Machine Learning Server instance. You can shift calculations to systems with more powerful processing capabilities or database assets.|
 Server to Server | Push platform-specific computations to a server on a different platform. Supported platforms include SQL Server,  Hadoop (Spark or MapReduce). You can implement a distributed processing architecture: RxLocalSeq, RxSpark, RxInSqlServer. |
 
-## Compute context and distributed computing
+## Context and distributed computing
 
 Many analytical functions in **RevoScaleR**, **revoscalepy**, and **MicrosoftML** can execute in parallel. On a multi-core computer, such functions run multi-threaded. On a distributed platform like Hadoop, the functions distribute workload execution to all available cores and nodes. This capability translates into high-performance computing for predictive and statistical analysis of big data, and is a major motivation for pushing a compute context to a remote Hadoop cluster.
 
