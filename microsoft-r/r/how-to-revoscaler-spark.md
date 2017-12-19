@@ -25,22 +25,20 @@ ms.technology: "r-server"
 
 # How to use RevoScaleR in a Spark compute context
 
-This article provides a step-by-step introduction to using the [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md) in Apache Spark (Spark) running on a Hadoop cluster. 
-
-This walkthrough introduces several high-performance analytics features of **RevoScaleR** using data stored on HDFS and these tasks:
+This article provides a step-by-step introduction to using the [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md) in Apache Spark running on a Hadoop cluster. You can use a small built-in sample dataset to complete the walkthrough, and then step through tasks again using a larger dataset.
 
 > [!div class="checklist"]
 > * Download sample data
-> * Start Revo64.
-> * Create a compute context for Spark.
-> * Copy a data set into HDFS.
-> * Create a data source.
-> * Summarize your data.
-> * Fit a linear model to the data.
+> * Start Revo64
+> * Create a compute context for Spark
+> * Copy a data set into HDFS
+> * Create a data source
+> * Summarize your data
+> * Fit a linear model to the data
 
 ## Fundamentals
 
-In a Spark cluster, you typically connect to Machine Learning Server on the edge node for most of your work, writing and running script in a local [compute context](concept-what-is-compute-context.md), using client tools and the RevoScaleR engine on that machine. Your script calls the RevoScaleR functions to execute scalable and high-performance data management, analysis, and visualization functions. As with any script using RevoScaleR, you can call base R functions and other functions available in packages you have installed separately. The RevoScaleR engine is built on the R interpreter, extending but not breaking any core functions you are accustomed to using.
+In a Spark cluster, you typically connect to Machine Learning Server on the edge node for most of your work, writing and running script in a local [compute context](concept-what-is-compute-context.md), using client tools and the RevoScaleR engine on that machine. Your script calls the RevoScaleR functions to execute scalable and high-performance data management, analysis, and visualization functions. As with any script using RevoScaleR, you can call base R functions, as well as other functions available in packages you have installed separately. The RevoScaleR engine is built on the R interpreter, extending but not breaking any core functions you are accustomed to using.
 
 To load data and run analyses on worker nodes, you set the compute context in your script to [RxSpark](../r-reference/revoscaler/rxSpark.md). In this context, RevoScaleR functions automatically distribute the workload across all the worker nodes, with no built-in requirement for managing jobs or the queue.
 
