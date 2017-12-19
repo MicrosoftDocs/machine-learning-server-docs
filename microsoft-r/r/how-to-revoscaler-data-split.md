@@ -29,7 +29,7 @@ This article explains how to split a dataset in two for training and testing a m
 
 ## Functions for splitting datasets
 
-R developers, use [rxSplit (RevoScaleR)](../r-reference/revoscaler/rxsplitxdf.md). The following example is from [Run R code in R Client and Machine Learning Server](../python/quickstart-run-r-code.md) quickstart.
+R developers, use [rxSplit (RevoScaleR)](../r-reference/revoscaler/rxsplitxdf.md). The following example is from [Run R code in R Client and Machine Learning Server](quickstart-run-r-code.md) quickstart.
 
 ```R
 #Randomly split data (80% for training, 20% for testing).
