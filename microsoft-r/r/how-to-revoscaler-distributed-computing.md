@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Distributed and parallel execution for high-performance computing (Machine Learning Server) "
-description: "High performance computing (HPC) for distributed computing using SQL Server in-database and Hadoop clusters computing RevoScaleR package for r and revoscalepy for Python."
+title: "Distributed and parallel execution for high-performance computing (Machine Learning Server)"
+description: "High performance computing (HPC) for distributed workloads using SQL Server in-database and Hadoop clusters computing RevoScaleR package for R and revoscalepy for Python."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/09/2017"
+manager: "cgronlun"
+ms.date: "12/19/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -25,9 +25,9 @@ ms.technology: "r-server"
 
 # Distributed and parallel computing in Machine Learning Server
 
-*Distributed computing*, sometimes referred to as *high-performance computing* or *high-performance analysis*, is the breakdown of a complicated computation into component parts, while maintaining a framework that allows for the results of those independent computations to be pulled together to create the final result. 
+Machine Learning Server's computing engine is built for distributed and parallel computing, automatically partitioning a workload across multiple nodes in a cluster, or on the available threads on multi-core machine. Access to the engine is through functions in our properietary packages: [RevoScaleR for R](), [revoscalepy for Python](), and machine learning algorithms in [MicrosoftML (R)]() and [microsoftml (Python)](), respsectively.  
 
-The RevoScaleR and revoscalepy function libraries, which are designed to process large data one chunk at a time, can also process each chunk of data independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are farmed out to nodes in the cluster, executing on the node provided the data.
+Both RevoScaleR and revoscalepy function libraries are designed to process large data one chunk at a time, independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are farmed out to nodes in the cluster, executing on the node providing the data.
 
 ## Functions for distributed computations
 
@@ -41,7 +41,7 @@ On a single server with multiple cores, many jobs can run in parallel, assuming 
 
 On a distributed platform, you might write script that runs locally on one node, such as an edge node in a Hadoop cluster, but shift execution to data nodes for bigger jobs. For example, you might use the local compute context on an edge node to prepare data or set up variables, and then shift to an `RxSpark` context to run data analysis on data nodes. In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific data source along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
 
-## Distributed computing with RevoScaleR
+## Distributed analysis
 
 RevoScaleR provides two main approaches for distributed computing: master node and `rxExec`. 
 
