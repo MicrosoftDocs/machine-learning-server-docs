@@ -278,6 +278,7 @@ The resulting output is:
 	Adjusted R-squared: 0.001858
 	F-statistic: 181.8 on 6 and 582621 DF,  p-value: < 2.2e-16
 
+
 ## More Spark scenarios
 
 ### Use Machine Learning Server as a Hadoop Client
@@ -585,6 +586,31 @@ We then import the data using rxImport:
 	         numRows = numRowsToRead )
 
 
+### Write to CSV in HDFS
+
+If you [converted your CSV to XDF](#importingDataAsCompositeXdfFiles) to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. 
+
+To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory is created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
+
+Suppose we want to write out a folder of CSV in HDFS from our airData composite XDF after we performed the logistic regression and prediction, so that the new CSV files contain the predicted values and residuals. We can do this as follows:
+
+	airDataCsvDir <- file.path("user/RevoShare/user/airDataCsv")
+	airDataCsvDS <- RxTextData(airDataCsvDir,fileSystem=hdfsFS)
+	rxDataStep(inData=airData, outFile=airDataCsvDS)
+
+You notice that the *rxDataStep* wrote out one CSV for every .xdfd file in the input composite XDF file. This is the default behavior for writing CSV from composite XDF to HDFS when the compute context is set to RxSpark.
+
+Alternatively, you could switch your compute context back to “local” when you are done performing your analyses and take advantage of two arguments within *RxTextData* that give you slightly more control when writing out CSV files to HDFS: *createFileSet* and *rowsPerOutFile*. When *createFileSet* is set to TRUE a folder of CSV files is written to the directory you specify. When *createFileSet* is set to FALSE a single CSV file is written. The second argument, *rowsPerOutFile*, can be set to an integer to indicate how many rows to write to each CSV file when *createFileSet* is TRUE. Returning to the example above, suppose we wanted to write out a folder of CSVs but we wanted to write out the airData but into only six CSV files.
+
+	rxSetComputeContext("local")
+	airDataCsvRowsDir <-file.path("/user/RevoShare/MRS/airDataCsvRows")
+	rxHadoopMakeDir(airDataCsvRowsDir)
+	airDataCsvRowsDS <- RxTextData(airDataCsvRowsDir, fileSystem=hdfsFS, createFileSet=TRUE, 	rowsPerOutFile=1000000)
+	rxDataStep(inData=airData, outFile=airDataCsvRowsDS)
+
+
+When using an RxSpark compute context, createFileSet defaults to TRUE and rowsPerOutFile has no effect. Thus if you wish to create a single CSV or customize the number of rows per file you must perform the rxDataStep in a local compute context (data can still be in HDFS).
+
 ### Estimate a linear model using composite XDF files
 
 Now we can re-estimate the same linear model, using the new, faster data source:
@@ -630,6 +656,31 @@ You should see the following results (which should match the results we found fo
 	Adjusted R-squared: 0.001826
 	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16
 	Condition number: 1
+
+### Write to CSV in HDFS
+
+If you [converted your CSV to XDF](#importingDataAsCompositeXdfFiles) to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. 
+
+To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory is created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
+
+Suppose we want to write out a folder of CSV in HDFS from our airData composite XDF after we performed the logistic regression and prediction, so that the new CSV files contain the predicted values and residuals. We can do this as follows:
+
+	airDataCsvDir <- file.path("user/RevoShare/user/airDataCsv")
+	airDataCsvDS <- RxTextData(airDataCsvDir,fileSystem=hdfsFS)
+	rxDataStep(inData=airData, outFile=airDataCsvDS)
+
+You notice that the *rxDataStep* wrote out one CSV for every .xdfd file in the input composite XDF file. This is the default behavior for writing CSV from composite XDF to HDFS when the compute context is set to RxSpark.
+
+Alternatively, you could switch your compute context back to “local” when you are done performing your analyses and take advantage of two arguments within *RxTextData* that give you slightly more control when writing out CSV files to HDFS: *createFileSet* and *rowsPerOutFile*. When *createFileSet* is set to TRUE a folder of CSV files is written to the directory you specify. When *createFileSet* is set to FALSE a single CSV file is written. The second argument, *rowsPerOutFile*, can be set to an integer to indicate how many rows to write to each CSV file when *createFileSet* is TRUE. Returning to the example above, suppose we wanted to write out a folder of CSVs but we wanted to write out the airData but into only six CSV files.
+
+	rxSetComputeContext("local")
+	airDataCsvRowsDir <-file.path("/user/RevoShare/MRS/airDataCsvRows")
+	rxHadoopMakeDir(airDataCsvRowsDir)
+	airDataCsvRowsDS <- RxTextData(airDataCsvRowsDir, fileSystem=hdfsFS, createFileSet=TRUE, 	rowsPerOutFile=1000000)
+	rxDataStep(inData=airData, outFile=airDataCsvRowsDS)
+
+
+When using an RxSpark compute context, createFileSet defaults to TRUE and rowsPerOutFile has no effect. Thus if you wish to create a single CSV or customize the number of rows per file you must perform the rxDataStep in a local compute context (data can still be in HDFS).
 
 ### Handling larger linear models
 
@@ -725,79 +776,7 @@ To create or modify data in HDFS on Hadoop, we can use the *rxDataStep* function
 
 To modify an existing composite XDF using *rxDataStep* set the *overwrite* argument to *TRUE* and either omit the *outFile* argument or set it to the same data source specified for *inData*.
 
-### Using Data from Hive for Your Analyses
-
-There are multiple ways to access and use data from Hive for analyses with RevoScaleR. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
-
-1. If running from a remote client or edge node, and the data is modest, then use RxOdbcData to stream results, or land them as XDF in the local file system, for subsequent analysis in a local compute context.
-2. If the data is large, then use the Hive command-line interface (hive or beeline) from an edge node to run the Hive query with results spooled to a text file on HDFS for subsequent analysis in a distributed fashion using the HadoopMR or Spark compute contexts.
-
-Here’s how to get started with each of these approaches.
-
-#### Accessing data via ODBC
-
-Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from Machine Learning Server is just like accessing data from any other data source.
-
-	mySQL = "SELECT * FROM CustData"
-	myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
-	xdfFile <- RxXdfData("dataFromHive.xdf")
-	rxImport(myDS, xdfFile, stringsAsFactors = TRUE, overwrite=TRUE)
-
-#### Accessing data via an Export to Text Files
-
-This approach uses the Hive command-line interface to first spool the results to text files in the local or HDFS file systems and then analyze them in a distributed fashion using local or HadoopMR/Spark compute contexts.
-
-First, check with your Hadoop system administrator find out whether the ‘hive’ or ‘beeline’ command should be used to run a Hive query from the command line, and obtain the needed credentials for access.
-
-Next, try out your hive/beeline command from the Linux command line to make sure it works and that you have the proper authentication and syntax.
-
-Finally, run the command from within R using R’s system command.
-
-Here are some sample R statements that output a Hive query to the local and HDFS file systems:
-
-**Run a Hive query and dump results to a local text file (edge node)**
-
-	system('hive –e "select * from emp" > myFile.txt')
-
-**Run the same query using beeline’s csv2 output format**
-
-	system('beeline -u "jdbc:hive2://.." --outputformat=csv2 -e "select * from emp" > myFile.txt')
-
-**Run the same query but dump the results to CSV in HDFS**
-
-	system('beeline -u "jdbc:hive2://.." –e "insert overwrite directory \'/your-hadoop-dir\' row format delimited fields terminated by \',\' select * from emp"')
-
-After you’ve exported the query results to a text file, it can be streamed directly as input to a RevoScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
-
-	hiveOut <-file.path(bigDataDirRoot,"myHiveData")
-	myHiveData <- RxTextData(file = hiveOut, fileSystem = hdfsFS)
-
-	rxSummary(~var1 + var2+ var3+ var4, data=myHiveData)
-
-### Writing to CSV in HDFS
-
-If you [converted your CSV to XDF](#importingDataAsCompositeXdfFiles) to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory is created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
-
-Suppose we want to write out a folder of CSV in HDFS from our airData composite XDF after we performed the logistic regression and prediction, so that the new CSV files contain the predicted values and residuals. We can do this as follows:
-
-	airDataCsvDir <- file.path("user/RevoShare/user/airDataCsv")
-	airDataCsvDS <- RxTextData(airDataCsvDir,fileSystem=hdfsFS)
-	rxDataStep(inData=airData, outFile=airDataCsvDS)
-
-You notice that the *rxDataStep* wrote out one CSV for every .xdfd file in the input composite XDF file. This is the default behavior for writing CSV from composite XDF to HDFS when the compute context is set to RxSpark.
-
-Alternatively, you could switch your compute context back to “local” when you are done performing your analyses and take advantage of two arguments within *RxTextData* that give you slightly more control when writing out CSV files to HDFS: *createFileSet* and *rowsPerOutFile*. When *createFileSet* is set to TRUE a folder of CSV files is written to the directory you specify. When *createFileSet* is set to FALSE a single CSV file is written. The second argument, *rowsPerOutFile*, can be set to an integer to indicate how many rows to write to each CSV file when *createFileSet* is TRUE. Returning to the example above, suppose we wanted to write out a folder of CSVs but we wanted to write out the airData but into only six CSV files.
-
-	rxSetComputeContext("local")
-	airDataCsvRowsDir <-file.path("/user/RevoShare/MRS/airDataCsvRows")
-	rxHadoopMakeDir(airDataCsvRowsDir)
-	airDataCsvRowsDS <- RxTextData(airDataCsvRowsDir, fileSystem=hdfsFS, createFileSet=TRUE, 	rowsPerOutFile=1000000)
-	rxDataStep(inData=airData, outFile=airDataCsvRowsDS)
-
-
-When using an RxSpark compute context, createFileSet defaults to TRUE and rowsPerOutFile has no effect. Thus if you wish to create a single CSV or customize the number of rows per file you must perform the rxDataStep in a local compute context (data can still be in HDFS).
-
-## Parallel Partial Decision Forests
+### Parallel Partial Decision Forests
 
 As mentioned earlier, both *rxDForest* and *rxBTrees* are available on Hadoop--these provide two different methods for fitting classification and regression decision forests. In the default case, both algorithms generate multiple stages in the Spark job, and thus can tend to incur significant overhead, particularly with smaller data sets. However, the *scheduleOnce* argument to both functions allows the computation to be performed via *rxExec*, which generates only a single stage in the Spark job, and thus incurs significantly less overhead. When using the *scheduleOnce* argument, you can specify the number of trees to be grown within each *rxExec* task using the forest function’s *nTree* argument together with *rxExec’s* *rxElemArgs* function, as in the following regression example using the built-in claims data:
 
@@ -832,6 +811,56 @@ Equivalently, you can use nTree together with rxExec’s timesToRun argument:
 In this example, using *scheduleOnce* can be up to 45 times faster than the default, and so we recommend it for decision forests with small to moderate-sized data sets.
 
 Similarly, the *rxPredict* methods for *rxDForest* and *rxBTrees* objects include the *scheduleOnce* argument, and should be used when using these methods on small to moderate-sized data sets.
+
+## Using Hive data 
+
+There are multiple ways to access and use data from Hive for analyses with RevoScaleR. Here are some general recommendations, assuming in each case that the data for analysis is defined by the results of a Hive query.
+
+1. If running from a remote client or edge node, and the data is modest, then use RxOdbcData to stream results, or land them as XDF in the local file system, for subsequent analysis in a local compute context.
+2. If the data is large, then use the Hive command-line interface (hive or beeline) from an edge node to run the Hive query with results spooled to a text file on HDFS for subsequent analysis in a distributed fashion using the HadoopMR or Spark compute contexts.
+
+Here’s how to get started with each of these approaches.
+
+#### Accessing Hive data via ODBC
+
+Start by following your Hadoop vendor’s recommendations for accessing Hive via ODBC from a remote client or edge node. Once you have the prerequisite software installed and have run a smoke test to verify connectivity, then accessing data in Hive from Machine Learning Server is just like accessing data from any other data source.
+
+	mySQL = "SELECT * FROM CustData"
+	myDS <- RxOdbcData(sqlQuery = mySQL, connectionString = "DSN=HiveODBC")
+	xdfFile <- RxXdfData("dataFromHive.xdf")
+	rxImport(myDS, xdfFile, stringsAsFactors = TRUE, overwrite=TRUE)
+
+#### Accessing Hive data via an Export to Text Files
+
+This approach uses the Hive command-line interface to first spool the results to text files in the local or HDFS file systems and then analyze them in a distributed fashion using local or HadoopMR/Spark compute contexts.
+
+First, check with your Hadoop system administrator find out whether the ‘hive’ or ‘beeline’ command should be used to run a Hive query from the command line, and obtain the needed credentials for access.
+
+Next, try out your hive/beeline command from the Linux command line to make sure it works and that you have the proper authentication and syntax.
+
+Finally, run the command from within R using R’s system command.
+
+Here are some sample R statements that output a Hive query to the local and HDFS file systems:
+
+**Run a Hive query and dump results to a local text file (edge node)**
+
+	system('hive –e "select * from emp" > myFile.txt')
+
+**Run the same query using beeline’s csv2 output format**
+
+	system('beeline -u "jdbc:hive2://.." --outputformat=csv2 -e "select * from emp" > myFile.txt')
+
+**Run the same query but dump the results to CSV in HDFS**
+
+	system('beeline -u "jdbc:hive2://.." –e "insert overwrite directory \'/your-hadoop-dir\' row format delimited fields terminated by \',\' select * from emp"')
+
+After you’ve exported the query results to a text file, it can be streamed directly as input to a RevoScaleR analysis routine via use of the RxTextdata data source, or imported to XDF for improved performance upon repeated access.  Here’s an example assuming output was spooled as text to HDFS:
+
+	hiveOut <-file.path(bigDataDirRoot,"myHiveData")
+	myHiveData <- RxTextData(file = hiveOut, fileSystem = hdfsFS)
+
+	rxSummary(~var1 + var2+ var3+ var4, data=myHiveData)
+
 
 ## Clean up Data
 

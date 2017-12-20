@@ -25,42 +25,70 @@ ms.technology: "r-server"
 
 # Distributed and parallel computing in Machine Learning Server
 
-Machine Learning Server's computing engine is built for distributed and parallel computing, automatically partitioning a workload across multiple nodes in a cluster, or on the available threads on multi-core machine. Access to the engine is through functions in our properietary packages: [RevoScaleR for R](../r-reference/revoscaler/revoscaler.md), [revoscalepy for Python](../python-reference/revoscalepy/revoscalepy-package.md), and machine learning algorithms in [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) and [microsoftml (Python)](../python-reference/microsoftml/microsoftml-package.md), respsectively.  
+Machine Learning Server's computational engine is built for distributed and parallel processing, automatically partitioning a workload across multiple nodes in a cluster, or on the available threads on multi-core machine. Access to the engine is through functions in our properietary packages: [RevoScaleR (R)](../r-reference/revoscaler/revoscaler.md), [revoscalepy (Python)](../python-reference/revoscalepy/revoscalepy-package.md), and machine learning algorithms in [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) and [microsoftml (Python)](../python-reference/microsoftml/microsoftml-package.md), respectively.  
 
-Both RevoScaleR and revoscalepy function libraries are designed to process large data one chunk at a time, independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are farmed out to nodes in the cluster, executing on the node providing the data.
+RevoScaleR and revoscalepy provide data structures and data operations used in downstream analyses and predictions. Both libraries are designed to process large data one chunk at a time, independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are farmed out to nodes in the cluster, executing on the node providing the data.
 
-## Architecture supporting workload distribution
+## Architectures supporting workload distribution
 
-Distributed computing is conceptually similar to parallel computing, but in Machine Learning Server, it specifically refers to workload distribution across multiple physical servers. Distributed platforms provide the following: a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. 
- 
-On a single server with multiple cores, many jobs can run in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. To inform the engine of platform capabilities, your script should include an object called a [compute context](concept-what-is-compute-context.md) that identifies the platform.
+On a single server with multiple cores, jobs run in parallel, assuming the workload can be divided into smaller pieces and executed on multiple threads. 
 
-On a distributed platform, you might write script that runs locally on one node, such as an edge node in a Hadoop cluster, but shift execution to data nodes for bigger jobs. For example, you might use the local compute context on an edge node to prepare data or set up variables, and then shift to an `RxSpark` context to run data analysis on data nodes. In practice, because some distributed platforms have specialized data handling requirements, you may also have to specify a context-specific data source along with the compute context, but the bulk of your analysis scripts can then proceed with no further changes.
+On a distributed platform like Hadoop, you might write script that runs locally on one node, such as an edge node in the cluster, but shift execution to worker nodes for bigger jobs. When executed on a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revoscalepy and RevoScaleR automatically use all available cores on all nodes in a cluster.  
+
+Distributed and parallel processing is revo-managed, where the engine assigns a job to an available computing resource (a node in cluster, or a thread on a multi-core machine), thereby becoming the logical master node for that job. The master node is responsible for the following operations:
+
+1. Distributes the computation to itself and the other computing resources
+2. Gathers the results of the independent, parallel computations
+3. Finalizes and returns the results
+
+To shift execution to the worker nodes in a cluster, you have to set the [compute context](concept-what-is-compute-context.md) to the platform. For example, you might use the local compute context on an edge node to prepare data or set up variables, and then shift context  to RxSpark or RxHadoopMR to run data analysis on worker nodes. 
+
+Shifting to a Spark or HadoopMR compute context comes with a list of supported data sources for that platform. Assuming the data inputs you want to analyze are supported in a Spark or Hadoop compute context, your scripts for distributed analysis can include any of the functions noted in this article. For a list of supported data sources by compute context, see [Compute context for script execution in Machine Learning Server](concept-what-is-compute-context.md).
+
+> [!Note]
+> Distributed computing is conceptually similar to parallel computing, but in Machine Learning Server, it specifically refers to workload distribution across multiple physical servers. Distributed platforms contribute the following infrastructure used for managing the entire operation: a job scheduler for allocating jobs, data nodes to run the jobs, and a master node for tracking the work and coordinating the results. In practical terms, you can think of distributed computing as a capability provided by [Machine Learning Server for Hadoop and Spark](../install/machine-learning-server-hadoop-install.md).
+
+## Functions for multi-threaded data operations
+
+Import, merge, and step transformations are multi-threaded on a parallel architecture.
+
+| RevoScaleR (R) | revoscalepy (Python) |
+|----------------|----------------------|
+| [RxImport](../r-reference/revoscaler/rximport.md) | [rx-import](../python-reference/revoscalepy/rx-import.md) | 
+| [RxDataStep](../r-reference/revoscaler/rxdatastep.md) | [rx-data-step](../python-reference/revoscalepy/rx-data-step.md) | 
+| [RxMerge](../r-reference/revoscaler/rxmerge.md) | [rx-merge](../python-reference/revoscalepy/rx-merge.md) |
 
 ## Functions for distributed analysis
 
-When executed on a distributed platform like Spark over Hadoop Distributed File System (HDFS), both revoscalepy and RevoScaleR automatically use the available nodes in a cluster. Both provide two main approaches for distributed computing: master-worker approach and [rxExec](../r-reference/revoscaler/rxexec.md). 
+The following analytical functions execute in parallel, with the results unified as a single response in the return object:
 
-The master-worker approach is revo-managed, where the engine assigns a job to an available computing resource (a node in cluster, or a thread on a multi-core machine), thereby becoming the master node for that job. The master node distributes the computation to itself and the other computing resources; gathers the results of the independent, parallel computations; and finalizes and returns the results. If you also specified an RxSpark or RxHadoop compute context, the computing resources are worker nodes in the cluster.
+| RevoScaleR (R) | revoscalepy (Python) |
+|----------------|----------------------|
+| [rxSummary](../r-reference/revoscaler/rxsummary.md) | [rx-summary](../python-reference/revoscalepy/rx-summary.md) |
+| [rxLinMod](../r-reference/revoscaler/rxlinmode.md) | [rx-lin-mod](../python-reference/revoscalepy/rx-lin-mod.md) |
+| [rxLogit](../r-reference/revoscaler/rxlogit.md) | [rx-logit](../python-reference/revoscalepy/rx-logit.md) |
+| [rxGlm](../r-reference/revoscaler/rxglm.md) | not available |
+| [rxCovCor](../r-reference/revoscaler/rxglm.md) | not available |
+| [rxCube](../r-reference/revoscaler/rxcube.md) | not available |
+| [rxCrossTabs](../r-reference/revoscaler/rxcrosstabs.md) | not available |
+| [rxKmeans](../r-reference/revoscaler/rxkmeans.md) | not available |
+| [rxDTree](../r-reference/revoscaler/rxdtree.md) | [rx-dtree](../python-reference/revoscalepy/rx-dtree.md) |
+| [rxDForest](../r-reference/revoscaler/rxdforest.md) | [rx-dforest](../python-reference/revoscalepy/rx-dforest.md) |
+| [rxBTrees](../r-reference/revoscaler/rxbtrees.md) | [rx-btrees](../python-reference/revoscalepy/rx-btrees.md) |
+| [rxNaiveBayes](../r-reference/revoscaler/rxnaivebayes.md) | not available |
 
-You can call any of the following RevoScaleR analysis functions and have the computation proceed in parallel and return the answer to you:
+> [!Tip]
+> For examples and practical tips on working with high-performance analytical functions, see [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md).
 
-- `rxSummary`
-- `rxLinMod`
-- `rxLogit`
-- `rxGlm`
-- `rxCovCor` (and its convenience functions, `rxCov`, `rxCor`, and `rxSSCP`)
-- `rxCube` and `rxCrossTabs`
-- `rxKmeans`
-- `rxDTree`
-- `rxDForest`
-- `rxBTrees`
-- `rxNaiveBayes`
+## User-defined distributed analysis
 
-The [rxExec](../r-reference/revoscaler/rxexec.md) approach allows you to run arbitrary R functions in a distributed fashion, using available nodes (computers) or available cores (the maximum of which is the sum over all available nodes of the processing cores on each node). When using `rxExec`, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. 
+An alternative approach is to use the [rxExec (R)](../r-reference/revoscaler/rxexec.md) or [rx-exec (Python)](../python-reference/revoscalepy/rx-exec.md)function, which can run arbitrary R functions in a distributed fashion on available cores, and all available nodes in a cluster. You can create new functions or call existing functions in sequence, packaged as a single execution perfromed by rxExec.
+
+When using rxExec, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. 
 
 ## See also
 
++ [Running distributed analyses using RevoScaleR](how-to-revoscaler-distributed-computing-distributed-analysis.md)
 + [Compute context](concept-what-is-compute-context.md) 
 + [What is RevoScaleR](concept-what-is-revoscaler.md) 
 
