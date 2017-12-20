@@ -6,7 +6,7 @@ description: "Understand the relationship and interaction between Machine Learni
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "09/09/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
