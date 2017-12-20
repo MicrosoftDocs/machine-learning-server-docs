@@ -39,6 +39,12 @@ RevoScaleR provides enhanced capabilities to many elements of the open source R 
 
 Data scientists and developers can include RevoScaleR functions in custom script or solutions that run locally against R Client or remotely on Machine Learning Server. Solutions leveraging RevoScaleR functions will run wherever the RevoScaleR engine is installed.
 
+Analyzing data using RevoScaleR functions requires three distinct pieces of information:
+
+1. Where the computations should take place (the compute context)
+2. Which data to use (the data source)
+3. What analysis to perform (the analysis function)
+
 A common workflow is to write the initial code or script against a subset of data on a local computer, change the compute context to specify a large set of data on a big data platform, and then operationalize the solution by deploying it to the target environment, thus making it accessible to users.
 
 At a high level, RevoScaleR functions are grouped as follows:

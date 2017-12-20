@@ -286,6 +286,8 @@
           href: r/how-to-revoscaler-data-transform.md
         - name: Sort data
           href: r/how-to-revoscaler-data-sort.md
+        - name: Split data
+          href: r/how-to-revoscaler-data-split.md
         - name: Merge data
           href: r/scaler-data-merge.md
       - name: Summarization
@@ -296,7 +298,7 @@
           href: r/how-to-revoscaler-crosstabs.md
       - name: Visualization
         href: r/how-to-revoscaler-visualize-huge-data-sets.md
-      - name: Modeling
+      - name: Data modeling
         href: r/how-to-revoscaler-models.md
         items:
         - name: Linear regression
