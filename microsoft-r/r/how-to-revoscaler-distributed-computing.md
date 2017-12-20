@@ -56,7 +56,7 @@ Import, merge, and step transformations are multi-threaded on a parallel archite
 |----------------|----------------------|
 | [RxImport](../r-reference/revoscaler/rximport.md) | [rx-import](../python-reference/revoscalepy/rx-import.md) | 
 | [RxDataStep](../r-reference/revoscaler/rxdatastep.md) | [rx-data-step](../python-reference/revoscalepy/rx-data-step.md) | 
-| [RxMerge](../r-reference/revoscaler/rxmerge.md) | [rx-merge](../python-reference/revoscalepy/rx-merge.md) |
+| [RxMerge](../r-reference/revoscaler/rxmergexdf.md) | not available |
 
 ## Functions for distributed analysis
 
@@ -65,7 +65,7 @@ The following analytical functions execute in parallel, with the results unified
 | RevoScaleR (R) | revoscalepy (Python) |
 |----------------|----------------------|
 | [rxSummary](../r-reference/revoscaler/rxsummary.md) | [rx-summary](../python-reference/revoscalepy/rx-summary.md) |
-| [rxLinMod](../r-reference/revoscaler/rxlinmode.md) | [rx-lin-mod](../python-reference/revoscalepy/rx-lin-mod.md) |
+| [rxLinMod](../r-reference/revoscaler/rxlinmod.md) | [rx-lin-mod](../python-reference/revoscalepy/rx-lin-mod.md) |
 | [rxLogit](../r-reference/revoscaler/rxlogit.md) | [rx-logit](../python-reference/revoscalepy/rx-logit.md) |
 | [rxGlm](../r-reference/revoscaler/rxglm.md) | not available |
 | [rxCovCor](../r-reference/revoscaler/rxglm.md) | not available |

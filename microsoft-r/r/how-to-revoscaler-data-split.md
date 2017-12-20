@@ -61,11 +61,9 @@ print("# of rows in test set = ",bc_test.size)
 
 <a name="managing-distributed-data"></a>
 
-## Distributed datasets on HDFS
+## Create a distributed dataset on HDFS with rxSplit 
 
-In HDFS, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. On this system, we recommend *composite* .xdf files, which are specialized files designed to be managed by HDFS. For more information, see [Import HDFS > Write a composite XDF](how-to-revoscaler-data-hdfs.md#write-a-composite-xdf).
-
-### Create data files with rxSplit  
+In HDFS, the data is distributed automatically, typically to a subset of the nodes, and the computations are also distributed to the nodes containing the required data. To work with data on HDFS, we recommend *composite* .xdf files, which are specialized files designed to be managed by HDFS. For more information, see [Import HDFS > Write a composite XDF](how-to-revoscaler-data-hdfs.md#write-a-composite-xdf).
 
 For some computations, such as those involving distributed prediction, it is most efficient to perform the computations on a distributed data set, one in which each node sees only the data it is supposed to work on. You can split an .xdf file into portions suitable for distribution using the function *rxSplit*. For example, to split the large airline data into five files for distribution on a five node cluster, you could use *rxSplit* as follows:
 
@@ -89,7 +87,7 @@ The splitBy argument specifies whether to split your data file row-by-row or blo
 
 The *rxSplit* function works in the local compute context only; once you’ve split the file you need to distribute the resulting files to the individual nodes using the techniques of the previous sections. You should then specify a compute context with the flag *dataDistType* set to *"split"*. Once you have done this, HPA functions such as *rxLinMod* will know to split their computations according to the data on each node.
 
-### Data Analysis with Split Data
+## Data Analysis with Split Data on HDFS
 
 To use split data in your distributed data analysis, the first step is generally to split the data using rxSplit, which as we have seen is a local operation. So the next step is then to copy the split data to your cluster nodes. 
 
@@ -157,7 +155,7 @@ We can then perform an rxLogit model to classify flights as “Late” as follow
 	                          transformVars = c( "ArrDelay" ),
 	                          transformFunc=computeLate, verbose=1 )
 
-### Distributed Prediction
+## Distributed Predictions on HDFS
 
 You can predict (or score) from a fitted model in a distributed context, but in this case, your data *must* be split. For example, if we fit our distributed linear model with *covCoef=TRUE* (and *cube=FALSE*), we can compute standard errors for the predicted values:
 
@@ -172,7 +170,7 @@ You can predict (or score) from a fitted model in a distributed context, but in 
 
 The output data is also split, in this case holding fitted values, residuals, and standard errors for the predicted values.
 
-### Creating Split Training and Test Data Sets
+## Split Training and Test Datasets on HDFS
 
 One common technique for validating models is to break the data to be analyzed into training and test subsamples, then fit the model using the training data and score it by predicting on the test data. Once you have split your original data set onto your cluster nodes, you can split the data on the individual nodes by calling rxSplit again within a call to rxExec. If you specify the RNGseed argument to rxExec (see [Parallel Random Number Generation](how-to-revoscaler-distributed-computing-parallel-jobs.md#parallel-random-number-generation)), the split becomes reproducible:
 
@@ -197,7 +195,7 @@ The result is two new data files, airlineData.testSplitVar.Train.xdf and airline
 > The `blocksPerRead` argument is ignored if script runs locally using R Client.
 >
 
-### Performing Data Operations on Each Node
+## Perform Data Operations on Each Node
 
 To create or modify data on each node, use the data manipulation functions within rxExec. For example, suppose that after looking at the airline data we decide to create a “cleaner” version of it by keeping only the flights where: there is information on the arrival delay,  the flight did not depart more than one hour early, and the actual and scheduled flight time is positive. We can put a call to *rxDataStep* (and any other code we want processed) into a function to be processed on each node via *rxExec*:
 
@@ -215,6 +213,4 @@ To create or modify data on each node, use the data manipulation functions withi
 ## See also
 
  [Machine Learning Server](../what-is-machine-learning-server.md) 
- [Install Machine Learning Server on Windows](../install/machine-learning-server-windows-install.md)  
- [Install Machine Learning Server on Linux](../install/machine-learning-server-linux-install.md)  
  [Install Machine Learning Server on Hadoop](../install/machine-learning-server-hadoop-install.md)
