@@ -128,7 +128,7 @@ This article walks through some R code you can use to predict whether a flight w
 
 
 #Step 2: Pre-process Data
-#Prepare for a merge by renaming some colum in the weather data.
+#Prepare for a merge by renaming some columns in the weather data.
     newVarInfo <- list(
       AdjustedMonth = list(newName = "Month"),
       AdjustedDay = list(newName = "DayofMonth"),

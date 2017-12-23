@@ -454,6 +454,7 @@ The function `lapply` can be used to apply the same function to each component o
 > You will regularly use lists and functions that manipulate them when handling input and output for your big data analyses.  
 
 <a name="ExploreScaleRFunctions"></a>
+
 ## Expore RevoScaleR Functions
 
 The **RevoScaleR** package, included in Machine Learning Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. When you start the R console application on a computer that has Machine Learning Server or R Client, the RevoScaleR function library is loaded automatically.

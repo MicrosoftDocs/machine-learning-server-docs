@@ -115,7 +115,7 @@ The following release notes apply to Microsoft R Client, which can be downloaded
 + New enhanced Microsoft R Client [Getting Started](what-is-microsoft-r-client.md) guide
 + A new 'version check' and auto-update is now possible using CheckForUpdates() in your R Console 
 + [Offline installations](what-is-microsoft-r-client.md#installrclient) are now possible for R Client
-+ New packages now bundled with Microsoft R Client (and Microsoft R Open):
++ New packages now bundled with Microsoft R Client:
   + `mrsdeploy` - adds remote execution and web service deployment from R Client 3.3.2 to a remote R Server 9.0.1 instance
   + `MicrosoftML` - adds machine learning algorithms to R script that executes on either R Client or R Server
   + `olapR`- adds MDX query support through connections to OLAP cubes on a SQL Server 2016 Analysis Services instance
