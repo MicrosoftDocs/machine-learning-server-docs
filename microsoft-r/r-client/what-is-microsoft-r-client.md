@@ -31,8 +31,7 @@ R Client allows you to work with production data locally using the full set of S
 
 You can offload heavy processing to Machine Learning Server or test your analytics during their development. You by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
 
-<div align=center><iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
- 
+<iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player"  width="600" height="400"  allowFullScreen frameBorder="0"></iframe> 
 
 ## Machine Learning Server vs R Client
 
@@ -43,14 +42,11 @@ You can work with R Client standalone. You can also use it with Machine Learning
 ## Get started with R Client
 
 Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get started:
-<br>
-<div align=center>
-<a href="#installrclient" title="Click Step 1"><img src="./media/what-is-microsoft-r-client/Step1.png" width=200 /></a>&nbsp;&nbsp;
-<a href="#configure-ide" title="Click Step 2"><img src="./media/what-is-microsoft-r-client/Step2.png" width=200  /></a>&nbsp;&nbsp;
-<a href="#try-r-client" title="Click Step 3"><img src="./media/what-is-microsoft-r-client/Step3.png" width=200  /></a>&nbsp;&nbsp;
-</div>
 
-<br><a name="installrclient"></a>
+![Step 1](./media/
+what-is-microsoft-r-client/Step1.png)
+
+<a name="installrclient"></a>
 
 ### 1. Install R Client 
 
@@ -62,7 +58,7 @@ The first step is to download Microsoft R Client for your operating system and i
 
 + [Compatibility with Machine Learning Server & R Server](compatibility-with-server.md)
 
-<br><a name="configure-ide"></a>
+<a name="configure-ide"></a>
 
 ### 2. Configure Your IDE
 
@@ -77,7 +73,7 @@ After you configure the IDE, a message appears in the console signaling that the
 >[!IMPORTANT]
 >You can connect remotely from your local IDE to an Machine Learning Server instance using [functions from the mrsdeploy package](../r/how-to-execute-code-remotely.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [Machine Learning Server administrator must configure Machine Learning Server](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) for this functionality.
 
-<br><a name="try-r-client"></a>
+<a name="try-r-client"></a>
 
 ### 3. Try Out R Client
 
