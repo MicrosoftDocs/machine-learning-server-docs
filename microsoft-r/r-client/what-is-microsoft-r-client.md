@@ -31,7 +31,7 @@ R Client allows you to work with production data locally using the full set of S
 
 You can offload heavy processing to Machine Learning Server or test your analytics during their development. You by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
 
-<iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player"  allowFullScreen frameBorder="0"></iframe> 
+<iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player"  width="600" height="400"  allowFullScreen frameBorder="0"></iframe> 
 
 ## Machine Learning Server vs R Client
 
