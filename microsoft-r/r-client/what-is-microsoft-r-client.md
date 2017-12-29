@@ -50,7 +50,7 @@ Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get
 ![Step 1](./media/
 what-is-microsoft-r-client/Step1.png)
 
-<br><a name="installrclient"></a>
+<a name="installrclient"></a>
 
 ### 1. Install R Client 
 
@@ -62,7 +62,7 @@ The first step is to download Microsoft R Client for your operating system and i
 
 + [Compatibility with Machine Learning Server & R Server](compatibility-with-server.md)
 
-<br><a name="configure-ide"></a>
+<a name="configure-ide"></a>
 
 ### 2. Configure Your IDE
 
@@ -77,7 +77,7 @@ After you configure the IDE, a message appears in the console signaling that the
 >[!IMPORTANT]
 >You can connect remotely from your local IDE to an Machine Learning Server instance using [functions from the mrsdeploy package](../r/how-to-execute-code-remotely.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [Machine Learning Server administrator must configure Machine Learning Server](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) for this functionality.
 
-<br><a name="try-r-client"></a>
+<a name="try-r-client"></a>
 
 ### 3. Try Out R Client
 
