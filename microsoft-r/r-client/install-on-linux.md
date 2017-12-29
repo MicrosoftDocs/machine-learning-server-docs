@@ -110,7 +110,7 @@ apt-get update
 apt-get install microsoft-r-client-packages-3.4.1
 
 # List the packages
-ls /opt/microsoft/r-client/
+ls /opt/microsoft/rclient/
 ```     
 
 **Red Hat and CentOS 6/7**
