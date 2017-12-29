@@ -35,7 +35,7 @@ You can offload heavy processing to Machine Learning Server or test your analyti
 <iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>
 </div>
 
-<iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player" width="100%" height="100%"  allowFullScreen frameBorder="0"></iframe> 
+<iframe src="https://channel9.msdn.com/blogs/MicrosoftR/Microsoft-Introduces-new-free-Microsoft-R-Client/player"  allowFullScreen frameBorder="0"></iframe> 
 
 ## Machine Learning Server vs R Client
 
