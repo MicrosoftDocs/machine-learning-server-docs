@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # How to summarize data using RevoScaleR
 
-Summary statistics can help you understand the characteristics and shape of an unfamiliar data set. In [RevoScaleR](../r-reference/revoscaler/revoscaler.md), you can use the [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfoxdf.md) function to learn more about variables in the data set, and [rxSummary](../r-reference/revoscaler/rxsummary.md) for statistical measures, a count of observations, and the number of missing values (if any).
+Summary statistics can help you understand the characteristics and shape of an unfamiliar data set. In [RevoScaleR](../r-reference/revoscaler/revoscaler.md), you can use the [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfoxdf.md) function to learn more about variables in the data set, and [rxSummary](../r-reference/revoscaler/rxsummary.md) for statistical measures. The rxSummary function also provides a count of observations, and the number of missing values (if any).
 
 This article teaches by example, using built-in sample data sets so that you can practice each skill. It covers the following tasks:
 
@@ -35,7 +35,7 @@ This article teaches by example, using built-in sample data sets so that you can
 > * Compute summary statistics for factor variables
 > * Create temporary factor variables used in computations
 > * Compute summary statistics on a row subset
-> * In-flight data transformations
+> * Execute in-flight data transformations
 > * Compute and plot a Lorenz curve
 > * Tips for wide data sets
 
@@ -512,7 +512,7 @@ When looking for correlation between variables the function [rxCrosstabs](../r-r
 
 ## See also
 
-+ [Tutorial: Data import and exploration using RevoScaleR](tutorial-revolscaler-data-import-transform.md)
-+ [Tutorial: Transform and subset data using RevoScaleR](tutorial-revolscaler-data-model-analysis.md)
++ [Tutorial: Data import and exploration using RevoScaleR](tutorial-revoscaler-data-import-transform.md)
++ [Tutorial: Transform and subset data using RevoScaleR](tutorial-revoscaler-data-model-analysis.md)
 + [Sample data for RevoScaleR and revoscalepy](sample-built-in-data.md)
 + [Importing text data in Machine Learning Server](how-to-revoscaler-data-import.md)
