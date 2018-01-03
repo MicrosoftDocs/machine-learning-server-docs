@@ -6,8 +6,8 @@ description: "High level guide to using foreach and iterators packages."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "12/19/2016"
+manager: "cgronlun"
+ms.date: "01/03/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,27 +23,31 @@ ms.technology: "r-server"
 
 ---
 
-# Parallelizing Loops
+# Using foreach and iterators for manual parallel execution
 
-One common approach to parallelization is to see if the iterations
-within a loop can be performed independently, and if so, then try to run
+Although RevoScaleR performs parallel execution automatically, you can manage parallel execution yourself using the open-source [foreach package](https://CRAN.R-project.org/package=foreach). This package provides a looping structure for R script. When you need to loop through repeated operations, and you have multiple processors or nodes to work with, you can use **foreach** in your script to execute a forloop in parallel. 
+Developed by Microsoft, foreach is an open source package that is bundled with Machine Learning Server but is also available on the Comprehensive R Archive Network, CRAN.  
+
+> [!Tip]
+> One common approach to parallelization is to see if the iterations
+within a loop can be performed independently, and if so, you can try to run
 the iterations concurrently rather than sequentially.
 
-## Using `foreach`
+## About the foreach package
 
-The `foreach` package is a set of tools that allow you to run virtually
+The foreach package is a set of tools that allow you to run virtually
 anything that can be expressed as a for-loop as a set of parallel tasks.
 One scenario is to run multiple simulations in
 parallel. As a simple example, consider the case of simulating 10000
 coin flips, which can be done by sampling with replacement from the
 vector `c(H, T)`. To run this simulation 10 times sequentially, use
-`foreach` with the `%do%` operator:
+foreach with the `%do%` operator:
 
     > library(foreach)
     > foreach(i=1:10) %do% sample(c("H", "T"), 10000, replace=TRUE)
 
-Comparing the `foreach` output with that of a similar `for` loop shows
-one obvious difference: `foreach` returns a list containing the value
+Comparing the foreach output with that of a similar `for` loop shows
+one obvious difference: foreach returns a list containing the value
 returned by each computation. A `for` loop, by contrast, returns only
 the value of its last computation, and relies on user-defined side
 effects to do its work.
@@ -59,34 +63,34 @@ However, if we run this example, we see the following warning:
     executing %dopar% sequentially: no parallel backend registered
 
 To actually run in parallel, we need to have a “parallel backend” for
-`foreach`. Parallel backends are discussed in the next section.
+foreach. Parallel backends are discussed in the next section.
 
 ## Parallel Backends
 
-In order for loops coded with `foreach` to run in parallel, you must
+In order for loops coded with foreach to run in parallel, you must
 register a parallel backend to manage the execution of the loop. Any
 type of mechanism for running code in parallel could potentially have a
 parallel backend written for it. Currently, Machine Learning Server
-includes the `doParallel` backend; this uses the `parallel` package of R
+includes the **doParallel** backend; this uses the **parallel** package of R
 2.14.0 or later to run jobs in parallel, using either of the component
 parallelization methods incorporated into the parallel package:
 SNOW-like functionality using socket connections, or multicore-like
 functionality using forking (on Linux only).
 
-The `doParallel` package is a parallel backend for `foreach` that is
+The doParallel package is a parallel backend for foreach that is
 intended for parallel processing on a single computer with multiple
 cores or processors.
 
 Additional parallel backends are available from CRAN:
 
--   `doMPI` for use with the Rmpi package
+-   **doMPI** for use with the Rmpi package
 
--   `doRedis` for use with the rredis package
+-   **doRedis** for use with the rredis package
 
--   `doMC` provides access to the multicore functionality of the
+-   **doMC** provides access to the multicore functionality of the
     parallel package
 
--   `doSNOW` for use with the now superseded SNOW package.
+-   **doSNOW** for use with the now superseded SNOW package.
 
 To use a parallel backend, you must first register it. Once a parallel
 backend is registered, calls to `%dopar%` run in parallel using the
@@ -94,7 +98,7 @@ mechanisms provided by the parallel backend. However, the details of
 registering the parallel backends differ, so we consider them
 separately.
 
-### Using the `doParallel` parallel backend
+### Using the doParallel parallel backend
 
 The parallel package of R 2.14.0 and later combines elements of snow and
 multicore; doParallel similarly combines elements of both doSNOW and
@@ -107,7 +111,7 @@ cluster and register it:
     > registerDoParallel(cl)
 
 Once you’ve registered the parallel backend, you’re ready to run
-`foreach` code in parallel. For example, to see how long it takes to run
+foreac` code in parallel. For example, to see how long it takes to run
 10,000 bootstrap iterations in parallel on all available cores, you can
 run the following code:
 
@@ -124,8 +128,8 @@ run the following code:
 
 ### Getting information about the parallel backend
 
-To find out how many workers `foreach` is going to use, you can use the
-`getDoParWorkers` function:
+To find out how many workers foreach is going to use, you can use the
+getDoParWorkers function:
 
     > getDoParWorkers()
 
@@ -144,12 +148,12 @@ backend:
     > getDoParName()
     > getDoParVersion()
 
-## Nesting Calls to `foreach`
+## Nesting Calls to foreach
 
 
-An important feature of `foreach` is nesting operator `%:%`. Like the
+An important feature of foreach is nesting operator `%:%`. Like the
 `%do%` and `%dopar%` operators, it is a binary operator, but it operates
-on two `foreach` objects. It also returns a `foreach` object, which is
+on two foreach objects. It also returns a foreach object, which is
 essentially a special merger of its operands.
 
 Let’s say that we want to perform a Monte Carlo simulation using a
@@ -177,7 +181,7 @@ create one of the proper size called `x`, and assign the return value of
 `sim` to the appropriate element of `x` each time through the inner
 loop.
 
-When using `foreach`, we don’t create a matrix and assign values into
+When using foreach, we don’t create a matrix and assign values into
 it. Instead, the inner loop returns the columns of the result matrix as
 vectors, which are combined in the outer loop into a matrix. Here’s how
 to do that using the `%:%` operator:
@@ -190,8 +194,8 @@ to do that using the `%:%` operator:
     x
 
 This is structured very much like the nested `for` loop. The outer
-`foreach` is iterating over the values in “bvec”, passing them to the
-inner `foreach`, which iterates over the values in “avec” for each value
+foreach is iterating over the values in “bvec”, passing them to the
+inner foreach, which iterates over the values in “avec” for each value
 of “bvec”. Thus, the “sim” function is called in the same way in both
 cases. The code is slightly cleaner in this version, and has the
 advantage of being easily parallelized.
@@ -217,9 +221,9 @@ correctly, depending on which iteration of the inner loop they came
 from.
 
 That is exactly what the `%:%` operator does: it turns multiple
-`foreach` loops into a single loop. That is why there is only one `%do%`
+**foreach** loops into a single loop. That is why there is only one `%do%`
 operator in the example above. And when we parallelize that nested
-`foreach` loop by changing the `%do%` into a `%dopar%`, we are creating
+**foreach** loop by changing the `%do%` into a `%dopar%`, we are creating
 a single stream of tasks that can all be executed in parallel:
 
     x <-
@@ -232,12 +236,12 @@ a single stream of tasks that can all be executed in parallel:
 Of course, we’ll actually only run as many tasks in parallel as we have
 processors, but the parallel backend takes care of all that. The point
 is that the `%:%` operator makes it easy to specify the stream of tasks
-to be executed, and the `.combine` argument to `foreach` allows us to
+to be executed, and the `.combine` argument to **foreach** allows us to
 specify how the results should be processed. The backend handles
 executing the tasks in parallel.
 
-For more on nested `foreach` calls, see the vignette “Nesting `foreach`
-Loops” in the `foreach` package.
+For more on nested **foreach** calls, see the vignette “Nesting **foreach**
+Loops” in the **foreach** package.
 
 ## Using Iterators
 
@@ -281,7 +285,7 @@ can be an endless source of values:
     > nextElem(ifun)
     [1] 3 4 2 2
 
-For practical applications, iterators can be paired with `foreach` to
+For practical applications, iterators can be paired with **foreach** to
 obtain parallel results quite easily:
 
     > x <- matrix(rnorm(1000000), ncol=1000)
@@ -308,7 +312,7 @@ iterators which draw their values from uniform, binomial, and Poisson
 distributions, respectively. (These functions use the standard R
 distribution functions to generate random numbers, and these are not
 necessarily useful in a distributed or parallel environment. When using
-random numbers with `foreach`, we recommend using the doRNG package to
+random numbers with **foreach**, we recommend using the doRNG package to
 ensure independent random number streams on each worker.)
 
 We can then use these functions just as we used `irnorm`:
@@ -345,12 +349,12 @@ meaning that you can iterate over them. The `iterators` package defines
 `iter` methods for vectors, lists, matrices, and data frames, making
 those objects iterables. By defining an `iter` method for iterators,
 they can be used in the same context as an iterable, which can be
-convenient. For example, the `foreach` function takes iterables as
+convenient. For example, the **foreach** function takes iterables as
 arguments. It calls the `iter` method on those arguments in order to
 create iterators for them. By defining the `iter` method for all
-iterators, we can pass iterators to `foreach` that we created using any
+iterators, we can pass iterators to **foreach** that we created using any
 method we choose. Thus, we can pass vectors, lists, or iterators to
-`foreach`, and they are all processed by `foreach` in exactly the same
+**foreach**, and they are all processed by **foreach** in exactly the same
 way.
 
 The `iterators` package comes with an `iter` method defined for the
@@ -358,7 +362,7 @@ The `iterators` package comes with an `iter` method defined for the
 needed for an iterator. However, if you want to create an iterator for
 some existing class, you can do that by writing an `iter` method that
 returns an appropriate iterator. That will allow you to pass an instance
-of your class to `foreach`, which will automatically convert it into an
+of your class to **foreach**, which will automatically convert it into an
 iterator. The alternative is to write your own function that takes
 arbitrary arguments, and returns an iterator. You can choose whichever
 method is most natural.
@@ -416,7 +420,7 @@ to return, which can be of any type. Instead, we implement this iterator
 by defining a normal function that returns the iterator.
 
 This iterator is quite simple to implement, and possibly even useful, but exercise caution if you use it.
-Passing it to `foreach` will result in an infinite loop unless you pair it with a
+Passing it to **foreach** will result in an infinite loop unless you pair it with a
 finite iterator. Similarly, never pass this iterator to `as.list` without the
 `n` argument.
 

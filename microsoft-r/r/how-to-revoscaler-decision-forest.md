@@ -148,6 +148,8 @@ Yields the following:
 	  ArrDel15   FALSE TRUE class.error
 	     FALSE 8147274    0           0
 	     TRUE  2037941    0           1
+
+One problem with this model is that it predicts all flights to be on time. As we iterate over this model, we'll remove this limitation.
 	
 Looking at the fitted object’s forest component, we see that a number of the fitted trees do not split at all:
 

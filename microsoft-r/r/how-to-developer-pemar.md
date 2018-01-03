@@ -1,14 +1,14 @@
 ---
 
 # required metadata
-title: "Get started with PemaR functions in Machine Learning Server "
-description: "Getting started with the RevoPemaR package in Machine Learning Server."
+title: "RevoPemaR functions in Machine Learning Server "
+description: "How to use the RevoPemaR package in Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "11/26/2016"
-ms.topic: "get-started-article"
+manager: "cgronlun"
+ms.date: "01/03/2018"
+ms.topic: "article"
 ms.prod: "microsoft-r"
 
 # optional metadata
@@ -23,44 +23,48 @@ ms.technology: "r-server"
 
 ---
 
-# Get started with PemaR function in MMachine Learning Server
+# How to use the RevoPemaR library in Machine Learning Server
 
-## Overview
+The **RevoPemaR** package provides a framework for writing custom parallel external memory algorithms in R, making use of the R reference classes introduced by John Chambers in R 2.12.
 
-This guide is an introduction to using the **RevoPemaR** package to write customized scalable and distributable analytics in R. *PEMA* stands for *P*arallel *E*xternal *M*emory *A*lgorithm. An external memory algorithm is one that does not require all of the data to be in memory at one time; that is, the data can be processed in chunks. Parallel external memory algorithms are those where the chunks of data can be processed in parallel, perhaps on different nodes of a cluster. The results are then combined and processed at the end (or at the end of each iteration). The **RevoPemaR** package provides a framework for writing parallel external memory algorithms in R, making use of the R reference classes introduced by John Chambers in R 2.12.
+Parallel External Memory Algorithms (PEMA) are algorithms that eliminate in-memory data storage requirements, allowing data to be processed in chunks, in parallel, possibly on different nodes of a cluster. The results are then combined and processed at the end (or at the end of each iteration). The **RevoPemaR** package is used for writing custom PEMA algorithms in R. 
 
-The custom PEMA functions created using the **RevoPemaR** framework are appropriate for small and large datasets, but are useful in three common situations: 1) to analyze data sets that are too large to fit in memory, 2) to create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data, and 3) to perform computations distributed over nodes in a cluster,
+The custom PEMA functions created using the **RevoPemaR** framework are appropriate for small and large datasets, but are particularly useful in three common situations: 
 
-The RevoPemaR framework is portable. The goal is to be able to have code written using R on a desktop be deployed using the **RevoScaleR** package on a high-performance platform, such as Hadoop.
+1. To analyze data sets that are too large to fit in memory 
+2. To create scalable data analysis routines that can be developed locally with smaller data sets, then deployed to larger data
+3. To perform computations distributed over nodes in a cluster
 
 ## Installation
 
-The **RevoPemaR** package is included with Microsoft Machine Learning Server and R Client (which also contains the **RevoScaleR** package). The **RevoPemaR** package can also be installed with a standard download of MRO 3.4.1
+The **RevoPemaR** package is included with Microsoft Machine Learning Server and R Client (which also contains the **RevoScaleR** package). 
 
-## Some Tips on R Reference Classes
+The **RevoPemaR** package can also be installed with a standard download of [Microsoft R Open (MRO)](https://mran.microsoft.com/open).
+
+## About R Reference Classes
 
 The PEMA classes used in **RevoPemaR** are based on R Reference Classes. We include a brief overview of some tips for using R Reference Classes here, before moving to the specifics of the PEMA classes.
 
 R Reference Class objects are created using a generator function. This function has four important pieces of information:
 
--   The *name of the class*.
--   The inheritance of the class, that is, the *superclasses* of the class. Fields and methods of parent reference classes are inherited.
--   The *fields* or member variables. These fields are accessed by reference (as in C++ or Java), so values of the fields for an object of this class can change.
--   The *methods* of the class. These are functions that can be invoked by objects of this class, which might change values of the fields.
++ *Name of the class*.
++ Inheritance or *superclasses* of the class. Fields and methods of parent reference classes are inherited.
++ *Fields* or member variables. These fields are accessed by reference (as in C++ or Java), so values of the fields for an object of this class can change.
++ *Methods* that can be invoked by objects of this class.
 
-When working with reference class, here are a few tips to keep in mind:
+When working with reference class, keep these tips in mind:
 
--   Reference class generators are created using *setRefClass*. For the PEMA classes, we use a wrapper for that function, *setPemaClass*.
--   Field values are changed within methods using the non-local assignment operator (*\<\<-*)
--   Methods are documented internally with an initial line of text, rather than in a .Rd file. This information is accessed using the $help method for the generator function.
--   The reference class object can be accessed in the methods using *.self*
--   The parent method can be accessed using *.callSuper*
--   Use the *usingMethods* call to declare that a method is used by another method.
--   The code for a method can be displayed using an instantiated reference class object, for example, *myRefClassObj$initialize*.
++ Reference class generators are created using *setRefClass*. For the PEMA classes, we use a wrapper for that function, *setPemaClass*.
++ Field values are changed within methods using the non-local assignment operator (*\<\<-*)
++ The reference class object can be accessed in the methods using *.self*
++ The parent method can be accessed using *.callSuper*
++ Use the *usingMethods* call to declare that a method is used by another method.
++ The code for a method can be displayed using an instantiated reference class object, for example, *myRefClassObj$initialize*.
++ Methods are documented internally with an initial line of text, rather than in a .Rd file. This information is accessed using the $help method for the generator function.
 
-## A Tutorial Introduction to RevoPemaR
+## Tutorial introduction to RevoPemaR
 
-This section contains an overview of a simple example of estimating the mean of a variable using the **RevoPemaR** framework. The key step is in creating a *PemaMean* reference class generator function that provides the fields and methods for computing the mean using a parallel external memory algorithm. This includes creating methods to compute the sum and number of observations for each chunk of data, to update these “intermediate results”, and at the end to use the intermediate results to compute the mean.
+This section contains an overview of a simple example of estimating the mean of a variable using the **RevoPemaR** framework. The key step is in creating a *PemaMean* reference class generator function that provides the fields and methods for computing the mean using a parallel external memory algorithm. This includes creating methods to compute the sum and number of observations for each chunk of data, to update these intermediate results, and at the end to use the intermediate results to compute the mean.
 
 ### Using setPemaClass to Create a Class Generator
 
