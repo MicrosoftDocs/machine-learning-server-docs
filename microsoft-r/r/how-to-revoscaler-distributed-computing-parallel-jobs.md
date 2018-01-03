@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Parallel computing in Machine Learning Server "
-description: "Machine Learning Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
+title: "Running jobs in parallel using rxExec"
+description: "Run jobs in parallele using the rxExec function in the RevoScaleR library."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "04/02/2017"
+manager: "cgronlun"
+ms.date: "01/03/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,19 +23,26 @@ ms.technology: "r-server"
 
 ---
 
-# Running jobs in parallel using RevoScaleR
+# Running jobs in parallel using rxExec
 
-RevoScaleR function library includes functions that are engineered to work in parallel automatically. Additionally, a special purpose function called `rxExec` can be used to manually construct parallelization. With `rxExec`, you can take an arbitrary function and run it in parallel on your distributed computing resources in Hadoop or Teradata. This in turn allows you to tackle a large variety of parallel computing problems, in particular in the *high-performance computing class*. 
+RevoScaleR function library includes functions that are engineered to work in parallel automatically. However, if you require a custom implementation, you can use [rxExec](~/r-reference/revoscaler/rxexec.md) to manually construct parallelization. With rxExec, you can take an arbitrary function and run it in parallel on your distributed computing resources in Hadoop. This in turn allows you to tackle a large variety of parallel computing problems. 
+
+This article provides comprehensive documentation on how to use rxExec. It starts with examples for a hands on experience using rxExec in a variety of use cases. 
 
 <a name="parallel-computing-with-rxexec"></a>
-## Parallel Computing with rxExec
 
-In this section, you learn how `rxExec` can be used to perform parallel computations. To demonstrate, you use script to simulate a dice-rolling game, determine the probability that any two persons in a given group size share a birthday, create a plot of the Mandelbrot set, and perform naive k-means clustering.
+## Examples using rxExec
 
-In general, the only required arguments to `rxExec` are the function to be run and any required arguments of that function. Additional optional arguments can be used to control the computation.
+To demonstrate rxExec usage, this article provides several examples:
 
->[!IMPORTANT]
-> Before trying the examples, set your compute context to one of the following: `RxLocalParallel`, `RxSpark`, `RxHadoopMR`, or `RxInTeradata` (depending on the compute resources available to you) and be sure that your compute context has the option *wait=TRUE*.
++ Simulate a dice-rolling game
++ Determine the probability that any two persons in a given group size share a birthday
++ Create a plot of the Mandelbrot set
++ Perform naive k-means clustering
+
+In general, the only required arguments to rxExec are the function to be run and any required arguments of that function. Additional optional arguments can be used to control the computation.
+
+Before trying the examples, be sure that your [compute context](how-to-revoscaler-distributed-computing-compute-context.md) is set with the option *wait=TRUE*.
 
 ### Playing Dice: A Simulation
 
@@ -78,7 +85,7 @@ A familiar casino game consists of rolling a pair of dice. If you roll a 7 or 11
 		result
 	}
 
-We will now use `rxExec` to play thousands of games to help determine the probability of a win. Using a Hadoop 5-node cluster, we play the game 10000 times, 2000 times on each node:
+Using rxExec, you can invoke thousands of games to help determine the probability of a win. Using a Hadoop 5-node cluster, we play the game 10000 times, 2000 times on each node:
 
 	z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000)
 	table(unlist(z))
@@ -230,10 +237,9 @@ With our *kMeansRSR* function, we can then repeat the computation from
 
 With our 5-node HPC Server cluster, this reduces the time from a minute and a half to about 15 seconds.
 
-### Sharing Data Efficiently Between Parallel Processes 
+## Share data across parallel rocesses 
 
-Data can be shared between `rxExec` parallel processes by copying it to the environment of each process through the `execObjects` option to `rxExec`, or by specifying the data as arguments to each function call. For small data, this works well but as the data objects get larger this can create a significant performance penalty due to the time needed to do the copy. In such cases, it can be much more efficient to share the data by storing it in a location accessible by each of the parallel processes, such as a local or network file share.  
-
+Data can be shared between rxExec parallel processes by copying it to the environment of each process through the `execObjects` option to rxExec, or by specifying the data as arguments to each function call. For small data, this works well but as the data objects get larger this can create a significant performance penalty due to the time needed to do the copy. In such cases, it can be much more efficient to share the data by storing it in a location accessible by each of the parallel processes, such as a local or network file share.  
 The following example shows how this can be done when parallelizing the computation of statistics on subsets of a larger data table.  
 
 We’ll start by creating some sample data using the **data.table** package.  
@@ -263,7 +269,7 @@ Next we’ll setup for use of the **doParallel** backend.
 	setMKLthreads(1)  
 ~~~~
 
-Now we create a function for computing statistics on a selected subset of the data table by passing in both the data table and the tag value to subset by. We’ll then run the function using `rxExec` for each tag value.
+Now we create a function for computing statistics on a selected subset of the data table by passing in both the data table and the tag value to subset by. We’ll then run the function using rxExec for each tag value.
 
 ~~~~
 	filterTest <- function(d, ztag) {
@@ -276,7 +282,7 @@ Now we create a function for computing statistics on a selected subset of the da
 	##   9.67    7.40   22.05 
 ~~~~
 
-To see the impact of sharing the file via a common storage location rather than passing it to each parallel process we’ll save the data table into an RDS file, which is an efficient way of storing individual R objects, create a new version of the function that reads the data table from the RDS file, and then rerun `rxExec` using the new function. 
+To see the impact of sharing the file via a common storage location rather than passing it to each parallel process we’ll save the data table into an RDS file, which is an efficient way of storing individual R objects, create a new version of the function that reads the data table from the RDS file, and then rerun rxExec using the new function. 
 
 ~~~~
 	saveRDS(test.data, 'c:/temp/tmp.rds', compress=FALSE)
@@ -302,7 +308,8 @@ To see the impact of sharing the file via a common storage location rather than 
 Although results may vary, in this case we’ve reduced the elapsed time by 50% by sharing the data table rather than passing it as an in-memory object to each parallel process.   
 
 <a name="parallel-random-number-generation"></a>
-### Parallel Random Number Generation
+
+## Parallel Random Number Generation
 
 When generating random numbers in parallel computation, a frequent problem is the possibility of highly correlated random number streams. High-quality parallel random number generators avoid this problem. RevoScaleR includes several high-quality parallel random number generators and these can be used with `rxExec `to improve the quality of your parallel simulations.
 
@@ -369,17 +376,17 @@ To verify that we are actually getting uncorrelated streams, we can use runif wi
 	diag(corx) <- 0
 	any(abs(corx)> 0.3)
 
-correlations are above 0.3; in repeated runs of the code, the maximum correlation seldom exceeded 0.1.
+Correlations are above 0.3; in repeated runs of the code, the maximum correlation seldom exceeded 0.1.
 
 Because the MT2203 generator offers such a rich array of substreams, we recommend its use. You can, however, use several other generators, all from Intel’s Vector Statistical Library, a component of the Intel Math Kernel Library. The available generators are as follows: "MCG31", "R250", "MRG32K3A", "MCG59", "MT19937", "MT2203", "SFMT19937" (all of which are pseudo-random number generators that can be used to generate uncorrelated random number streams) plus "SOBOL" and "NIEDERR", which are quasi-random number generators that do not generate uncorrelated random number streams. Detailed descriptions of the available generators can be found in the [Vector Statistical Library Notes](http://software.intel.com/sites/products/documentation/doclib/mkl_sa/11/vslnotes/vslnotes.pdf).
 
-#### A Note on Reproducibility
+### About reproducibility
 
 For distributed compute contexts, rxExec starts the random number streams on a per-worker basis; if there are more tasks than workers, you may not obtain completely reproducible results because different tasks may be performed by randomly chosen workers. If you need completely reproducible results, you can use the taskChunkSize argument to force the number of task *chunks* to be less than or equal to the number of workers—this will ensure that each chunk of tasks is performed on a single random number stream. You can also define a custom function that includes random number generation control within it; this moves the random number control into each task. See the help file for rxRngNewStream for details.
 
-### Working with Results from Non-Blocking Jobs
+## Work with results from non-blocking jobs
 
-So far, all of our examples have required a blocking, or waiting, compute context so that we could make immediate use of the results returned by rxExec. But as we saw in the section on non-blocking jobs, some computations are so time consuming that it is not practical to wait on the results. In such cases, it is probably best to divide your analysis into two or more pieces, one of which can be structured as a non-blocking job, and then use the pending job (or more usefully, the job results, when available) as input to the remaining pieces.
+So far, all of our examples have required a blocking, or waiting, compute context so that we could make immediate use of the results returned by rxExec. However some computations are so time consuming that it is not practical to wait on the results. In such cases, it is probably best to divide your analysis into two or more pieces, one of which can be structured as a non-blocking job, and then use the pending job (or more usefully, the job results, when available) as input to the remaining pieces.
 
 For example, let’s return to the birthday example, and see how to restructure our analysis to use a non-blocking job for the distributed computations. The pbirthday function itself requires no changes, and our variable specifying the number of ntests can be used as is:
 
@@ -457,9 +464,13 @@ Once we see that z’s job status is “finished”, we can run findKmeansBest o
 
 	findKmeansBest(rxGetJobResults(z))
 
-### Calling HPA Functions from rxExec
+## Call RevoScaleR HPA functions with rxExec
 
-To this point, none of the functions we have called with rxExec has been a RevoScaleR function, because our intent has been to show how rxExec can be used to address the large class of traditional high-performance computing problems. However, there is no inherent reason why rxExec cannot be used with RevoScaleR’s HPA functions, and many times it can be useful to do so. For example, if you are running a cluster on which every node has two or more cores, you can use rxExec to start an independent analysis on each node, and each of those analyses can take advantage of the multiple cores on its node. The following simulation simulates data from a Poisson distribution and then fits a generalized linear model to the simulated data:
+To this point, none of the functions we have called with rxExec has been a RevoScaleR function, because the intent has been to show how rxExec can be used to address the large class of traditional high-performance computing problems. 
+
+However, there is no inherent reason why rxExec cannot be used with RevoScaleR’s high performance analysis (HPA) functions, and many times it can be useful to do so. For example, if you are running a cluster on which every node has two or more cores, you can use rxExec to start an independent analysis on each node, and each of those analyses can take advantage of the multiple cores on its node. 
+
+The following simulation simulates data from a Poisson distribution and then fits a generalized linear model to the simulated data:
 
 	"SimAndEstimatePoisson" <- function(nobs, trials)
 	{
@@ -493,7 +504,7 @@ If we call the above function with rxExec on a five-node cluster compute context
 
 It is important to recognize the distinction between running an HPA function with a distributed compute context, and calling an HPA function using rxExec with a distributed compute context. In the former case, we are fitting just one model, using the distributed compute context to farm out portions of the computations, but ultimately returning just one model object. In the latter case, we are calculating one model per task, the tasks being farmed out to the various nodes or cores as desired, and a list of models is returned.
 
-### Using rxExec in the Local Compute Context
+## Use rxExec in the local compute context
 
 By default, if you call `rxExec` in the local compute context, your computation runS sequentially on your local machine. However, you can incorporate parallel computing on your local machine using the special compute context `RxLocalParallel` as follows:
 
@@ -513,7 +524,7 @@ If you are using random numbers in the local parallel context, be aware that `rx
 >[!NOTE]
 > HPA functions are not affected by the `RxLocalParallel` compute context; they run locally and in the usual internally distributed fashion when the `RxLocalParallel` compute context is in effect.
 
-### Using rxExec with foreach Back Ends
+## Use rxExec with foreach back ends
 
 If you do not have access to a Hadoop cluster or enterprise database, but do have access to a cluster via PVM, MPI, socket, or NetWorkSpaces connections or a multicore workstation, you can use `rxExec` with an arbitrary foreach backend (doParallel, doSNOW, doMPI, etc.) Register your parallel backend as usual and then set your RevoScaleR compute context using the special compute context `RxForeachDoPar`:
 
@@ -531,7 +542,7 @@ You then call `rxExec` as usual. The computations are automatically directed to 
 >[!WARNING]
 > HPA functions are not usually affected by the `RxForeachDoPar` compute context; they run locally and in the usual internally distributed fashion when the RxForeachDoPar compute context is in effect. The one exception is when HPA functions are called within `rxExec`; in this case it is possible that the internal threading of the HPA functions can be affected by the launch mechanism of the parallel backend workers. The doMC backend and the multicore-like backend of doParallel both use forking to launch their workers; this is known to be incompatible with the HPA functions.
 
-### Controlling rxExec Computations
+## Control rxExec computations
 
 As we have seen in these examples, there are several arguments to `rxExec` that allow you to fine-tune your `rxExec` commands. Both the birthday example and the Mandelbrot example used the *taskChunkSize* argument to specify how many tasks should go to each worker. The Mandelbrot example also used the *execObjects* argument, which can be used to pass either a character vector or an environment containing objects—the objects specified by the vector or contained in the environment are added to the environment of the function specified in the FUN argument, unless that environment is locked, in which case they are added to the parent frame in which *FUN* is evaluated. (If you use an environment, it should be one you create with *parent=emptyenv();* this allows you to pass only those objects you need to the function’s environment.) These two examples also show the use of *rxElemArg* in passing arguments to the workers. In the kmeans example, we covered the *timesToRun* argument. The *packagesToLoad* argument allows you to specify packages to load on each worker. The *consoleOutput* and *autoCleanup* flags serve the same purpose as their counterparts in the compute context constructor functions—that is, they can be used to specify whether console output should be displayed or the associated task files should be cleaned up on job completion for an individual call to 'rxExec'.
 
@@ -544,3 +555,10 @@ The *continueOnFailure* argument is used to say that a computation should contin
 >[!NOTE]
 > The arguments *elemType*, *consoleOutput*, *autoCleanup*, *continueOnFailure*, and *oncePerElem* are ignored by the special compute contexts 'RxLocalParallel' and 'RxForeachDoPar`.
 
+## Conclusion
+
+This article provides comprehensive documentation on rxExec for writing custom script that executes jobs in parallel. Several use cases were used to show how rxExec is used in context, with additional sections providing guidance on relevant tasks associated with custom execution, such as sharing data, structuring jobs, and controlling calculations. To learn more, see these related links:
+
++ [Distributed and parallel computing in Machine Learning Server](how-to-revoscaler-distributed-computing.md)
++ [Using foreach and iterators for manual parallel execution](how-to-revoscaler-distributed-computing-foreach.md)
++ [Parallel execution using doRSR for script containing RevoScaleR and foreach constructs](how-to-revoscaler-distributed-computing-parallel-foreach.md)

@@ -573,7 +573,7 @@ In SAS, stepwise linear regression is implemented through PROC REG. In open sour
 
 RevoScaleR provides an implementation of stepwise linear regression that is not constrained by the use of "in-memory" algorithms. Stepwise linear regression in RevoScaleR is implemented by the functions *rxLinMod* and *rxStepControl*.
 
-Stepwise linear regression begins with an initial model of some sort. Consider, for example,  the airline training data set AirlineData06to07.xdf we created in section 8.6:
+Stepwise linear regression begins with an initial model of some sort. Consider, for example,  the airline training data set AirlineData06to07.xdf featured in [Fitting Linear Models using RevoScaleR](how-to-revoscaler-linear-model.md):
 
 	#  Stepwise Linear Regression
 
@@ -740,7 +740,7 @@ You can control the significance levels for adding and dropping models using the
 
 By default, the values of the parameters at each step of the stepwise selection are not preserved. Using an additional argument, *keepStepCoefs*, in your *rxStepControl* statement saves the values of the coefficients from each step of the regression. This coefficient data can then be plotted using another function, *rxStepPlot.*
 
-Consider the stepwise linear regression on the iris data from section 8.8.3:
+Consider the stepwise linear regression on the iris data from [Fitting Linear Models using RevoScaleR](how-to-revoscaler-linear-model.md):
 
 	#  
 	# Plottings Model Coefficients at Each Step
@@ -795,7 +795,7 @@ By default, the *rxStepPlot* function uses seven line colors. If the number of p
 
 Fixed-effects models are commonly associated with studies in which multiple observations are recorded for each test subject, for example, yearly observations of median housing price by city, or measurements of tensile strength from samples of steel rods by batch. To fit such a model with rxLinMod, include a factor variable specifying the subject (the cities, or the batch identifier) as the first predictor, and specify *cube=TRUE* to use a partitioned inverse and omit the intercept term.
 
-For example, the MASS library contains the data set *petrol*, which consists of measurements of the yield of a certain refining process with possible predictors including specific gravity, vapor pressure, ASTM 10% point, and volatility measured as the ASTM endpoint for 10 samples of crude oil. Following Venables and Ripley , we first scale the numeric predictors, then fit the fixed-effects model:
+For example, the MASS library contains the data set *petrol*, which consists of measurements of the yield of a certain refining process with possible predictors including specific gravity, vapor pressure, ASTM 10% point, and volatility measured as the ASTM endpoint for 10 samples of crude oil. The following example (reproduced from [Modern Applied Statistics with S](http://www.springer.com/us/book/9780387954578)), first scales the numeric predictors, then fits the fixed-effects model:
 
 	#  Fixed-Effects Models
 
@@ -833,7 +833,7 @@ For example, the MASS library contains the data set *petrol*, which consists of 
 
 RevoScaleR is capable of estimating huge models where fixed effects are estimated by dummy variables, that is, binary variables set to 1 or TRUE if the observation is in a particular category. Creation of these dummy variables is often accomplished by interacting two or more factor variables using “:” in the formula. If the first term in an rxLinMod (or rxLogit) model is purely categorical and the “cube” argument is set to TRUE, the estimation uses a partitioned inverse to save on computation time and memory.
 
-### A Quick Review of Interacting Factors#
+### A Quick Review of Interacting Factors
 
 First, let’s do a quick, cautionary review of interacting factor variables by experimenting with a small made-up data set.
 

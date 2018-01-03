@@ -27,6 +27,8 @@ ms.technology: "r-server"
 
 Sample data is available both within the RevoScaleR and revoscalepy packages, and online.
 
+## Downloads
+
 + On the web, additional data sets, including large ones that we don't ship in the product, can be found at [https://packages.revolutionanalytics.com/datasets/](https://packages.revolutionanalytics.com/datasets/)
 
 ## Location of built-in RevoScaleR sample data
@@ -115,6 +117,12 @@ You can easily upload any CSV file into SQL Server if you want to step through d
 	+ If you see quotes enclosing the column header names, the easiest way to remove them is start over, remembering to set the *Text qualifier* field in step 3.
 6. In Save and Run Package, click **Finish** to create the database.
 7. Repeat for the airline demo data and any other data sets you want to upload.
+
+## How to generate random numbers
+
+Random numbers are useful in testing and learning scenarios. R has extensive facilities for managing random number generation, and these facilities are all fully supported in RevoScaleR. In addition, RevoScaleR provides an interface to random number generators supplied by the Vector Statistical Library (VSL) that is part of Intel’s Math Kernel Library. The VSL random number generators are most useful in a distributed setting, where they allow parallel processes to generate uncorrelated random number streams. 
+
+To use one of these generators, call the RevoScaleR function [rxRngNewStream](~/r-reference/revoscaler/rxrng.md), specifying the generator (the default is a version of the Mersenne-Twister, MT-2203), the desired substream (if applicable), and a seed (optional). 
 
 ## See Also
 

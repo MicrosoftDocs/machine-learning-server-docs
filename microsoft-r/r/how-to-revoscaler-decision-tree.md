@@ -141,7 +141,7 @@ As a more complex example, we return to the censusWorkers data. We create a regr
 	  	    15) wkswork1>=51.5 106536 6.326896e+15 53082.08 *
 
 
-The primary split here (not surprising given our analysis of this data set in the *Getting Started Guide*) is sex; women on average earn substantially less than men. The additional splits are also not surprising; older workers earn more than younger workers, and those who work more hours tend to earn more than those who work fewer hours.
+The primary split here (not surprising given our analysis of this data set in the [Tutorial: Analyzing US census data with RevoScaleR](tutorial-revoscaler-large-data-census.md)) is sex; women on average earn substantially less than men. The additional splits are also not surprising; older workers earn more than younger workers, and those who work more hours tend to earn more than those who work fewer hours.
 
 ### Controlling the Model Fit
 
@@ -160,7 +160,7 @@ For large data sets (100000 or more observations), you may need to adjust the fo
 
 ### Large Data Tree Models
 
-Scaling decision trees to very large data sets is possible with *rxDTree* but should be done with caution—the wrong choice of model parameters can easily lead to models that take hours or longer to estimate, even in a distributed computing environment. For example, in the *Getting Started Guide*, we estimated linear models using the large airline data and used the variable *Origin* as a predictor in several models. The *Origin* variable is a factor variable with 373 levels with no obvious ordering. Incorporating this variable into an *rxDTree* model that is performing more than two level classification can easily consume hours of computation time. To prevent such unintended consequences, *rxDTree* has a parameter *maxUnorderedLevels*, which defaults to 32; in the case of *Origin*, this parameter would flag an error. However, a factor variable of “Region” which groups the airports of *Origin* by location may well be a useful proxy, and can be constructed to have only a limited number of levels. Numeric and ordered factor predictors are much more easily incorporated into the model.
+Scaling decision trees to very large data sets is possible with *rxDTree* but should be done with caution—the wrong choice of model parameters can easily lead to models that take hours or longer to estimate, even in a distributed computing environment. For example, in the [Tutorial: Load and analyze a large airline data set with RevoScaleR](tutorial-revoscaler-large-data-airline.md), we estimated linear models using the large airline data and used the variable *Origin* as a predictor in several models. The *Origin* variable is a factor variable with 373 levels with no obvious ordering. Incorporating this variable into an *rxDTree* model that is performing more than two level classification can easily consume hours of computation time. To prevent such unintended consequences, *rxDTree* has a parameter *maxUnorderedLevels*, which defaults to 32; in the case of *Origin*, this parameter would flag an error. However, a factor variable of “Region” which groups the airports of *Origin* by location may well be a useful proxy, and can be constructed to have only a limited number of levels. Numeric and ordered factor predictors are much more easily incorporated into the model.
 
 As an example of a large data classification tree, consider the following simple model using the 7% subsample of the full airline data (uses the variable *ArrDel15* indicating flights with an arrival delay of 15 minutes or more):
 
@@ -375,7 +375,7 @@ As with other RevoScaleR analysis functions, prediction is performed using the *
 
 The adult data set is a widely used machine learning data set, similar to the censusWorkers data we have already analyzed. The data set is available from the machine learning data repository at UC Irvine (<http://archive.ics.uci.edu/ml/datasets/Adult>) (and comes in two pieces: a training data set (adult.data) and a test data set (adult.test). This makes it ready-made for use in prediction. To run the following examples, download this data and add a .txt extension, so that you have adult.data.txt and adult.test.txt. (A third file, adult.names, gives a description of the variables; we use this in the code below as a source for the variable names, which are not part of the data files):
 
-  
+```R
 	#  Prediction
 	  
 	if (bHasAdultData){
@@ -400,6 +400,7 @@ The adult data set is a widely used machine learning data set, similar to the ce
 	} # End of bHasAdultData
 
 	  [1] 0.7734169
+```
 
 The result shows that the fitted model accurately classifies about 77% of the test data.
 
