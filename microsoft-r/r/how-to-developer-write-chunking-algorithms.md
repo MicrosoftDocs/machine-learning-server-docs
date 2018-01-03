@@ -23,24 +23,24 @@ ms.technology: "r-server"
 
 ---
 
-# Write custom chunking algorithms in RevoScaleR
+# Write custom chunking algorithms using rxDataStep in RevoScaleR
 
-Scalability in ScaleR is based on chunking or external memory algorithms that can analyze chunks of data in parallel and then combine intermediate results into a single analysis. Because of the chunking algorithms, it's possible to analyze huge datasets that vastly exceed the memory capacity of any one machine.
+Scalability in RevoScaleR is based on chunking or external memory algorithms that can analyze chunks of data in parallel and then combine intermediate results into a single analysis. Because of the chunking algorithms, it's possible to analyze huge datasets that vastly exceed the memory capacity of any one machine.
 
-All of the main analysis functions in ScaleR (*rxSummary*, *rxLinMod*, *rxLogit*, *rxGlm*, *rxCube*, *rxCrossTabs*, *rxCovCor*, *rxKmeans*, *rxDTree*, *rxBTrees*, *rxNaiveBayes*, and *rxDForest*) use chunking or external memory algorithms. However, for scenarios where specialized behaviors are needed, you can create a custom chunking algorithms using the *rxDataStep* function to automatically chunk through your data set and apply arbitrary R functions to process your data.
+All of the main analysis functions in RevoScaleR (*rxSummary*, *rxLinMod*, *rxLogit*, *rxGlm*, *rxCube*, *rxCrossTabs*, *rxCovCor*, *rxKmeans*, *rxDTree*, *rxBTrees*, *rxNaiveBayes*, and *rxDForest*) use chunking or external memory algorithms. However, for scenarios where specialized behaviors are needed, you can create a custom chunking algorithms using the *rxDataStep* function to automatically chunk through your data set and apply arbitrary R functions to process your data.
 
 In this article, you'll step through an example that teaches a simple chunking algorithm for tabulating data implemented using *rxDataStep*. A more realistic tabulation approach is to use the *rxCrossTabs* or *rxCube* functions, but since *rxDataStep* is simpler, it's a better choice for instruction.
 
->**Create custom algorithms based on PemaR**  
->If *rxDataStep* does not provide sufficient customization, you can build a custom parallel external memory algorithm from the ground up using functions in the **RevoPemaR** package. For more information, see the [Get started with PemaR](http://go.microsoft.com/fwlink/?LinkID=698568&clcid=0x409).
+> [!Note] 
+>If *rxDataStep* does not provide sufficient customization, you can build a custom parallel external memory algorithm from the ground up using functions in the **RevoPemaR** package. For more information, see [How to use the RevoPemaR library in Machine Learning Server](how-to-developer-pemar.md).
 
 ## Prerequisites
 
 Sample data for this example is the *AirlineDemoSmall.xdf* file with a local compute context. For instructions on how to import this data set, see the tutorial in [Practice data import and exploration](tutorial-revoscaler-data-import-transform.md).
 
-Chunking is supported on Machine Learning Server, but not the free R Client. Because the dataset is small enough to reside in memory on most computers, most systems succeed in running this example locally. however, if the data does not fit in memory, you will need to use Machine Learning Server instead.
+Chunking is supported on Machine Learning Server, but not on the free R Client. Because the dataset is small enough to reside in memory on most computers, most systems succeed in running this example locally. however, if the data does not fit in memory, you will need to use Machine Learning Server instead.
 
-## What chunking algorithms do
+## About chunking algorithms
 
 An updating algorithm takes a given set of values and a chunk of data, and then outputs a revised set of values cumulative for all chunks. The simplest example is an updating sum: sum is computed for the first chunk, followed by a second chunk, which each successive chunk contributing to a revised value until reaching the cumulative sum. 
 
@@ -127,14 +127,16 @@ And to delete the intermediate results file:
 ~~~~
 ## Next steps
 
-- [Analyze large data with ScaleR](tutorial-revoscaler-large-data-airline.md)
-- [Census data example for analyzing large data](tutorial-revoscaler-large-data-census.md)
-- [Loan data example for analyzing large data](tutorial-revoscaler-large-data-loan.md)
+This article provides an example of a simple chunking algorithm for tabulating data using *rxDataStep*. 
+
+In practice, you might want to use the *rxCrossTabs* or *rxCube* functions. For more information, see [rxCrossTabs](~/r-reference/revoscaler/rxcrosstabs.md) and [rxCube](~/r-reference/revoscaler/rxcube.md), respectively.
+
 
 ## See Also
 
-[Machine Learning Server](../what-is-machine-learning-server.md)	
-
-[How-to guides in Machine Learning Server](how-to-introduction.md)
-
-[RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)
+- [Machine Learning Server](../what-is-machine-learning-server.md)	
+- [How-to guides in Machine Learning Server](how-to-introduction.md)
+- [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)
+- [Analyze large data with ScaleR](tutorial-revoscaler-large-data-airline.md)
+- [Census data example for analyzing large data](tutorial-revoscaler-large-data-census.md)
+- [Loan data example for analyzing large data](tutorial-revoscaler-large-data-loan.md)

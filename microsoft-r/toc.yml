@@ -329,7 +329,7 @@
           href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
         - name: Background jobs
           href: r/how-to-revoscaler-distributed-computing-background-jobs.md
-        - name: Parallel jobs
+        - name: Parallel jobs using rxExec
           href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
         - name: Enforce a YARN queue assignment
           href: install/r-server-install-hadoop-yarnqueueusage.md
@@ -493,7 +493,7 @@
     - name: Parallel loops using foreach
       href: r/how-to-revoscaler-distributed-computing-foreach.md
     - name: Parallel execution using doRSR
-      href: r/how-to-revoscaler-distributed-computing-foreach.md
+      href: r/how-to-revoscaler-distributed-computing-parallel-foreach.md
     - name: Parallel algorithms with PemaR
       href: r/how-to-developer-pemar.md
 - name: Reference

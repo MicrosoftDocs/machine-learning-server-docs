@@ -475,7 +475,7 @@ Next we combine the two data sets, and compute the predicted values for annual p
 
 Stepwise generalized linear models help you determine which variables are most important to include in the model. You provide a minimal, or lower, model formula and a maximal, or upper, model formula. Using forward selection, backward elimination, or bidirectional search, the algorithm determines the model formula that provides the best fit based on an AIC selection criterion or a significance level criterion.
 
-As an example, consider again the Gamma family model from section 10.2:
+As an example, consider again the Gamma family model from earlier in this article:
 
 	claimsXdf <- file.path(rxGetOption("sampleDataDir"),"claims.xdf")
 	claimsGlm <- rxGlm(cost ~ age + car.age + type, family = Gamma,
@@ -529,4 +529,4 @@ We see that in the stepwise model fit, age no longer appears in the final model.
 
 #### Plotting Model Coefficients
 
-The ability to save model coefficients using the argument *keepStepCoefs = TRUE* within the *rxStepControl* call, and to plot them with the function *rxStepPlot* was described in great detail for stepwise *rxLinMod* in section 8.8.5. However, this functionality is also available for stepwise *rxGLM* objects.
+The ability to save model coefficients using the argument *keepStepCoefs = TRUE* within the *rxStepControl* call, and to plot them with the function *rxStepPlot* was described in great detail for stepwise *rxLinMod* in [Fitting Linear Models using RevoScaleR](how-to-revoscaler-linear-model.md). This functionality is also available for stepwise *rxGLM* objects.

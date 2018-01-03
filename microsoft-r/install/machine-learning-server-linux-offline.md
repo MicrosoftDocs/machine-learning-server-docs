@@ -48,11 +48,11 @@ In contrast with previous releases, there is no install.sh script. Package manag
 
 Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). 
 
++ https://packages.microsoft.com/rhel/6/prod/ (centos 6)
 + https://packages.microsoft.com/rhel/7/prod/ (centos 7)
 + https://packages.microsoft.com/sles/11/prod/ (sles 11)
-+ https://packages.microsoft.com/rhel/6/prod/ (centos 6)
-+ https://packages.microsoft.com/ubuntu/14.04/prod/ (Ubuntu 14.04)
-+ https://packages.microsoft.com/ubuntu/16.04/prod/ (Ubuntu 16.04)
++ https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/ (Ubuntu 14.04)
++ https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/ (Ubuntu 16.04)
 
 
 <a name="package-list"></a>

@@ -97,7 +97,7 @@ If you have one or more existing .xdf files and would like to compress them, you
 
 ## Append new observations
 
-If you have observations on the same variables in multiple input files, you can use the *append* argument to **rxImport** to combine them into one file. For example, we could append another copy of the claims text data set in a second block to the claimCAOrdered2.xdf file we created in section 2.6:
+If you have observations on the same variables in multiple input files, you can use the *append* argument to **rxImport** to combine them into one file. For example, we could append another copy of the claims text data set in a second block to the claimCAOrdered2.xdf file:
 	
 	#  Appending to an Existing File
 	
