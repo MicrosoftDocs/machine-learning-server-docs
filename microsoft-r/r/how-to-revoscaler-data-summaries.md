@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "1/02/2018"
+ms.date: "01/02/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -39,7 +39,7 @@ This article teaches by example, using built-in sample data sets so that you can
 > * Compute and plot a Lorenz curve
 > * Tips for wide data sets
 
-## List variable information using rxGetVarInfo
+## List variable information
 
 The [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfoxdf.md) function returns information about the variables in a data frame or .xdf file, including variable names, descriptions, type, and high and low values. The following examples, based on the built-in sample Census data set, demonstrate function usage. 
 
@@ -124,7 +124,7 @@ To reset the low and high values, repeat the previous steps with the original va
 	rxSetVarInfo(censusWorkerInfo, "tempCensusWorkers.xdf")
 
 
-## Compute summary statistics with rxSummary
+## Compute summary statistics
 
 The [rxSummary](../r-reference/revoscaler/rxsummary.md) function provides descriptive statistics using a *formula* argument similar to that used in R’s modeling functions. The formula specifies the independent variables to summarize. 
 
@@ -189,7 +189,7 @@ Assuming your data set fits in memory, you could get the median value of a given
 
 For larger disk-bound datasets, you should use visualization techniques to uncover skewness in the underlying data.
 
-## Compute summary statistics by group using interactions
+## Compute summary statistics on factor variables
 
 You can obtain summary statistics on numeric data that are specific to levels within a variable, such as days of the week, months in a year, age or income levels constructed from column values, and so forth.
 
@@ -338,7 +338,7 @@ The following example shows how to restrict the analysis to specific rows (in th
 > [!Note]
 > The fourth argument in the function, `exclude`, defaults to TRUE. This is reflected in the T that appears in the output variable name.
 
-## Write by-group summary statistics to an .xdf File
+## Write summary statistics to XDF
 
 By-group statistics are often computed for further analysis or plotting. It can be convenient to store these results in a .xdf file, especially when there are a large number of groups. In this example, compute the mean and standard deviation of wage income and number of weeks work for each year of age for both men and women using the CensusWorkers.xdf file with data from three states:
 
@@ -403,7 +403,7 @@ You can plot directly from the .xdf file to visualize the results:
 
 ![](media/how-to-revoscaler-data-summaries/image3.png)
 
-## Transform data in rxSummary
+## Transform data in-flight
 
 You can use the `transforms` argument to modify your data set before computing a summary. When used in this way, the original data is unmodified and no permanent copy of the modified data is written to disk. The data summaries returned, however, reflect the modified data.
 
@@ -456,7 +456,7 @@ The Gini coefficient is often used as a summary statistic for Lorenz curves. It 
 
 	  [1] 0.4491421
 
-## Tips for summarizing wide data sets
+## Tips for wide data sets
 
 Building a better understanding of the distribution of each variable and the relationships between variables improves decision making during the modeling phase. This is especially true for wide data sets containing hundreds if not thousands of variables. For wide data sets, the main goal of data exploration should be to find any outliers or influential data points, identify redundant variables or correlated variables and transform or combine any variables that seem appropriate.
 

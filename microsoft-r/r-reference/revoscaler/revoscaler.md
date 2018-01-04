@@ -43,7 +43,7 @@ The **RevoScaleR** library is found in Machine Learning Server and Microsoft R p
 
 ### Run it locally
 
-This is the default. **RevoScaleR** runs locally on all platforms, including R Client. On a standalone Linux or windows system, data and operations are local to the machine. On Hadoop, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
+This is the default. **RevoScaleR** runs locally on all platforms, including R Client. On a standalone Linux or Windows system, data and operations are local to the machine. On Hadoop, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
 ### Run in a remote compute context
 

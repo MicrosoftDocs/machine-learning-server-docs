@@ -6,8 +6,8 @@ description: "Compute context for local, distributed, and parallel processing on
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "10/11/2017"
+manager: "cgronlun"
+ms.date: "01/03/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # Compute context for script execution in Machine Learning Server
 
-In Machine Learning Server, a *compute context* refers to the location of the computational engine handling a given workload. The default is local. However, if you have multiple machines, you can switch from local to remote, pushing execution of data-centric [RevoScaleR (R)](../r-reference/revoscaler/revoscaler.md), [revoscalepy (Python)](../python-reference/revoscalepy/revoscalepy-package.md), and machine learning algorithms in [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) and [microsoftml (Python)](../python-reference/microsoftml/microsoftml-package.md) functions to an interpreter on another system. For example, script running locally in R Client can shift execution to a remote Machine Learning Server in a Spark cluster to process data there. 
+In Machine Learning Server, a *compute context* refers to the physical location of the computational engine handling a given workload. The default is local. However, if you have multiple machines, you can switch from local to remote, pushing execution of data-centric [RevoScaleR (R)](../r-reference/revoscaler/revoscaler.md), [revoscalepy (Python)](../python-reference/revoscalepy/revoscalepy-package.md), [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) and [microsoftml (Python)](../python-reference/microsoftml/microsoftml-package.md) functions to a computational engine on another system. For example, script running locally in R Client can shift execution to a remote Machine Learning Server in a Spark cluster to process data there. 
 
 The primary reason for shifting compute context is to eliminate data transfer over your network, bringing computations to where the data resides. This is particularly relevant for big data platforms like Hadoop, where data is distributed over multiple nodes, or for data sets that are simply too large for a client workstation.
 
@@ -34,7 +34,7 @@ The primary reason for shifting compute context is to eliminate data transfer ov
 | Context | Usage |
 |---------|----------|
 | Local | Default, supported by all products (including R Client), on all platforms. Script executes on local interpreters using local machine resources. |
-| Remote | Specifically targets a Machine Learning Server on selected data platforms: Spark over HDFS, Hadoop MapReduce, SQL Server. Client tools and other servers can initiate a remote compute context, but the remote machine itself must be a server installation.
+| Remote | Specifically targets a Machine Learning Server on selected data platforms: Spark over HDFS, Hadoop MapReduce, SQL Server. Clients, or servers acting in the capacity of a client, can initiate a remote compute context, but the target remote machine itself must be a Machine Learning Server installation.
 
 ## Compare "remote execution" to "remote compute context"
 
