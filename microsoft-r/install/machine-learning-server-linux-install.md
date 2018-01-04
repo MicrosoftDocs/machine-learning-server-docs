@@ -36,6 +36,10 @@ This article covers the following items:
 - Installation steps
 - An inventory of what's installed
 
+> [!Note]
+> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_linux_x64_100352967.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+
+
 ## System and setup requirements
 
 + Operating system must be a [supported version of 64-bit Linux](r-server-install-supported-platforms.md).
