@@ -45,7 +45,7 @@ You can use any Python IDE to write Python script calling functions in **revosca
 
 ### Run it locally
 
-This is the default. The **revoscalepy** library runs locally on all platforms. On a standalone Linux or windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
+This is the default. The **revoscalepy** library runs locally on all platforms. On a standalone Linux or Windows system, data and operations are local to the machine. On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node). 
 
 ### Run in a remote compute context
 

@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Tutorial: Explore R-to-RevoScaleR in 25 functions (Machine Learning Server) "
-description: "Explore and execute R and RevoScaleR commands on R Client or Machine Learning Server."
+title: "Basic R commands and RevoScaleR functions: 25 common examples - Machine Learning Server"
+description: "Learn and execute basic R commands and RevoScaleR functions on R Client or Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "05/16/2017"
+manager: "cgronlun"
+ms.date: "01/03/2018"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -25,25 +25,25 @@ ms.technology:
 
 ---
 
-# Tutorial: Explore R and RevoScaleR in 25 functions
+# Basic R commands and RevoScaleR functions: 25 common examples
 
 **Applies to: Microsoft R Client, Machine Learning Server**
 
-If you are new to both R and Machine Learning Server, this tutorial introduces you to 25 (or so) of the more commonly used R functions. In this tutorial, you learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine R and RevoScaleR functions in the same R script.
+If you are new to both R and Machine Learning Server, this tutorial introduces you to 25 (or so) commonly used R functions. In this tutorial, you learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine basic R commands and RevoScaleR functions in the same R script.
 
-This tutorial starts with base R commands before transitioning to RevoScaleR functions. If you already know R, you might want to skip down to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
+This tutorial starts with R commands before transitioning to RevoScaleR functions. If you already know R, skip ahead to [Explore RevoScaleR Functions](#ExploreScaleRFunctions).
 
 > [!Note]
-> R Client and Machine Learning Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If datasets exceed memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to Machine Learning Server.
+> R Client and Machine Learning Server are interchangeable in terms of RevoScaleR as long as [data fits into memory and processing is single-threaded](tutorial-revoscaler-data-import-transform.md#chunking). If data size exceeds memory, we recommend pushing the [compute context](concept-what-is-compute-context.md) to Machine Learning Server.
 
 ## Prerequisites
 
-This is our simplest tutorial in terms of data and tools, but it's also expansive in its coverage of base R and RevoScaleR functions. To complete the tasks, use the command-line tool **RGui.exe** on Windows or start the **Revo64** program on Linux. 
+This is our simplest tutorial in terms of data and tools, but it's also expansive in its coverage of basic R and RevoScaleR functions. To complete the tasks, use the command-line tool **RGui.exe** on Windows or start the **Revo64** program on Linux. 
 
 + On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click **Rgui.exe**.	
 + On Linux, at the command prompt, type **Revo64**.
 
-The tutorial uses built-in sample data provided in base R or RevoScaleR function library so once you have the software, there is nothing more to download or install.
+The tutorial uses pre-installed sample data so once you have the software, there is nothing more to download or install.
 
 The R command prompt is `>`. You can hand-type commands line by line, or copy-paste a multi-line command sequence.
 
@@ -51,7 +51,7 @@ R is case-sensitive. If you hand-type commands in this example, be sure to use t
 
 ## Start with R
 
-Because RevoScaleR is built on R, this tutorial begins with an exploration of base R commands.
+Because RevoScaleR is built on R, this tutorial begins with an exploration of common R commands.
 
 ### Load data
 
@@ -75,14 +75,17 @@ R responds with a `>` prompt. Notice that the named vector is not automatically 
 
 	> michelson
 
+Output: 
+
 	[1]  850  740  900 1070  930  850  950  980   980  880
 	[11] 1000  980  930  650  760  810 1000 1000  960  960
 
 The `c` function is useful for hand typing in small vectors such as you might find in textbook examples, and it is also useful for combining existing vectors. For example, if we discovered another five observations that extended the Michelson-Morley data, we could extend the vector using `c` as follows:
 
 	michelsonNew <- c(michelson, 850, 930, 940, 970, 870)
-	
-	> michelsonNew
+	michelsonNew
+
+Output: 
 
 	[1]  850  740  900 1070  930  850  950  	980  980  880
 	[11] 1000  980  930  650  760  810 1000 1000  960  960
@@ -94,6 +97,8 @@ Often for testing purposes you want to use randomly generated data. R has a numb
 
 	normalDat <- rnorm(25)
 	normalDat
+
+Output: 
 
 	[1] -0.66184983  1.71895416  2.12166699
 	[4]  1.49715368 -0.03614058  1.23194518
@@ -110,6 +115,8 @@ Often for testing purposes you want to use randomly generated data. R has a numb
 	normalSat <- rnorm(25, mean=450, sd=100)
 	normalSat
 
+Output: 
+
 	[1] 373.3390 594.3363 534.4879 410.0630 307.2232
 	[6] 307.8008 417.1772 478.4570 521.9336 493.2416
 	[11] 414.8075 479.7721 423.8568 580.8690 451.5870
@@ -120,6 +127,8 @@ Similarly, you can use the `runif` function to generate random data from a unifo
 
 	uniformDat <- runif(25)
 	uniformDat
+
+Output: 
 
 	[1] 0.03105927 0.18295065 0.96637386 0.71535963
 	[5] 0.16081450 0.15216891 0.07346868 0.15047337
@@ -136,6 +145,8 @@ The default uniform distribution is over the interval 0 to 1. You can specify al
 	uniformPerc <- runif(25, min=0, max=100)
 	uniformPerc
 
+Output: 
+
 	[1] 66.221400 12.270863 33.417174 21.985229
 	[5] 92.767213 17.911602  1.935963 53.551991
 	[9] 75.110760 22.436347 63.172258 95.977501
@@ -148,15 +159,21 @@ Another commonly used vector is the `sequence`, a uniformly spaced run of number
 
 	1:10
 
+Output: 
+
 	 [1]  1  2  3  4  5  6  7  8  9 10
 
 For more general sequences, use the `seq` function:
 
 	seq(length = 11, from = 10, to = 30)
 
+Output: 
+
 	[1] 10 12 14 16 18 20 22 24 26 28 30
 
 	seq(from = 10,length = 20, by = 4)
+
+Output: 
 
 	[1] 10 14 18 22 26 30 34 38 42 46 50 54 58 62 66 70 74
 	[18] 78 82 86
@@ -180,6 +197,8 @@ For numeric vectors such as ours, the default view is a scatter plot of the obse
 For an exploration of the shape of the data, the usual tools are `stem` (to create a stemplot) and `hist` (to create a histogram):
 
 	stem(michelson)
+
+Output: 
 
 	 The decimal point is 2 digit(s) to the right of the |
 	  6 | 5
@@ -232,6 +251,8 @@ While an informative graphic often gives the fullest description of a data set, 
 
 	summary(michelson)
 
+Output: 
+
 	 Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 	 650     850     940     909     980    1070
 
@@ -253,6 +274,8 @@ Copy and paste the table into a text editor (such as Notepad on Windows, or emac
 
 	getwd()
 
+Output: 
+
 	 [1] "/Users/joe"
 
 > [!Tip]
@@ -263,7 +286,8 @@ You can then read the data into R using the `read.table` function. The argument 
 	msStats <- read.table("msStats.txt", header=TRUE)
 	msStats
 
-	> msStats
+Output: 
+
 	Player Games  AB  R   H X2B X3B HR  TB RBI
 	1	I. Suzuki     95 391 63 119  11   3  3 145  21
 	2	J. Lopez     92 379 46 113  26   1  5 156  48
@@ -310,6 +334,8 @@ To view a summary of the model, we can use the `summary` function:
 
 	summary(attitudeLM1)
 
+Output: 
+
 	Call:
 	lm(formula = rating ~ complaints, data = attitude)
 	Residuals:
@@ -348,13 +374,19 @@ A matrix is a two-dimensional data array. Unlike data frames, which can have dif
 	A <- matrix(c(3, 5, 7, 9, 13, 15, 8, 4, 2), ncol=3)
 	A
 
+Output: 
+
 	[,1] [,2] [,3]
 	[1,]    3    9    8
 	[2,]    5   13    4
 	[3,]    7   15    2
 
+Another matrix example:
+
 	B <- matrix(c(4, 7, 9, 5, 8, 6), ncol=3)
 	B
+
+Output: 
 
 	[,1] [,2] [,3]
 	[1,]    4    9    8
@@ -364,12 +396,18 @@ Ordinary arithmetic acts *element-by-element* on matrices:
 
 	A + A
 
+Output: 
+
 	[,1] [,2] [,3]
 	[1,]    6   18   16
 	[2,]   10   26    8
 	[3,]   14   30    4
 
+Matrix multipliation uses the expected operators:
+
 	A * A
+
+Output: 
 
 	[,1] [,2] [,3]
 	[1,]    9   81   64
