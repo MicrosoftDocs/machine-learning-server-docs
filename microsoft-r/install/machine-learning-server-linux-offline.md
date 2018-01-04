@@ -28,6 +28,9 @@ By default, installers connect to Microsoft download sites to get required and u
 
 Before you start, review the following article for general information about setup: [Install Machine Learning Server 9.2.1 on Linux](machine-learning-server-linux-install.md).
 
+> [!Note]
+> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_linux_x64_100352967.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+
 <a name="package-manager"></a>
 
 ## Package managers

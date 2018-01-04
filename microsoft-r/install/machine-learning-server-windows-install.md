@@ -5,8 +5,8 @@ description: "How to install, connect to, and use Machine Learning Server on com
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "12/05/2017"
+manager: "cgronlun"
+ms.date: "01/04/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -38,11 +38,11 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 The following additional components are included in Setup and required for Machine Learning Server on Windows.
 
+* Microsoft R Open 3.4.1 (if you add R)
+* Anaconda 4.2 with Python 3.5 (if you add Python)
 * Microsoft MPI 7.1
 * AS OLE DB (SQL Server 2016) provider
 * Microsoft Visual C++ 2015 Redistributable
-
-Setup also downloads Microsoft R Open 3.4.1 (if you add R) and Anaconda 4.2 with Python 3.5 (if you add Python).
 
 ## Licensing
 
@@ -55,7 +55,7 @@ On production servers, the enterprise edition of Machine Learning Server for Win
 
 ## Upgrade existing installations
 
-Setup performs an in-place upgrade on an existing installation. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path and upgrades it to the new version. 
+Setup performs an in-place upgrade over existing installations. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, setup finds R Server at the old path and upgrades it to the new version. 
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
@@ -63,7 +63,7 @@ There is no support for side-by-side installations of older and newer versions, 
 
 ## How to install
 
-This section walks you through a Machine Learning Server 9.2.1 deployment using the standalone Windows installer. Under these instructions, your installation will be licensed and serviced as a SQL Server supplemental feature.
+This section walks you through a Machine Learning Server 9.2.1 deployment using the standalone Windows installer.
 
 ### Download Machine Learning Server installer
 
@@ -78,7 +78,7 @@ You can get the zipped installation file from one of the following download site
 
 The setup wizard installs, upgrades, and uninstalls all in one workflow.
 
-1. In the Downloads folder, right-click to extract the contents of zipped executable.
+1. In the Downloads folder, right-click **en_machine_learning_server_for_windows_x64_11452137.zip** to extract the contents of zipped executable.
 
 2. Double-click **ServerSetup.exe** to start the wizard.
 

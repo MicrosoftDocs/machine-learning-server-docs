@@ -32,6 +32,9 @@ Machine Learning Server is engineered for the following architecture:
 + Apache YARN
 + MapReduce or Spark 2.0-2.1
 
+> [!Note]
+> These instructions use package managers to install the server. If you know and prefer working with gzip files, you can download **en_machine_learning_server_9.2.1_for_hadoop_x64_100353069.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+
 ## System and setup requirements
 
 + Native operating system must be a [supported version of Hadoop on 64-bit Linux](r-server-install-supported-platforms.md).
