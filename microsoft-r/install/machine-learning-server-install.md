@@ -26,13 +26,13 @@ ms.technology: "r-server"
 
 Machine Learning Server is available on a number of [platforms](r-server-install-supported-platforms.md). There are also several add-ons and tools you can also use.  Looking for earlier versions? See [Installation guides for earlier releases](r-server-install.md) for links.
 
-## Common install configurations
+## Common configurations
 
 Standalone servers describe a working experience where script development and execution occur on the same Windows or Linux machine. If you install the free developer edition, a standalone server is the likely configuration. You could also install the server on a virtual machine accessed by multiple users in turn. 
 
    ![standalone server on Windows or Linux](./media/install-topology-standalone.png)
 
-A client-server configuration is more common in a team environment. You can install free Python client libraries or R Client on any workstation, write script on the workstation, and then deploy script as a [web service](~/operationalize/concept-what-are-web-services.md) to a Machine Learning Server. For R development only, you can also use [remote execution](~/r/how-to-execute-code-remotely.md) in this configuration: switch from local to remote server within a session.
+A client-server configuration is more common in a team environment. You can install free Python client libraries or R Client on any workstation, write script on the workstation, and then deploy script as a [web service](~/operationalize/concept-what-are-web-services.md) to a Machine Learning Server, [operationalized to add rich deployment options]((~/what-is-operationalization.md). For R development only, you can also use [remote execution](~/r/how-to-execute-code-remotely.md) in this configuration: switch from local to remote server within a session.
 
    ![client server topology](./media/install-topology-client-server.png)
 
