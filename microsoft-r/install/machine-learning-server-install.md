@@ -46,7 +46,7 @@ On the consumption side, you can write custom apps or consume an R or Python sol
 
 Scale-out topologies are available in two forms: a distributed platform like Hadoop and Spark (Linux), or on clustered Windows machines (network-load-balanced clusters of web nodes and compute nodes). For Hadoop and Spark, you can write and run script locally and then [push the compute context](~/r/concept-what-is-compute-context.md) to the Hadoop or Spark cluster. For Windows, use the [operationalization capabilities](~/what-is-operationalization.md) in Machine Learning Server to distribute workloads on appropriate nodes.
 
-   ![scaleout toplogy on clustered computers](./media/install-topology-scaleout.png)
+   ![scaleout topology on clustered computers](./media/install-topology-scaleout.png)
 
 
 ## Installation Guides 
