@@ -79,7 +79,9 @@ Activation is a separate step *not* performed by the package manager. If you for
 
 ## Upgrade existing installations
 
-Setup performs an in-place upgrade on an existing installation. Although the installation path is new (`/opt/microsoft/mlserver/9.2.1`), when R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and upgrades it to the new version. 
+If you deployed the operationalization capabilities, follow these alternative steps for upgrade: [Configure Machine Learning Server 9.2.1 to operationalize analytics (One-box) > How to upgrade](./operationalize/configure-machine-learning-server-one-box.md#how-to-upgrade) or [Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise) > How to upgrade](./operationalize/configure-machine-learning-server-enterprise.md#how-to-upgrade).
+
+For all other configurations, Setup performs an in-place upgrade on an existing installation. Although the installation path is new (`/opt/microsoft/mlserver/9.2.1`), when R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and upgrades it to the new version. 
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
