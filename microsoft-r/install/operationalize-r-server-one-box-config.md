@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Configure R Server to operationalize analytics (one-box) - Microsoft R Server "
+title: "Configure Microsoft R Server to operationalize analytics (one-box)"
 description: "Configuration Operationalization for Microsoft R Server"
 keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"

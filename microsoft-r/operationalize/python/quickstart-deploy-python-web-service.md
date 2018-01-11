@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Quickstart for deploying Python models as web services - Machine Learning Server "
+title: "Quickstart: Deploy Python models as web services - Machine Learning Server "
 description: "How to deploy an R model as a service"
 keywords: "quickstart, Machine Learning Server, deploy python models"
 author: "j-martens"
