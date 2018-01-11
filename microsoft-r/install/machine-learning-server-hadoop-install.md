@@ -32,6 +32,9 @@ Machine Learning Server is engineered for the following architecture:
 + Apache YARN
 + MapReduce or Spark 2.0-2.1
 
+> [!Note]
+> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_hadoop_x64_100353069.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+
 ## System and setup requirements
 
 + Native operating system must be a [supported version of Hadoop on 64-bit Linux](r-server-install-supported-platforms.md).
@@ -164,6 +167,11 @@ Additional open source packages could be required. The potential list of package
 We recommend starting with [How to use RevoScaleR with Spark](../r/how-to-revoscaler-spark.md) or [How to use RevoScaleR with Hadoop MapReduce](../r/how-to-revoscaler-hadoop.md). 
 
 For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Running a distributed analysis using RevoScaleR functions](../r/how-to-revoscaler-distributed-computing-distributed-analysis.md).
+
+R solutions that execute on the cluster can call functions from any R package. To add new R packages, you can use any of these approaches:
+
++ Use the RevoScaleR [rxExec function to add new packages](r-server-install-hadoop-manual-package.md#install-additional-packages-on-each-node-using-rxexec).
++ Manually run [install.packages()](https://www.rdocumentation.org/packages/utils/versions/3.4.3/topics/install.packages) on all nodes in Hadoop cluster (using distributed shell or some other mechanism). 
 
 ## See also
 

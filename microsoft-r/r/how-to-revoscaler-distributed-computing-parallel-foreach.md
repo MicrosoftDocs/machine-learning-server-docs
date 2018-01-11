@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Parallel execution using doRSR for script containing ScaleR and foreach constructs"
+title: "Parallel execution using foreach and doRSR for script containing RevoScaleR and foreach constructs"
 description: "Parallel execution using the doRSR package for script containing RevoScaleR and foreach constructs."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "04/02/2017"
+manager: "cgronlun"
+ms.date: "01/03/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -23,19 +23,20 @@ ms.technology: "r-server"
 
 ---
 
-# Parallel execution using doRSR for script containing ScaleR and foreach constructs
+# Parallel execution using doRSR for script containing RevoScaleR and foreach constructs
 
-The open-source [foreach package](https://CRAN.R-project.org/package=foreach) combines a looping structure for R script 
-that can execute in parallel. When you need to loop through repeated operations, and you have multiple processors or nodes to work with, you can use **foreach** in your script to execute a forloop in parallel. Developed by Microsoft, foreach is an open source package that is bundled with Machine Learning Server but is also available on the Comprehensive R Archive Network, CRAN.  
+Machine Learning Server includes the open-source [foreach package](https://CRAN.R-project.org/package=foreach) in case you need to substitute the built-in parallel execution methodology of RevoScaleR with a custom implementation. 
 
-To execute code that leverages foreach, you will need a parallel backend engine, similar to **NetWorkSpaces**, **snow**, and **rmpi**. For integration with script leveraging ScaleR, you can use the **doRSR** package. The **doRSR** package is a parallel backend for RevoScaleR, built on top of `rxExec`, and included with all RevoScaleR distributions.
+To execute code that leverages foreach, you will need a parallel backend engine, similar to **NetWorkSpaces**, **snow**, and **rmpi**. For integration with script leveraging RevoScaleR, you can use the **doRSR** package. The **doRSR** package is a parallel backend for RevoScaleR, built on top of [rxExec](../r-reference/revoscaler/rxexec.md), and included with all RevoScaleR distributions.
+
+## Example script using doRSR
 
 To get started with doRSR, load the package and register the backend:
 
 	library(doRSR)
 	registerDoRSR()
 
-The doRSR package uses your current compute context to determine how to run your job. In most cases, the job is run via `rxExec`, sequentially in the local compute context and in parallel in a distributed compute context. In the special case where you are in the local compute context and have set `rxOptions(useDoParallel=TRUE)`, doRSR will pass your foreach jobs to the **doParallel** package for execution in parallel using multiple cores on your machine.
+The doRSR package uses your current compute context to determine how to run your job. In most cases, the job is run via rxExec, sequentially in the local compute context and in parallel in a distributed compute context. In the special case where you are in the local compute context and have set `rxOptions(useDoParallel=TRUE)`, doRSR will pass your foreach jobs to the **doParallel** package for execution in parallel using multiple cores on your machine.
 
 A simple example is this one from the foreach help file:
 
@@ -67,9 +68,9 @@ This returns the multiplied matrix:
 	[3,]  332  368  404  440
 	[4,]  360  400  440  480
 
-### A Simple Simulation: Playing Dice
+### Use case: simulation
 
-In [Running jobs in parallel](how-to-revoscaler-distributed-computing-parallel-jobs.md), we introduced the simulation function `playDice` in the previous section. It simulates a single game of dice rolling. We then used `rxExec` to play 10000 games. Now we will use foreach to play 10000 games:
+In [Running jobs in parallel](how-to-revoscaler-distributed-computing-parallel-jobs.md), we introduced the simulation function `playDice` to simulate a single game of dice rolling, using [rxExec](../r-reference/revoscaler/rxexec.md) to play 10000 games. You can do the same thing with foreach:
 
 	z1 <- foreach(i=1:10000, .options.rsr=list(chunkSize=2000)) %dopar% playDice()
 	table(unlist(z1))		
@@ -77,11 +78,11 @@ In [Running jobs in parallel](how-to-revoscaler-distributed-computing-parallel-j
 	Loss  Win
 	5079 4921
 
-Again, we get about the expected number of wins. If you time the rxExec version versus the foreach version using doRSR, you will find the rxExec version several times faster. This is to be expected; foreach is a high-level interface allowing access to many different back ends, including RevoScaleR’s rxExec. It will necessarily be slower than calling those back ends directly.
+Although outcomes are equivalent in both approaches, the rxExec approach is several times faster because you can call it directly.
 
-### Another Version of kmeans
+### Use case: naïve parallelization of the standard R kmeans function
 
-Also in the previous section, we created a function kmeansRSR to perform a naïve parallelization of the standard R kmeans function. We can do the same thing with foreach directly as follows:
+Also in the [previous article](how-to-revoscaler-distributed-computing-parallel-jobs.md), we created a function kmeansRSR to perform a naïve parallelization of the standard R kmeans function. We can do the same thing with foreach directly as follows:
 
 	kMeansForeach <- function(x, centers=5, iter.max=10, nstart=1)
 	{

@@ -110,7 +110,7 @@ apt-get update
 apt-get install microsoft-r-client-packages-3.4.1
 
 # List the packages
-ls /opt/microsoft/r-client/
+ls /opt/microsoft/rclient/
 ```     
 
 **Red Hat and CentOS 6/7**
@@ -144,7 +144,7 @@ With root or sudo permissions, run the following commands:
 sudo su
 
 # Set the package repository location containing the R Client distribution. 
-zypper -ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com
+zypper ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com
 
 # Update packages on your system
 zypper update

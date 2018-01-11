@@ -5,8 +5,8 @@ description: "How to install, connect to, and use Machine Learning Server on com
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "10/20/2017"
+manager: "cgronlun"
+ms.date: "01/04/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -28,9 +28,6 @@ Machine Learning Server for Windows runs machine learning and data mining soluti
 
 This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
-> [!Note]
-> Python support is new and there are a few limitations in remote computing scenarios. 1) Remote execution is not supported on Windows or Linux. 2) Remote compute contexts must be Spark or SQL Server. In computing that is local to the machine, there are no limitations.
-
 ## System requirements
 
 + Operating system must be a [supported version of 64-bit Windows](r-server-install-supported-platforms.md). 
@@ -41,21 +38,34 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 The following additional components are included in Setup and required for Machine Learning Server on Windows.
 
+* Microsoft R Open 3.4.1 (if you add R)
+* Anaconda 4.2 with Python 3.5 (if you add Python)
 * Microsoft MPI 7.1
 * AS OLE DB (SQL Server 2016) provider
 * Microsoft Visual C++ 2015 Redistributable
 
-Setup also downloads Microsoft R Open 3.4.1 (if you add R) and Anaconda 4.2 with Python 3.5 (if you add Python).
+## Licensing
 
-## Running setup on existing installations
+Machine Learning Server is licensed as a SQL Server supplemental feature. On development workstations, you can install the developer edition at no charge. 
 
-The installation path for Machine Learning Server is new: \Program Files\Microsoft\ML Server. However, if R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path and upgrades it to the new version. 
+On production servers, the enterprise edition of Machine Learning Server for Windows is licensed by the core. Enterprise licenses are sold in 2-core packs, and you must have a license for every core on the machine. For example, on an 8-core server, you would need four 2-core packs. For more information, start with the [SQL Server pricing page](https://www.microsoft.com/sql-server/sql-server-2017-pricing).
+
+> [!Note]
+> When you purchase an enterprise license of Machine Learning Server for Windows, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (10 nodes for each core licensed under enterprise licensing).
+
+## Upgrade existing installations
+
+If your existing server was configured for [operationalization](../what-is-operationalization.md), follow these alternative steps for upgrade: [Configure Machine Learning Server 9.2.1 to operationalize analytics (One-box) > How to upgrade](../operationalize/configure-machine-learning-server-one-box.md#how-to-upgrade) or [Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise) > How to upgrade](../operationalize/configure-machine-learning-server-enterprise.md#how-to-upgrade).
+
+For all other configurations, Setup performs an in-place upgrade over existing installations. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, setup finds R Server at the old path and upgrades it to the new version. 
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
 
+<a name="howtoinstall"></a>
+
 ## How to install
 
-This section walks you through a Machine Learning Server 9.2.1 deployment using the standalone Windows installer. Under these instructions, your installation will be licensed and serviced as a SQL Server supplemental feature.
+This section walks you through a Machine Learning Server 9.2.1 deployment using the standalone Windows installer.
 
 ### Download Machine Learning Server installer
 
@@ -66,23 +76,19 @@ You can get the zipped installation file from one of the following download site
 | [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your [Microsoft account](https://account.microsoft.com/account) (such as a Live ID, Hotmail, or outlook account).<br/>2. Make sure you're in the right place: *https://my.visualstudio.com/Benefits*.<br/>3. Click **Downloads**, and then search for *Machine Learning Server for Windows*. |
 | [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.2.1** is provided on this site. |
 
-Machine Learning Server for Windows is licensed as a SQL Server enterprise feature, regardless of whether you install it through SQL Server Setup or as download from a Microsoft web site.
-
-<a name="howtoinstall"></a>
-
 ### Run Setup
 
 The setup wizard installs, upgrades, and uninstalls all in one workflow.
 
-1. In the Downloads folder, right-click to extract the contents of zipped executable.
+1. In the Downloads folder, right-click **en_machine_learning_server_for_windows_x64_11452137.zip** to extract the contents of zipped executable.
 
 2. Double-click **ServerSetup.exe** to start the wizard.
 
 3. In Configure installation, choose components to install. *If you clear the checkbox for R on a computer that has an existing R Server installation, Setup uninstalls your existing R Server instance.* 
 
     + **Core components** are listed for visibility, but are not configurable. Core components are required.
-    + **R** adds the R libraries.  
-    + **Python** adds the Python libraries. 
+    + **R** adds R Open and the R libraries.  
+    + **Python** adds Anaconda and the Python libraries. 
     + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection. You can install the models with R or Python, but not as a standalone component.
 
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open and Anaconda.
@@ -160,11 +166,17 @@ Python runs when you execute a .py script or run commands in a Python console wi
 To quit the program, type `quit()` at the command line with no arguments.
 
 
-## Enable server to host analytic web services and accept remote connections
+## Enable web service deployment and remote connections
 
-To benefit from [hosting your Python and R script as a web service](../operationalize/concept-what-are-web-services.md) or [remote R code execution](../r/how-to-execute-code-remotely.md), [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) on your network. 
+When you [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization), you gain the following benefits:
+
++ [Deploy Python and R script as a web service](../operationalize/concept-what-are-web-services.md) 
++ [Connect to a remote R server for code execution](../r/how-to-execute-code-remotely.md). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) or other Machine Learning Server nodes on your network. 
 
 To configure the server, use the [Administrator Utility](../operationalize/configure-use-admin-utility.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
+
+> [!Note]
+> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, [remote compute context](../r/concept-what-is-compute-context.md) is not available for HadoopMR. 
 
 ## What's installed
 

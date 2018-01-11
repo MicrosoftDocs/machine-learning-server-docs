@@ -27,7 +27,7 @@ ms.technology: "r-server"
 
 RevoScaleR is a collection of proprietary functions in Machine Learning Server used for practicing data science at scale. For data scientists, RevoScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
 
-RevoScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](../r-client/what-is-microsoft-r-client.md) or commercially in [Machine Learning Server](../what-is-machine-learning-server.md) on supported platforms. RevoScaleR is also embedded in Azure HDInsight,Azure Data Science virtual machines, and SQL Server.
+RevoScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](../r-client/what-is-microsoft-r-client.md) or commercially in [Machine Learning Server](../what-is-machine-learning-server.md) on supported platforms. RevoScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and SQL Server.
 
 The RevoScaleR functions run on a computational engine include in the aforementioned products. As such, the package cannot be downloaded or used independently of the products and services that provide it.
 
@@ -38,6 +38,12 @@ RevoScaleR provides enhanced capabilities to many elements of the open source R 
 ## What can you do with RevoScaleR?
 
 Data scientists and developers can include RevoScaleR functions in custom script or solutions that run locally against R Client or remotely on Machine Learning Server. Solutions leveraging RevoScaleR functions will run wherever the RevoScaleR engine is installed.
+
+Analyzing data using RevoScaleR functions requires three distinct pieces of information:
+
+1. Where the computations should take place (the compute context)
+2. Which data to use (the data source)
+3. What analysis to perform (the analysis function)
 
 A common workflow is to write the initial code or script against a subset of data on a local computer, change the compute context to specify a large set of data on a big data platform, and then operationalize the solution by deploying it to the target environment, thus making it accessible to users.
 

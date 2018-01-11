@@ -26,9 +26,10 @@ ms.technology: "r-server"
 
 By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.2.1 for Linux. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
-Before you start, review the following article for requirements and restrictions:
+Before you start, review the following article for general information about setup: [Install Machine Learning Server 9.2.1 on Linux](machine-learning-server-linux-install.md).
 
-+ [Install Machine Learning Server 9.2.1 on Linux](machine-learning-server-linux-install.md) for an internet-connected installation.
+> [!Note]
+> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_linux_x64_100352967.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
 
 <a name="package-manager"></a>
 
@@ -50,11 +51,11 @@ In contrast with previous releases, there is no install.sh script. Package manag
 
 Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). 
 
++ https://packages.microsoft.com/rhel/6/prod/ (centos 6)
 + https://packages.microsoft.com/rhel/7/prod/ (centos 7)
 + https://packages.microsoft.com/sles/11/prod/ (sles 11)
-+ https://packages.microsoft.com/rhel/6/prod/ (centos 6)
-+ https://packages.microsoft.com/ubuntu/14.04/prod/ (Ubuntu 14.04)
-+ https://packages.microsoft.com/ubuntu/16.04/prod/ (Ubuntu 16.04)
++ https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/ (Ubuntu 14.04)
++ https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/ (Ubuntu 16.04)
 
 
 <a name="package-list"></a>

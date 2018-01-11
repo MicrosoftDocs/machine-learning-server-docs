@@ -303,8 +303,7 @@ We can use the same correlation matrix to estimate three factors:
 	  SS loadings       2.41    1.50    1.18
 	  Proportion Var    0.13    0.08    0.07
 	  Cumulative Var    0.13    0.22    0.28
-	  
-	  The degrees of freedom for the model is 102 and the fit was 0.343
+	 
 
 The degrees of freedom for the model is 102 and the fit was 0.343
 
@@ -312,7 +311,7 @@ The degrees of freedom for the model is 102 and the fit was 0.343
 
 Principal components analysis, or PCA, is a technique closely related to factor analysis. PCA seeks to find a set of orthogonal axes such that the first axis, or *first principal component*, accounts for as much variability as possible, and subsequent axes or components are chosen to maximize variance while maintaining orthogonality with previous axes. Principal components are typically computed either by a singular value decomposition of the data matrix or an eigenvalue decomposition of a covariance or correlation matrix; the latter permits us to use *rxCovCor* and its relatives with the standard R function *princomp*.
 
-As an example, we use the rxCov function to calculate a covariance matrix for the log of the iris data, and pass the matrix to the princomp function; this reproduces the example from pages 303-304 of *Modern Applied Statistics with S*:
+As an example, we use the rxCov function to calculate a covariance matrix for the log of the classic iris data, and pass the matrix to the princomp function (reproduced from [Modern Applied Statistics with S](http://www.springer.com/us/book/9780387954578)):
 
 	#  Computing A Covariance Matrix for Principal Components Analysis
 	  
@@ -366,7 +365,7 @@ You may have noticed that we supplied the flag cor=TRUE in the call to princomp;
 
 ### A Large Data Principal Components Analysis
 
-Stock market data for open, high, low, close, and adjusted close from 1962 to 2010 is available at <https://github.com/thebigjc/HackReduce/blob/master/datasets/nyse/daily_prices/NYSE_daily_prices_subset.csv>. The full data set includes 9.2 million observations of daily open-high-low-close data for some 2800 stocks. As you might expect, these data are highly correlated, and principal components analysis can be used for data reduction. We read the original data into a .xdf file, NYSE\_daily\_prices.xdf, using the same process we used in the *Getting Started Guide* to read our mortgage data (set *revoDataDir* to the full path to the NYSE directory containing the .csv files when you unpack the download):
+Stock market data for open, high, low, close, and adjusted close from 1962 to 2010 is available at <https://github.com/thebigjc/HackReduce/blob/master/datasets/nyse/daily_prices/NYSE_daily_prices_subset.csv>. The full data set includes 9.2 million observations of daily open-high-low-close data for some 2800 stocks. As you might expect, these data are highly correlated, and principal components analysis can be used for data reduction. We read the original data into a .xdf file, NYSE\_daily\_prices.xdf, using the same process we used in the [Tutorial: Analyzing loan data with RevoScaleR](tutorial-revoscaler-large-data-loan.md) to read our mortgage data (set *revoDataDir* to the full path to the NYSE directory containing the .csv files when you unpack the download):
 
 	#  A Large Data Principal Components Analysis
 	
@@ -429,8 +428,6 @@ The scree plot is shown as follows:
 ![](media/how-to-revoscaler-covcor/image24.png)
 
 Between them, the first two principal components explain 99% of the variance; we can therefore replace the five original variables by these two principal components with no appreciable loss of information.
-
-	} # End of bHasNYSE
 
 ### Ridge Regression
 

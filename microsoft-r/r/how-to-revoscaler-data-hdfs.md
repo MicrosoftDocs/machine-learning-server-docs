@@ -27,18 +27,9 @@ ms.technology: "r-server"
 
 This article explains how to load data from the Hadoop Distributed File System (HDFS) into an R data frame or an .xdf file. Example script shows several use cases for using RevoScaleR functions with HDFS data.
 
-## Load data from HDFS
+## Set the file system
 
-If you are using RevoScaleR on a Linux system that is part of a Hadoop cluster, you can store and access text or .xdf data files on your system’s native file system or the Hadoop Distributed File System (HDFS). Assuming you already have an .xdf file on HDFS, you can load it by creating an **RxXdfData** object that takes the .xdf file as an input.
-
-	mortDS <- RxXdfData("/share/SampleData/mortDefaultSmall.xdf")
-	rxGetInfo(mortDS, numRows = 5)
-	rxSummary(~., data = mortDS, blocksPerRead = 2)
-	logitObj <- rxLogit(default~F(year) + creditScore + yearsEmploy + ccDebt,
-               data = mortDS, blocksPerRead = 2,  reportProgress = 1)
-	summary(logitObj)
-
-By default, data is expected to be found on the native file system. If all your data is on HDFS, you can use **rxSetFileSystem** to specify this as a global option:
+By default, data is expected to be found on the native file system (Linux). If all your data is on HDFS, you can use **rxSetFileSystem** to specify this as a global option:
 
 	rxSetFileSystem(RxHdfsFileSystem())
 
@@ -49,6 +40,19 @@ If only some files are on HDFS, keep the native file system default and use the 
 	xdfSource <- RxXdfData("/test/HdfsData/AirlineData1987", fileSystem=hdfsFS)
 
 The **RxHdfsFileSystem** function creates a file system object for the HDFS file system. You can use **RxNativeFileSystem** function does the same thing for the native file system.
+
+## Load data from HDFS
+
+Assuming you already have an .xdf file on HDFS, you can load it by creating an **RxXdfData** object that takes the .xdf file as an input.
+
+	mortDS <- RxXdfData("/share/SampleData/mortDefaultSmall.xdf")
+	rxGetInfo(mortDS, numRows = 5)
+	rxSummary(~., data = mortDS, blocksPerRead = 2)
+	logitObj <- rxLogit(default~F(year) + creditScore + yearsEmploy + ccDebt,
+               data = mortDS, blocksPerRead = 2,  reportProgress = 1)
+	summary(logitObj)
+
+
 
 ## Write XDF to HDFS
 

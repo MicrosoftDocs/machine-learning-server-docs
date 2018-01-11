@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 # Running distributed analyses using RevoScaleR
 
-Many RevoScaleR functions support parallelization. On a multi-core machine, the functions are multithreaded. On a cluster platform like Hadoop, analysis runs on all data nodes having the RevoScaleR engine. 
+Many RevoScaleR functions support parallelization. On a standalone multi-core server, functions that are multithreaded run on all available cores. In an RxSpark or RxHadoop remote compute context, multithreaded analysis runs on all data nodes having the RevoScaleR engine. 
 
 RevoScaleR can structure an analysis for parallel execution with no additional configuration on your part, assuming you set the [compute context](how-to-revoscaler-distributed-computing-compute-context.md). Setting the compute context to RxSparkConnect or RxHadoopMR tells RevoScaleR to look for data nodes. Using the default local compute context tells the engine to look for available processors on a multi-core machine.
 
@@ -51,9 +51,9 @@ Except for `rxExec`, we refer to these functions as the RevoScaleR *high-perform
 
 The exception, `rxExec`, is used to execute an arbitrary function on specified nodes (or cores) of your compute context. It can be used for traditional high-performance computing functions. The `rxExec` function offers great flexibility in how arguments are passed, so that you can specify that all nodes receive the same arguments, or provide different arguments to each node. 
 
-`rxPredict` on a cluster is only possible if the data file is split.
+`rxPredict` on a cluster is only redistributed if the data file is split.
 
-**How to obtain node-level information**
+## Obtain node information
 
 You can use informational functions, such as `rxGetInfo` and `rxGetVarInfo`, to confirm data availability. Before beginning data analysis, you can use `rxGetInfo` to confirm the data set is available on the compute resources. 
 
@@ -62,7 +62,7 @@ You can request basic information about a data set from each node using the `rxG
 	rxGetInfo(data=airData)
 
 > [!NOTE]
-> To load a dataset, use AirOntime2012.xdf from the [data set download site](http://packages.revolutionanalytics.com/datasets) and make sure it is in your dataPath. You can then run `airData <- RxXdfData("AirOnTime2012.xdf"` to load the data on a cluster.
+> To load a dataset, use AirOntime2012.xdf from the [data set download site](http://packages.revolutionanalytics.com/datasets) and make sure it is in your dataPath. You can then run `airData <- RxXdfData("AirOnTime2012.xdf")` to load the data on a cluster.
 
 On a five-node cluster, the call to *rxGetInfo* returns the following:
 
@@ -149,7 +149,7 @@ We get the following results (identical to what we would have gotten from the sa
 	 Sat       740232
 	 Sun       869202
 
-### Computing Average Arrival Delay Using rxCube
+## Perform an rxCube computation
 
 We can perform an `rxCube` computation using the same data set to compute the average arrival delay for departures for each hour of the day for each day of the week. Again, the code is identical to the code used when performing the computations on a single computer, as are the results.
 
@@ -168,7 +168,7 @@ Notice that in this case we have returned an `rxCube` object. We can use this ob
 
 ![Plotted Results](./media/how-to-revoscaler-distributed-computing-distributed-analysis/plotted_results.png)
 
-### Cross-Tabulating Arrival Delay
+## Perform an rxCrossTabs computation
 
 The `rxCrossTabs` function provides essentially the same computations as `rxCube`, but presents the results in a more traditional cross-tabulation. Here we look at late flights (those whose arrival delay is 15 or greater) by late departure and day of week:
 
@@ -200,7 +200,7 @@ which yields:
 	         0 0.04435956
 	         1 0.79111488
 
-### Computing a Covariance or Correlation Matrix
+## Compute a Covariance or Correlation Matrix
 
 The `rxCovCor` function is used to compute covariance and correlation matrices; the convenience functions `rxCov`, `rxCor`, and `rxSSCP` all depend upon it and are usually used in practical situations. For examples, see [Correlation and variance/covariance matrices](how-to-revoscaler-covcor.md).
 
@@ -242,7 +242,7 @@ The following example shows how the main function can be used directly:
 	ArrDelayMinutes      0.96590179      1.00000000 0.02660178
 	AirTime              0.01757575      0.02660178 1.00000000
 
-### Computing a Linear Model
+## Compute a Linear Model
 
 We can model the arrival delay as a function of day of the week, departure time, and flight distance as follows:
 
@@ -309,7 +309,7 @@ We can then view a summary of the results as follows:
 	F-statistic:  2785 on 30 and 6005349 DF,  p-value: < 2.2e-16
 	Condition number: 442.0146
 
-### Computing a Logistic Regression
+## Compute a Logistic Regression
 
 We can compute a similar logistic regression using the logical variable ArrDel15 as the response. This variable specifies whether a flight’s arrival delay was 15 minutes or greater:
 
@@ -371,7 +371,7 @@ We can compute a similar logistic regression using the logical variable ArrDel15
 	Condition number of final variance-covariance matrix: 445.2487
 	Number of iterations: 5
 
-### Viewing Console Output
+## View Console Output
 
 You may notice when running distributed computations that you get virtually no feedback while running waiting jobs. Since the computations are in general not running on the same computer as your R Console, the “usual” feedback is not returned by default. However, you can set the *consoleOutput* parameter in your compute context to TRUE to enable return of console output from all the nodes. For example, here we update our compute context *myCluster* to include *consoleOutput=TRUE*:
 
@@ -457,3 +457,8 @@ Then, rerunning our previous example results in much more verbose output:
 	Computation time: 0.471 seconds.
 	======  CLUSTER-HEAD2  ( process  1 ) has completed run at  Thu Aug 11 15:56:11 2011  ======
 
+## See also
+
++ [Distributed and parallel processing in Machine Learning Server](how-to-revoscaler-distributed-computing.md)
++ [Compute context in Machine Learning Server](concept-what-is-compute-context.md) 
++ [What is RevoScaleR](concept-what-is-revoscaler.md) 

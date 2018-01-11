@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Quickstart for binary classification with microsoftml - Machine Learning Server "
+title: "Quickstart: Binary classification with microsoftml - Machine Learning Server "
 description: "How to deploy an R model as a service"
 keywords: "quickstart, Machine Learning Server, deploy python models"
 author: "bradsev"

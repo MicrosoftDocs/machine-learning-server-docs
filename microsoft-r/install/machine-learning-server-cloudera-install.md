@@ -24,9 +24,6 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server using Cloudera Manager
 
-> [!Note]
-> Parcel installation will be available once the Machine Learning Server installers are on the [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Until then, please use the [installation instructions for Hadoop](machine-learning-server-hadoop-install.md).
-
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.2.1 on a Cloudera distribution of Apache Hadoop (CDH). 
 
 Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server runs on the edge node and all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
@@ -45,10 +42,14 @@ This section explains how to obtain the parcel generation script and simulate pa
 
 ### Download a Machine Learning Server distribution
 
-A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Visual Studio Subscriptions](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) or [Volume licensing](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409):
+A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Visual Studio Subscriptions](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) or [Volume licensing](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409).
 
-+ Search for "SQL Server" to list features licensed through SQL Server. For licensing purposes, Machine Learning Server is a supplemental feature to SQL Server.
-+ Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp/**, on one of the nodes.
+1. Go to [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+2. Click **Join or Access Now** and enter your [Microsoft account](https://account.microsoft.com/account) (such as a Live ID, Hotmail, or Outlook account).
+3. Make sure you're in the right place: *https://my.visualstudio.com/Benefits*.
+4. Click **Downloads**.
+5. Search for *Machine Learning Server*.
+6. Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp/**, on one of the nodes.
 
 ### Unpack the distribution
 
@@ -190,6 +191,12 @@ The above steps apply to 9.2.1. If you have R Server 9.1 or 9.0.1, see [Install 
 We recommend starting with [How to use RevoScaleR with Spark](../r/how-to-revoscaler-spark.md) or [How to use RevoScaleR with Hadoop MapReduce](../r/how-to-revoscaler-hadoop.md). 
 
 For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Running a distributed analysis using RevoScaleR functions](../r/how-to-revoscaler-distributed-computing-distributed-analysis.md).
+
+R solutions that execute on the cluster can call functions from any R package. To add new R packages, you can use any of these approaches:
+
++ Use a parcel and [create new parcel](machine-learning-server-cloudera-install.md#flags-used-for-parcel-generation) using generate_mlserver_parcel.sh script. 
++ Use the RevoScaleR [rxExec function to add new packages](r-server-install-hadoop-manual-package.md#install-additional-packages-on-each-node-using-rxexec).
++ Manually run [install.packages()](https://www.rdocumentation.org/packages/utils/versions/3.4.3/topics/install.packages) on all nodes in Hadoop cluster (using distributed shell or some other mechanism). 
 
 ## See also
 

@@ -278,7 +278,7 @@
           href: r/how-to-revoscaler-data-sql.md
         - name: Import ODBC data
           href: r/how-to-revoscaler-data-odbc.md
-        - name: Access HDFS data
+        - name: Import HDFS files
           href: r/how-to-revoscaler-data-hdfs.md
         - name: Use data source objects
           href: r/how-to-revoscaler-data-source.md
@@ -286,6 +286,8 @@
           href: r/how-to-revoscaler-data-transform.md
         - name: Sort data
           href: r/how-to-revoscaler-data-sort.md
+        - name: Split data
+          href: r/how-to-revoscaler-data-split.md
         - name: Merge data
           href: r/scaler-data-merge.md
       - name: Summarization
@@ -296,7 +298,7 @@
           href: r/how-to-revoscaler-crosstabs.md
       - name: Visualization
         href: r/how-to-revoscaler-visualize-huge-data-sets.md
-      - name: Modeling
+      - name: Data modeling
         href: r/how-to-revoscaler-models.md
         items:
         - name: Linear regression
@@ -327,7 +329,7 @@
           href: r/how-to-revoscaler-distributed-computing-distributed-analysis.md
         - name: Background jobs
           href: r/how-to-revoscaler-distributed-computing-background-jobs.md
-        - name: Parallel jobs
+        - name: Parallel jobs using rxExec
           href: r/how-to-revoscaler-distributed-computing-parallel-jobs.md
         - name: Enforce a YARN queue assignment
           href: install/r-server-install-hadoop-yarnqueueusage.md
@@ -491,7 +493,7 @@
     - name: Parallel loops using foreach
       href: r/how-to-revoscaler-distributed-computing-foreach.md
     - name: Parallel execution using doRSR
-      href: r/how-to-revoscaler-distributed-computing-foreach.md
+      href: r/how-to-revoscaler-distributed-computing-parallel-foreach.md
     - name: Parallel algorithms with PemaR
       href: r/how-to-developer-pemar.md
 - name: Reference

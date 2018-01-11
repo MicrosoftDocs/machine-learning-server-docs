@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Quick Start for Microsoft R Client and Machine Learning Server"
+title: "Quick Start for Microsoft R Client & Machine Learning Server"
 description: "Microsoft R Client quickstart"
 keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "6/21/2017"
+ms.date: "1/10/2018"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -128,7 +128,7 @@ This article walks through some R code you can use to predict whether a flight w
 
 
 #Step 2: Pre-process Data
-#Prepare for a merge by renaming some colum in the weather data.
+#Prepare for a merge by renaming some columns in the weather data.
     newVarInfo <- list(
       AdjustedMonth = list(newName = "Month"),
       AdjustedDay = list(newName = "DayofMonth"),

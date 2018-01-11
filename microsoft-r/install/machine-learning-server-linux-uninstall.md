@@ -27,7 +27,7 @@ ms.technology: "r-server"
 This article explains how to uninstall Machine Learning Server 9.2.1 for Linux. 
 
 > [!Note]
-> To upgrade from either a 9.0.1 or 9.1 installation, you can skip uninstall. Setup automatically replaces previous versions of R Server or Microsoft R Open 3.3.2 with newer versions. However, if you have 8.x, you must uninstall first.
+> For upgrade purposes, uninstall is not necessary unless the existing version is 8.x. Upgrading from 9.x is an in-place upgrade that overwrites the previous version. Upgrading from 8.x requires that you uninstall R Server 8.x first. 
 
 ## Gather information
 

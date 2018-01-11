@@ -6,7 +6,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "09/05/2017"
+ms.date: "11/14/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -42,7 +42,7 @@ Microsoft Machine Learning Server includes:
 
 + **The best AI innovation from Microsoft and open source**
 
-  Microsoft strives to make AI accessible to every individual and organization. Microsoft Machine Learning Server includes a rich set of highly-scalable, distributed set of algorithms such as [RevoscaleR](/r-reference/revoscaler/revoscaler.md), [revoscalepy](/python-reference/revoscalepy/revoscalepy-package.md), and [microsoftML](/python-reference/microsoftml/microsoftml-package.md) that can work on data sizes larger than the size of physical memory, and run on a wide variety of platforms in a distributed manner. Learn more about the collection of Microsoft's custom [R packages](r-reference/introducing-r-server-r-package-reference.md) and [Python packages](python-reference/introducing-python-package-reference.md) included with the product.
+  Microsoft strives to make AI accessible to every individual and organization. Microsoft Machine Learning Server includes a rich set of highly-scalable, distributed set of algorithms such as [RevoscaleR](r-reference/revoscaler/revoscaler.md), [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md), and [microsoftML](python-reference/microsoftml/microsoftml-package.md) that can work on data sizes larger than the size of physical memory, and run on a wide variety of platforms in a distributed manner. Learn more about the collection of Microsoft's custom [R packages](r-reference/introducing-r-server-r-package-reference.md) and [Python packages](python-reference/introducing-python-package-reference.md) included with the product.
   
   Machine Learning Server bridges these Microsoft innovations and those coming from the open source community (R, Python and AI toolkits) all on top of a single enterprise-grade platform. Any R or Python open source machine learning package can work side-by-side with any proprietary innovation from Microsoft. 
 
@@ -50,7 +50,7 @@ Microsoft Machine Learning Server includes:
 
   Enterprises relying on traditional operationalization paradigms and environments end up investing much time and effort towards this area. Pain points often resulting in inflated costs and delays include: the translation time for models, iterations to keep them valid and current, regulatory approval, managing permissions through operationalization.
 
-  Machine Learning Server offers best-in-class [operationalization](what-is-operationalization.md) -- from the time a machine learning model is completed, it takes just a few clicks to generate web services APIs. These [web services](/operationalize/what-are-web-services.md) are hosted on a server grid on-premises or in the cloud and can be integrated with line-of-business applications. Additionally, Machine Learning Server integrates seamlessly with [Active Directory and Azure Active Directory](/operationalize/configure-authentication.md) and includes [role-based access control](/operationalize/configure-roles.md) to satisfy security and compliance needs of your enterprise. The ability to deploy to an elastic grid lets you scale seamlessly with the needs of your business, both for batch and real-time scoring.
+  Machine Learning Server offers best-in-class [operationalization](what-is-operationalization.md) -- from the time a machine learning model is completed, it takes just a few clicks to generate web services APIs. These [web services](operationalize/concept-what-are-web-services.md) are hosted on a server grid on-premises or in the cloud and can be integrated with line-of-business applications. Additionally, Machine Learning Server integrates seamlessly with [Active Directory and Azure Active Directory](operationalize/configure-authentication.md) and includes [role-based access control](operationalize/configure-roles.md) to satisfy security and compliance needs of your enterprise. The ability to deploy to an elastic grid lets you scale seamlessly with the needs of your business, both for batch and real-time scoring.
 
 + **Deep ecosystem engagements to deliver customer success with optimal total cost of ownership**
 

@@ -29,7 +29,7 @@ Logistic regression is a standard tool for modeling data with a binary response 
 
 ### A Simple Logistic Regression Example
 
-As an example, consider the *kyphosis* data set in the *rpart* package. This data set consists of 81 observations of four variables (Age, Number, Kyphosis, Start) in children following corrective spinal surgery; it is used as the initial example of *glm* in the White Book. The variable Kyphosis reports the absence or presence of this deformity.
+As an example, consider the *kyphosis* data set in the *rpart* package. This data set consists of 81 observations of four variables (Age, Number, Kyphosis, Start) in children following corrective spinal surgery; it is used as the initial example of *glm* in the White Book (see [Additional Resources](../resources-more.md) for more information. The variable Kyphosis reports the absence or presence of this deformity.
 
 We can use *rxLogit* to model the probability that kyphosis is present as follows:
 
@@ -114,13 +114,13 @@ The methods for variable selection (forward, backward, and stepwise), the defini
 
 #### Plotting Model Coefficients
 
-The ability to save model coefficients using the argument *keepStepCoefs = TRUE* within the *rxStepControl* call and to plot them with the function *rxStepPlot* was described in great detail for stepwise *rxLinMod* in section 8.8.5. This functionality is also available for stepwise *rxLogit* objects.
+The ability to save model coefficients using the argument *keepStepCoefs = TRUE* within the *rxStepControl* call and to plot them with the function *rxStepPlot* was described in great detail for stepwise *rxLinMod* in [Fitting Linear Models using RevoScaleR](how-to-revoscaler-linear-model.md). This functionality is also available for stepwise *rxLogit* objects.
 
 ### Prediction
 
 As described above for linear models, the objects returned by the RevoScaleR model-fitting functions do not include fitted values or residuals. We can obtain them, however, by calling *rxPredict* on our fitted model object, supplying the original data used to fit the model as the data to be used for prediction.
 
-For example, consider the mortgage default example in Section 6 of the manual *RevoScaleR: Getting Started Guide.* For that example, we used ten input data files to create the data set used to fit the model. But suppose instead we use nine input data files to create the training data set and use the remaining data set for prediction. We can do that as follows (again, remember to modify the first line for your own system):
+For example, consider the mortgage default example in [Tutorial: Analyzing loan data with RevoScaleR](tutorial-revoscaler-large-data-loan.md). In that example, we used ten input data files to create the data set used to fit the model. But suppose instead we use nine input data files to create the training data set and use the remaining data set for prediction. We can do that as follows (again, remember to modify the first line for your own system):
 
 	#  Logistic Regression Prediction
 
@@ -230,7 +230,7 @@ Let’s start with a simple example. Suppose we have a data set with 10 observat
 
 We can now call the *rxRocCurve* function to compute the sensitivity and specificty for the ‘bad’ predictions, and draw the ROC curve. The numBreaks argument indicates the number of breaks to use in determining the thresholds for computing the true and false positive rates.
 
-rxRocCurve(actualVarName = "actual", predVarNames = "badPred",
+    rxRocCurve(actualVarName = "actual", predVarNames = "badPred",
 	data = sampleDF, numBreaks = 10, title = "ROC for Bad Predictions")
 
 ![](media/how-to-revoscaler-logistic-regression/image14.png)
