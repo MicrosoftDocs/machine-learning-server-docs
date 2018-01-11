@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Running diagnostics & troubleshooting the configuration for operationalization - Machine Learning Server "
+title: "Diagnostics & troubleshooting the Machine Learning Server configuration"
 description: "Troubleshooting and Diagnostics when configuring Machine Learning Server and Microsoft R Server to operationalize"
 keywords: ""
 author: "j-martens"
