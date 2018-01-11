@@ -37,7 +37,7 @@ You can offload heavy processing to Machine Learning Server or test your analyti
 
 Machine Learning Server and Microsoft R Client offer virtually identical R packages, but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. Machine Learning Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. 
 
-You can work with R Client standalone. You can also use it with Machine Learning Server, where you learn and develop on R Client, and then migrate your work to Machine Learning Server or execute it remotely on an Machine Learning Server whenever you need the scale, support, and infrastructure of an operationalized server. 
+You can work with R Client standalone. You can also use it with Machine Learning Server, where you learn and develop on R Client, and then migrate your work to Machine Learning Server or execute it remotely on an Machine Learning Server whenever you need the scale, support, and infrastructure of a server configured for operationalization. 
 
 ## Get started with R Client
 

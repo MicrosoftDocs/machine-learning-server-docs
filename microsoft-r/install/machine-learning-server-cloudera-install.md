@@ -192,6 +192,12 @@ We recommend starting with [How to use RevoScaleR with Spark](../r/how-to-revosc
 
 For a list of functions that utilize Yarn and Hadoop infrastructure to process in parallel across the cluster, see [Running a distributed analysis using RevoScaleR functions](../r/how-to-revoscaler-distributed-computing-distributed-analysis.md).
 
+R solutions that execute on the cluster can call functions from any R package. To add new R packages, you can use any of these approaches:
+
++ Use a parcel and [create new parcel](machine-learning-server-cloudera-install.md#flags-used-for-parcel-generation) using generate_mlserver_parcel.sh script. 
++ Use the RevoScaleR [rxExec function to add new packages](r-server-install-hadoop-manual-package.md#install-additional-packages-on-each-node-using-rxexec).
++ Manually run [install.packages()](https://www.rdocumentation.org/packages/utils/versions/3.4.3/topics/install.packages) on all nodes in Hadoop cluster (using distributed shell or some other mechanism). 
+
 ## See also
 
 + [Install on Linux](machine-learning-server-linux-install.md)

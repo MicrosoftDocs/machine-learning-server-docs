@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Machine Learning Server in the Cloud (Virtual Machines) - Machine Learning Server "
+title: "Machine Learning Server in the Cloud (Virtual Machines)"
 description: "Machine Learning Server in the Cloud: Azure"
 keywords: "Machine Learning Server, R Server, azure, virtual machine"
 author: "j-martens"
