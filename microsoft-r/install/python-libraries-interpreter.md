@@ -68,7 +68,7 @@ On each supported OS, the package manager downloads packages from the repository
 With root or sudo permissions, run the following commands:
 ```
 # Set location of the package repository. For example for 16.04.
-wget https://packages.microsoft.com/ubuntu/16.04/prod/microsoft-mlserver-packages-py-9.2.1.deb
+wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-py-9.2.1/microsoft-mlserver-packages-py-9.2.1.deb
 
 # Verification step: look for the mlserver.list configuration file
 ls -la /etc/apt/sources.list.d/
