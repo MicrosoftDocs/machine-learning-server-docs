@@ -44,7 +44,7 @@ On the consumption side, you can write custom apps or consume an R or Python sol
 
 ### Large scale multi-user topologies
 
-Scale-out topologies are available in two forms. On option is to use a distributed platform like Hadoop MapReduce or Spark (on Linux). A second option is to install Machine Learning Server on multiple computers (Windows or Linux), each one configured as either a web node or compute node that work together.
+Scale-out topologies are available in two forms. One option is to use a distributed platform like Hadoop MapReduce or Spark (on Linux). A second option is to install Machine Learning Server on multiple computers (Windows or Linux), each one configured as either a web node or compute node that work together.
 
 For Hadoop and Spark, you can write and run script locally and then [push the compute context](~/r/concept-what-is-compute-context.md) to the Hadoop or Spark cluster. For web and compute nodes, use the [operationalization capabilities](~/what-is-operationalization.md) in Machine Learning Server to distribute workloads on appropriate nodes.
 
