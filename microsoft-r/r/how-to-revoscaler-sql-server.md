@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoScaleR Getting Started Guide for SQL Server (Machine Learning Server) "
+title: "Use RevoScaleR with SQL Server (Machine Learning Server) "
 description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
 keywords: ""
 author: "jeannt"
@@ -23,7 +23,7 @@ ms.technology: "r-server"
 
 ---
 
-## Using RevoScaleR with SQL Server
+# Using RevoScaleR with SQL Server
 
 By using the **RevoScaleR** functions in your R solutions, you can create high-performance big data analytics that use SQL Server data, or that run in the context of a SQL Server database server.
 
