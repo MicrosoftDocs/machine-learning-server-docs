@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 author: "j-martens"
 ms.author: "jmartens"
-ms.date: "09/25/2017"
+ms.date: "01/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -30,23 +30,25 @@ Machine Learning Server is available on a number of [platforms](r-server-install
 
 Standalone servers describe a working experience where script development and execution occur on the same Windows or Linux machine. If you install the free developer edition, a standalone server is the likely configuration. You could also install the server on a virtual machine accessed by multiple users in turn. 
 
-   ![standalone server on Windows or Linux](./media/install-topology-standalone.png)
+   ![standalone server on Windows or Linux](./media/machine-learning-server-install/install-topology-standalone.png)
 
 ### Client and server multi-user topology
 
-A client-server configuration is more common in a team environment. You can install free Python client libraries or R Client on any workstation, write script on the workstation, and then deploy script as a [web service](~/operationalize/concept-what-are-web-services.md) to an [operationalized](~/what-is-operationalization.md) Machine Learning Server, thus extending your options for interacting with and consuming script on a server. 
+A client-server configuration is more common in a team environment. You can install free Python client libraries or free R Client on any workstation, write script on the workstation, and then deploy script as a [web service](~/operationalize/concept-what-are-web-services.md) to a Machine Learning Server configured to [operationalize](~/what-is-operationalization.md) analytics, thus extending your options for interacting with and consuming script on a server. 
 
 For R development only, you can also use [remote execution](~/r/how-to-execute-code-remotely.md) in this configuration: switch from local to remote server within a session to write and run script interactively. 
 
 On the consumption side, you can write custom apps or consume an R or Python solution as a web service.
 
-   ![client server topology](./media/install-topology-client-server.png)
+   ![client server topology](./media/machine-learning-server-install/install-topology-client-server.png)
 
 ### Large scale multi-user topologies
 
-Scale-out topologies are available in two forms: a distributed platform like Hadoop and Spark (Linux), or on clustered Windows machines (network-load-balanced clusters of web nodes and compute nodes). For Hadoop and Spark, you can write and run script locally and then [push the compute context](~/r/concept-what-is-compute-context.md) to the Hadoop or Spark cluster. For Windows, use the [operationalization capabilities](~/what-is-operationalization.md) in Machine Learning Server to distribute workloads on appropriate nodes.
+Scale-out topologies are available in two forms. On option is to use a distributed platform like Hadoop MapReduce or Spark (on Linux). A second option is to install Machine Learning Server on multiple computers (Windows or Linux), each one configured as either a web node or compute node that work together.
 
-   ![scaleout topology on clustered computers](./media/install-topology-scaleout.png)
+For Hadoop and Spark, you can write and run script locally and then [push the compute context](~/r/concept-what-is-compute-context.md) to the Hadoop or Spark cluster. For web and compute nodes, use the [operationalization capabilities](~/what-is-operationalization.md) in Machine Learning Server to distribute workloads on appropriate nodes.
+
+   ![scaleout topology on clustered computers](./media/machine-learning-server-install/install-topology-scaleout.png)
 
 
 ## Installation Guides 
