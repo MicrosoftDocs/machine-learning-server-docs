@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "10/11/2017"
+ms.date: "01/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -25,9 +25,9 @@ ms.technology: "r-server"
 
 # How to set and manage compute context in Machine Learning Server
 
-In Machine Learning Server, every session that loads a function library has a [compute context](concept-what-is-compute-context.md). The default is local, available on all platforms. No action is required to use a local compute context.
+In Machine Learning Server, every session that loads a function library has a [compute context](concept-what-is-compute-context.md). The default is **local**, available on all platforms. No action is required to use a local compute context.
 
-This article explains how to shift script execution to a remote Hadoop or Spark cluster, for the purpose of bring calculations to the data itself and eliminating data transfer over your network. For SQL Server compute contexts, see [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.
+This article explains how to shift script execution to a **remote** Hadoop or Spark cluster, for the purpose of bring calculations to the data itself and eliminating data transfer over your network. For SQL Server compute contexts, see [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.
 
 You can create multiple compute context objects: just use them one at a time. Often, functions operate identically in local and remote context. If script execution is successful locally, you can generally expect the same results on the remote server, subject to these [limitations](#limits-on-context-shift). 
 
