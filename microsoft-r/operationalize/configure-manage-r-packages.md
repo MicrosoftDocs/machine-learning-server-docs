@@ -89,6 +89,10 @@ This production-safe approach provides an excellent way to:
       # Do not specify dependencies
       pkgs_needed <- c("Package-A", "Package-B", "Package-...")
       ```
+      
+    >[!Note]
+    > If you aren't sure which packages to list, consider using a list of the top “n” (e.g. 500) packages by download/popularity as a starting point. Then, extend with additional packages as needed over time. For Mac and Windows binaries, it is possible to look at the particular bin/contrib repo you’re interested in, for example: https://cran.microsoft.com/snapshot/2018-01-16/bin/windows/contrib/3.4/PACKAGES
+    > It is possible to [create your own mirror](https://cran.r-project.org/mirror-howto.html) if you wanted all packages, however this is very large and will grow stale quickly, which then requires regular updates. 
 
 1. On each compute node:
    1. Copy the miniCRAN repository from the machine with Internet connectivity to the R_SERVICES library on the SQL Server instance.
