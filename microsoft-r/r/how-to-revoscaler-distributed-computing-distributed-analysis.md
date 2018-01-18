@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "jhubbard"
-ms.date: "10/13/2017"
+ms.date: "01/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -25,9 +25,9 @@ ms.technology: "r-server"
 
 # Running distributed analyses using RevoScaleR
 
-Many RevoScaleR functions support parallelization. On a standalone multi-core server, functions that are multithreaded run on all available cores. In an RxSpark or RxHadoop remote compute context, multithreaded analysis runs on all data nodes having the RevoScaleR engine. 
+Many RevoScaleR functions support parallelization. On a standalone multi-core server, functions that are multithreaded run on all available cores. In an RxSparkConnect or RxHadoop remote compute context, multithreaded analyses run on all data nodes having the RevoScaleR engine. 
 
-RevoScaleR can structure an analysis for parallel execution with no additional configuration on your part, assuming you set the [compute context](how-to-revoscaler-distributed-computing-compute-context.md). Setting the compute context to RxSparkConnect or RxHadoopMR tells RevoScaleR to look for data nodes. Using the default local compute context tells the engine to look for available processors on a multi-core machine.
+RevoScaleR can structure an analysis for parallel execution with no additional configuration on your part, assuming you set the [compute context](how-to-revoscaler-distributed-computing-compute-context.md). Setting the compute context to RxSparkConnect or RxHadoopMR tells RevoScaleR to look for data nodes. In contrast, using the default local compute context tells the engine to look for available processors on the local machine.
 
 > [!Note]
 > RevoScaleR also runs on R Client. On R Client, RevoScaleR is limited to two threads for processing and in-memory datasets. To avoid paging data to disk, R Client is engineered to ignore the `blocksPerRead` argument, which results in all data being read into memory. If your datasets exceed memory, you should push the compute context to a server instance on a supported platform (Hadoop, Linux, Windows, SQL Server).
