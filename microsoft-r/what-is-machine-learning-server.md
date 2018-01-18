@@ -32,7 +32,7 @@ R support is built on a legacy of Microsoft R Server 9.x and Revolution R Enterp
 Additionally, Machine Learning Server enables [operationalization support](what-is-operationalization.md) so you can deploy your models to a scalable grid for both batch and real-time scoring.
 
 
-## Why Choose Machine Learning Server
+## Why choose Machine Learning Server
 
 Microsoft Machine Learning Server includes:
 
@@ -57,7 +57,7 @@ Microsoft Machine Learning Server includes:
   Individuals embarking on the journey of making their applications intelligent or simply wanting to learn the new world of AI and machine learning, need the right resources to help them get started. In addition to this documentation, Microsoft provides several learning resources and has engaged several training partners to help you ramp up and become productive quickly.
 
 
-## Key Features of Machine Learning Server
+## Key features of Machine Learning Server
 
 The following features are included in Machine Learning Server. For feature descriptions in this release, see [What's New in Machine Learning Server](whats-new-in-machine-learning-server.md).
 
