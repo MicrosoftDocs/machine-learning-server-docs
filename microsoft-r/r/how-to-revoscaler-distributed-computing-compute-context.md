@@ -33,7 +33,7 @@ You can create multiple compute context objects: just use them one at a time. Of
 
 ## Prerequisites
 
-The remote computer must be at the same functional level as the system sending the reqest. A remote Machine Learning Server 9.2.1 can accept a compute context shift from another 9.2.1 interpreter on Machine Learning Server,a  SQL Server 2017 Machine Learning Services instance, and for R developers on Microsoft R Client at the same functional level (3.4.1).
+The remote computer must be at the same functional level as the system sending the request. A remote Machine Learning Server 9.2.1 can accept a compute context shift from another 9.2.1 interpreter on Machine Learning Server, a SQL Server 2017 Machine Learning Services instance, and for R developers on Microsoft R Client at the same functional level (3.4.1).
 
 The following table is a recap of platform and data source requirements for each function library.
 
@@ -42,7 +42,7 @@ The following table is a recap of platform and data source requirements for each
 | RevoScaleR | Spark 2.0-2.1 over HDFS, Hadoop MapReduce: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
 | revoscalepy | Spark 2.0-2.1 over HDFS: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server 2017 Machine Learning with Python: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
 
-<sup>(1)</sup> You can load text or .xdf files locally, but be aware that code and data is run through SQL Server, which results in [implicit data type conversions](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#r-and-sql-data-types).
+<sup>(1)</sup> You can load text or .xdf files locally, but be aware that code and data runs on SQL Server, which results in [implicit data type conversions](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#r-and-sql-data-types).
 
 > [!NOTE]
 > RevoScaleR is available in both Machine Learning Server and R Client. You can develop script in R Client for execution on the server. However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if datasets are large and come with dependencies on data chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Machine Learning Server instance that provides data chunking.
@@ -77,7 +77,7 @@ The compute context used to distribute computations on a Hadoop Spark 2.0-2.1 cl
 
 ### For MapReduce
 
-The compute context used to distribute computations on a Hadoop MapReduce cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [How to use RevoScaleR with Hadoop](how-to-revoscaler-hadoop.md)
+The compute context used to distribute computations on a Hadoop MapReduce cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with an RHEL operating system, or a client with an SSH connection to such a cluster. For details on creating and using `RxHadoopMR` compute contexts, see the [How to use RevoScaleR with Hadoop](how-to-revoscaler-hadoop.md)
 
 ```R
     myHadoopCluster <- RxHadoopMR(myHadoopCluster)
@@ -108,7 +108,7 @@ A primary benefit of remote computing is to perform distributed analysis using t
 
 | Limit | Details |
 |-------|---------|
-| Script execution of open source routines | Scripts use a combination of open source and proprietary functions. Only revoscalepy and RevoScaleR functions, with the respective interpreters, are multithreaded and distributable. Open source routines in your script still run locally in a single threaded process. |
+| Script execution of open-source routines | Scripts use a combination of open-source and proprietary functions. Only revoscalepy and RevoScaleR functions, with the respective interpreters, are multithreaded and distributable. Open-source routines in your script still run locally in a single threaded process. |
 | Single-threaded proprietary functions | Analyses that do not run in parallel include [import and export functions](../r-reference/revoscaler/revoscaler.md#import-export-functions), [data transformation functions](../r-reference/revoscaler/revoscaler.md#data-transform-functions), [graphing functions](../r-reference/revoscaler/revoscaler.md#graphing-functions). |
 | Date location and operational limits | Sort and merge must be local. Import is multithreaded, but not cluster-aware. If you execute rxImport in a Hadoop cluster, it runs multithreaded on the current node. <br/><br/>Data may have to be moved back and forth between the local and remote environments during the course of overall program execution. Except for file copying in Hadoop, RevoScaleR does not include functions for moving data. |
 

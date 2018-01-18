@@ -237,9 +237,10 @@ With our *kMeansRSR* function, we can then repeat the computation from
 
 With our 5-node HPC Server cluster, this reduces the time from a minute and a half to about 15 seconds.
 
-## Share data across parallel rocesses 
+## Share data across parallel processes 
 
-Data can be shared between rxExec parallel processes by copying it to the environment of each process through the `execObjects` option to rxExec, or by specifying the data as arguments to each function call. For small data, this works well but as the data objects get larger this can create a significant performance penalty due to the time needed to do the copy. In such cases, it can be much more efficient to share the data by storing it in a location accessible by each of the parallel processes, such as a local or network file share.  
+Data can be shared between rxExec parallel processes by copying it to the environment of each process through the `execObjects` option to rxExec, or by specifying the data as arguments to each function call. For small data, this works well but as the data objects get larger this can create a significant performance penalty due to the time needed to do the copy. In such cases, it can be much more efficient to share the data by storing it in a location accessible by each of the parallel processes, such as a local or network file share. 
+ 
 The following example shows how this can be done when parallelizing the computation of statistics on subsets of a larger data table.  
 
 We’ll start by creating some sample data using the **data.table** package.  
