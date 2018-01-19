@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "rx_hadoop_make_dir: Execute Hadoop Make Directory Commands" 
-description: "rx_hadoop_make_dir wraps the Hadoop fs -mkdir -p command." 
+description: "Wraps the Hadoop fs -mkdir -p command." 
 keywords: "Hadoop Command" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,7 +44,7 @@ revoscalepy.rx_hadoop_make_dir(path: typing.Union[list, str])
 
 ## Description
 
-rx_hadoop_make_dir wraps the Hadoop fs -mkdir -p command.
+Wraps the Hadoop *fs -mkdir -p* command.
 
 
 ## Arguments
@@ -52,7 +52,7 @@ rx_hadoop_make_dir wraps the Hadoop fs -mkdir -p command.
 
 ### path
 
-str or list. A list of paths or A character string specifying location of one or more
+Character string or list. A list of paths or A character string specifying location of one or more
 directories.
 
 

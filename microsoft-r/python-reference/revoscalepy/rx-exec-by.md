@@ -4,9 +4,9 @@
 title: "rx_exec_by: Partition Data by Key Values and Execute User Function on Each Partition" 
 description: "Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in local, localpar, RxInSqlServer and RxSpark compute contexts." 
 keywords: "execby, groupby" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -61,7 +61,7 @@ localpar, RxInSqlServer and RxSpark compute contexts.
 
 ### input_data
 
-a data source object supported in currently active compute context,
+A data source object supported in currently active compute context,
 e.g. ‘RxSqlServerData’ for ‘RxInSqlServer’. In ‘RxLocalSeq’
 and ‘RxLocalParallel’, a character string specifying a ‘.xdf’ file, or a data frame object
 can be also used.
@@ -71,13 +71,13 @@ RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object
 
 ### keys
 
-list of strings of variable names to be used for partitioning
+List of strings of variable names to be used for partitioning
 the input data set.
 
 
 ### function
 
-the user function to be executed. The user function takes ‘keys’
+The user function to be executed. The user function takes ‘keys’
 and ‘data’ as two required input arguments where ‘keys’ determines the partitioning
 values and ‘data’ is a data source object of the corresponding partition.
 ‘data’ can be a RxXdfData object or a RxODBCData object, which can be transformed
@@ -88,13 +88,13 @@ The nodes or cores on which it is running are determined by the currently active
 
 ### function_parameters
 
-a dict which defines a list of additional arguments for
+A dict which defines a list of additional arguments for
 the user function func.
 
 
 ### filter_function
 
-an user function that takes a Panda data frame of keys/values as
+An user function that takes a Panda data frame of keys/values as
 an input argument, applies filter to the keys/values and returns a data frame
 containing rows whose keys/values satisfy the filter conditions. The input data frame
 has similar format to the results returned by rx_partition which comprises of partitioning
@@ -105,12 +105,12 @@ allows user to control what data partitions to be applied by the user function �
 
 ### compute_context
 
-a RxComputeContext object.
+A RxComputeContext object.
 
 
 ### kwargs
 
-additional arguments.
+Additional arguments.
 
 
 ## Returns

@@ -608,6 +608,8 @@
         href: python-reference/revoscalepy/rx-get-jobs.md
       - name: rx_get_job_status
         href: python-reference/revoscalepy/rx-get-job-status.md
+      - name: rx_get_partitions
+        href: python-reference/revoscalepy/rx-get-partitions.md
       - name: rx_get_pyspark_connection
         href: python-reference/revoscalepy/rx-get-pyspark-connection.md
       - name: rx_get_var_info

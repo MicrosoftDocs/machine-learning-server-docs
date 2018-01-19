@@ -4,9 +4,9 @@
 title: "rx_serialize_model: Serialize the python model." 
 description: "Serialize the given python model." 
 keywords: "serialization" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -35,8 +35,7 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_serialize_model(model,
-    realtime_scoring_only: bool) -> bytes
+revoscalepy.rx_serialize_model(model, realtime_scoring_only=False) -> bytes
 ```
 
 
@@ -53,19 +52,19 @@ Serialize the given python model.
 
 ### model
 
-A python model supported for real-time scoring. Supported models
+Supported models
 are “rx_logit”, “rx_lin_mod”, “rx_dtree”, “rx_btrees”, “rx_dforest” and MicrosoftML models.
 
 
 ### realtime_scoring_only
 
-Boolean flag indicating if model serialization is for real-time only. Currently, the
-serialization is supported only for real-time scoring purposes.
+Boolean flag indicating if model serialization is for real-time only.
+Default to False
 
 
 ## Returns
 
-bytes of the serialized model.
+Bytes of the serialized model.
 
 
 ## Example
@@ -78,6 +77,6 @@ from revoscalepy import RxOptions, RxXdfData, rx_serialize_model, rx_lin_mod
 sample_data_path = RxOptions.get_option("sampleDataDir")
 ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
 linmod = rx_lin_mod("ArrDelay~DayOfWeek", ds)
-s_linmod = rx_serialize_model(linmod, realtime_scoring_only = True)
+s_linmod = rx_serialize_model(linmod, realtime_scoring_only = False)
 ```
 

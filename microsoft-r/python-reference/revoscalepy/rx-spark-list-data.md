@@ -4,9 +4,9 @@
 title: "rx_spark_list_data: Manage Cached Data in Spark" 
 description: "Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable  when using RxSpark compute context." 
 keywords: "spark, data" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -54,7 +54,7 @@ Use these functions to manage the objects cached in the Spark memory system. The
 
 ### show_description
 
-bool. Indicating whether or not to print out the detail to console.
+Bool value, indicating whether or not to print out the detail to console.
 
 
 ### compute_context

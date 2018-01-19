@@ -4,9 +4,9 @@
 title: "RxOdbcData: Generate ODBC Data Source Object" 
 description: "Main generator for class RxOdbcData, which extends RxDataSource." 
 keywords: "odbc, datasource" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -87,33 +87,33 @@ database.
 
 ### use_fast_read
 
-bool specifying whether or not to use a direct
+Bool specifying whether or not to use a direct
 ODBC connection.
 
 
 ### trim_space
 
-bool specifying whether or not to trim the white
+Bool specifying whether or not to trim the white
 character of string data for reading.
 
 
 ### row_buffering
 
-bool specifying whether or not to buffer rows on
+Bool specifying whether or not to buffer rows on
 read from the database. If you are having problems with your ODBC driver,
 try setting this to False.
 
 
 ### return_data_frame
 
-bool indicating whether or not to convert the
+Bool indicating whether or not to convert the
 result from a list to a data frame (for use in rxReadNext only). If False,
 a list is returned.
 
 
 ### string_as_factors
 
-bool indicating whether or not to
+Bool indicating whether or not to
 automatically convert strings to factors on import. This can be overridden
 by specifying “character” in column_classes and column_info. If True, the
 factor levels will be coded in the order encountered. Since this factor
@@ -123,7 +123,7 @@ columns is to use column_info with specified “levels”.
 
 ### column_classes
 
-dictionary of column name to strings specifying the
+Dictionary of column name to strings specifying the
 column types to use when converting the data. The element names for the
 vector are used to identify which column should be converted to which type.
 
@@ -153,7 +153,7 @@ as factor data you must use the column_info argument, documented below.
 
 ### column_info
 
-list of named variable information lists. Each variable
+List of named variable information lists. Each variable
 information list contains one or more of the named elements given below.
 The information supplied for column_info overrides that supplied for
 column_classes.
@@ -188,7 +188,7 @@ Currently available properties for a column information list are:
 
 ### rows_per_read
 
-number of rows to read at a time.
+Number of rows to read at a time.
 
 
 ### verbose
@@ -199,20 +199,20 @@ information on the odbc data source type (odbc or odbcFast) is printed.
 
 ### write_factors_as_indexes
 
-bool. If True, when writing to an
+Bool value, If True, when writing to an
 RxOdbcData data source, underlying factor indexes will be written instead
 of the string representations.
 
 
 ### kwargs
 
-additional arguments to be passed directly to the underlying
+Additional arguments to be passed directly to the underlying
 functions.
 
 
 ## Returns
 
-object of class RxOdbcData.
+Object of class RxOdbcData.
 
 
 ## Example
@@ -220,8 +220,28 @@ object of class RxOdbcData.
 
 
 ```
-from revoscalepy import RxOdbcData
+from revoscalepy import RxOdbcData, RxOptions, rx_write_object, rx_read_object, RxXdfData
+from numpy import array_equal
+import os
+
+# Establish a connection to an ODBC data source
 connection_string = 'Driver=SQL Server;Server=.;Database=RevoTestDb;Trusted_Connection=True;'
-dest = RxOdbcData(connection_string, table = "dataframe")
+dest = RxOdbcData(connection_string, table = "data")
+
+# Write an array to the database
+my_array = [1,2,3]
+rx_write_object(dest = dest, key = "my_array", value = my_array)
+
+# Retrieve the array from the database
+array_ds = rx_read_object(src = dest, key = "my_array")
+array_equal(my_array, array_ds) # True
+
+# Write a XDF object to the database
+sample_data_path  = RxOptions.get_option("sampleDataDir")
+kyphosis = RxXdfData(os.path.join(sample_data_path, "kyphosis.xdf"))
+rx_write_object(dest = dest, key = "kyphosis", value = kyphosis)
+
+# Retrieve the data from the database
+kyphosis_ds = rx_read_object(src = dest, key="kyphosis")
 ```
 

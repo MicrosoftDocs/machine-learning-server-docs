@@ -4,9 +4,9 @@
 title: ": " 
 description: "" 
 keywords: "" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -160,6 +160,10 @@ ms.custom: ""
 * [rx_set_var_info](rx-set-var-info.md) 
 
 * [RxMissingValues](RxMissingValues.md) 
+
+* [rx_get_partitions](rx-get-partitions.md) 
+
+* [rx_partition](rx-partition.md) 
 
 * [rx_privacy_control](rx-privacy-control.md) 
 

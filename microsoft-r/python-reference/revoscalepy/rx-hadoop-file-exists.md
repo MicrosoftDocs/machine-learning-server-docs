@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "rx_hadoop_file_exists: Execute Hadoop Files Exists Commands" 
-description: "rx_hadoop_file_exists wraps the Hadoop fs -test -e command." 
+description: "Wraps the Hadoop fs -test -e command." 
 keywords: "Hadoop Command" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,7 +44,7 @@ revoscalepy.rx_hadoop_file_exists(path: typing.Union[list, str])
 
 ## Description
 
-rx_hadoop_file_exists wraps the Hadoop fs -test -e command.
+Wraps the Hadoop *fs -test -e* command.
 
 
 ## Arguments
@@ -52,13 +52,13 @@ rx_hadoop_file_exists wraps the Hadoop fs -test -e command.
 
 ### path
 
-str or list. A list of paths or A character string specifying location of one or more files
+Character string or list. A list of paths or A character string specifying location of one or more files
 or directories.
 
 
 ## Returns
 
-a bool value specifying whether file exists.
+A bool value specifying whether file exists.
 
 
 ## Example
