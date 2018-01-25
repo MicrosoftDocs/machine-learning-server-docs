@@ -48,14 +48,14 @@
     - name: 'Configure: One-box'
       href: operationalize/configure-machine-learning-server-one-box.md
       items:
-      - name: 9.2.1
+      - name: 9.2
         href: operationalize/configure-machine-learning-server-one-box.md
       - name: 9.0/9.1
         href: install/operationalize-r-server-one-box-config.md
     - name: 'Configure: Enterprise'
       href: operationalize/configure-machine-learning-server-enterprise.md
       items:
-      - name: 9.2.1
+      - name: 9.2
         href: operationalize/configure-machine-learning-server-enterprise.md
       - name: 9.0/9.1
         href: install/operationalize-r-server-enterprise-config.md
