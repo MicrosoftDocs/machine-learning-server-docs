@@ -14,9 +14,7 @@
   items:
   - name: Supported platforms
     href: install/r-server-install-supported-platforms.md
-  - name: Machine Learning Server
-    items:
-    - name: Windows
+  - name: Windows
       items:
       - name: Install on Windows
         href: install/machine-learning-server-windows-install.md
