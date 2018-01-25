@@ -148,7 +148,7 @@ If you do not specify the username and password as arguments to the login functi
 ```
 
 >[!WARNING]
->If do not specify a username or password, you are prompted for your credentials at runtime. If you have issues with the AAD login pop-up, you may need to include the username and password as command arguments directly. 
+>Whenever you omit the username or password, you are prompted for your credentials at runtime. If you have issues with the AAD login pop-up, you may need to include the username and password as command arguments directly. 
 
 
 
@@ -163,7 +163,7 @@ If you do not specify the username and password as arguments to the login functi
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE.|
 |prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.  **If omitted, it is the same as `= TRUE`.**|
-|username|If NULL, user is prompted to enter username `<username>@<AAD-account-domain>`. If you encounter issues with AAD login pop-ups, include the username and password as command arguments. |
+|username|If NULL, user is prompted to enter username `<username>@<AAD-account-domain>`. If you have issues with the AAD login pop-up, try including the username and password as command arguments directly. |
 |password|If NULL, user is prompted to enter password.|
 
 
