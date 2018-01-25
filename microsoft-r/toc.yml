@@ -14,85 +14,87 @@
   items:
   - name: Supported platforms
     href: install/r-server-install-supported-platforms.md
-  - name: Windows
+  - name: Machine Learning Server
     items:
-    - name: Install on Windows
-      href: install/machine-learning-server-windows-install.md
-    - name: Offline install
-      href: install/machine-learning-server-windows-offline.md
-    - name: Command line install
-      href: install/machine-learning-server-windows-commandline.md
-    - name: Uninstall from Windows
-      href: install/machine-learning-server-windows-uninstall.md
-  - name: Linux
-    items:
-    - name: Install on Linux
-      href: install/machine-learning-server-linux-install.md
-    - name: Offline install
-      href: install/machine-learning-server-linux-offline.md
-    - name: Uninstall from Linux
-      href: install/machine-learning-server-linux-uninstall.md  
-  - name: Hadoop
-    items:
-    - name: Install on Cloudera
-      href: install/machine-learning-server-cloudera-install.md
-    - name: Install on Hadoop
-      href: install/machine-learning-server-hadoop-install.md
-    - name: Uninstall from Hadoop
-      href: install/machine-learning-server-hadoop-uninstall.md
-  - name: Configure to operationalize
-    href: what-is-operationalization.md
-    items:
-    - name: 'Get started: admins'
-      href: operationalize/configure-start-for-administrators.md
-    - name: 'Configure: One-box'
-      href: operationalize/configure-machine-learning-server-one-box.md
+    - name: Windows
       items:
-      - name: 9.2
+      - name: Install on Windows
+        href: install/machine-learning-server-windows-install.md
+      - name: Offline install
+        href: install/machine-learning-server-windows-offline.md
+      - name: Command line install
+        href: install/machine-learning-server-windows-commandline.md
+      - name: Uninstall from Windows
+        href: install/machine-learning-server-windows-uninstall.md
+    - name: Linux
+      items:
+      - name: Install on Linux
+        href: install/machine-learning-server-linux-install.md
+      - name: Offline install
+        href: install/machine-learning-server-linux-offline.md
+      - name: Uninstall from Linux
+        href: install/machine-learning-server-linux-uninstall.md  
+    - name: Hadoop
+      items:
+      - name: Install on Cloudera
+        href: install/machine-learning-server-cloudera-install.md
+      - name: Install on Hadoop
+        href: install/machine-learning-server-hadoop-install.md
+      - name: Uninstall from Hadoop
+        href: install/machine-learning-server-hadoop-uninstall.md
+    - name: Configure to operationalize
+      href: what-is-operationalization.md
+      items:
+      - name: 'Get started: admins'
+        href: operationalize/configure-start-for-administrators.md
+      - name: 'Configure: One-box'
         href: operationalize/configure-machine-learning-server-one-box.md
-      - name: 9.0/9.1
-        href: install/operationalize-r-server-one-box-config.md
-    - name: 'Configure: Enterprise'
-      href: operationalize/configure-machine-learning-server-enterprise.md
-      items:
-      - name: 9.2
+        items:
+        - name: 9.2.1
+          href: operationalize/configure-machine-learning-server-one-box.md
+        - name: 9.0/9.1
+          href: install/operationalize-r-server-one-box-config.md
+      - name: 'Configure: Enterprise'
         href: operationalize/configure-machine-learning-server-enterprise.md
-      - name: 9.0/9.1
-        href: install/operationalize-r-server-enterprise-config.md
-    - name: Diagnostics & Troubleshooting
-      href: operationalize/configure-run-diagnostics.md
-    - name: Administration utility
-      href: operationalize/configure-use-admin-utility.md
-    - name: Database setup
-      href: operationalize/configure-remote-database-to-operationalize.md
-    - name: Capacity evaluation
-      href: operationalize/configure-evaluate-capacity.md
-    - name: Authentication
-      href: operationalize/configure-authentication.md
-    - name: Connection security (SSL/TLS)
-      href: operationalize/configure-https.md
-    - name: Roles & Permissions (RBAC)
-      href: operationalize/configure-roles.md
-    - name: CORS
-      href: operationalize/configure-cors.md
-    - name: R execution security
-      href: operationalize/configure-r-execution-security.md
-    - name: R package management
-      href: operationalize/configure-manage-r-packages.md
-    - name: Find install path
-      href: operationalize/configure-find-admin-configuration-file.md
-  - name: Virtual machines
-    href: install/machine-learning-server-in-the-cloud.md
-    items:
-    - name: Azure HDInsight
-      href: install/machine-learning-server-on-azure-hdinsight.md
-    - name: Azure Linux VM
-      href: install/machine-learning-server-azure-vm-on-linux.md
-    - name: Azure Windows VM
-      href: ..\..\sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure.md
+        items:
+        - name: 9.2.1
+          href: operationalize/configure-machine-learning-server-enterprise.md
+        - name: 9.0/9.1
+          href: install/operationalize-r-server-enterprise-config.md
+      - name: Diagnostics & Troubleshooting
+        href: operationalize/configure-run-diagnostics.md
+      - name: Administration utility
+        href: operationalize/configure-use-admin-utility.md
+      - name: Database setup
+        href: operationalize/configure-remote-database-to-operationalize.md
+      - name: Capacity evaluation
+        href: operationalize/configure-evaluate-capacity.md
+      - name: Authentication
+        href: operationalize/configure-authentication.md
+      - name: Connection security (SSL/TLS)
+        href: operationalize/configure-https.md
+      - name: Roles & Permissions (RBAC)
+        href: operationalize/configure-roles.md
+      - name: CORS
+        href: operationalize/configure-cors.md
+      - name: R execution security
+        href: operationalize/configure-r-execution-security.md
+      - name: R package management
+        href: operationalize/configure-manage-r-packages.md
+      - name: Find install path
+        href: operationalize/configure-find-admin-configuration-file.md
+    - name: Virtual machines (Cloud)
+      href: install/machine-learning-server-in-the-cloud.md
+      items:
+      - name: Azure HDInsight
+        href: install/machine-learning-server-on-azure-hdinsight.md
+      - name: Azure Linux VM
+        href: install/machine-learning-server-azure-vm-on-linux.md
+      - name: Azure Windows VM
+        href: https://docs.microsoft.com/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure
         maintainContext: true
-    - name: Data Science VM
-      href: install/r-server-vm-data-science.md
+      - name: Data Science VM
+        href: install/r-server-vm-data-science.md
   - name: Client-side
     items:
     - name: Microsoft R Client
@@ -106,7 +108,7 @@
         href: r-client/compatibility-with-server.md
     - name: Python interpreter & libraries
       href: install/python-libraries-interpreter.md
-  - name: Older R Server releases
+  - name: R Server 9.1 or earlier
     href: install/r-server-install.md
     items:
     - name: Prior feature announcements
