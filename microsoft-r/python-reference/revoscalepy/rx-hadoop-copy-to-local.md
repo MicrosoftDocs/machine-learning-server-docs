@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "rx_hadoop_copy_to_local: Execute Hadoop Copy To Local Commands" 
-description: "rx_hadoop_copy_to_local wraps the Hadoop fs -copyToLocal command." 
+description: "Wraps the Hadoop fs -copyToLocal command." 
 keywords: "Hadoop Command" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,7 +44,7 @@ revoscalepy.rx_hadoop_copy_to_local(source: str, dest: str)
 
 ## Description
 
-rx_hadoop_copy_to_local wraps the Hadoop fs -copyToLocal command.
+Wraps the Hadoop *fs -copyToLocal* command.
 
 
 ## Arguments
@@ -52,12 +52,12 @@ rx_hadoop_copy_to_local wraps the Hadoop fs -copyToLocal command.
 
 ### source
 
-str. A character string specifying file(s) to be copied in HDFS
+A character string specifying file(s) to be copied in HDFS
 
 
 ### dest
 
-str. A character string specifying the destination of a copy in Local File System
+A character string specifying the destination of a copy in Local File System
 If *source* includes more than one file, *dest* must be a directory.
 
 

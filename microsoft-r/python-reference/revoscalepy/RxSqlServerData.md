@@ -4,9 +4,9 @@
 title: "RxSqlServerData: Generate SqlServer Data Source Object" 
 description: "Main generator for class RxSqlServerData, which extends RxDataSource." 
 keywords: "datasource, sql" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -77,21 +77,21 @@ row_buffering argument to False.
 
 ### row_buffering
 
-bool specifying whether or not to buffer rows on
+Bool value specifying whether or not to buffer rows on
 read from the database. If you are having problems with your ODBC driver,
 try setting this to False.
 
 
 ### return_data_frame
 
-bool indicating whether or not to convert the
+Bool value indicating whether or not to convert the
 result from a list to a data frame (for use in rxReadNext only). If False,
 a list is returned.
 
 
 ### string_as_factors
 
-bool indicating whether or not to
+Bool value indicating whether or not to
 automatically convert strings to factors on import. This can be overridden
 by specifying “character” in column_classes and column_info. If True, the
 factor levels will be coded in the order encountered. Since this factor
@@ -101,7 +101,7 @@ columns is to use column_info with specified “levels”.
 
 ### column_classes
 
-dictionary of column name to strings specifying the
+Dictionary of column name to strings specifying the
 column types to use when converting the data. The element names for the
 vector are used to  identify which column should be converted to which type.
 Allowable column types are:
@@ -129,52 +129,52 @@ as factor data you must use the column_info argument, documented below.
 
 ### column_info
 
-list of named variable information lists. Each variable
+List of named variable information lists. Each variable
 information list contains one or more of the named elements given below.
 The information supplied for column_info overrides that supplied for
 column_classes.
 Currently available properties for a column information list are:
-type: character string specifying the data type for the column. See
+type: Character string specifying the data type for the column. See
 
     column_classes argument description for the available types. Specify
     “factorIndex” as the type for 0-based factor indexes. levels must also
     be specified.
 
-newName: character string specifying a new name for the variable.
+newName: Character string specifying a new name for the variable.
 description: character string specifying a description for the variable.
-levels: list of strings containing the levels when type = “factor”. If
+levels: List of strings containing the levels when type = “factor”. If
 
     the levels property is not provided, factor levels will be determined
     by the values in the source column. If levels are provided, any value
     that does not match a provided level will be converted to a missing
     value.
 
-newLevels: new or replacement levels specified for a column of type
+newLevels: New or replacement levels specified for a column of type
     “factor”. It must be used in conjunction with the levels argument.
     After reading in the original data, the labels for each level will be
     replaced with the newLevels.
 
-low: the minimum data value in the variable (used in computations using
+low: The minimum data value in the variable (used in computations using
     the F() function.
 
-high: the maximum data value in the variable (used in computations
+high: The maximum data value in the variable (used in computations
     using the F() function.
 
 
 ### rows_per_read
 
-number of rows to read at a time.
+Number of rows to read at a time.
 
 
 ### verbose
 
-integer value. If 0, no additional output is printed. If 1,
+Integer value. If 0, no additional output is printed. If 1,
 information on the odbc data source type (odbc or odbcFast) is printed.
 
 
 ### use_fast_read
 
-bool specifying whether or not to use a direct
+Bool value, specifying whether or not to use a direct
 ODBC connection. On Linux systems, this is the only ODBC connection
 available.
 
@@ -205,14 +205,14 @@ specified in the connection string with the pwd keyword.
 
 ### write_factors_as_indexes
 
-bool. If True, when writing to an
+Bool value, if True, when writing to an
 RxOdbcData data source, underlying factor indexes will be written instead
 of the string representations.
 
 
 ### kwargs
 
-additional arguments to be passed directly to the underlying
+Additional arguments to be passed directly to the underlying
 functions.
 
 

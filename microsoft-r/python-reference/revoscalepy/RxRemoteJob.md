@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxRemoteJob,close,deserialize_job,deserialize_jobs,resolve_context: " 
-description: "" 
+title: "RxRemoteJob,close,deserialize_job,deserialize_jobs,resolve_context: Closes a Remote Job" 
+description: "Closes the remote job, purging all associated job-related data. You can reference a job by its ID, or call close() to purge jobs in a given compute context." 
 keywords: "" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -40,6 +40,13 @@ revoscalepy.RxRemoteJob(compute_context: revoscalepy.computecontext.RxComputeCon
 
 
 
+## Description
+
+Closes the remote job, purging all associated job-related data. You can reference
+a job by its ID, or call close() to purge jobs in a given compute context.
+
+
+
 ```
 close()
 ```
@@ -61,7 +68,7 @@ deserialize_job(job_id: str) -> revoscalepy.computecontext.RxRemoteJob.RxRemoteJ
 Deserializes a RxRemoteJob given the job id
 
 
-# Returns
+## Returns
 
 The job that was deserialized
 
@@ -77,7 +84,7 @@ deserialize_jobs() -> list
 Deserializes the existing jobs that have not been cleaned up by calling close().
 
 
-# Returns
+## Returns
 
 The deserialized jobs
 
@@ -93,6 +100,6 @@ resolve_context() -> revoscalepy.computecontext.RxComputeContext.RxComputeContex
 Resolves the `RxComputeContext` that is associated with the job
 
 
-# Returns
+## Returns
 
 The `RxComputeContext` that is associated with the job or `None` if the compute context isn’t valid

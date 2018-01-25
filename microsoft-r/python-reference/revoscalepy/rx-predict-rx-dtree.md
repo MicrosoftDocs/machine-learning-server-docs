@@ -4,9 +4,9 @@
 title: "rx_predict_rx_dtree: Prediction for Large Data Classification and Regression Trees" 
 description: "Calculate predicted or fitted values for a data set from an rx_dtree object." 
 keywords: "predict" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -64,30 +64,30 @@ Calculate predicted or fitted values for a data set from an rx_dtree object.
 
 ### model_object
 
-object returned from a call to rx_dtree.
+Object returned from a call to rx_dtree.
 
 
 ### data
 
-a data frame or an RxXdfData data source object to be used for predictions.
+A data frame or an RxXdfData data source object to be used for predictions.
 If a Spark compute context is being used, this argument may also be an RxHiveData,
 RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
 
 
 ### output_data
 
-an RxXdfData data source object or existing data frame
+An RxXdfData data source object or existing data frame
 to store predictions.
 
 
 ### predict_var_names
 
-list of strings specifying name(s) to give to the prediction results
+List of strings specifying name(s) to give to the prediction results
 
 
 ### write_model_vars
 
-bool value. If True, and the output data set is
+Bool value. If True, and the output data set is
 different from the input data set, variables in the model will be written
 to the output data set in addition to the predictions (and residuals,
 standard errors, and confidence bounds, if requested). If variables from
@@ -104,14 +104,14 @@ write_model_vars is True, model variables will be included as well.
 
 ### append
 
-either “none” to create a new files or “rows” to append rows
+Either “none” to create a new files or “rows” to append rows
 to an existing file. If output_data exists and append is “none”, the overwrite
 argument must be set to True. Ignored for data frames.
 
 
 ### overwrite
 
-bool value. If True, an existing output_data will be overwritten.
+Bool value. If True, an existing output_data will be overwritten.
 overwrite is ignored if appending rows. Ignored for data frames.
 
 
@@ -123,12 +123,12 @@ the type of prediction desired. Supported choices are: “vector”,
 
 ### remove_missings
 
-bool value. If True, rows with missing values are removed.
+Bool value. If True, rows with missing values are removed.
 
 
 ### compute_residuals
 
-bool value. If True, residuals are computed.
+Bool value. If True, residuals are computed.
 
 
 ### residual_type
@@ -138,50 +138,50 @@ Indicates the type of residual desired.
 
 ### residual_var_names
 
-list of strings specifying name(s) to give to the residual results.
+List of strings specifying name(s) to give to the residual results.
 
 
 ### blocks_per_read
 
-number of blocks to read for each chunk of data read
+Number of blocks to read for each chunk of data read
 from the data source. If the data and output_data are the same file,
 blocks_per_read must be 1.
 
 
 ### report_progress
 
-integer value with options:
-0: no progress is reported.
-1: the number of processed rows is printed and updated.
-2: rows processed and timings are reported.
-3: rows processed and all timings are reported.
+Integer value with options:
+0: No progress is reported.
+1: The number of processed rows is printed and updated.
+2: Rows processed and timings are reported.
+3: Rows processed and all timings are reported.
 
 
 ### verbose
 
-integer value. If 0, no additional output is printed. If 1,
+Integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
 ### xdf_compression_level
 
-integer in the range of -1 to 9 indicating the
+Integer in the range of -1 to 9 indicating the
 compression level for the output data if written to an .xdf file.
 
 
 ### compute_context
 
-a RxComputeContext object for prediction.
+A RxComputeContext object for prediction.
 
 
 ### kwargs
 
-additional parameters
+Additional parameters
 
 
 ## Returns
 
-a data frame or a data source object of prediction results.
+A data frame or a data source object of prediction results.
 
 
 ## See also

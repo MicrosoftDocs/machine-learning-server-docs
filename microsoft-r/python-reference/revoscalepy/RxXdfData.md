@@ -4,9 +4,9 @@
 title: "RxXdfData: Generate Xdf Data Source Object" 
 description: "Main generator for class RxXdfData, which extends RxDataSource." 
 keywords: "datasource, xdf" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -54,14 +54,14 @@ Main generator for class RxXdfData, which extends RxDataSource.
 
 ### file
 
-character string specifying the location of the data. For single
+Character string specifying the location of the data. For single
 Xdf, it is a ‘.xdf’ file. For composite Xdf, it is a directory like
 ‘/tmp/airline’.
 
 
 ### vars_to_keep
 
-list of strings of variable names to keep around during
+List of strings of variable names to keep around during
 operations. If None, argument is ignored. Cannot be used with vars_to_drop.
 
 
@@ -73,25 +73,25 @@ operations. If None, argument is ignored. Cannot be used with vars_to_keep.
 
 ### return_data_frame
 
-bool indicating whether or not to convert the
+Bool value indicating whether or not to convert the
 result to a data frame.
 
 
 ### strings_as_factors
 
-bool indicating whether or not to convert
+Bool value indicating whether or not to convert
 strings into factors (for reader mode only).
 
 
 ### blocks_per_read
 
-number of blocks to read for each chunk of data read
+Number of blocks to read for each chunk of data read
 from the data source.
 
 
 ### file_system
 
-character string or RxFileSystem object indicating type
+Character string or RxFileSystem object indicating type
 of file system; “native” or RxNativeFileSystem object can be used for the
 local operating system. If None, the file system will be set to that in
 the current compute context, if available, otherwise the fileSystem option.
@@ -99,7 +99,7 @@ the current compute context, if available, otherwise the fileSystem option.
 
 ### create_composite_set
 
-bool value or None. Used only when writing.
+Bool value or None. Used only when writing.
 If True, a composite set of files will be created instead of a single ‘.xdf’
 file. Subdirectories ‘data’ and ‘metadata’ will be created. In the ‘data’
 subdirectory, the data will be split across a set of ‘.xdfd’ files (see
@@ -111,7 +111,7 @@ subdirectory.
 
 ### create_partition_set
 
-bool value or None. Used only when writing.
+Bool value or None. Used only when writing.
 If True, a set of files for partitioned Xdf will be created when assigning
 this RxXdfData object for outData of rxPartition. Subdirectories ‘data’ and
 ‘metadata’ will be created. In the ‘data’ subdirectory, the data will be
@@ -124,14 +124,14 @@ supported only in rxPartition and rxGetPartitions
 
 ### blocks_per_composite_file
 
-integer value. If
+Integer value. If
 create_composite_set=True, this will be the number of blocks put into each
 ‘.xdfd’ file in the composite set.
 
 
 ## Returns
 
-object of class `RxXdfData`.
+Object of class `RxXdfData`.
 
 
 ## Example

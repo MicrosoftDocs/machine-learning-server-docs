@@ -4,9 +4,9 @@
 title: "rx_spark_remove_data: Manage Cached Data in Spark" 
 description: "Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable  when using RxSpark compute context." 
 keywords: "spark, data" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -54,7 +54,7 @@ Use these functions to manage the objects cached in the Spark memory system. The
 
 ### remove_list
 
-cached object or a list of cached objects need to be deleted.
+Cached object or a list of cached objects need to be deleted.
 
 
 ### compute_context

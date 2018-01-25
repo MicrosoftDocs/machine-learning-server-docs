@@ -4,9 +4,9 @@
 title: "rx_logit: Logistic Regression" 
 description: "Use rx_logit to fit logistic regression models for small or large data." 
 keywords: "logic" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -52,7 +52,7 @@ Use rx_logit to fit logistic regression models for small or large data.
 
 ### formula
 
-statistical model using symbolic formulas. Dependent variable must
+Statistical model using symbolic formulas. Dependent variable must
 be binary. It can be a bool variable, a factor with only two categories,
 or a numeric variable with values in the range (0,1). In the latter case
 it will be converted to a bool.
@@ -60,7 +60,7 @@ it will be converted to a bool.
 
 ### data
 
-either a data source object, a character string specifying a
+Either a data source object, a character string specifying a
 ‘.xdf’ file, or a data frame object.
 If a Spark compute context is being used, this argument may also be an RxHiveData,
 RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
@@ -68,19 +68,19 @@ RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object
 
 ### pweights
 
-character string specifying the variable to use as probability
+Character string specifying the variable to use as probability
 weights for the observations.
 
 
 ### fweights
 
-character string specifying the variable to use as frequency
+Character string specifying the variable to use as frequency
 weights for the observations.
 
 
 ### cube
 
-bool flag. If True and the first term of the predictor variables
+Bool flag. If True and the first term of the predictor variables
 is categorical (a factor or an interaction of factors), the regression is
 performed by applying the Frisch-Waugh-Lovell Theorem, which uses a partitioned
 inverse to save on computation time and memory.
@@ -88,7 +88,7 @@ inverse to save on computation time and memory.
 
 ### cube_predictions
 
-bool flag. If True and cube is True the estimated
+Bool flag. If True and cube is True the estimated
 model is evaluated (predicted) for each cell in the cube, fixing the non-cube
 variables in the model at their mean values, and these predictions are included
 in the countDF component of the returned value. This may be time and memory
@@ -97,7 +97,7 @@ intensive for large models.
 
 ### variable_selection
 
-a list specifying various parameters that control
+A list specifying various parameters that control
 aspects of stepwise regression. If it is an empty list (default), no stepwise
 model selection will be performed. If not, stepwise regression will be
 performed and cube must be False.
@@ -115,18 +115,21 @@ None. Not currently supported, reserved for future use.
 
 ### transform_objects
 
-None. Not currently supported, reserved for future use.
+A dictionary of variables besides the data that are used in the transform function.
+See rx_data_step for examples.
 
 
 ### transform_function
 
-variable transformation function.
+Name of the function that will be used to modify the data before the model is built.
+The variables used in the transform function must be specified in transform_objects.
+See rx_data_step for examples.
 
 
 ### transform_variables
 
-list of strings of input data set variables needed
-for the transformation function.
+List of strings of the column names needed
+for the transform function and model building.
 
 
 ### transform_packages
@@ -134,14 +137,9 @@ for the transformation function.
 None. Not currently supported, reserved for future use.
 
 
-### transform_environment
-
-None. Not currently supported, reserved for future use.
-
-
 ### drop_first
 
-bool flag. If False, the last level is dropped in all sets
+Bool flag. If False, the last level is dropped in all sets
 of factor levels in a model. If that level has no observations (in any of the
 sets), or if the model as formed is otherwise determined to be singular, then
 an attempt is made to estimate the model by dropping the first level in all
@@ -152,19 +150,19 @@ from these rules and the intercept is dropped.
 
 ### drop_main
 
-bool value. If True, main-effect terms are dropped before
+Bool value. If True, main-effect terms are dropped before
 their interactions.
 
 
 ### cov_coef
 
-bool flag. If True and if cube is False, the variance-covariance
+Bool flag. If True and if cube is False, the variance-covariance
 matrix of the regression coefficients is returned.
 
 
 ### cov_data
 
-bool flag. If True and if cube is False and if constant term
+Bool flag. If True and if cube is False and if constant term
 is included in the formula, then the variance-covariance matrix of the data
 is returned.
 
@@ -177,24 +175,24 @@ Squares algorithm used to estimate the model coefficients.
 
 ### coef_label_style
 
-character string specifying the coefficient label style.
+Character string specifying the coefficient label style.
 The default is “Revo”.
 
 
 ### blocks_per_read
 
-number of blocks to read for each chunk of data read
+Number of blocks to read for each chunk of data read
 from the data source.
 
 
 ### max_iterations
 
-maximum number of iterations.
+Maximum number of iterations.
 
 
 ### coefficent_tolerance
 
-convergence tolerance for coefficients. If the
+Convergence tolerance for coefficients. If the
 maximum absolute change in the coefficients (step), divided by the maximum
 absolute coefficient value, is less than or equal to this tolerance at the
 end of an iteration, the estimation is considered to have converged. To
@@ -208,36 +206,36 @@ This argument is deprecated.
 
 ### objective_function_tolerance
 
-convergence tolerance for the objective function.
+Convergence tolerance for the objective function.
 
 
 ### report_progress
 
-integer value with options:
-0: no progress is reported.
-1: the number of processed rows is printed and updated.
-2: rows processed and timings are reported.
-3: rows processed and all timings are reported.
+Integer value with options:
+0: No progress is reported.
+1: The number of processed rows is printed and updated.
+2: Rows processed and timings are reported.
+3: Rows processed and all timings are reported.
 
 
 ### verbose
 
-integer value.
+Integer value.
 
 
 ### compute_context
 
-a RxComputeContext object for prediction.
+A RxComputeContext object for prediction.
 
 
 ### kwargs
 
-additional parameters
+Additional parameters
 
 
 ## Returns
 
-a RxLogitResults object of linear model.
+A RxLogitResults object of linear model.
 
 
 ## See also

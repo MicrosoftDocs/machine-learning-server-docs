@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "rx_hadoop_command: Execute Hadoop Commands" 
-description: "Execute arbitrary Hadoop commands and perform standard file operations in Hadoop." 
+description: "Executes arbitrary Hadoop commands and performs standard file operations in Hadoop." 
 keywords: "Hadoop Command" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,7 +44,7 @@ revoscalepy.rx_hadoop_command(cmd: str) -> revoscalepy.functions.RxHadoopUtils.R
 
 ## Description
 
-Execute arbitrary Hadoop commands and perform standard file operations in Hadoop.
+Executes arbitrary Hadoop commands and performs standard file operations in Hadoop.
 
 
 ## Arguments
@@ -52,7 +52,7 @@ Execute arbitrary Hadoop commands and perform standard file operations in Hadoop
 
 ### cmd
 
-str. A character string containing a valid Hadoop command, that
+A character string containing a valid Hadoop command, that
 is, the cmd portion of Hadoop Command. Embedded quotes are not permitted.
 
 

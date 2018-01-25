@@ -4,9 +4,9 @@
 title: "rx_summary: Object Summaries" 
 description: "Produce univariate summaries of objects in revoscalepy." 
 keywords: "summary" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -60,7 +60,7 @@ Produce univariate summaries of objects in revoscalepy.
 
 ### formula
 
-statistical model using symbolic formulas. The formula typically
+Statistical model using symbolic formulas. The formula typically
 does not contain a response variable, i.e. it should be of the form ~ terms.
 
 
@@ -86,7 +86,7 @@ listed in the categorical component of the output object.
 
 ### summary_stats
 
-a list of strings containing one or more of the
+A list of strings containing one or more of the
 following values: “Mean”, “StdDev”, “Min”, “Max”, “ValidObs”, “MissingObs”,
 “Sum”.
 
@@ -101,13 +101,13 @@ removed before computations.
 
 ### pweights
 
-character string specifying the variable to use as
+Character string specifying the variable to use as
 probability weights for the observations.
 
 
 ### fweights
 
-character string specifying the variable to use as
+Character string specifying the variable to use as
 frequency weights for the observations.
 
 
@@ -129,12 +129,12 @@ future use.
 
 ### transform_function
 
-variable transformation function.
+Variable transformation function.
 
 
 ### transform_variables
 
-list of strings of input data set variables
+List of strings of input data set variables
 needed for the transformation function.
 
 
@@ -152,18 +152,18 @@ future use.
 
 ### overwrite
 
-bool value. If True, an existing byGroupOutFile will
+Bool value. If True, an existing byGroupOutFile will
 be overwritten. overwrite is ignored byGroupOutFile is None.
 
 
 ### use_sparse_cube
 
-bool value. If True, sparse cube is used.
+Bool value. If True, sparse cube is used.
 
 
 ### remove_zero_counts
 
-bool flag. If True, rows with no observations
+Bool flag. If True, rows with no observations
 will be removed from the output for counts of categorical data. By default,
 it has the same value as useSparseCube. For large summary computation, this
 should be set to True, otherwise the Python interpreter may run out of
@@ -172,51 +172,51 @@ memory even if the internal C++ computation succeeds.
 
 ### blocks_per_read
 
-number of blocks to read for each chunk of data
+Number of blocks to read for each chunk of data
 read from the data source.
 
 
 ### rows_per_block
 
-maximum number of rows to write to each block in the
+Maximum number of rows to write to each block in the
 by_group_out_file (if it is not None).
 
 
 ### report_progress
 
-integer value with options:
-0: no progress is reported.
-1: the number of processed rows is printed and updated.
-2: rows processed and timings are reported.
-3: rows processed and all timings are reported.
+Integer value with options:
+0: No progress is reported.
+1: The number of processed rows is printed and updated.
+2: Rows processed and timings are reported.
+3: Rows processed and all timings are reported.
 
 
 ### verbose
 
-integer value. If 0, no additional output is printed. If 1,
+Integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
 ### compute_context
 
-a valid RxComputeContext object.
+A valid RxComputeContext object.
 
 
 ### kwargs
 
-additional arguments to be passed directly to the Revolution
+Additional arguments to be passed directly to the Revolution
 Compute Engine.
 
 
 ## Returns
 
-an RxSummary object containing the following elements:
-nobs.valid: number of valid observations.
-nobs.missing: number of missing observations.
-sDataFrame: data frame containing summaries for continuous variables.
-categorical: list of summaries for categorical variables.
-categorical.type: types of categorical summaries: can be “counts”, or “cube” (for crosstab counts) or “none” (if there is no categorical summaries).
-formula: formula used to obtain the summary.
+An RxSummary object containing the following elements:
+nobs.valid: Number of valid observations.
+nobs.missing: Number of missing observations.
+sDataFrame: Data frame containing summaries for continuous variables.
+categorical: List of summaries for categorical variables.
+categorical.type: Types of categorical summaries: can be “counts”, or “cube” (for crosstab counts) or “none” (if there is no categorical summaries).
+formula: Formula used to obtain the summary.
 
 
 ## Example

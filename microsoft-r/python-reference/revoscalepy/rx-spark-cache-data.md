@@ -4,9 +4,9 @@
 title: "rx_spark_cache_data: Set the Cache Flag in Spark Compute Context" 
 description: "Use this function to set the cache flag to control whether data objects should be cached in Spark  memory system, applicable for RxXdfData, RxHiveData, RxParquetData, RxOrcData and RxSparkDataFrame." 
 keywords: "spark, data, cache" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -54,19 +54,19 @@ Use this function to set the cache flag to control whether data objects should b
 
 ### in_data
 
-a data source that can be RxXdfData, RxHiveData, RxParquetData, RxOrcData or RxSparkDataFrame.
+A data source that can be RxXdfData, RxHiveData, RxParquetData, RxOrcData or RxSparkDataFrame.
 RxTextData is currently not supported.
 
 
 ### cache
 
-logical value controlling whether the data should be cached or not. If TRUE the data will
+Bool value controlling whether the data should be cached or not. If TRUE the data will
 be cached in the Spark memory system after the first use for performance enhancement.
 
 
 ## Returns
 
-data object with new cache flag.
+Data object with new cache flag.
 
 
 ## Example

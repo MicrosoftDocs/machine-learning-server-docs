@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "rx_get_job_results: Obtain Distributed Computing Job Status and Results" 
-description: "Obtain distributed computing results and processing status.rx_get_job_results(job_info, console_output, auto_cleanup)" 
+description: "Obtain distributed computing results and processing status." 
 keywords: "" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -48,15 +48,13 @@ revoscalepy.rx_get_job_results(job_info: revoscalepy.computecontext.RxRemoteJob.
 
 Obtain distributed computing results and processing status.
 
-rx_get_job_results(job_info, console_output, auto_cleanup)
-
 
 ## Arguments
 
 
 ### job_info
 
-a job object as returned by rx_exec or a revoscalepy
+A job object as returned by rx_exec or a revoscalepy
 analysis function, if available.
 
 

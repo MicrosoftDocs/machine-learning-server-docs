@@ -4,9 +4,9 @@
 title: "rx_exec: Run a Function With Different Sets of Arguments" 
 description: "Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster." 
 keywords: "parallel execution, multiple executions, remote execution, sql" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -57,21 +57,21 @@ Allows distributed execution of a function in parallel across nodes
 
 ### function
 
-the function to be executed; the nodes or cores on which it
+The function to be executed; the nodes or cores on which it
 is run are determined by the currently-active compute context and by the
 other arguments of rx_exec.
 
 
 ### args
 
-arguments passed to the function ‘function’ each time it is executed.
+Arguments passed to the function ‘function’ each time it is executed.
 for multiple executions with different parameters, args should be a list where each element is a dict.
 each dict element contains the set of named parameters to pass the function on each execution.
 
 
 ### times_to_run
 
-specifies the number of times ‘function’ should be executed. in
+Specifies the number of times ‘function’ should be executed. in
 case of different parameters for each execution, the length of args must equal
 times_to_run. in case where length of args equals 1 or args is not specified,
 function will be called times_to_run number of times with the same arguments.
@@ -79,7 +79,7 @@ function will be called times_to_run number of times with the same arguments.
 
 ### task_chunk_size
 
-specifies the number of tasks to be executed per compute element. by submitting tasks
+Specifies the number of tasks to be executed per compute element. by submitting tasks
 in chunks, you can avoid some of the overhead of starting new python processes over and over. for example,
 if you are running thousands of identical simulations on a cluster, it makes sense to specify the
 task_chunk_size so that each worker can do its allotment of tasks in a single python process.
@@ -87,12 +87,12 @@ task_chunk_size so that each worker can do its allotment of tasks in a single py
 
 ### compute_context
 
-a RxComputeContext object.
+A RxComputeContext object.
 
 
 ### local_state
 
-dictionary with variables to be passed to a RxInSqlServer compute context
+Dictionary with variables to be passed to a RxInSqlServer compute context
 not supported in RxSpark compute context.
 
 
@@ -165,9 +165,9 @@ args = [
     {'data' : in_mort_ds, 'formula' : formula, 'n_tree': 7}
 ]
 
-models = rx_exec(rx_btrees, args = args)
-# Alternatively
-models = rx_exec(rx_btrees, data=in_mort_ds, formula=formula, n_tree=[3,5,7])
+    models = rx_exec(rx_btrees, args = args)
+    # Alternatively
+    models = rx_exec(rx_btrees, data=in_mort_ds, formula=formula, n_tree=[3,5,7])
 
 ###
 ## SQL rx_exec

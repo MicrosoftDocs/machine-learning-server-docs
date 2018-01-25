@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "rx_write_object: Manage objects in ODBC Data Sources" 
-description: "Store/Retrieve objects to/from ODBC data sources. The APIs are modelled after a simple key value store.rx_write_object(dest: RxOdbcData, key: str=None, value: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, serialize: bool=True, overwrite: bool=False, compress: str=’zip’)rx_read_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, deserialize: bool=True, decompress: str=’zip’)rx_delete_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’, all: bool=False)rx_list_keys(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’)" 
+description: "Stores objects in an ODBC data source. The APIs are modelled after a simple key value store." 
 keywords: "odbc" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -36,7 +36,7 @@ ms.custom: ""
 
 ```
 revoscalepy.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData,
-    key: str = None, value: str = None, version: str = None,
+    key: str = None, value=None, version: str = None,
     key_name: str = 'id', value_name: str = 'value',
     version_name: str = 'version', serialize: bool = True,
     overwrite: bool = False, compress: str = 'zip')
@@ -48,40 +48,18 @@ revoscalepy.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData,
 
 ## Description
 
-Store/Retrieve objects to/from ODBC data sources. The APIs are modelled
+Stores objects in an ODBC data source. The APIs are modelled
 after a simple key value store.
-
-rx_write_object(dest: RxOdbcData, key: str=None, value: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, serialize: bool=True, overwrite: bool=False, compress: str=’zip’)
-
-rx_read_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, value_name: str=’value’, version_name: str=’version’, deserialize: bool=True, decompress: str=’zip’)
-
-rx_delete_object(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’, all: bool=False)
-
-rx_list_keys(src: RxOdbcData, key: str=None, version: str=None, key_name: str=’id’, version_name: str=’version’)
 
 
 ## Details
 
-rx_write_object stores an object into the ODBC data source. The object
+Stores an object into the ODBC data source. The object
 is identified by a key, and optionally, by a version (key+version). By
 default, the object is serialized and compressed. Returns True if
 successful.
 
-rx_read_object loads an object from the ODBC data source (or from a
-raw) decompressing and unserializing it (by default) in the process.
-Returns the object. If the data source parameter defines a query, the
-key and the version parameters are ignored.
-
-rx_delete_object deletes an object from the ODBC data source. If there
-are multiple objects identified by the key/version combination, all are
-deleted.
-
-rx_list_keys enumerates all keys or versions for a given key, depending
-on the parameters. When key is None, the function enumerates all unique
-keys in the table. Otherwise, it enumerates all versions for the given
-key. Returns a single column data frame.
-
-The key and the version column should be of some SQL character type
+The key and the version should be of some SQL character type
 (CHAR, VARCHAR, NVARCHAR, etc) supported by the data source. The value
 column should be a binary type (VARBINARY for instance). Some
 conversions to other types might work, however, they are dependant on
@@ -93,13 +71,18 @@ the ODBC driver and on the underlying package functions.
 
 ### key
 
-a character string identifying the object. The intended use is
+A character string identifying the object. The intended use is
 for the key+version to be unique.
+
+
+### value
+
+A python object serializable by dill.
 
 
 ### dest
 
-the object being stored into the data source.
+The object being stored into the data source.
 
 
 ### version
@@ -110,43 +93,43 @@ object. Combined with key identifies the object.
 
 ### key_name
 
-character string specifying the column name for the key in
+Character string specifying the column name for the key in
 the underlying table.
 
 
 ### value_name
 
-character string specifying the column name for the
+Character string specifying the column name for the
 objects in the underlying table.
 
 
 ### version_name
 
-character string specifying the column name for the
+Character string specifying the column name for the
 version in the underlying table.
 
 
 ### serialize
 
-bool value. Dictates whether the object is to be
+Bool value. Dictates whether the object is to be
 serialized. Only raw values are supported if serialization is off.
 
 
 ### compress
 
-character string defining the compression algorithm to use
+Character string defining the compression algorithm to use
 for memCompress.
 
 
 ### deserialize
 
-bool value. Defines whether the object is to be
+Bool value. Defines whether the object is to be
 de-serialized.
 
 
 ### overwrite
 
-logical value. If True, rx_write_object first removes the
+Bool value. If True, rx_write_object first removes the
 key (or the key+version combination) before writing the new value. Even
 when overwrite is False, rx_write_object may still succeed if there is no
 database constraint (or index) enforcing uniqueness.
