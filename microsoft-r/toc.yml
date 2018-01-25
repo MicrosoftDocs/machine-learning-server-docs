@@ -14,9 +14,7 @@
   items:
   - name: Supported platforms
     href: install/r-server-install-supported-platforms.md
-  - name: Machine Learning Server
-    items:
-    - name: Windows
+  - name: Windows
       items:
       - name: Install on Windows
         href: install/machine-learning-server-windows-install.md
@@ -83,7 +81,7 @@
         href: operationalize/configure-manage-r-packages.md
       - name: Find install path
         href: operationalize/configure-find-admin-configuration-file.md
-    - name: Virtual machines (Cloud)
+    - name: Virtual machines
       href: install/machine-learning-server-in-the-cloud.md
       items:
       - name: Azure HDInsight
@@ -108,7 +106,7 @@
         href: r-client/compatibility-with-server.md
     - name: Python interpreter & libraries
       href: install/python-libraries-interpreter.md
-  - name: R Server 9.1 or earlier
+  - name: Older R Server releases
     href: install/r-server-install.md
     items:
     - name: Prior feature announcements
