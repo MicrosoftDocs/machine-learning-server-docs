@@ -4,9 +4,9 @@
 title: "RxInSqlServer: Generate SQL Server In-Database Compute Context" 
 description: "Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server. Currently only supported in Windows." 
 keywords: "sql" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -32,8 +32,8 @@ ms.custom: ""
 
 
 ```
-revoscalepy.RxInSqlServer(connection_string: str, num_tasks: int = None,
-    auto_cleanup: bool = None, console_output: bool = None,
+revoscalepy.RxInSqlServer(connection_string: str, num_tasks: int = 1,
+    auto_cleanup: bool = True, console_output: bool = None,
     execution_timeout_seconds: int = None, wait: bool = True,
     packages_to_load: list = None)
 ```
@@ -70,13 +70,13 @@ not always be the case, and computation time may even increase if too many
 tasks are competing for machine resources. Note that
 RxOptions.set_option(“NumCoresToUse”, n) controls how many cores (actually, threads) are
 used in parallel within each process, and there is a trade-off between
-NumCoresToUse and num_tasks that depends upon the specific algorithm, the
+NumCoresToUse and NumTasks that depends upon the specific algorithm, the
 type of data, the hardware, and the other jobs that are running.
 
 
 ### wait
 
-bool value. If True, the job will be blocking and will not
+Bool value, if True, the job will be blocking and will not
 return until it has completed or has failed. If False, the job will be
 non-blocking and return immediately, allowing you to continue running other
 Python code. The client connection with SQL Server must be maintained while
@@ -85,7 +85,7 @@ the job is running, even in non-blocking mode.
 
 ### console_output
 
-bool scalar.If True, causes the standard output
+Bool value, if True, causes the standard output
 of the Python process started by SQL Server to be printed to the user console.
 This value may be overwritten by passing a non-None bool value to the
 consoleOutput argument provided in rx_exec and rx_get_job_results.
@@ -93,7 +93,7 @@ consoleOutput argument provided in rx_exec and rx_get_job_results.
 
 ### auto_cleanup
 
-bool scalar. If True, the default behavior is to
+Bool value, if True, the default behavior is to
 clean up the temporary computational artifacts and delete the result
 objects upon retrieval. If False, then the computational results are not
 deleted, and the results may be acquired using rx_get_job_results, and the
@@ -105,13 +105,13 @@ before they fill up your hard drive.
 
 ### execution_timeout_seconds
 
-numeric scalar. Defaults to 0 which means
+Integer value, defaults to 0 which means
 infinite wait.
 
 
 ### packages_to_load
 
-optional list of strings specifying additional
+Optional list of strings specifying additional
 packages to be loaded on the nodes when jobs are run in this compute context.
 
 

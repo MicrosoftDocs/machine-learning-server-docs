@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_set_compute_context: Get and Set the compute context" 
-description: "Get or set the active compute context for revoscalepy computationsrx_set_compute_context(compute_context: ‘RxComputeContext’) rx_get_compute_context()" 
+title: "rx_set_compute_context: Sets the compute context" 
+description: "Sets the active compute context for revoscalepy computations" 
 keywords: "context" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,10 +44,7 @@ revoscalepy.rx_set_compute_context(compute_context: revoscalepy.computecontext.R
 
 ## Description
 
-Get or set the active compute context for revoscalepy computations
-
-rx_set_compute_context(compute_context: ‘RxComputeContext’)
-rx_get_compute_context()
+Sets the active compute context for revoscalepy computations
 
 
 ## Arguments
@@ -55,7 +52,7 @@ rx_get_compute_context()
 
 ### compute_context
 
-character string specifying class name or description
+Character string specifying class name or description
 of the specific class to instantiate, or an existing RxComputeContext object.
 Choices include: “RxLocalSeq” or “local”, “RxInSqlServer”.
 

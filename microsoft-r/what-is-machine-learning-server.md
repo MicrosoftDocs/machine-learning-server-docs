@@ -25,7 +25,7 @@ ms.technology:
 
 # Welcome to Machine Learning Server
 
-Microsoft Machine Learning Server is your flexible enterprise platform for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business with full support for Python and R. Machine Learning Server meets the needs of all constituents of the process – from data engineers and data scientists to line-of-business programmers and IT professionals. It offers a choice of languages and features algorithmic innovation that brings the best of open source and proprietary worlds together. 
+Microsoft Machine Learning Server is your flexible enterprise platform for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business with full support for Python and R. Machine Learning Server meets the needs of all constituents of the process – from data engineers and data scientists to line-of-business programmers and IT professionals. It offers a choice of languages and features algorithmic innovation that brings the best of open-source and proprietary worlds together. 
 
 R support is built on a legacy of Microsoft R Server 9.x and Revolution R Enterprise products. Significant machine learning and AI capabilities enhancements have been made in every release. In 9.2.1, Machine Learning Server adds support for the full data science lifecycle of your Python-based analytics. 
 
@@ -40,11 +40,11 @@ Microsoft Machine Learning Server includes:
 
   The volume of the data used by enterprises to make informed business decisions is growing exponentially. With Machine Learning Server, Microsoft takes the modern approach of bringing the computation to the data in order to unlock intelligence. Over time this data often spreads across multiple data platforms creating the challenge of how to get AI to where your data is. Machine Learning Server runs [on-premises and in the cloud on a variety of platforms](install/r-server-install-supported-platforms.md), in a variety of deployments, and can support the need to have machine learning and analytics across multiple platforms.
 
-+ **The best AI innovation from Microsoft and open source**
++ **The best AI innovation from Microsoft and open-source**
 
   Microsoft strives to make AI accessible to every individual and organization. Microsoft Machine Learning Server includes a rich set of highly-scalable, distributed set of algorithms such as [RevoscaleR](r-reference/revoscaler/revoscaler.md), [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md), and [microsoftML](python-reference/microsoftml/microsoftml-package.md) that can work on data sizes larger than the size of physical memory, and run on a wide variety of platforms in a distributed manner. Learn more about the collection of Microsoft's custom [R packages](r-reference/introducing-r-server-r-package-reference.md) and [Python packages](python-reference/introducing-python-package-reference.md) included with the product.
   
-  Machine Learning Server bridges these Microsoft innovations and those coming from the open source community (R, Python and AI toolkits) all on top of a single enterprise-grade platform. Any R or Python open source machine learning package can work side-by-side with any proprietary innovation from Microsoft. 
+  Machine Learning Server bridges these Microsoft innovations and those coming from the open-source community (R, Python and AI toolkits) all on top of a single enterprise-grade platform. Any R or Python open-source machine learning package can work side by side with any proprietary innovation from Microsoft. 
 
 + **Simple, secure, and high-scale operationalization and administration**
 
@@ -63,8 +63,8 @@ The following features are included in Machine Learning Server. For feature desc
 
 | Feature category | Description |
 |------------------|-------------|
-| R-enabled | [R packages](r-reference/introducing-r-server-r-package-reference.md) for solutions written in R, with an open source distribution of R and run-time infrastructure for script execution. Everything you had in R Server and more. |
-| Python-enabled | [Python modules](python-reference/introducing-python-package-reference.md) for solutions written in Python,  with an open source distribution of Python and run-time infrastructure for script execution.  
+| R-enabled | [R packages](r-reference/introducing-r-server-r-package-reference.md) for solutions written in R, with an open-source distribution of R and run-time infrastructure for script execution. Everything you had in R Server and more. |
+| Python-enabled | [Python modules](python-reference/introducing-python-package-reference.md) for solutions written in Python,  with an open-source distribution of Python and run-time infrastructure for script execution.  
 | [Pre-trained models](install/microsoftml-install-pretrained-models.md) | For visual analysis and text sentiment analysis, ready to score data you provide. |
 | [Deploy and consume](what-is-operationalization.md) | Operationalize your server and deploy solutions as a web service. |
 | [Remote execution](r/how-to-execute-code-remotely.md) | Start remote sessions on a Machine Learning Server on your network from your client workstation. |

@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "rx_hadoop_remove: Execute Hadoop Remove Commands" 
-description: "rx_hadoop_remove wraps the Hadoop fs -rm or fs -rm -skipTrash command." 
+description: "Wraps the Hadoop fs -rm or fs -rm -skipTrash command." 
 keywords: "Hadoop Command" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,7 +44,7 @@ revoscalepy.rx_hadoop_remove(path: typing.Union[list, str], skip_trash=False)
 
 ## Description
 
-rx_hadoop_remove wraps the Hadoop fs -rm or fs -rm -skipTrash command.
+Wraps the Hadoop *fs -rm* or *fs -rm -skipTrash* command.
 
 
 ## Arguments
@@ -52,7 +52,7 @@ rx_hadoop_remove wraps the Hadoop fs -rm or fs -rm -skipTrash command.
 
 ### path
 
-str or list. A list of paths or A character string specifying location of one or more
+Character string or list. A list of paths or A character string specifying location of one or more
 files.
 
 :param skip_trash. If True, removal bypasses the trash folder, if one has been set up.

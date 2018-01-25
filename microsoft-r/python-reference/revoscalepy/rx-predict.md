@@ -2,11 +2,11 @@
  
 # required metadata 
 title: "rx_predict: Predicted Values and Residuals for rx_lin_mod, rx_logit, rx_dtree," 
-description: "Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects.For specific functions, see:  rx_predict_default for rx_lin_mod and rx_logit objects. rx_predict_rx_dtree for rx_dtree object. rx_predict_rx_dforest for rx_dforest and rx_btrees objects." 
+description: "Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects." 
 keywords: "predict" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "heidist" 
+manager: "cgronlun" 
+ms.date: "01/19/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -46,11 +46,6 @@ revoscalepy.rx_predict(model_object=None, data=None, output_data=None, **kwargs)
 
 Generic function to compute predicted values and residuals using
 rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects.
-
-For specific functions, see:
-    rx_predict_default for rx_lin_mod and rx_logit objects.
-    rx_predict_rx_dtree for rx_dtree object.
-    rx_predict_rx_dforest for rx_dforest and rx_btrees objects.
 
 
 ## Arguments
@@ -115,10 +110,10 @@ Output:
 
 
 ```
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.055 seconds 
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.002 seconds 
-Computation time: 0.006 seconds.
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.052 seconds 
 Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 
+Computation time: 0.005 seconds.
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: Less than .001 seconds 
    creditScore_Pred
 0        700.089114
 1        699.834355
