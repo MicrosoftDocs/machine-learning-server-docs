@@ -104,6 +104,8 @@ In another example, we authenticate using the local 'admin' account and password
 
 ### Cloud authentication
 
+<a name="aad-arguments"></a>
+
 To authenticate with Azure Active Directory, use the `remoteLoginAAD` function. 
 
 This function takes several arguments as follows:  
@@ -132,6 +134,8 @@ If you do not want to be in a remote session, either set session = FALSE or [swi
 
 For example, here is another AAD authentication that **does not create a remote R session**. It also prompts for a username and password at runtime.
 
+If you do not specify the username and password as arguments to the login function, you are prompted for your AAD username and password at runtime.
+
 ```R
 >  remoteLoginAAD(
        "https://mlserver.contoso.com:12800", 
@@ -143,12 +147,10 @@ For example, here is another AAD authentication that **does not create a remote 
 )
 ```
 
->[!IMPORTANT]
->If you do not specify the username and password as arguments to the login function, you are prompted for your AAD username and password at runtime. 
->
->If you encounter issues with AAD login pop-ups, you may need to include the username and password as command arguments directly. 
+>[!WARNING]
+>If do not specify a username or password, you are prompted for your credentials at runtime. If you have issues with the AAD login pop-up, you may need to include the username and password as command arguments directly. 
 
-<a name="aad-arguments"></a>
+
 
 |remoteLoginAAD argument|Description|
 |--- | --- |
