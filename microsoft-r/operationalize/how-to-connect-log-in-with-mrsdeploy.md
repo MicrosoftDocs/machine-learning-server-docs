@@ -45,7 +45,7 @@ In Machine Learning Server, every API call between the Web server and client mus
 
 By default, all `mrsdeploy` operations are available to authenticated users. Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.  However, your administrator can also [assign role-based authorization](configure-roles.md) to further control the permissions around web services. 
 
-`mrsdeploy` provides two functions for authentication against Machine Learning Server: [remoteLogin()](../r-reference/mrsdeploy/remotelogin.md) and remoteLoginAAD(../r-reference/mrsdeploy/remoteloginaad.md). These functions support not just authentication, but creation of a remote R session on the Machine Learning Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the Machine Learning Server instance, and open a remote command prompt.
+`mrsdeploy` provides two functions for authentication against Machine Learning Server: [remoteLogin()](../r-reference/mrsdeploy/remotelogin.md) and [remoteLoginAAD()](../r-reference/mrsdeploy/remoteloginaad.md). These functions support not just authentication, but creation of a remote R session on the Machine Learning Server. By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the Machine Learning Server instance, and open a remote command prompt.
  The function you use depends on the [type of authentication and deployment in your organization](configure-authentication.md). 
 
 ### On premises authentication

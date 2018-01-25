@@ -40,7 +40,7 @@ The **mrsdeploy** library provides functions for establishing a remote session i
 
 First, configure the server before using this library. For more information, see [Configuring Machine Learning Server to operationalize analytics](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).
 
-After configuration, you can call **mrsdpeloy** functions from the command line or from script. 
+After configuration, you can call **mrsdeploy** functions from the command line or from script. 
 
 + On R Client, the mrsdeploy package is installed **and loaded** automatically. You can start a remote session on an operationalized R Server instance once the remote login succeeds.
 

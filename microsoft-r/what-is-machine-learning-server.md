@@ -32,7 +32,7 @@ R support is built on a legacy of Microsoft R Server 9.x and Revolution R Enterp
 Additionally, Machine Learning Server enables [operationalization support](what-is-operationalization.md) so you can deploy your models to a scalable grid for both batch and real-time scoring.
 
 
-## Why Choose Machine Learning Server
+## Why choose Machine Learning Server
 
 Microsoft Machine Learning Server includes:
 
@@ -50,14 +50,14 @@ Microsoft Machine Learning Server includes:
 
   Enterprises relying on traditional operationalization paradigms and environments end up investing much time and effort towards this area. Pain points often resulting in inflated costs and delays include: the translation time for models, iterations to keep them valid and current, regulatory approval, managing permissions through operationalization.
 
-  Machine Learning Server offers best-in-class [operationalization](what-is-operationalization.md) -- from the time a machine learning model is completed, it takes just a few clicks to generate web services APIs. These [web services](/operationalize/what-are-web-services.md) are hosted on a server grid on-premises or in the cloud and can be integrated with line-of-business applications. Additionally, Machine Learning Server integrates seamlessly with [Active Directory and Azure Active Directory](/operationalize/configure-authentication.md) and includes [role-based access control](/operationalize/configure-roles.md) to satisfy security and compliance needs of your enterprise. The ability to deploy to an elastic grid lets you scale seamlessly with the needs of your business, both for batch and real-time scoring.
+  Machine Learning Server offers best-in-class [operationalization](what-is-operationalization.md) -- from the time a machine learning model is completed, it takes just a few clicks to generate web services APIs. These [web services](operationalize/concept-what-are-web-services.md) are hosted on a server grid on-premises or in the cloud and can be integrated with line-of-business applications. Additionally, Machine Learning Server integrates seamlessly with [Active Directory and Azure Active Directory](operationalize/configure-authentication.md) and includes [role-based access control](operationalize/configure-roles.md) to satisfy security and compliance needs of your enterprise. The ability to deploy to an elastic grid lets you scale seamlessly with the needs of your business, both for batch and real-time scoring.
 
 + **Deep ecosystem engagements to deliver customer success with optimal total cost of ownership**
 
   Individuals embarking on the journey of making their applications intelligent or simply wanting to learn the new world of AI and machine learning, need the right resources to help them get started. In addition to this documentation, Microsoft provides several learning resources and has engaged several training partners to help you ramp up and become productive quickly.
 
 
-## Key Features of Machine Learning Server
+## Key features of Machine Learning Server
 
 The following features are included in Machine Learning Server. For feature descriptions in this release, see [What's New in Machine Learning Server](whats-new-in-machine-learning-server.md).
 
