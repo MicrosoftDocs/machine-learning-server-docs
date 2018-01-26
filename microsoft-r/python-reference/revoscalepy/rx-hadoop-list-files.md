@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_hadoop_list_files: Execute Hadoop List Files Commands" 
+title: "rx_hadoop_list_files: Execute Hadoop list files commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -ls or -lsr command." 
 keywords: "Hadoop Command" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

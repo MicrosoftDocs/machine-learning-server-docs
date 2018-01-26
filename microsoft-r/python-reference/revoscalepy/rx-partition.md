@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_partition: Partition Data by Key Values and Save the results to a Partitioned .Xdf" 
-description: "Partition input data sources by key values and save the results to a partitioned Xdf on disk." 
+title: "rx_partition: Partition by key value and save to a partitioned .xdf (revoscalepy)" 
+description: "Partition input data sources by key values and save the results to a partitioned .xdf file on disk." 
 keywords: "partition" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -49,7 +49,7 @@ revoscalepy.rx_partition(input_data: typing.Union[revoscalepy.datasource.RxDataS
 
 ## Description
 
-Partition input data sources by key values and save the results to a partitioned Xdf on disk.
+Partition input data sources by key values and save the results to a partitioned .xdf file on disk.
 
 
 ## Arguments

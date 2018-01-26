@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_spark_connect: Connect revoscalepy to remote Spark application." 
+title: "rx_spark_connect: Connect to remote Spark applications (revoscalepy)" 
 description: "Creates the compute context object with RxSpark and then immediately starts the remote Spark application." 
 keywords: "" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -35,9 +35,9 @@ ms.custom: ""
 
 
 ```
-revoscalepy.rx_spark_connect(hdfs_share_dir: str = '/user/RevoShare\\BZ10ALH55BYH7TW$',
-    share_dir: str = '/var/RevoShare\\BZ10ALH55BYH7TW$',
-    user: str = 'BZ10ALH55BYH7TW$', name_node: str = None,
+revoscalepy.rx_spark_connect(hdfs_share_dir: str = '/user/RevoShare\\766RR78ROCWFDMK$',
+    share_dir: str = '/var/RevoShare\\766RR78ROCWFDMK$',
+    user: str = '766RR78ROCWFDMK$', name_node: str = None,
     master: str = 'yarn', port: int = None,
     auto_cleanup: bool = True, console_output: bool = False,
     packages_to_load: list = None, idle_timeout: int = None,

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_btrees: Parallel External Memory Algorithm for Stochastic Gradient Boosted Decision Trees" 
-description: "Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm." 
+title: "rx_btrees: Fits stochastic gradient boosted decision trees (revoscalepy)" 
+description: "Fit stochastic gradient boosted decision trees on an .xdf file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,7 +55,7 @@ revoscalepy.rx_btrees(formula, data, output_file=None, write_model_vars=False,
 
 ## Description
 
-Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for
+Fit stochastic gradient boosted decision trees on an .xdf file or data frame for
 small or large data using parallel external memory algorithm.
 
 

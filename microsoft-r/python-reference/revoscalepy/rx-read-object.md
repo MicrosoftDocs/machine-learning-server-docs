@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_read_object: Manage objects in ODBC Data Sources" 
+title: "rx_read_object: Read an ODBC data source object (revoscalepy)" 
 description: "Retrieves an ODBC data source object by its key value." 
 keywords: "odbc" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

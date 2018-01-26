@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_pyspark_connection: Get pyspark spark_context connection from Spark compute context" 
+title: "rx_get_pyspark_connection: Get pyspark spark_context connection from Spark compute context (revoscalepy)" 
 description: "Gets a PySpark connection from the current Spark compute context." 
 keywords: "" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

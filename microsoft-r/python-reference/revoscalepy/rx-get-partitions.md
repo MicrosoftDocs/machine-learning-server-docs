@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_partitions: Get Partitions of a Partitioned Xdf Data Source" 
-description: "Get partitions enumeration of a partitioned Xdf data source." 
+title: "rx_get_partitions: Get partitions of a partitioned XDF data source (revoscalepy)" 
+description: "Get partitions enumeration of a partitioned .xdf file data source." 
 keywords: "partition, execby, " 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -45,7 +45,7 @@ revoscalepy.rx_get_partitions(input_data: revoscalepy.datasource.RxXdfData.RxXdf
 
 ## Description
 
-Get partitions enumeration of a partitioned Xdf data source.
+Get partitions enumeration of a partitioned .xdf file data source.
 
 
 ## Arguments

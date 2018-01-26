@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_var_info: Get Variable Information for a Data Source" 
+title: "rx_get_var_info: Get variable information for a data source (revoscalepy)" 
 description: "Get variable information for a revoscalepy data source or data frame, including variable names, descriptions, and value labels" 
 keywords: "info" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

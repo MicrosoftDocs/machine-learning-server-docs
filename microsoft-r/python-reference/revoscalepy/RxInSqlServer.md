@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxInSqlServer: Generate SQL Server In-Database Compute Context" 
+title: "RxInSqlServer: Generate SQL Server in-database compute context (revoscalepy)" 
 description: "Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server. Currently only supported in Windows." 
 keywords: "sql" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

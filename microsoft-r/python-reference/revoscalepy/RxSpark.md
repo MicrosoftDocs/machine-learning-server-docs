@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxSpark: Generate Spark Compute Context" 
+title: "RxSpark: Generate spark compute context (revoscalepy)" 
 description: "Creates the compute context for running revoscalepy analysis on Spark. Note that the use of rx_spark_connect() is recommended over RxSpark() as rx_spark_connect() supports persistent mode with in-memory caching. Run help(revoscalepy.rx_spark_connect) for more information." 
 keywords: "" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -32,9 +32,9 @@ ms.custom: ""
 
 
 ```
-revoscalepy.RxSpark(hdfs_share_dir: str = '/user/RevoShare\BZ10ALH55BYH7TW$',
-    share_dir: str = '/var/RevoShare\BZ10ALH55BYH7TW$',
-    user: str = 'BZ10ALH55BYH7TW$', name_node: str = None,
+revoscalepy.RxSpark(hdfs_share_dir: str = '/user/RevoShare\766RR78ROCWFDMK$',
+    share_dir: str = '/var/RevoShare\766RR78ROCWFDMK$',
+    user: str = '766RR78ROCWFDMK$', name_node: str = None,
     master: str = 'yarn', port: int = None,
     auto_cleanup: bool = True, console_output: bool = False,
     packages_to_load: list = None, idle_timeout: int = 3600,

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxOdbcData: Generate ODBC Data Source Object" 
+title: "RxOdbcData: Class generator for ODBC data source objects (revoscalepy)" 
 description: "Main generator for class RxOdbcData, which extends RxDataSource." 
 keywords: "odbc, datasource" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

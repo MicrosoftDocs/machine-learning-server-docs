@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_lin_mod: Linear Models" 
-description: "Fit linear models on small or large data." 
+title: "rx_lin_mod: Fits a linear model (revoscalepy)" 
+description: "Fit linear models on small or large data sets." 
 keywords: "linear" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,7 +55,7 @@ revoscalepy.rx_lin_mod(formula, data, pweights=None, fweights=None,
 
 ## Description
 
-Fit linear models on small or large data.
+Fit linear models on small or large data sets.
 
 
 ## Arguments
@@ -127,7 +127,7 @@ See rx_data_step for examples.
 ### transform_variables
 
 List of strings of the column names needed
-for the transform function and model building.
+for the transform function.
 
 
 ### transform_packages

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_set_compute_context: Sets the compute context" 
+title: "rx_set_compute_context: Sets the compute context (revoscalepy)" 
 description: "Sets the active compute context for revoscalepy computations" 
 keywords: "context" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

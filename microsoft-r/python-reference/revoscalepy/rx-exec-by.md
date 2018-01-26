@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_exec_by: Partition Data by Key Values and Execute User Function on Each Partition" 
-description: "Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in local, localpar, RxInSqlServer and RxSpark compute contexts." 
+title: "rx_exec_by: Parition by key and execute functions by partition (revoscalepy)" 
+description: "Partition input data source by keys and apply a user-defined function on individual partitions. If the input data source is already partitioned, apply a user-defined function directly on the partitions. Currently supported in local, localpar, RxInSqlServer and RxSpark compute contexts." 
 keywords: "execby, groupby" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -50,9 +50,9 @@ revoscalepy.rx_exec_by(input_data: typing.Union[revoscalepy.datasource.RxDataSou
 
 ## Description
 
-Partition input data source by keys and apply user defined function on
-individual partitions. If input data source is already partitioned, apply
-user defined function on partitions directly. Currently supported in local,
+Partition input data source by keys and apply a user-defined function on
+individual partitions. If the input data source is already partitioned, apply a
+user-defined function directly on the partitions. Currently supported in local,
 localpar, RxInSqlServer and RxSpark compute contexts.
 
 

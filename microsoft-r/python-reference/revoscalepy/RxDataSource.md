@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxDataSource: RxDataSource" 
+title: "RxDataSource: Base class generator for data source objects (revoscalepy)" 
 description: "Base class for all revoscalepy data sources. Can be used with head() and tail() to display the first and last rows of the data set." 
 keywords: "head, tail" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

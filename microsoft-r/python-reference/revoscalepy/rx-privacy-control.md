@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_privacy_control: Changes the opt-in state for anonymous usage collection" 
+title: "rx_privacy_control: Changes the opt-in state for anonymous usage collection (revoscalepy)" 
 description: "Used for opting out of telemetry data collection, which is enabled by default." 
 keywords: "privacy, telemetry" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

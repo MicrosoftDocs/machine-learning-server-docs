@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_dforest: Parallel External Memory Algorithm for Classification and Regression Decision Forests" 
-description: "Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm." 
+title: "rx_dforest: Fits classification and regression decision forests (revoscalepy)" 
+description: "Fits classification and regression decision forests on an .xdf file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -54,7 +54,7 @@ revoscalepy.rx_dforest(formula, data, output_file=None, write_model_vars=False,
 
 ## Description
 
-Fit classification and regression decision forests on an ‘.xdf’ file or
+Fits classification and regression decision forests on an .xdf file or
 data frame for small or large data using parallel external memory algorithm.
 
 
@@ -311,7 +311,7 @@ See rx_data_step for examples.
 ### transform_variables
 
 List of strings of the column names needed
-for the transform function and model building.
+for the transform function.
 
 
 ### transform_packages

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_summary: Object Summaries" 
+title: "rx_summary: Generate summary statistics (revoscalepy)" 
 description: "Produce univariate summaries of objects in revoscalepy." 
 keywords: "summary" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

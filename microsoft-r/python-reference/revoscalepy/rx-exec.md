@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_exec: Run a Function With Different Sets of Arguments" 
-description: "Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster." 
+title: "rx_exec: Executes arbitary R functions in parallel (revoscalepy)" 
+description: "Allows the distributed execution of an arbitrary R function in parallel, across nodes (computers) or cores of a “compute context”, such as a cluster. For example, you could use the function to execute multiple instances of a model concurrently. When used with base R functions, rxexec does not lift the memory constraints of the underlying functions, or make a single-threaded process a multi-threaded one. The fundamentals of the function still apply; what changes is the execution framework of those functions." 
 keywords: "parallel execution, multiple executions, remote execution, sql" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -48,8 +48,12 @@ revoscalepy.rx_exec(function: typing.Callable, args: typing.Union[dict,
 
 ## Description
 
-Allows distributed execution of a function in parallel across nodes
-(computers) or cores of a “compute context” such as a cluster.
+Allows the distributed execution of an arbitrary R function in parallel, across nodes
+(computers) or cores of a “compute context”, such as a cluster. For example, you could
+use the function to execute multiple instances of a model concurrently. When used with
+base R functions, rxexec does not lift the memory constraints of the underlying functions,
+or make a single-threaded process a multi-threaded one. The fundamentals of the function
+still apply; what changes is the execution framework of those functions.
 
 
 ## Arguments

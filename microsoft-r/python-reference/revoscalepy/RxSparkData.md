@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxSparkData: RxSparkData" 
+title: "RxSparkData: Base class generator for Spark data (revoscalepy)" 
 description: "Base class for all revoscalepy Spark data sources, including RxHiveData, RxOrcData, RxParquetData and RxSparkDataFrame. It is intended to be called from those subclasses instead of directly." 
 keywords: "" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
