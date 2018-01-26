@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxSparkDataFrame: Generate Spark Data Frame Data Source Object" 
+title: "RxSparkDataFrame: Class generator for Spark data frame objects (revoscalepy)" 
 description: "Main generator for class RxSparkDataFrame, which extends RxSparkData." 
 keywords: "datasource" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

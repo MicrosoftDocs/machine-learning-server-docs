@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxOptions: Global Options for revoscalepy" 
+title: "RxOptions: Global options for revoscalepy (revoscalepy)" 
 description: "Functions to specify and retrieve options needed for revoscalepy computations. These need to be set only once to carry out multiple computations." 
 keywords: "options" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

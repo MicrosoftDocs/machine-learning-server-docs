@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_info: Get Data Source Information" 
-description: "Get basic information about an revoscalepy data source or data frame" 
+title: "rx_get_info: Get data source information (revoscalepy)" 
+description: "Get basic information about a revoscalepy data source or data frame." 
 keywords: "xdf" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -49,7 +49,7 @@ revoscalepy.rx_get_info(data, get_var_info: bool = False,
 
 ## Description
 
-Get basic information about an revoscalepy data source or data frame
+Get basic information about a revoscalepy data source or data frame.
 
 
 ## Arguments

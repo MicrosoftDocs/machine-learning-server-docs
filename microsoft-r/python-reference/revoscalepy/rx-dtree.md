@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_dtree: Parallel External Memory Algorithm for Classification and Regression Trees" 
-description: "Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm." 
+title: "rx_dtree: Fits classification and regression trees (revoscalepy)" 
+description: "Fit classification and regression trees on an .xdf file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,7 +55,7 @@ revoscalepy.rx_dtree(formula, data, output_file=None,
 
 ## Description
 
-Fit classification and regression trees on an ‘.xdf’ file or data frame for
+Fit classification and regression trees on an .xdf file or data frame for
 small or large data using parallel external memory algorithm.
 
 
@@ -315,7 +315,7 @@ See rx_data_step for examples.
 ### transform_variables
 
 List of strings of the column names needed
-for the transform function and model building.
+for the transform function.
 
 
 ### transform_packages
@@ -389,5 +389,20 @@ method = "anova"
 parms = {'prior': [0.8, 0.2], 'loss': [0, 2, 3, 0], 'split': "gini"}
 cost = [2,3]
 dtree = rx_dtree(formula, data = kyphosis, pweights = "Kyphosis", method = method, parms = parms, cost = cost, max_num_bins = 100)
+
+# transform function
+def my_transform(dataset, context):
+    dataset['arrdelay2'] = dataset['ArrDelay'] * 10
+    dataset['crsdeptime2'] = dataset['CRSDepTime']
+    # Use the follow code to set high/low values for new columns
+    # rx_attributes metadata needs to be set last
+    dataset['arrdelay2'].rx_attributes = {'.rxLowHigh': [-860.0, 14900.0]}
+    dataset['crsdeptime2'].rx_attributes = {'.rxLowHigh': [0.016666999086737633, 23.983333587646484]}
+    return dataset
+
+data_path = RxOptions.get_option("sampleDataDir")
+data = RxXdfData(os.path.join(data_path, "AirlineDemoSmall.xdf")).head(20)
+form = "ArrDelay ~ arrdelay2 + crsdeptime2"
+dtree = rx_dtree(form, data=data, transform_function=my_transform, transform_variables=["ArrDelay", "CRSDepTime", "DayOfWeek"])
 ```
 

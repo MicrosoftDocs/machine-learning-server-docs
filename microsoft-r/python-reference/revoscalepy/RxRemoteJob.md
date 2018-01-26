@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxRemoteJob,close,deserialize_job,deserialize_jobs,resolve_context: Closes a Remote Job" 
+title: "RxRemoteJob,close,deserialize_job,deserialize_jobs,resolve_context: Closes a remote job (revoscalepy)" 
 description: "Closes the remote job, purging all associated job-related data. You can reference a job by its ID, or call close() to purge jobs in a given compute context." 
 keywords: "" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

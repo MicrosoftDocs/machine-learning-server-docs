@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxHiveData: Generate Hive Data Source Object" 
+title: "RxHiveData: Class generator for Hive data source objects (revoscalepy)" 
 description: "Main generator for class RxHiveData, which extends RxSparkData." 
 keywords: "datasource, hive" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

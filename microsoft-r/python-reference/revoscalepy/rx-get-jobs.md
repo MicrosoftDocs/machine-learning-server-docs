@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_jobs: Get Distributed Computing Jobs" 
+title: "rx_get_jobs: Get Distributed Computing Jobs (revoscalepy)" 
 description: "Returns a list of job objects associated with the given compute context and matching the specified parameters." 
 keywords: "get, job" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

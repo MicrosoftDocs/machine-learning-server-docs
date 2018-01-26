@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_serialize_model: Serialize the python model." 
+title: "rx_serialize_model: Serialize a python model (revoscalepy)" 
 description: "Serialize the given python model." 
 keywords: "serialization" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

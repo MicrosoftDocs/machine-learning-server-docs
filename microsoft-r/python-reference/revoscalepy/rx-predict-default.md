@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_predict_default: Predicted Values and Residuals for rx_lin_mod and rx_logit" 
+title: "rx_predict_default: Predicted Values and Residuals for rx_lin_mod and rx_logit (revoscalepy)" 
 description: "Compute predicted values and residuals using rx_lin_mod and rx_logit objects." 
 keywords: "predict" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_read_xdf: Read .xdf File" 
+title: "rx_read_xdf: Read an XDF data source object (revoscalepy)" 
 description: "Read data from an “.xdf” file into a data frame." 
 keywords: "xdf" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

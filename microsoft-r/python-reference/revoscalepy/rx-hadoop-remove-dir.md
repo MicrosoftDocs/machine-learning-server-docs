@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_hadoop_remove_dir: Execute Hadoop Remove Directory Commands" 
+title: "rx_hadoop_remove_dir: Execute Hadoop remove directory commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -rm -r  or fs -rm -r -skipTrash command." 
 keywords: "Hadoop Command" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

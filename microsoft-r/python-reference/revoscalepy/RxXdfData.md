@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxXdfData: Generate Xdf Data Source Object" 
+title: "RxXdfData: Class generator for XDF data source objects (revoscalepy)" 
 description: "Main generator for class RxXdfData, which extends RxDataSource." 
 keywords: "datasource, xdf" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -56,7 +56,8 @@ Main generator for class RxXdfData, which extends RxDataSource.
 
 Character string specifying the location of the data. For single
 Xdf, it is a ‘.xdf’ file. For composite Xdf, it is a directory like
-‘/tmp/airline’.
+‘/tmp/airline’. When using distributed compute contexts like RxSpark,
+a directory should be used since those compute contexts always use composite Xdf.
 
 
 ### vars_to_keep
@@ -106,7 +107,8 @@ subdirectory, the data will be split across a set of ‘.xdfd’ files (see
 blocks_per_composite_file below for determining how many blocks of data will be
 in each file). In the ‘metadata’ subdirectory there is a single ‘.xdfm’ file,
 which contains the meta data for all of the ‘.xdfd’ files in the ‘data’
-subdirectory.
+subdirectory. When the compute context is RxSpark, a composite set of files
+are always created.
 
 
 ### create_partition_set
@@ -126,7 +128,8 @@ supported only in rxPartition and rxGetPartitions
 
 Integer value. If
 create_composite_set=True, this will be the number of blocks put into each
-‘.xdfd’ file in the composite set.
+‘.xdfd’ file in the composite set. RxSpark compute context will optimize
+the number of blocks based upon HDFS and Spark settings.
 
 
 ## Returns

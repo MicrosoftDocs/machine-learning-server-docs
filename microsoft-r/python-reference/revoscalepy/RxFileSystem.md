@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxFileSystem: Class RxFileData" 
-description: "File-based data source connection class." 
+title: "RxFileSystem: Class generator for file data source objects (revoscalepy)" 
+description: "Creates a data source connection to a file on the native file system." 
 keywords: "file, datasource" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -41,4 +41,4 @@ revoscalepy.RxFileSystem(file_system_type='native')
 
 ## Description
 
-File-based data source connection class.
+Creates a data source connection to a file on the native file system.

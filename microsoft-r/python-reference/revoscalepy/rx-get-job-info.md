@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_job_info: Get Job Information from Distributed Computing Job" 
+title: "rx_get_job_info: Get Job Information from Distributed Computing Job (revoscalepy)" 
 description: "The object returned from a non-waiting, distributed computation  contains job information together with other information.  The job information is used internally by such functions as rx_get_job_status, rx_get_job_output, and rx_get_job_results. It is sometimes useful to extract it for its own sake, as it contains complete information on the job’s compute context as well as other information needed by the distributed computing resources.For most users, the principal use of this function is to determine whether a given object actually contains job information. If the return value is not None, then the object contains job information. Note, however, that the structure of the job information is subject to change, so code that attempts to manipulate it directly is not guaranteed to be forward-compatible." 
 keywords: "context" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
