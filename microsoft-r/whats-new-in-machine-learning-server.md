@@ -25,26 +25,26 @@ ms.technology: "r-server"
 
 # What's new in Machine Learning Server 9.3
 
-**Applies to: Machine Learning Server** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Find R Server 9.x What's New)](whats-new-in-r-server.md) 
+Machine Learning Server 9.3 provides powerful R and Python function libraries for data science and machine learning at scale, extending the core capabilities of R and Python alone. Function libraries are distributed in propertietary packages from Microsoft, with command and script execution on computational engines running on Machine Learning Server and related Microsoft technologies (for example, on R Client or on R Server for HDInsight). 
 
-Machine Learning Server 9.3 provides computational engines for R and Python, plus function libraries for data science and machine learning, extending the core capabilities of R and Python alone. Function libraries are distributed in propertietary packages in Machine Learning Server and run in on Machine Learning Server and related Microsoft technologies (for example, on R Client or on R Server for HDInsight). 
+Open-source R and Python are built into the run-time architecture. As such, your code can call open-source R or Python functions, third-party R or Python functions built for open-source distributions, and the proprietary R or Python functions that run only on the Machine Learning Server and related Microsoft technologies.
 
-Open-source Python are the basis of each computational engine. As such, your code can call open-source R or Python functions, third-party R or Python functions built for open-source distributions, and the proprietary R or Python functions that run only on the Machine Learning Server and related Microsoft technologies.
-
-In this article, learn about the new capabilities introduced in this release, or review recently introduced features from the last release. 
+In this article, learn about the new capabilities introduced in this release, or review feature announcements from recent past releases. 
 
 > [!Note]
-> Read our [release announcement for Machine Learning Server 9.3](UPDATE THIS LINK, was https://aka.ms/mlserver92). <br/><br/>For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
+> Read our [release announcement for Machine Learning Server 9.3](UPDATE THIS LINK, was https://aka.ms/mlserver92). For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
 
-## 9.3 Features
+## Announced in 9.3
 
 | Feature | Area | Details |
 |---------|------|---------|
 | [Administration command line interface](operationalize/configure-use-admin-cli.md) | Operationalize | Configure Machine Learning Server on Linux or Windows Server to support web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and througput of web services you created. |
 
-## 9.2.1 Features
+## Announced in 9.2.1
 
-The 9.2.1 release was the first release of Machine Learning Server, a vehicle for the next generation of R Server 9.1, but rebranded to make room for new Python capabilities. The following table summarizes the Python and R features that were introduced in the 9.2.1 release.
+The 9.2.1 release was the first release of Machine Learning Server - based on R Server - expanded with Python libraries for developers and analysts who code in Python. 
+
+The following table summarizes the Python and R features that were introduced in the 9.2.1 release.
 
 | Feature | Language | Details |
 |---------|----------|---------|
@@ -71,7 +71,7 @@ R function libraries are built on [Microsoft R Open (MRO)](https://mran.microsof
 
 The last several releases of R Server added substantial capability for R developers. To review recent additions to R functionality, see [feature announcements](whats-new-in-r-server.md) for previous versions.
 
-## Previous R Server versions
+## Previous versions
 
 Visit [Feature announcements in R Server](whats-new-in-r-server.md) version 9.1 and earlier, for descriptions of features added in recent past releases.
 
