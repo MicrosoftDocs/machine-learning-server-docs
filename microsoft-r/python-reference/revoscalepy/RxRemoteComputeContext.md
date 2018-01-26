@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxRemoteComputeContext: " 
+title: "RxRemoteComputeContext:  (revoscalepy)" 
 description: "" 
 keywords: "" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

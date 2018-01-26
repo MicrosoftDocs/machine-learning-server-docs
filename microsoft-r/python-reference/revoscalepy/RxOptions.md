@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxOptions: Global Options for revoscalepy" 
+title: "RxOptions: Global options for revoscalepy (revoscalepy)" 
 description: "Functions to specify and retrieve options needed for revoscalepy computations. These need to be set only once to carry out multiple computations." 
 keywords: "options" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -49,26 +49,26 @@ Functions to specify and retrieve options needed for revoscalepy computations. T
 
 ### unitTestDataDir
 
-character string specifying path to revoscalepy’s
+Character string specifying path to revoscalepy’s
 test data directory.
 
 
 ### sampleDataDir
 
-character string specifying path to revoscalepy’s
+Character string specifying path to revoscalepy’s
 sample data directory.
 
 
 ### blocksPerRead
 
-default value to use for blocksPerRead argument for
+Default value to use for blocksPerRead argument for
 many revoscalepy functions. Represents the number of blocks to read within
 each read chunk.
 
 
 ### reportProgress
 
-default value to use for reportProgress argument for
+Default value to use for reportProgress argument for
 many revoscalepy functions. Options are:
 
     0: no progress is reported.
@@ -79,25 +79,25 @@ many revoscalepy functions. Options are:
 
 ### RowDisplayMax
 
-scalar integer specifying the maximum number of rows
+Integer value specifying the maximum number of rows
 to display when using the verbose argument in revoscalepy functions. The
 default of -1 displays all available rows.
 
 
 ### MemStatsReset
 
-boolean integer. If 1, reset memory status
+Boolean integer. If 1, reset memory status
 
 
 ### MemStatsDiff
 
-boolean integer. If 1, the change of memory status is
+Boolean integer. If 1, the change of memory status is
 shown.
 
 
 ### NumCoresToUse
 
-scalar integer specifying the number of cores to use.
+Integer value specifying the number of cores to use.
 If set to a value higher than the number of available cores, the number of
 available cores will be used. If set to -1, the number of available cores
 will be used. Increasing the number of cores to use will also increase the
@@ -106,7 +106,7 @@ amount of memory required for revoscalepy analysis functions.
 
 ### NumDigits
 
-controls the number of digits to to use when converting
+Controls the number of digits to to use when converting
 numeric data to or from strings, such as when printing numeric values or
 importing numeric data as strings. The default is the current value of
 options()$digits, which defaults to 7. Beyond fifteen digits, however,
@@ -115,13 +115,13 @@ results are likely to be unreliable.
 
 ### ShowTransformFn
 
-bool value. If True, the transform function is
+Bool value. If True, the transform function is
 shown.
 
 
 ### DataPath
 
-list of strings containing paths to search for local data
+List of strings containing paths to search for local data
 sources. The default is to search just the current working directory. This
 will be ignored if dataPath is specified in the active compute context. See
 the Details section for more information regarding the path format.
@@ -129,7 +129,7 @@ the Details section for more information regarding the path format.
 
 ### OutDataPath
 
-list of strings containing paths for writing new
+List of strings containing paths for writing new
 output data files. New data files will be written to the first path that
 exists. The default is to write to the current working directory. This will
 be ignored if outDataPath is specified in the active compute context.
@@ -137,14 +137,14 @@ be ignored if outDataPath is specified in the active compute context.
 
 ### XdfCompressionLevel
 
-integer in the range of -1 to 9. The higher the
+Integer in the range of -1 to 9. The higher the
 value, the greater the amount of compression - resulting in smaller files
 but a longer time to create them.
 
 
 ### FileSystem
 
-character string or RxFileSystem object indicating type
+Character string or RxFileSystem object indicating type
 of file system; “native” or RxNativeFileSystem object can be used for the
 local operating system, or an RxHdfsFileSystem object for the Hadoop file
 system.
@@ -152,30 +152,30 @@ system.
 
 ### UseSparseCube
 
-bool value. If True, sparse cube is used.
+Bool value. If True, sparse cube is used.
 
 
 ### RngBfferSize
 
-a positive integer scalar specifying the buffer size
+A positive integer scalar specifying the buffer size
 for the Parallel Random Number Generators (RNGs) in MKL.
 
 
 ### DropMain
 
-bool value. If True, main-effect terms are dropped
+Bool value. If True, main-effect terms are dropped
 before their interactions.
 
 
 ### CoefLabelStyle
 
-character string specifying the coefficient label
+Character string specifying the coefficient label
 style. The default is “Revo”.
 
 
 ### NumTasks
 
-integer value. The default numTasks use in RxInSqlServer.
+Integer value. The default numTasks use in RxInSqlServer.
 
 
 ### unixPythonPath

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxParquetData: Generate Parquet Data Source Object" 
+title: "RxParquetData: Class generator for Parquet data source objects (revoscalepy)" 
 description: "Main generator for class RxParquetData, which extends RxSparkData." 
 keywords: "datasource, parquet" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -51,16 +51,16 @@ Main generator for class RxParquetData, which extends RxSparkData.
 
 ### file
 
-character string specifying the location of the data. e.g.
+Character string specifying the location of the data. e.g.
 “/tmp/AirlineDemoSmall.parquet”.
 
 
 ### column_info
 
-list of named variable information lists. Each variable
+List of named variable information lists. Each variable
 information list contains one or more of the named elements given below.
 Currently available properties for a column information list are:
-type: character string specifying the data type for the column.
+type: Character string specifying the data type for the column.
 
     Supported types are:
         ”bool” (stored as uchar),
@@ -73,7 +73,7 @@ type: character string specifying the data type for the column.
         “Date” (stored as Date, i.e. float64.)
         “POSIXct” (stored as POSIXct, i.e. float64.)
 
-levels: list of strings containing the levels when type = “factor”. If
+levels: List of strings containing the levels when type = “factor”. If
     the levels property is not provided, factor levels will be determined
     by the values in the source column. If levels are provided, any value
     that does not match a provided level will be converted to a missing
@@ -82,21 +82,21 @@ levels: list of strings containing the levels when type = “factor”. If
 
 ### file_system
 
-character string or RxFileSystem object indicating type
+Character string or RxFileSystem object indicating type
 of file system; It supports native HDFS and other HDFS compatible systems,
 e.g., Azure Blob and Azure Data Lake. Local file system is not supported.
 
 
 ### write_factors_as_indexes
 
-bool. If True, when writing to an
+Bool, if True, when writing to an
 RxParquetData data source, underlying factor indexes will be written instead
 of the string representations.
 
 
 ## Returns
 
-object of class `RxParquetData`.
+Object of class `RxParquetData`.
 
 
 ## Example

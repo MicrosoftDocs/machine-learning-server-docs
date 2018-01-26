@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxLocalSeq: Generate Local Compute Context" 
+title: "RxLocalSeq: Generate local compute context (revoscalepy)" 
 description: "Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context." 
 keywords: "context, local" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -46,7 +46,7 @@ Creates a local compute context object. Computations using rx_exec will be proce
 
 ## Returns
 
-object of class `RxLocalSeq`.
+Object of class `RxLocalSeq`.
 
 
 ## See also

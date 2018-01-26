@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxNativeFileSystem: revoscalepy Native File System Generator" 
-description: "Main generator class for RxNativeFileSystem" 
+title: "RxNativeFileSystem: Class generator for the native file system (revoscalepy)" 
+description: "Main generator class for objects repreresenting the native file system." 
 keywords: "filesystem native" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -41,7 +41,7 @@ revoscalepy.RxNativeFileSystem
 
 ## Description
 
-Main generator class for RxNativeFileSystem
+Main generator class for objects repreresenting the native file system.
 
 
 ## Returns

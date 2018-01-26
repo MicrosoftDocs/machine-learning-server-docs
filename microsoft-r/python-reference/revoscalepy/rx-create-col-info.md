@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_create_col_info: Function to generate a ‘column_info’ ordered dictionary from a data source" 
+title: "rx_create_col_info: Generate a column_info ordered dictionary from a data source (revoscalepy)" 
 description: "From the data source, generates an ordered dictionary of dictionaries with variable names as keys and column information dictionaries as values. It can be used in rx_import or an RxDataSource constructor. This function can be used to ensure consistent categorical (factor) levels when importing a series of text files to xdf. It is also useful for repeated analysis on non-xdf data sources." 
 keywords: "column, information, col, info" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# rx_create_col_info
+# `rx_create_col_info`
 
 
  
@@ -168,14 +168,14 @@ a series of text files to xdf. It is also useful for repeated analysis on non-xd
 ###############################################################
 # Generating Column Information for a SQL Server Data Source
 ###############################################################
-from revoscalepy import RxSqlServerData, rx_create_col_info, rx_set_temp_compute_context, RxLocalSeq
-sql_source = RxSqlServerData(connection_string="Driver=SQL Server;Server=.;Database=RevoTestDb;Trusted_Connection=TRUE;",
-                      table="AirlineDemoSmall",
-                      rows_per_read=500000,
-                      string_as_factors = True)
+from revoscalepy import RxSqlServerData, rx_create_col_info, rx_set_temp_compute_context, RxInSqlServer
+connection_string="Driver=SQL Server;Server=.;Database=RevoTestDb;Trusted_Connection=TRUE;"
+sql_source = RxSqlServerData(connection_string = connection_string,
+                             table="AirlineDemoSmall",
+                             rows_per_read=500000,
+                             string_as_factors = True)
 
-# currently, column_info for RxSqlServerData can be only created in local compute context
-with rx_set_temp_compute_context(RxLocalSeq()):
+with rx_set_temp_compute_context(RxInSqlServer(connection_string = connection_string)):
     results = rx_create_col_info(sql_source)
 ```
 

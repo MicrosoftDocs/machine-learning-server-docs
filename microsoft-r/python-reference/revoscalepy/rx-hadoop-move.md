@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_hadoop_move: Execute Hadoop Move Commands" 
-description: "rx_hadoop_move wraps the Hadoop fs -mv command." 
+title: "rx_hadoop_move: Execute Hadoop move commands (revoscalepy)" 
+description: "Wraps the Hadoop fs -mv command." 
 keywords: "Hadoop Command" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,7 +44,7 @@ revoscalepy.rx_hadoop_move(source: str, dest: str)
 
 ## Description
 
-rx_hadoop_move wraps the Hadoop fs -mv command.
+Wraps the Hadoop *fs -mv* command.
 
 
 ## Arguments
@@ -52,12 +52,12 @@ rx_hadoop_move wraps the Hadoop fs -mv command.
 
 ### source
 
-str. A character string specifying file(s) to be moved in HDFS
+A character string specifying file(s) to be moved in HDFS
 
 
 ### dest
 
-str. A character string specifying the destination of move in HDFS
+A character string specifying the destination of move in HDFS
 If *source* includes more than one file, *dest* must be a directory.
 
 

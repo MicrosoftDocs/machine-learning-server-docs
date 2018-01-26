@@ -74,7 +74,7 @@ For example, here is an AD authentication that creates a remote R session, but p
             session = FALSE)
 ```
 
-In another example, we authenticate using the local 'admin' account and password and create a remote R session. Then, upon login, we are placed at the remote session's command prompt upon login. A report of the differences between local and remote environments is returned.
+In another example, we authenticate using the local 'admin' account and password and create a remote R session. Then, upon login, we are placed at the remote session's command prompt. A report of the differences between local and remote environments is returned.
 
 ```R
 >  remoteLogin("http://localhost:12800", 
@@ -95,35 +95,50 @@ In another example, we authenticate using the local 'admin' account and password
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE. **If omitted, it is the same as `= TRUE`.**|
 |prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.|
-|username|If NULL, user is prompted to enter your AD or [local Machine Learning Server](configure-authentication.md#local) username|
-|password|If NULL, user is prompted to enter password|
+|username|If NULL, user is prompted to enter your AD or [local Machine Learning Server](configure-authentication.md#local) username.|
+|password|If NULL, user is prompted to enter password.|
 
-
-If you do not specify a username and password as arguments to the login function, you are prompted for your AD or [local Machine Learning Server](configure-authentication.md#local) username and password. 
+>[!IMPORTANT]
+>If you do not specify a username and password as arguments to the login function, you are prompted for your AD or [local Machine Learning Server](configure-authentication.md#local) username and password when you run this command. 
 
 
 ### Cloud authentication
 
-If you are authenticating using Azure Active Directory in the cloud, use the `remoteLoginAAD` function. For example:  
+<a name="aad-arguments"></a>
+
+To authenticate with Azure Active Directory, use the `remoteLoginAAD` function. 
+
+This function takes several arguments as follows:  
 
 ```R
 > remoteLoginAAD(
-          endpoint, 
-          authuri = https://login.windows.net,
-          tenantid = "<AAD_DOMAIN>", 
-          clientid = "<NATIVE_APP_CLIENT_ID>", 
-          resource = "<WEB_APP_CLIENT_ID>", 
-          session = TRUE,
-          diff = TRUE,
-          commandline = TRUE
+       endpoint, 
+       authuri = https://login.windows.net,
+       tenantid = "<AAD_DOMAIN>", 
+       clientid = "<NATIVE_APP_CLIENT_ID>", 
+       resource = "<WEB_APP_CLIENT_ID>",
+       username = "NameOfUser", 
+       password = "UserPassword", 
+       session = TRUE,
+       diff = TRUE,
+       commandline = TRUE
   )
 ```  
 
-For example, here is an AAD authentication that does not create a remote R session, but rather prompts for a username and password.
+Unless you specify otherwise, this function:
+1. Logs the user in
+1. Creates a remote R session on the server instance
+1. Puts the user on the remote command line in that remote session. 
+
+If you do not want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
+
+For example, here is another AAD authentication that **does not create a remote R session**. It also prompts for a username and password at runtime.
+
+If you do not specify the username and password as arguments to the login function, you are prompted for your AAD username and password at runtime.
 
 ```R
 >  remoteLoginAAD(
-       "https://rserver.contoso.com:12800", 
+       "https://mlserver.contoso.com:12800", 
        authuri = "https://login.windows.net", 
        tenantid = "microsoft.com", 
        clientid = "00000000-0000-0000-0000-000000000000", 
@@ -132,14 +147,12 @@ For example, here is an AAD authentication that does not create a remote R sessi
 )
 ```
 
->[!NOTE]
->Unless you specify otherwise using the arguments below, this function not only logs you in, but also creates a remote R session on the server instance and puts you on the remote command line. If you don't want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
+>[!WARNING]
+>Whenever you omit the username or password, you are prompted for your credentials at runtime. If you have issues with the AAD login pop-up, you may need to include the username and password as command arguments directly. 
 
-If you do not know your `tenantid`, `clientid`, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](configure-authentication.md#azure-active-directory). For example:
 
-<a name="aad-arguments"></a>
 
-|`remoteLoginAAD` Argument|Description|
+|remoteLoginAAD argument|Description|
 |--- | --- |
 |endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  This endpoint is the SIGN-ON URL value from the web application|
 |authuri|The URI of the authentication service for Azure Active Directory.|
@@ -150,8 +163,11 @@ If you do not know your `tenantid`, `clientid`, or other details, contact your a
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE.|
 |prompt|The command prompt to be used for the remote session. By default, `REMOTE>` is used.  **If omitted, it is the same as `= TRUE`.**|
-|username|If NULL, user is prompted to enter username `<username>@<AAD-account-domain>`|
-|password|If NULL, user is prompted to enter password|
+|username|If NULL, user is prompted to enter username `<username>@<AAD-account-domain>`. If you have issues with the AAD login pop-up, try including the username and password as command arguments directly. |
+|password|If NULL, user is prompted to enter password.|
+
+
+If you do not know your `tenantid`, `clientid`, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](configure-authentication.md#azure-active-directory). 
 
 <br/>
 

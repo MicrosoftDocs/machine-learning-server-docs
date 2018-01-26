@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_set_var_info: Set Variable Information for .xdf File or Data Frame" 
-description: "Set the variable information for an “.xdf” file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame" 
+title: "rx_set_var_info: Set variables for .xdf files or data frames (revoscalepy)" 
+description: "Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame" 
 keywords: "variables" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,7 +44,7 @@ revoscalepy.rx_set_var_info(var_info, data)
 
 ## Description
 
-Set the variable information for an “.xdf” file, including variable
+Set the variable information for an .xdf file, including variable
 names, descriptions, and value labels, or set attributes for variables in
 a data frame
 
@@ -60,7 +60,7 @@ in the XDF data source or data frame.
 
 ### data
 
-an RxDataSource object, a character string specifying the “.xdf”
+an RxDataSource object, a character string specifying the .xdf
 file, or a data frame.
 
 
@@ -68,7 +68,7 @@ file, or a data frame.
 
 If the input data is a data frame, a data frame is returned
 containing variables with the new attributes. If the input data represents an
-“.xdf” file or composite file, an RxXdfData object representing the modified
+.xdf file or composite file, an RxXdfData object representing the modified
 file is returned.
 
 

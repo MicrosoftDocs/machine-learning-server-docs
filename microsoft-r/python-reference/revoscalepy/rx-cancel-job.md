@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_cancel_job: Causes Python to cancel an existing distributed computing job" 
+title: "rx_cancel_job: Causes Python to cancel an existing distributed computing job (revoscalepy)" 
 description: "This function does not attempt to retrieve any output objects; if the output is desired the console_output flag can be used to display it.  This function does, however, remove all job-related artifacts from the distributed computing resources including any job results." 
 keywords: "cancel" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

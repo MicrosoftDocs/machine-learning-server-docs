@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_hadoop_remove_dir: Execute Hadoop Remove Directory Commands" 
-description: "rx_hadoop_remove_dir wraps the Hadoop fs -rm -r  or fs -rm -r -skipTrash command." 
+title: "rx_hadoop_remove_dir: Execute Hadoop remove directory commands (revoscalepy)" 
+description: "Wraps the Hadoop fs -rm -r  or fs -rm -r -skipTrash command." 
 keywords: "Hadoop Command" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -45,7 +45,7 @@ revoscalepy.rx_hadoop_remove_dir(path: typing.Union[list, str],
 
 ## Description
 
-rx_hadoop_remove_dir wraps the Hadoop fs -rm -r  or fs -rm -r -skipTrash command.
+Wraps the Hadoop *fs -rm -r*  or *fs -rm -r -skipTrash* command.
 
 
 ## Arguments
@@ -53,7 +53,7 @@ rx_hadoop_remove_dir wraps the Hadoop fs -rm -r  or fs -rm -r -skipTrash command
 
 ### path
 
-str or list. A list of paths or A character string specifying location of one or more
+Character string or list. A list of paths or A character string specifying location of one or more
 directories.
 
 :param skip_trash. If True, removal bypasses the trash folder, if one has been set up.

@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "Solution templates for Machine Learning Server and R Server 9.1| Machine Learning Server "
+title: "Solution templates for Machine Learning Server and R Server | Machine Learning Server "
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
@@ -22,9 +22,9 @@ ms.technology: "r-server"
 
 ---
 
-# Solution templates for Machine Learning Server and Microsoft R Server 9.1
+# Solution templates for Machine Learning Server and Microsoft R Server 9.1/9.2
 
-Several solution templates exist to help you accelerate time to value when using Machine Learning Server or Microsoft R Server 9.1. We offer solutions tailored to specific industries and problem sets: [marketing](#marketing), [healthcare](#healthcare), [financial and retail](#financial).
+Several solution templates exist to help you accelerate time to value when using Machine Learning Server or Microsoft R Server 9.1/9.2. We offer solutions tailored to specific industries and problem sets: [marketing](#marketing), [healthcare](#healthcare), [financial and retail](#financial).
 
 
 <a name="marketing"></a> 
@@ -68,6 +68,7 @@ If we had a crystal ball, we would only loan money to someone if we knew they wo
 ### Loan charge-off
 
 A charged off loan is a loan that is declared by a creditor (usually a lending institution) that an amount of debt is unlikely to be collected, usually when the loan repayment is severely delinquent by the debtor. Given that high chargeoff has negative impact on lending institutions’ year end financials, lending institutions often monitor loan chargeoff risk closely to prevent loans from getting charged-off. Using Azure HDInsight R Server, a lending institution can leverage machine learning predictive analytics to predict the likelihood of loans getting charged off and run a report on the analytics result stored in HDFS and hive tables.
+
 ||||
 |---|----|--|
 ||**Learn more:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- [Home](https://microsoft.github.io/r-server-loan-chargeoff) <br>- [Code](https://github.com/Microsoft/r-server-loan-chargeoff/)|**Deploy on:**<br>- [SQL Server](https://aka.ms/loanchargeoffsql)<br>- [HDInsight Spark Cluster](https://aka.ms/loanchargeoffhdi)|

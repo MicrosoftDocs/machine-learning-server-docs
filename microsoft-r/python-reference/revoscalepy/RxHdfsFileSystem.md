@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxHdfsFileSystem: revoscalepy HDFS File System Generator" 
-description: "Main generator class for RxHdfsFileSystem" 
+title: "RxHdfsFileSystem: Class generator for an HDFS file system object (revoscalepy)" 
+description: "Main generator class for RxHdfsFileSystem." 
 keywords: "filesystem hdfs" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -41,7 +41,7 @@ revoscalepy.RxHdfsFileSystem(host_name=None, port=None)
 
 ## Description
 
-Main generator class for RxHdfsFileSystem
+Main generator class for RxHdfsFileSystem.
 
 
 ## Returns

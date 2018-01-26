@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_pyspark_connection: Get pyspark spark_context connection from Spark compute context" 
-description: "Get a Spark compute context with pyspark interop. rx_get_pyspark_connection gets pyspark spark connection from created Spark compute context." 
+title: "rx_get_pyspark_connection: Get pyspark spark_context connection from Spark compute context (revoscalepy)" 
+description: "Gets a PySpark connection from the current Spark compute context." 
 keywords: "" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,8 +44,7 @@ revoscalepy.rx_get_pyspark_connection(compute_context: revoscalepy.computecontex
 
 ## Description
 
-Get a Spark compute context with pyspark interop.
-rx_get_pyspark_connection gets pyspark spark connection from created Spark compute context.
+Gets a PySpark connection from the current Spark compute context.
 
 
 ## Arguments
@@ -58,7 +57,7 @@ Compute context get created by rx_spark_connect.
 
 ## Returns
 
-object of python.context.SparkContext.
+Object of python.context.SparkContext.
 
 
 ## Example

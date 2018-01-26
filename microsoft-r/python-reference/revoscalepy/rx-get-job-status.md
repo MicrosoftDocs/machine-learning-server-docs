@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_job_status: Obtain Distributed Computing Job Status" 
-description: "Obtain distributed computing processing status for the specified job.rx_get_job_status(job_info)" 
+title: "rx_get_job_status: Obtain Distributed Computing Job Status (revoscalepy)" 
+description: "Obtain distributed computing processing status for the specified job." 
 keywords: "job, status" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -46,21 +46,19 @@ revoscalepy.rx_get_job_status(job_info: revoscalepy.computecontext.RxRemoteJob.R
 
 Obtain distributed computing processing status for the specified job.
 
-rx_get_job_status(job_info)
-
 
 ## Arguments
 
 
 ### job_info
 
-a job object as returned by rx_exec or a revoscalepy
+A job object as returned by rx_exec or a revoscalepy
 analysis function, if available.
 
 
 ## Returns
 
-a RxRemoteJobStatus enumeration value that designates the status of the remote job
+A RxRemoteJobStatus enumeration value that designates the status of the remote job
 
 
 ## See also

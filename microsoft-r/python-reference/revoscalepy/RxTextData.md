@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxTextData: Generate Text Data Source Object" 
+title: "RxTextData: Class generator for text data source objects (revoscalepy)" 
 description: "Main generator for class RxTextData, which extends RxDataSource." 
 keywords: "datasource, text file" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -71,7 +71,7 @@ Main generator for class RxTextData, which extends RxDataSource.
 
 ### file
 
-character string specifying a text file. If it has an ‘.sts’
+Character string specifying a text file. If it has an ‘.sts’
 extension, it is interpreted as a fixed format schema file. If the column_info
 argument contains start and width information, it is interpreted as a fixed
 format data file. Otherwise, it is treated as a delimited text data file. See
@@ -80,14 +80,14 @@ the Details section for more information on using ‘.sts’ files.
 
 ### return_data_frame
 
-bool indicating whether or not to convert the
+Bool value indicating whether or not to convert the
 result from a list to a data frame (for use in rxReadNext only). If False, a
 list is returned.
 
 
 ### strings_as_factors
 
-bool indicating whether or not to automatically
+Bool value indicating whether or not to automatically
 convert strings to factors on import. This can be overridden by specifying
 “character” in column_classes and column_info. If True, the factor levels will
 be coded in the order encountered. Since this factor level ordering is row
@@ -97,7 +97,7 @@ column_info with specified “levels”.
 
 ### column_classes
 
-dictionary of column names to strings specifying the column types
+Dictionary of column names to strings specifying the column types
 to use when converting the data. The element names for the vector are used to identify
 which column should be converted to which type.
 
@@ -129,7 +129,7 @@ which column should be converted to which type.
 
 ### column_info
 
-list of named variable information lists. Each variable
+List of named variable information lists. Each variable
 information list contains one or more of the named elements given below. When
 importing fixed format data, either column_info or an an ‘.sts’ schema file
 should be supplied. For such fixed format data, only the variables specified
@@ -137,47 +137,47 @@ will be imported. For all text types, the information supplied for column_info
 overrides that supplied for column_classes.
 
     Currently available properties for a column information list are:
-        type: character string specifying the data type for the column. See
+        type: Character string specifying the data type for the column. See
             column_classes argument description for the available types. If the
             type is not specified for fixed format data, it will be read as
             character data.
 
-        newName: character string specifying a new name for the variable.
-        description: character string specifying a description for the variable.
-        levels: list of strings containing the levels when type = “factor”. If
+        newName: Character string specifying a new name for the variable.
+        description: Character string specifying a description for the variable.
+        levels: List of strings containing the levels when type = “factor”. If
 
             the levels property is not provided, factor levels will be determined
             by the values in the source column. If levels are provided, any value
             that does not match a provided level will be converted to a missing
             value.
 
-        newLevels: new or replacement levels specified for a column of type
+        newLevels: New or replacement levels specified for a column of type
             “factor”. It must be used in conjunction with the levels argument.
             After reading in the original data, the labels for each level will be
             replaced with the newLevels.
 
-        low: the minimum data value in the variable (used in computations using
+        low: The minimum data value in the variable (used in computations using
             the F() function.
 
-        high: the maximum data value in the variable (used in computations
+        high: The maximum data value in the variable (used in computations
             using the F() function.
 
-        start: the left-most position, in bytes, for the column of a fixed
+        start: The left-most position, in bytes, for the column of a fixed
             format file respectively. When all elements of column_info have
             “start”, the text file is designated as a fixed format file. When none
             of the elements have it, the text file is designated as a delimited
             file. Specification of start must always be accompanied by
             specification of width.
 
-        width: the number of characters in a fixed-width character column or
+        width: The number of characters in a fixed-width character column or
             the column of a fixed format file. If width is specified for a
             character column, it will be imported as a fixed-width character
             variable. Any characters beyond the fixed width will be ignored.
             Specification of width is required for all columns of a fixed format
             file (if not provided in an ‘.sts’ file).
 
-        decimalPlaces: the number of decimal places.
-        index: column index in the original delimited text data file. It is
+        decimalPlaces: The number of decimal places.
+        index: Column index in the original delimited text data file. It is
 
             used as an alternative to naming the variable information list if the
             original delimited text file does not contain column names. Ignored if
@@ -187,32 +187,32 @@ overrides that supplied for column_classes.
 
 ### vars_to_keep
 
-list of strings of variable names to include when reading
+List of strings of variable names to include when reading
 from the input data file. If None, argument is ignored. Cannot be used with
 vars_to_drop.
 
 
 ### vars_to_drop
 
-list of strings of variable names to exclude when reading
+List of strings of variable names to exclude when reading
 from the input data file. If None, argument is ignored. Cannot be used with
 vars_to_keep.
 
 
 ### missing_value_string
 
-character string containing the missing value
+Character string containing the missing value
 code. It can be an empty string: “”.
 
 
 ### rows_per_read
 
-number of rows to read at a time.
+Number of rows to read at a time.
 
 
 ### delimiter
 
-character string containing the character to use as the
+Character string containing the character to use as the
 separator between variables. If None and the column_info argument does not
 contain “start” and “width” information (which implies a fixed-formatted file),
 the delimiter is auto-sensed from the list “,”, ”       “, “;”, and ” “.
@@ -220,32 +220,32 @@ the delimiter is auto-sensed from the list “,”, ”       “, “;”, and 
 
 ### combine_delimiters
 
-bool indicating whether or not to treat
+Bool value indicating whether or not to treat
 consecutive non-space (” “) delimiters as a single delimiter. Space ” ”
 delimiters are always combined.
 
 
 ### quote_mark
 
-character string containing the quotation mark. It can be an
+Character string containing the quotation mark. It can be an
 empty string: “”.
 
 
 ### decimal_point
 
-character string containing the decimal point. Not
+Character string containing the decimal point. Not
 supported when use_fast_read is set to True.
 
 
 ### thousands_separator
 
-character string containing the thousands
+Character string containing the thousands
 separator. Not supported when use_fast_read is set to True.
 
 
 ### read_date_format
 
-character string containing the time date format to
+Character string containing the time date format to
 use during read operations. Not supported when use_fast_read is set to True.
 Valid formats are:
 
@@ -265,7 +265,7 @@ Valid formats are:
 
 ### read_posixct_format
 
-character string containing the time date format to
+Character string containing the time date format to
 use during read operations. Not supported when use_fast_read is set to True.
 Valid formats are:
 
@@ -292,7 +292,7 @@ components; if present, they are used, but they need not be there.
 
 ### century_cutoff
 
-integer specifying the changeover year between the
+Integer specifying the changeover year between the
 twentieth and twenty-first century if two-digit years are read. Values less
 than century_cutoff are prefixed by 20 and those greater than or equal to
 century_cutoff are prefixed by 19. If you specify 0, all two digit dates are
@@ -302,7 +302,7 @@ is set to True.
 
 ### first_row_is_column_names
 
-bool indicating if the first row
+Bool indicating if the first row
 represents column names for reading text. If first_row_is_column_names is None,
 then column names are auto- detected. The logic for auto-detection is: if the
 first row contains all values that are interpreted as character and the second
@@ -315,18 +315,18 @@ is None, the default is to write the column names as the first row.
 
 ### rows_to_sniff
 
-number of rows to use in determining column type.
+Number of rows to use in determining column type.
 
 
 ### rows_to_skip
 
-integer indicating number of leading rows to ignore. Only
+Integer indicating number of leading rows to ignore. Only
 supported for use_fast_read = True.
 
 
 ### default_read_buffer_size
 
-number of rows to read into a temporary
+Number of rows to read into a temporary
 buffer. This value could affect the speed of import.
 
 
@@ -351,19 +351,19 @@ Only supported for use_fast_read = True.
 
 ### write_precision
 
-integer specifying the precision to use when writing
+Integer specifying the precision to use when writing
 numeric data to a file.
 
 
 ### strip_zeros
 
-bool value. If True, if there are only zeros after the
+Bool value if True, if there are only zeros after the
 decimal point for a numeric, it will be written as an integer to a file.
 
 
 ### quoted_delimiters
 
-bool value. If True, delimiters within quoted
+Bool value, if True, delimiters within quoted
 strings will be ignored. This requires a slower parsing process. Only
 applicable to use_fast_read is set to True; delimiters within quotes are always
 supported when use_fast_read is set to False.
@@ -371,7 +371,7 @@ supported when use_fast_read is set to False.
 
 ### is_fixed_format
 
-bool value. If True, the input data file is treated
+Bool value, if true, the input data file is treated
 as a fixed format file. Fixed format files must have a ‘.sts’ file or a
 column_info argument specifying the start and width of each variable. If False,
 the input data file is treated as a delimited text file. If None, the text file
@@ -397,7 +397,7 @@ will be changed.
 
 ### create_file_set
 
-bool value or None. Used only when writing. If True,
+Bool value or None. Used only when writing. If True,
 a file folder of text files will be created instead of a single text file. A
 directory will be created whose name is the same as the text file that would
 otherwise be created, but with no extension. In the directory, the data will be
@@ -410,14 +410,14 @@ text file is fixed format.
 
 ### rows_per_out_file
 
-numeric value or None. If a directory of text files
+Integer value or None. If a directory of text files
 is being created, this will be the number of rows of data put into each
 file in the directory.
 
 
 ### verbose
 
-integer value. If 0, no additional output is printed. If 1,
+Integer value. If 0, no additional output is printed. If 1,
 information on the text type (text or textFast) is printed.
 
 
@@ -431,14 +431,14 @@ variables in the data set, this flag is ignored and no checking is performed.
 
 ### file_system
 
-character string or RxFileSystem object indicating type of
+Character string or RxFileSystem object indicating type of
 file system; “native” or RxNativeFileSystem object can be used for the local
 operating system.
 
 
 ### input_encoding
 
-character string indicating the encoding used by input
+Character string indicating the encoding used by input
 text. May be set to either “utf-8” (the default), or “gb18030”, a standard
 Chinese encoding. Not supported when use_fast_read is set to True.
 
@@ -452,7 +452,7 @@ the string representations. Not supported when use_fast_read is set to False.
 
 ## Returns
 
-object of class `RxTextData`.
+Object of class `RxTextData`.
 
 
 ## Example
