@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_predict: Predicted Values and Residuals for rx_lin_mod, rx_logit, rx_dtree," 
+title: "rx_predict: Predicted Values and Residuals for rx_lin_mod, rx_logit, rx_dtree, (revoscalepy)" 
 description: "Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects." 
 keywords: "predict" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -110,9 +110,9 @@ Output:
 
 
 ```
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.052 seconds 
-Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.001 seconds 
-Computation time: 0.005 seconds.
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.058 seconds 
+Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: 0.006 seconds 
+Computation time: 0.039 seconds.
 Rows Read: 100000, Total Rows Processed: 100000, Total Chunk Time: Less than .001 seconds 
    creditScore_Pred
 0        700.089114

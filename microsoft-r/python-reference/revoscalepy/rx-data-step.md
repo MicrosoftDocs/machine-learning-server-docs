@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_data_step: Data Step for RevoScaleR data sources" 
-description: "Transform data from an input data set to an output data set" 
+title: "rx_data_step: Transform data from input to output dataset (revoscalepy)" 
+description: "Inline data transformations of an existing data set to an output data set" 
 keywords: "datasource" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -41,7 +41,7 @@ revoscalepy.rx_data_step(input_data: typing.Union[revoscalepy.datasource.RxDataS
     revoscalepy.datasource.RxTextData.RxTextData] = None,
     vars_to_keep: list = None, vars_to_drop: list = None,
     row_selection: str = None, transforms: dict = None,
-    transform_objects: list = None, transform_function=None,
+    transform_objects: dict = None, transform_function=None,
     transform_variables: list = None,
     transform_packages: list = None, append: list = None,
     overwrite: bool = False, row_variable_name: str = None,
@@ -62,7 +62,7 @@ revoscalepy.rx_data_step(input_data: typing.Union[revoscalepy.datasource.RxDataS
 
 ## Description
 
-Transform data from an input data set to an output data set
+Inline data transformations of an existing data set to an output data set
 
 
 ## Arguments
@@ -112,14 +112,14 @@ None. Not currently supported, reserved for future use.
 ### transform_objects
 
 A dictionary of variables besides the data that are used in the transform function.
-See rx_data_step for examples.
+See the example.
 
 
 ### transform_function
 
 Name of the function that will be used to modify the data.
 The variables used in the transformation function must be specified in transform_variables.
-See rx_data_step for examples.
+See the example.
 
 
 ### transform_variables
@@ -289,6 +289,6 @@ def transformFunc(data, cutoff, new_col_name):
 
 kyphosis_df = rx_data_step(input_data=kyphosis, transform_function=transformFunc,
                            transform_objects={"cutoff": month_limit, "new_col_name": new_col_name})
-kyphosis_df.head()  # Look at the first five rows of the panda DataFrame.
+kyphosis_df.head()
 ```
 

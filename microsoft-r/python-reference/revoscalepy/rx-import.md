@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_import: Import Data to .xdf or data frame" 
-description: "Import data into an ‘.xdf’ file or data.frame." 
+title: "rx_import: Import Data to .xdf or data frame (revoscalepy)" 
+description: "Import data and store as an .xdf file on disk or in-memory as a data.frame object." 
 keywords: "import, datasource" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -59,7 +59,7 @@ revoscalepy.rx_import(input_data: typing.Union[revoscalepy.datasource.RxDataSour
 
 ## Description
 
-Import data into an ‘.xdf’ file or data.frame.
+Import data and store as an .xdf file on disk or in-memory as a data.frame object.
 
 
 ## Arguments

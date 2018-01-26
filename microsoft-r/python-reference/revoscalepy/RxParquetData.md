@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxParquetData: Generate Parquet Data Source Object" 
+title: "RxParquetData: Class generator for Parquet data source objects (revoscalepy)" 
 description: "Main generator for class RxParquetData, which extends RxSparkData." 
 keywords: "datasource, parquet" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

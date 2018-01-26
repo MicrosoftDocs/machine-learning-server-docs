@@ -1026,13 +1026,13 @@
           href: r-reference/revoscaler/rxgetjobresults.md
         - name: rxGetJobs
           href: r-reference/revoscaler/rxgetjobs.md
+        - name: rxGetNodeInfo
+          href: r-reference/revoscaler/rxgetnodeinfo.md
         - name: rxGetPartitions
           href: r-reference/revoscaler/rxgetpartitions.md
         - name: rxGetSparklyrConnection
           href: r-reference/revoscaler/rxgetsparklyrconnection.md
-        - name: rxGetNodeInfo
-          href: r-reference/revoscaler/rxgetnodeinfo.md
-        - name: rxGetVarInfoXdf
+        - name: rxGetVarInfo
           href: r-reference/revoscaler/rxgetvarinfoxdf.md
         - name: rxGetVarNames
           href: r-reference/revoscaler/rxgetvarnames.md

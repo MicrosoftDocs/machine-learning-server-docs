@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_list_keys: Manage objects in ODBC Data Sources" 
+title: "rx_list_keys: Manage objects in ODBC Data Sources (revoscalepy)" 
 description: "Retrieves object keys from ODBC data sources." 
 keywords: "keys" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_var_names: Variable names for a data source or data frame" 
+title: "rx_get_var_names: Variable names for a data source or data frame (revoscalepy)" 
 description: "Read the variable names for data source or data frame" 
 keywords: "variables" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

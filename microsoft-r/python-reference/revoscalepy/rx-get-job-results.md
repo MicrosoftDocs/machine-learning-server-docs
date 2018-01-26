@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_get_job_results: Obtain Distributed Computing Job Status and Results" 
+title: "rx_get_job_results: Obtain Distributed Computing Job Status and Results (revoscalepy)" 
 description: "Obtain distributed computing results and processing status." 
 keywords: "" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

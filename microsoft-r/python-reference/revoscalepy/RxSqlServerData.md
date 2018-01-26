@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxSqlServerData: Generate SqlServer Data Source Object" 
+title: "RxSqlServerData: Class generator for SQL Server data source objects (revoscalepy)" 
 description: "Main generator for class RxSqlServerData, which extends RxDataSource." 
 keywords: "datasource, sql" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

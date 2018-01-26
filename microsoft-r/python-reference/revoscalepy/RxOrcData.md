@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxOrcData: Generate Orc Data Source Object" 
+title: "RxOrcData: Class generator for Orc data source objects (revoscalepy)" 
 description: "Main generator for class RxOrcData, which extends RxSparkData." 
 keywords: "datasource, orc" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

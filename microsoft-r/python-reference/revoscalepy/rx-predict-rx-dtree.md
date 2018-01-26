@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_predict_rx_dtree: Prediction for Large Data Classification and Regression Trees" 
+title: "rx_predict_rx_dtree: Prediction for Large Data Classification and Regression Trees (revoscalepy)" 
 description: "Calculate predicted or fitted values for a data set from an rx_dtree object." 
 keywords: "predict" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

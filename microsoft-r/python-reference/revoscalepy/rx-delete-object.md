@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_delete_object: Manage objects in ODBC Data Sources" 
+title: "rx_delete_object: Manage objects in ODBC data sources (revoscalepy)" 
 description: "Deletes an object from an ODBC data source. The APIs are modelled after a simple key value store." 
 keywords: "delete, object" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

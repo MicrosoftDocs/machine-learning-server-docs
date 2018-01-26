@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_hadoop_remove: Execute Hadoop Remove Commands" 
+title: "rx_hadoop_remove: Execute Hadoop remove commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -rm or fs -rm -skipTrash command." 
 keywords: "Hadoop Command" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

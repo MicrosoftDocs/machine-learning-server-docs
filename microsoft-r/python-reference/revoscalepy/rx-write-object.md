@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_write_object: Manage objects in ODBC Data Sources" 
+title: "rx_write_object: Writes to an ODBC data source object (revoscalepy)" 
 description: "Stores objects in an ODBC data source. The APIs are modelled after a simple key value store." 
 keywords: "odbc" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

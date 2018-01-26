@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_hadoop_command: Execute Hadoop Commands" 
+title: "rx_hadoop_command: Execute Hadoop commands (revoscalepy)" 
 description: "Executes arbitrary Hadoop commands and performs standard file operations in Hadoop." 
 keywords: "Hadoop Command" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

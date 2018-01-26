@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_wait_for_job: Wait for Distributed Job to Complete" 
+title: "rx_wait_for_job: Wait for Distributed Job to Complete (revoscalepy)" 
 description: "Causes Python to block on an existing distributed job until completion.  This effectively turns a non-blocking job into a blocking job." 
 keywords: "wait, job" 
-author: "heidist" 
+author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/19/2018" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
