@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxLocalParallel-class function (RevoScaleR) " 
+title: "RxLocalParallel-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Class for the RevoScaleR Local Parallel Compute Context.   " 
-keywords: "(RevoScaleR), RxLocalParallel-class, show,RxLocalParallel-method, classes" 
+keywords: "(revoAnalytics), RxLocalParallel-class, show,RxLocalParallel-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,13 +55,13 @@ Class RxComputeContext, directly.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxSpark](RxSpark.md),
 [RxInSqlServer](RxInSqlServer.md),
 [RxLocalSeq](RxLocalSeq.md).

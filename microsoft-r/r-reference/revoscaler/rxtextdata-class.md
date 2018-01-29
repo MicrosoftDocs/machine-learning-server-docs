@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxTextData-class function (RevoScaleR) " 
+title: "RxTextData-class class (revoAnalytics) | Microsoft Docs" 
 description: " Text data source connection class. " 
-keywords: "(RevoScaleR), RxTextData-class, show,RxTextData-method, classes" 
+keywords: "(revoAnalytics), RxTextData-class, show,RxTextData-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -56,8 +56,8 @@ Class RxDataSource, by class RxFileData.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "CensusUS5Pct2000 function (RevoScaleR) " 
+title: "CensusUS5Pct2000 data (revoAnalytics) | Microsoft Docs" 
 description: " The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format. " 
-keywords: "(RevoScaleR), CensusUS5Pct2000, CensusUS5Pct2000.xdf, datasets" 
+keywords: "(revoAnalytics), CensusUS5Pct2000, CensusUS5Pct2000.xdf, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -71,8 +71,8 @@ Use Microdata Series*. [`http://www.ipums.org`](http://www.ipums.org)
 .
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

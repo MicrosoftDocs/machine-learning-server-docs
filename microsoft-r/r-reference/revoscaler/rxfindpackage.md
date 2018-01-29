@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxFindPackage function (RevoScaleR) " 
+title: "rxFindPackage function (revoAnalytics) | Microsoft Docs" 
 description: " Find the path for one or more packages for a compute context. " 
-keywords: "(RevoScaleR), rxFindPackage, packages, sql, install, uninstall, remove, use" 
+keywords: "(revoAnalytics), rxFindPackage, packages, sql, install, uninstall, remove, use" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -90,8 +90,8 @@ a list of lists with a character vector of paths from each node will be returned
  
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxForeachDoPar function (RevoScaleR) " 
+title: "RxForeachDoPar function (revoAnalytics) | Microsoft Docs" 
 description: " Creates a compute context object using the registered foreach parallel back end. This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxForeachDoPar. " 
-keywords: "(RevoScaleR), RxForeachDoPar, IO" 
+keywords: "(revoAnalytics), RxForeachDoPar, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -84,8 +84,8 @@ working directory for other R functions that read from or write to files.
 object of class RxForeachDoPar.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

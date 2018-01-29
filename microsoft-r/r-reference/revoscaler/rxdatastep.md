@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxDataStep function (RevoScaleR) " 
-description: "    Transform data from an input data set to an output data set " 
-keywords: "(RevoScaleR), rxDataStep, manip, file" 
+title: "rxDataStep function (revoAnalytics) | Microsoft Docs" 
+description: "    Transform data from an input data set to an output data set. The rxDataStep function is multi-threaded. " 
+keywords: "(revoAnalytics), rxDataStep, manip, file" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  #rxDataStep: Data Step for RevoScaleR data sources 
  ##Description
  
-Transform data from an input data set to an output data set
+Transform data from an input data set to an output data set. The rxDataStep function is multi-threaded.
  
  
  ##Usage
@@ -56,7 +56,7 @@ Transform data from an input data set to an output data set
    
     
  ### `inData`
- A data source object of these types: [RxTextData](RxTextData.md), [RxXdfData](RxXdfData.md),  [RxSasData](RxSasData.md), [RxSpssData](RxSpssData.md), [RxOdbcData](RxOdbcData.md),  [RxSqlServerData](RxSqlServerData.md), [RxTeradata](RxTeradata.md). If not using a distributed compute context such as [RxHadoopMR](RxHadoopMR.md), a data frame,  a character string specifying the input .xdf file, or `NULL` can also be used.  If `NULL`, a data set will be created automatically with a single variable, `.rxRowNums`, containing row numbers. It will have a total of `numRows` rows with `rowsPerRead` rows in each block. 
+ A data source object of these types: [RxTextData](RxTextData.md), [RxXdfData](RxXdfData.md),  [RxSasData](RxSasData.md), [RxSpssData](RxSpssData.md), [RxOdbcData](RxOdbcData.md),  [RxSqlServerData](RxSqlServerData.md), [RxTeradata](RxTeradata.md). If not using a distributed compute context such as RxHadoopMR, a data frame,  a character string specifying the input .xdf file, or `NULL` can also be used.  If `NULL`, a data set will be created automatically with a single variable, `.rxRowNums`, containing row numbers. It will have a total of `numRows` rows with `rowsPerRead` rows in each block. 
   
   
     
@@ -111,7 +111,7 @@ Transform data from an input data set to an output data set
   
     
  ### `append`
- Either `"none"` to create a new files, `"rows"` to append rows to an existing file, or `"cols"` to append columns to an existing file. If `outFile` exists and `append` is `"none"`,  the `overwrite` argument must be set to `TRUE`. Ignored for data frames. You cannot append to [RxTextData](RxTextData.md) or append columns to [RxTeradata](RxTeradata.md) data sources,  and appending is not supported for composite .xdf files or when using the [RxHadoopMR](RxHadoopMR.md) compute context. 
+ Either `"none"` to create a new files, `"rows"` to append rows to an existing file, or `"cols"` to append columns to an existing file. If `outFile` exists and `append` is `"none"`,  the `overwrite` argument must be set to `TRUE`. Ignored for data frames. You cannot append to [RxTextData](RxTextData.md) or append columns to [RxTeradata](RxTeradata.md) data sources,  and appending is not supported for composite .xdf files or when using the RxHadoopMR compute context. 
   
   
     
@@ -161,7 +161,7 @@ Transform data from an input data set to an output data set
   
     
  ### `returnTransformObjects`
- A logical value. If `TRUE`,  the list of `transformObjects` will be returned instead of  a data frame or data source object.  If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned.  Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined  computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts  such as [RxHadoopMR](RxHadoopMR.md). 
+ A logical value. If `TRUE`,  the list of `transformObjects` will be returned instead of  a data frame or data source object.  If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned.  Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined  computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts  such as RxHadoopMR. 
    
   
     
@@ -203,8 +203,8 @@ When working with an [RxInSqlServer](RxInSqlServer.md) compute context, both the
 and output data sources must be [RxSqlServerData](RxSqlServerData.md).
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
@@ -215,7 +215,7 @@ and output data sources must be [RxSqlServerData](RxSqlServerData.md).
 [RxSqlServerData](RxSqlServerData.md),
 [RxTeradata](RxTeradata.md),
 [rxGetInfo](rxGetInfoXdf.md),
-[rxGetVarInfo](rxGetVarInfoXdf.md),
+[rxGetVarInfo](rxGetVarInfo.md),
 [rxTransform](rxTransform.md)
    
  ##Examples

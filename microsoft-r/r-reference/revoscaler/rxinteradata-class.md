@@ -32,7 +32,7 @@ ms.custom: ""
  #RxInTeradata-class: Class RxInTeradata 
  ##Description
  
-Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster.
+DEPRECATED: Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster.
  
  
  ## Objects from the Class 

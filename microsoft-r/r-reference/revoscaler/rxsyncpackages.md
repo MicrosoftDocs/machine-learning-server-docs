@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSyncPackages function (RevoScaleR) " 
-description: "  **NOTE: This new API is in pre-release mode and subject to change before final release.**  Synchronizes all packages listed in for database to the files system for a compute context. The packages contained in the database are installed on the file system so they can be loaded by R. rxSyncPackages should be called after SQL Server is restored to a new machine or if a R package on the file system is believed to be corrupted.  " 
-keywords: "(RevoScaleR), rxSyncPackages, sync, synchronize, use, packages, sql" 
+title: "rxSyncPackages function (revoAnalytics) | Microsoft Docs" 
+description: "  Synchronizes all R packages installed in a database with the packages on the files system. The packages contained in the database are also installed on the file system so they can be loaded by R.  You might need to use rxSyncPackages if you rebuilt a server instance or restored SQL Server databases on a new machine, or if you think an R package on the file system is corrupted.  " 
+keywords: "(revoAnalytics), rxSyncPackages, sync, synchronize, use, packages, sql" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -25,13 +25,12 @@ ms.custom: ""
 --- 
  
  
- #rxSyncPackages: Syncs Packages for Compute Context 
+ #rxSyncPackages: Synchronize Packages for Compute Context 
  ##Description
  
 
-**NOTE: This new API is in pre-release mode and subject to change before final release.**
-
-Synchronizes all packages listed in for database to the files system for a compute context. The packages contained in the database are installed on the file system so they can be loaded by R. rxSyncPackages should be called after SQL Server is restored to a new machine or if a R package on the file system is believed to be corrupted.
+Synchronizes all R packages installed in a database with the packages on the files system. The packages contained in the database are also installed on the file system so they can be loaded by R. 
+You might need to use rxSyncPackages if you rebuilt a server instance or restored SQL Server databases on a new machine, or if you think an R package on the file system is corrupted.
 
  
  
@@ -55,7 +54,7 @@ Synchronizes all packages listed in for database to the files system for a compu
   
     
  ### `scope`
- character vector containing either `"shared"` or `"private"` or both. `"shared"` synchronizes the packages on per database shared location on SQL server which in turn can be used (referred) by multiple different users. `"private"` synchronizes the packages on per database, per user private location on SQL server which is only accessible to the single user. By default both `"shared"` and `"private"` are set which will synchronize  the entire table of packages for all scopes and users. 
+ character vector containing either `"shared"` or `"private"` or both. `"shared"` synchronizes the packages on a per-database shared location on SQL Server, which in turn can be used (referred) by multiple different users. `"private"` synchronizes the packages on per-database, per-user private location on SQL Server which is only accessible to the single user. By default both `"shared"` and `"private"` are set, which will synchronize  the entire table of packages for all scopes and users. 
   
   
     
@@ -71,7 +70,11 @@ Synchronizes all packages listed in for database to the files system for a compu
  
  ##Details
  
-For [RxInSqlServer](RxInSqlServer.md) compute context the user specified as part of connection string is used for installing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can install packages to `"shared"` location and `"private"` location. Users in `'rpkgs-private'` role can only install packages `"private"` location for their own use. To use the packages installed on the SQL server a user needs to be member atleast `'rpkgs-users'` role.
+For a [RxInSqlServer](RxInSqlServer.md) compute context, the user specified as part of connection string is considered the package owner if the `owner` argument is empty. 
+To call this function, a user must be granted permissions by a database owner, making the user a member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. 
+Members of the `'rpkgs-shared'` role can install packages to `"shared"` location and `"private"` location. 
+Members of the `'rpkgs-private'` role can only install packages in a `"private"` location for their own use. 
+To use the packages installed on the SQL Server, a user must be at least a member of `'rpkgs-users'` role.
 
 See the help file for additional details.
  
@@ -80,10 +83,6 @@ See the help file for additional details.
  ##Value
  
 Invisible `NULL`
- 
- 
-
- 
  
  
  ##See Also

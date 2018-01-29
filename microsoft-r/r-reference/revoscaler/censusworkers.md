@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "CensusWorkers function (RevoScaleR) " 
+title: "CensusWorkers data (revoAnalytics) | Microsoft Docs" 
 description: " A small subset of the IPUMS 5% sample of the 2000 U.S. Census data containing information on the working population from Connecticut, Indiana, and Washington. " 
-keywords: "(RevoScaleR), CensusWorkers, CensusWorkers.xdf, datasets" 
+keywords: "(revoAnalytics), CensusWorkers, CensusWorkers.xdf, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -87,8 +87,8 @@ Minnesota Population Center, University of Minnesota.
 .
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

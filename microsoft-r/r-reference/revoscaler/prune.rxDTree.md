@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "prune.rxDTree function (RevoScaleR) " 
+title: "prune.rxDTree function (revoAnalytics) | Microsoft Docs" 
 description: " 	Prune a decision tree created by rxDTree and return the smaller tree. " 
-keywords: "(RevoScaleR), prune.rxDTree, models, tree, classif, regression" 
+keywords: "(revoAnalytics), prune.rxDTree, models, tree, classif, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -79,9 +79,9 @@ It is a list with components similar to those of class `"rpart"` with the follow
 
 For other components, see rpart.object for details.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxSasData function (RevoScaleR) " 
+title: "RxSasData function (revoAnalytics) | Microsoft Docs" 
 description: " Generate an RxSasData object that contains information about a SAS data set to be imported or analyzed. RxSasData is an S4 class, which extends  RxDataSource. " 
-keywords: "(RevoScaleR), RxSasData, head.RxSasData, tail.RxSasData, file, connection" 
+keywords: "(revoAnalytics), RxSasData, head.RxSasData, tail.RxSasData, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -121,7 +121,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
     
  ### `labelsAsInfo`
- logical.  If `TRUE`, variables containing value labels in the SAS format file that are not converted to factors will retain the information as valueInfoCodes and valueInfoLabels in the .xdf file.   This information can be obtained using [rxGetVarInfo](rxGetVarInfoXdf.md).  This information will also be returned as attributes for the columns in a  dataframe when using [rxDataStep](rxDataStep.md). 
+ logical.  If `TRUE`, variables containing value labels in the SAS format file that are not converted to factors will retain the information as valueInfoCodes and valueInfoLabels in the .xdf file.   This information can be obtained using [rxGetVarInfo](rxGetVarInfo.md).  This information will also be returned as attributes for the columns in a  dataframe when using [rxDataStep](rxDataStep.md). 
   
   
     
@@ -204,8 +204,8 @@ The `tail` method is not functional for this data source type and will report an
  
 object of class RxSasData.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

@@ -28,7 +28,7 @@ ms.custom: ""
  #RxHadoopMR: Generate Hadoop Map Reduce Compute Context 
  ##Description
  
-Creates a compute context for use with a Hadoop cluster.
+DEPRECATED: Creates a compute context for use with a Hadoop cluster.
 
 RxHadoopMR compute context is deprecated. Please consider using RxSpark compute context instead.
  

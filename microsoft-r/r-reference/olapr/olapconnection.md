@@ -1,34 +1,33 @@
 --- 
  
 # required metadata 
-title: "olapR OlapConnection Creation" 
-description: "OlapConnection constructs an OlapConnection object. " 
-keywords: "olapR, OlapConnection" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "03/25/2017" 
+title: "OlapConnection function (olapR) | Microsoft Docs" 
+description: "   OlapConnection constructs a OlapConnection object. " 
+keywords: "(olapR), OlapConnection" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
- #OlapConnection: olapR OlapConnection Creation
-
- Applies to version 1.0.0 of package olapR.
  
+ 
+ 
+ #OlapConnection: olapR OlapConnection Creation 
  
  ##Description
  
@@ -52,11 +51,11 @@ ms.technology: "r-server"
 
    
     
- ### connectionString
+ ### `connectionString`
  A valid connection string for connecting to Analysis Services 
   
     
- ### ocs
+ ### `ocs`
  An object of class "OlapConnection" 
   
  
@@ -64,7 +63,7 @@ ms.technology: "r-server"
  
  ##Details
  
-`OlapConnection` validates and holds an Analysis Services connection string.
+`OlapConnection` validates and holds an Analysis Services connection string. By default, Analysis Services returns the first cube of the first database. To connect to a specific database, use the Initial Catalog parameter.
  
  
  
@@ -74,20 +73,22 @@ ms.technology: "r-server"
  
  
  ##References
-  For more information on Analysis Services connection strings: [`https://msdn.microsoft.com/en-us/library/dn140245.aspx`](https://msdn.microsoft.com/en-us/library/dn140245.aspx)
+  For more information on Analysis Services connection strings: [`https://docs.microsoft.com/sql/analysis-services/instances/connection-string-properties-analysis-services`](https://docs.microsoft.com/sql/analysis-services/instances/connection-string-properties-analysis-services)
   
  
  
  ##See Also
  
-[Query](query.md), [executeMD](executemd.md), [execute2D](execute2d.md)`, `[explore](explore.md)
+[Query](Query.md), [executeMD](ExecuteMD.md), [execute2D](Execute2D.md)`, `[explore](Explore.md)
    
  
  ##Examples
 
  ```
    
-  cnnstr <- "Data Source=localhost; Provider=MSOLAP;"
+  
+  # Create the connection string. For a named instance, escape the instance name: localhost\my-other-instance
+  cnnstr <- "Data Source=localhost; Provider=MSOLAP; initial catalog=AdventureWorksCube"
   olapCnn <- OlapConnection(cnnstr)
  
 ```

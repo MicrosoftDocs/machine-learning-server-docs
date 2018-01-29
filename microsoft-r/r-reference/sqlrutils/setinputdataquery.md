@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Assign a Query to the Input Data Parameter of the SQL Stored Procedure" 
-description: " `setInputDataQuery`: assigns a query to the InputData parameter of the                  stored procedure that is going to populate the input                  data frame of the embedded R function in the next                  run of the stored procedure. " 
-keywords: "sqlrutils, setInputDataQuery" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "03/23/2017" 
+title: "setInputDataQuery function (sqlrutils) | Microsoft Docs" 
+description: " setInputDataQuery: assigns a query to the InputData parameter of the                  stored procedure that is going to populate the input                  data frame of the embedded R function in the next                  run of the stored procedure. " 
+keywords: "(sqlrutils), setInputDataQuery" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #setInputDataQuery: Assign a Query to the Input Data Parameter of the SQL Stored Procedure
-
- Applies to version 1.0.0 of package sqlrutils.
- 
+ #setInputDataQuery: Assign a Query to the Input Data Parameter of the SQL Stored Procedure 
  ##Description
  
 `setInputDataQuery`: assigns a query to the InputData parameter of the
@@ -51,12 +47,12 @@ run of the stored procedure.
 
    
   
- ### inputData
+ ### `inputData`
  A character string, the name of the data frame input parameter into the R function. 
   
   
   
- ### query
+ ### `query`
  A character string representing a query. 
   
  
@@ -71,14 +67,17 @@ InputData Object
    
   ## Not run:
  
+  # See ?StoredProcedure for creating the `cleandata` table.
+  # and ?executeStoredProcedure for creating the `rdata` table.
+
   # score1 makes a batch prediction given clean data(indata),
   # model object(model_param), and the new name of the variable
   # that is being predicted
   score1 <- function(indata, model_param, predVarName) {
     indata[,"DayOfWeek"] <- factor(indata[,"DayOfWeek"], levels=c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"))
     # The connection string
-    conStr <- paste("Driver={SQL Server};Server=.;Database=RevoTestDB;",
-                    "Trusted_Connection=TRUE;", sep = "")
+    conStr <- paste("Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;",
+                    "Trusted_Connection=Yes;", sep = "")
     # The compute context
     computeContext <- RxInSqlServer(numTasks=4, connectionString=conStr)
     mm <- rxReadObject(as.raw(model_param))
@@ -92,8 +91,8 @@ InputData Object
                         overwrite = TRUE)
   }
   # connections string
-  conStr <- paste0("Driver={SQL Server};Server=.;Database=RevoTestDB;",
-                   "Trusted_Connection=TRUE;")
+  conStr <- paste0("Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;",
+                   "Trusted_Connection=Yes;")
   # create InpuData Object for an input parameter that is a data frame
   id <- InputData(name = "indata", defaultQuery = "SELECT * from cleanData")
   # InputParameter for the model_param input variable
@@ -113,10 +112,8 @@ InputData Object
   # execute the stored procedure
   model <- executeStoredProcedure(sp_df_df, id, name, connectionString = conStr)
   model$data
-  model$params[[1]]
  ## End(Not run) 
   
  
 ```
- 
  

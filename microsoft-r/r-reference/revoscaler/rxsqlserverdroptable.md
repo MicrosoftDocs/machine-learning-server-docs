@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSqlServerDropTable function (RevoScaleR) " 
+title: "rxSqlServerDropTable function (revoAnalytics) | Microsoft Docs" 
 description: " Execute a SQL statement that drops a table or checks for existence. " 
-keywords: "(RevoScaleR), rxSqlServerDropTable, rxSqlServerTableExists, file" 
+keywords: "(revoAnalytics), rxSqlServerDropTable, rxSqlServerTableExists, file" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -73,9 +73,9 @@ An SQL query is passed to the ODBC driver.
 `FALSE` otherwise (for example, if the table did not exist).
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

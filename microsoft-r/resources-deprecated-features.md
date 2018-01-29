@@ -6,8 +6,8 @@ description: "Notifications about deprecated and discontinued features, packages
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-manager: "jhubbard"
-ms.date: "9/25/2017"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -28,11 +28,25 @@ ms.technology: "r-server"
 
 This article notifies you about pending status changes to features and function libraries, such as deprecated and discontinued functions in the custom packages and libraries installed with the product.
 
-## Machine Learning Server 9.2.1
+## Machine Learning Server 9.3
 
 There are no announcements for package or function deprecation, discontinuation, or changes to existing fucntionality.
 
-To learn more about this release, see [What's New in 9.2.1](whats-new-in-machine-learning-server.md) for feature announcements and [Known issues in 9.2.1](resources-known-issues.md) for descriptions and possible workarounds to known problems found in this release.
+To learn more about this release, see [What's New](whats-new-in-machine-learning-server.md) for feature announcements and [Known issues](resources-known-issues.md) for descriptions and possible workarounds to known problems found in this release.
+
+## Machine Learning Server 9.2.1
+
+### RevoScaleR Package
+
+|Function| Status | Replacement |
+|-----------|----|--------|
+|`RxHadoopMR` | Deprecated | [`RxSpark`](r-reference/revoscaler/rxspark.md)| 
+|`RxHadoopMR-class` | Deprecated | [`RxSpark-class`](r-reference/revoscaler/rxspark-class.md)| 
+|`RxInTeradata` | Deprecated | None. The only in-database compute context is [SQL Server](r-reference/revoscaler/rxinsqlserver.md).| 
+|`RxInTeradata-class` | Deprecated | None. The only in-database compute context is [SQL Server](r-reference/revoscaler/rxinsqlserver-class.md). |
+
+For more information, see [discontinued RevoScaleR functions](r-reference/revoscaler/revoscaler-defunct.md) and [deprecated RevoScaleR functions](r-reference/revoscaler/revoscaler-deprecated.md).
+
 
 ## Microsoft R Server 9.1.0
 
@@ -47,7 +61,7 @@ To learn more about this release, see [What's New in 9.2.1](whats-new-in-machine
 |`rxDataFrameToXdf` | Deprecated | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) |
 |`rxXdfToDataFrame` | Deprecated | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) |
 |`rxSortXdf` | Deprecated | [`rxSort`](r-reference/revoscaler/rxsortxdf.md) |
-|`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](r-reference/revoscaler/rxgetvarinfoxdf.md))|
+|`rxGetVarInfoXdf` |Discontinued |[`rxGetVarInfo`](r-reference/revoscaler/rxgetvarinfo.md))|
 |`rxGetInfoXdf` |Discontinued |[`rxGetInfo`](r-reference/revoscaler/rxgetinfoxdf.md))|
 
 For more information, see [discontinued RevoScaleR functions](r-reference/revoscaler/revoscaler-defunct.md) and [deprecated RevoScaleR functions](r-reference/revoscaler/revoscaler-deprecated.md).
@@ -105,7 +119,7 @@ See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-kno
 	    + `rxDataFrameToXdf` (use `rxDataStep`)
 
     + These `RevoScaleR` functions are now defunct:
-    	+ `rxGetVarInfoXdf` (use `rxGetVarInfo`)
+    	+ `rxgetvarinfo` (use `rxGetVarInfo`)
     	+ `rxGetInfoXdf` (us `rxGetInfo`)
     	+ the `covariance` argument (only) to the `rxLinMod` function
 

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "AirOnTime87to12 function (RevoScaleR) " 
+title: "AirOnTime87to12 data (revoAnalytics) | Microsoft Docs" 
 description: " Airline on-time performance data from 1987 to 2012. " 
-keywords: "(RevoScaleR), AirOnTime87to12, AirOnTime87to12.xdf, AirOnTime7Pct, AirOnTime7Pct.xdf, datasets" 
+keywords: "(revoAnalytics), AirOnTime87to12, AirOnTime87to12.xdf, AirOnTime7Pct, AirOnTime7Pct.xdf, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -243,8 +243,8 @@ Bureau of Transportation Statistics.
 
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##References
@@ -255,7 +255,7 @@ American Statistical Association Statistical Computing Group, Data Expo '09.
 
 U.S. Department of Transportation, Bureau of Transportation Statistics,
 Research and Innovative Technology Administration. Airline On-Time Statistics. 
-[`https://transtats.bts.gov/ONTIME/`](https://transtats.bts.gov/ONTIME/)
+[`http://www.bts.gov/xml/ontimesummarystatistics/src/index.xml`](http://www.bts.gov/xml/ontimesummarystatistics/src/index.xml)
 
  
  

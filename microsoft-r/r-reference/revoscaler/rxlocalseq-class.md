@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxLocalSeq-class function (RevoScaleR) " 
+title: "RxLocalSeq-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Class for the RevoScaleR Local Compute Context.   " 
-keywords: "(RevoScaleR), RxLocalSeq-class, show,RxLocalSeq-method, classes" 
+keywords: "(revoAnalytics), RxLocalSeq-class, show,RxLocalSeq-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,14 +55,14 @@ Class RxComputeContext, directly.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
 [RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxInSqlServer](RxInSqlServer.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxForeachDoPar](RxForeachDoPar.md),

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxOpen-methods function (RevoScaleR) " 
+title: "rxOpen-methods methods (revoAnalytics) | Microsoft Docs" 
 description: " These functions manage **RevoScaleR** data source objects. " 
-keywords: "(RevoScaleR), rxOpen-methods, rxOpen, rxClose, rxIsOpen, rxReadNext, rxWriteNext, rxClose-methods, rxIsOpen-methods, rxReadNext-methods, rxWriteNext-methods, rxOpen,RxDataSource-method, rxClose,RxDataSource-method, rxIsOpen,RxDataSource-method, rxReadNext,RxDataSource-method, rxWriteNext,data.frame,RxDataSource-method, methods, file, connection" 
+keywords: "(revoAnalytics), rxOpen-methods, rxOpen, rxClose, rxIsOpen, rxReadNext, rxWriteNext, rxClose-methods, rxIsOpen-methods, rxReadNext-methods, rxWriteNext-methods, rxOpen,RxDataSource-method, rxClose,RxDataSource-method, rxIsOpen,RxDataSource-method, rxReadNext,RxDataSource-method, rxWriteNext,data.frame,RxDataSource-method, methods, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -50,7 +50,7 @@ These functions manage **RevoScaleR** data source objects.
 
 ```   
   rxOpen(src, mode = "r")
-  rxClose(src)
+  rxClose(src, mode = "r")
   rxIsOpen(src, mode = "r")
   rxReadNext(src)
   rxWriteNext(from, to, ...)
@@ -74,7 +74,7 @@ These functions manage **RevoScaleR** data source objects.
   
     
  ### `mode`
- character string specifying the mode to open the file. Currently only `"r"` (read-only) is supported. 
+ character string specifying the mode (`r` or `w`) to open the file. 
   
     
  ### ` ...`
@@ -92,8 +92,8 @@ For `rxReadNext`, either a data frame or a list depending upon the value of
 the `returnDataFrame` property within `src`.
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxRngNewStream function (RevoScaleR) " 
+title: "rxRngNewStream function (revoAnalytics) | Microsoft Docs" 
 description: " R interface to Parallel Random Number Generators (RNGs) in MKL. " 
-keywords: "(RevoScaleR), rxRngNewStream, rxRngGetStream, rxRngSetStream, rxRngDelStream, distribution, sysdata" 
+keywords: "(revoAnalytics), rxRngNewStream, rxRngGetStream, rxRngSetStream, rxRngDelStream, distribution, sysdata" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -115,9 +115,9 @@ independent streams can also be obtained from some of the other kinds
 using block-splitting and/or leapfrogging methods.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "pow function (RevoScaleR) " 
+title: "pow function (revoAnalytics) | Microsoft Docs" 
 description: " Formula expression functions for **RevoScaleR**. " 
-keywords: "(RevoScaleR), pow, models" 
+keywords: "(revoAnalytics), pow, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -61,8 +61,8 @@ native to R.
 `pow` performs the power transformation `x^exponent`.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

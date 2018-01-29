@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxXdfToText function (RevoScaleR) " 
+title: "rxXdfToText function (revoAnalytics) | Microsoft Docs" 
 description: " Write .xdf file content to a delimited text file. rxDataStep recommended. " 
-keywords: "(RevoScaleR), rxXdfToText, file, connection" 
+keywords: "(revoAnalytics), rxXdfToText, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -165,8 +165,8 @@ For most purposes, the more general [rxDataStep](rxDataStep.md) is preferred for
 An [RxTextData](RxTextData.md) object representing the output text file.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

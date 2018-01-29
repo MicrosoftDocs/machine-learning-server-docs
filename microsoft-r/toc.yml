@@ -1033,7 +1033,7 @@
         - name: rxGetSparklyrConnection
           href: r-reference/revoscaler/rxgetsparklyrconnection.md
         - name: rxGetVarInfo
-          href: r-reference/revoscaler/rxgetvarinfoxdf.md
+          href: r-reference/revoscaler/rxgetvarinfo.md
         - name: rxGetVarNames
           href: r-reference/revoscaler/rxgetvarnames.md
         - name: rxGLM
@@ -1062,10 +1062,6 @@
           href: r-reference/revoscaler/rxinstalledpackages.md
         - name: rxInstallPackages
           href: r-reference/revoscaler/rxinstallpackages.md
-        - name: RxInTeradata-class
-          href: r-reference/revoscaler/rxinteradata-class.md
-        - name: RxInTeradata
-          href: r-reference/revoscaler/rxinteradata.md
         - name: rxKmeans
           href: r-reference/revoscaler/rxkmeans.md
         - name: rxLaunchClusterTaskManager
@@ -1117,6 +1113,8 @@
         - name: rxPairwiseCrosstab
           href: r-reference/revoscaler/rxpairwisecrosstab.md
         - name: rxPingNodes
+          href: r-reference/revoscaler/rxpartition.md
+        - name: rxPartition
           href: r-reference/revoscaler/rxpingnodes.md
         - name: rxPredict
           href: r-reference/revoscaler/rxpredict.md

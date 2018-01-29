@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSetInfo function (RevoScaleR) " 
+title: "rxSetInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Set .xdf file or data frame information, such as a description " 
-keywords: "(RevoScaleR), rxSetInfo,  attribute " 
+keywords: "(revoAnalytics), rxSetInfo,  attribute " 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

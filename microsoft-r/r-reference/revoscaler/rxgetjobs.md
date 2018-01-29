@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetJobs function (RevoScaleR) " 
+title: "rxGetJobs function (revoAnalytics) | Microsoft Docs" 
 description: " Returns a list of job objects associated with the given compute context  and matching the specified parameters. " 
-keywords: "(RevoScaleR), rxGetJobs, rxGetJobs,RxDistributedHpa-method, rxGetJobs,RxForeachDoPar-method, rxGetJobs,RxHadoopMR-method, rxGetJobs,RxInSqlServer-method, rxGetJobs,RxLocalParallel-method, rxGetJobs,RxLocalSeq-method, IO" 
+keywords: "(revoAnalytics), rxGetJobs, rxGetJobs,RxDistributedHpa-method, rxGetJobs,RxForeachDoPar-method, rxGetJobs,RxHadoopMR-method, rxGetJobs,RxInSqlServer-method, rxGetJobs,RxLocalParallel-method, rxGetJobs,RxLocalSeq-method, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -104,9 +104,9 @@ using the `startTime` and `endTime` parameters to narrow your search.
  
 Returns a `rxJobInfoList`, list of job information objects based on the compute context.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
@@ -118,7 +118,7 @@ Returns a `rxJobInfoList`, list of job information objects based on the compute 
 [rxGetJobStatus](rxGetJobResults.md),
 [rxExec](rxExec.md), 
 [RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxInSqlServer](RxInSqlServer.md),
 [RxComputeContext](RxComputeContext.md)
    

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxWriteObject function (RevoScaleR) " 
+title: "rxWriteObject function (revoAnalytics) | Microsoft Docs" 
 description: " Store/Retrieve R objects to/from ODBC data sources. The APIs are modelled after a simple key value store. These are generic APIs and if the ODBC data source isn't specified in the argument, the function does serialization or deserialization of the R object with the specified compression if any. " 
-keywords: "(RevoScaleR), rxWriteObject, rxReadObject, rxDeleteObject, rxListKeys" 
+keywords: "(revoAnalytics), rxWriteObject, rxReadObject, rxDeleteObject, rxListKeys" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -160,9 +160,9 @@ and on the underlying package functions.
 `rxWriteObject` and `rxDeleteObject` return logical, `TRUE` on success.
 `rxListKeys` returns a single column data frame containing strings.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxLorenz function (RevoScaleR) " 
+title: "rxLorenz function (revoAnalytics) | Microsoft Docs" 
 description: " Compute and plot an empirical Lorenz curve from a variable in a data set, optionally specifiying a separate variable from which to compute the y-values for the curve. Compute the Gini Coefficient from the Lorenz curve data. Appropriate for big data sets since data is binned with computations performed in one pass, rather than sorting the data as part of the computation process. " 
-keywords: "(RevoScaleR), rxLorenz, rxGini, rxGini.rxLorenz, plot.rxLorenz,  univar " 
+keywords: "(revoAnalytics), rxLorenz, rxGini, rxGini.rxLorenz, plot.rxLorenz,  univar " 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -196,9 +196,9 @@ description.
 `rxGini` returns a numeric vector of length one containing the approximate Gini coefficient.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

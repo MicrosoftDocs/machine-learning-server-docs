@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxInSqlServer-class function (RevoScaleR) " 
+title: "RxInSqlServer-class class (revoAnalytics) | Microsoft Docs" 
 description: " Creates a compute context for running Microsoft R Server analyses inside Microsoft SQL Server.  Currently only supported in Windows. " 
-keywords: "(RevoScaleR), RxInSqlServer-class, doPreJobValidation,RxInSqlServer-method, initialize,RxInSqlServer-method, show,RxInSqlServer-method, classes" 
+keywords: "(revoAnalytics), RxInSqlServer-class, doPreJobValidation,RxInSqlServer-method, initialize,RxInSqlServer-method, show,RxInSqlServer-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -118,8 +118,8 @@ Class RxComputeContext, by class "RxLocalSeq", distance 1.
 
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

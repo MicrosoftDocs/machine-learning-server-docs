@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxQuantile function (RevoScaleR) " 
+title: "rxQuantile function (revoAnalytics) | Microsoft Docs" 
 description: " Quickly computes approximate quantiles (without sorting) " 
-keywords: "(RevoScaleR), rxQuantile, univar" 
+keywords: "(revoAnalytics), rxQuantile, univar" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -131,9 +131,9 @@ Missing values are removed before computing the quantiles.
  
 A vector the length of `probs` is returned; if `names = TRUE`, it has a names attribute. 
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxBTrees function (RevoScaleR) " 
-description: "Fit stochastic gradient boosted decision trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
-keywords: "(RevoScaleR), rxBTrees, plot.rxBTrees, print.rxBTrees, models, tree, classif, regression, classification" 
+title: "rxBTrees function (revoAnalytics) | Microsoft Docs" 
+description: "     Fit stochastic gradient boosted decision trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
+keywords: "(revoAnalytics), rxBTrees, plot.rxBTrees, print.rxBTrees, models, tree, classif, regression, classification" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -251,7 +251,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### `findSplitsInParallel`
-  logical value.  If `TRUE`, optimal splits for each node are determined using parallelization methods;  this will typically speed up computation as the number of nodes on the same level is increased. 
+  logical value.  If `TRUE`, optimal splits for each node are determined using parallelization methods;  this will typically speed up computation as the number of nodes on the same level is increased. Note that when it is `TRUE`, the number of nodes being processed in parallel is also  printed to the console, interleaved with the number of rows read from the input data set. 
   
    
    
@@ -261,7 +261,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
   
     
  ### `scheduleOnce`
- EXPERIMENTAL. logical value. If `TRUE`, rxBTrees will be run with [rxExec](rxExec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the [RxHadoopMR](RxHadoopMR.md) compute context. 
+ EXPERIMENTAL. logical value. If `TRUE`, rxBTrees will be run with [rxExec](rxExec.md), which submits only one job to the scheduler and thus can speed up computation on small data sets particularly in the RxHadoopMR compute context. 
   
   
     
@@ -434,9 +434,9 @@ Different threads on different nodes will be using different random streams so t
 different but equivalent results might be obtained for different number of threads.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

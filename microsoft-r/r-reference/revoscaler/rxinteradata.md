@@ -27,7 +27,7 @@ ms.custom: ""
  
  #RxInTeradata: Generate Teradata In-Database Compute Context 
  ##Description
- Creates a compute context for running RevoScaleR analyses inside a Teradata database. 
+ DEPRECATED: Creates a compute context for running RevoScaleR analyses inside a Teradata database. 
  
  ##Usage
 

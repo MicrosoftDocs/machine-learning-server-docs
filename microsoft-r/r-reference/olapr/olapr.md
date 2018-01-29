@@ -6,8 +6,8 @@ description: "Function help reference for the olapR R package of Microsoft R Ser
 keywords: "olapR" 
 author: "HeidiSteen"
 ms.author: "heidist" 
-manager: "jhubbard" 
-ms.date: "12/01/2017" 
+manager: "cgronlun" 
+ms.date: "01/29/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -32,8 +32,8 @@ The **olapR** library provides R functions for importing data from OLAP cubes st
 | Package details | |
 |--------|-|
 | Version: |  1.0.0 |
-| Runs on: | [Machine Learning Server 9.2.1 for Windows](../../what-is-machine-learning-server.md) </br>[R Client (Windows)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1](../../what-is-microsoft-r-server.md)   <br/>[SQL Server Machine Learning Services(Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
-| Built on: | R 3.4.1 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
+| Runs on: | [Machine Learning Server for Windows](../../what-is-machine-learning-server.md) </br>[R Client (Windows)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2017 Machine Learning Services (Windows only) and SQL Server 2016 R Services](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
+| Built on: | R 3.4.3 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use olapR
 
@@ -42,10 +42,11 @@ The **olapR** library provides a simple R style API for generating and validatin
 **Workflow for using olapR**
 
 1. Load the library.
-2. Create a connection string pointing to a MOLAP cube on an Analysis Services instance, for which you have read access.
+1. Create a connection string pointing to a MOLAP cube on Analysis Services. 
+2. Verify you have read access on the cube
 3. Use the connection string on a connection.
 4. Verify the connection using the explore function.
-5. Set up a query by submitting an MDX query string or by building a query structure 
+5. Set up a query by submitting an MDX query string or by building a query structure.
 6. Execute the query and verify the result.
 
 To execute an MDX query on an OLAP Cube, you need to first create a connection string (`olapCnn`) and validate using the function `OlapConnection(connectionString)`. The connection string must have a Data Source (such as localhost) and a Provider (MSOLAP). 

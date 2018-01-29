@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxHdfsFileSystem function (RevoScaleR) " 
+title: "RxHdfsFileSystem function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for RxHdfsFileSystem S3 class. " 
-keywords: "(RevoScaleR), RxHdfsFileSystem, print.RxHdfsFileSystem, file, connection" 
+keywords: "(revoAnalytics), RxHdfsFileSystem, print.RxHdfsFileSystem, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -81,7 +81,7 @@ print  ( x, ... )
  
  ##Details
  
-Writing to the HDFS file system can only be done using a [RxHadoopMR](RxHadoopMR.md)
+Writing to the HDFS file system can only be done using a RxHadoopMR
 compute context with an [RxXdfData](RxXdfData.md) data source. The 'rxHadoop' commands,
 such as [rxHadoopCopy](rxHadoopCommand.md), can also be used to manipulate data sets in HDFS.
  
@@ -93,8 +93,8 @@ An RxHdfsFileSystem file system object. This object may be used to in
 [rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
 [RxXdfData](RxXdfData.md) to set the file system.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetJobInfo function (RevoScaleR) " 
+title: "rxGetJobInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Gets job information for a given distributed computing job. " 
-keywords: "(RevoScaleR), rxGetJobInfo, IO" 
+keywords: "(revoAnalytics), rxGetJobInfo, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -68,16 +68,16 @@ is not guaranteed to be forward-compatible.
  
 the job information, if present, or `NULL`.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
  ##See Also
  
 [RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxInSqlServer](RxInSqlServer.md),
 [rxGetJobStatus](rxGetJobResults.md), 
 [rxGetJobOutput](rxGetJobOutput.md), 
@@ -90,7 +90,7 @@ the job information, if present, or `NULL`.
   ## Not run:
  
 # set up a non-waiting HPC Server compute context: 
-myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = FALSE) 
+myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020, wait = FALSE) 
 rxOptions(computeContext=myCluster) 
 
 myJob <- rxExec(function(){ print( "Hello World"); return ( 1 ) })

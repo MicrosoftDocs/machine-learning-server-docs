@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Hadoop RevoScaleR functions (Machine Learning Server and Microsoft R) "
-description: "Microsoft R RevoScaleR Functions for Apache Hadoop MapReduce and Hadoop Spark."
+title: "Spark and Hadoop RevoScaleR functions (Machine Learning Server and Microsoft R) "
+description: "Microsoft R RevoScaleR Functions for Apache Hadoop Spark and Hadoop MapReduce."
 keywords: "RevoScaleR, RevoScaleR, Microsoft R, Hadoop, Spark"
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "10/11/2017"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -23,24 +23,18 @@ ms.technology: "r-server"
 
 ---
 
-# RevoScaleR Functions for Hadoop
+# RevoScaleR Functions for Spark on Hadoop
 
-The `RevoScaleR` package provides a set of portable, scalable, distributable data analysis functions. While most of these functions are of general application, some are specific to the Hadoop compute contexts and some may not be fully supported in these compute contexts.
+The [RevoScaleR package](revoscaler.md) provides a set of portable, scalable, distributable data analysis functions. This page presents a curated list of functions that might be particularly interesting to Hadoop users. These functions can be called directly from the command line.
 
-This page presents a curated list of functions that might be particularly interesting to Hadoop users. These functions can be called directly from the command line.
+The RevoScaleR package supports two Hadoop compute contexts:
 
-The `RevoScaleR` package supports two Hadoop compute contexts:
++ RxSpark (recommended), a distributed compute context in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`. For guidance, see [How to use RevoScaleR on Spark](~/r/how-to-revoscaler-spark.md).
 
-+ `RxHadoopMR`, a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For details on `RxHadoopMR` compute contexts, see [How to use RevoScaleR on Hadoop MapReduce](~/r/how-to-revoscaler-hadoop.md).
++ RxHadoopMR (deprecated), a distributed compute context on a Hadoop cluster. This compute context can be used on a node (including an edge node) of a Cloudera or Hortonworks cluster with a RHEL operating system, or a client with an SSH connection to such a cluster. For guidance, see [How to use RevoScaleR on Hadoop MapReduce](~/r/how-to-revoscaler-hadoop.md).
 
-+ `RxSpark`, a distributed compute context in which computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. This provides up to a 7x performance boost compared to `RxHadoopMR`.
+On Hadoop Distributed File System (HDFS), the XDF file format stores data in a composite set of files rather than a single file. 
 
-
->If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](revoscaler.md).
-
-As noted in [How to use RevoScaleR on Hadoop MapReduce](~/r/how-to-revoscaler-hadoop.md#composite), the XDF file format has been modified for Hadoop to store data in a composite set of files rather than a single file. Both of these data sources can be specified for use with the Hadoop Distributed File System (HDFS).
-
-<br />
 ## Data Analysis Functions
 
 ####Import and Export Functions
@@ -95,7 +89,7 @@ As noted in [How to use RevoScaleR on Hadoop MapReduce](~/r/how-to-revoscaler-ha
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](rxgetvarinfoxdf.md)<center></small></td>
+            <center><small>[**View**](rxgetvarinfo.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarNames`</td>

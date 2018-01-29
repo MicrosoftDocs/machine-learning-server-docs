@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSummary function (RevoScaleR) " 
+title: "rxSummary function (revoAnalytics) | Microsoft Docs" 
 description: " Produce univariate summaries of objects in **RevoScaleR**. " 
-keywords: "(RevoScaleR), rxSummary, univar" 
+keywords: "(revoAnalytics), rxSummary, univar" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -66,7 +66,7 @@ Produce univariate summaries of objects in **RevoScaleR**.
   
     
  ### `byGroupOutFile`
- NULL, a character string or vector of character strings  specifying .xdf file names(s), or an RxXdfData object or list of RxXdfData objects.  If not NULL, and the formula includes computations by factor, the by-group summary results will be  written out to one or more .xdf files.  If more than one `.xdf` file is created and a single character string is specified, an integer will be appended to the base byGroupOutFile name  for additional file names. The resulting RxXdfData objects will be listed in  the `categorical` component of the output object.  `byGroupOutFile` is not supported when using distributed compute contexts such as [RxHadoopMR](RxHadoopMR.md). 
+ NULL, a character string or vector of character strings  specifying .xdf file names(s), or an RxXdfData object or list of RxXdfData objects.  If not NULL, and the formula includes computations by factor, the by-group summary results will be  written out to one or more .xdf files.  If more than one `.xdf` file is created and a single character string is specified, an integer will be appended to the base byGroupOutFile name  for additional file names. The resulting RxXdfData objects will be listed in  the `categorical` component of the output object.  `byGroupOutFile` is not supported when using distributed compute contexts such as RxHadoopMR. 
   
   
     
@@ -221,8 +221,8 @@ formula used to obtain the summary.
 
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

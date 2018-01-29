@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxCovCoef function (RevoScaleR) " 
+title: "rxCovCoef function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain covariance and correlation matrices for the coefficient estimates within rxLinMod,  rxLogit, and rxGlm objects and explanatory variables within rxLinMod and rxLogit objects. " 
-keywords: "(RevoScaleR), rxCovCoef, rxCovCoef.rxLinMod, rxCovCoef.rxLogit, rxCovCoef.rxGlm, rxCorCoef, rxCorCoef.rxLinMod, rxCorCoef.rxLogit, rxCorCoef.rxGlm, rxCovData, rxCovData.rxLinMod, rxCovData.rxLogit, rxCorData, rxCorData.rxLinMod, rxCorData.rxLogit, models, regression" 
+keywords: "(revoAnalytics), rxCovCoef, rxCovCoef.rxLinMod, rxCovCoef.rxLogit, rxCovCoef.rxGlm, rxCorCoef, rxCorCoef.rxLinMod, rxCorCoef.rxLogit, rxCorCoef.rxGlm, rxCovData, rxCovData.rxLinMod, rxCovData.rxLogit, rxCorData, rxCorData.rxLinMod, rxCorData.rxLogit, models, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -94,8 +94,8 @@ For `rxCorData` a `(p - 1) x (p - 1)`
 numeric matrix containing the correlations amongst the non-intercept terms in
 the model matrix.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
@@ -110,7 +110,7 @@ the model matrix.
    
   ## Example 1
   # Get the covariance matrix of the estimated model coefficients
-  kyphXdfFileName <- file.path(rxGetOption("sampleDataDir"), "Kyphosis.xdf")
+  kyphXdfFileName <- file.path(rxGetOption("sampleDataDir"), "kyphosis.xdf")
   kyphLogitWithCovCoef <-
     rxLogit(Kyphosis ~ Age + Number + Start, data = kyphXdfFileName,
             covCoef = TRUE, reportProgress = 0)
@@ -126,7 +126,7 @@ the model matrix.
   
   ## Example 2
   # Get the covariance matrix of the data
-  kyphXdfFileName <- file.path(rxGetOption("sampleDataDir"), "Kyphosis.xdf")
+  kyphXdfFileName <- file.path(rxGetOption("sampleDataDir"), "kyphosis.xdf")
   kyphLogitWithCovData <-
     rxLogit(Kyphosis ~ Age + Number + Start, data = kyphXdfFileName,
             covData = TRUE, reportProgress = 0)

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetInfo function (RevoScaleR) " 
+title: "rxGetInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Get basic information about an RevoScaleR data source or data frame  " 
-keywords: "(RevoScaleR), rxGetInfo, attribute" 
+keywords: "(revoAnalytics), rxGetInfo, attribute" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -154,7 +154,7 @@ number of blocks in the data set.
 
 
 ###`varInfo`
-list of variable information where each element is a list describing a variable. (See return value of [rxGetVarInfo](rxGetVarInfoXdf.md) for more information.)
+list of variable information where each element is a list describing a variable. (See return value of [rxGetVarInfo](rxGetVarInfo.md) for more information.)
 
 
 ###`rowsPerBlock`
@@ -169,14 +169,14 @@ data frame containing the data (if `numRows > 0`)
  
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
 [rxDataStep](rxDataStep.md),
-[rxGetVarInfo](rxGetVarInfoXdf.md),
+[rxGetVarInfo](rxGetVarInfo.md),
 [rxSetVarInfo](rxSetVarInfoXdf.md).
    
  ##Examples
@@ -197,7 +197,7 @@ data frame containing the data (if `numRows > 0`)
   
   # Obtain information on a variety of data sources
   fourthGradersXDF <- file.path(rxGetOption("sampleDataDir"), "fourthgraders.xdf")
-  KyphosisDS <- RxXdfData(file.path(rxGetOption("sampleDataDir"), "Kyphosis.xdf"))
+  KyphosisDS <- RxXdfData(file.path(rxGetOption("sampleDataDir"), "kyphosis.xdf"))
   claimsTxtDS <- RxTextData(file.path(rxGetOption("sampleDataDir"), "claims.txt"))
   rxGetInfo(data = list(iris, fourthGradersXDF, KyphosisDS, claimsTxtDS))
  

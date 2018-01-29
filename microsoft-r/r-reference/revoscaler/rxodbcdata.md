@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxOdbcData function (RevoScaleR) " 
+title: "RxOdbcData function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxOdbcData, which extends RxDataSource. " 
-keywords: "(RevoScaleR), RxOdbcData, head.RxOdbcData, tail.RxOdbcData, database, connection" 
+keywords: "(revoAnalytics), RxOdbcData, head.RxOdbcData, tail.RxOdbcData, database, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -75,7 +75,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
     
  ### `useFastRead`
- logical specifying whether or not to use a direct ODBC connection. On Linux systems, this is the only ODBC connection available. 
+ logical specifying whether or not to use a direct ODBC connection. On Linux systems, this is the only ODBC connection available. Note: `useFastRead = FALSE` is currently not supported in writing to ODBC data source. 
   
   
     
@@ -197,8 +197,8 @@ the underlying Teradata options.
  
 object of class RxOdbcData.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
@@ -234,7 +234,28 @@ claimsIn <- rxDataStep(inData = claimsXdfFileName)
 head(claimsIn)
 
 # Clean-up: delete the new file
-file.remove( claimsXdfFileName)
+file.remove(claimsXdfFileName)
+
+# Create an ODBC data source for storing a data frame 
+irisOdbcSource <- RxOdbcData(table = "irisTable", connectionString = connectionString)
+
+# Store the data frame in the database 
+rxWriteObject(irisOdbcSource, "irisData", iris)
+
+# Retrieve the data frame from the database 
+irisData <- rxReadObject(irisOdbcSource, "irisData") 
+identical(irisData, iris) # TRUE 
+
+# Create an ODBC data source for storing a sample XDF 
+airlineOdbcSource <- RxOdbcData(table = "airlineTable", connectionString = connectionString)
+
+# Store a sample XDF in the database 
+airlineXdf <- rxReadXdf( file.path(rxGetOption("sampleDataDir"), "AirlineDemoSmall.xdf") )
+rxWriteObject(airlineOdbcSource, "airlineData", airlineXdf)
+
+# Retrieve the XDF object from the database 
+airlineData <- rxReadObject(airlineOdbcSource, "airlineData")
+identical(airlineData, airlineXdf) # TRUE
  ## End(Not run) 
   
  

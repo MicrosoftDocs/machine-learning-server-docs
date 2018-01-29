@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetFuzzyKeys function (RevoScaleR) " 
+title: "rxGetFuzzyKeys function (revoAnalytics) | Microsoft Docs" 
 description: " EXPERIMENTAL: Get fuzzy keys for a character vector " 
-keywords: "(RevoScaleR), rxGetFuzzyKeys, manip" 
+keywords: "(revoAnalytics), rxGetFuzzyKeys, manip" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -190,8 +190,8 @@ For information on similarity distance measures, see [rxGetFuzzyDist](rxGetFuzzy
 A character vector containing the fuzzy keys or a data source containing the fuzzy keys in a new variable.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

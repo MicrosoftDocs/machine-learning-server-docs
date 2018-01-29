@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxTweedie function (RevoScaleR) " 
+title: "rxTweedie function (revoAnalytics) | Microsoft Docs" 
 description: " Produces a dummy generalized linear model family object that can be used with rxGlm to fit  Tweedie generalized linear regression models. This does NOT produce a full family object, but gives  rxGlm enough information to call a C++ implementation that fits a Tweedie model. The excellent  R package **tweedie** by Gordon Smyth does provide a full Tweedie family object, and that can also be  used with rxGlm. " 
-keywords: "(RevoScaleR), rxTweedie, regression" 
+keywords: "(revoAnalytics), rxTweedie, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -62,8 +62,8 @@ This provides a way to specify the var.power and the link.power arguments to the
  
  
        
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

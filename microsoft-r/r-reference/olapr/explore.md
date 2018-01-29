@@ -1,34 +1,32 @@
 --- 
  
 # required metadata 
-title: "olapR explore Method" 
-description: "Allows for exploration of cube metadata " 
-keywords: "olapR, explore" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "09/25/2017" 
+title: "explore function (olapR) | Microsoft Docs" 
+description: "   Allows for exploration of cube metadata " 
+keywords: "(olapR), explore" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
-
-#explore: olapR explore Method
-
- Applies to version 1.0.0 of package olapR.
  
+ 
+ 
+ #explore: olapR explore Method 
  
  ##Description
  
@@ -40,6 +38,7 @@ Allows for exploration of cube metadata
 
 ```   
   explore(olapCnn, cube = NULL, dimension = NULL, hierarchy = NULL, level = NULL)
+ 
 ```
  
  
@@ -47,23 +46,23 @@ Allows for exploration of cube metadata
 
    
     
- ### olapCnn
+ ### `olapCnn`
  Object of class "OlapConnection" returned by `OlapConnection()` 
   
     
- ### cube
+ ### `cube`
  A string specifying a cube name 
   
     
- ### dimension
+ ### `dimension`
  A string specifying a dimension name 
   
     
- ### hierarchy
+ ### `hierarchy`
  A string specifying a hierarchy name 
   
     
- ### level
+ ### `level`
  A string specifying a level name 
   
  
@@ -88,12 +87,12 @@ Arguements must be specified in order. Eg: In order to explore hierarchies, a di
  
  
  ##References
-  See [execute2D](execute2d.md) or [executeMD](executemd.md) for references.  
+  See [execute2D](Execute2D.md) or [executeMD](ExecuteMD.md) for references.  
  
  
  ##See Also
  
-query`, `[OlapConnection](olapconnection.md)`, `[executeMD](executemd.md)`, `[execute2D](execute2d.md)
+query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[execute2D](Execute2D.md)
    
  
  ##Examples

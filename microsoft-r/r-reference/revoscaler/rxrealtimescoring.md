@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxRealTimeScoring function (RevoScaleR) " 
-description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR** and **MicrosoftML** packages to Machine Learning Server and SQL Server platforms with near real-time performance.  " 
-keywords: "(RevoScaleR), rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
+title: "rxRealTimeScoring function (revoAnalytics) | Microsoft Docs" 
+description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR/revoscalepy** and **MicrosoftML** packages to  Microsoft ML Server and SQL Server platforms with near real-time performance.  This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [link](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [publishService](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)  documentation. " 
+keywords: "(revoAnalytics), rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,21 +26,21 @@ ms.custom: ""
  
  
  
- #rxRealTimeScoring: Real-time scoring in SQL Server R Services 
+ #rxRealTimeScoring: Real-time scoring in SQL Server ML Services 
  ##Description
  
-Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR** and **MicrosoftML** packages to Machine Learning Server and SQL Server platforms with near real-time performance.
+Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR/revoscalepy** and **MicrosoftML** packages to  Microsoft ML Server and SQL Server platforms with near real-time performance.
 
-You can take advantage of this functionality by upgrading your in-database R Services to Microsoft R Server 9.1 using the information in the following [`link`](https://docs.microsoft.com/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
+This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
 .
 
-**NOTE:** This document contains information regarding **Real-time scoring in SQL Server R Services**. For information regarding **Real-time scoring in R Server**, please refer to the [`publishService`](https://msdn.microsoft.com/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
+**NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
  documentation.
  
  
  ##Details
  
-This feature allows models trained using **RevoScaleR** and **MicrosoftML** packages to be used for high performance scoring in SQL Server. These models can be published and scored without using R interpreter, which reduces the overhead of multiple process interactions. Hence it allows for faster prediction performance in enterprise scenarios.
+With Microsoft R Server 9.1 version, we are introducing this feature which allows models trained using **RevoScaleR(revoscalepy)** and **MicrosoftML** packages to be used for high performance scoring in SQL Server. These models can be published and scored without using R interpreter, which reduces the overhead of multiple process interactions. Hence it allows for faster prediction performance.
 
 The following is the list of models that are currently supported in real-time scoring:
 
@@ -107,7 +107,7 @@ The high-level workflow for real-time scoring in SQL Server is as follows:
  Publish model to SQL Server
 
 1 
- Enable real-time scoring functionality in SQL Server R Services using RegisterRExt tool
+ Enable real-time scoring functionality in SQL Server ML Services using RegisterRExt tool
 
 1 
  Call real-time scoring stored procedure using T-SQL
@@ -145,31 +145,59 @@ The serialized models can be published to the target SQL Server Database table i
 
 
 
-**3. Enable Real-time scoring functionality in SQL Server R Services**
+**3. Enable Real-time scoring functionality in SQL Server ML Services**
 
-By default, real-time scoring functionality is disabled on SQL Server R Services and it needs to be enabled on a particular SQL database. To use this functionality, the server administrator needs to do the following:
+By default, real-time scoring functionality is disabled on SQL Server ML Services and it needs to be enabled for the instance and particular SQL database. To use this functionality, the server administrator needs use the RegisterRExt.exe tool.
 
-**`RegisterRExt.exe`** is the command line utility which ships with RevoScaleR package and allows administrators to enable real-time scoring feature in a SQL server database. You can find RegisterRExt.exe at `<SQLInstancePath>\R_SERVICES\library\RevoScaleR\rxLibs\x64\RegisterRExe.exe`.
+**`RegisterRExt.exe`** is the command line utility which ships with RevoScaleR package and allows administrators to enable real-time scoring feature in the SQL server instance and database. You can find RegisterRExt.exe at either of the following locations:
+
+**R Services** - `<SQLInstancePath>\R_SERVICES\library\RevoScaleR\rxLibs\x64\RegisterRExt.exe`.
+
+**Python Services** - `<SQLInstancePath>\PYTHON_SERVICES\Lib\site-packages\RevoScalepy\rxLibs\RegisterRext.exe`.
 
 
-To enable SQL Server R Services real-time scoring, open an elevated command prompt and use the following command:
+**3a. Enable real-time scoring for SQL Server instance**
+
+Open an elevated command prompt and run the following command:
 
 
 * 
- `RegisterRExt.exe /installRts [/instance:name]  /database:databasename`
+ `RegisterRExt.exe /installRts [/instance:name] [/python]`
+
+
+
+To disable real-time scoring for SQL Server instance, open an elevated command prompt and run the following command:
+
+
+* 
+ `RegisterRExt.exe /uninstallrts  [/instance:name] [/python]`
+
+
+
+**3b. Enable real-time scoring for a particular database**
+
+Open an elevated command prompt and run the following command:
+
+
+* 
+ `RegisterRExt.exe /installRts [/instance:name]  /database:[databasename] [/python]`
+
+
+
+To disable real-time scoring for a particular database, open an elevated command prompt and run the following command:
+
+
+* 
+ `RegisterRExt.exe /uninstallrts /database:databasename  [/instance:name] [/python]`
 
 
 
 The /instance flag is optional if the database is part of the default SQL Server instance. This command will create assemblies and stored procedure on the SQL Server database to allow real-time scoring. Additionally, it creates a database role `rxpredict_users` to help database admins to grant permission to use the real-time scoring functionality.
 
-**NOTE:** On enabling real-time scoring, RegisterRExt will enable  SQL CLR functionality in the instance and the specific database will be marked as `TRUSTWORTHY`. Please carefully consider additional security implications of doing this.
-
-To disable real-time scoring functionality in any database, open an elevated command prompt and use the following command:
+/python flag is required only if using PYTHON SERVICES version of registerrext.exe
 
 
-* 
- `RegisterRExt.exe /uninstallrts /database:databasename  [/instance:name]`
-
+**NOTE:** In SQL Server 2016, RegisterRExt will enable  SQL CLR functionality in the instance and the specific database will be marked as `TRUSTWORTHY`. Please carefully consider additional security implications of doing this. In SQL Server 2017 and higher, SQL CLR will be enabled and specific CLR assemblies are trusted using sp_addtrustedassembly.
 
 **4. Call real-time scoring stored procedure using T-SQL**
 
@@ -199,7 +227,7 @@ where
 
 
 1 
-Real-time scoring does not use an R interpreter for scoring hence any functionality requiring R interpreter is not supported.  Here are a few unsupported scenarios:
+Real-time scoring does not use an R/python interpreter for scoring hence any functionality requiring R interpreter is not supported.  Here are a few unsupported scenarios:
 
 
    * 
@@ -235,8 +263,8 @@ Arguments other than `modelObject`/`data` available in `rxPredict` are not suppo
 
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

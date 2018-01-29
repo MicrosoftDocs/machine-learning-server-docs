@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxLogit function (RevoScaleR) " 
+title: "rxLogit function (revoAnalytics) | Microsoft Docs" 
 description: " Use rxLogit to fit logistic regression models for small or large data. " 
-keywords: "(RevoScaleR), rxLogit, models, regression" 
+keywords: "(revoAnalytics), rxLogit, models, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -336,8 +336,8 @@ Logistic regression is computed using the Iteratively Reweighted Least Squares
 (IRLS) algorithm, which is equivalent to full maximum likelihood.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##References

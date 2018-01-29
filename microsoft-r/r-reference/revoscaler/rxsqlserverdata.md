@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxSqlServerData function (RevoScaleR) " 
+title: "RxSqlServerData function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxSqlServerData, which extends RxDataSource. " 
-keywords: "(RevoScaleR), RxSqlServerData, head.RxSqlServerData, tail.RxSqlServerData, database, connection" 
+keywords: "(revoAnalytics), RxSqlServerData, head.RxSqlServerData, tail.RxSqlServerData, database, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -160,7 +160,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L,   ...  )
    
     
  ### `useFastRead`
- logical specifying whether or not to use a direct ODBC connection. On Linux systems, this is the only ODBC connection available. 
+ logical specifying whether or not to use a direct ODBC connection. On Linux systems, this is the only ODBC connection available.  Note: `useFastRead = FALSE` is currently not supported in writing to SQL Server data source. 
   
   
     
@@ -204,8 +204,8 @@ arguments, the one in `connectionString` is ignored.
  
 object of class RxSqlServerData.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##References

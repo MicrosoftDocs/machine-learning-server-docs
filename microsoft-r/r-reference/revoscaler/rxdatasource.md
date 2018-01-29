@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxDataSource function (RevoScaleR) " 
+title: "RxDataSource function (revoAnalytics) | Microsoft Docs" 
 description: " A generator for RxDataSource S4 classes. " 
-keywords: "(RevoScaleR), RxDataSource, file, connection" 
+keywords: "(revoAnalytics), RxDataSource, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -68,8 +68,8 @@ output object. Additional arguments will then be applied.
  
 A type of RxDataSource data source object.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

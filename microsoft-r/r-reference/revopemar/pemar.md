@@ -6,8 +6,8 @@ description: "A package that provides a framework for creating Parallel External
 keywords: "RevoPemaR, RevoPemaR-package, package" 
 author: "HeidiSteen"
 ms.author: "heidist" 
-manager: "jhubbard" 
-ms.date: "08/21/2017" 
+manager: "cgronlun" 
+ms.date: "01/29/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -33,7 +33,7 @@ The **RevoPemaR** package provides a framework for creating Parallel External Me
 |--------|-|
 | Version: |  10.0.0 |
 | Runs on: | [Machine Learning Server (Hadoop)](../../install/machine-learning-server-hadoop-install.md)  
-| Built on: | R 3.4.1 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
+| Built on: | R 3.4.3 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
  
 ## How to use RevoPemaR
 

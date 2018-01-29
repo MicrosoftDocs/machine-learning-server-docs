@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxInstallPackages function (RevoScaleR) " 
-description: "  **NOTE: This new API is in pre-release mode and subject to change before final release.**  Install Packages from Repositories or Local Files for a compute context.  " 
-keywords: "(RevoScaleR), rxInstallPackages, install, use, packages, sql" 
+title: "rxInstallPackages function (revoAnalytics) | Microsoft Docs" 
+description: " Install R packages from repositories or install local files for the current session.  " 
+keywords: "(revoAnalytics), rxInstallPackages, install, use, packages, sql" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,10 +28,7 @@ ms.custom: ""
  #rxInstallPackages: Install Packages for Compute Context 
  ##Description
  
-
-**NOTE: This new API is in pre-release mode and subject to change before final release.**
-
-Install Packages from Repositories or Local Files for a compute context.
+Install R packages from repositories or install local files for the current session.
 
  
  
@@ -99,8 +96,8 @@ See the help file for additional details.
 Invisible `NULL`
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

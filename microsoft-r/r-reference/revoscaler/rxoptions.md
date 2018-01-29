@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxOptions function (RevoScaleR) " 
+title: "rxOptions function (revoAnalytics) | Microsoft Docs" 
 description: " Functions to specify and retrieve options needed for **RevoScaleR** computations. These need to be set only once to carry out multiple computations. " 
-keywords: "(RevoScaleR), rxOptions, rxGetOption, rxIsExpressEdition, environment, error, print" 
+keywords: "(revoAnalytics), rxOptions, rxGetOption, rxIsExpressEdition, environment, error, print" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -196,7 +196,7 @@ computations.
 *   [RxLocalSeq](RxLocalSeq.md): compute locally, using sequential processing with [rxExec](rxExec.md) High Performance Computing. 
 *   [RxLocalParallel](RxLocalParallel.md): compute locally, using the `'parallel'` package for processing with [rxExec](rxExec.md) High Performance Computing. 
 *   [RxForeachDoPar](RxForeachDoPar.md): use the currently registered parallel backend for 'foreach' for processing with [rxExec](rxExec.md) High Performance Computing.   
-*  [RxHadoopMR](RxHadoopMR.md): use a Hadoop cluster for both High Performance Analytics for [rxExec](rxExec.md) High Performance Computing. 
+*  RxHadoopMR: use a Hadoop cluster for both High Performance Analytics for [rxExec](rxExec.md) High Performance Computing. 
 *   [RxSpark](RxSpark.md): use a Spark cluster for both High Performance Analytics and for [rxExec](rxExec.md) High Performance Computing.                                        
  
    
@@ -333,18 +333,18 @@ list is returned as an invisible object. For `rxGetOption`, the current
 value of the requested option is returned.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  
  ##See Also
  
-[RevoScaleR](revoscaler.md),
+[RevoScaleR](revoAnalytics-package.md),
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxForeachDoPar](RxForeachDoPar.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxSpark](RxSpark.md),
 [RxInSqlServer](RxInSqlServer.md).
    
@@ -365,7 +365,7 @@ rxOptions(TRUE) # reset all options
 rxOptions()$reportProgress # 2
 
 # Setup to run analyses on HPC cluster
-myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020)
+myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020)
 
 rxOptions( computeContext = myCluster )
  ## End(Not run) 

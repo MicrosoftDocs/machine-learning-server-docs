@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetSparklyrConnection function (RevoScaleR) " 
+title: "rxGetSparklyrConnection function (revoAnalytics) | Microsoft Docs" 
 description: " Get a Spark compute context with sparklyr interop.  rxGetSparklyrConnection get sparklyr spark connection from created Spark compute context. " 
-keywords: "(RevoScaleR), rxGetSparklyrConnection" 
+keywords: "(revoAnalytics), rxGetSparklyrConnection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,8 +55,8 @@ ms.custom: ""
 object of sparklyr spark connection
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

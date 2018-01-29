@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxRemoteGetId function (RevoScaleR) " 
+title: "rxRemoteGetId function (revoAnalytics) | Microsoft Docs" 
 description: " Provides a unique identifier for the process in the range [1:N] where N is the number of processes. " 
-keywords: "(RevoScaleR), rxRemoteGetId, IO" 
+keywords: "(revoAnalytics), rxRemoteGetId, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

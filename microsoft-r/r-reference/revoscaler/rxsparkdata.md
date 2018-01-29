@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxHiveData, RxParquetData, RxOrcData {RevoScaleR} function (RevoScaleR) " 
+title: "RxHiveData, RxParquetData, RxOrcData {RevoScaleR} function (revoAnalytics) | Microsoft Docs" 
 description: " These are constructors for Hive, Parquet and ORC data sources which extend RxDataSource. These three data sources can be used only in RxSpark compute context. " 
-keywords: "(RevoScaleR), RxHiveData, RxParquetData, RxOrcData {RevoScaleR}, RxHiveData, RxParquetData, RxOrcData" 
+keywords: "(revoAnalytics), RxHiveData, RxParquetData, RxOrcData {RevoScaleR}, RxHiveData, RxParquetData, RxOrcData" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

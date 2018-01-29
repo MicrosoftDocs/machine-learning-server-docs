@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxSpark function (RevoScaleR) " 
+title: "RxSpark function (revoAnalytics) | Microsoft Docs" 
 description: " RxSpark creates a Spark compute context. rxSparkConnect creates the compute context object with RxSpark and then immediately starts the remote Spark application.  rxSparkDisconnect shuts down the remote Spark application with rxStopEngine and switches to a local compute context. All rx* function calls after this will run in a local compute context. " 
-keywords: "(RevoScaleR), RxSpark, rxSparkConnect, rxSparkDisconnect, IO" 
+keywords: "(revoAnalytics), RxSpark, rxSparkConnect, rxSparkDisconnect, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -54,6 +54,7 @@ context.
       sshProfileScript = NULL,
       sshClientDir = "",
       nameNode = rxGetOption("hdfsHost"),
+      master = "yarn",
       jobTrackerURL = NULL,
       port = rxGetOption("hdfsPort"),
       onClusterNode = NULL,
@@ -77,7 +78,7 @@ context.
       fileSystem = NULL,
       packagesToLoad = NULL,
       resultsTimeout = 15,
-      tmpFSWorkDir = "/dev/shm/",
+      tmpFSWorkDir = NULL,
         ...  )
   
   rxSparkConnect(
@@ -90,6 +91,7 @@ context.
       sshProfileScript       = NULL,
       sshClientDir           = "",
       nameNode               = rxGetOption("hdfsHost"),
+      master                 = "yarn",
       jobTrackerURL          = NULL,
       port                   = rxGetOption("hdfsPort"),
       onClusterNode          = NULL,
@@ -113,7 +115,7 @@ context.
       resultsTimeout         = 15,
       reset                  = FALSE,
       interop                = NULL,
-      tmpFSWorkDir           = "/dev/shm/",
+      tmpFSWorkDir           = NULL,
         ...  )
   
   rxSparkDisconnect(computeContext = rxGetOption("computeContext"))
@@ -133,7 +135,7 @@ context.
   
     
  ### `hdfsShareDir`
- character string specifying the file sharing location within HDFS. You must  have permissions to read and write to this location. 
+ character string specifying the file sharing location within HDFS. You must  have permissions to read and write to this location. When you are running in Spark local mode, this parameter will be ignored and it will be forced to be equal to the parameter shareDir.  
   
    
     
@@ -173,7 +175,13 @@ context.
   
     
  ### `nameNode`
- character string specifying the Spark name node hostname or IP address. Typically you can leave this at its default value. If set to a value other than "default" or the empty string (see below), this must be an address that can be resolved by the data nodes and used by them to contact the  name node. Depending on your cluster, it may need to be set to a private network address  such as `"master.local"`. If set to the empty string, "", then the master process will set  this to the name of the node on which it is running, as returned by `Sys.info()[["nodename"]]`.  This is likely to work when the sshHostname points to the name node or the sshHostname is not  specified and the R client is running on the name node. Defaults to rxGetOption("hdfsHost"). 
+ character string specifying the Spark name node hostname or IP address. Typically you can leave this at its default value. If set to a value other than "default" or the empty string (see below), this must be an address that can be resolved by the data nodes and used by them to contact the  name node. Depending on your cluster, it may need to be set to a private network address  such as `"master.local"`. If set to the empty string, "", then the master process will set  this to the name of the node on which it is running, as returned by `Sys.info()[["nodename"]]`.  This is likely to work when the sshHostname points to the name node or the sshHostname is not  specified and the R client is running on the name node. If you are running in Spark local mode, this paramter defaults to "file:///"; otherwise it defaults to rxGetOption("hdfsHost"). 
+  
+  
+    
+ ### `master`
+ Character string specifying the master URL passed to Spark. The value of this parameter could be "yarn", "standalone" and "local".  The formats of Spark's master URL (except for mesos) specified in this website [`https://spark.apache.org/docs/latest/submitting-applications.html`](https://spark.apache.org/docs/latest/submitting-applications.html)  is also supported. 
+  
   
   
     
@@ -293,7 +301,7 @@ context.
   
     
  ### `tmpFSWorkDir`
- character string specifying the temporary working directory in worker nodes.  It defaults to /dev/shm to utilize in-memory temporary file system for performance gain.  You can specify a different location if the size of /dev/shm is insufficient.  Please make sure that YARN run-as user has permission to read and write to this location 
+ character string specifying the temporary working directory in worker nodes.  It defaults to /dev/shm to utilize in-memory temporary file system for performance gain, when the size of /dev/shm is less than 1G, the default value would switch to /tmp for guarantee sufficiency You can specify a different location if the size of /dev/shm is insufficient.  Please make sure that YARN run-as user has permission to read and write to this location 
   
   
     
@@ -329,8 +337,8 @@ This compute context is supported for Cloudera, Hortonworks, and MapR Hadoop dis
 object of class RxSpark.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
@@ -339,7 +347,7 @@ object of class RxSpark.
 [rxGetJobOutput](rxGetJobOutput.md),
 [rxGetJobResults](rxGetJobResults.md), 
 [rxCleanupJobs](rxCleanup.md),
-[RxHadoopMR](RxHadoopMR.md), 
+RxHadoopMR, 
 [RxInSqlServer](RxInSqlServer.md),   
 [RxComputeContext](RxComputeContext.md),
 [rxSetComputeContext](rxSetComputeContext.md),

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxPairwiseCrossTab function (RevoScaleR) " 
+title: "rxPairwiseCrossTab function (revoAnalytics) | Microsoft Docs" 
 description: " Apply a function 'FUN' to all pairwise combinations of the rows and columns of an xtabs object,  stratifying by higher dimensions. " 
-keywords: "(RevoScaleR), rxPairwiseCrossTab, print.rxPairwiseCrossTabList, print.rxPairwiseCrossTabTable, htest" 
+keywords: "(revoAnalytics), rxPairwiseCrossTab, print.rxPairwiseCrossTabList, print.rxPairwiseCrossTabTable, htest" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -93,8 +93,8 @@ print  (x, digits = 3, scientific = FALSE, p.value.digits = 3, ...)
  ##Value
  a rxPairwiseCrossTabList object. 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

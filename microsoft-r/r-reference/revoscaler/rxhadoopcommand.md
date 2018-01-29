@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxHadoopCommand function (RevoScaleR) " 
+title: "rxHadoopCommand function (revoAnalytics) | Microsoft Docs" 
 description: " Execute arbitrary Hadoop commands and perform standard file operations in Hadoop. " 
-keywords: "(RevoScaleR), rxHadoopCommand, rxHadoopCopy, rxHadoopCopyFromLocal, rxHadoopCopyFromClient, rxHadoopCopyToLocal, rxHadoopFileExists, rxHadoopListFiles, rxHadoopMakeDir, rxHadoopMove, rxHadoopRemove, rxHadoopRemoveDir, rxHadoopVersion, file" 
+keywords: "(revoAnalytics), rxHadoopCommand, rxHadoopCopy, rxHadoopCopyFromLocal, rxHadoopCopyFromClient, rxHadoopCopyToLocal, rxHadoopFileExists, rxHadoopListFiles, rxHadoopMakeDir, rxHadoopMove, rxHadoopRemove, rxHadoopRemoveDir, rxHadoopVersion, file" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -204,16 +204,16 @@ are wrappers for various Hadoop file system commands:
 These functions are executed for their side effects and typically return `NULL`
 invisibly.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
  
  ##See Also
  
-[RxHadoopMR](RxHadoopMR.md).
+RxHadoopMR.
    
  ##Examples
 

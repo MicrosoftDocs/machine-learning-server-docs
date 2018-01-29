@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSplitXdf function (RevoScaleR) " 
+title: "rxSplitXdf function (revoAnalytics) | Microsoft Docs" 
 description: "    Split an input .xdf file or data frame into multiple .xdf files or a list of data frames. " 
-keywords: "(RevoScaleR), rxSplitXdf, rxSplit, manip, file" 
+keywords: "(revoAnalytics), rxSplitXdf, rxSplit, manip, file" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -262,8 +262,8 @@ We illustrate the use of these combinations in the examples below, which are ass
 a list of data frames or an invisible list of `RxXdfData` data source objects corresponding to the created output files.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

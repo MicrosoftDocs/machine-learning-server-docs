@@ -6,8 +6,8 @@ description: "Function help reference for the RevoScaleR R package of Machine Le
 keywords: "RevoScaleR, ScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "10/09/2017"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -31,9 +31,9 @@ Functions run on the **RevoScaleR** interpreter, built on open source R, enginee
 
 | Package details | |
 |--------|-|
-| Version: |  9.2.1 |
-| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
-| Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
+| Version: |  9.3 |
+| Runs on: | [Machine Learning Server](../../what-is-machine-learning-server.md) </br>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Built on: | R 3.4.3 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
 
 ## How to use RevoScaleR
 
@@ -120,7 +120,7 @@ This section lists the functions by category to give you an idea of how each one
 |[rxDataStep](rxdatastep.md) <sup>*</sup> |Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame. | 
 |[rxGetInfo](rxgetinfoxdf.md) <sup>*</sup> |Retrieves summary information from a data source or data frame. | 
 |[rxSetInfo](rxsetinfo.md) <sup>*</sup> |Sets a file description in an .xdf file or a description attribute in a data frame. | 
-|[rxGetVarInfo](rxgetvarinfoxdf.md) |Retrieves variable information from a data source or data frame. | 
+|[rxGetVarInfo](rxgetvarinfo.md) |Retrieves variable information from a data source or data frame. | 
 |[rxSetVarInfo](rxsetvarinfoxdf.md)  |Modifies variable information in an .xdf file or data frame. | 
 |[rxGetVarNames](rxgetvarnames.md)  |Retrieves variable names from a data source or data frame. | 
 |[rxCreateColInfo](rxcreatecolinfo.md)  |Generates a colInfo list from a data source. | 

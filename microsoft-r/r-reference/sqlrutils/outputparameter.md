@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Output Parameter for SQL Stored Procedure: Class Generator" 
-description: " `OutputParameter`: generates an OutputParameter Object that captures the information about the output parameters of the function that is to be embedded into a SQL Server Stored Procesure. Those will become the output parameters of the stored procedure. Supported R types of the output parameters are POSIXct, numeric, character, integer, logical, and raw. This object must be created if the R function is returning a named list for non-data frame memebers of the list " 
-keywords: "sqlrutils, OutputParameter" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "03/23/2017" 
+title: "OutputParameter function (sqlrutils) | Microsoft Docs" 
+description: " OutputParameter: generates an OutputParameter Object that captures the information about the output parameters of the function that is to be embedded into a SQL Server Stored Procesure. Those will become the output parameters of the stored procedure. Supported R types of the output parameters are POSIXct, numeric, character, integer, logical, and raw. This object must be created if the R function is returning a named list for non-data frame memebers of the list " 
+keywords: "(sqlrutils), OutputParameter" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #OutputParameter: Output Parameter for SQL Stored Procedure: Class Generator
-
- Applies to version 1.0.0 of package sqlrutils.
- 
+ #OutputParameter: Output Parameter for SQL Stored Procedure: Class Generator 
  ##Description
  
 `OutputParameter`: generates an OutputParameter Object that captures the
@@ -54,12 +50,12 @@ list for non-data frame memebers of the list
 
    
   
- ### name
+ ### `name`
  A character string, the name of the output parameter object. 
   
   
   
- ### type
+ ### `type`
  R type of the output parameter object. 
   
  
@@ -74,6 +70,8 @@ OutputParameter Object
    
   ## Not run:
  
+  # See ?StoredProcedure for creating the "cleandata" table.
+
   # train 2 takes a data frame with clean data and outputs a model
   # as well as the data on the basis of which the model was built
   train2 <- function(in_df) {
@@ -83,7 +81,7 @@ OutputParameter Object
     # Train the model
     rxSetComputeContext("local")
     mm <- rxLinMod(formula, data=in_df, transformFunc=NULL, transformVars=NULL)
-    mm <- memCompress(serialize(mm, connection = NULL), type="gzip")
+    mm <- rxSerializeModel(mm)
     return(list(mm = mm, in_df = in_df))
   }
   # create InpuData Object for an input parameter that is a data frame
@@ -95,14 +93,17 @@ OutputParameter Object
   # create an OutputParameter object for the variable "mm" inside the return list
   out2 <- OutputParameter("mm", "raw")
   # connections string
-  conStr <- paste0("Driver={SQL Server};Server=.;Database=RevoTestDB;",
-                   "Trusted_Connection=TRUE;")
+  conStr <- paste0("Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;",
+                   "Trusted_Connection=Yes;")
   # create the stored procedure object
   sp_df_op <- StoredProcedure(train2, "spTest2", id, out1, out2,
                           filePath = ".")
+  registerStoredProcedure(sp_df_op, conStr)
+  result <- executeStoredProcedure(sp_df_op, connectionString = conStr)
+  # Get back the linear model.
+  mm <- rxUnserializeModel(result$params$op1)
  ## End(Not run) 
   
  
 ```
- 
  

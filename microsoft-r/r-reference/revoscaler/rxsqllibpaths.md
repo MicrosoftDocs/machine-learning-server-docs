@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSqlLibPaths function (RevoScaleR) " 
-description: " **NOTE: This new API is in pre-release mode and subject to change before final release.**  Gets the search path for the library trees for packages while executing inside the SQL server using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script. " 
-keywords: "(RevoScaleR), rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
+title: "rxSqlLibPaths function (revoAnalytics) | Microsoft Docs" 
+description: " Gets the search path for the library trees for packages while executing inside the SQL Server, using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script. " 
+keywords: "(revoAnalytics), rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,9 +28,7 @@ ms.custom: ""
  #rxSqlLibPaths: Search Paths for Packages in SQL compute context 
  ##Description
  
-**NOTE: This new API is in pre-release mode and subject to change before final release.**
-
-Gets the search path for the library trees for packages while executing inside the SQL server using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script.
+Gets the search path for the library trees for packages while executing inside the SQL Server, using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script.
  
  
  ##Usage
@@ -46,25 +44,20 @@ Gets the search path for the library trees for packages while executing inside t
   
     
  ### `connectionString`
- a `character` connection string for the SQL server. This should be local connection string as external connection strings are not supported while executing on a SQL server. You can also specify [RxInSqlServer](RxInSqlServer.md) compute context object for input from which the connection string will be extracted and used.  
+ a `character` connection string for the SQL Server. This should be a local connection string (external connection strings are not supported while executing on a SQL Server). You can also specify [RxInSqlServer](RxInSqlServer.md) compute context object for input, from which the connection string will be extracted and used.  
    
  
  
  ##Details
  
-For [RxInSqlServer](RxInSqlServer.md) compute context, the user specified as part of connection string needs to be a member of one of the following roles `'db_owner'` `'rpkgs-shared'`,  `'rpkgs-private'` or `'rpkgs-private'` in the database. When rxExec() function is called from client machine with [RxInSqlServer](RxInSqlServer.md) compute context to execute the rx function on SQL server the `.libPaths()` is automatically updated to include the library paths returned by this [rxSqlLibPaths](rxSqlLibPaths.md) function.
-
-See the help file for additional details.
+For [RxInSqlServer](RxInSqlServer.md) compute context, a user specified on the connection string must be a member of one of the following roles `'db_owner'` `'rpkgs-shared'`,  `'rpkgs-private'` or `'rpkgs-private'` in the database. 
+When rxExec() function is called from a client machine with [RxInSqlServer](RxInSqlServer.md) compute context to execute the rx function on SQL Server, the `.libPaths()` is automatically updated to include the library paths returned by this [rxSqlLibPaths](rxSqlLibPaths.md) function.
  
  
  
  ##Value
  
-A character vector of the library paths containing both `"shared"` or `"private"` scope of the packages if the the user specified in the connection string is allowed access. On acccess denied, returns empty character vector.
- 
- 
-
- 
+A character vector of the library paths containing both `"shared"` or `"private"` scope of the packages if the the user specified in the connection string is allowed access. On acccess denied, it returns an empty character vector.
  
  
  ##See Also

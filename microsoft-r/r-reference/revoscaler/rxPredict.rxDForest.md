@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxPredict.rxDForest function (RevoScaleR) " 
+title: "rxPredict.rxDForest function (revoAnalytics) | Microsoft Docs" 
 description: "     Calculate predicted or fitted values for a data set from an object inheriting from class rxDForest. " 
-keywords: "(RevoScaleR), rxPredict.rxDForest, rxPredict.rxBTrees, models, tree, classif, regression, classification" 
+keywords: "(revoAnalytics), rxPredict.rxDForest, rxPredict.rxBTrees, models, tree, classif, regression, classification" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -179,9 +179,9 @@ of variables as the original fitted model. Notice that this is different from th
 Depending on the form of `data`, this function variously returns a data frame or a data source
 representing a .xdf file.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

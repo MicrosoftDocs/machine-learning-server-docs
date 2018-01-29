@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxLocateFile function (RevoScaleR) " 
+title: "rxLocateFile function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain the normalized absolute path to the first occurrence of the specified input file  in the specified set of paths. " 
-keywords: "(RevoScaleR), rxLocateFile, IO" 
+keywords: "(revoAnalytics), rxLocateFile, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -87,9 +87,9 @@ paths is performed. The first path where the file is found is returned in normal
 form. If the file does not exist an error is thrown.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

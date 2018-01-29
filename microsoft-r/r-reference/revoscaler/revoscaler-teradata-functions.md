@@ -6,8 +6,8 @@ description: "RevoScaleR Functions for a Teradata compute context"
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "10/11/2017"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -25,15 +25,16 @@ ms.technology: "r-server"
 
 # RevoScaleR Functions for Teradata
 
-The `RevoScaleR` package provides a set of portable, scalable, distributable data analysis functions. While most of these functions are of general application, some are specific to the Teradata DB compute contexts and some may not be fully supported in these compute contexts.
+Microsoft R Server 9.1 became the last release to have new features for Teradata as a computing platform for RevoScaleR functions. Although Teradata in-database compute context and supporting functions continue to be available in the 9.3 release as part of the [service support policy](../../resources-servicing-support.md) for Microsoft R Server 9.1, there are currently no plans to enhance the Teradata compute context in future Machine Learning Server releases.
 
-This page presents a curated list of functions that might be particularly interesting to Teradata DB users. These functions can be called directly from the command line.
+Data import using the RxTeradata data source object remains unchanged. If you have existing data in a Teradata appliance, you can create an RxTeradata object to import your data into Machine Learning Server. There are no deprecation announcements for either RxTeradata or RxTeradata-class.
 
-The `RevoScaleR` package supports a single Teradata DB compute context, `RxTeradata`. For details on `RxTeradata` compute context, see the [*RevoScaleR Teradata DB Getting Started Guide*](../../r/how-to-revoscaler-teradata.md).
+For backwards compatibility purposes, this page presents a curated list of functions specific to the Teradata DB compute contexts, as well as those that may not be fully supported.
 
->If you are looking for a more general list of `RevoScaleR` functions for Microsoft R, [see here](revoscaler.md).
+These functions can be called directly from the command line.
 
-<br />
+For guidance on using these functions, see the [*RevoScaleR Teradata DB Getting Started Guide*](../../r/how-to-revoscaler-teradata.md).
+
 ## Data Analysis Functions
 
 ####Import and Export Functions
@@ -88,7 +89,7 @@ The `RevoScaleR` package supports a single Teradata DB compute context, `RxTerad
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](rxgetvarinfoxdf.md)<center></small></td>
+            <center><small>[**View**](rxgetvarinfo.md)<center></small></td>
     </tr>
     <tr>
         <td>`rxGetVarNames`</td>

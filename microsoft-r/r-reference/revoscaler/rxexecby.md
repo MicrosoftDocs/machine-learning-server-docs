@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxExecBy function (RevoScaleR) " 
+title: "rxExecBy function (revoAnalytics) | Microsoft Docs" 
 description: " Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in local, localpar, [RxInSqlServer](RxInSqlServer.md) and [RxSpark](RxSpark.md) compute contexts. " 
-keywords: "RevoScaleR, rxExecBy, ExecBy" 
-author: "HeidiSteen" 
-manager: "jhubbard" 
-ms.date: "09/16/2017" 
+keywords: "(revoAnalytics), rxExecBy, ExecBy" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,10 +26,7 @@ ms.custom: ""
  
  
  
- #rxExecBy: Partition Data by Key Values and Execute User Function on Each Partition
-
- 
- 
+ #rxExecBy: Partition Data by Key Values and Execute User Function on Each Partition 
  
  ##Description
  
@@ -74,7 +71,7 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](RxInSqlServer.md) an
   
     
  ### `filterFunc`
- the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by rxPartition which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in [RxHadoopMR](RxHadoopMR.md) and [RxSpark](RxSpark.md) compute contexts. 
+ the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by [rxPartition](rxPartition.rd.md) which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in RxHadoopMR and [RxSpark](RxSpark.md) compute contexts. 
   
   
     
@@ -116,14 +113,14 @@ non-default loaded packages unless they are redefined or reloaded within the sco
  
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  
  ##See Also
  
-[rxExecByPartition](rxExecByPartition.md),
+[rxExecByPartition](rxExecByPartition.rd.md),
 [rxImport](rxImport.md),
 [rxDataStep](rxDataStep.md),
 [RxTextData](RxTextData.md),

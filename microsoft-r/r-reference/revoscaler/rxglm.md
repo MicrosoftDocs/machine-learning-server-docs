@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGlm function (RevoScaleR) " 
+title: "rxGlm function (revoAnalytics) | Microsoft Docs" 
 description: " Use rxGlm to fit generalized linear regression models for small or large data. Any valid glm family object can be used. " 
-keywords: "(RevoScaleR), rxGlm, models, regression" 
+keywords: "(revoAnalytics), rxGlm, models, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -308,8 +308,8 @@ The generalized linear models are computed using the Iteratively Reweighted Leas
 (IRLS) algorithm.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

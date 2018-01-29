@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetJobResults function (RevoScaleR) " 
+title: "rxGetJobResults function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain distributed computing results and processing status. " 
-keywords: "(RevoScaleR), rxGetJobResults, rxGetJobStatus, IO" 
+keywords: "(revoAnalytics), rxGetJobResults, rxGetJobStatus, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -117,7 +117,7 @@ not available because the job has not finished, has failed, or was deleted.
  ##See Also
  
 [RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxInSqlServer](RxInSqlServer.md),
 [rxGetJobs](rxGetJobs.md), 
 [rxCleanupJobs](rxCleanup.md),
@@ -131,7 +131,7 @@ not available because the job has not finished, has failed, or was deleted.
   ## Not run:
  
 # set up the cluster object
-myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = FALSE)
+myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020, wait = FALSE)
 rxOptions(computeContext=myCluster)
 
 func <- function(name)

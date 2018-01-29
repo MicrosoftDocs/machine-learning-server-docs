@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetEnableThreadPool function (RevoScaleR) " 
+title: "rxGetEnableThreadPool function (revoAnalytics) | Microsoft Docs" 
 description: " Gets or sets the current state of the thread pool (in a ready state or created ad hoc). " 
-keywords: "(RevoScaleR), rxGetEnableThreadPool, rxSetEnableThreadPool, iteration" 
+keywords: "(revoAnalytics), rxGetEnableThreadPool, rxSetEnableThreadPool, iteration" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -97,9 +97,9 @@ threads will be created on an ad hoc basis.
 `TRUE` if the thread pool was instantiated and in a ready state prior to making the call, or `FALSE` if the thread pool 
 was set to be created in an ad hoc fashion. 
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

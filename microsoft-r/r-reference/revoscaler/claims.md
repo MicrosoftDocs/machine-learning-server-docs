@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "claims function (RevoScaleR) " 
+title: "claims data (revoAnalytics) | Microsoft Docs" 
 description: " Observations on automobile insurance claims. " 
-keywords: "(RevoScaleR), claims, claims.xdf, claims.txt, claimsExtra.txt, datasets" 
+keywords: "(revoAnalytics), claims, claims.xdf, claims.txt, claimsExtra.txt, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -83,8 +83,8 @@ Models in Motor Insurance. *Proceedings of the 21st International
 Congress of Actuaries*, Zurich, 11-29.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##References

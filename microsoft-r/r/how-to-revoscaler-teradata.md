@@ -6,8 +6,8 @@ description: "Overview and tutorial to using RevoScaleR in Teradata."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "08/05/2016"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -25,9 +25,7 @@ ms.technology: "r-server"
 
 # RevoScaleR Teradata Getting Started Guide
 
-## Overview
-
-This guide is an introduction to high-performance ‘big data’ analytics for **Teradata** using **RevoScaleR**, an R package included with Microsoft R Server. **Teradata Platforms** running the **Teradata Database** provide high-performance, high-capacity data storage capabilities that are a great match for the **RevoScaleR** high-performance analytics.
+For customers using R Server 9.1 and earlier, this guide serves as an introduction to high-performance big data analytics for Teradata using [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md). 
 
 There are three key components to running **RevoScaleR** high-performance analytics:
 

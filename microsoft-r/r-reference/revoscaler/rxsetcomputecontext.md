@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSetComputeContext function (RevoScaleR) " 
+title: "rxSetComputeContext function (revoAnalytics) | Microsoft Docs" 
 description: " Get or set the active compute context for RevoScaleR computations " 
-keywords: "(RevoScaleR), rxSetComputeContext, rxGetComputeContext, IO" 
+keywords: "(revoAnalytics), rxSetComputeContext, rxGetComputeContext, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -64,8 +64,8 @@ Get or set the active compute context for RevoScaleR computations
  
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

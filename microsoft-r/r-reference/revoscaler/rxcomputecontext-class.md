@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxComputeContext-class function (RevoScaleR) " 
+title: "RxComputeContext-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Base class for all RevoScaleR Compute Contexts.   " 
-keywords: "(RevoScaleR), RxComputeContext-class, show,RxComputeContext-method, classes" 
+keywords: "(revoAnalytics), RxComputeContext-class, show,RxComputeContext-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -45,13 +45,13 @@ The generator for classes that extend RxComputeContext is
 [RxComputeContext](RxComputeContext.md).  
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxSpark](RxSpark.md),
 [RxInSqlServer](RxInSqlServer.md),
 [RxLocalSeq](RxLocalSeq.md),

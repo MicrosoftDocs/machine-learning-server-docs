@@ -1,34 +1,33 @@
 --- 
  
 # required metadata 
-title: "olapR executeMD Methods" 
-description: "Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. " 
-keywords: "olapR, executeMD" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "09/25/2017" 
+title: "executeMD function (olapR) | Microsoft Docs" 
+description: "   Takes a Query object or an MDX string, and returns the result as a multi-dimensional array. " 
+keywords: "(olapR), executeMD" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
-
-#executeMD: olapR executeMD Methods
-
-Applies to version 1.0.0 of package olapR.
  
+ 
+ 
+ 
+ #executeMD: olapR executeMD Methods 
  
  ##Description
  
@@ -41,6 +40,7 @@ Takes a Query object or an MDX string, and returns the result as a multi-dimensi
 ```   
   executeMD(olapCnn, query)
   executeMD(olapCnn, mdx)
+ 
 ```
  
  
@@ -48,15 +48,15 @@ Takes a Query object or an MDX string, and returns the result as a multi-dimensi
 
    
     
- ### olapCnn
+ ### `olapCnn`
  Object of class "OlapConnection" returned by `OlapConnection()` 
   
     
- ### query
+ ### `query`
  Object of class "Query" returned by `Query()` 
   
     
- ### mdx
+ ### `mdx`
  String specifying a valid MDX query 
   
  
@@ -94,7 +94,7 @@ Creating a Demo OLAP Cube (the same as the one used in the examples):
  
  ##See Also
  
-[Query](query.md), [OlapConnection](olapconnection.md)`, `[execute2D](execute2d.md)`, `[explore](explore.md)`, `array
+[Query](Query.md), [OlapConnection](OlapConnection.md)`, `[execute2D](Execute2D.md)`, `[explore](Explore.md)`, `array
    
  
  ##Examples

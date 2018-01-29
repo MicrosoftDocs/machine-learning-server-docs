@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "mortDefaultSmall function (RevoScaleR) " 
+title: "mortDefaultSmall data (revoAnalytics) | Microsoft Docs" 
 description: " Simulated data on mortgage defaults. " 
-keywords: "(RevoScaleR), mortDefaultSmall, mortDefaultSmall.xdf, mortDefaultSmall2000.csv, mortDefaultSmall2001.csv, mortDefaultSmall2002.csv, mortDefaultSmall2003.csv, mortDefaultSmall2004.csv, mortDefaultSmall2005.csv, mortDefaultSmall2006.csv, mortDefaultSmall2007.csv, mortDefaultSmall2008.csv, mortDefaultSmall2009.csv, datasets" 
+keywords: "(revoAnalytics), mortDefaultSmall, mortDefaultSmall.xdf, mortDefaultSmall2000.csv, mortDefaultSmall2001.csv, mortDefaultSmall2002.csv, mortDefaultSmall2003.csv, mortDefaultSmall2004.csv, mortDefaultSmall2005.csv, mortDefaultSmall2006.csv, mortDefaultSmall2007.csv, mortDefaultSmall2008.csv, mortDefaultSmall2009.csv, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -87,8 +87,8 @@ which contains a year's worth of simulated data.
 Microsoft Corporation.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##Examples

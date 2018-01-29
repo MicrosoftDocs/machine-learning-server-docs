@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxDataSource-class function (RevoScaleR) " 
+title: "RxDataSource-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Base class for all Microsoft R Services Compute Engine data sources.   " 
-keywords: "(RevoScaleR), RxDataSource-class, names,RxDataSource-method, show,RxDataSource-method, classes" 
+keywords: "(revoAnalytics), RxDataSource-class, names,RxDataSource-method, show,RxDataSource-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -75,8 +75,8 @@ RxDataSource:
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

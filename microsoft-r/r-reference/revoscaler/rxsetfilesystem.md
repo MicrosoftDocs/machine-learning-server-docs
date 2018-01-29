@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSetFileSystem function (RevoScaleR) " 
+title: "rxSetFileSystem function (revoAnalytics) | Microsoft Docs" 
 description: " Set and get the default file system for RevoScaleR operations. " 
-keywords: "(RevoScaleR), rxSetFileSystem, rxGetFileSystem, file, connection" 
+keywords: "(revoAnalytics), rxSetFileSystem, rxGetFileSystem, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -66,8 +66,8 @@ Next, if the compute context contains a file system, that RxFileSystem object is
 If no file system object has been found, the previously set RxFileSystem file system object is returned.
 The file system object is returned invisibly.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

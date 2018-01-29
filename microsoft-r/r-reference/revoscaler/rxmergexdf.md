@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxMerge function (RevoScaleR) " 
-description: " Merge (join) two data sources on one or more match variables. In local compute context, the data sources may be sorted .xdf files or data frames. In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md). " 
-keywords: "(RevoScaleR), rxMerge, rxMergeXdf, file" 
+title: "rxMerge function (revoAnalytics) | Microsoft Docs" 
+description: " Merge (join) two data sources on one or more match variables. The rxMerge function is multi-threaded. In local compute context, the data sources may be sorted .xdf files or data frames. In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md). " 
+keywords: "(revoAnalytics), rxMerge, rxMergeXdf, file" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,7 +29,7 @@ ms.custom: ""
  #rxMerge:  Merge two data sources  
  ##Description
  
-Merge (join) two data sources on one or more match variables.
+Merge (join) two data sources on one or more match variables. The rxMerge function is multi-threaded.
 In local compute context, the data sources may be sorted .xdf files or data frames.
 In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md).
  
@@ -223,8 +223,8 @@ is returned; otherwise `FALSE` is returned.
  
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

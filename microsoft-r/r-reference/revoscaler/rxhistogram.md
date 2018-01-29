@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxHistogram function (RevoScaleR) " 
+title: "rxHistogram function (revoAnalytics) | Microsoft Docs" 
 description: " Histogram plot for a variable in an .xdf file or data frame " 
-keywords: "(RevoScaleR), rxHistogram, hplot" 
+keywords: "(revoAnalytics), rxHistogram, hplot" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -267,8 +267,8 @@ for new R users.
  
 An object of class "trellis". It is automatically printed within the function.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

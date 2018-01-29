@@ -1,34 +1,33 @@
 --- 
  
 # required metadata 
-title: "olapR Query Construction" 
-description: "Constructs a Query object. Set functions are used to build and modify the axes and cube name. " 
-keywords: "olapR, Query" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "09/25/2017" 
+title: "Query function (olapR) | Microsoft Docs" 
+description: "   Query constructs a Query object. Set functions are used to build and modify the Query axes and cube name. " 
+keywords: "(olapR), Query" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
-# Query: olapR Query Construction
-
-Applies to version 1.0.0 of package olapR.
  
+ 
+ 
+ #Query: olapR Query Construction 
  
  ##Description
  
@@ -65,6 +64,7 @@ Applies to version 1.0.0 of package olapR.
   compose(qry)
   
   is.Query(qry)
+ 
 ```
  
  
@@ -72,23 +72,23 @@ Applies to version 1.0.0 of package olapR.
 
    
     
- ### validate
- A boolian to specify if the Query should be validated or not during execution 
+ ### `validate`
+ A logical (TRUE, FALSE, NA) specifying whether the Query should be validated during execution 
   
     
- ### qry
+ ### `qry`
  An object of class "Query" returned by `Query` 
   
     
- ### cubeName
+ ### `cubeName`
  A string specifying the name of the cube to query 
   
     
- ### axis
+ ### `axis`
  A vector of strings specifying an axis. See example below. 
   
     
- ### n
+ ### `n`
  An integer representing the axis number to be set. axis(qry, 1) == columns(qry), axis(qry, 2) == pages(qry), etc. 
   
  
@@ -116,18 +116,17 @@ Applies to version 1.0.0 of package olapR.
  
  ##Note
  
-- Validation for queries is still in beta.
-- Using a Query object is not as powerful as using pure MDX, if features you desire are missing from the Query API, try using an MDX Query string with one of the Execute functions.
+- A Query object is not as powerful as pure MDX. If the Query API is not sufficient, try using an MDX Query string with one of the Execute functions.
  
  
  
  ##References
-  See [execute2D](execute2d.md) or [executeMD](executemd.md) for references.  
+  See [execute2D](Execute2D.md) or [executeMD](ExecuteMD.md) for references.  
  
  
  ##See Also
  
-[execute2D](execute2d.md), [executeMD](executemd.md), [OlapConnection](olapconnection.md)`, `[explore](explore.md)
+[execute2D](Execute2D.md), [executeMD](ExecuteMD.md), [OlapConnection](OlapConnection.md)`, `[explore](Explore.md)
    
  
  ##Examples

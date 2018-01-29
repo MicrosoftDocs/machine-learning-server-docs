@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxCreateColInfo function (RevoScaleR) " 
+title: "rxCreateColInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Generates a colInfo list from a data source that can be used in rxImport or an RxDataSource constructor. " 
-keywords: "(RevoScaleR), rxCreateColInfo, file, connection" 
+keywords: "(revoAnalytics), rxCreateColInfo, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -46,7 +46,7 @@ an `RxDataSource` constructor.
    
     
  ### `data`
-  An [RxDataSource](RxDataSource.md) object, a character string containing an .xdf file name, or a data frame.  An object returned from [rxGetVarInfo](rxGetVarInfoXdf.md) is also supported.  
+  An [RxDataSource](RxDataSource.md) object, a character string containing an .xdf file name, or a data frame.  An object returned from [rxGetVarInfo](rxGetVarInfo.md) is also supported.  
   
     
  ### `includeLowHigh`
@@ -87,7 +87,7 @@ It is also useful for repeated analysis on non-xdf data sources.
 A `colInfo` list that can be used as input for [rxImport](rxImport.md) and in data sources such as
 [RxTextData](RxTextData.md) and [RxSqlServerData](RxSqlServerData.md).
  
-
+ ##Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](http://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "as.gbm function (RevoScaleR) " 
+title: "as.gbm function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing decision tree results to an gbm object. " 
-keywords: "(RevoScaleR), as.gbm, as.gbm.rxBTrees, as.gbm.rxDTree, as.gbm.rpart, category, models" 
+keywords: "(revoAnalytics), as.gbm, as.gbm.rxBTrees, as.gbm.rxDTree, as.gbm.rpart, category, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -88,8 +88,8 @@ In many cases, this method can be used to coerce an object for use with the **pm
 an object of class gbm.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

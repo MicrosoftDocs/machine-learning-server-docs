@@ -1,62 +1,62 @@
 --- 
  
 # required metadata 
-title: "olapR execute2D Methods" 
-description: "Takes a Query object or an MDX string, and returns the result as a data frame. " 
-keywords: "olapR, execute2D" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "09/25/2017" 
+title: "execute2D function (olapR) | Microsoft Docs" 
+description: "   Takes a Query object or an MDX string, and returns the result as a data frame. " 
+keywords: "(olapR), execute2D" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
-#execute2D: olapR execute2D Methods
-
-Applies to version 1.0.0 of package olapR.
  
  
-##Description
+ 
+ #execute2D: olapR execute2D Methods 
+ 
+ ##Description
  
 Takes a Query object or an MDX string, and returns the result as a data frame.
  
  
  
-##Usage
+ ##Usage
 
 ```   
-execute2D(olapCnn, query)
-execute2D(olapCnn, mdx)
+  execute2D(olapCnn, query)
+  execute2D(olapCnn, mdx)
+ 
 ```
  
  
-##Arguments
+ ##Arguments
 
    
     
-### olapCnn
-Object of class "OlapConnection" returned by `OlapConnection()` 
+ ### `olapCnn`
+ Object of class "OlapConnection" returned by `OlapConnection()` 
   
     
-### query
-Object of class "Query" returned by `Query()` 
+ ### `query`
+ Object of class "Query" returned by `Query()` 
   
     
- ### mdx
+ ### `mdx`
  String specifying a valid MDX query 
   
  
@@ -95,7 +95,7 @@ Creating a Demo OLAP Cube (the same as the one used in the examples):
  
  ##See Also
  
-[Query](query.md)`, `[OlapConnection](olapconnection.md)`, `[executeMD](executemd.md)`, `[explore](explore.md)`, `data.frame
+[Query](Query.md)`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[explore](Explore.md)`, `data.frame
    
  
  ##Examples

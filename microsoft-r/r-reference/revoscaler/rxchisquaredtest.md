@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxChiSquaredTest function (RevoScaleR) " 
+title: "rxChiSquaredTest function (revoAnalytics) | Microsoft Docs" 
 description: " Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient " 
-keywords: "(RevoScaleR), rxChiSquaredTest, rxFisherTest, rxKendallCor, htest" 
+keywords: "(revoAnalytics), rxChiSquaredTest, rxFisherTest, rxKendallCor, htest" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -76,8 +76,8 @@ Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coeff
 an object of class rxMultiTest.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

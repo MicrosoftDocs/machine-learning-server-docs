@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxFileSystem function (RevoScaleR) " 
+title: "RxFileSystem function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for RxFileSystem S3 classes. " 
-keywords: "(RevoScaleR), RxFileSystem, print.RxFileSystem, file, connection" 
+keywords: "(revoAnalytics), RxFileSystem, print.RxFileSystem, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -73,8 +73,8 @@ A type of RxFileSystem file system object. This object may be used in
 [rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
 [RxXdfData](RxXdfData.md) to set the file system.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

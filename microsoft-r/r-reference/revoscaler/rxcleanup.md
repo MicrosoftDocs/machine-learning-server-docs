@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxCleanupJobs function (RevoScaleR) " 
+title: "rxCleanupJobs function (revoAnalytics) | Microsoft Docs" 
 description: " Removes artifacts created while executing a distributed computing job. " 
-keywords: "(RevoScaleR), rxCleanupJobs, IO" 
+keywords: "(revoAnalytics), rxCleanupJobs, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -76,9 +76,9 @@ for a single job to each element in the list.
  
 This function is called for its side effects (removing job artifacts); it does not have a useful return value.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
@@ -87,7 +87,7 @@ This function is called for its side effects (removing job artifacts); it does n
 [rxGetJobs](rxGetJobs.md), 
 [rxGetJobOutput](rxGetJobOutput.md),
 [RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [rxGetJobResults](rxGetJobResults.md)
    
  ##Examples

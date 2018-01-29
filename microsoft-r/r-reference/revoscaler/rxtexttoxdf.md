@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxTextToXdf function (RevoScaleR) " 
+title: "rxTextToXdf function (revoAnalytics) | Microsoft Docs" 
 description: " Import text data into to an .xdf file using fastText mode. Can also use rxImport. " 
-keywords: "(RevoScaleR), rxTextToXdf, file, connection" 
+keywords: "(revoAnalytics), rxTextToXdf, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -290,8 +290,8 @@ text file contain the same number of entries. Date, time, and currency data
 types are not currently supported and are imported as character data.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

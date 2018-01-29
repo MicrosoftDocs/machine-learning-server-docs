@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxHpcServer-class function (RevoScaleR) " 
+title: "RxHpcServer-class class (revoAnalytics) | Microsoft Docs" 
 description: " DEPRECATED: HPC Server compute context class. " 
-keywords: "(RevoScaleR), RxHpcServer-class, show,RxHpcServer-method, classes" 
+keywords: "(revoAnalytics), RxHpcServer-class, show,RxHpcServer-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,8 +55,8 @@ Class RxComputeContext, directly.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

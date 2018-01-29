@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetNodeInfo function (RevoScaleR) " 
+title: "rxGetNodeInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Provides information about the capabilities of the nodes on a cluster. " 
-keywords: "(RevoScaleR), rxGetNodeInfo, IO" 
+keywords: "(revoAnalytics), rxGetNodeInfo, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -149,9 +149,9 @@ list of character scalars.  The node groups (on MS HPC) or queues (under LSF) to
 
 
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

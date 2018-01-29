@@ -30,7 +30,7 @@ ms.custom: ""
  #RxHadoopMR-class: Class RxHadoopMR 
  ##Description
  
-Hadoop Map Reduce Local (File) compute context class.
+DEPRECATED: Hadoop Map Reduce Local (File) compute context class.
  
  
  ## Generators 

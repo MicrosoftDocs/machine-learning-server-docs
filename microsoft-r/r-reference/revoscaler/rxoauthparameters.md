@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxOAuthParameters function (RevoScaleR) " 
+title: "rxOAuthParameters function (revoAnalytics) | Microsoft Docs" 
 description: " Method to create parameter list to be used for getting an OAuth2 token. " 
-keywords: "(RevoScaleR), rxOAuthParameters, file, connection" 
+keywords: "(revoAnalytics), rxOAuthParameters, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -90,9 +90,9 @@ allows the specification of parameters that can be set to retreive a token.
 An rxOAuthParameters list object. This object may be used in
 [RxHdfsFileSystem](RxHdfsFileSystem.md) to set the OAuth request method for WebHdfs usage.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

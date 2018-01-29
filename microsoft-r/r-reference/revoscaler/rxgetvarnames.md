@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetVarNames function (RevoScaleR) " 
+title: "rxGetVarNames function (revoAnalytics) | Microsoft Docs" 
 description: " Read the variable names for data source or data frame " 
-keywords: "(RevoScaleR), rxGetVarNames, attribute" 
+keywords: "(revoAnalytics), rxGetVarNames, attribute" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -57,13 +57,13 @@ names will be used in the return value.
  
 character vector containing the names of the variables in the data source or data frame.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
-[rxGetVarInfo](rxGetVarInfoXdf.md),
+[rxGetVarInfo](rxGetVarInfo.md),
 [rxSetVarInfo](rxSetVarInfoXdf.md),
 [rxDataStep](rxDataStep.md),
 [rxGetInfo](rxGetInfoXdf.md).

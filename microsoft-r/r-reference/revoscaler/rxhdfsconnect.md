@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxHdfsConnect function (RevoScaleR) " 
+title: "rxHdfsConnect function (revoAnalytics) | Microsoft Docs" 
 description: " Establishes a connection from RevoScaleR to the Hadoop Distributed File System (HDFS).  " 
-keywords: "(RevoScaleR), rxHdfsConnect, file, connection" 
+keywords: "(revoAnalytics), rxHdfsConnect, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -75,9 +75,9 @@ before initializing **rhdfs**.
  
 invisibly, the return value of `rxOptions`.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxCrossTabs function (RevoScaleR) " 
+title: "rxCrossTabs function (revoAnalytics) | Microsoft Docs" 
 description: " Use rxCrossTabs to create contingency tables from cross- classifying factors using a formula interface. It performs equivalent computations to the [rxCube](rxCube.md) function, but returns its results in a different way. " 
-keywords: "(RevoScaleR), rxCrossTabs, print.rxCrossTabs, summary.rxCrossTabs, mean.rxCrossTabs, as.list.rxCrossTabs, category, models" 
+keywords: "(revoAnalytics), rxCrossTabs, print.rxCrossTabs, summary.rxCrossTabs, mean.rxCrossTabs, as.list.rxCrossTabs, category, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -265,8 +265,8 @@ formula used in the `rxCrossTabs` call.
 character vector of dependent variable names as extracted from the formula.
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

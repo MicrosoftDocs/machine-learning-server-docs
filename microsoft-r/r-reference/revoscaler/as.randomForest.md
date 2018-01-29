@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "as.randomForest function (RevoScaleR) " 
+title: "as.randomForest function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing decision tree results to an randomForest object. " 
-keywords: "(RevoScaleR), as.randomForest, as.randomForest.rxDForest, as.randomForest.rxDTree, as.randomForest.rpart, category, models" 
+keywords: "(revoAnalytics), as.randomForest, as.randomForest.rxDForest, as.randomForest.rxDTree, as.randomForest.rpart, category, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -84,8 +84,8 @@ In many cases, this method can be used to coerce an object for use with the **pm
 an object of class randomForest.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

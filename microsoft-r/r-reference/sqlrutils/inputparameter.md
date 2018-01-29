@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Input Parameter for SQL Stored Procedure: Class Generator" 
-description: " `InputParameter`: generates an InputParameter Object, that captures the information about the input parameters of the R function that is to be embedded into a SQL Server Stored Procesure. Those will become the input parameters of the stored procedure. Supported R types of the input parameters are POSIXct, numeric, character, integer, logical, and raw. " 
-keywords: "sqlrutils, InputParameter" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "03/23/2017" 
+title: "InputParameter function (sqlrutils) | Microsoft Docs" 
+description: " InputParameter: generates an InputParameter Object, that captures the information about the input parameters of the R function that is to be embedded into a SQL Server Stored Procesure. Those will become the input parameters of the stored procedure. Supported R types of the input parameters are POSIXct, numeric, character, integer, logical, and raw. " 
+keywords: "(sqlrutils), InputParameter" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #InputParameter: Input Parameter for SQL Stored Procedure: Class Generator
-
- Applies to version 1.0.0 of package sqlrutils.
- 
+ #InputParameter: Input Parameter for SQL Stored Procedure: Class Generator 
  ##Description
  
 `InputParameter`: generates an InputParameter Object, that captures the
@@ -53,32 +49,32 @@ parameters are POSIXct, numeric, character, integer, logical, and raw.
 
    
   
- ### name
+ ### `name`
  A character string, the name of the input parameter object. 
   
   
   
- ### type
+ ### `type`
  A character string representing the R type of the input parameter object. 
   
   
   
- ### defaultValue
+ ### `defaultValue`
  Default value of the parameter. Not supported for "raw". 
   
   
   
- ### defaultQuery
+ ### `defaultQuery`
  A character string specifying the default query that will retrieve the data if a different query is not provided at the time of the execution of the stored procedure. 
   
   
   
- ### value
- A value that will be used for the parameter. in the next run of the stored procedure. 
+ ### `value`
+ A value that will be used for the parameter in the next run of the stored procedure. 
   
   
   
- ### enableOutput
+ ### `enableOutput`
  Make this an Input/Output Parameter 
   
  
@@ -93,14 +89,17 @@ InputParameter Object
    
   ## Not run:
  
+  # See ?StoredProcedure for creating the `cleandata` table.
+  # and ?executeStoredProcedure for creating the `rdata` table. 
+
   # score1 makes a batch prediction given clean data(indata),
   # model object(model_param), and the new name of the variable
   # that is being predicted
   score1 <- function(indata, model_param, predVarName) {
   indata[,"DayOfWeek"] <- factor(indata[,"DayOfWeek"], levels=c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"))
   # The connection string
-  conStr <- paste("Driver={SQL Server};Server=.;Database=RevoTestDB;",
-                  "Trusted_Connection=TRUE;", sep = "")
+  conStr <- paste("Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;",
+                  "Trusted_Connection=Yes;", sep = "")
   # The compute context
   computeContext <- RxInSqlServer(numTasks=4, connectionString=conStr)
   mm <- rxReadObject(as.raw(model_param))
@@ -114,8 +113,8 @@ InputParameter Object
                       overwrite = TRUE)
 }
 # connections string
-conStr <- paste0("Driver={SQL Server};Server=.;Database=RevoTestDB;",
-                 "Trusted_Connection=TRUE;")
+conStr <- paste0("Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;",
+                 "Trusted_Connection=Yes;")
 # create InpuData Object for an input parameter that is a data frame
 id <- InputData(name = "indata", defaultQuery = "SELECT * from cleanData")
 # InputParameter for the model_param input variable
@@ -131,5 +130,4 @@ sp_df_df <- StoredProcedure(score1, "sTest", id, model, name,
   
  
 ```
- 
  

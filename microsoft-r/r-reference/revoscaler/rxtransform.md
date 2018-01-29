@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxTransform function (RevoScaleR) " 
+title: "rxTransform function (revoAnalytics) | Microsoft Docs" 
 description: " Description of the recommended method for creating *on the fly* variables. " 
-keywords: "(RevoScaleR), rxTransform, transformFunc, transformVars, models" 
+keywords: "(revoAnalytics), rxTransform, transformFunc, transformVars, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

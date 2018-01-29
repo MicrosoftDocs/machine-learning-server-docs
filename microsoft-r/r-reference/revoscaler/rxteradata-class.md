@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxTeradata-class function (RevoScaleR) " 
+title: "RxTeradata-class class (revoAnalytics) | Microsoft Docs" 
 description: " Teradata data source connection class. " 
-keywords: "(RevoScaleR), RxTeradata-class, show,RxTeradata-method, classes" 
+keywords: "(revoAnalytics), RxTeradata-class, show,RxTeradata-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,8 +55,8 @@ Class RxDataSource, directly.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

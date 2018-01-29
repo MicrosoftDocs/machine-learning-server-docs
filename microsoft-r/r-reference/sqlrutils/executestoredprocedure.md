@@ -1,37 +1,33 @@
 --- 
  
 # required metadata 
-title: "Execute a SQL Stored Procedure" 
-description: " `executeStoredProcedure`: Executes a stored procedure registered with the database " 
-keywords: "sqlrutils, executeStoredProcedure" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "03/23/2017" 
+title: "executeStoredProcedure function (sqlrutils) | Microsoft Docs" 
+description: " executeStoredProcedure: Executes a stored procedure registered with the database " 
+keywords: "(sqlrutils), executeStoredProcedure" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #executeStoredProcedure: Execute a SQL Stored Procedure
-
- Applies to version 1.0.0 of package sqlrutils.
- 
+ #executeStoredProcedure: Execute a SQL Stored Procedure 
  ##Description
  
 `executeStoredProcedure`: Executes a stored procedure registered with the database
@@ -48,22 +44,22 @@ ms.technology: "r-server"
 
    
   
- ### sqlSP
+ ### `sqlSP`
  a valid StoredProcedure Object 
   
   
   
- ###  ...
+ ### ` ...`
  Optional input and output parameters for the stored procedure. All of the parameters that do not have default queries or values assigned to them must be provided 
   
   
   
- ### connectionString
+ ### `connectionString`
  A character string (must be provided if the StoredProcedure object was created without a connection string). This function requires using an ODBC driver which supports ODBC 3.8 functionality. 
   
   
   
- ### verbose
+ ### `verbose`
  Boolean. Whether to print out the command used to execute the stored procedure 
   
  
@@ -84,42 +80,46 @@ Otherwise it will fail.
    
   ## Not run:
  
+  # See ?StoredProcedure for creating the "cleandata" table.
+
   ############# Example 1 #############
-  # etl1 - reads from and write directly to the database
-  etl1 <- function() {
-    # The query to get the data
-    qq <- "select top 10000 ArrDelay,CRSDepTime,DayOfWeek from AirlineDemoSmall"
-    # The connection string
-    conStr <- paste("Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;",
-                    "Trusted_Connection=Yes;", sep = "")
-    # The data source - retrieves the data from the database
-    dsSqls <- RxSqlServerData(sqlQuery=qq, connectionString=conStr)
-    # The destination data source
-    dsSqls2 <- RxSqlServerData(table ="cleanData",  connectionString = conStr)
-    # A transformation function
-    transformFunc <- function(data) {
-      data$CRSDepHour <- as.integer(trunc(data$CRSDepTime))
-      return(data)
-    }
-    # The transformation variables
-    transformVars <- c("CRSDepTime")
-    rxDataStep(inData = dsSqls,
-               outFile = dsSqls2,
-               transformFunc=transformFunc,
-               transformVars=transformVars,
-               overwrite = TRUE)
+  # Create a linear model and store in the "rdata" table.
+  train <- function(in_df) {
+    factorLevels <- c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+    in_df[,"DayOfWeek"] <- factor(in_df[,"DayOfWeek"], levels=factorLevels)
+    # The model formula
+    formula <- ArrDelay ~ CRSDepTime + DayOfWeek + CRSDepHour:DayOfWeek
+
+    # Train the model
+    mm <- rxLinMod(formula, data = in_df, transformFunc = NULL, transformVars = NULL)
+
+    # Store the model into the database
+    # rdata needs to be created beforehand
+    conStr <- paste0("Driver={ODBC Driver 13 for SQL Server};Server=.;",
+                     "Database=RevoTestDB;Trusted_Connection=Yes;")
+    out.table = "rdata"
+    # write the model to the table
+    ds = RxOdbcData(table = out.table, connectionString = conStr)
+
+    rxWriteObject(ds, "linmod.v1", mm, keyName = "key",
+                  valueName = "value")
     return(NULL)
   }
-  # Create a StoredProcedure object
-  sp_ds_ds <- StoredProcedure(etl1, "spTest",
-                         filePath = ".", dbName ="RevoTestDB")
-  # Define a connection string
-  conStr <- paste0("Driver={ODBC Driver 13 for SQL Server};Server=.;",
-                   "Database=RevoTestDB;Trusted_Connection=Yes;")
-  # register the stored procedure with a database
-  registerStoredProcedure(sp_ds_ds, conStr)
-  # execute the stored procedure
-  executeStoredProcedure(sp_ds_ds, connectionString = conStr)
+
+  conStr <- "Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;Trusted_Connection=Yes;"
+  # create  an InputData object for the input data frame in_df
+  indata <- InputData("in_df",
+                      defaultQuery = paste0("select top 10000 ArrDelay,CRSDepTime,",
+                                            "DayOfWeek,CRSDepHour from cleanData"))
+  # create the sql server stored procedure object
+  trainSP1 <- StoredProcedure('train', "spTrain_df_to_df", indata,
+                              dbName = "RevoTestDB",
+                              connectionString = conStr,
+                              filePath = ".")
+  # spRegisterSp and executeStoredProcedure do not require a connection string since we
+  # provided one when we created trainSP1
+  registerStoredProcedure(trainSP1)
+  executeStoredProcedure(trainSP1, verbose = TRUE)
 
 
   ############# Example 2 #############
@@ -153,7 +153,7 @@ outData <- OutputData("result")
 # create OutputParameter object for non data frame variable inside the return list
 pvOutParam <- OutputParameter("pvOutParam", "numeric")
 scoreSP1 <- StoredProcedure(score1, "spScore_df_param_df", indata, model, predVarNameInParam, outData, pvOutParam,
-                            filePath = path)
+                            filePath = ".")
 conStr <- "Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;Trusted_Connection=Yes;"
 # connection string necessary for registrations and execution
 # since we did not pass it to StoredProcedure
@@ -166,5 +166,4 @@ model$params[[1]]
   
  
 ```
- 
  

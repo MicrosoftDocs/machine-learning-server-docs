@@ -6,8 +6,8 @@ description: "Machine Learning Server with Apache Hadoop MapReduce, RevoScaleR f
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/13/2017"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -25,11 +25,12 @@ ms.technology: "r-server"
 
 # How to use RevoScaleR with Hadoop
 
-## Overview
-
-This guide is an introduction to using the RevoScaleR functions in a **RevoScaleR** package in a Hadoop distributed computing environment. RevoScaleR functions offer scalable and extremely high-performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ScaleR’s big data capabilities with MapReduce.
+This guide is an introduction to using the [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md) in an Apache Hadoop distributed computing environment. RevoScaleR functions offer scalable and extremely high-performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ScaleR’s big data capabilities with MapReduce.
 
 While this guide is not a Hadoop tutorial, no prior experience in Hadoop is required to complete the tutorial. If you can connect to your Hadoop cluster, this guide walks you through the rest.
+
+> [!Note]
+> The RxHadoopMR compute context for Hadoop MapReduce is deprecated. We recommend using [RxSpark](../r-reference/revoscaler/rxspark.md) as a replacement. For guidance, see [How to use RevoScaleR in a Spark compute context](how-to-revoscaler-spark.md).
 
 **Data Sources and Functions Supported in Hadoop**
 

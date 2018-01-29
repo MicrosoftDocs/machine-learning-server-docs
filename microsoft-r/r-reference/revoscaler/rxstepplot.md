@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxStepPlot function (RevoScaleR) " 
+title: "rxStepPlot function (revoAnalytics) | Microsoft Docs" 
 description: " Plot stepwise coefficients for rxLinMod, rxLogit and rxGlm objects. " 
-keywords: "(RevoScaleR), rxStepPlot, hplot" 
+keywords: "(revoAnalytics), rxStepPlot, hplot" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -74,8 +74,8 @@ Plot stepwise coefficients for `rxLinMod`, `rxLogit` and `rxGlm` objects.
  
 the nonzero stepwise coefficients are returned invisibly.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

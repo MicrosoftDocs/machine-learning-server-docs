@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxDTreeBestCp function (RevoScaleR) " 
+title: "rxDTreeBestCp function (revoAnalytics) | Microsoft Docs" 
 description: " Attempts to find the cp for optimal model pruning, where optimal is defined by default in terms of the 1 Standard Error criterion of Breiman, et al. " 
-keywords: "(RevoScaleR), rxDTreeBestCp, models, tree, classif, regression" 
+keywords: "(revoAnalytics), rxDTreeBestCp, models, tree, classif, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -70,9 +70,9 @@ pruned in a single call.
  
 a numeric scalar.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

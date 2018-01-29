@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxXdfData function (RevoScaleR) " 
+title: "RxXdfData function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxXdfData, which extends RxDataSource. " 
-keywords: "(RevoScaleR), RxXdfData, XdfData, head.RxXdfData, summary.RxXdfData, tail.RxXdfData, file, connection" 
+keywords: "(revoAnalytics), RxXdfData, XdfData, head.RxXdfData, summary.RxXdfData, tail.RxXdfData, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -81,7 +81,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
     
  ### `stringsAsFactors`
- logical indicating whether or not to convert strings into factors in R (for reader mode only). 
+ logical indicating whether or not to convert strings into factors in R (for reader mode only). It currently has no effect. 
   
   
     
@@ -101,7 +101,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
      
  ### `createPartitionSet`
- logical value or `NULL`. Used only when writing.  If `TRUE`, a set of files for partitioned Xdf will be created when assigning this RxXdfData object for `outData` of rxPartition. Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdf files (each file stores data of a single data partition, see rxPartition for details). In the metadata subdirectory there is a single .xdfp file, which contains the meta data for all of the  .xdf files in the  data subdirectory. The partitioned Xdf object is currently supported only in rxPartition and [rxGetPartitions](rxGetPartitions.md) 
+ logical value or `NULL`. Used only when writing.  If `TRUE`, a set of files for partitioned Xdf will be created when assigning this RxXdfData object for `outData` of [rxPartition](rxPartition.rd.md). Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdf files (each file stores data of a single data partition, see [rxPartition](rxPartition.rd.md) for details). In the metadata subdirectory there is a single .xdfp file, which contains the meta data for all of the  .xdf files in the  data subdirectory. The partitioned Xdf object is currently supported only in [rxPartition](rxPartition.rd.md) and [rxGetPartitions](rxGetPartitions.md) 
   
    
      
@@ -150,8 +150,8 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
  
 object of class RxXdfData.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

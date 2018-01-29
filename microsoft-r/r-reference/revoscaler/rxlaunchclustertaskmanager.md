@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxLaunchClusterJobManager function (RevoScaleR) " 
+title: "rxLaunchClusterJobManager function (revoAnalytics) | Microsoft Docs" 
 description: " Launches the job management UI (if available) for a compute context. Currently this is only available for RxHadoopMR and RxSpark compute contexts. " 
-keywords: "(RevoScaleR), rxLaunchClusterJobManager, rxLaunchClusterJobManager,character-method, rxLaunchClusterJobManager,RxHadoopMR-method, IO" 
+keywords: "(revoAnalytics), rxLaunchClusterJobManager, rxLaunchClusterJobManager,character-method, rxLaunchClusterJobManager,RxHadoopMR-method, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -65,9 +65,9 @@ For other compute contexts, if compute context is not supplied, current compute 
 UI is available for the context, this function will report an error.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
@@ -77,7 +77,7 @@ UI is available for the context, this function will report an error.
    
   ## Not run:
  
-myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020)
+myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020)
 rxOptions(computeContext=myCluster)
 rxLaunchClusterJobManager(myCluster)
  ## End(Not run) 

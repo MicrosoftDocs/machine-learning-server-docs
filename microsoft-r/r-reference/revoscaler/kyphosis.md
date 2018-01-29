@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "Kyphosis function (RevoScaleR) " 
+title: "Kyphosis data (revoAnalytics) | Microsoft Docs" 
 description: " The kyphosis data in .xdf format. " 
-keywords: "(RevoScaleR), Kyphosis, Kyphosis.xdf, datasets" 
+keywords: "(revoAnalytics), Kyphosis, kyphosis.xdf, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -44,8 +44,8 @@ John M. Chambers and Trevor Hastie, Ed., (1992)
 *Statistical Models in S*. Belmont, CA. Wadsworth.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
@@ -57,7 +57,7 @@ kyphosis
  ```
    
   Kyphosis <- rxDataStep(inData = file.path(rxGetOption("sampleDataDir"),
-                        "Kyphosis.xdf"))
+                        "kyphosis.xdf"))
   rxSummary(~ Kyphosis + Age + Number + Start, data = Kyphosis)
  
 ```

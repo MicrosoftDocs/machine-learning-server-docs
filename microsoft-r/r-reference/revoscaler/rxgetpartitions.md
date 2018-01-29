@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetPartitions function (RevoScaleR) " 
+title: "rxGetPartitions function (revoAnalytics) | Microsoft Docs" 
 description: " Get partitions enumeration of a partitioned Xdf data source. " 
-keywords: "(RevoScaleR), rxGetPartitions, GetPartitions" 
+keywords: "(revoAnalytics), rxGetPartitions, GetPartitions" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -47,7 +47,7 @@ Get partitions enumeration of a partitioned Xdf data source.
    
     
  ### `data`
- an existing partitioned data source object which was created by [RxXdfData](RxXdfData.md) with `createPartitionSet = TRUE` and constructed by rxPartition. 
+ an existing partitioned data source object which was created by [RxXdfData](RxXdfData.md) with `createPartitionSet = TRUE` and constructed by [rxPartition](rxPartition.rd.md). 
   
  
  
@@ -59,19 +59,19 @@ Get partitions enumeration of a partitioned Xdf data source.
  
  ##Value
  
-Data frame with `(n+1)` columns, the first `n` columns are partitioning columns specified by `varsToPartition` in rxPartition and the `(n+1)th` column is a data source column where each row contains an Xdf data source object of one partition.
+Data frame with `(n+1)` columns, the first `n` columns are partitioning columns specified by `varsToPartition` in [rxPartition](rxPartition.rd.md) and the `(n+1)th` column is a data source column where each row contains an Xdf data source object of one partition.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  
  ##See Also
  
 RXdfData,
-rxPartition,
-rxExecBy
+[rxPartition](rxPartition.rd.md),
+[rxExecBy](rxExecBy.rd.md)
    
  
  ##Examples

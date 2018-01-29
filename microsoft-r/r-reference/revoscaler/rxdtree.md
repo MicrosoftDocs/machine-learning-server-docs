@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxDTree function (RevoScaleR) " 
+title: "rxDTree function (revoAnalytics) | Microsoft Docs" 
 description: "     Fit classification and regression trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
-keywords: "(RevoScaleR), rxDTree, print.rxDTree, models, tree, classif, regression, classification" 
+keywords: "(revoAnalytics), rxDTree, print.rxDTree, models, tree, classif, regression, classification" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -174,7 +174,7 @@ for small or large data using parallel external memory algorithm.
   
     
  ### `findSplitsInParallel`
-  logical value.  If `TRUE`, optimal splits for each node are determined using parallelization methods;  this will typically speed up computation as the number of nodes on the same level is increased. 
+  logical value.  If `TRUE`, optimal splits for each node are determined using parallelization methods;  this will typically speed up computation as the number of nodes on the same level is increased. Note that when it is `TRUE`, the number of nodes being processed in parallel is also  printed to the console, interleaved with the number of rows read from the input data set. 
   
     
  ### `pruneCp`
@@ -311,9 +311,9 @@ resulting in `xVal * ((maxDepth + 1) + 1)` additional passes for cross validatio
 
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

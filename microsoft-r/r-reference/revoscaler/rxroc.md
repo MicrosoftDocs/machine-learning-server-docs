@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxRoc function (RevoScaleR) " 
+title: "rxRoc function (revoAnalytics) | Microsoft Docs" 
 description: " Compute and plot an ROC curve using actual and predicted values from binary classifier system " 
-keywords: "(RevoScaleR), rxRoc, rxRocCurve, rxAuc, as.data.frame.rxRoc, plot.rxRoc, rxAuc.rxRoc, hplot" 
+keywords: "(revoAnalytics), rxRoc, rxRocCurve, rxAuc, as.data.frame.rxRoc, plot.rxRoc, rxAuc.rxRoc, hplot" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -175,9 +175,9 @@ variables: `threshold`, `sensitivity`, `specificity`, and
 The `rxAuc` S3 method for an `rxRoc` object returns the AUC (area
 under the curve) summary statistic.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxComputeContext function (RevoScaleR) " 
+title: "RxComputeContext function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for RxComputeContext S4 classes. " 
-keywords: "(RevoScaleR), RxComputeContext, file, connection" 
+keywords: "(revoAnalytics), RxComputeContext, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -64,14 +64,14 @@ or `RxComputeContext("RxInSqlServer", ...)` will create an RxInSqlServer instanc
 A type of RxComputeContext compute context object. This object may be used to in
 [rxSetComputeContext](rxSetComputeContext.md) or [rxOptions](rxOptions.md) to set the compute context.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
 [RxComputeContext-class](RxComputeContext-class.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxSpark](RxSpark.md),
 [RxInSqlServer](RxInSqlServer.md),
 [RxLocalSeq](RxLocalSeq.md),

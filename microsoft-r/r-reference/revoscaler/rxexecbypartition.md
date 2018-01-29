@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxExecByPartition function (RevoScaleR) " 
+title: "rxExecByPartition function (revoAnalytics) | Microsoft Docs" 
 description: " This feature allows users to run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables. In **RevoScaleR** version 9.1.0, we provide the necessary rx functions to be executed for funtionalities of By-group parallelism. This document will describe different scenarios of By-group parallelism, running in a number of supported compute contexts. " 
-keywords: "RevoScaleR, rxExecByPartition, partition, exec, group, execby, groupby" 
-author: "HeidiSteen" 
-manager: "jhubbard" 
-ms.date: "09/16/2017" 
+keywords: "(revoAnalytics), rxExecByPartition, partition, exec, group, execby, groupby" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -26,10 +26,7 @@ ms.custom: ""
  
  
  
- #rxExecByPartition: RevoScaleR By Group Parallelism
-
- 
- 
+ #rxExecByPartition: RevoScaleR By Group Parallelism 
  ##Description
  
 This feature allows users to run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables. In **RevoScaleR** version 9.1.0, we provide the necessary rx functions to be executed for funtionalities of By-group parallelism. This document will describe different scenarios of By-group parallelism, running in a number of supported compute contexts.
@@ -60,19 +57,19 @@ In **RevoScaleR** version 9.1.0, we introduce three new rx functions for partiti
 
 
 * 
- [rxExecBy](rxExecBy.md)() - to partition an input data source and execute user function on each partition in parallel. If the input data source is already partitioned, the function will skip the partitioning step and directly trigger computation for user function on partitions.
+ [rxExecBy](rxExecBy.rd.md)() - to partition an input data source and execute user function on each partition in parallel. If the input data source is already partitioned, the function will skip the partitioning step and directly trigger computation for user function on partitions.
 
 * 
- rxPartition() - to partition an input data source and store data partitions on disk. For this functionality, a new xdf file format, called Partitioned Xdf (PXdf) is introduced for storing data partitions as well as partition metadata information on disk. Partitioned Xdf file can then be loaded into an in-memory Partitioned Xdf object using `RxXdfData` to be used for performing computation on data partitions repeatedly by [rxExecBy](rxExecBy.md).
+ [rxPartition](rxPartition.rd.md)() - to partition an input data source and store data partitions on disk. For this functionality, a new xdf file format, called Partitioned Xdf (PXdf) is introduced for storing data partitions as well as partition metadata information on disk. Partitioned Xdf file can then be loaded into an in-memory Partitioned Xdf object using `RxXdfData` to be used for performing computation on data partitions repeatedly by [rxExecBy](rxExecBy.rd.md).
 
 * 
  [rxGetPartitions](rxGetPartitions.md)() - to enumerate unique partitioning values in an existing partitioned Xdf and return it as a data frame
 
 
 
-**Running analytics computation in parallel on partitioned data set with [rxExecBy](rxExecBy.md)()**
+**Running analytics computation in parallel on partitioned data set with [rxExecBy](rxExecBy.rd.md)()**
 
-Input data set provided as a data source object can be data sources of different types, such as data frame, text data, Xdf files, ODBC data source, SQL Server data source, etc. In version 9.1.0, [rxExecBy](rxExecBy.md)() is supported in local compute context, SQL Server compute context and Spark compute context. Depending on input data sources and compute context, [rxExecBy](rxExecBy.md)() will execute in different modes which are summarized in the following table:
+Input data set provided as a data source object can be data sources of different types, such as data frame, text data, Xdf files, ODBC data source, SQL Server data source, etc. In version 9.1.0, [rxExecBy](rxExecBy.rd.md)() is supported in local compute context, SQL Server compute context and Spark compute context. Depending on input data sources and compute context, [rxExecBy](rxExecBy.rd.md)() will execute in different modes which are summarized in the following table:
 
 | Col  1 | Col  2 | Col  3 |
 | :---| :---:| :---: |
@@ -82,7 +79,7 @@ Input data set provided as a data source object can be data sources of different
 |      SQL Server data source or ODBC data source with *table* specified  |  Do streaming with SQL rewrite partition queries and execute computation on streaming partitions  |  Do streaming with SQL rewrite partition queries and execute computation on streaming  |
    
 
-As shown in the table, when running analytics on local compute context, PXdf is first temporarily generated and saved on disk; then computation are applied on the generated PXdf. The example for running this scenario can be found in the [rxExecBy](rxExecBy.md)() documentation. It's worth to note that the temporary PXdf generated will be removed once the computation is completed. If user plans to run the analytics multiple times with the same data set and different user functions, it would be more efficient to go with the following recommended flow:
+As shown in the table, when running analytics on local compute context, PXdf is first temporarily generated and saved on disk; then computation are applied on the generated PXdf. The example for running this scenario can be found in the [rxExecBy](rxExecBy.rd.md)() documentation. It's worth to note that the temporary PXdf generated will be removed once the computation is completed. If user plans to run the analytics multiple times with the same data set and different user functions, it would be more efficient to go with the following recommended flow:
 
 
 
@@ -90,25 +87,25 @@ As shown in the table, when running analytics on local compute context, PXdf is 
  Create a new partitioned Xdf object with [RxXdfData](RxXdfData.md)() by specifying `createPartitionSet = TRUE`.
 
 1 
- Construct data partitions for the newly created PXdf object from an input data set and save it to disk with rxPartition().
+ Construct data partitions for the newly created PXdf object from an input data set and save it to disk with [rxPartition](rxPartition.rd.md)().
 
 1 
- Run analysis with user defined function on the data partitions of the PXdf object with [rxExecBy](rxExecBy.md)(). This step can be repeated multiple times with different user defined functions and different subsets of data partitions using a `filterFunc` specified as an argument of [rxExecBy](rxExecBy.md)().
+ Run analysis with user defined function on the data partitions of the PXdf object with [rxExecBy](rxExecBy.rd.md)(). This step can be repeated multiple times with different user defined functions and different subsets of data partitions using a `filterFunc` specified as an argument of [rxExecBy](rxExecBy.rd.md)().
 
 
 
  
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
 [RxXdfData](RxXdfData.md),
-[rxExecBy](rxExecBy.md),
-rxPartition,
+[rxExecBy](rxExecBy.rd.md),
+[rxPartition](rxPartition.rd.md),
 [rxGetPartitions](rxGetPartitions.md),
 [rxSplit](rxSplitXdf.md),
 [rxExec](rxExec.md),

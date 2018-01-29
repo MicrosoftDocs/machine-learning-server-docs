@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxSerializeModel function (RevoScaleR) " 
+title: "rxSerializeModel function (revoAnalytics) | Microsoft Docs" 
 description: "   Serialize a **RevoScaleR**/**MicrosoftML** model in raw format to enable saving the model. This allows model to be loaded into SQL Server for real-time scoring. " 
-keywords: "(RevoScaleR), rxSerializeModel, rxUnserializeModel" 
+keywords: "(revoAnalytics), rxSerializeModel, rxUnserializeModel" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -131,9 +131,9 @@ The following is the list of models that are currently supported in real-time sc
 
 `rxUnserializeModel` returns original R model object. If metadata is also present returns a list containing the original model object and metadata.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxMarginals function (RevoScaleR) " 
+title: "rxMarginals function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain marginal statistics on rxCrossTabs contingency tables. " 
-keywords: "(RevoScaleR), rxMarginals, rxMarginals.rxCrossTabs, category, models" 
+keywords: "(revoAnalytics), rxMarginals, rxMarginals.rxCrossTabs, category, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -71,8 +71,8 @@ list for each contingency table stored in an rxCrossTabs object. Each element
 of the list contains a list of the marginal means (row, column, and grand) if
 `output` is `"means"` or marginal sums otherwise.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

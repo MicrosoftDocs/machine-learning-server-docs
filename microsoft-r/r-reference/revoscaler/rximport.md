@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxImport function (RevoScaleR) " 
-description: " Import data into an .xdf file or data.frame. " 
-keywords: "(RevoScaleR), rxImport, file, connection" 
+title: "rxImport function (revoAnalytics) | Microsoft Docs" 
+description: " Import data into an .xdf file or data.frame. rxImport is multi-threaded. " 
+keywords: "(revoAnalytics), rxImport, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -28,7 +28,7 @@ ms.custom: ""
  #rxImport: Import Data to .xdf or data frame 
  ##Description
  
-Import data into an .xdf file or `data.frame`.
+Import data into an .xdf file or `data.frame`. rxImport is multi-threaded.
  
  
  ##Usage
@@ -271,8 +271,8 @@ data frame is returned.  If an `outFile` is specified, an
 [RxXdfData](RxXdfData.md) data source is returned that can be used in
 subsequent RevoScaleR analysis.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "as.naiveBayes function (RevoScaleR) " 
+title: "as.naiveBayes function (revoAnalytics) | Microsoft Docs" 
 description: " Converts RevoScaleR rxNaiveBayes objects to a (limited) e1071 naiveBayes object. " 
-keywords: "(RevoScaleR), as.naiveBayes, as.naiveBayes.rxNaiveBayes, category, models" 
+keywords: "(revoAnalytics), as.naiveBayes, as.naiveBayes.rxNaiveBayes, category, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -69,8 +69,8 @@ The underlying structure of the output object will be a subset of that produced 
 an object of class naiveBayes from **e1071**.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

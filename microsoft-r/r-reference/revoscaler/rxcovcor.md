@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxCovCor function (RevoScaleR) " 
+title: "rxCovCor function (revoAnalytics) | Microsoft Docs" 
 description: " Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables. " 
-keywords: "(RevoScaleR), rxCovCor, rxCov, rxCor, rxSSCP, print.rxCovCor, univar, multivariate" 
+keywords: "(revoAnalytics), rxCovCor, rxCov, rxCor, rxSSCP, print.rxCovCor, univar, multivariate" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -283,8 +283,8 @@ For `rxCor`, a correlation matrix.
 For `rxSSCP`, a sum of squares/cross-product matrix.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

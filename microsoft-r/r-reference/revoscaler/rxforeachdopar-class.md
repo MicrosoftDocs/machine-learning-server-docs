@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxForeachDoPar-class function (RevoScaleR) " 
+title: "RxForeachDoPar-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Class for the RevoScaleR Compute Context using one of the foreach dopar back ends.   " 
-keywords: "(RevoScaleR), RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
+keywords: "(revoAnalytics), RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -55,8 +55,8 @@ Class RxComputeContext, directly.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
@@ -65,7 +65,7 @@ Class RxComputeContext, directly.
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md).
+RxHadoopMR.
 
    
  ##Examples

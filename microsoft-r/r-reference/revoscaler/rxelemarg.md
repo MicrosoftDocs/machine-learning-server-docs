@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxElemArg function (RevoScaleR) " 
+title: "rxElemArg function (revoAnalytics) | Microsoft Docs" 
 description: " Allows different argument values to be passed to different (named and unnamed) nodes or cores through the elipsis argument for rxExec. A vector or list of the argument values is used. " 
-keywords: "(RevoScaleR), rxElemArg, IO" 
+keywords: "(revoAnalytics), rxElemArg, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -73,8 +73,8 @@ lists/vectors must be the same.
  
 x is returned with attributes modified for use by rxExec.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
@@ -89,7 +89,7 @@ x is returned with attributes modified for use by rxExec.
   ## Not run:
  
 # Setup a Spark compute context
-myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = TRUE)
+myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020, wait = TRUE)
 rxOptions( computeContext = myCluster )
 
 # Create a function to be run on multiple cores

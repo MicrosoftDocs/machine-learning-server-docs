@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxGetAvailableNodes function (RevoScaleR) " 
+title: "rxGetAvailableNodes function (revoAnalytics) | Microsoft Docs" 
 description: " Gets a list of operational nodes on a cluster. Note that this function will attempt to connect to the cluster when executed. " 
-keywords: "(RevoScaleR), rxGetAvailableNodes, IO" 
+keywords: "(revoAnalytics), rxGetAvailableNodes, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -60,9 +60,9 @@ Note that this function will attempt to connect to the cluster when executed.
  
 a character vector of node names, or `NULL`.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

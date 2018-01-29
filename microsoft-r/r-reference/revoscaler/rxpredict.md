@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxPredict function (RevoScaleR) " 
+title: "rxPredict function (revoAnalytics) | Microsoft Docs" 
 description: " Compute predicted values and residuals using rxLinMod, rxLogit and rxGlm objects. " 
-keywords: "(RevoScaleR), rxPredict, rxPredict.default, methods, models, regression" 
+keywords: "(revoAnalytics), rxPredict, rxPredict.default, methods, models, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -60,12 +60,12 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `data`
- An [RxXdfData](RxXdfData.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](RxHadoopMR.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
+ An [RxXdfData](RxXdfData.md) data source object to be used for predictions. If not using a distributed compute context such as RxHadoopMR, a data frame,  or a character string specifying the input .xdf file can also be used.  
   
   
     
  ### `outData`
- file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, a character string specifying  the output ï¿½.xdfï¿½ file, a RxXdfData object, a RxOdbcData data source, or a RxSqlServerData  data source. `outData` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
+ file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, a character string specifying  the output ‘.xdf’ file, a RxXdfData object, a RxOdbcData data source, or a RxSqlServerData  data source. `outData` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
   
   
     
@@ -278,8 +278,8 @@ in the data) have no effect.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

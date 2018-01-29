@@ -1,40 +1,36 @@
 --- 
  
 # required metadata 
-title: "Output Data for SQL Stored Procedure: Class Generator" 
-description: " `OutputData`: generates an OutputData Object, that captures the information about the data frame that needs to be returned after the execution of the R function embedded into the stored procedure. This object must be created if the R function is returning a named list, where one of the items in the list is a data frame. The return list can contain at most one data frame. " 
-keywords: "sqlrutils, OutputData" 
-author: "richcalaway"
-ms.author: "richcala" 
-manager: "jhubbard" 
-ms.date: "03/23/2017" 
+title: "OutputData function (sqlrutils) | Microsoft Docs" 
+description: " OutputData: generates an OutputData Object that captures the information about the data frame that needs to be returned after the execution of the R function embedded into the stored procedure. This object must be created if the R function is returning a named list, where one of the items in the list is a data frame. The return list can contain at most one data frame. " 
+keywords: "(sqlrutils), OutputData" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
 # optional metadata 
-#ROBOTS: "" 
-#audience: "" 
-#ms.devlang: "" 
-#ms.reviewer: "" 
-#ms.suite: "" 
-#ms.tgt_pltfrm: "" 
+ROBOTS: "" 
+audience: "" 
+ms.devlang: "" 
+ms.reviewer: "" 
+ms.suite: "" 
+ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
-#ms.custom: "" 
+ms.custom: "" 
  
 --- 
  
  
  
  
- #OutputData: Output Data for SQL Stored Procedure: Class Generator
-
- Applies to version 1.0.0 of package sqlrutils.
- 
+ #OutputData: Output Data for SQL Stored Procedure: Class Generator 
  ##Description
  
-`OutputData`: generates an OutputData Object, that captures the
+`OutputData`: generates an OutputData Object that captures the
 information about the data frame that needs to be returned after
 the execution of the R function embedded into the stored procedure.
 This object must be created if the R function is returning a named
@@ -53,7 +49,7 @@ list can contain at most one data frame.
 
    
   
- ### name
+ ### `name`
  A character string, the name of the data frame variable. 
   
  
@@ -68,6 +64,8 @@ OutputData Object
    
   ## Not run:
  
+  # See ?StoredProcedure for creating the "cleandata" table.
+
   # train 2 takes a data frame with clean data and outputs a model
   # as well as the data on the basis of which the model was built
   train2 <- function(in_df) {
@@ -77,7 +75,7 @@ OutputData Object
     # Train the model
     rxSetComputeContext("local")
     mm <- rxLinMod(formula, data=in_df, transformFunc=NULL, transformVars=NULL)
-    mm <- memCompress(serialize(mm, connection = NULL), type="gzip")
+    mm <- rxSerializeModel(mm)
     return(list(mm = mm, in_df = in_df))
   }
   # create InpuData Object for an input parameter that is a data frame
@@ -89,15 +87,19 @@ OutputData Object
   # create an OutputParameter object for the variable "mm" inside the return list
   out2 <- OutputParameter("mm", "raw")
   # connections string
-  conStr <- paste0("Driver={SQL Server};Server=.;Database=RevoTestDB;",
-                   "Trusted_Connection=TRUE;")
+  conStr <- paste0("Driver={ODBC Driver 13 for SQL Server};Server=.;Database=RevoTestDB;",
+                   "Trusted_Connection=Yes;")
   # create the stored procedure object
   sp_df_op <- StoredProcedure(train2, "spTest2", id, out1, out2,
                           filePath = ".")
+
+  registerStoredProcedure(sp_df_op, conStr)
+  result <- executeStoredProcedure(sp_df_op, connectionString = conStr)
+  # Get back the linear model.
+  mm <- rxUnserializeModel(result$params$op1)
  ## End(Not run) 
   
   
  
 ```
- 
  

@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxFindFileInPath function (RevoScaleR) " 
+title: "rxFindFileInPath function (revoAnalytics) | Microsoft Docs" 
 description: " Sequentially checks the entries in a delimited path string for a provided file name. " 
-keywords: "(RevoScaleR), rxFindFileInPath, IO" 
+keywords: "(revoAnalytics), rxFindFileInPath, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -68,9 +68,9 @@ with the same `fileName`, the first instance of a directory in the path containi
  
 Returns NULL if the target file is not found in any of the possible locations, or the path to the file (not including the file name) if it is found.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

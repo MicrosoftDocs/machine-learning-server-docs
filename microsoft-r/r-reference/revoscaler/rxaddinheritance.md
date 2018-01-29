@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxAddInheritance function (RevoScaleR) " 
+title: "rxAddInheritance function (revoAnalytics) | Microsoft Docs" 
 description: " 	Add a specific S3 class to the class of a compatible object. " 
-keywords: "(RevoScaleR), rxAddInheritance, rxAddInheritance.default, rxAddInheritance.rxDTree, models, tree, classif, regression" 
+keywords: "(revoAnalytics), rxAddInheritance, rxAddInheritance.default, rxAddInheritance.rxDTree, models, tree, classif, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -83,9 +83,9 @@ The original object, modified to include `inheritanceClass` as part of its `"cla
 In the case of `rxDTree` objects, the object may also be modified to include the `functions` component if it was
 previously `NULL`.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

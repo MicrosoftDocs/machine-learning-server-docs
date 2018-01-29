@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "AirlineData87to08 function (RevoScaleR) " 
+title: "AirlineData87to08 data (revoAnalytics) | Microsoft Docs" 
 description: " Airline on-time performance data from 1987 to 2008. " 
-keywords: "(RevoScaleR), AirlineData87to08, AirlineData87to08.xdf, datasets" 
+keywords: "(revoAnalytics), AirlineData87to08, AirlineData87to08.xdf, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -171,8 +171,8 @@ American Statistical Association Statistical Computing Group, Data Expo '09.
 
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##References

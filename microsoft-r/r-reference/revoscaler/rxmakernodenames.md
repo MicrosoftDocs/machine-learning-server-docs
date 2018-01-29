@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rxMakeRNodeNames function (RevoScaleR) " 
+title: "rxMakeRNodeNames function (revoAnalytics) | Microsoft Docs" 
 description: " Converts valid computer names into valid R variable names.  Should only be used when you want to guarantee that host  names are usable as variable names. " 
-keywords: "(RevoScaleR), rxMakeRNodeNames, IO" 
+keywords: "(revoAnalytics), rxMakeRNodeNames, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -78,9 +78,9 @@ from the associated computer. Note also that once a host name has been converted
 it is impossible to guarantee the reverse conversion.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

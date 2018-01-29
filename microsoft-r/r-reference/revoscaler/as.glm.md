@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "as.glm function (RevoScaleR) " 
+title: "as.glm function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing generalized linear model results to a glm object. " 
-keywords: "(RevoScaleR), as.glm, as.glm.rxLogit, as.glm.rxGlm" 
+keywords: "(revoAnalytics), as.glm, as.glm.rxLogit, as.glm.rxGlm" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -73,8 +73,8 @@ for use with the **pmml** package. **RevoScaleR** model objects that contain
 an object of class lm.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
