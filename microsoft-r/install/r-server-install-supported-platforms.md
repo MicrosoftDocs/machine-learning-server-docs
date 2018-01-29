@@ -24,11 +24,9 @@ ms.technology: "r-server"
 ---
 # Supported platforms for Machine Learning Server and Microsoft R Server
 
-This article specifies supported operating systems, distributions, and database platforms for all supported versions of Machine Learning Server and Microsoft R Server.
+Machine Learning Server runs *on-premises* on Windows, Linux, Hadoop Spark, and SQL Server. It is also *[in the cloud](machine-learning-server-in-the-cloud.md)* on Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
 
-Machine Learning Server is available **on-premises** on Windows, Linux, Hadoop Spark, and SQL Server. It is also **[in the cloud](machine-learning-server-in-the-cloud.md)** on Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
-
-This article identifies the supported platforms for on-premises installations.
+This article specifies the operating systems and platforms for on-premises installations of Machine Learning Server and Microsoft R Server.
 
 > [!Note]
 > 64-bit operating systems with x86-compatible Intel architecture (commonly known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips) are required on all platforms. Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
@@ -37,7 +35,7 @@ This article identifies the supported platforms for on-premises installations.
 
 R support includes [Microsoft R Open 3.4.3](https://mran.microsoft.com/open/), which is based on R-3.4.3. Python support is based on Anaconda 4.2 over Python 3.5. 
 
-[Operationalization features](../what-is-operationalization.md) have a .NET Core platform dependency, which is not available in some operating systems.
+[Operationalization](../what-is-operationalization.md) has a .NET Core platform dependency, which is not available in some operating systems.
 
 | Operating system or platform | SKU | Operationalization |
 |------------------------------|-----|--------------------|
