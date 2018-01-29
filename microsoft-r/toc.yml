@@ -1232,8 +1232,6 @@
           href: r-reference/revoscaler/rxxdftotext.md
       - name: Base R-to-RevoScaleR comparison
         href: r-reference/revoscaler/revoscaler-compared-to-base-r.md
-      - name: Functions by category
-        href: r-reference/revoscaler/revoanalytics-package.md
       - name: Defunct functions
         href: r-reference/revoscaler/revoscaler-defunct.md
       - name: Deprecated functions

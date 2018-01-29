@@ -71,7 +71,7 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](RxInSqlServer.md) an
   
     
  ### `filterFunc`
- the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by [rxPartition](rxPartition.rd.md) which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in RxHadoopMR and [RxSpark](RxSpark.md) compute contexts. 
+ the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by [rxPartition](rxPartition.md) which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in RxHadoopMR and [RxSpark](RxSpark.md) compute contexts. 
   
   
     
@@ -120,7 +120,7 @@ non-default loaded packages unless they are redefined or reloaded within the sco
  
  ##See Also
  
-[rxExecByPartition](rxExecByPartition.rd.md),
+[rxExecByPartition](rxExecByPartition.md),
 [rxImport](rxImport.md),
 [rxDataStep](rxDataStep.md),
 [RxTextData](RxTextData.md),

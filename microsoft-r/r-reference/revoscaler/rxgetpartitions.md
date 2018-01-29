@@ -47,7 +47,7 @@ Get partitions enumeration of a partitioned Xdf data source.
    
     
  ### `data`
- an existing partitioned data source object which was created by [RxXdfData](RxXdfData.md) with `createPartitionSet = TRUE` and constructed by [rxPartition](rxPartition.rd.md). 
+ an existing partitioned data source object which was created by [RxXdfData](RxXdfData.md) with `createPartitionSet = TRUE` and constructed by [rxPartition](rxPartition.md). 
   
  
  
@@ -59,7 +59,7 @@ Get partitions enumeration of a partitioned Xdf data source.
  
  ##Value
  
-Data frame with `(n+1)` columns, the first `n` columns are partitioning columns specified by `varsToPartition` in [rxPartition](rxPartition.rd.md) and the `(n+1)th` column is a data source column where each row contains an Xdf data source object of one partition.
+Data frame with `(n+1)` columns, the first `n` columns are partitioning columns specified by `varsToPartition` in [rxPartition](rxPartition.md) and the `(n+1)th` column is a data source column where each row contains an Xdf data source object of one partition.
  
  
  ##Author(s)
@@ -70,8 +70,8 @@ Data frame with `(n+1)` columns, the first `n` columns are partitioning columns 
  ##See Also
  
 RXdfData,
-[rxPartition](rxPartition.rd.md),
-[rxExecBy](rxExecBy.rd.md)
+[rxPartition](rxPartition.md),
+[rxExecBy](rxExecBy.md)
    
  
  ##Examples

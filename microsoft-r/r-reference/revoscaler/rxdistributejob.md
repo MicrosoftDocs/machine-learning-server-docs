@@ -81,7 +81,7 @@ An example of usage can be found in the **RevoPemaR** package.
 The result of the distributed computation.
  
  ##Author(s)
- Microsoft Corporation [mrspack@microsoft.com](mrspack@microsoft.com)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

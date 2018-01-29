@@ -95,7 +95,7 @@ In the current version, this function is single threaded.
  
  ##See Also
  
-[rxExecBy](rxExecBy.rd.md),
+[rxExecBy](rxExecBy.md),
 [RxXdfData](RxXdfData.md)
    
  ##Examples

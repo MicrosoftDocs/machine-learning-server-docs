@@ -124,21 +124,18 @@ This section lists the functions by category to give you an idea of how each one
 |[rxSetVarInfo](rxsetvarinfoxdf.md)  |Modifies variable information in an .xdf file or data frame. | 
 |[rxGetVarNames](rxgetvarnames.md)  |Retrieves variable names from a data source or data frame. | 
 |[rxCreateColInfo](rxcreatecolinfo.md)  |Generates a colInfo list from a data source. | 
-|[rxCompressXdf](rxcompressxdf.md)  |Compresses an existing .xdf file, or a directory of .xdf files. | 
-|[RxXdfData](rxxdfdata.md)  |Creates an efficient XDF data source object. | 
-|[RxTextData](rxtextdata.md)  |Creates a comma-delimited text data source object. | 
-|[RxSasData](rxsasdata.md)  |Creates a SAS data source object. | 
-|[RxSpssData](rxspssdata.md)  |Creates an SPSS data source object. | 
-|[RxOdbcData](rxodbcdata.md)  |Creates an ODBC data source object. | 
-|[RxTeradata](rxteradata.md)  |Creates a Teradata data source object. | 
-|[RxSqlServerData](rxsqlserverdata.md)  |Creates a SQL Server data source object | 
+|[rxCompressXdf](rxcompressxdf.md)  |Compresses an existing .xdf file, or a directory of .xdf files. |
+|[rxIsOpen](rxopen-methods.md) | Indicates whether a data source can be accessed.|
 |[rxOpen](rxopen-methods.md)  |Opens a data source for reading. | 
 |[rxClose](rxopen-methods.md)  |Closes a data source. | 
 |[rxReadNext](rxopen-methods.md)  |Read data from a source. | 
+|[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between RevoScaleR data sources.|
 |[rxSetFileSystem](rxsetfilesystem.md)  |Specify a file system type for data for import. | 
 |[rxGetFileSystem](rxsetfilesystem.md)  |Retrieve the current file system type. | 
 |[rxHdfsFileSystem](rxhdfsfilesystem.md)  |Creates an HDFS file system object. | 
 |[rxNativeFileSystem](rxnativefilesystem.md)  |Creates a native file system object. | 
+|[rxSqlServerDropTable](rxsqlserverdroptable.md) |Execute an SQL statement that drops a table. |
+|[rxSqlServerTableExists](rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existence. |
 
 <sup>*</sup> Signifies the most popular functions in this category.
 
@@ -220,18 +217,16 @@ This section lists the functions by category to give you an idea of how each one
 
 | Function name | Description |
 |---------------|-------------|
+|[RxComputeContext](rxcomputecontext.md) |Creates a compute context. |
 |[rxSetComputeContext](rxsetcomputecontext.md) |Sets a compute context. |
 |[rxGetComputeContext](rxsetcomputecontext.md) |Gets the current compute context. |
-|[RxHadoopMR](rxhadoopmr.md) |Creates an in-data, file-based Hadoop compute context. |
 |[RxSpark](rxspark.md) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. |
+|[RxHadoopMR](rxhadoopmr.md) |Creates an in-data, file-based Hadoop compute context. |
 |[RxInTeradata](rxinteradata.md) |Creates an in-database compute context for Teradata. |
 |[RxInSqlServer](rxinsqlserver.md) |Creates an in-database compute context for SQL Server. |
-|[RxComputeContext](rxcomputecontext.md) |Creates a compute context. |
 |[RxLocalSeq](rxlocalseq.md) |Creates a local compute context for rxExec using sequential computations. |
 |[RxLocalParallel](rxlocalparallel.md) |Creates a local compute context for rxExec using the ***parallel** package as backend. |
 |[RxForeachDoPar](rxforeachdopar.md) |Creates a compute context for rxExec using the current **foreach** parallel backend. |
-|[rxInstalledPackages](rxinstalledpackages.md) |Returns the list of installed packages for a compute context. |
-|[rxFindPackage](rxfindpackage.md) |Returns the path to one or more packages for a compute context. |
 
 <a name="distributed-computing-functions"></a>
 
@@ -268,10 +263,16 @@ Some of the utility functions are operational in local compute context only. Che
 |[rxGetEnableThreadPool](rxgetenablethreadpool.md) |Gets the current state of the thread pool, which on Linux can be either persistent or on-demand. |
 |[rxSetEnableThreadPool](rxgetenablethreadpool.md) |Sets the thread pool state. |
 |[rxStepControl](rxstepcontrol.md) | Construct a variable.selection argument for rxLinMod.|
-|[rxIsOpen](rxopen-methods.md) | Indicates whether a data source can be accessed.|
-|[rxSqlServerDropTable](rxsqlserverdroptable.md) |Execute an SQL statement that drops a table. |
-|[rxSqlServerTableExists](rxsqlserverdroptable.md) |Execute an SQL statement that checks for a table's existence. |
-|[rxWriteNext](rxopen-methods.md) | Writes the next chunk when moving data between RevoScaleR data sources.|
+
+## 10-Package management
+
+| Function name | Description |
+|---------------|-------------|
+|[rxInstallPackages](rxinstallpackages.md) |Installs a package.|
+|[rxInstalledPackages](rxinstalledpackages.md) |Returns the list of installed packages for a compute context. |
+|[rxFindPackage](rxfindpackage.md) |Returns the path to one or more packages for a compute context. |
+|[rxRemovePackages](rxremovepackages.md) |Removes installed packages from a compute context. |
+|[rxSqlLibPaths](rxsqllibpaths.md) |Gets the search path for the library trees for packages while executing inside the SQL server. |
 
 ## Next steps
 

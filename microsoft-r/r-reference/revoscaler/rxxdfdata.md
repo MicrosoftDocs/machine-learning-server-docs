@@ -101,7 +101,7 @@ tail  (x, n = 6L, addrownums = TRUE, reportProgress = 0L, ...)
   
      
  ### `createPartitionSet`
- logical value or `NULL`. Used only when writing.  If `TRUE`, a set of files for partitioned Xdf will be created when assigning this RxXdfData object for `outData` of [rxPartition](rxPartition.rd.md). Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdf files (each file stores data of a single data partition, see [rxPartition](rxPartition.rd.md) for details). In the metadata subdirectory there is a single .xdfp file, which contains the meta data for all of the  .xdf files in the  data subdirectory. The partitioned Xdf object is currently supported only in [rxPartition](rxPartition.rd.md) and [rxGetPartitions](rxGetPartitions.md) 
+ logical value or `NULL`. Used only when writing.  If `TRUE`, a set of files for partitioned Xdf will be created when assigning this RxXdfData object for `outData` of [rxPartition](rxPartition.md). Subdirectories data and metadata will be created. In the data subdirectory, the data will be split across a set of .xdf files (each file stores data of a single data partition, see [rxPartition](rxPartition.md) for details). In the metadata subdirectory there is a single .xdfp file, which contains the meta data for all of the  .xdf files in the  data subdirectory. The partitioned Xdf object is currently supported only in [rxPartition](rxPartition.md) and [rxGetPartitions](rxGetPartitions.md) 
   
    
      
