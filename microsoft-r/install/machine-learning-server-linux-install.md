@@ -95,7 +95,7 @@ After installation completes, software can be found at the following paths:
 
 <a name="how-to-install"></a>
 
-## <a name="Redhat">Install on Red Hat or CentOS</a>
+## <a name="redhat">Install on Red Hat or CentOS</a>
 
 Follow these instructions for Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS 6/7.
 
