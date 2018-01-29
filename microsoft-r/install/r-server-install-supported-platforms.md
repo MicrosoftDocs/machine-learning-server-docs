@@ -6,8 +6,8 @@ description: "A list of the operating systems supported by editions and versions
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/07/2017"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,14 +24,39 @@ ms.technology: "r-server"
 ---
 # Supported platforms for Machine Learning Server and Microsoft R Server
 
-This article specifies supported operating systems, distributions, and database platforms for all supported versions of Machine Learning Server, Microsoft R Server, Revolution R Server, and Revolution R Workstation.
+This article specifies supported operating systems, distributions, and database platforms for all supported versions of Machine Learning Server and Microsoft R Server.
+
+Machine Learning Server is available **on-premises** on Windows, Linux, Hadoop Spark, and SQL Server. It is also **[in the cloud](machine-learning-server-in-the-cloud.md)** on Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
+
+This article identifies the supported platforms for on-premises installations.
 
 > [!Note]
 > 64-bit operating systems with x86-compatible Intel architecture (commonly known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips) are required on all platforms. Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.
 
-## Machine Learning Server 9.2.1
+## Machine Learning Server 9.3
 
-Machine Learning Server is available **on-premises** on Windows, Linux, Hadoop Spark, and SQL Server. It is also **[in the cloud](machine-learning-server-in-the-cloud.md)** on Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
+R support includes [Microsoft R Open 3.4.3](https://mran.microsoft.com/open/), which is based on R-3.4.3. Python support is based on Anaconda 4.2 over Python 3.5. 
+
+[Operationalization features](../what-is-operationalization.md) have a .NET Core platform dependency, which is not available in some operating systems.
+
+| Operating system or platform | SKU | Operationalization |
+|------------------------------|-----|--------------------|
+| Windows 7 SP1, Windows 8.1, Windows 10 | [Machine Learning Server for Windows <br>(developer edition)](machine-learning-server-windows-install.md) | No |
+| Windows Server 2012 R2, Windows Server 2016 | [Machine Learning Server for Windows](machine-learning-server-windows-install.md) | Yes |
+| CentOS/ RedHat 6.x - 7.x  | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#redhat) | 6.x - No <br>7.x - Yes |
+| Ubuntu 14.04 and 16.04| [Machine Learning Server for Linux](machine-learning-server-linux-install.md#ubuntu)| No | 
+| SUSE Linux Enterprise Server 11 | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#suse)| No |
+| Cloudera CDH 5.7-5.12 | [Cloudera Manager installation](machine-learning-server-cloudera-install.md) | Edge nodes only |
+| Hortonworks HDP 2.4-2.6| [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) | Edge nodes only |
+| MapR 5.0-5.2 | [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md)| Edge nodes only |
+
+You can install Machine Learning Server on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.
+
+We support Apache Spark 2.0 and 2.4 through a Hadoop distribution on CDH, HDP, or MapR. 
+
+
+
+## Machine Learning Server 9.2.1
 
 R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), which is based on R-3.4.1. Python support is based on Anaconda 4.2 over Python 3.5. 
 
@@ -132,63 +157,7 @@ This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based 
 - [Prerequisites for DeployR on Linux](../deployr/deployr-install-on-linux.md#system-requirements)
 - [Prerequisites for DeployR on Windows](../deployr/deployr-install-on-windows.md#system-requirements)
 
-## Microsoft R Server 8.0.3
-
-This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based on R-3.3.2.
-
-This Windows-only release as Microsoft R Server for Windows is part of SQL Server 2016. Learn more about [Microsoft R Server for Windows](https://msdn.microsoft.com/library/mt674874.aspx). The installation instructions are covered in this [setup guide](https://msdn.microsoft.com/library/mt695941.aspx).
-
-## Microsoft R Server 8.0
-
-This release of R Server is built atop _Microsoft R Open 3.3.2_, which is based on R-3.3.2.
-
-Microsoft R Server 8.0, formerly known as "Revolution R Enterprise", is supported on the platforms listed below.
-
-**Operating Systems**
-
-- Windows 7 through 10 (64-Bit)  
-- Windows Server 2012 (64-Bit)  
-- Red Hat Enterprise Linux - 5.x and  6.x (64-Bit)  
-- SUSE Linux Enterprise Server 11 SP2, SP3 (64-Bit)  
-
-Linux platforms require 64-bit processor with x86-compatible architecture.
-
-**Hadoop Distributions**
-
-- Cloudera CDH 5.0 - 5.4 on RHEL 6.x
-- MapR M3 v3.1, 3.1.1, 4.0.1, 4.0.2, 4.0.3 on RHEL 6.x
-- MapR M5 v3.1, 3.1.1, 4.0.1, 4.0.2, 4.0.3 on RHEL 6.x
-- MapR M7 v3.1, 3.1.1, 4.0.1, 4.0.2, 4.0.3 on RHEL 6.x
-
-MapR 4.0.2 requires the mapr-patch-4.0.2.29870.GA-30600; contact MapR to obtain the patch.
-
-**EDW Platforms**
-
-- Teradata Database 14.10/SLES 10.x
-- Teradata Database 14.10/SLES 11.x
-- Teradata Database 15.0, 15.10/SLES 10.x
-- Teradata Database 15.0, 15.10/SLES 11.x
-
-Additional Hadoop Distributions Supported as HDFS Data Sources via ConnectR (includes technical support for the open-source RHadoop project):
-
-- IBM Big Insights 1.4.1, 2.0 HDFS
-- Intel Hadoop(IDH) 1.03, 2.2 HDFS
-- Pivotal HD 1.0 HDFS
-
-**DevelopR and DeployR**
-
-- DevelopR is only supported on Windows platforms or Windows emulators, and accessible via Windows Remote Desktop for remote Windows servers. Install DevelopR on a separate Windows workstation, or on a Hadoop edge node or additional Linux or Windows server.
-- DeployR browser requirements: Internet Explorer 8.0 and higher, Mozilla Firefox 35.0.1 and higher, Google Chrome 28.0 and higher.
-
 
 ## End of Life versions
 
-On 10/22/2015, we announced the End of Life for Platform LSF and Microsoft HPC for clustering solutions. Support ended on 12/31/2016. Please contact Microsoft if you have questions about alternatives.
-
-The following versions have reached the end of life and are no longer available or eligible for Technical Support.
-
-- Revolution R Enterprise 7.x
-- Revolution R Enterprise 6.x
-- Revolution R Enterprise 5.0
-- Revolution R Enterprise 4.3 & 4.2
-- RevoDeployR 1.2 & 1.1
+For R Server 8.0, support ended on 1/1/2018. Please contact Microsoft if you have questions about alternatives. This version is no longer available for support.

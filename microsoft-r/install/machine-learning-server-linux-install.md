@@ -95,7 +95,7 @@ After installation completes, software can be found at the following paths:
 
 <a name="how-to-install"></a>
 
-## Install on Red Hat or CentOS
+## <a name="Redhat">Install on Red Hat or CentOS</a>
 
 Follow these instructions for Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS 6/7.
 
@@ -118,7 +118,7 @@ Follow these instructions for Machine Learning Server for Linux on Red Hat Enter
 
 8. Once you have a package name, you can obtain verbose version information: `$ rpm -qi microsoft-mlserver-packages-r-9.2.1`
 
-## Install on Ubuntu 
+## <a name="ubuntu">Install on Ubuntu </a>
 
 Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04 - 16.04 only).
 
@@ -161,7 +161,7 @@ Output on Ubuntu is as follows:
 	  . . .
    ```
 
-## Install on SUSE
+## <a name="suse">Install on SUSE </a>
 
 Follow these instructions for Machine Learning Server for Linux on SUSE (SLES11 only).
 

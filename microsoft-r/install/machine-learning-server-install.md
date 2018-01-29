@@ -3,7 +3,6 @@
 title: "How to install Machine Learning Server "
 description: "How to install Machine Learning Server."
 keywords: ""
-author: "HeidiSteen"
 author: "j-martens"
 ms.author: "jmartens"
 ms.date: "01/16/2018"
