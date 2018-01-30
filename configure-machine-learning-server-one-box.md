@@ -2,12 +2,12 @@
 
 # required metadata
 title: "Configure Machine Learning Server to operationalize analytics (one-box)"
-description: "Configure Operationalization for Machine Learning Server 9.3 "
+description: "Configure Operationalization for Machine Learning Server "
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "9/25/2017"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,9 +24,9 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Configure Machine Learning Server 9.3 to operationalize analytics (One-box)
+# Configure Machine Learning Server to operationalize analytics (One-box)
 
-**Applies to:  Machine Learning Server** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Machine Learning Server 9.2.1](../install/configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
+**Applies to:  Machine Learning Server** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Find R Server 9.x article)](../install/operationalize-r-server-one-box-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the one-box configuration. For more on enterprise configurations, [see here](configure-machine-learning-server-enterprise.md).
 
