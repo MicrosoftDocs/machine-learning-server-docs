@@ -25,11 +25,11 @@ ms.technology: "r-server"
 
 # What's new in Machine Learning Server 9.3
 
-Machine Learning Server 9.3 provides powerful R and Python function libraries for data science and machine learning on small-to-massive data sets, in parallel on local or distributed systems, with leading-edge algorithms for predictive analytics, supervised learning, and data mining using models and data that you provide. 
+Machine Learning Server 9.3 provides powerful R and Python function libraries for data science and machine learning on small-to-massive data sets, in parallel on local or distributed systems, with modern algorithms for predictive analytics, supervised learning, and data mining. 
 
-In Machine Learning Server, functionality is delivered through proprietary R an Python packages, internal computational engines built on open-source R and Python, tools, and solutions and samples.
+Functionality is delivered through proprietary R and Python packages, internal computational engines built on open-source R and Python, tools, and solutions and samples.
 
-In this article, learn about the new capabilities introduced in the latest packages and tools, or review feature announcements from recent past releases. 
+In this article, learn about the new capabilities introduced in the latest packages and tools. If you develop in R, you might also want to review feature announcements from recent past releases. 
 
 > [!Note]
 > Read our [release announcement for Machine Learning Server 9.3](UPDATE THIS LINK, was https://aka.ms/mlserver92). For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
