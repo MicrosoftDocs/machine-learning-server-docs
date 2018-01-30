@@ -26,7 +26,7 @@ ms.technology:
 
 # Configure Machine Learning Server  9.2.1 to operationalize analytics (One-box)
 
-**Applies to:  Machine Learning Server 9.2.1** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find [Machine Learning Server 9.3](../install/configure-machine-learning-server-one-box.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
+**Applies to: Machine Learning Server 9.2.1** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find [Machine Learning Server 9.3](../install/configure-machine-learning-server-one-box.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the one-box configuration. For more on enterprise configurations, [see here](configure-machine-learning-server-enterprise.md).
 
@@ -40,9 +40,9 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 ## How to configure
 
 >[!Important]
->For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
+>For your convenience, Azure Resource Management templates are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.
 >
->Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/enterprise-configuration). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/).
+>Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/enterprise-configuration). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/). Or, read a general description of [ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment).
 
 **To configure on a single machine:**
 
