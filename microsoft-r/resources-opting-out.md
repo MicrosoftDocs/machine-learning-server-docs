@@ -6,8 +6,8 @@ description: "Learn how to turn off telemetry data collection on Machine Learnin
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/15/2017"
+manager: "cgronlun"
+ms.date: "01/30/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -32,7 +32,7 @@ To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler
 
 ## Version Requirements
 
-Privacy controls are in newer versions of the server. To verify server version is 9.x or later (or 3.4.1 for R Client), open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
+Privacy controls are in newer versions of the server. To verify server version is 9.x or later (or 3.4.x for R Client), open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
 
     > print(Revo.version)
 
@@ -46,7 +46,7 @@ Without a parameter, running `rxPrivacyControl()` returns the current setting. S
 
 ## How to opt out (Python)
 
-The revoscalepy package providing `rx-privacy-control` is installed when you add Python support to Machine Learning Server 9.2.1 for Hadoop:
+The revoscalepy package providing `rx-privacy-control` is installed when you add Python support to Machine Learning Server:
 
 1. Log on as root: `sudo su`
 2. Start a Python session: `mlserver-python`
@@ -69,7 +69,7 @@ The RevoScaleR package provides`rxPrivacyControl` is installed and loaded in bot
 **On Windows**
 
 1. Log in to the computer as an administrator.
-2. Go to C:\Program Files\Microsoft\R Server\R_SERVER\bin\x64.
+2. Go to C:\Program Files\Microsoft\ML Server\R_SERVER\bin\x64.
 3. Right-click Rgui.exe and select **Run as administrator**.
 4. Type `rxPrivacyControl` to return the current value.
 5. Type `rxPrivacyControl(FALSE)`to turn off telemetry data collection.

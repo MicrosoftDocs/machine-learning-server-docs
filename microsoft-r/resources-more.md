@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "01/30/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -57,6 +57,9 @@ The following resources are available to you:
 
 ## R Tools for Visual Studio
 * [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation)
+
+## Python support in Visual Studio
+* [Install Python support in Visual Studio on Windows](https://docs.microsoft.com/visualstudio/python/installing-python-support-in-visual-studio)
 
 ## Documentation Roadmap
 
