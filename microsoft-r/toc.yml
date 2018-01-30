@@ -169,13 +169,13 @@
         href: install/r-server-install-hadoop-troubleshoot.md
     - name: On Teradata
       items:
-      - name: Install R Server 9.0.1 on a Teradata Server
+      - name: Install R Server 9.x on a Teradata Server
         href: install/r-server-install-teradata-server.md
-      - name: Install R Server 8.0.5 on a Teradata Server
+      - name: Install R Server 8.x on a Teradata Server
         href: install/r-server-install-teradata-805.md
       - name: Install R Server on a Teradata Client
         href: install/r-server-install-teradata-client.md
-      - name: Get started ScaleR on Teradata
+      - name: Get started RevoScaleR on Teradata
         href: r/how-to-revoscaler-teradata.md
 - name: Quickstarts
   items:
