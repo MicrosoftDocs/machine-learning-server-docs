@@ -36,15 +36,13 @@ In this article, learn about the new capabilities introduced in the latest packa
 
 ## Announced in 9.3
 
-The 9.3 release is the backbone for new-feature integration in Azure Machine Learning. With this release, you can use the same packages (RevoScaleR, revoscalepy, and so forth) on more platforms and tools. To get the same R and Python libraries on Azure Machine Learning and Machine Learning Server, you should install version 9.3 on your on-premises Machine Learning Server instances.
-
-This release also includes several features useful for a strictly on-premises configuration, as described in the following table.
+The 9.3 release marks the beginning of a faster release cadence, with fewer features delivered more frequently. New capabilities introduced in 9.3 are listed in the following table.
 
 | Feature | Area | Details |
 |---------|------|---------|
-| [Administration command line interface](operationalize/configure-use-admin-cli.md) | Operationalize | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with previous utility. <br><br>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and througput of web services you created. |
+| [Administration command line interface](operationalize/configure-use-admin-cli.md) | Operationalize | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with the previous utility. <br><br>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and throughput of web services you create. |
 | Dedicated service pools | Operationalization | TBD |
-| CDH 5.12 | Supported platforms | Version 5.12 of Cloudera distribution of Apache Hadoop (CDH) is now supported for [Machine Learning Server for Hadoop](install/machine-learning-server-hadoop-install.md) installations.|
+| CDH 5.12 | Supported platforms | Version 5.12 of Cloudera distribution of Apache Hadoop (CDH) is now supported for [Machine Learning Server for Hadoop](install/machine-learning-server-hadoop-install.md).|
 
 ## Announced in 9.2.1
 

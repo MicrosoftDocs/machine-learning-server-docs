@@ -22,20 +22,12 @@ ms.technology: "r-server"
 
 ---
 
-# Install Microsoft R Server 2016 on Teradata Servers
+# Install Microsoft R Server 8.05 on Teradata Servers
 
-Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Teradata](r-server-install-teradata-server.md).
-
-## About the R Server 2016 installer
-
-Microsoft R Server 2016 includes updated installers that allow you to deploy R in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package.
+Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0.5. 
 
 >[!NOTE]
->In this release, SLES 10 no longer supported, only SLES 11 SP1.
-
-## Download sites
-
-You can download Microsoft R Server 2016 (version 8.0.5) for Teradata from [here](http://aka.ms/rserver/teradata/download).
+>In this release, SLES 10 is no longer supported, only SLES 11 SP1.
 
 ## Quick Overview
 
