@@ -24,7 +24,7 @@ ms.technology: "r-server"
 ---
 # Supported platforms for Machine Learning Server and Microsoft R Server
 
-Machine Learning Server runs *on-premises* on Windows, Linux, Hadoop Spark, and SQL Server. It is also *[in the cloud](machine-learning-server-in-the-cloud.md)* on Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
+Machine Learning Server runs *on-premises* on Windows, Linux, Hadoop Spark, and SQL Server. It is also in [multiple Azure offerings](machine-learning-server-in-the-cloud.md), such as Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
 
 This article specifies the operating systems and platforms for on-premises installations of Machine Learning Server and Microsoft R Server.
 
@@ -33,12 +33,12 @@ This article specifies the operating systems and platforms for on-premises insta
 
 ## Machine Learning Server 9.3
 
-R support includes [Microsoft R Open 3.4.3](https://mran.microsoft.com/open/), which is based on R-3.4.3. Python support is based on Anaconda 4.2 over Python 3.5. 
+In this release, R support includes [Microsoft R Open 3.4.3](https://mran.microsoft.com/open/), based on R-3.4.3. Python support is based on Anaconda 4.2 over Python 3.5. We support Apache Spark 2.0 and 2.4 through a Hadoop distribution on CDH, HDP, or MapR. 
 
 [Operationalization](../what-is-operationalization.md) has a .NET Core platform dependency, which is not available in some operating systems.
 
-| Operating system or platform | SKU | Operationalization |
-|------------------------------|-----|--------------------|
+| Operating system or platform | SKU | Operationalization availability |
+|------------------------------|-----|---------------------------------|
 | Windows 7 SP1, Windows 8.1, Windows 10 | [Machine Learning Server for Windows <br>(developer edition)](machine-learning-server-windows-install.md) | No |
 | Windows Server 2012 R2, Windows Server 2016 | [Machine Learning Server for Windows](machine-learning-server-windows-install.md) | Yes |
 | CentOS/ RedHat 6.x - 7.x  | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#redhat) | 6.x - No <br>7.x - Yes |
@@ -49,10 +49,6 @@ R support includes [Microsoft R Open 3.4.3](https://mran.microsoft.com/open/), w
 | MapR 5.0-5.2 | [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md)| Edge nodes only |
 
 You can install Machine Learning Server on open source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.
-
-We support Apache Spark 2.0 and 2.4 through a Hadoop distribution on CDH, HDP, or MapR. 
-
-
 
 ## Machine Learning Server 9.2.1
 

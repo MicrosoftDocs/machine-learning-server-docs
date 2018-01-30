@@ -27,9 +27,9 @@ ms.technology: "r-server"
 
 Machine Learning Server 9.3 provides powerful R and Python function libraries for data science and machine learning on small-to-massive data sets, in parallel on local or distributed systems, with leading-edge algorithms for predictive analytics, supervised and unsupervised learning, and data mining. 
 
-Function libraries are distributed in propertietary packages from Microsoft, with command/script execution on computational engines running on the server and in related Microsoft technologies (for example, RevoScaler and revoscalepy run on R Client or on R Server for HDInsight, in addition to Machine Learning server). 
+Function libraries are distributed in propertietary packages from Microsoft, with command/script execution on computational engines running on the server and in related Microsoft technologies (for example, RevoScaleR and revoscalepy run on R Client or on R Server for HDInsight, in addition to Machine Learning Server). 
 
-Open-source R and Python 3.x are built into the run-time architecture. This means your code can call open-source R or Python functions, third-party R or Python functions built for open-source distributions, and the proprietary R or Python functions that run only on the Machine Learning Server and related Microsoft technologies.
+Open-source R and Python are built into the run-time architecture. This means your code can call open-source functions, third-party functions built for open-source distributions, and the proprietary Python functions that run only on Machine Learning Server and related Microsoft technologies.
 
 In this article, learn about the new capabilities introduced in this release, or review feature announcements from recent past releases. 
 
@@ -38,13 +38,12 @@ In this article, learn about the new capabilities introduced in this release, or
 
 ## Announced in 9.3
 
-The 9.3 release is the backbone for new-feature integration in Azure Machine Learning so that you can use the same packages (RevoScaleR, revoscalepy, and so forth) in more tools. If you want to use Azure Machine Learning and Machine Learning Server interchangeably, you should install version 9.3.
-
-This release also includes the new pyTLC package. This package is developed and released on an independent schedule. One way to obtain this package is through Machine Learning Server 9.3.
+The 9.3 release is the backbone for new-feature integration in Azure Machine Learning so that you can use the same packages (RevoScaleR, revoscalepy, and so forth) in more tools. If you want to run the same R and Python code on Azure Machine Learning and Machine Learning Server, you should install version 9.3.
 
 | Feature | Area | Details |
 |---------|------|---------|
 | [Administration command line interface](operationalize/configure-use-admin-cli.md) | Operationalize | Configure Machine Learning Server to support web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and througput of web services you created. This tool is similar to Azure CLI and replaces the previous administration utility. |
+| Dedicated service pools | Operationalization | TBD |
 
 ## Announced in 9.2.1
 
