@@ -25,9 +25,11 @@ ms.technology: "r-server"
 
 # What's new in Machine Learning Server 9.3
 
-Machine Learning Server 9.3 provides powerful R and Python function libraries for data science and machine learning on small-to-massive data sets, in parallel on local or distributed systems, with leading-edge algorithms for predictive analytics, supervised learning, and data mining using models and data that you provide. In Machine Learning Server, functionality is delivered through proprietary R an Python packages, internal computational engines built on open-source R and Python, tools, and solutions and samples.
+Machine Learning Server 9.3 provides powerful R and Python function libraries for data science and machine learning on small-to-massive data sets, in parallel on local or distributed systems, with leading-edge algorithms for predictive analytics, supervised learning, and data mining using models and data that you provide. 
 
-In this article, learn about the new capabilities introduced in this release, or review feature announcements from recent past releases. 
+In Machine Learning Server, functionality is delivered through proprietary R an Python packages, internal computational engines built on open-source R and Python, tools, and solutions and samples.
+
+In this article, learn about the new capabilities introduced in the latest packages and tools, or review feature announcements from recent past releases. 
 
 > [!Note]
 > Read our [release announcement for Machine Learning Server 9.3](UPDATE THIS LINK, was https://aka.ms/mlserver92). For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
@@ -40,8 +42,9 @@ This release also includes several features useful for a strictly on-premises co
 
 | Feature | Area | Details |
 |---------|------|---------|
-| [Administration command line interface](operationalize/configure-use-admin-cli.md) | Operationalize | Configure Machine Learning Server to support web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and througput of web services you created. This tool is similar to Azure CLI and replaces the previous administration utility. |
+| [Administration command line interface](operationalize/configure-use-admin-cli.md) | Operationalize | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with previous utility. <br><br>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and througput of web services you created. |
 | Dedicated service pools | Operationalization | TBD |
+| CDH 5.12 | Supported platforms | Version 5.12 of Cloudera distribution of Apache Hadoop (CDH) is now supported for [Machine Learning Server for Hadoop](install/machine-learning-server-hadoop-install.md) installations.|
 
 ## Announced in 9.2.1
 

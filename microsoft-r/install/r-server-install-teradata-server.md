@@ -25,12 +25,12 @@ ms.technology: "r-server"
 
 # R Server 9.1 installation instructions for Teradata Servers
 
-Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server 9.1 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
-
-> [!Important]
-> In Machine Learning Server 9.2.1, there is no support for Teradata. However, R Server 9.1 is a supported release. You can install R Server 9.1 for Teradata as documented in this guide to get enterprise R functionality on your appliance.
+Microsoft R Server 9.1 for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. This article provides detailed instructions for installing Microsoft R Server 9.1 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
 
 Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
+
+> [!Important]
+> The Teradata compute context was discontinued in Machine Learning Server 9.2.1. If you have R Server 9.1 and use the Teradata compute context, you are covered by Microsoft's [service support policy](../../resources-servicing-support.md). For future compatibility, we recommend modifying existing code to run in other compute contexts, and create a Teradata data source object to work with your data. For more information about Teradata as a data source, see [RxTeradata](r-reference/revoscaler/rxteradata.md).
 
 ## System Requirements
 
@@ -84,7 +84,9 @@ To get started, do the following:
 
   2.  Download the Microsoft R Open rpm file for your Teradata appliance’s operating system (SLES 11).
 
-  3.  Download and unpack the Microsoft R Server 9.1 distribution, which will either be a DVD iso file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). (can be found on [MSDN](https://msdn.microsoft.com/en-us/subscriptions/downloads/?fileid=70865#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70865))
+  3.  The Microsoft R Server 9.1 distribution for Teradata is no longer on the download site. If you need the distribution, contact [Microsoft support](https://www.visualstudio.com/subscriptions/support/). 
+
+    The download will either be a DVD iso file or a gzipped tar file 
 
   4.  If you have an iso file, you must first mount the file. The following commands create a mount point and mount the file to that mount point (replacing **MSDN** with the name of the current ISO downloaded):
 

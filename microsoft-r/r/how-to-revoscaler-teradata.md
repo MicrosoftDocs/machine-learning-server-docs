@@ -27,6 +27,9 @@ ms.technology: "r-server"
 
 For customers using R Server 9.1 and earlier, this guide serves as an introduction to high-performance big data analytics for Teradata using [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md). 
 
+> [!Important]
+> The Teradata compute context was discontinued in Machine Learning Server 9.2.1. If you have R Server 9.1 and use the Teradata compute context, you are covered by Microsoft's [service support policy](../../resources-servicing-support.md). For future compatibility, we recommend modifying existing code to run in other compute contexts, and create a Teradata data source object to work with your data. For more information about Teradata as a data source, see [RxTeradata](r-reference/revoscaler/rxteradata.md).
+
 There are three key components to running **RevoScaleR** high-performance analytics:
 
 -   The name and arguments of the analysis function: What analysis do you want to perform?
@@ -44,15 +47,7 @@ More information on **RevoScaleR** can be found here:
 
 For information on other distributed computing compute contexts, see:
 
-- [How to use RevoScaleR on Hadoop MapReduce](how-to-revoscaler-hadoop.md)
 - [How to use RevoScaleR on Spark](how-to-revoscaler-spark.md)
-
-## Installation
-
-Installation instructions are provided in these links:
-* [Install Microsoft R Server 8.0.5 on Teradata Servers](../install/r-server-install-teradata-805.md)
-* [Install Microsoft R Server 8.0 on Teradata Servers](../install/r-server-install-teradata-server.md)
-* [Install Microsoft R Server 8.0 on Teradata clients](../install/r-server-install-teradata-client.md)
 
 ## Setting Up the Sample Data
 

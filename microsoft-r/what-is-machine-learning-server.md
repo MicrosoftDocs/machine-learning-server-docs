@@ -68,7 +68,7 @@ The following features are included in Machine Learning Server. For feature desc
 | [Pre-trained models](install/microsoftml-install-pretrained-models.md) | For visual analysis and text sentiment analysis, ready to score data you provide. |
 | [Deploy and consume](what-is-operationalization.md) | Operationalize your server and deploy solutions as a web service. |
 | [Remote execution](r/how-to-execute-code-remotely.md) | Start remote sessions on a Machine Learning Server on your network from your client workstation. |
-| scale out on premises | Clustered topologies for [Spark and Hadoop MapReduce](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators.md) built into Machine Learning Server. |
+| scale out on premises | Clustered topologies for [Spark on Hadoop](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators.md) built into Machine Learning Server. |
 
 
 

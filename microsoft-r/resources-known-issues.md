@@ -29,14 +29,15 @@ ms.technology:
 
 Review workaround steps for the following known issues in this release. 
 
-## In 9.3
+## In Machine Learning Server 9.3
 
-The following issues are known in this release:
-1. [Model deserialization on older remote servers](3revo-rxserializemodel)
+The following issues are known in this release.
 
 <a name="revo-rxserializemodel"></a>
 
 #### 1. Model deserialization on older remote servers: "Error in memDecompress(data, type = decompress)"
+
+Applies to: [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md) and [rx_serialize_model (revoscalepy)](python-reference/revoscalepy/rx-serialize-model.md)
 
 If you customarily switch the compute context among multiple machines, you might have trouble deserializing a model if the RevoScaleR and revoscalepy libraries are out of sync. Specifically, if you serialized the model on a newer client, and then attempt deserialization on a remote server having older copies of those libraries, you might encounter this error: 
 
@@ -44,9 +45,6 @@ If you customarily switch the compute context among multiple machines, you might
 "Error in memDecompress(data, type = decompress) :
   internal error -3 in memDecompress(2)"
 ```
-
-This issue applies to [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md) and [rx_serialize_model (revoscalepy)](python-reference/revoscalepy/rx_serialize_model.md).
-
 To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers are at the same functional level.
 
 

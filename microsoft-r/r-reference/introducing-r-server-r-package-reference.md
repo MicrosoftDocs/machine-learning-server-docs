@@ -77,6 +77,18 @@ To determine the version of the package, open its help page to view the version 
 
 <a name="view-online-help"></a>
 
+## How to list functions in a package
+
+To list all of the functions in a package, execute the following command: `ls("package:RevoScaleR")`
+
+To search for a function by full or partial string matching, add a pattern. For example, to return all functions that include the term "Spark":
+
+```
+> ls("package:RevoScaleR", pattern = "Spark")
+[1] "rxGetSparklyrConnection" "RxSpark"                 "rxSparkCacheData"        "rxSparkConnect"          "rxSparkDisconnect"      
+[6] "rxSparkListData"         "rxSparkRemoveData"      
+```
+
 ## How to view built-in help pages
 
 Most R packages come with built-in help pages that open in separate window.

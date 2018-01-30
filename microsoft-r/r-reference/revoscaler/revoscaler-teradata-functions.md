@@ -25,15 +25,13 @@ ms.technology: "r-server"
 
 # RevoScaleR Functions for Teradata
 
-Microsoft R Server 9.1 became the last release to have new features for Teradata as a computing platform for RevoScaleR functions. Although Teradata in-database compute context and supporting functions continue to be available in the 9.3 release as part of the [service support policy](../../resources-servicing-support.md) for Microsoft R Server 9.1, there are currently no plans to enhance the Teradata compute context in future Machine Learning Server releases.
+Microsoft R Server 9.1 was the last release to include the RxInTeradata and RxInTeradata-class functions for creating a remote compute context on a Teradata appliance. This release is fully supported as described in the [service support policy](../../resources-servicing-support.md), but the Teradata compute context is not available in Machine Learning Server 9.2.1 and later.
 
-Data import using the RxTeradata data source object remains unchanged. If you have existing data in a Teradata appliance, you can create an RxTeradata object to import your data into Machine Learning Server. There are no deprecation announcements for either RxTeradata or RxTeradata-class.
+Data import using the RxTeradata data source object remains unchanged. If you have existing data in a Teradata appliance, you can create an [RxTeradata object](rxteradata.md) to import your data into Machine Learning Server.
 
 For backwards compatibility purposes, this page presents a curated list of functions specific to the Teradata DB compute contexts, as well as those that may not be fully supported.
 
-These functions can be called directly from the command line.
-
-For guidance on using these functions, see the [*RevoScaleR Teradata DB Getting Started Guide*](../../r/how-to-revoscaler-teradata.md).
+These functions can be called directly from the command line. For guidance on using these functions, see the [*RevoScaleR Teradata DB Getting Started Guide*](../../r/how-to-revoscaler-teradata.md).
 
 ## Data Analysis Functions
 
