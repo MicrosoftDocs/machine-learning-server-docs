@@ -61,7 +61,7 @@ Configure one or more compute nodes as needed. We highly recommend that you conf
 
 In the Enterprise configuration, side-by-side installations of a web and compute node are not supported.
  
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
+1. Install Machine Learning Server and its dependencies as follows. Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
@@ -200,8 +200,7 @@ Carefully review the steps in the following sections.
 
    + Linux: /etc/deployr/current
 
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
-
+1. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
@@ -232,7 +231,7 @@ You can now **repeat these steps** for each compute node.
 
    + Linux: /etc/deployr/current
 
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
+1. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
@@ -254,5 +253,4 @@ You can now **repeat these steps** for each compute node.
    ```
    az ml admin diagnostic run
    ```
-
 You can now **repeat these steps** for each node.
