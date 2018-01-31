@@ -24,20 +24,20 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Launch the Admin CLI to manage the operationalization configuration for Machine Learning Server
+# Launch the Admin CLI to manage the operationalization configuration 
 
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
-This article describes how to launch the tool used to manage the web and compute nodes. These nodes enable you to operationalize your analytics with Machine Learning Server.
+This article describes how to launch the tool used to manage the web and compute nodes for Machine Learning Server. These nodes enable you to operationalize your analytics with Machine Learning Server.
 
-+ In **Machine Learning Server 9.3**, this management tool is called the Administration Command Line Interface (Admin CLI).
++ In Machine Learning Server 9.3, this management tool is called the Administration Command Line Interface (**Admin CLI**).
 
-+ In earlier version, this tool is called the Administration Utility.
++ In earlier version, this tool is called the **Administration Utility**.
 
 With this tool, you can:
 + [Configure server for operationalization](configure-start-for-administrators.md#configure-server-for-operationalization) front-ends and back-ends     
-+ [Set a local admin password](#admin-password)     
-+ [Stop and restart](#startstop) web and compute node services     
++ [Set a local admin password](configure-admin-cli-local-password.md)  
++ [Stop and restart](configure-admin-cli-start-stop.md) web and compute node services     
 + [Update the service ports](#ports)     
 + [Run diagnostic tests](configure-run-diagnostics.md)     
 + [Encrypt credentials](#encrypt)     

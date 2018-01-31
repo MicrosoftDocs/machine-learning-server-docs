@@ -24,11 +24,11 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Stop or start web or compute nodes for Machine Learning Server
+# Stop or start web and compute nodes
 
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
-You can start or stop all operationalization-related nodes on the machine at once.
+You can start or stop all operationalization-related web and compute nodes on the Machine Learning Server machine at once.
 
 <a name="93"></a>
 

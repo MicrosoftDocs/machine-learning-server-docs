@@ -24,22 +24,22 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Set or update the local administrator password for Machine Learning Server
+# Set or update the local administrator password
 
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
-When no other form of [authentication](configure-authentication.md) is used, you must define a password for the local administrator account called 'admin'. If you enable another form of authentication, the local administrator account is automatically disabled.
+When no other form of [authentication](configure-authentication.md) is used for Machine Learning Server, you must define a password for the local administrator account called 'admin'. If you enable another form of authentication, the local administrator account is automatically disabled.
 
 The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
 
 
 <a name="93"></a>
 
-## Set admin password in Machine Learning Server 9.3
+## Set the password in Machine Learning Server 9.3
 
 @Heidi
 
-## Set admin password in earlier versions
+## Set the password in earlier versions
 
 **To set or update the password:**
 
