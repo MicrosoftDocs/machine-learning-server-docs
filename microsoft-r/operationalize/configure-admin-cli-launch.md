@@ -30,7 +30,7 @@ ms.technology:
 
 This article describes how to launch the tool used to manage the web and compute nodes for Machine Learning Server. These nodes enable you to operationalize your analytics with Machine Learning Server.
 
-+ In Machine Learning Server 9.3, this management tool is called the Administration Command Line Interface (**Admin CLI**).
++ In Machine Learning Server 9.3, this management tool is called the [Azure Command Line Interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (**Azure CLI**). The `admin` extension of this CLI  provides a great native command-line experience for managing Machine Learning Server configurations. 
 
 + In earlier version, this tool is called the **Administration Utility**.
 
