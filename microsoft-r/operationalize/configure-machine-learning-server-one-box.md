@@ -56,7 +56,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    ```
    # Set up both nodes on one machine
    az ml admin node setup --onebox
-   # Check the nodes are now running
+   # Check that the nodes are now running
    az ml admin node list
    # Run configuration test to validate setup
    az ml admin diagnostic configure

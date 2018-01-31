@@ -34,6 +34,10 @@ You can start or stop all operationalization-related web and compute nodes on th
 
 In Machine Learning Server 9.3, you can use `admin` extension of the [Azure Command Line Interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (**Azure CLI**) to manage your configuration, including stopping and starting services.
 
+>[!Important]
+>- You must first set up your nodes before doing anything else with the `admin` extension of the CLI.
+>- You do not need an Azure subscription to use this CLI. It is installed with Machine Learning Server and runs locally.  
+
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 1. Run the command to either stop or start a node.

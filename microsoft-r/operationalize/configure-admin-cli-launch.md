@@ -31,14 +31,16 @@ ms.technology:
 This article describes how to launch the tool used to manage the web and compute nodes for Machine Learning Server. These nodes enable you to operationalize your analytics with Machine Learning Server.
 
 + In Machine Learning Server 9.3, this management tool is called the [Azure Command Line Interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (**Azure CLI**). The `admin` extension of this CLI  provides a great native command-line experience for managing Machine Learning Server configurations. 
+  >[!Important]
+  >You do not need an Azure subscription to use this CLI. It is installed with Machine Learning Server and runs locally. 
 
-+ In earlier version, this tool is called the **Administration Utility**.
++ In earlier versions, this tool is called the **Administration Utility**.
 
 With this tool, you can:
 + [Configure server for operationalization](configure-start-for-administrators.md#configure-server-for-operationalization) front-ends and back-ends     
 + [Set a local admin password](configure-admin-cli-local-password.md)  
 + [Stop and restart](configure-admin-cli-stop-start.md) web and compute node services     
-+ [Update the service ports](configure-admin-cli-ports.md)     
++ [Update the node ports](configure-admin-cli-ports.md)     
 + [Run diagnostic tests](configure-run-diagnostics.md)     
 + [Encrypt credentials](configure-admin-cli-encrypt-credentials.md)     
 + [Evaluate the configuration's capacity](configure-evaluate-capacity.md)     
