@@ -53,7 +53,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the [Azure Comm
    az ml admin node stop --help
    ```
 
-## Earlier versions
+## Earlier versions (9.0-9.2)
 
 To stop or start a web node or compute node:
 
