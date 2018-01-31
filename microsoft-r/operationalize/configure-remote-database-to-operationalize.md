@@ -7,7 +7,7 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -58,7 +58,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
 1.  Update the database properties to point to the new database as follows:
 
-    1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+    1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. 
 
     1. Locate the `ConnectionStrings` property block.
 
@@ -67,9 +67,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
        + For PostgreSQL or Azure Database for PostgreSQL, look for `"postgresql": {`.
 
-    1. In the appropriate database section, enable that database type by adding the property `"Enabled": true,`. 
-       >[!WARNING]
-       >You can only have one database enabled at a time. 
+    1. In the appropriate database section, enable that database type by adding the property `"Enabled": true,`. **You can only have one database enabled at a time.** 
        
        For example:
        ```
@@ -87,19 +85,19 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
        "Connection":  "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>;Integrated Security=True;"
        ```
 
-       For SQL Server Database (**SQL authentication**), use your string properties that are similar to: 
+       For SQL Server Database (**SQL authentication**), use your string properties similar to: 
        ``` 
        "Connection":  "Data Source=<DB-SERVER-IP-OR-FQDN>\\<INSTANCE-NAME>;Initial Catalog=<DB-NAME>; Integrated Security=False; User Id=<USER-ID>;Password=<PASSWORD>;"
        ```
 
-       For PostgreSQL Database, use your string properties that will:
+       For PostgreSQL Database, use your string properties:
        ``` 
        "Connection":  "User ID=<DB-USERNAME>;Password=<USER-PASSWORD>;Host=<DB-SERVER-IP-OR-FQDN>;Port=5432;Database=<DB-NAME>;Pooling=true;"
        ```       
     
     1. <a name="encrypt"></a>For better security, we recommend you encrypt the connection string for this database before adding the information to appsettings.json.
     
-       1. Use the administration utility to [encrypt the connection string](configure-admin-cli-encrypt-credentials.md).
+       1. [Encrypt the connection string](configure-admin-cli-encrypt-credentials.md).
 
        1. Copy the encrypted string returned by the administration utility into `"ConnectionStrings": {` property block and set `"Encrypted":` to `true`. For example:
             
@@ -118,8 +116,6 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
 1. Open the database port on the remote machine to the public IP of each web node as described in these articles: [SQL Server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx) | [PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
          
-1. Launch the administrator's utility and:
+1. [Start the web node](configure-admin-cli-stop-start.md) and the database is created upon restart.
 
-   1. [Start the web node](configure-admin-cli-stop-start.md) and the database is created upon restart.
-
-   1. [Run the diagnostic tests](configure-run-diagnostics.md) to ensure the connection can be made to your new database.
+1. [Run the diagnostic tests](configure-run-diagnostics.md) to ensure the connection can be made to your new database.
