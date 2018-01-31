@@ -39,9 +39,7 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 ## How to configure
 
 >[!Important]
->For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.  
->
->Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/one-box-configuration). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/).
+>For a quick setup in Azure, try one of [our Azure Resource Management templates stored in GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates). This [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/) explains how. 
 
 ### 1. Configure a database
 
