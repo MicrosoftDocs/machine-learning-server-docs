@@ -56,23 +56,18 @@ With this tool, you can:
 
 These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.2.
 
-**On Windows:**
+**To launch the Administration Utility:**
 
-Launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
++ **On Windows:** Right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
+  >[!Note]
+  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. To get around this issue, either change the execution policy to "Unrestricted", or run the following in a command-line window with administrator privileges:<br/>`cd C:\Program Files\Microsoft\ML Server\R_SERVER\o16n`<br/>`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll`<br/>.  
 
->[!Warning]
->If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. Change the execution policy to "Unrestricted" or run these commands in a command-line window with administrator privileges:<br/>`cd \<server_home>`<br/>`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll`<br/>where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).  
-
-**On Linux:**
-
-Launch the administration utility script with `root` or `sudo` privileges with the following commands:
-```
-cd \<server_home>
-sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-``` 
-where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
-
-
++ **On Linux:** Run the following commands with `root` or `sudo` privileges:
+  ```
+  cd /opt/microsoft/mlserver/9.2.1/o16n
+  sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
+  ``` 
+ 
 ## Launch the utility in v9.1
 
 These instructions describe how to launch the Administrator Utility on R Server 9.1.
