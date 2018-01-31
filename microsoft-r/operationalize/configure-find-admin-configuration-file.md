@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Default install paths for compute and web nodes
+# Default install paths to key log and configuration files on compute and web nodes
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
@@ -32,13 +32,14 @@ ms.technology:
 
 The installation path depends on the operating system and the type of node (web or compute).
 
-**Find your server directory path**
+**Find path to your server directory**
 |OS|\<server-directory>|
 |----|------------|
 |Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
 |Linux|/opt/microsoft/mlserver/9.3.0/o16n|
 
-**Find your node paths**
+
+**Find path to log files or appsettings.json on each node**
 |File(s)|Filepath by node|
 |----|------------|
 |Log files|Web node:\<server-directory>\Microsoft.MLServer.WebNode\logs\*.* <br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*|
