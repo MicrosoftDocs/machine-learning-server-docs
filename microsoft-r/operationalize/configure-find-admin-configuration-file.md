@@ -41,14 +41,9 @@ The installation path depends on the operating system and the type of node (web 
 **Find your node paths**
 |File(s)|Filepath by node|
 |----|------------|
-|Log files|_Web node:_ \<server-directory>\Microsoft.MLServer.WebNode\logs\*.* <br/>_Compute node:_ \<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*|
-|appsettings.json|_Web node:_ \<server-directory>\Microsoft.MLServer.WebNode\appsettings.json<br/>_Compute node:_ \<server-directory>\Microsoft.MLServer.ComputeNode\appsettings.json|
+|**Log files**|**Web node:** \<server-directory>\Microsoft.MLServer.WebNode\logs\*.* <br/>**Compute node:** \<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*|
+|**appsettings.json**|**Web node:** \<server-directory>\Microsoft.MLServer.WebNode\appsettings.json<br/>**Compute node:** \<server-directory>\Microsoft.MLServer.ComputeNode\appsettings.json|
 
-**Find your compute node paths**
-|File(s)|Compute node path|
-|----|------------|
-|Log files|\<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*<br/>Compute node: |
-|appsettings.json|\<server-directory>\Microsoft.MLServer.ComputeNode\appsettings.json|
   
 ## Machine Learning Server 9.2.1
 
