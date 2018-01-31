@@ -24,17 +24,20 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Launch the Admin CLI to manage the operationalization configuration 
+# Launch the administration tool/CLI to manage the operationalization configuration 
 
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
 This article describes how to launch the tool used to manage the web and compute nodes for Machine Learning Server. These nodes enable you to operationalize your analytics with Machine Learning Server.
 
-+ In Machine Learning Server 9.3, this management tool is called the [Azure Command Line Interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (**Azure CLI**). The `admin` extension of this CLI  provides a great native command-line experience for managing Machine Learning Server configurations. 
-  >[!Important]
-  >You do not need an Azure subscription to use this CLI. It is installed with Machine Learning Server and runs locally. 
+The tool to use depends on your version:
++ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your Machine Learning Server node configuration, including stopping and starting services.
 
-+ In earlier versions, this tool is called the **Administration Utility**.
+>[!Important]
+>- You must first [set up your nodes](configure-machine-learning-server-one-box.md) before running any other `admin` extension commands in the CLI.
+>- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
+
++ In earlier versions (9.0-9.2), this tool is called the **Administration Utility**.
 
 With this tool, you can:
 + [Configure server for operationalization](configure-start-for-administrators.md#configure-server-for-operationalization) front-ends and back-ends     
@@ -50,11 +53,12 @@ With this tool, you can:
 
 <a name="93"></a>
 
-## Admin CLI in Machine Learning Server 9.3
+## Azure CLI for administration in Machine Learning Server 9.3
 
 Once Machine Learning Server has been installed, you can start configuring nodes for operationalization and managing that configuration. 
 
 1. Launch a DOS command line, powershell window, or terminal window with administrator privileges. 
+
 1. Call the help function to verify that Administration CLI is working properly. At the commmand prompt, enter:
    ```
    az ml admin --help
