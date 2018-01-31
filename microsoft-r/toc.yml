@@ -65,8 +65,6 @@
         href: install/operationalize-r-server-enterprise-config.md
     - name: Diagnostics & Troubleshooting
       href: operationalize/configure-run-diagnostics.md
-    - name: Administration utility
-      href: operationalize/configure-use-admin-utility.md
     - name: Database setup
       href: operationalize/configure-remote-database-to-operationalize.md
     - name: Authentication
@@ -75,7 +73,7 @@
       href: operationalize/configure-https.md
     - name: Roles & Permissions (RBAC)
       href: operationalize/configure-roles.md
-    - name: Launch Administration CLI
+    - name: Launch admin CLI
       href: operationalize/configure-admin-cli-launch.md
     - name: Stop & start nodes
       href: operationalize/configure-admin-cli-stop-start.md
