@@ -30,7 +30,7 @@ ms.technology:
 
 This article describes how to launch the tool used to manage the web and compute nodes. These nodes enable you to operationalize your analytics with Machine Learning Server.
 
-+ In version 9.3, this management tool is called the Administration Command Line Interface (Admin CLI).
++ In **Machine Learning Server 9.3**, this management tool is called the Administration Command Line Interface (Admin CLI).
 
 + In earlier version, this tool is called the Administration Utility.
 
@@ -46,13 +46,13 @@ With this tool, you can:
 + [Learn about command-line switches to this utility script](#switch)     
 
 
-<a name="93">
+<a name="93"></a>
 
-## Launch Admin CLI (version 9.3)
+## Launch the Admin CLI in v9.3
 
 @Heidi
 
-## Launch Administration Utility (version 9.2)
+## Launch the utility in v9.2
 
 These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.2.
 
@@ -61,14 +61,18 @@ These instructions describe how to launch the Administrator Utility on Machine L
 Launch the Administration Utility using one of these two ways:
 + You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
 
-  >[!Warning]
-  >If your organization has the default powershell execution policy of "Restricted", you may have issues using the shortcut. In that case, either use the next bullet or change the execution policy to "Unrestricted." 
+>[!Warning]
+>If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. Change the execution policy to "Unrestricted" or run these commands in a command-line window with administrator privileges:
+>`cd \<server_home>`
+>`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll`
 
-+ In a command-line window with administrator privileges, run these commands:
-  ```
-  cd \<server_home>
-  dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll
-  ```
+
+  >[!Warning]
+  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. Change the execution policy to "Unrestricted" or in a command-line window with administrator privileges, run these commands in a command-line window with administrator privileges:
+  >
+  >`cd \<server_home>`
+  >`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll`
+
   where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).  
 
 **On Linux:**
@@ -81,7 +85,7 @@ Launch the Administration Utility using one of these two ways:
   where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
 
 
-## Launch Administration Utility (version 9.1)
+## Launch the utility in v9.1
 
 These instructions describe how to launch the Administrator Utility on R Server 9.1.
 
@@ -91,7 +95,7 @@ Launch the Administration Utility using one of these two ways:
 + You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
 
   >[!Warning]
-  >If your organization has the default powershell execution policy of "Restricted", you may have issues using the shortcut. In that case, either use the next bullet or change the execution policy to "Unrestricted." 
+  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. Change the execution policy to "Unrestricted." 
 
 + In a command-line window with administrator privileges, run these commands:
   ```
@@ -109,7 +113,7 @@ Launch the Administration Utility using one of these two ways:
   ``` 
   where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
 
-## Launch Administration Utility (version 9.0)
+## Launch the utility in v9.0
 
 These instructions describe how to launch the Administrator Utility on R Server 9.0.
 
