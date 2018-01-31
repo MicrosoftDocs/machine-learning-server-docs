@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "HTTPS SSL / TLS 1.2 connection security for Machine Learning Server "
-description: "Enterprise-Grade Security: Configure SSL / TLS 1.2 with Machine Learning Server"
+title: "HTTPS SSL / TLS 1.2 for Machine Learning Server "
+description: "Learn how to add enterprise-grade security (HTTPS SSL / TLS 1.2) for Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -62,7 +62,7 @@ This section walks you through the steps for securing the connections between th
        
    1. Take note of the `Subject` name of the certificate as you need this info later.
 
-1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) You can configure the HTTPS port for the web node in this file.
+1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. You can configure the HTTPS port for the web node in this file.
 
 1. In that file, search for the section starting with: "Kestrel": {
 
@@ -85,9 +85,9 @@ This section walks you through the steps for securing the connections between th
 
 1. Create a firewall rule to open port 443 to the public IP of the web node so that remote machines can access it.
 
-1. Launch the administrator's utility and [restart the web node](configure-admin-cli-stop-start.md).
+1. Launch the administration tool/CLI and [restart the web node](configure-admin-cli-stop-start.md).
 
-1. In the same utility, run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
+1. In the same tool, run the [diagnostic test](configure-run-diagnostics.md) to send a test HTTPs request.
 
 #### Windows: Using IIS to Encrypt
 
@@ -184,7 +184,7 @@ On each Linux machine hosting a web node:
 
 1. If using IPTABLES firewall, add the HTTPS port, which is 443 by default, to the firewall settings to allow communications between the client application and Machine Learning Server. 
 
-1. Launch the administrator's utility and [restart the web node](configure-admin-cli-stop-start.md).
+1. Launch the administration tool/CLI and [restart the web node](configure-admin-cli-stop-start.md).
 
 1. Repeat on each web node.
 
@@ -218,7 +218,7 @@ When encrypting, you have the choice of using one of the following **compute nod
    >For non production environments, this [blog post](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) demonstrates how to use a self-signed certificate in Linux. However, self-signed certificates are NOT recommended for production usage.
 
 1. Update the external JSON configuration file, appsettings.json to configure the HTTPS port for the compute node:
-   1. Open the configuration file, \<compute-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+   1. Open the configuration file, [\<compute-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. 
 
    1. In that file, search for the section starting with: "Kestrel": {
 
@@ -239,9 +239,9 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Close and save the file.
 
-1. Launch the administrator's utility and [restart the compute node](configure-admin-cli-stop-start.md).
+1. Launch the administration tool/CLI and [restart the compute node](configure-admin-cli-stop-start.md).
 
-1. In the same utility, run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
+1. In the same tool, run the [diagnostic test](configure-run-diagnostics.md) to send a test HTTPs request.
 
 
 <br>
@@ -298,7 +298,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Restart NGINX service.
 
-   1. Launch the administrator's utility and [restart the compute node](configure-admin-cli-stop-start.md).
+   1. Launch the administration tool/CLI and [restart the compute node](configure-admin-cli-stop-start.md).
 
    1. Repeat on each compute node.
 
@@ -306,10 +306,10 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Log in to each web node machine.
 
-      + **For Machine Learning Server 9.2.1**, [declare the new URIs in the "Manage Compute Nodes" section of the administration utility](configure-admin-cli-compute-uris.md).
+      + **For Machine Learning Server**, [declare the new URIs in administration tool/CLI](configure-admin-cli-compute-uris.md).
    
       + **For R Server 9.x**:
-        1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+        1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json.
          
         1. Update the `"Uris": {` properties so that declared compute node now points to `https://<compute-node-ip>` (without the port number):
            ```
@@ -324,9 +324,9 @@ When encrypting, you have the choice of using one of the following **compute nod
 
         1. Close and save the file.
 
-        1. Launch the administrator's utility and [restart the web node](configure-admin-cli-stop-start.md).
+        1. Launch the administration tool/CLI and [restart the web node](configure-admin-cli-stop-start.md).
 
-   1. Verify the configuration by running [diagnostic test](configure-run-diagnostics.md) in the administration utility on the web node.
+   1. Verify the configuration by running [diagnostic test](configure-run-diagnostics.md) in the administration tool/CLI on the web node.
 
    1. Repeat on each web node.  
 <br>
@@ -343,7 +343,7 @@ This section walks you through the steps for authenticating the web node with th
    1. Install the trusted, signed **HTTPS authentication certificate** with both private and public keys in the certificate store.
        > Take note of the `Subject` name of the certificate as you need this info later.
 
-   1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) You can configure the HTTPS port for the web node in this file.
+   1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. You can configure the HTTPS port for the web node in this file.
 
    1. In the file, search for the section starting with: "BackEndConfiguration": {
 
@@ -359,14 +359,14 @@ This section walks you through the steps for authenticating the web node with th
 
    1. Close and save the file.
 
-   1. Launch the administrator's utility and [restart the web node](configure-admin-cli-stop-start.md).
+   1. Launch the administration tool/CLI and [restart the web node](configure-admin-cli-stop-start.md).
     
    1. Repeat on each web node.
 
 1. **On each compute node:**
     > These steps assume the trusted, signed HTTPS authentication certificate is already installed on the machine hosting the web node with a _private_ key.
 
-   1. Open the configuration file, \<compute-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+   1. Open the configuration file, [\<compute-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json.  
 
    1. In the file, search for the section starting with: "BackEndConfiguration": {
 
@@ -381,6 +381,6 @@ This section walks you through the steps for authenticating the web node with th
 
    1. Close and save the file.
 
-   1. Launch the administrator's utility and [restart the compute node](configure-admin-cli-stop-start.md).
+   1. Launch the administration tool/CLI and [restart the compute node](configure-admin-cli-stop-start.md).
 
    1. Repeat on each compute node.
