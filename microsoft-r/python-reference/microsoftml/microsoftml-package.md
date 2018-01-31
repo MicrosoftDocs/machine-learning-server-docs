@@ -30,9 +30,10 @@ The **microsoftml** module is a collection of Python functions used in machine l
 
 | Package details | |
 |--------|-|
-| Version: |  1.5.0 |
-| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)(https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
-| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
+| Current version: |  9.3 |
+| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) |
+| Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)(https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+
 
 ## How to use microsoftml
 

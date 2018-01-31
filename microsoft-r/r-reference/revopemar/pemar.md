@@ -31,9 +31,10 @@ The **RevoPemaR** package provides a framework for creating Parallel External Me
 
 | Package details | |
 |--------|-|
-| Version: |  10.0.0 |
-| Runs on: | [Machine Learning Server (Hadoop)](../../install/machine-learning-server-hadoop-install.md)  
-| Built on: | R 3.4.3 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
+| Current version: |  10.0.0 |
+| Built on: | R 3.2.2 |
+| Package distribution: | [Machine Learning Server (Hadoop)](../../install/machine-learning-server-hadoop-install.md)  
+
  
 ## How to use RevoPemaR
 

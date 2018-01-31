@@ -24,9 +24,11 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Linux
 
+**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+
 Machine Learning Server for Linux runs machine learning and data mining solutions written in R or Python in standalone and clustered topologies. 
 
-This article explains how to install Machine Learning Server 9.2.1 on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-linux-offline.md). 
+This article explains how to install Machine Learning Server on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-linux-offline.md). 
 
 This article covers the following items:
 > [!div class="checklist"]
