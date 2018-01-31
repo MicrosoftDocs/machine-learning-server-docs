@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server using Cloudera Manager
 
-**Applies to:  Machine Learning Server 9.2.1, 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3**
 
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server on a Cloudera distribution of Apache Hadoop (CDH). 
 

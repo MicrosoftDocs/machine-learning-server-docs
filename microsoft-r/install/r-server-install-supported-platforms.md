@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "01/29/2018"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -35,9 +35,9 @@ This article specifies the operating systems and platforms for on-premises insta
 
 In this release, R support includes [Microsoft R Open 3.4.3](https://mran.microsoft.com/open/), based on R-3.4.3. Python support is based on Anaconda 4.2 over Python 3.5. We support Apache Spark 2.0 and 2.4 through a Hadoop distribution on CDH, HDP, or MapR. 
 
-[Operationalization](../what-is-operationalization.md) is available on server platforms, on operating systems supporting .NET Core. [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) has a .NET Core dependency for scoring, but runs on both client and server operating systems.
+[Operationalization](../what-is-operationalization.md) is available on server platforms, on operating systems supporting .NET Core. [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) has a .NET Core dependency for scoring, but runs on both client and server operating systems. These requirements affect feature availability on some platforms.
 
-| Operating system or platform | SKU | Operationalization ? | MicrosoftML (R) ? | 
+| Operating system or platform | SKU | Operationalization? | MicrosoftML for R? | 
 |------------------------------|-----|--------------------|-----------------|
 | Windows 10 <br>Windows 8.1<br>Windows 7 SP1 | [Machine Learning Server for Windows <br>(developer edition)](machine-learning-server-windows-install.md) | No | Yes |
 |  Windows Server 2016<br>Windows Server 2012 R2 | [Machine Learning Server for Windows](machine-learning-server-windows-install.md) | Yes | Yes |
