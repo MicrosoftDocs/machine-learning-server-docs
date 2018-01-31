@@ -52,20 +52,15 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-1. In that window, use the CLI to configure a web node and compute node on the same machine.
+1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run commands to configure a web node and compute node on the same machine and [test the configuration](../operationalize/configure-run-diagnostics.md).
    ```
-   # Check both node on one machine
+   # Set up both nodes on one machine
    az ml admin node setup --onebox
-   # Check the node is now running
+   # Check the nodes are now running
    az ml admin node list
-   ``` 
-
-1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
-   ```
+   # Run configuration test to validate setup
    az ml admin diagnostic configure
-   ```
+   ``` 
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
@@ -111,15 +106,13 @@ Carefully review the following steps.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-1. In that window, use the CLI to configure a web node and compute node on the same machine.
+1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run commands to configure a web node and compute node on the same machine.
    ```
-   # Check both node on one machine
+   # Set up both nodes on one machine
    az ml admin node setup --onebox
-   # Check the node is now running
+   # Check the nodes are now running
    az ml admin node list
-   ``` 
+   ```
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically set up using the configuration you had for R Server 9.x. Note: You can safely ignore the Python warning during upgrade.
 
