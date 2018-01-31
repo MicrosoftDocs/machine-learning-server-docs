@@ -58,31 +58,19 @@ These instructions describe how to launch the Administrator Utility on Machine L
 
 **On Windows:**
 
-Launch the Administration Utility using one of these two ways:
-+ You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
+Launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
 
 >[!Warning]
->If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. Change the execution policy to "Unrestricted" or run these commands in a command-line window with administrator privileges:
->`cd \<server_home>`
->`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll`
-
-
-  >[!Warning]
-  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. Change the execution policy to "Unrestricted" or in a command-line window with administrator privileges, run these commands in a command-line window with administrator privileges:
-  >
-  >`cd \<server_home>`
-  >`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll`
-
-  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).  
+>If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. Change the execution policy to "Unrestricted" or run these commands in a command-line window with administrator privileges:<br/>`cd \<server_home>`<br/>`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll`<br/>where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).  
 
 **On Linux:**
 
-+ Launch the administration utility script with `root` or `sudo` privileges with the following commands:
-  ```
-  cd \<server_home>
-  sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-  ``` 
-  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
+Launch the administration utility script with `root` or `sudo` privileges with the following commands:
+```
+cd \<server_home>
+sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
+``` 
+where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
 
 
 ## Launch the utility in v9.1
