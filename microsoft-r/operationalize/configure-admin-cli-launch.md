@@ -33,11 +33,11 @@ This article describes how to launch the tool used to manage the web and compute
 The tool to use depends on your version:
 + In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your Machine Learning Server node configuration, including stopping and starting services.
 
->[!Important]
->- You must first [set up your nodes](configure-machine-learning-server-one-box.md) before running any other `admin` extension commands in the CLI.
->- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
+  >[!Important]
+  >- You must first [set up your nodes](configure-machine-learning-server-one-box.md) before running any other `admin` extension commands in the CLI.
+  >- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
 
-+ In earlier versions (9.0-9.2), this tool is called the **Administration Utility**.
++ In versions 9.0 - 9.2, this tool is called the **Administration Utility**.
 
 With this tool, you can:
 + [Configure web and compute nodes to enable operationalizing with Machine Learning Server](configure-start-for-administrators.md#configure-server-for-operationalization)    
@@ -118,7 +118,7 @@ To launch the 9.1 Administration Utility:
 
 ## Command-line switches
 
-The following command-line switches are available for the administration utility.
+The following command-line switches are available for the administration utility installed with R Server 9.0 - 9.1 and Machine Learning Server 9.2.1.
 
 |Switch|Description|Introduced in version|
 |----|-----|:---:|
