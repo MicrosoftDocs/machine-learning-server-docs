@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "01/04/2018"
+ms.date: "01/31/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,13 +24,17 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Windows
 
+**Applies to:  Machine Learning Serve 9.2.1, 9.3**
+
 Machine Learning Server for Windows runs machine learning and data mining solutions written in R or Python in standalone and clustered topologies. 
 
-This article explains how to install Machine Learning Server 9.2.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
+This article explains how to install Machine Learning Server on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-windows-offline.md). 
 
 ## System requirements
 
 + Operating system must be a [supported version of 64-bit Windows](r-server-install-supported-platforms.md). 
+
++ [Operalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. These features are unavailable on a Windows client.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended. Disk space must be a minimum of 500 MB.
 
@@ -38,11 +42,12 @@ This article explains how to install Machine Learning Server 9.2.1 on a standalo
 
 The following additional components are included in Setup and required for Machine Learning Server on Windows.
 
-* Microsoft R Open 3.4.1 (if you add R)
+* Microsoft R Open 3.4.3 (if you add R)
 * Anaconda 4.2 with Python 3.5 (if you add Python)
+* Azure CLI
+* Microsoft Visual C++ 2015 Redistributable
 * Microsoft MPI 7.1
 * AS OLE DB (SQL Server 2016) provider
-* Microsoft Visual C++ 2015 Redistributable
 
 ## Licensing
 
@@ -55,17 +60,17 @@ On production servers, the enterprise edition of Machine Learning Server for Win
 
 ## Upgrade existing installations
 
-If your existing server was configured for [operationalization](../what-is-operationalization.md), follow these alternative steps for upgrade: [Configure Machine Learning Server 9.2.1 to operationalize analytics (One-box) > How to upgrade](../operationalize/configure-machine-learning-server-one-box.md#how-to-upgrade) or [Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise) > How to upgrade](../operationalize/configure-machine-learning-server-enterprise.md#how-to-upgrade).
+If your existing server was configured for [operationalization](../what-is-operationalization.md), follow these alternative steps for upgrade: [Configure Machine Learning Server to operationalize analytics (One-box) > How to upgrade](../operationalize/configure-machine-learning-server-one-box.md#how-to-upgrade) or [Configure Machine Learning Server to operationalize analytics (Enterprise) > How to upgrade](../operationalize/configure-machine-learning-server-enterprise.md#how-to-upgrade).
 
 For all other configurations, Setup performs an in-place upgrade over existing installations. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, setup finds R Server at the old path and upgrades it to the new version. 
 
-There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
+There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.3). An installation is either entirely 9.3 or an earlier version.
 
 <a name="howtoinstall"></a>
 
 ## How to install
 
-This section walks you through a Machine Learning Server 9.2.1 deployment using the standalone Windows installer.
+This section walks you through a Machine Learning Server deployment using the standalone Windows installer.
 
 ### Download Machine Learning Server installer
 
@@ -74,22 +79,22 @@ You can get the zipped installation file from one of the following download site
 | Site | Edition | Details |
 |------|---------|---------|
 | [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your [Microsoft account](https://account.microsoft.com/account) (such as a Live ID, Hotmail, or outlook account).<br/>2. Make sure you're in the right place: *https://my.visualstudio.com/Benefits*.<br/>3. Click **Downloads**, and then search for *Machine Learning Server for Windows*. |
-| [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.2.1** is provided on this site. |
+| [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.3** is provided on this site. |
 
 ### Run Setup
 
 The setup wizard installs, upgrades, and uninstalls all in one workflow.
 
-1. In the Downloads folder, right-click **en_machine_learning_server_for_windows_x64_11452137.zip** to extract the contents of zipped executable.
+1. In the Downloads folder, right-click **en_machine_learning_server_for_windows_x64_<build-number>.zip** to extract the contents of zipped executable.
 
 2. Double-click **ServerSetup.exe** to start the wizard.
 
-3. In Configure installation, choose components to install. *If you clear the checkbox for R on a computer that has an existing R Server installation, Setup uninstalls your existing R Server instance.* 
+3. In Configure installation, choose components to install. Clear a checkbox to remove the component. Select a checkbox to add or upgrade a component. 
 
     + **Core components** are listed for visibility, but are not configurable. Core components are required.
     + **R** adds R Open and the R libraries.  
     + **Python** adds Anaconda and the Python libraries. 
-    + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) used for image classification and sentiment detection. You can install the models with R or Python, but not as a standalone component.
+    + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) are used for image classification and sentiment detection. You can install the models with R or Python, but not as a standalone component.
 
 4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open and Anaconda.
 
@@ -116,9 +121,9 @@ R Server runs as a background process, as **Microsoft ML Server Engine** in Task
 
 1. Go to C:\Program Files\Microsoft\ML Server\R_SERVER\bin\x64.
 2. Double-click **Rgui.exe** to start the R Console application.
-3. At the command line, type `search()` to show preloaded objects, including the `RevoScaleR` package. 
+3. At the command line, type `search()` to show preloaded objects, including the [RevoScaleR package](../r-reference/revoscaler/revoscaler.md). 
 4. Type `print(Revo.version)` to show the software version.
-5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
+5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from RevoScaleR. 
 
 **For Python**
 
@@ -127,7 +132,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
 1. Go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER.
 2. Double-click **Python.exe**.
 3. At the command line, type `help()` to open interactive help.
-4. Type ` revoscalepy` at the help prompt, followed by `microsoftml` to print the function list for each module.
+4. Type ` revoscalepy` at the help prompt to print the package contents. 
 5. Paste in the following revoscalepy script to return summary statistics from the built-in AirlineDemo demo data:
 
     ~~~~
@@ -143,7 +148,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
-    File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    File name: ... AirlineDemoSmall.xdf
     Number of valid observations: 600000.0
     
             Name       Mean     StdDev   Min     Max  ValidObs  MissingObs
@@ -168,7 +173,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable web service deployment and remote connections
 
-When you [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization), you gain the following benefits:
+On Windows Server 2012 R2 or Windows Server 2016, you can [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to gain the following benefits:
 
 + [Deploy Python and R script as a web service](../operationalize/concept-what-are-web-services.md) 
 + [Connect to a remote R server for code execution](../r/how-to-execute-code-remotely.md). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) or other Machine Learning Server nodes on your network. 

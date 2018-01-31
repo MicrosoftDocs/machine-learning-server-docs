@@ -191,6 +191,8 @@
         href: r/how-to-revoscaler-teradata.md
 - name: Quickstarts
   items:
+  - name: Install a one-box configuration
+    href: install/quickstart-onebox-install.md
   - name: Python
     items:
     - name: Deploy model as service

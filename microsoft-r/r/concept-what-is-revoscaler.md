@@ -92,7 +92,7 @@ RevoScaleR has the concept of *compute context* that sets the location for calcu
 
 Local is the default, and it supports the full range of data source inputs. As its name suggests, a local compute context uses only the physical cores of the local computer. Local compute context is provided by RevoScaleR on both R Client and Machine Learning Server instances.
 
-Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has Machine Learning Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for RevoScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in Machine Learning Server only: HDInsight, Hadoop (both MapReduce and Spark), Teradata, SQL Server, and Machine Learning Server (Windows and Linux). For more information, see [Compute Context](concept-what-is-compute-context.md).
+Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has Machine Learning Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for RevoScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in Machine Learning Server only: HDInsight, Hadoop (Spark), Teradata, SQL Server, and Machine Learning Server (Windows and Linux). For more information, see [Compute Context](concept-what-is-compute-context.md).
 
 ### Efficiently Storing and Retrieving Data
 
@@ -100,7 +100,7 @@ A key component of RevoScaleR is a data file format (.xdf) that is extremely eff
 
 ### Data Cleaning, Exploration, and Manipulation
 
-When working with a new data set, the first step is to clean and explore. With RevoScaleR, you can quickly obtain information about your data set (e.g., how many rows and variables) and the variables in your data set (e.g., name, data type, value labels). With RevoScaleR’s summary statistics and cube functionality, you can examine summary information about your data and quickly plot histograms or relationships between variables.
+When working with a new data set, the first step is to clean and explore. With RevoScaleR, you can quickly obtain information about your data set (e.g., how many rows and variables) and the variables in your data set (such as name, data type, value labels). With RevoScaleR’s summary statistics and cube functionality, you can examine summary information about your data and quickly plot histograms or relationships between variables.
 
 RevoScaleR also provides all of the power of R to use in data transformations and manipulations. In RevoScaleR’s data step functionality, you can specify R expressions to transform specific variables and have them automatically applied to a single data frame or to each block of data as it is read in from an .xdf file. You can create new variables, recode variables, and set missing values with all the flexibility of the R language.
 

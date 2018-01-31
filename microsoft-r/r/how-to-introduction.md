@@ -6,8 +6,8 @@ description: "Documentation for data science, statistics, analysis and visualiza
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "05/04/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 

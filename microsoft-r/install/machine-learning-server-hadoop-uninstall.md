@@ -5,8 +5,8 @@ description: "How to uninstall Machine Learning Server on a Hadoop cluster."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/15/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Uninstall Machine Learning Server for Hadoop
 
-This article explains how to uninstall Machine Learning Server 9.2.1 running in a Hadoop cluster. 
+This article explains how to uninstall Machine Learning Server running in a Spark cluster. 
 
 + Remove components on edge nodes
 + Remove components on data nodes

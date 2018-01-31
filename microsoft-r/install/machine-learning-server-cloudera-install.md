@@ -5,8 +5,8 @@ description: "How to install, connect to, and use Machine Learning Server on a C
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/15/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server using Cloudera Manager
 
-This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.2.1 on a Cloudera distribution of Apache Hadoop (CDH). 
+This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server 9.x on a Cloudera distribution of Apache Hadoop (CDH). 
 
 Cloudera offers a parcel installation methodology for adding services and features to a cluster. On a Hadoop cluster, Machine Learning Server runs on the edge node and all data nodes. You can use a parcel to distribute and activate the service on all nodes within your CDH cluster.
 

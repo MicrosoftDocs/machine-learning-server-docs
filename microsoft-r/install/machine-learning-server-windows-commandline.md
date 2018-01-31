@@ -5,8 +5,8 @@ description: "How to install Machine Learning Server for Windows on the command 
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/15/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -26,7 +26,7 @@ ms.technology: "r-server"
 
 This article provides syntax and examples for running Machine Learning Server **ServerSetup.exe** from the command line. You can use command line parameters for an internet-connected or offline installation. A command line installation requires administrator permissions.
 
-Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server 9.2.1 on Windows](machine-learning-server-windows-install.md).
+Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md).
 
 ## Command line options
 

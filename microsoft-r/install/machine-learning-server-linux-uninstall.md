@@ -5,8 +5,8 @@ description: "How to uninstall Machine Learning Server for Linux."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/15/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -24,7 +24,7 @@ ms.technology: "r-server"
 
 # Uninstall Machine Learning Server for Linux
 
-This article explains how to uninstall Machine Learning Server 9.2.1 for Linux. 
+This article explains how to uninstall Machine Learning Server for Linux. 
 
 > [!Note]
 > For upgrade purposes, uninstall is not necessary unless the existing version is 8.x. Upgrading from 9.x is an in-place upgrade that overwrites the previous version. Upgrading from 8.x requires that you uninstall R Server 8.x first. 
