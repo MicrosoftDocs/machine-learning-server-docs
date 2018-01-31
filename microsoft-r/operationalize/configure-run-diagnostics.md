@@ -47,11 +47,12 @@ Additional [troubleshooting topics](#trouble) are also covered.
      ```
      # Authenticate with the CLI if you haven't already
      az login --mls
+
      # Run diagnostics
      az ml admin diagnostic run
      ```
 
-   + On earlier versions:
+   + On earlier versions (9.0 - 9.2):
      1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
      1. From menus, choose **Run Diagnostic Tests**, then **Test configuration** for a 'health report' of the configuration including a code execution test. 
@@ -86,7 +87,7 @@ To go through the execution of a specific line of code and retrieve request IDs 
      az ml admin diagnostic code --runtime python --file <path/to/script.py>
      ```
 
-   + On earlier versions:
+   + On earlier versions (9.0 - 9.2):
      1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
      1. From menus, choose **Run Diagnostic Tests**, then either **Trace R code execution** or **Trace Python code execution** depending on the language you are using. 
@@ -110,7 +111,7 @@ To go through the execution of a specific web service and retrieve request IDs f
      az ml admin diagnostic service --name <service-name> --version <version>
      ```
 
-   + On earlier versions:
+   + On earlier versions (9.0 - 9.2):
      1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
      1. From menus, choose **Run Diagnostic Tests**, then **Trace service execution**. 

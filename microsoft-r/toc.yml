@@ -69,20 +69,12 @@
       href: operationalize/configure-use-admin-utility.md
     - name: Database setup
       href: operationalize/configure-remote-database-to-operationalize.md
-    - name: Capacity evaluation
-      href: operationalize/configure-evaluate-capacity.md
     - name: Authentication
       href: operationalize/configure-authentication.md
     - name: Connection security (SSL/TLS)
       href: operationalize/configure-https.md
     - name: Roles & Permissions (RBAC)
       href: operationalize/configure-roles.md
-    - name: CORS
-      href: operationalize/configure-cors.md
-    - name: R execution security
-      href: operationalize/configure-r-execution-security.md
-    - name: R package management
-      href: operationalize/configure-manage-r-packages.md
     - name: Launch Administration CLI
       href: operationalize/configure-admin-cli-launch.md
     - name: Stop & start nodes
@@ -95,6 +87,14 @@
       href: operationalize/configure-admin-cli-local-password.md
     - name: Update port numbers
       href: operationalize/configure-admin-cli-ports.md
+    - name: Capacity evaluation
+      href: operationalize/configure-evaluate-capacity.md
+    - name: CORS
+      href: operationalize/configure-cors.md
+    - name: R execution security
+      href: operationalize/configure-r-execution-security.md
+    - name: R package management
+      href: operationalize/configure-manage-r-packages.md
     - name: Find install path
       href: operationalize/configure-find-admin-configuration-file.md
   - name: Virtual machines
