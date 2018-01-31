@@ -44,6 +44,8 @@ In Machine Learning Server 9.3, you can use `admin` extension of the [Azure Comm
    az ml admin node stop --computenode
    # Stop a web node
    az ml admin node stop --webnode
+
+   
    # Start all nodes on a machine
    az ml admin node start 
    # Start a compute node
