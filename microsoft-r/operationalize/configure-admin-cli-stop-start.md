@@ -38,20 +38,15 @@ In Machine Learning Server 9.3, you can use `admin` extension of the [Azure Comm
 
 1. Run the command to either stop or start a node.
    ```
-   # Stop all nodes on a machine
-   az ml admin node stop 
-   # Stop a compute node
-   az ml admin node stop --computenode
-   # Stop a web node
-   az ml admin node stop --webnode
+   # Start nodes on a machine
+   az ml admin node start --computenode --webnode
 
-   
-   # Start all nodes on a machine
-   az ml admin node start 
-   # Start a compute node
-   az ml admin node start --computenode
-   # Start a web node
-   az ml admin node start --webnode  
+   # Stop nodes on a machine
+   az ml admin node stop --computenode --webnode
+
+   # Get help on other permutations
+   az ml admin node start --help
+   az ml admin node stop --help
    ```
 
 ## Earlier versions
