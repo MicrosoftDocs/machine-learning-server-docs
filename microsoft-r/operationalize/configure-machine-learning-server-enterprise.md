@@ -78,7 +78,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s). You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
-   If you need help with CLI commands at any time, add --help to your command to learn more about it.
+   If you need help with CLI commands, run the command but add `--help` to the end.
 
 1. If you plan to configure SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
@@ -108,7 +108,8 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node.
    ```
    # Set up a web node
-   az ml admin node setup --webnode —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
+   az ml admin node setup --webnode —admin-password <CHOOSE-NEW> —confirm-password <CONFIRM-IT>
+   
    # Check the node is now running
    az ml admin node list
    ``` 
@@ -119,10 +120,12 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
    # Account name is `admin` if LDAP or AAD is not set up.
    az login —-mls
 
+   # Declare compute node URIs. Separate each URI with a comma. 
    az ml admin compute-node-uri add --uri <uris>
    ```
 
-   For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
+   For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): 
+   http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
  
 1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
    ```
@@ -175,6 +178,7 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
    # You must be authenticated to run diagnostic tests.
    az login —-mls
 
+   # Run test
    az ml admin diagnostic run
    ```
 
@@ -243,7 +247,8 @@ You can now **repeat these steps** for each compute node.
 1. In that window, use the CLI to configure a web node:
    ```
    az ml admin node setup --webnode
-   #Check the node is now running
+
+   #Check that node is now running
    az ml admin node list
    ``` 
 
