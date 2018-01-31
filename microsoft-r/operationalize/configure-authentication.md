@@ -2,12 +2,12 @@
 
 # required metadata
 title: "LDAP AD and Azure Active Directory authentication for Machine Learning Server "
-description: "Enterprise-Grade Security: Authentication with Machine Learning Server"
+description: "Authenticate Machine Learning Server users against LDAP AD or Azure Active Directory"
 keywords: "Machine Learning Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -45,9 +45,9 @@ To secure connections and communications, you have several options:
 
 ## Local Administrator Account Authentication
 
-During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for In Machine Learning Server (and R Server). This account allows you to use the [administration utility](configure-use-admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
+During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for In Machine Learning Server (and R Server). This account allows you to use the [CLI or administration utility](configure-admin-cli-launch.md) to configure this feature, edit ports, restart nodes, and so on. 
 
-While this account might be sufficient when trying to operationalize with a [one-box configuration](configure-machine-learning-server-one-box.md) since everything is running within the trust boundary, it is insufficient for [enterprise configurations](configure-machine-learning-server-enterprise.md).
+This account might be sufficient when trying to operationalize with a [one-box configuration](configure-machine-learning-server-one-box.md) since everything is running within the trust boundary/ However, it is insufficient for [enterprise configurations](configure-machine-learning-server-enterprise.md).
 
 To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](configure-admin-cli-local-password.md).
 
@@ -82,7 +82,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, appsettings.json:
 
-   1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+   1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. 
 
    1. Search for the section starting with `"LDAP": {`
    
@@ -269,7 +269,7 @@ Now, create a native app. This app links the web app to the Machine Learning Ser
 
 **Step 4: Enable Azure AD on each web node**
 
-1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json.
 
 1. Search for the section starting with:
    ```

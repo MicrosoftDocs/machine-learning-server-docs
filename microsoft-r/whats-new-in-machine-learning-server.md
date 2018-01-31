@@ -60,7 +60,7 @@ The following table summarizes the Python and R features that were introduced in
 | [Realtime web service support](operationalize/concept-what-are-web-services.md#realtime) | Python | A fully encapsulated web service with no inputs or outputs (operates on dataframes). |
 | [Realtime model scoring](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime) | R | Now supported on Linux. |
 |[Role-based access control](operationalize/configure-roles.md) (RBAC) | Both| RBAC was extended with a new explicit Reader role. |
-| [Administration utility update](operationalize/configure-use-admin-utility.mdconfigure-admin-cli-compute-uris.md) | Both | The utility simplifies registration of compute nodes with web nodes. |
+| [Administration utility update](operationalize/configure-admin-cli-compute-uris.md) | Both | The utility simplifies registration of compute nodes with web nodes. |
 
 ### Python development
 

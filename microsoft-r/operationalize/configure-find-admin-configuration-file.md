@@ -2,12 +2,12 @@
 
 # required metadata
 title: "Default install paths for compute and web nodes - Machine Learning Server "
-description: "Where to find appsettings.json for Machine Learning Server, web node, compute node"
+description: "Where to find appsettings.json and log files for Machine Learning Server, web node, compute node"
 keywords: "Machine Learning Server configuration file, appsettings.json"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -36,7 +36,7 @@ The installation path depends on the operating system and the type of node (web 
 |OS|\<server-directory>|
 |----|------------|
 |Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
-|Linux|/opt/microsoft/mlserver/9.3/o16n||
+|Linux|/opt/microsoft/mlserver/9.3.0/o16n|
 
 **Find your node paths**
 |File(s)|Filepath by node|

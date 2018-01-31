@@ -306,7 +306,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
    1. Log in to each web node machine.
 
-      + **For Machine Learning Server 9.2.1**, [declare the new URIs in the "Manage Compute Nodes" section of the administration utility](configure-use-admin-utility.mdconfigure-admin-cli-compute-uris.md).
+      + **For Machine Learning Server 9.2.1**, [declare the new URIs in the "Manage Compute Nodes" section of the administration utility](configure-admin-cli-compute-uris.md).
    
       + **For R Server 9.x**:
         1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
