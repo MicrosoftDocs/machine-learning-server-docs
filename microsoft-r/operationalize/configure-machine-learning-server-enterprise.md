@@ -71,11 +71,13 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator privileges. 
+1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-1. Configure a compute node using the CLI.
+1. Configure a compute node using the CLI. At the prompt, enter:
    ```
    az ml admin node setup --computenode
+   #Check the node is now running
+   az ml admin node list
    ```
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
@@ -104,11 +106,13 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator privileges to configure a web node.
+1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-1. Configure a web node using the CLI.
+1. In that window, use the CLI to configure a web node:
    ```
    az ml admin node setup --webnode
+   #Check the node is now running
+   az ml admin node list
    ``` 
   
 1. Provide a password for the built-in, local operationalization administrator account called 'admin' using the CLI.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md).   
@@ -170,7 +174,7 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
 
 1. [Update service ports](../operationalize/configure-admin-cli-ports.md), if needed.
 
-1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+1. Use the CLI to test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following at the prompt:
    ```
    az ml admin diagnostic configure
    ```
@@ -205,9 +209,9 @@ Carefully review the steps in the following sections.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the Administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-1. Configure a compute node using the CLI.
+1. In that window, use the CLI to configure a compute node.
    ```
    az ml admin node setup --computenode
    ``` 
@@ -237,11 +241,13 @@ You can now **repeat these steps** for each compute node.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-1. Configure a web node using the CLI.
+1. In that window, use the CLI to configure a web node:
    ```
    az ml admin node setup --webnode
+   #Check the node is now running
+   az ml admin node list
    ``` 
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 

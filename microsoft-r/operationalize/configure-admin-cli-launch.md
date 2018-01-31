@@ -50,7 +50,13 @@ With this tool, you can:
 
 ## Admin CLI in Machine Learning Server 9.3
 
-@Heidi
+Once Machine Learning Server has been installed, you can start configuring nodes for operationalization and managing that configuration. 
+
+1. Launch a DOS command line, powershell window, or terminal window with administrator privileges. 
+1. Call the help function to verify that Administration CLI is working properly. At the commmand prompt, enter:
+   ```
+   az ml admin --help
+   ```
 
 ## Administration utility in Machine Learning Server 9.2
 

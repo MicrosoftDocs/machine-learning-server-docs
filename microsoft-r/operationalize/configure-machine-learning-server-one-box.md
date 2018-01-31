@@ -52,11 +52,13 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the Administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator privileges.
+1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-1. Using the CLI, configure a web node and compute node onto the same machine.
+1. In that window, use the CLI to configure a web node and compute node onto the same machine.
    ```
    az ml admin node setup --onebox
+   #Check the node is now running
+   az ml admin node list
    ``` 
 
 1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
@@ -108,16 +110,18 @@ Carefully review the following steps.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the Administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-1. Using the CLI, configure a web node and compute node.
+1. In that window, use the CLI to configure a web node and compute node.
    ```
    az ml admin node setup --onebox
+   #Check the node is now running
+   az ml admin node list
    ``` 
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically set up using the configuration you had for R Server 9.x. Note: You can safely ignore the Python warning during upgrade.
 
-1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+1. Use the CLI to test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
    ```
    az ml admin diagnostic configure
    ```
