@@ -71,21 +71,9 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
-
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. 
 
 1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu. 
-
-   >[!NOTE]
-   >To bypass this interactive node configuration step, specify the following switch when launching the utility:
-   >-silentcomputenodeinstall
-   >Learn more about command-line switches for this utility [here](../operationalize/configure-admin-cli-launch.md#switch).
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
@@ -113,20 +101,11 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to configure a web node:
-
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
-
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
-
-     >[!NOTE]
-     >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
-     >-silentwebnodeinstall mypassword uri1,uri2
-     >Learn more about command-line switches for this utility [here](../operationalize/configure-admin-cli-launch.md#switch).
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges to configure a web node:
+    >[!NOTE]
+    >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
+    >-silentwebnodeinstall mypassword uri1,uri2
+    >Learn more about command-line switches for this utility [here](../operationalize/configure-admin-cli-launch.md#switch).
 
    1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
   
@@ -220,15 +199,7 @@ Carefully review the steps in the following sections.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
-
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
-
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
 1. Choose **Configure server** from the menu and then **Configure a compute node** from the submenu. 
 
@@ -257,15 +228,7 @@ You can now **repeat these steps** for each compute node.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
-
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
-
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
 1. Choose **Configure server** from the menu and then **Configure a web node** from the submenu.  
 

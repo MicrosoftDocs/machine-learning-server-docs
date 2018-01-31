@@ -41,7 +41,7 @@ Additional [troubleshooting topics](#trouble) are also covered.
 <a name="test"></a>
 
 ## Test your configuration
-1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
+1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -61,7 +61,7 @@ You can also get a health report directly using the [status](https://microsoft.g
 
 To go through the execution of a specific line of code and retrieve request IDs for debugging purposes, run a trace. 
 
-1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
+1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -80,7 +80,7 @@ To go through the execution of a specific line of code and retrieve request IDs 
 
 To go through the execution of a specific web service and retrieve request IDs for debugging purposes, run a trace. 
 
-1. [Launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
+1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose **Run Diagnostic Tests**.
 
@@ -158,7 +158,7 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 ### “Cannot establish connection with the web node” Error
 
 If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Perform the following steps:
-+ Verify that the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [Machine Learning Server Administration](configure-use-admin-utility.md#launch)
++ Verify that the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [Machine Learning Server Administration](configure-admin-cli-launch.md)
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
 + Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [Machine Learning Server Operationalization Administration](configure-admin-cli-stop-start.md)
 

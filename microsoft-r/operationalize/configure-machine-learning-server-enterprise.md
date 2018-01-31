@@ -72,20 +72,11 @@ In the Enterprise configuration, side-by-side installations of a web and compute
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
 1. [Launch the administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator privileges. 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
 
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
-
-1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu. 
-
-   >[!NOTE]
-   >To bypass this interactive node configuration step, specify the following switch when launching the utility:
-   >-silentcomputenodeinstall
-   >Learn more about command-line switches for this utility [here](../operationalize/configure-admin-cli-launch.md#switch).
+1. Configure a compute node using the CLI.
+   ```
+   az ml admin node setup --computenode
+   ```
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
@@ -113,39 +104,30 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to configure a web node:
+1. [Launch the administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator privileges to configure a web node.
 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
-
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
-
-     >[!NOTE]
-     >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
-     >-silentwebnodeinstall mypassword uri1,uri2
-     >Learn more about command-line switches for this utility [here](../operationalize/configure-admin-cli-launch.md#switch).
-
-   1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
+1. Configure a web node using the CLI.
+   ```
+   az ml admin node setup --webnode
+   ``` 
   
-   1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).   
+1. Provide a password for the built-in, local operationalization administrator account called 'admin' using the CLI.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md).   
  
-   1. When prompted, enter the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
+1. Declare the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
 
-      For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
+   For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
   
-      In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
+   In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
 
-   1. Return the main menu of the utility.
-
-   >[!Important]
-   >When configuring your web node, you might see the following message:  "Web Node was not able to start because it is not configured." Typically, this is not really an issue since the web node is automatically restarted within 5 minutes by an auto-recovery mechanism.
+   In the CLI, specify the URIs:
+   ```
+   az ml admin compute-node-uri add --uri <uris>
+   ```
  
-1. In the same utility, test the configuration. From the main utility menu, choose **Run Diagnostic Tests** and choose a [diagnostic test](../operationalize/configure-run-diagnostics.md).
-
-1. Exit the utility.
+1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+   ```
+   az ml admin diagnostic configure
+   ```
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
@@ -188,7 +170,10 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
 
 1. [Update service ports](../operationalize/configure-admin-cli-ports.md), if needed.
 
-1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
+1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+   ```
+   az ml admin diagnostic configure
+   ```
 
 1. [Evaluate](../operationalize/configure-evaluate-capacity.md) the configuration's capacity.
 
@@ -220,17 +205,12 @@ Carefully review the steps in the following sections.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+1. [Launch the Administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
-
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
-
-1. Choose **Configure server** from the menu and then **Configure a compute node** from the submenu. 
+1. Configure a compute node using the CLI.
+   ```
+   az ml admin node setup --computenode
+   ``` 
 
 1. When the script asks you if you want to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
     
@@ -257,20 +237,18 @@ You can now **repeat these steps** for each compute node.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+1. [Launch the administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
-
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
-
-1. Choose **Configure server** from the menu and then **Configure a web node** from the submenu.  
+1. Configure a web node using the CLI.
+   ```
+   az ml admin node setup --webnode
+   ``` 
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
 
-1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
+1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+   ```
+   az ml admin diagnostic configure
+   ```
 
 You can now **repeat these steps** for each node.

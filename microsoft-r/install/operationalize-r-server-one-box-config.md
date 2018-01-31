@@ -93,7 +93,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
 
 1. From the menus, choose **Configure server** (or in previously releases, Configure R Server for Operationalization) and then choose **Configure for one box**. The configuration script begins.
 
@@ -136,7 +136,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
    >**Note:** If there are issues with starting the compute node, see [here](../operationalize/configure-run-diagnostics.md).
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) so you can begin to configure a one-box setup.
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) so you can begin to configure a one-box setup.
 
     >[!NOTE]
     >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 

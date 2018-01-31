@@ -33,15 +33,15 @@ When no other form of [authentication](configure-authentication.md) is used for 
 The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
 
 
-<a name="93"></a>
+## Machine Learning Server 9.3
 
-## Set the password in Machine Learning Server 9.3
+To set or update the password:
 
 @Heidi
 
-## Set the password in earlier versions
+## In earlier versions
 
-**To set or update the password:**
+To set or update the password:
 
 1. [Launch the administration utility.](configure-admin-cli-launch.md)
 

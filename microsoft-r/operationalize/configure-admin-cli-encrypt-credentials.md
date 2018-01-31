@@ -32,11 +32,17 @@ For security purposes, we strongly recommend that you encrypt strings in the app
 
 The encryption function available in the administration utility relies on the RSA algorithm for encryption. 
 
-**To encrypt in Machine Learning Server 9.3:**
+
+## Machine Learning Server 9.3
+
+To encrypt credentials or secrets in Machine Learning Server 9.3:
+
 @Heidi
 
-**To encrypt in earlier versions:**
+## In earlier versions
        
+To encrypt credentials or secrets:
+
 1. On the web node, install a credential encryption certificate with a private key into the default certificate store on the local machine. That location is in the Windows certificate store or in the Linux-based PFX file. 
 
    The length of the encryption key depends on the certificate, however, we recommend a length of at least 1048 bits.

@@ -48,15 +48,15 @@ With this tool, you can:
 
 <a name="93"></a>
 
-## Launch the Admin CLI in v9.3
+## Admin CLI in Machine Learning Server 9.3
 
 @Heidi
 
-## Launch the utility in v9.2
+## Administration utility in Machine Learning Server 9.2
 
 These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.2.
 
-**To launch the 9.2 Administration Utility:**
+To launch the 9.2 Administration Utility:
 
 + **On Windows,** right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
   >[!Note]
@@ -68,11 +68,11 @@ These instructions describe how to launch the Administrator Utility on Machine L
   sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
   ``` 
  
-## Launch the utility in v9.1
+## Administration utility in R Server 9.1
 
 These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.1.
 
-**To launch the 9.1 Administration Utility:**
+To launch the 9.1 Administration Utility:
 
 + **On Windows,** right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
   >[!Note]
@@ -84,11 +84,11 @@ These instructions describe how to launch the Administrator Utility on Machine L
   sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll
   ``` 
  
-## Launch the utility in v9.0
+## Administration utility in R Server 9.0
 
 These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.1.
 
-**To launch the 9.1 Administration Utility:**
+To launch the 9.1 Administration Utility:
 
 + **On Windows,** right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
   >[!Note]

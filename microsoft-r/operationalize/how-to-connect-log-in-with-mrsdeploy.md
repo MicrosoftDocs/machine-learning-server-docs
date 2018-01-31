@@ -90,7 +90,7 @@ In another example, we authenticate using the local 'admin' account and password
 
 |`remoteLogin` Argument|Description|
 |--- | --- |
-|endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](configure-use-admin-utility.md#launch).|
+|endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](configure-admin-cli-launch.md).|
 |session|If TRUE, create a remote session. **If omitted, creates a remote session.**|
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE. **If omitted, it is the same as `= TRUE`.**|

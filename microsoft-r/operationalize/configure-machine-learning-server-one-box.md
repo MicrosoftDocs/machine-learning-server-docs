@@ -52,40 +52,24 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges:
-   
-   + Windows instructions: launch the administration utility as an administrator (right-click) using the shortcut in the Start menu called Administration Utility.
+1. [Launch the Administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator privileges.
 
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
+1. Using the CLI, configure a web node and compute node onto the same machine.
+   ```
+   az ml admin node setup --onebox
+   ``` 
 
-   >[!NOTE]
-   >To bypass the interactive configuration steps, specify the following argument and ['admin' password](../deployr/../operationalize/configure-authentication.md#local) when launching the utility:
-   >-silentoneboxinstall myPassword.
-   >If you choose this method, you can skip the next three substeps. Learn more about command-line switches for this script, [here](../operationalize/configure-admin-cli-launch.md#switch).
-
-1. Choose the option to **Configure server**.
-
-1. Choose the option to **Configure for one box** to set up the web node and compute node onto the same machine.
-
-   >[!IMPORTANT]
-   > Do not choose the suboptions **Configure a web node** or **Configure a compute node** unless you intend to have them on separate machines. This multi-machine configuration is described as an [**Enterprise** configuration](configure-machine-learning-server-enterprise.md).
-
-1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.
-
-1. Return to the main menu of the utility when the configuration ends.
-
-1. [Run a diagnostic test of the configuration](../operationalize/configure-run-diagnostics.md).
+1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+   ```
+   az ml admin diagnostic configure
+   ```
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 >[!Important]
 >Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
-You are now ready to begin operationalizing your R analytics with Machine Learning Server.
+You are now ready to begin operationalizing your R and Python analytics with Machine Learning Server.
 
 
 
@@ -124,23 +108,21 @@ Carefully review the following steps.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+1. [Launch the Administration CLI](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
-
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
-
-1. From the menus, choose **Configure server** and then choose **Configure for one box**. The configuration script begins.
+1. Using the CLI, configure a web node and compute node.
+   ```
+   az ml admin node setup --onebox
+   ``` 
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically set up using the configuration you had for R Server 9.x. Note: You can safely ignore the Python warning during upgrade.
 
-1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
+1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+   ```
+   az ml admin diagnostic configure
+   ```
 
-1. Exit the utility. Your web and compute nodes are now upgraded and configured as they were in version 9.0.
+  Your web and compute nodes are now upgraded and configured as they were in the previous version.
 
 >[!WARNING]
 >The entities created by users, specifically web services, and [snapshots](../r/how-to-execute-code-remotely.md#snapshot), are tied to their usernames. For this reason, you must be careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them. For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 

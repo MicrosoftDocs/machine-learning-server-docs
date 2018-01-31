@@ -30,10 +30,15 @@ ms.technology:
 
 You can update the ports numbers for the web node, compute node, or [deployr-rserve](https://github.com/Microsoft/deployr-rserve) (a forked version of RServe).
 
-**To update ports in Machine Learning Server 9.3:**
+## Machine Learning Server 9.3
+
+To update port values:
+
 @Heidi
 
-**To update ports in earlier versions:**
+## In earlier versions
+
+To update port values:
 
 1. Log in to the machine on which your web node or compute node is installed.
 
@@ -45,4 +50,4 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 1. Enter the port number. 
 
->The port number will be updated the next time the [service is restarted](configure-admin-cli-stop-start.md).
+   >The port number will be updated the next time the [service is restarted](configure-admin-cli-stop-start.md).

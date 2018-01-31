@@ -35,13 +35,17 @@ In R Server 9.1, this list is managed manually and individually for each web nod
 >[!Important]
 >1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to manage compute nodes. 
 >
->2. If you declared URIs in R Server and have upgraded to 9.2.1, the URIs are copied from the old appsettings.json to the database so they can be shared across all web nodes. If you remove a URI with the utility, it is deleted from the appsettings.json file as well for consistency.
+>2. If you declared URIs in R Server and have upgraded to Machine Learning Server, the URIs are copied from the old appsettings.json to the database so they can be shared across all web nodes. If you remove a URI with the utility, it is deleted from the appsettings.json file as well for consistency.
 
-**To declare or manage URIs in Machine Learning Server 9.3:**
+## Machine Learning Server 9.3
+
+To declare or manage URIs in Machine Learning Server 9.3:
 
 @Heidi
 
-**To declare or manage URIs in Machine Learning Server 9.2:**
+## Machine Learning Server 9.2
+
+To declare or manage URIs in Machine Learning Server 9.2:
 
 1. Log in to the machine on which one of your web nodes is installed.
 

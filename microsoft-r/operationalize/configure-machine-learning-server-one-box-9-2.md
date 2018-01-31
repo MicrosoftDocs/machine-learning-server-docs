@@ -52,7 +52,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges:
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges:
    
    + Windows instructions: launch the administration utility as an administrator (right-click) using the shortcut in the Start menu called Administration Utility.
 
@@ -124,7 +124,7 @@ Carefully review the following steps.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
 
    + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
 

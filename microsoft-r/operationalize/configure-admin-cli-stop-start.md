@@ -30,15 +30,13 @@ ms.technology:
 
 You can start or stop all operationalization-related web and compute nodes on the Machine Learning Server machine at once.
 
-<a name="93"></a>
-
-## Stop or start nodes in Machine Learning Server 9.3
+## Machine Learning Server 9.3
 
 @Heidi
 
-## Stop or start nodes in earlier versions
+## Earlier versions
 
-**To stop or start a web node or compute node:**
+To stop or start a web node or compute node:
 
 1. [Launch the administration utility.](configure-admin-cli-launch.md)
 
