@@ -56,11 +56,16 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    ```
    # Set up both nodes on one machine
    az ml admin node setup --onebox
+
+   # At prompt, provide password for local admin account
+
    # Check that the nodes are now running
    az ml admin node list
    # Run configuration test to validate setup
    az ml admin diagnostic configure
    ``` 
+
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
@@ -108,9 +113,14 @@ Carefully review the following steps.
    ```
    # Set up both nodes on one machine
    az ml admin node setup --onebox
+
+   # At prompt, provide password for local admin account
+
    # Check the nodes are now running
    az ml admin node list
-   ```
+   ``` 
+
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically set up using the configuration you had for R Server 9.x. Note: You can safely ignore the Python warning during upgrade.
 
