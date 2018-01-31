@@ -32,18 +32,19 @@ ms.technology:
 
 The installation path depends on the operating system and the type of node (web or compute).
 
-|OS|Server Directory Path|
+**Find your server directory path**
+|OS|\<server-directory>|
 |----|------------|
 |Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
 |Linux|/opt/microsoft/mlserver/9.3/o16n||
 
-**Web node paths**
+**Find your web node paths**
 |File(s)|Web node path|
 |----|------------|
 |Log files|\<server-directory>\Microsoft.MLServer.WebNode\logs\*.*|
 |appsettings.json|\<server-directory>\Microsoft.MLServer.WebNode\appsettings.json|
 
-**Compute node paths**
+**Find your compute node paths**
 |File(s)|Compute node path|
 |----|------------|
 |Log files|\<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*|
