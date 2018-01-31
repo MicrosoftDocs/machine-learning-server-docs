@@ -24,6 +24,8 @@ ms.technology: "r-server"
 
 # Uninstall Machine Learning Server for Hadoop
 
+**Applies to:  Machine Learning Server 9.2.1, 9.3**
+
 This article explains how to uninstall Machine Learning Server running in a Spark cluster. 
 
 + Remove components on edge nodes

@@ -24,6 +24,8 @@ ms.technology: "r-server"
 
 # Offline installation for Machine Learning Server for Windows
 
+**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+
 By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server for Windows. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
 Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md).

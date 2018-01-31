@@ -24,6 +24,8 @@ ms.technology: "r-server"
 
 # Install Machine Learning Server for Hadoop
 
+**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+
 On a Spark cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../what-is-operationalization.md) on edge nodes only.
 
 Machine Learning Server is engineered for the following architecture:
@@ -63,16 +65,16 @@ Installation is through package managers. Unlike previous releases, there is no 
 
 ## Running setup on existing installations
 
-The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.2.1`. However, if R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
+The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.2.1`. However, if R Server 9.x is present, Machine Learning Server 9.x finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
 
-There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
+There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.3). An installation is either entirely 9.3 or an earlier version.
 
 ## Installation paths
 
 After installation completes, software can be found at the following paths:
 
-+ Install root: `/opt/microsoft/mlserver/9.2.1`
-+ Microsoft R Open root: `/opt/microsoft/ropen/3.4.1`
++ Install root: `/opt/microsoft/mlserver/9.3`
++ Microsoft R Open root: `/opt/microsoft/ropen/3.4.3`
 + Executables such as Revo64 and mlserver-python are at `/usr/bin`
 
 ## 1 - Edge node installation
