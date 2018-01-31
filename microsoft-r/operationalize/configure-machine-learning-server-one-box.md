@@ -54,10 +54,11 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
 1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-1. In that window, use the CLI to configure a web node and compute node onto the same machine.
+1. In that window, use the CLI to configure a web node and compute node on the same machine.
    ```
+   # Check both node on one machine
    az ml admin node setup --onebox
-   #Check the node is now running
+   # Check the node is now running
    az ml admin node list
    ``` 
 
@@ -112,10 +113,11 @@ Carefully review the following steps.
 
 1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-1. In that window, use the CLI to configure a web node and compute node.
+1. In that window, use the CLI to configure a web node and compute node on the same machine.
    ```
+   # Check both node on one machine
    az ml admin node setup --onebox
-   #Check the node is now running
+   # Check the node is now running
    az ml admin node list
    ``` 
 

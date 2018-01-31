@@ -98,7 +98,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
     
     1. <a name="encrypt"></a>For better security, we recommend you encrypt the connection string for this database before adding the information to appsettings.json.
     
-       1. Use the administration utility to [encrypt the connection string](configure-use-admin-utility.mdconfigure-admin-cli-encrypt-credentials.md).
+       1. Use the administration utility to [encrypt the connection string](configure-admin-cli-encrypt-credentials.md).
 
        1. Copy the encrypted string returned by the administration utility into `"ConnectionStrings": {` property block and set `"Encrypted":` to `true`. For example:
             

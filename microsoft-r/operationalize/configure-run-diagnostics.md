@@ -41,13 +41,23 @@ Additional [troubleshooting topics](#trouble) are also covered.
 <a name="test"></a>
 
 ## Test your configuration
-1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
-1. From the main menu, choose **Run Diagnostic Tests**.
++ Launch the diagnostic tests:
+  + On Machine Learning Server 9.3
+    1. Launch a command line window or terminal with administrator/root/sudo privileges.
 
-   If you have not authenticated yet, you must provide your username and password. 
+    1. In that window, use the CLI to test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+     ```
+     az ml admin diagnostic configure
+     ```
+  + On earlier versions:
+    1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
-1. From the diagnostic menu, choose **Test configuration** for a 'health report' of the configuration including a code execution test.
+    1. From the main menu, choose **Run Diagnostic Tests**.
+
+       If you have not authenticated yet, you must provide your username and password. 
+
+    1. From the diagnostic menu, choose **Test configuration** for a 'health report' of the configuration including a code execution test.
 
 1. Review the test results. If any issues arise, a raw report appears. You can also investigate the [log files](#logs) and attempt to resolve the issues.
 

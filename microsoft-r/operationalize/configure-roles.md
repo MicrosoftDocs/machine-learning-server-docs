@@ -153,7 +153,7 @@ Return to [the appsetting.json file](configure-find-admin-configuration-file.md)
 + **For Azure Active Directory:** In appsettings.json, find the "AzureActiveDirectory" section. Make sure the alphanumeric client key you created in the portal **for the web app** is used for "Key": property. This key allows Machine Learning Server to verify that the groups you've declared are valid in AAD. See following example. Learn more about [configuring Machine Learning Server to authenticate with Azure Active Directory](configure-authentication.md#aad).
 
   >[!IMPORTANT]
-  > For more security, we recommend you [encrypt the key](configure-use-admin-utility.mdconfigure-admin-cli-encrypt-credentials.md) before adding the information to appsettings.json.
+  > For more security, we recommend you [encrypt the key](configure-admin-cli-encrypt-credentials.md) before adding the information to appsettings.json.
 
   >[!NOTE]
   > If a user belongs to more groups than allowed in AAD, AAD provides an overage claim in the token it returns. This claim along with the key you provide here allows Machine Learning Server to retrieve the group memberships for the user.

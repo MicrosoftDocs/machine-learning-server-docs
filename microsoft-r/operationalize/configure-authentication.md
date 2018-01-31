@@ -88,7 +88,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    
    1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  
 
-      > For better security, we recommend you [encrypt the password](configure-use-admin-utility.mdconfigure-admin-cli-encrypt-credentials.md) before adding the information to appsettings.json.
+      > For better security, we recommend you [encrypt the password](configure-admin-cli-encrypt-credentials.md) before adding the information to appsettings.json.
 
    |LDAP Properties|Definition|
    |---------------|-------------------------------|
@@ -97,7 +97,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |UseLDAPS|Set 'true' for LDAP-S or 'false' for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by Machine Learning Server. |
    |BindFilter|(version 9.0.1 only) The template used to do the Bind operation. For example, "CN={0},CN=DeployR,DC=TEST,DC=COM". {0} is the user's DN.|
    |QueryUserDn|Distinguished name of user with read-only query capabilities with which to authenticate|
-   |QueryUserPassword|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](configure-use-admin-utility.mdconfigure-admin-cli-encrypt-credentials.md) before adding the information to this file.|
+   |QueryUserPassword|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](configure-admin-cli-encrypt-credentials.md) before adding the information to this file.|
    |QueryUserPasswordEncrypted|True/False. If 'True', it means the value of QueryUserPassword is an encrypted string.|
    |SearchBase|Context name to search in, relative to the base of the configured ContextSource, for example, 'ou=users,dc=example,dc=com'.| 
    |SearchFilter|The pattern to be used for the user search. "SearchFilter": "cn={0}" is for each user's DN. In legacy systems, some use "SearchFilter": "sAMAccountName={0}"|
@@ -291,7 +291,7 @@ Now, create a native app. This app links the web app to the Machine Learning Ser
    |Audience|Use the CLIENT ID value for the WEB app you created in the Azure portal.|
    |ClientId|Use the CLIENT ID value for the NATIVE app you created in the Azure portal.|
    |Key|This is the key for the WEB application you took note of before.  |
-   |KeyEncrypted|We highly recommend that you [encrypt login credentials](configure-use-admin-utility.mdconfigure-admin-cli-encrypt-credentials.md) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
+   |KeyEncrypted|We highly recommend that you [encrypt login credentials](configure-admin-cli-encrypt-credentials.md) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
 
    For example:
    ```
