@@ -26,7 +26,7 @@ ms.technology:
 
 # Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise)
 
-**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find [Machine Learning Server 9.2.1](../install/configure-machine-learning-server-enterprise-9-2.md) | [R Server 9.x](../install/operationalize-r-server-enterprise-config.md)
+**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](../install/configure-machine-learning-server-enterprise-9-2.md) | [R Server 9.x](../install/operationalize-r-server-enterprise-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the enterprise configuration. For more on one-box configurations, [see here](configure-machine-learning-server-one-box.md).
 
@@ -71,7 +71,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator/root/sudo privileges.
+1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. Configure a compute node using the CLI. At the prompt, enter:
    ```
@@ -106,7 +106,7 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator/root/sudo privileges.
+1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. In that window, use the CLI to configure a web node:
    ```
@@ -209,7 +209,7 @@ Carefully review the steps in the following sections.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator/root/sudo privileges.
+1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. In that window, use the CLI to configure a compute node.
    ```
@@ -241,7 +241,7 @@ You can now **repeat these steps** for each compute node.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator/root/sudo privileges.
+1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. In that window, use the CLI to configure a web node:
    ```

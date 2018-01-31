@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server to operationalize analytics (one-box)"
-description: "Configure Operationalization for Machine Learning Server 9.3 "
+title: "Configure Machine Learning Server 9.3 to operationalize analytics (one-box)"
+description: "Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
@@ -24,9 +24,9 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Configure Machine Learning Server 9.3 to operationalize analytics (One-box)
+# Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)
 
-**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Machine Learning Server 9.2.1](../install/configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
+**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](../install/configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the one-box configuration. For more on enterprise configurations, [see here](configure-machine-learning-server-enterprise.md).
 
@@ -52,7 +52,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator/root/sudo privileges.
+1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. In that window, use the CLI to configure a web node and compute node on the same machine.
    ```
@@ -111,7 +111,7 @@ Carefully review the following steps.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator/root/sudo privileges.
+1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. In that window, use the CLI to configure a web node and compute node on the same machine.
    ```

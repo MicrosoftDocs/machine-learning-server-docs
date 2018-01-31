@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "How to operationalize R models, analytics, & web services in Machine Learning Server"
-description: "What is operationalization in Microsoft R Server"
+title: "Operationalize models, analytics, & web services in Machine Learning Server"
+description: "You can deploy and consume R and Python models in Machine Learning Server to operationalize them."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "10/12/2017"
+ms.date: "2/16/2018"
 ms.topic: "get-started-article"
 ms.prod: "microsoft-r"
 
@@ -42,7 +42,7 @@ Once deployed, the analytic web service is available to a broader audience withi
 
 ![Operationalization Engine](media/what-is-operationalization/data-scientist-easy-deploy.png) 
 
-Support for Python was added in Microsoft Machine Learning Server 9.2.1. Learn more about the new additions in the ["What's New in Machine Learning Server"](whats-new-in-machine-learning-server.md) article.
+Learn more about the new additions in the ["What's New in Machine Learning Server"](whats-new-in-machine-learning-server.md) article.
 
 ## Video introduction
 

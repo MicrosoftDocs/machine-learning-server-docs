@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Quickstart: Administrators configuring for operationalization - Machine Learning Server "
-description: "Getting started for Administrators"
+title: "Get started for Administrators configuring Machine Learning Server to operationalize"
+description: "If you are responsible for configuring or maintaining Machine Learning Server or R Server, then this guide is for you."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -142,9 +142,6 @@ You can configure Machine Learning Server to use multiple Web Nodes for Active-A
 For data storage high availability, you can leverage the high availability capabilities found in enterprise grade databases (SQL Server or PostgreSQL). Learn how to use one of those databases, [here](configure-remote-database-to-operationalize.md).
 
 ![High Availability](./media/configure-start-for-administrators/admin-HA.png)
-
-
-<!--For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](../deployr/deployr-admin-configure-high-availability.md).-->
 
 ### Scalability & throughput
 
