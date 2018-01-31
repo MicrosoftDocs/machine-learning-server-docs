@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Launch the Administration CLI used to manage the operationalization configuration for Machine Learning Server
+# Launch the Admin CLI to manage the operationalization configuration for Machine Learning Server
 
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
