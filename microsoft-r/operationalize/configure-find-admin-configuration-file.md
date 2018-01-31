@@ -28,6 +28,23 @@ ms.technology:
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
+## Machine Learning Server 9.3
+
+The installation path depends on the operating system and the type of node (web or compute).
+
+**Find your server directory path**
+|OS|\<server-directory>|
+|----|------------|
+|Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
+|Linux|/opt/microsoft/mlserver/9.3/o16n||
+
+**Find your node paths**
+|File(s)|Filepath by node|
+|----|------------|
+|Log files|Web node:\<server-directory>\Microsoft.MLServer.WebNode\logs\*.* <br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*|
+|appsettings.json|Web node: \<server-directory>\Microsoft.MLServer.WebNode\appsettings.json<br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\appsettings.json|
+
+  
 ## Machine Learning Server 9.2.1
 
 The installation path depends on the operating system and the type of node (web or compute).

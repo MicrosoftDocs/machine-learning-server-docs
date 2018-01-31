@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise) - Machine Learning Server "
-description: "Configure Operationalization for Machine Learning Server 9.2.1, load balancer, "
+title: "Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise)"
+description: "Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise setup) with load balancing"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
@@ -26,7 +26,7 @@ ms.technology:
 
 # Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise)
 
-**Applies to: Machine Learning Server 9.2.1** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(See latest release.)](../install/configure-machine-learning-server-enterprise.md)
+**Applies to: Machine Learning Server 9.2.1** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(See instructions for [latest release.)](../install/configure-machine-learning-server-enterprise.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the enterprise configuration. For more on one-box configurations, [see here](configure-machine-learning-server-one-box.md).
 
@@ -61,7 +61,8 @@ To configure that database, [follow these instructions](../operationalize/config
 
 Configure one or more compute nodes as needed. We highly recommend that you configure each node (compute or web) on its own machine for higher availability.
 
-In the Enterprise configuration, side-by-side installations of a web and compute node are not supported.
+>[!NOTE] 
+>In the Enterprise configuration, side-by-side installations of a web and compute node are not supported.
  
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
 

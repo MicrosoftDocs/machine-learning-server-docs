@@ -56,11 +56,18 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    ```
    # Set up both nodes on one machine
    az ml admin node setup --onebox
-   # Check the nodes are now running
+
+   # At prompt, provide password for local admin account
+
+   # Check that the nodes are now running
    az ml admin node list
    # Run configuration test to validate setup
    az ml admin diagnostic configure
    ``` 
+
+   The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
+   
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
@@ -75,9 +82,7 @@ You are now ready to begin operationalizing your R and Python analytics with Mac
 
 Carefully review the following steps.
 
->[!IMPORTANT]
->Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
-
+1. Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 1. If you used the default SQLite database, `deployrdb_9.0.0.db` or `deployrdb_9.1.0.db` in R Server and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
@@ -106,13 +111,18 @@ Carefully review the following steps.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run commands to configure a web node and compute node on the same machine.
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run commands to configure a web node and compute node on the same machine.
    ```
    # Set up both nodes on one machine
    az ml admin node setup --onebox
+
+   # At prompt, provide password for local admin account
+
    # Check the nodes are now running
    az ml admin node list
-   ```
+   ``` 
+
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
 1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically set up using the configuration you had for R Server 9.x. Note: You can safely ignore the Python warning during upgrade.
 

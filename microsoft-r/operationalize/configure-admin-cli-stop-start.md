@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Stop or start nodes- Machine Learning Server "
+title: "Stop or start web and compute nodes on Machine Learning Server "
 description: "Stop or start the web or compute nodes for Machine Learning Server operationalization"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -32,9 +32,28 @@ You can start or stop all operationalization-related web and compute nodes on th
 
 ## Machine Learning Server 9.3
 
-@Heidi
+In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including stopping and starting services.
 
-## Earlier versions
+>[!Important]
+>- You must first [set up your nodes](configure-machine-learning-server-one-box.md) before doing anything else with the `admin` extension of the CLI.
+>- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
+
+1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+
+1. Run the command to either stop or start a node.
+   ```
+   # Start nodes on a machine
+   az ml admin node start --computenode --webnode
+
+   # Stop nodes on a machine
+   az ml admin node stop --computenode --webnode
+
+   # Get help on other permutations
+   az ml admin node start --help
+   az ml admin node stop --help
+   ```
+
+## Earlier versions (9.0-9.2)
 
 To stop or start a web node or compute node:
 

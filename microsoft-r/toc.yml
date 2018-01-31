@@ -83,7 +83,7 @@
       href: operationalize/configure-r-execution-security.md
     - name: R package management
       href: operationalize/configure-manage-r-packages.md
-    - name: Launch Admin CLI
+    - name: Launch Administration CLI
       href: operationalize/configure-admin-cli-launch.md
     - name: Stop & start nodes
       href: operationalize/configure-admin-cli-stop-start.md

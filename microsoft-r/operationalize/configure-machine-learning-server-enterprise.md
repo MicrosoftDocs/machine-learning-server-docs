@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server to operationalize analytics (Enterprise) - Machine Learning Server "
-description: "Configure Operationalization for Machine Learning Server, load balancer, "
+title: "Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise)"
+description: "Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise setup) with load balancing"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
@@ -43,17 +43,15 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 
 ### 1. Configure a database
 
-While the web node configuration sets up a local SQLite database by default, you must use a SQL Server or PostgreSQL database for this configuration for any of the following situations:
-+ Have multiple web nodes (so data can be shared across web nodes)  
-
-+ Want to achieve higher availability
-
-+ Need a remote database for your web node
+While the web node configuration sets up a local SQLite database by default, you must use a SQL Server or PostgreSQL database if any of the following situations apply:
++ You intend to set up multiple web nodes (so data can be shared across web nodes)  
++ You want to achieve higher availability
++ You need a remote database for your web node
 
 To configure that database, [follow these instructions](../operationalize/configure-remote-database-to-operationalize.md).
 
 >[!WARNING] 
->Choose and configure your database now. If you configure a different database later, all data in your current database is lost.
+>Configure your database now before moving on. If you configure a different database later, all data in the current database is lost.
 
 <a name="add-compute-nodes"></a>
 
@@ -71,18 +69,17 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-1. Configure a compute node using the CLI. At the prompt, enter:
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
    ```
+   # Set up a compute node
    az ml admin node setup --computenode
-   #Check the node is now running
+   # Check the node is now running
    az ml admin node list
-   ```
+   ``` 
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
-1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
+1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, do so BEFORE opening this port. 
 
    + On Windows: Add a firewall exception to open the port number. 
   
@@ -98,7 +95,7 @@ You can now **repeat these steps** for each compute node you want to add.
 
 In an enterprise configuration, you can set up one or more web nodes. It is possible to run the web node service from within IIS. 
  
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
+1. Install Machine Learning Server and its dependencies as follows. Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
@@ -106,21 +103,24 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-1. In that window, use the CLI to configure a web node:
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node.
    ```
+   # Set up a web node
    az ml admin node setup --webnode
-   #Check the node is now running
+   # Check the node is now running
    az ml admin node list
    ``` 
   
 1. Provide a password for the built-in, local operationalization administrator account called 'admin' using the CLI.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md).   
+   In the CLI, specify a password for the local administrator account:
+   ```
+   az ml admin password set --new-password <password> --confirm-password <password>
+   ```   
  
-1. Declare the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
+1. Declare the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. 
 
-   For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
-  
+   For multiple compute nodes, separate each URI with a comma. For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
+   
    In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
 
    In the CLI, specify the URIs:

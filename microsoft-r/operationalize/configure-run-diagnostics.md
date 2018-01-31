@@ -2,12 +2,12 @@
 
 # required metadata
 title: "Diagnostics & troubleshooting the Machine Learning Server configuration"
-description: "Troubleshooting and Diagnostics when configuring Machine Learning Server and Microsoft R Server to operationalize"
+description: "Troubleshooting and test your Machine Learning Server and R Server configuration or trace code executions"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "11/10/2017"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -43,13 +43,11 @@ Additional [troubleshooting topics](#trouble) are also covered.
 ## Test your configuration
 
 1. Launch the diagnostic tests:
-   + On Machine Learning Server 9.3
-     1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-     1. In that window, use the CLI to test the configuration. For the full test of the configuration, enter the following in the CLI:
-        ```
-        az ml admin diagnostic configure
-        ```
+   + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command.
+     ```
+     az ml admin diagnostic configure
+     ```
+     
      1. If you haven't authenticated yet, you are prompted to authenticate. @Heidi
 
    + On earlier versions:
@@ -72,20 +70,18 @@ You can also get a health report directly using the [status](https://microsoft.g
 To go through the execution of a specific line of code and retrieve request IDs for debugging purposes, run a trace. 
 
 1. Launch the code trace tests:
-   + On Machine Learning Server 9.3
-     1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-     1. In that window, use the CLI to trace code executions.  Enter commands as follows but with your own code or files in the CLI:
-        ```
-        # Trace R execution inline using a block of R code.
-        az ml admin diagnostic code --runtime R --block "x<-5;x"
-        # Trace R execution from a file that contains R code.
-        az ml admin diagnostic code --runtime R --file <path/to/r/file/code.R>
-        # Trace Python execution using a block of code.
-        az ml admin diagnostic code --runtime python --block "x=5;print(x)"
-        # Trace Python execution from a file containing code.
-        az ml admin diagnostic code --runtime python --file <path/to/python/file/code.py>
-        ```
+   + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run one of run these commands to trace the execution of a code block or script:
+     ```
+     # Trace execution of an inline R code block
+     az ml admin diagnostic code --runtime R --block "x<-5;x"
+     # Trace execution of an R script
+     az ml admin diagnostic code --runtime R --file <path/to/script.R>
+     # Trace execution of an inline Python code block
+     az ml admin diagnostic code --runtime python --block "x=5;print(x)"
+     # Trace execution of a Python script
+     az ml admin diagnostic code --runtime python --file <path/to/script.py>
+     ```
+     
      1. If you haven't authenticated yet, you are prompted to authenticate. @Heidi
 
    + On earlier versions:
@@ -104,13 +100,10 @@ To go through the execution of a specific line of code and retrieve request IDs 
 To go through the execution of a specific web service and retrieve request IDs for debugging purposes, run a trace. 
 
 1. Launch the web service execution tests:
-   + On Machine Learning Server 9.3
-     1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-     1. In that window, use the CLI to trace code executions.  Enter commands but supply the web service name and version into the CLI:
-        ```
-        az ml admin diagnostic service --name <service-name> --version <service-version>
-        ```
+   + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command specifying the web service name and version:
+     ```
+     az ml admin diagnostic service --name <service-name> --version <version>
+     ```
      1. If you haven't authenticated yet, you are prompted to authenticate. @Heidi
 
    + On earlier versions:
