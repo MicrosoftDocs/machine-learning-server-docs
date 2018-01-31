@@ -63,21 +63,25 @@ In the Enterprise configuration, side-by-side installations of a web and compute
  
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
 
+   + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
+
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
-
-   + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
    ```
    # Set up a compute node
-   az ml admin node setup --computenode
+   az ml admin node setup --computenode —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
    # Check the node is now running
    az ml admin node list
    ``` 
 
-1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
+   The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s). You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+
+   If you need help with CLI commands at any time, add --help to your command to learn more about it.
+
+1. If you plan to configure SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
 1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, do so BEFORE opening this port. 
 
@@ -97,40 +101,34 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
  
 1. Install Machine Learning Server and its dependencies as follows. Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
+   + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
+
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
-
-   + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node.
    ```
    # Set up a web node
-   az ml admin node setup --webnode
+   az ml admin node setup --webnode —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
    # Check the node is now running
    az ml admin node list
    ``` 
-  
-1. Provide a password for the built-in, local operationalization administrator account called 'admin' using the CLI.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md).   
-   In the CLI, specify a password for the local administrator account:
-   ```
-   az ml admin password set --new-password <password> --confirm-password <password>
-   ```   
  
-1. Declare the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. 
-
-   For multiple compute nodes, separate each URI with a comma. For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
-   
-   In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
-
-   In the CLI, specify the URIs:
+1. Use the CLI to declare the IP address of each compute node you configured. You can specify a single URI, several URIs, or even an IP range:
    ```
+   # Authenticate via CLI. You must have admin rights.
+   # Account name is `admin` if LDAP or AAD is not set up.
+   az login —-mls
+
    az ml admin compute-node-uri add --uri <uris>
    ```
+
+   For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
  
 1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
    ```
-   az ml admin diagnostic configure
+   az ml admin diagnostic run
    ```
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
@@ -174,9 +172,12 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
 
 1. [Update service ports](../operationalize/configure-admin-cli-ports.md), if needed.
 
-1. Use the CLI to test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following at the prompt:
+1. Using the CLI, you can test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
    ```
-   az ml admin diagnostic configure
+   # You must be authenticated to run diagnostic tests.
+   az login —-mls
+
+   az ml admin diagnostic run
    ```
 
 1. [Evaluate](../operationalize/configure-evaluate-capacity.md) the configuration's capacity.
@@ -205,7 +206,7 @@ Carefully review the steps in the following sections.
 
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
@@ -237,7 +238,7 @@ You can now **repeat these steps** for each compute node.
 
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
       
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
@@ -254,7 +255,7 @@ You can now **repeat these steps** for each compute node.
 
 1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
    ```
-   az ml admin diagnostic configure
+   az ml admin diagnostic run
    ```
 
 You can now **repeat these steps** for each node.

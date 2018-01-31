@@ -45,10 +45,11 @@ Additional [troubleshooting topics](#trouble) are also covered.
 1. Launch the diagnostic tests:
    + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command.
      ```
-     az ml admin diagnostic configure
+     # Authenticate with the CLI if you haven't already
+     az login --mls
+     # Run diagnostics
+     az ml admin diagnostic run
      ```
-     
-     1. If you haven't authenticated yet, you are prompted to authenticate. @Heidi
 
    + On earlier versions:
      1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
@@ -72,6 +73,9 @@ To go through the execution of a specific line of code and retrieve request IDs 
 1. Launch the code trace tests:
    + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run one of run these commands to trace the execution of a code block or script:
      ```
+     # Authenticate with the CLI if you haven't already
+     az login --mls
+
      # Trace execution of an inline R code block
      az ml admin diagnostic code --runtime R --block "x<-5;x"
      # Trace execution of an R script
@@ -81,8 +85,6 @@ To go through the execution of a specific line of code and retrieve request IDs 
      # Trace execution of a Python script
      az ml admin diagnostic code --runtime python --file <path/to/script.py>
      ```
-     
-     1. If you haven't authenticated yet, you are prompted to authenticate. @Heidi
 
    + On earlier versions:
      1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
@@ -102,9 +104,11 @@ To go through the execution of a specific web service and retrieve request IDs f
 1. Launch the web service execution tests:
    + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command specifying the web service name and version:
      ```
+     # Authenticate with the CLI if you haven't already
+     az login --mls
+
      az ml admin diagnostic service --name <service-name> --version <version>
      ```
-     1. If you haven't authenticated yet, you are prompted to authenticate. @Heidi
 
    + On earlier versions:
      1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).

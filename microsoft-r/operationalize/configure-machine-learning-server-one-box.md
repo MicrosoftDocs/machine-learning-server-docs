@@ -44,30 +44,33 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
 **To configure on a single machine:**
 
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
-
-   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
+1. Install Machine Learning Server and its dependencies as follows. Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine and [test the configuration](../operationalize/configure-run-diagnostics.md).
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
+      
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
+
+1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
    ```
    # Set up both nodes on one machine
-   az ml admin node setup --onebox
-
-   # At prompt, provide password for local admin account
+   az ml admin node setup —onebox —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
 
    # Check that the nodes are now running
    az ml admin node list
-   # Run configuration test to validate setup
-   az ml admin diagnostic configure
+
+   # Authenticate via CLI
+   # Account name is `admin` if LDAP or AAD is not set up.
+   az login —-mls
+
+   # Test configuration to validate setup
+   az ml admin diagnostic run
    ``` 
 
-   The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
-   
-   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+   The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s). You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+
+   If you need help with CLI commands at any time, add --help to your command to learn more about it.
 
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
@@ -105,22 +108,24 @@ Carefully review the following steps.
 
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
 
-   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
-
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run commands to configure a web node and compute node on the same machine.
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
+      
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
+
+1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
    ```
    # Set up both nodes on one machine
-   az ml admin node setup --onebox
+   az ml admin node setup —onebox —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
 
-   # At prompt, provide password for local admin account
-
-   # Check the nodes are now running
+   # Check that the nodes are now running
    az ml admin node list
    ``` 
+
+   The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s). You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+
+   If you need help with CLI commands at any time, add --help to your command to learn more about it.
 
    You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
@@ -128,7 +133,11 @@ Carefully review the following steps.
 
 1. Use these [CLI commands](configure-admin-cli-launch.md) to test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
    ```
-   az ml admin diagnostic configure
+   # Authenticate via CLI
+   az login —-mls
+
+   # Test configuration to validate setup
+   az ml admin diagnostic run
    ```
 
   Your web and compute nodes are now upgraded and configured as they were in the previous version.
