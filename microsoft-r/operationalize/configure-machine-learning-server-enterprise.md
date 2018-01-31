@@ -39,7 +39,7 @@ For added security, you can [configure SSL](../operationalize/configure-https.md
 ## How to configure
 
 >[!Important]
->For a quick setup in Azure, try one of [our Azure Resource Management templates stored in GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates). This [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/) explains how. 
+>For a speedy setup in Azure, try one of [our Azure Resource Management templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates) stored in GitHub. This [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/) explains how. 
 
 ### 1. Configure a database
 
