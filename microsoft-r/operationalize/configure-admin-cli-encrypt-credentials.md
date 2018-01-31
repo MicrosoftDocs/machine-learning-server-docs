@@ -65,7 +65,7 @@ To encrypt credentials or secrets:
 
 1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
-1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.mdconfigure-admin-cli-encrypt-credentials.md) or the [authentication password](configure-authentication.mdconfigure-admin-cli-encrypt-credentials.md) strings. 
+1. In that file, update the appropriate section for a [remote database connection](configure-admin-cli-encrypt-credentials.md) or the [authentication password](configure-admin-cli-encrypt-credentials.md) strings. 
 
 >[!NOTE]
 >You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](configure-admin-cli-launch.md#switch).
