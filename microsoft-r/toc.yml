@@ -85,6 +85,10 @@
       href: operationalize/configure-manage-r-packages.md
     - name: Launch Admin CLI
       href: operationalize/configure-admin-cli-launch.md
+    - name: Stop & start nodes
+      href: operationalize/configure-admin-cli-stop-start.md
+    - name: Set local password
+      href: operationalize/configure-admin-cli-local-password.md
     - name: Find install path
       href: operationalize/configure-find-admin-configuration-file.md
   - name: Virtual machines

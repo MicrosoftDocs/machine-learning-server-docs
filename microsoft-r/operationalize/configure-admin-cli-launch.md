@@ -56,13 +56,13 @@ With this tool, you can:
 
 These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.2.
 
-**To launch the Administration Utility:**
+**To launch the 9.2 Administration Utility:**
 
-+ **On Windows:** Right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
++ **On Windows,** right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
   >[!Note]
-  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. To get around this issue, either change the execution policy to "Unrestricted", or run the following in a command-line window with administrator privileges:<br/>`cd C:\Program Files\Microsoft\ML Server\R_SERVER\o16n`<br/>`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll`<br/>.  
+  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. To get around this issue, either change the execution policy to "Unrestricted", or run the following in a command-line window with administrator privileges:<br/>`cd C:\Program Files\Microsoft\ML Server\R_SERVER\o16n`<br/>`dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll` 
 
-+ **On Linux:** Run the following commands with `root` or `sudo` privileges:
++ **On Linux,** run the following commands with `root` or `sudo` privileges:
   ```
   cd /opt/microsoft/mlserver/9.2.1/o16n
   sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
@@ -70,56 +70,32 @@ These instructions describe how to launch the Administrator Utility on Machine L
  
 ## Launch the utility in v9.1
 
-These instructions describe how to launch the Administrator Utility on R Server 9.1.
+These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.1.
 
-**On Windows:**
+**To launch the 9.1 Administration Utility:**
 
-Launch the Administration Utility using one of these two ways:
-+ You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
++ **On Windows,** right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
+  >[!Note]
+  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. To get around this issue, either change the execution policy to "Unrestricted", or run the following in a command-line window with administrator privileges:<br/>`cd <r-home>\deployr`<br/>`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll`<br/>Find r-home by running `normalizePath(R.home())` in the R console.
 
-  >[!Warning]
-  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. Change the execution policy to "Unrestricted." 
-
-+ In a command-line window with administrator privileges, run these commands:
++ **On Linux,** run the following commands with `root` or `sudo` privileges:
   ```
-  cd \<server_home>
-  dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll
-  ```
-  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).  
-
-**On Linux:**
-
-+ Launch the administration utility script with `root` or `sudo` privileges with the following commands:
-  ```
-  cd \<server_home>
+  cd /usr/lib64/microsoft-r/rserver/o16n/9.1.0/
   sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll
   ``` 
-  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
-
+ 
 ## Launch the utility in v9.0
 
-These instructions describe how to launch the Administrator Utility on R Server 9.0.
+These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.1.
 
-**On Windows:**
+**To launch the 9.1 Administration Utility:**
 
-Launch the Administration Utility using one of these two ways:
-+ You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
++ **On Windows,** right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
+  >[!Note]
+  >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. To get around this issue, either change the execution policy to "Unrestricted", or run the following in a command-line window with administrator privileges:<br/>`cd <r-home>\deployr`<br/>`dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll`<br/>Find r-home by running `normalizePath(R.home())` in the R console.
 
-  >[!Warning]
-  >If your organization has the default powershell execution policy of "Restricted", you may have issues using the shortcut. In that case, either use the next bullet or change the execution policy to "Unrestricted." 
-
-+ In a command-line window with administrator privileges, run these commands:
++ **On Linux,** run the following commands with `root` or `sudo` privileges:
   ```
-  cd \<server_home>
-  dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
-  ```
-  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).  
-
-**On Linux:**
-
-+ Launch the administration utility script with `root` or `sudo` privileges with the following commands:
-  ```
-  cd \<server_home>
+  cd /usr/lib64/microsoft-r/rserver/o16n/9.0.1/
   sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
   ``` 
-  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
