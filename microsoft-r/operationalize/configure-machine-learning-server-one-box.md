@@ -75,9 +75,7 @@ You are now ready to begin operationalizing your R and Python analytics with Mac
 
 Carefully review the following steps.
 
->[!IMPORTANT]
->Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
-
+1. Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 1. If you used the default SQLite database, `deployrdb_9.0.0.db` or `deployrdb_9.1.0.db` in R Server and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
