@@ -83,7 +83,7 @@
       href: operationalize/configure-r-execution-security.md
     - name: R package management
       href: operationalize/configure-manage-r-packages.md
-    - name: Launch Administration CLI
+    - name: Launch Admin CLI
       href: operationalize/configure-admin-cli-launch.md
     - name: Find install path
       href: operationalize/configure-find-admin-configuration-file.md

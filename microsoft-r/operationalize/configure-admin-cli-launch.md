@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Launch the Administration CLI - Machine Learning Server "
-description: "Launch the Administration CLI and utility used to manage the operationalization configuration for Machine Learning Server"
+description: "Launch the Admin CLI and utility used to manage the operationalization configuration for Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
@@ -30,9 +30,9 @@ ms.technology:
 
 This article describes how to launch the tool used to manage the web and compute nodes. These nodes enable you to operationalize your analytics with Machine Learning Server.
 
-In version 9.3, this management tool is called the Administration Command Line Interface (CLI).
++ In version 9.3, this management tool is called the Administration Command Line Interface (Admin CLI).
 
-In versions 9.1 - 9.2, this tool is called the Administration Utility.
++ In earlier version, this tool is called the Administration Utility.
 
 With this tool, you can:
 + [Configure server for operationalization](configure-start-for-administrators.md#configure-server-for-operationalization) front-ends and back-ends     
@@ -46,21 +46,24 @@ With this tool, you can:
 + [Learn about command-line switches to this utility script](#switch)     
 
 
+<a name="93">
 
-## Launch Administration CLI (version 9.3)
+## Launch Admin CLI (version 9.3)
 
 @Heidi
 
 ## Launch Administration Utility (version 9.2)
 
-These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.2
+These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.2.
 
 **On Windows:**
 
 Launch the Administration Utility using one of these two ways:
 + You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
+
   >[!Warning]
   >If your organization has the default powershell execution policy of "Restricted", you may have issues using the shortcut. In that case, either use the next bullet or change the execution policy to "Unrestricted." 
+
 + In a command-line window with administrator privileges, run these commands:
   ```
   cd \<server_home>
@@ -70,51 +73,66 @@ Launch the Administration Utility using one of these two ways:
 
 **On Linux:**
 
-Launch the administration utility script with `root` or `sudo` privileges with the following commands:
-```
-cd \<server_home>
-sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-``` 
-where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
++ Launch the administration utility script with `root` or `sudo` privileges with the following commands:
+  ```
+  cd \<server_home>
+  sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
+  ``` 
+  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
 
 
-|Version|Commands|
-|----|------------|
-|9.2.1|cd \<server_home><br/>|
-|9.1.0|cd \<server_home><br/>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0.1|cd \<server_home><br/>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
+## Launch Administration Utility (version 9.1)
 
-
-
-
-## Launch Administration Utility (version 9.2)
-
-These instructions describe how to launch the Administrator Utility.
+These instructions describe how to launch the Administrator Utility on R Server 9.1.
 
 **On Windows:**
 
-You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
->[!Warning]
->If your organization has the default powershell execution policy of "Restricted" (common for Windows 10 and Windows Server 2012), you may have issues running the administration utility using the shortcut. In that case, either use the alternate option detailed in the next bullet or you can change the execution policy to "Unrestricted." Read this article on powershell execution policies for details.
+Launch the Administration Utility using one of these two ways:
++ You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
 
-Alternately, open a command-line window with administrator privileges and enter the following commands:
+  >[!Warning]
+  >If your organization has the default powershell execution policy of "Restricted", you may have issues using the shortcut. In that case, either use the next bullet or change the execution policy to "Unrestricted." 
 
-|Version|Commands|
-|----|------------|
-|9.2.1|cd \<server_home><br/>dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll|
-|9.1.0|cd \<server_home><br/>dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0.1|cd \<server_home><br/>dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll|
-
-where '\<server_home>' is the [path to the installation directory](../operationalize/configure-find-admin-configuration-file.md).  
++ In a command-line window with administrator privileges, run these commands:
+  ```
+  cd \<server_home>
+  dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll
+  ```
+  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).  
 
 **On Linux:**
 
-Launch the administration utility script with root or sudo privileges with the following commands:
++ Launch the administration utility script with `root` or `sudo` privileges with the following commands:
+  ```
+  cd \<server_home>
+  sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll
+  ``` 
+  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
 
-|Version|Commands|
-|----|------------|
-|9.2.1|cd \<server_home><br/>sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll|
-|9.1.0|cd \<server_home><br/>sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll|
-|9.0.1|cd \<server_home><br/>sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll|
+## Launch Administration Utility (version 9.0)
 
-where '\<server_home>' is the [path to the installation directory](../operationalize/configure-find-admin-configuration-file.md).
+These instructions describe how to launch the Administrator Utility on R Server 9.0.
+
+**On Windows:**
+
+Launch the Administration Utility using one of these two ways:
++ You can launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the **Start** menu called **Administration Utility**.
+
+  >[!Warning]
+  >If your organization has the default powershell execution policy of "Restricted", you may have issues using the shortcut. In that case, either use the next bullet or change the execution policy to "Unrestricted." 
+
++ In a command-line window with administrator privileges, run these commands:
+  ```
+  cd \<server_home>
+  dotnet Microsoft.DeployR.Utils.AdminUtil\Microsoft.DeployR.Utils.AdminUtil.dll
+  ```
+  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).  
+
+**On Linux:**
+
++ Launch the administration utility script with `root` or `sudo` privileges with the following commands:
+  ```
+  cd \<server_home>
+  sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
+  ``` 
+  where '\<server_home>' is the [install directory path](../operationalize/configure-find-admin-configuration-file.md).
