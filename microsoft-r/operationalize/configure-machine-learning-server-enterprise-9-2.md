@@ -61,7 +61,8 @@ To configure that database, [follow these instructions](../operationalize/config
 
 Configure one or more compute nodes as needed. We highly recommend that you configure each node (compute or web) on its own machine for higher availability.
 
-In the Enterprise configuration, side-by-side installations of a web and compute node are not supported.
+>[!NOTE] 
+>In the Enterprise configuration, side-by-side installations of a web and compute node are not supported.
  
 1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
 

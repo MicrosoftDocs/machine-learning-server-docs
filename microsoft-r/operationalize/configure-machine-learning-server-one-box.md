@@ -104,7 +104,7 @@ Carefully review the following steps.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run commands to configure a web node and compute node on the same machine.
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run commands to configure a web node and compute node on the same machine.
    ```
    # Set up both nodes on one machine
    az ml admin node setup --onebox
