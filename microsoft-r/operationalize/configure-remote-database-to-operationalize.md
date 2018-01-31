@@ -49,7 +49,8 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
 **To use a different local or remote database, do the following:**
 
-> These steps assume that you have already set up SQL Server or PostgreSQL as described for that product.
+>[!IMPORTANT] 
+>These steps assume that you have already set up SQL Server or PostgreSQL as described for that product.
 >
 > Create this database and register it in the configuration file below BEFORE the service for the control node is started.
 
