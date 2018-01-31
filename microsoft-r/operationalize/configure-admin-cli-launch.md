@@ -40,15 +40,15 @@ The tool to use depends on your version:
 + In earlier versions (9.0-9.2), this tool is called the **Administration Utility**.
 
 With this tool, you can:
-+ [Configure server for operationalization](configure-start-for-administrators.md#configure-server-for-operationalization) front-ends and back-ends     
++ [Configure web and compute nodes to enable operationalizing with Machine Learning Server](configure-start-for-administrators.md#configure-server-for-operationalization)    
 + [Set a local admin password](configure-admin-cli-local-password.md)  
-+ [Stop and restart](configure-admin-cli-stop-start.md) web and compute node services     
++ [Stop and restart nodes](configure-admin-cli-stop-start.md) 
 + [Update the node ports](configure-admin-cli-ports.md)     
 + [Run diagnostic tests](configure-run-diagnostics.md)     
 + [Encrypt credentials](configure-admin-cli-encrypt-credentials.md)     
 + [Evaluate the configuration's capacity](configure-evaluate-capacity.md)     
 + [Manage compute nodes](configure-admin-cli-compute-uris.md)     
-+ [Learn about command-line switches to this utility script](#switch)     
++ [Command-line switches to administration utility](#switch)     
 
 
 <a name="93"></a>
@@ -87,6 +87,7 @@ These instructions describe how to launch the Administrator Utility on Machine L
 To launch the 9.1 Administration Utility:
 
 + **On Windows,** right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
+
   >[!Note]
   >If the default powershell execution policy for your organization is "Restricted", the shortcut may not work. To get around this issue, either change the execution policy to "Unrestricted", or run the following in a command-line window with administrator privileges:<br/>`cd <r-home>\deployr`<br/>`dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll`<br/>Find r-home by running `normalizePath(R.home())` in the R console.
 
