@@ -51,7 +51,7 @@ Additional [troubleshooting topics](#trouble) are also covered.
 
 1. Review the test results. If any issues arise, a raw report appears. You can also investigate the [log files](#logs) and attempt to resolve the issues.
 
-1. After making your corrections, [restart the component](configure-use-admin-utility.md#startstop) in question. It may take a few minutes for a component to restart.
+1. After making your corrections, [restart the component](configure-admin-cli-stop-start.md) in question. It may take a few minutes for a component to restart.
 
 1. Rerun the diagnostic test to make sure all is running smoothly now.
 
@@ -126,7 +126,7 @@ By default, the logging level is set to Warning so as not to slow performance. H
 
 1. Save the file.
 
-1. [Restart](configure-use-admin-utility.md#startstop) the node services. 
+1. [Restart](configure-admin-cli-stop-start.md) the node services. 
 
 1. Repeat these changes on every compute node and every web node.  
    Each node should have the same appsettings.json properties.
@@ -160,7 +160,7 @@ Unhandled Exception: System.Reflection.TargetInvocationException: Exception has 
 If you get the `Cannot establish connection with the web node` error, then the client is unable to establish a connection with the web node in order to log in. Perform the following steps:
 + Verify that the web address and port number displayed on the main menu of the admin utility are correct. Learn how to launch the utility, in this article: [Machine Learning Server Administration](configure-use-admin-utility.md#launch)
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
-+ Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [Machine Learning Server Operationalization Administration](configure-use-admin-utility.md#startstop)
++ Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [Machine Learning Server Operationalization Administration](configure-admin-cli-stop-start.md)
 
 If the issue persists, verify you can post to the login API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
 
@@ -205,7 +205,7 @@ If you get an `HTTP status 503 (Service Unavailable)` response when using the Re
 
    1. Add a few symlinks using the commands in the [configuration](../install/operationalize-r-server-one-box-config.md) article.
 
-   1. [Restart](configure-use-admin-utility.md#startstop) the compute node services.
+   1. [Restart](configure-admin-cli-stop-start.md) the compute node services.
 
    1. Run the [diagnostic test](#test) or try the APIs again.
 

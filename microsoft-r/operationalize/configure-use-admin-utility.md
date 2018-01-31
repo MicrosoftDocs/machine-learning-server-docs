@@ -32,14 +32,14 @@ This article describes how to use the administration utility to configure the se
 
 Use the utility to:
 + [Configure server for operationalization](configure-start-for-administrators.md#configure-server-for-operationalization) front-ends and back-ends     
-+ [Set a local admin password](#admin-password)     
++ [Set a local admin password](configure-admin-cli-local-password.md)     
 + [Stop and restart](#startstop) web and compute node services     
-+ [Update the service ports](#ports)     
++ [Update the service ports](configure-admin-cli-ports.md)     
 + [Run diagnostic tests](configure-run-diagnostics.md)     
-+ [Encrypt credentials](#encrypt)     
++ [Encrypt credentials](configure-admin-cli-encrypt-credentials.md)     
 + [Evaluate the configuration's capacity](configure-evaluate-capacity.md)     
-+ [Manage compute nodes](#uris)     
-+ [Learn about command-line switches to this utility script](#switch)     
++ [Manage compute nodes](configure-admin-cli-compute-uris.md)     
++ [Learn about command-line switches to this utility script](configure-admin-cli-launch.md#switch)     
 
 <a name="launch"></a>
 
@@ -97,7 +97,7 @@ This admin password must be 8-16 characters long and contain at least one upperc
 1. Confirm the password.
 
 >[!NOTE]
->You can bypass script interface using the argument '-setpassword <password>'. Learn about all command-line switches for this script, [here](#switch). For example: 
+>You can bypass script interface using the argument '-setpassword <password>'. Learn about all command-line switches for this script, [here](configure-admin-cli-launch.md#switch). For example: 
 >
 >dotnet Microsoft.MLServer.Utils.AdminUtil\Microsoft.MLServer.Utils.AdminUtil.dll -setpassword my-password 
 
@@ -136,7 +136,7 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 1. Enter the port number. 
 
->The port number will be updated the next time the [service is restarted](#startstop).
+>The port number will be updated the next time the [service is restarted](configure-admin-cli-stop-start.md).
 
 <br/><a name="encrypt"></a>
 
@@ -170,10 +170,10 @@ The encryption function available in the administration utility relies on the RS
 
 1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
 
-1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.md#encrypt) or the [authentication password](configure-authentication.md#encrypt) strings. 
+1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.mdconfigure-admin-cli-encrypt-credentials.md) or the [authentication password](configure-authentication.mdconfigure-admin-cli-encrypt-credentials.md) strings. 
 
 >[!NOTE]
->You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](#switch).
+>You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](configure-admin-cli-launch.md#switch).
 
 
 <br/><a name="test"></a>
@@ -238,9 +238,9 @@ The following command-line switches are available for the administration utility
 
 |Switch|Description|Introduced in version|
 |----|-----|:---:|
-|-silentoneboxinstall password uris <br/><br/>-silentinstall  password uris|Sets up a [one-box configuration](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br/><br/>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/>URIs in 9.2|
-|-silentwebnodeinstall password uris|Configures a [web node](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](#uris) or IP ranges. A password is required. For example:<br/><br/>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/><br/>URIs in 9.2|
+|-silentoneboxinstall password uris <br/><br/>-silentinstall  password uris|Sets up a [one-box configuration](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](configure-admin-cli-compute-uris.md) or IP ranges. A password is required. For example:<br/><br/>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/>URIs in 9.2|
+|-silentwebnodeinstall password uris|Configures a [web node](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](configure-admin-cli-compute-uris.md) or IP ranges. A password is required. For example:<br/><br/>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/><br/>URIs in 9.2|
 |-silentcomputenodeinstall|Configures a [compute node](configure-start-for-administrators.md#configure-server-for-operationalization) silently.  For example:<br/><br/>-silentcomputenodeinstall|9.1|
 |-setpassword password|Sets the password. Cannot be used <br/> if LDAP or AAD was configured.  For example:<br/><br/>-setpassword myPass123|9.1|
 |-preparedbmigration filePath|Migrates the data from current database to a different database schema. Takes the [path to the web node’s appsetting.json file](../operationalize/configure-find-admin-configuration-file.md) as an argument. This is uncommonly needed as a step when upgrading. For example:<br/><br/>-preparedbmigration \<web-node-dir>/appsettings.json|9.1|
-|-encryptsecret Secret CertificateStoreName CertificateStoreLocation CertificateSubjectName|Silently [encrypts secrets](#encrypt).  For example:<br/><br/>-encryptsecret&nbsp;theSecret&nbsp;Store&nbsp;Location Subject|9.1|
+|-encryptsecret Secret CertificateStoreName CertificateStoreLocation CertificateSubjectName|Silently [encrypts secrets](configure-admin-cli-encrypt-credentials.md).  For example:<br/><br/>-encryptsecret&nbsp;theSecret&nbsp;Store&nbsp;Location Subject|9.1|

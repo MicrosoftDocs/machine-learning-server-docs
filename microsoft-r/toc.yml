@@ -87,8 +87,14 @@
       href: operationalize/configure-admin-cli-launch.md
     - name: Stop & start nodes
       href: operationalize/configure-admin-cli-stop-start.md
+    - name: Declare compute nodes
+      href: operationalize/configure-admin-cli-compute-uris.md
+    - name: Encrypt credentials
+      href: operationalize/configure-admin-cli-encrypt-credentials.md
     - name: Set local password
       href: operationalize/configure-admin-cli-local-password.md
+    - name: Update port numbers
+      href: operationalize/configure-admin-cli-ports.md
     - name: Find install path
       href: operationalize/configure-find-admin-configuration-file.md
   - name: Virtual machines

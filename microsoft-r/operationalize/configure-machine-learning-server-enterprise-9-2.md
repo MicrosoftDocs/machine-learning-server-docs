@@ -85,7 +85,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
    >[!NOTE]
    >To bypass this interactive node configuration step, specify the following switch when launching the utility:
    >-silentcomputenodeinstall
-   >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   >Learn more about command-line switches for this utility [here](../operationalize/configure-admin-cli-launch.md#switch).
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
@@ -126,7 +126,7 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
      >[!NOTE]
      >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
      >-silentwebnodeinstall mypassword uri1,uri2
-     >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+     >Learn more about command-line switches for this utility [here](../operationalize/configure-admin-cli-launch.md#switch).
 
    1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
   
@@ -186,7 +186,7 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
 
 ### 7. Post configuration steps
 
-1. [Update service ports](../operationalize/configure-use-admin-utility.md#ports), if needed.
+1. [Update service ports](../operationalize/configure-admin-cli-ports.md), if needed.
 
 1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
 

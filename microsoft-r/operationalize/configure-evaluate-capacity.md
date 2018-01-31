@@ -151,7 +151,7 @@ Since each compute node has its own thread pool for shells, configuring multiple
 
    1. Save the file.
 
-   1. [Restart](configure-use-admin-utility.md#startstop) the compute node services. 
+   1. [Restart](configure-admin-cli-stop-start.md) the compute node services. 
 
    1. Repeat these changes on every compute node.
 

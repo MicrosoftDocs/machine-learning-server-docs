@@ -65,7 +65,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    >[!NOTE]
    >To bypass the interactive configuration steps, specify the following argument and ['admin' password](../deployr/../operationalize/configure-authentication.md#local) when launching the utility:
    >-silentoneboxinstall myPassword.
-   >If you choose this method, you can skip the next three substeps. Learn more about command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+   >If you choose this method, you can skip the next three substeps. Learn more about command-line switches for this script, [here](../operationalize/configure-admin-cli-launch.md#switch).
 
 1. Choose the option to **Configure server**.
 
