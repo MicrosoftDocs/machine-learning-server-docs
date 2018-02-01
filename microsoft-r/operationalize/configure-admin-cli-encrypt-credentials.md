@@ -30,16 +30,8 @@ For security purposes, we strongly recommend that you encrypt strings in the app
 
 The encryption function available in the administration utility relies on the RSA algorithm for encryption. 
 
-
-## Machine Learning Server 9.3
-
-To encrypt credentials or secrets in Machine Learning Server 9.3:
-
-@Heidi
-
-## In earlier versions
        
-To encrypt credentials or secrets:
+**To encrypt credentials or secrets:**
 
 1. On the web node, install a credential encryption certificate with a private key into the default certificate store on the local machine. That location is in the Windows certificate store or in the Linux-based PFX file. 
 
@@ -47,15 +39,24 @@ To encrypt credentials or secrets:
 
    Ensure that your certificate is secured properly. On Windows, for example, you can use Bitlocker to encrypt the disk.  
 
-1. [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
+1. Open the administration tool to encrypt the secret:
+   + For Machine Learning Server 9.3, use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to encrypt your credentials.
+
+     You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.
+
+     1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+
+     1. Run the command to either stop or start a node.
+        ```
+        @Heidi
+        ```
+   + For versions 9.0 - 9.2: [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
       1. From the main menu, choose the option **Encrypt Credentials**.
 
       1. Specify where is the encryption certificate installed: 
          + Local machine (Computer account)
          + Current user (My user account)
-
-         The list of available certificates appears.
 
       1. Specify which encryption certificate to use.
 
