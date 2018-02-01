@@ -40,7 +40,7 @@ The 9.3 release marks the beginning of a faster release cadence, with fewer feat
 
 | Feature | Area | Details |
 |---------|------|---------|
-| [Administration command line interface](operationalize/configure-use-admin-cli.md) | Operationalize | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with the previous utility. <br><br>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and throughput of web services you create. |
+| [Administration command line interface](operationalize/configure-admin-cli-launch.md) | Operationalize | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with the previous utility. <br><br>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and throughput of web services you create. |
 | Dedicated service pools | Operationalization | TBD |
 | CDH 5.12 | Supported platforms | Version 5.12 of Cloudera distribution of Apache Hadoop (CDH) is now supported for [Machine Learning Server for Hadoop](install/machine-learning-server-hadoop-install.md).|
 

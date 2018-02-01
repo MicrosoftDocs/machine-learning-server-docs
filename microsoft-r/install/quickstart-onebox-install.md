@@ -25,7 +25,7 @@ ms.technology: "r-server"
 
 Build a development machine from the ground up, with full access to all of Machine Learning Server. Post-install configuration tasks enable operationalization features like web service deployment, diagnostics, and capacity testing. 
 
-This quickstart uses the new [Azure Command Line Interface (CLI) for Machine Learning](../operationalize/configure/admin-cli-launch.md) introduced in the 9.3 release for post-installation tasks. The simplest approach is a "one-box" configuration that consolidates web and compute nodes on a single machine.
+This quickstart uses the new [Azure Command Line Interface (CLI) for Machine Learning](../operationalize/configure-admin-cli-launch.md) introduced in the 9.3 release for post-installation tasks. The simplest approach is a "one-box" configuration that consolidates web and compute nodes on a single machine.
 
 > [!div class="checklist"]
 > * Download and install Machine Learning Server (free developer edition) on Windows
