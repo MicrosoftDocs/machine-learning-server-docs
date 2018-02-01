@@ -2,6 +2,10 @@
  "redirections":
  [
   {
+      "source_path" : "microsoft-r/operationalize/configure-use-admin-utility.md",
+      "redirect_url" : "/machine-learning-server/operationalize/configure-admin-cli-launch"
+  },
+  {
       "source_path" : "microsoft-r/what-is-microsoft-r-server.md",
       "redirect_url" : "/r-server/rebranding-microsoft-r-server"
   },
