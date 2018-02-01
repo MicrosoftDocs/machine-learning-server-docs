@@ -66,7 +66,7 @@ The encryption function available in the administration utility relies on the RS
 
 1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json.  
 
-1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.md) or the [authentication password](configure-authentication#encrypt) strings. 
+1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.md) or the [authentication password](configure-authentication.md#encrypt) strings. 
 
 >[!NOTE]
 >You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](configure-admin-cli-launch.md#switch).
