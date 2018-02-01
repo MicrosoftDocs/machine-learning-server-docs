@@ -61,7 +61,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
    az ml admin capacity run --strategy thread --max-thread 50 --min-thread 10 --increment 10 --service my-service --version 1.10 --args hp=160,wt=0.4
    ```
 
-   |'capacity&nbsp;run'&nbsp;Options|Definition|Default|
+   |CLI&nbsp;options&nbsp;for 'capacity&nbsp;run'|Definition|Default|
    |----------------------------|----------------|:-------:|
    |--strategy|Use `latency` to increase the number of threads by the defined increment until the defined time limit is reached.<br/><br/>Use `thread` to increase the number of parallel requests by the specified increment until the maximum number of threads is reached.|n/a|
    |--latency|Used for the strategy `latency`, the maximum latency in milliseconds after which the test stops.|250|
@@ -70,17 +70,10 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
    |--increment|The increment by which the number of threads increases for each iteration until the maximum latency is reached.|10|
    |--service|The name of the web service to test.|n/a|
    |--version|The version of the web service to test.|n/a|
-   |--args|The input needed by the web service.|n/a|
-
-   + To test for the maximum number of parallel requests that can be supported:
-     ```
-     # For help, run az ml admin capacity --help
-     az ml admin capacity run --strategy thread --max-thread 50 --min-thread 10 --increment 10 --service my-service --version 1.10 --args hp=160,wt=0.4
-     ```
+   |--args|Enter the required input parameters for the service in a JSON format. <br>For example, for a vector/matrix, follow the JSON format such as '[1,2,3]' for vector, '[[…]]' for matrix. A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.|n/a|
 
 1. Review the results onscreen.
 
-   ![Onscreen results](./media/configure-evaluate-capacity/admin-capacity-results-cl.png)
 1. Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).
 
 ### Earlier versions: 9.0 - 9.2
@@ -123,7 +116,6 @@ Evaluate capacity for Machine Learning Server 9.2 and R Server 9.x.
 
 1. Review the results onscreen.
 
-   ![Onscreen results](./media/configure-evaluate-capacity/admin-capacity-results-cl.png)
 1. Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).
 
 <br>

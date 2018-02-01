@@ -40,7 +40,7 @@ To update port values:
 
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-1. Run the command to update the 'admin' password.
+1. Run the command to update the port value(s).
    ```
    # List current port values
    az ml admin port list --webnode --computenode --rserve

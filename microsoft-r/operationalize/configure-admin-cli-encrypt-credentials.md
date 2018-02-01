@@ -48,7 +48,7 @@ The encryption function available in the administration utility relies on the RS
 
      1. Run the command to encrypt:
         ```
-        @Heidi
+        
         ```
         The CLI returns an encrypted string.
 
