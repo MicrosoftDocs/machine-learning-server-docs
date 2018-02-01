@@ -28,16 +28,30 @@ ms.suite: "machine-learning"
 
 When no other form of [authentication](configure-authentication.md) is used for Machine Learning Server, you must define a password for the local administrator account called 'admin'. If you enable another form of authentication, the local administrator account is automatically disabled.
 
-The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s).
-
+The admin password must be 8-16 characters long and contain:
++ At least one uppercase character
++ At least one lowercase character
++ At least one number
++ At least one special character
 
 ## Machine Learning Server 9.3
 
-To set or update the password:
+In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including updating the local 'admin' account password.
 
-@Heidi
+>[!Important]
+>- This password is set while you are first configuring your nodes.
+>- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
 
-## In earlier versions
+1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+
+1. Run the command to update the 'admin' password.
+   ```
+   # Update the admin account password
+   az ml admin password set --old-password <OLD-PW> --new-password 
+            <NEW-PW> --confirm-password <NEW-PW>
+   ```
+
+## Earlier versions: 9.0 - 9.2
 
 To set or update the password:
 
