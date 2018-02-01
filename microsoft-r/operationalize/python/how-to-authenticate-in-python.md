@@ -16,7 +16,7 @@ ms.prod: "mlserver"
 #audience: ""
 #ms.devlang: ""
 #ms.reviewer: ""
-ms.suite: "machine-learning"
+#ms.suite: ""
 #ms.tgt_pltfrm: ""
 #ms.custom: ""
 ---

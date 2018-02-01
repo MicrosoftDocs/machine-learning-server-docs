@@ -16,7 +16,7 @@ ms.prod: "mlserver"
 #audience: ""
 #ms.devlang: ""
 #ms.reviewer: ""
-ms.suite: "machine-learning"
+#ms.suite: ""
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
@@ -196,11 +196,11 @@ Carefully review the steps in the following sections.
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
-   
-   + Windows: C:\Users\Default\AppData\Local\DeployR\current
-
-   + Linux: /etc/deployr/current
+1. Uninstall the old version:
+    + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
+    + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
+    
+    The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
 
 1. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
@@ -209,14 +209,18 @@ Carefully review the steps in the following sections.
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md) 
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-1. In that window, use the CLI to configure a compute node.
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
    ```
-   az ml admin node setup --computenode
+   # Set up a compute node
+   az ml admin node setup --computenode —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
+   # Check the node is now running
+   az ml admin node list
    ``` 
 
-1. When the script asks you if you want to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+
+   If you need help with CLI commands, run the command but add `--help` to the end.
+
     
 You can now **repeat these steps** for each compute node.
 
@@ -227,33 +231,33 @@ You can now **repeat these steps** for each compute node.
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/machine-learning-server-linux-uninstall.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
-   
-   + Windows: C:\Users\Default\AppData\Local\DeployR\current
-
-   + Linux: /etc/deployr/current
+1. Uninstall the old version:
+    + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
+    + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
+    
+    The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
 
 1. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)      
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md) 
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-1. Launch a command line window or terminal with administrator privileges (Windows) or root/sudo privileges (Linux).
-
-1. In that window, use the CLI to configure a web node:
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
    ```
-   az ml admin node setup --webnode
-
-   #Check that node is now running
+   # Set up a compute node
+   az ml admin node setup --webnode —admin-password <CHOOSE-NEW> —confirm-password <CONFIRM-IT>
+   # Check the node is now running
    az ml admin node list
+   # Authenticate with Machine Learning Server
+   az login --mls
+   # Run diagnostics to make all is configured properly
+   az ml admin diagnostic run
    ``` 
 
-1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
-1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
-   ```
-   az ml admin diagnostic run
-   ```
+   If you need help with CLI commands, run the command but add `--help` to the end.
+
 You can now **repeat these steps** for each node.
