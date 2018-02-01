@@ -91,24 +91,21 @@ Carefully review the following steps.
    >[!Warning]
    >If you skip this SQLite database backup step, your database data will be lost.
 
-1. Uninstall the old version:
+1. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
     + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
     + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
-    
-    The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
 
-1. If you backed up a SQLite database in Step 1, manually move the .db file under this directory so it can be found during the upgrade:
+1. If you are using a SQL Server or PostgreSQL database, you can skip this step. If you backed up a SQLite database in Step 1, manually move the .db file under this directory so it can be found during the upgrade:
    + Windows: C:\Users\Default\AppData\Local\DeployR\current\frontend
 
    + Linux: /etc/deployr/current/frontend
-
-   (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
 
 1. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
+
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
 
 1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
@@ -119,8 +116,7 @@ Carefully review the following steps.
    # Check that the nodes are now running
    az ml admin node list
    ``` 
-
-   The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s). You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
    If you need help with CLI commands, run the command but add `--help` to the end.
 
