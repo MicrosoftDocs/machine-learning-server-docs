@@ -7,9 +7,9 @@ keywords: "SQL Server R Services"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "12/66/2016"
+ms.date: "12/06/2016"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,8 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
