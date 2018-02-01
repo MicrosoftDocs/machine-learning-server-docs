@@ -32,19 +32,19 @@ ms.technology:
 
 The installation path depends on the operating system and the type of node (web or compute).
 
-**Find path to your server directory**
-|OS|\<server-directory>|
-|----|------------|
-|Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
-|Linux|/opt/microsoft/mlserver/9.3.0/o16n|
++ **Find path to your server directory:**<br/>
+  |OS|\<server-directory>|
+  |----|------------|
+  |Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
+  |Linux|/opt/microsoft/mlserver/9.3.0/o16n|
+  <br/>
 
-
-**Find path to log files or appsettings.json on each node**
-|File(s)|Filepath by node|
-|----|------------|
-|Log files|Web node:\<server-directory>\Microsoft.MLServer.WebNode\logs\*.* <br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*|
-|appsettings.json|Web node: \<server-directory>\Microsoft.MLServer.WebNode\appsettings.json<br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\appsettings.json|
-
++ **Find path to log files or appsettings.json on each node:**<br/>
+  |File(s)|Filepath by node|
+  |----|------------|
+  |Log files|Web node:\<server-directory>\Microsoft.MLServer.WebNode\logs\*.* <br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*|
+  |appsettings.json|Web node: \<server-directory>\Microsoft.MLServer.WebNode\appsettings.json<br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\appsettings.json|
+<br/>
   
 ## Machine Learning Server 9.2.1
 

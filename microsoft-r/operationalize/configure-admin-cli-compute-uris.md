@@ -30,7 +30,7 @@ ms.technology:
 
 In order for the Machine Learning Server web nodes to know to which compute nodes it can send requests, you must maintain a complete list of compute node URIs. This list of compute node URIs is shared across all web nodes automatically and is managed through the Admin CLI (v9.3) or, for earlier versions, in the Administration Utility.
 
-In R Server 9.1, this list is managed manually and individually for each web node in the appsettings.json file. The utility cannot be used for this purpose in that release.
+R Server 9.1 administrators must declare URIs manually for each web node in their respective appsettings.json file. 
 
 >[!Important]
 >1. If the ['owner' role is defined](configure-roles.md), then the administrator must belong to the 'Owner' role in order to manage compute nodes. 
@@ -42,13 +42,13 @@ In R Server 9.1, this list is managed manually and individually for each web nod
 
 In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including the declaration and management of compute nodes with your web nodes.
 
->[!Important]
+>[!NOTE]
 >- You must first [set up your compute nodes](configure-machine-learning-server-enterprise.md) before doing anything else with the `admin` extension of the CLI.
 >- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
 
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-1. If you are not yet authenticated in the CLI, do so now. This is an administrator task only, so you must have and Owner role to declare or manage URIs. The account name is `admin` unless LDAP or AAD is configured.
+1. If you are not yet authenticated in the CLI, do so now. This is an administrator task only, so you must have the Owner role to declare or manage URIs. The account name is `admin` unless LDAP or AAD is configured.
    ```
    az login —-mls
 
@@ -61,8 +61,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
    az ml admin compute-node-uri add --uri <uris>
    ```
 
-   For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): 
-   http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
+   For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): <br/>http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
  
 ## Machine Learning Server 9.2
 
