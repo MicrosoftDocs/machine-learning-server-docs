@@ -8,19 +8,17 @@ author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""
 #ms.reviewer: ""
-#ms.suite: ""
+ms.suite: "machine-learning"
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
