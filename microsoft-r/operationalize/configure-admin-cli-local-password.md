@@ -42,13 +42,14 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 >- This password is set while you are first configuring your nodes.
 >- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
 
+To update the password:
+
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 1. Run the command to update the 'admin' password.
    ```
    # Update the admin account password
-   az ml admin password set --old-password <OLD-PW> --new-password 
-            <NEW-PW> --confirm-password <NEW-PW>
+   az ml admin password set --old-password <OLD-PW> --new-password <NEW-PW> --confirm-password <NEW-PW>
    ```
 
 ## Earlier versions: 9.0 - 9.2

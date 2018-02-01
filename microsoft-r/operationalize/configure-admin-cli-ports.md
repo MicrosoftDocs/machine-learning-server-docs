@@ -30,11 +30,28 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 ## Machine Learning Server 9.3
 
+In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including updating the local 'admin' account password.
+
+>[!Important]
+>- This password is set while you are first configuring your nodes.
+>- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
+
 To update port values:
 
-@Heidi
+1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-## In earlier versions
+1. Run the command to update the 'admin' password.
+   ```
+   # List current port values
+   az ml admin port list --webnode --computenode --rserve
+
+   # Update port values
+   az ml admin port update --webnode <port> --computenode <port> --rserve <port>
+   ```
+
+1. [Restart the node](configure-admin-cli-stop-start.md) for the change to go into effect. 
+
+## Earlier versions: 9.0 - 9.2
 
 To update port values:
 

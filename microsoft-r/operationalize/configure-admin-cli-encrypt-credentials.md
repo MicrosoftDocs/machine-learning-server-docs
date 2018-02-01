@@ -46,10 +46,12 @@ The encryption function available in the administration utility relies on the RS
 
      1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-     1. Run the command to either stop or start a node.
+     1. Run the command to encrypt:
         ```
         @Heidi
         ```
+        The CLI returns an encrypted string.
+
    + For versions 9.0 - 9.2: [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
       1. From the main menu, choose the option **Encrypt Credentials**.
@@ -62,9 +64,9 @@ The encryption function available in the administration utility relies on the RS
 
       1. Enter information you want to encrypt.  The tool returns an encrypted string.
 
-1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json.  
 
-1. In that file, update the appropriate section for a [remote database connection](configure-admin-cli-encrypt-credentials.md) or the [authentication password](configure-admin-cli-encrypt-credentials.md) strings. 
+1. In that file, update the appropriate section for a [remote database connection](configure-remote-database-to-operationalize.md) or the [authentication password](configure-authentication#encrypt) strings. 
 
 >[!NOTE]
 >You can bypass script interface using the argument '-encryptsecret encryptSecret encryptSecretCertificateStoreName encryptSecretCertificateStoreLocation encryptSecretCertificateSubjectName'. See the table at the end of this topic, [here](configure-admin-cli-launch.md#switch).
