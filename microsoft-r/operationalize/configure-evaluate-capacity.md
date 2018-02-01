@@ -40,6 +40,53 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Configure Test Parameters
 
+### Machine Learning Server 9.3
+
+In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to evaluate your configuration's capacity.
+
+>[!Important]
+>- You must first [set up your nodes](configure-machine-learning-server-one-box.md) before doing anything else with the `admin` extension of the CLI.
+>- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
+
+1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+
+1. Define and run the capacity evaluation.
+   ```
+   # For help, run az ml admin capacity --help
+     
+   # To test for the maximum latency
+   az ml admin capacity run --strategy latency --min-thread 10 --increment 10 --latency 250 --service my-service --version 1.10 --args hp=160,wt=0.4
+
+   # Test for max number of parallel requests that can be supported
+   az ml admin capacity run --strategy thread --max-thread 50 --min-thread 10 --increment 10 --service my-service --version 1.10 --args hp=160,wt=0.4
+   ```
+
+   |'capacity&nbsp;run'&nbsp;Options|Definition|Default|
+   |----------------------------|----------------|:-------:|
+   |--strategy|Use `latency` to increase the number of threads by the defined increment until the defined time limit is reached.<br/><br/>Use `thread` to increase the number of parallel requests by the specified increment until the maximum number of threads is reached.|n/a|
+   |--latency|Used for the strategy `latency`, the maximum latency in milliseconds after which the test stops.|250|
+   |--max-thread|Used for the strategy `thread`, the maximum thread count after which the test stops running.|50|
+   |--min-thread|The minimum thread count at which the test starts.|10|
+   |--increment|The increment by which the number of threads increases for each iteration until the maximum latency is reached.|10|
+   |--service|The name of the web service to test.|n/a|
+   |--version|The version of the web service to test.|n/a|
+   |--args|The input needed by the web service.|n/a|
+
+   + To test for the maximum number of parallel requests that can be supported:
+     ```
+     # For help, run az ml admin capacity --help
+     az ml admin capacity run --strategy thread --max-thread 50 --min-thread 10 --increment 10 --service my-service --version 1.10 --args hp=160,wt=0.4
+     ```
+
+1. Review the results onscreen.
+
+   ![Onscreen results](./media/configure-evaluate-capacity/admin-capacity-results-cl.png)
+1. Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).
+
+### Earlier versions: 9.0 - 9.2
+
+Evaluate capacity for Machine Learning Server 9.2 and R Server 9.x.
+
 1. On the web node, [launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
@@ -70,13 +117,10 @@ You can define the parameters for the traffic simulation for a given configurati
    1. Specify the minimum thread count at which the test starts.
    1. Specify the increment by which the number of threads increases for each iteration.
 
-<br>
-
-## Run Simulation Tests
-
-1. On the web node, [launch the administration utility](configure-admin-cli-launch.md).
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appear.
+
 1. From the sub menu, choose the option to **Run capacity simulation** to start the simulation.
+
 1. Review the results onscreen.
 
    ![Onscreen results](./media/configure-evaluate-capacity/admin-capacity-results-cl.png)
