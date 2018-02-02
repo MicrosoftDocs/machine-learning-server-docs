@@ -1234,6 +1234,8 @@
           href: r-reference/revoscaler/rxtransform.md
         - name: rxTweedie
           href: r-reference/revoscaler/rxtweedie.md
+        - name: rxUnserializeModel
+          href: r-reference/revoscaler/rxserializemodel.md
         - name: rxWaitForJob
           href: r-reference/revoscaler/rxwaitforjob.md
         - name: rxWriteObject
