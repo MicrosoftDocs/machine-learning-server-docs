@@ -52,7 +52,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run the following [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
    ```
    # Set up both nodes on one machine
-   az ml admin node setup —onebox —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
+   az ml admin node setup —-onebox —-admin-password <CHOOSE-A-PASSWORD> —-confirm-password <CONFIRMED-PASSWORD>
 
    # Check that the nodes are now running
    az ml admin node list
@@ -111,7 +111,7 @@ Carefully review the following steps.
 1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
    ```
    # Set up both nodes on one machine
-   az ml admin node setup —onebox —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
+   az ml admin node setup —-onebox —admin-password <CHOOSE-A-PASSWORD> —-confirm-password <CONFIRMED-PASSWORD>
 
    # Check that the nodes are now running
    az ml admin node list
