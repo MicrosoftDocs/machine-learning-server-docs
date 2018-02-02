@@ -69,7 +69,8 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
    ```
    # Set up a compute node
-   az ml admin node setup --computenode —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
+   az ml admin node setup --computenode —-admin-password <CHOOSE-A-PASSWORD> —-confirm-password <CONFIRMED-PASSWORD>
+   
    # Check the node is now running
    az ml admin node list
    ``` 
@@ -106,7 +107,7 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node.
    ```
    # Set up a web node
-   az ml admin node setup --webnode —admin-password <CHOOSE-NEW> —confirm-password <CONFIRM-IT>
+   az ml admin node setup --webnode —-admin-password <CHOOSE-NEW> —-confirm-password <CONFIRM-IT>
    
    # Check the node is now running
    az ml admin node list
@@ -211,7 +212,7 @@ Carefully review the steps in the following sections.
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
    ```
    # Set up a compute node
-   az ml admin node setup --computenode —admin-password <CHOOSE-A-PASSWORD> —confirm-password <CONFIRMED-PASSWORD>
+   az ml admin node setup --computenode --admin-password <CHOOSE-A-PASSWORD> —-confirm-password <CONFIRMED-PASSWORD>
 
    # Check the node is now running
    az ml admin node list
@@ -246,7 +247,7 @@ You can now **repeat these steps** for each compute node.
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
    ```
    # Set up a compute node
-   az ml admin node setup --webnode —admin-password <CHOOSE-NEW> —confirm-password <CONFIRM-IT>
+   az ml admin node setup --webnode —-admin-password <CHOOSE-NEW> —-confirm-password <CONFIRM-IT>
 
    # Check the node is now running
    az ml admin node list

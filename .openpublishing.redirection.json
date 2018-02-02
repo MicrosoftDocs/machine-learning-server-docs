@@ -491,7 +491,7 @@
   },
     {
       "source_path" : "microsoft-r/operationalize/admin-utility.md",
-      "redirect_url" : "/r-server/operationalize/configure-use-admin-utility"
+      "redirect_url" : "/r-server/operationalize/configure-admin-cli-launch"
   },
     {
       "source_path" : "microsoft-r/operationalize/app-developer-get-started.md",
