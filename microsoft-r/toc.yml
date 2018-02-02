@@ -63,18 +63,18 @@
         href: operationalize/configure-machine-learning-server-enterprise-9-2.md
       - name: 9.0/9.1
         href: install/operationalize-r-server-enterprise-config.md
-    - name: Diagnostics & Troubleshooting
-      href: operationalize/configure-run-diagnostics.md
-    - name: Change databases
-      href: operationalize/configure-remote-database-to-operationalize.md
-    - name: LDAP/AAD Authentication
-      href: operationalize/configure-authentication.md
-    - name: SSL/TLS Connection security
-      href: operationalize/configure-https.md
-    - name: Roles & Permissions
-      href: operationalize/configure-roles.md
     - name: Launch admin CLI
       href: operationalize/configure-admin-cli-launch.md
+    - name: LDAP/AAD authentication
+      href: operationalize/configure-authentication.md
+    - name: SSL/TLS connection security
+      href: operationalize/configure-https.md
+    - name: Diagnostics & troubleshooting
+      href: operationalize/configure-run-diagnostics.md
+    - name: Roles & permissions
+      href: operationalize/configure-roles.md
+    - name: Change databases
+      href: operationalize/configure-remote-database-to-operationalize.md
     - name: Stop & start nodes
       href: operationalize/configure-admin-cli-stop-start.md
     - name: Declare compute nodes
