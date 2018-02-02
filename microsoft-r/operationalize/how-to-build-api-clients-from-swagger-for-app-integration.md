@@ -36,7 +36,7 @@ To access these RESTful APIs outside of R, generate an API client library in you
 
 ## Swagger workflow
 
-![Swagger Workflow](./media/how-to-build-api-clients-from-swagger-for-app-integration/api-swagger-workflow.png)
+![Swagger Workflow: build api clients from swagger for app integration](./media/how-to-build-api-clients-from-swagger-for-app-integration/api-swagger-workflow.png)
 
 ## Get a swagger generation tool
 
@@ -44,7 +44,7 @@ To access these RESTful APIs outside of R, generate an API client library in you
 
    Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
 
-   ![One-box configuration](./media/how-to-build-api-clients-from-swagger-for-app-integration/app-dev-autorest.png)
+   ![Generate Swagger](./media/how-to-build-api-clients-from-swagger-for-app-integration/app-dev-autorest.png)
 
 1. Familiarize yourself with the tool so you can generate the API client libraries in your preferred programming language. 
 

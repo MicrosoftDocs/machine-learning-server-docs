@@ -30,7 +30,7 @@ You can configure Microsoft Learning Server after installation to act as a deplo
 
 A one-box configuration, as the name suggests, involves a single [web node and compute node](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) run on a single machine along with a database. Set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R and Python analytics using Machine Learning Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage. 
 
-![One-box configuration](./media/configure-machine-learning-server-one-box/setup-onebox.png)
+![Configure Machine Learning Server on one-box architecture](./media/configure-machine-learning-server-one-box/setup-onebox.png)
 
 
 <a name="onebox"></a>

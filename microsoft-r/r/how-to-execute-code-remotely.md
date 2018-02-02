@@ -42,7 +42,7 @@ With remote execution, you can:
  + [Work with R objects/files remotely](#objects)    
  + [Create and manage snapshots of the remote environment for reuse](#snapshot)    
 
-![Remote Execution](./media/how-to-execute-code-remotely/remote-execution.png) 
+![Run local r code remotely on machine learning server with mrsdeploy](./media/how-to-execute-code-remotely/remote-execution.png) 
 
 ## Supported configurations and mrsdeploy usage
 

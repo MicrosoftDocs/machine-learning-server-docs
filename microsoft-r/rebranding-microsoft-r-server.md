@@ -2,6 +2,7 @@
 
 # required metadata
 title: "What happened to Microsoft R Server - Machine Learning Server "
+description: "Microsoft R Server was rebranded as Machine Learning Server in Sept. 2017."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
@@ -24,7 +25,7 @@ ms.prod: "mlserver"
 
 # Microsoft R Server is now Microsoft Machine Learning Server
 
-In September 2017, Microsoft R Server was released under the new name of **Microsoft Machine Learning Server**. In version 9.2.1, Machine Learning Server added support for the full data science lifecycle of Python-based analytics to its list of machine learning and AI capabilities enhancements. The R capabilities have also been enhanced. 
+In 2017, Microsoft R Server was released under the new name of **Microsoft Machine Learning Server** support was added for the full data science lifecycle of Python-based analytics to its list of machine learning and AI capabilities enhancements. The R capabilities are also continuing to be enhanced. 
 
 Read the ["What's new in this release."](whats-new-in-machine-learning-server.md)
 
@@ -40,8 +41,8 @@ Moving from R Server to Machine Learning Server is as easy as ever. The R analyt
 
 1. Don't forget to [upgrade your web and compute nodes](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) if you are operationalizing your analytics.
 
-
-Note that _Microsoft R Server 9.1 for Teradata_ was the last release and will not have a Machine Learning Server equivalent.
+>[!NOTE]
+>Note that _Microsoft R Server 9.1 for Teradata_ was the last release and will not have a Machine Learning Server equivalent.
 
 ## Download prior R Server releases
 

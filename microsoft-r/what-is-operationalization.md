@@ -38,7 +38,7 @@ Data scientists work locally with [Microsoft R Client](r-client/what-is-microsof
 Once deployed, the analytic web service is available to a broader audience within the organization who can then, in turn, consume the analytics. Machine Learning Server provides the operationalizing tools to deploy R and Python analytics inside web, desktop, mobile, and dashboard applications and backend systems. Machine Learning Server turns your scripts into analytics web services, so R and Python code can be easily executed by applications running on a secure server.
 
 
-![Operationalization Engine](media/what-is-operationalization/data-scientist-easy-deploy.png) 
+![Operationalize web services, R &models with Machine Learning Server](media/what-is-operationalization/data-scientist-easy-deploy.png) 
 
 Learn more about the new additions in the ["What's New in Machine Learning Server"](whats-new-in-machine-learning-server.md) article.
 

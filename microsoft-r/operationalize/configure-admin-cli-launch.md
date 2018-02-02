@@ -28,32 +28,27 @@ ms.prod: "mlserver"
 
 This article describes how to launch the tool used to manage the web and compute nodes for Machine Learning Server. These nodes enable you to operationalize your analytics with Machine Learning Server.
 
-The tool to use depends on your version:
-+ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your Machine Learning Server node configuration, including stopping and starting services.
-
-  >[!Important]
-  >- You must first [set up your nodes](configure-machine-learning-server-one-box.md) before running any other `admin` extension commands in the CLI.
-  >- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
-
-+ In versions 9.0 - 9.2, this tool is called the **Administration Utility**.
+The tool you use to set up and manage your configuration depends on your version:
++ In Machine Learning Server 9.3, use the command line interface (CLI).
++ In versions 9.0 - 9.2, use the Administration Utility.
 
 With this tool, you can:
 + [Configure web and compute nodes to enable operationalizing with Machine Learning Server](configure-start-for-administrators.md#configure-server-for-operationalization)    
-+ [Set a local admin password](configure-admin-cli-local-password.md)  
-+ [Stop and restart nodes](configure-admin-cli-stop-start.md) 
-+ [Update the node ports](configure-admin-cli-ports.md)     
-+ [Run diagnostic tests](configure-run-diagnostics.md)     
 + [Encrypt credentials](configure-admin-cli-encrypt-credentials.md)     
-+ [Evaluate the configuration's capacity](configure-evaluate-capacity.md)     
-+ [Manage compute nodes](configure-admin-cli-compute-uris.md)     
-+ [Command-line switches to administration utility](#switch)     
++ [Stop and restart nodes](configure-admin-cli-stop-start.md) 
++ [Run diagnostic tests](configure-run-diagnostics.md)     
++ [Declare compute nodes](configure-admin-cli-compute-uris.md)     
++ [Update the node ports](configure-admin-cli-ports.md)     
++ [Update the local admin password](configure-admin-cli-local-password.md)  
++ [Evaluate the capacity of your configuration](configure-evaluate-capacity.md)     
 
+## Machine Learning Server 9.3: Administration with Azure CLI
 
-<a name="93"></a>
+In this release, use the `admin` extension of the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) to set up and manage your Machine Learning Server node configuration.
 
-## Azure CLI for administration in Machine Learning Server 9.3
-
-Once Machine Learning Server has been installed, you can start configuring nodes for operationalization and managing that configuration. 
+  >[!Important]
+  >- You do not need an Azure subscription to use this CLI. 
+  >- This CLI is installed with Machine Learning Server and runs locally.
 
 1. Launch a DOS command line, powershell window, or terminal window with administrator privileges. 
 
@@ -62,7 +57,9 @@ Once Machine Learning Server has been installed, you can start configuring nodes
    az ml admin --help
    ```
 
-## Administration utility in Machine Learning Server 9.2
+You must first [set up your nodes](configure-machine-learning-server-one-box.md) before running any other `admin` extension commands in the CLI.
+
+## Machine Learning Server 9.2: Administration utility
 
 These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.2.
 
@@ -77,8 +74,10 @@ To launch the 9.2 Administration Utility:
   cd /opt/microsoft/mlserver/9.2.1/o16n
   sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
   ``` 
- 
-## Administration utility in R Server 9.1
+
+Also read about the [command-line switches](#switch)  to the administration utility.     
+
+## R Server 9.1: Administration utility
 
 These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.1.
 
@@ -94,12 +93,14 @@ To launch the 9.1 Administration Utility:
   cd /usr/lib64/microsoft-r/rserver/o16n/9.1.0/
   sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll
   ``` 
+
+Also read about the [command-line switches](#switch)  to the administration utility.     
  
-## Administration utility in R Server 9.0
+## R Server 9.0: Administration utility
 
-These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.1.
+These instructions describe how to launch the Administrator Utility on Machine Learning Server 9.0.
 
-To launch the 9.1 Administration Utility:
+To launch the 9.0 Administration Utility:
 
 + **On Windows,** right-click the "Administration Utility" program icon in the Start menu, and then click "Run as Administrator".
   >[!Note]

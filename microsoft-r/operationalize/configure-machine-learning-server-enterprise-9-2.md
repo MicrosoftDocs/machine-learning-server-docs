@@ -32,7 +32,7 @@ An enterprise configuration involves multiple [web and compute nodes](../operati
 
 For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
 
-![Enterprise Configuration](./media/configure-machine-learning-server-enterprise/configure-enterprise.png)
+![Configure Machine Learning Server on enterprise architecture](./media/configure-machine-learning-server-enterprise/configure-enterprise.png)
 
 ## How to configure
 

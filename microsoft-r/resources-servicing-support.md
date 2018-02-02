@@ -28,7 +28,7 @@ Machine Learning Server (previously called Microsoft R Server) is released sever
 
 This support policy allows us to deliver innovation to customers at a rapid rate while providing flexibility for customers to adopt the innovation at their pace. 
 
-![Servicing Support](./media/resources-servicing-support/rserver-servicing-support.png)
+![Support timeline for Machine Learning Server & Microsoft R Server](./media/resources-servicing-support/rserver-servicing-support.png)
 <br>_Figure 1. Example of servicing support_
 
 <br>

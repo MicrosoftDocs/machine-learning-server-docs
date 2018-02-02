@@ -39,7 +39,7 @@ Generally speaking, the process for asynchronous batch consumption of a web serv
 
 Use these following [public API functions](#public-fx-batch)  to define, start, and interact with your batch executions.
 
-![Batch execution](./media/how-to-consume-web-service-asynchronously-batch/data-scientist-batch.png) 
+![Asynchronous batch execution in R with Machine Learning Server](./media/how-to-consume-web-service-asynchronously-batch/data-scientist-batch.png) 
 
 <a name="try-batch"></a>
 
