@@ -65,13 +65,13 @@
         href: install/operationalize-r-server-enterprise-config.md
     - name: Diagnostics & Troubleshooting
       href: operationalize/configure-run-diagnostics.md
-    - name: Database setup
+    - name: Change databases
       href: operationalize/configure-remote-database-to-operationalize.md
-    - name: Authentication
+    - name: LDAP/AAD Authentication
       href: operationalize/configure-authentication.md
-    - name: Connection security (SSL/TLS)
+    - name: SSL/TLS Connection security
       href: operationalize/configure-https.md
-    - name: Roles & Permissions (RBAC)
+    - name: Roles & Permissions
       href: operationalize/configure-roles.md
     - name: Launch admin CLI
       href: operationalize/configure-admin-cli-launch.md
@@ -85,15 +85,15 @@
       href: operationalize/configure-admin-cli-local-password.md
     - name: Update port numbers
       href: operationalize/configure-admin-cli-ports.md
-    - name: Capacity evaluation
+    - name: Evaluate capacity
       href: operationalize/configure-evaluate-capacity.md
-    - name: CORS
+    - name: Enable CORS
       href: operationalize/configure-cors.md
     - name: R execution security
       href: operationalize/configure-r-execution-security.md
     - name: R package management
       href: operationalize/configure-manage-r-packages.md
-    - name: Find install path
+    - name: Default file paths
       href: operationalize/configure-find-admin-configuration-file.md
   - name: Virtual machines
     href: install/machine-learning-server-in-the-cloud.md
