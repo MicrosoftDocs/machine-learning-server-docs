@@ -66,7 +66,7 @@ After you [log in to the remote R server](../operationalize/how-to-connect-log-i
 
 When the `REMOTE>` command line is displayed in the R console, any R commands entered are executed on the remote R session. 
 
-![Switch](./media/how-to-execute-code-remotely/mrsdeploy-connect-switch-context.png)
+![Switch from local to remote R sessions with Machine Learning Server](./media/how-to-execute-code-remotely/mrsdeploy-connect-switch-context.png)
 
 Switching between the local command line and the remote command line is done using these functions: pause() and resume(). To switch back to the local R session, type 'pause()'. If you have switched to the local R session, you can go back to the remote R session by typing 'resume()'.
 
