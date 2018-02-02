@@ -35,6 +35,7 @@ This support policy allows us to deliver innovation to customers at a rapid rate
 
 |Version History|Availability                       |Support End Date                  |
 |:-------------------:|:---------------------------------:|:--------------------------------:|
+|Machine Learning Server 9.3.1|3/1/2018|3/1/2020|
 |Machine Learning Server 9.2.1|10/1/2017|10/1/2019|
 |Microsoft R Server 9.1.0|5/1/2017|5/1/2019|
 |Microsoft R Server 9.0.1|1/1/2017|1/1/2019|
