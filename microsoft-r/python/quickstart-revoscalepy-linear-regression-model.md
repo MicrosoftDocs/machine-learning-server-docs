@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "09/19/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""

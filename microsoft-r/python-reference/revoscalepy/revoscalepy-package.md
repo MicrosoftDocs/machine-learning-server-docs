@@ -9,7 +9,7 @@ manager: "cgronlun"
 ms.author: "heidist"
 ms.date: "02/16/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -20,7 +20,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 ---

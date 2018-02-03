@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "cgronlun" 
 ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -65,7 +65,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `outData`
- file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, a character string specifying  the output ‘.xdf’ file, a RxXdfData object, a RxOdbcData data source, or a RxSqlServerData  data source. `outData` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
+ file or existing data frame to store predictions; can be same as the input file or `NULL`. If not `NULL`, a character string specifying  the output ï¿½.xdfï¿½ file, a RxXdfData object, a RxOdbcData data source, or a RxSqlServerData  data source. `outData` can also be a delimited [RxTextData](RxTextData.md) data source if using a native file system and not appending. 
   
   
     

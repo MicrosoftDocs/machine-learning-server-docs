@@ -7,7 +7,7 @@ author: "HeidiSteen"
 ms.author: "heidist"
 ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -16,7 +16,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---

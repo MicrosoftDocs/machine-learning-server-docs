@@ -9,7 +9,7 @@ ms.author: "bradsev"
 manager: "jhubbard"
 ms.date: "9/25/2017"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,6 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
 #ms.custom: ""
 
 ---

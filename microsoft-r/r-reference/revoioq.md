@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "cgronlun" 
 ms.date: "01/29/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 

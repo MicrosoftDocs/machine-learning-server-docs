@@ -9,7 +9,7 @@ manager: "cgronlun"
 ms.date: "08/29/2017"
 ms.author: heidist
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 ms.service: ""
 ms.assetid: ""
 
