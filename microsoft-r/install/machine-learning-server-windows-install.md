@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "01/31/2018"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 
@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # Install Machine Learning Server for Windows
 
-**Applies to:  Machine Learning Serve 9.2.1, 9.3**
+**Applies to:  Machine Learning Serve 9.2.1 | 9.3**
 
 Machine Learning Server for Windows runs machine learning and data mining solutions written in R or Python in standalone and clustered topologies. 
 
@@ -34,7 +34,7 @@ This article explains how to install Machine Learning Server on a standalone Win
 
 + Operating system must be a [supported version of 64-bit Windows](r-server-install-supported-platforms.md). 
 
-+ [Operalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. These features are unavailable on a Windows client.
++ [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) and [Operalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. This functionality is not available on a Windows client.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended. Disk space must be a minimum of 500 MB.
 

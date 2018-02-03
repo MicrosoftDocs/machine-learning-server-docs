@@ -35,9 +35,9 @@ The following issues are known in this release.
 
 #### 1. Model deserialization on older remote servers: "Error in memDecompress(data, type = decompress)"
 
-Applies to: [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md) and [rx_serialize_model (revoscalepy)](python-reference/revoscalepy/rx-serialize-model.md)
+Applies to: [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md)
 
-If you customarily switch the compute context among multiple machines, you might have trouble deserializing a model if the RevoScaleR and revoscalepy libraries are out of sync. Specifically, if you serialized the model on a newer client, and then attempt deserialization on a remote server having older copies of those libraries, you might encounter this error: 
+If you customarily switch the compute context among multiple machines, you might have trouble deserializing a model if the RevoScaleR library is out of sync. Specifically, if you serialized the model on a newer client, and then attempt deserialization on a remote server having older copies of those libraries, you might encounter this error: 
 
 ```
 "Error in memDecompress(data, type = decompress) :

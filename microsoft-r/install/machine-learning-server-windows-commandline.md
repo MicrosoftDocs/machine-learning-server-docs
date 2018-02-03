@@ -28,7 +28,14 @@ ms.prod: "mlserver"
 
 This article provides syntax and examples for running Machine Learning Server **ServerSetup.exe** from the command line. You can use command line parameters for an internet-connected or offline installation. A command line installation requires administrator permissions.
 
-Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md).
+Before you start, review  [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md) for:
+
++ System and operational requirements
++ Download and file extraction information
++ A summary of what is installed
++ Steps for validating your installation
+
+This article assumes you have already downloaded and extracted the setup program.
 
 ## Command line options
 
@@ -65,9 +72,9 @@ You can run ServerSetup.exe from the command line with options to expose or hide
 
 ## Default installation
 
-The default installation adds R_SERVER and its required components: Microsoft R Open (MRO) and .NET Core used for operationalizing analytics and machine learning. The command line equivalent of a double-click invocation of ServerSetup.exe is `serversetup.exe /install /full`.
-
 A default installation includes R and Python, but not the pre-trained models. You must explicitly add `/models` to an installation to add this feature.
+
+The command line equivalent of a double-click invocation of ServerSetup.exe is `serversetup.exe /install /full`.
 
 ## Examples
 
@@ -93,10 +100,10 @@ A default installation includes R and Python, but not the pre-trained models. Yo
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|NameForMLM |[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
-|Microsoft R Open |[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852724) | R |
-|Microsoft Python Open |[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
-|Microsoft Python Server |[SPS_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
+|NameForMLM |[MLM_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
+|Microsoft R Open |[SRO_3.4.4.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852724) | R |
+|Microsoft Python Open |[SPO_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
+|Microsoft Python Server |[SPS_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
 
 ## Next steps
 
