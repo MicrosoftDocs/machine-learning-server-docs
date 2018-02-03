@@ -48,8 +48,23 @@ The encryption function available in the administration utility relies on the RS
 
      1. Run the command to encrypt:
         ```
+        # Get help on the commands
+        az ml admin credentials --help
+
+        # Display list of certificates installed on this machine
+        az ml admin credentials list
         
+        # Encrypt a secret
+        az ml admin credentials set --cert <certificate> --secret <secret>
         ```
+
+        |CLI&nbsp;options|Description|
+        |:----------:|----------------|
+        |list|Returns the list of certificates found on the machine.|
+        |set|Returns an encrypted string when you specify a certificate and a secret to be encrypted.|
+        |--cert|The name of the encrytion certificate. |
+        |--secret|Enter information you want to encrypt. |
+
         The CLI returns an encrypted string.
 
    + For versions 9.0 - 9.2: [Launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
