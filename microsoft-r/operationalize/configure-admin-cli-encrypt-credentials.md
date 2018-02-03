@@ -62,7 +62,7 @@ The encryption function available in the administration utility relies on the RS
         |:----------:|----------------|
         |list|Returns the list of certificates found on the machine.|
         |set|Returns an encrypted string when you specify a certificate and a secret to be encrypted.|
-        |--cert|The name of the encrytion certificate. <br/>Find the certificate name using `az ml admin credentials list`.|
+        |--cert|The name of the encrytion certificate. |
         |--secret|Enter information you want to encrypt. |
 
         The CLI returns an encrypted string.
