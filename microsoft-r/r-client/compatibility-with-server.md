@@ -28,11 +28,10 @@ Microsoft R Client works with the following flavors of Machine Learning Server a
 
 Learn about what's new in the latest [Microsoft R Client release](what-is-microsoft-r-client.md#r-client-whats-new).
 
-|Machine Learning Server or R Server Offerings|Compatible with <br/>R Client 3.4.1|
+|Machine Learning Server or R Server Offerings|Compatible with <br/>R Client 3.4.3|
 |-----------|:--------------------------:|
-|SQL Server Machine Learning Services<br>&nbsp;&nbsp;&nbsp;& SQL Server R Services (in-database & standalone)|SQL Server 2016 RTM - <br>SQL Server 2017 RTM|
-|Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Linux**|8.0.5 - 9.2|
-|Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Hadoop**|8.0.5 - 9.2|
-|Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Windows**|9.1 - 9.2|
-|R Server for **Teradata DB**|8.0.5 - 9.1|
-|HDInsight: cluster type = Machine Learning or R Server|9.2|
+|SQL Server 2017 Machine Learning Services<br>&nbsp;&nbsp;&nbsp;& SQL Server 2016 R Services (in-database & standalone)|
+|Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Linux**|8.0.5 - 9.3|
+|Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Hadoop**|8.0.5 - 9.3|
+|Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Windows**|9.1 - 9.3|
+|HDInsight: cluster type = Machine Learning or R Server|9.2 - 9.3|

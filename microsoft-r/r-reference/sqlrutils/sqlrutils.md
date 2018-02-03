@@ -7,7 +7,7 @@ keywords: "sqlrutils package reference"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "01/29/2018"
+ms.date: "02/02/2018"
 ms.topic: "reference"
 ms.prod: "microsoft-r"
 
@@ -31,7 +31,7 @@ The **sqlrutils** package provides a mechanism for R users to put their R script
 |--------|-|
 | Current version: |  1.0.0 |
 | Built on: | R 3.4.3 |
-| Package distribution: | [SQL Server 2017 Machine Learning Services (Windows only) and SQL Server 2016 R Services ](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
+| Package distribution: | [SQL Server 2017 Machine Learning Services (Windows only) and SQL Server 2016 R Services ](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)<br/>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) |
 
 
 ## How to use sqlrutils

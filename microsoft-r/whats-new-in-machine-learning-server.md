@@ -32,7 +32,7 @@ Functionality is delivered through proprietary R and Python packages, internal c
 In this article, learn about the new capabilities introduced in the latest packages and tools. If you develop in R, you might also want to review feature announcements from recent past releases. 
 
 > [!Note]
-> Read our [release announcement for Machine Learning Server 9.3](UPDATE THIS LINK, was https://aka.ms/mlserver92). For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
+> Read our "release announcement for Machine Learning Server 9.3"(link-tbd). For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## Announced in 9.3
 
@@ -44,11 +44,13 @@ The 9.3 release marks the beginning of a faster release cadence, with fewer feat
 | Dedicated service pools | Operationalization | TBD |
 | CDH 5.12 | Supported platforms | Version 5.12 of Cloudera distribution of Apache Hadoop (CDH) is now supported for [Machine Learning Server for Hadoop](install/machine-learning-server-hadoop-install.md).|
 
+<a name = "921"></a>
+
 ## Announced in 9.2.1
 
-The 9.2.1 release was the first release of Machine Learning Server - based on R Server - expanded with Python libraries for developers and analysts who code in Python. 
+The 9.2.1 release was the first release of Machine Learning Server - based on R Server - expanded with Python libraries for developers and analysts who code in Python.
 
-The following table summarizes the Python and R features that were introduced in the 9.2.1 release.
+The following table summarizes the Python and R features that were introduced in the 9.2.1 release. For more information, see [release announcement for Machine Learning Server 9.2.1](https://aka.ms/mlserver92).
 
 | Feature | Language | Details |
 |---------|----------|---------|

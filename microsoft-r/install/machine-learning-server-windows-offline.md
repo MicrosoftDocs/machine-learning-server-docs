@@ -39,10 +39,10 @@ On an internet-connected computer, download all of the following files.
 | Component | Download | Used for | 
 |-----------|----------|----------|
 |Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_11452137.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
-|Pre-trained Models |[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
-|Microsoft R Open 3.4.3.0|[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
-|Microsoft Python Open |[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
-|Microsoft Python Server |[SPS_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
+|Pre-trained Models |[MLM_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
+|Microsoft R Open 3.4.3.0|[SRO_3.4.3_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
+|Microsoft Python Open |[SPO_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
+|Microsoft Python Server |[SPS_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
 
 ## Transfer and place files
 

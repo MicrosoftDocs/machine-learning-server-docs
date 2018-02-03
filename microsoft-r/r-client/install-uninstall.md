@@ -7,7 +7,7 @@ keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 

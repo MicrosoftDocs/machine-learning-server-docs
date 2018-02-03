@@ -7,7 +7,7 @@ keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Micro
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 
@@ -25,15 +25,11 @@ ms.prod: "mlserver"
 
 # Install Microsoft R Client on Windows
 
-Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](../r/tutorial-revoscaler-data-import-transform.md) and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, data science tool for high-performance analytics that you can install on Windows client operating systems. R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics, and includes the [RevoScaleR function library](../r-reference/revoscaler/revoscaler.md) for parallelization and remote computations on [Machine Learning Server for Hadoop](../r-reference/revoscaler/revoscaler-hadoop-functions.md) or [SQL Server](../r-reference/revoscaler/revoscaler-sql-server-functions.md). 
 
-R Client allows you to work with production data locally using the full set of ScaleR functions, but there are some constraints.  On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
+R Client allows you to work with production data locally using the full set of RevoScaleR functions, with these constraints: data must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-To benefit from disk scalability, performance and speed, push the compute context using rxSetComputeContext() to a production instance of Microsoft R Server (or R Server) such as [SQL Server Machine Learning Services](https://msdn.microsoft.com/en-us/library/mt604845.aspx) and Machine Learning Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)
-  
-You can offload heavy processing to Machine Learning Server or test your analytics during their development by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package. 
-
-For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.md#r-client-whats-new).
+For information about the current release, see [What's new in R Client](what-is-microsoft-r-client.md#r-client-whats-new)..
 
 ## System Requirements
 
@@ -46,10 +42,12 @@ For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.m
 |.NET Framework 4.5.2| Framework component must be installed to run setup. Use the link provided in the setup wizard. Installing this component requires a computer restart.|
 
 The following additional components are included in Setup and required:
-+ Microsoft R Open 3.4.1
-+ Microsoft MPI 7.1
++ Microsoft R Open 3.4.3
++ Microsoft MPI 8.1
 + AS OLE DB (SQL Server 2016) provider
 + Microsoft Visual C++ 2015 Redistributable
+
+Optionally, you can install the [pre-trained models](../install/microsoftml-install-pretrained-models.md) for sentiment analysis and image detection.
 
 ## Setup Requirements
 
