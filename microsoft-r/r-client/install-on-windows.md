@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Install Microsoft R Client on Windows
 
-Microsoft R Client is a free, data science tool for high-performance analytics that you can install on Windows client operating systems. R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics, and includes the [RevoScaleR function library](../r-reference/revoscaler/revoscaler.md) for parallelization and remote computations on [Machine Learning Server for Hadoop](../r-reference/revoscaler/revoscaler-hadoop-functions.md) or [SQL Server](../r-reference/revoscaler/revoscaler-sql-server-functions.md). 
+Microsoft R Client is a free, data science tool for high-performance analytics that you can install on Windows client operating systems. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful [Machine Learning Server](../what-is-machine-learning-server.md).
 
 R Client allows you to work with production data locally using the full set of RevoScaleR functions, with these constraints: data must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
