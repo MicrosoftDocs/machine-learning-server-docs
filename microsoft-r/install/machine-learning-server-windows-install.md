@@ -84,7 +84,7 @@ You can get the zipped installation file from one of the following download site
 | [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.3** is provided on this site. |
 | [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your [Microsoft account](https://account.microsoft.com/account) (such as a Live ID, Hotmail, or outlook account).<br/>2. Make sure you're in the right place: *https://my.visualstudio.com/downloads/features*.<br/>3. Click **Downloads**, and then search for *Machine Learning Server for Windows*. <br/> |
 
-  ![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
+![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
 
 ### Run Setup
 
