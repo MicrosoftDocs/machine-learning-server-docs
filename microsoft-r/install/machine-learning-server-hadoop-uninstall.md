@@ -125,6 +125,8 @@ Machine Learning Server for Hadoop adds the following packages at a minimum. Whe
     microsoft-r-open-foreachiterators-3.4.3 
     microsoft-r-open-mkl-3.4.3
     microsoft-r-open-mro-3.4.3 
+    azure-cli-2.0.25-1.el7.x86_64
+
 
 ## See also
 
