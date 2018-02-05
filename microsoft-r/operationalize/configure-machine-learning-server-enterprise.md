@@ -75,7 +75,7 @@ In the Enterprise configuration, side-by-side installations of a web and compute
    az ml admin node list
    ``` 
 
-   The admin password must be 8-16 characters long and contain at least one uppercase character(s), 1+ lowercase character(s), 1+ number(s), and 1+ special character(s). You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
    If you need help with CLI commands, run the command but add `--help` to the end.
 
