@@ -32,7 +32,7 @@ The admin password must be 8-16 characters long and contain:
 + At least one uppercase character
 + At least one lowercase character
 + At least one number
-+ At least one special character
++ At least one of the following special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
 
 ## Machine Learning Server 9.3
 
