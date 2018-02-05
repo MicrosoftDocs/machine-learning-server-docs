@@ -27,7 +27,7 @@ ms.prod: "mlserver"
 
 Machine Learning Server 9.3 provides powerful R and Python function libraries for data science and machine learning on small-to-massive data sets, in parallel on local or distributed systems, with modern algorithms for predictive analytics, supervised learning, and data mining. 
 
-Functionality is delivered through proprietary R and Python packages, internal computational engines built on open-source R and Python, tools, and solutions and samples.
+Functionality is delivered through proprietary R and Python packages, internal computational engines built on open-source R and Python, tools, solutions, and samples.
 
 In this article, learn about the new capabilities introduced in the latest packages and tools. If you develop in R, you might also want to review feature announcements from recent past releases. 
 
@@ -43,6 +43,7 @@ The 9.3 release marks the beginning of a faster release cadence, with fewer feat
 | [Administration command line interface](operationalize/configure-admin-cli-launch.md) | Operationalize | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with the previous utility. <br><br>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and throughput of web services you create. |
 | Dedicated service pools | Operationalization | TBD |
 | CDH 5.12 | Supported platforms | Version 5.12 of Cloudera distribution of Apache Hadoop (CDH) is now supported for [Machine Learning Server for Hadoop](install/machine-learning-server-hadoop-install.md).|
+
 
 <a name = "921"></a>
 
