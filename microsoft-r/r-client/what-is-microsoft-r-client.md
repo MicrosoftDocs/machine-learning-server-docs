@@ -33,12 +33,12 @@ R Client allows you to work with production data locally using the full set of R
 
 ## Machine Learning Server vs R Client
 
-Machine Learning Server and Microsoft R Client offer virtually identical [R packages](../r-reference/introducing-r-server-r-package-reference#r-function-libraries.md), but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. Machine Learning Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. 
+Machine Learning Server and Microsoft R Client offer virtually identical [R packages](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries), but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. Machine Learning Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. 
 
 You can work with R Client standalone. You can also use it with Machine Learning Server, where you learn and develop on R Client, and then migrate your work to Machine Learning Server or execute it remotely on an Machine Learning Server whenever you need the scale, support, and infrastructure of a server configured for operationalization. 
 
-+ From R Client, shift data-centric RevoScaleR operations to a remote Machine Learning Server by creating a [remote compute context](../r/concept-what-is-compute-context.md). Remote compute context is supported for [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services) or a [Spark cluster](..install/machine-learning-server-hadoop-install.md). Typically, you shift the compute context to bring computations to where the data resides, thus avoiding data transfer over the network.
-+ From R Client, run arbitrary R code on a remote production instance of Machine Learning Server. This is a general-purpose capability: from a command line, you can switch between local and remote sessions interactively, useful for testing, administration, or  to use the additional processing power of a production server. For remote code execution, use [mrsdeploy]()and [remoteLogin()](../r-reference/mrsdeploy/remotelogin.md) or [remoteLoginAAD()](../r-reference/mrsdeploy/remoteloginaad.md). For more information, see [Execute on a remote server ](../r/how-to-execute-code-remotely.md).
++ From R Client, shift data-centric RevoScaleR operations to a remote Machine Learning Server by creating a [remote compute context](../r/concept-what-is-compute-context.md). Remote compute context is supported for [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services) or a [Spark cluster](../install/machine-learning-server-hadoop-install.md). Typically, you shift the compute context to bring computations to where the data resides, thus avoiding data transfer over the network.
++ From R Client, run arbitrary R code on a remote production instance of Machine Learning Server. This is a general-purpose capability: from a command line, you can switch between local and remote sessions interactively, useful for testing, administration, or  to use the additional processing power of a production server. For remote code execution, use [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md)and [remoteLogin()](../r-reference/mrsdeploy/remotelogin.md) or [remoteLoginAAD()](../r-reference/mrsdeploy/remoteloginaad.md). For more information, see [Execute on a remote server ](../r/how-to-execute-code-remotely.md).
 
 ## Get started with R Client
 
@@ -72,7 +72,7 @@ While R is a command line driven program, you can also use your favorite R integ
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
 >[!IMPORTANT]
->You can connect remotely from your local IDE to an Machine Learning Server instance using [functions from the mrsdeploy package](../r/how-to-execute-code-remotely.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [Machine Learning Server administrator must configure Machine Learning Server](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) for this functionality.
+>You can connect remotely from your local IDE to an Machine Learning Server instance using [functions from the mrsdeploy package](../r/how-to-execute-code-remotely.md). Then, the R code you enter at the remote command line executes on the remote server. This is very convenient when you need to offload heavy processing on server or to test your analytics during their development. Your [Machine Learning Server administrator must configure Machine Learning Server](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization.md) for this functionality.
 
 <a name="try-r-client"></a>
 
@@ -82,7 +82,7 @@ Now that you've installed R Client, you can start building and running some R co
 
 + Run the sample R code as described in this [quickstart guide](../r/quickstart-run-r-code.md). 
 
-+ Or, develop your own solutions using [`RevoScaleR` R package functions](~/r-reference/revoscaler/revoscaler.md), [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md), and APIs. 
++ Or, develop your own solutions using [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md), [MicrosoftML functions](../r-reference/microsoftml/microsoftml-package.md), and APIs. 
 
 When ready, you can run that R code using R Client or even send those R commands to a [remote Machine Learning Server](../r/how-to-execute-code-remotely.md) for execution if Machine Learning Server is also installed in your organization. 
 
