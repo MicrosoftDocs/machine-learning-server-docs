@@ -65,7 +65,7 @@ Installation is through package managers. Unlike previous releases, there is no 
 
 ## Running setup on existing installations
 
-The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.2.1`. However, if R Server 9.x is present, Machine Learning Server 9.x finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
+The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.3.0`. However, if R Server 9.x is present, Machine Learning Server 9.x finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.3). An installation is either entirely 9.3 or an earlier version.
 
@@ -92,7 +92,7 @@ You can continue installation by running Setup on any data node, either sequenti
 
 **Approach 1: Package managers for full installation** 
 
-Again, we recommend running the [full setup](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do most of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.2.1) and setting it up for activation.
+Again, we recommend running the [full setup](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do most of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.3.0) and setting it up for activation.
 
 As before, follow the installation steps for the Linux operating system used by your cluster: [Linux install > How to install](machine-learning-server-linux-install.md#how-to-install).
 
@@ -121,7 +121,7 @@ Alternatively, you can install a subset of packages. You might do this if you do
     + On Ubuntu offline: `dpkg -i *.deb`
     + On CentOS and RHEL: `yum install *.rpm` 
 
-7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+7. Activate the server: `/opt/microsoft/mlserver/9.3.0/bin/R/activate.sh`
 
 Repeat this procedure on remaining nodes.
 
@@ -132,28 +132,28 @@ Repeat this procedure on remaining nodes.
 The following packages comprise a full Machine Learning Server installation:
 
 ```
- microsoft-mlserver-packages-r-9.2.1        ** core
- microsoft-mlserver-python-9.2.1            ** core
- microsoft-mlserver-packages-py-9.2.1       ** core
- microsoft-mlserver-hadoop-9.2.1            ** hadoop (required for hadoop)
- microsoft-mlserver-mml-r-9.2.1             ** microsoftml for R (optional)
- microsoft-mlserver-mml-py-9.2.1            ** microsoftml for Python (optional)
- microsoft-mlserver-mlm-r-9.2.1             ** pre-trained models (requires mml)
- microsoft-mlserver-mlm-py-9.2.1            ** pre-trained models (requires mml)
- microsoft-mlserver-adminutil-9.2           ** operationalization (optional)
- microsoft-mlserver-computenode-9.2         ** operationalization (optional)
- microsoft-mlserver-config-rserve-9.2       ** operationalization (optional) 
- microsoft-mlserver-dotnet-9.2              ** operationalization (optional)
- microsoft-mlserver-webnode-9.2             ** operationalization (optional)
+ microsoft-mlserver-packages-r-9.3.0        ** core
+ microsoft-mlserver-python-9.3.0            ** core
+ microsoft-mlserver-packages-py-9.3.0       ** core
+ microsoft-mlserver-hadoop-9.3.0            ** hadoop (required for hadoop)
+ microsoft-mlserver-mml-r-9.3.0             ** microsoftml for R (optional)
+ microsoft-mlserver-mml-py-9.3.0            ** microsoftml for Python (optional)
+ microsoft-mlserver-mlm-r-9.3.0             ** pre-trained models (requires mml)
+ microsoft-mlserver-mlm-py-9.3.0            ** pre-trained models (requires mml)
+ microsoft-mlserver-adminutil-9.3           ** operationalization (optional)
+ microsoft-mlserver-computenode-9.3         ** operationalization (optional)
+ microsoft-mlserver-config-rserve-9.3       ** operationalization (optional) 
+ microsoft-mlserver-dotnet-9.3              ** operationalization (optional)
+ microsoft-mlserver-webnode-9.3             ** operationalization (optional)
 ```
-The microsoft-mlserver-python-9.2.1 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
+The microsoft-mlserver-python-9.3.0 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.3.0/bin/python/python`
 
 Microsoft R Open is required for R execution:
 
 ```
- microsoft-r-open-foreachiterators-3.4.1 
- microsoft-r-open-mkl-3.4.1
- microsoft-r-open-mro-3.4.1 
+ microsoft-r-open-foreachiterators-3.4.3 
+ microsoft-r-open-mkl-3.4.3
+ microsoft-r-open-mro-3.4.3 
 ```
 
 Microsoft .NET Core 1.1, used for operationalization, must be added to Ubuntu:

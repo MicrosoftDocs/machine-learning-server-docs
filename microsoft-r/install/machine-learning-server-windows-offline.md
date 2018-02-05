@@ -49,7 +49,7 @@ On an internet-connected computer, download all of the following files.
 Use a tool or device to transfer the files to the offline server. 
 
 1. Put the unzipped **en_machine_learning_server_for_windows_x64_11452137.zip** file in a convenient folder.
-2. Right-click **Extract All** to unpack the file. You should see a folder named **MLS921Win**. This folder contains **ServerSetup.exe**.
+2. Right-click **Extract All** to unpack the file. You should see a folder named **MLS93Win**. This folder contains **ServerSetup.exe**.
 3. Put the CAB files in the setup user's temp folder: **C:\Users\<user-name>\AppData\Local\Temp**. 
 
 > [!Tip]
@@ -107,7 +107,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
-    File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    File name: /opt/microsoft/mlserver/9.3.0/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
     Number of valid observations: 600000.0
     
             Name       Mean     StdDev   Min     Max  ValidObs  MissingObs

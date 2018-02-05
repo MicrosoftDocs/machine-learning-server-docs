@@ -34,7 +34,7 @@ This article explains how to install Machine Learning Server on a standalone Win
 
 + Operating system must be a [supported version of 64-bit Windows](r-server-install-supported-platforms.md). 
 
-+ [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) and [Operalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. This functionality is not available on a Windows client.
++ [Operalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. This functionality is not available on a Windows client.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended. Disk space must be a minimum of 500 MB.
 
@@ -46,7 +46,7 @@ The following additional components are included in Setup and required for Machi
 * Anaconda 4.2 with Python 3.5 (if you add Python)
 * Azure CLI
 * Microsoft Visual C++ 2015 Redistributable
-* Microsoft MPI 7.1
+* Microsoft MPI 8.1
 * AS OLE DB (SQL Server 2016) provider
 
 ## Licensing
@@ -60,7 +60,10 @@ On production servers, the enterprise edition of Machine Learning Server for Win
 
 ## Upgrade existing installations
 
-If your existing server was configured for [operationalization](../what-is-operationalization.md), follow these alternative steps for upgrade: [Configure Machine Learning Server to operationalize analytics (One-box) > How to upgrade](../operationalize/configure-machine-learning-server-one-box.md#how-to-upgrade) or [Configure Machine Learning Server to operationalize analytics (Enterprise) > How to upgrade](../operationalize/configure-machine-learning-server-enterprise.md#how-to-upgrade).
+If your existing server was configured for [operationalization](../what-is-operationalization.md), follow these alternative steps for upgrade: 
+
++ [Configure Machine Learning Server to operationalize analytics (One-box) > How to upgrade](../operationalize/configure-machine-learning-server-one-box.md#how-to-upgrade)
++ [Configure Machine Learning Server to operationalize analytics (Enterprise) > How to upgrade](../operationalize/configure-machine-learning-server-enterprise.md#how-to-upgrade).
 
 For all other configurations, Setup performs an in-place upgrade over existing installations. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, setup finds R Server at the old path and upgrades it to the new version. 
 
@@ -78,18 +81,20 @@ You can get the zipped installation file from one of the following download site
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your [Microsoft account](https://account.microsoft.com/account) (such as a Live ID, Hotmail, or outlook account).<br/>2. Make sure you're in the right place: *https://my.visualstudio.com/Benefits*.<br/>3. Click **Downloads**, and then search for *Machine Learning Server for Windows*. |
 | [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.3** is provided on this site. |
+| [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your [Microsoft account](https://account.microsoft.com/account) (such as a Live ID, Hotmail, or outlook account).<br/>2. Make sure you're in the right place: *https://my.visualstudio.com/downloads/features*.<br/>3. Click **Downloads**, and then search for *Machine Learning Server for Windows*. <br/> |
+
+  ![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
 
 ### Run Setup
 
 The setup wizard installs, upgrades, and uninstalls all in one workflow.
 
-1. In the Downloads folder, right-click **en_machine_learning_server_for_windows_x64_<build-number>.zip** to extract the contents of zipped executable.
+1. Extract the contents of the zipped file. On your computer, go to the Downloads folder, right-click **en_machine_learning_server_for_windows_x64_<build-number>.zip** to extract the contents.
 
 2. Double-click **ServerSetup.exe** to start the wizard.
 
-3. In Configure installation, choose components to install. Clear a checkbox to remove the component. Select a checkbox to add or upgrade a component. 
+3. In Configure installation, choose components to install. Clearing a checkbox removes the component. Selecting a checkbox adds or upgrades a component. 
 
     + **Core components** are listed for visibility, but are not configurable. Core components are required.
     + **R** adds R Open and the R libraries.  
@@ -173,12 +178,21 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable web service deployment and remote connections
 
-On Windows Server 2012 R2 or Windows Server 2016, you can [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to gain the following benefits:
+If you installed Machine Learning Server on Windows Server 2012 R2 or Windows Server 2016, [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization):
+
+1. Open an Adminstrator command prompt.
+2. Enter the following command to configure the server: `as ml admin node setup --onebox`
+
+This command invokes the Administrator Command Line Interface (CLI), installed by Machine Learning Server and added as a system environment variable to your path so that you can run it anywhere.
+
+The commands `node setup --onebox` enables operationalization features on a standalone server. A "one-box" configuration enables web service deployment, remote execution, and diagnostics on the current server instance.
+
+If you have multiple servers, you can designate each one as either a web node or compute node, and then link them up.
+
+For more information about operationalization:
 
 + [Deploy Python and R script as a web service](../operationalize/concept-what-are-web-services.md) 
 + [Connect to a remote R server for code execution](../r/how-to-execute-code-remotely.md). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) or other Machine Learning Server nodes on your network. 
-
-To configure the server, use the [CLI](../operationalize/configure-admin-cli-launch.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
 
 > [!Note]
 > Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, [remote compute context](../r/concept-what-is-compute-context.md) is not available for HadoopMR. 

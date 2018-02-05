@@ -67,28 +67,28 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 The following packages comprise a full Machine Learning Server installation:
 
 ```
- microsoft-mlserver-packages-r-9.2.1        ** core
- microsoft-mlserver-python-9.2.1            ** core
- microsoft-mlserver-packages-py-9.2.1       ** core
- microsoft-mlserver-mml-r-9.2.1             ** microsoftml for R (optional)
- microsoft-mlserver-mml-py-9.2.1            ** microsoftml for Python (optional)
- microsoft-mlserver-mlm-r-9.2.1             ** pre-trained models (requires mml)
- microsoft-mlserver-mlm-py-9.2.1            ** pre-trained models (requires mml)
- microsoft-mlserver-hadoop-9.2.1            ** hadoop (required for hadoop)
- microsoft-mlserver-adminutil-9.2           ** operationalization (optional)
- microsoft-mlserver-computenode-9.2         ** operationalization (optional)
- microsoft-mlserver-config-rserve-9.2       ** operationalization (optional) 
- microsoft-mlserver-dotnet-9.2              ** operationalization (optional)
- microsoft-mlserver-webnode-9.2             ** operationalization (optional)
+ microsoft-mlserver-packages-r-9.3.0        ** core
+ microsoft-mlserver-python-9.3.0            ** core
+ microsoft-mlserver-packages-py-9.3.0       ** core
+ microsoft-mlserver-mml-r-9.3.0             ** microsoftml for R (optional)
+ microsoft-mlserver-mml-py-9.3.0            ** microsoftml for Python (optional)
+ microsoft-mlserver-mlm-r-9.3.0             ** pre-trained models (requires mml)
+ microsoft-mlserver-mlm-py-9.3.0            ** pre-trained models (requires mml)
+ microsoft-mlserver-hadoop-9.3.0            ** hadoop (required for hadoop)
+ microsoft-mlserver-adminutil-9.3           ** operationalization (optional)
+ microsoft-mlserver-computenode-9.3         ** operationalization (optional)
+ microsoft-mlserver-config-rserve-9.3       ** operationalization (optional) 
+ microsoft-mlserver-dotnet-9.3              ** operationalization (optional)
+ microsoft-mlserver-webnode-9.3             ** operationalization (optional)
 ```
-The microsoft-mlserver-python-9.2.1 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
+The microsoft-mlserver-python-9.3.0 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.3.0/bin/python/python`
 
 Microsoft R Open is required for R execution:
 
 ```
- microsoft-r-open-foreachiterators-3.4.1 
- microsoft-r-open-mkl-3.4.1
- microsoft-r-open-mro-3.4.1 
+ microsoft-r-open-foreachiterators-3.4.3 
+ microsoft-r-open-mkl-3.4.3
+ microsoft-r-open-mro-3.4.3 
 ```
 
 Microsoft .NET Core 1.1, used for operationalization, must be added to Ubuntu:
@@ -136,9 +136,9 @@ If your system provides a graphical user interface, you can click a file to down
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-+ Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.2.1.rpm` 
-+ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.2.1/microsoft-mlserver-packages-r-9.2.1.deb`
-+ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.2.1.rpm`
++ Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.3.0.rpm` 
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.3.0/microsoft-mlserver-packages-r-9.3.0.deb`
++ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.3.0.rpm`
 
 Repeat for each package in the [package list](#Package list).
 
@@ -156,8 +156,8 @@ This step completes installation.
 
 Run the activation script from either the R or Python directory:
 
-+ `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
-+ or `/opt/microsoft/mlserver/9.2.1/bin/python/activate.sh`
++ `/opt/microsoft/mlserver/9.3.0/bin/R/activate.sh`
++ or `/opt/microsoft/mlserver/9.3.0/bin/python/activate.sh`
 
 ## Connect and validate
 
@@ -169,22 +169,22 @@ Run the activation script from either the R or Python directory:
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   + On CentOS and RHEL: `$ rpm -qi microsoft-mlserver-packages-r-9.2.1`
-   + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.2.1`  
-   + On SLES: `zypper info microsoft-mlserver-packages-r-9.2.1`
+   + On CentOS and RHEL: `$ rpm -qi microsoft-mlserver-packages-r-9.3.0`
+   + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.3.0`  
+   + On SLES: `zypper info microsoft-mlserver-packages-r-9.3.0`
 
   Output on Ubuntu is as follows:
 
    ```
-    Package: microsoft-mlserver-packages-r-9.2.1
+    Package: microsoft-mlserver-packages-r-9.3.0
     Status: install ok installed
     Priority: optional
     Section: devel
     Installed-Size: 195249
     Maintainer: revobuil@microsoft.com
     Architecture: amd64
-    Version: 9.2.1.1287
-    Depends: microsoft-r-open-mro-3.4.1, microsoft-r-open-mkl-3.4.1, microsoft-r-open-foreachiterators-3.4.1
+    Version: 9.3.0.1287
+    Depends: microsoft-r-open-mro-3.4.3, microsoft-r-open-mkl-3.4.3, microsoft-r-open-foreachiterators-3.4.3
     Description: Microsoft Machine Learning Server
 	  . . .
    ```
@@ -253,7 +253,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
-    File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    File name: /opt/microsoft/mlserver/9.3.0/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
     Number of valid observations: 600000.0
     
             Name       Mean     StdDev   Min     Max  ValidObs  MissingObs

@@ -51,7 +51,7 @@ A package manager installation used for Linux or Hadoop won't provide the parcel
 3. Make sure you're in the right place: *https://my.visualstudio.com/Benefits*.
 4. Click **Downloads**.
 5. Search for *Machine Learning Server*.
-6. Download **Machine Learning Server 9.2.1 for Hadoop** to a writable directory, such as **/tmp/**, on one of the nodes.
+6. Download **Machine Learning Server 9.3.0 for Hadoop** to a writable directory, such as **/tmp/**, on one of the nodes.
 
 ### Unpack the distribution
 
@@ -162,7 +162,7 @@ The Custom Service Descriptor (CSD) enables monitoring and administration from w
 
 You are finished with this task when status is "distributed, activated" and the next available action is *Deactivate*.
 
-## Add MLServer-9.2.1 as a service
+## Add MLServer-9.3.0 as a service
 
 1. In Cloudera Manager home page, click the down arrow by the cluster name and choose **Add Service**.
 
