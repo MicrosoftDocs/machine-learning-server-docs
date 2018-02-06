@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Offline installation of R Server 9.1 for Linux
 
-**Looking for the 9.2.1 release? See [Machine Learning Server for Linux installation](machine-learning-server-linux-offline.md)**
+**Looking for the latest release? See [Machine Learning Server for Linux installation](machine-learning-server-linux-offline.md)**
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
@@ -48,7 +48,7 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 The following additional components are included in Setup and required for R Server.
 
 * Microsoft R Open 3.3.3
-* Microsoft .NET Core 2.0 for Linux (required for mrsdeploy and MicrosoftML use cases)
+* Microsoft .NET Core 1.1 for Linux (required for mrsdeploy and MicrosoftML use cases)
 
 ## Download R Server dependencies
 
