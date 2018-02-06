@@ -40,8 +40,8 @@ The 9.3 release marks the beginning of a faster release cadence, with fewer feat
 
 | Feature | Area | Details |
 |---------|------|---------|
-| [Administration command line interface](operationalize/configure-admin-cli-launch.md) | Operationalize | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with the previous utility. <br><br>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and throughput of web services you create. |
-| Dedicated service pools | Operationalization | TBD |
+| [Administration command line interface](operationalize/configure-admin-cli-launch.md) | Operationalize | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with the previous utility. <br/><br/>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and throughput of web services you create. |
+| Dedicated service pools | Operationalization | A service pool manages connections to a web service, with properties for setting an initial number of ready-to-use connections, and a maximum to limit connections to a quantity that system resources can handle.<br/><br/>The [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md) function library provides three new functions for managine service pools: [configureServicePool](r-reference/mrsdeploy/configureServicePool.md), [getServicePool](r-reference/mrsdeploy/getServicePool.md]), [deleteServicePool](r-reference/mrsdeploy/deleteServicePool.md). |
 | CDH 5.12 | Supported platforms | Version 5.12 of Cloudera distribution of Apache Hadoop (CDH) is now supported for [Machine Learning Server for Hadoop](install/machine-learning-server-hadoop-install.md).|
 
 

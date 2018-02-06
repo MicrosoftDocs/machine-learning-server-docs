@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "getRemoteWorkspace function (mrsdeploy) " 
+title: "getRemoteWorkspace function (mrsdeploy) | Microsoft Docs" 
 description: " Copy all objects from the remote R session and load them into the local R session. " 
 keywords: "(mrsdeploy), getRemoteWorkspace" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
-ms.prod: "mlserver" 
+ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-#ms.technology: "" 
+ms.technology: "r-server" 
 ms.custom: "" 
  
 --- 

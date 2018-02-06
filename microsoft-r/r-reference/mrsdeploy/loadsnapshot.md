@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "loadSnapshot function (mrsdeploy) " 
+title: "loadSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Loads the specified snapshot from the R server into the remote session.The workspace is updated with the objects saved in the snapshot, and saved files are restored to the working directory. " 
 keywords: "(mrsdeploy), loadSnapshot" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
-ms.prod: "mlserver" 
+ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-#ms.technology: "" 
+ms.technology: "r-server" 
 ms.custom: "" 
  
 --- 

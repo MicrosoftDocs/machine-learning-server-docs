@@ -805,18 +805,23 @@
     - name: mrsdeploy
       href: r-reference/mrsdeploy/mrsdeploy-package.md
       items:
+      - name: configureServicePool
+        href: r-reference/mrsdeploy/cconfigureservicepool.md
       - name: createSnapshot
         href: r-reference/mrsdeploy/createsnapshot.md
       - name: deleteRemoteFile
         href: r-reference/mrsdeploy/deleteremotefile.md
       - name: deleteService
         href: r-reference/mrsdeploy/deleteservice.md
+      - name: deleteServicePool
+        href: r-reference/mrsdeploy/deleteservicepool.md
       - name: deleteSnapshot
         href: r-reference/mrsdeploy/deletesnapshot.md
       - name: diffLocalRemote
         href: r-reference/mrsdeploy/difflocalremote.md
       - name: downloadSnapshot
-        href: r-reference/mrsdeploy/downloadsnapshot.md
+      - name: getPoolStatus
+        href: r-reference/mrsdeploy/getpullstatus.md
       - name: getRemoteFile
         href: r-reference/mrsdeploy/getremotefile.md
       - name: getRemoteObject
