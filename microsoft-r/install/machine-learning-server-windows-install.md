@@ -183,19 +183,21 @@ If you installed Machine Learning Server on Windows Server 2012 R2 or Windows Se
 1. Open an Adminstrator command prompt.
 2. Enter the following command to configure the server: `as ml admin node setup --onebox`
 
+  ![CLI screenshot](./media/machine-learning-server-windows-install/cli-onebox.png)
+
 This command invokes the Administrator Command Line Interface (CLI), installed by Machine Learning Server and added as a system environment variable to your path so that you can run it anywhere.
 
-The commands `node setup --onebox` enables operationalization features on a standalone server. A "one-box" configuration enables web service deployment, remote execution, and diagnostics on the current server instance.
+The commands `node setup --onebox` enable operationalization features on a standalone server. A "one-box" configuration enables web service deployment, remote execution, diagnostics, and more.
 
-If you have multiple servers, you can designate each one as either a web node or compute node, and then link them up.
+If you have multiple servers, you can designate each one as either a web node or compute node, and then link them up. For instructions, see [Configure Machine Learning Server (Enterprise)](../operationalize/configure-machine-learning-server-enterprise.md).
 
-For more information about operationalization:
+For more information about the benefits of operationalization:
 
 + [Deploy Python and R script as a web service](../operationalize/concept-what-are-web-services.md) 
 + [Connect to a remote R server for code execution](../r/how-to-execute-code-remotely.md). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) or other Machine Learning Server nodes on your network. 
 
 > [!Note]
-> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, [remote compute context](../r/concept-what-is-compute-context.md) is not available for HadoopMR. 
+> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, you cannot set a [remote compute context](../r/concept-what-is-compute-context.md) to HadoopMR in Python. 
 
 ## What's installed
 

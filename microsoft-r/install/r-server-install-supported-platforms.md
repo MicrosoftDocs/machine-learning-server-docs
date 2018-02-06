@@ -35,7 +35,7 @@ This article specifies the operating systems and platforms for on-premises insta
 
 In this release, R support includes [Microsoft R Open 3.4.3](https://mran.microsoft.com/open/), based on R-3.4.3. Python support is based on Anaconda 4.2 over Python 3.5. We support Apache Spark 2.0 and 2.4 through a Hadoop distribution on CDH, HDP, or MapR. 
 
-[Operationalization](../what-is-operationalization.md) is available on server platforms, on operating systems supporting .NET Core. [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) has a .NET Core dependency for scoring, but runs on both client and server operating systems. These requirements affect feature availability on some platforms.
+[Operationalization](../what-is-operationalization.md) is available on server platforms, on operating systems supporting .NET Core, version 2.0. [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) has a .NET Core dependency for scoring, but runs on both client and server operating systems. These requirements affect feature availability on some platforms. 
 
 | Operating system or platform | SKU | Operationalization? | MicrosoftML for R? | 
 |------------------------------|-----|--------------------|-----------------|
@@ -60,7 +60,7 @@ R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), w
 | [Machine Learning <br/>Server for Linux](machine-learning-server-linux-install.md) | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>1</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**<br/>Ubuntu 14.04 and 16.04|
 | [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup><big>1,2</big></sup>**, Windows 8.1 **<sup><big>1,2</big></sup>**, Windows 10 **<sup><big>1,2</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
 
-<sup>1</sup> **.NET Core platform dependency**: Certain features like the machine learning algorithms in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and configuring to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) are NOT supported on the marked (1) platforms since they require .NET Core.
+<sup>1</sup> **.NET Core 1.1 platform dependency**: Certain features like the machine learning algorithms in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and configuring to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) are NOT supported on the marked (1) platforms since they require .NET Core.
 
 <sup>2</sup> Use a **server OS for operationalizing analytics.** We do NOT recommend that you [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) on non-server platforms such as these marked (2). While some might work, only server platforms are supported. See the full list of supported platforms for operationalizing [here](../operationalize/configure-start-for-administrators.md#supported-platforms).
 
@@ -84,7 +84,7 @@ Hardware and software requirements for SQL Server Machine Learning Services and 
 
 <sup>3</sup> Spark integration is supported only through a Hadoop distribution on CDH, HDP, or MapR. Not all supported versions of Hadoop include a supported level of Spark. Specifically, HDP must be at least 2.3.4 to get a supported level of Spark.
 
-<sup>4</sup>**.NET Core platform dependency**: Several features in R Server have a .NET Core dependency. These features include [Overview of MicrosoftML algorithms](../r-reference/microsoftml/microsoftml-package.md) bundled in the MicrosoftML package as well as the ability to configure R Server to [operationalize your R analytics](../what-is-operationalization.md). Due to the .Net Core dependency, these features are NOT available on these platforms. 
+<sup>4</sup>**.NET Core 1.1 platform dependency**: Several features in R Server have a .NET Core dependency. These features include [Overview of MicrosoftML algorithms](../r-reference/microsoftml/microsoftml-package.md) bundled in the MicrosoftML package as well as the ability to configure R Server to [operationalize your R analytics](../what-is-operationalization.md). Due to the .Net Core dependency, these features are NOT available on these platforms. 
 
 <sup>5</sup>To operationalize your analytics or use the MicrosoftML package on R Server for Hadoop, you must deploy on edge nodes in a Hadoop cluster, if the underlying operating system is CentOS/RHEL 7.x or Ubuntu 14.04. It is not supported on SUSE SLES11.
 

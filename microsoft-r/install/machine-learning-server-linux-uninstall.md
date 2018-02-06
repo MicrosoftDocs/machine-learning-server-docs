@@ -42,7 +42,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
   + On SUSE: `zypper search \*microsoft-r\*`    
 
 
-2. Get package version information. On a 9.3.0 installation, you should see about [16 packages](#installed-packages). Since multiple major versions can coexist, the package list could be much longer. Given a list of packages, you can get verbose version information for particular packages in the list. The following examples are for Microsoft R Open version 3.4.3:
+2. Get package version information. On a 9.3.0 installation, you should see about [17 packages](#installed-packages). Since multiple major versions can coexist, the package list could be much longer. Given a list of packages, you can get verbose version information for particular packages in the list. The following examples are for Microsoft R Open version 3.4.3:
 
   + On RHEL: `rpm -qi microsoft-r-open-mro-3.4.3`   
   + On Ubuntu: `dpkg --status microsoft-r-open-mro-3.4.3` 
