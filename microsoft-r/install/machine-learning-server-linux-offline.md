@@ -92,12 +92,12 @@ Microsoft R Open is required for R execution:
  microsoft-r-open-mro-3.4.3 
 ```
 
-Microsoft .NET Core 1.1, used for operationalization, must be added to Ubuntu:
+Microsoft .NET Core 2.0, used for operationalization, must be added to Ubuntu:
 
 ```
- dotnet-host
- dotnet-hostfxr-1.1.0
- dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+ dotnet-host-2.0.0
+ dotnet-hostfxr-2.0.0
+ dotnet-runtime-2.0.0  
 ```
 
 Additional open source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:

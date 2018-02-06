@@ -7,7 +7,7 @@ keywords: ""
 author: "bradsev"
 ms.author: "bradsev"
 manager: "cgronlun"
-ms.date: "09/25/2017"
+ms.date: "02/16/2018"
 ms.topic: "get-started-article"
 ms.prod: "mlserver"
 

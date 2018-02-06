@@ -84,9 +84,9 @@ Learn more about these functions and their arguments in the article [Connecting 
 
 |Function | Description |
 |---------|---------|
-|[configureServicePool](r-reference/mrsdeploy/configureServicePool.md) | Create or update a dedicated pool of connections for a published web service running on Machine Learning Server. The service pool sets an upper limit on the number sessions allowed for a given service.|
-|[getServicePool](r-reference/mrsdeploy/getServicePool.md]) | Get the status of the dedicated pool for a published web service running on Machine Learning Server. |
-|[deleteServicePool](r-reference/mrsdeploy/deleteServicePool.md) | Deletes the service pool. |
+|[configureServicePool](configureServicePool.md) | Create or update a dedicated pool of connections for a published web service running on Machine Learning Server. The service pool provides an initial and maximum number sessions allowed for a given service.|
+|[getServicePool](getServicePool.md]) | Get the status of the dedicated pool for a published web service running on Machine Learning Server. |
+|[deleteServicePool](deleteServicePool.md) | Deletes the service pool. |
 
 <a name="remote-functions"></a>
 

@@ -195,7 +195,7 @@
       href: operationalize/python/quickstart-deploy-python-web-service.md
     - name: Run binary classifications
       href: python/quickstart-binary-classification-with-microsoftml.md
-    - name: Create a revoscalepy model
+    - name: Create a linear regression model
       href: python/quickstart-revoscalepy-linear-regression-model.md
 
   - name: R
@@ -806,7 +806,7 @@
       href: r-reference/mrsdeploy/mrsdeploy-package.md
       items:
       - name: configureServicePool
-        href: r-reference/mrsdeploy/cconfigureservicepool.md
+        href: r-reference/mrsdeploy/configureservicepool.md
       - name: createSnapshot
         href: r-reference/mrsdeploy/createsnapshot.md
       - name: deleteRemoteFile
@@ -821,7 +821,7 @@
         href: r-reference/mrsdeploy/difflocalremote.md
       - name: downloadSnapshot
       - name: getPoolStatus
-        href: r-reference/mrsdeploy/getpullstatus.md
+        href: r-reference/mrsdeploy/getpoolstatus.md
       - name: getRemoteFile
         href: r-reference/mrsdeploy/getremotefile.md
       - name: getRemoteObject

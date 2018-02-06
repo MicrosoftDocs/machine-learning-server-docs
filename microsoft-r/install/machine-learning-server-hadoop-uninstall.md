@@ -87,7 +87,7 @@ You can uninstall existing software and upgrade to newer versions node by node a
   + On Ubuntu: `apt list --installed | grep microsoft`  
   + On SUSE: `zypper search \*microsoft-r\*`  
 
-  On Ubuntu, you have `dotnet-sharedframework-microsoft.netcore.app-1.1.2`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If Machine learning Server is the only Microsoft software you have, you can remove it now.
+  On Ubuntu, you have `dotnet-runtime-2.0.0`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If Machine learning Server is the only Microsoft software you have, you can remove it now.
 
 6. After packages are uninstalled, remove remaining files. On root@, determine whether additional files still exist:
 
@@ -105,9 +105,9 @@ RM removes the folder. Parameter "f" is for force and "r" for recursive, deletin
 
 Machine Learning Server for Hadoop adds the following packages at a minimum. When uninstalling software, refer to this list when searching for packages to remove.
 
-    dotnet-host
-    dotnet-hostfxr-1.1.0
-    dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+    dotnet-host-2.0.0
+    dotnet-hostfxr-2.0.0
+    dotnet-runtime-2.0.0 
     
     microsoft-mlserver-adminutil-9.3
     microsoft-mlserver-all-9.3.0 

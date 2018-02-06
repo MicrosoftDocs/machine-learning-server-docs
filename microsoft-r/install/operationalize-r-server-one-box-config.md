@@ -87,8 +87,7 @@ To replace an older version of a one-box configuration, you can uninstall the ol
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
-     >1. Manually install .NET Core 1.1.
-
+     >1. Manually install .NET Core 2.0
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
 1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.

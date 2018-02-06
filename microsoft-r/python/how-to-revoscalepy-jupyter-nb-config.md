@@ -6,8 +6,8 @@ description: "How to configure a Jupyter notebook to call Python functions from 
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/22/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 

@@ -48,7 +48,7 @@ If you previously installed version 9.0.1, it will be replaced with the 9.1 vers
 The following additional components are included in Setup and required for R Server.
 
 * Microsoft R Open 3.3.3
-* Microsoft .NET Core 1.1 for Linux (required for mrsdeploy and MicrosoftML use cases)
+* Microsoft .NET Core 2.0 for Linux (required for mrsdeploy and MicrosoftML use cases)
 
 ## Download R Server dependencies
 
