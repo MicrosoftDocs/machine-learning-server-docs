@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "01/26/2018"
+ms.date: "02/16/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 
@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Feature annoucements for previous R Server releases
 
-Microsoft R Server is subsumed by Machine Learning Server, now in its [second release](whats-new-in-machine-learning-server.md), which is the next generation of R Server. If you have R Server 9.1 or earlier, this article enumerates features introduced in those releases.
+Microsoft R Server is subsumed by Machine Learning Server, now in its [second release](whats-new-in-machine-learning-server.md) as the next generation of R Server. If you have R Server 9.1 or earlier, this article enumerates features introduced in those releases.
 
 ## R Server 9.1
 
