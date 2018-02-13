@@ -30,26 +30,13 @@ ms.custom: ""
 
 ## MLServer
 
-
-## Usage
-
-
-
 ```
 azureml.deploy.server.MLServer
 ```
 
-
-
-
 Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization.md)
 
 This module provides a service implementation for the ML Server.
-
-
-## Usage
-
-
 
 ## authentication
 
@@ -86,11 +73,6 @@ The authentication context: LDAP, Azure Active Directory
 ### HttpException
 
 If a HTTP fault occurred calling the ML Server.
-
-
-## Usage
-
-
 
 ## create_or_update_service_pool
 
@@ -147,11 +129,6 @@ requests.models.Response: HTTP Status indicating if the request was submitted su
 
 If a HTTP fault occurred calling the ML Server.
 
-
-## Usage
-
-
-
 ## delete_service
 
 ```python
@@ -196,10 +173,6 @@ A `bool` indicating the service deletion was succeeded.
 If a HTTP fault occurred calling the ML Server.
 
 
-## Usage
-
-
-
 ## delete_service_pool
 
 ```python
@@ -239,11 +212,6 @@ requests.models.Response: HTTP Status if the pool was deleted for the service.
 ### HttpException
 
 If a HTTP fault occurred calling the ML Server.
-
-
-## Usage
-
-
 
 ## deploy_realtime
 
@@ -312,11 +280,6 @@ realtime service *redeployed*.
 ### HttpException
 
 If a HTTP fault occurred calling the ML Server.
-
-
-## Usage
-
-
 
 ## deploy_service
 
@@ -436,10 +399,6 @@ service *deployed*.
 If a HTTP fault occurred calling the ML Server.
 
 
-## Usage
-
-
-
 ## destructor
 
 ```python
@@ -453,11 +412,6 @@ destructor()
 
 Destroy lifecycle method called by the framework. Invokes destructors
 for the class hierarchy.
-
-
-## Usage
-
-
 
 ## get_service
 
@@ -505,11 +459,6 @@ A new instance of [`Service`](service.md).
 ### HttpException
 
 If a HTTP fault occurred calling the ML Server.
-
-
-## Usage
-
-
 
 ## get_service_pool_status
 
@@ -559,11 +508,6 @@ str: json representing the status of pool on each compute node for the deployed 
 
 If a HTTP fault occurred calling the ML Server.
 
-
-## Usage
-
-
-
 ```
 initializer(http_client, config, adapters=None)
 ```
@@ -595,11 +539,6 @@ The global configuration.
 ### adapters
 
 A `dict` of transport adapters by url.
-
-
-## Usage
-
-
 
 ## list_services
 
@@ -659,11 +598,6 @@ A `list` of service metadata.
 
 If a HTTP fault occurred calling the ML Server.
 
-
-## Usage
-
-
-
 ## realtime_service
 
 ```python
@@ -700,11 +634,6 @@ The web service name.
 
 A [`RealtimeDefinition`](realtime-definition.md) instance for fluent API
 chaining.
-
-
-## Usage
-
-
 
 ## redeploy_realtime
 
@@ -774,11 +703,6 @@ realtime service *redeployed*.
 ### HttpException
 
 If a HTTP fault occurred calling the ML Server.
-
-
-## Usage
-
-
 
 ## redeploy_service
 
@@ -870,11 +794,6 @@ service *deployed*.
 ### HttpException
 
 If a HTTP fault occurred calling the ML Server.
-
-
-## Usage
-
-
 
 ## service
 
