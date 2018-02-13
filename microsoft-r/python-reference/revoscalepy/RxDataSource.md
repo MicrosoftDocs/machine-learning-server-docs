@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "RxDataSource,head,tail: RxDataSource" 
-description: "Base class for all revoscalepy data sources." 
-keywords: "head" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+title: "RxDataSource: Base class generator for data source objects (revoscalepy)" 
+description: "Base class for all revoscalepy data sources. Can be used with head() and tail() to display the first and last rows of the data set." 
+keywords: "head, tail" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -41,21 +41,8 @@ revoscalepy.RxDataSource(column_info: dict = None)
 
 ## Description
 
-Base class for all revoscalepy data sources.
-
-
-
-```
-head(num_rows: int = 6, report_progress: int = None)
-```
-
-
-
-
-
-## Description
-
-Displays the first rows of the datasource.
+Base class for all revoscalepy data sources. Can be used with head()
+and tail() to display the first and last rows of the data set.
 
 
 ## Arguments
@@ -63,21 +50,17 @@ Displays the first rows of the datasource.
 
 ### num_rows
 
-integer value specifying the number of rows to display starting from the beginning of the dataset.
+Integer value specifying the number of rows to display starting from the beginning of the dataset.
 If not specified, the default of 6 will be used.
 
 
 ### report_progress
 
-integer value with options:
-
-* 0: no progress is reported. 
-
-* 1: the number of processed rows is printed and updated. 
-
-* 2: rows processed and timings are reported. 
-
-* 3: rows processed and all timings are reported. 
+Integer value with options:
+* 0: no progress is reported.
+* 1: the number of processed rows is printed and updated.
+* 2: rows processed and timings are reported.
+* 3: rows processed and all timings are reported.
 
 
 ## Example
@@ -85,56 +68,14 @@ integer value with options:
 
 
 ```
+# Return the first 4 rows
 import os
 from revoscalepy import RxOptions, RxXdfData
 sample_data_path = RxOptions.get_option("sampleDataDir")
 ds = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
 ds.head(num_rows=4)
-```
 
-
-
-
-```
-tail(num_rows: int = 6, report_progress: int = None)
-```
-
-
-
-
-
-## Description
-
-Displays the last rows of the datasource.
-
-
-## Arguments
-
-
-### num_rows
-
-integer value specifying the number of rows to display starting from the end of the dataset.
-If not specified, the default of 6 will be used.
-
-
-### report_progress
-
-integer value with options:
-
-* 0: no progress is reported. 
-
-* 1: the number of processed rows is printed and updated. 
-
-* 2: rows processed and timings are reported. 
-
-* 3: rows processed and all timings are reported. 
-
-
-## Example
-
-
-
-```
+# Return the last 4 rows
 import os
 from revoscalepy import RxOptions, RxXdfData
 sample_data_path = RxOptions.get_option("sampleDataDir")

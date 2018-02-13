@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_read_xdf: Read .xdf File" 
+title: "rx_read_xdf: Read an XDF data source object (revoscalepy)" 
 description: "Read data from an “.xdf” file into a data frame." 
 keywords: "xdf" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -58,55 +58,55 @@ Read data from an “.xdf” file into a data frame.
 
 ### file
 
-either an RxXdfData object or a character string specifying
+Either an RxXdfData object or a character string specifying
 the “.xdf” file.
 
 
 ### vars_to_keep
 
-list of strings of variable names to include when
+List of strings of variable names to include when
 reading from the input data file. If None, argument is ignored. Cannot be
 used with vars_to_drop.
 
 
 ### vars_to_drop
 
-list of strings of variable names to exclude when
+List of strings of variable names to exclude when
 reading from the input data file. If None, argument is ignored. Cannot be
 used with vars_to_keep.
 
 
 ### row_var_name
 
-optional character string specifying the variable in
+Optional character string specifying the variable in
 the data file to use as row names for the output data frame.
 
 
 ### start_row
 
-starting row for retrieval.
+Starting row for retrieval.
 
 
 ### num_rows
 
-number of rows of data to retrieve. If -1, all are read.
+Number of rows of data to retrieve. If -1, all are read.
 
 
 ### return_data_frame
 
-bool indicating whether or not to create a
+Bool indicating whether or not to create a
 data frame. If False, a list is returned.
 
 
 ### strings_as_factors
 
-bool indicating whether or not to convert
+Bool indicating whether or not to convert
 strings into factors.
 
 
 ### max_rows_by_columns
 
-the maximum size of a data frame that will be
+The maximum size of a data frame that will be
 read in, measured by the number of rows times the number of columns. If the
 numer of rows times the number of columns being extracted from the “.xdf”
 file exceeds this, a warning will be reported and a smaller number of rows
@@ -117,21 +117,21 @@ extract a subset of rows and/or columns from an “.xdf” file, use rx_data_ste
 
 ### report_progress
 
-integer value with options:
-0: no progress is reported.
-1: the number of processed rows is printed and updated.
-2: rows processed and timings are reported.
-3: rows processed and all timings are reported.
+Integer value with options:
+0: No progress is reported.
+1: The number of processed rows is printed and updated.
+2: Rows processed and timings are reported.
+3: Rows processed and all timings are reported.
 
 
 ### read_by_block
 
-read data by blocks. This argument is deprecated.
+Read data by blocks. This argument is deprecated.
 
 
 ### cpp_interp
 
-list of information sent to C++ interpreter.
+List of information sent to C++ interpreter.
 
 
 ## Returns

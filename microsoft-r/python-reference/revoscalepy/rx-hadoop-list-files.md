@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_hadoop_list_files: Execute Hadoop List Files Commands" 
-description: "rx_hadoop_list_files wraps the Hadoop fs -ls or -lsr command." 
+title: "rx_hadoop_list_files: Execute Hadoop list files commands (revoscalepy)" 
+description: "Wraps the Hadoop fs -ls or -lsr command." 
 keywords: "Hadoop Command" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -45,7 +45,7 @@ revoscalepy.rx_hadoop_list_files(path: typing.Union[list, str],
 
 ## Description
 
-rx_hadoop_list_files wraps the Hadoop fs -ls or -lsr command.
+Wraps the Hadoop *fs -ls* or *-lsr* command.
 
 
 ## Arguments
@@ -53,13 +53,13 @@ rx_hadoop_list_files wraps the Hadoop fs -ls or -lsr command.
 
 ### path
 
-str or list. A list of paths or A character string specifying location of one or more files
+Character string or list. A list of paths or A character string specifying location of one or more files
 or directories.
 
 
 ### recursive
 
-bool flag. If True, directory listings are recursive.
+Bool value. If True, directory listings are recursive.
 
 
 ## Example

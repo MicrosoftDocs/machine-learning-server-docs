@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_predict_default: Predicted Values and Residuals for rx_lin_mod and rx_logit" 
+title: "rx_predict_default: Predicted Values and Residuals for rx_lin_mod and rx_logit (revoscalepy)" 
 description: "Compute predicted values and residuals using rx_lin_mod and rx_logit objects." 
 keywords: "predict" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -72,7 +72,7 @@ rx_logit objects.
 
 ### model_object
 
-object returned from a call to rx_lin_mod and rx_logit.
+Object returned from a call to rx_lin_mod and rx_logit.
 Objects with multiple dependent variables are not supported.
 
 
@@ -85,37 +85,37 @@ RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object
 
 ### output_data
 
-a character string specifying the output ‘.xdf’ file, a
+A character string specifying the output ‘.xdf’ file, a
 RxXdfData object, RxTextData object, a RxOdbcData data source, or a
 RxSqlServerData data source to store predictions.
 
 
 ### compute_standard_errors
 
-bool value. If True, the standard errors
+Bool value. If True, the standard errors
 for each dependent variable are calculated.
 
 
 ### interval
 
-character string defining the type of interval calculation
+Character string defining the type of interval calculation
 to perform. Supported values are “none”, “confidence”, and “prediction”.
 
 
 ### confidence_level
 
-numeric value representing the confidence level on
+Numeric value representing the confidence level on
 the interval [0, 1].
 
 
 ### compute_residuals
 
-bool value. If True, residuals are computed.
+bool Balue. If True, residuals are computed.
 
 
 ### type
 
-the type of prediction desired. Supported choices are: “response”
+The type of prediction desired. Supported choices are: “response”
 and “link”. If type = “response”, the predictions are on the scale of the
 response variable. For instance, for the binomial model, the predictions
 are in the range (0,1). If type = “link”, the predictions are on the scale
@@ -125,7 +125,7 @@ of log-odds.
 
 ### write_model_vars
 
-bool value. If True, and the output data set is
+Bool value. If True, and the output data set is
 different from the input data set, variables in the model will be written
 to the output data set in addition to the predictions (and residuals,
 standard errors, and confidence bounds, if requested). If variables from
@@ -142,7 +142,7 @@ write_model_vars is True, model variables will be included as well.
 
 ### remove_missings
 
-bool value. If True, rows with missing values are removed.
+Bool value. If True, rows with missing values are removed.
 
 
 ### append
@@ -154,23 +154,23 @@ argument must be set to True. Ignored for data frames.
 
 ### overwrite
 
-bool value. If True, an existing output_data will be overwritten.
+Bool value. If True, an existing output_data will be overwritten.
 overwrite is ignored if appending rows. Ignored for data frames.
 
 
 ### check_factor_levels
 
-bool value.
+Bool value.
 
 
 ### predict_var_names
 
-list of strings specifying name(s) to give to the prediction results.
+List of strings specifying name(s) to give to the prediction results.
 
 
 ### residual_var_names
 
-list of strings specifying name(s) to give to the residual results.
+List of strings specifying name(s) to give to the residual results.
 
 
 ### interval_var_names
@@ -191,45 +191,45 @@ standard errors variable names.
 
 ### blocks_per_read
 
-number of blocks to read for each chunk of data read
+Number of blocks to read for each chunk of data read
 from the data source. If the data and output_data are the same file,
 blocks_per_read must be 1.
 
 
 ### report_progress
 
-integer value with options:
-0: no progress is reported.
-1: the number of processed rows is printed and updated.
-2: rows processed and timings are reported.
-3: rows processed and all timings are reported.
+Integer value with options:
+0: No progress is reported.
+1: The number of processed rows is printed and updated.
+2: Rows processed and timings are reported.
+3: Rows processed and all timings are reported.
 
 
 ### verbose
 
-integer value. If 0, no additional output is printed. If 1,
+Integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
 ### xdf_compression_level
 
-integer in the range of -1 to 9 indicating the
+Integer in the range of -1 to 9 indicating the
 compression level for the output data if written to an .xdf file.
 
 
 ### compute_context
 
-a RxComputeContext object for prediction.
+A RxComputeContext object for prediction.
 
 
 ### kwargs
 
-additional parameters
+Additional parameters
 
 
 ## Returns
 
-a data frame or a data source object of prediction results.
+A data frame or a data source object of prediction results.
 
 
 ## See also

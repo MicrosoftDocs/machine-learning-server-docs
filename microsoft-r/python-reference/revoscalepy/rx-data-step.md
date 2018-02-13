@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_data_step: Data Step for RevoScaleR data sources" 
-description: "Transform data from an input data set to an output data set" 
+title: "rx_data_step: Transform data from input to output dataset (revoscalepy)" 
+description: "Inline data transformations of an existing data set to an output data set" 
 keywords: "datasource" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -41,11 +41,10 @@ revoscalepy.rx_data_step(input_data: typing.Union[revoscalepy.datasource.RxDataS
     revoscalepy.datasource.RxTextData.RxTextData] = None,
     vars_to_keep: list = None, vars_to_drop: list = None,
     row_selection: str = None, transforms: dict = None,
-    transform_objects: list = None, transform_function=None,
+    transform_objects: dict = None, transform_function=None,
     transform_variables: list = None,
-    transform_packages: list = None, transform_environment=None,
-    append: list = None, overwrite: bool = False,
-    row_variable_name: str = None,
+    transform_packages: list = None, append: list = None,
+    overwrite: bool = False, row_variable_name: str = None,
     remove_missings_on_read: bool = False,
     remove_missings: bool = False, compute_low_high: bool = True,
     max_rows_by_cols: int = 3000000, rows_per_read: int = -1,
@@ -63,7 +62,7 @@ revoscalepy.rx_data_step(input_data: typing.Union[revoscalepy.datasource.RxDataS
 
 ## Description
 
-Transform data from an input data set to an output data set
+Inline data transformations of an existing data set to an output data set
 
 
 ## Arguments
@@ -71,7 +70,7 @@ Transform data from an input data set to an output data set
 
 ### input_data
 
-a character string with the path for the data to import
+A character string with the path for the data to import
 (delimited, fixed format, ODBC, or XDF). Alternatively, a data source
 object representing the input data source can be specified.
 If a Spark compute context is being used, this argument may also be an RxHiveData,
@@ -80,7 +79,7 @@ RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object
 
 ### output_file
 
-a character string representing the output ‘.xdf’ file,
+A character string representing the output ‘.xdf’ file,
 or a RxXdfData object. If None, a data frame will be returned in memory.
 If a Spark compute context is being used, this argument may also be an RxHiveData,
 RxOrcData, RxParquetData or RxSparkDataFrame object.
@@ -95,7 +94,7 @@ used with vars_to_drop. Not supported for ODBC or fixed format text files.
 
 ### vars_to_drop
 
-list of strings of variable names to exclude when
+List of strings of variable names to exclude when
 reading from the input data file. If None, argument is ignored. Cannot be
 used with vars_to_keep. Not supported for ODBC or fixed format text files.
 
@@ -112,20 +111,21 @@ None. Not currently supported, reserved for future use.
 
 ### transform_objects
 
-None. Not currently supported, reserved for
-future use.
+A dictionary of variables besides the data that are used in the transform function.
+See the example.
 
 
 ### transform_function
 
-variable transformation function. See
-rxTransform for details.
+Name of the function that will be used to modify the data.
+The variables used in the transformation function must be specified in transform_variables.
+See the example.
 
 
 ### transform_variables
 
-list of strings of input data set variables
-needed for the transformation function. See rxTransform for details.
+List of strings of the column names needed
+for the transform function.
 
 
 ### transform_packages
@@ -133,14 +133,9 @@ needed for the transformation function. See rxTransform for details.
 None. Not currently supported, reserved for future use.
 
 
-### transform_environment
-
-None. Not currently supported, reserved for future use.
-
-
 ### append
 
-either “none” to create a new ‘.xdf’ file or “rows” to
+Either “none” to create a new ‘.xdf’ file or “rows” to
 append rows to an existing ‘.xdf’ file. If output_file exists and append is
 “none”, the overwrite argument must be set to True. Ignored if a data frame
 is returned.
@@ -148,13 +143,13 @@ is returned.
 
 ### overwrite
 
-bool value. If True, the existing outData will be
+Bool value. If True, the existing outData will be
 overwritten. Ignored if a dataframe is returned.
 
 
 ### row_variable_name
 
-character string or None. If inData is a data.frame:
+Character string or None. If inData is a data.frame:
 If None, the data frame’s row names will be dropped. If a character string, an
 additional variable of that name will be added to the data set containing the
 data frame’s row names. If a data.frame is being returned, a variable with the
@@ -164,19 +159,19 @@ used as the row names.
 
 ### remove_missings_on_read
 
-bool value. If True, rows with missing
+Bool value. If True, rows with missing
 values will be removed on read.
 
 
 ### remove_missings
 
-bool value. If True, rows with missing values will
+Bool value. If True, rows with missing values will
 not be included in the output data.
 
 
 ### compute_low_high
 
-bool value. If False, low and high values will not
+Bool value. If False, low and high values will not
 automatically be computed. This should only be set to False in special
 circumstances, such as when append is being used repeatedly. Ignored for data
 frames.
@@ -184,7 +179,7 @@ frames.
 
 ### max_rows_by_cols
 
-the maximum size of a data frame that will be returned
+The maximum size of a data frame that will be returned
 if output_file is set to None and inData is an ‘.xdf’ file , measured by the number
 of rows times the number of columns. If the number of rows times the number of
 columns being created from the ‘.xdf’ file exceeds this, a warning will be
@@ -195,7 +190,7 @@ loading a huge data frame into memory.
 
 ### rows_per_read
 
-number of rows to read for each chunk of data read from
+Number of rows to read for each chunk of data read from
 the input data source. Use this argument for finer control of the number of
 rows per block in the output data source. If greater than 0, blocks_per_read is
 ignored. Cannot be used if input_data is the same as output_file. The default value of
@@ -205,13 +200,13 @@ blocks_per_read argument.
 
 ### start_row
 
-the starting row to read from the input data source. Cannot
+The starting row to read from the input data source. Cannot
 be used if input_data is the same as output_file.
 
 
 ### number_rows_read
 
-number of rows to read from the input data source. If
+Number of rows to read from the input data source. If
 remove_missings are used, the output data set may have fewer
 rows than specified by number_rows_read. Cannot be used if input_data is the same
 as output_file.
@@ -219,7 +214,7 @@ as output_file.
 
 ### return_transform_objects
 
-bool value. If True, the list of
+Bool value. If True, the list of
 transformObjects will be returned instead of a data frame or data source
 object. If the input transformObjects have been modified, by using .rxSet or
 .rxModify in the transformFunc, the updated values will be returned. Any data
@@ -230,13 +225,13 @@ transform_function without creating new data.
 
 ### blocks_per_read
 
-number of blocks to read for each chunk of data read
+Number of blocks to read for each chunk of data read
 from the data source. Ignored for data frames or if rows_per_read is positive.
 
 
 ### report_progress
 
-integer value with options:
+Integer value with options:
 0: no progress is reported.
 1: the number of processed rows is printed and updated.
 2: rows processed and timings are reported.
@@ -245,7 +240,7 @@ integer value with options:
 
 ### xdf_compression_level
 
-integer in the range of -1 to 9. The higher the
+Integer in the range of -1 to 9. The higher the
 value, the greater the amount of compression - resulting in smaller files but a
 longer time to create them. If xdf_compression_level is set to 0, there will be
 no compression and files will be compatible with the 6.0 release of Revolution
@@ -254,7 +249,7 @@ R Enterprise. If set to -1, a default level of compression will be used.
 
 ### strings_as_factors
 
-bool indicating whether or not to
+Bool indicating whether or not to
 automatically convert strings to factors on import. This can be overridden
 by specifying “character” in column_classes and column_info. If True, the factor
 levels will be coded in the order encountered. Since this factor level
@@ -264,7 +259,7 @@ is to use column_info with specified “levels”.
 
 ### kwargs
 
-additional arguments to be passed to the input data source.
+Additional arguments to be passed to the input data source.
 
 
 ## Returns
@@ -283,7 +278,17 @@ import os
 from revoscalepy import RxOptions, RxXdfData, rx_data_step
 sample_data_path = RxOptions.get_option("sampleDataDir")
 kyphosis = RxXdfData(os.path.join(sample_data_path, "kyphosis.xdf"))
-kyphosis_df = rx_data_step(kyphosis)
+
+# Function to label whether the age in month is over 120 months.
+month_limit = 120
+new_col_name = "Over10Yr"
+def transformFunc(data, cutoff, new_col_name):
+    ret = data
+    ret[new_col_name] = data.apply(lambda row: True if row.Age > cutoff else False, axis=1)
+    return ret
+
+kyphosis_df = rx_data_step(input_data=kyphosis, transform_function=transformFunc,
+                           transform_objects={"cutoff": month_limit, "new_col_name": new_col_name})
 kyphosis_df.head()
 ```
 

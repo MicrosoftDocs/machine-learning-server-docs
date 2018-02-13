@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "rx_lin_mod: Linear Models" 
-description: "Fit linear models on small or large data." 
+title: "rx_lin_mod: Fits a linear model (revoscalepy)" 
+description: "Fit linear models on small or large data sets." 
 keywords: "linear" 
-author: "bradsev" 
-manager: "jhubbard" 
-ms.date: "09/11/2017" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
+ms.date: "01/26/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -42,11 +42,11 @@ revoscalepy.rx_lin_mod(formula, data, pweights=None, fweights=None,
     transform_function: typing.Union[str, <built-
     in function callable>] = None,
     transform_variables: list = None,
-    transform_packages: list = None, transform_environment=None,
-    drop_first: bool = False, drop_main: bool = True,
-    cov_coef: bool = False, cov_data: bool = False,
-    blocks_per_read: int = 1, report_progress: int = None,
-    verbose: int = 0, compute_context=None, **kwargs)
+    transform_packages: list = None, drop_first: bool = False,
+    drop_main: bool = True, cov_coef: bool = False,
+    cov_data: bool = False, blocks_per_read: int = 1,
+    report_progress: int = None, verbose: int = 0,
+    compute_context=None, **kwargs)
 ```
 
 
@@ -55,7 +55,7 @@ revoscalepy.rx_lin_mod(formula, data, pweights=None, fweights=None,
 
 ## Description
 
-Fit linear models on small or large data.
+Fit linear models on small or large data sets.
 
 
 ## Arguments
@@ -63,12 +63,12 @@ Fit linear models on small or large data.
 
 ### formula
 
-statistical model using symbolic formulas.
+Statistical model using symbolic formulas.
 
 
 ### data
 
-either a data source object, a character string specifying a
+Either a data source object, a character string specifying a
 .xdf file, or a data frame object.
 If a Spark compute context is being used, this argument may also be an RxHiveData,
 RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
@@ -76,19 +76,19 @@ RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object
 
 ### pweights
 
-character string specifying the variable to use as probability
+Character string specifying the variable to use as probability
 weights for the observations.
 
 
 ### fweights
 
-character string specifying the variable to use as frequency
+Character string specifying the variable to use as frequency
 weights for the observations.
 
 
 ### cube
 
-bool flag. If True and the first term of the predictor variables
+Bool flag. If True and the first term of the predictor variables
 is categorical (a factor or an interaction of factors), the regression is
 performed by applying the Frisch-Waugh-Lovell Theorem, which uses a partitioned
 inverse to save on computation time and memory.
@@ -96,7 +96,7 @@ inverse to save on computation time and memory.
 
 ### cube_predictions
 
-bool flag. If True and cube is True the predicted
+Bool flag. If True and cube is True the predicted
 values are computed and included in the countDF component of the returned
 value. This may be memory intensive.
 
@@ -113,20 +113,21 @@ None. Not currently supported, reserved for future use.
 
 ### transform_objects
 
-None. Not currently supported, reserved for future use.
+A dictionary of variables besides the data that are used in the transform function.
+See rx_data_step for examples.
 
 
 ### transform_function
 
-variable transformation function. The variables used
-in the transformation function must be specified in transformVars if they
-are not variables used in the model.
+Name of the function that will be used to modify the data before the model is built.
+The variables used in the transform function must be specified in transform_objects.
+See rx_data_step for examples.
 
 
 ### transform_variables
 
-list of strings of input data set variables needed
-for the transformation function.
+List of strings of the column names needed
+for the transform function.
 
 
 ### transform_packages
@@ -134,14 +135,9 @@ for the transformation function.
 None. Not currently supported, reserved for future use.
 
 
-### transform_environment
-
-None. Not currently supported, reserved for future use.
-
-
 ### drop_first
 
-bool flag. If False, the last level is dropped in all sets
+Bool flag. If False, the last level is dropped in all sets
 of factor levels in a model. If that level has no observations (in any of the
 sets), or if the model as formed is otherwise determined to be singular, then
 an attempt is made to estimate the model by dropping the first level in all sets
@@ -152,57 +148,57 @@ and the intercept is dropped.
 
 ### drop_main
 
-bool value. If True, main-effect terms are dropped before their
+Bool value. If True, main-effect terms are dropped before their
 interactions.
 
 
 ### cov_coef
 
-bool flag. If True and if cube is False, the variance-covariance
+Bool flag. If True and if cube is False, the variance-covariance
 matrix of the regression coefficients is returned.
 
 
 ### cov_data
 
-bool flag. If True and if cube is False and if constant term is
+Bool flag. If True and if cube is False and if constant term is
 included in the formula, then the variance-covariance matrix of the data is
 returned.
 
 
 ### blocks_per_read
 
-number of blocks to read for each chunk of data read from
+Number of blocks to read for each chunk of data read from
 the data source.
 
 
 ### report_progress
 
-integer value with options:
-0: no progress is reported.
-1: the number of processed rows is printed and updated.
-2: rows processed and timings are reported.
-3: rows processed and all timings are reported.
+Integer value with options:
+0: No progress is reported.
+1: The number of processed rows is printed and updated.
+2: Rows processed and timings are reported.
+3: Rows processed and all timings are reported.
 
 
 ### verbose
 
-integer value. If 0, no additional output is printed. If 1,
+Integer value. If 0, no additional output is printed. If 1,
 additional summary information is printed.
 
 
 ### compute_context
 
-a RxComputeContext object for prediction.
+A RxComputeContext object for prediction.
 
 
 ### kwargs
 
-additional parameters
+Additional parameters
 
 
 ## Returns
 
-a RxLinModResults object of linear model.
+A RxLinModResults object of linear model.
 
 
 ## See also

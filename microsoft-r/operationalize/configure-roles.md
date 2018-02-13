@@ -24,7 +24,7 @@ ms.technology:
 #ms.custom: ""
 ---
 
-# Roles and permissions (BRAC)
+# Roles and permissions (RBAC)
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.1**
 

@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "01/03/2018"
+ms.date: "01/16/2018"
 ms.topic: "article"
 ms.prod: "microsoft-r"
 
@@ -25,9 +25,9 @@ ms.technology: "r-server"
 
 # Running jobs in parallel using rxExec
 
-RevoScaleR function library includes functions that are engineered to work in parallel automatically. However, if you require a custom implementation, you can use [rxExec](~/r-reference/revoscaler/rxexec.md) to manually construct parallelization. With rxExec, you can take an arbitrary function and run it in parallel on your distributed computing resources in Hadoop. This in turn allows you to tackle a large variety of parallel computing problems. 
+[RevoScaleR](../r-reference/revoscaler/revoscaler.md) functions are engineered to execute in parallel automatically. However, if you require a custom implementation, you can use [rxExec](~/r-reference/revoscaler/rxexec.md) to manually construct and manage a distributed workload. With rxExec, you can take an arbitrary function and run it in parallel on your distributed computing resources in Hadoop. This in turn allows you to tackle a wide variety of parallel computing problems. 
 
-This article provides comprehensive documentation on how to use rxExec. It starts with examples for a hands on experience using rxExec in a variety of use cases. 
+This article provides comprehensive steps on how to use rxExec, starting with examples showcasing rxExec in a variety of use cases. 
 
 <a name="parallel-computing-with-rxexec"></a>
 
@@ -237,9 +237,10 @@ With our *kMeansRSR* function, we can then repeat the computation from
 
 With our 5-node HPC Server cluster, this reduces the time from a minute and a half to about 15 seconds.
 
-## Share data across parallel rocesses 
+## Share data across parallel processes 
 
-Data can be shared between rxExec parallel processes by copying it to the environment of each process through the `execObjects` option to rxExec, or by specifying the data as arguments to each function call. For small data, this works well but as the data objects get larger this can create a significant performance penalty due to the time needed to do the copy. In such cases, it can be much more efficient to share the data by storing it in a location accessible by each of the parallel processes, such as a local or network file share.  
+Data can be shared between rxExec parallel processes by copying it to the environment of each process through the `execObjects` option to rxExec, or by specifying the data as arguments to each function call. For small data, this works well but as the data objects get larger this can create a significant performance penalty due to the time needed to do the copy. In such cases, it can be much more efficient to share the data by storing it in a location accessible by each of the parallel processes, such as a local or network file share. 
+ 
 The following example shows how this can be done when parallelizing the computation of statistics on subsets of a larger data table.  
 
 We’ll start by creating some sample data using the **data.table** package.  

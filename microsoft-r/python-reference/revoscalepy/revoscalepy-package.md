@@ -100,6 +100,8 @@ Data sources are used by [microsoftml functions](../microsoftml/microsoftml-pack
 |[RxParquetData](RxParquetData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Parquet data file.|
 |[RxSparkData](RxSparkData.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Spark data source.|
 |[RxSparkDataFrame](RxSparkDataFrame.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a Spark data frame.|
+|[rx_get_partitions](rx-get-partitions.md) | Local, [RxSpark](RxSpark.md) | Get partitions of a partitioned Xdf data source. |
+|[rx_partition](rx-partition.md) | Local, [RxSpark](RxSpark.md) | Partition input data sources by key values and save the results to a partitioned .xdf on disk. |
 |[rx_spark_cache_data](rx-spark-cache-data.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from cached data.|
 |[rx_spark_list_data](rx-spark-list-data.md) | Local, [RxSpark](RxSpark.md) | Generates a data source object from a list.|
 |[rx_spark_remove_data](rx-spark-remove-data.md) | Local, [RxSpark](RxSpark.md) | Deletes the Spark cached data source object.|
@@ -117,7 +119,6 @@ Data sources are used by [microsoftml functions](../microsoftml/microsoftml-pack
 | Function | Compute Context | Description |
 |----------|-----------------|-------------|
 |[rx_exec_by](rx-exec-by.md) | Local, [RxSpark](RxSpark.md) | Execute an arbitrary function in parallel on multiple data nodes. |
-| [rx_partition](rx-partition.md) | Local, [RxSpark](RxSpark.md) | Partition input data sources by key values and save the results to a partitioned .xdf on disk. |
 |[rx_summary](rx-summary.md) | All | Produce univariate summaries of objects in revoscalepy. |
 |[rx_lin_mod](rx-lin-mod.md) | All | Fit linear models on small or large data. |
 |[rx_logit](rx-logit.md) | All | Use rx_logit to fit logistic regression models for small or large data. |
