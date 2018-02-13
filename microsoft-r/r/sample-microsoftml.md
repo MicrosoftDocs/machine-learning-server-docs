@@ -6,7 +6,7 @@ keywords: ""
 author: "bradsev"
 ms.author: "bradsev"
 manager: "cgronlun"
-ms.date: "09/22/2017"
+ms.date: "02/12/2018"
 ms.topic: "get-started-article"
 ms.prod: "mlserver"
 
@@ -63,4 +63,4 @@ The tutorial imports data from a retail database, creates a label identifying cu
 
 To create an HDInsight (Hadoop) cluster and connect it to R, see [Get started using R Server on HDInsight](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-r-server-get-started)
 
-Microsoft Machine Learning Server 9.2.1 supports the [sparklyr package from RStudio](https://cran.r-project.org/web/packages/sparklyr/index.html). Machine Learning Server and sparklyr can now be used in tandem within a single Spark session. For a walkthrough on how to use this package, see [Learn how to use Machine Learning Server with sparklyr](tutorial-sparklyr-revoscaler.md).
+Microsoft Machine Learning Server 9.2.1 and 9.3 support the [sparklyr package from RStudio](https://cran.r-project.org/web/packages/sparklyr/index.html). Machine Learning Server and sparklyr can now be used in tandem within a single Spark session. For a walkthrough on how to use this package, see [Learn how to use Machine Learning Server with sparklyr](tutorial-sparklyr-revoscaler.md).
