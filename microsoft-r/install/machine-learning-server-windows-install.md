@@ -188,13 +188,15 @@ To quit the program, type `quit()` at the command line with no arguments.
 If you installed Machine Learning Server on Windows Server 2012 R2 or Windows Server 2016, [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization):
 
 1. Open an Adminstrator command prompt.
-2. Enter the following command to configure the server: `as ml admin node setup --onebox`
+2. Enter the following command to configure the server: `as ml admin bootstrap`
 
   ![CLI screenshot](./media/machine-learning-server-windows-install/cli-onebox.png)
 
 This command invokes the Administrator Command Line Interface (CLI), installed by Machine Learning Server and added as a system environment variable to your path so that you can run it anywhere.
 
-The commands `node setup --onebox` enable operationalization features on a standalone server. A "one-box" configuration enables web service deployment, remote execution, diagnostics, and more.
+You are prompted for a password. This password is used to protect your configuration settings. Anyone using the CLI to modify a configuration must enter the password before access is granted.
+
+The `bootstrap`command  enables operationalization features on a standalone server. It creates and starts a web node and compute node, and runs a series of diagnostic tests against the configuration to confirm the internal data storage is functionality and that web services can be successfull deployed.
 
 If you have multiple servers, you can designate each one as either a web node or compute node, and then link them up. For instructions, see [Configure Machine Learning Server (Enterprise)](../operationalize/configure-machine-learning-server-enterprise.md).
 
