@@ -142,6 +142,8 @@ By default, the logging level is set to Warning so as not to slow performance. H
 |Error|Logs only errors (functionality is unavailable or expectations broken)|
 |Critical|Logs only fatal events that crash the application|
 
+<a name="loglevel"></a>
+
 **To update the logging level:**
 
 1. On each compute node AND each web node, open the configuration file, \<node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
@@ -162,6 +164,33 @@ By default, the logging level is set to Warning so as not to slow performance. H
 1. Repeat the same operation(s) that were running when the error(s) occurred. 
    
 1. Collect the [log files](#logs) from each node for debugging.
+
+## Trace User Actions
+
+Using the Information Level logging, any action performed by a user can be logged and the UserPrincipalName of the responsible user can 
+be determined from these logs. The user session will be given a unique ID called **LoginSessionId** on successful login. This LoginSessionId will then be included in subsequent log entries that detail actions(<a href="https://docs.microsoft.com/en-us/machine-learning-server/operationalize/concept-api" target="_blank">REST APIs</a>) performed by the user during that session . LoginSessionId allows a more fine grained association of user actions to a particular user session.
+
+To use this feature, update the `"LogLevel"` for `"Default"` to `"Information"` on the web node, using the instructions provided [above](#loglevel).
+
+```webnode appsettings.json
+"LogLevel": {
+      "Default": "Information"
+}
+```
+
+Now consider a user action flow in which a user does a login, creates a session and deletes that session. You will find logs similar to the following for these actions : 
+
+```
+2018-01-23 22:21:21.770 +00:00 [Information] {"CorrelationId":"d6587885-e729-4b12-a5aa-3352b4500b0d","Subject":{"Operation":"Login","UserPrincipalName":"azureuser","RemoteIpAddress":"x.x.x.x","LoginSessionId":"A580CF7A1ED5587BDFD2E63E26103A672DE53C6AF9929F17E6311C4405950F1408F53E9451476B7B370C621FF7F6CE5E622183B4463C2CFEEA3A9838938A5EA2"}}
+
+2018-01-23 22:24:29.812 +00:00 [Information] {"CorrelationId":"06d3f05d-5819-4c06-a366-a74d36a1c33c","Subject":{"Operation":"REQUEST POST /sessions","UserPrincipalName":"azureuser","RemoteIpAddress":"x.x.x.x","LoginSessionId":"A580CF7A1ED5587BDFD2E63E26103A672DE53C6AF9929F17E6311C4405950F1408F53E9451476B7B370C621FF7F6CE5E622183B4463C2CFEEA3A9838938A5EA2"}}
+2018-01-23 22:24:29.960 +00:00 [Information] {"CorrelationId":"06d3f05d-5819-4c06-a366-a74d36a1c33c","Subject":{"Operation":"RESPONSE POST /sessions","UserPrincipalName":"azureuser","RemoteIpAddress":"x.x.x.x","StatusCode":201}}
+
+2018-01-23 22:28:33.661 +00:00 [Information] {"CorrelationId":"47e20e55-e5ca-4414-bd84-e3e0dd7b01cc","Subject":{"Operation":"REQUEST DELETE /sessions/fc3222d7-09bd-4a89-a959-380f1e639340/force","UserPrincipalName":"azureuser","RemoteIpAddress":"x.x.x.x","LoginSessionId":"A580CF7A1ED5587BDFD2E63E26103A672DE53C6AF9929F17E6311C4405950F1408F53E9451476B7B370C621FF7F6CE5E622183B4463C2CFEEA3A9838938A5EA2"}}
+2018-01-23 22:28:34.818 +00:00 [Information] {"CorrelationId":null,"Subject":{"Operation":"RESPONSE DELETE /sessions/fc3222d7-09bd-4a89-a959-380f1e639340/force","UserPrincipalName":"azureuser","RemoteIpAddress":"x.x.x.x","StatusCode":200}}
+```
+
+Correlating the above logs using LoginSessionId value, you can find that the user `azureuser` has logged in, created a session and then deleted that session during the time range 2018-01-23 22:21 to 2018-01-23 22:28. We can also obtain other information like the machine IP address from which `azureuser` performed these actions (`RemoteIpAddress`) and whether the requests succeeded or failed (`StatusCode`). Request and Response for each user action can be correlated using the `CorrelationId`.
 
 <a name="trouble"></a>
 
