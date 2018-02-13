@@ -30,7 +30,7 @@ ms.custom: ""
 
 ## MLServer
 
-```
+```python
 azureml.deploy.server.MLServer
 ```
 
@@ -88,6 +88,7 @@ on the ML Server by *name* and *version*.
 
 **Example:**
 
+```python
 >>> client.create_or_update_service_pool(
         'regression',
         version = 'v1.0.0',
@@ -95,7 +96,7 @@ on the ML Server by *name* and *version*.
         maximum_pool_size = 10)
 <Response [200]>
 >>>
-
+```
 
 ### Arguments
 
@@ -142,7 +143,7 @@ Delete a web service.
 
 
 
-```
+```python
 success = client.delete_service('example', version='v1.0.1')
 print(success)
 True
@@ -186,10 +187,11 @@ Delete the pool for the published web service on the ML Server by *name* and *ve
 
 **Example:**
 
+```python
 >>> client.delete_service_pool('regression', version = 'v1.0.0')
 <Response [200]>
 >>>
-
+```
 
 ### Arguments
 
@@ -229,9 +231,7 @@ All input and output types are defined as a `pandas.DataFrame`.
 
 **Example:**
 
-
-
-```
+```python
 model = rx_serialize_model(model, realtime_scoring_only=True)
 opts = {
     'version': 'v1.0.0',
@@ -294,9 +294,7 @@ Publish an new web service on the ML Server by *name* and *version*.
 
 **Example:**
 
-
-
-```
+```python
 opts = {
    'version': 'v1.0.0',
    'description': 'Service description.',
@@ -420,13 +418,10 @@ get_service(name, **opts)
 ```
 
 
-
-
 Get a web service for consumption.
 
 
-
-```
+```python
 service = client.get_service('example', version='v1.0.1')
 print(service)
 <ExampleService>
@@ -474,6 +469,7 @@ and *version*.
 
 **Example:**
 
+```python
 >>> client.create_or_update_service_pool(
         'regression',
         version = 'v1.0.0',
@@ -484,7 +480,7 @@ and *version*.
 [{'computeNodeEndpoint': 'http://localhost:12805/', 'status': 'Pending'}]
 >>> client.get_service_pool_status('regression', version = 'v1.0.0')
 [{'computeNodeEndpoint': 'http://localhost:12805/', 'status': 'Success'}]
-
+```
 
 ### Arguments
 
@@ -508,7 +504,7 @@ str: json representing the status of pool on each compute node for the deployed 
 
 If a HTTP fault occurred calling the ML Server.
 
-```
+```python
 initializer(http_client, config, adapters=None)
 ```
 
@@ -566,9 +562,7 @@ the web service.
 
 **Example:**
 
-
-
-```
+```python
 all_services = client.list_services()
 all_versions_of_add_service = client.list_services('add-service')
 add_service_v1 = client.list_services('add-service', version='v1')
@@ -614,7 +608,7 @@ service.
 
 
 
-```
+```python
 client.realtime_service('scoring')
    .description('A new realtime web service')
    .version('v1.0.0')
@@ -654,7 +648,7 @@ All input and output types are defined as a `pandas.DataFrame`.
 
 
 
-```
+```python
 model = rx_serialize_model(model, realtime_scoring_only=True)
 opts = {
     'version': 'v1.0.0',
@@ -721,7 +715,7 @@ updated.
 
 
 
-```
+```python
 opts = {
    'version': 'v1.0.0',
    'description': 'Service description.',
@@ -811,7 +805,7 @@ service.
 
 
 
-```
+```python
 client.service('scoring')
    .description('A new web service')
    .version('v1.0.0')
