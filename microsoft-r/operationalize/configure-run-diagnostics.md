@@ -172,7 +172,7 @@ be determined from these logs. The user session will be given a unique ID called
 
 To use this feature, update the `"LogLevel"` for `"Default"` to `"Information"` on the web node, using the instructions provided [above](#loglevel).
 
-```webnode appsettings.json
+```
 "LogLevel": {
       "Default": "Information"
 }
