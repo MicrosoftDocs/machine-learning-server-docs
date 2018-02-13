@@ -23,7 +23,7 @@ ms.prod: "mlserver"
 ---
 # Install Microsoft R Server 9.0.1 on Hadoop
 
-Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 9.0.1. For the current release, see [Install R Server for Hadoop](r-server-install-hadoop.md).
+The following instructions are for installation of R Server 9.0.1 for Hadoop.
 
 **Side-by-side Installation**
 
@@ -37,6 +37,7 @@ If you want to replace an older version rather than run side-by-side, you can un
 
 A summary of setup tasks is as follows:
 
+- Download software.
 - Unzip to extract packages and an install script (install.sh)
 - Run the install script with a -p parameter (for Hadoop)
 - Verify the installation

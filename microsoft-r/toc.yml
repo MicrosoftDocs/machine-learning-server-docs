@@ -133,8 +133,6 @@
         href: install/r-server-install-windows-offline.md
       - name: 9.1 - Command line
         href: install/r-server-install-windows-command-line.md
-      - name: 8.1 - Install
-        href: install/r-server-install-windows-800.md
     - name: On Linux
       items:
       - name: 9.1 - Install
