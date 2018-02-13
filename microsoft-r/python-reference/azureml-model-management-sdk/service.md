@@ -1,14 +1,15 @@
 --- 
  
 # required metadata 
-title: "Service,batch,capabilities,get_batch,list_batch_executions,swagger: from azureml-model-management-sdk – Machine Learning Server " 
+title: "Service class: from azureml-model-management-sdk Python module in Machine Learning Server" 
 description: "" 
 keywords: "" 
-author: "Microsoft" 
-manager: "Microsoft" 
+author: "HeidiSteen" 
+manager: "cgronlun" 
 ms.date: "09/20/2017" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
+ms.author: "heidist"
 ms.service: "" 
 ms.assetid: "" 
  

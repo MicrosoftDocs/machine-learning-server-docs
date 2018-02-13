@@ -29,5 +29,5 @@ TBD
 
 ## See also
 
-[What are web services in Machine Learning Server?](../../concept-what-are-web-services.md)
-[Evaluate web service capacity: generic session pools](../configure-evaluate-capacity.md#shell-pools)
+ + [What are web services in Machine Learning Server?](../concept-what-are-web-services.md)
+ + [Evaluate web service capacity: generic session pools](../configure-evaluate-capacity.md#shell-pools)

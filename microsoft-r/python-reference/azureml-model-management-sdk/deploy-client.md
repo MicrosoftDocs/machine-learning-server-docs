@@ -1,12 +1,13 @@
 --- 
  
 # required metadata 
-title: "DeployClient: from azureml-model-management-sdk – Machine Learning Server " 
+title: "DeployClient class: from azureml-model-management-sdk Python module in Machine Learning Server" 
 description: "" 
 keywords: "" 
-author: "Microsoft" 
-manager: "Microsoft" 
-ms.date: "09/20/2017" 
+author: "HeidiSteen" 
+ms.author: "heidist"
+manager: "cgronlun" 
+ms.date: "02/16/2018" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

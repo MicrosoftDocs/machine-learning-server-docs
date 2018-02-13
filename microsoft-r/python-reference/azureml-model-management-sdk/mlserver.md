@@ -1,14 +1,15 @@
 --- 
  
 # required metadata 
-title: "MLServer class (azureml-model-management-sdk) Machine Learning Server | Microsoft Docs" 
-description: "MLServer, authentication, delete_service, deploy_realtime, deploy_service, destructor,get_service, initializer, list_services, realtime_service, redeploy_realtime, redeploy_service, service: from azureml-model-management-sdk – Machine Learning Server " 
+title: "MLServer class: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
+description: "" 
 keywords: "" 
-author: "Microsoft" 
-manager: "Microsoft" 
+author: "HeidiSteen" 
+ms.author: "heidist"
+manager: "cgronlun" 
 ms.date: "02/16/2018" 
 ms.topic: "reference" 
-ms.prod: "mlserver" 
+ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +20,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-#ms.technology: "" 
+ms.technology: "r-server" 
 ms.custom: "" 
  
 ---
