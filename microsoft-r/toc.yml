@@ -187,6 +187,8 @@
   items:
   - name: Python
     items:
+    - name: Link to Machine Learning Server from Python tools
+      href: python/quickstart-python-tools.md
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
     - name: Run binary classifications
