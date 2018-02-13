@@ -74,13 +74,13 @@ The authentication context: LDAP, Azure Active Directory
 
 If a HTTP fault occurred calling the ML Server.
 
+<a name="create_or_update_service_pool"></a>
+
 ## create_or_update_service_pool
 
 ```python
  create_or_update_service_pool(name, version, initial_pool_size, max_pool_size, **opts)
 ```
-
-
 
 
 Creates or updates the pool for the published web service, with given initial and maximum pool sizes
@@ -174,13 +174,13 @@ A `bool` indicating the service deletion was succeeded.
 If a HTTP fault occurred calling the ML Server.
 
 
+<a name="delete_service_pool"></a>
+
 ## delete_service_pool
 
 ```python
 delete_service_pool(name, version, **opts)
 ```
-
-
 
 
 Delete the pool for the published web service on the ML Server by *name* and *version*.
@@ -454,6 +454,8 @@ A new instance of [`Service`](service.md).
 ### HttpException
 
 If a HTTP fault occurred calling the ML Server.
+
+<a name="get_service_pool_status"></a>
 
 ## get_service_pool_status
 

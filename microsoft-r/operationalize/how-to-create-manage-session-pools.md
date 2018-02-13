@@ -33,9 +33,9 @@ A web service having a dedicated session pool never requests connections from th
 
 For R script, the [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md) function library provides three functions for managing sessions:
 
-+ [configureServicePool](r-reference/mrsdeploy/configureServicePool.md)
-+ [getPoolStatus](r-reference/mrsdeploy/getPoolStatus.md)
-+ [deleteServicePool](r-reference/mrsdeploy/deleteServicePool.md)
++ [configureServicePool](../r-reference/mrsdeploy/configureServicePool.md)
++ [getPoolStatus](../r-reference/mrsdeploy/getPoolStatus.md)
++ [deleteServicePool](../r-reference/mrsdeploy/deleteServicePool.md)
 
 ## Create or modify a dedicated session pool
 
