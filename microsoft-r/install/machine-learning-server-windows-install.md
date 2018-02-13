@@ -69,13 +69,7 @@ For all other configurations, Setup performs an in-place upgrade over existing i
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.3). An installation is either entirely 9.3 or an earlier version.
 
-<a name="howtoinstall"></a>
-
-## How to install
-
-This section walks you through a Machine Learning Server deployment using the standalone Windows installer.
-
-### Download Machine Learning Server installer
+## Download Machine Learning Server installer
 
 You can get the zipped installation file from one of the following download sites.
 
@@ -89,9 +83,15 @@ For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/d
 1. Click **Join or access now** to sign up for download benefits.
 2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
 3. Click **Downloads** to search for R Server.
-4. Click **Downloads** for a specific version to select the platform.
+4. Click **Downloads** for a specific version to select the installer for Windows.
 
 ![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
+
+<a name="howtoinstall"></a>
+
+## How to install
+
+This section walks you through a Machine Learning Server deployment using the standalone Windows installer.
 
 ### Run Setup
 

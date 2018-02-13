@@ -187,7 +187,7 @@
   items:
   - name: Python
     items:
-    - name: Link to Machine Learning Server from Python tools
+    - name: Link the Python interpreter to tools and IDEs
       href: python/quickstart-python-tools.md
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
