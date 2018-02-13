@@ -21,11 +21,12 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# How to create and manage session pools for fast web service connections
-RPython)**
+# How to create and manage session pools for fast web service connections**
 
+**Applies to: Machine Learning Server 9.3 (R)**
 TBD
 
 ## See also
 
 [What are web services in Machine Learning Server?](../concept-what-are-web-services.md)
+[Evaluate web service capacity: generic session pools](configure-evaluate-capacity.md#shell-pools)
