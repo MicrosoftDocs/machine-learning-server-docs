@@ -55,7 +55,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
    ```
 
 1. Use the CLI to declare the IP address of each compute node you configured. You can specify a single URI, several URIs, or even an IP range:
-   ```
+   ```azurecli
    az ml admin compute-node-uri add --uri <uris>
    ```
 

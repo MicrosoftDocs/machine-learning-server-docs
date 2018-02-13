@@ -51,7 +51,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 1. Define and run the capacity evaluation.
-   ```
+   ```azurecli
    # For help, run az ml admin capacity --help
      
    # To test for the maximum latency

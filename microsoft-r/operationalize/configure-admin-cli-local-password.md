@@ -47,7 +47,7 @@ To update the password:
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 1. Run the command to update the 'admin' password.
-   ```
+   ```azurecli
    # Update the admin account password
    az ml admin password set --old-password <OLD-PW> --new-password <NEW-PW> --confirm-password <NEW-PW>
    ```

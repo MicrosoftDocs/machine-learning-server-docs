@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 ---
 # Deploy an R Model as a web service with mrsdeploy
 
-**Applies to: Microsoft R Client 3.x, Machine Learning Server 9.x, Microsoft R Server 9.x**
+**Applies to: Microsoft R Client 3.x, Machine Learning Server, Microsoft R Server 9.x**
 
 ## Objective
 

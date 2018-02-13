@@ -39,7 +39,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 1. Run the command to either stop or start a node.
-   ```
+   ```azurecli
    # Start nodes on a machine
    az ml admin node start --computenode --webnode
 

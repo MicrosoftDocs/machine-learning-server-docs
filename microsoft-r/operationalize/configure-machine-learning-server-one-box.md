@@ -50,7 +50,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
 
 1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run the following [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
-   ```
+   ```azurecli
    # Set up both nodes on one machine
    az ml admin node setup —-onebox —-admin-password <CHOOSE-A-PASSWORD> —-confirm-password <CONFIRMED-PASSWORD>
 
@@ -109,7 +109,7 @@ Carefully review the following steps.
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
 
 1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
-   ```
+   ```azurecli
    # Set up both nodes on one machine
    az ml admin node setup —-onebox —admin-password <CHOOSE-A-PASSWORD> —-confirm-password <CONFIRMED-PASSWORD>
 
