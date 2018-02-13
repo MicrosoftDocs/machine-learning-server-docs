@@ -36,7 +36,7 @@ Before you begin this QuickStart, have an the following ready:
 > * A Python IDE, such as [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/) with Python.
 > * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).
 
-## Python.exe (built-in MLServer)
+## Python.exe (built-in)
 
 To use the Python modules interactively, start the Python executable from the installation path.
 
@@ -60,15 +60,17 @@ The setup program for Machine Learning Server 9.3 adds Python distribution infor
 However, when using an earlier release or to confirm settings, follow these steps to add Machine Learning Server's Python distribution information to an environment. For more information, see [Python environments (Visual Studio docs)](https://docs.microsoft.com/visualstudio/python/managing-python-environments-in-visual-studio).
 
 1. In **Tools** > **Python** > **Python environments**, click **+ Custom** to create a new environment.
+
 2. Give the environment name, and then fill in the following fields.
+
 3. In **Prefix path**, enter `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`. 
+ 
 4. Click **Auto Detect** in the top right to auto-fill the remaining fields:
 
-   a. **Interpreter path** should be `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\python.exe`.
-   b. **Windowed interpreter** should be `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\pythonw.exe`.
-   c. **Language version** should be `3.5` for Python 3.5.
-   d. **Architeccture** should be `64-bit`.
-   e. **Path** should be read-only. 
+  + **Interpreter path** should be `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\python.exe`.
+  + **Windowed interpreter** should be `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\pythonw.exe`.
+  + **Language version** should be `3.5` for Python 3.5.
+  + **Path** should be read-only. 
 
 5. Click **Apply** in the top right to save the environment.
 
@@ -93,6 +95,7 @@ For additional instructions on configuring a multi-user server, see [How to add 
 In PyCharm, set the interpreter to the Python executable installed by Machine Learning Server.
 
 1. In a new project, in Settings, click **Add Local**.
+
 2. Enter `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`.
 
 You can now import revoscalepy, microsoftml, or azureml-model-management-sdk modules.

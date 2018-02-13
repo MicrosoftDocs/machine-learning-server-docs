@@ -357,6 +357,8 @@
         href: operationalize/python/how-to-consume-web-services.md
       - name: Consume services asynchronously
         href: operationalize/python/how-to-consume-web-services-async.md
+      - name: Create and manage session pools
+        href: operationalize/python/how-to-create-manage-session-pools.md
     - name: R
       items:
       - name: Deploy & manage web services
@@ -365,6 +367,8 @@
         href: operationalize/how-to-consume-web-service-interact-in-r.md
       - name: Consume services asynchronously
         href: operationalize/how-to-consume-web-service-asynchronously-batch.md
+      - name: Create and manage session pools
+        href: operationalize/how-to-create-manage-session-pools.md
       - name: 'DeployR 8.x [Archive]'
         items:
         - name: How to install DeployR
