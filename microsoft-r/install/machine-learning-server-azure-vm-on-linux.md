@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Machine Learning Server for Linux 9.2:  Virtual Machine on Azure
 
->Looking for an older version? See here: [R Server 9.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
+>Looking for an older or newer version? The newest version, 9.3, becomes available on Azure virtual machines several weeks after the on premises version is made generally available. For older versions, see these links: [R Server 9.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
 Machine Learning Server, formerly known as R Server, is the most broadly deployable enterprise-class analytics platform for R and Python available today. This virtual machine (VM) includes the Machine Learning Server version 9.2.1 for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). 
 

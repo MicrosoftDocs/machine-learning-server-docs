@@ -271,7 +271,28 @@ If you have multiple nodes, you can automate the installation across nodes using
 
 Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. If possible, use a distributed shell that provides a top-level copy command, such as the pdcp command that is part of pdsh.
 
-Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](r-server-install-hadoop-800.md#standard-command-line-install).
+Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp.
+
+1. Mount the IMG file. The following commands create a mount point and mount the file to that mount point:
+
+	    mkdir /mnt/mrsimage
+	    mount –o loop <filename> /mnt/mrsimage
+
+  For RHEL/CENTOS systems;
+		tar zxvf MRS80RHEL.tar.gz
+
+  For SLES systems;
+		tar zxvf MRS80SLES.tar.gz
+
+2. Copy the installer gzipped tar file to a writable directory, such as /tmp:
+
+  From the mounted img file:
+		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
+
+  From the unpacked tar file:
+		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
+
+3. The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
 The following commands use pdsh and pdcp to distribute and install Microsoft R Server:
 

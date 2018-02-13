@@ -2,6 +2,18 @@
  "redirections":
  [
   {
+    "source_path" : "microsoft-r/install/r-server-install-hadoop-800.md",
+    "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
+  },
+  {
+  "source_path" : "microsoft-r/install/r-server-install-linux-server-800.md",
+  "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
+  },
+  {
+  "source_path" : "microsoft-r/install/r-server-install-teradata-800.md",
+  "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
+  },
+  {
       "source_path" : "microsoft-r/operationalize/configure-use-admin-utility.md",
       "redirect_url" : "/machine-learning-server/operationalize/configure-admin-cli-launch"
   },

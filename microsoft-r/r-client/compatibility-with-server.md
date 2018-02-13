@@ -42,6 +42,6 @@ Although R Client is backwards compaible, R Client and Machine Learning Server f
 | 3.4.1 | 9.2.1 | September 2017 |
 | 3.4.0 | 9.1 | March 2017 |
 | 3.3.2 | 9.0 | December 2016
-| 3.3.3 | 8.0.5 | June 2016 |
+| 3.3.0 | 8.0.5 | June 2016 |
 
 Learn about what's new in the latest [Microsoft R Client release](what-is-microsoft-r-client.md#r-client-whats-new).

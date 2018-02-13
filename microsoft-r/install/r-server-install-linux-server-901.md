@@ -319,8 +319,6 @@ If you have installed Microsoft R Server and then install base R, again there sh
 
 [Install R Server 8.0.5 for Linux](r-server-install-linux-server-805.md)
 
-[Install R Server 8.0 for Linux](r-server-install-linux-server-800.md)
-
 [Install R on Hadoop overview](r-server-install-hadoop.md)
 
 [Install R Server 8.0.5 for Hadoop](r-server-install-hadoop-805.md)

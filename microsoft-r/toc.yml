@@ -147,8 +147,6 @@
         href: install/r-server-install-linux-server-901.md
       - name: 8.0.5 - Install
         href: install/r-server-install-linux-server-805.md
-      - name: 8.0 - Install
-        href: install/r-server-install-linux-server-800.md   
       - name: Manage your R installation 
         href: install/r-server-install-linux-manage-install.md    
     - name: On Hadoop

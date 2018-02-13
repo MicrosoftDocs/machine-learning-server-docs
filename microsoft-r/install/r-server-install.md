@@ -47,9 +47,3 @@ This section provides links to installation documentation for R Server 9.1 and e
 + [8.0.5 - Windows](r-server-install-windows-800.md)
 + [8.0.5 - Install Linux](r-server-install-linux-server-805.md)
 + [8.0.5 - Install Hadoop](r-server-install-hadoop-805.md)
-
-## 8.0
-
-+ [8.0 - Windows](r-server-install-windows-800.md)
-+ [8.0 - Install Linux](r-server-install-linux-server-800.md)  
-+ [8.0 - Install Hadoop](r-server-install-hadoop-800.md)
