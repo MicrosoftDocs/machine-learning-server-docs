@@ -167,7 +167,7 @@ By default, the logging level is set to Warning so as not to slow performance. H
 
 ## Trace User Actions
 
-Using Information Level logging, any action performed by a user can be logged and the UserPrincipalName of the responsible user can 
+Using Information Level logging, any <a href="https://docs.microsoft.com/en-us/machine-learning-server/operationalize/concept-api#core-apis-for-operationalization" target="_blank">Core API</a> (or) <a href="https://docs.microsoft.com/en-us/machine-learning-server/operationalize/concept-api#service-consumption-apis" target="_blank">Service Consumption API</a> call performed by a user can be logged and the UserPrincipalName of the responsible user can 
 be determined from these logs. The user session is given a unique ID called **LoginSessionId** on successful login, which is included in subsequent log entries detailing actions(<a href="https://docs.microsoft.com/machine-learning-server/operationalize/concept-api" target="_blank">REST APIs</a>) performed by the user during that session. LoginSessionId allows a more fine-grained association of user actions to a particular user session.
 
 To use this feature, update the `"LogLevel"` for `"Default"` to `"Information"` on the web node, using the instructions provided [above](#loglevel).
