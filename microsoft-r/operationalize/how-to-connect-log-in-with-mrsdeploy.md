@@ -128,7 +128,7 @@ This function takes several arguments as follows:
 Unless you specify otherwise, this function:
 1. Logs the user in
 1. Creates a remote R session on the server instance
-1. Puts the user on the remote command line in that remote session. 
+1. Puts the user on the remote command line in that remote session
 
 If you do not want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
 
