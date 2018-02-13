@@ -62,7 +62,7 @@ From [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/
 3. Click **Downloads** to search for R Server.
 4. Click **Downloads** for a specific version to select the platform.
 
-![Download page on Visual Studio benefits page](./media/mlserver-install-older-versions.png)
+![Download page on Visual Studio benefits page](./install/media/mlserver-install-older-versions.png)
 
 ## Get support for R Server
 
