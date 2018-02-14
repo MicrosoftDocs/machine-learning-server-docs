@@ -27,24 +27,35 @@ ms.prod: "mlserver"
 
 Review workaround steps for the following known issues in this release. 
 
-## In Machine Learning Server 9.3
+## Known issues in 9.3
 
 The following issues are known in this release.
 
 <a name="revo-rxserializemodel"></a>
 
-#### 1. Model deserialization on older remote servers: "Error in memDecompress(data, type = decompress)"
+### 1. Model deserialization on older remote servers: "Error in memDecompress(data, type = decompress)"
 
 Applies to: [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md)
 
 If you customarily switch the compute context among multiple machines, you might have trouble deserializing a model if the RevoScaleR library is out of sync. Specifically, if you serialized the model on a newer client, and then attempt deserialization on a remote server having older copies of those libraries, you might encounter this error: 
 
-```
+```r
 "Error in memDecompress(data, type = decompress) :
   internal error -3 in memDecompress(2)"
 ```
-To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers are at the same functional level.
+To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
 
+### 2. ImportError for Matplotlib.pyplot (Anaconda issue)
+
+Although not specific to Machine Learning Server, Matplotlib.pyplot fails to load on some systems. Since using Matplotlib.pyplot with revoscalepy is a common scenario, we recommend the following workaround if you are blocked by an import error. The workaround is to assign a non-interactive backend to matplotlib prior to loading pyplot:
+
+```python
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt 
+```
+
+For more information, search for "Agg backend" in the [Matplotlib FAQ](https://matplotlib.org/faq/howto_faq.html).
 
 <a name="Prev"></a>
 

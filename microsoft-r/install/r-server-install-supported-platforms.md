@@ -42,8 +42,8 @@ In this release, R support includes [Microsoft R Open 3.4.3](https://mran.micros
 | Windows 10 <br>Windows 8.1<br>Windows 7 SP1 | [Machine Learning Server for Windows <br>(developer edition)](machine-learning-server-windows-install.md) | No | Yes |
 |  Windows Server 2016<br>Windows Server 2012 R2 | [Machine Learning Server for Windows](machine-learning-server-windows-install.md) | Yes | Yes |
 | CentOS/ RedHat 6.x - 7.x  | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#redhat) | 6.x - No <br>7.x - Yes | 6.x - No <br>7.x - Yes |
-| Ubuntu 14.04<br>Ubuntu 16.04| [Machine Learning Server for Linux](machine-learning-server-linux-install.md#ubuntu)| No | No | 
-| SUSE Linux Enterprise Server 11 | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#suse)| No | No | 
+| Ubuntu 14.04<br>Ubuntu 16.04| [Machine Learning Server for Linux](machine-learning-server-linux-install.md#ubuntu)| Yes | Yes | 
+| SUSE Linux Enterprise Server 11 SP3 and above | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#suse)| No | No | 
 | Cloudera CDH 5.7-5.12 | [Cloudera Manager installation](machine-learning-server-cloudera-install.md) | Edge nodes only | All nodes |
 | Hortonworks HDP 2.4-2.6| [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) | Edge nodes only | All nodes |
 | MapR 5.0-5.2 | [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md)| Edge nodes only | All nodes |

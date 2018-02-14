@@ -188,7 +188,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 If you installed Machine Learning Server on Windows Server 2012 R2 or Windows Server 2016, [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization):
 
 1. Open an Adminstrator command prompt.
-2. Enter the following command to configure the server: `as ml admin bootstrap`
+2. Enter the following command to configure the server: `az ml admin bootstrap`
 
   ![CLI screenshot](./media/machine-learning-server-windows-install/cli-onebox.png)
 

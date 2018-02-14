@@ -21,11 +21,11 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# How to create and manage session pools for fast web service connections**
+# How to create and manage session pools for fast web service connections
 
 **Applies to: Machine Learning Server 9.3 (R)**
 
-Fast connections to a web service are possible when you create sessions and load dependencies in advance. Sessions are available in a pool dedicated to a specific web service, where each session is an instance of the R interpreter. Dependencies are pre-loaded once per web service and shared by all connections. For example, creating ten sessions in advance for a web service that uses numpy, pandas, scikit, revoscalepy, microsoftml, and azureml-model-management-sdk would result in ten instances of the Python interpreter and one copy of each module, shared by all connections. 
+Fast connections to a web service are possible when you create sessions and load dependencies in advance. Sessions are available in a pool dedicated to a specific web service, where each session is an instance of the R interpreter. Dependencies are pre-loaded once per web service and shared by all connections. For example, creating ten sessions in advance for a web service that uses numpy, pandas, scikit, revoscalepy, microsoftml, and azureml-model-management-sdk would result in ten instances of the Python interpreter but only one copy of each module, shared by all connections. 
 
 A dedicated session pool is a per-web-service, per-language construction. For each web service, two session pools are created, one each for R and Python, assuming both are installed on the Machine Learning Server.
 
@@ -38,6 +38,17 @@ For R script, the [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md) functi
 + [deleteServicePool](../r-reference/mrsdeploy/deleteServicePool.md)
 
 ## Create or modify a dedicated session pool
+
+You can use an R console application, such as Rgui.exe, to run the following commands.
+
+```r
+ # load mrsdeploy and print the function list
+ library(mrsdeploy)
+ ls("package:mrsdeploy")
+
+ 
+
+```
 
 ## Return status codes for current sessions
 

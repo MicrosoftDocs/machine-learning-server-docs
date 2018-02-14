@@ -32,7 +32,7 @@ Functionality is delivered through proprietary R and Python packages, internal c
 In this article, learn about the new capabilities introduced in the latest packages and tools. If you develop in R, you might also want to review feature announcements from recent past releases. 
 
 > [!Note]
-> Read our "release announcement for Machine Learning Server 9.3"(link-tbd). For features in R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
+> For updates to R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## Announced in 9.3
 
