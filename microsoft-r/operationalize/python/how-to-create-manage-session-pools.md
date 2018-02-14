@@ -31,11 +31,11 @@ For example, if you create ten sessions in advance for a web service that uses n
 
 A web service having a dedicated session pool never requests connections from the [generic session pool](configure-evaluate-capacity.md#pool) shared resource, not even when maximum sessions are reached. The generic session pool services only those web services that do not have dedicated resources.
 
-For Python script, the [MLServer](../python-reference/azureml-model-management-sdk/mlserver.md) class in the [azureml-model-management-sdk](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) function library provides three functions for creating and managing sessions:
+For Python script, the [MLServer](../../python-reference/azureml-model-management-sdk/mlserver.md) class in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) function library provides three functions for creating and managing sessions:
 
-+ [create_or_update_service_pool](../python-reference/azureml-model-management-sdk/mlserver.md#create_or_update_service_pool)
-+ [get_service_pool_status](../python-reference/azureml-model-management-sdk/mlserver.md#get_service_pool_status)
-+ [delete_service_pool](../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool)
++ [create_or_update_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#create_or_update_service_pool)
++ [get_service_pool_status](../../python-reference/azureml-model-management-sdk/mlserver.md#get_service_pool_status)
++ [delete_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool)
 
 ## Create or modify a dedicated session pool
 
@@ -62,7 +62,7 @@ You can use a [Python interactive window](../../python/quickstart-python-tools.m
  get_service_pool_status(name = "myWebService1234", version = "v1.0.0")
 ```
 
-Currently, there are no commands or functions that return actual session pool usage. The log file is your best resource for analyzing connection and service activity. For more information, see [Trace user actions](configure-run-diagnostics.md#trace-user-actions).
+Currently, there are no commands or functions that return actual session pool usage. The log file is your best resource for analyzing connection and service activity. For more information, see [Trace user actions](../configure-run-diagnostics.md#trace-user-actions).
 
 ## Delete a session pool
 
@@ -78,5 +78,5 @@ On the compute node, run the following command to delete the session pool for a 
 
 ## See also
 
- + [What are web services in Machine Learning Server?](../concept-what-are-web-services.md)
- + [Evaluate web service capacity: generic session pools](../configure-evaluate-capacity.md#pool)
+ + [What are web services in Machine Learning Server?](../../concept-what-are-web-services.md)
+ + [Evaluate web service capacity: generic session pools](../../configure-evaluate-capacity.md#pool)
