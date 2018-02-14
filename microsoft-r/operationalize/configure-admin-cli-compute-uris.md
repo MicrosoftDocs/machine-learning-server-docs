@@ -47,7 +47,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 1. If you are not yet authenticated in the CLI, do so now. This is an administrator task only, so you must have the Owner role to declare or manage URIs. The account name is `admin` unless LDAP or AAD is configured.
-   ```
+   ```azurecli
    az login —-mls
 
    # Use the following if you need help with logins.
@@ -56,10 +56,10 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 1. Use the CLI to declare the IP address of each compute node you configured. You can specify a single URI, several URIs, or even an IP range:
    ```azurecli
-   #declare one or more compute node URIs
+   # Declare one or more compute node URIs
    az ml admin compute-node-uri add --uri <uris>
 
-   #list uris defined
+   # List uris defined
    az ml admin compute-node-uri list
    ```
 

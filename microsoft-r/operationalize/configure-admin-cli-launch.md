@@ -57,7 +57,7 @@ In this release, use the `admin` extension of the [Azure CLI](https://docs.micro
    az ml admin --help
    ```
 
-You must first [set up your nodes](configure-machine-learning-server-one-box.md) before running any other `admin` extension commands in the CLI. Tip: For a speedy setup of a one-box configuration, you can call `az ml admin bootstrap`.
+You must first [set up your nodes](configure-machine-learning-server-one-box.md) before running any other `admin` extension commands in the CLI. For a speedy setup of a one-box configuration, use `az ml admin bootstrap`.
 
 ## Machine Learning Server 9.2: Administration utility
 

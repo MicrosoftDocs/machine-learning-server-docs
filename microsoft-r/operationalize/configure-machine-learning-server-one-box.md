@@ -49,10 +49,15 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)      
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
 
-1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run the following [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
+1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run the following [CLI commands](configure-admin-cli-launch.md)to:
+   + Set up a web node and compute node on the same machine.
+   + Define a password for the default 'admin' account.  Replace <Password> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
+   + Authenticate with Machine Learning Server.
+   + [Test the configuration](../operationalize/configure-run-diagnostics.md).
+
    ```azurecli
    # Set up both nodes on one machine
-   az ml admin node setup —-onebox —-admin-password <CHOOSE-A-PASSWORD> —-confirm-password <CONFIRMED-PASSWORD>
+   az ml admin node setup —-onebox —-admin-password <Password> —-confirm-password <Password>
 
    # Check that the nodes are now running
    az ml admin node list
@@ -108,10 +113,14 @@ Carefully review the following steps.
 
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
 
-1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a web node and compute node on the same machine, authenticate, and [test the configuration](../operationalize/configure-run-diagnostics.md).
+1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to:
+   + Set up a web node and compute node on the same machine.
+   + Define a password for the default 'admin' account.  Replace <Password> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
+   + Authenticate with Machine Learning Server.
+   + [Test the configuration](../operationalize/configure-run-diagnostics.md).
    ```azurecli
    # Set up both nodes on one machine
-   az ml admin node setup —-onebox —admin-password <CHOOSE-A-PASSWORD> —-confirm-password <CONFIRMED-PASSWORD>
+   az ml admin node setup —-onebox —-admin-password <Password> —-confirm-password <Password>
 
    # Check that the nodes are now running
    az ml admin node list

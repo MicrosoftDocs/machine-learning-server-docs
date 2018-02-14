@@ -106,13 +106,13 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
 
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to:
    + Set up the web node.
-   + Define a password for the default 'admin' account.  Replace <yourPassword> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
+   + Define a password for the default 'admin' account.  Replace <Password> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
    + Declare the IP address of each compute node. Separate each URI with a comma. For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): <br/>
-   `--uri http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`
+   `--uri http://1.1.1.1:12805,http://1.0.1-3.1-2:12805`
    
    ```azurecli
    # Configure a web node
-   az ml admin node setup --webnode —-admin-password <yourPassword> —-confirm-password <yourPassword> --uri <URI1>,<URI2>
+   az ml admin node setup --webnode —-admin-password <Password> —-confirm-password <Password> --uri <URI1>,<URI2>
    ``` 
 
 1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
@@ -239,12 +239,12 @@ You can now **repeat these steps** for each compute node.
 
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to:
    + Set up the web node.
-   + Define a password for the default 'admin' account.  Replace <yourPassword> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
+   + Define a password for the default 'admin' account.  Replace <Password> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
    + Declare the IP address of each compute node. Separate each URI with a comma. For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): <br/>
    `--uri http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`
    
    ```azurecli
-   az ml admin node setup --webnode —-admin-password <yourPassword> —-confirm-password <yourPassword> --uri <URI1>,<URI2>
+   az ml admin node setup --webnode —-admin-password <Password> —-confirm-password <Password> --uri <URI1>,<URI2>
    ```
 
 1. Verify the configuration was successful with these [CLI commands](configure-admin-cli-launch.md):

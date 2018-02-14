@@ -22,7 +22,7 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# Monitori, stop or start web and compute nodes
+# Monitor, stop, and start web & compute nodes
 
 **Applies to:  Machine Learning Server, Microsoft R Server**
 

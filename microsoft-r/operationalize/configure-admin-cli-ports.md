@@ -40,7 +40,7 @@ To update port values:
 
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-1. Run the command to update the port value(s), where `<port>` should be replaced by the actual port number without the brackets.
+1. Run the command to update the port value(s), where `<Port>` should be replaced by the actual port number without the brackets.
    ```azurecli
    # List current port values
    az ml admin port list
