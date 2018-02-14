@@ -174,7 +174,7 @@ By default, the logging level is set to Warning so as not to slow performance. H
    
 1. Collect the [log files](#logs) from each node for debugging.
 
-<a name="trace-user-actions></a>
+<a name="trace-user-actions"></a>
 
 ## Trace user actions
 

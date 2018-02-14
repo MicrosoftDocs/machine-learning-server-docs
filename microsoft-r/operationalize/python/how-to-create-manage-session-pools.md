@@ -46,20 +46,30 @@ You can use a [Python interactive window](../../python/quickstart-python-tools.m
 
 
 ```python
- # load azureml-model-management-sdk
- import azureml
+ # load modules and classes
+ from azureml.deploy import DeployClient
+ from azureml.deploy.server import MLServer
+
+ # Set up the connection
+ # Be sure to replace the password placeholder
+host = "http://localhost:12800"
+ctx = ("admin", "password-placeholder")
+client = DeployClient(host, use=MLServer, auth=ctx)
 
  # Return a list of web services to get the service and version 
  # Both service name and version number are required
- list_services()
+ svc = client.list_services()
+ print(svc[0]['name'])
+ print(svc[0]['version'])
 
  # Create the session pool using a case-sensitive web service name
  # A status code of 200 is returned upon success
- create_or_update_service_pool(name = "myWebservice1234", version = "v1.0.0", initialPoolSize = 5, maxPoolSize = 10 )
+ svc = client.create_or_update_service_pool(name = "myWebservice1234", version = "v1.0.0", initial_pool_size = 5, max_pool_size = 10 )
 
  # Return status 
- # Pending indicates sessions are available but inactive
- get_service_pool_status(name = "myWebService1234", version = "v1.0.0")
+ # Pending indicates session creation is in progress. Success indicates sessions are ready.
+ svc = client.get_service_pool_status(name = "myWebService1234", version = "v1.0.0")
+ print(svc[0])
 ```
 
 Currently, there are no commands or functions that return actual session pool usage. The log file is your best resource for analyzing connection and service activity. For more information, see [Trace user actions](../configure-run-diagnostics.md#trace-user-actions).
@@ -70,10 +80,12 @@ On the compute node, run the following command to delete the session pool for a 
 
 ```python
  # Return a list of web services to get the service and version information
- list_services()
+ svc = client.list_services()
+ print(svc[0]['name'])
+ print(svc[0]['version'])
 
  # Deletes the dedicated session pool and releases resources
- delete_service_pool(name = "myWebService1234", version = "v1.0.0")
+ svc = client.delete_service_pool(name = "myWebService1234", version = "v1.0.0")
 ```
 
 ## See also

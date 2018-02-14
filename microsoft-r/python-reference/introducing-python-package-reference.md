@@ -70,6 +70,17 @@ To get the version of a Python module installed on your computer, start Python a
 4. List all installed modules: `modules`
 5. Import a module: `import revoscalepy`
 
+## How to list functions and get function help
+
+To view the embedded help for each class, use the `help()` command, specifying the base class of the object of interest.
+
+1. Double-click **Python.exe** in \Program Files\Microsoft\ML Server\PYTHON_SERVER.
+2. Open interactive help: `help()`
+3. Type the fully-qualified class name within the brackets. 
+
+  + For azureml-azureml-model-management-sdk, include the class in the path. For example, for [MLServer](azureml-model-management-sdk/mlserver.md) help, type `help(azureml.deploy.server.MLServer)`. 
+  + For revoscalepy, type `help(revoscalepy)` to get package contents, and then include one of the packages on the next iteration. For example, `help(revoscalepy.computecontext)` returns all the functions related to compute context.
+
 ## Note to R Users: Python naming conventions
 
 **revoscalepy**, **microsoftml**, and **azureml-model-management-sdk** correspond to the Microsoft R packages, [RevoScaleR](../r-reference/revoscaler/revoscaler.md), [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md), and [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md). If you have a background in these libraries, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:

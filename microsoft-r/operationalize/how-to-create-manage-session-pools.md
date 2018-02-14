@@ -53,7 +53,7 @@ You can use an R console application, such as Rgui.exe, to run the following com
  configureServicePool(name = "myWebservice1234", version = "v1.0.0", initialPoolSize = 5, maxPoolSize = 10 )
 
  # Return status 
- # Pending indicates sessions are available but inactive
+ # Pending indicates session creation is in progress. Success indicates sessions are ready.
  getPoolStatus(name = "myWebService1234", version = "v1.0.0")
 ```
 Currently, there are no commands or functions that return actual session pool usage. The log file is your best resource for analyzing connection and service activity. For more information, see [Trace user actions](configure-run-diagnostics.md#trace-user-actions).
