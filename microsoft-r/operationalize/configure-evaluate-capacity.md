@@ -133,8 +133,8 @@ The test results are divided into request processing stages to enable you to see
 |Stage|Time Measured|
 |------|-----------|
 |Web Node Request|Time for the request from the web node's controller to go all the way to [deployr-rserve](https://github.com/Microsoft/deployr-rserve)/JupyterKernel and back.|
-|Create Shell|Time to create a shell or take it from the pool|
-|Initialize Shell|Time to load the data (model or snapshot) into the shell prior to execution|
+|Create Shell|Time to create a session or take it from the pool|
+|Initialize Shell|Time to load the data (model or snapshot) into the session prior to execution|
 |Web Node to Compute Node|Time for a request from the web node to reach the compute node|
 |Compute Node Request|Time for a request from the compute node to reach deployr-rserve/JupyterKernel and return to the node|
 
@@ -145,13 +145,13 @@ You can also explore the results visually in a break-down graph using the URL th
 
 <a name="pool"></a>
 
-## Shell Pools 
+## Session Pools 
 
-When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python shells for code execution. 
+When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python sessions for code execution. 
 
-There is a cost to creating a shell both in time and memory. So having a pool of existing shells awaiting code execution requests means no time is lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size (InitialSize), the longer it takes to start up the compute node. New shells are added to the pool as needed to execute in parallel. However, after a request is handled and the session is idle, the shell is closed if the number of shells exceeds the maximum pool size (MaxSize). 
+There is a cost to creating a session both in time and memory. So having a pool of existing sessions awaiting code execution requests means no time is lost on session creation at runtime thereby shortening the processing time. Instead, the time needed to create sessions for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size (InitialSize), the longer it takes to start up the compute node. New sessions are added to the pool as needed to execute in parallel. However, after a request is handled and the session is idle, the ssession is closed if the number of shells exceeds the maximum pool size (MaxSize). 
 
-However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of shells needed to run the test exceeds the number of shells in the pool, a new shell is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the shell itself. 
+However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of shells needed to run the test exceeds the number of sessions in the pool, a new session is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the session itself. 
 
 The size of this pool can be adjusted in the external configuration file, appsettings.json, found on each compute node.
 
@@ -162,10 +162,10 @@ The size of this pool can be adjusted in the external configuration file, appset
   },
 ```
 
-Since each compute node has its own thread pool for shells, configuring multiple compute nodes means that more pooled shells are available to your users. 
+Since each compute node has its own thread pool for sessions, configuring multiple compute nodes means that more pooled sessions are available to your users. 
 
 >[!Important]
->If Machine Learning Server is configured for Python only, then only a pool of Python shells is created. If the server is configured only for R, then only a pool of R shells is created. And if it configured for both R and Python, then two separate pools are created, each with the same initial size and maximum size. 
+>If Machine Learning Server is configured for Python only, then only a pool of Python sessions is created. If the server is configured only for R, then only a pool of R sessions is created. And if it configured for both R and Python, then two separate pools are created, each with the same initial size and maximum size. 
 
 **To update the thread pool:**
 
@@ -173,9 +173,9 @@ Since each compute node has its own thread pool for shells, configuring multiple
 
    1. Search for the section starting with `"Pool": {`
 
-   1. Set the InitialSize. This value is the number of R and/or Python shells that are pre-created for your users each time the compute node is restarted.
+   1. Set the InitialSize. This value is the number of R and/or Python sessions that are pre-created for your users each time the compute node is restarted.
 
-   1. Set the MaxSize. This is the maximum number of R and/or Python shells that can be pre-created and held in memory for processing code execution requests. 
+   1. Set the MaxSize. This is the maximum number of R and/or Python sessions that can be pre-created and held in memory for processing code execution requests. 
 
    1. Save the file.
 

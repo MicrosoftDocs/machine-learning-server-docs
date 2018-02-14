@@ -174,9 +174,11 @@ By default, the logging level is set to Warning so as not to slow performance. H
    
 1. Collect the [log files](#logs) from each node for debugging.
 
-## Trace User Actions
+<a name="trace-user-actions></a>
 
-Using Information Level logging, any [Core API](concept-api.md#core-apis-for-operationalization) or [Service Consumption API](concept-api.md#service-consumption-apis) call can be logged. Additionally, the **UserPrincipalName** of the responsible user is also recorded in the logs. The user session is given a unique ID called **LoginSessionId** on successful login, which is included in subsequent log entries detailing [actions](concept-api.md) performed by the user during that session. **LoginSessionId** allows a more fine-grained association of user actions to a particular user session.
+## Trace user actions
+
+Using Information Level logging, any [Core API](concept-api.md#core-apis-for-operationalization) or [Service Consumption API](concept-api.md#service-consumption-apis) call can be logged. Additionally, the **UserPrincipalName** of the responsible user is also recorded in the logs. The user session is given a unique ID called **LoginSessionId** on successful login, which is included in subsequent log entries detailing actions ([REST APIs](concept-api.md)) performed by the user during that session. **LoginSessionId** allows a more fine-grained association of user actions to a particular user session.
 
 To enable information logging, update the `"LogLevel"` for `"Default"` to `"Information"` on the web node, using the instructions provided [above](#loglevel).
 
