@@ -29,7 +29,7 @@ Fast connections to a web service are possible when you create sessions and load
 
 For example, if you create ten sessions in advance for a web service that uses numpy, pandas, scikit, revoscalepy, microsoftml, and azureml-model-management-sdk, each session would have its own instance of the Python interpreter plus a copy of each module loaded into memory. 
 
-A web service having a dedicated session pool never requests connections from the [generic session pool](configure-evaluate-capacity.md#pool) shared resource, not even when maximum sessions are reached. The generic session pool services only those web services that do not have dedicated resources.
+A web service having a dedicated session pool never requests connections from the [generic session pool](../configure-evaluate-capacity.md#pool) shared resource, not even when maximum sessions are reached. The generic session pool services only those web services that do not have dedicated resources.
 
 For Python script, the [MLServer](../../python-reference/azureml-model-management-sdk/mlserver.md) class in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) function library provides three functions for creating and managing sessions:
 
@@ -78,5 +78,5 @@ On the compute node, run the following command to delete the session pool for a 
 
 ## See also
 
- + [What are web services in Machine Learning Server?](../../concept-what-are-web-services.md)
- + [Evaluate web service capacity: generic session pools](../../configure-evaluate-capacity.md#pool)
+ + [What are web services in Machine Learning Server?](../concept-what-are-web-services.md)
+ + [Evaluate web service capacity: generic session pools](../configure-evaluate-capacity.md#pool)
