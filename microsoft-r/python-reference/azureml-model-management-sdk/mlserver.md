@@ -456,6 +456,7 @@ A new instance of [`Service`](service.md).
 If a HTTP fault occurred calling the ML Server.
 
 
+<a name="get_service_pool_status"></a>
 
 ## get_service_pool_status
 

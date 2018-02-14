@@ -31,7 +31,7 @@ A dedicated session pool is a per-web-service, per-language construction. For ea
 
 A web service having a dedicated session pool never requests connections from the generic session pool, not even when maximum sessions are reached. The generic session pool services only those web services that do not have dedicated resources.
 
-For R script, the [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md) function library provides three functions for managing sessions:
+For R script, the [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md) function library provides three functions for managing sessions:
 
 + [configureServicePool](../r-reference/mrsdeploy/configureServicePool.md)
 + [getPoolStatus](../r-reference/mrsdeploy/getPoolStatus.md)
@@ -45,9 +45,6 @@ You can use an R console application, such as Rgui.exe, to run the following com
  # load mrsdeploy and print the function list
  library(mrsdeploy)
  ls("package:mrsdeploy")
-
- 
-
 ```
 
 ## Return status codes for current sessions
