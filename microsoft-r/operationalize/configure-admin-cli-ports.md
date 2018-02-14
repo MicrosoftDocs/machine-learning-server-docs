@@ -40,13 +40,13 @@ To update port values:
 
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-1. Run the command to update the port value(s).
+1. Run the command to update the port value(s), where `<port>` should be replaced by the actual port number without the brackets.
    ```azurecli
    # List current port values
-   az ml admin port list --webnode --computenode --rserve
+   az ml admin port list
 
    # Update port values
-   az ml admin port update --webnode <port> --computenode <port> --rserve <port>
+   az ml admin port update --webnode <Port> --computenode <Port> --rserve <Port>
    ```
 
 1. [Restart the node](configure-admin-cli-stop-start.md) for the change to go into effect. 

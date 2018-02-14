@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Stop or start web and compute nodes on Machine Learning Server "
-description: "Stop or start the web or compute nodes for Machine Learning Server operationalization"
+description: "Monitor, stop or start the services for web or compute nodes for Machine Learning Server operationalization"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
@@ -22,11 +22,11 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# Stop or start web and compute nodes
+# Monitori, stop or start web and compute nodes
 
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
-You can start or stop all operationalization-related web and compute nodes on the Machine Learning Server machine at once.
+You can monitor, start, or stop all operationalization-related web and compute nodes on the Machine Learning Server machine at once.
 
 ## Machine Learning Server 9.3
 
@@ -38,8 +38,11 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-1. Run the command to either stop or start a node.
+1. Run the command to either monitor, stop, or start a node.
    ```azurecli
+   # Monitor nodes 
+   az ml admin node list
+
    # Start nodes on a machine
    az ml admin node start --computenode --webnode
 

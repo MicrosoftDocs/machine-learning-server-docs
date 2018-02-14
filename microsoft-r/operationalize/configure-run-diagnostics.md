@@ -41,10 +41,13 @@ Additional [troubleshooting topics](#trouble) are also covered.
 ## Test your configuration
 
 1. Launch the diagnostic tests:
-   + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command.
+   + On Machine Learning Server 9.3 (or any other machine that has access to Machine Learning Server), launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command.
      ```azurecli
      # Authenticate with the CLI if you haven't already
      az login --mls
+
+     # If running from another machine, specify the MLS endpoint
+     az ml admin –mls --endpoint <Endpoint>
 
      # Run diagnostics
      az ml admin diagnostic run
@@ -74,6 +77,9 @@ To go through the execution of a specific line of code and retrieve request IDs 
      ```azurecli
      # Authenticate with the CLI if you haven't already
      az login --mls
+
+     # If running tests from another machine, specify the MLS endpoint
+     az ml admin –mls --endpoint <Endpoint>
 
      # Trace execution of an inline R code block
      az ml admin diagnostic code --runtime R --block "x<-5;x"
@@ -105,6 +111,9 @@ To go through the execution of a specific web service and retrieve request IDs f
      ```azurecli
      # Authenticate with the CLI if you haven't already
      az login --mls
+
+     # If running tests from another machine, specify the MLS endpoint
+     az ml admin –mls --endpoint <Endpoint>
 
      az ml admin diagnostic service --name <service-name> --version <version>
      ```

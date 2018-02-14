@@ -50,15 +50,9 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-1. Define and run the capacity evaluation.
+1. Define and run the capacity evaluation. For help, run `az ml admin capacity --help`
    ```azurecli
-   # For help, run az ml admin capacity --help
-     
-   # To test for the maximum latency
-   az ml admin capacity run --strategy latency --min-thread 10 --increment 10 --latency 250 --service my-service --version 1.10 --args hp=160,wt=0.4
-
-   # Test for max number of parallel requests that can be supported
-   az ml admin capacity run --strategy thread --max-thread 50 --min-thread 10 --increment 10 --service my-service --version 1.10 --args hp=160,wt=0.4
+   az ml admin capacity run
    ```
 
    |CLI&nbsp;options&nbsp;for 'capacity&nbsp;run'|Definition|Default|

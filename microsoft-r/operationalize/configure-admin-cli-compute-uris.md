@@ -56,7 +56,11 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 1. Use the CLI to declare the IP address of each compute node you configured. You can specify a single URI, several URIs, or even an IP range:
    ```azurecli
+   #declare one or more compute node URIs
    az ml admin compute-node-uri add --uri <uris>
+
+   #list uris defined
+   az ml admin compute-node-uri list
    ```
 
    For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): <br/>http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
