@@ -32,7 +32,7 @@ Functionality is delivered through proprietary R and Python packages, internal c
 In this article, learn about the new capabilities introduced in the latest packages and tools. If you develop in R, you might also want to review feature announcements from recent past releases. 
 
 > [!Note]
-> For updates to R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new).
+> For updates to R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new). For known issues and workarounds, see [Known issues in 9.3](resources-known-issues.md).
 
 ## Announced in 9.3
 

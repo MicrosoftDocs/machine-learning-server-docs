@@ -136,9 +136,9 @@ To go through the execution of a specific web service and retrieve request IDs f
 ## Log files and levels
 
 Review the log and configuration files for any component that was identified as experiencing issues. 
-You can find the logs in the \<node-install-path>\logs folder under your web and compute node installation paths.  (Locate the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+You can find the logs in the **\<node-install-path>\logs** folder under your web and compute node installation paths. (Locate the [install path](configure-find-admin-configuration-file.md) for your version.) 
 
-If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a> or contact technical support.
+If there are any issues, you must solve them before continuing. For extra help, consult or post questions to our [forum](https://social.msdn.microsoft.com/Forums/home?forum=microsoftr) or contact technical support.
 
 By default, the logging level is set to Warning so as not to slow performance. However, whenever you encounter an issue that you want to share with technical support or a forum, you can change the logging level to capture more information.  The following logging levels are available:
 
@@ -155,7 +155,7 @@ By default, the logging level is set to Warning so as not to slow performance. H
 
 **To update the logging level:**
 
-1. On each compute node AND each web node, open the configuration file, \<node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+1. On each compute node AND each web node, open the configuration file, \<node-install-path>/appsettings.json. (Find the [install path](configure-find-admin-configuration-file.md) for your version.) 
 
 1. Search for the section starting with `"Logging": {`
 
@@ -176,10 +176,9 @@ By default, the logging level is set to Warning so as not to slow performance. H
 
 ## Trace User Actions
 
-Using Information Level logging, any <a href="https://docs.microsoft.com/en-us/machine-learning-server/operationalize/concept-api#core-apis-for-operationalization" target="_blank">Core API</a> (or) <a href="https://docs.microsoft.com/en-us/machine-learning-server/operationalize/concept-api#service-consumption-apis" target="_blank">Service Consumption API</a> call performed by a user can be logged and the UserPrincipalName of the responsible user can 
-be determined from these logs. The user session is given a unique ID called **LoginSessionId** on successful login, which is included in subsequent log entries detailing actions(<a href="https://docs.microsoft.com/machine-learning-server/operationalize/concept-api" target="_blank">REST APIs</a>) performed by the user during that session. LoginSessionId allows a more fine-grained association of user actions to a particular user session.
+Using Information Level logging, any [Core API](concept-api.md#core-apis-for-operationalization) or [Service Consumption API](concept-api.md#service-consumption-apis) call can be logged. Additionally, the **UserPrincipalName** of the responsible user is also recorded in the logs. The user session is given a unique ID called **LoginSessionId** on successful login, which is included in subsequent log entries detailing [actions](concept-api.md) performed by the user during that session. **LoginSessionId** allows a more fine-grained association of user actions to a particular user session.
 
-To use this feature, update the `"LogLevel"` for `"Default"` to `"Information"` on the web node, using the instructions provided [above](#loglevel).
+To enable information logging, update the `"LogLevel"` for `"Default"` to `"Information"` on the web node, using the instructions provided [above](#loglevel).
 
    ```
    "LogLevel": {
@@ -199,7 +198,7 @@ Now consider a user action flow in which a user logs in, creates a session, and 
    2018-01-23 22:28:34.818 +00:00 [Information] {"CorrelationId":null,"Subject":{"Operation":"RESPONSE DELETE /sessions/fc3222d7-09bd-4a89-a959-380f1e639340/force","UserPrincipalName":"azureuser","RemoteIpAddress":"x.x.x.x","StatusCode":200}}
    ```
 
-Correlating the above logs using LoginSessionId value, you can determine that the user `azureuser` logged in, created a session, and then deleted that session during the time range 2018-01-23 22:21 to 2018-01-23 22:28. We can also obtain other information like the machine IP address from which `azureuser` performed these actions (`RemoteIpAddress`) and whether the requests succeeded or failed (`StatusCode`). Request and Response for each user action can be correlated using the `CorrelationId`.
+Correlating the above logs using **LoginSessionId** value, you can determine that the user "azureuser" logged in, created a session, and then deleted that session during the time period range from 2018-01-23 22:21 to 2018-01-23 22:28. We can also obtain other information like the machine IP address from which "azureuser" performed these actions (**RemoteIpAddress**) and whether the requests succeeded or failed (**StatusCode**). In the second entry, notice that the Request and Response for each user action can be correlated using the **CorrelationId**.
 
 <a name="trouble"></a>
 
@@ -209,7 +208,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 
 >[!IMPORTANT]
 >1. In addition to the info below, review the issues listed in the **[Known Issues article](../resources-known-issues.md)** as well.
->2. If this section does not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+>2. If this section does not help solve your issue, file a ticket with technical support or post in our <a href="https://social.msdn.microsoft.com/Forums/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### "BackEndConfiguration is missing URI" Error
 
@@ -228,7 +227,7 @@ If you get the `Cannot establish connection with the web node` error, then the c
 + Look for web node startup errors or notifications in the stdout/stderr/[logs files](#logs). 
 + Restart the web node if you have recently changed the port the server is bound to or the certificate used for HTTPS. Learn how to restart, in this article: [Machine Learning Server Operationalization Administration](configure-admin-cli-stop-start.md)
 
-If the issue persists, verify you can post to the login API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+If the issue persists, verify you can post to the login API using curl, fiddler, or something similar. Then, share this information with technical support or post it in our <a href="https://social.msdn.microsoft.com/Forums/home?forum=microsoftr" target="_blank">forum</a>.
 
 ### Long delays when consuming web service on Spark
 

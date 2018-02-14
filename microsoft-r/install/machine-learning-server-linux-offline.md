@@ -45,7 +45,7 @@ In contrast with previous releases, there is no install.sh script. Package manag
 |[apt](https://help.ubuntu.com/lts/serverguide/apt.html) | Ubuntu online |
 |[dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html) | Ubuntu offline |
 |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
-|[rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
+|[rpm](https://en.wikipedia.org/wiki/Rpm_(software)) | RHEL, CentOS, SUSE |
 
 <a name="file-list"></a>
 
