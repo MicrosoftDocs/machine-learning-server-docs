@@ -79,7 +79,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 **On each web node:**
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, appsettings.json:
-
+ 
    1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. 
 
    1. Search for the section starting with `"LDAP": {`
@@ -162,8 +162,12 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
           "StoreName": "My",
           "StoreLocation": "CurrentUser",
           "SubjectName": "CN=<subject name>"
+          "Thumbprint": "<certificate-thumbprint>"
       }
       ```
+      >[!NOTE]
+      >Use `"Thumbprint"` to ensure that the correct certificate is loaded if there are multiple certificates on the same system with same name used for different purposes such as IPsec, TLS Web Server Authentication, Client Authentication, Server Authentication, and so on.  If you do not have multiple certificates with same name, you can leave the Thumbprint field empty.
+
 1. Save changes to appsettings.json. 
 
 1. [Restart the web node](configure-admin-cli-stop-start.md) using the administration utility so that the changes can take effect. 
