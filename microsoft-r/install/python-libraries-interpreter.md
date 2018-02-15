@@ -58,6 +58,12 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
    ```
 
+If you get an error, try this alternate sytnax:
+
+    ```
+    powershell -ExecutionPolicy Bypass -File C:\path-to-python-for-mls\Install-PyForMLS.ps1
+    ```
+
 ## Install on Linux
 
 On each supported OS, the package manager downloads packages from the repository, determines dependencies, retrieves additional packages, and installs the software. After installation completes, mlserver-python executable is at '/usr/bin'.
