@@ -198,6 +198,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Select **App registrations** tab at the top.
    The application list appears. You may not have any applications yet. 
+
    ![App registrations](./media/configure-authentication/portal-aad-app-registration.png)
 
 **Step 2: Create a web application**
