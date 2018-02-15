@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 ---
 # Deploy a Python model as a web service with azureml-model-management-sdk
 
-**Applies to: Microsoft Learning Server**
+**Applies to: Microsoft Learning Server 9.x**
 
 ## Objective
 

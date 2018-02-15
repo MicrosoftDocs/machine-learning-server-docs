@@ -82,8 +82,9 @@ For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/d
 
 1. Click **Join or access now** to sign up for download benefits.
 2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
-3. Click **Downloads** to search for R Server.
-4. Click **Downloads** for a specific version to select the installer for Windows.
+3. Click **Downloads** to search for Machine Learning Server.
+4. Choose the platform, such as Machine Learning Server for Windows.
+5. Click **Downloads** for a specific version, either 9.2.1 or 9.3, to select the installer for Windows.
 
 ![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
 
