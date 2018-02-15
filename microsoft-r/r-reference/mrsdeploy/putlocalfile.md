@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "putLocalFile function (mrsdeploy) " 
+title: "putLocalFile function (mrsdeploy) | Microsoft Docs" 
 description: " Uploads a file from the local machine and writes it to the working directory of the remote R session. This function is often used if a 'data' file needs to be accessed by a script running on the remote R session. " 
 keywords: "(mrsdeploy), putLocalFile" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

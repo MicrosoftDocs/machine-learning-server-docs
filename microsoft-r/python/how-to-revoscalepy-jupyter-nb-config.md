@@ -1,15 +1,15 @@
 ---
 
 # required metadata
-title: "Configure Jupyter Notebooks for revoscalepy in Machine Learning Server  "
+title: "Configure Jupyter Notebooks in Machine Learning Server "
 description: "How to configure a Jupyter notebook to call Python functions from revoscalepay and microsofml modules in Machine learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/22/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -23,7 +23,7 @@ ms.technology: ""
 
 ---
 
-# How to use Jupyter notebooks in single-user and multi-user servers
+# How to add Machine Learning Server modules to single and multi-user Jupyter Notebook instances
 
 This article explains how to load sample Python notebooks from Machine Learning samples on Github. It also explains how to add our libraries to a remote Jupyter server acting as central hub for multi-user notebooks on your network.
 

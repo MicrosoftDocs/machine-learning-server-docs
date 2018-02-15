@@ -1,12 +1,13 @@
 --- 
  
 # required metadata 
-title: "MLServer,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: from azureml-model-management-sdk – Machine Learning Server " 
+title: "MLServer class: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
 description: "" 
 keywords: "" 
-author: "Microsoft" 
-manager: "Microsoft" 
-ms.date: "09/20/2017" 
+author: "HeidiSteen" 
+ms.author: "heidist"
+manager: "cgronlun" 
+ms.date: "02/16/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -29,20 +30,13 @@ ms.custom: ""
 
 ## MLServer
 
-
-
-```
+```python
 azureml.deploy.server.MLServer
 ```
-
-
-
 
 Bases: [`azureml.deploy.operationalization.Operationalization`](operationalization.md)
 
 This module provides a service implementation for the ML Server.
-
-
 
 ## authentication
 
@@ -80,7 +74,61 @@ The authentication context: LDAP, Azure Active Directory
 
 If a HTTP fault occurred calling the ML Server.
 
+<a name="create_or_update_service_pool"></a>
 
+## create_or_update_service_pool
+
+```python
+ create_or_update_service_pool(name, version, initial_pool_size, max_pool_size, **opts)
+```
+
+
+Creates or updates the pool for the published web service, with given initial and maximum pool sizes
+on the ML Server by *name* and *version*.
+
+**Example:**
+
+```python
+>>> client.create_or_update_service_pool(
+        'regression',
+        version = 'v1.0.0',
+        initial_pool_size = 1,
+        maximum_pool_size = 10)
+<Response [200]>
+>>>
+```
+
+### Arguments
+
+
+### name
+
+The unique web service name.
+
+
+### version
+
+The web service version.
+
+
+### initial_pool_size
+
+The initial pool size for the web service.
+
+
+### max_pool_size
+
+The max pool size for the web service. This cannot be less than initial_pool_size.
+
+
+### Returns
+
+requests.models.Response: HTTP Status indicating if the request was submitted successfully or not.
+
+
+### HttpException
+
+If a HTTP fault occurred calling the ML Server.
 
 ## delete_service
 
@@ -95,7 +143,7 @@ Delete a web service.
 
 
 
-```
+```python
 success = client.delete_service('example', version='v1.0.1')
 print(success)
 True
@@ -126,6 +174,46 @@ A `bool` indicating the service deletion was succeeded.
 If a HTTP fault occurred calling the ML Server.
 
 
+<a name="delete_service_pool"></a>
+
+## delete_service_pool
+
+```python
+delete_service_pool(name, version, **opts)
+```
+
+
+Delete the pool for the published web service on the ML Server by *name* and *version*.
+
+**Example:**
+
+```python
+>>> client.delete_service_pool('regression', version = 'v1.0.0')
+<Response [200]>
+>>>
+```
+
+### Arguments
+
+
+### name
+
+The unique web service name.
+
+
+### version
+
+The web service version.
+
+
+### Returns
+
+requests.models.Response: HTTP Status if the pool was deleted for the service.
+
+
+### HttpException
+
+If a HTTP fault occurred calling the ML Server.
 
 ## deploy_realtime
 
@@ -143,9 +231,7 @@ All input and output types are defined as a `pandas.DataFrame`.
 
 **Example:**
 
-
-
-```
+```python
 model = rx_serialize_model(model, realtime_scoring_only=True)
 opts = {
     'version': 'v1.0.0',
@@ -162,7 +248,7 @@ answer = res.outputs
 
 **NOTE:** Using *deploy_realtime()* in this fashion is identical to
 publishing a service using the fluent APIS
-[`deploy()`](realtime-definition.md#deploy)
+[`deploy()`](realtime-definition.md)
 
 
 ### Arguments
@@ -195,8 +281,6 @@ realtime service *redeployed*.
 
 If a HTTP fault occurred calling the ML Server.
 
-
-
 ## deploy_service
 
 ```python
@@ -210,9 +294,7 @@ Publish an new web service on the ML Server by *name* and *version*.
 
 **Example:**
 
-
-
-```
+```python
 opts = {
    'version': 'v1.0.0',
    'description': 'Service description.',
@@ -235,7 +317,7 @@ opts = {
 
 **NOTE:** Using `deploy_service()` in this fashion is identical to
 publishing a service using the fluent APIS
-[`deploy()`](service-definition.md#deploy).
+[`deploy()`](service-definition.md).
 
 
 ### Arguments
@@ -301,10 +383,7 @@ following optional properties:
 
 * artifacts (list) - A collection of file artifacts to return. File content is encoded as a *Base64 String*. 
 
-* alias (str) - The consume function name. Defaults to *consume*.
-
-      If *code_fn* function is provided, then it will use that
-      function name by default.
+* alias (str) - The consume function name. Defaults to *consume*. If *code_fn* function is provided, then it will use that function name by default. 
 
 
 ### Returns
@@ -316,7 +395,6 @@ service *deployed*.
 ### HttpException
 
 If a HTTP fault occurred calling the ML Server.
-
 
 
 ## destructor
@@ -333,8 +411,6 @@ destructor()
 Destroy lifecycle method called by the framework. Invokes destructors
 for the class hierarchy.
 
-
-
 ## get_service
 
 ```python
@@ -342,15 +418,12 @@ get_service(name, **opts)
 ```
 
 
-
-
 Get a web service for consumption.
 
 
-
-```
+```python
 service = client.get_service('example', version='v1.0.1')
-print(service.md#service)
+print(service)
 <ExampleService>
    ...
    ...
@@ -383,8 +456,58 @@ A new instance of [`Service`](service.md).
 If a HTTP fault occurred calling the ML Server.
 
 
+<a name="get_service_pool_status"></a>
 
+## get_service_pool_status
+
+```python
+get_service_pool_status(name, version, **opts)
 ```
+
+
+
+
+Get status of pool on each compute node of the ML Server for the published services with the provided *name*
+and *version*.
+
+**Example:**
+
+```python
+>>> client.create_or_update_service_pool(
+        'regression',
+        version = 'v1.0.0',
+        initial_pool_size = 5,
+        maximum_pool_size = 5)
+<Response [200]>
+>>> client.get_service_pool_status('regression', version = 'v1.0.0')
+[{'computeNodeEndpoint': 'http://localhost:12805/', 'status': 'Pending'}]
+>>> client.get_service_pool_status('regression', version = 'v1.0.0')
+[{'computeNodeEndpoint': 'http://localhost:12805/', 'status': 'Success'}]
+```
+
+### Arguments
+
+
+### name
+
+The unique web service name.
+
+
+### version
+
+The web service version.
+
+
+### Returns
+
+str: json representing the status of pool on each compute node for the deployed service.
+
+
+### HttpException
+
+If a HTTP fault occurred calling the ML Server.
+
+```python
 initializer(http_client, config, adapters=None)
 ```
 
@@ -416,8 +539,6 @@ The global configuration.
 
 A `dict` of transport adapters by url.
 
-
-
 ## list_services
 
 ```python
@@ -444,9 +565,7 @@ the web service.
 
 **Example:**
 
-
-
-```
+```python
 all_services = client.list_services()
 all_versions_of_add_service = client.list_services('add-service')
 add_service_v1 = client.list_services('add-service', version='v1')
@@ -476,8 +595,6 @@ A `list` of service metadata.
 
 If a HTTP fault occurred calling the ML Server.
 
-
-
 ## realtime_service
 
 ```python
@@ -494,7 +611,7 @@ service.
 
 
 
-```
+```python
 client.realtime_service('scoring')
    .description('A new realtime web service')
    .version('v1.0.0')
@@ -515,8 +632,6 @@ The web service name.
 A [`RealtimeDefinition`](realtime-definition.md) instance for fluent API
 chaining.
 
-
-
 ## redeploy_realtime
 
 ```python
@@ -536,7 +651,7 @@ All input and output types are defined as a `pandas.DataFrame`.
 
 
 
-```
+```python
 model = rx_serialize_model(model, realtime_scoring_only=True)
 opts = {
     'version': 'v1.0.0',
@@ -553,7 +668,7 @@ opts = {
 
 **NOTE:** Using *redeploy_realtime()* in this fashion is identical to
 updating a service using the fluent APIS
-[`redeploy()`](realtime-definition.md#redeploy)
+[`redeploy()`](realtime-definition.md)
 
 
 ### Arguments
@@ -586,8 +701,6 @@ realtime service *redeployed*.
 
 If a HTTP fault occurred calling the ML Server.
 
-
-
 ## redeploy_service
 
 ```python
@@ -605,7 +718,7 @@ updated.
 
 
 
-```
+```python
 opts = {
    'version': 'v1.0.0',
    'description': 'Service description.',
@@ -628,7 +741,7 @@ opts = {
 
 **NOTE:** Using *redeploy_service()* in this fashion is identical to
 updating a service using the fluent APIS
-[`redeploy()`](service-definition.md#redeploy)
+[`redeploy()`](service-definition.md)
 
 
 ### Arguments
@@ -679,8 +792,6 @@ service *deployed*.
 
 If a HTTP fault occurred calling the ML Server.
 
-
-
 ## service
 
 ```python
@@ -697,7 +808,7 @@ service.
 
 
 
-```
+```python
 client.service('scoring')
    .description('A new web service')
    .version('v1.0.0')

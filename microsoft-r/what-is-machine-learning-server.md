@@ -6,9 +6,9 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "11/14/2017"
-ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.date: "2/16/2018"
+ms.topic: "get-started-article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -17,8 +17,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -27,7 +26,7 @@ ms.technology:
 
 Microsoft Machine Learning Server is your flexible enterprise platform for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business with full support for Python and R. Machine Learning Server meets the needs of all constituents of the process – from data engineers and data scientists to line-of-business programmers and IT professionals. It offers a choice of languages and features algorithmic innovation that brings the best of open-source and proprietary worlds together. 
 
-R support is built on a legacy of Microsoft R Server 9.x and Revolution R Enterprise products. Significant machine learning and AI capabilities enhancements have been made in every release. In 9.2.1, Machine Learning Server adds support for the full data science lifecycle of your Python-based analytics. 
+R support is built on a legacy of Microsoft R Server 9.x and Revolution R Enterprise products. Significant machine learning and AI capabilities enhancements have been made in every release. Python support was added in the previous release. Machine Learning Server supports the full data science lifecycle of your Python-based analytics. 
 
 Additionally, Machine Learning Server enables [operationalization support](what-is-operationalization.md) so you can deploy your models to a scalable grid for both batch and real-time scoring.
 
@@ -68,7 +67,7 @@ The following features are included in Machine Learning Server. For feature desc
 | [Pre-trained models](install/microsoftml-install-pretrained-models.md) | For visual analysis and text sentiment analysis, ready to score data you provide. |
 | [Deploy and consume](what-is-operationalization.md) | Operationalize your server and deploy solutions as a web service. |
 | [Remote execution](r/how-to-execute-code-remotely.md) | Start remote sessions on a Machine Learning Server on your network from your client workstation. |
-| scale out on premises | Clustered topologies for [Spark and Hadoop MapReduce](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators.md) built into Machine Learning Server. |
+| scale out on premises | Clustered topologies for [Spark on Hadoop](install/machine-learning-server-hadoop-install.md), and Windows or Linux using the [operationalization capability](operationalize/configure-start-for-administrators.md) built into Machine Learning Server. |
 
 
 

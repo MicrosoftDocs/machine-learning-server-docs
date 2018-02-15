@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxExecByPartition function (RevoScaleR) " 
+title: "rxExecByPartition function (revoAnalytics) | Microsoft Docs" 
 description: " This feature allows users to run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables. In **RevoScaleR** version 9.1.0, we provide the necessary rx functions to be executed for funtionalities of By-group parallelism. This document will describe different scenarios of By-group parallelism, running in a number of supported compute contexts. " 
-keywords: "RevoScaleR, rxExecByPartition, partition, exec, group, execby, groupby" 
-author: "HeidiSteen" 
-manager: "jhubbard" 
-ms.date: "09/16/2017" 
+keywords: "(revoAnalytics), rxExecByPartition, partition, exec, group, execby, groupby" 
+author: "heidisteen" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,17 +19,14 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
  
  
  
- #rxExecByPartition: RevoScaleR By Group Parallelism
-
- 
- 
+ #rxExecByPartition: RevoScaleR By Group Parallelism 
  ##Description
  
 This feature allows users to run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables. In **RevoScaleR** version 9.1.0, we provide the necessary rx functions to be executed for funtionalities of By-group parallelism. This document will describe different scenarios of By-group parallelism, running in a number of supported compute contexts.
@@ -63,7 +60,7 @@ In **RevoScaleR** version 9.1.0, we introduce three new rx functions for partiti
  [rxExecBy](rxExecBy.md)() - to partition an input data source and execute user function on each partition in parallel. If the input data source is already partitioned, the function will skip the partitioning step and directly trigger computation for user function on partitions.
 
 * 
- rxPartition() - to partition an input data source and store data partitions on disk. For this functionality, a new xdf file format, called Partitioned Xdf (PXdf) is introduced for storing data partitions as well as partition metadata information on disk. Partitioned Xdf file can then be loaded into an in-memory Partitioned Xdf object using `RxXdfData` to be used for performing computation on data partitions repeatedly by [rxExecBy](rxExecBy.md).
+ [rxPartition](rxPartition.md)() - to partition an input data source and store data partitions on disk. For this functionality, a new xdf file format, called Partitioned Xdf (PXdf) is introduced for storing data partitions as well as partition metadata information on disk. Partitioned Xdf file can then be loaded into an in-memory Partitioned Xdf object using `RxXdfData` to be used for performing computation on data partitions repeatedly by [rxExecBy](rxExecBy.md).
 
 * 
  [rxGetPartitions](rxGetPartitions.md)() - to enumerate unique partitioning values in an existing partitioned Xdf and return it as a data frame
@@ -90,7 +87,7 @@ As shown in the table, when running analytics on local compute context, PXdf is 
  Create a new partitioned Xdf object with [RxXdfData](RxXdfData.md)() by specifying `createPartitionSet = TRUE`.
 
 1 
- Construct data partitions for the newly created PXdf object from an input data set and save it to disk with rxPartition().
+ Construct data partitions for the newly created PXdf object from an input data set and save it to disk with [rxPartition](rxPartition.md)().
 
 1 
  Run analysis with user defined function on the data partitions of the PXdf object with [rxExecBy](rxExecBy.md)(). This step can be repeated multiple times with different user defined functions and different subsets of data partitions using a `filterFunc` specified as an argument of [rxExecBy](rxExecBy.md)().
@@ -100,15 +97,15 @@ As shown in the table, when running analytics on local compute context, PXdf is 
  
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
 [RxXdfData](RxXdfData.md),
 [rxExecBy](rxExecBy.md),
-rxPartition,
+[rxPartition](rxPartition.md),
 [rxGetPartitions](rxGetPartitions.md),
 [rxSplit](rxSplitXdf.md),
 [rxExec](rxExec.md),

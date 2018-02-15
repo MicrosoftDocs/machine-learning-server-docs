@@ -2,14 +2,14 @@
 
 # required metadata
 title: "LDAP AD and Azure Active Directory authentication for Machine Learning Server "
-description: "Enterprise-Grade Security: Authentication with Machine Learning Server"
+description: "Authenticate Machine Learning Server users against LDAP AD or Azure Active Directory"
 keywords: "Machine Learning Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -45,11 +43,11 @@ To secure connections and communications, you have several options:
 
 ## Local Administrator Account Authentication
 
-During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for In Machine Learning Server (and R Server). This account allows you to use the [administration utility](configure-use-admin-utility.md) to configure this feature, edit ports, restart nodes, and so on. 
+During configuration, a default administrator account, 'admin', is created to manage the web and compute nodes for In Machine Learning Server (and R Server). This account allows you to use the [CLI or administration utility](configure-admin-cli-launch.md) to configure this feature, edit ports, restart nodes, and so on. 
 
-While this account might be sufficient when trying to operationalize with a [one-box configuration](configure-machine-learning-server-one-box.md) since everything is running within the trust boundary, it is insufficient for [enterprise configurations](configure-machine-learning-server-enterprise.md).
+This account might be sufficient when trying to operationalize with a [one-box configuration](configure-machine-learning-server-one-box.md) since everything is running within the trust boundary. However, it is insufficient for [enterprise configurations](configure-machine-learning-server-enterprise.md).
 
-To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](configure-use-admin-utility.md#admin-password).
+To set or change the password for the local administrator account after the configuration script has been run, [follow these steps](configure-admin-cli-local-password.md).
 
 To log in to Machine Learning Server with this user for remote execution or web service functionalities, use remoteLogin() as described in the article "[Connecting to Machine Learning Server with mrsdeploy](how-to-connect-log-in-with-mrsdeploy.md)."
 
@@ -82,13 +80,13 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, appsettings.json:
 
-   1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+   1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. 
 
    1. Search for the section starting with `"LDAP": {`
    
    1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  
 
-      > For better security, we recommend you [encrypt the password](configure-use-admin-utility.md#encrypt) before adding the information to appsettings.json.
+      > For better security, we recommend you [encrypt the password](configure-admin-cli-encrypt-credentials.md) before adding the information to appsettings.json.
 
    |LDAP Properties|Definition|
    |---------------|-------------------------------|
@@ -97,7 +95,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |UseLDAPS|Set 'true' for LDAP-S or 'false' for LDAP<br>**Note:** If LDAP-S is configured, an installed LDAP service certificate is assumed so that the tokens produced by Active Directory/LDAP can be signed and accepted by Machine Learning Server. |
    |BindFilter|(version 9.0.1 only) The template used to do the Bind operation. For example, "CN={0},CN=DeployR,DC=TEST,DC=COM". {0} is the user's DN.|
    |QueryUserDn|Distinguished name of user with read-only query capabilities with which to authenticate|
-   |QueryUserPassword|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](configure-use-admin-utility.md#encrypt) before adding the information to this file.|
+   |QueryUserPassword|Password for that user with which to authenticate (value must be encrypted).  We highly recommend that you [encrypt LDAP login credentials](configure-admin-cli-encrypt-credentials.md) before adding the information to this file.|
    |QueryUserPasswordEncrypted|True/False. If 'True', it means the value of QueryUserPassword is an encrypted string.|
    |SearchBase|Context name to search in, relative to the base of the configured ContextSource, for example, 'ou=users,dc=example,dc=com'.| 
    |SearchFilter|The pattern to be used for the user search. "SearchFilter": "cn={0}" is for each user's DN. In legacy systems, some use "SearchFilter": "sAMAccountName={0}"|
@@ -168,7 +166,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
       ```
 1. Save changes to appsettings.json. 
 
-1. [Restart the web node](configure-use-admin-utility.md#startstop) using the administration utility so that the changes can take effect. 
+1. [Restart the web node](configure-admin-cli-stop-start.md) using the administration utility so that the changes can take effect. 
  
 1. Run the [diagnostic tests](configure-run-diagnostics.md) to ensure all tests are passing in the configuration.
 
@@ -188,88 +186,132 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 [Azure Active Directory (AAD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and Web node have access to the internet.
 
-**Step 1: Log in to the Azure classic portal**
+**Step 1: Log in to the Azure portal**
 
-1. Sign in to the [Azure classic portal](https://manage.windowsazure.com/) and navigate to **Active Directory** in the left-hand pane. Copy the URL in your browser address bar. You use this URL to configure your Azure Active Directory app.
+1. Sign in to the [Azure portal](http://portal.azure.com).
 
-1. Select your directory. If the Azure Active Directory has not been set up yet, contact your system administrator.  
+1. Select the upper-right hand corner and select the Active Directory account from the list. If the Azure Active Directory has not been set up yet, contact your system administrator. In our example, that directory is `deployrtest`.
+ 
+1. Select **Azure Active Directory** from the left-hand side. 
 
-1. Select the **Applications** tab at the top. 
+   ![Azure Active Directory icon](./media/configure-authentication/aad-icon.png)
+
+1. Select **App registrations** tab at the top.
+   The application list appears. You may not have any applications yet. 
+   ![App registrations](./media/configure-authentication/portal-aad-app-registration.png)
 
 **Step 2: Create a web application**
 
 Now, create a web app that is tied to the Azure Active Directory as follows: 
 
-   1. In the **Applications** tab, click **ADD** at the bottom to create an app registration. A dialog appears.
- 
-   1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
+1. Select **New application registration** at the top.    
+   ![New app registrations](./media/configure-authentication/aad-new-app-registration.png)
 
-   1. In the wizard, enter a **Name** for your application, such as `Machine Learning Server Web app`.
+1. Enter a **Name** for your application, such as `Machine Learning Server Web app`.
+   ![New app registrations](./media/configure-authentication/aad-create-web-app-name.png)
 
-   1. For the **Type**, click the **Web Application And/Or Web API**. 
+1. For the **Application type**, select the **Web app / API**. 
 
-   1. Click the arrow to continue.
+1. In the **Sign-on URL** box, paste the application URL you copied earlier; or if you expect the R client to be on the same machine as the server, use http://localhost:12800.  
 
-   1. Enter the App properties. In the **SIGN-ON URL** box, paste the application URL you copied earlier; or if you expect the R client to be on the same machine as the server, use http://localhost:12800. Then, enter that same URL in the **App ID URI** box. 
+1. Select **Create** to create the new web application.
 
-   1. Click the checkmark to continue and add the application.
+   ![New app registrations](./media/configure-authentication/aad-create-web-app.png)
 
-   1. After the application has been added, click the **Configure** tab. 
-      ![Configure web application](./media/configure-authentication/webapp1.png)
-
-   1. Copy the **Client ID** for the web app. Later, you configure your Native application and Machine Learning Server with this ID.
-
-   1. Add a client key to the web app's **Keys** section by selecting a key duration and take note of the key. 
+   The application is created and its details appear onscreen.
+     
+1. Copy the **Application ID** for the web application. You use this later when you configure your Native application and Machine Learning Server using this ID.
    
-      >[!IMPORTANT] 
-      > Take note of this key as it is needed to configure [roles to give web services permissions to certain users](configure-roles.md). See following example.
+   ![Newly created web app](./media/configure-authentication/aad-create-web-app-done.png)
 
-      ![Configure web application](./media/configure-authentication/webapp2.png)
+1. Select **Settings** ![Azure Active Directory icon](./media/configure-authentication/aad-settings.png). The **Settings** pane appears on the right.
 
-   1. Also, take note of the application's tenant id.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
+1. Select **Keys** from the **Settings** pane. The **Keys** pane appears.
+   
+   ![Keys](./media/configure-authentication/aad-settings-keys.png)
 
-   1. Click **Save**. The application is created.
+1. In the **Password** area, add a client key. Provide a description of your choosing and select a key duration.
+
+   ![Keys](./media/configure-authentication/aad-settings-keys-2.png)
+
+1. Select **Save** to save the key. 
+
+1. Be sure to copy the key.
+
+   ![Keys](./media/configure-authentication/aad-settings-keys-copy.png)
+
+   >[!IMPORTANT] 
+   > Take note of this key as it is needed to configure [roles to give web services permissions to certain users](configure-roles.md). 
+
+1. Also, take note of the application's tenant ID.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
+
 
 **Step 3: Create a native application**
 
-Now, create a native app. This app links the web app to the Machine Learning Server web node.
+Now, let's create a native application. This application links the web application to the Machine Learning Server web node.
 
-   1. In the **Applications** tab, click **ADD** at the bottom to create an app registration. A dialog appears.
+1. In the Azure portal, select **Azure Active Directory** from the left-hand side. 
 
-   1. Click **Add an application my organization is developing**. The **Add Application** wizard appears.
+1. Select **App registrations**.
+   
+   ![App registrations](./media/configure-authentication/portal-aad-app-registration.png)
 
-   1. In the wizard, enter a **Name** for your native application, such as `Machine Learning Server Native app`.
+1. Select **New application registration** at the top.    
 
-   1. For the **Type**, click the **Native Client Application**. 
+   ![New app registrations](./media/configure-authentication/aad-new-app-registration.png)
 
-   1. Click the arrow to continue.
+1. Enter a **Name** for your application, such as `Machine Learning Server native app`.
 
-   1. In the **Application Information** dialog, enter `urn:ietf:wg:oauth:2.0:oob` for the **Redirect URI**.
+   ![New app registrations](./media/configure-authentication/aad-create-native-app-name.png)
 
-   1. Click the checkmark to continue and add the application.
+1. For the **Application type**, select the **Native**. 
 
-   1. After the application has been added, click the **Configure** tab. 
+   ![New app registrations](./media/configure-authentication/aad-create-native-app-type.png)
 
-   1. Copy the **Client ID** for the native app. Later, you use this ID to enable AAD in Machine Learning Server.
+1. In the **Redirect URI** field, enter:
+   ```
+   urn:ietf:wg:oauth:2.0:oob
+   ```  
 
-   1. Scroll down and click **Add Application** button. A dialog opens in which you can define which apps can access the native app.
+1. Select **Create** to create the new native application.
 
-   1. In the **Permissions to other applications** dialog, enter the name of the web app you created before in the **Starting With** field.
+   The application is created and its details appear onscreen.
+     
+1. Copy the **Application ID** for the web application. You use this ID later to enable AAD in Machine Learning Server.
+   
+   ![Newly created web app](./media/configure-authentication/aad-create-native-app-done.png)
 
-   1. Click the checkmark next to this field to filter the list of apps using the string you entered.
+1. Select **Settings** ![Azure Active Directory icon](./media/configure-authentication/aad-settings.png). The **Settings** pane appears on the right.
 
-   1. In the list, click the + symbol next to the name of the web app.
+1. Select **Required permissions**.
+   
+   ![Required permissions](./media/configure-authentication/aad-settings-restricted.png)
 
-   1. Click the checkmark in the bottom right to give the native app permissions to the web application.
+1. Select **Add** at the top. ![Required permissions](./media/configure-authentication/aad-settings-perms-add.png)
 
-   1. Add **Delegated Permissions** to the web app.
-     ![Delegated Permissions](./media/configure-authentication/aad-delegated-permissions.png)
+1. Select **Select an API**.
+   
+   ![Required permissions](./media/configure-authentication/aad-settings-perms-add-api-1.png)
 
-   1. Click **Save**. 
+1. In the search field at the top, type the name of the web application you created. In our example, we use the name `Machine Learning Server Web app`. 
+   
+   ![Required permissions](./media/configure-authentication/aad-settings-perms-add-api.png)
+
+1. Select the web application name.
+
+1. Select the **Select** button. The **Select permissions > Enable Access** fields appear.
+
+1. Select the checkmark next to the name of the web application.
+   
+   ![Required permissions](./media/configure-authentication/aad-settings-perms-add-api-3.png)
+
+1. Select the **Select** button. The pane closes.
+
+1. Select **Done** at the bottom to finish adding the permissions.
 
 **Step 4: Enable Azure AD on each web node**
 
-1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json.
 
 1. Search for the section starting with:
    ```
@@ -291,7 +333,7 @@ Now, create a native app. This app links the web app to the Machine Learning Ser
    |Audience|Use the CLIENT ID value for the WEB app you created in the Azure portal.|
    |ClientId|Use the CLIENT ID value for the NATIVE app you created in the Azure portal.|
    |Key|This is the key for the WEB application you took note of before.  |
-   |KeyEncrypted|We highly recommend that you [encrypt login credentials](configure-use-admin-utility.md#encrypt) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
+   |KeyEncrypted|We highly recommend that you [encrypt login credentials](configure-admin-cli-encrypt-credentials.md) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
 
    For example:
    ```
@@ -307,10 +349,12 @@ Now, create a native app. This app links the web app to the Machine Learning Ser
 
 1. To set different levels of permissions for users interacting with web services, [assign them roles](configure-roles.md).
 
-1. Launch the administrator's utility and:
-   1. [Restart the web node](configure-use-admin-utility.md#startstop) for the changes to take effect.
+1. [Restart the web node](configure-admin-cli-stop-start.md) for the changes to take effect.
  
-   1. Test the configuration by running the [diagnostic tests](configure-run-diagnostics.md).
+1. Authorize this machine for Azure Active Directory Test by running a [diagnostic test](configure-run-diagnostics.md) of the configuration.
+
+   >[!IMPORTANT]
+   >You must run the diagnostic tests once on each web node to authorize this device for Azure Active Directory. You will not be able to log in using AAD until this has been done.
 
 1. Repeat these steps on each machine hosting a web node.
 

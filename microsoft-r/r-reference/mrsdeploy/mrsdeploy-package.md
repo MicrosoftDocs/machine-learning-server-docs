@@ -7,9 +7,9 @@ keywords: "mrsdeploy package reference"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "09/25/2017"
-ms.topic: "reference"
-ms.prod: "microsoft-r"
+ms.date: "2/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -29,9 +29,9 @@ The **mrsdeploy** library provides functions for establishing a remote session i
 
 | Package details | |
 |--------|-|
-| Version: |  1.1.2 |
-| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) <br/>[Microsoft R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
-| Built on: | R 3.4.1 (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
+| Current version: |  1.1.3 |
+| Built on: | R 3.4.3 |
+| Package distribution: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) <br/>[Microsoft R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 
 
 <a name="use-mrsdeploy"></a>
@@ -78,15 +78,25 @@ Learn more about these functions and their arguments in the article [Connecting 
 |[remoteLoginAAD](remoteloginaad.md)  |Authenticates the user via Azure Active Directory and creates a remote R session and puts you at the remote command line unless you specify otherwise.|
 |[remoteLogout](remotelogout.md)  |Logout of the remote session on the Machine Learning Server.|
 
+<a name="service-pools"></a>
+
+## 2-Service pool functions
+
+|Function | Description |
+|---------|---------|
+|[configureServicePool](configureServicePool.md) | Create or update a dedicated pool of connections for a published web service running on Machine Learning Server. The service pool provides an initial and maximum number sessions allowed for a given service.|
+|[getPoolStatus](getPoolStatus.md) | Get the status of the dedicated pool for a published web service running on Machine Learning Server. |
+|[deleteServicePool](deleteServicePool.md) | Deletes the service pool. |
+
 <a name="remote-functions"></a>
 
-## 2-Remote execution functions
+## 3-Remote execution functions
 
 The following functions are used to initialize and interact with a session on a [remote Machine Learning Server](../../r/how-to-execute-code-remotely.md). Remote sessions are created when you authenticate and closed when you log out.
 
 Learn more about executing remotely from your local machine in this [Remote Execution](../../r/how-to-execute-code-remotely.md) article.
 
-### 3-Execution functions
+### 4-Execution functions
 
 Use these functions to indicate whether the payload is a code block or script.
 
@@ -96,7 +106,7 @@ Use these functions to indicate whether the payload is a code block or script.
 |[remoteScript](remotescript.md)|A simple wrapper function for executing a remote R script.|
 |[diffLocalRemote](difflocalremote.md)|Generate a 'diff' report between local and remote.|
 
-### 4-Remote command line functions
+### 5-Remote command line functions
 
 |Function | Description |
 |---------|---------|
@@ -104,7 +114,7 @@ Use these functions to indicate whether the payload is a code block or script.
 |[pause](remoteCommandLine.md) |When executed from the remote R session, returns the user to the `>` command prompt, and sets a local execution context. |
 |[resume](remoteCommandLine.md)|When executed from the local R session, returns the user to the `REMOTE>` command prompt, and sets a remote execution context. |
 
-### 5-File management functions
+### 6-File management functions
 
 |Function | Description |
 |---------|---------|
@@ -113,7 +123,7 @@ Use these functions to indicate whether the payload is a code block or script.
 |[getRemoteFile](getRemoteFile.md) |Downloads the file from the working directory of the remote R session into the working directory of the local R session. |
 |[deleteRemoteFile](deleteRemoteFile.md) |Deletes the file from the working directory of the remote R session. |
 
-### 6-Object functions
+### 7-Object functions
 
 |Function | Description |
 |---------|---------|
@@ -122,7 +132,7 @@ Use these functions to indicate whether the payload is a code block or script.
 |[putLocalWorkspace](putLocalWorkspace.md) |Takes all objects from the local R session and loads them into the remote R session. |
 |[getRemoteWorkspace](getRemoteWorkspace.md) |Takes all objects from the remote R session and loads them into the local R session. |
 
-### 7-Snapshot functions
+### 8-Snapshot functions
 
 |Function | Description |
 |---------|---------|
@@ -133,7 +143,7 @@ Use these functions to indicate whether the payload is a code block or script.
 |[downloadSnapshot](downloadSnapshot.md) |Downloads a snapshot from Machine Learning Server.|
 
 
-## 8-Web service functions
+## 9-Web service functions
 
 The following functions are used to bundle R code or script as a web service. The [web service deployment](../../operationalize/how-to-deploy-web-service-publish-manage-in-r.md) can be published to the local server or remotely if you set up a remote session.
 

@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "06/29/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,20 +18,18 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # Install R Server 9.1 for Windows
 
-**Looking for the 9.2.1 release? See [Machine Learning Server for Windows installation](machine-learning-server-windows-install.md)**
-
-Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Microsoft Windows.
+**Looking for the latest release? See [Machine Learning Server for Windows installation](machine-learning-server-windows-install.md)**
 
 This article explains how to install Microsoft R Server 9.1 on a standalone Windows server that has an internet connection. If your server has restrictions on internet access, see [offline installation](r-server-install-windows-offline.md). 
 
-If you previously installed version 9.0.1, it will be replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
+If you previously installed version 9.0.1, it is replaced with the 9.1 version. An 8.x version can run side-by-side 9.x, unaffected by the new installation.
 
 ## System requirements
 
@@ -66,9 +64,17 @@ You can get the zipped installation file from one of the following download site
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+| [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios.  |
 | [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
-| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+
+From [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
+
+1. Click **Join or access now** to sign up for download benefits.
+2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
+3. Click **Downloads** to search for R Server.
+4. Click **Downloads** for a specific version to select the platform.
+
+![Download page on Visual Studio benefits page](./media/mlserver-install-older-versions.png)
 
 <a name="Run-Setup"></a>
 
@@ -176,7 +182,6 @@ Earlier versions are supported, but with limited availability on Microsoft downl
 | Version | Details|
 |---------|--------|
 | Version 8.0.5  | This version of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing, installation, and support of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. For more information, see [R Server for Windows](https://msdn.microsoft.com/library/mt671127.aspx) and [SQL Server R Services - R Server install page](https://msdn.microsoft.com/library/mt671127.aspx) in SQL Server 2016 technical documentation.|
-| Version 8.0 | Installation of this version is package by package, in a specific order. For more information and instructions, see [Install Revolution R Enterprise 2016 (version 8.0) for Windows](r-server-install-windows-800.md).|
 
 ## See Also
 

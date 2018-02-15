@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "deleteService function (mrsdeploy) " 
+title: "deleteService function (mrsdeploy) | Microsoft Docs" 
 description: " Delete a web service on an R Server instance. " 
 keywords: "(mrsdeploy), deleteService" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

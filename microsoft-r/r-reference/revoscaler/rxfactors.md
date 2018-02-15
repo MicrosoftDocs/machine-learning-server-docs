@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxFactors function (RevoScaleR) " 
+title: "rxFactors function (revoAnalytics) | Microsoft Docs" 
 description: " Recodes a factor variable by mapping one set of factor levels and indices to a new set. Can also be used to convert non-factor variable into a factor. " 
-keywords: "(RevoScaleR), rxFactors, manip, category" 
+keywords: "(revoAnalytics), rxFactors, manip, category" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -189,8 +189,8 @@ are written to the specified `outFile` file and an RxXdfData object is returned
 *invisibly* corresponding to the output file.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

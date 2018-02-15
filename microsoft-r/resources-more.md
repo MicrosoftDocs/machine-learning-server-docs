@@ -7,9 +7,9 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - r-client
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -57,6 +55,9 @@ The following resources are available to you:
 
 ## R Tools for Visual Studio
 * [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation)
+
+## Python support in Visual Studio
+* [Install Python support in Visual Studio on Windows](https://docs.microsoft.com/visualstudio/python/installing-python-support-in-visual-studio)
 
 ## Documentation Roadmap
 
@@ -152,10 +153,6 @@ The RPE is an older development tool that is now superseded by [R Tools for Visu
 Prior to Machine Learning Server and Microsoft R Server, the product was called Revolution R Enterprise (RRE). 
 
 Here is a list of the available archived documentation sets for RRE:
-* [RRE 8.0.0 Windows Install Guide](install/r-server-install-windows-800.md)
-* [RRE 8.0.0 Teradata Install Guide](install/r-server-install-teradata-server.md)
-* [RRE 8.0.0 Hadoop Install Guide](install/r-server-install-hadoop-800.md)
-* [RRE 8.0.0 Linux Install Guide](install/r-server-install-linux-server-800.md)
 * [RRE 7.5.0 Docs](http://packages.revolutionanalytics.com/doc/7.5.0/)
 * [RRE 7.4.1 Docs](http://packages.revolutionanalytics.com/doc/7.4.1/) 
 * [RRE 7.4.0 Docs](http://packages.revolutionanalytics.com/doc/7.4.0/) 

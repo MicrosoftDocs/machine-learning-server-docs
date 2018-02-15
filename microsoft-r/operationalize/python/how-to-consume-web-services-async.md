@@ -7,9 +7,9 @@ keywords: "batch processing of web services"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "10/05/2017"
-ms.topic: "reference"
-ms.prod: "microsoft-r"
+ms.date: "2/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -39,7 +39,7 @@ Generally speaking, the process for asynchronous batch consumption of a web serv
 
 Use these following [public API functions](#public-fx-batch)  to define, start, and interact with your batch executions.
 
-![Batch execution](../media/how-to-consume-web-service-asynchronously-batch/data-scientist-batch.png) 
+![Asynchronous batch scoring in Python with Machine Learning Server](../media/how-to-consume-web-service-asynchronously-batch/data-scientist-batch.png) 
 
 <a name="try-batch"></a>
 

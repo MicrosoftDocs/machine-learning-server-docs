@@ -7,9 +7,9 @@ keywords: "Machine Learning Server, HDInsight"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,8 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -40,7 +39,7 @@ You’ll need to create your own Microsoft Data Science Virtual Machine (VM). To
 
 After you provision your virtual machine from the image, you can start exploring your data and modeling right away. The data on the virtual machine is stored on the cloud and highly available. 
 
-> There is no software charges for this data science VM image. You only pay for the Azure usage fees, which is dependent on the size of the virtual machine you are provisioning with this VM image. More details on the compute fees can be found  [here](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.standard-data-science-vm).
+> Billing for the VM image includes all of the software installed on the machine. More details on the compute fees can be found  [here](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.standard-data-science-vm).
 
 
 ## Learn More

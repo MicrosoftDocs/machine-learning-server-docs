@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "resume function (mrsdeploy) " 
+title: "resume function (mrsdeploy) | Microsoft Docs" 
 description: " When executed from the local R session, returns the user to the 'REMOTE>' command prompt, and sets a remote execution context. " 
 keywords: "(mrsdeploy), resume" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

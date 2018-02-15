@@ -48,38 +48,52 @@
     - name: 'Configure: One-box'
       href: operationalize/configure-machine-learning-server-one-box.md
       items:
-      - name: 9.2.1
+      - name: 9.3
         href: operationalize/configure-machine-learning-server-one-box.md
+      - name: 9.2.1
+        href: operationalize/configure-machine-learning-server-one-box-9-2.md
       - name: 9.0/9.1
         href: install/operationalize-r-server-one-box-config.md
     - name: 'Configure: Enterprise'
       href: operationalize/configure-machine-learning-server-enterprise.md
       items:
-      - name: 9.2.1
+      - name: 9.3
         href: operationalize/configure-machine-learning-server-enterprise.md
+      - name: 9.2.1
+        href: operationalize/configure-machine-learning-server-enterprise-9-2.md
       - name: 9.0/9.1
         href: install/operationalize-r-server-enterprise-config.md
-    - name: Diagnostics & Troubleshooting
-      href: operationalize/configure-run-diagnostics.md
-    - name: Administration utility
-      href: operationalize/configure-use-admin-utility.md
-    - name: Database setup
-      href: operationalize/configure-remote-database-to-operationalize.md
-    - name: Capacity evaluation
-      href: operationalize/configure-evaluate-capacity.md
-    - name: Authentication
+    - name: Launch admin CLI
+      href: operationalize/configure-admin-cli-launch.md
+    - name: LDAP/AAD authentication
       href: operationalize/configure-authentication.md
-    - name: Connection security (SSL/TLS)
+    - name: SSL/TLS connection security
       href: operationalize/configure-https.md
-    - name: Roles & Permissions (RBAC)
+    - name: Diagnostics & troubleshooting
+      href: operationalize/configure-run-diagnostics.md
+    - name: Roles & permissions
       href: operationalize/configure-roles.md
-    - name: CORS
+    - name: Change databases
+      href: operationalize/configure-remote-database-to-operationalize.md
+    - name: Stop & start nodes
+      href: operationalize/configure-admin-cli-stop-start.md
+    - name: Declare compute nodes
+      href: operationalize/configure-admin-cli-compute-uris.md
+    - name: Encrypt credentials
+      href: operationalize/configure-admin-cli-encrypt-credentials.md
+    - name: Set local password
+      href: operationalize/configure-admin-cli-local-password.md
+    - name: Update port numbers
+      href: operationalize/configure-admin-cli-ports.md
+    - name: Evaluate capacity
+      href: operationalize/configure-evaluate-capacity.md
+    - name: Enable CORS
       href: operationalize/configure-cors.md
     - name: R execution security
       href: operationalize/configure-r-execution-security.md
     - name: R package management
       href: operationalize/configure-manage-r-packages.md
-    - name: Find install path
+    - name: Default file paths
       href: operationalize/configure-find-admin-configuration-file.md
   - name: Virtual machines
     href: install/machine-learning-server-in-the-cloud.md
@@ -119,8 +133,6 @@
         href: install/r-server-install-windows-offline.md
       - name: 9.1 - Command line
         href: install/r-server-install-windows-command-line.md
-      - name: 8.1 - Install
-        href: install/r-server-install-windows-800.md
     - name: On Linux
       items:
       - name: 9.1 - Install
@@ -133,8 +145,6 @@
         href: install/r-server-install-linux-server-901.md
       - name: 8.0.5 - Install
         href: install/r-server-install-linux-server-805.md
-      - name: 8.0 - Install
-        href: install/r-server-install-linux-server-800.md   
       - name: Manage your R installation 
         href: install/r-server-install-linux-manage-install.md    
     - name: On Hadoop
@@ -165,23 +175,25 @@
         href: install/r-server-install-hadoop-troubleshoot.md
     - name: On Teradata
       items:
-      - name: Install R Server 9.0.1 on a Teradata Server
+      - name: Install R Server 9.x on a Teradata Server
         href: install/r-server-install-teradata-server.md
-      - name: Install R Server 8.0.5 on a Teradata Server
+      - name: Install R Server 8.x on a Teradata Server
         href: install/r-server-install-teradata-805.md
       - name: Install R Server on a Teradata Client
         href: install/r-server-install-teradata-client.md
-      - name: Get started ScaleR on Teradata
+      - name: Get started RevoScaleR on Teradata
         href: r/how-to-revoscaler-teradata.md
 - name: Quickstarts
   items:
   - name: Python
     items:
+    - name: Link the Python interpreter to tools and IDEs
+      href: python/quickstart-python-tools.md
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
     - name: Run binary classifications
       href: python/quickstart-binary-classification-with-microsoftml.md
-    - name: Create a revoscalepy model
+    - name: Create a linear regression model
       href: python/quickstart-revoscalepy-linear-regression-model.md
 
   - name: R
@@ -345,6 +357,8 @@
         href: operationalize/python/how-to-consume-web-services.md
       - name: Consume services asynchronously
         href: operationalize/python/how-to-consume-web-services-async.md
+      - name: Create and manage session pools
+        href: operationalize/python/how-to-create-manage-session-pools.md
     - name: R
       items:
       - name: Deploy & manage web services
@@ -353,6 +367,8 @@
         href: operationalize/how-to-consume-web-service-interact-in-r.md
       - name: Consume services asynchronously
         href: operationalize/how-to-consume-web-service-asynchronously-batch.md
+      - name: Create and manage session pools
+        href: operationalize/how-to-create-manage-session-pools.md
       - name: 'DeployR 8.x [Archive]'
         items:
         - name: How to install DeployR
@@ -791,18 +807,23 @@
     - name: mrsdeploy
       href: r-reference/mrsdeploy/mrsdeploy-package.md
       items:
+      - name: configureServicePool
+        href: r-reference/mrsdeploy/configureservicepool.md
       - name: createSnapshot
         href: r-reference/mrsdeploy/createsnapshot.md
       - name: deleteRemoteFile
         href: r-reference/mrsdeploy/deleteremotefile.md
       - name: deleteService
         href: r-reference/mrsdeploy/deleteservice.md
+      - name: deleteServicePool
+        href: r-reference/mrsdeploy/deleteservicepool.md
       - name: deleteSnapshot
         href: r-reference/mrsdeploy/deletesnapshot.md
       - name: diffLocalRemote
         href: r-reference/mrsdeploy/difflocalremote.md
       - name: downloadSnapshot
-        href: r-reference/mrsdeploy/downloadsnapshot.md
+      - name: getPoolStatus
+        href: r-reference/mrsdeploy/getpoolstatus.md
       - name: getRemoteFile
         href: r-reference/mrsdeploy/getremotefile.md
       - name: getRemoteObject
@@ -1033,7 +1054,7 @@
         - name: rxGetSparklyrConnection
           href: r-reference/revoscaler/rxgetsparklyrconnection.md
         - name: rxGetVarInfo
-          href: r-reference/revoscaler/rxgetvarinfoxdf.md
+          href: r-reference/revoscaler/rxgetvarinfo.md
         - name: rxGetVarNames
           href: r-reference/revoscaler/rxgetvarnames.md
         - name: rxGLM
@@ -1062,10 +1083,6 @@
           href: r-reference/revoscaler/rxinstalledpackages.md
         - name: rxInstallPackages
           href: r-reference/revoscaler/rxinstallpackages.md
-        - name: RxInTeradata-class
-          href: r-reference/revoscaler/rxinteradata-class.md
-        - name: RxInTeradata
-          href: r-reference/revoscaler/rxinteradata.md
         - name: rxKmeans
           href: r-reference/revoscaler/rxkmeans.md
         - name: rxLaunchClusterTaskManager
@@ -1117,6 +1134,8 @@
         - name: rxPairwiseCrosstab
           href: r-reference/revoscaler/rxpairwisecrosstab.md
         - name: rxPingNodes
+          href: r-reference/revoscaler/rxpartition.md
+        - name: rxPartition
           href: r-reference/revoscaler/rxpingnodes.md
         - name: rxPredict
           href: r-reference/revoscaler/rxpredict.md
@@ -1220,6 +1239,8 @@
           href: r-reference/revoscaler/rxtransform.md
         - name: rxTweedie
           href: r-reference/revoscaler/rxtweedie.md
+        - name: rxUnserializeModel
+          href: r-reference/revoscaler/rxserializemodel.md
         - name: rxWaitForJob
           href: r-reference/revoscaler/rxwaitforjob.md
         - name: rxWriteObject
@@ -1234,8 +1255,6 @@
           href: r-reference/revoscaler/rxxdftotext.md
       - name: Base R-to-RevoScaleR comparison
         href: r-reference/revoscaler/revoscaler-compared-to-base-r.md
-      - name: Functions by category
-        href: r-reference/revoscaler/revoanalytics-package.md
       - name: Defunct functions
         href: r-reference/revoscaler/revoscaler-defunct.md
       - name: Deprecated functions

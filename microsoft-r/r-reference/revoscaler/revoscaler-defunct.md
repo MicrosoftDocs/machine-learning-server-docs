@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "jhubbard" 
 ms.date: "09/07/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -103,7 +103,7 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
  
  ##Details
  
-[rxGetVarInfo](rxGetVarInfoXdf.md) should be used instead of `rxGetVarInfoXdf`.
+[rxGetVarInfo](rxGetVarInfoXdf.md) should be used instead of `rxgetvarinfo`.
 [rxGetInfo](rxGetInfoXdf.md) should be used instead of `rxGetInfoXdf`.
  
  
@@ -113,7 +113,7 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
  
  ##See Also
  
-[rxGetVarInfo](rxGetVarInfoXdf.md),
+[rxGetVarInfo](rxgetvarinfo.md),
 [rxGetInfo](rxGetInfoXdf.md),
 [RevoScaleR-deprecated](RevoScaleR-deprecated.md).
    

@@ -1,15 +1,15 @@
 ---
 
 # required metadata
-title: "Quickstart: Administrators configuring for operationalization - Machine Learning Server "
-description: "Getting started for Administrators"
+title: "Get started for Administrators configuring Machine Learning Server to operationalize"
+description: "If you are responsible for configuring or maintaining Machine Learning Server or R Server, then this guide is for you."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -65,13 +63,13 @@ These nodes can be installed in one of two configurations:
 
 As the name suggests, a [one-box configuration](../operationalize/configure-machine-learning-server-one-box.md) involves one web node and one compute node run on a single machine. Set-up is a breeze. This configuration is useful when you want to explore what it is to operationalize R and Python analytics using Machine Learning Server. It is perfect for testing, proof-of-concepts, and small-scale prototyping, but might not be appropriate for production usage. This configuration is covered in this article. Learn more in this [One-box configuration](../operationalize/configure-machine-learning-server-one-box.md) article.
 
-![One-box configuration](../operationalize/media/configure-machine-learning-server-one-box/setup-onebox.png)
+![Configure Machine Learning Server on one-box architecture](../operationalize/media/configure-machine-learning-server-one-box/setup-onebox.png)
 
 #### Enterprise
 
 A [enterprise configuration](../operationalize/configure-machine-learning-server-enterprise.md) where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled out or in by adding or removing nodes. Learn more about this setup in the [enterprise configuration](../operationalize/configure-machine-learning-server-enterprise.md) article. For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
 
-![Enterprise Configuration](../operationalize/media/configure-machine-learning-server-enterprise/configure-enterprise.png)
+![Configure Machine Learning Server for the enterprise architecture](../operationalize/media/configure-machine-learning-server-enterprise/configure-enterprise.png)
 
 <a name="supported-platforms"></a>
 
@@ -102,7 +100,7 @@ In addition to authentication, you can add other enterprise security around Mach
 
 Additionally, we recommend that you review the following Security Considerations:
 
-![Security](./media/configure-start-for-administrators/security.png)
+![Enterprise Security, HTTPS, LDAPs for Machine Learning Server](./media/configure-start-for-administrators/security.png)
 
 
 ## R package policies
@@ -141,10 +139,7 @@ You can configure Machine Learning Server to use multiple Web Nodes for Active-A
 
 For data storage high availability, you can leverage the high availability capabilities found in enterprise grade databases (SQL Server or PostgreSQL). Learn how to use one of those databases, [here](configure-remote-database-to-operationalize.md).
 
-![High Availability](./media/configure-start-for-administrators/admin-HA.png)
-
-
-<!--For a discussion of the available server, grid, and database HA policy options, see the [DeployR High Availability Guide](../deployr/deployr-admin-configure-high-availability.md).-->
+![Plan for High Availability with Machine Learning Server](./media/configure-start-for-administrators/admin-HA.png)
 
 ### Scalability & throughput
 

@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "04/28/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,13 +18,13 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 ---
 
 # R Server 9.1 Installation for Linux Systems
 
-**Looking for the 9.2.1 release? See [Machine Learning Server for Linux installation](machine-learning-server-linux-install.md)**
+**Looking for the latest release? See [Machine Learning Server for Linux installation](machine-learning-server-linux-install.md)**
 
 Microsoft R Server is an enterprise class server for hosting and managing parallel and distributed workloads of R processes on servers and clusters. The server runs on a wide range of computing platforms, including Linux. 
 
@@ -67,9 +67,17 @@ You can get the gzipped installation file from one of the following download sit
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
+| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios.|
 |[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Linux. A selection for **R Server 9.1.0 for Linux** is provided on this site. |
-| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+
+For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
+
+1. Click **Join or access now** to sign up for download benefits.
+2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
+3. Click **Downloads** to search for R Server.
+4. Click **Downloads** for a specific version to select the platform.
+
+![Download page on Visual Studio benefits page](./media/mlserver-install-older-versions.png)
 
 ### Unpack the distribution
 

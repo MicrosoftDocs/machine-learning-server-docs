@@ -6,10 +6,10 @@ description: "How to deploy an R model as a service"
 keywords: "quickstart, Machine Learning Server, deploy python models"
 author: "bradsev"
 ms.author: "bradsev"
-manager: "jhubbard"
-ms.date: "9/25/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,15 +18,12 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
 #ms.custom: ""
 
 ---
 # An example of binary classification with the microsoftml Python package
 
-**Applies to: Microsoft Learning Server 9.2.1**
+**Applies to: Microsoft Learning Server 9.x**
 
 ## Objective
 

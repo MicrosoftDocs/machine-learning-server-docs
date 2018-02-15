@@ -1,32 +1,30 @@
 ---
 
 # required metadata
-title: "Quickstart: Deploy Python models as web services - Machine Learning Server "
-description: "How to deploy an R model as a service"
+title: "How to deploy Python models as web services - Machine Learning Server "
+description: "How to deploy an python model as a service"
 keywords: "quickstart, Machine Learning Server, deploy python models"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "10/05/2017"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.date: "2/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
 #audience: ""
-#ms.devlang: "r"
+#ms.devlang: ""
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 # Deploy a Python model as a web service with azureml-model-management-sdk
 
-**Applies to: Microsoft Learning Server 9.2.1**
+**Applies to: Microsoft Learning Server**
 
 ## Objective
 

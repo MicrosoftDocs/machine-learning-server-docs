@@ -7,9 +7,9 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,25 +18,61 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
-# Known issues in Machine Learning Server 9.2.1 and Microsoft R Server
+# Known issues in Machine Learning Server
 
-Review workaround steps for the following known issues in this release. 
+The following issues are known in the 9.3 release.
 
-## In 9.2.1
+<a name="revo-rxserializemodel"></a>
+
+## 1. Model deserialization on older remote servers
+
+Applies to: [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md), referencing "Error in memDecompress(data, type = decompress)"
+
+If you customarily switch the compute context among multiple machines, you might have trouble deserializing a model if the RevoScaleR library is out of sync. Specifically, if you serialized the model on a newer client, and then attempt deserialization on a remote server having older copies of those libraries, you might encounter this error: 
+
+```r
+"Error in memDecompress(data, type = decompress) :
+  internal error -3 in memDecompress(2)"
+```
+To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
+
+## 2. ImportError for Matplotlib.pyplot 
+
+This is a [known Anaconda issue](https://github.com/ContinuumIO/anaconda-issues/issues/1068) not specific to Machine Learning Server, but Matplotlib.pyplot fails to load on some systems. Since using Matplotlib.pyplot with revoscalepy is a common scenario, we recommend the following workaround if you are blocked by an import error. The workaround is to assign a non-interactive backend to matplotlib prior to loading pyplot:
+
+```python
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt 
+```
+
+For more information, search for "Agg backend" in the [Matplotlib FAQ](https://matplotlib.org/faq/howto_faq.html).
+
+<a name="Prev"></a>
+
+## Previous releases 
+
+This document also describes the known issues for the last several releases:
+
++ [Known issues for 9.2.1](#921)
++ [Known issues for 9.1.0](#910)
++ [Known issues for 9.0.1](#901)
++ [Known issues for 8.0.5](#805)
+
+<a name="921"></a>
+
+### Machine Learning Server 9.2.1
 
 The following issues are known in this release:
 1. [Configure Machine Learning Server web node warning: "Web Node was not able to start because it is not configured."](#o16n-node)  
 2. [Client certificate is ignored when the Subject or Issue is blank.](#o16n-clientcert)
 3. [Web node connection to compute node times out during a batch execution.](#o16n-batchtimeout)
 
-#### 
 >[!NOTE]
 >Other release-specific pages include [What's New in 9.2.1](whats-new-in-machine-learning-server.md) and [Deprecated and Discontinued Features](resources-deprecated-features.md). For known issues in the previous releases, see [Previous Releases](#Prev).
 
@@ -58,22 +94,9 @@ If you are using a client certificate, both the Subject AND Issuer need to be se
 
 If you are consuming a long-running web service via batch mode, you may encounter a connection timeout between the web and compute node. In batch executions, if a web service is still running after 10 minutes, the connection from the web node to the compute node times out. The web node then starts another session on another compute node or shell. The initial shell that was running when the connection timed out continues to run but never returns a result. 
 
-
-
-<a name="Prev"></a>
-
-## Previous releases 
-
-This document also describes the known issues for the last several releases:
-
-+ [Known issues for 9.1.0](#910)
-+ [Known issues for 9.0.1](#901)
-+ [Known issues for 8.0.5](#805)
-
 <a name="910"></a>
 
 ### Microsoft R Server 9.1.0
-
 
 1. [RevoScaleR: rxMerge() behaviors in RxSpark compute context](#revoscaler-rxmerge)  
 2. [RevoScaleR: rxExecBy() terminates unexpectedly when NA values do not have a factor level](#revoscaler-rxexecby)  

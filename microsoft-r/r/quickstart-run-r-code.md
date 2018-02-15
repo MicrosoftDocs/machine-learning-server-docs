@@ -7,9 +7,9 @@ keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started w
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "1/10/2018"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.date: "02/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,13 +18,13 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-client"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 # Run R code in R Client and Machine Learning Server
 
-**Applies to: Microsoft R Client, Machine Learning Server, R Server 9.x**
+**Applies to: Microsoft R Client, Machine Learning Server 9.x, R Server 9.x**
 
 ## Objective
 

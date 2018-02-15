@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "getRemoteObject function (mrsdeploy) " 
+title: "getRemoteObject function (mrsdeploy) | Microsoft Docs" 
 description: " Get an object from the workspace of the remote R session and load it into the workspace  of the local R session. " 
 keywords: "(mrsdeploy), getRemoteObject" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

@@ -1,14 +1,15 @@
 --- 
  
 # required metadata 
-title: "Operationalization,authentication,delete_service,deploy_realtime,deploy_service,destructor,get_service,initializer,list_services,realtime_service,redeploy_realtime,redeploy_service,service: from azureml-model-management-sdk – Machine Learning Server " 
+title: "Operationalization class: from azureml-model-management-sdk Python module in Machine Learning Server" 
 description: "" 
 keywords: "" 
-author: "Microsoft" 
-manager: "Microsoft" 
-ms.date: "09/20/2017" 
+author: "HeidiSteen"
+ms.author: "heidist" 
+manager: "cgronlun" 
+ms.date: "02/16/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +20,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 ---

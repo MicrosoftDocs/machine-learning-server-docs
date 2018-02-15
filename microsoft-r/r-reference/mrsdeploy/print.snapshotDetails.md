@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "print.snapshotDetails function (mrsdeploy) " 
+title: "print.snapshotDetails function (mrsdeploy) | Microsoft Docs" 
 description: " Defines the R print generic for snapshotDetails during a  listSnapshots(). " 
 keywords: "(mrsdeploy), print.snapshotDetails" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

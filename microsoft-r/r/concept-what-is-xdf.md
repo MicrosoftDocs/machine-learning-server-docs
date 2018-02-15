@@ -6,10 +6,10 @@ description: "How to import CSV and other files to create an XDF file on Machine
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/16/2017"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+manager: "cgronlun"
+ms.date: "02/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---

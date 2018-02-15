@@ -1,15 +1,15 @@
 ---
 
 # required metadata
-title: "Control web services permissions with roles - Machine Learning Server "
-description: "Owner, contributor, reader authentication roles with Machine Learning Server"
+title: "Control web services permissions with roles RBAC - Machine Learning Server "
+description: "Role based access control in Machine Learning Server using roles like owner, contributor, reader"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -118,7 +116,7 @@ If you configure Machine Learning Server (or R Server) to [use Active Directory/
 
 On each web node, edit the appsettings.json configuration file in order to declare the roles and the groups that belong to them. 
 
-1. Open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.) 
+1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. 
 
 1. Search for the following section: `"Authorization": {`
 
@@ -153,14 +151,14 @@ Return to [the appsetting.json file](configure-find-admin-configuration-file.md)
 + **For Azure Active Directory:** In appsettings.json, find the "AzureActiveDirectory" section. Make sure the alphanumeric client key you created in the portal **for the web app** is used for "Key": property. This key allows Machine Learning Server to verify that the groups you've declared are valid in AAD. See following example. Learn more about [configuring Machine Learning Server to authenticate with Azure Active Directory](configure-authentication.md#aad).
 
   >[!IMPORTANT]
-  > For more security, we recommend you [encrypt the key](configure-use-admin-utility.md#encrypt) before adding the information to appsettings.json.
+  > For more security, we recommend you [encrypt the key](configure-admin-cli-encrypt-credentials.md) before adding the information to appsettings.json.
 
   >[!NOTE]
   > If a user belongs to more groups than allowed in AAD, AAD provides an overage claim in the token it returns. This claim along with the key you provide here allows Machine Learning Server to retrieve the group memberships for the user.
 
 + **For Active Directory/LDAP:** In appsettings.json, find the "LDAP" section.  The server verifies that the groups you have declared are valid in AD/LDAP using the QueryUserDn and QueryUserPassword values in the "LDAP" section. See the following example: These settings allow Machine Learning Server to verify that each declared group is, in fact, a valid, existing group in AD. Learn more about [configuring Machine Learning Server  to authenticate with Active Directory/LDAP](configure-authentication.md#ldap).
 
-  With AD/LDAP, you can **restrict which users can log in and call APIs** by declaring the groups with permissions in the ['SearchFilter' LDAP property](configure-authentication.md#encrypt).  Then, users in other groups are not able to call any APIs. In this example, only members of the 'mrsreaders', 'mrsowners', and 'mrscontributors' groups can call APIs after logging in.
+  With AD/LDAP, you can **restrict which users can log in and call APIs** by declaring the groups with permissions in the ['SearchFilter' LDAP property](configure-admin-cli-encrypt-credentials.md).  Then, users in other groups are not able to call any APIs. In this example, only members of the 'mrsreaders', 'mrsowners', and 'mrscontributors' groups can call APIs after logging in.
 
   ```
   "SearchFilter": "(&(sAMAccountName={0})(|(memberOf=CN=mrsreaders,OU=Readers,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrsowners,OU=Owner,OU=AA,DC=pseudorandom,DC=cloud)(memberOf=CN=mrscontributors,OU=Contributor,OU=AA,DC=pseudorandom,DC=cloud)))",         
@@ -169,7 +167,7 @@ Return to [the appsetting.json file](configure-find-admin-configuration-file.md)
 
 ### Step 3. Apply the changes to Machine Learning Server / R Server
 
-1. [Restart the web node](configure-use-admin-utility.md#startstop) for the changes to take effect. Log in  using [the local 'admin' account](configure-authentication.md#local) in the administration utility.
+1. [Restart the web node](configure-admin-cli-stop-start.md) for the changes to take effect. Log in  using [the local 'admin' account](configure-authentication.md#local) in the administration tool/CLI.
 
 1. Repeat these changes in every web node you have configured.  The configuration must be the same across all web nodes.
 

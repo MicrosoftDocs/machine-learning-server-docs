@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "print.serviceDetails function (mrsdeploy) " 
+title: "print.serviceDetails function (mrsdeploy) | Microsoft Docs" 
 description: " Defines the R print generic for serviceDetails during a  listServices(). " 
 keywords: "(mrsdeploy), print.serviceDetails" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

@@ -7,9 +7,9 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -42,7 +40,41 @@ You can define the parameters for the traffic simulation for a given configurati
 
 ## Configure Test Parameters
 
-1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch) with administrator privileges (Windows) or root/sudo privileges (Linux).
+### Machine Learning Server 9.3
+
+In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to evaluate your configuration's capacity.
+
+>[!Important]
+>- You must first [set up your nodes](configure-machine-learning-server-one-box.md) before doing anything else with the `admin` extension of the CLI.
+>- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
+
+1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+
+1. Define and run the capacity evaluation. For help, run `az ml admin capacity --help`
+   ```azurecli
+   az ml admin capacity run
+   ```
+
+   |CLI&nbsp;options&nbsp;for 'capacity&nbsp;run'|Definition|Default|
+   |----------------------------|----------------|:-------:|
+   |--strategy|Use `latency` to increase the number of threads by the defined increment until the defined time limit is reached.<br/><br/>Use `thread` to increase the number of parallel requests by the specified increment until the maximum number of threads is reached.|n/a|
+   |--latency|Used for the strategy `latency`, the maximum latency in milliseconds after which the test stops.|250|
+   |--max-thread|Used for the strategy `thread`, the maximum thread count after which the test stops running.|50|
+   |--min-thread|The minimum thread count at which the test starts.|10|
+   |--increment|The increment by which the number of threads increases for each iteration until the maximum latency is reached.|10|
+   |--service|The name of the web service to test.|n/a|
+   |--version|The version of the web service to test.|n/a|
+   |--args|Enter the required input parameters for the service in a JSON format. <br>For example, for a vector/matrix, follow the JSON format such as '[1,2,3]' for vector, '[[…]]' for matrix. A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.|n/a|
+
+1. Review the results onscreen.
+
+1. Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).
+
+### Earlier versions: 9.0 - 9.2
+
+Evaluate capacity for Machine Learning Server 9.2 and R Server 9.x.
+
+1. On the web node, [launch the administration utility](configure-admin-cli-launch.md) with administrator privileges (Windows) or root/sudo privileges (Linux).
 
 1. From the main menu, choose the option to **Evaluate Capacity** and review the current test parameters.
 
@@ -72,16 +104,12 @@ You can define the parameters for the traffic simulation for a given configurati
    1. Specify the minimum thread count at which the test starts.
    1. Specify the increment by which the number of threads increases for each iteration.
 
-<br>
-
-## Run Simulation Tests
-
-1. On the web node, [launch the administration utility](configure-use-admin-utility.md#launch).
 1. From the main menu, choose the option to **Evaluate Capacity**. The current test parameters appear.
+
 1. From the sub menu, choose the option to **Run capacity simulation** to start the simulation.
+
 1. Review the results onscreen.
 
-   ![Onscreen results](./media/configure-evaluate-capacity/admin-capacity-results-cl.png)
 1. Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).
 
 <br>
@@ -105,8 +133,8 @@ The test results are divided into request processing stages to enable you to see
 |Stage|Time Measured|
 |------|-----------|
 |Web Node Request|Time for the request from the web node's controller to go all the way to [deployr-rserve](https://github.com/Microsoft/deployr-rserve)/JupyterKernel and back.|
-|Create Shell|Time to create a shell or take it from the pool|
-|Initialize Shell|Time to load the data (model or snapshot) into the shell prior to execution|
+|Create Shell|Time to create a session or take it from the pool|
+|Initialize Shell|Time to load the data (model or snapshot) into the session prior to execution|
 |Web Node to Compute Node|Time for a request from the web node to reach the compute node|
 |Compute Node Request|Time for a request from the compute node to reach deployr-rserve/JupyterKernel and return to the node|
 
@@ -117,13 +145,13 @@ You can also explore the results visually in a break-down graph using the URL th
 
 <a name="pool"></a>
 
-## Shell Pools 
+## Session Pools 
 
-When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python shells for code execution. 
+When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python sessions for code execution. 
 
-There is a cost to creating a shell both in time and memory. So having a pool of existing shells awaiting code execution requests means no time is lost on shell creation at runtime thereby shortening the processing time. Instead, the time needed to create shells for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size (InitialSize), the longer it takes to start up the compute node. New shells are added to the pool as needed to execute in parallel. However, after a request is handled and the session is idle, the shell is closed if the number of shells exceeds the maximum pool size (MaxSize). 
+There is a cost to creating a session both in time and memory. So having a pool of existing sessions awaiting code execution requests means no time is lost on session creation at runtime thereby shortening the processing time. Instead, the time needed to create sessions for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size (InitialSize), the longer it takes to start up the compute node. New sessions are added to the pool as needed to execute in parallel. However, after a request is handled and the session is idle, the ssession is closed if the number of shells exceeds the maximum pool size (MaxSize). 
 
-However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of shells needed to run the test exceeds the number of shells in the pool, a new shell is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the shell itself. 
+However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of shells needed to run the test exceeds the number of sessions in the pool, a new session is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the session itself. 
 
 The size of this pool can be adjusted in the external configuration file, appsettings.json, found on each compute node.
 
@@ -134,10 +162,10 @@ The size of this pool can be adjusted in the external configuration file, appset
   },
 ```
 
-Since each compute node has its own thread pool for shells, configuring multiple compute nodes means that more pooled shells are available to your users. 
+Since each compute node has its own thread pool for sessions, configuring multiple compute nodes means that more pooled sessions are available to your users. 
 
 >[!Important]
->If Machine Learning Server is configured for Python only, then only a pool of Python shells is created. If the server is configured only for R, then only a pool of R shells is created. And if it configured for both R and Python, then two separate pools are created, each with the same initial size and maximum size. 
+>If Machine Learning Server is configured for Python only, then only a pool of Python sessions is created. If the server is configured only for R, then only a pool of R sessions is created. And if it configured for both R and Python, then two separate pools are created, each with the same initial size and maximum size. 
 
 **To update the thread pool:**
 
@@ -145,13 +173,13 @@ Since each compute node has its own thread pool for shells, configuring multiple
 
    1. Search for the section starting with `"Pool": {`
 
-   1. Set the InitialSize. This value is the number of R and/or Python shells that are pre-created for your users each time the compute node is restarted.
+   1. Set the InitialSize. This value is the number of R and/or Python sessions that are pre-created for your users each time the compute node is restarted.
 
-   1. Set the MaxSize. This is the maximum number of R and/or Python shells that can be pre-created and held in memory for processing code execution requests. 
+   1. Set the MaxSize. This is the maximum number of R and/or Python sessions that can be pre-created and held in memory for processing code execution requests. 
 
    1. Save the file.
 
-   1. [Restart](configure-use-admin-utility.md#startstop) the compute node services. 
+   1. [Restart](configure-admin-cli-stop-start.md) the compute node services. 
 
    1. Repeat these changes on every compute node.
 

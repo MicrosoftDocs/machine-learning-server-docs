@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "summary.snapshotDetails function (mrsdeploy) " 
+title: "summary.snapshotDetails function (mrsdeploy) | Microsoft Docs" 
 description: " Defines the R summary generic for snapshotDetails during a  listSnapshots(). " 
 keywords: "(mrsdeploy), summary.snapshotDetails" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

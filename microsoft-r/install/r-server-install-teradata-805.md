@@ -8,7 +8,7 @@ ms.author: "bradsev"
 manager: "jhubbard"
 ms.date: "07/29/2016"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -17,27 +17,15 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
-# Install Microsoft R Server 2016 on Teradata Servers
-
-Older versions of R Server are no longer available on the Microsoft download sites, but if you already have a distribution, you can follow these instructions to deploy version 8.0.5. For the current release, see [Install R Server for Teradata](r-server-install-teradata-server.md).
-
-## About the R Server 2016 installer
-
-Microsoft R Server 2016 includes updated installers that allow you to deploy R in fewer steps, enabled in part by a slipstream installation of **Microsoft R Open for R Server 2016** that comes with most dependencies built into the package.
+# Install Microsoft R Server 8.05 on Teradata Servers
 
 >[!NOTE]
->In this release, SLES 10 no longer supported, only SLES 11 SP1.
-
-## Download sites
-
-You can download Microsoft R Server 2016 (version 8.0.5) for Teradata from [here](http://aka.ms/rserver/teradata/download).
-
-## Quick Overview
+>In this release, SLES 10 is no longer supported, only SLES 11 SP1.
 
 Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation for Teradata](r-server-install-teradata-client.md).
 
@@ -72,34 +60,39 @@ The following specific libraries must be installed on the Teradata appliance fro
 
 * SLE-11-SP1-SDK-DVD-x86_64-GM-DVD1.iso/suse/x86_64/gcc-fortran-4.3-62.198.x86_64.rpm
 
+
+## Download software
+
+First, download the version of Microsoft R Open. For this release, you must have Microsoft R Open 3.3.0 for SLES 11 (found at [the mro repository](https://mran.microsoft.com/release-history)
+
+Second, download R Server 8.0.5 for Teradata from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+
+1. Click **Join or access now** to sign up for download benefits.
+2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
+3. Click **Downloads** to search for R Server.
+4. Click **Downloads** for a specific version to select the platform.
+
+![Download page on Visual Studio benefits page](./media/mlserver-install-older-versions.png)
+
 ## Installing the Microsoft R Server rpms
 
 Use the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rpms. PUT runs in a browser. We recommend upgrading to the latest version (3.06.01, as of this writing). This version contains the *PUT Customer Mode*, which is the easiest way to install Microsoft R Server.
 
-1. Download the Microsoft R Server distribution appropriate for your Linux distribution. Microsoft R Server consists of two separate downloads, as follows:
-
-  - Microsoft R Open for Microsoft R Server 2016
-  - Microsoft R Server 2016 for Teradata
-
-2.  Download the Microsoft R Open for Microsoft R Server 2016 rpm file for your Teradata appliance’s operating system, which must be SLES 11 SP1.
-
-3.  Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). The distribution file includes one or more Microsoft R Server installers, along with installers for DeployR, an optional additional component.
-
-4.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+1.  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
 		mount –o loop MRS80TERA.img /mnt/mrsimage
 
-5. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
+2. Copy the following files to the Customer Mode directory (which you may need to create) */var/opt/teradata/customermodepkgs:*
 
 		microsoft-r-server-mro-8.0.tar.gz
 		en_microsoft_r_server_for_teradata_db_x64_8944642.tar.gz
 
-6. Change directory to the Customer Mode packages directory:
+3. Change directory to the Customer Mode packages directory:
 
 		cd /var/opt/teradata/customermodepkgs
 
-7. Unpack the Microsoft R Server installer distribution file using the tar command as follows:
+4. Unpack the Microsoft R Server installer distribution file using the tar command as follows:
 
 		tar -zxf en_microsoft_r_server_for_teradata_db_x64_8944642.tar.gz
 

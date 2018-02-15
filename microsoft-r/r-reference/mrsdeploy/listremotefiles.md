@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "listRemoteFiles function (mrsdeploy) " 
+title: "listRemoteFiles function (mrsdeploy) | Microsoft Docs" 
 description: " Get a list of files in the working directory of the remote R session. " 
 keywords: "(mrsdeploy), listRemoteFiles" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

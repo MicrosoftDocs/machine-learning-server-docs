@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxRemoteFilePath function (RevoScaleR) " 
+title: "rxRemoteFilePath function (revoAnalytics) | Microsoft Docs" 
 description: "This is a utility function to automatically build a path according to file path rules of the remote compute context platform." 
-keywords: "(RevoScaleR), rxRemoteFilePath, IO" 
+keywords: "(revoAnalytics), rxRemoteFilePath, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -48,14 +48,14 @@ according to file path rules of the remote compute context platform.
   
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also
  
 [RxComputeContext](RxComputeContext.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxSpark](RxSpark.md).
    
  ##Examples
