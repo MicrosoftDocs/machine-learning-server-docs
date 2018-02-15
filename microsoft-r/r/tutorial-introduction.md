@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "05/16/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -19,8 +19,8 @@ ms.prod: "microsoft-r"
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
 ms.technology:
-  - r-client
-  - r-server
+  
+
 #ms.custom: ""
 
 ---

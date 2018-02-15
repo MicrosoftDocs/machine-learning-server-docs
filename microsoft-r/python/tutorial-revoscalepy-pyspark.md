@@ -6,10 +6,10 @@ description: "Learn how to use PySpark and revoscalepy Python functions in Spark
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/20/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -24,6 +24,8 @@ ms.technology: ""
 ---
 
 # Tutorial: PySpark and revoscalepy interoperability in Machine Learning Server
+
+**Applies to: Microsoft Learning Server 9.x**
 
 [PySpark](https://spark.apache.org/downloads.html) is Apache Spark's programmable interface for Python. The [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md) module is Machine Learning Server's Python library for predictive analytics at scale. In this tutorial, you learn how to create a logistic regression model using functions from both libraries.
 

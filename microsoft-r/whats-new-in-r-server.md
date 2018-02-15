@@ -6,10 +6,10 @@ description: "Feature announcements, improvements, and changes in past releases 
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/05/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,16 +18,18 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
-# Feature annoucements from previous releases
+# Feature annoucements for previous R Server releases
 
-Microsoft R Server is subsumed by Machine Learning Server 9.2.1, which is built on features from earlier releases. If you have R Server 9.1 or earlier, this article enumerates features introduced in each version.
+Microsoft R Server is subsumed by Machine Learning Server, now in its [second release](whats-new-in-machine-learning-server.md) as the next generation of R Server. If you have R Server 9.1 or earlier, this article enumerates features introduced in those releases.
 
 ## R Server 9.1
+
+R Server 9.1 is the last release of the R Server product. Newer versions of the R Server technology ship in Machine Learning Server, which also includes Python in addition to R.
 
 Release announcement blog: https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/
 

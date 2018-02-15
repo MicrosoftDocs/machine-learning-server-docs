@@ -7,9 +7,9 @@ keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.date: "02/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,22 +18,18 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-client"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # Install Microsoft R Client on Linux
 
-Microsoft R Client is a free, data science tool for high performance analytics.  R Client is built on top of Microsoft R Open so you can use any open source R packages to build your analytics. Additionally, R Client introduces the [powerful ScaleR technology](../r/tutorial-revoscaler-data-import-transform.md) and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, data science tool for high-performance analytics that you can install on popular Linux operating systems, including CentOS, Red Hat, and Ubuntu. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful ][Machine Learning Server](../what-is-machine-learning-server.md). 
 
-R Client allows you to work with production data locally using the full set of RevoScaleR functions, but there are some constraints. On its own, the data to be processed must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
+R Client allows you to work with production data locally using the full set of RevoScaleR functions, with these constraints: data must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-To benefit from disk scalability, performance and speed, you can push the compute context using rxSetComputeContext() to a production instance of Machine Learning Server (or Microsoft R Server) such as [SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) and Machine Learning Server for Hadoop. [Learn more about its compatibility.](compatibility-with-server.md)  
-
-You can offload heavy processing to Machine Learning Server or test your analytics during their development. You by running your code remotely using [remoteLogin() or remoteLoginAAD()](../r/how-to-execute-code-remotely.md) from the mrsdeploy package.  
-
-For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.md#r-client-whats-new).
+For information about the current release, see [What's new in R Client](what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## System Requirements
 
@@ -44,8 +40,7 @@ For a What's New for Microsoft R Client, see [here](what-is-microsoft-r-client.m
 |Free disk space|600 MB recommended, after installation of all prerequisites<br>1.2 GB recommended if pre-trained models are installed|
 |Internet access|Needed to download R Client and any dependencies. If you do not have an internet connection, for the instructions for an [offline installation](#offline)|
 
-
-Also included and required for R Client setup is Microsoft R Open 3.4.1.  Microsoft R Open is a requirement of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
+Also included and required for R Client setup is Microsoft R Open 3.4.3.  Microsoft R Open is a requirement of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
 
 ## Setup Requirements
 
@@ -66,8 +61,8 @@ Also included and required for R Client setup is Microsoft R Open 3.4.1.  Micros
 
 ## Installation paths
 After installation completes, software can be found at the following paths:
-+ Install root: /opt/microsoft/rclient/3.4.1
-+ Microsoft R Open root: /opt/microsoft/ropen/3.4.1
++ Install root: /opt/microsoft/rclient/3.4.3
++ Microsoft R Open root: /opt/microsoft/ropen/3.4.3
 + Executables like Revo64 are under /usr/bin
 
 There is no support for side-by-side installations of older and newer versions. 
@@ -299,7 +294,7 @@ Review the recommendations in [Package Management](../operationalize/configure-m
   + On Ubuntu: `apt list --installed | grep microsoft`  
   + On SUSE: `zypper search \*microsoft-r\*`  
 
-  On Ubuntu, you might have `dotnet-sharedframework-microsoft.netcore.app-1.1.2`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If R Client is the only Microsoft software you have, you can remove it now.
+  On Ubuntu, you might have `dotnet-runtime-2.0.0`. [NET Core](https://docs.microsoft.com/dotnet/core/index) is a cross-platform, general purpose development platform maintained by Microsoft and the .NET community on GitHub. This package could be providing infrastructure to other applications on your computer. If R Client is the only Microsoft software you have, you can remove it now.
 
 6. After packages are uninstalled, remove remaining files. On root@, determine whether additional files still exist:
 

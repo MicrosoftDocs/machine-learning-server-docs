@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "jhubbard" 
 ms.date: "08/04/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -32,7 +32,7 @@ ms.custom: ""
  #RxInTeradata-class: Class RxInTeradata 
  ##Description
  
-Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster.
+DEPRECATED: Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster.
  
  
  ## Objects from the Class 

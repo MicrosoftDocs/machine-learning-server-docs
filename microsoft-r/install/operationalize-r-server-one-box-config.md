@@ -7,9 +7,9 @@ keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -89,11 +87,10 @@ To replace an older version of a one-box configuration, you can uninstall the ol
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
-     >1. Manually install .NET Core 1.1.
-
+     >1. Manually install .NET Core 2.0
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
 
 1. From the menus, choose **Configure server** (or in previously releases, Configure R Server for Operationalization) and then choose **Configure for one box**. The configuration script begins.
 
@@ -136,11 +133,11 @@ To replace an older version of a one-box configuration, you can uninstall the ol
 
    >**Note:** If there are issues with starting the compute node, see [here](../operationalize/configure-run-diagnostics.md).
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) so you can begin to configure a one-box setup.
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges (Windows) or `root`/ `sudo` privileges (Linux) so you can begin to configure a one-box setup.
 
     >[!NOTE]
     >Bypass the interactive configuration steps using the argument `-silentoneboxinstall` and specifying a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three substeps. For R Server 9.1 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentoneboxinstall my-password`. Learn about all command line switches for this script, [here](../operationalize/configure-admin-cli-launch.md#switch).
 
     1. Choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 

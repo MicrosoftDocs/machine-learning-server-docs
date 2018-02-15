@@ -6,10 +6,10 @@ description: "RevoScaleR transform functions."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "06/04/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,13 +18,13 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 # Data transformations using RevoScaleR functions (Machine Learning Server)
 
-Loading an initial dataset is typically just the first step in a continuum of data manipulation tasks that persist until your project is completed. Common examples of data manipulation include isolating a subset, slicing a dataset by variables or rows,and  converting or merging variables into new forms, often resulting in new data structures along the way.
+Loading an initial dataset is typically just the first step in a continuum of data manipulation tasks that persist until your project is completed. Common examples of data manipulation include isolating a subset, slicing a dataset by variables or rows, and converting or merging variables into new forms, often resulting in new data structures along the way.
 
 There are two main approaches to data transformation using the RevoScaleR library:
 

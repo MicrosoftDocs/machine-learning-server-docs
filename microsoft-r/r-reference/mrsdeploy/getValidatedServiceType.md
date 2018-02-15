@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "getValidatedServiceType function (mrsdeploy) " 
+title: "getValidatedServiceType function (mrsdeploy) | Microsoft Docs" 
 description: " Test to see if supplied service type is supported. " 
 keywords: "(mrsdeploy), getValidatedServiceType" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

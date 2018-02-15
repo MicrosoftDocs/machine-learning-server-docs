@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxMultiTest function (RevoScaleR) " 
+title: "rxMultiTest function (revoAnalytics) | Microsoft Docs" 
 description: " Collects a list of tests for variable independence into a table. " 
-keywords: "(RevoScaleR), rxMultiTest, print.rxMultiTest, htest" 
+keywords: "(revoAnalytics), rxMultiTest, print.rxMultiTest, htest" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -76,8 +76,8 @@ print  (x, ...)
 an object of class rxMultiTest.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

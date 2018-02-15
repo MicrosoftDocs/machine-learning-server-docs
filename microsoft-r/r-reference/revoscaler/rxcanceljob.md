@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxCancelJob function (RevoScaleR) " 
+title: "rxCancelJob function (revoAnalytics) | Microsoft Docs" 
 description: " Causes R to cancel an existing distributed computing job. " 
-keywords: "(RevoScaleR), rxCancelJob, rxCancelJob,list-method, rxCancelJob,RxDistributedJob-method, rxCancelJob,RxDistributedHadoopMRJob-method, rxCancelJob,RxDistributedSqlServerJob-method, rxCancelJob,RxDistributedTeradataJob-method, rxCancelJob,ANY-method, IO" 
+keywords: "(revoAnalytics), rxCancelJob, rxCancelJob,list-method, rxCancelJob,RxDistributedJob-method, rxCancelJob,RxDistributedHadoopMRJob-method, rxCancelJob,RxDistributedSqlServerJob-method, rxCancelJob,RxDistributedTeradataJob-method, rxCancelJob,ANY-method, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -75,16 +75,16 @@ may get an error message if the job was not completely submitted before you pres
  
 `TRUE` if the job is successfully canceled; `FALSE` otherwise.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
  ##See Also
  
 [rxGetJobs](rxGetJobs.md),
-[RxHadoopMR](RxHadoopMR.md).
+RxHadoopMR.
    
  ##Examples
 

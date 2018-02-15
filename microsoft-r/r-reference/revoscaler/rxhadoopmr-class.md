@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "jhubbard" 
 ms.date: "09/07/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -30,7 +30,7 @@ ms.custom: ""
  #RxHadoopMR-class: Class RxHadoopMR 
  ##Description
  
-Hadoop Map Reduce Local (File) compute context class.
+DEPRECATED: Hadoop Map Reduce Local (File) compute context class.
  
  
  ## Generators 

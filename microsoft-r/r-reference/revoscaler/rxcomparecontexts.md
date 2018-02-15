@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxCompareContexts function (RevoScaleR) " 
+title: "rxCompareContexts function (revoAnalytics) | Microsoft Docs" 
 description: " Determines if two compute contexts are equivalent. " 
-keywords: "(RevoScaleR), rxCompareContexts, IO" 
+keywords: "(revoAnalytics), rxCompareContexts, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -67,9 +67,9 @@ omitted from the comparison.  Note also that case is ignored for node name compa
 near matching of node names and partial domain information will be used when comparing node names.
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

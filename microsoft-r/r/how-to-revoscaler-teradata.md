@@ -6,10 +6,10 @@ description: "Overview and tutorial to using RevoScaleR in Teradata."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "08/05/2016"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,16 +18,17 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # RevoScaleR Teradata Getting Started Guide
 
-## Overview
+For customers using R Server 9.1 and earlier, this guide serves as an introduction to high-performance big data analytics for Teradata using [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md). 
 
-This guide is an introduction to high-performance ‘big data’ analytics for **Teradata** using **RevoScaleR**, an R package included with Microsoft R Server. **Teradata Platforms** running the **Teradata Database** provide high-performance, high-capacity data storage capabilities that are a great match for the **RevoScaleR** high-performance analytics.
+> [!Important]
+> The Teradata compute context was discontinued in Machine Learning Server 9.2.1. If you have R Server 9.1 and use the Teradata compute context, you are covered by Microsoft's [service support policy](../resources-servicing-support.md). For future compatibility, we recommend modifying existing code to run in other compute contexts, and create a Teradata data source object to work with your data. For more information about Teradata as a data source, see [RxTeradata]../r-reference/revoscaler/rxteradata.md).
 
 There are three key components to running **RevoScaleR** high-performance analytics:
 
@@ -46,15 +47,7 @@ More information on **RevoScaleR** can be found here:
 
 For information on other distributed computing compute contexts, see:
 
-- [How to use RevoScaleR on Hadoop MapReduce](how-to-revoscaler-hadoop.md)
 - [How to use RevoScaleR on Spark](how-to-revoscaler-spark.md)
-
-## Installation
-
-Installation instructions are provided in these links:
-* [Install Microsoft R Server 8.0.5 on Teradata Servers](../install/r-server-install-teradata-805.md)
-* [Install Microsoft R Server 8.0 on Teradata Servers](../install/r-server-install-teradata-server.md)
-* [Install Microsoft R Server 8.0 on Teradata clients](../install/r-server-install-teradata-client.md)
 
 ## Setting Up the Sample Data
 

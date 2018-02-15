@@ -1,15 +1,15 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server to operationalize analytics (Enterprise) - Machine Learning Server "
-description: "Configure Operationalization for Machine Learning Server, load balancer, "
+title: "Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise)"
+description: "Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise setup) with load balancing"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,15 +18,13 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 ---
 
-# Configure Machine Learning Server to operationalize analytics (Enterprise)
+# Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise)
 
-**Applies to:  Machine Learning Server** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(Find R Server 9.x article)](../install/operationalize-r-server-enterprise-config.md)
+**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](configure-machine-learning-server-enterprise-9-2.md) | [R Server 9.x](../install/operationalize-r-server-enterprise-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the enterprise configuration. For more on one-box configurations, [see here](configure-machine-learning-server-one-box.md).
 
@@ -34,28 +32,24 @@ An enterprise configuration involves multiple [web and compute nodes](../operati
 
 For added security, you can [configure SSL](../operationalize/configure-https.md) and authenticate against [Active Directory (LDAP) or Azure Active Directory](../operationalize/configure-authentication.md) in this configuration.
 
-![Enterprise Configuration](./media/configure-machine-learning-server-enterprise/configure-enterprise.png)
+![Configure Machine Learning Server on enterprise architecture](./media/configure-machine-learning-server-enterprise/configure-enterprise.png)
 
 ## How to configure
 
 >[!Important]
->For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Machine Learning Server for operationalization in Azure.  
->
->Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/one-box-configuration). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/).
+>For a speedy setup in Azure, try one of [our Azure Resource Management templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates) stored in GitHub. This [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/) explains how. 
 
 ### 1. Configure a database
 
-While the web node configuration sets up a local SQLite database by default, you must use a SQL Server or PostgreSQL database for this configuration for any of the following situations:
-+ Have multiple web nodes (so data can be shared across web nodes)  
-
-+ Want to achieve higher availability
-
-+ Need a remote database for your web node
+While the web node configuration sets up a local SQLite database by default, you must use a SQL Server or PostgreSQL database if any of the following situations apply:
++ You intend to set up multiple web nodes (so data can be shared across web nodes)  
++ You want to achieve higher availability
++ You need a remote database for your web node
 
 To configure that database, [follow these instructions](../operationalize/configure-remote-database-to-operationalize.md).
 
 >[!WARNING] 
->Choose and configure your database now. If you configure a different database later, all data in your current database is lost.
+>Configure your database now before moving on. If you configure a different database later, all data in the current database is lost.
 
 <a name="add-compute-nodes"></a>
 
@@ -65,33 +59,29 @@ Configure one or more compute nodes as needed. We highly recommend that you conf
 
 In the Enterprise configuration, side-by-side installations of a web and compute node are not supported.
  
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
-
-   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
+1. Install Machine Learning Server and its dependencies as follows. Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)      
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
+   ```azurecli
+   # Set up a compute node
+   az ml admin node setup --computenode
+   
+   # Check the node is now running
+   az ml admin node list
+   ``` 
 
-1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu. 
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
-   >[!NOTE]
-   >To bypass this interactive node configuration step, specify the following switch when launching the utility:
-   >-silentcomputenodeinstall
-   >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
+   If you need help with CLI commands, run the command but add `--help` to the end.
 
-1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
+1. If you plan to configure SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
-1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
+1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, do so BEFORE opening this port. 
 
    + On Windows: Add a firewall exception to open the port number. 
   
@@ -107,47 +97,32 @@ You can now **repeat these steps** for each compute node you want to add.
 
 In an enterprise configuration, you can set up one or more web nodes. It is possible to run the web node service from within IIS. 
  
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
-
-   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
+1. Install Machine Learning Server and its dependencies as follows. Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges to configure a web node:
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)      
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to:
+   + Set up the web node.
+   + Define a password for the default 'admin' account.  Replace <Password> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
+   + Declare the IP address of each compute node. Separate each URI with a comma. For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): <br/>
+   `--uri http://1.1.1.1:12805,http://1.0.1-3.1-2:12805`
+   
+   ```azurecli
+   # Configure a web node
+   az ml admin node setup --webnode —-admin-password <Password> —-confirm-password <Password> --uri <URI1>,<URI2>
+   ``` 
 
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
+1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+   ```azurecli
+   # Check the node is now running
+   az ml admin node list
 
-     >[!NOTE]
-     >Bypass these interactive steps to install the node and set an admin password using these command-line switches:
-     >-silentwebnodeinstall mypassword uri1,uri2
-     >Learn more about command-line switches for this utility [here](../operationalize/configure-use-admin-utility.md#switch).
-
-   1. From the main menu, choose **Configure server**. Then, choose **Configure a web node** from the submenu. 
-  
-   1. When prompted, provide a password for the built-in, local operationalization administrator account called 'admin'.  Later, you can configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-authentication.md#local).   
- 
-   1. When prompted, enter the IP address of each compute node you configured. You can specify a specific URI or  specify IP ranges. For multiple compute nodes, separate each URI with a comma. 
-
-      For example: http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
-  
-      In this example, the range represents six IP values: 1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1,  1.0.3.2.
-
-   1. Return the main menu of the utility.
-
-   >[!Important]
-   >When configuring your web node, you might see the following message:  "Web Node was not able to start because it is not configured." Typically, this is not really an issue since the web node is automatically restarted within 5 minutes by an auto-recovery mechanism.
- 
-1. In the same utility, test the configuration. From the main utility menu, choose **Run Diagnostic Tests** and choose a [diagnostic test](../operationalize/configure-run-diagnostics.md).
-
-1. Exit the utility.
+   # Run the diagnostic test
+   az ml admin diagnostic run
+   ```
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
@@ -188,9 +163,16 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
 
 ### 7. Post configuration steps
 
-1. [Update service ports](../operationalize/configure-use-admin-utility.md#ports), if needed.
+1. [Update service ports](../operationalize/configure-admin-cli-ports.md), if needed.
 
-1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
+1. Using the CLI, you can test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
+   ```azurecli
+   # You must be authenticated to run diagnostic tests.
+   az login —-mls
+
+   # Run test
+   az ml admin diagnostic run
+   ```
 
 1. [Evaluate](../operationalize/configure-evaluate-capacity.md) the configuration's capacity.
 
@@ -208,33 +190,31 @@ Carefully review the steps in the following sections.
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
-   
-   + Windows: C:\Users\Default\AppData\Local\DeployR\current
+1. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
+    + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
+    + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
 
-   + Linux: /etc/deployr/current
-
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
-
-   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
+1. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md) 
 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
+   ```azurecli
+   # Set up a compute node
+   az ml admin node setup --computenode
 
-1. Choose **Configure server** from the menu and then **Configure a compute node** from the submenu. 
+   # Check the node is now running
+   az ml admin node list
+   ``` 
 
-1. When the script asks you if you want to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+
+   If you need help with CLI commands, run the command but add `--help` to the end.
+
     
 You can now **repeat these steps** for each compute node.
 
@@ -245,34 +225,43 @@ You can now **repeat these steps** for each compute node.
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. Uninstall Microsoft R Server 9.0 or 9.1 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](../install/machine-learning-server-linux-uninstall.md). The uninstall process stashes away a copy of your 9.0 or 9.1 configuration files under this directory so you can seamlessly upgrade to Machine Learning Server 9.2.1 in the next step:
-   
-   + Windows: C:\Users\Default\AppData\Local\DeployR\current
-
-   + Linux: /etc/deployr/current
-
-1. Install Machine Learning Server and its dependencies as follows. [Learn about supported platforms for this configuration.](../operationalize/configure-start-for-administrators.md#supported-platforms)
-
-   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md)
-      
-     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 1.1 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
+1. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
+    + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
+    + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
+    
+1. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator/root/sudo privileges. The utility checks to see if any configuration files from past releases are present under the `current` folder mentioned previously.
+   + Windows instructions: [Installation steps](../install/machine-learning-server-windows-install.md) | [Offline steps](../install/machine-learning-server-windows-offline.md) 
 
-   + Windows instructions: launch the administration utility AS AN ADMINISTRATOR (right-click) using the shortcut in the Start menu called Administration Utility.
+     For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140).
 
-   + Linux instructions:  
-     ```
-     cd /opt/microsoft/mlserver/9.2.1/o16n
-     sudo dotnet Microsoft.MLServer.Utils.AdminUtil/Microsoft.MLServer.Utils.AdminUtil.dll
-     ```
+1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to:
+   + Set up the web node.
+   + Define a password for the default 'admin' account.  Replace <Password> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
+   + Declare the IP address of each compute node. Separate each URI with a comma. For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): <br/>
+   `--uri http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`
+   
+   ```azurecli
+   az ml admin node setup --webnode —-admin-password <Password> —-confirm-password <Password> --uri <URI1>,<URI2>
+   ```
 
-1. Choose **Configure server** from the menu and then **Configure a web node** from the submenu.  
+1. Verify the configuration was successful with these [CLI commands](configure-admin-cli-launch.md):
 
-1. When the script asks you if you'd like to upgrade, enter `y`. The node is automatically set up using the configuration you had for R Server 9.0 or 9.1. 
+   ```azurecli   
+   # Check the node is now running
+   az ml admin node list
 
-1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
+   # Authenticate with Machine Learning Server
+   az login --mls
+
+   # Run diagnostics to make all is configured properly
+   az ml admin diagnostic run
+   ``` 
+
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+
+   If you need help with CLI commands, run the command but add `--help` to the end.
 
 You can now **repeat these steps** for each node.

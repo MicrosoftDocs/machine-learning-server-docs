@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "12/19/2017"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -656,31 +656,6 @@ You should see the following results (which should match the results we found fo
 	Adjusted R-squared: 0.001826
 	F-statistic:  1832 on 6 and 6005374 DF,  p-value: < 2.2e-16
 	Condition number: 1
-
-### Write to CSV in HDFS
-
-If you [converted your CSV to XDF](#importingDataAsCompositeXdfFiles) to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. 
-
-To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory is created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
-
-Suppose we want to write out a folder of CSV in HDFS from our airData composite XDF after we performed the logistic regression and prediction, so that the new CSV files contain the predicted values and residuals. We can do this as follows:
-
-	airDataCsvDir <- file.path("user/RevoShare/user/airDataCsv")
-	airDataCsvDS <- RxTextData(airDataCsvDir,fileSystem=hdfsFS)
-	rxDataStep(inData=airData, outFile=airDataCsvDS)
-
-You notice that the *rxDataStep* wrote out one CSV for every .xdfd file in the input composite XDF file. This is the default behavior for writing CSV from composite XDF to HDFS when the compute context is set to RxSpark.
-
-Alternatively, you could switch your compute context back to “local” when you are done performing your analyses and take advantage of two arguments within *RxTextData* that give you slightly more control when writing out CSV files to HDFS: *createFileSet* and *rowsPerOutFile*. When *createFileSet* is set to TRUE a folder of CSV files is written to the directory you specify. When *createFileSet* is set to FALSE a single CSV file is written. The second argument, *rowsPerOutFile*, can be set to an integer to indicate how many rows to write to each CSV file when *createFileSet* is TRUE. Returning to the example above, suppose we wanted to write out a folder of CSVs but we wanted to write out the airData but into only six CSV files.
-
-	rxSetComputeContext("local")
-	airDataCsvRowsDir <-file.path("/user/RevoShare/MRS/airDataCsvRows")
-	rxHadoopMakeDir(airDataCsvRowsDir)
-	airDataCsvRowsDS <- RxTextData(airDataCsvRowsDir, fileSystem=hdfsFS, createFileSet=TRUE, 	rowsPerOutFile=1000000)
-	rxDataStep(inData=airData, outFile=airDataCsvRowsDS)
-
-
-When using an RxSpark compute context, createFileSet defaults to TRUE and rowsPerOutFile has no effect. Thus if you wish to create a single CSV or customize the number of rows per file you must perform the rxDataStep in a local compute context (data can still be in HDFS).
 
 ### Handling larger linear models
 

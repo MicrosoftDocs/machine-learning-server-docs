@@ -7,9 +7,9 @@ keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.date: "02/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-client"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -67,7 +67,7 @@ Log in as root or a user with `sudo` privileges. If you are using `sudo`, preced
 		apt-get remove microsoft-r-server-mro-x.x	# (Ubuntu systems)
 		zypper remove microsoft-r-server-mro-x.x	# (SLES systems)
 
-   where x.x is 3.3 for R Server 9.0.1 or 9.1.0, and 3.4 for Machine Learning Server 9.2.
+   where x.x is the version number.
 
 2. On the root node, verify the location of other files that need to be removed: `
 

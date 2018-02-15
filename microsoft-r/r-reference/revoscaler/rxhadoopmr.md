@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "jhubbard" 
 ms.date: "09/07/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -28,7 +28,7 @@ ms.custom: ""
  #RxHadoopMR: Generate Hadoop Map Reduce Compute Context 
  ##Description
  
-Creates a compute context for use with a Hadoop cluster.
+DEPRECATED: Creates a compute context for use with a Hadoop cluster.
 
 RxHadoopMR compute context is deprecated. Please consider using RxSpark compute context instead.
  

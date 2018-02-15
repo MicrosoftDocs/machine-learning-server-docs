@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "RxOdbcData-class function (RevoScaleR) " 
+title: "RxOdbcData-class class (revoAnalytics) | Microsoft Docs" 
 description: " ODBC data source connection class. " 
-keywords: "(RevoScaleR), RxOdbcData-class, show,RxOdbcData-method, classes" 
+keywords: "(revoAnalytics), RxOdbcData-class, show,RxOdbcData-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -55,8 +55,8 @@ Class RxDataSource, directly.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

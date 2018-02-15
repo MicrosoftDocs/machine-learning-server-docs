@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxFormula function (RevoScaleR) " 
+title: "rxFormula function (revoAnalytics) | Microsoft Docs" 
 description: " Highlights of the similarities and differences in formulas between **RevoScaleR** and standard R functions. " 
-keywords: "(RevoScaleR), rxFormula, models" 
+keywords: "(revoAnalytics), rxFormula, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -87,8 +87,8 @@ categorical variables:
 
   
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

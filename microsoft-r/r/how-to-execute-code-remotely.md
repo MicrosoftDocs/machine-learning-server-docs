@@ -2,14 +2,14 @@
 
 # required metadata
 title: "Remote Execution with mrsdeploy - Machine Learning Server "
-description: "Remote execution for Machine Learning Server"
+description: "Execute on a remote server using the mrsdeploy package on Machine Learning Server"
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "7/24/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -44,7 +42,7 @@ With remote execution, you can:
  + [Work with R objects/files remotely](#objects)    
  + [Create and manage snapshots of the remote environment for reuse](#snapshot)    
 
-![Remote Execution](./media/how-to-execute-code-remotely/remote-execution.png) 
+![Run local r code remotely on machine learning server with mrsdeploy](./media/how-to-execute-code-remotely/remote-execution.png) 
 
 ## Supported configurations and mrsdeploy usage
 
@@ -68,7 +66,7 @@ After you [log in to the remote R server](../operationalize/how-to-connect-log-i
 
 When the `REMOTE>` command line is displayed in the R console, any R commands entered are executed on the remote R session. 
 
-![Switch](./media/how-to-execute-code-remotely/mrsdeploy-connect-switch-context.png)
+![Switch from local to remote R sessions with Machine Learning Server](./media/how-to-execute-code-remotely/mrsdeploy-connect-switch-context.png)
 
 Switching between the local command line and the remote command line is done using these functions: pause() and resume(). To switch back to the local R session, type 'pause()'. If you have switched to the local R session, you can go back to the remote R session by typing 'resume()'.
 

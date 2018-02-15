@@ -6,10 +6,10 @@ description: "Learn how to build and deploy a model using revoscalepy Python fun
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/19/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -24,6 +24,8 @@ ms.technology: ""
 ---
 
 # Create a linear regression model using revoscalepy in Python
+
+**Applies to: Microsoft Learning Server 9.x**
 
 This Python quickstart demonstrates a linear regression model on a local Machine Learning Server, using functions from the [revoscalepy library](../python-reference/revoscalepy/revoscalepy-package.md) and built-in sample data. 
 
