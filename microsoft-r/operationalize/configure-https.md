@@ -75,9 +75,12 @@ This section walks you through the steps for securing the connections between th
                "StoreName": "My",        
                "StoreLocation": "LocalMachine",
                "SubjectName": "CN=<certificate-subject-name>"
+               "Thumbprint": "<certificate-thumbprint>"               
            }
        },
    ```
+   >[!NOTE]
+   >Use `"Thumbprint"` to ensure that the correct certificate is loaded if there are multiple certificates on the same system with same name used for different purposes such as IPsec, TLS Web Server Authentication, Client Authentication, Server Authentication, and so on.  If you do not have multiple certificates with same name, you can leave the Thumbprint field empty.
 
 1. Close and save the file.
 
@@ -231,9 +234,12 @@ When encrypting, you have the choice of using one of the following **compute nod
                   "StoreName": "My",        
                   "StoreLocation": "LocalMachine",
                   "SubjectName": "CN=<certificate-subject-name>"
+                  "Thumbprint": "<certificate-thumbprint>"
               }
           },
       ```
+      >[!NOTE]
+      >Use `"Thumbprint"` to ensure that the correct certificate is loaded if there are multiple certificates on the same system with same name used for different purposes such as IPsec, TLS Web Server Authentication, Client Authentication, Server Authentication, and so on.  If you do not have multiple certificates with same name, you can leave the Thumbprint field empty.
 
    1. Close and save the file.
 
@@ -353,7 +359,10 @@ This section walks you through the steps for authenticating the web node with th
                "StoreName": "My",
                "StoreLocation": "LocalMachine",
                "SubjectName": "<name-of-certificate-subject>"
+               "Thumbprint": "<certificate-thumbprint>"
        ```
+       >[!NOTE]
+       >Use `"Thumbprint"` to ensure that the correct certificate is loaded if there are multiple certificates on the same system with same name used for different purposes such as IPsec, TLS Web Server Authentication, Client Authentication, Server Authentication, and so on.  If you do not have multiple certificates with same name, you can leave the Thumbprint field empty.
 
    1. Close and save the file.
 
