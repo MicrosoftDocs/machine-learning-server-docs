@@ -194,7 +194,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 1. Sign in to the [Azure portal](http://portal.azure.com).
 
-1. Select the upper-right hand corner and select the Active Directory account from the list. If the Azure Active Directory has not been set up yet, contact your system administrator. In our example, that directory is `deployrtest`.
+1. Select the upper-right hand corner and select the Active Directory account from the list. If the Azure Active Directory has not been set up yet, contact your system administrator. In our example, that directory is `MyMLServer`.
  
 1. Select **Azure Active Directory** from the left-hand side. 
 
@@ -248,7 +248,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
    >[!IMPORTANT] 
    > Take note of this key as it is needed to configure [roles to give web services permissions to certain users](configure-roles.md). 
 
-1. Also, take note of the application's tenant ID.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMRServer.contoso.com`.
+1. Also, take note of the application's tenant ID.  The tenant ID is the domain of the Azure Active Directory account, for example,  `myMLServer.contoso.com`.
 
 
 **Step 3: Create a native application**
@@ -334,9 +334,9 @@ Now, let's create a native application. This application links the web applicati
    |Azure AD Properties|Definition|
    |----------------|-------------------------------|
    |Enabled|To use AAD for authentication, set to 'true'. Else, set to 'false'.|
-   |Authority|Use 'https://login.windows.net/<URL to AAD login>' where <URL to AAD login> is the URL to the AAD login. For example, if the AAD account domain is myMRServer.contoso.com, then the Authority would be 'https://login.windows.net/myMRSServer.contoso.com'|
-   |Audience|Use the CLIENT ID value for the WEB app you created in the Azure portal.|
-   |ClientId|Use the CLIENT ID value for the NATIVE app you created in the Azure portal.|
+   |Authority|Use 'https://login.windows.net/\<URL to AAD login>' where \<URL to AAD login> is the URL to the AAD login. For example, if the AAD account domain is myMLServer.contoso.com, then the Authority would be 'https://login.windows.net/myMLServer.contoso.com'|
+   |Audience|Use the Application ID value for the WEB app you created in the Azure portal.|
+   |ClientId|Use the Application ID value for the NATIVE app you created in the Azure portal.|
    |Key|This is the key for the WEB application you took note of before.  |
    |KeyEncrypted|We highly recommend that you [encrypt login credentials](configure-admin-cli-encrypt-credentials.md) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
 
@@ -344,7 +344,7 @@ Now, let's create a native application. This application links the web applicati
    ```
    "AzureActiveDirectory": {
       "Enabled": true,
-      "Authority": "https://login.windows.net/myMRServer.contoso.com",
+      "Authority": "https://login.windows.net/myMLServer.contoso.com",
       "Audience": "00000000-0000-0000-0000-000000000000",
       "ClientId": "00000000-0000-0000-0000-000000000000",
       "Key": "ABCD000000000000000000000000WXYZ", 
