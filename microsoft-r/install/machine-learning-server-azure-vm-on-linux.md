@@ -4,8 +4,8 @@
 title: "How to use Machine Learning Server on Linux VM in Azure (Virtual Machine) - Machine Learning Server "
 description: "Learn how to work with Machine Learning Server / R Server on Linux by using a virtual machine in Azure."
 keywords: "Machine Learning Server, R Server, linux, virtual machine"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
 ms.topic: "article"
@@ -23,20 +23,18 @@ ms.prod: "mlserver"
 
 ---
 
-# Machine Learning Server for Linux 9.2:  Virtual Machine on Azure
+# Machine Learning Server for Linux 9.3:  Virtual Machine on Azure
 
->Looking for an older or newer version? The newest version, 9.3, becomes available on Azure virtual machines several weeks after the on premises version is made generally available. For older versions, see these links: [R Server 9.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
+Machine Learning Server, formerly known as R Server, is the most broadly deployable enterprise-class analytics platform for R and Python available today. This virtual machine (VM) includes the Machine Learning Server version for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). 
 
-Machine Learning Server, formerly known as R Server, is the most broadly deployable enterprise-class analytics platform for R and Python available today. This virtual machine (VM) includes the Machine Learning Server version 9.2.1 for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). 
+VM images include the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) installed with the product that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
 
-This VM also includes the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) installed with the product that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
-
->[!Tip]
->We recommend that you use the new version of the Azure portal, and the Azure Marketplace. Some images are not available when browsing the Azure Gallery on the classic portal.
+> [!Note]
+> If you require an older version, see these links: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
 ## Provision the Machine Learning Server Virtual Machine
 
-If you are new to using Azure VMs, we recommend that you review [this article](https://azure.microsoft.com/en-us/documentation/services/virtual-machines/linux/) for more information about using the portal and configuring a virtual machine.
+If you are new to using Azure VMs, we recommend that you review [this article](https://azure.microsoft.com/documentation/services/virtual-machines/linux/) for more information about using the portal and configuring a virtual machine.
 
 **To create the Machine Learning Server on Linux VM:**
 
@@ -56,7 +54,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 1. Use the onscreen prompts and fields to configure your Machine Learning Server VM. 
    >- You need an Azure subscription to create the VM.
-   >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/en-us/documentation/services/virtual-machines/linux/)
+   >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/documentation/services/virtual-machines/linux/)
 
 1. After the VM is deployed and running, [connect](#connect) to the VM to begin interacting with Machine Learning Server. 
 
