@@ -21,11 +21,9 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# An example of binary classification with the microsoftml Python package
+# Quicstart: An example of binary classification with the microsoftml Python package
 
-**Applies to: Microsoft Learning Server 9.x**
-
-## Objective
+**Applies to: Machine Learning Server 9.x**
 
 Learn how to use binary classification using the functions in the [microsoftml package](../python-reference/microsoftml/microsoftml-package.md) that ships with Machine Learning Server.
  Data scientists work [locally in their preferred Python IDE](../install/python-libraries-interpreter.md) and favorite version control tools to build scripts and models.  

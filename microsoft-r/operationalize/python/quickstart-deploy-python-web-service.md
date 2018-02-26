@@ -22,11 +22,9 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Deploy a Python model as a web service with azureml-model-management-sdk
+# Quickstart: Deploy a Python model as a web service with azureml-model-management-sdk
 
-**Applies to: Microsoft Learning Server 9.x**
-
-## Objective
+**Applies to: Machine Learning Server 9.x**
 
 Learn how to deploy an Python model as a [web service with Machine Learning Server](../concept-what-are-web-services.md). Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
 

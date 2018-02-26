@@ -93,7 +93,7 @@ When ready, you can run that R code using R Client or even send those R commands
 
 ### Microsoft R Client 3.4.3
 
-This release of R Client, built on open source R 3.4.3, is at the same functional level as Machine Learning Server 9.3. Download R Client from http://aka.ms/rclient (Windows) or http://aka.ms/rclientlinux (Linux). 
+This release of R Client, built on open source R 3.4.3, is at the same functional level as Machine Learning Server 9.3. Download R Client from https://aka.ms/rclient (Windows) or https://aka.ms/rclientlinux (Linux). 
 
 R Client includes these enhancements:
 
@@ -114,7 +114,7 @@ This release of R Client, built on open source R 3.3.3. Key release features inc
 
 ### Microsoft R Client 3.3.2
 
-The following release notes apply to Microsoft R Client, which can be downloaded from http://aka.ms/rclient/download.
+The following release notes apply to Microsoft R Client, which can be downloaded from https://aka.ms/rclient/download.
 
 + New enhanced Microsoft R Client [Getting Started](what-is-microsoft-r-client.md) guide
 + A new 'version check' and auto-update is now possible using CheckForUpdates() in your R Console 
