@@ -27,6 +27,8 @@ ms.prod: "mlserver"
 
 [Machine Learning Server](../what-is-microsoft-r-server.md), formerly known as Microsoft R Server, is the most broadly deployable enterprise-class analytics platform for R and Python. 
 
+## One-click install using an ARM template
+
 If you have an Azure subscription, you can use an ARM template that performs the following tasks: provisions a virtual machine, installs Machine Learning Server, opens port 12800, and configures the server for operationalization. 
 
 Follow these links to get started:
@@ -34,11 +36,13 @@ Follow these links to get started:
 + [Machine Learning Server ARM templates on Github](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates)
 + [One-click installation of an auto-scale environment to operationalize your R analytics](https://blogs.msdn.microsoft.com/mlserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/)
 
+## Use the portal to create a virtual machine
+
 Alternatively, you can create a virtual machine through the Azure portal. 
 
 + [R Server 9.1 on Azure HDInsight](machine-learning-server-on-azure-hdinsight.md)
 
-+ [Machine Learning Server as preconfigured Azure virtual machine on Linux](machine-learning-server-azure-vm-on-linux.md)
++ [Machine Learning Server as preconfigured Azure virtual machine on Linux or Windows](machine-learning-server-azure-vm-on-linux.md)
 
 + [SQL Server Machine Learning Server as preconfigured Azure virtual machine on Windows](https://docs.microsoft.com/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure)
 
