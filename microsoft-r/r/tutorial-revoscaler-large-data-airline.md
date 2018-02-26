@@ -29,7 +29,7 @@ This tutorial builds on what you learned in the [first RevoScaleR tutorial](tuto
 
 ## Download the airline dataset
 
-To really get a feel for RevoScaleR, you should work with functions using a larger data set. Larger data sets are available for download [from this web page](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+To really get a feel for RevoScaleR, you should work with functions using a larger data set. Larger data sets are available for download [from this web page](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 You can use a smaller or larger data set with this tutorial. Datasets for this tutorial include the following:
 
@@ -417,7 +417,7 @@ You can then make the cluster connection object active by using *rxSetComputCont
 
 	rxSetComputeContext(myCluster)
 
-With your compute context set to the cluster, all of the RevoScaleR data analysis functions (i.e., rxSummary, rxCube, rxCrossTabs, rxLinMod, rxLogit, rxGlm, rxCovCor (and related functions), rxDTree, rxDForest, rxBTrees, rxNaiveBayes, and rxKmeans) automatically distribute computations across the nodes of the cluster.  It is assumed that copies of the data are in the same path on each node. (Other options are discussed in the [RevoScaleR Distributed Computing Guide](http://go.microsoft.com/fwlink/?LinkID=698560&clcid=0x409).)
+With your compute context set to the cluster, all of the RevoScaleR data analysis functions (i.e., rxSummary, rxCube, rxCrossTabs, rxLinMod, rxLogit, rxGlm, rxCovCor (and related functions), rxDTree, rxDForest, rxBTrees, rxNaiveBayes, and rxKmeans) automatically distribute computations across the nodes of the cluster.  It is assumed that copies of the data are in the same path on each node. (Other options are discussed in the [RevoScaleR Distributed Computing Guide](https://go.microsoft.com/fwlink/?LinkID=698560&clcid=0x409).)
 
 Now you can re-run the large scale regression, this time just specifying the name of the data file without the path:
 

@@ -29,7 +29,7 @@ Microsoft R Server is subsumed by Machine Learning Server, now in its [second re
 
 ## R Server 9.1
 
-R Server 9.1 is the last release of the R Server product. Newer versions of the R Server technology ship in Machine Learning Server, which also includes Python in addition to R.
+R Server 9.1 is the last release of the R Server product. Newer versions of the R Server technology ship in Machine Learning Server, which includes Python in addition to R.
 
 Release announcement blog: https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/
 

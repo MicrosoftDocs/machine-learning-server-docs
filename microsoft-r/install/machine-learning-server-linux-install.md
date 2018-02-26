@@ -103,7 +103,7 @@ Follow these instructions for Machine Learning Server for Linux on Red Hat Enter
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 7.0: `rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
 
 3. As a verification step, check whether the **microsoft-prod.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
 
@@ -128,7 +128,7 @@ Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04
 
 2. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
 
-3. Set the location of the package repo the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget http://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
+3. Set the location of the package repo the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
 
 4. Register the repo: `dpkg -i packages-microsoft-prod.deb`
 
@@ -169,7 +169,7 @@ Follow these instructions for Machine Learning Server for Linux on SUSE (SLES11 
 
 1. Install as root: `sudo su`
 
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `zypper ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com`
+2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `zypper ar -f https://packages.microsoft.com/sles/11/prod packages-microsoft-com`
 
 3. Update packages on your system: `zypper update` 
 

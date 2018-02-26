@@ -107,7 +107,7 @@ Additionally, we recommend that you review the following Security Considerations
 
 The primary function of the operationalization feature is to support the execution of R code on behalf of client applications. One of your key objectives as an administrator is to ensure a reliable, consistent execution environment for that code.
 
-The R code developed and deployed by data scientists within your community  frequently depends on one or more R packages. Those R packages may be hosted on [CRAN](http://cran.r-project.org/), [MRAN](http://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
+The R code developed and deployed by data scientists within your community  frequently depends on one or more R packages. Those R packages may be hosted on [CRAN](https://cran.r-project.org/), [MRAN](https://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
 
 Making sure that these R package dependencies are available to the code executing on Machine Learning Server's operationalization feature requires active participation from you, the administrator. There are several R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](configure-manage-r-packages.md).
 

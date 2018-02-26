@@ -56,8 +56,8 @@ Without an internet connection, the following components must be downloaded to a
 
 | Component | Description | Download Link |
 |-----------|-------------|---------------|
-| SRO_3.3.3.0_1033.cab | Microsoft R Open | http://go.microsoft.com/fwlink/?LinkID=842800 |
-| MLM_9.1.0.0_1033.cab | Machine learning models | http://go.microsoft.com/fwlink/?LinkID=845098 |
+| SRO_3.3.3.0_1033.cab | Microsoft R Open | https://go.microsoft.com/fwlink/?LinkID=842800 |
+| MLM_9.1.0.0_1033.cab | Machine learning models | https://go.microsoft.com/fwlink/?LinkID=845098 |
 
 <a name="download"><a/>
 
@@ -67,8 +67,8 @@ You can get the zipped installation file from one of the following download site
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios.|
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
+| [Visual Studio Dev Essentials](https://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios.|
+|[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
 
 From [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
 

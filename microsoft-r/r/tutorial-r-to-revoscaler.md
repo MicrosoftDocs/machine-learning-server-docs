@@ -653,7 +653,7 @@ We get the following output:
 
 ### Scale your analysis
 
-Until now, our exploration has been limited to small data sets in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. 
+Until now, our exploration has been limited to small data sets in memory. Let’s scale up to a data set with a million rows rather than just 10000. These larger text data files are available [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz. 
 
 After downloading and unpacking the data, set your path to the correct location in the code below. It is more efficient to store the imported data on disk, so we also specify the locations for our imported and transformed data sets:
 

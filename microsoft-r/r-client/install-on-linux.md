@@ -117,9 +117,9 @@ sudo su
 
 # Set the package repository location containing the R Client distribution. 
 # On RHEL 6:
-# rpm -Uvh http://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
+# rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 # On RHEL 7:
-rpm -Uvh http://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
 # Check for microsoft-prod.repo configuration file to verify registration.
 ls -la /etc/yum.repos.d/ 

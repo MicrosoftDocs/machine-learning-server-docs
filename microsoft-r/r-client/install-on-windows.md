@@ -63,7 +63,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. Log in to the machine with administrator privileges.
 
-1. Download Microsoft R Client from the following link: http://aka.ms/rclient/
+1. Download Microsoft R Client from the following link: https://aka.ms/rclient/
 
 1. Launch the Microsoft R Client setup and follow the prompts.
 
@@ -86,7 +86,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 1. On a machine with _**unrestricted**_ internet access:
 
-   1. Download Microsoft R Client from http://aka.ms/rclient/.
+   1. Download Microsoft R Client from https://aka.ms/rclient/.
 
    1. Download the Microsoft R Open ( *.cab) needed to install R Client from https://go.microsoft.com/fwlink/?LinkId=852724.
 

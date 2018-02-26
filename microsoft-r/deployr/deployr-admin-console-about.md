@@ -55,7 +55,7 @@ Only the `admin` user account, representing the administrator, has access to thi
 
 1.  In a browser window, enter the Administration Console’s URL:
 
-		http://<DEPLOYR-IP-ADDRESS>:<PORT>/deployr/administration
+		https://<DEPLOYR-IP-ADDRESS>:<PORT>/deployr/administration
 	where `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR machine and where `<PORT>` is the port number used during installation. 
 
 2.  Click **Administration Console Log In** in the upper right to log in.  If this is your first time using the Administration Console, try one of the [preconfigured users](deployr-admin-console-user-accounts.md#preconfigured-user-accounts).

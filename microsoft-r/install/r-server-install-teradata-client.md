@@ -341,7 +341,7 @@ If you are using RxOdbcData with a DSN, you need to define an appropriate DSN in
 
 #### Installing RODBC
 
-The RODBC package is not required to use RxTeradata, but it can be useful for timing comparisons with other databases. You can download RODBC from the MRAN source package repository at [http://mran.microsoft.com](http://mran.microsoft.com/).
+The RODBC package is not required to use RxTeradata, but it can be useful for timing comparisons with other databases. You can download RODBC from the MRAN source package repository at [https://mran.microsoft.com](https://mran.microsoft.com/).
 
 ## Installing Microsoft R Server or R Client on the Client
 

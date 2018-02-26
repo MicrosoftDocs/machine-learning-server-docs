@@ -40,7 +40,7 @@ Alternatively, you can create a virtual machine through the Azure portal.
 
 + [Machine Learning Server as preconfigured Azure virtual machine on Linux](machine-learning-server-azure-vm-on-linux.md)
 
-+ [Machine Learning Server as preconfigured Azure virtual machine on Windows](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure)
++ [SQL Server Machine Learning Server as preconfigured Azure virtual machine on Windows](https://docs.microsoft.com/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure)
 
 + [Machine Learning Server on the Microsoft Data Science Virtual Machine](r-server-vm-data-science.md)
   

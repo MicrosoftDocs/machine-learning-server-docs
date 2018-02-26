@@ -464,7 +464,7 @@ Stochastic Gradient Boosting.
 
 Greg Ridgeway with contributions from others, 
 gbm: Generalized Boosted Regression Models (R package),
-[`http://cran.r-project.org/web/packages/gbm/index.html`](http://cran.r-project.org/web/packages/gbm/index.html)
+[`https://cran.r-project.org/web/packages/gbm/index.html`](https://cran.r-project.org/web/packages/gbm/index.html)
 
  
  

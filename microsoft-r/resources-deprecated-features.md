@@ -185,4 +185,4 @@ See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-kno
 
 **Known Issues**
 
-See here: http://go.microsoft.com/fwlink/?LinkID=717964&clcid=0x409
+See here: https://go.microsoft.com/fwlink/?LinkID=717964&clcid=0x409

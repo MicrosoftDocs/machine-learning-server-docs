@@ -44,7 +44,7 @@ This section explains how to obtain the parcel generation script and simulate pa
 
 ### Download a Machine Learning Server distribution
 
-A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Visual Studio Dev Essentials](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) or [Volume licensing](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409).
+A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Visual Studio Dev Essentials](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) or [Volume licensing](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409).
 
 1. Go to [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
 2. Click **Join or Access Now** and enter your [Microsoft account](https://account.microsoft.com/account) (such as a Live ID, Hotmail, or Outlook account).

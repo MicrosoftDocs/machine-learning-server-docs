@@ -365,7 +365,7 @@ memory.
 
 ## References
 
-[Wikipedia: Artificial neural network](http://en.wikipedia.org/wiki/Artificial_neural_network)
+[Wikipedia: Artificial neural network](https://en.wikipedia.org/wiki/Artificial_neural_network)
 
 
 ## Example

@@ -25,13 +25,15 @@ ms.prod: "mlserver"
 
 # R Server on HDInsight
 
-Azure HDInsight is Microsoft's distribution of Hadoop in the cloud, and one of the ways to provision the service is with R Server already installed on all nodes in the cluster. On HDInsight, the current version of R Server is 9.1, built on open source R ([Microsoft R Open 3.3.3](https://mran.microsoft.com/release-history)).
+Azure HDInsight is Microsoft's distribution of Hadoop in the cloud. One way to provision the service is with R Server pre-installed on all nodes in the cluster. On HDInsight, the current version of R Server is 9.1, built on open source R ([Microsoft R Open 3.3.3](https://mran.microsoft.com/release-history)).
+
+To get R Server on HDInsight, do the following:
 
 + Sign in to the [Azure portal](https://portal.azure.com/), search for *HDInsight*.
 + Select HDInsight and click **Create**.
-+ In Cluster type, choose **R Server**.
++ In Cluster type, choose **R Server** and continue with the rest of the [installation steps](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started).
 
-Your R script or code can call base R functions, third-party packages compatible with R 3.3.3, and these R Server packages: [RevoScaleR](../r-reference/revoscaler/revoscaler.md), [MicrosoftML](../r-reference/MicrosoftML/MicrosoftML-package.md), [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md). 
+Once the cluster is deployed, you can connect to the edge node and begin development. Your R script or code can call base R functions, third-party packages compatible with R 3.3.3, and these R Server 9.1 packages: [RevoScaleR](../r-reference/revoscaler/revoscaler.md), [MicrosoftML](../r-reference/MicrosoftML/MicrosoftML-package.md), [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md). 
 
 R Server is engineered for [distributed computing](../r/how-to-revoscaler-distributed-computing.md) across multiple nodes, aggregating calculations into a single result. Multi-threaded math libraries and transparent parallelization in Machine Learning Server can handle up to 1000x more data and up to 50x faster speeds than open source R—helping you train more accurate models for better predictions than previously possible.
 

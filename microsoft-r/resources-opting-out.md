@@ -87,11 +87,11 @@ This command takes one parameter, `optIn`, set to either ‘TRUE’ or ‘FALSE�
 
 Please contact Microsoft if you have any questions or concerns.
 
-+ For general privacy question or a question for the Chief Privacy Officer of Microsoft or want to request access to your personal information, please contact us by using our [Web form](http://go.microsoft.com/fwlink/?LinkId=321116).
++ For general privacy question or a question for the Chief Privacy Officer of Microsoft or want to request access to your personal information, please contact us by using our [Web form](https://go.microsoft.com/fwlink/?LinkId=321116).
 
-+ For technical or general support question, please visit [http://support.microsoft.com/](http://support.microsoft.com/) to learn more about Microsoft Support offerings.
++ For technical or general support question, please visit [https://support.microsoft.com/](https://support.microsoft.com/) to learn more about Microsoft Support offerings.
 
-+ If you have a Microsoft account password question, please visit [Microsoft account support](http://go.microsoft.com/FWLink/p/?LinkID=320207).
++ If you have a Microsoft account password question, please visit [Microsoft account support](https://go.microsoft.com/FWLink/p/?LinkID=320207).
 
 + By mail: Microsoft Privacy, Microsoft Corporation, One Microsoft Way, Redmond, Washington 98052 USA
 

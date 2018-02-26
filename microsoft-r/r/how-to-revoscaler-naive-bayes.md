@@ -90,7 +90,7 @@ When we table the results from the Naïve Bayes classifier with the original Kyp
 
 As a more complex example, consider the mortgage default example. For that example, there are ten input files total and we use nine input data files to create the training data set. We then use the model built from those files to make predictions on the final dataset. In this section we will use the same strategy to build a Naïve Bayes classifier on the first nine data sets and assign the outcome variable for the tenth data set.
 
-The mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). With the data downloaded we can create the training data set and test data set as follows (remember to modify the first line to match the location of the mortgage default text data files on your own system):
+The mortgage default data sets are available for download [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). With the data downloaded we can create the training data set and test data set as follows (remember to modify the first line to match the location of the mortgage default text data files on your own system):
 
 	#  A Larger Naïve Bayes Classifier
 	

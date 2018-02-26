@@ -196,7 +196,7 @@ _Table: Default Ports by Version_
 
 ## Enabling DeployR on AWS
 
-You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
+You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 instance](https://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
 
 ### Set the Web Context for DeployR on AWS
 
