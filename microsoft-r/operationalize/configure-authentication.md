@@ -188,7 +188,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 ## Azure Active Directory 
 
-[Azure Active Directory (AAD)](https://www.microsoft.com/en-us/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and Web node have access to the internet.
+[Azure Active Directory (AAD)](https://www.microsoft.com/cloud-platform/azure-active-directory) can be used to securely authenticate  in the cloud when the client application and Web node have access to the internet.
 
 **Step 1: Log in to the Azure portal**
 
@@ -217,7 +217,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
 
 1. For the **Application type**, select the **Web app / API**. 
 
-1. In the **Sign-on URL** box, paste the application URL you copied earlier; or if you expect the R client to be on the same machine as the server, use http://localhost:12800.  
+1. In the **Sign-on URL** box, enter http://localhost:12800.  This is the port that R Client and R Server listen on.
 
 1. Select **Create** to create the new web application.
 
