@@ -25,14 +25,32 @@ ms.prod: "mlserver"
 
 # Machine Learning Server for Linux 9.3:  Virtual Machine on Azure
 
-Machine Learning Server, formerly known as R Server, is the most broadly deployable enterprise-class analytics platform for R and Python available today. This virtual machine (VM) includes the Machine Learning Server version for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). 
+Machine Learning Server, formerly known as R Server, is pre-installed on Azure virtual machines (VM) for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). 
 
-VM images include the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) installed with the product that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
+VM images include the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) from Machine Learning Server that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
 
 > [!Note]
-> If you require an older version, see these links: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
+> If you require a previous version, see these links: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
-## Provision the Machine Learning Server Virtual Machine
+## Provision a Machine Learning Server VM using an ARM template
+
+The easiest approach is to use an ARM template that both installs and configures the server. ARM templates are available on Github, with options for a single-server install or distributed installation that places web nodes and compute nodes on different VMs within the same virtual network.
+
+Data Science VMs include a broad selection of tools and technologies, of which Machine Learning Server is just one.
+
+When you use a template, the server is installed and operationalized for remote connections, web service deployment, logging, and so forth. For more information, see [Operationalize analytics with Machine Learning Server](../what-is-operationalization.md).
+
+1. Go to the Github repo containing the templates: [https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates)
+
+1. Choose your configuration. Click **one-box configuration** to install all packages and features on a single VM, or click **enterprise-configuration** if you need a cluster.
+
+1. Choose the operating system: Windows, Linux, Windows Data Science VM, or Linux Data Science VM.
+
+1. On the readme page for the option you selected, click **Deploy to Azure**.
+
+![Deploy button on the readme page](./media/machine-learning-server-install-azure-vm/gh-readme-page.png)
+
+## Provision a Machine Learning Server VM in the portal
 
 If you are new to using Azure VMs, we recommend that you review [this article](https://azure.microsoft.com/documentation/services/virtual-machines/linux/) for more information about using the portal and configuring a virtual machine.
 
@@ -48,7 +66,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
    A list of virtual machines matching this string appears.
 
-1. Choose the Linux version from the list. 
+1. Choose the operating system from the list. 
 
 1. Accept the terms and get started by clicking **Create**. 
 
