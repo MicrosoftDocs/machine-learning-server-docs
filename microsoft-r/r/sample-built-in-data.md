@@ -53,7 +53,7 @@ RevoScaleR provides functions for retrieving information about sample data. Use 
 
         list.files(rxGetOption("sampleDataDir"))
 
-  The open source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
+  The open-source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
 
 > [!NOTE]
 > If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype the **rxGetOption** function or its parameter, you will get an error instead of the file list.

@@ -46,7 +46,7 @@ You can run ServerSetup.exe from the command line with options to expose or hide
 | Parameter | Description |
 |-----------|-------------|
 | `/full` | Invokes the wizard. |
-| `/quiet` | Hides the wizard, running a silent installation with no interaction or prompts. EULA acceptance is automatic for both the server and all open source distributions of R and Python. |
+| `/quiet` | Hides the wizard, running a silent installation with no interaction or prompts. EULA acceptance is automatic for both the server and all open-source distributions of R and Python. |
 | `/passive` | Equivalent to `/quiet` in this release. |
 
  
@@ -90,7 +90,7 @@ The command line equivalent of a double-click invocation of ServerSetup.exe is `
 
   `serversetup.exe /quiet /uninstall`  
 
-4. Offline install requires .cab files that provide open source distributions and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](machine-learning-server-windows-offline.md).
+4. Offline install requires .cab files that provide open-source distributions and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](machine-learning-server-windows-offline.md).
 
   `rserversetup.exe /offline /mediadir="D:/Public/CABS` 
 

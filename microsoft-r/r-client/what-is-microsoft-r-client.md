@@ -2,7 +2,7 @@
 
 # required metadata
 title: "What is Microsoft R Client? - Machine Learning Server "
-description: "Microsoft R Client is a free data science tool for high performance analytics. With it, you can use any open source R package."
+description: "Microsoft R Client is a free data science tool for high performance analytics. With it, you can use any open-source R package."
 keywords: "R Client, Microsoft R Client, Introduction, Get Started with R Client"
 author: "j-martens"
 ms.author: "jmartens"
@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # About Microsoft R Client
 
-Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open/) so you can use any open source R package to build your analytics. Additionally, R Client includes the [powerful RevoScaleR technology](../r/tutorial-revoscaler-data-import-transform.md) and its proprietary functions to benefit from parallelization and remote computing. 
+Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open/) so you can use any open-source R package to build your analytics. Additionally, R Client includes the [powerful RevoScaleR technology](../r/tutorial-revoscaler-data-import-transform.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
 R Client allows you to work with production data locally using the full set of RevoScaleR functions, but there are some constraints. Data must fit in local memory, and processing is limited to two threads for RevoScaleR functions. To work with larger data sets or offload heavy processing, you can access a remote production instance of [Machine Learning Server](../what-is-machine-learning-server.md) from the command line or push the [compute context](../r/concept-what-is-compute-context.md) to the remote server. [Learn more about its compatibility](compatibility-with-server.md). 
 
@@ -93,7 +93,7 @@ When ready, you can run that R code using R Client or even send those R commands
 
 ### Microsoft R Client 3.4.3
 
-This release of R Client, built on open source R 3.4.3, is at the same functional level as Machine Learning Server 9.3. Download R Client from https://aka.ms/rclient (Windows) or https://aka.ms/rclientlinux (Linux). 
+This release of R Client, built on open-source R 3.4.3, is at the same functional level as Machine Learning Server 9.3. Download R Client from https://aka.ms/rclient (Windows) or https://aka.ms/rclientlinux (Linux). 
 
 R Client includes these enhancements:
 
@@ -102,11 +102,11 @@ R Client includes these enhancements:
 
 ### Microsoft R Client 3.4.1
 
-This release of R Client, built on open source R 3.4.1, is at the same functional level as Machine Learning Server 9.2.1. For more information about features in that release, see [here](../whats-new-in-machine-learning-server.md#921).
+This release of R Client, built on open-source R 3.4.1, is at the same functional level as Machine Learning Server 9.2.1. For more information about features in that release, see [here](../whats-new-in-machine-learning-server.md#921).
 
 ### Microsoft R Client 3.3.3
 
-This release of R Client, built on open source R 3.3.3. Key release features include:
+This release of R Client, built on open-source R 3.3.3. Key release features include:
 
 + Installations on Linux are now possible for R Client
 

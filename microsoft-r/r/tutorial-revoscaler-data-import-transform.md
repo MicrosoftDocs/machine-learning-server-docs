@@ -61,14 +61,14 @@ The command prompt for R is `>`. You can hand-type case-sensitive R commands, or
 
         list.files(rxGetOption("sampleDataDir"))
 
-The open source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the *sampleDataDir* argument. 
+The open-source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the *sampleDataDir* argument. 
 
 > [!NOTE]
 > If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype rxGetOption or sampleDataDir, you will get an error instead of the file list.
 
 ### How to locate the working directory
 
-Both R and RevoScaleR use the *working directory* to store any files that you create. The following open source R command provides the working directory location: `getwd()`.
+Both R and RevoScaleR use the *working directory* to store any files that you create. The following open-source R command provides the working directory location: `getwd()`.
 
 Depending on your environment, you might not have permission to save files to this directory. On Windows, if the output is something like `C:/Program Files/Microsoft/ML Server/R_SERVER/bin/x64`, you won't have write permissions on that older. To change the working directory, run `setwd("C:/Users/TEMP")`. 
 

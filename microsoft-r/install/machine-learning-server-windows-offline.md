@@ -53,7 +53,7 @@ Use a tool or device to transfer the files to the offline server.
 3. Put the CAB files in the setup user's temp folder: **C:\Users\<user-name>\AppData\Local\Temp**. 
 
 > [!Tip]
-> Run `ServerSetup.exe /offline` from the [command line](machine-learning-server-windows-commandline.md) to get links for the .cab files used during intallation.
+> Run `ServerSetup.exe /offline` from the [command line](machine-learning-server-windows-commandline.md) to get links for the .cab files used during installation.
 
 ## Run setup
 

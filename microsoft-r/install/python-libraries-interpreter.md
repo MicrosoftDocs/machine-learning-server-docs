@@ -58,7 +58,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
    ```
 
-If you get an error, try this alternate sytnax:
+If you get an error, try this alternate syntax:
 
     ```
     powershell -ExecutionPolicy Bypass -File C:\path-to-python-for-mls\Install-PyForMLS.ps1

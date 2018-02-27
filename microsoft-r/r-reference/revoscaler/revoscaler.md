@@ -27,7 +27,7 @@ ms.prod: "mlserver"
 
 The **RevoScaleR** library is a collection of portable, scalable, and distributable R functions for importing, transforming, and analyzing data at scale. You can use it for descriptive statistics, generalized linear models, k-means clustering, logistic regression, classification and regression trees, and decision forests. 
 
-Functions run on the **RevoScaleR** interpreter, built on open source R, engineered to leverage the multithreaded and multinode architecture of the host platform.
+Functions run on the **RevoScaleR** interpreter, built on open-source R, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
 | Package details | |
 |--------|-|

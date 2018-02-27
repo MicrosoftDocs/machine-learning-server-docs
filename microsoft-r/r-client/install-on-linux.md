@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Install Microsoft R Client on Linux
 
-Microsoft R Client is a free, data science tool for high-performance analytics that you can install on popular Linux operating systems, including CentOS, Red Hat, and Ubuntu. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful ][Machine Learning Server](../what-is-machine-learning-server.md). 
+Microsoft R Client is a free, data science tool for high-performance analytics that you can install on popular Linux operating systems, including CentOS, Red Hat, and Ubuntu. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open-source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful ][Machine Learning Server](../what-is-machine-learning-server.md). 
 
 R Client allows you to work with production data locally using the full set of RevoScaleR functions, with these constraints: data must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
@@ -188,7 +188,7 @@ Microsoft R Open is required for R execution:
  microsoft-r-open-mro-3.4.1 
 ```
 
-Additional open source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:
+Additional open-source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:
 
 ```
  cairo

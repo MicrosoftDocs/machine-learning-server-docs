@@ -60,7 +60,7 @@ You must update the server Web context or else you will not be able to access to
 
 1. Log into the Azure portal and take note of the **Public IP address**.
 
-   ![Public IP Address in Azure Portal](./media/deployr-admin-install-in-cloud/azure-public-ip.png)
+   ![Public IP Address in Azure portal](./media/deployr-admin-install-in-cloud/azure-public-ip.png)
    
 1. If DeployR was installed on a virtual machine, remote desktop or SSH into that machine.
 

@@ -188,7 +188,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 If you installed Machine Learning Server on Windows Server 2012 R2 or Windows Server 2016, [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization):
 
-1. Open an Adminstrator command prompt.
+1. Open an Administrator command prompt.
 2. Enter the following command to configure the server: `az ml admin bootstrap`
 
   ![CLI screenshot](./media/machine-learning-server-windows-install/cli-onebox.png)
@@ -197,7 +197,7 @@ This command invokes the Administrator Command Line Interface (CLI), installed b
 
 You are prompted for a password. This password is used to protect your configuration settings. Anyone using the CLI to modify a configuration must enter the password before access is granted.
 
-The `bootstrap`command  enables operationalization features on a standalone server. It creates and starts a web node and compute node, and runs a series of diagnostic tests against the configuration to confirm the internal data storage is functionality and that web services can be successfull deployed.
+The `bootstrap`command  enables operationalization features on a standalone server. It creates and starts a web node and compute node, and runs a series of diagnostic tests against the configuration to confirm the internal data storage is functionality and that web services can be successfully deployed.
 
 If you have multiple servers, you can designate each one as either a web node or compute node, and then link them up. For instructions, see [Configure Machine Learning Server (Enterprise)](../operationalize/configure-machine-learning-server-enterprise.md).
 
@@ -215,10 +215,10 @@ An installation of Machine Learning Server includes some or all of the following
 
 | Component | Description |
 |-----------|-------------|
-| Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are under `<install-directory>\bin`. Documentation is under `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
+| Microsoft R Open (MRO) | An open-source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are under `<install-directory>\bin`. Documentation is under `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
 | R proprietary libraries and script engine | Proprietary libraries are co-located with R base libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Windows, the default R installation directory is `C:\Program Files\Microsoft\ML Server\R_SERVER`. <br/><br/>RevoScaleR is engineered for distributed and parallel processing of all multi-threaded functions, utilizing available cores and disk storage of the local machine. RevoScaleR also supports the ability to transfer computations to other RevoScaleR instances on other platforms and computers through compute context instructions. |
 | Python proprietary libraries | Proprietary packages provide modules of class objects and static functions. Python libraries are in the `<install-directory>\lib\site-packages` folder. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. <br/><br/>On Windows, the default installation directory is `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`.  |
-| Anaconda 4.2 with Python 3.5.2 | An open source distribution of Python.|
+| Anaconda 4.2 with Python 3.5.2 | An open-source distribution of Python.|
 | [Admin CLI](../operationalize/configure-admin-cli-launch.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
 | [Pre-trained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image detection. |
 

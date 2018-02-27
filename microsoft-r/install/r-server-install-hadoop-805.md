@@ -50,7 +50,7 @@ We recommend installing R Server on all nodes of the cluster to avoid Hadoop que
 
 Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
 
-1. Sign in to [Azure Portal](https://ms.portal.azure.com).
+1. Sign in to [Azure portal](https://ms.portal.azure.com).
 2. Click **New** in the top left side bar.
 3. In the search box, type the name of one of these vendors: Cloudera, HortonWorks, and MapR. Several of these vendors offer sandbox deployments that make it easier to get started.
 

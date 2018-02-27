@@ -63,7 +63,7 @@ The following steps walk you through a multinode installation using Cloudera Man
 
 Two parcels are required:
 
-- *Microsoft R Open* parcel installs open source R and additional open-source components on the nodes of your Cloudera cluster. This distribution of MRO must be downloaded using the link below. Please do not use MRO from MRAN or the MRO package from another installation of R Server.
+- *Microsoft R Open* parcel installs open-source R and additional open-source components on the nodes of your Cloudera cluster. This distribution of MRO must be downloaded using the link below. Please do not use MRO from MRAN or the MRO package from another installation of R Server.
 - *Microsoft R Server* parcel installs proprietary components on the nodes of your Cloudera cluster.
 
 Install the Cloudera Manager parcels as follows:

@@ -100,7 +100,7 @@ Microsoft .NET Core 2.0, used for operationalization, must be added to Ubuntu:
  dotnet-runtime-2.0.0  
 ```
 
-Additional open source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:
+Additional open-source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:
 
 ```
  cairo

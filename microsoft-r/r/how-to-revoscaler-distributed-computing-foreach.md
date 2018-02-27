@@ -26,7 +26,7 @@ ms.prod: "mlserver"
 # Using foreach and iterators for manual parallel execution
 
 Although RevoScaleR performs parallel execution automatically, you can manage parallel execution yourself using the open-source [foreach package](https://CRAN.R-project.org/package=foreach). This package provides a looping structure for R script. When you need to loop through repeated operations, and you have multiple processors or nodes to work with, you can use **foreach** in your script to execute a forloop in parallel. 
-Developed by Microsoft, foreach is an open source package that is bundled with Machine Learning Server but is also available on the Comprehensive R Archive Network, CRAN.  
+Developed by Microsoft, foreach is an open-source package that is bundled with Machine Learning Server but is also available on the Comprehensive R Archive Network, CRAN.  
 
 > [!Tip]
 > One common approach to parallelization is to see if the iterations
