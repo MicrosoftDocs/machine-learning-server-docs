@@ -48,7 +48,7 @@ When you use a template, the server is installed and operationalized for remote 
 
 1. On the readme page for the option you selected, click **Deploy to Azure**.
 
-![Deploy button on the readme page](./media/machine-learning-server-install-azure-vm/gh-readme-page.png)
+   ![Deploy button on the readme page](./media/machine-learning-server-install-azure-vm/gh-readme-page-2.png)
 
 ## Provision a Machine Learning Server VM in the portal
 
