@@ -29,11 +29,11 @@ The following issues are known in the 9.3 release.
 
 <a name="revo-rxserializemodel"></a>
 
-## Issues in 9.3
+## Known issues in 9.3
 
 ### 1. Upgrade in-place from 9.2.1 (Python only) fails if R is not present
 
-
+When upgrading to 9.3 from a previous installation that consisted solely of the Python feature, upgrade fails due to an expectation that R Open is present on the system. 
 
 ### 2. ImportError for Matplotlib.pyplot 
 
