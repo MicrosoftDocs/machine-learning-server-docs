@@ -29,7 +29,7 @@ ms.technology:
 
 This section contains the R reference documentation for proprietary packages from Microsoft used for data science and machine learning on premises and at scale.  
 
-You can use these libraries and functions in combination with other open source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that provides the interpreters.
+You can use these libraries and functions in combination with other open-source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that provides the interpreters.
 
 | Library details | |
 |--------|-|

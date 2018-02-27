@@ -38,7 +38,7 @@ On an internet-connected computer, download all of the following files.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_11452137.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_11452137.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
 |Pre-trained Models |[MLM_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
 |Microsoft R Open 3.4.3.0|[SRO_3.4.3_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
 |Microsoft Python Open |[SPO_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
@@ -53,7 +53,7 @@ Use a tool or device to transfer the files to the offline server.
 3. Put the CAB files in the setup user's temp folder: **C:\Users\<user-name>\AppData\Local\Temp**. 
 
 > [!Tip]
-> Run `ServerSetup.exe /offline` from the [command line](machine-learning-server-windows-commandline.md) to get links for the .cab files used during intallation.
+> Run `ServerSetup.exe /offline` from the [command line](machine-learning-server-windows-commandline.md) to get links for the .cab files used during installation.
 
 ## Run setup
 

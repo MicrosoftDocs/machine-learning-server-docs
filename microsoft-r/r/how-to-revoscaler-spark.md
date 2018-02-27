@@ -66,7 +66,7 @@ Sample data is required if you intend to follow the steps. This walkthrough star
 
 Optionally, you can graduate to a second series of tasks using a larger dataset. The *Airline 2012 On-Time Data Set* consists of 12 comma-separated files containing information on flight arrival and departure details for all commercial flights within the USA, for the year 2012. This is a big data set with over six million observations.
 
-To download the larger dataset, go to [https://packages.revolutionanalytics.com/datasets/](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+To download the larger dataset, go to [https://packages.revolutionanalytics.com/datasets/](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 ## 2 - Start Revo64
 
@@ -452,7 +452,7 @@ We will now move to examples using a much larger version of the airline data set
 
 *The data consists of flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. This is a large dataset: there are nearly 120 million records in total, and takes up 1.6 gigabytes of space compressed and 12 gigabytes when uncompressed.*
 
-The airline on-time data set for 2012, consisting of 12 separate CSV files, is available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We assume you have uploaded them to the /tmp directory on your edge node or a name node (although any directory visible as a native file system directory from the name node will work.)
+The airline on-time data set for 2012, consisting of 12 separate CSV files, is available [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We assume you have uploaded them to the /tmp directory on your edge node or a name node (although any directory visible as a native file system directory from the name node will work.)
 
 As before, our first step is to copy the data into HDFS. We specify the location of your Hadoop-stored data for the *airDataDir* variable:
 

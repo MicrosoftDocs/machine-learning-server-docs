@@ -84,7 +84,7 @@ With Microsoft R Server installed, you can configure your favorite R integrated 
 
 #### Open Ports needed to Use RStudio Server
 
-RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you must go to the Azure Portal and elect the proper Network Security Group. Select the All Settings option and choose Inbound security rules. Add a new rule for RStudio. Name the rule, choose Any for the Protocol, and add port 8787 to the destination port range. Click OK to save your changes. You should now be able to access RStudio using a browser.
+RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you must go to the Azure portal and elect the proper Network Security Group. Select the All Settings option and choose Inbound security rules. Add a new rule for RStudio. Name the rule, choose Any for the Protocol, and add port 8787 to the destination port range. Click OK to save your changes. You should now be able to access RStudio using a browser.
 
 #### Assign a Fully Qualified Domain Name to the VM for Accessing RStudio Server
 
@@ -123,7 +123,7 @@ To configure the DeployR instance:
 
 1. [Define the DeployR Web context](../deployr/deployr-admin-install-in-cloud.md#enabling-deployr-on-azure).
 
-1. In the [Azure Portal](https://ms.portal.azure.com/), [open the appropriate ports on the VM](../deployr/deployr-admin-install-in-cloud.md#configuring-azure-endpoints).
+1. In the [Azure portal](https://ms.portal.azure.com/), [open the appropriate ports on the VM](../deployr/deployr-admin-install-in-cloud.md#configuring-azure-endpoints).
 
 ## Access Data in an Azure Storage Account
 

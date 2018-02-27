@@ -43,7 +43,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 1. Log in to your local Windows machine.
 
-1. Download the installation shell script from http://aka.ms/mls93-py (or use http://aka.ms/mls-py for the 9.2. release). The script installs Anaconda 4.2.0, which includes Python 3.5.2, along with all packages listed previously.
+1. Download the installation shell script from https://aka.ms/mls93-py (or use https://aka.ms/mls-py for the 9.2. release). The script installs Anaconda 4.2.0, which includes Python 3.5.2, along with all packages listed previously.
 
 1. Launch a new PowerShell window with elevated administrator permissions ('as administrator').
 
@@ -58,7 +58,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
    ```
 
-If you get an error, try this alternate sytnax:
+If you get an error, try this alternate syntax:
 
     ```
     powershell -ExecutionPolicy Bypass -File C:\path-to-python-for-mls\Install-PyForMLS.ps1

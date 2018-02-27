@@ -29,7 +29,7 @@ ms.custom: ""
 
 The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for importing, transforming, and analyzing data at scale. You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests. 
 
-Functions run on the **revoscalepy** interpreter, built on open source Python, engineered to leverage the multithreaded and multinode architecture of the host platform.
+Functions run on the **revoscalepy** interpreter, built on open-source Python, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
 | Package details | |
 |--------|-|

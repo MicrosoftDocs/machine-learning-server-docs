@@ -39,7 +39,7 @@ If Setup fails to install all of the components, you can run a VB Script that fo
 1. Run a script that produces a list of all installed products and saves it in a log.
 2. Review log output for Microsoft Machine Learning Server, Microsoft R Server, or Microsoft R Client.
 3. For either product, find the value for `LocalPackage`. For example: `C:\windows\Installer\222d19.msi`
-4. Run the package at an elevated command prompt with this sytnax: `Msiexec /x {LocalPackage.msi} /L*v uninstall.log`, where local package is the value from the previous step.
+4. Run the package at an elevated command prompt with this syntax: `Msiexec /x {LocalPackage.msi} /L*v uninstall.log`, where local package is the value from the previous step.
 5. Review the uninstall log to confirm the software was removed. You can repeat steps 1 and 2 for further verification.
 
 If the script contains no evidence of the program, but the program folder still exists, you can safely delete it. Program files are located at `\Program Files\Microsoft`.

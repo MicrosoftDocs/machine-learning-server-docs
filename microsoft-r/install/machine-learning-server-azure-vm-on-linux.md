@@ -4,8 +4,8 @@
 title: "How to use Machine Learning Server on Linux VM in Azure (Virtual Machine) - Machine Learning Server "
 description: "Learn how to work with Machine Learning Server / R Server on Linux by using a virtual machine in Azure."
 keywords: "Machine Learning Server, R Server, linux, virtual machine"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
 ms.topic: "article"
@@ -23,24 +23,40 @@ ms.prod: "mlserver"
 
 ---
 
-# Machine Learning Server for Linux 9.2:  Virtual Machine on Azure
+# Machine Learning Server for Linux 9.3:  Virtual Machine on Azure
 
->Looking for an older or newer version? The newest version, 9.3, becomes available on Azure virtual machines several weeks after the on premises version is made generally available. For older versions, see these links: [R Server 9.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
+Machine Learning Server, formerly known as R Server, is pre-installed on Azure virtual machines (VM) for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). 
 
-Machine Learning Server, formerly known as R Server, is the most broadly deployable enterprise-class analytics platform for R and Python available today. This virtual machine (VM) includes the Machine Learning Server version 9.2.1 for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). 
+VM images include the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) from Machine Learning Server that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
 
-This VM also includes the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) installed with the product that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
+> [!Note]
+> If you require a previous version, see these links: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
->[!Tip]
->We recommend that you use the new version of the Azure portal, and the Azure Marketplace. Some images are not available when browsing the Azure Gallery on the classic portal.
+## Provision a Machine Learning Server VM using an ARM template
 
-## Provision the Machine Learning Server Virtual Machine
+The easiest approach is to use an ARM template that both installs and configures the server. ARM templates are available on Github, with options for a single-server install or distributed installation that places web nodes and compute nodes on different VMs within the same virtual network.
 
-If you are new to using Azure VMs, we recommend that you review [this article](https://azure.microsoft.com/en-us/documentation/services/virtual-machines/linux/) for more information about using the portal and configuring a virtual machine.
+Data Science VMs include a broad selection of tools and technologies, of which Machine Learning Server is just one.
+
+When you use a template, the server is installed and operationalized for remote connections, web service deployment, logging, and so forth. For more information, see [Operationalize analytics with Machine Learning Server](../what-is-operationalization.md).
+
+1. Go to the Github repo containing the templates: [https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates)
+
+1. Choose your configuration. Click **one-box configuration** to install all packages and features on a single VM, or click **enterprise-configuration** if you need a cluster.
+
+1. Choose the operating system: Windows, Linux, Windows Data Science VM, or Linux Data Science VM.
+
+1. On the readme page for the option you selected, click **Deploy to Azure**.
+
+   ![Deploy button on the readme page](./media/machine-learning-server-install-azure-vm/gh-readme-page-2.png)
+
+## Provision a Machine Learning Server VM in the portal
+
+If you are new to using Azure VMs, we recommend that you review [this article](https://azure.microsoft.com/documentation/services/virtual-machines/linux/) for more information about using the portal and configuring a virtual machine.
 
 **To create the Machine Learning Server on Linux VM:**
 
-1. Go to the Azure Portal: http://portal.azure.com.
+1. Go to the Azure portal: http://portal.azure.com.
 
 1. Click **Virtual Machines** in the left menu.
 
@@ -50,13 +66,13 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
    A list of virtual machines matching this string appears.
 
-1. Choose the Linux version from the list. 
+1. Choose the operating system from the list. 
 
 1. Accept the terms and get started by clicking **Create**. 
 
 1. Use the onscreen prompts and fields to configure your Machine Learning Server VM. 
    >- You need an Azure subscription to create the VM.
-   >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/en-us/documentation/services/virtual-machines/linux/)
+   >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/documentation/services/virtual-machines/linux/)
 
 1. After the VM is deployed and running, [connect](#connect) to the VM to begin interacting with Machine Learning Server. 
 
@@ -92,7 +108,7 @@ With Machine Learning Server installed, you can configure your favorite R integr
 
 #### Open Ports needed to Use RStudio Server
 
-RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you must go to the Azure Portal and elect the proper Network Security Group. Select the **All Settings** option and choose **Inbound security rules**. Add a new rule for RStudio. Name the rule, choose **Any** for the Protocol, and add port 8787 to the destination port range. Click **OK** to save your changes. You should now be able to access RStudio using a browser.
+RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you must go to the Azure portal and elect the proper Network Security Group. Select the **All Settings** option and choose **Inbound security rules**. Add a new rule for RStudio. Name the rule, choose **Any** for the Protocol, and add port 8787 to the destination port range. Click **OK** to save your changes. You should now be able to access RStudio using a browser.
 
 #### Assign a Fully Qualified Domain Name to the VM for Accessing RStudio Server
 

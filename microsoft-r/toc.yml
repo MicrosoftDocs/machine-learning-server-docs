@@ -3,7 +3,7 @@
 - name: Overview
   expanded: true
   items:
-  - name: Welcome to Machine Learning Server
+  - name: About Machine Learning Server
     href: what-is-machine-learning-server.md
   - name: What's new
     href: whats-new-in-machine-learning-server.md
@@ -100,11 +100,8 @@
     items:
     - name: Azure HDInsight
       href: install/machine-learning-server-on-azure-hdinsight.md
-    - name: Azure Linux VM
+    - name: Azure VMs
       href: install/machine-learning-server-azure-vm-on-linux.md
-    - name: Azure Windows VM
-      href: https://docs.microsoft.com/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure
-      maintainContext: true
     - name: Data Science VM
       href: install/r-server-vm-data-science.md
   - name: Client-side

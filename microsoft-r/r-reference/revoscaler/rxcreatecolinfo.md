@@ -88,7 +88,7 @@ A `colInfo` list that can be used as input for [rxImport](rxImport.md) and in da
 [RxTextData](RxTextData.md) and [RxSqlServerData](RxSqlServerData.md).
  
  ##Author(s)
- Microsoft Corporation [`Microsoft Technical Support`](http://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

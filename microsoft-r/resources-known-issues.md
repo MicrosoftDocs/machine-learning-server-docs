@@ -29,19 +29,13 @@ The following issues are known in the 9.3 release.
 
 <a name="revo-rxserializemodel"></a>
 
-## 1. Model deserialization on older remote servers
+## Known issues in 9.3
 
-Applies to: [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md), referencing "Error in memDecompress(data, type = decompress)"
+### 1. Upgrade in-place from 9.2.1 (Python only) fails if R is not present
 
-If you customarily switch the compute context among multiple machines, you might have trouble deserializing a model if the RevoScaleR library is out of sync. Specifically, if you serialized the model on a newer client, and then attempt deserialization on a remote server having older copies of those libraries, you might encounter this error: 
+When upgrading to 9.3 from a previous installation that consisted solely of the Python feature, upgrade fails due to an expectation that R Open is present on the system. 
 
-```r
-"Error in memDecompress(data, type = decompress) :
-  internal error -3 in memDecompress(2)"
-```
-To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
-
-## 2. ImportError for Matplotlib.pyplot 
+### 2. ImportError for Matplotlib.pyplot 
 
 This is a [known Anaconda issue](https://github.com/ContinuumIO/anaconda-issues/issues/1068) not specific to Machine Learning Server, but Matplotlib.pyplot fails to load on some systems. Since using Matplotlib.pyplot with revoscalepy is a common scenario, we recommend the following workaround if you are blocked by an import error. The workaround is to assign a non-interactive backend to matplotlib prior to loading pyplot:
 
@@ -52,6 +46,18 @@ import matplotlib.pyplot as plt
 ```
 
 For more information, search for "Agg backend" in the [Matplotlib FAQ](https://matplotlib.org/faq/howto_faq.html).
+
+### 3. Model deserialization on older remote servers
+
+Applies to: [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md), referencing "Error in memDecompress(data, type = decompress)"
+
+If you customarily switch the compute context among multiple machines, you might have trouble deserializing a model if the RevoScaleR library is out of sync. Specifically, if you serialized the model on a newer client, and then attempt deserialization on a remote server having older copies of those libraries, you might encounter this error: 
+
+```r
+"Error in memDecompress(data, type = decompress) :
+  internal error -3 in memDecompress(2)"
+```
+To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
 
 <a name="Prev"></a>
 

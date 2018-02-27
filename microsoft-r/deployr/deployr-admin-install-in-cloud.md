@@ -60,7 +60,7 @@ You must update the server Web context or else you will not be able to access to
 
 1. Log into the Azure portal and take note of the **Public IP address**.
 
-   ![Public IP Address in Azure Portal](./media/deployr-admin-install-in-cloud/azure-public-ip.png)
+   ![Public IP Address in Azure portal](./media/deployr-admin-install-in-cloud/azure-public-ip.png)
    
 1. If DeployR was installed on a virtual machine, remote desktop or SSH into that machine.
 
@@ -196,7 +196,7 @@ _Table: Default Ports by Version_
 
 ## Enabling DeployR on AWS
 
-You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 instance](http://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
+You can set up DeployR on **Amazon Web Services** (AWS).  For each [Amazon EC2 instance](https://docs.aws.amazon.com/general/latest/gr/rande.html), be sure to:
 
 ### Set the Web Context for DeployR on AWS
 

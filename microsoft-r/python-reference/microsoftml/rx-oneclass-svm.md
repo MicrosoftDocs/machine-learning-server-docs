@@ -305,7 +305,7 @@ This algorithm is single-threaded and will always attempt to load the entire dat
 
 [Microsoft Azure Machine Learning Studio: One-Class Support Vector Machine](https://msdn.microsoft.com/library/azure/dn913103.aspx)
 
-[Estimating the Support of a High-Dimensional Distribution](http://research.microsoft.com/pubs/69731/tr-99-87.pdf)
+[Estimating the Support of a High-Dimensional Distribution](https://research.microsoft.com/pubs/69731/tr-99-87.pdf)
 
 [New Support Vector Algorithms](http://www.stat.purdue.edu/~yuzhu/stat598m3/Papers/NewSVM.pdf)
 

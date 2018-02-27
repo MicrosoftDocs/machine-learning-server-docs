@@ -58,11 +58,11 @@ To follow the examples in this guide, you need the following comma-delimited tex
 	ccFraud.csv
 	ccFraudScore.csv
 
-These data files each have 10 million rows, and should be put in tables called *ccFraud10* and *ccFraudScore10*, respectively. These data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We recommend that you create a RevoTestDB database to hold the data table.
+These data files each have 10 million rows, and should be put in tables called *ccFraud10* and *ccFraudScore10*, respectively. These data files are available [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We recommend that you create a RevoTestDB database to hold the data table.
 
 ### Loading Your Data into the Teradata Database
 
-You can use the ‘fastload’ Teradata command to load the data sets into your data base. You can find sample scripts for doing this in Appendix I, and [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409) with the sample data files. You need to edit the sample scripts to provide appropriate logon information for your site. Check with your system administrator to see of the data has already been loaded into your database. There is an example later in this guide of loading data into your Teradata data base from R using the *rxDataStep* function.
+You can use the ‘fastload’ Teradata command to load the data sets into your data base. You can find sample scripts for doing this in Appendix I, and [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409) with the sample data files. You need to edit the sample scripts to provide appropriate logon information for your site. Check with your system administrator to see of the data has already been loaded into your database. There is an example later in this guide of loading data into your Teradata data base from R using the *rxDataStep* function.
 
 ## Using a Teradata Data Source and ComputeContext
 
@@ -1106,7 +1106,7 @@ Memory limits that have been changed are in effect immediately, and no restart o
 
 ### Appendix I: Scripts for Loading Data into Teradata
 
-Modify the following script to include your Log In information and data base name, then use the ‘fastload’ Teradata command to load the ccFraud.csv data. (Copies of both scripts in this appendix can be found [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).)
+Modify the following script to include your Log In information and data base name, then use the ‘fastload’ Teradata command to load the ccFraud.csv data. (Copies of both scripts in this appendix can be found [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).)
 
 	sessions 2;
 	errlimit 25;

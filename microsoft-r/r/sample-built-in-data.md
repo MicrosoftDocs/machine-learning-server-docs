@@ -53,7 +53,7 @@ RevoScaleR provides functions for retrieving information about sample data. Use 
 
         list.files(rxGetOption("sampleDataDir"))
 
-  The open source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
+  The open-source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
 
 > [!NOTE]
 > If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype the **rxGetOption** function or its parameter, you will get an error instead of the file list.
@@ -93,7 +93,7 @@ Sample data is provided in multiple formats so that you can step through various
 + CSV files are used to showcase multi-file import operations.
 + Several other data formats are used for platform-specific lessons.
 
-Most of the built-in data sets are small enough to fit in-memory. Larger data sets containing the full airline, census, and mortgage default data sets are available for download [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). 
+Most of the built-in data sets are small enough to fit in-memory. Larger data sets containing the full airline, census, and mortgage default data sets are available for download [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). 
 
 <a name="demo-sql-data"></a>
 

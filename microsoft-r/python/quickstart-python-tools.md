@@ -21,9 +21,9 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Link Python tools and IDES to the Python interpreter installed with Machine Leraning Server
+# Quickstart: Link Python tools and IDES to the Python interpreter installed with Machine Learning Server
 
-**Applies to: Microsoft Learning Server 9.x**
+**Applies to: Machine Learning Server 9.x**
 
 Machine Learning Server installs a local, folder-only install of Anaconda to avoid interfering with other Python distributions on your system. As such, packages providing the Python modules in Machine Learning Server (revoscalepy, microsoftml, azureml-model-management-sdk) are not available system-wide. In this quickstart, learn how to load the Python interpreter installed with Machine Learning Server in your Python IDE of choice.
 

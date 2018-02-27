@@ -166,7 +166,7 @@ Microsoft .NET Core 2.0, used for operationalization, must be added to Ubuntu:
 
 ```
 
-Additional open source packages could be required. The potential list of packages varies for each computer. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.
+Additional open-source packages could be required. The potential list of packages varies for each computer. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.
 
 ## Next steps
 

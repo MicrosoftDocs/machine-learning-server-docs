@@ -29,7 +29,7 @@ This example builds on what you learned in an [earlier tutorial](tutorial-revosc
 
 ## Download the census dataset
 
-The data set used in this tutorial is *CensusUS5Pct2000.xdf*. You can download the .xdf file or zipped files [from this web site](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+The data set used in this tutorial is *CensusUS5Pct2000.xdf*. You can download the .xdf file or zipped files [from this web site](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 When downloading these files, put them in a directory where you can easily access them. For example, create a directory "C:\MRS\BigData" and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
 
