@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "jhubbard" 
 ms.date: "09/13/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -265,7 +265,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##References
  
-[`Scaling Up Stochastic Dual Coordinate Ascent`](http://research.microsoft.com/en-us/um/people/mbilenko/papers/15-sasdca.pdf)
+[`Scaling Up Stochastic Dual Coordinate Ascent`](https://research.microsoft.com/en-us/um/people/mbilenko/papers/15-sasdca.pdf)
 
 
 [`Stochastic Dual Coordinate Ascent Methods for Regularized Loss Minimization`](http://www.jmlr.org/papers/volume14/shalev-shwartz13a/shalev-shwartz13a.pdf)

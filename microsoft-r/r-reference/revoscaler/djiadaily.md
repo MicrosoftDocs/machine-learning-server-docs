@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "DJIAdaily function (RevoScaleR) " 
+title: "DJIAdaily data (revoAnalytics) | Microsoft Docs" 
 description: " Daily data for the Dow Jones Industrial Average. " 
-keywords: "(RevoScaleR), DJIAdaily, DJIAdaily.xdf, datasets" 
+keywords: "(revoAnalytics), DJIAdaily, DJIAdaily.xdf, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -104,8 +104,8 @@ the Dow Jones Industrial Average.
 http://ichart.finance.yahoo.com/table.csv?s=^DJI
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##Examples

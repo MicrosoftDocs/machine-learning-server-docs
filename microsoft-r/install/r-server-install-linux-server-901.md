@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "12/07/2016"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -318,8 +318,6 @@ If you have installed Microsoft R Server and then install base R, again there sh
 ## See Also
 
 [Install R Server 8.0.5 for Linux](r-server-install-linux-server-805.md)
-
-[Install R Server 8.0 for Linux](r-server-install-linux-server-800.md)
 
 [Install R on Hadoop overview](r-server-install-hadoop.md)
 

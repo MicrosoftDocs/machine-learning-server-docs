@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -55,7 +55,7 @@ The results are also printed to the screen.
 
 ### Running the Diagnostic Check
 
-The easiest way to run diagnostics is to launch it from the **Diagnostics** tab on the DeployR landing page.  After installing, you can log into the DeployR landing page at `http://<DEPLOYR_SERVER_IP>:<PORT>/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you do not have a username or password, please contact your administrator.
+The easiest way to run diagnostics is to launch it from the **Diagnostics** tab on the DeployR landing page.  After installing, you can log into the DeployR landing page at `https://<DEPLOYR_SERVER_IP>:<PORT>/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you do not have a username or password, please contact your administrator.
 
 However, if you cannot reach the landing page, the `admin` can log into the server and manually run it using the following commands:
 
@@ -343,7 +343,7 @@ If this doesn't resolve the issue and you have Internet Explorer 11 on Windows, 
 <a name="landing-page-blocked-in-i-e-11"></a>
 ### Landing Page Blocked in Internet Explorer 11 (Windows Only)
 
-If you are attempting to access the DeployR landing page using `http://localhost:<PORT>/deployr/landing` in Internet Explorer (I.E.) 11 and the [diagnostic tests](#diagnostic-testing) have turned up nothing, you may find that the landing page is blocked. This may be due to some default settings in I.E. 11.
+If you are attempting to access the DeployR landing page using `https://localhost:<PORT>/deployr/landing` in Internet Explorer (I.E.) 11 and the [diagnostic tests](#diagnostic-testing) have turned up nothing, you may find that the landing page is blocked. This may be due to some default settings in I.E. 11.
 
 **To solve this issue:**
 

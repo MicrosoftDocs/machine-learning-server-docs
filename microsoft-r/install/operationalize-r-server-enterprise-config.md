@@ -7,9 +7,9 @@ keywords: "setup r server for deployment; install r server for deploying"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -75,12 +73,12 @@ To replace an older version, you can uninstall the older distribution before ins
    + On Windows: follow these instructions [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
-     >1. Manually install .NET Core 1.1.
+     >1. Manually install .NET Core 2.0.
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks for any 9.0 configuration files present under the `current` folder mentioned previously.
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. The utility checks for any 9.0 configuration files present under the `current` folder mentioned previously.
 
 1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
@@ -107,11 +105,11 @@ To replace an older version, you can uninstall the older distribution before ins
    + On Windows: follow these instructions [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
 
      >[!IMPORTANT]
-     >For SQL Server Machine Learning Services, manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
+     >For SQL Server Machine Learning Services, manually install .NET Core 2.0 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder mentioned previously.
 
 1. From the main menu, choose the option to **Configure server** (or in previously releases, Configure R Server for Operationalization).
 
@@ -165,7 +163,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
    Follow these instructions: [R Server installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
    
    >[!IMPORTANT]
-   >For SQL Server Machine Learning Services, you must manually install .NET Core 1.1 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
+   >For SQL Server Machine Learning Services, you must manually install .NET Core 2.0 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
    <br>
    **On Linux**
@@ -180,11 +178,11 @@ In an enterprise configuration, you can set up one or more compute nodes.
 
    >**Note:** If there are issues with starting the compute node, see [here](../operationalize/configure-run-diagnostics.md).
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges. 
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. 
 
     >[!NOTE]
     >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next two steps. For R Server 9.1 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command-line switches for this script, [here](../operationalize/configure-admin-cli-launch.md#switch).
     
 1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -215,7 +213,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
    + On Windows: follow these instructions [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
-     >1. Manually install .NET Core 1.1.
+     >1. Manually install .NET Core 2.0.
      >1. Add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder (for example, `C:\Program Files\Microsoft SQL Server\140`).
 
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
@@ -266,11 +264,11 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 
    1. Repeat these steps on each web node to declare each compute node.
 
-1. [Launch the administration utility](../operationalize/configure-use-admin-utility.md#launch) with administrator privileges:
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges:
 
     >[!NOTE]
     >You can bypass the interactive configuration steps of the node using the argument `-silentwebnodeinstall` and by defining a password for [the local 'admin' account](../deployr/../operationalize/configure-authentication.md#local) when you launch the administration utility. If you choose this method, you can skip the next three steps. For R Server 9.1 on Windows, for example, the syntax might be: 
-    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command-line switches for this script, [here](../operationalize/configure-use-admin-utility.md#switch).
+    `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentwebnodeinstall my-password`.  Learn about all command-line switches for this script, [here](../operationalize/configure-admin-cli-launch.md#switch).
 
    1. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
@@ -317,7 +315,7 @@ Keep in mind that web nodes are stateless. Therefore, session persistence ("stic
 
 ### 7. Post configuration steps
 
-1. [Update service ports](../operationalize/configure-use-admin-utility.md#ports), if needed.
+1. [Update service ports](../operationalize/configure-admin-cli-ports.md), if needed.
 
 1. [Run diagnostic tests](../operationalize/configure-run-diagnostics.md).
 

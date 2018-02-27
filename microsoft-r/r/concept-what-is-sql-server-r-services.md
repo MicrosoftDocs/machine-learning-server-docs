@@ -7,9 +7,9 @@ keywords: "SQL Server R Services"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "jhubbard"
-ms.date: "12/66/2016"
+ms.date: "12/06/2016"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,15 +18,14 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # Introducing Machine Learning with SQL Server
 
-SQL Server provides a platform for developing intelligent applications that uncover new insights. You can use the rich and powerful R language and the many open source packages to create models and generate predictions using your SQL Server data. 
+SQL Server provides a platform for developing intelligent applications that uncover new insights. You can use the rich and powerful R language and the many open-source packages to create models and generate predictions using your SQL Server data. 
 
 In SQL Server 2016, Microsoft introduced SQL Server R Services, a feature that supports enterprise-scale data science by integrating the R language with SQL Server database engine.
 

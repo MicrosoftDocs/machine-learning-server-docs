@@ -5,10 +5,10 @@ description: "How to install Machine Learning Server for Windows with no interne
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "12/05/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -17,16 +17,18 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # Offline installation for Machine Learning Server for Windows
 
-By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.2.1 for Windows. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
+**Applies to:  Machine Learning Server 9.2.1 | 9.3**
 
-Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server 9.2.1 on Windows](machine-learning-server-windows-install.md).
+By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server for Windows. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
+
+Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md).
 
 ## Downloads
 
@@ -36,22 +38,22 @@ On an internet-connected computer, download all of the following files.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_11452137.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
-|Pre-trained Models |[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
-|Microsoft R Open 3.4.1.0|[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
-|Microsoft Python Open |[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
-|Microsoft Python Server |[SPS_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_11452137.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
+|Pre-trained Models |[MLM_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
+|Microsoft R Open 3.4.3.0|[SRO_3.4.3_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
+|Microsoft Python Open |[SPO_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
+|Microsoft Python Server |[SPS_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
 
 ## Transfer and place files
 
 Use a tool or device to transfer the files to the offline server. 
 
 1. Put the unzipped **en_machine_learning_server_for_windows_x64_11452137.zip** file in a convenient folder.
-2. Right-click **Extract All** to unpack the file. You should see a folder named **MLS921Win**. This folder contains **ServerSetup.exe**.
+2. Right-click **Extract All** to unpack the file. You should see a folder named **MLS93Win**. This folder contains **ServerSetup.exe**.
 3. Put the CAB files in the setup user's temp folder: **C:\Users\<user-name>\AppData\Local\Temp**. 
 
 > [!Tip]
-> Run `ServerSetup.exe /offline` from the [command line](machine-learning-server-windows-commandline.md) to get links for the .cab files used during intallation.
+> Run `ServerSetup.exe /offline` from the [command line](machine-learning-server-windows-commandline.md) to get links for the .cab files used during installation.
 
 ## Run setup
 
@@ -105,7 +107,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
-    File name: /opt/microsoft/mlserver/9.2.1/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    File name: /opt/microsoft/mlserver/9.3.0/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
     Number of valid observations: 600000.0
     
             Name       Mean     StdDev   Min     Max  ValidObs  MissingObs

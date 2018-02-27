@@ -6,10 +6,10 @@ description: "Machine Learning Server with Apache Hadoop MapReduce, RevoScaleR f
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/13/2017"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,18 +18,19 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # How to use RevoScaleR with Hadoop
 
-## Overview
-
-This guide is an introduction to using the RevoScaleR functions in a **RevoScaleR** package in a Hadoop distributed computing environment. RevoScaleR functions offer scalable and extremely high-performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ScaleR’s big data capabilities with MapReduce.
+This guide is an introduction to using the [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md) in an Apache Hadoop distributed computing environment. RevoScaleR functions offer scalable and extremely high-performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ScaleR’s big data capabilities with MapReduce.
 
 While this guide is not a Hadoop tutorial, no prior experience in Hadoop is required to complete the tutorial. If you can connect to your Hadoop cluster, this guide walks you through the rest.
+
+> [!Note]
+> The RxHadoopMR compute context for Hadoop MapReduce is deprecated. We recommend using [RxSpark](../r-reference/revoscaler/rxspark.md) as a replacement. For guidance, see [How to use RevoScaleR in a Spark compute context](how-to-revoscaler-spark.md).
 
 **Data Sources and Functions Supported in Hadoop**
 
@@ -423,7 +424,7 @@ We will now move to examples using a more recent version of the airline data set
 
 > *The data consists of flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. This is a large dataset: there are nearly 120 million records in total, and takes up 1.6 gigabytes of space compressed and 12 gigabytes when uncompressed.*
 
-The airline on-time data set for 2012, consisting of 12 separate CSV files, is available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We assume you have uploaded them to the /tmp directory on your name node (although any directory visible as a native file system directory from the name node works.)
+The airline on-time data set for 2012, consisting of 12 separate CSV files, is available [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We assume you have uploaded them to the /tmp directory on your name node (although any directory visible as a native file system directory from the name node works.)
 
 As before, our first step is to copy the data into HDFS. We specify the location of your Hadoop-stored data for the *airDataDir* variable:
 

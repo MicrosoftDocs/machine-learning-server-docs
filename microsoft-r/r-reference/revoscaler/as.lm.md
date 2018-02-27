@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "as.lm function (RevoScaleR) " 
+title: "as.lm function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing linear model results to an lm object. " 
-keywords: "(RevoScaleR), as.lm, as.lm.rxLinMod, category, models" 
+keywords: "(revoAnalytics), as.lm, as.lm.rxLinMod, category, models" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -70,8 +70,8 @@ for use with the **pmml** package.  **RevoScaleR** model objects that contain
 an object of class lm.
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

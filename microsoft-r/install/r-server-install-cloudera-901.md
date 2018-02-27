@@ -8,7 +8,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "04/08/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -17,7 +17,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -63,7 +63,7 @@ The following steps walk you through a multinode installation using Cloudera Man
 
 Two parcels are required:
 
-- *Microsoft R Open* parcel installs open source R and additional open-source components on the nodes of your Cloudera cluster. This distribution of MRO must be downloaded using the link below. Please do not use MRO from MRAN or the MRO package from another installation of R Server.
+- *Microsoft R Open* parcel installs open-source R and additional open-source components on the nodes of your Cloudera cluster. This distribution of MRO must be downloaded using the link below. Please do not use MRO from MRAN or the MRO package from another installation of R Server.
 - *Microsoft R Server* parcel installs proprietary components on the nodes of your Cloudera cluster.
 
 Install the Cloudera Manager parcels as follows:
@@ -119,8 +119,6 @@ Install the Cloudera Manager parcels as follows:
 [Install R on Hadoop overview](r-server-install-hadoop.md)
 
 [Install R Server 8.0.5 on Hadoop](r-server-install-hadoop-805.md)
-
-[Install R Server 8.0 on Hadoop](r-server-install-hadoop-800.md)
 
 [Install Microsoft R Server on Linux](r-server-install-linux-server.md)
 

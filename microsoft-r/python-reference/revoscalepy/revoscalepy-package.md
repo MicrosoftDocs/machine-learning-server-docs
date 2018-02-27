@@ -5,11 +5,11 @@ title: "revoscalepy package for Python (Machine Learning Server) "
 description: "Function help reference for the revoscalepy Python package of Machine Learning Server." 
 keywords: "" 
 author: "HeidiSteen" 
-manager: "jhubbard" 
+manager: "cgronlun" 
 ms.author: "heidist"
-ms.date: "10/09/2017" 
+ms.date: "02/16/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -20,7 +20,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 ---
@@ -29,13 +29,14 @@ ms.custom: ""
 
 The **revoscalepy** module is a collection of portable, scalable and distributable Python functions used for importing, transforming, and analyzing data at scale. You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests. 
 
-Functions run on the **revoscalepy** interpreter, built on open source Python, engineered to leverage the multithreaded and multinode architecture of the host platform.
+Functions run on the **revoscalepy** interpreter, built on open-source Python, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
 | Package details | |
 |--------|-|
-| Version: |  9.2.1 |
-| Runs on: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
-| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you add Python support during installation). |
+| Current version: |  9.3 |
+| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) |
+| Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+
 
 ## How to use revoscalepy
 

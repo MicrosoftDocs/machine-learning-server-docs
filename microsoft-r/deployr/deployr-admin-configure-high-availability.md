@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -112,7 +112,7 @@ In this way, the DeployR grid can be said to be `self-healing`, capable of autom
 <!-- This was for MongoDB & DeployR 8.0.0
 ## Database High Availability
 
-We highly recommended that serious consideration be given to deploying [MongoDB replica sets](http://www.mongodb.org/) for MongoDB in DeployR production environments. Through the use of replica sets, the MongoDB database is capable of supporting data synchronization across multiple database servers. These replica sets provide data redundancy and increase data availability.
+We highly recommended that serious consideration be given to deploying [MongoDB replica sets](https://www.mongodb.org/) for MongoDB in DeployR production environments. Through the use of replica sets, the MongoDB database is capable of supporting data synchronization across multiple database servers. These replica sets provide data redundancy and increase data availability.
 
 **Deployment Recommendations and Notes:**
 

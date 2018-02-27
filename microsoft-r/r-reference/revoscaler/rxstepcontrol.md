@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxStepControl function (RevoScaleR) " 
+title: "rxStepControl function (revoAnalytics) | Microsoft Docs" 
 description: "     Various parameters that control aspects of stepwise regression. " 
-keywords: "(RevoScaleR), rxStepControl, models, classification, regression" 
+keywords: "(revoAnalytics), rxStepControl, models, classification, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -122,9 +122,9 @@ in the initial `rxLogit` or `rxGlm` call. When `returnAlways=TRUE`,
  
 A list containing the options.
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

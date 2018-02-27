@@ -9,7 +9,7 @@ ms.author: "bradsev"
 manager: "jhubbard"
 ms.date: "09/12/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,19 +18,19 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # R Server 9.1 installation instructions for Teradata Servers
 
-Microsoft R Server for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. Together with a Microsoft R Server client, it provides a comprehensive set of tools for interacting with the Teradata database and performing in-database analytics. This article provides detailed instructions for installing Microsoft R Server 9.1 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
-
-> [!Important]
-> In Machine Learning Server 9.2.1, there is no support for Teradata. However, R Server 9.1 is a supported release. You can install R Server 9.1 for Teradata as documented in this guide to get enterprise R functionality on your appliance.
+Microsoft R Server 9.1 for Teradata is an R-based analytical engine embedded in your Teradata data warehouse. This article provides detailed instructions for installing Microsoft R Server 9.1 for Teradata in the Teradata data warehouse. For configuring local workstations to submit jobs to run within your Teradata data warehouse, see [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
 
 Microsoft R Server for Teradata is required for running Microsoft R Server scalable analytics in-database. If you do not need to run your analytics in-database, but simply need to access Teradata data via Teradata Parallel Transport or ODBC, you do not need to install Microsoft R Server in your Teradata data warehouse. You will, however, need to configure your local workstations as described in [Microsoft R Server Client Installation Manual for Teradata](r-server-install-teradata-client.md).
+
+> [!Important]
+> The Teradata compute context was discontinued in Machine Learning Server 9.2.1. If you have R Server 9.1 and use the Teradata compute context, you are covered by Microsoft's [service support policy](../resources-servicing-support.md). For future compatibility, we recommend modifying existing code to run in other compute contexts, and create a Teradata data source object to work with your data. For more information about Teradata as a data source, see [RxTeradata](../r-reference/revoscaler/rxteradata.md).
 
 ## System Requirements
 
@@ -68,25 +68,26 @@ A method of doing so is to execute the following command on each node:
 zypper -n install --force-resolution libstdc++6-5.3.1.x86_64.rpm
 ```
 
+## Download software
+
+First, download the version of Microsoft R Open. For this release, you must have Microsoft R Open 3.3.3 for SLES 11 (found at [the mro repository](https://mran.microsoft.com/release-history).
+
+Second, download R Server 9.1 for Teradata from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+
+1. Click **Join or access now** to sign up for download benefits.
+2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
+3. Click **Downloads** to search for R Server.
+4. Click **Downloads** for a specific version to select the platform.
+
+![Download page on Visual Studio benefits page](./media/mlserver-install-older-versions.png)
+
 ## Installing the Microsoft R Server rpms
 
 We recommend using the Teradata Parallel Update Tool (PUT) to install the Microsoft R Server rpms.
 
-PUT is a browser-based utility, and we recommend that you upgrade to the latest version (3.06.01). This version contains the *PUT Customer Mode*, which is the easiest way to install Microsoft R Server.
+PUT is a browser-based utility, and we recommend that you upgrade to the latest version. Newer versions contain the *PUT Customer Mode*, which is the easiest way to install Microsoft R Server.
 
-To get started, do the following:
-
-  1. Download the Microsoft R Server distribution appropriate for your Linux distribution. Microsoft R Server consists of two separate downloads, as follows:
-
-		Microsoft R Open 3.3.3 (can be found at [the mro repository](https://go.microsoft.com/fwlink/?linkid=845297).)
-
-		Microsoft R Server 9.1 for Teradata
-
-  2.  Download the Microsoft R Open rpm file for your Teradata appliance’s operating system (SLES 11).
-
-  3.  Download and unpack the Microsoft R Server 9.1 distribution, which will either be a DVD iso file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN). (can be found on [MSDN](https://msdn.microsoft.com/en-us/subscriptions/downloads/?fileid=70865#searchTerm=&Languages=en&PageSize=10&PageIndex=0&FileId=70865))
-
-  4.  If you have an iso file, you must first mount the file. The following commands create a mount point and mount the file to that mount point (replacing **MSDN** with the name of the current ISO downloaded):
+ 1.  If you have an iso file, you must first mount the file. The following commands create a mount point and mount the file to that mount point (replacing **MSDN** with the name of the current ISO downloaded):
 
 		mkdir /mnt/mrsimage
 		mount –o loop MSDN.iso /mnt/mrsimage
@@ -98,19 +99,19 @@ To get started, do the following:
 		This creates the directory MRS91Teradata
 		This is where the you can find the libstdc++6-5.3.1.x86_64.rpm (dependency discussed above). If you cannot install this rpm MRS 9.1 will not work.
 
-  5. Agree to license agreements:
+  2. Agree to license agreements:
 		/MRS90Teradata/ MRO_EULA.txt
 		/MRS90Teradata/ MRO_EULA.txt
 
 
-  6. Copy the following files to the Customer Mode directory (which you may need to create) _/var/opt/teradata/customermodepkgs_:
+  3. Copy the following files to the Customer Mode directory (which you may need to create) _/var/opt/teradata/customermodepkgs_:
 
 		microsoft-r-open-3.3.3.tar.gz
 		MRS90Teradata/RPM/microsoft-r-server-packages-9.1.rpm
 		MRS90Teradata/RPM/microsoft-r-server-teradata-9.1.rpm
 
 
-  7. Point your Java-enabled browser to `https://<HOSTIP>:8443/put` where `<HOSTIP>` is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
+  4. Point your Java-enabled browser to `https://<HOSTIP>:8443/put` where `<HOSTIP>` is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
 To install the Microsoft R Server rpms on all the nodes, do the following:
 
@@ -236,13 +237,13 @@ Two tables in the revoAnalytics\_Zqht2 database may require periodic cleanup:
 
 ## Installing Additional R Packages
 
-The R community is an active, open-source community, and new packages extending R’s capacity for statistics, data analysis, graphics, and interconnectivity are added frequently. The most up-to-date source for these third-party packages is the Comprehensive R Archive Network (CRAN), a network of servers around the world that store open-source R distributions, extensions, documentation, and binaries. The repository (<http://cran.r-project.org/>) has grown from only 12 packages in 1997 to over 5300 packages currently. However, CRAN does not maintain source packages by R version, and Microsoft R Server for Teradata is seldom the latest R version, so packages from CRAN may be incompatible with Microsoft R Server for Teradata. Microsoft’s MRAN archive (<http://mran.microsoft.com>), however, maintains daily snapshots of the CRAN repository. Users may take advantage of this repository and download the chosen packages from any specific date, but notice that they are external to Teradata.
+The R community is an active, open-source community, and new packages extending R’s capacity for statistics, data analysis, graphics, and interconnectivity are added frequently. The most up-to-date source for these third-party packages is the Comprehensive R Archive Network (CRAN), a network of servers around the world that store open-source R distributions, extensions, documentation, and binaries. The repository (<https://cran.r-project.org/>) has grown from only 12 packages in 1997 to over 5300 packages currently. However, CRAN does not maintain source packages by R version, and Microsoft R Server for Teradata is seldom the latest R version, so packages from CRAN may be incompatible with Microsoft R Server for Teradata. Microsoft’s MRAN archive (<https://mran.microsoft.com>), however, maintains daily snapshots of the CRAN repository. Users may take advantage of this repository and download the chosen packages from any specific date, but notice that they are external to Teradata.
 
 In most cases, the natural place to install additional R packages is to the client workstation. Installation to the Teradata data warehouse is required only if you plan to use the package’s functions as transform functions inside RevoScaleR functions, in which case the packages will need to be loaded in-database. If you need a package for this purpose, you can do so as follows:
 
 To manually distribute and install the package:
 
-  1.  Download the package and any required dependencies from <http://mran.microsoft.com/>.
+  1.  Download the package and any required dependencies from <https://mran.microsoft.com/>.
   2.  Copy the downloaded packages to each node of your data warehouse.
   3.  For each package, run the command “R CMD INSTALL *package.*tar.gz” on each node. (If your data warehouse is equipped with the psh command, you can use that to run the command on all the nodes in parallel.)
 

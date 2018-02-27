@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxPredict function (RevoScaleR) " 
+title: "rxPredict function (revoAnalytics) | Microsoft Docs" 
 description: " Compute predicted values and residuals using rxLinMod, rxLogit and rxGlm objects. " 
-keywords: "(RevoScaleR), rxPredict, rxPredict.default, methods, models, regression" 
+keywords: "(revoAnalytics), rxPredict, rxPredict.default, methods, models, regression" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -60,7 +60,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
   
     
  ### `data`
- An [RxXdfData](RxXdfData.md) data source object to be used for predictions. If not using a distributed compute context such as [RxHadoopMR](RxHadoopMR.md), a data frame,  or a character string specifying the input .xdf file can also be used.  
+ An [RxXdfData](RxXdfData.md) data source object to be used for predictions. If not using a distributed compute context such as RxHadoopMR, a data frame,  or a character string specifying the input .xdf file can also be used.  
   
   
     
@@ -278,8 +278,8 @@ in the data) have no effect.
 
 
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxNaiveBayes function (RevoScaleR) " 
+title: "rxNaiveBayes function (revoAnalytics) | Microsoft Docs" 
 description: "     Fit Naive Bayes Classifiers on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
-keywords: "(RevoScaleR), rxNaiveBayes, print.rxNaiveBayes, models, tree, classif, classification" 
+keywords: "(revoAnalytics), rxNaiveBayes, print.rxNaiveBayes, models, tree, classif, classification" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -83,16 +83,16 @@ an `"rxNaiveBayes"` object containing the following components:
 
 
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  
  ##References
  
 Naive Bayes classifier
-[`http://en.wikipedia.org/wiki/Naive_Bayes_classifier`](http://en.wikipedia.org/wiki/Naive_Bayes_classifier)
+[`https://en.wikipedia.org/wiki/Naive_Bayes_classifier`](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
 .
  
  

@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "01/02/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,14 +18,14 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # How to summarize data using RevoScaleR
 
-Summary statistics can help you understand the characteristics and shape of an unfamiliar data set. In [RevoScaleR](../r-reference/revoscaler/revoscaler.md), you can use the [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfoxdf.md) function to learn more about variables in the data set, and [rxSummary](../r-reference/revoscaler/rxsummary.md) for statistical measures. The rxSummary function also provides a count of observations, and the number of missing values (if any).
+Summary statistics can help you understand the characteristics and shape of an unfamiliar data set. In [RevoScaleR](../r-reference/revoscaler/revoscaler.md), you can use the [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfo.md) function to learn more about variables in the data set, and [rxSummary](../r-reference/revoscaler/rxsummary.md) for statistical measures. The rxSummary function also provides a count of observations, and the number of missing values (if any).
 
 This article teaches by example, using built-in sample data sets so that you can practice each skill. It covers the following tasks:
 
@@ -41,7 +41,7 @@ This article teaches by example, using built-in sample data sets so that you can
 
 ## List variable information
 
-The [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfoxdf.md) function returns information about the variables in a data frame or .xdf file, including variable names, descriptions, type, and high and low values. The following examples, based on the built-in sample Census data set, demonstrate function usage. 
+The [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfo.md) function returns information about the variables in a data frame or .xdf file, including variable names, descriptions, type, and high and low values. The following examples, based on the built-in sample Census data set, demonstrate function usage. 
 
     # Load data, store variable metadata as censusWorkerInfo, and return variable names.
 

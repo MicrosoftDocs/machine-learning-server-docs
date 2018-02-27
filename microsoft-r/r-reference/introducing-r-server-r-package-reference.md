@@ -6,10 +6,10 @@ description: "Function reference for R packages in Machine Learning Server, incl
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "08/17/2017"
+manager: "cgronlun"
+ms.date: "02/15/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -19,8 +19,8 @@ ms.prod: "microsoft-r"
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
 ms.technology:
-  - r-client
-  - r-server
+  
+
 #ms.custom: ""
 
 ---
@@ -29,12 +29,12 @@ ms.technology:
 
 This section contains the R reference documentation for proprietary packages from Microsoft used for data science and machine learning on premises and at scale.  
 
-You can use these libraries and functions in combination with other open source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that provides the interpreters.
+You can use these libraries and functions in combination with other open-source or third-party packages, but to use the *revo* packages, your R code must run against a service or on a computer that provides the interpreters.
 
 | Library details | |
 |--------|-|
-| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1](../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
-| Built on: | R 3.4.1 (included when you [install a product](#how-to-install) that provides this package). |
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.x](../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Built on: | R 3.4.3 (included when you [install a product](#how-to-install) that provides this package). |
 
 ## R function libraries
 
@@ -46,7 +46,7 @@ You can use these libraries and functions in combination with other open source 
 |[RevoIOQ](revoioq.md) | 8.0.7 | Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**.|
 |RevoMods | 11.0.0 | Microsoft modifications and extensions to standard R functions. Reference documentation is [online only](#view-online-help).  |
 |[RevoPemaR](revopemar/pemar.md) | 10.0.0 | Developer functions for coding custom parallel external memory algorithms. |
-|[RevoScaleR](revoscaler/revoscaler.md) | 9.2.1 | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](../what-is-microsoft-r-server.md) functionality. |
+|[RevoScaleR](revoscaler/revoscaler.md) | 9.3 | Data acquisition, manipulation and transformations, visualization, and analysis. RevoScaleR provides functions for the full range of statistical and analytical tasks. It's the backbone of [R Server](../what-is-microsoft-r-server.md) functionality. |
 |RevoTreeView | 10.0.0 | Decision tree functions, including the **rxDTree** function. Reference documentation is [online only](#view-online-help). |
 |[RevoUtils](revoutils/revoutils.md) | 10.0.4 | Utility functions useful when programming and developing R packages.|
 |RevoUtilsMath | 10.0.0 | Microsoft's distribution of the Intel Math Kernel Library (MKL). Reference documentation is [online only](#view-online-help). |
@@ -76,6 +76,18 @@ To get the version of an R package installed on your computer, open an R console
 To determine the version of the package, open its help page to view the version number just under the title: `library(help="<package-name>")`
 
 <a name="view-online-help"></a>
+
+## How to list functions in a package
+
+To list all of the functions in a package, execute the following command: `ls("package:RevoScaleR")`
+
+To search for a function by full or partial string matching, add a pattern. For example, to return all functions that include the term "Spark":
+
+```
+> ls("package:RevoScaleR", pattern = "Spark")
+[1] "rxGetSparklyrConnection" "RxSpark"                 "rxSparkCacheData"        "rxSparkConnect"          "rxSparkDisconnect"      
+[6] "rxSparkListData"         "rxSparkRemoveData"      
+```
 
 ## How to view built-in help pages
 

@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxExec function (RevoScaleR) " 
+title: "rxExec function (revoAnalytics) | Microsoft Docs" 
 description: " Allows distributed execution of a function in parallel across nodes (computers) or cores  of a compute context such as a cluster. " 
-keywords: "(RevoScaleR), rxExec, IO" 
+keywords: "(revoAnalytics), rxExec, IO" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -203,8 +203,8 @@ If a waiting compute context is active, a list with an element for each job, whe
 returned by that job's function call(s). 
 If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResults](rxGetJobResults.md).
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  
@@ -216,7 +216,7 @@ If a non-waiting compute context is active, a jobInfo object. See [rxGetJobResul
 [RxComputeContext](RxComputeContext.md),
 [rxSetComputeContext](rxSetComputeContext.md),
 [RxSpark](RxSpark.md),
-[RxHadoopMR](RxHadoopMR.md),
+RxHadoopMR,
 [RxForeachDoPar](RxForeachDoPar.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxLocalSeq](RxLocalSeq.md),

@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxKmeans function (RevoScaleR) " 
+title: "rxKmeans function (revoAnalytics) | Microsoft Docs" 
 description: " Perform k-means clustering on small or large data. " 
-keywords: "(RevoScaleR), rxKmeans, print.rxKmeans, cluster, multivariate, clustering" 
+keywords: "(revoAnalytics), rxKmeans, print.rxKmeans, cluster, multivariate, clustering" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -275,8 +275,8 @@ the matched call.
 
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##References

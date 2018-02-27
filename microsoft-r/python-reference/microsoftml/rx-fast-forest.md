@@ -8,7 +8,7 @@ author: "bradsev"
 manager: "jhubbard" 
 ms.date: "09/05/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 ---
@@ -335,7 +335,7 @@ memory.
 
 ## References
 
-[Wikipedia: Random forest](http://en.wikipedia.org/wiki/Random_forest)
+[Wikipedia: Random forest](https://en.wikipedia.org/wiki/Random_forest)
 
 [Quantile regression forest](http://jmlr.org/papers/volume7/meinshausen06a/meinshausen06a.pdf)
 

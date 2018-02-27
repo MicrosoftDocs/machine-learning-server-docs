@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxCompressXdf function (RevoScaleR) " 
+title: "rxCompressXdf function (revoAnalytics) | Microsoft Docs" 
 description: " Compress one or more .xdf files " 
-keywords: "(RevoScaleR), rxCompressXdf, manip, file" 
+keywords: "(revoAnalytics), rxCompressXdf, manip, file" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -79,8 +79,8 @@ will provide an adequate amount of compression at the fastest speed.
  
 A vector of [RxXdfData](RxXdfData.md) data sources
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  

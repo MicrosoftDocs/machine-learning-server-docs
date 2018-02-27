@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "04/19/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,14 +18,14 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # Offline installation for R Server 9.1 for Windows
 
-**Looking for the 9.2.1 release? See [Machine Learning Server for Windows installation](machine-learning-server-windows-offline.md)**
+**Looking for the latest release? See [Machine Learning Server for Windows installation](machine-learning-server-windows-offline.md)**
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or constraints on internet access prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
@@ -56,8 +56,8 @@ Without an internet connection, the following components must be downloaded to a
 
 | Component | Description | Download Link |
 |-----------|-------------|---------------|
-| SRO_3.3.3.0_1033.cab | Microsoft R Open | http://go.microsoft.com/fwlink/?LinkID=842800 |
-| MLM_9.1.0.0_1033.cab | Machine learning models | http://go.microsoft.com/fwlink/?LinkID=845098 |
+| SRO_3.3.3.0_1033.cab | Microsoft R Open | https://go.microsoft.com/fwlink/?LinkID=842800 |
+| MLM_9.1.0.0_1033.cab | Machine learning models | https://go.microsoft.com/fwlink/?LinkID=845098 |
 
 <a name="download"><a/>
 
@@ -67,9 +67,17 @@ You can get the zipped installation file from one of the following download site
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
-| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+| [Visual Studio Dev Essentials](https://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios.|
+|[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2016 Enterprise edition", and then choose a per-core or CAL licensing option. A selection for **R Server for Windows 9.0.1** is provided on this site. |
+
+From [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
+
+1. Click **Join or access now** to sign up for download benefits.
+2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
+3. Click **Downloads** to search for R Server.
+4. Click **Downloads** for a specific version to select the platform.
+
+![Download page on Visual Studio benefits page](./media/mlserver-install-older-versions.png)
 
 ## Transfer files
 
@@ -126,7 +134,7 @@ An installation of Microsoft R Server includes the following components.
 
 | Component | Description |
 |-----------|-------------|
-| Microsoft R Open (MRO) | An open source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are under `<install-directory>\bin`. Documentation is under `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
+| Microsoft R Open (MRO) | An open-source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are under `<install-directory>\bin`. Documentation is under `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
 | Microsoft R Server proprietary libraries and script engine | MRS packages provide libraries of functions. MRS libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Windows, the default R Server installation directory is `C:\Program Files\Microsoft\R Server\R_SERVER`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
 | [Admin tool](../operationalize/configure-use-admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
 | [Pretrained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image featurization. | 

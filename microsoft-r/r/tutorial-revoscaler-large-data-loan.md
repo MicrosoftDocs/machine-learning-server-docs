@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "05/12/2017"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -52,7 +52,7 @@ Each file contains 10,000 rows, for a total of 100,000 observations.
 
 **Download the larger data set**
 
-To work with a larger dataset, you can download *mortDefault*, a set of ten comma-separated files, each of which contains one million observations of simulated data on mortgage defaults. You can download zipped [from this web site](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip. Linux users should download mortDefault.tar.gz. File size is approximately 220 MB unpacked.
+To work with a larger dataset, you can download *mortDefault*, a set of ten comma-separated files, each of which contains one million observations of simulated data on mortgage defaults. You can download zipped [from this web site](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). Windows users should download the zip version, mortDefault.zip. Linux users should download mortDefault.tar.gz. File size is approximately 220 MB unpacked.
 
 When downloading these files, put them in a directory where you can easily access them. For example, create a directory "C:\MRS\BigData" and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
 

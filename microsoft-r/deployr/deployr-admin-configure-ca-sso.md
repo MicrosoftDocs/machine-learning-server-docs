@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -31,7 +31,7 @@ ms.technology: "deployr"
 
 ## Introduction
 
-This document is written as a guide for CA Single Sign-On (formerly known as SiteMinder) administrators interested in configuring CA Single Sign-On policies for use with DeployR. It is not meant to be a complete step-by-step manual, but rather offer enough instruction to permit experienced administrators to perform the necessary steps to configure for DeployR. Please consult the [CA website](http://support.ca.com/) for the complete CA Single Sign-On documentation.
+This document is written as a guide for CA Single Sign-On (formerly known as SiteMinder) administrators interested in configuring CA Single Sign-On policies for use with DeployR. It is not meant to be a complete step-by-step manual, but rather offer enough instruction to permit experienced administrators to perform the necessary steps to configure for DeployR. Please consult the [CA website](https://support.ca.com/) for the complete CA Single Sign-On documentation.
 
 ## Create the Agent
 

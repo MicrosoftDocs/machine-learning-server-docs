@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -49,7 +49,7 @@ In fact, DeployR makes it simple for **any application** developed in **any lang
 
 DeployR offers these features and many more through a set of [Analytics Web Services](#analytics-web-services). These Web service interfaces isolate the application developer and the application itself from R code, from the underlying R sessions, and in fact from all the complexities typically associated with R integration.
 
-As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](http://mran.microsoft.com/documents/getting-started/) directly within your applications.
+As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](https://mran.microsoft.com/documents/getting-started/) directly within your applications.
 
 The sections that follow explain [Analytics Web Services](#analytics-web-services) in greater detail and also introduce the set of [developer tools](#developer-tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#real-world-example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
 
@@ -213,7 +213,7 @@ The following tutorials are available:
 
 ### Command Line Interface
 
-While each of the DeployR code tutorials found on github provide their own complete set of instructions for downloading and running the code, we also provide the [DeployR CLI](https://github.com/Microsoft/deployr-cli) to make running these tutorials even easier. The DeployR CLI is a [Command Line Tool (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for running useful DeployR utilities, such as the automated installation and execution of any [DeployR code tutorial](#tutorials) found on github.
+While each of the DeployR code tutorials found on github provide their own complete set of instructions for downloading and running the code, we also provide the [DeployR CLI](https://github.com/Microsoft/deployr-cli) to make running these tutorials even easier. The DeployR CLI is a [Command Line Tool (CLI)](https://en.wikipedia.org/wiki/Command-line_interface) for running useful DeployR utilities, such as the automated installation and execution of any [DeployR code tutorial](#tutorials) found on github.
 
 Install and use the CLI as follows:
 

@@ -8,7 +8,7 @@ author: "bradsev"
 manager: "jhubbard" 
 ms.date: "09/05/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 ---
@@ -365,7 +365,7 @@ memory.
 
 ## References
 
-[Wikipedia: Artificial neural network](http://en.wikipedia.org/wiki/Artificial_neural_network)
+[Wikipedia: Artificial neural network](https://en.wikipedia.org/wiki/Artificial_neural_network)
 
 
 ## Example

@@ -8,7 +8,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "11/03/2016"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -17,7 +17,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -50,7 +50,7 @@ We recommend installing R Server on all nodes of the cluster to avoid Hadoop que
 
 Microsoft Azure offers virtual machines with Hadoop templates. If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.
 
-1. Sign in to [Azure Portal](https://ms.portal.azure.com).
+1. Sign in to [Azure portal](https://ms.portal.azure.com).
 2. Click **New** in the top left side bar.
 3. In the search box, type the name of one of these vendors: Cloudera, HortonWorks, and MapR. Several of these vendors offer sandbox deployments that make it easier to get started.
 
@@ -261,9 +261,28 @@ Assuming that the packages for Microsoft R Open for R Server and Microsoft R Ser
 
 If you have multiple nodes, you can automate the installation across nodes using any distributed shell. (You can, of course, automate installation with a non-distributed shell such as bash using a for-loop over a list of hosts, but distributed shells usually provide the ability to run commands over multiple hosts simultaneously.) Examples include [dsh ("Dancer’s shell")](http://www.netfort.gr.jp/~dancer/software/dsh.html.en), [pdsh (Parallel Distributed Shell)](http://sourceforge.net/projects/pdsh/), [PyDSH (the Python Distributed Shell)](http://pydsh.sourceforge.net/), and [fabric](http://www.fabfile.org/). Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts. (It is convenient if there is a top-level copy command, such as the pdcp command that is part of pdsh, but not necessary—the “cp” command can always be run from the shell.)
 
-Obtain the Microsoft R Open for Microsoft R Server rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp as described in [Standard Command Line Install](r-server-install-hadoop-800.md#standard-command-line-install) steps 3 through 8.
+Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp.
 
-The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
+1. Mount the IMG file. The following commands create a mount point and mount the file to that mount point:
+
+	    mkdir /mnt/mrsimage
+	    mount –o loop <filename> /mnt/mrsimage
+
+  For RHEL/CENTOS systems;
+		tar zxvf MRS80RHEL.tar.gz
+
+  For SLES systems;
+		tar zxvf MRS80SLES.tar.gz
+
+2. Copy the installer gzipped tar file to a writable directory, such as /tmp:
+
+  From the mounted img file:
+		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
+
+  From the unpacked tar file:
+		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
+
+3. The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
 		alias pdshw=’pdsh -w\`cat myhosts.txt\` -R ssh’
 		alias pdcpw=’pdcp -w\`cat myhosts.txt\` -R ssh’
@@ -288,7 +307,7 @@ Two parcels are required:
 
 Install the Cloudera Manager parcels as follows:
 
-1. [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](http://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409). Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.
+1. [Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.](https://go.microsoft.com/fwlink/?LinkId=699383&clcid=0x409). Note that the parcel consists of two files, the parcel itself and its associated .sha file. They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.
 
 2. Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
 
@@ -347,8 +366,6 @@ To get started, we recommend the [ScaleR Getting Started Guide for Hadoop](../r/
 ## See Also
 
 [Install R on Hadoop overview](r-server-install-hadoop.md)
-
-[Install R Server 8.0.0 on Hadoop](r-server-install-hadoop-800.md)
 
 [Install Microsoft R Server on Linux](r-server-install-linux-server.md)
 

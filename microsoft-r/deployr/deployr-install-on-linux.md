@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -414,7 +414,7 @@ If you want to use a local or remote PostgreSQL database for DeployR instead of 
 
     4.  Once the DeployR server has been successfully restarted, return the main menu.
 
-    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](http://go.microsoft.com/fwlink/?LinkID=708535).
+    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://go.microsoft.com/fwlink/?LinkID=708535).
 
     6.  Exit the utility.
 

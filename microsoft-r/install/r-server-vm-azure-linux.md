@@ -7,9 +7,9 @@ keywords: "R Server, linux, virtual machine"
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "4/26/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,8 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -89,7 +88,7 @@ With Microsoft R Server installed, you can configure your favorite R integrated 
 
 #### Open Ports needed to Use RStudio Server
 
-RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you must go to the Azure Portal and elect the proper Network Security Group. Select the **All Settings** option and choose **Inbound security rules**. Add a new rule for RStudio. Name the rule, choose **Any** for the Protocol, and add port 8787 to the destination port range. Click **OK** to save your changes. You should now be able to access RStudio using a browser.
+RStudio Server uses port 8787. The default configuration for the Azure VM does not open this port. To do that, you must go to the Azure portal and elect the proper Network Security Group. Select the **All Settings** option and choose **Inbound security rules**. Add a new rule for RStudio. Name the rule, choose **Any** for the Protocol, and add port 8787 to the destination port range. Click **OK** to save your changes. You should now be able to access RStudio using a browser.
 
 #### Assign a Fully Qualified Domain Name to the VM for Accessing RStudio Server
 

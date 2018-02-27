@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -290,7 +290,7 @@ DeployR depends on the manual installation and configuration of these dependenci
 | Dependency                                                                                                                                                                                                         | DeployR Server                                                                          | DeployR Grid Node                                                                       |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | Java™ Runtime Environment 8 or 7u13 (or later)                                                                                                                                                                     | Yes                                                                                     | No                                                                                      |
-| R Engine:<br />- DeployR Enterprise:                                                                                                                                                                                              <br />[Microsoft R Server](~/install/r-server-install-linux-server.md) 8.0 and its dependencies<br />- DeployR Open:<br />    [Revolution R Open](http://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2                                                                                            | Yes                                                                                     | Yes                                                                                     |
+| R Engine:<br />- DeployR Enterprise:                                                                                                                                                                                              <br />[Microsoft R Server](~/install/r-server-install-linux-server.md) 8.0 and its dependencies<br />- DeployR Open:<br />    [Revolution R Open](https://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2                                                                                            | Yes                                                                                     | Yes                                                                                     |
 | DeployR Rserve 7.4.2                                                                                                                                                                                               | Yes                                                                                     | Yes                                                                                     |
 | MongoDB 2.6.7 for DeployR Enterprise<Br />MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).  | Yes                                                                                     | No                                                                                      |
 | make, gcc, gfortran                                                                                                                                                                                                | Yes                                                                                     | Yes                                                                                     |

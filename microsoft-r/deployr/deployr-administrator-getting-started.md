@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -57,7 +57,7 @@ The full set of DeployR security features available to you as a system administr
 
 The primary function of the DeployR server is to support the execution of R code on behalf of client applications. One of your key objectives as a DeployR administrator is to ensure a reliable, consistent execution environment for that code.
 
-The R code developed and deployed by [data scientists](deployr-data-scientist-getting-started.md) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](http://cran.r-project.org/), [MRAN](http://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
+The R code developed and deployed by [data scientists](deployr-data-scientist-getting-started.md) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](https://cran.r-project.org/), [MRAN](https://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
 
 Making sure that these R package dependencies are available to the code executing on the DeployR server requires active participation from you, the administrator. There are two R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](../operationalize/configure-manage-r-packages.md).
 

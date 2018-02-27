@@ -6,10 +6,10 @@ description: "Overview and tutorial to using RevoScaleR in Teradata."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "08/05/2016"
+manager: "cgronlun"
+ms.date: "01/29/2018"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,16 +18,17 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # RevoScaleR Teradata Getting Started Guide
 
-## Overview
+For customers using R Server 9.1 and earlier, this guide serves as an introduction to high-performance big data analytics for Teradata using [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md). 
 
-This guide is an introduction to high-performance ‘big data’ analytics for **Teradata** using **RevoScaleR**, an R package included with Microsoft R Server. **Teradata Platforms** running the **Teradata Database** provide high-performance, high-capacity data storage capabilities that are a great match for the **RevoScaleR** high-performance analytics.
+> [!Important]
+> The Teradata compute context was discontinued in Machine Learning Server 9.2.1. If you have R Server 9.1 and use the Teradata compute context, you are covered by Microsoft's [service support policy](../resources-servicing-support.md). For future compatibility, we recommend modifying existing code to run in other compute contexts, and create a Teradata data source object to work with your data. For more information about Teradata as a data source, see [RxTeradata]../r-reference/revoscaler/rxteradata.md).
 
 There are three key components to running **RevoScaleR** high-performance analytics:
 
@@ -46,15 +47,7 @@ More information on **RevoScaleR** can be found here:
 
 For information on other distributed computing compute contexts, see:
 
-- [How to use RevoScaleR on Hadoop MapReduce](how-to-revoscaler-hadoop.md)
 - [How to use RevoScaleR on Spark](how-to-revoscaler-spark.md)
-
-## Installation
-
-Installation instructions are provided in these links:
-* [Install Microsoft R Server 8.0.5 on Teradata Servers](../install/r-server-install-teradata-805.md)
-* [Install Microsoft R Server 8.0 on Teradata Servers](../install/r-server-install-teradata-server.md)
-* [Install Microsoft R Server 8.0 on Teradata clients](../install/r-server-install-teradata-client.md)
 
 ## Setting Up the Sample Data
 
@@ -65,11 +58,11 @@ To follow the examples in this guide, you need the following comma-delimited tex
 	ccFraud.csv
 	ccFraudScore.csv
 
-These data files each have 10 million rows, and should be put in tables called *ccFraud10* and *ccFraudScore10*, respectively. These data files are available [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We recommend that you create a RevoTestDB database to hold the data table.
+These data files each have 10 million rows, and should be put in tables called *ccFraud10* and *ccFraudScore10*, respectively. These data files are available [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). We recommend that you create a RevoTestDB database to hold the data table.
 
 ### Loading Your Data into the Teradata Database
 
-You can use the ‘fastload’ Teradata command to load the data sets into your data base. You can find sample scripts for doing this in Appendix I, and [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409) with the sample data files. You need to edit the sample scripts to provide appropriate logon information for your site. Check with your system administrator to see of the data has already been loaded into your database. There is an example later in this guide of loading data into your Teradata data base from R using the *rxDataStep* function.
+You can use the ‘fastload’ Teradata command to load the data sets into your data base. You can find sample scripts for doing this in Appendix I, and [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409) with the sample data files. You need to edit the sample scripts to provide appropriate logon information for your site. Check with your system administrator to see of the data has already been loaded into your database. There is an example later in this guide of loading data into your Teradata data base from R using the *rxDataStep* function.
 
 ## Using a Teradata Data Source and ComputeContext
 
@@ -1113,7 +1106,7 @@ Memory limits that have been changed are in effect immediately, and no restart o
 
 ### Appendix I: Scripts for Loading Data into Teradata
 
-Modify the following script to include your Log In information and data base name, then use the ‘fastload’ Teradata command to load the ccFraud.csv data. (Copies of both scripts in this appendix can be found [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).)
+Modify the following script to include your Log In information and data base name, then use the ‘fastload’ Teradata command to load the ccFraud.csv data. (Copies of both scripts in this appendix can be found [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).)
 
 	sessions 2;
 	errlimit 25;

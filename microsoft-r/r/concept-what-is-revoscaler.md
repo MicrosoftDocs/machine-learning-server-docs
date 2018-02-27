@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "0605/2017"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -33,7 +33,7 @@ The RevoScaleR functions run on a computational engine include in the aforementi
 
 RevoScaleR is engineered to adapt to the computational power of the platform it runs on. On Machine Learning Server for Hadoop, script using RevoScaleR functions that run in parallel will automatically use nodes in the cluster. Whereas on the free R Client, scale is provided at much lower levels (2 processors, data resides in-memory).
 
-RevoScaleR provides enhanced capabilities to many elements of the open source R programming language. In fact, there are [RevoScaleR equivalents for many common base R functions](../r-reference/revoscaler/revoscaler-compared-to-base-r.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because RevoScaleR is compatible with the open source R language, solutions often use a combination of base R and RevoScaleR functions. RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable in your R script that uses the RevoScaleR package.
+RevoScaleR provides enhanced capabilities to many elements of the open-source R programming language. In fact, there are [RevoScaleR equivalents for many common base R functions](../r-reference/revoscaler/revoscaler-compared-to-base-r.md), such as *rxSort* for *sort()*, *rxMerge* for *merge()*, and so forth. Because RevoScaleR is compatible with the open-source R language, solutions often use a combination of base R and RevoScaleR functions. RevoScaleR functions are denoted with an **rx** or **Rx** prefix to make them readily identifiable in your R script that uses the RevoScaleR package.
 
 ## What can you do with RevoScaleR?
 
@@ -92,7 +92,7 @@ RevoScaleR has the concept of *compute context* that sets the location for calcu
 
 Local is the default, and it supports the full range of data source inputs. As its name suggests, a local compute context uses only the physical cores of the local computer. Local compute context is provided by RevoScaleR on both R Client and Machine Learning Server instances.
 
-Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has Machine Learning Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for RevoScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in Machine Learning Server only: HDInsight, Hadoop (both MapReduce and Spark), Teradata, SQL Server, and Machine Learning Server (Windows and Linux). For more information, see [Compute Context](concept-what-is-compute-context.md).
+Remote compute context requires the explicit creation of a compute context object, a single logical object defining location (a remote network resource that has Machine Learning Server and local data) and modes of processing (such as wait versus no-wait jobs). Remote compute context is supported for RevoScaleR analytical functions that can be performed in a distributed fashion, and is available on these platforms in Machine Learning Server only: HDInsight, Hadoop (Spark), Teradata, SQL Server, and Machine Learning Server (Windows and Linux). For more information, see [Compute Context](concept-what-is-compute-context.md).
 
 ### Efficiently Storing and Retrieving Data
 
@@ -100,7 +100,7 @@ A key component of RevoScaleR is a data file format (.xdf) that is extremely eff
 
 ### Data Cleaning, Exploration, and Manipulation
 
-When working with a new data set, the first step is to clean and explore. With RevoScaleR, you can quickly obtain information about your data set (e.g., how many rows and variables) and the variables in your data set (e.g., name, data type, value labels). With RevoScaleR’s summary statistics and cube functionality, you can examine summary information about your data and quickly plot histograms or relationships between variables.
+When working with a new data set, the first step is to clean and explore. With RevoScaleR, you can quickly obtain information about your data set (e.g., how many rows and variables) and the variables in your data set (such as name, data type, value labels). With RevoScaleR’s summary statistics and cube functionality, you can examine summary information about your data and quickly plot histograms or relationships between variables.
 
 RevoScaleR also provides all of the power of R to use in data transformations and manipulations. In RevoScaleR’s data step functionality, you can specify R expressions to transform specific variables and have them automatically applied to a single data frame or to each block of data as it is read in from an .xdf file. You can create new variables, recode variables, and set missing values with all the flexibility of the R language.
 

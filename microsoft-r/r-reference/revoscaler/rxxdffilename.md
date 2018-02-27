@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxXdfFileName-methods function (RevoScaleR) " 
+title: "rxXdfFileName-methods methods (revoAnalytics) | Microsoft Docs" 
 description: " Get the .xdf file path from a character string or RxXdfData object. " 
-keywords: "(RevoScaleR), rxXdfFileName-methods, rxXdfFileName, rxXdfFileName,RxXdfData-method, rxXdfFileName,character-method, rxXdfFileName,ANY-method, methods, file, connection" 
+keywords: "(revoAnalytics), rxXdfFileName-methods, rxXdfFileName, rxXdfFileName,RxXdfData-method, rxXdfFileName,character-method, rxXdfFileName,ANY-method, methods, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -56,8 +56,8 @@ Get the .xdf file path from a character string or RxXdfData object.
  
 a character string containing the path and name of the .xdf file
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

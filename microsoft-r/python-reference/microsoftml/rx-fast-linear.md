@@ -8,7 +8,7 @@ author: "bradsev"
 manager: "jhubbard" 
 ms.date: "09/05/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 ---
@@ -358,7 +358,7 @@ This algorithm is multi-threaded and will not attempt to load the entire dataset
 
 ## References
 
-[Scaling Up Stochastic Dual Coordinate Ascent](http://research.microsoft.com/en-us/um/people/mbilenko/papers/15-sasdca.pdf)
+[Scaling Up Stochastic Dual Coordinate Ascent](https://research.microsoft.com/en-us/um/people/mbilenko/papers/15-sasdca.pdf)
 
 [Stochastic Dual Coordinate Ascent Methods for Regularized Loss Minimization](http://www.jmlr.org/papers/volume14/shalev-shwartz13a/shalev-shwartz13a.pdf)
 

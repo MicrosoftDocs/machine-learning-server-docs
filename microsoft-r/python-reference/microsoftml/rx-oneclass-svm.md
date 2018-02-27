@@ -8,7 +8,7 @@ author: "bradsev"
 manager: "jhubbard" 
 ms.date: "09/05/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 ---
@@ -305,7 +305,7 @@ This algorithm is single-threaded and will always attempt to load the entire dat
 
 [Microsoft Azure Machine Learning Studio: One-Class Support Vector Machine](https://msdn.microsoft.com/library/azure/dn913103.aspx)
 
-[Estimating the Support of a High-Dimensional Distribution](http://research.microsoft.com/pubs/69731/tr-99-87.pdf)
+[Estimating the Support of a High-Dimensional Distribution](https://research.microsoft.com/pubs/69731/tr-99-87.pdf)
 
 [New Support Vector Algorithms](http://www.stat.purdue.edu/~yuzhu/stat598m3/Papers/NewSVM.pdf)
 

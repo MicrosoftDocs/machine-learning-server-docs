@@ -2,13 +2,14 @@
 
 # required metadata
 title: "What happened to Microsoft R Server - Machine Learning Server "
+description: "Microsoft R Server was rebranded as Machine Learning Server in Sept. 2017."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.date: "02/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -17,18 +18,16 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - r-client
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # Microsoft R Server is now Microsoft Machine Learning Server
 
-In September 2017, Microsoft R Server was released under the new name of **Microsoft Machine Learning Server**. In version 9.2.1, Machine Learning Server added support for the full data science lifecycle of Python-based analytics to its list of machine learning and AI capabilities enhancements. The R capabilities have also been enhanced. 
+In September 2017, Microsoft R Server was released under the new name of **Microsoft Machine Learning Server**. In version 9.2.1, Machine Learning Server added support for the full data science lifecycle of Python-based analytics to its list of machine learning and AI capabilities enhancements. The R capabilities were also enhanced. In the latest 9.3 version, Machine Learning Server improves operationalization and deployment of web services containing R or Python code.
 
-Read the ["What's new in this release."](whats-new-in-machine-learning-server.md)
+Read the [What's new in this release](whats-new-in-machine-learning-server.md) to learn more.
 
 ## Building on our commitment to R
 
@@ -42,8 +41,8 @@ Moving from R Server to Machine Learning Server is as easy as ever. The R analyt
 
 1. Don't forget to [upgrade your web and compute nodes](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) if you are operationalizing your analytics.
 
-
-Note that _Microsoft R Server 9.1 for Teradata_ was the last release and will not have a Machine Learning Server equivalent.
+>[!NOTE]
+>Note that _Microsoft R Server 9.1 for Teradata_ was the last release and will not have a Machine Learning Server equivalent.
 
 ## Download prior R Server releases
 
@@ -53,10 +52,17 @@ Want the new Machine Learning Server? [Learn how to install Machine Learning Ser
 
 | Site for R Server | Edition | Details |
 |------|---------|---------|
-| [Visual Studio Dev Essentials](http://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. <br/><br/>1. Click **Join or Access Now** and enter your account information.<br/>2. Make sure you're in the right place: *my.visualstudio.com*.<br/>3. Click **Downloads**, and then search for *Microsoft R*. |
-|[Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server. Choose the right version for your OS. |
-| [MSDN subscription downloads](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) | Developer or Enterprise | Subscribers can download software at given subscription levels. Depending on your subscription, you can get either edition. |
+| [Visual Studio Dev Essentials](https://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. |
+|[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server. Choose the right version for your OS. |
 
+From [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
+
+1. Click **Join or access now** to sign up for download benefits.
+2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
+3. Click **Downloads** to search for R Server.
+4. Click **Downloads** for a specific version to select the platform.
+
+![Download page on Visual Studio benefits page](./install/media/mlserver-install-older-versions.png)
 
 ## Get support for R Server
 

@@ -9,7 +9,7 @@ ms.author: "heidist"
 manager: "jhubbard"
 ms.date: "05/01/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -49,7 +49,7 @@ After you unpack the distribution, you should see packages for RPM and DEB in th
   + On RHEL use [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Working_with_Yum_Cache.html): `[root@localhost tmp] $ yum expire-cache`  
   + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean` 	
 
-3. Install the .NET Core package from [http://www.microsoft.com/net/core](http://www.microsoft.com/net/core). This component is required for machine learning, remote execution, web service deployment, and configuration of web and compute nodes.
+3. Install the .NET Core package from [https://www.microsoft.com/net/core](https://www.microsoft.com/net/core). This component is required for machine learning, remote execution, web service deployment, and configuration of web and compute nodes.
 
 5. Install Microsoft R Server packages. You should have the following packages, which should be installed in this order:
 

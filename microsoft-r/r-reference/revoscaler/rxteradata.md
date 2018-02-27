@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "RxTeradata function (RevoScaleR) " 
+title: "RxTeradata function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxTeradata, which extends RxDataSource. " 
-keywords: "(RevoScaleR), RxTeradata, head.RxTeradata, tail.RxTeradata, database, connection" 
+keywords: "(revoAnalytics), RxTeradata, head.RxTeradata, tail.RxTeradata, database, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -225,8 +225,8 @@ arguments, the one in `connectionString` is ignored.
  
 object of class RxTeradata.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##References

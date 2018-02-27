@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 ---
 
@@ -48,5 +48,5 @@ Start here:
 >
 >DeployR is now delivered as part of Microsoft R Server. There is no separate download or setup program.
 >To try out and evaluate DeployR, you can download R Server for development and test usage from either of these two places:
-> - [MSDN](http://aka.ms/rserver/linux/download) 
+> - [MSDN](https://aka.ms/rserver/linux/download) 
 > - [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/)

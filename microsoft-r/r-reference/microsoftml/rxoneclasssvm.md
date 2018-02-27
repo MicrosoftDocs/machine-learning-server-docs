@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "jhubbard" 
 ms.date: "09/13/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -227,7 +227,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [`Azure Machine Learning Studio: One-Class Support Vector Machine`](https://msdn.microsoft.com/en-us/library/azure/dn913103.aspx)
 
 
-[`Support of a High-Dimensional Distribution`](http://research.microsoft.com/pubs/69731/tr-99-87.pdf)
+[`Support of a High-Dimensional Distribution`](https://research.microsoft.com/pubs/69731/tr-99-87.pdf)
 
 
 [`Support Vector Algorithms`](http://www.stat.purdue.edu/~yuzhu/stat598m3/Papers/NewSVM.pdf)

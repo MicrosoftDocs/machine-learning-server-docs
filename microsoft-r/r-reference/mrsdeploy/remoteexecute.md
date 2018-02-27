@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "remoteExecute function (mrsdeploy) " 
+title: "remoteExecute function (mrsdeploy) | Microsoft Docs" 
 description: " Base function for executing a block of R code or an R script in the remote R session " 
 keywords: "(mrsdeploy), remoteExecute" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

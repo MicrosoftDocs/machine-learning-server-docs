@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "jhubbard" 
 ms.date: "08/04/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -27,7 +27,7 @@ ms.custom: ""
  
  #RxInTeradata: Generate Teradata In-Database Compute Context 
  ##Description
- Creates a compute context for running RevoScaleR analyses inside a Teradata database. 
+ DEPRECATED: Creates a compute context for running RevoScaleR analyses inside a Teradata database. 
  
  ##Usage
 

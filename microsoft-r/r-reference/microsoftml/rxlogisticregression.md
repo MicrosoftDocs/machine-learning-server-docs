@@ -8,7 +8,7 @@ author: "heidisteen"
 manager: "jhubbard" 
 ms.date: "09/13/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -292,13 +292,13 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
  
  ##References
  
-[` Wikipedia: L-BFGS`](http://en.wikipedia.org/wiki/L-BFGS)
+[` Wikipedia: L-BFGS`](https://en.wikipedia.org/wiki/L-BFGS)
 
 
-[`regression`](http://en.wikipedia.org/wiki/Logistic_regression)
+[`regression`](https://en.wikipedia.org/wiki/Logistic_regression)
 
 
-[`Training of L1-Regularized Log-Linear Models`](http://research.microsoft.com/apps/pubs/default.aspx?id=78900)
+[`Training of L1-Regularized Log-Linear Models`](https://research.microsoft.com/apps/pubs/default.aspx?id=78900)
 
 
 [`and L2 Regularization for Machine Learning`](https://msdn.microsoft.com/en-us/magazine/dn904675.aspx)

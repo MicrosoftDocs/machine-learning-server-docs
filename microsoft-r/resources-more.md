@@ -7,9 +7,9 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - r-client
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -34,10 +32,10 @@ The following resources are available to you:
 * [Supported platforms](install/r-server-install-supported-platforms.md)
 * [About R](https://mran.microsoft.com/documents/what-is-r/)
 * [R Language Resources](https://mran.microsoft.com/documents/getting-started/)
-* [R Blog](http://blog.revolutionanalytics.com/)
+* [R Blog](https://blog.revolutionanalytics.com/)
 * [Operationalization Examples](https://blogs.msdn.microsoft.com/rserver/2017/02/03/microsoft-r-server-operationalization-examples/)
 * [Galaxy classification with neural networks: a data science workflow](https://blogs.msdn.microsoft.com/rserver/2017/03/22/galaxy-classification-with-neural-networks-a-data-science-workflow/)
-* [Running your R code on Azure with mrsdeploy](http://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
+* [Running your R code on Azure with mrsdeploy](https://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
 * [Python programming tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382)
 
 
@@ -45,7 +43,7 @@ The following resources are available to you:
 * [User Support Forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)
 
 ## Sample datasets
-* [Sample Dataset Directory](http://packages.revolutionanalytics.com/datasets/)
+* [Sample Dataset Directory](https://packages.revolutionanalytics.com/datasets/)
 * [More Data Sources](https://mran.microsoft.com/documents/data/)
 * [Blog Post on Data Sources](http://www.inside-r.org/howto/finding-data-internet)
 
@@ -57,6 +55,9 @@ The following resources are available to you:
 
 ## R Tools for Visual Studio
 * [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation)
+
+## Python support in Visual Studio
+* [Install Python support in Visual Studio on Windows](https://docs.microsoft.com/visualstudio/python/installing-python-support-in-visual-studio)
 
 ## Documentation Roadmap
 
@@ -75,7 +76,7 @@ Beyond the standard R manuals, there are many books available to help you learn 
 + _R for Dummies_ by Andrie de Vries and Joris Meys
   <br>Excellent starting place if you are new to R, filled with examples and tips
 
-+ [_R FAQ_](http://cran.r-project.org/doc/FAQ/R-FAQ.html) by Kurt Hornik 
++ [_R FAQ_](https://cran.r-project.org/doc/FAQ/R-FAQ.html) by Kurt Hornik 
 
 + _An Introduction to R_ by the R Development Core Team, 2008
   <br>Based on “Notes on S-Plus” by Bill Venables and David Smith. Includes an extensive sample session in Appendix A
@@ -152,15 +153,11 @@ The RPE is an older development tool that is now superseded by [R Tools for Visu
 Prior to Machine Learning Server and Microsoft R Server, the product was called Revolution R Enterprise (RRE). 
 
 Here is a list of the available archived documentation sets for RRE:
-* [RRE 8.0.0 Windows Install Guide](install/r-server-install-windows-800.md)
-* [RRE 8.0.0 Teradata Install Guide](install/r-server-install-teradata-server.md)
-* [RRE 8.0.0 Hadoop Install Guide](install/r-server-install-hadoop-800.md)
-* [RRE 8.0.0 Linux Install Guide](install/r-server-install-linux-server-800.md)
-* [RRE 7.5.0 Docs](http://packages.revolutionanalytics.com/doc/7.5.0/)
-* [RRE 7.4.1 Docs](http://packages.revolutionanalytics.com/doc/7.4.1/) 
-* [RRE 7.4.0 Docs](http://packages.revolutionanalytics.com/doc/7.4.0/) 
-* [RRE 7.3.0 Docs](http://packages.revolutionanalytics.com/doc/7.3.0/)
-* [RRE 7.2.0 Docs](http://packages.revolutionanalytics.com/doc/7.2.0/)
+* [RRE 7.5.0 Docs](https://packages.revolutionanalytics.com/doc/7.5.0/)
+* [RRE 7.4.1 Docs](https://packages.revolutionanalytics.com/doc/7.4.1/) 
+* [RRE 7.4.0 Docs](https://packages.revolutionanalytics.com/doc/7.4.0/) 
+* [RRE 7.3.0 Docs](https://packages.revolutionanalytics.com/doc/7.3.0/)
+* [RRE 7.2.0 Docs](https://packages.revolutionanalytics.com/doc/7.2.0/)
 
 **DeployR 8.x Docs**
 

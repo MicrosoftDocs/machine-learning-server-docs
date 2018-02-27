@@ -7,9 +7,9 @@ keywords: "Machine Learning Server, remote login to r server, connect to r serve
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
-ms.topic: "reference"
-ms.prod: "microsoft-r"
+ms.date: "2/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -90,7 +88,7 @@ In another example, we authenticate using the local 'admin' account and password
 
 |`remoteLogin` Argument|Description|
 |--- | --- |
-|endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](configure-use-admin-utility.md#launch).|
+|endpoint|The Machine Learning Server HTTP/HTTPS endpoint, including the port number.  You can find this on the first screen when you [launch the administration utility](configure-admin-cli-launch.md).|
 |session|If TRUE, create a remote session. **If omitted, creates a remote session.**|
 |diff|If TRUE, creates a 'diff' report showing differences between the local and remote sessions. Parameter is only valid if session parameter is TRUE.|
 |commandline|If TRUE, creates a "REMOTE' command line in the R console. Parameter is only valid if session parameter is TRUE. **If omitted, it is the same as `= TRUE`.**|
@@ -128,7 +126,7 @@ This function takes several arguments as follows:
 Unless you specify otherwise, this function:
 1. Logs the user in
 1. Creates a remote R session on the server instance
-1. Puts the user on the remote command line in that remote session. 
+1. Puts the user on the remote command line in that remote session
 
 If you do not want to be in a remote session, either set session = FALSE or [switch back to the local session](#switch) after login and logout.
 

@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "AirlineDemoSmall function (RevoScaleR) " 
+title: "AirlineDemoSmall data (revoAnalytics) | Microsoft Docs" 
 description: " A small sample of airline on-time performance data. " 
-keywords: "(RevoScaleR), AirlineDemoSmall, AirlineDemoSmall.xdf, AirlineDemoSmallUC.xdf, AirlineDemoSmall.csv, AirlineDemo1kNoMissing.csv, datasets" 
+keywords: "(revoAnalytics), AirlineDemoSmall, AirlineDemoSmall.xdf, AirlineDemoSmallUC.xdf, AirlineDemoSmall.csv, AirlineDemo1kNoMissing.csv, datasets" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -79,8 +79,8 @@ American Statistical Association Statistical Computing Group, Data Expo '09.
 
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##References

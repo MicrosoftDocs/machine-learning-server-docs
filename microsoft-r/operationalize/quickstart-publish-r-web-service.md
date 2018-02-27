@@ -7,28 +7,24 @@ keywords: "quickstart, Machine Learning Server, Microsoft R Server, deploy r mod
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
+ms.date: "2/16/2018"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
 #audience: ""
-#ms.devlang: "r"
+#ms.devlang: ""
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: 
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
-# Deploy an R Model as a web service with mrsdeploy
+# Quickstart: Deploy an R Model as a web service with mrsdeploy
 
-**Applies to: Microsoft R Client 3.x, Machine Learning Server, Microsoft R Server 9.x**
-
-## Objective
+**Applies to: R Client 3.x, R Server 9.x, Machine Learning Server 9.x**
 
 Learn how to publish an R model as a web service with Machine Learning Server, formerly known as Microsoft R Server. Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the mrsdeploy package that ships with Microsoft R Client and Machine Learning Server, you can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 

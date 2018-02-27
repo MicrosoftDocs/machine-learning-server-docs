@@ -7,9 +7,9 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
-ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.date: "2/16/2018"
+ms.topic: "get-started-article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -28,13 +28,14 @@ Machine Learning Server (previously called Microsoft R Server) is released sever
 
 This support policy allows us to deliver innovation to customers at a rapid rate while providing flexibility for customers to adopt the innovation at their pace. 
 
-![Servicing Support](./media/resources-servicing-support/rserver-servicing-support.png)
+![Support timeline for Machine Learning Server & Microsoft R Server](./media/resources-servicing-support/rserver-servicing-support.png)
 <br>_Figure 1. Example of servicing support_
 
 <br>
 
 |Version History|Availability                       |Support End Date                  |
 |:-------------------:|:---------------------------------:|:--------------------------------:|
+|Machine Learning Server 9.3.0|3/1/2018|3/1/2020|
 |Machine Learning Server 9.2.1|10/1/2017|10/1/2019|
 |Microsoft R Server 9.1.0|5/1/2017|5/1/2019|
 |Microsoft R Server 9.0.1|1/1/2017|1/1/2019|

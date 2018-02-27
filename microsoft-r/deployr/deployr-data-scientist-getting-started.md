@@ -9,7 +9,7 @@ ms.author: "jmartens"
 manager: "cgronlun"
 ms.date: "11/10/2017"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "deployr"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -63,7 +63,7 @@ Learn more on how to [write portable R code using these functions](deployr-data-
 Once your R code, models, and data files are ready, you can [verify](#Test-Analytics) their behavior in a DeployR server environment.
  
 
->**Reproducibility Tip:** Use [the `checkpoint` package](https://mran.microsoft.com/package/checkpoint/) to make sure your script always has the same package dependency versions from a specific date across environments and users by pointing to the same fixed CRAN repository snapshot. When the exact same package dependencies are used, you get reproducible results. This package is installed with Microsoft R Open (and Revolution R Open). [Learn more...](http://mran.microsoft.com/documents/rro/reproducibility/#timemachine)
+>**Reproducibility Tip:** Use [the `checkpoint` package](https://mran.microsoft.com/package/checkpoint/) to make sure your script always has the same package dependency versions from a specific date across environments and users by pointing to the same fixed CRAN repository snapshot. When the exact same package dependencies are used, you get reproducible results. This package is installed with Microsoft R Open (and Revolution R Open). [Learn more...](https://mran.microsoft.com/documents/rro/reproducibility/#timemachine)
 
 <a name="Test-Analytics"></a>
 ## Test Analytics

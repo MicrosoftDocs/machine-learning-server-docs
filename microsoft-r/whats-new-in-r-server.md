@@ -6,10 +6,10 @@ description: "Feature announcements, improvements, and changes in past releases 
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/05/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,16 +18,18 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
-# Feature annoucements from previous releases
+# Feature annoucements for previous R Server releases
 
-Microsoft R Server is subsumed by Machine Learning Server 9.2.1, which is built on features from earlier releases. If you have R Server 9.1 or earlier, this article enumerates features introduced in each version.
+Microsoft R Server is subsumed by Machine Learning Server, now in its [second release](whats-new-in-machine-learning-server.md) as the next generation of R Server. If you have R Server 9.1 or earlier, this article enumerates features introduced in those releases.
 
 ## R Server 9.1
+
+R Server 9.1 is the last release of the R Server product. Newer versions of the R Server technology ship in Machine Learning Server, which includes Python in addition to R.
 
 Release announcement blog: https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/introducing-microsoft-r-server-9-1-release/
 
@@ -39,7 +41,7 @@ Release announcement blog: https://blogs.technet.microsoft.com/dataplatforminsid
 | Pretrained models | Deep neural network models for sentiment analysis and image featurization |
 | Ensemble methods | Use a combination of learning algorithms to provide better predictive performance than the algorithms could individually. The approach is used primarily in the Hadoop/Spark environment for training across a multi-node cluster. But it can also be used in a single-node/local context. |
 | MicrosoftML and T-SQL integration | Real-time scoring in SQL Server. Execute R scripts from T-SQL without having to call an R interpreter. Scoring a model in this way reduces the overhead of multiple process interactions and provides faster predictions. |
-| sparklyr interoperability | Within the same R script, you can mix and match functions from RevoScaleR and Microsoft ML packages with popular open source packages like sparklyr and through it, H2O. To learn more, see [Use R Server with sparklyr (step-by-step examples)](r/tutorial-sparklyr-revoscaler.md). |
+| sparklyr interoperability | Within the same R script, you can mix and match functions from RevoScaleR and Microsoft ML packages with popular open-source packages like sparklyr and through it, H2O. To learn more, see [Use R Server with sparklyr (step-by-step examples)](r/tutorial-sparklyr-revoscaler.md). |
 | RevoScaleR new functions | [`rxExecBy`](r-reference/revoscaler/rxexecby.md) enables parallel processing of partitioned data in Spark and SQL Server compute contexts. Leverage the new `rxExecBy` function against unordered data, have it sorted and grouped into partitions (one partition per entity), and then processed in parallel using whatever function or operation you want to run. For example, to project the health outcomes of individuals in a fitness study, you could run a prediction model over data collected about each person. Supported compute context includes `RxSpark` and `RxInSQLServer`.<br/><br/>[`rxExecByPartition`](r-reference/revoscaler/rxexecbypartition.md) for running analytics computation in parallel on individual data partitions split from an input data source based on the specified variables.<br/><br/>[`rxGetPartitions`](r-reference/revoscaler/rxgetpartitions.md) gets the partitions of a previously partitioned Xdf data source. <br/><br/>[`rxGetSparklyrConnection`](r-reference/revoscaler/rxgetsparklyrconnection.md) gets a Spark compute context with sparklyr interop.  <br/><br/>[`RxOrcData`](r-reference/revoscaler/rxsparkdata.md) creates data sets based on data stored in Optimized Row Columnar (ORC) format.<br/><br/>[`rxSerializeModel`](r-reference/revoscaler/rxserializemodel.md) serializes a RevoScaleR model so that it can be saved to disk or loaded into a SQL Server database table. Serialized models are requred for real-time scoring. <br/><br/>[`rxSparkCacheData`](r-reference/revoscaler/rxsparkcachedata.md) sets the Cache flag in a Spark compute context.<br/><br/>[`rxSyncPackages`](r-reference/revoscaler/rxsyncpackages.md) copies packages from a user table in a SQL Server database to a location on the file system so that R scripts can call functions in those packages. |
 | RevoScaleR enhanced functions | [`rxDataStep`](r-reference/revoscaler/rxdatastep.md) adds multithreaded support. <br/><br/>[`rxImport`](r-reference/revoscaler/rximport.md) adds multithreaded support. <br/><br/>`rxMerge` for Merging data frames in Spark compute context. <br/><br/>
 | Cloudera installation improvements | R Server for Hadoop installation is improved for Cloudera distribution including Apache Hadoop (CDH) on RedHat Linux (RHEL) 7.x. On this installation configuration, you can easily deploy, activate, deactivate, or rollback a distribution of R Server using Cloudera Manager.|

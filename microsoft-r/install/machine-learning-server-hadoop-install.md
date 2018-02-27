@@ -5,10 +5,10 @@ description: "How to install, connect to, and use Machine Learning Server on a H
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "09/15/2017"
+manager: "cgronlun"
+ms.date: "02/16/2018"
 ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -17,20 +17,24 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
 
 # Install Machine Learning Server for Hadoop
 
-On a Hadoop cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../what-is-operationalization.md) on edge nodes only.
+**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+
+On a Spark cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../what-is-operationalization.md) on edge nodes only.
 
 Machine Learning Server is engineered for the following architecture:
 
 + Hadoop Distributed File System (HDFS)
 + Apache YARN
 + MapReduce or Spark 2.0-2.1
+
+We recommend Spark for the processing framework.
 
 > [!Note]
 > These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_hadoop_x64_100353069.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
@@ -61,16 +65,16 @@ Installation is through package managers. Unlike previous releases, there is no 
 
 ## Running setup on existing installations
 
-The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.2.1`. However, if R Server 9.x is present, Machine Learning Server 9.2.1 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
+The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.3.0`. However, if R Server 9.x is present, Machine Learning Server 9.x finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
 
-There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.2.1). An installation is either entirely 9.2.1 or an earlier version.
+There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.3). An installation is either entirely 9.3 or an earlier version.
 
 ## Installation paths
 
 After installation completes, software can be found at the following paths:
 
-+ Install root: `/opt/microsoft/mlserver/9.2.1`
-+ Microsoft R Open root: `/opt/microsoft/ropen/3.4.1`
++ Install root: `/opt/microsoft/mlserver/9.3`
++ Microsoft R Open root: `/opt/microsoft/ropen/3.4.3`
 + Executables such as Revo64 and mlserver-python are at `/usr/bin`
 
 ## 1 - Edge node installation
@@ -88,7 +92,7 @@ You can continue installation by running Setup on any data node, either sequenti
 
 **Approach 1: Package managers for full installation** 
 
-Again, we recommend running the [full setup](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do most of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.2.1) and setting it up for activation.
+Again, we recommend running the [full setup](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do most of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.3.0) and setting it up for activation.
 
 As before, follow the installation steps for the Linux operating system used by your cluster: [Linux install > How to install](machine-learning-server-linux-install.md#how-to-install).
 
@@ -117,7 +121,7 @@ Alternatively, you can install a subset of packages. You might do this if you do
     + On Ubuntu offline: `dpkg -i *.deb`
     + On CentOS and RHEL: `yum install *.rpm` 
 
-7. Activate the server: `/opt/microsoft/mlserver/9.2.1/bin/R/activate.sh`
+7. Activate the server: `/opt/microsoft/mlserver/9.3.0/bin/R/activate.sh`
 
 Repeat this procedure on remaining nodes.
 
@@ -128,39 +132,41 @@ Repeat this procedure on remaining nodes.
 The following packages comprise a full Machine Learning Server installation:
 
 ```
- microsoft-mlserver-packages-r-9.2.1        ** core
- microsoft-mlserver-python-9.2.1            ** core
- microsoft-mlserver-packages-py-9.2.1       ** core
- microsoft-mlserver-hadoop-9.2.1            ** hadoop (required for hadoop)
- microsoft-mlserver-mml-r-9.2.1             ** microsoftml for R (optional)
- microsoft-mlserver-mml-py-9.2.1            ** microsoftml for Python (optional)
- microsoft-mlserver-mlm-r-9.2.1             ** pre-trained models (requires mml)
- microsoft-mlserver-mlm-py-9.2.1            ** pre-trained models (requires mml)
- microsoft-mlserver-adminutil-9.2           ** operationalization (optional)
- microsoft-mlserver-computenode-9.2         ** operationalization (optional)
- microsoft-mlserver-config-rserve-9.2       ** operationalization (optional) 
- microsoft-mlserver-dotnet-9.2              ** operationalization (optional)
- microsoft-mlserver-webnode-9.2             ** operationalization (optional)
+ microsoft-mlserver-packages-r-9.3.0        ** core
+ microsoft-mlserver-python-9.3.0            ** core
+ microsoft-mlserver-packages-py-9.3.0       ** core
+ microsoft-mlserver-hadoop-9.3.0            ** hadoop (required for hadoop)
+ microsoft-mlserver-mml-r-9.3.0             ** microsoftml for R (optional)
+ microsoft-mlserver-mml-py-9.3.0            ** microsoftml for Python (optional)
+ microsoft-mlserver-mlm-r-9.3.0             ** pre-trained models (requires mml)
+ microsoft-mlserver-mlm-py-9.3.0            ** pre-trained models (requires mml)
+ microsoft-mlserver-adminutil-9.3           ** operationalization (optional)
+ microsoft-mlserver-computenode-9.3         ** operationalization (optional)
+ microsoft-mlserver-config-rserve-9.3       ** operationalization (optional) 
+ microsoft-mlserver-dotnet-9.3              ** operationalization (optional)
+ microsoft-mlserver-webnode-9.3             ** operationalization (optional)
+ azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```
-The microsoft-mlserver-python-9.2.1 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.2.1/bin/python/python`
+The microsoft-mlserver-python-9.3.0 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.3.0/bin/python/python`
 
 Microsoft R Open is required for R execution:
 
 ```
- microsoft-r-open-foreachiterators-3.4.1 
- microsoft-r-open-mkl-3.4.1
- microsoft-r-open-mro-3.4.1 
+ microsoft-r-open-foreachiterators-3.4.3 
+ microsoft-r-open-mkl-3.4.3
+ microsoft-r-open-mro-3.4.3 
 ```
 
-Microsoft .NET Core 1.1, used for operationalization, must be added to Ubuntu:
+Microsoft .NET Core 2.0, used for operationalization, must be added to Ubuntu:
 
 ```
- dotnet-host
- dotnet-hostfxr-1.1.0
- dotnet-sharedframework-microsoft.netcore.app-1.1.2 
+ dotnet-host-2.0.0
+ dotnet-hostfxr-2.0.0
+ dotnet-runtime-2.0.0 
+
 ```
 
-Additional open source packages could be required. The potential list of packages varies for each computer. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.
+Additional open-source packages could be required. The potential list of packages varies for each computer. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.
 
 ## Next steps
 

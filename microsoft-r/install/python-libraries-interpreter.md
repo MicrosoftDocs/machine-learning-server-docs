@@ -7,9 +7,9 @@ keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "9/25/2017"
-ms.topic: "article"
-ms.prod: "microsoft-r"
+ms.date: "2/16/2018"
+ms.topic: "get-started-article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,8 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -44,7 +43,7 @@ This article describes how to install a Python interpreter (Anaconda) and custom
 
 1. Log in to your local Windows machine.
 
-1. Download the installation shell script from http://aka.ms/mls-py. This script installs Anaconda 4.2.0, which includes Python 3.5.2, along with all packages listed previously.
+1. Download the installation shell script from https://aka.ms/mls93-py (or use https://aka.ms/mls-py for the 9.2. release). The script installs Anaconda 4.2.0, which includes Python 3.5.2, along with all packages listed previously.
 
 1. Launch a new PowerShell window with elevated administrator permissions ('as administrator').
 
@@ -59,6 +58,12 @@ This article describes how to install a Python interpreter (Anaconda) and custom
    .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
    ```
 
+If you get an error, try this alternate syntax:
+
+    ```
+    powershell -ExecutionPolicy Bypass -File C:\path-to-python-for-mls\Install-PyForMLS.ps1
+    ```
+
 ## Install on Linux
 
 On each supported OS, the package manager downloads packages from the repository, determines dependencies, retrieves additional packages, and installs the software. After installation completes, mlserver-python executable is at '/usr/bin'.
@@ -68,7 +73,7 @@ On each supported OS, the package manager downloads packages from the repository
 With root or sudo permissions, run the following commands:
 ```
 # Set location of the package repository. For example for 16.04.
-wget https://packages.microsoft.com/ubuntu/16.04/prod/microsoft-mlserver-packages-py-9.2.1.deb
+wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-py-9.3.0/microsoft-mlserver-packages-py-9.3.0.deb
 
 # Verification step: look for the mlserver.list configuration file
 ls -la /etc/apt/sources.list.d/
@@ -80,7 +85,7 @@ apt-get update
 apt-get install apt-transport-https
 
 # Install the packages
-apt-get install microsoft-mlserver-packages-py-9.2.1
+apt-get install microsoft-mlserver-packages-py-9.3.0
 ```     
 
 **Red Hat and CentOS 6/7**
@@ -88,13 +93,13 @@ apt-get install microsoft-mlserver-packages-py-9.2.1
 With root or sudo permissions, run the following commands:
 ```
 # Set location of the package repository. For example for 7.
-rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-py-9.2.1.rpm
+rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-py-9.3.0.rpm
 
 # Verification step: look for the mlserver.list configuration file
 ls -la /etc/apt/sources.list.d/
 
 # Install the packages
-yum install microsoft-mlserver-packages-py-9.2.1
+yum install microsoft-mlserver-packages-py-9.3.0
 ``` 
 
 **SUSE Linux Enterprise Server 11**
@@ -102,13 +107,13 @@ yum install microsoft-mlserver-packages-py-9.2.1
 With root or sudo permissions, run the following commands:
 ```
 # Set location of the package repository. For example for SLES 11.
-rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-py-9.2.1.rpm
+rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-py-9.3.0.rpm
 
 # Verification step: look for the mlserver.list configuration file
 ls -la /etc/apt/sources.list.d/
 
 # Install the packages
-zypper install microsoft-mlserver-packages-py-9.2.1
+zypper install microsoft-mlserver-packages-py-9.3.0
 ``` 
 
 

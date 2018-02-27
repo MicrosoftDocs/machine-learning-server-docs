@@ -7,9 +7,9 @@ keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started w
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "1/10/2018"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.date: "02/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,15 +18,13 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-client"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
-# Run R code in R Client and Machine Learning Server
+# Quickstart: Run R code in R Client and Machine Learning Server
 
-**Applies to: Microsoft R Client, Machine Learning Server, R Server 9.x**
-
-## Objective
+**Applies to: R Client 3.x, R Server 9.x, Machine Learning Server 9.x**
 
 Learn how to predict flight delays in R locally using R Client or Machine Learning Server. The example in this article uses historical on-time performance and weather data to predict whether the arrival of a scheduled passenger flight is delayed by more than 15 minutes.  We approach this problem as a classification problem, predicting two classes -- whether the flight is delayed or on-time.
 

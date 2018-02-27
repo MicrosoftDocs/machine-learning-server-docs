@@ -1,15 +1,15 @@
 ---
 
 # required metadata
-title: "How to operationalize R models, analytics, & web services in Machine Learning Server"
-description: "What is operationalization in Microsoft R Server"
+title: "Operationalize models, analytics, & web services in Machine Learning Server"
+description: "You can deploy and consume R and Python models in Machine Learning Server to operationalize them."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
 manager: "cgronlun"
-ms.date: "10/12/2017"
-ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.date: "02/16/2018"
+ms.topic: "article"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,9 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
-  - deployr
-  - r-server
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -35,14 +33,14 @@ Today, more businesses are adopting advanced analytics for mission critical deci
 
 Being able to operationalize your analytics is a central capability in Machine Learning Server. After installing Machine Learning Server on select platforms, you'll have everything you need to [configure the server to securely host R and Python analytics web services](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization).  For details on which platforms, see [Supported platforms](operationalize/configure-start-for-administrators.md#supported-platforms).
 
-Data scientists work locally with [Microsoft R Client](r-client/what-is-microsoft-r-client.md) or Machine Learning Server in their preferred IDE and favorite version control tools to build scripts and models. Using the [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md) R package and/or the [azureml-model-management-sdk](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package that ships the products, the data scientist can develop, test, and ultimately deploy these R and Python analytics as web services in their production environment. 
+Data scientists work locally with [Microsoft R Client](r-client/what-is-microsoft-r-client.md), with Machine Learning Server, or with any other program in their preferred IDE and favorite version control tools to build scripts and models using open-source algorithms and functions and/or our proprietary ones. Using the [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md) R package and/or the [azureml-model-management-sdk](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package that ships the products, the data scientist can develop, test, and ultimately deploy these R and Python analytics as web services in their production environment. 
 
 Once deployed, the analytic web service is available to a broader audience within the organization who can then, in turn, consume the analytics. Machine Learning Server provides the operationalizing tools to deploy R and Python analytics inside web, desktop, mobile, and dashboard applications and backend systems. Machine Learning Server turns your scripts into analytics web services, so R and Python code can be easily executed by applications running on a secure server.
 
 
-![Operationalization Engine](media/what-is-operationalization/data-scientist-easy-deploy.png) 
+![Operationalize web services, R &models with Machine Learning Server](media/what-is-operationalization/data-scientist-easy-deploy.png) 
 
-Support for Python was added in Microsoft Machine Learning Server 9.2.1. Learn more about the new additions in the ["What's New in Machine Learning Server"](whats-new-in-machine-learning-server.md) article.
+Learn more about the new additions in the ["What's New in Machine Learning Server"](whats-new-in-machine-learning-server.md) article.
 
 ## Video introduction
 

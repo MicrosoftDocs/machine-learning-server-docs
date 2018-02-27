@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxExecuteSQLDDL function (RevoScaleR) " 
+title: "rxExecuteSQLDDL function (revoAnalytics) | Microsoft Docs" 
 description: " Execute a command to define, manipulate, or control SQL data (but not  return data). " 
-keywords: "(RevoScaleR), rxExecuteSQLDDL, rxExecuteSQLDDL,RxDataSource-method,  ~kwd1 ,  ~kwd2 " 
+keywords: "(revoAnalytics), rxExecuteSQLDDL, rxExecuteSQLDDL,RxDataSource-method,  ~kwd1 ,  ~kwd2 " 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -61,9 +61,9 @@ Returns `NULL`; executed for its side-effect (the manipulation of the
 SQL data source).
  
  
-
+ ##Author(s)
  
-
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
  
  

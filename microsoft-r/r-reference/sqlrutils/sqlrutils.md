@@ -1,15 +1,15 @@
 ---
 
 # required metadata
-title: "sqlrutils Functions R Package for Microsoft R "
+title: "sqlrutils Functions R Package for Machine Learning Server and R Server"
 description: "A package used for executing stored procedures on SQL Server from R script."
 keywords: "sqlrutils package reference"
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
-ms.date: "08/22/2017"
+manager: "cgronlun"
+ms.date: "02/02/2018"
 ms.topic: "reference"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---
@@ -29,9 +29,10 @@ The **sqlrutils** package provides a mechanism for R users to put their R script
 
 | Package details | |
 |--------|-|
-| Version: |  1.0.0 |
-| Runs on: | [SQL Server 2016 R Services or SQL Server 2017 Machine Learning Services (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
-| Built on: | R 3.3.x (included when you [install a product](../introducing-r-server-r-package-reference.md#how-to-install) that provides this package).|
+| Current version: |  1.0.0 |
+| Built on: | R 3.4.3 |
+| Package distribution: | [SQL Server 2017 Machine Learning Services (Windows only) and SQL Server 2016 R Services ](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)<br/>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) |
+
 
 ## How to use sqlrutils
 

@@ -6,9 +6,9 @@ keywords: ""
 author: "bradsev"
 ms.author: "bradsev"
 manager: "cgronlun"
-ms.date: "09/25/2017"
+ms.date: "02/16/2018"
 ms.topic: "get-started-article"
-ms.prod: "microsoft-r"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
@@ -17,7 +17,7 @@ ms.prod: "microsoft-r"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: "r-server"
+#ms.technology: ""
 #ms.custom: ""
 
 ---

@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "rxNewDataSource function (RevoScaleR) " 
+title: "rxNewDataSource function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for RxDataSource S4 classes. " 
-keywords: "(RevoScaleR), rxNewDataSource, rxNewDataSource,character-method, file, connection" 
+keywords: "(revoAnalytics), rxNewDataSource, rxNewDataSource,character-method, file, connection" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -73,8 +73,8 @@ This function creates the data source instance in the Microsoft R Services Compu
 actually open the data. The methods [rxOpen](rxOpen-methods.md) and
 [rxClose](rxOpen-methods.md) will open and close the data.
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

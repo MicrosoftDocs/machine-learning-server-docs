@@ -1,14 +1,14 @@
 --- 
  
 # required metadata 
-title: "RxXdfData-class function (RevoScaleR) " 
+title: "RxXdfData-class class (revoAnalytics) | Microsoft Docs" 
 description: " Xdf data source connection class. " 
-keywords: "(RevoScaleR), RxXdfData-class, colnames,RxXdfData-method, dim,RxXdfData-method, dimnames,RxXdfData-method, formula,RxXdfData-method, length,RxXdfData-method, names,RxXdfData-method, names<-,RxXdfData-method, row.names,RxXdfData-method, show,RxXdfData-method, str,RxXdfData-method, classes" 
+keywords: "(revoAnalytics), RxXdfData-class, colnames,RxXdfData-method, dim,RxXdfData-method, dimnames,RxXdfData-method, formula,RxXdfData-method, length,RxXdfData-method, names,RxXdfData-method, names<-,RxXdfData-method, row.names,RxXdfData-method, show,RxXdfData-method, str,RxXdfData-method, classes" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/07/2017" 
+manager: "cgronlun" 
+ms.date: "01/24/2018" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 --- 
@@ -104,8 +104,8 @@ Class RxDataSource, by class RxFileData.
 
  
  
-
- 
+ ##Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
  ##See Also

@@ -8,7 +8,7 @@ author: "bradsev"
 manager: "jhubbard" 
 ms.date: "10/23/2017" 
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
  
@@ -19,7 +19,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+#ms.technology: "" 
 ms.custom: "" 
  
 ---
@@ -382,13 +382,13 @@ when `train_threads > 1` (multi-threading).
 
 ## References
 
-[Wikipedia: L-BFGS](http://en.wikipedia.org/wiki/L-BFGS)
+[Wikipedia: L-BFGS](https://en.wikipedia.org/wiki/L-BFGS)
 
 [Wikipedia: Logistic
-regression](http://en.wikipedia.org/wiki/Logistic_regression)
+regression](https://en.wikipedia.org/wiki/Logistic_regression)
 
 [Scalable
-Training of L1-Regularized Log-Linear Models](http://research.microsoft.com/apps/pubs/default.aspx?id=78900)
+Training of L1-Regularized Log-Linear Models](https://research.microsoft.com/apps/pubs/default.aspx?id=78900)
 
 [Test Run - L1
 and L2 Regularization for Machine Learning](https://msdn.microsoft.com/en-us/magazine/dn904675.aspx)

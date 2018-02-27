@@ -1,12 +1,12 @@
 --- 
  
 # required metadata 
-title: "createSnapshot function (mrsdeploy) " 
+title: "createSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Creates a snapshot of the remote R session and saves it on the server. Both the workspace and the files in the working directory are saved. " 
 keywords: "(mrsdeploy), createSnapshot" 
 author: "heidisteen" 
-manager: "jhubbard" 
-ms.date: "09/18/2017" 
+manager: "cgronlun" 
+ms.date: "02/05/2018" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
