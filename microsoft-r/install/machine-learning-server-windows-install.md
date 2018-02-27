@@ -34,7 +34,7 @@ This article explains how to install Machine Learning Server on a standalone Win
 
 + Operating system must be a [supported version of 64-bit Windows](r-server-install-supported-platforms.md). 
 
-+ [Operalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. This functionality is not available on a Windows client.
++ [Operationalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. This functionality is not available on a Windows client.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended. Disk space must be a minimum of 500 MB.
 
@@ -82,9 +82,9 @@ For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/d
 
 1. Click **Join or access now** to sign up for download benefits.
 2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
-3. Click **Downloads** to search for Machine Learning Server.
-4. Choose the platform, such as Machine Learning Server for Windows.
-5. Click **Downloads** for a specific version, either 9.2.1 or 9.3, to select the installer for Windows.
+3. Click **Downloads**.
+4. Search for *Machine Learning Server*.
+5. Click **Download** to get the Machine Learning Server installer for Windows.
 
 ![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
 
@@ -109,7 +109,7 @@ The setup wizard installs, upgrades, and uninstalls all in one workflow.
     + **Python** adds Anaconda and the Python libraries. 
     + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) are used for image classification and sentiment detection. You can install the models with R or Python, but not as a standalone component.
 
-4. Accept the SQL Server license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open and Anaconda.
+4. Accept the license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open and Anaconda.
 
 5. At the end of the wizard, click **Install** to run setup.
 
