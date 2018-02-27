@@ -23,14 +23,24 @@ ms.prod: "mlserver"
 
 ---
 
-# Machine Learning Server for Linux 9.3:  Virtual Machine on Azure
+# Machine Learning Server on Azure Virtual Machines
 
-Machine Learning Server, formerly known as R Server, is pre-installed on Azure virtual machines (VM) for Linux (CentOS/RedHat version 7.2 or Ubuntu version 16.04). 
+Machine Learning Server, formerly known as R Server, is pre-installed on Azure virtual machines (VM) running either a Windows or Linux operating system.
+
+## VM images on Azure 
+
+1. To view a list of available VM images, [sign in to the Azure portal](https://portal.azure.com).
+
+2. Click **Create a resource**.
+
+3. Search for *Machine Learning Server*. The following list shows partial search results. VM images include current and previous versions of Machine Learning Server on several common Linux operating systems as well as Windows Server 2016.
+
+  ![VM images on Azure](./media/machine-learning-server-install-azure-vm/azure-vm-list.png)
 
 VM images include the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) from Machine Learning Server that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
 
 > [!Note]
-> If you require a previous version, see these links: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
+> If you require a specific previous version, search the portal for *R Server* and use these links for installation instructions: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
 ## Provision a Machine Learning Server VM using an ARM template
 
@@ -56,21 +66,19 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 **To create the Machine Learning Server on Linux VM:**
 
-1. Go to the Azure portal: http://portal.azure.com.
+1. Go to the Azure portal: [https://portal.azure.com](https://portal.azure.com).
 
 1. Click **Virtual Machines** in the left menu.
 
 1. Click **Add**.
 
-1. In the search box, enter: "Machine Learning Server".
+1. Search for *Machine Learning Server*.
 
-   A list of virtual machines matching this string appears.
-
-1. Choose the operating system from the list. 
+1. From the list of virtual machines, choose the VM image that provides the operating system and version of Machine Learning Server you want to install. 
 
 1. Accept the terms and get started by clicking **Create**. 
 
-1. Use the onscreen prompts and fields to configure your Machine Learning Server VM. 
+1. Follow the onscreen prompts and fields to configure your Machine Learning Server VM. 
    >- You need an Azure subscription to create the VM.
    >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/documentation/services/virtual-machines/linux/)
 

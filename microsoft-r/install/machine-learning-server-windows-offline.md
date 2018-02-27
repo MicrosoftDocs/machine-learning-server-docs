@@ -30,7 +30,7 @@ By default, installers connect to Microsoft download sites to get required and u
 
 Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md).
 
-## Downloads
+## 9.3.0 Downloads
 
 On an internet-connected computer, download all of the following files.
 
@@ -38,17 +38,33 @@ On an internet-connected computer, download all of the following files.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_11452137.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
-|Pre-trained Models |[MLM_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
-|Microsoft R Open 3.4.3.0|[SRO_3.4.3_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
-|Microsoft Python Open |[SPO_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
-|Microsoft Python Server |[SPS_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
+|Pre-trained Models |[MLM_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859053) | Pre-trained models, R or Python |
+|Microsoft R Open 3.4.3.0|[SRO_3.4.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=867186) | R |
+|Microsoft Python Open |[SPO_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859054) | Python |
+|Microsoft Python Server |[SPS_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859056) | Python |
+|Python script |[Install-PyForMLS](https://aka.ms/mls93-py) | Python |
+
+## 9.2.1 Downloads
+
+If you require the previous version, use these links instead.
+
+<a name="file-list"></a>
+
+| Component | Download | Used for | 
+|-----------|----------|----------|
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
+|Pre-trained Models |[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
+|Microsoft R Open 3.4.3.0|[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
+|Microsoft Python Open |[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
+|Microsoft Python Server |[SPS_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
+|Python script |[Install-PyForMLS](https://aka.ms/mls-py) | Python |
 
 ## Transfer and place files
 
 Use a tool or device to transfer the files to the offline server. 
 
-1. Put the unzipped **en_machine_learning_server_for_windows_x64_11452137.zip** file in a convenient folder.
+1. Put the unzipped **en_machine_learning_server_for_windows_x64_<build-number>.zip** file in a convenient folder.
 2. Right-click **Extract All** to unpack the file. You should see a folder named **MLS93Win**. This folder contains **ServerSetup.exe**.
 3. Put the CAB files in the setup user's temp folder: **C:\Users\<user-name>\AppData\Local\Temp**. 
 
