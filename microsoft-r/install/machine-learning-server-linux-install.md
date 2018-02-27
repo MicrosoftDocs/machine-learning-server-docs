@@ -99,140 +99,166 @@ After installation completes, software can be found at the following paths:
 
 ## <a name="redhat">Install on Red Hat or CentOS 7</a>
 
-Follow these instructions for Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS 7.
+Run the following commands to install Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS 7. If you run into problems, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration) instead.
 
-1. Install as root: `sudo su`
+  ```bash
+  # Install as root
+  sudo su
 
-2.  Import the Microsoft repository key.
-
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   ```
-
-3. Create local `azure-cli` repository information.
-
-   ```bash
-   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
-   ```
-
-4. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution: `rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm`
-
-5. As a verification step, check whether the **microsoft-prod.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
-
-   > [!Note]
-   > If the file is missing, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration).
-
-6. Update packages on your system: `yum update` 
-
-7. Install the server: `yum install microsoft-mlserver-all-9.3.0` 
-
-8. Activate the server: `/opt/microsoft/mlserver/9.3.0/bin/R/activate.sh`
-
-9. List installed packages as a verification step: `rpm -qa | grep microsoft` 
-
-10. Once you have a package name, you can obtain verbose version information: `$ rpm -qi microsoft-mlserver-packages-r-9.3.0`
+  # Import the Microsoft repository key
+  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  
+  # Create local `azure-cli` repository
+  sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
+  
+  # Set the location of the package repo at the "prod" directory
+  rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+  
+  # Verify that the "microsoft-prod.repo" configuration file exists
+  ls -la /etc/yum.repos.d/
+  
+  # Update packages on your system:
+  yum update
+  
+  #Install the server
+  yum install microsoft-mlserver-all-9.3.0
+  
+  #Activate the server
+  /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh
+  
+  # List installed packages as a verification step
+  rpm -qa | grep microsoft
+  
+  # Choose a package name and obtain verbose version information
+  rpm -qi microsoft-mlserver-packages-r-9.3.0
+  ```
 
 ## <a name="redhat">Install on Red Hat or CentOS 6</a>
 
 Follow these instructions for Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS 6.
 
-1. Install as root: `sudo su`
+  ```bash
+  # Install as root
+  sudo su
 
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution: `rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm`
+  # Import the Microsoft repository key
+  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  
+  # Create local `azure-cli` repository
+  sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
+  
+  # Set the location of the package repo at the "prod" directory
+  rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
+  
+  # Verify that the "microsoft-prod.repo" configuration file exists
+  ls -la /etc/yum.repos.d/
+  
+  # Update packages on your system:
+  yum update
+  
+  # Install the server
+  yum install microsoft-mlserver-el6-9.3.0
+  
+  # Activate the server
+  /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh
 
-3. As a verification step, check whether the **microsoft-prod.repo** configuration file exists: `ls -la /etc/yum.repos.d/` 
-
-   > [!Note]
-   > If the file is missing, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration).
-
-4. Update packages on your system: `yum update` 
-
-5. Install the server: `yum install microsoft-mlserver-el6-9.3.0` 
-
-6. Activate the server: `/opt/microsoft/mlserver/9.3.0/bin/R/activate.sh`
-
-7. List installed packages as a verification step: `rpm -qa | grep microsoft` 
-
-8. Once you have a package name, you can obtain verbose version information: `$ rpm -qi microsoft-mlserver-packages-r-9.3.0`
+  # List installed packages as a verification step
+  rpm -qa | grep microsoft
+  
+  # Choose a package name and obtain verbose version information
+  rpm -qi microsoft-mlserver-packages-r-9.3.0
+  ```
 
 
 ## <a name="ubuntu">Install on Ubuntu </a>
 
 Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04 - 16.04 only).
 
-1. Install as root: `sudo su`
-
-2. Optionally, if your system does not have the https apt transport option: `apt-get install apt-transport-https`
-
-3. Add the **azure-cli** repo to your apt sources list:
-```bash
-AZ_REPO=$(lsb_release -cs)
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |\
-     sudo tee /etc/apt/sources.list.d/azure-cli.list
-```
-
-4. Set the location of the package repo the **prod** directory, which contains the Machine Learning Server distribution. This example specifies 16.04: `wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb`
-
-5. Register the repo: `dpkg -i packages-microsoft-prod.deb`
-
-6. As a verification step, check whether the **microsoft-prod.list** configuration file exists: `ls -la /etc/apt/sources.list.d/`
-
-   > [!Note]
-   > If the file is missing, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration).
-
-7. Update packages on your system: `apt-get update` 
-
-8. Install the server: `apt-get install microsoft-mlserver-all-9.3.0`  
-
-9. Activate the server: `/opt/microsoft/mlserver/9.3.0/bin/R/activate.sh`     
-
-10. List installed packages as a verification step: `apt list --installed | grep microsoft`  
-
-11. Once you have a package name, you can obtain verbose version information: `$ dpkg --status microsoft-mlserver-packages-r-9.3.0`  
-
-Output on Ubuntu is as follows:
-
-   ```
-    Package: microsoft-mlserver-packages-r-9.3.0
-    Status: install ok installed
-    Priority: optional
-    Section: devel
-    Installed-Size: 195249
-    Maintainer: revobuil@microsoft.com
-    Architecture: amd64
-    Version: 9.3.0.1287
-    Depends: microsoft-r-open-mro-3.4.3, microsoft-r-open-mkl-3.4.3, microsoft-r-open-foreachiterators-3.4.3
-    Description: Microsoft Machine Learning Server
-	  . . .
-   ```
+  ```bash
+  # Install as root
+  sudo su
+  
+  # Optionally, if your system does not have the https apt transport option
+  apt-get install apt-transport-https
+  
+    # Add the **azure-cli** repo to your apt sources list
+  AZ_REPO=$(lsb_release -cs)
+  
+  echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" 
+  sudo tee /etc/apt/sources.list.d/azure-cli.list
+  
+  # Set the location of the package repo the "prod" directory containing the distribution.
+  # This example specifies 16.04. Replace with 14.04 if you want that version
+  wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+  
+  # Register the repo
+  dpkg -i packages-microsoft-prod.deb
+  
+  # Verify whether the "microsoft-prod.list" configuration file exists
+  ls -la /etc/apt/sources.list.d/
+  
+  # Update packages on your system
+  apt-get update
+  
+  # Install the server
+  apt-get install microsoft-mlserver-all-9.3.0
+  
+  # Activate the server
+  /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh     
+  
+  # List installed packages as a verification step
+  apt list --installed | grep microsoft  
+  
+  # Choose a package name and obtain verbose version information
+  dpkg --status microsoft-mlserver-packages-r-9.3.0
+  ```
 
 ## <a name="suse">Install on SUSE </a>
 
 Follow these instructions for Machine Learning Server for Linux on SUSE (SLES11 only).
 
-1. Install as root: `sudo su`
-
-2. Set the location of the package repo at the **prod** directory, which contains the Machine Learning Server distribution. This example is for SLES11, the only supported version of SUSE in Machine Learning Server: `zypper ar -f https://packages.microsoft.com/sles/11/prod packages-microsoft-com`
-
-3. Update packages on your system: `zypper update` 
-
-4. Install the server: `zypper install microsoft-mlserver-sles11-9.3.0` 
-
-5. You might get a message stating that PackageKit is blocking zypper. Enter `y` to quit PackageKit and allow zypper to continue.
-
-6. You are prompted whether to trust the repository signing key. You can choose `t` to temporarily trust the key for the purposes of downloading and installing Machine Learning Server. 
-
-7. You might get a "Digest verification failed" message (this is a temporary issue that will be resolved soon). Enter `y` to continue.
-
-8. When asked to confirm the list of packages to install, enter `y` to continue. 
-
-9. Review and accept the license agreements for MRO, Anaconda, and Machine Learning Server.
-
-10. Activate the server: `/opt/microsoft/mlserver/9.3.0/bin/R/activate.sh`
-
-11. List installed packages as a verification step: `zypper se microsoft`
-
-12. Once you have a package name, you can obtain verbose version information: `zypper info microsoft-mlserver-packages-r-9.3.0`
+  ```bash
+  # Install as root
+  sudo su
+  
+  # Set the location of the package repo at the "prod" directory containing the distribution
+  # This example is for SLES11, the only supported version of SUSE in Machine Learning Server
+  zypper ar -f https://packages.microsoft.com/sles/11/prod packages-microsoft-com
+  
+  # Update packages on your system:
+  zypper update
+  
+  # Install the server
+  zypper install microsoft-mlserver-sles11-9.3.0
+  
+  # You might get a message stating that PackageKit is blocking zypper
+  # Enter `y` to quit PackageKit and allow zypper to continue
+  y
+  
+  # You are prompted whether to trust the repository signing key
+  # Enter `t` to temporarily trust the key for download and install
+  t 
+  
+  # You might get a "Digest verification failed" message
+  # Enter `y` to continue
+  y
+  
+  # You are asked to confirm the list of packages to install
+  # Enter `y` to continue
+  y
+  
+  # Review and accept the license agreements for MRO, Anaconda, and Machine Learning Server.
+  y
+  
+  #Activate the server
+  /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh
+  
+  # List installed packages as a verification step
+  zypper se microsoft
+  
+  # Choose a package name and obtain verbose version information
+  zypper info microsoft-mlserver-packages-r-9.3.0
+  ```
 
 ## Start Revo64
 
