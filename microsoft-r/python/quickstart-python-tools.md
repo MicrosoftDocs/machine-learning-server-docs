@@ -21,7 +21,7 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Quickstart: Link Python tools and IDES to the Python interpreter installed with Machine Learning Server
+# Quickstart: Link Python tools and IDEs to the Python interpreter installed with Machine Learning Server
 
 **Applies to: Machine Learning Server 9.x**
 
@@ -90,7 +90,9 @@ For new projects, you can also add an environment to your project in **Solution 
 
 A local Jupyter Notebook executable is installed with Machine Learning Server. 
 
-+ Go to \Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\ and double-click **jupyter-notebook.exe** to start a Jupyter Notebook session in the default browser window.
++ On Windows, go to **\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\** and double-click **jupyter-notebook.exe** to start a Jupyter Notebook session in the default browser window.
+
++ On Linux, go to **/opt/microsoft/mlserver/9.2.1/runtime/python/bin/** and type `jupyter notebook`.
 
 For additional instructions on configuring a multi-user server, see [How to add Machine Learning Server modules to single and multi-user Jupyter Notebook instances](how-to-revoscalepy-jupyter-nb-config.md).
 

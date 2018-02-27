@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 Machine Learning Server is available on a number of [platforms](r-server-install-supported-platforms.md). Looking for earlier versions? See [Installation guides for earlier releases](r-server-install.md) for links.
 
-## Common configurations
+## Choose a configuration
 
 This section covers topology configurations from single to multi-machine topologies.
 
@@ -53,10 +53,14 @@ For Hadoop and Spark, you can write and run script locally and then [push the co
 
    ![scaleout topology on clustered computers](./media/machine-learning-server-install/install-topology-scaleout.png)
 
+## Choose a platform
 
-## Installation Guides 
+Machine Learning Server runs on Windows, Linux, and Hadoop. Review the [supported platforms list](r-server-install-supported-platforms.md) for specific operating system versions.
 
-+ [Supported platforms](r-server-install-supported-platforms.md)    
+## Begin installation
+
+The following links provide installation and configuration instructions.
+
 + [Install on Windows](machine-learning-server-windows-install.md)    
 + [Install on Linux](machine-learning-server-linux-install.md)    
 + [Install on Hadoop](machine-learning-server-hadoop-install.md)    
@@ -66,5 +70,6 @@ For Hadoop and Spark, you can write and run script locally and then [push the co
 
 ## Local Tools
 
-+ [Microsoft R Client](../r-client/what-is-microsoft-r-client.md)    
++ [Microsoft R Client](../r-client/what-is-microsoft-r-client.md)   
++ [Link Python tools and IDES to the MLServer Python interpreter ](../python/quickstart-python-tools.md) 
 + [Python interpreter & libraries on Windows](python-libraries-interpreter.md)    
