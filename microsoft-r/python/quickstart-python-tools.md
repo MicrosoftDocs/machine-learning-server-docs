@@ -21,7 +21,7 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Quickstart: Link Python tools and IDES to the Python interpreter installed with Machine Learning Server
+# Quickstart: Link Python tools and IDEs to the Python interpreter installed with Machine Learning Server
 
 **Applies to: Machine Learning Server 9.x**
 

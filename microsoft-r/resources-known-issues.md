@@ -33,15 +33,13 @@ The following issues are known in the 9.3 release.
 
 ### 1. Compute nodes fail on a Python-only install on Ubuntu 14.04
 
-This issue applies to both 9.3 and 9.2.1 installations.
-
-On a Ubuntu 14.04 installation of a Python-only Machine Learning Server configured for operationalization, the compute node eventually fails. For example, if you run [diagnostics](operationalize/configure-run-diagnostics.md), the script fails with "BackEndBusy Exception".
+This issue applies to both 9.3 and 9.2.1 installations. On a Ubuntu 14.04 installation of a Python-only Machine Learning Server configured for operationalization, the compute node eventually fails. For example, if you run [diagnostics](operationalize/configure-run-diagnostics.md), the script fails with "BackEndBusy Exception".
 
 To work around this issue, comment out the stop service entry in the config file:
 
 1. On the compute node, edit the /etc/init/computenode.service file.
 2. Comment out the command: "stop on stopping rserve" by inserting # at beginning of the line.
-3. Restart the compute node: "az ml admin node start --computenode"
+3. Restart the compute node: `az ml admin node start --computenode`
 
 For more information on service restarts, see [Monitor, stop, and start web & compute nodes](operationalize/configure-admin-cli-stop-start.md).
 
