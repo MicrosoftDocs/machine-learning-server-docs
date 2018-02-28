@@ -320,7 +320,7 @@ Applies to: Machine Learning Server 9.3
 
 Launching the <a href="https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-admin-cli-launch">admin CLI</a> requires administrative privileges. If you try to launch the admin CLI as another user, you might receive the following error message : 
 
-```Launching Admin CLI
+```
 C:\Windows\system32>az ml admin --help
 az: error: argument _command_package: invalid choice: ml
 usage: az [-h] [--verbose] [--debug] [--output {json,jsonc,table,tsv}]
@@ -333,7 +333,7 @@ usage: az [-h] [--verbose] [--debug] [--output {json,jsonc,table,tsv}]
 
 You can use the command `whoami` both in windows and linux to find the current user. Here is an example of non-administrative user in windows which cannot use the <a href="https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-admin-cli-launch">admin CLI</a> : 
 
-```Non-administrative user
+```
 C:\Windows\system32>whoami
 nt authority\system
 ```
