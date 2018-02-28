@@ -66,11 +66,9 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 **To create the Machine Learning Server on Linux VM:**
 
-1. Go to the Azure portal: [https://portal.azure.com](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
-1. Click **Virtual Machines** in the left menu.
-
-1. Click **Add**.
+1. Click **Create a resource**.
 
 1. Search for *Machine Learning Server*.
 
@@ -79,8 +77,6 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 1. Accept the terms and get started by clicking **Create**. 
 
 1. Follow the onscreen prompts and fields to configure your Machine Learning Server VM. 
-   >- You need an Azure subscription to create the VM.
-   >- If you are unfamiliar with the Virtual Machines on Azure, [learn more about the process here.](https://azure.microsoft.com/documentation/services/virtual-machines/linux/)
 
 1. After the VM is deployed and running, [connect](#connect) to the VM to begin interacting with Machine Learning Server. 
 
