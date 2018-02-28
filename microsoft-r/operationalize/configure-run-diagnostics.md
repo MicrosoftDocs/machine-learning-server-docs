@@ -325,12 +325,9 @@ C:\Windows\system32>az ml admin --help
 az: error: argument _command_package: invalid choice: ml
 usage: az [-h] [--verbose] [--debug] [--output {json,jsonc,table,tsv}]
           [--query JMESPATH]
-          {acr,acs,aks,advisor,webapp,appservice,functionapp,backup,batch,batcha
-i,billing,cdn,cloud,cognitiveservices,configure,consumption,container,cosmosdb,d
-la,dls,eventgrid,extension,feedback,find,interactive,iot,keyvault,lab,monitor,ne
-twork,login,logout,account,mysql,postgres,redis,reservations,group,resource,prov
-ider,feature,tag,policy,lock,managedapp,role,ad,sf,sql,storage,disk,identity,ima
-ge,snapshot,vm,vmss}
+          {acr,acs,aks,advisor,webapp,appservice,functionapp,backup,batch,batchai,billing,cdn,cloud,cognitiveservices,configure,consumption,container,cosmosdb,
+          dla,dls,eventgrid,extension,feedback,find,interactive,iot,keyvault,lab,monitor,network,login,logout,account,mysql,postgres,redis,reservations,group,
+          resource,provider,feature,tag,policy,lock,managedapp,role,ad,sf,sql,storage,disk,identity,image,snapshot,vm,vmss}
           ...
 ```
 
