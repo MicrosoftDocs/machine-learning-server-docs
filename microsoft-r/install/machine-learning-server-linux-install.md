@@ -97,45 +97,9 @@ After installation completes, software can be found at the following paths:
 
 <a name="how-to-install"></a>
 
-## <a name="redhat">Install on Red Hat or CentOS 7</a>
+## <a name="redhat">Install on Red Hat or CentOS</a>
 
-Run the following commands to install Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS 7. If you run into problems, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration) instead.
-
-  ```bash
-  # Install as root
-  sudo su
-
-  # Import the Microsoft repository key
-  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-  
-  # Create local `azure-cli` repository
-  sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
-  
-  # Set the location of the package repo at the "prod" directory
-  rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
-  
-  # Verify that the "microsoft-prod.repo" configuration file exists
-  ls -la /etc/yum.repos.d/
-  
-  # Update packages on your system:
-  yum update
-  
-  #Install the server
-  yum install microsoft-mlserver-all-9.3.0
-  
-  #Activate the server
-  /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh
-  
-  # List installed packages as a verification step
-  rpm -qa | grep microsoft
-  
-  # Choose a package name and obtain verbose version information
-  rpm -qi microsoft-mlserver-packages-r-9.3.0
-  ```
-
-## <a name="redhat">Install on Red Hat or CentOS 6</a>
-
-Follow these instructions for Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS 6.
+Run the following commands to install Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS (6.x - 7.x). If you run into problems, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration) instead.
 
   ```bash
   # Install as root
@@ -148,8 +112,12 @@ Follow these instructions for Machine Learning Server for Linux on Red Hat Enter
   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
   
   # Set the location of the package repo at the "prod" directory
+  # FOR RHEL 6.x ONLY
   rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
-  
+
+  # FOR RHEL 7.x ONLY
+  rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+
   # Verify that the "microsoft-prod.repo" configuration file exists
   ls -la /etc/yum.repos.d/
   
@@ -157,7 +125,11 @@ Follow these instructions for Machine Learning Server for Linux on Red Hat Enter
   yum update
   
   # Install the server
+  # FOR RHEL 6.x ONLY
   yum install microsoft-mlserver-el6-9.3.0
+
+  # FOR RHEL 7.x ONLY
+  yum install microsoft-mlserver-all-9.3.0
   
   # Activate the server
   /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh

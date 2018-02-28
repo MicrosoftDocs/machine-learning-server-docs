@@ -69,9 +69,9 @@ There is no support for side-by-side installations of older and newer versions.
 
 ## How to install (with internet access)
 
-This section walks you through an R Client 3.4.1 deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML packages, and mrsdeploy.
+This section walks you through an R Client 3.4.3 deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML packages, and mrsdeploy.
 
-The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software).
+The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 > [!Note]
 > If the repository configuration file is not present in the /etc directory, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration) for repository registration.
@@ -102,7 +102,7 @@ ls -la /etc/apt/sources.list.d/
 apt-get update
 
 # Install the packages
-apt-get install microsoft-r-client-packages-3.4.1
+apt-get install microsoft-r-client-packages-3.4.3
 
 # List the packages
 ls /opt/microsoft/rclient/
@@ -128,7 +128,7 @@ ls -la /etc/yum.repos.d/
 yum update
 
 # Install the packages
-yum install microsoft-r-client-packages-3.4.1
+yum install microsoft-r-client-packages-3.4.3
 ``` 
 
 **SUSE Linux Enterprise Server 11**
@@ -145,7 +145,7 @@ zypper ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com
 zypper update
 
 # Install the packages
-zypper install microsoft-r-client-packages-3.4.1
+zypper install microsoft-r-client-packages-3.4.3
 ``` 
 
 
@@ -158,7 +158,7 @@ You can now [set up your IDE and try out some sample code](../r-client-get-start
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
-If you previously installed version 3.3.3, it will be replaced with the 3.4.1 version. 
+If you previously installed version 3.4.1, it will be replaced with the 3.4.3 version. 
 
 Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). 
 
@@ -175,17 +175,17 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 The following packages comprise a full R Client installation:
 
 ```
- microsoft-r-client-packages-3.4.1     ** core
- microsoft-r-client-mml-3.4.1          ** microsoftml for R (optional)
- microsoft-r-client-mlm-3.4.1          ** pre-trained models (requires microsoftml)
+ microsoft-r-client-packages-3.4.3     ** core
+ microsoft-r-client-mml-3.4.3          ** microsoftml for R (optional)
+ microsoft-r-client-mlm-3.4.3          ** pre-trained models (requires microsoftml)
 ```
 
 Microsoft R Open is required for R execution:
 
 ```
- microsoft-r-open-foreachiterators-3.4.1 
- microsoft-r-open-mkl-3.4.1
- microsoft-r-open-mro-3.4.1 
+ microsoft-r-open-foreachiterators-3.4.3 
+ microsoft-r-open-mkl-3.4.3
+ microsoft-r-open-mro-3.4.3 
 ```
 
 Additional open-source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:
@@ -225,11 +225,11 @@ If your system provides a graphical user interface, you can click a file to down
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-+ Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.1.rpm` 
-+ Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.1.rpm` 
-+ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.1.rpm`
++ Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.3.rpm` 
++ Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.3.rpm` 
++ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.3.rpm`
 + Download to Ubuntu 14.04: `wget https://packages.microsoft.com/prod/ubuntu/14.04/microsoft-r-client-packages-3.4.1.deb`
-+ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-r-client-packages-3.4.1.deb`
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-r-client-packages-3.4.3.deb`
 
 Repeat for each package.
 
@@ -253,23 +253,23 @@ This step completes installation.
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   + On CentOS and RHEL: `$ rpm -qi microsoft-r-client-packages-3.4.1`
-   + On Ubuntu: `$ dpkg --status microsoft-r-client-packages-3.4.1`  
-   + On SLES: `zypper info microsoft-r-client-packages-3.4.1`
+   + On CentOS and RHEL: `$ rpm -qi microsoft-r-client-packages-3.4.3`
+   + On Ubuntu: `$ dpkg --status microsoft-r-client-packages-3.4.3`  
+   + On SLES: `zypper info microsoft-r-client-packages-3.4.3`
 
   Output on Ubuntu is as follows:
 
    ```
-    Package: microsoft-r-client-packages-3.4.1
+    Package: microsoft-r-client-packages-3.4.3
     Status: install ok installed
     Priority: optional
     Section: devel
     Installed-Size: 195249
     Maintainer: revobuil@microsoft.com
     Architecture: amd64
-    Version: 3.4.1
-    Depends: microsoft-r-open-mro-3.4.1, microsoft-r-open-mkl-3.4.1, microsoft-r-open-foreachiterators-3.4.1
-    Description: Microsoft R Client 3.4.1
+    Version: 3.4.3
+    Depends: microsoft-r-open-mro-3.4.3, microsoft-r-open-mkl-3.4.3, microsoft-r-open-foreachiterators-3.4.3
+    Description: Microsoft R Client 3.4.3
 	  . . .
    ```
 
@@ -284,9 +284,9 @@ Review the recommendations in [Package Management](../operationalize/configure-m
 
 1. On root@, uninstall Microsoft R Open (MRO) first. This action removes any dependent packages used only by MRO, which includes packages like microsoft-mlserver-packages-r. 
 
-  + On RHEL: `yum erase microsoft-r-open-mro-3.4.1`     
-  + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.4.1`  
-  + On SUSE: `zypper remove microsoft-r-open-mro-3.4.1`    
+  + On RHEL: `yum erase microsoft-r-open-mro-3.4.3`     
+  + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.4.3`  
+  + On SUSE: `zypper remove microsoft-r-open-mro-3.4.3`    
 
 2. Re-list the packages from Microsoft to check for remaining files:
 
@@ -298,11 +298,11 @@ Review the recommendations in [Package Management](../operationalize/configure-m
 
 6. After packages are uninstalled, remove remaining files. On root@, determine whether additional files still exist:
 
-  + `$ ls /opt/microsoft/rclient/3.4.1/`
+  + `$ ls /opt/microsoft/rclient/3.4.3/`
 
 7. Remove the entire directory:
 
-  + `$ rm -fr ls /opt/microsoft/rclient/3.4.1/`
+  + `$ rm -fr ls /opt/microsoft/rclient/3.4.3/`
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft/rclient. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
