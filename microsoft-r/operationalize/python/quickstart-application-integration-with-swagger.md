@@ -157,7 +157,7 @@ This model can now be used to estimate the ratings expected from the attitude da
 
 ### Publish the model as a realtime web service
 
-To publish any model as a realtime service, you must first serialize the model object using the revoscalepy [rx_serialize_model](./../../python-reference/revoscalepy/rx_serialize_model.md) function.
+To publish any model as a realtime service, you must first serialize the model object using the revoscalepy [rx_serialize_model](./../../python-reference/revoscalepy/rx-serialize-model.md) function.
 
 	# Import the needed classes and functions
 	from revoscalepy import rx_serialize_model
