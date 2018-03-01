@@ -313,3 +313,28 @@ The workaround is to:
 Applies to: Machine Learning Server
 
 If the following error occurs when attempting to start a web node _"Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -97 EAFNOSUPPORT address family not supported"_, then disable IPv6 on your operating system.
+
+### az: error: argument command_package: invalid choice: ml
+
+Applies to: Machine Learning Server 9.3 
+
+Launching the [Administrator CLI](https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-admin-cli-launch) requires administrative privileges. If you try to launch the Administrator CLI as another user, you might receive the following error message : 
+
+```
+C:\Windows\system32>az ml admin --help
+az: error: argument _command_package: invalid choice: ml
+usage: az [-h] [--verbose] [--debug] [--output {json,jsonc,table,tsv}]
+          [--query JMESPATH]
+          {acr,acs,aks,advisor,webapp,appservice,functionapp,backup,batch,batchai,billing,cdn,cloud,cognitiveservices,configure,  
+          consumption,container,cosmosdb,dla,dls,eventgrid,extension,feedback,find,interactive,iot,keyvault,lab,monitor,network,  
+          login,logout,account,mysql,postgres,redis,reservations,group, resource,provider,feature,tag,policy,lock,managedapp,  
+          role,ad,sf,sql,storage,disk,identity,image,snapshot,vm,vmss}          
+          ...
+```
+
+You can use the command `whoami` both in Windows and Linux to find the current user. Here is an example of non-administrative user in windows which cannot use the [Administrator CLI](https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-admin-cli-launch) : 
+
+```
+C:\Windows\system32>whoami
+nt authority\system
+```
