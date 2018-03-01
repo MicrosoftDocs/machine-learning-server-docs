@@ -115,9 +115,9 @@
         href: r-client/install-on-linux.md
       - name: Server compatibility
         href: r-client/compatibility-with-server.md
-    - name: Install the Python interpreter & libraries
+    - name: Install Python client
       href: install/python-libraries-interpreter.md
-    - name: Link the Python interpreter to tools and IDEs
+    - name: Link Python to tools
       href: python/quickstart-python-tools.md
   - name: Older R Server releases
     href: install/r-server-install.md

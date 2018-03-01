@@ -46,7 +46,7 @@ VM images include the custom [R packages](../r-reference/introducing-r-server-r-
 > [!Note]
 > If you require a specific previous version, search the portal for *R Server* and use these links for installation instructions: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
-## How to provision using an ARM template
+## How to provision with templates
 
 The easiest approach is to use an ARM template that both installs and configures the VM and Machine Learning Server. The template defines a resource group, the virtual network, a DNS name. 
 
