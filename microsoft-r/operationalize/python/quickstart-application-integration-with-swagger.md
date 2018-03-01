@@ -47,19 +47,19 @@ You can configure a Machine Learning Server to act as a deployment server and ho
 
 This quickstart uses the one-box configuration on windows. The deployment is automated using an ARM template. Go to [OneBox Configuration for Windows](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/one-box-configuration/windows) and click the **Deploy to Azure** button to deploy the ARM Templates. 
 
-![arm-template](../media/quickstart-application-integration-with-swagger/1-create-mlserver-with-arm-template.png)
+![arm-template](./media/quickstart-application-integration-with-swagger/1-create-mlserver-with-arm-template.png)
 
 This takes you to the **Custom deployment** page in the Azure portal where you need to supply values for basics and settings in the red-started fields.
 
-![custom-deployment](../media/quickstart-application-integration-with-swagger/2-custom-deployment.png)
+![custom-deployment](./media/quickstart-application-integration-with-swagger/2-custom-deployment.png)
 
 Agree to the Terms and Conditions and click **Purchase**. Find the **mlserver** resource in **All resources**, click **Connect** after the sever has been created.
 
-![mlserver-azure-resource](../media/quickstart-application-integration-with-swagger/3-mlserver-azure-resource.png)
+![mlserver-azure-resource](./media/quickstart-application-integration-with-swagger/3-mlserver-azure-resource.png)
 
 Click **Open** and then click **Connect** again on the **Remote Desktop Connection** window. Use the credentials you specified when creating the server when prompted and then click **OK** to log in. Ignore the RDP warning that the certificate cannot be authenticated.
 
-For more information on options for configuring a server for operationalization, see [Manage and configure Machine Learning Server for operationalization](../../../operationalize/configure-start-for-administrators.md)
+For more information on options for configuring a server for operationalization, see [Manage and configure Machine Learning Server for operationalization](./../../operationalize/configure-start-for-administrators.md)
 
 
 ## Deploy a Python model as a web service in Machine Learning Server
@@ -101,7 +101,7 @@ From your local machine, read in the data that you use to build the linear model
 
 ### Authenticate and initiate the DeployClient
 
-This quickstart uses the local 'admin' account for authentication. The following code imports the [DeployClient](./../../python-reference/azureml-model-management-sdk/deploy-client.md) and [MLServer](./../../python-reference/azureml-model-management-sdk/mlserver.md) classes from the [azureml-model-management-sdk package](../../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that are used to connect to Machine Learning Server.
+This quickstart uses the local 'admin' account for authentication. The following code imports the [DeployClient](./../../python-reference/azureml-model-management-sdk/deploy-client.md) and [MLServer](./../../python-reference/azureml-model-management-sdk/mlserver.md) classes from the [azureml-model-management-sdk package](./../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that are used to connect to Machine Learning Server.
 
 	# -- Import the DeployClient and MLServer classes --
 	# -- from the azureml-model-management-sdk package.
@@ -117,7 +117,7 @@ Then replace YOUR_ADMIN_PASSWORD with the administrator password that you used t
 	context = ('admin', 'YOUR_ADMIN_PASSWORD')
 	client = DeployClient(HOST, use=MLServer, auth=context)
 
-There are several ways to authenticate with Machine Learning Server on-premises or in the cloud. To learn more about connecting to Machine Learning Server in Python, see [Authenticate with Machine Learning Server in Python with azureml-model-management-sdk](../../../operationalize/python/how-to-authenticate-in-python.md).
+There are several ways to authenticate with Machine Learning Server on-premises or in the cloud. To learn more about connecting to Machine Learning Server in Python, see [Authenticate with Machine Learning Server in Python with azureml-model-management-sdk](./../../operationalize/python/how-to-authenticate-in-python.md).
 
 ### Create and run a linear model locally
 
@@ -157,7 +157,7 @@ This model can now be used to estimate the ratings expected from the attitude da
 
 ### Publish the model as a realtime web service
 
-To publish any model as a realtime service, you must first serialize the model object using the revoscalepy [rx_serialize_model](../../../python-reference/revoscalepy/rx_serialize_model.md) function.
+To publish any model as a realtime service, you must first serialize the model object using the revoscalepy [rx_serialize_model](./../../python-reference/revoscalepy/rx_serialize_model.md) function.
 
 	# Import the needed classes and functions
 	from revoscalepy import rx_serialize_model
@@ -165,7 +165,7 @@ To publish any model as a realtime service, you must first serialize the model o
 	# Serialize the model with rx_serialize_model
 	s_model = rx_serialize_model(model, realtime_scoring_only=True)
 
-Initiate a [realtimeDefinition](../../../python-reference/azureml-model-management-sdk/realtime-definition.md) object from the [azureml-model-management-sdk package](../../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to publish the linear model as a realtime Python web service to Machine Learning Server.
+Initiate a [realtimeDefinition](./../../python-reference/azureml-model-management-sdk/realtime-definition.md) object from the [azureml-model-management-sdk package](./../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to publish the linear model as a realtime Python web service to Machine Learning Server.
 
 	service = client.realtime_service("LinModService") \
 		.version('1.0') \
@@ -174,7 +174,7 @@ Initiate a [realtimeDefinition](../../../python-reference/azureml-model-manageme
 		.deploy()
 
 
-Verify that the web service results match the results obtained when the model was run locally. To consume the realtime service, call `.consume` on the realtime [service](../../../python-reference/azureml-model-management-sdk/service.md) object. You can consume the model using the [Service](../../../python-reference/azureml-model-management-sdk/service.md) object returned from `.deploy()` because you are in the same session as the one you in which you deployed.
+Verify that the web service results match the results obtained when the model was run locally. To consume the realtime service, call `.consume` on the realtime [service](./../../python-reference/azureml-model-management-sdk/service.md) object. You can consume the model using the [Service](./../../python-reference/azureml-model-management-sdk/service.md) object returned from `.deploy()` because you are in the same session as the one you in which you deployed.
 
 	# -- To consume the service, pluck out the named output: outputData. --​
 	print(service.consume(df.head(5)).outputs['outputData'])
@@ -243,7 +243,7 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 3. To load the Notebook, Click on Upload on the http://localhost:8888/tree page and navigate to the Publish_Realtime_Web_Service_in_Python.ipynb notebook and click **Open**. The default location is C:\Users\admin-mls\Downloads\ML-Server-Python-Samples-master\ML-Server-Python-Samples-master\operationalize.
 4. To open the Publish_Realtime_Web_Service_in_Python.ipynb Notebook, click on **Upload** opposite it and then double click on the notebook to open it:
 
-![jupyter-notebook](../media/quickstart-application-integration-with-swagger/4-jupyter-notebook.png)
+![jupyter-notebook](./media/quickstart-application-integration-with-swagger/4-jupyter-notebook.png)
 
 
 ## Build API clients with the Swagger file
@@ -267,7 +267,7 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 ### Generate the client
 
 1. Click the **Generate Client** button on the toolbar and choose the language for the client. 
-![language-choice-in-swagger-editor](../media/quickstart-application-integration-with-swagger/5-language-choice-in-swagger-editor.png)
+![language-choice-in-swagger-editor](./media/quickstart-application-integration-with-swagger/5-language-choice-in-swagger-editor.png)
 2. Choose the C# client and save the csharp-client-generated.zip file to your preferred location and extract the zip file. 
 
 
