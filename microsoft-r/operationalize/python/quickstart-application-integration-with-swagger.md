@@ -25,9 +25,9 @@ ms.custom: "mvc"
 ---
 # Quickstart: Integrate a realtime web service into an application using Swagger
 
-**Applies to: Microsoft Learning Server 9.2**
+**Applies to: Microsoft Learning Server 9.x**
 
-This quickstart shows how to use a Swagger-generated client to consume a Python model deployed as a realtime web service in Machine Learning Server. A web service is a model or code that has been deployed and hosted in a server. Realtime web services only accept models created with the functions supported by the packages installed with the product. The [revoscapepy](./../../python-reference/revoscalepy/revoscalepy-package.md) package installed on the Machine Learning Server supports the `rx_lin_mod` function used by the linear model in this quickstart.
+This quickstart shows how to use a Swagger-generated client to consume a Python model deployed as a realtime web service in Machine Learning Server. A web service is a model or code that has been deployed and hosted in a server. Realtime web services only accept models created with the functions supported by the packages installed with the product. The [revoscalepy](./../../python-reference/revoscalepy/revoscalepy-package.md) package installed on the Machine Learning Server supports the `rx_lin_mod` function used by the linear model in this quickstart.
 
 This quickstart shows you how to:
 
