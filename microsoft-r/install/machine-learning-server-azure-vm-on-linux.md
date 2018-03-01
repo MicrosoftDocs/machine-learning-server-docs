@@ -7,7 +7,7 @@ keywords: "Machine Learning Server, R Server, linux, virtual machine"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "3/01/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 
@@ -25,11 +25,15 @@ ms.prod: "mlserver"
 
 # Machine Learning Server on Azure Virtual Machines
 
-Machine Learning Server, formerly known as R Server, is pre-installed on Azure virtual machines (VM) running either a Windows or Linux operating system.
+Machine Learning Server, formerly known as R Server, is pre-installed on Azure virtual machines (VM) images running either a Windows or Linux operating system. 
+
+An excellent alternative to selecting an existing VM image is to provision a VM yourself using a resource template. The template includes extra configuration steps for both the VM and Machine Learning Server itself, resulting in a VM that is ready-to-use with no additional work on your part.
 
 ## VM images on Azure 
 
-1. To view a list of available VM images, [sign in to the Azure portal](https://portal.azure.com).
+The following procedure explains how to use the Azure portal to view the full range of VM images that provide Machine Learning Server.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
 2. Click **Create a resource**.
 
@@ -42,13 +46,13 @@ VM images include the custom [R packages](../r-reference/introducing-r-server-r-
 > [!Note]
 > If you require a specific previous version, search the portal for *R Server* and use these links for installation instructions: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
-## Provision a Machine Learning Server VM using an ARM template
+## How to provision with templates
 
-The easiest approach is to use an ARM template that both installs and configures the server. ARM templates are available on Github, with options for a single-server install or distributed installation that places web nodes and compute nodes on different VMs within the same virtual network.
+The easiest approach is to use an ARM template that both installs and configures the VM and Machine Learning Server. The template defines a resource group, the virtual network, a DNS name. 
 
-Data Science VMs include a broad selection of tools and technologies, of which Machine Learning Server is just one.
+ARM templates are available on Github, with options for a single-server install or distributed installation that places web nodes and compute nodes on different VMs within the same virtual network. There are also template options for data Science VMs, which include a broader selection of tools and technologies, of which Machine Learning Server is just one.
 
-When you use a template, the server is installed and operationalized for remote connections, web service deployment, logging, and so forth. For more information, see [Operationalize analytics with Machine Learning Server](../what-is-operationalization.md).
+When you use a template, the server is operationalized for remote connections, web service deployment, logging, and so forth. For more information, see [Operationalize analytics with Machine Learning Server](../what-is-operationalization.md).
 
 1. Go to the Github repo containing the templates: [https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates)
 
@@ -56,15 +60,14 @@ When you use a template, the server is installed and operationalized for remote 
 
 1. Choose the operating system: Windows, Linux, Windows Data Science VM, or Linux Data Science VM.
 
-1. On the readme page for the option you selected, click **Deploy to Azure**.
+1. On the readme page for the option you selected, click **Deploy to Azure**. You are prompted for input values necessary to complete the deployment, including passwords and the level of physical resources used by the VM.
 
    ![Deploy button on the readme page](./media/machine-learning-server-install-azure-vm/gh-readme-page-2.png)
 
-## Provision a Machine Learning Server VM in the portal
+## How to provision in the portal
 
 If you are new to using Azure VMs, we recommend that you review [this article](https://azure.microsoft.com/documentation/services/virtual-machines/linux/) for more information about using the portal and configuring a virtual machine.
 
-**To create the Machine Learning Server on Linux VM:**
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 
@@ -72,11 +75,11 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 1. Search for *Machine Learning Server*.
 
-1. From the list of virtual machines, choose the VM image that provides the operating system and version of Machine Learning Server you want to install. 
+1. From the list of virtual machines, choose the VM image providing the operating system and version of Machine Learning Server you want to install. 
 
 1. Accept the terms and get started by clicking **Create**. 
 
-1. Follow the onscreen prompts and fields to configure your Machine Learning Server VM. 
+1. Follow the onscreen prompts to provision the VM. 
 
 1. After the VM is deployed and running, [connect](#connect) to the VM to begin interacting with Machine Learning Server. 
 
@@ -89,15 +92,17 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 
 ## Connect to the Virtual Machine
 
-Many people have success connecting using an open-source SSH client. 
+Once the VM is deployed, you can open the portal page for that VM and click **Connect** to obtain connection information in the form of the IP address and port. You can further configure the VM to use a domain name or static IP, but for an initial connection, the dynamic IP is sufficient.
 
-Use the public IP address listed in the properties page of your VM in the Azure portal to connect.
+Many people have success connecting using an open-source SSH client. A few examples include [PuTTY](https://www.putty.org/), [SmarTTY](http://smartty.sysprogs.com/download/), and [WinCP](https://winscp.net/eng/download.php).
 
-After launching, you'll be in your root directory in a terminal window. 
 
-## Launch Machine Learning Server
 
-To start Machine Learning Server, simple type `R` at the command prompt. The Machine Learning Server console session starts.
+## Launch R Server
+
+On Linux, simple type `R` at the command prompt to invoke the R interpreter, or `Revo64` to run R Server in a console session.
+
+On Windows, open an R console session by entering *RGUI* in the Cortana search bar.
 
 <a name="ride"></a>
 

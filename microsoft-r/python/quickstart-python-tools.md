@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "Quickstart: Link to Machine Learning Server from Python tools"
-description: "Link Python tools like PyCharm, Jupyter notebooks, and Visual Studio to Machine Learning Server Python libraries"
-keywords: "quickstart, Machine Learning Server, python tools"
+title: "Link to Machine Learning Server from Python tools"
+description: "Link Python tools like PyCharm, Jupyter notebooks, and Visual Studio to Machine Learning Server Python executable and libraries"
+keywords: "Machine Learning Server, python tools"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
@@ -21,7 +21,7 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Quickstart: Link Python tools and IDEs to the Python interpreter installed with Machine Learning Server
+# Link Python tools and IDEs to the Python interpreter installed with Machine Learning Server
 
 **Applies to: Machine Learning Server 9.x**
 

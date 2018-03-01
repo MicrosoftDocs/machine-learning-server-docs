@@ -109,14 +109,16 @@
     - name: Microsoft R Client
       href: r-client/what-is-microsoft-r-client.md
       items:
-      - name: R Client on Windows
+      - name: Install on Windows
         href: r-client/install-on-windows.md
-      - name: R Client on Linux
+      - name: Install on Linux
         href: r-client/install-on-linux.md
       - name: Server compatibility
         href: r-client/compatibility-with-server.md
-    - name: Python interpreter & libraries
+    - name: Install Python client
       href: install/python-libraries-interpreter.md
+    - name: Link Python to tools
+      href: python/quickstart-python-tools.md
   - name: Older R Server releases
     href: install/r-server-install.md
     items:
@@ -184,8 +186,6 @@
   items:
   - name: Python
     items:
-    - name: Link the Python interpreter to tools and IDEs
-      href: python/quickstart-python-tools.md
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
     - name: Run binary classifications
