@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: "03/01/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 
@@ -156,8 +156,7 @@ Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04
     # Add the **azure-cli** repo to your apt sources list
   AZ_REPO=$(lsb_release -cs)
   
-  echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" 
-  sudo tee /etc/apt/sources.list.d/azure-cli.list
+  echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
   
   # Set the location of the package repo the "prod" directory containing the distribution.
   # This example specifies 16.04. Replace with 14.04 if you want that version
