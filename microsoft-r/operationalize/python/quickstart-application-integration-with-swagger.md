@@ -121,7 +121,7 @@ There are several ways to authenticate with Machine Learning Server on-premises 
 
 ### Create and run a linear model locally
 
-Now that you are authenticated, you can use the [rx_lin_mod](../../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../../python-reference/revoscalepy/revoscalepy-package.md) to build the model. The following code creates a Generalized Linear Model (GLM) using the imported attitude dataset:
+Now that you are authenticated, you can use the [rx_lin_mod](./../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](./../../python-reference/revoscalepy/revoscalepy-package.md) to build the model. The following code creates a Generalized Linear Model (GLM) using the imported attitude dataset:
 
 	# -- Import the needed classes and functions
 	from revoscalepy import rx_lin_mod, rx_predict
