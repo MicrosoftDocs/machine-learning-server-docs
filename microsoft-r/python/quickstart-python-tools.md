@@ -25,13 +25,11 @@ ms.prod: "mlserver"
 
 **Applies to: Machine Learning Server 9.x**
 
-Machine Learning Server installs a local, folder-only install of Anaconda to avoid interfering with other Python distributions on your system. As such, packages providing the Python modules in Machine Learning Server (revoscalepy, microsoftml, azureml-model-management-sdk) are not available system-wide. In this quickstart, learn how to load the Python interpreter installed with Machine Learning Server in your Python IDE of choice.
-
-Assuming you have met the prerequisites, this task takes approximately *5* minutes to complete.
+Machine Learning Server installs a local, folder-only install of Anaconda to avoid interfering with other Python distributions on your system. As such, packages providing the Python modules in Machine Learning Server (revoscalepy, microsoftml, azureml-model-management-sdk) are not available system-wide. In this article, learn how to load the Python interpreter installed with Machine Learning Server in your Python IDE of choice.
 
 ## Prerequisites
 
-Before you begin this QuickStart, have the following ready:
+Before you begin, have the following ready:
 
 > [!div class="checklist"]
 > * An instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option.
