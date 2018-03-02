@@ -112,10 +112,8 @@ Run the following commands to install Machine Learning Server for Linux on Red H
   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
   
   # Set the location of the package repo at the "prod" directory
-  # FOR RHEL 6.x ONLY
-  rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
-
-  # FOR RHEL 7.x ONLY
+  # The following command is for version 7.x
+  # For 6.x, replace 7 with 6 to get that version
   rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
   # Verify that the "microsoft-prod.repo" configuration file exists
@@ -125,11 +123,9 @@ Run the following commands to install Machine Learning Server for Linux on Red H
   yum update
   
   # Install the server
-  # FOR RHEL 6.x ONLY
-  yum install microsoft-mlserver-el6-9.3.0
-
-  # FOR RHEL 7.x ONLY
-  yum install microsoft-mlserver-all-9.3.0
+  # The following command is for version 7.x
+  # For 6.x: yum install microsoft-mlserver-el6-9.3.0
+  yum install microsoft-mlserver-all-9.3.0 --nogpgcheck
   
   # Activate the server
   /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh
@@ -172,7 +168,7 @@ Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04
   apt-get update
   
   # Install the server
-  apt-get install microsoft-mlserver-all-9.3.0
+  apt-get install microsoft-mlserver-all-9.3.0 --allow-unauthenticated
   
   # Activate the server
   /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh     
