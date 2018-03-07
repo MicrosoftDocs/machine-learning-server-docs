@@ -274,7 +274,7 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 ### Create the C# client to consume the web service
 
 1. Open the IO.Swagger.sln from the unzipped ..\csharp-client-generated\csharp-client folder with Visual Studio.
-2. To add a C# console application to the solution, right-click the **Solution 'IO.Swagger'**  in the **Solution Explorer** -> **Add** -> **New Project...** -> **Visual C#** -> **Web** -> **.NET Core** -> **ConsoleApp**.
+2. To add a C# console application to the solution, right-click the **Solution 'IO.Swagger'**  in the **Solution Explorer** -> **Add** -> **New Project...** -> **Visual C#** -> **ConsoleApp (.NET Framework)**.
 3. Accept the default name "ConsoleApp1" and click **OK**. 
 4. To make it the main application, right-click the **ConsoleApp1** project and select **Set as StartUp Project**.
 5. To add the IO.Swagger application as a dependency, right-click the **ConsoleApp1** project and select **Build Dependencies** ->**Project Dependencies...**. On the Dependencies tab check the **IO.Swagger** box in the **Depends on** window and click **OK**. (The IO.Swagger.Test application can be ignored for our purposes.)
