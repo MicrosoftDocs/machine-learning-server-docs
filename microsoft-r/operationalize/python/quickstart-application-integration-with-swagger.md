@@ -7,7 +7,7 @@ keywords: "quickstart, Machine Learning Server, deploy python models, realtime w
 author: "bradsev"
 ms.author: "bradsev"
 manager: "cgronlun"
-ms.date: "2/28/2018"
+ms.date: "03/07/2018"
 ms.topic: "quickstart"
 ms.prod: "mlserver"
 ms.custom: "mvc"
@@ -275,59 +275,69 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 
 1. Open the IO.Swagger.sln from the unzipped ..\csharp-client-generated\csharp-client folder with Visual Studio.
 2. To add a C# console application to the solution, right-click the **Solution 'IO.Swagger'**  in the **Solution Explorer** -> **Add** -> **New Project...** -> **Visual C#** -> **Web** -> **.NET Core** -> **ConsoleApp**.
-3. Accept the default name "ConsoleApp1"aned click **OK**. 
+3. Accept the default name "ConsoleApp1" and click **OK**. 
 4. To make it the main application, right-click the **ConsoleApp1** project and select **Set as StartUp Project**.
 5. To add the IO.Swagger application as a dependency, right-click the **ConsoleApp1** project and select **Build Dependencies** ->**Project Dependencies...**. On the Dependencies tab check the **IO.Swagger** box in the **Depends on** window and click **OK**. (The IO.Swagger.Test application can be ignored for our purposes.)
 6. Right-click the **ConsoleApp1** project and select **Add** -> **Reference...** -> **Projects**. Check the **IO.Swagger** box and click **OK**.
 7. To add the RestSharp and NewtonSoft.Json libraries to ConsoleApp1, right-click on the IO.Swagger Solution in the **Solution Explorer**, select **Manage NuGet Packages for Solution...** and specify and install the versions of the RestSharp and NewtonSoft.Json packages for ConsoleApp1 that match the versions used in IO.Swagger.
 8. To add references the installed RestSharp and NewtonSoft.Json dlls, right-click on the ConsoleApp, select **Add** -> **Reference...*. In the reference Manager, select **Browse**, check the boxes for the versions of these dlls just installed, and click **OK**.
 9. Paste in the following C# code in the Program.cs file in the console app:
-	using IO.Swagger.Api;
-	using IO.Swagger.Client;
-	using IO.Swagger.Model;
-	using System;
-	using System.Collections.Generic;
+
+
+		using IO.Swagger.Api;
+		using IO.Swagger.Client;
+		using IO.Swagger.Model;
+		using System;
+		using System.Collections.Generic;
 	
-	namespace ConsoleApp1
-	{
-	    class Program
-	    {
-	        static void Main(string[] args)
-	        {
-	            Console.WriteLine("Hello!");
+		namespace ConsoleApp1
+		{
+	    	class Program
+	    	{
+	       	 static void Main(string[] args)
+	        	{
+	            	Console.WriteLine("Hello!");
 	
-	            // Initialize O16N params
-	            string webNodeUri = "http://mlserver1.westus.cloudapp.azure.com:12800";
-	            string username = "admin";
-	            string password = "YOUR_ADMIN_PASSWORD";
+	           	 	// Initialize O16N params
+	            	string webNodeUri = "http://mlserver1.westus.cloudapp.azure.com:12800";
+	            	string username = "admin";
+	            	string password = "YOUR_ADMIN_PASSWORD";
 	            
 	
-	            // Login, Obtain access token and set header 
-	            UserApi userInstance = new UserApi(webNodeUri);
-	            var token = userInstance.Login(new LoginRequest(username, password));
-	            Configuration config = new Configuration(new ApiClient(webNodeUri), new System.Collections.Generic.Dictionary<string, string>() { { "Authorization", $"Bearer {token.AccessToken}" } });
+	            	// Login, Obtain access token and set header 
+	            	UserApi userInstance = new UserApi(webNodeUri);
+	            	var token = userInstance.Login(new LoginRequest(username, password));
+	            	Configuration config = new Configuration(new ApiClient(webNodeUri), new System.Collections.Generic.Dictionary<string, string>() { { "Authorization", $"Bearer {token.AccessToken}" } });
 	
-	            // Call LinModServiceApi and log output to console window
-	            LinModServiceApi instance = new LinModServiceApi(config);
-	            var inputDataFrame = new Dictionary<string, object>
-	            {
-	                { "rating", new object[] {43.0 } },
-	                { "complaints", new object[] { 51.0 } },
-	                { "privileges", new object[] { 30.0 } },
-	                { "learning", new object[] { 39.0 } },
-	                { "raises", new object[] { 61.0 } },
-	                { "critical", new object[] { 92.0 } },
-	                { "advance", new object[] { 45.0 } }
-	            };
-	            InputParameters webServiceParameters = new InputParameters(inputDataFrame);
-	            WebServiceResult response = instance.ConsumeWebService(webServiceParameters);
-				var reportJson = response.OutputParameters.OutputData;
+	            	// Call LinModServiceApi and log output to console window
+	            	LinModServiceApi instance = new LinModServiceApi(config);
+	            	var inputDataFrame = new Dictionary<string, object>
+	            	{
+	                	{ "rating", new object[] {43.0 } },
+	                	{ "complaints", new object[] { 51.0 } },
+	                	{ "privileges", new object[] { 30.0 } },
+	                	{ "learning", new object[] { 39.0 } },
+	                	{ "raises", new object[] { 61.0 } },
+	                	{ "critical", new object[] { 92.0 } },
+	                	{ "advance", new object[] { 45.0 } }
+	            	};
+	            	InputParameters webServiceParameters = new InputParameters(inputDataFrame);
+	            	WebServiceResult response = instance.ConsumeWebService(webServiceParameters);
+					var reportJson = response.OutputParameters.OutputData;
+					Console.WriteLine(reportJson);
+				}
 			}
 		}
-	}
 
 7. Replace YOUR_ADMIN_PASSWORD in the Initialize O16N params section with the password you used when creating the VM, then build and run the program.
-8. (TDB: Expected output.)
+
+**OUTPUT:**
+
+	Hello! 
+
+	{"rating_Pred": [51.110295255533131]}
+
+	Press any key to continue . . .
 
 
 ## Clean up resources
