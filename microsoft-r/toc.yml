@@ -188,6 +188,8 @@
     items:
     - name: Deploy model as service
       href: operationalize/python/quickstart-deploy-python-web-service.md
+    - name: Integrate realtime service into app with Swagger
+      href: operationalize/python/quickstart-application-integration-with-swagger.md
     - name: Run binary classifications
       href: python/quickstart-binary-classification-with-microsoftml.md
     - name: Create a linear regression model
