@@ -283,8 +283,6 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 8. To add the three references needed by the **ConsoleApp1** client, right-click on **ConsoleApp1** and select **Add** -> **Reference...**. In the **Reference Manager** window, select the **Projects** tab on the left and check the box for the **IO.Swagger** project. Then select the **Browse** tab on the left and check the boxes for the versions of the **RestSharp** and **NewtonSoft.Json** dlls just installed. Click **OK**.
 9. To add references to the installed and click **OK**.
 10. Paste in the following C# code in the Program.cs file in the console app:
-
-
 		using IO.Swagger.Api;
 		using IO.Swagger.Client;
 		using IO.Swagger.Model;
