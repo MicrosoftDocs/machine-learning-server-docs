@@ -280,8 +280,9 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 5. To add the IO.Swagger application as a dependency, right-click the **ConsoleApp1** project and select **Build Dependencies** ->**Project Dependencies...**. On the Dependencies tab check the **IO.Swagger** box in the **Depends on** window and click **OK**. (The IO.Swagger.Test application can be ignored for our purposes.)
 6. Right-click the **ConsoleApp1** project and select **Add** -> **Reference...** -> **Projects**. Check the **IO.Swagger** box and click **OK**.
 7. To add the RestSharp and NewtonSoft.Json libraries to ConsoleApp1, right-click on the IO.Swagger Solution in the **Solution Explorer**, select **Manage NuGet Packages for Solution...** and specify and install the versions of the RestSharp and NewtonSoft.Json packages for ConsoleApp1 that match the versions used in IO.Swagger.
-8. To add references the installed RestSharp and NewtonSoft.Json dlls, right-click on the ConsoleApp, select **Add** -> **Reference...*. In the reference Manager, select **Browse**, check the boxes for the versions of these dlls just installed, and click **OK**.
-9. Paste in the following C# code in the Program.cs file in the console app:
+8. To add the three references needed by the **ConsoleApp1** client, right-click on **ConsoleApp1** and select **Add** -> **Reference...**. In the **Reference Manager** window, select the **Projects** tab on the left and check the box for the **IO.Swagger** project. Then select the **Browse** tab on the left and check the boxes for the versions of the **RestSharp** and **NewtonSoft.Json** dlls just installed. Click **OK**.
+9. To add references to the installed and click **OK**.
+10. Paste in the following C# code in the Program.cs file in the console app:
 
 
 		using IO.Swagger.Api;
@@ -329,7 +330,7 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 			}
 		}
 
-7. Replace YOUR_ADMIN_PASSWORD in the Initialize O16N params section with the password you used when creating the VM, then build and run the program.
+11. Replace YOUR_ADMIN_PASSWORD in the Initialize O16N params section with the password you used when creating the VM, then build and run the program.
 
 **OUTPUT:**
 
