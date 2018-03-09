@@ -125,7 +125,7 @@ Run the following commands to install Machine Learning Server for Linux on Red H
   # Install the server
   # The following command is for version 7.x
   # For 6.x: yum install microsoft-mlserver-el6-9.3.0
-  yum install microsoft-mlserver-all-9.3.0 --nogpgcheck
+  yum install microsoft-mlserver-all-9.3.0
   
   # Activate the server
   /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh
@@ -168,7 +168,7 @@ Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04
   apt-get update
   
   # Install the server
-  apt-get install microsoft-mlserver-all-9.3.0 --allow-unauthenticated
+  apt-get install microsoft-mlserver-all-9.3.0
   
   # Activate the server
   /opt/microsoft/mlserver/9.3.0/bin/R/activate.sh     
