@@ -323,7 +323,7 @@ Alternatively, if you have multiple servers, you can designate each one as eithe
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to invokes the Administrator Command Line Interface (CLI) and configure the server: `az ml admin bootstrap`
+2. Enter the following command to invoke the Administrator Command Line Interface (CLI) and configure the server: `az ml admin bootstrap`
 
 3. Provide a password used to protect your configuration settings. Anyone using the CLI to modify a configuration must provide this password to gain access to configuration settings and operations.  
 
