@@ -315,15 +315,27 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable web service deployment and remote connections
 
-When you [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization), you gain the following benefits:
+After you confirm the basic install, continue with the next step: [configuing the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to enable additional functionality, including logging, diagnostics, and web service hosting.
+
+You can use the `bootstrap` command for this step. This command enables operationalization features on a standalone server. It creates and starts a web node and compute node, and runs a series of diagnostic tests against the configuration to confirm the internal data storage is functionality and that web services can be successfully deployed.
+
+Alternatively, if you have multiple servers, you can designate each one as either a web node or compute node, and then link them up. For instructions, see [Configure Machine Learning Server (Enterprise)](../operationalize/configure-machine-learning-server-enterprise.md).
+
+1. Open an Administrator command prompt.
+
+2. Enter the following command to invokes the Administrator Command Line Interface (CLI) and configure the server: `az ml admin bootstrap`
+
+3. Provide a password that meets these requirements: 8-16 characters long, with at least one upper-case letter, one lower-case letter, one number, and one special character. 
+
+  This password is used to protect your configuration settings. Anyone using the CLI to modify a configuration must provide this password to gain access to configuration settings and operations.
+
+For more information about the benefits of operationalization:
 
 + [Deploy Python and R script as a web service](../operationalize/concept-what-are-web-services.md) 
 + [Connect to a remote R server for code execution](../r/how-to-execute-code-remotely.md). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) or other Machine Learning Server nodes on your network. 
 
-To configure the server, use the [Administrator Utility](../operationalize/configure-admin-cli-launch.md). The configuration steps are few and the benefit is substantial, so please take a few minutes to complete this task.
-
 > [!Note]
-> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, [remote compute context](../r/concept-what-is-compute-context.md) is not available for HadoopMR. 
+> Python support is new and there are a few limitations in remote computing scenarios. Remote execution is not supported on Windows or Linux in Python code. Additionally, you cannot set a [remote compute context](../r/concept-what-is-compute-context.md) to HadoopMR in Python. 
 
 ## What's installed
 
