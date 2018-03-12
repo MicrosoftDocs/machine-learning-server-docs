@@ -186,9 +186,9 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 ## Enable web service deployment and remote connections
 
-If you installed Machine Learning Server on Windows Server 2012 R2 or Windows Server 2016, [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization):
+If you installed Machine Learning Server on Windows Server 2012 R2 or Windows Server 2016, [configure the server for operationalization](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to enable additional functionality, including logging, diagnostics, and web service hosting.
 
-You can use the `bootstrap`command for this step. This command enables operationalization features on a standalone server. It creates and starts a web node and compute node, and runs a series of diagnostic tests against the configuration to confirm the internal data storage is functionality and that web services can be successfully deployed.
+You can use the `bootstrap` command for this step. This command enables operationalization features on a standalone server. It creates and starts a web node and compute node, and runs a series of diagnostic tests against the configuration to confirm the internal data storage is functional and that web services can be successfully deployed.
 
 If you have multiple servers, you can designate each one as either a web node or compute node, and then link them up. For instructions, see [Configure Machine Learning Server (Enterprise)](../operationalize/configure-machine-learning-server-enterprise.md).
 
@@ -200,11 +200,11 @@ If you have multiple servers, you can designate each one as either a web node or
 
   This command invokes the Administrator Command Line Interface (CLI), installed by Machine Learning Server and added as a system environment variable to your path so that you can run it anywhere.
 
-3. Provide a password that meets these requirements: 8-16 characters long, with at least one upper-case letter, one lower-case letter, one number, and one special character. 
+3. Provide a password used to protect your configuration settings. Anyone using the CLI to modify a configuration must provide this password to gain access to configuration settings and operations.  
 
-  This password is used to protect your configuration settings. Anyone using the CLI to modify a configuration must provide this password to gain access to configuration settings and operations.
+  The password must meet these requirements: 8-16 characters long, with at least one upper-case letter, one lower-case letter, one number, and one special character.
 
-For more information about the benefits of operationalization:
+After you provide the password, the tool does the rest. Your server is fully operationalized once the process is complete. For more information about the benefits of operationalization:
 
 + [Deploy Python and R script as a web service](../operationalize/concept-what-are-web-services.md) 
 + [Connect to a remote R server for code execution](../r/how-to-execute-code-remotely.md). Remote execution makes the server accessible to client workstations running [R Client](../r-client/install-on-linux.md) or other Machine Learning Server nodes on your network. 
