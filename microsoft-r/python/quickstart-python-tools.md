@@ -7,7 +7,7 @@ keywords: "Machine Learning Server, python tools"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: "03/12/2018"
 ms.topic: "get-started-article"
 ms.prod: "mlserver"
 
@@ -90,7 +90,7 @@ A local Jupyter Notebook executable is installed with Machine Learning Server.
 
 + On Windows, go to **\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\** and double-click **jupyter-notebook.exe** to start a Jupyter Notebook session in the default browser window.
 
-+ On Linux, go to **/opt/microsoft/mlserver/9.2.1/runtime/python/bin/** and type `jupyter notebook`.
++ On Linux, go to **/opt/microsoft/mlserver/9.3.0/runtime/python/bin/** and type `./jupyter notebook`. You should get a series of messages that includes the server endpoint and a URL that you can copy into a browser, assuming one is available on your computer.
 
 For additional instructions on configuring a multi-user server, see [How to add Machine Learning Server modules to single and multi-user Jupyter Notebook instances](how-to-revoscalepy-jupyter-nb-config.md).
 
