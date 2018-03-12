@@ -7,7 +7,7 @@ keywords: "Machine Learning Server, python tools"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: "03/12/2018"
 ms.topic: "get-started-article"
 ms.prod: "mlserver"
 
