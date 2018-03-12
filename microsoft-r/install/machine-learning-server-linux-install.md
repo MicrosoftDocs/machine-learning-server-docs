@@ -325,7 +325,7 @@ Alternatively, if you have multiple servers, you can designate each one as eithe
 
 2. Enter the following command to invoke the Administrator Command Line Interface (CLI) and configure the server: `az ml admin bootstrap`
 
-3. Provide a password used to protect your configuration settings. Anyone using the CLI to modify a configuration must provide this password to gain access to configuration settings and operations.  
+3. Set a password used to protect your configuration settings. Later, after configuration is finished, anyone who wants to use the CLI to modify a configuration must provide this password to gain access to settings and operations.  
 
   The password must meet these requirements: 8-16 characters long, with at least one upper-case letter, one lower-case letter, one number, and one special character.
 

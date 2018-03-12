@@ -56,11 +56,11 @@ Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 
 3. Click the notebook to load it, then click **Run** to step through the content and script. For this particular notebook, no additional configuration is required. For the web service notebook, read the readme for configuration requirements.
 
-## Configure for multi-user access
+## Configure for multi-user access on Linux
 
 This procedure applies to Linux or Spark edge node upon which you are hosting a JupyterHub or multi-user server. It does not apply to single-user localhost servers. 
 
-For a multi-user server, add our custom kernel **MMLSPy** to the data directory of your server. Machine Learning Server provides this kernel for notebooks and scripts that make calls to [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md), [microsoftml](../python-reference/microsoftml/microsoftml-package.md), and [azureml](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
+For a multi-user server, add our custom kernel **MLSPython** to the data directory of your server. Machine Learning Server provides this kernel for notebooks and scripts that make calls to [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md), [microsoftml](../python-reference/microsoftml/microsoftml-package.md), and [azureml](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
 
 Run the following command to install the kernel:
 
@@ -74,9 +74,9 @@ Verify the file is in the expected location.
 
 1. Run `jupyter –data-dir` from the node on which Jupyter Notebook Server is installed.
 2. Note the path returned by `-data-dir`. This is where Jupyter stores its data directories, including kernels.
-3. Navigate to the folder. You should see **MMLSPy** listed.
+3. Navigate to the folder. You should see **MLSPython*** listed.
 
-If the installation command did not succeed, you can manually copy the **MMLSPy** directory from `/opt/microsoft/mlserver/9.2.1/libraries/kernels/` to the kernels subdirectory under the data directory.
+If the installation command did not succeed, you can manually copy the **MLSPython** directory from `/opt/microsoft/mlserver/9.3.0/libraries/kernels/` to the kernels subdirectory under the data directory.
 
 You might need to restart your server in order for the server to pick up the kernel.
 
