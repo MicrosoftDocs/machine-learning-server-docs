@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: "03/12/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 
@@ -63,6 +63,8 @@ You can run ServerSetup.exe from the command line with options to expose or hide
 
 | Parameter | Description |
 |-----------|-------------|
+| `/r` | Install just the R feature. Use with `/install`. |
+| `/python` | Install just the Python feature. Use with `/install`. |
 | `/offline` | Instructs setup to find [.cab files](#cab-files) on the local system in the `mediadir` location. This option requires that the server is disconnected from the internet.|
 | `/installdir=""` | Specifies the installation directory. By default, this is C:\Program Files\Microsoft\R Server\R_SERVER. |
 | `/cachedir=""` | A download location for the .cab files. By default, setup uses `%temp%` for the local admin user. Assuming an online installation scenario, you can set this parameter to have setup download the .cabs to the folder you specify. |
