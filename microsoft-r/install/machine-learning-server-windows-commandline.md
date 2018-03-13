@@ -82,9 +82,9 @@ The command line equivalent of a double-click invocation of ServerSetup.exe is `
 
 1. Run setup in unattended mode with no prompts or user interaction, to install everything. For version 9.2.1, both R Server and Python Server are included in every installation; the pre-trained models are optional and have to be explicitly specified to include them in the installation. For version 9.3 only, you can set flags to install individual components: R, Python, pre-trained models:
 
-   `serversetup.exe /quiet /r`
-   `serversetup.exe /quiet /python`
-   `serversetup.exe /quiet /models`
+   +  `serversetup.exe /quiet /r`
+   +  `serversetup.exe /quiet /python`
+   +  `serversetup.exe /quiet /models`
 
 2. Add the [pre-trained machine learning models](microsoftml-install-pretrained-models.md) to an existing installation. You cannot install them as a standalone component. The models require R or Python. During installation, the pre-trained models are inserted into the MicrosoftML (R) and microsoftml (Python) libraries, or both if you add both languages. Once installed, you cannot incrementally remove them. Removal will require uninstall and reinstall of Python or R Server. 
 

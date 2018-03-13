@@ -50,7 +50,7 @@ Verify the file is in the expected location.
 
 1. Run `jupyter –data-dir` from the node on which Jupyter Notebook Server is installed.
 2. Note the path returned by `-data-dir`. This is where Jupyter stores its data directories, including kernels.
-3. Navigate to the folder. You should see **MLSPython*** listed.
+3. Navigate to the folder. You should see **MLSPython** listed.
 
 If the installation command did not succeed, you can manually copy the **MLSPython** directory from `/opt/microsoft/mlserver/9.3.0/libraries/kernels/` to the kernels subdirectory under the data directory.
 
