@@ -23,38 +23,14 @@ ms.technology: ""
 
 ---
 
-# How to add Machine Learning Server modules to single and multi-user Jupyter Notebook instances
+# How to add Machine Learning Server modules to multi-user Jupyter Notebook instances
 
-This article explains how to load sample Python notebooks from Machine Learning samples on Github. It also explains how to add our libraries to a remote Jupyter server acting as central hub for multi-user notebooks on your network.
+This article explains how to add our libraries to a remote Jupyter server acting as central hub for multi-user notebooks on your network.
 
 Jupyter Notebooks is distributed with Anaconda, which is the Python distribution used by Machine Learning Server. If you installed Machine Learning Server, you have the components necessary for running notebooks as a single user on localhost.
 
 Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 
-> [!Note]
-> Jupyter Notebooks are a presentation concept, integrating script and text on the same page. Script is interactive on the page, often Python or R, but could be any one of the 40 languages supported by Jupyter. The text is user-provided content that describes the script. Notebooks are executed on a server, accessed over http, and rendered as HTML in a browser to the person requesting the notebook. For more information, see [Jupyter documentation](https://jupyter.readthedocs.io/atest/content-quickstart.html).
-
-## Load on Windows
-
-1. Download just the .ipynb files from the Github repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
-
-  + Go to the source page: [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
-  + In the Github page for this notebook, click **Raw** to show the Python script.
-  + Use the browser save-as command to save a local copy of the file. Apply an **.ipynb** file extension.
-
-  > [!Note]
-  > Some browsers append a .txt file extension automatically. Remove the extraneous .txt extension if you see it in the file name.
-
-2. Upload the .ipynb to your local server:
-
-  + Navigate to the Jupyter-notebook executable on your computer: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts`
-  + Right-click **Run as administrator** on `jupyter-notebook.exe`
-  + The Notebook Dashboard opens in your default browser at `http://localhost:8888/tree`. 
-  + Click **Upload** on the top right corner.
-  + Navigate to the folder where you saved the .ipynb file. Most likely, it's in the Downloads folder: `\Downloads\ML-Server-Python-Samples-master\microsoftml\quickstarts\binary-classification\Binary+Classification+Quickstart.ipynb`
-   + Select the file and click **Open** to add the notebook to your server.
-
-3. Click the notebook to load it, then click **Run** to step through the content and script. For this particular notebook, no additional configuration is required. For the web service notebook, read the readme for configuration requirements.
 
 ## Configure for multi-user access on Linux
 
