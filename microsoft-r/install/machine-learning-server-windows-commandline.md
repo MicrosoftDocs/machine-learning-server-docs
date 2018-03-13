@@ -107,7 +107,7 @@ For unattended setup or offline setup, copy the .cab files to either the setup u
 | Component | Download | Used for | 
 |-----------|----------|----------|
 |MLM|[MLM_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859053&clcid=1033)|Pre-trained models, R or Python|
-|Microsoft R Open|[SRO_3.4.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859054&clcid=1033)|R|
+|Microsoft R Open|[SRO_3.4.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=867186&clcid=1033)|R|
 |Microsoft Python Open|[SPO_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859054&clcid=1033)|Python|
 
 There is no separate Python Server package in the 9.3 version.
