@@ -94,13 +94,15 @@ The command line equivalent of a double-click invocation of ServerSetup.exe is `
 
   `serversetup.exe /quiet /uninstall`  
 
-4. Offline install requires .cab files that provide open-source distributions and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](machine-learning-server-windows-offline.md).
+4. Unattended offline install requires .cab files that provide open-source distributions and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](machine-learning-server-windows-offline.md).
 
-  `rserversetup.exe /offline /mediadir="D:/Public/CABS` 
+  `serversetup.exe /quiet /offline /mediadir="D:/Public/CABS` 
 
 <a name="cab-files"></a>
 
-## 9.3 CAB files for unattended installation
+## 9.3 CAB file list
+
+For unattended setup or offline setup, copy the .cab files to either the setup user's temp directory (**C:\Users\<user-name>\AppData\Local\Temp**) or to a folder specified via the `/mediadir` flag.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
@@ -110,7 +112,9 @@ The command line equivalent of a double-click invocation of ServerSetup.exe is `
 
 There is no separate Python Server package in the 9.3 version.
 
-## 9.2.1 CAB files for unattended installation
+## 9.2.1 CAB file list
+
+For unattended setup or offline setup, copy the .cab files to either the setup user's temp directory (**C:\Users\<user-name>\AppData\Local\Temp**) or to a folder specified via the `/mediadir` flag.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
