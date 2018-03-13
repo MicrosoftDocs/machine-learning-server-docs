@@ -119,6 +119,8 @@
       href: install/python-libraries-interpreter.md
     - name: Link Python to tools
       href: python/quickstart-python-tools.md
+    - name: Configure multi-user Jupyter Notebooks
+      href: python/how-to-revoscalepy-jupyter-nb-config.md
   - name: Older R Server releases
     href: install/r-server-install.md
     items:
@@ -269,8 +271,6 @@
       items:
       - name: Use revoscalepy on Spark
         href: python/how-to-revoscalepy.md
-      - name: Configure Jupyter Notebooks
-        href: python/how-to-revoscalepy-jupyter-nb-config.md
     - name: R
       items:
       - name: Set a compute context
