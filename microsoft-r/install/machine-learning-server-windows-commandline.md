@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "03/12/2018"
+ms.date: "03/13/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 
@@ -80,9 +80,11 @@ The command line equivalent of a double-click invocation of ServerSetup.exe is `
 
 ## Examples
 
-1. Run setup in unattended mode with no prompts or user interaction, to install everything. R Server is implicit. It does not have a parameter to explicitly include or exclude it. Arguments exist for Python and the pre-trained models.
+1. Run setup in unattended mode with no prompts or user interaction, to install everything. For version 9.2.1, both R Server and Python Server are included in every installation; the pre-trained models are optional and have to be explicitly specified to include them in the installation. For version 9.3 only, you can set flags to install individual components: R, Python, pre-trained models:
 
-   `serversetup.exe /quiet /models`
+   +  `serversetup.exe /quiet /r`
+   +  `serversetup.exe /quiet /python`
+   +  `serversetup.exe /quiet /models`
 
 2. Add the [pre-trained machine learning models](microsoftml-install-pretrained-models.md) to an existing installation. You cannot install them as a standalone component. The models require R or Python. During installation, the pre-trained models are inserted into the MicrosoftML (R) and microsoftml (Python) libraries, or both if you add both languages. Once installed, you cannot incrementally remove them. Removal will require uninstall and reinstall of Python or R Server. 
 
@@ -92,20 +94,34 @@ The command line equivalent of a double-click invocation of ServerSetup.exe is `
 
   `serversetup.exe /quiet /uninstall`  
 
-4. Offline install requires .cab files that provide open-source distributions and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](machine-learning-server-windows-offline.md).
+4. Unattended offline install requires .cab files that provide open-source distributions and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](machine-learning-server-windows-offline.md).
 
-  `rserversetup.exe /offline /mediadir="D:/Public/CABS` 
+  `serversetup.exe /quiet /offline /mediadir="D:/Public/CABS` 
 
 <a name="cab-files"></a>
 
-### CAB files for offline installation
+## 9.3 CAB file list
+
+For unattended setup or offline setup, copy the .cab files to either the setup user's temp directory (**C:\Users\<user-name>\AppData\Local\Temp**) or to a folder specified via the `/mediadir` flag.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|NameForMLM |[MLM_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
-|Microsoft R Open |[SRO_3.4.4.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852724) | R |
-|Microsoft Python Open |[SPO_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |
-|Microsoft Python Server |[SPS_9.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726) | Python |
+|MLM|[MLM_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859053&clcid=1033)|Pre-trained models, R or Python|
+|Microsoft R Open|[SRO_3.4.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=867186&clcid=1033)|R|
+|Microsoft Python Open|[SPO_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859054&clcid=1033)|Python|
+
+There is no separate Python Server package in the 9.3 version.
+
+## 9.2.1 CAB file list
+
+For unattended setup or offline setup, copy the .cab files to either the setup user's temp directory (**C:\Users\<user-name>\AppData\Local\Temp**) or to a folder specified via the `/mediadir` flag.
+
+| Component | Download | Used for | 
+|-----------|----------|----------|
+|MLM|[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727&clcid=1033)|Pre-trained models, R or Python|
+|Microsoft R Open|[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852724&clcid=1033)|R|
+|Microsoft Python Open|[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723&clcid=1033)|Python|
+|Microsoft Python Server|[SPS_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852726&clcid=1033)|Python|
 
 ## Next steps
 
