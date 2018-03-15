@@ -244,7 +244,7 @@ You can now **repeat these steps** for each compute node.
    `--uri http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`
    
    ```azurecli
-   az ml admin node setup --webnode —-admin-password <Password> —-confirm-password <Password> --uri <URI1>,<URI2>
+   az ml admin node setup --webnode --admin-password <Password> --confirm-password <Password> --uri <URI1>,<URI2>
    ```
 
 1. Verify the configuration was successful with these [CLI commands](configure-admin-cli-launch.md):
