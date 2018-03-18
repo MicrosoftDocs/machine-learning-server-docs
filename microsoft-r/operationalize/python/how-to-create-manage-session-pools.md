@@ -88,7 +88,7 @@ On the compute node, run the following command to delete the session pool for a 
  svc = client.delete_service_pool(name = "myWebService1234", version = "v1.0.0")
 ```
 
-This feature is still underdevelopment. In rare cases, the [delete_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) command may fail to actually delete the pool on the computeNode. If you encounter this situation, issue a new [delete_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) command. Use the [get_service_pool_status](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) command to monitor the actually status of dedicated pools on the computeNode.
+This feature is still underdevelopment. In rare cases, the [delete_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) command may fail to actually delete the pool on the computeNode. If you encounter this situation, issue a new [delete_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) command. Use the [get_service_pool_status](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) command to monitor the status of dedicated pools on the computeNode.
  ```python
  # Deletes the dedicated session pool and releases resources
  client.delete_service_ool(name = "myWebService1234", version = "v1.0.0")
