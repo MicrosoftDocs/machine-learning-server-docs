@@ -45,7 +45,7 @@ You can configure a Machine Learning Server to act as a deployment server and ho
 - **One-box configuration**: includes one web node and one compute node that run on a single machine. This configuration is useful when you want to explore what is needed to operationalize R or Python analytics.
 - **Enterprise configuration**: where multiple nodes are configured on multiple machines along with other enterprise features. This configuration can be scaled out or in by adding or removing nodes.
 
-This quickstart uses the one-box configuration on windows. The deployment is automated using an ARM template. Go to [OneBox Configuration for Windows](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/one-box-configuration/windows) and click the **Deploy to Azure** button to deploy the ARM Templates. 
+This quickstart uses the one-box configuration on Windows. The deployment is automated using an ARM template. Go to [OneBox Configuration for Windows](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/one-box-configuration/windows) and click the **Deploy to Azure** button to deploy the ARM Templates. 
 
 ![arm-template](./media/quickstart-application-integration-with-swagger/1-create-mlserver-with-arm-template.png)
 
