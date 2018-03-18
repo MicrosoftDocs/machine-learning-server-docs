@@ -332,7 +332,7 @@ usage: az [-h] [--verbose] [--debug] [--output {json,jsonc,table,tsv}]
           ...
 ```
 
-You can use the command `whoami` both in Windows and Linux to find the current user. Here is an example of non-administrative user in windows which cannot use the [Administrator CLI](https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-admin-cli-launch) : 
+You can use the command `whoami` both in Windows and Linux to find the current user. Here is an example of non-administrative user in Windows which cannot use the [Administrator CLI](https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-admin-cli-launch) : 
 
 ```
 C:\Windows\system32>whoami
