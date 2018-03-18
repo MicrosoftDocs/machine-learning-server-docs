@@ -47,7 +47,7 @@ Additional [troubleshooting topics](#trouble) are also covered.
      az login --mls
 
      # If running from another machine, specify the MLS endpoint
-     az ml admin –mls --endpoint <Endpoint>
+     az ml admin --mls --endpoint <Endpoint>
 
      # Run diagnostics
      az ml admin diagnostic run
@@ -79,7 +79,7 @@ To go through the execution of a specific line of code and retrieve request IDs 
      az login --mls
 
      # If running tests from another machine, specify the MLS endpoint
-     az ml admin –mls --endpoint <Endpoint>
+     az ml admin --mls --endpoint <Endpoint>
 
      # Trace execution of an inline R code block
      az ml admin diagnostic code --runtime R --block "x<-5;x"
@@ -113,7 +113,7 @@ To go through the execution of a specific web service and retrieve request IDs f
      az login --mls
 
      # If running tests from another machine, specify the MLS endpoint
-     az ml admin –mls --endpoint <Endpoint>
+     az ml admin --mls --endpoint <Endpoint>
 
      az ml admin diagnostic service --name <service-name> --version <version>
      ```
