@@ -112,7 +112,7 @@ In an enterprise configuration, you can set up one or more web nodes. It is poss
    
    ```azurecli
    # Configure a web node
-   az ml admin node setup --webnode —-admin-password <Password> —-confirm-password <Password> --uri <URI1>,<URI2>
+   az ml admin node setup --webnode --admin-password <Password> --confirm-password <Password> --uri <URI1>,<URI2>
    ``` 
 
 1. In the same CLI, test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
@@ -168,7 +168,7 @@ You can set up the load balancer of your choosing. Keep in mind that web nodes a
 1. Using the CLI, you can test the configuration. Learn more about [diagnostic tests](../operationalize/configure-run-diagnostics.md). For the full test of the configuration, enter the following in the CLI:
    ```azurecli
    # You must be authenticated to run diagnostic tests.
-   az login —-mls
+   az login --mls
 
    # Run test
    az ml admin diagnostic run
@@ -244,7 +244,7 @@ You can now **repeat these steps** for each compute node.
    `--uri http://1.1.1.1:12805, http://1.0.1-3.1-2:12805`
    
    ```azurecli
-   az ml admin node setup --webnode —-admin-password <Password> —-confirm-password <Password> --uri <URI1>,<URI2>
+   az ml admin node setup --webnode --admin-password <Password> --confirm-password <Password> --uri <URI1>,<URI2>
    ```
 
 1. Verify the configuration was successful with these [CLI commands](configure-admin-cli-launch.md):
