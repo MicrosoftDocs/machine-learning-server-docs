@@ -69,7 +69,8 @@ At the R console, on the compute node, run the following command to delete the s
  # Deletes the dedicated session pool and releases resources
  deleteServicePool(name = "myWebService1234", version = "v1.0.0")
 ```
-This feature is still underdevelopment. In rare cases, the [deleteServicePool](../r-reference/mrsdeploy/deleteServicePool.md) command may fail to actually delete the pool on the computeNode. If you encountered this situation, issue a new [deleteServicePool](../r-reference/mrsdeploy/deleteServicePool.md) command. Use the [getPoolStatus](../r-reference/mrsdeploy/getPoolStatus.md) command to monitor the actually status of dedicated pools on the computeNode.
+This feature is still underdevelopment. In rare cases, the [deleteServicePool](../r-reference/mrsdeploy/deleteServicePool.md) command may fail to actually delete the pool on the computeNode. If you encountered this situation, issue a new [deleteServicePool](../r-reference/mrsdeploy/deleteServicePool.md) command. Use the [getPoolStatus](../r-reference/mrsdeploy/getPoolStatus.md) command to monitor the \status of dedicated pools on the computeNode.
+
  ```R
  # Deletes the dedicated session pool and releases resources
  deleteServicePool(name = "myWebService1234", version = "v1.0.0")
