@@ -5,7 +5,7 @@ title: "Create and manage session pools for fast web service connections in R (M
 description: "Allocate resources for pre-loading web service connections and dependencies in R solutions (Machine Learning Server ). "
 keywords: ""
 author: "HeidiSteen"
-ms.author: "heidist"
+achms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
 ms.topic: "article"
@@ -37,7 +37,7 @@ For R script, the [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md) fun
 
 ## Create or modify a dedicated session pool
 
-You can use an R console application, such as Rgui.exe, to run the following commands on the local server if you configured Machine Learning Server for one-box, or on a compute node if you have a distributed topology.
+An already stablished connection, using the [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md) functions and an R console application such as Rgui.exe , to a Machine Learning Server with [operationalization](../r-reference/mrsdeploy/configureServicePool.md) enabled is needed, to run the following commands:
 
 ```r
  # load mrsdeploy and print the function list
