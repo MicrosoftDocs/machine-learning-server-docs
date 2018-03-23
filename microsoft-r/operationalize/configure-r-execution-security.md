@@ -26,7 +26,7 @@ ms.prod: "mlserver"
 
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
-`deployr-rserve` is a forked version of RServe maintained by Microsoft. In this forked version, we support parallel R sessions for both Windows and Linux thereby overcoming this limitation in the original rserve package.
+[`deployr-rserve`](https://github.com/Microsoft/deployr-rserve) is a forked version of RServe maintained by Microsoft. In this forked version, we support parallel R sessions for both Windows and Linux thereby overcoming this limitation in the original rserve package.
 
 This forked version of RServe is the R execution component behind the compute node for Machine Learning Server (and R Server). Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](configure-evaluate-capacity.md#pool).  
 
