@@ -89,8 +89,8 @@
       href: operationalize/configure-evaluate-capacity.md
     - name: Enable CORS
       href: operationalize/configure-cors.md
-    - name: R execution context
-      href: operationalize/configure-r-execution-context.md
+    - name: R execution security
+      href: operationalize/configure-r-execution-security.md
     - name: R package management
       href: operationalize/configure-manage-r-packages.md
     - name: Default file paths
