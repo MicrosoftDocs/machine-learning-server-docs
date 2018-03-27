@@ -164,6 +164,9 @@ Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04
   # Verify whether the "microsoft-prod.list" configuration file exists
   ls -la /etc/apt/sources.list.d/
   
+  # Add the Microsoft public signing key for Secure APT
+  apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
+  
   # Update packages on your system
   apt-get update
   
