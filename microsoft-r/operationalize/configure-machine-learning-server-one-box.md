@@ -122,7 +122,7 @@ Carefully review the following steps.
    
   ```azurecli
    # Set up both nodes on one machine
-   az ml admin node setup —-onebox —-admin-password <Password> —-confirm-password <Password>
+   az ml admin node setup --onebox --admin-password <Password> --confirm-password <Password>
 
    # Check that the nodes are now running
    az ml admin node list
