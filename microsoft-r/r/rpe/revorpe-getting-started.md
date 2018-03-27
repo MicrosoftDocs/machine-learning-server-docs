@@ -145,7 +145,7 @@ We will use another code snippet to create a plot showing the relationship betwe
 1.  In your script, below your call to read.table, right-click and then click **Insert Snippet...**. Select **graphics – lattice**, then **XY plot**.
 2.  For your y variable, type AveSAT.
 3.  TAB, and for your x variable type ExpPerPupil.
-4.  TAB twice, since we will not specify a grouping variable. Looking at the tooltip for type, we see that we can plot both the points and a regression line if we specify ″r″, ″p″—so type this into the field.
+4.  TAB twice, since we will not specify a grouping variable. Looking at the tooltip for type, we see that we can plot both the points and a regression line if we specify ″r″, ″p″, so type this into the field.
 5.  TAB, then type SAT for the data frame name.
 6.  Press Enter to exit the snippet.
 

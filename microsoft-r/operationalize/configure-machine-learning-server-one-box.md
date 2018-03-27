@@ -57,14 +57,14 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    ```azurecli
    # Set up both nodes on one machine
-   az ml admin node setup —-onebox —-admin-password <Password> —-confirm-password <Password>
+   az ml admin node setup --onebox --admin-password <Password> —-confirm-password <Password>
 
    # Check that the nodes are now running
    az ml admin node list
 
    # Authenticate via CLI
    # Account name is `admin` if LDAP or AAD is not set up.
-   az login —-mls
+   az login --mls
 
    # Test configuration to validate setup
    az ml admin diagnostic run
