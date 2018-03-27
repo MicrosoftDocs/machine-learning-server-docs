@@ -83,7 +83,7 @@ Output is below. Variables are based on fields in the CSV file. In this case, th
 
 You can set data compression via the *xdfCompressionLevel* argument to **rxImport** (and most other RevoScaleR functions that write .xdf files). You specify this as an integer in the range -1 to 9. The value -1 tells *rxImport* to use the current default compression value. The integers 1 through 9 specify increasing levels of compression, where higher numbers perform more compression, but take more time. The value 0 specifies no compression.
 
-The .xdf format allows different blocks to have different compression levels (but not within a single call to *rxImport*). This can be useful, for example, when appending to an existing data set of unknown compression level—you can specify the compression for the new data without affecting the compression of the existing data.
+The .xdf format allows different blocks to have different compression levels (but not within a single call to *rxImport*). This can be useful, for example, when appending to an existing data set of unknown compression level. You can specify the compression for the new data without affecting the compression of the existing data.
 
 You can specify a standard compression level for all future .xdf file writes by setting *xdfCompressionLevel* using *rxOptions*. For example, to specify a compression level of 3, use *rxOptions* as follows:
 

@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 ---
 # Fitting Linear Models using RevoScaleR
 
-Linear regression models are fitted in RevoScaleR using the *rxLinMod* function. Like other RevoScaleR functions, *rxLinMod* uses an updating algorithm to compute the regression model. The R object returned by *rxLinMod* includes the estimated model coefficients and the call used to generate the model, together with other information that allows RevoScaleR to recompute the model—because *rxLinMod* is designed to work with arbitrarily large data sets, quantities such as residuals, and fitted values are not included in the return object, although these can be obtained easily once the model has been fitted.
+Linear regression models are fitted in RevoScaleR using the *rxLinMod* function. Like other RevoScaleR functions, *rxLinMod* uses an updating algorithm to compute the regression model. The R object returned by *rxLinMod* includes the estimated model coefficients and the call used to generate the model, together with other information that allows RevoScaleR to recompute the model. BSecause *rxLinMod* is designed to work with arbitrarily large data sets, quantities such as residuals, and fitted values are not included in the return object, although these can be obtained easily once the model has been fitted.
 
 As a simple example, let’s use the sample data set AirlineDemoSmall.xdf and fit the arrival delay by day of week:
 

@@ -57,7 +57,7 @@ In RevoScaleR, formulas in which the first independent variable is categorical m
 
 ## Letting the Data Speak For Itself
 
-Classical statistics is largely concerned with fitting predictive models to limited observations. Data analysts and statisticians use exploratory techniques to visualize the data and then make informed guesses as to the appropriate form for a predictive model. Large data analysis, on the other hand, provides the opportunity to let the data speak for itself—with millions of observations in hand, we don’t have to guess about the form of relationships between variables: they become clear. A general approach to finding the relationship between two numeric variables x and y might be as follows. First, bin the x values. Then, for each bin, plot the mean of the y values contained in that bin. As the bins become narrower and narrower, the resulting plot becomes a plot of E(y|x) for each value of x.
+Classical statistics is largely concerned with fitting predictive models to limited observations. Data analysts and statisticians use exploratory techniques to visualize the data and then make informed guesses as to the appropriate form for a predictive model. Large data analysis, on the other hand, provides the opportunity to let the data speak for itself. With millions of observations in hand, we don’t have to guess about the form of relationships between variables: they become clear. A general approach to finding the relationship between two numeric variables x and y might be as follows. First, bin the x values. Then, for each bin, plot the mean of the y values contained in that bin. As the bins become narrower and narrower, the resulting plot becomes a plot of E(y|x) for each value of x.
 
 ## Cubes and Cube Regression
 
