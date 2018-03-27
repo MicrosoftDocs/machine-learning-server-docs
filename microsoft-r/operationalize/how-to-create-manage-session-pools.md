@@ -37,7 +37,7 @@ For R script, the [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md) fun
 
 ## Create or modify a dedicated session pool
 
-You can use an R console application, such as Rgui.exe, to run the following commands on the local server if you configured Machine Learning Server for one-box, or on a compute node if you have a distributed topology.
+Given an existing connection to a Machine Learning Server with [operationalization](../r-reference/mrsdeploy/configureServicePool.md) enabled, you can use [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md) functions and an R console application such as Rgui.exe to run the following commands:
 
 ```r
  # load mrsdeploy and print the function list
