@@ -136,7 +136,7 @@ This produces the following output:
 	Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
 
 
-To specify *newLevels*, you must also specify *levels*, and it is important to note that the *newLevels* argument can only be used to rename levels—it cannot be used to fully recode the factor. That is, the number of *levels* and number of *newLevels* must be the same.
+To specify *newLevels*, you must also specify *levels*, and it is important to note that the *newLevels* argument can only be used to rename levels. It cannot be used to fully recode the factor. That is, the number of *levels* and number of *newLevels* must be the same.
 
 ### Change data types
 

@@ -116,7 +116,7 @@ On a node of the Hadoop cluster (which may be an edge node), define a Hadoop Map
 	$ myHadoopCluster <- RxHadoopMR()
 
 >[!NOTE]
-> The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*—that is, the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
+> The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*. These are the default locations for writing various files on the cluster’s local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
 
 	myShareDir = paste( "/var/RevoShare", Sys.info()[["user"]],
 		sep="/" )

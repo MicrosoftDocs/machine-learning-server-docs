@@ -110,7 +110,7 @@ For the complete configuration and usage documentation, read the guide "[Managin
 
 ## Troubleshooting
 
-There is no doubt that, as an administrator, you've experienced failures with servers, networks, and systems—most probably at the very inopportune times. Likewise, your chosen runtime policies may sometime fail to deliver the runtime behavior or performance needed by your community of users.
+There is no doubt that, as an administrator, you've experienced failures with servers, networks, and systems. Likewise, your chosen runtime policies may sometime fail to deliver the runtime behavior or performance needed by your community of users.
 
 When those failures occur in the DeployR environment, we recommend you first turn to the [DeployR diagnostic testing tool](deployr-admin-diagnostics-troubleshooting.md) to attempt to identify the underlying cause of the problem.
 

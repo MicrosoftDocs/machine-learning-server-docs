@@ -114,7 +114,7 @@ As a more complex example, we return to the censusWorkers data to which we earli
 	  
 ### Large Data Decision Forest Models
 
-As with decision trees, scaling decision forests to very large data sets should be done with caution—the wrong choice of model parameters can easily lead to models that take hours or longer to estimate, even in a distributed computing environment, or that simply cannot be fit at all. For non-binary classification problems, as with decision trees, categorical predictors should have a small to moderate number of levels.
+As with decision trees, scaling decision forests to very large data sets should be done with caution. The wrong choice of model parameters can easily lead to models that take hours or longer to estimate, even in a distributed computing environment, or that simply cannot be fit at all. For non-binary classification problems, as with decision trees, categorical predictors should have a small to moderate number of levels.
 
 As an example of a large data classification forest, consider the following simple model using the 7% subsample of the full airline data (this uses the variable *ArrDel15* indicating flights with an arrival delay of 15 minutes or more):
 

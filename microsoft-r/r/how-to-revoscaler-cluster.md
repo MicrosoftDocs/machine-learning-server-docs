@@ -29,7 +29,7 @@ ms.prod: "mlserver"
 
 ### K-means Clustering
 
-K-means clustering is a classification technique that groups observations of numeric data using one of several *iterative relocation* algorithms—that is, starting from some initial classification, which may be random, points are moved from cluster to another so as to minimize sums of squares. In RevoScaleR, the algorithm used is that of Lloyd.
+K-means clustering is a classification technique that groups observations of numeric data using one of several *iterative relocation* algorithms. Starting from some initial classification, which may be random, points are moved from cluster to another so as to minimize sums of squares. In RevoScaleR, the algorithm used is that of Lloyd.
 
 To perform k-means clustering with RevoScaleR, use the *rxKmeans* function.
 
