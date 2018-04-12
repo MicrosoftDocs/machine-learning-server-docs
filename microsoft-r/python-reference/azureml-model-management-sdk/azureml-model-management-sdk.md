@@ -4,11 +4,11 @@
 title: "azureml-model-management-sdk package for Python - Machine Learning Server "
 description: "azureml-model-management-sdk Functions"
 keywords: "azureml-model-management-sdk package reference"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

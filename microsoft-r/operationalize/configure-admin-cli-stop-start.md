@@ -4,11 +4,11 @@
 title: "Stop or start web and compute nodes on Machine Learning Server "
 description: "Monitor, stop or start the services for web or compute nodes for Machine Learning Server operationalization"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -8,7 +8,7 @@ author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "12/19/2017"
-ms.topic: "get-started-article"
+ms.topic: "tutorial"
 ms.prod: "mlserver"
 
 # optional metadata

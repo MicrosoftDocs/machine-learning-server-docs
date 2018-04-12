@@ -4,11 +4,11 @@
 title: "Install Python support in Machine Learning Server "
 description: "Installing python interpreter and packages locally to interact with Machine Learning Server"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

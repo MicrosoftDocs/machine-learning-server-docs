@@ -4,11 +4,11 @@
 title: " Scale & Throughput - DeployR 8.x "
 description: "Understanding Scale and Throughput in DeployR"
 keywords: "scalability, throughput, DeployR"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

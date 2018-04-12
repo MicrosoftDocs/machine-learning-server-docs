@@ -4,11 +4,11 @@
 title: "Python samples for MicrosoftML - Machine Learning Server "
 description: "MicrosoftML samples using the Python language are described and linked here to help you get started quickly with Microsoft Machine Learning Server."
 keywords: ""
-author: "bradsev"
-ms.author: "bradsev"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "02/16/2018"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

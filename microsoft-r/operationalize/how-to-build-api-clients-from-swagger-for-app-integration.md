@@ -4,11 +4,11 @@
 title: "Integrate web services & authentication into applications - Machine Learning Server "
 description: "Use Swagger to help integrate your R and Python analytics into your applications."
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

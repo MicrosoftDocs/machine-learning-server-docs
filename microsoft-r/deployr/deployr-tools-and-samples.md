@@ -4,11 +4,11 @@
 title: "DeployR Application Developer Tools and Docs - DeployR 8.x "
 description: "DeployR Application Developer Tools and Docs"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

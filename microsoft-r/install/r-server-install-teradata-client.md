@@ -4,11 +4,11 @@
 title: "R Server Client Installation Guide for Teradata"
 description: "Microsoft R Server install guide for Teradata clients."
 keywords: ""
-author: "bradsev"
-ms.author: "bradsev" 
-manager: "jhubbard"
+author: "HeidiSteen"
+ms.author: "heidist" 
+manager: "cgronlun"
 ms.date: "09/12/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

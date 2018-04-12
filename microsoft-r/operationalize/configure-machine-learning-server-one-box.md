@@ -4,11 +4,11 @@
 title: "Configure Machine Learning Server 9.3 to operationalize analytics (one-box)"
 description: "Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -4,11 +4,11 @@
 title: "LDAP AD and Azure Active Directory authentication for Machine Learning Server "
 description: "Authenticate Machine Learning Server users against LDAP AD or Azure Active Directory"
 keywords: "Machine Learning Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

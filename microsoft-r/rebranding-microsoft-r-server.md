@@ -4,11 +4,11 @@
 title: "What happened to Microsoft R Server - Machine Learning Server "
 description: "Microsoft R Server was rebranded as Machine Learning Server in Sept. 2017."
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "02/16/2018"
-ms.topic: "article"
+ms.topic: "overview"
 ms.prod: "mlserver"
 
 # optional metadata

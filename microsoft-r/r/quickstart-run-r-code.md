@@ -4,11 +4,11 @@
 title: "Quick Start for Microsoft R Client & Machine Learning Server"
 description: "Microsoft R Client quickstart"
 keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "02/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata
