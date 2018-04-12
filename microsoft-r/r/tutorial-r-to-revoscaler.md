@@ -549,6 +549,7 @@ The rxGetInfo function allows you to quickly get information about your data set
 
 	rxGetInfo(mortData, getVarInfo = TRUE, numRows=3)
 
+
 Output:
 
 	Data frame: mortData
@@ -572,6 +573,7 @@ Output:
 
 The rxDataStep function provides a framework for the majority of your data manipulation tasks. It allows for row selection (the *rowSelection* argument), variable selection (the *varsToKeep* or *varsToDrop* arguments), and the creation of new variables from existing ones (the *transforms* argument). Here’s an example that does all three with one function call:
 
+	outFile2 <- NULL
 	mortDataNew <- rxDataStep(
 		# Specify the input data set
 		inData = mortData,
@@ -592,6 +594,8 @@ Our new data set, *mortDataNew*, will not have the variable year, but adds two n
 With the *rowSelection* argument, we have also removed any observations with high credit scores, above or equal to 850. We can use the rxGetVarInfo function to confirm:
 
 	rxGetVarInfo(mortDataNew)
+
+Output:
 
 	Var 1: creditScore, Type: integer, Low/High: (486, 847)
 	Var 2: houseAge, Type: integer, Low/High: (0, 40)
@@ -668,6 +672,8 @@ That’s it! Now you can reuse all of the importing, data step, plotting, and an
 	# Import data
 	mortData <- rxImport(inData = inDataFile, outFile = outFile)
 
+Output:
+
 	Rows Read: 500000, Total Rows Processed: 500000, Total Chunk Time: 1.043 seconds
 	Rows Read: 500000, Total Rows Processed: 1000000, Total Chunk Time: 1.001 seconds
 
@@ -675,6 +681,8 @@ Because we have specified an output file when importing the data, the returned *
 
 	# Some quick information about my data
 	rxGetInfo(mortData, getVarInfo = TRUE, numRows=5)
+
+Output:
 
 		File name: C:\\MicrosoftR\\Data\\myMortData.xdf
 		Number of observations: 1e+06
@@ -696,7 +704,8 @@ Because we have specified an output file when importing the data, the returned *
 		4 713 15 5 6236 2000 0
 		5 689 10 5 6817 2000 0
 
-	# The data step
+The data step:
+
 	mortDataNew <- rxDataStep(
 		# Specify the input data set
 		inData = mortData,
@@ -712,9 +721,13 @@ Because we have specified an output file when importing the data, the returned *
 				labels = c("Low Debt", "High Debt")),
 			lowScore = creditScore < 625))
 
+Output:
+
 	Rows Read: 500000, Total Rows Processed: 500000, Total Chunk Time: 0.673 seconds
 	Rows Read: 500000, Total Rows Processed: 1000000, Total Chunk Time: 0.448 seconds
 	>
+
+Looking at the data:
 
 	# Looking at the data
 	rxHistogram(~creditScore, data = mortDataNew )
@@ -733,6 +746,8 @@ Because we have specified an output file when importing the data, the returned *
 	# Compute a logistic regression
 	myLogit <- rxLogit(default~ccDebt+yearsEmploy , data=mortDataNew)
 	summary(myLogit)
+
+Output:
 
 	Call:
 	rxLogit(formula = default ~ ccDebt + yearsEmploy, data = mortDataNew)
