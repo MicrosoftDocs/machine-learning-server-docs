@@ -4,11 +4,11 @@
 title: "Get started for Administrators configuring Machine Learning Server to operationalize"
 description: "If you are responsible for configuring or maintaining Machine Learning Server or R Server, then this guide is for you."
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

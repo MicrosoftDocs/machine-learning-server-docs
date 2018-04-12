@@ -6,7 +6,7 @@ description: " Use a PemaBaseClass reference class object to perform a Parallel 
 keywords: "RevoPemaR, pemaCompute, models" 
 author: "richcalaway"
 ms.author: "richcala" 
-manager: "jhubbard" 
+manager: "cgronlun" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 

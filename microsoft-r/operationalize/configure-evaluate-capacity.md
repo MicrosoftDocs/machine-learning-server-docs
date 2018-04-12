@@ -4,11 +4,11 @@
 title: "Evaluate the load balancing of your configuration - Machine Learning Server "
 description: "Load Balancing Capacity and simulation tests for latency and thread counts"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

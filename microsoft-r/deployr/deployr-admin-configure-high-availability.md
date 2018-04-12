@@ -4,11 +4,11 @@
 title: "DeployR Server, Grid & Database High Availability - DeployR 8.x "
 description: "How to Configure High Availability HA for DeployR Server, Grid & Database"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

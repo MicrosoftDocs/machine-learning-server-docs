@@ -6,7 +6,7 @@ description: " `getRevoRepos` returns the path to either the Revolution Analytic
 keywords: ", getRevoRepos,  ~kwd1 ,  ~kwd2 " 
 author: "richcalaway"
 ms.author: "richcala" 
-manager: "jhubbard" 
+manager: "cgronlun" 
 ms.date: "03/27/2017" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 

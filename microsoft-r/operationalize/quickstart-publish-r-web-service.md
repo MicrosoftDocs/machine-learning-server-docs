@@ -4,11 +4,11 @@
 title: "Quickstart: Deploy R models as web services with mrsdeploy - Machine Learning Server "
 description: "How to deploy an R model as a service"
 keywords: "quickstart, Machine Learning Server, Microsoft R Server, deploy r models"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

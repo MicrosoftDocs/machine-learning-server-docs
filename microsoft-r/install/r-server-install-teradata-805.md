@@ -3,11 +3,11 @@
 title: "Install Microsoft R Server 2016 (8.0.5) on Teradata Servers"
 description: "Installation and configuration for Microsoft R Server 2016 (version 8.0.5) on Teradata servers."
 keywords: ""
-author: "bradsev"
-ms.author: "bradsev" 
-manager: "jhubbard"
+author: "HeidiSteen"
+ms.author: "heidist" 
+manager: "cgronlun"
 ms.date: "07/29/2016"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

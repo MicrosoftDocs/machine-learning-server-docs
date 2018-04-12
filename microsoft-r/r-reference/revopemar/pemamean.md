@@ -6,7 +6,7 @@ description: " Generator for an PemaMean reference class object, inheriting from
 keywords: "RevoPemaR, PemaMean,  models " 
 author: "richcalaway"
 ms.author: "richcala" 
-manager: "jhubbard" 
+manager: "cgronlun" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 

@@ -4,11 +4,11 @@
 title: "DeployR Administration Console Help - DeployR 8.x "
 description: "Managing Users in the DeployR Administration Console"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

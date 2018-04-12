@@ -4,11 +4,11 @@
 title: "Managing access tokens, bearer tokens, access_token, refresh_token - Machine Learning Server "
 description: "Token Management for API Requests with Machine Learning Server"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "9/25/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

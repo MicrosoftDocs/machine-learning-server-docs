@@ -4,11 +4,11 @@
 title: "Install Microsoft R Client on Windows"
 description: "Guide to installing Microsoft R Client on Windows. R Client is a free, data science tool for high performance analytics."
 keywords: "R Client, R IDE configuration, RTVS, R Tools for Visual Studio, Microsoft R Client"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "02/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

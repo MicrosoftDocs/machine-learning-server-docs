@@ -6,9 +6,9 @@ description: "Install Microsoft R Server 9.1 on the Cloudera distribution of Apa
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "03/29/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

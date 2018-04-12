@@ -4,11 +4,11 @@
 title: "Install DeployR for Microsoft R Server 2016 on Linux - DeployR 8.x "
 description: "How to install, migrate, and configure DeployR"
 keywords: "install, installation, DeployR, configuration, configure"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -8,7 +8,7 @@ author: "HeidiSteen"
 manager: "cgronlun"
 ms.date: "02/12/2018"
 ms.author: heidist
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 ms.service: ""
 ms.assetid: ""

@@ -4,11 +4,11 @@
 title: "Enabling DeployR on the Cloud (Azure, AWS) - DeployR 8.x "
 description: "How to Enable DeployR on Azure and AWS (Cloud)"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

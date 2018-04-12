@@ -6,9 +6,9 @@ description: "Learn how to work with big datasets using sample census data in th
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "05/12/2017"
-ms.topic: "get-started-article"
+ms.topic: "tutorial"
 ms.prod: "mlserver"
 
 # optional metadata

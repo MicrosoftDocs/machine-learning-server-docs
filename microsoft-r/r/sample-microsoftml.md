@@ -3,11 +3,11 @@
 # required metadata
 title: "R samples for MicrosoftML"
 keywords: ""
-author: "bradsev"
-ms.author: "bradsev"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "02/12/2018"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

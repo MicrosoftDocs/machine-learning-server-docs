@@ -4,11 +4,11 @@
 title: "Consume web services asynchronously with batch scoring with mrsdeploy  - Machine Learning Server "
 description: "Asynchronous web service consumption via batch processing in Machine Learning Server"
 keywords: "batch processing of web services"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata
