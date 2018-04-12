@@ -5,7 +5,7 @@ description: "How to install Machine Learning Server."
 keywords: ""
 author: "j-martens"
 ms.author: "jmartens"
-ms.date: "2/16/2018"
+ms.date: "4/12/2018"
 ms.topic: "article"
 ms.prod: "mlserver"
 
