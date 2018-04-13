@@ -4,11 +4,11 @@
 title: "Introducing SQL Server R Services (Machine Learning Server) "
 description: "SQL Server R Services introduction"
 keywords: "SQL Server R Services"
-author: "j-martens"
-ms.author: "jmartens"
-manager: "jhubbard"
+author: "HeidiSteen"
+ms.author: "heidist"
+manager: "cgronlun"
 ms.date: "12/06/2016"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

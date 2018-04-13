@@ -6,7 +6,7 @@ description: " Returns a generator function for creating analysis reference clas
 keywords: "RevoPemaR, setPemaClass, methods" 
 author: "richcalaway"
 ms.author: "richcala" 
-manager: "jhubbard" 
+manager: "cgronlun" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 

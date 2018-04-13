@@ -4,11 +4,11 @@
 title: "HTTPS SSL / TLS 1.2 for Machine Learning Server "
 description: "Learn how to add enterprise-grade security (HTTPS SSL / TLS 1.2) for Machine Learning Server"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -6,7 +6,7 @@ description: " Generator for an PemaByGroup reference class object to be used wi
 keywords: "RevoPemaR, PemaByGroup,  models " 
 author: "richcalaway"
 ms.author: "richcala" 
-manager: "jhubbard" 
+manager: "cgronlun" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 

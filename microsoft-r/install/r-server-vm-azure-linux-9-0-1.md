@@ -4,11 +4,11 @@
 title: "How to use R Server on Linux VM in Azure - Virtual Machine "
 description: "Learn how to work with R Server on Linux by using a virtual machine in Azure."
 keywords: "R Server, linux, virtual machine"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

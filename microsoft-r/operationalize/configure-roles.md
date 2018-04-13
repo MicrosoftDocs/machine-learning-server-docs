@@ -4,11 +4,11 @@
 title: "Control web services permissions with roles RBAC - Machine Learning Server "
 description: "Role based access control in Machine Learning Server using roles like owner, contributor, reader"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -6,9 +6,9 @@ description: "Learn how to work with big data using a sample airline dataset in 
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "11/03/2016"
-ms.topic: "get-started-article"
+ms.topic: "tutorial"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -4,11 +4,11 @@
 title: "Update the port values - Machine Learning Server"
 description: "You can update the ports numbers for the web node, compute node, or deployr-rserve."
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

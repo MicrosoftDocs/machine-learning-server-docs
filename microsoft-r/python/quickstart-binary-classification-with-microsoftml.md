@@ -4,11 +4,11 @@
 title: "Quickstart: Binary classification with microsoftml - Machine Learning Server "
 description: "How to deploy an R model as a service"
 keywords: "quickstart, Machine Learning Server, deploy python models"
-author: "bradsev"
-ms.author: "bradsev"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "02/16/2018"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

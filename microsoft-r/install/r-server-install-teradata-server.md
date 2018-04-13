@@ -4,11 +4,11 @@
 title: "R Server installation for Teradata servers"
 description: "Install Microsoft R Server 9.1 on Teradata servers."
 keywords: ""
-author: "bradsev"
-ms.author: "bradsev" 
-manager: "jhubbard"
+author: "HeidiSteen"
+ms.author: "heidist" 
+manager: "cgronlun"
 ms.date: "09/12/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

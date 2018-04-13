@@ -4,11 +4,11 @@
 title: "Upgrading or Reinstalling Microsoft R Server, Revolution R Open, or R - DeployR 8.x "
 description: "Reinstalling R on a machine with DeployR"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

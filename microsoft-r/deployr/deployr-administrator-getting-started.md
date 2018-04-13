@@ -4,11 +4,11 @@
 title: "Getting Started for DeployR Administrators - DeployR 8.x "
 description: "Getting started for DeployR Administrators: high level introduction to DeployR for the server administrator"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

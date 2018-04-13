@@ -8,7 +8,7 @@ author: "jeannt"
 ms.author: "jeannt"
 manager: "paulettm"
 ms.date: "08/11/2016"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "r-services"
 
 # optional metadata

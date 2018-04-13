@@ -4,11 +4,11 @@
 title: "Configure R Server to operationalize analytics (enterprise) - Microsoft R Server "
 description: "Configure Operationalization for Microsoft R Server, load balancer, "
 keywords: "setup r server for deployment; install r server for deploying"
-author: "j-martens"
-ms.author: "jmartens"
-manager: "jhubbard"
+author: "HeidiSteen"
+ms.author: "heidist"
+manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -4,11 +4,11 @@
 title: "Getting Started with DeployR for Data Scientists - DeployR 8.x "
 description: "Getting started for Data Scientists: high level introduction to DeployR for Data Scientists"
 keywords: "Data Scientists, r programmer, DeployR"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata
