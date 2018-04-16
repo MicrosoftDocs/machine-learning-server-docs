@@ -38,9 +38,9 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 ## How to configure
 
 >[!Important]
-> To get Machine Learning Server preinstalled on an Azure virtual machine, use the [Azure portal](https://portal.azure.com/#create/deploy-r.operationalization-previewonebox) or [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/deploy-r.operationalization?tab=Overview) to find a VM image with Machine Learning Server. 
+> You can create a ready-to-use server with just a few clicks using our Azure Marketplace VM [Machine Learning Server Operationalization](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/deploy-r.operationalization?tab=Overview). Navigate to the virtual machine listing on [Azure portal](https://portal.azure.com/#create/deploy-r.operationalizationonebox), select the **Create** button at the bottom, provide necessary inputs to create the Operationalization Server. 
 >
-> Alternatively, a faster and more comprehensive approach is to automate setup using [Azure Resource Management templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates) stored in GitHub. The template includes provisioning and configuration tasks, creating a ready-to-use server with just a few clicks. This [blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/14/configuring-r-server-to-operationalize-analytics-using-arm-templates/) provides more information. 
+> We also provide [Azure Resource Management templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates) stored in GitHub. This [blog post](https://blogs.msdn.microsoft.com/mlserver/2018/02/27/configuring-microsoft-machine-learning-server-9-3-to-operationalize-analytics-using-arm-templates/) provides more information. 
 >
 
 **To configure on a single machine:**
