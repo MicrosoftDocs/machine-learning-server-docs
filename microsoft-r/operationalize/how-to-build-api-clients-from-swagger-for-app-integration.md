@@ -343,7 +343,7 @@ Build and use a service consumption client library from swagger in CSharp and Ac
    InputParameters inputs = new InputParameters() { Hp = 120, Wt = 2.8 };
    var serviceResult = client.ManualTransmission(inputs);
     
-   Console.Out.WriteLine(serviceResult.OutputParameters);
+   Console.Out.WriteLine(serviceResult.OutputParameters.Answer);
    ```
 
 ## Example in Java
