@@ -4,11 +4,11 @@
 title: "Default install paths for compute and web nodes - Machine Learning Server "
 description: "Where to find appsettings.json and log files for Machine Learning Server, web node, compute node"
 keywords: "Machine Learning Server configuration file, appsettings.json"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

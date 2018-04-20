@@ -4,11 +4,11 @@
 title: "DeployR RBroker Framework Tutorial - DeployR 8.x "
 description: "The tutorial for DeployR's RBroker framework"
 keywords: "DeployR, tutorial, RBroker, framework"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

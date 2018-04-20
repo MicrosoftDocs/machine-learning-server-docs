@@ -3,10 +3,11 @@
 title: "How to install Machine Learning Server "
 description: "How to install Machine Learning Server."
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
-ms.date: "4/12/2018"
-ms.topic: "article"
+
+author: "HeidiSteen"
+ms.author: "heidist"
+ms.date: "2/16/2018"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

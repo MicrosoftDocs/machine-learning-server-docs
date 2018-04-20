@@ -4,10 +4,10 @@ title: "How to install earlier versions of Microsoft R Server "
 description: "How to install Microsoft R Server 9.1, 9.0.1, 8.0.5, and 8.0."
 keywords: ""
 author: "HeidiSteen"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

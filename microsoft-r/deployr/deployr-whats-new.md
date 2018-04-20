@@ -4,11 +4,11 @@
 title: "What's New - DeployR 8.x "
 description: "Updates, improvements, and changes in this release of DeployR"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

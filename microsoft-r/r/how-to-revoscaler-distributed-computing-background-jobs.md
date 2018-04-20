@@ -6,9 +6,9 @@ description: "Machine Learning Server in-database and cluster computing using th
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "03/23/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -4,11 +4,11 @@
 title: "R Package Management when operationalizing - Machine Learning Server "
 description: "R Package Management with Machine Learning Server"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

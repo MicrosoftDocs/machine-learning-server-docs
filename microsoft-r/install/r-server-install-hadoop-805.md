@@ -5,9 +5,9 @@ description: "Installation and configuration Microsoft R Server 2016 (version 8.
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "11/03/2016"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -6,9 +6,9 @@ description: "Deploy and activate Microsoft R Server parcels and CSDs on the Clo
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "04/11/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

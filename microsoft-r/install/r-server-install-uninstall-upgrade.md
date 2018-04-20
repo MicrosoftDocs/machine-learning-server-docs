@@ -5,9 +5,9 @@ description: "Upgrade Microsoft R Server yy uninstalling the existing version an
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "05/01/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

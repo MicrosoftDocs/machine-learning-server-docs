@@ -5,9 +5,9 @@ description: "Install R Server 9.0.1 on Cloudera Distribution Including Apache H
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "04/08/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -4,11 +4,11 @@
 title: "Machine Learning Server on the Data Science Virtual Machine - Machine Learning Server "
 description: "Run Machine Learning Server on the Microsoft Data Science Virtual Machine"
 keywords: "Machine Learning Server, HDInsight"
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

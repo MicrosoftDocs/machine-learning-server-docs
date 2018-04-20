@@ -6,9 +6,9 @@ description: "Learn how to use rxDataStep to apply arbitrary R functions on chun
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "10/18/2016"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

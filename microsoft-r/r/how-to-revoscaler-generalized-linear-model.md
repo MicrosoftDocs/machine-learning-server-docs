@@ -6,9 +6,9 @@ description: "Generalized linear models with RevoScaleR."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "03/17/2016"
-ms.topic: "get-started-article"
+ms.topic: "tutorial"
 ms.prod: "mlserver"
 
 # optional metadata

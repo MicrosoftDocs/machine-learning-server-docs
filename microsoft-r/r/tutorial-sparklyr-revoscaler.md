@@ -6,9 +6,9 @@ description: "Sparklyr interoperability with RevoScaleR on Machine Learning Serv
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "07/05/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

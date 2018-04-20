@@ -4,11 +4,11 @@
 title: "Common DeployR Administration Tasks - DeployR 8.x "
 description: "Common DeployR Administration Tasks: Starting and Stopping DeployR, Inspecting Server Logs, Database Management "
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "11/10/2017"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

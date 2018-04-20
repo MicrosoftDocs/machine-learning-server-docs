@@ -6,9 +6,9 @@ description: "Microsoft R Services IDE features and components overview."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "03/17/2016"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

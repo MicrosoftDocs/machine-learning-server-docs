@@ -4,11 +4,11 @@
 title: "mrsdeploy package for R - Machine Learning Server "
 description: "Function help reference for the mrsdeploy R package of Machine Learning Server."
 keywords: "mrsdeploy package reference"
-author: "j-martens"
-ms.author: "jmartens"
-manager: "jhubbard"
+author: "HeidiSteen"
+ms.author: "heidist"
+manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

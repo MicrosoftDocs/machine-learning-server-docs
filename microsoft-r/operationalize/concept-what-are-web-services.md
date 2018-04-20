@@ -4,11 +4,11 @@
 title: "What is a web service - Machine Learning Server "
 description: "In Machine Learning Server, a web service is an R or Python code execution on the operationalization compute node"
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "2/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -6,9 +6,9 @@ description: "Parallel processing of partitioned data with the RevoScaleR functi
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
-manager: "jhubbard"
+manager: "cgronlun"
 ms.date: "04/16/2017"
-ms.topic: "get-started-article"
+ms.topic: "tutorial"
 ms.prod: "mlserver"
 
 # optional metadata

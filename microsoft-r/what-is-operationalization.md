@@ -4,11 +4,11 @@
 title: "Operationalize models, analytics, & web services in Machine Learning Server"
 description: "You can deploy and consume R and Python models in Machine Learning Server to operationalize them."
 keywords: ""
-author: "j-martens"
-ms.author: "jmartens"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "02/16/2018"
-ms.topic: "article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata

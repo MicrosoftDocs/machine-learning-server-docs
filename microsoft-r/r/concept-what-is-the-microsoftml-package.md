@@ -3,11 +3,11 @@
 # required metadata
 title: "Get started with MicrosoftML - Machine Learning Server "
 keywords: ""
-author: "bradsev"
-ms.author: "bradsev"
+author: "HeidiSteen"
+ms.author: "heidist"
 manager: "cgronlun"
 ms.date: "09/22/2017"
-ms.topic: "get-started-article"
+ms.topic: "conceptual"
 ms.prod: "mlserver"
 
 # optional metadata
