@@ -247,7 +247,7 @@ In this example, we executed these commands to download the Swagger-based JSON f
 
 ```R
 swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE) 
+cat(swagger, file = "C:\\temp\\swagger.json", append = FALSE) 
 ``` 
 
 >[!NOTE]
