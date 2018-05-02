@@ -95,15 +95,16 @@
       href: operationalize/configure-manage-r-packages.md
     - name: Default file paths
       href: operationalize/configure-find-admin-configuration-file.md
-  - name: Virtual machines
+  - name: Azure cloud
     href: install/machine-learning-server-in-the-cloud.md
     items:
-    - name: Azure HDInsight
-      href: install/machine-learning-server-on-azure-hdinsight.md
-    - name: Azure VMs
-      href: install/machine-learning-server-azure-vm-on-linux.md
+    - name: Overview
+      href: install/machine-learning-server-in-the-cloud.md
     - name: Data Science VM
       href: install/r-server-vm-data-science.md
+    - name: Azure VMs
+      href: install/machine-learning-server-azure-vm-on-linux.md
+
   - name: Client-side
     items:
     - name: Microsoft R Client

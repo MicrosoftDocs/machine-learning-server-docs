@@ -2,6 +2,10 @@
  "redirections":
  [
   {
+    "source_path" : "machine-learning-server-on-azure-hdinsight.md",
+    "redirect_url" : "https://docs.microsoft.com/azure/hdinsight/r-server/r-server-overview"
+  },
+  {
     "source_path" : "microsoft-r/install/r-server-install-hadoop-800.md",
     "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
   },
