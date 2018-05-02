@@ -185,8 +185,8 @@ Now let's dive into this example down. Let's start by creating the model locally
    # the local admin account. Use session = false so no 
    # remote R session started
    remoteLogin("http://localhost:12800", 
-            username = “admin”, 
-            password = “{{YOUR_PASSWORD}}”,
+            username = "admin", 
+            password = "{{YOUR_PASSWORD}}",
             session = FALSE)
    ``` 
 
@@ -247,7 +247,7 @@ In this example, we executed these commands to download the Swagger-based JSON f
 
 ```R
 swagger <- api$swagger()
-cat(swagger, file = "swagger.json", append = FALSE) 
+cat(swagger, file = "C:\\temp\\swagger.json", append = FALSE) 
 ``` 
 
 >[!NOTE]
