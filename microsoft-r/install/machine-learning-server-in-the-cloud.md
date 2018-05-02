@@ -37,12 +37,14 @@ The easiest way to provision the VM is one-click install using an ARM template. 
 
 Follow these links to get started:
 
-+ [One-click installation of an auto-scale environment to operationalize your R analytics](https://blogs.msdn.microsoft.com/mlserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/).
++ [One-click installation of an auto-scale environment to operationalize your R analytics](https://blogs.msdn.microsoft.com/mlserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/)
+
 + [Machine Learning Server ARM templates on Github](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/)
 
 Other options include:
 
 + [SQL Server Machine Learning Server as preconfigured Azure virtual machine on Windows](https://docs.microsoft.com/sql/advanced-analytics/r/provision-the-r-server-only-sql-server-2016-enterprise-vm-on-azure)
+
 + [Machine Learning Server as preconfigured Azure virtual machine on Linux or Windows](machine-learning-server-azure-vm-on-linux.md). Choose this approach if you want to build your VM manually. The VM image provides the core engine but operationalization is not configured. For instructions on how to add operationalization, see [Operationalize analytics with Machine Learning Server](../what-is-operationalization.md).
 
 
