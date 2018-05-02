@@ -109,14 +109,18 @@ If you are using a client certificate, both the Subject AND Issuer need to be se
 If you are consuming a long-running web service via batch mode, you may encounter a connection timeout between the web and compute node. In batch executions, if a web service is still running after 10 minutes, the connection from the web node to the compute node times out. The web node then starts another session on another compute node or shell. The initial shell that was running when the connection timed out continues to run but never returns a result. 
 
 The workaround to bypass the timeout is to modify the webnode appsetting.json file. 
+
 1. Change the field "ConnectionTimeout" under the "ComputeNodesConfiguration" section. The default value is "01:00:00" which is one hour.
-2. Add a new field "BatchExecutionCheckoutTimeSpan" at the base level of the json file. For example:
+
+1. Add a new field "BatchExecutionCheckoutTimeSpan" at the base level of the json file. For example:
 
         "MaxNumberOfThreadsPerBatchExecution": 100,
         "BatchExecutionCheckoutTimeSpan": "03:00:00",
 
-The value of "BatchExecutionCheckoutTimeSpan" and "ConnectionTimeout" should be set to same value. The connection timeout between webnode and computenode also depends on various other factors such as: are they setting on one machine or different machines? are they setting on same Vnet or not?
-To avoid this issue, we highly suggest to configure them in the same Vnet or on same machine. You could use our [ARM template](https://blogs.msdn.microsoft.com/mlserver/2017/11/21/configuring-microsoft-machine-learning-server-to-operationalize-analytics-using-arm-templates/) to do it on Azure.
+The value of "BatchExecutionCheckoutTimeSpan" and "ConnectionTimeout" should be set to same value. If both web and compute nodes are on the same machine (a one-box configuration) or on the same virtual network, then the "ConnectionTimeout" can be shorter because there is minimal latency. 
+
+To reduce the risk of timeouts, we recommend same-machine or same-network deployments. On Azure, you can set these up easily using a template. For more information, see [Configure Machine Learning Server using Resource Manager templates] (https://blogs.msdn.microsoft.com/mlserver/2017/11/21/configuring-microsoft-machine-learning-server-to-operationalize-analytics-using-arm-templates/).
+
 
 <a name="910"></a>
 
