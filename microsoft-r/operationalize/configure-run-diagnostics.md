@@ -318,23 +318,34 @@ If the following error occurs when attempting to start a web node _"Microsoft.As
 
 Applies to: Machine Learning Server 9.3 
 
-Launching the [Administrator CLI](https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-admin-cli-launch) requires administrative privileges. If you try to launch the Administrator CLI as another user, you might receive the following error message : 
+If for some reason your `azure-ml-admin-cli` extension is not available or has been removed
+you will be met with the following error:
 
-```
-C:\Windows\system32>az ml admin --help
+```azurecli
+> az ml admin --help
+
 az: error: argument _command_package: invalid choice: ml
-usage: az [-h] [--verbose] [--debug] [--output {json,jsonc,table,tsv}]
+usage: az [-h] [--verbose] [--debug] [--output {tsv,table,json,jsonc}]
           [--query JMESPATH]
-          {acr,acs,aks,advisor,webapp,appservice,functionapp,backup,batch,batchai,billing,cdn,cloud,cognitiveservices,configure,  
-          consumption,container,cosmosdb,dla,dls,eventgrid,extension,feedback,find,interactive,iot,keyvault,lab,monitor,network,  
-          login,logout,account,mysql,postgres,redis,reservations,group, resource,provider,feature,tag,policy,lock,managedapp,  
-          role,ad,sf,sql,storage,disk,identity,image,snapshot,vm,vmss}          
-          ...
+          {aks,backup,redis,network,cosmosdb,batch,iot,dla,group,webapp,acr,dls,
+           storage,mysql,vm,reservations,account,keyvault,sql,vmss,eventgrid,
+           managedapp,ad,advisor,postgres,container,policy,lab,batchai,
+           functionapp,identity,role,cognitiveservices,monitor,sf,resource,cdn,
+           tag,feedback,snapshot,disk,extension,acs,provider,cloud,lock,image,
+           find,billing,appservice,login,consumption,feature,logout,configure,
+           interactive}
 ```
 
-You can use the command `whoami` both in Windows and Linux to find the current user. Here is an example of non-administrative user in Windows which cannot use the [Administrator CLI](https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-admin-cli-launch) : 
+If you encounter this error, you can re-add the extension as such:
 
-```
-C:\Windows\system32>whoami
-nt authority\system
+**Windows:**
+
+```azurecli
+> az extension add --source 'C:\Program Files\Microsoft\ML Server\Setup\azure_ml_admin_cli-0.0.1-py2.py3-none-any. whl' --yes
+````
+
+**Linux:**
+
+```azurecli
+> az extension add --source ./microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes
 ```
