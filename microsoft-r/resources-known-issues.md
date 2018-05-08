@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "05/08/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -31,7 +31,41 @@ The following issues are known in the 9.3 release.
 
 ## Known issues in 9.3
 
-### 1. Compute nodes fail on a Python-only install on Ubuntu 14.04
+### 1. Missing `azure-ml-admin-cli` extension on DSVM environments
+
+If for some reason your `azure-ml-admin-cli` extension is not available or has been removed
+you will be met with the following error:
+
+```azurecli
+$ az ml admin --help
+
+az: error: argument _command_package: invalid choice: ml
+usage: az [-h] [--verbose] [--debug] [--output {tsv,table,json,jsonc}]
+          [--query JMESPATH]
+          {aks,backup,redis,network,cosmosdb,batch,iot,dla,group,webapp,acr,dls,
+           storage,mysql,vm,reservations,account,keyvault,sql,vmss,eventgrid,
+           managedapp,ad,advisor,postgres,container,policy,lab,batchai,
+           functionapp,identity,role,cognitiveservices,monitor,sf,resource,cdn,
+           tag,feedback,snapshot,disk,extension,acs,provider,cloud,lock,image,
+           find,billing,appservice,login,consumption,feature,logout,configure,
+           interactive}
+```
+
+If you encounter this error,  you can re-add the extension as such:
+
+**Windows:**
+
+```azurecli
+$ az extension add --source 'C:\Program Files\Microsoft\ML Server\Setup\azure_ml_admin_cli-0.0.1-py2.py3-none-any. whl' --yes
+````
+
+**Linux:**
+
+```azurecli
+az extension add --source ./microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes
+```
+
+### 2. Compute nodes fail on a Python-only install on Ubuntu 14.04
 
 This issue applies to both 9.3 and 9.2.1 installations. On a Ubuntu 14.04 installation of a Python-only Machine Learning Server configured for operationalization, the compute node eventually fails. For example, if you run [diagnostics](operationalize/configure-run-diagnostics.md), the script fails with "BackEndBusy Exception".
 
@@ -43,7 +77,7 @@ To work around this issue, comment out the stop service entry in the config file
 
 For more information on service restarts, see [Monitor, stop, and start web & compute nodes](operationalize/configure-admin-cli-stop-start.md).
 
-### 2. ImportError for Matplotlib.pyplot 
+### 3. ImportError for Matplotlib.pyplot 
 
 This is a [known Anaconda issue](https://github.com/ContinuumIO/anaconda-issues/issues/1068) not specific to Machine Learning Server, but Matplotlib.pyplot fails to load on some systems. Since using Matplotlib.pyplot with revoscalepy is a common scenario, we recommend the following workaround if you are blocked by an import error. The workaround is to assign a non-interactive backend to matplotlib prior to loading pyplot:
 
@@ -55,7 +89,7 @@ import matplotlib.pyplot as plt
 
 For more information, search for "Agg backend" in the [Matplotlib FAQ](https://matplotlib.org/faq/howto_faq.html).
 
-### 3. Model deserialization on older remote servers
+### 4. Model deserialization on older remote servers
 
 Applies to: [rxSerializeModel (RevoScaleR)](r-reference/revoscaler/rxserializemodel.md), referencing "Error in memDecompress(data, type = decompress)"
 
