@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "05/08/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -64,8 +64,6 @@ $ az extension add --source 'C:\Program Files\Microsoft\ML Server\Setup\azure_ml
 ```azurecli
 az extension add --source ./microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes
 ```
-
-
 
 ### 2. Compute nodes fail on a Python-only install on Ubuntu 14.04
 
