@@ -80,7 +80,7 @@ The rxSparkConnect() function maintains a persistent Spark session and results i
 
 In the Revo64 command line, define a Spark compute context using default values:
 
-	myHadoopCluster <- RxSparkConnect()
+	myHadoopCluster <- rxSparkConnect()
 
 The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*. These are the default locations for writing files to the native local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
 
@@ -767,7 +767,7 @@ As mentioned earlier, both *rxDForest* and *rxBTrees* are available on Hadoop--t
 	partial.forests <-rxDForest(formula = age ~ car.age +
 	    type + cost + number, data = input,
 	    minSplit = 5, maxDepth = 2,
-	    nTree = rxElemArg(rep(2,8), seed = 0,
+	    nTree = rxElemArg(rep(2,8)), seed = 0,
 	    maxNumBins = 200, computeOobError = -1,
 	    reportProgress = 2, verbose = 0,
 	    scheduleOnce = TRUE))
