@@ -68,8 +68,8 @@ Given a compute context, the following table shows which data sources are availa
 | [`RxHiveData`](../r-reference/revoscaler/rxsparkdata.md) |  X | X  |   |
 | [`RxParquetData`](../r-reference/revoscaler/rxsparkdata.md) |  X | X  |   |
 | [`RxOrcData`](../r-reference/revoscaler/rxsparkdata.md) |  X | X  |   |
-| [`RxOdbcData`](../r-reference/revoscaler/rxodbcdata.md) | X |   | X  |  X |
-| [`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md) |   |   |   | X |
+| [`RxOdbcData`](../r-reference/revoscaler/rxodbcdata.md) | X |   |  |
+| [`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md) | X  |   | X  | 
 | [`RxSasData`](../r-reference/revoscaler/rxsasdata.md) | X |   |   |   |
 | [`RxSpssData`](../r-reference/revoscaler/rxspssdata.md) | X |   |   |   |
 
@@ -98,7 +98,7 @@ Given a compute context, the following table shows which data sources are availa
 | [`RxParquetData`](../python-reference/revoscalepy/rxparquetdata.md) |  X | X |  | 
 | [`RxOrcData`](../python-reference/revoscalepy/rxorcdata.md) |  X | X |  | 
 | [`RxSparkDataFrame`](../python-reference/revoscalepy/rxsparkdataframe.md)  | X |  X  |    |
-| [`RxOdbcData`](../python-reference/revoscalepy/rxodbcdata.md) | X |  X | X  |
+| [`RxOdbcData`](../python-reference/revoscalepy/rxodbcdata.md) | X |  X |  |
 | [`RxSqlServerData`](../python-reference/revoscalepy/rxsqlserverdata.md) | X |   |  X |
 
 ## When to switch context
