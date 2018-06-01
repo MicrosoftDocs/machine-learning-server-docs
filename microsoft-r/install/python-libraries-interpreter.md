@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # How to install Python client libraries for remote access to a Machine Learning Server
 
-Machine Learning Server includes Python packages for modeling, training, and scoring data for statistical and predictive analytics. For classic client-server configurations, where multiple clients connect to and use a remote Machine Learning Server, installing the same Python client libraries on a local workstation enables you to write and run script locally and then push execution to the remote server where data resides. This is referred to as a [remote compute context](../r/concept-what-is-compute-context.md), operant when you call Python functions from libraries that exist on both client and server environments.
+Machine Learning Server includes open-source and Microsoft-specific Python packages for modeling, training, and scoring data for statistical and predictive analytics. For classic client-server configurations, where multiple clients connect to and use a remote Machine Learning Server, installing the same Python client libraries on a local workstation enables you to write and run script locally and then push execution to the remote server where data resides. This is referred to as a [remote compute context](../r/concept-what-is-compute-context.md), operant when you call Python functions from libraries that exist on both client and server environments.
 
 A remote server can be either of the following server products:
 
@@ -34,7 +34,7 @@ A remote server can be either of the following server products:
 
 Client workstations can be Windows or Linux. 
 
-[Python packages](../python-reference/introducing-python-package-reference.md) common to both client and server systems include the following:
+[Microsoft Python packages](../python-reference/introducing-python-package-reference.md) common to both client and server systems include the following:
 
 + [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md)
 + [microsoftml](../python-reference/microsoftml/microsoftml-package.md)
@@ -62,9 +62,9 @@ While not required, it's a good idea to cross-check package versions so that you
    cd {{download-directory}}
    .\Install-PyForMLS.ps1 -InstallFolder "C:\path-to-python-for-mls")
    ```
-Installation takes some time to complete. You can monitor progress in the PowerShell window. When setup is finished, you have a complete set of packages. For example, if you specified mspythonlibs as the folder name, you would find the packages at `C:\mspythonlibs\Lib\site-packages`.
+Installation takes some time to complete. You can monitor progress in the PowerShell window. When setup is finished, you have a complete set of packages. For example, if you specified `C:\mspythonlibs` as the folder name, you would find the packages at `C:\mspythonlibs\Lib\site-packages`.
 
-The installation script does not modify the PATH environment on your computer so modules are not automatically available to your tools. For guidance on how to link the Python interpreter and libraries in tools, see [Link Python tools and IDEs](../python/quickstart-python-tools.md), replacing the MLS server paths with the path you defined on your workstation For example, for a Python project in Visual Studio, your custom environment would specify `C:\mypythonlibs`, `C:\mypythonlibs\python.exe` and `C:\mypythonlibs\pythonw.exe` for **Prefix path**, **Interpreter path**, and **Windowed interpreter**, respectively.
+The installation script does not modify the PATH environment variable on your computer so the new python interpreter and modules you just installed are not automatically available to your tools. For help on linking the Python interpreter and libraries to tools, see [Link Python tools and IDEs](../python/quickstart-python-tools.md), replacing the MLS server paths with the path you defined on your workstation For example, for a Python project in Visual Studio, your custom environment would specify `C:\mypythonlibs`, `C:\mypythonlibs\python.exe` and `C:\mypythonlibs\pythonw.exe` for **Prefix path**, **Interpreter path**, and **Windowed interpreter**, respectively.
 
 ## Offline install
 
@@ -132,7 +132,9 @@ As a verfication step, call functions from the revoscalepy package and from [sci
 If you get a "module not found" error for any of the instructions below, verify you are loading the python interpreter from the right location. If you using Visual Studio, be sure you are using the custom environment that specifies the prefix and interpreter paths.
 
 > [!NOTE>
-> On Windows, depepending on how you run the script, you might see this message "Express Edition will continue to be enforced". Express edition is one of the free SQL Server editions. The message is telling you that client libraries are licensed under the Express edition. Limits on this edition are the same as Standard: in-memory data sets and 2-core processing.
+> On Windows, depepending on how you run the script, you might see this message: "Express Edition will continue to be enforced". Express edition is one of the free SQL Server editions. This message is telling you that client libraries are licensed under the Express edition. Limits on this edition are the same as Standard: in-memory data sets and 2-core processing. 
+>
+> Remote servers typically run higher editions not subjected to the same memory and processing limits. When you push the compute context to a remote server, you work under the full capabilities of that system.
 
 1. Create some data to work with. This example loads the iris data set using scikit. 
 
