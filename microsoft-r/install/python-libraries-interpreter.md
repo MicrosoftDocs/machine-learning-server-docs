@@ -64,9 +64,7 @@ While not required, it's a good idea to cross-check package versions so that you
    ```
 Installation takes some time to complete. You can monitor progress in the PowerShell window. When setup is finished, you have a complete set of packages. For example, if you specified mspythonlibs as the folder name, you would find the packages at `C:\mspythonlibs\Lib\site-packages`.
 
-The installation does not modify the PATH environment on your computer so modules are not automatically available to your tools. 
-
-For guidance on how to link the Python interpreter and libraries in tools, see [Link Python tools and IDEs](../python/quickstart-python-tools.md), replacing the MLS server paths with the path you defined on your workstation For example, for a Python project in Visual Studio, your custom environment would specify `C:\mypythonlibs`, `C:\mypythonlibs\python.exe` and `C:\mypythonlibs\pythonw.exe` for **Prefix path**, **Interpreter path**, and **Windowed interpreter**, respectively.
+The installation script does not modify the PATH environment on your computer so modules are not automatically available to your tools. For guidance on how to link the Python interpreter and libraries in tools, see [Link Python tools and IDEs](../python/quickstart-python-tools.md), replacing the MLS server paths with the path you defined on your workstation For example, for a Python project in Visual Studio, your custom environment would specify `C:\mypythonlibs`, `C:\mypythonlibs\python.exe` and `C:\mypythonlibs\pythonw.exe` for **Prefix path**, **Interpreter path**, and **Windowed interpreter**, respectively.
 
 ## Offline install
 
@@ -129,11 +127,12 @@ zypper install microsoft-mlserver-packages-py-9.3.0
 
 ## Test local package installation
 
-As a verfication step, call functions from the revoscalepy package and from scikit (included in Ananconda).
+As a verfication step, call functions from the revoscalepy package and from [scikit](http://scikit-learn.org/stable/), included in Ananconda.
 
-If you get a "module not found" error, verify you are loading the python interpreter from the right location. If you using Visual Studio, be sure to use the custom environment that specifies the prefix and interpreter paths.
+If you get a "module not found" error for any of the instructions below, verify you are loading the python interpreter from the right location. If you using Visual Studio, be sure you are using the custom environment that specifies the prefix and interpreter paths.
 
-On Windows, depepending on how you run the script, you might see this message "Express Edition will continue to be enforced". Express edition is one of the free SQL Server editions. The message is telling you that client libraries are licensed under the Express edition. Limits on this edition are the same as Standard: in-memory data sets and 2-core processing.
+> [!NOTE>
+> On Windows, depepending on how you run the script, you might see this message "Express Edition will continue to be enforced". Express edition is one of the free SQL Server editions. The message is telling you that client libraries are licensed under the Express edition. Limits on this edition are the same as Standard: in-memory data sets and 2-core processing.
 
 1. Create some data to work with. This example loads the iris data set using scikit. 
 
@@ -147,7 +146,7 @@ On Windows, depepending on how you run the script, you might see this message "E
   ```Python
     print(df)
    ```
-3. Load revosalepy and calculate a statistical summary for data in one of the columns. Print the output
+3. Load revosalepy and calculate a statistical summary for data in one of the columns. Print the output to view mean, standard deviation, and other measures.
 
   ```Python
     from revoscalepy import rx_summary
@@ -157,7 +156,7 @@ On Windows, depepending on how you run the script, you might see this message "E
 
 ## Next steps
 
-Now that you have installed local client libraries, try the following walkthroughs to learn how to use the libraries locally and remotely when connected to resident data stores.
+Now that you have installed local client libraries and verified function calls, try the following walkthroughs to learn how to use the libraries locally and remotely when connected to resident data stores.
 
 + [Quickstart: Create a linear regression model in a local compute context](../python/quickstart-revoscalepy-linear-regression-model.md)
 + [How to use revoscalepy in a Spark compute context](../python/how-to-revoscalepy.md)
