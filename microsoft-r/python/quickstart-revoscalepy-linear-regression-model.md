@@ -29,9 +29,9 @@ ms.technology: ""
 
 This Python quickstart demonstrates a linear regression model on a local Machine Learning Server, using functions from the [revoscalepy library](../python-reference/revoscalepy/revoscalepy-package.md) and built-in sample data. 
 
-Steps in this quicktart are executed on a Python command line, using Machine Learning Server in the default local compute context. In this context, all operations run locally: data is fetched from the data source, and the model-fitting runs in your current Python environment.
+Steps are executed on a Python command line using Machine Learning Server in the default local compute context. In this context, all operations run locally: data is fetched from the data source, and the model-fitting runs in your current Python environment.
 
-The revoscalepy library for Python contains objects, transformations, and algorithms similar to those provided for the [RevoScaleR package](../r-reference/revoscaler/revoscaler.md) for the R language. With revoscalepy, you can write a Python script that creates a compute context, moves data between compute contexts, transforms data, and trains predictive models using popular algorithms such as logistic and linear regression, decision trees, and more.
+The revoscalepy library for Python contains objects, transformations, and algorithms similar to what's included in the [RevoScaleR package](../r-reference/revoscaler/revoscaler.md) for the R language. With revoscalepy, you can write a Python script that creates a compute context, moves data between compute contexts, transforms data, and trains predictive models using popular algorithms such as logistic and linear regression, decision trees, and more.
 
 > [!Note]
 > For the SQL Server version of this tutorial, see [Use Python with revoscalepy to create a model (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model).
@@ -116,7 +116,7 @@ Number of missing observations: 0.0
 
 The ability to switch compute context to a different machine or platform is a powerful capability. To see how this works, continue with the SQL Server version of this tutorial: [Use Python with revoscalepy to create a model (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model).
 
-You can also review [linear modeling for RevoScaleR](../r/how-to-revoscaler-linear-model.md). For linear models, the Python iplementation in revoscalepy is very similar to the R implementation in RevoScaleR.
+You can also review [linear modeling for RevoScaleR](../r/how-to-revoscaler-linear-model.md). For linear models, the Python implementation in revoscalepy is similar to the R implementation in RevoScaleR.
 
 
 ## See Also
