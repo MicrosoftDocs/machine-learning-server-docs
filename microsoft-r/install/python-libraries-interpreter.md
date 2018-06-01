@@ -131,10 +131,8 @@ As a verfication step, call functions from the revoscalepy package and from [sci
 
 If you get a "module not found" error for any of the instructions below, verify you are loading the python interpreter from the right location. If you using Visual Studio, be sure you are using the custom environment that specifies the prefix and interpreter paths.
 
-> [!NOTE>
-> On Windows, depepending on how you run the script, you might see this message: "Express Edition will continue to be enforced". Express edition is one of the free SQL Server editions. This message is telling you that client libraries are licensed under the Express edition. Limits on this edition are the same as Standard: in-memory data sets and 2-core processing. 
->
-> Remote servers typically run higher editions not subjected to the same memory and processing limits. When you push the compute context to a remote server, you work under the full capabilities of that system.
+> [!NOTE]
+> On Windows, depending on how you run the script, you might see this message: "Express Edition will continue to be enforced". Express edition is one of the free SQL Server editions. This message is telling you that client libraries are licensed under the Express edition. Limits on this edition are the same as Standard: in-memory data sets and 2-core processing. Remote servers typically run higher editions not subjected to the same memory and processing limits. When you push the compute context to a remote server, you work under the full capabilities of that system.
 
 1. Create some data to work with. This example loads the iris data set using scikit. 
 
