@@ -66,7 +66,7 @@ Installation takes some time to complete. You can monitor progress in the PowerS
 
 The installation does not modify the PATH environment on your computer so modules are not automatically available to your tools. 
 
-For guidance on how to link the Python interpreter and libraries in tools, see [Link Python tools and IDEs](../pythonquickstart-python-tools.md), replacing the MLS server paths with the path you defined on your workstation For example, for a Python project in Visual Studio, your custom environment would specify `C:\mypythonlibs`, `C:\mypythonlibs\python.exe` and `C:\mypythonlibs\pythonw.exe` for **Prefix path**, **Interpreter path**, and **Windowed interpreter**, respectively.
+For guidance on how to link the Python interpreter and libraries in tools, see [Link Python tools and IDEs](../python/quickstart-python-tools.md), replacing the MLS server paths with the path you defined on your workstation For example, for a Python project in Visual Studio, your custom environment would specify `C:\mypythonlibs`, `C:\mypythonlibs\python.exe` and `C:\mypythonlibs\pythonw.exe` for **Prefix path**, **Interpreter path**, and **Windowed interpreter**, respectively.
 
 ## Offline install
 
