@@ -43,9 +43,9 @@ Client workstations can be Windows or Linux.
  
 This article describes how to install a Python interpreter (Anaconda) and Microsoft's Python packages locally on a client machine. Once installed, you can use all of the Python modules in Anaconda, Microsoft's packages, and any third-party packages that are Python 3.5 compliant. For remote compute context, you can only call the Python functions from packages in the above list.
 
-## Check package versions on the server
+## Check package versions
 
-While not required, it's a good idea to cross-check package versions so that you can match versions on the server with those on the client.
+While not required, it's a good idea to cross-check package versions so that you can match versions on the server with those on the client. On a server with restricted access, you might need an administrator to get this information for you.
 
 + [Package information on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/determine-which-packages-are-installed-on-sql-server)
 + [Package information on Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md#package-list)
