@@ -46,16 +46,9 @@ The revoscalepy library for Python contains objects, transformations, and algori
 Paste in the following statements to import libraries and functions.
 
 ```python
-import revoscalepy
 import os
-import pandas
-
-from revoscalepy import RxComputeContext, RxXdfData
-from revoscalepy import rx_lin_mod, rx_predict, rx_summary
-from revoscalepy import RxOptions, rx_import
-
-from pandas import Categorical
-
+from revoscalepy import RxOptions, RxXdfData
+from revoscalepy import rx_lin_mod, rx_predict, rx_summary, rx_import
 ```
 
 ## Create a data source object
@@ -75,7 +68,8 @@ data_source = RxXdfData(os.path.join(sample_data_path, "AirlineDemoSmall.xdf"))
 In a linear regression, you model the relationship between dependent and independent variables. In this step, the duration of a delay is captured for each day of the week. 
 
 ```python
-linmod_local = revoscalepy.rx_lin_mod("ArrDelay ~ DayOfWeek", data = data_source)
+### Create a linear model
+linmod_local = rx_lin_mod("ArrDelay ~ DayOfWeek", data = data_source)
 ```
 
 ## Predict delays
@@ -83,19 +77,39 @@ linmod_local = revoscalepy.rx_lin_mod("ArrDelay ~ DayOfWeek", data = data_source
 Using a prediction function, you can predict the likelihood of a delay for each day.
 
 ```python
-predict = revoscalepy.rx_predict(linmod_local, data = revoscalepy.rx_import(input_data = data_source))
+### Predict airport delays.
+
+predict = rx_predict(linmod_local, data = rx_import(input_data = data_source))
+
+### Print the output. For large data, you get the first and last instances.
+### An ArrDelay_Pred column is created based on input with _Pred appended.
+print(predict)
 ```
 
 ## Summarize data
 
-In this last step, extract summary statistics from the sample dataset and then print the output to the console. The rx_summary function returns mean, standard deviation, and min-max values.
+In this last step, extract summary statistics from the computed prediction to understand the range and shape of prediction. Print the output to the console. The rx_summary function returns mean, standard deviation, and min-max values.
 
 ```python
 ### Create an object to store summary data
-summary = revoscalepy.rx_summary("ArrDelay ~ DayOfWeek", data = data_source)
+summary = rx_summary("ArrDelay_Pred", predict)
 
 ### Send the output to the console
 print(summary)
+```
+**Results**
+
+```text
+Summary Statistics Results for: ArrDelay_Pred
+
+Number of valid observations: 600000.0
+Number of missing observations: 0.0
+
+            Name       Mean    StdDev       Min        Max  ValidObs  \
+0  ArrDelay_Pred  11.323407  1.760001  8.658007  14.804335  600000.0
+
+   MissingObs
+0         0.0
 ```
 
 ## Next steps
