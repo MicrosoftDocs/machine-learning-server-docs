@@ -80,7 +80,7 @@ The rxSparkConnect() function maintains a persistent Spark session and results i
 
 In the Revo64 command line, define a Spark compute context using default values:
 
-	myHadoopCluster <- rxSparkConnect()
+	myHadoopCluster <- ()
 
 The default settings include a specification of */var/RevoShare/$USER* as the *shareDir* and */user/RevoShare/$USER* as the *hdfsShareDir*. These are the default locations for writing files to the native local file system and HDFS file system, respectively. These directories must be writable for your cluster jobs to succeed. You must either create these directories or specify suitable writable directories for these parameters. If you are working on a node of the cluster, the default specifications for the shared directories are:
 
@@ -97,7 +97,7 @@ The default settings include a specification of */var/RevoShare/$USER* as the *s
 
 ### Defining a Compute Context on a High-Availability Cluster
 
-On a Hadoop cluster configured for high-availabilty, you must specify the node providing the name service using the *nameNode* argument to *RxSpark*, and also specify the Hadoop port with the *port* argument:
+On a Hadoop cluster configured for high-availability, you must specify the node providing the name service using the *nameNode* argument to *RxSpark*, and also specify the Hadoop port with the *port* argument:
 
 ```r
 	myHadoopCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020)
