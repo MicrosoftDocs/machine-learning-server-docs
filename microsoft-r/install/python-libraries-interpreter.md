@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "Install Python support in Machine Learning Server "
-description: "Installing python interpreter and packages locally to interact with Machine Learning Server"
+title: "Install Python client libraries for remote access to Machine Learning Server "
+description: "Installing python interpreter and packages locally to interact with a remote Machine Learning Server"
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "06/01/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -23,48 +23,58 @@ ms.prod: "mlserver"
 
 ---
 
-# How to install custom Python packages and interpreter locally on Windows
+# How to install Python client libraries for remote access to a Machine Learning Server
 
-Machine Learning Server provides custom Python packages for training, transformations, text and image analysis, modeling, deploying, and more. The [packages installed](../python-reference/introducing-python-package-reference.md) include:
+Machine Learning Server includes Python packages for modeling, training, and scoring data for statistical and predictive analytics. For classic client-server configurations, where multiple clients connect to and use a remote Machine Learning Server, installing the same Python client libraries on a local workstation enables you to write and run script locally and then push execution to the remote server where data resides. This is referred to as a [remote compute context](../r/concept-what-is-compute-context.md), operant when you call Python functions from libraries that exist on both client and server environments.
+
+A remote server can be either of the following server products:
+
++ [SQL Server 2017 Machine Learning Services (In-Database)](https://docs.microsoft.com/sql/advanced-analytics/install/sql-machine-learning-services-windows-install)
++ [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md)
+
+Client workstations can be Windows or Linux. 
+
+[Python packages](../python-reference/introducing-python-package-reference.md) common to both client and server systems include the following:
+
 + [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md)
 + [microsoftml](../python-reference/microsoftml/microsoftml-package.md)
 + [azureml-model-management-sdk](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 + [pre-trained models](microsoftml-install-pretrained-models.md)
-
-You can install a Python interpreter along with these custom packages locally on your Windows machine, and:
-
-+ Benefit from the best-of-breed machine learning algorithms without any server connection. These algorithms have been battle-tested by Microsoft.
  
-+ Push large dataset computations to Machine Learning Server using the compute context functions in the revoscalepy package. By pushing computations onto the server, you can benefit from the disk scalability and performance of Machine Learning Server on any supported platforms. 
- 
-This article describes how to install a Python interpreter (Anaconda) and custom packages locally on a client Windows computer.
+This article describes how to install a Python interpreter (Anaconda) and Microsoft's Python packages locally on a client machine. Once installed, you can use all of the Python modules in Anaconda, Microsoft's packages, and any third-party packages that are Python 3.5 compliant. For remote compute context, you can only call the Python functions from packages in the above list.
 
-## Install on Windows
+## Check package versions on the server
 
-1. Log in to your local Windows machine.
+While not required, it's a good idea to cross-check package versions so that you can match versions on the server with those on the client.
 
-1. Download the installation shell script from https://aka.ms/mls93-py (or use https://aka.ms/mls-py for the 9.2. release). The script installs Anaconda 4.2.0, which includes Python 3.5.2, along with all packages listed previously.
++ [Package information on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/determine-which-packages-are-installed-on-sql-server)
++ [Package information on Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md#package-list)
 
-1. Launch a new PowerShell window with elevated administrator permissions ('as administrator').
+## Install Python libraries on Windows
 
-1. Go to the folder in which you downloaded the installer and run the script:
+1. Download the installation shell script from [https://aka.ms/mls93-py](https://aka.ms/mls93-py) (or use [https://aka.ms/mls-py](https://aka.ms/mls-py) for the 9.2. release). The script installs Anaconda 4.2.0, which includes Python 3.5.2, along with all packages listed previously.
+
+1. Open PowerShell window with elevated administrator permissions (right-click **Run as administrator**).
+
+1. Go to the folder in which you downloaded the installer and run the script. Add the `-InstallFolder` command-line argument to specify a folder location for the libraries. For example: 
+
    ```
    cd {{download-directory}}
-   .\Install-PyForMLS.ps1
+   .\Install-PyForMLS.ps1 -InstallFolder "C:\path-to-python-for-mls")
    ```
+Installation takes some time to complete. You can monitor progress in the PowerShell window. When setup is finished, you have a complete set of packages. For example, if you specified mspythonlibs as the folder name, you would find the packages at `C:\mspythonlibs\Lib\site-packages`.
 
-   Note: , use the -InstallFolder command-line argument followed by the new path. For example: 
-   ```
-   .\Install-PyForMLS.ps1 -InstallFolder C:\path-to-python-for-mls”)
-   ```
+The installation does not modify the PATH environment on your computer so modules are not automatically available to your tools. 
 
-If you get an error, try this alternate syntax:
+For guidance on how to link the Python interpreter and libraries in tools, see [Link Python tools and IDEs](../pythonquickstart-python-tools.md), replacing the MLS server paths with the path you defined on your workstation For example, for a Python project in Visual Studio, your custom environment would specify `C:\mypythonlibs`, `C:\mypythonlibs\python.exe` and `C:\mypythonlibs\pythonw.exe` for **Prefix path**, **Interpreter path**, and **Windowed interpreter**, respectively.
 
-    ```
-    powershell -ExecutionPolicy Bypass -File C:\path-to-python-for-mls\Install-PyForMLS.ps1
-    ```
+## Offline install
 
-## Install on Linux
+Download .cab files used for [offline installation](machine-learning-server-windows-offline.md#file-list-93) and place them in your %TEMP% directory. You can type %TEMP% in a Run command to get the exact location, but it is usually a user directory such as `C:\Users\<your-user-name>\AppData\Local\Temp`. 
+
+After copying the files, run the PowerShell script using the same syntax as an online install. The script knows to look in the temp directory for the files it needs.
+
+## Install Python libraries on Linux
 
 On each supported OS, the package manager downloads packages from the repository, determines dependencies, retrieves additional packages, and installs the software. After installation completes, mlserver-python executable is at '/usr/bin'.
  
@@ -117,74 +127,40 @@ zypper install microsoft-mlserver-packages-py-9.3.0
 ``` 
 
 
-## Example to test the install
+## Test local package installation
 
-Test your install and packages using this example code. 
+As a verfication step, call functions from the revoscalepy package and from scikit (included in Ananconda).
 
-In this example, you can use some functions from the [microsoftml python package](../python-reference/microsoftml/microsoftml-package.md) for logistic regression.
+If you get a "module not found" error, verify you are loading the python interpreter from the right location. If you using Visual Studio, be sure to use the custom environment that specifies the prefix and interpreter paths.
 
-1. Let's build some fake data. We just need to make our data to start out. Let's create a single label and 2000 random features.
+On Windows, depepending on how you run the script, you might see this message "Express Edition will continue to be enforced". Express edition is one of the free SQL Server editions. The message is telling you that client libraries are licensed under the Express edition. Limits on this edition are the same as Standard: in-memory data sets and 2-core processing.
 
-   ```Python
-   from numpy.random import randn
-   matrix = randn(2000, 2001)
-​    
-   import pandas
-   data = pandas.DataFrame(data=matrix, columns=["Label"] + ["f%s" % i for i in range(1, matrix.shape[1])])
-   data["Label"] = (data["Label"] > 0.5).apply(lambda x: 1.0 if x else 0.0)
-​   
-   print("problem dimension:", data.shape)
-   print(data[["Label", "f1", "f2", data.columns[-1]]].head())
-   ```
-   
-1. Train a logistic regression using rx_logistic_regression from the microsoftml Python package.
+1. Create some data to work with. This example loads the iris data set using scikit. 
 
    ```Python
-   formula = "Label ~ {0}".format(" + ".join(data.columns[1:]))
-   print(formula[:50] + " + ...")
-​   
-   from microsoftml import rx_logistic_regression
-​   
-   try:
-       logregml = rx_logistic_regression(formula, data=data)
-   except Exception as e:
-       # The error is expected because patsy cannot handle
-       # so many features.
-       print(e)
+    from sklearn import datasets
+    iris = datasets.load_iris()
+    df = pd.DataFrame(iris.data, columns=iris.feature_names)
+   ```
+2. Print out the dataset. You should see a 4-column table with measurements for sepal length, sepal width, petal length, and petal width.
+
+  ```Python
+    print(df)
+   ```
+3. Load revosalepy and calculate a statistical summary for data in one of the columns. Print the output
+
+  ```Python
+    from revoscalepy import rx_summary
+    summary = revoscalepy.rx_summary("petal length (cm)", df)
+    print(summary)
    ```
 
-1. Manually define the formula. Let's skip patsy's parser to manually define the formula with object ModelDesc <http://patsy.readthedocs.io/en/latest/API-reference.html?highlight=lookupfactor#patsy.ModelDesc>_.
+## Next steps
 
-   ```Python
-   from patsy.desc import ModelDesc, Term
-   from patsy.user_util import LookupFactor
-​   
-   patsy_features = [Term([LookupFactor(n)]) for n in data.columns[1:]][:10]
-   model_formula = ModelDesc([Term([LookupFactor("Label")])], [Term([])] + patsy_features)
-​   
-   print(model_formula.describe() + " + ...")
-   logregml = rx_logistic_regression(model_formula, data=data)
-   ```
+Now that you have installed local client libraries, try the following walkthroughs to learn how to use the libraries locally and remotely when connected to resident data stores.
 
-1. Examine the results. They should resemble the following output:
++ [Quickstart: Create a linear regression model in a local compute context](../python/quickstart-revoscalepy-linear-regression-model.md)
++ [How to use revoscalepy in a Spark compute context](../python/how-to-revoscalepy.md)
++ [How to use revoscalepy in a SQL Server compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model)
 
-    ```Python
-    Label ~ f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + ...
-    Automatically adding a MinMax normalization transform, use 'norm=Warn' or 'norm=No' to turn this behavior off.
-    Beginning processing data.
-    Rows Read: 2000, Read Time: 0.046, Transform Time: 0
-    Beginning processing data.
-    Beginning processing data.
-    Rows Read: 2000, Read Time: 0.051, Transform Time: 0
-    Beginning processing data.
-    Beginning processing data.
-    Rows Read: 2000, Read Time: 0.058, Transform Time: 0
-    Beginning processing data.
-    Warning: The number of threads specified in trainer arguments is larger than the concurrency factor setting of the environment. Using 2 training threads instead.
-    LBFGS multi-threading will attempt to load dataset into memory. In case of out-of-memory issues, turn off multi-threading by setting trainThreads to 1.
-    Beginning optimization
-    num vars: 11
-    improvement criterion: Mean Improvement
-    L1 regularization selected 11 of 11 weights.
-    Not training a calibrator because it is not needed.
-    ``` 
+Remote access to a SQL Server is enabled by an administrator who has configured ports and protocols, enabled remote connections, and assigned user logins. Check with your administrator to get a valid connection string when using a remote compute context to SQL Server.

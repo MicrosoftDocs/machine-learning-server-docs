@@ -34,7 +34,7 @@ Before you start, review the following article for requirements and general info
 
 On an internet-connected computer, download all of the following files.
 
-<a name="file-list"></a>
+<a name="file-list-93"></a>
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
@@ -49,7 +49,7 @@ On an internet-connected computer, download all of the following files.
 
 If you require the previous version, use these links instead.
 
-<a name="file-list"></a>
+<a name="file-list-921"></a>
 
 | Component | Download | Used for | 
 |-----------|----------|----------|

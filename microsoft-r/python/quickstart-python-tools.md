@@ -63,7 +63,7 @@ However, when using an earlier release or to confirm settings, follow these step
 
 1. In **Tools** > **Python** > **Python environments**, click **+ Custom** to create a new environment.
 
-2. Give the environment name, and then fill in the following fields.
+2. In **Description**, give the environment name, and then fill in the following fields.
 
 3. In **Prefix path**, enter `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`. 
  

@@ -21,7 +21,7 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Quicstart: An example of binary classification with the microsoftml Python package
+# Quickstart: An example of binary classification with the microsoftml Python package
 
 **Applies to: Machine Learning Server 9.x**
 
