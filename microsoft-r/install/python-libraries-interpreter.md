@@ -136,23 +136,44 @@ If you get a "module not found" error for any of the instructions below, verify 
 
 1. Create some data to work with. This example loads the iris data set using scikit. 
 
-   ```Python
+    ```Python
     from sklearn import datasets
+    import pandas as pd
     iris = datasets.load_iris()
     df = pd.DataFrame(iris.data, columns=iris.feature_names)
-   ```
+    ```
 2. Print out the dataset. You should see a 4-column table with measurements for sepal length, sepal width, petal length, and petal width.
 
-  ```Python
+    ```Python
     print(df)
-   ```
+    ```
 3. Load revosalepy and calculate a statistical summary for data in one of the columns. Print the output to view mean, standard deviation, and other measures.
 
-  ```Python
+    ```Python
     from revoscalepy import rx_summary
-    summary = revoscalepy.rx_summary("petal length (cm)", df)
+    summary = rx_summary("petal length (cm)", df)
     print(summary)
-   ```
+    ```
+
+**Results**
+
+```text
+    Call:
+    rx_summary(formula = 'petal length (cm)', data = <class 'pandas.core.frame.DataFrame'>, by_group_out_file = None,
+        summary_stats = ['Mean', 'StdDev', 'Min', 'Max', 'ValidObs', 'MissingObs'], by_term = True, pweights = None,
+        fweights = None, row_selection = None, transforms = None, transform_objects = None, transform_function = None,
+        transform_variables = None, transform_packages = None, overwrite = False, use_sparse_cube = False,
+        remove_zero_counts = False, blocks_per_read = 1, rows_per_block = 100000, report_progress = None, verbose = 0,
+        compute_context = <revoscalepy.computecontext.RxLocalSeq.RxLocalSeq object at 0x000002B7EBEBCDA0>)
+    
+    Summary Statistics Results for: petal length (cm)
+    
+    Number of valid observations: 150.0
+    Number of missing observations: 0.0
+    
+                    Name      Mean   StdDev  Min  Max  ValidObs  MissingObs
+    0  petal length (cm)  3.758667  1.76442  1.0  6.9     150.0         0.0
+ ```
 
 ## Next steps
 
