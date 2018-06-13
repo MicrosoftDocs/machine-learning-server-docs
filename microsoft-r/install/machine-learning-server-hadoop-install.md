@@ -110,7 +110,7 @@ Alternatively, you can install a subset of packages. You might do this if you do
    + [https://packages.microsoft.com/sles/11/prod/](https://packages.microsoft.com/sles/11/prod/)
 
 3. Make a directory to contain your packages: `hadoop fs -mkdir /tmp/mlsdatanode`
- 
+
 4. Copy the packages: `hadoop fs -copyFromLocal /tmp/mlserver /tmp/mlsdatanode`
 
 5. Switch to the directory: `cd /tmp/mlsdatanode`
@@ -163,7 +163,6 @@ Microsoft .NET Core 2.0, used for operationalization, must be added to Ubuntu:
  dotnet-host-2.0.0
  dotnet-hostfxr-2.0.0
  dotnet-runtime-2.0.0 
-
 ```
 
 Additional open-source packages could be required. The potential list of packages varies for each computer. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.

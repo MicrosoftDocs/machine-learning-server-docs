@@ -48,7 +48,7 @@ These properties identify the file:
 -  **Version.** The version ID, latest modified date for that version, the user that initiated that version, and any comment specific to that version.
 
 <br>
-**Access Rights properties** 
+<strong>Access Rights properties</strong> 
 
 These properties allow a file owner to determine how a file is deployed by controlling who can access or interact with the file. Script files are deployed for execution. All other files, such as models and data files, are deployed for usage and download.
 
@@ -61,7 +61,7 @@ These properties allow a file owner to determine how a file is deployed by contr
 -  **Public** allows both authenticated users and anonymous users to view the file on the API. And, in the case of scripts, execute that script on the API. We recommend that you use careful consideration before exposing an R script to truly anonymous users. Note that you can only view the contents of R scripts in the Repository Manager interface.
 
 <br>
-**Ownership properties** 
+<strong>Ownership properties</strong> 
 
 These properties support collaborative development. The **Owners** field lists the owners that can collaborate on that particular version of a file. You can [add or remove owners](#adding-and-removing-owners) to the Latest version of your file. Adding an owner does more than just allow a user to view a file or execute a script; it also allows that new owner to edit the file's content as well as add or remove owners from the file. If your objective is to permit other users and/or applications to execute a script, we recommend setting the appropriate access rights as a means of controlling that access. In general, we do not recommend having multiple owners when a file is in production.
 
@@ -317,7 +317,7 @@ When a file has two or more versions, you can compare the differences between on
 If you want to restore a historical version to Latest version of a file, you can [revert that version](deployr-repository-manager-files.md#comparing-version-differences). Reverting will copy the contents of the selected past version and make that copy the Latest version of the file. What was previously the Latest version is now preserved in the file's version history with a version ID.
 
 <br/>
-_Figure: Workflow for Restoring Files_
+<em>Figure: Workflow for Restoring Files</em>
 
 ![](media/deployr-repository-manager-files/workflowrestorefile.png)
 
@@ -332,7 +332,7 @@ When you attempt to delete a file you own, DeployR checks to see if there are ot
 After you delete a file, you may see that file under **Other Files** in the Files tab. If so, this is due to the fact that the file had multiple owners and the file's [access rights](deployr-repository-manager-files.md#about-file-properties) were set to **Restricted**, **Shared**, or **Public**. In this case, you might be able to see the file in your **Files** tab, but you will not be able to edit that file since you are no longer its owner.
 
 <br/>
-_Figure: Workflow for Deleting Files_
+<em>Figure: Workflow for Deleting Files</em>
 
 ![](media/deployr-repository-manager-files/workflowdeletefile.png)  
 

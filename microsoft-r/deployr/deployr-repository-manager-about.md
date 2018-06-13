@@ -101,7 +101,7 @@ _Table: Owner Policies_
 |- See the file listed under **My Files**<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|- See the file listed under My Files<br/>- See the file properties<br/>- Download the file<br/>- Load the file into the R session<br/>- If a script, view and edit the source code<br/>- If a script, test and debug the script|
 
 <br/>
-_Table: Non-Owner Policies_
+<em>Table: Non-Owner Policies</em>
 
 In this table, we assume that a non-owner has access rights to the file.
 

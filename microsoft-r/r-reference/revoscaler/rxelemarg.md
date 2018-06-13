@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxElemArg function (revoAnalytics) | Microsoft Docs" 
 description: " Allows different argument values to be passed to different (named and unnamed) nodes or cores through the elipsis argument for rxExec. A vector or list of the argument values is used. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,38 +21,38 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxElemArg:  Helper function for rxExec arguments  
- ##Description
- 
+
+
+ # rxElemArg:  Helper function for rxExec arguments  
+ ## Description
+
 Allows different argument values to be passed to different (named and unnamed) nodes or cores through
 the elipsis argument for rxExec. A vector or list of the argument values is used.
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxElemArg(x)
- 
-```
- 
- 
- ##Arguments
 
-   
-  
+```
+
+
+ ## Arguments
+
+
+
  ### `x`
  The list or vector to be applied across the set of computations. 
-  
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 This function is designed for use only within a call to [rxExec](rxExec.md).  [rxExec](rxExec.md)
 allows for the processing of a user function on multiple nodes or cores.  Arguments
 for the user function can be passed directly through the call to [rxExec](rxExec.md).  By default,
@@ -67,27 +67,27 @@ or list will determine the `timesToRun`.
 
 If `elemArgs` is used in addition to the `rxElemArg` function, the length of both
 lists/vectors must be the same.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 x is returned with attributes modified for use by rxExec.
- 
- ##Author(s)
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxExec](rxExec.md)
-   
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # Setup a Spark compute context
 myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020, wait = TRUE)
 rxOptions( computeContext = myCluster )
@@ -95,9 +95,9 @@ rxOptions( computeContext = myCluster )
 # Create a function to be run on multiple cores
 myFunc <- function( sampleSize = 100, seed = 5)
 {
-	set.seed(seed)
-	mean( rnorm( sampleSize ))
-}	
+    set.seed(seed)
+    mean( rnorm( sampleSize ))
+}   
 
 # Use the same sampleSize for every computation, but a separate seed.
 # The function will run 20 times, because that is the length of the
@@ -111,8 +111,6 @@ mySampleSizes <- 2^c(1:20)
 res <- rxExec(myFunc, rxElemArg( mySampleSizes ), seed = rxElemArg( mySeeds ),
    elemType = "cores")
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

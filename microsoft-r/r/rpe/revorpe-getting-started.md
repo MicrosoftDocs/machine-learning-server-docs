@@ -301,7 +301,7 @@ When stopped at a breakpoint, you may choose to step through your code.  Three 
 
 - **Step Into** ![](./media/revorpe-getting-started/image8.png) **(F11):** Stops at the next breakable point.  If your point of execution (the yellow arrow) is on a call to a function defined in the current folder, then Step Into will stop in front of the first executable line inside that function.  Note that if you are not stopped before a function defined within the current project, 'Step Into' will function identically to 'Step Over'
 - **Step Over** ![](media/revorpe-getting-started/image9.png) **(F10)** Stops at the next breakable point within the currently executing function (or top-level script).  If you are at the last statement of a currently executing function, then 'Step Over' works just like 'Step Out'.
-- **Step Out **![](media/revorpe-getting-started/image10.png) **(Shift-F11)** Stops at the next breakable point after the currently executing function has completed. 
+- <strong>Step Out **![](media/revorpe-getting-started/image10.png) **(Shift-F11)</strong> Stops at the next breakable point after the currently executing function has completed. 
 
 You should still hit any breakpoints encountered while stepping, and at any point, you should be able to choose Continue (F5) to end stepping and continue execution normally.
 

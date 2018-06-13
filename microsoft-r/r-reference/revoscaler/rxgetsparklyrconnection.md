@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxGetSparklyrConnection function (revoAnalytics) | Microsoft Docs" 
 description: " Get a Spark compute context with sparklyr interop.  rxGetSparklyrConnection get sparklyr spark connection from created Spark compute context. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,57 +21,55 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxGetSparklyrConnection: Get sparklyr connection from Spark compute context 
- ##Description
+
+
+ # rxGetSparklyrConnection: Get sparklyr connection from Spark compute context 
+ ## Description
   Get a Spark compute context with sparklyr interop.
  `rxGetSparklyrConnection` get sparklyr spark connection from created Spark compute context.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxGetSparklyrConnection(
       computeContext = rxGetOption("computeContext"))
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ### `computeContext`
  Compute context get created by `rxSparkConnect`. 
-  
- 
- 
- 
- ##Value
- 
+
+
+
+
+ ## Value
+
 object of sparklyr spark connection
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- 
- ##Examples
+
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 library("sparklyr")
 cc <- rxSparkConnect(interop = "sparklyr")
 sc <- rxGetSparklyrConnection(cc)
 iris_tbl <- copy_to(sc, iris)
  ## End(Not run) 
-  
- 
 ```
- 
+

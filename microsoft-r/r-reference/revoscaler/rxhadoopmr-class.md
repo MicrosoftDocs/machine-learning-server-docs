@@ -27,8 +27,8 @@ ms.custom: ""
  
  
  
- #RxHadoopMR-class: Class RxHadoopMR 
- ##Description
+ # RxHadoopMR-class: Class RxHadoopMR 
+ ## Description
  
 DEPRECATED: Hadoop Map Reduce Local (File) compute context class.
  
@@ -49,7 +49,7 @@ Class RxComputeContext, directly.
  
 
 
-###`show`
+### `show`
 `signature(object = "RxHadoopMR")`: ...
 
 
@@ -59,7 +59,7 @@ Class RxComputeContext, directly.
  
  
  
- ##See Also
+ ## See Also
  
 [RxHadoopMR](RxHadoopMR.md)
    

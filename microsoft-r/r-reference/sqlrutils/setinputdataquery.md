@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "setInputDataQuery function (sqlrutils) | Microsoft Docs" 
 description: " setInputDataQuery: assigns a query to the InputData parameter of the                  stored procedure that is going to populate the input                  data frame of the embedded R function in the next                  run of the stored procedure. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,52 +21,52 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #setInputDataQuery: Assign a Query to the Input Data Parameter of the SQL Stored Procedure 
- ##Description
- 
+
+
+
+
+ # setInputDataQuery: Assign a Query to the Input Data Parameter of the SQL Stored Procedure 
+ ## Description
+
 `setInputDataQuery`: assigns a query to the InputData parameter of the
 stored procedure that is going to populate the input
 data frame of the embedded R function in the next
 run of the stored procedure.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   setInputDataQuery(inputData, query)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `inputData`
  A character string, the name of the data frame input parameter into the R function. 
-  
-  
-  
+
+
+
  ### `query`
  A character string representing a query. 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 InputData Object
- 
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
   # See ?StoredProcedure for creating the `cleandata` table.
   # and ?executeStoredProcedure for creating the `rdata` table.
 
@@ -113,7 +113,5 @@ InputData Object
   model <- executeStoredProcedure(sp_df_df, id, name, connectionString = conStr)
   model$data
  ## End(Not run) 
-  
- 
 ```
- 
+

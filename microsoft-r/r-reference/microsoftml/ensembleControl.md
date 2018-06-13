@@ -27,13 +27,13 @@ ms.custom: ""
  
  
  
- #ensembleControl: ensembleControl 
- ##Description
+ # ensembleControl: ensembleControl 
+ ## Description
  
 Control the parameters used to create an ensemble.
  
  
- ##Usage
+ ## Usage
 
 ```   
   ensembleControl(randomSeed = NULL, modelCount = 1, replace = FALSE,
@@ -42,7 +42,7 @@ Control the parameters used to create an ensemble.
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   
@@ -85,7 +85,7 @@ Control the parameters used to create an ensemble.
   
  
  
- ##Value
+ ## Value
  
 A list of ensemble parameters.
  

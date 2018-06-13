@@ -129,16 +129,16 @@ To rename a directory:
 2. Don't use a name that is already in use.
 
 3. Don't use any of the following reserved names (regardless of case), as they are not permitted:
-  - anonymous
-  - archived
-  - custom
-  - deployr
-  - granted
-  - metadata
-  - private
-  - public
-  - published
-  - repository
-  - restricted
-  - root
-  - shared
+   - anonymous
+   - archived
+   - custom
+   - deployr
+   - granted
+   - metadata
+   - private
+   - public
+   - published
+   - repository
+   - restricted
+   - root
+   - shared

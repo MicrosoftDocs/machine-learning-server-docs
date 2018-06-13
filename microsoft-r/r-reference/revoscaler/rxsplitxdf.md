@@ -26,13 +26,13 @@ ms.custom: ""
  
  
  
- #rxSplitXdf: Split a Single Data Set into Multiple Sets 
- ##Description
+ # rxSplitXdf: Split a Single Data Set into Multiple Sets 
+ ## Description
  
 Split an input .xdf file or data frame into multiple .xdf files or a list of data frames.
  
  
- ##Usage
+ ## Usage
 
 ```   
   rxSplit(inData, outFilesBase = NULL, outFileSuffixes = NULL,  
@@ -59,7 +59,7 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
     
@@ -213,7 +213,7 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
  
  
  
- ##Details
+ ## Details
  
 **rxSplit:** Use `rxSplit` as a general function to partition a data frame or .xdf file.
 Behind the scenes, the `rxSplitXdf` function is called by `rxSplit` after converting the `inData` data source into
@@ -242,7 +242,8 @@ We illustrate the use of these combinations in the examples below, which are ass
 
 
 
-###``
+### ``
+
  | Col  1 | Col  2 | Col  3 |
 | :---| :---| :--- |
 |  **INPUT ARGUMENTS**  |   |  **OUTPUT FILE VECTOR**  |
@@ -253,47 +254,47 @@ We illustrate the use of these combinations in the examples below, which are ass
  `outFilesBase = c("C:\\here\\file1.xdf", "D:\\there\\file2.xdf", "E:\\everywhere\\file3.xdf")`  |   |  `"C:\\here\\file1.xdf", "D:\\there\\file2.xdf", "E:\\everywhere\\file3.xdf"`  
 
 
+ 
+ 
+ 
 
- 
- 
- 
- ##Value
- 
+ ## Value
+
 a list of data frames or an invisible list of `RxXdfData` data source objects corresponding to the created output files.
  
- 
- ##Author(s)
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
- 
- ##See Also
- 
+
+ ## See Also
+
 [rxDataStep](rxDataStep.md),
 [rxImport](rxImport.md),
 [rxTransform](rxTransform.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   #####
   # rxSplit Examples
-  
+
   # DF -> DF : Data frame input to list of data frames
   IrisDFList <- rxSplit(iris, numOut = 3, reportProgress = 0, verbose = 0)
   names(IrisDFList) 
   head(IrisDFList[[3]]) 
-  
+
   IrisDFList <- rxSplit(iris, splitByFactor = "Species", reportProgress = 0, verbose = 0)
   names(IrisDFList) 
   head(IrisDFList[[1]])
-  
+
   # DF -> XDF : Data frame input to .xdf outputs (list of RxXdfData data sources)
   irisXDFs <- rxSplit(iris, splitByFactor = "Species", outFilesBase = file.path(tempdir(),"iris"), 
           reportProgress = 0, verbose = 0, overwrite = TRUE)
   print(irisXDFs)
   invisible(sapply(irisXDFs, function(x) if (file.exists(x@file)) unlink(x@file)))
-  
+
   # XDF -> DF : .xdf file to a list of data frames
   # Return a list of data frames instead of creating .xdf files by specifying
   # outFilesBase = ""
@@ -304,13 +305,13 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
   names(IrisDFList) 
   head(IrisDFList[[1]]) 
   if (file.exists(XDF)) file.remove(XDF)
-  
+
   # Split the fourth graders data by gender and use row selection
   # to collect information only on blue eyed children
   fourthGradersXDF <- file.path(rxGetOption("sampleDataDir"), "fourthgraders.xdf") 
   rxSplit(fourthGradersXDF, splitByFactor = "male", outFilesBase = "", 
-  	rowSelection = (eyecolor == "Blue")) 	
-  
+    rowSelection = (eyecolor == "Blue"))    
+
   # XDF -> XDF : .xdf file into multiple .xdf files
   XDF <- tempfile(pattern = "iris", fileext = ".xdf")
   outXDF1 <- tempfile(pattern = "irisOut", fileext = ".xdf")
@@ -319,16 +320,16 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
   outFiles <- rxSplit(XDF, outFilesBase = tempdir(), outFileSuffixes = basename(c(outXDF1, outXDF2)), 
           reportProgress = 0, verbose = 0, overwrite = TRUE)
   print(outFiles)
-  
+
   # Remove created files
   invisible(sapply(outFiles, function(x) if (file.exists(x@file)) unlink(x@file)))
-  if (file.exists(XDF)) file.remove(XDF)			
-  if (file.exists(outXDF1)) file.remove(outXDF1)			
+  if (file.exists(XDF)) file.remove(XDF)            
+  if (file.exists(outXDF1)) file.remove(outXDF1)            
   if (file.exists(outXDF2)) file.remove(outXDF2)
-  
+
   #####
   # rxSplitXdf Examples
-  
+
   # Split CensusWorkers.xdf data into five files
   # with a (nearly) uniform distribution of rows across the files.
   # Put the files in a temporary directory and use "Census" as the
@@ -337,25 +338,25 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
   inFile <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers")
   outFilesBase <- file.path(tempdir(), "byRowsDir", "Census-byRows")
   rxSplitXdf(inFile, outFilesBase = outFilesBase,
-  	       numOutFiles = 5, splitBy = "rows", verbose = 1)
-  
+           numOutFiles = 5, splitBy = "rows", verbose = 1)
+
   # Obtain information from each of the resulting output files
   # and remove the files along with the parent directory.
   byRowFiles <- list.files(dirname(outFilesBase), full = TRUE)
   infoByRows <- sapply(byRowFiles, rxGetInfo, simplify = FALSE)
   unlink(dirname(outFilesBase), recursive = TRUE)
-  
+
   # Perform a similar split by blocks
   outFilesBase <- file.path(tempdir(), "byBlocksDir", "Census-byBlocks")
   rxSplitXdf(inFile, outFilesBase = outFilesBase,
-  	       numOutFiles = 5, splitBy = "blocks", verbose = 1)
-  
+           numOutFiles = 5, splitBy = "blocks", verbose = 1)
+
   # Obtain information from each of the resulting output files
   # and remove the files along with the parent directory.
   byBlockFiles <- list.files(dirname(outFilesBase), full = TRUE)
   infoByBlocks <- sapply(byBlockFiles, rxGetInfo, simplify = FALSE)
   unlink(dirname(outFilesBase), recursive = TRUE)
-  
+
   # Create a barplot comparing the two methods on the resulting
   # number of rows in each output file. The barplot of the
   # "rows" split case is uniform while the "blocks" split is
@@ -370,7 +371,7 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
           legend.text = basename(rownames(numRowsData)),
           args.legend = list(x = "topright"),
           ylim = c(0, 1.5 * max(numRowsData)))
-  
+
   # Create a similar plot comparing the number of resulting blocks
   # in the output .xdf files.
   rows <- sapply(infoByRows, "[[", "numBlocks")
@@ -383,7 +384,6 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
           legend.text = basename(rownames(numBlocksData)),
           args.legend = list(x = "topright"),
           ylim = c(0, 1.5 * max(numBlocksData)))
- 
 ```
  
          

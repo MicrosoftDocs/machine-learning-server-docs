@@ -304,7 +304,7 @@ This example uses the airline data set. It includes multiple Machine Learning Se
 6. Train a model using sparklyr to call Spark ML algorithms.
 7. Take a summary of the trained model to see estimates and errors.
 
-###Sample Code
+### Sample Code
 
 ```
 	# # # # # 
@@ -417,7 +417,7 @@ This example uses the airline data set. It includes multiple Machine Learning Se
 	rxSparkDisconnect(cc)
 ```
 
-###Sample Output, Comments Removed
+### Sample Output, Comments Removed
 
 ```
 	> library(RevoScaleR)

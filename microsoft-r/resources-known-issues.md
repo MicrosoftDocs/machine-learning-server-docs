@@ -153,7 +153,7 @@ The workaround to bypass the timeout is to modify the webnode appsetting.json fi
 
 The value of "BatchExecutionCheckoutTimeSpan" and "ConnectionTimeout" should be set to same value. If both web and compute nodes are on the same machine (a one-box configuration) or on the same virtual network, then the "ConnectionTimeout" can be shorter because there is minimal latency. 
 
-To reduce the risk of timeouts, we recommend same-machine or same-network deployments. On Azure, you can set these up easily using a template. For more information, see [Configure Machine Learning Server using Resource Manager templates] (https://blogs.msdn.microsoft.com/mlserver/2017/11/21/configuring-microsoft-machine-learning-server-to-operationalize-analytics-using-arm-templates/).
+To reduce the risk of timeouts, we recommend same-machine or same-network deployments. On Azure, you can set these up easily using a template. For more information, see [Configure Machine Learning Server using Resource Manager templates](https://blogs.msdn.microsoft.com/mlserver/2017/11/21/configuring-microsoft-machine-learning-server-to-operationalize-analytics-using-arm-templates/).
 
 
 <a name="910"></a>
@@ -253,22 +253,22 @@ The workaround is to recreate the symbolic link, update the site file, and resta
 
 1. Create this symlink: 
 
-  ~~~~
-  sudo ln -s /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so /opt/cloudera/parcels/MRS/hadoop/libjvm.so
-  ~~~~
+   ~~~~
+   sudo ln -s /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so /opt/cloudera/parcels/MRS/hadoop/libjvm.so
+   ~~~~
 
 2. Copy the site file to the parcel repo and rename it to RevoHadoopEnvVars.site:
 
-  ~~~~
-  sudo cp ~/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop
-  sudo mv /opt/cloudera/parcels/MRS/hadoop/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop/RevoHadoopEnvVars.site
-  ~~~~
+   ~~~~
+   sudo cp ~/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop
+   sudo mv /opt/cloudera/parcels/MRS/hadoop/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop/RevoHadoopEnvVars.site
+   ~~~~
 
 3. Restart RStudio after the changes:
 
-  ~~~~
-  sudo rstudio-server restart
-  ~~~~
+   ~~~~
+   sudo rstudio-server restart
+   ~~~~
 
 <a name="sparkdelays"></a>
 

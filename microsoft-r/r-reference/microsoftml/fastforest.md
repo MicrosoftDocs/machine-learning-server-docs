@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #fastForest: fastForest 
- ##Description
+ # fastForest: fastForest 
+ ## Description
  
 Creates a list containing the function name and arguments to train a
  FastForest model with [rxEnsemble](rxEnsemble.md).
  
  
- ##Usage
+ ## Usage
 
 ```   
   fastForest(numTrees = 100, numLeaves = 20, minSplit = 10,
@@ -44,7 +44,7 @@ Creates a list containing the function name and arguments to train a
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   

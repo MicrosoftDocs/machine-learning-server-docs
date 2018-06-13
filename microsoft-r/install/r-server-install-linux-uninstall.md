@@ -33,16 +33,16 @@ As a first step, use your package manager to list the currently installed R Serv
 
 1. List the packages from Microsoft.
 
-  + On RHEL: `yum list \*microsoft\*`   
-  + On Ubuntu: `apt list --installed | grep microsoft`  
-  + On SUSE: `zypper search \*microsoft-r\*`    
+   + On RHEL: `yum list \*microsoft\*`   
+   + On Ubuntu: `apt list --installed | grep microsoft`  
+   + On SUSE: `zypper search \*microsoft-r\*`    
 
 
 2. On a 9.1 installation, you will see about 9 packages. Since multiple major versions can coexist, the package list could be much longer. Given a list of packages, you can get verbose version information for particular packages in the list. The following examples are for Microsoft R Open version 3.3.3:
 
-  + On RHEL: `rpm -qi microsoft-r-open-mro-3.3.x86_64`   
-  + On Ubuntu: `dpkg --status microsoft-r-open-mro-3.3.x86_64` 
-  + On SUSE: `zypper info microsoft-r-open-mro-3.3.x86_64`     
+   + On RHEL: `rpm -qi microsoft-r-open-mro-3.3.x86_64`   
+   + On Ubuntu: `dpkg --status microsoft-r-open-mro-3.3.x86_64` 
+   + On SUSE: `zypper info microsoft-r-open-mro-3.3.x86_64`     
 
 
 If R Server was installed on Cloudera using parcel installation, program information looks like this:
@@ -63,24 +63,24 @@ The Revo64 program runs on demand so stopping and disabling the server is not re
 
 1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
 
-  + On RHEL: `yum erase microsoft-r-open-mro-3.3.x86_64`     
-  + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.3`  
-  + On SUSE: `zypper remove microsoft-r-open-mro-3.3`    
+   + On RHEL: `yum erase microsoft-r-open-mro-3.3.x86_64`     
+   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.3`  
+   + On SUSE: `zypper remove microsoft-r-open-mro-3.3`    
 
 2. Most packages are uninstalled, including Microsoft R Server. List the remaining packages to see what's left. On a 9.1. installation, you should see only those packages used for operationalizing R Server analytics. On a 9.0.1 install, you might see just mrsdeploy. Using the syntax from the previous step, uninstall remaining packages. For 9.1, uninstall packages in the following order:
 
-  + Microsoft-r-server-adminutil-9.1.x86_64
-  + Microsoft-r-server-webnode-9.1.x86_64
-  + Microsoft-r-server-computenode-9.1.x86_64
-  + Microsoft-r-server-config-rserve-9.1.x86_64
+   + Microsoft-r-server-adminutil-9.1.x86_64
+   + Microsoft-r-server-webnode-9.1.x86_64
+   + Microsoft-r-server-computenode-9.1.x86_64
+   + Microsoft-r-server-config-rserve-9.1.x86_64
 
-2. After packages are removed, you can remove remaining files. On the root node, verify the location of other files that need to be removed:
+3. After packages are removed, you can remove remaining files. On the root node, verify the location of other files that need to be removed:
 
-  + `$ ls /usr/lib64/microsoft-r`
+   + `$ ls /usr/lib64/microsoft-r`
 
-3. Remove the entire directory:
+4. Remove the entire directory:
 
-  + `$ rm -fr /usr/lib64/microsoft-r`
+   + `$ rm -fr /usr/lib64/microsoft-r`
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 

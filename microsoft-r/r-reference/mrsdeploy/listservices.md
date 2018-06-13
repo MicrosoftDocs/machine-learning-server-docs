@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "listServices function (mrsdeploy) | Microsoft Docs" 
 description: " List the different published web services on the R Server instance. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,41 +21,41 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #listServices: List the different published web services. 
- ##Description
- 
+
+
+
+
+ # listServices: List the different published web services. 
+ ## Description
+
 List the different published web services on the R Server instance.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   listServices(name = character(0), v = character(0))
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `name`
  When a name is specified, returns only web services with that  name. Use quotes around the name string, such as "MyService". 
-  
-  
-  
+
+
+
  ### `v`
  When specified, returns only web services with that version. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
 
@@ -77,14 +77,14 @@ call allows you to retrieve service information regarding:
 
 Users can use this information along with the `discover_service`
 operation to interact with and consume the web service.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 A list of services and service information.
- 
- ##See Also
- 
+
+ ## See Also
+
 Other service methods: [deleteService](deleteService.md),
 [getService](getService.md),
 [print.serviceDetails](print.serviceDetails.md),
@@ -92,13 +92,13 @@ Other service methods: [deleteService](deleteService.md),
 [serviceOption](serviceOption.md),
 [summary.serviceDetails](summary.serviceDetails.md),
 [updateService](updateService.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 
 # --- List all published services
 services <- listServices()
@@ -109,7 +109,5 @@ services <- listServices("transmission")
 # --- List a specific service version
 service <- listServices("transmission", "1.0.1")
  ## End(Not run) 
-  
- 
 ```
- 
+

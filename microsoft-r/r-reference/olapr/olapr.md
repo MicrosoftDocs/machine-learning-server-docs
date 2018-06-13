@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "OlapR package for R (Microsoft R Server) " 
 description: "Function help reference for the olapR R package of Microsoft R Server, used to import data from OLAP cubes stored in SQL Server Analysis Services into R." 
@@ -12,7 +12,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 #ROBOTS: "" 
 #audience: "" 
@@ -22,9 +22,9 @@ ms.assetid: ""
 #ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 #ms.custom: "" 
- 
+
 --- 
- 
+
 # olapR package
 
 The **olapR** library provides R functions for importing data from OLAP cubes stored in SQL Server Analysis Services into a data frame. This package is available on premises, on Windows only.
@@ -62,7 +62,7 @@ Finally, pass the `olapCnn` and query into either `executeMD` or `execute2D` to 
 >
 >The exact version you should install for SQL Server 2016 is [here](https://download.microsoft.com/download/8/7/2/872BCECA-C849-4B40-8EBE-21D48CDF1456/ENU/x64/SQL_AS_OLEDB.msi).
 >
- 
+
 ## Function list
 
 |Function | Description |
@@ -73,7 +73,7 @@ Finally, pass the `olapCnn` and query into either `executeMD` or `execute2D` to 
 |[`execute2D`](execute2d.md)|Takes a Query object or an MDX string, and returns the result as a 2D data frame. |
 |[`explore`](explore.md)|Allows for exploration of cube metadata. |
 
-##MDX concepts
+## MDX concepts
 
 MDX is the query language for multidimensional OLAP (MOLAP) cubes containing processed and aggregated data stored in structures optimized for data analysis and exploration. Cubes are used in business and scientific applications to draw insights about relationships in historical data. Internally, cubes consist of mostly quantifiable numeric data, which is sliced along dimensions like date and time, geography, or other entities. A typical query might roll up sales for a given region and time period, sliced by product category, promotion, sales channel, and so forth.
 
@@ -99,8 +99,8 @@ WHERE [Sales Territory].[Sales Territory Country].[Australia]
 ~~~~
 
 Using an AdventureWorks Olap cube from the [multidimensional cube tutorial](https://docs.microsoft.com/sql/analysis-services/multidimensional-modeling-adventure-works-tutorial), this MDX query selects the internet sales count and sales amount and places them on the Column axis. On the Row axis it places all possible values of the "Product Line" dimension. Then, using the WHERE clause (which is the slicer axis in MDX queries), it filters the query so that only the sales from Australia matter. Without the slicer axis, we would roll up and summarize the sales from all countries.
- 
- ##olapR examples
+
+ ## olapR examples
 
  ```
 # load the library
@@ -114,19 +114,18 @@ olapCnn <- OlapConnection(cnnstr)
 
 # Approach 1 - build the mdx query in R
 qry <- Query()
-    
+
 cube(qry) <- "[Analysis Services Tutorial]"
 columns(qry) <- c("[Measures].[Internet Sales Count]", "[Measures].[Internet Sales-Sales Amount]")
 rows(qry) <- c("[Product].[Product Line].[Product Line].MEMBERS") 
 slicers(qry) <- c("[Sales Territory].[Sales Territory Country].[Australia]")
-    
+
 result1 <- executeMD(olapCnn, qry)
 
 # Approach 2 - Submit a fully formed MDX query
 mdx <- "SELECT {[Measures].[Internet Sales Count], [Measures].[Internet Sales-Sales Amount]} ON AXIS(0), {[Product].[Product Line].[Product Line].MEMBERS} ON AXIS(1) FROM [Analysis Services Tutorial] WHERE [Sales Territory].[Sales Territory Country].[Australia]"
-    
+
 result2 <- execute2D(olapCnn, mdx)
- 
 ```
 
 ## Next steps

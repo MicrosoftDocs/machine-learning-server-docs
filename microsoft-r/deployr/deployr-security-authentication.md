@@ -78,12 +78,12 @@ The LDAP and Active Directory security providers are one and the same, but their
 Accordingly, to enable do the following:
 
 1. Set `grails.plugin.springsecurity.ldap.active=true`
-1. Uncomment only the LDAP properties 
-1. Make sure the Active Directory section is commented out **except** for this line which should be **set to false**.    
+2. Uncomment only the LDAP properties 
+3. Make sure the Active Directory section is commented out **except** for this line which should be **set to false**.    
    ```
    grails.plugin.springsecurity.ad.active=false
    ```
-1. For each property, use the value matching your configuration. For more information, see the complete list of LDAP [configuration properties](#ldap-active-directory-configuration-properties).
+4. For each property, use the value matching your configuration. For more information, see the complete list of LDAP [configuration properties](#ldap-active-directory-configuration-properties).
 
    + For LDAP, set `grails.plugin.springsecurity.ldap.context.server` to the LDAP server URL, such as `'ldap://localhost:389/'`.
 
@@ -147,12 +147,12 @@ The LDAP and Active Directory security providers are one and the same, but their
 Accordingly, to enable do the following:
 
 1. Set `grails.plugin.springsecurity.ad.active=true`
-1. Uncomment only the Active Directory properties 
-1. Make sure the LDAP section is commented out **except** for this line which should be **set to false**.    
+2. Uncomment only the Active Directory properties 
+3. Make sure the LDAP section is commented out **except** for this line which should be **set to false**.    
    ```
    grails.plugin.springsecurity.ldap.active=false
    ```
-1. For each property, use the value matching your configuration.
+4. For each property, use the value matching your configuration.
 
    + For DeployR for Microsoft R Server 8.0.5:
      ```

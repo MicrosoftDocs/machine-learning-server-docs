@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxSetVarInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame  " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,46 +21,46 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxSetVarInfo: Set Variable Information for .xdf File or Data Frame 
- ##Description
- 
+
+
+
+ # rxSetVarInfo: Set Variable Information for .xdf File or Data Frame 
+ ## Description
+
 Set the variable information for an .xdf file, including variable
 names, descriptions, and value labels, or set attributes for variables
 in a data frame 
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxSetVarInfo(varInfo, data)
   rxSetVarInfoXdf(varInfo, file)
- 
-```
- 
- ##Arguments
 
-   
-    
+```
+
+ ## Arguments
+
+
+
  ### `varInfo`
  list containing lists of variable information for variables in the XDF data source or data frame.  
-  
-    
+
+
  ### `data`
  a data frame, a character string specifying the .xdf file, or an [RxXdfData](RxXdfData.md) object.  
-  
-    
+
+
  ### `file`
  character string specifying the .xdf file or   an [RxXdfData](RxXdfData.md) object.  
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 The list for each variable contained in `varInfo` can have the following
 elements:
 
@@ -103,78 +103,78 @@ length as valueInfoCodes, used for informational purposes only.
 POSIXct variable.  
 
 
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 If the input data is a data frame, a data frame is returned containing variables
 with the new attributes.  If the input data represents an .xdf file or
 composite file, an [RxXdfData](RxXdfData.md) object representing the modified 
 file is returned.
- 
- ##Note
- 
+
+ ## Note
+
 `rxSetVarInfoXdf` and `rxSetVarInfo` do not change the underlying data 
 so the user cannot set the variable type and storage type using this function, or recode the
 levels of a factor variable.  To recode factors, use [rxFactors](rxFactors.md).
 `rxSetVarInfo` is not supported for single .xdf files in HDFS.
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxDataStep](rxDataStep.md),
 [rxFactors](rxFactors.md),
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   # Rename the factor levels for a variable
-  
-  
-                   
+
+
+
   # Create a sample data set
   # We will change the names of the factor levels, after the fact
   set.seed(100)
   myData1 <- data.frame(y = rnorm(30),
                         month = factor(c(0:11, as.integer(runif(18, 0, 12)))))
-                        
+
   # Plot the data
   rxLinePlot(y ~ month, type = "p", data = myData1)
-  
+
   # Set the labels for the month variable
   monthLabels <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
                    "Oct", "Nov", "Dec")
-                   
+
   # Get the variable information for the data frame
   varInfo <- rxGetVarInfo(myData1)
-  
+
   # Reset the names of the factor levels
   varInfo$month$levels <- monthLabels
   myData2 <- rxSetVarInfo( varInfo, myData1)
-  
+
   # Plot the new data
   rxLinePlot(y ~ month, type = "p", data = myData2)
-  
+
   # Redo, this time putting the data in an .xdf file
   # Specify name of output file
   tempFile <- file.path(tempdir(), "rxTempTestFile.xdf")
-  
+
   # Convert the original data to an XDF file
   rxDataStep(myData1, outFile = tempFile, overwrite = TRUE)
-  
+
   # Get the varInfo of the new XDF file
   varInfo <- rxGetVarInfo(tempFile)
-  
+
   varInfo$month$levels <- monthLabels
-  
+
   # Write the modified varInfo back to the file
   rxSetVarInfo(varInfo, tempFile)
-  
+
   # Read the data and plot it, showing the new factor levels
   myData2 <- rxDataStep(inData = tempFile)
   rxLinePlot(y ~ month, type = "p", data = myData2)
-  
+
   ## Change variable names and add descriptions
   varInfo <- list(y = list(newName = "Rainfall",
                            description = "Rainfall per Month"),
@@ -182,7 +182,6 @@ levels of a factor variable.  To recode factors, use [rxFactors](rxFactors.md).
   rxSetVarInfo(varInfo, tempFile)
   rxGetVarInfo(tempFile)
   file.remove(tempFile)
- 
 ```
- 
- 
+
+

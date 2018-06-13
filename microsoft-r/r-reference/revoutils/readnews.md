@@ -26,18 +26,18 @@ ms.assetid: ""
 --- 
  
  
- #readNews: Read R or Package NEWS Files 
- ##Description
+ # readNews: Read R or Package NEWS Files 
+ ## Description
  Read the R NEWS file or a package's NEWS or NEWS.Rd file. 
  
- ##Usage
+ ## Usage
 
 ```   
   readNews(package)
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
     
@@ -47,7 +47,7 @@ ms.assetid: ""
  
  
  
- ##Details
+ ## Details
  
 The R NEWS file is displayed using `RShowDoc` or `file.show`, depending
 on whether the system appears capable of launching a browser. Similarly, package NEWS.Rd
@@ -57,7 +57,7 @@ This function should not be confused with readNEWS in the **tools** package,
 which performs a different kind of reading.
  
  
- ##Value
+ ## Value
  
 `NULL` is returned invisibly.
  

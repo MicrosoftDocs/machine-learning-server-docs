@@ -27,8 +27,8 @@ ms.custom: ""
  
  
  
- #RxSpark-class: Class RxSpark 
- ##Description
+ # RxSpark-class: Class RxSpark 
+ ## Description
  
 Spark compute context class.
  
@@ -49,17 +49,17 @@ Class RxComputeContext, directly.
  
 
 
-###`show`
+### `show`
 `signature(object = "RxSpark")`: ...
 
 
 
  
- ##Author(s)
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
- ##See Also
+ ## See Also
  
 [RxSpark](RxSpark.md)
    

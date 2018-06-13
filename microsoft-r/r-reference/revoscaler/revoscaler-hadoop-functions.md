@@ -37,7 +37,7 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
 
 ## Data Analysis Functions
 
-####Import and Export Functions
+#### Import and Export Functions
 
 <table>
     <tr>
@@ -49,66 +49,65 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
         </th>
     </tr>
     <tr>
-        <td>`rxDataStep`</td>
+        <td><code>rxDataStep</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame.</td>
         <td>
-            <center><small>[**View**](rxdatastep.md)<center></small></td>
+            <center><small><a href="rxdatastep.md" data-raw-source="[**View**](rxdatastep.md)"><strong>View</strong></a><center></small></td>
     </tr>
     <tr>
-        <td width="160px">`RxXdfData`</td>
+        <td width="160px"><code>RxXdfData</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Creates an efficient XDF data source object.</td>
         <td>
-            <center><small>[**View**](rxxdfdata.md)<center></small></td>
-    </tr>    
-    <tr>
-        <td>`RxTextData`</td>
+            <center><small><a href="rxxdfdata.md" data-raw-source="[**View**](rxxdfdata.md)"><strong>View</strong></a><center></small></td>
+    </tr><br/>    <tr>
+        <td><code>RxTextData</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Creates a comma delimited text data source object.</td>
         <td>
-            <center><small>[**View**](rxtextdata.md)<center></small></td>
+            <center><small><a href="rxtextdata.md" data-raw-source="[**View**](rxtextdata.md)"><strong>View</strong></a><center></small></td>
     </tr>
     <tr>
-        <td>`rxGetInfo`</td>
+        <td><code>rxGetInfo</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Retrieves summary information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](rxgetinfoxdf.md)<center></small></td>
+            <center><small><a href="rxgetinfoxdf.md" data-raw-source="[**View**](rxgetinfoxdf.md)"><strong>View</strong></a><center></small></td>
     </tr>
     <tr>
-        <td>`rxGetVarInfo`</td>
+        <td><code>rxGetVarInfo</code></td>
         <td> </td>
         <td>Retrieves variable information from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](rxgetvarinfo.md)<center></small></td>
+            <center><small><a href="rxgetvarinfo.md" data-raw-source="[**View**](rxgetvarinfo.md)"><strong>View</strong></a><center></small></td>
     </tr>
     <tr>
-        <td>`rxGetVarNames`</td>
+        <td><code>rxGetVarNames</code></td>
         <td> </td>
         <td>Retrieves variable names from a data source or data frame.</td>
         <td>
-            <center><small>[**View**](rxgetvarnames.md)<center></small></td>
+            <center><small><a href="rxgetvarnames.md" data-raw-source="[**View**](rxgetvarnames.md)"><strong>View</strong></a><center></small></td>
     </tr>
     <tr>
-        <td>`rxHdfsFileSystem`</td>
+        <td><code>rxHdfsFileSystem</code></td>
         <td> </td>
         <td>Creates an HDFS file system object.</td>
         <td>
-            <center><small>[**View**](rxhdfsfilesystem.md)<center></small></td>
+            <center><small><a href="rxhdfsfilesystem.md" data-raw-source="[**View**](rxhdfsfilesystem.md)"><strong>View</strong></a><center></small></td>
     </tr>
 </table>
 
 <br />
-####Manipulation, Cleansing, and Transformation Functions
+#### Manipulation, Cleansing, and Transformation Functions
 
 <table>
     <tr>
@@ -120,30 +119,30 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
         </th>
     </tr>
     <tr>
-        <td width="130px">`rxDataStep`</td>
+        <td width="130px"><code>rxDataStep</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Transform and subset data. Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from an .xdf file or a data frame.</td>
         <td>
-            <center><small>[**View**](rxdatastep.md)</small></center>
+            <center><small><a href="rxdatastep.md" data-raw-source="[**View**](rxdatastep.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxFactors`</td>
+        <td><code>rxFactors</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Create or recode factor variables in a composite XDF file in HDFS. A new file must be written out.</td>
         <td>
-            <center><small>[**View**](rxfactors.md)</small></center>
+            <center><small><a href="rxfactors.md" data-raw-source="[**View**](rxfactors.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
 </table>
 
 
 <br />
-####Analysis Functions for Descriptive Statistics and Cross-Tabulations
+#### Analysis Functions for Descriptive Statistics and Cross-Tabulations
 
 <table>
     <tr>
@@ -155,43 +154,43 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
         </th>
     </tr>
     <tr>
-        <td width="140px">`rxQuantile`</td>
+        <td width="140px"><code>rxQuantile</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Computes approximate quantiles for .xdf files and data frames without sorting.</td>
         <td>
-            <center><small>[**View**](rxquantile.md)</small></center>
+            <center><small><a href="rxquantile.md" data-raw-source="[**View**](rxquantile.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxSummary`</td>
+        <td><code>rxSummary</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Basic summary statistics of data, including computations by group. Writing by group computations to .xdf file not supported.</td>
         <td>
-            <center><small>[**View**](rxsummary.md)</small></center>
+            <center><small><a href="rxsummary.md" data-raw-source="[**View**](rxsummary.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxCrossTabs`</td>
+        <td><code>rxCrossTabs</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Formula-based cross-tabulation of data.</td>
         <td>
-            <center><small>[**View**](rxcrosstabs.md)</small></center>
+            <center><small><a href="rxcrosstabs.md" data-raw-source="[**View**](rxcrosstabs.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxCube`</td>
+        <td><code>rxCube</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Alternative formula-based cross-tabulation designed for efficient representation returning ‘cube’ results. Writing output to .xdf file not supported.</td>
         <td>
-            <center><small>[**View**](rxcube.md)</small></center>
+            <center><small><a href="rxcube.md" data-raw-source="[**View**](rxcube.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
 </table>
@@ -200,7 +199,7 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
 
 
 <br />
-####Analysis, Learning, and Prediction Functions for Statistical Modeling
+#### Analysis, Learning, and Prediction Functions for Statistical Modeling
 
 <table>
     <tr>
@@ -212,103 +211,103 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
         </th>
     </tr>
     <tr>
-        <td width="150px">`rxLinMod`</td>
+        <td width="150px"><code>rxLinMod</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Fits a linear model to data.</td>
         <td>
-            <center><small>[**View**](rxlinmod.md)</small></center>
+            <center><small><a href="rxlinmod.md" data-raw-source="[**View**](rxlinmod.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxLogit`</td>
+        <td><code>rxLogit</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Fits a logistic regression model to data.</td>
         <td>
-            <center><small>[**View**](rxlogit.md)</small></center>
+            <center><small><a href="rxlogit.md" data-raw-source="[**View**](rxlogit.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxGlm`</td>
+        <td><code>rxGlm</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Fits a generalized linear model to data.</td>
         <td>
-            <center><small>[**View**](rxglm.md)</small></center>
+            <center><small><a href="rxglm.md" data-raw-source="[**View**](rxglm.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxCovCor`</td>
+        <td><code>rxCovCor</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.</td>
         <td>
-            <center><small>[**View**](rxcovcor.md)</small></center>
+            <center><small><a href="rxcovcor.md" data-raw-source="[**View**](rxcovcor.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxDTree`</td>
+        <td><code>rxDTree</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Fits a classification or regression tree to data.</td>
         <td>
-            <center><small>[**View**](rxdtree.md)</small></center>
+            <center><small><a href="rxdtree.md" data-raw-source="[**View**](rxdtree.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxBTrees`</td>
+        <td><code>rxBTrees</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.</td>
         <td>
-            <center><small>[**View**](rxbtrees.md)</small></center>
+            <center><small><a href="rxbtrees.md" data-raw-source="[**View**](rxbtrees.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxDForest`</td>
+        <td><code>rxDForest</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Fits a classification or regression decision forest to data.</td>
         <td>
-            <center><small>[**View**](rxdforest.md)</small></center>
+            <center><small><a href="rxdforest.md" data-raw-source="[**View**](rxdforest.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxPredict`</td>
+        <td><code>rxPredict</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Calculates predictions for fitted models. Output must be an XDF data source.</td>
         <td>
-            <center><small>[**View**](../microsoftml/rxpredict.md)</small></center>
+            <center><small><a href="../microsoftml/rxpredict.md" data-raw-source="[**View**](../microsoftml/rxpredict.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxKmeans`</td>
+        <td><code>rxKmeans</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Performs k-means clustering.</td>
         <td>
-            <center><small>[**View**](rxkmeans.md)</small></center>
+            <center><small><a href="rxkmeans.md" data-raw-source="[**View**](rxkmeans.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxNaiveBayes`</td>
+        <td><code>rxNaiveBayes</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Fit Naive Bayes Classifiers on an .xdf file or data frame for small or large data using parallel external memory algorithm. </td>
         <td>
-            <center><small>[**View**](rxnaivebayes.md)</small></center>
+            <center><small><a href="rxnaivebayes.md" data-raw-source="[**View**](rxnaivebayes.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
 </table>
@@ -316,7 +315,7 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
 <br />
 <a name="compute"></a>
 
-##Compute Context Functions
+## Compute Context Functions
 
 <table>
     <tr>
@@ -328,51 +327,51 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
         </th>
     </tr>
     <tr>
-        <td width="180px">`RxHadoopMR`</td>
+        <td width="180px"><code>RxHadoopMR</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Creates an in-data, file-based Hadoop compute context.</td>
         <td>
-            <center><small>[**View**](rxhadoopmr.md)</small></center>
+            <center><small><a href="rxhadoopmr.md" data-raw-source="[**View**](rxhadoopmr.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`RxSpark`</td>
+        <td><code>RxSpark</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark.</td>
         <td>
-            <center><small>[**View**](rxspark.md)</small></center>
+            <center><small><a href="rxspark.md" data-raw-source="[**View**](rxspark.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-    <td>`rxSparkConnect`</td>
+    <td><code>rxSparkConnect</code></td>
     <td> </td>
     <td>Creates a persistent Spark compute context. </td>
     <td>
-        <center><small>[**View**](rxspark.md)<center></small></td>
+        <center><small><a href="rxspark.md" data-raw-source="[**View**](rxspark.md)"><strong>View</strong></a><center></small></td>
     </tr>
     <tr>
-    <td>`rxSparkDisconnect`</td>
+    <td><code>rxSparkDisconnect</code></td>
     <td> </td>
     <td> Disconnects a Spark session and return to a local compute context.</td>
     <td>
-        <center><small>[**View**](rxspark.md)<center></small></td>
+        <center><small><a href="rxspark.md" data-raw-source="[**View**](rxspark.md)"><strong>View</strong></a><center></small></td>
     </tr>
     <tr>
-        <td>`rxInstalledPackages`</td>
+        <td><code>rxInstalledPackages</code></td>
         <td> </td>
         <td>Returns the list of installed packages for a compute context.</td>
-        <td><center><small>[**View**](rxinstalledpackages.md)</small></center>
+        <td><center><small><a href="rxinstalledpackages.md" data-raw-source="[**View**](rxinstalledpackages.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxFindPackage`</td>
+        <td><code>rxFindPackage</code></td>
         <td> </td>
         <td>Returns the path to one or more packages for a compute context.</td>
-        <td><center><small>[**View**](rxfindpackage.md)</small></center>
+        <td><center><small><a href="rxfindpackage.md" data-raw-source="[**View**](rxfindpackage.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
 </table>
@@ -381,7 +380,7 @@ On Hadoop Distributed File System (HDFS), the XDF file format stores data in a c
 <br/>
 <a name="data"></a>
 
-##Data Source Functions
+## Data Source Functions
 
 Of course, not all data source types are available on all compute contexts. For the Hadoop compute contexts, two types of data sources can be used.
 
@@ -395,58 +394,57 @@ Of course, not all data source types are available on all compute contexts. For 
         </th>
     </tr>
     <tr>
-        <td width="150px">`RxXdfData`</td>
+        <td width="150px"><code>RxXdfData</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
 
         <td>Creates an efficient XDF data source object.</td>
         <td>
-            <center><small>[**View**](rxxdfdata.md)</small></center>
+            <center><small><a href="rxxdfdata.md" data-raw-source="[**View**](rxxdfdata.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`RxTextData`</td>
+        <td><code>RxTextData</code></td>
         <td>
-            <center>![-](./media/revoscaler-hadoop-functions/award.png)</center>
+            <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
         <td>Creates a comma delimited text data source object.</td>
         <td>
-            <center><small>[**View**](rxtextdata.md)</small></center>
+            <center><small><a href="rxtextdata.md" data-raw-source="[**View**](rxtextdata.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>    <tr>
-        <td>`RxHiveData`</td>
+        <td><code>RxHiveData</code></td>
         <td> </td>
         <td>Generates a Hive Data Source object.</td>
         <td>
-            <center><small>[**View**](rxsparkdata.md)<center></small></td>
+            <center><small><a href="rxsparkdata.md" data-raw-source="[**View**](rxsparkdata.md)"><strong>View</strong></a><center></small></td>
         </tr>
         <tr>
-        <td>`RxParquetData`</td>
+        <td><code>RxParquetData</code></td>
         <td> </td>
         <td>Generates a Parquet Data Source object.</td>
         <td>
-            <center><small>[**View**](rxsparkdata.md)<center></small></td>
+            <center><small><a href="rxsparkdata.md" data-raw-source="[**View**](rxsparkdata.md)"><strong>View</strong></a><center></small></td>
         </tr>
         <tr>
-        <td>`rxSparkDataOps` </td>
+        <td><code>rxSparkDataOps</code> </td>
         <td> </td>
-        <td>Lists cached `RxParquetData` or `RxHiveData` data source objects. </td>
+        <td>Lists cached <code>RxParquetData</code> or <code>RxHiveData</code> data source objects. </td>
         <td>
-            <center><small>[**View**](rxsparkdataops.md)<center></small></td>   
-        </tr>
+            <center><small><a href="rxsparkdataops.md" data-raw-source="[**View**](rxsparkdataops.md)"><strong>View</strong></a><center></small></td><br/>        </tr>
         <tr>
-        <td>`rxSparkRemoveData`</td>
+        <td><code>rxSparkRemoveData</code></td>
         <td> </td>
-        <td>Removes cached `RxParquetData` or `RxHiveData` data source objects.</td>
+        <td>Removes cached <code>RxParquetData</code> or <code>RxHiveData</code> data source objects.</td>
         <td>
-            <center><small>[**View**](rxsparkdataops.md)<center></small></td>
+            <center><small><a href="rxsparkdataops.md" data-raw-source="[**View**](rxsparkdataops.md)"><strong>View</strong></a><center></small></td>
         </tr>
 </table>
 
 
 <br />
-##High Performance Computing and Distributed Computing Functions
+## High Performance Computing and Distributed Computing Functions
 
 The Hadoop compute context has a number of helpful functions used for high performance computing and distributed computing. Learn more about the entire set of functions in the [Distributed Computing guide](../../r/how-to-revoscaler-distributed-computing.md).
 
@@ -461,43 +459,43 @@ The Hadoop compute context has a number of helpful functions used for high perfo
         </th>
     </tr>
     <tr>
-        <td width="150px">`rxExec`</td>
+        <td width="150px"><code>rxExec</code></td>
         <td> </td>
         <td>Run an arbitrary R function on nodes or cores of a cluster.</td>
         <td>
-            <center><small>[**View**](rxexec.md)</small></center>
+            <center><small><a href="rxexec.md" data-raw-source="[**View**](rxexec.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxGetJobStatus`</td>
+        <td><code>rxGetJobStatus</code></td>
         <td> </td>
         <td>Get the status of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](rxgetjobresults.md)</small></center>
+            <center><small><a href="rxgetjobresults.md" data-raw-source="[**View**](rxgetjobresults.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxGetJobResults`</td>
+        <td><code>rxGetJobResults</code></td>
         <td> </td>
         <td>Get the return object(s) of a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](rxgetjobresults.md)</small></center>
+            <center><small><a href="rxgetjobresults.md" data-raw-source="[**View**](rxgetjobresults.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxGetJobOutput`</td>
+        <td><code>rxGetJobOutput</code></td>
         <td> </td>
         <td>Get the console output from a non-waiting distributed computing job.</td>
         <td>
-            <center><small>[**View**](rxgetjoboutput.md)</small></center>
+            <center><small><a href="rxgetjoboutput.md" data-raw-source="[**View**](rxgetjoboutput.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxGetJobs`</td>
+        <td><code>rxGetJobs</code></td>
         <td> </td>
         <td>Get the available distributed computing job information objects.</td>
         <td>
-                <center><small>[**View**](rxgetjobs.md)</small></center>
+                <center><small><a href="rxgetjobs.md" data-raw-source="[**View**](rxgetjobs.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
 </table>
@@ -507,7 +505,7 @@ The Hadoop compute context has a number of helpful functions used for high perfo
 
 
 <br />
-##Hadoop Convenience Functions
+## Hadoop Convenience Functions
 
 RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functionality via R. These functions require access to Hadoop, either locally or remotely via the RxHadoopMR or RxSpark compute contexts.
 
@@ -523,83 +521,83 @@ RevoScaleR also provides some wrapper functions for accessing Hadoop/HDFS functi
         </th>
     </tr>
     <tr>
-        <td width="200px">`rxHadoopCommand`</td>
+        <td width="200px"><code>rxHadoopCommand</code></td>
         <td width="15px"> </td>
         <td>Execute an arbitrary Hadoop command. Allows you to run basic Hadoop commands.</td>
         <td>
-            <center><small>[**View**](rxhadoopcommand.md)</small></center>
+            <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopVersion`</td>
+        <td><code>rxHadoopVersion</code></td>
         <td> </td>
         <td>Return the current Hadoop version.</td>
         <td>
-            <center><small>[**View**](rxhadoopcommand.md)</small></center>
+            <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopCopyFromClient`</td>
+        <td><code>rxHadoopCopyFromClient</code></td>
         <td> </td>
-        <td>Copy a file from a remote client to the Hadoop cluster's local file system, and then to HDFS.</td>
+        <td>Copy a file from a remote client to the Hadoop cluster&#39;s local file system, and then to HDFS.</td>
         <td>
-            <center><small>[**View**](rxhadoopcommand.md)</small></center>
+            <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopCopyFromLocal`</td>
+        <td><code>rxHadoopCopyFromLocal</code></td>
         <td> </td>
-        <td>Copy a file from the native file system to HDFS. Wraps the Hadoop `fs -copyFromLocal` command.</td>
+        <td>Copy a file from the native file system to HDFS. Wraps the Hadoop <code>fs -copyFromLocal</code> command.</td>
         <td>
-            <center><small>[**View**](rxhadoopcommand.md)</small></center>
+            <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopCopy`</td>
+        <td><code>rxHadoopCopy</code></td>
         <td> </td>
-        <td>Copy a file in the Hadoop Distributed File System (HDFS). Wraps the Hadoop `fs -cp` command.</td>
+        <td>Copy a file in the Hadoop Distributed File System (HDFS). Wraps the Hadoop <code>fs -cp</code> command.</td>
         <td>
-                <center><small>[**View**](rxhadoopcommand.md)</small></center>
+                <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopRemove`</td>
+        <td><code>rxHadoopRemove</code></td>
         <td> </td>
-        <td>Remove a file in HDFS. Wraps the Hadoop `fs -rm` command.</td>
+        <td>Remove a file in HDFS. Wraps the Hadoop <code>fs -rm</code> command.</td>
         <td>
-                <center><small>[**View**](rxhadoopcommand.md)</small></center>
+                <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopListFiles`</td>
+        <td><code>rxHadoopListFiles</code></td>
         <td> </td>
-        <td>List files in an HDFS directory. Wraps the Hadoop `fs -ls` or `fs -lsr` command.</td>
+        <td>List files in an HDFS directory. Wraps the Hadoop <code>fs -ls</code> or <code>fs -lsr</code> command.</td>
         <td>
-                <center><small>[**View**](rxhadoopcommand.md)</small></center>
+                <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopMakeDir`</td>
+        <td><code>rxHadoopMakeDir</code></td>
         <td> </td>
-        <td>Make a directory in HDFS. Wraps the Hadoop `fs -mkdir` command.</td>
+        <td>Make a directory in HDFS. Wraps the Hadoop <code>fs -mkdir</code> command.</td>
         <td>
-                <center><small>[**View**](rxhadoopcommand.md)</small></center>
+                <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopMove`</td>
+        <td><code>rxHadoopMove</code></td>
         <td> </td>
-        <td>Move a file in HDFS. Wraps the Hadoop `fs -mv` command.</td>
+        <td>Move a file in HDFS. Wraps the Hadoop <code>fs -mv</code> command.</td>
         <td>
-                <center><small>[**View**](rxhadoopcommand.md)</small></center>
+                <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
     <tr>
-        <td>`rxHadoopRemoveDir`</td>
+        <td><code>rxHadoopRemoveDir</code></td>
         <td> </td>
-        <td>Remove a directory in HDFS. Wraps the Hadoop `fs -rmr` command.</td>
+        <td>Remove a directory in HDFS. Wraps the Hadoop <code>fs -rmr</code> command.</td>
         <td>
-                <center><small>[**View**](rxhadoopcommand.md)</small></center>
+                <center><small><a href="rxhadoopcommand.md" data-raw-source="[**View**](rxhadoopcommand.md)"><strong>View</strong></a></small></center>
         </td>
     </tr>
 </table>

@@ -83,11 +83,11 @@ A default installation includes the MicrosoftML package, but not the pre-trained
 
 3. Uninstall the software in unattended mode.
 
-  `rserversetup.exe /quiet /uninstall`  
+   `rserversetup.exe /quiet /uninstall`  
 
 4. Offline install requires two .cab files that provide MRO and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](r-server-install-windows-offline.md).
 
-  `rserversetup.exe /offline /mediadir="D:/Public/CABS` 
+   `rserversetup.exe /offline /mediadir="D:/Public/CABS` 
 
 ## See Also
 

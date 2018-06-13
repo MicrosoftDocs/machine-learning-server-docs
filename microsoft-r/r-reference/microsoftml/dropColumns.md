@@ -27,20 +27,20 @@ ms.custom: ""
  
  
  
- #dropColumns: Drops columns from the dataset 
- ##Description
+ # dropColumns: Drops columns from the dataset 
+ ## Description
  
 Specified columns to drop from the dataset.
  
  
- ##Usage
+ ## Usage
 
 ```   
   dropColumns(vars, ...)
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   
@@ -54,11 +54,11 @@ Specified columns to drop from the dataset.
   
  
  
- ##Value
+ ## Value
  
 A `maml` object defining the transform.
  
- ##Author(s)
+ ## Author(s)
  
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 

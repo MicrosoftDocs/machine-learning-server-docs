@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "getService function (mrsdeploy) | Microsoft Docs" 
 description: " Get a web service for consumption on running on R Server. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,52 +21,52 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #getService: Get a web service for consumption. 
- ##Description
- 
+
+
+
+
+ # getService: Get a web service for consumption. 
+ ## Description
+
 Get a web service for consumption on running on R Server.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   getService(name, v = character(0), destination = NULL)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `name`
  The web service name. 
-  
-  
-  
+
+
+
  ### `v`
  The web service version. 
-  
-  
-  
+
+
+
  ### `destination`
  (optional) The codegen output directory location. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 Other service methods: [deleteService](deleteService.md),
 [listServices](listServices.md),
 [print.serviceDetails](print.serviceDetails.md),
@@ -74,17 +74,15 @@ Other service methods: [deleteService](deleteService.md),
 [serviceOption](serviceOption.md),
 [summary.serviceDetails](summary.serviceDetails.md),
 [updateService](updateService.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # Discover the `add-service` version `1.0.1`
 api <- getService("add-service", "1.0.1")
  ## End(Not run) 
-  
- 
 ```
- 
+

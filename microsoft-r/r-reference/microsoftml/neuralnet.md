@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #neuralNet: neuralNet 
- ##Description
+ # neuralNet: neuralNet 
+ ## Description
  
 Creates a list containing the function name and arguments to train a
  NeuralNet model with [rxEnsemble](rxEnsemble.md).
  
  
- ##Usage
+ ## Usage
 
 ```   
   neuralNet(numHiddenNodes = 100, numIterations = 100, optimizer = sgd(),
@@ -43,7 +43,7 @@ Creates a list containing the function name and arguments to train a
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   

@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxTransform function (revoAnalytics) | Microsoft Docs" 
 description: " Description of the recommended method for creating *on the fly* variables. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,21 +21,21 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #rxTransform: Dynamic Variable Transformation Functions 
- ##Description
- 
+
+
+
+
+ # rxTransform: Dynamic Variable Transformation Functions 
+ ## Description
+
 Description of the recommended method for creating *on the fly*
 variables.
- 
- 
- ##Details
- 
+
+
+ ## Details
+
 Analytical functions within the **RevoScaleR** package use a formal
 transformation function framework for generating *on the fly* variables
 as opposed to the traditional R method of including transformations directly
@@ -102,7 +102,6 @@ the interaction with `transformObjects` objects packed into transformation funct
    * Increment the current value of "myObject" by 2:`.rxModify("myObject", 2)`  
    * Decrement the current value of "myObject" by 4:`.rxModify("myObject", 4, FUN = "-")`  
    * Convert "myObject", assumed to be a vector, to a factor with  specified levels:`.rxModify("myObject", levels = 1:5, exclude = 6:10, FUN = "factor")`  
- 
 
 
 
@@ -114,11 +113,12 @@ the interaction with `transformObjects` objects packed into transformation funct
 
 
 
- 
- 
- 
- ##See Also
- 
+
+
+
+
+ ## See Also
+
 [rxFormula](rxFormula.md),
 [rxTransform](rxTransform.md),
 [rxCrossTabs](rxCrossTabs.md),
@@ -128,11 +128,11 @@ the interaction with `transformObjects` objects packed into transformation funct
 [rxSummary](rxSummary.md),
 [rxDataStep](rxDataStep.md),
 [rxImport](rxImport.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   # Develop a data.frame to serve as a local data source
   set.seed(100)
   N <- 100
@@ -145,20 +145,20 @@ the interaction with `transformObjects` objects packed into transformation funct
                      pounds = rnorm(N, 140, 20),
                      sport = factor(sample(sportLevels, N, replace = TRUE),
                                     levels = sportLevels))
-  
+
   # Take a peek at the data source
   head(myDF)
-  
+
   # Develop a transformation function
   xform <- function(dataList)
   {
       # Create a new continuous variable from an existing continuous variable: 
       # convert weight in units of pounds to kilograms.
       dataList$kilos <- dataList$pounds * 0.45359237
-  
+
       # Remove an existing variable: 'pounds'
       dataList$pounds <- NULL
-  
+
       # Create a new continuous variable from an existing factor variable:
       # convert 'height' categories (character strings) to a continuous 
       # variable named 'heightInches' containing the height in inches.
@@ -166,29 +166,29 @@ the interaction with `transformObjects` objects packed into transformation funct
       feet <- as.numeric(sub("ft.*", "", heightStrings))
       inches <- as.numeric(sub("in", "", sub(".*ft", "", heightStrings)))
       dataList$heightInches <- feet * 12 + inches
-  
+
       # Alter an existing factor variable: for plotting purposes, 
       # coerce the 'sport' factor levels to be in alphabetical order.
       dataList$sport <- factor(dataList$sport,
                                levels = sort(levels(dataList$sport)))
-  
+
       # Return the adapted variable list
-  	dataList
+    dataList
   }
-  
+
   # Perform a cube. Note the use of the 'kilos' variable in the formula, which
   # is created in the variable transformation function.
   cubeWeight <- rxCube(kilos ~ sport : sex, data = myDF, transformFunc = xform,
                        transformVars = c("pounds", "height", "sport"))
-  
+
   # Analyze the cube results
   cubeWeight
   if ("lattice" %in% .packages())
   {
-  	barchart(kilos ~ sport | sex, data = cubeWeight, xlab = "Sport",
+    barchart(kilos ~ sport | sex, data = cubeWeight, xlab = "Sport",
            ylab = "Mean Weight (kg)")
   }
-  
+
   # Perform a cube with multiple dependent variables using a formula string
   cubeHW <- rxCube(cbind(kilos, heightInches) ~ sport : sex, data = myDF,
                    transformFunc = xform,
@@ -196,76 +196,76 @@ the interaction with `transformObjects` objects packed into transformation funct
   cubeHW
   if ("lattice" %in% .packages())
   {
-  	barchart(heightInches + kilos ~ sex | sport, data = cubeHW, xlab = "Sex",
+    barchart(heightInches + kilos ~ sex | sport, data = cubeHW, xlab = "Sex",
            ylab = "Mean Height (in) | Mean Weight (kg)")
   }
-           
+
   # Use a transformation function to match external group data to
   # individual observations
-           
+
   censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
-  
+
   # Create a function that creates a transformation function
   makeTransformFunc <- function()
   {
-  	# Put average per capita educational expenditures into a named vector
-  	educExp <- c(Connecticut=1795.57, Washington=1170.46, Indiana = 1289.66)
-  			
-   	function( dataList )
-  	{
-  		dataList$stateEducExpPC <- educExp[match(dataList$state, names(educExp))]
-  		return( dataList)
-  	}
+    # Put average per capita educational expenditures into a named vector
+    educExp <- c(Connecticut=1795.57, Washington=1170.46, Indiana = 1289.66)
+
+    function( dataList )
+    {
+        dataList$stateEducExpPC <- educExp[match(dataList$state, names(educExp))]
+        return( dataList)
+    }
   }
-  
+
   linModObj <- rxLinMod(incwage~sex + age + stateEducExpPC, data=censusWorkers, 
-  	transformFun=makeTransformFunc(), transformVars="state")
+    transformFun=makeTransformFunc(), transformVars="state")
   summary(linModObj)         
-  
-  
+
+
   ###
   # Illustrate the use of .rxGet, .rxSet and .rxModify
   ###
-  
+
   # This file has five blocks and so our data step will loop through the
   # transformation function (defined below) six times: once as a test
   # check performed by rxDataStep and once per block in the file.
   # The test step is skipped if returnTransformObjects is TRUE
-  
+
   inFile <- file.path(rxGetOption("unitTestDataDir"), "test100r5b.xdf") 
-  
+
   # Basic example
   "myTestFun1" <- function(dataList) 
   { 
       # If returnTransformObjects is TRUE, we won't get a test chunk (0)
       print(paste("Processing chunk", .rxChunkNum))
-      
+
       numRows <- length(dataList[[1]])
       # Increment numRows by the number of rows in this chunk
       .rxSet("numRows", .rxGet("numRows") + numRows)
-      
+
       # Increment numChunks by 1
       .rxModify("numChunks", 1L, FUN = "+")
-      
+
       # Multiply current count3 by twice its value
       sumxnum1 <- sum(dataList$xnum1)
       print(paste("Sum of chunk xnum1:", sumxnum1))
       .rxModify("sumxnum1", sumxnum1, FUN = "+")
-      
+
       # Don't return any data, since were just want transformObjects
       return( NULL )  
   }
-  
+
   newValues <- rxDataStep( inData = inFile, transformFunc = myTestFun1,
       transformObjects = list(numRows = 0L, numChunks = 0L, sumxnum1 = 0L),
       returnTransformObjects = TRUE)
   newValues
-  
+
   # More complicated example using transformEnv
   "myFunction" <- function() 
   { 
       count1 <- 100L
-      
+
       "myTestFun" <- function(dataList) 
       { 
           if (!.rxIsTestChunk)
@@ -280,16 +280,16 @@ the interaction with `transformObjects` objects packed into transformation funct
               # Chunk 5: 105         
               count1 <<- count1 + 1L
               print(count1)
-              
+
               # Targeted update: increment count2
               .rxSet("count2", .rxGet("count2") + 1L)
-              
+
               # Targeted update with .rxModify: increment count3
               .rxModify("count3", 1L, FUN = "+")
-              
+
               # Targeted update with .rxModify: multiply current count4 by twice its value
               .rxModify("count4", 2L, FUN = "*")
-              
+
               # Targeted update with .rxModify: permute second term of series, add nothing
               # Chunk 0: 1 2 3 4 5
               # Chunk 1: 1 3 4 5 2
@@ -299,32 +299,32 @@ the interaction with `transformObjects` objects packed into transformation funct
               # Chunk 5: 1 3 4 5 2
               .rxModify("series", n = 2L, bias = 0L, FUN = "permute")
           }
-  
+
           return(dataList) 
       }
-  
+
       myEnv <- new.env(hash = TRUE, parent = baseenv())
       assign("permute", function(x, n = 1L, bias = 10) c(x[-n], x[n]) + bias, envir = myEnv)
       rxDataStep( inData = inFile, transformFunc = myTestFun, 
                   transformObjects = list(count1 = 0L, count2 = 0L, count3 = 0L, count4 = 1L, series = 1:5),
                   transformEnv = myEnv)
-                  
+
       myEnv
   }
-  
+
   # Obtain the transform environment containing the results
   transformEnvir <- myFunction()
-  
+
   # Check results
   all.equal(transformEnvir[["count1"]], 0L)
   all.equal(transformEnvir[["count2"]], 5L)
   all.equal(transformEnvir[["count3"]], 5L)
   all.equal(transformEnvir[["count4"]], 32L)
   all.equal(transformEnvir[["series"]], c(1L, 3L, 4L, 5L, 2L))
-  
+
   #############################################################################################
   # Exclude computations for dependent variable when using rxPredict
-  
+
   myTransform <- function(dataList)
   {
       if (!.rxIsPrediction)
@@ -336,14 +336,12 @@ the interaction with `transformObjects` objects packed into transformation funct
   }
   linModOut <- rxLinMod(SepalLengthLog~SepalWidthLog, data = iris,
      transformFunc = myTransform, transformVars = c("Sepal.Length", "Sepal.Width"))
-     
+
   # Copy the iris data and remove Sepal.Length - used for the dependent variable
   iris1 <- iris
   iris1$Sepal.Length <- NULL
   # Run a prediction using the smaller data set
   predOut <- rxPredict(linModOut, data = iris1)
-  
- 
 ```
- 
- 
+
+

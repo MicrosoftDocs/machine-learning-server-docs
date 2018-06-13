@@ -164,7 +164,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 		> rxSummary(~., iris)
 
-  Partial output is as follows (showing the first 4 lines).
+   Partial output is as follows (showing the first 4 lines).
 
 		Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.003 seconds
 		Computation time: 0.010 seconds.
@@ -173,9 +173,9 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 4. Run a sample local job.
 
-  This step uses the sample dataset and downloads data from HDFS, confirming that your local session can access HDFS.
+   This step uses the sample dataset and downloads data from HDFS, confirming that your local session can access HDFS.
 
-  Paste the following code into your Revo64 session.
+   Paste the following code into your Revo64 session.
 
 		input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
 
@@ -187,7 +187,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 		adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
 		adsSummary
 
-  Partial output is as follows (showing the last 8 lines).
+   Partial output is as follows (showing the last 8 lines).
 
 		DayOfWeek Counts
 		Monday    97975
@@ -200,9 +200,9 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 
 5. Run a sample Hadoop job.
 
-  This step uses the sample dataset to run a Hadoop job.
+   This step uses the sample dataset to run a Hadoop job.
 
-  Paste the following code into your Revo64 session. This snippet differs from the previous snippet by the first line.
+   Paste the following code into your Revo64 session. This snippet differs from the previous snippet by the first line.
 
 		rxSetComputeContext(RxHadoopMR(consoleOutput=TRUE))
 		input <- file.path("/share/SampleData/AirlineDemoSmall.csv")
@@ -215,7 +215,7 @@ The next procedure loads sample data and runs the Revo64 program to further veri
 		adsSummary <- rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data = airDS)
 		adsSummary
 
-  Partial output is as follows (showing the first 10 lines).
+   Partial output is as follows (showing the first 10 lines).
 
 		======  sandbox.hortonworks.com (Master HPA Process) has started run at Fri Jun 10 18:26:15 2016  ======
 		Jun 10, 2016 6:26:21 PM RevoScaleR main
@@ -268,19 +268,19 @@ Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file a
 	    mkdir /mnt/mrsimage
 	    mount –o loop <filename> /mnt/mrsimage
 
-  For RHEL/CENTOS systems;
+   For RHEL/CENTOS systems;
 		tar zxvf MRS80RHEL.tar.gz
 
-  For SLES systems;
+   For SLES systems;
 		tar zxvf MRS80SLES.tar.gz
 
 2. Copy the installer gzipped tar file to a writable directory, such as /tmp:
 
-  From the mounted img file:
+   From the mounted img file:
 		cp /mnt/mrsimage/Microsoft-R-Server-`*`.tar.gz /tmp
 
-  From the unpacked tar file:
-		cp /tmp/MRS80*/Microsoft-R-Server-`*`.tar.gz /tmp
+   From the unpacked tar file:
+        cp /tmp/MRS80<em>/Microsoft-R-Server-`</em>`.tar.gz /tmp
 
 3. The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “&gt;” indicate commands typed into an interactive pdsh session):
 
@@ -311,21 +311,21 @@ Install the Cloudera Manager parcels as follows:
 
 2. Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
 
-  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+   If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
 		mount –o loop MRS80HADOOP.img /mnt/mrsimage
 
-  If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+   If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
 		tar zxvf MRS80HADOOP.tar.gz
 
 3. Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
 
-  From the mounted img file:
+   From the mounted img file:
 		cp /mnt/mrsimage/MRS-8.0.5-* /opt/cloudera/parcel-repo
 
-  From the unpacked tar file:
+   From the unpacked tar file:
 		cp /tmp/MRS80HADOOP/MRS-8.0.5-* /opt/cloudera/parcel-repo
 
 4. You should have the following files in your parcel repo:
@@ -335,7 +335,7 @@ Install the Cloudera Manager parcels as follows:
 		MRS-8.0.5-el6.parcel
 		MRS-8.0.5-el6.parcel.sha
 
-  Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others).
+   Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others).
 
 5. In your browser, open Cloudera Manager.
 

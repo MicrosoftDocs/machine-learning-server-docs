@@ -30,12 +30,12 @@ ms.assetid: ""
  
  
  
- #RevoInfo: Microsoft R Information Functions 
- ##Description
+ # RevoInfo: Microsoft R Information Functions 
+ ## Description
  Functions giving information about Microsoft R.
  
  
- ##Usage
+ ## Usage
 
 ```   
   RevoLicense()
@@ -46,12 +46,12 @@ ms.assetid: ""
  
  
  
- ##Details
+ ## Details
  
 `RevoLicense` displays the Microsoft R license. `revo` displays the Microsoft R Server home page. `readme` displays the Microsoft R release notes.
  
  
- ##Value
+ ## Value
  
 For `RevoLicense`, `revo`,
 and `readme`, `NULL` is returned invisibly.

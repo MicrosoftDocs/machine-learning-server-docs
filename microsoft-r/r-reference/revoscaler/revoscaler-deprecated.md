@@ -32,14 +32,14 @@ ms.custom: ""
  
  
  
- #RevoScaleR-deprecated: Deprecated functions in RevoScaleR 
- ##Description
+ # RevoScaleR-deprecated: Deprecated functions in RevoScaleR 
+ ## Description
  
 These functions are provided for compatibility with 
 older versions of RevoScaleR only, and may be defunct as soon as the next release. 
  
  
- ##Usage
+ ## Usage
 
 ```   
   rxGetNodes(headNode, includeHeadNode = FALSE, makeRNodeNames = FALSE, getWorkersOnly=TRUE) 
@@ -102,7 +102,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
      
@@ -459,7 +459,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
  
  
- ##Details
+ ## Details
  
 Use [rxImport](rxImport.md) instead of `rxImportToXdf`.
 Use [rxDataStep](rxDataStep.md) instead of  `rxDataStepXdf`.
@@ -469,7 +469,7 @@ Use [rxSort](rxSortXdf.md) instead of  `rxSortXdf`.
 Use [rxGetAvailableNodes](rxGetAvailableNodes.md) instead of  `rxGetNodes`.
  
  
- ##Value
+ ## Value
  
 For `rxSortXdf`: If sorting is successful, `TRUE`
 is returned; otherwise `FALSE`is returned.
@@ -478,7 +478,7 @@ is returned; otherwise `FALSE`is returned.
  
  
  
- ##See Also
+ ## See Also
  
 [rxImport](rxImport.md),
 [rxDataStep](rxDataStep.md),

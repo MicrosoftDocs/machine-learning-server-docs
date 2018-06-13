@@ -23,7 +23,7 @@ ms.prod: "mlserver"
 
 ---
 
-#Testing and Debugging Scripts
+# Testing and Debugging Scripts
 
 For tips and guidance on how to develop portable R code using the deployrUtils package, see the [Writing Portable R Code](../deployr/deployr-data-scientist-write-portable-r-code.md) guide on the DeployR website.
 
@@ -35,7 +35,7 @@ Use the **Test** page to do the following to repository-managed scripts:
 - Debug the functioning of scripts to which you have [access rights](../deployr/deployr-repository-manager-files.md#about-file-properties)
 
 
-##Test Page Panes
+## Test Page Panes
 
 The **Test** page is divided into four panes:
 
@@ -47,7 +47,7 @@ The **Test** page is divided into four panes:
 
 + **Artifacts** pane (4): allows you to see the [files and plots](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) produced when the code was last executed as well as inspect the API [request and response](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) markup.
 
- ![](media/deployr-repository-manager-testing-debugging-scripts/testpagepanes.png)
+  ![](media/deployr-repository-manager-testing-debugging-scripts/testpagepanes.png)
 
 ## Opening the Test Page
 
@@ -62,13 +62,13 @@ The **Test** page is divided into four panes:
 The **Source** pane presents the script’s R code. The extent to which you can interact with the source code depends entirely on [permissions and policies](../what-is-operationalization.md).
 Viewing R Code
 
-###Viewing R Code
+### Viewing R Code
 
 In this pane, you can view and scroll through the source code of the R script. Code elements are color-coded for your convenience.
 
 >If you do not own this file and cannot see the code in the **Source** pane, then a [server policy](../what-is-operationalization.md) was changed by your administrator. An onscreen alert will also appear.
 
-###Editing R Code
+### Editing R Code
 
 Only the owners of a file can edit the source code of the [*Latest*](../deployr/deployr-repository-manager-files.md#working-with-historical-versions) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
 

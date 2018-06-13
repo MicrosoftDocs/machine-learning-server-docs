@@ -27,8 +27,8 @@ ms.custom: ""
  
  
  
- #RxTextData-class: Class RxTextData 
- ##Description
+ # RxTextData-class: Class RxTextData 
+ ## Description
  
 Text data source connection class.
  
@@ -50,17 +50,17 @@ Class RxDataSource, by class RxFileData.
  
 
 
-###`show`
+### `show`
 `signature(object = "RxTextData")`: ...
 
 
 
  
- ##Author(s)
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
- ##See Also
+ ## See Also
  
 [RxDataSource-class](RxDataSource-class.md),
 [RxTextData](RxTextData.md),

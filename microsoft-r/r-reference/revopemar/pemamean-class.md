@@ -27,11 +27,11 @@ ms.assetid: ""
  
  
  
- #PemaMean-class: Class PemaMean
+ # PemaMean-class: Class PemaMean
 
  Applies to version 8.0.3 of package RevoPemaR.
  
- ##Description
+ ## Description
  
 Example PEMA reference class to compute mean
  
@@ -52,7 +52,7 @@ Class PemaBaseClass, directly.
  
  
  
- ##See Also
+ ## See Also
  
 [PemaMean](pemamean.md)
 [PemaBaseClass](pemabaseclass.md)

@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxSetComputeContext function (revoAnalytics) | Microsoft Docs" 
 description: " Get or set the active compute context for RevoScaleR computations " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,75 +21,72 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxSetComputeContext: Get and Set the compute context 
- ##Description
- 
+
+
+
+ # rxSetComputeContext: Get and Set the compute context 
+ ## Description
+
 Get or set the active compute context for RevoScaleR computations
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
-  
-  rxSetComputeContext(computeContext, ...) 
-               
-  rxGetComputeContext() 
- 
-```
- 
- ##Arguments
 
-   
-    
+  rxSetComputeContext(computeContext, ...) 
+
+  rxGetComputeContext() 
+
+```
+
+ ## Arguments
+
+
+
  ### `computeContext`
  character string specifying class name or description of the specific  class to instantiate, or an existing `RxComputeContext` object.  Choices include: `"RxLocalSeq"` or `"local"`, `"RxLocalParallel"` or `"localpar"`,  `"RxSpark"` or `"spark"`,  `"RxHadoopMR"` or `"hadoopmr"`,    and `"RxForeachDoPar"` or `"dopar"`. 
-  
-  
-    
+
+
+
  ### ` ...`
  any other arguments are passed to the class generator determined from `computeContext`. 
-  
- 
- 
- 
- ##Value
- 
+
+
+
+
+ ## Value
+
 `rxSetComputeContext` returns the previously active compute context invisibly.
 `rxGetComputeContext` returns the active compute context.
- 
- 
- 
- ##Author(s)
+
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [RxComputeContext](RxComputeContext.md),
 [rxOptions](rxOptions.md),
 [rxGetOption](rxOptions.md)
 [rxExec](rxExec.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 origComputeContext <- rxSetComputeContext("localpar")
 x <- 1:10
 rxExec(print, x, elemType = "cores", timesToRun = 10)
 rxSetComputeContext( origComputeContext )
  ## End(Not run) 
-  
-  
- 
 ```
- 
- 
- 
+
+
+

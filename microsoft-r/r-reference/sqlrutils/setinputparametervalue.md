@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "setInputParameterValue function (sqlrutils) | Microsoft Docs" 
 description: " setInputParameterValue: assigns a value to an input parameter of the                  stored procedure/embedded R function that is going to be                  used in the next run of the stored procedure. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,51 +21,51 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #setInputParameterValue: Assign a Value to the Input Data Parameter of the SQL Stored Procedure 
- ##Description
- 
+
+
+
+
+ # setInputParameterValue: Assign a Value to the Input Data Parameter of the SQL Stored Procedure 
+ ## Description
+
 `setInputParameterValue`: assigns a value to an input parameter of the
 stored procedure/embedded R function that is going to be
 used in the next run of the stored procedure.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   setInputParameterValue(inParam, value)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `inParam`
  A character string, the name of input parameter into the R function. 
-  
-  
-  
+
+
+
  ### `value`
  A value that is to be bound to the input parameter. Note: binding for input parameters of type "raw" is not supported. 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 InputParameter Object
- 
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
   # See ?StoredProcedure for creating the `cleandata` table.
   # and ?executeStoredProcedure for creating the `rdata` table.
 
@@ -112,7 +112,5 @@ InputParameter Object
   model <- executeStoredProcedure(sp_df_df, id, name, connectionString = conStr)
   model$data
  ## End(Not run) 
-  
- 
 ```
- 
+

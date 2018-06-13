@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "explore function (olapR) | Microsoft Docs" 
 description: "   Allows for exploration of cube metadata " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,87 +21,87 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #explore: olapR explore Method 
- 
- ##Description
- 
+
+
+
+ # explore: olapR explore Method 
+
+ ## Description
+
 Allows for exploration of cube metadata
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   explore(olapCnn, cube = NULL, dimension = NULL, hierarchy = NULL, level = NULL)
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ### `olapCnn`
  Object of class "OlapConnection" returned by `OlapConnection()` 
-  
-    
+
+
  ### `cube`
  A string specifying a cube name 
-  
-    
+
+
  ### `dimension`
  A string specifying a dimension name 
-  
-    
+
+
  ### `hierarchy`
  A string specifying a hierarchy name 
-  
-    
+
+
  ### `level`
  A string specifying a level name 
-  
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 `explore` 
- 
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 Prints cube metadata. Returns NULL.
 An error is thrown if arguements are invalid
- 
- 
- ##Note
- 
+
+
+ ## Note
+
 Arguements must be specified in order. Eg: In order to explore hierarchies, a dimension and a cube must be specified.
- 
- 
- 
- ##References
+
+
+
+ ## References
   See [execute2D](Execute2D.md) or [executeMD](ExecuteMD.md) for references.  
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[execute2D](Execute2D.md)
-   
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   cnnstr <- "Data Source=localhost; Provider=MSOLAP;"
   ocs <- OlapConnection(cnnstr)
-  
+
   #Exploring Cubes
   explore(ocs)
   #Analysis Services Tutorial
@@ -109,7 +109,7 @@ query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[ex
   #Reseller Sales
   #Sales Summary
   #[1] TRUE
-  
+
   #Exploring Dimensions
   explore(ocs, "Analysis Services Tutorial")
   #Customer
@@ -126,7 +126,7 @@ query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[ex
   #Sales Territory
   #Ship Date
   #[1] TRUE
-  
+
   #Exploring Hierarchies
   explore(ocs, "Analysis Services Tutorial", "Product")
   #Category
@@ -152,7 +152,7 @@ query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[ex
   #Subcategory
   #Weight
   #[1] TRUE
-  
+
   #Exploring Levels
   explore(ocs, "Analysis Services Tutorial", "Product", "Product Categories")
   #(All)
@@ -160,7 +160,7 @@ query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[ex
   #Subcategory
   #Product Name
   #[1] TRUE
-  
+
   #Exploring Members
   #NOTE: -> indicates that the following member is a child of the previous member
   explore(ocs, "Analysis Services Tutorial", "Product", "Product Categories", "Category")
@@ -171,6 +171,5 @@ query`, `[OlapConnection](OlapConnection.md)`, `[executeMD](ExecuteMD.md)`, `[ex
   #Assembly Components
   #-> Assembly Components
   #--> Assembly Components
- 
 ```
- 
+

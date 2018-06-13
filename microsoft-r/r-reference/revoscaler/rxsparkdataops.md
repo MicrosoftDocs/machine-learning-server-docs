@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxSparkListData, rxSparkRemoveData {RevoScaleR} function (revoAnalytics) | Microsoft Docs" 
 description: " Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](RxSpark.md) compute context. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,60 +21,60 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxSparkListData, rxSparkRemoveData {RevoScaleR}: Manage Cached Data in Spark 
- ##Description
- 
+
+
+
+ # rxSparkListData, rxSparkRemoveData {RevoScaleR}: Manage Cached Data in Spark 
+ ## Description
+
 Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](RxSpark.md) compute context.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxSparkListData(showDescription=TRUE,
       computeContext = rxGetOption("computeContext"))
-      
+
   rxSparkRemoveData(list,
       computeContext = rxGetOption("computeContext"))    
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ### `list`
  list of cached objects need to be deleted. 
-  
-    
+
+
  ### `showDescription`
  logical indicating whether or not to print out the detail to console. 
-  
-    
+
+
  ### `computeContext`
  `RxSpark` compute context object. 
-  
- 
- 
- 
- ##Value
- 
+
+
+
+
+ ## Value
+
 List of all objects cached in Spark memory system for `rxSparkListData`.
 
 No return values for `rxSparkRemoveData`.
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 cc <- rxSparkConnect()
 
 colInfo = list( DayOfWeek = list(type = "factor"))
@@ -100,7 +100,5 @@ rxSparkRemoveData(rxSparkListData())
 
 rxSparkDisconnect(cc)
  ## End(Not run) 
-  
- 
 ```
- 
+

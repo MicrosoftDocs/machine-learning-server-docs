@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "featurizeImage function (MicrosoftML) " 
 description: " Featurizes an image using a pre-trained deep neural network model. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,39 +21,39 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #featurizeImage: Machine Learning Image Featurization Transform 
- ##Description
- 
+
+
+
+
+ # featurizeImage: Machine Learning Image Featurization Transform 
+ ## Description
+
 Featurizes an image using a pre-trained deep neural network model.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   featurizeImage(var, outVar = NULL, dnnModel = "Resnet18")
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `var`
  Input variable containing extracted pixel values. 
-  
-  
-  
+
+
+
  ### `outVar`
  The prefix of the output variables containing the image features. If null, the input variable name will be used. The default value is `NULL`. 
-  
-  
-  
+
+
+
  ### `dnnModel`
  The pre-trained deep neural network. The possible options are:  
 *   `"resnet18"` 
@@ -61,32 +61,32 @@ Featurizes an image using a pre-trained deep neural network model.
 *   `"resnet101"` 
 *   `"alexnet"`  
  The default value is `"resnet18"`. See [`Deep Residual Learning for Image Recognition`](http://www.cv-foundation.org/openaccess/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html)  for details about ResNet. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 `featurizeImage` featurizes an image using the specified
 pre-trained deep neural network model. The input variables to this transforms must 
 be extracted pixel values.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 A `maml` object defining the transform.
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   train <- data.frame(Path = c(system.file("help/figures/RevolutionAnalyticslogo.png", package = "MicrosoftML")), Label = c(TRUE), stringsAsFactors = FALSE)
-  
+
   # Loads the images from variable Path, resizes the images to 1x1 pixels and trains a neural net.
   model <- rxNeuralNet(
       Label ~ Features,
@@ -99,7 +99,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
       mlTransformVars = "Path",
       numHiddenNodes = 1,
       numIterations = 1)
-  
+
   # Featurizes the images from variable Path using the default model, and trains a linear model on the result.
   model <- rxFastLinear(
       Label ~ Features,
@@ -111,14 +111,13 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
           featurizeImage(var = "Features")
           ),
       mlTransformVars = "Path")
- 
 ```
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
+
+

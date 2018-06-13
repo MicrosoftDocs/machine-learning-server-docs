@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "CensusUS5Pct2000 data (revoAnalytics) | Microsoft Docs" 
 description: " The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,28 +21,28 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #CensusUS5Pct2000: IPUMS 2000 U.S. Census Data 
- ##Description
- 
+
+
+
+
+ # CensusUS5Pct2000: IPUMS 2000 U.S. Census Data 
+ ## Description
+
 The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format.
- 
- 
- ##Format
- 
+
+
+ ## Format
+
 An .xdf file with 14,058,983 observations on 264 variables. For a
 complete description of the variables, see
 [`http://usa.ipums.org/usa-action/variables/group`](http://usa.ipums.org/usa-action/variables/group)
 .
- 
- 
- ##Details
- 
+
+
+ ## Details
+
 The data in CensusUS5Pct2000 comes from the *Integrated Public Use
 Microdata Series* (IPUMS) 5% 2000 U.S. Census sample, produced and maintained
 by the Minnesota Population Center at the University of Minnesota. The full
@@ -62,39 +62,37 @@ included in the standard **RevoScaleR** distribution. It is, however, used
 in several documentation examples and demo scripts. You are free to use this
 file (and subsamples of it) subject to the restrictions imposed by IPUMS, but
 do so at your own risk.
- 
- 
- ##Source
- 
+
+
+ ## Source
+
 Minnesota Population Center, University of Minnesota. *Integration Public
 Use Microdata Series*. [`http://www.ipums.org`](http://www.ipums.org)
 .
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [CensusWorkers](CensusWorkers.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 dataPath = "C:/Microsoft/Data"
 bigCensusData <- file.path(dataPath, "CensusUS5Pct2000.xdf") 
 censusEarly20s <-  file.path(dataPath, "CensusEarly20s.xdf")
 rxDataStep(inData = bigCensusData, outFile = censusEarly20s,
-			  rowSelection = age >= 20 & age <= 25,
+              rowSelection = age >= 20 & age <= 25,
               varsToKeep = c("age", "incwage", "perwt", "sex", "wkswork1")) 
 rxGetInfo(censusEarly20s, getVarInfo = TRUE) 
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

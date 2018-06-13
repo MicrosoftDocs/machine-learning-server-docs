@@ -36,7 +36,7 @@ The DeployR API is extensive, providing a wide range of services related to [use
 >[!NOTE]
 >Hovering your mouse over most UI elements in the API Explorer reveals helpful tooltips.
 
-##Accessing the API Explorer
+## Accessing the API Explorer
 
 The API Explorer is accessible after auto-installing DeployR. With a manual installation on Linux, make sure you install the API Explorer software. For more information, see the DeployR Installation Guide for your OS.
 
@@ -51,7 +51,7 @@ The API Explorer is accessible after auto-installing DeployR. With a manual inst
 
 The interface to the API Explorer consists of four main panels:
 
-###Panel 1: Preferences 
+### Panel 1: Preferences 
 
 At the top of the API Explorer window, you can find the Preferences Panel. Preference controls are on the right side of this panel. You can use these controls to set global preferences for all of the API calls you make within this tool.
 
@@ -63,7 +63,7 @@ These global preferences are described as follows:
 -  ***DEV*** : this preference specifies the default device for rendering plots in R: PNG or SVG
 -  ***DLD*** : this preference specifies whether file downloads are saved as attachments or rendered directly in the Web browser.
 
-###Panel 2: The API Tabs
+### Panel 2: The API Tabs
 
 The center section of the API Explorer window contains the API tabs panel:
 
@@ -139,7 +139,7 @@ The Jobs tab offers access to the full set of [Job APIs](deployr-api-reference.m
 
 The Repo Scripts tab offers access to the full set of [Repository Script APIs](deployr-api-reference.md#reposcripts).
 
-###Panel 3: API Request
+### Panel 3: API Request
 
 The lower left area of the API Explorer window contains the API Request Panel. Each time you make an API call, this panel automatically displays details of that call, including the following:
 
@@ -149,7 +149,7 @@ The lower left area of the API Explorer window contains the API Request Panel. E
 
 ![](media/deployr-api-explorer-tool/deployr-api-explorer-tool-3.png)
 
-###Panel 4: API Response Markup
+### Panel 4: API Response Markup
 
 The lower right area of the API Explorer window contains the API Response Markup Panel. Each time an API call sees a response from the server, the complete response markup for the call is displayed in this panel.
 

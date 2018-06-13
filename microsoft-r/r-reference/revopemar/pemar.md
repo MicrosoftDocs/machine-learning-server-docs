@@ -25,7 +25,7 @@ ms.assetid: ""
  
 --- 
  
- #RevoPemaR package
+ # RevoPemaR package
 
 The **RevoPemaR** package provides a framework for creating Parallel External Memory Algorithms in R using R Reference Classes.
 

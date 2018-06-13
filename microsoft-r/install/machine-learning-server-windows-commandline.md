@@ -92,11 +92,11 @@ The command line equivalent of a double-click invocation of ServerSetup.exe is `
 
 3. Uninstall the software in unattended mode.
 
-  `serversetup.exe /quiet /uninstall`  
+   `serversetup.exe /quiet /uninstall`  
 
 4. Unattended offline install requires .cab files that provide open-source distributions and other dependencies. The `/offline` parameter instructs setup to look for the .cab files on the local system. By default, setup looks for the .cab files in the `%temp%` directory of local admin, but you could also set the media directory if the .cab files are in a different folder. For more information and .cab download links, see [Offline installation](machine-learning-server-windows-offline.md).
 
-  `serversetup.exe /quiet /offline /mediadir="D:/Public/CABS` 
+   `serversetup.exe /quiet /offline /mediadir="D:/Public/CABS` 
 
 <a name="cab-files"></a>
 

@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxSqlLibPaths function (revoAnalytics) | Microsoft Docs" 
 description: " Gets the search path for the library trees for packages while executing inside the SQL Server, using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,47 +21,47 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxSqlLibPaths: Search Paths for Packages in SQL compute context 
- ##Description
- 
+
+
+ # rxSqlLibPaths: Search Paths for Packages in SQL compute context 
+ ## Description
+
 Gets the search path for the library trees for packages while executing inside the SQL Server, using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxSqlLibPaths(connectionString)
- 
-```
- 
- ##Arguments
 
-   
-  
-    
+```
+
+ ## Arguments
+
+
+
+
  ### `connectionString`
  a `character` connection string for the SQL Server. This should be a local connection string (external connection strings are not supported while executing on a SQL Server). You can also specify [RxInSqlServer](RxInSqlServer.md) compute context object for input, from which the connection string will be extracted and used.  
-   
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 For [RxInSqlServer](RxInSqlServer.md) compute context, a user specified on the connection string must be a member of one of the following roles `'db_owner'` `'rpkgs-shared'`,  `'rpkgs-private'` or `'rpkgs-private'` in the database. 
 When rxExec() function is called from a client machine with [RxInSqlServer](RxInSqlServer.md) compute context to execute the rx function on SQL Server, the `.libPaths()` is automatically updated to include the library paths returned by this [rxSqlLibPaths](rxSqlLibPaths.md) function.
- 
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 A character vector of the library paths containing both `"shared"` or `"private"` scope of the packages if the the user specified in the connection string is allowed access. On acccess denied, it returns an empty character vector.
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxPackage](rxPackage.md),
 .libPaths,
 [rxFindPackage](rxFindPackage.md),
@@ -70,13 +70,13 @@ A character vector of the library paths containing both `"shared"` or `"private"
 [rxRemovePackages](rxRemovePackages.md),
 [rxSyncPackages](rxSyncPackages.md),
 require
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 #
 # An example sp_execute_external_script T-SQL code using rxSqlLibPaths()
 #
@@ -94,14 +94,12 @@ exec sp_execute_external_script
   @database_name = @database_name;
 
  ## End(Not run) 
-  
- 
 ```
-     
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
+

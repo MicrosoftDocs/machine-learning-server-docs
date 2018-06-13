@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "getInputParameters function (sqlrutils) | Microsoft Docs" 
 description: " getInputParameters: returns a list of SQL Server parameter objects                     that describe the input parameters associated                     with a stored procedure " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,49 +21,49 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #getInputParameters: Get a List of Input Parameters of a SQL Stored Procedure 
- ##Description
- 
+
+
+
+
+ # getInputParameters: Get a List of Input Parameters of a SQL Stored Procedure 
+ ## Description
+
 `getInputParameters`: returns a list of SQL Server parameter objects
 that describe the input parameters associated
 with a stored procedure
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   getInputParameters(sqlSP)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `sqlSP`
  A valid StoredProcedure Object 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 A named list of SQL Server parameter objects (InputData, InputParameter)
 associated with the provided StoredProcedure object. The names are the names
 of the variables from the R function provided into StoredProcedure associated
 with the objects
- 
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
   # See ?StoredProcedure for creating the `cleandata` table.
   # and ?executeStoredProcedure for creating the `rdata` table.
 
@@ -114,7 +114,5 @@ with the objects
   model <- executeStoredProcedure(sp_df_df, id, name, connectionString = conStr)
   model$data
  ## End(Not run) 
-  
- 
 ```
- 
+

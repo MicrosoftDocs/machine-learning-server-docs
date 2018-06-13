@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxExecByPartition function (revoAnalytics) | Microsoft Docs" 
 description: " This feature allows users to run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables. In **RevoScaleR** version 9.1.0, we provide the necessary rx functions to be executed for funtionalities of By-group parallelism. This document will describe different scenarios of By-group parallelism, running in a number of supported compute contexts. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,20 +21,20 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxExecByPartition: RevoScaleR By Group Parallelism 
- ##Description
- 
+
+
+
+ # rxExecByPartition: RevoScaleR By Group Parallelism 
+ ## Description
+
 This feature allows users to run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables. In **RevoScaleR** version 9.1.0, we provide the necessary rx functions to be executed for funtionalities of By-group parallelism. This document will describe different scenarios of By-group parallelism, running in a number of supported compute contexts.
- 
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 By-group Parallelism provides functionalities that allow users perform the following typical operations:
 
 
@@ -77,7 +77,7 @@ Input data set provided as a data source object can be data sources of different
 |      Data frame, text data, xdf, other data sources that are not ODBC  |  Generate PXdf for partitions and execute computation on PXdf  |  --  |
 |      SQL Server data source or ODBC data source with *query* specified  |  Generate PXdf for partitions and execute computation on PXdf  |  Generate temporary Composite Xdf and PXdf for partitions and execute computation on PXdf  |
 |      SQL Server data source or ODBC data source with *table* specified  |  Do streaming with SQL rewrite partition queries and execute computation on streaming partitions  |  Do streaming with SQL rewrite partition queries and execute computation on streaming  |
-   
+
 
 As shown in the table, when running analytics on local compute context, PXdf is first temporarily generated and saved on disk; then computation are applied on the generated PXdf. The example for running this scenario can be found in the [rxExecBy](rxExecBy.md)() documentation. It's worth to note that the temporary PXdf generated will be removed once the computation is completed. If user plans to run the analytics multiple times with the same data set and different user functions, it would be more efficient to go with the following recommended flow:
 
@@ -94,15 +94,15 @@ As shown in the table, when running analytics on local compute context, PXdf is 
 
 
 
- 
- 
- 
- ##Author(s)
+
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [RxXdfData](RxXdfData.md),
 [rxExecBy](rxExecBy.md),
 [rxPartition](rxPartition.md),
@@ -110,13 +110,13 @@ As shown in the table, when running analytics on local compute context, PXdf is 
 [rxSplit](rxSplitXdf.md),
 [rxExec](rxExec.md),
 [rxImport](rxImport.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 
 ##############################################################################
 # Run analytics on data partitions in one operation
@@ -235,12 +235,10 @@ As shown in the table, when running analytics on local compute context, PXdf is 
   # clean-up: delete the partitioned Xdf
   unlink(outFile, recursive = TRUE, force = TRUE)
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
