@@ -142,7 +142,8 @@ You must update the server Web context or else you will not be able to access to
 
 >We highly recommended that you also [enable HTTPS support](../operationalize/configure-https.md) for DeployR to secure the communications to the server.
 
-<br>
+<a name="configuring-azure-endpoints"></a>
+
 ### Configuring Azure Endpoints
 
 When provisioning your DeployR server on Azure, you must open Azure endpoints for several [DeployR ports](deployr-installing-configuring.md#updating-your-firewall). 

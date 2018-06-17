@@ -70,7 +70,7 @@ In this pane, you can view and scroll through the source code of the R script. C
 
 ### Editing R Code
 
-Only the owners of a file can edit the source code of the [*Latest*](../deployr/deployr-repository-manager-files.md#working-with-historical-versions) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
+Only the owners of a file can edit the source code of the [*Latest*](deployr-repository-manager-files.md#working-with-historical-versions) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
 
 **To edit the R code:**
 
@@ -176,7 +176,8 @@ To help you test and debug your scripts, you can manipulate this underlying R se
 - [Clearing](deployr-repository-manager-testing-debugging-scripts.md#clearing-the-r-session-working-directory-or-workspace) the working directory or workspace of that underlying R session
 - [Retrieving DeployR-encoded R objects](deployr-repository-manager-testing-debugging-scripts.md#retrieving-r-objects) from the workspace
 
-<br/>
+<a name="loading-data-into-the-r-session"></a>
+
 ### Loading Data into the R Session
 
 You can load data into the underlying R session from the **Test** page of any open script. Any type of data file can be loaded into the working directory of the underlying R session. For example, you could load a .CSV file that will be read by your script. However, only files containing binary R objects, typically with a .rData file extension, can be loaded directly into the workspace from this page.
@@ -339,6 +340,6 @@ The changes you make to the source code of your own scripts in the Repository Ma
 
 1.  In the submenu, choose one of the following:
 	-  **Overwrite Latest version** to replace in the current working copy of the script.
-	-  **Save as new version** to save the changes as the [*Latest* version](../deployr/deployr-repository-manager-files.md#working-with-historical-versions) with an optional comment, and to preserve what was previously the *Latest* version in the file's history.
+	-  **Save as new version** to save the changes as the [*Latest* version](deployr-repository-manager-files.md#working-with-historical-versions) with an optional comment, and to preserve what was previously the *Latest* version in the file's history.
 
 	>`Ctrl-S` on Windows/Linux or `Command-S` on MAC will save and overwrite the *Latest* version.

@@ -53,6 +53,8 @@ Behind the scenes, the script evaluates the system and creates the `logs` subdir
 
 The results are also printed to the screen.
 
+<a name="running-the-diagnostic-check"></a>
+
 ### Running the Diagnostic Check
 
 The easiest way to run diagnostics is to launch it from the **Diagnostics** tab on the DeployR landing page.  After installing, you can log into the DeployR landing page at `https://<DEPLOYR_SERVER_IP>:<PORT>/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you do not have a username or password, please contact your administrator.
@@ -238,7 +240,6 @@ If you should encounter any other errors while running the DeployR Windows insta
 + Provide the installation logs `DeployR-*.log` found in the `%temp%` directory.
 
 
-<br>
 ### Landing Page Cannot Be Reached
 
 If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#running-the-diagnostic-check). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](deployr-admin-managing-server-policies.md#basic-settings).
@@ -251,8 +252,8 @@ This problem can arise for various reasons, including:
 
 It can be solved by updating the IP address in the DeployR Server Web Context.
 
-<br />
 <a id="set-context"></a>
+
 #### DeployR for Microsoft R Server 8.0.5: Update DeployR Web Context
 
 To fix this issue, update the IP address in the DeployR Server Web Context as follows:

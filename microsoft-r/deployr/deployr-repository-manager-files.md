@@ -263,7 +263,8 @@ To add or remove owners:
 
 4.  Once the list reflect the owners who should be able to collaborate on this file, click **OK**. The dialog closes.
  
-<br>
+<a name="working-with-historical-versions"></a>
+
 ## Working with Historical Versions
 
 The DeployR repository supports a versioned file system, thereby offering you a full version history for each of your repository files and access to any version upon request pending proper authentication. The Repository Manager simplifies certain interactions with each version of the file you have had over time.
@@ -322,7 +323,8 @@ If you want to restore a historical version to Latest version of a file, you can
 ![](media/deployr-repository-manager-files/workflowrestorefile.png)
 
  
-<br>
+<a name="deleting-files"</a>
+
 ## Deleting Files
 
 Only the sole owner of a file can delete the file (and all of its previous versions) permanently.

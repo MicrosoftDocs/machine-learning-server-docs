@@ -378,8 +378,8 @@ The project package APIs facilitate R package dependency management for projects
 
 
 
-<br />
-<a name="jobs"></a>
+<a name="jobs-on-the-api"></a>
+
 ## Jobs on the API
 
 Working with R interactively in an R console window or working with projects on the API are both examples of synchronous working environments where a user can make a request that is blocked until processing completes and an appropriate response is generated and returned. When working with R interactively, the response is displayed as output in the R console window. When working with projects on the API, the response is well-formed markup on the response stream.
