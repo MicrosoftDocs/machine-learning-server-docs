@@ -133,7 +133,7 @@ The Repo Files tab offers access to the full set of [Repository File APIs](deplo
 
 **Jobs Tab**
 
-The Jobs tab offers access to the full set of [Job APIs](deployr-api-reference.md#jobs).
+The Jobs tab offers access to the full set of [Job APIs](deployr-api-reference.md#jobs-on-the-api).
 
 **Repo Scripts Tab**
 
